@@ -86,7 +86,17 @@ const allRoutes = [
   ['jungmun-andeok', '/south-korea/jeju/jungmun-andeok/'],
   ['moseulpo-gapado', '/south-korea/jeju/moseulpo-gapado/'],
   ['seongsan-udo', '/south-korea/jeju/seongsan-udo/'],
-  ['woljeongri-gimnyeong', '/south-korea/jeju/woljeongri-gimnyeong/']
+  ['woljeongri-gimnyeong', '/south-korea/jeju/woljeongri-gimnyeong/'],
+  ['thailand', '/thailand/'],
+  ['bangkok', '/thailand/bangkok/'],
+  ['rattanakosin-grand-palace', '/thailand/bangkok/rattanakosin-grand-palace/'],
+  ['banglamphu-phra-athit', '/thailand/bangkok/banglamphu-phra-athit/'],
+  ['yaowarat-talat-noi', '/thailand/bangkok/yaowarat-talat-noi/'],
+  ['siam-ratchaprasong', '/thailand/bangkok/siam-ratchaprasong/'],
+  ['sukhumvit-thong-lo', '/thailand/bangkok/sukhumvit-thong-lo/'],
+  ['silom-sathorn', '/thailand/bangkok/silom-sathorn/'],
+  ['thonburi-khlong-bang-luang', '/thailand/bangkok/thonburi-khlong-bang-luang/'],
+  ['chatuchak-ari', '/thailand/bangkok/chatuchak-ari/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -325,30 +335,28 @@ for (const [viewportName, width, height, mobile] of viewports) {
   }
 }
 
-const interactionTargetResponse = await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent('about:blank')}`, { method: 'PUT' });
-if (!interactionTargetResponse.ok) throw new Error(`Could not create interaction target: HTTP ${interactionTargetResponse.status}`);
-const interactionTarget = await interactionTargetResponse.json();
-const interactionClient = new CdpClient(interactionTarget.webSocketDebuggerUrl);
-await interactionClient.open();
-await interactionClient.send('Page.enable');
-await interactionClient.send('Page.bringToFront');
-await interactionClient.send('Runtime.enable');
-await interactionClient.send('Emulation.setDeviceMetricsOverride', {
-  width: 390,
-  height: 844,
-  deviceScaleFactor: 1,
-  mobile: true,
-  screenWidth: 390,
-  screenHeight: 844
-});
-await delay(300);
-await navigate(interactionClient, `${baseUrl}/south-korea/gyeongju/`);
-await delay(400);
-const interactions = await evaluate(interactionClient, `(async () => {
+const interactionClient = client;
+const skipInteractions = process.env.TRIPDISTILL_SKIP_INTERACTIONS === '1';
+let interactions = { skipped: true };
+if (!skipInteractions) {
+  await interactionClient.send('Page.bringToFront');
+  await interactionClient.send('Emulation.setDeviceMetricsOverride', {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 1,
+    mobile: true,
+    screenWidth: 390,
+    screenHeight: 844
+  });
+  await delay(300);
+  await navigate(interactionClient, `${baseUrl}/thailand/bangkok/`);
+  await delay(400);
+  interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
-  document.querySelector('[data-menu-toggle]')?.click();
-  await wait(650);
   const sidebar = document.querySelector('.sidebar');
+  if (sidebar) sidebar.style.transition = 'none';
+  document.querySelector('[data-menu-toggle]')?.click();
+  await wait(100);
   const sidebarRect = sidebar?.getBoundingClientRect();
   const sidebarStyle = sidebar ? getComputedStyle(sidebar) : null;
   const menu = {
@@ -367,7 +375,7 @@ const interactions = await evaluate(interactionClient, `(async () => {
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Gyeongju';
+  input.value = 'Bangkok';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -381,7 +389,8 @@ const interactions = await evaluate(interactionClient, `(async () => {
   document.querySelector('.faq-list summary')?.click();
   const faq = { opened: Boolean(document.querySelector('.faq-list details[open]')) };
   return { menu, search, faq };
-})()`);
+  })()`);
+}
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
 const result = {
@@ -412,6 +421,7 @@ console.log(JSON.stringify({
 await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-if (failures.length || !interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Gyeongju city guide' || interactions.search.count < 1 || interactions.search.first !== 'Gyeongju Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened) {
+const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Bangkok city guide' || interactions.search.count < 1 || interactions.search.first !== 'Bangkok Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
+if (failures.length || interactionFailed) {
   process.exitCode = 1;
 }

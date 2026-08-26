@@ -65,8 +65,13 @@ for (const absoluteUrl of publishedUrls) {
     }
   }
 
-  const usesGyeongjuRelease = url.pathname === '/' || url.pathname === '/south-korea/' || url.pathname.startsWith('/south-korea/gyeongju/');
-  const expectedSiteCss = usesGyeongjuRelease ? '/css/site.css?v=20260826-10' : '/css/site.css?v=20260826-9';
+  const usesThailandRelease = url.pathname === '/' || url.pathname.startsWith('/thailand/');
+  const usesGyeongjuRelease = url.pathname === '/south-korea/' || url.pathname.startsWith('/south-korea/gyeongju/');
+  const expectedSiteCss = usesThailandRelease
+    ? '/css/site.css?v=20260826-11'
+    : usesGyeongjuRelease
+      ? '/css/site.css?v=20260826-10'
+      : '/css/site.css?v=20260826-9';
   if (!html.includes(expectedSiteCss)) problems.push(`${relativePath}: stale or missing stylesheet version`);
   if (!html.includes('/js/main.js?v=20260826-9')) problems.push(`${relativePath}: stale or missing main script version`);
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${relativePath}: missing AdSense publisher declaration`);
@@ -76,6 +81,9 @@ for (const absoluteUrl of publishedUrls) {
   }
   if (url.pathname.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20260826-1')) {
     problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
+  }
+  if (url.pathname.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) {
+    problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   }
 }
 

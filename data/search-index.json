@@ -24,6 +24,142 @@
     "keywords": ["south korea", "korea", "seoul", "busan", "gyeongju", "jeju", "k-eta", "ktx"]
   },
   {
+    "title": "Thailand Travel Guide",
+    "url": "/thailand/",
+    "parent": "Thailand",
+    "type": "Country",
+    "summary": "Entry checks, seasons, transport decisions, etiquette and first-trip route families across Thailand.",
+    "keywords": ["thailand", "bangkok", "chiang mai", "phuket", "ayutthaya", "first trip", "travel"]
+  },
+  {
+    "title": "Thailand Entry and TDAC Guide",
+    "url": "/thailand/#entry",
+    "parent": "Thailand",
+    "type": "Practical",
+    "summary": "Check visa eligibility, the official Thailand Digital Arrival Card window and the arrival details to keep offline.",
+    "keywords": ["thailand entry", "tdac", "digital arrival card", "visa", "immigration", "arrival"]
+  },
+  {
+    "title": "Thailand Seasons Guide",
+    "url": "/thailand/#seasons",
+    "parent": "Thailand",
+    "type": "Season",
+    "summary": "Compare Thailand’s broad cool, hot and rainy seasons while accounting for regional and coastal differences.",
+    "keywords": ["thailand weather", "rainy season", "monsoon", "cool season", "hot season", "best time"]
+  },
+  {
+    "title": "Thailand Transport Guide",
+    "url": "/thailand/#transport",
+    "parent": "Thailand",
+    "type": "Transit",
+    "summary": "Compare rail, flights, roads and ferries by the complete journey rather than headline travel time.",
+    "keywords": ["thailand transport", "train", "flight", "bus", "ferry", "bangkok airports"]
+  },
+  {
+    "title": "Thailand First-Trip Route Builder",
+    "url": "/thailand/#itinerary",
+    "parent": "Thailand",
+    "type": "Itinerary",
+    "summary": "Sequence Bangkok, one northern or coastal chapter, a local extension and a protected departure buffer.",
+    "keywords": ["thailand itinerary", "two weeks", "14 days", "route", "bangkok", "islands", "north thailand"]
+  },
+  {
+    "title": "Bangkok Travel Guide",
+    "url": "/thailand/bangkok/",
+    "parent": "Thailand · Capital",
+    "type": "City",
+    "summary": "Eight distinct area guides, hotel-base decisions, airport access, river logic and a four-day city plan.",
+    "keywords": ["bangkok", "thailand", "where to stay", "neighborhoods", "first trip", "areas"]
+  },
+  {
+    "title": "Bangkok Areas Guide",
+    "url": "/thailand/bangkok/#areas",
+    "parent": "Bangkok",
+    "type": "Neighborhoods",
+    "summary": "Compare eight Bangkok districts by transport network, daily rhythm, heat exposure and evening return.",
+    "keywords": ["bangkok areas", "neighborhoods", "where to stay", "old city", "chinatown", "sukhumvit", "silom"]
+  },
+  {
+    "title": "Bangkok Airport Access",
+    "url": "/thailand/bangkok/#arrival",
+    "parent": "Bangkok",
+    "type": "Transit",
+    "summary": "Compare Suvarnabhumi and Don Mueang by airport code, complete hotel transfer and connection risk.",
+    "keywords": ["bangkok airport", "suvarnabhumi", "don mueang", "BKK", "DMK", "airport rail link"]
+  },
+  {
+    "title": "Bangkok Four-Day Itinerary",
+    "url": "/thailand/bangkok/#itinerary",
+    "parent": "Bangkok",
+    "type": "Itinerary",
+    "summary": "Four Bangkok days organized around old-city thresholds, Chinatown clocks, rail corridors and one slower choice.",
+    "keywords": ["bangkok itinerary", "4 days", "four days", "route", "old city", "chinatown"]
+  },
+  {
+    "title": "Rattanakosin and Grand Palace Guide",
+    "url": "/thailand/bangkok/rattanakosin-grand-palace/",
+    "parent": "Bangkok · Old City",
+    "type": "Area",
+    "summary": "Sequence royal and temple thresholds with dress preparation, early timing, river access and heat control.",
+    "keywords": ["rattanakosin", "grand palace", "wat pho", "old city", "temple", "sanam chai"]
+  },
+  {
+    "title": "Banglamphu and Phra Athit Guide",
+    "url": "/thailand/bangkok/banglamphu-phra-athit/",
+    "parent": "Bangkok · River Edge",
+    "type": "Area",
+    "summary": "A street-zine route through old-wall context, river edges, lived-in lanes and different nighttime volumes.",
+    "keywords": ["banglamphu", "phra athit", "khao san", "phra athit pier", "old bangkok", "river"]
+  },
+  {
+    "title": "Yaowarat and Talat Noi Guide",
+    "url": "/thailand/bangkok/yaowarat-talat-noi/",
+    "parent": "Bangkok · Chinatown",
+    "type": "Area",
+    "summary": "Use daylight for working heritage lanes, reset, then return for Yaowarat’s neon food phase.",
+    "keywords": ["yaowarat", "talat noi", "bangkok chinatown", "street food", "wat mangkon", "heritage"]
+  },
+  {
+    "title": "Siam and Ratchaprasong Guide",
+    "url": "/thailand/bangkok/siam-ratchaprasong/",
+    "parent": "Bangkok · Central",
+    "type": "Area",
+    "summary": "Use BTS interchanges, culture and connected blocks for a focused, rain-flexible central Bangkok day.",
+    "keywords": ["siam", "ratchaprasong", "BTS Siam", "BACC", "shopping", "skywalk", "rainy day"]
+  },
+  {
+    "title": "Sukhumvit and Thong Lo Guide",
+    "url": "/thailand/bangkok/sukhumvit-thong-lo/",
+    "parent": "Bangkok · East Corridor",
+    "type": "Area",
+    "summary": "Compare four Sukhumvit station bases and decide late-return transport before a Thong Lo night.",
+    "keywords": ["sukhumvit", "thong lo", "asok", "phrom phong", "ekkamai", "nightlife", "BTS"]
+  },
+  {
+    "title": "Silom and Sathorn Guide",
+    "url": "/thailand/bangkok/silom-sathorn/",
+    "parent": "Bangkok · South Central",
+    "type": "Area",
+    "summary": "Plan Lumphini mornings, BTS and MRT choices, river access and a separate evening city shift.",
+    "keywords": ["silom", "sathorn", "lumphini park", "sala daeng", "saphan taksin", "nightlife"]
+  },
+  {
+    "title": "Thonburi and Khlong Bang Luang Guide",
+    "url": "/thailand/bangkok/thonburi-khlong-bang-luang/",
+    "parent": "Bangkok · West Bank",
+    "type": "Area",
+    "summary": "Use MRT certainty, canal-side etiquette and a land-versus-boat decision for a slow west-bank half-day.",
+    "keywords": ["thonburi", "khlong bang luang", "canal", "artist house", "bang phai", "west bank"]
+  },
+  {
+    "title": "Chatuchak and Ari Guide",
+    "url": "/thailand/bangkok/chatuchak-ari/",
+    "parent": "Bangkok · North",
+    "type": "Area",
+    "summary": "Give Chatuchak Market a category mission and hard heat break, then use Ari as a smaller neighborhood reset.",
+    "keywords": ["chatuchak", "ari", "weekend market", "mo chit", "kamphaeng phet", "shopping"]
+  },
+  {
     "title": "Seoul Travel Guide",
     "url": "/south-korea/seoul/",
     "parent": "South Korea · Capital",

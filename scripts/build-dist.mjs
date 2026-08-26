@@ -18,6 +18,7 @@ const publicDirectories = [
   'js',
   'privacy-policy',
   'south-korea',
+  'thailand',
   'terms-of-use'
 ];
 

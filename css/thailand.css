@@ -1,0 +1,493 @@
+/* Thailand cluster: a country-level visual language built from lacquer, gold leaf,
+   river green and Bangkok's night glow. Shared navigation remains global; the
+   editorial frames below deliberately change shape from guide to guide. */
+body[data-country="thailand"] {
+  --thai-ink: #211813;
+  --thai-lacquer: #711f22;
+  --thai-red: #a72e2c;
+  --thai-gold: #e2ad4f;
+  --thai-pale-gold: #f4d894;
+  --thai-jade: #1e6559;
+  --thai-river: #277487;
+  --thai-night: #19152b;
+  --thai-orchid: #ad3d76;
+  --thai-cream: #fff4dc;
+  --thai-paper: #fbf5e8;
+  --thai-coral: #ed6545;
+}
+
+body[data-country="thailand"] .page-content {
+  background:
+    radial-gradient(circle at 98% 4%, rgba(226, 173, 79, .08), transparent 19rem),
+    linear-gradient(#fff, #fffdfa 26rem, #fff);
+}
+
+body[data-country="thailand"] .section-heading h2,
+body[data-country="thailand"] .feature-panel h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -.035em;
+}
+
+body[data-country="thailand"] .section-kicker { color: var(--thai-red); }
+
+.thai-breadcrumbs { margin-bottom: 1rem; }
+.thai-display { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+.thai-gold-rule { width: 4rem; height: .2rem; border: 0; background: var(--thai-gold); }
+
+/* Country hub — travel tapestry, not a generic destination hero. */
+.thai-country-hero {
+  position: relative;
+  min-height: 45rem;
+  margin: 1rem 0 2.4rem;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(28rem, 1.1fr);
+  overflow: hidden;
+  border-radius: 2.2rem;
+  color: #fff7e7;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(244, 216, 148, .2), transparent 30%),
+    repeating-linear-gradient(135deg, transparent 0 25px, rgba(255,255,255,.025) 26px 28px),
+    linear-gradient(145deg, #48161a, #7b2022 56%, #3a171b);
+  box-shadow: 0 34px 90px rgba(83, 24, 24, .24);
+}
+
+.thai-country-hero::before,
+.thai-country-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid rgba(244, 216, 148, .34);
+  transform: rotate(45deg);
+}
+.thai-country-hero::before { left: -3.6rem; top: 5rem; }
+.thai-country-hero::after { left: 39%; bottom: -4.5rem; width: 10rem; height: 10rem; }
+
+.thai-country-copy {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  padding: clamp(2.4rem, 5vw, 5.3rem);
+}
+.thai-country-copy .eyebrow { color: var(--thai-pale-gold); }
+.thai-country-copy h1 {
+  max-width: 8ch;
+  margin: .75rem 0 1.2rem;
+  color: #fff9e9;
+  font: 500 clamp(4rem, 8vw, 7.5rem)/.82 Georgia, serif;
+  letter-spacing: -.075em;
+}
+.thai-country-copy h1 span { display: block; color: var(--thai-gold); font-size: .28em; line-height: 1.25; letter-spacing: .14em; text-transform: uppercase; }
+.thai-country-copy > p { max-width: 36rem; color: rgba(255,249,233,.76); font-size: 1.08rem; }
+.thai-country-copy .page-hero-meta span { color: #fff2cf; border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.07); }
+
+.thai-country-gallery { position: relative; z-index: 2; min-height: 45rem; }
+.thai-country-gallery::before { content: ""; position: absolute; z-index: 2; inset: 0 auto 0 0; width: 18%; background: linear-gradient(90deg, #6b1d20, transparent); }
+.thai-country-gallery > img:first-child { width: 100%; height: 100%; object-fit: cover; }
+.thai-country-portrait {
+  position: absolute;
+  z-index: 3;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1rem, 3vw, 2.5rem);
+  width: min(34%, 14rem);
+  height: 52%;
+  padding: .45rem;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,.62);
+  border-radius: 7rem 7rem .7rem .7rem;
+  background: rgba(255,255,255,.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,.28);
+}
+.thai-country-seal { position: absolute; z-index: 4; left: 2rem; bottom: 2rem; width: 8.4rem; height: 8.4rem; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: #fff7dd; background: rgba(31,80,78,.82); backdrop-filter: blur(10px); text-align: center; transform: rotate(-6deg); }
+.thai-country-seal strong { font: 500 1.15rem/1.1 Georgia, serif; }
+.thai-country-seal small { display: block; margin-top: .25rem; font: 800 .58rem/1.2 system-ui, sans-serif; letter-spacing: .12em; }
+
+.thai-entry-fold { display: grid; grid-template-columns: .8fr 1.2fr; overflow: hidden; border-radius: 1.6rem; background: var(--thai-ink); color: #fff; }
+.thai-entry-intro { padding: clamp(1.8rem, 4vw, 3.8rem); background: linear-gradient(145deg, #1e5a51, #153f3a); }
+.thai-entry-intro small { color: #f2d583; font-weight: 850; letter-spacing: .13em; }
+.thai-entry-intro h2 { margin: .9rem 0 .75rem; color: #fff; font: 500 clamp(2rem, 4vw, 3.3rem)/1 Georgia, serif; }
+.thai-entry-intro p { color: rgba(255,255,255,.7); }
+.thai-entry-steps { display: grid; grid-template-columns: repeat(3, 1fr); counter-reset: entry; }
+.thai-entry-steps article { position: relative; padding: 2rem 1.4rem; border-left: 1px solid rgba(255,255,255,.13); }
+.thai-entry-steps article::before { counter-increment: entry; content: "0" counter(entry); display: block; margin-bottom: 2rem; color: var(--thai-gold); font: 500 2.5rem/1 Georgia, serif; }
+.thai-entry-steps h3 { color: #fff; font-size: 1.12rem; }
+.thai-entry-steps p { color: rgba(255,255,255,.63); font-size: .9rem; }
+
+.thai-route-tapestry { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 8rem; gap: .9rem; }
+.thai-route-card { position: relative; grid-column: span 4; grid-row: span 3; overflow: hidden; border-radius: 1.4rem; isolation: isolate; color: #fff; background: #39211e; }
+.thai-route-card.wide { grid-column: span 8; grid-row: span 4; }
+.thai-route-card.tall { grid-row: span 4; }
+.thai-route-card img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+.thai-route-card::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(14,10,8,.02) 30%, rgba(20,12,9,.9)); }
+.thai-route-card:hover img { transform: scale(1.04); }
+.thai-route-copy { position: absolute; inset: auto 0 0; padding: 1.5rem; }
+.thai-route-copy small { color: #f6d47f; font-weight: 850; letter-spacing: .12em; }
+.thai-route-copy h3 { margin: .45rem 0 .35rem; color: #fff; font: 500 clamp(1.55rem, 3vw, 2.4rem)/1 Georgia, serif; }
+.thai-route-copy p { margin: 0; max-width: 38rem; color: rgba(255,255,255,.74); }
+.thai-route-copy strong { display: block; margin-top: .7rem; color: #fff0c5; }
+
+.thai-season-weave { display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 1px solid #dbcda9; background: var(--thai-paper); }
+.thai-season-weave article { min-height: 15rem; padding: 1.8rem; border-right: 1px solid #dbcda9; }
+.thai-season-weave article:last-child { border-right: 0; }
+.thai-season-weave article:nth-child(1) { border-top: 7px solid #e37a43; }
+.thai-season-weave article:nth-child(2) { border-top: 7px solid #26798a; }
+.thai-season-weave article:nth-child(3) { border-top: 7px solid #c8953c; }
+.thai-season-weave time { color: var(--thai-red); font-weight: 900; letter-spacing: .1em; }
+.thai-season-weave h3 { margin: .8rem 0 .55rem; font: 500 1.55rem/1.1 Georgia, serif; }
+.thai-season-weave p { color: var(--muted); }
+
+.thai-move-board { display: grid; grid-template-columns: 1.25fr repeat(3, .75fr); gap: .65rem; padding: .65rem; border-radius: 1.5rem; color: #fff; background: #173c42; }
+.thai-move-board article { min-height: 14rem; padding: 1.5rem; background: rgba(255,255,255,.055); }
+.thai-move-board article:first-child { background: #8a2928; }
+.thai-move-board small { color: #f5d47e; font-weight: 850; letter-spacing: .11em; }
+.thai-move-board h3 { margin: .8rem 0 .45rem; color: #fff; }
+.thai-move-board p { margin: 0; color: rgba(255,255,255,.7); font-size: .9rem; }
+
+.thai-etiquette-fan { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+.thai-etiquette-fan article { position: relative; min-height: 14rem; padding: 1.5rem; overflow: hidden; border-radius: 7rem 7rem .9rem .9rem; text-align: center; background: #fbf0d8; border: 1px solid #e1c987; }
+.thai-etiquette-fan article:nth-child(even) { background: #e7f0e9; border-color: #adc6b8; }
+.thai-etiquette-fan strong { display: block; margin-bottom: .7rem; color: var(--thai-red); font: 500 1.35rem/1.1 Georgia, serif; }
+.thai-etiquette-fan p { color: var(--muted); font-size: .9rem; }
+
+/* Bangkok hub — the river is the organizing line. */
+.bangkok-river-hero {
+  position: relative;
+  min-height: 44rem;
+  margin: 1rem 0 2.2rem;
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(28rem, 1.18fr);
+  overflow: hidden;
+  border-radius: 2rem;
+  color: #fff;
+  background: var(--thai-night);
+  box-shadow: 0 30px 80px rgba(25,21,43,.25);
+}
+.bangkok-river-hero::before { content: ""; position: absolute; z-index: 1; left: 42%; top: -7%; width: 5rem; height: 114%; border: solid rgba(106,203,202,.48); border-width: 0 1px; background: linear-gradient(90deg, transparent, rgba(48,153,160,.2), transparent); transform: rotate(5deg); }
+.bangkok-river-copy { position: relative; z-index: 3; align-self: center; padding: clamp(2.5rem, 5vw, 5.2rem); }
+.bangkok-river-copy .eyebrow { color: #f2c965; }
+.bangkok-river-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(4.2rem, 8vw, 7.6rem)/.78 Georgia, serif; letter-spacing: -.075em; }
+.bangkok-river-copy h1 span { display: block; color: #5fc0c1; font-size: .25em; line-height: 1.4; letter-spacing: .08em; }
+.bangkok-river-copy > p { max-width: 34rem; color: rgba(255,255,255,.7); }
+.bangkok-river-copy .page-hero-meta span { color: #fff; border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
+.bangkok-photo-stage { position: relative; min-height: 44rem; }
+.bangkok-photo-stage .river-wide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .88; }
+.bangkok-photo-stage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #19152b 0, transparent 24%), linear-gradient(0deg, rgba(20,15,35,.6), transparent 50%); }
+.bangkok-photo-stage .river-tall { position: absolute; z-index: 2; right: 1.4rem; bottom: 1.4rem; width: 30%; height: 55%; object-fit: cover; border: 1px solid rgba(255,255,255,.55); border-radius: 7rem 7rem .7rem .7rem; box-shadow: 0 18px 45px rgba(0,0,0,.35); }
+.bangkok-night-label { position: absolute; z-index: 3; left: 2rem; bottom: 2rem; padding: .8rem 1rem; color: #fff; border-left: 3px solid #f0c35e; background: rgba(25,21,43,.72); backdrop-filter: blur(10px); }
+.bangkok-night-label strong { display: block; color: #f0c35e; font-size: .7rem; letter-spacing: .13em; }
+
+.bangkok-system-strip { display: grid; grid-template-columns: 1.1fr repeat(3, 1fr); border-radius: 1.3rem; overflow: hidden; background: #201b34; color: #fff; }
+.bangkok-system-strip article { min-height: 12rem; padding: 1.5rem; border-right: 1px solid rgba(255,255,255,.12); }
+.bangkok-system-strip article:last-child { border-right: 0; }
+.bangkok-system-strip article:first-child { background: var(--thai-river); }
+.bangkok-system-strip small { color: #f4ce71; font-weight: 900; letter-spacing: .1em; }
+.bangkok-system-strip h3 { margin: .65rem 0 .4rem; color: #fff; }
+.bangkok-system-strip p { margin: 0; color: rgba(255,255,255,.68); font-size: .88rem; }
+
+.bangkok-area-atlas { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 7rem; gap: .85rem; }
+.bangkok-atlas-card { position: relative; grid-column: span 4; grid-row: span 3; overflow: hidden; border-radius: 1.25rem; isolation: isolate; color: #fff; background: #32231d; }
+.bangkok-atlas-card.wide { grid-column: span 8; }
+.bangkok-atlas-card.tall { grid-row: span 4; }
+.bangkok-atlas-card img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.bangkok-atlas-card::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(10,8,8,.02) 30%, rgba(15,9,11,.92)); }
+.bangkok-atlas-card:hover img { transform: scale(1.045); }
+.bangkok-atlas-card > div { position: absolute; inset: auto 0 0; padding: 1.35rem; }
+.bangkok-atlas-card small { color: #f7cf65; font-weight: 900; letter-spacing: .1em; }
+.bangkok-atlas-card h3 { margin: .45rem 0 .3rem; color: #fff; font: 500 clamp(1.35rem, 2.5vw, 2.15rem)/1 Georgia, serif; }
+.bangkok-atlas-card p { margin: 0 0 .6rem; color: rgba(255,255,255,.72); }
+.bangkok-atlas-card strong { color: #fff0c5; font-size: .83rem; }
+
+.bangkok-river-ledger { display: grid; grid-template-columns: 8rem 1fr; color: #fff; background: #153f48; }
+.bangkok-river-word { display: grid; place-items: center; padding: 1rem; border-right: 1px solid rgba(255,255,255,.16); color: #76c7c6; font: 500 1.2rem/1 Georgia, serif; letter-spacing: .18em; writing-mode: vertical-rl; transform: rotate(180deg); }
+.bangkok-river-stops { display: grid; grid-template-columns: repeat(4, 1fr); }
+.bangkok-river-stops article { position: relative; min-height: 15rem; padding: 1.6rem; border-right: 1px solid rgba(255,255,255,.13); }
+.bangkok-river-stops article:last-child { border-right: 0; }
+.bangkok-river-stops article::before { content: ""; display: block; width: .75rem; height: .75rem; margin-bottom: 1.5rem; border: 3px solid #153f48; border-radius: 50%; background: #e5b351; box-shadow: 0 0 0 1px #e5b351; }
+.bangkok-river-stops h3 { color: #fff; }
+.bangkok-river-stops p { color: rgba(255,255,255,.65); font-size: .88rem; }
+
+.bangkok-base-matrix { display: grid; grid-template-columns: repeat(4, 1fr); gap: .7rem; }
+.bangkok-base-matrix article { min-height: 14rem; padding: 1.5rem; border: 1px solid #ddcfb0; background: #fffaf0; }
+.bangkok-base-matrix article:nth-child(2) { color: #fff; border-color: transparent; background: #81282a; }
+.bangkok-base-matrix article:nth-child(3) { color: #fff; border-color: transparent; background: #1e645b; }
+.bangkok-base-matrix small { font-weight: 900; letter-spacing: .1em; }
+.bangkok-base-matrix h3 { margin: .7rem 0 .45rem; color: inherit; font: 500 1.45rem/1.1 Georgia, serif; }
+.bangkok-base-matrix p { color: inherit; opacity: .72; }
+
+/* Shared area scaffolding keeps accessibility and brand, not one layout. */
+.thai-area-hero { position: relative; margin: 1rem 0 1.4rem; overflow: hidden; border-radius: 1.8rem; }
+.thai-area-hero h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.055em; overflow-wrap: anywhere; }
+.thai-area-hero h1 .hero-line { display: block; white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.thai-area-hero .eyebrow { font-size: .7rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.thai-area-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.3rem; }
+.thai-area-meta span { padding: .46rem .68rem; border: 1px solid currentColor; border-radius: 99px; font-size: .72rem; font-weight: 800; opacity: .82; }
+
+/* 01 — Rattanakosin: a sequence of thresholds and courtyards. */
+.threshold-hero { min-height: 41rem; display: grid; grid-template-columns: .95fr 1.05fr; color: #3d2415; background: #f4e4b9; }
+.threshold-copy { position: relative; z-index: 2; padding: clamp(2.3rem, 5vw, 4.7rem); align-self: center; }
+.threshold-copy::before { content: "THE OLD CITY"; display: block; width: max-content; padding: .45rem .65rem; color: #fff3d0; background: #81272a; font-size: .66rem; font-weight: 900; letter-spacing: .13em; }
+.threshold-hero .eyebrow { color: #8e3528; }
+.threshold-hero h1 { max-width: none; margin: .9rem 0 1rem; font-size: clamp(2.6rem, 3.6vw, 3.7rem); line-height: .9; overflow-wrap: normal; }
+.threshold-hero p { color: #725a3c; }
+.threshold-photo { position: relative; min-height: 41rem; padding: 1.2rem 1.2rem 1.2rem 0; }
+.threshold-photo::before, .threshold-photo::after { content: ""; position: absolute; z-index: 2; inset: 7% 8% 7% 0; border: 1px solid rgba(255,240,190,.7); border-radius: 10rem 10rem .5rem .5rem; pointer-events: none; }
+.threshold-photo::after { inset: 11% 12% 11% 4%; border-color: rgba(255,240,190,.34); }
+.threshold-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 10rem 10rem .7rem .7rem; }
+.court-sequence { display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: court; border: 1px solid #c9aa6c; }
+.court-sequence article { min-height: 15rem; padding: 1.6rem; border-right: 1px solid #c9aa6c; background: #fff8e6; }
+.court-sequence article:last-child { border-right: 0; }
+.court-sequence article::before { counter-increment: court; content: "GATE 0" counter(court); color: #8d292a; font-weight: 900; letter-spacing: .11em; }
+.court-sequence h3 { margin: 1.3rem 0 .45rem; font: 500 1.35rem/1.1 Georgia, serif; }
+.court-sequence p { color: var(--muted); font-size: .9rem; }
+.dress-protocol { display: grid; grid-template-columns: .8fr 1.2fr; overflow: hidden; border-radius: 1.3rem; color: #fff; background: #792326; }
+.dress-protocol > div { padding: clamp(1.7rem, 4vw, 3.4rem); }
+.dress-protocol > div + div { background: #263f37; }
+.dress-protocol h3 { color: #f2d586; font-family: Georgia, serif; font-size: 1.8rem; }
+.dress-protocol ul { color: rgba(255,255,255,.76); }
+
+/* 02 — Banglamphu: annotated street zine. */
+.zine-hero { min-height: 38rem; display: grid; grid-template-columns: 1.1fr .9fr; padding: 1rem; color: #241e1a; background: #f3dd8e; transform: rotate(-.25deg); }
+.zine-photo { position: relative; min-height: 36rem; overflow: hidden; clip-path: polygon(2% 3%, 98% 0, 96% 98%, 0 95%); }
+.zine-photo img { width: 100%; height: 100%; object-fit: cover; }
+.zine-photo::after { content: "RIVER EDGE / OLD WALL / LATE NIGHT"; position: absolute; right: 1rem; bottom: 1rem; padding: .55rem .7rem; color: #fff; background: #1e6258; font-size: .65rem; font-weight: 900; letter-spacing: .1em; }
+.zine-copy { position: relative; padding: clamp(2rem, 5vw, 4rem); align-self: center; }
+.zine-copy::before { content: "FIELD ZINE 02"; position: absolute; right: 2rem; top: 1.5rem; color: #9a2e2d; font: 800 .7rem/1 system-ui, sans-serif; letter-spacing: .15em; transform: rotate(5deg); }
+.zine-hero .eyebrow { color: #8f2c29; }
+.zine-hero h1 { margin: .8rem 0 1rem; font-size: clamp(3.5rem, 7vw, 6.3rem); line-height: .82; }
+.zine-hero p { max-width: 34rem; }
+.zine-walk { display: grid; grid-template-columns: repeat(5, 1fr); gap: .7rem; counter-reset: zine; }
+.zine-walk article { position: relative; min-height: 16rem; padding: 1.35rem; border: 1px solid #d5c399; background: #fffdf7; box-shadow: 6px 7px 0 #ead985; transform: rotate(-.45deg); }
+.zine-walk article:nth-child(even) { transform: rotate(.55deg); box-shadow: 6px 7px 0 #b7d2c8; }
+.zine-walk article::before { counter-increment: zine; content: "0" counter(zine); color: #9c302f; font: 500 2rem/1 Georgia, serif; }
+.zine-walk h3 { margin: 1.2rem 0 .45rem; font-size: 1.1rem; }
+.zine-walk p { color: var(--muted); font-size: .86rem; }
+.sleep-volume { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.sleep-volume article { padding: 2rem; border-radius: 1.2rem; background: #e7f0e9; }
+.sleep-volume article:last-child { color: #fff; background: #34293d; }
+.sleep-volume h3 { color: inherit; font: 500 1.6rem/1.1 Georgia, serif; }
+.sleep-volume p { color: inherit; opacity: .75; }
+
+/* 03 — Yaowarat and Talat Noi: neon menu ledger. */
+.neon-hero { min-height: 40rem; color: #fff; background: #120e18; isolation: isolate; }
+.neon-hero > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.neon-hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(13,7,14,.97), rgba(13,7,14,.72) 48%, rgba(13,7,14,.08)); }
+.neon-copy { width: min(47rem, 92%); padding: clamp(2.5rem, 6vw, 5.5rem); }
+.neon-hero .eyebrow { color: #ffcb3d; }
+.neon-hero h1 { max-width: 9ch; margin: .9rem 0 1rem; color: #fff; font-size: clamp(3.6rem, 7vw, 6.6rem); line-height: .84; text-shadow: 0 0 25px rgba(255,45,90,.4); }
+.neon-hero h1 span { color: #ff3d76; }
+.neon-hero p { color: rgba(255,255,255,.72); }
+.neon-hero .thai-area-meta span { border-color: #51e0c3; color: #8dffe9; background: rgba(22,107,95,.22); }
+.neon-menu { overflow: hidden; border: 1px solid #34273d; color: #fff; background: #17121f; }
+.neon-menu-head { display: grid; grid-template-columns: 1.3fr .8fr .8fr; padding: .85rem 1.2rem; color: #ffcf3d; border-bottom: 1px solid #463451; font-size: .68rem; font-weight: 900; letter-spacing: .13em; }
+.neon-menu-row { display: grid; grid-template-columns: 1.3fr .8fr .8fr; min-height: 7rem; border-bottom: 1px solid #34273d; }
+.neon-menu-row:last-child { border-bottom: 0; }
+.neon-menu-row > div { padding: 1.2rem; border-right: 1px solid #34273d; }
+.neon-menu-row > div:last-child { border-right: 0; }
+.neon-menu-row h3 { margin: 0 0 .35rem; color: #fff; }
+.neon-menu-row p { margin: 0; color: rgba(255,255,255,.58); font-size: .85rem; }
+.neon-menu-row strong { color: #64e7cb; }
+.talat-split { display: grid; grid-template-columns: .92fr 1.08fr; gap: 1rem; }
+.talat-split img { width: 100%; height: 100%; min-height: 28rem; object-fit: cover; border-radius: 1.3rem; }
+.talat-notes { padding: clamp(1.8rem, 4vw, 3.5rem); border-radius: 1.3rem; color: #2b171e; background: #ffd84d; }
+.talat-notes h2 { font: 500 clamp(2rem, 4vw, 3.5rem)/1 Georgia, serif; }
+.talat-notes article { padding: 1rem 0; border-top: 2px solid rgba(78,31,42,.3); }
+.talat-notes article h3 { margin: 0 0 .35rem; }
+.talat-notes article p { margin: 0; }
+
+/* 04 — Siam: a transit interchange and climate-proof day. */
+.interchange-hero { min-height: 37rem; display: grid; grid-template-columns: .9fr 1.1fr; color: #10283b; background: #dfeff1; }
+.interchange-copy { position: relative; padding: clamp(2.2rem, 5vw, 4.5rem); align-self: center; }
+.interchange-copy::after { content: "CEN / SIAM / CHIT LOM"; display: block; margin-top: 2rem; padding: .55rem .8rem; width: max-content; color: #fff; background: #196b72; font: 850 .68rem/1 system-ui, sans-serif; letter-spacing: .13em; }
+.interchange-hero .eyebrow { color: #a52f31; }
+.interchange-hero h1 { margin: .8rem 0 1rem; font-size: clamp(2.7rem, 3.4vw, 3.25rem); line-height: .9; overflow-wrap: normal; }
+.interchange-photo { position: relative; min-height: 37rem; clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%); }
+.interchange-photo img { width: 100%; height: 100%; object-fit: cover; }
+.interchange-photo::after { content: "BTS ↔ SKYwalk ↔ CULTURE"; position: absolute; left: 12%; right: 1rem; bottom: 1rem; padding: .8rem 1rem; color: #fff; background: rgba(17,47,68,.82); font-size: .7rem; font-weight: 900; letter-spacing: .11em; }
+.line-diagram { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); padding-top: 2.5rem; }
+.line-diagram::before { content: ""; position: absolute; left: 12%; right: 12%; top: 1rem; height: 4px; background: linear-gradient(90deg, #69a548, #69a548 49%, #196c72 50%, #196c72); }
+.line-diagram article { position: relative; padding: 1.4rem; border: 1px solid #c6d5d5; background: #fff; }
+.line-diagram article::before { content: ""; position: absolute; left: 50%; top: -1.9rem; width: .85rem; height: .85rem; border: 4px solid #fff; border-radius: 50%; background: #b3373b; box-shadow: 0 0 0 2px #b3373b; transform: translateX(-50%); }
+.line-diagram h3 { margin: 0 0 .45rem; }
+.line-diagram p { color: var(--muted); font-size: .86rem; }
+.rain-proof-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: .8rem; }
+.rain-proof-grid article { min-height: 13rem; padding: 1.5rem; color: #fff; background: #1d6b72; }
+.rain-proof-grid article:nth-child(2) { color: #342318; background: #f5d36d; }
+.rain-proof-grid article:nth-child(3) { background: #812a2c; }
+.rain-proof-grid h3 { color: inherit; }
+.rain-proof-grid p { color: inherit; opacity: .72; }
+
+/* 05 — Sukhumvit: last-train corridor. */
+.last-train-hero { min-height: 39rem; padding: clamp(2rem, 5vw, 4rem); color: #fff; background: #11101d; isolation: isolate; }
+.last-train-hero > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.last-train-hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(12,10,22,.96), rgba(12,10,22,.68) 55%, rgba(12,10,22,.16)); }
+.last-train-copy { max-width: 47rem; }
+.last-train-hero .eyebrow { color: #8df2d2; }
+.last-train-hero h1 { max-width: 9ch; margin: 1rem 0; color: #fff; font-size: clamp(3.6rem, 7vw, 6.6rem); line-height: .82; }
+.last-train-hero h1 span { color: #ff5a90; }
+.last-train-hero p { color: rgba(255,255,255,.7); }
+.last-train-hero .thai-area-meta span { color: #fff; border-color: rgba(141,242,210,.55); background: rgba(33,113,100,.2); }
+.corridor-board { padding: .8rem; border-radius: 1.4rem; color: #fff; background: #151322; }
+.corridor-line { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); }
+.corridor-line::before { content: ""; position: absolute; left: 10%; right: 10%; top: 2.15rem; height: 4px; background: #6aaa46; }
+.corridor-line article { position: relative; min-height: 15rem; padding: 4.3rem 1.25rem 1.25rem; border-right: 1px solid rgba(255,255,255,.11); }
+.corridor-line article:last-child { border-right: 0; }
+.corridor-line article::before { content: attr(data-code); position: absolute; z-index: 2; top: .85rem; left: 50%; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 4px solid #151322; border-radius: 50%; color: #10200d; background: #a9df6e; font-size: .65rem; font-weight: 950; transform: translateX(-50%); }
+.corridor-line h3 { color: #fff; }
+.corridor-line p { color: rgba(255,255,255,.62); font-size: .86rem; }
+.night-contract { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border: 1px solid #3d3450; }
+.night-contract > div { padding: clamp(1.7rem, 4vw, 3.2rem); background: #1b1728; color: #fff; }
+.night-contract > div + div { color: #231b1e; background: #ffc84f; }
+.night-contract h3 { color: inherit; font: 500 1.7rem/1.1 Georgia, serif; }
+.night-contract p, .night-contract li { color: inherit; opacity: .73; }
+
+/* 06 — Silom and Sathorn: one district, two time signatures. */
+.day-night-hero { min-height: 38rem; display: grid; grid-template-columns: 1fr 1fr; background: #173e3a; }
+.day-half { position: relative; min-height: 38rem; overflow: hidden; }
+.day-half img { width: 100%; height: 100%; object-fit: cover; }
+.day-half::after { content: "DAY / PARK / CITY"; position: absolute; left: 1rem; top: 1rem; padding: .6rem .75rem; color: #173e3a; background: #f4dc83; font-size: .67rem; font-weight: 900; letter-spacing: .12em; }
+.night-half { padding: clamp(2.3rem, 5vw, 4.8rem); align-self: center; color: #fff; }
+.night-half .eyebrow { color: #efca6d; }
+.night-half h1 { margin: .8rem 0 1rem; color: #fff; font-size: clamp(3.4rem, 7vw, 6.2rem); line-height: .84; }
+.night-half p { color: rgba(255,255,255,.7); }
+.night-half .thai-area-meta span { color: #fff; }
+.two-shift-ledger { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.shift-card { min-height: 20rem; padding: clamp(1.8rem, 4vw, 3.4rem); border-radius: 1.3rem; color: #173c38; background: #dfeee6; }
+.shift-card:last-child { color: #fff; background: #21192b; }
+.shift-card time { font-weight: 950; letter-spacing: .12em; }
+.shift-card h3 { margin: 1rem 0 .6rem; color: inherit; font: 500 2rem/1 Georgia, serif; }
+.shift-card p { color: inherit; opacity: .72; }
+.three-gates { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.three-gates article { padding: 1.5rem; border-top: 4px solid #2b786a; background: #fff; box-shadow: 0 10px 30px rgba(25,57,51,.08); }
+.three-gates article:nth-child(2) { border-color: #285e9b; }
+.three-gates article:nth-child(3) { border-color: #d09032; }
+.three-gates small { font-weight: 900; letter-spacing: .1em; }
+
+/* 07 — Thonburi: waterline and slow-city field notes. */
+.waterline-hero { min-height: 40rem; color: #fff; background: #1f5961; }
+.waterline-photo { position: absolute; inset: 0; }
+.waterline-photo img { width: 100%; height: 100%; object-fit: cover; }
+.waterline-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(19,63,68,.96), rgba(19,63,68,.62) 50%, rgba(19,63,68,.08)); }
+.waterline-copy { position: relative; z-index: 2; width: min(46rem, 92%); padding: clamp(2.5rem, 6vw, 5.5rem); }
+.waterline-hero .eyebrow { color: #f3d276; }
+.waterline-hero h1 { margin: .9rem 0 1rem; color: #fff; font-size: clamp(3.5rem, 7vw, 6.4rem); line-height: .84; }
+.waterline-hero p { color: rgba(255,255,255,.72); }
+.waterline-hero .thai-area-meta span { color: #fff; }
+.water-levels { position: relative; padding: 1.2rem 0; }
+.water-levels::before { content: ""; position: absolute; left: 2.1rem; top: 0; bottom: 0; width: 3px; background: #3e8e96; }
+.water-levels article { position: relative; margin-left: 4.5rem; padding: 1.4rem 1.6rem; border-bottom: 1px solid #c6dbd9; }
+.water-levels article::before { content: ""; position: absolute; left: -3rem; top: 1.8rem; width: .85rem; height: .85rem; border: 3px solid #fff; border-radius: 50%; background: #d8a643; box-shadow: 0 0 0 2px #d8a643; }
+.water-levels small { color: #9b3d30; font-weight: 900; letter-spacing: .1em; }
+.water-levels h3 { margin: .5rem 0 .35rem; font: 500 1.45rem/1.1 Georgia, serif; }
+.water-levels p { color: var(--muted); }
+.canal-code { display: grid; grid-template-columns: .9fr 1.1fr; overflow: hidden; border-radius: 1.3rem; color: #fff; background: #173f45; }
+.canal-code > div { padding: clamp(1.8rem, 4vw, 3.4rem); }
+.canal-code > div + div { background: #8b312c; }
+.canal-code h3 { color: #f5d680; font: 500 1.8rem/1.1 Georgia, serif; }
+.canal-code li { color: rgba(255,255,255,.75); }
+
+/* 08 — Chatuchak and Ari: weekend clock plus neighborhood comedown. */
+.weekend-clock-hero { min-height: 39rem; display: grid; grid-template-columns: 1.15fr .85fr; color: #2d231b; background: #f2d249; }
+.weekend-photo { position: relative; min-height: 39rem; overflow: hidden; clip-path: circle(68% at 40% 50%); }
+.weekend-photo img { width: 100%; height: 100%; object-fit: cover; }
+.weekend-photo::after { content: "SAT / SUN"; position: absolute; left: 2rem; bottom: 2rem; display: grid; place-items: center; width: 6rem; height: 6rem; border-radius: 50%; color: #fff; background: #9e302e; font-size: .76rem; font-weight: 950; letter-spacing: .1em; }
+.weekend-copy { padding: clamp(2.2rem, 5vw, 4.5rem); align-self: center; }
+.weekend-clock-hero .eyebrow { color: #8d2b29; }
+.weekend-clock-hero h1 { margin: .8rem 0 1rem; font-size: clamp(3rem, 4vw, 4rem); line-height: .88; overflow-wrap: normal; }
+.weekend-clock-hero p { color: #594b39; }
+.market-clock { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: 50%; overflow: hidden; border: 1px solid #dbc056; background: #fff9df; }
+.market-clock article { min-height: 15rem; padding: 2.2rem 1.4rem; text-align: center; border-right: 1px solid #dbc056; }
+.market-clock article:last-child { border-right: 0; }
+.market-clock time { color: #9d312d; font: 500 1.6rem/1 Georgia, serif; }
+.market-clock h3 { margin: 1rem 0 .4rem; }
+.market-clock p { color: var(--muted); font-size: .86rem; }
+.market-ari-split { display: grid; grid-template-columns: 1.2fr .8fr; gap: .8rem; }
+.market-ari-split article { min-height: 17rem; padding: 2rem; color: #fff; background: #9a302e; }
+.market-ari-split article:last-child { color: #193f3b; background: #dcece3; }
+.market-ari-split h3 { color: inherit; font: 500 1.8rem/1.1 Georgia, serif; }
+.market-ari-split p { color: inherit; opacity: .73; }
+
+/* Cluster-level supporting layouts. */
+.thai-day-plan { display: grid; grid-template-columns: repeat(4, 1fr); gap: .7rem; }
+.thai-day-plan article { min-height: 14rem; padding: 1.5rem; border-top: 4px solid var(--thai-gold); background: #fffaf0; box-shadow: 0 8px 28px rgba(81,48,29,.07); }
+.thai-day-plan article:nth-child(even) { border-color: var(--thai-jade); }
+.thai-day-plan time { color: var(--thai-red); font-weight: 900; letter-spacing: .1em; }
+.thai-day-plan h3 { margin: .75rem 0 .45rem; font: 500 1.4rem/1.1 Georgia, serif; }
+.thai-day-plan p { color: var(--muted); font-size: .9rem; }
+
+.thai-decision-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.thai-decision-pair article { padding: clamp(1.6rem, 4vw, 3rem); border-radius: 1.2rem; background: #e8f1eb; }
+.thai-decision-pair article:last-child { color: #fff; background: #78262a; }
+.thai-decision-pair h3 { color: inherit; font: 500 1.7rem/1.1 Georgia, serif; }
+.thai-decision-pair p, .thai-decision-pair li { color: inherit; opacity: .75; }
+
+@media (max-width: 1080px) {
+  .thai-country-hero, .bangkok-river-hero { grid-template-columns: 1fr 1fr; }
+  .thai-country-copy, .bangkok-river-copy { padding: 2.4rem; }
+  .thai-route-card { grid-column: span 6; }
+  .thai-route-card.wide { grid-column: span 6; }
+  .bangkok-atlas-card { grid-column: span 6; }
+  .bangkok-atlas-card.wide { grid-column: span 6; }
+  .thai-entry-fold { grid-template-columns: 1fr; }
+  .thai-entry-steps article:first-child { border-left: 0; }
+  .thai-move-board { grid-template-columns: 1fr 1fr; }
+  .thai-etiquette-fan { grid-template-columns: 1fr 1fr; }
+  .bangkok-system-strip, .bangkok-base-matrix { grid-template-columns: 1fr 1fr; }
+  .bangkok-system-strip article:nth-child(2) { border-right: 0; }
+  .bangkok-river-stops { grid-template-columns: 1fr 1fr; }
+  .court-sequence { grid-template-columns: 1fr 1fr; }
+  .court-sequence article:nth-child(2) { border-right: 0; }
+  .zine-walk { grid-template-columns: repeat(3, 1fr); }
+  .line-diagram, .corridor-line { grid-template-columns: 1fr 1fr; row-gap: 1rem; }
+  .line-diagram::before, .corridor-line::before { display: none; }
+  .line-diagram article::before, .corridor-line article::before { position: static; margin-bottom: 1rem; transform: none; }
+  .corridor-line article { padding-top: 1.25rem; }
+  .thai-day-plan { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  body[data-country="thailand"] .page-content { background: #fff; }
+  .thai-country-hero, .bangkok-river-hero, .threshold-hero, .zine-hero, .interchange-hero, .day-night-hero, .weekend-clock-hero { min-height: 0; grid-template-columns: 1fr; border-radius: 1.35rem; }
+  .thai-country-copy, .bangkok-river-copy, .threshold-copy, .zine-copy, .interchange-copy, .night-half, .weekend-copy { padding: 2rem 1.35rem; }
+  .thai-country-copy h1, .bangkok-river-copy h1 { font-size: clamp(3.6rem, 18vw, 5.5rem); }
+  .thai-country-gallery { min-height: 28rem; }
+  .thai-country-gallery::before { width: 100%; height: 18%; inset: 0 0 auto; background: linear-gradient(#6b1d20, transparent); }
+  .thai-country-portrait { width: 36%; height: 50%; }
+  .thai-country-seal { left: 1rem; bottom: 1rem; width: 6.8rem; height: 6.8rem; }
+  .bangkok-photo-stage { min-height: 28rem; }
+  .bangkok-river-hero::before { display: none; }
+  .bangkok-photo-stage::after { background: linear-gradient(0deg, rgba(20,15,35,.65), transparent 55%); }
+  .bangkok-photo-stage .river-tall { width: 35%; height: 55%; }
+  .thai-entry-steps, .thai-season-weave, .thai-move-board, .thai-etiquette-fan, .bangkok-system-strip, .bangkok-base-matrix, .court-sequence, .zine-walk, .line-diagram, .rain-proof-grid, .corridor-line, .three-gates, .market-clock, .thai-day-plan { grid-template-columns: 1fr; }
+  .thai-entry-steps article, .thai-season-weave article, .bangkok-system-strip article, .court-sequence article { border-right: 0; border-left: 0; border-bottom: 1px solid rgba(128,100,70,.2); }
+  .thai-route-tapestry, .bangkok-area-atlas { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .thai-route-card, .thai-route-card.wide, .thai-route-card.tall, .bangkok-atlas-card, .bangkok-atlas-card.wide, .bangkok-atlas-card.tall { grid-column: auto; grid-row: auto; min-height: 22rem; }
+  .bangkok-river-ledger { grid-template-columns: 3.5rem 1fr; }
+  .bangkok-river-stops { grid-template-columns: 1fr; }
+  .bangkok-river-stops article { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+  .threshold-photo { min-height: 27rem; padding: 0 1rem 1rem; }
+  .threshold-photo img { border-radius: 6rem 6rem .7rem .7rem; }
+  .dress-protocol, .sleep-volume, .talat-split, .night-contract, .two-shift-ledger, .canal-code, .market-ari-split, .thai-decision-pair { grid-template-columns: 1fr; }
+  .zine-hero { transform: none; }
+  .zine-photo { min-height: 26rem; order: 2; }
+  .neon-hero, .last-train-hero, .waterline-hero { min-height: 37rem; }
+  .neon-copy, .waterline-copy { padding: 2.2rem 1.35rem; }
+  .neon-hero h1, .last-train-hero h1, .waterline-hero h1 { font-size: clamp(3.2rem, 15vw, 5rem); }
+  .neon-menu-head { display: none; }
+  .neon-menu-row { grid-template-columns: 1fr; }
+  .neon-menu-row > div { border-right: 0; border-bottom: 1px solid #34273d; }
+  .talat-split img { min-height: 22rem; }
+  .interchange-photo, .day-half, .weekend-photo { min-height: 26rem; }
+  .interchange-photo { clip-path: none; }
+  .line-diagram { padding-top: 0; }
+  .line-diagram article::before { display: inline-grid; place-items: center; width: .8rem; height: .8rem; border: 0; box-shadow: none; }
+  .last-train-hero { padding: 2rem 1.35rem; }
+  .day-half { order: 2; }
+  .market-clock { border-radius: 1.2rem; }
+  .market-clock article { min-height: 0; border-right: 0; border-bottom: 1px solid #dbc056; }
+  .weekend-photo { clip-path: ellipse(80% 60% at 50% 45%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thai-route-card img, .bangkok-atlas-card img { transition: none; }
+}
