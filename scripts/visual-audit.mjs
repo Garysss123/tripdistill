@@ -7,7 +7,7 @@ const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Mi
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
 const port = Number(process.env.TRIPDISTILL_CDP_PORT || 9333);
 const runId = new Date().toISOString().replace(/[:.]/g, '-');
-const outputDir = path.join(os.tmpdir(), `tripdistill-visual-audit-${runId}`);
+const outputDir = path.join(os.tmpdir(), `tripdistill-visual-audit-${runId}-${process.pid}`);
 const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${process.pid}`);
 fs.mkdirSync(outputDir, { recursive: true });
 
@@ -71,6 +71,13 @@ const allRoutes = [
   ['yeongdo-taejongdae', '/south-korea/busan/yeongdo-taejongdae/'],
   ['haedong-yonggungsa-gijang', '/south-korea/busan/haedong-yonggungsa-gijang/'],
   ['dadaepo-amisan', '/south-korea/busan/dadaepo-amisan/'],
+  ['gyeongju', '/south-korea/gyeongju/'],
+  ['daereungwon-hwangnidan-gil', '/south-korea/gyeongju/daereungwon-hwangnidan-gil/'],
+  ['wolseong-donggung-wolji', '/south-korea/gyeongju/wolseong-donggung-wolji/'],
+  ['bulguksa-seokguram', '/south-korea/gyeongju/bulguksa-seokguram/'],
+  ['namsan', '/south-korea/gyeongju/namsan/'],
+  ['bomun-lake', '/south-korea/gyeongju/bomun-lake/'],
+  ['yangdong-village', '/south-korea/gyeongju/yangdong-village/'],
   ['jeju', '/south-korea/jeju/'],
   ['jeju-city-yongduam', '/south-korea/jeju/jeju-city-yongduam/'],
   ['aewol-hyeopjae', '/south-korea/jeju/aewol-hyeopjae/'],
@@ -204,7 +211,7 @@ function sanitizeErrors(errors) {
 }
 
 await waitForDebugger();
-const targetResponse = await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(baseUrl)}`, { method: 'PUT' });
+const targetResponse = await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent('about:blank')}`, { method: 'PUT' });
 if (!targetResponse.ok) throw new Error(`Could not create Chrome target: HTTP ${targetResponse.status}`);
 const target = await targetResponse.json();
 const client = new CdpClient(target.webSocketDebuggerUrl);
@@ -304,6 +311,7 @@ for (const [viewportName, width, height, mobile] of viewports) {
     });
     const screenshotPath = path.join(outputDir, `${slug}-${viewportName}.png`);
     fs.writeFileSync(screenshotPath, screenshot.data, 'base64');
+    await client.send('HeapProfiler.collectGarbage').catch(() => {});
 
     report.push({
       route,
@@ -316,7 +324,14 @@ for (const [viewportName, width, height, mobile] of viewports) {
   }
 }
 
-await client.send('Emulation.setDeviceMetricsOverride', {
+const interactionTargetResponse = await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent('about:blank')}`, { method: 'PUT' });
+if (!interactionTargetResponse.ok) throw new Error(`Could not create interaction target: HTTP ${interactionTargetResponse.status}`);
+const interactionTarget = await interactionTargetResponse.json();
+const interactionClient = new CdpClient(interactionTarget.webSocketDebuggerUrl);
+await interactionClient.open();
+await interactionClient.send('Page.enable');
+await interactionClient.send('Runtime.enable');
+await interactionClient.send('Emulation.setDeviceMetricsOverride', {
   width: 390,
   height: 844,
   deviceScaleFactor: 1,
@@ -324,8 +339,10 @@ await client.send('Emulation.setDeviceMetricsOverride', {
   screenWidth: 390,
   screenHeight: 844
 });
-await navigate(client, `${baseUrl}/south-korea/jeju/woljeongri-gimnyeong/`);
-const interactions = await evaluate(client, `(async () => {
+await delay(300);
+await navigate(interactionClient, `${baseUrl}/south-korea/gyeongju/`);
+await delay(400);
+const interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
   document.querySelector('[data-menu-toggle]')?.click();
   await wait(650);
@@ -335,6 +352,9 @@ const interactions = await evaluate(client, `(async () => {
   const menu = {
     opened: document.body.classList.contains('menu-open'),
     expanded: document.querySelector('[data-menu-toggle]')?.getAttribute('aria-expanded'),
+    viewportWidth: innerWidth,
+    mobileMedia: matchMedia('(max-width: 1080px)').matches,
+    selectorMatch: Boolean(document.querySelector('body.menu-open .sidebar')),
     visible: sidebarRect ? sidebarRect.right > 0 && sidebarRect.left < innerWidth : false,
     rect: sidebarRect ? { left: sidebarRect.left, right: sidebarRect.right, width: sidebarRect.width } : null,
     transform: sidebarStyle?.transform || '',
@@ -345,7 +365,7 @@ const interactions = await evaluate(client, `(async () => {
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Woljeongri';
+  input.value = 'Gyeongju';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -387,9 +407,9 @@ console.log(JSON.stringify({
   }))
 }, null, 2));
 
-await client.send('Browser.close').catch(() => {});
+await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-if (failures.length || !interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Woljeongri & Gimnyeong' || interactions.search.count < 1 || interactions.search.first !== 'Woljeongri and Gimnyeong Guide' || !interactions.search.withinViewport || !interactions.faq.opened) {
+if (failures.length || !interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Gyeongju city guide' || interactions.search.count < 1 || interactions.search.first !== 'Gyeongju Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened) {
   process.exitCode = 1;
 }

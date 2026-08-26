@@ -1,0 +1,350 @@
+/* Gyeongju cluster: archaeological field notes, not another generic city template. */
+body[data-city="gyeongju"] {
+  --gyeongju-ink: #17201d;
+  --gyeongju-forest: #273c33;
+  --gyeongju-moss: #667a58;
+  --gyeongju-gold: #c99a42;
+  --gyeongju-clay: #a85535;
+  --gyeongju-paper: #f6f0e4;
+  --gyeongju-night: #101928;
+  --gyeongju-blue: #255c86;
+}
+
+.gyeongju-hero {
+  min-height: 40rem;
+  margin: 1rem 0 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(28rem, 1.08fr);
+  overflow: hidden;
+  border-radius: 2rem;
+  color: #f8f3e8;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201, 154, 66, .2), transparent 34%),
+    linear-gradient(135deg, #1b2420 0%, #111b18 58%, #26382f 100%);
+  box-shadow: 0 30px 80px rgba(23, 32, 29, .22);
+}
+
+.gyeongju-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2.5rem, 5vw, 5.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gyeongju-hero-copy::before {
+  content: "57 BCE — 935 CE";
+  width: max-content;
+  margin-bottom: 1.25rem;
+  padding: .42rem .72rem;
+  border: 1px solid rgba(243, 214, 151, .45);
+  color: #f3d697;
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.gyeongju-hero .eyebrow { color: #f3d697; }
+.gyeongju-hero h1 {
+  max-width: 8ch;
+  margin: .75rem 0 1.2rem;
+  color: #fffaf0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 7vw, 6.8rem);
+  font-weight: 500;
+  line-height: .82;
+  letter-spacing: -.06em;
+}
+
+.gyeongju-hero h1 em {
+  display: block;
+  color: #d6a853;
+  font-size: .42em;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: .02em;
+}
+
+.gyeongju-hero-copy > p { max-width: 36rem; color: rgba(255, 250, 240, .76); font-size: 1.08rem; }
+.gyeongju-hero .page-hero-meta span { border-color: rgba(255,255,255,.18); color: #efe6d2; background: rgba(255,255,255,.06); }
+
+.gyeongju-hero-visual { position: relative; min-height: 40rem; isolation: isolate; }
+.gyeongju-hero-visual::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, #111b18 0%, transparent 28%), linear-gradient(0deg, rgba(11,18,16,.56), transparent 52%);
+}
+.gyeongju-hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+.gyeongju-site-tag {
+  position: absolute;
+  z-index: 2;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: min(20rem, calc(100% - 3rem));
+  padding: 1.15rem 1.3rem;
+  border: 1px solid rgba(255,255,255,.3);
+  color: rgba(255,255,255,.82);
+  background: rgba(17,27,24,.76);
+  backdrop-filter: blur(12px);
+}
+.gyeongju-site-tag strong { display: block; margin-bottom: .3rem; color: #f3d697; font-size: .74rem; letter-spacing: .12em; }
+
+.gyeongju-era-strip { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #d9d1c1; background: #fffdf8; }
+.gyeongju-era-strip article { position: relative; min-height: 10rem; padding: 1.4rem; border-right: 1px solid #d9d1c1; }
+.gyeongju-era-strip article:last-child { border-right: 0; }
+.gyeongju-era-strip article::after { content: ""; position: absolute; right: 1rem; bottom: 1rem; width: 2.4rem; height: 2.4rem; border: 1px solid rgba(168,85,53,.3); border-radius: 50%; }
+.gyeongju-era-strip small { color: var(--gyeongju-clay); font-weight: 850; letter-spacing: .1em; }
+.gyeongju-era-strip h3 { margin: .65rem 0 .45rem; font-family: Georgia, serif; font-size: 1.35rem; }
+.gyeongju-era-strip p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.gyeongju-lens-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+.gyeongju-lens-card {
+  position: relative;
+  min-height: 23rem;
+  grid-column: span 4;
+  overflow: hidden;
+  border-radius: 1.4rem;
+  isolation: isolate;
+  color: #fff;
+  background: #24362e;
+  box-shadow: 0 16px 45px rgba(26,42,34,.14);
+}
+.gyeongju-lens-card.wide { grid-column: span 8; }
+.gyeongju-lens-card.tall { min-height: 29rem; }
+.gyeongju-lens-card img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.gyeongju-lens-card::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(8,16,13,.05), rgba(8,16,13,.9)); }
+.gyeongju-lens-card:hover img { transform: scale(1.035); }
+.gyeongju-lens-copy { position: absolute; inset: auto 0 0; padding: 1.5rem; }
+.gyeongju-lens-copy small { color: #f3d697; font-size: .7rem; font-weight: 850; letter-spacing: .12em; }
+.gyeongju-lens-copy h3 { margin: .55rem 0 .35rem; color: #fff; font-family: Georgia, serif; font-size: clamp(1.55rem, 2.4vw, 2.25rem); }
+.gyeongju-lens-copy p { max-width: 36rem; margin: 0 0 .8rem; color: rgba(255,255,255,.78); }
+.gyeongju-lens-copy strong { color: #fff0c8; font-size: .84rem; }
+
+.gyeongju-arrival-board { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 1.5rem; background: var(--gyeongju-ink); color: #fff; }
+.gyeongju-arrival-board > div { padding: clamp(1.6rem, 4vw, 3.5rem); }
+.gyeongju-arrival-board > div + div { border-left: 1px solid rgba(255,255,255,.14); background: #20372d; }
+.gyeongju-arrival-board small { color: #e2b75e; font-weight: 850; letter-spacing: .13em; }
+.gyeongju-arrival-board h3 { margin: .7rem 0 .55rem; color: #fff; font-size: 1.65rem; }
+.gyeongju-arrival-board p { color: rgba(255,255,255,.72); }
+.gyeongju-arrival-board ul { margin: 1rem 0 0; padding-left: 1.1rem; color: rgba(255,255,255,.76); }
+.gyeongju-arrival-board li + li { margin-top: .45rem; }
+
+.gyeongju-base-grid { display: grid; grid-template-columns: 1.15fr .85fr .85fr; gap: 1rem; }
+.gyeongju-base-grid article { min-height: 14rem; padding: 1.6rem; border: 1px solid #ded5c4; background: #fffdf8; }
+.gyeongju-base-grid article:first-child { color: #fff; border: 0; background: var(--gyeongju-clay); }
+.gyeongju-base-grid small { font-size: .7rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.gyeongju-base-grid h3 { margin: .7rem 0 .5rem; font-family: Georgia, serif; font-size: 1.6rem; }
+.gyeongju-base-grid p { color: inherit; opacity: .78; }
+
+.gyeongju-three-day { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid #bdac8c; border-bottom: 1px solid #bdac8c; }
+.gyeongju-three-day article { padding: 2rem; border-right: 1px solid #bdac8c; background: #faf6ed; }
+.gyeongju-three-day article:last-child { border-right: 0; }
+.gyeongju-three-day time { color: var(--gyeongju-clay); font-weight: 900; letter-spacing: .12em; }
+.gyeongju-three-day h3 { margin: .8rem 0 .55rem; font-family: Georgia, serif; font-size: 1.55rem; }
+.gyeongju-three-day p { color: var(--muted); }
+.gyeongju-three-day span { display: block; margin-top: 1rem; color: var(--gyeongju-forest); font-size: .82rem; font-weight: 800; }
+
+/* Shared Gyeongju area header shell */
+.gyeongju-area-hero { position: relative; margin: 1rem 0 1.2rem; overflow: hidden; border-radius: 1.8rem; }
+.gyeongju-area-hero h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.045em; }
+.gyeongju-area-hero .eyebrow { font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.gyeongju-area-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.35rem; }
+.gyeongju-area-meta span { padding: .48rem .72rem; border: 1px solid currentColor; border-radius: 99px; font-size: .74rem; font-weight: 750; opacity: .82; }
+
+/* 01 — tumulus day arc */
+.tumulus-hero { min-height: 36rem; display: grid; grid-template-columns: .9fr 1.1fr; color: #f6f0e4; background: #183029; }
+.tumulus-hero-copy { min-width: 0; padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
+.tumulus-hero .eyebrow { color: #e8bb64; }
+.tumulus-hero h1 { margin: .8rem 0 1rem; color: #fff; font-size: clamp(3rem, 6vw, 5.8rem); line-height: .9; overflow-wrap: anywhere; }
+.tumulus-hero p { max-width: 34rem; color: rgba(255,255,255,.74); }
+.tumulus-hero-photo { position: relative; min-height: 36rem; }
+.tumulus-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.tumulus-hero-photo::after { content: "01"; position: absolute; right: 1rem; bottom: -1.2rem; color: rgba(255,255,255,.25); font: 800 9rem/1 Georgia, serif; }
+.day-arc { display: grid; grid-template-columns: repeat(5, 1fr); overflow: hidden; border-radius: 1.2rem; background: #25372f; }
+.day-arc article { min-height: 14rem; padding: 1.4rem; color: #fff; border-right: 1px solid rgba(255,255,255,.14); }
+.day-arc article:nth-child(1) { background: #e7dfca; color: #24332d; }
+.day-arc article:nth-child(4) { background: #b3653e; }
+.day-arc article:nth-child(5) { background: #19233a; }
+.day-arc time { font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
+.day-arc h3 { margin: .8rem 0 .45rem; color: inherit; font-size: 1.15rem; }
+.day-arc p { margin: 0; color: inherit; opacity: .75; font-size: .86rem; }
+.mound-index { display: grid; grid-template-columns: .8fr 1.2fr; gap: 1.2rem; align-items: stretch; }
+.mound-index img { width: 100%; height: 100%; min-height: 24rem; object-fit: cover; border-radius: 50% 50% 1rem 1rem; }
+.mound-index-copy { padding: clamp(1.5rem, 4vw, 3rem); background: #f4ecdc; }
+.mound-index-copy h2 { font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); }
+.mound-index-list { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.25rem; }
+.mound-index-list div { padding: 1rem; border-top: 2px solid var(--gyeongju-clay); background: rgba(255,255,255,.65); }
+.mound-index-list strong { display: block; margin-bottom: .3rem; }
+
+/* 02 — blue-hour ledger */
+.moon-hero { min-height: 39rem; color: #fff; background: var(--gyeongju-night); isolation: isolate; }
+.moon-hero > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.moon-hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(9,15,28,.95) 0%, rgba(9,15,28,.74) 46%, rgba(9,15,28,.08) 82%); }
+.moon-hero-copy { width: min(43rem, 90%); padding: clamp(2.3rem, 6vw, 5.5rem); }
+.moon-hero .eyebrow { color: #e9be68; }
+.moon-hero h1 { margin: 1rem 0; color: #fff; font-size: clamp(3.3rem, 7vw, 6.4rem); line-height: .86; }
+.moon-hero p { color: rgba(255,255,255,.75); font-size: 1.05rem; }
+.light-ledger { display: grid; grid-template-columns: 10rem 1fr; border: 1px solid #213a58; background: #0f1b2b; color: #fff; }
+.light-ledger-clock { padding: 2rem 1rem; display: grid; place-items: center; border-right: 1px solid rgba(255,255,255,.14); color: #efc46f; font: 600 2.2rem/1 Georgia, serif; text-align: center; }
+.light-ledger-clock small { display: block; margin-top: .6rem; color: rgba(255,255,255,.55); font: 800 .65rem/1.4 system-ui, sans-serif; letter-spacing: .12em; }
+.light-ledger-rows { display: grid; grid-template-columns: repeat(3, 1fr); }
+.light-ledger-rows article { padding: 1.7rem; border-right: 1px solid rgba(255,255,255,.12); }
+.light-ledger-rows article:last-child { border-right: 0; }
+.light-ledger-rows small { color: #efc46f; font-weight: 850; }
+.light-ledger-rows h3 { margin: .6rem 0 .4rem; color: #fff; }
+.light-ledger-rows p { margin: 0; color: rgba(255,255,255,.65); font-size: .88rem; }
+.night-sequence { position: relative; padding-left: 2rem; border-left: 2px solid #d09f49; }
+.night-sequence article { position: relative; padding: 0 0 2rem 1rem; }
+.night-sequence article::before { content: ""; position: absolute; left: -2.48rem; top: .2rem; width: .85rem; height: .85rem; border: 3px solid #fff; border-radius: 50%; background: #d09f49; box-shadow: 0 0 0 1px #d09f49; }
+.night-sequence h3 { margin: 0 0 .35rem; }
+.night-sequence p { color: var(--muted); }
+
+/* 03 — temple axis */
+.temple-hero { padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) 0; text-align: center; color: #2a2923; background: #f1ead9; }
+.temple-hero::before, .temple-hero::after { content: ""; position: absolute; top: 3rem; bottom: 3rem; width: 1px; background: rgba(107,82,43,.25); }
+.temple-hero::before { left: 10%; }
+.temple-hero::after { right: 10%; }
+.temple-hero .eyebrow { color: #8b532f; }
+.temple-hero h1 { margin: .8rem auto 1rem; max-width: 12ch; font-size: clamp(3.1rem, 6vw, 5.8rem); line-height: .92; }
+.temple-hero > p { max-width: 45rem; margin: 0 auto; color: #625c50; }
+.temple-hero .gyeongju-area-meta { justify-content: center; }
+.temple-pair { position: relative; margin-top: 2.5rem; display: grid; grid-template-columns: 1.2fr .8fr; gap: .7rem; }
+.temple-pair img { width: 100%; height: 26rem; object-fit: cover; }
+.temple-pair img:last-child { filter: saturate(.8); }
+.temple-axis { display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: temple; }
+.temple-axis article { position: relative; padding: 1.7rem; border-top: 3px solid #7a4c2b; border-right: 1px solid #d8cbb6; background: #fffdf8; }
+.temple-axis article:last-child { border-right: 0; }
+.temple-axis article::before { counter-increment: temple; content: "0" counter(temple); display: block; margin-bottom: 1.4rem; color: #b88a4a; font: 600 2.5rem/1 Georgia, serif; }
+.temple-axis h3 { margin: 0 0 .45rem; font-size: 1.15rem; }
+.temple-axis p { margin: 0; color: var(--muted); font-size: .88rem; }
+.quiet-protocol { padding: clamp(2rem, 5vw, 4rem); color: #fff; background: #293a31; }
+.quiet-protocol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.5rem; }
+.quiet-protocol-grid article { padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.35); }
+.quiet-protocol-grid h3 { color: #f2d38e; }
+.quiet-protocol-grid p { color: rgba(255,255,255,.68); }
+
+/* 04 — mountain field notebook */
+.namsan-hero { min-height: 38rem; display: grid; grid-template-columns: 1.15fr .85fr; color: #f9f6ed; background: #2c3b2c; }
+.namsan-hero::before { content: ""; position: absolute; inset: 0; opacity: .16; background: repeating-radial-gradient(ellipse at 80% 40%, transparent 0 28px, #d8cb9f 29px 30px); }
+.namsan-hero-photo { position: relative; min-height: 38rem; clip-path: polygon(0 0, 94% 0, 100% 100%, 0 100%); }
+.namsan-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.namsan-hero-copy { position: relative; z-index: 1; padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
+.namsan-hero .eyebrow { color: #e2cd85; }
+.namsan-hero h1 { margin: .8rem 0 1rem; color: #fff; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: .86; }
+.namsan-hero p { color: rgba(255,255,255,.72); }
+.trail-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.trail-card { position: relative; min-height: 22rem; padding: 2rem; overflow: hidden; border: 1px solid #b9aa88; background: #f5f0e3; }
+.trail-card:last-child { color: #fff; border: 0; background: #354a38; }
+.trail-card::after { content: attr(data-mark); position: absolute; right: -.2rem; bottom: -1.5rem; color: rgba(149,112,55,.13); font: 700 8rem/1 Georgia, serif; }
+.trail-card:last-child::after { color: rgba(255,255,255,.08); }
+.trail-card small { font-weight: 900; letter-spacing: .12em; }
+.trail-card h3 { margin: .8rem 0; color: inherit; font: 500 2.3rem/1 Georgia, serif; }
+.trail-card p { color: inherit; opacity: .72; }
+.field-note-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.field-note-grid article { padding: 1.35rem; border-left: 4px solid var(--gyeongju-gold); background: #fff; box-shadow: 0 10px 30px rgba(48,62,43,.08); transform: rotate(-.5deg); }
+.field-note-grid article:nth-child(2) { transform: rotate(.7deg); border-color: var(--gyeongju-clay); }
+.field-note-grid article:nth-child(3) { transform: rotate(-.2deg); border-color: var(--gyeongju-moss); }
+.field-note-grid h3 { margin: 0 0 .45rem; }
+.field-note-grid p { margin: 0; color: var(--muted); }
+
+/* 05 — lakeside breathing room */
+.bomun-hero { min-height: 37rem; display: grid; grid-template-columns: 1fr 1fr; padding: 1rem; color: #173146; background: #e7f0ef; }
+.bomun-hero-copy { padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
+.bomun-hero .eyebrow { color: #2b6f72; }
+.bomun-hero h1 { margin: .8rem 0 1rem; font-size: clamp(3.4rem, 7vw, 6.2rem); line-height: .88; }
+.bomun-hero p { color: #4c6572; }
+.bomun-hero-photo { position: relative; overflow: hidden; border-radius: 48% 1.2rem 1.2rem 48%; }
+.bomun-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.lake-choice { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
+.lake-choice article { padding: 1.5rem; border-radius: 1.2rem; background: #e8f0ee; }
+.lake-choice article:nth-child(2) { background: #dbe8ef; }
+.lake-choice article:nth-child(3) { background: #f3e9d8; }
+.lake-choice article:nth-child(4) { background: #e6e2ef; }
+.lake-choice small { color: #2b6f72; font-weight: 900; letter-spacing: .1em; }
+.lake-choice h3 { margin: .65rem 0 .4rem; }
+.lake-choice p { margin: 0; color: #536873; font-size: .88rem; }
+.lake-loop { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; padding: 2.2rem; border: 1px solid #9db9b6; border-radius: 50% / 18%; background: #f8fbfa; }
+.lake-loop::before { content: ""; position: absolute; inset: 1rem; border: 1px dashed #6a9ca0; border-radius: 50% / 18%; pointer-events: none; }
+.lake-loop article { position: relative; z-index: 1; padding: 1.2rem; border-radius: 1rem; background: #fff; box-shadow: 0 8px 25px rgba(51,88,91,.08); }
+.lake-loop h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+.lake-loop p { margin: 0; color: var(--muted); font-size: .84rem; }
+
+/* 06 — living village / paper and timber */
+.yangdong-hero { min-height: 38rem; padding: clamp(1.2rem, 3vw, 2rem); display: grid; grid-template-columns: 1.08fr .92fr; gap: 1rem; color: #352b20; background: #efe3cb; }
+.yangdong-hero-photo { position: relative; overflow: hidden; border: .7rem solid #f8f2e8; box-shadow: 0 20px 40px rgba(68,49,31,.15); transform: rotate(-1deg); }
+.yangdong-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.yangdong-hero-copy { padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
+.yangdong-hero .eyebrow { color: #8b5e35; }
+.yangdong-hero h1 { margin: .8rem 0 1rem; font-size: clamp(3.1rem, 6vw, 5.6rem); line-height: .9; }
+.yangdong-hero p { color: #685844; }
+.threshold-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #b8a483; }
+.threshold-grid article { min-height: 15rem; padding: 1.6rem; border-right: 1px solid #b8a483; background: #fffaf0; }
+.threshold-grid article:last-child { border-right: 0; }
+.threshold-grid article::before { content: attr(data-symbol); display: block; margin-bottom: 1rem; color: #9c6b3a; font: 600 2.4rem/1 Georgia, serif; }
+.threshold-grid h3 { margin: 0 0 .45rem; }
+.threshold-grid p { color: var(--muted); }
+.resident-promise { display: grid; grid-template-columns: .75fr 1.25fr; color: #fff; background: #3f4b37; }
+.resident-promise > div { padding: clamp(2rem, 5vw, 4rem); }
+.resident-promise-mark { display: grid; place-items: center; border-right: 1px solid rgba(255,255,255,.18); text-align: center; }
+.resident-promise-mark strong { display: block; color: #e1c180; font: 500 clamp(3rem, 7vw, 6rem)/.9 Georgia, serif; }
+.resident-promise-mark span { margin-top: .8rem; font-size: .7rem; font-weight: 850; letter-spacing: .14em; }
+.resident-promise h2 { color: #fff; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.4rem); }
+.resident-promise p { color: rgba(255,255,255,.7); }
+
+@media (max-width: 1080px) {
+  .gyeongju-hero { grid-template-columns: 1fr; }
+  .gyeongju-hero-visual { min-height: 30rem; }
+  .gyeongju-lens-card, .gyeongju-lens-card.wide { grid-column: span 6; }
+  .gyeongju-era-strip { grid-template-columns: 1fr 1fr; }
+  .gyeongju-era-strip article:nth-child(2) { border-right: 0; }
+  .gyeongju-era-strip article:nth-child(-n+2) { border-bottom: 1px solid #d9d1c1; }
+  .tumulus-hero, .namsan-hero, .bomun-hero, .yangdong-hero { grid-template-columns: 1fr; }
+  .tumulus-hero-photo, .namsan-hero-photo, .bomun-hero-photo, .yangdong-hero-photo { min-height: 27rem; }
+  .namsan-hero-photo { clip-path: none; }
+  .bomun-hero-photo { border-radius: 1.2rem 1.2rem 48% 48%; }
+  .temple-pair { grid-template-columns: 1fr 1fr; }
+  .day-arc { grid-template-columns: repeat(3, 1fr); }
+  .day-arc article:nth-child(3) { border-right: 0; }
+  .day-arc article:nth-child(n+4) { border-top: 1px solid rgba(255,255,255,.14); }
+  .lake-choice, .lake-loop { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .gyeongju-hero, .gyeongju-area-hero { margin-top: .5rem; border-radius: 1.25rem; }
+  .gyeongju-hero-copy { padding: 2rem 1.35rem; }
+  .gyeongju-hero h1 { font-size: clamp(3.2rem, 18vw, 5rem); }
+  .gyeongju-hero-visual { min-height: 23rem; }
+  .gyeongju-era-strip, .gyeongju-arrival-board, .gyeongju-base-grid, .gyeongju-three-day,
+  .mound-index, .trail-compare, .resident-promise { grid-template-columns: 1fr; }
+  .gyeongju-era-strip article { border-right: 0; border-bottom: 1px solid #d9d1c1; }
+  .gyeongju-era-strip article:last-child { border-bottom: 0; }
+  .gyeongju-lens-grid { grid-template-columns: 1fr; }
+  .gyeongju-lens-card, .gyeongju-lens-card.wide { grid-column: auto; min-height: 23rem; }
+  .gyeongju-arrival-board > div + div { border-top: 1px solid rgba(255,255,255,.14); border-left: 0; }
+  .gyeongju-three-day article { border-right: 0; border-bottom: 1px solid #bdac8c; }
+  .gyeongju-three-day article:last-child { border-bottom: 0; }
+  .tumulus-hero-copy, .moon-hero-copy, .temple-hero, .namsan-hero-copy, .bomun-hero-copy, .yangdong-hero-copy { padding: 2rem 1.35rem; }
+  .tumulus-hero h1, .moon-hero h1, .temple-hero h1, .namsan-hero h1, .bomun-hero h1, .yangdong-hero h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+  .tumulus-hero h1 { font-size: clamp(2.35rem, 11.8vw, 3.1rem); line-height: .94; }
+  .tumulus-hero-photo, .namsan-hero-photo, .bomun-hero-photo, .yangdong-hero-photo { min-height: 22rem; }
+  .day-arc, .light-ledger-rows, .temple-axis, .quiet-protocol-grid, .field-note-grid,
+  .lake-choice, .lake-loop, .threshold-grid { grid-template-columns: 1fr; }
+  .day-arc article, .light-ledger-rows article, .temple-axis article, .threshold-grid article { border-right: 0; border-bottom: 1px solid rgba(120,110,90,.25); }
+  .day-arc article:last-child, .light-ledger-rows article:last-child, .temple-axis article:last-child, .threshold-grid article:last-child { border-bottom: 0; }
+  .mound-index img { min-height: 20rem; border-radius: 50% 50% .8rem .8rem; }
+  .mound-index-list { grid-template-columns: 1fr; }
+  .light-ledger { grid-template-columns: 1fr; }
+  .light-ledger-clock { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .temple-pair { grid-template-columns: 1fr; }
+  .temple-pair img { height: 20rem; }
+  .lake-loop { border-radius: 1.5rem; padding: 1rem; }
+  .lake-loop::before { border-radius: 1rem; }
+  .resident-promise-mark { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gyeongju-lens-card img { transition: none; }
+}

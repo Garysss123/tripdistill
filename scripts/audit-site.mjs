@@ -65,12 +65,17 @@ for (const absoluteUrl of publishedUrls) {
     }
   }
 
-  if (!html.includes('/css/site.css?v=20260826-9')) problems.push(`${relativePath}: stale or missing stylesheet version`);
+  const usesGyeongjuRelease = url.pathname === '/' || url.pathname === '/south-korea/' || url.pathname.startsWith('/south-korea/gyeongju/');
+  const expectedSiteCss = usesGyeongjuRelease ? '/css/site.css?v=20260826-10' : '/css/site.css?v=20260826-9';
+  if (!html.includes(expectedSiteCss)) problems.push(`${relativePath}: stale or missing stylesheet version`);
   if (!html.includes('/js/main.js?v=20260826-9')) problems.push(`${relativePath}: stale or missing main script version`);
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${relativePath}: missing AdSense publisher declaration`);
   if (!html.includes('/js/adsense.js?v=20260826-9')) problems.push(`${relativePath}: stale or missing AdSense loader`);
   if (url.pathname.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20260826-9')) {
     problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
+  }
+  if (url.pathname.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20260826-1')) {
+    problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
   }
 }
 

@@ -552,6 +552,78 @@
     "keywords": ["dadaepo", "amisan", "sunset", "nakdong estuary", "migratory birds", "fountain"]
   },
   {
+    "title": "Gyeongju Travel Guide",
+    "url": "/south-korea/gyeongju/",
+    "parent": "South Korea · Former Silla Capital",
+    "type": "City",
+    "summary": "Six field guides, KTX and bus arrival choices, hotel bases, heritage etiquette and a three-day route.",
+    "keywords": ["gyeongju", "kyongju", "silla", "historic capital", "where to stay", "south korea"]
+  },
+  {
+    "title": "Gyeongju Three-Day Itinerary",
+    "url": "/south-korea/gyeongju/#itinerary",
+    "parent": "Gyeongju · Route Builder",
+    "type": "Itinerary",
+    "summary": "Separate the central royal landscape, Bulguksa and Seokguram, then choose one outer-area day.",
+    "keywords": ["gyeongju itinerary", "3 days gyeongju", "three days", "silla route", "schedule"]
+  },
+  {
+    "title": "Getting to Gyeongju",
+    "url": "/south-korea/gyeongju/#arrival",
+    "parent": "Gyeongju · Transport",
+    "type": "Transit",
+    "summary": "Compare Gyeongju KTX Station with central express and intercity bus terminals by the complete journey.",
+    "keywords": ["gyeongju ktx", "gyeongju station", "gyeongju bus", "busan to gyeongju", "seoul to gyeongju"]
+  },
+  {
+    "title": "Daereungwon and Hwangnidan-gil Guide",
+    "url": "/south-korea/gyeongju/daereungwon-hwangnidan-gil/",
+    "parent": "Gyeongju · Royal Center",
+    "type": "Area",
+    "summary": "A light-aware central walk through royal tumuli, Cheomseongdae, cafés, meals and one evening finish.",
+    "keywords": ["daereungwon", "hwangnidan gil", "cheomseongdae", "gyeongju tombs", "tumuli park"]
+  },
+  {
+    "title": "Wolseong and Donggung and Wolji Guide",
+    "url": "/south-korea/gyeongju/wolseong-donggung-wolji/",
+    "parent": "Gyeongju · Royal Landscape",
+    "type": "Area",
+    "summary": "Build museum and palace context before timing Donggung and Wolji for a deliberate blue-hour finish.",
+    "keywords": ["wolseong", "donggung", "wolji", "anapji", "gyeongju museum", "night view"]
+  },
+  {
+    "title": "Bulguksa and Seokguram Guide",
+    "url": "/south-korea/gyeongju/bulguksa-seokguram/",
+    "parent": "Gyeongju · Tohamsan",
+    "type": "Area",
+    "summary": "Plan Bulguksa Temple and Seokguram Grotto as a mountain axis with transport, weather and worship rules.",
+    "keywords": ["bulguksa", "seokguram", "tohamsan", "gyeongju temple", "buddhist grotto"]
+  },
+  {
+    "title": "Gyeongju Namsan Guide",
+    "url": "/south-korea/gyeongju/namsan/",
+    "parent": "Gyeongju · Archaeological Mountain",
+    "type": "Area",
+    "summary": "Choose a marked Namsan route with trailhead transport, weather, equipment and heritage-safe conduct.",
+    "keywords": ["gyeongju namsan", "samneung", "chilbulam", "gyeongju hiking", "buddhist carvings"]
+  },
+  {
+    "title": "Bomun Lake Guide",
+    "url": "/south-korea/gyeongju/bomun-lake/",
+    "parent": "Gyeongju · Resort District",
+    "type": "Area",
+    "summary": "Decide whether Bomun fits as a hotel base, family day, event stop or deliberate recovery chapter.",
+    "keywords": ["bomun lake", "bomun resort", "gyeongju hotels", "gyeongju family", "bomun transport"]
+  },
+  {
+    "title": "Yangdong Village Guide",
+    "url": "/south-korea/gyeongju/yangdong-village/",
+    "parent": "Gyeongju · Living Heritage",
+    "type": "Area",
+    "summary": "Visit an inhabited UNESCO village with realistic transport, hillside walking and resident-first etiquette.",
+    "keywords": ["yangdong village", "gyeongju village", "unesco korea", "traditional houses", "living heritage"]
+  },
+  {
     "title": "Jeju Island Guide",
     "url": "/south-korea/jeju/",
     "parent": "South Korea · Jeju",
