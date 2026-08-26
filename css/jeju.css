@@ -1,0 +1,147 @@
+/* Jeju-only responsive composition. Loaded after site.css on the island cluster. */
+.jeju-atlas-card.has-photo { isolation:isolate; color:#fff; text-shadow:0 1px 16px rgba(0,0,0,.42); }
+.jeju-atlas-card.has-photo > img { position:absolute; z-index:0; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .55s ease,filter .55s ease; }
+.jeju-atlas-card.has-photo::before { z-index:1; opacity:1; background:linear-gradient(180deg,rgba(8,26,28,.03),rgba(8,26,28,.17) 38%,rgba(9,34,35,.93)); }
+.jeju-atlas-card.has-photo > :not(img) { z-index:2; }
+.jeju-atlas-card.gateway.has-photo::before { background:linear-gradient(180deg,rgba(14,54,57,.02),rgba(14,54,57,.18) 35%,rgba(17,54,55,.93)); }
+.jeju-atlas-card.west.has-photo::before { background:linear-gradient(180deg,rgba(8,59,81,.02),rgba(8,59,81,.14) 36%,rgba(8,51,70,.93)); }
+.jeju-atlas-card.summit.has-photo::before { background:linear-gradient(180deg,rgba(21,47,35,.05),rgba(21,47,35,.22) 35%,rgba(22,48,36,.95)); }
+.jeju-atlas-card.falls.has-photo::before { background:linear-gradient(180deg,rgba(75,24,21,.03),rgba(75,24,21,.19) 35%,rgba(73,27,25,.94)); }
+.jeju-atlas-card.geology.has-photo::before { background:linear-gradient(180deg,rgba(70,47,29,.02),rgba(70,47,29,.15) 35%,rgba(60,43,30,.93)); }
+.jeju-atlas-card.ferry.has-photo::before { background:linear-gradient(180deg,rgba(44,62,32,.02),rgba(44,62,32,.16) 36%,rgba(41,58,33,.93)); }
+.jeju-atlas-card.sunrise.has-photo::before { background:linear-gradient(180deg,rgba(51,31,74,.02),rgba(51,31,74,.17) 35%,rgba(46,29,67,.94)); }
+.jeju-atlas-card.lava.has-photo::before { background:linear-gradient(180deg,rgba(17,64,65,.02),rgba(17,64,65,.14) 35%,rgba(17,57,58,.93)); }
+.jeju-atlas-card.has-photo h3,.jeju-atlas-card.has-photo p { color:#fff; }
+.jeju-atlas-card.has-photo > span { color:#e5fbf7; opacity:.88; }
+.jeju-atlas-card.has-photo strong { color:#ffd19a; }
+.jeju-atlas-card.has-photo:hover > img { transform:scale(1.045); filter:saturate(1.08); }
+
+@media (max-width: 980px) {
+  .jeju-island-hero { grid-template-columns:1fr; }
+  .jeju-island-visual { min-height:31rem; }
+  .jeju-atlas-card,.jeju-atlas-card.wide { grid-column:span 6; }
+  .jeju-base-wheel { grid-template-columns:1fr 1fr; border-radius:4rem .8rem .8rem .8rem; }
+  .jeju-base-wheel article:nth-child(2),.jeju-base-wheel article:nth-child(4) { transform:none; }
+  .jeju-mobility-core { width:45%; }
+  .jeju-route-deck article { grid-column:span 6; }
+  .jeju-route-deck article:nth-child(2),.jeju-route-deck article:nth-child(4) { transform:none; }
+  .jeju-route-deck article.weather-card { grid-column:span 12; }
+
+  .jeju-area-hero { grid-template-columns:1fr; }
+  .jeju-area-media,.westcoast-image,.dual-clock-visual { min-height:29rem; }
+  .jeju-hero-arrival,.jeju-hero-waterfall,.jeju-hero-geology,.jeju-hero-ferry,.jeju-hero-material { grid-template-columns:4.5rem 1fr; }
+  .jeju-hero-arrival .jeju-area-media,.jeju-hero-waterfall .jeju-area-media,.jeju-hero-geology .jeju-area-media,.jeju-hero-ferry .jeju-area-media,.jeju-hero-material .jeju-area-media { grid-column:1 / -1; min-height:28rem; }
+  .jeju-hero-westcoast { grid-template-columns:1fr; }
+  .westcoast-image { margin:0 .8rem .8rem; }
+  .jeju-hero-hallasan .jeju-area-media { min-height:28rem; }
+  .jeju-hero-two-clocks { grid-template-columns:1fr; }
+
+  .coast-stop-budget,.summit-gate,.waterfall-catchment,.geo-core-samples,.geology-day,.material-library { grid-template-columns:1fr 1fr; }
+  .coast-stop-budget article:nth-child(2),.waterfall-catchment article:nth-child(2),.waterfall-catchment article:nth-child(4),.geo-core-samples article:nth-child(2) { transform:none; }
+  .wind-cells,.beach-op-grid,.west-route-strip,.city-loop-strip { grid-template-columns:1fr 1fr; }
+  .arrival-photo-fold,.aewol-line,.turnaround-rule,.stairs-ledger,.market-brief,.rain-edition,.resort-landscape-split,.geo-conduct,.gapado-wind-gate,.island-resident-code,.port-day-card,.ferry-fallback-panel,.village-street-section { grid-template-columns:1fr; border-radius:1rem; }
+  .aewol-line > div:last-child { grid-template-columns:repeat(3,1fr); }
+  .rental-check-card,.halla-fallback,.udo-resident-code,.village-code { grid-template-columns:1fr; border-radius:1rem; }
+  .turnaround-dial,.port-day-mark,.udo-code-seal { min-height:14rem; border-radius:0; }
+  .seogwipo-memory { grid-template-columns:9rem 1fr; }
+  .memory-mark { min-height:18rem; }
+  .trail-rows article { grid-template-columns:8rem 1fr; }
+  .trail-rows article p,.trail-rows strong { grid-column:2; }
+  .mountain-layers { grid-template-columns:1fr 1fr; }
+  .mountain-layers article,.mountain-layers .forest,.mountain-layers .alpine,.mountain-layers .descent { min-height:15rem; }
+  .halla-fallback > div:last-child,.rain-choices,.gapado-wind-gate > div:last-child,.ferry-fallback-panel > div:last-child { grid-template-columns:repeat(3,1fr); }
+  .geo-report-row { grid-template-columns:8rem 1fr; }
+  .geo-report-row p,.geo-report-row i { grid-column:2; }
+  .gapado-loop { min-height:40rem; border-radius:3rem; }
+  .gapado-loop article { width:13rem; }
+  .loop-port { left:8%; }.loop-wall { right:5%; }.loop-field { left:40%; }.loop-village { left:5%; }
+  .port-options { grid-template-columns:repeat(3,1fr); }
+  .return-ticket { grid-template-columns:7rem 1fr; }
+
+  .two-clock-board { grid-template-columns:1fr 4.5rem 1fr; border-radius:3rem .5rem 3rem .5rem; }
+  .seongsan-gate { grid-template-columns:5rem 1fr; }
+  .gate-tests { grid-column:1 / -1; }
+  .udo-boarding-grid { grid-template-columns:1fr 1fr; }
+  .east-day-timeline { display:grid; grid-template-columns:1fr 1fr; border-radius:3rem .5rem .5rem .5rem; }
+  .east-day-timeline article:last-child { grid-column:1 / -1; min-height:11rem; }
+  .udo-resident-code ul,.village-code ul { grid-template-columns:1fr 1fr; }
+  .material-library article { min-height:17rem; }
+  .water-condition-matrix article,.matrix-head { grid-template-columns:7rem 1fr 1fr; }
+  .coast-direction-strip ol { grid-template-columns:1fr 1fr; }
+  .coast-direction-strip li:last-child { grid-column:1 / -1; min-height:12rem; }
+  .lava-status-card { grid-template-columns:4.5rem 1fr; }
+  .status-checks { grid-column:1 / -1; }
+  .notation-line { display:grid; grid-template-columns:1fr 2rem 1fr; }
+  .notation-line i:nth-of-type(2) { display:none; }
+  .notation-line article:nth-of-type(3) { grid-column:1; }
+}
+
+@media (max-width: 640px) {
+  .jeju-island-hero,.jeju-area-hero { min-height:0; display:block; border-radius:1.25rem; clip-path:none; }
+  .jeju-island-copy,.jeju-area-copy,.westcoast-copy { padding:1.45rem; }
+  .jeju-island-copy h1,.jeju-area-copy h1,.jeju-hero-geology .jeju-area-copy h1,.jeju-hero-material .jeju-area-copy h1 { font-size:clamp(2.55rem,13vw,4rem); }
+  .jeju-island-visual,.jeju-area-media,.westcoast-image,.dual-clock-visual,.jeju-hero-arrival .jeju-area-media,.jeju-hero-waterfall .jeju-area-media,.jeju-hero-geology .jeju-area-media,.jeju-hero-ferry .jeju-area-media,.jeju-hero-material .jeju-area-media { min-height:23rem; margin:.65rem; border-radius:1rem; clip-path:none; }
+  .jeju-island-visual > img { inset:0; width:100%; height:100%; border-radius:1rem; }
+  .jeju-orbit { inset:5%; }.jeju-map-note { right:.75rem; bottom:.75rem; }
+  .arrival-code,.waterfall-edition,.geo-index,.ferry-stub,.material-swatches { display:none; }
+  .arrival-sticker,.waterfall-caption,.geo-caption,.manifest-stamp,.material-hero-label { right:.7rem; bottom:.7rem; max-width:calc(100% - 1.4rem); }
+  .westcoast-image { margin:.65rem; }
+  .dual-clock-visual { display:grid; grid-template-columns:1fr 1fr; gap:.45rem; padding:.45rem; }
+  .sunrise-face,.ferry-face { transform:none; border-radius:4rem .5rem .5rem .5rem; }
+  .dual-clock-visual figcaption { left:.7rem; right:.7rem; bottom:.7rem; }
+  .clock-hinge { width:3rem; height:3rem; border-width:4px; }
+
+  .jeju-atlas-grid { grid-template-columns:1fr; }
+  .jeju-atlas-card,.jeju-atlas-card.wide { min-height:14rem; grid-column:auto; border-radius:1rem; clip-path:none; }
+  .jeju-base-wheel { grid-template-columns:1fr; border-radius:3rem .7rem .7rem .7rem; }
+  .jeju-base-wheel article { min-height:12rem; border-right:0; border-bottom:1px solid #c4d5d0; }
+  .jeju-base-wheel h3 { margin:2rem 0 .4rem; }
+  .jeju-mobility-rings { min-height:44rem; border-radius:3rem; }
+  .jeju-mobility-core { width:72%; }
+  .ring-air { inset:4% 5% 60% 44%; }.ring-bus { inset:12% 46% 55% 5%; }.ring-car { inset:57% 43% 7% 5%; }.ring-ferry { inset:62% 5% 5% 47%; }
+  .jeju-route-deck { grid-template-columns:1fr; }
+  .jeju-route-deck article,.jeju-route-deck article.weather-card { min-height:12rem; grid-column:auto; display:flex; }
+  .jeju-route-deck article h3 { margin:2rem 0 .4rem; }
+  .jeju-route-deck .weather-card p,.jeju-route-deck .weather-card span { grid-column:auto; }
+  .jeju-weather-compass { min-height:38rem; border-radius:3rem; }
+  .jeju-weather-compass article { padding:1.1rem; }.compass-center { width:9rem; height:9rem; border-width:5px; }
+
+  .arrival-board-head { display:none; }
+  .arrival-board article,.trail-rows article,.geo-report-row,.water-condition-matrix article { grid-template-columns:1fr; gap:.35rem; }
+  .trail-rows article p,.trail-rows strong,.geo-report-row p,.geo-report-row i { grid-column:1; }
+  .first-night-tags,.arrival-fallbacks { display:grid; grid-template-columns:1fr; }
+  .first-night-tags article,.arrival-fallbacks article { min-height:10rem; }
+  .arrival-photo-fold img { min-height:22rem; }
+  .city-loop-strip,.wind-cells,.beach-op-grid,.west-route-strip,.coast-stop-budget,.summit-gate,.waterfall-catchment,.geo-core-samples,.geology-day,.material-library { grid-template-columns:1fr; }
+  .coast-stop-budget article,.summit-gate article,.waterfall-catchment article,.geo-core-samples article,.geology-day article { min-height:11rem; clip-path:none; }
+  .coast-stop-budget h3,.summit-gate h3,.waterfall-catchment h3,.geo-core-samples h3,.geology-day h3 { margin:1.8rem 0 .4rem; }
+  .aewol-line > div:last-child,.rental-check-card > div:last-child,.market-brief > div:last-child,.geo-conduct > div:last-child,.island-resident-code > div:last-child { grid-template-columns:1fr; }
+  .wind-ribbon { border-radius:3rem .7rem .7rem .7rem; }.wind-ribbon > div:first-child { padding:1.5rem; }
+  .beach-op-grid article,.city-loop-strip article,.west-route-strip article { min-height:9rem; }
+  .carfree-west { grid-template-columns:1fr; border-radius:3rem .7rem .7rem .7rem; }.carfree-west > div:first-child { min-height:11rem; border-radius:3rem; }
+  .mountain-layers { grid-template-columns:1fr; }.mountain-layers article,.mountain-layers .forest,.mountain-layers .alpine,.mountain-layers .descent { min-height:11rem; clip-path:none; }
+  .turnaround-dial,.port-day-mark,.udo-code-seal,.memory-mark { min-height:11rem; }
+  .trail-transfer-grid,.halla-fallback > div:last-child,.rain-choices,.gapado-wind-gate > div:last-child,.ferry-fallback-panel > div:last-child { grid-template-columns:1fr; }
+  .trail-transfer-grid article { min-height:10rem; transform:none !important; }
+  .seogwipo-memory { grid-template-columns:1fr; }.memory-mark { font-size:3rem; }
+  .seogwipo-daypress article { grid-template-columns:5rem 1fr; }
+  .resort-side,.landscape-side { min-height:18rem; }
+  .port-options { grid-template-columns:1fr; }
+  .gapado-loop { min-height:0; display:grid; gap:.6rem; padding:1rem; border-radius:2rem; }
+  .gapado-loop::before,.loop-center { display:none; }
+  .gapado-loop article { position:static; width:auto; min-height:8rem; }
+  .return-ticket { grid-template-columns:4rem 1fr; }.return-ticket li { grid-template-columns:4.5rem 1fr; }
+
+  .two-clock-board { grid-template-columns:1fr; border-radius:3rem .5rem .5rem .5rem; }.two-clock-board article { min-height:18rem; }.clock-operator { min-height:4rem; flex-direction:row; gap:1rem; }.clock-operator span { writing-mode:horizontal-tb; }.clock-operator b { margin:0; }
+  .seongsan-gate { grid-template-columns:1fr; clip-path:none; }.gate-number { min-height:5rem; writing-mode:horizontal-tb; }.gate-tests { grid-template-columns:1fr; }.gate-tests span { margin-top:1rem; }
+  .udo-boarding-grid,.udo-resident-code ul,.village-code ul,.status-checks { grid-template-columns:1fr; }
+  .udo-boarding-grid article { min-height:11rem; border-radius:.5rem 2.5rem .5rem .5rem; }.udo-boarding-grid h3 { margin:1.8rem 0 .4rem; }
+  .udo-mobility-deck { grid-template-columns:1fr; border-radius:.5rem 3rem .5rem .5rem; }.mobility-deck-title { grid-column:auto; }.udo-mobility-deck article { min-height:12rem; }
+  .east-day-timeline { grid-template-columns:1fr; border-radius:3rem .5rem .5rem .5rem; }.east-day-timeline article,.east-day-timeline article:last-child { min-height:11rem; grid-column:auto; }.east-day-timeline h3 { margin:2rem 0 .4rem; }
+  .village-street-map { min-height:24rem; }
+  .matrix-head { display:none; }.water-condition-matrix article p,.water-condition-matrix article span { margin-top:.25rem; }
+  .coast-direction-strip ol { grid-template-columns:1fr; }.coast-direction-strip li,.coast-direction-strip li:last-child { min-height:11rem; grid-column:auto; }.coast-direction-strip li h3 { margin:1.8rem 0 .4rem; }
+  .lava-status-card { grid-template-columns:1fr; clip-path:none; }.status-tab { min-height:4rem; flex-direction:row; }.status-tab b,.status-tab span { writing-mode:horizontal-tb; }
+  .carfree-notation > div:first-child { display:block; }.carfree-notation h2 { margin-top:1rem; text-align:left; }.notation-line { grid-template-columns:1fr; }.notation-line i { display:none; }.notation-line article:nth-of-type(3) { grid-column:auto; }.notation-line article { min-height:8rem; }.notation-line p { margin-top:1rem; }
+  .village-code > div:first-child { min-height:4rem; flex-direction:row; }.village-code > div:first-child span,.village-code > div:first-child b { writing-mode:horizontal-tb; }
+}

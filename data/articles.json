@@ -1,0 +1,24 @@
+[
+    {
+        "id": "osaka-food-traps",
+        "url": "/articles-osaka-food.html",
+        "country": "japan",
+        "region": "kansai",
+        "type": "warning",
+        "title": "5 Dotonbori Tourist Traps & Where Locals Actually Eat (2026)",
+        "source": "r/Osaka",
+        "date": "Apr 2026",
+        "desc": "Dotonbori is iconic, but the main street has become a gauntlet of overpriced street food. We scanned recent Reddit threads to separate the hype from the authentic."
+    },
+    {
+        "id": "seoul-subway-pass",
+        "url": "#",
+        "country": "korea",
+        "region": "seoul",
+        "type": "itinerary",
+        "title": "Climate Card vs WOWPASS: Which one actually saves money in Seoul?",
+        "source": "r/KoreaTravel",
+        "date": "Mar 2026",
+        "desc": "Don't buy both. We broke down the exact breakeven points for tourists spending 3-7 days in Seoul. If you leave the city limits, the Climate Card is useless."
+    }
+]

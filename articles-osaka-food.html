@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,follow">
+    <title>5 Dotonbori Tourist Traps & Where Locals Actually Eat (2026) | TripDistill</title>
+    <meta name="description" content="Distilled insights from r/Osaka on avoiding overpriced tourist traps in Dotonbori.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<!-- 【戰略核心】透過 dataset 自動高亮 Sidebar -->
+<body data-active-region="kansai" data-active-type="warning" class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen selection:bg-orange-100 selection:text-orange-900">
+
+    <div id="layout-header"></div>
+
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row gap-8 w-full flex-1 relative">
+
+        <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 hidden lg:hidden" onclick="toggleMobileMenu()"></div>
+
+        <!-- Sidebar 注入點 -->
+        <aside id="layout-sidebar" class="fixed lg:sticky top-0 lg:top-24 left-0 h-full lg:h-[calc(100vh-6rem)] w-72 lg:w-64 bg-white lg:bg-transparent lg:border-none border-r border-slate-200 shadow-2xl lg:shadow-none z-50 lg:z-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 flex flex-col shrink-0 overflow-y-auto no-scrollbar"></aside>
+
+        <!-- 文章本體 (純 HTML, 完美 SEO) -->
+        <main class="flex-1 min-w-0 w-full flex flex-col py-8 lg:py-12">
+            <article class="bg-white rounded-3xl border border-slate-200 p-6 md:p-12 shadow-sm relative overflow-hidden">
+
+                <nav class="text-sm font-bold text-slate-400 mb-8 uppercase tracking-wider flex items-center gap-2">
+                    <a href="index.html" class="hover:text-orange-600 transition-colors">Home</a> /
+                    <a href="index.html#kansai" class="hover:text-orange-600 transition-colors">Kansai</a> / Tourist Traps
+                </nav>
+
+                <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
+                    Osaka's Dotonbori: The Takoyaki Tourist Traps & Where Reddit Goes Instead
+                </h1>
+
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 border-l-[4px] border-orange-500 p-6 md:p-8 rounded-r-2xl mb-12">
+                    <h2 class="flex items-center text-orange-900 font-black text-lg uppercase tracking-wider mb-4">
+                        <i data-lucide="filter" class="w-5 h-5 text-orange-600 mr-2"></i> The Distilled Consensus
+                    </h2>
+                    <p class="text-orange-900 leading-relaxed text-lg font-medium">
+                        Dotonbori is visually stunning, but the main drag has become an overpriced gauntlet. After analyzing recent debates in <strong>r/Osaka</strong>, the consensus is clear: eat one iconic snack for the photo, then immediately leave the main street.
+                    </p>
+                </div>
+
+                <section class="mb-12 pb-12 border-b border-slate-100">
+                    <h3 class="text-2xl font-black mb-6 text-slate-900 flex items-center gap-3">
+                        <span class="bg-red-100 text-red-700 w-8 h-8 rounded-full flex items-center justify-center text-lg">1</span>
+                        The Takoyaki Hype vs. Reality
+                    </h3>
+
+                    <div class="pl-11 space-y-4">
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            <strong class="text-red-600">The Trap:</strong> Any stall directly beneath the Glico Man sign with a 45-minute wait. Redditors report paying a 40% premium for soggy batter.
+                        </p>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            <strong class="text-emerald-600">Reddit's Recommendation:</strong> Walk 3 blocks away. The most upvoted alternative is <strong>Kougaryu Takoyaki</strong> in Americamura.
+                        </p>
+
+                        <blockquote class="bg-slate-50 border border-slate-200 rounded-xl p-6 mt-6 italic text-slate-700 relative">
+                            <i data-lucide="quote" class="absolute top-4 right-4 w-12 h-12 text-slate-200 opacity-50 transform rotate-180"></i>
+                            "We literally only take visiting friends to Dotonbori to take the picture. Then we take the Midosuji line two stops down to actually eat."
+                            <footer class="mt-2 text-sm font-bold text-slate-400 not-italic">— u/OsakaLocal_99</footer>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <div class="text-center mt-8">
+                    <a href="https://www.reddit.com/r/Osaka/" target="_blank" class="inline-flex items-center gap-2 bg-[#FF4500] text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-orange-700 transition-all shadow-md group">
+                        Read Source Thread on Reddit <i data-lucide="external-link" class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <div id="layout-footer"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

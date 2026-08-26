@@ -1,0 +1,19 @@
+{
+  "name": "tripdistill-static",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static TripDistill travel guides for Cloudflare Pages",
+  "type": "module",
+  "scripts": {
+    "audit": "node scripts/audit-site.mjs",
+    "build": "node scripts/build-dist.mjs",
+    "preview": "node scripts/serve.mjs",
+    "qa:visual": "node scripts/visual-audit.mjs",
+    "pages:whoami": "npx wrangler@latest whoami",
+    "pages:list": "npx wrangler@latest pages project list",
+    "deploy:trip": "npm run audit && npm run build && npx wrangler@latest pages deploy dist --project-name trip"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

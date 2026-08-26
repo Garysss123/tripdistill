@@ -1,0 +1,658 @@
+[
+  {
+    "title": "Explore Asia travel guides",
+    "url": "/",
+    "parent": "TripDistill",
+    "type": "Hub",
+    "summary": "Country and city travel guides built for fast trip decisions.",
+    "keywords": ["asia", "travel", "destinations", "planning"]
+  },
+  {
+    "title": "Japan Travel Guide",
+    "url": "/japan/",
+    "parent": "Japan",
+    "type": "Country",
+    "summary": "First-trip framework, regions, transport, seasons, etiquette and practical facts.",
+    "keywords": ["japan", "tokyo", "kyoto", "osaka", "hokkaido", "visa", "rail"]
+  },
+  {
+    "title": "South Korea Travel Guide",
+    "url": "/south-korea/",
+    "parent": "South Korea",
+    "type": "Country",
+    "summary": "Entry checks, city choices, rail and bus transport, seasons and a realistic first multi-city route.",
+    "keywords": ["south korea", "korea", "seoul", "busan", "gyeongju", "jeju", "k-eta", "ktx"]
+  },
+  {
+    "title": "Seoul Travel Guide",
+    "url": "/south-korea/seoul/",
+    "parent": "South Korea · Capital",
+    "type": "City",
+    "summary": "Eight area guides, hotel-base choices, airport access, public transport and a geographic five-day itinerary.",
+    "keywords": ["seoul", "south korea", "where to stay", "neighborhoods", "first trip"]
+  },
+  {
+    "title": "Seoul Five-Day Itinerary",
+    "url": "/south-korea/seoul/#itinerary",
+    "parent": "Seoul",
+    "type": "Itinerary",
+    "summary": "A geography-first route through historic north, creative west, central hills, south Seoul and the river.",
+    "keywords": ["seoul itinerary", "5 days", "five days", "schedule", "route"]
+  },
+  {
+    "title": "Seoul Airport Access",
+    "url": "/south-korea/seoul/#airports",
+    "parent": "Seoul",
+    "type": "Transit",
+    "summary": "Compare Incheon and Gimpo airport routes by the final transfer to the exact hotel.",
+    "keywords": ["incheon", "gimpo", "ICN", "GMP", "AREX", "airport bus", "airport"]
+  },
+  {
+    "title": "Seoul Public Transport Guide",
+    "url": "/south-korea/seoul/#transit",
+    "parent": "Seoul",
+    "type": "Transit",
+    "summary": "Use reloadable transit cards, station exits, transfers and late-night alternatives with fewer surprises.",
+    "keywords": ["seoul transport", "subway", "bus", "tmoney", "t-money", "climate card", "train"]
+  },
+  {
+    "title": "Jongno and Gwanghwamun Area Guide",
+    "url": "/south-korea/seoul/jongno-gwanghwamun/",
+    "parent": "Seoul · Historic Core",
+    "type": "Area",
+    "summary": "Choose one palace, verify its calendar and follow the civic axis into a museum, market or evening street.",
+    "keywords": ["jongno", "gwanghwamun", "gyeongbokgung", "palace", "insadong", "cheonggyecheon"]
+  },
+  {
+    "title": "Bukchon and Seochon Area Guide",
+    "url": "/south-korea/seoul/bukchon-seochon/",
+    "parent": "Seoul · Palace Districts",
+    "type": "Area",
+    "summary": "Understand Bukchon's restricted visitor zone and compare two lived-in hanok neighborhoods respectfully.",
+    "keywords": ["bukchon", "seochon", "hanok", "visitor restriction", "tongin market", "palace"]
+  },
+  {
+    "title": "Myeongdong and Namsan Area Guide",
+    "url": "/south-korea/seoul/myeongdong-namsan/",
+    "parent": "Seoul · Central",
+    "type": "Area",
+    "summary": "Plan focused shopping and food streets, then choose a weather-aware route up Namsan.",
+    "keywords": ["myeongdong", "namsan", "n seoul tower", "shopping", "night market", "where to stay"]
+  },
+  {
+    "title": "Hongdae and Yeonnam Area Guide",
+    "url": "/south-korea/seoul/hongdae-yeonnam/",
+    "parent": "Seoul · West",
+    "type": "Area",
+    "summary": "Separate late Hongdae, slower Yeonnam and airport-friendly access into one useful west-Seoul route.",
+    "keywords": ["hongdae", "yeonnam", "gyeongui line forest park", "nightlife", "cafes", "AREX"]
+  },
+  {
+    "title": "Gangnam and Jamsil Area Guide",
+    "url": "/south-korea/seoul/gangnam-jamsil/",
+    "parent": "Seoul · South",
+    "type": "Area",
+    "summary": "Separate COEX, Gangnam Station, Apgujeong and Jamsil before choosing a realistic pair of nodes.",
+    "keywords": ["gangnam", "jamsil", "coex", "starfield library", "lotte world tower", "seoul sky"]
+  },
+  {
+    "title": "Itaewon and Hannam Area Guide",
+    "url": "/south-korea/seoul/itaewon-hannam/",
+    "parent": "Seoul · Yongsan",
+    "type": "Area",
+    "summary": "Account for hills while connecting global dining, Leeum Museum, galleries and a deliberate evening.",
+    "keywords": ["itaewon", "hannam", "leeum", "museum", "global food", "nightlife", "hills"]
+  },
+  {
+    "title": "Seongsu and Seoul Forest Area Guide",
+    "url": "/south-korea/seoul/seongsu-seoul-forest/",
+    "parent": "Seoul · East-Central",
+    "type": "Area",
+    "summary": "Check temporary pop-ups first, then connect Seongsu's industrial streets with a real Seoul Forest walk.",
+    "keywords": ["seongsu", "seoul forest", "popups", "cafes", "industrial", "shopping"]
+  },
+  {
+    "title": "Yeouido and Hangang Area Guide",
+    "url": "/south-korea/seoul/yeouido-hangang/",
+    "parent": "Seoul · River",
+    "type": "Area",
+    "summary": "Choose a Hangang park by station, weather, sunset, current events and safe riverside logistics.",
+    "keywords": ["yeouido", "hangang", "han river", "banpo", "rainbow fountain", "picnic", "bike"]
+  },
+  {
+    "title": "Tokyo Travel Guide",
+    "url": "/japan/tokyo/",
+    "parent": "Japan · Kanto",
+    "type": "City",
+    "summary": "Eight area guides, hotel-base choices, airport access, transit and a realistic five-day itinerary.",
+    "keywords": ["tokyo", "kanto", "where to stay", "neighborhoods", "first trip"]
+  },
+  {
+    "title": "Tokyo Five-Day Itinerary",
+    "url": "/japan/tokyo/#itinerary",
+    "parent": "Tokyo",
+    "type": "Itinerary",
+    "summary": "A geography-first route covering west, east, central and interest-led Tokyo days.",
+    "keywords": ["tokyo itinerary", "5 days", "five days", "schedule", "route"]
+  },
+  {
+    "title": "Tokyo Transit Guide",
+    "url": "/japan/tokyo/#transit",
+    "parent": "Tokyo",
+    "type": "Transit",
+    "summary": "Understand JR East, Tokyo Metro, Toei, private railways and IC-card limits.",
+    "keywords": ["tokyo transport", "JR", "metro", "toei", "IC card", "train"]
+  },
+  {
+    "title": "Tokyo Airport Access",
+    "url": "/japan/tokyo/#airports",
+    "parent": "Tokyo",
+    "type": "Transit",
+    "summary": "Compare Haneda and Narita routes using Keikyu, Monorail, Narita Express and Skyliner.",
+    "keywords": ["haneda", "narita", "HND", "NRT", "airport", "nex", "skyliner"]
+  },
+  {
+    "title": "Shinjuku Area Guide",
+    "url": "/japan/tokyo/shinjuku/",
+    "parent": "Tokyo · West",
+    "type": "Area",
+    "summary": "Separate Shinjuku's west towers, east nightlife and south transport zone, then choose a practical hotel side.",
+    "keywords": ["shinjuku", "kabukicho", "shinjuku gyoen", "tokyo metropolitan government", "nightlife"]
+  },
+  {
+    "title": "Shibuya and Harajuku Area Guide",
+    "url": "/japan/tokyo/shibuya-harajuku/",
+    "parent": "Tokyo · West",
+    "type": "Area",
+    "summary": "Walk from Meiji Jingu through Harajuku and Omotesando to Shibuya after dark without backtracking.",
+    "keywords": ["shibuya", "harajuku", "meiji jingu", "omotesando", "crossing", "cat street"]
+  },
+  {
+    "title": "Asakusa and Ueno Area Guide",
+    "url": "/japan/tokyo/asakusa-ueno/",
+    "parent": "Tokyo · East",
+    "type": "Area",
+    "summary": "Start Sensoji early, connect Kappabashi and choose one focused Ueno museum, park or market plan.",
+    "keywords": ["asakusa", "ueno", "sensoji", "kappabashi", "ameyoko", "museums"]
+  },
+  {
+    "title": "Tokyo Station and Ginza Area Guide",
+    "url": "/japan/tokyo/tokyo-station-ginza/",
+    "parent": "Tokyo · Central",
+    "type": "Area",
+    "summary": "Decode Marunouchi and Yaesu, handle luggage, check the palace garden calendar and walk into Ginza.",
+    "keywords": ["tokyo station", "ginza", "marunouchi", "yaesu", "imperial palace", "yurakucho"]
+  },
+  {
+    "title": "Akihabara and Kanda Area Guide",
+    "url": "/japan/tokyo/akihabara-kanda/",
+    "parent": "Tokyo · Central",
+    "type": "Area",
+    "summary": "Shop electronics, games and anime by interest lane, then reset at Kanda Myojin or Jimbocho.",
+    "keywords": ["akihabara", "kanda", "anime", "electronics", "retro games", "jimbocho", "kanda myojin"]
+  },
+  {
+    "title": "Roppongi and Azabu Area Guide",
+    "url": "/japan/tokyo/roppongi-azabu/",
+    "parent": "Tokyo · South",
+    "type": "Area",
+    "summary": "Build a contemporary-art route, choose one skyline view and compare Roppongi nightlife with quieter Azabu.",
+    "keywords": ["roppongi", "azabu", "mori art museum", "national art center", "tokyo midtown", "nightlife"]
+  },
+  {
+    "title": "Odaiba and Toyosu Area Guide",
+    "url": "/japan/tokyo/odaiba-toyosu/",
+    "parent": "Tokyo · Bay",
+    "type": "Area",
+    "summary": "Plan Toyosu Market, Odaiba attractions, timed entries and the Yurikamome and Rinkai corridors.",
+    "keywords": ["odaiba", "toyosu", "toyosu market", "rainbow bridge", "yurikamome", "tokyo bay"]
+  },
+  {
+    "title": "Ikebukuro Area Guide",
+    "url": "/japan/tokyo/ikebukuro/",
+    "parent": "Tokyo · North",
+    "type": "Area",
+    "summary": "Use Ikebukuro's east and west exits for Sunshine City, anime shopping, arts and a possible value hotel base.",
+    "keywords": ["ikebukuro", "sunshine city", "otome road", "anime", "tokyo metropolitan theatre"]
+  },
+  {
+    "title": "Kyoto Travel Guide",
+    "url": "/japan/kyoto/",
+    "parent": "Japan · Kansai",
+    "type": "City",
+    "summary": "Eight area guides, hotel-base choices, rail-first transport, crowd strategy and a four-day itinerary.",
+    "keywords": ["kyoto", "kansai", "where to stay", "temples", "first trip", "neighborhoods"]
+  },
+  {
+    "title": "Kyoto Four-Day Itinerary",
+    "url": "/japan/kyoto/#itinerary",
+    "parent": "Kyoto",
+    "type": "Itinerary",
+    "summary": "A geography-first plan for eastern Kyoto, Arashiyama, the northwest and either Fushimi or the Philosopher's Path.",
+    "keywords": ["kyoto itinerary", "4 days", "four days", "schedule", "route"]
+  },
+  {
+    "title": "Kyoto Transit and Crowd Strategy",
+    "url": "/japan/kyoto/#transit",
+    "parent": "Kyoto",
+    "type": "Transit",
+    "summary": "Use railway and subway backbones, short bus connections, luggage delivery and Kyoto's official crowd forecast.",
+    "keywords": ["kyoto transport", "bus", "subway", "train", "IC card", "crowds", "luggage"]
+  },
+  {
+    "title": "Gion and Pontocho Area Guide",
+    "url": "/japan/kyoto/gion-pontocho/",
+    "parent": "Kyoto · East and Downtown",
+    "type": "Area",
+    "summary": "Separate Gion, Shirakawa, Yasaka and Pontocho, then follow a respectful one-direction evening route.",
+    "keywords": ["gion", "pontocho", "geiko", "maiko", "yasaka", "shirakawa", "night"]
+  },
+  {
+    "title": "Kiyomizudera and Southern Higashiyama Area Guide",
+    "url": "/japan/kyoto/kiyomizudera-higashiyama/",
+    "parent": "Kyoto · East",
+    "type": "Area",
+    "summary": "Start Kiyomizudera early, understand the hills and follow a one-way route through preserved streets toward Yasaka.",
+    "keywords": ["kiyomizudera", "kiyomizu dera", "higashiyama", "sannenzaka", "ninenzaka", "yasaka pagoda"]
+  },
+  {
+    "title": "Arashiyama and Sagano Area Guide",
+    "url": "/japan/kyoto/arashiyama-sagano/",
+    "parent": "Kyoto · West",
+    "type": "Area",
+    "summary": "Choose JR, Randen or Hankyu, then connect the bamboo grove with Tenryuji, the river and quieter Sagano.",
+    "keywords": ["arashiyama", "sagano", "bamboo grove", "tenryuji", "togetsukyo", "okusaga"]
+  },
+  {
+    "title": "Fushimi Inari and Sake District Area Guide",
+    "url": "/japan/kyoto/fushimi-inari-sake-district/",
+    "parent": "Kyoto · South",
+    "type": "Area",
+    "summary": "Choose a Fushimi Inari hike length, then use rail to continue through brewery history and canal scenery.",
+    "keywords": ["fushimi inari", "torii", "fushimi sake", "gekkeikan", "chushojima", "hike"]
+  },
+  {
+    "title": "Central Kyoto and Nishiki Area Guide",
+    "url": "/japan/kyoto/central-kyoto-nishiki/",
+    "parent": "Kyoto · Central",
+    "type": "Area",
+    "summary": "Visit Nishiki with good market manners, choose Nijo Castle or the Imperial Palace and compare downtown hotel bases.",
+    "keywords": ["nishiki market", "central kyoto", "nijo castle", "imperial palace", "karasuma", "kawaramachi"]
+  },
+  {
+    "title": "Kyoto Station and South Area Guide",
+    "url": "/japan/kyoto/kyoto-station-south/",
+    "parent": "Kyoto · Station",
+    "type": "Area",
+    "summary": "Decode Kyoto Station's north and south sides, handle luggage and build a useful arrival route around Toji.",
+    "keywords": ["kyoto station", "hachijo", "karasuma", "toji", "luggage", "where to stay"]
+  },
+  {
+    "title": "Kinkakuji and Northwest Kyoto Area Guide",
+    "url": "/japan/kyoto/kinkakuji-northwest/",
+    "parent": "Kyoto · Northwest",
+    "type": "Area",
+    "summary": "Reach Kinkakuji by subway and a shorter bus, then connect Ryoanji, Ninnaji or Nishijin without rushing.",
+    "keywords": ["kinkakuji", "golden pavilion", "ryoanji", "ninnaji", "kinugasa", "nishijin"]
+  },
+  {
+    "title": "Philosopher's Path and Okazaki Area Guide",
+    "url": "/japan/kyoto/philosophers-path-okazaki/",
+    "parent": "Kyoto · Northeast",
+    "type": "Area",
+    "summary": "Choose a walking direction between Ginkakuji, the canal, Nanzenji, Keage and Okazaki museums.",
+    "keywords": ["philosophers path", "ginkakuji", "nanzenji", "keage", "okazaki", "eikando"]
+  },
+  {
+    "title": "Osaka Travel Guide",
+    "url": "/japan/osaka/",
+    "parent": "Japan · Kansai",
+    "type": "City",
+    "summary": "Neighborhoods, where to stay, food, transport and a practical three-day itinerary.",
+    "keywords": ["osaka", "dotonbori", "namba", "umeda", "shinsekai", "kansai"]
+  },
+  {
+    "title": "Osaka Food and Neighborhoods",
+    "url": "/japan/osaka/#food",
+    "parent": "Osaka",
+    "type": "Guide",
+    "summary": "What to eat and how to avoid wasting every meal in the same tourist district.",
+    "keywords": ["takoyaki", "okonomiyaki", "kushikatsu", "food"]
+  },
+  {
+    "title": "Osaka Three-Day Itinerary",
+    "url": "/japan/osaka/#itinerary",
+    "parent": "Osaka",
+    "type": "Itinerary",
+    "summary": "A compact north, central and south Osaka plan for first-time visitors.",
+    "keywords": ["3 days", "itinerary", "schedule", "attractions"]
+  },
+  {
+    "title": "Osaka Transport Guide",
+    "url": "/japan/osaka/#transport",
+    "parent": "Osaka",
+    "type": "Transit",
+    "summary": "Kansai Airport access, ICOCA and Osaka station-area navigation.",
+    "keywords": ["KIX", "train", "ICOCA", "metro", "airport"]
+  },
+  {
+    "title": "Namba Area Guide",
+    "url": "/japan/osaka/namba/",
+    "parent": "Osaka · Minami",
+    "type": "Area",
+    "summary": "Decode Namba stations, choose where to stay and connect Dotonbori, Hozenji, Kuromon and Namba Yasaka on foot.",
+    "keywords": ["namba", "dotonbori", "kuromon", "hozenji", "namba yasaka", "minami", "kix"]
+  },
+  {
+    "title": "Umeda Area Guide",
+    "url": "/japan/osaka/umeda/",
+    "parent": "Osaka · Kita",
+    "type": "Area",
+    "summary": "Navigate the Osaka-Umeda station complex, compare its zones and plan an architecture or rainy-day route.",
+    "keywords": ["umeda", "osaka station", "kita", "grand front", "umeda sky building", "shopping"]
+  },
+  {
+    "title": "Tennoji and Shinsekai Area Guide",
+    "url": "/japan/osaka/tennoji-shinsekai/",
+    "parent": "Osaka · South",
+    "type": "Area",
+    "summary": "Build a south Osaka day around Shitennoji, Tennoji Park, Abeno Harukas, Shinsekai and Tsutenkaku.",
+    "keywords": ["tennoji", "shinsekai", "tsutenkaku", "shitennoji", "abeno harukas", "kushikatsu"]
+  },
+  {
+    "title": "Osaka Castle Area Guide",
+    "url": "/japan/osaka/osaka-castle-area/",
+    "parent": "Osaka · Castle Area",
+    "type": "Area",
+    "summary": "Choose the right station, walk the castle grounds efficiently and decide whether the museum belongs in your day.",
+    "keywords": ["osaka castle", "osakajo", "museum", "park", "morinomiya", "temmabashi", "sakura"]
+  },
+  {
+    "title": "Osaka Bay and USJ Area Guide",
+    "url": "/japan/osaka/osaka-bay/",
+    "parent": "Osaka · Bay Area",
+    "type": "Area",
+    "summary": "Separate a Universal Studios Japan day from a flexible Kaiyukan and Tempozan waterfront plan.",
+    "keywords": ["osaka bay", "usj", "universal studios japan", "kaiyukan", "tempozan", "aquarium", "ferris wheel"]
+  },
+  {
+    "title": "Hokkaido Travel Guide",
+    "url": "/japan/hokkaido/",
+    "parent": "Japan · Northern Japan",
+    "type": "Region",
+    "summary": "Nine regional guides, gateway airports, rail and driving choices, seasons and realistic 5-to-14-day routes.",
+    "keywords": ["hokkaido", "northern japan", "road trip", "winter", "rail pass", "new chitose"]
+  },
+  {
+    "title": "Sapporo Travel Guide",
+    "url": "/japan/hokkaido/sapporo/",
+    "parent": "Hokkaido · Central",
+    "type": "City",
+    "summary": "Choose a hotel area, arrive from New Chitose and plan two city days with food and winter strategy.",
+    "keywords": ["sapporo", "odori", "susukino", "new chitose", "cts", "sapporo station"]
+  },
+  {
+    "title": "Otaru and Shakotan Regional Guide",
+    "url": "/japan/hokkaido/otaru-shakotan/",
+    "parent": "Hokkaido · West Coast",
+    "type": "Region",
+    "summary": "A one-way Otaru port walk plus seasonal transport and weather planning for the Shakotan Peninsula.",
+    "keywords": ["otaru", "shakotan", "otaru canal", "cape kamui", "west hokkaido", "seafood"]
+  },
+  {
+    "title": "Hakodate and Onuma Regional Guide",
+    "url": "/japan/hokkaido/hakodate-onuma/",
+    "parent": "Hokkaido · South",
+    "type": "Region",
+    "summary": "Connect Hakodate's bay, Motomachi and Goryokaku with a weather-aware night view and Onuma day.",
+    "keywords": ["hakodate", "onuma", "goryokaku", "mount hakodate", "shin-hakodate-hokuto", "yunokawa"]
+  },
+  {
+    "title": "Furano and Biei Regional Guide",
+    "url": "/japan/hokkaido/furano-biei/",
+    "parent": "Hokkaido · Central Fields",
+    "type": "Region",
+    "summary": "Match bloom seasons, rural transport and a useful base for Furano fields, Biei hills and Blue Pond.",
+    "keywords": ["furano", "biei", "lavender", "blue pond", "flower fields", "farm tomita"]
+  },
+  {
+    "title": "Asahikawa and Daisetsuzan Regional Guide",
+    "url": "/japan/hokkaido/asahikawa-daisetsuzan/",
+    "parent": "Hokkaido · Northern Central",
+    "type": "Region",
+    "summary": "Use Asahikawa as a base, visit the zoo and choose between the separate Asahidake and Sounkyo gateways.",
+    "keywords": ["asahikawa", "daisetsuzan", "asahidake", "sounkyo", "asahiyama zoo", "hiking"]
+  },
+  {
+    "title": "Niseko and Yoichi Regional Guide",
+    "url": "/japan/hokkaido/niseko-yoichi/",
+    "parent": "Hokkaido · West",
+    "type": "Region",
+    "summary": "Compare Niseko resort villages, seasonal airport transfers, winter skiing, green season and a Yoichi stop.",
+    "keywords": ["niseko", "yoichi", "hirafu", "annupuri", "kutchan", "ski", "mount yotei"]
+  },
+  {
+    "title": "Noboribetsu and Lake Toya Regional Guide",
+    "url": "/japan/hokkaido/noboribetsu-lake-toya/",
+    "parent": "Hokkaido · Southwest",
+    "type": "Region",
+    "summary": "Plan two distinct onsen bases, their rail-to-bus transfers, volcanic walks and a two-night route.",
+    "keywords": ["noboribetsu", "lake toya", "jigokudani", "onsen", "mount usu", "toyako"]
+  },
+  {
+    "title": "Kushiro and Lake Akan Regional Guide",
+    "url": "/japan/hokkaido/kushiro-lake-akan/",
+    "parent": "Hokkaido · East",
+    "type": "Region",
+    "summary": "Plan the wetlands, ethical crane viewing, Lake Akan, cultural context and eastern gateway transport.",
+    "keywords": ["kushiro", "lake akan", "kushiro marsh", "red-crowned cranes", "tancho", "ainu"]
+  },
+  {
+    "title": "Abashiri and Shiretoko Regional Guide",
+    "url": "/japan/hokkaido/abashiri-shiretoko/",
+    "parent": "Hokkaido · Far Northeast",
+    "type": "Region",
+    "summary": "Build a Memanbetsu-to-Abashiri-to-Shiretoko journey around drift ice, Five Lakes and wildlife rules.",
+    "keywords": ["abashiri", "shiretoko", "drift ice", "five lakes", "utoro", "rausu", "memanbetsu"]
+  },
+  {
+    "title": "Busan Travel Guide",
+    "url": "/south-korea/busan/",
+    "parent": "South Korea · Southeast Coast",
+    "type": "City",
+    "summary": "Eight area guides, hotel-base choices, airport access and a coast-by-coast three-day plan.",
+    "keywords": ["busan", "pusan", "where to stay", "beaches", "first trip", "neighborhoods"]
+  },
+  {
+    "title": "Busan Airport and City Transit",
+    "url": "/south-korea/busan/#transport",
+    "parent": "Busan",
+    "type": "Transit",
+    "summary": "Connect Gimhae Airport by light rail or current limousine services, then use metro corridors and buses for the coast.",
+    "keywords": ["gimhae airport", "busan airport", "light rail", "sasang", "metro", "bus"]
+  },
+  {
+    "title": "Busan Three-Day Itinerary",
+    "url": "/south-korea/busan/#itinerary",
+    "parent": "Busan",
+    "type": "Itinerary",
+    "summary": "A port day, east-coast day and one weather-selected outer coast without repeated cross-city travel.",
+    "keywords": ["busan itinerary", "3 days", "three days", "route", "schedule"]
+  },
+  {
+    "title": "Where to Stay in Busan",
+    "url": "/south-korea/busan/#stay",
+    "parent": "Busan",
+    "type": "Stay",
+    "summary": "Compare Seomyeon, Nampo, Haeundae and Gwangalli by transit, early starts and late evenings.",
+    "keywords": ["where to stay busan", "seomyeon", "nampo", "haeundae", "gwangalli", "hotel base"]
+  },
+  {
+    "title": "Nampo and Jagalchi Area Guide",
+    "url": "/south-korea/busan/nampo-jagalchi/",
+    "parent": "Busan · Historic Port",
+    "type": "Area",
+    "summary": "A market ledger, seafood ordering checks, downtown route, station logic and Nampo stay trade-offs.",
+    "keywords": ["nampo", "jagalchi", "biff square", "gukje market", "busan tower", "seafood"]
+  },
+  {
+    "title": "Gamcheon and Songdo Area Guide",
+    "url": "/south-korea/busan/gamcheon-songdo/",
+    "parent": "Busan · West",
+    "type": "Area",
+    "summary": "An elevation-aware route through a lived-in hillside and a weather-checked Songdo beach finish.",
+    "keywords": ["gamcheon", "songdo", "culture village", "cable car", "stairs", "west busan"]
+  },
+  {
+    "title": "Haeundae and Dongbaek Area Guide",
+    "url": "/south-korea/busan/haeundae-dongbaek/",
+    "parent": "Busan · East Coast",
+    "type": "Area",
+    "summary": "A coastal day clock for Haeundae Beach, Dongbaekseom, seasonal swimming and an east-side hotel base.",
+    "keywords": ["haeundae", "dongbaek", "beach", "swimming", "nurimaru", "east busan"]
+  },
+  {
+    "title": "Gwangalli and Millak Area Guide",
+    "url": "/south-korea/busan/gwangalli-millak/",
+    "parent": "Busan · Night Coast",
+    "type": "Area",
+    "summary": "Bridge views, official drone-show checks, Millak atmosphere, dinner timing and a safe night return.",
+    "keywords": ["gwangalli", "millak", "gwangan bridge", "drone show", "night", "beach"]
+  },
+  {
+    "title": "Seomyeon and Jeonpo Area Guide",
+    "url": "/south-korea/busan/seomyeon-jeonpo/",
+    "parent": "Busan · Center",
+    "type": "Area",
+    "summary": "Line 1 and 2 hotel-base logic, a café filter, urban walking and a useful rainy-day reset.",
+    "keywords": ["seomyeon", "jeonpo", "cafe street", "where to stay", "busan nightlife", "rain"]
+  },
+  {
+    "title": "Yeongdo and Taejongdae Area Guide",
+    "url": "/south-korea/busan/yeongdo-taejongdae/",
+    "parent": "Busan · Island South",
+    "type": "Area",
+    "summary": "Bus-first island access, Taejongdae contingencies, Huinnyeoul etiquette and a weather-ready field route.",
+    "keywords": ["yeongdo", "taejongdae", "huinnyeoul", "danubi train", "cliffs", "bus"]
+  },
+  {
+    "title": "Haedong Yonggungsa and Gijang Area Guide",
+    "url": "/south-korea/busan/haedong-yonggungsa-gijang/",
+    "parent": "Busan · Outer East",
+    "type": "Area",
+    "summary": "A rail-and-bus transfer chain, temple etiquette, stair cautions and a realistic sunrise decision.",
+    "keywords": ["haedong yonggungsa", "yonggungsa", "gijang", "osiria", "temple", "sunrise"]
+  },
+  {
+    "title": "Dadaepo and Amisan Area Guide",
+    "url": "/south-korea/busan/dadaepo-amisan/",
+    "parent": "Busan · Western Estuary",
+    "type": "Area",
+    "summary": "Sunset planning, Amisan Observatory, wetland ethics, Line 1 access and seasonal fountain checks.",
+    "keywords": ["dadaepo", "amisan", "sunset", "nakdong estuary", "migratory birds", "fountain"]
+  },
+  {
+    "title": "Jeju Island Guide",
+    "url": "/south-korea/jeju/",
+    "parent": "South Korea · Jeju",
+    "type": "Island",
+    "summary": "Choose Jeju bases, coastlines, mountain days and ferry routes by weather and operating conditions.",
+    "keywords": ["jeju", "jeju island", "jejudo", "south korea island", "hallasan", "seongsan", "udo"]
+  },
+  {
+    "title": "Getting Around Jeju",
+    "url": "/south-korea/jeju/#transport",
+    "parent": "Jeju · Transport",
+    "type": "Planning",
+    "summary": "Compare airport access, island buses, rental cars and ferry-specific movement decisions.",
+    "keywords": ["jeju transport", "jeju bus", "rental car", "jeju airport", "driving"]
+  },
+  {
+    "title": "Where to Stay on Jeju",
+    "url": "/south-korea/jeju/#stay",
+    "parent": "Jeju · Bases",
+    "type": "Planning",
+    "summary": "Compare Jeju City, Seogwipo, Seongsan and western bases by the first hour that matters.",
+    "keywords": ["where to stay jeju", "jeju city", "seogwipo", "seongsan", "jeju hotels"]
+  },
+  {
+    "title": "Four-Day Jeju Itinerary",
+    "url": "/south-korea/jeju/#itinerary",
+    "parent": "Jeju · Route Builder",
+    "type": "Itinerary",
+    "summary": "A weather-flexible first route with separate mountain, coast and eastern-island decisions.",
+    "keywords": ["jeju itinerary", "four days jeju", "jeju route", "weather plan"]
+  },
+  {
+    "title": "Jeju City and Yongduam Guide",
+    "url": "/south-korea/jeju/jeju-city-yongduam/",
+    "parent": "Jeju · North Gate",
+    "type": "Area",
+    "summary": "Airport-day planning, Yongduam coast, city markets, rental handover and a protected final transfer.",
+    "keywords": ["jeju city", "yongduam", "dragon head rock", "jeju airport", "dongmun market"]
+  },
+  {
+    "title": "Aewol and Hyeopjae Guide",
+    "url": "/south-korea/jeju/aewol-hyeopjae/",
+    "parent": "Jeju · West Coast",
+    "type": "Area",
+    "summary": "A three-stop west-coast budget using wind, beach operations and one-direction travel.",
+    "keywords": ["aewol", "hyeopjae", "jeju west coast", "beach", "sunset"]
+  },
+  {
+    "title": "Hallasan Hiking Guide",
+    "url": "/south-korea/jeju/hallasan/",
+    "parent": "Jeju · Mountain",
+    "type": "Area",
+    "summary": "Reservation, live trail status, route choice, equipment, cut-offs and safe turnaround decisions.",
+    "keywords": ["hallasan", "hallasan hike", "seongpanak", "gwaneumsa", "reservation", "trail"]
+  },
+  {
+    "title": "Seogwipo and Jeongbang Guide",
+    "url": "/south-korea/jeju/seogwipo-jeongbang/",
+    "parent": "Jeju · South Coast",
+    "type": "Area",
+    "summary": "A waterfall-city route shaped by stairs, market timing, rain decisions and local memory.",
+    "keywords": ["seogwipo", "jeongbang falls", "olle market", "waterfall", "south jeju"]
+  },
+  {
+    "title": "Jungmun and Andeok Guide",
+    "url": "/south-korea/jeju/jungmun-andeok/",
+    "parent": "Jeju · Southwest Geology",
+    "type": "Area",
+    "summary": "Jusangjeolli, Jungmun services and tide-sensitive Andeok geology planned as separate layers.",
+    "keywords": ["jungmun", "andeok", "jusangjeolli", "yongmeori", "sanbangsan", "geology"]
+  },
+  {
+    "title": "Moseulpo and Gapado Guide",
+    "url": "/south-korea/jeju/moseulpo-gapado/",
+    "parent": "Jeju · Southwest Ferry",
+    "type": "Area",
+    "summary": "A passenger manifest for Unjin Port, Gapado walking, wind status and the return sailing.",
+    "keywords": ["moseulpo", "gapado", "unjin port", "jeju ferry", "barley island"]
+  },
+  {
+    "title": "Seongsan and Udo Guide",
+    "url": "/south-korea/jeju/seongsan-udo/",
+    "parent": "Jeju · East Coast",
+    "type": "Area",
+    "summary": "Coordinate the Seongsan sunrise clock with Udo ferry status, identification and return time.",
+    "keywords": ["seongsan", "udo", "sunrise peak", "udo ferry", "seongsan port"]
+  },
+  {
+    "title": "Woljeongri and Gimnyeong Guide",
+    "url": "/south-korea/jeju/woljeongri-gimnyeong/",
+    "parent": "Jeju · Northeast Coast",
+    "type": "Area",
+    "summary": "Beach conditions, basalt coast, village etiquette, trail status and a car-free coastal line.",
+    "keywords": ["woljeongri", "gimnyeong", "jeju beach", "geo trail", "northeast jeju"]
+  },
+  {
+    "title": "About TripDistill",
+    "url": "/about/",
+    "parent": "TripDistill",
+    "type": "About",
+    "summary": "How the site researches, reviews and updates travel guides.",
+    "keywords": ["about", "methodology", "sources"]
+  }
+]
