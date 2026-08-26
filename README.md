@@ -30,6 +30,8 @@ Northern Thailand extends that system without cloning Bangkok. The Chiang Mai cl
 
 Southern Thailand's Andaman cluster adds a chart-room system without cloning Bangkok or Chiang Mai: limestone ink, deep harbor blue, sea-glass turquoise, coral signal orange, monsoon slate and warm sand. Its hub is an archipelago plotting table, while the eight chapters use a Phuket port ledger, Phang Nga tide manifest, Krabi karst profile, Phi Phi landing clock, Ko Lanta island spine, Trang ferry constellation, Ko Lipe southern compass and Similan–Surin expedition board. Marine forecast, park access, named piers and land-side departure buffers are structural content, not disclaimers appended after the itinerary.
 
+Central Thailand's Ayutthaya cluster uses a river-archaeology system rather than a generic heritage skin: kiln brick red, aged gold leaf, river teal, archive paper and charcoal ground. Its hub is a three-river confluence atlas. The eight chapters become an arrival signal board, excavated strata, royal ground plan, shade clock, sunset aperture, etiquette threshold, cargo manifest and palace garden cabinet. River bank, surviving evidence, living worship, conservation and the return journey are part of the page structure rather than footnotes beneath a list of ruins.
+
 ## Published guide clusters
 
 - Country hubs: `/japan/`, `/south-korea/` and `/thailand/`
@@ -42,10 +44,11 @@ Southern Thailand's Andaman cluster adds a chart-room system without cloning Ban
 - Seoul area guides: Jongno & Gwanghwamun; Bukchon & Seochon; Myeongdong & Namsan; Hongdae & Yeonnam; Gangnam & Jamsil; Itaewon & Hannam; Seongsu & Seoul Forest; and Yeouido & Hangang
 - Busan area guides: Nampo & Jagalchi; Gamcheon & Songdo; Haeundae & Dongbaek; Gwangalli & Millak; Seomyeon & Jeonpo; Yeongdo & Taejongdae; Haedong Yonggungsa & Gijang; and Dadaepo & Amisan
 - Jeju area guides: Jeju City & Yongduam; Aewol & Hyeopjae; Hallasan; Seogwipo & Jeongbang; Jungmun & Andeok; Moseulpo & Gapado; Seongsan & Udo; and Woljeongri & Gimnyeong
-- Thailand city and regional hubs: `/thailand/bangkok/`, `/thailand/chiang-mai/` and `/thailand/andaman/`
+- Thailand city and regional hubs: `/thailand/bangkok/`, `/thailand/chiang-mai/`, `/thailand/andaman/` and `/thailand/ayutthaya/`
 - Bangkok area guides: Rattanakosin & Grand Palace; Banglamphu & Phra Athit; Yaowarat & Talat Noi; Siam & Ratchaprasong; Sukhumvit & Thong Lo; Silom & Sathorn; Thonburi & Khlong Bang Luang; and Chatuchak & Ari
 - Chiang Mai chapters: Old City & Moat; Nimman & University; Doi Suthep & Wat Pha Lat; Chang Moi & Warorot; Wat Ket & Ping River; Mae Rim & Mae Sa; Mae Kampong; and Doi Inthanon
 - Andaman chapters: Phuket Old Town & South; Phang Nga & Ko Yao; Krabi & Railay; Phi Phi Islands; Ko Lanta; Trang Islands; Ko Lipe & Tarutao; and Similan & Surin
+- Ayutthaya chapters: Railway Station & Chao Phrom; Wat Mahathat & Wat Ratchaburana; Palace Quarter & Wat Phra Si Sanphet; West Island & Wat Lokayasutharam; Wat Chaiwatthanaram & West Bank; Wat Yai Chai Mongkhon & Wat Phanan Choeng; Foreign Settlements & South River; and Bang Pa-In Palace
 
 Area pages are full decision guides rather than thin location summaries. Each page covers orientation, transport, practical trade-offs, a route, FAQs, official references and image attribution. Busan uses a market ledger, elevation transect, coastal clock, event-status poster, city zine, field guide, sunrise notes and estuary notebook. Jeju adds an airport board, stop-token coast, summit gate, water newspaper, geology report, ferry manifest, two-clock control room and material library so the clusters do not become interchangeable templates.
 

@@ -8,7 +8,7 @@ const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
 const port = Number(process.env.TRIPDISTILL_CDP_PORT || 9333);
 const runId = new Date().toISOString().replace(/[:.]/g, '-');
 const outputDir = path.join(os.tmpdir(), `tripdistill-visual-audit-${runId}-${process.pid}`);
-const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${process.pid}`);
+const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${runId}-${process.pid}`);
 fs.mkdirSync(outputDir, { recursive: true });
 
 const allRoutes = [
@@ -114,7 +114,16 @@ const allRoutes = [
   ['ko-lanta', '/thailand/andaman/ko-lanta/'],
   ['trang-islands', '/thailand/andaman/trang-islands/'],
   ['ko-lipe-tarutao', '/thailand/andaman/ko-lipe-tarutao/'],
-  ['similan-surin', '/thailand/andaman/similan-surin/']
+  ['similan-surin', '/thailand/andaman/similan-surin/'],
+  ['ayutthaya', '/thailand/ayutthaya/'],
+  ['railway-station-chao-phrom', '/thailand/ayutthaya/railway-station-chao-phrom/'],
+  ['wat-mahathat-ratchaburana', '/thailand/ayutthaya/wat-mahathat-ratchaburana/'],
+  ['palace-quarter-wat-phra-si-sanphet', '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/'],
+  ['west-island-wat-lokayasutharam', '/thailand/ayutthaya/west-island-wat-lokayasutharam/'],
+  ['wat-chaiwatthanaram-west-bank', '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'],
+  ['wat-yai-chai-mongkhon-phanan-choeng', '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'],
+  ['foreign-settlements-south-river', '/thailand/ayutthaya/foreign-settlements-south-river/'],
+  ['bang-pa-in-palace', '/thailand/ayutthaya/bang-pa-in-palace/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -175,7 +184,7 @@ class CdpClient {
         const pending = this.pending.get(message.id);
         if (!pending) return;
         this.pending.delete(message.id);
-        if (message.error) pending.reject(new Error(message.error.message));
+        if (message.error) pending.reject(new Error(`${pending.method}: ${message.error.message}`));
         else pending.resolve(message.result);
         return;
       }
@@ -187,7 +196,7 @@ class CdpClient {
   send(method, params = {}) {
     const id = this.nextId++;
     this.socket.send(JSON.stringify({ id, method, params }));
-    return new Promise((resolve, reject) => this.pending.set(id, { resolve, reject }));
+    return new Promise((resolve, reject) => this.pending.set(id, { resolve, reject, method }));
   }
 
   once(method) {
@@ -220,18 +229,26 @@ async function navigate(client, url) {
   const loaded = client.once('Page.loadEventFired');
   await client.send('Page.navigate', { url });
   await loaded;
-  return evaluate(client, `new Promise((resolve) => {
-    const started = Date.now();
-    const timer = setInterval(() => {
-      const ready = document.querySelector('#layout-header .site-header') &&
-        document.querySelector('#layout-sidebar nav') &&
-        document.querySelector('#layout-footer .site-footer');
-      if (ready || Date.now() - started > 8000) {
-        clearInterval(timer);
-        resolve(Boolean(ready));
-      }
-    }, 80);
-  })`);
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    try {
+      return await evaluate(client, `new Promise((resolve) => {
+        const started = Date.now();
+        const timer = setInterval(() => {
+          const ready = document.querySelector('#layout-header .site-header') &&
+            document.querySelector('#layout-sidebar nav') &&
+            document.querySelector('#layout-footer .site-footer');
+          if (ready || Date.now() - started > 8000) {
+            clearInterval(timer);
+            resolve(Boolean(ready));
+          }
+        }, 80);
+      })`);
+    } catch (error) {
+      if (!error.message.includes('Inspected target navigated or closed') || attempt === 3) throw error;
+      await delay(180);
+    }
+  }
+  return false;
 }
 
 function sanitizeErrors(errors) {
@@ -380,7 +397,7 @@ if (!skipInteractions) {
     screenHeight: 844
   });
   await delay(300);
-  await navigate(interactionClient, `${baseUrl}/thailand/andaman/`);
+  await navigate(interactionClient, `${baseUrl}/thailand/ayutthaya/`);
   await delay(400);
   interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -406,7 +423,7 @@ if (!skipInteractions) {
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Andaman';
+  input.value = 'Ayutthaya';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -452,7 +469,7 @@ console.log(JSON.stringify({
 await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Andaman islands guide' || interactions.search.count < 1 || interactions.search.first !== 'Andaman Islands Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
+const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Ayutthaya river-island guide' || interactions.search.count < 1 || interactions.search.first !== 'Ayutthaya River Island Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
 if (failures.length || interactionFailed) {
   process.exitCode = 1;
 }

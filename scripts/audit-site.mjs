@@ -100,6 +100,9 @@ for (const absoluteUrl of publishedUrls) {
   if (url.pathname.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) {
     problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
   }
+  if (url.pathname.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) {
+    problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
+  }
 }
 
 const linkFiles = [

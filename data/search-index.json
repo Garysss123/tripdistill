@@ -1064,6 +1064,110 @@
     "keywords": ["similan islands", "surin islands", "marine park", "khao lak", "khura buri", "diving"]
   },
   {
+    "title": "Ayutthaya River Island Guide",
+    "url": "/thailand/ayutthaya/",
+    "parent": "Thailand · Central heritage",
+    "type": "City",
+    "summary": "Eight planning chapters for Ayutthaya's arrival banks, UNESCO ruins, living temples, port history and Bang Pa-In Palace.",
+    "keywords": ["ayutthaya", "river island", "historic city", "thailand ruins", "unesco", "day trip"]
+  },
+  {
+    "title": "Ayutthaya Eight-Chapter Atlas",
+    "url": "/thailand/ayutthaya/#chapters",
+    "parent": "Thailand · Ayutthaya",
+    "type": "Planning",
+    "summary": "Compare eight different ways to plan Ayutthaya, from a station signal board to a palace garden cabinet.",
+    "keywords": ["ayutthaya chapters", "ayutthaya areas", "river atlas", "where to visit"]
+  },
+  {
+    "title": "Ayutthaya Arrival and Local Transport",
+    "url": "/thailand/ayutthaya/#arrival",
+    "parent": "Thailand · Ayutthaya",
+    "type": "Transit",
+    "summary": "Plan the train, east-bank arrival, river crossing, local clusters and protected return to Bangkok.",
+    "keywords": ["ayutthaya train", "bangkok to ayutthaya", "transport", "station", "tuk tuk", "bicycle"]
+  },
+  {
+    "title": "Ayutthaya Two-Day Itinerary",
+    "url": "/thailand/ayutthaya/#itinerary",
+    "parent": "Thailand · Ayutthaya",
+    "type": "Itinerary",
+    "summary": "Use one central-island day and one river-bank day to avoid backtracking and ruin fatigue.",
+    "keywords": ["ayutthaya itinerary", "two days", "overnight", "day trip", "temple route"]
+  },
+  {
+    "title": "Ayutthaya Heritage Conduct Guide",
+    "url": "/thailand/ayutthaya/#conduct",
+    "parent": "Thailand · Ayutthaya",
+    "type": "Etiquette",
+    "summary": "Protect fragile masonry, behave respectfully around Buddha images and visit active temples with care.",
+    "keywords": ["ayutthaya etiquette", "temple dress", "buddha photo", "heritage conduct"]
+  },
+  {
+    "title": "Ayutthaya Railway Station and Chao Phrom Guide",
+    "url": "/thailand/ayutthaya/railway-station-chao-phrom/",
+    "parent": "Ayutthaya · East bank",
+    "type": "Area",
+    "summary": "Turn a Bangkok train into a calm east-bank arrival with luggage, crossing and first-transfer decisions solved.",
+    "keywords": ["ayutthaya station", "chao phrom", "train from bangkok", "pa sak river", "arrival"]
+  },
+  {
+    "title": "Wat Mahathat and Wat Ratchaburana Guide",
+    "url": "/thailand/ayutthaya/wat-mahathat-ratchaburana/",
+    "parent": "Ayutthaya · Central island",
+    "type": "Historic sites",
+    "summary": "Read Ayutthaya's adjacent archaeological pair through compound plans, respectful photography and museum context.",
+    "keywords": ["wat mahathat", "wat ratchaburana", "buddha head", "ayutthaya ruins", "historic park"]
+  },
+  {
+    "title": "Ayutthaya Palace Quarter and Wat Phra Si Sanphet Guide",
+    "url": "/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/",
+    "parent": "Ayutthaya · Royal quarter",
+    "type": "Historic sites",
+    "summary": "Use ceremonial axes, palace foundations and museum objects to understand Ayutthaya's royal ground.",
+    "keywords": ["wat phra si sanphet", "ayutthaya palace", "royal palace", "chao sam phraya museum"]
+  },
+  {
+    "title": "West Ayutthaya and Wat Lokayasutharam Guide",
+    "url": "/thailand/ayutthaya/west-island-wat-lokayasutharam/",
+    "parent": "Ayutthaya · West island",
+    "type": "Area",
+    "summary": "Follow shade and distance through Ayutthaya's quieter west-island edge and monumental reclining Buddha.",
+    "keywords": ["wat lokayasutharam", "reclining buddha", "west ayutthaya", "bicycle route"]
+  },
+  {
+    "title": "Wat Chaiwatthanaram and West Bank Guide",
+    "url": "/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/",
+    "parent": "Ayutthaya · West bank",
+    "type": "Historic site",
+    "summary": "Read Wat Chaiwatthanaram as a complete architectural ensemble with late-light and return transport already planned.",
+    "keywords": ["wat chaiwatthanaram", "ayutthaya sunset", "west bank", "temple ruins"]
+  },
+  {
+    "title": "Wat Yai Chai Mongkhon and Wat Phanan Choeng Guide",
+    "url": "/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/",
+    "parent": "Ayutthaya · East and south bank",
+    "type": "Living temples",
+    "summary": "Visit two active Ayutthaya temples through dress, worship etiquette, east-bank transport and respectful pacing.",
+    "keywords": ["wat yai chai mongkhon", "wat phanan choeng", "living temple", "ayutthaya dress code"]
+  },
+  {
+    "title": "Ayutthaya Foreign Settlements and South River Guide",
+    "url": "/thailand/ayutthaya/foreign-settlements-south-river/",
+    "parent": "Ayutthaya · South river",
+    "type": "History route",
+    "summary": "Read Japanese and European settlement traces as parts of Ayutthaya's international river-port network.",
+    "keywords": ["ayutthaya japanese village", "foreign settlements", "baan hollanda", "south river", "port history"]
+  },
+  {
+    "title": "Bang Pa-In Palace Travel Guide",
+    "url": "/thailand/ayutthaya/bang-pa-in-palace/",
+    "parent": "Ayutthaya · Royal estate",
+    "type": "Excursion",
+    "summary": "Plan Bang Pa-In as its own palace and garden excursion with dress, transport, opening and return checks.",
+    "keywords": ["bang pa-in", "bang pa in palace", "ayutthaya palace", "royal palace", "day trip"]
+  },
+  {
     "title": "About TripDistill",
     "url": "/about/",
     "parent": "TripDistill",
