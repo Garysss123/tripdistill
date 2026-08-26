@@ -856,6 +856,110 @@
     "keywords": ["woljeongri", "gimnyeong", "jeju beach", "geo trail", "northeast jeju"]
   },
   {
+    "title": "Chiang Mai Travel Guide",
+    "url": "/thailand/chiang-mai/",
+    "parent": "Thailand · Northern city",
+    "type": "City",
+    "summary": "Eight distinct city, river and mountain chapters with base, transport, seasonal-air and four-day planning decisions.",
+    "keywords": ["chiang mai", "lanna", "north thailand", "where to stay", "neighborhoods", "mountains"]
+  },
+  {
+    "title": "Chiang Mai Air Quality Guide",
+    "url": "/thailand/chiang-mai/#air",
+    "parent": "Chiang Mai",
+    "type": "Practical",
+    "summary": "Use official readings, personal health needs and real substitute days when smoke or particulates change outdoor plans.",
+    "keywords": ["chiang mai air quality", "smoke", "air4thai", "pm2.5", "burning season"]
+  },
+  {
+    "title": "Where to Stay in Chiang Mai",
+    "url": "/thailand/chiang-mai/#stay",
+    "parent": "Chiang Mai",
+    "type": "Stay",
+    "summary": "Compare Old City, Nimman and the river edge by daily radius, vehicle access, noise and first-trip priorities.",
+    "keywords": ["where to stay chiang mai", "old city hotel", "nimman", "ping river", "best area"]
+  },
+  {
+    "title": "Chiang Mai Four-Day Itinerary",
+    "url": "/thailand/chiang-mai/#itinerary",
+    "parent": "Chiang Mai",
+    "type": "Itinerary",
+    "summary": "Alternate Old City, a contemporary or river chapter, Doi Suthep and one weather-flexible outer route.",
+    "keywords": ["chiang mai itinerary", "four days", "4 days", "first trip", "route"]
+  },
+  {
+    "title": "Getting to and Around Chiang Mai",
+    "url": "/thailand/chiang-mai/#arrival",
+    "parent": "Chiang Mai",
+    "type": "Transit",
+    "summary": "Plan Chiang Mai airport, railway arrival and confirmed return transport for mountain and village routes.",
+    "keywords": ["chiang mai airport", "cnx", "chiang mai train", "transport", "airport transfer"]
+  },
+  {
+    "title": "Chiang Mai Old City and Moat Guide",
+    "url": "/thailand/chiang-mai/old-city-moat/",
+    "parent": "Chiang Mai · Old City",
+    "type": "Area",
+    "summary": "Use the moat and gates for orientation, then give fewer sacred places enough time, shade and context.",
+    "keywords": ["chiang mai old city", "moat", "tha phae gate", "wat chedi luang", "temples"]
+  },
+  {
+    "title": "Nimman and University Guide",
+    "url": "/thailand/chiang-mai/nimman-university/",
+    "parent": "Chiang Mai · West side",
+    "type": "Area",
+    "summary": "Evaluate connected sois, airport proximity, traffic and the contemporary west side as a practical hotel base.",
+    "keywords": ["nimman", "nimmanhaemin", "chiang mai university", "one nimman", "where to stay"]
+  },
+  {
+    "title": "Doi Suthep and Wat Pha Lat Guide",
+    "url": "/thailand/chiang-mai/doi-suthep-wat-pha-lat/",
+    "parent": "Chiang Mai · Sacred mountain",
+    "type": "Area",
+    "summary": "Sequence two sacred mountain sites around elevation, temple conduct, road conditions and a secured return.",
+    "keywords": ["doi suthep", "wat pha lat", "monk trail", "chiang mai temple", "mountain"]
+  },
+  {
+    "title": "Chang Moi and Warorot Market Guide",
+    "url": "/thailand/chiang-mai/chang-moi-warorot/",
+    "parent": "Chiang Mai · Market corridor",
+    "type": "Area",
+    "summary": "Follow the trading corridor from the old-city edge through Kad Luang toward the Ping River.",
+    "keywords": ["chang moi", "warorot market", "kad luang", "chiang mai market", "shopping"]
+  },
+  {
+    "title": "Wat Ket and Ping River Guide",
+    "url": "/thailand/chiang-mai/wat-ket-ping-river/",
+    "parent": "Chiang Mai · East bank",
+    "type": "Area",
+    "summary": "Use selected bridges and river light to explore a living east-bank neighborhood at the right scale.",
+    "keywords": ["wat ket", "ping river", "mae ping", "chiang mai river", "east bank"]
+  },
+  {
+    "title": "Mae Rim and Mae Sa Valley Guide",
+    "url": "/thailand/chiang-mai/mae-rim-mae-sa/",
+    "parent": "Chiang Mai · Outer valley",
+    "type": "Area",
+    "summary": "Choose a botanical anchor and compatible valley stop using road logic, time and an explicit animal-welfare filter.",
+    "keywords": ["mae rim", "mae sa", "queen sirikit botanic garden", "chiang mai day trip", "animal welfare"]
+  },
+  {
+    "title": "Mae Kampong Village Guide",
+    "url": "/thailand/chiang-mai/mae-kampong/",
+    "parent": "Chiang Mai · Mountain village",
+    "type": "Area",
+    "summary": "Plan a resident-first mountain village day or overnight around road capacity, weather and a confirmed return.",
+    "keywords": ["mae kampong", "chiang mai village", "homestay", "mountain village", "day trip"]
+  },
+  {
+    "title": "Doi Inthanon Travel Guide",
+    "url": "/thailand/chiang-mai/doi-inthanon/",
+    "parent": "Chiang Mai · National park",
+    "type": "Area",
+    "summary": "Build a high-altitude national park day around live weather, park notices, vehicle time and fewer compatible stops.",
+    "keywords": ["doi inthanon", "thailand highest mountain", "national park", "chiang mai day trip", "summit"]
+  },
+  {
     "title": "About TripDistill",
     "url": "/about/",
     "parent": "TripDistill",

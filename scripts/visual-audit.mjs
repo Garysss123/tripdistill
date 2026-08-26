@@ -96,7 +96,16 @@ const allRoutes = [
   ['sukhumvit-thong-lo', '/thailand/bangkok/sukhumvit-thong-lo/'],
   ['silom-sathorn', '/thailand/bangkok/silom-sathorn/'],
   ['thonburi-khlong-bang-luang', '/thailand/bangkok/thonburi-khlong-bang-luang/'],
-  ['chatuchak-ari', '/thailand/bangkok/chatuchak-ari/']
+  ['chatuchak-ari', '/thailand/bangkok/chatuchak-ari/'],
+  ['chiang-mai', '/thailand/chiang-mai/'],
+  ['old-city-moat', '/thailand/chiang-mai/old-city-moat/'],
+  ['nimman-university', '/thailand/chiang-mai/nimman-university/'],
+  ['doi-suthep-wat-pha-lat', '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'],
+  ['chang-moi-warorot', '/thailand/chiang-mai/chang-moi-warorot/'],
+  ['wat-ket-ping-river', '/thailand/chiang-mai/wat-ket-ping-river/'],
+  ['mae-rim-mae-sa', '/thailand/chiang-mai/mae-rim-mae-sa/'],
+  ['mae-kampong', '/thailand/chiang-mai/mae-kampong/'],
+  ['doi-inthanon', '/thailand/chiang-mai/doi-inthanon/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -349,7 +358,7 @@ if (!skipInteractions) {
     screenHeight: 844
   });
   await delay(300);
-  await navigate(interactionClient, `${baseUrl}/thailand/bangkok/`);
+  await navigate(interactionClient, `${baseUrl}/thailand/chiang-mai/`);
   await delay(400);
   interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -375,7 +384,7 @@ if (!skipInteractions) {
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Bangkok';
+  input.value = 'Chiang Mai';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -421,7 +430,7 @@ console.log(JSON.stringify({
 await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Bangkok city guide' || interactions.search.count < 1 || interactions.search.first !== 'Bangkok Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
+const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Chiang Mai city guide' || interactions.search.count < 1 || interactions.search.first !== 'Chiang Mai Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
 if (failures.length || interactionFailed) {
   process.exitCode = 1;
 }

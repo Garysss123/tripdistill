@@ -22,8 +22,17 @@ function textContent(value = '') {
 
 const sitemap = read('sitemap.xml');
 const publishedUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)];
 const titles = new Map();
 const canonicals = new Set();
+
+for (const [, entry] of sitemapEntries) {
+  const loc = entry.match(/<loc>(.*?)<\/loc>/)?.[1] || 'unknown URL';
+  const lastmod = entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] || '';
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod) || Number.isNaN(Date.parse(`${lastmod}T00:00:00Z`))) {
+    problems.push(`sitemap.xml: ${loc} has missing or invalid lastmod "${lastmod}"`);
+  }
+}
 
 for (const absoluteUrl of publishedUrls) {
   const url = new URL(absoluteUrl);
@@ -84,6 +93,9 @@ for (const absoluteUrl of publishedUrls) {
   }
   if (url.pathname.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) {
     problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
+  }
+  if (url.pathname.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) {
+    problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   }
 }
 

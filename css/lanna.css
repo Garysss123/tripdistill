@@ -1,0 +1,303 @@
+:root {
+  --lanna-ink: #173344;
+  --lanna-night: #132431;
+  --lanna-indigo: #245064;
+  --lanna-teak: #71372d;
+  --lanna-clay: #b75d3c;
+  --lanna-saffron: #d59a2d;
+  --lanna-moss: #486a50;
+  --lanna-rice: #f7efdf;
+  --lanna-paper: #fffaf0;
+  --lanna-thread: rgba(87, 56, 37, .15);
+}
+
+body[data-city="chiang-mai"] { background: #ece9dd; }
+body[data-city="chiang-mai"] .page-content {
+  background-color: #fbf7ed;
+  background-image: linear-gradient(90deg, rgba(113,55,45,.025) 1px, transparent 1px), linear-gradient(rgba(36,80,100,.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.lanna-breadcrumbs a { color: var(--lanna-teak); }
+.lanna-breadcrumbs span { color: #866f5d; }
+.lanna-display { font-family: Georgia, "Times New Roman", serif; }
+.lanna-area-hero { position: relative; overflow: hidden; border-radius: 1.8rem; box-shadow: 0 28px 70px rgba(45,34,25,.16); }
+.lanna-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.4rem; }
+.lanna-meta span { padding: .45rem .7rem; border: 1px solid currentColor; border-radius: 999px; font-size: .72rem; font-weight: 850; letter-spacing: .04em; }
+.lanna-kicker { color: var(--lanna-clay); font-size: .7rem; font-weight: 950; letter-spacing: .13em; text-transform: uppercase; }
+.lanna-panel-title { margin: .7rem 0 .55rem; color: var(--lanna-ink); font: 500 clamp(1.8rem, 4vw, 3.2rem)/.98 Georgia, serif; }
+
+/* Chiang Mai hub: a woven city atlas, deliberately unlike Bangkok's river/rail control room. */
+.lanna-city-hero { position: relative; display: grid; grid-template-columns: .92fr 1.08fr; min-height: 42rem; overflow: hidden; border-radius: 2rem; color: #fff; background: var(--lanna-night); box-shadow: 0 30px 80px rgba(26,36,37,.2); }
+.lanna-city-hero::after { content: ""; position: absolute; z-index: 3; inset: auto 0 0; height: 1.1rem; background: repeating-linear-gradient(135deg, var(--lanna-saffron) 0 1rem, var(--lanna-clay) 1rem 2rem, var(--lanna-moss) 2rem 3rem, var(--lanna-indigo) 3rem 4rem); }
+.lanna-city-copy { position: relative; z-index: 2; padding: clamp(2.5rem, 6vw, 5.4rem); align-self: center; }
+.lanna-city-copy::before { content: ""; position: absolute; top: 2rem; left: 2rem; width: 4rem; height: 4rem; border-top: 2px solid rgba(224,170,68,.7); border-left: 2px solid rgba(224,170,68,.7); }
+.lanna-city-copy .eyebrow { color: #f1c966; }
+.lanna-city-copy h1 { max-width: 8ch; margin: .9rem 0 1.1rem; color: #fff; font: 500 clamp(4.1rem, 7.5vw, 7.2rem)/.78 Georgia, serif; letter-spacing: -.06em; }
+.lanna-city-copy h1 span { display: block; margin-top: .35rem; color: #e6aa39; font: 850 .22em/1.05 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.lanna-city-copy p { max-width: 40rem; color: rgba(255,255,255,.72); font-size: 1.04rem; }
+.lanna-city-copy .lanna-meta span { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
+.lanna-city-gallery { position: relative; min-height: 42rem; overflow: hidden; }
+.lanna-city-gallery > img:first-child { width: 100%; height: 100%; object-fit: cover; }
+.lanna-city-gallery::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--lanna-night), transparent 35%), linear-gradient(0deg, rgba(19,36,49,.4), transparent 48%); }
+.lanna-city-gallery .lanna-inset { position: absolute; z-index: 2; right: 1.7rem; bottom: 2.3rem; width: 37%; height: 49%; object-fit: cover; border: .55rem solid #f4e4c6; clip-path: polygon(50% 0, 100% 13%, 100% 87%, 50% 100%, 0 87%, 0 13%); }
+.lanna-city-seal { position: absolute; z-index: 4; left: 1.2rem; bottom: 2.4rem; display: grid; place-items: center; width: 8rem; height: 8rem; padding: 1rem; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; color: #173344; background: #e5b44d; text-align: center; transform: rotate(-7deg); }
+.lanna-city-seal strong { font: 500 1.15rem/.95 Georgia, serif; }
+.lanna-city-seal small { font-size: .55rem; font-weight: 950; letter-spacing: .1em; }
+.lanna-first-decisions { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); overflow: hidden; border-radius: 1.4rem; background: var(--lanna-night); }
+.lanna-first-decisions > article { min-height: 18rem; padding: 2rem; color: #fff; border-left: 1px solid rgba(255,255,255,.12); }
+.lanna-first-decisions > article:first-child { color: #213f42; border-left: 0; background: #dfe8cf; }
+.lanna-first-decisions small { color: var(--lanna-saffron); font-weight: 950; letter-spacing: .12em; }
+.lanna-first-decisions article:first-child small { color: var(--lanna-teak); }
+.lanna-first-decisions h3 { margin: .8rem 0 .55rem; color: inherit; font: 500 1.75rem/1 Georgia, serif; }
+.lanna-first-decisions p { color: inherit; opacity: .72; }
+.lanna-area-atlas { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 12rem; gap: .8rem; }
+.lanna-atlas-card { position: relative; grid-column: span 4; grid-row: span 2; overflow: hidden; border-radius: 1.2rem; color: #fff; background: var(--lanna-night); }
+.lanna-atlas-card.wide { grid-column: span 7; }
+.lanna-atlas-card.tall { grid-column: span 5; grid-row: span 3; }
+.lanna-atlas-card.short { grid-row: span 1; }
+.lanna-atlas-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.lanna-atlas-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(17,25,27,.95), transparent 70%); }
+.lanna-atlas-card:hover img { transform: scale(1.035); }
+.lanna-atlas-copy { position: absolute; z-index: 2; inset: auto 0 0; padding: 1.35rem; }
+.lanna-atlas-copy small { color: #f0bf53; font-size: .63rem; font-weight: 950; letter-spacing: .12em; }
+.lanna-atlas-copy h3 { margin: .35rem 0; color: #fff; font: 500 1.7rem/1 Georgia, serif; }
+.lanna-atlas-copy p { margin: 0 0 .45rem; color: rgba(255,255,255,.72); font-size: .84rem; }
+.lanna-atlas-copy strong { color: #f0bf53; font-size: .75rem; }
+.lanna-air-board { display: grid; grid-template-columns: .8fr 1.2fr; overflow: hidden; border-radius: 1.4rem; background: #2b4e50; }
+.lanna-air-board > div { padding: clamp(2rem, 5vw, 4rem); color: #fff; }
+.lanna-air-board > div:first-child { color: #2f2a20; background: #efd59a; }
+.lanna-air-board h3 { margin: .4rem 0 .8rem; color: inherit; font: 500 2rem/1 Georgia, serif; }
+.lanna-air-board p, .lanna-air-board li { color: inherit; opacity: .76; }
+.lanna-season-loom { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 5px solid var(--lanna-saffron); border-bottom: 5px solid var(--lanna-indigo); }
+.lanna-season-loom article { padding: 1.8rem; border-right: 1px solid var(--lanna-thread); background: #fffaf0; }
+.lanna-season-loom article:last-child { border-right: 0; }
+.lanna-season-loom time { color: var(--lanna-teak); font-size: .72rem; font-weight: 950; letter-spacing: .11em; }
+.lanna-season-loom h3 { margin: .7rem 0 .45rem; font: 500 1.45rem/1.05 Georgia, serif; }
+.lanna-arrival-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.lanna-arrival-map article { min-height: 16rem; padding: 1.7rem; border: 1px solid var(--lanna-thread); border-radius: 1rem 3rem 1rem 1rem; background: #fff; }
+.lanna-arrival-map article:nth-child(2) { background: #e4eddf; }
+.lanna-arrival-map article:nth-child(3) { color: #fff; background: var(--lanna-indigo); }
+.lanna-arrival-map article:nth-child(3) h3, .lanna-arrival-map article:nth-child(3) p { color: inherit; }
+.lanna-arrival-map h3 { margin: .8rem 0 .45rem; font: 500 1.55rem/1 Georgia, serif; }
+
+/* 01 — Old City: square moat manuscript. */
+.moat-manuscript-hero { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 39rem; padding: 1rem; color: #2b342e; background: #e9d8af; }
+.moat-manuscript-copy { position: relative; padding: clamp(2.4rem, 5vw, 4.6rem); align-self: center; }
+.moat-manuscript-copy::before { content: "NORTH GATE\A\A WEST GATE                         EAST GATE\A\A SOUTH GATE"; position: absolute; inset: 1.2rem; padding: 1rem; border: 2px solid rgba(109,54,44,.45); white-space: pre; color: rgba(109,54,44,.55); font-size: .56rem; font-weight: 900; letter-spacing: .08em; pointer-events: none; }
+.moat-manuscript-copy > * { position: relative; }
+.moat-manuscript-copy h1 { margin: .9rem 0 1rem; color: var(--lanna-teak); font: 500 clamp(3.5rem, 7vw, 6.3rem)/.82 Georgia, serif; }
+.moat-manuscript-copy h1 span { display: block; color: var(--lanna-ink); }
+.moat-manuscript-photo { position: relative; margin: 1rem; overflow: hidden; border-radius: .6rem 6rem .6rem .6rem; }
+.moat-manuscript-photo img { width: 100%; height: 100%; object-fit: cover; }
+.moat-manuscript-photo::after { content: "TEMPLE HOURS FOLLOW WORSHIP, NOT YOUR CHECKLIST"; position: absolute; right: 1rem; bottom: 1rem; max-width: 13rem; padding: 1rem; color: #fff; background: rgba(24,51,68,.9); font-size: .67rem; font-weight: 900; letter-spacing: .08em; }
+.moat-quadrants { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--lanna-indigo); }
+.moat-quadrants article { min-height: 15rem; padding: 1.5rem; border-right: 1px solid rgba(36,80,100,.3); background: #f8eed5; }
+.moat-quadrants article:last-child { border-right: 0; }
+.moat-quadrants small { color: var(--lanna-teak); font-weight: 950; }
+.moat-quadrants h3 { margin: .8rem 0 .4rem; font: 500 1.45rem/1 Georgia, serif; }
+.temple-attention { display: grid; grid-template-columns: .75fr 1.25fr; overflow: hidden; border-radius: 1.2rem; }
+.temple-attention > div { padding: clamp(2rem, 5vw, 3.6rem); background: #d9e5d8; }
+.temple-attention > div:last-child { color: #fff; background: var(--lanna-teak); }
+.temple-attention h3 { color: inherit; font: 500 1.9rem/1 Georgia, serif; }
+.temple-attention p, .temple-attention li { color: inherit; opacity: .76; }
+
+/* 02 — Nimman: contemporary independent magazine. */
+.nimman-editorial-hero { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 39rem; color: #fff; background: #173c50; }
+.nimman-editorial-photo { position: relative; overflow: hidden; clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%); }
+.nimman-editorial-photo img { width: 100%; height: 100%; object-fit: cover; }
+.nimman-editorial-photo::after { content: "SOI / STUDIO / COFFEE / CAMPUS"; position: absolute; left: 1rem; bottom: 1rem; padding: .7rem 1rem; background: #df9c2e; color: #1c3540; font-size: .68rem; font-weight: 950; letter-spacing: .12em; }
+.nimman-editorial-copy { padding: clamp(2.4rem, 5vw, 4.6rem); align-self: center; }
+.nimman-editorial-copy .eyebrow { color: #e6b34d; }
+.nimman-editorial-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(3.5rem, 6vw, 5.8rem)/.84 Georgia, serif; }
+.nimman-editorial-copy h1 span { color: #e5a33a; }
+.nimman-editorial-copy p { color: rgba(255,255,255,.72); }
+.nimman-editorial-copy .lanna-meta span { color: #fff; }
+.soi-index { display: grid; grid-template-columns: repeat(6, 1fr); gap: .65rem; }
+.soi-index article { grid-column: span 2; min-height: 14rem; padding: 1.4rem; background: #fff; border-top: 5px solid var(--lanna-clay); box-shadow: 0 10px 25px rgba(25,45,52,.08); }
+.soi-index article:nth-child(2) { grid-column: span 4; border-color: var(--lanna-saffron); background: #f2e4be; }
+.soi-index article:nth-child(3) { border-color: var(--lanna-indigo); }
+.soi-index h3 { margin: .6rem 0; font: 500 1.5rem/1 Georgia, serif; }
+.base-scorecard { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border-radius: 1.2rem; }
+.base-scorecard article { padding: 1.5rem; color: #fff; background: #214a5c; border-right: 1px solid rgba(255,255,255,.12); }
+.base-scorecard article:nth-child(even) { color: #342b21; background: #ecd59f; }
+.base-scorecard h3 { color: inherit; font: 500 1.35rem/1 Georgia, serif; }
+.base-scorecard p { color: inherit; opacity: .72; }
+
+/* 03 — Doi Suthep: elevation ledger. */
+.mountain-ascent-hero { min-height: 41rem; color: #fff; background: #1c3f38; }
+.mountain-ascent-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mountain-ascent-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,43,37,.96), rgba(14,43,37,.63) 58%, rgba(14,43,37,.08)); }
+.mountain-ascent-copy { position: relative; z-index: 2; max-width: 49rem; padding: clamp(2.8rem, 6vw, 5.6rem); }
+.mountain-ascent-copy .eyebrow { color: #f0c35b; }
+.mountain-ascent-copy h1 { margin: .9rem 0; color: #fff; font: 500 clamp(3.5rem, 7vw, 6.5rem)/.82 Georgia, serif; }
+.mountain-ascent-copy h1 span { display: block; color: #e4b54f; }
+.mountain-ascent-copy p { color: rgba(255,255,255,.72); }
+.mountain-ascent-copy .lanna-meta span { color: #fff; }
+.elevation-ledger { position: relative; padding-left: 5rem; }
+.elevation-ledger::before { content: ""; position: absolute; left: 2.2rem; top: 1rem; bottom: 1rem; width: 3px; background: linear-gradient(var(--lanna-moss), var(--lanna-saffron)); }
+.elevation-ledger article { position: relative; padding: 1.4rem 1.7rem; border-bottom: 1px solid var(--lanna-thread); background: rgba(255,255,255,.72); }
+.elevation-ledger article::before { content: attr(data-level); position: absolute; left: -5rem; top: 1.4rem; width: 3.8rem; color: var(--lanna-teak); font-size: .64rem; font-weight: 950; text-align: right; }
+.elevation-ledger article::after { content: ""; position: absolute; left: -3.25rem; top: 1.65rem; width: .8rem; height: .8rem; border: 3px solid #fff; border-radius: 50%; background: var(--lanna-saffron); box-shadow: 0 0 0 2px var(--lanna-moss); }
+.elevation-ledger h3 { margin: 0 0 .35rem; font: 500 1.5rem/1 Georgia, serif; }
+.mountain-contract { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 1.2rem; }
+.mountain-contract > div { padding: clamp(2rem, 5vw, 3.5rem); background: #e5ecdf; }
+.mountain-contract > div:last-child { color: #fff; background: #233b4b; }
+.mountain-contract h3 { color: inherit; font: 500 1.8rem/1 Georgia, serif; }
+.mountain-contract p, .mountain-contract li { color: inherit; opacity: .76; }
+
+/* 04 — Chang Moi and Warorot: market textile ledger. */
+.market-fabric-hero { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 38rem; padding: 1rem; color: #2c211b; background: repeating-linear-gradient(45deg, #d79932 0 1.2rem, #b35137 1.2rem 2.4rem, #264c58 2.4rem 3.6rem, #e2c277 3.6rem 4.8rem); }
+.market-fabric-copy { padding: clamp(2.2rem, 5vw, 4.4rem); align-self: center; background: rgba(255,250,234,.96); }
+.market-fabric-copy h1 { margin: .8rem 0 1rem; color: var(--lanna-teak); font: 500 clamp(3.4rem, 6vw, 5.8rem)/.84 Georgia, serif; }
+.market-fabric-copy h1 span { display: block; color: var(--lanna-indigo); }
+.market-fabric-photo { position: relative; overflow: hidden; border-radius: 7rem .5rem .5rem .5rem; }
+.market-fabric-photo img { width: 100%; height: 100%; object-fit: cover; }
+.market-fabric-photo::after { content: "KAD LUANG / BUY WITH CONTEXT"; position: absolute; right: 1rem; bottom: 1rem; padding: .75rem 1rem; color: #fff; background: rgba(113,55,45,.9); font-size: .68rem; font-weight: 950; letter-spacing: .1em; }
+.market-ledger { display: grid; grid-template-columns: .7fr 1fr 1fr 1fr; overflow: hidden; border: 1px solid #d6b979; }
+.market-ledger article { min-height: 16rem; padding: 1.5rem; border-right: 1px solid #d6b979; background: #fff8e8; }
+.market-ledger article:first-child { color: #fff; background: var(--lanna-teak); }
+.market-ledger article:last-child { border-right: 0; }
+.market-ledger h3 { color: inherit; font: 500 1.45rem/1 Georgia, serif; }
+.market-ledger p { color: inherit; opacity: .73; }
+.purchase-weave { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.purchase-weave article { padding: 1.7rem; border-bottom: 6px solid var(--lanna-clay); background: #fff; }
+.purchase-weave article:nth-child(2) { border-color: var(--lanna-saffron); }
+.purchase-weave article:nth-child(3) { border-color: var(--lanna-indigo); }
+
+/* 05 — Wat Ket: river letter and bridge folds. */
+.river-letter-hero { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 39rem; padding: 1.1rem; color: #244a52; background: #dce9df; }
+.river-letter-photo { position: relative; overflow: hidden; border-radius: .6rem; transform: rotate(-1.3deg); box-shadow: 0 20px 50px rgba(41,67,66,.22); }
+.river-letter-photo img { width: 100%; height: 100%; object-fit: cover; }
+.river-letter-photo::after { content: "FROM THE EAST BANK"; position: absolute; left: 1rem; bottom: 1rem; padding: .65rem .85rem; color: #fff; background: var(--lanna-indigo); font-size: .65rem; font-weight: 950; letter-spacing: .12em; }
+.river-letter-copy { position: relative; margin: 1.4rem 1.1rem; padding: clamp(2.2rem, 5vw, 4.5rem); align-self: center; background: #fffaf0; box-shadow: 0 15px 45px rgba(68,58,42,.12); transform: rotate(1deg); }
+.river-letter-copy::before { content: ""; position: absolute; top: 1.5rem; right: 1.5rem; width: 4.3rem; height: 3.2rem; border: 2px dotted #b55b3c; }
+.river-letter-copy h1 { margin: .8rem 0 1rem; color: var(--lanna-indigo); font: 500 clamp(3.4rem, 6vw, 5.8rem)/.84 Georgia, serif; }
+.river-letter-copy h1 span { display: block; color: var(--lanna-teak); }
+.river-sides { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.river-sides article { min-height: 18rem; padding: 2rem; border-radius: 3rem .8rem .8rem .8rem; background: #dce8df; }
+.river-sides article:last-child { border-radius: .8rem 3rem .8rem .8rem; color: #fff; background: var(--lanna-indigo); }
+.river-sides h3 { color: inherit; font: 500 1.8rem/1 Georgia, serif; }
+.river-sides p { color: inherit; opacity: .74; }
+.bridge-fold { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border-top: 3px solid var(--lanna-indigo); border-bottom: 3px solid var(--lanna-indigo); }
+.bridge-fold article { padding: 1.5rem; background: #fff; border-right: 1px dashed #7fa1a4; }
+.bridge-fold article:last-child { border-right: 0; }
+.bridge-fold small { color: var(--lanna-clay); font-weight: 950; }
+
+/* 06 — Mae Rim: botanical field cabinet. */
+.valley-greenhouse-hero { display: grid; grid-template-columns: .95fr 1.05fr; min-height: 39rem; color: #23382d; background: #e2ead8; }
+.valley-greenhouse-copy { padding: clamp(2.4rem, 5vw, 4.8rem); align-self: center; }
+.valley-greenhouse-copy h1 { margin: .8rem 0 1rem; color: #315443; font: 500 clamp(3.5rem, 6vw, 6rem)/.84 Georgia, serif; }
+.valley-greenhouse-copy h1 span { display: block; color: var(--lanna-teak); }
+.valley-greenhouse-photo { position: relative; margin: 1.2rem; overflow: hidden; clip-path: polygon(12% 0, 88% 0, 100% 18%, 100% 100%, 0 100%, 0 18%); }
+.valley-greenhouse-photo img { width: 100%; height: 100%; object-fit: cover; }
+.valley-greenhouse-photo::after { content: "MAE SA VALLEY / FIELD SPECIMEN"; position: absolute; left: 1rem; bottom: 1rem; padding: .65rem .85rem; color: #26342a; background: rgba(239,213,154,.92); font-size: .65rem; font-weight: 950; letter-spacing: .1em; }
+.specimen-cabinet { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.specimen-card { position: relative; min-height: 18rem; padding: 2rem 1.5rem 1.5rem; border: 1px solid #98ad91; border-radius: 7rem 7rem 1rem 1rem; background: #eef2e5; text-align: center; }
+.specimen-card::before { content: attr(data-number); position: absolute; top: 1rem; left: 1rem; color: var(--lanna-teak); font-size: .65rem; font-weight: 950; }
+.specimen-card h3 { margin: 3rem 0 .7rem; color: #345b47; font: 500 1.55rem/1 Georgia, serif; }
+.ethical-filter { display: grid; grid-template-columns: .8fr 1.2fr; overflow: hidden; border-radius: 1.2rem; }
+.ethical-filter > div { padding: clamp(2rem, 5vw, 3.7rem); color: #fff; background: #345b47; }
+.ethical-filter > div:last-child { color: #30281f; background: #efd6a1; }
+.ethical-filter h3 { color: inherit; font: 500 1.85rem/1 Georgia, serif; }
+.ethical-filter p, .ethical-filter li { color: inherit; opacity: .76; }
+
+/* 07 — Mae Kampong: rain notes and village capacity. */
+.village-rain-hero { min-height: 41rem; color: #fff; background: #243f38; }
+.village-rain-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.village-rain-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,57,48,.96), rgba(28,57,48,.6) 58%, rgba(28,57,48,.12)), repeating-linear-gradient(105deg, rgba(255,255,255,.08) 0 1px, transparent 1px 22px); }
+.village-rain-copy { position: relative; z-index: 2; max-width: 50rem; padding: clamp(2.8rem, 6vw, 5.8rem); }
+.village-rain-copy .eyebrow { color: #f2c766; }
+.village-rain-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(3.8rem, 7vw, 6.8rem)/.82 Georgia, serif; }
+.village-rain-copy h1 span { display: block; color: #e8bd59; }
+.village-rain-copy p { color: rgba(255,255,255,.74); }
+.village-rain-copy .lanna-meta span { color: #fff; }
+.village-capacity { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.village-capacity article { min-height: 17rem; padding: 1.7rem; border-radius: .7rem 4rem .7rem .7rem; background: #e3ead9; }
+.village-capacity article:nth-child(2) { color: #fff; background: #3e6454; }
+.village-capacity article:nth-child(3) { background: #efd69f; }
+.village-capacity h3 { color: inherit; font: 500 1.55rem/1 Georgia, serif; }
+.village-capacity p { color: inherit; opacity: .75; }
+.watercourse-route { position: relative; padding-left: 4.5rem; }
+.watercourse-route::before { content: ""; position: absolute; left: 1.8rem; top: 0; bottom: 0; width: 5px; border-radius: 99px; background: #69949a; }
+.watercourse-route article { position: relative; padding: 1.4rem 1.6rem; border-bottom: 1px solid #b7c9c1; }
+.watercourse-route article::before { content: ""; position: absolute; left: -3.12rem; top: 1.7rem; width: .8rem; height: .8rem; border-radius: 50%; background: var(--lanna-saffron); box-shadow: 0 0 0 4px #eef1e7; }
+.watercourse-route h3 { margin: 0 0 .35rem; font: 500 1.5rem/1 Georgia, serif; }
+
+/* 08 — Doi Inthanon: summit weather instrument. */
+.summit-weather-hero { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 40rem; color: #fff; background: #142c3c; }
+.summit-weather-photo { position: relative; overflow: hidden; }
+.summit-weather-photo img { width: 100%; height: 100%; object-fit: cover; }
+.summit-weather-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(16,37,49,.55), transparent 55%); }
+.summit-weather-photo::before { content: "2,565 M / CHECK PARK CONDITIONS"; position: absolute; z-index: 2; left: 1rem; bottom: 1rem; padding: .7rem .9rem; border: 1px solid rgba(255,255,255,.55); color: #fff; background: rgba(18,45,59,.78); font-size: .66rem; font-weight: 950; letter-spacing: .11em; }
+.summit-weather-copy { position: relative; padding: clamp(2.5rem, 5vw, 4.8rem); align-self: center; }
+.summit-weather-copy::before { content: ""; position: absolute; top: 2rem; right: 2rem; width: 5rem; height: 5rem; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: conic-gradient(from 45deg, transparent 0 12%, rgba(229,179,77,.7) 12% 14%, transparent 14% 37%, rgba(229,179,77,.7) 37% 39%, transparent 39% 62%, rgba(229,179,77,.7) 62% 64%, transparent 64% 87%, rgba(229,179,77,.7) 87% 89%, transparent 89%); }
+.summit-weather-copy .eyebrow { color: #e7b94f; }
+.summit-weather-copy h1 { margin: .9rem 0 1rem; color: #fff; font: 500 clamp(3.5rem, 6vw, 6rem)/.82 Georgia, serif; }
+.summit-weather-copy h1 span { display: block; color: #e4b54f; }
+.summit-weather-copy p { color: rgba(255,255,255,.72); }
+.summit-weather-copy .lanna-meta span { color: #fff; }
+.weather-console { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; padding: .7rem; border-radius: 1.2rem; color: #fff; background: #153241; }
+.weather-console article { min-height: 16rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); }
+.weather-console small { color: #e5b34d; font-weight: 950; letter-spacing: .1em; }
+.weather-console h3 { margin: .9rem 0 .45rem; color: #fff; font: 500 1.4rem/1 Georgia, serif; }
+.weather-console p { color: rgba(255,255,255,.67); }
+.altitude-bands { display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border-radius: 1.2rem; }
+.altitude-bands article { padding: 2rem; background: #e9d6a7; }
+.altitude-bands article:nth-child(2) { color: #fff; background: #44654f; }
+.altitude-bands article:nth-child(3) { color: #fff; background: #19394a; }
+.altitude-bands h3 { color: inherit; font: 500 1.6rem/1 Georgia, serif; }
+.altitude-bands p { color: inherit; opacity: .74; }
+
+/* Shared Lanna supporting components. */
+.lanna-day-plan { display: grid; grid-template-columns: repeat(4, 1fr); gap: .7rem; }
+.lanna-day-plan article { min-height: 14rem; padding: 1.5rem; border-top: 4px solid var(--lanna-saffron); background: #fffaf0; box-shadow: 0 8px 28px rgba(66,45,31,.07); }
+.lanna-day-plan article:nth-child(even) { border-color: var(--lanna-moss); }
+.lanna-day-plan time { color: var(--lanna-teak); font-size: .72rem; font-weight: 950; letter-spacing: .1em; }
+.lanna-day-plan h3 { margin: .75rem 0 .45rem; font: 500 1.4rem/1.05 Georgia, serif; }
+.lanna-day-plan p { color: var(--muted); font-size: .9rem; }
+.lanna-decision-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+.lanna-decision-pair article { padding: clamp(1.8rem, 4vw, 3rem); border-radius: 1.2rem; background: #e3ead9; }
+.lanna-decision-pair article:last-child { color: #fff; background: var(--lanna-teak); }
+.lanna-decision-pair h3 { color: inherit; font: 500 1.75rem/1 Georgia, serif; }
+.lanna-decision-pair p, .lanna-decision-pair li { color: inherit; opacity: .76; }
+
+@media (max-width: 1080px) {
+  .lanna-city-hero, .moat-manuscript-hero, .nimman-editorial-hero, .market-fabric-hero, .river-letter-hero, .valley-greenhouse-hero, .summit-weather-hero { grid-template-columns: 1fr 1fr; }
+  .lanna-city-copy, .moat-manuscript-copy, .nimman-editorial-copy, .market-fabric-copy, .river-letter-copy, .valley-greenhouse-copy, .summit-weather-copy { padding: 2.5rem; }
+  .lanna-atlas-card, .lanna-atlas-card.wide, .lanna-atlas-card.tall { grid-column: span 6; grid-row: span 2; }
+  .lanna-first-decisions { grid-template-columns: 1fr 1fr; }
+  .lanna-first-decisions > article:nth-child(3) { border-left: 0; }
+  .lanna-season-loom, .lanna-arrival-map, .specimen-cabinet { grid-template-columns: 1fr 1fr; }
+  .lanna-day-plan, .base-scorecard, .weather-console { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  body[data-city="chiang-mai"] .page-content { background: #fffaf1; }
+  .lanna-city-hero, .moat-manuscript-hero, .nimman-editorial-hero, .market-fabric-hero, .river-letter-hero, .valley-greenhouse-hero, .summit-weather-hero { min-height: 0; grid-template-columns: 1fr; border-radius: 1.35rem; }
+  .lanna-city-copy, .moat-manuscript-copy, .nimman-editorial-copy, .market-fabric-copy, .river-letter-copy, .valley-greenhouse-copy, .summit-weather-copy { padding: 2rem 1.35rem; }
+  .lanna-city-copy h1 { font-size: clamp(3.8rem, 18vw, 5.5rem); }
+  .lanna-city-gallery { min-height: 28rem; }
+  .lanna-city-gallery::after { background: linear-gradient(0deg, rgba(19,36,49,.65), transparent 58%); }
+  .lanna-city-gallery .lanna-inset { width: 37%; height: 50%; }
+  .lanna-first-decisions, .lanna-season-loom, .lanna-arrival-map, .lanna-air-board, .lanna-day-plan, .lanna-decision-pair, .moat-quadrants, .temple-attention, .base-scorecard, .mountain-contract, .market-ledger, .purchase-weave, .river-sides, .bridge-fold, .ethical-filter, .village-capacity, .weather-console, .altitude-bands, .specimen-cabinet { grid-template-columns: 1fr; }
+  .lanna-first-decisions > article, .lanna-season-loom article, .moat-quadrants article, .market-ledger article, .bridge-fold article { min-height: 0; border-right: 0; border-left: 0; border-bottom: 1px solid var(--lanna-thread); }
+  .lanna-area-atlas { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .lanna-atlas-card, .lanna-atlas-card.wide, .lanna-atlas-card.tall, .lanna-atlas-card.short { grid-column: auto; grid-row: auto; min-height: 23rem; }
+  .moat-manuscript-photo, .nimman-editorial-photo, .market-fabric-photo, .river-letter-photo, .valley-greenhouse-photo, .summit-weather-photo { min-height: 27rem; order: 2; }
+  .moat-manuscript-copy h1, .nimman-editorial-copy h1, .market-fabric-copy h1, .river-letter-copy h1, .valley-greenhouse-copy h1, .summit-weather-copy h1 { font-size: clamp(3.3rem, 15vw, 5.1rem); }
+  .nimman-editorial-photo { clip-path: none; }
+  .soi-index { grid-template-columns: 1fr; }
+  .soi-index article, .soi-index article:nth-child(2) { grid-column: auto; }
+  .mountain-ascent-hero, .village-rain-hero { min-height: 39rem; }
+  .mountain-ascent-copy, .village-rain-copy { padding: 2.3rem 1.35rem; }
+  .mountain-ascent-copy h1, .village-rain-copy h1 { font-size: clamp(3.3rem, 15vw, 5.2rem); }
+  .elevation-ledger, .watercourse-route { padding-left: 3.7rem; }
+  .elevation-ledger article::before { display: none; }
+  .elevation-ledger article::after { left: -2.75rem; }
+  .river-letter-copy { margin: 0; transform: none; }
+  .river-letter-photo { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lanna-atlas-card img { transition: none; }
+}
