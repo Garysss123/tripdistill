@@ -226,7 +226,11 @@ async function navigate(client, url) {
 }
 
 function sanitizeErrors(errors) {
-  return [...new Set(errors.filter(Boolean))];
+  const browserOrAdFrameNoise = [
+    'Unchecked runtime.lastError: Could not establish connection. Receiving end does not exist.',
+    "Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive"
+  ];
+  return [...new Set(errors.filter(Boolean).filter((error) => !browserOrAdFrameNoise.some((noise) => error.includes(noise))))];
 }
 
 await waitForDebugger();
@@ -241,9 +245,17 @@ await client.send('Runtime.enable');
 await client.send('Log.enable');
 
 const runtimeErrors = [];
-client.on('Runtime.exceptionThrown', (event) => runtimeErrors.push(event.exceptionDetails?.text || 'Runtime exception'));
+client.on('Runtime.exceptionThrown', (event) => {
+  const details = event.exceptionDetails || {};
+  const message = details.exception?.description || details.text || 'Runtime exception';
+  const source = details.url ? ` (${details.url}:${Number(details.lineNumber || 0) + 1})` : '';
+  runtimeErrors.push(`${message}${source}`);
+});
 client.on('Log.entryAdded', (event) => {
-  if (event.entry?.level === 'error') runtimeErrors.push(event.entry.text);
+  if (event.entry?.level === 'error') {
+    const source = event.entry.url ? ` (${event.entry.url}:${Number(event.entry.lineNumber || 0) + 1})` : '';
+    runtimeErrors.push(`${event.entry.text}${source}`);
+  }
 });
 
 const report = [];
