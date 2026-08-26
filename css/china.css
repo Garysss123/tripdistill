@@ -1,0 +1,254 @@
+:root {
+  --china-ink: #17211d;
+  --china-ink-soft: #28332d;
+  --china-lacquer: #8d241f;
+  --china-lacquer-dark: #5e1715;
+  --china-vermilion: #c94631;
+  --china-gold: #d4a94e;
+  --china-jade: #2f7367;
+  --china-jade-light: #a9c9bc;
+  --china-blue: #285b75;
+  --china-paper: #f3ead8;
+  --china-paper-light: #fffaf0;
+  --china-grey: #68726c;
+}
+
+body[data-country="china"] {
+  background:
+    linear-gradient(90deg, rgba(23,33,29,.035) 1px, transparent 1px),
+    linear-gradient(rgba(23,33,29,.035) 1px, transparent 1px),
+    var(--china-paper);
+  background-size: 2.5rem 2.5rem;
+}
+
+.china-breadcrumbs { border-bottom-color: rgba(94,23,21,.18); }
+.china-breadcrumbs a { color: var(--china-lacquer); }
+.china-kicker { display: block; color: var(--china-lacquer); font-size: .67rem; font-weight: 950; letter-spacing: .16em; text-transform: uppercase; }
+.china-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.25rem; }
+.china-meta span { padding: .48rem .72rem; border: 1px solid currentColor; border-radius: 999px; font-size: .66rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.china-note { padding: 1rem 1.15rem; border-left: 4px solid var(--china-gold); background: rgba(255,250,240,.86); }
+
+/* Country hub: a route scroll built around scale, not a generic destination grid. */
+.china-country-hero { position: relative; display: grid; grid-template-columns: .92fr 1.08fr; min-height: 44rem; overflow: hidden; color: #fff; background: var(--china-lacquer-dark); }
+.china-country-copy { position: relative; z-index: 2; align-self: center; padding: clamp(3rem,6vw,6rem); }
+.china-country-copy::before { content: "中國 / CHINA / ROUTE SCALE"; position: absolute; top: 2.1rem; color: var(--china-gold); font-size: .62rem; font-weight: 950; letter-spacing: .2em; }
+.china-country-copy .eyebrow { color: var(--china-jade-light); }
+.china-country-copy h1 { margin: .9rem 0 1rem; color: #fff; font: 500 clamp(4.4rem,8vw,8rem)/.78 Georgia, serif; }
+.china-country-copy h1 span { display: block; color: var(--china-gold); font-size: .44em; font-style: italic; }
+.china-country-copy p { max-width: 42rem; color: rgba(255,255,255,.76); }
+.china-country-image { position: relative; min-height: 44rem; overflow: hidden; }
+.china-country-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.04); }
+.china-country-image::after { content: "ONE REGION\A AT A TIME"; white-space: pre; position: absolute; right: 1.5rem; bottom: 1.5rem; display: grid; place-items: center; width: 9rem; height: 9rem; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; color: #fff; background: rgba(23,33,29,.72); font: 950 .68rem/1.25 sans-serif; letter-spacing: .13em; text-align: center; }
+
+.route-scale { display: grid; grid-template-columns: 1.15fr repeat(3,1fr); border-top: 3px solid var(--china-ink); border-bottom: 3px solid var(--china-ink); background: var(--china-paper-light); }
+.route-scale article { min-height: 17rem; padding: 1.6rem; border-right: 1px solid rgba(23,33,29,.2); }
+.route-scale article:last-child { border-right: 0; }
+.route-scale article:first-child { color: #fff; background: var(--china-ink); }
+.route-scale article:nth-child(3) { background: #e1ece6; }
+.route-scale small { color: var(--china-lacquer); font-size: .66rem; font-weight: 950; letter-spacing: .12em; }
+.route-scale article:first-child small { color: var(--china-gold); }
+.route-scale h2, .route-scale h3 { color: inherit; font: 500 1.55rem/1 Georgia, serif; }
+.route-scale p { color: inherit; opacity: .76; }
+
+.entry-register { display: grid; grid-template-columns: .82fr 1.18fr; background: var(--china-jade); color: #fff; }
+.entry-register > div { padding: clamp(2rem,5vw,4rem); }
+.entry-register > div:last-child { color: var(--china-ink); background: var(--china-paper-light); }
+.entry-register h2, .entry-register h3 { color: inherit; font: 500 clamp(1.8rem,3vw,3rem)/.95 Georgia, serif; }
+.entry-register p, .entry-register li { color: inherit; opacity: .8; }
+.city-opening { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 31rem; overflow: hidden; background: var(--china-ink); }
+.city-opening img { width: 100%; height: 100%; object-fit: cover; }
+.city-opening div { align-self: center; padding: clamp(2rem,5vw,4.6rem); color: #fff; }
+.city-opening h2 { color: #fff; font: 500 clamp(2.2rem,4vw,4.2rem)/.9 Georgia, serif; }
+.city-opening p { color: rgba(255,255,255,.72); }
+
+/* Beijing hub: a measured north-south axis. */
+.axis-hero { position: relative; display: grid; grid-template-columns: 1fr 1fr; min-height: 45rem; overflow: hidden; color: #fff; background: var(--china-ink); }
+.axis-hero-image { position: relative; overflow: hidden; }
+.axis-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.axis-hero-image::before { content: ""; position: absolute; z-index: 2; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--china-gold); box-shadow: 0 0 0 9px rgba(212,169,78,.14); }
+.axis-hero-copy { position: relative; align-self: center; padding: clamp(3rem,6vw,5.8rem); }
+.axis-hero-copy::after { content: "7.8 KM / HISTORIC AXIS"; position: absolute; right: 1.4rem; top: 1.4rem; writing-mode: vertical-rl; color: var(--china-gold); font-size: .62rem; font-weight: 950; letter-spacing: .18em; }
+.axis-hero-copy .eyebrow { color: var(--china-jade-light); }
+.axis-hero h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(4rem,7vw,7rem)/.8 Georgia, serif; }
+.axis-hero h1 span { display: block; color: var(--china-gold); font-size: .5em; font-style: italic; }
+.axis-hero p { color: rgba(255,255,255,.74); }
+
+.axis-ruler { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; padding: 1px; background: var(--china-ink); }
+.axis-ruler article { position: relative; min-height: 16rem; padding: 1.45rem; background: var(--china-paper-light); }
+.axis-ruler article::before { content: ""; display: block; width: 2.2rem; height: 2px; margin-bottom: 1.2rem; background: var(--china-lacquer); }
+.axis-ruler article:nth-child(2n) { background: #e2ece7; }
+.axis-ruler h2, .axis-ruler h3 { color: var(--china-ink); font: 500 1.45rem/1 Georgia, serif; }
+.axis-ruler small { color: var(--china-lacquer); font-size: .65rem; font-weight: 950; letter-spacing: .11em; }
+
+.beijing-chapters { display: grid; grid-template-columns: repeat(4,1fr); gap: .85rem; padding: 1.1rem; background: var(--china-lacquer-dark); }
+.beijing-card { position: relative; min-height: 27rem; overflow: hidden; color: #fff; background: var(--china-ink); }
+.beijing-card:nth-child(2n) { margin-top: 1.7rem; }
+.beijing-card:nth-child(3n) { border-radius: 7rem 7rem .2rem .2rem; }
+.beijing-card:nth-child(4n) { clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 0 100%); }
+.beijing-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.beijing-card:hover img { transform: scale(1.035); }
+.beijing-card-copy { position: absolute; inset: auto 0 0; padding: 5rem 1.2rem 1.3rem; background: linear-gradient(transparent, rgba(23,33,29,.98)); }
+.beijing-card small { color: var(--china-gold); font-size: .64rem; font-weight: 950; letter-spacing: .12em; }
+.beijing-card h3 { margin: .4rem 0; color: #fff; font: 500 1.42rem/1 Georgia, serif; }
+.beijing-card p { margin: 0 0 .7rem; color: rgba(255,255,255,.74); font-size: .85rem; }
+.beijing-card strong { font-size: .77rem; }
+
+.china-card-grid, .china-day-grid, .china-route-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; }
+.china-card-grid article, .china-day-grid article, .china-route-grid article { min-height: 14.5rem; padding: 1.5rem; border: 1px solid rgba(94,23,21,.16); background: var(--china-paper-light); }
+.china-card-grid article:nth-child(2n), .china-day-grid article:nth-child(2n) { background: #e2ece7; }
+.china-card-grid h2, .china-card-grid h3, .china-day-grid h3, .china-route-grid h3 { color: var(--china-ink); font: 500 1.43rem/1 Georgia, serif; }
+.china-card-grid small, .china-day-grid time, .china-route-grid small { color: var(--china-lacquer); font-size: .65rem; font-weight: 950; letter-spacing: .11em; }
+
+/* 01: Palace Museum as a reservation docket and one-way ceremonial gate. */
+.palace-gate-hero { display: grid; grid-template-columns: 1.12fr .88fr; min-height: 42rem; color: #fff; background: var(--china-lacquer-dark); }
+.palace-gate-photo { position: relative; margin: 1rem; overflow: hidden; border: 1px solid rgba(212,169,78,.7); }
+.palace-gate-photo img { width: 100%; height: 100%; object-fit: cover; }
+.palace-gate-photo::after { content: "SOUTH ENTRY → NORTH EXIT"; position: absolute; left: 1rem; bottom: 1rem; padding: .65rem .85rem; color: var(--china-ink); background: var(--china-gold); font-size: .65rem; font-weight: 950; letter-spacing: .12em; }
+.palace-gate-copy { align-self: center; padding: clamp(2.4rem,5vw,5rem); }
+.palace-gate-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(3.6rem,6vw,6.4rem)/.82 Georgia, serif; }
+.palace-gate-copy h1 span { display: block; color: var(--china-gold); font-size: .48em; font-style: italic; }
+.palace-gate-copy p { color: rgba(255,255,255,.75); }
+.booking-docket { display: grid; grid-template-columns: .8fr 1.2fr; border: 2px solid var(--china-ink); background: var(--china-paper-light); }
+.booking-docket > div { padding: clamp(2rem,5vw,4rem); }
+.booking-docket > div:first-child { color: #fff; background: var(--china-ink); }
+.booking-docket h2, .booking-docket h3 { color: inherit; font: 500 clamp(1.7rem,3vw,2.8rem)/.95 Georgia, serif; }
+.docket-lines { display: grid; gap: 0; counter-reset: docket; }
+.docket-lines article { position: relative; padding: 1.1rem 1rem 1.1rem 4rem; border-bottom: 1px dashed rgba(23,33,29,.3); counter-increment: docket; }
+.docket-lines article::before { content: counter(docket, decimal-leading-zero); position: absolute; left: .6rem; top: 1rem; color: var(--china-lacquer); font: 900 1.1rem sans-serif; }
+
+/* 02: Jingshan and Beihai as elevation above water. */
+.hill-lake-hero { position: relative; min-height: 43rem; overflow: hidden; display: grid; align-items: end; color: #fff; background: var(--china-blue); }
+.hill-lake-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hill-lake-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 20%, rgba(23,33,29,.94)); }
+.hill-lake-copy { position: relative; z-index: 2; max-width: 54rem; padding: clamp(2.5rem,6vw,5.2rem); }
+.hill-lake-copy h1 { color: #fff; font: 500 clamp(3.6rem,7vw,6.8rem)/.82 Georgia, serif; }
+.hill-lake-copy h1 span { display: block; color: var(--china-jade-light); font-size: .48em; font-style: italic; }
+.hill-lake-copy p { color: rgba(255,255,255,.78); }
+.elevation-ledger { display: grid; grid-template-columns: 1.1fr .9fr; color: #fff; background: var(--china-blue); }
+.elevation-ledger > div { padding: clamp(2rem,5vw,4rem); }
+.elevation-ledger > div:last-child { color: var(--china-ink); background: var(--china-paper-light); }
+.elevation-line { position: relative; min-height: 17rem; border-bottom: 3px solid var(--china-gold); }
+.elevation-line::before { content: "JINGSHAN"; position: absolute; right: 8%; top: 10%; width: 44%; height: 60%; border-radius: 100% 100% 0 0; background: linear-gradient(145deg, transparent 49%, var(--china-jade-light) 50% 52%, transparent 53%); color: var(--china-gold); font-size: .65rem; font-weight: 950; letter-spacing: .12em; text-align: right; }
+
+/* 03: Temple of Heaven and Qianmen as circle-and-square ritual geometry. */
+.ritual-hero { position: relative; display: grid; grid-template-columns: .84fr 1.16fr; min-height: 43rem; overflow: hidden; background: #163b50; color: #fff; }
+.ritual-hero-copy { position: relative; z-index: 2; align-self: center; padding: clamp(2.8rem,6vw,5.5rem); }
+.ritual-hero-copy h1 { color: #fff; font: 500 clamp(3.5rem,6vw,6.2rem)/.82 Georgia, serif; }
+.ritual-hero-copy h1 span { display: block; color: var(--china-gold); font-size: .48em; font-style: italic; }
+.ritual-hero-copy p { color: rgba(255,255,255,.76); }
+.ritual-hero-image { position: relative; overflow: hidden; margin: 1.2rem; border-radius: 50% 50% 0 0; }
+.ritual-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.ritual-hero::after { content: ""; position: absolute; left: 9%; top: 9%; width: 11rem; height: 11rem; border: 1px solid rgba(212,169,78,.55); border-radius: 50%; }
+.ritual-geometry { display: grid; grid-template-columns: repeat(4,1fr); padding: 1rem; background: #163b50; }
+.ritual-geometry article { min-height: 17rem; padding: 1.5rem; color: #fff; border: 1px solid rgba(255,255,255,.2); }
+.ritual-geometry article:nth-child(2), .ritual-geometry article:nth-child(4) { border-radius: 50% 50% 0 0; background: rgba(255,255,255,.06); }
+.ritual-geometry h2, .ritual-geometry h3 { color: #fff; font: 500 1.45rem/1 Georgia, serif; }
+.ritual-geometry p { color: rgba(255,255,255,.74); }
+.ritual-geometry small { color: var(--china-gold); font-weight: 950; letter-spacing: .12em; }
+
+/* 04: Shichahai and Drum Tower as a civic timepiece. */
+.clock-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 42rem; color: #fff; background: #26342f; }
+.clock-hero-image { position: relative; overflow: hidden; }
+.clock-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.clock-face { position: absolute; right: 1.3rem; top: 1.3rem; display: grid; place-items: center; width: 9rem; height: 9rem; border: 2px solid var(--china-gold); border-radius: 50%; background: rgba(23,33,29,.72); font: 950 .65rem/1.25 sans-serif; letter-spacing: .12em; text-align: center; }
+.clock-face::before, .clock-face::after { content: ""; position: absolute; left: 50%; top: 50%; width: 2px; background: var(--china-gold); transform-origin: bottom; }
+.clock-face::before { height: 2.5rem; transform: translate(-50%,-100%) rotate(18deg); }
+.clock-face::after { height: 1.8rem; transform: translate(-50%,-100%) rotate(105deg); }
+.clock-hero-copy { align-self: center; padding: clamp(2.5rem,6vw,5.2rem); }
+.clock-hero-copy h1 { color: #fff; font: 500 clamp(3.5rem,6vw,6.2rem)/.82 Georgia, serif; }
+.clock-hero-copy h1 span { display: block; color: var(--china-gold); font-size: .48em; font-style: italic; }
+.clock-hero-copy p { color: rgba(255,255,255,.75); }
+.clock-ledger { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--china-ink); }
+.clock-ledger article { min-height: 16rem; padding: 1.5rem; background: var(--china-paper-light); }
+.clock-ledger article:nth-child(2n) { background: #dce8e2; }
+.clock-ledger time { color: var(--china-lacquer); font-size: .68rem; font-weight: 950; letter-spacing: .12em; }
+.clock-ledger h2, .clock-ledger h3 { font: 500 1.45rem/1 Georgia, serif; }
+
+/* 05: Yonghe and Guozijian as a sequence of living thresholds. */
+.courtyard-hero { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 42rem; background: var(--china-paper-light); }
+.courtyard-hero-copy { align-self: center; padding: clamp(2.5rem,6vw,5.4rem); }
+.courtyard-hero-copy h1 { color: var(--china-lacquer-dark); font: 500 clamp(3.6rem,6vw,6.5rem)/.82 Georgia, serif; }
+.courtyard-hero-copy h1 span { display: block; color: var(--china-jade); font-size: .46em; font-style: italic; }
+.courtyard-hero-image { position: relative; margin: 1rem; overflow: hidden; border-radius: 8rem 8rem .2rem .2rem; background: var(--china-lacquer-dark); }
+.courtyard-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.courtyard-hero-image::after { content: "ACTIVE WORSHIP / QUIET STUDY"; position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); width: max-content; padding: .6rem .8rem; color: #fff; background: var(--china-lacquer-dark); font-size: .62rem; font-weight: 950; letter-spacing: .12em; }
+.threshold-grid { display: grid; grid-template-columns: repeat(4,1fr); padding: 1.1rem; gap: .85rem; background: var(--china-lacquer-dark); }
+.threshold-grid article { min-height: 17rem; padding: 1.5rem; color: #fff; border-top: 5px solid var(--china-gold); background: rgba(255,255,255,.07); }
+.threshold-grid article:nth-child(2n) { border-color: var(--china-jade-light); }
+.threshold-grid h2, .threshold-grid h3 { color: #fff; font: 500 1.45rem/1 Georgia, serif; }
+.threshold-grid p { color: rgba(255,255,255,.74); }
+
+/* 06: 798 as an industrial exhibition poster. */
+.gallery-hero { position: relative; min-height: 43rem; overflow: hidden; display: grid; grid-template-columns: 1.15fr .85fr; color: #fff; background: #133c50; }
+.gallery-hero-image { position: relative; margin: 1rem; overflow: hidden; }
+.gallery-hero-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.75) contrast(1.1); }
+.gallery-hero-image::before { content: "EXHIBITION STATUS\A CHECK TODAY"; white-space: pre; position: absolute; z-index: 2; left: 1rem; top: 1rem; padding: .8rem; color: #17211d; background: #f06a3a; font: 950 .65rem/1.25 sans-serif; letter-spacing: .12em; }
+.gallery-hero-copy { align-self: center; padding: clamp(2.5rem,5vw,4.8rem); }
+.gallery-hero-copy h1 { margin: .6rem 0 1rem; color: #fff; font: 950 clamp(4.5rem,9vw,9rem)/.72 Arial Black, sans-serif; letter-spacing: -.08em; }
+.gallery-hero-copy h1 span { display: block; color: #f06a3a; font-size: .35em; letter-spacing: -.03em; }
+.gallery-hero-copy p { color: rgba(255,255,255,.76); }
+.poster-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .7rem; padding: .7rem; background: #133c50; }
+.poster-grid article { min-height: 18rem; padding: 1.5rem; background: #f3ead8; transform: rotate(-.5deg); }
+.poster-grid article:nth-child(2n) { color: #fff; background: #d34d31; transform: rotate(.7deg); }
+.poster-grid article:nth-child(3) { background: #b9d6c9; }
+.poster-grid h2, .poster-grid h3 { color: inherit; font: 900 1.45rem/.95 Arial, sans-serif; text-transform: uppercase; }
+.poster-grid small { font-weight: 950; letter-spacing: .12em; }
+
+/* 07: Summer Palace as a horizontal garden scroll. */
+.garden-scroll-hero { position: relative; min-height: 44rem; overflow: hidden; color: #fff; background: var(--china-blue); }
+.garden-scroll-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.garden-scroll-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,33,29,.92), rgba(23,33,29,.08) 72%); }
+.garden-scroll-copy { position: relative; z-index: 2; max-width: 47rem; padding: clamp(3rem,7vw,6rem); }
+.garden-scroll-copy h1 { color: #fff; font: 500 clamp(3.8rem,7vw,7rem)/.8 Georgia, serif; }
+.garden-scroll-copy h1 span { display: block; color: var(--china-jade-light); font-size: .46em; font-style: italic; }
+.garden-scroll-copy p { color: rgba(255,255,255,.78); }
+.garden-scroll { display: grid; grid-template-columns: repeat(4,minmax(16rem,1fr)); overflow-x: auto; padding: 1rem; background: var(--china-blue); scroll-snap-type: x proximity; }
+.garden-scroll article { min-height: 19rem; padding: 1.6rem; border-right: 1px solid rgba(255,255,255,.25); color: #fff; scroll-snap-align: start; }
+.garden-scroll article:nth-child(2n) { color: var(--china-ink); background: var(--china-paper-light); }
+.garden-scroll h2, .garden-scroll h3 { color: inherit; font: 500 1.48rem/1 Georgia, serif; }
+.garden-scroll p { color: inherit; opacity: .76; }
+
+/* 08: Mutianyu as a ridge expedition board. */
+.ridge-hero { display: grid; grid-template-columns: 1.18fr .82fr; min-height: 43rem; color: #fff; background: #1c3529; }
+.ridge-hero-image { position: relative; margin: 1rem; overflow: hidden; }
+.ridge-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.ridge-hero-image::after { content: "RIDGE / TOWERS / RETURN"; position: absolute; inset: auto 1rem 1rem; padding: .7rem; color: #17211d; background: var(--china-gold); font-size: .65rem; font-weight: 950; letter-spacing: .13em; text-align: center; }
+.ridge-hero-copy { align-self: center; padding: clamp(2.5rem,5vw,5rem); }
+.ridge-hero-copy h1 { color: #fff; font: 500 clamp(3.6rem,6vw,6.5rem)/.82 Georgia, serif; }
+.ridge-hero-copy h1 span { display: block; color: var(--china-gold); font-size: .46em; font-style: italic; }
+.ridge-hero-copy p { color: rgba(255,255,255,.76); }
+.ridge-board { display: grid; grid-template-columns: repeat(4,1fr); padding: 1rem; gap: 1rem; color: #fff; background: #1c3529; }
+.ridge-board article { position: relative; min-height: 17rem; padding: 1.5rem; border: 1px solid rgba(212,169,78,.35); }
+.ridge-board article::before { content: ""; display: block; width: 100%; height: 2.5rem; margin-bottom: .9rem; background: linear-gradient(155deg, transparent 47%, var(--china-gold) 48% 52%, transparent 53%); }
+.ridge-board h2, .ridge-board h3 { color: #fff; font: 500 1.42rem/1 Georgia, serif; }
+.ridge-board p { color: rgba(255,255,255,.73); }
+
+@media (max-width: 1100px) {
+  .china-country-hero, .axis-hero, .palace-gate-hero, .clock-hero, .courtyard-hero, .gallery-hero, .ridge-hero { grid-template-columns: 1fr; }
+  .china-country-image, .axis-hero-image, .palace-gate-photo, .clock-hero-image, .courtyard-hero-image, .gallery-hero-image, .ridge-hero-image { min-height: 31rem; }
+  .city-opening, .entry-register, .booking-docket, .elevation-ledger { grid-template-columns: 1fr; }
+  .beijing-chapters, .china-card-grid, .china-day-grid, .china-route-grid, .axis-ruler, .route-scale, .ritual-geometry, .clock-ledger, .threshold-grid, .poster-grid, .ridge-board { grid-template-columns: repeat(2,1fr); }
+  .route-scale article:nth-child(2), .axis-ruler article:nth-child(2) { border-right: 0; }
+}
+
+@media (max-width: 760px) {
+  .china-country-hero, .axis-hero, .palace-gate-hero, .hill-lake-hero, .ritual-hero, .clock-hero, .courtyard-hero, .gallery-hero, .garden-scroll-hero, .ridge-hero { min-height: auto; }
+  .ritual-hero { grid-template-columns: 1fr; }
+  .china-country-copy, .axis-hero-copy, .palace-gate-copy, .hill-lake-copy, .ritual-hero-copy, .clock-hero-copy, .courtyard-hero-copy, .gallery-hero-copy, .garden-scroll-copy, .ridge-hero-copy { padding: 2.3rem 1.25rem; }
+  .china-country-copy h1, .axis-hero h1, .palace-gate-copy h1, .hill-lake-copy h1, .ritual-hero-copy h1, .clock-hero-copy h1, .courtyard-hero-copy h1, .garden-scroll-copy h1, .ridge-hero-copy h1 { font-size: clamp(3rem,16vw,4.8rem); }
+  .gallery-hero-copy h1 { font-size: clamp(4rem,22vw,7rem); }
+  .china-country-image, .axis-hero-image, .palace-gate-photo, .ritual-hero-image, .clock-hero-image, .courtyard-hero-image, .gallery-hero-image, .ridge-hero-image { min-height: 25rem; margin: .75rem; }
+  .china-country-copy::before, .axis-hero-copy::after { display: none; }
+  .beijing-chapters, .china-card-grid, .china-day-grid, .china-route-grid, .axis-ruler, .route-scale, .ritual-geometry, .clock-ledger, .threshold-grid, .poster-grid, .ridge-board { grid-template-columns: 1fr; }
+  .beijing-card:nth-child(n) { min-height: 24rem; margin-top: 0; border-radius: .2rem; clip-path: none; }
+  .route-scale article, .axis-ruler article { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(23,33,29,.2); }
+  .route-scale article:last-child { border-bottom: 0; }
+  .city-opening { grid-template-columns: 1fr; }
+  .city-opening img { min-height: 23rem; }
+  .elevation-line { min-height: 12rem; }
+  .garden-scroll { grid-template-columns: repeat(4,82vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beijing-card img { transition: none; }
+}

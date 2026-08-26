@@ -1168,6 +1168,134 @@
     "keywords": ["bang pa-in", "bang pa in palace", "ayutthaya palace", "royal palace", "day trip"]
   },
   {
+    "title": "China Travel Guide",
+    "url": "/china/",
+    "parent": "Asia · Country guide",
+    "type": "Country",
+    "summary": "Choose a regional argument, prepare passport and phone systems, and connect China's first-trip stops without turning the country into a checklist.",
+    "keywords": ["china", "china travel", "first trip", "regions", "high speed rail", "beijing"]
+  },
+  {
+    "title": "China Entry and Transit Check",
+    "url": "/china/#entry",
+    "parent": "China · Before departure",
+    "type": "Entry",
+    "summary": "Check the rule for your passport and itinerary, including current visa-free transit eligibility and permitted travel areas.",
+    "keywords": ["china visa", "240 hour transit", "passport", "entry rules", "immigration"]
+  },
+  {
+    "title": "China Phone and Payment Setup",
+    "url": "/china/#digital",
+    "parent": "China · Before departure",
+    "type": "Practical",
+    "summary": "Prepare connectivity, international-card support, mobile payment and a resilient cash fallback before arrival.",
+    "keywords": ["china payment", "mobile payment", "sim card", "international card", "cash", "connectivity"]
+  },
+  {
+    "title": "China Rail Planning",
+    "url": "/china/#rail",
+    "parent": "China · Intercity travel",
+    "type": "Transit",
+    "summary": "Use official 12306 identity rules, station names and realistic transfer costs to decide which Chinese cities belong in one trip.",
+    "keywords": ["china rail", "12306", "high speed train", "passport ticket", "station"]
+  },
+  {
+    "title": "Beijing Travel Guide",
+    "url": "/china/beijing/",
+    "parent": "China · Capital",
+    "type": "City",
+    "summary": "Build five to seven Beijing nights around the Central Axis, reservations, parks, hutongs, western gardens, contemporary art and the Great Wall.",
+    "keywords": ["beijing", "beijing travel", "central axis", "where to stay", "itinerary", "china capital"]
+  },
+  {
+    "title": "Beijing Eight-Chapter Guide",
+    "url": "/china/beijing/#chapters",
+    "parent": "China · Beijing",
+    "type": "Planning",
+    "summary": "Compare eight distinct Beijing planning chapters from the Forbidden City reservation docket to the Mutianyu ridge board.",
+    "keywords": ["beijing chapters", "beijing areas", "forbidden city", "summer palace", "mutianyu"]
+  },
+  {
+    "title": "Beijing Reservation Ledger",
+    "url": "/china/beijing/#reservations",
+    "parent": "China · Beijing",
+    "type": "Booking",
+    "summary": "Sequence passport-linked bookings and keep flexible parks, streets and food around the scarce gates that shape a Beijing trip.",
+    "keywords": ["beijing booking", "passport reservation", "forbidden city tickets", "advance booking"]
+  },
+  {
+    "title": "Beijing Five-Day Itinerary",
+    "url": "/china/beijing/#itinerary",
+    "parent": "China · Beijing",
+    "type": "Itinerary",
+    "summary": "Group five Beijing days by axis, lake, ritual landscape, western garden and mountain ridge instead of chasing isolated pins.",
+    "keywords": ["beijing itinerary", "five days", "beijing route", "central axis", "great wall day"]
+  },
+  {
+    "title": "Forbidden City and Central Axis Guide",
+    "url": "/china/beijing/central-axis-forbidden-city/",
+    "parent": "Beijing · Central Axis",
+    "type": "Historic core",
+    "summary": "Make the passport-linked Palace Museum reservation the structural beam of a south-to-north Central Axis day.",
+    "keywords": ["forbidden city", "palace museum", "tiananmen", "central axis", "beijing tickets"]
+  },
+  {
+    "title": "Jingshan and Beihai Guide",
+    "url": "/china/beijing/jingshan-beihai/",
+    "parent": "Beijing · Imperial parks",
+    "type": "Parks",
+    "summary": "Pair Jingshan's compressed old-city panorama with Beihai's slower lake and garden sequence without treating either as leftover time.",
+    "keywords": ["jingshan park", "beihai park", "beijing viewpoint", "imperial garden", "lake"]
+  },
+  {
+    "title": "Temple of Heaven and Qianmen Guide",
+    "url": "/china/beijing/temple-of-heaven-qianmen/",
+    "parent": "Beijing · South axis",
+    "type": "Ritual landscape",
+    "summary": "Read the Temple of Heaven as a complete ceremonial landscape, then use Qianmen as its commercial counterpoint.",
+    "keywords": ["temple of heaven", "qianmen", "beijing central axis", "hall of prayer", "tiantan"]
+  },
+  {
+    "title": "Shichahai and Drum Tower Guide",
+    "url": "/china/beijing/shichahai-drum-tower/",
+    "parent": "Beijing · North axis",
+    "type": "Neighborhood",
+    "summary": "Walk the Bell and Drum Towers, Wanning Bridge, lake edges and lived-in lanes at the pace of a respectful civic clock.",
+    "keywords": ["shichahai", "drum tower", "bell tower", "hutong", "wanning bridge", "beijing lakes"]
+  },
+  {
+    "title": "Yonghe Temple and Guozijian Guide",
+    "url": "/china/beijing/yonghe-guozijian/",
+    "parent": "Beijing · Northeast old city",
+    "type": "Sacred and scholarly",
+    "summary": "Treat Yonghe as an active place of worship and the neighboring Confucian Temple and Imperial College as a different institution.",
+    "keywords": ["yonghe temple", "lama temple", "guozijian", "confucian temple", "imperial college"]
+  },
+  {
+    "title": "798 Art District and Chaoyang Guide",
+    "url": "/china/beijing/798-chaoyang/",
+    "parent": "Beijing · Chaoyang",
+    "type": "Contemporary art",
+    "summary": "Build a 798 visit from the live exhibition program, two anchor venues and the industrial fabric rather than an old place list.",
+    "keywords": ["798 art district", "chaoyang", "beijing galleries", "contemporary art", "industrial heritage"]
+  },
+  {
+    "title": "Summer Palace Travel Guide",
+    "url": "/china/beijing/summer-palace/",
+    "parent": "Beijing · Western gardens",
+    "type": "Imperial garden",
+    "summary": "Choose one gate, one hill effort and one final shore so Kunming Lake and Longevity Hill unfold without repeated backtracking.",
+    "keywords": ["summer palace", "kunming lake", "longevity hill", "beijing garden", "yiheyuan"]
+  },
+  {
+    "title": "Mutianyu Great Wall Guide",
+    "url": "/china/beijing/mutianyu-great-wall/",
+    "parent": "Beijing · Mountain excursion",
+    "type": "Day trip",
+    "summary": "Name every link from Beijing departure to ridge effort and return cutoff before committing to a Mutianyu Great Wall day.",
+    "keywords": ["mutianyu", "great wall", "beijing day trip", "cable car", "toboggan", "watchtower"]
+  },
+  {
     "title": "About TripDistill",
     "url": "/about/",
     "parent": "TripDistill",

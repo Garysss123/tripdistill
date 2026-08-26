@@ -74,9 +74,9 @@ for (const absoluteUrl of publishedUrls) {
     }
   }
 
-  const usesThailandRelease = url.pathname === '/' || url.pathname.startsWith('/thailand/');
+  const usesCurrentRelease = url.pathname === '/' || url.pathname.startsWith('/thailand/') || url.pathname.startsWith('/china/');
   const usesGyeongjuRelease = url.pathname === '/south-korea/' || url.pathname.startsWith('/south-korea/gyeongju/');
-  const expectedSiteCss = usesThailandRelease
+  const expectedSiteCss = usesCurrentRelease
     ? '/css/site.css?v=20260826-11'
     : usesGyeongjuRelease
       ? '/css/site.css?v=20260826-10'
@@ -102,6 +102,9 @@ for (const absoluteUrl of publishedUrls) {
   }
   if (url.pathname.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) {
     problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
+  }
+  if (url.pathname.startsWith('/china/') && !html.includes('/css/china.css?v=20260827-1')) {
+    problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
   }
 }
 

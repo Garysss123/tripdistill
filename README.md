@@ -32,9 +32,13 @@ Southern Thailand's Andaman cluster adds a chart-room system without cloning Ban
 
 Central Thailand's Ayutthaya cluster uses a river-archaeology system rather than a generic heritage skin: kiln brick red, aged gold leaf, river teal, archive paper and charcoal ground. Its hub is a three-river confluence atlas. The eight chapters become an arrival signal board, excavated strata, royal ground plan, shade clock, sunset aperture, etiquette threshold, cargo manifest and palace garden cabinet. River bank, surviving evidence, living worship, conservation and the return journey are part of the page structure rather than footnotes beneath a list of ruins.
 
+China introduces a lacquer-and-ink editorial system rather than borrowing the Thai or Korean shells: imperial lacquer red, aged gold, jade, ink blue-black and warm xuan-paper surfaces, with measured rules, seal-like labels and deliberate negative space. The country hub is a regional route scroll that asks travelers to choose a geographic argument before counting cities. Beijing turns the Central Axis into its city ruler, then gives its eight chapters genuinely different structures: a Palace Museum reservation docket, Jingshan elevation ledger, Temple of Heaven circle-and-square diagram, Shichahai civic clock, Yonghe threshold notebook, 798 exhibition poster, Summer Palace garden scroll and Mutianyu ridge action board. Future Chinese cities should inherit the palette and editorial discipline while defining a city-specific spatial system of their own.
+
 ## Published guide clusters
 
-- Country hubs: `/japan/`, `/south-korea/` and `/thailand/`
+- Country hubs: `/china/`, `/japan/`, `/south-korea/` and `/thailand/`
+- China city hubs: `/china/beijing/`
+- Beijing chapters: Central Axis & Forbidden City; Jingshan & Beihai; Temple of Heaven & Qianmen; Shichahai & Drum Tower; Yonghe & Guozijian; 798 & Chaoyang; Summer Palace; and Mutianyu Great Wall
 - City and regional hubs: `/japan/tokyo/`, `/japan/kyoto/`, `/japan/osaka/` and `/japan/hokkaido/`
 - Hokkaido regional guides: Sapporo; Otaru & Shakotan; Hakodate & Onuma; Furano & Biei; Asahikawa & Daisetsuzan; Niseko & Yoichi; Noboribetsu & Lake Toya; Kushiro & Lake Akan; and Abashiri & Shiretoko
 - Tokyo area guides: Shinjuku; Shibuya & Harajuku; Asakusa & Ueno; Tokyo Station & Ginza; Akihabara & Kanda; Roppongi & Azabu; Odaiba & Toyosu; and Ikebukuro

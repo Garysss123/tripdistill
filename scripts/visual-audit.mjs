@@ -123,7 +123,17 @@ const allRoutes = [
   ['wat-chaiwatthanaram-west-bank', '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'],
   ['wat-yai-chai-mongkhon-phanan-choeng', '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'],
   ['foreign-settlements-south-river', '/thailand/ayutthaya/foreign-settlements-south-river/'],
-  ['bang-pa-in-palace', '/thailand/ayutthaya/bang-pa-in-palace/']
+  ['bang-pa-in-palace', '/thailand/ayutthaya/bang-pa-in-palace/'],
+  ['china', '/china/'],
+  ['beijing', '/china/beijing/'],
+  ['central-axis-forbidden-city', '/china/beijing/central-axis-forbidden-city/'],
+  ['jingshan-beihai', '/china/beijing/jingshan-beihai/'],
+  ['temple-of-heaven-qianmen', '/china/beijing/temple-of-heaven-qianmen/'],
+  ['shichahai-drum-tower', '/china/beijing/shichahai-drum-tower/'],
+  ['yonghe-guozijian', '/china/beijing/yonghe-guozijian/'],
+  ['798-chaoyang', '/china/beijing/798-chaoyang/'],
+  ['summer-palace', '/china/beijing/summer-palace/'],
+  ['mutianyu-great-wall', '/china/beijing/mutianyu-great-wall/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -143,6 +153,9 @@ if (!fs.existsSync(browserPath)) throw new Error(`Microsoft Edge not found at ${
 const browser = spawn(browserPath, [
   '--headless=new',
   '--disable-gpu',
+  '--disable-extensions',
+  '--disable-background-networking',
+  '--disable-component-update',
   '--no-first-run',
   '--no-default-browser-check',
   `--remote-debugging-port=${port}`,
@@ -269,6 +282,14 @@ await client.send('Page.enable');
 await client.send('Page.bringToFront');
 await client.send('Runtime.enable');
 await client.send('Log.enable');
+await client.send('Network.enable');
+await client.send('Network.setBlockedURLs', {
+  urls: [
+    '*://pagead2.googlesyndication.com/*',
+    '*://googleads.g.doubleclick.net/*',
+    '*://www.google.com/recaptcha/*'
+  ]
+});
 
 const runtimeErrors = [];
 client.on('Runtime.exceptionThrown', (event) => {
@@ -397,7 +418,7 @@ if (!skipInteractions) {
     screenHeight: 844
   });
   await delay(300);
-  await navigate(interactionClient, `${baseUrl}/thailand/ayutthaya/`);
+  await navigate(interactionClient, `${baseUrl}/china/beijing/`);
   await delay(400);
   interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -423,7 +444,7 @@ if (!skipInteractions) {
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Ayutthaya';
+  input.value = 'Beijing';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -469,7 +490,7 @@ console.log(JSON.stringify({
 await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Ayutthaya river-island guide' || interactions.search.count < 1 || interactions.search.first !== 'Ayutthaya River Island Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
+const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Beijing city guide' || interactions.search.count < 1 || interactions.search.first !== 'Beijing Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
 if (failures.length || interactionFailed) {
   process.exitCode = 1;
 }

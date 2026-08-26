@@ -10,6 +10,7 @@ const maxFileBytes = 25 * 1024 * 1024;
 const publicDirectories = [
   'about',
   'assets',
+  'china',
   'components',
   'contact',
   'css',
