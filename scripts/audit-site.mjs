@@ -97,6 +97,9 @@ for (const absoluteUrl of publishedUrls) {
   if (url.pathname.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) {
     problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   }
+  if (url.pathname.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) {
+    problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
+  }
 }
 
 const linkFiles = [

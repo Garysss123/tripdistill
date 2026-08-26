@@ -960,6 +960,110 @@
     "keywords": ["doi inthanon", "thailand highest mountain", "national park", "chiang mai day trip", "summit"]
   },
   {
+    "title": "Andaman Islands Travel Guide",
+    "url": "/thailand/andaman/",
+    "parent": "Thailand · West coast",
+    "type": "Region",
+    "summary": "Eight route chapters for Phuket, Phang Nga, Krabi, Trang and Satun, planned through sea state, gateway and return buffer.",
+    "keywords": ["andaman", "thailand islands", "phuket", "krabi", "trang", "satun", "island hopping"]
+  },
+  {
+    "title": "Andaman Marine Weather Guide",
+    "url": "/thailand/andaman/#sea-state",
+    "parent": "Thailand · Andaman",
+    "type": "Weather",
+    "summary": "Use official shipping forecasts, park access and operator status before every exposed boat route.",
+    "keywords": ["andaman weather", "sea state", "shipping forecast", "monsoon", "waves", "boat safety"]
+  },
+  {
+    "title": "Andaman Airport and Gateway Guide",
+    "url": "/thailand/andaman/#gateways",
+    "parent": "Thailand · Andaman",
+    "type": "Transit",
+    "summary": "Compare Phuket, Krabi, Trang and Hat Yai by the complete airport-road-pier-boat chain.",
+    "keywords": ["andaman airport", "hkt", "kbv", "tst", "hdy", "island transfer", "pier"]
+  },
+  {
+    "title": "Andaman Ferry and Flight Buffer",
+    "url": "/thailand/andaman/#buffer",
+    "parent": "Thailand · Andaman",
+    "type": "Transit",
+    "summary": "Build mainland nights and weather margin between island boats and separate flights.",
+    "keywords": ["andaman ferry", "flight buffer", "last boat", "island transfer", "weather delay"]
+  },
+  {
+    "title": "Andaman Seven-Night Itinerary",
+    "url": "/thailand/andaman/#itinerary",
+    "parent": "Thailand · Andaman",
+    "type": "Itinerary",
+    "summary": "Use one gateway, one compatible island chapter, a flexible regional night and a protected departure buffer.",
+    "keywords": ["andaman itinerary", "seven nights", "one week", "island route", "thailand coast"]
+  },
+  {
+    "title": "Phuket Old Town and South Guide",
+    "url": "/thailand/andaman/phuket-old-town-south/",
+    "parent": "Andaman · Phuket",
+    "type": "Area",
+    "summary": "Separate Phuket Airport, Old Town, west beaches and southern piers before choosing a hotel base.",
+    "keywords": ["phuket", "phuket old town", "rawai", "chalong", "phuket airport", "where to stay"]
+  },
+  {
+    "title": "Phang Nga Bay and Ko Yao Guide",
+    "url": "/thailand/andaman/phang-nga-ko-yao/",
+    "parent": "Andaman · Phang Nga",
+    "type": "Area",
+    "summary": "Build a tide-aware boat manifest for Phang Nga Bay, Ko Yao Noi and Ko Yao Yai.",
+    "keywords": ["phang nga", "ko yao noi", "ko yao yai", "phang nga bay", "tide", "boat"]
+  },
+  {
+    "title": "Krabi and Railay Travel Guide",
+    "url": "/thailand/andaman/krabi-railay/",
+    "parent": "Andaman · Krabi",
+    "type": "Area",
+    "summary": "Compare Krabi Town, Ao Nang and boat-access Railay through land, water and karst activity layers.",
+    "keywords": ["krabi", "railay", "ao nang", "railay beach", "climbing", "boat access"]
+  },
+  {
+    "title": "Phi Phi Islands Travel Guide",
+    "url": "/thailand/andaman/phi-phi-islands/",
+    "parent": "Andaman · Krabi",
+    "type": "Islands",
+    "summary": "Separate inhabited Phi Phi Don from protected Phi Phi Leh and plan park rules, capacity and return time.",
+    "keywords": ["phi phi", "maya bay", "phi phi don", "phi phi leh", "national park", "ferry"]
+  },
+  {
+    "title": "Ko Lanta Travel Guide",
+    "url": "/thailand/andaman/ko-lanta/",
+    "parent": "Andaman · Krabi",
+    "type": "Island",
+    "summary": "Choose a base along Ko Lanta's north-south road spine, from easy northern access to the park edge.",
+    "keywords": ["ko lanta", "koh lanta", "long beach", "klong khong", "lanta old town", "where to stay"]
+  },
+  {
+    "title": "Trang Islands Travel Guide",
+    "url": "/thailand/andaman/trang-islands/",
+    "parent": "Andaman · Trang",
+    "type": "Islands",
+    "summary": "Compare Ko Muk, Ko Kradan and Ko Libong by island purpose, mainland pier and live boat connection.",
+    "keywords": ["trang islands", "ko muk", "ko kradan", "ko libong", "morakot cave", "trang ferry"]
+  },
+  {
+    "title": "Ko Lipe and Tarutao Travel Guide",
+    "url": "/thailand/andaman/ko-lipe-tarutao/",
+    "parent": "Andaman · Satun",
+    "type": "Islands",
+    "summary": "Reach Ko Lipe through Pak Bara and plan Tarutao access, long transfers, marine weather and a mainland buffer.",
+    "keywords": ["ko lipe", "koh lipe", "tarutao", "pak bara", "satun", "hat yai transfer"]
+  },
+  {
+    "title": "Similan and Surin Islands Guide",
+    "url": "/thailand/andaman/similan-surin/",
+    "parent": "Andaman · Phang Nga",
+    "type": "Marine parks",
+    "summary": "Run current park, sea, operator and ability checks before a remote Similan or Surin marine day.",
+    "keywords": ["similan islands", "surin islands", "marine park", "khao lak", "khura buri", "diving"]
+  },
+  {
     "title": "About TripDistill",
     "url": "/about/",
     "parent": "TripDistill",

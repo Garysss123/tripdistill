@@ -105,7 +105,16 @@ const allRoutes = [
   ['wat-ket-ping-river', '/thailand/chiang-mai/wat-ket-ping-river/'],
   ['mae-rim-mae-sa', '/thailand/chiang-mai/mae-rim-mae-sa/'],
   ['mae-kampong', '/thailand/chiang-mai/mae-kampong/'],
-  ['doi-inthanon', '/thailand/chiang-mai/doi-inthanon/']
+  ['doi-inthanon', '/thailand/chiang-mai/doi-inthanon/'],
+  ['andaman', '/thailand/andaman/'],
+  ['phuket-old-town-south', '/thailand/andaman/phuket-old-town-south/'],
+  ['phang-nga-ko-yao', '/thailand/andaman/phang-nga-ko-yao/'],
+  ['krabi-railay', '/thailand/andaman/krabi-railay/'],
+  ['phi-phi-islands', '/thailand/andaman/phi-phi-islands/'],
+  ['ko-lanta', '/thailand/andaman/ko-lanta/'],
+  ['trang-islands', '/thailand/andaman/trang-islands/'],
+  ['ko-lipe-tarutao', '/thailand/andaman/ko-lipe-tarutao/'],
+  ['similan-surin', '/thailand/andaman/similan-surin/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -330,7 +339,8 @@ for (const [viewportName, width, height, mobile] of viewports) {
     const metrics = await client.send('Page.getLayoutMetrics');
     const content = metrics.cssContentSize || metrics.contentSize;
     const screenshot = await client.send('Page.captureScreenshot', {
-      format: 'png',
+      format: 'jpeg',
+      quality: 86,
       fromSurface: true,
       captureBeyondViewport: true,
       clip: {
@@ -341,7 +351,7 @@ for (const [viewportName, width, height, mobile] of viewports) {
         scale: 1
       }
     });
-    const screenshotPath = path.join(outputDir, `${slug}-${viewportName}.png`);
+    const screenshotPath = path.join(outputDir, `${slug}-${viewportName}.jpg`);
     fs.writeFileSync(screenshotPath, screenshot.data, 'base64');
     await client.send('HeapProfiler.collectGarbage').catch(() => {});
 
@@ -370,7 +380,7 @@ if (!skipInteractions) {
     screenHeight: 844
   });
   await delay(300);
-  await navigate(interactionClient, `${baseUrl}/thailand/chiang-mai/`);
+  await navigate(interactionClient, `${baseUrl}/thailand/andaman/`);
   await delay(400);
   interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -396,7 +406,7 @@ if (!skipInteractions) {
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Chiang Mai';
+  input.value = 'Andaman';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -442,7 +452,7 @@ console.log(JSON.stringify({
 await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Chiang Mai city guide' || interactions.search.count < 1 || interactions.search.first !== 'Chiang Mai Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
+const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Andaman islands guide' || interactions.search.count < 1 || interactions.search.first !== 'Andaman Islands Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
 if (failures.length || interactionFailed) {
   process.exitCode = 1;
 }
