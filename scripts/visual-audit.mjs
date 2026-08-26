@@ -217,6 +217,7 @@ const target = await targetResponse.json();
 const client = new CdpClient(target.webSocketDebuggerUrl);
 await client.open();
 await client.send('Page.enable');
+await client.send('Page.bringToFront');
 await client.send('Runtime.enable');
 await client.send('Log.enable');
 
@@ -330,6 +331,7 @@ const interactionTarget = await interactionTargetResponse.json();
 const interactionClient = new CdpClient(interactionTarget.webSocketDebuggerUrl);
 await interactionClient.open();
 await interactionClient.send('Page.enable');
+await interactionClient.send('Page.bringToFront');
 await interactionClient.send('Runtime.enable');
 await interactionClient.send('Emulation.setDeviceMetricsOverride', {
   width: 390,
