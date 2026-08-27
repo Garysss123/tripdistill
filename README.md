@@ -83,6 +83,8 @@ Repeat the merge and approval for `ja`, `ko` and `th`. Then run `npm run localiz
 
 The first-visit language dialog is suggestive, never a forced redirect. It can offer the matching English, Traditional Chinese, Japanese, Korean or Thai route from the browser's preferred language. The dialog preserves the path, query and hash, records the explicit choice in local storage and does not change canonical URLs. Header and footer menus always provide manual control.
 
+The shared sidebar uses progressive disclosure for a large guide library: `Asia` contains collapsible country groups, while city and regional chapter lists are separate collapsible sections. The current country and exact chapter always open automatically, keyboard behavior comes from native `details`/`summary`, and optional open-state preferences are remembered locally. Add new Asian countries inside the shared country grouping instead of returning to one long flat link list.
+
 ## Country visual systems
 
 Every new country must introduce a visual system that feels specific to that destination. Define a country-level palette, type rhythm, geometry, image treatment and editorial motifs before expanding its cities. Recoloring or reordering the same generic page template is not enough.
@@ -101,12 +103,15 @@ China introduces a lacquer-and-ink editorial system rather than borrowing the Th
 
 Shanghai extends the China system through a Huangpu fold rather than another imperial-axis layout. Port navy, river teal, signal coral, brass and misted paper divide Puxi and Pudong while keeping the lacquer-and-ink editorial discipline. The city hub behaves like an asymmetric river spread. Its eight chapters are a Bund facade catalogue, Lujiazui visibility meter, Yuyuan nested-gate diagram, Wukang Road walk score, two-campus museum curator board, Hongkou civic timeline, West Bund reuse strip and Zhujiajiao water-town clock. Future China clusters must find an equally place-specific spatial argument instead of recoloring either Beijing or Shanghai.
 
+Hangzhou extends the China system through a West Lake compass and celadon field guide. Lake jade, lotus red, tea green, warm rice paper and soft gold express water, cultivation and Southern Song memory without abandoning China's ink discipline. The hub orients visitors by shore and landscape layer. Its eight chapters use a north-shore causeway sequence, south-shore sunset aperture, Lingyin threshold progression, Longjing tea contours, Grand Canal cargo manifest, Hefang shopfront street, Xixi wetland channels and Liangzhu archaeological strata. Future pages in the cluster should preserve this water-and-contour logic while giving each planning problem its own principal instrument.
+
 ## Published guide clusters
 
 - Country hubs: `/china/`, `/japan/`, `/south-korea/` and `/thailand/`
-- China city hubs: `/china/beijing/` and `/china/shanghai/`
+- China city hubs: `/china/beijing/`, `/china/shanghai/` and `/china/hangzhou/`
 - Beijing chapters: Central Axis & Forbidden City; Jingshan & Beihai; Temple of Heaven & Qianmen; Shichahai & Drum Tower; Yonghe & Guozijian; 798 & Chaoyang; Summer Palace; and Mutianyu Great Wall
 - Shanghai chapters: The Bund & Huangpu; Lujiazui & Pudong; Yuyuan & Old City; Wukang Road & Xuhui; People's Square & Museums; Hongkou & Suzhou Creek; West Bund & Longhua; and Zhujiajiao Water Town
+- Hangzhou chapters: North West Lake & Broken Bridge; South West Lake & Leifeng; Lingyin & Feilai Peak; Longjing & Nine Creeks; Grand Canal & Gongchen Bridge; Hefang & Southern Song; Xixi Wetland; and Liangzhu Archaeological City
 - City and regional hubs: `/japan/tokyo/`, `/japan/kyoto/`, `/japan/osaka/` and `/japan/hokkaido/`
 - Hokkaido regional guides: Sapporo; Otaru & Shakotan; Hakodate & Onuma; Furano & Biei; Asahikawa & Daisetsuzan; Niseko & Yoichi; Noboribetsu & Lake Toya; Kushiro & Lake Akan; and Abashiri & Shiretoko
 - Tokyo area guides: Shinjuku; Shibuya & Harajuku; Asakusa & Ueno; Tokyo Station & Ginza; Akihabara & Kanda; Roppongi & Azabu; Odaiba & Toyosu; and Ikebukuro

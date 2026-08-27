@@ -1390,5 +1390,77 @@
     "type": "Water-town excursion",
     "summary": "Protect an early start for Zhujiajiao, plan the metro last mile and let canals and bridges shape a full-day water-town route.",
     "keywords": ["zhujiajiao", "water town", "qingpu", "fangsheng bridge", "shanghai day trip"]
+  },
+  {
+    "title": "Hangzhou Travel Guide",
+    "url": "/china/hangzhou/",
+    "parent": "China · Zhejiang",
+    "type": "City guide",
+    "summary": "Use West Lake as a compass, then choose among temple thresholds, tea hills, canal history, wetland channels and Liangzhu archaeology.",
+    "keywords": ["hangzhou", "west lake", "zhejiang", "longjing", "lingyin", "hangzhou itinerary"]
+  },
+  {
+    "title": "North West Lake and Broken Bridge Guide",
+    "url": "/china/hangzhou/west-lake-north-broken-bridge/",
+    "parent": "Hangzhou · North West Lake",
+    "type": "Lakeside walk",
+    "summary": "Sequence Broken Bridge, Bai Causeway, Gushan and Beishan Road by crowd pressure, daylight and the exits that keep the shore walk coherent.",
+    "keywords": ["broken bridge", "bai causeway", "gushan", "beishan road", "west lake north"]
+  },
+  {
+    "title": "South West Lake and Leifeng Pagoda Guide",
+    "url": "/china/hangzhou/west-lake-south-leifeng/",
+    "parent": "Hangzhou · South West Lake",
+    "type": "Sunset route",
+    "summary": "Build a south-shore West Lake route around Su Causeway, Leifeng Pagoda, long sightlines and an intentional sunset exit.",
+    "keywords": ["leifeng pagoda", "su causeway", "west lake south", "hangzhou sunset", "jingci temple"]
+  },
+  {
+    "title": "Lingyin Temple and Feilai Peak Guide",
+    "url": "/china/hangzhou/lingyin-feilai-peak/",
+    "parent": "Hangzhou · West Lake hills",
+    "type": "Temple and grotto",
+    "summary": "Navigate separate thresholds, active worship space and Feilai Peak carvings with early timing, respectful behavior and a clear return route.",
+    "keywords": ["lingyin temple", "feilai peak", "hangzhou temple", "buddhist grottoes", "lingyin tickets"]
+  },
+  {
+    "title": "Longjing Tea and Nine Creeks Guide",
+    "url": "/china/hangzhou/longjing-nine-creeks/",
+    "parent": "Hangzhou · Tea hills",
+    "type": "Tea and trail",
+    "summary": "Move from tea context to cultivated landscape and a weather-limited Nine Creeks walk without turning the day into a pressured sales stop.",
+    "keywords": ["longjing tea", "dragon well", "nine creeks", "tea village", "hangzhou hiking"]
+  },
+  {
+    "title": "Grand Canal and Gongchen Bridge Guide",
+    "url": "/china/hangzhou/grand-canal-gongchen-bridge/",
+    "parent": "Hangzhou · Grand Canal",
+    "type": "Canal heritage",
+    "summary": "Read Gongchen Bridge through waterway scale, trade, museums, neighborhood memory and a verified boat or evening-bank route.",
+    "keywords": ["gongchen bridge", "grand canal", "hangzhou canal", "canal museum", "water bus"]
+  },
+  {
+    "title": "Hefang Street and Southern Song Guide",
+    "url": "/china/hangzhou/hefang-southern-song/",
+    "parent": "Hangzhou · Wu Hill",
+    "type": "Historic street",
+    "summary": "Look beyond Hefang's souvenir frontage through one historic interior, Southern Song city context, careful food choices and crowd-aware timing.",
+    "keywords": ["hefang street", "southern song imperial street", "wu hill", "hangzhou old street", "qinghefang"]
+  },
+  {
+    "title": "Xixi Wetland Guide",
+    "url": "/china/hangzhou/xixi-wetland/",
+    "parent": "Hangzhou · Xixi",
+    "type": "Wetland planner",
+    "summary": "Choose an exact Xixi gate, a walking or boat-assisted loop and a reliable exit while protecting wildlife and responding to weather.",
+    "keywords": ["xixi wetland", "hangzhou wetland", "xixi boat", "xixi gate", "birdwatching"]
+  },
+  {
+    "title": "Liangzhu Archaeological City Guide",
+    "url": "/china/hangzhou/liangzhu-archaeological-city/",
+    "parent": "Hangzhou · Liangzhu",
+    "type": "Archaeology guide",
+    "summary": "Use the Liangzhu Museum to understand jade, settlement hierarchy and water management before reading the protected archaeological landscape.",
+    "keywords": ["liangzhu", "liangzhu museum", "archaeological ruins", "hangzhou archaeology", "liangzhu jade"]
   }
 ]

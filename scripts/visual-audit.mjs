@@ -145,6 +145,15 @@ const allRoutes = [
   ['shanghai-hongkou', '/china/shanghai/hongkou-suzhou-creek/'],
   ['shanghai-west-bund', '/china/shanghai/west-bund-longhua/'],
   ['shanghai-zhujiajiao', '/china/shanghai/zhujiajiao-water-town/'],
+  ['hangzhou', '/china/hangzhou/'],
+  ['hangzhou-north-lake', '/china/hangzhou/west-lake-north-broken-bridge/'],
+  ['hangzhou-south-lake', '/china/hangzhou/west-lake-south-leifeng/'],
+  ['hangzhou-lingyin', '/china/hangzhou/lingyin-feilai-peak/'],
+  ['hangzhou-longjing', '/china/hangzhou/longjing-nine-creeks/'],
+  ['hangzhou-grand-canal', '/china/hangzhou/grand-canal-gongchen-bridge/'],
+  ['hangzhou-hefang', '/china/hangzhou/hefang-southern-song/'],
+  ['hangzhou-xixi', '/china/hangzhou/xixi-wetland/'],
+  ['hangzhou-liangzhu', '/china/hangzhou/liangzhu-archaeological-city/'],
   ['zh-home', '/zh/'],
   ['zh-japan', '/zh/japan/'],
   ['zh-south-korea', '/zh/south-korea/'],
@@ -160,18 +169,22 @@ const allRoutes = [
   ['zh-shanghai-hongkou', '/zh/china/shanghai/hongkou-suzhou-creek/'],
   ['zh-shanghai-west-bund', '/zh/china/shanghai/west-bund-longhua/'],
   ['zh-shanghai-zhujiajiao', '/zh/china/shanghai/zhujiajiao-water-town/'],
+  ['zh-hangzhou', '/zh/china/hangzhou/'],
   ['ja-home', '/ja/'],
   ['ja-kyoto', '/ja/japan/kyoto/'],
   ['ja-china', '/ja/china/'],
   ['ja-shanghai', '/ja/china/shanghai/'],
+  ['ja-hangzhou', '/ja/china/hangzhou/'],
   ['ko-home', '/ko/'],
   ['ko-seoul', '/ko/south-korea/seoul/'],
   ['ko-china', '/ko/china/'],
   ['ko-shanghai', '/ko/china/shanghai/'],
+  ['ko-hangzhou', '/ko/china/hangzhou/'],
   ['th-home', '/th/'],
   ['th-bangkok', '/th/thailand/bangkok/'],
   ['th-china', '/th/china/'],
-  ['th-shanghai', '/th/china/shanghai/']
+  ['th-shanghai', '/th/china/shanghai/'],
+  ['th-hangzhou', '/th/china/hangzhou/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -487,7 +500,7 @@ if (!skipInteractions) {
     screenHeight: 844
   });
   await delay(300);
-  await navigate(interactionClient, `${baseUrl}/china/beijing/`);
+  await navigate(interactionClient, `${baseUrl}/china/hangzhou/grand-canal-gongchen-bridge/`);
   await delay(400);
   interactions = await evaluate(interactionClient, `(async () => {
   const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -507,13 +520,17 @@ if (!skipInteractions) {
     rect: sidebarRect ? { left: sidebarRect.left, right: sidebarRect.right, width: sidebarRect.width } : null,
     transform: sidebarStyle?.transform || '',
     display: sidebarStyle?.display || '',
-    active: document.querySelector('#layout-sidebar .active')?.textContent.trim() || ''
+    active: document.querySelector('#layout-sidebar .active')?.textContent.trim() || '',
+    accordionCount: document.querySelectorAll('#layout-sidebar details.sidebar-accordion').length,
+    asiaOpen: Boolean(document.querySelector('#layout-sidebar details[data-sidebar-id="asia"]')?.open),
+    chinaOpen: Boolean(document.querySelector('#layout-sidebar details[data-sidebar-id="china"]')?.open),
+    chapterOpen: Boolean(document.querySelector('#layout-sidebar [data-nav-key="grand-canal-gongchen-bridge"]')?.closest('details')?.open)
   };
   document.querySelector('[data-menu-close]')?.click();
   await wait(450);
   document.querySelector('[data-search-toggle]')?.click();
   const input = document.querySelector('#site-search');
-  input.value = 'Beijing';
+  input.value = 'Hangzhou';
   input.dispatchEvent(new Event('input', { bubbles: true }));
   await wait(500);
   const results = document.querySelector('#search-results');
@@ -644,9 +661,13 @@ const interactionFailed = !skipInteractions && (
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||
-  interactions.menu.active !== 'Beijing city guide' ||
+  interactions.menu.active !== 'Grand Canal & Gongchen Bridge' ||
+  interactions.menu.accordionCount < 20 ||
+  !interactions.menu.asiaOpen ||
+  !interactions.menu.chinaOpen ||
+  !interactions.menu.chapterOpen ||
   interactions.search.count < 1 ||
-  interactions.search.first !== 'Beijing Travel Guide' ||
+  interactions.search.first !== 'Hangzhou Travel Guide' ||
   !interactions.search.withinViewport ||
   !interactions.faq.opened ||
   suggestionFailures ||

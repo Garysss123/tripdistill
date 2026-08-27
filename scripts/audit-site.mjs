@@ -5,8 +5,8 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
-const siteCssVersion = '/css/site.css?v=20260827-2';
-const mainJsVersion = '/js/main.js?v=20260827-2';
+const siteCssVersion = '/css/site.css?v=20260828-1';
+const mainJsVersion = '/js/main.js?v=20260828-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 
 function read(relativePath) {
@@ -180,6 +180,7 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
   if (baseRoute.startsWith('/china/') && !html.includes('/css/china.css?v=20260827-3')) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
   if (baseRoute.startsWith('/china/shanghai/') && !html.includes('/css/shanghai.css?v=20260827-2')) problems.push(`${relativePath}: missing Shanghai Huangpu-fold stylesheet`);
+  if (baseRoute.startsWith('/china/hangzhou/') && !html.includes('/css/hangzhou.css?v=20260828-1')) problems.push(`${relativePath}: missing Hangzhou West Lake compass stylesheet`);
 }
 
 const linkFiles = [

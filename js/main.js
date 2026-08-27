@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const BUILD_VERSION = '20260827-2';
+  const BUILD_VERSION = '20260828-1';
   const LOCALES = {
     en: { prefix: '', short: 'EN', nativeName: 'English' },
     'zh-Hant': { prefix: '/zh', short: '繁中', nativeName: '繁體中文' },
@@ -17,6 +17,7 @@
           : 'en';
   const LOCALE_PREFIX = LOCALES[LOCALE].prefix;
   const LANGUAGE_CHOICE_KEY = 'tripdistill-language-choice-v1';
+  const SIDEBAR_STATE_KEY = 'tripdistill-sidebar-state-v1';
   const COMPONENTS = [
     ['layout-header', LOCALE_PREFIX + '/components/header.html'],
     ['layout-sidebar', LOCALE_PREFIX + '/components/sidebar.html'],
@@ -28,35 +29,65 @@
       noResults: 'No guide found yet. Try “Shanghai”, “Jeju”, “ferry” or “transport”.',
       languageAria: 'Choose language',
       editionNote: 'English edition · Facts change—verify time-sensitive details with linked official sources.',
-      resultTypeFallback: 'Guide'
+      resultTypeFallback: 'Guide',
+      sidebarAsia: 'Asia',
+      sidebarChina: 'China',
+      sidebarJapan: 'Japan',
+      sidebarKorea: 'South Korea',
+      sidebarThailand: 'Thailand',
+      sidebarCountries: '4 countries'
     },
     'zh-Hant': {
       componentError: '導覽元件暫時無法載入，請重新整理頁面再試一次。',
       noResults: '暫時找不到相關指南，請改用城市、地區、交通或景點名稱搜尋。',
       languageAria: '選擇語言',
       editionNote: '繁體中文版 · 資訊可能變動，請透過頁面連結的官方來源確認具時效性的細節。',
-      resultTypeFallback: '指南'
+      resultTypeFallback: '指南',
+      sidebarAsia: '亞洲',
+      sidebarChina: '中國',
+      sidebarJapan: '日本',
+      sidebarKorea: '韓國',
+      sidebarThailand: '泰國',
+      sidebarCountries: '4 個國家'
     },
     ja: {
       componentError: 'ナビゲーションを読み込めませんでした。ページを再読み込みしてください。',
       noResults: '該当するガイドが見つかりません。都市、地域、交通機関、観光スポット名で検索してください。',
       languageAria: '言語を選択',
       editionNote: '日本語版 · 最新情報は変更されるため、リンク先の公式情報をご確認ください。',
-      resultTypeFallback: 'ガイド'
+      resultTypeFallback: 'ガイド',
+      sidebarAsia: 'アジア',
+      sidebarChina: '中国',
+      sidebarJapan: '日本',
+      sidebarKorea: '韓国',
+      sidebarThailand: 'タイ',
+      sidebarCountries: '4か国'
     },
     ko: {
       componentError: '탐색 메뉴를 불러오지 못했습니다. 페이지를 새로고침해 주세요.',
       noResults: '관련 가이드를 찾지 못했습니다. 도시, 지역, 교통편 또는 명소 이름으로 검색해 보세요.',
       languageAria: '언어 선택',
       editionNote: '한국어판 · 시기에 따라 달라지는 정보는 연결된 공식 자료에서 다시 확인하세요.',
-      resultTypeFallback: '가이드'
+      resultTypeFallback: '가이드',
+      sidebarAsia: '아시아',
+      sidebarChina: '중국',
+      sidebarJapan: '일본',
+      sidebarKorea: '대한민국',
+      sidebarThailand: '태국',
+      sidebarCountries: '4개 국가'
     },
     th: {
       componentError: 'ไม่สามารถโหลดเมนูนำทางได้ โปรดลองรีเฟรชหน้าเว็บ',
       noResults: 'ยังไม่พบคู่มือที่เกี่ยวข้อง ลองค้นหาด้วยชื่อเมือง ย่าน การเดินทาง หรือสถานที่ท่องเที่ยว',
       languageAria: 'เลือกภาษา',
       editionNote: 'ฉบับภาษาไทย · ข้อมูลอาจเปลี่ยนแปลง โปรดตรวจสอบรายละเอียดล่าสุดจากแหล่งข้อมูลทางการที่เชื่อมโยงไว้',
-      resultTypeFallback: 'คู่มือ'
+      resultTypeFallback: 'คู่มือ',
+      sidebarAsia: 'เอเชีย',
+      sidebarChina: 'จีน',
+      sidebarJapan: 'ญี่ปุ่น',
+      sidebarKorea: 'เกาหลีใต้',
+      sidebarThailand: 'ไทย',
+      sidebarCountries: '4 ประเทศ'
     }
   };
   const COPY = COPY_BY_LOCALE[LOCALE];
@@ -217,6 +248,137 @@
       if (exact) link.setAttribute('aria-current', 'page');
       else if (parent) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
+    });
+  }
+
+  function sidebarPath(link) {
+    try {
+      return new URL(link.href, window.location.origin).pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/|$)/, '') || '/';
+    } catch (error) {
+      return link.getAttribute('href') || '';
+    }
+  }
+
+  function sidebarState() {
+    try {
+      const value = JSON.parse(window.localStorage.getItem(SIDEBAR_STATE_KEY) || '{}');
+      return value && typeof value === 'object' ? value : {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function makeSidebarSummary(label, meta, continent) {
+    const summary = document.createElement('summary');
+    const main = document.createElement('span');
+    main.className = 'sidebar-summary-main';
+    if (continent) {
+      main.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
+    }
+    main.append(document.createTextNode(label));
+    summary.appendChild(main);
+    if (meta) {
+      const count = document.createElement('span');
+      count.className = 'sidebar-summary-meta';
+      count.textContent = meta;
+      summary.appendChild(count);
+    }
+    return summary;
+  }
+
+  function organizeAsiaNavigation() {
+    const explore = document.querySelector('#layout-sidebar nav > .sidebar-section');
+    const links = explore?.querySelector(':scope > .sidebar-links');
+    if (!explore || !links || links.querySelector('[data-sidebar-id="asia"]')) return;
+
+    const definitions = [
+      { id: 'china', path: '/china/', label: COPY.sidebarChina },
+      { id: 'japan', path: '/japan/', label: COPY.sidebarJapan },
+      { id: 'south-korea', path: '/south-korea/', label: COPY.sidebarKorea },
+      { id: 'thailand', path: '/thailand/', label: COPY.sidebarThailand }
+    ];
+    const continent = document.createElement('details');
+    continent.className = 'sidebar-accordion sidebar-continent';
+    continent.dataset.sidebarId = 'asia';
+    continent.appendChild(makeSidebarSummary(COPY.sidebarAsia, COPY.sidebarCountries, true));
+    const continentBody = document.createElement('div');
+    continentBody.className = 'sidebar-accordion-body';
+
+    definitions.forEach(function (definition) {
+      const matching = Array.from(links.querySelectorAll(':scope > a')).filter(function (link) {
+        const path = sidebarPath(link);
+        return path === definition.path || path.startsWith(definition.path);
+      });
+      if (!matching.length) return;
+      const country = document.createElement('details');
+      country.className = 'sidebar-accordion sidebar-country';
+      country.dataset.sidebarId = definition.id;
+      country.appendChild(makeSidebarSummary(definition.label, '', false));
+      const countryLinks = document.createElement('div');
+      countryLinks.className = 'sidebar-accordion-body sidebar-links';
+      matching.forEach(function (link) { countryLinks.appendChild(link); });
+      country.appendChild(countryLinks);
+      continentBody.appendChild(country);
+    });
+    continent.appendChild(continentBody);
+    links.appendChild(continent);
+  }
+
+  function wrapChapterNavigation() {
+    document.querySelectorAll('#layout-sidebar nav > .sidebar-section').forEach(function (section, index) {
+      if (index === 0) return;
+      const label = section.querySelector(':scope > .sidebar-label');
+      const body = section.querySelector(':scope > .sidebar-links');
+      if (!label || !body) return;
+      const firstKey = body.querySelector('[data-nav-key]')?.dataset.navKey || label.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const details = document.createElement('details');
+      details.className = 'sidebar-accordion sidebar-chapters';
+      details.dataset.sidebarId = 'chapters-' + firstKey;
+      details.appendChild(makeSidebarSummary(label.textContent.trim(), String(body.children.length), false));
+      body.classList.add('sidebar-accordion-body');
+      details.appendChild(body);
+      section.replaceWith(details);
+    });
+  }
+
+  function setupSidebarAccordions() {
+    organizeAsiaNavigation();
+    wrapChapterNavigation();
+    const state = sidebarState();
+    const currentCountry = document.body.dataset.country;
+    document.querySelectorAll('#layout-sidebar details[data-sidebar-id]').forEach(function (details) {
+      const id = details.dataset.sidebarId;
+      if (Object.prototype.hasOwnProperty.call(state, id)) details.open = Boolean(state[id]);
+      else if (id === 'asia') details.open = true;
+    });
+    if (currentCountry) {
+      const country = document.querySelector('#layout-sidebar details[data-sidebar-id="' + currentCountry + '"]');
+      if (country) {
+        country.open = true;
+        const continent = country.closest('.sidebar-continent');
+        if (continent) continent.open = true;
+      }
+    }
+    const currentPath = window.location.pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/|$)/, '') || '/';
+    if (currentPath.split('/').filter(Boolean).length >= 2) {
+      document.querySelectorAll('#layout-sidebar .sidebar-chapters').forEach(function (details) {
+        const firstLink = details.querySelector('a[href]');
+        if (firstLink && sidebarPath(firstLink).startsWith(currentPath)) details.open = true;
+      });
+    }
+    document.querySelectorAll('#layout-sidebar .sidebar-link.active').forEach(function (link) {
+      let parent = link.closest('details');
+      while (parent) {
+        parent.open = true;
+        parent = parent.parentElement?.closest('details');
+      }
+    });
+    document.querySelectorAll('#layout-sidebar details[data-sidebar-id]').forEach(function (details) {
+      details.addEventListener('toggle', function () {
+        const next = sidebarState();
+        next[details.dataset.sidebarId] = details.open;
+        try { window.localStorage.setItem(SIDEBAR_STATE_KEY, JSON.stringify(next)); } catch (error) { /* Storage can be unavailable. */ }
+      });
     });
   }
 
@@ -395,6 +557,7 @@
     setupMenu();
     setupSearch();
     applyActiveNavigation();
+    setupSidebarAccordions();
     setupLanguageSwitches();
     setupGlobalEvents();
     window.dispatchEvent(new CustomEvent('tripdistill:components-ready'));

@@ -3,10 +3,11 @@ import path from 'node:path';
 import { allLocales, localeConfigs } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const siteCssVersion = '20260827-2';
-const mainJsVersion = '20260827-2';
+const siteCssVersion = '20260828-1';
+const mainJsVersion = '20260828-1';
 const chinaCssVersion = '20260827-3';
 const shanghaiCssVersion = '20260827-2';
+const hangzhouCssVersion = '20260828-1';
 
 function routeToFile(route) {
   if (route === '/') return 'index.html';
@@ -34,6 +35,7 @@ for (const route of routes) {
   html = html.replace(/\/js\/main\.js\?v=[0-9-]+/g, '/js/main.js?v=' + mainJsVersion);
   html = html.replace(/\/css\/china\.css\?v=[0-9-]+/g, '/css/china.css?v=' + chinaCssVersion);
   html = html.replace(/\/css\/shanghai\.css\?v=[0-9-]+/g, '/css/shanghai.css?v=' + shanghaiCssVersion);
+  html = html.replace(/\/css\/hangzhou\.css\?v=[0-9-]+/g, '/css/hangzhou.css?v=' + hangzhouCssVersion);
   html = html.replace(/<link\b(?=[^>]*\brel="alternate")[^>]*>/gi, '');
 
   const canonicalTag = html.match(/<link\b(?=[^>]*\brel="canonical")[^>]*>/i)?.[0];

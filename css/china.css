@@ -65,6 +65,7 @@ body[data-country="china"] {
 .city-opening.shanghai-opening { background: #102936; }
 .city-opening.shanghai-opening img { order: 2; }
 .city-opening.shanghai-opening > div { order: 1; }
+.city-opening.hangzhou-opening { background: #173d38; }
 .destination-region { margin-top: 1.4rem; border: 1px solid rgba(23,33,29,.2); border-top: 4px solid var(--china-ink); background: var(--china-ink); box-shadow: 0 1.2rem 3rem rgba(23,33,29,.12); }
 .destination-region-heading { display: grid; grid-template-columns: .35fr 1fr; gap: 1rem; padding: 1.25rem 1.35rem; color: #fff; background: var(--china-ink); }
 .destination-region-heading small { color: var(--china-gold); font-weight: 950; letter-spacing: .14em; }

@@ -4,17 +4,18 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
-const lastmod = '2026-08-27';
+const lastmod = '2026-08-28';
 const newRoutes = [
-  ['/china/shanghai/', 'monthly', '0.9'],
-  ['/china/shanghai/the-bund-huangpu/', 'monthly', '0.8'],
-  ['/china/shanghai/lujiazui-pudong/', 'monthly', '0.8'],
-  ['/china/shanghai/yuyuan-old-city/', 'monthly', '0.8'],
-  ['/china/shanghai/wukang-road-xuhui/', 'monthly', '0.8'],
-  ['/china/shanghai/peoples-square-museums/', 'monthly', '0.8'],
-  ['/china/shanghai/hongkou-suzhou-creek/', 'monthly', '0.8'],
-  ['/china/shanghai/west-bund-longhua/', 'monthly', '0.8'],
-  ['/china/shanghai/zhujiajiao-water-town/', 'monthly', '0.8']
+  ['/china/', 'monthly', '0.9'],
+  ['/china/hangzhou/', 'monthly', '0.9'],
+  ['/china/hangzhou/west-lake-north-broken-bridge/', 'monthly', '0.8'],
+  ['/china/hangzhou/west-lake-south-leifeng/', 'monthly', '0.8'],
+  ['/china/hangzhou/lingyin-feilai-peak/', 'monthly', '0.8'],
+  ['/china/hangzhou/longjing-nine-creeks/', 'monthly', '0.8'],
+  ['/china/hangzhou/grand-canal-gongchen-bridge/', 'monthly', '0.8'],
+  ['/china/hangzhou/hefang-southern-song/', 'monthly', '0.8'],
+  ['/china/hangzhou/xixi-wetland/', 'monthly', '0.8'],
+  ['/china/hangzhou/liangzhu-archaeological-city/', 'monthly', '0.8']
 ];
 
 function isLocalizedRoute(route) {
