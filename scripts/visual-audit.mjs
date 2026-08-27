@@ -561,7 +561,9 @@ if (!skipInteractions) {
   const input = document.querySelector('#site-search');
   input.value = 'Hangzhou';
   input.dispatchEvent(new Event('input', { bubbles: true }));
-  await wait(500);
+  for (let attempt = 0; attempt < 50 && !document.querySelector('#search-results .search-result'); attempt += 1) {
+    await wait(100);
+  }
   const results = document.querySelector('#search-results');
   const resultRect = results?.getBoundingClientRect();
   const search = {
