@@ -1,0 +1,420 @@
+.china-expansion-page {
+  --exp-paper: #f4efe3;
+  background: #ece6da;
+}
+
+.china-expansion-page .page-content { overflow: clip; }
+
+.exp-guide {
+  --exp-ink: #172321;
+  --exp-accent: #9a3c2c;
+  --exp-accent-2: #d0a657;
+  --exp-wash: #e4dcc9;
+  --exp-deep: #162a2b;
+  --exp-line: color-mix(in srgb, var(--exp-ink) 22%, transparent);
+  color: var(--exp-ink);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+.exp-guide .section { position: relative; }
+
+.exp-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+  grid-template-areas: "copy media" "motif motif";
+  min-height: 620px;
+  margin: 0 0 30px;
+  background: var(--exp-paper);
+  border: 1px solid var(--exp-line);
+  box-shadow: 0 28px 80px rgba(30, 28, 22, .15);
+  overflow: hidden;
+}
+
+.exp-hero-copy {
+  grid-area: copy;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(42px, 6vw, 88px);
+}
+
+.exp-kicker,
+.exp-section-heading > span,
+.exp-chapters small,
+.exp-decision-grid small,
+.exp-route small,
+.exp-practical-grid small {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--exp-accent);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.exp-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.25rem, 6.8vw, 7.5rem);
+  font-weight: 500;
+  line-height: .84;
+  letter-spacing: -.055em;
+}
+
+.exp-hero h1 span {
+  display: block;
+  max-width: 620px;
+  margin-top: 22px;
+  color: var(--exp-accent);
+  font-size: .42em;
+  font-style: italic;
+  line-height: 1.04;
+  letter-spacing: -.025em;
+}
+
+.exp-hero-copy > p {
+  max-width: 720px;
+  margin: 30px 0 0;
+  color: color-mix(in srgb, var(--exp-ink) 82%, white);
+  font-size: 1.05rem;
+  line-height: 1.78;
+}
+
+.exp-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+
+.exp-facts span {
+  padding: 8px 11px;
+  border: 1px solid var(--exp-line);
+  background: color-mix(in srgb, var(--exp-paper) 76%, transparent);
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.exp-hero-media {
+  grid-area: media;
+  position: relative;
+  min-height: 490px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.exp-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--exp-paper) 70%, transparent), transparent 32%);
+  pointer-events: none;
+}
+
+.exp-hero-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 490px;
+  object-fit: cover;
+  filter: saturate(.88) contrast(1.03);
+}
+
+.exp-hero-media figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 20px;
+  max-width: 70%;
+  padding: 8px 11px;
+  color: white;
+  background: rgba(12, 19, 18, .72);
+  font-size: .68rem;
+  line-height: 1.35;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.exp-motif {
+  grid-area: motif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: var(--exp-paper);
+  background: var(--exp-deep);
+}
+
+.exp-motif span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 82px;
+  padding: 20px;
+  border-right: 1px solid rgba(255,255,255,.13);
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+.exp-motif b { color: var(--exp-accent-2); font: 800 .65rem/1 Inter, sans-serif; letter-spacing: .12em; }
+
+.exp-section-heading { max-width: 850px; margin-bottom: 34px; }
+.exp-section-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.25rem, 4.5vw, 4.8rem); font-weight: 500; line-height: .98; letter-spacing: -.045em; }
+.exp-section-heading p { max-width: 760px; margin: 20px 0 0; font-size: 1.02rem; line-height: 1.75; }
+
+.exp-chapters {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.exp-chapters article,
+.exp-decision-grid article,
+.exp-route article,
+.exp-practical-grid article {
+  position: relative;
+  padding: clamp(24px, 3vw, 38px);
+  background: color-mix(in srgb, var(--exp-paper) 90%, white);
+  border: 1px solid var(--exp-line);
+  overflow: hidden;
+}
+
+.exp-chapters article { grid-column: span 3; min-height: 300px; }
+.exp-chapters article:nth-child(1), .exp-chapters article:nth-child(6) { grid-column: span 6; }
+.exp-chapters article:nth-child(4), .exp-chapters article:nth-child(8) { grid-column: span 4; }
+.exp-chapters article:nth-child(5), .exp-chapters article:nth-child(7) { grid-column: span 5; }
+
+.exp-chapters article::before,
+.exp-decision-grid article::before,
+.exp-route article::before,
+.exp-practical-grid article::before {
+  content: "";
+  position: absolute;
+  width: 72px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: var(--exp-accent);
+}
+
+.exp-chapters h3,
+.exp-decision-grid h3,
+.exp-route h3,
+.exp-practical-grid h3 { margin: 0 0 14px; font-family: Georgia, serif; font-size: clamp(1.35rem, 2vw, 2rem); line-height: 1.08; }
+.exp-chapters p,
+.exp-decision-grid p,
+.exp-route p,
+.exp-practical-grid p { margin: 0; line-height: 1.72; }
+
+.exp-decision-grid,
+.exp-practical-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.exp-route { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--exp-line); }
+.exp-route article { border: 0; border-right: 1px solid var(--exp-line); }
+.exp-route article:last-child { border-right: 0; }
+.exp-route article::after { content: "→"; position: absolute; right: 18px; bottom: 12px; color: var(--exp-accent); font-size: 1.5rem; }
+
+.exp-guide .faq-list details { background: color-mix(in srgb, var(--exp-paper) 93%, white); border-color: var(--exp-line); }
+.exp-guide .faq-list summary { font-family: Georgia, serif; font-size: 1.1rem; }
+.exp-guide .sources { border-top: 5px solid var(--exp-accent); background: var(--exp-deep); color: color-mix(in srgb, var(--exp-paper) 90%, white); }
+.exp-guide .sources h2, .exp-guide .sources a { color: white; }
+.exp-guide .sources a { text-decoration-color: var(--exp-accent-2); }
+
+/* 01 — Guangzhou: lacquer banquet table and Pearl River courses. */
+.exp-guide[data-visual="pearl-banquet"] { --exp-paper:#f5eadb; --exp-ink:#35181c; --exp-accent:#8b2235; --exp-accent-2:#dbb15b; --exp-wash:#ead3bd; --exp-deep:#351118; }
+.exp-guide[data-visual="pearl-banquet"] .exp-hero { border-radius: 120px 12px 120px 12px; }
+.exp-guide[data-visual="pearl-banquet"] .exp-hero-copy::before { content:"宴"; position:absolute; right:18px; top:12px; color:rgba(139,34,53,.09); font:700 14rem/1 Georgia,serif; }
+.exp-guide[data-visual="pearl-banquet"] .exp-chapters article { border-radius: 42px 4px 42px 4px; }
+.exp-guide[data-visual="pearl-banquet"] .exp-route { border-radius: 999px; overflow:hidden; }
+
+/* 02 — Shenzhen: scanlines, hard grid and luminous border signals. */
+.exp-guide[data-visual="border-grid"] { --exp-paper:#eef4f3; --exp-ink:#10283a; --exp-accent:#e94454; --exp-accent-2:#68e0c2; --exp-wash:#d9e9e8; --exp-deep:#0b2033; }
+.exp-guide[data-visual="border-grid"] .exp-hero { clip-path:polygon(0 0,96% 0,100% 8%,100% 100%,4% 100%,0 92%); background-image:linear-gradient(rgba(16,40,58,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(16,40,58,.05) 1px,transparent 1px); background-size:28px 28px; }
+.exp-guide[data-visual="border-grid"] .exp-hero h1 { font-family:Inter,sans-serif; font-weight:850; text-transform:uppercase; letter-spacing:-.075em; }
+.exp-guide[data-visual="border-grid"] .exp-chapters article { min-height:260px; box-shadow:inset 0 -6px 0 var(--exp-accent-2); }
+.exp-guide[data-visual="border-grid"] .exp-motif span { font-family:Inter,sans-serif; text-transform:uppercase; letter-spacing:.1em; }
+
+/* 03 — Xiamen/Fujian: maritime veranda and tulou rings. */
+.exp-guide[data-visual="tulou-rings"] { --exp-paper:#f5eee0; --exp-ink:#263d3c; --exp-accent:#a64e35; --exp-accent-2:#d6b971; --exp-wash:#dce7df; --exp-deep:#21474d; }
+.exp-guide[data-visual="tulou-rings"] .exp-hero { border-radius:0 0 180px 180px; }
+.exp-guide[data-visual="tulou-rings"] .exp-hero-media { margin:48px; min-height:400px; border-radius:50%; border:12px solid var(--exp-accent); }
+.exp-guide[data-visual="tulou-rings"] .exp-hero-media img { min-height:400px; }
+.exp-guide[data-visual="tulou-rings"] .exp-chapters article { border-radius:50%; min-height:330px; display:flex; flex-direction:column; justify-content:center; text-align:center; }
+.exp-guide[data-visual="tulou-rings"] .exp-chapters article::before { left:50%; transform:translateX(-50%); }
+
+/* 04 — Sanya/Hainan: tide chart and monsoon curves. */
+.exp-guide[data-visual="monsoon-tide"] { --exp-paper:#fff4db; --exp-ink:#113a43; --exp-accent:#ed6c4d; --exp-accent-2:#f1c95e; --exp-wash:#d9efea; --exp-deep:#006b78; }
+.exp-guide[data-visual="monsoon-tide"] .exp-hero { border-radius:0 0 50% 12%; }
+.exp-guide[data-visual="monsoon-tide"] .exp-hero::after { content:""; position:absolute; left:-10%; right:-10%; bottom:72px; height:70px; border-radius:50%; border-top:12px solid rgba(0,107,120,.2); pointer-events:none; }
+.exp-guide[data-visual="monsoon-tide"] .exp-chapters article:nth-child(even) { transform:translateY(22px); border-radius:50px 50px 8px 8px; }
+.exp-guide[data-visual="monsoon-tide"] .exp-route article:nth-child(odd) { background:var(--exp-wash); }
+
+/* 05 — Guilin/Yangshuo: vertical ink scroll and staggered karst pillars. */
+.exp-guide[data-visual="karst-scroll"] { --exp-paper:#f1eee3; --exp-ink:#18352d; --exp-accent:#466e4a; --exp-accent-2:#b39455; --exp-wash:#d9dfcf; --exp-deep:#173d35; }
+.exp-guide[data-visual="karst-scroll"] .exp-hero { grid-template-columns:.72fr 1.28fr; min-height:720px; }
+.exp-guide[data-visual="karst-scroll"] .exp-hero h1 { writing-mode:vertical-rl; max-height:540px; font-size:clamp(3rem,5vw,5.8rem); }
+.exp-guide[data-visual="karst-scroll"] .exp-hero h1 span { display:inline; margin:0 14px 0 0; }
+.exp-guide[data-visual="karst-scroll"] .exp-chapters article { border:0; border-left:3px solid var(--exp-accent); min-height:360px; }
+.exp-guide[data-visual="karst-scroll"] .exp-chapters article:nth-child(3n+2) { transform:translateY(34px); }
+
+/* 06 — Changsha: spicy night newspaper. */
+.exp-guide[data-visual="night-paper"] { --exp-paper:#f3e9d1; --exp-ink:#251b19; --exp-accent:#c22e36; --exp-accent-2:#f0b529; --exp-wash:#ead8b9; --exp-deep:#181414; }
+.exp-guide[data-visual="night-paper"] .exp-hero { border-top:12px solid var(--exp-deep); border-bottom:12px solid var(--exp-accent); }
+.exp-guide[data-visual="night-paper"] .exp-hero h1 { font-family:Impact,"Arial Narrow",sans-serif; text-transform:uppercase; font-style:normal; letter-spacing:-.035em; }
+.exp-guide[data-visual="night-paper"] .exp-section-heading { padding-bottom:18px; border-bottom:4px double var(--exp-ink); }
+.exp-guide[data-visual="night-paper"] .exp-chapters article { box-shadow:6px 6px 0 var(--exp-ink); }
+.exp-guide[data-visual="night-paper"] .exp-chapters article:nth-child(odd) { background:var(--exp-deep); color:var(--exp-paper); }
+
+/* 07 — Wuhan: three-town confluence map. */
+.exp-guide[data-visual="confluence-map"] { --exp-paper:#eef1e9; --exp-ink:#173644; --exp-accent:#c45138; --exp-accent-2:#e4bd62; --exp-wash:#d6e5e8; --exp-deep:#123f59; }
+.exp-guide[data-visual="confluence-map"] .exp-hero { border-radius:12px 180px 12px 180px; }
+.exp-guide[data-visual="confluence-map"] .exp-hero::before { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(62deg,transparent 46%,rgba(18,63,89,.15) 47%,rgba(18,63,89,.15) 50%,transparent 51%),linear-gradient(-55deg,transparent 63%,rgba(18,63,89,.1) 64%,rgba(18,63,89,.1) 67%,transparent 68%); pointer-events:none; }
+.exp-guide[data-visual="confluence-map"] .exp-chapters { gap:22px; }
+.exp-guide[data-visual="confluence-map"] .exp-chapters article { border-radius:0 70px 0 70px; }
+
+/* 08 — Chengdu: tea ledger and calm green intervals. */
+.exp-guide[data-visual="teahouse-ledger"] { --exp-paper:#f3edda; --exp-ink:#27362a; --exp-accent:#8e4937; --exp-accent-2:#c6a45b; --exp-wash:#dfe5d4; --exp-deep:#31573b; }
+.exp-guide[data-visual="teahouse-ledger"] .exp-hero { border:8px double var(--exp-deep); }
+.exp-guide[data-visual="teahouse-ledger"] .exp-hero-copy { padding-left:clamp(54px,8vw,120px); }
+.exp-guide[data-visual="teahouse-ledger"] .exp-chapters article { border-left:12px solid var(--exp-wash); }
+.exp-guide[data-visual="teahouse-ledger"] .exp-chapters article:nth-child(3n) { background:var(--exp-wash); }
+.exp-guide[data-visual="teahouse-ledger"] .exp-route { transform:rotate(-.35deg); box-shadow:10px 12px 0 rgba(49,87,59,.15); }
+
+/* 09 — Chongqing: stacked decks and neon elevation. */
+.exp-guide[data-visual="vertical-city"] { --exp-paper:#eee5d8; --exp-ink:#2c1c20; --exp-accent:#e14945; --exp-accent-2:#efb84d; --exp-wash:#ded1c6; --exp-deep:#24151c; }
+.exp-guide[data-visual="vertical-city"] .exp-hero { grid-template-columns:1fr 1fr; transform:skewY(-1deg); border-top:10px solid var(--exp-accent); }
+.exp-guide[data-visual="vertical-city"] .exp-hero > * { transform:skewY(1deg); }
+.exp-guide[data-visual="vertical-city"] .exp-chapters article { min-height:245px; }
+.exp-guide[data-visual="vertical-city"] .exp-chapters article:nth-child(2n) { transform:translateY(38px); }
+.exp-guide[data-visual="vertical-city"] .exp-route { align-items:start; border:0; gap:14px; }
+.exp-guide[data-visual="vertical-city"] .exp-route article:nth-child(2) { margin-top:32px; }.exp-guide[data-visual="vertical-city"] .exp-route article:nth-child(3) { margin-top:64px; }.exp-guide[data-visual="vertical-city"] .exp-route article:nth-child(4) { margin-top:96px; }
+
+/* 10 — Kunming: botanical plateau calendar. */
+.exp-guide[data-visual="plateau-calendar"] { --exp-paper:#f7f0df; --exp-ink:#30402e; --exp-accent:#b74a58; --exp-accent-2:#d6a744; --exp-wash:#e3ead6; --exp-deep:#3c593b; }
+.exp-guide[data-visual="plateau-calendar"] .exp-hero { border-radius:180px 180px 12px 12px; }
+.exp-guide[data-visual="plateau-calendar"] .exp-hero-media { border-radius:180px 0 0 180px; }
+.exp-guide[data-visual="plateau-calendar"] .exp-chapters article { border-radius:80px 80px 14px 14px; }
+.exp-guide[data-visual="plateau-calendar"] .exp-chapters article:nth-child(4n+2) { background:var(--exp-wash); }
+
+/* 11 — Dali: strong mountain-lake horizon. */
+.exp-guide[data-visual="lake-horizon"] { --exp-paper:#f2eee2; --exp-ink:#243c46; --exp-accent:#bb583d; --exp-accent-2:#c89c48; --exp-wash:#dce9e7; --exp-deep:#345f6b; }
+.exp-guide[data-visual="lake-horizon"] .exp-hero { grid-template-columns:1fr; grid-template-areas:"media" "copy" "motif"; }
+.exp-guide[data-visual="lake-horizon"] .exp-hero-media { min-height:440px; clip-path:polygon(0 28%,18% 12%,34% 29%,52% 4%,71% 25%,86% 13%,100% 31%,100% 100%,0 100%); }
+.exp-guide[data-visual="lake-horizon"] .exp-hero-media img { min-height:440px; }
+.exp-guide[data-visual="lake-horizon"] .exp-hero-copy { margin-top:-50px; background:linear-gradient(180deg,transparent,var(--exp-paper) 80px); }
+.exp-guide[data-visual="lake-horizon"] .exp-chapters article { border-bottom:8px solid var(--exp-deep); }
+
+/* 12 — Lijiang/Shangri-La: water-lane woodblock. */
+.exp-guide[data-visual="water-lanes"] { --exp-paper:#eee7d9; --exp-ink:#2e3039; --exp-accent:#8d493d; --exp-accent-2:#c6a14e; --exp-wash:#d7e1df; --exp-deep:#38404f; }
+.exp-guide[data-visual="water-lanes"] .exp-hero { border-radius:0 120px 0 120px; box-shadow:18px 18px 0 var(--exp-wash); }
+.exp-guide[data-visual="water-lanes"] .exp-chapters article { border:0; background:linear-gradient(110deg,var(--exp-paper) 0 72%,var(--exp-wash) 72%); }
+.exp-guide[data-visual="water-lanes"] .exp-chapters article:nth-child(even) { margin-top:25px; }
+.exp-guide[data-visual="water-lanes"] .exp-route article { border-bottom:5px solid var(--exp-accent); }
+
+/* 13 — Zhangjiajie: narrow pillar profiles. */
+.exp-guide[data-visual="pillar-profile"] { --exp-paper:#eef0e8; --exp-ink:#24352c; --exp-accent:#7a4e34; --exp-accent-2:#bba05a; --exp-wash:#d5ded3; --exp-deep:#243e34; }
+.exp-guide[data-visual="pillar-profile"] .exp-hero-media { clip-path:polygon(8% 0,100% 0,94% 100%,0 100%); }
+.exp-guide[data-visual="pillar-profile"] .exp-chapters { align-items:end; }
+.exp-guide[data-visual="pillar-profile"] .exp-chapters article { grid-column:span 3; min-height:380px; border-radius:70px 70px 6px 6px; }
+.exp-guide[data-visual="pillar-profile"] .exp-chapters article:nth-child(2n) { min-height:480px; }
+.exp-guide[data-visual="pillar-profile"] .exp-chapters article:nth-child(3n) { min-height:330px; }
+
+/* 14 — Guiyang/Guizhou: rain cabinet and watershed drawers. */
+.exp-guide[data-visual="rain-cabinet"] { --exp-paper:#eff1e6; --exp-ink:#233b37; --exp-accent:#387568; --exp-accent-2:#d3a84e; --exp-wash:#d9e8e2; --exp-deep:#1f4a43; }
+.exp-guide[data-visual="rain-cabinet"] .exp-hero { border-radius:100px 8px 100px 8px; background-image:repeating-linear-gradient(105deg,transparent 0 20px,rgba(56,117,104,.045) 21px 23px); }
+.exp-guide[data-visual="rain-cabinet"] .exp-chapters article { box-shadow:inset 0 0 0 8px color-mix(in srgb,var(--exp-wash) 75%,transparent); }
+.exp-guide[data-visual="rain-cabinet"] .exp-chapters article:nth-child(odd) { border-radius:0 60px 0 60px; }
+.exp-guide[data-visual="rain-cabinet"] .exp-chapters article:nth-child(even) { border-radius:60px 0 60px 0; }
+
+/* 15 — Dunhuang: manuscript strip with mineral-pigment blocks. */
+.exp-guide[data-visual="manuscript-strip"] { --exp-paper:#f2dfbf; --exp-ink:#422b24; --exp-accent:#9d4432; --exp-accent-2:#d39d45; --exp-wash:#e8c990; --exp-deep:#563426; }
+.exp-guide[data-visual="manuscript-strip"] .exp-hero { border-left:18px solid var(--exp-accent); border-right:18px solid var(--exp-accent); background-image:radial-gradient(circle at 20% 30%,rgba(157,68,50,.08),transparent 32%),radial-gradient(circle at 75% 70%,rgba(211,157,69,.12),transparent 28%); }
+.exp-guide[data-visual="manuscript-strip"] .exp-chapters { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); overflow:visible; padding:0; }
+.exp-guide[data-visual="manuscript-strip"] .exp-chapters article { grid-column:span 3; min-height:380px; border-top:8px solid var(--exp-accent); }
+.exp-guide[data-visual="manuscript-strip"] .exp-route article:nth-child(even) { background:var(--exp-wash); }
+
+/* 16 — Xinjiang: continental corridor atlas. */
+.exp-guide[data-visual="corridor-atlas"] { --exp-paper:#f1e5cb; --exp-ink:#3c3026; --exp-accent:#a44f32; --exp-accent-2:#c99f4c; --exp-wash:#e2cfaa; --exp-deep:#5a3e2c; }
+.exp-guide[data-visual="corridor-atlas"] .exp-hero { grid-template-columns:1.25fr .75fr; border-radius:12px; background-image:linear-gradient(90deg,rgba(164,79,50,.05) 1px,transparent 1px),linear-gradient(rgba(164,79,50,.05) 1px,transparent 1px); background-size:48px 48px; }
+.exp-guide[data-visual="corridor-atlas"] .exp-motif { position:relative; }
+.exp-guide[data-visual="corridor-atlas"] .exp-motif::before { content:""; position:absolute; left:9%; right:9%; top:50%; height:2px; background:var(--exp-accent-2); }
+.exp-guide[data-visual="corridor-atlas"] .exp-motif span { position:relative; z-index:1; justify-content:center; background:var(--exp-deep); }
+.exp-guide[data-visual="corridor-atlas"] .exp-chapters article { border:0; border-top:3px solid var(--exp-accent); }
+.exp-guide[data-visual="corridor-atlas"] .exp-chapters article:nth-child(2n) { background:var(--exp-wash); }
+
+/* 17 — Lhasa: restrained acclimatization stages. */
+.exp-guide[data-visual="altitude-stages"] { --exp-paper:#f0e7d4; --exp-ink:#382a27; --exp-accent:#a34234; --exp-accent-2:#d3a53e; --exp-wash:#ded1b4; --exp-deep:#55332b; }
+.exp-guide[data-visual="altitude-stages"] .exp-hero { grid-template-columns:.9fr 1.1fr; border-top:14px solid var(--exp-accent-2); clip-path:polygon(0 9%,7% 9%,7% 5%,14% 5%,14% 0,100% 0,100% 100%,0 100%); }
+.exp-guide[data-visual="altitude-stages"] .exp-chapters { display:block; counter-reset:stage; }
+.exp-guide[data-visual="altitude-stages"] .exp-chapters article { min-height:0; margin:0 0 16px calc(var(--stage,0) * 2.7%); border-left:8px solid var(--exp-accent); }
+.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(1){--stage:0}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(2){--stage:1}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(3){--stage:2}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(4){--stage:3}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(5){--stage:4}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(6){--stage:5}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(7){--stage:6}.exp-guide[data-visual="altitude-stages"] .exp-chapters article:nth-child(8){--stage:7}
+.exp-guide[data-visual="altitude-stages"] .exp-route { border:0; gap:12px; align-items:start; }
+.exp-guide[data-visual="altitude-stages"] .exp-route article:nth-child(2){margin-top:28px}.exp-guide[data-visual="altitude-stages"] .exp-route article:nth-child(3){margin-top:56px}.exp-guide[data-visual="altitude-stages"] .exp-route article:nth-child(4){margin-top:84px}
+
+@media (max-width: 1080px) {
+  .exp-chapters article,
+  .exp-chapters article:nth-child(n) { grid-column: span 6; min-height: 280px; }
+  .exp-route { grid-template-columns: repeat(2, 1fr); }
+  .exp-route article:nth-child(2) { border-right: 0; }
+  .exp-route article:nth-child(-n+2) { border-bottom: 1px solid var(--exp-line); }
+  .exp-guide[data-visual="pillar-profile"] .exp-chapters article:nth-child(n) { min-height:330px; }
+  .exp-guide[data-visual="manuscript-strip"] .exp-chapters article:nth-child(n) { grid-column:span 6; }
+}
+
+@media (max-width: 760px) {
+  .exp-hero,
+  .exp-guide[data-visual="karst-scroll"] .exp-hero,
+  .exp-guide[data-visual="vertical-city"] .exp-hero,
+  .exp-guide[data-visual="corridor-atlas"] .exp-hero,
+  .exp-guide[data-visual="altitude-stages"] .exp-hero {
+    grid-template-columns: 1fr;
+    grid-template-areas: "media" "copy" "motif";
+    min-height: 0;
+    border-radius: 0;
+    clip-path: none;
+    transform: none;
+  }
+  .exp-guide[data-visual="vertical-city"] .exp-hero > * { transform:none; }
+  .exp-hero-media,
+  .exp-guide[data-visual="tulou-rings"] .exp-hero-media,
+  .exp-guide[data-visual="plateau-calendar"] .exp-hero-media { min-height:300px; height:54vw; min-height:280px; max-height:400px; margin:0; border:0; border-radius:0; clip-path:none; }
+  .exp-hero-media img,
+  .exp-guide[data-visual="tulou-rings"] .exp-hero-media img,
+  .exp-guide[data-visual="lake-horizon"] .exp-hero-media img { min-height:280px; }
+  .exp-hero-copy,
+  .exp-guide[data-visual="teahouse-ledger"] .exp-hero-copy,
+  .exp-guide[data-visual="lake-horizon"] .exp-hero-copy { padding:32px 24px 36px; margin:0; }
+  .exp-hero h1,
+  .exp-guide[data-visual="karst-scroll"] .exp-hero h1 { writing-mode:horizontal-tb; max-height:none; font-size:clamp(2.75rem,13vw,4.4rem); line-height:.9; }
+  .exp-hero h1 span,
+  .exp-guide[data-visual="karst-scroll"] .exp-hero h1 span { display:block; margin:16px 0 0; }
+  .exp-hero-copy > p { margin-top:22px; font-size:.98rem; }
+  .exp-motif { grid-template-columns:repeat(2,1fr); }
+  .exp-motif span { min-height:64px; padding:14px; font-size:.88rem; }
+  .exp-section-heading h2 { font-size:clamp(2rem,10vw,3.25rem); }
+  .exp-chapters,
+  .exp-guide[data-visual="tulou-rings"] .exp-chapters,
+  .exp-guide[data-visual="manuscript-strip"] .exp-chapters { display:grid; grid-template-columns:1fr; overflow:visible; padding:0; }
+  .exp-chapters article,
+  .exp-chapters article:nth-child(n),
+  .exp-guide[data-visual="tulou-rings"] .exp-chapters article,
+  .exp-guide[data-visual="pillar-profile"] .exp-chapters article:nth-child(n),
+  .exp-guide[data-visual="manuscript-strip"] .exp-chapters article { grid-column:auto; min-height:0; margin:0; transform:none; border-radius:18px; flex:auto; }
+  .exp-guide[data-visual="altitude-stages"] .exp-chapters article { margin-left:0; }
+  .exp-decision-grid,
+  .exp-practical-grid,
+  .exp-route { grid-template-columns:1fr; }
+  .exp-route article,
+  .exp-route article:nth-child(n),
+  .exp-guide[data-visual="vertical-city"] .exp-route article:nth-child(n),
+  .exp-guide[data-visual="altitude-stages"] .exp-route article:nth-child(n) { margin:0; border:0; border-bottom:1px solid var(--exp-line); }
+  .exp-route article:last-child { border-bottom:0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-guide * { scroll-behavior:auto !important; }
+}

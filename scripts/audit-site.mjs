@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { allLocales, localeConfigs } from './i18n-lib.mjs';
+import { guides as chinaExpansionGuides } from '../data/china-expansion-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
@@ -8,6 +9,7 @@ const notes = [];
 const siteCssVersion = '/css/site.css?v=20260828-1';
 const mainJsVersion = '/js/main.js?v=20260828-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
+const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -181,6 +183,12 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/china/') && !html.includes('/css/china.css?v=20260827-3')) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
   if (baseRoute.startsWith('/china/shanghai/') && !html.includes('/css/shanghai.css?v=20260827-2')) problems.push(`${relativePath}: missing Shanghai Huangpu-fold stylesheet`);
   if (baseRoute.startsWith('/china/hangzhou/') && !html.includes('/css/hangzhou.css?v=20260828-1')) problems.push(`${relativePath}: missing Hangzhou West Lake compass stylesheet`);
+  const expansionGuide = chinaExpansionByRoute.get(baseRoute);
+  if (expansionGuide) {
+    if (!html.includes('/css/china-expansion.css?v=20260828-1')) problems.push(`${relativePath}: missing China destination-system stylesheet`);
+    if (!html.includes(`data-visual="${expansionGuide.visual}"`)) problems.push(`${relativePath}: missing ${expansionGuide.visual} visual-system marker`);
+    if ((html.match(/<article id="chapter-\d+">/g) || []).length !== 8) problems.push(`${relativePath}: China destination guide does not contain eight planning chapters`);
+  }
 }
 
 const linkFiles = [

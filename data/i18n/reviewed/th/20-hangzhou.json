@@ -17,12 +17,7 @@
     "/data/search-index.json"
   ],
   "translations": {
-    "This is a planning directory, not a demand to visit everything. Beijing, Shanghai and Hangzhou link to complete guides; every other entry explains the route argument, natural scale or access question to research before booking.": "นี่คือไดเรกทอรีสำหรับวางแผน ไม่ใช่การชวนให้ไปทุกแห่ง ปักกิ่ง เซี่ยงไฮ้ และหางโจวมีลิงก์ไปยังคู่มือฉบับเต็ม ส่วนรายการอื่นอธิบายแนวคิดของเส้นทาง ขนาดที่เหมาะกับการเที่ยวจริง หรือคำถามเรื่องการเดินทางที่ควรค้นคว้าก่อนจอง",
     "Planning facts and licenses were reviewed on 28 August 2026. Entry eligibility, transit ports, payment support, rail procedures and local reservations change; verify with the linked authority close to travel. Images were resized and converted to WebP; visible framing may crop the display.": "ตรวจสอบข้อมูลการวางแผนและใบอนุญาตเมื่อ 28 สิงหาคม 2026 คุณสมบัติการเข้าประเทศ จุดผ่านแดนสำหรับทรานซิต การรองรับการชำระเงิน ขั้นตอนรถไฟ และการจองในพื้นที่เปลี่ยนแปลงได้ โปรดตรวจสอบกับหน่วยงานตามลิงก์ใกล้วันเดินทาง ภาพถูกปรับขนาดและแปลงเป็น WebP การจัดวางบนหน้าจออาจครอปบางส่วน",
-    "Plan China with current entry, rail and payment preparation, 30 major destination cards and complete Beijing, Shanghai and Hangzhou guide clusters.": "วางแผนเที่ยวจีนด้วยการเตรียมเรื่องการเข้าเมือง รถไฟ และการชำระเงินล่าสุด พร้อมการ์ดจุดหมายสำคัญ 30 แห่ง และกลุ่มคู่มือฉบับเต็มของปักกิ่ง เซี่ยงไฮ้ หางโจว",
-    "Three complete city systems": "ระบบเมืองครบ 3 แห่ง",
-    "Start with depth in Beijing, Shanghai or Hangzhou": "เริ่มจากการทำความเข้าใจเชิงลึกในปักกิ่ง เซี่ยงไฮ้ หรือหางโจว",
-    "Each live cluster contains a city hub and eight substantial chapters, with a different visual language and planning logic for every city and area.": "แต่ละกลุ่มคู่มือที่เปิดใช้งานมีศูนย์กลางเมืองและบทหลัก 8 บท โดยแต่ละเมืองและพื้นที่ใช้ภาษาภาพและแนวคิดการวางแผนต่างกัน",
     "West Lake opening toward the green hills and Hangzhou skyline": "ทะเลสาบซีหูเปิดออกสู่เนินเขาเขียวและเส้นขอบฟ้าหางโจว",
     "Lake city / Celadon compass": "เมืองริมทะเลสาบ / เข็มทิศสีเขียวเซลาดอน",
     "Hangzhou moves by water, threshold and contour": "หางโจวเคลื่อนจังหวะไปตามสายน้ำ จุดเปลี่ยนผ่าน และความลาดชัน",

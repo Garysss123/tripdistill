@@ -1462,5 +1462,141 @@
     "type": "Archaeology guide",
     "summary": "Use the Liangzhu Museum to understand jade, settlement hierarchy and water management before reading the protected archaeological landscape.",
     "keywords": ["liangzhu", "liangzhu museum", "archaeological ruins", "hangzhou archaeology", "liangzhu jade"]
+  },
+  {
+    "title": "Guangzhou Travel Guide",
+    "url": "/china/guangzhou/",
+    "parent": "China · Guangdong",
+    "type": "River and food city",
+    "summary": "Plan Guangzhou by Pearl River bank, Lingnan architecture, museum depth, market etiquette and Cantonese meal rhythm.",
+    "keywords": ["guangzhou", "canton", "pearl river", "lingnan", "dim sum", "guangzhou itinerary"]
+  },
+  {
+    "title": "Guilin & Yangshuo Travel Guide",
+    "url": "/china/guilin-yangshuo/",
+    "parent": "China · Guangxi",
+    "type": "River karst guide",
+    "summary": "Separate Guilin arrival context from Yangshuo’s Li River, rural roads and visibility-dependent karst viewpoints.",
+    "keywords": ["guilin", "yangshuo", "li river", "yulong river", "guilin karst", "yangshuo itinerary"]
+  },
+  {
+    "title": "Changsha Travel Guide",
+    "url": "/china/changsha/",
+    "parent": "China · Hunan",
+    "type": "Museum and food city",
+    "summary": "Build Changsha around Hunan Museum, Yuelu terrain, the Xiang River and a deliberate night-food edit.",
+    "keywords": ["changsha", "hunan museum", "mawangdui", "yuelu mountain", "orange isle", "changsha food"]
+  },
+  {
+    "title": "Wuhan Travel Guide",
+    "url": "/china/wuhan/",
+    "parent": "China · Hubei",
+    "type": "River metropolis guide",
+    "summary": "Plan Wuhan bank by bank across Wuchang, Hankou and Hanyang, with East Lake and Hubei Museum given their real scale.",
+    "keywords": ["wuhan", "yellow crane tower", "east lake", "hubei museum", "hankou", "wuchang"]
+  },
+  {
+    "title": "Chengdu Travel Guide",
+    "url": "/china/chengdu/",
+    "parent": "China · Sichuan",
+    "type": "Food and heritage city",
+    "summary": "Balance Chengdu’s panda reservations, archaeology and Sichuan meals with teahouse time and one carefully chosen outer excursion.",
+    "keywords": ["chengdu", "panda base", "dujiangyan", "chengdu food", "sichuan", "chengdu itinerary"]
+  },
+  {
+    "title": "Shenzhen Travel Guide",
+    "url": "/china/shenzhen/",
+    "parent": "China · Guangdong",
+    "type": "Design and border city",
+    "summary": "Navigate Shenzhen through Futian, Nanshan design, urban villages, bay parks, Dapeng and checkpoint-specific Hong Kong logistics.",
+    "keywords": ["shenzhen", "futian", "nanshan", "dapeng", "shenzhen hong kong border", "shenzhen itinerary"]
+  },
+  {
+    "title": "Xiamen & Fujian Tulou Travel Guide",
+    "url": "/china/xiamen-fujian-tulou/",
+    "parent": "China · Fujian",
+    "type": "Port and rural heritage",
+    "summary": "Separate Xiamen’s ferries, port streets and coast from one respectful, road-realistic Fujian Tulou heritage day.",
+    "keywords": ["xiamen", "fujian tulou", "kulangsu", "gulangyu", "tulou day trip", "xiamen itinerary"]
+  },
+  {
+    "title": "Sanya & Hainan Travel Guide",
+    "url": "/china/sanya-hainan/",
+    "parent": "China · Hainan",
+    "type": "Tropical coast guide",
+    "summary": "Choose a Sanya bay by access and sea conditions, then add one weather-flexible marine, rainforest or island chapter.",
+    "keywords": ["sanya", "hainan", "yalong bay", "haitang bay", "sanya beach", "hainan itinerary"]
+  },
+  {
+    "title": "Chongqing Travel Guide",
+    "url": "/china/chongqing/",
+    "parent": "China · Chongqing",
+    "type": "Vertical city guide",
+    "summary": "Navigate Chongqing by elevation, river crossing and exact station exit, then choose one honest outer day to Dazu or Wulong.",
+    "keywords": ["chongqing", "hongya cave", "liziba", "wulong", "dazu rock carvings", "chongqing itinerary"]
+  },
+  {
+    "title": "Kunming Travel Guide",
+    "url": "/china/kunming/",
+    "parent": "China · Yunnan",
+    "type": "Plateau gateway guide",
+    "summary": "Use Kunming for Yunnan context, Dianchi ecology and Stone Forest geology before choosing one onward provincial corridor.",
+    "keywords": ["kunming", "stone forest", "dianchi", "yunnan museum", "kunming itinerary", "yunnan travel"]
+  },
+  {
+    "title": "Dali Travel Guide",
+    "url": "/china/dali/",
+    "parent": "China · Yunnan",
+    "type": "Lake and mountain guide",
+    "summary": "Choose a Dali base, protect Erhai ecology and separate Cangshan, Xizhou and east-shore days instead of racing the ring road.",
+    "keywords": ["dali", "erhai lake", "cangshan", "xizhou", "shuanglang", "dali itinerary"]
+  },
+  {
+    "title": "Lijiang & Shangri-La Travel Guide",
+    "url": "/china/lijiang-shangri-la/",
+    "parent": "China · Yunnan",
+    "type": "Heritage and altitude route",
+    "summary": "Read Lijiang’s three UNESCO components through water and community, then ascend gradually toward Shangri-La with altitude limits explicit.",
+    "keywords": ["lijiang", "shangri-la", "dayan", "shuhe", "baisha", "tiger leaping gorge"]
+  },
+  {
+    "title": "Zhangjiajie Travel Guide",
+    "url": "/china/zhangjiajie/",
+    "parent": "China · Hunan",
+    "type": "Mountain park planner",
+    "summary": "Choose the correct Wulingyuan gate, shuttle and elevation system, then keep Tianmen Mountain as a separate city-based day.",
+    "keywords": ["zhangjiajie", "wulingyuan", "tianmen mountain", "yuanjiajie", "golden whip stream", "zhangjiajie itinerary"]
+  },
+  {
+    "title": "Guiyang & Guizhou Travel Guide",
+    "url": "/china/guiyang-guizhou/",
+    "parent": "China · Guizhou",
+    "type": "Karst and community route",
+    "summary": "Use Guiyang as a transport hinge, then choose one rain-aware corridor to Huangguoshu, Libo, Zhijin or community-led village routes.",
+    "keywords": ["guiyang", "guizhou", "huangguoshu", "libo", "zhijin cave", "guizhou itinerary"]
+  },
+  {
+    "title": "Dunhuang & Hexi Corridor Travel Guide",
+    "url": "/china/dunhuang-hexi-corridor/",
+    "parent": "China · Gansu",
+    "type": "Silk Road heritage guide",
+    "summary": "Reserve Mogao first, then fit Dunhuang’s oasis, museum and one desert road around conservation and climate limits.",
+    "keywords": ["dunhuang", "mogao caves", "crescent lake", "mingsha dunes", "hexi corridor", "silk road"]
+  },
+  {
+    "title": "Urumqi, Turpan & Kashgar Travel Guide",
+    "url": "/china/xinjiang-corridor/",
+    "parent": "China · Xinjiang",
+    "type": "Continental corridor guide",
+    "summary": "Build one realistic Urumqi–Turpan–Kashgar corridor with long transfers, climate, current access and respectful photography explicit.",
+    "keywords": ["xinjiang", "urumqi", "turpan", "kashgar", "silk road", "xinjiang itinerary"]
+  },
+  {
+    "title": "Lhasa & Tibetan Plateau Travel Guide",
+    "url": "/china/lhasa-tibetan-plateau/",
+    "parent": "China · Tibet",
+    "type": "Permit and altitude guide",
+    "summary": "Solve foreign-visitor permission before Lhasa, then stage acclimatization, living heritage visits and any higher plateau route conservatively.",
+    "keywords": ["lhasa", "tibet travel permit", "potala palace", "altitude sickness", "jokhang", "tibetan plateau"]
   }
 ]
