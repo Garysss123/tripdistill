@@ -186,6 +186,7 @@ for (const absoluteUrl of publishedUrls) {
   const expansionGuide = chinaExpansionByRoute.get(baseRoute);
   if (expansionGuide) {
     if (!html.includes('/css/china-expansion.css?v=20260828-1')) problems.push(`${relativePath}: missing China destination-system stylesheet`);
+    if (expansionGuide.extraStylesheet && !html.includes(expansionGuide.extraStylesheet)) problems.push(`${relativePath}: missing ${expansionGuide.extraStylesheet} visual-system stylesheet`);
     if (!html.includes(`data-visual="${expansionGuide.visual}"`)) problems.push(`${relativePath}: missing ${expansionGuide.visual} visual-system marker`);
     if ((html.match(/<article id="chapter-\d+">/g) || []).length !== 8) problems.push(`${relativePath}: China destination guide does not contain eight planning chapters`);
   }

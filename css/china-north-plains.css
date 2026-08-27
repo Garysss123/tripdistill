@@ -1,0 +1,385 @@
+/* North and central China: six destination-specific editorial instruments.
+   Loaded after china-expansion.css so each route can break away from the
+   common document skeleton without duplicating accessibility or mobile rules. */
+
+/* 18 — Datong: a cut-stone register with cave portals and mineral shadows. */
+.exp-guide[data-visual="stone-cave-register"] {
+  --exp-paper: #eee4d1;
+  --exp-ink: #322a24;
+  --exp-accent: #8a4f32;
+  --exp-accent-2: #c89b58;
+  --exp-wash: #ddd0b8;
+  --exp-deep: #302b28;
+}
+
+.exp-guide[data-visual="stone-cave-register"] .exp-hero {
+  grid-template-columns: minmax(0, .84fr) minmax(420px, 1.16fr);
+  min-height: 690px;
+  border: 0;
+  border-bottom: 18px solid var(--exp-deep);
+  background:
+    radial-gradient(ellipse at 18% 38%, transparent 0 17%, rgba(117, 86, 63, .09) 17.3% 18.4%, transparent 18.8% 29%, rgba(117, 86, 63, .06) 29.4% 30.2%, transparent 30.6%),
+    var(--exp-paper);
+}
+
+.exp-guide[data-visual="stone-cave-register"] .exp-hero-copy { padding-right: clamp(30px, 4vw, 62px); }
+.exp-guide[data-visual="stone-cave-register"] .exp-hero h1 { font-size: clamp(3.4rem, 6vw, 6.8rem); }
+.exp-guide[data-visual="stone-cave-register"] .exp-hero-media {
+  align-self: end;
+  height: calc(100% - 54px);
+  min-height: 570px;
+  margin: 54px 40px 0 0;
+  border-radius: 48% 48% 0 0 / 26% 26% 0 0;
+  box-shadow: 0 0 0 12px rgba(50, 42, 36, .09), 0 34px 70px rgba(42, 34, 28, .24);
+}
+.exp-guide[data-visual="stone-cave-register"] .exp-hero-media img { min-height: 570px; }
+.exp-guide[data-visual="stone-cave-register"] .exp-motif { border-top: 1px solid rgba(255,255,255,.14); }
+.exp-guide[data-visual="stone-cave-register"] .exp-motif span { justify-content: center; }
+.exp-guide[data-visual="stone-cave-register"] .exp-chapters { gap: 22px; align-items: stretch; }
+.exp-guide[data-visual="stone-cave-register"] .exp-chapters article {
+  border: 0;
+  border-radius: 110px 110px 8px 8px / 72px 72px 8px 8px;
+  background: linear-gradient(150deg, #f7efdf 0 60%, var(--exp-wash) 60%);
+  box-shadow: inset 0 0 0 1px rgba(50, 42, 36, .2), inset 0 15px 30px rgba(96, 67, 43, .08);
+}
+.exp-guide[data-visual="stone-cave-register"] .exp-chapters article::before {
+  width: 16px;
+  height: 16px;
+  top: 23px;
+  left: calc(50% - 8px);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(138,79,50,.12);
+}
+.exp-guide[data-visual="stone-cave-register"] .exp-decision-grid article { border-left: 10px solid var(--exp-deep); }
+.exp-guide[data-visual="stone-cave-register"] .exp-route { border: 10px solid var(--exp-deep); }
+
+/* 19 — Pingyao: merchant ledger, vermilion seals and a continuous city wall. */
+.exp-guide[data-visual="walled-ledger"] {
+  --exp-paper: #f5eddc;
+  --exp-ink: #281d1a;
+  --exp-accent: #a12d2f;
+  --exp-accent-2: #cba65c;
+  --exp-wash: #e7dac2;
+  --exp-deep: #34211f;
+}
+.exp-guide[data-visual="walled-ledger"] .exp-hero {
+  grid-template-columns: 1fr;
+  grid-template-areas: "media" "copy" "motif";
+  border: 6px solid var(--exp-deep);
+  box-shadow: 14px 14px 0 rgba(52,33,31,.16);
+  background: repeating-linear-gradient(0deg, transparent 0 31px, rgba(40,29,26,.055) 31px 32px), var(--exp-paper);
+}
+.exp-guide[data-visual="walled-ledger"] .exp-hero-media { height: 430px; min-height: 430px; border-bottom: 6px solid var(--exp-deep); }
+.exp-guide[data-visual="walled-ledger"] .exp-hero-media img { min-height: 430px; object-position: center 58%; }
+.exp-guide[data-visual="walled-ledger"] .exp-hero-media::after { background: linear-gradient(0deg, rgba(35,24,22,.42), transparent 44%); }
+.exp-guide[data-visual="walled-ledger"] .exp-hero-copy { padding: 48px clamp(34px, 7vw, 110px) 56px; }
+.exp-guide[data-visual="walled-ledger"] .exp-hero h1 {
+  display: grid;
+  grid-template-columns: minmax(220px, .52fr) minmax(280px, 1fr);
+  gap: 34px;
+  align-items: end;
+  max-width: none;
+  font-size: clamp(4rem, 8vw, 8.4rem);
+  line-height: .76;
+}
+.exp-guide[data-visual="walled-ledger"] .exp-hero h1 span { margin: 0; padding-left: 30px; border-left: 2px solid var(--exp-accent); font-size: .31em; }
+.exp-guide[data-visual="walled-ledger"] .exp-kicker { width: max-content; padding: 8px 10px; color: #fff8eb; background: var(--exp-accent); }
+.exp-guide[data-visual="walled-ledger"] .exp-motif { border-top: 6px solid var(--exp-deep); background: var(--exp-paper); color: var(--exp-ink); }
+.exp-guide[data-visual="walled-ledger"] .exp-motif span { min-height: 70px; border-right: 1px solid rgba(40,29,26,.2); font-family: "Courier New", monospace; }
+.exp-guide[data-visual="walled-ledger"] .exp-motif b { display: grid; place-items: center; width: 28px; height: 28px; color: white; background: var(--exp-accent); }
+.exp-guide[data-visual="walled-ledger"] .exp-chapters { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 8px solid var(--exp-deep); }
+.exp-guide[data-visual="walled-ledger"] .exp-chapters article,
+.exp-guide[data-visual="walled-ledger"] .exp-chapters article:nth-child(n) {
+  grid-column: auto;
+  min-height: 255px;
+  border: 0;
+  border-right: 1px solid rgba(40,29,26,.25);
+  border-bottom: 1px solid rgba(40,29,26,.25);
+  background: repeating-linear-gradient(0deg, #f8f0df 0 34px, #e7dac2 35px);
+}
+.exp-guide[data-visual="walled-ledger"] .exp-chapters article:nth-child(4n+2),
+.exp-guide[data-visual="walled-ledger"] .exp-chapters article:nth-child(4n+3) { background-color: var(--exp-wash); }
+.exp-guide[data-visual="walled-ledger"] .exp-chapters article::before { width: 44px; height: 44px; left: auto; right: 20px; top: 20px; border: 2px solid var(--exp-accent); background: transparent; transform: rotate(8deg); }
+.exp-guide[data-visual="walled-ledger"] .exp-route { border: 0; border-top: 8px solid var(--exp-deep); border-bottom: 8px solid var(--exp-deep); }
+
+/* 20 — Luoyang: translucent dynastic layers and mineral-pigment tabs. */
+.exp-guide[data-visual="dynasty-palimpsest"] {
+  --exp-paper: #f2e8db;
+  --exp-ink: #263334;
+  --exp-accent: #a3454a;
+  --exp-accent-2: #b78e49;
+  --exp-wash: #d8dfd4;
+  --exp-deep: #263f42;
+}
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero {
+  grid-template-columns: minmax(420px, 1.08fr) minmax(0, .92fr);
+  grid-template-areas: "media copy" "motif motif";
+  overflow: visible;
+  margin: 36px 34px 72px 0;
+  border: 0;
+  box-shadow: 18px 18px 0 var(--exp-wash), 36px 36px 0 rgba(163,69,74,.12);
+}
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-media { min-height: 640px; margin: -36px 0 0 36px; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-media img { min-height: 640px; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-media::after { background: linear-gradient(90deg, transparent 65%, rgba(242,232,219,.72)); }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-copy { padding: clamp(42px,5vw,78px); }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero h1 { font-size: clamp(3.6rem, 6.5vw, 7.2rem); }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-hero h1::after { content: "十三朝"; display: block; margin-top: 30px; color: rgba(163,69,74,.24); font-size: .3em; letter-spacing: .35em; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-motif span:nth-child(1) { background: #3f5856; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-motif span:nth-child(2) { background: #704249; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-motif span:nth-child(3) { background: #6e603e; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-motif span:nth-child(4) { background: #34464b; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-chapters { gap: 28px; padding: 24px 20px 34px; background: rgba(216,223,212,.48); }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-chapters article { border: 0; box-shadow: -10px 10px 0 rgba(38,51,52,.12); }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-chapters article:nth-child(even) { transform: translateY(28px) rotate(.35deg); background: #e6d7ca; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-chapters article:nth-child(odd) { transform: rotate(-.35deg); }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-decision-grid article { border-radius: 0 60px 0 0; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-route { gap: 16px; border: 0; }
+.exp-guide[data-visual="dynasty-palimpsest"] .exp-route article { border: 1px solid var(--exp-line); border-top: 10px solid var(--exp-accent); }
+
+/* 21 — Xi'an: archaeology catalogue, accession labels and terracotta grid. */
+.exp-guide[data-visual="archaeology-grid"] {
+  --exp-paper: #ece4d7;
+  --exp-ink: #182b35;
+  --exp-accent: #b74e31;
+  --exp-accent-2: #d4a34f;
+  --exp-wash: #d5d8cf;
+  --exp-deep: #142c38;
+}
+.exp-guide[data-visual="archaeology-grid"] .exp-hero {
+  grid-template-columns: 1.15fr .85fr;
+  border: 12px solid var(--exp-deep);
+  background-image: linear-gradient(rgba(20,44,56,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(20,44,56,.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  box-shadow: none;
+}
+.exp-guide[data-visual="archaeology-grid"] .exp-hero-copy { padding: clamp(42px, 6vw, 84px); }
+.exp-guide[data-visual="archaeology-grid"] .exp-hero h1 { font-family: Inter, "Segoe UI", sans-serif; font-weight: 900; font-size: clamp(3.6rem, 6.7vw, 7.6rem); text-transform: uppercase; line-height: .82; letter-spacing: -.075em; }
+.exp-guide[data-visual="archaeology-grid"] .exp-hero h1 span { max-width: 540px; font-family: Georgia, serif; font-weight: 500; text-transform: none; letter-spacing: -.025em; }
+.exp-guide[data-visual="archaeology-grid"] .exp-hero-media { margin: 32px 32px 32px 0; min-height: 535px; border: 1px solid var(--exp-deep); clip-path: polygon(7% 0,100% 0,100% 93%,93% 100%,0 100%,0 7%); }
+.exp-guide[data-visual="archaeology-grid"] .exp-hero-media img { min-height: 535px; }
+.exp-guide[data-visual="archaeology-grid"] .exp-motif { border-top: 12px solid var(--exp-deep); }
+.exp-guide[data-visual="archaeology-grid"] .exp-motif span { font-family: Inter,sans-serif; font-size: .84rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; }
+.exp-guide[data-visual="archaeology-grid"] .exp-section-heading { padding-left: 24px; border-left: 12px solid var(--exp-accent); }
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters { grid-template-columns: repeat(4, 1fr); gap: 1px; padding: 1px; background: var(--exp-deep); }
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article,
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(n) { grid-column: auto; min-height: 320px; border: 0; background: var(--exp-paper); }
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(1),
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(6) { background: var(--exp-accent); color: white; }
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article::after { content: attr(id); position: absolute; right: 16px; bottom: 12px; color: rgba(24,43,53,.12); font: 900 1.6rem/1 Inter,sans-serif; text-transform: uppercase; }
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(1)::after,
+.exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(6)::after { color: rgba(255,255,255,.25); }
+.exp-guide[data-visual="archaeology-grid"] .exp-decision-grid { gap: 1px; background: var(--exp-deep); }
+.exp-guide[data-visual="archaeology-grid"] .exp-route { border: 12px solid var(--exp-deep); }
+
+/* 22 — Harbin: a dark winter lightbox with illuminated ice panels. */
+.exp-guide[data-visual="winter-lightbox"] {
+  --exp-paper: #eef5f5;
+  --exp-ink: #122b3b;
+  --exp-accent: #147f98;
+  --exp-accent-2: #bdebf1;
+  --exp-wash: #d5e9eb;
+  --exp-deep: #0a2638;
+}
+.exp-guide[data-visual="winter-lightbox"] .exp-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "stage";
+  min-height: 760px;
+  border: 0;
+  border-radius: 26px;
+  background: var(--exp-deep);
+}
+.exp-guide[data-visual="winter-lightbox"] .exp-hero-media { grid-area: stage; min-height: 760px; }
+.exp-guide[data-visual="winter-lightbox"] .exp-hero-media img { min-height: 760px; filter: saturate(.68) contrast(1.12) brightness(.67); }
+.exp-guide[data-visual="winter-lightbox"] .exp-hero-media::after { background: linear-gradient(90deg, rgba(5,24,38,.88), rgba(5,24,38,.25) 65%, rgba(5,24,38,.55)); }
+.exp-guide[data-visual="winter-lightbox"] .exp-hero-copy {
+  grid-area: stage;
+  z-index: 3;
+  align-self: end;
+  width: min(760px, calc(100% - 80px));
+  margin: 40px;
+  padding: clamp(34px, 5vw, 66px);
+  color: #f7ffff;
+  border: 1px solid rgba(204,246,255,.5);
+  background: rgba(5,31,48,.64);
+  box-shadow: 0 0 55px rgba(97,224,244,.16), inset 0 0 40px rgba(97,224,244,.08);
+  backdrop-filter: blur(14px);
+}
+.exp-guide[data-visual="winter-lightbox"] .exp-hero h1 { font-family: Inter,"Segoe UI",sans-serif; font-weight: 300; font-size: clamp(3.8rem, 7.7vw, 8.8rem); letter-spacing: -.07em; }
+.exp-guide[data-visual="winter-lightbox"] .exp-hero h1 span { color: #bfefff; font-family: Georgia,serif; }
+.exp-guide[data-visual="winter-lightbox"] .exp-hero-copy > p { color: #e8f7f9; }
+.exp-guide[data-visual="winter-lightbox"] .exp-facts span { border-color: rgba(220,250,255,.42); background: rgba(0,24,39,.46); }
+.exp-guide[data-visual="winter-lightbox"] .exp-motif {
+  grid-area: stage;
+  z-index: 4;
+  align-self: start;
+  justify-self: end;
+  width: min(620px, 58%);
+  margin: 28px;
+  background: rgba(5,31,48,.58);
+  backdrop-filter: blur(10px);
+}
+.exp-guide[data-visual="winter-lightbox"] .exp-motif span { min-height: 70px; }
+.exp-guide[data-visual="winter-lightbox"] .exp-chapters { gap: 12px; }
+.exp-guide[data-visual="winter-lightbox"] .exp-chapters article { border: 1px solid rgba(20,127,152,.28); background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(213,233,235,.78)); box-shadow: 0 16px 40px rgba(10,38,56,.08); }
+.exp-guide[data-visual="winter-lightbox"] .exp-chapters article:nth-child(1),
+.exp-guide[data-visual="winter-lightbox"] .exp-chapters article:nth-child(6) { color: #effdff; background: linear-gradient(145deg, #0b334b, #17677a); }
+.exp-guide[data-visual="winter-lightbox"] .exp-chapters article:nth-child(1) small,
+.exp-guide[data-visual="winter-lightbox"] .exp-chapters article:nth-child(6) small { color: #bdebf1; }
+.exp-guide[data-visual="winter-lightbox"] .exp-route { gap: 12px; border: 0; }
+.exp-guide[data-visual="winter-lightbox"] .exp-route article { border: 1px solid rgba(20,127,152,.25); border-radius: 18px; }
+.exp-guide[data-visual="winter-lightbox"] .sources { background: var(--exp-deep); }
+
+/* 23 — Hohhot and Inner Mongolia: a panoramic steppe horizon, not a city-card grid. */
+.exp-guide[data-visual="steppe-horizon"] {
+  --exp-paper: #f4edda;
+  --exp-ink: #26362e;
+  --exp-accent: #a54d32;
+  --exp-accent-2: #d5b455;
+  --exp-wash: #dce4ce;
+  --exp-deep: #214b3c;
+}
+.exp-guide[data-visual="steppe-horizon"] .exp-hero {
+  grid-template-columns: 1fr;
+  grid-template-areas: "media" "copy" "motif";
+  border: 0;
+  border-radius: 220px 220px 0 0 / 110px 110px 0 0;
+  background: var(--exp-paper);
+}
+.exp-guide[data-visual="steppe-horizon"] .exp-hero-media { height: min(48vw, 590px); min-height: 440px; border-bottom: 14px solid var(--exp-deep); }
+.exp-guide[data-visual="steppe-horizon"] .exp-hero-media img { min-height: 440px; object-position: center 58%; }
+.exp-guide[data-visual="steppe-horizon"] .exp-hero-media::after { background: linear-gradient(0deg, rgba(33,75,60,.42), transparent 40%); }
+.exp-guide[data-visual="steppe-horizon"] .exp-hero-copy { display: grid; grid-template-columns: minmax(270px,.8fr) minmax(360px,1.2fr); column-gap: clamp(36px,6vw,100px); align-items: start; padding: 52px clamp(34px,7vw,110px); }
+.exp-guide[data-visual="steppe-horizon"] .exp-kicker { grid-column: 1 / -1; }
+.exp-guide[data-visual="steppe-horizon"] .exp-hero h1 { grid-column: 1; font-size: clamp(3.9rem,7vw,7.7rem); }
+.exp-guide[data-visual="steppe-horizon"] .exp-hero h1 span { font-size: .34em; }
+.exp-guide[data-visual="steppe-horizon"] .exp-hero-copy > p { grid-column: 2; grid-row: 2; margin: 0; font-size: 1.12rem; }
+.exp-guide[data-visual="steppe-horizon"] .exp-facts { grid-column: 2; grid-row: 3; }
+.exp-guide[data-visual="steppe-horizon"] .exp-motif { position: relative; background: var(--exp-deep); }
+.exp-guide[data-visual="steppe-horizon"] .exp-motif::after { content: ""; position: absolute; left: 8%; right: 8%; top: 50%; height: 1px; background: rgba(255,255,255,.35); }
+.exp-guide[data-visual="steppe-horizon"] .exp-motif span { z-index: 1; justify-content: center; border: 0; background: var(--exp-deep); }
+.exp-guide[data-visual="steppe-horizon"] .exp-motif b { display:grid; place-items:center; width:30px; height:30px; border:1px solid var(--exp-accent-2); border-radius:50%; background:var(--exp-deep); }
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters { display: block; }
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters article,
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters article:nth-child(n) {
+  display: grid;
+  grid-template-columns: 140px minmax(220px,.55fr) minmax(300px,1fr);
+  gap: 28px;
+  align-items: start;
+  min-height: 0;
+  margin: 0;
+  padding: 30px 34px;
+  border: 0;
+  border-top: 1px solid var(--exp-line);
+  background: transparent;
+}
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters article:nth-child(even) { background: var(--exp-wash); }
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters article:last-child { border-bottom: 1px solid var(--exp-line); }
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters article::before { width: 60px; height: 2px; top: 38px; left: 34px; }
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters small { padding-left: 78px; }
+.exp-guide[data-visual="steppe-horizon"] .exp-chapters h3 { margin: 0; }
+.exp-guide[data-visual="steppe-horizon"] .exp-decision-grid article { border: 0; border-bottom: 8px solid var(--exp-deep); border-radius: 90px 90px 0 0; }
+.exp-guide[data-visual="steppe-horizon"] .exp-route { gap: 18px; border: 0; }
+.exp-guide[data-visual="steppe-horizon"] .exp-route article { border: 1px solid var(--exp-line); border-radius: 50% 50% 10px 10px / 22% 22% 10px 10px; }
+
+@media (max-width: 1080px) {
+  .exp-guide[data-visual="archaeology-grid"] .exp-chapters { grid-template-columns: repeat(2,1fr); }
+  .exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(n) { min-height: 270px; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero-copy { grid-template-columns: 1fr; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero h1,
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero-copy > p,
+  .exp-guide[data-visual="steppe-horizon"] .exp-facts { grid-column: 1; grid-row: auto; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero-copy > p { margin-top: 28px; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-chapters article:nth-child(n) { grid-template-columns: 130px 1fr; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-chapters p { grid-column: 2; }
+}
+
+@media (max-width: 760px) {
+  .exp-guide[data-visual="stone-cave-register"] .exp-hero,
+  .exp-guide[data-visual="walled-ledger"] .exp-hero,
+  .exp-guide[data-visual="dynasty-palimpsest"] .exp-hero,
+  .exp-guide[data-visual="archaeology-grid"] .exp-hero,
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero,
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "media" "copy" "motif";
+    min-height: 0;
+    margin: 0 0 30px;
+    border-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+  }
+  .exp-guide[data-visual="stone-cave-register"] .exp-hero { border-bottom: 10px solid var(--exp-deep); }
+  .exp-guide[data-visual="stone-cave-register"] .exp-hero-media,
+  .exp-guide[data-visual="walled-ledger"] .exp-hero-media,
+  .exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-media,
+  .exp-guide[data-visual="archaeology-grid"] .exp-hero-media,
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-media,
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero-media {
+    grid-area: media;
+    width: 100%;
+    height: 62vw;
+    min-height: 270px;
+    max-height: 390px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    clip-path: none;
+    box-shadow: none;
+  }
+  .exp-guide[data-visual="stone-cave-register"] .exp-hero-media img,
+  .exp-guide[data-visual="walled-ledger"] .exp-hero-media img,
+  .exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-media img,
+  .exp-guide[data-visual="archaeology-grid"] .exp-hero-media img,
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-media img,
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero-media img { min-height: 270px; }
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-media img { filter: saturate(.72) contrast(1.08) brightness(.86); }
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-media::after { background: linear-gradient(0deg, rgba(5,24,38,.44), transparent 55%); }
+  .exp-guide[data-visual="stone-cave-register"] .exp-hero-copy,
+  .exp-guide[data-visual="walled-ledger"] .exp-hero-copy,
+  .exp-guide[data-visual="dynasty-palimpsest"] .exp-hero-copy,
+  .exp-guide[data-visual="archaeology-grid"] .exp-hero-copy,
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-copy,
+  .exp-guide[data-visual="steppe-horizon"] .exp-hero-copy {
+    grid-area: copy;
+    display: flex;
+    width: auto;
+    margin: 0;
+    padding: 32px 24px 36px;
+    color: var(--exp-ink);
+    border: 0;
+    background: var(--exp-paper);
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-copy > p { color: var(--exp-ink); }
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero h1 span { color: var(--exp-accent); }
+  .exp-guide[data-visual="winter-lightbox"] .exp-facts span { border-color: var(--exp-line); background: transparent; }
+  .exp-guide[data-visual="walled-ledger"] .exp-hero h1 { display: block; }
+  .exp-guide[data-visual="walled-ledger"] .exp-hero h1 span { margin-top: 16px; padding: 0; border: 0; font-size: .42em; }
+  .exp-guide[data-visual="walled-ledger"] .exp-kicker { width: auto; max-width: 100%; line-height: 1.45; }
+  .exp-guide[data-visual="dynasty-palimpsest"] .exp-hero h1::after { margin-top: 18px; }
+  .exp-guide[data-visual="archaeology-grid"] .exp-hero h1,
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero h1 { font-size: clamp(2.7rem,13vw,4.3rem); }
+  .exp-guide[data-visual="winter-lightbox"] .exp-motif { grid-area: motif; width: auto; margin: 0; background: var(--exp-deep); }
+  .exp-guide[data-visual="steppe-horizon"] .exp-motif { grid-area: motif; }
+  .exp-guide[data-visual="walled-ledger"] .exp-chapters,
+  .exp-guide[data-visual="archaeology-grid"] .exp-chapters { grid-template-columns: 1fr; border-width: 4px; }
+  .exp-guide[data-visual="walled-ledger"] .exp-chapters article:nth-child(n),
+  .exp-guide[data-visual="archaeology-grid"] .exp-chapters article:nth-child(n) { min-height: 0; }
+  .exp-guide[data-visual="dynasty-palimpsest"] .exp-chapters article:nth-child(n) { transform: none; }
+  .exp-guide[data-visual="stone-cave-register"] .exp-chapters article:nth-child(n) { border-radius: 72px 72px 8px 8px / 48px 48px 8px 8px; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-chapters article:nth-child(n) { display: block; padding: 28px 24px; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-chapters small { padding-left: 66px; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-chapters h3 { margin-bottom: 14px; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-chapters p { grid-column: auto; }
+  .exp-guide[data-visual="steppe-horizon"] .exp-decision-grid article,
+  .exp-guide[data-visual="steppe-horizon"] .exp-route article { border-radius: 34px 34px 8px 8px; }
+}
+
+@media (prefers-contrast: more) {
+  .exp-guide[data-visual="winter-lightbox"] .exp-hero-copy { background: rgba(5,31,48,.9); }
+}

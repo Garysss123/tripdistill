@@ -1,3 +1,5 @@
+import { guides as northPlainsGuides } from './china-north-plains-guides.mjs';
+
 export const guides = [
   {
     slug: 'guangzhou',
@@ -1021,5 +1023,6 @@ export const guides = [
     ],
     image: { path: '/assets/images/china-destination-lhasa.webp', alt: 'Potala Palace rising above Lhasa against high mountain ridges', caption: 'Lhasa / approved access, living religious heritage and staged acclimatization', source: 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg', creditTitle: 'Potala Palace, Lhasa', creator: 'Lhasa Government', license: 'CC BY-SA 4.0' },
     search: { type: 'Permit and altitude guide', summary: 'Solve foreign-visitor permission before Lhasa, then stage acclimatization, living heritage visits and any higher plateau route conservatively.', keywords: ['lhasa', 'tibet travel permit', 'potala palace', 'altitude sickness', 'jokhang', 'tibetan plateau'] }
-  }
+  },
+  ...northPlainsGuides
 ];

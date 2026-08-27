@@ -1598,5 +1598,53 @@
     "type": "Permit and altitude guide",
     "summary": "Solve foreign-visitor permission before Lhasa, then stage acclimatization, living heritage visits and any higher plateau route conservatively.",
     "keywords": ["lhasa", "tibet travel permit", "potala palace", "altitude sickness", "jokhang", "tibetan plateau"]
+  },
+  {
+    "title": "Datong Travel Guide",
+    "url": "/china/datong/",
+    "parent": "China · Shanxi",
+    "type": "Cave art and temple guide",
+    "summary": "Anchor Datong at Yungang, add museum and temple context, then choose one weather- and capacity-aware plateau road day.",
+    "keywords": ["datong", "yungang grottoes", "hanging temple", "huayan temple", "shanxi", "datong itinerary"]
+  },
+  {
+    "title": "Pingyao Travel Guide",
+    "url": "/china/pingyao/",
+    "parent": "China · Shanxi",
+    "type": "Walled heritage city guide",
+    "summary": "Stay inside Pingyao’s daily rhythm, read its finance and civic systems, then connect Shuanglin or Zhenguo with real road time.",
+    "keywords": ["pingyao", "ancient city of pingyao", "shuanglin temple", "zhenguo temple", "shanxi", "pingyao itinerary"]
+  },
+  {
+    "title": "Luoyang Travel Guide",
+    "url": "/china/luoyang/",
+    "parent": "China · Henan",
+    "type": "Ancient capital and cave guide",
+    "summary": "Give Longmen its own protected day, then layer Luoyang’s museums, capital archaeology, living temples and seasonal choices.",
+    "keywords": ["luoyang", "longmen grottoes", "white horse temple", "luoyang museum", "peony festival", "luoyang itinerary"]
+  },
+  {
+    "title": "Xi'an Travel Guide",
+    "url": "/china/xian/",
+    "parent": "China · Shaanxi",
+    "type": "Archaeology and city guide",
+    "summary": "Reserve Xi'an’s major museums first, give the Qin mausoleum a full day and keep walls, pagodas and living quarters in context.",
+    "keywords": ["xian", "xi'an", "terracotta army", "shaanxi history museum", "xian city wall", "xian itinerary"]
+  },
+  {
+    "title": "Harbin Travel Guide",
+    "url": "/china/harbin/",
+    "parent": "China · Heilongjiang",
+    "type": "Winter city and architecture guide",
+    "summary": "Build Harbin around the live ice-event calendar, serious cold preparation, architectural history and safe river behavior.",
+    "keywords": ["harbin", "harbin ice festival", "ice snow world", "saint sophia harbin", "songhua river", "harbin itinerary"]
+  },
+  {
+    "title": "Hohhot & Inner Mongolia Travel Guide",
+    "url": "/china/hohhot-inner-mongolia/",
+    "parent": "China · Inner Mongolia",
+    "type": "Regional city and steppe guide",
+    "summary": "Use Hohhot for context, then choose one ethical Inner Mongolia corridor with real distances, ecology and community consent.",
+    "keywords": ["hohhot", "inner mongolia", "xilin gol", "hulun buir", "xanadu", "inner mongolia itinerary"]
   }
 ]

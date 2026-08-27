@@ -171,6 +171,12 @@ const allRoutes = [
   ['dunhuang-hexi-corridor', '/china/dunhuang-hexi-corridor/'],
   ['xinjiang-corridor', '/china/xinjiang-corridor/'],
   ['lhasa-tibetan-plateau', '/china/lhasa-tibetan-plateau/'],
+  ['datong', '/china/datong/'],
+  ['pingyao', '/china/pingyao/'],
+  ['luoyang', '/china/luoyang/'],
+  ['xian', '/china/xian/'],
+  ['harbin', '/china/harbin/'],
+  ['hohhot-inner-mongolia', '/china/hohhot-inner-mongolia/'],
   ['zh-home', '/zh/'],
   ['zh-japan', '/zh/japan/'],
   ['zh-south-korea', '/zh/south-korea/'],
@@ -190,6 +196,9 @@ const allRoutes = [
   ['zh-guangzhou', '/zh/china/guangzhou/'],
   ['zh-chengdu', '/zh/china/chengdu/'],
   ['zh-lhasa', '/zh/china/lhasa-tibetan-plateau/'],
+  ['zh-datong', '/zh/china/datong/'],
+  ['zh-harbin', '/zh/china/harbin/'],
+  ['zh-hohhot', '/zh/china/hohhot-inner-mongolia/'],
   ['ja-home', '/ja/'],
   ['ja-kyoto', '/ja/japan/kyoto/'],
   ['ja-china', '/ja/china/'],
@@ -198,6 +207,7 @@ const allRoutes = [
   ['ja-guangzhou', '/ja/china/guangzhou/'],
   ['ja-chengdu', '/ja/china/chengdu/'],
   ['ja-lhasa', '/ja/china/lhasa-tibetan-plateau/'],
+  ['ja-pingyao', '/ja/china/pingyao/'],
   ['ko-home', '/ko/'],
   ['ko-seoul', '/ko/south-korea/seoul/'],
   ['ko-china', '/ko/china/'],
@@ -206,6 +216,7 @@ const allRoutes = [
   ['ko-guangzhou', '/ko/china/guangzhou/'],
   ['ko-chengdu', '/ko/china/chengdu/'],
   ['ko-lhasa', '/ko/china/lhasa-tibetan-plateau/'],
+  ['ko-luoyang', '/ko/china/luoyang/'],
   ['th-home', '/th/'],
   ['th-bangkok', '/th/thailand/bangkok/'],
   ['th-china', '/th/china/'],
@@ -213,7 +224,8 @@ const allRoutes = [
   ['th-hangzhou', '/th/china/hangzhou/'],
   ['th-guangzhou', '/th/china/guangzhou/'],
   ['th-chengdu', '/th/china/chengdu/'],
-  ['th-lhasa', '/th/china/lhasa-tibetan-plateau/']
+  ['th-lhasa', '/th/china/lhasa-tibetan-plateau/'],
+  ['th-xian', '/th/china/xian/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
