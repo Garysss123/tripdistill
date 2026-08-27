@@ -5,7 +5,7 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const siteCssVersion = '20260827-2';
 const mainJsVersion = '20260827-2';
-const chinaCssVersion = '20260827-2';
+const chinaCssVersion = '20260827-3';
 const shanghaiCssVersion = '20260827-2';
 
 function routeToFile(route) {

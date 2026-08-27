@@ -178,7 +178,7 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
   if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
-  if (baseRoute.startsWith('/china/') && !html.includes('/css/china.css?v=20260827-2')) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
+  if (baseRoute.startsWith('/china/') && !html.includes('/css/china.css?v=20260827-3')) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
   if (baseRoute.startsWith('/china/shanghai/') && !html.includes('/css/shanghai.css?v=20260827-2')) problems.push(`${relativePath}: missing Shanghai Huangpu-fold stylesheet`);
 }
 

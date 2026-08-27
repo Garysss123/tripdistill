@@ -7,6 +7,7 @@ const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Mi
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
 const port = Number(process.env.TRIPDISTILL_CDP_PORT || 9333);
 const viewportScreenshotsOnly = process.env.TRIPDISTILL_SCREENSHOT_VIEWPORT_ONLY === '1';
+const focusSelector = process.env.TRIPDISTILL_FOCUS_SELECTOR || '';
 const runId = new Date().toISOString().replace(/[:.]/g, '-');
 const outputDir = path.join(os.tmpdir(), `tripdistill-visual-audit-${runId}-${process.pid}`);
 const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${runId}-${process.pid}`);
@@ -161,12 +162,15 @@ const allRoutes = [
   ['zh-shanghai-zhujiajiao', '/zh/china/shanghai/zhujiajiao-water-town/'],
   ['ja-home', '/ja/'],
   ['ja-kyoto', '/ja/japan/kyoto/'],
+  ['ja-china', '/ja/china/'],
   ['ja-shanghai', '/ja/china/shanghai/'],
   ['ko-home', '/ko/'],
   ['ko-seoul', '/ko/south-korea/seoul/'],
+  ['ko-china', '/ko/china/'],
   ['ko-shanghai', '/ko/china/shanghai/'],
   ['th-home', '/th/'],
   ['th-bangkok', '/th/thailand/bangkok/'],
+  ['th-china', '/th/china/'],
   ['th-shanghai', '/th/china/shanghai/']
 ];
 
@@ -395,12 +399,21 @@ for (const [viewportName, width, height, mobile] of viewports) {
     })`);
     await evaluate(client, `(async () => {
       const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+      const focusSelector = ${JSON.stringify(focusSelector)};
       const step = Math.max(500, Math.floor(innerHeight * .75));
       for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
         scrollTo(0, y);
         await wait(45);
       }
-      scrollTo(0, 0);
+      const focusTarget = focusSelector ? document.querySelector(focusSelector) : null;
+      if (focusTarget) focusTarget.scrollIntoView({ block: 'start' });
+      else scrollTo(0, 0);
+      await wait(700);
+      const visibleImages = [...document.images].filter((image) => {
+        const rect = image.getBoundingClientRect();
+        return rect.bottom > -innerHeight && rect.top < innerHeight * 2;
+      });
+      await Promise.all(visibleImages.map((image) => image.decode?.().catch(() => undefined)));
       if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
       await wait(200);
       return true;
