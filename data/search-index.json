@@ -1302,5 +1302,93 @@
     "type": "About",
     "summary": "How the site researches, reviews and updates travel guides.",
     "keywords": ["about", "methodology", "sources"]
+  },
+  {
+    "title": "Shanghai Travel Guide",
+    "url": "/china/shanghai/",
+    "parent": "China · Port city",
+    "type": "City",
+    "summary": "Plan four to six Shanghai nights around the Huangpu River, exact metro exits, two airports and eight distinct area chapters.",
+    "keywords": ["shanghai", "shanghai travel", "puxi", "pudong", "where to stay", "itinerary", "huangpu river"]
+  },
+  {
+    "title": "Shanghai Four-Day Itinerary",
+    "url": "/china/shanghai/#itinerary",
+    "parent": "China · Shanghai",
+    "type": "Itinerary",
+    "summary": "Group four Shanghai days into a river dialogue, old-city and museum day, residential west walk and one outer-area contrast.",
+    "keywords": ["shanghai itinerary", "four days", "shanghai route", "museum", "zhujiajiao"]
+  },
+  {
+    "title": "Shanghai Airports and Arrival",
+    "url": "/china/shanghai/#arrival",
+    "parent": "China · Shanghai",
+    "type": "Transit",
+    "summary": "Compare Pudong and Hongqiao airports by terminal, arrival hour, luggage and the exact final station rather than distance alone.",
+    "keywords": ["pudong airport", "hongqiao airport", "airport link line", "shanghai metro", "arrival"]
+  },
+  {
+    "title": "The Bund and Huangpu River Guide",
+    "url": "/china/shanghai/the-bund-huangpu/",
+    "parent": "Shanghai · Huangpu waterfront",
+    "type": "Architecture walk",
+    "summary": "Read the Bund through protected facades, working entrances, river movement and a deliberate daylight-to-blue-hour sequence.",
+    "keywords": ["the bund", "huangpu river", "waitan", "shanghai architecture", "blue hour"]
+  },
+  {
+    "title": "Lujiazui and Pudong Guide",
+    "url": "/china/shanghai/lujiazui-pudong/",
+    "parent": "Shanghai · Pudong",
+    "type": "Skyline district",
+    "summary": "Choose one observation deck according to visibility, then connect Lujiazui's towers to the river and Shanghai Museum East.",
+    "keywords": ["lujiazui", "pudong", "shanghai tower", "oriental pearl tower", "museum east", "skyline"]
+  },
+  {
+    "title": "Yuyuan and Shanghai Old City Guide",
+    "url": "/china/shanghai/yuyuan-old-city/",
+    "parent": "Shanghai · Old City",
+    "type": "Garden and temple",
+    "summary": "Separate ticketed Yuyuan Garden, active City God Temple and commercial streets before crowds merge three different experiences.",
+    "keywords": ["yuyuan garden", "yu garden", "city god temple", "shanghai old city", "old town"]
+  },
+  {
+    "title": "Wukang Road and Xuhui Guide",
+    "url": "/china/shanghai/wukang-road-xuhui/",
+    "parent": "Shanghai · Xuhui",
+    "type": "Neighborhood walk",
+    "summary": "Walk Wukang Road through facades, small institutions and lived-in lanes at a pace that respects residential space.",
+    "keywords": ["wukang road", "wukang mansion", "xuhui", "former french concession", "shanghai walk"]
+  },
+  {
+    "title": "People's Square and Shanghai Museums Guide",
+    "url": "/china/shanghai/peoples-square-museums/",
+    "parent": "Shanghai · Civic core",
+    "type": "Museum planner",
+    "summary": "Choose between Shanghai Museum's People's Square and Pudong campuses by collection, reservation and realistic viewing time.",
+    "keywords": ["shanghai museum", "people's square", "museum east", "museum tickets", "shanghai exhibitions"]
+  },
+  {
+    "title": "Hongkou and Suzhou Creek Guide",
+    "url": "/china/shanghai/hongkou-suzhou-creek/",
+    "parent": "Shanghai · North riverfront",
+    "type": "Memory and waterfront",
+    "summary": "Connect Suzhou Creek's industrial river edge with Hongkou's documented Jewish-refugee history without reducing memory to atmosphere.",
+    "keywords": ["hongkou", "suzhou creek", "jewish refugees museum", "waibaidu bridge", "shanghai history"]
+  },
+  {
+    "title": "West Bund and Longhua Guide",
+    "url": "/china/shanghai/west-bund-longhua/",
+    "parent": "Shanghai · Xuhui waterfront",
+    "type": "Art and heritage",
+    "summary": "Move between Longhua's active temple and civic history and West Bund's post-industrial art waterfront with current programs checked.",
+    "keywords": ["west bund", "longhua temple", "longhua pagoda", "shanghai art", "xuhui waterfront"]
+  },
+  {
+    "title": "Zhujiajiao Water Town Guide",
+    "url": "/china/shanghai/zhujiajiao-water-town/",
+    "parent": "Shanghai · Qingpu",
+    "type": "Water-town excursion",
+    "summary": "Protect an early start for Zhujiajiao, plan the metro last mile and let canals and bridges shape a full-day water-town route.",
+    "keywords": ["zhujiajiao", "water town", "qingpu", "fangsheng bridge", "shanghai day trip"]
   }
 ]

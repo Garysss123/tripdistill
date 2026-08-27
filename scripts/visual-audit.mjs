@@ -6,6 +6,7 @@ import { spawn } from 'node:child_process';
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
 const port = Number(process.env.TRIPDISTILL_CDP_PORT || 9333);
+const viewportScreenshotsOnly = process.env.TRIPDISTILL_SCREENSHOT_VIEWPORT_ONLY === '1';
 const runId = new Date().toISOString().replace(/[:.]/g, '-');
 const outputDir = path.join(os.tmpdir(), `tripdistill-visual-audit-${runId}-${process.pid}`);
 const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${runId}-${process.pid}`);
@@ -133,7 +134,40 @@ const allRoutes = [
   ['yonghe-guozijian', '/china/beijing/yonghe-guozijian/'],
   ['798-chaoyang', '/china/beijing/798-chaoyang/'],
   ['summer-palace', '/china/beijing/summer-palace/'],
-  ['mutianyu-great-wall', '/china/beijing/mutianyu-great-wall/']
+  ['mutianyu-great-wall', '/china/beijing/mutianyu-great-wall/'],
+  ['shanghai', '/china/shanghai/'],
+  ['shanghai-bund', '/china/shanghai/the-bund-huangpu/'],
+  ['shanghai-lujiazui', '/china/shanghai/lujiazui-pudong/'],
+  ['shanghai-yuyuan', '/china/shanghai/yuyuan-old-city/'],
+  ['shanghai-wukang', '/china/shanghai/wukang-road-xuhui/'],
+  ['shanghai-museums', '/china/shanghai/peoples-square-museums/'],
+  ['shanghai-hongkou', '/china/shanghai/hongkou-suzhou-creek/'],
+  ['shanghai-west-bund', '/china/shanghai/west-bund-longhua/'],
+  ['shanghai-zhujiajiao', '/china/shanghai/zhujiajiao-water-town/'],
+  ['zh-home', '/zh/'],
+  ['zh-japan', '/zh/japan/'],
+  ['zh-south-korea', '/zh/south-korea/'],
+  ['zh-thailand', '/zh/thailand/'],
+  ['zh-china', '/zh/china/'],
+  ['zh-beijing', '/zh/china/beijing/'],
+  ['zh-shanghai', '/zh/china/shanghai/'],
+  ['zh-shanghai-bund', '/zh/china/shanghai/the-bund-huangpu/'],
+  ['zh-shanghai-lujiazui', '/zh/china/shanghai/lujiazui-pudong/'],
+  ['zh-shanghai-yuyuan', '/zh/china/shanghai/yuyuan-old-city/'],
+  ['zh-shanghai-wukang', '/zh/china/shanghai/wukang-road-xuhui/'],
+  ['zh-shanghai-museums', '/zh/china/shanghai/peoples-square-museums/'],
+  ['zh-shanghai-hongkou', '/zh/china/shanghai/hongkou-suzhou-creek/'],
+  ['zh-shanghai-west-bund', '/zh/china/shanghai/west-bund-longhua/'],
+  ['zh-shanghai-zhujiajiao', '/zh/china/shanghai/zhujiajiao-water-town/'],
+  ['ja-home', '/ja/'],
+  ['ja-kyoto', '/ja/japan/kyoto/'],
+  ['ja-shanghai', '/ja/china/shanghai/'],
+  ['ko-home', '/ko/'],
+  ['ko-seoul', '/ko/south-korea/seoul/'],
+  ['ko-shanghai', '/ko/china/shanghai/'],
+  ['th-home', '/th/'],
+  ['th-bangkok', '/th/thailand/bangkok/'],
+  ['th-shanghai', '/th/china/shanghai/']
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
@@ -238,13 +272,13 @@ async function evaluate(client, expression) {
   return result.result.value;
 }
 
-async function navigate(client, url) {
+async function navigate(client, url, dismissLanguageDialog = true) {
   const loaded = client.once('Page.loadEventFired');
   await client.send('Page.navigate', { url });
   await loaded;
   for (let attempt = 0; attempt < 4; attempt += 1) {
     try {
-      return await evaluate(client, `new Promise((resolve) => {
+      const componentsReady = await evaluate(client, `new Promise((resolve) => {
         const started = Date.now();
         const timer = setInterval(() => {
           const ready = document.querySelector('#layout-header .site-header') &&
@@ -256,12 +290,30 @@ async function navigate(client, url) {
           }
         }, 80);
       })`);
+      if (dismissLanguageDialog) {
+        await evaluate(client, `(() => {
+          document.querySelector('[data-language-stay]')?.click();
+          return true;
+        })()`);
+      }
+      return componentsReady;
     } catch (error) {
       if (!error.message.includes('Inspected target navigated or closed') || attempt === 3) throw error;
       await delay(180);
     }
   }
   return false;
+}
+
+async function waitForLocation(client, expectedPath) {
+  for (let attempt = 0; attempt < 60; attempt += 1) {
+    try {
+      const location = await evaluate(client, `({ pathname: window.location.pathname, search: window.location.search, hash: window.location.hash })`);
+      if (location.pathname === expectedPath) return location;
+    } catch {}
+    await delay(100);
+  }
+  return evaluate(client, `({ pathname: window.location.pathname, search: window.location.search, hash: window.location.hash })`);
 }
 
 function sanitizeErrors(errors) {
@@ -349,6 +401,7 @@ for (const [viewportName, width, height, mobile] of viewports) {
         await wait(45);
       }
       scrollTo(0, 0);
+      if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
       await wait(200);
       return true;
     })()`);
@@ -376,19 +429,22 @@ for (const [viewportName, width, height, mobile] of viewports) {
 
     const metrics = await client.send('Page.getLayoutMetrics');
     const content = metrics.cssContentSize || metrics.contentSize;
-    const screenshot = await client.send('Page.captureScreenshot', {
+    const screenshotOptions = {
       format: 'jpeg',
       quality: 86,
-      fromSurface: true,
-      captureBeyondViewport: true,
-      clip: {
+      fromSurface: true
+    };
+    if (!viewportScreenshotsOnly) {
+      screenshotOptions.captureBeyondViewport = true;
+      screenshotOptions.clip = {
         x: 0,
         y: 0,
         width: Math.ceil(content.width),
         height: Math.min(Math.ceil(content.height), 14000),
         scale: 1
-      }
-    });
+      };
+    }
+    const screenshot = await client.send('Page.captureScreenshot', screenshotOptions);
     const screenshotPath = path.join(outputDir, `${slug}-${viewportName}.jpg`);
     fs.writeFileSync(screenshotPath, screenshot.data, 'base64');
     await client.send('HeapProfiler.collectGarbage').catch(() => {});
@@ -459,6 +515,76 @@ if (!skipInteractions) {
   const faq = { opened: Boolean(document.querySelector('.faq-list details[open]')) };
   return { menu, search, faq };
   })()`);
+
+  const browserUserAgent = await evaluate(interactionClient, 'navigator.userAgent');
+  const languageCases = [
+    { key: 'zh-Hant', acceptLanguage: 'zh-TW,zh;q=0.9,en;q=0.8', suffix: 'zh', expectedPath: '/zh/china/shanghai/', expectedTitle: '建議使用繁體中文' },
+    { key: 'ja', acceptLanguage: 'ja-JP,ja;q=0.9,en;q=0.8', suffix: 'ja', expectedPath: '/ja/china/shanghai/', expectedTitle: '日本語版に切り替えますか？' },
+    { key: 'ko', acceptLanguage: 'ko-KR,ko;q=0.9,en;q=0.8', suffix: 'ko', expectedPath: '/ko/china/shanghai/', expectedTitle: '한국어판으로 전환할까요?' },
+    { key: 'th', acceptLanguage: 'th-TH,th;q=0.9,en;q=0.8', suffix: 'th', expectedPath: '/th/china/shanghai/', expectedTitle: 'เปลี่ยนเป็นภาษาไทยหรือไม่' }
+  ];
+  const suggestions = {};
+  for (const testCase of languageCases) {
+    await interactionClient.send('Network.setUserAgentOverride', { userAgent: browserUserAgent, acceptLanguage: testCase.acceptLanguage });
+    await evaluate(interactionClient, `localStorage.removeItem('tripdistill-language-choice-v1')`);
+    await navigate(interactionClient, `${baseUrl}/china/shanghai/?language-test=${testCase.suffix}#itinerary`, false);
+    const prompt = await evaluate(interactionClient, `(() => {
+      const dialog = document.querySelector('.language-dialog');
+      const state = {
+        visible: Boolean(dialog),
+        title: dialog?.querySelector('h2')?.textContent.trim() || '',
+        message: dialog?.querySelector('#language-dialog-copy')?.textContent.trim() || '',
+        accept: dialog?.querySelector('[data-language-accept]')?.textContent.trim() || '',
+        stay: dialog?.querySelector('[data-language-stay]')?.textContent.trim() || '',
+        languages: [...navigator.languages]
+      };
+      dialog?.querySelector('[data-language-accept]')?.click();
+      return state;
+    })()`);
+    const location = await waitForLocation(interactionClient, testCase.expectedPath);
+    const stored = await evaluate(interactionClient, `localStorage.getItem('tripdistill-language-choice-v1')`);
+    suggestions[testCase.key] = { ...testCase, prompt, location, stored };
+  }
+
+  await interactionClient.send('Network.setUserAgentOverride', { userAgent: browserUserAgent, acceptLanguage: 'en-US,en;q=0.9' });
+  await evaluate(interactionClient, `localStorage.removeItem('tripdistill-language-choice-v1')`);
+  await navigate(interactionClient, `${baseUrl}/ja/china/shanghai/?language-test=en#itinerary`, false);
+  const englishPrompt = await evaluate(interactionClient, `(() => {
+    const dialog = document.querySelector('.language-dialog');
+    const state = {
+      visible: Boolean(dialog),
+      title: dialog?.querySelector('h2')?.textContent.trim() || '',
+      message: dialog?.querySelector('#language-dialog-copy')?.textContent.trim() || ''
+    };
+    dialog?.querySelector('[data-language-accept]')?.click();
+    return state;
+  })()`);
+  const englishLocation = await waitForLocation(interactionClient, '/china/shanghai/');
+  const englishStored = await evaluate(interactionClient, `localStorage.getItem('tripdistill-language-choice-v1')`);
+
+  await interactionClient.send('Network.setUserAgentOverride', { userAgent: browserUserAgent, acceptLanguage: 'zh-TW,zh;q=0.9,en;q=0.8' });
+  await evaluate(interactionClient, `localStorage.removeItem('tripdistill-language-choice-v1')`);
+  await navigate(interactionClient, `${baseUrl}/china/shanghai/`, false);
+  const stayChoice = await evaluate(interactionClient, `(() => {
+    const visibleBefore = Boolean(document.querySelector('.language-dialog'));
+    document.querySelector('[data-language-stay]')?.click();
+    return { visibleBefore, visibleAfter: Boolean(document.querySelector('.language-dialog')), pathname: location.pathname, stored: localStorage.getItem('tripdistill-language-choice-v1') };
+  })()`);
+
+  await interactionClient.send('Network.setUserAgentOverride', { userAgent: browserUserAgent, acceptLanguage: 'en-US,en;q=0.9' });
+  await navigate(interactionClient, `${baseUrl}/china/shanghai/?language-menu=1#itinerary`);
+  const languageMenu = await evaluate(interactionClient, `(() => {
+    const button = document.querySelector('[data-language-menu-toggle]');
+    button?.click();
+    return {
+      expanded: button?.getAttribute('aria-expanded') || '',
+      visible: !document.querySelector('[data-language-menu]')?.hidden,
+      current: document.querySelector('[data-language-current]')?.textContent.trim() || '',
+      options: [...document.querySelectorAll('header [data-language-option]')].map((link) => ({ locale: link.dataset.languageOption, href: link.getAttribute('href'), current: link.getAttribute('aria-current') }))
+    };
+  })()`);
+
+  interactions.language = { suggestions, englishPrompt, englishLocation, englishStored, stayChoice, languageMenu };
 }
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
@@ -490,7 +616,43 @@ console.log(JSON.stringify({
 await interactionClient.send('Browser.close').catch(() => {});
 await delay(250);
 if (!browser.killed) browser.kill();
-const interactionFailed = !skipInteractions && (!interactions.menu.opened || interactions.menu.expanded !== 'true' || !interactions.menu.visible || interactions.menu.active !== 'Beijing city guide' || interactions.search.count < 1 || interactions.search.first !== 'Beijing Travel Guide' || !interactions.search.withinViewport || !interactions.faq.opened);
+const language = interactions.language || {};
+const suggestionFailures = !skipInteractions && [
+  ['zh-Hant', '/zh/china/shanghai/', '建議使用繁體中文'],
+  ['ja', '/ja/china/shanghai/', '日本語版に切り替えますか？'],
+  ['ko', '/ko/china/shanghai/', '한국어판으로 전환할까요?'],
+  ['th', '/th/china/shanghai/', 'เปลี่ยนเป็นภาษาไทยหรือไม่']
+].some(([locale, pathname, title]) => {
+  const result = language.suggestions?.[locale];
+  return !result?.prompt?.visible || result.prompt.title !== title || result.location?.pathname !== pathname || result.location?.search !== `?language-test=${locale === 'zh-Hant' ? 'zh' : locale}` || result.location?.hash !== '#itinerary' || result.stored !== locale;
+});
+const languageOptions = language.languageMenu?.options || [];
+const interactionFailed = !skipInteractions && (
+  !interactions.menu.opened ||
+  interactions.menu.expanded !== 'true' ||
+  !interactions.menu.visible ||
+  interactions.menu.active !== 'Beijing city guide' ||
+  interactions.search.count < 1 ||
+  interactions.search.first !== 'Beijing Travel Guide' ||
+  !interactions.search.withinViewport ||
+  !interactions.faq.opened ||
+  suggestionFailures ||
+  !language.englishPrompt?.visible ||
+  language.englishPrompt?.title !== 'Switch to English?' ||
+  language.englishLocation?.pathname !== '/china/shanghai/' ||
+  language.englishLocation?.search !== '?language-test=en' ||
+  language.englishLocation?.hash !== '#itinerary' ||
+  language.englishStored !== 'en' ||
+  !language.stayChoice?.visibleBefore ||
+  language.stayChoice?.visibleAfter ||
+  language.stayChoice?.pathname !== '/china/shanghai/' ||
+  language.stayChoice?.stored !== 'en' ||
+  language.languageMenu?.expanded !== 'true' ||
+  !language.languageMenu?.visible ||
+  language.languageMenu?.current !== 'EN' ||
+  languageOptions.length !== 5 ||
+  !['en', 'zh-Hant', 'ja', 'ko', 'th'].every((locale) => languageOptions.some((option) => option.locale === locale && option.href?.includes(locale === 'en' ? '/china/shanghai/' : `/${locale === 'zh-Hant' ? 'zh' : locale}/china/shanghai/`)))
+);
 if (failures.length || interactionFailed) {
   process.exitCode = 1;
 }

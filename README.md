@@ -1,6 +1,8 @@
 # TripDistill
 
-TripDistill is a static, English-first travel guide site for `tripdistill.com`.
+TripDistill is a static five-language travel guide site for `tripdistill.com`.
+
+English uses the root route tree. Traditional Chinese, Japanese, Korean and Thai mirror it under `/zh/`, `/ja/`, `/ko/` and `/th/`. Every published guide must exist in all five editions, keep reciprocal `hreflang` metadata and remain usable without client-side translation.
 
 ## Cloudflare Pages deployment
 
@@ -16,7 +18,70 @@ npm run deploy:trip
 
 `deploy:trip` always targets the Cloudflare Pages project named `trip`. It does not target the separate `pcbuild` project. The build warns at 18,000 files, blocks at the 20,000-file safety boundary and rejects individual files over 25 MiB.
 
-The site uses directory URLs such as `/japan/`, `/south-korea/seoul/` and `/thailand/bangkok/yaowarat-talat-noi/`. Shared navigation is loaded from `/components/` with browser-side JavaScript. All SEO body content remains in each page's HTML.
+The site uses directory URLs such as `/japan/`, `/south-korea/seoul/` and `/thailand/bangkok/yaowarat-talat-noi/`, with matching localized routes such as `/zh/japan/`, `/ja/japan/`, `/ko/japan/` and `/th/japan/`. Shared navigation is loaded from each locale's own `/components/` fragments. All SEO body content remains in each page's HTML.
+
+## Language editions
+
+English source pages remain the editorial source of truth. Reviewed batch files under `data/i18n/reviewed/` are the versioned translation source. `npm run i18n:approve` validates and merges them into generated `data/i18n/zh-Hant.json`, `ja.json`, `ko.json` and `th.json` catalogs; `npm run localize` then generates the complete static locale trees, shared components and search indexes. The merged catalogs and generated `/zh/`, `/ja/`, `/ko/` and `/th/` trees stay out of Git, but `npm run build` recreates and includes the locale trees in `dist/` for Cloudflare Pages.
+
+For every new page or material English edit, assign Luna Max translation agents to synchronize all four localized catalogs. Give each agent one locale at a time, require exact source-key parity, natural destination-specific terminology and explicit checks for names, numbers, restrictions, licensing language and untranslated long copy. Do not accept dictionary substitution, word-by-word assembly or an unchecked local-model draft as publishable copy. Review natural long-form samples before permitting a bulk pass. Only a catalog that has passed human-style sampling may be marked `"qualityStatus": "reviewed"`; localization refuses every draft or unreviewed catalog. A change is incomplete until all four catalogs pass `npm run audit:i18n`, every locale tree regenerates, and the normal functional and visual gates pass.
+
+Luna is a build-time editorial collaborator only. No model, API key, translation runtime or background inference process ships to Cloudflare Pages or remains necessary after the iteration. Production serves ordinary static HTML, CSS, JavaScript and JSON. Stop any temporary local model after translation work; retaining downloaded model files on disk is optional and unrelated to the deployed site.
+
+### Luna translation batch workflow
+
+Treat synchronized translation as part of creating the page, not as a later cleanup task. For each new English cluster, assign one Luna Max agent to each target locale and give every agent exactly one reviewed batch file:
+
+```text
+data/i18n/reviewed/zh-Hant/NN-cluster-name.json
+data/i18n/reviewed/ja/NN-cluster-name.json
+data/i18n/reviewed/ko/NN-cluster-name.json
+data/i18n/reviewed/th/NN-cluster-name.json
+```
+
+Each file uses this shape:
+
+```json
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "draft",
+  "routes": ["/country/city/"],
+  "translations": {
+    "Exact English source key": "Natural target-language copy"
+  }
+}
+```
+
+The exporter creates `draft`; `reviewed` is the final state after Luna finishes the locale and the editorial sampling gate passes.
+
+Create the blank, source-key-complete batch with the exporter before assigning it to Luna. It refuses to overwrite an existing batch, refuses to run while an earlier-numbered batch is unreviewed and omits keys already owned by earlier-numbered reviewed batches:
+
+```powershell
+npm run i18n:export -- --locale=zh-Hant --file=17-new-city.json --routes=/country/city/,/country/city/area/
+```
+
+Repeat the export for `ja`, `ko` and `th`, then give each Luna Max agent only its locale-specific file. The agent fills every blank value with natural copy, changes `qualityStatus` from `draft` to `reviewed` only after its own checks, and runs the batch validator.
+
+- Keep batches destination-sized, normally one city or 8–10 closely related pages. Use zero-padded filenames in dependency order (`01-…`, `02-…`). Deduplicate exact English source keys across the assigned routes and reuse a translation from an earlier reviewed batch instead of creating a conflicting duplicate; the batch validator deliberately uses only earlier-numbered siblings as prior coverage.
+- Restrict each agent to its assigned locale batch file. Require it to parse the completed JSON, verify every target is non-empty, preserve URLs and factual numbers, and report the route count plus unique source-key count.
+- Localize the explanatory prose in visible image credits, including resize, WebP conversion, display-crop, edit and watermark notes. Preserve creator names, source URLs, `CC0`, `CC BY`, `CC BY-SA`, `Public domain`, version numbers and other exact license markers; a credit is not permission to leave its whole sentence in English.
+- Translate travel terms by context, not by their most common dictionary sense. In rail copy, for example, `operator`, `gate`, `exit` and `paid area` must use the target language's normal railway terms rather than generic company, door, exit or payment-area wording. Render editorial metaphors by their planning purpose too: phrases such as `attention budget`, `two clocks`, `field cabinet`, `working market` and `mainland buffer` must become natural destination copy, never literal combinations that a native editor would not write. Consult the locale glossary under `data/i18n/terms-*.json` when available and extend it when a new place name or stable specialist term is introduced.
+- Inspect representative titles, long planning paragraphs, warnings, FAQs, image credits and proper nouns in natural context. The word `reviewed` records this editorial gate; it is not permission to label an unchecked generation as reviewed.
+- Treat structural validation as necessary but not semantic proof. The validator can confirm that every source key has a non-empty target, but it cannot prove that a target answers the correct source sentence. Sample every route, including titles, FAQs and route boundaries, with source and target side by side. If one shifted or mismatched key/value pair is found, review the entire batch before continuing; never repair only the visible example and approve the rest by count.
+- Use `npm run i18n:sample -- --file=data/i18n/reviewed/zh-Hant/NN-cluster-name.json` to print deterministic source/target samples from every declared route. It includes route edges and long copy, and warns when one long target is reused for different source sentences. Read the output; the command makes semantic review easier but does not replace it.
+- Merge a locale in draft mode while work is still in progress, and approve it only after every current source key is covered:
+
+```powershell
+npm run i18n:batch -- --file=data/i18n/reviewed/zh-Hant/NN-cluster-name.json
+npm run i18n:merge -- --locale=zh-Hant
+npm run i18n:merge -- --locale=zh-Hant --approve
+npm run i18n:status
+npm run audit:i18n
+```
+
+Repeat the merge and approval for `ja`, `ko` and `th`. Then run `npm run localize`; never hand-edit generated `/zh/`, `/ja/`, `/ko/` or `/th/` pages. A new route may be deployed only after all five static editions have matching routes, search records, canonical links and reciprocal `hreflang` entries.
+
+The first-visit language dialog is suggestive, never a forced redirect. It can offer the matching English, Traditional Chinese, Japanese, Korean or Thai route from the browser's preferred language. The dialog preserves the path, query and hash, records the explicit choice in local storage and does not change canonical URLs. Header and footer menus always provide manual control.
 
 ## Country visual systems
 
@@ -34,11 +99,14 @@ Central Thailand's Ayutthaya cluster uses a river-archaeology system rather than
 
 China introduces a lacquer-and-ink editorial system rather than borrowing the Thai or Korean shells: imperial lacquer red, aged gold, jade, ink blue-black and warm xuan-paper surfaces, with measured rules, seal-like labels and deliberate negative space. The country hub is a regional route scroll that asks travelers to choose a geographic argument before counting cities. Beijing turns the Central Axis into its city ruler, then gives its eight chapters genuinely different structures: a Palace Museum reservation docket, Jingshan elevation ledger, Temple of Heaven circle-and-square diagram, Shichahai civic clock, Yonghe threshold notebook, 798 exhibition poster, Summer Palace garden scroll and Mutianyu ridge action board. Future Chinese cities should inherit the palette and editorial discipline while defining a city-specific spatial system of their own.
 
+Shanghai extends the China system through a Huangpu fold rather than another imperial-axis layout. Port navy, river teal, signal coral, brass and misted paper divide Puxi and Pudong while keeping the lacquer-and-ink editorial discipline. The city hub behaves like an asymmetric river spread. Its eight chapters are a Bund facade catalogue, Lujiazui visibility meter, Yuyuan nested-gate diagram, Wukang Road walk score, two-campus museum curator board, Hongkou civic timeline, West Bund reuse strip and Zhujiajiao water-town clock. Future China clusters must find an equally place-specific spatial argument instead of recoloring either Beijing or Shanghai.
+
 ## Published guide clusters
 
 - Country hubs: `/china/`, `/japan/`, `/south-korea/` and `/thailand/`
-- China city hubs: `/china/beijing/`
+- China city hubs: `/china/beijing/` and `/china/shanghai/`
 - Beijing chapters: Central Axis & Forbidden City; Jingshan & Beihai; Temple of Heaven & Qianmen; Shichahai & Drum Tower; Yonghe & Guozijian; 798 & Chaoyang; Summer Palace; and Mutianyu Great Wall
+- Shanghai chapters: The Bund & Huangpu; Lujiazui & Pudong; Yuyuan & Old City; Wukang Road & Xuhui; People's Square & Museums; Hongkou & Suzhou Creek; West Bund & Longhua; and Zhujiajiao Water Town
 - City and regional hubs: `/japan/tokyo/`, `/japan/kyoto/`, `/japan/osaka/` and `/japan/hokkaido/`
 - Hokkaido regional guides: Sapporo; Otaru & Shakotan; Hakodate & Onuma; Furano & Biei; Asahikawa & Daisetsuzan; Niseko & Yoichi; Noboribetsu & Lake Toya; Kushiro & Lake Akan; and Abashiri & Shiretoko
 - Tokyo area guides: Shinjuku; Shibuya & Harajuku; Asakusa & Ueno; Tokyo Station & Ginza; Akihabara & Kanda; Roppongi & Azabu; Odaiba & Toyosu; and Ikebukuro
@@ -62,7 +130,8 @@ Area pages are full decision guides rather than thin location summaries. Each pa
 2. Create city pages at `/country/city/index.html`.
 3. Add published pages to `data/search-index.json`, `sitemap.xml` and the shared navigation where appropriate. Give every new route an ISO `YYYY-MM-DD` sitemap `<lastmod>`, and update `<lastmod>` for every materially changed route during each iteration; never bump unchanged routes merely to make the sitemap look fresh.
 4. Include a review date, official information sources and photo attribution on every destination page.
-5. Do not publish empty city placeholders; only link pages with substantive content.
+5. Use Luna Max to translate every new source key into `zh-Hant`, `ja`, `ko` and `th`, review the catalogs, then run `npm run localize` so route, search and navigation parity stay exact across all five editions.
+6. Do not publish empty city placeholders; only link pages with substantive content.
 
 ## Advertising
 

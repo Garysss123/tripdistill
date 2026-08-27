@@ -5,8 +5,19 @@
   "description": "Static TripDistill travel guides for Cloudflare Pages",
   "type": "module",
   "scripts": {
-    "audit": "node scripts/audit-site.mjs",
-    "build": "node scripts/build-dist.mjs",
+    "i18n:export": "node scripts/export-i18n-batch.mjs",
+    "i18n:batch": "node scripts/validate-i18n-batch.mjs",
+    "i18n:sample": "node scripts/sample-i18n-batch.mjs",
+    "i18n:status": "node scripts/i18n-status.mjs",
+    "i18n:merge": "node scripts/merge-i18n-batches.mjs",
+    "i18n:approve": "node scripts/merge-i18n-batches.mjs --approve",
+    "audit:i18n": "npm run i18n:approve && node scripts/audit-translations.mjs",
+    "localize:pages": "node scripts/localize-all.mjs",
+    "localize": "npm run i18n:approve && npm run localize:pages",
+    "sync:metadata": "node scripts/sync-language-metadata.mjs",
+    "sync:sitemap": "node scripts/sync-sitemap.mjs",
+    "audit": "npm run audit:i18n && npm run localize:pages && node scripts/audit-site.mjs",
+    "build": "npm run localize && node scripts/build-dist.mjs",
     "preview": "node scripts/serve.mjs",
     "qa:visual": "node scripts/visual-audit.mjs",
     "pages:whoami": "npx wrangler@latest whoami",
@@ -15,5 +26,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "parse5": "^8.0.1"
   }
 }

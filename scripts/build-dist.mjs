@@ -14,19 +14,23 @@ const publicDirectories = [
   'components',
   'contact',
   'css',
-  'data',
   'japan',
+  'ja',
   'js',
+  'ko',
   'privacy-policy',
   'south-korea',
   'thailand',
-  'terms-of-use'
+  'terms-of-use',
+  'th',
+  'zh'
 ];
 
 const publicFiles = [
   '404.html',
   'ads.txt',
   'articles-osaka-food.html',
+  'data/search-index.json',
   'favicon.ico',
   'favicon.svg',
   'index.html',
@@ -68,7 +72,9 @@ for (const directory of publicDirectories) {
 }
 
 for (const file of publicFiles) {
-  fs.copyFileSync(requireSource(file), path.join(outputRoot, file));
+  const output = path.join(outputRoot, file);
+  fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.copyFileSync(requireSource(file), output);
 }
 
 const outputFiles = collectFiles(outputRoot);

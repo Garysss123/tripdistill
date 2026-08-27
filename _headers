@@ -15,3 +15,30 @@
 
 /components/*
   Cache-Control: public, max-age=3600
+
+/zh/components/*
+  Cache-Control: public, max-age=3600
+
+/ja/components/*
+  Cache-Control: public, max-age=3600
+
+/ko/components/*
+  Cache-Control: public, max-age=3600
+
+/th/components/*
+  Cache-Control: public, max-age=3600
+
+/data/*
+  Cache-Control: public, max-age=3600
+
+/zh/data/*
+  Cache-Control: public, max-age=3600
+
+/ja/data/*
+  Cache-Control: public, max-age=3600
+
+/ko/data/*
+  Cache-Control: public, max-age=3600
+
+/th/data/*
+  Cache-Control: public, max-age=3600

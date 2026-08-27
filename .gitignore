@@ -2,3 +2,12 @@ dist/
 node_modules/
 .wrangler/
 .tmp-*/
+/zh/
+/ja/
+/ko/
+/th/
+/data/i18n/zh-Hant.json
+/data/i18n/ja.json
+/data/i18n/ko.json
+/data/i18n/th.json
+/data/i18n/review-*.json

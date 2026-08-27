@@ -1,0 +1,189 @@
+:root {
+  --sh-ink: #102936;
+  --sh-river: #17677a;
+  --sh-river-light: #8fc3c8;
+  --sh-neon: #ee5f4b;
+  --sh-jade: #4e8d7c;
+  --sh-brass: #c79a42;
+  --sh-stone: #d9d0bd;
+  --sh-paper: #f7f1e5;
+  --sh-night: #091923;
+}
+
+body[data-region="shanghai"] {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(199,154,66,.11), transparent 24rem),
+    linear-gradient(90deg, rgba(16,41,54,.035) 1px, transparent 1px),
+    var(--sh-paper);
+  background-size: auto, 3rem 3rem, auto;
+}
+
+.sh-label { display: inline-flex; align-items: center; gap: .5rem; color: var(--sh-neon); font-size: .66rem; font-weight: 950; letter-spacing: .16em; text-transform: uppercase; }
+.sh-label::before { content: ""; width: 1.7rem; height: 2px; background: currentColor; }
+.sh-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.2rem; }
+.sh-meta span { padding: .48rem .7rem; border: 1px solid currentColor; border-radius: 999px; font-size: .65rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.sh-note { padding: 1rem 1.1rem; border-left: 4px solid var(--sh-neon); background: rgba(255,255,255,.74); }
+
+/* Shanghai hub: the Huangpu is a fold line, not a generic card grid. */
+.shanghai-river-hero { display: grid; grid-template-columns: .88fr 1.12fr; min-height: 45rem; overflow: hidden; color: #fff; background: var(--sh-night); }
+.shanghai-river-copy { position: relative; z-index: 2; align-self: center; padding: clamp(3rem,6vw,6rem); }
+.shanghai-river-copy::after { content: "31.2304 N / 121.4737 E"; position: absolute; left: clamp(3rem,6vw,6rem); bottom: 2rem; color: var(--sh-river-light); font-size: .62rem; font-weight: 900; letter-spacing: .15em; }
+.shanghai-river-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(4.2rem,8vw,8.5rem)/.76 Georgia, serif; }
+.shanghai-river-copy h1 span { display: block; color: var(--sh-neon); font-size: .38em; font-style: italic; }
+html[lang="ko"] .shanghai-river-copy h1,
+html[lang="th"] .shanghai-river-copy h1 { font-size: clamp(3.2rem,5vw,5.2rem); line-height: .88; word-break: keep-all; }
+.shanghai-river-copy p { max-width: 42rem; color: rgba(255,255,255,.76); }
+.shanghai-river-image { position: relative; min-height: 45rem; overflow: hidden; clip-path: polygon(8% 0,100% 0,100% 100%,0 100%); }
+.shanghai-river-image img { width: 100%; height: 100%; object-fit: cover; }
+.shanghai-river-image::after { content: "PUDONG  →\A←  PUXI"; white-space: pre; position: absolute; right: 1.3rem; bottom: 1.3rem; padding: 1rem; border: 1px solid rgba(255,255,255,.55); color: #fff; background: rgba(9,25,35,.74); font-size: .7rem; font-weight: 950; letter-spacing: .13em; line-height: 1.7; }
+
+.river-fold { display: grid; grid-template-columns: 1fr 5rem 1fr; background: var(--sh-night); color: #fff; }
+.river-bank { padding: clamp(2rem,5vw,4.5rem); }
+.river-bank h2, .river-bank h3 { color: #fff; font: 500 clamp(2rem,4vw,3.6rem)/.9 Georgia, serif; }
+.river-bank p { color: rgba(255,255,255,.72); }
+.river-channel { display: grid; place-items: center; color: var(--sh-night); background: var(--sh-river-light); font-size: .62rem; font-weight: 950; letter-spacing: .12em; writing-mode: vertical-rl; }
+.river-bank:last-child { color: var(--sh-ink); background: var(--sh-paper); }
+.river-bank:last-child h2, .river-bank:last-child h3 { color: var(--sh-ink); }
+.river-bank:last-child p { color: var(--sh-ink); opacity: .76; }
+
+.shanghai-chapters { display: grid; grid-template-columns: repeat(12,1fr); gap: 1rem; }
+.shanghai-card { position: relative; min-height: 25rem; overflow: hidden; color: #fff; background: var(--sh-night); }
+.shanghai-card:nth-child(1), .shanghai-card:nth-child(6) { grid-column: span 7; }
+.shanghai-card:nth-child(2), .shanghai-card:nth-child(5) { grid-column: span 5; }
+.shanghai-card:nth-child(3), .shanghai-card:nth-child(4), .shanghai-card:nth-child(7), .shanghai-card:nth-child(8) { grid-column: span 6; }
+.shanghai-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.shanghai-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(9,25,35,.94)); }
+.shanghai-card-copy { position: absolute; z-index: 2; inset: auto 0 0; padding: 1.5rem; }
+.shanghai-card small { color: var(--sh-river-light); font-weight: 950; letter-spacing: .13em; }
+.shanghai-card h3 { margin: .45rem 0; color: #fff; font: 500 1.75rem/1 Georgia, serif; }
+.shanghai-card p { color: rgba(255,255,255,.75); }
+.shanghai-card strong { color: #fff; }
+.shanghai-card:hover img { transform: scale(1.035); }
+
+.sh-arrival-board { display: grid; grid-template-columns: 1.2fr repeat(3,1fr); border: 1px solid rgba(16,41,54,.25); background: #fff; }
+.sh-arrival-board article { min-height: 16rem; padding: 1.45rem; border-right: 1px solid rgba(16,41,54,.18); }
+.sh-arrival-board article:first-child { color: #fff; background: var(--sh-river); }
+.sh-arrival-board article:last-child { border-right: 0; }
+.sh-arrival-board small { color: var(--sh-neon); font-weight: 950; letter-spacing: .12em; }
+.sh-arrival-board article:first-child small { color: #fff0a7; }
+.sh-arrival-board h2, .sh-arrival-board h3 { color: inherit; font: 500 1.5rem/1 Georgia, serif; }
+.sh-arrival-board p { color: inherit; opacity: .76; }
+
+/* Shared chapter hero: each page changes its editorial instrument below. */
+.sh-chapter-hero { display: grid; grid-template-columns: 1.06fr .94fr; min-height: 42rem; overflow: hidden; color: #fff; background: var(--sh-night); }
+.sh-chapter-photo { position: relative; margin: 1rem; overflow: hidden; }
+.sh-chapter-photo img { width: 100%; height: 100%; object-fit: cover; }
+.sh-chapter-photo::after { content: attr(data-stamp); position: absolute; left: 1rem; bottom: 1rem; padding: .7rem .85rem; color: var(--sh-night); background: var(--sh-river-light); font-size: .63rem; font-weight: 950; letter-spacing: .13em; }
+.sh-chapter-copy { align-self: center; padding: clamp(2.7rem,5vw,5rem); }
+.sh-chapter-copy h1 { margin: .7rem 0 1rem; color: #fff; font: 500 clamp(3.4rem,6.5vw,6.8rem)/.79 Georgia, serif; }
+.sh-chapter-copy h1 span { display: block; color: var(--sh-neon); font-size: .43em; font-style: italic; }
+.sh-chapter-copy p { color: rgba(255,255,255,.76); }
+
+/* 01: Bund as a facade catalogue. */
+.bund-catalogue { display: grid; grid-template-columns: .8fr repeat(4,1fr); border-top: 5px solid var(--sh-brass); background: #efe7d7; }
+.bund-catalogue article { min-height: 18rem; padding: 1.45rem; border-right: 1px solid rgba(16,41,54,.22); }
+.bund-catalogue article:first-child { color: #fff; background: #542a2a; }
+.bund-catalogue article:last-child { border-right: 0; }
+.bund-catalogue small { color: var(--sh-neon); font-size: .65rem; font-weight: 950; letter-spacing: .12em; }
+.bund-catalogue h2, .bund-catalogue h3 { color: inherit; font: 500 1.5rem/1 Georgia, serif; }
+.bund-catalogue p { color: inherit; opacity: .76; }
+
+/* 02: Lujiazui as a height and visibility instrument. */
+.skyline-meter { display: grid; grid-template-columns: .8fr repeat(3,1fr); align-items: end; min-height: 27rem; padding: 1rem; gap: .7rem; color: #fff; background: #0a2638; }
+.skyline-meter article { display: flex; flex-direction: column; justify-content: flex-end; padding: 1.4rem; border-top: 4px solid var(--sh-river-light); background: rgba(255,255,255,.07); }
+.skyline-meter article:nth-child(1) { min-height: 24rem; border-color: var(--sh-neon); }
+.skyline-meter article:nth-child(2) { min-height: 17rem; }
+.skyline-meter article:nth-child(3) { min-height: 21rem; border-color: var(--sh-brass); }
+.skyline-meter article:nth-child(4) { min-height: 14rem; }
+.skyline-meter small { color: var(--sh-river-light); font-weight: 950; letter-spacing: .12em; }
+.skyline-meter h2, .skyline-meter h3 { color: #fff; font: 500 1.5rem/1 Georgia, serif; }
+.skyline-meter p { color: rgba(255,255,255,.72); }
+
+/* 03: Yuyuan as nested gates: garden, temple, market. */
+.garden-gates { display: grid; grid-template-columns: 1.1fr .9fr 1fr; padding: 1rem; gap: 1rem; color: #fff; background: #264d42; }
+.garden-gates article { min-height: 20rem; padding: 1.6rem; border: 1px solid rgba(255,255,255,.26); border-radius: 48% 48% .3rem .3rem / 4rem 4rem .3rem .3rem; }
+.garden-gates article:nth-child(2) { color: var(--sh-ink); background: var(--sh-paper); }
+.garden-gates h2, .garden-gates h3 { color: inherit; font: 500 1.5rem/1 Georgia, serif; }
+.garden-gates p { color: inherit; opacity: .77; }
+.garden-gates small { color: var(--sh-brass); font-weight: 950; letter-spacing: .12em; }
+
+/* 04: Wukang Road as a walk score. */
+.walk-score { position: relative; display: grid; grid-template-columns: repeat(5,1fr); padding-top: 3.5rem; background: #f4e8d8; }
+.walk-score::before { content: ""; position: absolute; top: 2rem; left: 10%; right: 10%; height: 3px; background: var(--sh-neon); }
+.walk-score article { position: relative; min-height: 18rem; padding: 1.4rem; border-right: 1px solid rgba(16,41,54,.18); }
+.walk-score article::before { content: ""; position: absolute; top: -1.85rem; left: 1.4rem; width: .8rem; height: .8rem; border: 3px solid #f4e8d8; border-radius: 50%; background: var(--sh-neon); box-shadow: 0 0 0 2px var(--sh-neon); }
+.walk-score article:nth-child(2n) { background: rgba(78,141,124,.12); }
+.walk-score article:last-child { border-right: 0; }
+.walk-score small { color: var(--sh-neon); font-weight: 950; letter-spacing: .12em; }
+.walk-score h2, .walk-score h3 { font: 500 1.45rem/1 Georgia, serif; }
+
+/* 05: museums as a curator's two-site board. */
+.curator-board { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1rem; background: #d9d0bd; }
+.curator-board article { min-height: 23rem; padding: clamp(2rem,4vw,3.4rem); background: #fff; box-shadow: .5rem .5rem 0 rgba(16,41,54,.12); }
+.curator-board article:last-child { color: #fff; background: var(--sh-river); }
+.curator-board h2, .curator-board h3 { color: inherit; font: 500 clamp(2rem,3.4vw,3.2rem)/.92 Georgia, serif; }
+.curator-board p, .curator-board li { color: inherit; opacity: .78; }
+.curator-board small { color: var(--sh-neon); font-weight: 950; letter-spacing: .12em; }
+
+/* 06: Hongkou and Suzhou Creek as a civic timeline. */
+.creek-timeline { display: grid; grid-template-columns: repeat(4,1fr); color: #fff; background: #244b5b; }
+.creek-timeline article { min-height: 19rem; padding: 1.55rem; border-bottom: 5px solid var(--sh-river-light); }
+.creek-timeline article:nth-child(2n) { color: var(--sh-ink); background: #dbe4df; border-color: var(--sh-neon); }
+.creek-timeline small { color: var(--sh-brass); font-weight: 950; letter-spacing: .12em; }
+.creek-timeline h2, .creek-timeline h3 { color: inherit; font: 500 1.48rem/1 Georgia, serif; }
+.creek-timeline p { color: inherit; opacity: .76; }
+
+/* 07: West Bund and Longhua as an industrial reuse strip. */
+.industrial-strip { display: grid; grid-template-columns: 1.1fr .9fr 1.1fr .9fr; gap: .75rem; padding: .75rem; background: #202b2d; }
+.industrial-strip article { min-height: 19rem; padding: 1.5rem; color: #fff; border: 1px dashed rgba(255,255,255,.32); }
+.industrial-strip article:nth-child(2), .industrial-strip article:nth-child(4) { color: var(--sh-ink); background: var(--sh-paper); }
+.industrial-strip small { color: var(--sh-neon); font-weight: 950; letter-spacing: .12em; }
+.industrial-strip h2, .industrial-strip h3 { color: inherit; font: 500 1.48rem/1 Georgia, serif; }
+.industrial-strip p { color: inherit; opacity: .76; }
+
+/* 08: Zhujiajiao as a water-town clock. */
+.water-clock { display: grid; grid-template-columns: repeat(4,1fr); background: #123d44; color: #fff; }
+.water-clock article { min-height: 19rem; padding: 1.5rem; border-right: 1px solid rgba(255,255,255,.2); }
+.water-clock article:nth-child(2) { background: #477969; }
+.water-clock article:nth-child(3) { color: var(--sh-ink); background: #e8c984; }
+.water-clock article:nth-child(4) { background: #3d2a44; }
+.water-clock time { display: block; color: #fff0a7; font-size: .68rem; font-weight: 950; letter-spacing: .12em; }
+.water-clock article:nth-child(3) time { color: #6e321d; }
+.water-clock h2, .water-clock h3 { color: inherit; font: 500 1.5rem/1 Georgia, serif; }
+.water-clock p { color: inherit; opacity: .78; }
+
+.sh-practical-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.sh-practical-grid article { padding: 1.45rem; border-top: 4px solid var(--sh-river); background: #fff; box-shadow: 0 .6rem 1.8rem rgba(16,41,54,.08); }
+.sh-practical-grid article:nth-child(2) { border-color: var(--sh-neon); }
+.sh-practical-grid article:nth-child(3) { border-color: var(--sh-brass); }
+.sh-practical-grid h2, .sh-practical-grid h3 { font: 500 1.45rem/1 Georgia, serif; }
+
+@media (max-width: 1100px) {
+  .shanghai-river-hero, .sh-chapter-hero { grid-template-columns: 1fr; }
+  .shanghai-river-image { min-height: 31rem; clip-path: none; }
+  .sh-chapter-photo { min-height: 31rem; }
+  .sh-arrival-board, .bund-catalogue, .skyline-meter, .garden-gates, .walk-score, .creek-timeline, .industrial-strip { grid-template-columns: repeat(2,1fr); }
+  .walk-score::before, .walk-score article::before { display: none; }
+  .walk-score { padding-top: 0; }
+}
+
+@media (max-width: 760px) {
+  .shanghai-river-copy, .sh-chapter-copy { padding: 2.4rem 1.25rem; }
+  .shanghai-river-copy h1, .sh-chapter-copy h1 { font-size: clamp(3.2rem,17vw,5rem); line-height: .92; }
+  .shanghai-river-copy h1 span { margin-top: .35rem; line-height: 1.05; }
+  .shanghai-river-copy::after { position: static; display: block; margin-top: 1.6rem; }
+  .shanghai-river-image, .sh-chapter-photo { min-height: 24rem; margin: .75rem; }
+  .river-fold { grid-template-columns: 1fr; }
+  .river-channel { min-height: 3.5rem; writing-mode: horizontal-tb; }
+  .shanghai-chapters { grid-template-columns: 1fr; }
+  .shanghai-card:nth-child(n) { grid-column: auto; min-height: 25rem; }
+  .sh-arrival-board, .bund-catalogue, .skyline-meter, .garden-gates, .walk-score, .curator-board, .creek-timeline, .industrial-strip, .water-clock, .sh-practical-grid { grid-template-columns: 1fr; }
+  .sh-arrival-board article, .bund-catalogue article, .water-clock article { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(16,41,54,.18); }
+  .skyline-meter { align-items: stretch; min-height: auto; }
+  .skyline-meter article:nth-child(n) { min-height: auto; }
+  .garden-gates article { min-height: auto; border-radius: 3rem 3rem .3rem .3rem / 2rem 2rem .3rem .3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shanghai-card img { transition: none; }
+}
