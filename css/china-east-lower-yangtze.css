@@ -1,0 +1,338 @@
+/* East and lower Yangtze: four place-specific instruments layered over the
+   shared static guide structure. Geometry, hierarchy and reading rhythm vary
+   by destination while navigation, accessibility and source ledgers remain shared. */
+
+/* 24 — Suzhou: garden windows, white walls and a deliberately indirect path. */
+.exp-guide[data-visual="garden-window-sequence"] {
+  --exp-paper: #f3efe4;
+  --exp-ink: #203b35;
+  --exp-accent: #9a3e37;
+  --exp-accent-2: #b99750;
+  --exp-wash: #d8e3da;
+  --exp-deep: #254c44;
+}
+
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero {
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(660px, auto) auto;
+  grid-template-areas: "garden" "motif";
+  min-height: 0;
+  border: 12px solid var(--exp-deep);
+  border-radius: 180px 6px 180px 6px;
+  background:
+    linear-gradient(90deg, transparent 49.5%, rgba(37,76,68,.12) 49.5% 50.5%, transparent 50.5%),
+    linear-gradient(transparent 49.5%, rgba(37,76,68,.12) 49.5% 50.5%, transparent 50.5%),
+    var(--exp-paper);
+  background-size: 82px 82px;
+}
+
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero-media,
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero-copy { grid-area: garden; }
+
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero-media {
+  min-height: 660px;
+  margin: 36px;
+  border-radius: 46% 46% 4px 4px / 33% 33% 4px 4px;
+  box-shadow: inset 0 0 0 12px rgba(243,239,228,.22);
+}
+
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero-media img { min-height: 660px; }
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero-media::after {
+  background: linear-gradient(90deg, rgba(23,46,41,.68), rgba(23,46,41,.08) 62%);
+}
+
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero-copy {
+  align-self: center;
+  width: min(46%, 650px);
+  margin: 70px 0 70px 72px;
+  padding: clamp(40px, 5vw, 76px);
+  color: var(--exp-ink);
+  border: 1px solid rgba(32,59,53,.26);
+  border-radius: 140px 140px 10px 10px / 92px 92px 10px 10px;
+  background: rgba(243,239,228,.94);
+  box-shadow: 18px 18px 0 rgba(37,76,68,.2);
+  backdrop-filter: blur(10px);
+}
+
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero h1 { font-size: clamp(3.5rem, 6.4vw, 7.2rem); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-hero h1 span { color: var(--exp-accent); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-motif { grid-area: motif; border-top: 12px solid var(--exp-deep); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-motif span { justify-content: center; }
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters { gap: 24px; padding: 28px; background: rgba(216,227,218,.5); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article {
+  border: 0;
+  background: #f8f4ea;
+  box-shadow: inset 0 0 0 1px rgba(32,59,53,.2), 8px 10px 0 rgba(37,76,68,.08);
+}
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(1),
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(5) { border-radius: 100px 100px 6px 6px; }
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(2),
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(6) { border-radius: 6px 90px 6px 90px; transform: translateY(28px); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(3),
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(7) { background: var(--exp-wash); border-radius: 70px 6px 70px 6px; }
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(4),
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(8) { border-radius: 50%; }
+.exp-guide[data-visual="garden-window-sequence"] .exp-chapters article::before { width: 42px; height: 2px; top: 24px; left: 50%; transform: translateX(-50%); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-decision-grid article { border: 0; border-radius: 90px 90px 8px 8px; border-bottom: 7px solid var(--exp-deep); }
+.exp-guide[data-visual="garden-window-sequence"] .exp-route { gap: 14px; border: 0; }
+.exp-guide[data-visual="garden-window-sequence"] .exp-route article { border: 1px solid var(--exp-line); border-radius: 6px 70px 6px 70px; }
+
+/* 25 — Nanjing: a brick wall section and stacked documentary strata. */
+.exp-guide[data-visual="capital-strata-wall"] {
+  --exp-paper: #eee6d8;
+  --exp-ink: #292727;
+  --exp-accent: #8f352f;
+  --exp-accent-2: #b89152;
+  --exp-wash: #d9d2c5;
+  --exp-deep: #303438;
+}
+
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero {
+  grid-template-columns: minmax(400px, .9fr) minmax(0, 1.1fr);
+  grid-template-areas: "media copy" "motif motif";
+  min-height: 700px;
+  border: 0;
+  border-top: 20px solid var(--exp-accent);
+  border-bottom: 20px solid var(--exp-deep);
+  background:
+    linear-gradient(335deg, transparent 0 74%, rgba(143,53,47,.08) 74%),
+    repeating-linear-gradient(0deg, transparent 0 43px, rgba(41,39,39,.1) 43px 45px),
+    repeating-linear-gradient(90deg, transparent 0 98px, rgba(41,39,39,.08) 98px 100px),
+    var(--exp-paper);
+}
+
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero-media { min-height: 620px; margin: 36px 0 36px 36px; clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 0 100%); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero-media img { min-height: 620px; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero-media::after { background: linear-gradient(90deg, transparent 58%, rgba(238,230,216,.58)); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero-copy { padding: clamp(46px, 6vw, 92px); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero h1 { font-family: "Arial Narrow", Inter, sans-serif; font-size: clamp(3.5rem, 6.6vw, 7.5rem); font-weight: 760; text-transform: uppercase; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-hero h1 span { font-family: Georgia, serif; font-weight: 500; text-transform: none; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-motif { background: var(--exp-deep); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-motif span { border-right: 4px solid var(--exp-accent); font-family: "Courier New", monospace; text-transform: uppercase; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters { display: block; border-top: 12px solid var(--exp-deep); border-bottom: 12px solid var(--exp-deep); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article,
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(n) {
+  display: grid;
+  grid-template-columns: 150px minmax(230px, .7fr) minmax(320px, 1.3fr);
+  gap: 28px;
+  align-items: start;
+  min-height: 0;
+  padding: 34px 38px;
+  border: 0;
+  border-bottom: 2px solid rgba(41,39,39,.2);
+  background: #f4ede1;
+}
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(2n) { color: #f5ecdc; background: var(--exp-deep); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(3n) { background-image: linear-gradient(90deg, rgba(143,53,47,.12) 0 12%, transparent 12%); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article::before { width: 82px; height: 6px; top: 42px; left: 38px; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters small { padding-left: 96px; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters h3 { margin: 0; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(2n) h3,
+.exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(2n) small { color: #f5ecdc; }
+.exp-guide[data-visual="capital-strata-wall"] .exp-decision-grid article { border: 0; border-top: 12px solid var(--exp-accent); box-shadow: 8px 8px 0 var(--exp-deep); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-route { border: 0; gap: 0; transform: rotate(-.25deg); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-route article { border: 0; border-left: 10px solid var(--exp-deep); }
+.exp-guide[data-visual="capital-strata-wall"] .exp-route article:nth-child(2n) { background: var(--exp-wash); }
+
+/* 26 — Huangshan: a vertical cloud line, cut granite and timed descent. */
+.exp-guide[data-visual="cloudline-ascent"] {
+  --exp-paper: #edf0e6;
+  --exp-ink: #20352f;
+  --exp-accent: #b05b39;
+  --exp-accent-2: #d3a94d;
+  --exp-wash: #d6dfd7;
+  --exp-deep: #1d463f;
+}
+
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero {
+  grid-template-columns: 1fr;
+  grid-template-areas: "media" "copy" "motif";
+  min-height: 0;
+  border: 0;
+  background: var(--exp-deep);
+  overflow: visible;
+}
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero-media {
+  min-height: 590px;
+  height: 590px;
+  clip-path: polygon(0 18%, 10% 12%, 18% 24%, 29% 8%, 38% 20%, 50% 0, 60% 22%, 73% 9%, 82% 25%, 92% 13%, 100% 21%, 100% 100%, 0 100%);
+}
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero-media img { min-height: 590px; filter: saturate(.7) contrast(1.12); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero-media::after { background: linear-gradient(0deg, rgba(29,70,63,.55), transparent 52%); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero-copy {
+  width: min(76%, 1000px);
+  margin: -130px auto 0;
+  padding: clamp(44px, 6vw, 86px);
+  color: var(--exp-ink);
+  border-top: 14px solid var(--exp-accent-2);
+  background: rgba(237,240,230,.96);
+  box-shadow: 20px 24px 0 rgba(13,44,39,.25);
+}
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero h1 { font-size: clamp(3.9rem, 8vw, 8.6rem); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-hero h1 span { max-width: 740px; color: var(--exp-accent); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-motif { margin-top: 58px; background: var(--exp-deep); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-motif span { justify-content: center; }
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters { grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: start; padding: 48px 20px 20px; background: linear-gradient(180deg, rgba(214,223,215,.15), rgba(214,223,215,.7)); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article,
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(n) { grid-column: span 1; min-height: 390px; border: 0; border-radius: 90px 90px 6px 6px; background: #f4f4e9; box-shadow: inset 0 -8px 0 var(--exp-deep); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(2),
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(6) { margin-top: 70px; }
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(3),
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(7) { margin-top: 26px; background: var(--exp-wash); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(4),
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(8) { margin-top: 108px; }
+.exp-guide[data-visual="cloudline-ascent"] .exp-chapters article::before { width: 18px; height: 18px; top: 28px; left: calc(50% - 9px); border-radius: 50%; box-shadow: 0 0 0 8px rgba(176,91,57,.13); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-decision-grid article { border: 0; background: linear-gradient(155deg, #f4f4e9 0 72%, var(--exp-wash) 72%); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-route { border: 0; gap: 16px; align-items: start; }
+.exp-guide[data-visual="cloudline-ascent"] .exp-route article { border: 0; border-left: 3px solid var(--exp-accent); border-bottom: 8px solid var(--exp-deep); }
+.exp-guide[data-visual="cloudline-ascent"] .exp-route article:nth-child(2) { margin-top: 34px; }
+.exp-guide[data-visual="cloudline-ascent"] .exp-route article:nth-child(3) { margin-top: 68px; }
+.exp-guide[data-visual="cloudline-ascent"] .exp-route article:nth-child(4) { margin-top: 102px; }
+
+/* 27 — Qingdao: harbor postcards, signal flags and a moving tide line. */
+.exp-guide[data-visual="harbor-tide-postcard"] {
+  --exp-paper: #f4eddb;
+  --exp-ink: #12364a;
+  --exp-accent: #c9503d;
+  --exp-accent-2: #e0b54d;
+  --exp-wash: #d8e7e6;
+  --exp-deep: #0e4c67;
+}
+
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero {
+  grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+  grid-template-areas: "copy media" "motif motif";
+  min-height: 680px;
+  margin: 28px 18px 48px;
+  border: 14px solid #fffaf0;
+  outline: 2px solid var(--exp-deep);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 29px, rgba(14,76,103,.07) 29px 30px),
+    var(--exp-paper);
+  box-shadow: 18px 24px 0 rgba(14,76,103,.2);
+  transform: rotate(-.35deg);
+}
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero > * { transform: rotate(.35deg); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero::before {
+  content: "青島 / QINGDAO";
+  position: absolute;
+  z-index: 4;
+  right: 34px;
+  top: 30px;
+  padding: 12px 16px;
+  color: var(--exp-deep);
+  border: 3px double var(--exp-deep);
+  border-radius: 50%;
+  font: 800 .68rem/1.2 Inter, sans-serif;
+  letter-spacing: .12em;
+  transform: rotate(8deg);
+}
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-copy { padding: clamp(48px, 7vw, 100px); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero h1 { font-family: "Arial Narrow", Inter, sans-serif; font-size: clamp(3.8rem, 7vw, 8rem); font-weight: 850; text-transform: uppercase; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero h1 span { font-family: Georgia, serif; font-weight: 500; text-transform: none; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-media { min-height: 570px; margin: 54px 42px 54px 0; border: 12px solid white; box-shadow: 8px 10px 0 rgba(18,54,74,.2); transform: rotate(2deg); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-media img { min-height: 570px; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-media::after { background: linear-gradient(0deg, rgba(10,54,75,.38), transparent 55%); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-motif { border-top: 6px solid white; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-motif span:nth-child(odd) { background: #0e4c67; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-motif span:nth-child(even) { background: #176a83; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters { gap: 22px; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters article { border: 8px solid white; outline: 1px solid rgba(18,54,74,.28); box-shadow: 8px 10px 0 rgba(14,76,103,.1); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters article:nth-child(3n+1) { transform: rotate(-.7deg); background: #f6efdc; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters article:nth-child(3n+2) { transform: translateY(28px) rotate(.65deg); background: var(--exp-wash); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters article:nth-child(3n) { border-radius: 70px 8px 70px 8px; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters article::before { width: 100%; height: 5px; background: linear-gradient(90deg, var(--exp-deep) 0 42%, white 42% 52%, var(--exp-accent) 52% 100%); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-decision-grid article { border: 0; border-top: 9px solid var(--exp-deep); border-radius: 0 0 60px 60px; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-route { gap: 18px; border: 0; }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-route article { border: 9px solid white; outline: 1px solid rgba(18,54,74,.25); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-route article:nth-child(odd) { transform: rotate(-.8deg); }
+.exp-guide[data-visual="harbor-tide-postcard"] .exp-route article:nth-child(even) { transform: rotate(.8deg); background: var(--exp-wash); }
+
+@media (max-width: 1080px) {
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero-copy { width: min(58%, 650px); }
+  .exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(n) { grid-template-columns: 130px 1fr; }
+  .exp-guide[data-visual="capital-strata-wall"] .exp-chapters p { grid-column: 2; }
+  .exp-guide[data-visual="cloudline-ascent"] .exp-chapters { grid-template-columns: repeat(2, 1fr); }
+  .exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(n) { min-height: 320px; margin-top: 0; }
+}
+
+@media (max-width: 760px) {
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero,
+  .exp-guide[data-visual="capital-strata-wall"] .exp-hero,
+  .exp-guide[data-visual="cloudline-ascent"] .exp-hero,
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "media" "copy" "motif";
+    min-height: 0;
+    margin: 0 0 30px;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    transform: none;
+    overflow: hidden;
+  }
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero > * { transform: none; }
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero::before { right: 14px; top: 14px; }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero-media,
+  .exp-guide[data-visual="capital-strata-wall"] .exp-hero-media,
+  .exp-guide[data-visual="cloudline-ascent"] .exp-hero-media,
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-media {
+    grid-area: media;
+    width: 100%;
+    height: 64vw;
+    min-height: 280px;
+    max-height: 410px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    clip-path: none;
+    box-shadow: none;
+    transform: none;
+  }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero-media img,
+  .exp-guide[data-visual="capital-strata-wall"] .exp-hero-media img,
+  .exp-guide[data-visual="cloudline-ascent"] .exp-hero-media img,
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-media img { min-height: 280px; }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero-copy,
+  .exp-guide[data-visual="capital-strata-wall"] .exp-hero-copy,
+  .exp-guide[data-visual="cloudline-ascent"] .exp-hero-copy,
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero-copy {
+    grid-area: copy;
+    display: flex;
+    width: auto;
+    margin: 0;
+    padding: 32px 24px 36px;
+    border: 0;
+    border-radius: 0;
+    background: var(--exp-paper);
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-motif,
+  .exp-guide[data-visual="capital-strata-wall"] .exp-motif,
+  .exp-guide[data-visual="cloudline-ascent"] .exp-motif,
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-motif { grid-area: motif; width: auto; margin: 0; transform: none; }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero h1,
+  .exp-guide[data-visual="capital-strata-wall"] .exp-hero h1,
+  .exp-guide[data-visual="cloudline-ascent"] .exp-hero h1,
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-hero h1 { font-size: clamp(2.7rem, 13vw, 4.25rem); }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-chapters { padding: 14px; }
+  .exp-guide[data-visual="garden-window-sequence"] .exp-chapters article:nth-child(n),
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-chapters article:nth-child(n) { margin: 0; transform: none; border-radius: 28px; }
+  .exp-guide[data-visual="capital-strata-wall"] .exp-chapters article:nth-child(n) { display: block; padding: 28px 24px; }
+  .exp-guide[data-visual="capital-strata-wall"] .exp-chapters small { padding-left: 82px; }
+  .exp-guide[data-visual="capital-strata-wall"] .exp-chapters h3 { margin-bottom: 14px; }
+  .exp-guide[data-visual="capital-strata-wall"] .exp-chapters p { grid-column: auto; }
+  .exp-guide[data-visual="cloudline-ascent"] .exp-chapters { grid-template-columns: 1fr; padding: 14px; }
+  .exp-guide[data-visual="cloudline-ascent"] .exp-chapters article:nth-child(n) { grid-column: auto; min-height: 0; margin: 0; border-radius: 52px 52px 8px 8px; }
+  .exp-guide[data-visual="cloudline-ascent"] .exp-route article:nth-child(n),
+  .exp-guide[data-visual="harbor-tide-postcard"] .exp-route article:nth-child(n) { margin: 0; transform: none; }
+}
+
+@media (prefers-contrast: more) {
+  .exp-guide[data-visual="garden-window-sequence"] .exp-hero-copy { background: #f3efe4; }
+  .exp-guide[data-visual="cloudline-ascent"] .exp-hero-copy { background: #edf0e6; }
+}

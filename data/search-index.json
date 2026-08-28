@@ -1646,5 +1646,37 @@
     "type": "Regional city and steppe guide",
     "summary": "Use Hohhot for context, then choose one ethical Inner Mongolia corridor with real distances, ecology and community consent.",
     "keywords": ["hohhot", "inner mongolia", "xilin gol", "hulun buir", "xanadu", "inner mongolia itinerary"]
+  },
+  {
+    "title": "Suzhou Travel Guide",
+    "url": "/china/suzhou/",
+    "parent": "China · Jiangsu",
+    "type": "Garden and canal city guide",
+    "summary": "Choose two contrasting Suzhou gardens, reserve the museum, then connect canal streets and one deliberate outer-city branch.",
+    "keywords": ["suzhou", "suzhou gardens", "suzhou museum", "pingjiang road", "tiger hill", "suzhou itinerary"]
+  },
+  {
+    "title": "Nanjing Travel Guide",
+    "url": "/china/nanjing/",
+    "parent": "China · Jiangsu",
+    "type": "Capital history and memory guide",
+    "summary": "Sequence Nanjing’s walls, museum, Purple Mountain and memorial sites without flattening distinct historical and ethical layers.",
+    "keywords": ["nanjing", "nanjing museum", "ming xiaoling", "sun yat-sen mausoleum", "nanjing memorial hall", "nanjing itinerary"]
+  },
+  {
+    "title": "Huangshan Travel Guide",
+    "url": "/china/huangshan/",
+    "parent": "China · Anhui",
+    "type": "Mountain weather and route guide",
+    "summary": "Solve Huangshan’s gateway, reserved direction, cableway and descent before adding a summit night or Anhui village branch.",
+    "keywords": ["huangshan", "mount huangshan", "yellow mountain", "huangshan cableway", "tangkou", "huangshan itinerary"]
+  },
+  {
+    "title": "Qingdao Travel Guide",
+    "url": "/china/qingdao/",
+    "parent": "China · Shandong",
+    "type": "Coastal city and mountain guide",
+    "summary": "Plan Qingdao by west and east coast, respect beach flags, read brewery and architectural history, then give Laoshan a full day.",
+    "keywords": ["qingdao", "zhanqiao", "badaguan", "tsingtao beer museum", "laoshan", "qingdao itinerary"]
   }
 ]

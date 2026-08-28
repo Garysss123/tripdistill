@@ -28,7 +28,11 @@ const searchParents = {
   luoyang: 'China · Henan',
   xian: 'China · Shaanxi',
   harbin: 'China · Heilongjiang',
-  'hohhot-inner-mongolia': 'China · Inner Mongolia'
+  'hohhot-inner-mongolia': 'China · Inner Mongolia',
+  suzhou: 'China · Jiangsu',
+  nanjing: 'China · Jiangsu',
+  huangshan: 'China · Anhui',
+  qingdao: 'China · Shandong'
 };
 
 function escapeHtml(value = '') {
