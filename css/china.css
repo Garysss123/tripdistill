@@ -73,20 +73,20 @@ body[data-country="china"] {
 .destination-directory { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); grid-auto-flow: dense; gap: .65rem; padding: .65rem; background: var(--china-ink); }
 .destination-directory .destination-card { position: relative; min-height: 23rem; grid-column: auto; display: flex; align-items: end; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.22); border-radius: .35rem; color: #fff; background: var(--china-ink-soft); box-shadow: 0 .85rem 1.7rem rgba(0,0,0,.18); isolation: isolate; }
 .destination-directory .destination-card.feature { grid-column: span 2; min-height: 25rem; }
-.destination-directory .destination-card::before { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgba(11,18,15,.04) 20%, rgba(11,18,15,.42) 54%, rgba(11,18,15,.98) 100%); }
-.destination-directory .destination-card::after { content: ""; position: absolute; z-index: 3; inset: .55rem; border: 1px solid rgba(255,255,255,.22); border-radius: .15rem; pointer-events: none; }
+.destination-directory .destination-card::before { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgba(8,15,13,.05) 16%, rgba(8,15,13,.58) 48%, rgba(8,15,13,.96) 76%, #08100e 100%); }
+.destination-directory .destination-card::after { content: ""; position: absolute; z-index: 3; inset: .55rem; border: 1px solid rgba(255,255,255,.22); border-radius: .15rem; background: none; pointer-events: none; }
 .destination-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.88) contrast(1.04); transition: transform .45s ease, filter .45s ease; }
 .destination-card-copy { position: relative; z-index: 2; width: 100%; padding: 5.8rem 1.25rem 1.25rem; }
 .destination-card.feature .destination-card-copy { max-width: 44rem; padding-right: clamp(1.25rem,8vw,7rem); }
-.destination-card small { display: block; color: #f2d58d; font-size: .62rem; font-weight: 950; letter-spacing: .13em; text-shadow: 0 1px 10px rgba(0,0,0,.5); }
-.destination-card h4 { margin: .55rem 0 .65rem; color: #fff; font: 500 clamp(1.45rem,2.1vw,2.15rem)/.95 Georgia, serif; }
-.destination-card p { margin: 0; color: rgba(255,255,255,.78); font-size: .84rem; line-height: 1.55; }
+.destination-card small { display: block; color: #ffe09a; font-size: .62rem; font-weight: 950; letter-spacing: .13em; text-shadow: 0 2px 12px rgba(0,0,0,.9); }
+.destination-card h4 { margin: .55rem 0 .65rem; color: #fffdf7; font: 500 clamp(1.45rem,2.1vw,2.15rem)/.95 Georgia, serif; text-shadow: 0 2px 16px rgba(0,0,0,.96); }
+.destination-card p { margin: 0; color: #f5efe3; font-size: .84rem; line-height: 1.55; text-shadow: 0 1px 10px rgba(0,0,0,.92); }
 .destination-card a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: .18em; }
 .destination-card a::after { content: ""; position: absolute; z-index: 4; inset: 0; }
-.destination-card-status { display: inline-flex; align-items: center; gap: .35rem; margin-top: .9rem; padding-top: .65rem; border-top: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.74); font-size: .65rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.destination-card-status { display: inline-flex; align-items: center; gap: .35rem; margin-top: .9rem; padding-top: .65rem; border-top: 1px solid rgba(255,255,255,.52); color: #d9eee5; font-size: .65rem; font-weight: 900; letter-spacing: .09em; text-shadow: 0 1px 10px rgba(0,0,0,.92); text-transform: uppercase; }
 .destination-card.live { outline: 2px solid var(--china-gold); outline-offset: -2px; }
 .destination-card.live::after { border-color: rgba(244,215,144,.65); }
-.destination-card.live .destination-card-status { color: var(--china-gold); }
+.destination-card.live .destination-card-status { color: #ffdc7d; }
 .destination-card.live:hover img, .destination-card.live:focus-within img { transform: scale(1.035); filter: saturate(1) contrast(1.06); }
 .destination-region:nth-of-type(3) .destination-card::after { border-radius: 3rem 3rem .15rem .15rem; }
 .destination-region:nth-of-type(4) .destination-card:nth-child(3n) { border-radius: 5rem .35rem .35rem .35rem; }
