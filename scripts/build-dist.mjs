@@ -18,6 +18,7 @@ const publicDirectories = [
   'ja',
   'js',
   'ko',
+  'malaysia',
   'privacy-policy',
   'south-korea',
   'thailand',
@@ -78,6 +79,21 @@ for (const file of publicFiles) {
 }
 
 const outputFiles = collectFiles(outputRoot);
+const sitemap = fs.readFileSync(requireSource('sitemap.xml'), 'utf8');
+const publishedPaths = [...sitemap.matchAll(/<loc>(https:\/\/tripdistill\.com[^<]+)<\/loc>/g)].map((match) => new URL(match[1]).pathname);
+const missingPublishedRoutes = publishedPaths.filter((pathname) => {
+  const relativeFile = pathname === '/'
+    ? 'index.html'
+    : pathname.endsWith('/')
+      ? path.join(pathname.slice(1), 'index.html')
+      : pathname.slice(1);
+  return !fs.existsSync(path.join(outputRoot, relativeFile));
+});
+
+if (missingPublishedRoutes.length) {
+  throw new Error(`Deployment artifact is missing ${missingPublishedRoutes.length} sitemap route(s): ${missingPublishedRoutes.join(', ')}`);
+}
+
 const oversized = outputFiles.filter((file) => fs.statSync(file).size > maxFileBytes);
 
 if (oversized.length) {
@@ -98,4 +114,5 @@ const imageCount = outputFiles.filter((file) => /\.(?:avif|gif|jpe?g|png|svg|web
 const totalBytes = outputFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
 
 console.log(`Built dist: ${outputFiles.length.toLocaleString()} files (${htmlCount} HTML, ${imageCount} images, ${(totalBytes / 1024 / 1024).toFixed(1)} MiB).`);
+console.log(`Verified ${publishedPaths.length.toLocaleString()} sitemap routes in the deployment artifact.`);
 console.log(`Cloudflare Pages file headroom: ${(hardLimit - outputFiles.length).toLocaleString()} files before the safety boundary.`);
