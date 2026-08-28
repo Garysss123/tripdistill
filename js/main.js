@@ -31,11 +31,12 @@
       editionNote: 'English edition · Facts change—verify time-sensitive details with linked official sources.',
       resultTypeFallback: 'Guide',
       sidebarAsia: 'Asia',
+      sidebarMalaysia: 'Malaysia',
       sidebarChina: 'China',
       sidebarJapan: 'Japan',
       sidebarKorea: 'South Korea',
       sidebarThailand: 'Thailand',
-      sidebarCountries: '4 countries'
+      sidebarCountries: '5 countries'
     },
     'zh-Hant': {
       componentError: '導覽元件暫時無法載入，請重新整理頁面再試一次。',
@@ -44,11 +45,12 @@
       editionNote: '繁體中文版 · 資訊可能變動，請透過頁面連結的官方來源確認具時效性的細節。',
       resultTypeFallback: '指南',
       sidebarAsia: '亞洲',
+      sidebarMalaysia: '馬來西亞',
       sidebarChina: '中國',
       sidebarJapan: '日本',
       sidebarKorea: '韓國',
       sidebarThailand: '泰國',
-      sidebarCountries: '4 個國家'
+      sidebarCountries: '5 個國家'
     },
     ja: {
       componentError: 'ナビゲーションを読み込めませんでした。ページを再読み込みしてください。',
@@ -57,11 +59,12 @@
       editionNote: '日本語版 · 最新情報は変更されるため、リンク先の公式情報をご確認ください。',
       resultTypeFallback: 'ガイド',
       sidebarAsia: 'アジア',
+      sidebarMalaysia: 'マレーシア',
       sidebarChina: '中国',
       sidebarJapan: '日本',
       sidebarKorea: '韓国',
       sidebarThailand: 'タイ',
-      sidebarCountries: '4か国'
+      sidebarCountries: '5か国'
     },
     ko: {
       componentError: '탐색 메뉴를 불러오지 못했습니다. 페이지를 새로고침해 주세요.',
@@ -70,11 +73,12 @@
       editionNote: '한국어판 · 시기에 따라 달라지는 정보는 연결된 공식 자료에서 다시 확인하세요.',
       resultTypeFallback: '가이드',
       sidebarAsia: '아시아',
+      sidebarMalaysia: '말레이시아',
       sidebarChina: '중국',
       sidebarJapan: '일본',
       sidebarKorea: '대한민국',
       sidebarThailand: '태국',
-      sidebarCountries: '4개 국가'
+      sidebarCountries: '5개 국가'
     },
     th: {
       componentError: 'ไม่สามารถโหลดเมนูนำทางได้ โปรดลองรีเฟรชหน้าเว็บ',
@@ -83,11 +87,12 @@
       editionNote: 'ฉบับภาษาไทย · ข้อมูลอาจเปลี่ยนแปลง โปรดตรวจสอบรายละเอียดล่าสุดจากแหล่งข้อมูลทางการที่เชื่อมโยงไว้',
       resultTypeFallback: 'คู่มือ',
       sidebarAsia: 'เอเชีย',
+      sidebarMalaysia: 'มาเลเซีย',
       sidebarChina: 'จีน',
       sidebarJapan: 'ญี่ปุ่น',
       sidebarKorea: 'เกาหลีใต้',
       sidebarThailand: 'ไทย',
-      sidebarCountries: '4 ประเทศ'
+      sidebarCountries: '5 ประเทศ'
     }
   };
   const COPY = COPY_BY_LOCALE[LOCALE];
@@ -292,6 +297,7 @@
     if (!explore || !links || links.querySelector('[data-sidebar-id="asia"]')) return;
 
     const definitions = [
+      { id: 'malaysia', path: '/malaysia/', label: COPY.sidebarMalaysia },
       { id: 'china', path: '/china/', label: COPY.sidebarChina },
       { id: 'japan', path: '/japan/', label: COPY.sidebarJapan },
       { id: 'south-korea', path: '/south-korea/', label: COPY.sidebarKorea },

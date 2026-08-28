@@ -1,0 +1,515 @@
+:root {
+  --my-ink: #102b2a;
+  --my-forest: #174c3b;
+  --my-jade: #2f7d68;
+  --my-strait: #126e82;
+  --my-sea: #7bd1c6;
+  --my-hibiscus: #c62f4b;
+  --my-brass: #d5a84d;
+  --my-sand: #f4ead6;
+  --my-paper: #fffaf0;
+  --my-night: #09272b;
+}
+
+body[data-country="malaysia"] {
+  background:
+    radial-gradient(circle at 81% 8%, rgba(21, 117, 128, .08), transparent 22rem),
+    linear-gradient(180deg, #f8f4e9 0, #fbfaf5 46rem, #f5f8f4 100%);
+}
+
+body[data-country="malaysia"] .section-kicker { color: var(--my-hibiscus); }
+
+.malaysia-page {
+  --my-rule: rgba(25, 77, 62, .18);
+  color: var(--my-ink);
+}
+
+.malaysia-page h1,
+.malaysia-page h2,
+.malaysia-page h3 {
+  text-wrap: balance;
+}
+
+.malaysia-hero {
+  position: relative;
+  min-height: 42rem;
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(22rem, 1.06fr);
+  overflow: hidden;
+  color: #f9f2df;
+  background:
+    linear-gradient(125deg, rgba(8, 39, 43, .98), rgba(18, 78, 66, .96) 58%, rgba(17, 96, 111, .9)),
+    var(--my-night);
+  border: 1px solid rgba(213, 168, 77, .42);
+  border-radius: 2.25rem .7rem 2.25rem .7rem;
+  box-shadow: 0 30px 70px rgba(10, 44, 42, .2);
+  isolation: isolate;
+}
+
+.malaysia-hero::before,
+.malaysia-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.malaysia-hero::before {
+  inset: 0 51% 0 0;
+  opacity: .22;
+  background:
+    linear-gradient(45deg, transparent 46%, rgba(213, 168, 77, .42) 47% 53%, transparent 54%) 0 0 / 3.4rem 3.4rem,
+    linear-gradient(-45deg, transparent 46%, rgba(123, 209, 198, .24) 47% 53%, transparent 54%) 0 0 / 3.4rem 3.4rem;
+  mask-image: linear-gradient(90deg, #000, transparent 90%);
+}
+
+.malaysia-hero::after {
+  width: 22rem;
+  height: 22rem;
+  left: -8rem;
+  bottom: -12rem;
+  border: 1.2rem solid rgba(198, 47, 75, .2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.2rem rgba(213, 168, 77, .08), 0 0 0 2.4rem rgba(123, 209, 198, .06);
+}
+
+.malaysia-hero-copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  padding: clamp(2rem, 5vw, 5.25rem) clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.malaysia-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1.3rem;
+  color: #f6d889;
+  font-size: .69rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.malaysia-kicker::before {
+  content: "";
+  width: 2.4rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.malaysia-hero h1 {
+  max-width: 9ch;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 7vw, 7rem);
+  font-weight: 500;
+  line-height: .86;
+  letter-spacing: -.07em;
+}
+
+.malaysia-hero h1 span {
+  display: block;
+  margin-top: .16em;
+  color: #88ded0;
+  font-size: .46em;
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.malaysia-hero-copy > p {
+  max-width: 35rem;
+  margin: 1.6rem 0 0;
+  color: #d6e8df;
+  font-size: clamp(.98rem, 1.4vw, 1.12rem);
+}
+
+.malaysia-hero .hero-actions { margin-top: 1.6rem; }
+.malaysia-hero .button.primary { color: #152e29; background: #f3ca67; box-shadow: 0 13px 28px rgba(0, 0, 0, .22); }
+.malaysia-hero .button.primary:hover { background: #ffe08a; }
+.malaysia-hero .button.secondary { color: #fff8e7; border-color: rgba(255, 255, 255, .35); background: rgba(255, 255, 255, .08); }
+.malaysia-hero .button.secondary:hover { background: rgba(255, 255, 255, .15); }
+
+.malaysia-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 2.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: .3rem 1.1rem .3rem 1.1rem;
+  background: rgba(255, 255, 255, .14);
+}
+
+.malaysia-hero-facts div { padding: .85rem; background: rgba(4, 29, 29, .44); }
+.malaysia-hero-facts strong { display: block; color: #fff8e7; font-family: Georgia, serif; font-size: 1.05rem; }
+.malaysia-hero-facts span { display: block; margin-top: .22rem; color: #a9cbc2; font-size: .65rem; line-height: 1.3; }
+
+.malaysia-hero-atlas {
+  position: relative;
+  min-height: 42rem;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.malaysia-hero-atlas > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% center;
+  border-radius: 0 .25rem 1.65rem .25rem;
+  filter: saturate(.88) contrast(1.04);
+}
+
+.malaysia-hero-atlas::after {
+  content: "";
+  position: absolute;
+  inset: 1rem 1rem 1rem 0;
+  border-radius: 0 .25rem 1.65rem .25rem;
+  background: linear-gradient(90deg, rgba(9, 39, 43, .45), transparent 32%, transparent 72%, rgba(5, 25, 28, .22));
+  pointer-events: none;
+}
+
+.malaysia-atlas-note {
+  position: absolute;
+  z-index: 2;
+  max-width: 12.5rem;
+  padding: .85rem 1rem;
+  color: #16362f;
+  background: rgba(255, 250, 240, .93);
+  border: 1px solid rgba(213, 168, 77, .6);
+  box-shadow: 0 16px 36px rgba(4, 30, 31, .25);
+  backdrop-filter: blur(8px);
+}
+
+.malaysia-atlas-note strong { display: block; font-family: Georgia, serif; font-size: 1.05rem; }
+.malaysia-atlas-note span { display: block; margin-top: .25rem; color: #49675d; font-size: .68rem; line-height: 1.35; }
+.malaysia-atlas-note.peninsula { top: 2.5rem; left: 1.5rem; border-radius: .15rem 1rem .15rem 1rem; }
+.malaysia-atlas-note.borneo { right: 2.4rem; bottom: 2.4rem; border-radius: 1rem .15rem 1rem .15rem; }
+
+.malaysia-hero-seal {
+  position: absolute;
+  z-index: 3;
+  right: 2.2rem;
+  top: 2.2rem;
+  width: 5.2rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  color: #fff6df;
+  background: var(--my-hibiscus);
+  border: .35rem double rgba(255, 255, 255, .72);
+  border-radius: 50%;
+  box-shadow: 0 12px 30px rgba(61, 12, 24, .26);
+  font-size: .58rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(7deg);
+}
+
+.malaysia-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: 1rem;
+  padding: .8rem;
+  border: 1px solid var(--my-rule);
+  background: rgba(255, 250, 240, .9);
+  border-radius: .25rem 1rem .25rem 1rem;
+  box-shadow: 0 8px 24px rgba(24, 72, 61, .06);
+}
+
+.malaysia-jump-nav a {
+  padding: .48rem .75rem;
+  color: var(--my-forest);
+  border: 1px solid rgba(47, 125, 104, .2);
+  border-radius: 999px;
+  font-size: .73rem;
+  font-weight: 850;
+}
+
+.malaysia-jump-nav a:hover { color: #fff; background: var(--my-forest); }
+
+.malaysia-landmass-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7rem minmax(0, 1fr);
+  align-items: stretch;
+  overflow: hidden;
+  color: #f8f3e3;
+  background: var(--my-night);
+  border: 1px solid rgba(213, 168, 77, .35);
+  border-radius: 1.8rem .4rem 1.8rem .4rem;
+  box-shadow: 0 20px 48px rgba(6, 38, 40, .13);
+}
+
+.malaysia-landmass {
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+  background: linear-gradient(135deg, rgba(255, 255, 255, .045), transparent);
+}
+
+.malaysia-landmass small,
+.malaysia-strait span {
+  color: #efc767;
+  font-size: .64rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.malaysia-landmass h2 { margin: .35rem 0 .6rem; color: #fff8e7; font-family: Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 500; }
+.malaysia-landmass p { margin: 0; color: #bed8d0; font-size: .86rem; }
+
+.malaysia-strait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0f6674, #174c61);
+}
+
+.malaysia-strait::before,
+.malaysia-strait::after {
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 3rem;
+  border: 1px solid rgba(123, 209, 198, .36);
+  border-radius: 50%;
+}
+.malaysia-strait::before { top: 23%; transform: rotate(18deg); }
+.malaysia-strait::after { bottom: 19%; transform: rotate(-13deg); }
+.malaysia-strait span { position: relative; z-index: 1; color: #d6eee9; writing-mode: vertical-rl; transform: rotate(180deg); }
+
+.malaysia-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.malaysia-gate-card {
+  position: relative;
+  grid-column: span 6;
+  min-height: 13rem;
+  padding: 1.45rem;
+  overflow: hidden;
+  border: 1px solid var(--my-rule);
+  background: rgba(255, 250, 240, .94);
+  border-radius: .35rem 1.35rem .35rem 1.35rem;
+  box-shadow: 0 10px 28px rgba(20, 72, 58, .07);
+}
+
+.malaysia-gate-card:nth-child(2),
+.malaysia-gate-card:nth-child(3) { border-radius: 1.35rem .35rem 1.35rem .35rem; }
+.malaysia-gate-card::after { content: attr(data-mark); position: absolute; right: .9rem; bottom: -.3rem; color: rgba(23, 76, 59, .07); font-family: Georgia, serif; font-size: 5.4rem; font-weight: 700; line-height: 1; }
+.malaysia-gate-card small { color: var(--my-hibiscus); font-size: .64rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.malaysia-gate-card h3 { margin: .4rem 0 .55rem; font-family: Georgia, serif; font-size: 1.35rem; }
+.malaysia-gate-card p { position: relative; z-index: 1; margin: 0; color: #536b61; font-size: .84rem; }
+.malaysia-gate-card a { color: var(--my-strait); font-weight: 850; text-decoration: underline; text-underline-offset: 2px; }
+
+.malaysia-movement {
+  position: relative;
+  padding: clamp(1.4rem, 4vw, 2.8rem);
+  color: #e8f2ed;
+  background: linear-gradient(135deg, #0d3d3a, #0f5661 63%, #123d51);
+  border-radius: .4rem 2rem .4rem 2rem;
+  box-shadow: 0 20px 50px rgba(8, 49, 52, .14);
+}
+
+.malaysia-movement::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(213, 168, 77, .25);
+  border-radius: .2rem 1.4rem .2rem 1.4rem;
+  pointer-events: none;
+}
+
+.malaysia-movement-head { position: relative; z-index: 1; max-width: 43rem; }
+.malaysia-movement-head small { color: #f3ce79; font-size: .66rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.malaysia-movement-head h2 { margin: .45rem 0 .6rem; color: #fff9e9; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; }
+.malaysia-movement-head p { margin: 0; color: #c8ddd5; }
+
+.malaysia-route-line {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.malaysia-route-stop { position: relative; padding: 1.2rem; background: rgba(4, 27, 28, .4); }
+.malaysia-route-stop::before { content: ""; width: .75rem; height: .75rem; display: block; margin-bottom: .75rem; background: #f2c75f; border: .22rem solid rgba(255, 255, 255, .16); border-radius: 50%; box-shadow: 0 0 0 .2rem rgba(242, 199, 95, .14); }
+.malaysia-route-stop small { color: #91c8bd; font-size: .62rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.malaysia-route-stop h3 { margin: .25rem 0 .45rem; color: #fff; font-size: 1rem; }
+.malaysia-route-stop p { margin: 0; color: #b9d1c9; font-size: .76rem; }
+.malaysia-route-warning { position: relative; z-index: 1; margin: 1rem 0 0; color: #f0d99d; font-size: .76rem; }
+
+.malaysia-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.malaysia-weather-card {
+  padding: 1.3rem;
+  border-top: .35rem solid var(--my-strait);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(18, 67, 61, .08);
+}
+.malaysia-weather-card:nth-child(2) { border-top-color: var(--my-hibiscus); transform: translateY(1rem); }
+.malaysia-weather-card:nth-child(3) { border-top-color: var(--my-brass); }
+.malaysia-weather-card small { color: #6f847b; font-size: .63rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.malaysia-weather-card h3 { margin: .35rem 0 .5rem; font-family: Georgia, serif; font-size: 1.3rem; }
+.malaysia-weather-card p { margin: 0; color: #5e7169; font-size: .82rem; }
+
+.malaysia-region-group { margin-top: 2.6rem; }
+.malaysia-region-heading { display: grid; grid-template-columns: 9rem 1fr; align-items: end; gap: 1rem; margin-bottom: 1rem; padding-bottom: .8rem; border-bottom: 1px solid var(--my-rule); }
+.malaysia-region-heading small { color: var(--my-hibiscus); font-size: .64rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.malaysia-region-heading h3 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.45rem, 3vw, 2.35rem); font-weight: 500; }
+
+.malaysia-region-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.malaysia-region-card {
+  --card-accent: var(--my-jade);
+  position: relative;
+  grid-column: span 6;
+  min-height: 29rem;
+  display: grid;
+  grid-template-rows: minmax(13rem, 1fr) auto;
+  overflow: hidden;
+  background: var(--my-paper);
+  border: 1px solid var(--my-rule);
+  border-radius: .35rem 1.6rem .35rem 1.6rem;
+  box-shadow: 0 14px 36px rgba(15, 64, 57, .09);
+}
+
+.malaysia-region-card:nth-child(4n+2),
+.malaysia-region-card:nth-child(4n+3) { border-radius: 1.6rem .35rem 1.6rem .35rem; }
+.malaysia-region-card.feature { grid-column: span 7; }
+.malaysia-region-card.compact { grid-column: span 5; }
+.malaysia-region-card[data-scene="strait"] { --card-accent: var(--my-strait); }
+.malaysia-region-card[data-scene="highland"] { --card-accent: #607c48; }
+.malaysia-region-card[data-scene="island"] { --card-accent: #13758b; }
+.malaysia-region-card[data-scene="borneo"] { --card-accent: #7a542f; }
+
+.malaysia-region-media { position: relative; min-height: 14rem; overflow: hidden; }
+.malaysia-region-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+.malaysia-region-card:hover .malaysia-region-media img { transform: scale(1.035); }
+.malaysia-region-number { position: absolute; top: .8rem; left: .8rem; min-width: 2.5rem; padding: .55rem .6rem; color: #fff; background: rgba(7, 35, 34, .85); border: 1px solid rgba(255, 255, 255, .32); font-family: Georgia, serif; font-size: 1.05rem; text-align: center; backdrop-filter: blur(8px); }
+
+.malaysia-region-copy { position: relative; padding: 1.25rem 1.3rem 1.4rem; border-top: .32rem solid var(--card-accent); }
+.malaysia-region-copy small { color: var(--card-accent); font-size: .63rem; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.malaysia-region-copy h4 { margin: .36rem 0 .5rem; font-family: Georgia, serif; font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.08; }
+.malaysia-region-copy p { margin: 0; color: #586b63; font-size: .82rem; }
+.malaysia-region-meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .9rem; }
+.malaysia-region-meta span { padding: .32rem .48rem; color: #4b655b; background: #edf3ed; border-radius: 999px; font-size: .63rem; font-weight: 800; }
+.malaysia-card-status { display: block; margin-top: .9rem; color: #8b5b27; font-size: .66rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
+
+.malaysia-itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.malaysia-itinerary {
+  position: relative;
+  padding: 1.45rem;
+  border: 1px solid var(--my-rule);
+  background: linear-gradient(160deg, #fffaf0, #f2efe3);
+  box-shadow: 0 10px 30px rgba(19, 70, 60, .07);
+}
+.malaysia-itinerary:nth-child(1) { border-radius: 2rem .2rem .2rem .2rem; }
+.malaysia-itinerary:nth-child(2) { transform: translateY(1rem); border-radius: .2rem 2rem .2rem .2rem; }
+.malaysia-itinerary:nth-child(3) { border-radius: .2rem .2rem 2rem .2rem; }
+.malaysia-itinerary > small { color: var(--my-hibiscus); font-size: .64rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.malaysia-itinerary h3 { margin: .4rem 0 .8rem; font-family: Georgia, serif; font-size: 1.4rem; }
+.malaysia-itinerary ol { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; counter-reset: my-route; }
+.malaysia-itinerary li { position: relative; padding-left: 1.6rem; color: #52675e; font-size: .8rem; }
+.malaysia-itinerary li::before { counter-increment: my-route; content: counter(my-route); position: absolute; left: 0; top: .05rem; width: 1rem; height: 1rem; display: grid; place-items: center; color: #fff; background: var(--my-jade); border-radius: 50%; font-size: .55rem; font-weight: 900; }
+
+.malaysia-table-note {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  overflow: hidden;
+  color: #fff8e8;
+  background: var(--my-ink);
+  border-radius: 1.6rem .35rem 1.6rem .35rem;
+}
+.malaysia-table-title { padding: clamp(1.5rem, 4vw, 3rem); background: linear-gradient(135deg, rgba(198, 47, 75, .88), rgba(105, 31, 53, .7)); }
+.malaysia-table-title small { color: #ffd783; font-size: .65rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.malaysia-table-title h2 { margin: .45rem 0 .65rem; color: #fff; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 500; }
+.malaysia-table-title p { margin: 0; color: #f5dce1; }
+.malaysia-table-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255, 255, 255, .12); }
+.malaysia-table-rules article { padding: 1.2rem; background: rgba(7, 34, 33, .82); }
+.malaysia-table-rules h3 { margin: 0 0 .35rem; color: #f5cf76; font-size: .9rem; }
+.malaysia-table-rules p { margin: 0; color: #c5d9d1; font-size: .76rem; }
+
+.malaysia-page .faq-list details { border-color: var(--my-rule); border-radius: .25rem 1rem .25rem 1rem; background: rgba(255, 250, 240, .92); }
+.malaysia-page .faq-list summary::after { color: var(--my-hibiscus); }
+.malaysia-page .sources { border-color: var(--my-rule); background: rgba(255, 250, 240, .92); border-radius: .35rem 1.2rem .35rem 1.2rem; }
+.malaysia-page .sources a { color: var(--my-strait); text-decoration-color: #6ab5bf; }
+
+@media (max-width: 980px) {
+  .malaysia-hero { grid-template-columns: 1fr; }
+  .malaysia-hero-atlas { min-height: 31rem; padding: 0 1rem 1rem; }
+  .malaysia-hero-atlas > img { border-radius: .2rem .2rem 1.5rem .2rem; }
+  .malaysia-hero-atlas::after { inset: 0 1rem 1rem; }
+  .malaysia-landmass-board { grid-template-columns: 1fr; }
+  .malaysia-strait { min-height: 5rem; }
+  .malaysia-strait span { writing-mode: horizontal-tb; transform: none; }
+  .malaysia-strait::before, .malaysia-strait::after { width: 42%; }
+  .malaysia-strait::before { left: 2%; top: 25%; }
+  .malaysia-strait::after { right: 2%; bottom: 20%; }
+  .malaysia-route-line { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .malaysia-weather-grid { grid-template-columns: 1fr 1fr; }
+  .malaysia-weather-card:nth-child(2) { transform: none; }
+  .malaysia-weather-card:last-child { grid-column: 1 / -1; }
+  .malaysia-region-card.feature, .malaysia-region-card.compact { grid-column: span 6; }
+  .malaysia-itinerary-grid { grid-template-columns: 1fr 1fr; }
+  .malaysia-itinerary:nth-child(2) { transform: none; }
+  .malaysia-itinerary:last-child { grid-column: 1 / -1; }
+  .malaysia-table-note { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  .malaysia-hero { min-height: 0; border-radius: 1.4rem .35rem 1.4rem .35rem; }
+  .malaysia-hero-copy { padding: 1.6rem 1.25rem 1.35rem; }
+  .malaysia-hero h1 { font-size: clamp(3.3rem, 19vw, 5.3rem); }
+  .malaysia-hero-facts { grid-template-columns: 1fr; }
+  .malaysia-hero-atlas { min-height: 24rem; padding: 0 .7rem .7rem; }
+  .malaysia-hero-atlas::after { inset: 0 .7rem .7rem; }
+  .malaysia-hero-seal { top: .8rem; right: 1.4rem; width: 4.4rem; }
+  .malaysia-atlas-note { max-width: 10rem; padding: .65rem .75rem; }
+  .malaysia-atlas-note.peninsula { top: 1rem; left: 1rem; }
+  .malaysia-atlas-note.borneo { right: 1rem; bottom: 1.2rem; }
+  .malaysia-gate-grid { grid-template-columns: 1fr; }
+  .malaysia-gate-card { grid-column: auto; }
+  .malaysia-route-line { grid-template-columns: 1fr; }
+  .malaysia-weather-grid { grid-template-columns: 1fr; }
+  .malaysia-weather-card:last-child { grid-column: auto; }
+  .malaysia-region-heading { grid-template-columns: 1fr; gap: .25rem; }
+  .malaysia-region-grid { grid-template-columns: 1fr; }
+  .malaysia-region-card,
+  .malaysia-region-card.feature,
+  .malaysia-region-card.compact { grid-column: auto; min-height: 27rem; }
+  .malaysia-itinerary-grid { grid-template-columns: 1fr; }
+  .malaysia-itinerary:last-child { grid-column: auto; }
+  .malaysia-table-rules { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .malaysia-hero { min-height: 0; color: #000; background: #fff; }
+  .malaysia-hero-atlas { min-height: 20rem; }
+  .malaysia-jump-nav { display: none; }
+}

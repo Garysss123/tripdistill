@@ -176,6 +176,7 @@ for (const absoluteUrl of publishedUrls) {
 
   if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20260826-9')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
   if (baseRoute.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20260826-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
+  if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260828-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);

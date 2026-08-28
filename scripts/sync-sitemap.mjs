@@ -6,6 +6,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const lastmod = '2026-08-28';
 const newRoutes = [
+  ['/malaysia/', 'monthly', '0.9'],
   ['/china/', 'monthly', '0.9'],
   ['/china/guangzhou/', 'monthly', '0.9'],
   ['/china/shenzhen/', 'monthly', '0.9'],

@@ -8,6 +8,14 @@
     "keywords": ["asia", "travel", "destinations", "planning"]
   },
   {
+    "title": "Malaysia Travel Guide",
+    "url": "/malaysia/",
+    "parent": "Malaysia",
+    "type": "Country",
+    "summary": "Choose between Peninsular Malaysia, Sabah and Sarawak with entry, monsoon, transport and fourteen regional planning briefs.",
+    "keywords": ["malaysia", "kuala lumpur", "penang", "melaka", "sabah", "sarawak", "borneo", "mdac"]
+  },
+  {
     "title": "Japan Travel Guide",
     "url": "/japan/",
     "parent": "Japan",
