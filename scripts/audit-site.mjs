@@ -7,7 +7,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
 const siteCssVersion = '/css/site.css?v=20260828-1';
-const mainJsVersion = '/js/main.js?v=20260828-1';
+const mainJsVersion = '/js/main.js?v=20260828-2';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
 
