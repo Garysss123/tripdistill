@@ -16,6 +16,38 @@
     "keywords": ["malaysia", "kuala lumpur", "penang", "melaka", "sabah", "sarawak", "borneo", "mdac"]
   },
   {
+    "title": "Kuala Lumpur & Putrajaya Travel Guide",
+    "url": "/malaysia/kuala-lumpur-putrajaya/",
+    "parent": "Malaysia · Strait Cities",
+    "type": "City Guide",
+    "summary": "Choose a rail-connected base, plan Batu Caves and give Putrajaya a separate, realistic branch.",
+    "keywords": ["kuala lumpur", "putrajaya", "kl sentral", "bukit bintang", "klcc", "batu caves", "rapid kl"]
+  },
+  {
+    "title": "George Town & Penang Travel Guide",
+    "url": "/malaysia/george-town-penang/",
+    "parent": "Malaysia · Strait Cities",
+    "type": "City and Island Guide",
+    "summary": "Plan George Town heritage streets, Penang Hill, the ferry, island branches and a heat-aware route.",
+    "keywords": ["george town", "penang", "penang hill", "chew jetty", "ferry", "air itam", "rapid penang"]
+  },
+  {
+    "title": "Melaka Travel Guide",
+    "url": "/malaysia/melaka/",
+    "parent": "Malaysia · Strait Cities",
+    "type": "City Guide",
+    "summary": "Use the river to connect Melaka's civic hill, trading streets, living neighborhoods and terminal transfer.",
+    "keywords": ["melaka", "malacca", "jonker", "stadthuys", "kampung morten", "melaka sentral", "river"]
+  },
+  {
+    "title": "Ipoh & Kinta Valley Travel Guide",
+    "url": "/malaysia/ipoh-kinta-valley/",
+    "parent": "Malaysia · Strait Cities",
+    "type": "City and Region Guide",
+    "summary": "Arrive by ETS, walk Ipoh old town and plan cave temples and Kinta limestone as separate road branches.",
+    "keywords": ["ipoh", "kinta valley", "ets", "cave temple", "sam poh tong", "limestone", "old town"]
+  },
+  {
     "title": "Japan Travel Guide",
     "url": "/japan/",
     "parent": "Japan",

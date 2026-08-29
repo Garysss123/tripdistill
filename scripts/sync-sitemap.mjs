@@ -4,46 +4,13 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
-const lastmod = '2026-08-28';
+const lastmod = '2026-08-29';
 const newRoutes = [
   ['/malaysia/', 'monthly', '0.9'],
-  ['/china/', 'monthly', '0.9'],
-  ['/china/guangzhou/', 'monthly', '0.9'],
-  ['/china/shenzhen/', 'monthly', '0.9'],
-  ['/china/xiamen-fujian-tulou/', 'monthly', '0.9'],
-  ['/china/sanya-hainan/', 'monthly', '0.9'],
-  ['/china/guilin-yangshuo/', 'monthly', '0.9'],
-  ['/china/changsha/', 'monthly', '0.9'],
-  ['/china/wuhan/', 'monthly', '0.9'],
-  ['/china/chengdu/', 'monthly', '0.9'],
-  ['/china/chongqing/', 'monthly', '0.9'],
-  ['/china/kunming/', 'monthly', '0.9'],
-  ['/china/dali/', 'monthly', '0.9'],
-  ['/china/lijiang-shangri-la/', 'monthly', '0.9'],
-  ['/china/zhangjiajie/', 'monthly', '0.9'],
-  ['/china/guiyang-guizhou/', 'monthly', '0.9'],
-  ['/china/dunhuang-hexi-corridor/', 'monthly', '0.9'],
-  ['/china/xinjiang-corridor/', 'monthly', '0.9'],
-  ['/china/lhasa-tibetan-plateau/', 'monthly', '0.9'],
-  ['/china/datong/', 'monthly', '0.9'],
-  ['/china/pingyao/', 'monthly', '0.9'],
-  ['/china/luoyang/', 'monthly', '0.9'],
-  ['/china/xian/', 'monthly', '0.9'],
-  ['/china/harbin/', 'monthly', '0.9'],
-  ['/china/hohhot-inner-mongolia/', 'monthly', '0.9'],
-  ['/china/suzhou/', 'monthly', '0.9'],
-  ['/china/nanjing/', 'monthly', '0.9'],
-  ['/china/huangshan/', 'monthly', '0.9'],
-  ['/china/qingdao/', 'monthly', '0.9'],
-  ['/china/hangzhou/', 'monthly', '0.9'],
-  ['/china/hangzhou/west-lake-north-broken-bridge/', 'monthly', '0.8'],
-  ['/china/hangzhou/west-lake-south-leifeng/', 'monthly', '0.8'],
-  ['/china/hangzhou/lingyin-feilai-peak/', 'monthly', '0.8'],
-  ['/china/hangzhou/longjing-nine-creeks/', 'monthly', '0.8'],
-  ['/china/hangzhou/grand-canal-gongchen-bridge/', 'monthly', '0.8'],
-  ['/china/hangzhou/hefang-southern-song/', 'monthly', '0.8'],
-  ['/china/hangzhou/xixi-wetland/', 'monthly', '0.8'],
-  ['/china/hangzhou/liangzhu-archaeological-city/', 'monthly', '0.8']
+  ['/malaysia/kuala-lumpur-putrajaya/', 'monthly', '0.8'],
+  ['/malaysia/george-town-penang/', 'monthly', '0.8'],
+  ['/malaysia/melaka/', 'monthly', '0.8'],
+  ['/malaysia/ipoh-kinta-valley/', 'monthly', '0.8']
 ];
 
 function isLocalizedRoute(route) {
