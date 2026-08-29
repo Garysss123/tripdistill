@@ -4,8 +4,9 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const siteCssVersion = '20260828-1';
-const mainJsVersion = '20260828-1';
-const chinaCssVersion = '20260827-3';
+const mainJsVersion = '20260830-1';
+const chinaCountryCssVersion = '20260828-4';
+const chinaGuideCssVersion = '20260827-3';
 const shanghaiCssVersion = '20260827-2';
 const hangzhouCssVersion = '20260828-1';
 
@@ -33,6 +34,7 @@ for (const route of routes) {
   let html = fs.readFileSync(file, 'utf8');
   html = html.replace(/\/css\/site\.css\?v=[0-9-]+/g, '/css/site.css?v=' + siteCssVersion);
   html = html.replace(/\/js\/main\.js\?v=[0-9-]+/g, '/js/main.js?v=' + mainJsVersion);
+  const chinaCssVersion = route === '/china/' ? chinaCountryCssVersion : chinaGuideCssVersion;
   html = html.replace(/\/css\/china\.css\?v=[0-9-]+/g, '/css/china.css?v=' + chinaCssVersion);
   html = html.replace(/\/css\/shanghai\.css\?v=[0-9-]+/g, '/css/shanghai.css?v=' + shanghaiCssVersion);
   html = html.replace(/\/css\/hangzhou\.css\?v=[0-9-]+/g, '/css/hangzhou.css?v=' + hangzhouCssVersion);

@@ -7,7 +7,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
 const siteCssVersion = '/css/site.css?v=20260828-1';
-const mainJsVersion = '/js/main.js?v=20260829-1';
+const mainJsVersion = '/js/main.js?v=20260830-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
 
@@ -178,6 +178,7 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20260826-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
   if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
+  if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);

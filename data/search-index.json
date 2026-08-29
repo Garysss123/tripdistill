@@ -48,6 +48,38 @@
     "keywords": ["ipoh", "kinta valley", "ets", "cave temple", "sam poh tong", "limestone", "old town"]
   },
   {
+    "title": "Langkawi Travel Guide",
+    "url": "/malaysia/langkawi/",
+    "parent": "Malaysia · Peninsula Wild",
+    "type": "Island Guide",
+    "summary": "Choose a beach base, one geoforest system and a weather-aware road, boat or cable-car plan.",
+    "keywords": ["langkawi", "kilim", "machinchang", "sky bridge", "pantai cenang", "geopark", "mangrove"]
+  },
+  {
+    "title": "Cameron Highlands Travel Guide",
+    "url": "/malaysia/cameron-highlands/",
+    "parent": "Malaysia · Peninsula Wild",
+    "type": "Highland Guide",
+    "summary": "Choose a ridge-town base and plan working farms, forest access, rain and mountain-road transfers.",
+    "keywords": ["cameron highlands", "tanah rata", "brinchang", "ringlet", "tea", "mossy forest", "pahang"]
+  },
+  {
+    "title": "Taman Negara Travel Guide",
+    "url": "/malaysia/taman-negara/",
+    "parent": "Malaysia · Peninsula Wild",
+    "type": "National Park Guide",
+    "summary": "Enter through the correct gateway and coordinate permits, river, trails, canopy access and guides.",
+    "keywords": ["taman negara", "kuala tahan", "kuala tembeling", "merapoh", "rainforest", "canopy", "pahang"]
+  },
+  {
+    "title": "Perhentian & Redang Travel Guide",
+    "url": "/malaysia/perhentian-redang/",
+    "parent": "Malaysia · Peninsula Wild",
+    "type": "Island and Marine Park Guide",
+    "summary": "Choose one island system, confirm season and jetty, and plan boats, reef conduct and return buffers.",
+    "keywords": ["perhentian", "redang", "kuala besut", "merang", "marine park", "snorkeling", "terengganu"]
+  },
+  {
     "title": "Japan Travel Guide",
     "url": "/japan/",
     "parent": "Japan",

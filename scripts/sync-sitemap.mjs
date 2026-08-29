@@ -4,13 +4,13 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
-const lastmod = '2026-08-29';
+const lastmod = '2026-08-30';
 const newRoutes = [
   ['/malaysia/', 'monthly', '0.9'],
-  ['/malaysia/kuala-lumpur-putrajaya/', 'monthly', '0.8'],
-  ['/malaysia/george-town-penang/', 'monthly', '0.8'],
-  ['/malaysia/melaka/', 'monthly', '0.8'],
-  ['/malaysia/ipoh-kinta-valley/', 'monthly', '0.8']
+  ['/malaysia/langkawi/', 'monthly', '0.8'],
+  ['/malaysia/cameron-highlands/', 'monthly', '0.8'],
+  ['/malaysia/taman-negara/', 'monthly', '0.8'],
+  ['/malaysia/perhentian-redang/', 'monthly', '0.8']
 ];
 
 function isLocalizedRoute(route) {
