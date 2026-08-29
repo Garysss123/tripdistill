@@ -10,7 +10,11 @@ const newRoutes = [
   ['/malaysia/langkawi/', 'monthly', '0.8'],
   ['/malaysia/cameron-highlands/', 'monthly', '0.8'],
   ['/malaysia/taman-negara/', 'monthly', '0.8'],
-  ['/malaysia/perhentian-redang/', 'monthly', '0.8']
+  ['/malaysia/perhentian-redang/', 'monthly', '0.8'],
+  ['/malaysia/kota-kinabalu-tunku-abdul-rahman/', 'monthly', '0.8'],
+  ['/malaysia/kinabalu-park-kundasang/', 'monthly', '0.8'],
+  ['/malaysia/sandakan-kinabatangan/', 'monthly', '0.8'],
+  ['/malaysia/semporna-tun-sakaran/', 'monthly', '0.8']
 ];
 
 function isLocalizedRoute(route) {
