@@ -1,20 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { allLocales, localeConfigs } from './i18n-lib.mjs';
+import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const lastmod = '2026-08-30';
 const newRoutes = [
   ['/malaysia/', 'monthly', '0.9'],
-  ['/malaysia/langkawi/', 'monthly', '0.8'],
-  ['/malaysia/cameron-highlands/', 'monthly', '0.8'],
-  ['/malaysia/taman-negara/', 'monthly', '0.8'],
-  ['/malaysia/perhentian-redang/', 'monthly', '0.8'],
-  ['/malaysia/kota-kinabalu-tunku-abdul-rahman/', 'monthly', '0.8'],
-  ['/malaysia/kinabalu-park-kundasang/', 'monthly', '0.8'],
-  ['/malaysia/sandakan-kinabatangan/', 'monthly', '0.8'],
-  ['/malaysia/semporna-tun-sakaran/', 'monthly', '0.8']
+  ...malaysiaDepthClusters.map((cluster) => [`/malaysia/${cluster.hubSlug}/`, 'monthly', '0.8']),
+  ...malaysiaDepthGuides.map((guide) => [guide.url, 'monthly', '0.7'])
 ];
 
 function isLocalizedRoute(route) {

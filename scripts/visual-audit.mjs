@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
@@ -28,6 +29,8 @@ const allRoutes = [
   ['kinabalu-park-kundasang', '/malaysia/kinabalu-park-kundasang/'],
   ['sandakan-kinabatangan', '/malaysia/sandakan-kinabatangan/'],
   ['semporna-tun-sakaran', '/malaysia/semporna-tun-sakaran/'],
+  ...malaysiaDepthClusters.filter((cluster) => cluster.newHub).map((cluster) => [`my-${cluster.hubSlug}`, `/malaysia/${cluster.hubSlug}/`]),
+  ...malaysiaDepthGuides.map((guide) => [`my-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -298,7 +301,14 @@ const allRoutes = [
   ['th-chengdu', '/th/china/chengdu/'],
   ['th-lhasa', '/th/china/lhasa-tibetan-plateau/'],
   ['th-xian', '/th/china/xian/'],
-  ['th-qingdao', '/th/china/qingdao/']
+  ['th-qingdao', '/th/china/qingdao/'],
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    ...malaysiaDepthClusters.filter((cluster) => cluster.newHub).map((cluster) => [`${locale}-my-${cluster.hubSlug}`, `/${locale}/malaysia/${cluster.hubSlug}/`]),
+    ...malaysiaDepthClusters.map((cluster) => {
+      const guide = cluster.guides[0];
+      return [`${locale}-my-${cluster.hubSlug}-${guide.slug}`, `/${locale}/malaysia/${cluster.hubSlug}/${guide.slug}/`];
+    })
+  ])
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));

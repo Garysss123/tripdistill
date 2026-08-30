@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "generate:china-expansion": "node scripts/generate-china-expansion.mjs",
+    "generate:malaysia-depth": "node scripts/generate-malaysia-depth.mjs",
     "i18n:export": "node scripts/export-i18n-batch.mjs",
     "i18n:batch": "node scripts/validate-i18n-batch.mjs",
     "i18n:sample": "node scripts/sample-i18n-batch.mjs",

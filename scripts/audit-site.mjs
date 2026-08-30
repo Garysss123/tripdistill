@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { allLocales, localeConfigs } from './i18n-lib.mjs';
 import { guides as chinaExpansionGuides } from '../data/china-expansion-guides.mjs';
+import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
@@ -10,6 +11,8 @@ const siteCssVersion = '/css/site.css?v=20260828-1';
 const mainJsVersion = '/js/main.js?v=20260830-2';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
+const malaysiaDepthByRoute = new Map(malaysiaDepthGuides.map((guide) => [guide.url, guide]));
+const malaysiaHubRoutes = new Set(malaysiaDepthClusters.map((cluster) => `/malaysia/${cluster.hubSlug}/`));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -180,6 +183,19 @@ for (const absoluteUrl of publishedUrls) {
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
   if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sabah.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);
+  if (malaysiaHubRoutes.has(baseRoute)) {
+    if (!html.includes('/css/malaysia-depth.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia field-guide directory stylesheet`);
+    if ((html.match(/class="md-hub-card"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia hub does not contain four linked field-guide cards`);
+  }
+  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sarawak.css?v=20260830-2')) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
+  const malaysiaDepthGuide = malaysiaDepthByRoute.get(baseRoute);
+  if (malaysiaDepthGuide) {
+    if (!html.includes('/css/malaysia-depth.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia field-guide stylesheet`);
+    if (!html.includes(`data-depth-family="${malaysiaDepthGuide.family}"`)) problems.push(`${relativePath}: missing ${malaysiaDepthGuide.family} field-family marker`);
+    if (!html.includes(`data-depth-instrument="${malaysiaDepthGuide.instrument}"`)) problems.push(`${relativePath}: missing ${malaysiaDepthGuide.instrument} field-instrument marker`);
+    if ((html.match(/class="md-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia field guide does not contain four route stages`);
+    if ((html.match(/class="md-check"/g) || []).length !== 3) problems.push(`${relativePath}: Malaysia field guide does not contain three risk checks`);
+  }
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
