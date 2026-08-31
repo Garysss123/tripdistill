@@ -3,6 +3,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
+import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
@@ -31,6 +32,9 @@ const allRoutes = [
   ['semporna-tun-sakaran', '/malaysia/semporna-tun-sakaran/'],
   ...malaysiaDepthClusters.filter((cluster) => cluster.newHub).map((cluster) => [`my-${cluster.hubSlug}`, `/malaysia/${cluster.hubSlug}/`]),
   ...malaysiaDepthGuides.map((guide) => [`my-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['vietnam', '/vietnam/'],
+  ...vietnamClusters.map((cluster) => [`vn-${cluster.slug}`, `/vietnam/${cluster.slug}/`]),
+  ...vietnamGuides.map((guide) => [`vn-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -308,6 +312,13 @@ const allRoutes = [
       const guide = cluster.guides[0];
       return [`${locale}-my-${cluster.hubSlug}-${guide.slug}`, `/${locale}/malaysia/${cluster.hubSlug}/${guide.slug}/`];
     })
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-vietnam`, `/${locale}/vietnam/`],
+    ...vietnamClusters.flatMap((cluster) => [
+      [`${locale}-vn-${cluster.slug}`, `/${locale}/vietnam/${cluster.slug}/`],
+      [`${locale}-vn-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/vietnam/${cluster.slug}/${cluster.guides[0].slug}/`]
+    ])
   ])
 ];
 
@@ -317,11 +328,12 @@ if (!routes.length) throw new Error(`TRIPDISTILL_ROUTE_FILTER did not match a kn
 
 const allViewports = [
   ['desktop', 1440, 1000, false],
+  ...(process.env.TRIPDISTILL_INCLUDE_TABLET === '1' ? [['tablet', 1100, 900, false]] : []),
   ['mobile', 390, 844, true]
 ];
 const requestedViewports = new Set((process.env.TRIPDISTILL_VIEWPORT_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
 const viewports = requestedViewports.size ? allViewports.filter(([name]) => requestedViewports.has(name)) : allViewports;
-if (!viewports.length) throw new Error(`TRIPDISTILL_VIEWPORT_FILTER did not match desktop or mobile: ${[...requestedViewports].join(', ')}`);
+if (!viewports.length) throw new Error(`TRIPDISTILL_VIEWPORT_FILTER did not match an enabled viewport: ${[...requestedViewports].join(', ')}`);
 
 if (!fs.existsSync(browserPath)) throw new Error(`Microsoft Edge not found at ${browserPath}`);
 

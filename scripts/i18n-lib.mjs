@@ -228,6 +228,7 @@ function localizeJsonLd(node, translations, config) {
   if (!node.childNodes?.[0] || node.childNodes[0].nodeName !== '#text') return;
   const data = JSON.parse(node.childNodes[0].value);
   walkJson(data, (value, key) => {
+    if (key === 'inLanguage') return config.code;
     if (jsonLdKeys.has(key) && shouldTranslate(value)) return translateValue(value, translations);
     if (value.startsWith('https://tripdistill.com/')) return localizedAbsoluteUrl(value, config);
     return value;

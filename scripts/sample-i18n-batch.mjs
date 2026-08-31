@@ -18,16 +18,24 @@ if (!Array.isArray(batch.routes) || !batch.translations || typeof batch.translat
 
 const workByRoute = new Map(collectTranslationWork().map((record) => [record.route, record]));
 const translations = batch.translations;
+const contextHeavyPattern = /\b(?:argument|buffer|contract|reading|read|working|field|ledger|default|chapter|reset|live lane|legal viewpoint|scan|human scale|attention budget|two clocks|threshold)\b/i;
+
+function spreadSamples(units, count) {
+  if (!units.length || count <= 0) return [];
+  const size = Math.min(count, units.length);
+  return Array.from({ length: size }, (_, index) => {
+    if (size === 1) return units[0];
+    return units[Math.round(index * (units.length - 1) / (size - 1))];
+  });
+}
 
 function selectSamples(units) {
   if (!units.length) return [];
   const sampleCount = units.length > 500 ? 20 : 5;
-  const positions = Array.from({ length: Math.min(sampleCount, units.length) }, (_, index) => {
-    if (sampleCount === 1) return 0;
-    return Math.round(index * (units.length - 1) / (sampleCount - 1));
-  });
   const longest = [...units].sort((left, right) => right.length - left.length).slice(0, 3);
-  return [...new Set([...positions.map((index) => units[Math.max(0, index)]), ...longest])].filter(Boolean);
+  const contextHeavy = units.filter((source) => contextHeavyPattern.test(source));
+  const excerpts = units.filter((source) => source.includes('…') || source.endsWith('...'));
+  return [...new Set([...spreadSamples(units, sampleCount), ...longest, ...spreadSamples(contextHeavy, 8), ...spreadSamples(excerpts, 4)])].filter(Boolean);
 }
 
 for (const route of batch.routes) {

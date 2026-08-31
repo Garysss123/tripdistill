@@ -4103,5 +4103,1449 @@
       "sarawak",
       "malaysia travel guide"
     ]
+  },
+  {
+    "title": "Vietnam Travel Guide",
+    "url": "/vietnam/",
+    "parent": "Asia",
+    "type": "Country field atlas",
+    "summary": "Fourteen complete hubs and eighty-four focused guides from Hanoi and the northern highlands to the central coast, delta and southern islands.",
+    "keywords": [
+      "vietnam",
+      "viet nam",
+      "hanoi",
+      "ho chi minh city",
+      "hoi an",
+      "mekong delta",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Hanoi Travel Guide",
+    "url": "/vietnam/hanoi/",
+    "parent": "Vietnam · Northern Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Hanoi rewards a layered plan. The Old Quarter is a working urban fabric rather than a museum set, while lakes, colonial institutions, royal archaeology and river infrastructure each need a different pace. Use one central base, separate solemn sites from nightlife, and let these six chapters turn a crowded capital into a sequence that can actually be walked.",
+    "keywords": [
+      "hanoi",
+      "hanoi",
+      "northern vietnam",
+      "hoan kiem lake and the old quarter",
+      "ba dinh and thang long imperial citadel",
+      "west lake and truc bach",
+      "french quarter and hanoi opera house",
+      "long bien bridge and the red river edge",
+      "van mieu and the museum quarter"
+    ]
+  },
+  {
+    "title": "Sapa and the Northwest Highlands Travel Guide",
+    "url": "/vietnam/sapa-northwest-highlands/",
+    "parent": "Vietnam · Northwest Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Sapa is a mountain base, not a single viewpoint. The town, Fansipan, Muong Hoa villages, Cat Cat, the Ô Quy Hồ corridor and Bac Ha each demand a different balance of altitude, weather, community access and road time. Build around daylight and current conditions, then let the landscape and local hosts set the pace.",
+    "keywords": [
+      "sapa and the northwest highlands",
+      "sapa northwest highlands",
+      "northwest vietnam",
+      "sapa town and ham rong",
+      "fansipan summit",
+      "muong hoa, lao chai and ta van",
+      "cat cat village and waterfall",
+      "o quy ho, silver waterfall and love waterfall",
+      "bac ha market and hoang a tuong"
+    ]
+  },
+  {
+    "title": "Ha Giang Karst Plateau Travel Guide",
+    "url": "/vietnam/ha-giang/",
+    "parent": "Vietnam · Northeast Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Ha Giang is a road landscape organized around the Dong Van Karst Plateau UNESCO Global Geopark. Quan Ba, Yen Minh, Dong Van, Lung Cu, Ma Pi Leng, Meo Vac and Du Gia are not interchangeable viewpoints: they differ in road exposure, altitude, border sensitivity, market rhythm and community life. The safest editorial plan makes transport time visible and never rewards risky riding.",
+    "keywords": [
+      "ha giang karst plateau",
+      "ha giang",
+      "northeast vietnam",
+      "quan ba and heaven’s gate",
+      "yen minh and the pine forest route",
+      "dong van old quarter",
+      "lung cu flag tower and border villages",
+      "ma pi leng pass and nho que river",
+      "meo vac to du gia southbound link"
+    ]
+  },
+  {
+    "title": "Ha Long and Cat Ba Travel Guide",
+    "url": "/vietnam/ha-long-cat-ba/",
+    "parent": "Vietnam · Northeast Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Ha Long Bay and Cat Ba are one maritime karst landscape but not one interchangeable tour. Ha Long cruise routes, Bai Tu Long’s quieter islands, Sung Sot and Titov, Lan Ha Bay, Cat Ba National Park and Viet Hai each have different boarding points, boat rules, tides and conservation boundaries. Explain the management context and make every sea decision conditional on current official notices.",
+    "keywords": [
+      "ha long and cat ba",
+      "ha long cat ba",
+      "northeast vietnam",
+      "ha long bay core cruise",
+      "bai tu long bay",
+      "sung sot cave and titov island",
+      "cat ba town and lan ha bay",
+      "cat ba national park",
+      "viet hai and cai beo"
+    ]
+  },
+  {
+    "title": "Ninh Binh Travel Guide",
+    "url": "/vietnam/ninh-binh/",
+    "parent": "Vietnam · Northern Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Ninh Binh is a landscape region organized around waterways, limestone towers, rice fields and historical sites. Trang An, Tam Coc–Bich Dong, Hoa Lu, Hang Mua, Van Long and Cuc Phuong are close enough to tempt overplanning but distinct enough to deserve separate pages. Make boat capacity, stairs, seasonal scenery, conservation and rural transfers visible from the start.",
+    "keywords": [
+      "ninh binh",
+      "ninh binh",
+      "northern vietnam",
+      "trang an boat complex",
+      "tam coc and bich dong",
+      "hoa lu ancient capital",
+      "hang mua and dragon mountain",
+      "van long wetland reserve",
+      "cuc phuong forest and conservation"
+    ]
+  },
+  {
+    "title": "Phong Nha–Ke Bang Travel Guide",
+    "url": "/vietnam/phong-nha-ke-bang/",
+    "parent": "Vietnam · North-Central Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Phong Nha–Ke Bang is a cave and forest system rather than a single attraction. The Son River and Phong Nha Cave, Paradise and Tien Son, Chay River–Dark Cave, Nuoc Mooc, Hang En and Son Doong range from managed day visits to tightly controlled multi-day expeditions. The 2025 UNESCO transboundary extension makes conservation and carrying capacity central to every page.",
+    "keywords": [
+      "phong nha–ke bang",
+      "phong nha ke bang",
+      "north-central vietnam",
+      "son river and phong nha cave",
+      "paradise and tien son caves",
+      "chay river and dark cave",
+      "nuoc mooc forest springs",
+      "hang en expedition",
+      "son doong expedition"
+    ]
+  },
+  {
+    "title": "Hue Travel Guide",
+    "url": "/vietnam/hue/",
+    "parent": "Vietnam · North Central Coast",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.",
+    "keywords": [
+      "hue",
+      "hue",
+      "north central coast",
+      "imperial city & citadel",
+      "royal tombs of minh mang, tu duc & khai dinh",
+      "thien mu & perfume river",
+      "thanh toan rural & canal loop",
+      "bach ma national park",
+      "lang co & lap an lagoon"
+    ]
+  },
+  {
+    "title": "Da Nang & Hoi An Travel Guide",
+    "url": "/vietnam/da-nang-hoi-an/",
+    "parent": "Vietnam · Central Coast",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Da Nang and Hoi An share an airport corridor but not one travel rhythm. Keep the city beach, Son Tra forest, limestone shrines, living old town and inland Cham sanctuary as separate chapters with their own access, conduct and weather decisions.",
+    "keywords": [
+      "da nang & hoi an",
+      "da nang hoi an",
+      "central coast",
+      "han river & da nang city core",
+      "son tra peninsula wildlife & linh ung",
+      "marble mountains & non nuoc",
+      "my khe beach & an thuong",
+      "hoi an ancient town",
+      "my son sanctuary & cham heritage"
+    ]
+  },
+  {
+    "title": "Nha Trang & Khanh Hoa Coast Travel Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/",
+    "parent": "Vietnam · South-Central Coast",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Nha Trang and Khanh Hoa combine a walkable beach city, Cham worship, island operators, a protected bay, airport-linked Cam Ranh and inland waterfalls. The useful route is a compass: city, culture, sea, transfer, land and conservation each need a different decision.",
+    "keywords": [
+      "nha trang & khanh hoa coast",
+      "nha trang khanh hoa",
+      "south-central coast",
+      "nha trang city & tran phu beach",
+      "po nagar cham towers & hon chong",
+      "hon mun island marine route",
+      "cam ranh & bai dai coast",
+      "ba ho waterfalls & ninh hoa",
+      "nha trang bay conservation & island transfer"
+    ]
+  },
+  {
+    "title": "Da Lat & Central Highlands Travel Guide",
+    "url": "/vietnam/da-lat-central-highlands/",
+    "parent": "Vietnam · Central Highlands",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Da Lat is a gateway to a larger highland story: lakes and railway, coffee and farm work, Langbiang and K’Ho landscapes, Bidoup forest, Buon Ma Thuot waterfalls and Yok Don dry forest. Distances, elevation and seasonal rain should shape the order.",
+    "keywords": [
+      "da lat & central highlands",
+      "da lat central highlands",
+      "central highlands",
+      "da lat lake & railway core",
+      "cau dat coffee & farm belt",
+      "langbiang & k’ho highlands",
+      "bidoup–nui ba national park",
+      "buon ma thuot & dray nur",
+      "yok don & buon don"
+    ]
+  },
+  {
+    "title": "Mui Ne & Binh Thuan Travel Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/",
+    "parent": "Vietnam · Southern Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Mui Ne and the wider Binh Thuan coast are not only a resort strip. Red and white dunes, working fishing villages, Cham towers, forested hills, a lighthouse coast and the remote island of Phu Quy each run on a different clock. Use this hub to choose the landscape that matches your weather window, mobility and appetite for exposure.",
+    "keywords": [
+      "mui ne & binh thuan",
+      "mui ne binh thuan",
+      "southern vietnam",
+      "mui ne red sand dunes at golden hour",
+      "bau trang white dunes & lotus lake",
+      "mui ne kiteboarding coast",
+      "phan thiet fishing coast & po sah inu heritage",
+      "ta cu mountain & ke ga coast",
+      "phu quy island: a remote island rhythm"
+    ]
+  },
+  {
+    "title": "Ho Chi Minh City Travel Guide",
+    "url": "/vietnam/ho-chi-minh-city/",
+    "parent": "Vietnam · Southern Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Ho Chi Minh City is easiest to understand as several overlapping movement systems: the compact District 1 core, Chợ Lớn’s wholesale and worship lanes, the new Thủ Thiêm–Thảo Điền riverfront, the distant Củ Chi tunnels, Cần Giờ’s mangrove reserve and the Saigon River itself. Choose a route by street density, history, water or ecology instead of trying to clear every landmark.",
+    "keywords": [
+      "ho chi minh city",
+      "ho chi minh city",
+      "southern vietnam",
+      "district 1 colonial core & market grid",
+      "cholon, binh tay market & temple quarter",
+      "thu thiem–thao dien riverfront",
+      "cu chi tunnels: ben duoc & ben dinh",
+      "can gio mangrove biosphere reserve",
+      "saigon river waterbus & thanh da"
+    ]
+  },
+  {
+    "title": "Mekong Delta Travel Guide",
+    "url": "/vietnam/mekong-delta/",
+    "parent": "Vietnam · Southern Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "The Mekong Delta is best planned as a chain of working water landscapes rather than one interchangeable boat tour. Cần Thơ’s dawn commerce, Bến Tre’s coconut islets, Mỹ Tho’s lower-river gateway, Châu Đốc’s border culture, Sa Đéc’s flower and literary memory, and Cà Mau’s freshwater-to-mangrove edge each justify a different stay and transfer.",
+    "keywords": [
+      "mekong delta",
+      "mekong delta",
+      "southern vietnam",
+      "can tho dawn market & river islets",
+      "ben tre coconut islets & canal life",
+      "my tho–thoi son islets",
+      "chau doc border river, sam mountain & tra su",
+      "sa dec flower village & huynh thuy le house",
+      "ca mau: u minh ha to cape ca mau"
+    ]
+  },
+  {
+    "title": "Phu Quoc & Southern Islands Travel Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/",
+    "parent": "Vietnam · Southern Vietnam",
+    "type": "Complete regional hub with six field guides",
+    "summary": "Phu Quoc is not one beach. Dương Đông and Long Beach, the An Thới archipelago, Gành Dầu and Bãi Thơm, Phú Quốc National Park, Hàm Ninh and the separate Côn Đảo archipelago each demand different transport, weather and conservation choices. Use this hub to match a shore or island to the season and the kind of care it requires.",
+    "keywords": [
+      "phu quoc & southern islands",
+      "phu quoc southern islands",
+      "southern vietnam",
+      "duong dong & long beach sunset coast",
+      "an thoi archipelago marine park",
+      "ganh dau, rach vem & bai thom",
+      "phu quoc national park & suoi tranh",
+      "ham ninh fishing village & island pantry",
+      "con dao national park & turtle islands"
+    ]
+  },
+  {
+    "title": "Hoan Kiem Lake and the Old Quarter Guide",
+    "url": "/vietnam/hanoi/hoan-kiem-old-quarter/",
+    "parent": "Vietnam · Hanoi",
+    "type": "Focused area and decision guide",
+    "summary": "A first-day walking chapter linking Hoan Kiem Lake, the Old Quarter’s guild streets, street food and the practical rhythm of central Hanoi.",
+    "keywords": [
+      "hoan kiem lake and the old quarter",
+      "hanoi",
+      "hoan kiem old quarter",
+      "lane-to-lake orientation",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ba Dinh and Thang Long Imperial Citadel Guide",
+    "url": "/vietnam/hanoi/ba-dinh-thang-long/",
+    "parent": "Vietnam · Hanoi",
+    "type": "Focused area and decision guide",
+    "summary": "A respectful history route across Ba Dinh’s civic landmarks and the UNESCO-listed Imperial Citadel of Thang Long.",
+    "keywords": [
+      "ba dinh and thang long imperial citadel",
+      "hanoi",
+      "ba dinh thang long",
+      "civic power and archaeological strata",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "West Lake and Truc Bach Guide",
+    "url": "/vietnam/hanoi/west-lake-truc-bach/",
+    "parent": "Vietnam · Hanoi",
+    "type": "Focused area and decision guide",
+    "summary": "A slower lakeside chapter for West Lake, Truc Bach, pagodas, cafés and sunset without pretending the shoreline is one continuous promenade.",
+    "keywords": [
+      "west lake and truc bach",
+      "hanoi",
+      "west lake truc bach",
+      "waterline and neighborhood pause",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "French Quarter and Hanoi Opera House Guide",
+    "url": "/vietnam/hanoi/french-quarter-opera-house/",
+    "parent": "Vietnam · Hanoi",
+    "type": "Focused area and decision guide",
+    "summary": "A compact architecture and performance chapter through the French Quarter, Opera House surroundings and nearby cultural institutions.",
+    "keywords": [
+      "french quarter and hanoi opera house",
+      "hanoi",
+      "french quarter opera house",
+      "colonial facade to performance room",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Long Bien Bridge and the Red River Edge Guide",
+    "url": "/vietnam/hanoi/long-bien-red-river/",
+    "parent": "Vietnam · Hanoi",
+    "type": "Focused area and decision guide",
+    "summary": "A morning-to-afternoon infrastructure route combining Long Bien Bridge, river views and market life with clear rail and river boundaries.",
+    "keywords": [
+      "long bien bridge and the red river edge",
+      "hanoi",
+      "long bien red river",
+      "rail, market and river infrastructure",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Van Mieu and the Museum Quarter Guide",
+    "url": "/vietnam/hanoi/van-mieu-museum-quarter/",
+    "parent": "Vietnam · Hanoi",
+    "type": "Focused area and decision guide",
+    "summary": "A cultural education route pairing Van Mieu–Quoc Tu Giam with one or two nearby museums and a deliberately quiet reading pace.",
+    "keywords": [
+      "van mieu and the museum quarter",
+      "hanoi",
+      "van mieu museum quarter",
+      "scholarship, objects and quiet courtyards",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Sapa Town and Ham Rong Guide",
+    "url": "/vietnam/sapa-northwest-highlands/town-ham-rong/",
+    "parent": "Vietnam · Sapa and the Northwest Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "A practical first chapter through Sapa town, the stone church, central lanes and Ham Rong’s elevated viewpoints.",
+    "keywords": [
+      "sapa town and ham rong",
+      "sapa and the northwest highlands",
+      "town ham rong",
+      "mountain town orientation",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Fansipan Summit Guide",
+    "url": "/vietnam/sapa-northwest-highlands/fansipan-summit/",
+    "parent": "Vietnam · Sapa and the Northwest Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "A planning guide for comparing the Fansipan cable car, funicular connections and permitted trekking while respecting altitude and mountain weather.",
+    "keywords": [
+      "fansipan summit",
+      "sapa and the northwest highlands",
+      "fansipan summit",
+      "altitude and engineered ascent",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Muong Hoa, Lao Chai and Ta Van Guide",
+    "url": "/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/",
+    "parent": "Vietnam · Sapa and the Northwest Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "A terrace-and-village chapter for Muong Hoa, Lao Chai and Ta Van with realistic trail, homestay and community etiquette.",
+    "keywords": [
+      "muong hoa, lao chai and ta van",
+      "sapa and the northwest highlands",
+      "muong hoa lao chai ta van",
+      "terrace contour and village threshold",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cat Cat Village and Waterfall Guide",
+    "url": "/vietnam/sapa-northwest-highlands/cat-cat-village/",
+    "parent": "Vietnam · Sapa and the Northwest Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "A managed attraction guide for Cat Cat’s Hmong cultural presentation, steep lanes, craft stops and waterfall circuit.",
+    "keywords": [
+      "cat cat village and waterfall",
+      "sapa and the northwest highlands",
+      "cat cat village",
+      "managed culture and steep watercourse",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "O Quy Ho, Silver Waterfall and Love Waterfall Guide",
+    "url": "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+    "parent": "Vietnam · Sapa and the Northwest Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "A daylight road chapter linking O Quy Ho Pass with Silver Waterfall and Love Waterfall under mountain-road and weather constraints.",
+    "keywords": [
+      "o quy ho, silver waterfall and love waterfall",
+      "sapa and the northwest highlands",
+      "o quy ho waterfalls",
+      "pass weather and waterfall descent",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Bac Ha Market and Hoang A Tuong Guide",
+    "url": "/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/",
+    "parent": "Vietnam · Sapa and the Northwest Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "A long-transfer culture chapter for Bac Ha’s market, textiles, livestock trade and Hoang A Tuong heritage house.",
+    "keywords": [
+      "bac ha market and hoang a tuong",
+      "sapa and the northwest highlands",
+      "bac ha market hoang a tuong",
+      "market day and highland exchange",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Quan Ba and Heaven’s Gate Guide",
+    "url": "/vietnam/ha-giang/quan-ba-heavens-gate/",
+    "parent": "Vietnam · Ha Giang Karst Plateau",
+    "type": "Focused area and decision guide",
+    "summary": "The loop’s northern gateway, pairing Heaven’s Gate viewpoints, Quan Ba valleys and an honest introduction to karst-road travel.",
+    "keywords": [
+      "quan ba and heaven’s gate",
+      "ha giang karst plateau",
+      "quan ba heavens gate",
+      "first pass into the geopark",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Yen Minh and the Pine Forest Route Guide",
+    "url": "/vietnam/ha-giang/yen-minh-pine-forest/",
+    "parent": "Vietnam · Ha Giang Karst Plateau",
+    "type": "Focused area and decision guide",
+    "summary": "A staging chapter for Yên Minh’s upland forest, road rhythm, supplies and overnight decisions between Quan Ba and Dong Van.",
+    "keywords": [
+      "yen minh and the pine forest route",
+      "ha giang karst plateau",
+      "yen minh pine forest",
+      "staging town and upland forest",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Dong Van Old Quarter Guide",
+    "url": "/vietnam/ha-giang/dong-van-old-quarter/",
+    "parent": "Vietnam · Ha Giang Karst Plateau",
+    "type": "Focused area and decision guide",
+    "summary": "A compact heritage-town chapter for Dong Van’s preserved houses, market, stone streets and role as a plateau base.",
+    "keywords": [
+      "dong van old quarter",
+      "ha giang karst plateau",
+      "dong van old quarter",
+      "stone-town market memory",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Lung Cu Flag Tower and Border Villages Guide",
+    "url": "/vietnam/ha-giang/lung-cu-flag-tower/",
+    "parent": "Vietnam · Ha Giang Karst Plateau",
+    "type": "Focused area and decision guide",
+    "summary": "A border-area day around Lung Cu Flag Tower, Thèn Pả, Lô Lô Chải and the highland villages beneath Dragon Mountain.",
+    "keywords": [
+      "lung cu flag tower and border villages",
+      "ha giang karst plateau",
+      "lung cu flag tower",
+      "border landscape and civic symbol",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ma Pi Leng Pass and Nho Que River Guide",
+    "url": "/vietnam/ha-giang/ma-pi-leng-nho-que/",
+    "parent": "Vietnam · Ha Giang Karst Plateau",
+    "type": "Focused area and decision guide",
+    "summary": "The signature pass-and-canyon chapter, connecting Ma Pi Leng viewpoints with a separately planned Nho Que River descent.",
+    "keywords": [
+      "ma pi leng pass and nho que river",
+      "ha giang karst plateau",
+      "ma pi leng nho que",
+      "exposed pass and deep canyon",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Meo Vac to Du Gia Southbound Link Guide",
+    "url": "/vietnam/ha-giang/meo-vac-du-gia/",
+    "parent": "Vietnam · Ha Giang Karst Plateau",
+    "type": "Focused area and decision guide",
+    "summary": "A deliberately multi-day southbound chapter joining Meo Vac’s highland market area with Du Gia’s valley, waterfalls and homestay rhythm.",
+    "keywords": [
+      "meo vac to du gia southbound link",
+      "ha giang karst plateau",
+      "meo vac du gia",
+      "market finish and village recovery",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ha Long Bay Core Cruise Guide",
+    "url": "/vietnam/ha-long-cat-ba/core-cruise/",
+    "parent": "Vietnam · Ha Long and Cat Ba",
+    "type": "Focused area and decision guide",
+    "summary": "A decision guide for choosing a Ha Long day or overnight cruise while keeping the port, tender, weather and environmental rules visible.",
+    "keywords": [
+      "ha long bay core cruise",
+      "ha long and cat ba",
+      "core cruise",
+      "boarding window and karst seascape",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Bai Tu Long Bay Guide",
+    "url": "/vietnam/ha-long-cat-ba/bai-tu-long/",
+    "parent": "Vietnam · Ha Long and Cat Ba",
+    "type": "Focused area and decision guide",
+    "summary": "A lower-density bay chapter for comparing Bai Tu Long routes, remote islands and community-scale marine travel with Ha Long’s core.",
+    "keywords": [
+      "bai tu long bay",
+      "ha long and cat ba",
+      "bai tu long",
+      "quieter archipelago and carrying capacity",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Sung Sot Cave and Titov Island Guide",
+    "url": "/vietnam/ha-long-cat-ba/sung-sot-titov/",
+    "parent": "Vietnam · Ha Long and Cat Ba",
+    "type": "Focused area and decision guide",
+    "summary": "A classic cave-and-viewpoint chapter combining Sung Sot’s stair approach with Titov Island’s managed shore and climb.",
+    "keywords": [
+      "sung sot cave and titov island",
+      "ha long and cat ba",
+      "sung sot titov",
+      "cave chamber and island climb",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cat Ba Town and Lan Ha Bay Guide",
+    "url": "/vietnam/ha-long-cat-ba/lan-ha-town/",
+    "parent": "Vietnam · Ha Long and Cat Ba",
+    "type": "Focused area and decision guide",
+    "summary": "An island-base chapter for Cat Ba town, Lan Ha Bay kayaking, beaches and the practical chain of ferry, cable-car and small-boat connections.",
+    "keywords": [
+      "cat ba town and lan ha bay",
+      "ha long and cat ba",
+      "lan ha town",
+      "island base and sheltered water",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cat Ba National Park Guide",
+    "url": "/vietnam/ha-long-cat-ba/national-park/",
+    "parent": "Vietnam · Ha Long and Cat Ba",
+    "type": "Focused area and decision guide",
+    "summary": "A protected-forest chapter covering Cat Ba National Park trails, caves, viewpoints and the conservation responsibility around the island’s langur habitat.",
+    "keywords": [
+      "cat ba national park",
+      "ha long and cat ba",
+      "national park",
+      "island forest and langur protection",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Viet Hai and Cai Beo Guide",
+    "url": "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
+    "parent": "Vietnam · Ha Long and Cat Ba",
+    "type": "Focused area and decision guide",
+    "summary": "A village-and-water chapter for Viet Hai’s rural lanes, cycling approach and Cai Beo fishing heritage within the Cat Ba island system.",
+    "keywords": [
+      "viet hai and cai beo",
+      "ha long and cat ba",
+      "viet hai cai beo",
+      "village road and marine livelihood",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Trang An Boat Complex Guide",
+    "url": "/vietnam/ninh-binh/trang-an-boat-complex/",
+    "parent": "Vietnam · Ninh Binh",
+    "type": "Focused area and decision guide",
+    "summary": "A UNESCO mixed-heritage boat chapter through submerged valleys, cave passages, temples and controlled visitor routes.",
+    "keywords": [
+      "trang an boat complex",
+      "ninh binh",
+      "trang an boat complex",
+      "submerged karst and managed boat route",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Tam Coc and Bich Dong Guide",
+    "url": "/vietnam/ninh-binh/tam-coc-bich-dong/",
+    "parent": "Vietnam · Ninh Binh",
+    "type": "Focused area and decision guide",
+    "summary": "A bicycle-and-boat chapter linking Tam Coc’s rice-field river route with the cliff-side Bich Dong Pagoda.",
+    "keywords": [
+      "tam coc and bich dong",
+      "ninh binh",
+      "tam coc bich dong",
+      "rice-season river and cliff pagoda",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Hoa Lu Ancient Capital Guide",
+    "url": "/vietnam/ninh-binh/hoa-lu-ancient-capital/",
+    "parent": "Vietnam · Ninh Binh",
+    "type": "Focused area and decision guide",
+    "summary": "A history-first chapter through the 10th- and 11th-century capital valley, temple compounds and surrounding limestone geography.",
+    "keywords": [
+      "hoa lu ancient capital",
+      "ninh binh",
+      "hoa lu ancient capital",
+      "dynastic valley and temple axis",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Hang Mua and Dragon Mountain Guide",
+    "url": "/vietnam/ninh-binh/hang-mua-dragon-mountain/",
+    "parent": "Vietnam · Ninh Binh",
+    "type": "Focused area and decision guide",
+    "summary": "A viewpoint and short-hike chapter for Hang Mua’s uneven stairs, dragon ridge and Tam Coc panorama.",
+    "keywords": [
+      "hang mua and dragon mountain",
+      "ninh binh",
+      "hang mua dragon mountain",
+      "stairs, ridge and river geometry",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Van Long Wetland Reserve Guide",
+    "url": "/vietnam/ninh-binh/van-long-wetland/",
+    "parent": "Vietnam · Ninh Binh",
+    "type": "Focused area and decision guide",
+    "summary": "A low-noise wetland chapter for boat observation, limestone reflections, birds and protected primate habitat.",
+    "keywords": [
+      "van long wetland reserve",
+      "ninh binh",
+      "van long wetland",
+      "quiet water and seasonal wildlife",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cuc Phuong Forest and Conservation Guide",
+    "url": "/vietnam/ninh-binh/cuc-phuong-conservation/",
+    "parent": "Vietnam · Ninh Binh",
+    "type": "Focused area and decision guide",
+    "summary": "A deep-nature chapter for Cuc Phuong’s forest trails, caves, conservation centers, Muong culture and responsible overnight planning.",
+    "keywords": [
+      "cuc phuong forest and conservation",
+      "ninh binh",
+      "cuc phuong conservation",
+      "old forest and rescue work",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Son River and Phong Nha Cave Guide",
+    "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+    "parent": "Vietnam · Phong Nha–Ke Bang",
+    "type": "Focused area and decision guide",
+    "summary": "The accessible gateway chapter for a Son River boat approach to Phong Nha Cave and the surrounding village base.",
+    "keywords": [
+      "son river and phong nha cave",
+      "phong nha–ke bang",
+      "son river phong nha cave",
+      "river entrance and accessible cave",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Paradise and Tien Son Caves Guide",
+    "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
+    "parent": "Vietnam · Phong Nha–Ke Bang",
+    "type": "Focused area and decision guide",
+    "summary": "A dry-cave comparison chapter for Paradise Cave and Tien Son, with separate entrances, stairs and managed visitor routes.",
+    "keywords": [
+      "paradise and tien son caves",
+      "phong nha–ke bang",
+      "paradise tien son caves",
+      "dry cave chambers and stair threshold",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Chay River and Dark Cave Guide",
+    "url": "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
+    "parent": "Vietnam · Phong Nha–Ke Bang",
+    "type": "Focused area and decision guide",
+    "summary": "A supervised wet-adventure chapter combining Chay River, zipline, kayak or swim sections and Dark Cave equipment rules.",
+    "keywords": [
+      "chay river and dark cave",
+      "phong nha–ke bang",
+      "chay river dark cave",
+      "river adventure and wet cave",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Nuoc Mooc Forest Springs Guide",
+    "url": "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
+    "parent": "Vietnam · Phong Nha–Ke Bang",
+    "type": "Focused area and decision guide",
+    "summary": "A low-intensity forest and spring chapter for boardwalks, turquoise water, picnic planning and protected-park conduct.",
+    "keywords": [
+      "nuoc mooc forest springs",
+      "phong nha–ke bang",
+      "nuoc mooc forest springs",
+      "forest boardwalk and clear stream",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Hang En Expedition Guide",
+    "url": "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+    "parent": "Vietnam · Phong Nha–Ke Bang",
+    "type": "Focused area and decision guide",
+    "summary": "A controlled two-day cave expedition involving jungle trekking, stream crossings, Ban Doong context and overnight camping inside Hang En.",
+    "keywords": [
+      "hang en expedition",
+      "phong nha–ke bang",
+      "hang en expedition",
+      "jungle crossing and cave camp",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Son Doong Expedition Guide",
+    "url": "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+    "parent": "Vietnam · Phong Nha–Ke Bang",
+    "type": "Focused area and decision guide",
+    "summary": "A high-level multi-day expedition guide for Son Doong’s core-zone trek, underground weather, camps and conservation controls.",
+    "keywords": [
+      "son doong expedition",
+      "phong nha–ke bang",
+      "son doong expedition",
+      "large-scale cave ecology and strict access",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Imperial City & Citadel Guide",
+    "url": "/vietnam/hue/imperial-city-citadel/",
+    "parent": "Vietnam · Hue",
+    "type": "Focused area and decision guide",
+    "summary": "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.",
+    "keywords": [
+      "imperial city & citadel",
+      "hue",
+      "imperial city citadel",
+      "the court axis",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Royal Tombs of Minh Mang, Tu Duc & Khai Dinh Guide",
+    "url": "/vietnam/hue/royal-tombs/",
+    "parent": "Vietnam · Hue",
+    "type": "Focused area and decision guide",
+    "summary": "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.",
+    "keywords": [
+      "royal tombs of minh mang, tu duc & khai dinh",
+      "hue",
+      "royal tombs",
+      "three landscapes of remembrance",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Thien Mu & Perfume River Guide",
+    "url": "/vietnam/hue/thien-mu-perfume-river/",
+    "parent": "Vietnam · Hue",
+    "type": "Focused area and decision guide",
+    "summary": "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.",
+    "keywords": [
+      "thien mu & perfume river",
+      "hue",
+      "thien mu perfume river",
+      "a river of prayer",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Thanh Toan Rural & Canal Loop Guide",
+    "url": "/vietnam/hue/thanh-toan-rural-loop/",
+    "parent": "Vietnam · Hue",
+    "type": "Focused area and decision guide",
+    "summary": "Cycle or ride through rice fields, irrigation lanes and Thanh Toan’s tiled bridge to meet the agricultural rhythm just beyond Hue.",
+    "keywords": [
+      "thanh toan rural & canal loop",
+      "hue",
+      "thanh toan rural loop",
+      "the working village edge",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Bach Ma National Park Guide",
+    "url": "/vietnam/hue/bach-ma-national-park/",
+    "parent": "Vietnam · Hue",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Bach Ma as a managed mountain-forest day or overnight, choosing one official trail family instead of overloading a wet highland route.",
+    "keywords": [
+      "bach ma national park",
+      "hue",
+      "bach ma national park",
+      "rainforest above the coast",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Lang Co & Lap An Lagoon Guide",
+    "url": "/vietnam/hue/lang-co-lap-an-lagoon/",
+    "parent": "Vietnam · Hue",
+    "type": "Focused area and decision guide",
+    "summary": "Use Lang Co and Lap An Lagoon as a mountain-and-sea transfer chapter linking Hue, the Hai Van coast, working waters and the Bach Ma foothills.",
+    "keywords": [
+      "lang co & lap an lagoon",
+      "hue",
+      "lang co lap an lagoon",
+      "where the road meets the lagoon",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Han River & Da Nang City Core Guide",
+    "url": "/vietnam/da-nang-hoi-an/han-river-city-core/",
+    "parent": "Vietnam · Da Nang & Hoi An",
+    "type": "Focused area and decision guide",
+    "summary": "Build a walkable Da Nang day around the Han River, bridges, Cham sculpture and everyday waterfront life instead of a list of photo stops.",
+    "keywords": [
+      "han river & da nang city core",
+      "da nang & hoi an",
+      "han river city core",
+      "the working waterfront",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Son Tra Peninsula Wildlife & Linh Ung Guide",
+    "url": "/vietnam/da-nang-hoi-an/son-tra-peninsula/",
+    "parent": "Vietnam · Da Nang & Hoi An",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Son Tra as a forest and wildlife route with Linh Ung, viewpoints and red-shanked douc langur ethics at its center.",
+    "keywords": [
+      "son tra peninsula wildlife & linh ung",
+      "da nang & hoi an",
+      "son tra peninsula",
+      "forest above the bay",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Marble Mountains & Non Nuoc Guide",
+    "url": "/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/",
+    "parent": "Vietnam · Da Nang & Hoi An",
+    "type": "Focused area and decision guide",
+    "summary": "Read the Marble Mountains through limestone, cave light, active worship and Non Nuoc craft rather than treating the site as a quick staircase.",
+    "keywords": [
+      "marble mountains & non nuoc",
+      "da nang & hoi an",
+      "marble mountains non nuoc",
+      "caves, shrines and stone",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "My Khe Beach & An Thuong Guide",
+    "url": "/vietnam/da-nang-hoi-an/my-khe-an-thuong/",
+    "parent": "Vietnam · Da Nang & Hoi An",
+    "type": "Focused area and decision guide",
+    "summary": "Use My Khe and An Thuong for a practical beach-and-city chapter focused on sunrise, swimming conditions, food and local public space.",
+    "keywords": [
+      "my khe beach & an thuong",
+      "da nang & hoi an",
+      "my khe an thuong",
+      "the city’s open edge",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Hoi An Ancient Town Guide",
+    "url": "/vietnam/da-nang-hoi-an/hoi-an-ancient-town/",
+    "parent": "Vietnam · Da Nang & Hoi An",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Hoi An as a living World Heritage town of houses, river trade, worship and residents, with entry rules and flood weather built into the walk.",
+    "keywords": [
+      "hoi an ancient town",
+      "da nang & hoi an",
+      "hoi an ancient town",
+      "a living trading port",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "My Son Sanctuary & Cham Heritage Guide",
+    "url": "/vietnam/da-nang-hoi-an/my-son-sanctuary/",
+    "parent": "Vietnam · Da Nang & Hoi An",
+    "type": "Focused area and decision guide",
+    "summary": "Make My Son an early, respectful inland heritage journey through Cham architecture, valley ecology, conservation and marked visitor routes.",
+    "keywords": [
+      "my son sanctuary & cham heritage",
+      "da nang & hoi an",
+      "my son sanctuary",
+      "brick towers in a valley",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Nha Trang City & Tran Phu Beach Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+    "parent": "Vietnam · Nha Trang & Khanh Hoa Coast",
+    "type": "Focused area and decision guide",
+    "summary": "Use Nha Trang’s central beach, promenade, seafood and city services as a practical base chapter with real swimming and heat checks.",
+    "keywords": [
+      "nha trang city & tran phu beach",
+      "nha trang & khanh hoa coast",
+      "nha trang city beach",
+      "the public shoreline",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Po Nagar Cham Towers & Hon Chong Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+    "parent": "Vietnam · Nha Trang & Khanh Hoa Coast",
+    "type": "Focused area and decision guide",
+    "summary": "Pair Po Nagar’s living Cham and Mother Goddess traditions with Hon Chong’s layered coastal geology for a compact north-city chapter.",
+    "keywords": [
+      "po nagar cham towers & hon chong",
+      "nha trang & khanh hoa coast",
+      "po nagar hon chong",
+      "mother of the land, stone of the bay",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Hon Mun Island Marine Route Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+    "parent": "Vietnam · Nha Trang & Khanh Hoa Coast",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Hon Mun and nearby island waters as a weather-led marine day with licensed operators, reef conduct and a protected return buffer.",
+    "keywords": [
+      "hon mun island marine route",
+      "nha trang & khanh hoa coast",
+      "hon mun island marine route",
+      "reef before recreation",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cam Ranh & Bai Dai Coast Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+    "parent": "Vietnam · Nha Trang & Khanh Hoa Coast",
+    "type": "Focused area and decision guide",
+    "summary": "Use Cam Ranh and Bai Dai as an airport-linked coast chapter for quiet beach stays, arrival logistics and a different pace from central Nha Trang.",
+    "keywords": [
+      "cam ranh & bai dai coast",
+      "nha trang & khanh hoa coast",
+      "cam ranh bai dai",
+      "the airport-side coast",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ba Ho Waterfalls & Ninh Hoa Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+    "parent": "Vietnam · Nha Trang & Khanh Hoa Coast",
+    "type": "Focused area and decision guide",
+    "summary": "Follow Ba Ho’s stream, forest and three-pool landscape as an inland contrast to Nha Trang’s beach, with rock, water and turn-back decisions visible.",
+    "keywords": [
+      "ba ho waterfalls & ninh hoa",
+      "nha trang & khanh hoa coast",
+      "ba ho waterfalls",
+      "three pools inland",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Nha Trang Bay Conservation & Island Transfer Guide",
+    "url": "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+    "parent": "Vietnam · Nha Trang & Khanh Hoa Coast",
+    "type": "Focused area and decision guide",
+    "summary": "A practical conservation chapter for choosing a bay route, checking protected zones, selecting an operator and protecting the return transfer.",
+    "keywords": [
+      "nha trang bay conservation & island transfer",
+      "nha trang & khanh hoa coast",
+      "nha trang bay conservation transfer",
+      "the reef-side contract",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Da Lat Lake & Railway Core Guide",
+    "url": "/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/",
+    "parent": "Vietnam · Da Lat & Central Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "Start Da Lat with a walkable lake, market, architecture and railway chapter that explains the city before the highland roads begin.",
+    "keywords": [
+      "da lat lake & railway core",
+      "da lat & central highlands",
+      "da lat lake railway core",
+      "the cool-city hinge",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cau Dat Coffee & Farm Belt Guide",
+    "url": "/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/",
+    "parent": "Vietnam · Da Lat & Central Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "Follow Da Lat’s farm belt through coffee, tea, flowers, processing and community livelihoods with a pre-booked, low-impact visit.",
+    "keywords": [
+      "cau dat coffee & farm belt",
+      "da lat & central highlands",
+      "cau dat coffee farms",
+      "from red soil to cup",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Langbiang & K’Ho Highlands Guide",
+    "url": "/vietnam/da-lat-central-highlands/langbiang-kho-highlands/",
+    "parent": "Vietnam · Da Lat & Central Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Langbiang as a mountain, plateau and K’Ho cultural landscape with weather, ability and consent kept visible at every elevation.",
+    "keywords": [
+      "langbiang & k’ho highlands",
+      "da lat & central highlands",
+      "langbiang kho highlands",
+      "the mountain and its people",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Bidoup–Nui Ba National Park Guide",
+    "url": "/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/",
+    "parent": "Vietnam · Da Lat & Central Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "Treat Bidoup–Nui Ba as a real protected-area expedition with guide, permit, route, accommodation and weather decisions—not a casual Da Lat detour.",
+    "keywords": [
+      "bidoup–nui ba national park",
+      "da lat & central highlands",
+      "bidoup nui ba national park",
+      "a forest that needs a guide",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Buon Ma Thuot & Dray Nur Guide",
+    "url": "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
+    "parent": "Vietnam · Da Lat & Central Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "Connect Buon Ma Thuot’s coffee and urban highland life with Dray Nur’s basalt river landscape as a separate inland day.",
+    "keywords": [
+      "buon ma thuot & dray nur",
+      "da lat & central highlands",
+      "buon ma thuot dray nur",
+      "coffee city, basalt water",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Yok Don & Buon Don Guide",
+    "url": "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
+    "parent": "Vietnam · Da Lat & Central Highlands",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Yok Don and Buon Don around dry dipterocarp forest, Srepok River, ethical elephant observation and community-led knowledge.",
+    "keywords": [
+      "yok don & buon don",
+      "da lat & central highlands",
+      "yok don buon don",
+      "dry forest, river, living knowledge",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Mui Ne Red Sand Dunes at Golden Hour Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/",
+    "parent": "Vietnam · Mui Ne & Binh Thuan",
+    "type": "Focused area and decision guide",
+    "summary": "A practical sunrise and sunset chapter for reading Mui Ne’s red dunes without turning a fragile landscape into an off-road playground.",
+    "keywords": [
+      "mui ne red sand dunes at golden hour",
+      "mui ne & binh thuan",
+      "mui ne red sand dunes",
+      "warm sand clock",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Bau Trang White Dunes & Lotus Lake Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/",
+    "parent": "Vietnam · Mui Ne & Binh Thuan",
+    "type": "Focused area and decision guide",
+    "summary": "Plan the longer coastal run to Bau Trang around the sharp meeting of white dunes, freshwater lakes and a road exposed to sun and wind.",
+    "keywords": [
+      "bau trang white dunes & lotus lake",
+      "mui ne & binh thuan",
+      "bau trang white dunes",
+      "lake-between-sand",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Mui Ne Kiteboarding Coast Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/",
+    "parent": "Vietnam · Mui Ne & Binh Thuan",
+    "type": "Focused area and decision guide",
+    "summary": "A wind-and-water planning guide for choosing a safe lesson, understanding beach launch zones and leaving enough space for changing sea conditions.",
+    "keywords": [
+      "mui ne kiteboarding coast",
+      "mui ne & binh thuan",
+      "mui ne kiteboarding coast",
+      "wind-window board",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Phan Thiet Fishing Coast & Po Sah Inu Heritage Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+    "parent": "Vietnam · Mui Ne & Binh Thuan",
+    "type": "Focused area and decision guide",
+    "summary": "Connect Phan Thiet’s working fishing coast with Po Sah Inu’s Cham architecture through a respectful heritage route with two distinct visitor contracts.",
+    "keywords": [
+      "phan thiet fishing coast & po sah inu heritage",
+      "mui ne & binh thuan",
+      "phan thiet poshanu heritage",
+      "harbour-to-tower seam",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ta Cu Mountain & Ke Ga Coast Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+    "parent": "Vietnam · Mui Ne & Binh Thuan",
+    "type": "Focused area and decision guide",
+    "summary": "A mainland-to-coast chapter that separates Ta Cu’s forested religious ascent from the tide-dependent Kê Gà lighthouse landing.",
+    "keywords": [
+      "ta cu mountain & ke ga coast",
+      "mui ne & binh thuan",
+      "ta cu ke ga coast",
+      "forest-to-lighthouse rise",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Phu Quy Island: A Remote Island Rhythm Guide",
+    "url": "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+    "parent": "Vietnam · Mui Ne & Binh Thuan",
+    "type": "Focused area and decision guide",
+    "summary": "Treat Phu Quy as a remote island stay with its own sea crossing, local shrines, fishing life and limited-service buffer rather than a quick mainland excursion.",
+    "keywords": [
+      "phu quy island: a remote island rhythm",
+      "mui ne & binh thuan",
+      "phu quy island",
+      "island departure file",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "District 1 Colonial Core & Market Grid Guide",
+    "url": "/vietnam/ho-chi-minh-city/district-1-colonial-core/",
+    "parent": "Vietnam · Ho Chi Minh City",
+    "type": "Focused area and decision guide",
+    "summary": "Build a readable first city walk from the civic core to the market grid, with heat, traffic and changing heritage access treated as part of the plan.",
+    "keywords": [
+      "district 1 colonial core & market grid",
+      "ho chi minh city",
+      "district 1 colonial core",
+      "civic-to-market ruler",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cholon, Binh Tay Market & Temple Quarter Guide",
+    "url": "/vietnam/ho-chi-minh-city/cho-lon-binh-tay/",
+    "parent": "Vietnam · Ho Chi Minh City",
+    "type": "Focused area and decision guide",
+    "summary": "Explore Cholon through wholesale commerce, Chinese-Vietnamese temples, assembly halls and food lanes without flattening a lived neighborhood into a photo backdrop.",
+    "keywords": [
+      "cholon, binh tay market & temple quarter",
+      "ho chi minh city",
+      "cho lon binh tay",
+      "working-lane notebook",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Thu Thiem–Thao Dien Riverfront Guide",
+    "url": "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+    "parent": "Vietnam · Ho Chi Minh City",
+    "type": "Focused area and decision guide",
+    "summary": "Compare Thu Thiem’s developing riverfront with Thao Dien’s established neighborhood life through a two-bank route that respects construction and resident space.",
+    "keywords": [
+      "thu thiem–thao dien riverfront",
+      "ho chi minh city",
+      "thu thiem thao dien",
+      "two-bank urban seam",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Cu Chi Tunnels: Ben Duoc & Ben Dinh Guide",
+    "url": "/vietnam/ho-chi-minh-city/cu-chi-tunnels/",
+    "parent": "Vietnam · Ho Chi Minh City",
+    "type": "Focused area and decision guide",
+    "summary": "Plan a historically sensitive visit to the two Cu Chi sites with realistic travel time, confined-space choices and respect for memorial ground.",
+    "keywords": [
+      "cu chi tunnels: ben duoc & ben dinh",
+      "ho chi minh city",
+      "cu chi tunnels",
+      "war-memory section",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Can Gio Mangrove Biosphere Reserve Guide",
+    "url": "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+    "parent": "Vietnam · Ho Chi Minh City",
+    "type": "Focused area and decision guide",
+    "summary": "Use Can Gio to move from metropolitan edge to mangrove, wetland and coastal habitat through a low-impact nature day with tide and weather awareness.",
+    "keywords": [
+      "can gio mangrove biosphere reserve",
+      "ho chi minh city",
+      "can gio mangroves",
+      "city-to-estuary transect",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Saigon River Waterbus & Thanh Da Guide",
+    "url": "/vietnam/ho-chi-minh-city/saigon-river-waterbus/",
+    "parent": "Vietnam · Ho Chi Minh City",
+    "type": "Focused area and decision guide",
+    "summary": "Turn the Saigon River Waterbus into a practical city chapter: named piers, public transport, Thanh Da’s quieter edge and a weather-aware return.",
+    "keywords": [
+      "saigon river waterbus & thanh da",
+      "ho chi minh city",
+      "saigon river waterbus",
+      "public-waterline chart",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Can Tho Dawn Market & River Islets Guide",
+    "url": "/vietnam/mekong-delta/can-tho-cai-rang/",
+    "parent": "Vietnam · Mekong Delta",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Cần Thơ around the market’s working hours, a safe boat choice and one quieter islet or garden rather than a dawn photo sprint.",
+    "keywords": [
+      "can tho dawn market & river islets",
+      "mekong delta",
+      "can tho cai rang",
+      "working-water ledger",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ben Tre Coconut Islets & Canal Life Guide",
+    "url": "/vietnam/mekong-delta/ben-tre-coconut-islets/",
+    "parent": "Vietnam · Mekong Delta",
+    "type": "Focused area and decision guide",
+    "summary": "Use Bến Tre’s coconut groves, small ferries, cycling lanes and family workshops to plan a slower Delta stay with real local participation.",
+    "keywords": [
+      "ben tre coconut islets & canal life",
+      "mekong delta",
+      "ben tre coconut islets",
+      "coconut-and-canal field",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "My Tho–Thoi Son Islets Guide",
+    "url": "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+    "parent": "Vietnam · Mekong Delta",
+    "type": "Focused area and decision guide",
+    "summary": "A lower-Mekong gateway route for Thới Sơn’s gardens, canals and craft culture, designed to remain distinct from Bến Tre’s longer coconut-islet stay.",
+    "keywords": [
+      "my tho–thoi son islets",
+      "mekong delta",
+      "my tho thoi son island",
+      "lower-river entry ribbon",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Chau Doc Border River, Sam Mountain & Tra Su Guide",
+    "url": "/vietnam/mekong-delta/chau-doc-sam-tra-su/",
+    "parent": "Vietnam · Mekong Delta",
+    "type": "Focused area and decision guide",
+    "summary": "Connect Châu Đốc’s floating homes, Cham communities, Sam Mountain temples and Trà Sư wetland through a two-night-friendly borderland route.",
+    "keywords": [
+      "chau doc border river, sam mountain & tra su",
+      "mekong delta",
+      "chau doc sam tra su",
+      "border-wetland atlas",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Sa Dec Flower Village & Huynh Thuy Le House Guide",
+    "url": "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+    "parent": "Vietnam · Mekong Delta",
+    "type": "Focused area and decision guide",
+    "summary": "Plan Sa Đéc through its century-old flower village, river town, market and Huỳnh Thủy Lê house with a seasonal horticulture lens.",
+    "keywords": [
+      "sa dec flower village & huynh thuy le house",
+      "mekong delta",
+      "sa dec flower literary quarter",
+      "garden-and-memory spread",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ca Mau: U Minh Ha to Cape Ca Mau Guide",
+    "url": "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+    "parent": "Vietnam · Mekong Delta",
+    "type": "Focused area and decision guide",
+    "summary": "A deliberate far-south expedition from U Minh Ha peat-swamp forest to the mangrove coast and Cape Ca Mau, with fire, water and transport buffers.",
+    "keywords": [
+      "ca mau: u minh ha to cape ca mau",
+      "mekong delta",
+      "ca mau u minh ha cape",
+      "freshwater-to-mangrove file",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Duong Dong & Long Beach Sunset Coast Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+    "parent": "Vietnam · Phu Quoc & Southern Islands",
+    "type": "Focused area and decision guide",
+    "summary": "A practical west-coast arrival chapter linking Dương Đông, Long Beach, the harbor edge and sunset without assuming every resort frontage is public.",
+    "keywords": [
+      "duong dong & long beach sunset coast",
+      "phu quoc & southern islands",
+      "duong dong long beach",
+      "west-shore arrival ribbon",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "An Thoi Archipelago Marine Park Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+    "parent": "Vietnam · Phu Quoc & Southern Islands",
+    "type": "Focused area and decision guide",
+    "summary": "Plan An Thoi as a marine-protection day with an authorized operator, reef-safe behavior and a realistic sea-state fallback.",
+    "keywords": [
+      "an thoi archipelago marine park",
+      "phu quoc & southern islands",
+      "an thoi marine park",
+      "reef-permit chart",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ganh Dau, Rach Vem & Bai Thom Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+    "parent": "Vietnam · Phu Quoc & Southern Islands",
+    "type": "Focused area and decision guide",
+    "summary": "A north-island road chapter for quieter beaches, Rach Vem, Ganh Dau, Bai Thom and the border-facing geography of Phu Quoc.",
+    "keywords": [
+      "ganh dau, rach vem & bai thom",
+      "phu quoc & southern islands",
+      "ganh dau bai thom",
+      "north-island edge",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Phu Quoc National Park & Suoi Tranh Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/",
+    "parent": "Vietnam · Phu Quoc & Southern Islands",
+    "type": "Focused area and decision guide",
+    "summary": "Move inland from Phu Quoc’s beaches into protected forest, seasonal streams and Suoi Tranh with trail ability and rainfall as the route’s main variables.",
+    "keywords": [
+      "phu quoc national park & suoi tranh",
+      "phu quoc & southern islands",
+      "national park suoi tranh",
+      "forest-water contour",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Ham Ninh Fishing Village & Island Pantry Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+    "parent": "Vietnam · Phu Quoc & Southern Islands",
+    "type": "Focused area and decision guide",
+    "summary": "Read Ham Ninh through fishing, seafood, pepper and fish-sauce culture while keeping a clear distinction between a village and a staged seafood stop.",
+    "keywords": [
+      "ham ninh fishing village & island pantry",
+      "phu quoc & southern islands",
+      "ham ninh fishing village",
+      "east-coast pantry",
+      "vietnam travel guide"
+    ]
+  },
+  {
+    "title": "Con Dao National Park & Turtle Islands Guide",
+    "url": "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+    "parent": "Vietnam · Phu Quoc & Southern Islands",
+    "type": "Focused area and decision guide",
+    "summary": "Keep Côn Đảo as a separate protected-archipelago stay with forest, marine park, historical memory and tightly managed turtle experiences.",
+    "keywords": [
+      "con dao national park & turtle islands",
+      "phu quoc & southern islands",
+      "con dao national park",
+      "protected-island dossier",
+      "vietnam travel guide"
+    ]
   }
 ]

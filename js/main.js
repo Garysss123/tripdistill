@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const BUILD_VERSION = '20260830-2';
+  const BUILD_VERSION = '20260831-1';
   const LOCALES = {
     en: { prefix: '', short: 'EN', nativeName: 'English' },
     'zh-Hant': { prefix: '/zh', short: '繁中', nativeName: '繁體中文' },
@@ -36,7 +36,8 @@
       sidebarJapan: 'Japan',
       sidebarKorea: 'South Korea',
       sidebarThailand: 'Thailand',
-      sidebarCountries: '5 countries'
+      sidebarVietnam: 'Vietnam',
+      sidebarCountries: '6 countries'
     },
     'zh-Hant': {
       componentError: '導覽元件暫時無法載入，請重新整理頁面再試一次。',
@@ -50,7 +51,8 @@
       sidebarJapan: '日本',
       sidebarKorea: '韓國',
       sidebarThailand: '泰國',
-      sidebarCountries: '5 個國家'
+      sidebarVietnam: '越南',
+      sidebarCountries: '6 個國家'
     },
     ja: {
       componentError: 'ナビゲーションを読み込めませんでした。ページを再読み込みしてください。',
@@ -64,7 +66,8 @@
       sidebarJapan: '日本',
       sidebarKorea: '韓国',
       sidebarThailand: 'タイ',
-      sidebarCountries: '5か国'
+      sidebarVietnam: 'ベトナム',
+      sidebarCountries: '6か国'
     },
     ko: {
       componentError: '탐색 메뉴를 불러오지 못했습니다. 페이지를 새로고침해 주세요.',
@@ -78,7 +81,8 @@
       sidebarJapan: '일본',
       sidebarKorea: '대한민국',
       sidebarThailand: '태국',
-      sidebarCountries: '5개 국가'
+      sidebarVietnam: '베트남',
+      sidebarCountries: '6개 국가'
     },
     th: {
       componentError: 'ไม่สามารถโหลดเมนูนำทางได้ โปรดลองรีเฟรชหน้าเว็บ',
@@ -92,7 +96,8 @@
       sidebarJapan: 'ญี่ปุ่น',
       sidebarKorea: 'เกาหลีใต้',
       sidebarThailand: 'ไทย',
-      sidebarCountries: '5 ประเทศ'
+      sidebarVietnam: 'เวียดนาม',
+      sidebarCountries: '6 ประเทศ'
     }
   };
   const COPY = COPY_BY_LOCALE[LOCALE];
@@ -301,7 +306,8 @@
       { id: 'china', path: '/china/', label: COPY.sidebarChina },
       { id: 'japan', path: '/japan/', label: COPY.sidebarJapan },
       { id: 'south-korea', path: '/south-korea/', label: COPY.sidebarKorea },
-      { id: 'thailand', path: '/thailand/', label: COPY.sidebarThailand }
+      { id: 'thailand', path: '/thailand/', label: COPY.sidebarThailand },
+      { id: 'vietnam', path: '/vietnam/', label: COPY.sidebarVietnam }
     ];
     const continent = document.createElement('details');
     continent.className = 'sidebar-accordion sidebar-continent';

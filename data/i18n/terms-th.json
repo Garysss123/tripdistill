@@ -1,5 +1,13 @@
 {
   "TripDistill": "TripDistill",
+  "time buffer": "เวลาเผื่อ",
+  "transfer buffer": "เวลาเผื่อสำหรับต่อการเดินทาง",
+  "weather buffer": "เวลาเผื่อกรณีอากาศเปลี่ยน",
+  "return buffer": "เวลาเผื่อขากลับ",
+  "route contract": "แผนเส้นทางที่กำหนดชัดเจน",
+  "transfer contract": "แผนการเดินทางต่อที่แยกไว้ชัดเจน",
+  "working waterfront": "ริมน้ำที่ยังมีวิถีชีวิตและการทำงาน",
+  "working landscape": "ภูมิทัศน์ที่ผู้คนยังใช้ดำรงชีวิตและทำงาน",
   "K-ETA": "K-ETA",
   "operator": "ผู้ให้บริการรถไฟ",
   "rail operator": "ผู้ให้บริการรถไฟ",

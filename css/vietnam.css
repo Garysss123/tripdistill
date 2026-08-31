@@ -1,0 +1,349 @@
+:root {
+  --vn-lacquer:#9b3028;
+  --vn-gold:#e4b45a;
+  --vn-jade:#227064;
+  --vn-indigo:#243850;
+  --vn-river:#4b8790;
+  --vn-rice:#fff9ed;
+  --vn-ink:#172a2c;
+  --vn-line:rgba(49,72,70,.18);
+  --vn-accent-text:#704c1e;
+}
+
+.vn-country,.vn-hub { color:var(--vn-ink); }
+.vn-country h1,.vn-country h2,.vn-country h3,.vn-hub h1,.vn-hub h2,.vn-hub h3 { text-wrap:balance; }
+.vn-kicker,.vn-section-label { display:block; color:var(--vn-accent-text); font-size:.68rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; }
+.vn-country-hero .vn-kicker,.vn-hub-hero .vn-kicker,.vn-field-hero .vn-kicker { color:#f3c979; }
+
+/* Country atlas */
+.vn-country-hero {
+  position:relative;
+  min-height:46rem;
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(24rem,1.08fr);
+  overflow:hidden;
+  color:#fff9ec;
+  border-radius:.45rem 4.5rem .45rem 4.5rem;
+  background:
+    radial-gradient(circle at 14% 18%,rgba(228,180,90,.15) 0 1.2rem,transparent 1.25rem),
+    repeating-linear-gradient(118deg,transparent 0 4.6rem,rgba(255,255,255,.035) 4.65rem 4.75rem),
+    linear-gradient(135deg,#5d1b1b,#9b3028 52%,#173f3a);
+  box-shadow:0 2.2rem 5.5rem rgba(63,33,25,.22);
+  isolation:isolate;
+}
+.vn-country-copy { align-self:center; padding:clamp(2.3rem,5.5vw,5.8rem); }
+.vn-country-copy h1 { max-width:11ch; margin:.8rem 0 1.4rem; font:750 clamp(3.8rem,6vw,5.8rem)/.83 Georgia,"Times New Roman",serif; letter-spacing:-.07em; }
+.vn-country-copy h1 span { display:block; margin-top:.8rem; color:#ffd58b; font:italic 700 .34em/1.08 Georgia,serif; letter-spacing:-.025em; }
+.vn-country-copy > p { max-width:42rem; color:rgba(255,255,255,.78); font-size:1.08rem; }
+.vn-country .button.primary,.vn-hub .button.primary { color:#3b2117; background:#f2bd6d; }
+.vn-country .button.secondary,.vn-hub .button.secondary { color:#fff; border-color:rgba(255,255,255,.4); background:rgba(255,255,255,.06); }
+.vn-country-hero figure { position:relative; min-height:46rem; margin:0; overflow:hidden; clip-path:polygon(13% 0,100% 0,100% 100%,0 100%); }
+.vn-country-hero figure::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(77,25,23,.72),transparent 32%),linear-gradient(0deg,rgba(0,0,0,.48),transparent 35%); }
+.vn-country-hero figure img { width:100%; height:100%; object-fit:cover; }
+.vn-country-hero figcaption { position:absolute; z-index:2; right:1.2rem; bottom:1rem; color:rgba(255,255,255,.82); font-size:.66rem; }
+.vn-country-facts { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2rem; }
+.vn-country-facts div { min-width:7.2rem; padding:.8rem 1rem; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.12); }
+.vn-country-facts strong { display:block; color:#ffd58b; font:700 1.9rem/1 Georgia,serif; }
+.vn-country-facts span { color:rgba(255,255,255,.68); font-size:.67rem; text-transform:uppercase; letter-spacing:.08em; }
+.vn-spine { position:absolute; z-index:3; top:1.4rem; right:1.4rem; display:grid; gap:.35rem; width:9rem; padding:1rem; border:1px solid rgba(255,255,255,.4); background:rgba(12,37,34,.64); backdrop-filter:blur(12px); }
+.vn-spine span { font-size:.6rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.vn-spine i { height:1.9rem; margin-left:.45rem; border-left:1px solid #f2bd6d; }
+
+.vn-country-intro { display:grid; grid-template-columns:repeat(3,1fr); margin:3.5rem 0 6rem; border-top:1px solid var(--vn-line); border-bottom:1px solid var(--vn-line); }
+.vn-country-intro article { min-height:16rem; padding:2rem; border-right:1px solid var(--vn-line); }
+.vn-country-intro article:last-child { border-right:0; }
+.vn-country-intro span { color:var(--vn-lacquer); font:700 2.2rem/1 Georgia,serif; }
+.vn-country-intro h2 { max-width:15ch; margin:2.8rem 0 .65rem; font:700 1.65rem/1 Georgia,serif; }
+.vn-country-intro p { color:#62736f; font-size:.9rem; }
+
+.vn-country-band,.vn-country-section { margin:clamp(5rem,9vw,9rem) 0; }
+.vn-country-band { padding:clamp(2rem,4vw,4rem); background:#f7f3e9; border:1px solid var(--vn-line); }
+.vn-country-band[data-band="north"] { border-radius:5rem .35rem .35rem .35rem; background:linear-gradient(145deg,#eef6f1,#fbf7ee 55%); }
+.vn-country-band[data-band="central"] { border-radius:.35rem 5rem .35rem .35rem; background:linear-gradient(145deg,#fbf4e6,#f7eee8 55%); }
+.vn-country-band[data-band="south"] { border-radius:.35rem .35rem 5rem .35rem; background:linear-gradient(145deg,#eff8f6,#f8f3e7 60%); }
+.vn-band-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(18rem,.7fr); gap:2rem; align-items:end; margin-bottom:2.4rem; }
+.vn-band-heading span { grid-column:1/-1; color:var(--vn-lacquer); font-size:.7rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; }
+.vn-band-heading h2 { max-width:18ch; margin:0; font:700 clamp(2.5rem,5vw,5rem)/.92 Georgia,serif; letter-spacing:-.055em; }
+.vn-band-heading p { margin:0; color:#61736f; }
+.vn-country-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:1rem; }
+.vn-country-card { grid-column:span 6; position:relative; min-height:34rem; display:grid; grid-template-rows:15rem 1fr; overflow:hidden; color:var(--vn-ink); border:1px solid var(--vn-line); background:rgba(255,255,255,.82); box-shadow:0 1rem 2.6rem rgba(39,67,61,.08); transition:transform .2s ease,box-shadow .2s ease; }
+.vn-country-card:nth-child(3n) { grid-column:span 5; transform:translateY(1.5rem); }
+.vn-country-card:nth-child(3n+1):not(:first-child) { grid-column:span 7; }
+.vn-country-card:hover { transform:translateY(-.35rem); box-shadow:0 1.4rem 3.2rem rgba(39,67,61,.14); }
+.vn-country-card figure { position:relative; margin:0; overflow:hidden; }
+.vn-country-card figure::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(8,28,26,.45),transparent 55%); }
+.vn-country-card img { width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+.vn-country-card:hover img { transform:scale(1.025); }
+.vn-country-card figure span { position:absolute; z-index:2; right:.8rem; bottom:.7rem; color:#fff; font:700 2rem/1 Georgia,serif; }
+.vn-country-card > div { padding:1.5rem; }
+.vn-country-card small { color:var(--vn-lacquer); font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.vn-country-card h3 { margin:.5rem 0 .7rem; font:700 2rem/1 Georgia,serif; }
+.vn-country-card p { color:#60716d; }
+.vn-country-card dl { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:1.2rem 0; }
+.vn-country-card dl div { padding:.65rem; background:#f7f3ea; }
+.vn-country-card dt { color:#755b43; font-size:.62rem; font-weight:900; text-transform:uppercase; }
+.vn-country-card dd { margin:.2rem 0 0; font-size:.77rem; }
+.vn-country-card > div > strong { color:var(--vn-jade); font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; }
+
+.vn-transport-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--vn-line); border-bottom:1px solid var(--vn-line); }
+.vn-transport-grid article { min-height:18rem; padding:1.6rem; border-right:1px solid var(--vn-line); }
+.vn-transport-grid article:last-child { border-right:0; }
+.vn-transport-grid small { color:var(--vn-lacquer); font-weight:950; letter-spacing:.15em; text-transform:uppercase; }
+.vn-transport-grid h3 { margin:4rem 0 .7rem; font:700 1.45rem/1 Georgia,serif; }
+.vn-transport-grid p { color:#60716d; font-size:.88rem; }
+.vn-season-board { display:grid; grid-template-columns:1.1fr .9fr 1.1fr; gap:1rem; }
+.vn-season-board article { min-height:15rem; padding:2rem; color:#fff; background:var(--vn-indigo); }
+.vn-season-board article:nth-child(2) { color:var(--vn-ink); background:#e8c77c; transform:translateY(1.4rem); }
+.vn-season-board article:nth-child(3) { background:var(--vn-jade); }
+.vn-season-board strong { font:700 2rem/1 Georgia,serif; }
+.vn-season-board p { margin-top:4rem; color:inherit; opacity:.82; }
+
+/* Family palettes */
+[data-vn-family="lake-grid"],[data-vn-family="urban-heritage"] { --vn-accent:#a4352e; --vn-accent-2:#2d7267; --vn-dark:#172f2c; --vn-soft:#eff5ec; --vn-paper:#fff9ed; }
+[data-vn-family="terrace-contour"],[data-vn-family="highland-culture"] { --vn-accent:#a96133; --vn-accent-2:#657944; --vn-dark:#2d3448; --vn-soft:#f1efe4; --vn-paper:#fffaf0; }
+[data-vn-family="karst-road"],[data-vn-family="karst-roadbook"] { --vn-accent:#a63834; --vn-accent-2:#607b77; --vn-dark:#27363a; --vn-soft:#edf2ef; --vn-paper:#fff8ee; }
+[data-vn-family="archipelago-chart"],[data-vn-family="maritime-karst"] { --vn-accent:#e28845; --vn-accent-2:#3c8b91; --vn-dark:#153b42; --vn-soft:#eaf6f3; --vn-paper:#fff9ee; }
+[data-vn-family="river-karst"],[data-vn-family="river-heritage"] { --vn-accent:#ad5145; --vn-accent-2:#5e8064; --vn-dark:#263b31; --vn-soft:#eef5eb; --vn-paper:#fffaf0; }
+[data-vn-family="cave-section"],[data-vn-family="cave-ecology"] { --vn-accent:#d2a64e; --vn-accent-2:#326f5c; --vn-dark:#121f1e; --vn-soft:#edf2e8; --vn-paper:#fbf7e9; }
+[data-vn-family="violet-rain-archive"] { --vn-accent:#a45355; --vn-accent-2:#706482; --vn-dark:#332c3b; --vn-soft:#f3eef1; --vn-paper:#fff9ed; }
+[data-vn-family="coast-lantern"] { --vn-accent:#d6683f; --vn-accent-2:#277c88; --vn-dark:#173c48; --vn-soft:#edf6f4; --vn-paper:#fff6e8; }
+[data-vn-family="reef-compass"] { --vn-accent:#e1784d; --vn-accent-2:#247e87; --vn-dark:#173a44; --vn-soft:#e9f6f4; --vn-paper:#fff9ed; }
+[data-vn-family="pine-greenhouse"] { --vn-accent:#ad5b40; --vn-accent-2:#567353; --vn-dark:#26382e; --vn-soft:#edf3e9; --vn-paper:#fff8ec; }
+[data-vn-family="dune-wind"] { --vn-accent:#bd5b3d; --vn-accent-2:#be8b4b; --vn-dark:#49332a; --vn-soft:#f7efe2; --vn-paper:#fffaf0; }
+[data-vn-family="scooter-grid"] { --vn-accent:#d44e38; --vn-accent-2:#2c7880; --vn-dark:#182e39; --vn-soft:#edf3f2; --vn-paper:#fff8ea; }
+[data-vn-family="delta-ledger"] { --vn-accent:#b84d37; --vn-accent-2:#3b7a68; --vn-dark:#18372f; --vn-soft:#edf5ec; --vn-paper:#fff9eb; }
+[data-vn-family="island-tide"] { --vn-accent:#ec7650; --vn-accent-2:#23838a; --vn-dark:#123b46; --vn-soft:#e8f7f4; --vn-paper:#fff8e9; }
+[data-vn-family] { --vn-accent-text:color-mix(in srgb,var(--vn-accent) 52%,#111); }
+
+/* Regional hubs */
+.vn-hub-hero { position:relative; min-height:43rem; display:grid; grid-template-columns:minmax(0,.9fr) minmax(24rem,1.1fr); overflow:hidden; color:#fff; border:1px solid color-mix(in srgb,var(--vn-accent) 35%,transparent); border-radius:3.8rem .4rem 3.8rem .4rem; background:var(--vn-dark); box-shadow:0 2rem 5rem color-mix(in srgb,var(--vn-dark) 24%,transparent); }
+.vn-hub-hero::before { content:""; position:absolute; inset:0 48% 0 0; opacity:.24; pointer-events:none; background:repeating-radial-gradient(ellipse at 20% 45%,transparent 0 2rem,var(--vn-accent) 2.05rem 2.18rem,transparent 2.25rem 4rem); }
+.vn-hub-copy { position:relative; z-index:2; align-self:center; padding:clamp(2.3rem,5vw,5rem); }
+.vn-hub-copy h1 { max-width:12ch; margin:.75rem 0 1.1rem; font:700 clamp(3.2rem,6.2vw,6.4rem)/.86 Georgia,serif; letter-spacing:-.065em; }
+.vn-hub-copy h1 span { display:block; margin-top:.7rem; color:color-mix(in srgb,var(--vn-accent) 76%,#fff); font:italic 700 .34em/1.08 Georgia,serif; letter-spacing:-.02em; }
+.vn-hub-copy > p { max-width:42rem; color:rgba(255,255,255,.75); }
+.vn-hub-copy dl { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:1.8rem 0 0; }
+.vn-hub-copy dl div { padding:.7rem; border-top:1px solid rgba(255,255,255,.25); }
+.vn-hub-copy dt { color:color-mix(in srgb,var(--vn-accent) 70%,#fff); font-size:.62rem; font-weight:950; text-transform:uppercase; letter-spacing:.1em; }
+.vn-hub-copy dd { margin:.2rem 0 0; color:rgba(255,255,255,.8); font-size:.75rem; }
+.vn-hub-hero figure { position:relative; min-height:43rem; margin:0; overflow:hidden; clip-path:polygon(9% 0,100% 0,100% 100%,0 100%); }
+.vn-hub-hero figure::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,color-mix(in srgb,var(--vn-dark) 82%,transparent),transparent 35%),linear-gradient(0deg,rgba(0,0,0,.46),transparent 36%); }
+.vn-hub-hero figure img { width:100%; height:100%; object-fit:cover; }
+.vn-hub-hero figcaption { position:absolute; z-index:2; right:1rem; bottom:.85rem; color:rgba(255,255,255,.8); font-size:.64rem; }
+.vn-hub-index { position:absolute; z-index:3; top:1.2rem; right:1.2rem; min-width:7.7rem; padding:1rem; text-align:right; border:1px solid rgba(255,255,255,.45); background:color-mix(in srgb,var(--vn-dark) 74%,transparent); backdrop-filter:blur(10px); }
+.vn-hub-index small,.vn-hub-index span { display:block; font-size:.56rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.vn-hub-index strong { display:block; margin:.35rem 0; font:700 2.6rem/1 Georgia,serif; }
+
+.vn-hub-directory,.vn-hub-section { margin:clamp(4.5rem,8vw,8rem) 0; }
+.vn-hub-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(17rem,.65fr); gap:2rem; align-items:end; margin-bottom:2rem; }
+.vn-hub-heading span { grid-column:1/-1; color:var(--vn-accent-text); font-size:.68rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; }
+.vn-hub-heading h2 { max-width:17ch; margin:0; color:var(--vn-dark); font:700 clamp(2.4rem,4.8vw,4.7rem)/.93 Georgia,serif; letter-spacing:-.05em; }
+.vn-hub-heading p { margin:0; color:#60726e; }
+.vn-hub-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:1rem; }
+.vn-hub-card { grid-column:span 4; position:relative; min-height:30rem; display:grid; grid-template-rows:12.5rem 1fr; overflow:hidden; color:var(--vn-dark); border:1px solid color-mix(in srgb,var(--vn-accent) 25%,transparent); background:var(--vn-paper); box-shadow:0 1rem 2.6rem color-mix(in srgb,var(--vn-dark) 8%,transparent); }
+.vn-hub-card:nth-child(2),.vn-hub-card:nth-child(5) { transform:translateY(1.4rem); }
+.vn-hub-card:nth-child(3n+1) { border-radius:2rem .25rem .25rem .25rem; }
+.vn-hub-card:nth-child(3n+2) { border-radius:.25rem 2rem .25rem .25rem; }
+.vn-hub-card:nth-child(3n) { border-radius:.25rem .25rem 2rem .25rem; }
+.vn-hub-card img { width:100%; height:100%; object-fit:cover; filter:saturate(.92) contrast(1.02); }
+.vn-hub-card > div { padding:1.25rem; }
+.vn-hub-card small { color:var(--vn-accent-text); font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.vn-hub-card h3 { margin:.45rem 0 .65rem; font:700 1.65rem/1 Georgia,serif; }
+.vn-hub-card p { color:#60716e; font-size:.85rem; }
+.vn-hub-card strong { color:var(--vn-accent-text); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; }
+.vn-hub-card-number { position:absolute; top:.7rem; right:.7rem; display:grid; place-items:center; width:2.8rem; height:2.8rem; color:#fff; border-radius:50%; background:var(--vn-dark); font:700 1rem/1 Georgia,serif; }
+.vn-contract-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.vn-contract-grid article { min-height:20rem; padding:1.7rem; color:var(--vn-dark); border:1px solid var(--vn-line); background:var(--vn-paper); }
+.vn-contract-grid article:nth-child(even) { color:#fff; background:var(--vn-dark); }
+.vn-contract-grid article:nth-child(even) p,.vn-contract-grid article:nth-child(even) span { color:rgba(255,255,255,.72); }
+.vn-contract-grid small { color:var(--vn-accent-text); font-weight:900; text-transform:uppercase; letter-spacing:.1em; }
+.vn-contract-grid h3 { margin:2.7rem 0 .7rem; font:700 1.55rem/1 Georgia,serif; }
+.vn-contract-grid p,.vn-contract-grid span { color:#61726e; font-size:.85rem; }
+.vn-contract-grid strong { display:block; margin-top:1.1rem; color:var(--vn-accent-text); font-size:.67rem; text-transform:uppercase; }
+.vn-contract-grid article:nth-child(even) small,.vn-contract-grid article:nth-child(even) strong { color:color-mix(in srgb,var(--vn-accent) 66%,#fff); }
+.vn-hub-route { display:grid; grid-template-columns:repeat(6,1fr); border-top:1px solid var(--vn-line); border-bottom:1px solid var(--vn-line); }
+.vn-hub-route a { min-height:22rem; padding:1.5rem 1rem; color:var(--vn-dark); border-right:1px solid var(--vn-line); }
+.vn-hub-route a:last-child { border-right:0; }
+.vn-hub-route a:nth-child(even) { background:var(--vn-soft); }
+.vn-hub-route span { color:var(--vn-accent-text); font-size:.62rem; font-weight:900; text-transform:uppercase; letter-spacing:.08em; }
+.vn-hub-route h3 { margin:4.2rem 0 .7rem; font:700 1.28rem/1 Georgia,serif; }
+.vn-hub-route p { color:#64746f; font-size:.78rem; }
+.vn-hub .faq-list details { background:var(--vn-paper); border-color:color-mix(in srgb,var(--vn-accent) 22%,transparent); }
+
+/* Family silhouette changes */
+[data-vn-family="terrace-contour"] .vn-hub-hero,[data-vn-family="highland-culture"] .vn-hub-hero,[data-vn-family="river-karst"] .vn-hub-hero,[data-vn-family="river-heritage"] .vn-hub-hero { border-radius:6rem .35rem 6rem .35rem; }
+[data-vn-family="karst-road"] .vn-hub-hero,[data-vn-family="karst-roadbook"] .vn-hub-hero,[data-vn-family="dune-wind"] .vn-hub-hero { transform:skewY(-.45deg); }
+[data-vn-family="karst-road"] .vn-hub-hero > *,[data-vn-family="karst-roadbook"] .vn-hub-hero > *,[data-vn-family="dune-wind"] .vn-hub-hero > * { transform:skewY(.45deg); }
+[data-vn-family="archipelago-chart"] .vn-hub-hero,[data-vn-family="maritime-karst"] .vn-hub-hero,[data-vn-family="island-tide"] .vn-hub-hero { border-radius:7rem 7rem .35rem .35rem; }
+[data-vn-family="cave-section"] .vn-hub-hero,[data-vn-family="cave-ecology"] .vn-hub-hero { border-radius:.25rem; background:linear-gradient(120deg,#0e1716,#213b32); }
+[data-vn-family="violet-rain-archive"] .vn-hub-hero { border-radius:.25rem 5rem .25rem 5rem; }
+[data-vn-family="coast-lantern"] .vn-hub-hero,[data-vn-family="reef-compass"] .vn-hub-hero { border-radius:4rem 4rem .3rem .3rem; }
+[data-vn-family="pine-greenhouse"] .vn-hub-hero { border-radius:.3rem 6rem 6rem .3rem; }
+[data-vn-family="scooter-grid"] .vn-hub-hero { border-radius:.25rem; background:linear-gradient(125deg,#182e39,#314e54); }
+[data-vn-family="delta-ledger"] .vn-hub-hero { border-radius:5rem .25rem .25rem 5rem; }
+
+/* Hub composition changes: each region receives a different primary reading shape. */
+[data-vn-family="highland-culture"] .vn-hub-hero,
+[data-vn-family="cave-ecology"] .vn-hub-hero,
+[data-vn-family="dune-wind"] .vn-hub-hero {
+  grid-template-columns:1fr;
+  grid-template-rows:25rem auto;
+  min-height:0;
+  color:var(--vn-dark);
+  background:var(--vn-paper);
+}
+[data-vn-family="highland-culture"] .vn-hub-hero figure,
+[data-vn-family="cave-ecology"] .vn-hub-hero figure,
+[data-vn-family="dune-wind"] .vn-hub-hero figure {
+  grid-row:1;
+  min-height:25rem;
+  clip-path:none;
+}
+[data-vn-family="highland-culture"] .vn-hub-copy,
+[data-vn-family="cave-ecology"] .vn-hub-copy,
+[data-vn-family="dune-wind"] .vn-hub-copy { grid-row:2; padding:2.5rem clamp(2rem,6vw,6rem); }
+[data-vn-family="highland-culture"] .vn-hub-copy h1,
+[data-vn-family="cave-ecology"] .vn-hub-copy h1,
+[data-vn-family="dune-wind"] .vn-hub-copy h1 { max-width:18ch; }
+[data-vn-family="highland-culture"] .vn-hub-copy > p,
+[data-vn-family="cave-ecology"] .vn-hub-copy > p,
+[data-vn-family="dune-wind"] .vn-hub-copy > p,
+[data-vn-family="highland-culture"] .vn-hub-copy dd,
+[data-vn-family="cave-ecology"] .vn-hub-copy dd,
+[data-vn-family="dune-wind"] .vn-hub-copy dd { color:#60716d; }
+[data-vn-family="highland-culture"] .vn-hub-hero .vn-kicker,
+[data-vn-family="cave-ecology"] .vn-hub-hero .vn-kicker,
+[data-vn-family="dune-wind"] .vn-hub-hero .vn-kicker,
+[data-vn-family="reef-compass"] .vn-hub-hero .vn-kicker,
+[data-vn-family="pine-greenhouse"] .vn-hub-hero .vn-kicker,
+[data-vn-family="highland-culture"] .vn-hub-copy h1 span,
+[data-vn-family="cave-ecology"] .vn-hub-copy h1 span,
+[data-vn-family="dune-wind"] .vn-hub-copy h1 span,
+[data-vn-family="reef-compass"] .vn-hub-copy h1 span,
+[data-vn-family="pine-greenhouse"] .vn-hub-copy h1 span,
+[data-vn-family="highland-culture"] .vn-hub-copy dt,
+[data-vn-family="cave-ecology"] .vn-hub-copy dt,
+[data-vn-family="dune-wind"] .vn-hub-copy dt,
+[data-vn-family="reef-compass"] .vn-hub-copy dt,
+[data-vn-family="pine-greenhouse"] .vn-hub-copy dt { color:var(--vn-accent-text); }
+[data-vn-family="highland-culture"] .vn-hub .button.secondary,
+[data-vn-family="cave-ecology"] .vn-hub .button.secondary,
+[data-vn-family="dune-wind"] .vn-hub .button.secondary { color:var(--vn-dark); border-color:var(--vn-line); }
+
+[data-vn-family="karst-roadbook"] .vn-hub-hero,
+[data-vn-family="maritime-karst"] .vn-hub-hero,
+[data-vn-family="coast-lantern"] .vn-hub-hero,
+[data-vn-family="island-tide"] .vn-hub-hero {
+  position:relative;
+  display:block;
+  min-height:46rem;
+  transform:none;
+}
+[data-vn-family="karst-roadbook"] .vn-hub-hero > *,
+[data-vn-family="maritime-karst"] .vn-hub-hero > *,
+[data-vn-family="coast-lantern"] .vn-hub-hero > *,
+[data-vn-family="island-tide"] .vn-hub-hero > * { transform:none; }
+[data-vn-family="karst-roadbook"] .vn-hub-hero figure,
+[data-vn-family="maritime-karst"] .vn-hub-hero figure,
+[data-vn-family="coast-lantern"] .vn-hub-hero figure,
+[data-vn-family="island-tide"] .vn-hub-hero figure { position:absolute; inset:0; min-height:0; clip-path:none; }
+[data-vn-family="karst-roadbook"] .vn-hub-copy,
+[data-vn-family="maritime-karst"] .vn-hub-copy,
+[data-vn-family="coast-lantern"] .vn-hub-copy,
+[data-vn-family="island-tide"] .vn-hub-copy {
+  position:absolute;
+  z-index:3;
+  left:2rem;
+  bottom:2rem;
+  width:min(42rem,68%);
+  padding:2.5rem;
+  background:color-mix(in srgb,var(--vn-dark) 88%,transparent);
+  backdrop-filter:blur(14px);
+}
+[data-vn-family="maritime-karst"] .vn-hub-copy { left:auto; right:2rem; border-radius:4rem .25rem .25rem .25rem; }
+[data-vn-family="coast-lantern"] .vn-hub-copy { left:50%; bottom:50%; width:min(46rem,72%); text-align:center; transform:translate(-50%,50%); background:color-mix(in srgb,var(--vn-dark) 78%,transparent); }
+[data-vn-family="coast-lantern"] .vn-hub-copy h1,[data-vn-family="coast-lantern"] .vn-hub-copy > p { margin-right:auto; margin-left:auto; }
+[data-vn-family="coast-lantern"] .vn-hub-copy dl { text-align:left; }
+[data-vn-family="island-tide"] .vn-hub-copy { left:0; bottom:0; width:min(50rem,75%); border-radius:0 5rem 0 0; background:linear-gradient(120deg,color-mix(in srgb,var(--vn-dark) 96%,transparent),color-mix(in srgb,var(--vn-dark) 72%,transparent)); }
+
+[data-vn-family="river-heritage"] .vn-hub-hero,
+[data-vn-family="violet-rain-archive"] .vn-hub-hero,
+[data-vn-family="delta-ledger"] .vn-hub-hero { grid-template-columns:minmax(25rem,1.08fr) minmax(0,.92fr); }
+[data-vn-family="river-heritage"] .vn-hub-hero figure,
+[data-vn-family="violet-rain-archive"] .vn-hub-hero figure,
+[data-vn-family="delta-ledger"] .vn-hub-hero figure { grid-column:1; grid-row:1; clip-path:polygon(0 0,100% 0,88% 100%,0 100%); }
+[data-vn-family="river-heritage"] .vn-hub-copy,
+[data-vn-family="violet-rain-archive"] .vn-hub-copy,
+[data-vn-family="delta-ledger"] .vn-hub-copy { grid-column:2; grid-row:1; }
+[data-vn-family="delta-ledger"] .vn-hub-hero { border-radius:.25rem; background:repeating-linear-gradient(0deg,transparent 0 3.6rem,rgba(255,255,255,.05) 3.65rem 3.7rem),var(--vn-dark); }
+
+[data-vn-family="reef-compass"] .vn-hub-hero {
+  grid-template-columns:minmax(0,1.15fr) minmax(24rem,.85fr);
+  color:var(--vn-dark);
+  border-radius:8rem 8rem .25rem .25rem;
+  background:var(--vn-soft);
+}
+[data-vn-family="reef-compass"] .vn-hub-copy > p,[data-vn-family="reef-compass"] .vn-hub-copy dd { color:#526d6b; }
+[data-vn-family="reef-compass"] .vn-hub-copy h1 { color:var(--vn-dark); }
+[data-vn-family="reef-compass"] .vn-hub .button.secondary { color:var(--vn-dark); border-color:var(--vn-line); }
+[data-vn-family="reef-compass"] .vn-hub-hero figure { margin:2.2rem; min-height:35rem; clip-path:circle(48% at 50% 50%); }
+[data-vn-family="reef-compass"] .vn-hub-index { border-radius:50%; text-align:center; }
+
+[data-vn-family="pine-greenhouse"] .vn-hub-hero { grid-template-columns:minmax(25rem,.8fr) minmax(0,1.2fr); background:linear-gradient(105deg,var(--vn-paper) 0 43%,var(--vn-dark) 43%); }
+[data-vn-family="pine-greenhouse"] .vn-hub-copy { color:var(--vn-dark); }
+[data-vn-family="pine-greenhouse"] .vn-hub-copy > p,[data-vn-family="pine-greenhouse"] .vn-hub-copy dd { color:#5c7068; }
+[data-vn-family="pine-greenhouse"] .vn-hub .button.secondary { color:var(--vn-dark); border-color:var(--vn-line); }
+[data-vn-family="pine-greenhouse"] .vn-hub-hero figure { clip-path:polygon(10% 0,100% 7%,93% 100%,0 92%); margin:2rem; min-height:38rem; transform:rotate(1.2deg); }
+
+[data-vn-family="scooter-grid"] .vn-hub-hero { grid-template-columns:minmax(0,1.35fr) minmax(20rem,.65fr); border-radius:.25rem; background:repeating-linear-gradient(90deg,transparent 0 4rem,rgba(255,255,255,.045) 4.05rem 4.1rem),var(--vn-dark); }
+[data-vn-family="scooter-grid"] .vn-hub-hero figure { clip-path:none; border-left:.5rem solid var(--vn-accent); }
+
+@media (max-width:1080px) {
+  .vn-country-hero,[data-vn-family] .vn-hub-hero { min-height:0; display:grid; grid-template-columns:1fr; grid-template-rows:auto; transform:none; }
+  .vn-country-hero figure,[data-vn-family] .vn-hub-hero figure { position:relative; inset:auto; grid-column:1; grid-row:2; min-height:30rem; margin:0; clip-path:none; transform:none; opacity:1; }
+  [data-vn-family] .vn-hub-copy { position:relative; inset:auto; grid-column:1; grid-row:1; width:auto; padding:clamp(2.3rem,5vw,5rem); text-align:left; transform:none; background:transparent; backdrop-filter:none; }
+  [data-vn-family="highland-culture"] .vn-hub-hero,[data-vn-family="cave-ecology"] .vn-hub-hero,[data-vn-family="dune-wind"] .vn-hub-hero,[data-vn-family="reef-compass"] .vn-hub-hero,[data-vn-family="pine-greenhouse"] .vn-hub-hero { color:#fff; background:var(--vn-dark); }
+  [data-vn-family] .vn-hub-copy h1 { color:#fff; }
+  [data-vn-family] .vn-hub-copy > p,[data-vn-family] .vn-hub-copy dd { color:rgba(255,255,255,.75); }
+  [data-vn-family] .vn-hub-hero .vn-kicker,[data-vn-family] .vn-hub-copy h1 span,[data-vn-family] .vn-hub-copy dt { color:color-mix(in srgb,var(--vn-accent) 68%,#fff); }
+  [data-vn-family] .vn-hub .button.secondary { color:#fff; border-color:rgba(255,255,255,.38); }
+  .vn-country-intro { grid-template-columns:1fr; }
+  .vn-country-intro article { min-height:0; border-right:0; border-bottom:1px solid var(--vn-line); }
+  .vn-country-intro article:last-child { border-bottom:0; }
+  .vn-country-intro h2 { margin-top:1.4rem; }
+  .vn-hub-grid { grid-template-columns:repeat(2,1fr); }
+  .vn-hub-card { grid-column:auto; }
+  .vn-hub-route { grid-template-columns:repeat(3,1fr); }
+  .vn-hub-route a:nth-child(3n) { border-right:0; }
+  .vn-contract-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width:720px) {
+  .vn-country-hero,.vn-hub-hero { border-radius:.35rem 2rem .35rem 2rem; transform:none!important; }
+  .vn-country-hero > *,.vn-hub-hero > * { transform:none!important; }
+  .vn-country-copy,.vn-hub-copy { padding:2rem 1.35rem 2.5rem; }
+  .vn-country-copy h1 { font-size:clamp(3.2rem,16vw,5rem); }
+  .vn-hub-copy h1 { font-size:clamp(2.8rem,15vw,4.8rem); }
+  .vn-country-hero figure,.vn-hub-hero figure { min-height:22rem; }
+  .vn-country-hero figcaption,.vn-hub-hero figcaption { left:.8rem; right:auto; max-width:calc(100% - 7rem); }
+  .vn-spine { display:none; }
+  .vn-country-facts { display:grid; grid-template-columns:repeat(3,1fr); }
+  .vn-country-facts div { min-width:0; padding:.65rem; }
+  .vn-country-band { padding:1.1rem; border-radius:1.7rem!important; }
+  .vn-band-heading,.vn-hub-heading { grid-template-columns:1fr; gap:.7rem; }
+  .vn-band-heading span,.vn-hub-heading span { grid-column:auto; }
+  .vn-country-grid,.vn-hub-grid,.vn-contract-grid { grid-template-columns:1fr; }
+  .vn-country-card,.vn-country-card:nth-child(3n),.vn-country-card:nth-child(3n+1):not(:first-child),.vn-hub-card { grid-column:auto; transform:none; }
+  .vn-country-card { min-height:0; grid-template-rows:13rem auto; }
+  .vn-hub-card { min-height:0; grid-template-rows:12rem auto; }
+  .vn-transport-grid,.vn-season-board { grid-template-columns:1fr; }
+  .vn-transport-grid article { min-height:0; border-right:0; border-bottom:1px solid var(--vn-line); }
+  .vn-transport-grid h3 { margin-top:1.5rem; }
+  .vn-season-board article,.vn-season-board article:nth-child(2) { min-height:0; transform:none; }
+  .vn-season-board p { margin-top:2rem; }
+  .vn-hub-copy dl { grid-template-columns:1fr; }
+  .vn-hub-index { top:auto; bottom:.8rem; right:.8rem; min-width:5.7rem; }
+  .vn-hub-route { grid-template-columns:1fr; }
+  .vn-hub-route a,.vn-hub-route a:nth-child(3n) { min-height:0; border-right:0; border-bottom:1px solid var(--vn-line); }
+  .vn-hub-route h3 { margin-top:2rem; }
+}

@@ -24,6 +24,7 @@ const publicDirectories = [
   'thailand',
   'terms-of-use',
   'th',
+  'vietnam',
   'zh'
 ];
 
