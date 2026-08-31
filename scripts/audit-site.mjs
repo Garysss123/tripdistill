@@ -214,7 +214,7 @@ for (const absoluteUrl of publishedUrls) {
     if ((html.match(/class="md-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia field guide does not contain four route stages`);
     if ((html.match(/class="md-check"/g) || []).length !== 3) problems.push(`${relativePath}: Malaysia field guide does not contain three risk checks`);
   }
-  if (baseRoute.startsWith('/vietnam/') && !html.includes('/css/vietnam.css?v=20260831-1')) problems.push(`${relativePath}: missing Vietnam north-south field-atlas stylesheet`);
+  if (baseRoute.startsWith('/vietnam/') && !html.includes('/css/vietnam.css?v=20260831-2')) problems.push(`${relativePath}: missing Vietnam north-south field-atlas stylesheet`);
   if (baseRoute.startsWith('/vietnam/') && !html.includes('"@type":"Article"')) problems.push(`${relativePath}: missing valid Vietnam Article JSON-LD`);
   if (baseRoute.startsWith('/vietnam/') && html.includes('"@type":"TravelGuide"')) problems.push(`${relativePath}: uses unregistered TravelGuide JSON-LD type`);
   if (baseRoute.startsWith('/vietnam/') && baseRoute !== '/vietnam/' && !/<body\b[^>]*\bdata-parent-page="vietnam"/i.test(html)) problems.push(`${relativePath}: Vietnam primary navigation parent is not set`);

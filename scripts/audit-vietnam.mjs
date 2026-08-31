@@ -5,7 +5,7 @@ import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const metaDescriptions = new Map();
-const expectedCss = '/css/vietnam.css?v=20260831-1';
+const expectedCss = '/css/vietnam.css?v=20260831-2';
 const expectedFieldCss = '/css/vietnam-field.css?v=20260831-1';
 const expectedScript = '/js/main.js?v=20260831-1';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
