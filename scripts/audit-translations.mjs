@@ -156,6 +156,7 @@ for (const locale of localeConfigs) {
     const exempt = /^(?:—|Photo:|Image:)|(?:CC BY|Wikimedia Commons|TripDistill\.com)/.test(source);
     const creditHasLocalizedProse = /\b(?:resized|converted|cropped?|edited|display|watermark|retained)\b/i.test(source);
     if (creditHasLocalizedProse && targetScript < 4) problems.push(`${locale.code} image-credit processing note appears untranslated: ${source} => ${target}`);
+    if (/\bedited by\b/i.test(source) && /\bedited by\b/i.test(target)) problems.push(`${locale.code} image-credit editor note remains in English: ${source} => ${target}`);
     if (sourceLetters >= 55 && targetScript < 8 && !exempt) problems.push(`${locale.code} long copy appears untranslated: ${source} => ${target}`);
     if (sourceLetters >= 80 && target.trim() === source.trim() && !exempt) problems.push(`${locale.code} long copy is identical to English: ${source}`);
     if (source.length >= 80 && target.length < source.length * 0.14) suspicious.push(`${locale.code} very short translation: ${source} => ${target}`);

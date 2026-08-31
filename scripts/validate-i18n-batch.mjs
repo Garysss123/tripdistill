@@ -189,6 +189,7 @@ for (const [source, target] of localEntries) {
   const exempt = /^(?:—|Photo:|Image:)|(?:CC BY|Wikimedia Commons|TripDistill\.com)/.test(source);
   const creditHasLocalizedProse = /\b(?:resized|converted|cropped?|edited|display|watermark|retained)\b/i.test(source);
   if (creditHasLocalizedProse && targetScript < 4) problems.push(`image-credit processing note appears untranslated: ${source}`);
+  if (/\bedited by\b/i.test(source) && /\bedited by\b/i.test(target)) problems.push(`image-credit editor note remains in English: ${source}`);
   if (sourceLetters >= 55 && targetScript < 8 && !exempt) problems.push(`long copy appears untranslated: ${source}`);
   if (sourceLetters >= 80 && target.trim() === source.trim() && !exempt) problems.push(`long copy is identical to English: ${source}`);
 }
