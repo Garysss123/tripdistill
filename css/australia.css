@@ -1,0 +1,253 @@
+:root {
+  --au-ink:#102b33;
+  --au-deep:#153a43;
+  --au-ocean:#0f6b78;
+  --au-sky:#70b6c9;
+  --au-eucalypt:#486f5f;
+  --au-ochre:#b8582d;
+  --au-gold:#e7aa43;
+  --au-sand:#f1e3c4;
+  --au-paper:#fffaf0;
+  --au-mist:#edf4ef;
+  --au-line:rgba(16,43,51,.18);
+  --au-accent-text:#7b3b20;
+}
+
+.au-country,.au-hub,.au-field {
+  max-width:none;
+  color:var(--au-ink);
+  background:
+    linear-gradient(90deg,transparent 49.9%,rgba(16,43,51,.035) 50%,transparent 50.1%),
+    linear-gradient(0deg,transparent 49.9%,rgba(16,43,51,.028) 50%,transparent 50.1%);
+  background-size:5.5rem 5.5rem;
+}
+.au-kicker,.au-section-label { display:block; color:var(--au-gold); font:900 .67rem/1.4 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.16em; text-transform:uppercase; }
+.au-country .button.primary,.au-hub .button.primary,.au-field .button.primary { color:var(--au-ink); background:var(--au-gold); }
+.au-country .button.secondary,.au-hub .button.secondary,.au-field .button.secondary { color:inherit; border-color:currentColor; background:transparent; }
+
+/* Continental country atlas */
+.au-country-hero { position:relative; min-height:48rem; display:grid; grid-template-columns:minmax(0,.92fr) minmax(26rem,1.08fr); overflow:hidden; color:#fff; border-radius:.35rem 8rem .35rem 8rem; background:var(--au-ink); box-shadow:0 2rem 5rem rgba(16,43,51,.22); }
+.au-country-hero::before { content:""; position:absolute; z-index:1; inset:0 45% 0 0; pointer-events:none; background:repeating-linear-gradient(112deg,transparent 0 3.8rem,rgba(255,255,255,.06) 3.85rem 3.95rem); }
+.au-country-copy { position:relative; z-index:3; align-self:center; padding:clamp(2.4rem,5vw,5.4rem); background:linear-gradient(145deg,rgba(184,88,45,.96),rgba(135,57,32,.94)); clip-path:polygon(0 0,96% 0,84% 100%,0 100%); }
+.au-country-copy h1 { max-width:none; margin:.8rem 0 1.1rem; font:950 clamp(3.2rem,4.4vw,4.4rem)/.8 Arial,"Helvetica Neue",sans-serif; letter-spacing:-.09em; white-space:nowrap; text-transform:uppercase; }
+.au-country-copy h1 span { display:block; max-width:15ch; margin-top:1.2rem; color:#ffe4a6; font:700 .27em/1.05 Georgia,serif; letter-spacing:-.02em; text-transform:none; }
+.au-country-copy > p { max-width:34rem; color:rgba(255,255,255,.82); }
+.au-country-facts { display:grid; grid-template-columns:repeat(3,1fr); gap:.7rem; margin-top:2rem; }
+.au-country-facts div { padding:1rem .85rem; border-top:1px solid rgba(255,255,255,.42); border-bottom:1px solid rgba(255,255,255,.2); }
+.au-country-facts strong,.au-country-facts span { display:block; }
+.au-country-facts strong { color:#ffe4a6; font:900 2rem/1 Arial,sans-serif; }
+.au-country-facts span { margin-top:.5rem; font:800 .56rem/1.35 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+.au-country-hero figure { position:relative; min-height:48rem; margin:0; overflow:hidden; }
+.au-country-hero figure::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(16,43,51,.42),transparent 30%),linear-gradient(0deg,rgba(0,0,0,.48),transparent 36%); }
+.au-country-hero figure img { width:100%; height:100%; object-fit:cover; }
+.au-country-hero figcaption { position:absolute; z-index:2; right:1rem; bottom:.8rem; color:rgba(255,255,255,.86); font-size:.62rem; }
+.au-distance-scale { position:absolute; z-index:4; right:1.3rem; top:1.3rem; width:8.8rem; padding:1rem; color:#fff; background:rgba(16,43,51,.88); border:1px solid rgba(255,255,255,.45); }
+.au-distance-scale span { display:block; font:900 .55rem/1 ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; }
+.au-distance-scale i { display:block; width:1px; height:1.6rem; margin:.45rem 0; background:var(--au-gold); }
+.au-country-principles { display:grid; grid-template-columns:repeat(3,1fr); margin:2rem 0 6rem; border:1px solid var(--au-line); background:var(--au-paper); }
+.au-country-principles article { min-height:17rem; padding:1.7rem; border-right:1px solid var(--au-line); }
+.au-country-principles article:last-child { border-right:0; }
+.au-country-principles span { color:var(--au-ochre); font:950 2.3rem/1 Arial,sans-serif; }
+.au-country-principles h2 { max-width:13ch; margin:3.2rem 0 .7rem; font:900 1.5rem/.98 Arial,sans-serif; letter-spacing:-.035em; }
+.au-country-principles p { color:#5e706d; font-size:.86rem; }
+.au-country-band,.au-country-section { margin:clamp(5rem,9vw,9rem) 0; }
+.au-band-heading { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(17rem,.65fr); gap:2rem; align-items:end; margin-bottom:2rem; border-top:.35rem solid var(--au-ink); padding-top:1.2rem; }
+.au-band-heading > span { grid-column:1/-1; color:var(--au-ochre); font:900 .65rem/1 ui-monospace,monospace; letter-spacing:.15em; text-transform:uppercase; }
+.au-band-heading h2 { max-width:18ch; margin:0; font:950 clamp(2.7rem,5.3vw,5.4rem)/.86 Arial,sans-serif; letter-spacing:-.065em; text-transform:uppercase; }
+.au-band-heading p { margin:0; color:#5e716f; }
+.au-country-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:1rem; }
+.au-country-card { grid-column:span 3; position:relative; min-height:35rem; display:grid; grid-template-rows:14rem 1fr; overflow:hidden; color:var(--au-ink); border:1px solid var(--au-line); background:var(--au-paper); box-shadow:0 1rem 2.7rem rgba(16,43,51,.1); }
+.au-country-card:nth-child(1) { border-radius:0 3.5rem 0 0; }
+.au-country-card:nth-child(2) { transform:translateY(1.3rem); clip-path:polygon(0 0,100% 3%,96% 100%,0 97%); }
+.au-country-card:nth-child(3) { border-radius:3.5rem 0 0 0; }
+.au-country-card:nth-child(4) { transform:translateY(-.7rem); clip-path:polygon(4% 0,100% 0,100% 97%,0 100%); }
+.au-country-card img { width:100%; height:100%; object-fit:cover; filter:saturate(.92) contrast(1.04); }
+.au-country-card > div { padding:1.35rem; }
+.au-country-card small,.au-country-card strong { color:var(--au-accent-text); font:900 .6rem/1.3 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+.au-country-card h3 { margin:.55rem 0 .75rem; font:950 1.65rem/.92 Arial,sans-serif; letter-spacing:-.045em; }
+.au-country-card p { color:#60716d; font-size:.82rem; }
+.au-country-card > span { position:absolute; top:.7rem; right:.7rem; display:grid; place-items:center; width:2.9rem; height:2.9rem; color:#fff; background:var(--au-ink); border-radius:50%; font:900 .8rem/1 ui-monospace,monospace; }
+.au-transport-grid { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--au-line); }
+.au-transport-grid article { min-height:20rem; padding:1.6rem; border-right:1px solid var(--au-line); background:var(--au-paper); }
+.au-transport-grid article:last-child { border-right:0; }
+.au-transport-grid article:nth-child(even) { color:#fff; background:var(--au-deep); }
+.au-transport-grid small { color:var(--au-ochre); font:900 .62rem/1 ui-monospace,monospace; letter-spacing:.12em; text-transform:uppercase; }
+.au-transport-grid article:nth-child(even) small { color:#ffd080; }
+.au-transport-grid h3 { margin:5rem 0 .7rem; font:900 1.4rem/.98 Arial,sans-serif; }
+.au-transport-grid p { color:#61736f; font-size:.82rem; }
+.au-transport-grid article:nth-child(even) p { color:rgba(255,255,255,.74); }
+.au-condition-board { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; }
+.au-condition-board article { min-height:17rem; padding:1.5rem; color:#fff; background:linear-gradient(145deg,var(--au-deep),#275a5a); border-top:.4rem solid var(--au-gold); }
+.au-condition-board strong { display:block; margin-top:4.5rem; font:900 1.35rem/.95 Arial,sans-serif; text-transform:uppercase; }
+.au-condition-board p { color:rgba(255,255,255,.74); font-size:.8rem; }
+
+/* Regional colour systems */
+[data-au-family="harbour-soundings"] { --au-family-accent:#df6a3d; --au-family-second:#3e8aa0; --au-family-dark:#102e3c; --au-family-soft:#eef5f2; }
+[data-au-family="escarpment-contours"] { --au-family-accent:#b24f33; --au-family-second:#456d62; --au-family-dark:#243638; --au-family-soft:#eef0e8; }
+[data-au-family="tram-laneway-grid"] { --au-family-accent:#c34f65; --au-family-second:#447690; --au-family-dark:#272a36; --au-family-soft:#f1eef1; }
+[data-au-family="cliff-kilometre-ribbon"] { --au-family-accent:#c45b34; --au-family-second:#247285; --au-family-dark:#263941; --au-family-soft:#f2eee4; }
+[data-au-family="river-loop"] { --au-family-accent:#d17436; --au-family-second:#3c7e6f; --au-family-dark:#193b3c; --au-family-soft:#eef6f1; }
+[data-au-family="surf-to-range"] { --au-family-accent:#d95738; --au-family-second:#25859a; --au-family-dark:#173b49; --au-family-soft:#eaf5f3; }
+[data-au-family="reef-rainforest-transect"] { --au-family-accent:#e07b37; --au-family-second:#237d68; --au-family-dark:#123d42; --au-family-soft:#e8f3eb; }
+[data-au-family="coral-forecast-chart"] { --au-family-accent:#e76654; --au-family-second:#168b9b; --au-family-dark:#10394b; --au-family-soft:#e7f6f6; }
+[data-au-family="wet-dry-season-gate"] { --au-family-accent:#c95e2f; --au-family-second:#56734b; --au-family-dark:#2c3b30; --au-family-soft:#f2eddf; }
+[data-au-family="desert-light-compass"] { --au-family-accent:#c85b2e; --au-family-second:#92713d; --au-family-dark:#3b2c29; --au-family-soft:#f5ead9; }
+[data-au-family="indian-ocean-sunset-grid"] { --au-family-accent:#e27638; --au-family-second:#337f8b; --au-family-dark:#163942; --au-family-soft:#edf4ef; }
+[data-au-family="karri-coast-register"] { --au-family-accent:#aa5739; --au-family-second:#436c55; --au-family-dark:#243a31; --au-family-soft:#edf2e7; }
+[data-au-family="tidal-range-atlas"] { --au-family-accent:#c24d2d; --au-family-second:#6b7550; --au-family-dark:#352f2c; --au-family-soft:#f2eadc; }
+[data-au-family="parklands-ferry-ledger"] { --au-family-accent:#a94d3d; --au-family-second:#577a65; --au-family-dark:#263b36; --au-family-soft:#f2eee3; }
+[data-au-family="island-weather-cabinet"] { --au-family-accent:#ad4d45; --au-family-second:#3f7180; --au-family-dark:#253440; --au-family-soft:#edf1ef; }
+[data-au-family="civic-axis-altitude"] { --au-family-accent:#b25c37; --au-family-second:#4f7162; --au-family-dark:#27343b; --au-family-soft:#edf1e8; }
+[data-au-family] { --au-accent-text:color-mix(in srgb,var(--au-family-accent) 55%,#111); }
+
+/* Regional hubs */
+.au-hub-hero { position:relative; min-height:44rem; display:grid; grid-template-columns:minmax(0,1fr) minmax(24rem,.95fr); overflow:hidden; color:#fff; background:var(--au-family-dark); border:1px solid color-mix(in srgb,var(--au-family-accent) 40%,transparent); box-shadow:0 2rem 4.5rem color-mix(in srgb,var(--au-family-dark) 22%,transparent); }
+.au-hub-hero::before { content:""; position:absolute; z-index:1; inset:0; opacity:.22; pointer-events:none; background:repeating-linear-gradient(105deg,transparent 0 4rem,var(--au-family-accent) 4.05rem 4.13rem,transparent 4.2rem 8rem); }
+.au-hub-copy { position:relative; z-index:3; align-self:center; padding:clamp(2.3rem,5vw,5rem); }
+.au-hub-copy h1 { max-width:12ch; margin:.8rem 0 1.1rem; font:950 clamp(3.2rem,6vw,6.2rem)/.82 Arial,sans-serif; letter-spacing:-.075em; text-transform:uppercase; }
+.au-hub-copy h1 span { display:block; max-width:19ch; margin-top:1rem; color:color-mix(in srgb,var(--au-family-accent) 67%,#fff); font:700 .27em/1.1 Georgia,serif; letter-spacing:-.01em; text-transform:none; }
+.au-hub-copy > p { max-width:42rem; color:rgba(255,255,255,.76); }
+.au-hub-copy dl { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:1.7rem 0 0; }
+.au-hub-copy dl div { padding:.75rem; border-top:1px solid rgba(255,255,255,.26); }
+.au-hub-copy dt { color:color-mix(in srgb,var(--au-family-accent) 64%,#fff); font:900 .58rem/1 ui-monospace,monospace; text-transform:uppercase; letter-spacing:.1em; }
+.au-hub-copy dd { margin:.3rem 0 0; color:rgba(255,255,255,.78); font-size:.74rem; }
+.au-hub-hero figure { position:relative; min-height:44rem; margin:0; overflow:hidden; clip-path:polygon(12% 0,100% 0,100% 100%,0 100%); }
+.au-hub-hero figure::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,color-mix(in srgb,var(--au-family-dark) 72%,transparent),transparent 38%),linear-gradient(0deg,rgba(0,0,0,.48),transparent 38%); }
+.au-hub-hero figure img { width:100%; height:100%; object-fit:cover; }
+.au-hub-hero figcaption { position:absolute; z-index:2; right:1rem; bottom:.8rem; color:rgba(255,255,255,.84); font-size:.6rem; }
+.au-hub-index { position:absolute; z-index:5; top:1rem; right:1rem; width:8rem; padding:1rem; color:#fff; text-align:right; background:color-mix(in srgb,var(--au-family-dark) 86%,transparent); border:1px solid rgba(255,255,255,.45); }
+.au-hub-index small,.au-hub-index span { display:block; font:900 .53rem/1.3 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+.au-hub-index strong { display:block; margin:.4rem 0; font:950 2.5rem/.9 Arial,sans-serif; }
+.au-hub-directory,.au-hub-section { margin:clamp(5rem,8vw,8rem) 0; }
+.au-hub-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(18rem,.66fr); gap:2rem; align-items:end; margin-bottom:2rem; border-top:.28rem solid var(--au-family-dark); padding-top:1rem; }
+.au-hub-heading span { grid-column:1/-1; color:var(--au-accent-text); font:900 .63rem/1 ui-monospace,monospace; letter-spacing:.14em; text-transform:uppercase; }
+.au-hub-heading h2 { max-width:18ch; margin:0; color:var(--au-family-dark); font:950 clamp(2.5rem,4.8vw,4.8rem)/.87 Arial,sans-serif; letter-spacing:-.06em; text-transform:uppercase; }
+.au-hub-heading p { margin:0; color:#5f716d; }
+.au-hub-grid { display:grid; grid-template-columns:repeat(10,1fr); gap:1rem; }
+.au-hub-card { grid-column:span 2; position:relative; min-height:31rem; display:grid; grid-template-rows:12rem 1fr; overflow:hidden; color:var(--au-family-dark); border:1px solid color-mix(in srgb,var(--au-family-accent) 30%,transparent); background:#fffaf0; box-shadow:0 1rem 2.5rem color-mix(in srgb,var(--au-family-dark) 9%,transparent); }
+.au-hub-card:nth-child(2),.au-hub-card:nth-child(4) { transform:translateY(1.2rem); }
+.au-hub-card:nth-child(1) { border-radius:0 2.8rem 0 0; }
+.au-hub-card:nth-child(2) { clip-path:polygon(0 0,100% 2%,96% 100%,0 98%); }
+.au-hub-card:nth-child(3) { border-radius:2.8rem 2.8rem 0 0; }
+.au-hub-card:nth-child(4) { clip-path:polygon(4% 0,100% 0,100% 98%,0 100%); }
+.au-hub-card:nth-child(5) { border-radius:2.8rem 0 0 0; }
+.au-hub-card img { width:100%; height:100%; object-fit:cover; }
+.au-hub-card > div { padding:1.2rem; }
+.au-hub-card small,.au-hub-card strong { color:var(--au-accent-text); font:900 .57rem/1.3 ui-monospace,monospace; text-transform:uppercase; letter-spacing:.07em; }
+.au-hub-card h3 { margin:.5rem 0 .65rem; font:950 1.25rem/.92 Arial,sans-serif; letter-spacing:-.035em; }
+.au-hub-card p { color:#60716d; font-size:.76rem; }
+.au-hub-card-number { position:absolute; top:.6rem; right:.6rem; display:grid; place-items:center; width:2.6rem; height:2.6rem; color:#fff; border-radius:50%; background:var(--au-family-dark); font:900 .7rem/1 ui-monospace,monospace; }
+.au-contract-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:.7rem; }
+.au-contract-grid article { min-height:21rem; padding:1.4rem; color:var(--au-family-dark); background:#fffaf0; border-top:.35rem solid var(--au-family-accent); }
+.au-contract-grid article:nth-child(even) { color:#fff; background:var(--au-family-dark); }
+.au-contract-grid small { color:var(--au-accent-text); font:900 .58rem/1 ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; }
+.au-contract-grid article:nth-child(even) small { color:color-mix(in srgb,var(--au-family-accent) 62%,#fff); }
+.au-contract-grid h3 { margin:4rem 0 .65rem; font:900 1.2rem/.98 Arial,sans-serif; }
+.au-contract-grid p { color:#61726e; font-size:.76rem; }
+.au-contract-grid article:nth-child(even) p { color:rgba(255,255,255,.74); }
+.au-hub-route { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--au-line); border-bottom:1px solid var(--au-line); }
+.au-hub-route a { min-height:22rem; padding:1.4rem 1rem; color:var(--au-family-dark); border-right:1px solid var(--au-line); }
+.au-hub-route a:last-child { border-right:0; }
+.au-hub-route a:nth-child(even) { background:var(--au-family-soft); }
+.au-hub-route span { color:var(--au-accent-text); font:900 .58rem/1 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+.au-hub-route h3 { margin:5rem 0 .7rem; font:900 1.22rem/.95 Arial,sans-serif; }
+.au-hub-route p { color:#61726f; font-size:.73rem; }
+.au-hub .faq-list details { background:#fffaf0; border-color:color-mix(in srgb,var(--au-family-accent) 22%,transparent); }
+
+/* Sixteen genuinely different hub silhouettes */
+[data-au-family="escarpment-contours"] .au-hub-hero,[data-au-family="cliff-kilometre-ribbon"] .au-hub-hero,[data-au-family="desert-light-compass"] .au-hub-hero,[data-au-family="civic-axis-altitude"] .au-hub-hero { display:block; min-height:47rem; border-radius:5rem .25rem 5rem .25rem; }
+[data-au-family="escarpment-contours"] .au-hub-hero figure,[data-au-family="cliff-kilometre-ribbon"] .au-hub-hero figure,[data-au-family="desert-light-compass"] .au-hub-hero figure,[data-au-family="civic-axis-altitude"] .au-hub-hero figure { position:absolute; inset:0; min-height:0; clip-path:none; }
+[data-au-family="escarpment-contours"] .au-hub-copy,[data-au-family="cliff-kilometre-ribbon"] .au-hub-copy,[data-au-family="desert-light-compass"] .au-hub-copy,[data-au-family="civic-axis-altitude"] .au-hub-copy { position:absolute; z-index:4; left:2rem; bottom:2rem; width:min(47rem,70%); padding:2.4rem; background:color-mix(in srgb,var(--au-family-dark) 90%,transparent); backdrop-filter:blur(14px); }
+[data-au-family="escarpment-contours"] .au-hub-copy h1,[data-au-family="cliff-kilometre-ribbon"] .au-hub-copy h1,[data-au-family="desert-light-compass"] .au-hub-copy h1,[data-au-family="civic-axis-altitude"] .au-hub-copy h1 { max-width:17ch; font-size:clamp(2.9rem,4.5vw,4.35rem); }
+[data-au-family="cliff-kilometre-ribbon"] .au-hub-copy { left:auto; right:2rem; border-left:.55rem solid var(--au-family-accent); }
+[data-au-family="desert-light-compass"] .au-hub-copy { bottom:0; left:0; width:min(52rem,76%); background:linear-gradient(120deg,rgba(59,44,41,.98),rgba(93,55,35,.85)); }
+[data-au-family="civic-axis-altitude"] .au-hub-copy { left:50%; bottom:50%; width:min(48rem,74%); transform:translate(-50%,50%); text-align:center; }
+[data-au-family="civic-axis-altitude"] .au-hub-copy h1,[data-au-family="civic-axis-altitude"] .au-hub-copy > p { margin-right:auto; margin-left:auto; }
+
+[data-au-family="tram-laneway-grid"] .au-hub-hero,[data-au-family="surf-to-range"] .au-hub-hero,[data-au-family="reef-rainforest-transect"] .au-hub-hero,[data-au-family="coral-forecast-chart"] .au-hub-hero { grid-template-columns:minmax(24rem,.8fr) minmax(0,1.2fr); border-radius:.25rem; }
+[data-au-family="tram-laneway-grid"] .au-hub-hero { background:repeating-linear-gradient(90deg,transparent 0 4rem,rgba(255,255,255,.05) 4.05rem 4.12rem),var(--au-family-dark); }
+[data-au-family="tram-laneway-grid"] .au-hub-hero figure { margin:2rem; min-height:38rem; clip-path:polygon(4% 0,100% 7%,94% 100%,0 91%); transform:rotate(1deg); }
+[data-au-family="surf-to-range"] .au-hub-hero { grid-template-columns:minmax(0,1.18fr) minmax(24rem,.82fr); background:var(--au-family-soft); color:var(--au-family-dark); border-radius:7rem 7rem .25rem .25rem; }
+[data-au-family="surf-to-range"] .au-hub-copy h1 { color:var(--au-family-dark); }
+[data-au-family="surf-to-range"] .au-hub-copy > p,[data-au-family="surf-to-range"] .au-hub-copy dd { color:#566e6c; }
+[data-au-family="surf-to-range"] .au-hub-copy h1 span,[data-au-family="surf-to-range"] .au-hub-copy dt,[data-au-family="surf-to-range"] .au-kicker { color:var(--au-accent-text); }
+[data-au-family="surf-to-range"] .au-hub .button.secondary { color:var(--au-family-dark); }
+[data-au-family="surf-to-range"] .au-hub-hero figure { margin:2rem; min-height:37rem; clip-path:ellipse(47% 49% at 50% 50%); }
+[data-au-family="reef-rainforest-transect"] .au-hub-hero figure { grid-column:1; grid-row:1; clip-path:polygon(0 0,100% 0,84% 100%,0 100%); }
+[data-au-family="reef-rainforest-transect"] .au-hub-copy { grid-column:2; grid-row:1; }
+[data-au-family="coral-forecast-chart"] .au-hub-hero { border-radius:6rem .25rem .25rem 6rem; }
+[data-au-family="coral-forecast-chart"] .au-hub-hero figure { clip-path:polygon(14% 0,100% 0,100% 100%,0 100%,8% 50%); }
+
+[data-au-family="wet-dry-season-gate"] .au-hub-hero,[data-au-family="karri-coast-register"] .au-hub-hero,[data-au-family="tidal-range-atlas"] .au-hub-hero,[data-au-family="island-weather-cabinet"] .au-hub-hero { grid-template-columns:1fr; grid-template-rows:25rem auto; min-height:0; color:var(--au-family-dark); background:#fffaf0; }
+[data-au-family="wet-dry-season-gate"] .au-hub-hero figure,[data-au-family="karri-coast-register"] .au-hub-hero figure,[data-au-family="tidal-range-atlas"] .au-hub-hero figure,[data-au-family="island-weather-cabinet"] .au-hub-hero figure { grid-row:1; min-height:25rem; clip-path:none; }
+[data-au-family="wet-dry-season-gate"] .au-hub-copy,[data-au-family="karri-coast-register"] .au-hub-copy,[data-au-family="tidal-range-atlas"] .au-hub-copy,[data-au-family="island-weather-cabinet"] .au-hub-copy { grid-row:2; padding:2.6rem clamp(2rem,6vw,6rem); }
+[data-au-family="wet-dry-season-gate"] .au-hub-copy h1,[data-au-family="karri-coast-register"] .au-hub-copy h1,[data-au-family="tidal-range-atlas"] .au-hub-copy h1,[data-au-family="island-weather-cabinet"] .au-hub-copy h1 { max-width:18ch; color:var(--au-family-dark); }
+[data-au-family="wet-dry-season-gate"] .au-hub-copy > p,[data-au-family="karri-coast-register"] .au-hub-copy > p,[data-au-family="tidal-range-atlas"] .au-hub-copy > p,[data-au-family="island-weather-cabinet"] .au-hub-copy > p,[data-au-family="wet-dry-season-gate"] .au-hub-copy dd,[data-au-family="karri-coast-register"] .au-hub-copy dd,[data-au-family="tidal-range-atlas"] .au-hub-copy dd,[data-au-family="island-weather-cabinet"] .au-hub-copy dd { color:#5e706d; }
+[data-au-family="wet-dry-season-gate"] .au-hub-copy h1 span,[data-au-family="karri-coast-register"] .au-hub-copy h1 span,[data-au-family="tidal-range-atlas"] .au-hub-copy h1 span,[data-au-family="island-weather-cabinet"] .au-hub-copy h1 span,[data-au-family="wet-dry-season-gate"] .au-kicker,[data-au-family="karri-coast-register"] .au-kicker,[data-au-family="tidal-range-atlas"] .au-kicker,[data-au-family="island-weather-cabinet"] .au-kicker,[data-au-family="wet-dry-season-gate"] .au-hub-copy dt,[data-au-family="karri-coast-register"] .au-hub-copy dt,[data-au-family="tidal-range-atlas"] .au-hub-copy dt,[data-au-family="island-weather-cabinet"] .au-hub-copy dt { color:var(--au-accent-text); }
+[data-au-family="wet-dry-season-gate"] .au-hub .button.secondary,[data-au-family="karri-coast-register"] .au-hub .button.secondary,[data-au-family="tidal-range-atlas"] .au-hub .button.secondary,[data-au-family="island-weather-cabinet"] .au-hub .button.secondary { color:var(--au-family-dark); }
+[data-au-family="tidal-range-atlas"] .au-hub-hero { transform:skewY(-.35deg); }
+[data-au-family="tidal-range-atlas"] .au-hub-hero > * { transform:skewY(.35deg); }
+[data-au-family="island-weather-cabinet"] .au-hub-hero { border-radius:.25rem 5rem .25rem 5rem; }
+[data-au-family="harbour-soundings"] .au-hub-hero { border-radius:0 6rem 0 6rem; }
+[data-au-family="river-loop"] .au-hub-hero { border-radius:6rem 0 6rem 0; }
+[data-au-family="indian-ocean-sunset-grid"] .au-hub-hero { border-radius:6rem 6rem .25rem .25rem; }
+[data-au-family="parklands-ferry-ledger"] .au-hub-hero { border-radius:.25rem; border-top:.7rem solid var(--au-family-accent); }
+
+@media (min-width:1121px) {
+  html[lang="zh-Hant"] [data-au-family] .au-hub-copy h1 { max-width:15ch; font-size:clamp(3rem,4vw,4.2rem); line-height:.9; letter-spacing:-.05em; }
+  html[lang="ko"] [data-au-family] .au-hub-copy h1 { max-width:15ch; font-size:clamp(2.9rem,4vw,4.2rem); line-height:.88; letter-spacing:-.045em; }
+  html[lang="ko"] [data-au-family="coral-forecast-chart"] .au-hub-copy h1 { max-width:none; font-size:clamp(2.65rem,3.25vw,3.35rem); }
+  html[lang="ja"] [data-au-family] .au-hub-copy h1 { max-width:none; font-size:clamp(2.7rem,3.25vw,3.35rem); line-height:.92; letter-spacing:-.04em; }
+  html[lang="ja"] [data-au-family="coral-forecast-chart"] .au-hub-hero { grid-template-columns:minmax(0,1.16fr) minmax(20rem,.84fr); }
+  html[lang="ja"] [data-au-family="coral-forecast-chart"] .au-hub-copy { padding-inline:3rem; }
+  html[lang="ja"] [data-au-family="coral-forecast-chart"] .au-hub-copy h1 { font-size:clamp(2.35rem,2.65vw,2.75rem); text-wrap:balance; }
+}
+
+@media (max-width:1120px) {
+  .au-country-hero,[data-au-family] .au-hub-hero { min-height:0; display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:auto; transform:none; border-radius:1.5rem; color:#fff; background:var(--au-family-dark,var(--au-ink)); }
+  .au-country-copy,[data-au-family] .au-hub-copy { position:relative; inset:auto; grid-column:1; grid-row:1; min-width:0; width:100%; max-width:100%; box-sizing:border-box; padding:clamp(2.2rem,5vw,4rem); color:#fff; text-align:left; transform:none; clip-path:none; background:transparent; backdrop-filter:none; }
+  [data-au-family] .au-hub-copy h1 { max-width:16ch; color:#fff; }
+  [data-au-family] .au-hub-copy > p,[data-au-family] .au-hub-copy dd { color:rgba(255,255,255,.76); }
+  [data-au-family] .au-hub-copy h1 span,[data-au-family] .au-hub-copy dt,[data-au-family] .au-kicker { color:color-mix(in srgb,var(--au-family-accent) 65%,#fff); }
+  [data-au-family] .au-hub .button.secondary { color:#fff; }
+  .au-country-hero figure,[data-au-family] .au-hub-hero figure { position:relative; inset:auto; grid-column:1; grid-row:2; min-width:0; min-height:30rem; margin:0; clip-path:none; transform:none; }
+  .au-country-grid { grid-template-columns:repeat(2,1fr); }
+  .au-country-card { grid-column:auto; transform:none!important; }
+  .au-hub-grid { grid-template-columns:repeat(2,1fr); }
+  .au-hub-card { grid-column:auto; transform:none; }
+  .au-contract-grid { grid-template-columns:repeat(2,1fr); }
+  .au-hub-route { grid-template-columns:repeat(2,1fr); }
+  .au-hub-route a { border-bottom:1px solid var(--au-line); }
+  .au-transport-grid,.au-condition-board { grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width:720px) {
+  .au-country-hero,.au-hub-hero { margin-inline:-.35rem; border-radius:1.25rem; }
+  .au-country-copy,.au-hub-copy { padding:2.2rem 2rem; }
+  .au-country-copy h1 { font-size:clamp(2.9rem,13vw,3.5rem); }
+  html[lang="ja"] .au-country-copy h1,html[lang="th"] .au-country-copy h1 { white-space:normal; font-size:clamp(2.6rem,11.8vw,3.35rem); overflow-wrap:anywhere; }
+  .au-country-copy h1 span { font-size:.28em; }
+  .au-hub-copy h1 { max-width:100%!important; font-size:clamp(2.45rem,11.5vw,3.6rem)!important; overflow-wrap:anywhere; }
+  [data-au-family="coral-forecast-chart"] .au-hub-copy h1 { font-size:clamp(2.25rem,9.7vw,3rem)!important; overflow-wrap:normal; }
+  .au-country-facts { gap:.35rem; }
+  .au-country-facts div { padding:.75rem .45rem; }
+  .au-country-principles { grid-template-columns:1fr; }
+  .au-country-principles article { min-height:0; border-right:0; border-bottom:1px solid var(--au-line); }
+  .au-country-principles h2 { margin-top:1.8rem; }
+  .au-band-heading,.au-hub-heading { grid-template-columns:1fr; gap:.9rem; }
+  .au-band-heading h2,.au-hub-heading h2 { font-size:clamp(2.25rem,12vw,3.8rem); }
+  .au-country-grid,.au-hub-grid,.au-contract-grid,.au-hub-route,.au-transport-grid,.au-condition-board { grid-template-columns:1fr; }
+  .au-country-card,.au-hub-card { min-height:0; grid-template-rows:13rem auto; clip-path:none!important; border-radius:1.2rem!important; }
+  .au-contract-grid article,.au-transport-grid article,.au-condition-board article { min-height:0; }
+  .au-contract-grid h3,.au-transport-grid h3,.au-condition-board strong { margin-top:2rem; }
+  .au-hub-route a { min-height:0; border-right:0; }
+  .au-hub-route h3 { margin-top:2rem; }
+  .au-distance-scale { display:none; }
+  .au-hub-index { top:auto; right:.8rem; bottom:.8rem; width:6.6rem; }
+  .au-country-hero figure,[data-au-family] .au-hub-hero figure { min-height:23rem; }
+  .au-country-hero figcaption,.au-hub-hero figcaption { left:.8rem; right:.8rem; text-align:right; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .au-country-card,.au-hub-card { transform:none!important; }
+}

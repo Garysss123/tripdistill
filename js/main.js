@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const BUILD_VERSION = '20260831-1';
+  const BUILD_VERSION = '20260904-1';
   const LOCALES = {
     en: { prefix: '', short: 'EN', nativeName: 'English' },
     'zh-Hant': { prefix: '/zh', short: '繁中', nativeName: '繁體中文' },
@@ -37,7 +37,10 @@
       sidebarKorea: 'South Korea',
       sidebarThailand: 'Thailand',
       sidebarVietnam: 'Vietnam',
-      sidebarCountries: '6 countries'
+      sidebarCountries: '6 countries',
+      sidebarOceania: 'Oceania',
+      sidebarAustralia: 'Australia',
+      sidebarOceaniaCountries: '1 country'
     },
     'zh-Hant': {
       componentError: '導覽元件暫時無法載入，請重新整理頁面再試一次。',
@@ -52,7 +55,10 @@
       sidebarKorea: '韓國',
       sidebarThailand: '泰國',
       sidebarVietnam: '越南',
-      sidebarCountries: '6 個國家'
+      sidebarCountries: '6 個國家',
+      sidebarOceania: '大洋洲',
+      sidebarAustralia: '澳洲',
+      sidebarOceaniaCountries: '1 個國家'
     },
     ja: {
       componentError: 'ナビゲーションを読み込めませんでした。ページを再読み込みしてください。',
@@ -67,7 +73,10 @@
       sidebarKorea: '韓国',
       sidebarThailand: 'タイ',
       sidebarVietnam: 'ベトナム',
-      sidebarCountries: '6か国'
+      sidebarCountries: '6か国',
+      sidebarOceania: 'オセアニア',
+      sidebarAustralia: 'オーストラリア',
+      sidebarOceaniaCountries: '1か国'
     },
     ko: {
       componentError: '탐색 메뉴를 불러오지 못했습니다. 페이지를 새로고침해 주세요.',
@@ -82,7 +91,10 @@
       sidebarKorea: '대한민국',
       sidebarThailand: '태국',
       sidebarVietnam: '베트남',
-      sidebarCountries: '6개 국가'
+      sidebarCountries: '6개 국가',
+      sidebarOceania: '오세아니아',
+      sidebarAustralia: '호주',
+      sidebarOceaniaCountries: '1개 국가'
     },
     th: {
       componentError: 'ไม่สามารถโหลดเมนูนำทางได้ โปรดลองรีเฟรชหน้าเว็บ',
@@ -97,7 +109,10 @@
       sidebarKorea: 'เกาหลีใต้',
       sidebarThailand: 'ไทย',
       sidebarVietnam: 'เวียดนาม',
-      sidebarCountries: '6 ประเทศ'
+      sidebarCountries: '6 ประเทศ',
+      sidebarOceania: 'โอเชียเนีย',
+      sidebarAustralia: 'ออสเตรเลีย',
+      sidebarOceaniaCountries: '1 ประเทศ'
     }
   };
   const COPY = COPY_BY_LOCALE[LOCALE];
@@ -336,6 +351,34 @@
     links.appendChild(continent);
   }
 
+  function organizeOceaniaNavigation() {
+    const explore = document.querySelector('#layout-sidebar nav > .sidebar-section');
+    const links = explore?.querySelector(':scope > .sidebar-links');
+    if (!explore || !links || links.querySelector('[data-sidebar-id="oceania"]')) return;
+    const matching = Array.from(links.querySelectorAll(':scope > a')).filter(function (link) {
+      const pathname = sidebarPath(link);
+      return pathname === '/australia/' || pathname.startsWith('/australia/');
+    });
+    if (!matching.length) return;
+    const continent = document.createElement('details');
+    continent.className = 'sidebar-accordion sidebar-continent';
+    continent.dataset.sidebarId = 'oceania';
+    continent.appendChild(makeSidebarSummary(COPY.sidebarOceania, COPY.sidebarOceaniaCountries, true));
+    const continentBody = document.createElement('div');
+    continentBody.className = 'sidebar-accordion-body';
+    const country = document.createElement('details');
+    country.className = 'sidebar-accordion sidebar-country';
+    country.dataset.sidebarId = 'australia';
+    country.appendChild(makeSidebarSummary(COPY.sidebarAustralia, '', false));
+    const countryLinks = document.createElement('div');
+    countryLinks.className = 'sidebar-accordion-body sidebar-links';
+    matching.forEach(function (link) { countryLinks.appendChild(link); });
+    country.appendChild(countryLinks);
+    continentBody.appendChild(country);
+    continent.appendChild(continentBody);
+    links.appendChild(continent);
+  }
+
   function wrapChapterNavigation() {
     document.querySelectorAll('#layout-sidebar nav > .sidebar-section').forEach(function (section, index) {
       if (index === 0) return;
@@ -355,6 +398,7 @@
 
   function setupSidebarAccordions() {
     organizeAsiaNavigation();
+    organizeOceaniaNavigation();
     wrapChapterNavigation();
     const state = sidebarState();
     const currentCountry = document.body.dataset.country;

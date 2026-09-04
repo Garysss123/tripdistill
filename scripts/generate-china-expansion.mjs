@@ -122,7 +122,7 @@ function renderGuide(guide) {
   <meta name="description" content="${escapeHtml(guide.metaDescription)}">
   <link rel="canonical" href="https://tripdistill.com${route}">${alternates(route)}<meta name="theme-color" content="${guide.themeColor}">
   <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.ogTitle)}"><meta property="og:description" content="${escapeHtml(guide.metaDescription)}"><meta property="og:url" content="https://tripdistill.com${route}"><meta property="og:image" content="https://tripdistill.com${guide.image.path}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260831-1"><link rel="stylesheet" href="/css/china.css?v=20260827-3"><link rel="stylesheet" href="/css/china-expansion.css?v=${assetVersion}">${guide.extraStylesheet ? `<link rel="stylesheet" href="${escapeHtml(guide.extraStylesheet)}">` : ''}<script src="/js/adsense.js?v=20260826-9" defer></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260904-1"><link rel="stylesheet" href="/css/china.css?v=20260827-3"><link rel="stylesheet" href="/css/china-expansion.css?v=${assetVersion}">${guide.extraStylesheet ? `<link rel="stylesheet" href="${escapeHtml(guide.extraStylesheet)}">` : ''}<script src="/js/adsense.js?v=20260826-9" defer></script>
   <script type="application/ld+json">${jsonLd(guide)}</script>
 </head>
 <body class="china-expansion-page" data-page="${guide.slug}" data-parent-page="china" data-country="china" data-region="${guide.slug}">
@@ -147,7 +147,7 @@ function renderGuide(guide) {
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${reviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${escapeHtml(guide.image.license)}.</li></ul></section>
     </article>
-  </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260828-1" defer></script>
+  </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260904-1" defer></script>
 </body></html>
 `;
 }

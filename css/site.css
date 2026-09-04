@@ -1317,7 +1317,7 @@ body[data-city="hokkaido"] .area-jump-nav a:hover { color: var(--area-dark); bac
 .legal-page a { color: var(--teal); text-decoration: underline; }
 .status-card { padding: 1.5rem; border: 1px solid var(--line); background: #fff; border-radius: 1rem; box-shadow: var(--shadow-sm); }
 
-@media (max-width: 1240px) {
+@media (max-width: 1360px) {
   .desktop-nav { display: none; }
   .icon-button.menu-toggle { display: grid; }
   .site-shell { grid-template-columns: 1fr; }

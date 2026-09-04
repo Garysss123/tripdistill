@@ -132,7 +132,7 @@ function childPage(guide, cluster) {
   <meta name="theme-color" content="#173f37">
   <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="/css/site.css?v=20260831-1"><link rel="stylesheet" href="/css/malaysia.css?v=20260829-1"><link rel="stylesheet" href="${depthCss}">
+  <link rel="stylesheet" href="/css/site.css?v=20260904-1"><link rel="stylesheet" href="/css/malaysia.css?v=20260829-1"><link rel="stylesheet" href="${depthCss}">
   <script src="/js/adsense.js?v=20260826-9" defer></script>
   <script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script>
 </head>
@@ -162,7 +162,7 @@ function childPage(guide, cluster) {
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on 30 August 2026. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(cluster.sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: 30 August 2026 · Recheck time-sensitive details before booking.</span></section>
     </main>
-  </div><div id="layout-footer"></div><script src="/js/main.js?v=20260830-2" defer></script>
+  </div><div id="layout-footer"></div><script src="/js/main.js?v=20260904-1" defer></script>
 </body>
 </html>
 `;
@@ -198,7 +198,7 @@ function sarawakHubPage(cluster) {
   <title>${escapeHtml(cluster.hubName)} Guide | TripDistill</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
   <meta name="theme-color" content="#123c35"><meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(cluster.hubName)} — a Sarawak field cabinet"><meta property="og:description" content="${escapeHtml(cluster.hubPrompt)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(primary.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260831-1"><link rel="stylesheet" href="/css/malaysia.css?v=20260829-1"><link rel="stylesheet" href="${sarawakCss}"><link rel="stylesheet" href="${depthCss}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260904-1"><link rel="stylesheet" href="/css/malaysia.css?v=20260829-1"><link rel="stylesheet" href="${sarawakCss}"><link rel="stylesheet" href="${depthCss}">
   <script src="/js/adsense.js?v=20260826-9" defer></script><script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
 <body data-page="${escapeHtml(cluster.hubSlug)}" data-country="malaysia" data-cluster="malaysia-sarawak" data-depth-family="${escapeHtml(cluster.family)}">
@@ -217,7 +217,7 @@ function sarawakHubPage(cluster) {
       <section class="sr-section" id="faq" aria-labelledby="faq-title"><div class="sr-heading"><span>Planning answers</span><h2 id="faq-title">${escapeHtml(cluster.hubName)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on 30 August 2026. Park capacity, guided departures, trails, river or boat access and weather change; verify directly before travel.</p><ul>${sourcesList(cluster.sources)}${sourceImages.map(imageCredit).join('')}</ul><span class="review-note">Editorial review: 30 August 2026 · Recheck time-sensitive details before booking.</span></section>
-    </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260830-2" defer></script>
+    </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260904-1" defer></script>
 </body>
 </html>
 `;

@@ -4,18 +4,21 @@ import { allLocales, localeConfigs } from './i18n-lib.mjs';
 import { guides as chinaExpansionGuides } from '../data/china-expansion-guides.mjs';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
+import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
-const siteCssVersion = '/css/site.css?v=20260831-1';
-const mainJsVersion = '/js/main.js?v=20260831-1';
+const siteCssVersion = '/css/site.css?v=20260904-1';
+const mainJsVersion = '/js/main.js?v=20260904-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
 const malaysiaDepthByRoute = new Map(malaysiaDepthGuides.map((guide) => [guide.url, guide]));
 const malaysiaHubRoutes = new Set(malaysiaDepthClusters.map((cluster) => `/malaysia/${cluster.hubSlug}/`));
 const vietnamByRoute = new Map(vietnamGuides.map((guide) => [guide.url, guide]));
 const vietnamHubRoutes = new Set(vietnamClusters.map((cluster) => `/vietnam/${cluster.slug}/`));
+const australiaByRoute = new Map(australiaGuides.map((guide) => [guide.url, guide]));
+const australiaHubRoutes = new Set(australiaClusters.map((cluster) => `/australia/${cluster.slug}/`));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -230,6 +233,22 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes(`data-vn-instrument="${vietnamGuide.instrument}"`)) problems.push(`${relativePath}: missing ${vietnamGuide.instrument} Vietnam instrument marker`);
     if ((html.match(/class="vn-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Vietnam child guide does not contain four route stages`);
     if ((html.match(/class="vn-check"/g) || []).length !== 3) problems.push(`${relativePath}: Vietnam child guide does not contain three weak-point checks`);
+  }
+  if (baseRoute.startsWith('/australia/') && !html.includes('/css/australia.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia continental field-atlas stylesheet`);
+  if (baseRoute.startsWith('/australia/') && !html.includes('"@type":"Article"')) problems.push(`${relativePath}: missing valid Australia Article JSON-LD`);
+  if (baseRoute.startsWith('/australia/') && baseRoute !== '/australia/' && !/<body\b[^>]*\bdata-parent-page="australia"/i.test(html)) problems.push(`${relativePath}: Australia primary navigation parent is not set`);
+  if (baseRoute === '/australia/' && (html.match(/class="au-country-card"/g) || []).length !== 16) problems.push(`${relativePath}: Australia country hub does not contain sixteen linked regional cards`);
+  if (australiaHubRoutes.has(baseRoute)) {
+    if (!html.includes('/css/australia-field.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia regional field stylesheet`);
+    if ((html.match(/class="au-hub-card"/g) || []).length !== 5) problems.push(`${relativePath}: Australia regional hub does not contain five linked field-guide cards`);
+  }
+  const australiaGuide = australiaByRoute.get(baseRoute);
+  if (australiaGuide) {
+    if (!html.includes('/css/australia-field.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia child-guide stylesheet`);
+    if (!html.includes(`data-au-family="${australiaGuide.family}"`)) problems.push(`${relativePath}: missing ${australiaGuide.family} Australia family marker`);
+    if (!html.includes(`data-au-instrument="${australiaGuide.instrument}"`)) problems.push(`${relativePath}: missing ${australiaGuide.instrument} Australia instrument marker`);
+    if ((html.match(/class="au-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Australia child guide does not contain four route stages`);
+    if ((html.match(/class="au-check"/g) || []).length !== 3) problems.push(`${relativePath}: Australia child guide does not contain three weak-point checks`);
   }
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);

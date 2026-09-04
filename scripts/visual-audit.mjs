@@ -4,6 +4,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
+import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
@@ -35,6 +36,9 @@ const allRoutes = [
   ['vietnam', '/vietnam/'],
   ...vietnamClusters.map((cluster) => [`vn-${cluster.slug}`, `/vietnam/${cluster.slug}/`]),
   ...vietnamGuides.map((guide) => [`vn-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['australia', '/australia/'],
+  ...australiaClusters.map((cluster) => [`au-${cluster.slug}`, `/australia/${cluster.slug}/`]),
+  ...australiaGuides.map((guide) => [`au-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -319,6 +323,13 @@ const allRoutes = [
       [`${locale}-vn-${cluster.slug}`, `/${locale}/vietnam/${cluster.slug}/`],
       [`${locale}-vn-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/vietnam/${cluster.slug}/${cluster.guides[0].slug}/`]
     ])
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-australia`, `/${locale}/australia/`],
+    ...australiaClusters.flatMap((cluster) => [
+      [`${locale}-au-${cluster.slug}`, `/${locale}/australia/${cluster.slug}/`],
+      [`${locale}-au-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/australia/${cluster.slug}/${cluster.guides[0].slug}/`]
+    ])
   ])
 ];
 
@@ -574,6 +585,16 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
+      const clippedHeroContent = innerWidth > 720 ? [] : [...document.querySelectorAll('.au-country-hero,.au-hub-hero,.au-field-hero')].flatMap((hero) => {
+        const heroRect = hero.getBoundingClientRect();
+        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.hero-actions .button');
+        return [...candidates].filter((item) => {
+          const rect = item.getBoundingClientRect();
+          const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
+          const hiddenInlineContent = item.scrollWidth > item.clientWidth + 1;
+          return outsideHero || hiddenInlineContent;
+        }).map((item) => item.tagName.toLowerCase() + ':' + item.textContent.trim().replace(/\s+/g, ' ').slice(0, 90));
+      });
       return {
         title: document.title,
         h1: document.querySelector('h1')?.textContent.trim() || '',
@@ -583,6 +604,7 @@ for (const [viewportName, width, height, mobile] of viewports) {
         brokenImages,
         activeLinks,
         componentErrors,
+        clippedHeroContent,
         headerHeight: header ? Math.round(header.height) : 0,
         footerLoaded: Boolean(document.querySelector('.site-footer')),
         mainTextLength: document.querySelector('main')?.innerText.length || 0
@@ -755,7 +777,7 @@ if (!skipInteractions) {
   interactions.language = { suggestions, englishPrompt, englishLocation, englishStored, stayChoice, languageMenu };
 }
 
-const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
+const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
 const result = {
   outputDir,
   pagesChecked: report.length,
@@ -770,11 +792,12 @@ console.log(JSON.stringify({
   pagesChecked: report.length,
   failureCount: failures.length,
   interactions,
-  pageSummary: report.map(({ route, viewport, overflowX, brokenImages, runtimeErrors, activeLinks, mainTextLength }) => ({
+  pageSummary: report.map(({ route, viewport, overflowX, brokenImages, clippedHeroContent, runtimeErrors, activeLinks, mainTextLength }) => ({
     route,
     viewport,
     overflowX,
     brokenImages: brokenImages.length,
+    clippedHeroContent: clippedHeroContent.length,
     runtimeErrors: runtimeErrors.length,
     activeLinks,
     mainTextLength

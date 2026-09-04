@@ -12,12 +12,7 @@
     "/components/footer.html"
   ],
   "translations": {
-    "TripDistill — Practical Asia Travel Guides, Country by City": "TripDistill — 도시별 실용적인 아시아 여행 가이드",
-    "TripDistill — Asia travel, distilled": "TripDistill — 아시아 여행 정보를 알차게 정리하다",
-    "Country and city travel guides built for decisions, not endless scrolling.": "끝없는 스크롤이 아니라 여행 결정을 돕도록 만든 국가·도시 여행 가이드입니다.",
     "TripDistill": "TripDistill",
-    "Practical Asia country and city travel guides.": "아시아 국가와 도시를 위한 실용적인 여행 가이드입니다.",
-    "Asia travel, without the noise": "군더더기 없는 아시아 여행",
     "Better trips,": "더 나은 여행을,",
     "distilled.": "알차게.",
     "Country context first. City decisions second. TripDistill turns official information and recurring traveler friction into fast, practical guides you can actually plan from.": "먼저 국가의 맥락을 이해하고, 다음으로 도시를 결정하세요. TripDistill은 공식 정보와 여행자가 반복해서 겪는 불편을 실제 계획에 바로 활용할 수 있는 빠르고 실용적인 가이드로 정리합니다.",
@@ -31,7 +26,6 @@
     "Static and lightweight": "정적이고 가벼운 사이트",
     "No login, no app install and no server-side tracking profile.": "로그인과 앱 설치가 필요 없으며 서버 측 추적 프로필을 만들지 않습니다.",
     "Destinations now live": "현재 공개된 목적지",
-    "Compare country context first, then move into city, island and neighborhood guides built around real transport, time and stay decisions.": "먼저 국가의 맥락을 비교한 뒤, 실제 교통편·시간·숙박 결정을 중심으로 만든 도시·섬·지역 가이드로 넘어가세요.",
     "Open the newest country guide →": "최신 국가 가이드 열기 →",
     "Great Wall watchtowers crossing a wooded mountain ridge near Beijing": "숲이 우거진 베이징 인근 산등성이를 가로지르는 만리장성 망루",
     "Country guide · New": "국가 가이드 · 신규",
@@ -133,7 +127,6 @@
     "Unroll the Summer Palace as a garden scroll, then make Mutianyu a ridge-and-return action board.": "이화원은 정원 두루마리처럼 펼쳐 보고, 무톈위는 능선을 올랐다 돌아오는 행동 보드로 계획하세요.",
     "Read the Beijing guide": "베이징 가이드 읽기",
     "Publishing roadmap": "공개 로드맵",
-    "Asia first, one useful layer at a time": "아시아부터, 유용한 층위를 하나씩",
     "Photo sources and licenses": "사진 출처 및 라이선스",
     "Travel photography is stored locally for performance. Each original remains linked below with its license.": "성능을 위해 여행 사진을 로컬에 저장합니다. 각 원본은 라이선스와 함께 아래에 계속 연결되어 있습니다.",
     "Dotonbori at night": "밤의 도톤보리",

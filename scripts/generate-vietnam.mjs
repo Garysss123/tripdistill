@@ -5,10 +5,10 @@ import { vietnamClusters, vietnamGuides, vietnamCountrySources } from '../data/v
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '31 August 2026';
 const isoDate = '2026-08-31';
-const siteCss = '/css/site.css?v=20260831-1';
+const siteCss = '/css/site.css?v=20260904-1';
 const countryCss = '/css/vietnam.css?v=20260831-2';
 const fieldCss = '/css/vietnam-field.css?v=20260831-1';
-const mainJs = '/js/main.js?v=20260831-1';
+const mainJs = '/js/main.js?v=20260904-1';
 const vietnamNavStart = '<!-- VIETNAM_NAV_START -->';
 const vietnamNavEnd = '<!-- VIETNAM_NAV_END -->';
 const vietnamChaptersStart = '<!-- VIETNAM_CHAPTERS_START -->';

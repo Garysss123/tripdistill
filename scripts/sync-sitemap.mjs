@@ -3,20 +3,25 @@ import path from 'node:path';
 import { allLocales, localeConfigs } from './i18n-lib.mjs';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
+import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
 const vietnamLastmod = '2026-08-31';
+const australiaLastmod = '2026-09-04';
 const newRoutes = [
-  ['/', vietnamLastmod, 'weekly', '1.0'],
-  ['/about/', vietnamLastmod, 'monthly', '0.5'],
+  ['/', australiaLastmod, 'weekly', '1.0'],
+  ['/about/', australiaLastmod, 'monthly', '0.5'],
   ['/malaysia/', malaysiaLastmod, 'monthly', '0.9'],
   ...malaysiaDepthClusters.map((cluster) => [`/malaysia/${cluster.hubSlug}/`, malaysiaLastmod, 'monthly', '0.8']),
   ...malaysiaDepthGuides.map((guide) => [guide.url, malaysiaLastmod, 'monthly', '0.7']),
   ['/vietnam/', vietnamLastmod, 'monthly', '0.9'],
   ...vietnamClusters.map((cluster) => [`/vietnam/${cluster.slug}/`, vietnamLastmod, 'monthly', '0.8']),
-  ...vietnamGuides.map((guide) => [guide.url, vietnamLastmod, 'monthly', '0.7'])
+  ...vietnamGuides.map((guide) => [guide.url, vietnamLastmod, 'monthly', '0.7']),
+  ['/australia/', australiaLastmod, 'monthly', '0.9'],
+  ...australiaClusters.map((cluster) => [`/australia/${cluster.slug}/`, australiaLastmod, 'monthly', '0.8']),
+  ...australiaGuides.map((guide) => [guide.url, australiaLastmod, 'monthly', '0.7'])
 ];
 
 function isLocalizedRoute(route) {

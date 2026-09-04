@@ -12,12 +12,7 @@
     "/components/footer.html"
   ],
   "translations": {
-    "TripDistill — Practical Asia Travel Guides, Country by City": "TripDistill — คู่มือท่องเที่ยวเอเชียที่ใช้งานได้จริง แยกตามประเทศและเมือง",
-    "TripDistill — Asia travel, distilled": "TripDistill — สรุปการเที่ยวเอเชียให้กระชับ",
-    "Country and city travel guides built for decisions, not endless scrolling.": "คู่มือท่องเที่ยวประเทศและเมืองที่สร้างมาเพื่อช่วยตัดสินใจ ไม่ใช่ให้นั่งเลื่อนดูไม่รู้จบ",
     "TripDistill": "TripDistill",
-    "Practical Asia country and city travel guides.": "คู่มือเที่ยวประเทศและเมืองในเอเชียที่ใช้งานได้จริง",
-    "Asia travel, without the noise": "เที่ยวเอเชียโดยไม่ต้องเสียเวลาไปกับเสียงรบกวน",
     "Better trips,": "ทริปที่ดีกว่า",
     "distilled.": "สรุปให้กระชับ",
     "Country context first. City decisions second. TripDistill turns official information and recurring traveler friction into fast, practical guides you can actually plan from.": "เริ่มจากบริบทของประเทศ แล้วค่อยตัดสินใจเลือกเมือง TripDistill เปลี่ยนข้อมูลทางการและปัญหาที่นักเดินทางมักเจอซ้ำ ๆ ให้เป็นคู่มือที่กระชับ ใช้งานได้จริง และนำไปวางแผนต่อได้ทันที",
@@ -31,7 +26,6 @@
     "Static and lightweight": "เว็บสแตติกและน้ำหนักเบา",
     "No login, no app install and no server-side tracking profile.": "ไม่ต้องเข้าสู่ระบบ ไม่ต้องติดตั้งแอป และไม่มีโปรไฟล์ติดตามฝั่งเซิร์ฟเวอร์",
     "Destinations now live": "จุดหมายที่เปิดให้วางแผนแล้ว",
-    "Compare country context first, then move into city, island and neighborhood guides built around real transport, time and stay decisions.": "เปรียบเทียบบริบทของประเทศก่อน แล้วค่อยดูคู่มือเมือง เกาะ และย่านต่าง ๆ ที่สร้างขึ้นจากการตัดสินใจเรื่องการเดินทาง เวลา และที่พักในสถานการณ์จริง",
     "Open the newest country guide →": "เปิดคู่มือประเทศล่าสุด →",
     "Great Wall watchtowers crossing a wooded mountain ridge near Beijing": "หอสังเกตการณ์บนกำแพงเมืองจีนพาดผ่านสันเขาที่มีป่าใกล้กรุงปักกิ่ง",
     "Country guide · New": "คู่มือประเทศ · ใหม่",
@@ -133,7 +127,6 @@
     "Unroll the Summer Palace as a garden scroll, then make Mutianyu a ridge-and-return action board.": "คลี่พระราชวังฤดูร้อนเหมือนม้วนภาพสวน แล้วจัดมู่เถียนยวี่เป็นแผนปฏิบัติการขึ้นสันเขาและกลับลงมา",
     "Read the Beijing guide": "อ่านคู่มือปักกิ่ง",
     "Publishing roadmap": "แผนงานเผยแพร่",
-    "Asia first, one useful layer at a time": "เริ่มจากเอเชีย ทีละชั้นที่เป็นประโยชน์",
     "Photo sources and licenses": "แหล่งภาพถ่ายและใบอนุญาต",
     "Travel photography is stored locally for performance. Each original remains linked below with its license.": "เก็บภาพท่องเที่ยวไว้ในเว็บไซต์เพื่อประสิทธิภาพ แต่ละภาพยังมีลิงก์ต้นฉบับและใบอนุญาตอยู่ด้านล่าง",
     "Dotonbori at night": "โดทงโบริยามค่ำคืน",
