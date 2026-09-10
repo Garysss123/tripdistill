@@ -1,0 +1,25 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/new-york/",
+    "/usa/new-york/midtown-central-park/"
+  ],
+  "translations": {
+    "Food and extra time": "อาหารและเวลาที่เพิ่ม",
+    "Grand Central Terminal historic Main Concourse and information clock": "โถงหลักเก่าแก่ (Main Concourse) และนาฬิกาข้อมูลของ Grand Central Terminal",
+    "The historic Main Concourse is a useful landmark; LIRR platforms are in Grand Central Madison.": "โถงหลักเก่าแก่ (Main Concourse) เป็นจุดสังเกตที่มีประโยชน์ ส่วนชานชาลา LIRR อยู่ที่ Grand Central Madison",
+    "At Grand Central, follow signs for your railway, not only the famous clock. LIRR services use Grand Central Madison; the historic Main Concourse is not the LIRR platform hall. Allow time to reach the correct level and exit before judging how close the station is to your hotel.": "ที่ Grand Central ให้ตามป้ายของรถไฟสายที่คุณจะใช้ ไม่ใช่เดินตามหานาฬิกาชื่อดังเพียงอย่างเดียว บริการ LIRR ใช้ Grand Central Madison ส่วนโถงหลักเก่าแก่ (Main Concourse) ไม่ใช่โถงชานชาลาของ LIRR เผื่อเวลาไปยังชั้นและทางออกที่ถูกต้องก่อนตัดสินว่าสถานีอยู่ใกล้โรงแรมแค่ไหน",
+    "Grand Central Terminal: official station map": "Grand Central Terminal: แผนที่สถานีอย่างเป็นทางการ",
+    "Fit New York food into the day you chose": "จัดอาหารนิวยอร์กให้เข้ากับวันที่คุณเลือก",
+    "Bagels, pizza slices and pastrami sandwiches offer different kinds of meals, not a mandatory tasting checklist. A bagel breakfast near your hotel fits before a museum start. A slice counter can suit a short lunch; a sit-down, whole-pie pizzeria is a different commitment. For a deli-focused Lower East Side visit, reserve a separate meal block rather than pretending it is already on the Financial District walk.": "เบเกิล พิซซ่าแบบสไลซ์ และแซนด์วิชพาสตรามีเป็นมื้ออาหารคนละแบบ ไม่ใช่เช็กลิสต์ชิมที่ต้องทำให้ครบ การกินเบเกิลใกล้โรงแรมเหมาะเป็นอาหารเช้าก่อนเริ่มวันพิพิธภัณฑ์ ร้านขายพิซซ่าเป็นชิ้นเหมาะกับมื้อกลางวันสั้น ๆ ส่วนร้านพิซซ่าที่นั่งกินทั้งถาดเป็นแผนที่ใช้เวลาอีกแบบ หากจะไป Lower East Side โดยเน้นร้านเดลี ให้กันช่วงมื้ออาหารแยกต่างหาก อย่าทำเหมือนว่ารวมอยู่ในเส้นทางเดินย่าน Financial District แล้ว",
+    "On a Broadway evening, prioritize enough time to eat near the theater over a famous restaurant across town. On the Brooklyn day, compare a waterfront queue with a calmer meal on nearby streets. If a particular restaurant is the main reason for the outing, reverse the planning order: confirm its location and booking terms, then build the walk around the meal. These are pacing choices, not claims that TripDistill has personally reviewed those restaurants.": "ในคืนที่ไปดูบรอดเวย์ ให้ความสำคัญกับการมีเวลาพอกินอาหารใกล้โรงละคร มากกว่าการข้ามเมืองไปร้านดัง ในวันเที่ยวบรูคลิน ให้เปรียบเทียบคิวริมน้ำกับมื้ออาหารที่สงบกว่าบนถนนใกล้เคียง หากร้านอาหารแห่งใดเป็นเหตุผลหลักของการออกไปครั้งนั้น ให้กลับลำดับการวางแผน: ยืนยันที่ตั้งและเงื่อนไขการจองก่อน แล้วค่อยจัดเส้นทางเดินรอบมื้อนั้น ทั้งหมดนี้เป็นการเลือกจังหวะของทริป ไม่ใช่การอ้างว่า TripDistill เคยรีวิวร้านอาหารเหล่านั้นด้วยตัวเอง",
+    "I LOVE NY: New York City food traditions and dining ideas": "I LOVE NY: วัฒนธรรมอาหารและไอเดียการกินในนครนิวยอร์ก",
+    "Have a fourth or fifth day?": "มีวันที่สี่หรือห้าไหม?",
+    "Give an interest more room before adding a distant day trip. A second museum day, a dedicated Lower East Side food visit or a longer Brooklyn outing can add more variety than a rushed journey out of the city. If you do leave New York, replace a city day rather than counting travel hours as extra sightseeing time.": "ให้เวลากับสิ่งที่สนใจก่อนจะเพิ่มทริปหนึ่งวันที่อยู่ไกลออกไป วันพิพิธภัณฑ์เพิ่มอีกหนึ่งวัน การไป Lower East Side เพื่อชิมอาหารโดยเฉพาะ หรือการเที่ยวบรูคลินให้นานขึ้น อาจเพิ่มความหลากหลายได้มากกว่าการรีบเดินทางออกนอกเมือง หากคุณออกจากนิวยอร์กจริง ๆ ให้ใช้ทริปนั้นแทนหนึ่งวันในเมือง อย่านับชั่วโมงเดินทางเป็นเวลาเที่ยวชมเพิ่มเติม",
+    "Grand Central Terminal Main Concourse photograph": "ภาพถ่าย Main Concourse ของ Grand Central Terminal",
+    "— 4300streetcar,": "— 4300streetcar,",
+    "CC BY 4.0": "CC BY 4.0",
+    ". Resized, display-cropped and converted to WebP; no other material edits.": ". ปรับขนาด ครอปสำหรับการแสดงผล และแปลงเป็น WebP; ไม่มีการแก้ไขอื่นที่มีสาระสำคัญ"
+  }
+}

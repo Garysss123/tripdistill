@@ -2,6 +2,10 @@
 
 TripDistill is a static five-language travel guide site for `tripdistill.com`.
 
+**Required for every model and iteration:** apply the Editorial release gate below before declaring work complete. Working routes, translations, screenshots and page counts do not prove useful content. The original U.S. batch remains pending editorial rework; New York is the first user-acceptance sample, not a blanket approval of the country collection.
+
+**Minimum reference: the existing Japan pages.** Compare new country pages to Japan country pages, new city pages to Japan city pages, and new local guides to Japan local guides. A new page must not be more rudimentary in useful content, depth, imagery, layout or navigation. Japan itself still needs richer content, so it is a floor, not a finished-quality ceiling.
+
 English uses the root route tree. Traditional Chinese, Japanese, Korean and Thai mirror it under `/zh/`, `/ja/`, `/ko/` and `/th/`. Every published guide must exist in all five editions, keep reciprocal `hreflang` metadata and remain usable without client-side translation.
 
 ## Cloudflare Pages deployment
@@ -88,13 +92,57 @@ The first-visit language dialog is suggestive, never a forced redirect. It can o
 
 The shared sidebar uses progressive disclosure for a large guide library: `Asia` and `Oceania` contain collapsible country groups, while city and regional chapter lists are separate collapsible sections. The current country and exact chapter always open automatically, keyboard behavior comes from native `details`/`summary`, and optional open-state preferences are remembered locally. Add each new country to its geographic grouping instead of returning to one long flat link list.
 
+## Editorial release gate — required for every model and future iteration
+
+The project's goal is a genuinely useful travel publication that can qualify for AdSense, not a large count of indexed URLs. Google's [page-readiness guidance](https://support.google.com/adsense/answer/7299563?hl=en) emphasizes original, relevant content, useful navigation and visitor experience. Neither this checklist nor an automated test guarantees approval. Do not submit an AdSense review request on the user's behalf without explicit authorization.
+
+The first U.S. batch passed technical tests but was rejected by the user as repetitive and too shallow. Its 97-route / 485-language-page counts are inventory facts, **not editorial approval**. Treat the existing U.S. collection as pending staged editorial rework. Rebuild New York as the first acceptance sample; obtain the user's feedback on its content and visual direction before propagating that approach to other regions. Do not describe a successful sample as making the whole site AdSense-ready.
+
+### A page is publishable only when all of these are true
+
+- **Independent reader purpose:** state the decision this page helps a traveler make. A city overview chooses a base and itinerary; a neighborhood page resolves its own route, access, timing and trade-offs. If a child page cannot add useful detail beyond its parent's summary, merge the topic rather than manufacture another URL.
+- **Place-specific substance:** name the relevant places, stations, entrances, streets or districts; explain how they connect and what to omit. “Check the official site,” “watch the weather” and “allow enough time” are supporting cautions, never the main content.
+- **Executable planning:** give a coherent start, sequence and finish; distinguish alternatives from mandatory stops; account for transfers, queues, breaks and the return. Label editorial time allowances as estimates, not measured visits or operator guarantees.
+- **Actual comparisons:** explain who each option suits and what is sacrificed. Hotel-base comparisons, ticket categories, museum choices, island landing versus sightseeing cruise, or walking versus transit should change the reader's decision. Generic “best things to do” lists without those distinctions do not pass.
+- **Traceable accuracy:** verify volatile facts against current primary sources and place relevant links near the claims. Date fare and admission snapshots. Do not invent opening times, ticket availability, distance measurements, firsthand visits, reviewer expertise, or a local editorial team.
+- **Useful contingencies:** explain how the itinerary changes for rain, limited walking, children, missed bookings or delays where relevant. Name a realistic replacement or shortened route; do not append the same generic warning to every page.
+- **Content-led visual design:** a change of color, photo, heading or column order is not a distinct page design. Choose a hierarchy and main layout that fit the particular decision: a route sequence, comparison spread, neighborhood journal, arrival decision board or another suitable structure. Shared navigation and accessible components are fine; identical article bodies with substituted destination names are not.
+- **No padding:** do not repeat the introduction as the FAQ, copy the same accommodation paragraph onto every child page, or bulk-expand prose merely to meet a word target. There is no automatic word-count or page-count pass. Every substantial section must add information.
+- **Image integrity:** images must be relevant, commercially reusable and visibly credited on every page using them. Attractive photography does not compensate for an empty article. A schematic must be labeled as such and must not pretend to be a surveyed or turn-by-turn map.
+- **Five-language parity:** synchronize substantive changes into Traditional Chinese, Japanese, Korean and Thai with the reviewed Luna workflow. Preserve facts and conditions; do not turn translations into shorter summaries. Check place names and domain-specific terms in context.
+
+### Required acceptance evidence
+
+0. Open an existing Japan page at the same hierarchy level and record which one was used as the reference. Compare actual rendered content and visual treatment side by side. Check destination-specific explanations, actionable routes, transport/access detail, alternatives, image relevance and information hierarchy. Raw word totals, image totals or section counts alone cannot establish parity. If the new page is more superficial than the Japan reference, it fails even if all technical tests pass. The current reference does not excuse repeating Japan's remaining weaknesses.
+
+1. Read the rendered page as a traveler: can you choose between options and explain how to carry out the proposed day without guessing the missing connections? Report unresolved gaps honestly.
+2. Compare the parent, its children and neighboring articles for repeated paragraphs and near-identical structure. Automated uniqueness checks detect exact duplicates only; different wording does not prove added value.
+3. Personally inspect representative desktop and mobile renders, including the article body, comparisons, navigation and sources—not just the hero screenshot. Check reading order, long translated headings, table access and image relevance.
+4. Run the existing technical audits, build checks and production smoke tests. These prove route integrity, rendering and deployment, **not usefulness, originality, AdSense eligibility or editorial acceptance**.
+5. Record the exact scope delivered and what remains pending. Do not call a country complete, a template approved, or a site ready for AdSense merely because page generation, translation coverage, link checks or deployment succeeded.
+
+Model changes do not relax these requirements. If time or context is limited, reduce the scope and report the unfinished work instead of shipping thin placeholder-like articles as completed guides.
+
 ## Country visual systems
+
+### New York acceptance sample — awaiting user review
+
+The four existing New York URLs are the first editorial rework sample, not a new page-count expansion. `scripts/nyc-editorial.mjs` contains four independently written briefs and `css/nyc-editorial.css` gives them different principal layouts. The general USA generator calls these explicit briefs; an unknown New York child route must not silently receive a generic fallback article.
+
+- City: hotel-base trade-offs, airport connections, dated fare examples, a selective three-day plan and spending choices.
+- Lower Manhattan: island landing versus a free ferry crossing versus a mainland day; ticket distinctions and a named six-stop street sequence.
+- Midtown: MoMA versus The Met, two geographically different day plans, park exits and Broadway timing.
+- Brooklyn: a Heights-to-DUMBO walk, access decisions, individual stopping places and three different return options.
+
+The other 93 U.S. routes remain outside this rework. Their existing publication and technical checks do not constitute acceptance under the new editorial gate. Ask for the user's feedback on this sample before rebuilding the remaining regions. Keep the changed routes synchronized in all five languages; do not claim the entire U.S. collection or website is AdSense-ready on the strength of these four pages.
+
+For this sample, the city-level reference is `/japan/osaka/`; local-level references are `/japan/osaka/namba/` and `/japan/tokyo/shinjuku/`. The comparison led to earlier neighborhood entry cards, a food-and-extra-time section, a credited Grand Central context photograph, and mobile comparisons with visible pros/cons labels. Do not infer acceptance merely from the amount of text or the number of photographs. The additional Grand Central photo is by 4300streetcar under CC BY 4.0; its source and editing disclosure appear on both New York pages that use it.
 
 ### United States collection (11 September 2026)
 
-The United States introduces North America in the shared accordion navigation. U.S. city chapters are nested under North America → United States → city/region, not appended as another flat list of global sections. Its 24 city/regional hubs each open three independently usable local guides: 97 English routes, or 485 routes across English, Traditional Chinese, Japanese, Korean and Thai. This is a curated starting collection, not a claim to cover every American town or attraction.
+The United States introduces North America in the shared accordion navigation. U.S. city chapters are nested under North America → United States → city/region, not appended as another flat list of global sections. Its 24 city/regional hubs each link to three local routes: 97 English routes, or 485 routes across English, Traditional Chinese, Japanese, Korean and Thai. These are published inventory counts, not a verdict on content quality or a claim to cover every American town or attraction.
 
-| Region | Complete hubs |
+| Region | Published hubs — editorial rework pending |
 | --- | --- |
 | Northeast | New York City; Boston & Cambridge; Philadelphia; Washington, DC; New England Coast & Mountains |
 | Great Lakes | Chicago |

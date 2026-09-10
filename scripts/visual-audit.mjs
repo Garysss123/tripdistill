@@ -590,9 +590,9 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
-      const clippedHeroContent = [...document.querySelectorAll('.au-country-hero,.au-hub-hero,.au-field-hero,.us-hero')].flatMap((hero) => {
+      const clippedHeroContent = [...document.querySelectorAll('.au-country-hero,.au-hub-hero,.au-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover')].flatMap((hero) => {
         const heroRect = hero.getBoundingClientRect();
-        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.us-hero-copy > *,.hero-actions .button');
+        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,.ny-deck,.ny-eyebrow');
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
@@ -788,7 +788,7 @@ if (!skipInteractions) {
   await waitForLocation(interactionClient, '/usa/new-york/');
   await navigate(interactionClient, `${baseUrl}/usa/new-york/`);
   const hubCards = await evaluate(interactionClient, `(() => {
-    const cards=[...document.querySelectorAll('.us-hub-cards .us-card')];
+    const cards=[...document.querySelectorAll('.us-hub-cards .us-card,.ny-city #chapters .us-card')];
     cards[0]?.click(); return cards.length;
   })()`);
   const localLocation = await waitForLocation(interactionClient, '/usa/new-york/lower-manhattan/');

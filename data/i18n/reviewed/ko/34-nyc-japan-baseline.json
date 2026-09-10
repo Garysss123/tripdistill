@@ -1,0 +1,25 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/new-york/",
+    "/usa/new-york/midtown-central-park/"
+  ],
+  "translations": {
+    "Food and extra time": "음식과 여유 시간",
+    "Grand Central Terminal historic Main Concourse and information clock": "그랜드 센트럴 터미널의 역사적인 메인 콩코스와 정보 시계",
+    "The historic Main Concourse is a useful landmark; LIRR platforms are in Grand Central Madison.": "역사적인 메인 콩코스는 유용한 랜드마크지만, LIRR 승강장은 그랜드 센트럴 매디슨에 있습니다.",
+    "At Grand Central, follow signs for your railway, not only the famous clock. LIRR services use Grand Central Madison; the historic Main Concourse is not the LIRR platform hall. Allow time to reach the correct level and exit before judging how close the station is to your hotel.": "그랜드 센트럴에서는 유명한 시계만 찾지 말고 이용할 철도 노선 표지판을 따라가세요. LIRR은 그랜드 센트럴 매디슨을 이용하며, 역사적인 메인 콩코스는 LIRR 승강장 홀이 아닙니다. 역이 호텔에서 얼마나 가까운지 판단하기 전에 올바른 층과 출구까지 이동할 시간을 잡으세요.",
+    "Grand Central Terminal: official station map": "그랜드 센트럴 터미널: 공식 역 지도",
+    "Fit New York food into the day you chose": "선택한 하루에 뉴욕 음식을 맞춰 넣기",
+    "Bagels, pizza slices and pastrami sandwiches offer different kinds of meals, not a mandatory tasting checklist. A bagel breakfast near your hotel fits before a museum start. A slice counter can suit a short lunch; a sit-down, whole-pie pizzeria is a different commitment. For a deli-focused Lower East Side visit, reserve a separate meal block rather than pretending it is already on the Financial District walk.": "베이글, 피자 한 조각, 파스트라미 샌드위치는 서로 다른 식사 방식이지, 반드시 모두 맛봐야 하는 체크리스트가 아닙니다. 호텔 근처에서 먹는 베이글 아침은 박물관을 시작하기 전에 넣기 좋습니다. 슬라이스 피자 가게는 짧은 점심에 어울릴 수 있고, 통피자를 앉아서 먹는 피자집은 다른 수준의 시간 투자가 필요합니다. 델리 중심의 로어 이스트 사이드 방문이라면 이미 파이낸셜 디스트릭트 산책에 포함된 것처럼 여기지 말고 별도의 식사 시간을 따로 배정하세요.",
+    "On a Broadway evening, prioritize enough time to eat near the theater over a famous restaurant across town. On the Brooklyn day, compare a waterfront queue with a calmer meal on nearby streets. If a particular restaurant is the main reason for the outing, reverse the planning order: confirm its location and booking terms, then build the walk around the meal. These are pacing choices, not claims that TripDistill has personally reviewed those restaurants.": "브로드웨이 공연을 보는 저녁에는 도시 반대편의 유명 식당보다 극장 근처에서 식사할 충분한 시간을 우선하세요. 브루클린 일정에는 워터프런트의 대기 줄과 주변 거리의 한적한 식사를 비교하세요. 특정 식당이 외출의 주된 이유라면 계획 순서를 뒤집으세요. 위치와 예약 조건을 확인한 뒤 식사를 중심으로 산책을 짜세요. 이는 일정 속도에 관한 선택이지 TripDistill이 해당 식당들을 직접 검토했다는 주장이 아닙니다.",
+    "I LOVE NY: New York City food traditions and dining ideas": "I LOVE NY: 뉴욕의 음식 전통과 식사 아이디어",
+    "Have a fourth or fifth day?": "4일째나 5일째가 있다면?",
+    "Give an interest more room before adding a distant day trip. A second museum day, a dedicated Lower East Side food visit or a longer Brooklyn outing can add more variety than a rushed journey out of the city. If you do leave New York, replace a city day rather than counting travel hours as extra sightseeing time.": "먼 곳의 당일치기 여행을 더하기 전에 관심 있는 분야에 시간을 더 주세요. 두 번째 박물관의 날, 로어 이스트 사이드 음식만을 위한 방문, 또는 더 긴 브루클린 일정이 서둘러 도시 밖으로 나가는 여정보다 다양성을 더해 줄 수 있습니다. 뉴욕을 떠나기로 했다면 이동 시간을 추가 관광 시간으로 계산하지 말고, 도시에서 보내는 하루를 대신하는 일정으로 계획하세요.",
+    "Grand Central Terminal Main Concourse photograph": "그랜드 센트럴 터미널 메인 콩코스 사진",
+    "— 4300streetcar,": "— 4300streetcar,",
+    "CC BY 4.0": "CC BY 4.0",
+    ". Resized, display-cropped and converted to WebP; no other material edits.": ". 크기를 조정하고 표시용으로 잘라 WebP로 변환했으며, 그 밖의 실질적인 편집은 하지 않았습니다."
+  }
+}

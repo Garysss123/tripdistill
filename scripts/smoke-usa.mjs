@@ -26,6 +26,7 @@ const jobs=locales.flatMap(([locale,prefix])=>usaRoutes.map(route=>({label:prefi
  if(!html.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`))throw Error('Wrong canonical or stale HTML');
  if(!html.includes('/css/usa.css?v=20260911-1')||!html.includes('/js/main.js?v=20260911-1'))throw Error('Stale USA/shared assets');
  if(!/<h1\b/.test(html)||!html.includes('"@type":"Article"'))throw Error('Missing page content/schema');
+ if(route.startsWith('/usa/new-york/')&&(!html.includes('data-editorial-revision="nyc-20260911"')||!html.includes('/css/nyc-editorial.css?v=20260911-2')))throw Error('Old NYC template served instead of the editorial rewrite');
 }})));
 for(const [locale,prefix]of locales){
  jobs.push({label:`${locale} search`,run:async()=>{
@@ -46,6 +47,8 @@ for(const x of Object.values(usaImageManifest))jobs.push({label:x.src,run:async(
  if(ascii(0,4)!=='RIFF'||ascii(8,12)!=='WEBP'||bytes.length<1000)throw Error('Truncated or invalid WebP asset');
 }});
 jobs.push({label:'USA stylesheet',run:async()=>{const css=await(await get('/css/usa.css?v=20260911-1')).text();if(!css.includes('.us-hero')||!css.includes('max-width:650px'))throw Error('USA responsive CSS missing');}});
+jobs.push({label:'NYC editorial stylesheet',run:async()=>{const css=await(await get('/css/nyc-editorial.css?v=20260911-2')).text();if(!css.includes('.ny-city-cover')||!css.includes('.ny-brooklyn-cover'))throw Error('NYC editorial layouts missing');}});
+jobs.push({label:'NYC Grand Central photograph',run:async()=>{const r=await get('/assets/images/nyc-grand-central-concourse.webp');if(!r.headers.get('content-type')?.startsWith('image/webp'))throw Error('NYC context photograph missing');const b=new Uint8Array(await r.arrayBuffer());if(String.fromCharCode(...b.slice(8,12))!=='WEBP')throw Error('Invalid NYC image');}});
 jobs.push({label:'sitemap dates',run:async()=>{
  const xml=await(await get('/sitemap.xml')).text();
  for(const[,prefix]of locales)for(const route of usaRoutes)if(!xml.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-11</lastmod>`))throw Error(`Missing current ${prefix}${route}`);

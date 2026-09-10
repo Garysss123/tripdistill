@@ -1,0 +1,25 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/new-york/",
+    "/usa/new-york/midtown-central-park/"
+  ],
+  "translations": {
+    "Food and extra time": "食事と余裕時間",
+    "Grand Central Terminal historic Main Concourse and information clock": "グランド・セントラル・ターミナルの歴史的なメイン・コンコースと案内時計",
+    "The historic Main Concourse is a useful landmark; LIRR platforms are in Grand Central Madison.": "歴史的なメイン・コンコースは目印として便利ですが、LIRRのホームはGrand Central Madisonにあります。",
+    "At Grand Central, follow signs for your railway, not only the famous clock. LIRR services use Grand Central Madison; the historic Main Concourse is not the LIRR platform hall. Allow time to reach the correct level and exit before judging how close the station is to your hotel.": "グランド・セントラルでは、有名な時計だけでなく、自分が利用する鉄道の案内表示に従ってください。LIRRはGrand Central Madisonを利用し、歴史的なメイン・コンコースはLIRRのホーム階ではありません。駅がホテルから近いか判断する前に、正しい階と出口まで移動する時間を見込んでおきましょう。",
+    "Grand Central Terminal: official station map": "Grand Central Terminal：公式駅構内図",
+    "Fit New York food into the day you chose": "選んだ1日にニューヨークの食を組み込む",
+    "Bagels, pizza slices and pastrami sandwiches offer different kinds of meals, not a mandatory tasting checklist. A bagel breakfast near your hotel fits before a museum start. A slice counter can suit a short lunch; a sit-down, whole-pie pizzeria is a different commitment. For a deli-focused Lower East Side visit, reserve a separate meal block rather than pretending it is already on the Financial District walk.": "ベーグル、ピザスライス、パストラミサンドイッチは、それぞれ異なる食事であり、必ず食べるべき試食リストではありません。ホテル近くでベーグルの朝食を取れば、博物館の開始前に組み込めます。ピザを1切れずつ買うカウンターなら短い昼食に向き、本格的なピザ1枚を座って食べるピッツェリアは別の時間と負担になります。デリを中心にローワー・イースト・サイドを訪れるなら、フィナンシャル・ディストリクトの徒歩にすでに含まれているかのようにせず、食事の時間枠を別に確保してください。",
+    "On a Broadway evening, prioritize enough time to eat near the theater over a famous restaurant across town. On the Brooklyn day, compare a waterfront queue with a calmer meal on nearby streets. If a particular restaurant is the main reason for the outing, reverse the planning order: confirm its location and booking terms, then build the walk around the meal. These are pacing choices, not claims that TripDistill has personally reviewed those restaurants.": "ブロードウェイの夜は、街の反対側にある有名店へ行くより、劇場の近くで食べる時間を十分に優先しましょう。ブルックリンの日は、ウォーターフロントの行列と、近くの通りにある落ち着いた食事を比べます。特定のレストランが外出の主目的なら、計画の順序を逆にします。場所と予約条件を確認してから、その食事を中心に徒歩ルートを組み立てましょう。これはペースの選択であり、TripDistillがそれらのレストランを実際に確認したという主張ではありません。",
+    "I LOVE NY: New York City food traditions and dining ideas": "I LOVE NY：ニューヨークの食文化と食事のアイデア",
+    "Have a fourth or fifth day?": "4日目または5日目があるなら？",
+    "Give an interest more room before adding a distant day trip. A second museum day, a dedicated Lower East Side food visit or a longer Brooklyn outing can add more variety than a rushed journey out of the city. If you do leave New York, replace a city day rather than counting travel hours as extra sightseeing time.": "遠い日帰り旅行を追加する前に、関心のあるテーマにもっと時間を使いましょう。2日目の博物館、ローワー・イースト・サイドの食を目的にした訪問、またはブルックリンを長く歩く日なら、急いで街の外へ出るより多様性を加えられます。ニューヨークを離れるなら、移動時間を観光時間として数えるのではなく、市内の1日と置き換えてください。",
+    "Grand Central Terminal Main Concourse photograph": "グランド・セントラル・ターミナルのメイン・コンコースの写真",
+    "— 4300streetcar,": "— 4300streetcar,",
+    "CC BY 4.0": "CC BY 4.0",
+    ". Resized, display-cropped and converted to WebP; no other material edits.": ". サイズを変更し、表示用にトリミングしてWebPに変換しました。その他の実質的な編集はありません。"
+  }
+}
