@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const BUILD_VERSION = '20260904-1';
+  const BUILD_VERSION = '20260911-1';
   const LOCALES = {
     en: { prefix: '', short: 'EN', nativeName: 'English' },
     'zh-Hant': { prefix: '/zh', short: '繁中', nativeName: '繁體中文' },

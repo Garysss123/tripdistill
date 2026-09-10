@@ -162,7 +162,7 @@ function childPage(guide, cluster) {
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on 30 August 2026. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(cluster.sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: 30 August 2026 · Recheck time-sensitive details before booking.</span></section>
     </main>
-  </div><div id="layout-footer"></div><script src="/js/main.js?v=20260904-1" defer></script>
+  </div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>
 </html>
 `;
@@ -217,7 +217,7 @@ function sarawakHubPage(cluster) {
       <section class="sr-section" id="faq" aria-labelledby="faq-title"><div class="sr-heading"><span>Planning answers</span><h2 id="faq-title">${escapeHtml(cluster.hubName)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on 30 August 2026. Park capacity, guided departures, trails, river or boat access and weather change; verify directly before travel.</p><ul>${sourcesList(cluster.sources)}${sourceImages.map(imageCredit).join('')}</ul><span class="review-note">Editorial review: 30 August 2026 · Recheck time-sensitive details before booking.</span></section>
-    </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260904-1" defer></script>
+    </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>
 </html>
 `;

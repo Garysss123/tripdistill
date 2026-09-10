@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Explore 24 cities and regions with 72 focused visits and local routes.": "24の都市・地域を、72の目的を絞った訪問ガイドと地元のルートで歩きましょう。",
+    "America": "アメリカ",
+    "Regional guide": "地域ガイド",
+    "Local guide": "地元ガイド"
+  }
+}

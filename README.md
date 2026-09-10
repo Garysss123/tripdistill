@@ -90,6 +90,38 @@ The shared sidebar uses progressive disclosure for a large guide library: `Asia`
 
 ## Country visual systems
 
+### United States collection (11 September 2026)
+
+The United States introduces North America in the shared accordion navigation. U.S. city chapters are nested under North America → United States → city/region, not appended as another flat list of global sections. Its 24 city/regional hubs each open three independently usable local guides: 97 English routes, or 485 routes across English, Traditional Chinese, Japanese, Korean and Thai. This is a curated starting collection, not a claim to cover every American town or attraction.
+
+| Region | Complete hubs |
+| --- | --- |
+| Northeast | New York City; Boston & Cambridge; Philadelphia; Washington, DC; New England Coast & Mountains |
+| Great Lakes | Chicago |
+| Pacific Northwest | Seattle & Puget Sound; Portland & the Columbia Gorge |
+| California | San Francisco & the Bay; Los Angeles; San Diego; Yosemite & Sierra Parks |
+| Southwest and western parks | Las Vegas & Southern Nevada; Utah Canyon Country; Arizona & the Grand Canyon |
+| Mountain West | Denver & the Colorado Rockies; Yellowstone & Grand Teton |
+| South | New Orleans; Atlanta; Texas |
+| Florida | Miami & the Everglades; Orlando & Central Florida |
+| Alaska and Pacific | Alaska; Hawaii |
+
+The U.S. design uses a travel-journal system: navy street-grid typography for cities, archival brick-and-paper frames for historic places, coastal apertures, cinematic image spreads, canyon strata and open expedition layouts. The three local-guide reading patterns are a side-note journal, a route-led column and a photographic postcard spread. Shared accessibility and navigation stay consistent; regional typography, image placement, geometry and color must remain distinct.
+
+Editorial source: `data/usa-guides.mjs`. Verified commercial-use image records: `data/usa-image-manifest.mjs`; manually selected replacements: `data/usa-image-overrides.mjs`. All 72 WebP photographs include visible source, creator, license and resize/crop disclosure on every page displaying them. Do not replace images on title-search relevance alone: inspect the actual photograph and regenerate affected source credits before exporting translation batches.
+
+Run `npm run generate:usa`, `npm run sync:sitemap`, the README's Luna Max translation workflow, then the full audit/build/deployment gate. `npm run audit:usa` checks routes, three child cards per hub, sibling links, metadata, search/sitemap parity, 72 unique credited photographs and five-language output. Translation batches `31a`–`31x` follow hub order; `31y` covers the country and shared shell, and `31z` covers search. Use English as the factual source and translate with Luna's own reasoning; no local model or runtime translator is required. Subsequent material edits update only affected sitemap dates and translation units.
+
+`scripts/visual-audit.mjs` accepts all USA route keys, for example `usa-new-york-lower-manhattan` and `zh-usa-new-york-lower-manhattan`. Exercise country, hubs and all three local layouts at desktop/mobile widths, then personally inspect the resulting screenshots outside the deployment artifact. A successful numeric report alone is not a visual sign-off.
+
+After deployment, run `npm run smoke:usa -- --base=https://tripdistill.com`. This read-only check requests all 485 USA routes, all 72 images, five search indexes and sidebars, the country stylesheet and sitemap dates. Redirects, incorrect document languages, stale assets and missing canonical routes fail the check. Local development defaults to `http://127.0.0.1:8877`; `--english-only` is an interim source check, not a substitute for the five-language release gate.
+
+Keep the `TripDistill` brand wordmark in its original form in every edition. The static localization pipeline honors inherited `translate="no"` and nested `translate="yes"` while still localizing internal links. `scripts/test-i18n-literals.mjs` protects this behavior as part of `npm run audit:i18n`; do not replace brand names through a general dictionary entry.
+
+Use `npm run preview -- --dist` to inspect the generated artifact. Finish the build before starting a browser sweep; do not regenerate language directories underneath an active development-preview test. The U.S. release was checked across all 97 routes in five editions at desktop/mobile widths, with targeted 320px and 1100px cases, manual representative visual inspection and 569 served-artifact checks. The resulting artifact contains 3,206 files and 2,655 published page routes for the complete site.
+
+### Shared design rules and existing country systems
+
 Every new country must introduce a visual system that feels specific to that destination. Define a country-level palette, type rhythm, geometry, image treatment and editorial motifs before expanding its cities. Recoloring or reordering the same generic page template is not enough.
 
 The header, sidebar, footer, search, accessibility behavior and advertising shell remain shared. Country hubs, city hubs and area guides may share design tokens, but their content hierarchy and principal layouts should express different planning problems. Within one country, individual area pages must also vary their reading rhythm—for example a route diagram, field notebook, timetable, market ledger or neighborhood zine—rather than repeating identical card stacks.

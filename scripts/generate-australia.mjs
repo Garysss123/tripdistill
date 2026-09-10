@@ -8,7 +8,7 @@ const isoDate = '2026-09-04';
 const siteCss = '/css/site.css?v=20260904-1';
 const countryCss = '/css/australia.css?v=20260904-1';
 const fieldCss = '/css/australia-field.css?v=20260904-1';
-const mainJs = '/js/main.js?v=20260904-1';
+const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const navStart = '<!-- AUSTRALIA_NAV_START -->';
 const navEnd = '<!-- AUSTRALIA_NAV_END -->';

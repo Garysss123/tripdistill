@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Explore 24 cities and regions with 72 focused visits and local routes.": "探索 24 個城市與地區，透過 72 份聚焦行程與在地路線深入了解。",
+    "America": "美國",
+    "Regional guide": "區域指南",
+    "Local guide": "在地指南"
+  }
+}

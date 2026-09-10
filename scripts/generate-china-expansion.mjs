@@ -147,7 +147,7 @@ function renderGuide(guide) {
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${reviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${escapeHtml(guide.image.license)}.</li></ul></section>
     </article>
-  </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260904-1" defer></script>
+  </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body></html>
 `;
 }

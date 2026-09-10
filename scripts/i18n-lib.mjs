@@ -90,9 +90,11 @@ function collectJsonLd(text, units) {
 
 function collectDocumentUnits(document) {
   const units = new Set();
-  function visit(node, parentTag = '') {
-    if (node.nodeName === '#text' && !skippedTextParents.has(parentTag) && shouldTranslate(node.value)) units.add(normalizeText(node.value));
-    if (node.tagName) {
+  function visit(node, parentTag = '', inheritedTranslation = true) {
+    const directive=getAttribute(node,'translate');
+    const translate=directive==='no'?false:directive==='yes'?true:inheritedTranslation;
+    if (translate && node.nodeName === '#text' && !skippedTextParents.has(parentTag) && shouldTranslate(node.value)) units.add(normalizeText(node.value));
+    if (translate && node.tagName) {
       for (const attribute of node.attrs || []) {
         if (translatableAttributes.has(attribute.name) && shouldTranslate(attribute.value)) units.add(normalizeText(attribute.value));
       }
@@ -106,7 +108,7 @@ function collectDocumentUnits(document) {
       }
       if (isJsonLd(node) && node.childNodes?.[0]?.nodeName === '#text') collectJsonLd(node.childNodes[0].value, units);
     }
-    for (const child of node.childNodes || []) visit(child, node.tagName || parentTag);
+    for (const child of node.childNodes || []) visit(child, node.tagName || parentTag, translate);
   }
   visit(document);
   return [...units];
@@ -237,11 +239,13 @@ function localizeJsonLd(node, translations, config) {
 }
 
 function localizeDocument(document, translations, config, route) {
-  function visit(node, parentTag = '') {
-    if (node.nodeName === '#text' && !skippedTextParents.has(parentTag)) translateTextNode(node, translations);
+  function visit(node, parentTag = '', inheritedTranslation = true) {
+    const directive=getAttribute(node,'translate');
+    const translate=directive==='no'?false:directive==='yes'?true:inheritedTranslation;
+    if (translate && node.nodeName === '#text' && !skippedTextParents.has(parentTag)) translateTextNode(node, translations);
     if (node.tagName) {
       for (const attribute of node.attrs || []) {
-        if (translatableAttributes.has(attribute.name)) attribute.value = translateValue(attribute.value, translations);
+        if (translate && translatableAttributes.has(attribute.name)) attribute.value = translateValue(attribute.value, translations);
       }
       if (node.tagName === 'html') setAttribute(node, 'lang', config.code);
       if (node.tagName === 'a') {
@@ -253,7 +257,7 @@ function localizeDocument(document, translations, config, route) {
         const property = (getAttribute(node, 'property') || '').toLowerCase();
         const content = getAttribute(node, 'content') || '';
         if (name === 'description' || property === 'og:title' || property === 'og:description' || name === 'twitter:title' || name === 'twitter:description') {
-          setAttribute(node, 'content', translateValue(content, translations));
+          if(translate)setAttribute(node, 'content', translateValue(content, translations));
         } else if (property === 'og:url') {
           setAttribute(node, 'content', localizedAbsoluteUrl(content, config));
         }
@@ -268,9 +272,9 @@ function localizeDocument(document, translations, config, route) {
           if (targetLocale) setAttribute(node, 'href', localeRouteUrl(route, targetLocale));
         }
       }
-      if (isJsonLd(node)) localizeJsonLd(node, translations, config);
+      if (translate && isJsonLd(node)) localizeJsonLd(node, translations, config);
     }
-    for (const child of node.childNodes || []) visit(child, node.tagName || parentTag);
+    for (const child of node.childNodes || []) visit(child, node.tagName || parentTag, translate);
     if (node.tagName === 'a' && getAttribute(node, 'data-language-option')) {
       const targetCode = getAttribute(node, 'data-language-option');
       const targetLocale = allLocales.find((item) => item.code === targetCode);

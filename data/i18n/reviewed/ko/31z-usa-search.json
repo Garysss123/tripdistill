@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Explore 24 cities and regions with 72 focused visits and local routes.": "24개 도시와 지역에서 72개 집중 방문지와 현지 동선을 만나보세요.",
+    "America": "아메리카",
+    "Regional guide": "지역 가이드",
+    "Local guide": "현지 가이드"
+  }
+}

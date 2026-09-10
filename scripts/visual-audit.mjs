@@ -5,6 +5,7 @@ import { spawn } from 'node:child_process';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
+import { usaRoutes } from '../data/usa-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
@@ -17,6 +18,7 @@ const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${runId}-${p
 fs.mkdirSync(outputDir, { recursive: true });
 
 const allRoutes = [
+  ...['','zh','ja','ko','th'].flatMap(locale=>usaRoutes.map(route=>[(locale?locale+'-':'')+route.split('/').filter(Boolean).join('-'),(locale?'/'+locale:'')+route])),
   ['home', '/'],
   ['malaysia', '/malaysia/'],
   ['kuala-lumpur-putrajaya', '/malaysia/kuala-lumpur-putrajaya/'],
@@ -340,7 +342,8 @@ if (!routes.length) throw new Error(`TRIPDISTILL_ROUTE_FILTER did not match a kn
 const allViewports = [
   ['desktop', 1440, 1000, false],
   ...(process.env.TRIPDISTILL_INCLUDE_TABLET === '1' ? [['tablet', 1100, 900, false]] : []),
-  ['mobile', 390, 844, true]
+  ['mobile', 390, 844, true],
+  ...(process.env.TRIPDISTILL_INCLUDE_SMALL_PHONE === '1' ? [['small-phone', 320, 740, true]] : [])
 ];
 const requestedViewports = new Set((process.env.TRIPDISTILL_VIEWPORT_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
 const viewports = requestedViewports.size ? allViewports.filter(([name]) => requestedViewports.has(name)) : allViewports;
@@ -559,6 +562,8 @@ for (const [viewportName, width, height, mobile] of viewports) {
     })`);
     await evaluate(client, `(async () => {
       const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.body.style.scrollBehavior = 'auto';
       const focusSelector = ${JSON.stringify(focusSelector)};
       const step = Math.max(500, Math.floor(innerHeight * .75));
       for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
@@ -585,9 +590,9 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
-      const clippedHeroContent = innerWidth > 720 ? [] : [...document.querySelectorAll('.au-country-hero,.au-hub-hero,.au-field-hero')].flatMap((hero) => {
+      const clippedHeroContent = [...document.querySelectorAll('.au-country-hero,.au-hub-hero,.au-field-hero,.us-hero')].flatMap((hero) => {
         const heroRect = hero.getBoundingClientRect();
-        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.hero-actions .button');
+        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.us-hero-copy > *,.hero-actions .button');
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
@@ -775,6 +780,46 @@ if (!skipInteractions) {
   })()`);
 
   interactions.language = { suggestions, englishPrompt, englishLocation, englishStored, stayChoice, languageMenu };
+  await navigate(interactionClient, `${baseUrl}/usa/`);
+  const countryCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.us-country-cards .us-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  await waitForLocation(interactionClient, '/usa/new-york/');
+  await navigate(interactionClient, `${baseUrl}/usa/new-york/`);
+  const hubCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.us-hub-cards .us-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const localLocation = await waitForLocation(interactionClient, '/usa/new-york/lower-manhattan/');
+  await navigate(interactionClient, `${baseUrl}/usa/new-york/lower-manhattan/`);
+  const usaDetails = await evaluate(interactionClient, `(async () => {
+    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+    const active=document.querySelector('#layout-sidebar .sidebar-link.active');
+    const nav={northAmericaOpen:Boolean(document.querySelector('[data-sidebar-id="north-america"]')?.open),countryOpen:Boolean(document.querySelector('[data-sidebar-id="usa"]')?.open),chapterOpen:Boolean(active?.closest('details')?.open),openCityCount:document.querySelectorAll('details[name="usa-city-chapters"][open]').length,active:active?.textContent.trim()};
+    const languageLinks=[...document.querySelectorAll('footer [data-language-option]')].map(a=>({locale:a.dataset.languageOption,href:a.getAttribute('href')}));
+    document.querySelector('.faq-list summary')?.click();
+    const faqOpen=Boolean(document.querySelector('.faq-list details[open]'));
+    document.querySelector('[data-search-toggle]')?.click();
+    const input=document.querySelector('#site-search');
+    input.value='New York';input.dispatchEvent(new Event('input',{bubbles:true}));
+    for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await wait(100);
+    const searchLinks=[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'));
+    return {...nav,languageLinks,faqOpen,searchLinks};
+  })()`);
+  interactions.usa = {countryCards,hubCards,localPath:localLocation.pathname,...usaDetails};
+  if(process.env.TRIPDISTILL_USA_ALL_LANGUAGES==='1'){
+    interactions.usa.searchByLocale={};
+    for(const [locale,prefix,query]of [['en','','New York'],['zh-Hant','/zh','紐約'],['ja','/ja','ニューヨーク'],['ko','/ko','뉴욕'],['th','/th','นิวยอร์ก']]){
+      await navigate(interactionClient,`${baseUrl}${prefix}/usa/new-york/`);
+      interactions.usa.searchByLocale[locale]=await evaluate(interactionClient,`(async()=>{
+        document.querySelector('[data-search-toggle]')?.click();
+        const input=document.querySelector('#site-search');input.value=${JSON.stringify(query)};input.dispatchEvent(new Event('input',{bubbles:true}));
+        for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await new Promise(r=>setTimeout(r,100));
+        return {lang:document.documentElement.lang,links:[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'))};
+      })()`);
+    }
+  }
 }
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
@@ -819,6 +864,20 @@ const suggestionFailures = !skipInteractions && [
 });
 const languageOptions = language.languageMenu?.options || [];
 const interactionFailed = !skipInteractions && (
+  (process.env.TRIPDISTILL_USA_ALL_LANGUAGES==='1'&&!['en','zh-Hant','ja','ko','th'].every(locale=>{
+    const check=interactions.usa?.searchByLocale?.[locale];return check?.lang===locale&&check.links.includes((locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/usa/new-york/');
+  })) ||
+  interactions.usa?.countryCards !== 24 ||
+  interactions.usa?.hubCards !== 3 ||
+  interactions.usa?.localPath !== '/usa/new-york/lower-manhattan/' ||
+  !interactions.usa?.northAmericaOpen ||
+  !interactions.usa?.countryOpen ||
+  !interactions.usa?.chapterOpen ||
+  interactions.usa?.openCityCount !== 1 ||
+  interactions.usa?.active !== 'Lower Manhattan & the Harbor' ||
+  !interactions.usa?.faqOpen ||
+  !interactions.usa?.searchLinks?.includes('/usa/new-york/') ||
+  !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.usa?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/usa/new-york/lower-manhattan/')) ||
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||

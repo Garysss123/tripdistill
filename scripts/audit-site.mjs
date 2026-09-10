@@ -10,7 +10,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
 const siteCssVersion = '/css/site.css?v=20260904-1';
-const mainJsVersion = '/js/main.js?v=20260904-1';
+const mainJsVersion = '/js/main.js?v=20260911-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
 const malaysiaDepthByRoute = new Map(malaysiaDepthGuides.map((guide) => [guide.url, guide]));

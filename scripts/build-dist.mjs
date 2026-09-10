@@ -11,6 +11,7 @@ const publicDirectories = [
   'about',
   'assets',
   'australia',
+  'usa',
   'china',
   'components',
   'contact',

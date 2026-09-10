@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 
-const root = path.resolve(import.meta.dirname, '..');
+const sourceRoot = path.resolve(import.meta.dirname, '..');
+const root = process.argv.includes('--dist') ? path.join(sourceRoot, 'dist') : sourceRoot;
+if (!fs.existsSync(path.join(root, 'index.html'))) throw new Error('Preview root is not built: ' + root);
 const port = Number(process.env.TRIPDISTILL_PORT || 8877);
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -43,5 +45,5 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(port, '127.0.0.1', () => {
-  console.log(`TripDistill test server: http://127.0.0.1:${port}`);
+  console.log(`TripDistill test server: http://127.0.0.1:${port} (${root})`);
 });

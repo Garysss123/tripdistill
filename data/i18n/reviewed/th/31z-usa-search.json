@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Explore 24 cities and regions with 72 focused visits and local routes.": "สำรวจเมืองและภูมิภาค 24 แห่งผ่านการเที่ยวแบบเน้นจุดสำคัญ 72 รายการและเส้นทางท้องถิ่น",
+    "America": "อเมริกา",
+    "Regional guide": "คู่มือภูมิภาค",
+    "Local guide": "คู่มือท้องถิ่น"
+  }
+}

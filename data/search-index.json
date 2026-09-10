@@ -6956,5 +6956,1073 @@
       "alpine season gate",
       "australia travel guide"
     ]
+  },
+  {
+    "title": "United States Travel Guide",
+    "url": "/usa/",
+    "parent": "North America",
+    "type": "Country",
+    "summary": "Explore 24 cities and regions with 72 focused visits and local routes.",
+    "keywords": [
+      "USA",
+      "United States",
+      "America"
+    ]
+  },
+  {
+    "title": "New York City",
+    "url": "/usa/new-york/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Build New York around neighborhoods and subway lines. Downtown harbor history, Midtown institutions and Brooklyn waterfront walks deserve separate blocks of time; crossing the city repeatedly consumes the hours you hoped to spend inside museums.",
+    "keywords": [
+      "New York City",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Lower Manhattan & the Harbor",
+    "url": "/usa/new-york/lower-manhattan/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Lower Manhattan combines the working Financial District, the 9/11 Memorial and the harbor. These are distinct experiences: leave a quiet interval after the memorial, and decide whether an island visit is important before filling the rest of the day.",
+    "keywords": [
+      "Lower Manhattan & the Harbor",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Midtown & Central Park",
+    "url": "/usa/new-york/midtown-central-park/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Midtown works best as a museum or performance day with outdoor breaks. The size of Central Park is easy to underestimate, and an observation deck, a major collection and an evening show can become a rushed sequence if every slot is fixed.",
+    "keywords": [
+      "Midtown & Central Park",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Brooklyn Heights & DUMBO",
+    "url": "/usa/new-york/brooklyn-waterfront/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "The Brooklyn waterfront offers a different view of the city and a useful slower day. Brooklyn Heights, the promenade and DUMBO connect on foot, but residential streets and busy photography spots should remain usable for people who live and work here.",
+    "keywords": [
+      "Brooklyn Heights & DUMBO",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Boston & Cambridge",
+    "url": "/usa/boston/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Boston rewards walking in short historical sections, with Cambridge as a separate river crossing. Museums, university streets and harbor departures offer different kinds of days, and winter weather can make an otherwise compact route tiring.",
+    "keywords": [
+      "Boston & Cambridge",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Freedom Trail & North End",
+    "url": "/usa/boston/freedom-trail/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "The Freedom Trail links places with different histories, admission arrangements and opening hours. Following the entire line is less useful than choosing sites whose interpretation you can actually absorb, then leaving time for the North End as a living neighborhood.",
+    "keywords": [
+      "Freedom Trail & North End",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Cambridge & Harvard Square",
+    "url": "/usa/boston/cambridge-harvard/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Cambridge is a university city rather than an unrestricted campus attraction. Public streets, museums and river paths provide a full visit, while residence halls, classrooms and research spaces have their own boundaries.",
+    "keywords": [
+      "Cambridge & Harvard Square",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Boston Harbor & Islands",
+    "url": "/usa/boston/harbor-islands/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Boston Harbor can mean a waterfront walk, an island landing or a cruise without a stop. Decide which experience you want before choosing a ticket, and treat the seasonal island ferry as a real transport connection.",
+    "keywords": [
+      "Boston Harbor & Islands",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Philadelphia",
+    "url": "/usa/philadelphia/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Philadelphia combines the independence sites with strong museum and neighborhood days. Keep Old City, the parkway and food-market visits distinct so the trip includes more than a photograph of the Liberty Bell.",
+    "keywords": [
+      "Philadelphia",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Old City & Independence Park",
+    "url": "/usa/philadelphia/old-city/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Old City brings together constitutional history, preserved streets and contemporary residents. Independence Hall and the Liberty Bell have different entry procedures, so the useful first step is to check the official park plan rather than queue at whichever line looks shortest.",
+    "keywords": [
+      "Old City & Independence Park",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Museum Parkway & Schuylkill River",
+    "url": "/usa/philadelphia/parkway-museums/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "The parkway contains major art collections separated by broad roads and substantial walking. Choose one collection as the main event; the river is an outdoor complement rather than a reason to rush through galleries.",
+    "keywords": [
+      "Museum Parkway & Schuylkill River",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Reading Terminal & Center City",
+    "url": "/usa/philadelphia/reading-terminal/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Reading Terminal Market is a working food market whose vendors have individual hours. It fits best into a Center City day, with a clear meal window and time to explore nearby public streets rather than treating every counter as a compulsory stop.",
+    "keywords": [
+      "Reading Terminal & Center City",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Washington, DC",
+    "url": "/usa/washington-dc/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Washington is a city of substantial institutions, long open spaces and neighborhoods beyond the National Mall. A museum day, a memorial walk and a Georgetown outing work better as separate plans than as one exhaustive circuit.",
+    "keywords": [
+      "Washington, DC",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "National Mall & Memorials",
+    "url": "/usa/washington-dc/national-mall/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "The Mall looks compact on a map but its memorials are separated by long walks in exposed conditions. Treat commemorative sites as places for reflection and plan water, shade and a transport exit before walking from end to end.",
+    "keywords": [
+      "National Mall & Memorials",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "Smithsonian Museums & Capitol Hill",
+    "url": "/usa/washington-dc/smithsonian/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "The Smithsonian is a group of institutions with different locations and entry arrangements. Pick a subject and a specific museum before planning the day; a free admission policy does not mean all popular entries are available without a reservation.",
+    "keywords": [
+      "Smithsonian Museums & Capitol Hill",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "Georgetown & the Potomac",
+    "url": "/usa/washington-dc/georgetown/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Georgetown offers historic streets, shops and a riverfront setting beyond the monumental core. Hills and the lack of a Metro station in the center make the last part of the journey worth planning, particularly for visitors with limited mobility.",
+    "keywords": [
+      "Georgetown & the Potomac",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "New England Coast & Mountains",
+    "url": "/usa/new-england/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Beyond Boston, New England changes from harbor towns to mountain roads and protected coast. Maine, the White Mountains and Vermont need different overnight bases; fall color is weather-dependent and should not be treated as a fixed-date event.",
+    "keywords": [
+      "New England Coast & Mountains",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Portland, Maine & Casco Bay",
+    "url": "/usa/new-england/portland-maine/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Portland pairs a compact working waterfront with island ferries and a regional food scene. The Old Port is not the same outing as a distant lighthouse circuit, and ferry choice determines whether you are visiting an island or simply enjoying the crossing.",
+    "keywords": [
+      "Portland, Maine & Casco Bay",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "Acadia & Mount Desert Island",
+    "url": "/usa/new-england/acadia/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Acadia offers rocky shore, carriage roads and mountain viewpoints, but the park and Bar Harbor can be busy in different ways. Choose a walking or scenic-driving priority and check which roads, shuttles and reservations apply to it.",
+    "keywords": [
+      "Acadia & Mount Desert Island",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "White Mountains & Vermont Roads",
+    "url": "/usa/new-england/white-mountains-vermont/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Northern New England is a road journey with slow scenic sections and rapidly changing mountain weather. A valley village, a short trail and a mountain-road viewpoint may fit one day; crossing several states while hiking usually does not.",
+    "keywords": [
+      "White Mountains & Vermont Roads",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "Chicago",
+    "url": "/usa/chicago/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Chicago divides naturally into architecture along the river, major lakefront institutions and neighborhood streets. Wind, winter weather and the scale of the lakefront make a transit plan as valuable as a list of buildings.",
+    "keywords": [
+      "Chicago",
+      "Great Lakes"
+    ]
+  },
+  {
+    "title": "The Loop & Chicago Riverwalk",
+    "url": "/usa/chicago/loop-riverwalk/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "The Loop and Riverwalk reveal the city through architecture, bridges and the working river. A narrated architecture cruise can add context, while a self-guided walk offers flexibility and an easier indoor alternative when weather changes.",
+    "keywords": [
+      "The Loop & Chicago Riverwalk",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Museum Campus & Lakefront",
+    "url": "/usa/chicago/museum-lakefront/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "The lakefront combines major museums with long open paths. Choose one institution and a short outdoor section; the Field Museum, Shedd Aquarium and Adler Planetarium each deserve more than a quick stop between photographs.",
+    "keywords": [
+      "Museum Campus & Lakefront",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Wicker Park, Logan Square & Neighborhood Chicago",
+    "url": "/usa/chicago/neighborhoods/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Neighborhood Chicago rewards a slower food, music or design day. Wicker Park and Logan Square are connected by transit, but they remain residential places with independent businesses, varied hours and evening rhythms.",
+    "keywords": [
+      "Wicker Park, Logan Square & Neighborhood Chicago",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Seattle & Puget Sound",
+    "url": "/usa/seattle/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Seattle mixes hills, markets, ferries and mountain weather. The waterfront is a good urban starting point; a Rainier day or an island crossing should have its own forecast and transport plan.",
+    "keywords": [
+      "Seattle & Puget Sound",
+      "Pacific Northwest"
+    ]
+  },
+  {
+    "title": "Pike Place & Seattle Waterfront",
+    "url": "/usa/seattle/pike-place-waterfront/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Pike Place is a working market above the waterfront, with stairs, ramps and different levels. A good visit gives vendors and residents space, then connects to the shore without treating every tourist queue as essential.",
+    "keywords": [
+      "Pike Place & Seattle Waterfront",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Bainbridge Island Ferry Day",
+    "url": "/usa/seattle/bainbridge/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Bainbridge offers a short island visit built around the ferry and Winslow. Walking passengers can explore the town without a car, while farther beaches and trails require a realistic island transport plan.",
+    "keywords": [
+      "Bainbridge Island Ferry Day",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Mount Rainier National Park",
+    "url": "/usa/seattle/mount-rainier/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Mount Rainier is a separate mountain trip, with long access roads and different conditions at each entrance. A city forecast cannot tell you whether a high trail is suitable, and snow can remain well beyond winter.",
+    "keywords": [
+      "Mount Rainier National Park",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Portland & the Columbia Gorge",
+    "url": "/usa/portland-oregon/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Portland city culture, the Columbia Gorge and the Oregon Coast are three different days. Rain, road conditions and popular trailhead access determine how far a scenic outing should extend.",
+    "keywords": [
+      "Portland & the Columbia Gorge",
+      "Pacific Northwest"
+    ]
+  },
+  {
+    "title": "Washington Park & Portland Gardens",
+    "url": "/usa/portland-oregon/washington-park/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Washington Park combines gardens, museums and wooded paths with hills that can surprise visitors arriving on foot. Choose a specific garden or institution first, then use the park transport options to connect it with a short outdoor section.",
+    "keywords": [
+      "Washington Park & Portland Gardens",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "Columbia River Gorge",
+    "url": "/usa/portland-oregon/columbia-gorge/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "The Gorge is a landscape of waterfalls, cliffs and a working transport corridor. Popular stops need parking or shuttle planning, and a short viewpoint visit is different from a steep trail or a cross-river road circuit.",
+    "keywords": [
+      "Columbia River Gorge",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "Cannon Beach & the Oregon Coast",
+    "url": "/usa/portland-oregon/oregon-coast/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "The coast is a separate weather system from Portland. Cannon Beach offers a walkable base and striking sea stacks, while a longer coastal drive needs overnight stops and enough time to enjoy the shoreline.",
+    "keywords": [
+      "Cannon Beach & the Oregon Coast",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "San Francisco & the Bay",
+    "url": "/usa/san-francisco/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "San Francisco combines steep streets, distinct neighborhoods and bay crossings. A waterfront day, Golden Gate landscapes and a neighborhood day are easier to enjoy than repeated drives through the city.",
+    "keywords": [
+      "San Francisco & the Bay",
+      "California"
+    ]
+  },
+  {
+    "title": "Embarcadero & Alcatraz",
+    "url": "/usa/san-francisco/waterfront-alcatraz/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "The waterfront connects ferry infrastructure, public promenades and Alcatraz departures. An island ticket needs advance attention; ordinary sightseeing cruises can circle the island without landing.",
+    "keywords": [
+      "Embarcadero & Alcatraz",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Golden Gate & the Presidio",
+    "url": "/usa/san-francisco/golden-gate-presidio/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "The Golden Gate is a landscape of viewpoints, trails and changing fog. Choose a specific side of the bridge and a realistic walking distance, with the Presidio providing a substantial park visit even when the bridge is partly hidden.",
+    "keywords": [
+      "Golden Gate & the Presidio",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Mission District & Neighborhood Walks",
+    "url": "/usa/san-francisco/mission-neighborhoods/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "The Mission is a living district shaped by Latino culture, art and independent businesses. Murals need context and respectful viewing, while nearby parks and food stops make a better day than a checklist of photo walls.",
+    "keywords": [
+      "Mission District & Neighborhood Walks",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Los Angeles",
+    "url": "/usa/los-angeles/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Los Angeles is a collection of districts connected by real travel time. Downtown, Hollywood and the coast work best as separate days, with a hotel base chosen for the first part of the itinerary.",
+    "keywords": [
+      "Los Angeles",
+      "California"
+    ]
+  },
+  {
+    "title": "Downtown LA & the Arts District",
+    "url": "/usa/los-angeles/downtown-arts/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Downtown brings museums, historic streets and a working arts district into a broad area. Choose a few destinations connected by a sensible walking and transit route, rather than treating the whole district as a continuous pedestrian attraction.",
+    "keywords": [
+      "Downtown LA & the Arts District",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "Hollywood & Griffith Park",
+    "url": "/usa/los-angeles/hollywood-griffith/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Hollywood street attractions and Griffith Observatory are different experiences linked by a significant climb or transport connection. The observatory offers city context, while a hike requires a separate check of weather, daylight and ability.",
+    "keywords": [
+      "Hollywood & Griffith Park",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "Santa Monica & Venice",
+    "url": "/usa/los-angeles/santa-monica-venice/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "The western coast offers a beach-and-neighborhood day with a long shared path. Santa Monica and Venice can be linked on foot or bicycle, but sun, distance and return transport deserve as much attention as the pier.",
+    "keywords": [
+      "Santa Monica & Venice",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "San Diego",
+    "url": "/usa/san-diego/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "San Diego mixes cultural institutions, coastal habitats and harbor history. Balboa Park, La Jolla and the bay each support a full day without driving repeatedly across the county.",
+    "keywords": [
+      "San Diego",
+      "California"
+    ]
+  },
+  {
+    "title": "Balboa Park",
+    "url": "/usa/san-diego/balboa-park/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Balboa Park is a large cultural landscape with museums, gardens and separate attractions. Choose one or two interests before buying a pass; the zoo is a substantial visit with its own admission and should not be treated as a quick extra.",
+    "keywords": [
+      "Balboa Park",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "La Jolla Coast",
+    "url": "/usa/san-diego/la-jolla/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "La Jolla combines coastal walks, coves and protected wildlife habitat. The right route follows current access and marine conditions, with clear boundaries between observing animals, swimming and walking on cliffs.",
+    "keywords": [
+      "La Jolla Coast",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "San Diego Harbor & Coronado",
+    "url": "/usa/san-diego/harbor-coronado/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "The harbor offers maritime museums, public waterfront and a ferry connection to Coronado. Choose between a substantial museum visit and a longer bay outing so the day does not become a sequence of queues and transfers.",
+    "keywords": [
+      "San Diego Harbor & Coronado",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "Yosemite & the Sierra Parks",
+    "url": "/usa/sierra-parks/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Yosemite, Sequoia and Kings Canyon are separate park visits connected by substantial roads. Elevation, snow, fire and entrance choice determine the itinerary; a national park pass does not replace every reservation.",
+    "keywords": [
+      "Yosemite & the Sierra Parks",
+      "Western Parks"
+    ]
+  },
+  {
+    "title": "Yosemite Valley",
+    "url": "/usa/sierra-parks/yosemite-valley/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Yosemite Valley offers dramatic views without requiring a difficult hike. The valley floor, waterfalls and higher trails have very different effort and access requirements, so build a first visit around open low-level routes and a realistic parking plan.",
+    "keywords": [
+      "Yosemite Valley",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Sequoia Giant Forest",
+    "url": "/usa/sierra-parks/sequoia-giant-forest/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "The Giant Forest is a high-elevation landscape reached by winding roads. Seeing the giant sequoias can be a short, accessible-focused outing or a longer walk, but the road and weather should be assessed before adding distant park sectors.",
+    "keywords": [
+      "Sequoia Giant Forest",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Kings Canyon & Grant Grove",
+    "url": "/usa/sierra-parks/kings-canyon/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Grant Grove and the deeper canyon are not interchangeable stops. Seasonal road access can make the canyon unavailable while the grove remains a worthwhile destination, so choose the actual park area before committing to a drive.",
+    "keywords": [
+      "Kings Canyon & Grant Grove",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Las Vegas & Southern Nevada",
+    "url": "/usa/las-vegas/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Las Vegas has large indoor venues and long outdoor distances. The Strip, downtown and desert parks need different plans; air-conditioned interiors do not remove the heat risk between them.",
+    "keywords": [
+      "Las Vegas & Southern Nevada",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "The Strip & Shows",
+    "url": "/usa/las-vegas/strip/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "The Strip is longer and slower to walk than its map suggests. Hotels have large interiors, indirect crossings and separate entrances for performances, so a good evening is built around one booked event and a limited area.",
+    "keywords": [
+      "The Strip & Shows",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Downtown Las Vegas",
+    "url": "/usa/las-vegas/downtown/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Downtown has a different scale from the Strip, with historic casino streets, museums and evening entertainment. A cultural stop can explain the city beyond neon, while the busiest pedestrian sections become loud and crowded after dark.",
+    "keywords": [
+      "Downtown Las Vegas",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Red Rock Canyon",
+    "url": "/usa/las-vegas/red-rock/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Red Rock Canyon is a desert visit with seasonal access rules and a real heat budget. Scenic driving and a short marked walk can make a full outing without attempting a strenuous trail.",
+    "keywords": [
+      "Red Rock Canyon",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Utah Canyon Country",
+    "url": "/usa/utah-parks/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Utah’s parks are separate landscapes with long transfers between them. Zion, Bryce and the Moab area reward different bases, and a short trip should choose fewer parks rather than spend every daylight hour driving.",
+    "keywords": [
+      "Utah Canyon Country",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "Zion Canyon",
+    "url": "/usa/utah-parks/zion/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Zion’s main canyon uses transport and trail rules that depend on season and route. A riverside introduction is different from a permit-controlled hike, and neither should be chosen solely because an online itinerary calls it essential.",
+    "keywords": [
+      "Zion Canyon",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Bryce Canyon",
+    "url": "/usa/utah-parks/bryce/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Bryce’s high rim can be cold and windy while descents require a climb back out. Viewpoints provide a complete introduction, and a short trail should be selected according to current ice, heat and personal ability.",
+    "keywords": [
+      "Bryce Canyon",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Moab, Arches & Canyonlands",
+    "url": "/usa/utah-parks/moab-arches-canyonlands/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Moab serves two major parks with separate entrances and different distances. Arches viewpoints and Canyonlands’ Island in the Sky can each fill a day, while remote sectors require another level of preparation.",
+    "keywords": [
+      "Moab, Arches & Canyonlands",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Arizona & the Grand Canyon",
+    "url": "/usa/arizona/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Arizona combines major elevation changes, desert cities and sovereign Tribal lands. Grand Canyon views, Sedona trails and Phoenix culture belong to separate days with season-specific driving and walking plans.",
+    "keywords": [
+      "Arizona & the Grand Canyon",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "Grand Canyon South Rim",
+    "url": "/usa/arizona/grand-canyon/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "The South Rim supports a meaningful visit from viewpoints and rim paths alone. Descending below the rim adds heat, distance and a demanding return climb; it should not be treated as a casual extension of a viewpoint stop.",
+    "keywords": [
+      "Grand Canyon South Rim",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Sedona & Red Rock Trails",
+    "url": "/usa/arizona/sedona/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Sedona combines a town visit with red-rock trails whose parking and heat conditions need planning. Choose a route for its grade and access rather than following a social-media location that may be crowded or restricted.",
+    "keywords": [
+      "Sedona & Red Rock Trails",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Phoenix & Scottsdale",
+    "url": "/usa/arizona/phoenix-scottsdale/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "The Phoenix area is a broad desert metropolis with museums, gardens and severe seasonal heat. A cultural day can be rewarding without a summit hike, especially when temperatures make exposed trails inappropriate.",
+    "keywords": [
+      "Phoenix & Scottsdale",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Denver & the Colorado Rockies",
+    "url": "/usa/colorado/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Denver provides a city base, while mountain parks and ski towns operate by elevation and season. Build in time to adjust and avoid treating a high-altitude drive as an easy city excursion.",
+    "keywords": [
+      "Denver & the Colorado Rockies",
+      "Mountain West"
+    ]
+  },
+  {
+    "title": "Denver Union Station & Museums",
+    "url": "/usa/colorado/denver/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Denver’s central neighborhoods work well as an arrival day with a museum, food and a modest walk. The airport rail connection can simplify arrival, but mountain travel is a separate transport commitment.",
+    "keywords": [
+      "Denver Union Station & Museums",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Rocky Mountain National Park",
+    "url": "/usa/colorado/rocky-mountain/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Rocky Mountain National Park has distinct entrance and corridor arrangements. Bear Lake access, a scenic road and a long hike are different plans, and timed-entry products may cover different areas.",
+    "keywords": [
+      "Rocky Mountain National Park",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Colorado Mountain Towns",
+    "url": "/usa/colorado/mountain-towns/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Colorado’s mountain towns offer trails, historic streets and winter sports, but a resort name does not describe current road or lift conditions. Choose one valley or town as a base and let the season determine the activities.",
+    "keywords": [
+      "Colorado Mountain Towns",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Yellowstone & Grand Teton",
+    "url": "/usa/yellowstone-tetons/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Yellowstone and Grand Teton combine long park roads with geothermal landscapes and wildlife. Entrance selection and overnight bases matter; a single day cannot do justice to both parks.",
+    "keywords": [
+      "Yellowstone & Grand Teton",
+      "Mountain West"
+    ]
+  },
+  {
+    "title": "Yellowstone Geyser Basins",
+    "url": "/usa/yellowstone-tetons/geyser-basins/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "The geyser basins are fragile thermal landscapes, not ordinary walking terrain. Boardwalks provide access to dramatic features, and a predicted eruption should be treated as an estimate rather than a guaranteed appointment.",
+    "keywords": [
+      "Yellowstone Geyser Basins",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "Yellowstone Canyon & Wildlife Valleys",
+    "url": "/usa/yellowstone-tetons/canyon-lamar/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "The canyon and northern valleys offer different scenery from the geyser basins. Wildlife viewing is uncertain and should be based on patient observation from legal pullouts, not on approaching animals or chasing sightings.",
+    "keywords": [
+      "Yellowstone Canyon & Wildlife Valleys",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "Grand Teton & Jackson",
+    "url": "/usa/yellowstone-tetons/grand-teton/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Grand Teton offers mountain views, lakes and substantial hiking, with Jackson as one possible gateway. A scenic roadside visit can stand alone; a boat crossing or mountain trail adds separate schedules and preparation.",
+    "keywords": [
+      "Grand Teton & Jackson",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "New Orleans",
+    "url": "/usa/new-orleans/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "New Orleans deserves time for music, food and the history behind its neighborhoods. The French Quarter, Garden District and river landscape provide different days, with heat and storms shaping the pace.",
+    "keywords": [
+      "New Orleans",
+      "South"
+    ]
+  },
+  {
+    "title": "French Quarter & Live Music",
+    "url": "/usa/new-orleans/french-quarter/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "The French Quarter is a lived neighborhood as well as a visitor district. Architecture, museums and music can make a rich day without assuming that nightlife is the only reason to visit.",
+    "keywords": [
+      "French Quarter & Live Music",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Garden District & Streetcars",
+    "url": "/usa/new-orleans/garden-district/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "The Garden District offers residential architecture and a slower street-level view of the city. Streetcars are useful transport, but service changes and stops should be checked rather than treating them as a guaranteed sightseeing loop.",
+    "keywords": [
+      "Garden District & Streetcars",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Mississippi River & Wetlands",
+    "url": "/usa/new-orleans/river-wetlands/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "The riverfront and surrounding wetlands are separate experiences. A city promenade needs little logistics, while a boat excursion outside town depends on a named operator, pickup point, weather and environmental practice.",
+    "keywords": [
+      "Mississippi River & Wetlands",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Atlanta",
+    "url": "/usa/atlanta/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Atlanta’s civil-rights history, cultural institutions and neighborhood trails deserve separate attention. Distances and traffic reward grouping visits by district and using MARTA where it serves the plan.",
+    "keywords": [
+      "Atlanta",
+      "South"
+    ]
+  },
+  {
+    "title": "Martin Luther King, Jr. Historic District",
+    "url": "/usa/atlanta/king-historic-district/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "The historic district is a place of living worship and civic memory. Give its interpretation time and distinguish public visitor areas from active church services and spaces with controlled access.",
+    "keywords": [
+      "Martin Luther King, Jr. Historic District",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Midtown Museums & Piedmont Park",
+    "url": "/usa/atlanta/midtown-museums/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Midtown combines art institutions, gardens and parkland in a manageable city day. Select one major collection first, then use the park as a flexible outdoor break instead of trying to enter every attraction.",
+    "keywords": [
+      "Midtown Museums & Piedmont Park",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Atlanta BeltLine & Neighborhoods",
+    "url": "/usa/atlanta/beltline/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "The BeltLine links neighborhoods through shared public space, but it is not one uniform route. Choose a completed section with the food, art or park stops you want, and respect bicycle traffic and residential edges.",
+    "keywords": [
+      "Atlanta BeltLine & Neighborhoods",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Texas Cities",
+    "url": "/usa/texas/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Texas city visits involve real intercity distances. Austin, San Antonio and Houston each support their own stay; choose a limited combination and account for heat, traffic and the exact location of major attractions.",
+    "keywords": [
+      "Texas Cities",
+      "South"
+    ]
+  },
+  {
+    "title": "Austin & Lady Bird Lake",
+    "url": "/usa/texas/austin/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Austin combines state-capitol history, music and a central lake trail. A compact daytime route and a separate music evening work better than driving between every restaurant and viewpoint.",
+    "keywords": [
+      "Austin & Lady Bird Lake",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "San Antonio Missions & River Walk",
+    "url": "/usa/texas/san-antonio/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "The downtown River Walk and the mission sites provide different historical settings. The missions are active cultural and religious places, and visiting them all requires transport planning beyond a short downtown stroll.",
+    "keywords": [
+      "San Antonio Missions & River Walk",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "Houston Museums & Space Center",
+    "url": "/usa/texas/houston/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Houston’s Museum District and Space Center Houston are far enough apart to deserve different days. Decide whether art, science or space history is the priority before choosing accommodation and transport.",
+    "keywords": [
+      "Houston Museums & Space Center",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "Miami & South Florida",
+    "url": "/usa/miami/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Miami’s beach, urban art districts and nearby wetlands are distinct visits. Choose a base by the first days of the trip, and keep a car-based Everglades outing separate from a beach evening.",
+    "keywords": [
+      "Miami & South Florida",
+      "Florida"
+    ]
+  },
+  {
+    "title": "South Beach & Art Deco",
+    "url": "/usa/miami/south-beach/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "South Beach pairs architectural streets with an exposed Atlantic shoreline. A neighborhood walk can add context to a beach visit, but heat, storms and ocean conditions should determine when and where to swim.",
+    "keywords": [
+      "South Beach & Art Deco",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Little Havana & Wynwood",
+    "url": "/usa/miami/little-havana-wynwood/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Little Havana and Wynwood offer different cultural settings and need transport between them. Choose the food, history or art you want to understand, and avoid reducing either neighborhood to a few staged photographs.",
+    "keywords": [
+      "Little Havana & Wynwood",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Everglades National Park",
+    "url": "/usa/miami/everglades/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "The Everglades is a large protected landscape with several gateways. Shark Valley and the southern park entrance are separate outings, so choose an area before buying a tour or planning a drive.",
+    "keywords": [
+      "Everglades National Park",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Orlando & Central Florida",
+    "url": "/usa/orlando/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Orlando needs careful separation of resort days, city visits and the Space Coast. Theme-park ticket systems, long walks and summer storms can dominate the trip if there are no rest days.",
+    "keywords": [
+      "Orlando & Central Florida",
+      "Florida"
+    ]
+  },
+  {
+    "title": "Orlando Theme-Park Planning",
+    "url": "/usa/orlando/theme-parks/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "A theme-park day begins with the exact park and ticket conditions, not a list of every ride. Resorts have different transport systems, and moving between parks can consume substantial time.",
+    "keywords": [
+      "Orlando Theme-Park Planning",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Winter Park & Orlando Beyond Resorts",
+    "url": "/usa/orlando/winter-park/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Winter Park offers museums, gardens and a walkable commercial center beyond the resort corridors. It is a useful slower day, but the journey from a theme-park hotel still needs a real transport plan.",
+    "keywords": [
+      "Winter Park & Orlando Beyond Resorts",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Kennedy Space Center & Space Coast",
+    "url": "/usa/orlando/kennedy-space-center/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Kennedy Space Center is a separate east-coast outing from Orlando. The visitor complex, optional tours and launch viewing have different availability; a launch should never be promised as part of a routine visit.",
+    "keywords": [
+      "Kennedy Space Center & Space Coast",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Alaska Gateways & Parks",
+    "url": "/usa/alaska/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Alaska requires choosing a region before choosing activities. Anchorage and the Kenai Peninsula, Denali and Southeast Alaska use different road, rail, boat and flight connections; combining them needs time and weather flexibility.",
+    "keywords": [
+      "Alaska Gateways & Parks",
+      "Alaska"
+    ]
+  },
+  {
+    "title": "Anchorage, Seward & Kenai Fjords",
+    "url": "/usa/alaska/anchorage-kenai/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Anchorage is a practical gateway, while Seward and the fjords deserve a separate overnight. Road or rail travel is part of the experience and should not be compressed around a boat departure with no margin.",
+    "keywords": [
+      "Anchorage, Seward & Kenai Fjords",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Denali National Park",
+    "url": "/usa/alaska/denali/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Denali is a large protected landscape with a park road whose accessible length and transport arrangements can change. Plan around current NPS information and a nearby base, not an old photograph of a road endpoint.",
+    "keywords": [
+      "Denali National Park",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Juneau & Southeast Alaska",
+    "url": "/usa/alaska/juneau-southeast/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Juneau and the Inside Passage operate through flights, ferries and local excursions. They are not road extensions of Anchorage, and a short port call has very different limits from an independent multi-night stay.",
+    "keywords": [
+      "Juneau & Southeast Alaska",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Hawaii",
+    "url": "/usa/hawaii/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Hawaii is an archipelago of distinct islands, communities and landscapes. Choose one island for a short stay and allow real transfer time between islands; cultural respect and ocean conditions should shape the itinerary.",
+    "keywords": [
+      "Hawaii",
+      "Pacific Islands"
+    ]
+  },
+  {
+    "title": "Oahu: Honolulu & Windward Coast",
+    "url": "/usa/hawaii/oahu/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Oahu combines an urban stay with coastal roads and important historical places. Waikiki, Pearl Harbor and the windward coast deserve separate plans, with traffic and timed access accounted for.",
+    "keywords": [
+      "Oahu: Honolulu & Windward Coast",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "Maui: Haleakala & Coastal Days",
+    "url": "/usa/hawaii/maui/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Maui’s summit, coastal stays and winding road excursions are different days. Choose a base and a small number of activities, and follow current local guidance about access and recovery-sensitive areas.",
+    "keywords": [
+      "Maui: Haleakala & Coastal Days",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "Hawaii Island: Volcanoes & Two Coasts",
+    "url": "/usa/hawaii/hawaii-island/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Hawaii Island has substantial road distances between Kona, Hilo and Hawaii Volcanoes National Park. Choose overnight bases by the landscapes you want to visit and avoid making every day a cross-island drive.",
+    "keywords": [
+      "Hawaii Island: Volcanoes & Two Coasts",
+      "Hawaii"
+    ]
   }
 ]
