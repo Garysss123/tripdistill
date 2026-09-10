@@ -8,8 +8,15 @@ const locales=englishOnly?[['en','']]:[['en',''],['zh-Hant','/zh'],['ja','/ja'],
 const origin=new URL(base).origin;
 const failures=[];
 let successes=0;
-async function get(route){
- const response=await fetch(new URL(route,origin),{redirect:'manual',signal:AbortSignal.timeout(30000)});
+async function get(route,allowComponentCanonical=false){
+ let response=await fetch(new URL(route,origin),{redirect:'manual',signal:AbortSignal.timeout(30000)});
+ // Pages canonicalizes HTML fragments to extensionless URLs. Content-page URLs
+ // remain strict: only this exact same-origin component redirect is accepted.
+ if(allowComponentCanonical&&[301,308].includes(response.status)){
+  const target=new URL(response.headers.get('location')||'/',origin);
+  const expected=new URL(route.replace(/\.html$/,''),origin);
+  if(target.href===expected.href)response=await fetch(target,{redirect:'manual',signal:AbortSignal.timeout(30000)});
+ }
  if(response.status!==200)throw Error(`HTTP ${response.status}${response.headers.get('location')?' → '+response.headers.get('location'):''}`);
  return response;
 }
@@ -27,7 +34,7 @@ for(const [locale,prefix]of locales){
   if(usa.length!==97||new Set(usa.map(x=>x.url)).size!==97)throw Error(`Expected 97 unique search records; found ${usa.length}`);
  }});
  jobs.push({label:`${locale} sidebar`,run:async()=>{
-  const html=await(await get(prefix+'/components/sidebar.html')).text();
+  const html=await(await get(prefix+'/components/sidebar.html',true)).text();
   if(!html.includes('data-sidebar-id="north-america"')||!html.includes(`href="${prefix}/usa/new-york/lower-manhattan/"`))throw Error('Missing localized North America hierarchy');
  }});
 }
