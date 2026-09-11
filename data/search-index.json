@@ -7238,7 +7238,7 @@
     "url": "/usa/seattle/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Seattle mixes hills, markets, ferries and mountain weather. The waterfront is a good urban starting point; a Rainier day or an island crossing should have its own forecast and transport plan.",
+    "summary": "Plan Seattle with light-rail hotel bases, a market and waterfront day, a Bainbridge crossing and a separately planned Mount Rainier outing.",
     "keywords": [
       "Seattle & Puget Sound",
       "Pacific Northwest"
@@ -7249,7 +7249,7 @@
     "url": "/usa/seattle/pike-place-waterfront/",
     "parent": "Seattle & Puget Sound",
     "type": "Local guide",
-    "summary": "Pike Place is a working market above the waterfront, with stairs, ramps and different levels. A good visit gives vendors and residents space, then connects to the shore without treating every tourist queue as essential.",
+    "summary": "Connect Pike Place Market with Overlook Walk and Seattle’s waterfront, choosing market levels, a meal and an aquarium visit without repeated hill climbs.",
     "keywords": [
       "Pike Place & Seattle Waterfront",
       "Seattle & Puget Sound"
@@ -7260,7 +7260,7 @@
     "url": "/usa/seattle/bainbridge/",
     "parent": "Seattle & Puget Sound",
     "type": "Local guide",
-    "summary": "Bainbridge offers a short island visit built around the ferry and Winslow. Walking passengers can explore the town without a car, while farther beaches and trails require a realistic island transport plan.",
+    "summary": "Take a walk-on Bainbridge ferry day through Winslow, the art museum and Waterfront Park, separating Bloedel Reserve from the compact town walk.",
     "keywords": [
       "Bainbridge Island Ferry Day",
       "Seattle & Puget Sound"
@@ -7271,7 +7271,7 @@
     "url": "/usa/seattle/mount-rainier/",
     "parent": "Seattle & Puget Sound",
     "type": "Local guide",
-    "summary": "Mount Rainier is a separate mountain trip, with long access roads and different conditions at each entrance. A city forecast cannot tell you whether a high trail is suitable, and snow can remain well beyond winter.",
+    "summary": "Plan Mount Rainier through Nisqually, Longmire and Paradise, with current road-closure context, trail choices and a separate park-admission decision.",
     "keywords": [
       "Mount Rainier National Park",
       "Seattle & Puget Sound"
@@ -7282,7 +7282,7 @@
     "url": "/usa/portland-oregon/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Portland city culture, the Columbia Gorge and the Oregon Coast are three different days. Rain, road conditions and popular trailhead access determine how far a scenic outing should extend.",
+    "summary": "Plan Portland with MAX-connected hotel choices, a city and garden stay, and separate Columbia Gorge or Cannon Beach days matched to transport and weather.",
     "keywords": [
       "Portland & the Columbia Gorge",
       "Pacific Northwest"
@@ -7293,7 +7293,7 @@
     "url": "/usa/portland-oregon/washington-park/",
     "parent": "Portland & the Columbia Gorge",
     "type": "Local guide",
-    "summary": "Washington Park combines gardens, museums and wooded paths with hills that can surprise visitors arriving on foot. Choose a specific garden or institution first, then use the park transport options to connect it with a short outdoor section.",
+    "summary": "Choose Portland Japanese Garden, the Rose Test Garden or Hoyt Arboretum, with Washington Park station, shuttle and admission differences made clear.",
     "keywords": [
       "Washington Park & Portland Gardens",
       "Portland & the Columbia Gorge"
@@ -7304,7 +7304,7 @@
     "url": "/usa/portland-oregon/columbia-gorge/",
     "parent": "Portland & the Columbia Gorge",
     "type": "Local guide",
-    "summary": "The Gorge is a landscape of waterfalls, cliffs and a working transport corridor. Popular stops need parking or shuttle planning, and a short viewpoint visit is different from a steep trail or a cross-river road circuit.",
+    "summary": "Plan a focused Columbia Gorge outing by car or Gorge Express, distinguishing Multnomah Falls permits, current bus limitations and a Crown Point option.",
     "keywords": [
       "Columbia River Gorge",
       "Portland & the Columbia Gorge"
@@ -7315,7 +7315,7 @@
     "url": "/usa/portland-oregon/oregon-coast/",
     "parent": "Portland & the Columbia Gorge",
     "type": "Local guide",
-    "summary": "The coast is a separate weather system from Portland. Cannon Beach offers a walkable base and striking sea stacks, while a longer coastal drive needs overnight stops and enough time to enjoy the shoreline.",
+    "summary": "Plan Cannon Beach around town, Haystack Rock and a safe return, with tide-pool guidance, Ecola closure context and an overnight-versus-day-trip comparison.",
     "keywords": [
       "Cannon Beach & the Oregon Coast",
       "Portland & the Columbia Gorge"
