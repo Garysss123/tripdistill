@@ -14,6 +14,10 @@ plans['los-angeles']=[['base','airport','days','car'],['anchor','route','archite
 plans['san-diego']=[['base','airport','days','extra'],['choose','admission','route','adapt'],['places','rules','route','water'],['choose','mainland','crossing','coronado']];
 plans['sierra-parks']=[['base','shape','access','season'],['entry','transport','walk','limits'],['road','shuttle','forest','return'],['choice','grant','cedar','limits']];
 const problems=[],seen=new Map();
+plans['las-vegas']=[['base','arrival','days','cost'],['segment','bellagio','evening','movement'],['museum','neon','street','return'],['access','shape','route','return']];
+plans['utah-parks']=[['bases','shape','rules','conditions'],['shuttles','walk','day','special'],['rim','landscape','day','descent'],['choose','arches','mesa','extra']];
+plans.arizona=[['bases','arrival','shape','different'],['place','route','shuttle','limits'],['base','access','day','town'],['choose','garden','culture','transport']];
+plans.colorado=[['base','arrival','days','season'],['arrival','local','museum','day'],['entry','bus','day','road'],['base','town','activity','roads']];
 const check=(v,m)=>{if(!v)problems.push(m);};
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const text=n=>n.nodeName==='#text'?n.value:['script','style'].includes(n.tagName)?'':(n.childNodes||[]).map(text).join(' ');

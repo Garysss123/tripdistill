@@ -7502,7 +7502,7 @@
     "url": "/usa/las-vegas/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Las Vegas has large indoor venues and long outdoor distances. The Strip, downtown and desert parks need different plans; air-conditioned interiors do not remove the heat risk between them.",
+    "summary": "Plan Las Vegas around the location of a show and hotel, with separate Strip, downtown and Red Rock days rather than a transfer-heavy attraction list.",
     "keywords": [
       "Las Vegas & Southern Nevada",
       "Southwest"
@@ -7513,7 +7513,7 @@
     "url": "/usa/las-vegas/strip/",
     "parent": "Las Vegas & Southern Nevada",
     "type": "Local guide",
-    "summary": "The Strip is longer and slower to walk than its map suggests. Hotels have large interiors, indirect crossings and separate entrances for performances, so a good evening is built around one booked event and a limited area.",
+    "summary": "Choose a manageable central Strip visit around Bellagio, a meal and one booked show, distinguishing free displays, changeover dates and Monorail access.",
     "keywords": [
       "The Strip & Shows",
       "Las Vegas & Southern Nevada"
@@ -7524,7 +7524,7 @@
     "url": "/usa/las-vegas/downtown/",
     "parent": "Las Vegas & Southern Nevada",
     "type": "Local guide",
-    "summary": "Downtown has a different scale from the Strip, with historic casino streets, museums and evening entertainment. A cultural stop can explain the city beyond neon, while the busiest pedestrian sections become loud and crowded after dark.",
+    "summary": "Compare the Neon Museum, Mob Museum and Fremont Street as different downtown experiences, with the actual museum location and a planned evening return.",
     "keywords": [
       "Downtown Las Vegas",
       "Las Vegas & Southern Nevada"
@@ -7535,7 +7535,7 @@
     "url": "/usa/las-vegas/red-rock/",
     "parent": "Las Vegas & Southern Nevada",
     "type": "Local guide",
-    "summary": "Red Rock Canyon is a desert visit with seasonal access rules and a real heat budget. Scenic driving and a short marked walk can make a full outing without attempting a strenuous trail.",
+    "summary": "Plan Red Rock Canyon as a separate desert outing, distinguishing the Scenic Drive reservation season, viewpoints, short walks and a confirmed return.",
     "keywords": [
       "Red Rock Canyon",
       "Las Vegas & Southern Nevada"
@@ -7546,7 +7546,7 @@
     "url": "/usa/utah-parks/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Utah’s parks are separate landscapes with long transfers between them. Zion, Bryce and the Moab area reward different bases, and a short trip should choose fewer parks rather than spend every daylight hour driving.",
+    "summary": "Choose a Zion–Bryce trip or a Moab-based stay before linking Utah parks, with separate bases, seasonal transport and selective park days.",
     "keywords": [
       "Utah Canyon Country",
       "Southwest"
@@ -7557,7 +7557,7 @@
     "url": "/usa/utah-parks/zion/",
     "parent": "Utah Canyon Country",
     "type": "Local guide",
-    "summary": "Zion’s main canyon uses transport and trail rules that depend on season and route. A riverside introduction is different from a permit-controlled hike, and neither should be chosen solely because an online itinerary calls it essential.",
+    "summary": "Plan Zion Canyon with the Springdale and park shuttle distinction, a Pa’rus or Riverside Walk visit, and separate decisions for Angels Landing and the Narrows.",
     "keywords": [
       "Zion Canyon",
       "Utah Canyon Country"
@@ -7568,7 +7568,7 @@
     "url": "/usa/utah-parks/bryce/",
     "parent": "Utah Canyon Country",
     "type": "Local guide",
-    "summary": "Bryce’s high rim can be cold and windy while descents require a climb back out. Viewpoints provide a complete introduction, and a short trail should be selected according to current ice, heat and personal ability.",
+    "summary": "Choose Bryce’s Sunrise–Sunset rim section or a separately planned descent, with hoodoo interpretation, shuttle timing and a realistic climb back.",
     "keywords": [
       "Bryce Canyon",
       "Utah Canyon Country"
@@ -7579,7 +7579,7 @@
     "url": "/usa/utah-parks/moab-arches-canyonlands/",
     "parent": "Utah Canyon Country",
     "type": "Local guide",
-    "summary": "Moab serves two major parks with separate entrances and different distances. Arches viewpoints and Canyonlands’ Island in the Sky can each fill a day, while remote sectors require another level of preparation.",
+    "summary": "Give Arches and Canyonlands’ Island in the Sky separate Moab days, distinguishing viewpoints, longer hikes, park districts and Dead Horse Point admission.",
     "keywords": [
       "Moab, Arches & Canyonlands",
       "Utah Canyon Country"
@@ -7590,7 +7590,7 @@
     "url": "/usa/arizona/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Arizona combines major elevation changes, desert cities and sovereign Tribal lands. Grand Canyon views, Sedona trails and Phoenix culture belong to separate days with season-specific driving and walking plans.",
+    "summary": "Plan an Arizona stay with separate Phoenix, Sedona and Grand Canyon South Rim bases, matching elevation, access and actual transfer days to the trip.",
     "keywords": [
       "Arizona & the Grand Canyon",
       "Southwest"
@@ -7601,7 +7601,7 @@
     "url": "/usa/arizona/grand-canyon/",
     "parent": "Arizona & the Grand Canyon",
     "type": "Local guide",
-    "summary": "The South Rim supports a meaningful visit from viewpoints and rim paths alone. Descending below the rim adds heat, distance and a demanding return climb; it should not be treated as a casual extension of a viewpoint stop.",
+    "summary": "Choose a Grand Canyon South Rim day around Mather Point, Yavapai and a selected rim section, with shuttle seasons and West/North Rim distinctions.",
     "keywords": [
       "Grand Canyon South Rim",
       "Arizona & the Grand Canyon"
@@ -7612,7 +7612,7 @@
     "url": "/usa/arizona/sedona/",
     "parent": "Arizona & the Grand Canyon",
     "type": "Local guide",
-    "summary": "Sedona combines a town visit with red-rock trails whose parking and heat conditions need planning. Choose a route for its grade and access rather than following a social-media location that may be crowded or restricted.",
+    "summary": "Choose a Sedona base and one suitable red-rock visit, distinguishing trailhead shuttle parking, recreation passes, the chapel and town time.",
     "keywords": [
       "Sedona & Red Rock Trails",
       "Arizona & the Grand Canyon"
@@ -7623,7 +7623,7 @@
     "url": "/usa/arizona/phoenix-scottsdale/",
     "parent": "Arizona & the Grand Canyon",
     "type": "Local guide",
-    "summary": "The Phoenix area is a broad desert metropolis with museums, gardens and severe seasonal heat. A cultural day can be rewarding without a summit hike, especially when temperatures make exposed trails inappropriate.",
+    "summary": "Compare the Heard Museum, Desert Botanical Garden and Old Town Scottsdale for a heat-aware cultural stay without a mandatory summit hike.",
     "keywords": [
       "Phoenix & Scottsdale",
       "Arizona & the Grand Canyon"
@@ -7634,7 +7634,7 @@
     "url": "/usa/colorado/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Denver provides a city base, while mountain parks and ski towns operate by elevation and season. Build in time to adjust and avoid treating a high-altitude drive as an easy city excursion.",
+    "summary": "Choose Denver plus either Rocky Mountain National Park or a mountain-town base, with airport rail, separate park access and realistic transfer days.",
     "keywords": [
       "Denver & the Colorado Rockies",
       "Mountain West"
@@ -7645,7 +7645,7 @@
     "url": "/usa/colorado/denver/",
     "parent": "Denver & the Colorado Rockies",
     "type": "Local guide",
-    "summary": "Denver’s central neighborhoods work well as an arrival day with a museum, food and a modest walk. The airport rail connection can simplify arrival, but mountain travel is a separate transport commitment.",
+    "summary": "Use Denver Union Station for an arrival and neighborhood visit, then choose the Denver Art Museum or History Colorado Center as a separate cultural block.",
     "keywords": [
       "Denver Union Station & Museums",
       "Denver & the Colorado Rockies"
@@ -7656,7 +7656,7 @@
     "url": "/usa/colorado/rocky-mountain/",
     "parent": "Denver & the Colorado Rockies",
     "type": "Local guide",
-    "summary": "Rocky Mountain National Park has distinct entrance and corridor arrangements. Bear Lake access, a scenic road and a long hike are different plans, and timed-entry products may cover different areas.",
+    "summary": "Distinguish Rocky Mountain timed entry, Bear Lake Road entry and the Estes Park Hiker Shuttle before choosing a lake or Trail Ridge Road day.",
     "keywords": [
       "Rocky Mountain National Park",
       "Denver & the Colorado Rockies"
@@ -7667,7 +7667,7 @@
     "url": "/usa/colorado/mountain-towns/",
     "parent": "Denver & the Colorado Rockies",
     "type": "Local guide",
-    "summary": "Colorado’s mountain towns offer trails, historic streets and winter sports, but a resort name does not describe current road or lift conditions. Choose one valley or town as a base and let the season determine the activities.",
+    "summary": "Choose Summit County, Vail or Aspen as a mountain-town base, with a town-centered first day and separately confirmed lifts, trails and Maroon Bells access.",
     "keywords": [
       "Colorado Mountain Towns",
       "Denver & the Colorado Rockies"
