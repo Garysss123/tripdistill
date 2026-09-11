@@ -1,4 +1,4 @@
-// Independent Chicago briefs; not yet registered with the production generator.
+// Independent Chicago briefs for the city, river, Museum Campus and neighborhoods.
 const p=t=>`<p>${t}</p>`;
 const a=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
 const s=(id,t,b)=>`<section class="ch-section" id="${id}"><h2>${t}</h2>${b}</section>`;

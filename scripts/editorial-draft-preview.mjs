@@ -5,6 +5,8 @@ import {usaHubs} from '../data/usa-guides.mjs';
 import {usaImageManifest} from '../data/usa-image-manifest.mjs';
 import {renderNewEnglandEditorial} from './new-england-editorial.mjs';
 import {renderChicagoEditorial} from './chicago-editorial.mjs';
+import {renderSeattleEditorial} from './seattle-editorial.mjs';
+import {renderPortlandOregonEditorial} from './portland-oregon-editorial.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const photo=(g,lazy=false)=>{const x=usaImageManifest[g.hubSlug+'/'+g.slug];return `<img src="${x.src}" alt="${escape(x.alt)}" width="1600" height="1066" ${lazy?'loading="lazy"':'fetchpriority="high"'}>`;};
@@ -12,7 +14,7 @@ const source=(u,t)=>`<li><a href="${escape(u)}" target="_blank" rel="noopener">$
 const credit=g=>{const x=usaImageManifest[g.hubSlug+'/'+g.slug];return `<li><a href="${escape(x.source)}">${escape(g.name)}</a> — ${escape(x.creator)}, ${escape(x.license)}. Resized, display-cropped and converted to WebP; no other material edits.</li>`;};
 const card=g=>`<a class="us-card" href="${g.url}">${photo(g,true)}<div><h3>${escape(g.name)}</h3><p>${escape(g.intro)}</p><span>Read the local guide →</span></div></a>`;
 const ad='<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>';
-const drafts={'new-england':renderNewEnglandEditorial,chicago:renderChicagoEditorial};
+const drafts={'new-england':renderNewEnglandEditorial,chicago:renderChicagoEditorial,seattle:renderSeattleEditorial,'portland-oregon':renderPortlandOregonEditorial};
 export function editorialDraft(route){
  const parts=route.split('/').filter(Boolean);if(parts[0]!=='usa'||!drafts[parts[1]]||parts.length>3)return null;
  const h=usaHubs.find(h=>h.slug===parts[1]),g=parts[2]?h.guides.find(g=>g.slug===parts[2]):undefined;

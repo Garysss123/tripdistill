@@ -1,4 +1,4 @@
-// Four independently authored regional briefs; integrate only after the preceding release gate.
+// Four independently authored regional briefs; no destination-name substitution template.
 const p=t=>`<p>${t}</p>`;
 const a=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
 const s=(id,t,b)=>`<section class="ne-section" id="${id}"><h2>${t}</h2>${b}</section>`;

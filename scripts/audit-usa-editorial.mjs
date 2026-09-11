@@ -5,6 +5,8 @@ import {usaHubs} from '../data/usa-guides.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const plans={boston:[['bases','arrival','three-days','meals'],['length','walk','charlestown','interiors','interpretation'],['access','collection','day','river','objects'],['island','booking','ashore','conditions','mainland']],philadelphia:[['base','arrival','days','budget'],['entry','sequence','streets','adapt'],['choose','route','river','access','looking'],['timing','meal','circuit','after','counter']]};
 plans['washington-dc']=[['stay','airports','days','cost'],['choice','west','basin','return'],['select','passes','day','capitol'],['arrive','layers','walk','extend','return']];
+plans['new-england']=[['corridor','week','season','stay'],['town','bay','cape','food'],['access','landscape','days','adapt'],['base','kanc','vermont','conditions']];
+plans.chicago=[['base','arrive','days','evening'],['choice','route','levels','alternative'],['institution','tickets','day','shore'],['choose','wicker','logan','evening','care']];
 const problems=[],seen=new Map();
 const check=(v,m)=>{if(!v)problems.push(m);};
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
@@ -33,4 +35,4 @@ for(const [slug,sections] of Object.entries(plans)){
   }
  }
 }
-if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log('Boston/Philadelphia/DC structural regression checks passed. Not an editorial acceptance or AdSense verdict. Other U.S. routes remain outside this audit.');
+if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log('Five rewritten U.S. clusters passed structural regression checks. Not an editorial acceptance or AdSense verdict. Other U.S. routes remain outside this audit.');

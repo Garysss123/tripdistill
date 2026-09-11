@@ -27,7 +27,7 @@ const jobs=locales.flatMap(([locale,prefix])=>usaRoutes.map(route=>({label:prefi
  if(!html.includes('/css/usa.css?v=20260911-1')||!html.includes('/js/main.js?v=20260911-1'))throw Error('Stale USA/shared assets');
  if(!/<h1\b/.test(html)||!html.includes('"@type":"Article"'))throw Error('Missing page content/schema');
  if(route.startsWith('/usa/new-york/')&&(!html.includes('data-editorial-revision="nyc-20260911"')||!html.includes('/css/nyc-editorial.css?v=20260911-2')))throw Error('Old NYC template served instead of the editorial rewrite');
- for(const [slug,asset] of [['boston','boston'],['philadelphia','philadelphia'],['washington-dc','dc']])if(route.startsWith(`/usa/${slug}/`)&&(!html.includes(`data-editorial-revision="${asset}-20260911"`)||!html.includes(`/css/${asset}-editorial.css?v=20260911-1`)))throw Error(`Old ${slug} template served instead of the editorial rewrite`);
+ for(const [slug,asset] of [['boston','boston'],['philadelphia','philadelphia'],['washington-dc','dc'],['new-england','new-england'],['chicago','chicago']])if(route.startsWith(`/usa/${slug}/`)&&(!html.includes(`data-editorial-revision="${asset}-20260911"`)||!html.includes(`/css/${asset}-editorial.css?v=20260911-1`)))throw Error(`Old ${slug} template served instead of the editorial rewrite`);
 }})));
 for(const [locale,prefix]of locales){
  jobs.push({label:`${locale} search`,run:async()=>{
@@ -49,7 +49,7 @@ for(const x of Object.values(usaImageManifest))jobs.push({label:x.src,run:async(
 }});
 jobs.push({label:'USA stylesheet',run:async()=>{const css=await(await get('/css/usa.css?v=20260911-1')).text();if(!css.includes('.us-hero')||!css.includes('max-width:650px'))throw Error('USA responsive CSS missing');}});
 jobs.push({label:'NYC editorial stylesheet',run:async()=>{const css=await(await get('/css/nyc-editorial.css?v=20260911-2')).text();if(!css.includes('.ny-city-cover')||!css.includes('.ny-brooklyn-cover'))throw Error('NYC editorial layouts missing');}});
-for(const [asset,selector] of [['boston','.bo-cover'],['philadelphia','.ph-cover'],['dc','.dc-city-cover']])jobs.push({label:asset+' editorial stylesheet',run:async()=>{const css=await(await get(`/css/${asset}-editorial.css?v=20260911-1`)).text();if(!css.includes(selector)||!css.includes('max-width:520px'))throw Error('Editorial/responsive CSS missing');}});
+for(const [asset,selector] of [['boston','.bo-cover'],['philadelphia','.ph-cover'],['dc','.dc-city-cover'],['new-england','.ne-region-cover'],['chicago','.ch-city-cover']])jobs.push({label:asset+' editorial stylesheet',run:async()=>{const css=await(await get(`/css/${asset}-editorial.css?v=20260911-1`)).text();if(!css.includes(selector)||!css.includes('max-width:520px'))throw Error('Editorial/responsive CSS missing');}});
 jobs.push({label:'NYC Grand Central photograph',run:async()=>{const r=await get('/assets/images/nyc-grand-central-concourse.webp');if(!r.headers.get('content-type')?.startsWith('image/webp'))throw Error('NYC context photograph missing');const b=new Uint8Array(await r.arrayBuffer());if(String.fromCharCode(...b.slice(8,12))!=='WEBP')throw Error('Invalid NYC image');}});
 jobs.push({label:'sitemap dates',run:async()=>{
  const xml=await(await get('/sitemap.xml')).text();
