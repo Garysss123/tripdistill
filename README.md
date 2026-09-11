@@ -74,6 +74,7 @@ When an iteration adds or materially changes records in `data/search-index.json`
 - Localize editorial dates into the target language's normal order and month notation while preserving every numeric day and year. An English-form date such as `31 August 2026` is a failed translation in a non-English edition.
 - Translate travel terms by context, not by their most common dictionary sense. In rail copy, for example, `operator`, `gate`, `exit` and `paid area` must use the target language's normal railway terms rather than generic company, door, exit or payment-area wording. Render editorial metaphors by their planning purpose too: phrases such as `attention budget`, `two clocks`, `field cabinet`, `working market` and `mainland buffer` must become natural destination copy, never literal combinations that a native editor would not write. In guide prose, `buffer` means spare time or a safety margin, `contract` means a clearly defined transport or access plan, `reading` means interpretation, and `argument` means a coherent itinerary idea; none should inherit their software, legal, banking, book-reading or debate sense. Consult the locale glossary under `data/i18n/terms-*.json` when available and extend it when a new place name or stable specialist term is introduced.
 - Inspect representative titles, long planning paragraphs, warnings, FAQs, image credits and proper nouns in natural context. The word `reviewed` records this editorial gate; it is not permission to label an unchecked generation as reviewed.
+- U.S. review examples: House and Senate `galleries` are public viewing seats, not art galleries; `fountains` in a drinking-water paragraph means drinking fountains; a `commissioned` Navy ship remains in service; `abolitionists` supported abolishing slavery, not opposition to abolition. “Plan the return before darkness” means decide the route in advance, not necessarily leave before dark. Preserve these meanings explicitly rather than accepting a dictionary match.
 - Treat structural validation as necessary but not semantic proof. The validator can confirm that every source key has a non-empty target, but it cannot prove that a target answers the correct source sentence. Sample every route, including titles, FAQs and route boundaries, with source and target side by side. If one shifted or mismatched key/value pair is found, review the entire batch before continuing; never repair only the visible example and approve the rest by count.
 - Use `npm run i18n:sample -- --file=data/i18n/reviewed/zh-Hant/NN-cluster-name.json` to print deterministic source/target samples from every declared route. It includes route edges, long copy, truncated search excerpts and extra context-heavy phrases containing terms such as `buffer`, `contract`, `reading`, `working`, `argument` and `ledger`; it also warns when one long target is reused for different source sentences. Read the output; the command makes semantic review easier but does not replace it.
 - Merge a locale in draft mode while work is still in progress, and approve it only after every current source key is covered:
@@ -96,7 +97,7 @@ The shared sidebar uses progressive disclosure for a large guide library: `Asia`
 
 The project's goal is a genuinely useful travel publication that can qualify for AdSense, not a large count of indexed URLs. Google's [page-readiness guidance](https://support.google.com/adsense/answer/7299563?hl=en) emphasizes original, relevant content, useful navigation and visitor experience. Neither this checklist nor an automated test guarantees approval. Do not submit an AdSense review request on the user's behalf without explicit authorization.
 
-The first U.S. batch passed technical tests but was rejected by the user as repetitive and too shallow. Its 97-route / 485-language-page counts are inventory facts, **not editorial approval**. Treat the existing U.S. collection as pending staged editorial rework. Rebuild New York as the first acceptance sample; obtain the user's feedback on its content and visual direction before propagating that approach to other regions. Do not describe a successful sample as making the whole site AdSense-ready.
+The first U.S. batch passed technical tests but was rejected by the user as repetitive and too shallow. Its 97-route / 485-language-page counts are inventory facts, **not editorial approval**. Treat the existing U.S. collection as pending staged editorial rework. New York was rebuilt as the first acceptance sample, and the user accepted it and authorized the remaining regions on 11 September 2026. Apply its content and visual discipline independently to each region rather than copying its paragraphs. Do not describe a successful sample as making the whole site AdSense-ready.
 
 ### A page is publishable only when all of these are true
 
@@ -125,7 +126,7 @@ Model changes do not relax these requirements. If time or context is limited, re
 
 ## Country visual systems
 
-### New York acceptance sample — awaiting user review
+### New York acceptance sample — user accepted on 11 September 2026
 
 The four existing New York URLs are the first editorial rework sample, not a new page-count expansion. `scripts/nyc-editorial.mjs` contains four independently written briefs and `css/nyc-editorial.css` gives them different principal layouts. The general USA generator calls these explicit briefs; an unknown New York child route must not silently receive a generic fallback article.
 
@@ -134,7 +135,21 @@ The four existing New York URLs are the first editorial rework sample, not a new
 - Midtown: MoMA versus The Met, two geographically different day plans, park exits and Broadway timing.
 - Brooklyn: a Heights-to-DUMBO walk, access decisions, individual stopping places and three different return options.
 
-The other 93 U.S. routes remain outside this rework. Their existing publication and technical checks do not constitute acceptance under the new editorial gate. Ask for the user's feedback on this sample before rebuilding the remaining regions. Keep the changed routes synchronized in all five languages; do not claim the entire U.S. collection or website is AdSense-ready on the strength of these four pages.
+The user accepted the sample and authorized rewriting the other 93 U.S. routes on 11 September 2026. Their existing publication and technical checks do not constitute acceptance under the new editorial gate. Keep the changed routes synchronized in all five languages; do not claim the entire U.S. collection or website is AdSense-ready on the strength of these four pages.
+
+### Remaining U.S. rework — in progress
+
+The first working group contains Boston, Philadelphia and Washington, DC: twelve rewritten English source routes in `scripts/boston-editorial.mjs`, `scripts/philadelphia-editorial.mjs` and `scripts/dc-editorial.mjs`. Their four briefs per city are independently written; only small semantic helpers and the site shell are shared. Boston uses a city notebook, a red-line walking sequence, a campus/museum comparison and an island return-first plan. Philadelphia uses a civic atlas, an entry-reservation docket, a collection comparison and a food-market circuit. Washington uses a Metro-based city plan, a memorial transect, a museum selector and a Georgetown street-to-river section.
+
+The same-level Japan references remain `/japan/osaka/` for city planning and `/japan/osaka/namba/` plus `/japan/tokyo/shinjuku/` for local guides. Source-level desktop/mobile renders were inspected alongside these references, including article-body views. Boston now distinguishes hotel bases, airport connections, individual historic admissions, campus versus museum access, and island departure/return decisions. Philadelphia distinguishes the two independence-site entry systems, individual collections, rail-station geography and merchant-specific opening patterns. Factual links remain beside relevant claims; the existing licensed photographs retain visible per-page credits.
+
+The first twelve-route group passed its local quality gate on 11 September 2026: reviewed batches `35a`, `35b`, `35c` and `35z` cover all four translations; full audit/build passed; the 3,211-file artifact passed 574 served checks, 122 desktop/mobile page renders, 30 article-body renders, 15 small-phone renders and 15 five-language city-to-child interaction scenarios. Representative images were personally inspected, including body comparisons and translated headings. These technical results do not certify AdSense eligibility or approve untouched content. GitHub backup and production verification remain the final delivery steps.
+
+The country hub and the other 20 regional clusters (81 original English routes) still require independent rework. `npm run audit:usa-editorial` protects the rewritten Boston/Philadelphia/DC structures; it does not declare the untouched collection complete or certify editorial quality.
+
+Local drafting has also started in `scripts/new-england-editorial.mjs` and `scripts/chicago-editorial.mjs`. These modules are deliberately not registered in the generator yet. They still need their own styling, source/visual review, translation batches and release checks; their presence must not be counted as a delivered rewrite.
+
+Their draft styles remain under `scripts/`, outside the public artifact. For isolated local review, set `TRIPDISTILL_PORT=8879` and run `node scripts/serve.mjs --draft-editorial`. Only the two draft clusters are replaced in memory; published source HTML and translation catalogs are not changed. The draft renderer uses existing page metadata and is not an SEO or release gate. Do not deploy the preview server or count its output as a published language edition.
 
 For this sample, the city-level reference is `/japan/osaka/`; local-level references are `/japan/osaka/namba/` and `/japan/tokyo/shinjuku/`. The comparison led to earlier neighborhood entry cards, a food-and-extra-time section, a credited Grand Central context photograph, and mobile comparisons with visible pros/cons labels. Do not infer acceptance merely from the amount of text or the number of photographs. The additional Grand Central photo is by 4300streetcar under CC BY 4.0; its source and editing disclosure appear on both New York pages that use it.
 
@@ -142,7 +157,7 @@ For this sample, the city-level reference is `/japan/osaka/`; local-level refere
 
 The United States introduces North America in the shared accordion navigation. U.S. city chapters are nested under North America → United States → city/region, not appended as another flat list of global sections. Its 24 city/regional hubs each link to three local routes: 97 English routes, or 485 routes across English, Traditional Chinese, Japanese, Korean and Thai. These are published inventory counts, not a verdict on content quality or a claim to cover every American town or attraction.
 
-| Region | Published hubs — editorial rework pending |
+| Region | Published hubs — inventory, with rework status recorded above |
 | --- | --- |
 | Northeast | New York City; Boston & Cambridge; Philadelphia; Washington, DC; New England Coast & Mountains |
 | Great Lakes | Chicago |
@@ -154,7 +169,7 @@ The United States introduces North America in the shared accordion navigation. U
 | Florida | Miami & the Everglades; Orlando & Central Florida |
 | Alaska and Pacific | Alaska; Hawaii |
 
-The U.S. design uses a travel-journal system: navy street-grid typography for cities, archival brick-and-paper frames for historic places, coastal apertures, cinematic image spreads, canyon strata and open expedition layouts. The three local-guide reading patterns are a side-note journal, a route-led column and a photographic postcard spread. Shared accessibility and navigation stay consistent; regional typography, image placement, geometry and color must remain distinct.
+The original U.S. batch used a travel-journal system: navy street-grid typography for cities, archival brick-and-paper frames for historic places, coastal apertures, cinematic image spreads, canyon strata and open expedition layouts. Its three repeated local-guide patterns—a side-note journal, a route-led column and a photographic postcard spread—are not the editorial rewrite standard. The independent briefs described above replace those generic bodies. Shared accessibility and navigation stay consistent; each planning problem must determine its hierarchy and principal layout.
 
 Editorial source: `data/usa-guides.mjs`. Verified commercial-use image records: `data/usa-image-manifest.mjs`; manually selected replacements: `data/usa-image-overrides.mjs`. All 72 WebP photographs include visible source, creator, license and resize/crop disclosure on every page displaying them. Do not replace images on title-search relevance alone: inspect the actual photograph and regenerate affected source credits before exporting translation batches.
 

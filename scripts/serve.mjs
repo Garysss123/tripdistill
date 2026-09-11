@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
+const draftRenderer=process.argv.includes('--draft-editorial')?(await import('./editorial-draft-preview.mjs')).editorialDraft:null;
 
 const sourceRoot = path.resolve(import.meta.dirname, '..');
 const root = process.argv.includes('--dist') ? path.join(sourceRoot, 'dist') : sourceRoot;
@@ -21,6 +22,10 @@ const mimeTypes = {
 const server = http.createServer((request, response) => {
   const requestUrl = new URL(request.url || '/', 'http://127.0.0.1');
   const pathname = decodeURIComponent(requestUrl.pathname);
+  if(draftRenderer){
+    try{const draft=draftRenderer(pathname);if(draft){response.writeHead(200,{'content-type':'text/html; charset=utf-8'}).end(draft);return;}}
+    catch(error){response.writeHead(500,{'content-type':'text/plain; charset=utf-8'}).end(error.message);return;}
+  }
   let target = path.resolve(root, `.${pathname}`);
   if (target !== root && !target.startsWith(`${root}${path.sep}`)) {
     response.writeHead(403).end('Forbidden');
