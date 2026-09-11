@@ -336,6 +336,8 @@ const allRoutes = [
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
+const unknownRoutes = [...requestedRoutes].filter(slug => !allRoutes.some(([known]) => known === slug));
+if (unknownRoutes.length) throw new Error(`Unknown TRIPDISTILL_ROUTE_FILTER routes: ${unknownRoutes.join(', ')}`);
 const routes = requestedRoutes.size ? allRoutes.filter(([slug]) => requestedRoutes.has(slug)) : allRoutes;
 if (!routes.length) throw new Error(`TRIPDISTILL_ROUTE_FILTER did not match a known route: ${[...requestedRoutes].join(', ')}`);
 
@@ -590,9 +592,9 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
-      const clippedHeroContent = [...document.querySelectorAll('.au-country-hero,.au-hub-hero,.au-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
+      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.au-country-hero,.au-hub-hero,.au-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
         const heroRect = hero.getBoundingClientRect();
-        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,.ny-deck,.ny-eyebrow');
+        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
@@ -810,7 +812,11 @@ if (!skipInteractions) {
   interactions.usa = {countryCards,hubCards,localPath:localLocation.pathname,...usaDetails};
   if(process.env.TRIPDISTILL_USA_EDITORIAL_INTERACTIONS==='1'){
     interactions.usa.editorial=[];
-    const cities=[['boston','freedom-trail',['Boston','波士頓','ボストン','보스턴','บอสตัน']],['philadelphia','old-city',['Philadelphia','費城','フィラデルフィア','필라델피아','ฟิลาเดลเฟีย']],['washington-dc','national-mall',['Washington','華盛頓','ワシントン','워싱턴','วอชิงตัน']],['new-england','portland-maine',['New England','新英格蘭','ニューイングランド','뉴잉글랜드','นิวอิงแลนด์']],['chicago','loop-riverwalk',['Chicago','芝加哥','シカゴ','시카고','ชิคาโก']],['seattle','pike-place-waterfront',['Seattle','西雅圖','シアトル','시애틀','ซีแอตเทิล']],['portland-oregon','washington-park',['Portland','波特蘭','ポートランド','포틀랜드','พอร์ตแลนด์']]];
+    const allCities=[['boston','freedom-trail',['Boston','波士頓','ボストン','보스턴','บอสตัน']],['philadelphia','old-city',['Philadelphia','費城','フィラデルフィア','필라델피아','ฟิลาเดลเฟีย']],['washington-dc','national-mall',['Washington','華盛頓','ワシントン','워싱턴','วอชิงตัน']],['new-england','portland-maine',['New England','新英格蘭','ニューイングランド','뉴잉글랜드','นิวอิงแลนด์']],['chicago','loop-riverwalk',['Chicago','芝加哥','シカゴ','시카고','ชิคาโก']],['seattle','pike-place-waterfront',['Seattle','西雅圖','シアトル','시애틀','ซีแอตเทิล']],['portland-oregon','washington-park',['Portland','波特蘭','ポートランド','포틀랜드','พอร์ตแลนด์']],['san-francisco','waterfront-alcatraz',['San Francisco','舊金山','サンフランシスコ','샌프란시스코','ซานฟรานซิสโก']],['los-angeles','downtown-arts',['Los Angeles','洛杉磯','ロサンゼルス','로스앤젤레스','ลอสแอนเจลิส']],['san-diego','balboa-park',['San Diego','聖地牙哥','サンディエゴ','샌디에이고','ซานดิเอโก']],['sierra-parks','yosemite-valley',['Yosemite','優勝美地','ヨセミテ','요세미티','โยเซมิตี']]];
+    const cityFilter=new Set((process.env.TRIPDISTILL_EDITORIAL_CITY_FILTER||'').split(',').filter(Boolean));
+    if([...cityFilter].some(slug=>!allCities.some(c=>c[0]===slug)))throw Error('Unknown editorial city filter');
+    const cities=allCities.filter(c=>!cityFilter.size||cityFilter.has(c[0]));
+    interactions.usa.editorialExpected=cities.length*5;
     for(const [i,[locale,prefix]] of [['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']].entries())for(const [city,leaf,queries]of cities){
       const hub=`${prefix}/usa/${city}/`,local=hub+leaf+'/';
       await navigate(interactionClient,baseUrl+hub);
@@ -885,7 +891,7 @@ const suggestionFailures = !skipInteractions && [
 });
 const languageOptions = language.languageMenu?.options || [];
 const interactionFailed = !skipInteractions && (
-  (process.env.TRIPDISTILL_USA_EDITORIAL_INTERACTIONS==='1'&&(interactions.usa?.editorial?.length!==35||interactions.usa.editorial.some(r=>!r.passed))) ||
+  (process.env.TRIPDISTILL_USA_EDITORIAL_INTERACTIONS==='1'&&(!interactions.usa?.editorialExpected||interactions.usa?.editorial?.length!==interactions.usa.editorialExpected||interactions.usa.editorial.some(r=>!r.passed))) ||
   (process.env.TRIPDISTILL_USA_ALL_LANGUAGES==='1'&&!['en','zh-Hant','ja','ko','th'].every(locale=>{
     const check=interactions.usa?.searchByLocale?.[locale];return check?.lang===locale&&check.links.includes((locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/usa/new-york/');
   })) ||

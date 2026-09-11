@@ -261,14 +261,14 @@ export const usaImageManifest = {
     "remoteSha1": "4d175c6813ff9e0872f50c937b9a9132ae9f1c02"
   },
   "san-francisco/mission-neighborhoods": {
-    "src": "/assets/images/usa-san-francisco-mission-neighborhoods.webp",
+    "src": "/assets/images/usa-san-francisco-mission-neighborhoods-20260911.webp",
     "alt": "Mission District & Neighborhood Walks",
-    "source": "https://commons.wikimedia.org/wiki/File:House_Mission_San_Francisco.jpg",
-    "label": "House Mission San Francisco.jpg",
-    "creator": "Laura Brunow from San Francisco, CA, USA",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:House Mission San Francisco.jpg",
-    "remoteSha1": "474934f00bf5608b9ef8dbc8a60e1d0fbf929278"
+    "source": "https://commons.wikimedia.org/wiki/File:Mission_Dolores_neighborhood,_San_Francisco,_California,_US.jpg",
+    "label": "Mission Dolores neighborhood, San Francisco, California, US.jpg",
+    "creator": "Clyde Charles Brown",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Mission Dolores neighborhood, San Francisco, California, US.jpg",
+    "remoteSha1": "e80fd8a23472daf1c5d4a00fad57a2e5687a4440"
   },
   "los-angeles/downtown-arts": {
     "src": "/assets/images/usa-los-angeles-downtown-arts.webp",
@@ -351,14 +351,14 @@ export const usaImageManifest = {
     "remoteSha1": "1adc1344f7361b04921db172d0812dd2ef0e15d2"
   },
   "sierra-parks/kings-canyon": {
-    "src": "/assets/images/usa-sierra-parks-kings-canyon.webp",
+    "src": "/assets/images/usa-sierra-parks-kings-canyon-20260911.webp",
     "alt": "Kings Canyon & Grant Grove",
-    "source": "https://commons.wikimedia.org/wiki/File:Kings_Canyon_National_Park_-_51716679560.jpg",
-    "label": "Kings Canyon National Park - 51716679560.jpg",
-    "creator": "RuggyBearLA",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:Kings Canyon National Park - 51716679560.jpg",
-    "remoteSha1": "8bb14dc3bb6a01df5a86e5b1f70a3e1de1ca7eb9"
+    "source": "https://commons.wikimedia.org/wiki/File:2013-09-20_10_11_10_View_toward_Kings_Canyon_from_an_overlook_on_California_Route_198_in_Giant_Sequioa_National_Monument.JPG",
+    "label": "2013-09-20 10 11 10 View toward Kings Canyon from an overlook on California Route 198 in Giant Sequioa National Monument.JPG",
+    "creator": "Famartin",
+    "license": "CC BY-SA 3.0",
+    "commonsTitle": "File:2013-09-20 10 11 10 View toward Kings Canyon from an overlook on California Route 198 in Giant Sequioa National Monument.JPG",
+    "remoteSha1": "5ace210ab1a38923bf1f97ad04ff856ae39158b9"
   },
   "las-vegas/strip": {
     "src": "/assets/images/usa-las-vegas-strip.webp",

@@ -7326,7 +7326,7 @@
     "url": "/usa/san-francisco/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "San Francisco combines steep streets, distinct neighborhoods and bay crossings. A waterfront day, Golden Gate landscapes and a neighborhood day are easier to enjoy than repeated drives through the city.",
+    "summary": "Choose a San Francisco base by hills and transit, then build separate Alcatraz, Presidio and Mission days without treating the whole Bay Area as downtown.",
     "keywords": [
       "San Francisco & the Bay",
       "California"
@@ -7337,7 +7337,7 @@
     "url": "/usa/san-francisco/waterfront-alcatraz/",
     "parent": "San Francisco & the Bay",
     "type": "Local guide",
-    "summary": "The waterfront connects ferry infrastructure, public promenades and Alcatraz departures. An island ticket needs advance attention; ordinary sightseeing cruises can circle the island without landing.",
+    "summary": "Plan an Alcatraz landing from Pier 33 with island interpretation, access and return decisions, or choose a separate Ferry Building and waterfront day.",
     "keywords": [
       "Embarcadero & Alcatraz",
       "San Francisco & the Bay"
@@ -7348,7 +7348,7 @@
     "url": "/usa/san-francisco/golden-gate-presidio/",
     "parent": "San Francisco & the Bay",
     "type": "Local guide",
-    "summary": "The Golden Gate is a landscape of viewpoints, trails and changing fog. Choose a specific side of the bridge and a realistic walking distance, with the Presidio providing a substantial park visit even when the bridge is partly hidden.",
+    "summary": "Connect Presidio Tunnel Tops, Crissy Field and a selected Golden Gate view, distinguishing bridge pedestrian access, Fort Point and shuttle restrictions.",
     "keywords": [
       "Golden Gate & the Presidio",
       "San Francisco & the Bay"
@@ -7359,7 +7359,7 @@
     "url": "/usa/san-francisco/mission-neighborhoods/",
     "parent": "San Francisco & the Bay",
     "type": "Local guide",
-    "summary": "The Mission is a living district shaped by Latino culture, art and independent businesses. Murals need context and respectful viewing, while nearby parks and food stops make a better day than a checklist of photo walls.",
+    "summary": "Read Mission District murals around 24th Street or Clarion Alley, with artist context, a neighborhood meal and a separate Mission Dolores choice.",
     "keywords": [
       "Mission District & Neighborhood Walks",
       "San Francisco & the Bay"
@@ -7370,7 +7370,7 @@
     "url": "/usa/los-angeles/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Los Angeles is a collection of districts connected by real travel time. Downtown, Hollywood and the coast work best as separate days, with a hotel base chosen for the first part of the itinerary.",
+    "summary": "Choose a Los Angeles hotel around district days, with current LAX connections and separate Downtown, Hollywood–Griffith and Santa Monica–Venice plans.",
     "keywords": [
       "Los Angeles",
       "California"
@@ -7381,7 +7381,7 @@
     "url": "/usa/los-angeles/downtown-arts/",
     "parent": "Los Angeles",
     "type": "Local guide",
-    "summary": "Downtown brings museums, historic streets and a working arts district into a broad area. Choose a few destinations connected by a sensible walking and transit route, rather than treating the whole district as a continuous pedestrian attraction.",
+    "summary": "Connect The Broad, Bunker Hill, Angels Flight and Grand Central Market, choosing an art or architecture focus instead of treating Downtown LA as one block.",
     "keywords": [
       "Downtown LA & the Arts District",
       "Los Angeles"
@@ -7392,7 +7392,7 @@
     "url": "/usa/los-angeles/hollywood-griffith/",
     "parent": "Los Angeles",
     "type": "Local guide",
-    "summary": "Hollywood street attractions and Griffith Observatory are different experiences linked by a significant climb or transport connection. The observatory offers city context, while a hike requires a separate check of weather, daylight and ability.",
+    "summary": "Plan Hollywood and Griffith Observatory around a realistic hill connection, separate planetarium admission and a known evening return.",
     "keywords": [
       "Hollywood & Griffith Park",
       "Los Angeles"
@@ -7403,7 +7403,7 @@
     "url": "/usa/los-angeles/santa-monica-venice/",
     "parent": "Los Angeles",
     "type": "Local guide",
-    "summary": "The western coast offers a beach-and-neighborhood day with a long shared path. Santa Monica and Venice can be linked on foot or bicycle, but sun, distance and return transport deserve as much attention as the pier.",
+    "summary": "Choose Santa Monica Pier, a selected coastal walk or Venice’s boardwalk and canals, with E Line arrival, separate attraction costs and a workable return.",
     "keywords": [
       "Santa Monica & Venice",
       "Los Angeles"
@@ -7414,7 +7414,7 @@
     "url": "/usa/san-diego/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "San Diego mixes cultural institutions, coastal habitats and harbor history. Balboa Park, La Jolla and the bay each support a full day without driving repeatedly across the county.",
+    "summary": "Plan San Diego with a useful airport connection and separate Balboa Park, La Jolla and harbor days, choosing the base and car days around real destinations.",
     "keywords": [
       "San Diego",
       "California"
@@ -7425,7 +7425,7 @@
     "url": "/usa/san-diego/balboa-park/",
     "parent": "San Diego",
     "type": "Local guide",
-    "summary": "Balboa Park is a large cultural landscape with museums, gardens and separate attractions. Choose one or two interests before buying a pass; the zoo is a substantial visit with its own admission and should not be treated as a quick extra.",
+    "summary": "Choose Balboa Park museums and gardens around El Prado, with separate admission, current paid parking and a zoo-versus-cultural-day decision.",
     "keywords": [
       "Balboa Park",
       "San Diego"
@@ -7436,7 +7436,7 @@
     "url": "/usa/san-diego/la-jolla/",
     "parent": "San Diego",
     "type": "Local guide",
-    "summary": "La Jolla combines coastal walks, coves and protected wildlife habitat. The right route follows current access and marine conditions, with clear boundaries between observing animals, swimming and walking on cliffs.",
+    "summary": "Plan a land-based La Jolla visit that distinguishes the Cove, Point La Jolla and Children’s Pool, with current wildlife boundaries and a village meal.",
     "keywords": [
       "La Jolla Coast",
       "San Diego"
@@ -7447,7 +7447,7 @@
     "url": "/usa/san-diego/harbor-coronado/",
     "parent": "San Diego",
     "type": "Local guide",
-    "summary": "The harbor offers maritime museums, public waterfront and a ferry connection to Coronado. Choose between a substantial museum visit and a longer bay outing so the day does not become a sequence of queues and transfers.",
+    "summary": "Choose a San Diego maritime museum or a Coronado ferry day, identifying the exact departure, bay landing and separate ocean-beach connection.",
     "keywords": [
       "San Diego Harbor & Coronado",
       "San Diego"
@@ -7458,7 +7458,7 @@
     "url": "/usa/sierra-parks/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Yosemite, Sequoia and Kings Canyon are separate park visits connected by substantial roads. Elevation, snow, fire and entrance choice determine the itinerary; a national park pass does not replace every reservation.",
+    "summary": "Choose separate Sierra park bases for Yosemite Valley, Giant Forest and Kings Canyon, with current access, seasonal shuttle and mountain-road trade-offs.",
     "keywords": [
       "Yosemite & the Sierra Parks",
       "Western Parks"
@@ -7469,7 +7469,7 @@
     "url": "/usa/sierra-parks/yosemite-valley/",
     "parent": "Yosemite & the Sierra Parks",
     "type": "Local guide",
-    "summary": "Yosemite Valley offers dramatic views without requiring a difficult hike. The valley floor, waterfalls and higher trails have very different effort and access requirements, so build a first visit around open low-level routes and a realistic parking plan.",
+    "summary": "Plan a focused Yosemite Valley visit with the 2026 entry policy, YARTS and Valley shuttle distinctions, and selected meadow or lower-waterfall walks.",
     "keywords": [
       "Yosemite Valley",
       "Yosemite & the Sierra Parks"
@@ -7480,7 +7480,7 @@
     "url": "/usa/sierra-parks/sequoia-giant-forest/",
     "parent": "Yosemite & the Sierra Parks",
     "type": "Local guide",
-    "summary": "The Giant Forest is a high-elevation landscape reached by winding roads. Seeing the giant sequoias can be a short, accessible-focused outing or a longer walk, but the road and weather should be assessed before adding distant park sectors.",
+    "summary": "Visit Giant Forest through a chosen road approach, distinguishing General Sherman access, Big Trees Trail, Congress Trail work and seasonal shuttles.",
     "keywords": [
       "Sequoia Giant Forest",
       "Yosemite & the Sierra Parks"
@@ -7491,7 +7491,7 @@
     "url": "/usa/sierra-parks/kings-canyon/",
     "parent": "Yosemite & the Sierra Parks",
     "type": "Local guide",
-    "summary": "Grant Grove and the deeper canyon are not interchangeable stops. Seasonal road access can make the canyon unavailable while the grove remains a worthwhile destination, so choose the actual park area before committing to a drive.",
+    "summary": "Separate Grant Grove from the Cedar Grove canyon drive, with Highway 180 status, a grove-focused day and a deliberately planned deeper-canyon visit.",
     "keywords": [
       "Kings Canyon & Grant Grove",
       "Yosemite & the Sierra Parks"

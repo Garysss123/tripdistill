@@ -10,6 +10,10 @@ import {renderNewEnglandEditorial,newEnglandDescriptions} from './new-england-ed
 import {renderChicagoEditorial,chicagoDescriptions} from './chicago-editorial.mjs';
 import {renderSeattleEditorial,seattleDescriptions} from './seattle-editorial.mjs';
 import {renderPortlandOregonEditorial,portlandOregonDescriptions} from './portland-oregon-editorial.mjs';
+import {renderSanFranciscoEditorial,sanFranciscoDescriptions} from './san-francisco-editorial.mjs';
+import {renderLosAngelesEditorial,losAngelesDescriptions} from './los-angeles-editorial.mjs';
+import {renderSanDiegoEditorial,sanDiegoDescriptions} from './san-diego-editorial.mjs';
+import {renderSierraParksEditorial,sierraParksDescriptions} from './sierra-parks-editorial.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const e=(s='')=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const abs=r=>'https://tripdistill.com'+r;
@@ -43,7 +47,7 @@ function nycPage(h,g){const i=g?h.guides.indexOf(g)+1:0;const route=g?.url||'/us
 function bostonPage(h,g){const i=g?h.guides.indexOf(g)+1:0;return shell(g?.url||'/usa/boston/',(g?.name||h.name)+' Travel Guide',bostonDescriptions[i],renderBostonEditorial({h,g,photo,credit,card,source,ad}),h,g).replace('</head>','<link rel="stylesheet" href="/css/boston-editorial.css?v=20260911-1"></head>');}
 function philadelphiaPage(h,g){const i=g?h.guides.indexOf(g)+1:0;return shell(g?.url||'/usa/philadelphia/',(g?.name||h.name)+' Travel Guide',philadelphiaDescriptions[i],renderPhiladelphiaEditorial({h,g,photo,credit,card,source,ad}),h,g).replace('</head>','<link rel="stylesheet" href="/css/philadelphia-editorial.css?v=20260911-1"></head>');}
 function dcPage(h,g){const i=g?h.guides.indexOf(g)+1:0;return shell(g?.url||'/usa/washington-dc/',(g?.name||h.name)+' Travel Guide',dcDescriptions[i],renderDcEditorial({h,g,photo,credit,card,source,ad}),h,g).replace('</head>','<link rel="stylesheet" href="/css/dc-editorial.css?v=20260911-1"></head>');}
-const regionalEditorials={'new-england':{render:renderNewEnglandEditorial,descriptions:newEnglandDescriptions},chicago:{render:renderChicagoEditorial,descriptions:chicagoDescriptions},seattle:{render:renderSeattleEditorial,descriptions:seattleDescriptions},'portland-oregon':{render:renderPortlandOregonEditorial,descriptions:portlandOregonDescriptions}};
+const regionalEditorials={'new-england':{render:renderNewEnglandEditorial,descriptions:newEnglandDescriptions},chicago:{render:renderChicagoEditorial,descriptions:chicagoDescriptions},seattle:{render:renderSeattleEditorial,descriptions:seattleDescriptions},'portland-oregon':{render:renderPortlandOregonEditorial,descriptions:portlandOregonDescriptions},'san-francisco':{render:renderSanFranciscoEditorial,descriptions:sanFranciscoDescriptions},'los-angeles':{render:renderLosAngelesEditorial,descriptions:losAngelesDescriptions},'san-diego':{render:renderSanDiegoEditorial,descriptions:sanDiegoDescriptions},'sierra-parks':{render:renderSierraParksEditorial,descriptions:sierraParksDescriptions}};
 function regionalEditorialPage(h,g){const config=regionalEditorials[h.slug];if(!config)throw Error('Unregistered editorial region '+h.slug);const i=g?h.guides.indexOf(g)+1:0;return shell(g?.url||`/usa/${h.slug}/`,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g).replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);}
 const customPages={'new-york':nycPage,boston:bostonPage,philadelphia:philadelphiaPage,'washington-dc':dcPage,...Object.fromEntries(Object.keys(regionalEditorials).map(slug=>[slug,regionalEditorialPage]))};
 write('usa',countryPage());for(const h of usaHubs){const custom=customPages[h.slug];write('usa/'+h.slug,custom?custom(h):hubPage(h));for(const g of h.guides)write('usa/'+h.slug+'/'+g.slug,custom?custom(h,g):guidePage(g,h));}

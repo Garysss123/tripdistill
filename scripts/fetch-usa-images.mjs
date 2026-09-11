@@ -4,7 +4,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { usaHubs } from '../data/usa-guides.mjs';
 import { usaImageManifest as existingManifest } from '../data/usa-image-manifest.mjs';
-import {usaImageOverrides} from '../data/usa-image-overrides.mjs';
+import {usaImageOverrides,usaImageOutputNames} from '../data/usa-image-overrides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const imageRoot = path.resolve(root, 'assets', 'images') + path.sep;
@@ -79,7 +79,7 @@ async function metadataForTitle(title) {
   const payload = await api({
     prop: 'imageinfo',
     iiprop: 'url|size|mime|sha1|extmetadata',
-    iiurlwidth: '2200',
+    iiurlwidth: '1600',
     titles: normalizeFileTitle(title)
   });
   const candidate = imageInfo(payload.query?.pages?.[0], true);
@@ -110,11 +110,12 @@ async function searchImage(query, usedTitles) {
   throw new Error(`No suitable Commons image found for: ${query}`);
 }
 
+const outputSrc=job=>'/assets/images/'+(usaImageOutputNames[job.key]||`usa-${job.cluster.slug}-${job.guide.slug}.webp`);
 function entryFrom(candidate, job) {
   const { info, page, license, creator } = candidate;
   const label = page.title.replace(/^File:/, '').replaceAll('_', ' ');
   return {
-    src: `/assets/images/usa-${job.cluster.slug}-${job.guide.slug}.webp`,
+    src: outputSrc(job),
     alt: job.guide.name,
     source: info.descriptionurl || `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title).replaceAll('%3A', ':').replaceAll('%20', '_')}`,
     label,
@@ -127,7 +128,7 @@ function entryFrom(candidate, job) {
 
 async function validateEntry(entry, job) {
   const candidate = await metadataForTitle(entry.commonsTitle);
-  const expectedSrc = `/assets/images/usa-${job.cluster.slug}-${job.guide.slug}.webp`;
+  const expectedSrc = outputSrc(job);
   if (entry.src !== expectedSrc) throw new Error(`${job.key}: asset path mismatch ${entry.src}`);
   if (entry.alt !== job.guide.imageAlt) throw new Error(`${job.key}: manifest alt is stale`);
   if (entry.license !== candidate.license) throw new Error(`${job.key}: license changed from ${entry.license} to ${candidate.license}`);

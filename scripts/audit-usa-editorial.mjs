@@ -9,6 +9,10 @@ plans['new-england']=[['corridor','week','season','stay'],['town','bay','cape','
 plans.chicago=[['base','arrive','days','evening'],['choice','route','levels','alternative'],['institution','tickets','day','shore'],['choose','wicker','logan','evening','care']];
 plans.seattle=[['base','arrival','days','mountain'],['market','descent','water','finish'],['boat','winslow','reserve','return'],['status','area','southwest','winter']];
 plans['portland-oregon']=[['base','airport','days','transport'],['arrival','choose','route','access'],['access','drive','bus','limits'],['shape','beach','ecola','return']];
+plans['san-francisco']=[['base','arrival','days','tradeoffs'],['ticket','island','access','mainland'],['shape','route','bridge','transport'],['corridor','read','day','extend']];
+plans['los-angeles']=[['base','airport','days','car'],['anchor','route','architecture','extend'],['hollywood','hill','visit','return'],['arrival','pier','venice','return']];
+plans['san-diego']=[['base','airport','days','extra'],['choose','admission','route','adapt'],['places','rules','route','water'],['choose','mainland','crossing','coronado']];
+plans['sierra-parks']=[['base','shape','access','season'],['entry','transport','walk','limits'],['road','shuttle','forest','return'],['choice','grant','cedar','limits']];
 const problems=[],seen=new Map();
 const check=(v,m)=>{if(!v)problems.push(m);};
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
