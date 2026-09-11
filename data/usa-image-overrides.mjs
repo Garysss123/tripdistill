@@ -16,10 +16,14 @@ export const usaImageOverrides={
  'colorado/rocky-mountain':'Rocky Mountain National Park in September 2011 - Bear Lake looking toward Glacier Gorge.JPG',
  'atlanta/beltline':'Atlanta Beltline Eastside Trail, Inman Park GA.jpg',
  'miami/everglades':'Anhinga Trail boardwalk.JPG',
- 'hawaii/maui':'Haleakala National Park HALE1827.jpg'
+ 'hawaii/maui':'Haleakala National Park HALE1827.jpg',
+ 'new-orleans/french-quarter':'Jackson Square New Orleans Feb 2023.jpg',
+ 'new-orleans/river-wetlands':'Jean Lafitte Park Barataria Preserve, June 2021 - Pretty Swamp.jpg'
 };
 // Revised photographs need new URLs because /assets/ is served with immutable caching.
 export const usaImageOutputNames={
  'san-francisco/mission-neighborhoods':'usa-san-francisco-mission-neighborhoods-20260911.webp',
- 'sierra-parks/kings-canyon':'usa-sierra-parks-kings-canyon-20260911.webp'
+ 'sierra-parks/kings-canyon':'usa-sierra-parks-kings-canyon-20260911.webp',
+ 'new-orleans/french-quarter':'usa-new-orleans-french-quarter-20260911.webp',
+ 'new-orleans/river-wetlands':'usa-new-orleans-river-wetlands-20260911.webp'
 };

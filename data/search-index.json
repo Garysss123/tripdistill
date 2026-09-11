@@ -6962,7 +6962,7 @@
     "url": "/usa/",
     "parent": "North America",
     "type": "Country",
-    "summary": "Explore 24 cities and regions with 72 focused visits and local routes.",
+    "summary": "Choose a workable United States trip: rail-connected cities, a selective park journey or an island stay, with 24 regional guides and 72 local chapters.",
     "keywords": [
       "USA",
       "United States",
@@ -7678,7 +7678,7 @@
     "url": "/usa/yellowstone-tetons/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Yellowstone and Grand Teton combine long park roads with geothermal landscapes and wildlife. Entrance selection and overnight bases matter; a single day cannot do justice to both parks.",
+    "summary": "Choose Yellowstone and Grand Teton bases by actual park roads, separating thermal basins, canyon and wildlife days from a Jenny Lake and mountain stay.",
     "keywords": [
       "Yellowstone & Grand Teton",
       "Mountain West"
@@ -7689,7 +7689,7 @@
     "url": "/usa/yellowstone-tetons/geyser-basins/",
     "parent": "Yellowstone & Grand Teton",
     "type": "Local guide",
-    "summary": "The geyser basins are fragile thermal landscapes, not ordinary walking terrain. Boardwalks provide access to dramatic features, and a predicted eruption should be treated as an estimate rather than a guaranteed appointment.",
+    "summary": "Visit Yellowstone thermal basins with an Old Faithful focus, distinguishing eruption predictions, Midway boardwalks and the Grand Prismatic Overlook trail.",
     "keywords": [
       "Yellowstone Geyser Basins",
       "Yellowstone & Grand Teton"
@@ -7700,7 +7700,7 @@
     "url": "/usa/yellowstone-tetons/canyon-lamar/",
     "parent": "Yellowstone & Grand Teton",
     "type": "Local guide",
-    "summary": "The canyon and northern valleys offer different scenery from the geyser basins. Wildlife viewing is uncertain and should be based on patient observation from legal pullouts, not on approaching animals or chasing sightings.",
+    "summary": "Choose a Yellowstone canyon-and-Hayden day or a northern Lamar outing, with named viewpoints, current wildlife distances and a realistic return.",
     "keywords": [
       "Yellowstone Canyon & Wildlife Valleys",
       "Yellowstone & Grand Teton"
@@ -7711,7 +7711,7 @@
     "url": "/usa/yellowstone-tetons/grand-teton/",
     "parent": "Yellowstone & Grand Teton",
     "type": "Local guide",
-    "summary": "Grand Teton offers mountain views, lakes and substantial hiking, with Jackson as one possible gateway. A scenic roadside visit can stand alone; a boat crossing or mountain trail adds separate schedules and preparation.",
+    "summary": "Plan Grand Teton around Jenny Lake, a selected historic or mountain viewpoint and a separate base, distinguishing lake boats from longer backcountry walks.",
     "keywords": [
       "Grand Teton & Jackson",
       "Yellowstone & Grand Teton"
@@ -7722,7 +7722,7 @@
     "url": "/usa/new-orleans/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "New Orleans deserves time for music, food and the history behind its neighborhoods. The French Quarter, Garden District and river landscape provide different days, with heat and storms shaping the pace.",
+    "summary": "Choose a New Orleans base and distinct Quarter, Garden District and river or wetland days, with airport connections, live-music planning and current closures.",
     "keywords": [
       "New Orleans",
       "South"
@@ -7733,7 +7733,7 @@
     "url": "/usa/new-orleans/french-quarter/",
     "parent": "New Orleans",
     "type": "Local guide",
-    "summary": "The French Quarter is a lived neighborhood as well as a visitor district. Architecture, museums and music can make a rich day without assuming that nightlife is the only reason to visit.",
+    "summary": "Walk a selected French Quarter route through Jackson Square, Royal Street and museum interpretation, then choose a music program rather than a nightlife checklist.",
     "keywords": [
       "French Quarter & Live Music",
       "New Orleans"
@@ -7744,7 +7744,7 @@
     "url": "/usa/new-orleans/garden-district/",
     "parent": "New Orleans",
     "type": "Local guide",
-    "summary": "The Garden District offers residential architecture and a slower street-level view of the city. Streetcars are useful transport, but service changes and stops should be checked rather than treating them as a guaranteed sightseeing loop.",
+    "summary": "Plan a St. Charles streetcar and Garden District visit with public-street architecture, a Magazine Street meal and the current Lafayette Cemetery No. 1 closure.",
     "keywords": [
       "Garden District & Streetcars",
       "New Orleans"
@@ -7755,7 +7755,7 @@
     "url": "/usa/new-orleans/river-wetlands/",
     "parent": "New Orleans",
     "type": "Local guide",
-    "summary": "The riverfront and surrounding wetlands are separate experiences. A city promenade needs little logistics, while a boat excursion outside town depends on a named operator, pickup point, weather and environmental practice.",
+    "summary": "Choose an Algiers ferry crossing or a separate wetland outing, with the 2026 Barataria closure, relocated Wetland Trace access and a confirmed return.",
     "keywords": [
       "Mississippi River & Wetlands",
       "New Orleans"
@@ -7766,7 +7766,7 @@
     "url": "/usa/atlanta/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Atlanta’s civil-rights history, cultural institutions and neighborhood trails deserve separate attention. Distances and traffic reward grouping visits by district and using MARTA where it serves the plan.",
+    "summary": "Choose an Atlanta base near the actual MARTA route, then separate the King historic district, Midtown museums and a selected Beltline outing into useful days.",
     "keywords": [
       "Atlanta",
       "South"
@@ -7777,7 +7777,7 @@
     "url": "/usa/atlanta/king-historic-district/",
     "parent": "Atlanta",
     "type": "Local guide",
-    "summary": "The historic district is a place of living worship and civic memory. Give its interpretation time and distinguish public visitor areas from active church services and spaces with controlled access.",
+    "summary": "Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, Birth Home restrictions and distinct King Center spaces.",
     "keywords": [
       "Martin Luther King, Jr. Historic District",
       "Atlanta"
@@ -7788,7 +7788,7 @@
     "url": "/usa/atlanta/midtown-museums/",
     "parent": "Atlanta",
     "type": "Local guide",
-    "summary": "Midtown combines art institutions, gardens and parkland in a manageable city day. Select one major collection first, then use the park as a flexible outdoor break instead of trying to enter every attraction.",
+    "summary": "Compare the High Museum, Museum of Design Atlanta and a separate botanical-garden visit, with Arts Center arrival and a collection-led Midtown day.",
     "keywords": [
       "Midtown Museums & Piedmont Park",
       "Atlanta"
@@ -7799,7 +7799,7 @@
     "url": "/usa/atlanta/beltline/",
     "parent": "Atlanta",
     "type": "Local guide",
-    "summary": "The BeltLine links neighborhoods through shared public space, but it is not one uniform route. Choose a completed section with the food, art or park stops you want, and respect bicycle traffic and residential edges.",
+    "summary": "Choose a limited Atlanta Beltline Eastside visit around a real access point, Ponce City Market or Krog Street Market, with shared-trail etiquette and a planned return.",
     "keywords": [
       "Atlanta BeltLine & Neighborhoods",
       "Atlanta"
@@ -7810,7 +7810,7 @@
     "url": "/usa/texas/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Texas city visits involve real intercity distances. Austin, San Antonio and Houston each support their own stay; choose a limited combination and account for heat, traffic and the exact location of major attractions.",
+    "summary": "Choose an Austin–San Antonio journey or a Houston stay before connecting three Texas cities, with separate bases, realistic transfers and focused local days.",
     "keywords": [
       "Texas Cities",
       "South"
@@ -7821,7 +7821,7 @@
     "url": "/usa/texas/austin/",
     "parent": "Texas Cities",
     "type": "Local guide",
-    "summary": "Austin combines state-capitol history, music and a central lake trail. A compact daytime route and a separate music evening work better than driving between every restaurant and viewpoint.",
+    "summary": "Plan Austin around a Capitol visit, a selected Lady Bird Lake or South Congress portion and an actual music program, with airport and pool distinctions.",
     "keywords": [
       "Austin & Lady Bird Lake",
       "Texas Cities"
@@ -7832,7 +7832,7 @@
     "url": "/usa/texas/san-antonio/",
     "parent": "Texas Cities",
     "type": "Local guide",
-    "summary": "The downtown River Walk and the mission sites provide different historical settings. The missions are active cultural and religious places, and visiting them all requires transport planning beyond a short downtown stroll.",
+    "summary": "Separate San Antonio’s Alamo and downtown River Walk from the four southern mission sites, with Church reservations, active worship and a selective route.",
     "keywords": [
       "San Antonio Missions & River Walk",
       "Texas Cities"
@@ -7843,7 +7843,7 @@
     "url": "/usa/texas/houston/",
     "parent": "Texas Cities",
     "type": "Local guide",
-    "summary": "Houston’s Museum District and Space Center Houston are far enough apart to deserve different days. Decide whether art, science or space history is the priority before choosing accommodation and transport.",
+    "summary": "Choose a Space Center Houston day or a Museum District visit, distinguishing NASA tram tickets, the Clear Lake journey and separate city museum admissions.",
     "keywords": [
       "Houston Museums & Space Center",
       "Texas Cities"
@@ -7854,7 +7854,7 @@
     "url": "/usa/miami/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Miami’s beach, urban art districts and nearby wetlands are distinct visits. Choose a base by the first days of the trip, and keep a car-based Everglades outing separate from a beach evening.",
+    "summary": "Choose a Miami Beach or mainland base, then separate Art Deco, Little Havana or Wynwood and an entrance-specific Everglades day with current airport connections.",
     "keywords": [
       "Miami & South Florida",
       "Florida"
@@ -7865,7 +7865,7 @@
     "url": "/usa/miami/south-beach/",
     "parent": "Miami & South Florida",
     "type": "Local guide",
-    "summary": "South Beach pairs architectural streets with an exposed Atlantic shoreline. A neighborhood walk can add context to a beach visit, but heat, storms and ocean conditions should determine when and where to swim.",
+    "summary": "Visit South Beach through a selected Ocean Drive architecture walk, the Art Deco Museum or Welcome Center and a separate shoreline portion.",
     "keywords": [
       "South Beach & Art Deco",
       "Miami & South Florida"
@@ -7876,7 +7876,7 @@
     "url": "/usa/miami/little-havana-wynwood/",
     "parent": "Miami & South Florida",
     "type": "Local guide",
-    "summary": "Little Havana and Wynwood offer different cultural settings and need transport between them. Choose the food, history or art you want to understand, and avoid reducing either neighborhood to a few staged photographs.",
+    "summary": "Choose a Calle Ocho cultural visit or a Wynwood art day, with Domino Park etiquette, distinct neighborhoods and separate Wynwood Walls admission.",
     "keywords": [
       "Little Havana & Wynwood",
       "Miami & South Florida"
@@ -7887,7 +7887,7 @@
     "url": "/usa/miami/everglades/",
     "parent": "Miami & South Florida",
     "type": "Local guide",
-    "summary": "The Everglades is a large protected landscape with several gateways. Shark Valley and the southern park entrance are separate outings, so choose an area before buying a tour or planning a drive.",
+    "summary": "Choose Shark Valley or the Homestead–Royal Palm entrance for an Everglades day, with tram and parking distinctions, boardwalk access and confirmed return transport.",
     "keywords": [
       "Everglades National Park",
       "Miami & South Florida"
@@ -7898,7 +7898,7 @@
     "url": "/usa/orlando/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Orlando needs careful separation of resort days, city visits and the Space Coast. Theme-park ticket systems, long walks and summer storms can dominate the trip if there are no rest days.",
+    "summary": "Choose an Orlando base by the actual resort or city visit, with distinct theme-park days, Winter Park and a separately planned Kennedy Space Center journey.",
     "keywords": [
       "Orlando & Central Florida",
       "Florida"
@@ -7909,7 +7909,7 @@
     "url": "/usa/orlando/theme-parks/",
     "parent": "Orlando & Central Florida",
     "type": "Local guide",
-    "summary": "A theme-park day begins with the exact park and ticket conditions, not a list of every ride. Resorts have different transport systems, and moving between parks can consume substantial time.",
+    "summary": "Compare Disney and Universal park-day choices, admission versus queue products, date-based reservation rules and realistic transfers before buying multiple tickets.",
     "keywords": [
       "Orlando Theme-Park Planning",
       "Orlando & Central Florida"
@@ -7920,7 +7920,7 @@
     "url": "/usa/orlando/winter-park/",
     "parent": "Orlando & Central Florida",
     "type": "Local guide",
-    "summary": "Winter Park offers museums, gardens and a walkable commercial center beyond the resort corridors. It is a useful slower day, but the journey from a theme-park hotel still needs a real transport plan.",
+    "summary": "Plan Winter Park through Park Avenue, the Morse Museum and a separate scenic boat option, with weekday SunRail planning and a clear return.",
     "keywords": [
       "Winter Park & Orlando Beyond Resorts",
       "Orlando & Central Florida"
@@ -7931,7 +7931,7 @@
     "url": "/usa/orlando/kennedy-space-center/",
     "parent": "Orlando & Central Florida",
     "type": "Local guide",
-    "summary": "Kennedy Space Center is a separate east-coast outing from Orlando. The visitor complex, optional tours and launch viewing have different availability; a launch should never be promised as part of a routine visit.",
+    "summary": "Give Kennedy Space Center a full Space Coast day, distinguishing the included bus route, Atlantis, add-on experiences and mission-specific launch viewing.",
     "keywords": [
       "Kennedy Space Center & Space Coast",
       "Orlando & Central Florida"
@@ -7942,7 +7942,7 @@
     "url": "/usa/alaska/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Alaska requires choosing a region before choosing activities. Anchorage and the Kenai Peninsula, Denali and Southeast Alaska use different road, rail, boat and flight connections; combining them needs time and weather flexibility.",
+    "summary": "Choose Southcentral and Denali or a separate Juneau–Southeast journey, with actual train and ferry seasons, overnight bases and current park access.",
     "keywords": [
       "Alaska Gateways & Parks",
       "Alaska"
@@ -7953,7 +7953,7 @@
     "url": "/usa/alaska/anchorage-kenai/",
     "parent": "Alaska Gateways & Parks",
     "type": "Local guide",
-    "summary": "Anchorage is a practical gateway, while Seward and the fjords deserve a separate overnight. Road or rail travel is part of the experience and should not be compressed around a boat departure with no margin.",
+    "summary": "Plan Anchorage and Seward as a selective Southcentral trip, distinguishing the Coastal Classic season, Exit Glacier road and Nature Center access, and boat routes.",
     "keywords": [
       "Anchorage, Seward & Kenai Fjords",
       "Alaska Gateways & Parks"
@@ -7964,7 +7964,7 @@
     "url": "/usa/alaska/denali/",
     "parent": "Alaska Gateways & Parks",
     "type": "Local guide",
-    "summary": "Denali is a large protected landscape with a park road whose accessible length and transport arrangements can change. Plan around current NPS information and a nearby base, not an old photograph of a road endpoint.",
+    "summary": "Plan Denali around the 2026 bus limit at East Fork, separate narrated and transit buses, entrance-area visits and the different fall road arrangements.",
     "keywords": [
       "Denali National Park",
       "Alaska Gateways & Parks"
@@ -7975,7 +7975,7 @@
     "url": "/usa/alaska/juneau-southeast/",
     "parent": "Alaska Gateways & Parks",
     "type": "Local guide",
-    "summary": "Juneau and the Inside Passage operate through flights, ferries and local excursions. They are not road extensions of Anchorage, and a short port call has very different limits from an independent multi-night stay.",
+    "summary": "Choose a Juneau stay with the actual airport, cruise or Auke Bay ferry arrival, a current Mendenhall visit and separately planned Southeast connections.",
     "keywords": [
       "Juneau & Southeast Alaska",
       "Alaska Gateways & Parks"
@@ -7986,7 +7986,7 @@
     "url": "/usa/hawaii/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Hawaii is an archipelago of distinct islands, communities and landscapes. Choose one island for a short stay and allow real transfer time between islands; cultural respect and ocean conditions should shape the itinerary.",
+    "summary": "Choose Oahu, Maui or Hawaii Island by the trip you want, with separate island transfers, realistic overnight bases and current park-access decisions.",
     "keywords": [
       "Hawaii",
       "Pacific Islands"
@@ -7997,7 +7997,7 @@
     "url": "/usa/hawaii/oahu/",
     "parent": "Hawaii",
     "type": "Local guide",
-    "summary": "Oahu combines an urban stay with coastal roads and important historical places. Waikiki, Pearl Harbor and the windward coast deserve separate plans, with traffic and timed access accounted for.",
+    "summary": "Plan separate Honolulu, Pearl Harbor and Windward Coast days, with Diamond Head and Iolani Palace booking distinctions and an unhurried Kailua route.",
     "keywords": [
       "Oahu: Honolulu & Windward Coast",
       "Hawaii"
@@ -8008,7 +8008,7 @@
     "url": "/usa/hawaii/maui/",
     "parent": "Hawaii",
     "type": "Local guide",
-    "summary": "Maui’s summit, coastal stays and winding road excursions are different days. Choose a base and a small number of activities, and follow current local guidance about access and recovery-sensitive areas.",
+    "summary": "Separate a Haleakala summit day from the Hana–Kipahulu approach, distinguish sunrise reservations and respect current Lahaina recovery access.",
     "keywords": [
       "Maui: Haleakala & Coastal Days",
       "Hawaii"
@@ -8019,7 +8019,7 @@
     "url": "/usa/hawaii/hawaii-island/",
     "parent": "Hawaii",
     "type": "Local guide",
-    "summary": "Hawaii Island has substantial road distances between Kona, Hilo and Hawaii Volcanoes National Park. Choose overnight bases by the landscapes you want to visit and avoid making every day a cross-island drive.",
+    "summary": "Choose Kona, Hilo or a Volcano stay around a realistic Hawaii Island trip, with current Kilauea visitor services and a park day that does not promise lava.",
     "keywords": [
       "Hawaii Island: Volcanoes & Two Coasts",
       "Hawaii"

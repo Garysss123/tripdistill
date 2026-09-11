@@ -1,0 +1,18 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/new-orleans/french-quarter/",
+    "/usa/new-orleans/garden-district/",
+    "/usa/new-orleans/river-wetlands/",
+    "/usa/colorado/rocky-mountain/"
+  ],
+  "translations": {
+    "Frenchmen Street is a separate music-area choice beyond the central Quarter route. If going there, identify the actual venue, age conditions, performance and return. Do not assume a general street visit guarantees a particular musical style or a seat at a show.": "프렌치맨 스트리트는 쿼터 중심 동선 너머에 있는 별도의 음악 구역 선택지입니다. 간다면 실제 공연장·연령 조건·공연·귀환을 확인하세요. 일반적인 거리 방문만으로 특정 음악 스타일이나 공연 좌석이 보장된다고 생각하지 마세요.",
+    "View the cemetery only from a permitted public position and use the current official access information. A closed gate is not an invitation to find another entrance, and a nearby business is not a substitute authority for access. If cemetery interpretation is the main interest, choose another specific site only after checking its own visitor and tour arrangements.": "묘지는 허용된 공공 위치에서만 바라보고 최신 공식 접근 정보를 이용하세요. 닫힌 문은 다른 입구를 찾으라는 초대가 아니며, 인근 사업장은 접근 권한을 대신하는 기관이 아닙니다. 묘지 해설이 핵심 관심사라면 해당 장소의 방문·투어 조건을 확인한 뒤 다른 구체적인 장소를 고르세요.",
+    "NPS states that the Barataria Preserve Visitor Center and most trails closed from February 2, 2026 for repairs following Hurricane Ida damage, with work expected to take two years. Do not plan to follow the former visitor-center circuit while that closure remains in effect.": "NPS는 허리케인 아이다 피해 후 수리를 위해 바라타리아 보호구역 방문자 센터와 대부분의 트레일이 2026년 2월 2일부터 폐쇄되었고, 공사는 2년이 걸릴 것으로 예상된다고 안내합니다. 폐쇄가 계속되는 동안 예전 방문자 센터 순환 동선을 따르는 일정은 세우지 마세요.",
+    "NPS identifies relocated visitor services at the Louisiana Wetlands Education Center and Wetland Trace Boardwalk at 4917 City Park Drive, Jean Lafitte, Louisiana 70067. This is a different location from the preserve’s usual visitor center. The notice says the boardwalk is open daily, while the education center charges admission; check the current arrangement before assuming every part is free.": "NPS는 4917 City Park Drive, Jean Lafitte, Louisiana 70067에 있는 Louisiana Wetlands Education Center와 Wetland Trace Boardwalk로 방문자 서비스를 이전했다고 안내합니다. 이곳은 보호구역의 평소 방문자 센터와 다른 위치입니다. 공지는 보드워크가 매일 열리고 교육 센터는 입장료를 받는다고 하므로, 모든 부분이 무료라고 가정하기 전에 현재 운영 방식을 확인하세요.",
+    "If choosing a commercial wetland outing, compare the actual route, interpretation, wildlife practices, access needs and cancellation terms. Do not expect a guaranteed sighting or a close encounter. A quieter, habitat-focused visit and a faster boat product may offer different experiences; choose the one that genuinely fits rather than relying only on its main photograph.": "상업 습지 방문을 고른다면 실제 노선·해설·야생동물 관행·접근 필요·취소 조건을 비교하세요. 목격이나 가까운 만남을 보장된 것으로 기대하지 마세요. 더 조용하고 서식지에 초점을 둔 방문과 더 빠른 보트 프로그램은 서로 다른 경험을 제공할 수 있으므로, 대표 사진만 믿지 말고 실제로 일행에 맞는 쪽을 고르세요.",
+    "One national park.": "하나의 국립공원."
+  }
+}

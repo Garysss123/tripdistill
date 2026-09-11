@@ -511,14 +511,14 @@ export const usaImageManifest = {
     "remoteSha1": "26d302ba6be04ff111ac95e47b523f342dcc09a3"
   },
   "new-orleans/french-quarter": {
-    "src": "/assets/images/usa-new-orleans-french-quarter.webp",
+    "src": "/assets/images/usa-new-orleans-french-quarter-20260911.webp",
     "alt": "French Quarter & Live Music",
-    "source": "https://commons.wikimedia.org/wiki/File:Jackson_Square_and_the_Cabildo_during_French_Quarter_Fest,_New_Orleans.jpg",
-    "label": "Jackson Square and the Cabildo during French Quarter Fest, New Orleans.jpg",
-    "creator": "Infrogmation of New Orleans",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Jackson Square and the Cabildo during French Quarter Fest, New Orleans.jpg",
-    "remoteSha1": "e3458f5129df0c0e9f2e7ab221356ecbe620b733"
+    "source": "https://commons.wikimedia.org/wiki/File:Jackson_Square_New_Orleans_Feb_2023.jpg",
+    "label": "Jackson Square New Orleans Feb 2023.jpg",
+    "creator": "Mussi Katz",
+    "license": "CC0",
+    "commonsTitle": "File:Jackson Square New Orleans Feb 2023.jpg",
+    "remoteSha1": "61815001bd525176d11ad081aa47861084d0ebdf"
   },
   "new-orleans/garden-district": {
     "src": "/assets/images/usa-new-orleans-garden-district.webp",
@@ -531,14 +531,14 @@ export const usaImageManifest = {
     "remoteSha1": "f43d6104fc39bfa1070619ca73f01f974aea7f28"
   },
   "new-orleans/river-wetlands": {
-    "src": "/assets/images/usa-new-orleans-river-wetlands.webp",
+    "src": "/assets/images/usa-new-orleans-river-wetlands-20260911.webp",
     "alt": "Mississippi River & Wetlands",
-    "source": "https://commons.wikimedia.org/wiki/File:Barataria_Preserve,_Jean_Lafitte_National_Historical_Park_and_Preserve,_Louisiana_(36).jpg",
-    "label": "Barataria Preserve, Jean Lafitte National Historical Park and Preserve, Louisiana (36).jpg",
-    "creator": "Ken Lund",
-    "license": "CC BY-SA 2.0",
-    "commonsTitle": "File:Barataria Preserve, Jean Lafitte National Historical Park and Preserve, Louisiana (36).jpg",
-    "remoteSha1": "4d6f5ed706f2869dc7e66e9dfbb0547e4855cf9b"
+    "source": "https://commons.wikimedia.org/wiki/File:Jean_Lafitte_Park_Barataria_Preserve,_June_2021_-_Pretty_Swamp.jpg",
+    "label": "Jean Lafitte Park Barataria Preserve, June 2021 - Pretty Swamp.jpg",
+    "creator": "Jim Bahn",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:Jean Lafitte Park Barataria Preserve, June 2021 - Pretty Swamp.jpg",
+    "remoteSha1": "e616704831469e055a8dfacfe8182fbaa2d23d1c"
   },
   "atlanta/king-historic-district": {
     "src": "/assets/images/usa-atlanta-king-historic-district.webp",

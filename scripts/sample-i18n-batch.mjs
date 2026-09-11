@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { collectTranslationWork, root } from './i18n-lib.mjs';
+import { parse } from 'parse5';
+import { collectTranslationWork, localizeHtml, root } from './i18n-lib.mjs';
 
 const fileArgument = process.argv.find((argument) => argument.startsWith('--file='))?.slice('--file='.length);
 if (!fileArgument) throw new Error('Usage: node scripts/sample-i18n-batch.mjs --file=data/i18n/reviewed/<locale>/<batch>.json');
@@ -18,6 +19,14 @@ if (!Array.isArray(batch.routes) || !batch.translations || typeof batch.translat
 
 const workByRoute = new Map(collectTranslationWork().map((record) => [record.route, record]));
 const translations = batch.translations;
+const resolvedTranslations={};
+for(const name of fs.readdirSync(path.dirname(absolutePath)).filter(name=>name.endsWith('.json')&&name<path.basename(absolutePath)).sort()){
+ const prior=JSON.parse(fs.readFileSync(path.join(path.dirname(absolutePath),name),'utf8'));
+ if(prior.qualityStatus==='reviewed')Object.assign(resolvedTranslations,prior.translations);
+}
+Object.assign(resolvedTranslations,translations);
+function findHeading(node){if(node.tagName==='h1')return node;for(const child of node.childNodes||[]){const found=findHeading(child);if(found)return found;}return null;}
+function headingText(node){if(!node)return '';if(node.nodeName==='#text')return node.value;if(node.tagName==='br')return ' / ';return (node.childNodes||[]).map(headingText).join('');}
 const contextHeavyPattern = /\b(?:argument|buffer|contract|reading|read|working|field|ledger|default|chapter|reset|live lane|legal viewpoint|scan|human scale|attention budget|two clocks|threshold)\b/i;
 
 function spreadSamples(units, count) {
@@ -43,6 +52,14 @@ for (const route of batch.routes) {
   if (!record) throw new Error(`Unknown declared route: ${route}`);
   const owned = record.units.filter((source) => Object.hasOwn(translations, source));
   console.log(`\n[${route}] ${owned.length}/${record.units.length} route keys owned by this batch`);
+  if(record.kind==='page'){
+    const html=fs.readFileSync(path.join(root,record.relativePath),'utf8');
+    const preview={...resolvedTranslations};
+    for(const unit of record.units)if(!preview[unit])preview[unit]='[UNTRANSLATED] '+unit;
+    const localized=localizeHtml(html,preview,batch.locale,route);
+    console.log('HEADING SOURCE: '+headingText(findHeading(parse(html))).replace(/\s+/g,' ').trim());
+    console.log('HEADING TARGET (including earlier batches): '+headingText(findHeading(parse(localized))).replace(/\s+/g,' ').trim());
+  }
   for (const source of selectSamples(owned)) {
     console.log(`SOURCE: ${source}`);
     console.log(`TARGET: ${translations[source]}`);

@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 // Optional live network diagnostic. A blocked automated client is not a broken source.
-const available=['boston','philadelphia','dc','new-england','chicago','seattle','portland-oregon','san-francisco','los-angeles','san-diego','sierra-parks','las-vegas','utah-parks','arizona','colorado',...(process.argv.includes('--drafts')?['yellowstone-tetons','new-orleans','atlanta','texas']:[])];
+const available=['boston','philadelphia','dc','new-england','chicago','seattle','portland-oregon','san-francisco','los-angeles','san-diego','sierra-parks','las-vegas','utah-parks','arizona','colorado','yellowstone-tetons','new-orleans','atlanta','texas','miami','orlando','alaska','hawaii','usa-country'];
 const requested=process.argv.find(a=>a.startsWith('--clusters='))?.slice(11).split(',').filter(Boolean);
-if(requested?.some(n=>!available.includes(n)))throw Error('Unknown source-check cluster; enable --drafts for draft briefs');
+if(requested?.some(n=>!available.includes(n)))throw Error('Unknown source-check cluster');
 const names=requested||available;
 const urls=[...new Set(names.flatMap(n=>[...fs.readFileSync(new URL('./'+n+'-editorial.mjs',import.meta.url),'utf8').matchAll(/https:\/\/[^'"\s<>]+/g)].map(m=>m[0].replaceAll('&amp;','&'))))];
 let i=0;const results=[];

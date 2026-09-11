@@ -1,4 +1,5 @@
 import { collectTranslationWork, loadCatalog, localeConfigs } from './i18n-lib.mjs';
+import {wrongLocaleScriptReason} from './i18n-locale-script-check.mjs';
 
 const work = collectTranslationWork();
 const required = new Set(work.flatMap((record) => record.units));
@@ -122,6 +123,8 @@ for (const locale of localeConfigs) {
       problems.push(`${locale.code} missing: ${source}`);
       continue;
     }
+    const wrongScript=wrongLocaleScriptReason(locale.code,source,target);
+    if(wrongScript)problems.push(`${wrongScript}: ${source}`);
     const editionFallback = localeEditionFallbacks[locale.code];
     if (source === 'EN' && target.trim() !== editionFallback.short) problems.push(`${locale.code} current-edition short label must be "${editionFallback.short}": ${target}`);
     if (source.startsWith('English edition ·') && !target.trim().startsWith(editionFallback.edition)) problems.push(`${locale.code} current-edition footer must start with "${editionFallback.edition}": ${target}`);

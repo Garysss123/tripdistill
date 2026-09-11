@@ -24,7 +24,7 @@
     "i18n:merge": "node scripts/merge-i18n-batches.mjs",
     "i18n:prune-stale": "node scripts/prune-stale-i18n.mjs",
     "i18n:approve": "node scripts/merge-i18n-batches.mjs --approve",
-    "audit:i18n": "node scripts/test-i18n-literals.mjs && npm run i18n:approve && node scripts/audit-translations.mjs",
+    "audit:i18n": "node scripts/test-i18n-literals.mjs && node scripts/test-i18n-locale-scripts.mjs --scan-reviewed && npm run i18n:approve && node scripts/audit-translations.mjs",
     "audit:vietnam": "node scripts/audit-vietnam.mjs",
     "audit:australia": "node scripts/audit-australia.mjs",
     "audit:australia-sources": "node scripts/check-australia-sources.mjs",

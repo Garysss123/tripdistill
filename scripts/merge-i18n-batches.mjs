@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { collectTranslationWork, localeConfigs, root } from './i18n-lib.mjs';
+import {wrongLocaleScriptReason} from './i18n-locale-script-check.mjs';
 
 const requestedLocale = process.argv.find((argument) => argument.startsWith('--locale='))?.split('=')[1];
 const approve = process.argv.includes('--approve');
@@ -38,6 +39,8 @@ for (const locale of selected) {
       continue;
     }
     for (const [source, target] of Object.entries(batch.translations)) {
+      const wrongScript=wrongLocaleScriptReason(locale.code,source,target);
+      if(wrongScript)problems.push(`${relativePath}: ${wrongScript}: ${source}`);
       if (!required.has(source)) problems.push(`${relativePath}: stale or unknown source key "${source}"`);
       if (!target?.trim()) problems.push(`${relativePath}: empty translation for "${source}"`);
       if (source in translations && translations[source] !== target) problems.push(`${relativePath}: conflicts with ${owners.get(source)} for "${source}"`);

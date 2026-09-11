@@ -21,6 +21,9 @@ import {renderAtlantaEditorial} from './atlanta-editorial.mjs';
 import {renderTexasEditorial} from './texas-editorial.mjs';
 import {renderMiamiEditorial} from './miami-editorial.mjs';
 import {renderOrlandoEditorial} from './orlando-editorial.mjs';
+import {renderAlaskaEditorial} from './alaska-editorial.mjs';
+import {renderHawaiiEditorial} from './hawaii-editorial.mjs';
+import {renderUsaCountryEditorial} from './usa-country-editorial.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const photo=(g,lazy=false)=>{const x=usaImageManifest[g.hubSlug+'/'+g.slug];return `<img src="${x.src}" alt="${escape(x.alt)}" width="1600" height="1066" ${lazy?'loading="lazy"':'fetchpriority="high"'}>`;};
@@ -30,11 +33,22 @@ const card=g=>`<a class="us-card" href="${g.url}">${photo(g,true)}<div><h3>${esc
 const ad='<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>';
 const drafts={'new-england':renderNewEnglandEditorial,chicago:renderChicagoEditorial,seattle:renderSeattleEditorial,'portland-oregon':renderPortlandOregonEditorial,'san-francisco':renderSanFranciscoEditorial,'los-angeles':renderLosAngelesEditorial,'san-diego':renderSanDiegoEditorial,'sierra-parks':renderSierraParksEditorial,'las-vegas':renderLasVegasEditorial,'utah-parks':renderUtahParksEditorial,arizona:renderArizonaEditorial,colorado:renderColoradoEditorial,'yellowstone-tetons':renderYellowstoneTetonsEditorial};
 export function editorialDraft(route){
+ if(route==='/usa/'||route==='/usa'){
+  const html=fs.readFileSync(path.join(root,'usa/index.html'),'utf8');
+  const begin=html.indexOf('</nav>',html.indexOf('<main'))+6,end=html.indexOf('<p class="us-review">',begin);
+  if(begin<6||end<begin)throw Error('Country draft preview shell boundary changed');
+  const countryCard=(g,href=g.url,title=g.name,copy=g.intro)=>`<a class="us-card" href="${href}">${photo(g,true)}<div><h3>${escape(title)}</h3><p>${escape(copy)}</p><span>Open guide →</span></div></a>`;
+  const body=renderUsaCountryEditorial({hubs:usaHubs,photo,credit,card:countryCard,source,ad});
+  const css=fs.readFileSync(path.join(root,'css/usa-country-editorial.css'),'utf8');
+  return (html.slice(0,begin)+body+html.slice(end)).replace('</head>',`<meta name="robots" content="noindex,nofollow"><style>${css}</style></head>`);
+ }
  drafts['new-orleans']=renderNewOrleansEditorial;
  drafts.atlanta=renderAtlantaEditorial;
  drafts.texas=renderTexasEditorial;
  drafts.miami=renderMiamiEditorial;
  drafts.orlando=renderOrlandoEditorial;
+ drafts.alaska=renderAlaskaEditorial;
+ drafts.hawaii=renderHawaiiEditorial;
  const parts=route.split('/').filter(Boolean);if(parts[0]!=='usa'||!drafts[parts[1]]||parts.length>3)return null;
  const h=usaHubs.find(h=>h.slug===parts[1]),g=parts[2]?h.guides.find(g=>g.slug===parts[2]):undefined;
  if(parts[2]&&!g)return null;

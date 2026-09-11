@@ -10,7 +10,7 @@ const refs={city:['https://discoveratlanta.com/','Discover Atlanta: current visi
 const cite=k=>p(`<a href="${refs[k][0]}" target="_blank" rel="noopener">${refs[k][1]}</a>`);
 export const atlantaDescriptions=[
  'Choose an Atlanta base near the actual MARTA route, then separate the King historic district, Midtown museums and a selected Beltline outing into useful days.',
- 'Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, current Birth Home restrictions and distinct King Center spaces.',
+ 'Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, Birth Home restrictions and distinct King Center spaces.',
  'Compare the High Museum, Museum of Design Atlanta and a separate botanical-garden visit, with Arts Center arrival and a collection-led Midtown day.',
  'Choose a limited Atlanta Beltline Eastside visit around a real access point, Ponce City Market or Krog Street Market, with shared-trail etiquette and a planned return.'
 ];

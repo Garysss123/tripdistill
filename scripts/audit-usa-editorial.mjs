@@ -19,7 +19,15 @@ plans['utah-parks']=[['bases','shape','rules','conditions'],['shuttles','walk','
 plans.arizona=[['bases','arrival','shape','different'],['place','route','shuttle','limits'],['base','access','day','town'],['choose','garden','culture','transport']];
 plans.colorado=[['base','arrival','days','season'],['arrival','local','museum','day'],['entry','bus','day','road'],['base','town','activity','roads']];
 const check=(v,m)=>{if(!v)problems.push(m);};
+plans['yellowstone-tetons']=[['bases','sequence','roads','field'],['focus','prediction','sequence','prismatic','surface'],['choice','rim','day','lamar','distance'],['base','lake','boat','day','history']];
+plans['new-orleans']=[['base','arrival','days','evening'],['purpose','walk','museum','music','shorten'],['arrival','walk','cemetery','magazine','adapt'],['choose','ferry','closure','wetland','care']];
+plans.atlanta=[['base','airport','days','extra'],['start','places','route','home','meaning'],['arrival','compare','garden','day','access'],['section','arrival','walk','shared','food']];
+plans.texas=[['bases','journey','days','cost'],['arrival','capitol','afternoon','day','music'],['choose','alamo','missions','day','river'],['base','tram','space','museum','return']];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
+plans.miami=[['base','arrival','days','extra'],['start','architecture','walk','shore','finish'],['choose','havana','walls','art','return'],['entrance','shark','royal','day','wildlife']];
+plans.orlando=[['base','arrival','days','budget'],['choose','disney','universal','day','extras'],['arrival','museum','boat','day','shorten'],['arrival','bus','atlantis','launch','day']];
+plans.alaska=[['shape','bases','season','time'],['arrival','choose','exit','day','alternative'],['status','bus','base','day','fall'],['arrival','choose','mendenhall','day','onward']];
+plans.hawaii=[['purpose','transfer','days','care'],['base','city','pearl','windward','limits'],['base','summit','east','recovery','days'],['bases','services','park','coasts','change']];
 const text=n=>n.nodeName==='#text'?n.value:['script','style'].includes(n.tagName)?'':(n.childNodes||[]).map(text).join(' ');
 const flatten=n=>[n,...(n.childNodes||[]).flatMap(flatten)];
 for(const [slug,sections] of Object.entries(plans)){
@@ -45,4 +53,18 @@ for(const [slug,sections] of Object.entries(plans)){
   }
  }
 }
-if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log(`${Object.keys(plans).length} rewritten U.S. clusters passed structural regression checks. Not an editorial acceptance or AdSense verdict. Other U.S. routes remain outside this audit.`);
+const countryHtml=fs.readFileSync(path.join(root,'usa/index.html'),'utf8'),countryDom=flatten(parse(countryHtml));
+check(countryHtml.includes('data-editorial-revision="usa-country-20260911"'),'Country editorial marker missing');
+check(countryHtml.includes('/css/usa-country-editorial.css?v=20260911-1'),'Country editorial stylesheet missing');
+check(countryDom.filter(n=>n.tagName==='h1').length===1,'Country H1 count');
+const countryIds=countryDom.map(n=>attr(n,'id')).filter(Boolean);
+for(const paragraph of countryDom.filter(n=>n.tagName==='p')){
+ const mixedLinks=flatten(paragraph).some(n=>n.tagName==='a')&&(paragraph.childNodes||[]).some(n=>n.nodeName==='#text'&&n.value.trim());
+ check(!mixedLinks,'Country: keep city navigation separate from full-paragraph translation units');
+}
+check(countryIds.length===new Set(countryIds).size,'Country duplicate IDs');
+for(const id of ['choose','time','directory','cost','season','entry','questions'])check(countryIds.includes(id),'Country section missing '+id);
+for(const n of countryDom.filter(n=>n.tagName==='a'&&attr(n,'href')?.startsWith('#')))check(countryIds.includes(attr(n,'href').slice(1)),'Country broken anchor '+attr(n,'href'));
+for(const h of usaHubs)check(countryDom.some(n=>n.tagName==='a'&&attr(n,'href')===`/usa/${h.slug}/`),'Country hub link missing '+h.slug);
+if(!process.argv.includes('--english-only'))for(const locale of ['zh','ja','ko','th'])check(fs.readFileSync(path.join(root,locale,'usa/index.html'),'utf8').includes('data-editorial-revision="usa-country-20260911"'),locale+' country rewrite missing');
+if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log(`${Object.keys(plans).length} rewritten U.S. clusters and country passed structural regression checks; NYC has its own audit. Not an editorial acceptance or AdSense verdict.`);

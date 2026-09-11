@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { collectTranslationWork, getLocaleConfig, root } from './i18n-lib.mjs';
+import {wrongLocaleScriptReason} from './i18n-locale-script-check.mjs';
 
 const fileArgument = process.argv.find((argument) => argument.startsWith('--file='))?.slice('--file='.length);
 if (!fileArgument) throw new Error('Usage: node scripts/validate-i18n-batch.mjs --file=data/i18n/reviewed/<locale>/<batch>.json');
@@ -155,6 +156,8 @@ function hasExactNumberToken(value, number) {
 }
 
 for (const [source, target] of localEntries) {
+  const wrongScript=wrongLocaleScriptReason(locale.code,source,target);
+  if(wrongScript)problems.push(`${wrongScript}: ${source}`);
   if (!required.has(source)) problems.push(`source key is outside the declared routes: ${source}`);
   if (typeof target !== 'string' || !target.trim()) problems.push(`empty target: ${source}`);
   if (typeof target !== 'string') continue;
