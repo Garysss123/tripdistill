@@ -1,0 +1,31 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Switzerland Travel Guide": "스위스 여행 가이드",
+    "Plan Switzerland through sixteen complete regional hubs and forty-eight focused guides built around rail, lakes, valleys and mountain access.": "철도, 호수, 계곡과 산악 접근을 중심으로 16개 완성 지역 허브와 48개 집중 가이드로 스위스를 계획하세요.",
+    "Swiss travel": "스위스 여행",
+    "Swiss rail": "스위스 철도",
+    "Northern Switzerland": "스위스 북부",
+    "cities": "도시",
+    "Central Switzerland": "중부 스위스",
+    "lakes": "호수",
+    "Swiss Plateau": "스위스 고원",
+    "Northwest Switzerland": "스위스 북서부",
+    "Romandy": "로망디",
+    "Vaud": "보",
+    "Lake Geneva east": "제네바호 동부",
+    "Bernese Oberland gateway": "베르네제 오버란트 관문",
+    "alps": "알프스",
+    "Bernese Oberland high valleys": "베르네제 오버란트 고계곡",
+    "Valais": "발레",
+    "Graubünden": "그라우뷘덴",
+    "Ticino": "티치노",
+    "Lake Maggiore": "마조레호수",
+    "Northeast Switzerland": "스위스 북동부",
+    "Eastern Switzerland": "스위스 동부"
+  }
+}

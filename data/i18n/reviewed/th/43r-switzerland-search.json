@@ -1,0 +1,31 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Switzerland Travel Guide": "คู่มือท่องเที่ยวสวิตเซอร์แลนด์",
+    "Plan Switzerland through sixteen complete regional hubs and forty-eight focused guides built around rail, lakes, valleys and mountain access.": "วางแผนสวิตเซอร์แลนด์ผ่านศูนย์กลางภูมิภาคครบ 16 แห่งและคู่มือเน้นจุดสำคัญ 48 แห่งที่สร้างรอบรถไฟ ทะเลสาบ หุบเขา และการเข้าถึงภูเขา",
+    "Swiss travel": "ท่องเที่ยวสวิตเซอร์แลนด์",
+    "Swiss rail": "รถไฟสวิตเซอร์แลนด์",
+    "Northern Switzerland": "สวิตเซอร์แลนด์ตอนเหนือ",
+    "cities": "เมือง",
+    "Central Switzerland": "สวิตเซอร์แลนด์ตอนกลาง",
+    "lakes": "ทะเลสาบ",
+    "Swiss Plateau": "สวิสเพลโต",
+    "Northwest Switzerland": "สวิตเซอร์แลนด์ตะวันตกเฉียงเหนือ",
+    "Romandy": "สวิตเซอร์แลนด์ฝั่งภาษาฝรั่งเศส",
+    "Vaud": "โวด์",
+    "Lake Geneva east": "ทะเลสาบเจนีวาฝั่งตะวันออก",
+    "Bernese Oberland gateway": "ประตูเบิร์นเนอร์โอเบอร์ลันด์",
+    "alps": "แอลป์",
+    "Bernese Oberland high valleys": "หุบเขาสูงเบิร์นเนอร์โอเบอร์ลันด์",
+    "Valais": "วาเล",
+    "Graubünden": "เกราบึนเดิน",
+    "Ticino": "ทีชีโน",
+    "Lake Maggiore": "ทะเลสาบมัจจอเร",
+    "Northeast Switzerland": "สวิตเซอร์แลนด์ตะวันออกเฉียงเหนือ",
+    "Eastern Switzerland": "สวิตเซอร์แลนด์ตะวันออก"
+  }
+}

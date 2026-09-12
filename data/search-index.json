@@ -8954,5 +8954,834 @@
       "Northwest Territories",
       "roadbook"
     ]
+  },
+  {
+    "title": "Switzerland Travel Guide",
+    "url": "/switzerland/",
+    "parent": "Europe",
+    "type": "Country",
+    "summary": "Plan Switzerland through sixteen complete regional hubs and forty-eight focused guides built around rail, lakes, valleys and mountain access.",
+    "keywords": [
+      "Switzerland",
+      "Swiss travel",
+      "Europe",
+      "Swiss rail"
+    ]
+  },
+  {
+    "title": "Zurich & Lake Zurich",
+    "url": "/switzerland/zurich-lake/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Zurich works because the main station, old town, lakefront and dense tram network compress a large-city itinerary into short moves. The mistake is treating every district as one continuous walk: choose one city layer, protect the lake weather window, and leave Uetliberg or the western industrial quarter as a deliberate contrast rather than an afterthought.",
+    "keywords": [
+      "Zurich & Lake Zurich",
+      "Northern Switzerland",
+      "cities"
+    ]
+  },
+  {
+    "title": "Old Town, Lindenhof & the Limmat",
+    "url": "/switzerland/zurich-lake/old-town-lindenhof/",
+    "parent": "Zurich & Lake Zurich",
+    "type": "Local guide",
+    "summary": "Read central Zurich from the station to both banks of the Limmat, using Lindenhof, Bahnhofstrasse, Niederdorf and the Grossmünster side as one connected but selective first-day route.",
+    "keywords": [
+      "Old Town, Lindenhof & the Limmat",
+      "Zurich & Lake Zurich",
+      "Limmat crossing ledger",
+      "river-ledger"
+    ]
+  },
+  {
+    "title": "Lake Zurich & Uetliberg",
+    "url": "/switzerland/zurich-lake/lake-uetliberg/",
+    "parent": "Zurich & Lake Zurich",
+    "type": "Local guide",
+    "summary": "Choose between the lake and Zurich’s local ridge according to visibility, then connect Bellevue, the lakeside parks and Uetliberg without pretending both need a full day.",
+    "keywords": [
+      "Lake Zurich & Uetliberg",
+      "Zurich & Lake Zurich",
+      "water-to-ridge weather dial",
+      "weather-dial"
+    ]
+  },
+  {
+    "title": "Zurich West & Museum Quarter",
+    "url": "/switzerland/zurich-lake/zurich-west-museums/",
+    "parent": "Zurich & Lake Zurich",
+    "type": "Local guide",
+    "summary": "Use Zurich West to see the city beyond the postcard core: converted rail arches, design and food spaces, contemporary neighborhoods and a museum choice that earns its own block.",
+    "keywords": [
+      "Zurich West & Museum Quarter",
+      "Zurich & Lake Zurich",
+      "tram-and-reuse grid",
+      "industrial-grid"
+    ]
+  },
+  {
+    "title": "Lucerne, Pilatus & Rigi",
+    "url": "/switzerland/lucerne-lake-mountains/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Lucerne combines a compact medieval center with two famous mountain systems and Lake Lucerne boats. The practical question is not “what is best?” but which mountain fits the day’s weather, season and transport preference. Keep one full city block, one mountain block and enough margin to return before the scenic transport becomes a deadline.",
+    "keywords": [
+      "Lucerne, Pilatus & Rigi",
+      "Central Switzerland",
+      "lakes"
+    ]
+  },
+  {
+    "title": "Lucerne Old Town & Lakefront",
+    "url": "/switzerland/lucerne-lake-mountains/old-town-lakefront/",
+    "parent": "Lucerne, Pilatus & Rigi",
+    "type": "Local guide",
+    "summary": "Build a first Lucerne day around the station, Chapel Bridge, old-town squares, Spreuer Bridge and the lakefront, with one museum or boat segment instead of every attraction.",
+    "keywords": [
+      "Lucerne Old Town & Lakefront",
+      "Lucerne, Pilatus & Rigi",
+      "bridge-and-bay walkbook",
+      "walkbook"
+    ]
+  },
+  {
+    "title": "Pilatus: Summit & Round-Trip Logic",
+    "url": "/switzerland/lucerne-lake-mountains/pilatus-round-trip/",
+    "parent": "Lucerne, Pilatus & Rigi",
+    "type": "Local guide",
+    "summary": "Plan Pilatus as a chain of city transport, mountain railway or cable car and summit weather, choosing a directional round trip only when every link is operating.",
+    "keywords": [
+      "Pilatus: Summit & Round-Trip Logic",
+      "Lucerne, Pilatus & Rigi",
+      "summit connection wheel",
+      "connection-wheel"
+    ]
+  },
+  {
+    "title": "Rigi & Lake Lucerne Circuit",
+    "url": "/switzerland/lucerne-lake-mountains/rigi-lake-circuit/",
+    "parent": "Lucerne, Pilatus & Rigi",
+    "type": "Local guide",
+    "summary": "Use Rigi as a lake-and-rail circuit rather than only a summit: choose a boat approach, cogwheel branch and return corridor that still works if weather shortens the ridge time.",
+    "keywords": [
+      "Rigi & Lake Lucerne Circuit",
+      "Lucerne, Pilatus & Rigi",
+      "boat-cogwheel timetable braid",
+      "timetable-braid"
+    ]
+  },
+  {
+    "title": "Bern & Emmental",
+    "url": "/switzerland/bern-emmental/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Bern’s UNESCO-listed old city is unusually coherent, so a checklist works worse than a directional walk. Use the station-to-bear-park axis once, then branch to the Aare, museums or Gurten. Emmental belongs on a separate day because rural transport and opening patterns are slower than the capital’s tram grid.",
+    "keywords": [
+      "Bern & Emmental",
+      "Swiss Plateau",
+      "cities"
+    ]
+  },
+  {
+    "title": "Bern Old City & Aare Bend",
+    "url": "/switzerland/bern-emmental/old-city-aare/",
+    "parent": "Bern & Emmental",
+    "type": "Local guide",
+    "summary": "Walk Bern from the station through the arcaded old city to the Zytglogge, cathedral terraces and river edge, using the Aare bend to avoid backtracking.",
+    "keywords": [
+      "Bern Old City & Aare Bend",
+      "Bern & Emmental",
+      "arcade-and-river ruler",
+      "arcade-ruler"
+    ]
+  },
+  {
+    "title": "Bern Museums, Rosengarten & Gurten",
+    "url": "/switzerland/bern-emmental/museums-rose-garden/",
+    "parent": "Bern & Emmental",
+    "type": "Local guide",
+    "summary": "Choose one museum anchor, then add either Rosengarten or Gurten for perspective; this is a deliberate contrast day, not a second walk through the same old-town axis.",
+    "keywords": [
+      "Bern Museums, Rosengarten & Gurten",
+      "Bern & Emmental",
+      "culture-to-viewpoint selector",
+      "selector-board"
+    ]
+  },
+  {
+    "title": "Emmental Villages & Cheese Country",
+    "url": "/switzerland/bern-emmental/emmental-day-trip/",
+    "parent": "Bern & Emmental",
+    "type": "Local guide",
+    "summary": "Leave Bern for rolling Emmental countryside only with a named village, rail/bus chain and one primary purpose such as landscape, food production or a signed walking route.",
+    "keywords": [
+      "Emmental Villages & Cheese Country",
+      "Bern & Emmental",
+      "rural transfer notebook",
+      "rural-notebook"
+    ]
+  },
+  {
+    "title": "Basel & the Rhine",
+    "url": "/switzerland/basel-rhine/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Basel’s historic core, Rhine banks and unusually dense museum landscape sit close together, but the city still needs selection. Use the river as the organizing line, choose one large collection, and treat cross-border geography as context rather than a checklist of three countries.",
+    "keywords": [
+      "Basel & the Rhine",
+      "Northwest Switzerland",
+      "cities"
+    ]
+  },
+  {
+    "title": "Basel Old Town & Rhine Banks",
+    "url": "/switzerland/basel-rhine/old-town-rhine/",
+    "parent": "Basel & the Rhine",
+    "type": "Local guide",
+    "summary": "Use Münsterplatz and the Rhine crossings to connect Grossbasel and Kleinbasel, with one deliberate riverbank stretch instead of circling the historic center twice.",
+    "keywords": [
+      "Basel Old Town & Rhine Banks",
+      "Basel & the Rhine",
+      "two-bank city folio",
+      "two-bank-folio"
+    ]
+  },
+  {
+    "title": "Basel Art Museums & Fondation Beyeler",
+    "url": "/switzerland/basel-rhine/art-museums/",
+    "parent": "Basel & the Rhine",
+    "type": "Local guide",
+    "summary": "Compare Kunstmuseum Basel, Fondation Beyeler and other collections by subject and location, then commit to one major museum plus one smaller contrast rather than collecting ticket stubs.",
+    "keywords": [
+      "Basel Art Museums & Fondation Beyeler",
+      "Basel & the Rhine",
+      "collection comparison spread",
+      "museum-spread"
+    ]
+  },
+  {
+    "title": "Kleinbasel, Dreiländereck & Border Context",
+    "url": "/switzerland/basel-rhine/kleinbasel-border-rhine/",
+    "parent": "Basel & the Rhine",
+    "type": "Local guide",
+    "summary": "Use Kleinbasel and the northern Rhine to understand Basel as a border city, without turning the day into a meaningless dash across three national frontiers.",
+    "keywords": [
+      "Kleinbasel, Dreiländereck & Border Context",
+      "Basel & the Rhine",
+      "border-river coordinate sheet",
+      "coordinate-sheet"
+    ]
+  },
+  {
+    "title": "Geneva & Western Lake Geneva",
+    "url": "/switzerland/geneva-lake/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Geneva’s compact center can be walked, but the international district and Carouge reward separate transport decisions. Use the lake to orient the city, then choose between civic history, international institutions and neighborhood life. Do not spend the whole day around the Jet d’Eau simply because it dominates the skyline.",
+    "keywords": [
+      "Geneva & Western Lake Geneva",
+      "Romandy",
+      "cities"
+    ]
+  },
+  {
+    "title": "Geneva Old Town & Lakefront",
+    "url": "/switzerland/geneva-lake/old-town-lakefront/",
+    "parent": "Geneva & Western Lake Geneva",
+    "type": "Local guide",
+    "summary": "Connect the lakefront, Rhône crossings, St Pierre hill and old-town lanes in one ascending route, then return at water level instead of circling the same luxury-shopping blocks.",
+    "keywords": [
+      "Geneva Old Town & Lakefront",
+      "Geneva & Western Lake Geneva",
+      "lake-to-hill civic axis",
+      "civic-axis"
+    ]
+  },
+  {
+    "title": "International Geneva & Nations Quarter",
+    "url": "/switzerland/geneva-lake/international-quarter/",
+    "parent": "Geneva & Western Lake Geneva",
+    "type": "Local guide",
+    "summary": "Treat the UN and international quarter as an access-controlled institutional visit, then connect the parks and lake only after confirmed entry, security and opening conditions.",
+    "keywords": [
+      "International Geneva & Nations Quarter",
+      "Geneva & Western Lake Geneva",
+      "institution access docket",
+      "access-docket"
+    ]
+  },
+  {
+    "title": "Carouge, Plainpalais & the Arve",
+    "url": "/switzerland/geneva-lake/carouge-arve/",
+    "parent": "Geneva & Western Lake Geneva",
+    "type": "Local guide",
+    "summary": "Leave central Geneva for Carouge’s smaller streets, Plainpalais markets and the Arve corridor, using the tram as the spine for a neighborhood-focused half day.",
+    "keywords": [
+      "Carouge, Plainpalais & the Arve",
+      "Geneva & Western Lake Geneva",
+      "neighborhood tram notebook",
+      "tram-notebook"
+    ]
+  },
+  {
+    "title": "Lausanne & Lavaux",
+    "url": "/switzerland/lausanne-lavaux/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Lausanne stacks its station, old city and Ouchy lakefront on different elevations, while Lavaux stretches east along rail lines and vineyard terraces. Use metro and trains to control vertical movement, then choose one vineyard segment rather than chasing every named village.",
+    "keywords": [
+      "Lausanne & Lavaux",
+      "Vaud",
+      "lakes"
+    ]
+  },
+  {
+    "title": "Lausanne Old City & Ouchy",
+    "url": "/switzerland/lausanne-lavaux/old-city-ouchy/",
+    "parent": "Lausanne & Lavaux",
+    "type": "Local guide",
+    "summary": "Use Lausanne’s metro to connect the cathedral hill, station level and Ouchy waterfront, making elevation part of the itinerary instead of repeatedly climbing the same slope.",
+    "keywords": [
+      "Lausanne Old City & Ouchy",
+      "Lausanne & Lavaux",
+      "vertical metro section",
+      "vertical-section"
+    ]
+  },
+  {
+    "title": "Lavaux Vineyard Terraces",
+    "url": "/switzerland/lausanne-lavaux/lavaux-terraces/",
+    "parent": "Lausanne & Lavaux",
+    "type": "Local guide",
+    "summary": "Explore Lavaux as a working vineyard landscape linked by regional trains, choosing one terrace walk and a confirmed return station rather than collecting villages along the entire slope.",
+    "keywords": [
+      "Lavaux Vineyard Terraces",
+      "Lausanne & Lavaux",
+      "rail-stop terrace ladder",
+      "terrace-ladder"
+    ]
+  },
+  {
+    "title": "Olympic Museum & Lake Geneva Day",
+    "url": "/switzerland/lausanne-lavaux/olympic-lake-cruise/",
+    "parent": "Lausanne & Lavaux",
+    "type": "Local guide",
+    "summary": "Build a lower-Lausanne day around the Olympic Museum and Ouchy, then add a lake boat only when its timetable creates a useful route rather than a sightseeing obligation.",
+    "keywords": [
+      "Olympic Museum & Lake Geneva Day",
+      "Lausanne & Lavaux",
+      "museum-to-pier timecard",
+      "timecard"
+    ]
+  },
+  {
+    "title": "Montreux, Vevey & the Riviera",
+    "url": "/switzerland/montreux-riviera/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Montreux and Vevey share a dramatic lake-and-mountain setting but serve different days. Chillon is a fixed historical anchor, Rochers-de-Naye is a weather-sensitive mountain excursion, and Vevey adds a smaller urban scale. The regional train network means you never need to walk the entire Riviera to prove you saw it.",
+    "keywords": [
+      "Montreux, Vevey & the Riviera",
+      "Lake Geneva east",
+      "lakes"
+    ]
+  },
+  {
+    "title": "Montreux Waterfront & Chillon Castle",
+    "url": "/switzerland/montreux-riviera/montreux-chillon/",
+    "parent": "Montreux, Vevey & the Riviera",
+    "type": "Local guide",
+    "summary": "Use Montreux’s waterfront as the approach or release from Chillon, with bus, train or a selective walk replacing the urge to cover every kilometer of promenade.",
+    "keywords": [
+      "Montreux Waterfront & Chillon Castle",
+      "Montreux, Vevey & the Riviera",
+      "shoreline castle score",
+      "shoreline-score"
+    ]
+  },
+  {
+    "title": "Rochers-de-Naye Mountain Railway",
+    "url": "/switzerland/montreux-riviera/rochers-de-naye/",
+    "parent": "Montreux, Vevey & the Riviera",
+    "type": "Local guide",
+    "summary": "Treat Rochers-de-Naye as a weather-gated rail excursion from Montreux, with the lake panorama as the reward and a protected descent as the non-negotiable part.",
+    "keywords": [
+      "Rochers-de-Naye Mountain Railway",
+      "Montreux, Vevey & the Riviera",
+      "lake-to-summit profile",
+      "summit-profile"
+    ]
+  },
+  {
+    "title": "Vevey, Lakeside & Riviera Towns",
+    "url": "/switzerland/montreux-riviera/vevey-lakeside/",
+    "parent": "Montreux, Vevey & the Riviera",
+    "type": "Local guide",
+    "summary": "Use Vevey as the quieter Riviera counterpoint to Montreux, with the lakeside, old streets and one cultural stop connected by rail instead of another long promenade march.",
+    "keywords": [
+      "Vevey, Lakeside & Riviera Towns",
+      "Montreux, Vevey & the Riviera",
+      "small-town lakeshore ledger",
+      "riviera-ledger"
+    ]
+  },
+  {
+    "title": "Interlaken, Thun & Brienz",
+    "url": "/switzerland/interlaken-lakes/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Interlaken sits between Lake Thun and Lake Brienz and connects onward to the Jungfrau region. The town itself is convenient but not the strongest reason to spend a whole day. Use it as a base, then decide whether the day belongs to Brienz/Giessbach, Thun/Spiez or the high valleys.",
+    "keywords": [
+      "Interlaken, Thun & Brienz",
+      "Bernese Oberland gateway",
+      "alps"
+    ]
+  },
+  {
+    "title": "Interlaken Base & Harder Kulm",
+    "url": "/switzerland/interlaken-lakes/interlaken-base/",
+    "parent": "Interlaken, Thun & Brienz",
+    "type": "Local guide",
+    "summary": "Use Interlaken to organize rail, lake and valley departures, then give the town only the time it earns: a compact walk, logistics reset and optionally Harder Kulm in clear weather.",
+    "keywords": [
+      "Interlaken Base & Harder Kulm",
+      "Interlaken, Thun & Brienz",
+      "gateway switchboard",
+      "switchboard"
+    ]
+  },
+  {
+    "title": "Lake Brienz, Brienz & Giessbach",
+    "url": "/switzerland/interlaken-lakes/brienz-giessbach/",
+    "parent": "Interlaken, Thun & Brienz",
+    "type": "Local guide",
+    "summary": "Choose a boat–rail combination around Lake Brienz, using Brienz or Giessbach as the one main stop and protecting the return rather than trying to hop every pier.",
+    "keywords": [
+      "Lake Brienz, Brienz & Giessbach",
+      "Interlaken, Thun & Brienz",
+      "turquoise-lake route strip",
+      "lake-route-strip"
+    ]
+  },
+  {
+    "title": "Lake Thun, Thun & Spiez",
+    "url": "/switzerland/interlaken-lakes/thun-spiez/",
+    "parent": "Interlaken, Thun & Brienz",
+    "type": "Local guide",
+    "summary": "Use the western lake for a town-and-castle day, choosing Thun’s urban old town or Spiez’s compact bay as the main anchor and connecting by rail or boat.",
+    "keywords": [
+      "Lake Thun, Thun & Spiez",
+      "Interlaken, Thun & Brienz",
+      "castle-and-lake fork",
+      "lake-fork"
+    ]
+  },
+  {
+    "title": "Jungfrau Region",
+    "url": "/switzerland/jungfrau-region/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Lauterbrunnen, Wengen and Grindelwald look close on a map but each uses a different valley and mountain-rail rhythm. A successful stay separates valley floor, high-village and summit days. The region rewards early starts, weather swaps and disciplined return planning far more than collecting every famous viewpoint.",
+    "keywords": [
+      "Jungfrau Region",
+      "Bernese Oberland high valleys",
+      "alps"
+    ]
+  },
+  {
+    "title": "Lauterbrunnen Valley & Mürren",
+    "url": "/switzerland/jungfrau-region/lauterbrunnen-valley/",
+    "parent": "Jungfrau Region",
+    "type": "Local guide",
+    "summary": "Use Lauterbrunnen as the valley-floor spine, then choose either Mürren/Gimmelwald elevation or a longer waterfall-valley walk rather than trying to stack every cableway.",
+    "keywords": [
+      "Lauterbrunnen Valley & Mürren",
+      "Jungfrau Region",
+      "waterfall-valley ladder",
+      "valley-ladder"
+    ]
+  },
+  {
+    "title": "Wengen & Kleine Scheidegg",
+    "url": "/switzerland/jungfrau-region/wengen-kleine-scheidegg/",
+    "parent": "Jungfrau Region",
+    "type": "Local guide",
+    "summary": "Climb from Lauterbrunnen to car-free Wengen and, when weather supports it, continue toward Kleine Scheidegg for a mountain-rail day with a clear turnaround point.",
+    "keywords": [
+      "Wengen & Kleine Scheidegg",
+      "Jungfrau Region",
+      "cogwheel elevation ledger",
+      "elevation-ledger"
+    ]
+  },
+  {
+    "title": "Grindelwald & First",
+    "url": "/switzerland/jungfrau-region/grindelwald-first/",
+    "parent": "Jungfrau Region",
+    "type": "Local guide",
+    "summary": "Use Grindelwald as the base and First as a weather-gated mountain layer, with Bachalpsee or ridge walking added only when trails and return time support it.",
+    "keywords": [
+      "Grindelwald & First",
+      "Jungfrau Region",
+      "gondola-weather gate",
+      "weather-gate"
+    ]
+  },
+  {
+    "title": "Zermatt & the Matterhorn",
+    "url": "/switzerland/zermatt-matterhorn/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Zermatt’s car-free village concentrates rail, mountain transport and Matterhorn viewpoints into a small valley head. The challenge is not access to options but choosing one elevation system per day. Use village time as the buffer around mountain weather, not as a fourth attraction squeezed between summit tickets.",
+    "keywords": [
+      "Zermatt & the Matterhorn",
+      "Valais",
+      "alps"
+    ]
+  },
+  {
+    "title": "Zermatt Village & Gornergrat",
+    "url": "/switzerland/zermatt-matterhorn/village-gornergrat/",
+    "parent": "Zermatt & the Matterhorn",
+    "type": "Local guide",
+    "summary": "Pair a compact village orientation with Gornergrat only when the Matterhorn and surrounding peaks are likely to be visible, then use the cogwheel line as the day’s main elevation system.",
+    "keywords": [
+      "Zermatt Village & Gornergrat",
+      "Zermatt & the Matterhorn",
+      "Matterhorn sightline profile",
+      "sightline-profile"
+    ]
+  },
+  {
+    "title": "Sunnegga & Five Lakes",
+    "url": "/switzerland/zermatt-matterhorn/sunnegga-five-lakes/",
+    "parent": "Zermatt & the Matterhorn",
+    "type": "Local guide",
+    "summary": "Use the Sunnegga side for a lighter high-altitude day, choosing a short viewpoint circuit or the Five Lakes route only after checking trail condition, heat and cloud.",
+    "keywords": [
+      "Sunnegga & Five Lakes",
+      "Zermatt & the Matterhorn",
+      "sun terrace route fan",
+      "route-fan"
+    ]
+  },
+  {
+    "title": "Matterhorn Glacier Paradise",
+    "url": "/switzerland/zermatt-matterhorn/glacier-paradise/",
+    "parent": "Zermatt & the Matterhorn",
+    "type": "Local guide",
+    "summary": "Treat Matterhorn Glacier Paradise as an altitude excursion with cable-car dependencies, not simply the next Matterhorn viewpoint; health, wind and visibility decide whether it belongs in the plan.",
+    "keywords": [
+      "Matterhorn Glacier Paradise",
+      "Zermatt & the Matterhorn",
+      "altitude escalation board",
+      "altitude-board"
+    ]
+  },
+  {
+    "title": "St Moritz & Upper Engadin",
+    "url": "/switzerland/st-moritz-engadin/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "St Moritz is the transport and hotel anchor, but the Upper Engadin’s identity stretches through lakes, Pontresina and the Bernina corridor. Distances are modest by rail yet elevation and winter conditions remain real. Choose one landscape system per day instead of repeatedly returning to St Moritz between every stop.",
+    "keywords": [
+      "St Moritz & Upper Engadin",
+      "Graubünden",
+      "alps"
+    ]
+  },
+  {
+    "title": "St Moritz & Engadin Lakes",
+    "url": "/switzerland/st-moritz-engadin/st-moritz-lakes/",
+    "parent": "St Moritz & Upper Engadin",
+    "type": "Local guide",
+    "summary": "Use St Moritz as the base but let the lake chain define the day, moving by rail/bus between viewpoints and villages rather than walking every shoreline.",
+    "keywords": [
+      "St Moritz & Engadin Lakes",
+      "St Moritz & Upper Engadin",
+      "high-valley lake register",
+      "lake-register"
+    ]
+  },
+  {
+    "title": "Pontresina & Bernina Railway",
+    "url": "/switzerland/st-moritz-engadin/bernina-pontresina/",
+    "parent": "St Moritz & Upper Engadin",
+    "type": "Local guide",
+    "summary": "Ride the Bernina corridor as a real rail journey through changing elevation, choosing one turnaround or stop rather than treating every station as a photo target.",
+    "keywords": [
+      "Pontresina & Bernina Railway",
+      "St Moritz & Upper Engadin",
+      "red-rail altitude strip",
+      "rail-strip"
+    ]
+  },
+  {
+    "title": "Muottas Muragl, Pontresina & Diavolezza",
+    "url": "/switzerland/st-moritz-engadin/muottas-diavolezza/",
+    "parent": "St Moritz & Upper Engadin",
+    "type": "Local guide",
+    "summary": "Choose one Engadin high viewpoint by scale and effort: Muottas Muragl for valley geometry or Diavolezza for glacier-facing high terrain, then keep Pontresina as the base layer.",
+    "keywords": [
+      "Muottas Muragl, Pontresina & Diavolezza",
+      "St Moritz & Upper Engadin",
+      "viewpoint altitude chooser",
+      "altitude-chooser"
+    ]
+  },
+  {
+    "title": "Chur, Davos & Graubünden",
+    "url": "/switzerland/graubunden-corridors/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Chur is a compact historic city and the practical gate to multiple Rhaetian Railway corridors. Davos, Arosa and the Rhine Gorge are not neighboring attractions in walking terms; each is a distinct rail or road day. Treat the canton as a set of transport corridors with different weather and seasonal functions.",
+    "keywords": [
+      "Chur, Davos & Graubünden",
+      "Graubünden",
+      "alps"
+    ]
+  },
+  {
+    "title": "Chur Old Town & Rhine Gorge",
+    "url": "/switzerland/graubunden-corridors/chur-rhine-gorge/",
+    "parent": "Chur, Davos & Graubünden",
+    "type": "Local guide",
+    "summary": "Use Chur’s old town as a compact urban anchor, then choose a specific Rhine Gorge rail or walking segment rather than treating the entire gorge as one roadside viewpoint.",
+    "keywords": [
+      "Chur Old Town & Rhine Gorge",
+      "Chur, Davos & Graubünden",
+      "city-to-canyon rail fold",
+      "rail-fold"
+    ]
+  },
+  {
+    "title": "Davos & Parsenn",
+    "url": "/switzerland/graubunden-corridors/davos-parsenn/",
+    "parent": "Chur, Davos & Graubünden",
+    "type": "Local guide",
+    "summary": "Treat Davos as a high-valley base whose useful plan changes by season, then choose Parsenn or a lower lake/valley day according to lift status and weather.",
+    "keywords": [
+      "Davos & Parsenn",
+      "Chur, Davos & Graubünden",
+      "resort-season matrix",
+      "season-matrix"
+    ]
+  },
+  {
+    "title": "Arosa & the Mountain Railway",
+    "url": "/switzerland/graubunden-corridors/arosa-line/",
+    "parent": "Chur, Davos & Graubünden",
+    "type": "Local guide",
+    "summary": "Make the Chur–Arosa railway part of the excursion, then keep the resort day focused on the lake, village or one open mountain area rather than chasing multiple lift systems.",
+    "keywords": [
+      "Arosa & the Mountain Railway",
+      "Chur, Davos & Graubünden",
+      "valley-to-resort rail ribbon",
+      "rail-ribbon"
+    ]
+  },
+  {
+    "title": "Lugano & Southern Ticino",
+    "url": "/switzerland/lugano-southern-ticino/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Lugano is compact around the lake but steep once the hills begin. Monte San Salvatore, Monte Brè and Monte Generoso are separate viewpoint systems with different access. The city works best when one elevation choice supports a lakeside day rather than becoming a checklist of summits.",
+    "keywords": [
+      "Lugano & Southern Ticino",
+      "Ticino",
+      "lakes"
+    ]
+  },
+  {
+    "title": "Lugano Center & Lakefront",
+    "url": "/switzerland/lugano-southern-ticino/lugano-lakefront/",
+    "parent": "Lugano & Southern Ticino",
+    "type": "Local guide",
+    "summary": "Connect Lugano station, historic center, Parco Ciani and lakefront in one downhill city sequence, then use transit for the return climb instead of retracing it.",
+    "keywords": [
+      "Lugano Center & Lakefront",
+      "Lugano & Southern Ticino",
+      "arcade-to-lake promenade card",
+      "promenade-card"
+    ]
+  },
+  {
+    "title": "Monte San Salvatore & Morcote",
+    "url": "/switzerland/lugano-southern-ticino/san-salvatore-morcote/",
+    "parent": "Lugano & Southern Ticino",
+    "type": "Local guide",
+    "summary": "Use Monte San Salvatore for the overhead lake view, then choose Morcote as a separate village chapter reached by public transport rather than an improvised long ridge traverse.",
+    "keywords": [
+      "Monte San Salvatore & Morcote",
+      "Lugano & Southern Ticino",
+      "summit-to-village descent plan",
+      "descent-plan"
+    ]
+  },
+  {
+    "title": "Mendrisiotto & Monte Generoso",
+    "url": "/switzerland/lugano-southern-ticino/mendrisiotto-generoso/",
+    "parent": "Lugano & Southern Ticino",
+    "type": "Local guide",
+    "summary": "Leave Lugano by regional rail for Mendrisiotto and Monte Generoso only when the mountain railway and weather align, keeping the district as a distinct southern-Ticino day.",
+    "keywords": [
+      "Mendrisiotto & Monte Generoso",
+      "Lugano & Southern Ticino",
+      "southern-rail excursion docket",
+      "excursion-docket"
+    ]
+  },
+  {
+    "title": "Locarno, Ascona & Ticino Valleys",
+    "url": "/switzerland/locarno-ascona-valleys/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Locarno and Ascona form a relaxed lake base, while Verzasca, Maggia and Centovalli branch away with different bus and rail logic. The valleys are not interchangeable Instagram stops: water level, heat, trail condition and transport frequency should decide which one fits.",
+    "keywords": [
+      "Locarno, Ascona & Ticino Valleys",
+      "Lake Maggiore",
+      "lakes"
+    ]
+  },
+  {
+    "title": "Locarno & Ascona Lakefront",
+    "url": "/switzerland/locarno-ascona-valleys/locarno-ascona/",
+    "parent": "Locarno, Ascona & Ticino Valleys",
+    "type": "Local guide",
+    "summary": "Treat Locarno and Ascona as complementary lake towns linked by bus or boat, giving each a different role instead of walking the suburban gap simply because they share the basin.",
+    "keywords": [
+      "Locarno & Ascona Lakefront",
+      "Locarno, Ascona & Ticino Valleys",
+      "paired-town lake card",
+      "paired-town"
+    ]
+  },
+  {
+    "title": "Verzasca Valley",
+    "url": "/switzerland/locarno-ascona-valleys/verzasca-valley/",
+    "parent": "Locarno, Ascona & Ticino Valleys",
+    "type": "Local guide",
+    "summary": "Use the valley bus as the spine, choose one village and one river section, and treat water conditions as a primary safety decision rather than a backdrop to the stone bridge.",
+    "keywords": [
+      "Verzasca Valley",
+      "Locarno, Ascona & Ticino Valleys",
+      "river-safety bus spine",
+      "river-spine"
+    ]
+  },
+  {
+    "title": "Maggia Valley & Centovalli",
+    "url": "/switzerland/locarno-ascona-valleys/maggia-centovalli/",
+    "parent": "Locarno, Ascona & Ticino Valleys",
+    "type": "Local guide",
+    "summary": "Choose between a bus-based Maggia valley day and the rail-based Centovalli corridor; both reveal Ticino beyond the lake, but they solve different travel days.",
+    "keywords": [
+      "Maggia Valley & Centovalli",
+      "Locarno, Ascona & Ticino Valleys",
+      "valley-choice switch",
+      "valley-switch"
+    ]
+  },
+  {
+    "title": "Schaffhausen & Rhine Falls",
+    "url": "/switzerland/schaffhausen-rhine-falls/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "Rhine Falls is easy to reach but confusing when treated as a single pin. The north and south banks offer different access and attraction patterns, while Schaffhausen and Stein am Rhein add urban depth. Choose the fall bank before arrival and keep the city visit from becoming only a lunch stop.",
+    "keywords": [
+      "Schaffhausen & Rhine Falls",
+      "Northeast Switzerland",
+      "cities"
+    ]
+  },
+  {
+    "title": "Rhine Falls: Choose the Right Bank",
+    "url": "/switzerland/schaffhausen-rhine-falls/rhine-falls/",
+    "parent": "Schaffhausen & Rhine Falls",
+    "type": "Local guide",
+    "summary": "Plan Rhine Falls by bank, rail stop and desired viewpoint, then cross or transfer only when the second side adds something meaningful.",
+    "keywords": [
+      "Rhine Falls: Choose the Right Bank",
+      "Schaffhausen & Rhine Falls",
+      "two-bank waterfall gate",
+      "two-bank-gate"
+    ]
+  },
+  {
+    "title": "Schaffhausen Old Town & Munot",
+    "url": "/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/",
+    "parent": "Schaffhausen & Rhine Falls",
+    "type": "Local guide",
+    "summary": "Give Schaffhausen its own compact loop through painted facades, arcades and Munot, rather than using the city only as a rail interchange for Rhine Falls.",
+    "keywords": [
+      "Schaffhausen Old Town & Munot",
+      "Schaffhausen & Rhine Falls",
+      "fortress-roofline loop",
+      "roofline-loop"
+    ]
+  },
+  {
+    "title": "Stein am Rhein & Upper Rhine",
+    "url": "/switzerland/schaffhausen-rhine-falls/stein-am-rhein/",
+    "parent": "Schaffhausen & Rhine Falls",
+    "type": "Local guide",
+    "summary": "Use regional rail to reach Stein am Rhein for its painted old town and river edge, then return without turning the day into a chain of tiny border towns.",
+    "keywords": [
+      "Stein am Rhein & Upper Rhine",
+      "Schaffhausen & Rhine Falls",
+      "painted-town rail postcard",
+      "rail-postcard"
+    ]
+  },
+  {
+    "title": "St Gallen & Appenzell",
+    "url": "/switzerland/st-gallen-appenzell/",
+    "parent": "Switzerland",
+    "type": "Regional guide",
+    "summary": "St Gallen’s Abbey District, Appenzell’s compact village and the Alpstein mountains form three different travel modes within a short regional network. The key is not distance but elevation: culture and village days remain robust when the high trails or cable car are in cloud.",
+    "keywords": [
+      "St Gallen & Appenzell",
+      "Eastern Switzerland",
+      "cities"
+    ]
+  },
+  {
+    "title": "St Gallen Abbey District & Old Town",
+    "url": "/switzerland/st-gallen-appenzell/st-gallen-abbey/",
+    "parent": "St Gallen & Appenzell",
+    "type": "Local guide",
+    "summary": "Build St Gallen around the Abbey District and its library context, then use the old town’s oriel windows and compact streets as a supporting urban chapter.",
+    "keywords": [
+      "St Gallen Abbey District & Old Town",
+      "St Gallen & Appenzell",
+      "manuscript-city folio",
+      "manuscript-folio"
+    ]
+  },
+  {
+    "title": "Appenzell Village & Rolling Country",
+    "url": "/switzerland/st-gallen-appenzell/appenzell-village/",
+    "parent": "St Gallen & Appenzell",
+    "type": "Local guide",
+    "summary": "Use Appenzell village as a compact cultural center, then add one signed countryside walk instead of treating private farms and painted houses as an open-air theme park.",
+    "keywords": [
+      "Appenzell Village & Rolling Country",
+      "St Gallen & Appenzell",
+      "village-to-meadow notebook",
+      "meadow-notebook"
+    ]
+  },
+  {
+    "title": "Ebenalp & Seealpsee",
+    "url": "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
+    "parent": "St Gallen & Appenzell",
+    "type": "Local guide",
+    "summary": "Treat Ebenalp and Seealpsee as mountain terrain with a cable-car access point, choosing viewpoint, cave path or lake hike only when trails and weather are suitable.",
+    "keywords": [
+      "Ebenalp & Seealpsee",
+      "St Gallen & Appenzell",
+      "pre-Alp trail gate",
+      "trail-gate"
+    ]
   }
 ]

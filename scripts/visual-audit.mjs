@@ -6,6 +6,7 @@ import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-dep
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 import { canadaClusters, canadaGuides } from '../data/canada-guides.mjs';
+import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { usaRoutes } from '../data/usa-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -45,6 +46,9 @@ const allRoutes = [
   ['canada', '/canada/'],
   ...canadaClusters.map((cluster) => [`ca-${cluster.slug}`, `/canada/${cluster.slug}/`]),
   ...canadaGuides.map((guide) => [`ca-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['switzerland', '/switzerland/'],
+  ...switzerlandClusters.map((cluster) => [`ch-${cluster.slug}`, `/switzerland/${cluster.slug}/`]),
+  ...switzerlandGuides.map((guide) => [`ch-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -343,6 +347,11 @@ const allRoutes = [
       [`${locale}-ca-${cluster.slug}`, `/${locale}/canada/${cluster.slug}/`],
       [`${locale}-ca-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/canada/${cluster.slug}/${cluster.guides[0].slug}/`]
     ])
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-switzerland`, `/${locale}/switzerland/`],
+    ...switzerlandClusters.map((cluster) => [`${locale}-ch-${cluster.slug}`, `/${locale}/switzerland/${cluster.slug}/`]),
+    ...switzerlandClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-ch-${cluster.slug}-${guide.slug}`, `/${locale}/switzerland/${cluster.slug}/${guide.slug}/`]))
   ])
 ];
 
@@ -902,6 +911,48 @@ if (!skipInteractions) {
     localPath: canadaLocalLocation.pathname,
     ...canadaDetails
   };
+
+  await navigate(interactionClient, `${baseUrl}/switzerland/`);
+  const switzerlandCountryCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.ch-country-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const switzerlandHubLocation = await waitForLocation(interactionClient, '/switzerland/zurich-lake/');
+  await navigate(interactionClient, `${baseUrl}/switzerland/zurich-lake/`);
+  const switzerlandHubCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.ch-hub-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const switzerlandLocalLocation = await waitForLocation(interactionClient, '/switzerland/zurich-lake/old-town-lindenhof/');
+  await navigate(interactionClient, `${baseUrl}/switzerland/zurich-lake/old-town-lindenhof/`);
+  const switzerlandDetails = await evaluate(interactionClient, `(async () => {
+    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+    const active=document.querySelector('#layout-sidebar .sidebar-link.active');
+    const nav={
+      europeOpen:Boolean(document.querySelector('[data-sidebar-id="europe"]')?.open),
+      countryOpen:Boolean(document.querySelector('[data-sidebar-id="switzerland"]')?.open),
+      chapterOpen:Boolean(active?.closest('details')?.open),
+      openHubCount:document.querySelectorAll('details[name="switzerland-chapters"][open]').length,
+      active:active?.textContent.trim() || '',
+      activeHref:active?.getAttribute('href') || ''
+    };
+    const languageLinks=[...document.querySelectorAll('footer [data-language-option]')].map(a=>({locale:a.dataset.languageOption,href:a.getAttribute('href')}));
+    document.querySelector('.faq-list summary')?.click();
+    const faqOpen=Boolean(document.querySelector('.faq-list details[open]'));
+    document.querySelector('[data-search-toggle]')?.click();
+    const input=document.querySelector('#site-search');
+    input.value='Zurich'; input.dispatchEvent(new Event('input',{bubbles:true}));
+    for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await wait(100);
+    const searchLinks=[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'));
+    return {...nav,languageLinks,faqOpen,searchLinks};
+  })()`);
+  interactions.switzerland = {
+    countryCards: switzerlandCountryCards,
+    hubPath: switzerlandHubLocation.pathname,
+    hubCards: switzerlandHubCards,
+    localPath: switzerlandLocalLocation.pathname,
+    ...switzerlandDetails
+  };
 }
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
@@ -974,6 +1025,19 @@ const interactionFailed = !skipInteractions && (
   !interactions.canada?.faqOpen ||
   !interactions.canada?.searchLinks?.includes('/canada/vancouver-north-shore/') ||
   !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.canada?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/canada/vancouver-north-shore/downtown-stanley-granville/')) ||
+  interactions.switzerland?.countryCards !== 16 ||
+  interactions.switzerland?.hubPath !== '/switzerland/zurich-lake/' ||
+  interactions.switzerland?.hubCards !== 3 ||
+  interactions.switzerland?.localPath !== '/switzerland/zurich-lake/old-town-lindenhof/' ||
+  !interactions.switzerland?.europeOpen ||
+  !interactions.switzerland?.countryOpen ||
+  !interactions.switzerland?.chapterOpen ||
+  interactions.switzerland?.openHubCount !== 1 ||
+  interactions.switzerland?.active !== 'Old Town, Lindenhof & the Limmat' ||
+  interactions.switzerland?.activeHref !== '/switzerland/zurich-lake/old-town-lindenhof/' ||
+  !interactions.switzerland?.faqOpen ||
+  !interactions.switzerland?.searchLinks?.includes('/switzerland/zurich-lake/') ||
+  !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.switzerland?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/switzerland/zurich-lake/old-town-lindenhof/')) ||
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||
