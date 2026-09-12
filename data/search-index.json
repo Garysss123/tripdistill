@@ -8024,5 +8024,935 @@
       "Hawaii Island: Volcanoes & Two Coasts",
       "Hawaii"
     ]
+  },
+  {
+    "title": "Canada Travel Guide",
+    "url": "/canada/",
+    "parent": "North America",
+    "type": "Country",
+    "summary": "Plan Canada through eighteen complete travel hubs and fifty-four focused guides across cities, mountains, coasts, prairies and the North.",
+    "keywords": [
+      "Canada",
+      "Canadian travel",
+      "North America"
+    ]
+  },
+  {
+    "title": "Vancouver & the North Shore",
+    "url": "/canada/vancouver-north-shore/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Vancouver works best when downtown walking, North Shore mountain access and the Sea-to-Sky corridor are treated as different operating days. The city is transit-rich; the mountain edge is weather- and reservation-sensitive.",
+    "keywords": [
+      "Vancouver & the North Shore",
+      "British Columbia",
+      "pacific"
+    ]
+  },
+  {
+    "title": "Downtown, Stanley Park & Granville Island",
+    "url": "/canada/vancouver-north-shore/downtown-stanley-granville/",
+    "parent": "Vancouver & the North Shore",
+    "type": "Local guide",
+    "summary": "Use the waterfront as a spine rather than crossing downtown repeatedly: Coal Harbour and Stanley Park first, then choose a ferry or bus connection for Granville Island.",
+    "keywords": [
+      "Downtown, Stanley Park & Granville Island",
+      "Vancouver & the North Shore",
+      "British Columbia",
+      "city-grid"
+    ]
+  },
+  {
+    "title": "North Shore: Grouse, Lynn & Capilano",
+    "url": "/canada/vancouver-north-shore/north-shore-grouse-capilano/",
+    "parent": "Vancouver & the North Shore",
+    "type": "Local guide",
+    "summary": "Choose one North Shore mountain experience by weather, walking ability and reservation rules instead of trying to stack every bridge, gondola and canyon.",
+    "keywords": [
+      "North Shore: Grouse, Lynn & Capilano",
+      "Vancouver & the North Shore",
+      "British Columbia",
+      "mountain-transect"
+    ]
+  },
+  {
+    "title": "Sea-to-Sky & Whistler",
+    "url": "/canada/vancouver-north-shore/sea-to-sky-whistler/",
+    "parent": "Vancouver & the North Shore",
+    "type": "Local guide",
+    "summary": "Treat Whistler as a separate corridor day with a reserved transport method and an explicit turnaround; highway scenery does not erase the distance from Vancouver.",
+    "keywords": [
+      "Sea-to-Sky & Whistler",
+      "Vancouver & the North Shore",
+      "British Columbia",
+      "roadbook"
+    ]
+  },
+  {
+    "title": "Victoria & South Vancouver Island",
+    "url": "/canada/victoria-south-island/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Victoria is compact once you arrive, but the island transfer is not. Build the trip around the ferry or flight, then separate the walkable Inner Harbour from Saanich gardens and the west-coast road toward Sooke.",
+    "keywords": [
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "pacific"
+    ]
+  },
+  {
+    "title": "Inner Harbour, James Bay & Beacon Hill",
+    "url": "/canada/victoria-south-island/inner-harbour-james-bay/",
+    "parent": "Victoria & South Vancouver Island",
+    "type": "Local guide",
+    "summary": "Walk Victoria as a compact harbour capital: Parliament and the Inner Harbour first, James Bay and Beacon Hill second, then choose museums or food without repeatedly crossing downtown.",
+    "keywords": [
+      "Inner Harbour, James Bay & Beacon Hill",
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "harbour-ledger"
+    ]
+  },
+  {
+    "title": "Butchart Gardens & Saanich Peninsula",
+    "url": "/canada/victoria-south-island/butchart-saanich/",
+    "parent": "Victoria & South Vancouver Island",
+    "type": "Local guide",
+    "summary": "Make Butchart Gardens the anchor, then add only one Saanich Peninsula stop so the day remains a garden-and-coast excursion rather than a bus-transfer exercise.",
+    "keywords": [
+      "Butchart Gardens & Saanich Peninsula",
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "season-wheel"
+    ]
+  },
+  {
+    "title": "Sooke & Juan de Fuca Coast",
+    "url": "/canada/victoria-south-island/sooke-juan-de-fuca/",
+    "parent": "Victoria & South Vancouver Island",
+    "type": "Local guide",
+    "summary": "Use Sooke as the last reliable base, then choose one west-coast beach or trail by daylight, tide and road time rather than collecting distant pins along Highway 14.",
+    "keywords": [
+      "Sooke & Juan de Fuca Coast",
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "tide-clock"
+    ]
+  },
+  {
+    "title": "Pacific Rim & Tofino",
+    "url": "/canada/pacific-rim-tofino/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Tofino and Ucluelet sit beside Pacific Rim National Park Reserve on an exposed coast. Treat beaches, rainforest trails and boat activities as weather-dependent blocks, and give the cross-island road enough daylight.",
+    "keywords": [
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "pacific"
+    ]
+  },
+  {
+    "title": "Long Beach & Rainforest Trails",
+    "url": "/canada/pacific-rim-tofino/long-beach-rainforest/",
+    "parent": "Pacific Rim & Tofino",
+    "type": "Local guide",
+    "summary": "Build the park day around one long beach window and one rainforest trail, with parking, tide, surf and wildlife guidance checked before leaving town.",
+    "keywords": [
+      "Long Beach & Rainforest Trails",
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "tide-clock"
+    ]
+  },
+  {
+    "title": "Ucluelet & the Wild Pacific Coast",
+    "url": "/canada/pacific-rim-tofino/ucluelet-wild-pacific/",
+    "parent": "Pacific Rim & Tofino",
+    "type": "Local guide",
+    "summary": "Use Ucluelet for a compact headland walk and quieter town base, then decide whether a second coastal stop adds contrast or merely repeats the same storm exposure.",
+    "keywords": [
+      "Ucluelet & the Wild Pacific Coast",
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Tofino Marine Day: Wildlife, Islands & Water",
+    "url": "/canada/pacific-rim-tofino/tofino-marine-day/",
+    "parent": "Pacific Rim & Tofino",
+    "type": "Local guide",
+    "summary": "Choose one licensed marine operator and one purpose—wildlife viewing, hot springs access or paddling—then let sea state and operator guidance determine the day.",
+    "keywords": [
+      "Tofino Marine Day: Wildlife, Islands & Water",
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "ferry-manifest"
+    ]
+  },
+  {
+    "title": "Banff & Lake Louise",
+    "url": "/canada/banff-lake-louise/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Banff is easier when the town, Lake Louise/Moraine Lake access and one canyon-or-lake day are separated. Transit and shuttle rules are part of the route, not a detail to discover at a full trailhead.",
+    "keywords": [
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "rockies"
+    ]
+  },
+  {
+    "title": "Banff Town & Bow Valley",
+    "url": "/canada/banff-lake-louise/banff-town-bow-valley/",
+    "parent": "Banff & Lake Louise",
+    "type": "Local guide",
+    "summary": "Use Banff town as a transit-and-recovery base, not a checklist: one central walk, one river or viewpoint branch and enough time to learn the bus system before the big park day.",
+    "keywords": [
+      "Banff Town & Bow Valley",
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "arrival-board"
+    ]
+  },
+  {
+    "title": "Lake Louise & Moraine Lake",
+    "url": "/canada/banff-lake-louise/lake-louise-moraine/",
+    "parent": "Banff & Lake Louise",
+    "type": "Local guide",
+    "summary": "Make the transport reservation the first step: Lake Louise and Moraine Lake have access systems that can matter more than the walking plan itself.",
+    "keywords": [
+      "Lake Louise & Moraine Lake",
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "reservation-docket"
+    ]
+  },
+  {
+    "title": "Johnston Canyon & Lake Minnewanka",
+    "url": "/canada/banff-lake-louise/johnston-minnewanka/",
+    "parent": "Banff & Lake Louise",
+    "type": "Local guide",
+    "summary": "Treat Johnston Canyon and Lake Minnewanka as two different half-day systems—one narrow trail corridor, one broad lake road—and combine them only when transit and crowd timing cooperate.",
+    "keywords": [
+      "Johnston Canyon & Lake Minnewanka",
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "route-split"
+    ]
+  },
+  {
+    "title": "Jasper & the Icefields Parkway",
+    "url": "/canada/jasper-icefields/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Jasper demands a slower recovery-minded plan: the town is a base, Maligne and Athabasca corridors are separate day choices, and the Icefields Parkway needs fuel, weather, closure and daylight planning.",
+    "keywords": [
+      "Jasper & the Icefields Parkway",
+      "Alberta Rockies",
+      "rockies"
+    ]
+  },
+  {
+    "title": "Jasper Town & Maligne Valley",
+    "url": "/canada/jasper-icefields/jasper-town-maligne/",
+    "parent": "Jasper & the Icefields Parkway",
+    "type": "Local guide",
+    "summary": "Keep Jasper town as the service anchor, then give Maligne Canyon or Maligne Lake a dedicated branch with an explicit road and weather decision.",
+    "keywords": [
+      "Jasper Town & Maligne Valley",
+      "Jasper & the Icefields Parkway",
+      "Alberta Rockies",
+      "lake-atlas"
+    ]
+  },
+  {
+    "title": "Icefields Parkway",
+    "url": "/canada/jasper-icefields/icefields-parkway/",
+    "parent": "Jasper & the Icefields Parkway",
+    "type": "Local guide",
+    "summary": "Drive the parkway as a landscape route with fuel, closures and a fixed endpoint; do not turn it into an endless chain of roadside stops.",
+    "keywords": [
+      "Icefields Parkway",
+      "Jasper & the Icefields Parkway",
+      "Alberta Rockies",
+      "distance-ruler"
+    ]
+  },
+  {
+    "title": "Athabasca & Sunwapta Falls",
+    "url": "/canada/jasper-icefields/athabasca-sunwapta/",
+    "parent": "Jasper & the Icefields Parkway",
+    "type": "Local guide",
+    "summary": "Use the two major waterfall areas as a controlled parkway day south of Jasper, with one longer walk or viewpoint branch rather than continuing indefinitely toward the icefield.",
+    "keywords": [
+      "Athabasca & Sunwapta Falls",
+      "Jasper & the Icefields Parkway",
+      "Alberta Rockies",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Calgary & Alberta Badlands",
+    "url": "/canada/calgary-badlands/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Calgary is a practical urban gateway with CTrain access; Drumheller and Dinosaur Provincial Park are road trips with different distances and booking needs. Keep city culture and badlands geology as separate planning systems.",
+    "keywords": [
+      "Calgary & Alberta Badlands",
+      "Southern Alberta",
+      "prairies"
+    ]
+  },
+  {
+    "title": "Calgary Core, Rivers & CTrain",
+    "url": "/canada/calgary-badlands/calgary-core/",
+    "parent": "Calgary & Alberta Badlands",
+    "type": "Local guide",
+    "summary": "Use CTrain and the river paths to connect downtown, East Village and one cultural stop without treating Calgary only as an airport for the Rockies.",
+    "keywords": [
+      "Calgary Core, Rivers & CTrain",
+      "Calgary & Alberta Badlands",
+      "Southern Alberta",
+      "city-grid"
+    ]
+  },
+  {
+    "title": "Drumheller & Royal Tyrrell Museum",
+    "url": "/canada/calgary-badlands/drumheller-royal-tyrrell/",
+    "parent": "Calgary & Alberta Badlands",
+    "type": "Local guide",
+    "summary": "Make the Royal Tyrrell Museum the indoor anchor, then add one badlands drive or hoodoo walk so the geology outside explains the collections inside.",
+    "keywords": [
+      "Drumheller & Royal Tyrrell Museum",
+      "Calgary & Alberta Badlands",
+      "Southern Alberta",
+      "museum-zine"
+    ]
+  },
+  {
+    "title": "Dinosaur Provincial Park",
+    "url": "/canada/calgary-badlands/dinosaur-provincial-park/",
+    "parent": "Calgary & Alberta Badlands",
+    "type": "Local guide",
+    "summary": "Treat Dinosaur Provincial Park as a separate protected landscape with tour, trail and camping rules—not as an extra stop after Drumheller.",
+    "keywords": [
+      "Dinosaur Provincial Park",
+      "Calgary & Alberta Badlands",
+      "Southern Alberta",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Toronto",
+    "url": "/canada/toronto/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Toronto is easier when the downtown waterfront, west-side neighborhoods and the island ferry are treated as separate movement systems. Pick a base near the transit you will actually use, then group each day by street grid rather than headline attraction.",
+    "keywords": [
+      "Toronto",
+      "Ontario",
+      "central"
+    ]
+  },
+  {
+    "title": "Downtown & Waterfront",
+    "url": "/canada/toronto/downtown-waterfront/",
+    "parent": "Toronto",
+    "type": "Local guide",
+    "summary": "Use Union Station as the anchor, then walk the waterfront and one downtown cultural corridor without zig-zagging between the lake, shopping streets and distant neighborhoods.",
+    "keywords": [
+      "Downtown & Waterfront",
+      "Toronto",
+      "Ontario",
+      "city-grid"
+    ]
+  },
+  {
+    "title": "The Annex, Kensington & Museum Toronto",
+    "url": "/canada/toronto/annex-kensington-museums/",
+    "parent": "Toronto",
+    "type": "Local guide",
+    "summary": "Link one serious museum visit to a west-side neighborhood walk so the day alternates collection time with streets, food and independent shops instead of becoming a transit relay.",
+    "keywords": [
+      "The Annex, Kensington & Museum Toronto",
+      "Toronto",
+      "Ontario",
+      "neighborhood-zine"
+    ]
+  },
+  {
+    "title": "Toronto Islands",
+    "url": "/canada/toronto/toronto-islands/",
+    "parent": "Toronto",
+    "type": "Local guide",
+    "summary": "Treat the islands as a weather-dependent ferry day with a chosen landing and return sailing, not a small waterfront add-on.",
+    "keywords": [
+      "Toronto Islands",
+      "Toronto",
+      "Ontario",
+      "ferry-manifest"
+    ]
+  },
+  {
+    "title": "Niagara Falls & Niagara-on-the-Lake",
+    "url": "/canada/niagara/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Niagara Falls, the Niagara Gorge and Niagara-on-the-Lake reward different schedules. Use the falls as a water-and-viewpoint day, the gorge as a walking day, and wine/heritage country as a separate road or tour contract.",
+    "keywords": [
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "central"
+    ]
+  },
+  {
+    "title": "Niagara Falls & Parkway",
+    "url": "/canada/niagara/falls-parkway/",
+    "parent": "Niagara Falls & Niagara-on-the-Lake",
+    "type": "Local guide",
+    "summary": "Walk the Canadian falls edge in one direction, then add only one paid falls experience so mist, queues and viewpoint repetition do not consume the whole day.",
+    "keywords": [
+      "Niagara Falls & Parkway",
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "waterfall-transect"
+    ]
+  },
+  {
+    "title": "Niagara Gorge & Whirlpool",
+    "url": "/canada/niagara/niagara-gorge/",
+    "parent": "Niagara Falls & Niagara-on-the-Lake",
+    "type": "Local guide",
+    "summary": "Choose one gorge access point and one maintained trail or viewpoint, then treat stairs, river power and seasonal closures as the central plan.",
+    "keywords": [
+      "Niagara Gorge & Whirlpool",
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "elevation-ledger"
+    ]
+  },
+  {
+    "title": "Niagara-on-the-Lake & Wine Country",
+    "url": "/canada/niagara/niagara-on-the-lake/",
+    "parent": "Niagara Falls & Niagara-on-the-Lake",
+    "type": "Local guide",
+    "summary": "Use the historic town as the walking anchor, then visit a small number of wineries with a sober transport plan rather than spending the day driving between tasting rooms.",
+    "keywords": [
+      "Niagara-on-the-Lake & Wine Country",
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "town-ledger"
+    ]
+  },
+  {
+    "title": "Ottawa & Gatineau",
+    "url": "/canada/ottawa-gatineau/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Ottawa and Gatineau combine national institutions with a walkable river/canal core and a much larger park system. Reserve the institutions that matter, then keep the outdoor branch separate from museum density.",
+    "keywords": [
+      "Ottawa & Gatineau",
+      "Ontario / Quebec",
+      "central"
+    ]
+  },
+  {
+    "title": "Parliament, Rideau Canal & ByWard",
+    "url": "/canada/ottawa-gatineau/parliament-rideau/",
+    "parent": "Ottawa & Gatineau",
+    "type": "Local guide",
+    "summary": "Anchor the day on one reserved parliamentary or civic visit, then connect the canal, river and ByWard Market on foot without repeatedly passing security lines.",
+    "keywords": [
+      "Parliament, Rideau Canal & ByWard",
+      "Ottawa & Gatineau",
+      "Ontario / Quebec",
+      "reservation-docket"
+    ]
+  },
+  {
+    "title": "Ottawa–Gatineau National Museums",
+    "url": "/canada/ottawa-gatineau/national-museums/",
+    "parent": "Ottawa & Gatineau",
+    "type": "Local guide",
+    "summary": "Choose one major national museum for depth and a second only if it answers a different question; crossing the river is easy, museum fatigue is the real constraint.",
+    "keywords": [
+      "Ottawa–Gatineau National Museums",
+      "Ottawa & Gatineau",
+      "Ontario / Quebec",
+      "museum-selector"
+    ]
+  },
+  {
+    "title": "Gatineau Park",
+    "url": "/canada/ottawa-gatineau/gatineau-park/",
+    "parent": "Ottawa & Gatineau",
+    "type": "Local guide",
+    "summary": "Choose one Gatineau Park sector by season and transport, then build the day around that trail or lookout instead of treating the park as a drive-through extension of downtown.",
+    "keywords": [
+      "Gatineau Park",
+      "Ottawa & Gatineau",
+      "Ontario / Quebec",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Montreal",
+    "url": "/canada/montreal/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Montreal rewards neighborhood depth: Old Montreal is a river-and-history day, the Plateau/Mile End is a street-life day, and Mount Royal/museums form an elevation-and-collection day. The Métro joins them, but should not flatten their rhythm.",
+    "keywords": [
+      "Montreal",
+      "Quebec",
+      "quebec"
+    ]
+  },
+  {
+    "title": "Old Montreal & Old Port",
+    "url": "/canada/montreal/old-montreal-old-port/",
+    "parent": "Montreal",
+    "type": "Local guide",
+    "summary": "Walk Old Montreal downhill toward the river, choose one interior historic or cultural stop, then use the Old Port as the open-space second act instead of looping every cobbled street.",
+    "keywords": [
+      "Old Montreal & Old Port",
+      "Montreal",
+      "Quebec",
+      "harbour-ledger"
+    ]
+  },
+  {
+    "title": "Plateau & Mile End",
+    "url": "/canada/montreal/plateau-mile-end/",
+    "parent": "Montreal",
+    "type": "Local guide",
+    "summary": "Use one northbound neighborhood walk for bakeries, parks, independent shops and residential streets; the point is texture, not an attraction tally.",
+    "keywords": [
+      "Plateau & Mile End",
+      "Montreal",
+      "Quebec",
+      "neighborhood-zine"
+    ]
+  },
+  {
+    "title": "Mount Royal & Museum Mile",
+    "url": "/canada/montreal/mount-royal-museums/",
+    "parent": "Montreal",
+    "type": "Local guide",
+    "summary": "Let weather decide whether the day begins on Mount Royal or inside a museum, then connect the two through one downtown slope instead of crossing the mountain repeatedly.",
+    "keywords": [
+      "Mount Royal & Museum Mile",
+      "Montreal",
+      "Quebec",
+      "elevation-ledger"
+    ]
+  },
+  {
+    "title": "Quebec City & Charlevoix",
+    "url": "/canada/quebec-city-charlevoix/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Quebec City’s fortified core is a walking trip; Montmorency/Île d’Orléans and Charlevoix are separate regional branches. Protect the hill-and-stair walking day before adding a car-based river corridor.",
+    "keywords": [
+      "Quebec City & Charlevoix",
+      "Quebec",
+      "quebec"
+    ]
+  },
+  {
+    "title": "Old Quebec & the Fortified Core",
+    "url": "/canada/quebec-city-charlevoix/old-quebec/",
+    "parent": "Quebec City & Charlevoix",
+    "type": "Local guide",
+    "summary": "Walk the upper and lower town as a vertical city: ramparts and civic history first, then descend to Petit-Champlain and the river without unnecessary climbs.",
+    "keywords": [
+      "Old Quebec & the Fortified Core",
+      "Quebec City & Charlevoix",
+      "Quebec",
+      "fortress-section"
+    ]
+  },
+  {
+    "title": "Montmorency Falls & Île d’Orléans",
+    "url": "/canada/quebec-city-charlevoix/montmorency-orleans/",
+    "parent": "Quebec City & Charlevoix",
+    "type": "Local guide",
+    "summary": "Make Montmorency the fixed natural anchor and treat Île d’Orléans as a selective food-and-landscape loop with a sober driving plan, not a race around every village.",
+    "keywords": [
+      "Montmorency Falls & Île d’Orléans",
+      "Quebec City & Charlevoix",
+      "Quebec",
+      "route-split"
+    ]
+  },
+  {
+    "title": "Charlevoix & Baie-Saint-Paul",
+    "url": "/canada/quebec-city-charlevoix/charlevoix-baie-saint-paul/",
+    "parent": "Quebec City & Charlevoix",
+    "type": "Local guide",
+    "summary": "Use Baie-Saint-Paul as the overnight anchor, then choose one St Lawrence or mountain branch so the Charlevoix day is about landscape depth rather than windshield mileage.",
+    "keywords": [
+      "Charlevoix & Baie-Saint-Paul",
+      "Quebec City & Charlevoix",
+      "Quebec",
+      "roadbook"
+    ]
+  },
+  {
+    "title": "Saguenay Fjord & Tadoussac",
+    "url": "/canada/saguenay-tadoussac/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "The Saguenay–St Lawrence region combines a protected fjord, marine park and small towns separated by real road distance. Plan whale watching as a weather-and-wildlife product, not a guaranteed sighting, and keep one land-based fjord day.",
+    "keywords": [
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "quebec"
+    ]
+  },
+  {
+    "title": "Tadoussac & Marine Park",
+    "url": "/canada/saguenay-tadoussac/tadoussac-marine/",
+    "parent": "Saguenay Fjord & Tadoussac",
+    "type": "Local guide",
+    "summary": "Choose a responsible marine or shore-based wildlife experience, then let weather and animal presence determine what is seen rather than treating whales as a scheduled attraction.",
+    "keywords": [
+      "Tadoussac & Marine Park",
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "operator-manifest"
+    ]
+  },
+  {
+    "title": "Saguenay Fjord Hiking",
+    "url": "/canada/saguenay-tadoussac/fjord-hiking/",
+    "parent": "Saguenay Fjord & Tadoussac",
+    "type": "Local guide",
+    "summary": "Select one official fjord sector and a trail that fits elevation, daylight and weather; the park is too large to treat as one roadside stop.",
+    "keywords": [
+      "Saguenay Fjord Hiking",
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "elevation-ledger"
+    ]
+  },
+  {
+    "title": "Saguenay City & Fjord Valley",
+    "url": "/canada/saguenay-tadoussac/saguenay-city-valley/",
+    "parent": "Saguenay Fjord & Tadoussac",
+    "type": "Local guide",
+    "summary": "Use Chicoutimi or La Baie as a service base, then connect river history, one museum or cultural stop and a nearby fjord viewpoint without spending the day driving end to end.",
+    "keywords": [
+      "Saguenay City & Fjord Valley",
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Halifax & Nova Scotia",
+    "url": "/canada/halifax-nova-scotia/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Halifax is a walkable harbour city; Peggy’s Cove/Lunenburg and Cape Breton are separate road systems. Keep the city, South Shore and Cabot Trail as distinct days so ocean weather and driving time stay visible.",
+    "keywords": [
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "atlantic"
+    ]
+  },
+  {
+    "title": "Halifax Waterfront & Citadel",
+    "url": "/canada/halifax-nova-scotia/halifax-waterfront-citadel/",
+    "parent": "Halifax & Nova Scotia",
+    "type": "Local guide",
+    "summary": "Walk Halifax from harbour to Citadel Hill, using one museum or historic site as the anchor and the ferry as an optional second harbour perspective.",
+    "keywords": [
+      "Halifax Waterfront & Citadel",
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "harbour-ledger"
+    ]
+  },
+  {
+    "title": "Peggy’s Cove & Lunenburg",
+    "url": "/canada/halifax-nova-scotia/peggys-cove-lunenburg/",
+    "parent": "Halifax & Nova Scotia",
+    "type": "Local guide",
+    "summary": "Use Peggy’s Cove as a weather-sensitive coastal stop and Lunenburg as the slower heritage anchor; the road between them is part of the day, not empty transfer.",
+    "keywords": [
+      "Peggy’s Cove & Lunenburg",
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "roadbook"
+    ]
+  },
+  {
+    "title": "Cape Breton & Cabot Trail",
+    "url": "/canada/halifax-nova-scotia/cape-breton-cabot/",
+    "parent": "Halifax & Nova Scotia",
+    "type": "Local guide",
+    "summary": "Base on Cape Breton, then drive only the section of the Cabot Trail that fits weather, daylight and walking goals; a scenic road still needs a turnaround and recovery night.",
+    "keywords": [
+      "Cape Breton & Cabot Trail",
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "distance-ruler"
+    ]
+  },
+  {
+    "title": "Prince Edward Island",
+    "url": "/canada/prince-edward-island/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "PEI looks small on a map, but a good trip separates Charlottetown, the north-shore park corridor and the quieter east/west coastal drives. Use one base or two, not a daily race around the island.",
+    "keywords": [
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "atlantic"
+    ]
+  },
+  {
+    "title": "Charlottetown",
+    "url": "/canada/prince-edward-island/charlottetown/",
+    "parent": "Prince Edward Island",
+    "type": "Local guide",
+    "summary": "Use Charlottetown as the island’s civic and food anchor: one compact heritage walk, one cultural stop and an evening that does not require another drive.",
+    "keywords": [
+      "Charlottetown",
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Cavendish & North Shore National Park",
+    "url": "/canada/prince-edward-island/cavendish-north-shore/",
+    "parent": "Prince Edward Island",
+    "type": "Local guide",
+    "summary": "Combine one national-park beach/dune sector with one Anne-related or rural heritage stop, keeping erosion and protected dune access central to the route.",
+    "keywords": [
+      "Cavendish & North Shore National Park",
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "shoreline-strip"
+    ]
+  },
+  {
+    "title": "PEI East & West Coastal Drives",
+    "url": "/canada/prince-edward-island/coastal-drives/",
+    "parent": "Prince Edward Island",
+    "type": "Local guide",
+    "summary": "Choose east or west for the day, then use one lighthouse, one town and one food stop as anchors instead of circling the island because the roads look short.",
+    "keywords": [
+      "PEI East & West Coastal Drives",
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "roadbook"
+    ]
+  },
+  {
+    "title": "Newfoundland & Labrador",
+    "url": "/canada/newfoundland-labrador/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Newfoundland is too large for a quick island loop. Use St. John’s for the Avalon, Bonavista/Trinity for an outport branch and Gros Morne for a separate west-coast park stay; Labrador requires still another transport plan.",
+    "keywords": [
+      "Newfoundland & Labrador",
+      "Newfoundland and Labrador",
+      "atlantic"
+    ]
+  },
+  {
+    "title": "St. John’s & Signal Hill",
+    "url": "/canada/newfoundland-labrador/st-johns-signal-hill/",
+    "parent": "Newfoundland & Labrador",
+    "type": "Local guide",
+    "summary": "Use the harbour bowl to link downtown, The Rooms and Signal Hill, then treat Cape Spear as a separate weather-dependent branch rather than another city block.",
+    "keywords": [
+      "St. John’s & Signal Hill",
+      "Newfoundland & Labrador",
+      "Newfoundland and Labrador",
+      "harbour-ledger"
+    ]
+  },
+  {
+    "title": "Bonavista & Trinity",
+    "url": "/canada/newfoundland-labrador/bonavista-trinity/",
+    "parent": "Newfoundland & Labrador",
+    "type": "Local guide",
+    "summary": "Stay in the Bonavista Peninsula long enough to walk one historic outport, one coastal trail or headland and one cultural site without turning every village into a drive-through photograph.",
+    "keywords": [
+      "Bonavista & Trinity",
+      "Newfoundland & Labrador",
+      "Newfoundland and Labrador",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Gros Morne National Park",
+    "url": "/canada/newfoundland-labrador/gros-morne/",
+    "parent": "Newfoundland & Labrador",
+    "type": "Local guide",
+    "summary": "Choose one geology/hiking day and one fjord/coast day, then stay inside or near the park so trail weather and boat schedules can move without wrecking the whole Newfoundland route.",
+    "keywords": [
+      "Gros Morne National Park",
+      "Newfoundland & Labrador",
+      "Newfoundland and Labrador",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Winnipeg & Churchill",
+    "url": "/canada/winnipeg-churchill/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Winnipeg is an urban prairie base with museums and river meeting points. Churchill is a remote subarctic destination reached by scheduled rail or flight and planned around season-specific wildlife and weather—not an extension of a city weekend.",
+    "keywords": [
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "prairies"
+    ]
+  },
+  {
+    "title": "The Forks & Exchange District",
+    "url": "/canada/winnipeg-churchill/forks-exchange/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Use The Forks as the geographic start, then connect the Exchange District and one cultural stop without treating Winnipeg only as the airport before Churchill.",
+    "keywords": [
+      "The Forks & Exchange District",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "city-grid"
+    ]
+  },
+  {
+    "title": "Human Rights Museum & Assiniboine",
+    "url": "/canada/winnipeg-churchill/human-rights-assiniboine/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Give the Canadian Museum for Human Rights a serious attention block, then choose either Assiniboine Park or another lighter cultural space as the emotional and physical reset.",
+    "keywords": [
+      "Human Rights Museum & Assiniboine",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "museum-selector"
+    ]
+  },
+  {
+    "title": "Churchill & Hudson Bay",
+    "url": "/canada/winnipeg-churchill/churchill-hudson-bay/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Choose Churchill for one seasonal reason, then book transport and a qualified local operator around that purpose while keeping wildlife and aurora outcomes explicitly uncertain.",
+    "keywords": [
+      "Churchill & Hudson Bay",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "expedition-board"
+    ]
+  },
+  {
+    "title": "Whitehorse & Kluane",
+    "url": "/canada/whitehorse-kluane/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Whitehorse is the service base; Kluane is a vast park region reached by road with weather, fuel and limited-service planning. Aurora is an optional sky condition, not a guaranteed nightly attraction.",
+    "keywords": [
+      "Whitehorse & Kluane",
+      "Yukon",
+      "north"
+    ]
+  },
+  {
+    "title": "Whitehorse & Yukon River",
+    "url": "/canada/whitehorse-kluane/whitehorse-river/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Use Whitehorse to understand the Yukon River and prepare the road trip: one cultural institution, one river/canyon walk and the practical fuel/food stop before Kluane.",
+    "keywords": [
+      "Whitehorse & Yukon River",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Kluane & Haines Junction",
+    "url": "/canada/whitehorse-kluane/kluane-haines-junction/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Base in Haines Junction or nearby, then choose one Kluane trail/visitor sector by weather and ability; the park’s scale makes “seeing Kluane” a meaningless one-stop goal.",
+    "keywords": [
+      "Kluane & Haines Junction",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Miles Canyon & Aurora Planning",
+    "url": "/canada/whitehorse-kluane/miles-canyon-aurora/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Keep Miles Canyon as the daylight activity and treat aurora viewing as a separate late-night probability window so one uncertain sky event does not erase the entire day.",
+    "keywords": [
+      "Miles Canyon & Aurora Planning",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "two-clock-board"
+    ]
+  },
+  {
+    "title": "Yellowknife & Great Slave Lake",
+    "url": "/canada/yellowknife-great-slave/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Yellowknife combines a small lake-side capital, seasonal Great Slave Lake access and famous aurora potential. Build a daylight city/lake plan first, then add dark-sky time without promising a display.",
+    "keywords": [
+      "Yellowknife & Great Slave Lake",
+      "Northwest Territories",
+      "north"
+    ]
+  },
+  {
+    "title": "Old Town & Great Slave Lake",
+    "url": "/canada/yellowknife-great-slave/old-town-great-slave/",
+    "parent": "Yellowknife & Great Slave Lake",
+    "type": "Local guide",
+    "summary": "Walk Old Town and the lake edge as a daylight introduction, then use one museum or viewpoint to understand why the city sits where it does.",
+    "keywords": [
+      "Old Town & Great Slave Lake",
+      "Yellowknife & Great Slave Lake",
+      "Northwest Territories",
+      "lake-atlas"
+    ]
+  },
+  {
+    "title": "Yellowknife Aurora Planning",
+    "url": "/canada/yellowknife-great-slave/aurora-dark-sky/",
+    "parent": "Yellowknife & Great Slave Lake",
+    "type": "Local guide",
+    "summary": "Plan multiple optional night windows with warm transport and shelter, treating cloud and solar activity as probabilities rather than a guaranteed performance.",
+    "keywords": [
+      "Yellowknife Aurora Planning",
+      "Yellowknife & Great Slave Lake",
+      "Northwest Territories",
+      "two-clock-board"
+    ]
+  },
+  {
+    "title": "Ingraham Trail & NWT Parks",
+    "url": "/canada/yellowknife-great-slave/ingraham-trail/",
+    "parent": "Yellowknife & Great Slave Lake",
+    "type": "Local guide",
+    "summary": "Use one Ingraham Trail park or lake objective with a declared turnaround, checking highway and winter-road status before leaving Yellowknife.",
+    "keywords": [
+      "Ingraham Trail & NWT Parks",
+      "Yellowknife & Great Slave Lake",
+      "Northwest Territories",
+      "roadbook"
+    ]
   }
 ]

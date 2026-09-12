@@ -1,0 +1,19 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Canada Travel Guide": "캐나다 여행 가이드",
+    "Plan Canada through eighteen complete travel hubs and fifty-four focused guides across cities, mountains, coasts, prairies and the North.": "도시, 산악, 해안, 대초원과 북부를 아우르는 18개 완성 여행 거점과 54개 집중 가이드로 캐나다를 계획하세요.",
+    "Canadian travel": "캐나다 여행",
+    "pacific": "태평양",
+    "rockies": "로키산맥",
+    "prairies": "대초원",
+    "central": "중부",
+    "quebec": "퀘벡",
+    "atlantic": "대서양",
+    "north": "북부"
+  }
+}

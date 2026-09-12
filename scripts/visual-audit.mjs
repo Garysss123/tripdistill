@@ -5,6 +5,7 @@ import { spawn } from 'node:child_process';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
+import { canadaClusters, canadaGuides } from '../data/canada-guides.mjs';
 import { usaRoutes } from '../data/usa-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -41,6 +42,9 @@ const allRoutes = [
   ['australia', '/australia/'],
   ...australiaClusters.map((cluster) => [`au-${cluster.slug}`, `/australia/${cluster.slug}/`]),
   ...australiaGuides.map((guide) => [`au-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['canada', '/canada/'],
+  ...canadaClusters.map((cluster) => [`ca-${cluster.slug}`, `/canada/${cluster.slug}/`]),
+  ...canadaGuides.map((guide) => [`ca-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -332,6 +336,13 @@ const allRoutes = [
       [`${locale}-au-${cluster.slug}`, `/${locale}/australia/${cluster.slug}/`],
       [`${locale}-au-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/australia/${cluster.slug}/${cluster.guides[0].slug}/`]
     ])
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-canada`, `/${locale}/canada/`],
+    ...canadaClusters.flatMap((cluster) => [
+      [`${locale}-ca-${cluster.slug}`, `/${locale}/canada/${cluster.slug}/`],
+      [`${locale}-ca-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/canada/${cluster.slug}/${cluster.guides[0].slug}/`]
+    ])
   ])
 ];
 
@@ -592,9 +603,9 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
-      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.au-country-hero,.au-hub-hero,.au-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
+      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.au-country-hero,.au-hub-hero,.au-field-hero,.ca-country-hero,.ca-hub-hero,.ca-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
         const heroRect = hero.getBoundingClientRect();
-        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
+        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.ca-country-copy > *,.ca-hub-copy > *,.ca-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
@@ -850,6 +861,47 @@ if (!skipInteractions) {
       })()`);
     }
   }
+  await navigate(interactionClient, `${baseUrl}/canada/`);
+  const canadaCountryCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.ca-country-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const canadaHubLocation = await waitForLocation(interactionClient, '/canada/vancouver-north-shore/');
+  await navigate(interactionClient, `${baseUrl}/canada/vancouver-north-shore/`);
+  const canadaHubCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.ca-hub-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const canadaLocalLocation = await waitForLocation(interactionClient, '/canada/vancouver-north-shore/downtown-stanley-granville/');
+  await navigate(interactionClient, `${baseUrl}/canada/vancouver-north-shore/downtown-stanley-granville/`);
+  const canadaDetails = await evaluate(interactionClient, `(async () => {
+    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+    const active=document.querySelector('#layout-sidebar .sidebar-link.active');
+    const nav={
+      northAmericaOpen:Boolean(document.querySelector('[data-sidebar-id="north-america"]')?.open),
+      countryOpen:Boolean(document.querySelector('[data-sidebar-id="canada"]')?.open),
+      chapterOpen:Boolean(active?.closest('details')?.open),
+      openCityCount:document.querySelectorAll('details[name="canada-city-chapters"][open]').length,
+      active:active?.textContent.trim() || '',
+      activeHref:active?.getAttribute('href') || ''
+    };
+    const languageLinks=[...document.querySelectorAll('footer [data-language-option]')].map(a=>({locale:a.dataset.languageOption,href:a.getAttribute('href')}));
+    document.querySelector('.faq-list summary')?.click();
+    const faqOpen=Boolean(document.querySelector('.faq-list details[open]'));
+    document.querySelector('[data-search-toggle]')?.click();
+    const input=document.querySelector('#site-search');
+    input.value='Vancouver'; input.dispatchEvent(new Event('input',{bubbles:true}));
+    for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await wait(100);
+    const searchLinks=[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'));
+    return {...nav,languageLinks,faqOpen,searchLinks};
+  })()`);
+  interactions.canada = {
+    countryCards: canadaCountryCards,
+    hubPath: canadaHubLocation.pathname,
+    hubCards: canadaHubCards,
+    localPath: canadaLocalLocation.pathname,
+    ...canadaDetails
+  };
 }
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
@@ -909,6 +961,19 @@ const interactionFailed = !skipInteractions && (
   !interactions.usa?.faqOpen ||
   !interactions.usa?.searchLinks?.includes('/usa/new-york/') ||
   !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.usa?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/usa/new-york/lower-manhattan/')) ||
+  interactions.canada?.countryCards !== 18 ||
+  interactions.canada?.hubPath !== '/canada/vancouver-north-shore/' ||
+  interactions.canada?.hubCards !== 3 ||
+  interactions.canada?.localPath !== '/canada/vancouver-north-shore/downtown-stanley-granville/' ||
+  !interactions.canada?.northAmericaOpen ||
+  !interactions.canada?.countryOpen ||
+  !interactions.canada?.chapterOpen ||
+  interactions.canada?.openCityCount !== 1 ||
+  interactions.canada?.active !== 'Downtown, Stanley Park & Granville Island' ||
+  interactions.canada?.activeHref !== '/canada/vancouver-north-shore/downtown-stanley-granville/' ||
+  !interactions.canada?.faqOpen ||
+  !interactions.canada?.searchLinks?.includes('/canada/vancouver-north-shore/') ||
+  !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.canada?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/canada/vancouver-north-shore/downtown-stanley-granville/')) ||
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||
