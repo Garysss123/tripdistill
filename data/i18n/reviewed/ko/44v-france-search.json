@@ -1,0 +1,34 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "지역 종합 허브 20곳과 도시, 궁전, 와이너리, 해안, 산악지대, 코르시카를 다루는 세부 가이드 60개로 프랑스 여행을 계획하세요.",
+    "French travel": "프랑스 여행",
+    "France rail": "프랑스 철도",
+    "Île-de-France": "일드프랑스",
+    "capital-north": "수도·북부",
+    "Île-de-France and Seine valley": "일드프랑스와 센강 유역",
+    "Hauts-de-France": "오드프랑스",
+    "Normandy": "노르망디",
+    "Brittany": "브르타뉴",
+    "Centre-Val de Loire": "상트르발드루아르",
+    "valleys-east": "계곡·동부",
+    "Grand Est": "그랑테스트",
+    "Alsace, Grand Est": "알자스, 그랑테스트",
+    "Bourgogne-Franche-Comté": "부르고뉴프랑슈콩테",
+    "Auvergne-Rhône-Alpes": "오베르뉴론알프",
+    "Gironde, Nouvelle-Aquitaine": "지롱드, 누벨아키텐",
+    "atlantic-southwest": "대서양·남서부",
+    "Dordogne, Nouvelle-Aquitaine": "도르도뉴, 누벨아키텐",
+    "Occitanie": "옥시타니",
+    "Pyrénées-Atlantiques and Hautes-Pyrénées": "피레네자틀랑티크와 오트피레네",
+    "Occitanie and western Provence": "옥시타니와 서부 프로방스",
+    "mediterranean-island": "지중해·섬",
+    "Bouches-du-Rhône, Provence": "부슈뒤론, 프로방스",
+    "Alpes-Maritimes": "알프마리팀",
+    "Corsica": "코르시카"
+  }
+}

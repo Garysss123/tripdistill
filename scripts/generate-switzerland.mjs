@@ -215,8 +215,15 @@ function updateSidebar() {
   const start = '<!-- SWITZERLAND_NAV_START -->';
   const end = '<!-- SWITZERLAND_NAV_END -->';
   const chapters = switzerlandClusters.map((cluster) => `<details name="switzerland-chapters" class="sidebar-accordion sidebar-chapters" data-sidebar-id="chapters-ch-${cluster.slug}"><summary><span class="sidebar-summary-main">${escapeHtml(cluster.name)}</span><span class="sidebar-summary-meta">3</span></summary><div class="sidebar-links sidebar-accordion-body"><a class="sidebar-link" href="/switzerland/${cluster.slug}/" data-nav-key="ch-${cluster.slug}">${escapeHtml(cluster.name)}</a>${cluster.guides.map((guide) => `<a class="sidebar-link" href="${guide.url}" data-nav-key="ch-${cluster.slug}-${guide.slug}">${escapeHtml(guide.name)}</a>`).join('')}</div></details>`).join('');
-  const block = `${start}\n<details class="sidebar-accordion sidebar-continent" data-sidebar-id="europe"><summary><span class="sidebar-summary-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Europe</span></summary><div class="sidebar-accordion-body"><details class="sidebar-accordion sidebar-country" data-sidebar-id="switzerland"><summary><span class="sidebar-summary-main">Switzerland</span><span class="sidebar-summary-meta">16</span></summary><div class="sidebar-links sidebar-accordion-body"><a class="sidebar-link" href="/switzerland/" data-nav-key="switzerland">Switzerland guide</a>${chapters}</div></details></div></details>\n${end}`;
-  html = html.includes(start) ? replaceMarked(html, start, end, block) : insertAfterMarker(html, '<!-- USA_NAV_END -->', block);
+  const countryBlock = `${start}<details class="sidebar-accordion sidebar-country" data-sidebar-id="switzerland"><summary><span class="sidebar-summary-main">Switzerland</span><span class="sidebar-summary-meta">16</span></summary><div class="sidebar-links sidebar-accordion-body"><a class="sidebar-link" href="/switzerland/" data-nav-key="switzerland">Switzerland guide</a>${chapters}</div></details>${end}`;
+  if (html.includes('<!-- EUROPE_NAV_START -->')) {
+    html = html.includes(start)
+      ? replaceMarked(html, start, end, countryBlock)
+      : insertAfterMarker(html, '<!-- EUROPE_NAV_START -->', countryBlock);
+  } else {
+    const legacyBlock = `${start}\n<details class="sidebar-accordion sidebar-continent" data-sidebar-id="europe"><summary><span class="sidebar-summary-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Europe</span></summary><div class="sidebar-accordion-body"><details class="sidebar-accordion sidebar-country" data-sidebar-id="switzerland"><summary><span class="sidebar-summary-main">Switzerland</span><span class="sidebar-summary-meta">16</span></summary><div class="sidebar-links sidebar-accordion-body"><a class="sidebar-link" href="/switzerland/" data-nav-key="switzerland">Switzerland guide</a>${chapters}</div></details></div></details>\n${end}`;
+    html = html.includes(start) ? replaceMarked(html, start, end, legacyBlock) : insertAfterMarker(html, '<!-- USA_NAV_END -->', legacyBlock);
+  }
   fs.writeFileSync(file, html);
 }
 
@@ -277,7 +284,11 @@ function updateHome() {
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
-  html = html.replace(/TripDistill now covers[^<]*/, 'TripDistill now covers Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Switzerland adds 16 complete regional hubs and 48 focused guides built around rail, lake, valley and mountain operating decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.');
+  const franceIsPublished = fs.existsSync(path.join(root, 'france', 'index.html'));
+  const roadmap = franceIsPublished
+    ? 'TripDistill now covers France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. France adds 20 complete regional hubs and 60 focused guides built around rail, monument, rural last-mile, coast, mountain and island decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
+    : 'TripDistill now covers Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Switzerland adds 16 complete regional hubs and 48 focused guides built around rail, lake, valley and mountain operating decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.';
+  html = html.replace(/TripDistill now covers[^<]*/, roadmap);
   fs.writeFileSync(file, html);
 }
 

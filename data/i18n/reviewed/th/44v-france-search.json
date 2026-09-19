@@ -1,0 +1,34 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "วางแผนเที่ยวฝรั่งเศสผ่านศูนย์รวมเส้นทางภูมิภาคครบถ้วน 20 แห่ง และคู่มือเฉพาะเรื่อง 60 รายการ ครอบคลุมเมือง พระราชวัง ไร่องุ่น ชายฝั่ง ภูเขา และคอร์ซิกา",
+    "French travel": "เที่ยวฝรั่งเศส",
+    "France rail": "รถไฟในฝรั่งเศส",
+    "Île-de-France": "อีล-เดอ-ฟร็องส์",
+    "capital-north": "capital-north",
+    "Île-de-France and Seine valley": "อีล-เดอ-ฟร็องส์และหุบเขาแม่น้ำแซน",
+    "Hauts-de-France": "โอต-เดอ-ฟร็องส์",
+    "Normandy": "นอร์มังดี",
+    "Brittany": "บริตตานี",
+    "Centre-Val de Loire": "ซ็องทร์-วาลเดอลัวร์",
+    "valleys-east": "valleys-east",
+    "Grand Est": "กร็องแตสต์",
+    "Alsace, Grand Est": "อาลซัส, กร็องแตสต์",
+    "Bourgogne-Franche-Comté": "บูร์กอญ-ฟร็องช์-กงเต",
+    "Auvergne-Rhône-Alpes": "โอแวร์ญ-โรน-อาลป์",
+    "Gironde, Nouvelle-Aquitaine": "ฌีรองด์, นูแวล-อากีแตน",
+    "atlantic-southwest": "atlantic-southwest",
+    "Dordogne, Nouvelle-Aquitaine": "ดอร์ดอญ, นูแวล-อากีแตน",
+    "Occitanie": "อ็อกซีตานี",
+    "Pyrénées-Atlantiques and Hautes-Pyrénées": "ปีเรเน-อัตลองติกและโอต-ปีเรเน",
+    "Occitanie and western Provence": "อ็อกซีตานีและพรอวองซ์ตะวันตก",
+    "mediterranean-island": "mediterranean-island",
+    "Bouches-du-Rhône, Provence": "บุช-ดู-โรน, พรอวองซ์",
+    "Alpes-Maritimes": "อาลป์-มารีตีม",
+    "Corsica": "คอร์ซิกา"
+  }
+}

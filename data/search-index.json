@@ -9783,5 +9783,1038 @@
       "pre-Alp trail gate",
       "trail-gate"
     ]
+  },
+  {
+    "title": "France Travel Guide",
+    "url": "/france/",
+    "parent": "Europe",
+    "type": "Country",
+    "summary": "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.",
+    "keywords": [
+      "France",
+      "French travel",
+      "Europe",
+      "France rail"
+    ]
+  },
+  {
+    "title": "Paris",
+    "url": "/france/paris/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Paris works best as a set of walkable river and neighborhood fields joined by short Métro or RER moves. The useful decision is not how many landmarks fit on a map, but which timed interior anchors the day and which streets, gardens and river crossings form a coherent approach and exit.",
+    "keywords": [
+      "Paris",
+      "Île-de-France",
+      "capital-north"
+    ]
+  },
+  {
+    "title": "Seine Islands & the Latin Quarter",
+    "url": "/france/paris/seine-islands-latin-quarter/",
+    "parent": "Paris",
+    "type": "Local guide",
+    "summary": "Use one reserved interior on the island, cross once into the Latin Quarter, and finish along a different Seine edge so the oldest part of Paris reads as connected ground rather than a queue of monuments.",
+    "keywords": [
+      "Seine Islands & the Latin Quarter",
+      "Paris",
+      "Two-bank crossing ledger",
+      "river-fold"
+    ]
+  },
+  {
+    "title": "Louvre, Tuileries & the Opéra Axis",
+    "url": "/france/paris/louvre-tuileries-opera/",
+    "parent": "Paris",
+    "type": "Local guide",
+    "summary": "Anchor the day at one museum entrance, move west through courtyards and the Tuileries, and turn north only once toward Palais Royal, the covered passages or Palais Garnier.",
+    "keywords": [
+      "Louvre, Tuileries & the Opéra Axis",
+      "Paris",
+      "Reservation-and-distance ruler",
+      "gallery-axis"
+    ]
+  },
+  {
+    "title": "Eiffel Tower, Invalides & Western Views",
+    "url": "/france/paris/eiffel-invalides-montparnasse/",
+    "parent": "Paris",
+    "type": "Local guide",
+    "summary": "Treat the Eiffel Tower as a ticketed operating system, not a photo stop, then choose either military history, Seine space or a separate skyline view as the day’s second argument.",
+    "keywords": [
+      "Eiffel Tower, Invalides & Western Views",
+      "Paris",
+      "Viewpoint commitment board",
+      "western-aperture"
+    ]
+  },
+  {
+    "title": "Versailles, Fontainebleau & Giverny",
+    "url": "/france/paris-region-day-trips/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "The famous excursions around Paris use different rail terminals, local transfers, reservation systems and landscape scales. Treat Versailles, Fontainebleau and Giverny as three separate operating days rather than interchangeable palace cards.",
+    "keywords": [
+      "Versailles, Fontainebleau & Giverny",
+      "Île-de-France and Seine valley",
+      "capital-north"
+    ]
+  },
+  {
+    "title": "Versailles Palace & Estate",
+    "url": "/france/paris-region-day-trips/versailles-palace-estate/",
+    "parent": "Versailles, Fontainebleau & Giverny",
+    "type": "Local guide",
+    "summary": "Use a timed palace entry as one contract, then choose either the main gardens or the Trianon estate as the second; the scale between them is the planning fact most day trips miss.",
+    "keywords": [
+      "Versailles Palace & Estate",
+      "Versailles, Fontainebleau & Giverny",
+      "Gate-and-garden docket",
+      "estate-grid"
+    ]
+  },
+  {
+    "title": "Fontainebleau Palace & Forest Edge",
+    "url": "/france/paris-region-day-trips/fontainebleau-palace-forest/",
+    "parent": "Versailles, Fontainebleau & Giverny",
+    "type": "Local guide",
+    "summary": "Fontainebleau offers a denser royal interior than a casual day-trip label suggests; reserve attention for the palace, then add either town streets or a defined forest edge with a known return.",
+    "keywords": [
+      "Fontainebleau Palace & Forest Edge",
+      "Versailles, Fontainebleau & Giverny",
+      "Court-to-forest hinge map",
+      "palace-forest-section"
+    ]
+  },
+  {
+    "title": "Giverny, Monet’s Gardens & Vernon",
+    "url": "/france/paris-region-day-trips/giverny-monet-vernon/",
+    "parent": "Versailles, Fontainebleau & Giverny",
+    "type": "Local guide",
+    "summary": "Build backward from the Vernon–Giverny connection and the foundation ticket, then decide whether Vernon town or a slower village walk is worth the remaining transport margin.",
+    "keywords": [
+      "Giverny, Monet’s Gardens & Vernon",
+      "Versailles, Fontainebleau & Giverny",
+      "Seasonal shuttle clock",
+      "garden-arrival-clock"
+    ]
+  },
+  {
+    "title": "Lille, Arras & the Opal Coast",
+    "url": "/france/lille-french-flanders/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Lille is a rail gateway to three very different northern trips: Flemish-influenced city streets and collections, First World War remembrance landscapes around Arras, and weather-exposed Channel headlands. Each uses a different last mile and deserves its own day.",
+    "keywords": [
+      "Lille, Arras & the Opal Coast",
+      "Hauts-de-France",
+      "capital-north"
+    ]
+  },
+  {
+    "title": "Old Lille, La Piscine & Roubaix",
+    "url": "/france/lille-french-flanders/old-lille-roubaix/",
+    "parent": "Lille, Arras & the Opal Coast",
+    "type": "Local guide",
+    "summary": "Walk Lille’s civic and Flemish-influenced core as one compact loop, then use the Métro or tram for a deliberate Roubaix collection block only when its opening and return fit.",
+    "keywords": [
+      "Old Lille, La Piscine & Roubaix",
+      "Lille, Arras & the Opal Coast",
+      "Brick-and-collection tramline",
+      "urban-diptych"
+    ]
+  },
+  {
+    "title": "Arras, Vimy & Remembrance Ground",
+    "url": "/france/lille-french-flanders/arras-vimy-remembrance/",
+    "parent": "Lille, Arras & the Opal Coast",
+    "type": "Local guide",
+    "summary": "Use Arras as the civic and rail anchor, then visit Vimy or another defined remembrance site through an official tour, taxi, bicycle plan or car route whose return is already fixed.",
+    "keywords": [
+      "Arras, Vimy & Remembrance Ground",
+      "Lille, Arras & the Opal Coast",
+      "Context-before-distance dossier",
+      "memorial-field-file"
+    ]
+  },
+  {
+    "title": "Opal Coast Headlands & Boulogne",
+    "url": "/france/lille-french-flanders/opal-coast-headlands/",
+    "parent": "Lille, Arras & the Opal Coast",
+    "type": "Local guide",
+    "summary": "Use Boulogne-sur-Mer, Calais or a smaller coast base according to the chosen headland, then match one exposed walk with one sheltered town or marine visit.",
+    "keywords": [
+      "Opal Coast Headlands & Boulogne",
+      "Lille, Arras & the Opal Coast",
+      "Wind-tide-return chart",
+      "coastal-weather-sheet"
+    ]
+  },
+  {
+    "title": "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+    "url": "/france/normandy/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Normandy’s best-known places lie on different rail and road systems: Rouen is a compact Seine city, Bayeux is a base for interpreted D-Day landscapes, and Mont-Saint-Michel is a tidal monument with a controlled final approach. They are not one Paris day-trip chain.",
+    "keywords": [
+      "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+      "Normandy",
+      "capital-north"
+    ]
+  },
+  {
+    "title": "Rouen Cathedral, Old Streets & the Seine",
+    "url": "/france/normandy/rouen-seine-cathedral/",
+    "parent": "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+    "type": "Local guide",
+    "summary": "Start at the cathedral quarter, cross the Gros-Horloge and market area, then finish at the Seine or a collection that explains the city’s art, Joan of Arc history or wartime layers.",
+    "keywords": [
+      "Rouen Cathedral, Old Streets & the Seine",
+      "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+      "Gothic-to-river street section",
+      "cathedral-street-section"
+    ]
+  },
+  {
+    "title": "Bayeux & the D-Day Landscape",
+    "url": "/france/normandy/bayeux-dday-landscape/",
+    "parent": "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+    "type": "Local guide",
+    "summary": "Separate Bayeux’s medieval and museum day from a coast circuit, then build the D-Day route around a defined theme, respectful site conduct and a dependable return.",
+    "keywords": [
+      "Bayeux & the D-Day Landscape",
+      "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+      "Memory-site route dossier",
+      "coast-history-dossier"
+    ]
+  },
+  {
+    "title": "Mont-Saint-Michel & the Bay Approach",
+    "url": "/france/normandy/mont-saint-michel-bay/",
+    "parent": "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+    "type": "Local guide",
+    "summary": "Treat the mainland arrival, shuttle or walk, village climb and abbey as four separate layers, then protect the bus, train or parking return before lingering for changing light.",
+    "keywords": [
+      "Mont-Saint-Michel & the Bay Approach",
+      "Normandy: Rouen, Bayeux & Mont-Saint-Michel",
+      "Tide-gate approach clock",
+      "tidal-causeway-clock"
+    ]
+  },
+  {
+    "title": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+    "url": "/france/brittany-coasts/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Brittany is not one coastal loop. Saint-Malo and Dinan form a rail-and-bus pair, Carnac and the Gulf of Morbihan revolve around megaliths and boat or local connections, while Quimper and Crozon require a western-base decision. Tides and wind alter each system differently.",
+    "keywords": [
+      "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+      "Brittany",
+      "capital-north"
+    ]
+  },
+  {
+    "title": "Saint-Malo Ramparts & Dinan",
+    "url": "/france/brittany-coasts/saint-malo-dinan/",
+    "parent": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+    "type": "Local guide",
+    "summary": "Walk Saint-Malo by wall, gate and shoreline condition, then add Dinan only when the bus or train and steep port-to-town gradient leave a comfortable return.",
+    "keywords": [
+      "Saint-Malo Ramparts & Dinan",
+      "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+      "Tide-and-wall transfer ledger",
+      "walled-port-ledger"
+    ]
+  },
+  {
+    "title": "Carnac Megaliths & the Gulf of Morbihan",
+    "url": "/france/brittany-coasts/morbihan-carnac/",
+    "parent": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+    "type": "Local guide",
+    "summary": "Start with protected megalithic ground and its interpretation, then choose one water or town layer whose departure point and return are known.",
+    "keywords": [
+      "Carnac Megaliths & the Gulf of Morbihan",
+      "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+      "Stone-and-water access register",
+      "megalith-estuary-map"
+    ]
+  },
+  {
+    "title": "Quimper, Cornouaille & the Crozon Peninsula",
+    "url": "/france/brittany-coasts/quimper-crozon/",
+    "parent": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+    "type": "Local guide",
+    "summary": "Quimper supplies rail, culture and shelter; Crozon supplies headlands and long last miles. The useful itinerary decides which one owns the day before chasing Atlantic views.",
+    "keywords": [
+      "Quimper, Cornouaille & the Crozon Peninsula",
+      "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
+      "Western-peninsula weather board",
+      "granite-peninsula-section"
+    ]
+  },
+  {
+    "title": "Loire Valley Châteaux",
+    "url": "/france/loire-valley/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "The Loire Valley is a chain of towns, rail stops, gardens and estates rather than one castle park. Blois and Chambord, Amboise and Chenonceau, and Tours with the western gardens each create a different transport day. Two well-matched sites usually beat a three-château sprint.",
+    "keywords": [
+      "Loire Valley Châteaux",
+      "Centre-Val de Loire",
+      "valleys-east"
+    ]
+  },
+  {
+    "title": "Blois & Chambord",
+    "url": "/france/loire-valley/blois-chambord/",
+    "parent": "Loire Valley Châteaux",
+    "type": "Local guide",
+    "summary": "Read the Château Royal de Blois as an urban palace, then give Chambord’s monumental house and forest estate a separate transport and walking envelope.",
+    "keywords": [
+      "Blois & Chambord",
+      "Loire Valley Châteaux",
+      "Town-to-domain shuttle docket",
+      "royal-courtyard-ledger"
+    ]
+  },
+  {
+    "title": "Amboise, Clos Lucé & Chenonceau",
+    "url": "/france/loire-valley/amboise-chenonceau/",
+    "parent": "Loire Valley Châteaux",
+    "type": "Local guide",
+    "summary": "Amboise rewards a town-based royal narrative; Chenonceau rewards a focused estate visit from its nearby station. Link them only when one Amboise interior is deliberately omitted.",
+    "keywords": [
+      "Amboise, Clos Lucé & Chenonceau",
+      "Loire Valley Châteaux",
+      "Leonardo-and-Cher branch line",
+      "river-palace-diptych"
+    ]
+  },
+  {
+    "title": "Tours, Villandry & Azay-le-Rideau",
+    "url": "/france/loire-valley/tours-villandry-azay/",
+    "parent": "Loire Valley Châteaux",
+    "type": "Local guide",
+    "summary": "Tours supplies food, rail and city context; Villandry is a garden contract and Azay-le-Rideau is a town-and-château rail branch. Each earns a different schedule.",
+    "keywords": [
+      "Tours, Villandry & Azay-le-Rideau",
+      "Loire Valley Châteaux",
+      "Garden-and-rail choice matrix",
+      "garden-corridor-matrix"
+    ]
+  },
+  {
+    "title": "Reims, Épernay & Champagne Country",
+    "url": "/france/champagne/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Champagne travel combines cathedral cities, working cellars, regulated tastings and vineyard villages. Reims and Épernay are rail-friendly bases, while rural producers and southern Champagne need appointments or a clear last mile. Alcohol tasting also changes who can drive.",
+    "keywords": [
+      "Reims, Épernay & Champagne Country",
+      "Grand Est",
+      "valleys-east"
+    ]
+  },
+  {
+    "title": "Reims Cathedral & Cellar Districts",
+    "url": "/france/champagne/reims-cathedral-cellars/",
+    "parent": "Reims, Épernay & Champagne Country",
+    "type": "Local guide",
+    "summary": "Use the cathedral and Palais du Tau context in the center, then travel to one house whose tour language, time and tasting conditions are confirmed.",
+    "keywords": [
+      "Reims Cathedral & Cellar Districts",
+      "Reims, Épernay & Champagne Country",
+      "Cathedral-to-crayère reservation spine",
+      "ceremonial-city-spine"
+    ]
+  },
+  {
+    "title": "Épernay, Avenue de Champagne & Vineyard Villages",
+    "url": "/france/champagne/epernay-avenue-vineyards/",
+    "parent": "Reims, Épernay & Champagne Country",
+    "type": "Local guide",
+    "summary": "The Avenue de Champagne is walkable from town; the vineyards are not a free-form extension. One booked house plus one safely reached village creates the useful day.",
+    "keywords": [
+      "Épernay, Avenue de Champagne & Vineyard Villages",
+      "Reims, Épernay & Champagne Country",
+      "Appointment-and-driver ledger",
+      "cellar-avenue-ledger"
+    ]
+  },
+  {
+    "title": "Troyes & Southern Champagne",
+    "url": "/france/champagne/troyes-southern-champagne/",
+    "parent": "Reims, Épernay & Champagne Country",
+    "type": "Local guide",
+    "summary": "Troyes is not a consolation stop after Reims: its compact medieval streets, churches and museums support a complete city route before any vineyard transfer.",
+    "keywords": [
+      "Troyes & Southern Champagne",
+      "Reims, Épernay & Champagne Country",
+      "Timber-and-vine southern folio",
+      "medieval-vine-folio"
+    ]
+  },
+  {
+    "title": "Strasbourg, Colmar & the Alsace Wine Route",
+    "url": "/france/alsace/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Strasbourg and Colmar are strong rail cities with different urban rhythms; the wine-route villages sit on a patchwork of trains, buses, bicycles and roads. A useful Alsace trip separates city depth from a village circuit and does not reduce living communities to façades.",
+    "keywords": [
+      "Strasbourg, Colmar & the Alsace Wine Route",
+      "Alsace, Grand Est",
+      "valleys-east"
+    ]
+  },
+  {
+    "title": "Strasbourg Grande Île & European Quarter",
+    "url": "/france/alsace/strasbourg-grande-ile/",
+    "parent": "Strasbourg, Colmar & the Alsace Wine Route",
+    "type": "Local guide",
+    "summary": "Walk Grande Île by cathedral, canals and civic streets, then use one tram move for either the Neustadt or European Quarter as the second urban layer.",
+    "keywords": [
+      "Strasbourg Grande Île & European Quarter",
+      "Strasbourg, Colmar & the Alsace Wine Route",
+      "Island-to-institutions tram map",
+      "rhine-civic-axis"
+    ]
+  },
+  {
+    "title": "Colmar Canals, Old Town & Museums",
+    "url": "/france/alsace/colmar-canals-museums/",
+    "parent": "Strasbourg, Colmar & the Alsace Wine Route",
+    "type": "Local guide",
+    "summary": "Use the Unterlinden Museum or another selected interior as the attention anchor, then connect the old town and canal without repeating the same crowded lanes.",
+    "keywords": [
+      "Colmar Canals, Old Town & Museums",
+      "Strasbourg, Colmar & the Alsace Wine Route",
+      "Canal-and-collection walking score",
+      "canal-museum-score"
+    ]
+  },
+  {
+    "title": "Alsace Wine Route Villages",
+    "url": "/france/alsace/alsace-wine-route-villages/",
+    "parent": "Strasbourg, Colmar & the Alsace Wine Route",
+    "type": "Local guide",
+    "summary": "Use Sélestat, Colmar or another rail gateway to reach one village pair, one walk and one reserved producer, with the return fixed before tasting.",
+    "keywords": [
+      "Alsace Wine Route Villages",
+      "Strasbourg, Colmar & the Alsace Wine Route",
+      "Village-cluster sober route",
+      "vineyard-village-cluster"
+    ]
+  },
+  {
+    "title": "Dijon, Beaune & Burgundy",
+    "url": "/france/burgundy/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Burgundy’s “climats” are working vineyard parcels, not a single attraction road. Dijon and Beaune are rail-connected city bases; the Route des Grands Crus and abbey hills require a bicycle, tour, car or rural connection plus responsible tasting decisions.",
+    "keywords": [
+      "Dijon, Beaune & Burgundy",
+      "Bourgogne-Franche-Comté",
+      "valleys-east"
+    ]
+  },
+  {
+    "title": "Dijon Ducal City & Markets",
+    "url": "/france/burgundy/dijon-ducal-city/",
+    "parent": "Dijon, Beaune & Burgundy",
+    "type": "Local guide",
+    "summary": "Follow the compact center from station to ducal palace, choose one collection, and use market or gastronomy stops without turning branded foods into the whole story.",
+    "keywords": [
+      "Dijon Ducal City & Markets",
+      "Dijon, Beaune & Burgundy",
+      "Owl-trail civic register",
+      "ducal-city-register"
+    ]
+  },
+  {
+    "title": "Beaune Hospices & Vineyard Edge",
+    "url": "/france/burgundy/beaune-hospices-vineyards/",
+    "parent": "Dijon, Beaune & Burgundy",
+    "type": "Local guide",
+    "summary": "The Hospices provide the civic and medical-history center; a booked cellar or signed vineyard walk becomes the second layer, not a string of anonymous tastings.",
+    "keywords": [
+      "Beaune Hospices & Vineyard Edge",
+      "Dijon, Beaune & Burgundy",
+      "Hospices-and-climat ledger",
+      "wine-capital-ledger"
+    ]
+  },
+  {
+    "title": "Vézelay, Fontenay & Abbey Country",
+    "url": "/france/burgundy/vezelay-fontenay-abbeys/",
+    "parent": "Dijon, Beaune & Burgundy",
+    "type": "Local guide",
+    "summary": "Vézelay is a pilgrimage hill with a steep village approach; Fontenay is a secluded Cistercian domain. Each deserves its own last mile, quiet reading and return.",
+    "keywords": [
+      "Vézelay, Fontenay & Abbey Country",
+      "Dijon, Beaune & Burgundy",
+      "Abbey-hill last-mile chart",
+      "monastic-landscape-chart"
+    ]
+  },
+  {
+    "title": "Lyon & the Rhône Gateway",
+    "url": "/france/lyon-rhone/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Lyon’s planning logic comes from the Saône, Rhône and two hills. Vieux Lyon and Fourvière form a vertical historic route; Presqu’île and Croix-Rousse connect commerce to silk-worker history; Beaujolais and Pérouges require separate regional last miles. Choose the hill before the meal reservation so the final descent, not fatigue, decides where the evening ends.",
+    "keywords": [
+      "Lyon & the Rhône Gateway",
+      "Auvergne-Rhône-Alpes",
+      "valleys-east"
+    ]
+  },
+  {
+    "title": "Vieux Lyon & Fourvière",
+    "url": "/france/lyon-rhone/vieux-lyon-fourviere/",
+    "parent": "Lyon & the Rhône Gateway",
+    "type": "Local guide",
+    "summary": "Read the Saône-side old town at street level, take the funicular or a deliberate climb once, and descend by a different safe route with the Roman or basilica layer clearly chosen.",
+    "keywords": [
+      "Vieux Lyon & Fourvière",
+      "Lyon & the Rhône Gateway",
+      "Funicular-and-traboule elevation card",
+      "vertical-renaissance-section"
+    ]
+  },
+  {
+    "title": "Presqu’île, Croix-Rousse & the Silk City",
+    "url": "/france/lyon-rhone/presquile-croix-rousse/",
+    "parent": "Lyon & the Rhône Gateway",
+    "type": "Local guide",
+    "summary": "Begin between the rivers, climb by Métro or signed slope to the canut district, and use silk history to explain the urban form rather than treating traboules as a scavenger hunt.",
+    "keywords": [
+      "Presqu’île, Croix-Rousse & the Silk City",
+      "Lyon & the Rhône Gateway",
+      "Slope-and-silk workshop grid",
+      "silk-hill-grid"
+    ]
+  },
+  {
+    "title": "Beaujolais Villages or Pérouges",
+    "url": "/france/lyon-rhone/beaujolais-perouges/",
+    "parent": "Lyon & the Rhône Gateway",
+    "type": "Local guide",
+    "summary": "Beaujolais needs a sober vineyard route and appointments; Pérouges needs the correct regional stop and a cobbled hill approach. The two branches answer different interests.",
+    "keywords": [
+      "Beaujolais Villages or Pérouges",
+      "Lyon & the Rhône Gateway",
+      "Two-excursion decision fork",
+      "regional-choice-fork"
+    ]
+  },
+  {
+    "title": "Annecy, Chamonix & the French Alps",
+    "url": "/france/french-alps/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Annecy, Chamonix and Grenoble expose three different Alpine systems: a lake city with busy shores, a high-mountain valley whose lifts are weather-dependent, and an urban basin opening into Chartreuse and Vercors. A clear valley forecast does not guarantee a useful summit day.",
+    "keywords": [
+      "Annecy, Chamonix & the French Alps",
+      "Auvergne-Rhône-Alpes",
+      "valleys-east"
+    ]
+  },
+  {
+    "title": "Annecy Old Town & Lake",
+    "url": "/france/french-alps/annecy-lake-old-town/",
+    "parent": "Annecy, Chamonix & the French Alps",
+    "type": "Local guide",
+    "summary": "Use the Thiou canals and old streets early, then choose a western-shore walk, a booked boat or a bounded bicycle section whose return works in heat and traffic.",
+    "keywords": [
+      "Annecy Old Town & Lake",
+      "Annecy, Chamonix & the French Alps",
+      "Canal-to-lake crowd clock",
+      "lake-city-ribbon"
+    ]
+  },
+  {
+    "title": "Chamonix Mountain Systems",
+    "url": "/france/french-alps/chamonix-mountain-systems/",
+    "parent": "Annecy, Chamonix & the French Alps",
+    "type": "Local guide",
+    "summary": "Chamonix is a valley of separate transport products, not one summit ticket. Pay for the system that matches conditions and keep a complete lower-valley day ready.",
+    "keywords": [
+      "Chamonix Mountain Systems",
+      "Annecy, Chamonix & the French Alps",
+      "Lift-visibility-descent control panel",
+      "altitude-control-panel"
+    ]
+  },
+  {
+    "title": "Grenoble, Bastille & Chartreuse Edge",
+    "url": "/france/french-alps/grenoble-bastille-chartreuse/",
+    "parent": "Annecy, Chamonix & the French Alps",
+    "type": "Local guide",
+    "summary": "Cross the historic center and Isère, ascend once to the Bastille by cable car or foot, and decide whether the city or a separate lower-mountain excursion carries the afternoon.",
+    "keywords": [
+      "Grenoble, Bastille & Chartreuse Edge",
+      "Annecy, Chamonix & the French Alps",
+      "Basin-to-mountain gateway section",
+      "urban-alpine-section"
+    ]
+  },
+  {
+    "title": "Bordeaux, Saint-Émilion & Arcachon",
+    "url": "/france/bordeaux-gironde/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Bordeaux’s tram city, Saint-Émilion’s vineyard hill and Arcachon Bay’s dune-and-tide landscape are three complete systems. Regional trains make each reachable, but cellar appointments, dune access and bay boats still require separate decisions.",
+    "keywords": [
+      "Bordeaux, Saint-Émilion & Arcachon",
+      "Gironde, Nouvelle-Aquitaine",
+      "atlantic-southwest"
+    ]
+  },
+  {
+    "title": "Bordeaux Riverfront & Wine City",
+    "url": "/france/bordeaux-gironde/bordeaux-river-wine-city/",
+    "parent": "Bordeaux, Saint-Émilion & Arcachon",
+    "type": "Local guide",
+    "summary": "Start in the stone center, cross the market and quays once, then choose the Cité du Vin, Bassins des Lumières or a central collection as the day’s main interior.",
+    "keywords": [
+      "Bordeaux Riverfront & Wine City",
+      "Bordeaux, Saint-Émilion & Arcachon",
+      "Tram-and-quay urban decanter",
+      "river-city-decanter"
+    ]
+  },
+  {
+    "title": "Saint-Émilion Village & Vineyards",
+    "url": "/france/bordeaux-gironde/saint-emilion-vineyards/",
+    "parent": "Bordeaux, Saint-Émilion & Arcachon",
+    "type": "Local guide",
+    "summary": "The village, monolithic-church context and vineyards form one steep landscape; a booked producer or official tour gives it structure and determines the last mile.",
+    "keywords": [
+      "Saint-Émilion Village & Vineyards",
+      "Bordeaux, Saint-Émilion & Arcachon",
+      "Hill-cellar appointment map",
+      "vineyard-hill-map"
+    ]
+  },
+  {
+    "title": "Arcachon Bay & Dune du Pilat",
+    "url": "/france/bordeaux-gironde/arcachon-dune-pilat/",
+    "parent": "Bordeaux, Saint-Émilion & Arcachon",
+    "type": "Local guide",
+    "summary": "Use the train to Arcachon, read wind and access status, and choose one bay contract plus one town layer; the dune is a moving natural site, not a fixed staircase attraction.",
+    "keywords": [
+      "Arcachon Bay & Dune du Pilat",
+      "Bordeaux, Saint-Émilion & Arcachon",
+      "Sand-wind-shuttle compass",
+      "dune-bay-compass"
+    ]
+  },
+  {
+    "title": "Dordogne & Périgord Noir",
+    "url": "/france/dordogne-perigord/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Sarlat’s market city, the Vézère’s prehistoric sites and the Dordogne’s cliff villages and castles are close on a map but dispersed across rural roads. A car, driver, bicycle or arranged tour often determines what is responsible and possible. Build each day inside one valley so a missed cave slot, river shuttle or castle closing does not trigger a long corrective drive.",
+    "keywords": [
+      "Dordogne & Périgord Noir",
+      "Dordogne, Nouvelle-Aquitaine",
+      "atlantic-southwest"
+    ]
+  },
+  {
+    "title": "Sarlat Market & Old Town",
+    "url": "/france/dordogne-perigord/sarlat-market-old-town/",
+    "parent": "Dordogne & Périgord Noir",
+    "type": "Local guide",
+    "summary": "Enter before the densest market period, trace civic lanes and one viewpoint or museum, then use Sarlat as the meal and transport anchor for the region.",
+    "keywords": [
+      "Sarlat Market & Old Town",
+      "Dordogne & Périgord Noir",
+      "Market-day limestone clock",
+      "market-street-clock"
+    ]
+  },
+  {
+    "title": "Vézère Valley Prehistory",
+    "url": "/france/dordogne-perigord/vezere-prehistory/",
+    "parent": "Dordogne & Périgord Noir",
+    "type": "Local guide",
+    "summary": "Use Les Eyzies or Montignac as the valley anchor, distinguish original art from facsimile interpretation, and avoid claiming that several timed caves can be improvised in one day.",
+    "keywords": [
+      "Vézère Valley Prehistory",
+      "Dordogne & Périgord Noir",
+      "Timed-cave evidence ledger",
+      "prehistoric-valley-ledger"
+    ]
+  },
+  {
+    "title": "Dordogne Valley Castles & Cliff Villages",
+    "url": "/france/dordogne-perigord/dordogne-castles-villages/",
+    "parent": "Dordogne & Périgord Noir",
+    "type": "Local guide",
+    "summary": "Use Beynac, Castelnaud, La Roque-Gageac or Domme as a coherent bank-and-height route, then add canoeing only when water, operator and return conditions are suitable.",
+    "keywords": [
+      "Dordogne Valley Castles & Cliff Villages",
+      "Dordogne & Périgord Noir",
+      "River-bank castle selector",
+      "castle-river-selector"
+    ]
+  },
+  {
+    "title": "Toulouse, Albi & Carcassonne",
+    "url": "/france/toulouse-albi-carcassonne/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Toulouse’s Garonne and aerospace layers, Albi’s episcopal brick city and Carcassonne’s fortified cité are distinct destinations on separate rail corridors. Both excursions are possible from Toulouse, but neither should be reduced to a two-hour photo stop.",
+    "keywords": [
+      "Toulouse, Albi & Carcassonne",
+      "Occitanie",
+      "atlantic-southwest"
+    ]
+  },
+  {
+    "title": "Toulouse Garonne & Aerospace Choices",
+    "url": "/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/",
+    "parent": "Toulouse, Albi & Carcassonne",
+    "type": "Local guide",
+    "summary": "Walk the Capitole–Saint-Sernin–Garonne core as one route, then select Cité de l’espace, Aeroscopia or Halle de La Machine only when its distinct location and admission fit.",
+    "keywords": [
+      "Toulouse Garonne & Aerospace Choices",
+      "Toulouse, Albi & Carcassonne",
+      "River-to-aerospace split board",
+      "brick-city-split"
+    ]
+  },
+  {
+    "title": "Albi Episcopal City & Toulouse-Lautrec",
+    "url": "/france/toulouse-albi-carcassonne/albi-episcopal-city/",
+    "parent": "Toulouse, Albi & Carcassonne",
+    "type": "Local guide",
+    "summary": "Walk from the station into the brick core, give Sainte-Cécile and the Toulouse-Lautrec Museum separate attention, then finish along the Tarn and return through a different street line.",
+    "keywords": [
+      "Albi Episcopal City & Toulouse-Lautrec",
+      "Toulouse, Albi & Carcassonne",
+      "Brick-cathedral collection route",
+      "episcopal-brick-route"
+    ]
+  },
+  {
+    "title": "Carcassonne Cité & Bastide",
+    "url": "/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/",
+    "parent": "Toulouse, Albi & Carcassonne",
+    "type": "Local guide",
+    "summary": "Start in the lower town or at the station, cross the Aude and enter the Cité once, then leave enough attention for the lived Bastide rather than spending the whole day inside souvenir lanes.",
+    "keywords": [
+      "Carcassonne Cité & Bastide",
+      "Toulouse, Albi & Carcassonne",
+      "Two-city fortification plan",
+      "citadel-bastide-plan"
+    ]
+  },
+  {
+    "title": "French Basque Coast & the Pyrenees",
+    "url": "/france/basque-coast-pyrenees/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Bayonne and Biarritz share an urban coastal network, Saint-Jean-de-Luz opens a different harbor and inland Basque corridor, and Gavarnie or Cauterets require a separate Pyrenean base. Ocean conditions and mountain conditions must be checked independently.",
+    "keywords": [
+      "French Basque Coast & the Pyrenees",
+      "Pyrénées-Atlantiques and Hautes-Pyrénées",
+      "atlantic-southwest"
+    ]
+  },
+  {
+    "title": "Bayonne & Biarritz",
+    "url": "/france/basque-coast-pyrenees/bayonne-biarritz/",
+    "parent": "French Basque Coast & the Pyrenees",
+    "type": "Local guide",
+    "summary": "Walk one complete center first, use bus or rail for the second, and treat ocean safety as a live condition rather than a postcard assumption.",
+    "keywords": [
+      "Bayonne & Biarritz",
+      "French Basque Coast & the Pyrenees",
+      "River-to-surf urban tide card",
+      "estuary-coast-diptych"
+    ]
+  },
+  {
+    "title": "Saint-Jean-de-Luz & Basque Inland Villages",
+    "url": "/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/",
+    "parent": "French Basque Coast & the Pyrenees",
+    "type": "Local guide",
+    "summary": "The protected bay and fishing-port history differ from Biarritz’s surf coast; Sare, Espelette or another inland stop should be chosen for a specific cultural or landscape reason.",
+    "keywords": [
+      "Saint-Jean-de-Luz & Basque Inland Villages",
+      "French Basque Coast & the Pyrenees",
+      "Harbor-to-hill village route",
+      "harbor-inland-fold"
+    ]
+  },
+  {
+    "title": "Gavarnie, Cauterets & Pyrenean Gateways",
+    "url": "/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/",
+    "parent": "French Basque Coast & the Pyrenees",
+    "type": "Local guide",
+    "summary": "Gavarnie and Cauterets open different valleys; Lourdes can be the rail gateway, but the mountain day begins only after the last bus or road connection is solved.",
+    "keywords": [
+      "Gavarnie, Cauterets & Pyrenean Gateways",
+      "French Basque Coast & the Pyrenees",
+      "Valley-road trail gate",
+      "mountain-valley-gate"
+    ]
+  },
+  {
+    "title": "Montpellier, Nîmes & the Camargue",
+    "url": "/france/languedoc-camargue/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Montpellier, Nîmes and Arles sit on a strong rail corridor, but the Pont du Gard, Camargue wetlands and coast require distinct buses, bicycles, tours or cars. Roman monuments, living cities and protected lagoons should not be collapsed into one hot-weather checklist.",
+    "keywords": [
+      "Montpellier, Nîmes & the Camargue",
+      "Occitanie and western Provence",
+      "mediterranean-island"
+    ]
+  },
+  {
+    "title": "Montpellier & Sète",
+    "url": "/france/languedoc-camargue/montpellier-sete/",
+    "parent": "Montpellier, Nîmes & the Camargue",
+    "type": "Local guide",
+    "summary": "Walk Montpellier from Écusson to one tram-served modern district, or take a direct train to Sète for canals, market and Mont Saint-Clair; a two-city day must stay selective.",
+    "keywords": [
+      "Montpellier & Sète",
+      "Montpellier, Nîmes & the Camargue",
+      "Tram-to-lagoon urban line",
+      "tram-lagoon-diptych"
+    ]
+  },
+  {
+    "title": "Nîmes & Pont du Gard",
+    "url": "/france/languedoc-camargue/nimes-pont-du-gard/",
+    "parent": "Montpellier, Nîmes & the Camargue",
+    "type": "Local guide",
+    "summary": "Use the Arena, Maison Carrée and Jardins de la Fontaine as one city line; the aqueduct is a separate rural site whose last bus and heat exposure determine the pairing.",
+    "keywords": [
+      "Nîmes & Pont du Gard",
+      "Montpellier, Nîmes & the Camargue",
+      "Roman-waterworks transit ruler",
+      "roman-aqueduct-ruler"
+    ]
+  },
+  {
+    "title": "Arles & the Camargue",
+    "url": "/france/languedoc-camargue/arles-camargue/",
+    "parent": "Montpellier, Nîmes & the Camargue",
+    "type": "Local guide",
+    "summary": "Arles’s monuments and Rhône streets deserve their own circuit; the Camargue is a living wetland and agricultural region, not a guaranteed flamingo-and-horse drive-by.",
+    "keywords": [
+      "Arles & the Camargue",
+      "Montpellier, Nîmes & the Camargue",
+      "Monument-to-wetland field log",
+      "roman-wetland-fieldlog"
+    ]
+  },
+  {
+    "title": "Avignon, Aix & the Luberon",
+    "url": "/france/provence-inland/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Avignon and Aix-en-Provence are independent city bases with different station and street logic. The Luberon’s villages, abbeys and seasonal landscapes require a bus, bicycle, tour or car; market calendars and summer roads shape what is possible.",
+    "keywords": [
+      "Avignon, Aix & the Luberon",
+      "Provence",
+      "mediterranean-island"
+    ]
+  },
+  {
+    "title": "Avignon Papal City & Rhône Edge",
+    "url": "/france/provence-inland/avignon-papal-city/",
+    "parent": "Avignon, Aix & the Luberon",
+    "type": "Local guide",
+    "summary": "Enter through the walls from Avignon Centre, anchor the day on the papal palace or museums, then finish at the Rhône without looping back through every commercial lane.",
+    "keywords": [
+      "Avignon Papal City & Rhône Edge",
+      "Avignon, Aix & the Luberon",
+      "Wall-gate papal itinerary",
+      "walled-city-itinerary"
+    ]
+  },
+  {
+    "title": "Aix Markets & Cézanne Ground",
+    "url": "/france/provence-inland/aix-markets-cezanne/",
+    "parent": "Avignon, Aix & the Luberon",
+    "type": "Local guide",
+    "summary": "Walk Cours Mirabeau, the old city and one market or museum, then add Atelier de Cézanne or another verified site without assuming every studio and quarry is open.",
+    "keywords": [
+      "Aix Markets & Cézanne Ground",
+      "Avignon, Aix & the Luberon",
+      "Fountain-market studio walk",
+      "market-studio-walk"
+    ]
+  },
+  {
+    "title": "Luberon Villages & Sénanque",
+    "url": "/france/provence-inland/luberon-villages-abbey/",
+    "parent": "Avignon, Aix & the Luberon",
+    "type": "Local guide",
+    "summary": "Gordes, Roussillon, Lourmarin and the abbey lie on different road branches. A useful day selects two compatible stops, one meal and a sober, heat-aware return.",
+    "keywords": [
+      "Luberon Villages & Sénanque",
+      "Avignon, Aix & the Luberon",
+      "Village-cluster heat map",
+      "hill-village-cluster"
+    ]
+  },
+  {
+    "title": "Marseille, Calanques & Cassis",
+    "url": "/france/marseille-calanques/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Marseille’s port city, the Calanques National Park and Cassis–La Ciotat coast meet geographically but operate differently. Urban transit, summer reservations, fire closures, boat conditions and trail difficulty must be checked before choosing the route. Decide between city, land and sea before breakfast; switching access modes late can strand the return at the wrong port or trailhead.",
+    "keywords": [
+      "Marseille, Calanques & Cassis",
+      "Bouches-du-Rhône, Provence",
+      "mediterranean-island"
+    ]
+  },
+  {
+    "title": "Old Port, Le Panier & Mucem",
+    "url": "/france/marseille-calanques/old-port-panier-mucem/",
+    "parent": "Marseille, Calanques & Cassis",
+    "type": "Local guide",
+    "summary": "Start at the Vieux-Port, climb once through Le Panier, cross Fort Saint-Jean into Mucem, then return along the water without repeating the same lanes.",
+    "keywords": [
+      "Old Port, Le Panier & Mucem",
+      "Marseille, Calanques & Cassis",
+      "Harbor-to-hill civic section",
+      "port-city-section"
+    ]
+  },
+  {
+    "title": "Calanques Access: Hike, Boat or Shore",
+    "url": "/france/marseille-calanques/calanques-access-choice/",
+    "parent": "Marseille, Calanques & Cassis",
+    "type": "Local guide",
+    "summary": "A Sugiton reservation, a signed Marseille-side trail, a Cassis approach and a licensed boat are different products; the safest useful day commits to one.",
+    "keywords": [
+      "Calanques Access: Hike, Boat or Shore",
+      "Marseille, Calanques & Cassis",
+      "Fire-wind-reservation gate",
+      "national-park-gate"
+    ]
+  },
+  {
+    "title": "Cassis, Cap Canaille & La Ciotat",
+    "url": "/france/marseille-calanques/cassis-la-ciotat/",
+    "parent": "Marseille, Calanques & Cassis",
+    "type": "Local guide",
+    "summary": "Cassis offers a compact port and Calanques gateway; La Ciotat offers a larger working waterfront and cinema history. Their stations sit away from the postcard centers.",
+    "keywords": [
+      "Cassis, Cap Canaille & La Ciotat",
+      "Marseille, Calanques & Cassis",
+      "Station-port-cliff transfer chart",
+      "two-port-cliff-chart"
+    ]
+  },
+  {
+    "title": "Nice & the Côte d’Azur",
+    "url": "/france/cote-dazur/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Nice is a complete city base; the eastern coast toward Èze, Monaco and Menton and the western coast toward Antibes and Cannes form two separate rail and bus directions. Cliff villages require an additional vertical transfer beyond the coastal station.",
+    "keywords": [
+      "Nice & the Côte d’Azur",
+      "Alpes-Maritimes",
+      "mediterranean-island"
+    ]
+  },
+  {
+    "title": "Nice Old Town, Promenade & Hills",
+    "url": "/france/cote-dazur/nice-old-town-hills/",
+    "parent": "Nice & the Côte d’Azur",
+    "type": "Local guide",
+    "summary": "Begin at the market and old town, use Castle Hill or Cimiez as the elevation choice, then return by tram or a different shore line.",
+    "keywords": [
+      "Nice Old Town, Promenade & Hills",
+      "Nice & the Côte d’Azur",
+      "Market-to-belvedere city ribbon",
+      "seafront-city-ribbon"
+    ]
+  },
+  {
+    "title": "Èze, Monaco & Menton",
+    "url": "/france/cote-dazur/eze-monaco-menton/",
+    "parent": "Nice & the Côte d’Azur",
+    "type": "Local guide",
+    "summary": "Èze Village sits high above Èze-sur-Mer; Monaco is a vertical city inside a small territory; Menton is a separate garden-and-old-town stop. One transfer problem should lead the day.",
+    "keywords": [
+      "Èze, Monaco & Menton",
+      "Nice & the Côte d’Azur",
+      "Vertical-coast transfer ladder",
+      "cliff-coast-ladder"
+    ]
+  },
+  {
+    "title": "Antibes & Cannes West Coast",
+    "url": "/france/cote-dazur/antibes-cannes-west-coast/",
+    "parent": "Nice & the Côte d’Azur",
+    "type": "Local guide",
+    "summary": "Use TER to link the towns, give Antibes walls and one collection or Cannes old quarter and film-city context the longer block, then return without a beach-and-island overload.",
+    "keywords": [
+      "Antibes & Cannes West Coast",
+      "Nice & the Côte d’Azur",
+      "Two-port rail promenade",
+      "west-riviera-diptych"
+    ]
+  },
+  {
+    "title": "Corsica: Ajaccio, Cap Corse & the South",
+    "url": "/france/corsica/",
+    "parent": "France",
+    "type": "Regional guide",
+    "summary": "Corsica’s airports, ferry ports, rail lines and mountain roads create several separate island systems. Ajaccio and the west coast, Bastia and Cap Corse, and Bonifacio–Porto-Vecchio in the south each deserve a base. Driving time, parking and weather outweigh straight-line distance.",
+    "keywords": [
+      "Corsica: Ajaccio, Cap Corse & the South",
+      "Corsica",
+      "mediterranean-island"
+    ]
+  },
+  {
+    "title": "Ajaccio & the West Coast",
+    "url": "/france/corsica/ajaccio-west-coast/",
+    "parent": "Corsica: Ajaccio, Cap Corse & the South",
+    "type": "Local guide",
+    "summary": "Ajaccio’s center, market and Napoleonic context form one city route; the red-cliff west coast is a separate long road or sea day with limited shortcuts.",
+    "keywords": [
+      "Ajaccio & the West Coast",
+      "Corsica: Ajaccio, Cap Corse & the South",
+      "Gulf-to-red-cliff route sheet",
+      "west-coast-route-sheet"
+    ]
+  },
+  {
+    "title": "Bastia & Cap Corse",
+    "url": "/france/corsica/bastia-cap-corse/",
+    "parent": "Corsica: Ajaccio, Cap Corse & the South",
+    "type": "Local guide",
+    "summary": "Bastia provides ferry, rail and urban context; Cap Corse is a narrow, slow peninsula whose villages and headlands cannot be collected in a quick loop.",
+    "keywords": [
+      "Bastia & Cap Corse",
+      "Corsica: Ajaccio, Cap Corse & the South",
+      "Port-to-peninsula roadbook",
+      "peninsula-roadbook"
+    ]
+  },
+  {
+    "title": "Bonifacio & Porto-Vecchio South",
+    "url": "/france/corsica/bonifacio-porto-vecchio/",
+    "parent": "Corsica: Ajaccio, Cap Corse & the South",
+    "type": "Local guide",
+    "summary": "Bonifacio’s upper town and marina form one vertical visit; Porto-Vecchio and its beaches require a separate road or bus system. One should be the base, the other an excursion.",
+    "keywords": [
+      "Bonifacio & Porto-Vecchio South",
+      "Corsica: Ajaccio, Cap Corse & the South",
+      "Cliff-harbor-beach triangle",
+      "southern-coast-triangle"
+    ]
   }
 ]

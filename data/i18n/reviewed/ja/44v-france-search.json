@@ -1,0 +1,34 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "20の地域別ハブと60のテーマ別ガイドから、都市、宮殿、ブドウ畑、海岸、山岳地帯、コルシカ島への旅を計画しましょう。",
+    "French travel": "フランス旅行",
+    "France rail": "フランス鉄道",
+    "Île-de-France": "Île-de-France（イル＝ド＝フランス）",
+    "capital-north": "首都・北部",
+    "Île-de-France and Seine valley": "Île-de-France（イル＝ド＝フランス）とセーヌ川流域",
+    "Hauts-de-France": "Hauts-de-France（オー＝ド＝フランス）",
+    "Normandy": "ノルマンディー",
+    "Brittany": "ブルターニュ",
+    "Centre-Val de Loire": "Centre-Val de Loire（サントル＝ヴァル・ド・ロワール）",
+    "valleys-east": "渓谷・東部",
+    "Grand Est": "Grand Est（グラン・テスト）",
+    "Alsace, Grand Est": "アルザス、Grand Est（グラン・テスト）",
+    "Bourgogne-Franche-Comté": "Bourgogne-Franche-Comté（ブルゴーニュ＝フランシュ＝コンテ）",
+    "Auvergne-Rhône-Alpes": "Auvergne-Rhône-Alpes（オーヴェルニュ＝ローヌ＝アルプ）",
+    "Gironde, Nouvelle-Aquitaine": "ジロンド県、Nouvelle-Aquitaine（ヌーヴェル＝アキテーヌ）",
+    "atlantic-southwest": "大西洋岸・南西部",
+    "Dordogne, Nouvelle-Aquitaine": "ドルドーニュ、Nouvelle-Aquitaine（ヌーヴェル＝アキテーヌ）",
+    "Occitanie": "Occitanie（オクシタニー）",
+    "Pyrénées-Atlantiques and Hautes-Pyrénées": "Pyrénées-Atlantiques（ピレネー＝アトランティック県）とHautes-Pyrénées（オート＝ピレネー県）",
+    "Occitanie and western Provence": "Occitanie（オクシタニー）とプロヴァンス西部",
+    "mediterranean-island": "地中海沿岸・島々",
+    "Bouches-du-Rhône, Provence": "ブーシュ＝デュ＝ローヌ県、プロヴァンス",
+    "Alpes-Maritimes": "Alpes-Maritimes（アルプ＝マリティーム県）",
+    "Corsica": "コルシカ"
+  }
+}

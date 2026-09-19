@@ -1,0 +1,34 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "透過 20 個完整區域指南與 60 篇專題路線規劃法國行程，涵蓋城市、宮殿、葡萄園、海岸、山區與科西嘉島。",
+    "French travel": "法國旅遊",
+    "France rail": "法國鐵路",
+    "Île-de-France": "法蘭西島大區",
+    "capital-north": "首都與北部",
+    "Île-de-France and Seine valley": "法蘭西島大區與塞納河谷",
+    "Hauts-de-France": "上法蘭西大區",
+    "Normandy": "諾曼第",
+    "Brittany": "布列塔尼",
+    "Centre-Val de Loire": "中央-羅亞爾河谷大區",
+    "valleys-east": "河谷與東部",
+    "Grand Est": "大東部大區",
+    "Alsace, Grand Est": "阿爾薩斯，大東部大區",
+    "Bourgogne-Franche-Comté": "勃艮第-法蘭琪-康堤大區",
+    "Auvergne-Rhône-Alpes": "奧弗涅-隆河-阿爾卑斯大區",
+    "Gironde, Nouvelle-Aquitaine": "吉倫特省，新阿基坦大區",
+    "atlantic-southwest": "大西洋沿岸與西南部",
+    "Dordogne, Nouvelle-Aquitaine": "多爾多涅省，新阿基坦大區",
+    "Occitanie": "奧克西塔尼",
+    "Pyrénées-Atlantiques and Hautes-Pyrénées": "大西洋庇里牛斯省與上庇里牛斯省",
+    "Occitanie and western Provence": "奧克西塔尼與普羅旺斯西部",
+    "mediterranean-island": "地中海沿岸與島嶼",
+    "Bouches-du-Rhône, Provence": "羅訥河口省，普羅旺斯",
+    "Alpes-Maritimes": "濱海阿爾卑斯省",
+    "Corsica": "科西嘉島"
+  }
+}

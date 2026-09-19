@@ -7,6 +7,7 @@ import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 import { canadaClusters, canadaGuides } from '../data/canada-guides.mjs';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
+import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { usaRoutes } from '../data/usa-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -49,6 +50,9 @@ const allRoutes = [
   ['switzerland', '/switzerland/'],
   ...switzerlandClusters.map((cluster) => [`ch-${cluster.slug}`, `/switzerland/${cluster.slug}/`]),
   ...switzerlandGuides.map((guide) => [`ch-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['france', '/france/'],
+  ...franceClusters.map((cluster) => [`fr-${cluster.slug}`, `/france/${cluster.slug}/`]),
+  ...franceGuides.map((guide) => [`fr-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -352,6 +356,11 @@ const allRoutes = [
     [`${locale}-switzerland`, `/${locale}/switzerland/`],
     ...switzerlandClusters.map((cluster) => [`${locale}-ch-${cluster.slug}`, `/${locale}/switzerland/${cluster.slug}/`]),
     ...switzerlandClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-ch-${cluster.slug}-${guide.slug}`, `/${locale}/switzerland/${cluster.slug}/${guide.slug}/`]))
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-france`, `/${locale}/france/`],
+    ...franceClusters.map((cluster) => [`${locale}-fr-${cluster.slug}`, `/${locale}/france/${cluster.slug}/`]),
+    ...franceClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-fr-${cluster.slug}-${guide.slug}`, `/${locale}/france/${cluster.slug}/${guide.slug}/`]))
   ])
 ];
 
@@ -953,6 +962,48 @@ if (!skipInteractions) {
     localPath: switzerlandLocalLocation.pathname,
     ...switzerlandDetails
   };
+
+  await navigate(interactionClient, `${baseUrl}/france/`);
+  const franceCountryCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.fr-country-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const franceHubLocation = await waitForLocation(interactionClient, '/france/paris/');
+  await navigate(interactionClient, `${baseUrl}/france/paris/`);
+  const franceHubCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.fr-guide-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const franceLocalLocation = await waitForLocation(interactionClient, '/france/paris/seine-islands-latin-quarter/');
+  await navigate(interactionClient, `${baseUrl}/france/paris/seine-islands-latin-quarter/`);
+  const franceDetails = await evaluate(interactionClient, `(async () => {
+    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+    const active=document.querySelector('#layout-sidebar .sidebar-link.active');
+    const nav={
+      europeOpen:Boolean(document.querySelector('[data-sidebar-id="europe"]')?.open),
+      countryOpen:Boolean(document.querySelector('[data-sidebar-id="france"]')?.open),
+      chapterOpen:Boolean(active?.closest('details')?.open),
+      openHubCount:document.querySelectorAll('details[name="france-chapters"][open]').length,
+      active:active?.textContent.trim() || '',
+      activeHref:active?.getAttribute('href') || ''
+    };
+    const languageLinks=[...document.querySelectorAll('footer [data-language-option]')].map(a=>({locale:a.dataset.languageOption,href:a.getAttribute('href')}));
+    document.querySelector('.faq-list summary')?.click();
+    const faqOpen=Boolean(document.querySelector('.faq-list details[open]'));
+    document.querySelector('[data-search-toggle]')?.click();
+    const input=document.querySelector('#site-search');
+    input.value='Paris'; input.dispatchEvent(new Event('input',{bubbles:true}));
+    for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await wait(100);
+    const searchLinks=[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'));
+    return {...nav,languageLinks,faqOpen,searchLinks};
+  })()`);
+  interactions.france = {
+    countryCards: franceCountryCards,
+    hubPath: franceHubLocation.pathname,
+    hubCards: franceHubCards,
+    localPath: franceLocalLocation.pathname,
+    ...franceDetails
+  };
 }
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
@@ -1038,6 +1089,19 @@ const interactionFailed = !skipInteractions && (
   !interactions.switzerland?.faqOpen ||
   !interactions.switzerland?.searchLinks?.includes('/switzerland/zurich-lake/') ||
   !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.switzerland?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/switzerland/zurich-lake/old-town-lindenhof/')) ||
+  interactions.france?.countryCards !== 20 ||
+  interactions.france?.hubPath !== '/france/paris/' ||
+  interactions.france?.hubCards !== 3 ||
+  interactions.france?.localPath !== '/france/paris/seine-islands-latin-quarter/' ||
+  !interactions.france?.europeOpen ||
+  !interactions.france?.countryOpen ||
+  !interactions.france?.chapterOpen ||
+  interactions.france?.openHubCount !== 1 ||
+  interactions.france?.active !== 'Seine Islands & the Latin Quarter' ||
+  interactions.france?.activeHref !== '/france/paris/seine-islands-latin-quarter/' ||
+  !interactions.france?.faqOpen ||
+  !interactions.france?.searchLinks?.includes('/france/paris/') ||
+  !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.france?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/france/paris/seine-islands-latin-quarter/')) ||
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||

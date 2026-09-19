@@ -5,6 +5,7 @@ import { guides as chinaExpansionGuides } from '../data/china-expansion-guides.m
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
+import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
@@ -19,6 +20,8 @@ const vietnamByRoute = new Map(vietnamGuides.map((guide) => [guide.url, guide]))
 const vietnamHubRoutes = new Set(vietnamClusters.map((cluster) => `/vietnam/${cluster.slug}/`));
 const australiaByRoute = new Map(australiaGuides.map((guide) => [guide.url, guide]));
 const australiaHubRoutes = new Set(australiaClusters.map((cluster) => `/australia/${cluster.slug}/`));
+const franceByRoute = new Map(franceGuides.map((guide) => [guide.url, guide]));
+const franceHubRoutes = new Set(franceClusters.map((cluster) => `/france/${cluster.slug}/`));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -249,6 +252,22 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes(`data-au-instrument="${australiaGuide.instrument}"`)) problems.push(`${relativePath}: missing ${australiaGuide.instrument} Australia instrument marker`);
     if ((html.match(/class="au-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Australia child guide does not contain four route stages`);
     if ((html.match(/class="au-check"/g) || []).length !== 3) problems.push(`${relativePath}: Australia child guide does not contain three weak-point checks`);
+  }
+  if (baseRoute.startsWith('/france/') && !html.includes('/css/france.css?v=20260919-1')) problems.push(`${relativePath}: missing France correspondence-atlas stylesheet`);
+  if (baseRoute.startsWith('/france/') && baseRoute !== '/france/' && !/<body\b[^>]*\bdata-parent-page="france"/i.test(html)) problems.push(`${relativePath}: France primary navigation parent is not set`);
+  if (baseRoute === '/france/' && (html.match(/class="fr-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: France country hub does not contain twenty linked regional cards`);
+  if (franceHubRoutes.has(baseRoute)) {
+    if ((html.match(/class="fr-guide-card"/g) || []).length !== 3) problems.push(`${relativePath}: France regional hub does not contain three linked route cards`);
+    if (!/data-fr-family="[^"]+"/.test(html)) problems.push(`${relativePath}: France regional hub is missing its family marker`);
+  }
+  const franceGuide = franceByRoute.get(baseRoute);
+  if (franceGuide) {
+    if (!html.includes('/css/france-field.css?v=20260919-1')) problems.push(`${relativePath}: missing France route-file stylesheet`);
+    if (!html.includes(`data-fr-family="${franceGuide.family}"`)) problems.push(`${relativePath}: missing ${franceGuide.family} France family marker`);
+    if (!html.includes(`data-fr-instrument="${franceGuide.instrument}"`)) problems.push(`${relativePath}: missing ${franceGuide.instrument} France instrument marker`);
+    if (!html.includes('class="fr-purpose"')) problems.push(`${relativePath}: France route is missing its independent reader purpose`);
+    if (!html.includes('class="fr-live-check"')) problems.push(`${relativePath}: France route is missing near-claim official sources`);
+    if ((html.match(/<li><span>0[1-4]<\/span><small>/g) || []).length !== 4) problems.push(`${relativePath}: France route does not contain four operating stages`);
   }
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);

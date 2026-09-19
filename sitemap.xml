@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tripdistill.com/</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tripdistill.com/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tripdistill.com/japan/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/japan/hokkaido/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/japan/hokkaido/sapporo/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -118,7 +118,7 @@
   <url><loc>https://tripdistill.com/china/beijing/798-chaoyang/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/china/beijing/summer-palace/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/china/beijing/mutianyu-great-wall/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/about/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tripdistill.com/about/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tripdistill.com/contact/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/privacy-policy/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/terms-of-use/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -669,7 +669,88 @@
   <url><loc>https://tripdistill.com/switzerland/st-gallen-appenzell/st-gallen-abbey/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/switzerland/st-gallen-appenzell/appenzell-village/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/switzerland/st-gallen-appenzell/ebenalp-seealpsee/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tripdistill.com/france/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tripdistill.com/france/paris/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/paris-region-day-trips/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/lille-french-flanders/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/normandy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/brittany-coasts/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/loire-valley/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/burgundy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/lyon-rhone/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/french-alps/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/bordeaux-gironde/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/dordogne-perigord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/languedoc-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/provence-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/marseille-calanques/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/corsica/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/paris/eiffel-invalides-montparnasse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/paris-region-day-trips/versailles-palace-estate/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/paris-region-day-trips/fontainebleau-palace-forest/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/paris-region-day-trips/giverny-monet-vernon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/lille-french-flanders/old-lille-roubaix/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/lille-french-flanders/arras-vimy-remembrance/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/lille-french-flanders/opal-coast-headlands/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/normandy/rouen-seine-cathedral/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/normandy/bayeux-dday-landscape/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/normandy/mont-saint-michel-bay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/brittany-coasts/saint-malo-dinan/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/brittany-coasts/morbihan-carnac/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/brittany-coasts/quimper-crozon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/loire-valley/blois-chambord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/loire-valley/amboise-chenonceau/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/loire-valley/tours-villandry-azay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/colmar-canals-museums/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/lyon-rhone/vieux-lyon-fourviere/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/lyon-rhone/presquile-croix-rousse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/lyon-rhone/beaujolais-perouges/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/french-alps/annecy-lake-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/french-alps/chamonix-mountain-systems/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/french-alps/grenoble-bastille-chartreuse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/bordeaux-gironde/bordeaux-river-wine-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/bordeaux-gironde/saint-emilion-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/bordeaux-gironde/arcachon-dune-pilat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/languedoc-camargue/montpellier-sete/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/languedoc-camargue/nimes-pont-du-gard/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/languedoc-camargue/arles-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/provence-inland/avignon-papal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/provence-inland/aix-markets-cezanne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/provence-inland/luberon-villages-abbey/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/corsica/bastia-cap-corse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tripdistill.com/zh/japan/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/zh/japan/hokkaido/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/zh/japan/hokkaido/sapporo/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -787,7 +868,7 @@
   <url><loc>https://tripdistill.com/zh/china/beijing/798-chaoyang/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/china/beijing/summer-palace/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/china/beijing/mutianyu-great-wall/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/about/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tripdistill.com/zh/about/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tripdistill.com/zh/contact/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/zh/privacy-policy/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/zh/terms-of-use/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -1338,7 +1419,88 @@
   <url><loc>https://tripdistill.com/zh/switzerland/st-gallen-appenzell/st-gallen-abbey/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/switzerland/st-gallen-appenzell/appenzell-village/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/switzerland/st-gallen-appenzell/ebenalp-seealpsee/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris-region-day-trips/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lille-french-flanders/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/normandy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/brittany-coasts/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/loire-valley/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/burgundy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lyon-rhone/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/french-alps/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/bordeaux-gironde/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/languedoc-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/provence-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/marseille-calanques/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/corsica/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris/eiffel-invalides-montparnasse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris-region-day-trips/versailles-palace-estate/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris-region-day-trips/fontainebleau-palace-forest/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/paris-region-day-trips/giverny-monet-vernon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lille-french-flanders/old-lille-roubaix/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lille-french-flanders/arras-vimy-remembrance/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lille-french-flanders/opal-coast-headlands/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/normandy/rouen-seine-cathedral/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/normandy/bayeux-dday-landscape/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/normandy/mont-saint-michel-bay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/brittany-coasts/saint-malo-dinan/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/brittany-coasts/morbihan-carnac/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/brittany-coasts/quimper-crozon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/loire-valley/blois-chambord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/loire-valley/amboise-chenonceau/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/loire-valley/tours-villandry-azay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/colmar-canals-museums/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lyon-rhone/vieux-lyon-fourviere/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lyon-rhone/presquile-croix-rousse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/lyon-rhone/beaujolais-perouges/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/french-alps/annecy-lake-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/french-alps/chamonix-mountain-systems/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/french-alps/grenoble-bastille-chartreuse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/bordeaux-gironde/bordeaux-river-wine-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/bordeaux-gironde/saint-emilion-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/bordeaux-gironde/arcachon-dune-pilat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/languedoc-camargue/montpellier-sete/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/languedoc-camargue/nimes-pont-du-gard/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/languedoc-camargue/arles-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/provence-inland/avignon-papal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/provence-inland/aix-markets-cezanne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/provence-inland/luberon-villages-abbey/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/corsica/bastia-cap-corse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tripdistill.com/ja/japan/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/ja/japan/hokkaido/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/ja/japan/hokkaido/sapporo/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -1456,7 +1618,7 @@
   <url><loc>https://tripdistill.com/ja/china/beijing/798-chaoyang/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/china/beijing/summer-palace/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/china/beijing/mutianyu-great-wall/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/about/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tripdistill.com/ja/about/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tripdistill.com/ja/contact/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/ja/privacy-policy/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/ja/terms-of-use/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -2007,7 +2169,88 @@
   <url><loc>https://tripdistill.com/ja/switzerland/st-gallen-appenzell/st-gallen-abbey/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/switzerland/st-gallen-appenzell/appenzell-village/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/switzerland/st-gallen-appenzell/ebenalp-seealpsee/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris-region-day-trips/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lille-french-flanders/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/normandy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/brittany-coasts/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/loire-valley/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/burgundy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lyon-rhone/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/french-alps/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/bordeaux-gironde/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/languedoc-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/provence-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/marseille-calanques/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/corsica/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris/eiffel-invalides-montparnasse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris-region-day-trips/versailles-palace-estate/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris-region-day-trips/fontainebleau-palace-forest/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/paris-region-day-trips/giverny-monet-vernon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lille-french-flanders/old-lille-roubaix/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lille-french-flanders/arras-vimy-remembrance/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lille-french-flanders/opal-coast-headlands/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/normandy/rouen-seine-cathedral/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/normandy/bayeux-dday-landscape/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/normandy/mont-saint-michel-bay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/brittany-coasts/saint-malo-dinan/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/brittany-coasts/morbihan-carnac/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/brittany-coasts/quimper-crozon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/loire-valley/blois-chambord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/loire-valley/amboise-chenonceau/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/loire-valley/tours-villandry-azay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/colmar-canals-museums/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lyon-rhone/vieux-lyon-fourviere/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lyon-rhone/presquile-croix-rousse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/lyon-rhone/beaujolais-perouges/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/french-alps/annecy-lake-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/french-alps/chamonix-mountain-systems/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/french-alps/grenoble-bastille-chartreuse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/bordeaux-gironde/bordeaux-river-wine-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/bordeaux-gironde/saint-emilion-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/bordeaux-gironde/arcachon-dune-pilat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/languedoc-camargue/montpellier-sete/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/languedoc-camargue/nimes-pont-du-gard/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/languedoc-camargue/arles-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/provence-inland/avignon-papal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/provence-inland/aix-markets-cezanne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/provence-inland/luberon-villages-abbey/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/corsica/bastia-cap-corse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tripdistill.com/ko/japan/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/ko/japan/hokkaido/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/ko/japan/hokkaido/sapporo/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2125,7 +2368,7 @@
   <url><loc>https://tripdistill.com/ko/china/beijing/798-chaoyang/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/china/beijing/summer-palace/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/china/beijing/mutianyu-great-wall/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/about/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tripdistill.com/ko/about/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tripdistill.com/ko/contact/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/ko/privacy-policy/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/ko/terms-of-use/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -2676,7 +2919,88 @@
   <url><loc>https://tripdistill.com/ko/switzerland/st-gallen-appenzell/st-gallen-abbey/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/switzerland/st-gallen-appenzell/appenzell-village/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/switzerland/st-gallen-appenzell/ebenalp-seealpsee/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/</loc><lastmod>2026-09-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris-region-day-trips/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lille-french-flanders/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/normandy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/brittany-coasts/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/loire-valley/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/burgundy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lyon-rhone/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/french-alps/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/bordeaux-gironde/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/languedoc-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/provence-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/marseille-calanques/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/corsica/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris/eiffel-invalides-montparnasse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris-region-day-trips/versailles-palace-estate/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris-region-day-trips/fontainebleau-palace-forest/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/paris-region-day-trips/giverny-monet-vernon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lille-french-flanders/old-lille-roubaix/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lille-french-flanders/arras-vimy-remembrance/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lille-french-flanders/opal-coast-headlands/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/normandy/rouen-seine-cathedral/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/normandy/bayeux-dday-landscape/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/normandy/mont-saint-michel-bay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/brittany-coasts/saint-malo-dinan/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/brittany-coasts/morbihan-carnac/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/brittany-coasts/quimper-crozon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/loire-valley/blois-chambord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/loire-valley/amboise-chenonceau/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/loire-valley/tours-villandry-azay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/colmar-canals-museums/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lyon-rhone/vieux-lyon-fourviere/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lyon-rhone/presquile-croix-rousse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/lyon-rhone/beaujolais-perouges/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/french-alps/annecy-lake-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/french-alps/chamonix-mountain-systems/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/french-alps/grenoble-bastille-chartreuse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/bordeaux-gironde/bordeaux-river-wine-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/bordeaux-gironde/saint-emilion-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/bordeaux-gironde/arcachon-dune-pilat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/languedoc-camargue/montpellier-sete/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/languedoc-camargue/nimes-pont-du-gard/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/languedoc-camargue/arles-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/provence-inland/avignon-papal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/provence-inland/aix-markets-cezanne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/provence-inland/luberon-villages-abbey/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/corsica/bastia-cap-corse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tripdistill.com/th/japan/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/th/japan/hokkaido/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/th/japan/hokkaido/sapporo/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2794,7 +3118,7 @@
   <url><loc>https://tripdistill.com/th/china/beijing/798-chaoyang/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/china/beijing/summer-palace/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/china/beijing/mutianyu-great-wall/</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/about/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tripdistill.com/th/about/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tripdistill.com/th/contact/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/th/privacy-policy/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tripdistill.com/th/terms-of-use/</loc><lastmod>2026-08-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -3345,4 +3669,85 @@
   <url><loc>https://tripdistill.com/th/switzerland/st-gallen-appenzell/st-gallen-abbey/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/switzerland/st-gallen-appenzell/appenzell-village/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/switzerland/st-gallen-appenzell/ebenalp-seealpsee/</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris-region-day-trips/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lille-french-flanders/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/normandy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/brittany-coasts/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/loire-valley/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/burgundy/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lyon-rhone/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/french-alps/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/bordeaux-gironde/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/dordogne-perigord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/languedoc-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/provence-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/marseille-calanques/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/corsica/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris/eiffel-invalides-montparnasse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris-region-day-trips/versailles-palace-estate/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris-region-day-trips/fontainebleau-palace-forest/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/paris-region-day-trips/giverny-monet-vernon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lille-french-flanders/old-lille-roubaix/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lille-french-flanders/arras-vimy-remembrance/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lille-french-flanders/opal-coast-headlands/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/normandy/rouen-seine-cathedral/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/normandy/bayeux-dday-landscape/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/normandy/mont-saint-michel-bay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/brittany-coasts/saint-malo-dinan/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/brittany-coasts/morbihan-carnac/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/brittany-coasts/quimper-crozon/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/loire-valley/blois-chambord/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/loire-valley/amboise-chenonceau/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/loire-valley/tours-villandry-azay/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/colmar-canals-museums/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lyon-rhone/vieux-lyon-fourviere/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lyon-rhone/presquile-croix-rousse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/lyon-rhone/beaujolais-perouges/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/french-alps/annecy-lake-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/french-alps/chamonix-mountain-systems/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/french-alps/grenoble-bastille-chartreuse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/bordeaux-gironde/bordeaux-river-wine-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/bordeaux-gironde/saint-emilion-vineyards/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/bordeaux-gironde/arcachon-dune-pilat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/languedoc-camargue/montpellier-sete/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/languedoc-camargue/nimes-pont-du-gard/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/languedoc-camargue/arles-camargue/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/provence-inland/avignon-papal-city/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/provence-inland/aix-markets-cezanne/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/provence-inland/luberon-villages-abbey/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/corsica/bastia-cap-corse/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
