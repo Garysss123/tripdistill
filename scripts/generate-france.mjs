@@ -293,6 +293,10 @@ function updateHome() {
   html = html.includes(creditStart) ? replaceMarked(html, creditStart, creditEnd, credit) : insertAfterMarker(html, '<!-- SWITZERLAND_HOME_CREDIT_END -->', credit);
   html = html.replace('10 countries live', '11 countries live');
   html = html.replace('Switzerland adds 16 complete regional hubs and 48 focused guides across rail cities, lake corridors, valleys and mountain systems.', 'France adds 20 complete regional hubs and 60 focused guides across cities, châteaux, vineyards, coasts, mountains and Corsica.');
+  html = html.replace(/<title>[^<]*<\/title>/, '<title>TripDistill — Practical Travel Guides Across 11 Countries</title>');
+  html = html.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Plan France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">');
+  html = html.replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="TripDistill — Practical travel across Europe, North America, Oceania and Asia">');
+  html = html.replace('United States, Australia and Asia travel, without the noise', 'Europe, North America, Oceania and Asia travel, without the noise');
   html = html.replace('Explore Switzerland, Canada, the United States, Australia and Asia', 'Explore France, Switzerland, Canada, the United States, Australia and Asia');
   html = html.replace('<a class="text-link" href="/australia/">Open the newest country guide →</a>', '<a class="text-link" href="/france/">Open the newest country guide →</a>');
   html = html.replace(/(?:France,\s*)*Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live\./, 'France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live.');
