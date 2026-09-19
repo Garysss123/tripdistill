@@ -18,9 +18,20 @@ const englishRoutes = [
 const pageRoutes = locales.flatMap(([language, prefix]) => englishRoutes.map((route) => ({ language, prefix, route, localized: `${prefix}${route}` })));
 const failures = [];
 
-async function request(pathname, label = pathname) {
+async function request(pathname, label = pathname, allowComponentCanonical = false) {
   try {
-    const response = await fetch(base + pathname, { redirect: 'manual', signal: AbortSignal.timeout(20000) });
+    let response = await fetch(base + pathname, { redirect: 'manual', signal: AbortSignal.timeout(20000) });
+    // Cloudflare Pages canonicalizes shared HTML fragments to extensionless URLs.
+    // Content routes remain strict: only this exact same-origin component redirect
+    // is accepted, matching the established production smoke behavior.
+    if (allowComponentCanonical && [301, 308].includes(response.status)) {
+      const origin = new URL(base).origin;
+      const target = new URL(response.headers.get('location') || '/', origin);
+      const expected = new URL(pathname.replace(/\.html$/, ''), origin);
+      if (target.href === expected.href) {
+        response = await fetch(target, { redirect: 'manual', signal: AbortSignal.timeout(20000) });
+      }
+    }
     if (response.status !== 200) failures.push(`${label}: HTTP ${response.status}`);
     if (response.status >= 300 && response.status < 400) failures.push(`${label}: unexpected redirect to ${response.headers.get('location') || '(missing location)'}`);
     return { response, body: await response.text() };
@@ -62,10 +73,10 @@ for (const [, prefix] of locales) {
     }
   }
   const sidebarPath = `${prefix}/components/sidebar.html`;
-  const { body: sidebar } = await request(sidebarPath);
+  const { body: sidebar } = await request(sidebarPath, sidebarPath, true);
   if (sidebar && (!sidebar.includes('data-sidebar-id="europe"') || !sidebar.includes('data-sidebar-id="switzerland"'))) failures.push(`${sidebarPath}: Europe/Switzerland navigation missing`);
   const headerPath = `${prefix}/components/header.html`;
-  const { body: header } = await request(headerPath);
+  const { body: header } = await request(headerPath, headerPath, true);
   if (header && !header.includes('data-language-option="en"')) failures.push(`${headerPath}: English language option missing`);
 }
 
