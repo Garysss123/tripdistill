@@ -1,0 +1,21 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.": "완성된 지역 허브 20곳과 도시·성·해안·산악 지대·섬·북아일랜드를 다루는 주제별 가이드 60편을 통해 영국 여행을 계획하세요.",
+    "UK travel": "영국 여행",
+    "Britain": "영국",
+    "England": "잉글랜드",
+    "Scotland": "스코틀랜드",
+    "Wales": "웨일스",
+    "Northern Ireland": "북아일랜드",
+    "england-south": "잉글랜드 남부",
+    "england-midlands-north": "잉글랜드 중부·북부",
+    "scotland": "스코틀랜드",
+    "wales": "웨일스",
+    "northern-ireland": "북아일랜드"
+  }
+}

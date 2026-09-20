@@ -13,6 +13,7 @@ const publicDirectories = [
   'australia',
   'canada',
   'france',
+  'united-kingdom',
   'switzerland',
   'usa',
   'china',

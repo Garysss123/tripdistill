@@ -10816,5 +10816,1041 @@
       "Cliff-harbor-beach triangle",
       "southern-coast-triangle"
     ]
+  },
+  {
+    "title": "United Kingdom Travel Guide",
+    "url": "/united-kingdom/",
+    "parent": "Europe",
+    "type": "Country",
+    "summary": "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.",
+    "keywords": [
+      "United Kingdom",
+      "UK travel",
+      "Britain",
+      "England",
+      "Scotland",
+      "Wales",
+      "Northern Ireland"
+    ]
+  },
+  {
+    "title": "London",
+    "url": "/united-kingdom/london/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "London is not one compact centre but a chain of walkable districts joined by rail, Underground, bus and river services. A useful plan fixes one timed interior, reads the correct station exit and keeps the rest of the day on a coherent street or river line instead of repeatedly crossing the city.",
+    "keywords": [
+      "London",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Westminster & the South Bank",
+    "url": "/united-kingdom/london/westminster-south-bank/",
+    "parent": "London",
+    "type": "Local guide",
+    "summary": "Start at the booked Westminster door, read Parliament Square and the abbey precinct, then use one bridge to finish along the South Bank with a direct return from Waterloo or Blackfriars.",
+    "keywords": [
+      "Westminster & the South Bank",
+      "London",
+      "Ceremony-and-crossing clock",
+      "parliament-river-fold"
+    ]
+  },
+  {
+    "title": "Bloomsbury, the British Museum & Covent Garden",
+    "url": "/united-kingdom/london/bloomsbury-covent-garden/",
+    "parent": "London",
+    "type": "Local guide",
+    "summary": "Enter the museum with a bounded collection plan, reset in Bloomsbury, and move south through a single street sequence toward Seven Dials and Covent Garden.",
+    "keywords": [
+      "Bloomsbury, the British Museum & Covent Garden",
+      "London",
+      "Collection-attention register",
+      "museum-quarter-ledger"
+    ]
+  },
+  {
+    "title": "Tower of London, the City & Greenwich",
+    "url": "/united-kingdom/london/tower-city-greenwich/",
+    "parent": "London",
+    "type": "Local guide",
+    "summary": "Start with the controlled fortress or a City walk, move east by rail or river only after the anchor, and finish around Greenwich’s compact maritime sites with the return already selected.",
+    "keywords": [
+      "Tower of London, the City & Greenwich",
+      "London",
+      "Fortress-to-meridian tide board",
+      "east-thames-section"
+    ]
+  },
+  {
+    "title": "Oxford, Blenheim & the Cotswolds",
+    "url": "/united-kingdom/oxford-cotswolds/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Oxford is a rail-connected walking city, while Blenheim Palace and the Cotswold towns depend on buses, tours, bicycles or a car. A strong base plan distinguishes college opening windows from rural timetables and never treats “the Cotswolds” as one station or one attraction.",
+    "keywords": [
+      "Oxford, Blenheim & the Cotswolds",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Oxford Colleges, Libraries & Museums",
+    "url": "/united-kingdom/oxford-cotswolds/oxford-colleges-museums/",
+    "parent": "Oxford, Blenheim & the Cotswolds",
+    "type": "Local guide",
+    "summary": "Start from the railway station or Gloucester Green, confirm the booked or open college, connect Bodleian and Radcliffe Square, then finish with one museum or river edge.",
+    "keywords": [
+      "Oxford Colleges, Libraries & Museums",
+      "Oxford, Blenheim & the Cotswolds",
+      "College-opening matrix",
+      "quadrangle-threshold-plan"
+    ]
+  },
+  {
+    "title": "Blenheim Palace & Woodstock",
+    "url": "/united-kingdom/oxford-cotswolds/blenheim-woodstock/",
+    "parent": "Oxford, Blenheim & the Cotswolds",
+    "type": "Local guide",
+    "summary": "Leave Oxford on a verified service, enter through the correct Blenheim gate, choose palace depth or landscape distance, and protect the return from Woodstock before evening frequency changes.",
+    "keywords": [
+      "Blenheim Palace & Woodstock",
+      "Oxford, Blenheim & the Cotswolds",
+      "Palace-gate connection sheet",
+      "estate-arrival-section"
+    ]
+  },
+  {
+    "title": "Cotswold Towns Without a Car",
+    "url": "/united-kingdom/oxford-cotswolds/cotswold-towns-without-car/",
+    "parent": "Oxford, Blenheim & the Cotswolds",
+    "type": "Local guide",
+    "summary": "Select a rail gateway and one or two connected towns, keep the route inside the published bus pattern, and treat footpaths or a tour as separate products rather than invisible links.",
+    "keywords": [
+      "Cotswold Towns Without a Car",
+      "Oxford, Blenheim & the Cotswolds",
+      "Village-return dependency chart",
+      "bus-window-gazetteer"
+    ]
+  },
+  {
+    "title": "Cambridge & East Anglia",
+    "url": "/united-kingdom/cambridge-east-anglia/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Cambridge, Ely and Norwich sit on useful rail lines, but their stations, historic cores and surrounding fen or coast landscapes operate at different scales. A good plan distinguishes a walkable academic city from a cathedral stop and a wider East Anglian excursion with its own onward connection.",
+    "keywords": [
+      "Cambridge & East Anglia",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Cambridge Colleges & the Backs",
+    "url": "/united-kingdom/cambridge-east-anglia/cambridge-colleges-backs/",
+    "parent": "Cambridge & East Anglia",
+    "type": "Local guide",
+    "summary": "Walk from station to the historic core, meet one verified college gate, continue along public streets and the Backs, and decide separately whether punting or a museum deserves the final block.",
+    "keywords": [
+      "Cambridge Colleges & the Backs",
+      "Cambridge & East Anglia",
+      "College-gate and river clock",
+      "backs-and-courts-fold"
+    ]
+  },
+  {
+    "title": "Ely Cathedral & the Fen Edge",
+    "url": "/united-kingdom/cambridge-east-anglia/ely-cathedral-fens/",
+    "parent": "Cambridge & East Anglia",
+    "type": "Local guide",
+    "summary": "Climb from Ely station and riverside to the cathedral precinct, give the interior a defined block, then choose Oliver Cromwell context or a signed lowland walk before returning downhill.",
+    "keywords": [
+      "Ely Cathedral & the Fen Edge",
+      "Cambridge & East Anglia",
+      "Cathedral-to-fen elevation strip",
+      "island-in-fens-section"
+    ]
+  },
+  {
+    "title": "Norwich & a North Norfolk Branch",
+    "url": "/united-kingdom/cambridge-east-anglia/norwich-north-norfolk/",
+    "parent": "Cambridge & East Anglia",
+    "type": "Local guide",
+    "summary": "Walk Norwich’s castle-to-cathedral spine first, then either keep the complete city day or use one verified rail or bus branch with its final return protected.",
+    "keywords": [
+      "Norwich & a North Norfolk Branch",
+      "Cambridge & East Anglia",
+      "City-to-coast branch board",
+      "lanes-and-rail-branch"
+    ]
+  },
+  {
+    "title": "Bath, Bristol & Somerset",
+    "url": "/united-kingdom/bath-bristol-somerset/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Bath and Bristol are close by rail but reward different days: one concentrates Roman archaeology and Georgian streets, the other a working harbour, collections and steep neighbourhoods. Wells, Glastonbury and the Mendips introduce bus-dependent rural connections that should not be hidden inside a city itinerary.",
+    "keywords": [
+      "Bath, Bristol & Somerset",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Bath: Roman & Georgian City",
+    "url": "/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/",
+    "parent": "Bath, Bristol & Somerset",
+    "type": "Local guide",
+    "summary": "Begin at Bath Spa, complete one booked central interior, climb through Queen Square and the Circus only if energy allows, and return by a different street line.",
+    "keywords": [
+      "Bath: Roman & Georgian City",
+      "Bath, Bristol & Somerset",
+      "Thermal-city time ledger",
+      "stone-terrace-sequence"
+    ]
+  },
+  {
+    "title": "Bristol Harbourside & Clifton",
+    "url": "/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/",
+    "parent": "Bath, Bristol & Somerset",
+    "type": "Local guide",
+    "summary": "Start at Temple Meads or the centre, read the working harbour through one museum or ship, then either finish around Clifton or stay with the water and city centre.",
+    "keywords": [
+      "Bristol Harbourside & Clifton",
+      "Bath, Bristol & Somerset",
+      "Harbour-to-ridge gradient board",
+      "floating-harbour-cross-section"
+    ]
+  },
+  {
+    "title": "Wells, Glastonbury & the Mendip Edge",
+    "url": "/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/",
+    "parent": "Bath, Bristol & Somerset",
+    "type": "Local guide",
+    "summary": "Leave Bath or Bristol on a verified route, give one town and its major site enough time, then use the second place or Mendip landscape only when the onward and return connections are secure.",
+    "keywords": [
+      "Wells, Glastonbury & the Mendip Edge",
+      "Bath, Bristol & Somerset",
+      "Somerset bus-and-weather docket",
+      "cathedral-tor-decision-sheet"
+    ]
+  },
+  {
+    "title": "Cornwall & Devon",
+    "url": "/united-kingdom/cornwall-devon/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Cornwall and Devon contain rail-linked cities and harbour towns, but the peninsula’s headlands, villages and moors depend on slower branches, buses, boats or roads. A useful trip chooses a compact base and one weather-facing landscape each day rather than measuring success by the number of coastal names reached.",
+    "keywords": [
+      "Cornwall & Devon",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "St Ives & the Penwith Coast",
+    "url": "/united-kingdom/cornwall-devon/st-ives-penwith/",
+    "parent": "Cornwall & Devon",
+    "type": "Local guide",
+    "summary": "Arrive by the branch line, give St Ives harbour and one collection a coherent block, then use a verified bus or bounded coastal walk only when the return and weather remain secure.",
+    "keywords": [
+      "St Ives & the Penwith Coast",
+      "Cornwall & Devon",
+      "Branch-line and headland clock",
+      "gallery-coast-tide-strip"
+    ]
+  },
+  {
+    "title": "Falmouth Harbour & the Roseland",
+    "url": "/united-kingdom/cornwall-devon/falmouth-roseland/",
+    "parent": "Cornwall & Devon",
+    "type": "Local guide",
+    "summary": "Arrive on the correct Falmouth branch station, use the maritime museum or Pendennis as the fixed anchor, then cross the estuary only with a verified outward and return sailing.",
+    "keywords": [
+      "Falmouth Harbour & the Roseland",
+      "Cornwall & Devon",
+      "Estuary vessel decision card",
+      "harbour-ferry-compass"
+    ]
+  },
+  {
+    "title": "Exeter & the Dartmoor Edge",
+    "url": "/united-kingdom/cornwall-devon/exeter-dartmoor-edge/",
+    "parent": "Cornwall & Devon",
+    "type": "Local guide",
+    "summary": "Read Exeter’s cathedral and quays first, then remain in the city or commit to one verified moor gateway with weather, daylight and the final rail return already checked.",
+    "keywords": [
+      "Exeter & the Dartmoor Edge",
+      "Cornwall & Devon",
+      "Cathedral-to-moor weather gate",
+      "red-stone-moor-transect"
+    ]
+  },
+  {
+    "title": "Kent, Sussex & the South Coast",
+    "url": "/united-kingdom/kent-sussex-south-coast/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Brighton, Canterbury, Dover and the Seven Sisters sit on different rail and bus corridors despite sharing the south-east coast. A useful day chooses one urban or landscape argument, names the station and final connection, and treats exposed chalk paths as weather decisions rather than scenic filler.",
+    "keywords": [
+      "Kent, Sussex & the South Coast",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Brighton Lanes, Pavilion & Seafront",
+    "url": "/united-kingdom/kent-sussex-south-coast/brighton-lanes-seafront/",
+    "parent": "Kent, Sussex & the South Coast",
+    "type": "Local guide",
+    "summary": "Descend from Brighton station through the North Laine or Pavilion precinct, complete one interior, then finish on a bounded seafront section with the uphill return already planned.",
+    "keywords": [
+      "Brighton Lanes, Pavilion & Seafront",
+      "Kent, Sussex & the South Coast",
+      "Seafront weather-and-crowd clock",
+      "regency-to-pier-zigzag"
+    ]
+  },
+  {
+    "title": "Canterbury Cathedral & Dover Castle",
+    "url": "/united-kingdom/kent-sussex-south-coast/canterbury-dover/",
+    "parent": "Kent, Sussex & the South Coast",
+    "type": "Local guide",
+    "summary": "Begin in Canterbury’s walkable core or at Dover’s hillside fortress, complete one deep visit, and add the second place only as a bounded exterior or shorter stop with its return protected.",
+    "keywords": [
+      "Canterbury Cathedral & Dover Castle",
+      "Kent, Sussex & the South Coast",
+      "Two-fortress admission docket",
+      "pilgrim-to-channel-section"
+    ]
+  },
+  {
+    "title": "Seven Sisters & Eastbourne",
+    "url": "/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/",
+    "parent": "Kent, Sussex & the South Coast",
+    "type": "Local guide",
+    "summary": "Arrive at a rail-and-bus gateway, read wind and path conditions, complete one signed chalk-coast segment, and turn back or exit before daylight and the final connection become tight.",
+    "keywords": [
+      "Seven Sisters & Eastbourne",
+      "Kent, Sussex & the South Coast",
+      "Cliff-edge turn-back chart",
+      "chalk-profile-route"
+    ]
+  },
+  {
+    "title": "Birmingham & the West Midlands",
+    "url": "/united-kingdom/birmingham-west-midlands/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Birmingham’s canals, civic centre and Jewellery Quarter form a connected urban day, while Stratford-upon-Avon and Ironbridge require different rail or bus corridors and separate heritage bookings. The region works best from one base with one clearly chosen outward branch per day.",
+    "keywords": [
+      "Birmingham & the West Midlands",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Birmingham Canals & Jewellery Quarter",
+    "url": "/united-kingdom/birmingham-west-midlands/birmingham-canals-jewellery-quarter/",
+    "parent": "Birmingham & the West Midlands",
+    "type": "Local guide",
+    "summary": "Exit the correct central station, read the civic core, follow one canal line to Gas Street and Brindleyplace, then use tram or a deliberate walk to the Jewellery Quarter.",
+    "keywords": [
+      "Birmingham Canals & Jewellery Quarter",
+      "Birmingham & the West Midlands",
+      "Workshop-to-water city section",
+      "industrial-city-cutaway"
+    ]
+  },
+  {
+    "title": "Stratford-upon-Avon & Shakespeare",
+    "url": "/united-kingdom/birmingham-west-midlands/stratford-shakespeare/",
+    "parent": "Birmingham & the West Midlands",
+    "type": "Local guide",
+    "summary": "Walk from the station into the birthplace and market-town core, continue to the river and theatre, then protect the train return or performance exit before adding another historic property.",
+    "keywords": [
+      "Stratford-upon-Avon & Shakespeare",
+      "Birmingham & the West Midlands",
+      "Performance-day scene sheet",
+      "stage-and-river-sequence"
+    ]
+  },
+  {
+    "title": "Ironbridge Gorge & Shrewsbury",
+    "url": "/united-kingdom/birmingham-west-midlands/ironbridge-shrewsbury/",
+    "parent": "Birmingham & the West Midlands",
+    "type": "Local guide",
+    "summary": "Use Shrewsbury or Telford as the rail gateway, complete one museum cluster or town circuit, and avoid assuming the gorge’s sites form a short walk from a single station.",
+    "keywords": [
+      "Ironbridge Gorge & Shrewsbury",
+      "Birmingham & the West Midlands",
+      "Industrial-valley connection map",
+      "gorge-museum-spine"
+    ]
+  },
+  {
+    "title": "Peak District & Derbyshire",
+    "url": "/united-kingdom/peak-district-derbyshire/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "The Peak District is a group of valleys, moors, towns and estates rather than one arrival point. Hope Valley rail, Bakewell and Chatsworth buses, and the southern dales create different day systems. Every plan needs a named gateway, surface-aware route and protected return.",
+    "keywords": [
+      "Peak District & Derbyshire",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Bakewell & Chatsworth",
+    "url": "/united-kingdom/peak-district-derbyshire/bakewell-chatsworth/",
+    "parent": "Peak District & Derbyshire",
+    "type": "Local guide",
+    "summary": "Begin at Bakewell or the estate gate, complete one defined Chatsworth product, and use the town only when the return corridor and daylight remain protected.",
+    "keywords": [
+      "Bakewell & Chatsworth",
+      "Peak District & Derbyshire",
+      "Market-to-estate bus ledger",
+      "estate-valley-docket"
+    ]
+  },
+  {
+    "title": "Hope Valley & Edale",
+    "url": "/united-kingdom/peak-district-derbyshire/hope-valley-edale/",
+    "parent": "Peak District & Derbyshire",
+    "type": "Local guide",
+    "summary": "Arrive at Edale, Hope or another chosen station, read the weather from the valley, complete one signed route with a firm turn-back, and reach the railhead before service gaps matter.",
+    "keywords": [
+      "Hope Valley & Edale",
+      "Peak District & Derbyshire",
+      "Railhead-to-ridge turn-back ruler",
+      "moorline-profile"
+    ]
+  },
+  {
+    "title": "Dovedale & Ashbourne",
+    "url": "/united-kingdom/peak-district-derbyshire/dovedale-ashbourne/",
+    "parent": "Peak District & Derbyshire",
+    "type": "Local guide",
+    "summary": "Reach Ashbourne or the named valley approach, assess river and path conditions, complete one out-and-back or bounded dale route, and return before the rural connection thins.",
+    "keywords": [
+      "Dovedale & Ashbourne",
+      "Peak District & Derbyshire",
+      "Dale-water and bus gauge",
+      "stepping-stone-valley-plan"
+    ]
+  },
+  {
+    "title": "Liverpool, Manchester & Chester",
+    "url": "/united-kingdom/liverpool-manchester/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Liverpool and Manchester are close by rail but their useful visitor geographies point in different directions: Mersey waterfront and mercantile streets versus canals, civic collections and industrial quarters. Chester adds a compact walled city on another line. Each deserves a separate day even when journey times look short.",
+    "keywords": [
+      "Liverpool, Manchester & Chester",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Liverpool Waterfront & Cathedrals",
+    "url": "/united-kingdom/liverpool-manchester/liverpool-waterfront-cathedrals/",
+    "parent": "Liverpool, Manchester & Chester",
+    "type": "Local guide",
+    "summary": "Walk from Lime Street toward the waterfront, use one museum cluster, then climb once toward the cathedrals or remain with the Mersey and finish near a direct station.",
+    "keywords": [
+      "Liverpool Waterfront & Cathedrals",
+      "Liverpool, Manchester & Chester",
+      "Mersey-to-ridge city ruler",
+      "dock-and-cathedral-axis"
+    ]
+  },
+  {
+    "title": "Manchester Industrial City & Collections",
+    "url": "/united-kingdom/liverpool-manchester/manchester-industrial-city/",
+    "parent": "Liverpool, Manchester & Chester",
+    "type": "Local guide",
+    "summary": "Begin at the station serving the chosen district, use one major collection, connect a bounded canal or civic route, and finish on the same tram or rail side.",
+    "keywords": [
+      "Manchester Industrial City & Collections",
+      "Liverpool, Manchester & Chester",
+      "Canal-to-civic innovation grid",
+      "warehouse-city-matrix"
+    ]
+  },
+  {
+    "title": "Chester Walls & Roman City",
+    "url": "/united-kingdom/liverpool-manchester/chester-walls-roman-city/",
+    "parent": "Liverpool, Manchester & Chester",
+    "type": "Local guide",
+    "summary": "Walk from Chester station to a named wall gate, complete a weather-aware section or full circuit, descend once for the Rows and one interior, then return through the compact centre.",
+    "keywords": [
+      "Chester Walls & Roman City",
+      "Liverpool, Manchester & Chester",
+      "Wall-gate circuit register",
+      "walled-city-loop"
+    ]
+  },
+  {
+    "title": "York, Leeds & Yorkshire",
+    "url": "/united-kingdom/yorkshire/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "York’s walls and Minster, Leeds and Saltaire’s civic-industrial collections, and the North York Moors–Whitby line are three distinct travel systems. Fast intercity rail makes the cities easy to pair across nights, but moor and coast branches need their own weather, heritage-rail and return decisions.",
+    "keywords": [
+      "York, Leeds & Yorkshire",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "York Walls, Minster & Medieval Core",
+    "url": "/united-kingdom/yorkshire/york-walls-minster/",
+    "parent": "York, Leeds & Yorkshire",
+    "type": "Local guide",
+    "summary": "Walk from York station to a named wall gate, complete one coherent wall section, meet the Minster or museum booking, and leave through a different gate toward the station.",
+    "keywords": [
+      "York Walls, Minster & Medieval Core",
+      "York, Leeds & Yorkshire",
+      "Gate-to-gate wall clock",
+      "minster-wall-ring"
+    ]
+  },
+  {
+    "title": "Leeds Collections & Saltaire",
+    "url": "/united-kingdom/yorkshire/leeds-saltaire/",
+    "parent": "York, Leeds & Yorkshire",
+    "type": "Local guide",
+    "summary": "Begin at Leeds station for markets, arcades or a museum, then take one verified local train to Saltaire only when the mill, village and return have a useful time window.",
+    "keywords": [
+      "Leeds Collections & Saltaire",
+      "York, Leeds & Yorkshire",
+      "Civic-to-mill rail ledger",
+      "arcade-and-mill-grid"
+    ]
+  },
+  {
+    "title": "Whitby & the North York Moors",
+    "url": "/united-kingdom/yorkshire/whitby-north-york-moors/",
+    "parent": "York, Leeds & Yorkshire",
+    "type": "Local guide",
+    "summary": "Reach Whitby or a moor gateway by the confirmed rail, bus or heritage service, complete one town-and-landscape line, and protect the final return before evening frequency falls away.",
+    "keywords": [
+      "Whitby & the North York Moors",
+      "York, Leeds & Yorkshire",
+      "Moor-to-coast service board",
+      "steam-line-coast-profile"
+    ]
+  },
+  {
+    "title": "Lake District & Cumbria",
+    "url": "/united-kingdom/lake-district-cumbria/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Windermere and Ambleside, Keswick and Derwentwater, and Carlisle with the western Wall use different railheads and buses. The Lake District rewards one basin at a time: weather, boat operation, valley traffic and the last bus matter more than the short distances shown on a map.",
+    "keywords": [
+      "Lake District & Cumbria",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Windermere, Bowness & Ambleside",
+    "url": "/united-kingdom/lake-district-cumbria/windermere-ambleside/",
+    "parent": "Lake District & Cumbria",
+    "type": "Local guide",
+    "summary": "Arrive at Windermere station, descend to Bowness or connect to Ambleside, use one verified boat or shore line, and protect the final bus or branch train.",
+    "keywords": [
+      "Windermere, Bowness & Ambleside",
+      "Lake District & Cumbria",
+      "Lake-bus-boat interchange card",
+      "shoreline-transfer-ribbon"
+    ]
+  },
+  {
+    "title": "Keswick & Derwentwater",
+    "url": "/united-kingdom/lake-district-cumbria/keswick-derwentwater/",
+    "parent": "Lake District & Cumbria",
+    "type": "Local guide",
+    "summary": "Arrive by the confirmed bus, use Keswick as the service base, complete one water or fell branch, and return to the town before the onward bus window narrows.",
+    "keywords": [
+      "Keswick & Derwentwater",
+      "Lake District & Cumbria",
+      "Launch-and-fell weather dial",
+      "market-lake-spoke-map"
+    ]
+  },
+  {
+    "title": "Carlisle & Hadrian’s Wall West",
+    "url": "/united-kingdom/lake-district-cumbria/carlisle-hadrians-wall-west/",
+    "parent": "Lake District & Cumbria",
+    "type": "Local guide",
+    "summary": "Begin with Carlisle Castle or city context, take one verified corridor to a western fort or wall section, and return before rural frequency and daylight narrow.",
+    "keywords": [
+      "Carlisle & Hadrian’s Wall West",
+      "Lake District & Cumbria",
+      "Fort-and-frontier rail strip",
+      "roman-frontier-section"
+    ]
+  },
+  {
+    "title": "Newcastle, Durham & Northumberland",
+    "url": "/united-kingdom/northeast-northumberland/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Newcastle–Gateshead and Durham are compact rail cities with strong river and collection routes, while Bamburgh and Holy Island introduce long road links and a tidal causeway. The region works when city days remain complete and the coast is planned as a separate weather-and-tide operation.",
+    "keywords": [
+      "Newcastle, Durham & Northumberland",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Newcastle & Gateshead Quays",
+    "url": "/united-kingdom/northeast-northumberland/newcastle-gateshead-quays/",
+    "parent": "Newcastle, Durham & Northumberland",
+    "type": "Local guide",
+    "summary": "Descend from Newcastle Central through the historic core, use one Quayside collection, cross once to Gateshead, and return by Metro or a different bridge.",
+    "keywords": [
+      "Newcastle & Gateshead Quays",
+      "Newcastle, Durham & Northumberland",
+      "Bridge-and-bank culture ledger",
+      "tyne-bridge-fold"
+    ]
+  },
+  {
+    "title": "Durham Cathedral & River Peninsula",
+    "url": "/united-kingdom/northeast-northumberland/durham-cathedral-city/",
+    "parent": "Newcastle, Durham & Northumberland",
+    "type": "Local guide",
+    "summary": "Descend from Durham station, climb to Palace Green for one controlled interior, follow one side of the River Wear, and return without repeating the peninsula slopes.",
+    "keywords": [
+      "Durham Cathedral & River Peninsula",
+      "Newcastle, Durham & Northumberland",
+      "Peninsula climb-and-loop card",
+      "cathedral-river-meander"
+    ]
+  },
+  {
+    "title": "Bamburgh Castle & Holy Island",
+    "url": "/united-kingdom/northeast-northumberland/bamburgh-holy-island/",
+    "parent": "Newcastle, Durham & Northumberland",
+    "type": "Local guide",
+    "summary": "Leave the rail corridor with a named bus, tour or car plan, complete one castle or island visit, and cross the Holy Island causeway only within the official safe window.",
+    "keywords": [
+      "Bamburgh Castle & Holy Island",
+      "Newcastle, Durham & Northumberland",
+      "Causeway tide-and-road board",
+      "tidal-border-chart"
+    ]
+  },
+  {
+    "title": "Edinburgh & the Lothians",
+    "url": "/united-kingdom/edinburgh-lothians/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Edinburgh’s Old Town ridge, New Town terraces and lower valleys create a vertical city where short map distances conceal stairs and steep streets. East Lothian adds a separate coast railway. A strong plan fixes one controlled interior and uses the city’s level changes as the route rather than an inconvenience.",
+    "keywords": [
+      "Edinburgh & the Lothians",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Old Town, Castle & Royal Mile",
+    "url": "/united-kingdom/edinburgh-lothians/old-town-castle-royal-mile/",
+    "parent": "Edinburgh & the Lothians",
+    "type": "Local guide",
+    "summary": "Enter the Old Town at the correct level, complete one controlled interior, descend the Royal Mile through selected closes, and finish at Holyrood or Waverley without retracing.",
+    "keywords": [
+      "Old Town, Castle & Royal Mile",
+      "Edinburgh & the Lothians",
+      "Ridge-entry and descent clock",
+      "castle-ridge-long-section"
+    ]
+  },
+  {
+    "title": "New Town, Galleries & Dean Village",
+    "url": "/united-kingdom/edinburgh-lothians/new-town-dean-village/",
+    "parent": "Edinburgh & the Lothians",
+    "type": "Local guide",
+    "summary": "Start near Princes Street or the gallery complex, walk one New Town terrace line, descend once to Dean Village, and leave through Stockbridge or a planned climb.",
+    "keywords": [
+      "New Town, Galleries & Dean Village",
+      "Edinburgh & the Lothians",
+      "Terrace-to-water level chart",
+      "georgian-grid-waterline"
+    ]
+  },
+  {
+    "title": "North Berwick & East Lothian",
+    "url": "/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/",
+    "parent": "Edinburgh & the Lothians",
+    "type": "Local guide",
+    "summary": "Walk from North Berwick station to town and harbour, assess wind and sea state, complete one coast activity, and return before the branch service or daylight narrows.",
+    "keywords": [
+      "North Berwick & East Lothian",
+      "Edinburgh & the Lothians",
+      "Coast-train-and-seabird board",
+      "firth-coast-window"
+    ]
+  },
+  {
+    "title": "Glasgow & the Clyde",
+    "url": "/united-kingdom/glasgow-clyde/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Glasgow’s centre, Merchant City and Clyde waterfront form one urban field; the West End has its own museum-and-park rhythm; Loch Lomond adds a rail-to-water branch beyond the city. A useful stay chooses one district per half-day and does not let Subway convenience erase walking and collection scale.",
+    "keywords": [
+      "Glasgow & the Clyde",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Central Glasgow, Merchant City & the Clyde",
+    "url": "/united-kingdom/glasgow-clyde/central-merchant-city-clyde/",
+    "parent": "Glasgow & the Clyde",
+    "type": "Local guide",
+    "summary": "Start at the station serving the first district, complete one civic or collection anchor, descend through Merchant City or the grid, and finish along a bounded Clyde section.",
+    "keywords": [
+      "Central Glasgow, Merchant City & the Clyde",
+      "Glasgow & the Clyde",
+      "Grid-to-river civic register",
+      "merchant-grid-river-drop"
+    ]
+  },
+  {
+    "title": "West End, Kelvingrove & the University",
+    "url": "/united-kingdom/glasgow-clyde/west-end-kelvingrove/",
+    "parent": "Glasgow & the Clyde",
+    "type": "Local guide",
+    "summary": "Arrive by Subway or bus, complete one museum, cross Kelvingrove Park or the university once, and finish around Byres Road or the Botanic Gardens.",
+    "keywords": [
+      "West End, Kelvingrove & the University",
+      "Glasgow & the Clyde",
+      "Museum-park-campus field card",
+      "sandstone-park-cabinet"
+    ]
+  },
+  {
+    "title": "Loch Lomond from Glasgow",
+    "url": "/united-kingdom/glasgow-clyde/loch-lomond-clyde-branch/",
+    "parent": "Glasgow & the Clyde",
+    "type": "Local guide",
+    "summary": "Leave Glasgow for one gateway, assess water and hill weather, complete one shore, boat or lower-walk plan, and return before branch frequency narrows.",
+    "keywords": [
+      "Loch Lomond from Glasgow",
+      "Glasgow & the Clyde",
+      "Rail-to-loch shore selector",
+      "loch-gateway-switchboard"
+    ]
+  },
+  {
+    "title": "Inverness & the Scottish Highlands",
+    "url": "/united-kingdom/scottish-highlands/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Inverness and Loch Ness, Glencoe and Fort William, and Aviemore with the Cairngorms use long, weather-sensitive rail and road corridors. Distances, daylight and sparse alternatives make one named landscape per day the useful maximum. A hotel booking does not make a mountain road, path or cruise operational.",
+    "keywords": [
+      "Inverness & the Scottish Highlands",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Inverness & Loch Ness",
+    "url": "/united-kingdom/scottish-highlands/inverness-loch-ness/",
+    "parent": "Inverness & the Scottish Highlands",
+    "type": "Local guide",
+    "summary": "Begin on the River Ness, use one verified bus, tour or boat to the selected loch site, and return to Inverness before rural frequency or cruise operation becomes the edge.",
+    "keywords": [
+      "Inverness & Loch Ness",
+      "Inverness & the Scottish Highlands",
+      "Loch-road-and-cruise docket",
+      "river-to-loch-spine"
+    ]
+  },
+  {
+    "title": "Glencoe & Fort William",
+    "url": "/united-kingdom/scottish-highlands/glencoe-fort-william/",
+    "parent": "Inverness & the Scottish Highlands",
+    "type": "Local guide",
+    "summary": "Leave the rail or coach town for one verified glen stop, assess conditions at low level, complete a bounded route or visitor-centre day, and recover the return before road delay compounds.",
+    "keywords": [
+      "Glencoe & Fort William",
+      "Inverness & the Scottish Highlands",
+      "Glen-road mountain gate",
+      "mountain-corridor-transect"
+    ]
+  },
+  {
+    "title": "Aviemore & the Cairngorms",
+    "url": "/united-kingdom/scottish-highlands/aviemore-cairngorms/",
+    "parent": "Inverness & the Scottish Highlands",
+    "type": "Local guide",
+    "summary": "Arrive by rail, use Aviemore as the service point, move to one named Cairngorms gateway, and complete a route that can be shortened before the final return.",
+    "keywords": [
+      "Aviemore & the Cairngorms",
+      "Inverness & the Scottish Highlands",
+      "Plateau-weather activity selector",
+      "forest-to-plateau-layers"
+    ]
+  },
+  {
+    "title": "Skye, Orkney & the Outer Hebrides",
+    "url": "/united-kingdom/scottish-islands/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Skye, Orkney and Lewis with Harris are not one archipelago circuit. They use different ferries, flights, road distances and weather patterns. A credible island plan chooses one system, preserves a mainland or gateway buffer and never treats a booked room as evidence that the crossing or onward bus will operate.",
+    "keywords": [
+      "Skye, Orkney & the Outer Hebrides",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Isle of Skye Road & Weather Plan",
+    "url": "/united-kingdom/scottish-islands/isle-of-skye/",
+    "parent": "Skye, Orkney & the Outer Hebrides",
+    "type": "Local guide",
+    "summary": "Start from Portree or another named base, read live road and weather conditions, complete one peninsula or lower-risk island route, and return before darkness or a ferry deadline.",
+    "keywords": [
+      "Isle of Skye Road & Weather Plan",
+      "Skye, Orkney & the Outer Hebrides",
+      "Peninsula road-and-light compass",
+      "island-road-spokes"
+    ]
+  },
+  {
+    "title": "Orkney Mainland & Neolithic Sites",
+    "url": "/united-kingdom/scottish-islands/orkney-mainland/",
+    "parent": "Skye, Orkney & the Outer Hebrides",
+    "type": "Local guide",
+    "summary": "Establish the Kirkwall or Stromness gateway, complete one monument cluster with current booking and access, and keep the return crossing or island bus outside the final minute.",
+    "keywords": [
+      "Orkney Mainland & Neolithic Sites",
+      "Skye, Orkney & the Outer Hebrides",
+      "Ferry-to-monument reservation wheel",
+      "stone-circle-island-grid"
+    ]
+  },
+  {
+    "title": "Lewis & Harris",
+    "url": "/united-kingdom/scottish-islands/lewis-harris/",
+    "parent": "Skye, Orkney & the Outer Hebrides",
+    "type": "Local guide",
+    "summary": "Enter through Stornoway or Tarbert, use one island half as the day’s operating field, complete a named site cluster, and return before sparse transport or ferry check-in controls the evening.",
+    "keywords": [
+      "Lewis & Harris",
+      "Skye, Orkney & the Outer Hebrides",
+      "Ferry-port and island-road atlas",
+      "machair-mountain-spread"
+    ]
+  },
+  {
+    "title": "Cardiff, Bannau Brycheiniog & Gower",
+    "url": "/united-kingdom/cardiff-south-wales/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Cardiff’s civic centre, castle and bay form a rail-and-bus city system. Bannau Brycheiniog and the Gower Peninsula require different gateways, road or bus connections and weather decisions. A strong South Wales stay uses the capital as a base but does not imply the national park or coast begins at Cardiff Central.",
+    "keywords": [
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Wales",
+      "wales"
+    ]
+  },
+  {
+    "title": "Cardiff Castle, Civic Centre & Bay",
+    "url": "/united-kingdom/cardiff-south-wales/cardiff-castle-bay/",
+    "parent": "Cardiff, Bannau Brycheiniog & Gower",
+    "type": "Local guide",
+    "summary": "Start at Cardiff Central or Queen Street, complete the castle and civic core or museum, then move once to Cardiff Bay and return by a direct line.",
+    "keywords": [
+      "Cardiff Castle, Civic Centre & Bay",
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Capital-to-bay line card",
+      "castle-arcade-waterfront-fold"
+    ]
+  },
+  {
+    "title": "Bannau Brycheiniog Gateways",
+    "url": "/united-kingdom/cardiff-south-wales/bannau-brycheiniog/",
+    "parent": "Cardiff, Bannau Brycheiniog & Gower",
+    "type": "Local guide",
+    "summary": "Travel to Brecon, Abergavenny, Merthyr Tydfil or another named gateway, assess mountain conditions there, complete one signed route and recover the final transport before dark.",
+    "keywords": [
+      "Bannau Brycheiniog Gateways",
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Gateway-and-ridge weather board",
+      "upland-gateway-transect"
+    ]
+  },
+  {
+    "title": "Swansea & the Gower Peninsula",
+    "url": "/united-kingdom/cardiff-south-wales/swansea-gower/",
+    "parent": "Cardiff, Bannau Brycheiniog & Gower",
+    "type": "Local guide",
+    "summary": "Use Swansea as the rail-and-bus base, travel to one named Gower village or bay, complete a bounded coast route, and return before sparse evening service.",
+    "keywords": [
+      "Swansea & the Gower Peninsula",
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Peninsula bus-and-tide selector",
+      "bay-to-headland-chart"
+    ]
+  },
+  {
+    "title": "Pembrokeshire & West Wales",
+    "url": "/united-kingdom/pembrokeshire-west-wales/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "St Davids, Tenby and the Ceredigion coast sit on separate West Wales corridors. Rail reaches Tenby and Aberystwyth, while St Davids needs a bus or road connection. Coast-path sections, boats and island visits add weather, tide and final-service decisions that should be explicit.",
+    "keywords": [
+      "Pembrokeshire & West Wales",
+      "Wales",
+      "wales"
+    ]
+  },
+  {
+    "title": "St Davids & the Pembrokeshire Coast",
+    "url": "/united-kingdom/pembrokeshire-west-wales/st-davids-coast/",
+    "parent": "Pembrokeshire & West Wales",
+    "type": "Local guide",
+    "summary": "Arrive in St Davids, descend to the cathedral precinct, then commit to one signed coast, harbour or boat branch only when weather and return transport remain secure.",
+    "keywords": [
+      "St Davids & the Pembrokeshire Coast",
+      "Pembrokeshire & West Wales",
+      "Cathedral-to-cliff weather card",
+      "saints-city-coast-fold"
+    ]
+  },
+  {
+    "title": "Tenby, Caldey & the South Coast",
+    "url": "/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/",
+    "parent": "Pembrokeshire & West Wales",
+    "type": "Local guide",
+    "summary": "Walk from Tenby station into the walled town, read the harbour’s live boat status, complete one island or coast line, and regain the station before the branch service narrows.",
+    "keywords": [
+      "Tenby, Caldey & the South Coast",
+      "Pembrokeshire & West Wales",
+      "Harbour-tide-island manifest",
+      "walled-harbour-tide-sheet"
+    ]
+  },
+  {
+    "title": "Aberystwyth & the Ceredigion Coast",
+    "url": "/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/",
+    "parent": "Pembrokeshire & West Wales",
+    "type": "Local guide",
+    "summary": "Arrive at Aberystwyth station, complete the town and promenade spine, then add one hill, collection or booked heritage-rail branch with the final train protected.",
+    "keywords": [
+      "Aberystwyth & the Ceredigion Coast",
+      "Pembrokeshire & West Wales",
+      "Rail-end coast-and-hill board",
+      "promenade-railway-horizon"
+    ]
+  },
+  {
+    "title": "North Wales & Eryri",
+    "url": "/united-kingdom/north-wales-eryri/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Conwy and Llandudno, Eryri’s mountain gateways, and Caernarfon with Anglesey form three distinct North Wales systems. Rail follows the coast, while mountain routes and castles add buses, seasonal railways, parking and weather. One named gateway per day is the practical standard.",
+    "keywords": [
+      "North Wales & Eryri",
+      "Wales",
+      "wales"
+    ]
+  },
+  {
+    "title": "Conwy Castle & Llandudno",
+    "url": "/united-kingdom/north-wales-eryri/conwy-llandudno/",
+    "parent": "North Wales & Eryri",
+    "type": "Local guide",
+    "summary": "Begin at the station nearest the main anchor, complete the castle or headland, take one rail or bus connection, and finish on the second town’s compact public realm.",
+    "keywords": [
+      "Conwy Castle & Llandudno",
+      "North Wales & Eryri",
+      "Wall-to-headland coast clock",
+      "castle-bay-headland-fold"
+    ]
+  },
+  {
+    "title": "Yr Wyddfa Gateway Choice",
+    "url": "/united-kingdom/north-wales-eryri/yr-wyddfa-gateways/",
+    "parent": "North Wales & Eryri",
+    "type": "Local guide",
+    "summary": "Reach Llanberis, Pen-y-Pass or another named start, read mountain conditions, complete the booked railway or mapped route with turnaround rules, and return before the gateway transport closes.",
+    "keywords": [
+      "Yr Wyddfa Gateway Choice",
+      "North Wales & Eryri",
+      "Summit-route and rail gate",
+      "mountain-route-selector"
+    ]
+  },
+  {
+    "title": "Caernarfon & Anglesey",
+    "url": "/united-kingdom/north-wales-eryri/caernarfon-anglesey/",
+    "parent": "North Wales & Eryri",
+    "type": "Local guide",
+    "summary": "Use Caernarfon’s castle and waterfront as one complete field, then cross to Anglesey only for a named town, coast or heritage site with a protected return.",
+    "keywords": [
+      "Caernarfon & Anglesey",
+      "North Wales & Eryri",
+      "Castle-to-island crossing sheet",
+      "menai-strait-bridge-plan"
+    ]
+  },
+  {
+    "title": "Belfast, Causeway Coast & Derry",
+    "url": "/united-kingdom/belfast-northern-ireland/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Combining them works across several nights, not as a single highlights loop.",
+    "keywords": [
+      "Belfast, Causeway Coast & Derry",
+      "Northern Ireland",
+      "northern-ireland"
+    ]
+  },
+  {
+    "title": "Belfast Civic Quarter & Maritime Mile",
+    "url": "/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/",
+    "parent": "Belfast, Causeway Coast & Derry",
+    "type": "Local guide",
+    "summary": "Begin at City Hall and the central grid, complete one history or civic anchor, then move once to the Titanic Quarter or remain with the city-centre evidence.",
+    "keywords": [
+      "Belfast Civic Quarter & Maritime Mile",
+      "Belfast, Causeway Coast & Derry",
+      "City-hall-to-shipyard route book",
+      "linen-grid-maritime-axis"
+    ]
+  },
+  {
+    "title": "Giant’s Causeway & the Causeway Coast",
+    "url": "/united-kingdom/belfast-northern-ireland/giants-causeway-coast/",
+    "parent": "Belfast, Causeway Coast & Derry",
+    "type": "Local guide",
+    "summary": "Travel from Belfast or a coast base to the visitor route, complete the causeway with official access guidance, then add one named town or viewpoint only when the return remains secure.",
+    "keywords": [
+      "Giant’s Causeway & the Causeway Coast",
+      "Belfast, Causeway Coast & Derry",
+      "Coast-stop weather-and-return chart",
+      "basalt-coast-rail-strip"
+    ]
+  },
+  {
+    "title": "Derry Walls, Bogside & River Foyle",
+    "url": "/united-kingdom/belfast-northern-ireland/derry-walls-bogside/",
+    "parent": "Belfast, Causeway Coast & Derry",
+    "type": "Local guide",
+    "summary": "Arrive at the bus or rail gateway, complete a one-direction wall circuit, descend for one context-rich institution, and finish at Guildhall or the Peace Bridge.",
+    "keywords": [
+      "Derry Walls, Bogside & River Foyle",
+      "Belfast, Causeway Coast & Derry",
+      "Walls-and-memory context ledger",
+      "walled-city-memory-section"
+    ]
   }
 ]

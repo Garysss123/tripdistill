@@ -1,0 +1,21 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.": "20の地域案内と60の詳細ガイドで、都市、城、海岸、山、島、北アイルランドを巡るイギリス旅行を計画できます。",
+    "UK travel": "イギリス旅行",
+    "Britain": "イギリス",
+    "England": "イングランド",
+    "Scotland": "スコットランド",
+    "Wales": "ウェールズ",
+    "Northern Ireland": "北アイルランド",
+    "england-south": "イングランド南部",
+    "england-midlands-north": "イングランド中部・北部",
+    "scotland": "スコットランド",
+    "wales": "ウェールズ",
+    "northern-ireland": "北アイルランド"
+  }
+}

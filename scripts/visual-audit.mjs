@@ -8,6 +8,7 @@ import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs
 import { canadaClusters, canadaGuides } from '../data/canada-guides.mjs';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
+import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
 import { usaRoutes } from '../data/usa-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -53,6 +54,9 @@ const allRoutes = [
   ['france', '/france/'],
   ...franceClusters.map((cluster) => [`fr-${cluster.slug}`, `/france/${cluster.slug}/`]),
   ...franceGuides.map((guide) => [`fr-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['united-kingdom', '/united-kingdom/'],
+  ...unitedKingdomClusters.map((cluster) => [`uk-${cluster.slug}`, `/united-kingdom/${cluster.slug}/`]),
+  ...unitedKingdomGuides.map((guide) => [`uk-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -361,10 +365,29 @@ const allRoutes = [
     [`${locale}-france`, `/${locale}/france/`],
     ...franceClusters.map((cluster) => [`${locale}-fr-${cluster.slug}`, `/${locale}/france/${cluster.slug}/`]),
     ...franceClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-fr-${cluster.slug}-${guide.slug}`, `/${locale}/france/${cluster.slug}/${guide.slug}/`]))
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-united-kingdom`, `/${locale}/united-kingdom/`],
+    ...unitedKingdomClusters.map((cluster) => [`${locale}-uk-${cluster.slug}`, `/${locale}/united-kingdom/${cluster.slug}/`]),
+    ...unitedKingdomClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-uk-${cluster.slug}-${guide.slug}`, `/${locale}/united-kingdom/${cluster.slug}/${guide.slug}/`]))
   ])
 ];
 
 const requestedRoutes = new Set((process.env.TRIPDISTILL_ROUTE_FILTER || '').split(',').map((item) => item.trim()).filter(Boolean));
+if (process.env.TRIPDISTILL_UK_RELEASE_SWEEP === '1') {
+  const ukSweepLocales = (process.env.TRIPDISTILL_UK_RELEASE_LOCALES || 'en,zh,ja,ko,th')
+    .split(',')
+    .map((locale) => locale.trim())
+    .filter(Boolean);
+  for (const locale of ukSweepLocales) {
+    const prefix = locale === 'en' ? '' : locale + '-';
+    requestedRoutes.add(prefix + 'united-kingdom');
+    for (const cluster of unitedKingdomClusters) {
+      requestedRoutes.add(prefix + 'uk-' + cluster.slug);
+      requestedRoutes.add(prefix + 'uk-' + cluster.slug + '-' + cluster.guides[0].slug);
+    }
+  }
+}
 const unknownRoutes = [...requestedRoutes].filter(slug => !allRoutes.some(([known]) => known === slug));
 if (unknownRoutes.length) throw new Error(`Unknown TRIPDISTILL_ROUTE_FILTER routes: ${unknownRoutes.join(', ')}`);
 const routes = requestedRoutes.size ? allRoutes.filter(([slug]) => requestedRoutes.has(slug)) : allRoutes;
@@ -621,9 +644,18 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
-      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.au-country-hero,.au-hub-hero,.au-field-hero,.ca-country-hero,.ca-hub-hero,.ca-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
+      const overflowElements = [...document.querySelectorAll('body *')].filter((item) => {
+        const rect = item.getBoundingClientRect();
+        const style = getComputedStyle(item);
+        const visibleInternalOverflow = item.scrollWidth > item.clientWidth + 1 && !['auto', 'scroll', 'hidden', 'clip'].includes(style.overflowX);
+        return rect.width > 0 && style.display !== 'none' && style.position !== 'fixed' && (rect.right > root.clientWidth + 1 || visibleInternalOverflow);
+      }).slice(0, 20).map((item) => {
+        const rect = item.getBoundingClientRect();
+        return item.tagName.toLowerCase() + '.' + String(item.className || '').replace(/\s+/g, '.').slice(0, 80) + ' right=' + Math.round(rect.right) + ' width=' + Math.round(rect.width) + ' scroll=' + item.scrollWidth + '/' + item.clientWidth;
+      });
+      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.uk-country-hero,.uk-hub-hero,.uk-field-hero,.au-country-hero,.au-hub-hero,.au-field-hero,.ca-country-hero,.ca-hub-hero,.ca-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
         const heroRect = hero.getBoundingClientRect();
-        const candidates = hero.querySelectorAll('.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.ca-country-copy > *,.ca-hub-copy > *,.ca-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
+        const candidates = hero.querySelectorAll('.uk-country-copy > *,.uk-hub-copy > *,.uk-field-copy > *,.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.ca-country-copy > *,.ca-hub-copy > *,.ca-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
@@ -640,6 +672,7 @@ for (const [viewportName, width, height, mobile] of viewports) {
         brokenImages,
         activeLinks,
         componentErrors,
+        overflowElements,
         clippedHeroContent,
         headerHeight: header ? Math.round(header.height) : 0,
         footerLoaded: Boolean(document.querySelector('.site-footer')),
@@ -1004,6 +1037,48 @@ if (!skipInteractions) {
     localPath: franceLocalLocation.pathname,
     ...franceDetails
   };
+
+  await navigate(interactionClient, `${baseUrl}/united-kingdom/`);
+  const unitedKingdomCountryCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.uk-country-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const unitedKingdomHubLocation = await waitForLocation(interactionClient, '/united-kingdom/london/');
+  await navigate(interactionClient, `${baseUrl}/united-kingdom/london/`);
+  const unitedKingdomHubCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.uk-guide-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const unitedKingdomLocalLocation = await waitForLocation(interactionClient, '/united-kingdom/london/westminster-south-bank/');
+  await navigate(interactionClient, `${baseUrl}/united-kingdom/london/westminster-south-bank/`);
+  const unitedKingdomDetails = await evaluate(interactionClient, `(async () => {
+    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+    const active=document.querySelector('#layout-sidebar .sidebar-link.active');
+    const nav={
+      europeOpen:Boolean(document.querySelector('[data-sidebar-id="europe"]')?.open),
+      countryOpen:Boolean(document.querySelector('[data-sidebar-id="united-kingdom"]')?.open),
+      chapterOpen:Boolean(active?.closest('details')?.open),
+      openHubCount:document.querySelectorAll('details[name="united-kingdom-chapters"][open]').length,
+      active:active?.textContent.trim() || '',
+      activeHref:active?.getAttribute('href') || ''
+    };
+    const languageLinks=[...document.querySelectorAll('footer [data-language-option]')].map(a=>({locale:a.dataset.languageOption,href:a.getAttribute('href')}));
+    document.querySelector('.faq-list summary')?.click();
+    const faqOpen=Boolean(document.querySelector('.faq-list details[open]'));
+    document.querySelector('[data-search-toggle]')?.click();
+    const input=document.querySelector('#site-search');
+    input.value='London'; input.dispatchEvent(new Event('input',{bubbles:true}));
+    for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await wait(100);
+    const searchLinks=[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'));
+    return {...nav,languageLinks,faqOpen,searchLinks};
+  })()`);
+  interactions.unitedKingdom = {
+    countryCards: unitedKingdomCountryCards,
+    hubPath: unitedKingdomHubLocation.pathname,
+    hubCards: unitedKingdomHubCards,
+    localPath: unitedKingdomLocalLocation.pathname,
+    ...unitedKingdomDetails
+  };
 }
 
 const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
@@ -1021,10 +1096,11 @@ console.log(JSON.stringify({
   pagesChecked: report.length,
   failureCount: failures.length,
   interactions,
-  pageSummary: report.map(({ route, viewport, overflowX, brokenImages, clippedHeroContent, runtimeErrors, activeLinks, mainTextLength }) => ({
+  pageSummary: report.map(({ route, viewport, overflowX, overflowElements, brokenImages, clippedHeroContent, runtimeErrors, activeLinks, mainTextLength }) => ({
     route,
     viewport,
     overflowX,
+    overflowElements: overflowX ? overflowElements : [],
     brokenImages: brokenImages.length,
     clippedHeroContent: clippedHeroContent.length,
     runtimeErrors: runtimeErrors.length,
@@ -1102,6 +1178,19 @@ const interactionFailed = !skipInteractions && (
   !interactions.france?.faqOpen ||
   !interactions.france?.searchLinks?.includes('/france/paris/') ||
   !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.france?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/france/paris/seine-islands-latin-quarter/')) ||
+  interactions.unitedKingdom?.countryCards !== 20 ||
+  interactions.unitedKingdom?.hubPath !== '/united-kingdom/london/' ||
+  interactions.unitedKingdom?.hubCards !== 3 ||
+  interactions.unitedKingdom?.localPath !== '/united-kingdom/london/westminster-south-bank/' ||
+  !interactions.unitedKingdom?.europeOpen ||
+  !interactions.unitedKingdom?.countryOpen ||
+  !interactions.unitedKingdom?.chapterOpen ||
+  interactions.unitedKingdom?.openHubCount !== 1 ||
+  interactions.unitedKingdom?.active !== 'Westminster & the South Bank' ||
+  interactions.unitedKingdom?.activeHref !== '/united-kingdom/london/westminster-south-bank/' ||
+  !interactions.unitedKingdom?.faqOpen ||
+  !interactions.unitedKingdom?.searchLinks?.includes('/united-kingdom/london/') ||
+  !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.unitedKingdom?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/united-kingdom/london/westminster-south-bank/')) ||
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||

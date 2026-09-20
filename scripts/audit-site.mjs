@@ -6,6 +6,7 @@ import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-dep
 import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
+import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
@@ -22,6 +23,8 @@ const australiaByRoute = new Map(australiaGuides.map((guide) => [guide.url, guid
 const australiaHubRoutes = new Set(australiaClusters.map((cluster) => `/australia/${cluster.slug}/`));
 const franceByRoute = new Map(franceGuides.map((guide) => [guide.url, guide]));
 const franceHubRoutes = new Set(franceClusters.map((cluster) => `/france/${cluster.slug}/`));
+const unitedKingdomByRoute = new Map(unitedKingdomGuides.map((guide) => [guide.url, guide]));
+const unitedKingdomHubRoutes = new Set(unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -268,6 +271,22 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes('class="fr-purpose"')) problems.push(`${relativePath}: France route is missing its independent reader purpose`);
     if (!html.includes('class="fr-live-check"')) problems.push(`${relativePath}: France route is missing near-claim official sources`);
     if ((html.match(/<li><span>0[1-4]<\/span><small>/g) || []).length !== 4) problems.push(`${relativePath}: France route does not contain four operating stages`);
+  }
+  if (baseRoute.startsWith('/united-kingdom/') && !html.includes('/css/united-kingdom.css?v=20260920-1')) problems.push(`${relativePath}: missing United Kingdom signal-book stylesheet`);
+  if (baseRoute.startsWith('/united-kingdom/') && baseRoute !== '/united-kingdom/' && !/<body\b[^>]*\bdata-parent-page="united-kingdom"/i.test(html)) problems.push(`${relativePath}: United Kingdom primary navigation parent is not set`);
+  if (baseRoute === '/united-kingdom/' && (html.match(/class="uk-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: United Kingdom country hub does not contain twenty linked regional cards`);
+  if (unitedKingdomHubRoutes.has(baseRoute)) {
+    if ((html.match(/class="uk-guide-card"/g) || []).length !== 3) problems.push(`${relativePath}: United Kingdom regional hub does not contain three linked field files`);
+    if (!/data-uk-family="[^"]+"/.test(html)) problems.push(`${relativePath}: United Kingdom regional hub is missing its family marker`);
+  }
+  const unitedKingdomGuide = unitedKingdomByRoute.get(baseRoute);
+  if (unitedKingdomGuide) {
+    if (!html.includes('/css/united-kingdom-field.css?v=20260920-1')) problems.push(`${relativePath}: missing United Kingdom field-file stylesheet`);
+    if (!html.includes(`data-uk-family="${unitedKingdomGuide.family}"`)) problems.push(`${relativePath}: missing ${unitedKingdomGuide.family} United Kingdom family marker`);
+    if (!html.includes(`data-uk-instrument="${unitedKingdomGuide.instrument}"`)) problems.push(`${relativePath}: missing ${unitedKingdomGuide.instrument} United Kingdom instrument marker`);
+    if (!html.includes('class="uk-purpose"')) problems.push(`${relativePath}: United Kingdom route is missing its independent reader purpose`);
+    if (!html.includes('class="uk-live-desk"')) problems.push(`${relativePath}: United Kingdom route is missing near-claim official sources`);
+    if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: United Kingdom route does not contain four operating stages`);
   }
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);

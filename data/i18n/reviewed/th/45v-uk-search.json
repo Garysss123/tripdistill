@@ -1,0 +1,21 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.": "วางแผนเที่ยวสหราชอาณาจักรผ่านคู่มือศูนย์กลางภูมิภาคฉบับสมบูรณ์ 20 แห่งและคู่มือเจาะลึก 60 เรื่อง ครอบคลุมเมือง ปราสาท ชายฝั่ง ภูเขา เกาะ และไอร์แลนด์เหนือ",
+    "UK travel": "ท่องเที่ยวสหราชอาณาจักร",
+    "Britain": "สหราชอาณาจักร",
+    "England": "อังกฤษ",
+    "Scotland": "สกอตแลนด์",
+    "Wales": "เวลส์",
+    "Northern Ireland": "ไอร์แลนด์เหนือ",
+    "england-south": "อังกฤษตอนใต้",
+    "england-midlands-north": "มิดแลนด์สและอังกฤษตอนเหนือ",
+    "scotland": "สกอตแลนด์",
+    "wales": "เวลส์",
+    "northern-ireland": "ไอร์แลนด์เหนือ"
+  }
+}

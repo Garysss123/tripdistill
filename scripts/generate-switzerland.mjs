@@ -284,8 +284,11 @@ function updateHome() {
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
+  const unitedKingdomIsPublished = fs.existsSync(path.join(root, 'united-kingdom', 'index.html'));
   const franceIsPublished = fs.existsSync(path.join(root, 'france', 'index.html'));
-  const roadmap = franceIsPublished
+  const roadmap = unitedKingdomIsPublished
+    ? 'TripDistill now covers the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. The United Kingdom adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, rural buses, weather, tides and ferries; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
+    : franceIsPublished
     ? 'TripDistill now covers France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. France adds 20 complete regional hubs and 60 focused guides built around rail, monument, rural last-mile, coast, mountain and island decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
     : 'TripDistill now covers Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Switzerland adds 16 complete regional hubs and 48 focused guides built around rail, lake, valley and mountain operating decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.';
   html = html.replace(/TripDistill now covers[^<]*/, roadmap);

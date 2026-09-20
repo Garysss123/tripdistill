@@ -1,0 +1,21 @@
+export const unitedKingdomImageOverrides = {
+  'london/bloomsbury-covent-garden': 'File:British Museum Great Court, London, UK - Diliff (cropped).jpg',
+  'london/tower-city-greenwich': 'File:Tower of London viewed from the River Thames.jpg',
+  'oxford-cotswolds/blenheim-woodstock': 'File:Blenheim Palace from the Water Terraces October 2016.jpg',
+  'bath-bristol-somerset/bath-roman-georgian-city': 'File:Royal Crescent in Bath - geograph.org.uk - 7845942.jpg',
+  'cornwall-devon/falmouth-roseland': 'File:Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg',
+  'kent-sussex-south-coast/canterbury-dover': 'File:Canterbury-cathedral-wyrdlight.jpg',
+  'kent-sussex-south-coast/seven-sisters-eastbourne': 'File:Seven Sisters March 2017 02.jpg',
+  'birmingham-west-midlands/ironbridge-shrewsbury': 'File:Ironbridge 2014.jpg',
+  'peak-district-derbyshire/bakewell-chatsworth': 'File:Chatsworth House - geograph.org.uk - 2191619.jpg',
+  'peak-district-derbyshire/hope-valley-edale': 'File:Mam Tor from the Ridge path - Flickr - Donnchadh H.jpg',
+  'peak-district-derbyshire/dovedale-ashbourne': 'File:Dovedale - River Dove - Thorpe Cloud - Stepping Stones (15041656340).jpg',
+  'lake-district-cumbria/keswick-derwentwater': "File:Friars' Crag Derwentwater Lake District 2022 01.jpg",
+  'edinburgh-lothians/new-town-dean-village': 'File:Dean Village and the Water of Leith - geograph.org.uk - 8303284.jpg',
+  'glasgow-clyde/loch-lomond-clyde-branch': 'File:View up Loch Lomond to Cruach Tairbeirt - geograph.org.uk - 7140385.jpg',
+  'cardiff-south-wales/cardiff-castle-bay': 'File:Cardiff Castle keep - exterior 01.jpg',
+  'north-wales-eryri/conwy-llandudno': 'File:Conwy Castle viewed from River Conwy - geograph.org.uk - 1925680.jpg',
+  'north-wales-eryri/yr-wyddfa-gateways': 'File:Yr Wyddfa towards Llyn Llydaw Crib Goch 2019 01.jpg',
+  'belfast-northern-ireland/giants-causeway-coast': "File:Giant's Causeway (14).JPG",
+  'belfast-northern-ireland/derry-walls-bogside': 'File:Derry Magazine Street 2019 08 29.jpg'
+};

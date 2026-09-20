@@ -1,0 +1,21 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.": "透過 20 個完整區域主頁與 60 篇專題指南規劃英國行程，涵蓋城市、城堡、海岸、山區、島嶼與北愛爾蘭。",
+    "UK travel": "英國旅遊",
+    "Britain": "英國",
+    "England": "英格蘭",
+    "Scotland": "蘇格蘭",
+    "Wales": "威爾斯",
+    "Northern Ireland": "北愛爾蘭",
+    "england-south": "英格蘭南部",
+    "england-midlands-north": "英格蘭中部與北部",
+    "scotland": "蘇格蘭",
+    "wales": "威爾斯",
+    "northern-ireland": "北愛爾蘭"
+  }
+}
