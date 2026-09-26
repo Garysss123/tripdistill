@@ -114,6 +114,7 @@ svg { display: block; }
   color: #56677c;
   font-size: .88rem;
   font-weight: 750;
+  white-space: nowrap;
   transition: color .18s ease, background .18s ease;
 }
 .nav-link:hover, .nav-link.active { color: var(--teal-dark); background: var(--teal-soft); }
@@ -1316,6 +1317,11 @@ body[data-city="hokkaido"] .area-jump-nav a:hover { color: var(--area-dark); bac
 .legal-page p, .legal-page li { color: var(--muted); }
 .legal-page a { color: var(--teal); text-decoration: underline; }
 .status-card { padding: 1.5rem; border: 1px solid var(--line); background: #fff; border-radius: 1rem; box-shadow: var(--shadow-sm); }
+
+@media (min-width: 1361px) {
+  .desktop-nav { gap: 0; margin-left: .5rem; }
+  .nav-link { padding-right: .6rem; padding-left: .6rem; }
+}
 
 @media (max-width: 1360px) {
   .desktop-nav { display: none; }

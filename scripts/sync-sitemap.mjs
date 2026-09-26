@@ -9,6 +9,7 @@ import { canadaClusters, canadaGuides } from '../data/canada-guides.mjs';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
+import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
@@ -19,10 +20,14 @@ const canadaLastmod = '2026-09-12';
 const switzerlandLastmod = '2026-09-12';
 const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
+const italyLastmod = '2026-09-26';
 const newRoutes = [
-  ['/', unitedKingdomLastmod, 'weekly', '1.0'],
+  ['/', italyLastmod, 'weekly', '1.0'],
   ...usaRoutes.map(route=>[route,'2026-09-11','monthly',route==='/usa/'?'0.9':'0.7']),
-  ['/about/', unitedKingdomLastmod, 'monthly', '0.5'],
+  ['/about/', italyLastmod, 'monthly', '0.5'],
+  ['/italy/', italyLastmod, 'monthly', '0.9'],
+  ...italyClusters.map((cluster) => [`/italy/${cluster.slug}/`, italyLastmod, 'monthly', '0.8']),
+  ...italyGuides.map((guide) => [guide.url, italyLastmod, 'monthly', '0.7']),
   ['/united-kingdom/', unitedKingdomLastmod, 'monthly', '0.9'],
   ...unitedKingdomClusters.map((cluster) => [`/united-kingdom/${cluster.slug}/`, unitedKingdomLastmod, 'monthly', '0.8']),
   ...unitedKingdomGuides.map((guide) => [guide.url, unitedKingdomLastmod, 'monthly', '0.7']),

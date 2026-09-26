@@ -1,0 +1,37 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Italy through twenty complete regional hubs and sixty focused guides for art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.": "20の地域ハブと60の詳細ガイドで、芸術都市、鉄道沿線、丘の町、海岸、火山、山、島を巡るイタリアを計画します。",
+    "Italia": "イタリア",
+    "Italy travel": "イタリア旅行",
+    "central-art-cities": "中部の芸術都市",
+    "booked-door-score": "予約・入場口の判断表",
+    "living-sacred-threshold": "暮らしと礼拝の入口",
+    "piazza-circuit": "広場を巡る行程",
+    "south-volcano-coast": "南部の火山と海岸",
+    "market-daypart-table": "市場を巡る時間配分表",
+    "excavation-traverse": "遺跡を横断する行程",
+    "volcano-status-board": "火山の状況確認板",
+    "rail-to-street-braid": "鉄道から街へつなぐ動線",
+    "coast-capacity-braid": "海岸の混雑を見込む動線",
+    "island-return-billet": "島からの帰路確認票",
+    "collection-attention-spread": "コレクションの集中配分",
+    "hill-town-section": "丘の町の行程",
+    "ztl-threshold-ring": "ZTL境界を巡る行程",
+    "two-shore-clock": "二つの海岸の時間配分",
+    "northeast": "北東部",
+    "lagoon-waterline": "ラグーンと水辺の動線",
+    "summit-operating-stack": "山頂までの運行条件の確認",
+    "northwest-adriatic": "北西アドリア海岸",
+    "road-stage-folio": "道路移動の区間整理",
+    "south-adriatic": "南アドリア海岸",
+    "southern-apennines": "南アペニン山地",
+    "sicily-west": "西シチリア",
+    "sicily-east": "東シチリア",
+    "sardinia": "サルデーニャ"
+  }
+}

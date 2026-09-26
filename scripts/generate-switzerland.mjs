@@ -5,7 +5,7 @@ import { switzerlandClusters, switzerlandCountrySources, switzerlandGuides } fro
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '12 September 2026';
 const isoDate = '2026-09-12';
-const siteCss = '/css/site.css?v=20260904-1';
+const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/switzerland.css?v=20260912-1';
 const fieldCss = '/css/switzerland-field.css?v=20260912-1';
 const mainJs = '/js/main.js?v=20260911-1';
@@ -284,9 +284,12 @@ function updateHome() {
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
+  const italyIsPublished = fs.existsSync(path.join(root, 'italy', 'index.html'));
   const unitedKingdomIsPublished = fs.existsSync(path.join(root, 'united-kingdom', 'index.html'));
   const franceIsPublished = fs.existsSync(path.join(root, 'france', 'index.html'));
-  const roadmap = unitedKingdomIsPublished
+  const roadmap = italyIsPublished
+    ? 'TripDistill now covers Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Italy adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, ZTL thresholds, coast roads, ferries, volcanoes and mountain weather; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
+    : unitedKingdomIsPublished
     ? 'TripDistill now covers the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. The United Kingdom adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, rural buses, weather, tides and ferries; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
     : franceIsPublished
     ? 'TripDistill now covers France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. France adds 20 complete regional hubs and 60 focused guides built around rail, monument, rural last-mile, coast, mountain and island decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'

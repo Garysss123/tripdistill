@@ -7,11 +7,12 @@ import { vietnamClusters, vietnamGuides } from '../data/vietnam-guides.mjs';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
+import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
-const siteCssVersion = '/css/site.css?v=20260904-1';
+const siteCssVersion = '/css/site.css?v=20260926-1';
 const mainJsVersion = '/js/main.js?v=20260911-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
@@ -25,6 +26,8 @@ const franceByRoute = new Map(franceGuides.map((guide) => [guide.url, guide]));
 const franceHubRoutes = new Set(franceClusters.map((cluster) => `/france/${cluster.slug}/`));
 const unitedKingdomByRoute = new Map(unitedKingdomGuides.map((guide) => [guide.url, guide]));
 const unitedKingdomHubRoutes = new Set(unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`));
+const italyByRoute = new Map(italyGuides.map((guide) => [guide.url, guide]));
+const italyHubRoutes = new Set(italyClusters.map((cluster) => `/italy/${cluster.slug}/`));
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -287,6 +290,25 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes('class="uk-purpose"')) problems.push(`${relativePath}: United Kingdom route is missing its independent reader purpose`);
     if (!html.includes('class="uk-live-desk"')) problems.push(`${relativePath}: United Kingdom route is missing near-claim official sources`);
     if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: United Kingdom route does not contain four operating stages`);
+  }
+  if (baseRoute.startsWith('/italy/') && !html.includes('/css/italy.css?v=20260926-1')) problems.push(`${relativePath}: missing Italy peninsula field-atlas stylesheet`);
+  if (baseRoute.startsWith('/italy/') && baseRoute !== '/italy/' && !/<body\b[^>]*\bdata-parent-page="italy"/i.test(html)) problems.push(`${relativePath}: Italy primary navigation parent is not set`);
+  if (baseRoute === '/italy/' && (html.match(/class="it-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: Italy country hub does not contain twenty linked regional cards`);
+  if (italyHubRoutes.has(baseRoute)) {
+    if ((html.match(/class="it-guide-card"/g) || []).length !== 3) problems.push(`${relativePath}: Italy regional hub does not contain three linked route folios`);
+    if (!/data-it-family="[^"]+"/.test(html)) problems.push(`${relativePath}: Italy regional hub is missing its family marker`);
+  }
+  const italyGuide = italyByRoute.get(baseRoute);
+  if (italyGuide) {
+    if (!html.includes('/css/italy-field.css?v=20260926-1')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
+    if (!html.includes(`data-it-family="${italyGuide.family}"`)) problems.push(`${relativePath}: missing ${italyGuide.family} Italy family marker`);
+    if (!html.includes(`data-it-layout="${italyGuide.layout}"`)) problems.push(`${relativePath}: missing ${italyGuide.layout} Italy layout marker`);
+    if (!html.includes(`data-it-structure="${italyGuide.structure}"`)) problems.push(`${relativePath}: missing ${italyGuide.structure} Italy structure marker`);
+    if (!html.includes(`data-it-instrument="${italyGuide.instrument}"`)) problems.push(`${relativePath}: missing ${italyGuide.instrument} Italy instrument marker`);
+    if (!html.includes('class="it-purpose"')) problems.push(`${relativePath}: Italy route is missing its independent reader purpose`);
+    if (!html.includes('class="it-decision-instrument')) problems.push(`${relativePath}: Italy route is missing its decision renderer`);
+    if (!html.includes('class="it-live-desk"')) problems.push(`${relativePath}: Italy route is missing near-claim official sources`);
+    if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: Italy route does not contain four operating stages`);
   }
   if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);

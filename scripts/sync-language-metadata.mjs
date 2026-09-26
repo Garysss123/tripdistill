@@ -3,8 +3,8 @@ import path from 'node:path';
 import { allLocales, localeConfigs } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const siteCssVersion = '20260904-1';
-const mainJsVersion = '20260904-1';
+const siteCssVersion = '20260926-1';
+const mainJsVersion = '20260911-1';
 const chinaCountryCssVersion = '20260828-4';
 const chinaGuideCssVersion = '20260827-3';
 const shanghaiCssVersion = '20260827-2';

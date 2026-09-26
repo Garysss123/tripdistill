@@ -10,7 +10,7 @@ const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], [
 const lastmod = '2026-09-04';
 const expectedCss = '/css/australia.css?v=20260904-1';
 const expectedFieldCss = '/css/australia-field.css?v=20260904-1';
-const expectedSiteCss = '/css/site.css?v=20260904-1';
+const expectedSiteCss = '/css/site.css?v=20260926-1';
 const expectedScript = '/js/main.js?v=20260911-1';
 const suspiciousLocalizedCopy = {
   'zh-Hant': ['作業系統', '熱處理', '自動城市漫步', '大陸旅行田野旅行', '渡輪軸承', '傳統業主', '瀑布的體積', '遠端停靠點', '保護回程'],

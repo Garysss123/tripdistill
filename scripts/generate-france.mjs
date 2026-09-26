@@ -6,7 +6,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '19 September 2026';
 const isoDate = '2026-09-19';
-const siteCss = '/css/site.css?v=20260904-1';
+const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/france.css?v=20260919-1';
 const fieldCss = '/css/france-field.css?v=20260919-1';
 const mainJs = '/js/main.js?v=20260911-1';
@@ -243,10 +243,15 @@ function updateSidebar() {
   const europeEnd = '<!-- EUROPE_NAV_END -->';
   const unitedKingdomStart = '<!-- UNITED_KINGDOM_NAV_START -->';
   const unitedKingdomEnd = '<!-- UNITED_KINGDOM_NAV_END -->';
+  const italyStart = '<!-- ITALY_NAV_START -->';
+  const italyEnd = '<!-- ITALY_NAV_END -->';
   const unitedKingdomBlock = html.includes(unitedKingdomStart)
     ? html.slice(html.indexOf(unitedKingdomStart), html.indexOf(unitedKingdomEnd, html.indexOf(unitedKingdomStart)) + unitedKingdomEnd.length)
     : '';
-  const block = `${europeStart}<details class="sidebar-accordion sidebar-continent" data-sidebar-id="europe"><summary><span class="sidebar-summary-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Europe</span></summary><div class="sidebar-accordion-body">${switzerlandNavBlock()}${franceNavBlock()}${unitedKingdomBlock}</div></details>${europeEnd}`;
+  const italyBlock = html.includes(italyStart)
+    ? html.slice(html.indexOf(italyStart), html.indexOf(italyEnd, html.indexOf(italyStart)) + italyEnd.length)
+    : '';
+  const block = `${europeStart}<details class="sidebar-accordion sidebar-continent" data-sidebar-id="europe"><summary><span class="sidebar-summary-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Europe</span></summary><div class="sidebar-accordion-body">${switzerlandNavBlock()}${franceNavBlock()}${unitedKingdomBlock}${italyBlock}</div></details>${europeEnd}`;
   if (html.includes(europeStart)) html = replaceMarked(html, europeStart, europeEnd, block);
   else if (html.includes('<!-- SWITZERLAND_NAV_START -->')) html = replaceMarked(html, '<!-- SWITZERLAND_NAV_START -->', '<!-- SWITZERLAND_NAV_END -->', block);
   else html = insertAfterMarker(html, '<!-- USA_NAV_END -->', block);
@@ -298,9 +303,10 @@ function updateHome() {
   html = html.includes(creditStart) ? replaceMarked(html, creditStart, creditEnd, credit) : insertAfterMarker(html, '<!-- SWITZERLAND_HOME_CREDIT_END -->', credit);
   html = html.replace('10 countries live', '11 countries live');
   html = html.replace('Switzerland adds 16 complete regional hubs and 48 focused guides across rail cities, lake corridors, valleys and mountain systems.', 'France adds 20 complete regional hubs and 60 focused guides across cities, châteaux, vineyards, coasts, mountains and Corsica.');
+  const italyIsPublished = fs.existsSync(path.join(root, 'italy', 'index.html'));
   const unitedKingdomIsPublished = fs.existsSync(path.join(root, 'united-kingdom', 'index.html'));
-  html = html.replace(/<title>[^<]*<\/title>/, unitedKingdomIsPublished ? '<title>TripDistill — Practical Travel Guides Across 12 Countries</title>' : '<title>TripDistill — Practical Travel Guides Across 11 Countries</title>');
-  html = html.replace(/<meta name="description" content="[^"]*">/, unitedKingdomIsPublished ? '<meta name="description" content="Plan the United Kingdom, France, Switzerland, Canada, USA, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">' : '<meta name="description" content="Plan France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">');
+  html = html.replace(/<title>[^<]*<\/title>/, italyIsPublished ? '<title>TripDistill — Practical Travel Guides Across 13 Countries</title>' : unitedKingdomIsPublished ? '<title>TripDistill — Practical Travel Guides Across 12 Countries</title>' : '<title>TripDistill — Practical Travel Guides Across 11 Countries</title>');
+  html = html.replace(/<meta name="description" content="[^"]*">/, italyIsPublished ? '<meta name="description" content="Plan Italy, the United Kingdom, France, Switzerland, Canada, USA, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">' : unitedKingdomIsPublished ? '<meta name="description" content="Plan the United Kingdom, France, Switzerland, Canada, USA, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">' : '<meta name="description" content="Plan France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">');
   html = html.replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="TripDistill — Practical travel across Europe, North America, Oceania and Asia">');
   html = html.replace('United States, Australia and Asia travel, without the noise', 'Europe, North America, Oceania and Asia travel, without the noise');
   html = html.replace('Explore Switzerland, Canada, the United States, Australia and Asia', 'Explore France, Switzerland, Canada, the United States, Australia and Asia');
@@ -313,8 +319,11 @@ function updateHome() {
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
+  const italyIsPublished = fs.existsSync(path.join(root, 'italy', 'index.html'));
   const unitedKingdomIsPublished = fs.existsSync(path.join(root, 'united-kingdom', 'index.html'));
-  const roadmap = unitedKingdomIsPublished
+  const roadmap = italyIsPublished
+    ? 'TripDistill now covers Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Italy adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, ZTL thresholds, coast roads, ferries, volcanoes and mountain weather; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
+    : unitedKingdomIsPublished
     ? 'TripDistill now covers the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. The United Kingdom adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, rural buses, weather, tides and ferries; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
     : 'TripDistill now covers France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. France adds 20 complete regional hubs and 60 focused guides built around rail, monument, rural last-mile, coast, mountain and island decisions; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.';
   html = html.replace(/TripDistill now covers[^<]*/, roadmap);

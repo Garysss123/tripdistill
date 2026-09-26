@@ -5,7 +5,7 @@ import { canadaClusters, canadaCountrySources, canadaGuides } from '../data/cana
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '12 September 2026';
 const isoDate = '2026-09-12';
-const siteCss = '/css/site.css?v=20260904-1';
+const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/canada.css?v=20260912-1';
 const fieldCss = '/css/canada-field.css?v=20260912-1';
 const mainJs = '/js/main.js?v=20260911-1';
@@ -342,7 +342,7 @@ function updateHome() {
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
-  html = html.replace(/TripDistill now covers[^<]*/, 'TripDistill now covers Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Canada adds 18 complete regional hubs and 54 focused guides; every destination URL is published only after it contains useful planning decisions, current official sources and visible image provenance.');
+  if (!html.includes('TripDistill now covers Italy,')) html = html.replace(/TripDistill now covers[^<]*/, 'TripDistill now covers Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Canada adds 18 complete regional hubs and 54 focused guides; every destination URL is published only after it contains useful planning decisions, current official sources and visible image provenance.');
   fs.writeFileSync(file, html);
 }
 

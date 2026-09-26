@@ -14,11 +14,13 @@
     "generate:switzerland": "node scripts/generate-switzerland.mjs",
     "generate:france": "node scripts/generate-france.mjs",
     "generate:united-kingdom": "node scripts/generate-united-kingdom.mjs",
+    "generate:italy": "node scripts/generate-italy.mjs",
     "fetch:usa-images": "node scripts/fetch-usa-images.mjs",
     "fetch:canada-images": "node scripts/fetch-canada-images.mjs",
     "fetch:switzerland-images": "node scripts/fetch-switzerland-images.mjs",
     "fetch:france-images": "node scripts/fetch-france-images.mjs",
     "fetch:united-kingdom-images": "node scripts/fetch-united-kingdom-images.mjs",
+    "fetch:italy-images": "node scripts/fetch-italy-images.mjs",
     "audit:usa": "node scripts/audit-usa.mjs",
     "audit:canada": "node scripts/audit-canada.mjs",
     "audit:switzerland": "node scripts/audit-switzerland.mjs",
@@ -27,6 +29,8 @@
     "audit:france-sources": "node scripts/check-france-sources.mjs",
     "audit:united-kingdom": "node scripts/audit-united-kingdom.mjs",
     "audit:united-kingdom-sources": "node scripts/check-united-kingdom-sources.mjs",
+    "audit:italy": "node scripts/audit-italy.mjs",
+    "audit:italy-sources": "node scripts/check-italy-sources.mjs",
     "audit:canada-sources": "node scripts/check-canada-sources.mjs",
     "audit:nyc": "node scripts/audit-nyc-editorial.mjs",
     "audit:usa-editorial": "node scripts/audit-usa-editorial.mjs",
@@ -35,6 +39,7 @@
     "smoke:switzerland": "node scripts/smoke-switzerland.mjs",
     "smoke:france": "node scripts/smoke-france.mjs",
     "smoke:united-kingdom": "node scripts/smoke-united-kingdom.mjs",
+    "smoke:italy": "node scripts/smoke-italy.mjs",
     "fetch:vietnam-images": "node scripts/fetch-vietnam-images.mjs",
     "fetch:australia-images": "node scripts/fetch-australia-images.mjs",
     "i18n:export": "node scripts/export-i18n-batch.mjs",
@@ -52,7 +57,7 @@
     "localize": "npm run i18n:approve && npm run localize:pages",
     "sync:metadata": "node scripts/sync-language-metadata.mjs",
     "sync:sitemap": "node scripts/sync-sitemap.mjs",
-    "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
+    "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
     "build": "npm run localize && node scripts/build-dist.mjs",
     "preview": "node scripts/serve.mjs",
     "qa:visual": "node scripts/visual-audit.mjs",
@@ -61,7 +66,7 @@
     "deploy:trip": "npm run audit && npm run build && npx wrangler@latest pages deploy dist --project-name trip"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19.0"
   },
   "devDependencies": {
     "parse5": "^8.0.1"

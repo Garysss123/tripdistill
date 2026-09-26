@@ -5,7 +5,7 @@ import { unitedKingdomClusters, unitedKingdomCountrySources, unitedKingdomGuides
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '20 September 2026';
 const isoDate = '2026-09-20';
-const siteCss = '/css/site.css?v=20260904-1';
+const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/united-kingdom.css?v=20260920-1';
 const fieldCss = '/css/united-kingdom-field.css?v=20260920-1';
 const mainJs = '/js/main.js?v=20260911-1';
@@ -269,21 +269,28 @@ function updateHome() {
   const creditEnd = '<!-- UNITED_KINGDOM_HOME_CREDIT_END -->';
   const credit = `${creditStart}<ul>${imageCredit(image)}</ul>${creditEnd}`;
   html = html.includes(creditStart) ? replaceMarked(html, creditStart, creditEnd, credit) : insertAfterMarker(html, '<!-- FRANCE_HOME_CREDIT_END -->', credit);
-  html = html.replace(/\b(?:11|12) countries live\b/, '12 countries live');
-  html = html.replace('France adds 20 complete regional hubs and 60 focused guides across cities, châteaux, vineyards, coasts, mountains and Corsica.', 'The United Kingdom adds 20 complete regional hubs and 60 focused guides across cities, castles, coasts, mountains and islands.');
-  html = html.replace(/<title>[^<]*<\/title>/, '<title>TripDistill — Practical Travel Guides Across 12 Countries</title>');
-  html = html.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Plan the United Kingdom, France, Switzerland, Canada, USA, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">');
-  html = html.replace('Practical France, Switzerland, Canada, United States, Australia and Asia country, city and regional travel guides.', 'Practical United Kingdom, France, Switzerland, Canada, United States, Australia and Asia country, city and regional travel guides.');
-  html = html.replace(/<h2 id="destinations-title">[^<]*<\/h2>/, '<h2 id="destinations-title">Explore the United Kingdom, France, Switzerland, Canada, the United States, Australia and Asia</h2>');
-  html = html.replace(/<a class="text-link" href="\/(?:france|united-kingdom)\/">Open the newest country guide →<\/a>/, '<a class="text-link" href="/united-kingdom/">Open the newest country guide →</a>');
-  html = html.replace(/(?:The\s+)*(?:United Kingdom,\s*)?France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live\./, 'The United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live.');
+  const italyIsPublished = fs.existsSync(path.join(root, 'italy', 'index.html'));
+  if (!italyIsPublished) {
+    html = html.replace(/\b(?:11|12) countries live\b/, '12 countries live');
+    html = html.replace('France adds 20 complete regional hubs and 60 focused guides across cities, châteaux, vineyards, coasts, mountains and Corsica.', 'The United Kingdom adds 20 complete regional hubs and 60 focused guides across cities, castles, coasts, mountains and islands.');
+    html = html.replace(/<title>[^<]*<\/title>/, '<title>TripDistill — Practical Travel Guides Across 12 Countries</title>');
+    html = html.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Plan the United Kingdom, France, Switzerland, Canada, USA, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical destination guides.">');
+    html = html.replace('Practical France, Switzerland, Canada, United States, Australia and Asia country, city and regional travel guides.', 'Practical United Kingdom, France, Switzerland, Canada, United States, Australia and Asia country, city and regional travel guides.');
+    html = html.replace(/<h2 id="destinations-title">[^<]*<\/h2>/, '<h2 id="destinations-title">Explore the United Kingdom, France, Switzerland, Canada, the United States, Australia and Asia</h2>');
+    html = html.replace(/<a class="text-link" href="\/(?:france|united-kingdom)\/">Open the newest country guide →<\/a>/, '<a class="text-link" href="/united-kingdom/">Open the newest country guide →</a>');
+    html = html.replace(/(?:The\s+)*(?:United Kingdom,\s*)?France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live\./, 'The United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live.');
+  }
   fs.writeFileSync(file, html);
 }
 
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
-  html = html.replace(/TripDistill now covers[^<]*/, 'TripDistill now covers the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. The United Kingdom adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, rural buses, weather, tides and ferries; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.');
+  const italyIsPublished = fs.existsSync(path.join(root, 'italy', 'index.html'));
+  const roadmap = italyIsPublished
+    ? 'TripDistill now covers Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Italy adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, ZTL thresholds, coast roads, ferries, volcanoes and mountain weather; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.'
+    : 'TripDistill now covers the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. The United Kingdom adds 20 complete regional hubs and 60 focused guides built around rail, booked monuments, rural buses, weather, tides and ferries; every destination URL is published only after useful planning detail, current official sources and visible image provenance are present.';
+  html = html.replace(/TripDistill now covers[^<]*/, roadmap);
   fs.writeFileSync(file, html);
 }
 

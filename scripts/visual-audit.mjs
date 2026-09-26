@@ -9,6 +9,7 @@ import { canadaClusters, canadaGuides } from '../data/canada-guides.mjs';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
+import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 import { usaRoutes } from '../data/usa-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -57,6 +58,9 @@ const allRoutes = [
   ['united-kingdom', '/united-kingdom/'],
   ...unitedKingdomClusters.map((cluster) => [`uk-${cluster.slug}`, `/united-kingdom/${cluster.slug}/`]),
   ...unitedKingdomGuides.map((guide) => [`uk-${guide.hubSlug}-${guide.slug}`, guide.url]),
+  ['italy', '/italy/'],
+  ...italyClusters.map((cluster) => [`it-${cluster.slug}`, `/italy/${cluster.slug}/`]),
+  ...italyGuides.map((guide) => [`it-${guide.hubSlug}-${guide.slug}`, guide.url]),
   ['about', '/about/'],
   ['contact', '/contact/'],
   ['privacy-policy', '/privacy-policy/'],
@@ -370,6 +374,11 @@ const allRoutes = [
     [`${locale}-united-kingdom`, `/${locale}/united-kingdom/`],
     ...unitedKingdomClusters.map((cluster) => [`${locale}-uk-${cluster.slug}`, `/${locale}/united-kingdom/${cluster.slug}/`]),
     ...unitedKingdomClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-uk-${cluster.slug}-${guide.slug}`, `/${locale}/united-kingdom/${cluster.slug}/${guide.slug}/`]))
+  ]),
+  ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
+    [`${locale}-italy`, `/${locale}/italy/`],
+    ...italyClusters.map((cluster) => [`${locale}-it-${cluster.slug}`, `/${locale}/italy/${cluster.slug}/`]),
+    ...italyClusters.flatMap((cluster) => cluster.guides.map((guide) => [`${locale}-it-${cluster.slug}-${guide.slug}`, `/${locale}/italy/${cluster.slug}/${guide.slug}/`]))
   ])
 ];
 
@@ -388,13 +397,40 @@ if (process.env.TRIPDISTILL_UK_RELEASE_SWEEP === '1') {
     }
   }
 }
+if (process.env.TRIPDISTILL_ITALY_RELEASE_SWEEP === '1') {
+  const italySweepLocales = (process.env.TRIPDISTILL_ITALY_RELEASE_LOCALES || 'en,zh,ja,ko,th')
+    .split(',')
+    .map((locale) => locale.trim())
+    .filter(Boolean);
+  for (const locale of italySweepLocales) {
+    const prefix = locale === 'en' ? '' : locale + '-';
+    requestedRoutes.add(prefix + 'italy');
+    for (const cluster of italyClusters) {
+      requestedRoutes.add(prefix + 'it-' + cluster.slug);
+      requestedRoutes.add(prefix + 'it-' + cluster.slug + '-' + cluster.guides[0].slug);
+    }
+  }
+}
+if (process.env.TRIPDISTILL_ITALY_ENGLISH_EDITORIAL_SWEEP === '1') {
+  requestedRoutes.add('italy');
+  for (const cluster of italyClusters) requestedRoutes.add('it-' + cluster.slug);
+  for (const guide of italyGuides) requestedRoutes.add('it-' + guide.hubSlug + '-' + guide.slug);
+  requestedRoutes.add('japan');
+  requestedRoutes.add('osaka');
+  requestedRoutes.add('namba');
+}
+if (process.env.TRIPDISTILL_ITALY_CHILD_SWEEP === '1') {
+  for (const guide of italyGuides) requestedRoutes.add('it-' + guide.hubSlug + '-' + guide.slug);
+}
 const unknownRoutes = [...requestedRoutes].filter(slug => !allRoutes.some(([known]) => known === slug));
 if (unknownRoutes.length) throw new Error(`Unknown TRIPDISTILL_ROUTE_FILTER routes: ${unknownRoutes.join(', ')}`);
 const routes = requestedRoutes.size ? allRoutes.filter(([slug]) => requestedRoutes.has(slug)) : allRoutes;
 if (!routes.length) throw new Error(`TRIPDISTILL_ROUTE_FILTER did not match a known route: ${[...requestedRoutes].join(', ')}`);
 
+const desktopWidth = Number(process.env.TRIPDISTILL_DESKTOP_WIDTH || 1440);
+if (!Number.isFinite(desktopWidth) || desktopWidth < 1024) throw new Error('TRIPDISTILL_DESKTOP_WIDTH must be a number of at least 1024.');
 const allViewports = [
-  ['desktop', 1440, 1000, false],
+  ['desktop', desktopWidth, 1000, false],
   ...(process.env.TRIPDISTILL_INCLUDE_TABLET === '1' ? [['tablet', 1100, 900, false]] : []),
   ['mobile', 390, 844, true],
   ...(process.env.TRIPDISTILL_INCLUDE_SMALL_PHONE === '1' ? [['small-phone', 320, 740, true]] : [])
@@ -643,6 +679,27 @@ for (const [viewportName, width, height, mobile] of viewports) {
       const brokenImages = [...document.images].filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.src);
       const activeLinks = [...document.querySelectorAll('[data-nav-key].active')].map((link) => link.textContent.trim());
       const header = document.querySelector('.site-header')?.getBoundingClientRect();
+      const headerLayoutIssues = [];
+      const headerInner = document.querySelector('.header-inner');
+      const desktopNav = document.querySelector('.desktop-nav');
+      const headerActions = document.querySelector('.header-actions');
+      const brand = document.querySelector('.header-inner > .brand');
+      if (headerInner && desktopNav && headerActions && getComputedStyle(desktopNav).display !== 'none') {
+        const innerRect = headerInner.getBoundingClientRect();
+        const navRect = desktopNav.getBoundingClientRect();
+        const actionsRect = headerActions.getBoundingClientRect();
+        const brandRect = brand?.getBoundingClientRect();
+        if (brandRect && brandRect.right > navRect.left + 1) headerLayoutIssues.push('brand overlaps primary navigation');
+        if (navRect.right > actionsRect.left + 1) headerLayoutIssues.push('primary navigation overlaps header actions');
+        if (actionsRect.right > innerRect.right + 1) headerLayoutIssues.push('header actions escape the header container');
+        const links = [...desktopNav.querySelectorAll('.nav-link')];
+        links.forEach((link, index) => {
+          const rect = link.getBoundingClientRect();
+          if (rect.top < innerRect.top - 1 || rect.bottom > innerRect.bottom + 1) headerLayoutIssues.push('navigation link clips vertically: ' + link.textContent.trim());
+          const next = links[index + 1]?.getBoundingClientRect();
+          if (next && rect.right > next.left + 1) headerLayoutIssues.push('navigation links overlap: ' + link.textContent.trim());
+        });
+      }
       const componentErrors = [...document.querySelectorAll('.status-card[role="alert"]')].map((item) => item.textContent.trim());
       const overflowElements = [...document.querySelectorAll('body *')].filter((item) => {
         const rect = item.getBoundingClientRect();
@@ -653,9 +710,9 @@ for (const [viewportName, width, height, mobile] of viewports) {
         const rect = item.getBoundingClientRect();
         return item.tagName.toLowerCase() + '.' + String(item.className || '').replace(/\s+/g, '.').slice(0, 80) + ' right=' + Math.round(rect.right) + ' width=' + Math.round(rect.width) + ' scroll=' + item.scrollWidth + '/' + item.clientWidth;
       });
-      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.uk-country-hero,.uk-hub-hero,.uk-field-hero,.au-country-hero,.au-hub-hero,.au-field-hero,.ca-country-hero,.ca-hub-hero,.ca-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
+      const clippedHeroContent = [...document.querySelectorAll('[data-editorial-revision] > header,.it-country-hero,.it-hub-hero,.it-field-hero,.uk-country-hero,.uk-hub-hero,.uk-field-hero,.au-country-hero,.au-hub-hero,.au-field-hero,.ca-country-hero,.ca-hub-hero,.ca-field-hero,.us-hero,.ny-city-title,.ny-harbor-cover>div,.ny-midtown-cover,.ny-brooklyn-cover,.bo-cover,.bo-trail-cover,.bo-campus-cover,.bo-island-cover,.ph-cover,.ph-docket,.ph-gallery-cover,.ph-market-cover,.dc-city-cover,.dc-memorial-cover,.dc-museum-cover,.dc-georgetown-cover,.ne-region-cover,.ne-port-cover,.ne-acadia-cover,.ne-mountain-cover,.ch-city-cover,.ch-river-cover,.ch-campus-cover,.ch-neighborhood-cover,.se-city-cover,.se-market-cover,.se-island-cover,.se-mountain-cover,.po-city-cover,.po-garden-cover,.po-gorge-cover,.po-coast-cover,.sf-city-cover,.sf-island-cover,.sf-park-cover,.sf-mission-cover,.la-city-cover,.la-downtown-cover,.la-griffith-cover,.la-coast-cover,.sd-city-cover,.sd-park-cover,.sd-jolla-cover,.sd-harbor-cover,.si-region-cover,.si-valley-cover,.si-forest-cover,.si-canyon-cover')].flatMap((hero) => {
         const heroRect = hero.getBoundingClientRect();
-        const candidates = hero.querySelectorAll('.uk-country-copy > *,.uk-hub-copy > *,.uk-field-copy > *,.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.ca-country-copy > *,.ca-hub-copy > *,.ca-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
+        const candidates = hero.querySelectorAll('.it-country-title > *,.it-hub-copy > *,.it-field-copy > *,.uk-country-copy > *,.uk-hub-copy > *,.uk-field-copy > *,.au-country-copy > *,.au-hub-copy > *,.au-field-copy > *,.ca-country-copy > *,.ca-hub-copy > *,.ca-field-copy > *,.us-hero-copy > *,.hero-actions .button,h1,[class$="-deck"],[class$="-kicker"],.ny-deck,.ny-eyebrow');
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
@@ -672,6 +729,7 @@ for (const [viewportName, width, height, mobile] of viewports) {
         brokenImages,
         activeLinks,
         componentErrors,
+        headerLayoutIssues,
         overflowElements,
         clippedHeroContent,
         headerHeight: header ? Math.round(header.height) : 0,
@@ -1079,9 +1137,51 @@ if (!skipInteractions) {
     localPath: unitedKingdomLocalLocation.pathname,
     ...unitedKingdomDetails
   };
+
+  await navigate(interactionClient, `${baseUrl}/italy/`);
+  const italyCountryCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.it-country-card')];
+    document.querySelector('.it-country-card[href="/italy/rome/"]')?.click(); return cards.length;
+  })()`);
+  const italyHubLocation = await waitForLocation(interactionClient, '/italy/rome/');
+  await navigate(interactionClient, `${baseUrl}/italy/rome/`);
+  const italyHubCards = await evaluate(interactionClient, `(() => {
+    const cards=[...document.querySelectorAll('.it-guide-card')];
+    cards[0]?.click(); return cards.length;
+  })()`);
+  const italyLocalLocation = await waitForLocation(interactionClient, '/italy/rome/ancient-rome-capitoline/');
+  await navigate(interactionClient, `${baseUrl}/italy/rome/ancient-rome-capitoline/`);
+  const italyDetails = await evaluate(interactionClient, `(async () => {
+    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+    const active=document.querySelector('#layout-sidebar .sidebar-link.active');
+    const nav={
+      europeOpen:Boolean(document.querySelector('[data-sidebar-id="europe"]')?.open),
+      countryOpen:Boolean(document.querySelector('[data-sidebar-id="italy"]')?.open),
+      chapterOpen:Boolean(active?.closest('details')?.open),
+      openHubCount:document.querySelectorAll('details[name="italy-chapters"][open]').length,
+      active:active?.textContent.trim() || '',
+      activeHref:active?.getAttribute('href') || ''
+    };
+    const languageLinks=[...document.querySelectorAll('footer [data-language-option]')].map(a=>({locale:a.dataset.languageOption,href:a.getAttribute('href')}));
+    document.querySelector('.faq-list summary')?.click();
+    const faqOpen=Boolean(document.querySelector('.faq-list details[open]'));
+    document.querySelector('[data-search-toggle]')?.click();
+    const input=document.querySelector('#site-search');
+    input.value='Rome'; input.dispatchEvent(new Event('input',{bubbles:true}));
+    for(let i=0;i<50&&!document.querySelector('#search-results .search-result');i++)await wait(100);
+    const searchLinks=[...document.querySelectorAll('#search-results .search-result')].map(a=>a.getAttribute('href'));
+    return {...nav,languageLinks,faqOpen,searchLinks};
+  })()`);
+  interactions.italy = {
+    countryCards: italyCountryCards,
+    hubPath: italyHubLocation.pathname,
+    hubCards: italyHubCards,
+    localPath: italyLocalLocation.pathname,
+    ...italyDetails
+  };
 }
 
-const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
+const failures = report.filter((item) => !item.componentsReady || item.overflowX || item.brokenImages.length || item.componentErrors.length || item.headerLayoutIssues.length || item.clippedHeroContent.length || item.runtimeErrors.length || !item.footerLoaded || !item.h1);
 const result = {
   outputDir,
   pagesChecked: report.length,
@@ -1096,12 +1196,13 @@ console.log(JSON.stringify({
   pagesChecked: report.length,
   failureCount: failures.length,
   interactions,
-  pageSummary: report.map(({ route, viewport, overflowX, overflowElements, brokenImages, clippedHeroContent, runtimeErrors, activeLinks, mainTextLength }) => ({
+  pageSummary: report.map(({ route, viewport, overflowX, overflowElements, brokenImages, headerLayoutIssues, clippedHeroContent, runtimeErrors, activeLinks, mainTextLength }) => ({
     route,
     viewport,
     overflowX,
     overflowElements: overflowX ? overflowElements : [],
     brokenImages: brokenImages.length,
+    headerLayoutIssues,
     clippedHeroContent: clippedHeroContent.length,
     runtimeErrors: runtimeErrors.length,
     activeLinks,
@@ -1191,6 +1292,19 @@ const interactionFailed = !skipInteractions && (
   !interactions.unitedKingdom?.faqOpen ||
   !interactions.unitedKingdom?.searchLinks?.includes('/united-kingdom/london/') ||
   !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.unitedKingdom?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/united-kingdom/london/westminster-south-bank/')) ||
+  interactions.italy?.countryCards !== 20 ||
+  interactions.italy?.hubPath !== '/italy/rome/' ||
+  interactions.italy?.hubCards !== 3 ||
+  interactions.italy?.localPath !== '/italy/rome/ancient-rome-capitoline/' ||
+  !interactions.italy?.europeOpen ||
+  !interactions.italy?.countryOpen ||
+  !interactions.italy?.chapterOpen ||
+  interactions.italy?.openHubCount !== 1 ||
+  interactions.italy?.active !== 'Ancient Rome & the Capitoline' ||
+  interactions.italy?.activeHref !== '/italy/rome/ancient-rome-capitoline/' ||
+  !interactions.italy?.faqOpen ||
+  !interactions.italy?.searchLinks?.includes('/italy/rome/') ||
+  !['en','zh-Hant','ja','ko','th'].every(locale=>interactions.italy?.languageLinks?.some(a=>a.locale===locale&&a.href===(locale==='en'?'':`/${locale==='zh-Hant'?'zh':locale}`)+'/italy/rome/ancient-rome-capitoline/')) ||
   !interactions.menu.opened ||
   interactions.menu.expanded !== 'true' ||
   !interactions.menu.visible ||

@@ -1,0 +1,37 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Italy through twenty complete regional hubs and sixty focused guides for art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.": "예술 도시·철도축·언덕 마을·해안·화산·산악·섬을 다루는 완성도 높은 지역 허브 20개와 집중 가이드 60개로 이탈리아를 계획하세요.",
+    "Italia": "Italia",
+    "Italy travel": "이탈리아 여행",
+    "central-art-cities": "중부 예술 도시",
+    "booked-door-score": "예약제 명소 점수",
+    "living-sacred-threshold": "생활하는 종교 공간 진입 조건",
+    "piazza-circuit": "광장 동선",
+    "south-volcano-coast": "남부 화산·해안",
+    "market-daypart-table": "시장 방문 시간대 표",
+    "excavation-traverse": "발굴 유적 횡단 동선",
+    "volcano-status-board": "화산 상태 일정표",
+    "rail-to-street-braid": "철도에서 거리로 이어지는 동선",
+    "coast-capacity-braid": "해안 수용 인원 동선",
+    "island-return-billet": "섬 귀환 승선표",
+    "collection-attention-spread": "컬렉션 관람 집중도",
+    "hill-town-section": "언덕 마을 구간",
+    "ztl-threshold-ring": "ZTL 진입 조건 순환",
+    "two-shore-clock": "두 해안 운행 시간표",
+    "northeast": "북동부",
+    "lagoon-waterline": "석호 해안선",
+    "summit-operating-stack": "정상 운행 조건 묶음",
+    "northwest-adriatic": "북서부 아드리아",
+    "road-stage-folio": "도로 구간 가이드 모음",
+    "south-adriatic": "남부 아드리아",
+    "southern-apennines": "남부 아펜니노",
+    "sicily-west": "시칠리아 서부",
+    "sicily-east": "시칠리아 동부",
+    "sardinia": "사르데냐"
+  }
+}

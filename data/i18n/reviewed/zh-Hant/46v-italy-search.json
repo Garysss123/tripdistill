@@ -1,0 +1,37 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Italy through twenty complete regional hubs and sixty focused guides for art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.": "透過 20 個完整區域樞紐與 60 個深度指南規劃義大利，涵蓋藝術城市、鐵路走廊、山城、海岸、火山、山區與島嶼。",
+    "Italia": "義大利",
+    "Italy travel": "義大利旅遊",
+    "central-art-cities": "中部藝術城市",
+    "booked-door-score": "預約入口行程譜",
+    "living-sacred-threshold": "仍在使用的宗教空間入口",
+    "piazza-circuit": "廣場環線",
+    "south-volcano-coast": "南部火山海岸",
+    "market-daypart-table": "市場時段行程表",
+    "excavation-traverse": "考古遺址穿越",
+    "volcano-status-board": "火山狀態看板",
+    "rail-to-street-braid": "鐵路至街道動線",
+    "coast-capacity-braid": "海岸承載量動線",
+    "island-return-billet": "島嶼返程行程卡",
+    "collection-attention-spread": "館藏注意力配置",
+    "hill-town-section": "山城剖面",
+    "ztl-threshold-ring": "ZTL 進入環線",
+    "two-shore-clock": "雙岸船班時刻",
+    "northeast": "東北部",
+    "lagoon-waterline": "潟湖水線",
+    "summit-operating-stack": "山頂運作狀態堆疊",
+    "northwest-adriatic": "西北亞得里亞海",
+    "road-stage-folio": "道路階段行程卡",
+    "south-adriatic": "南亞得里亞海",
+    "southern-apennines": "南亞平寧山脈",
+    "sicily-west": "西西里島西部",
+    "sicily-east": "西西里島東部",
+    "sardinia": "撒丁島"
+  }
+}

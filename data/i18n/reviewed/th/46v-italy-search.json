@@ -1,0 +1,37 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Italy through twenty complete regional hubs and sixty focused guides for art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.": "วางแผนเที่ยวอิตาลีผ่านศูนย์กลางภูมิภาคครบ 20 แห่งและคู่มือเจาะจง 60 เส้นทางสำหรับเมืองศิลปะ แนวรถไฟ เมืองเนินเขา ชายฝั่ง ภูเขาไฟ ภูเขา และเกาะ",
+    "Italia": "Italia",
+    "Italy travel": "เที่ยวอิตาลี",
+    "central-art-cities": "เมืองศิลปะภาคกลาง",
+    "booked-door-score": "เกณฑ์การเข้าชมแบบจองล่วงหน้า",
+    "living-sacred-threshold": "ข้อกำหนดเข้าศาสนสถานที่ยังใช้ประกอบพิธี",
+    "piazza-circuit": "เส้นทางจัตุรัส",
+    "south-volcano-coast": "ภูเขาไฟและชายฝั่งภาคใต้",
+    "market-daypart-table": "ตารางแบ่งช่วงเวลาตลาด",
+    "excavation-traverse": "เส้นทางสำรวจโบราณสถาน",
+    "volcano-status-board": "กระดานสถานะภูเขาไฟ",
+    "rail-to-street-braid": "แผนเชื่อมรถไฟสู่ถนน",
+    "coast-capacity-braid": "แผนจัดการความหนาแน่นชายฝั่ง",
+    "island-return-billet": "ใบยืนยันเที่ยวกลับจากเกาะ",
+    "collection-attention-spread": "แผนจัดเวลาชมคอลเลกชัน",
+    "hill-town-section": "แนวทางเมืองเนินเขา",
+    "ztl-threshold-ring": "วงรอบขอบเขต ZTL",
+    "two-shore-clock": "ตารางเวลาสองฝั่ง",
+    "northeast": "ภาคตะวันออกเฉียงเหนือ",
+    "lagoon-waterline": "แนวชายฝั่งลากูน",
+    "summit-operating-stack": "ชุดตรวจเงื่อนไขก่อนขึ้นยอด",
+    "northwest-adriatic": "เอเดรียติกตะวันตกเฉียงเหนือ",
+    "road-stage-folio": "คู่มือแบ่งช่วงการเดินทางบนถนน",
+    "south-adriatic": "เอเดรียติกตอนใต้",
+    "southern-apennines": "เทือกเขาแอเพนไนน์ตอนใต้",
+    "sicily-west": "ซิซิลีตะวันตก",
+    "sicily-east": "ซิซิลีตะวันออก",
+    "sardinia": "ซาร์ดิเนีย"
+  }
+}

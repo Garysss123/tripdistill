@@ -5,7 +5,7 @@ import { australiaClusters, australiaCountrySources, australiaGuides } from '../
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '4 September 2026';
 const isoDate = '2026-09-04';
-const siteCss = '/css/site.css?v=20260904-1';
+const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/australia.css?v=20260904-1';
 const fieldCss = '/css/australia-field.css?v=20260904-1';
 const mainJs = '/js/main.js?v=20260911-1';
@@ -245,7 +245,7 @@ function updateHeader() {
   const link = `${headerStart}\n      <a class="nav-link" href="/australia/" data-nav-key="australia">Australia</a>\n${headerEnd}`;
   if (html.includes(headerStart)) html = replaceMarked(html, headerStart, headerEnd, link);
   else html = html.replace('      <a class="nav-link" href="/vietnam/" data-nav-key="vietnam">Vietnam</a>', `      <a class="nav-link" href="/vietnam/" data-nav-key="vietnam">Vietnam</a>\n${link}`);
-  html = html.replace(/placeholder="Search [^"]+"/, 'placeholder="Search Australia, Vietnam, cities…"');
+  if (!html.includes('<!-- ITALY_HEADER_START -->')) html = html.replace(/placeholder="Search [^"]+"/, 'placeholder="Search Australia, Vietnam, cities…"');
   fs.writeFileSync(file, html);
 }
 
@@ -272,21 +272,24 @@ function updateHome() {
   const file = path.join(root, 'index.html');
   let html = fs.readFileSync(file, 'utf8');
   const image = australiaClusters[0].guides[0].image;
-  html = html.replace(/<title>[^<]*<\/title>/, '<title>TripDistill — Practical Australia & Asia Travel Guides</title>');
-  html = html.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Plan Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical country, city, island and regional decision guides.">');
-  html = html.replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="TripDistill — Australia and Asia travel, distilled">');
-  html = html.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="Country and city travel guides built for real transport, weather, access and distance decisions.">');
-  html = html.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${absolute(image.src)}">`);
-  html = html.replace(/(?:Australia and )*Asia travel, without the noise/, 'Australia and Asia travel, without the noise');
-  html = html.replace(/<div class="hero-actions">\s*<a class="button primary" href="\/vietnam\/">[\s\S]*?<\/a><a class="button secondary" href="\/vietnam\/#regions">[\s\S]*?<\/a>\s*<\/div>/, '<div class="hero-actions"><a class="button primary" href="/australia/">Explore Australia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a><a class="button secondary" href="/australia/#regions">Compare 16 Australia hubs</a></div>');
-  html = html.replace(/<div class="hero-visual" aria-label="[^"]*"><img class="hero-image-main"[^>]*>/, `<div class="hero-visual" aria-label="${escapeHtml(image.alt)}"><img class="hero-image-main" src="${image.src}" width="1600" height="1066" alt="${escapeHtml(image.alt)}" fetchpriority="high">`);
-  html = html.replace(/<div class="hero-stamp"><strong>\d+ countries live<\/strong><span>[\s\S]*?<\/span><\/div>/, '<div class="hero-stamp"><strong>7 countries live</strong><span>Australia adds sixteen complete regional hubs and eighty field guides across a new Oceania collection.</span></div>');
-  html = html.replace(/<div><span class="section-kicker">Destinations now live<\/span><h2 id="destinations-title">[\s\S]*?<\/h2><p>[\s\S]*?<\/p><\/div>/, '<div><span class="section-kicker">Destinations now live</span><h2 id="destinations-title">Start with Australia, Vietnam, Malaysia, China, Japan, South Korea or Thailand</h2><p>Compare country context first, then move into city, island and regional guides built around real transport, access, weather, time and stay decisions.</p></div>');
-  html = html.replace(/<a class="text-link" href="\/vietnam\/">Open the newest country guide →<\/a>/, '<a class="text-link" href="/australia/">Open the newest country guide →</a>');
+  const italyReleasePresent = html.includes('<!-- ITALY_HOME_START -->');
+  if (!italyReleasePresent) {
+    html = html.replace(/<title>[^<]*<\/title>/, '<title>TripDistill — Practical Australia & Asia Travel Guides</title>');
+    html = html.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Plan Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand with practical country, city, island and regional decision guides.">');
+    html = html.replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="TripDistill — Australia and Asia travel, distilled">');
+    html = html.replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="Country and city travel guides built for real transport, weather, access and distance decisions.">');
+    html = html.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${absolute(image.src)}">`);
+    html = html.replace(/(?:Australia and )*Asia travel, without the noise/, 'Australia and Asia travel, without the noise');
+    html = html.replace(/<div class="hero-actions">\s*<a class="button primary" href="\/vietnam\/">[\s\S]*?<\/a><a class="button secondary" href="\/vietnam\/#regions">[\s\S]*?<\/a>\s*<\/div>/, '<div class="hero-actions"><a class="button primary" href="/australia/">Explore Australia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a><a class="button secondary" href="/australia/#regions">Compare 16 Australia hubs</a></div>');
+    html = html.replace(/<div class="hero-visual" aria-label="[^"]*"><img class="hero-image-main"[^>]*>/, `<div class="hero-visual" aria-label="${escapeHtml(image.alt)}"><img class="hero-image-main" src="${image.src}" width="1600" height="1066" alt="${escapeHtml(image.alt)}" fetchpriority="high">`);
+    html = html.replace(/<div class="hero-stamp"><strong>\d+ countries live<\/strong><span>[\s\S]*?<\/span><\/div>/, '<div class="hero-stamp"><strong>7 countries live</strong><span>Australia adds sixteen complete regional hubs and eighty field guides across a new Oceania collection.</span></div>');
+    html = html.replace(/<div><span class="section-kicker">Destinations now live<\/span><h2 id="destinations-title">[\s\S]*?<\/h2><p>[\s\S]*?<\/p><\/div>/, '<div><span class="section-kicker">Destinations now live</span><h2 id="destinations-title">Start with Australia, Vietnam, Malaysia, China, Japan, South Korea or Thailand</h2><p>Compare country context first, then move into city, island and regional guides built around real transport, access, weather, time and stay decisions.</p></div>');
+    html = html.replace(/<a class="text-link" href="\/vietnam\/">Open the newest country guide →<\/a>/, '<a class="text-link" href="/australia/">Open the newest country guide →</a>');
+  }
   const card = `${homeCardStart}\n          <a class="destination-card featured" href="/australia/"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(image.alt)}"><div class="destination-copy"><small>Oceania · New complete country</small><h3>Australia</h3><p>Choose among sixteen complete hubs and eighty field guides where distance, Country, fire, flood, reef, road and return remain visible.</p><span class="card-arrow">Plan Australia →</span></div></a>\n${homeCardEnd}`;
   if (html.includes(homeCardStart)) html = replaceMarked(html, homeCardStart, homeCardEnd, card);
   else html = html.replace('<div class="destination-grid">', `<div class="destination-grid">\n${card}`);
-  html = html.replace(/<span class="section-kicker">Publishing roadmap<\/span><h2 id="roadmap-title">[^<]*<\/h2><p>[^<]*<\/p>/, '<span class="section-kicker">Publishing roadmap</span><h2 id="roadmap-title">Oceania and Asia, one useful layer at a time</h2><p>Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live. Every regional card opens only after it supports an independently useful guide and a deeper planning layer.</p>');
+  if (!italyReleasePresent) html = html.replace(/<span class="section-kicker">Publishing roadmap<\/span><h2 id="roadmap-title">[^<]*<\/h2><p>[^<]*<\/p>/, '<span class="section-kicker">Publishing roadmap</span><h2 id="roadmap-title">Oceania and Asia, one useful layer at a time</h2><p>Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand are live. Every regional card opens only after it supports an independently useful guide and a deeper planning layer.</p>');
   const credit = `${homeCreditStart}\n          ${imageCredit(image)}\n${homeCreditEnd}`;
   if (html.includes(homeCreditStart)) html = replaceMarked(html, homeCreditStart, homeCreditEnd, credit);
   else {
@@ -295,14 +298,14 @@ function updateHome() {
     if (heading === -1 || list === -1) throw new Error('Cannot find home photo sources list');
     html = html.slice(0, list + 4) + `\n${credit}` + html.slice(list + 4);
   }
-  html = html.replace('"description": "Practical Asia country and city travel guides."', '"description": "Practical Australia and Asia country, city and regional travel guides."');
+  if (!italyReleasePresent) html = html.replace('"description": "Practical Asia country and city travel guides."', '"description": "Practical Australia and Asia country, city and regional travel guides."');
   fs.writeFileSync(file, html);
 }
 
 function updateAbout() {
   const file = path.join(root, 'about', 'index.html');
   let html = fs.readFileSync(file, 'utf8');
-  html = html.replace(/TripDistill now covers[^<]*/, 'TripDistill now covers Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Australia opens sixteen complete regional hubs and eighty focused field guides; every destination URL is published only after it contains original structure, practical decisions, current official sources and visible image provenance.');
+  if (!html.includes('TripDistill now covers Italy,')) html = html.replace(/TripDistill now covers[^<]*/, 'TripDistill now covers Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Australia opens sixteen complete regional hubs and eighty focused field guides; every destination URL is published only after it contains original structure, practical decisions, current official sources and visible image provenance.');
   fs.writeFileSync(file, html);
 }
 
