@@ -431,9 +431,11 @@ const routes = requestedRoutes.size ? allRoutes.filter(([slug]) => requestedRout
 if (!routes.length) throw new Error(`TRIPDISTILL_ROUTE_FILTER did not match a known route: ${[...requestedRoutes].join(', ')}`);
 
 const desktopWidth = Number(process.env.TRIPDISTILL_DESKTOP_WIDTH || 1440);
+const desktopHeight = Number(process.env.TRIPDISTILL_DESKTOP_HEIGHT || 1000);
 if (!Number.isFinite(desktopWidth) || desktopWidth < 1024) throw new Error('TRIPDISTILL_DESKTOP_WIDTH must be a number of at least 1024.');
+if (!Number.isFinite(desktopHeight) || desktopHeight < 600) throw new Error('TRIPDISTILL_DESKTOP_HEIGHT must be a number of at least 600.');
 const allViewports = [
-  ['desktop', desktopWidth, 1000, false],
+  ['desktop', desktopWidth, desktopHeight, false],
   ...(process.env.TRIPDISTILL_INCLUDE_TABLET === '1' ? [['tablet', 1100, 900, false]] : []),
   ['mobile', 390, 844, true],
   ...(process.env.TRIPDISTILL_INCLUDE_SMALL_PHONE === '1' ? [['small-phone', 320, 740, true]] : [])

@@ -1,0 +1,18 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/mparntwe-alice-springs/",
+    "/australia/red-centre/tjoritja-west-macdonnell/",
+    "/australia/red-centre/watarrka-kings-canyon/",
+    "/australia/red-centre/uluru-cultural-landscape/",
+    "/australia/red-centre/kata-tjuta/"
+  ],
+  "translations": {
+    "Plan an Alice Springs town day": "アリススプリングスで町歩きの日を計画する",
+    "Choose an Ormiston or Simpsons Gap day": "オーミストン渓谷かシンプソンズ・ギャップで過ごす一日を選ぶ",
+    "Choose a Watarrka walk by its heat cutoff": "暑さによる出発制限に合わせてワタルカの散策路を選ぶ",
+    "Plan Uluṟu’s half-day for cool hours": "涼しい時間帯にウルル（Uluṟu）の半日行程を計画する",
+    "Choose Waḻpa Gorge or the Valley circuit": "ワルパ（Waḻpa）渓谷か風の谷の周回路を選ぶ"
+  }
+}

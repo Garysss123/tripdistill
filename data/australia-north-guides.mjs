@@ -216,7 +216,7 @@ export const australiaNorthClusters = [
     ],
     guides: [
       g({
-        slug: 'mparntwe-alice-springs',
+        slug: 'mparntwe-alice-springs', routeTitle: "Plan an Alice Springs town day",
         name: 'Mparntwe / Alice Springs',
         motif: 'town, interpretation and preparation',
         instrument: 'gateway-compass',
@@ -263,7 +263,7 @@ export const australiaNorthClusters = [
         ]
       }),
       g({
-        slug: 'tjoritja-west-macdonnell',
+        slug: 'tjoritja-west-macdonnell', routeTitle: "Choose an Ormiston or Simpsons Gap day",
         name: 'Tjoritja / West MacDonnell Ranges',
         motif: 'gorge road and water decisions',
         instrument: 'range-mileage',
@@ -310,7 +310,7 @@ export const australiaNorthClusters = [
         ]
       }),
       g({
-        slug: 'watarrka-kings-canyon',
+        slug: 'watarrka-kings-canyon', routeTitle: "Choose a Watarrka walk by its heat cutoff",
         name: 'Watarrka / Kings Canyon',
         motif: 'canyon rim and heat gate',
         instrument: 'heat-gate',
@@ -356,7 +356,7 @@ export const australiaNorthClusters = [
         ]
       }),
       g({
-        slug: 'uluru-cultural-landscape', name: 'Uluṟu Cultural Landscape', motif: 'surface, water and respect', orientationTitle: "Choose the right walk", routeTitle: "Plan a half-day", instrument: 'cultural-compass', imageQuery: 'Uluru sunset Northern Territory Australia', imageAlt: 'Uluṟu rising from the central Australian desert',
+        slug: 'uluru-cultural-landscape', name: 'Uluṟu Cultural Landscape', motif: 'surface, water and respect', orientationTitle: "Choose the right walk", routeTitle: "Plan Uluṟu’s half-day for cool hours", instrument: 'cultural-compass', imageQuery: 'Uluru sunset Northern Territory Australia', imageAlt: 'Uluṟu rising from the central Australian desert',
         summary: "Uluṟu is more than a red landmark: Aṉangu have cared for this living Country for generations, and the park is jointly managed with the Australian Government. Begin with the Cultural Centre, then read the exposed sandstone and water-shaped shade around Muṯitjulu Waterhole.",
         orientation: "Uluṟu and Kata Tjuṯa formed from ancient sediment fans that hardened into rock and later tilted as the land shifted. Uluṟu is mainly arkose sandstone; iron oxide gives its weathered surface the familiar red, while pale patches expose less-weathered rock. Geology is one layer of this place. Tjukurpa is Aṉangu law, knowledge and spiritual philosophy, and it guides the park's joint management. Start with the Tjukurpa Tunnel and multilingual displays at the Cultural Centre; let Aṉangu interpretation set the limits of what is shared.",
         interpretation: "The two short walks end in different landscapes. From the Mala carpark, the public route to Kaṉtju Gorge passes publicly described ancient campsites and a kitchen cave before reaching sheer gorge walls. Kuniya ends at Muṯitjulu Waterhole, one of the area's few permanent water sources, with river red gums, shade and tall grasses. These are visitor-route descriptions, not permission to enter caves or reproduce restricted Tjukurpa. Stay on the open track and use park signs as the authority at each site.",
@@ -492,7 +492,7 @@ export const australiaNorthClusters = [
         ],
       }),
       g({
-        slug: 'kata-tjuta',
+        slug: 'kata-tjuta', routeTitle: "Choose Waḻpa Gorge or the Valley circuit",
         name: 'Kata Tjuṯa',
         motif: 'gorge walk and valley loop',
         instrument: 'valley-profile',
