@@ -745,3 +745,29 @@ html[lang="ko"] body[data-page^="it-rome-"] .it-field-copy h1 {
   overflow-wrap: normal;
   hyphens: none;
 }
+/* Rome CJK heading rhythm and decorative scoreboard fix. */
+html[lang="zh-Hant"] body:is([data-page="it-rome"], [data-page^="it-rome-"]) :is(h1,h2,h3,h4,h5,h6),
+html[lang="ja"] body:is([data-page="it-rome"], [data-page^="it-rome-"]) :is(h1,h2,h3,h4,h5,h6),
+html[lang="ko"] body:is([data-page="it-rome"], [data-page^="it-rome-"]) :is(h1,h2,h3,h4,h5,h6) {
+  line-height: 1.28;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: none;
+  text-wrap: pretty;
+}
+
+body[data-page="it-rome-ancient-rome-capitoline"] .it-scoreboard li {
+  grid-template-columns: minmax(0, 1fr);
+}
+body[data-page="it-rome-ancient-rome-capitoline"] .it-scoreboard li::before {
+  content: none;
+  display: none;
+}
+body[data-page="it-rome-ancient-rome-capitoline"] .it-scoreboard article {
+  border-left: 0;
+}
+
+body:is([data-page="it-rome"], [data-page^="it-rome-"]) .section.compact:has(> .ad-slot[data-ad-slot]:empty) {
+  display: none;
+}

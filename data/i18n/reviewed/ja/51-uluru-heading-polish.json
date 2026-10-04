@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/uluru-cultural-landscape/"
+  ],
+  "translations": {
+    "Choose the right walk": "自分に合う散策路を選ぶ",
+    "Plan a half-day": "半日プランを立てる"
+  }
+}

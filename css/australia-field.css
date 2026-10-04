@@ -167,3 +167,60 @@
 [data-au-instrument="cultural-compass"] .au-route-step { border-top: 3px solid #ddb17c; }
 [data-au-instrument="cultural-compass"] .au-route-step:nth-child(even) { background: #f1e6d5; }
 [data-au-instrument="cultural-compass"] .au-check { border-top: 3px solid #a45d40; }
+/* Red Centre CJK heading rhythm and compact Uluru reading layout. */
+html[lang="zh-Hant"] body[data-page="red-centre"] [data-au-family="desert-light-compass"] :is(h1,h2,h3,h4,h5,h6),
+html[lang="ja"] body[data-page="red-centre"] [data-au-family="desert-light-compass"] :is(h1,h2,h3,h4,h5,h6),
+html[lang="ko"] body[data-page="red-centre"] [data-au-family="desert-light-compass"] :is(h1,h2,h3,h4,h5,h6),
+html[lang="zh-Hant"] body[data-page="uluru-cultural-landscape"] [data-au-instrument="cultural-compass"] :is(h1,h2,h3,h4,h5,h6),
+html[lang="ja"] body[data-page="uluru-cultural-landscape"] [data-au-instrument="cultural-compass"] :is(h1,h2,h3,h4,h5,h6),
+html[lang="ko"] body[data-page="uluru-cultural-landscape"] [data-au-instrument="cultural-compass"] :is(h1,h2,h3,h4,h5,h6) {
+  line-height: 1.28;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: none;
+  text-transform: none;
+  text-wrap: pretty;
+}
+
+body[data-page="uluru-cultural-landscape"] .au-reading {
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: start;
+  margin: clamp(2.5rem, 4vw, 4rem) 0;
+}
+body[data-page="uluru-cultural-landscape"] .au-reading > div,
+body[data-page="uluru-cultural-landscape"] .au-reading aside {
+  min-width: 0;
+}
+body[data-page="uluru-cultural-landscape"] .au-reading aside {
+  padding: clamp(1rem, 1.8vw, 1.4rem);
+}
+
+body:is([data-page="red-centre"], [data-page="uluru-cultural-landscape"]) .section.compact:has(> .ad-slot[data-ad-slot]:empty) {
+  display: none;
+}
+
+@media (max-width: 1040px) {
+  body[data-page="uluru-cultural-landscape"] .au-reading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+
+/* Uluru desktop hero fit for the wide wordmark. */
+@media (min-width: 1041px) {
+  [data-au-instrument="cultural-compass"] .au-field-hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, .8fr);
+  }
+  [data-au-instrument="cultural-compass"] .au-field-copy {
+    padding: clamp(1.4rem, 2.8vw, 3rem);
+  }
+  [data-au-instrument="cultural-compass"] .au-field-copy h1 {
+    max-width: none;
+    font-size: clamp(3.25rem, 4.8vw, 5rem);
+    line-height: .9;
+    letter-spacing: -.065em;
+  }
+}

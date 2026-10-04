@@ -122,7 +122,7 @@ for (const route of routes) {
     check(html.includes('<strong>16</strong><span>decision structures</span>'), `${route}: structure-family inventory missing`);
   } else if (italyGuides.some((guide) => guide.url === route)) {
     const guide = italyGuides.find((item) => item.url === route);
-    check(html.includes('/css/italy-field.css?v=20261004-1'), `${route}: Italy field CSS missing`);
+    check(html.includes('/css/italy-field.css?v=20261004-2'), `${route}: Italy field CSS missing`);
     check(dom.filter((node) => classHas(node, 'it-purpose')).length === 1, `${route}: independent purpose panel missing`);
     check(dom.filter((node) => classHas(node, 'it-decision-instrument')).length === 1, `${route}: decision instrument missing`);
     check((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length === 4, `${route}: four route stages missing`);

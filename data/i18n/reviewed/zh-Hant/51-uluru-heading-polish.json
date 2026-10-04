@@ -1,0 +1,11 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/uluru-cultural-landscape/"
+  ],
+  "translations": {
+    "Choose the right walk": "選擇適合的步道",
+    "Plan a half-day": "半日遊安排"
+  }
+}
