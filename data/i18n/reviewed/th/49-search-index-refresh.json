@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "uluṟu cultural landscape": "ภูมิทัศน์วัฒนธรรม Uluṟu",
+    "Uluṟu Cultural Landscape Guide": "คู่มือท่องเที่ยวภูมิทัศน์วัฒนธรรม Uluṟu",
+    "surface, water and respect": "พื้นผิว น้ำ และความเคารพ"
+  }
+}

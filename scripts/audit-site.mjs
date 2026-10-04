@@ -243,7 +243,7 @@ for (const absoluteUrl of publishedUrls) {
     if ((html.match(/class="vn-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Vietnam child guide does not contain four route stages`);
     if ((html.match(/class="vn-check"/g) || []).length !== 3) problems.push(`${relativePath}: Vietnam child guide does not contain three weak-point checks`);
   }
-  if (baseRoute.startsWith('/australia/') && !html.includes('/css/australia.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia continental field-atlas stylesheet`);
+  if (baseRoute.startsWith('/australia/') && !html.includes('/css/australia.css?v=20261004-1')) problems.push(`${relativePath}: missing Australia continental field-atlas stylesheet`);
   if (baseRoute.startsWith('/australia/') && !html.includes('"@type":"Article"')) problems.push(`${relativePath}: missing valid Australia Article JSON-LD`);
   if (baseRoute.startsWith('/australia/') && baseRoute !== '/australia/' && !/<body\b[^>]*\bdata-parent-page="australia"/i.test(html)) problems.push(`${relativePath}: Australia primary navigation parent is not set`);
   if (baseRoute === '/australia/' && (html.match(/class="au-country-card"/g) || []).length !== 16) problems.push(`${relativePath}: Australia country hub does not contain sixteen linked regional cards`);
@@ -300,7 +300,7 @@ for (const absoluteUrl of publishedUrls) {
   }
   const italyGuide = italyByRoute.get(baseRoute);
   if (italyGuide) {
-    if (!html.includes('/css/italy-field.css?v=20260926-1')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
+    if (!html.includes('/css/italy-field.css?v=20261004-1')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
     if (!html.includes(`data-it-family="${italyGuide.family}"`)) problems.push(`${relativePath}: missing ${italyGuide.family} Italy family marker`);
     if (!html.includes(`data-it-layout="${italyGuide.layout}"`)) problems.push(`${relativePath}: missing ${italyGuide.layout} Italy layout marker`);
     if (!html.includes(`data-it-structure="${italyGuide.structure}"`)) problems.push(`${relativePath}: missing ${italyGuide.structure} Italy structure marker`);

@@ -7,7 +7,7 @@ const reviewDate = '26 September 2026';
 const isoDate = '2026-09-26';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/italy.css?v=20260926-1';
-const fieldCss = '/css/italy-field.css?v=20260926-1';
+const fieldCss = '/css/italy-field.css?v=20261004-1';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
@@ -61,25 +61,27 @@ function shellStart(mainOpen) {
   return `<a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>${mainOpen}`;
 }
 const shellEnd = () => `</div><div id="layout-footer"></div><script src="${mainJs}" defer></script>`;
-const ad = '<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>';
+const ad = '<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot></div></section>';
 function faqSchema(faq) {
   return { '@type': 'FAQPage', mainEntity: faq.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
 }
 
-function guideSchema(guide) {
+function guideSchema(guide, cluster) {
+  const pageReviewDate = guide.reviewDate || reviewDate;
+  const pageIsoDate = guide.reviewIsoDate || isoDate;
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: pageIsoDate, dateModified: pageIsoDate, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['Italy', absolute('/italy/')], [guide.hubName, absolute(`/italy/${guide.hubSlug}/`)], [guide.name, absolute(guide.url)]]),
       faqSchema(guide.faq)
     ]
   };
 }
 
-const decisionHeader = (guide) => `<header><span>Choose the operating layer</span><h2>Three useful routes, each with a visible sacrifice.</h2><p>${escapeHtml(guide.purpose)}</p></header>`;
+const decisionHeader = (guide, cluster) => `<header><span>${cluster.slug === "rome" ? "Choose a Rome layer" : "Choose the operating layer"}</span><h2>${cluster.slug === "rome" ? "Read the civic valley, sacred west bank or piazza streets." : "Three useful routes, each with a visible sacrifice."}</h2></header>`;
 const choiceArticle = ([title, copy], index, extra = '') => `<article ${extra}><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`;
 
-function decisionInstrument(guide) {
+function decisionInstrument(guide, cluster) {
   const choices = guide.choices;
   const structure = guide.structure;
   let body;
@@ -116,34 +118,36 @@ function decisionInstrument(guide) {
   } else {
     body = `<div class="it-road-folio">${choices.map((choice, index) => `<section><small>STAGE ${String(index + 1).padStart(2, '0')}</small>${choiceArticle(choice, index)}<footer>car / bus / walk threshold</footer></section>`).join('')}</div>`;
   }
-  return `<section class="it-decision-instrument it-structure-${escapeHtml(structure)}" data-it-structure="${escapeHtml(structure)}">${decisionHeader(guide)}${body}</section>`;
+  return `<section class="it-decision-instrument it-structure-${escapeHtml(structure)}" data-it-structure="${escapeHtml(structure)}">${decisionHeader(guide, cluster)}${body}</section>`;
 }
 
 function guidePage(guide, cluster, guideIndex) {
+  const pageReviewDate = guide.reviewDate || reviewDate;
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const planningSources = uniqueSources(guide.sources, cluster.sources);
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Italy`, description, route: guide.url, image: guide.image, field: true })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script></head>
+<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Italy`, description, route: guide.url, image: guide.image, field: true })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide, cluster))}</script></head>
 <body data-page="it-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="italy" data-country="italy" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content it-field" data-it-family="${escapeHtml(cluster.family)}" data-it-layout="${escapeHtml(guide.layout)}" data-it-structure="${escapeHtml(guide.structure)}" data-it-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="it-breadcrumb" aria-label="Breadcrumb"><a href="/italy/">Italy</a><span>›</span><a href="/italy/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>›</span><strong>${escapeHtml(guide.name)}</strong></nav>
-  <section class="it-field-hero"><div class="it-field-index"><span>${escapeHtml(cluster.region)}</span><b>${String(guideIndex + 1).padStart(2, '0')}</b></div><div class="it-field-copy"><span class="it-kicker">${escapeHtml(cluster.label)}</span><h1>${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="it-purpose"><small>Decision this guide resolves</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#failure-points">Read the weak points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure><aside class="it-instrument-tab"><small>${escapeHtml(guide.layout)}</small><strong>${escapeHtml(guide.instrument)}</strong><span>reviewed ${reviewDate}</span></aside></section>
-  ${decisionInstrument(guide)}
+  <section class="it-field-hero"><div class="it-field-index"><span>${escapeHtml(cluster.region)}</span><b>${String(guideIndex + 1).padStart(2, '0')}</b></div><div class="it-field-copy"><span class="it-kicker">${escapeHtml(cluster.label)}</span><h1>${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="it-purpose"><small>${cluster.slug === "rome" ? "How this route reads the city" : "Decision this guide resolves"}</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#failure-points">${cluster.slug === "rome" ? "Plan for a change" : "Read the weak points"}</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${escapeHtml(guide.image.alt)} · ${escapeHtml(guide.image.license)}</figcaption></figure><aside class="it-instrument-tab"><strong>${escapeHtml(guide.instrument)}</strong><span>reviewed ${pageReviewDate}</span></aside></section>
+${cluster.slug === "rome" ? "" : `  <section class=it-regional-strata><header><span>${escapeHtml(cluster.label)}</span><h2>${escapeHtml(cluster.name)} has four layers to align.</h2><p>${escapeHtml(cluster.hubIntro)}</p></header><div><article><h3>BASE</h3><p>${escapeHtml(cluster.stay)}</p></article><article><h3>TRANSFER</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><h3>SEASON</h3><p>${escapeHtml(cluster.season)}</p></article><article><h3>LOWER-RISK DAY</h3><p>${escapeHtml(cluster.fallback)}</p></article></div></section>`}
+  ${decisionInstrument(guide, cluster)}
   ${ad}
-  <section class="it-threshold-board"><article><span>REAL GATEWAY</span><h2>Begin where the transport actually ends.</h2><p>${escapeHtml(guide.access)}</p></article><article><span>VISIBLE SACRIFICE</span><h2>Know what the chosen line leaves out.</h2><p>${escapeHtml(guide.tradeoff)}</p></article><aside><div><small>TIME ENVELOPE</small><p>${escapeHtml(guide.duration)}</p></div><div><small>PAIR ONLY WHEN USEFUL</small><p>${escapeHtml(guide.combine)}</p></div></aside></section>
-  <section class="it-regional-strata"><header><span>${escapeHtml(cluster.label)}</span><h2>${escapeHtml(cluster.name)} has four layers to align.</h2><p>${escapeHtml(cluster.hubIntro)}</p></header><div><article><h3>BASE</h3><p>${escapeHtml(cluster.stay)}</p></article><article><h3>TRANSFER</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><h3>SEASON</h3><p>${escapeHtml(cluster.season)}</p></article><article><h3>LOWER-RISK DAY</h3><p>${escapeHtml(cluster.fallback)}</p></article></div></section>
+  <section class="it-threshold-board"><article><span>${cluster.slug === "rome" ? "Starting point" : "REAL GATEWAY"}</span><h2>${cluster.slug === "rome" ? "Match the first doorway to the place you will read." : "Begin where the transport actually ends."}</h2><p>${escapeHtml(guide.access)}</p></article><article><span>${cluster.slug === "rome" ? "Save for another day" : "VISIBLE SACRIFICE"}</span><h2>${cluster.slug === "rome" ? "Keep a second landscape for a separate visit." : "Know what the chosen line leaves out."}</h2><p>${escapeHtml(guide.tradeoff)}</p></article><aside><div><small>${cluster.slug === "rome" ? "Time to allow" : "TIME ENVELOPE"}</small><p>${escapeHtml(guide.duration)}</p></div><div><small>${cluster.slug === "rome" ? "A nearby pairing" : "PAIR ONLY WHEN USEFUL"}</small><p>${escapeHtml(guide.combine)}</p></div></aside></section>
   <section class="it-route-folio" id="route" data-it-route-structure="${escapeHtml(guide.structure)}"><header><span>Four thresholds</span><h2>Arrive, cross one gate, use one layer, then protect the return.</h2><p>${escapeHtml(guide.verify)}</p></header><ol>${guide.route.map(([label, title, copy], index) => `<li><b>${String(index + 1).padStart(2, '0')}</b><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section>
-  <section class="it-live-desk"><div><span>LIVE AUTHORITIES</span><h2>Reopen the pages that control today’s gate.</h2><p>The guide provides the decision structure; these authorities control admission, transport, paths, weather, marine operation and closures.</p></div><ul>${sourceList(planningSources)}</ul></section>
-  <section class="it-fallback"><div><span>WHEN THE GATE CLOSES</span><h2>Keep a complete alternative, not fragments.</h2><p>${escapeHtml(guide.fallback)}</p></div><blockquote>${escapeHtml(guide.verify)}</blockquote></section>
-  <section class="it-breakpoints" id="failure-points"><header><span>Three weak points</span><h2>Change the plan while the return is still strong.</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
-  <section class="it-related"><header><span>SAME REGIONAL FOLIO</span><h2>Other complete ways to use ${escapeHtml(cluster.name)}.</h2></header><div>${cluster.guides.filter((item) => item.slug !== guide.slug).map((item) => `<a href="${item.url}"><img src="${item.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(item.image.alt)}"><div><small>${escapeHtml(item.instrument)}</small><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(compact(item.purpose, 125))}</p><strong>Open this route folio →</strong></div></a>`).join('')}</div></section>
-  <section class="it-faq"><header><span>PLANNING ANSWERS</span><h2>${escapeHtml(guide.name)} FAQ</h2></header><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewDate}. Admission, rail, roads, ZTLs, paths, ferries, weather and local access can change; reopen the linked authority or operator before travel.</p><ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="it-live-desk"><div><span>LIVE AUTHORITIES</span><h2>Reopen the pages that control today’s gate.</h2></div>${cluster.slug === "rome" ? "" : "<p>The guide provides the decision structure; these authorities control admission, transport, paths, weather, marine operation and closures.</p>"}<ul>${sourceList(planningSources)}</ul></section>
+  <section class="it-fallback"><div><span>WHEN THE GATE CLOSES</span><h2>Keep a complete alternative, not fragments.</h2><p>${escapeHtml(guide.fallback)}</p></div></section>
+  <section class="it-breakpoints" id="failure-points"><header><span>${cluster.slug === "rome" ? "When the day shifts" : "Three weak points"}</span><h2>${cluster.slug === "rome" ? "Choose a nearby alternative before crossing town." : "Change the plan while the return is still strong."}</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  <section class="it-related"><header><span>SAME REGIONAL FOLIO</span><h2>Other complete ways to use ${escapeHtml(cluster.name)}.</h2></header><div>${cluster.guides.filter((item) => item.slug !== guide.slug).map((item) => `<a href="${item.url}"><img src="${item.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(item.image.alt)}"><div><small>${escapeHtml(item.instrument)}</small><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml((cluster.slug === "rome" ? item.summary : compact(item.purpose, 125)))}</p><strong>Open this route folio →</strong></div></a>`).join('')}</div></section>
+  <section class="it-faq"><header><span>PLANNING ANSWERS</span><h2>${escapeHtml(guide.name)} FAQ</h2></header><div class="faq-list">${guide.faq.map(([question, answer]) => "<details><summary>" + escapeHtml(question) + "</summary><div class=\"faq-answer\"><p>" + escapeHtml(answer) + "</p></div></details>").join("")}</div></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${pageReviewDate}. Admission, rail, roads, ZTLs, paths, ferries, weather and local access can change; reopen the linked authority or operator before travel.</p><ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${pageReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
 function hubFaq(cluster) {
+  if (cluster.faq) return cluster.faq;
   return [
     [`How long should I give ${cluster.name}?`, cluster.stay],
     [`What transport decision matters most around ${cluster.name}?`, cluster.transfer],
@@ -151,29 +155,33 @@ function hubFaq(cluster) {
   ];
 }
 function hubSchema(cluster) {
+  const pageIsoDate = cluster.reviewIsoDate || isoDate;
   const route = `/italy/${cluster.slug}/`;
   return { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+    { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: pageIsoDate, dateModified: pageIsoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
     breadcrumb([['Home', absolute('/')], ['Italy', absolute('/italy/')], [cluster.name, absolute(route)]]), faqSchema(hubFaq(cluster))
   ] };
 }
 function hubPage(cluster, clusterIndex) {
+  const pageReviewDate = cluster.reviewDate || reviewDate;
   const route = `/italy/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
   const faq = hubFaq(cluster);
+  const guideSectionLabel = cluster.slug === 'rome' ? 'ROME: THREE ROUTE CHAPTERS' : 'THREE DIFFERENT OPERATING DAYS';
+  const authorityLabel = cluster.slug === 'rome' ? 'ROME CITY AND TRANSPORT SERVICES' : 'REGIONAL AUTHORITIES';
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
 <head>${sharedHead({ title: `${cluster.name} Travel Guide — 3 Complete Routes | TripDistill`, description: metaDescription(`${cluster.hubIntro} ${cluster.transfer}`), route, image: hero })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
 <body data-page="it-${escapeHtml(cluster.slug)}" data-parent-page="italy" data-country="italy" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content it-hub" data-it-family="${escapeHtml(cluster.family)}" data-it-hub-variant="${(clusterIndex % 8) + 1}">`)}
-  <section class="it-hub-hero"><div class="it-hub-number"><span>ITALY FIELD FOLIO</span><b>${String(clusterIndex + 1).padStart(2, '0')}</b></div><div class="it-hub-copy"><span class="it-kicker">${escapeHtml(cluster.region)}</span><h1>${escapeHtml(cluster.name)}</h1><p class="it-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#route-folios">Choose a route folio</a><a class="button secondary" href="#base-board">Read the base board</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${escapeHtml(hero.label)} · ${escapeHtml(hero.license)}</figcaption></figure><aside class="it-hub-tab"><small>${escapeHtml(cluster.label)}</small><strong>3</strong><span>independent route systems</span></aside></section>
+  <section class="it-hub-hero"><div class="it-hub-number"><span>ITALY FIELD FOLIO</span><b>${String(clusterIndex + 1).padStart(2, '0')}</b></div><div class="it-hub-copy"><span class="it-kicker">${escapeHtml(cluster.region)}</span><h1>${escapeHtml(cluster.name)}</h1><p class="it-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#route-folios">Choose a route folio</a><a class="button secondary" href="#base-board">Read the base board</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${escapeHtml(hero.alt)} · ${escapeHtml(hero.license)}</figcaption></figure><aside class="it-hub-tab"><small>${escapeHtml(cluster.label)}</small><strong>3</strong><span>independent route systems</span></aside></section>
   <section class="it-base-board" id="base-board"><header><span>ALIGN THE REGION</span><h2>Base, transfer, season and fallback must work together.</h2></header><div><article><b>BASE</b><h3>Sleep beside the useful departure.</h3><p>${escapeHtml(cluster.stay)}</p></article><article><b>TRANSFER</b><h3>Name the whole last mile.</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><b>SEASON</b><h3>Let current conditions edit the route.</h3><p>${escapeHtml(cluster.season)}</p></article><article><b>FALLBACK</b><h3>Keep one complete lower-risk day.</h3><p>${escapeHtml(cluster.fallback)}</p></article></div></section>
   ${ad}
-  <section class="it-hub-guides" id="route-folios"><header><span>THREE DIFFERENT OPERATING DAYS</span><h2>Choose the gateway, threshold and return you actually have.</h2><p>Each route uses a different planning instrument, exact official sources and a complete alternative when the main gate closes.</p></header><div>${cluster.guides.map((guide, index) => `<a class="it-guide-card" href="${guide.url}" data-it-layout="${escapeHtml(guide.layout)}" data-it-structure="${escapeHtml(guide.structure)}"><span class="it-card-index">${String(index + 1).padStart(2, '0')}</span><img src="${guide.image.src}" width="1600" height="1066" loading="${index === 0 ? 'eager' : 'lazy'}" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.purpose)}</p><strong>Open the complete route →</strong></div></a>`).join('')}</div></section>
+  <section class="it-hub-guides" id="route-folios"><header><span>${guideSectionLabel}</span><h2>Choose the gateway, threshold and return you actually have.</h2><p>Each route uses a different planning instrument, exact official sources and a complete alternative when the main gate closes.</p></header><div>${cluster.guides.map((guide, index) => `<a class="it-guide-card" href="${guide.url}" data-it-layout="${escapeHtml(guide.layout)}" data-it-structure="${escapeHtml(guide.structure)}"><span class="it-card-index">${String(index + 1).padStart(2, '0')}</span><img src="${guide.image.src}" width="1600" height="1066" loading="${index === 0 ? 'eager' : 'lazy'}" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.purpose)}</p><strong>Open the complete route →</strong></div></a>`).join('')}</div></section>
   <section class="it-comparison-slab"><header><span>COMPARE BEFORE COMMITTING</span><h2>Every route gains something by leaving something else out.</h2></header><div>${cluster.guides.map((guide) => `<article><header><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3></header><p><strong>Gateway:</strong> ${escapeHtml(guide.access)}</p><p><strong>Sacrifice:</strong> ${escapeHtml(guide.tradeoff)}</p><p><strong>Time:</strong> ${escapeHtml(guide.duration)}</p></article>`).join('')}</div></section>
-  <section class="it-hub-live"><div><span>REGIONAL AUTHORITIES</span><h2>These sources control the moving parts.</h2><p>Use this guide for structure, then reopen the official destination, transport, park or venue information for the exact date.</p></div><ul>${sourceList(cluster.sources)}</ul></section>
+  <section class="it-hub-live"><div><span>${authorityLabel}</span><h2>These sources control the moving parts.</h2><p>Use this guide for structure, then reopen the official destination, transport, park or venue information for the exact date.</p></div><ul>${sourceList(cluster.sources)}</ul></section>
   <section class="it-hub-faq"><div><span>REGIONAL ANSWERS</span><h2>${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewDate}. Verify current tickets, rail, roads, ZTLs, paths, ferries and site access before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${pageReviewDate}. Verify current tickets, rail, roads, ZTLs, paths, ferries and site access before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${pageReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -209,7 +217,7 @@ function countryPage() {
 <head>${sharedHead({ title: 'Italy Travel Guide — 20 Complete Regional Hubs | TripDistill', description: metaDescription('Plan Italy through twenty regional hubs and sixty focused guides covering art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.'), route: '/italy/', image: images[0], type: 'website' })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script></head>
 <body data-page="italy" data-country="italy">
 ${shellStart('<main id="main-content" class="page-content it-country">')}
-  <section class="it-country-hero"><div class="it-country-title"><span class="it-kicker">Peninsula field atlas · reviewed ${reviewDate}</span><h1>Italy</h1><p class="it-country-deck">Align the trunk, the threshold and the return before collecting cities.</p><p>High-speed rail links the largest art cities, but timed monuments, private railways, lagoon boats, ZTL edges, mountain lifts, coast buses, ferries and live volcano or weather gates decide the usable trip.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 20 hubs</a><a class="button secondary" href="#spine">Read the peninsula spine</a></div></div><ol class="it-peninsula-spine" aria-label="Four-stage Italy travel spine"><li><b>01</b><span>NORTH</span><small>rail cities · lakes · Alps</small></li><li><b>02</b><span>CENTRE</span><small>art doors · hill towns</small></li><li><b>03</b><span>SOUTH</span><small>volcanoes · coast roads</small></li><li><b>04</b><span>ISLANDS</span><small>ports · marine windows</small></li></ol><div class="it-country-images">${images.map((image, index) => `<figure data-window="${index + 1}"><img src="${image.src}" width="1600" height="1066" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} alt="${escapeHtml(image.alt)}"><figcaption>${escapeHtml(image.label)} · ${escapeHtml(image.license)}</figcaption></figure>`).join('')}</div><div class="it-country-facts"><div><strong>20</strong><span>regional hubs</span></div><div><strong>60</strong><span>focused guides</span></div><div><strong>16</strong><span>decision structures</span></div><div><strong>5</strong><span>static languages</span></div></div></section>
+  <section class="it-country-hero"><div class="it-country-title"><span class="it-kicker">Peninsula field atlas · reviewed ${reviewDate}</span><h1>Italy</h1><p class="it-country-deck">Align the trunk, the threshold and the return before collecting cities.</p><p>High-speed rail links the largest art cities, but timed monuments, private railways, lagoon boats, ZTL edges, mountain lifts, coast buses, ferries and live volcano or weather gates decide the usable trip.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 20 hubs</a><a class="button secondary" href="#spine">Read the peninsula spine</a></div></div><ol class="it-peninsula-spine" aria-label="Four-stage Italy travel spine"><li><b>01</b><span>NORTH</span><small>rail cities · lakes · Alps</small></li><li><b>02</b><span>CENTRE</span><small>art doors · hill towns</small></li><li><b>03</b><span>SOUTH</span><small>volcanoes · coast roads</small></li><li><b>04</b><span>ISLANDS</span><small>ports · marine windows</small></li></ol><div class="it-country-images">${images.map((image, index) => `<figure data-window="${index + 1}"><img src="${image.src}" width="1600" height="1066" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} alt="${escapeHtml(image.alt)}"><figcaption>${escapeHtml(image.alt)} · ${escapeHtml(image.license)}</figcaption></figure>`).join('')}</div><div class="it-country-facts"><div><strong>20</strong><span>regional hubs</span></div><div><strong>60</strong><span>focused guides</span></div><div><strong>16</strong><span>decision structures</span></div><div><strong>5</strong><span>static languages</span></div></div></section>
   <section class="it-country-rules"><article><b>01</b><h2>Choose a corridor before a monument list.</h2><p>Rome–Florence–Venice, a northern lake system, Campania, Sicily or Sardinia each needs a different number of bases and transfer days.</p></article><article><b>02</b><h2>Every famous interior is a separate threshold.</h2><p>Ticket names, identity rules, entrances, worship, security and capacity can make two adjacent sites incompatible on the same clock.</p></article><article><b>03</b><h2>Keep a complete same-base alternative.</h2><p>Heat, strikes, sea state, volcano access and mountain weather are normal planning conditions; a useful fallback should still make sense as a day.</p></article></section>
   ${ad}
   <div id="regions">${countryGroups.map(([bands, kicker, heading, copy]) => `<section class="it-country-band"><header><span>${kicker}</span><h2>${heading}</h2><p>${copy}</p></header><div class="it-country-grid">${countryCards(bands)}</div></section>`).join('')}</div>
@@ -265,13 +273,17 @@ function updateFooter() {
 }
 function updateSearch() {
   const file = path.join(root, 'data', 'search-index.json');
-  const records = JSON.parse(fs.readFileSync(file, 'utf8')).filter((item) => !item.url.startsWith('/italy/'));
+  const current = JSON.parse(fs.readFileSync(file, "utf8"));
+  const records = [];
   records.push({ title: 'Italy Travel Guide', url: '/italy/', parent: 'Europe', type: 'Country', summary: 'Plan Italy through twenty complete regional hubs and sixty focused guides for art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.', keywords: ['Italy', 'Italia', 'Italy travel', 'Rome', 'Florence', 'Venice', 'Sicily'] });
   for (const cluster of italyClusters) {
     records.push({ title: cluster.name, url: `/italy/${cluster.slug}/`, parent: 'Italy', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
     for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout, guide.structure] });
   }
-  fs.writeFileSync(file, JSON.stringify(records, null, 2) + '\n');
+  const updates = new Map(records.map((item) => [item.url, item]));
+  const merged = current.map((item) => { const replacement = updates.get(item.url); if (!replacement) return item; updates.delete(item.url); return replacement; });
+  merged.push(...updates.values());
+  fs.writeFileSync(file, JSON.stringify(merged, null, 2) + "\n");
 }
 function updateHome() {
   const file = path.join(root, 'index.html');

@@ -34,7 +34,7 @@ for (const { language, prefix, route, localized } of pageRoutes) {
   if (!html.includes('/css/italy.css?v=20260926-1')) failures.push(`${localized}: Italy stylesheet missing`);
   if (!html.includes('/css/site.css?v=20260926-1')) failures.push(`${localized}: shared stylesheet cache key is stale`);
   if (route.split('/').filter(Boolean).length === 3) {
-    if (!html.includes('/css/italy-field.css?v=20260926-1')) failures.push(`${localized}: Italy field stylesheet missing`);
+    if (!html.includes('/css/italy-field.css?v=20261004-1')) failures.push(`${localized}: Italy field stylesheet missing`);
     if (!/data-it-structure="[^"]+"/.test(html)) failures.push(`${localized}: Italy decision structure marker missing`);
   }
   if (!html.includes('data-ad-slot')) failures.push(`${localized}: ad placeholder missing`);
@@ -75,7 +75,7 @@ for (const { prefix, route, localized } of pageRoutes) {
 
 await request('/css/italy.css?v=20260926-1', 'Italy stylesheet');
 await request('/css/site.css?v=20260926-1', 'Shared stylesheet');
-await request('/css/italy-field.css?v=20260926-1', 'Italy field stylesheet');
+await request('/css/italy-field.css?v=20261004-1', 'Italy field stylesheet');
 
 if (failures.length) {
   console.error(failures.join('\n'));

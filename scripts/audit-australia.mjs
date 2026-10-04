@@ -8,7 +8,7 @@ const problems = [];
 const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const lastmod = '2026-09-04';
-const expectedCss = '/css/australia.css?v=20260904-1';
+const expectedCss = '/css/australia.css?v=20261004-1';
 const expectedFieldCss = '/css/australia-field.css?v=20260904-1';
 const expectedSiteCss = '/css/site.css?v=20260926-1';
 const expectedScript = '/js/main.js?v=20260911-1';

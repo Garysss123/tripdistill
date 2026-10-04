@@ -251,3 +251,17 @@
 @media (prefers-reduced-motion:reduce) {
   .au-country-card,.au-hub-card { transform:none!important; }
 }
+
+/* Keep CJK Red Centre titles readable across their full text width. */
+html[lang="zh-Hant"] [data-au-family="desert-light-compass"] .au-hub-copy h1,
+html[lang="ja"] [data-au-family="desert-light-compass"] .au-hub-copy h1,
+html[lang="ko"] [data-au-family="desert-light-compass"] .au-hub-copy h1 {
+  line-height: 1.22;
+}
+html[lang="zh-Hant"] [data-au-family="desert-light-compass"] .au-hub-copy h1 span,
+html[lang="ja"] [data-au-family="desert-light-compass"] .au-hub-copy h1 span,
+html[lang="ko"] [data-au-family="desert-light-compass"] .au-hub-copy h1 span {
+  max-width: none;
+  line-height: 1.35;
+  letter-spacing: 0;
+}

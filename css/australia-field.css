@@ -140,3 +140,30 @@
 @media (prefers-reduced-motion:reduce) {
   .au-related-card,.au-route-step { transform:none!important; }
 }
+
+/* Uluṟu's page uses a land-and-water palette; the linework is geological, not cultural ornament. */
+[data-au-instrument="cultural-compass"] {
+  --au-family-dark: #263730;
+  --au-family-second: #41574b;
+  --au-family-accent: #ddb17c;
+  --au-family-soft: #f1e6d5;
+  --au-accent-text: #72432f;
+}
+[data-au-instrument="cultural-compass"] .au-field-hero {
+  border-color: rgba(221, 177, 124, .72);
+  background:
+    radial-gradient(ellipse at 72% 80%, rgba(221, 177, 124, .22), transparent 39%),
+    linear-gradient(135deg, #263730, #3a4b40 58%, #263730);
+}
+[data-au-instrument="cultural-compass"] .au-field-hero::before {
+  opacity: .16;
+  background: repeating-linear-gradient(164deg, transparent 0 4.8rem, rgba(237, 212, 177, .5) 4.86rem 4.92rem, transparent 5rem 7.4rem);
+}
+[data-au-instrument="cultural-compass"] .au-field-copy h1 span { color: #f0c996; }
+[data-au-instrument="cultural-compass"] .au-field-hero figure { border-left: 1px solid rgba(240, 201, 150, .68); }
+[data-au-instrument="cultural-compass"] .au-field-index { border-bottom: 3px solid #ddb17c; }
+[data-au-instrument="cultural-compass"] .au-decision-strip article { border-top: 3px solid #ddb17c; }
+[data-au-instrument="cultural-compass"] .au-reading-note { border-left-color: #a45d40; background: #f1e6d5; }
+[data-au-instrument="cultural-compass"] .au-route-step { border-top: 3px solid #ddb17c; }
+[data-au-instrument="cultural-compass"] .au-route-step:nth-child(even) { background: #f1e6d5; }
+[data-au-instrument="cultural-compass"] .au-check { border-top: 3px solid #a45d40; }

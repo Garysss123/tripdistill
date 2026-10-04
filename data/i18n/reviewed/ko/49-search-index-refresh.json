@@ -1,0 +1,12 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "uluṟu cultural landscape": "울루루(Uluṟu) 문화 경관",
+    "Uluṟu Cultural Landscape Guide": "울루루(Uluṟu) 문화 경관 여행 가이드",
+    "surface, water and respect": "지표와 물, 그리고 존중"
+  }
+}

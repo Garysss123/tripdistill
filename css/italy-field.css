@@ -710,3 +710,38 @@
 @media (prefers-reduced-motion: reduce) {
   .it-field * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Rome's route atlas uses architectural planes and a legible civic sequence. */
+body[data-page="it-rome"] .it-hub-hero {
+  background:
+    radial-gradient(ellipse at 78% 44%, rgba(141, 90, 61, .12), transparent 38%),
+    linear-gradient(90deg, transparent 0 59%, rgba(32, 40, 37, .07) 59% 59.12%, transparent 59.12%),
+    repeating-linear-gradient(0deg, transparent 0 68px, rgba(32, 40, 37, .035) 68px 69px),
+    var(--it-plaster);
+}
+body[data-page="it-rome"] .it-hub-copy { border-top: 3px solid #8d5a3d; box-shadow: 0 18px 40px rgba(32, 40, 37, .12); }
+body[data-page="it-rome"] .it-hub-number { border-left-color: #8d5a3d; }
+body[data-page="it-rome"] .it-hub-tab { border-top: 3px solid #d0a66e; }
+body[data-page^="it-rome-"] .it-field-hero {
+  background:
+    linear-gradient(90deg, transparent 0 58%, rgba(141, 90, 61, .08) 58% 58.14%, transparent 58.14%),
+    repeating-linear-gradient(0deg, transparent 0 67px, rgba(32, 40, 37, .04) 67px 68px),
+    var(--it-plaster);
+}
+body[data-page^="it-rome-"] .it-instrument-tab { border-left: 4px solid #d0a66e; }
+body[data-page^="it-rome-"] .it-route-folio { background: linear-gradient(135deg, #25302f 0%, #2e3b36 58%, #26302d 100%); }
+body[data-page^="it-rome-"] .it-route-folio ol::before { background: linear-gradient(#d0a66e, #a65e42); }
+body[data-page^="it-rome-"] .it-route-folio li { border-left-color: #c87950; }
+body[data-page="it-rome-ancient-rome-capitoline"] .it-route-folio li:nth-child(3) { background: rgba(208, 166, 110, .18); }
+
+/* CJK Rome titles need full-width wrapping and clear line separation. */
+html[lang="zh-Hant"] body[data-page^="it-rome-"] .it-field-copy h1,
+html[lang="ja"] body[data-page^="it-rome-"] .it-field-copy h1,
+html[lang="ko"] body[data-page^="it-rome-"] .it-field-copy h1 {
+  max-width: 100%;
+  font-size: clamp(2.8rem, 4.7vw, 5rem);
+  line-height: 1.22;
+  letter-spacing: 0;
+  overflow-wrap: normal;
+  hyphens: none;
+}
