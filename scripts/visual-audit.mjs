@@ -351,7 +351,10 @@ const allRoutes = [
     ...australiaClusters.flatMap((cluster) => [
       [`${locale}-au-${cluster.slug}`, `/${locale}/australia/${cluster.slug}/`],
       [`${locale}-au-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/australia/${cluster.slug}/${cluster.guides[0].slug}/`]
-    ])
+    ]),
+    ...australiaGuides.filter((guide) => guide.hubSlug === 'red-centre').map((guide) =>
+      [`${locale}-au-field-${guide.slug}`, `/${locale}/australia/${guide.hubSlug}/${guide.slug}/`]
+    )
   ]),
   ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
     [`${locale}-canada`, `/${locale}/canada/`],
@@ -716,8 +719,15 @@ for (const [viewportName, width, height, mobile] of viewports) {
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
-          const hiddenInlineContent = item.scrollWidth > item.clientWidth + 1;
-          return outsideHero || hiddenInlineContent;
+          const style = getComputedStyle(item);
+          const clipsContent = ['hidden', 'clip'].includes(style.overflowX);
+          const clippedInlineContent = clipsContent && item.scrollWidth > item.clientWidth + 1;
+          const textRange = document.createRange();
+          textRange.selectNodeContents(item);
+          const textEscapesHero = [...textRange.getClientRects()].some((textRect) =>
+            textRect.left < heroRect.left - 1 || textRect.right > heroRect.right + 1
+          );
+          return outsideHero || clippedInlineContent || textEscapesHero;
         }).map((item) => item.tagName.toLowerCase() + ':' + item.textContent.trim().replace(/\s+/g, ' ').slice(0, 90));
       });
       return {

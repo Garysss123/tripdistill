@@ -216,28 +216,144 @@ export const australiaNorthClusters = [
     ],
     guides: [
       g({
-        slug: 'mparntwe-alice-springs', name: 'Mparntwe / Alice Springs', motif: 'desert gateway and culture', instrument: 'gateway-compass', imageQuery: 'Alice Springs Mparntwe MacDonnell Ranges', imageAlt: 'Road and rocky landscape at Anzac Hill in Alice Springs',
-        summary: 'A desert gateway chapter using cultural institutions, town services and a ridge or riverbed view to prepare for remote Country.',
-        orientation: 'use central services, the Todd River corridor and one cultural institution as separate anchors.', access: 'Arrive by flight, rail or road and resolve vehicle, fuel, water and communications before leaving town.', sequence: 'Begin with recognised Arrernte cultural context, use one town landscape and finish with expedition supplies and road checks.', boundary: 'Mparntwe is Arrernte Country. Use preferred names and recognised cultural experiences; never enter or photograph restricted places.',
-        stages: [['Settle the remote logistics', 'Confirm vehicle, fuel, water, accommodation and emergency contacts.'], ['Choose cultural context', 'Use an Aboriginal-owned or authoritative institution or tour.'], ['Read one town landscape', 'Walk only an open route suited to heat.'], ['Prepare the next road', 'Check conditions before departure, not at the highway edge.']],
-        risks: [['Heat', 'Outdoor activity needs early timing and generous water.'], ['Remote-road assumptions', 'Fuel and communication gaps start outside town.'], ['Cultural disrespect', 'Do not publish sensitive sites or repeat unverified stories.']],
-        duration: 'Allow two nights before a regional loop.', combine: 'Pair with Tjoritja as a separate day, not a hurried airport transfer.', verify: 'Check road, fuel, heat, fire, cultural operator, vehicle and communication.'
+        slug: 'mparntwe-alice-springs',
+        name: 'Mparntwe / Alice Springs',
+        motif: 'town, interpretation and preparation',
+        instrument: 'gateway-compass',
+        imageQuery: 'Alice Springs Mparntwe MacDonnell Ranges',
+        imageAlt: 'Road and rocky landscape at Anzac Hill in Alice Springs',
+        summary: "Make Alice Springs (Mparntwe) more than a fuel stop: pair the 1872 Telegraph Station precinct with the Desert Park's three habitats, then prepare for a separate day in Tjoritja.",
+        orientationTitle: 'Read the town in two different ways',
+        orientation: 'Mparntwe is the Arrernte name for Alice Springs. The Telegraph Station preserves a dated Overland Telegraph chapter and begins Larapinta Section 1; 7 km west, the Desert Park moves through sand country, desert river and woodland. These are two distinct introductions to the region, not interchangeable photo stops.',
+        interpretation: 'The Telegraph Station records the history of the 1872 line and one early European settlement site. Arrernte presence does not begin with that station. The Desert Park pairs public cultural presentations with displays about regional landscapes and wildlife; use the material offered there rather than repeating restricted stories.',
+        access: 'The Telegraph Station is 4 km north of town: its reserve is open 8 am–9 pm and its historic precinct 8 am–4 pm. The Desert Park is 7 km west along Larapinta Drive, open 7:30 am–6 pm with last entry at 4:30 pm. Check current hours, closures and road notices before setting a timed visit.',
+        sequence: 'Give the Telegraph precinct and Desert Park separate blocks, allowing for their different locations and the Desert Park entry cutoff. Section 1 of the Larapinta Trail starts at the Telegraph Station but runs 24.7 km to Simpsons Gap, takes about 9 hours and is Grade 4; treat it as a full hiking day, not an extra town walk. Finish with fuel, water, accommodation and road checks for the next leg.',
+        boundary: 'Mparntwe is Arrernte Country. Use public interpretation and names preferred by Traditional Owners; remain on marked tracks, and do not publish restricted places or stories.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Set a town day', 'Leave a recovery and resupply block after arrival; keep the remote drive out of the same day as a long walk.'],
+          ['Visit the Telegraph precinct', 'Four kilometres north, the station interprets the 1872 Overland Telegraph. Check the historic precinct hours; Larapinta Section 1 begins here.'],
+          ['Choose the Desert Park lens', 'Seven kilometres west, walk through sand country, desert river and woodland. Check the Nature Theatre and cultural presentation schedule, or reserve the one-hour foothills tour.'],
+          ['Prepare the next leg', 'Confirm vehicle, fuel, water, park pass, communications and live road conditions before leaving town.']
+        ],
+        risks: [
+          ['Heat and timing', 'Avoid strenuous outdoor activity in the heat of the day; both sites publish current hours and access notices.'],
+          ['Trail status', 'Flood damage can affect paths at the Telegraph Reserve. Check the live status instead of assuming every short route is open.'],
+          ['Remote-road gap', 'Town services do not continue along every outback road. Leave with the required fuel, water, vehicle plan and offline directions.']
+        ],
+        decisions: [
+          ['Telegraph Station | town history', 'Four kilometres north of town, this is the best-preserved station on the Overland Telegraph Line. The short precinct visit is distinct from Larapinta Section 1: the walk to Simpsons Gap is 24.7 km, Grade 4 and about nine hours.'],
+          ['Desert Park | three habitats', 'At 7 km west on Larapinta Drive, the park links sand country, desert river and woodland with public interpretation, a birds-of-prey Nature Theatre and a Nocturnal House. Last entry is 4:30 pm; verify the current presentation timetable.'],
+          ['Town stay | reset and provision', 'Allow two nights before a regional loop when arrival, interpretation and vehicle preparation all matter. A town night gives you a separate daylight window for Tjoritja instead of turning the first park visit into an airport transfer.']
+        ],
+        duration: 'Allow two nights before a regional loop if you want a town day and a separate departure window.',
+        combine: 'Use the town as the base for Tjoritja, but give the park drive and any long Larapinta section their own daylight.',
+        verify: 'Check Telegraph precinct and Desert Park hours, park and trail status, heat advice, fuel, water, visitor pass and road conditions.',
+        faq: [
+          ['Is Larapinta Section 1 a short walk from the Telegraph Station?', 'No. It runs 24.7 km to Simpsons Gap, is Grade 4 and takes about nine hours. Use one of the reserve short walks unless you have planned the full section as a hike.'],
+          ['Can I fit the Desert Park into a late afternoon?', 'Plan around last entry at 4:30 pm. The park is 7 km west of town and includes three habitat areas, scheduled presentations and a one-hour foothills tour; check the live timetable before choosing a short visit.'],
+          ['How long should I stay in Alice Springs before driving west?', 'Two nights leave room to recover, visit one or both interpretive sites and set up the next day with fuel, water, road information and a realistic departure time.']
+        ],
+        sources: [
+          ['https://www.education.gov.au/indigenous-education/resources/alice-springs-mparntwe-education-declaration', 'Australian Government Department of Education — Alice Springs (Mparntwe) Education Declaration'],
+          ['https://nt.gov.au/parks/find-a-park/alice-springs-telegraph-station-historical-reserve', 'Northern Territory Parks — Alice Springs Telegraph Station'],
+          ['https://nt.gov.au/parks/find-a-park/alice-springs-desert-park', 'Northern Territory Parks — Alice Springs Desert Park'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail', 'Northern Territory Parks — Larapinta Trail sections']
+        ]
       }),
       g({
-        slug: 'tjoritja-west-macdonnell', name: 'Tjoritja / West MacDonnell Ranges', motif: 'gorge-and-water desert road', instrument: 'range-mileage', imageQuery: 'West MacDonnell Ranges Tjoritja Ormiston Gorge', imageAlt: 'Rocky gorge in Tjoritja West MacDonnell National Park',
-        summary: 'A westward gorge route that limits stops, identifies safe water advice and keeps fuel, heat and the Mparntwe return visible.',
-        orientation: 'select two or three named gorges on one road line and reject the temptation to stop at every sign.', access: 'Drive a suitable vehicle or join a recognised tour with water, fuel and offline communication.', sequence: 'Use the longest walk at first light, visit a second accessible gorge, rest in heat and return before wildlife-heavy dusk.', boundary: 'Tjoritja is Arrernte Country. Sacred places, waterholes and cultural information require current park and Traditional Owner guidance.',
-        stages: [['Choose the furthest point', 'Build the day backward from fuel, daylight and the return.'], ['Walk before heat', 'Use one graded route early.'], ['Treat waterholes cautiously', 'Enter only where officially permitted and follow hygiene and cultural rules.'], ['Drive back before dusk', 'Protect visibility and wildlife safety.']],
-        risks: [['Heat and dehydration', 'Carry more water than a town walk and turn back early.'], ['Remote roads', 'Tyres, fuel and coverage require preparation.'], ['Waterhole danger', 'Cold, deep or culturally restricted water is not an automatic swim.']],
-        duration: 'Use a full day from Mparntwe; stay west for longer walks.', combine: 'Keep Watarrka and Uluru for separate bases.', verify: 'Check NT Parks, road, fuel, temperature, fire, waterhole advice, cultural closure and sunset.'
+        slug: 'tjoritja-west-macdonnell',
+        name: 'Tjoritja / West MacDonnell Ranges',
+        motif: 'gorge road and water decisions',
+        instrument: 'range-mileage',
+        imageQuery: 'West MacDonnell Ranges Tjoritja Ormiston Gorge',
+        imageAlt: 'Rocky gorge in Tjoritja West MacDonnell National Park',
+        summary: 'Choose a near-town gorge or a full westward drive: Simpsons Gap is 20 minutes from Alice Springs, while Ormiston Gorge is 135 km away.',
+        orientationTitle: 'Choose by distance, then by water',
+        orientation: 'Tjoritja / West MacDonnell National Park stretches 161 km west of Alice Springs, with sites reached along Larapinta Drive and Namatjira Drive. Simpsons Gap offers short walks near town; Ormiston is a full-distance outing with a permanent waterhole, campground and longer trail options. A map pin is not a measure of the return drive.',
+        interpretation: 'At Simpsons Gap, the permanent waterhole, ghost gums and range-facing short walks sit close to town; black-footed rock-wallabies may appear around dawn or dusk, and swimming is not permitted. Farther west, Ormiston Gorge holds a permanent waterhole about 500 m from its visitor centre, but the water is extremely cold and can be deep. Read the signed route and current water conditions before deciding to enter.',
+        access: 'An NT Parks Visitor Pass is required. Reach visitor areas from Alice Springs along Larapinta Drive and Namatjira Drive; check closures and road conditions first. The Red Centre Way / Mereenie Loop toward Watarrka is unsealed and requires a permit; the NT recommends a 4WD for that route.',
+        sequence: 'For a short outing, choose Simpsons Gap and one of its named walks. For Ormiston, leave early, make the 135 km westward leg the day’s anchor and add at most one stop on the return. As of 4 October 2026, NT Parks warns that Ormiston Pound Walk requires a short swim through deep, cold water; verify the live status and do not start unless prepared for that crossing.',
+        boundary: 'Tjoritja is Arrernte Country. Follow public park interpretation, stay on formed tracks, do not swim at Simpsons Gap and respect any cultural or waterhole closure. Boil water where park signs require it.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Set the distance limit', 'Choose Simpsons Gap for a short town-side outing or Ormiston Gorge for a full westward day; do not plan every gorge as one loop.'],
+          ['Choose one walk', 'Match the named route, grade, heat and daylight to the site. Treat Larapinta sections as multi-hour or overnight hikes, not roadside add-ons.'],
+          ['Read the water notice', 'Check swimming rules, water temperature, depth and any crossing requirement at the exact site before entering or starting a loop.'],
+          ['Return in daylight', 'Carry water and offline directions, refuel in town and leave a margin for a long drive and wildlife on the road.']
+        ],
+        risks: [
+          ['Distance mistaken for a day trip', 'Ormiston is 135 km west of Alice Springs; build the return and one main walk into the plan before adding another stop.'],
+          ['Cold or restricted water', 'Ormiston’s waterhole is very cold and can reach 14 m deep. Do not jump or dive; Simpsons Gap is closed to swimming.'],
+          ['Changing park status', 'Fire, flood, maintenance and road conditions can close sites. The Ormiston Pound crossing requirement is a live condition, so recheck on the day.']
+        ],
+        decisions: [
+          ['Simpsons Gap | short walks or cycle', 'Twenty minutes from Alice Springs, Simpsons Gap has Ghost Gum Walk, Cassia Hill and Woodland Trail; swimming is prohibited. The sealed bicycle path runs 17 km one way from a start 7 km out of town, so treat it as its own ride with water and a return plan.'],
+          ['Ormiston Gorge | full-day base', 'At 135 km west, Ormiston has short accessible routes, half-day circuits and overnight walks. Its permanent waterhole is 500 m from the visitor centre and may be up to 14 m deep. NT Parks currently warns that Ormiston Pound Walk requires a short swim through deep cold water.'],
+          ['Larapinta | commit to sections', 'This 12-section trail is a separate hiking plan: Simpsons Gap lies on Sections 1 and 2, while Ormiston Gorge is on Sections 9 and 10. Check section maps, water and closure notices before choosing an overnight itinerary.']
+        ],
+        duration: 'Give Ormiston a full day from Alice Springs; add nights for long walks or Larapinta sections. Simpsons Gap can fit a shorter town-side outing.',
+        combine: 'Keep Watarrka and Uluṟu on separate road-trip days. A Simpsons Gap visit is the practical nearby pairing; do not treat Ormiston as a quick stop on the way west.',
+        verify: 'Check the NT Parks Visitor Pass, site openings, heat and fire notices, road conditions, water and swim advice, fuel and sunset.',
+        faq: [
+          ['Can I visit Simpsons Gap and Ormiston Gorge in one day?', 'Ormiston lies 135 km west of Alice Springs and needs a full-day plan. Simpsons Gap is only 20 minutes from town; combine it with one other stop only when current daylight and road conditions leave a safe return.'],
+          ['Is the water safe for a swim?', 'Swimming is prohibited at Simpsons Gap. Ormiston has a permanent swimming waterhole, but the water is extremely cold, may be 14 m deep and contains submerged logs and rocks. Never jump or dive, and check current crossing notices.'],
+          ['Does the Red Centre Way need a special vehicle or permit?', 'NT Parks says the Mereenie Loop between the West Macs and Watarrka is unsealed, requires a permit and is recommended for 4WD. Check the road report and permit terms before selecting it.']
+        ],
+        sources: [
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park', 'Northern Territory Parks — Tjoritja / West MacDonnell National Park'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/simpsons-gap', 'Northern Territory Parks — Simpsons Gap'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ormiston-gorge', 'Northern Territory Parks — Ormiston Gorge'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail', 'Northern Territory Parks — Larapinta Trail sections']
+        ]
       }),
       g({
-        slug: 'watarrka-kings-canyon', name: 'Watarrka / Kings Canyon', motif: 'rim-walk heat gate', instrument: 'heat-gate', imageQuery: 'Kings Canyon Watarrka Northern Territory rim', imageAlt: 'Sandstone cliffs at Watarrka Kings Canyon',
-        summary: 'A remote canyon visit where temperature-based trail closure, steep ascent and nearby accommodation determine whether the rim is attempted.',
-        orientation: 'separate the Rim Walk from shorter creek routes and let official heat rules make the decision.', access: 'Stay near Watarrka or arrive with a realistic road plan, full fuel and water; do not drive from Uluru and back around one walk.', sequence: 'Start at first light if the rim is open, turn back at the initial climb when needed and reserve a shorter route as the complete alternative.', boundary: 'Watarrka is culturally significant Luritja and Arrernte Country. Stay on open paths and respect closed or sensitive areas.',
-        stages: [['Read the heat gate', 'Check the current forecast and closure threshold.'], ['Choose rim or creek', 'Make the shorter route a valid plan, not a consolation.'], ['Carry the full walk supply', 'Use water, sun protection and footwear appropriate to exposed rock.'], ['Recover before driving', 'Rest, refuel and avoid a fatigued night road.']],
-        risks: [['Extreme heat', 'The rim can close and heat illness can become life-threatening.'], ['Steep exposed terrain', 'The initial climb and cliff edges require fitness and conservative behavior.'], ['Long road return', 'Wildlife and fatigue make dusk driving hazardous.']],
-        duration: 'Stay one or two nights near Watarrka.', combine: 'Use it as a road-trip leg between bases, never a casual Uluru add-on.', verify: 'Check park alerts, heat closure, road, fuel, accommodation, water and sunrise.'
+        slug: 'watarrka-kings-canyon',
+        name: 'Watarrka / Kings Canyon',
+        motif: 'canyon rim and heat gate',
+        instrument: 'heat-gate',
+        imageQuery: 'Kings Canyon Watarrka Northern Territory rim',
+        imageAlt: 'Sandstone cliffs at Watarrka Kings Canyon',
+        summary: 'Stay near Watarrka and let the 36°C start limits choose between the six-kilometre Rim Walk and three shorter routes.',
+        orientationTitle: 'A rim walk is one of four different walks',
+        orientation: 'Kings Canyon’s red walls rise about 100 m above Kings Creek to a plateau of rocky domes. The Rim Walk reaches that exposed rim after a difficult climb; the South Wall stops before the Garden of Eden, Kings Creek stays below the rim, and Kathleen Springs follows a paved, accessible path to a significant waterhole.',
+        interpretation: 'The canyon is not a single summit viewpoint. From the rim, the plateau and domes open above the sheltered creek, where the NT notes relict plants including the MacDonnell Ranges cycad. The four public routes have separate markers, grades and heat cutoffs; taking a shorter one does not connect it to the Rim Walk.',
+        access: 'Watarrka lies about 450 km southwest of Alice Springs. The sealed Stuart and Lasseter highways and Luritja Road suit 2WD vehicles; the Red Centre Way / Mereenie Loop is unsealed, needs a permit and is recommended for 4WD. Camping is not allowed inside the park: stay at Kings Canyon Resort or Kings Creek Station and check road conditions before departure.',
+        sequence: 'Sleep near the park, check the Watarrka forecast and walk status at first light, then choose one route. At a forecast of 36°C or higher, start the Rim Walk before 9 am or South Wall Return before 11 am. The Rim Walk is clockwise; if its climb or cutoff does not fit, Kings Creek or Kathleen Springs is a complete alternative.',
+        boundary: 'Watarrka is culturally significant Luritja and Arrernte Country. Keep to marked paths and boardwalks, stay back from cliff edges, do not swim at Kathleen Springs and respect closures and public cultural guidance.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Base beside the park', 'Book the nearby resort or station: overnight camping is not permitted inside Watarrka National Park.'],
+          ['Apply the heat gate', 'Check the Watarrka forecast before sunrise. At 36°C or above, Rim Walk entry ends at 9 am and South Wall entry at 11 am.'],
+          ['Choose one track', 'Use the clockwise rim for the full canyon, South Wall for its separate return, Kings Creek for a shorter walk or Kathleen Springs for paved accessible access.'],
+          ['Recover before the drive', 'Carry water, rest after the walk and set the next road leg in daylight. If using Mereenie, confirm 4WD suitability and the current permit.']
+        ],
+        risks: [
+          ['Heat cutoff', 'At 36°C or above, the Rim and South Wall start deadlines are mandatory. A later start means choosing another walk.'],
+          ['Exposed rim and steep ascent', 'The Rim Walk begins with a difficult climb and follows cliff edges. Follow the clockwise arrows, stairs and boardwalks; do not approach edges.'],
+          ['Route mistaken for access', 'A 2WD can use the sealed highway route. The Mereenie route is unsealed, needs a permit and is recommended for 4WD; check road status before committing.']
+        ],
+        decisions: [
+          ['Kings Canyon Rim | 6 km loop', 'Grade 4, 3–4 hours, clockwise, with a difficult initial climb. The halfway Garden of Eden is a rockhole among rare plants and swimming is not allowed. At a forecast of 36°C or above, start before 9 am.'],
+          ['South Wall | 4.8 km return', 'Grade 3, about two hours, with a steep climb to the south wall. At 36°C or above, start before 11 am. This route ends at a one-way gate and does not reach the Garden of Eden or the rest of the rim.'],
+          ['Kings Creek or Kathleen Springs | shorter options', 'Kings Creek is 2.6 km return, about one hour, Grade 2. Kathleen Springs is 2.4 km return, about 1.5 hours, Grade 1, sealed and wheelchair accessible; it lies 21 km by road from the canyon. Do not swim at its culturally significant waterhole.']
+        ],
+        duration: 'Stay one or two nights near Watarrka so the approach, walk and onward drive do not compete for the same daylight.',
+        combine: 'Use Watarrka as a separate road-trip overnight between bases, not as a same-day return from Uluṟu.',
+        verify: 'Check the NT Parks Visitor Pass, live walk opening, Watarrka temperature, route and road conditions, accommodation, fuel and Mereenie permit if relevant.',
+        faq: [
+          ['Can South Wall Return be joined to the Rim Walk?', 'No. South Wall Return uses its own out-and-back path to a one-way gate; it does not access the Garden of Eden or the rest of the rim.'],
+          ['Can I reach Watarrka in a 2WD?', 'The sealed Stuart and Lasseter highways and Luritja Road are suitable for 2WD. The Red Centre Way / Mereenie Loop is unsealed, requires a permit and is recommended for 4WD; check current road advice.'],
+          ['Is Kathleen Springs a swimming stop?', 'No. The 2.4 km paved Grade 1 return path reaches a waterhole significant to local Aboriginal people and important to wildlife; swimming is prohibited.']
+        ],
+        sources: [
+          ['https://nt.gov.au/parks/find-a-park/watarrka-national-park', 'Northern Territory Parks — Watarrka National Park'],
+          ['https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks', 'Northern Territory Parks — Watarrka short walks'],
+          ['https://roadreport.nt.gov.au/home', 'Northern Territory Road Report']
+        ]
       }),
       g({
         slug: 'uluru-cultural-landscape', name: 'Uluṟu Cultural Landscape', motif: 'surface, water and respect', orientationTitle: "Choose the right walk", routeTitle: "Plan a half-day", instrument: 'cultural-compass', imageQuery: 'Uluru sunset Northern Territory Australia', imageAlt: 'Uluṟu rising from the central Australian desert',
@@ -245,7 +361,7 @@ export const australiaNorthClusters = [
         orientation: "Uluṟu and Kata Tjuṯa formed from ancient sediment fans that hardened into rock and later tilted as the land shifted. Uluṟu is mainly arkose sandstone; iron oxide gives its weathered surface the familiar red, while pale patches expose less-weathered rock. Geology is one layer of this place. Tjukurpa is Aṉangu law, knowledge and spiritual philosophy, and it guides the park's joint management. Start with the Tjukurpa Tunnel and multilingual displays at the Cultural Centre; let Aṉangu interpretation set the limits of what is shared.",
         interpretation: "The two short walks end in different landscapes. From the Mala carpark, the public route to Kaṉtju Gorge passes publicly described ancient campsites and a kitchen cave before reaching sheer gorge walls. Kuniya ends at Muṯitjulu Waterhole, one of the area's few permanent water sources, with river red gums, shade and tall grasses. These are visitor-route descriptions, not permission to enter caves or reproduce restricted Tjukurpa. Stay on the open track and use park signs as the authority at each site.",
         access: "Fly to Ayers Rock / Connellan Airport (AYQ) at Yulara, then prearrange a hire car, coach tour or the Uluṟu Hop On Hop Off bus for the park. There is no taxi or other public transport inside the park; the resort shuttle links accommodation with Yulara's town square only. From Alice Springs, Uluṟu is 465 km by road and Parks Australia estimates about 5.5 hours of direct driving before stops. Make that a travel day, not the approach to a long exposed walk.",
-        sequence: "For a half-day from Yulara, use the cool morning for the designated Talinguṟu Nyakunytjaku sunrise view, walk Mala to Kaṉtju Gorge before late-morning heat, then spend time at the Cultural Centre and have lunch there. Check that the lookout and Mala track are open for your date, and check the centre's current hours before setting out. Leave the full 10.6 km base loop and Kata Tjuṯa for a separate day.",
+        sequence: "For a half-day from Yulara, use the cool morning for the designated Talinguṟu Nyakunytjaku sunrise view, walk Mala to Kaṉtju Gorge before late-morning heat, then spend time at the Cultural Centre and have lunch there. Check that the lookout and Mala track are open for your date, and check the centre's current hours before setting out. Leave the full 10.6 km Uluṟu Base Walk and Kata Tjuṯa for a separate day.",
         boundary: "Uluṟu and Kata Tjuṯa are living Aṉangu sacred landscapes. Do not climb, leave marked tracks, enter closed areas or photograph culturally sensitive rock features identified by park maps and signs. In marked sensitive areas, Aṉangu ask visitors not to photograph the rock; on the north-east face, they ask for wide, distant views and no detail of the top-left area. Ask before photographing people. Drones are prohibited. Anyone making or publicly displaying their own commercial park photography or video should check Parks Australia's media-permit rules first.",
         reviewDate: "4 October 2026",
         reviewIsoDate: "2026-10-04",
@@ -259,7 +375,7 @@ export const australiaNorthClusters = [
             "The return from Mala carpark to Kaṉtju Gorge is 2 km, Grade 2 and about 90 minutes; water and toilets are available. It takes longer than Kuniya and adds publicly described campsites, a kitchen cave and the enclosed gorge."
           ],
           [
-            "Base loop | full circuit",
+            "Uluṟu Base Walk | full circuit",
             "The full loop is 10.6 km, Grade 3 and about 3.5 hours. Its sections alternate between greener pockets and exposed ground; start at Mala carpark while it is cool. Some tracks close in summer afternoons, and Parks Australia advises finishing before 11 am in hot weather."
           ]
         ],
@@ -305,7 +421,7 @@ export const australiaNorthClusters = [
           ],
           [
             "Which Uluṟu walk fits a short visit?",
-            "Kuniya is the shorter 1 km return (30–45 minutes, Grade 2) to the waterhole. Mala is 2 km return (about 90 minutes, Grade 2) to Kaṉtju Gorge. The complete base loop is 10.6 km (about 3.5 hours, Grade 3) and needs a cool morning. Use the current official walk page for changes or closures."
+            "Kuniya is the shorter 1 km return (30–45 minutes, Grade 2) to the waterhole. Mala is 2 km return (about 90 minutes, Grade 2) to Kaṉtju Gorge. The complete Uluṟu Base Walk is 10.6 km (about 3.5 hours, Grade 3) and needs a cool morning. Use the current official walk page for changes or closures."
           ],
           [
             "What changes when it is hot?",
@@ -351,7 +467,7 @@ export const australiaNorthClusters = [
           ],
           [
             "https://uluru.gov.au/things-do/activities/walks/uluru-walks/uluru-base-walk/",
-            "Parks Australia – Uluṟu base walk"
+            "Parks Australia – Uluṟu Base Walk"
           ],
           [
             "https://uluru.gov.au/things-do/activities/photography/",
@@ -376,12 +492,51 @@ export const australiaNorthClusters = [
         ],
       }),
       g({
-        slug: 'kata-tjuta', name: 'Kata Tjuṯa', motif: 'valley-walk weather decision', instrument: 'valley-profile', imageQuery: 'Kata Tjuṯa domes Northern Territory', imageAlt: 'The domes of Kata Tjuṯa in Uluṟu Kata Tjuṯa National Park',
-        summary: 'A separate Kata Tjuṯa chapter where wind, heat, cultural closure and route grade decide between valley walks and viewpoints.',
-        orientation: 'treat Walpa Gorge, Valley of the Winds and viewing areas as different commitments.', access: 'Travel from Yulara or within the park with enough fuel, pass, water and daylight for the chosen route.', sequence: 'Check closures at the park source, attempt the most exposed walk early, use the shorter gorge or viewpoint when conditions narrow and return before heat.', boundary: 'Kata Tjuṯa is sacred Aṉangu Country. Stay on open paths, respect restricted knowledge and never leave the route for a better angle.',
-        stages: [['Check the route gate', 'Wind, heat and cultural closure determine what is open.'], ['Choose one valley', 'Match grade and distance to the day.'], ['Walk without shortcuts', 'Remain on formed paths and carry water.'], ['Return before the heat wall', 'End the walk with transport and recovery time.']],
-        risks: [['Heat closure', 'Long exposed walks may close early.'], ['Wind and uneven ground', 'Strong gusts and rock surfaces require stable footing.'], ['Cultural boundary', 'Closed paths and restricted stories must remain untouched.']],
-        duration: 'Give Kata Tjuṯa a dedicated half or full day within a multi-night stay.', combine: 'Pair with Uluru on different days rather than two major walks together.', verify: 'Check Parks Australia alerts, temperature, wind, cultural closure, road, water and turnaround.'
+        slug: 'kata-tjuta',
+        name: 'Kata Tjuṯa',
+        motif: 'gorge walk and valley loop',
+        instrument: 'valley-profile',
+        imageQuery: 'Kata Tjuṯa domes Northern Territory',
+        imageAlt: 'The domes of Kata Tjuṯa in Uluṟu Kata Tjuṯa National Park',
+        summary: 'Waḻpa Gorge is a one-hour return walk; the Valley of the Winds is a steep, 7.4 km loop with a heat cutoff and its own Aṉangu photography rules.',
+        orientationTitle: 'Choose a gorge or a full valley circuit',
+        orientation: 'Waḻpa Gorge’s rocky track rises gently toward a seasonal stream and a grove of spearwood. The Valley of the Winds runs among the domes, with two lookouts and a more demanding grade. Its full loop can be easier than returning from the second lookout by the same route, so compare the whole circuit before choosing an out-and-back.',
+        interpretation: 'These are different ways to read Kata Tjuṯa: Waḻpa follows a narrow gorge through a desert refuge for plants and animals; Valley of the Winds crosses the open valley between domes. Parks Australia reports pink daisies near Waḻpa’s entrance in late winter and water halfway around the Valley circuit. Take only the details the public track offers; Aṉangu set firm limits on recording the rock formations.',
+        access: 'Travel from Yulara with park entry, water and return transport settled before departure. Both official walk pages list no toilets. The Valley of the Winds is Grade 4, steep and rocky; Waḻpa Gorge is Grade 3 and has no wheelchair access. Recheck park alerts and each walk page for same-day closures.',
+        sequence: 'Decide between Waḻpa and the Valley before leaving Yulara, then check the forecast and access status. When the temperature is forecast or observed at 36°C or higher, the Valley closes at Karu Lookout from 11 am; start early enough for the chosen full route, or use a permitted shorter walk or designated viewing area. Keep the other major Uluṟu walk on a separate day.',
+        boundary: 'Kata Tjuṯa is sacred Aṉangu Country. On the Valley of the Winds, do not photograph or film the rock formations anywhere on the walk. At Waḻpa Gorge, frame both sides of the gorge when recording it. Remain on marked paths and do not enter waterholes.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Check the walk status', 'Read Parks Australia alerts, the temperature forecast and the photography guidance before setting off.'],
+          ['Choose the commitment', 'Select Waḻpa for a 2.6 km, one-hour return, or the 7.4 km Valley circuit for a three-to-four-hour Grade 4 walk.'],
+          ['Start with the cutoff in mind', 'At 36°C or above, the Valley closes at Karu from 11 am. Carry water; there are no toilets on either walk.'],
+          ['Return without rushing', 'Stay on formed tracks, leave time for the drive back to Yulara and keep Uluṟu for a separate day.']
+        ],
+        risks: [
+          ['Heat closure', 'The Valley of the Winds closes at its first lookout from 11 am when the forecast or actual temperature reaches 36°C.'],
+          ['Loose rock and grade', 'The Valley is steep and rocky; Waḻpa’s route still requires care on its uneven surface. Wear sturdy footwear and turn back if footing or heat is wrong.'],
+          ['Recording sensitive formations', 'The Valley’s no-photo/no-video guidance applies throughout the walk. Waḻpa requires both sides of the gorge to remain in frame.']
+        ],
+        decisions: [
+          ['Waḻpa Gorge | 2.6 km return', 'Grade 3, about one hour. The rocky track gently rises to a seasonal stream and spearwood grove; pink daisies may appear at the entrance in late winter. There is water but no toilet, and photography must keep both sides of the gorge in frame.'],
+          ['Valley of the Winds | 7.4 km loop', 'Grade 4, roughly 3–4 hours, with two lookouts and water halfway. Karu is 2.2 km return / about one hour; Karingana is 5.4 km return / about 2.5 hours. The full circuit can be easier than going out to Karingana and returning. At 36°C or above, Karu access closes from 11 am.'],
+          ['Viewpoint | when the route is closed', 'If heat, wind, fitness or a cultural closure rules out a walk, use a designated viewing area and keep time for the return to Yulara. Do not turn a closure into permission to leave the marked track or photograph a restricted face.']
+        ],
+        duration: 'Give Kata Tjuṯa a dedicated half or full day. Plan a second day for Uluṟu instead of combining two exposed walks.',
+        combine: 'Pair with the designated viewing area only if transport and daylight allow; reserve Uluṟu’s longer walk for another day.',
+        verify: 'Check park opening, temperature, Valley cutoff, wind, cultural closures, entry pass, water, transport and the current photography map.',
+        faq: [
+          ['Is the first Valley of the Winds lookout a short option?', 'Karu Lookout is 2.2 km return and about one hour. The route is still rocky; from 11 am it closes when the forecast or actual temperature is 36°C or higher.'],
+          ['Can I photograph Kata Tjuṯa on the Valley walk?', 'No. Aṉangu ask visitors not to photograph or film the rock formations anywhere along the Valley of the Winds. At Waḻpa Gorge, keep both sides of the gorge in frame when recording it.'],
+          ['Can I visit Kata Tjuṯa after a long Uluṟu walk?', 'Give the walks separate days. The Valley loop takes three to four hours before the drive and recovery time; heat or a closure may also narrow the walking window.']
+        ],
+        sources: [
+          ['https://uluru.gov.au/things-do/activities/walks/kata-tjuta-walks/', 'Parks Australia — Kata Tjuṯa walks'],
+          ['https://uluru.gov.au/things-do/activities/walks/kata-tjuta-walks/walpa-gorge-walk/', 'Parks Australia — Waḻpa Gorge walk'],
+          ['https://uluru.gov.au/things-do/activities/walks/kata-tjuta-walks/valley-winds-walks/', 'Parks Australia — Valley of the Winds walks'],
+          ['https://uluru.gov.au/plan/buy-your-pass/', 'Parks Australia — park entry']
+        ]
       })
     ]
   })

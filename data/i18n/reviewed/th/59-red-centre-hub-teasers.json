@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/"
+  ],
+  "translations": {
+    "Give the Telegraph precinct and Desert Park separate blocks, allowing for their different locations and…": "แยกย่าน Telegraph Station กับ Desert Park ไว้คนละส่วน เพราะอยู่คนละแห่งและ…",
+    "For a short outing, choose Simpsons Gap and one of its named walks.": "หากมีเวลาสั้น ๆ เลือกไป Simpsons Gap และเดินหนึ่งในเส้นทางที่มีชื่อระบุไว้",
+    "Sleep near the park, check the Watarrka forecast and walk status at first light, then choose one route.": "พักค้างคืนใกล้อุทยาน ตรวจพยากรณ์อากาศและสถานะเส้นทางเดินของ Watarrka ตอนฟ้าสาง แล้วเลือกหนึ่งเส้นทาง",
+    "Decide between Waḻpa and the Valley before leaving Yulara, then check the forecast and access status.": "ก่อนออกจาก Yulara ให้เลือกระหว่าง Waḻpa กับ Valley of the Winds จากนั้นตรวจพยากรณ์อากาศและสถานะการเข้าใช้เส้นทาง"
+  }
+}
