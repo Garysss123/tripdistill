@@ -300,7 +300,7 @@ for (const absoluteUrl of publishedUrls) {
   }
   const italyGuide = italyByRoute.get(baseRoute);
   if (italyGuide) {
-    if (!html.includes('/css/italy-field.css?v=20261004-2')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
+    if (!html.includes('/css/italy-field.css?v=20261004-3')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
     if (!html.includes(`data-it-family="${italyGuide.family}"`)) problems.push(`${relativePath}: missing ${italyGuide.family} Italy family marker`);
     if (!html.includes(`data-it-layout="${italyGuide.layout}"`)) problems.push(`${relativePath}: missing ${italyGuide.layout} Italy layout marker`);
     if (!html.includes(`data-it-structure="${italyGuide.structure}"`)) problems.push(`${relativePath}: missing ${italyGuide.structure} Italy structure marker`);

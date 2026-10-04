@@ -11874,7 +11874,7 @@
     "url": "/italy/rome/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Plan Rome around three separate days. The Colosseum, Forum valley and Capitoline climb belong together geographically, but their archaeological and museum entrances work separately. At the Vatican, the Museums, St Peter’s Basilica and the dome each have their own visitor arrangements. In the historic centre, the Pantheon, Piazza Navona and the Ghetto sit on foot routes, while a Trastevere finish adds a Tiber crossing. Book the main ticketed visit first, then build the day around its actual entrance and exit.",
+    "summary": "Three Rome walks give the city a practical shape: the Colosseum, Forum valley and Capitoline hill form one archaeological landscape, while their ticketed sites and museum have distinct entrances. At the Vatican, the Museums, St Peter’s Basilica and dome follow separate visitor arrangements. In the historic centre, the Pantheon, Navona and Ghetto make compact walking routes; a Trastevere finish adds a Tiber crossing. Start with the booking that matters most, then see whether time and energy allow a second nearby stop.",
     "keywords": [
       "Rome",
       "Lazio",
@@ -11886,7 +11886,7 @@
     "url": "/italy/rome/ancient-rome-capitoline/",
     "parent": "Rome",
     "type": "Local guide",
-    "summary": "The Forum occupies the hollow below the Capitoline; reaching Piazza del Campidoglio means climbing back to the hill that guarded the valley. Keep the Colosseum, archaeological route and Capitoline Museums as separate entrance decisions when planning the day.",
+    "summary": "The Forum occupies the hollow below the Capitoline, with the Palatine rising along its other side and the Colosseum close by. Some current ticket products link Colosseum entry with Forum-Palatine access; check the exact route and allow most of a day if you want time to look closely.",
     "keywords": [
       "Ancient Rome & the Capitoline",
       "Rome",
@@ -11900,11 +11900,11 @@
     "url": "/italy/rome/vatican-borgo-prati/",
     "parent": "Rome",
     "type": "Local guide",
-    "summary": "The Vatican Museums begin at Viale Vaticano; St Peter’s Square and Basilica are approached from the east; Castel Sant’Angelo stands across the Tiber. Treat the three as distinct visits, then use Borgo or the river walk to connect only the parts that fit your day.",
+    "summary": "The Vatican precinct and Castel Sant’Angelo are on the Tiber’s right bank. Borgo links them on foot; Ponte Sant’Angelo crosses from the castle toward the historic-centre bank. Treat each ticketed interior as its own visit, then connect the places that fit your day.",
     "keywords": [
       "Vatican, Borgo & Prati",
       "Rome",
-      "Sacred-door queue matrix",
+      "Vatican, Basilica and Borgo guide",
       "holy-door-nested-threshold",
       "living-sacred-threshold"
     ]
@@ -11918,7 +11918,7 @@
     "keywords": [
       "Historic Centre & Trastevere",
       "Rome",
-      "Piazza-to-river evening fold",
+      "Historic centre and Tiber walking guide",
       "piazza-river-evening-circuit",
       "piazza-circuit"
     ]

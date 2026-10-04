@@ -771,3 +771,24 @@ body[data-page="it-rome-ancient-rome-capitoline"] .it-scoreboard article {
 body[data-page^="it-rome-"] .section.compact:has(> .ad-slot[data-ad-slot]:empty) {
   display: none;
 }
+
+/* Rome interpretive notes use a warm editorial grid, distinct from the numbered itinerary. */
+.it-reading-folio { padding: clamp(4rem, 7vw, 7rem) clamp(1.2rem, 5vw, 5rem); color: var(--it-basalt); background: #e9dfce; }
+.it-reading-folio > header { max-width: 1080px; margin: 0 auto 2.6rem; }
+.it-reading-folio > header > span { display: inline-flex; align-items: center; gap: .65rem; color: #805337; font: 800 .71rem/1.25 var(--it-label); font-variant-caps: all-small-caps; letter-spacing: .12em; }
+.it-reading-folio > header > span::before { content: ''; width: 1.55rem; height: 2px; background: currentColor; }
+.it-reading-folio > header h2 { max-width: 18ch; margin: .7rem 0 .85rem; color: var(--it-basalt); font-size: clamp(2.25rem, 4.6vw, 4.65rem); font-weight: 500; line-height: .97; letter-spacing: -.04em; }
+.it-reading-folio > header p { max-width: 58rem; margin: 0; color: #39443f; line-height: 1.72; }
+.it-reading-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; max-width: 1100px; margin: 0 auto; }
+.it-reading-grid article { grid-column: span 3; display: grid; align-content: start; gap: .8rem; min-width: 0; padding: clamp(1.25rem, 2vw, 1.8rem); border: 1px solid #c8baa4; border-top: 5px solid #c87950; background: #fffdf8; }
+.it-reading-grid article:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.it-reading-grid article > header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #d9cfbf; }
+.it-reading-grid article > header span { color: #805337; font: 800 .72rem/1.3 var(--it-label); letter-spacing: .09em; }
+.it-reading-grid article > header b { color: #74695b; font: 700 .72rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.it-reading-grid h3 { margin: 0; color: var(--it-basalt); font: 500 clamp(1.45rem, 2vw, 2rem)/1.08 var(--it-display); }
+.it-reading-grid p { margin: 0; color: #303b37; line-height: 1.7; }
+@media (max-width: 700px) {
+  .it-reading-grid { grid-template-columns: minmax(0, 1fr); }
+  .it-reading-grid article,
+  .it-reading-grid article:last-child:nth-child(odd) { grid-column: 1; }
+}

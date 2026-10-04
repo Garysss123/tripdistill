@@ -7,7 +7,7 @@ const reviewDate = '26 September 2026';
 const isoDate = '2026-09-26';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/italy.css?v=20261004-2';
-const fieldCss = '/css/italy-field.css?v=20261004-2';
+const fieldCss = '/css/italy-field.css?v=20261004-3';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
@@ -78,7 +78,12 @@ function guideSchema(guide, cluster) {
   };
 }
 
-const decisionHeader = (guide, cluster) => `<header><span>${cluster.slug === "rome" ? "Choose a Rome layer" : "Choose the operating layer"}</span><h2>${cluster.slug === "rome" ? "Read the civic valley, sacred west bank or piazza streets." : "Three useful routes, each with a visible sacrifice."}</h2></header>`;
+const decisionHeader = (guide, cluster) => `<header><span>${cluster.slug === "rome" ? "Choose a Rome walk" : "Choose the operating layer"}</span><h2>${cluster.slug === "rome" ? "Read the ancient valley, Vatican precinct or historic streets." : "Three useful routes, each with a visible sacrifice."}</h2></header>`;
+function interpretiveSection(guide) {
+  if (!Array.isArray(guide.whatToSee) || guide.whatToSee.length === 0) return '';
+  const notes = guide.whatToSee.map(([place, title, copy], index) => `<article><header><span>${escapeHtml(place)}</span><b>${String(index + 1).padStart(2, '0')}</b></header><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
+  return `<section class="it-reading-folio" id="what-to-see"><header><span>PLACE NOTES</span><h2>What to see and why it matters</h2><p>Use these details to read the monuments and neighbourhoods as you move through the route.</p></header><div class="it-reading-grid">${notes}</div></section>`;
+}
 const choiceArticle = ([title, copy], index, extra = '') => `<article ${extra}><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`;
 
 function decisionInstrument(guide, cluster) {
@@ -135,7 +140,8 @@ ${shellStart(`<main id="main-content" class="page-content it-field" data-it-fami
 ${cluster.slug === "rome" ? "" : `  <section class=it-regional-strata><header><span>${escapeHtml(cluster.label)}</span><h2>${escapeHtml(cluster.name)} has four layers to align.</h2><p>${escapeHtml(cluster.hubIntro)}</p></header><div><article><h3>BASE</h3><p>${escapeHtml(cluster.stay)}</p></article><article><h3>TRANSFER</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><h3>SEASON</h3><p>${escapeHtml(cluster.season)}</p></article><article><h3>LOWER-RISK DAY</h3><p>${escapeHtml(cluster.fallback)}</p></article></div></section>`}
   ${decisionInstrument(guide, cluster)}
   ${ad}
-  <section class="it-threshold-board"><article><span>${cluster.slug === "rome" ? "Starting point" : "REAL GATEWAY"}</span><h2>${cluster.slug === "rome" ? "Match the first doorway to the place you will read." : "Begin where the transport actually ends."}</h2><p>${escapeHtml(guide.access)}</p></article><article><span>${cluster.slug === "rome" ? "Save for another day" : "VISIBLE SACRIFICE"}</span><h2>${cluster.slug === "rome" ? "Keep a second landscape for a separate visit." : "Know what the chosen line leaves out."}</h2><p>${escapeHtml(guide.tradeoff)}</p></article><aside><div><small>${cluster.slug === "rome" ? "Time to allow" : "TIME ENVELOPE"}</small><p>${escapeHtml(guide.duration)}</p></div><div><small>${cluster.slug === "rome" ? "A nearby pairing" : "PAIR ONLY WHEN USEFUL"}</small><p>${escapeHtml(guide.combine)}</p></div></aside></section>
+  <section class="it-threshold-board"><article><span>${cluster.slug === "rome" ? "Starting point" : "REAL GATEWAY"}</span><h2>${cluster.slug === "rome" ? "Match the first doorway to the place you will read." : "Begin where the transport actually ends."}</h2><p>${escapeHtml(guide.access)}</p></article><article><span>${cluster.slug === "rome" ? "Save for another day" : "VISIBLE SACRIFICE"}</span><h2>${cluster.slug === "rome" ? "Keep a second landscape for a separate visit." : "Know what the chosen line leaves out."}</h2><p>${escapeHtml(guide.tradeoff)}</p></article><aside><div><small>${cluster.slug === "rome" ? "Time to allow" : "TIME ENVELOPE"}</small><p>${escapeHtml(guide.duration)}</p></div><div><small>${cluster.slug === "rome" ? "A nearby pairing" : "PAIR ONLY WHEN USEFUL"}</small><p>${escapeHtml(guide.combine)}</p></div></aside></section>${guide.whatToSee ? `
+  ${interpretiveSection(guide)}` : ""}
   <section class="it-route-folio" id="route" data-it-route-structure="${escapeHtml(guide.structure)}"><header><span>Four thresholds</span><h2>Arrive, cross one gate, use one layer, then protect the return.</h2><p>${escapeHtml(guide.verify)}</p></header><ol>${guide.route.map(([label, title, copy], index) => `<li><b>${String(index + 1).padStart(2, '0')}</b><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section>
   <section class="it-live-desk"><div><span>LIVE AUTHORITIES</span><h2>Reopen the pages that control today’s gate.</h2></div>${cluster.slug === "rome" ? "" : "<p>The guide provides the decision structure; these authorities control admission, transport, paths, weather, marine operation and closures.</p>"}<ul>${sourceList(planningSources)}</ul></section>
   <section class="it-fallback"><div><span>WHEN THE GATE CLOSES</span><h2>Keep a complete alternative, not fragments.</h2><p>${escapeHtml(guide.fallback)}</p></div></section>
