@@ -170,7 +170,10 @@ check(home.includes('<!-- ITALY_HOME_START -->') && home.includes('<!-- ITALY_HO
 check(read('scripts/build-dist.mjs').includes("'italy'"), 'Italy absent from build allowlist');
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
-  for (const route of routes) check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>2026-09-26</lastmod>`), `${route}: sitemap missing or stale`);
+  for (const route of routes) {
+    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : '2026-09-26';
+    check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
 }
 
 if (failures.length) {

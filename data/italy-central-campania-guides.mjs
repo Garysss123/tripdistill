@@ -11,19 +11,29 @@ export const italyCentralCampaniaClusters = [
     band: 'central-art-cities',
     family: 'seven-hills-threshold-book',
     label: 'Lazio · threshold folio 01',
-    tagline: 'Read Rome by level: the ancient civic valley, the sacred west bank and the piazza streets.',
-    hubIntro: 'Rome is three substantial walks with different civic meanings: descend from the Colosseum into the Forum valley and climb to the Capitoline; give the Vatican Museums and basilica a separate west-bank day; then read the historic centre through the Pantheon, Piazza Navona and one deliberate Tiber crossing. Ancient remains, worship and daily city life share the same urban fabric, but not the same gates or clocks.',
-    stay: 'Four to six nights supports these three chapters without turning every meal into a transfer. Monti or Termini shortens access for Ancient Rome and rail arrivals; Prati favors Vatican mornings; the Centro or Trastevere shifts the walk home after dinner. No base removes the crossing: choose by your first ticketed door and the bank where you expect to finish.',
-    transfer: 'Fiumicino and Ciampino use different airport links; Termini, Tiburtina, Ostiense and Roma San Pietro serve different arrivals. In the centre, the last mile can still be a long surface walk from Colosseo, Spagna, Ottaviano or Cipro. Save the actual ticketed gate and return point, not only a nearest-metro pin.',
-    season: 'Heat is hardest on the long, exposed archaeological paths. Put a Forum or Palatine walk early, leave time for a seated break and use a museum-led block for the hottest or wettest part of the day. Papal, civic and sporting events can change access around the Vatican and central streets, so check the perimeter before leaving.',
-    fallback: 'If the ancient-site booking changes, make the Capitoline Museums and hill a complete civic-archaeology day. If Vatican access shifts, keep a Borgo, Prati or Castel Sant’Angelo river route only where entry is available. In rain, choose Museo di Roma or a nearby church whose visitor hours are confirmed for that day instead of chasing another distant reservation.',
+    tagline: "Three Rome walks: the Forum and Capitoline, the Vatican, and the historic centre.",
+    hubIntro: "Plan Rome around three separate days. The Colosseum, Forum valley and Capitoline climb belong together geographically, but their archaeological and museum entrances work separately. At the Vatican, the Museums, St Peter’s Basilica and the dome each have their own visitor arrangements. In the historic centre, the Pantheon, Piazza Navona and the Ghetto sit on foot routes, while a Trastevere finish adds a Tiber crossing. Book the main ticketed visit first, then build the day around its actual entrance and exit.",
+    stay: "Four to six nights gives these three walks room, especially if arrival or departure uses part of a day. Monti and the Celio are practical for an early Colosseum start; Prati shortens the morning approach to the Vatican Museums; Centro Storico keeps the Pantheon and Navona on foot. Trastevere suits evenings on that bank but adds a river crossing to most other days. Compare the hotel’s walk to the specific entrance you have booked, not just the district name.",
+    transfer: "From Fiumicino, the Leonardo Express runs directly to Termini; Trenitalia’s regional FL1 serves stations including Ostiense and Tiburtina. Choose the station that fits your hotel rather than assuming every airport train ends at Termini. Ciampino uses a separate airport-to-city connection. In town, Colosseo, Ottaviano and Cipro serve different sides of the archaeological and Vatican visits; the Pantheon and Piazza Navona have no adjacent metro station. Check the current ATAC route and the final walk with your luggage.",
+    season: "The Forum, Palatine and Campidoglio involve long stretches outdoors, uneven surfaces and little shelter. In hot weather, put that walk early and plan an indoor stop or a long meal before the afternoon heat; in rain, keep a museum option near the same area. Check Rome’s event notices before crossing central streets around major religious or civic gatherings, and check site closure notices on the day.",
+    fallback: "If your Colosseum-area entry changes, the Capitoline Museums and Piazza del Campidoglio still make a coherent visit: approach by the Cordonata, use the museum route for the Tabularium gallery and Forum view, then finish on the hill. If Vatican access changes, keep the day in Prati and use Castel Sant’Angelo only if its own admission is available. For a wet historic-centre day, choose one open civic museum near your planned walk instead of crossing town for another reservation.",
     reviewDate: "4 October 2026",
     reviewIsoDate: "2026-10-04",
-    faq: [["Can I get a useful Forum view without planning another archaeological circuit?","The Capitoline Museums include the Tabularium corridor on the Forum side of the hill. Its gallery opens a view over the valley, and the museum visit can stand as a complete indoor route when heat or access changes the open-air plan. Confirm current visitor hours and admission before going."],["What did the Tabularium do?","The Tabularium closed the Forum edge below the Capitoline and housed Rome’s public records. Its surviving corridor now forms part of the Capitoline Museums route and looks out over the archaeological area."]],
+    faq: [
+      ["How many nights should I plan for Rome?", "Four to six nights gives a first visit time for the three walks here, meals and a recovery block. Leave the Vatican and Colosseum-area entries on separate days; a late arrival or early flight can remove one usable day."],
+      ["Which area is the most practical place to stay?", "Choose by your first booked entrance and your evening return. Monti and Celio suit the Colosseum side, Prati the Vatican Museums, and Centro Storico the Pantheon and Navona. Trastevere is an evening choice across the river, not a central transfer point for every route."],
+      ["How do I get from Fiumicino into Rome?", "The Leonardo Express goes directly to Termini; the regional FL1 serves other Rome stations, including Ostiense and Tiburtina. Check the current Trenitalia service and the station nearest your accommodation before choosing."]
+    ],
     sources: [
-      ['https://www.turismoroma.it/en', 'Turismo Roma — official city visitor information'],
-      ['https://www.atac.roma.it/en', 'ATAC Roma — official public transport information'],
-      ['https://www.italia.it/en/lazio/rome', 'Italia.it — official Rome destination overview']
+      ["https://www.turismoroma.it/en", "Turismo Roma — official city visitor information"],
+      ["https://www.atac.roma.it/en", "ATAC — official Rome public transport information"],
+      ["https://www.trenitalia.com/en/services/connections-to-and-from-rome-fiumicino-airport.html", "Trenitalia — official Fiumicino rail connections"],
+      ["https://www.adr.it/web/aeroporti-di-roma-en", "Aeroporti di Roma — official airport information"],
+      ["https://colosseo.it/en/visit/", "Parco archeologico del Colosseo — official visits and ticket information"],
+      ["https://www.museicapitolini.org/en", "Musei Capitolini — official visitor information"],
+      ["https://www.museivaticani.va/content/museivaticani/en/info.html", "Vatican Museums — official visitor information"],
+      ["https://www.basilicasanpietro.va/en/visits", "St Peter’s Basilica — official visit information"],
+      ["https://direzionemuseiroma.cultura.gov.it/pantheon/", "Direzione Musei nazionali della città di Roma — Pantheon visitor information"]
     ],
     guides: [
       g({
@@ -34,38 +44,44 @@ export const italyCentralCampaniaClusters = [
         structure: 'booked-door-score',
         imageQuery: 'Roman Forum Colosseum Capitoline Rome panorama',
         imageAlt: "Roman Forum seen through the Arch of Septimius Severus",
-        purpose: "Follow the ancient civic ground from the Colosseum and Forum toward Campidoglio, then read the hill as a later civic design. The terrain and the city’s layers matter as much as the ticketed interior.",
-        summary: "From Piazza del Campidoglio, picture the ancient Capitolium and Arx on opposite sides of the hollow; today’s square sits about eight metres above the original valley floor. Michelangelo’s design draws the approach, paving and surrounding palaces into a distinct civic composition.",
+        purpose: "Walk from the Forum’s low ground up to the Capitoline, then see how Michelangelo’s Piazza del Campidoglio reshaped the summit. Decide whether the Colosseum interior, a continuous Forum–Palatine visit or the Capitoline Museums is the main commitment.",
+        summary: "The Forum occupies the hollow below the Capitoline; reaching Piazza del Campidoglio means climbing back to the hill that guarded the valley. Keep the Colosseum, archaeological route and Capitoline Museums as separate entrance decisions when planning the day.",
         choices: [
-          ['Colosseum as the anchor', 'Let the booked Colosseum entry set the clock; add only the Forum segment named on that ticket. You gain time inside the amphitheatre but leave the Palatine crest and Capitoline collections for another day.'],
-          ['Forum–Palatine as a landscape', 'Keep the long archaeological traverse intact: read the Forum at valley level, then feel the climb toward the Palatine. You give up a deep Colosseum interior and get little shade along the way.'],
-          ['Capitoline as the anchor', 'Cross the Cordonata to Piazza del Campidoglio, then use the museums and hill to read the city at a slower indoor pace. You trade distance through the excavation for architecture, collection and a more weather-resilient day.']
+          ["Colosseum first", "Make the ticketed Colosseum visit the day’s fixed point. Read its current product description to see whether and when it also permits Forum and Palatine access; products, entrances and visit limits differ. Keep the Capitoline collection for another day if the booked route already fills the available time."],
+          ["Forum and Palatine on foot", "Choose an official ticket whose current terms include the route you want, then follow its named entrance and the on-site direction. The long open-air walk links the low Forum with the rising Palatine; it leaves little time for a full Colosseum interior or museum visit."],
+          ["Capitoline Museums and hill", "Start at the Cordonata and Piazza del Campidoglio, then use the museum’s Tabularium corridor to look back across the Forum. This is the most weather-resilient option and gives up the deeper walk through the archaeological area."]
         ],
-        access: 'Metro B reaches Colosseo, but ticket instructions may name a different entrance around the Forum or Palatine. Via dei Fori Imperiali, Piazza del Colosseo and the Capitoline approach sit on different levels. Read the current ticket name, entrance and identity rules before choosing the station exit.',
-        tradeoff: 'A full Forum–Palatine traverse and a serious museum visit each need their own attention. Choosing the Colosseum or the Capitoline as an anchor means giving up another deep interior, but preserves time to read the site and leave before heat turns the return into a second expedition.',
+        access: "The Colosseo Metro stop is useful for the Colosseum side, but it does not tell you which archaeological entrance your ticket uses. Check the ticket’s exact site, time, named gate, identity rules and current access map before choosing a station exit. The Capitoline approach is uphill by the Cordonata; the Forum floor and Palatine paths are uneven.",
+        tradeoff: "A Colosseum interior, a long Forum–Palatine circuit and the Capitoline Museums each demand time and standing. Choose one as the main visit. Add a second only after checking its own admission window and the distance from the exit you will actually use.",
         stages: [
-          ['Fix the gate before the station', 'Check the ticket’s named entrance, time, holder details and security rules. Colosseo Metro is not a substitute for reading which archaeological gate the booking assigns.'],
-          ['Walk the Forum as a valley', 'On a Forum–Palatine ticket, follow one unbroken route: notice how the low civic ground and the rising hill are different experiences, then avoid reversing the whole traverse for isolated viewpoints.'],
-          ['Read the Capitoline from above', 'At Piazza del Campidoglio, picture the Capitolium and Arx on either side of the former hollow; the present square lies about eight metres above the original valley floor. Michelangelo’s linked palaces, paving and stair approach turn that old stronghold into a composed civic room.'],
-          ['Close at the edge you chose', 'Decide on Colosseo, Circo Massimo or Piazza Venezia before entering. The Forum and hill have several exits and levels; do not spend the final hour retracing the route to its first gate.']
+          ["Read the booking details", "Open the official ticket before leaving the hotel. Save the named entrance, entry time, included areas and exit or route instructions; “Colosseum” on a map is not a gate assignment."],
+          ["Stay with one archaeological route", "Once inside, follow the direction shown for your ticket. Notice how the Forum lies in the hollow beneath the Capitoline while the Palatine rises on its other side; do not reverse a long traverse to collect a second viewpoint."],
+          ["Climb to Piazza del Campidoglio", "The ancient Capitolium and Arx stood on separate heights divided by a valley; today’s square sits about eight metres above that old valley floor. Musei Capitolini describes Michelangelo’s buildings, sculpture and patterned paving as one planned composition."],
+          ["Use the Tabularium view if open", "The Capitoline Museums’ Tabularium was completed under Quintus Lutatius Catulus in 78 BCE for Rome’s public records. Its surviving vaulted corridor remains part of the museum and looks out at the Forum from the hill’s side. Check the current museum route before relying on it."]
         ],
-        fallback: 'If a Colosseum entry is disrupted, the Capitoline Museums can still carry a complete day: cross the Cordonata, read the square’s two-hill plan, then use the collection and viewpoint at a deliberate pace. Check current museum access before changing tickets; do not buy an unofficial replacement in a queue.',
+        fallback: "If the booked archaeological entry is cancelled or moved, make the Capitoline hill the whole visit: climb the Cordonata, compare the modern square with the two ancient heights, and use the museum and Tabularium only if that route is open. Keep any replacement ticket separate until the official operator confirms it.",
         watch: [
-          ['Ticket names do not guarantee one gate', 'Arena, full-experience, Forum and special-access products can use different entrances and conditions. Follow the exact official booking rather than a map pin.'],
-          ['The ground rises and falls', 'The Forum floor, Palatine paths and Campidoglio are not one flat site. Uneven paving and limited shade make the complete traverse a different effort from an indoor museum visit.'],
-          ['The exit is part of the plan', 'The archaeological area is long and uneven. Decide the final station or taxi point before entering rather than walking back to the first gate.']
+          ["A nearby station may serve the wrong gate", "The official Colosseum ticket names the entrance and included area. Follow that booking’s map rather than choosing the nearest metro stop first."],
+          ["The route is exposed and uneven", "Forum and Palatine paths include changes in level and irregular paving. In high heat or wet weather, shorten the open-air route and confirm any access needs with the official site."],
+          ["Museum access is separate", "The Tabularium corridor is inside the Capitoline Museums. A Colosseum-area ticket does not by itself establish museum admission or opening."]
         ],
-        duration: 'Allow six to eight hours for one major booked interior, a coherent archaeological layer and a proper break. A Capitoline-led poor-weather version can fit four to six hours.',
-        combine: 'Combine with Monti or a bounded Capitoline–Ghetto evening because they preserve the central geography. Keep the Vatican and Borghese Gallery for separate reservation days.',
-        verify: 'Check the official Colosseum product and named entrance, archaeological-area closures, Capitoline opening and access notes, heat guidance and ATAC service before departure.',
+        duration: "Give the ticketed Colosseum and archaeological visit most of a day if you want time to stop and interpret the site. Add the Capitoline Museums only when their own current last-entry time and your route out leave a realistic visit; a hill-and-museum day works well on its own.",
+        combine: "Pair a Capitoline finish with the nearby Ghetto or Monti for a meal, depending on which side of the hill you leave from. Keep the Vatican and Borghese Gallery for another day so separate booked interiors do not compete for the same hours.",
+        verify: "Before departure, check the exact official Colosseum ticket and gate, archaeological-area access notice, Capitoline route and accessibility information, and current ATAC service. Do not rely on a map pin to resolve the entrance.",
         reviewDate: "4 October 2026",
         reviewIsoDate: "2026-10-04",
-        faq: [["What was the Tabularium?","Built on the Capitoline edge of the Forum in 78 BCE, the Tabularium housed Roman public records. Its surviving corridor is part of the Capitoline Museums route and opens a view across the Forum."],["Can I treat the Forum and Campidoglio as a flat walk?","No. The Forum lies in the ancient hollow and the Capitoline approach climbs to a square roughly eight metres above the original valley floor. Uneven paving, heat and the gate named on your ticket all affect how much of the route fits."],["What should I do if the Colosseum booking changes?","The Capitoline Museums and Tabularium can make a complete hill-and-Forum-view day, subject to current admission and opening hours. Keep the archaeological ticket and museum visit as separate plans unless the official products explicitly say otherwise."]],
+        faq: [
+          ["What was the Tabularium?", "Completed under Quintus Lutatius Catulus in 78 BCE, it held the bronze records of Roman laws and state acts. The remaining vaulted corridor is now within the Capitoline Museums, where its openings face the Forum."],
+          ["Why is Piazza del Campidoglio above the Forum?", "The Capitoline originally had two high points, the Capitolium and the Arx, separated by a deep valley. The present square occupies that gap and stands about eight metres above the original valley floor."],
+          ["Does one Colosseum ticket always include the Forum and Palatine?", "No single answer applies to every product. The official ticket page lists different visit types and conditions; check the exact ticket you buy for included areas, entry time and named gate."]
+        ],
         sources: [
-          ['https://colosseo.it/en/visit/', 'Parco archeologico del Colosseo – official visit information'],
-          ['https://www.museicapitolini.org/en', 'Musei Capitolini – official visitor information'],
-          ['https://www.museicapitolini.org/en/sede/campidoglio_antico', 'Musei Capitolini – Ancient Capitol topography'],
-          ['https://www.museicapitolini.org/en/sede/piazza_e_palazzi', 'Musei Capitolini – Piazza and its palaces']
+          ["https://colosseo.it/en/visit/", "Parco archeologico del Colosseo — current official visit and ticket information"],
+          ["https://www.museicapitolini.org/en/sede/campidoglio_antico", "Musei Capitolini — the ancient Capitoline topography"],
+          ["https://www.museicapitolini.org/en/sede/piazza_e_palazzi", "Musei Capitolini — Piazza del Campidoglio and Michelangelo’s design"],
+          ["https://www.museicapitolini.org/en/sede/campidoglio_antico/tabularium", "Musei Capitolini — Tabularium history and surviving gallery"],
+          ["https://www.museicapitolini.org/en/informazioni_pratiche/orari_e_indirizzi", "Musei Capitolini — current visitor and access information"],
+          ["https://www.atac.roma.it/en", "ATAC — Rome public transport information"]
         ]
       }),
       g({
@@ -75,38 +91,44 @@ export const italyCentralCampaniaClusters = [
         layout: 'holy-door-nested-threshold',
         structure: 'living-sacred-threshold',
         imageQuery: 'Saint Peters Square Vatican Basilica Rome wide',
-        imageAlt: 'Saint Peter’s Square and Basilica in Vatican City',
-        purpose: 'Choose the Vatican Museums, St Peter’s Basilica or the Borgo–Castel Sant’Angelo civic line as the principal commitment, respecting that museum admission, worship access and dome entry use different doors and clocks.',
-        summary: "West of the Tiber, the Vatican galleries, St Peter’s vast forecourt, Borgo’s compressed lanes and the river approaches to Castel Sant’Angelo form distinct public spaces. Give the collection, worship and civic river edge room to be different experiences; the visitor routes do not collapse into one short walk.",
+        imageAlt: "St Peter’s Square and Via della Conciliazione viewed from the dome of St Peter’s Basilica",
+        purpose: "Choose one main commitment on the west bank: the Vatican Museums, St Peter’s Basilica and dome, or an outdoor walk through Borgo to Castel Sant’Angelo. Their entrances, security and booking arrangements are separate, even though the sites look close together on a map.",
+        summary: "The Vatican Museums begin at Viale Vaticano; St Peter’s Square and Basilica are approached from the east; Castel Sant’Angelo stands across the Tiber. Treat the three as distinct visits, then use Borgo or the river walk to connect only the parts that fit your day.",
         choices: [
-          ['Vatican Museums depth', 'Use the booked museum entrance and give the collection one thread. In the Gallery of Geographical Maps, compare how the sixteenth-century walls picture Italy region by region; that long corridor is a useful pause in the museum route, not a promise of a short visit. The dome belongs to another clock.'],
-          ['Basilica and dome', 'Prioritize worship-sensitive access and the separate dome decision. It gives sacred architecture and height but leaves the museum collections for another day.'],
-          ['Borgo and river history', 'Keep the Vatican mostly exterior, then use Castel Sant’Angelo, Borgo streets and the Tiber as the main route. This is more flexible but gives up the headline museum interior.']
+          ["Vatican Museums", "Make the Vatican Museums their own visit and finish in Borgo or Prati. Book through the official portal and check the closure calendar for your date; leave the Basilica and dome for a separately planned visit."],
+          ["St Peter’s Basilica and dome", "Keep the Basilica as the focus and decide separately whether the dome fits. The Basilica is an active place of worship with its own security, clothing rules and access notices; museum admission does not cover that visit."],
+          ["Borgo and Castel Sant’Angelo", "Start outdoors at the square or Borgo, cross toward Castel Sant’Angelo and follow the Tiber. This route can remain useful if a museum slot is unavailable, but the castle museum has its own opening and admission."]
         ],
-        access: 'Ottaviano and Cipro approach different sides of the museum wall; Roma San Pietro serves the basilica side but not the museum entrance. St Peter’s security, the Vatican Museums gate and Castel Sant’Angelo admission are separate queues. Match the first station to the ticketed door.',
-        tradeoff: 'A deep museum visit and a dome climb are both high-standing commitments. Choosing one gives up another controlled interior but preserves time for Borgo, a seated meal and a calm river exit instead of turning sacred and civic spaces into queue transitions.',
+        access: "The Museums’ visitor entrance is on Viale Vaticano, while St Peter’s Basilica is reached on the far side of the Vatican walls. Match your route and transit stop to the address printed on the booking. Security at the Basilica and admission to the Museums or Castel Sant’Angelo are separate.",
+        tradeoff: "A deep museum visit and the Basilica with a dome climb are both substantial visits. Choose the one that matters most and leave the river walk as the flexible finish. Trying to reserve both interiors into a tight sequence leaves no room for separate security or a change in access.",
         stages: [
-          ['Match the station to the door', 'Cipro and Ottaviano approach different sides of the museum wall; Roma San Pietro is on the basilica side, not the museum entrance. Save the exact ticketed gate before leaving the hotel.'],
-          ['Give the museum one reading thread', 'If the museums are your anchor, slow down in the Gallery of Geographical Maps: its long sequence turns regional maps into a sixteenth-century picture of Italy. Keep the rest of the collection selective rather than racing to collect rooms.'],
-          ['Treat basilica access as its own visit', 'St Peter’s security, worship schedule and any dome visit do not share one guaranteed queue with the museums. Keep dress, service and staff guidance ahead of a timed sightseeing target.'],
-          ['Leave from the same side', 'After the controlled visit, choose Borgo, Prati or the Tiber as the finish. End toward Lepanto, Ottaviano, Roma San Pietro or a confirmed bus corridor instead of circling the Vatican walls.']
+          ["Choose the entrance before the station", "Save the exact destination and official ticket: Viale Vaticano for the Museums, or the Basilica’s current visitor approach for St Peter’s. Check the booking and live access notice before travelling."],
+          ["Follow Italy through the map gallery", "The Gallery of Geographical Maps was commissioned by Gregory XIII in 1581 and runs 120 metres along the Museums route. Its frescoed panels map Italy; pause to follow the peninsula before continuing through the collection."],
+          ["Pack for Basilica security", "St Peter’s publishes below-knee clothing and covered-shoulder rules and currently has no cloakroom. Travel light, check its visit and worship notices, and follow staff instructions; allow this as a separate visit from the Museums."],
+          ["Finish along the river", "From Borgo, walk toward Castel Sant’Angelo and the Tiber, then choose the return from the bank where you finish. Enter the castle only if you have checked its current admission and opening."]
         ],
-        fallback: 'If the museum booking fails, keep a complete basilica–Borgo–Castel Sant’Angelo route when access permits. If basilica access is restricted for worship or events, use the museum if booked or a Prati and river interpretation day without forcing another sacred site.',
+        fallback: "If a Museum booking is unavailable, make a Borgo and river walk the main plan, adding Castel Sant’Angelo only when its own admission is available. If the Basilica changes access for worship or security, keep the day outdoors or in Prati rather than assuming a nearby church will admit visitors.",
         watch: [
-          ['Three doors, three products', 'Museum entry, basilica security and dome tickets are not one combined queue or guaranteed sequence.'],
-          ['Living worship overrides tourism', 'Liturgies and security can change visitor movement. Quiet conduct and staff instructions take priority over an itinerary.'],
-          ['Walls distort walking distance', 'A short map distance can require a long perimeter walk. Choose the correct side before leaving the station.']
+          ["Museum tickets have one official online seller", "The Vatican Museums identify tickets.museivaticani.va as the only official online purchase site. Check the domain before paying and reopen its current closure calendar."],
+          ["Basilica rules affect what you carry", "The Basilica lists covered shoulders and below-knee clothing and says there is no cloakroom at present. A large bag can make the visit impractical."],
+          ["Dome, Basilica and Museums are separate", "Each has separate access and timing. Do not treat a Museum reservation as a Basilica entry or assume the dome queue will fit after it."]
         ],
-        duration: 'Allow most of a day for the Vatican Museums plus Borgo, or five to seven hours for basilica, dome and river. A flexible exterior-and-castle route can fit four to five hours.',
-        combine: 'Combine with Borgo, Prati or Castel Sant’Angelo because they use the same side of the Tiber. Keep Ancient Rome and Trastevere for separate days.',
-        verify: 'Check official museum admission, basilica worship and security notices, dome access, Castel Sant’Angelo opening and the current transport route to the chosen entrance.',
+        duration: "Reserve most of a day for the Vatican Museums and use Borgo as the flexible finish. A Basilica visit with the dome also deserves its own generous block; pair it with the river only after checking current access and leaving time for security.",
+        combine: "Keep the end of the day on the Vatican side: Borgo, Prati or the walk toward Castel Sant’Angelo. The river crossing into the historic centre is easy to add on foot, but it lengthens the return; leave Ancient Rome for another day.",
+        verify: "Check the Vatican Museums’ official ticket portal and closure calendar, St Peter’s Basilica visit and worship notices, any dome access, Castel Sant’Angelo admission and the ATAC route to your chosen entrance.",
         reviewDate: "4 October 2026",
         reviewIsoDate: "2026-10-04",
-        faq: [["What makes the Gallery of Geographical Maps worth slowing down for?","The Vatican Museums describe it as a 120-metre corridor commissioned under Gregory XIII, with painted maps that picture the Italian peninsula. It is a long architectural pause within the palace route, not a shortcut through the collection."],["How should I approach St Peter’s Basilica?","Treat it as an active place of worship: follow the basilica’s current security, clothing and liturgical notices and staff instructions. The museum ticket does not replace the basilica entrance or its security queue."],["Can I make the river the end of the day?","Yes. Borgo and the approach toward Castel Sant’Angelo put the Vatican edge back into Rome’s civic street plan. Choose the evening return from the bank where you finish rather than crossing back to the first station."]],
+        faq: [
+          ["Does a Vatican Museums ticket include St Peter’s Basilica?", "No. The Museums and Basilica publish separate visitor routes and access information. Plan for the Basilica’s own security and check its notice before going."],
+          ["Where should I buy a Vatican Museums ticket?", "Use tickets.museivaticani.va, which the Museums identify as their only official online ticket-purchase site. Recheck the current calendar and terms for your date."],
+          ["Is the Gallery of Geographical Maps a short cut through the museum?", "No. It is a 120-metre corridor in the wider Museums route. The frescoes were commissioned under Gregory XIII in 1581; allow time for the collection beyond this one gallery."]
+        ],
         sources: [
-          ['https://www.museivaticani.va/content/museivaticani/en/info.html', 'Vatican Museums – official visitor information'],
-          ['https://www.basilicasanpietro.va/en/visits', 'St Peter’s Basilica – official visit information'],
-          ['https://www.museivaticani.va/content/museivaticani/en/eventi-e-novita/iniziative/Eventi/archivio-eventi/2016/il-restauro-della-galleria-delle-carte-geografiche.html', 'Vatican Museums – Gallery of Geographical Maps history']
+          ["https://www.museivaticani.va/content/museivaticani/en/info.html", "Vatican Museums — official entry, ticket portal and closure calendar"],
+          ["https://www.museivaticani.va/content/museivaticani/en/eventi-e-novita/iniziative/Eventi/archivio-eventi/2016/il-restauro-della-galleria-delle-carte-geografiche.html", "Vatican Museums — Gallery of Geographical Maps history and dimensions"],
+          ["https://www.basilicasanpietro.va/en/visits", "St Peter’s Basilica — visit, dress and bag information"],
+          ["https://direzionemuseiroma.cultura.gov.it/museo-nazionale-di-castel-santangelo/", "Direzione Musei nazionali della città di Roma — Castel Sant’Angelo museum information"],
+          ["https://www.atac.roma.it/en", "ATAC — Rome public transport information"]
         ]
       }),
       g({
@@ -117,38 +139,45 @@ export const italyCentralCampaniaClusters = [
         structure: 'piazza-circuit',
         imageQuery: 'Piazza Navona Pantheon historic centre Rome evening',
         imageAlt: "Fountain in Piazza Santa Maria in Trastevere",
-        purpose: 'Choose one direction through the Pantheon–Navona, Trevi–Spanish Steps or Ghetto–Trastevere layers, then cross the Tiber at most once so fountains, meals and evening streets support one route rather than a citywide checklist.',
-        summary: "The Centro is a sequence of public rooms: the Pantheon, Navona’s long oval, Trevi’s crowded basin, the Ghetto and the bridges each reward a different pace. Choose one street line, then finish on the riverbank that works for dinner and the journey home.",
+        purpose: "Pick one walk: the Pantheon and Piazza Navona, Trevi and the Spanish Steps, or the Ghetto and Trastevere. The first two stay on the historic-centre side; the last follows Portico d’Ottavia across Tiber Island and ends across the river.",
+        summary: "Central Rome is a short-block walking area with slow points: site entry, crowded fountains, churches and uneven paving. Piazza Navona follows the outline of Domitian’s stadium; the remains of the Portico d’Ottavia sit in the former Ghetto. Choose one line through these places and cross the Tiber only when Trastevere is your finish.",
         choices: [
-          ['Pantheon and Navona', 'Start at the Pantheon, then walk to Piazza Navona and read its long oval as a surviving urban footprint of the Stadium of Domitian. Add Museo di Roma or a nearby church for one indoor pause; leave Trevi and Trastevere for another circuit.'],
-          ['Trevi to the Spanish Steps', 'Start early on the eastern fountain axis and use a collection or garden as the indoor anchor. This favors Baroque public space but can be crowd-heavy.'],
-          ['Ghetto to Trastevere', 'Follow Portico d’Ottavia toward Tiber Island, cross once and finish in Trastevere. The route keeps an eastern civic quarter, the river edge and an evening neighborhood in sequence; it leaves the northern piazzas for another walk.']
+          ["Pantheon and Navona", "Check the Pantheon’s current visit arrangement first, then walk to Piazza Navona and follow the oval outline of the Stadium of Domitian. Add one nearby civic museum if it is open; leave Trevi and Trastevere for another walk."],
+          ["Trevi and the Spanish Steps", "Link Trevi with Piazza di Spagna on the eastern side. Turismo Roma identifies the fountain as the outlet of the Virgo aqueduct and dates Salvi’s design commission to 1732; let that water system guide the walk. Check current basin-access terms before planning a close visit."],
+          ["Ghetto and Trastevere", "Start at Portico d’Ottavia, whose surviving corner and entrance belonged to a much larger Augustan portico. Continue toward Tiber Island, cross to Trastevere and finish near the river. The sequence gives the ancient Ghetto and evening district a shared walk without circling back to Navona."]
         ],
-        access: 'Spagna, Barberini, Flaminio, Piazza Venezia buses and tram or bus routes to Trastevere approach different edges. The historic centre has no single useful metro stop. Choose the first square and final evening corridor before deciding where to alight.',
-        tradeoff: 'Trevi, the Pantheon, Piazza Navona and Trastevere can be linked physically, but giving all of them equal time produces crowds and backtracking. Choosing one street argument gives up a famous fountain or neighborhood while creating time to sit, enter and understand.',
+        access: "There is no metro station at the Pantheon or Piazza Navona. Barberini and Spagna are useful for the eastern route; for the Ghetto, check current bus service to the area and use the Tiber bridges to continue toward Trastevere. Pin the first site and the final return stop before setting out.",
+        tradeoff: "The Pantheon, Navona, Trevi, Spanish Steps, Ghetto and Trastevere can all be connected on foot, but the whole list makes a long day with crowded, slow sections. Choose the two or three places that fit one direction and leave the others for another visit.",
         stages: [
-          ['Choose one starting square', 'Begin at the first place that explains your chosen line: Pantheon, Trevi or Portico d’Ottavia. Match the arrival to that anchor rather than assuming the historic centre has one useful metro stop.'],
-          ['Notice what the street plan keeps', 'From the Pantheon to Piazza Navona, compare a monumental interior with a public square whose elongated outline follows the Stadium of Domitian. Do not compress that reading by adding Trevi and the Spanish Steps at midday.'],
-          ['Use one indoor pause', 'Choose Museo di Roma, Museo di Roma in Trastevere or a church whose visitor hours are confirmed. Let the collection or the meal reset the walk before you continue.'],
-          ['Cross the Tiber once', 'For the Ghetto line, use Tiber Island as the hinge into Trastevere; for a Navona or Trevi day, finish on the Centro side. Choose the return stop before dinner.']
+          ["Start at the site that sets your pace", "Use the Pantheon when you want a booked interior first, Trevi for the eastern fountain walk, or Portico d’Ottavia for the Ghetto route. Check entry and event notices before choosing the first stop."],
+          ["Compare the Pantheon and Navona", "The Pantheon’s rebuilt Roman rotunda and Piazza Navona’s elongated stadium footprint are different kinds of surviving ancient fabric. Walk the square end to end before moving on; do not add the eastern fountains just to fill a checklist."],
+          ["Keep one pause on the same side", "Choose an open museum or a meal near the route already underfoot. For the Portico d’Ottavia line, pause in the Ghetto or Trastevere; for the Pantheon line, stay around the historic centre. Recheck museum or church access before relying on it."],
+          ["Cross once only if Trastevere is the finish", "From the Ghetto, use Tiber Island and a bridge to enter Trastevere, then plan the return from that bank. If your walk begins around Pantheon or Trevi, end on the Centro side instead of adding a second crossing."]
         ],
-        fallback: 'In heavy rain or crowd closures, use Museo di Roma, Palazzo Altemps, nearby churches or the Museo di Roma in Trastevere according to the same street line. Shorten the outdoor circuit rather than switching to a distant district.',
+        fallback: "For rain or a site closure, keep to the same walk and choose one open indoor stop nearby: a civic museum around Navona, or Museo di Roma in Trastevere after the Ghetto crossing. If neither is available, shorten the outdoor route and save the next district for another day.",
         watch: [
-          ['Fountain crowds change the pace', 'A famous square can take longer to enter and leave than the map suggests. Start early and keep alternatives nearby.'],
-          ['River crossings create backtracking', 'A Trastevere dinner is useful only when the hotel return works from that bank.'],
-          ['Churches are not museum rooms', 'Worship, dress and temporary closures matter. Keep a civic interior as the non-intrusive alternative.']
+          ["Crowds change the walking time", "Trevi and the Pantheon can slow a short map distance. Keep the next appointment on the same side of the centre and leave a way to drop one stop."],
+          ["The river changes the return", "Tiber Island is a natural crossing point on the Ghetto route. A Trastevere dinner works best when the evening return also starts from that bank."],
+          ["Churches remain places of worship", "The Pantheon is a basilica and local churches can limit tourist visits during services. Check current access and keep a civic museum as an alternative."]
         ],
-        duration: 'Allow five to seven hours for one ordered historic-centre line plus a meal. Add Trastevere only when it is the final block, not a midday detour.',
-        combine: 'Combine one civic museum, one river crossing and a nearby evening. Do not add the Colosseum or Vatican merely because the total walking line appears possible.',
-        verify: 'Check the selected interior’s admission, any square or event restriction, current ATAC service and the late return from the chosen evening district.',
+        duration: "Treat the Pantheon–Navona or Trevi–Spanish Steps line as a half-day walk with time for an interior or meal. The Ghetto–Trastevere line works as an afternoon and evening; do not combine all three routes into one day. Site visits need separate time for their current entry conditions.",
+        combine: "Pair the Ghetto walk with Tiber Island and dinner in Trastevere. Pair Pantheon and Navona with a nearby museum or meal on the same side of the river. Keep the Vatican and Colosseum-area visits on their own days.",
+        verify: "Check the Pantheon’s official visitor and worship notices, current museum opening and admission, event restrictions in the centre, and the ATAC return service from the bank where you finish.",
         reviewDate: "4 October 2026",
         reviewIsoDate: "2026-10-04",
-        faq: [["Why is Piazza Navona so elongated?","Its outline follows the footprint of the Stadium of Domitian. The shape reads most clearly on foot, from one end of the square to the other, rather than as a quick crossing between distant landmarks."],["When does a Trastevere finish make sense?","Use the Ghetto–Tiber Island–Trastevere line when you want the river crossing to lead into dinner and the evening. On a Pantheon or Trevi day, adding Trastevere usually creates a second crossing and a longer return."],["What can I use for an indoor pause?","Museo di Roma, Palazzo Altemps or a church with visitor hours confirmed for that day gives the historic-centre walk a local interior without sending it to another district."]],
+        faq: [
+          ["Why is Piazza Navona shaped like an oval?", "The square follows the footprint of the Stadium of Domitian, built in 86 CE for athletic contests. Walk its long axis and the stadium plan becomes easier to see in the present piazza."],
+          ["What is the Portico d’Ottavia?", "Augustus rebuilt the portico between 27 and 23 BCE and dedicated it to his sister Octavia. Most visible remains date from a later restoration by Septimius Severus after a fire in 191 CE; the site stands in the area of the ancient Ghetto."],
+          ["Can I end a Navona walk in Trastevere?", "Yes, but it adds a Tiber crossing and a longer return. The Ghetto route through Tiber Island is more direct if Trastevere is the evening destination."]
+        ],
         sources: [
-          ['https://turismoroma.it/en/tipo-itinerari/themed-itineraries', 'Turismo Roma – official themed itineraries'],
-          ['https://www.turismoroma.it/en/places/navona-square', 'Turismo Roma – Piazza Navona'],
-          ['https://www.turismoroma.it/en/itineraries/passage-over-tiber-rome%E2%80%99s-seven-most-iconic-bridges', 'Turismo Roma – Tiber crossings'],
-          ['https://www.museodiromaintrastevere.it/en', 'Museo di Roma in Trastevere – official visitor information']
+          ["https://direzionemuseiroma.cultura.gov.it/pantheon/", "Direzione Musei nazionali della città di Roma — Pantheon visitor information"],
+          ["https://www.turismoroma.it/en/places/navona-square", "Turismo Roma — Piazza Navona and the Stadium of Domitian"],
+          ["https://www.turismoroma.it/en/places/portico-octavia", "Turismo Roma — Portico d’Ottavia and its history"],
+          ["https://www.turismoroma.it/en/places/trevi-fountain", "Turismo Roma — Trevi Fountain and the Virgo aqueduct"],
+          ["https://www.turismoroma.it/en/itineraries/passage-over-tiber-rome’s-seven-most-iconic-bridges", "Turismo Roma — bridges and Tiber crossings"],
+          ["https://www.museodiromaintrastevere.it/en", "Museo di Roma in Trastevere — official visitor information"],
+          ["https://www.atac.roma.it/en", "ATAC — Rome public transport information"]
         ]
       })
     ]

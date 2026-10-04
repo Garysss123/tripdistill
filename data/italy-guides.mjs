@@ -29,7 +29,7 @@ export const italyClusters = italySourceClusters.map((cluster) => ({
     const key = `${cluster.slug}/${guide.slug}`;
     const image = italyImageManifest[key];
     if (!image) throw new Error(`Missing Italy image manifest entry: ${key}`);
-    return { ...guide, image: { ...image, editNote: italyImageEditNote } };
+    return { ...guide, image: { ...image, editNote: image.editNote || italyImageEditNote } };
   })
 }));
 
