@@ -291,7 +291,7 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes('class="uk-live-desk"')) problems.push(`${relativePath}: United Kingdom route is missing near-claim official sources`);
     if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: United Kingdom route does not contain four operating stages`);
   }
-  if (baseRoute.startsWith('/italy/') && !html.includes('/css/italy.css?v=20260926-1')) problems.push(`${relativePath}: missing Italy peninsula field-atlas stylesheet`);
+  if (baseRoute.startsWith('/italy/') && !html.includes('/css/italy.css?v=20261004-2')) problems.push(`${relativePath}: missing Italy peninsula field-atlas stylesheet`);
   if (baseRoute.startsWith('/italy/') && baseRoute !== '/italy/' && !/<body\b[^>]*\bdata-parent-page="italy"/i.test(html)) problems.push(`${relativePath}: Italy primary navigation parent is not set`);
   if (baseRoute === '/italy/' && (html.match(/class="it-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: Italy country hub does not contain twenty linked regional cards`);
   if (italyHubRoutes.has(baseRoute)) {

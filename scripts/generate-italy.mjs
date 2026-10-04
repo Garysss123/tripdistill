@@ -6,7 +6,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '26 September 2026';
 const isoDate = '2026-09-26';
 const siteCss = '/css/site.css?v=20260926-1';
-const countryCss = '/css/italy.css?v=20260926-1';
+const countryCss = '/css/italy.css?v=20261004-2';
 const fieldCss = '/css/italy-field.css?v=20261004-2';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';

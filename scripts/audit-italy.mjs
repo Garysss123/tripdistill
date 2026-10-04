@@ -102,7 +102,7 @@ for (const route of routes) {
   const depth = route.split('/').filter(Boolean).length;
   const floor = route === '/italy/' ? 7600 : depth === 2 ? 6500 : 7000;
   check(pageText.length >= floor, `${route}: rendered editorial copy below Italy floor (${pageText.length} < ${floor})`);
-  check(html.includes('/css/italy.css?v=20260926-1'), `${route}: Italy CSS missing`);
+  check(html.includes('/css/italy.css?v=20261004-2'), `${route}: Italy CSS missing`);
   check(html.includes('/css/site.css?v=20260926-1'), `${route}: shared CSS cache key missing or stale`);
   check(html.includes('/js/main.js?v=20260911-1'), `${route}: shared JS missing`);
   check(html.includes('"@type":"BreadcrumbList"') && html.includes('"@type":"FAQPage"'), `${route}: breadcrumb or FAQ JSON-LD missing`);
