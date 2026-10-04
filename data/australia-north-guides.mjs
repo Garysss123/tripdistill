@@ -212,7 +212,7 @@ export const australiaNorthClusters = [
       ['https://northernterritory.com/alice-springs-and-surrounds', 'Tourism NT — Alice Springs and surrounds'],
       ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park', 'Northern Territory Parks — Tjoritja / West MacDonnell'],
       ['https://nt.gov.au/parks/find-a-park/watarrka-national-park', 'Northern Territory Parks — Watarrka'],
-      ['https://parksaustralia.gov.au/uluru/', 'Parks Australia — Uluru–Kata Tjuta National Park']
+      ['https://parksaustralia.gov.au/uluru/', 'Parks Australia — Uluṟu–Kata Tjuṯa National Park']
     ],
     guides: [
       g({
@@ -241,36 +241,147 @@ export const australiaNorthClusters = [
       }),
       g({
         slug: 'uluru-cultural-landscape', name: 'Uluṟu Cultural Landscape', motif: 'surface, water and respect', orientationTitle: "Choose the right walk", routeTitle: "Plan a half-day", instrument: 'cultural-compass', imageQuery: 'Uluru sunset Northern Territory Australia', imageAlt: 'Uluṟu rising from the central Australian desert',
-        summary: "Short public walks show Uluṟu through contrasting rock, water and shade: open red slopes, pale unweathered patches, the greener edge of Muṯitjulu Waterhole and the walls of Kaṉtju Gorge. Begin with Aṉangu visitor guidance and choose one route for the day’s heat window.",
-        orientation: "Kuniya and Mala lead to different endings. Kuniya enters a sheltered cleft toward permanent water and river red gums; Mala reaches the steep walls of Kaṉtju Gorge. One walk leaves time to notice the landscape without turning the visit into a circuit.",
-        interpretation: "Along the public route, compare Uluṟu’s red weathered outer surface with grey patches where less-weathered rock shows through. At Muṯitjulu Waterhole, permanent water supports taller grasses, shade and river red gums. Parks Australia’s public descriptions give the landscape context; they do not grant permission to photograph restricted caves or repeat sensitive Tjukurpa.",
-        access: 'Stay in Yulara, hold the current park pass and match the shuttle, tour or self-drive plan to the walk you choose. Check the return road and wildlife conditions before selecting a dawn or dusk viewing period; do not add a long night drive after walking.',
-        sequence: "Use current park alerts to choose one walk, leave a shaded pause between walking and viewing, and keep the drive back to Yulara within daylight.",
-        boundary: 'Uluṟu is a living sacred landscape on Aṉangu Country. Do not climb, leave marked tracks, enter or photograph restricted places, or retell Tjukurpa beyond public Aṉangu-guided interpretation.',
+        summary: "Uluṟu is more than a red landmark: Aṉangu have cared for this living Country for generations, and the park is jointly managed with the Australian Government. Begin with the Cultural Centre, then read the exposed sandstone and water-shaped shade around Muṯitjulu Waterhole.",
+        orientation: "Uluṟu and Kata Tjuṯa formed from ancient sediment fans that hardened into rock and later tilted as the land shifted. Uluṟu is mainly arkose sandstone; iron oxide gives its weathered surface the familiar red, while pale patches expose less-weathered rock. Geology is one layer of this place. Tjukurpa is Aṉangu law, knowledge and spiritual philosophy, and it guides the park's joint management. Start with the Tjukurpa Tunnel and multilingual displays at the Cultural Centre; let Aṉangu interpretation set the limits of what is shared.",
+        interpretation: "The two short walks end in different landscapes. From the Mala carpark, the public route to Kaṉtju Gorge passes publicly described ancient campsites and a kitchen cave before reaching sheer gorge walls. Kuniya ends at Muṯitjulu Waterhole, one of the area's few permanent water sources, with river red gums, shade and tall grasses. These are visitor-route descriptions, not permission to enter caves or reproduce restricted Tjukurpa. Stay on the open track and use park signs as the authority at each site.",
+        access: "Fly to Ayers Rock / Connellan Airport (AYQ) at Yulara, then prearrange a hire car, coach tour or the Uluṟu Hop On Hop Off bus for the park. There is no taxi or other public transport inside the park; the resort shuttle links accommodation with Yulara's town square only. From Alice Springs, Uluṟu is 465 km by road and Parks Australia estimates about 5.5 hours of direct driving before stops. Make that a travel day, not the approach to a long exposed walk.",
+        sequence: "For a half-day from Yulara, use the cool morning for the designated Talinguṟu Nyakunytjaku sunrise view, walk Mala to Kaṉtju Gorge before late-morning heat, then spend time at the Cultural Centre and have lunch there. Check that the lookout and Mala track are open for your date, and check the centre's current hours before setting out. Leave the full 10.6 km base loop and Kata Tjuṯa for a separate day.",
+        boundary: "Uluṟu and Kata Tjuṯa are living Aṉangu sacred landscapes. Do not climb, leave marked tracks, enter closed areas or photograph culturally sensitive rock features identified by park maps and signs. In marked sensitive areas, Aṉangu ask visitors not to photograph the rock; on the north-east face, they ask for wide, distant views and no detail of the top-left area. Ask before photographing people. Drones are prohibited. Anyone making or publicly displaying their own commercial park photography or video should check Parks Australia's media-permit rules first.",
         reviewDate: "4 October 2026",
         reviewIsoDate: "2026-10-04",
-        decisions: [["Kuniya · water and shade","The return walk to Muṯitjulu Waterhole is 1 km and usually takes 30–45 minutes. Permanent water supports a greener pocket of river red gums and shade."],["Mala · wall and gorge","From Mala car park, the 2 km Grade 2 return walk to Kaṉtju Gorge takes about 90 minutes. Parks Australia notes that the gorge can carry a waterfall after rain."],["Cultural Centre · visitor context","Allow at least two hours for the Cultural Centre’s visitor displays, presentations and maps before setting out on the public tracks."]],
-        stages: [["Check current access","Read the park map and alerts for open tracks, road notices and the conditions that govern today’s walking window."],["Choose one route","Take the public path that fits the heat and your energy. The named walk cards above describe the different distance and destination."],["Read the surface","Notice how exposed red rock changes to pale weathered patches, and keep to the marked route and public interpretation."],["Return in daylight","Allow time for one designated viewing period, then return to Yulara before a long drive becomes a night journey."]],
-        risks: [["Heat on exposed ground","Start in a cooler window, carry water and shorten the walk when current conditions call for it."],["Track and road notices","Check Parks Australia alerts and the return-road status before leaving Yulara."],["Cultural photography limits","Follow signs at every site. Do not climb, leave the marked track or photograph restricted places."]],
-        duration: 'Allow two full park days from Yulara if you want both Uluṟu and Kata Tjuṯa, with separate walks and a generous rest block.',
-        combine: 'Keep Kata Tjuṯa for a separate day and weather window. Choose either the shorter Kuniya walk or Mala walk on the Uluṟu day rather than trying to complete the full base circuit and a second major walk.',
-        verify: 'Check the park pass, current cultural and track closures, heat advice, shuttle or tour schedule, designated viewing access and the road return before leaving Yulara.',
-        faq: [["What can visitors learn at the Cultural Centre?","Parks Australia describes visitor displays, presentations, galleries and maps there; allow at least two hours if you want the centre to shape your walk. Recheck current opening information before driving from Yulara."],["What is publicly described at Mala?","The park’s visitor material identifies ancient campsites and a kitchen cave on the walk to Kaṉtju Gorge. Follow the signed route and keep to the public material without entering or photographing restricted places."],["Should I plan Uluṟu and Kata Tjuṯa in one day?","Give the two park areas separate days from Yulara. Each has exposed walking and its own current access conditions, so one should not become the rushed add-on to the other."]],
+        decisions: [
+          [
+            "Kuniya | water and shade",
+            "The return is 1 km, Grade 2 and 30–45 minutes. It reaches Muṯitjulu Waterhole, where permanent water supports a greener, shadier pocket of river red gums and tall grass. Keep this shorter walk for a limited morning or a day when the longer route is a poor fit."
+          ],
+          [
+            "Mala | campsite and gorge",
+            "The return from Mala carpark to Kaṉtju Gorge is 2 km, Grade 2 and about 90 minutes; water and toilets are available. It takes longer than Kuniya and adds publicly described campsites, a kitchen cave and the enclosed gorge."
+          ],
+          [
+            "Base loop | full circuit",
+            "The full loop is 10.6 km, Grade 3 and about 3.5 hours. Its sections alternate between greener pockets and exposed ground; start at Mala carpark while it is cool. Some tracks close in summer afternoons, and Parks Australia advises finishing before 11 am in hot weather."
+          ]
+        ],
+        stages: [
+          [
+            "Settle the arrival",
+            "Fly into AYQ at Yulara or make Alice Springs a separate road day. Reserve the park vehicle or tour in advance; the resort shuttle does not serve the park. Carry your park pass and check current alerts before leaving Yulara."
+          ],
+          [
+            "Start at the sunrise area",
+            "When the park access schedule permits, go to the designated Talinguṟu Nyakunytjaku viewing area at sunrise. Use the marked paths and follow the posted photography map; allow the quiet view to be the first stop rather than adding Kata Tjuṯa."
+          ],
+          [
+            "Walk Mala before the heat",
+            "From Mala carpark, follow the 2 km Grade 2 return path to Kaṉtju Gorge and back; allow about 90 minutes. Read the public signs from the track and check for closure notices. If Mala is closed, use Kuniya only when its route is open and the current heat advice allows it."
+          ],
+          [
+            "Finish at the Cultural Centre",
+            "Return for the Tjukurpa Tunnel, multilingual information displays, ranger desk and Aṉangu-owned galleries. Parks Australia recommends at least two hours; Ininti is the only park location selling food and drinks. Check current opening hours, then return to Yulara before adding another drive."
+          ]
+        ],
+        risks: [
+          [
+            "Heat can close the walk",
+            "Summer temperatures can exceed 40°C. Parks Australia recommends walking only in cooler periods, avoiding walks after 11 am in summer, carrying at least 1 litre of water per person per hour and obeying all closures. If the morning is already hot, replace the walk with the Cultural Centre and a designated viewing area."
+          ],
+          [
+            "Transport is not interchangeable",
+            "Ayers Rock Resort, the airport, the park entrance and the walking carparks are separate stops. There are no taxis or public transit inside the park; confirm the exact rental, tour or hop-on hop-off return before committing to a trail."
+          ],
+          [
+            "Photography has cultural boundaries",
+            "Use the current sensitive-site map and signs. Do not photograph restricted rock features, leave the path for a camera angle or photograph Aṉangu without permission; avoid detail on the north-east face as requested by Traditional Owners."
+          ]
+        ],
+        duration: "Allow at least two hours for the Cultural Centre, as Parks Australia recommends, plus a 90-minute Mala walk, sunrise and the drives from Yulara: a full cool-morning half-day. Give Kata Tjuṯa a separate half or full day. Two full park days from Yulara leave room for the different landscapes and current access windows.",
+        combine: "Use the half-day sequence of Talinguṟu Nyakunytjaku, Mala and the Cultural Centre for Uluṟu. Keep Kata Tjuṯa for its own morning or day; the 50 km road separation and exposed walks make it a poor add-on after Mala.",
+        verify: "Before departure, check the park pass, park and road alerts, walk and photography maps, heat advice, sunrise-area access, bus or tour schedule, and the Cultural Centre's published hours. Recheck the conditions at the park information desk before starting a walk.",
+        faq: [
+          [
+            "Why does this place matter beyond its geology?",
+            "Aṉangu Traditional Owners received Uluṟu-Kata Tjuṯa National Park back in 1985, and jointly manage it with the Australian Government. Parks Australia describes Tjukurpa as traditional law, knowledge and spiritual philosophy guiding care of Country. Begin with the park's public Aṉangu interpretation and do not assume restricted stories are for visitors to repeat."
+          ],
+          [
+            "Which Uluṟu walk fits a short visit?",
+            "Kuniya is the shorter 1 km return (30–45 minutes, Grade 2) to the waterhole. Mala is 2 km return (about 90 minutes, Grade 2) to Kaṉtju Gorge. The complete base loop is 10.6 km (about 3.5 hours, Grade 3) and needs a cool morning. Use the current official walk page for changes or closures."
+          ],
+          [
+            "What changes when it is hot?",
+            "Do not move an exposed walk to midday. In summer, Parks Australia advises finishing walking before 11 am; carry at least a litre of water per person per hour and obey closure signs. Use the Cultural Centre and a designated viewing area if the walk window is closed."
+          ],
+          [
+            "Where may I take photographs?",
+            "Follow the park photography map and every sign. Some sensitive sites prohibit photographs of the rock; elsewhere visitors should stay on marked tracks. On the north-east face, Aṉangu request wide, distant pictures without detail at the top-left. Ask before photographing people, and do not fly a drone."
+          ]
+        ],
         sources: [
-          ['https://uluru.gov.au/things-do/activities/walks/uluru-walks/kuniya-walk-mutitjulu-waterhole/', 'Parks Australia – Kuniya walk and Muṯitjulu Waterhole'],
-          ['https://uluru.gov.au/things-do/activities/walks/uluru-walks/mala-walk/', 'Parks Australia – Mala walk'],
-          ['https://uluru.gov.au/discover/culture/respecting-culture/', 'Parks Australia – respecting Aṉangu culture'],
-          ['https://uluru.gov.au/discover/culture/tjukurpa/', 'Parks Australia – Tjukurpa'],
-          ['https://uluru.gov.au/discover/nature/geology/', 'Parks Australia – Uluṟu geology']
-        ]
+          [
+            "https://uluru.gov.au/about/joint-management/",
+            "Parks Australia – joint management"
+          ],
+          [
+            "https://uluru.gov.au/discover/nature/geology/",
+            "Parks Australia – geology of Uluṟu and Kata Tjuṯa"
+          ],
+          [
+            "https://uluru.gov.au/things-do/cultural-centre/",
+            "Parks Australia – Cultural Centre and visitor information"
+          ],
+          [
+            "https://uluru.gov.au/things-do/itineraries/half-one-day-adventures/",
+            "Parks Australia – half-day itineraries"
+          ],
+          [
+            "https://uluru.gov.au/plan/getting-here/",
+            "Parks Australia – getting to the park"
+          ],
+          [
+            "https://uluru.gov.au/plan/getting-here/getting-around/",
+            "Parks Australia – getting around"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/walks/uluru-walks/mala-walk/",
+            "Parks Australia – Mala walk"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/walks/uluru-walks/kuniya-walk-mutitjulu-waterhole/",
+            "Parks Australia – Kuniya walk and Muṯitjulu Waterhole"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/walks/uluru-walks/uluru-base-walk/",
+            "Parks Australia – Uluṟu base walk"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/photography/",
+            "Parks Australia – photography and cultural protocols"
+          ],
+          [
+            "https://uluru.gov.au/plan/when-come/seasons/",
+            "Parks Australia – Aṉangu seasons"
+          ],
+          [
+            "https://uluru.gov.au/plan/plan-your-trip/staying-safe/",
+            "Parks Australia – heat and walking safety"
+          ],
+          [
+            "https://uluru.gov.au/plan/buy-your-pass/",
+            "Parks Australia – park passes"
+          ],
+          [
+            "https://uluru.gov.au/discover/culture/tjukurpa/",
+            "Parks Australia – Tjukurpa"
+          ]
+        ],
       }),
       g({
-        slug: 'kata-tjuta', name: 'Kata Tjuta', motif: 'valley-walk weather decision', instrument: 'valley-profile', imageQuery: 'Kata Tjuta domes Northern Territory', imageAlt: 'The domes of Kata Tjuta in Uluru Kata Tjuta National Park',
-        summary: 'A separate Kata Tjuta chapter where wind, heat, cultural closure and route grade decide between valley walks and viewpoints.',
-        orientation: 'treat Walpa Gorge, Valley of the Winds and viewing areas as different commitments.', access: 'Travel from Yulara or within the park with enough fuel, pass, water and daylight for the chosen route.', sequence: 'Check closures at the park source, attempt the most exposed walk early, use the shorter gorge or viewpoint when conditions narrow and return before heat.', boundary: 'Kata Tjuta is sacred Anangu Country. Stay on open paths, respect restricted knowledge and never leave the route for a better angle.',
+        slug: 'kata-tjuta', name: 'Kata Tjuṯa', motif: 'valley-walk weather decision', instrument: 'valley-profile', imageQuery: 'Kata Tjuṯa domes Northern Territory', imageAlt: 'The domes of Kata Tjuṯa in Uluṟu Kata Tjuṯa National Park',
+        summary: 'A separate Kata Tjuṯa chapter where wind, heat, cultural closure and route grade decide between valley walks and viewpoints.',
+        orientation: 'treat Walpa Gorge, Valley of the Winds and viewing areas as different commitments.', access: 'Travel from Yulara or within the park with enough fuel, pass, water and daylight for the chosen route.', sequence: 'Check closures at the park source, attempt the most exposed walk early, use the shorter gorge or viewpoint when conditions narrow and return before heat.', boundary: 'Kata Tjuṯa is sacred Aṉangu Country. Stay on open paths, respect restricted knowledge and never leave the route for a better angle.',
         stages: [['Check the route gate', 'Wind, heat and cultural closure determine what is open.'], ['Choose one valley', 'Match grade and distance to the day.'], ['Walk without shortcuts', 'Remain on formed paths and carry water.'], ['Return before the heat wall', 'End the walk with transport and recovery time.']],
         risks: [['Heat closure', 'Long exposed walks may close early.'], ['Wind and uneven ground', 'Strong gusts and rock surfaces require stable footing.'], ['Cultural boundary', 'Closed paths and restricted stories must remain untouched.']],
-        duration: 'Give Kata Tjuta a dedicated half or full day within a multi-night stay.', combine: 'Pair with Uluru on different days rather than two major walks together.', verify: 'Check Parks Australia alerts, temperature, wind, cultural closure, road, water and turnaround.'
+        duration: 'Give Kata Tjuṯa a dedicated half or full day within a multi-night stay.', combine: 'Pair with Uluru on different days rather than two major walks together.', verify: 'Check Parks Australia alerts, temperature, wind, cultural closure, road, water and turnaround.'
       })
     ]
   })

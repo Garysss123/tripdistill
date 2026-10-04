@@ -2,7 +2,7 @@
 export const italyImageManifest = {
   "rome/ancient-rome-capitoline": {
     "src": "/assets/images/italy-rome-ancient-rome-capitoline.webp",
-    "alt": "The Roman Forum and Colosseum in central Rome",
+    "alt": "Roman Forum seen through the Arch of Septimius Severus",
     "source": "https://commons.wikimedia.org/wiki/File:Forum_Romanum_through_Arch_of_Septimius_Severus_Forum_Romanum_Rome.jpg",
     "label": "Forum Romanum through Arch of Septimius Severus Forum Romanum Rome.jpg",
     "creator": "Jebulon",
@@ -15,20 +15,20 @@ export const italyImageManifest = {
     "alt": "Saint Peter’s Square and Basilica in Vatican City",
     "source": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
     "label": "St Peter's Square, Vatican City - April 2007.jpg",
-    "creator": "Diliff",
+    "creator": "David Iliff (Diliff)",
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:St Peter's Square, Vatican City - April 2007.jpg",
     "remoteSha1": "d061e97f616ea0b9cd9bc9662cefd6bf8659464e"
   },
   "rome/historic-centre-trastevere": {
     "src": "/assets/images/italy-rome-historic-centre-trastevere.webp",
-    "alt": "Piazza Navona and the historic centre of Rome",
-    "source": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_1.jpg",
-    "label": "Piazza Navona 1.jpg",
-    "creator": "Myrabella",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Piazza Navona 1.jpg",
-    "remoteSha1": "d036a3e680f0195e37f167f29ef04bb1457bf984"
+    "alt": "Fountain in Piazza Santa Maria in Trastevere",
+    "source": "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg",
+    "label": "Santa Maria in Trastevere fountain.jpg",
+    "creator": "Jensens",
+    "license": "Public domain",
+    "commonsTitle": "File:Santa Maria in Trastevere fountain.jpg",
+    "remoteSha1": "302f3a4ec40e0d39cb4ad56442caf4cf68ef643b"
   },
   "naples-pompeii-vesuvius/naples-centre-mann-waterfront": {
     "src": "/assets/images/italy-naples-pompeii-vesuvius-naples-centre-mann-waterfront.webp",

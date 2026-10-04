@@ -1,7 +1,7 @@
 // Exact Wikimedia Commons titles selected after contact-sheet review.
 export const italyImageOverrides = {
   'rome/vatican-borgo-prati': "File:St Peter's Square, Vatican City - April 2007.jpg",
-  'rome/historic-centre-trastevere': 'File:Piazza Navona 1.jpg',
+  'rome/historic-centre-trastevere': 'File:Santa Maria in Trastevere fountain.jpg',
   'naples-pompeii-vesuvius/naples-centre-mann-waterfront': "File:Napoli vista dall'alto. 0009.jpg",
   'naples-pompeii-vesuvius/herculaneum-vesuvius': 'File:Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg',
   'sorrento-amalfi-capri/positano-amalfi-ravello': 'File:Positano panorama.jpg',

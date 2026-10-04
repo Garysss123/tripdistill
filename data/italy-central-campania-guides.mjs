@@ -33,7 +33,7 @@ export const italyCentralCampaniaClusters = [
         layout: 'forum-gate-time-score',
         structure: 'booked-door-score',
         imageQuery: 'Roman Forum Colosseum Capitoline Rome panorama',
-        imageAlt: 'The Roman Forum and Colosseum in central Rome',
+        imageAlt: "Roman Forum seen through the Arch of Septimius Severus",
         purpose: "Follow the ancient civic ground from the Colosseum and Forum toward Campidoglio, then read the hill as a later civic design. The terrain and the city’s layers matter as much as the ticketed interior.",
         summary: "From Piazza del Campidoglio, picture the ancient Capitolium and Arx on opposite sides of the hollow; today’s square sits about eight metres above the original valley floor. Michelangelo’s design draws the approach, paving and surrounding palaces into a distinct civic composition.",
         choices: [
@@ -116,7 +116,7 @@ export const italyCentralCampaniaClusters = [
         layout: 'piazza-river-evening-circuit',
         structure: 'piazza-circuit',
         imageQuery: 'Piazza Navona Pantheon historic centre Rome evening',
-        imageAlt: 'Piazza Navona and the historic centre of Rome',
+        imageAlt: "Fountain in Piazza Santa Maria in Trastevere",
         purpose: 'Choose one direction through the Pantheon–Navona, Trevi–Spanish Steps or Ghetto–Trastevere layers, then cross the Tiber at most once so fountains, meals and evening streets support one route rather than a citywide checklist.',
         summary: "The Centro is a sequence of public rooms: the Pantheon, Navona’s long oval, Trevi’s crowded basin, the Ghetto and the bridges each reward a different pace. Choose one street line, then finish on the riverbank that works for dinner and the journey home.",
         choices: [

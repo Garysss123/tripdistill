@@ -1,0 +1,11 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kata tjuṯa": "카타츄타(Kata Tjuṯa)",
+    "Kata Tjuṯa Guide": "카타츄타(Kata Tjuṯa) 여행 가이드"
+  }
+}
