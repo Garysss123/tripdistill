@@ -150,6 +150,7 @@
   --au-accent-text: #72432f;
 }
 [data-au-instrument="cultural-compass"] .au-field-hero {
+  border-radius: 1.25rem;
   border-color: rgba(221, 177, 124, .72);
   background:
     radial-gradient(ellipse at 72% 80%, rgba(221, 177, 124, .22), transparent 39%),

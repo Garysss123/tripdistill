@@ -7,7 +7,7 @@ const reviewDate = '4 September 2026';
 const isoDate = '2026-09-04';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/australia.css?v=20261004-1';
-const fieldCss = '/css/australia-field.css?v=20261004-2';
+const fieldCss = '/css/australia-field.css?v=20261004-3';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const navStart = '<!-- AUSTRALIA_NAV_START -->';

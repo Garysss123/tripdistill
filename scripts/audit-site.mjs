@@ -248,12 +248,12 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/australia/') && baseRoute !== '/australia/' && !/<body\b[^>]*\bdata-parent-page="australia"/i.test(html)) problems.push(`${relativePath}: Australia primary navigation parent is not set`);
   if (baseRoute === '/australia/' && (html.match(/class="au-country-card"/g) || []).length !== 16) problems.push(`${relativePath}: Australia country hub does not contain sixteen linked regional cards`);
   if (australiaHubRoutes.has(baseRoute)) {
-    if (!html.includes('/css/australia-field.css?v=20261004-2')) problems.push(`${relativePath}: missing Australia regional field stylesheet`);
+    if (!html.includes('/css/australia-field.css?v=20261004-3')) problems.push(`${relativePath}: missing Australia regional field stylesheet`);
     if ((html.match(/class="au-hub-card"/g) || []).length !== 5) problems.push(`${relativePath}: Australia regional hub does not contain five linked field-guide cards`);
   }
   const australiaGuide = australiaByRoute.get(baseRoute);
   if (australiaGuide) {
-    if (!html.includes('/css/australia-field.css?v=20261004-2')) problems.push(`${relativePath}: missing Australia child-guide stylesheet`);
+    if (!html.includes('/css/australia-field.css?v=20261004-3')) problems.push(`${relativePath}: missing Australia child-guide stylesheet`);
     if (!html.includes(`data-au-family="${australiaGuide.family}"`)) problems.push(`${relativePath}: missing ${australiaGuide.family} Australia family marker`);
     if (!html.includes(`data-au-instrument="${australiaGuide.instrument}"`)) problems.push(`${relativePath}: missing ${australiaGuide.instrument} Australia instrument marker`);
     if ((html.match(/class="au-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Australia child guide does not contain four route stages`);
