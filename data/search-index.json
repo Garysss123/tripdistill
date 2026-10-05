@@ -12036,7 +12036,7 @@
     "url": "/italy/florence-pisa-lucca/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Florence is a reservation-heavy walking city; Pisa and Lucca are separate rail cities with different station-to-centre approaches. A strong Tuscany plan gives Florence at least two complete layers and treats the western cities as their own rail decision, not as disposable stops between museum tickets.",
+    "summary": "Florence concentrates its cathedral, Uffizi and civic centre in a walkable core; across the Arno, Pitti Palace and Boboli make a separate, hillier day. Pisa gathers cathedral, baptistery, bell tower and Camposanto in the Piazza del Duomo. Lucca turns its sixteenth-century walls into a tree-lined public park around a compact historic centre. Treat Pisa and Lucca as distinct day choices unless the actual trains leave time for both.",
     "keywords": [
       "Florence, Pisa & Lucca",
       "Tuscany",
@@ -12048,11 +12048,11 @@
     "url": "/italy/florence-pisa-lucca/duomo-uffizi-centre/",
     "parent": "Florence, Pisa & Lucca",
     "type": "Local guide",
-    "summary": "Meet one timed door, work one bounded collection or vertical climb and finish along a single piazza-to-Arno line with a protected break.",
+    "summary": "The cathedral complex is a group of distinct visits. Choose a timed Dome climb or a ground-level museum and monument visit, then add the Uffizi only if the bookings leave enough attention for a real gallery visit.",
     "keywords": [
       "Duomo, Uffizi & the Renaissance Centre",
       "Florence, Pisa & Lucca",
-      "Renaissance reservation braid",
+      "Cathedral, Uffizi & civic centre",
       "renaissance-attention-spread",
       "collection-attention-spread"
     ]
@@ -12062,11 +12062,11 @@
     "url": "/italy/florence-pisa-lucca/oltrarno-pitti-fiesole/",
     "parent": "Florence, Pisa & Lucca",
     "type": "Local guide",
-    "summary": "Cross the Arno once for Pitti or Oltrarno, or leave directly for Fiesole; complete one hill layer and return by the confirmed downhill transport.",
+    "summary": "Pitti, Boboli and Fiesole all add slopes or a bus journey. Choose one day shape: palace and garden across the Arno, streets around Santo Spirito, or Fiesole’s archaeological area and Roman theatre.",
     "keywords": [
       "Oltrarno, Pitti & Fiesole",
       "Florence, Pisa & Lucca",
-      "Arno-bank hill section",
+      "Pitti, Oltrarno or Fiesole",
       "arno-hill-section",
       "hill-town-section"
     ]
@@ -12076,11 +12076,11 @@
     "url": "/italy/florence-pisa-lucca/pisa-lucca-rail-pair/",
     "parent": "Florence, Pisa & Lucca",
     "type": "Local guide",
-    "summary": "Reach one western Tuscany city by the useful station, complete its principal urban route and add the second only when the train and return still leave a meaningful block.",
+    "summary": "Pisa is a concentrated cathedral square; Lucca is a walkable walled city. Choose the useful station, reserve the Tower only if you want the climb, and treat the other city as a second day unless the trains make a long pair worthwhile.",
     "keywords": [
       "Pisa or Lucca by Rail",
       "Florence, Pisa & Lucca",
-      "Two-station rail hinge",
+      "Pisa or Lucca by train",
       "western-tuscany-rail-hinge",
       "rail-to-street-braid"
     ]

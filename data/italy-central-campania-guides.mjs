@@ -536,129 +536,203 @@ export const italyCentralCampaniaClusters = [
     region: 'Tuscany',
     band: 'central-art-cities',
     family: 'renaissance-reservation-braid',
-    label: 'Tuscany · art-city folio 04',
-    tagline: 'Reserve one masterpiece, then let a river bank or rail branch complete the day.',
-    hubIntro: 'Florence is a reservation-heavy walking city; Pisa and Lucca are separate rail cities with different station-to-centre approaches. A strong Tuscany plan gives Florence at least two complete layers and treats the western cities as their own rail decision, not as disposable stops between museum tickets.',
-    stay: 'Three to five nights in Florence supports the Duomo/Uffizi core, an Oltrarno day and one western rail branch. Santa Maria Novella is practical for trains; the Duomo core reduces walking to reservations but adds crowd pressure; Oltrarno improves evenings but requires deliberate river crossings.',
-    transfer: 'Firenze Santa Maria Novella, Campo di Marte and Rifredi solve different arrivals. Pisa Centrale and Pisa San Rossore approach the Field of Miracles differently, while Lucca station sits outside a particular wall gate. Choose station and city order from the first reserved door.',
-    season: 'Summer heat and major-event crowds increase standing and reduce comfortable hill walks. Museum closure days and restoration can alter the art-city plan. Rain strengthens collections but weakens gardens and towers; keep a complete indoor sequence.',
-    fallback: 'Use a same-city alternative: Opera del Duomo Museum or Palazzo Vecchio for a climb failure, Pitti interiors for Boboli weather, or a full Pisa or Lucca day when the second rail branch collapses.',
+    label: 'Tuscany · Florence / Pisa / Lucca',
+    tagline: 'Read Florence on foot, then choose one western city—or give each its own day.',
+    reviewDate: '5 October 2026',
+    reviewIsoDate: '2026-10-05',
+    publishedIsoDate: '2026-09-26',
+    hubIntro: 'Florence concentrates its cathedral, Uffizi and civic centre in a walkable core; across the Arno, Pitti Palace and Boboli make a separate, hillier day. Pisa gathers cathedral, baptistery, bell tower and Camposanto in the Piazza del Duomo. Lucca turns its sixteenth-century walls into a tree-lined public park around a compact historic centre. Treat Pisa and Lucca as distinct day choices unless the actual trains leave time for both.',
+    stay: 'Three nights in Florence can cover the historic centre, a separate Oltrarno day and, if it fits, one western rail day. Stay near Firenze Santa Maria Novella for train departures and easier luggage; choose the Duomo or Signoria side for an early timed visit and short centre walks; the Oltrarno suits Pitti and Boboli, but every return across the Arno means a bridge crossing. These are walking trade-offs, not a ranking.',
+    transfer: 'Firenze Santa Maria Novella is the useful main arrival for the centre; Campo di Marte and Rifredi serve other trains but are not interchangeable with it when carrying bags. In Pisa, Centrale serves the river and central streets; San Rossore is closer to Piazza del Duomo only on trains that stop there. Lucca station is just outside the walls at Piazza Ricasoli. Check the exact Trenitalia service and the station shown on your ticket before setting a day route.',
+    season: 'Summer sun makes the Dome climb, Boboli slopes and both cities’ open squares tiring; start exposed visits early, carry water and shorten the outdoor loop at midday. In rain, move toward the Uffizi, Opera del Duomo Museum or Pitti interiors and check whether Boboli has an access notice. Museum closure days, timed entries and rail changes matter more than a generic seasonal calendar.',
+    fallback: 'Keep a same-city alternative: use the Opera del Duomo Museum and ground-level cathedral quarter if the Dome climb is not a fit; choose Pitti interiors when rain or heat defeats a full Boboli walk; or give Pisa or Lucca a complete day if the cross-city train plan no longer works.',
+    hubCopy: {
+      countryLabel: 'ITALY · TUSCANY', routeCount: 'three different day shapes',
+      primaryAction: 'Choose a city day', secondaryAction: 'Choose where to stay',
+      baseBoardLabel: 'MAKE THE DAYS FIT',
+      baseBoardTitle: 'Stay near the departure you will use; give each day one main visit.',
+      stayHeading: 'Choose the bank or station that saves time.',
+      transferHeading: 'Match each station to the first stop.',
+      seasonHeading: 'Plan around sun, rain and timed doors.',
+      fallbackHeading: 'Keep a nearby alternative in the same city.',
+      routeSectionLabel: 'THREE DIFFERENT CITY DAYS',
+      routeSectionTitle: 'Florence centre, Florence across the Arno, or western Tuscany.',
+      routeSectionIntro: 'Start with one of three distinct places: cathedral and art, palace gardens or hilltop archaeology, or two rail cities with different station approaches.',
+      authorityLabel: 'MUSEUMS, CITY INFORMATION & RAIL'
+    },
+    faq: [
+      ['How many days should I give Florence?', 'As a planning estimate, give Florence at least two full days: one for the cathedral and historic centre, another for a chosen museum or the Oltrarno. Add a separate day for Fiesole or for Pisa or Lucca rather than treating those places as quick stops.'],
+      ['Can I visit Pisa and Lucca in one day from Florence?', 'It is possible only when the published trains give you meaningful time in each city and a protected return. Choose one main interior or timed climb, travel light and drop the second city if the service gaps shrink the visit to a platform transfer.'],
+      ['Where should I stay in Florence?', 'Santa Maria Novella is practical for rail days and luggage; the Duomo or Signoria area shortens walks to the central visits; the Oltrarno is convenient for Pitti and evening walks but adds bridge crossings to the north-bank core.'],
+      ['What is the best alternative in bad weather?', 'Use the Uffizi, the Opera del Duomo Museum or Pitti interiors, after checking their current opening notices. Boboli, Fiesole’s archaeological area and Pisa or Lucca’s main squares are more exposed, so keep their outdoor sections flexible.']
+    ],
     sources: [
-      ['https://feelflorence.it/', 'FeelFlorence — official metropolitan visitor information'],
-      ['https://www.visittuscany.com/en/', 'Visit Tuscany — official regional visitor information'],
+      ['https://feelflorence.it/', 'FeelFlorence — official Florence visitor information'],
+      ['https://duomo.firenze.it/en/visit/plan-your-visit', 'Opera di Santa Maria del Fiore — official visit planning'],
+      ['https://www.uffizi.it/en/visit', 'Uffizi Galleries — official visitor information and notices'],
+      ['https://www.turismo.pisa.it/', 'Comune di Pisa — official tourism information'],
+      ['https://turismo.lucca.it/en/information/how-to-get/', 'Lucca Tourism — official rail arrival and city access'],
       ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning']
     ],
     guides: [
       g({
         slug: 'duomo-uffizi-centre',
         name: 'Duomo, Uffizi & the Renaissance Centre',
-        instrument: 'Renaissance reservation braid',
-        layout: 'renaissance-attention-spread',
-        structure: 'collection-attention-spread',
-        imageQuery: 'Florence Duomo Uffizi Arno panorama',
-        imageAlt: 'Florence Cathedral dome above the Renaissance city centre',
-        purpose: 'Choose the Duomo climb, Uffizi collection or civic street-and-palace layer as the main reservation, then connect the remaining centre without treating every pass component and gallery as compulsory.',
-        summary: 'Meet one timed door, work one bounded collection or vertical climb and finish along a single piazza-to-Arno line with a protected break.',
+        instrument: 'Cathedral, Uffizi & civic centre', layout: 'renaissance-attention-spread', structure: 'collection-attention-spread',
+        imageQuery: 'Florence Duomo Uffizi Arno panorama', imageAlt: 'Florence Cathedral dome above the Renaissance city centre',
+        purpose: 'Use Brunelleschi’s Dome to understand the cathedral’s engineering, then decide whether the Uffizi collection or civic streets deserve the day’s remaining attention. The cathedral monuments and Uffizi have separate entrances and visit conditions; do not treat a pass as one queue or every included site as compulsory.',
+        summary: 'The cathedral complex is a group of distinct visits. Choose a timed Dome climb or a ground-level museum and monument visit, then add the Uffizi only if the bookings leave enough attention for a real gallery visit.',
+        decisionLabel: 'Choose the main visit', decisionTitle: 'A timed climb, a painting collection or the city between them.',
+        decisionIntro: 'Give one interior the long block and use nearby streets to connect it to a lighter second layer.',
         choices: [
-          ['Duomo complex depth', 'Choose a specific climb or monument combination and use the Opera Museum for interpretation. This gives architectural sequence but sacrifices a long Uffizi visit.'],
-          ['Uffizi collection depth', 'Reserve a focused gallery block and use Piazza della Signoria and the Arno as context. It gives painting depth but limits tower and dome time.'],
-          ['Civic Renaissance circuit', 'Keep major museums short or exterior, then use Palazzo Vecchio, public sculpture and streets as one layer. It offers flexibility but less collection depth.']
+          ['Dome and cathedral engineering', 'Book the Dome’s timed entry through the Opera. Its 463-step stair passes between two masonry shells; there is no lift and large bags must go to official luggage storage. Build around that slot, not a second deep museum visit.'],
+          ['Opera Museum and Baptistery', 'Keep the visit at ground level and see the original Baptistery bronze doors in the Museo dell’Opera del Duomo; the versions on the building are replicas. Add the Cathedral or another monument only after checking its access and worship notices.'],
+          ['Uffizi and civic centre', 'Reserve a focused Uffizi visit, then walk to Piazza della Signoria and the Arno. The Gallery’s June 2026 notice says Botticelli’s Venus and Primavera now face one another in the reinstalled rooms; confirm current displays before making them the whole purpose of the visit.']
         ],
-        access: 'Santa Maria Novella serves the western edge; Duomo entrances and Uffizi doors sit on different piazzas with controlled arrival rules. Dome, bell tower, baptistery and museum products are not one walk-in sequence. Work backward from the timed entry.',
-        tradeoff: 'A dome climb and a deep Uffizi visit demand the same morning energy. Choosing one gives up a second masterpiece interior but creates time for careful looking, a meal and the civic spaces that connect them.',
+        access: 'Firenze Santa Maria Novella lies west of the historic core. Match the first walk and ticket to its printed entrance: the Dome climb, Opera Museum, Cathedral and Uffizi use different doors and admission rules. The Uffizi meets Piazza della Signoria and the river; a central location does not make its timed entry interchangeable with the Duomo.',
+        tradeoff: 'A Dome climb, a careful Uffizi visit and an unhurried city walk compete for the same daylight and attention. Choose one major interior, then one nearby outdoor line. If both Dome and Uffizi are priorities, separate them rather than turning each into a rushed checklist.',
         stages: [
-          ['Meet the reserved threshold', 'Arrive at the exact entrance with the product, identity and bag conditions understood.'],
-          ['Use one deep visual layer', 'Follow a bounded collection, climb or monument sequence instead of exhausting every included site.'],
-          ['Reset in a nearby piazza', 'Take a seated break before moving to Piazza della Signoria or the Arno.'],
-          ['Finish without recrossing the centre', 'End near the river, Santa Maria Novella or the evening reservation rather than returning to the first queue.']
+          ['Set the first timed door', 'Open the official ticket and save the exact entrance, slot and restrictions. For the Dome, plan for 463 steps, no lift and the Opera’s luggage-storage rule for large bags.'],
+          ['Read one part of the cathedral complex', 'Follow the Dome’s double shell and herringbone brick from the climb, or stay at ground level with the Opera Museum and Cathedral. Check which monument your selected pass actually includes.'],
+          ['Give one collection a clear thread', 'If the Uffizi is the major visit, reserve it separately and choose a few connected works. The current Botticelli-room notice offers Venus and Primavera as a paired comparison; check current notices for changes.'],
+          ['Walk from Signoria to the Arno', 'Use Piazza della Signoria as the outdoor transition to the river, take a seated break, then finish near your evening plan or station instead of recrossing town to the first queue.']
         ],
-        fallback: 'If the climb closes, use the Opera del Duomo Museum and ground-level monuments when open. If Uffizi entry fails, use Palazzo Vecchio or another verified civic collection and keep the same Renaissance-centre line.',
+        routeTitle: 'A Florence centre day: one major visit, one city walk',
+        routeLead: 'Choose the cathedral quarter or Uffizi as the first commitment; let the piazzas and river connect the rest.',
+        routeLabels: ['Name the entrance', 'Read the cathedral', 'Choose the collection', 'Walk to the river'],
+        whatToSee: [
+          ['DUOMO · MASONRY', 'Two shells, one climb', 'The Opera describes inner and outer domes linked by ribs, with the stairway to the lantern between them. Herringbone brick is part of the construction, not surface decoration. The 463-step route is an architectural cross-section as well as a viewpoint.'],
+          ['BAPTISTERY · BRONZE DOORS', 'Find the originals in the museum', 'The Opera keeps the original Baptistery doors in the Museo dell’Opera del Duomo; the doors on the octagonal building are replicas. Seeing the originals indoors lets you look closely at the bronze reliefs without confusing the conservation display with the monument outside.'],
+          ['UFFIZI · BOTICELLI ROOMS', 'Compare Venus with Primavera', 'In its notice dated 16 June 2026, the Uffizi says Botticelli’s Venus and Primavera are displayed facing one another after a room reinstallation. The pairing makes a specific comparison possible; check the Gallery’s current notices in case the arrangement changes.']
+        ],
+        fallback: 'If the Dome climb is unavailable or not appropriate, keep the day at ground level: use the Opera Museum for the original doors and construction models, then the Cathedral quarter or Piazza della Signoria. If Uffizi entry changes, choose a currently open civic or cathedral museum instead of crossing town for another queue.',
         watch: [
-          ['Pass components have separate clocks', 'A combined product can still require specific slots and entrances. Read each component rather than assuming free sequence.'],
-          ['Collection fatigue is real', 'A famous-room checklist is not a coherent visit. Preselect a period or floor and stop before attention collapses.'],
-          ['The centre is compact but crowded', 'Short distances can take time around queues and groups. Protect the next timed door.']
+          ['The Dome is a physical climb', 'The official route has 463 steps, no lift and a timed slot. People who avoid stairs or enclosed spaces should choose the ground-level museum visit; do not buy the climb as a default pass feature.'],
+          ['A combined ticket is not one entrance', 'The Opera and Uffizi are separate institutions. Check the named monument, slot, entry door and current display notices for every paid visit.'],
+          ['Rain and heat change the outdoor finish', 'Keep the Signoria-to-Arno walk short in strong sun and take a seated interval. In heavy rain, protect the interior visit and use the exposed piazza only as a short connection.']
         ],
-        duration: 'Allow six to eight hours for one major reservation, a secondary civic layer and a meal. Give the Duomo and Uffizi separate days when both are priorities.',
-        combine: 'Combine one controlled interior with Piazza della Signoria and the Arno. Keep Pitti, Fiesole, Pisa and Lucca for other days.',
-        verify: 'Check the exact Duomo product and slot, Uffizi admission, current gallery or monument closures and the city route from the chosen station.',
+        duration: 'Guide estimate: allow about 6–8 hours for one major timed visit, a nearby city walk and a meal. A Dome climb plus a deep Uffizi visit is a very full day; separate them if both matter.',
+        combine: 'Pair the Dome or Opera Museum with Piazza della Signoria; pair the Uffizi with a short Arno walk. Save Pitti, Boboli, Fiesole, Pisa and Lucca for other days.',
+        verify: 'Check the exact Opera pass and entrance, Dome slot and bag rules, Uffizi notices and work displays, then confirm the walk from your arrival station.',
+        faq: [
+          ['Can I climb the Dome without a time slot?', 'No. Opera del Duomo says Dome access requires a reserved time. Its guidance lists 463 steps, no lift and luggage storage for large bags. Recheck the ticket and access conditions before buying.'],
+          ['Does one ticket cover the Cathedral and Uffizi?', 'Do not assume so. Opera di Santa Maria del Fiore controls the Cathedral monuments and museum; the Uffizi Galleries run a separate museum. Check each named product, entrance and slot.'],
+          ['Are Venus and Primavera still facing one another?', 'The Uffizi’s 16 June 2026 notice describes that arrangement in the reinstalled rooms. Displays can change, so check the Gallery’s current notices before visiting.']
+        ],
+        reviewDate: '5 October 2026', reviewIsoDate: '2026-10-05', publishedIsoDate: '2026-09-26',
         sources: [
-          ['https://duomo.firenze.it/en/visit/plan-your-visit', 'Opera di Santa Maria del Fiore — official visit planning'],
-          ['https://www.uffizi.it/en/visit', 'Uffizi Galleries — official visitor information']
+          ['https://duomo.firenze.it/en/discover/dome', 'Opera di Santa Maria del Fiore — Dome structure, climb and access'],
+          ['https://duomo.firenze.it/en/discover/baptistry', 'Opera di Santa Maria del Fiore — Baptistery and original doors'],
+          ['https://duomo.firenze.it/en/visit/plan-your-visit', 'Opera di Santa Maria del Fiore — current monument passes and visit rules'],
+          ['https://www.uffizi.it/en/visit', 'Uffizi Galleries — entry, notices and visitor information'],
+          ['https://www.uffizi.it/en/news/the-new-permanent-installation-of-the-botticelli-rooms', 'Uffizi Galleries — Botticelli-room notice, 16 June 2026']
         ]
+
       }),
       g({
         slug: 'oltrarno-pitti-fiesole',
-        name: 'Oltrarno, Pitti & Fiesole',
-        instrument: 'Arno-bank hill section',
-        layout: 'arno-hill-section',
-        structure: 'hill-town-section',
-        imageQuery: 'Florence Oltrarno Pitti Boboli panorama',
-        imageAlt: 'Florence viewed across the Arno toward the Oltrarno hills',
-        purpose: 'Choose Pitti and Boboli, an Oltrarno craft-and-church line or Fiesole’s hill setting, then make the bridge or bus climb the day’s single elevation change instead of stacking both hills.',
-        summary: 'Cross the Arno once for Pitti or Oltrarno, or leave directly for Fiesole; complete one hill layer and return by the confirmed downhill transport.',
+        name: 'Oltrarno, Pitti & Fiesole', instrument: 'Pitti, Oltrarno or Fiesole', layout: 'arno-hill-section', structure: 'hill-town-section',
+        imageQuery: 'Florence Oltrarno Pitti Boboli panorama', imageAlt: 'Florence viewed across the Arno toward the Oltrarno hills',
+        purpose: 'Choose a north-bank crossing into Pitti and Boboli, a compact Oltrarno street day, or a separate bus trip to Fiesole. These are three different visits: palace and garden, neighborhood and church, or Etruscan and Roman archaeology above Florence.',
+        summary: 'Pitti, Boboli and Fiesole all add slopes or a bus journey. Choose one day shape: palace and garden across the Arno, streets around Santo Spirito, or Fiesole’s archaeological area and Roman theatre.',
+        decisionLabel: 'Choose a side of Florence', decisionTitle: 'Palace and garden, Oltrarno streets, or Fiesole archaeology.',
+        decisionIntro: 'Do not stack the Boboli slopes and Fiesole hill on the same day; their bridge and bus returns work better as separate outings.',
         choices: [
-          ['Pitti and Boboli', 'Use palace collections and gardens as the principal block. This offers art and landscape together but is weather- and walking-intensive.'],
-          ['Oltrarno street layer', 'Connect Santo Spirito, one church or workshop context and a river finish. It gives living-neighborhood rhythm but fewer headline collections.'],
-          ['Fiesole hill day', 'Use the confirmed bus for archaeology and views above Florence. It sacrifices Oltrarno depth but provides a different urban scale.']
+          ['Pitti Palace and Boboli', 'Enter Pitti for its indoor collections, then decide whether the garden’s terraces, grottoes and fountains suit the weather and your walking energy. The Uffizi describes Boboli as predominantly sloping clay and gravel; its guidance recommends carrying water in hot weather.'],
+          ['Santo Spirito and the Oltrarno', 'Cross once and keep the day on the south bank: use Piazza Santo Spirito and its basilica as anchors, then choose a short lane-and-river walk. Working studios are businesses, not guaranteed open-house stops; check access locally and leave room for a meal.'],
+          ['Fiesole archaeological area', 'Take the current bus connection to Piazza Mino and visit the archaeological area as a real half-day: Etruscan-Roman temple phases, Roman theatre, baths and Archaeological Museum share one site. Check the Comune’s hours and the bus return before leaving Florence.']
         ],
-        access: 'Ponte Vecchio, Santa Trinita and other bridges lead to different Oltrarno streets. Pitti rises from the river, Boboli adds slopes and Fiesole requires a separate bus corridor. Choose the hill and return before crossing.',
-        tradeoff: 'Pitti/Boboli and Fiesole are both elevation days. Choosing one gives up the other viewpoint but preserves energy for a museum, church or neighborhood meal instead of turning the day into climbing and transit.',
+        access: 'For Pitti, cross the Arno toward Piazza de’ Pitti; choose Ponte Vecchio or Ponte Santa Trinita according to your starting side. For Fiesole, the Comune’s visitor directions list bus 7 from Firenze Santa Maria Novella to Piazza Mino; check Autolinee Toscane for the current stop, service and return. The two routes do not share a useful last mile.',
+        tradeoff: 'Pitti and Boboli reward a slow visit but combine indoor galleries with extensive uneven, sloping paths. Fiesole trades the street grid for an archaeological area reached by bus. Choosing one keeps the return manageable and leaves the other for a separate day.',
         stages: [
-          ['Choose river or bus threshold', 'Cross the bridge nearest the first Oltrarno door or board the confirmed Fiesole service from its actual stop.'],
-          ['Complete one interior', 'Give Pitti, a church or the Fiesole archaeological area the protected attention block.'],
-          ['Use the hill selectively', 'Walk the garden, neighborhood slope or viewpoint only as far as the chosen return supports.'],
-          ['Descend without retracing', 'Return by a useful bridge or bus and finish near dinner or the hotel line.']
+          ['Choose bridge or bus', 'For Pitti, cross from the north bank toward Piazza de’ Pitti. For Fiesole, check the current bus 7 departure from the SMN area and the return from Piazza Mino before boarding.'],
+          ['Give one collection or site the long block', 'Start with Pitti’s current indoor galleries, or with Fiesole’s Archaeological Museum and the remains around it. Confirm opening notices and admission before setting out.'],
+          ['Add only the outdoor layer that fits', 'Walk a selected part of Boboli with its official map, water and slope conditions in mind, or continue through the Fiesole theatre, temple and baths. Shorten the outdoor route in heat or rain.'],
+          ['Return by the useful corridor', 'Leave Boboli by the entrance nearest your next stop or return to the chosen bridge. From Fiesole, verify the live bus back to Florence instead of assuming the outbound frequency continues.']
         ],
-        fallback: 'Rain favors Pitti interiors, Oltrarno churches and artisan interpretation over Boboli or exposed Fiesole viewpoints. If the bus is disrupted, keep the day across the Arno rather than substituting a distant hill.',
+        routeTitle: 'Across the Arno or up to Fiesole', routeLead: 'Choose the day’s elevation before leaving central Florence; each branch has a different return.',
+        routeLabels: ['Choose bridge or bus', 'Start indoors or at the site', 'Walk the hill selectively', 'Protect the return'],
+        whatToSee: [
+          ['PITTI · COURT COLLECTIONS', 'Read the palace as a residence', 'Pitti is not a single gallery. The Uffizi groups several collections in the palace; check current room and closure notices and choose one section to follow rather than trying to see every interior before crossing into the garden.'],
+          ['BOBOLI · LANDSCAPE', 'A court garden that became a public park', 'The Uffizi traces the regular layout to the Medici and describes it as a model for European courts. Buontalenti’s grotto, the Amphitheatre and later terraces make the garden an outdoor museum, but clay-and-gravel paths slope across much of the site.'],
+          ['FIESOLE · ARCHAEOLOGICAL AREA', 'Look for the layers under the hill town', 'The Comune’s site includes an Etruscan-Roman temple rebuilt across several periods, a Roman theatre, baths and an archaeological museum. Its collection follows Etruscan, Roman and Longobard evidence from the territory; this is a distinct history, not just a viewpoint over Florence.']
+        ],
+        fallback: 'In heavy rain, keep the day indoors at Pitti or choose a Florence museum after checking openings; Boboli and Fiesole’s ruins are exposed. In strong heat, carry water and shorten the sloping garden or archaeological walk. If Fiesole bus service is disrupted, stay in the Oltrarno rather than replacing it with a distant hill.',
         watch: [
-          ['Garden access follows weather', 'Boboli surfaces and sections can change. Check current conditions separately from palace admission.'],
-          ['The river does not remove elevation', 'Pitti and hillside streets climb quickly after the bridge; pace the first hour.'],
-          ['Fiesole is a separate transport day', 'A city bus ride does not make it a brief add-on after a full palace visit.']
+          ['Boboli is not a flat park loop', 'The Uffizi describes clay and gravel surfaces, slopes and climbs across most of the garden. Its accessibility page notes that visitors who need the accessible entrance require an accompanying person; check the current map and support before planning.'],
+          ['Fiesole requires a live bus check', 'The Comune lists bus 7 to Piazza Mino from the SMN area and directs visitors from that stop to the museums. Use Autolinee Toscane’s current timetable and service notices for your date.'],
+          ['Weather affects both hills', 'Boboli may restrict access during weather emergencies; Fiesole’s outdoor remains offer less shelter than its museum. Put the indoor visit first when rain is likely and shorten slopes during hot hours.']
         ],
-        duration: 'Allow five to seven hours for Pitti/Boboli or a Fiesole-led day. An Oltrarno street-and-church route can fit four to six hours.',
-        combine: 'Combine Pitti with Santo Spirito or a short river line. Keep Fiesole separate from a deep palace or Uffizi day.',
-        verify: 'Check Pitti and Boboli openings, garden conditions, Fiesole archaeological access and the current bus return before departure.',
+        duration: 'Guide estimates: allow about 4–6 hours for Pitti and a selected Boboli route, 3–5 hours for an Oltrarno street-and-church walk, or about 4–5 hours for Fiesole including the bus journey. Check current entry and service times; these are not venue guarantees.',
+        combine: 'Pair Pitti with a short Oltrarno meal or river walk. Keep Fiesole separate from a full Pitti/Boboli visit and from a deep Uffizi day.',
+        verify: 'Check Pitti and Boboli openings, garden conditions and accessible-route information; for Fiesole check the Comune’s archaeological-area hours and Autolinee Toscane service to and from Piazza Mino.',
+        faq: [
+          ['Is Fiesole a quick add-on from Florence?', 'Treat it as a separate outing. The Comune lists bus 7 from the SMN area to Piazza Mino, followed by the museum entrance near Via Dupré. The archaeological area has a theatre, temple remains, baths and museum; check the return service.'],
+          ['Can I comfortably walk all of Boboli?', 'It is a sizeable garden with clay and gravel surfaces and extensive slopes. Choose a section from the official map, carry water in hot weather and check access support if you need an accessible route.'],
+          ['What should I do in rain or heat?', 'Use Pitti’s indoor collections as a wet-weather anchor after checking current rooms and hours. In heat, carry water, shorten Boboli or Fiesole’s exposed remains and put the indoor visit first.'],
+        ],
+        reviewDate: '5 October 2026', reviewIsoDate: '2026-10-05', publishedIsoDate: '2026-09-26',
         sources: [
-          ['https://www.uffizi.it/en/visit', 'Uffizi Galleries — official Pitti and Boboli information'],
-          ['https://feelflorence.it/', 'FeelFlorence — official district and transport planning']
+          ['https://www.uffizi.it/en/pitti-palace', 'Uffizi Galleries — Pitti Palace collections and visitor information'],
+          ['https://www.uffizi.it/en/boboli-garden', 'Uffizi Galleries — Boboli history, map, slopes and accessibility'],
+          ['https://www.comune.fiesole.fi.it/vivere-il-comune/luoghi/musei-di-fiesole', 'Comune di Fiesole — archaeological area, museum and bus directions'],
+          ['https://www.at-bus.it/en', 'Autolinee Toscane — current regional bus service and timetable'],
+          ['https://feelflorence.it/', 'FeelFlorence — official Florence visitor information']
         ]
+
       }),
       g({
         slug: 'pisa-lucca-rail-pair',
-        name: 'Pisa or Lucca by Rail',
-        instrument: 'Two-station rail hinge',
-        layout: 'western-tuscany-rail-hinge',
-        structure: 'rail-to-street-braid',
-        imageQuery: 'Lucca walls Tuscany city panorama Pisa tower',
-        imageAlt: 'Lucca’s historic walls and Tuscan city landscape',
-        purpose: 'Choose Pisa for the Field of Miracles, Lucca for a wall-and-city circuit or a deliberately limited two-city rail day, matching each station to its first gate and accepting what the second stop removes.',
-        summary: 'Reach one western Tuscany city by the useful station, complete its principal urban route and add the second only when the train and return still leave a meaningful block.',
+        name: 'Pisa or Lucca by Rail', instrument: 'Pisa or Lucca by train', layout: 'western-tuscany-rail-hinge', structure: 'rail-to-street-braid',
+        imageQuery: 'Lucca walls Tuscany city panorama Pisa tower', imageAlt: 'Lucca’s historic walls and Tuscan city landscape',
+        purpose: 'Choose one western-city day around its strongest route: Pisa’s cathedral precinct or Lucca’s rampart park and street grid. Add the second city only if the current train schedule leaves time for a visit rather than a station-to-station checklist.',
+        summary: 'Pisa is a concentrated cathedral square; Lucca is a walkable walled city. Choose the useful station, reserve the Tower only if you want the climb, and treat the other city as a second day unless the trains make a long pair worthwhile.',
+        decisionLabel: 'Choose the city first', decisionTitle: 'Pisa for the cathedral square; Lucca for the wall walk.',
+        decisionIntro: 'Pick one city as the anchor, then check the train gap and return before adding a second.',
         choices: [
-          ['Pisa depth', 'Use the Field of Miracles, one booked monument and the river or civic centre. It gives architectural concentration but sacrifices Lucca’s wall circuit.'],
-          ['Lucca depth', 'Use the walls, one church or museum and the street grid as a complete day. It offers a coherent circuit but no Leaning Tower visit.'],
-          ['Limited rail pair', 'Give one city the main interior and the other a bounded exterior walk. It provides contrast but requires strict cutoffs and light luggage.']
+          ['Pisa and Piazza del Duomo', 'From a train that actually stops at Pisa San Rossore, the station is nearer the cathedral square; Pisa Centrale is more useful for the river and central streets. The square holds Cathedral, Baptistery, Campanile and Camposanto. Book the Tower only if its timed slot and 251-step climb suit the day.'],
+          ['Lucca and the city walls', 'From Lucca station at Piazza Ricasoli, walk from just outside the walls into the historic centre. Use the ramparts as a 4-kilometre-plus tree-lined public park, then descend for one church, piazza or meal. A full circuit is the main outing, not a short station layover.'],
+          ['A limited two-city rail day', 'Keep one city’s main interior or the Tower as the anchor and give the second a short, preselected walk. This is a long day with train gaps and station approaches; keep the pairing only if published services leave useful time in both cities and a protected Florence return.']
         ],
-        access: 'Pisa Centrale connects to the river and centre, while Pisa San Rossore can be useful for the Field of Miracles on appropriate services. Lucca station sits outside the walls near a specific gate. Check the service pattern rather than choosing solely by station-name proximity.',
-        tradeoff: 'Pisa and Lucca are close enough for a rail pair but rich enough for separate days. Choosing both gives up a second major interior and relaxed meals; choosing one allows the city’s river, walls and streets to become more than a photo stop.',
+        access: 'Check the actual stop on each train: Pisa San Rossore approaches Piazza del Duomo, while Pisa Centrale serves the river and central streets. Lucca station is at Piazza Ricasoli just outside the walls, a short walk from the historic centre. Match the ticket and first route before leaving Florence; the two Pisa stations are not interchangeable.',
+        tradeoff: 'Pisa concentrates four major monuments in one square; Lucca spreads a visit between its wall park and streets. Seeing both in a day saves a hotel move but costs time to explore either one. A full day in one city usually leaves room for a museum, a proper meal and a slower walk.',
         stages: [
-          ['Choose the first station', 'Match Pisa Centrale or San Rossore, or Lucca station, to the first booked or walking commitment.'],
-          ['Complete the primary city', 'Use one monument cluster or wall circuit without watching the next train throughout the visit.'],
-          ['Decide whether the hinge still works', 'Add the second city only when the confirmed service leaves a useful block and a protected return.'],
-          ['Exit through the nearest gate', 'Finish toward the station serving the evening train rather than crossing the centre again.']
+          ['Read the train stops', 'Use the date-specific Trenitalia service: choose Pisa San Rossore only when your train stops there, Pisa Centrale for its river and centre, or Lucca for Piazza Ricasoli. Save the return before booking a timed monument.'],
+          ['Give one city the long block', 'In Pisa, walk the Piazza del Duomo ensemble and take the Tower only with a booked slot. In Lucca, enter from Piazza Ricasoli and start with either the wall promenade or the street centre, not both as a race.'],
+          ['Choose the second layer', 'Stay in Pisa for the Arno-side streets or a museum; in Lucca, descend from the ramparts for a church or piazza. Add the other city only when the real service gap still leaves a meaningful visit.'],
+          ['Leave from the station you planned', 'Walk back to the named station with time for the return train. In a two-city day, cut the second stop if its transfer would put the Florence connection or reserved entry at risk.']
         ],
-        fallback: 'If the rail pair breaks, stay in the first city and add its river, walls, civic museum or quieter church layer. A complete single city is better than an hour on the second platform.',
+        routeTitle: 'One station, one complete city, then decide', routeLead: 'Choose Pisa or Lucca as the anchor before leaving Florence; build any second stop around the live train board.',
+        routeLabels: ['Check the train stops', 'Walk the main site', 'Add a nearby layer', 'Protect the return'],
+        whatToSee: [
+          ['PISA · PIAZZA DEL DUOMO', 'Look beyond the leaning tower', 'The Opera della Primaziale describes a four-monument square: Cathedral, Baptistery, Campanile and Camposanto. Their scale and placement make the visit a medieval religious ensemble, not just a queue for a tower photograph. Select the interior or climb you actually want.'],
+          ['PISA · CAMPANILE', 'A timed visit with a steep stair', 'The Opera’s accessibility information describes the Tower visit as about 30 minutes and 251 steps, with access restrictions. Check current admission and slot availability; the square and its other monuments remain an option if the climb does not fit.'],
+          ['LUCCA · CITY WALLS', 'A defensive ring turned into a public park', 'Lucca Tourism dates the walls’ construction to 1504–1645 and describes a continuous, tree-lined path over four kilometres long. Their nineteenth-century conversion into a public promenade is the point of the walk: military embankment, shade and everyday city life share one circuit.']
+        ],
+        fallback: 'If the train pair is awkward or disrupted, choose one city and complete its main visit. Stay in Pisa for the river and central streets, or in Lucca for the walls and historic centre. In hot weather shorten the exposed square or wall circuit; in rain use indoor museums or churches after checking current openings.',
         watch: [
-          ['Pisa stations are not interchangeable', 'Service patterns and the walking destination matter; the nearest stop is not always served by the chosen train.'],
-          ['Tower products use timed rules', 'The square is public, but individual monuments and climbs have separate admission conditions.'],
-          ['Lucca’s walls take real time', 'A full circuit plus the street core is a substantial route, not a short station layover.']
+          ['Pisa has two useful but different stations', 'San Rossore is close to the cathedral precinct only on trains that call there. Centrale is not a failed arrival; it serves a different walk. Check the date-specific stop and return on Trenitalia.'],
+          ['The Tower uses a timed climb', 'The Opera describes about 30 minutes and 251 steps, with access restrictions. Confirm the official slot and current conditions; do not build a rail pair around an unconfirmed climb.'],
+          ['Lucca’s wall circuit is over four kilometres', 'The ramparts are a substantial walk. Choose a shorter section or another city layer if heat, rain or mobility makes the full ring unsuitable.']
         ],
-        duration: 'Allow a full day for either city. A two-city pair needs eight to ten hours and should include only one major controlled interior.',
-        combine: 'Combine Pisa with its river or Lucca with its walls. Add the other city only as a bounded contrast, not another full checklist.',
-        verify: 'Check current rail stops and disruptions, the exact monument ticket in Pisa, Lucca city access and the final Florence return.',
+        duration: 'Guide estimates: allow about 4–6 hours for one city’s main visit and a meal; a full Lucca wall circuit adds a substantial walk. A Pisa–Lucca pair can take most of a long day once trains, station walks and a timed Tower visit are counted; verify the schedule rather than relying on a fixed duration.',
+        combine: 'In Pisa, add the Arno-side centre to Piazza del Duomo. In Lucca, combine the walls with one church or piazza. Join both cities only when current rail times leave a real visit in each.',
+        verify: 'Check Trenitalia’s date-specific stops and return, the Opera’s Pisa monument slots and access restrictions, and Lucca’s current arrival and wall information.',
+        faq: [
+          ['Which Pisa station should I use?', 'San Rossore is close to Piazza del Duomo when your chosen train stops there. Centrale serves the river and central streets. Check the actual calling pattern and return; the stations serve different walks.'],
+          ['How long is the Leaning Tower visit?', 'The Opera della Primaziale lists about 30 minutes and 251 steps for the Tower visit, with access restrictions. Treat that as the climb itself, not a full square visit, and check the current timed admission.'],
+          ['Can I visit both cities in one day?', 'Only if date-specific trains leave time for a meaningful visit in each city and a protected Florence return. Choose one main interior or Tower climb and drop the second city if the train gap is too short.']
+        ],
+        reviewDate: '5 October 2026', reviewIsoDate: '2026-10-05', publishedIsoDate: '2026-09-26',
         sources: [
-          ['https://www.turismo.pisa.it/', 'Comune di Pisa — official tourism information'],
-          ['https://turismo.lucca.it/en/information/how-to-get/', 'Lucca Tourism — official arrival information']
+          ['https://www.opapisa.it/en/', 'Opera della Primaziale Pisana — official monument visits and tickets'],
+          ['https://www.opapisa.it/en/informations/accessibility-2/', 'Opera della Primaziale Pisana — Tower duration, steps and access'],
+          ['https://www.turismo.pisa.it/', 'Comune di Pisa — official city visitor information'],
+          ['https://turismo.lucca.it/en/information/how-to-get/', 'Lucca Tourism — station and historic-centre arrival'],
+          ['https://turismo.lucca.it/en/the-Lucca-walls/city-%E2%80%8B%E2%80%8Bwalls-park/', 'Lucca Tourism — walls history and public promenade'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — date-specific official rail planning']
         ]
+
       })
     ]
   }),

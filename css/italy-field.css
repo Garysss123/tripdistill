@@ -792,3 +792,21 @@ body[data-page^="it-rome-"] .section.compact:has(> .ad-slot[data-ad-slot]:empty)
   .it-reading-grid article,
   .it-reading-grid article:last-child:nth-child(odd) { grid-column: 1; }
 }
+
+/* Keep Florence's long English guide titles readable in the narrow editorial column. */
+body[data-page^="it-florence-pisa-lucca-"] .it-field-copy h1 {
+  max-width: 100%;
+  font-size: clamp(2.8rem, 4.6vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+@media (max-width: 760px) {
+  body[data-page^="it-florence-pisa-lucca-"] .it-field-copy h1 {
+    font-size: clamp(2.45rem, 10.5vw, 3.2rem);
+    line-height: 1.02;
+  }
+}
