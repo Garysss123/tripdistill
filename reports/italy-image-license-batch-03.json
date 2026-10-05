@@ -1,0 +1,662 @@
+{
+  "title": "Italy photo source verification — batch 03",
+  "reviewedOn": "2026-10-05",
+  "scope": "The remaining 19 unchecked Italy image records, plus replacement of two previously flagged source exceptions (Cinque Terre and Tropea). These decisions cover only existing image slots and preserve all current routes.",
+  "method": "Opened each exact Wikimedia Commons file page and compared its depicted subject, page author/uploader, stated license version and any separate notices with the source manifest. The project fetcher then rechecked Commons metadata and local image integrity for all 21 current records. Four newly selected derivatives were visually inspected after conversion. A Commons page statement is not an independent audit of the underlying rights chain.",
+  "counts": {
+    "remainingItalyAssetsSourcePagesChecked": 19,
+    "originalRecordsRetained": 17,
+    "originalRecordsReplaced": 2,
+    "priorSpecialExceptionsReplaced": 2,
+    "replacementSourcePagesChecked": 4,
+    "currentItalyAssetCount": 60,
+    "currentItalyAssetsWithSourcePageChecks": 60,
+    "currentItalyAssetsStillUnverified": 0,
+    "currentSiteImageAssetCount": 779,
+    "currentSiteAssetsWithSourcePageChecks": 66,
+    "currentSiteLicenseClaimsNotIndependentlyVerified": 713,
+    "currentImagesVisuallyReviewed": 22,
+    "imagesVisuallyReviewedInThisBatch": 4,
+    "metadataConflicts": 0,
+    "incompleteAttributionFields": 0
+  },
+  "findings": [
+    "Of the remaining 19 source pages, 17 matched their recorded creator, place and license and were retained. The Cannaregio and San Marco source pages carried separate no-social-media restrictions; since the site publishes og:image previews, those two images were replaced with place-matched alternatives.",
+    "The earlier Tropea source used the name Luigino in the uploader field and Luigino C. in the description; the identity could not be resolved. The earlier Cinque Terre page had a separate author request for contact before commercial use alongside the CC BY-SA 4.0 section. Both images were replaced conservatively. No photographer was contacted and no email, sample image or link was sent.",
+    "Four new source pages were checked for the replacement selections. Norbert Nagel’s Tropea page explicitly describes its specimen-copy/link request as optional rather than a license condition. The new Cinque Terre page has no pre-contact request. These observations do not invalidate or revoke the old source pages’ stated licenses.",
+    "The Positano, Sacra di San Michele, Perugia and Vicenza pages contain generic Wiki Loves Monuments authorisation boilerplate; the inspected pages did not show a separate explicit commercial-reproduction restriction.",
+    "The Padua source description names Piero tasso while the uploader account is P tasso; the visible creator attribution retains both names.",
+    "The inventory leaves 713 of 779 sitewide image license claims unverified at source-page level. Complete source, creator and license metadata is not equivalent to independently confirmed rights ownership."
+  ],
+  "items": [
+    {
+      "key": "dolomites-trentino-south-tyrol/bolzano-renon",
+      "route": "/italy/dolomites-trentino-south-tyrol/bolzano-renon/",
+      "assetPath": "/assets/images/italy-dolomites-trentino-south-tyrol-bolzano-renon.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gries-Bozen_vom_Guntschnaberg_Richtung_S%C3%BCden.jpg",
+        "sourceTitle": "File:Gries-Bozen vom Guntschnaberg Richtung Süden.jpg",
+        "creator": "Bartleby08",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gries-Bozen_vom_Guntschnaberg_Richtung_S%C3%BCden.jpg",
+        "sourceTitle": "File:Gries-Bozen vom Guntschnaberg Richtung Süden.jpg",
+        "creditName": "Bartleby08",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Bartleby08, the Bolzano view subject, and CC BY-SA 4.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Bolzano below the Renon plateau and Dolomite landscape",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "florence-pisa-lucca/pisa-lucca-rail-pair",
+      "route": "/italy/florence-pisa-lucca/pisa-lucca-rail-pair/",
+      "assetPath": "/assets/images/italy-florence-pisa-lucca-pisa-lucca-rail-pair.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lucca,_mura_e_campanila_San_Frediano.jpg",
+        "sourceTitle": "File:Lucca, mura e campanila San Frediano.jpg",
+        "creator": "Palickap",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lucca,_mura_e_campanila_San_Frediano.jpg",
+        "sourceTitle": "File:Lucca, mura e campanila San Frediano.jpg",
+        "creditName": "Palickap",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Palickap, Lucca walls and San Frediano bell tower subject, and CC BY-SA 4.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Lucca’s historic walls and Tuscan city landscape",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "sorrento-amalfi-capri/positano-amalfi-ravello",
+      "route": "/italy/sorrento-amalfi-capri/positano-amalfi-ravello/",
+      "assetPath": "/assets/images/italy-sorrento-amalfi-capri-positano-amalfi-ravello.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Positano_panorama.jpg",
+        "sourceTitle": "File:Positano panorama.jpg",
+        "creator": "Nicola Cerroni",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Positano_panorama.jpg",
+        "sourceTitle": "File:Positano panorama.jpg",
+        "creditName": "Nicola Cerroni",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Nicola Cerroni, Positano subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Positano stacked above the sea on the Amalfi Coast",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "sorrento-amalfi-capri/sorrento-gateway",
+      "route": "/italy/sorrento-amalfi-capri/sorrento-gateway/",
+      "assetPath": "/assets/images/italy-sorrento-amalfi-capri-sorrento-gateway.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sorrento_Cliff_2.jpg",
+        "sourceTitle": "File:Sorrento Cliff 2.jpg",
+        "creator": "Halley from Boston",
+        "statedLicense": "CC BY 2.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sorrento_Cliff_2.jpg",
+        "sourceTitle": "File:Sorrento Cliff 2.jpg",
+        "creditName": "Halley from Boston",
+        "exactLicenseVersion": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Halley from Boston, Sorrento subject, and CC BY 2.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Sorrento’s cliffs and marina above the Bay of Naples",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "turin-piedmont/langhe-alba-asti",
+      "route": "/italy/turin-piedmont/langhe-alba-asti/",
+      "assetPath": "/assets/images/italy-turin-piedmont-langhe-alba-asti.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Langhe.jpg",
+        "sourceTitle": "File:Langhe.jpg",
+        "creator": "Phalaenopsis Aphrodite from Italy",
+        "statedLicense": "CC BY 2.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Langhe.jpg",
+        "sourceTitle": "File:Langhe.jpg",
+        "creditName": "Phalaenopsis Aphrodite from Italy",
+        "exactLicenseVersion": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Phalaenopsis Aphrodite, Langhe subject, and CC BY 2.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Vineyard hills and villages in the Langhe area of Piedmont",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "turin-piedmont/royal-turin-egyptian-museum",
+      "route": "/italy/turin-piedmont/royal-turin-egyptian-museum/",
+      "assetPath": "/assets/images/italy-turin-piedmont-royal-turin-egyptian-museum.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Piazza_Castello_di_Torino_e_scorcio_della_Piazzetta_Reale.jpg",
+        "sourceTitle": "File:Piazza Castello di Torino e scorcio della Piazzetta Reale.jpg",
+        "creator": "Guglielmo di Rivoli",
+        "statedLicense": "CC0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Piazza_Castello_di_Torino_e_scorcio_della_Piazzetta_Reale.jpg",
+        "sourceTitle": "File:Piazza Castello di Torino e scorcio della Piazzetta Reale.jpg",
+        "creditName": "Guglielmo di Rivoli",
+        "exactLicenseVersion": "CC0",
+        "licenseLink": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Guglielmo di Rivoli, Piazza Castello subject, and CC0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Piazza Castello and the Royal Palace complex in Turin",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "turin-piedmont/venaria-sacra-san-michele",
+      "route": "/italy/turin-piedmont/venaria-sacra-san-michele/",
+      "assetPath": "/assets/images/italy-turin-piedmont-venaria-sacra-san-michele.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sacra_di_San_Michele_272.jpg",
+        "sourceTitle": "File:Sacra di San Michele 272.jpg",
+        "creator": "Cristian Buda",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sacra_di_San_Michele_272.jpg",
+        "sourceTitle": "File:Sacra di San Michele 272.jpg",
+        "creditName": "Cristian Buda",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Cristian Buda, Sacra di San Michele subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Sacra di San Michele rising above the Susa Valley in Piedmont",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "umbria/assisi-franciscan-city",
+      "route": "/italy/umbria/assisi-franciscan-city/",
+      "assetPath": "/assets/images/italy-umbria-assisi-franciscan-city.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Papal_Basilica_of_Saint_Francis_of_Assisi.jpg",
+        "sourceTitle": "File:Papal Basilica of Saint Francis of Assisi.jpg",
+        "creator": "Peter K Burian",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Papal_Basilica_of_Saint_Francis_of_Assisi.jpg",
+        "sourceTitle": "File:Papal Basilica of Saint Francis of Assisi.jpg",
+        "creditName": "Peter K Burian",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Peter K Burian, Assisi basilica subject, and CC BY-SA 4.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "The Basilica of Saint Francis and the hill town of Assisi",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "umbria/orvieto-cliff-city",
+      "route": "/italy/umbria/orvieto-cliff-city/",
+      "assetPath": "/assets/images/italy-umbria-orvieto-cliff-city.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Orvieto_panorama.jpg",
+        "sourceTitle": "File:Orvieto panorama.jpg",
+        "creator": "Hans Peter Schaefer, http://www.reserv-a-rt.de",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Orvieto_panorama.jpg",
+        "sourceTitle": "File:Orvieto panorama.jpg",
+        "creditName": "Hans Peter Schaefer, http://www.reserv-a-rt.de",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Hans Peter Schaefer, Orvieto panorama subject, and CC BY-SA 3.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Orvieto Cathedral and the town standing above its tufa cliff",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "umbria/perugia-ridge-city",
+      "route": "/italy/umbria/perugia-ridge-city/",
+      "assetPath": "/assets/images/italy-umbria-perugia-ridge-city.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Perugia_-_Palazzo_dei_Priori_-_2025-09-07_21-53-14_001.JPG",
+        "sourceTitle": "File:Perugia - Palazzo dei Priori - 2025-09-07 21-53-14 001.JPG",
+        "creator": "Maddy16869",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Perugia_-_Palazzo_dei_Priori_-_2025-09-07_21-53-14_001.JPG",
+        "sourceTitle": "File:Perugia - Palazzo dei Priori - 2025-09-07 21-53-14 001.JPG",
+        "creditName": "Maddy16869",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Maddy16869, Palazzo dei Priori subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Perugia’s historic centre rising along its Umbrian ridge",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "veneto-art-cities/padua-frescoes-basilica",
+      "route": "/italy/veneto-art-cities/padua-frescoes-basilica/",
+      "assetPath": "/assets/images/italy-veneto-art-cities-padua-frescoes-basilica.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Prato_5_con_Santo.JPG",
+        "sourceTitle": "File:Prato 5 con Santo.JPG",
+        "creator": "P tasso",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Prato_5_con_Santo.JPG",
+        "sourceTitle": "File:Prato 5 con Santo.JPG",
+        "creditName": "Piero tasso (P tasso)",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for CC BY-SA 3.0. Its description names Piero tasso while the upload account is P tasso; both names are retained in the site credit.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "The domes of the Basilica of Saint Anthony in Padua",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "veneto-art-cities/verona-arena-river",
+      "route": "/italy/veneto-art-cities/verona-arena-river/",
+      "assetPath": "/assets/images/italy-veneto-art-cities-verona-arena-river.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
+        "sourceTitle": "File:Verona Italy Piazza Bra from arena DSC08039.JPG",
+        "creator": "David Monniaux",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
+        "sourceTitle": "File:Verona Italy Piazza Bra from arena DSC08039.JPG",
+        "creditName": "David Monniaux",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for David Monniaux, Piazza Bra subject, and CC BY-SA 3.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "The Roman Arena facing Piazza Bra in Verona",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "veneto-art-cities/vicenza-palladian-city",
+      "route": "/italy/veneto-art-cities/vicenza-palladian-city/",
+      "assetPath": "/assets/images/italy-veneto-art-cities-vicenza-palladian-city.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Basilica_Palladiana_a_Vicenza_Italy_and_Piazza_dei_Signori_and_Loggia_del_Capitaniato_Palace.jpg",
+        "sourceTitle": "File:Basilica Palladiana a Vicenza Italy and Piazza dei Signori and Loggia del Capitaniato Palace.jpg",
+        "creator": "Federico",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Basilica_Palladiana_a_Vicenza_Italy_and_Piazza_dei_Signori_and_Loggia_del_Capitaniato_Palace.jpg",
+        "sourceTitle": "File:Basilica Palladiana a Vicenza Italy and Piazza dei Signori and Loggia del Capitaniato Palace.jpg",
+        "creditName": "Federico",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Federico, Vicenza landmarks subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "The Basilica Palladiana on Piazza dei Signori in Vicenza",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "venice-lagoon/cannaregio-dorsoduro-giudecca",
+      "route": "/italy/venice-lagoon/cannaregio-dorsoduro-giudecca/",
+      "assetPath": "/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "replaced_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Palazzo_Labia_in_Venice_on_Cannaregio_canal.JPG",
+        "sourceTitle": "File:Palazzo Labia in Venice on Cannaregio canal.JPG",
+        "creator": "Wolfgang Moroder",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "The prior Wolfgang Moroder page contained a separate restriction against social-media uploads. Because this site exposes the hero through og:image previews, it was replaced with a source-checked canal image. This is not a finding that its listed CC BY-SA 3.0 grant is invalid."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Canale_di_Cannaregio_(7227730810).jpg",
+        "sourceTitle": "File:Canale di Cannaregio (7227730810).jpg",
+        "creditName": "Tony Hisgett from Birmingham, UK",
+        "exactLicenseVersion": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Tony Hisgett, Cannaregio canal subject, and CC BY 2.0; Commons records the Flickr review. No separate restriction was present on the checked file page.",
+        "visualReviewStatus": "visually_reviewed_2026-10-05",
+        "imageAlt": "A canal and residential street in Cannaregio, Venice",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The prior Wolfgang Moroder page contained a separate restriction against social-media uploads. Because this site exposes the hero through og:image previews, it was replaced with a source-checked canal image. This is not a finding that its listed CC BY-SA 3.0 grant is invalid.",
+      "replacedSourcePage": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Palazzo_Labia_in_Venice_on_Cannaregio_canal.JPG",
+        "sourceTitle": "File:Palazzo Labia in Venice on Cannaregio canal.JPG",
+        "creator": "Wolfgang Moroder",
+        "statedLicense": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "key": "venice-lagoon/murano-burano-torcello",
+      "route": "/italy/venice-lagoon/murano-burano-torcello/",
+      "assetPath": "/assets/images/italy-venice-lagoon-murano-burano-torcello.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Burano_-_canal_and_colourful_houses_(36071932225).jpg",
+        "sourceTitle": "File:Burano - canal and colourful houses (36071932225).jpg",
+        "creator": "Jorge Franganillo",
+        "statedLicense": "CC BY 2.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Burano_-_canal_and_colourful_houses_(36071932225).jpg",
+        "sourceTitle": "File:Burano - canal and colourful houses (36071932225).jpg",
+        "creditName": "Jorge Franganillo",
+        "exactLicenseVersion": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Jorge Franganillo, Burano canal subject, and CC BY 2.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Colourful houses and a canal on Burano in the Venetian Lagoon",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "venice-lagoon/san-marco-rialto",
+      "route": "/italy/venice-lagoon/san-marco-rialto/",
+      "assetPath": "/assets/images/italy-venice-lagoon-san-marco-rialto.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "replaced_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_and_Venice_on_Easter_2013.jpg",
+        "sourceTitle": "File:Panorama Piazza San Marco and Venice on Easter 2013.jpg",
+        "creator": "Wolfgang Moroder",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "The prior Wolfgang Moroder page contained a separate restriction against social-media uploads. Because this site exposes the hero through og:image previews, it was replaced with a source-checked waterfront panorama. This is not a finding that its listed CC BY-SA 3.0 grant is invalid."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_Venezia_06_2017_2965.jpg",
+        "sourceTitle": "File:Panorama Piazza San Marco Venezia 06 2017 2965.jpg",
+        "creditName": "Mariordo (Mario Roberto Durán Ortiz)",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Mariordo (Mario Roberto Durán Ortiz), the San Marco waterfront panorama, and CC BY-SA 4.0.",
+        "visualReviewStatus": "visually_reviewed_2026-10-05",
+        "imageAlt": "The Doge’s Palace and waterfront at San Marco in Venice",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The prior Wolfgang Moroder page contained a separate restriction against social-media uploads. Because this site exposes the hero through og:image previews, it was replaced with a source-checked waterfront panorama. This is not a finding that its listed CC BY-SA 3.0 grant is invalid.",
+      "replacedSourcePage": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_and_Venice_on_Easter_2013.jpg",
+        "sourceTitle": "File:Panorama Piazza San Marco and Venice on Easter 2013.jpg",
+        "creator": "Wolfgang Moroder",
+        "statedLicense": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "key": "western-sicily/agrigento-selinunte",
+      "route": "/italy/western-sicily/agrigento-selinunte/",
+      "assetPath": "/assets/images/italy-western-sicily-agrigento-selinunte.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Valle_dei_Templi_%E2%80%93_Temple_of_Concordia_2024b.jpg",
+        "sourceTitle": "File:Valle dei Templi – Temple of Concordia 2024b.jpg",
+        "creator": "Cayambe",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Valle_dei_Templi_%E2%80%93_Temple_of_Concordia_2024b.jpg",
+        "sourceTitle": "File:Valle dei Templi – Temple of Concordia 2024b.jpg",
+        "creditName": "Cayambe",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Cayambe, Temple of Concordia subject, and CC BY-SA 4.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "The Temple of Concordia on the archaeological ridge at Agrigento",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "western-sicily/palermo-monreale-cefalu",
+      "route": "/italy/western-sicily/palermo-monreale-cefalu/",
+      "assetPath": "/assets/images/italy-western-sicily-palermo-monreale-cefalu.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panoramica_Cattedrale_di_Palermo.jpg",
+        "sourceTitle": "File:Panoramica Cattedrale di Palermo.jpg",
+        "creator": "Kiban",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panoramica_Cattedrale_di_Palermo.jpg",
+        "sourceTitle": "File:Panoramica Cattedrale di Palermo.jpg",
+        "creditName": "Kiban",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Kiban, Palermo Cathedral panorama subject, and CC BY-SA 3.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Palermo Cathedral rising above the historic city streets",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "western-sicily/trapani-erice-egadi",
+      "route": "/italy/western-sicily/trapani-erice-egadi/",
+      "assetPath": "/assets/images/italy-western-sicily-trapani-erice-egadi.webp",
+      "scope": "remaining_unchecked_record",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Wind_mill_at_salt.pans.jpg",
+        "sourceTitle": "File:Wind mill at salt.pans.jpg",
+        "creator": "Malcanton",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "Original source page matched the recorded creator, subject and stated license."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Wind_mill_at_salt.pans.jpg",
+        "sourceTitle": "File:Wind mill at salt.pans.jpg",
+        "creditName": "Malcanton",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Source page checked for Malcanton, Trapani salt-pan windmill subject, and CC BY-SA 4.0.",
+        "visualReviewStatus": "not_individually_visually_reviewed",
+        "imageAlt": "Salt pans and windmills glowing at sunset near Trapani",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "genoa-liguria/cinque-terre-rail-trails",
+      "route": "/italy/genoa-liguria/cinque-terre-rail-trails/",
+      "assetPath": "/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp",
+      "scope": "supplemental_prior_exception",
+      "decision": "replaced_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cemetery_Corniglia_Monterosso_Cinque_Terre_Sep23_A7C_06872.jpg",
+        "sourceTitle": "File:Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg",
+        "creator": "Timothy A. Gonsalves",
+        "statedLicense": "CC BY-SA 4.0",
+        "finding": "The prior author section asked for contact before commercial use, separate from the page’s CC BY-SA 4.0 terms. A different source-checked image was selected conservatively. No contact was made; this review does not infer a license revocation or make a legal conclusion."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Panorama_delle_Cinque_Terre_da_Monterosso.JPG",
+        "sourceTitle": "File:Panorama delle Cinque Terre da Monterosso.JPG",
+        "creditName": "Luca Aless",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Replacement source page checked for Luca Aless, Cinque Terre coast viewed from Monterosso, and CC BY-SA 4.0. No pre-contact request was present on the checked file page.",
+        "visualReviewStatus": "visually_reviewed_2026-10-05",
+        "imageAlt": "A Cinque Terre village compressed between the Ligurian coast and steep hills",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The prior author section asked for contact before commercial use, separate from the page’s CC BY-SA 4.0 terms. A different source-checked image was selected conservatively. No contact was made; this review does not infer a license revocation or make a legal conclusion.",
+      "replacedSourcePage": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cemetery_Corniglia_Monterosso_Cinque_Terre_Sep23_A7C_06872.jpg",
+        "sourceTitle": "File:Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg",
+        "creator": "Timothy A. Gonsalves",
+        "statedLicense": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "key": "basilicata-calabria/tropea-scilla-reggio",
+      "route": "/italy/basilicata-calabria/tropea-scilla-reggio/",
+      "assetPath": "/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp",
+      "scope": "supplemental_prior_exception",
+      "decision": "replaced_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Palaces_of_the_old_town_of_Tropea_perched_on_a_Cliff_overlooking_the_beach_below_-_Province_of_Vibo_Valentia,_Calabria,_Italy.jpg",
+        "sourceTitle": "File:Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg",
+        "creator": "The original uploader was Luigino at Italian Wikipedia .",
+        "statedLicense": "CC BY-SA 3.0",
+        "finding": "The earlier source page identified the uploader as Luigino but its description as Luigino C.; the underlying identity could not be established. A different source-checked Tropea photograph avoids retaining that unresolved attribution."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
+        "sourceTitle": "File:Santa Maria dell'Isola - Tropea - Calabria - Italy - July 17th 2013 - 01.jpg",
+        "creditName": "Norbert Nagel",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-05",
+        "verificationEvidence": "Replacement source page checked for Norbert Nagel, Santa Maria dell’Isola in Tropea, and CC BY-SA 3.0. The page says a specimen copy or link is a request, not a license condition; none was sent.",
+        "visualReviewStatus": "visually_reviewed_2026-10-05",
+        "imageAlt": "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The earlier source page identified the uploader as Luigino but its description as Luigino C.; the underlying identity could not be established. A different source-checked Tropea photograph avoids retaining that unresolved attribution.",
+      "replacedSourcePage": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Palaces_of_the_old_town_of_Tropea_perched_on_a_Cliff_overlooking_the_beach_below_-_Province_of_Vibo_Valentia,_Calabria,_Italy.jpg",
+        "sourceTitle": "File:Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg",
+        "creator": "The original uploader was Luigino at Italian Wikipedia .",
+        "statedLicense": "CC BY-SA 3.0"
+      }
+    }
+  ]
+}

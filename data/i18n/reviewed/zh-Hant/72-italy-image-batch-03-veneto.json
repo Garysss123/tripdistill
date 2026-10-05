@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/veneto-art-cities/",
+    "/italy/veneto-art-cities/verona-arena-river/",
+    "/italy/veneto-art-cities/vicenza-palladian-city/",
+    "/italy/veneto-art-cities/padua-frescoes-basilica/"
+  ],
+  "translations": {
+    "— Piero tasso (P tasso),": "— 攝影：Piero tasso (P tasso)，"
+  }
+}

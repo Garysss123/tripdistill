@@ -21,8 +21,133 @@ const verifiedBySourcePattern = [
   { pattern: /Ellery_Creek_Big_Hole/i, detail: 'Commons source page checked for Iambexta, CC BY-SA 4.0, and subject match.' },
   { pattern: /Lascar|Watarrka/i, detail: 'Commons source page checked for Jorge Láscar, CC BY 2.0, and subject match.' },
   { pattern: /Uluru,_Northern_Territory/i, detail: 'Commons source page checked for Philip Muir, CC BY-SA 4.0, and subject match.' },
-  { pattern: /ISS-65.*Kata_Tjuta/i, detail: 'Commons source page checked for NASA, public-domain status, and subject match.' }
+  { pattern: /ISS-65.*Kata_Tjuta/i, detail: 'Commons source page checked for NASA, public-domain status, and subject match.' },
+  { pattern: /Maratea_-_View_from_Camino_San_Biagio/i, detail: 'Commons source page checked for Benjamin Smith, image subject, and CC BY-SA 4.0; older alternative licenses are also listed.' },
+  { pattern: /Matera_gorge_south-2879/i, detail: 'Commons source page checked for Isiwal, image subject, and CC BY-SA 4.0.' },
+  { pattern: /Palaces_of_the_old_town_of_Tropea/i, detail: 'Commons source page checked for CC BY-SA 3.0 and the uploader credit Luigino; the description separately identifies the photo as Luigino C.' },
+  { pattern: /Tri_Cime_panorama_1/i, detail: 'Commons source page checked for Kallerna, Tre Cime subject, and CC BY-SA 4.0.' },
+  { pattern: /View_to_the_Brenta_Dolomites,_Molveno/i, detail: 'Commons source page checked for Zoran Kurelić Rabko, archived Panoramio source, bot license review, and CC BY-SA 3.0.' },
+  { pattern: /Etna,_Catania_\(Italy\)/i, detail: 'Commons source page checked for 1888-stefan, Etna subject, and CC0 1.0 commercial-use dedication.' },
+  { pattern: /Ortigia,_piazza_duomo,_palazzi/i, detail: 'Commons source page checked for Sailko and the CC BY 2.5 option declared in the inventory; CC BY-SA 3.0 and GFDL alternatives are also listed.' },
+  { pattern: /Taormina_-_Teatro_antico_di_Taormina/i, detail: 'Commons source page checked for 231286M, ancient theatre subject, and CC BY-SA 4.0.' },
+  { pattern: /Bologna_Piazza_Maggiore_11/i, detail: 'Commons source page checked for GennaroBologna, Piazza Maggiore subject, and CC BY-SA 4.0.' },
+  { pattern: /Modena_-_Piazza_Grande_-_Duomo/i, detail: 'Commons source page checked for Gerolamondo, Piazza Grande subject, and CC BY-SA 4.0.' },
+  { pattern: /Ravenna,_Emilia-Romagna_-_Basilica_di_San_Vitale/i, detail: 'Commons source page checked for Ingo Mehling, San Vitale subject, CC BY 2.0, and the Commons Flickr license review.' },
+  { pattern: /Firenze_-_Florence_-_Galleria_degli_Uffizi/i, detail: 'Commons source page checked for Txllxt TxllxT, Uffizi terrace and Florence view, and CC BY-SA 4.0.' },
+  { pattern: /Vista_de_Florencia_desde_Piazzale_Michelangelo/i, detail: 'Commons source page checked for Diego Delso and CC BY-SA 4.0; the creator specifies the visible credit Diego Delso, delso.photo, License CC BY-SA and prohibits Facebook uploads.' },
+  { pattern: /Abbey_of_San_Fruttuoso_Camogli_Liguria/i, detail: 'Commons source page checked for Hayden Soloviev, San Fruttuoso subject, and CC BY 4.0.' },
+  { pattern: /Manarola_NW_Cemetery_Corniglia_Monterosso_Cinque_Terre/i, detail: 'Commons source page checked for Timothy A. Gonsalves, Cinque Terre subject, and CC BY-SA 4.0. The author section separately says “Please contact me before commercial use”; the license section lists attribution and share-alike obligations, with no prior-contact condition. No contact was made.' },
+  { pattern: /Genova_panorama_Molo_Carignano/i, detail: 'Commons source page checked for Bbruno, Genoa panorama subject, and CC BY-SA 4.0.' },
+  { pattern: /Bellagio_and_Lake_Como_from_Menaggio-Varenna_ferry/i, detail: 'Commons source page checked for Daniel Case, Lake Como ferry viewpoint, and CC BY-SA 3.0.' },
+  { pattern: /MALCESINE_GARDA_LAKE_AND_SCALIGERO_CASTLE/i, detail: 'Commons source page checked for Avisadehh, Malcesine and Scaliger Castle subject, and CC0 1.0 commercial-use dedication.' },
+  { pattern: /Borromeo-P3P-20170530-010/i, detail: 'Commons source page checked for CucombreLibre, Isola Bella / Lake Maggiore subject, and CC BY 2.0.' },
+  { pattern: /Gran_Sasso_seen_from_East/i, detail: 'Commons source page checked for PaulFo, Gran Sasso subject, and CC0 1.0 dedication.' },
+  { pattern: /Monte_Conero_visto_dalla_spiaggia_Urbani/i, detail: 'Commons source page checked for Gabri307, Monte Conero subject, and CC BY-SA 4.0.' },
+  { pattern: /Urbino-palazzo_e_borgo/i, detail: 'Commons source page checked for Il conte di Luna, Urbino subject, and CC BY-SA 2.0; page records Flickr review.' },
+  { pattern: /Milan-duomo-front-facade/i, detail: 'Commons source page checked for Skarkkai, Milan Cathedral facade subject, and CC0 dedication.' },
+  { pattern: /Santa_Maria_delle_Grazie.jpg/i, detail: 'Commons source page checked for Masi27185 and Santa Maria delle Grazie subject under CC BY-SA 3.0.' },
+  { pattern: /Milano_Naviglio_Grande_am_Abend_1/i, detail: 'Commons source page checked for Zairon, Naviglio Grande subject, and CC BY-SA 4.0.' },
+  { pattern: /Herculaneum_\(39517905442\)/i, detail: 'Commons source page checked for Andrea Schaffer, Herculaneum subject, and CC BY 2.0; page records Flickr review.' },
+  { pattern: /Napoli_vista_dall%27alto._0009/i, detail: 'Commons source page checked for Giuseppe Guida, Naples subject, and CC BY-SA 4.0.' },
+  { pattern: /Ancient_Pompeii_\(LHS\).*52786653083/i, detail: 'Commons source page checked for Tracey Hind / Flickr account Tracey & Doug, Pompeii/Vesuvius subject, Flickr review, and CC BY-SA 2.0.' },
+  { pattern: /Alberobello,_trulli_\(13\)/i, detail: 'Commons source page checked for Palickap, Alberobello trulli subject, and CC BY-SA 4.0.' },
+  { pattern: /Puglia_bari_old-town/i, detail: 'Commons source page checked for Francesco Di Stefano 08, Bari subject, and CC BY-SA 4.0; no separate heritage reproduction notice was present on the checked page.' },
+  { pattern: /Lecce_from_the_air/i, detail: 'Commons source page checked for Joolz, Lecce aerial subject, and CC BY-SA 2.5; no separate heritage reproduction notice was present on the checked page.' },
+  { pattern: /Castello_\(Cagliari\)/i, detail: 'Commons source page checked for Municipality of Cagliari, Cagliari subject, and CC BY-SA 3.0 Italy.' },
+  { pattern: /Cala_Goloritz(?:%C3%A8|è)_13_sept._2017/i, detail: 'Commons source page checked for Nicola Secci, Cala Goloritzé subject, and CC BY-SA 4.0.' },
+  { pattern: /La_Maddalena_-_Isola_di_Budelli_\(01\)/i, detail: 'Commons source page checked for Gianni Careddu, Budelli subject, and CC BY-SA 3.0. The author separately asks for a credit next to the image, a source hyperlink, and an email; no email was sent.' },
+  { pattern: /Costa_parco_naturale_della_Maremma/i, detail: 'Commons source page checked for Denis Dascanio, Maremma Natural Park coast subject, and CC BY-SA 4.0.' },
+  { pattern: /Palaces_-_Piazza_del_Campo_-_Siena_2016/i, detail: 'Commons source page checked for José Luiz Bernardes Ribeiro (Jbribeiro1), Siena subject, and CC BY-SA 4.0. The page asks for a nearby author credit; that credit is present. Its email request was not acted on.' },
+  { pattern: /Val_D_Orcia_In_Autumn_\(179351679\)/i, detail: 'Commons source page checked for Fabrizio Lunardi, Val d’Orcia subject, and CC0 1.0 dedication.' },
+  { pattern: /Faraglioni_in_Capri_09/i, detail: 'Commons source page checked for Abxbay, Capri Faraglioni subject, and CC BY-SA 4.0.' },
 ];
+const verifiedSourcePageDetails = new Map([
+  [
+    "https://commons.wikimedia.org/wiki/File:Gries-Bozen_vom_Guntschnaberg_Richtung_S%C3%BCden.jpg",
+    "Source page checked for Bartleby08, the Bolzano view subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Lucca,_mura_e_campanila_San_Frediano.jpg",
+    "Source page checked for Palickap, Lucca walls and San Frediano bell tower subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Positano_panorama.jpg",
+    "Source page checked for Nicola Cerroni, Positano subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Sorrento_Cliff_2.jpg",
+    "Source page checked for Halley from Boston, Sorrento subject, and CC BY 2.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Langhe.jpg",
+    "Source page checked for Phalaenopsis Aphrodite, Langhe subject, and CC BY 2.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Piazza_Castello_di_Torino_e_scorcio_della_Piazzetta_Reale.jpg",
+    "Source page checked for Guglielmo di Rivoli, Piazza Castello subject, and CC0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Sacra_di_San_Michele_272.jpg",
+    "Source page checked for Cristian Buda, Sacra di San Michele subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Papal_Basilica_of_Saint_Francis_of_Assisi.jpg",
+    "Source page checked for Peter K Burian, Assisi basilica subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Orvieto_panorama.jpg",
+    "Source page checked for Hans Peter Schaefer, Orvieto panorama subject, and CC BY-SA 3.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Perugia_-_Palazzo_dei_Priori_-_2025-09-07_21-53-14_001.JPG",
+    "Source page checked for Maddy16869, Palazzo dei Priori subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Prato_5_con_Santo.JPG",
+    "Source page checked for CC BY-SA 3.0. Its description names Piero tasso while the upload account is P tasso; both names are retained in the site credit."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
+    "Source page checked for David Monniaux, Piazza Bra subject, and CC BY-SA 3.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Basilica_Palladiana_a_Vicenza_Italy_and_Piazza_dei_Signori_and_Loggia_del_Capitaniato_Palace.jpg",
+    "Source page checked for Federico, Vicenza landmarks subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Canale_di_Cannaregio_(7227730810).jpg",
+    "Source page checked for Tony Hisgett, Cannaregio canal subject, and CC BY 2.0; Commons records the Flickr review. No separate restriction was present on the checked file page."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Burano_-_canal_and_colourful_houses_(36071932225).jpg",
+    "Source page checked for Jorge Franganillo, Burano canal subject, and CC BY 2.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_Venezia_06_2017_2965.jpg",
+    "Source page checked for Mariordo (Mario Roberto Durán Ortiz), the San Marco waterfront panorama, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Valle_dei_Templi_%E2%80%93_Temple_of_Concordia_2024b.jpg",
+    "Source page checked for Cayambe, Temple of Concordia subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Panoramica_Cattedrale_di_Palermo.jpg",
+    "Source page checked for Kiban, Palermo Cathedral panorama subject, and CC BY-SA 3.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Wind_mill_at_salt.pans.jpg",
+    "Source page checked for Malcanton, Trapani salt-pan windmill subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Panorama_delle_Cinque_Terre_da_Monterosso.JPG",
+    "Replacement source page checked for Luca Aless, Cinque Terre coast viewed from Monterosso, and CC BY-SA 4.0. No pre-contact request was present on the checked file page."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
+    "Replacement source page checked for Norbert Nagel, Santa Maria dell’Isola in Tropea, and CC BY-SA 3.0. The page says a specimen copy or link is a request, not a license condition; none was sent."
+  ]
+].map(([sourceUrl, detail]) => [sourceUrl, { checkedOn: '2026-10-05', detail }]));
+
 const genericTokens = new Set(('a an and at by from for in into of on or the to with through view photo image picture scene landscape city town lake river road street park guide travel at the a view panorama night day north south east west central main old new near beyond under over beside walk route district guide file webp jpg jpeg commons official').split(' '));
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map((a) => [a.name, a.value])); }
@@ -232,7 +357,22 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/australia-red-centre-kata-tjuta.webp',
   '/assets/images/thailand-andaman-phang-nga.webp',
   '/assets/images/thailand-andaman-ko-lanta.webp',
-  '/assets/images/thailand-andaman-similan.webp'
+  '/assets/images/thailand-andaman-similan.webp',
+  '/assets/images/italy-naples-pompeii-vesuvius-pompeii-city-route.webp',
+  '/assets/images/italy-naples-pompeii-vesuvius-herculaneum-vesuvius.webp',
+  '/assets/images/italy-puglia-alberobello-itria-valley.webp',
+  '/assets/images/italy-puglia-bari-trani-castel-del-monte.webp',
+  '/assets/images/italy-puglia-lecce-otranto-gallipoli.webp',
+  '/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp',
+  '/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp',
+  '/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp'
+]);
+const visualReviewDateByAsset = new Map([
+  ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
+  ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
+  ['/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp', '2026-10-05'],
+  ['/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp', '2026-10-05']
 ]);
 const entries = [];
 const sourceConflicts = [];
@@ -274,7 +414,7 @@ for (const fullPath of assetPaths) {
   const license = uniqueValues('license')[0] || creditMatch?.license || null;
   const licenseUrl = uniqueValues('licenseUrl')[0] || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
-  const verification = sourceUrl ? verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl)) : null;
+  const verification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
   const terms = licenseTerms(license, Boolean(verification));
   const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
   const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
@@ -293,9 +433,9 @@ for (const fullPath of assetPaths) {
     editHistory: editHistory || 'No per-image edit note found in the source record or matched English photo credit.',
     metadataOrigin: dataRecords.length ? 'structured_data_record' : creditMatch ? creditMatch.matching : 'unmatched',
     creditMatchNote: creditMatch?.matchNote || (creditMatch?.matching === 'page_credit_lexical_match' ? 'Unique same-page label/alt match.' : null),
-    visualReviewStatus: visuallyReviewedAssetPaths.has(src) ? 'visually_reviewed_2026-10-04' : 'not_individually_visually_reviewed',
+    visualReviewStatus: visualReviewDateByAsset.has(src) ? `visually_reviewed_${visualReviewDateByAsset.get(src)}` : 'not_individually_visually_reviewed',
     verificationStatus: verification ? 'source_page_checked' : sourceUrl ? 'site_credit_or_metadata_only' : 'missing_source_credit_match',
-    verificationDate: verification ? verifiedOn : null,
+    verificationDate: verification ? (verification.checkedOn || verifiedOn) : null,
     verificationDetail: verification?.detail || null,
     useCount: imageUses.length,
     routes: [...new Set(imageUses.map((use) => use.route))],
@@ -357,7 +497,7 @@ const counts = {
   assetsWithStructuredSourceRecords: entries.filter((row) => row.metadataOrigin === 'structured_data_record').length,
   assetsWithMatchedEnglishCreditOnly: entries.filter((row) => row.metadataOrigin === 'page_credit_lexical_match').length,
   assetsWithExplicitEnglishCreditMatch: entries.filter((row) => row.metadataOrigin === 'explicit_asset_credit_match').length,
-  assetsVisuallyReviewed: entries.filter((row) => row.visualReviewStatus === 'visually_reviewed_2026-10-04').length,
+  assetsVisuallyReviewed: entries.filter((row) => row.visualReviewStatus.startsWith('visually_reviewed_')).length,
   assetsWithOnlyRecordedSourceUrlMatch: entries.filter((row) => row.metadataOrigin === 'source_url_match').length,
   sourcePageChecked: entries.filter((row) => row.verificationStatus === 'source_page_checked').length,
   metadataOrCreditOnly: entries.filter((row) => row.verificationStatus === 'site_credit_or_metadata_only').length,
@@ -368,12 +508,12 @@ const counts = {
 };
 const report = {
   generatedAt: new Date().toISOString(),
-  scope: 'Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: only nine source pages were checked and 770 stated licenses remain unverified. The separate build image tally also includes favicon.svg.',
+  scope: 'Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
   counts,
   verificationMethod: {
     structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',
     visibleCredits: 'Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.',
-    sourcePageChecks: 'Manually checked the eight named Commons source pages on 2026-10-04. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
+    sourcePageChecks: 'Manually checked source pages marked source_page_checked on 2026-10-04 or 2026-10-05, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
     imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
     buildImageCountReconciliation: 'The 779 WebP photos in assets/images plus favicon.svg (an SVG icon counted by build-dist.mjs) explain the previous build tally of 780 images.'
   },
@@ -402,7 +542,7 @@ const summaryLines = [
   '',
   '## Verification limits',
   '',
-  'Nine source pages were manually checked on 2026-10-04. All 779 rows contain source, creator, and license statements, but only 9 of 779 have independent source-page verification. The other 770 license claims are unverified and must not be treated as confirmed permission. Commercial reuse is described only as allowed by the stated license; that claim does not independently confirm the source rights or attribution details.',
+  'Source-page verification counts are computed per file record. Every independently checked source is tagged with the date and finding; unverified claims are reported separately and must not be treated as confirmed permission. Commercial reuse is described only as allowed by the stated license; that claim does not independently confirm the source rights or attribution details.',
   '',
   'The inventory records share-alike rows with the same-license adaptation term. Review row-level attributionTerms and editHistory before reusing an asset.',
   '',
@@ -410,7 +550,7 @@ const summaryLines = [
   '',
   '## Current mismatches',
   '',
-  'The former Trastevere hero showed Piazza Navona and has been replaced. Ten current images received direct visual review during this pass; the other inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
+  'The former Trastevere hero showed Piazza Navona and has been replaced. Four replacement images received direct visual review in the 2026-10-05 batch; 22 of 779 current images have direct visual review across the recorded passes. The other 757 inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
   '',
   'Missing source/creator/license fields: ' + unmatchedByAsset.length + '. Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '.'
 ];

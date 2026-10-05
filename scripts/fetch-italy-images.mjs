@@ -7,7 +7,7 @@ import { italyCentralNortheastClusters } from '../data/italy-central-northeast-g
 import { italyNorthwestAdriaticClusters } from '../data/italy-northwest-adriatic-guides.mjs';
 import { italySouthIslandsClusters } from '../data/italy-south-islands-guides.mjs';
 import { italyImageManifest as existingManifest } from '../data/italy-image-manifest.mjs';
-import { italyImageOverrides } from '../data/italy-image-overrides.mjs';
+import { italyImageOverrides, italyImageCreditOverrides } from '../data/italy-image-overrides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const manifestPath = path.join(root, 'data', 'italy-image-manifest.mjs');
@@ -146,7 +146,7 @@ function entryFrom(candidate, job) {
     alt: job.guide.imageAlt,
     source: info.descriptionurl || `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title).replaceAll('%3A', ':').replaceAll('%20', '_')}`,
     label: page.title.replace(/^File:/, '').replaceAll('_', ' '),
-    creator,
+    creator: italyImageCreditOverrides[job.key] || creator,
     license,
     commonsTitle: page.title,
     remoteSha1: info.sha1
@@ -158,7 +158,8 @@ async function validateEntry(entry, job) {
   const expectedSrc = `/assets/images/italy-${job.cluster.slug}-${job.guide.slug}.webp`;
   if (entry.src !== expectedSrc) throw new Error(`${job.key}: asset path mismatch ${entry.src}`);
   if (entry.alt !== job.guide.imageAlt) throw new Error(`${job.key}: manifest alt is stale`);
-  if (entry.license !== candidate.license || entry.creator !== candidate.creator || entry.remoteSha1 !== candidate.info.sha1) {
+  const expectedCreator = italyImageCreditOverrides[job.key] || candidate.creator;
+  if (entry.license !== candidate.license || entry.creator !== expectedCreator || entry.remoteSha1 !== candidate.info.sha1) {
     throw new Error(`${job.key}: Commons metadata changed; review before refreshing`);
   }
   return candidate;
@@ -200,7 +201,8 @@ try {
       manifest[job.key] = entry;
       usedTitles.add(entry.commonsTitle);
     } else {
-      if (entry.alt !== job.guide.imageAlt) entry = manifest[job.key] = { ...entry, alt: job.guide.imageAlt };
+      const expectedCreator = italyImageCreditOverrides[job.key] || entry.creator;
+      if (entry.alt !== job.guide.imageAlt || entry.creator !== expectedCreator) entry = manifest[job.key] = { ...entry, alt: job.guide.imageAlt, creator: expectedCreator };
       candidate = await validateEntry(entry, job);
       usedTitles.add(entry.commonsTitle);
     }

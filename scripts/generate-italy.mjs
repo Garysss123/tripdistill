@@ -43,7 +43,7 @@ function licenseUrl(license) {
 }
 function imageCredit(image) {
   const license = licenseUrl(image.license);
-  const licenseText = license ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>` : escapeHtml(image.license);
+  const licenseText = license ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.creditLicenseLabel || image.license)}</a>` : escapeHtml(image.license);
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.alt || image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}</li>`;
 }
 const sourceList = (sources) => sources.map(([url, label]) => `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>.</li>`).join('');

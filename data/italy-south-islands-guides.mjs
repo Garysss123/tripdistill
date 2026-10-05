@@ -30,7 +30,7 @@ export const italySouthIslandsClusters = [
         layout: 'port-fortress-hinge',
         structure: 'rail-to-street-braid',
         imageQuery: 'Bari old town waterfront Basilica San Nicola Puglia',
-        imageAlt: 'Bari old town and the Basilica of San Nicola beside the Adriatic waterfront',
+        imageAlt: 'A view over historic buildings in Bari',
         purpose: 'Decide whether the day belongs to Bari, rail-linked Trani or the inland fortress, then expose the transfer that makes the chosen branch possible instead of advertising all three as an effortless circuit.',
         summary: 'Begin at Bari Centrale or a confirmed northern rail stop, give one city or fortress the long interpretive block, and return on the same transport spine with no speculative final connection.',
         choices: [
@@ -67,7 +67,7 @@ export const italySouthIslandsClusters = [
         layout: 'trulli-bus-radius-grid',
         structure: 'ztl-threshold-ring',
         imageQuery: 'Alberobello Aia Piccola trulli Puglia panorama',
-        imageAlt: 'Whitewashed trulli roofs in Alberobello’s Aia Piccola district',
+        imageAlt: 'Stone trulli dwellings and conical roofs in Alberobello',
         purpose: 'Choose one realistic public-transport radius around Alberobello, Locorotondo, Martina Franca or Ostuni and prevent the Itria Valley from becoming a string of white towns with invisible transfers.',
         summary: 'Enter through one verified branch-line or bus gateway, read one trullo district beyond its shopfronts, make a single onward move if the timetable supports it, and protect the return to the chosen base.',
         choices: [
@@ -104,7 +104,7 @@ export const italySouthIslandsClusters = [
         layout: 'dual-coast-clock',
         structure: 'two-shore-clock',
         imageQuery: 'Lecce Basilica Santa Croce baroque facade Puglia',
-        imageAlt: 'The carved baroque façade of Santa Croce in Lecce',
+        imageAlt: 'Aerial view over Lecce’s rooftops and streets',
         purpose: 'Use Lecce as a deliberate base, then choose either the Adriatic Otranto branch or the Ionian Gallipoli branch rather than crossing the Salento peninsula twice for a checklist.',
         summary: 'Read Lecce’s stone and civic spaces on foot, commit to one coast on a verified service day, and end beside the station or stop that protects the return.',
         choices: [
@@ -633,7 +633,7 @@ export const italySouthIslandsClusters = [
         layout: 'coast-mountain-expedition-gate',
         structure: 'summit-operating-stack',
         imageQuery: 'Cala Goloritze Gulf of Orosei Sardinia limestone coast',
-        imageAlt: 'The limestone pinnacle and turquoise water of Cala Goloritzé on the Gulf of Orosei',
+        imageAlt: 'White limestone cliffs and turquoise water at Cala Goloritzé',
         purpose: 'Choose a Gulf boat day, the regulated Cala Goloritzé hike or a Gennargentu mountain route and make the correct gateway, permit, water and turnaround non-negotiable.',
         summary: 'Base at Orosei, Cala Gonone, Baunei or an inland mountain town according to the chosen objective, confirm authority and weather, complete one coast or mountain line, and return before sea or road conditions deteriorate.',
         choices: [

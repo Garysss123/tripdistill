@@ -1,0 +1,36 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/naples-pompeii-vesuvius/herculaneum-vesuvius/",
+    "/italy/naples-pompeii-vesuvius/pompeii-city-route/",
+    "/italy/puglia/alberobello-itria-valley/",
+    "/italy/puglia/bari-trani-castel-del-monte/",
+    "/italy/puglia/lecce-otranto-gallipoli/",
+    "/italy/sardinia/gulf-orosei-gennargentu/",
+    "/italy/siena-southern-tuscany/maremma-park-coast/",
+    "/italy/siena-southern-tuscany/siena-civic-cathedral/"
+  ],
+  "translations": {
+    "Excavated buildings and courtyard inside Herculaneum": "헤르쿨라네움 유적의 발굴 건물과 안뜰",
+    "Excavated buildings and courtyard inside Herculaneum · CC BY 2.0": "헤르쿨라네움 유적의 발굴 건물과 안뜰 · CC BY 2.0",
+    "Ancient Pompeii, modern Pompeii and Vesuvius in one view": "고대 폼페이 유적과 현대 폼페이, 베수비오산을 한눈에",
+    "— Tracey Hind from Aups, France,": "— Tracey Hind from Aups, France,",
+    "— Andrea Schaffer from Sydney, Australia,": "— Andrea Schaffer from Sydney, Australia,",
+    "Ancient Pompeii, modern Pompeii and Vesuvius in one view · CC BY-SA 2.0": "고대 폼페이 유적과 현대 폼페이, 베수비오산을 한눈에 · CC BY-SA 2.0",
+    "Stone trulli dwellings and conical roofs in Alberobello": "알베로벨로의 석조 트룰리 가옥과 원뿔형 지붕",
+    "Stone trulli dwellings and conical roofs in Alberobello · CC BY-SA 4.0": "알베로벨로의 석조 트룰리 가옥과 원뿔형 지붕 · CC BY-SA 4.0",
+    "A view over historic buildings in Bari": "바리의 유서 깊은 건물들을 내려다본 풍경",
+    "Aerial view over Lecce’s rooftops and streets": "레체의 지붕과 거리 위로 내려다본 항공 전경",
+    "— Francesco Di Stefano 08,": "— Francesco Di Stefano 08,",
+    "— Joolz,": "— Joolz,",
+    "A view over historic buildings in Bari · CC BY-SA 4.0": "바리의 유서 깊은 건물들을 내려다본 풍경 · CC BY-SA 4.0",
+    "Aerial view over Lecce’s rooftops and streets · CC BY-SA 2.5": "레체의 지붕과 거리 위로 내려다본 항공 전경 · CC BY-SA 2.5",
+    "— Nicola Secci,": "— Nicola Secci,",
+    "Mediterranean coast and wild landscape in Maremma Natural Park · CC BY-SA 4.0": "마렘마 자연공원의 지중해 해안과 야생 경관 · CC BY-SA 4.0",
+    "— Denis Dascanio,": "— Denis Dascanio,",
+    "Medieval palaces surrounding Siena’s Piazza del Campo": "시에나 캄포 광장을 둘러싼 중세 궁전들",
+    "— José Luiz Bernardes Ribeiro,": "— José Luiz Bernardes Ribeiro,",
+    "Medieval palaces surrounding Siena’s Piazza del Campo · CC BY-SA 4.0": "시에나 캄포 광장을 둘러싼 중세 궁전들 · CC BY-SA 4.0"
+  }
+}

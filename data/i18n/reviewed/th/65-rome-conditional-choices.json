@@ -1,0 +1,11 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/ancient-rome-capitoline/"
+  ],
+  "translations": {
+    "Choose an official ticket whose current terms include the route you want, then follow its named entrance and the on-site direction. The long open-air walk links the low Forum with the rising Palatine. A Colosseum interior or museum visit can be added when the relevant entry is available and your time and energy allow.": "เลือกตั๋วทางการที่เงื่อนไขปัจจุบันครอบคลุมเส้นทางที่ต้องการ แล้วไปตามทางเข้าที่ระบุและทิศทางหน้างาน ทางเดินกลางแจ้งระยะไกลเชื่อม Forum ที่อยู่ต่ำกับ Palatine ที่สูงขึ้น อาจเพิ่มการเข้าชมด้านใน Colosseum หรือพิพิธภัณฑ์ได้ หากยังมีตั๋วหรือรอบเข้าชมที่เกี่ยวข้อง และเวลาและแรงที่เหลือเอื้อ",
+    "Start at the Cordonata and Piazza del Campidoglio, then use the museum’s Tabularium corridor to look back across the Forum. The hill and museum make a more weather-resilient starting point. If your ticket, remaining time and energy allow, extend the visit with part of the archaeological route after checking its current entry and access terms.": "เริ่มจาก Cordonata และ Piazza del Campidoglio แล้วใช้ทางเดิน Tabularium ในพิพิธภัณฑ์เพื่อชม Forum จากมุมสูง เนินเขาและพิพิธภัณฑ์เป็นจุดเริ่มต้นที่รับมือกับสภาพอากาศได้ดีกว่า หากตั๋ว รอบเข้าชม เวลาและแรงที่เหลือเอื้อ ให้ต่อด้วยบางส่วนของเส้นทางแหล่งโบราณคดี หลังตรวจเงื่อนไขการเข้าและการเข้าถึงปัจจุบัน"
+  }
+}

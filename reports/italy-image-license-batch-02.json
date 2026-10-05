@@ -1,0 +1,640 @@
+{
+  "title": "Italy photo license verification — batch 02",
+  "reviewedOn": "2026-10-04",
+  "scope": "The second 20 previously unverified Italy image records, in original manifest order. Counts below describe the currently selected files after replacement.",
+  "method": "Compared each exact Commons page with the manifest for file identity, subject, creator/uploader, license version, attribution notes, and separate restrictions. Two exact original pages remained unresolved and were replaced. Each current selected page was source checked. Eight replacement WebPs were visually inspected after conversion.",
+  "counts": {
+    "selectedAssetsChecked": 20,
+    "originalSourcePagesVerified": 18,
+    "originalSourcePagesUnresolvedAfterTwoAttempts": 2,
+    "verifiedReplacementPages": 8,
+    "currentSelectedAssetsWithVerifiedSourcePages": 20,
+    "retainedAfterCheck": 12,
+    "replacements": 8,
+    "culturalHeritageNoticeReplacements": 3,
+    "conflictingLicenseProvenanceReplacements": 1,
+    "separateDistributionRestrictionReplacement": 1,
+    "subjectMetadataMismatchReplacements": 1,
+    "unresolvedOriginalPageReplacements": 2,
+    "replacementImagesVisuallyInspected": 8,
+    "currentItalyAssetCount": 60,
+    "currentItalyAssetsWithSourcePageChecks": 41,
+    "currentItalyAssetsStillUnverified": 19,
+    "siteAssetsWithSourcePageChecks": 47,
+    "siteAssetLicenseClaimsNotIndependentlyVerified": 732,
+    "currentSiteAssets": 779,
+    "attributionIdentityExceptions": 1
+  },
+  "findings": [
+    "Six original pages resolved but had a separate restriction, conflicting license provenance, or material subject-description mismatch; two original pages remained unresolved. These eight images were replaced.",
+    "Three Puglia Commons pages displayed an additional Italian cultural-heritage notice requiring separate authorization for commercial reproduction. Replacement pages were checked and did not display that notice; no claim is made that the Commons grants were invalid.",
+    "The previous Herculaneum Delso page states CC BY-SA 4.0 and separately says the file may not be uploaded to Facebook. Since this guide emits og:image metadata for link previews, another image was selected for this distribution path. This is not a finding that the CC license was invalid or revoked. The creator asked for an email if used outside Commons; none was sent.",
+    "The old Cala Goloritzé page had conflicting license provenance: a Flickr review accepted CC BY 2.0 while the earlier CC BY-SA 2.0 upload claim remained and the page expressed uncertainty about its validity.",
+    "The Siena Commons page requests the visible credit “© José Luiz Bernardes Ribeiro.” That full name is shown in the site credit. The photographer’s separate email request was not acted on.",
+    "The Budelli author asks for a beside-image credit, a link to the source, and an email notice. The visible credit sits by the image and links to Commons and the license; no email was sent.",
+    "Tropea remains flagged: the Commons uploader is “Luigino” while the description says “Luigino C.” The underlying person is not established. It is source-page checked but excluded from fully attribution-cleared counts.",
+    "A Commons license display does not independently establish the uploader’s underlying rights chain."
+  ],
+  "items": [
+    {
+      "key": "italian-lakes/lake-maggiore-islands",
+      "route": "/italy/italian-lakes/lake-maggiore-islands/",
+      "assetPath": "/assets/images/italy-italian-lakes-lake-maggiore-islands.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Borromeo-P3P-20170530-010_(36234155645).jpg",
+        "sourceTitle": "File:Borromeo-P3P-20170530-010 (36234155645).jpg",
+        "creator": "CucombreLibre from New York, NY, USA",
+        "statedLicense": "CC BY 2.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Borromeo-P3P-20170530-010_(36234155645).jpg",
+        "sourceTitle": "File:Borromeo-P3P-20170530-010 (36234155645).jpg",
+        "creator": "CucombreLibre from New York, NY, USA",
+        "exactLicenseVersion": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for CucombreLibre, Isola Bella / Lake Maggiore subject, and CC BY 2.0.",
+        "currentEnglishVisibleCredit": "Isola Bella rising from Lake Maggiore against an Alpine backdrop — CucombreLibre from New York, NY, USA, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Isola Bella rising from Lake Maggiore against an Alpine backdrop",
+        "sha1": "ddaccb87d9a6392550ad8fd02882dbaae5658249",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "marche-abruzzo/abruzzo-national-parks",
+      "route": "/italy/marche-abruzzo/abruzzo-national-parks/",
+      "assetPath": "/assets/images/italy-marche-abruzzo-abruzzo-national-parks.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gran_Sasso_seen_from_East.jpg",
+        "sourceTitle": "File:Gran Sasso seen from East.jpg",
+        "creator": "PaulFo",
+        "statedLicense": "CC0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gran_Sasso_seen_from_East.jpg",
+        "sourceTitle": "File:Gran Sasso seen from East.jpg",
+        "creator": "PaulFo",
+        "exactLicenseVersion": "CC0",
+        "licenseLink": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for PaulFo, Gran Sasso subject, and CC0 1.0 dedication.",
+        "currentEnglishVisibleCredit": "High mountain landscape in Gran Sasso and Monti della Laga National Park — PaulFo, CC0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "High mountain landscape in Gran Sasso and Monti della Laga National Park",
+        "sha1": "3d619f9e9405df8f23ce87265fb547f0ab3fc13a",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "marche-abruzzo/ancona-conero",
+      "route": "/italy/marche-abruzzo/ancona-conero/",
+      "assetPath": "/assets/images/italy-marche-abruzzo-ancona-conero.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Monte_Conero_visto_dalla_spiaggia_Urbani.jpg",
+        "sourceTitle": "File:Monte Conero visto dalla spiaggia Urbani.jpg",
+        "creator": "Gabri307",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Monte_Conero_visto_dalla_spiaggia_Urbani.jpg",
+        "sourceTitle": "File:Monte Conero visto dalla spiaggia Urbani.jpg",
+        "creator": "Gabri307",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Gabri307, Monte Conero subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "The forested Monte Conero headland above the Adriatic Sea — Gabri307, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "The forested Monte Conero headland above the Adriatic Sea",
+        "sha1": "c69d082190142ce33578651c6e3cc3806b32d07b",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "marche-abruzzo/urbino-pesaro",
+      "route": "/italy/marche-abruzzo/urbino-pesaro/",
+      "assetPath": "/assets/images/italy-marche-abruzzo-urbino-pesaro.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Urbino-palazzo_e_borgo.jpg",
+        "sourceTitle": "File:Urbino-palazzo e borgo.jpg",
+        "creator": "Il conte di Luna",
+        "statedLicense": "CC BY-SA 2.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Urbino-palazzo_e_borgo.jpg",
+        "sourceTitle": "File:Urbino-palazzo e borgo.jpg",
+        "creator": "Il conte di Luna",
+        "exactLicenseVersion": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Il conte di Luna, Urbino subject, and CC BY-SA 2.0; page records Flickr review.",
+        "currentEnglishVisibleCredit": "The Ducal Palace and hill town of Urbino in the Marche — Il conte di Luna, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "The Ducal Palace and hill town of Urbino in the Marche",
+        "sha1": "a62afa0854736ce351d45662dea241ba4bb39e40",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "milan/duomo-brera",
+      "route": "/italy/milan/duomo-brera/",
+      "assetPath": "/assets/images/italy-milan-duomo-brera.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Milan-duomo-front-facade.jpg",
+        "sourceTitle": "File:Milan-duomo-front-facade.jpg",
+        "creator": "Skarkkai",
+        "statedLicense": "CC0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Milan-duomo-front-facade.jpg",
+        "sourceTitle": "File:Milan-duomo-front-facade.jpg",
+        "creator": "Skarkkai",
+        "exactLicenseVersion": "CC0",
+        "licenseLink": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Skarkkai, Milan Cathedral facade subject, and CC0 dedication.",
+        "currentEnglishVisibleCredit": "The facade of Milan Cathedral facing Piazza del Duomo — Skarkkai, CC0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "The facade of Milan Cathedral facing Piazza del Duomo",
+        "sha1": "ad7ee649ca2f321f3da5ae36f093414864622c96",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "milan/last-supper-castello",
+      "route": "/italy/milan/last-supper-castello/",
+      "assetPath": "/assets/images/italy-milan-last-supper-castello.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_delle_Grazie.jpg",
+        "sourceTitle": "File:Santa Maria delle Grazie.jpg",
+        "creator": "Masi27185 ( talk )",
+        "statedLicense": "CC BY-SA 3.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_delle_Grazie.jpg",
+        "sourceTitle": "File:Santa Maria delle Grazie.jpg",
+        "creator": "Masi27185 ( talk )",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Masi27185 and Santa Maria delle Grazie subject under CC BY-SA 3.0.",
+        "currentEnglishVisibleCredit": "Santa Maria delle Grazie church and its brick dome in Milan — Masi27185 ( talk ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Santa Maria delle Grazie church and its brick dome in Milan",
+        "sha1": "c66fde97372c0e026c46bc1c5dd2c03ce798b06c",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "milan/navigli-porta-nuova-design",
+      "route": "/italy/milan/navigli-porta-nuova-design/",
+      "assetPath": "/assets/images/italy-milan-navigli-porta-nuova-design.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Milano_Naviglio_Grande_am_Abend_1.jpg",
+        "sourceTitle": "File:Milano Naviglio Grande am Abend 1.jpg",
+        "creator": "Zairon",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Milano_Naviglio_Grande_am_Abend_1.jpg",
+        "sourceTitle": "File:Milano Naviglio Grande am Abend 1.jpg",
+        "creator": "Zairon",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Zairon, Naviglio Grande subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "Evening light along Naviglio Grande in Milan — Zairon, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Evening light along Naviglio Grande in Milan",
+        "sha1": "4edcc51ad2ce1461e02c81470a15cd6c7ff2357e",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "naples-pompeii-vesuvius/herculaneum-vesuvius",
+      "route": "/italy/naples-pompeii-vesuvius/herculaneum-vesuvius/",
+      "assetPath": "/assets/images/italy-naples-pompeii-vesuvius-herculaneum-vesuvius.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Antigua_ciudad_de_Herculano,_Italia,_2023-03-27,_DD_141.jpg",
+        "sourceTitle": "File:Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg",
+        "creator": "Diego Delso",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The verified Delso page grants CC BY-SA 4.0, but also says the file may not be uploaded to Facebook. Because this guide emits the image in og:image metadata for link previews, a different image was chosen for that distribution path. This is not a finding that the CC license was invalid or revoked."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Herculaneum_(39517905442).jpg",
+        "sourceTitle": "File:Herculaneum (39517905442).jpg",
+        "creator": "Andrea Schaffer from Sydney, Australia",
+        "exactLicenseVersion": "CC BY 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Andrea Schaffer, Herculaneum subject, and CC BY 2.0; page records Flickr review.",
+        "currentEnglishVisibleCredit": "Excavated buildings and courtyard inside Herculaneum — Andrea Schaffer from Sydney, Australia, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Excavated buildings and courtyard inside Herculaneum",
+        "sha1": "273eb2f58a1616422beb0e12aa7d6f8261072645",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The verified Delso page grants CC BY-SA 4.0, but also says the file may not be uploaded to Facebook. Because this guide emits the image in og:image metadata for link previews, a different image was chosen for that distribution path. This is not a finding that the CC license was invalid or revoked.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Antigua_ciudad_de_Herculano,_Italia,_2023-03-27,_DD_141.jpg"
+    },
+    {
+      "key": "naples-pompeii-vesuvius/naples-centre-mann-waterfront",
+      "route": "/italy/naples-pompeii-vesuvius/naples-centre-mann-waterfront/",
+      "assetPath": "/assets/images/italy-naples-pompeii-vesuvius-naples-centre-mann-waterfront.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Napoli_vista_dall%27alto._0009.jpg",
+        "sourceTitle": "File:Napoli vista dall'alto. 0009.jpg",
+        "creator": "Giuseppe Guida",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Napoli_vista_dall%27alto._0009.jpg",
+        "sourceTitle": "File:Napoli vista dall'alto. 0009.jpg",
+        "creator": "Giuseppe Guida",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Giuseppe Guida, Naples subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "The dense historic centre of Naples beneath Vesuvius — Giuseppe Guida, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "The dense historic centre of Naples beneath Vesuvius",
+        "sha1": "798dfba5108fbcf107418b905e588fde7daf4335",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "naples-pompeii-vesuvius/pompeii-city-route",
+      "route": "/italy/naples-pompeii-vesuvius/pompeii-city-route/",
+      "assetPath": "/assets/images/italy-naples-pompeii-vesuvius-pompeii-city-route.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Pompeii_Forum_and_Vesuvius_(23521893934).jpg",
+        "sourceTitle": "File:Pompeii Forum and Vesuvius (23521893934).jpg",
+        "creator": "Takver from Australia",
+        "statedLicense": "CC BY-SA 2.0",
+        "sourcePageStatus": "unresolved_after_two_attempts",
+        "finding": "The original exact source page did not resolve after two attempts; metadata was not treated as verified permission."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ancient_Pompeii_(LHS),_Modern_Pompeii_(RHS)_and_Vesuvius_(Centre)_(52786653083).jpg",
+        "sourceTitle": "File:Ancient Pompeii (LHS), Modern Pompeii (RHS) and Vesuvius (Centre) (52786653083).jpg",
+        "creator": "Tracey Hind from Aups, France",
+        "exactLicenseVersion": "CC BY-SA 2.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Tracey Hind / Flickr account Tracey & Doug, Pompeii/Vesuvius subject, Flickr review, and CC BY-SA 2.0.",
+        "currentEnglishVisibleCredit": "Ancient Pompeii, modern Pompeii and Vesuvius in one view — Tracey Hind from Aups, France, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Ancient Pompeii, modern Pompeii and Vesuvius in one view",
+        "sha1": "665f9fe50edc4bdc7a2196e97154341414067325",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original exact source page did not resolve after two attempts; metadata was not treated as verified permission.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Pompeii_Forum_and_Vesuvius_(23521893934).jpg"
+    },
+    {
+      "key": "puglia/alberobello-itria-valley",
+      "route": "/italy/puglia/alberobello-itria-valley/",
+      "assetPath": "/assets/images/italy-puglia-alberobello-itria-valley.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alberobello_-_Trulli_del_Rione_Aia_Piccola_-_02.jpg",
+        "sourceTitle": "File:Alberobello - Trulli del Rione Aia Piccola - 02.jpg",
+        "creator": "Benjamin Smith",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The original Commons page showed a separate Italian cultural-heritage notice requiring further authorization for commercial reproduction. It was replaced by a source-checked trulli image without that separate notice."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alberobello,_trulli_(13).jpg",
+        "sourceTitle": "File:Alberobello, trulli (13).jpg",
+        "creator": "Palickap",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Palickap, Alberobello trulli subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "Stone trulli dwellings and conical roofs in Alberobello — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Stone trulli dwellings and conical roofs in Alberobello",
+        "sha1": "1827b864fdf242b463663fb9af4da70cd2555453",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original Commons page showed a separate Italian cultural-heritage notice requiring further authorization for commercial reproduction. It was replaced by a source-checked trulli image without that separate notice.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Alberobello_-_Trulli_del_Rione_Aia_Piccola_-_02.jpg"
+    },
+    {
+      "key": "puglia/bari-trani-castel-del-monte",
+      "route": "/italy/puglia/bari-trani-castel-del-monte/",
+      "assetPath": "/assets/images/italy-puglia-bari-trani-castel-del-monte.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Bari_-_Lungomare_Araldo_di_Crollalanza.jpg",
+        "sourceTitle": "File:Bari - Lungomare Araldo di Crollalanza.jpg",
+        "creator": "Benjamin Smith",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The original Commons page showed a separate Italian cultural-heritage notice requiring further authorization for commercial reproduction. It was replaced by a source-checked Bari view without that separate notice."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Puglia_bari_old-town.jpg",
+        "sourceTitle": "File:Puglia bari old-town.jpg",
+        "creator": "Francesco Di Stefano 08",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Francesco Di Stefano 08, Bari subject, and CC BY-SA 4.0; no separate heritage reproduction notice was present on the checked page.",
+        "currentEnglishVisibleCredit": "A view over historic buildings in Bari — Francesco Di Stefano 08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "A view over historic buildings in Bari",
+        "sha1": "ef3079e71a4bc6574985f58b9953441185baf08f",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original Commons page showed a separate Italian cultural-heritage notice requiring further authorization for commercial reproduction. It was replaced by a source-checked Bari view without that separate notice.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Bari_-_Lungomare_Araldo_di_Crollalanza.jpg"
+    },
+    {
+      "key": "puglia/lecce-otranto-gallipoli",
+      "route": "/italy/puglia/lecce-otranto-gallipoli/",
+      "assetPath": "/assets/images/italy-puglia-lecce-otranto-gallipoli.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lecce_-_Santa_Croce_-_17.jpg",
+        "sourceTitle": "File:Lecce - Santa Croce - 17.jpg",
+        "creator": "Benjamin Smith",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The original Commons page showed a separate Italian cultural-heritage notice requiring further authorization for commercial reproduction. It was replaced by a source-checked Lecce aerial image without that separate notice."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Lecce_from_the_air.jpg",
+        "sourceTitle": "File:Lecce from the air.jpg",
+        "creator": "Joolz",
+        "exactLicenseVersion": "CC BY-SA 2.5",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Joolz, Lecce aerial subject, and CC BY-SA 2.5; no separate heritage reproduction notice was present on the checked page.",
+        "currentEnglishVisibleCredit": "Aerial view over Lecce’s rooftops and streets — Joolz, CC BY-SA 2.5. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Aerial view over Lecce’s rooftops and streets",
+        "sha1": "dfccd5cf75ecca15d00477425719050b2bb2eb6d",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original Commons page showed a separate Italian cultural-heritage notice requiring further authorization for commercial reproduction. It was replaced by a source-checked Lecce aerial image without that separate notice.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Lecce_-_Santa_Croce_-_17.jpg"
+    },
+    {
+      "key": "sardinia/cagliari-su-nuraxi",
+      "route": "/italy/sardinia/cagliari-su-nuraxi/",
+      "assetPath": "/assets/images/italy-sardinia-cagliari-su-nuraxi.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Castello_(Cagliari).jpg",
+        "sourceTitle": "File:Castello (Cagliari).jpg",
+        "creator": "Municipality of Cagliari",
+        "statedLicense": "CC BY-SA 3.0 it",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Castello_(Cagliari).jpg",
+        "sourceTitle": "File:Castello (Cagliari).jpg",
+        "creator": "Municipality of Cagliari",
+        "exactLicenseVersion": "CC BY-SA 3.0 it",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/it/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Municipality of Cagliari, Cagliari subject, and CC BY-SA 3.0 Italy.",
+        "currentEnglishVisibleCredit": "Cagliari’s Castello district rising above the city and the Gulf of Angels — Municipality of Cagliari, CC BY-SA 3.0 it. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Cagliari’s Castello district rising above the city and the Gulf of Angels",
+        "sha1": "72c79614b93b99e62a26bf7eb216dfd49a36a808",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "sardinia/gulf-orosei-gennargentu",
+      "route": "/italy/sardinia/gulf-orosei-gennargentu/",
+      "assetPath": "/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cala_Goloritze_o.jpg",
+        "sourceTitle": "File:Cala Goloritze o.jpg",
+        "creator": "delaere",
+        "statedLicense": "CC BY 2.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The original file page contained conflicting license provenance: a Flickr review accepting CC BY 2.0 alongside an earlier CC BY-SA 2.0 upload claim and uncertainty about whether the original license was valid."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cala_Goloritz%C3%A8_13_sept._2017.jpg",
+        "sourceTitle": "File:Cala Goloritzè 13 sept. 2017.jpg",
+        "creator": "Nicola Secci",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Nicola Secci, Cala Goloritzé subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "White limestone cliffs and turquoise water at Cala Goloritzé — Nicola Secci, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "White limestone cliffs and turquoise water at Cala Goloritzé",
+        "sha1": "01615599e43c6b9f2d77e15174de905aa17362f3",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original file page contained conflicting license provenance: a Flickr review accepting CC BY 2.0 alongside an earlier CC BY-SA 2.0 upload claim and uncertainty about whether the original license was valid.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Cala_Goloritze_o.jpg"
+    },
+    {
+      "key": "sardinia/la-maddalena-gallura",
+      "route": "/italy/sardinia/la-maddalena-gallura/",
+      "assetPath": "/assets/images/italy-sardinia-la-maddalena-gallura.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Budelli_(01).JPG",
+        "sourceTitle": "File:La Maddalena - Isola di Budelli (01).JPG",
+        "creator": "Gianni Careddu",
+        "statedLicense": "CC BY-SA 3.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Budelli_(01).JPG",
+        "sourceTitle": "File:La Maddalena - Isola di Budelli (01).JPG",
+        "creator": "Gianni Careddu",
+        "exactLicenseVersion": "CC BY-SA 3.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Gianni Careddu, Budelli subject, and CC BY-SA 3.0. The author separately asks for a credit next to the image, a source hyperlink, and an email; no email was sent.",
+        "currentEnglishVisibleCredit": "Granite islands and clear water in the La Maddalena archipelago — Gianni Careddu, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Granite islands and clear water in the La Maddalena archipelago",
+        "sha1": "294db275d289cee40cc99fe4071969cba36ca082",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "siena-southern-tuscany/maremma-park-coast",
+      "route": "/italy/siena-southern-tuscany/maremma-park-coast/",
+      "assetPath": "/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Cala_di_forno.JPG",
+        "sourceTitle": "File:Cala di forno.JPG",
+        "creator": "Simone F. Franci",
+        "statedLicense": "CC BY-SA 3.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The original source title says Cala di Forno while its description identifies the scene as Cala Violina; the mismatch prevented a reliable subject match for this Maremma guide."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Costa_parco_naturale_della_Maremma.jpg",
+        "sourceTitle": "File:Costa parco naturale della Maremma.jpg",
+        "creator": "Denis Dascanio",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Denis Dascanio, Maremma Natural Park coast subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "Mediterranean coast and wild landscape in Maremma Natural Park — Denis Dascanio, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Mediterranean coast and wild landscape in Maremma Natural Park",
+        "sha1": "ec386ce3d9ecfda3cec8156668716896e1590047",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original source title says Cala di Forno while its description identifies the scene as Cala Violina; the mismatch prevented a reliable subject match for this Maremma guide.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Cala_di_forno.JPG"
+    },
+    {
+      "key": "siena-southern-tuscany/siena-civic-cathedral",
+      "route": "/italy/siena-southern-tuscany/siena-civic-cathedral/",
+      "assetPath": "/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp",
+      "decision": "replaced",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campo_de_Siena_un_dia_de_pluja.JPG",
+        "sourceTitle": "File:Piazza del Campo de Siena un dia de pluja.JPG",
+        "creator": "Joanbanjo",
+        "statedLicense": "CC BY-SA 3.0",
+        "sourcePageStatus": "unresolved_after_two_attempts",
+        "finding": "The original exact source page did not resolve after two attempts; metadata was not treated as verified permission."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Palaces_-_Piazza_del_Campo_-_Siena_2016.jpg",
+        "sourceTitle": "File:Palaces - Piazza del Campo - Siena 2016.jpg",
+        "creator": "José Luiz Bernardes Ribeiro",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for José Luiz Bernardes Ribeiro (Jbribeiro1), Siena subject, and CC BY-SA 4.0. The page asks for a nearby author credit; that credit is present. Its email request was not acted on.",
+        "currentEnglishVisibleCredit": "Medieval palaces surrounding Siena’s Piazza del Campo — José Luiz Bernardes Ribeiro, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Medieval palaces surrounding Siena’s Piazza del Campo",
+        "sha1": "81ef147a37feb95ccc70c4fdd225c79c608cf307",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": "The original exact source page did not resolve after two attempts; metadata was not treated as verified permission.",
+      "replacedSourcePage": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campo_de_Siena_un_dia_de_pluja.JPG"
+    },
+    {
+      "key": "siena-southern-tuscany/val-dorcia-towns",
+      "route": "/italy/siena-southern-tuscany/val-dorcia-towns/",
+      "assetPath": "/assets/images/italy-siena-southern-tuscany-val-dorcia-towns.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Val_D_Orcia_In_Autumn_(179351679).jpeg",
+        "sourceTitle": "File:Val D Orcia In Autumn (179351679).jpeg",
+        "creator": "Fabrizio Lunardi",
+        "statedLicense": "CC0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Val_D_Orcia_In_Autumn_(179351679).jpeg",
+        "sourceTitle": "File:Val D Orcia In Autumn (179351679).jpeg",
+        "creator": "Fabrizio Lunardi",
+        "exactLicenseVersion": "CC0",
+        "licenseLink": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Fabrizio Lunardi, Val d’Orcia subject, and CC0 1.0 dedication.",
+        "currentEnglishVisibleCredit": "Rolling hills and stone towns in Val d’Orcia, Tuscany — Fabrizio Lunardi, CC0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Rolling hills and stone towns in Val d’Orcia, Tuscany",
+        "sha1": "bfa17b20cba9f2848af83020da992ee5465c2ab3",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    },
+    {
+      "key": "sorrento-amalfi-capri/capri-anacapri",
+      "route": "/italy/sorrento-amalfi-capri/capri-anacapri/",
+      "assetPath": "/assets/images/italy-sorrento-amalfi-capri-capri-anacapri.webp",
+      "decision": "retained_after_source_check",
+      "previous": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Faraglioni_in_Capri_09.jpg",
+        "sourceTitle": "File:Faraglioni in Capri 09.jpg",
+        "creator": "Abxbay",
+        "statedLicense": "CC BY-SA 4.0",
+        "sourcePageStatus": "verified_on_source_page",
+        "finding": "The checked source page creator, depicted subject and stated license matched the original record."
+      },
+      "selected": {
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Faraglioni_in_Capri_09.jpg",
+        "sourceTitle": "File:Faraglioni in Capri 09.jpg",
+        "creator": "Abxbay",
+        "exactLicenseVersion": "CC BY-SA 4.0",
+        "licenseLink": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "sourcePageStatus": "verified_on_source_page",
+        "checkedOn": "2026-10-04",
+        "verificationEvidence": "Commons source page checked for Abxbay, Capri Faraglioni subject, and CC BY-SA 4.0.",
+        "currentEnglishVisibleCredit": "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits.",
+        "imageAlt": "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea",
+        "sha1": "28b1d0457e49b761b06e71b89b9076cc3f89b527",
+        "processing": "Resized, display-cropped and converted to WebP; no other material edits."
+      },
+      "replacementReason": null,
+      "replacedSourcePage": null
+    }
+  ]
+}

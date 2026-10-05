@@ -48,8 +48,8 @@ export const italyCentralCampaniaClusters = [
         summary: "The Forum occupies the hollow below the Capitoline, with the Palatine rising along its other side and the Colosseum close by. Some current ticket products link Colosseum entry with Forum-Palatine access; check the exact route and allow most of a day if you want time to look closely.",
         choices: [
           ["Colosseum first", "Make the ticketed Colosseum visit the day’s fixed point. Read its current product description to see whether and when it also permits Forum and Palatine access; products, entrances and visit limits differ. Keep the Capitoline collection for another day if the booked route already fills the available time."],
-          ["Forum and Palatine on foot", "Choose an official ticket whose current terms include the route you want, then follow its named entrance and the on-site direction. The long open-air walk links the low Forum with the rising Palatine; it leaves little time for a full Colosseum interior or museum visit."],
-          ["Capitoline Museums and hill", "Start at the Cordonata and Piazza del Campidoglio, then use the museum’s Tabularium corridor to look back across the Forum. This is the most weather-resilient option and gives up the deeper walk through the archaeological area."]
+          ["Forum and Palatine on foot", "Choose an official ticket whose current terms include the route you want, then follow its named entrance and the on-site direction. The long open-air walk links the low Forum with the rising Palatine. A Colosseum interior or museum visit can be added when the relevant entry is available and your time and energy allow."],
+          ["Capitoline Museums and hill", "Start at the Cordonata and Piazza del Campidoglio, then use the museum’s Tabularium corridor to look back across the Forum. The hill and museum make a more weather-resilient starting point. If your ticket, remaining time and energy allow, extend the visit with part of the archaeological route after checking its current entry and access terms."]
         ],
         access: "The Colosseo Metro stop is useful for the Colosseum side, but it does not tell you which archaeological entrance your ticket uses. Check the ticket’s exact site, time, named gate, identity rules and current access map before choosing a station exit. The Capitoline approach is uphill by the Cordonata; the Forum floor and Palatine paths are uneven.",
         tradeoff: "A linked Colosseum and Forum-Palatine ticket can make one coherent archaeological day, but the route is long, exposed and rich in detail. Keep the Capitoline Museums as a possible extension only if the ticket, opening hours, energy and exit point leave room for them.",
@@ -324,7 +324,7 @@ export const italyCentralCampaniaClusters = [
         layout: 'buried-city-datum-traverse',
         structure: 'excavation-traverse',
         imageQuery: 'Pompeii forum Vesuvius archaeological site wide',
-        imageAlt: 'The excavated streets of Pompeii with Vesuvius beyond',
+        imageAlt: 'Ancient Pompeii, modern Pompeii and Vesuvius in one view',
         purpose: 'Choose a core Pompeii route, a wider Pompeii+ landscape or the site’s accessible route, then match the correct rail stop and named entrance to the planned exit instead of wandering until heat decides the day.',
         summary: 'Enter at Porta Marina, Piazza Anfiteatro or another official gate suited to the route, traverse one coherent district and leave with time for the confirmed train rather than retracing the whole site.',
         choices: [
@@ -361,7 +361,7 @@ export const italyCentralCampaniaClusters = [
         layout: 'crater-access-status-board',
         structure: 'volcano-status-board',
         imageQuery: 'Herculaneum ruins Mount Vesuvius Campania',
-        imageAlt: 'Herculaneum archaeological site below Mount Vesuvius',
+        imageAlt: 'Excavated buildings and courtyard inside Herculaneum',
         purpose: 'Choose an Herculaneum excavation day or a weather-cleared Vesuvius crater product before leaving Naples; the Ercolano walk, park booking and crater transport are separate systems, not a guaranteed combined excursion.',
         summary: 'Reach Ercolano for one declared purpose, complete the excavation or the confirmed mountain chain and keep the other option as a later day rather than a rushed add-on.',
         choices: [
@@ -684,7 +684,7 @@ export const italyCentralCampaniaClusters = [
         layout: 'contrada-sacred-threshold',
         structure: 'living-sacred-threshold',
         imageQuery: 'Siena Piazza del Campo cathedral skyline panorama',
-        imageAlt: 'Siena’s Piazza del Campo and medieval skyline in Tuscany',
+        imageAlt: 'Medieval palaces surrounding Siena’s Piazza del Campo',
         purpose: 'Choose the civic museum and tower, the cathedral complex or the contrada street layers as the main argument, then enter Siena through the transport and escalator threshold that fits the first door.',
         summary: 'Climb from the rail or bus arrival into one civic or sacred layer, complete a single ordered centre circuit and leave through the access system nearest the return.',
         choices: [

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-04T12:45:03.170Z",
-  "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: only nine source pages were checked and 770 stated licenses remain unverified. The separate build image tally also includes favicon.svg.",
+  "generatedAt": "2026-10-05T01:18:24.377Z",
+  "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 770,
+    "licenseClaimsNotIndependentlyVerified": 713,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -17,10 +17,10 @@
     "assetsWithStructuredSourceRecords": 566,
     "assetsWithMatchedEnglishCreditOnly": 205,
     "assetsWithExplicitEnglishCreditMatch": 8,
-    "assetsVisuallyReviewed": 10,
+    "assetsVisuallyReviewed": 22,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 9,
-    "metadataOrCreditOnly": 770,
+    "sourcePageChecked": 66,
+    "metadataOrCreditOnly": 713,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
@@ -29,7 +29,7 @@
   "verificationMethod": {
     "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.",
-    "sourcePageChecks": "Manually checked the eight named Commons source pages on 2026-10-04. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
+    "sourcePageChecks": "Manually checked source pages marked source_page_checked on 2026-10-04 or 2026-10-05, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
     "buildImageCountReconciliation": "The 779 WebP photos in assets/images plus favicon.svg (an SVG icon counted by build-dist.mjs) explain the previous build tally of 780 images."
   },
@@ -11025,19 +11025,19 @@
           "assetPath": "/assets/images/italy-basilicata-calabria-maratea-pollino.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maratea_-_View_from_Camino_San_Biagio_-_03.jpg",
           "sourceTitle": "Maratea - View from Camino San Biagio - 03.jpg",
-          "creditLabel": "Maratea - View from Camino San Biagio - 03.jpg",
+          "creditLabel": "The mountainous Basilicata coast and blue Tyrrhenian Sea near Maratea",
           "creator": "Benjamin Smith",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Benjamin Smith, image subject, and CC BY-SA 4.0; older alternative licenses are also listed.",
           "useCount": 4,
           "routes": [
             "/italy/basilicata-calabria/",
@@ -11049,7 +11049,7 @@
             "The mountainous Basilicata coast and blue Tyrrhenian Sea near Maratea"
           ],
           "rawVisibleCredits": [
-            "Maratea - View from Camino San Biagio - 03.jpg — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The mountainous Basilicata coast and blue Tyrrhenian Sea near Maratea — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11065,19 +11065,19 @@
           "assetPath": "/assets/images/italy-basilicata-calabria-matera-sassi-murgia.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matera_gorge_south-2879.jpg",
           "sourceTitle": "Matera gorge south-2879.jpg",
-          "creditLabel": "Matera gorge south-2879.jpg",
+          "creditLabel": "The stone houses and churches of the Sassi overlooking the Matera ravine",
           "creator": "Isiwal",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Isiwal, image subject, and CC BY-SA 4.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11090,35 +11090,35 @@
             "The stone houses and churches of the Sassi overlooking the Matera ravine"
           ],
           "rawVisibleCredits": [
-            "Matera gorge south-2879.jpg — Isiwal, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The stone houses and churches of the Sassi overlooking the Matera ravine — Isiwal, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "06655d6c07f4ffec60b0daba00fb3e6f45b9fed72e0279cebf17faccda4309c2",
+      "sha256": "9f19b8852ab172a6c4cdd6f96f02603633754c4f18e6d6051b55f7a73e377e5a",
       "assetPaths": [
         "/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp"
       ],
-      "byteLength": 107986,
+      "byteLength": 379298,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palaces_of_the_old_town_of_Tropea_perched_on_a_Cliff_overlooking_the_beach_below_-_Province_of_Vibo_Valentia,_Calabria,_Italy.jpg",
-          "sourceTitle": "Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg",
-          "creditLabel": "Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg",
-          "creator": "The original uploader was Luigino at Italian Wikipedia .",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
+          "sourceTitle": "Santa Maria dell'Isola - Tropea - Calabria - Italy - July 17th 2013 - 01.jpg",
+          "creditLabel": "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea",
+          "creator": "Norbert Nagel",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Replacement source page checked for Norbert Nagel, Santa Maria dell’Isola in Tropea, and CC BY-SA 3.0. The page says a specimen copy or link is a request, not a license condition; none was sent.",
           "useCount": 4,
           "routes": [
             "/italy/basilicata-calabria/",
@@ -11130,7 +11130,7 @@
             "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea"
           ],
           "rawVisibleCredits": [
-            "Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg — The original uploader was Luigino at Italian Wikipedia ., CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea — Norbert Nagel, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11146,19 +11146,19 @@
           "assetPath": "/assets/images/italy-dolomites-trentino-south-tyrol-bolzano-renon.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gries-Bozen_vom_Guntschnaberg_Richtung_S%C3%BCden.jpg",
           "sourceTitle": "Gries-Bozen vom Guntschnaberg Richtung Süden.jpg",
-          "creditLabel": "Gries-Bozen vom Guntschnaberg Richtung Süden.jpg",
+          "creditLabel": "Bolzano below the Renon plateau and Dolomite landscape",
           "creator": "Bartleby08",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Bartleby08, the Bolzano view subject, and CC BY-SA 4.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11171,7 +11171,7 @@
             "Bolzano below the Renon plateau and Dolomite landscape"
           ],
           "rawVisibleCredits": [
-            "Gries-Bozen vom Guntschnaberg Richtung Süden.jpg — Bartleby08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Bolzano below the Renon plateau and Dolomite landscape — Bartleby08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11187,19 +11187,19 @@
           "assetPath": "/assets/images/italy-dolomites-trentino-south-tyrol-cortina-tre-cime.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tri_Cime_panorama_1.jpg",
           "sourceTitle": "Tri Cime panorama 1.jpg",
-          "creditLabel": "Tri Cime panorama 1.jpg",
+          "creditLabel": "Tre Cime di Lavaredo rising above a Dolomite trail",
           "creator": "kallerna",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Kallerna, Tre Cime subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/dolomites-trentino-south-tyrol/",
@@ -11211,7 +11211,7 @@
             "Tre Cime di Lavaredo rising above a Dolomite trail"
           ],
           "rawVisibleCredits": [
-            "Tri Cime panorama 1.jpg — kallerna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Tre Cime di Lavaredo rising above a Dolomite trail — kallerna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11227,19 +11227,19 @@
           "assetPath": "/assets/images/italy-dolomites-trentino-south-tyrol-trento-brenta-dolomites.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_to_the_Brenta_Dolomites,_Molveno_-_Lago_di_Molveno_-_panoramio.jpg",
           "sourceTitle": "View to the Brenta Dolomites, Molveno - Lago di Molveno - panoramio.jpg",
-          "creditLabel": "View to the Brenta Dolomites, Molveno - Lago di Molveno - panoramio.jpg",
+          "creditLabel": "The Brenta Dolomites rising beyond the Trentino valleys",
           "creator": "Zoran Kurelić Rabko",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Zoran Kurelić Rabko, archived Panoramio source, bot license review, and CC BY-SA 3.0.",
           "useCount": 4,
           "routes": [
             "/italy/dolomites-trentino-south-tyrol/",
@@ -11251,7 +11251,7 @@
             "The Brenta Dolomites rising beyond the Trentino valleys"
           ],
           "rawVisibleCredits": [
-            "View to the Brenta Dolomites, Molveno - Lago di Molveno - panoramio.jpg — Zoran Kurelić Rabko, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Brenta Dolomites rising beyond the Trentino valleys — Zoran Kurelić Rabko, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11267,19 +11267,19 @@
           "assetPath": "/assets/images/italy-eastern-sicily-catania-etna.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Etna,_Catania_(Italy).jpg",
           "sourceTitle": "Etna, Catania (Italy).jpg",
-          "creditLabel": "Etna, Catania (Italy).jpg",
+          "creditLabel": "Mount Etna rising behind the city and rooftops of Catania",
           "creator": "1888-stefan",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for 1888-stefan, Etna subject, and CC0 1.0 commercial-use dedication.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11292,7 +11292,7 @@
             "Mount Etna rising behind the city and rooftops of Catania"
           ],
           "rawVisibleCredits": [
-            "Etna, Catania (Italy).jpg — 1888-stefan, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Mount Etna rising behind the city and rooftops of Catania — 1888-stefan, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11308,19 +11308,19 @@
           "assetPath": "/assets/images/italy-eastern-sicily-syracuse-noto-ragusa.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ortigia,_piazza_duomo,_palazzi.JPG",
           "sourceTitle": "Ortigia, piazza duomo, palazzi.JPG",
-          "creditLabel": "Ortigia, piazza duomo, palazzi.JPG",
+          "creditLabel": "The pale stone cathedral square on Ortigia in Syracuse",
           "creator": "sailko",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Sailko and the CC BY 2.5 option declared in the inventory; CC BY-SA 3.0 and GFDL alternatives are also listed.",
           "useCount": 4,
           "routes": [
             "/italy/eastern-sicily/",
@@ -11332,7 +11332,7 @@
             "The pale stone cathedral square on Ortigia in Syracuse"
           ],
           "rawVisibleCredits": [
-            "Ortigia, piazza duomo, palazzi.JPG — sailko, CC BY 2.5. Resized, display-cropped and converted to WebP; no other material edits."
+            "The pale stone cathedral square on Ortigia in Syracuse — sailko, CC BY 2.5. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11348,19 +11348,19 @@
           "assetPath": "/assets/images/italy-eastern-sicily-taormina-naxos-aeolian-gateway.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taormina_-_Teatro_antico_di_Taormina.jpg",
           "sourceTitle": "Taormina - Teatro antico di Taormina.jpg",
-          "creditLabel": "Taormina - Teatro antico di Taormina.jpg",
+          "creditLabel": "Taormina’s ancient theatre overlooking the Ionian Sea and Mount Etna",
           "creator": "231286M",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for 231286M, ancient theatre subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/eastern-sicily/",
@@ -11372,7 +11372,7 @@
             "Taormina’s ancient theatre overlooking the Ionian Sea and Mount Etna"
           ],
           "rawVisibleCredits": [
-            "Taormina - Teatro antico di Taormina.jpg — 231286M, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Taormina’s ancient theatre overlooking the Ionian Sea and Mount Etna — 231286M, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11388,19 +11388,19 @@
           "assetPath": "/assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_11.jpg",
           "sourceTitle": "Bologna Piazza Maggiore 11.jpg",
-          "creditLabel": "Bologna Piazza Maggiore 11.jpg",
+          "creditLabel": "Historic porticoes leading through central Bologna",
           "creator": "GennaroBologna",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for GennaroBologna, Piazza Maggiore subject, and CC BY-SA 4.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11413,7 +11413,7 @@
             "Historic porticoes leading through central Bologna"
           ],
           "rawVisibleCredits": [
-            "Bologna Piazza Maggiore 11.jpg — GennaroBologna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Historic porticoes leading through central Bologna — GennaroBologna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11429,19 +11429,19 @@
           "assetPath": "/assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modena_-_Piazza_Grande_-_Duomo.jpg",
           "sourceTitle": "Modena - Piazza Grande - Duomo.jpg",
-          "creditLabel": "Modena - Piazza Grande - Duomo.jpg",
+          "creditLabel": "Modena Cathedral and Piazza Grande along the Via Emilia corridor",
           "creator": "Gerolamondo",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Gerolamondo, Piazza Grande subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/emilia-romagna/",
@@ -11453,7 +11453,7 @@
             "Modena Cathedral and Piazza Grande along the Via Emilia corridor"
           ],
           "rawVisibleCredits": [
-            "Modena - Piazza Grande - Duomo.jpg — Gerolamondo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Modena Cathedral and Piazza Grande along the Via Emilia corridor — Gerolamondo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11469,19 +11469,19 @@
           "assetPath": "/assets/images/italy-emilia-romagna-ravenna-ferrara-po-delta.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ravenna,_Emilia-Romagna_-_Basilica_di_San_Vitale.jpg",
           "sourceTitle": "Ravenna, Emilia-Romagna - Basilica di San Vitale.jpg",
-          "creditLabel": "Ravenna, Emilia-Romagna - Basilica di San Vitale.jpg",
+          "creditLabel": "The Basilica of San Vitale in Ravenna",
           "creator": "Ingo Mehling",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Ingo Mehling, San Vitale subject, CC BY 2.0, and the Commons Flickr license review.",
           "useCount": 4,
           "routes": [
             "/italy/emilia-romagna/",
@@ -11493,7 +11493,7 @@
             "The Basilica of San Vitale in Ravenna"
           ],
           "rawVisibleCredits": [
-            "Ravenna, Emilia-Romagna - Basilica di San Vitale.jpg — Ingo Mehling, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Basilica of San Vitale in Ravenna — Ingo Mehling, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11509,19 +11509,19 @@
           "assetPath": "/assets/images/italy-florence-pisa-lucca-duomo-uffizi-centre.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Firenze_-_Florence_-_Galleria_degli_Uffizi_-_Terrace_on_top_of_Loggia_dei_Lanzi_-_View_on_il_Duomo_%26_thunderclouds.jpg",
           "sourceTitle": "Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg",
-          "creditLabel": "Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg",
+          "creditLabel": "Florence Cathedral dome above the Renaissance city centre",
           "creator": "Txllxt TxllxT",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Txllxt TxllxT, Uffizi terrace and Florence view, and CC BY-SA 4.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11534,7 +11534,7 @@
             "Florence Cathedral dome above the Renaissance city centre"
           ],
           "rawVisibleCredits": [
-            "Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg — Txllxt TxllxT, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Florence Cathedral dome above the Renaissance city centre — Txllxt TxllxT, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11550,19 +11550,19 @@
           "assetPath": "/assets/images/italy-florence-pisa-lucca-oltrarno-pitti-fiesole.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vista_de_Florencia_desde_Piazzale_Michelangelo,_Italia,_2022-09-18,_DD_212-214_HDR.jpg",
           "sourceTitle": "Vista de Florencia desde Piazzale Michelangelo, Italia, 2022-09-18, DD 212-214 HDR.jpg",
-          "creditLabel": "Vista de Florencia desde Piazzale Michelangelo, Italia, 2022-09-18, DD 212-214 HDR.jpg",
-          "creator": "Diego Delso",
+          "creditLabel": "Florence viewed across the Arno toward the Oltrarno hills",
+          "creator": "Diego Delso, delso.photo",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Diego Delso and CC BY-SA 4.0; the creator specifies the visible credit Diego Delso, delso.photo, License CC BY-SA and prohibits Facebook uploads.",
           "useCount": 4,
           "routes": [
             "/italy/florence-pisa-lucca/",
@@ -11574,7 +11574,7 @@
             "Florence viewed across the Arno toward the Oltrarno hills"
           ],
           "rawVisibleCredits": [
-            "Vista de Florencia desde Piazzale Michelangelo, Italia, 2022-09-18, DD 212-214 HDR.jpg — Diego Delso, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Florence viewed across the Arno toward the Oltrarno hills — Diego Delso, delso.photo, License CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11590,19 +11590,19 @@
           "assetPath": "/assets/images/italy-florence-pisa-lucca-pisa-lucca-rail-pair.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucca,_mura_e_campanila_San_Frediano.jpg",
           "sourceTitle": "Lucca, mura e campanila San Frediano.jpg",
-          "creditLabel": "Lucca, mura e campanila San Frediano.jpg",
+          "creditLabel": "Lucca’s historic walls and Tuscan city landscape",
           "creator": "Palickap",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Palickap, Lucca walls and San Frediano bell tower subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/florence-pisa-lucca/",
@@ -11614,7 +11614,7 @@
             "Lucca’s historic walls and Tuscan city landscape"
           ],
           "rawVisibleCredits": [
-            "Lucca, mura e campanila San Frediano.jpg — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Lucca’s historic walls and Tuscan city landscape — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11630,19 +11630,19 @@
           "assetPath": "/assets/images/italy-genoa-liguria-camogli-portofino-san-fruttuoso.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abbey_of_San_Fruttuoso_Camogli_Liguria.jpg",
           "sourceTitle": "Abbey of San Fruttuoso Camogli Liguria.jpg",
-          "creditLabel": "Abbey of San Fruttuoso Camogli Liguria.jpg",
+          "creditLabel": "The abbey and small bay of San Fruttuoso on the Portofino promontory",
           "creator": "Hayden Soloviev",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Hayden Soloviev, San Fruttuoso subject, and CC BY 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/genoa-liguria/",
@@ -11654,35 +11654,35 @@
             "The abbey and small bay of San Fruttuoso on the Portofino promontory"
           ],
           "rawVisibleCredits": [
-            "Abbey of San Fruttuoso Camogli Liguria.jpg — Hayden Soloviev, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The abbey and small bay of San Fruttuoso on the Portofino promontory — Hayden Soloviev, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "cef6bdfb64ceb108b0fd6a17309b9b4a9df14ffc77741afb6b65406d8bc7d068",
+      "sha256": "21b6664876ca8da01d9410d4224239ab7fefc62b725dda9cf14e718852120927",
       "assetPaths": [
         "/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp"
       ],
-      "byteLength": 355406,
+      "byteLength": 137938,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cemetery_Corniglia_Monterosso_Cinque_Terre_Sep23_A7C_06872.jpg",
-          "sourceTitle": "Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg",
-          "creditLabel": "Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg",
-          "creator": "Timothy A. Gonsalves",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_delle_Cinque_Terre_da_Monterosso.JPG",
+          "sourceTitle": "Panorama delle Cinque Terre da Monterosso.JPG",
+          "creditLabel": "A Cinque Terre village compressed between the Ligurian coast and steep hills",
+          "creator": "Luca Aless",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Replacement source page checked for Luca Aless, Cinque Terre coast viewed from Monterosso, and CC BY-SA 4.0. No pre-contact request was present on the checked file page.",
           "useCount": 4,
           "routes": [
             "/italy/genoa-liguria/",
@@ -11694,7 +11694,7 @@
             "A Cinque Terre village compressed between the Ligurian coast and steep hills"
           ],
           "rawVisibleCredits": [
-            "Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg — Timothy A. Gonsalves, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "A Cinque Terre village compressed between the Ligurian coast and steep hills — Luca Aless, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11710,19 +11710,19 @@
           "assetPath": "/assets/images/italy-genoa-liguria-genoa-old-port-rolli.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Genova_panorama_Molo_Carignano.jpg",
           "sourceTitle": "Genova panorama Molo Carignano.jpg",
-          "creditLabel": "Genova panorama Molo Carignano.jpg",
+          "creditLabel": "Genoa rising behind the Old Port with historic buildings on the slopes",
           "creator": "Bbruno",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Bbruno, Genoa panorama subject, and CC BY-SA 4.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11735,7 +11735,7 @@
             "Genoa rising behind the Old Port with historic buildings on the slopes"
           ],
           "rawVisibleCredits": [
-            "Genova panorama Molo Carignano.jpg — Bbruno, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Genoa rising behind the Old Port with historic buildings on the slopes — Bbruno, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11751,19 +11751,19 @@
           "assetPath": "/assets/images/italy-italian-lakes-lake-como-central-lake.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bellagio_and_Lake_Como_from_Menaggio-Varenna_ferry.jpg",
           "sourceTitle": "Bellagio and Lake Como from Menaggio-Varenna ferry.jpg",
-          "creditLabel": "Bellagio and Lake Como from Menaggio-Varenna ferry.jpg",
+          "creditLabel": "Varenna and the central waters of Lake Como with mountains beyond",
           "creator": "Daniel Case",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Daniel Case, Lake Como ferry viewpoint, and CC BY-SA 3.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11776,7 +11776,7 @@
             "Varenna and the central waters of Lake Como with mountains beyond"
           ],
           "rawVisibleCredits": [
-            "Bellagio and Lake Como from Menaggio-Varenna ferry.jpg — Daniel Case, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Varenna and the central waters of Lake Como with mountains beyond — Daniel Case, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11792,19 +11792,19 @@
           "assetPath": "/assets/images/italy-italian-lakes-lake-garda-shores.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:MALCESINE_GARDA_LAKE_AND_SCALIGERO_CASTLE.%D7%9E%D7%9C%D7%A6%27%D7%A1%D7%99%D7%A0%D7%94_%D7%98%D7%99%D7%A8%D7%AA_%D7%A1%D7%A7%D7%9C%D7%99%D7%92%27%D7%A8%D7%99_%D7%95%D7%90%D7%92%D7%9D_%D7%92%D7%90%D7%A8%D7%93%D7%94.jpg",
           "sourceTitle": "MALCESINE GARDA LAKE AND SCALIGERO CASTLE.מלצ'סינה טירת סקליג'רי ואגם גארדה.jpg",
-          "creditLabel": "MALCESINE GARDA LAKE AND SCALIGERO CASTLE.מלצ'סינה טירת סקליג'רי ואגם גארדה.jpg",
+          "creditLabel": "Malcesine waterfront, castle and mountains on Lake Garda",
           "creator": "Avisadehh",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Avisadehh, Malcesine and Scaliger Castle subject, and CC0 1.0 commercial-use dedication.",
           "useCount": 4,
           "routes": [
             "/italy/italian-lakes/",
@@ -11816,7 +11816,7 @@
             "Malcesine waterfront, castle and mountains on Lake Garda"
           ],
           "rawVisibleCredits": [
-            "MALCESINE GARDA LAKE AND SCALIGERO CASTLE.מלצ'סינה טירת סקליג'רי ואגם גארדה.jpg — Avisadehh, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Malcesine waterfront, castle and mountains on Lake Garda — Avisadehh, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11832,19 +11832,19 @@
           "assetPath": "/assets/images/italy-italian-lakes-lake-maggiore-islands.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Borromeo-P3P-20170530-010_(36234155645).jpg",
           "sourceTitle": "Borromeo-P3P-20170530-010 (36234155645).jpg",
-          "creditLabel": "Borromeo-P3P-20170530-010 (36234155645).jpg",
+          "creditLabel": "Isola Bella rising from Lake Maggiore against an Alpine backdrop",
           "creator": "CucombreLibre from New York, NY, USA",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for CucombreLibre, Isola Bella / Lake Maggiore subject, and CC BY 2.0.",
           "useCount": 4,
           "routes": [
             "/italy/italian-lakes/",
@@ -11856,7 +11856,7 @@
             "Isola Bella rising from Lake Maggiore against an Alpine backdrop"
           ],
           "rawVisibleCredits": [
-            "Borromeo-P3P-20170530-010 (36234155645).jpg — CucombreLibre from New York, NY, USA, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Isola Bella rising from Lake Maggiore against an Alpine backdrop — CucombreLibre from New York, NY, USA, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11872,19 +11872,19 @@
           "assetPath": "/assets/images/italy-marche-abruzzo-abruzzo-national-parks.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gran_Sasso_seen_from_East.jpg",
           "sourceTitle": "Gran Sasso seen from East.jpg",
-          "creditLabel": "Gran Sasso seen from East.jpg",
+          "creditLabel": "High mountain landscape in Gran Sasso and Monti della Laga National Park",
           "creator": "PaulFo",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for PaulFo, Gran Sasso subject, and CC0 1.0 dedication.",
           "useCount": 4,
           "routes": [
             "/italy/marche-abruzzo/",
@@ -11896,7 +11896,7 @@
             "High mountain landscape in Gran Sasso and Monti della Laga National Park"
           ],
           "rawVisibleCredits": [
-            "Gran Sasso seen from East.jpg — PaulFo, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "High mountain landscape in Gran Sasso and Monti della Laga National Park — PaulFo, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11912,19 +11912,19 @@
           "assetPath": "/assets/images/italy-marche-abruzzo-ancona-conero.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monte_Conero_visto_dalla_spiaggia_Urbani.jpg",
           "sourceTitle": "Monte Conero visto dalla spiaggia Urbani.jpg",
-          "creditLabel": "Monte Conero visto dalla spiaggia Urbani.jpg",
+          "creditLabel": "The forested Monte Conero headland above the Adriatic Sea",
           "creator": "Gabri307",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Gabri307, Monte Conero subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/marche-abruzzo/",
@@ -11936,7 +11936,7 @@
             "The forested Monte Conero headland above the Adriatic Sea"
           ],
           "rawVisibleCredits": [
-            "Monte Conero visto dalla spiaggia Urbani.jpg — Gabri307, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The forested Monte Conero headland above the Adriatic Sea — Gabri307, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11952,19 +11952,19 @@
           "assetPath": "/assets/images/italy-marche-abruzzo-urbino-pesaro.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Urbino-palazzo_e_borgo.jpg",
           "sourceTitle": "Urbino-palazzo e borgo.jpg",
-          "creditLabel": "Urbino-palazzo e borgo.jpg",
+          "creditLabel": "The Ducal Palace and hill town of Urbino in the Marche",
           "creator": "Il conte di Luna",
           "license": "CC BY-SA 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Il conte di Luna, Urbino subject, and CC BY-SA 2.0; page records Flickr review.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -11977,7 +11977,7 @@
             "The Ducal Palace and hill town of Urbino in the Marche"
           ],
           "rawVisibleCredits": [
-            "Urbino-palazzo e borgo.jpg — Il conte di Luna, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Ducal Palace and hill town of Urbino in the Marche — Il conte di Luna, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -11993,19 +11993,19 @@
           "assetPath": "/assets/images/italy-milan-duomo-brera.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Milan-duomo-front-facade.jpg",
           "sourceTitle": "Milan-duomo-front-facade.jpg",
-          "creditLabel": "Milan-duomo-front-facade.jpg",
+          "creditLabel": "The facade of Milan Cathedral facing Piazza del Duomo",
           "creator": "Skarkkai",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Skarkkai, Milan Cathedral facade subject, and CC0 dedication.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12018,7 +12018,7 @@
             "The facade of Milan Cathedral facing Piazza del Duomo"
           ],
           "rawVisibleCredits": [
-            "Milan-duomo-front-facade.jpg — Skarkkai, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The facade of Milan Cathedral facing Piazza del Duomo — Skarkkai, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12034,19 +12034,19 @@
           "assetPath": "/assets/images/italy-milan-last-supper-castello.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_delle_Grazie.jpg",
           "sourceTitle": "Santa Maria delle Grazie.jpg",
-          "creditLabel": "Santa Maria delle Grazie.jpg",
+          "creditLabel": "Santa Maria delle Grazie church and its brick dome in Milan",
           "creator": "Masi27185 ( talk )",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Masi27185 and Santa Maria delle Grazie subject under CC BY-SA 3.0.",
           "useCount": 4,
           "routes": [
             "/italy/milan/",
@@ -12058,7 +12058,7 @@
             "Santa Maria delle Grazie church and its brick dome in Milan"
           ],
           "rawVisibleCredits": [
-            "Santa Maria delle Grazie.jpg — Masi27185 ( talk ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Santa Maria delle Grazie church and its brick dome in Milan — Masi27185 ( talk ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12074,19 +12074,19 @@
           "assetPath": "/assets/images/italy-milan-navigli-porta-nuova-design.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Milano_Naviglio_Grande_am_Abend_1.jpg",
           "sourceTitle": "Milano Naviglio Grande am Abend 1.jpg",
-          "creditLabel": "Milano Naviglio Grande am Abend 1.jpg",
+          "creditLabel": "Evening light along Naviglio Grande in Milan",
           "creator": "Zairon",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Zairon, Naviglio Grande subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/milan/",
@@ -12098,35 +12098,35 @@
             "Evening light along Naviglio Grande in Milan"
           ],
           "rawVisibleCredits": [
-            "Milano Naviglio Grande am Abend 1.jpg — Zairon, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Evening light along Naviglio Grande in Milan — Zairon, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "6d90b35191d664af5b0b556ed1e5247bfebc94b14b0c38da23fa94defbc32161",
+      "sha256": "bd25d01e4e8a2d155553e5b0203758978e90e3d588cc958138911236d2ce36cb",
       "assetPaths": [
         "/assets/images/italy-naples-pompeii-vesuvius-herculaneum-vesuvius.webp"
       ],
-      "byteLength": 322224,
+      "byteLength": 321688,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-naples-pompeii-vesuvius-herculaneum-vesuvius.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antigua_ciudad_de_Herculano,_Italia,_2023-03-27,_DD_141.jpg",
-          "sourceTitle": "Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg",
-          "creditLabel": "Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg",
-          "creator": "Diego Delso",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herculaneum_(39517905442).jpg",
+          "sourceTitle": "Herculaneum (39517905442).jpg",
+          "creditLabel": "Excavated buildings and courtyard inside Herculaneum",
+          "creator": "Andrea Schaffer from Sydney, Australia",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Andrea Schaffer, Herculaneum subject, and CC BY 2.0; page records Flickr review.",
           "useCount": 4,
           "routes": [
             "/italy/naples-pompeii-vesuvius/",
@@ -12135,10 +12135,10 @@
             "/italy/naples-pompeii-vesuvius/pompeii-city-route/"
           ],
           "altTexts": [
-            "Herculaneum archaeological site below Mount Vesuvius"
+            "Excavated buildings and courtyard inside Herculaneum"
           ],
           "rawVisibleCredits": [
-            "Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg — Diego Delso, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Excavated buildings and courtyard inside Herculaneum — Andrea Schaffer from Sydney, Australia, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12154,19 +12154,19 @@
           "assetPath": "/assets/images/italy-naples-pompeii-vesuvius-naples-centre-mann-waterfront.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Napoli_vista_dall%27alto._0009.jpg",
           "sourceTitle": "Napoli vista dall'alto. 0009.jpg",
-          "creditLabel": "Napoli vista dall'alto. 0009.jpg",
+          "creditLabel": "The dense historic centre of Naples beneath Vesuvius",
           "creator": "Giuseppe Guida",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Giuseppe Guida, Naples subject, and CC BY-SA 4.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12179,35 +12179,35 @@
             "The dense historic centre of Naples beneath Vesuvius"
           ],
           "rawVisibleCredits": [
-            "Napoli vista dall'alto. 0009.jpg — Giuseppe Guida, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The dense historic centre of Naples beneath Vesuvius — Giuseppe Guida, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "b44107e54d0c64e95b9447988c9ca0130c59552db3f2e1834c4692823c4bf812",
+      "sha256": "c771d09387f2444fcf237a211961795de382cfebdcccd5ca521c0438d7b327ae",
       "assetPaths": [
         "/assets/images/italy-naples-pompeii-vesuvius-pompeii-city-route.webp"
       ],
-      "byteLength": 214946,
+      "byteLength": 190056,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-naples-pompeii-vesuvius-pompeii-city-route.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pompeii_Forum_and_Vesuvius_(23521893934).jpg",
-          "sourceTitle": "Pompeii Forum and Vesuvius (23521893934).jpg",
-          "creditLabel": "Pompeii Forum and Vesuvius (23521893934).jpg",
-          "creator": "Takver from Australia",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ancient_Pompeii_(LHS),_Modern_Pompeii_(RHS)_and_Vesuvius_(Centre)_(52786653083).jpg",
+          "sourceTitle": "Ancient Pompeii (LHS), Modern Pompeii (RHS) and Vesuvius (Centre) (52786653083).jpg",
+          "creditLabel": "Ancient Pompeii, modern Pompeii and Vesuvius in one view",
+          "creator": "Tracey Hind from Aups, France",
           "license": "CC BY-SA 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Tracey Hind / Flickr account Tracey & Doug, Pompeii/Vesuvius subject, Flickr review, and CC BY-SA 2.0.",
           "useCount": 4,
           "routes": [
             "/italy/naples-pompeii-vesuvius/",
@@ -12216,38 +12216,38 @@
             "/italy/naples-pompeii-vesuvius/pompeii-city-route/"
           ],
           "altTexts": [
-            "The excavated streets of Pompeii with Vesuvius beyond"
+            "Ancient Pompeii, modern Pompeii and Vesuvius in one view"
           ],
           "rawVisibleCredits": [
-            "Pompeii Forum and Vesuvius (23521893934).jpg — Takver from Australia, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Ancient Pompeii, modern Pompeii and Vesuvius in one view — Tracey Hind from Aups, France, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "207025eb5913451d0d3c0907de6917dfde5ce0b954ec721995c3a5c197c6d970",
+      "sha256": "6ee0971b95a4eeed532c62506d0f82fd0501298c2f84739729906a94e627f5a1",
       "assetPaths": [
         "/assets/images/italy-puglia-alberobello-itria-valley.webp"
       ],
-      "byteLength": 282558,
+      "byteLength": 192672,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-puglia-alberobello-itria-valley.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alberobello_-_Trulli_del_Rione_Aia_Piccola_-_02.jpg",
-          "sourceTitle": "Alberobello - Trulli del Rione Aia Piccola - 02.jpg",
-          "creditLabel": "Alberobello - Trulli del Rione Aia Piccola - 02.jpg",
-          "creator": "Benjamin Smith",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alberobello,_trulli_(13).jpg",
+          "sourceTitle": "Alberobello, trulli (13).jpg",
+          "creditLabel": "Stone trulli dwellings and conical roofs in Alberobello",
+          "creator": "Palickap",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Palickap, Alberobello trulli subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/puglia/",
@@ -12256,38 +12256,38 @@
             "/italy/puglia/lecce-otranto-gallipoli/"
           ],
           "altTexts": [
-            "Whitewashed trulli roofs in Alberobello’s Aia Piccola district"
+            "Stone trulli dwellings and conical roofs in Alberobello"
           ],
           "rawVisibleCredits": [
-            "Alberobello - Trulli del Rione Aia Piccola - 02.jpg — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Stone trulli dwellings and conical roofs in Alberobello — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "56c495d2ec97101005a085d6312eb0c7392d762dde94de085090b0809b9362ad",
+      "sha256": "3b2496439425ce48d208096360d56021367646a4ee7418e978d0f8f08e2cd31d",
       "assetPaths": [
         "/assets/images/italy-puglia-bari-trani-castel-del-monte.webp"
       ],
-      "byteLength": 266248,
+      "byteLength": 299012,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-puglia-bari-trani-castel-del-monte.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bari_-_Lungomare_Araldo_di_Crollalanza.jpg",
-          "sourceTitle": "Bari - Lungomare Araldo di Crollalanza.jpg",
-          "creditLabel": "Bari - Lungomare Araldo di Crollalanza.jpg",
-          "creator": "Benjamin Smith",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puglia_bari_old-town.jpg",
+          "sourceTitle": "Puglia bari old-town.jpg",
+          "creditLabel": "A view over historic buildings in Bari",
+          "creator": "Francesco Di Stefano 08",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Francesco Di Stefano 08, Bari subject, and CC BY-SA 4.0; no separate heritage reproduction notice was present on the checked page.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12297,38 +12297,38 @@
             "/italy/puglia/lecce-otranto-gallipoli/"
           ],
           "altTexts": [
-            "Bari old town and the Basilica of San Nicola beside the Adriatic waterfront"
+            "A view over historic buildings in Bari"
           ],
           "rawVisibleCredits": [
-            "Bari - Lungomare Araldo di Crollalanza.jpg — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "A view over historic buildings in Bari — Francesco Di Stefano 08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "2ea9cdbe0628b32313b610e3a1f7223e16dbbc880acd8263a200e217e8e2f06b",
+      "sha256": "11c9b3170033b0bf436b8557e59b4cfbefa48e25fdaab498737e65bc77062a5c",
       "assetPaths": [
         "/assets/images/italy-puglia-lecce-otranto-gallipoli.webp"
       ],
-      "byteLength": 392208,
+      "byteLength": 538962,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-puglia-lecce-otranto-gallipoli.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lecce_-_Santa_Croce_-_17.jpg",
-          "sourceTitle": "Lecce - Santa Croce - 17.jpg",
-          "creditLabel": "Lecce - Santa Croce - 17.jpg",
-          "creator": "Benjamin Smith",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lecce_from_the_air.jpg",
+          "sourceTitle": "Lecce from the air.jpg",
+          "creditLabel": "Aerial view over Lecce’s rooftops and streets",
+          "creator": "Joolz",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Joolz, Lecce aerial subject, and CC BY-SA 2.5; no separate heritage reproduction notice was present on the checked page.",
           "useCount": 4,
           "routes": [
             "/italy/puglia/",
@@ -12337,10 +12337,10 @@
             "/italy/puglia/lecce-otranto-gallipoli/"
           ],
           "altTexts": [
-            "The carved baroque façade of Santa Croce in Lecce"
+            "Aerial view over Lecce’s rooftops and streets"
           ],
           "rawVisibleCredits": [
-            "Lecce - Santa Croce - 17.jpg — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Aerial view over Lecce’s rooftops and streets — Joolz, CC BY-SA 2.5. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12355,8 +12355,8 @@
         {
           "assetPath": "/assets/images/italy-rome-ancient-rome-capitoline.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Forum_Romanum_through_Arch_of_Septimius_Severus_Forum_Romanum_Rome.jpg",
-          "sourceTitle": "Forum Romanum through Arch of Septimius Severus Forum Romanum Rome.jpg",
-          "creditLabel": "Forum Romanum through Arch of Septimius Severus Forum Romanum Rome.jpg",
+          "sourceTitle": "Roman Forum viewed through the Arch of Septimius Severus",
+          "creditLabel": "Roman Forum seen through the Arch of Septimius Severus",
           "creator": "Jebulon",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -12381,7 +12381,7 @@
             "Roman Forum seen through the Arch of Septimius Severus"
           ],
           "rawVisibleCredits": [
-            "Forum Romanum through Arch of Septimius Severus Forum Romanum Rome.jpg — Jebulon, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Roman Forum seen through the Arch of Septimius Severus — Jebulon, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12396,8 +12396,8 @@
         {
           "assetPath": "/assets/images/italy-rome-historic-centre-trastevere.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg",
-          "sourceTitle": "Santa Maria in Trastevere fountain.jpg",
-          "creditLabel": "Santa Maria in Trastevere fountain.jpg",
+          "sourceTitle": "Fountain at Piazza Santa Maria in Trastevere",
+          "creditLabel": "Fountain in Piazza Santa Maria in Trastevere",
           "creator": "Jensens",
           "license": "Public domain",
           "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
@@ -12421,7 +12421,7 @@
             "Fountain in Piazza Santa Maria in Trastevere"
           ],
           "rawVisibleCredits": [
-            "Santa Maria in Trastevere fountain.jpg — Jensens, Public domain. Resized, display-cropped and converted to WebP; no other material edits."
+            "Fountain in Piazza Santa Maria in Trastevere — Jensens, Public domain. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12436,14 +12436,14 @@
         {
           "assetPath": "/assets/images/italy-rome-vatican-borgo-prati.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
-          "sourceTitle": "St Peter's Square, Vatican City - April 2007.jpg",
-          "creditLabel": "St Peter's Square, Vatican City - April 2007.jpg",
+          "sourceTitle": "St Peter’s Square and Via della Conciliazione from the Basilica dome",
+          "creditLabel": "St Peter’s Square and Via della Conciliazione viewed from the dome of St Peter’s Basilica",
           "creator": "David Iliff (Diliff)",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 3.0.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -12458,10 +12458,10 @@
             "/italy/rome/vatican-borgo-prati/"
           ],
           "altTexts": [
-            "Saint Peter’s Square and Basilica in Vatican City"
+            "St Peter’s Square and Via della Conciliazione viewed from the dome of St Peter’s Basilica"
           ],
           "rawVisibleCredits": [
-            "St Peter's Square, Vatican City - April 2007.jpg — David Iliff (Diliff), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "St Peter’s Square and Via della Conciliazione viewed from the dome of St Peter’s Basilica — David Iliff (Diliff), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 3.0."
           ]
         }
       ]
@@ -12477,19 +12477,19 @@
           "assetPath": "/assets/images/italy-sardinia-cagliari-su-nuraxi.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castello_(Cagliari).jpg",
           "sourceTitle": "Castello (Cagliari).jpg",
-          "creditLabel": "Castello (Cagliari).jpg",
+          "creditLabel": "Cagliari’s Castello district rising above the city and the Gulf of Angels",
           "creator": "Municipality of Cagliari",
           "license": "CC BY-SA 3.0 it",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/it/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Municipality of Cagliari, Cagliari subject, and CC BY-SA 3.0 Italy.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12502,35 +12502,35 @@
             "Cagliari’s Castello district rising above the city and the Gulf of Angels"
           ],
           "rawVisibleCredits": [
-            "Castello (Cagliari).jpg — Municipality of Cagliari, CC BY-SA 3.0 it. Resized, display-cropped and converted to WebP; no other material edits."
+            "Cagliari’s Castello district rising above the city and the Gulf of Angels — Municipality of Cagliari, CC BY-SA 3.0 it. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "9981d7a1b7e899f680840815a4f3797e8875abdbec921a53139fb5c2968301ec",
+      "sha256": "d11c870aa3dda82316434e9dec6ed70782f48d2946ff416411551132fea9ce04",
       "assetPaths": [
         "/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp"
       ],
-      "byteLength": 183562,
+      "byteLength": 274034,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cala_Goloritze_o.jpg",
-          "sourceTitle": "Cala Goloritze o.jpg",
-          "creditLabel": "Cala Goloritze o.jpg",
-          "creator": "delaere",
-          "license": "CC BY 2.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cala_Goloritz%C3%A8_13_sept._2017.jpg",
+          "sourceTitle": "Cala Goloritzè 13 sept. 2017.jpg",
+          "creditLabel": "White limestone cliffs and turquoise water at Cala Goloritzé",
+          "creator": "Nicola Secci",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Nicola Secci, Cala Goloritzé subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/sardinia/",
@@ -12539,10 +12539,10 @@
             "/italy/sardinia/la-maddalena-gallura/"
           ],
           "altTexts": [
-            "The limestone pinnacle and turquoise water of Cala Goloritzé on the Gulf of Orosei"
+            "White limestone cliffs and turquoise water at Cala Goloritzé"
           ],
           "rawVisibleCredits": [
-            "Cala Goloritze o.jpg — delaere, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "White limestone cliffs and turquoise water at Cala Goloritzé — Nicola Secci, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12558,19 +12558,19 @@
           "assetPath": "/assets/images/italy-sardinia-la-maddalena-gallura.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Maddalena_-_Isola_di_Budelli_(01).JPG",
           "sourceTitle": "La Maddalena - Isola di Budelli (01).JPG",
-          "creditLabel": "La Maddalena - Isola di Budelli (01).JPG",
+          "creditLabel": "Granite islands and clear water in the La Maddalena archipelago",
           "creator": "Gianni Careddu",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Gianni Careddu, Budelli subject, and CC BY-SA 3.0. The author separately asks for a credit next to the image, a source hyperlink, and an email; no email was sent.",
           "useCount": 4,
           "routes": [
             "/italy/sardinia/",
@@ -12582,35 +12582,35 @@
             "Granite islands and clear water in the La Maddalena archipelago"
           ],
           "rawVisibleCredits": [
-            "La Maddalena - Isola di Budelli (01).JPG — Gianni Careddu, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Granite islands and clear water in the La Maddalena archipelago — Gianni Careddu, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "0e637c94ef878929f6864c4e0f046df4fd1d831eabb6d9f7b14a90e2669a7cda",
+      "sha256": "980f12e56f71c7e52976aafd71fd137072786e2c19645b3239bbdd1851eef888",
       "assetPaths": [
         "/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp"
       ],
-      "byteLength": 268130,
+      "byteLength": 349806,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cala_di_forno.JPG",
-          "sourceTitle": "Cala di forno.JPG",
-          "creditLabel": "Cala di forno.JPG",
-          "creator": "Simone F. Franci",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Costa_parco_naturale_della_Maremma.jpg",
+          "sourceTitle": "Costa parco naturale della Maremma.jpg",
+          "creditLabel": "Mediterranean coast and wild landscape in Maremma Natural Park",
+          "creator": "Denis Dascanio",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Denis Dascanio, Maremma Natural Park coast subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/siena-southern-tuscany/",
@@ -12622,35 +12622,35 @@
             "Mediterranean coast and wild landscape in Maremma Natural Park"
           ],
           "rawVisibleCredits": [
-            "Cala di forno.JPG — Simone F. Franci, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Mediterranean coast and wild landscape in Maremma Natural Park — Denis Dascanio, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "cbae6a77e86d716526dfe54b049dc1938e760b9bdfd9bb6f604b544bbf257993",
+      "sha256": "047c5e251d448eedb212cbcab06ba94493485321e2510c0c597da0f99c6b67b2",
       "assetPaths": [
         "/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp"
       ],
-      "byteLength": 127666,
+      "byteLength": 244660,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campo_de_Siena_un_dia_de_pluja.JPG",
-          "sourceTitle": "Piazza del Campo de Siena un dia de pluja.JPG",
-          "creditLabel": "Piazza del Campo de Siena un dia de pluja.JPG",
-          "creator": "Joanbanjo",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palaces_-_Piazza_del_Campo_-_Siena_2016.jpg",
+          "sourceTitle": "Palaces - Piazza del Campo - Siena 2016.jpg",
+          "creditLabel": "Medieval palaces surrounding Siena’s Piazza del Campo",
+          "creator": "José Luiz Bernardes Ribeiro",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for José Luiz Bernardes Ribeiro (Jbribeiro1), Siena subject, and CC BY-SA 4.0. The page asks for a nearby author credit; that credit is present. Its email request was not acted on.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12660,10 +12660,10 @@
             "/italy/siena-southern-tuscany/val-dorcia-towns/"
           ],
           "altTexts": [
-            "Siena’s Piazza del Campo and medieval skyline in Tuscany"
+            "Medieval palaces surrounding Siena’s Piazza del Campo"
           ],
           "rawVisibleCredits": [
-            "Piazza del Campo de Siena un dia de pluja.JPG — Joanbanjo, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Medieval palaces surrounding Siena’s Piazza del Campo — José Luiz Bernardes Ribeiro, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12679,19 +12679,19 @@
           "assetPath": "/assets/images/italy-siena-southern-tuscany-val-dorcia-towns.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Val_D_Orcia_In_Autumn_(179351679).jpeg",
           "sourceTitle": "Val D Orcia In Autumn (179351679).jpeg",
-          "creditLabel": "Val D Orcia In Autumn (179351679).jpeg",
+          "creditLabel": "Rolling hills and stone towns in Val d’Orcia, Tuscany",
           "creator": "Fabrizio Lunardi",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Fabrizio Lunardi, Val d’Orcia subject, and CC0 1.0 dedication.",
           "useCount": 4,
           "routes": [
             "/italy/siena-southern-tuscany/",
@@ -12703,7 +12703,7 @@
             "Rolling hills and stone towns in Val d’Orcia, Tuscany"
           ],
           "rawVisibleCredits": [
-            "Val D Orcia In Autumn (179351679).jpeg — Fabrizio Lunardi, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Rolling hills and stone towns in Val d’Orcia, Tuscany — Fabrizio Lunardi, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12719,19 +12719,19 @@
           "assetPath": "/assets/images/italy-sorrento-amalfi-capri-capri-anacapri.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faraglioni_in_Capri_09.jpg",
           "sourceTitle": "Faraglioni in Capri 09.jpg",
-          "creditLabel": "Faraglioni in Capri 09.jpg",
+          "creditLabel": "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea",
           "creator": "Abxbay",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-04",
+          "verificationDetail": "Commons source page checked for Abxbay, Capri Faraglioni subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/sorrento-amalfi-capri/",
@@ -12743,7 +12743,7 @@
             "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea"
           ],
           "rawVisibleCredits": [
-            "Faraglioni in Capri 09.jpg — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12759,19 +12759,19 @@
           "assetPath": "/assets/images/italy-sorrento-amalfi-capri-positano-amalfi-ravello.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Positano_panorama.jpg",
           "sourceTitle": "Positano panorama.jpg",
-          "creditLabel": "Positano panorama.jpg",
+          "creditLabel": "Positano stacked above the sea on the Amalfi Coast",
           "creator": "Nicola Cerroni",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Nicola Cerroni, Positano subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
           "useCount": 4,
           "routes": [
             "/italy/sorrento-amalfi-capri/",
@@ -12783,7 +12783,7 @@
             "Positano stacked above the sea on the Amalfi Coast"
           ],
           "rawVisibleCredits": [
-            "Positano panorama.jpg — Nicola Cerroni, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Positano stacked above the sea on the Amalfi Coast — Nicola Cerroni, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12799,19 +12799,19 @@
           "assetPath": "/assets/images/italy-sorrento-amalfi-capri-sorrento-gateway.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sorrento_Cliff_2.jpg",
           "sourceTitle": "Sorrento Cliff 2.jpg",
-          "creditLabel": "Sorrento Cliff 2.jpg",
+          "creditLabel": "Sorrento’s cliffs and marina above the Bay of Naples",
           "creator": "Halley from Boston",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Halley from Boston, Sorrento subject, and CC BY 2.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12824,7 +12824,7 @@
             "Sorrento’s cliffs and marina above the Bay of Naples"
           ],
           "rawVisibleCredits": [
-            "Sorrento Cliff 2.jpg — Halley from Boston, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Sorrento’s cliffs and marina above the Bay of Naples — Halley from Boston, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12840,19 +12840,19 @@
           "assetPath": "/assets/images/italy-turin-piedmont-langhe-alba-asti.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Langhe.jpg",
           "sourceTitle": "Langhe.jpg",
-          "creditLabel": "Langhe.jpg",
+          "creditLabel": "Vineyard hills and villages in the Langhe area of Piedmont",
           "creator": "Phalaenopsis Aphrodite from Italy",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Phalaenopsis Aphrodite, Langhe subject, and CC BY 2.0.",
           "useCount": 4,
           "routes": [
             "/italy/turin-piedmont/",
@@ -12864,7 +12864,7 @@
             "Vineyard hills and villages in the Langhe area of Piedmont"
           ],
           "rawVisibleCredits": [
-            "Langhe.jpg — Phalaenopsis Aphrodite from Italy, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Vineyard hills and villages in the Langhe area of Piedmont — Phalaenopsis Aphrodite from Italy, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12880,19 +12880,19 @@
           "assetPath": "/assets/images/italy-turin-piedmont-royal-turin-egyptian-museum.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Piazza_Castello_di_Torino_e_scorcio_della_Piazzetta_Reale.jpg",
           "sourceTitle": "Piazza Castello di Torino e scorcio della Piazzetta Reale.jpg",
-          "creditLabel": "Piazza Castello di Torino e scorcio della Piazzetta Reale.jpg",
+          "creditLabel": "Piazza Castello and the Royal Palace complex in Turin",
           "creator": "Guglielmo di Rivoli",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Guglielmo di Rivoli, Piazza Castello subject, and CC0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -12905,7 +12905,7 @@
             "Piazza Castello and the Royal Palace complex in Turin"
           ],
           "rawVisibleCredits": [
-            "Piazza Castello di Torino e scorcio della Piazzetta Reale.jpg — Guglielmo di Rivoli, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Piazza Castello and the Royal Palace complex in Turin — Guglielmo di Rivoli, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12921,19 +12921,19 @@
           "assetPath": "/assets/images/italy-turin-piedmont-venaria-sacra-san-michele.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sacra_di_San_Michele_272.jpg",
           "sourceTitle": "Sacra di San Michele 272.jpg",
-          "creditLabel": "Sacra di San Michele 272.jpg",
+          "creditLabel": "Sacra di San Michele rising above the Susa Valley in Piedmont",
           "creator": "Cristian Buda",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Cristian Buda, Sacra di San Michele subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
           "useCount": 4,
           "routes": [
             "/italy/turin-piedmont/",
@@ -12945,7 +12945,7 @@
             "Sacra di San Michele rising above the Susa Valley in Piedmont"
           ],
           "rawVisibleCredits": [
-            "Sacra di San Michele 272.jpg — Cristian Buda, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Sacra di San Michele rising above the Susa Valley in Piedmont — Cristian Buda, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -12961,19 +12961,19 @@
           "assetPath": "/assets/images/italy-umbria-assisi-franciscan-city.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Papal_Basilica_of_Saint_Francis_of_Assisi.jpg",
           "sourceTitle": "Papal Basilica of Saint Francis of Assisi.jpg",
-          "creditLabel": "Papal Basilica of Saint Francis of Assisi.jpg",
+          "creditLabel": "The Basilica of Saint Francis and the hill town of Assisi",
           "creator": "Peter K Burian",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Peter K Burian, Assisi basilica subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/umbria/",
@@ -12985,7 +12985,7 @@
             "The Basilica of Saint Francis and the hill town of Assisi"
           ],
           "rawVisibleCredits": [
-            "Papal Basilica of Saint Francis of Assisi.jpg — Peter K Burian, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Basilica of Saint Francis and the hill town of Assisi — Peter K Burian, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13001,19 +13001,19 @@
           "assetPath": "/assets/images/italy-umbria-orvieto-cliff-city.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orvieto_panorama.jpg",
           "sourceTitle": "Orvieto panorama.jpg",
-          "creditLabel": "Orvieto panorama.jpg",
+          "creditLabel": "Orvieto Cathedral and the town standing above its tufa cliff",
           "creator": "Hans Peter Schaefer, http://www.reserv-a-rt.de",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Hans Peter Schaefer, Orvieto panorama subject, and CC BY-SA 3.0.",
           "useCount": 4,
           "routes": [
             "/italy/umbria/",
@@ -13025,7 +13025,7 @@
             "Orvieto Cathedral and the town standing above its tufa cliff"
           ],
           "rawVisibleCredits": [
-            "Orvieto panorama.jpg — Hans Peter Schaefer, http://www.reserv-a-rt.de, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Orvieto Cathedral and the town standing above its tufa cliff — Hans Peter Schaefer, http://www.reserv-a-rt.de, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13041,19 +13041,19 @@
           "assetPath": "/assets/images/italy-umbria-perugia-ridge-city.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perugia_-_Palazzo_dei_Priori_-_2025-09-07_21-53-14_001.JPG",
           "sourceTitle": "Perugia - Palazzo dei Priori - 2025-09-07 21-53-14 001.JPG",
-          "creditLabel": "Perugia - Palazzo dei Priori - 2025-09-07 21-53-14 001.JPG",
+          "creditLabel": "Perugia’s historic centre rising along its Umbrian ridge",
           "creator": "Maddy16869",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Maddy16869, Palazzo dei Priori subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -13066,7 +13066,7 @@
             "Perugia’s historic centre rising along its Umbrian ridge"
           ],
           "rawVisibleCredits": [
-            "Perugia - Palazzo dei Priori - 2025-09-07 21-53-14 001.JPG — Maddy16869, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Perugia’s historic centre rising along its Umbrian ridge — Maddy16869, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13082,19 +13082,19 @@
           "assetPath": "/assets/images/italy-veneto-art-cities-padua-frescoes-basilica.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prato_5_con_Santo.JPG",
           "sourceTitle": "Prato 5 con Santo.JPG",
-          "creditLabel": "Prato 5 con Santo.JPG",
-          "creator": "P tasso",
+          "creditLabel": "The domes of the Basilica of Saint Anthony in Padua",
+          "creator": "Piero tasso (P tasso)",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for CC BY-SA 3.0. Its description names Piero tasso while the upload account is P tasso; both names are retained in the site credit.",
           "useCount": 4,
           "routes": [
             "/italy/veneto-art-cities/",
@@ -13106,7 +13106,7 @@
             "The domes of the Basilica of Saint Anthony in Padua"
           ],
           "rawVisibleCredits": [
-            "Prato 5 con Santo.JPG — P tasso, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The domes of the Basilica of Saint Anthony in Padua — Piero tasso (P tasso), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13122,19 +13122,19 @@
           "assetPath": "/assets/images/italy-veneto-art-cities-verona-arena-river.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
           "sourceTitle": "Verona Italy Piazza Bra from arena DSC08039.JPG",
-          "creditLabel": "Verona Italy Piazza Bra from arena DSC08039.JPG",
+          "creditLabel": "The Roman Arena facing Piazza Bra in Verona",
           "creator": "David Monniaux",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for David Monniaux, Piazza Bra subject, and CC BY-SA 3.0.",
           "useCount": 6,
           "routes": [
             "/italy/",
@@ -13147,7 +13147,7 @@
             "The Roman Arena facing Piazza Bra in Verona"
           ],
           "rawVisibleCredits": [
-            "Verona Italy Piazza Bra from arena DSC08039.JPG — David Monniaux, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Roman Arena facing Piazza Bra in Verona — David Monniaux, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13163,19 +13163,19 @@
           "assetPath": "/assets/images/italy-veneto-art-cities-vicenza-palladian-city.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basilica_Palladiana_a_Vicenza_Italy_and_Piazza_dei_Signori_and_Loggia_del_Capitaniato_Palace.jpg",
           "sourceTitle": "Basilica Palladiana a Vicenza Italy and Piazza dei Signori and Loggia del Capitaniato Palace.jpg",
-          "creditLabel": "Basilica Palladiana a Vicenza Italy and Piazza dei Signori and Loggia del Capitaniato Palace.jpg",
+          "creditLabel": "The Basilica Palladiana on Piazza dei Signori in Vicenza",
           "creator": "Federico",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Federico, Vicenza landmarks subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction.",
           "useCount": 4,
           "routes": [
             "/italy/veneto-art-cities/",
@@ -13187,35 +13187,35 @@
             "The Basilica Palladiana on Piazza dei Signori in Vicenza"
           ],
           "rawVisibleCredits": [
-            "Basilica Palladiana a Vicenza Italy and Piazza dei Signori and Loggia del Capitaniato Palace.jpg — Federico, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Basilica Palladiana on Piazza dei Signori in Vicenza — Federico, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "ec256864271f53e7533138f6480a7cb920da40d13342034ea4a4d43cabfdbcb5",
+      "sha256": "14052f44ba78aff0520a5b4a913929bed98ed9b800b970107d52558ea0ee929e",
       "assetPaths": [
         "/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp"
       ],
-      "byteLength": 265548,
+      "byteLength": 296416,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palazzo_Labia_in_Venice_on_Cannaregio_canal.JPG",
-          "sourceTitle": "Palazzo Labia in Venice on Cannaregio canal.JPG",
-          "creditLabel": "Palazzo Labia in Venice on Cannaregio canal.JPG",
-          "creator": "Wolfgang Moroder",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canale_di_Cannaregio_(7227730810).jpg",
+          "sourceTitle": "Canale di Cannaregio (7227730810).jpg",
+          "creditLabel": "A canal and residential street in Cannaregio, Venice",
+          "creator": "Tony Hisgett from Birmingham, UK",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Tony Hisgett, Cannaregio canal subject, and CC BY 2.0; Commons records the Flickr review. No separate restriction was present on the checked file page.",
           "useCount": 4,
           "routes": [
             "/italy/venice-lagoon/",
@@ -13227,7 +13227,7 @@
             "A canal and residential street in Cannaregio, Venice"
           ],
           "rawVisibleCredits": [
-            "Palazzo Labia in Venice on Cannaregio canal.JPG — Wolfgang Moroder, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "A canal and residential street in Cannaregio, Venice — Tony Hisgett from Birmingham, UK, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13243,19 +13243,19 @@
           "assetPath": "/assets/images/italy-venice-lagoon-murano-burano-torcello.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Burano_-_canal_and_colourful_houses_(36071932225).jpg",
           "sourceTitle": "Burano - canal and colourful houses (36071932225).jpg",
-          "creditLabel": "Burano - canal and colourful houses (36071932225).jpg",
+          "creditLabel": "Colourful houses and a canal on Burano in the Venetian Lagoon",
           "creator": "Jorge Franganillo",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Jorge Franganillo, Burano canal subject, and CC BY 2.0.",
           "useCount": 4,
           "routes": [
             "/italy/venice-lagoon/",
@@ -13267,35 +13267,35 @@
             "Colourful houses and a canal on Burano in the Venetian Lagoon"
           ],
           "rawVisibleCredits": [
-            "Burano - canal and colourful houses (36071932225).jpg — Jorge Franganillo, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Colourful houses and a canal on Burano in the Venetian Lagoon — Jorge Franganillo, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "e843ba02e6f32b7861934d257926c2e2647bbe9c58eb4c6c5f879c9bc730c7dd",
+      "sha256": "cb2758cae338a339efed2c861c2baa87b9ed0507b76601f13b4ec70a76f45ac4",
       "assetPaths": [
         "/assets/images/italy-venice-lagoon-san-marco-rialto.webp"
       ],
-      "byteLength": 246790,
+      "byteLength": 256134,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/italy-venice-lagoon-san-marco-rialto.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_and_Venice_on_Easter_2013.jpg",
-          "sourceTitle": "Panorama Piazza San Marco and Venice on Easter 2013.jpg",
-          "creditLabel": "Panorama Piazza San Marco and Venice on Easter 2013.jpg",
-          "creator": "Wolfgang Moroder",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_Venezia_06_2017_2965.jpg",
+          "sourceTitle": "Panorama Piazza San Marco Venezia 06 2017 2965.jpg",
+          "creditLabel": "The Doge’s Palace and waterfront at San Marco in Venice",
+          "creator": "Mariordo (Mario Roberto Durán Ortiz)",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Mariordo (Mario Roberto Durán Ortiz), the San Marco waterfront panorama, and CC BY-SA 4.0.",
           "useCount": 7,
           "routes": [
             "/italy/",
@@ -13308,7 +13308,7 @@
             "The Doge’s Palace and waterfront at San Marco in Venice"
           ],
           "rawVisibleCredits": [
-            "Panorama Piazza San Marco and Venice on Easter 2013.jpg — Wolfgang Moroder, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Doge’s Palace and waterfront at San Marco in Venice — Mariordo (Mario Roberto Durán Ortiz), CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13324,19 +13324,19 @@
           "assetPath": "/assets/images/italy-western-sicily-agrigento-selinunte.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Valle_dei_Templi_%E2%80%93_Temple_of_Concordia_2024b.jpg",
           "sourceTitle": "Valle dei Templi – Temple of Concordia 2024b.jpg",
-          "creditLabel": "Valle dei Templi – Temple of Concordia 2024b.jpg",
+          "creditLabel": "The Temple of Concordia on the archaeological ridge at Agrigento",
           "creator": "Cayambe",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Cayambe, Temple of Concordia subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/western-sicily/",
@@ -13348,7 +13348,7 @@
             "The Temple of Concordia on the archaeological ridge at Agrigento"
           ],
           "rawVisibleCredits": [
-            "Valle dei Templi – Temple of Concordia 2024b.jpg — Cayambe, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Temple of Concordia on the archaeological ridge at Agrigento — Cayambe, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13364,19 +13364,19 @@
           "assetPath": "/assets/images/italy-western-sicily-palermo-monreale-cefalu.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panoramica_Cattedrale_di_Palermo.jpg",
           "sourceTitle": "Panoramica Cattedrale di Palermo.jpg",
-          "creditLabel": "Panoramica Cattedrale di Palermo.jpg",
+          "creditLabel": "Palermo Cathedral rising above the historic city streets",
           "creator": "Kiban",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Kiban, Palermo Cathedral panorama subject, and CC BY-SA 3.0.",
           "useCount": 7,
           "routes": [
             "/italy/",
@@ -13389,7 +13389,7 @@
             "Palermo Cathedral rising above the historic city streets"
           ],
           "rawVisibleCredits": [
-            "Panoramica Cattedrale di Palermo.jpg — Kiban, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Palermo Cathedral rising above the historic city streets — Kiban, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -13405,19 +13405,19 @@
           "assetPath": "/assets/images/italy-western-sicily-trapani-erice-egadi.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wind_mill_at_salt.pans.jpg",
           "sourceTitle": "Wind mill at salt.pans.jpg",
-          "creditLabel": "Wind mill at salt.pans.jpg",
+          "creditLabel": "Salt pans and windmills glowing at sunset near Trapani",
           "creator": "Malcanton",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Source page checked for Malcanton, Trapani salt-pan windmill subject, and CC BY-SA 4.0.",
           "useCount": 4,
           "routes": [
             "/italy/western-sicily/",
@@ -13429,7 +13429,7 @@
             "Salt pans and windmills glowing at sunset near Trapani"
           ],
           "rawVisibleCredits": [
-            "Wind mill at salt.pans.jpg — Malcanton, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Salt pans and windmills glowing at sunset near Trapani — Malcanton, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]

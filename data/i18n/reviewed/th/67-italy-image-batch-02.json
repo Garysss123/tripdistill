@@ -1,0 +1,36 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/naples-pompeii-vesuvius/herculaneum-vesuvius/",
+    "/italy/naples-pompeii-vesuvius/pompeii-city-route/",
+    "/italy/puglia/alberobello-itria-valley/",
+    "/italy/puglia/bari-trani-castel-del-monte/",
+    "/italy/puglia/lecce-otranto-gallipoli/",
+    "/italy/sardinia/gulf-orosei-gennargentu/",
+    "/italy/siena-southern-tuscany/maremma-park-coast/",
+    "/italy/siena-southern-tuscany/siena-civic-cathedral/"
+  ],
+  "translations": {
+    "Excavated buildings and courtyard inside Herculaneum": "อาคารที่ขุดค้นแล้วและลานภายใน Herculaneum",
+    "Excavated buildings and courtyard inside Herculaneum · CC BY 2.0": "อาคารที่ขุดค้นแล้วและลานภายใน Herculaneum · CC BY 2.0",
+    "Ancient Pompeii, modern Pompeii and Vesuvius in one view": "มองเห็น Pompeii โบราณ Pompeii ปัจจุบัน และ Vesuvius ในภาพเดียว",
+    "— Tracey Hind from Aups, France,": "— Tracey Hind จาก Aups ประเทศฝรั่งเศส,",
+    "— Andrea Schaffer from Sydney, Australia,": "— Andrea Schaffer จาก Sydney ประเทศออสเตรเลีย,",
+    "Ancient Pompeii, modern Pompeii and Vesuvius in one view · CC BY-SA 2.0": "มองเห็น Pompeii โบราณ Pompeii ปัจจุบัน และ Vesuvius ในภาพเดียว · CC BY-SA 2.0",
+    "Stone trulli dwellings and conical roofs in Alberobello": "บ้าน trulli ที่ก่อด้วยหินและมีหลังคาทรงกรวยใน Alberobello",
+    "Stone trulli dwellings and conical roofs in Alberobello · CC BY-SA 4.0": "บ้าน trulli ที่ก่อด้วยหินและมีหลังคาทรงกรวยใน Alberobello · CC BY-SA 4.0",
+    "A view over historic buildings in Bari": "วิวอาคารเก่าแก่ใน Bari",
+    "Aerial view over Lecce’s rooftops and streets": "ภาพถ่ายทางอากาศของหลังคาและถนนใน Lecce",
+    "— Francesco Di Stefano 08,": "— Francesco Di Stefano 08,",
+    "— Joolz,": "— Joolz,",
+    "A view over historic buildings in Bari · CC BY-SA 4.0": "วิวอาคารเก่าแก่ใน Bari · CC BY-SA 4.0",
+    "Aerial view over Lecce’s rooftops and streets · CC BY-SA 2.5": "ภาพถ่ายทางอากาศของหลังคาและถนนใน Lecce · CC BY-SA 2.5",
+    "— Nicola Secci,": "— Nicola Secci,",
+    "Mediterranean coast and wild landscape in Maremma Natural Park · CC BY-SA 4.0": "ชายฝั่งเมดิเตอร์เรเนียนและภูมิทัศน์ธรรมชาติในอุทยาน Maremma · CC BY-SA 4.0",
+    "— Denis Dascanio,": "— Denis Dascanio,",
+    "Medieval palaces surrounding Siena’s Piazza del Campo": "พระราชวังยุคกลางที่รายล้อม Piazza del Campo ใน Siena",
+    "— José Luiz Bernardes Ribeiro,": "— José Luiz Bernardes Ribeiro,",
+    "Medieval palaces surrounding Siena’s Piazza del Campo · CC BY-SA 4.0": "พระราชวังยุคกลางที่รายล้อม Piazza del Campo ใน Siena · CC BY-SA 4.0"
+  }
+}
