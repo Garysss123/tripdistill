@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/ancient-rome-capitoline/"
+  ],
+  "translations": {
+    "Four stages through the Capitoline": "เส้นทางเที่ยวเนินคาปิโตลีน 4 ช่วง",
+    "Read the Forum from two elevations: its archaeological valley, the redesigned Capitoline summit, and the Tabularium looking back across the ruins.": "ทำความเข้าใจฟอรัมจากสองระดับ: หุบเขาโบราณคดี ยอดเนินคาปิโตลีนที่ปรับภูมิทัศน์ใหม่ และ Tabularium ซึ่งมองย้อนกลับไปยังซากโบราณสถาน",
+    "Read the Forum from the Tabularium": "ทำความเข้าใจฟอรัมจาก Tabularium",
+    "The archive corridor above the Forum": "ทางเดินในหอจดหมายเหตุเหนือฟอรัม"
+  }
+}

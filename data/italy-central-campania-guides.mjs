@@ -40,6 +40,9 @@ export const italyCentralCampaniaClusters = [
         slug: 'ancient-rome-capitoline',
         name: 'Ancient Rome & the Capitoline',
         instrument: 'Forum-to-Capitoline field notes',
+        routeTitle: 'Four stages through the Capitoline',
+        routeLead: 'Read the Forum from two elevations: its archaeological valley, the redesigned Capitoline summit, and the Tabularium looking back across the ruins.',
+        routeLabels: ['Arrive', 'Cross the threshold', 'Use the layer', 'Read the Forum from the Tabularium'],
         layout: 'forum-gate-time-score',
         structure: 'booked-door-score',
         imageQuery: 'Roman Forum Colosseum Capitoline Rome panorama',
@@ -57,7 +60,7 @@ export const italyCentralCampaniaClusters = [
           ["Read the booking details", "Open the official ticket before leaving the hotel. Save the named entrance, entry time, included areas and exit or route instructions; “Colosseum” on a map is not a gate assignment."],
           ["Stay with one archaeological route", "Once inside, follow the direction shown for your ticket. Notice how the Forum lies in the hollow beneath the Capitoline while the Palatine rises on its other side; do not reverse a long traverse to collect a second viewpoint."],
           ["Climb to Piazza del Campidoglio", "The ancient Capitolium and Arx stood on separate heights divided by a valley; today’s square sits about eight metres above that old valley floor. Musei Capitolini describes Michelangelo’s buildings, sculpture and patterned paving as one planned composition."],
-          ["Use the Tabularium view if open", "The Capitoline Museums’ Tabularium was completed under Quintus Lutatius Catulus in 78 BCE for Rome’s public records. Its surviving vaulted corridor remains part of the museum and looks out at the Forum from the hill’s side. Check the current museum route before relying on it."]
+          ["The archive corridor above the Forum", "The Capitoline Museums’ Tabularium was completed under Quintus Lutatius Catulus in 78 BCE for Rome’s public records. Its surviving vaulted corridor remains part of the museum and looks out at the Forum from the hill’s side. Check the current museum route before relying on it."]
         ],
         whatToSee: [
           [
@@ -95,8 +98,9 @@ export const italyCentralCampaniaClusters = [
         duration: "Allow most of a day for a linked Colosseum and Forum-Palatine visit if you want time to pause at the monuments and understand the terrain. Add the Capitoline Museums only when their current last-entry time, your energy and the route out leave a realistic visit; a hill-and-museum day also works well by itself.",
         combine: "A Capitoline finish can lead to a nearby meal in the Ghetto or Monti, depending on your exit. Colosseum and Forum-Palatine access may fit the same day on a linked ticket; leave the Vatican or Borghese Gallery for another day if your schedule includes more than one booked interior.",
         verify: "Before departure, check the exact official Colosseum ticket and gate, archaeological-area access notice, Capitoline route and accessibility information, and current ATAC service. Do not rely on a map pin to resolve the entrance.",
-        reviewDate: "4 October 2026",
-        reviewIsoDate: "2026-10-04",
+        reviewDate: "5 October 2026",
+        reviewIsoDate: "2026-10-05",
+        publishedIsoDate: "2026-10-04",
         faq: [["What was the Tabularium?","Completed under Quintus Lutatius Catulus in 78 BCE, it held the bronze records of Roman laws and state acts. The remaining vaulted corridor is now within the Capitoline Museums, where its openings face the Forum."],["Why is Piazza del Campidoglio above the Forum?","The Capitoline originally had two high points, the Capitolium and the Arx, separated by a deep valley. The present square occupies that gap and stands about eight metres above the original valley floor."],["Can I visit the Colosseum and Forum on one day?","Some official ticket products link Colosseum entry with Forum and Palatine access, while others have different inclusions and visit conditions. Check the exact ticket and allow most of a day for the combined archaeological visit."]],
         sources: [
           ["https://colosseo.it/en/visit/", "Parco archeologico del Colosseo — current official visit and ticket information"],

@@ -1,0 +1,17 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/venice-lagoon/",
+    "/italy/venice-lagoon/san-marco-rialto/",
+    "/italy/venice-lagoon/cannaregio-dorsoduro-giudecca/",
+    "/italy/venice-lagoon/murano-burano-torcello/",
+    "/italy/rome/ancient-rome-capitoline/"
+  ],
+  "translations": {
+    "Planning facts and image licensing were reviewed on 5 October 2026. Verify current tickets, rail, roads, ZTLs, paths, ferries and site access before travel.": "行程規劃資訊與圖片授權已於2026年10月5日檢視。出發前請確認票券、鐵路、公路、ZTL限行區、步道、渡船及景點出入規定的最新資訊。",
+    "Editorial review: 5 October 2026 · Recheck time-sensitive details before booking.": "編輯審閱日期：2026年10月5日 · 預訂前請再次確認容易變動的資訊。",
+    "reviewed 5 October 2026": "審閱日期：2026年10月5日",
+    "Planning facts and image licensing were reviewed on 5 October 2026. Admission, rail, roads, ZTLs, paths, ferries, weather and local access can change; reopen the linked authority or operator before travel.": "行程規劃資訊與圖片授權已於2026年10月5日檢視。門票與入場、鐵路、公路、ZTL限行區、步道、渡船、天氣及當地通行規定都可能變動；出發前請重新查看所連結的主管機關或營運單位資訊。"
+  }
+}

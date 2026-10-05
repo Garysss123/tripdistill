@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/ancient-rome-capitoline/"
+  ],
+  "translations": {
+    "Four stages through the Capitoline": "카피톨리노 언덕을 거치는 4단계 동선",
+    "Read the Forum from two elevations: its archaeological valley, the redesigned Capitoline summit, and the Tabularium looking back across the ruins.": "두 고도에서 포로 로마노를 살펴보세요. 고고학 유적이 펼쳐진 계곡과 새롭게 정비된 카피톨리노 언덕 정상, 타불라리움에서 유적을 내려다보는 전망을 하나의 동선으로 잇습니다.",
+    "Read the Forum from the Tabularium": "타불라리움에서 바라보는 포로 로마노",
+    "The archive corridor above the Forum": "포로 로마노 위쪽의 기록 보관 회랑"
+  }
+}

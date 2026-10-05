@@ -60,7 +60,7 @@ export function defineItalyCluster(cluster) {
       region: cluster.region,
       family: cluster.family,
       url: `/italy/${cluster.slug}/${guide.slug}/`,
-      route: guide.stages.map((stage, stageIndex) => [routeLabels[stageIndex], stage[0], stage[1]]),
+      route: guide.stages.map((stage, stageIndex) => [guide.routeLabels?.[stageIndex] || routeLabels[stageIndex], stage[0], stage[1]]),
       faq: guide.faq || [
         [`How much time should I give ${guide.name}?`, guide.duration],
         [`What should I combine with ${guide.name}?`, guide.combine],

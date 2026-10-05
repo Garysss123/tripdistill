@@ -1,0 +1,17 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/venice-lagoon/",
+    "/italy/venice-lagoon/san-marco-rialto/",
+    "/italy/venice-lagoon/cannaregio-dorsoduro-giudecca/",
+    "/italy/venice-lagoon/murano-burano-torcello/",
+    "/italy/rome/ancient-rome-capitoline/"
+  ],
+  "translations": {
+    "Planning facts and image licensing were reviewed on 5 October 2026. Verify current tickets, rail, roads, ZTLs, paths, ferries and site access before travel.": "ตรวจสอบข้อเท็จจริงด้านการวางแผนและเงื่อนไขอนุญาตใช้ภาพแล้วเมื่อวันที่ 5 ตุลาคม 2026 ก่อนเดินทางให้ตรวจสอบตั๋ว รถไฟ ถนน เขตจำกัดการจราจร (ZTL) เส้นทางเดิน เรือเฟอร์รี และการเข้าถึงสถานที่อีกครั้ง",
+    "Editorial review: 5 October 2026 · Recheck time-sensitive details before booking.": "ตรวจทานเนื้อหาโดยทีมบรรณาธิการ: 5 ตุลาคม 2026 · ตรวจสอบรายละเอียดที่เปลี่ยนแปลงได้อีกครั้งก่อนจอง",
+    "reviewed 5 October 2026": "ตรวจทานแล้วเมื่อวันที่ 5 ตุลาคม 2026",
+    "Planning facts and image licensing were reviewed on 5 October 2026. Admission, rail, roads, ZTLs, paths, ferries, weather and local access can change; reopen the linked authority or operator before travel.": "ตรวจสอบข้อเท็จจริงด้านการวางแผนและเงื่อนไขอนุญาตใช้ภาพแล้วเมื่อวันที่ 5 ตุลาคม 2026 ข้อมูลการเข้าชม รถไฟ ถนน เขตจำกัดการจราจร (ZTL) เส้นทางเดิน เรือเฟอร์รี สภาพอากาศ และการเข้าถึงในพื้นที่อาจเปลี่ยนแปลงได้ ก่อนเดินทางให้กลับไปตรวจสอบข้อมูลจากหน่วยงานหรือผู้ให้บริการที่ลิงก์ไว้"
+  }
+}

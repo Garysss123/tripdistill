@@ -67,11 +67,12 @@ function faqSchema(faq) {
 }
 
 function guideSchema(guide, cluster) {
-  const pageReviewDate = guide.reviewDate || reviewDate;
-  const pageIsoDate = guide.reviewIsoDate || isoDate;
+  const pageReviewDate = guide.reviewDate || cluster.reviewDate || reviewDate;
+  const pageIsoDate = guide.reviewIsoDate || cluster.reviewIsoDate || isoDate;
+  const pagePublishedIsoDate = guide.publishedIsoDate || cluster.publishedIsoDate || pageIsoDate;
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: pageIsoDate, dateModified: pageIsoDate, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: pagePublishedIsoDate, dateModified: pageIsoDate, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['Italy', absolute('/italy/')], [guide.hubName, absolute(`/italy/${guide.hubSlug}/`)], [guide.name, absolute(guide.url)]]),
       faqSchema(guide.faq)
     ]
@@ -127,7 +128,7 @@ function decisionInstrument(guide, cluster) {
 }
 
 function guidePage(guide, cluster, guideIndex) {
-  const pageReviewDate = guide.reviewDate || reviewDate;
+  const pageReviewDate = guide.reviewDate || cluster.reviewDate || reviewDate;
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const planningSources = uniqueSources(guide.sources, cluster.sources);
   return `<!doctype html>
@@ -142,7 +143,7 @@ ${cluster.slug === "rome" ? "" : `  <section class=it-regional-strata><header><s
   ${ad}
   <section class="it-threshold-board"><article><span>${cluster.slug === "rome" ? "Starting point" : "REAL GATEWAY"}</span><h2>${cluster.slug === "rome" ? "Match the first doorway to the place you will read." : "Begin where the transport actually ends."}</h2><p>${escapeHtml(guide.access)}</p></article><article><span>${cluster.slug === "rome" ? "Save for another day" : "VISIBLE SACRIFICE"}</span><h2>${cluster.slug === "rome" ? "Keep a second landscape for a separate visit." : "Know what the chosen line leaves out."}</h2><p>${escapeHtml(guide.tradeoff)}</p></article><aside><div><small>${cluster.slug === "rome" ? "Time to allow" : "TIME ENVELOPE"}</small><p>${escapeHtml(guide.duration)}</p></div><div><small>${cluster.slug === "rome" ? "A nearby pairing" : "PAIR ONLY WHEN USEFUL"}</small><p>${escapeHtml(guide.combine)}</p></div></aside></section>${guide.whatToSee ? `
   ${interpretiveSection(guide)}` : ""}
-  <section class="it-route-folio" id="route" data-it-route-structure="${escapeHtml(guide.structure)}"><header><span>Four thresholds</span><h2>Arrive, cross one gate, use one layer, then protect the return.</h2><p>${escapeHtml(guide.verify)}</p></header><ol>${guide.route.map(([label, title, copy], index) => `<li><b>${String(index + 1).padStart(2, '0')}</b><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section>
+  <section class="it-route-folio" id="route" data-it-route-structure="${escapeHtml(guide.structure)}"><header><span>${escapeHtml(guide.routeTitle || 'Four thresholds')}</span><h2>${escapeHtml(guide.routeLead || 'Arrive, cross one gate, use one layer, then protect the return.')}</h2><p>${escapeHtml(guide.verify)}</p></header><ol>${guide.route.map(([label, title, copy], index) => `<li><b>${String(index + 1).padStart(2, '0')}</b><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section>
   <section class="it-live-desk"><div><span>LIVE AUTHORITIES</span><h2>Reopen the pages that control today’s gate.</h2></div>${cluster.slug === "rome" ? "" : "<p>The guide provides the decision structure; these authorities control admission, transport, paths, weather, marine operation and closures.</p>"}<ul>${sourceList(planningSources)}</ul></section>
   <section class="it-fallback"><div><span>WHEN THE GATE CLOSES</span><h2>Keep a complete alternative, not fragments.</h2><p>${escapeHtml(guide.fallback)}</p></div></section>
   <section class="it-breakpoints" id="failure-points"><header><span>${cluster.slug === "rome" ? "When the day shifts" : "Three weak points"}</span><h2>${cluster.slug === "rome" ? "Choose a nearby alternative before crossing town." : "Change the plan while the return is still strong."}</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
@@ -162,9 +163,10 @@ function hubFaq(cluster) {
 }
 function hubSchema(cluster) {
   const pageIsoDate = cluster.reviewIsoDate || isoDate;
+  const pagePublishedIsoDate = cluster.publishedIsoDate || pageIsoDate;
   const route = `/italy/${cluster.slug}/`;
   return { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: pageIsoDate, dateModified: pageIsoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+    { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: pagePublishedIsoDate, dateModified: pageIsoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
     breadcrumb([['Home', absolute('/')], ['Italy', absolute('/italy/')], [cluster.name, absolute(route)]]), faqSchema(hubFaq(cluster))
   ] };
 }
