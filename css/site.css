@@ -615,6 +615,7 @@ svg { display: block; }
 .tokyo-score i.on { background: #ef4444; }
 
 body[data-city="tokyo"] {
+  min-width: 0;
   --area-accent: #dc2626;
   --area-accent-2: #f97316;
   --area-soft: #fff1f2;
