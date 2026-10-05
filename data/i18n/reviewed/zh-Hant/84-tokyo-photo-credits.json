@@ -1,0 +1,11 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/tokyo/",
+    "/japan/tokyo/ikebukuro/",
+    "/japan/tokyo/odaiba-toyosu/",
+    "/japan/tokyo/roppongi-azabu/"
+  ],
+  "translations": {}
+}

@@ -12,7 +12,7 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
-const siteCssVersion = '/css/site.css?v=20260926-1';
+const siteCssVersions = ['/css/site.css?v=20260926-1', '/css/site.css?v=20261005-1'];
 const mainJsVersion = '/js/main.js?v=20260911-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
@@ -202,7 +202,7 @@ for (const absoluteUrl of publishedUrls) {
     problems.push(`${relativePath}: image page lacks a visible commercial-use license or provenance entry`);
   }
 
-  if (!html.includes(siteCssVersion)) problems.push(`${relativePath}: stale or missing site stylesheet version`);
+  if (!siteCssVersions.some((version) => html.includes(version))) problems.push(`${relativePath}: stale or missing site stylesheet version`);
   if (!html.includes(mainJsVersion)) problems.push(`${relativePath}: stale or missing main script version`);
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${relativePath}: missing AdSense publisher declaration`);
   if (!html.includes(adsenseJsVersion)) problems.push(`${relativePath}: stale or missing AdSense loader`);

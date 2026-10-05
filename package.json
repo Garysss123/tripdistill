@@ -59,6 +59,7 @@
     "sync:sitemap": "node scripts/sync-sitemap.mjs",
     "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
     "build": "npm run localize && node scripts/build-dist.mjs",
+    "build:tokyo-qa-harness": "node scripts/build-tokyo-qa-harness.mjs",
     "preview": "node scripts/serve.mjs",
     "qa:visual": "node scripts/visual-audit.mjs",
     "pages:whoami": "npx wrangler@latest whoami",
