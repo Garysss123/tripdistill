@@ -5,8 +5,10 @@ import { parse } from 'parse5';
 const root = path.resolve(import.meta.dirname, '..');
 const relativeHarness = path.join('qa', 'tokyo-responsive', 'index.html');
 const harnessPath = path.join(root, 'dist', relativeHarness);
-const harnessUrl = `https://tokyo-qa.trip-68e.pages.dev/${relativeHarness.split(path.sep).join('/')}`;
-const sitemapUrl = 'https://tokyo-qa.trip-68e.pages.dev/sitemap.xml';
+const liveOriginArg = process.argv.find((argument) => argument.startsWith('--url='))?.slice('--url='.length);
+const liveOrigin = (liveOriginArg || 'https://tokyo-qa.trip-68e.pages.dev').replace(/\/+$/, '');
+const harnessUrl = `${liveOrigin}/qa/tokyo-responsive/`;
+const sitemapUrl = `${liveOrigin}/sitemap.xml`;
 const expectedRoutes = [
   ['/japan/tokyo/', 'Tokyo hub'],
   ['/japan/tokyo/ikebukuro/', 'Ikebukuro'],
