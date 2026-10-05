@@ -304,7 +304,8 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes(`data-it-family="${italyGuide.family}"`)) problems.push(`${relativePath}: missing ${italyGuide.family} Italy family marker`);
     if (!html.includes(`data-it-layout="${italyGuide.layout}"`)) problems.push(`${relativePath}: missing ${italyGuide.layout} Italy layout marker`);
     if (!html.includes(`data-it-structure="${italyGuide.structure}"`)) problems.push(`${relativePath}: missing ${italyGuide.structure} Italy structure marker`);
-    if (!html.includes(`data-it-instrument="${italyGuide.instrument}"`)) problems.push(`${relativePath}: missing ${italyGuide.instrument} Italy instrument marker`);
+    const expectedItalyInstrument = italyGuide.instrument.replaceAll("&", "&amp;");
+    if (!html.includes(`data-it-instrument="${expectedItalyInstrument}"`)) problems.push(`${relativePath}: missing ${italyGuide.instrument} Italy instrument marker`);
     if (!html.includes('class="it-purpose"')) problems.push(`${relativePath}: Italy route is missing its independent reader purpose`);
     if (!html.includes('class="it-decision-instrument')) problems.push(`${relativePath}: Italy route is missing its decision renderer`);
     if (!html.includes('class="it-live-desk"')) problems.push(`${relativePath}: Italy route is missing near-claim official sources`);

@@ -220,6 +220,7 @@ export const italyImageManifest = {
     "creator": "Mariordo (Mario Roberto Durán Ortiz)",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Panorama Piazza San Marco Venezia 06 2017 2965.jpg",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "remoteSha1": "8b62db7b210aa23be10b3d611b34610d05563e85"
   },
   "venice-lagoon/cannaregio-dorsoduro-giudecca": {
