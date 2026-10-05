@@ -810,3 +810,21 @@ body[data-page^="it-florence-pisa-lucca-"] .it-field-copy h1 {
     line-height: 1.02;
   }
 }
+
+
+/* Keep the long English Pompeii title intact in the field-guide column. */
+html[lang="en"] body[data-page="it-naples-pompeii-vesuvius-pompeii-city-route"] .it-field-copy h1 {
+  max-width: 100%;
+  font-size: clamp(2.8rem, 4.15vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  overflow-wrap: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+@media (max-width: 760px) {
+  html[lang="en"] body[data-page="it-naples-pompeii-vesuvius-pompeii-city-route"] .it-field-copy h1 {
+    font-size: clamp(2.3rem, 11vw, 3.3rem);
+    line-height: 1.02;
+  }
+}

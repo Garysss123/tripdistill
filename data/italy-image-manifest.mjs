@@ -98,6 +98,7 @@ export const italyImageManifest = {
     "label": "Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg",
     "creator": "Txllxt TxllxT",
     "license": "CC BY-SA 4.0",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "commonsTitle": "File:Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg",
     "remoteSha1": "e565469e58815483c9a319d0c3eaf382e224a6bc"
   },
@@ -109,6 +110,7 @@ export const italyImageManifest = {
     "creator": "Diego Delso, delso.photo",
     "creditLicenseLabel": "License CC BY-SA 4.0",
     "license": "CC BY-SA 4.0",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "commonsTitle": "File:Vista de Florencia desde Piazzale Michelangelo, Italia, 2022-09-18, DD 212-214 HDR.jpg",
     "remoteSha1": "f928f5859c94b5301eeb5429902874e933d64357"
   },
@@ -119,6 +121,7 @@ export const italyImageManifest = {
     "label": "Lucca, mura e campanila San Frediano.jpg",
     "creator": "Palickap",
     "license": "CC BY-SA 4.0",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "commonsTitle": "File:Lucca, mura e campanila San Frediano.jpg",
     "remoteSha1": "a38d43210e274b2ba18a2da5a11ba810a925d852"
   },

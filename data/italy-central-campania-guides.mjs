@@ -271,133 +271,203 @@ export const italyCentralCampaniaClusters = [
     region: 'Campania',
     band: 'south-volcano-coast',
     family: 'volcanic-urban-strata',
-    label: 'Campania · excavation folio 02',
-    tagline: 'Separate the living city, the buried cities and the volcano into complete operating days.',
-    hubIntro: 'Naples, Pompeii, Herculaneum and Vesuvius share a volcanic landscape but not one visitor system. The city uses metro, funicular and walking layers; archaeological parks use named entrances and long exposed routes; the crater depends on separate transport, timed access and live safety decisions.',
-    stay: 'Three to five nights in Naples supports one complete city day and one archaeological day, with a third day for Herculaneum or a weather-dependent volcano plan. Staying near Centrale/Garibaldi favors regional rail; the historic centre favors evenings but adds the station transfer; the waterfront favors ferries but not every excavation departure.',
-    transfer: 'Napoli Centrale, the Garibaldi underground levels, Porta Nolana and Molo Beverello serve different networks. Circumvesuviana/EAV and Trenitalia stops are not interchangeable labels for Pompeii or Herculaneum. Save the exact station, entrance and return before boarding.',
-    season: 'Exposed ruins and volcanic paths become strenuous in summer heat, while rain can close surfaces or crater access. Strikes, works and crowd controls affect regional rail. Keep MANN and the city centre as strong all-weather alternatives.',
-    fallback: 'When a site or volcano gate closes, use one complete substitute rather than a rushed second attempt: MANN for archaeology, Herculaneum for a smaller excavation, or Naples’ civic and sacred layers for a transport disruption.',
+    label: 'Campania · Naples and the Vesuvian sites',
+    tagline: 'Give Naples, Pompeii, Herculaneum and Vesuvius their own clear place in the trip.',
+    hubIntro: 'Naples is a living city with Greek, Roman, Bourbon and modern layers. Pompeii preserves a broad commercial town; Herculaneum offers a smaller residential grid with unusually rich organic remains; Vesuvius is a separate park and access decision. Treat them as connected histories with different entrances, transport and days.',
+    stay: 'Three nights can support Naples plus one archaeological day; four nights leave room for both Pompeii and Herculaneum without making the crater a rushed add-on. Centrale and Garibaldi are practical for regional rail, the old centre rewards evenings on foot, and the waterfront suits a different city rhythm. Compare the hotel’s actual walk to the rail station and entrance you will use.',
+    transfer: 'Pompeii’s park maps Porta Marina and Piazza Esedra to EAV’s Pompei Villa dei Misteri stop, and Piazza Anfiteatro to Pompei Santuario on the Napoli–Poggiomarino line. Trenitalia’s Pompei station is a different arrival. Ercolano Scavi is the Circumvesuviana stop for Herculaneum; the crater needs a separate, currently authorized transport and park-entry plan.',
+    season: 'Pompeii is a large open-air site and the crater route is exposed; heat and wind change effort, while weather or safety controls can suspend mountain access. Park maps, opening lists, museum collection plans and rail services can change. Keep a complete Naples or MANN day available when a site route changes.',
+    fallback: 'If Vesuvius access is suspended, use Herculaneum only if its entrance and return are working, or stay in Naples for the MANN and one nearby old-centre line. At Pompeii, choose from buildings and routes the Park confirms open that day; do not cross the excavation to chase a closed house.',
+    reviewDate: '5 October 2026',
+    reviewIsoDate: '2026-10-05',
     sources: [
-      ['https://www.napolianewcity.it/en/index.html', 'Naples official tourism portal — city visitor information'],
-      ['https://www.anm.it/', 'ANM Napoli — official city transport information'],
-      ['https://www.eavsrl.it/', 'EAV — official Campania regional rail information']
+      ['https://whc.unesco.org/en/list/726/', 'UNESCO World Heritage Centre · Historic Centre of Naples'],
+      ['https://www.museoarcheologiconapoli.it/storia-del-museo/', 'MANN · museum history and the Vesuvian collections'],
+      ['https://pompeiisites.org/en/visiting-info/how-to-get-there/', 'Pompeii Archaeological Park · named gates and rail approaches'],
+      ['https://pompeiisites.org/en/visiting-info/timetables-and-tickets/', 'Pompeii Archaeological Park · current tickets and entry rules'],
+      ['https://ercolano.cultura.gov.it/come-arrivare/', 'Herculaneum Archaeological Park · official directions'],
+      ['https://orariotreni.eavsrl.it/', 'EAV · official live train timetables'],
+      ['https://www.parconazionaledelvesuvio.it/en/visit-the-park/', 'Vesuvius National Park · paths and Gran Cono access']
     ],
     guides: [
       g({
         slug: 'naples-centre-mann-waterfront',
         name: 'Naples Centre, MANN & the Waterfront',
-        instrument: 'Decumanus-and-collection day table',
+        instrument: 'Farnese-to-decumani day plan',
         layout: 'decumanus-daypart-ledger',
         structure: 'market-daypart-table',
         imageQuery: 'Naples historic centre Spaccanapoli street panorama',
         imageAlt: 'The dense historic centre of Naples beneath Vesuvius',
-        purpose: 'Choose the decumani, the National Archaeological Museum or the Toledo–waterfront axis as the day’s main layer, then assign markets, food and viewpoints to real dayparts instead of weaving repeatedly across the city.',
-        summary: 'Enter from the station or metro stop serving the chosen layer, complete one collection or street spine, reset over a seated meal and finish downhill toward Municipio or the waterfront only when the return works.',
+        purpose: 'Use the MANN to read how Naples collected the ancient past, then decide whether the day belongs to the historic centre or a westward civic walk to the bay. The museum, old streets and waterfront are related layers but are not one compact checklist.',
+        summary: 'Choose one MANN collection block or a continuous historic-centre route, then add a nearby street walk. Save Toledo, Piazza del Plebiscito and the waterfront for a separate westward line rather than crossing the city twice.',
         choices: [
-          ['Historic-centre streets', 'Use the decumani, one sacred interior and one food stop as a coherent civic day. It gives living-city depth but sacrifices a long museum block.'],
-          ['MANN collection day', 'Let the archaeological museum interpret Pompeii and Campania before or after the sites. This gives strong context but limits the waterfront and market route.'],
-          ['Toledo and waterfront', 'Move from the Spanish Quarter or civic centre toward the bay. It provides an easier evening finish but less excavation context.']
+          ['MANN and a short old-centre line', 'The museum joins two histories: the Farnese collection brought to Naples under the Bourbons and objects recovered from Pompeii, Herculaneum and Campania. Pick one collection thread, then walk only as far into the historic centre as the return allows.'],
+          ['Decumani and the historic centre', 'Follow one east–west street spine from Piazza Bellini toward Via dei Tribunali, with one chosen church, courtyard or food stop. UNESCO describes Naples as a city carrying successive Mediterranean and European cultures; let the changing street fabric be the subject instead of collecting interiors.'],
+          ['Toledo and the western civic axis', 'Keep the visit west: connect the Toledo area, Galleria Umberto I, Piazza del Plebiscito and a short seafront finish if energy and current access allow. This is a different day shape from the MANN and decumani route.']
         ],
-        access: 'Museo and Dante stations serve different edges of the old centre; Toledo and Municipio serve the western civic and waterfront line; Centrale/Garibaldi is a separate arrival system. Use one metro entry and one downhill street direction rather than treating every station as central.',
-        tradeoff: 'MANN can absorb the attention needed for churches, underground sites or a long market walk. Choosing one principal layer gives up several famous interiors but creates room for Naples’ density, a proper meal and a calmer evening exit.',
+        access: 'Museo and Dante stations serve different edges of the old centre; Toledo and Municipio serve the western civic line. Check ANM’s current map and service before setting the first stop. Regional EAV trains use separate platforms at Garibaldi and do not leave from the metro entrance marked Centrale.',
+        tradeoff: 'A focused MANN visit can absorb the attention needed for the old centre. A historic-street day gives up a long gallery block; a westward walk trades archaeological context for civic architecture and the bay. Choose one main direction, then leave a real meal and a straightforward return.',
+        routeTitle: 'A Naples day: one collection or one city spine',
+        routeLead: 'Begin with the museum if its collection plan fits your interests; otherwise follow one unbroken street direction through the historic centre.',
+        routeLabels: ['Choose the collection', 'Read the old centre', 'Take one cross-street', 'Finish on the planned side of town'],
         stages: [
-          ['Enter from the useful station', 'Arrive at Museo, Dante, Toledo or Municipio according to the first commitment, not the generic centre label.'],
-          ['Read one urban spine', 'Keep Via dei Tribunali, Spaccanapoli or the civic-waterfront line as the main direction and avoid repeated uphill returns.'],
-          ['Use collection or meal as the reset', 'Give MANN or a seated meal a protected block rather than squeezing both between street queues.'],
-          ['Finish toward the bay or metro', 'End near the planned evening district and transport, saving energy for the hotel return.']
+          ['Check the collection plan', 'MANN publishes a live opening plan because sections can rotate or close. As reviewed on 5 October 2026, its plan listed the Mosaics and Secret Cabinet galleries as closed through 30 November 2026; check again before making either a reason to visit.'],
+          ['Read the museum as a meeting of collections', 'Carlo di Borbone promoted the Vesuvian excavations and began the Farnese museum collection; Ferdinand IV brought the Farnese and Vesuvian collections together in the present museum. Start with one open section rather than trying to cover the whole building.'],
+          ['Choose one old-centre street line', 'From Piazza Bellini, continue along Via dei Tribunali or choose a single nearby interior. Keep the route moving toward your meal or hotel instead of returning to the museum end of the street.'],
+          ['Make the westward walk a separate choice', 'If Toledo and the waterfront are the priority, use that district as the day’s centre of gravity and finish near the planned metro, ferry or dinner. Do not append it automatically to a full museum-and-decumani day.']
         ],
-        fallback: 'When street heat, rain or a church closure changes the route, shift the long block into MANN, Capodimonte or another verified collection and keep only the nearest street sequence. When the museum closes, retain the historic centre without adding a distant substitute.',
+        whatToSee: [
+          ['MANN · TWO HISTORIES IN ONE MUSEUM', 'Farnese and Vesuvian collections', 'The museum’s official history links Carlo di Borbone’s excavations at Herculaneum and Pompeii with the Farnese collection inherited from Elisabetta Farnese. Ferdinand IV later brought the two groups together in the present building. Read a sculpture’s collecting history separately from the place where a wall painting or household object was found.'],
+          ['FARNESE GALLERY · RENAISSANCE COLLECTING', 'Hercules and the Farnese Bull', 'The MANN identifies the Farnese Hercules and Farnese Bull among sculptures recovered from the Baths of Caracalla excavations that began in 1545. Their route to Naples passes through Renaissance Roman collecting and Bourbon inheritance, not the eruption that buried Pompeii.'],
+          ['MOSAICS · A HOUSE REMEMBERED AT MANN', 'The House of the Faun’s Alexander mosaic', 'When the gallery is open, place the Alexander-and-Darius mosaic in its original setting: the MANN identifies it as the floor of the House of the Faun’s exedra, a large reception room. The museum dates the mosaic to the late second century BCE and describes it as made from more than a million tesserae. Check the current opening plan before planning around it.']
+        ],
+        fallback: 'If MANN’s collections plan or a booked interior changes, keep a short Piazza Bellini–Via dei Tribunali walk and a meal in the same quarter. For rain, choose an open museum section; for heat, shorten the street line instead of crossing to the waterfront.',
         watch: [
-          ['Station levels hide transfers', 'Centrale, Garibaldi metro and EAV platforms require real walking and navigation. Allow time before a regional departure.'],
-          ['Markets are working places', 'Keep bags controlled, ask before photographing people and do not block narrow commercial lanes.'],
-          ['The city is vertical', 'Funiculars, stair streets and downhill finishes change effort. Choose the final elevation before adding a viewpoint.']
+          ['A museum collection can rotate', 'Reopen MANN’s collection-opening plan on the travel date. The Mosaic gallery had a dated closure notice through 30 November 2026 at this review; later plans may differ.'],
+          ['Old-centre interiors have separate doors', 'Churches, underground sites and museums set their own access and ticket rules. Verify the named venue before building the route around it.'],
+          ['Naples changes elevation', 'A waterfront finish and a hill-street finish use different effort and transit. Decide where the walk ends before adding a viewpoint.']
         ],
-        duration: 'Allow six to eight hours for a museum-led or street-led city day with a real break. Keep a shorter arrival day to one spine and the waterfront.',
-        combine: 'Combine MANN with a bounded old-centre line, or Toledo with the waterfront. Keep Pompeii, Herculaneum and Vesuvius as separate operating days.',
-        verify: 'Check MANN openings and current rooms, ANM service, any booked underground site and the return from the final waterfront or hill district.',
+        duration: 'Editorial estimate: allow five to seven hours for one MANN collection block, a nearby old-centre walk and a meal. A full western civic-and-waterfront route works better as its own day.',
+        combine: 'Pair the MANN with Piazza Bellini or one section of Via dei Tribunali. Pair Toledo with the western civic axis. Keep Pompeii, Herculaneum and Vesuvius for separate days.',
+        verify: 'Check MANN’s current collection plan and ticket information, ANM’s map and service, any timed underground entry, and the return from your final neighbourhood.',
+        reviewDate: '5 October 2026',
+        reviewIsoDate: '2026-10-05',
         sources: [
-          ['https://www.museoarcheologiconapoli.it/', 'MANN — official National Archaeological Museum information'],
-          ['https://www.anm.it/s/biglietti-e-abbonamenti?language=en_US', 'ANM Napoli — official tickets and network information']
+          ['https://www.museoarcheologiconapoli.it/storia-del-museo/', 'MANN · museum history and collection formation'],
+          ['https://www.museoarcheologiconapoli.it/portfolio-item/farnese/', 'MANN · Farnese collection and named sculptures'],
+          ['https://www.museoarcheologiconapoli.it/portfolio-item/mosaici/', 'MANN · mosaic collection and House of the Faun'],
+          ['https://www.museoarcheologiconapoli.it/piano-di-apertura-collezioni/', 'MANN · live collection-opening plan'],
+          ['https://www.museoarcheologiconapoli.it/orari-e-biglietti/', 'MANN · official visitor information'],
+          ['https://www.anm.it/s/biglietti-e-abbonamenti?language=en_US', 'ANM Napoli · tickets and official network information'],
+          ['https://whc.unesco.org/en/list/726/', 'UNESCO World Heritage Centre · Historic Centre of Naples']
+        ],
+        faq: [
+          ['Is the Alexander mosaic always on view at MANN?', 'No. MANN’s current collection-opening plan lists which sections are available; the mosaic gallery had a closure notice through 30 November 2026 at this review. Check the live plan before your visit.'],
+          ['What makes the MANN useful before Pompeii?', 'The museum brings together the Farnese collection and material from Vesuvian excavations, so you can compare the history of collecting with objects found in the ancient towns. Choose one open collection section rather than trying to see everything.'],
+          ['Can I fit the old centre and waterfront into the same walk?', 'They are different city directions. Choose the historic centre or Toledo-to-waterfront as the main route, and keep the other for another block or day.']
         ]
       }),
       g({
         slug: 'pompeii-city-route',
         name: 'Pompeii Archaeological City',
-        instrument: 'Named-entrance excavation grid',
+        instrument: 'Gate-to-rail route map',
         layout: 'buried-city-datum-traverse',
         structure: 'excavation-traverse',
         imageQuery: 'Pompeii forum Vesuvius archaeological site wide',
         imageAlt: 'Ancient Pompeii, modern Pompeii and Vesuvius in one view',
-        purpose: 'Choose a core Pompeii route, a wider Pompeii+ landscape or the site’s accessible route, then match the correct rail stop and named entrance to the planned exit instead of wandering until heat decides the day.',
-        summary: 'Enter at Porta Marina, Piazza Anfiteatro or another official gate suited to the route, traverse one coherent district and leave with time for the confirmed train rather than retracing the whole site.',
+        purpose: 'Read Pompeii as a commercial city with public, domestic and political evidence, then choose the entrance and rail stop that match one continuous route. Its scale and changing open-house list reward a firm theme more than a monument checklist.',
+        summary: 'Choose a civic route, a domestic-street route or the accessible itinerary; match the official entrance to the correct station and leave through a gate that still fits your ticket and return train.',
         choices: [
-          ['Core city traverse', 'Connect the forum, selected houses and theatre district from a useful entrance. It gives the clearest first visit but sacrifices remote villas.'],
-          ['Pompeii+ wider landscape', 'Use the relevant ticket and transport for suburban villas or related sites. It adds context but consumes more distance and heat exposure.'],
-          ['Accessible or lower-distance route', 'Follow current official access guidance and prioritize connected public buildings. It gives a more reliable route but omits many uneven lanes.']
+          ['Civic Pompeii', 'Use the Forum and its surrounding public buildings to understand how religion, law and exchange occupied one central square. The Park’s official themed visit is a useful core; extend it only with a building confirmed open.'],
+          ['Domestic Pompeii', 'Follow one house-and-street sequence. UNESCO highlights the House of the Faun as a large representative residence; MANN preserves its Alexander mosaic and other floor decoration. Check the Park’s current opening list before treating any house as guaranteed access.'],
+          ['Pompeii for All', 'For a lower-barrier route, check the official accessible itinerary from Piazza Anfiteatro; Park guidance describes a return to that gate or Piazza Esedra using the Antiquarium lift. Confirm current conditions and assistance with the Park.']
         ],
-        access: 'Pompei Scavi–Villa dei Misteri suits Porta Marina, while Pompei Santuario and other rail services approach the modern town and Anfiteatro side. Gate names, rail operators and ticket products differ. Decide the entrance and exit pair before choosing the train.',
-        tradeoff: 'Pompeii’s scale makes a complete checklist impossible. Choosing one urban argument gives up distant houses or villas but preserves water, shade, attention and a reliable route back to the rail gate.',
+        access: 'The Park pairs Porta Marina and Piazza Esedra with the EAV Napoli–Sorrento stop Pompei Villa dei Misteri; Piazza Anfiteatro is approached from Pompei Santuario on the Napoli–Poggiomarino line. Trenitalia’s Pompei station is separate and has its own onward connection. Match operator, stop, gate and intended exit before boarding.',
+        tradeoff: 'Pompeii’s 44-hectare excavated city cannot be read well as a rapid sweep. A civic route leaves distant houses for another visit; a domestic route gives up more public buildings; the accessible itinerary covers a different, carefully planned line. Keep water, shade and the chosen exit ahead of the checklist.',
+        routeTitle: 'One Pompeii route, one rail pairing',
+        routeLead: 'Use the entrance map and current building list first; let one historical question decide which streets deserve your time.',
+        routeLabels: ['Select the gate and train', 'Choose a civic or domestic lens', 'Add one open building', 'Leave by the planned exit'],
         stages: [
-          ['Match train to gate', 'Use the official entrance name to select the rail station and walking approach; do not assume every Pompei stop serves Porta Marina.'],
-          ['Orient with closures', 'Read the current map, open houses and one-way controls before committing to a distant sector.'],
-          ['Traverse one city layer', 'Connect forum, domestic, theatre or amphitheatre evidence in a continuous direction and take a real shade break.'],
-          ['Exit before the site becomes a return hike', 'Leave through the planned gate with margin for the station, ticket validation and service gaps.']
+          ['Book the site, not just the town', 'The Park currently lists personal tickets, daily capacity and seasonal entry slots. Check the live ticket page for the exact product, named entrance, entry time and exit rules before travelling.'],
+          ['Pair the EAV stop with the entrance', 'Use Pompei Villa dei Misteri for Porta Marina or Piazza Esedra on the Napoli–Sorrento line; use Pompei Santuario for Piazza Anfiteatro on Napoli–Poggiomarino. If arriving on Trenitalia at Pompei, check the separate Pompei Link connection.'],
+          ['Choose an official core itinerary', 'The Park lists Civic Pompeii and Daily Pompeii themed visits at about one and a half hours each. Use one as a starting spine, then add only a house or public building the Park confirms open that day.'],
+          ['Read the city, then stop', 'At the Forum, compare the Capitolium, Basilica and temples as a deliberately public centre. On a domestic line, notice how an atrium house opens inward and how a larger residence such as the House of the Faun adds columns, arcades and representative rooms. Leave time for shade and the station approach.']
         ],
-        fallback: 'If Pompeii admission, heat or transport breaks the plan, use Herculaneum for a smaller excavation or MANN for an indoor collection-led archaeology day. Do not buy an improvised ride between gates under time pressure.',
+        whatToSee: [
+          ['FORUM · THE PUBLIC CITY', 'A square of civic institutions', 'UNESCO describes the Forum as flanked by the Capitolium, Basilica and temples. Read their different roles around one plaza before walking outward; this gives the ruins a civic structure that a list of isolated houses cannot provide.'],
+          ['DOMESTIC BLOCKS · HOUSE AND GARDEN', 'From atrium to peristyle', 'UNESCO contrasts the inward-looking atrium house with larger homes expanded by columns, arcades and representative rooms, naming the House of the Faun as an example. Verify the day’s opening list, then use the MANN mosaic collection to connect a surviving floor to its original reception room.'],
+          ['STREET WALLS · POLITICS IN DAILY LIFE', 'Graffiti beyond the formal monuments', 'UNESCO notes that political election slogans and personal graffiti survive on Pompeian walls. Read them as evidence of a city whose residents used public surfaces for civic campaigning and private messages, rather than treating the walls only as picturesque backdrops.']
+        ],
+        fallback: 'If a planned house or gate is closed, stay with the current official open-building list and complete the chosen civic or domestic line. If heat, access or rail service cuts the day short, leave through the nearest confirmed gate; move MANN to another day instead of rushing between sites.',
         watch: [
-          ['The ticket defines the field', 'Named or extended products can cover different sites and entrances. Read what the official ticket actually includes.'],
-          ['Stone and heat accumulate', 'Uneven surfaces, little shade and long internal distances require water, footwear and a shorter route in hot conditions.'],
-          ['Modern Pompeii is not one station', 'Rail lines and gates use similar place names. Save the operator, stop and entrance together.']
+          ['Tickets and daily entry rules change', 'The Park currently uses named tickets, capacity limits and seasonal entry slots. Check the official ticket page again; do not rely on a pass or old screenshot.'],
+          ['The gate determines the train', 'Pompei Villa dei Misteri and Pompei Santuario are distinct stops on different EAV lines; Trenitalia’s Pompei station is another arrival. Save the operator, stop and gate together.'],
+          ['The accessible route is planned around gates', 'The official Pompeii for All route begins at Piazza Anfiteatro and describes an option to return via Piazza Esedra and the Antiquarium lift. Confirm the current map, building access and assistance with the Park.']
         ],
-        duration: 'Allow five to seven hours for a focused route plus arrival and return. A wider villa plan needs most of a day and should not be combined with Vesuvius.',
-        combine: 'Combine with a quiet meal in modern Pompeii or MANN on another day. Keep the crater, Amalfi Coast and Naples’ full centre separate.',
-        verify: 'Check official ticket availability, current entrances and closures, weather and the exact EAV or Trenitalia service serving the chosen gate.',
+        duration: 'Editorial estimate: plan four to six hours inside the site for one themed route, one confirmed building and rest breaks, plus the train and entrance approach. A wider suburban-villa ticket is a separate, longer day.',
+        combine: 'Take a meal in modern Pompeii after the exit or visit MANN on another day. Do not add Vesuvius to a full archaeological-city route.',
+        verify: 'Check the Park’s ticket, named gate, open-building list and accessibility map; then verify the EAV or Trenitalia station and current return service.',
+        reviewDate: '5 October 2026',
+        reviewIsoDate: '2026-10-05',
         sources: [
-          ['https://pompeiisites.org/en/visiting-info/timetables-and-tickets/', 'Pompeii Archaeological Park — official tickets and entrances'],
-          ['https://www.eavsrl.it/orari-linee-ferroviarie/', 'EAV — official Campania rail timetables']
+          ['https://pompeiisites.org/en/visiting-info/timetables-and-tickets/', 'Pompeii Archaeological Park · tickets, access rules and current openings'],
+          ['https://pompeiisites.org/en/visiting-info/how-to-get-there/', 'Pompeii Archaeological Park · gate-to-station pairings'],
+          ['https://pompeiisites.org/en/visiting-info/map-and-guide-to-the-excavations/', 'Pompeii Archaeological Park · official site map and guide'],
+          ['https://pompeiisites.org/en/visiting-info/', 'Pompeii Archaeological Park · current visitor information and accessibility'],
+          ['https://pompeiisites.org/en/visiting-info/how-to-visit-the-excavations/', 'Pompeii Archaeological Park · entrances and Pompeii for All'],
+          ['https://whc.unesco.org/en/list/829/', 'UNESCO World Heritage Centre · Pompeii urban fabric and domestic buildings'],
+          ['https://www.museoarcheologiconapoli.it/portfolio-item/mosaici/', 'MANN · House of the Faun mosaics and Alexander mosaic'],
+          ['https://orariotreni.eavsrl.it/', 'EAV · official live train timetables']
+        ],
+        faq: [
+          ['Which Pompeii entrance should I use?', 'Choose it with the train: the Park pairs Porta Marina and Piazza Esedra with Pompei Villa dei Misteri on Napoli–Sorrento, and Piazza Anfiteatro with Pompei Santuario on Napoli–Poggiomarino. Check the official directions before you buy or board.'],
+          ['Can I visit the House of the Faun?', 'It depends on the Park’s current opening list and route controls. The house is historically important for its atrium, peristyles and mosaics, but check the official daily list rather than assuming it is open.'],
+          ['Does one ticket include the suburban villas?', 'Ticket products differ. Read the official description to see whether Villa of the Mysteries, Villa of Diomedes or other sites are included, and check any separate access or shuttle rules.']
         ]
       }),
       g({
         slug: 'herculaneum-vesuvius',
         name: 'Herculaneum or Vesuvius',
-        instrument: 'Crater-status operating stack',
+        instrument: 'Shoreline-to-crater decision map',
         layout: 'crater-access-status-board',
         structure: 'volcano-status-board',
         imageQuery: 'Herculaneum ruins Mount Vesuvius Campania',
         imageAlt: 'Excavated buildings and courtyard inside Herculaneum',
-        purpose: 'Choose an Herculaneum excavation day or a weather-cleared Vesuvius crater product before leaving Naples; the Ercolano walk, park booking and crater transport are separate systems, not a guaranteed combined excursion.',
-        summary: 'Reach Ercolano for one declared purpose, complete the excavation or the confirmed mountain chain and keep the other option as a later day rather than a rushed add-on.',
+        purpose: 'Choose Herculaneum for a close reading of a compact residential town and its shoreline evidence, or reserve a separate Vesuvius day for the currently authorized Gran Cono route. They share a volcano, not an entrance or a dependable half-day transfer.',
+        summary: 'At Herculaneum, follow one street grid from the upper city toward the ancient shoreline; at Vesuvius, confirm the park’s current Gran Cono access and transport before leaving Naples.',
         choices: [
-          ['Herculaneum depth', 'Use the compact excavation and preserved domestic evidence as the complete day. It sacrifices the crater but works with more predictable access.'],
-          ['Vesuvius crater window', 'Use a confirmed park time and authorized transport for the mountain. It gives volcanic scale but is exposed to weather and operating changes.'],
-          ['Excavation plus lower context', 'Pair Herculaneum with the town or a nearby museum only when time remains. This provides balance without claiming both major gates.']
+          ['Herculaneum’s streets and houses', 'Read the decumani parallel to the ancient coast and the cardines crossing them. The Park estimates roughly twenty hectares for the ancient town but just over four hectares are visible; the blocks above the excavated edge continue under modern Ercolano.'],
+          ['The ancient shoreline', 'The boat pavilion and the nearby fornici tell a human story of flight. The Park reports around 300 people found in nine shoreline chambers; treat the remains and personal objects as evidence of individual lives, not as spectacle.'],
+          ['Vesuvius Gran Cono', 'The National Park describes the crater approach as Path No. 5, on the western side of the rim. Use only the current authorized ticket, access route and transport; weather, safety and capacity can change the plan.']
         ],
-        access: 'Ercolano Scavi station sits uphill from the archaeological entrance. Vesuvius access requires a separate confirmed road and park-entry chain; arriving at Ercolano does not create a crater transfer automatically. Work backward from the official crater slot and return.',
-        tradeoff: 'The excavation rewards slow room-by-room reading, while the crater uses transfer and uphill walking time. Combining both gives up depth and recovery margin; choosing one creates a complete visit with a reliable return.',
+        access: 'For Herculaneum, the Park directs rail visitors from Napoli Centrale to the EAV Circumvesuviana Napoli–Sorrento service and Ercolano Scavi; its directions estimate about six minutes on foot from the station to Corso Resina 187. Ask about the blue Ercolano per tutti route if you need its accessible itinerary. Vesuvius access is separately controlled by the National Park.',
+        tradeoff: 'Herculaneum is not a small version of Pompeii: its visible domestic and commercial blocks, surviving organic material and partly buried public zone reward slow close reading. The crater is an exposed, status-dependent walk. Combining both major sites compresses their different histories and leaves little margin for the uphill return to Ercolano Scavi.',
+        routeTitle: 'Choose the town or the crater',
+        routeLead: 'Use the excavation’s intersecting streets to descend toward the ancient shore, or build a separate mountain day around the Park’s live access status.',
+        routeLabels: ['Confirm the open site', 'Read the street grid', 'Choose houses or shoreline', 'Return with margin'],
         stages: [
-          ['Confirm the operating state', 'Check archaeological admission or crater access, weather and the actual transport provider before leaving the hotel.'],
-          ['Use the correct Ercolano threshold', 'Walk downhill to the excavation or meet the named mountain transfer; do not follow generic volcano advertising.'],
-          ['Complete one vertical layer', 'Read the buried city carefully or follow the authorized crater route within the current safety boundary.'],
-          ['Descend with margin', 'Return to the station or booked vehicle before late-day weather and regional rail gaps narrow the options.']
+          ['Check access and the correct station', 'For the excavation, use Ercolano Scavi and the Park’s mapped walk to the entrance. For Vesuvius, confirm the National Park’s current ticket and authorized transfer; the Herculaneum rail stop does not provide a crater connection.'],
+          ['Start with the city plan', 'At Herculaneum, decumani run parallel to the shoreline and cardines cross them. Follow one complete street line and notice where the excavation meets the modern town rather than expecting the whole ancient city to be visible.'],
+          ['Choose domestic evidence or the shore', 'Use houses, baths and the Antiquarium for built and household history; continue to the ancient shoreline only if the current route is open and you want to visit its somber memorial evidence.'],
+          ['Protect the return', 'The walk back to Ercolano Scavi climbs through the modern town. For Vesuvius, use the booked vehicle’s actual return time and the Park’s current closing and safety instructions.']
         ],
-        fallback: 'When the crater closes for weather or safety, make Herculaneum the complete archaeology day if admission works. When the excavation is disrupted, return to Naples for MANN rather than seeking an unofficial mountain detour.',
+        whatToSee: [
+          ['HERCULANEUM · THE CITY GRID', 'A street plan cut by the modern town', 'The Park describes decumani running parallel to the coast and cardines at right angles. Its excavation page places the Decumanus Maximus at the line between the visible ruins and ancient blocks still under Corso Resina; the public heart is less exposed than the residential and commercial insulae.'],
+          ['ORGANIC FINDS · HOUSEHOLD TIME', 'Wood, food and written records', 'Carbonization preserved doors, stairs, furniture, food, seeds, textiles, wax tablets and papyri at Herculaneum. Read these beside the street grid: they add household work, trade and legal records to the larger monuments, rather than making the town only a story of destruction.'],
+          ['ANCIENT SHORE · THE FORNICI', 'Evidence of people seeking escape', 'The Park records around 300 remains in nine of the twelve chambers at the old shore, alongside keys, jewelry, baskets and work tools. This is a grave site; visitors can understand what the objects reveal without photographing or treating the victims as a display.'],
+          ['VESUVIUS · GRAN CONO PATH 5', 'A separate park decision', 'The National Park identifies Path No. 5 as the route to the crater rim on its western side. Trail status, tickets and transport are controlled separately from the archaeological parks; check the official notice immediately before the visit.']
+        ],
+        fallback: 'If the crater route is closed or weather-limited, make Herculaneum the whole day only if the archaeological entrance is operating. If Herculaneum access changes, use MANN for an indoor Vesuvian collection and keep Vesuvius for another confirmed window.',
         watch: [
-          ['Volcanic access is live', 'Weather, safety and capacity can override a reservation. Treat the park’s current status as the gate.'],
-          ['Downhill becomes uphill', 'The return from Herculaneum to the station climbs through the modern town; preserve energy and time.'],
-          ['Transfer marketing is not authorization', 'Use official park and transport information and verify exactly what the booked service includes.']
+          ['The shoreline evidence is a memorial context', 'The Park’s ancient-shore finds include the remains of people trying to escape the eruption. Approach quietly and follow the site’s photography and visitor rules.'],
+          ['Herculaneum’s return climbs', 'The Park places Ercolano Scavi about six minutes from the entrance on arrival; allow extra time for the uphill return and your actual train departure.'],
+          ['A crater ticket does not fix the weather', 'The National Park controls Path No. 5. Check current access, safety status, transport and return conditions; do not use unofficial paths or transfers.']
         ],
-        duration: 'Allow four to six hours for Herculaneum with transport, or most of a day for a crater window from Naples. Do not promise both as a relaxed half-day pair.',
-        combine: 'Combine Herculaneum with MANN on a different day or a short Naples evening. Keep Pompeii and the Amalfi Coast separate.',
-        verify: 'Check Herculaneum admission, Vesuvius National Park access and safety status, the confirmed mountain transport and current EAV service.',
+        duration: 'Editorial estimate: allow four to six hours for Herculaneum with travel and a slow site visit. Give a Vesuvius crater window its own day, with transport and safety margin.',
+        combine: 'Pair Herculaneum with a short evening in Naples or a separate MANN visit. Keep Pompeii and Vesuvius as other days.',
+        verify: 'Recheck Herculaneum tickets, accessible route and station directions; for Vesuvius, check the National Park’s current path status, ticket and authorized transport.',
+        reviewDate: '5 October 2026',
+        reviewIsoDate: '2026-10-05',
         sources: [
-          ['https://ercolano.cultura.gov.it/', 'Parco Archeologico di Ercolano — official visitor information'],
-          ['https://www.vesuviusnationalpark.it/en/', 'Vesuvius National Park — official access and safety information']
+          ['https://ercolano.cultura.gov.it/la-storia/', 'Herculaneum Archaeological Park · history and city plan'],
+          ['https://ercolano.cultura.gov.it/area-archeologica/', 'Herculaneum Archaeological Park · excavated districts and buildings'],
+          ['https://ercolano.cultura.gov.it/reperti-organici/', 'Herculaneum Archaeological Park · organic finds and everyday evidence'],
+          ['https://ercolano.cultura.gov.it/fuggiaschi/', 'Herculaneum Archaeological Park · ancient-shore human remains'],
+          ['https://ercolano.cultura.gov.it/antiquarium-padiglione-barca/', 'Herculaneum Archaeological Park · Antiquarium and boat pavilion'],
+          ['https://ercolano.cultura.gov.it/come-arrivare/', 'Herculaneum Archaeological Park · station and entrance directions'],
+          ['https://ercolano.cultura.gov.it/accessibilita/', 'Herculaneum Archaeological Park · Ercolano per tutti route'],
+          ['https://www.parconazionaledelvesuvio.it/en/visit-the-park/', 'Vesuvius National Park · trails and Gran Cono Path No. 5'],
+          ['https://orariotreni.eavsrl.it/', 'EAV · official live train timetables'],
+          ['https://whc.unesco.org/en/list/829/', 'UNESCO World Heritage Centre · Vesuvian archaeological areas']
+        ],
+        faq: [
+          ['How do I reach Herculaneum by train?', 'The Archaeological Park directs visitors to Ercolano Scavi on the Circumvesuviana Napoli–Sorrento service and estimates about six minutes on foot to the entrance. Confirm the live EAV timetable and allow for the uphill walk back.'],
+          ['Can I visit Herculaneum and Vesuvius on one relaxed day?', 'They use different entrance, booking and transport systems. Give Herculaneum time for its streets and shoreline; use a separate day for the crater if the National Park confirms access.'],
+          ['Is the ancient shoreline appropriate for everyone?', 'The shoreline display includes the remains of people who died while seeking refuge. Read the Park’s visitor guidance first and choose another part of the site if that context is not right for you.']
         ]
       })
     ]
-  }),
-  c({
+  }),  c({
     slug: 'sorrento-amalfi-capri',
     name: 'Sorrento, Amalfi Coast & Capri',
     region: 'Campania',
@@ -603,7 +673,7 @@ export const italyCentralCampaniaClusters = [
         whatToSee: [
           ['DUOMO · MASONRY', 'Two shells, one climb', 'The Opera describes inner and outer domes linked by ribs, with the stairway to the lantern between them. Herringbone brick is part of the construction, not surface decoration. The 463-step route is an architectural cross-section as well as a viewpoint.'],
           ['BAPTISTERY · BRONZE DOORS', 'Find the originals in the museum', 'The Opera keeps the original Baptistery doors in the Museo dell’Opera del Duomo; the doors on the octagonal building are replicas. Seeing the originals indoors lets you look closely at the bronze reliefs without confusing the conservation display with the monument outside.'],
-          ['UFFIZI · BOTICELLI ROOMS', 'Compare Venus with Primavera', 'In its notice dated 16 June 2026, the Uffizi says Botticelli’s Venus and Primavera are displayed facing one another after a room reinstallation. The pairing makes a specific comparison possible; check the Gallery’s current notices in case the arrangement changes.']
+          ['UFFIZI · BOTTICELLI ROOMS', 'Compare Venus with Primavera', 'In its notice dated 16 June 2026, the Uffizi says Botticelli’s Venus and Primavera are displayed facing one another after a room reinstallation. The pairing makes a specific comparison possible; check the Gallery’s current notices in case the arrangement changes.']
         ],
         fallback: 'If the Dome climb is unavailable or not appropriate, keep the day at ground level: use the Opera Museum for the original doors and construction models, then the Cathedral quarter or Piazza della Signoria. If Uffizi entry changes, choose a currently open civic or cathedral museum instead of crossing town for another queue.',
         watch: [

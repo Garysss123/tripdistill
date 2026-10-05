@@ -11928,7 +11928,7 @@
     "url": "/italy/naples-pompeii-vesuvius/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Naples, Pompeii, Herculaneum and Vesuvius share a volcanic landscape but not one visitor system. The city uses metro, funicular and walking layers; archaeological parks use named entrances and long exposed routes; the crater depends on separate transport, timed access and live safety decisions.",
+    "summary": "Naples is a living city with Greek, Roman, Bourbon and modern layers. Pompeii preserves a broad commercial town; Herculaneum offers a smaller residential grid with unusually rich organic remains; Vesuvius is a separate park and access decision. Treat them as connected histories with different entrances, transport and days.",
     "keywords": [
       "Naples, Pompeii & Vesuvius",
       "Campania",
@@ -11940,11 +11940,11 @@
     "url": "/italy/naples-pompeii-vesuvius/naples-centre-mann-waterfront/",
     "parent": "Naples, Pompeii & Vesuvius",
     "type": "Local guide",
-    "summary": "Enter from the station or metro stop serving the chosen layer, complete one collection or street spine, reset over a seated meal and finish downhill toward Municipio or the waterfront only when the return works.",
+    "summary": "Choose one MANN collection block or a continuous historic-centre route, then add a nearby street walk. Save Toledo, Piazza del Plebiscito and the waterfront for a separate westward line rather than crossing the city twice.",
     "keywords": [
       "Naples Centre, MANN & the Waterfront",
       "Naples, Pompeii & Vesuvius",
-      "Decumanus-and-collection day table",
+      "Farnese-to-decumani day plan",
       "decumanus-daypart-ledger",
       "market-daypart-table"
     ]
@@ -11954,11 +11954,11 @@
     "url": "/italy/naples-pompeii-vesuvius/pompeii-city-route/",
     "parent": "Naples, Pompeii & Vesuvius",
     "type": "Local guide",
-    "summary": "Enter at Porta Marina, Piazza Anfiteatro or another official gate suited to the route, traverse one coherent district and leave with time for the confirmed train rather than retracing the whole site.",
+    "summary": "Choose a civic route, a domestic-street route or the accessible itinerary; match the official entrance to the correct station and leave through a gate that still fits your ticket and return train.",
     "keywords": [
       "Pompeii Archaeological City",
       "Naples, Pompeii & Vesuvius",
-      "Named-entrance excavation grid",
+      "Gate-to-rail route map",
       "buried-city-datum-traverse",
       "excavation-traverse"
     ]
@@ -11968,11 +11968,11 @@
     "url": "/italy/naples-pompeii-vesuvius/herculaneum-vesuvius/",
     "parent": "Naples, Pompeii & Vesuvius",
     "type": "Local guide",
-    "summary": "Reach Ercolano for one declared purpose, complete the excavation or the confirmed mountain chain and keep the other option as a later day rather than a rushed add-on.",
+    "summary": "At Herculaneum, follow one street grid from the upper city toward the ancient shoreline; at Vesuvius, confirm the park’s current Gran Cono access and transport before leaving Naples.",
     "keywords": [
       "Herculaneum or Vesuvius",
       "Naples, Pompeii & Vesuvius",
-      "Crater-status operating stack",
+      "Shoreline-to-crater decision map",
       "crater-access-status-board",
       "volcano-status-board"
     ]
