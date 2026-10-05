@@ -30,7 +30,12 @@ const routes = [
   { path: '/japan/tokyo/', label: 'Tokyo hub' },
   { path: '/japan/tokyo/ikebukuro/', label: 'Ikebukuro' },
   { path: '/japan/tokyo/odaiba-toyosu/', label: 'Odaiba & Toyosu' },
-  { path: '/japan/tokyo/roppongi-azabu/', label: 'Roppongi & Azabu' }
+  { path: '/japan/tokyo/roppongi-azabu/', label: 'Roppongi & Azabu' },
+  { path: '/japan/tokyo/shinjuku/', label: 'Shinjuku' },
+  { path: '/japan/tokyo/shibuya-harajuku/', label: 'Shibuya & Harajuku' },
+  { path: '/japan/tokyo/asakusa-ueno/', label: 'Asakusa & Ueno' },
+  { path: '/japan/tokyo/tokyo-station-ginza/', label: 'Tokyo Station & Ginza' },
+  { path: '/japan/tokyo/akihabara-kanda/', label: 'Akihabara & Kanda' }
 ];
 
 for (const locale of locales) {
@@ -78,7 +83,7 @@ const page = `<!doctype html>
 <body>
   <main>
     <h1>Tokyo responsive QA harness</h1>
-    <p class="intro">Preview four Tokyo guides in each published language at a fixed 320 or 390 CSS-pixel viewport. The guide loads from this preview origin so its menus, language links, and other controls remain usable.</p>
+    <p class="intro">Preview all nine Tokyo guides in each published language at a fixed 320 or 390 CSS-pixel viewport. The guide loads from this preview origin so its menus, language links, and other controls remain usable.</p>
     <div class="controls">
       <label for="route">Guide
         <select id="route">
