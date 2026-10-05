@@ -64,7 +64,10 @@
     "qa:visual": "node scripts/visual-audit.mjs",
     "pages:whoami": "npx wrangler@latest whoami",
     "pages:list": "npx wrangler@latest pages project list",
-    "deploy:trip": "npm run audit && npm run build && npx wrangler@latest pages deploy dist --project-name trip"
+    "deploy:trip": "npm run audit && npm run build && npx wrangler@latest pages deploy dist --project-name trip",
+    "check:tokyo-qa-harness": "node scripts/check-tokyo-qa-harness.mjs",
+    "check:tokyo-qa-harness-live": "node scripts/check-tokyo-qa-harness.mjs --live",
+    "deploy:tokyo-qa": "npm run audit && npm run build && npm run build:tokyo-qa-harness && npm run check:tokyo-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch tokyo-qa && npm run check:tokyo-qa-harness-live"
   },
   "engines": {
     "node": ">=20.19.0"

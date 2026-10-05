@@ -7,9 +7,9 @@ const relativeOutput = path.join('qa', 'tokyo-responsive', 'index.html');
 const outputPath = path.join(distRoot, relativeOutput);
 const sitemapPath = path.join(distRoot, 'sitemap.xml');
 
-// Run only after `npm run build`. The regular build removes and recreates dist,
-// and build-dist.mjs does not copy this generated QA-only artifact. The normal
-// deploy script never invokes this command.
+// Run only after `npm run build`. The regular build removes and recreates dist;
+// build-dist.mjs explicitly excludes this preview-only artifact. The dedicated
+// `npm run deploy:tokyo-qa` command adds and validates it after that build.
 if (!fs.existsSync(path.join(distRoot, 'sitemap.xml'))) {
   throw new Error('Build dist first with `npm run build`; no dist/sitemap.xml found.');
 }

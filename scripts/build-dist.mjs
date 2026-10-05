@@ -86,6 +86,11 @@ for (const file of publicFiles) {
   fs.copyFileSync(requireSource(file), output);
 }
 
+const previewHarness = path.join(outputRoot, 'qa', 'tokyo-responsive', 'index.html');
+if (fs.existsSync(previewHarness)) {
+  throw new Error('Ordinary builds must exclude the preview-only Tokyo QA harness.');
+}
+
 const outputFiles = collectFiles(outputRoot);
 const sitemap = fs.readFileSync(requireSource('sitemap.xml'), 'utf8');
 const publishedPaths = [...sitemap.matchAll(/<loc>(https:\/\/tripdistill\.com[^<]+)<\/loc>/g)].map((match) => new URL(match[1]).pathname);

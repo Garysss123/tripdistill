@@ -26,6 +26,10 @@ npm run deploy:trip
 
 The site uses directory URLs such as `/japan/`, `/south-korea/seoul/` and `/thailand/bangkok/yaowarat-talat-noi/`, with matching localized routes such as `/zh/japan/`, `/ja/japan/`, `/ko/japan/` and `/th/japan/`. Shared navigation is loaded from each locale's own `/components/` fragments. All SEO body content remains in each page's HTML.
 
+### Tokyo QA preview
+
+The responsive iframe harness is preview-only: `npm run build` and the production `npm run deploy:trip` deliberately exclude it. For every Tokyo QA deployment, use `npm run deploy:tokyo-qa`. That command runs the full audit and ordinary build, adds `dist/qa/tokyo-responsive/index.html`, checks its noindex metadata and all nine route selector options locally, deploys only to Pages branch `tokyo-qa`, then requires the live alias to return HTTP 200 with the same noindex and selector checks. The harness stays out of the sitemap.
+
 ## Language editions
 
 English source pages remain the editorial source of truth. Reviewed batch files under `data/i18n/reviewed/` are the versioned translation source. `npm run i18n:approve` validates and merges them into generated `data/i18n/zh-Hant.json`, `ja.json`, `ko.json` and `th.json` catalogs; `npm run localize` then generates the complete static locale trees, shared components and search indexes. The merged catalogs and generated `/zh/`, `/ja/`, `/ko/` and `/th/` trees stay out of Git, but `npm run build` recreates and includes the locale trees in `dist/` for Cloudflare Pages.
