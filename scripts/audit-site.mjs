@@ -107,6 +107,18 @@ function jsonLdLanguages(value, output = []) {
   return output;
 }
 
+// Guard the exact Traditional Chinese itinerary sentence reported as reversing the JR arrival direction.
+const tokyoShibuyaZhHant = read('zh/japan/tokyo/shibuya-harajuku/index.html');
+const reversedTokyoJrSentence = '從原宿站搭乘 JR，可由明治神宮主要參道或 Takeshita 一側開始行程。';
+const correctedTokyoJrSentence = '搭乘 JR 抵達原宿站後，依第一站選擇出口，步行前往明治神宮參道或竹下通。';
+if (tokyoShibuyaZhHant.includes(reversedTokyoJrSentence)) {
+  problems.push('zh-Hant Tokyo Shibuya itinerary still contains the reversed JR arrival sentence');
+} else if ((tokyoShibuyaZhHant.split(correctedTokyoJrSentence).length - 1) !== 1) {
+  problems.push('zh-Hant Tokyo Shibuya itinerary must contain the corrected JR arrival sentence exactly once');
+} else {
+  console.log('Tokyo zh-Hant JR arrival wording regression check passed: reversed sentence absent; corrected sentence appears once.');
+}
+
 const sitemap = read('sitemap.xml');
 const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => {
   const entry = match[1];
