@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T00:09:39.000Z",
+  "generatedAt": "2026-10-06T02:01:31.033Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
@@ -15,21 +15,21 @@
     "imageReferencesScanned": 3555,
     "assetsUsedByScannedEnglishPages": 779,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 205,
-    "assetsWithExplicitEnglishCreditMatch": 8,
-    "assetsVisuallyReviewed": 34,
+    "assetsWithMatchedEnglishCreditOnly": 193,
+    "assetsWithExplicitEnglishCreditMatch": 20,
+    "assetsVisuallyReviewed": 22,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 78,
     "metadataOrCreditOnly": 701,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
-    "sourceMetadataConflicts": 1,
+    "sourceMetadataConflicts": 0,
     "moduleErrors": 0
   },
   "verificationMethod": {
     "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.",
-    "sourcePageChecks": "Manually checked exact source pages marked source_page_checked, with date and finding on each row. 12 Kyoto images were added to source-page checks on 2026-10-05; see reports/kyoto-photo-source-review-2026-10-05.md. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
+    "sourcePageChecks": "Manually checked source pages marked source_page_checked on 2026-10-04, 2026-10-05, or 2026-10-06, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
     "buildImageCountReconciliation": "The 779 WebP photos in assets/images plus favicon.svg (an SVG icon counted by build-dist.mjs) explain the previous build tally of 780 images."
   },
@@ -10262,19 +10262,19 @@
           "assetPath": "/assets/images/fushimi-inari.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
           "sourceTitle": "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg",
-          "creditLabel": "Fushimi Inari torii path",
+          "creditLabel": "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 3,
           "routes": [
             "/japan/",
@@ -10287,8 +10287,7 @@
             "Vermilion torii gates and a stone lantern at Fushimi Inari Taisha"
           ],
           "rawVisibleCredits": [
-            "Fushimi Inari torii path — Basile Morin, CC BY-SA 4.0.",
-            "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -11050,7 +11049,7 @@
             "The mountainous Basilicata coast and blue Tyrrhenian Sea near Maratea"
           ],
           "rawVisibleCredits": [
-            "The mountainous Basilicata coast and blue Tyrrhenian Sea near Maratea — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The mountainous Basilicata coast and blue Tyrrhenian Sea near Maratea — Benjamin Smith, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11091,7 +11090,7 @@
             "The stone houses and churches of the Sassi overlooking the Matera ravine"
           ],
           "rawVisibleCredits": [
-            "The stone houses and churches of the Sassi overlooking the Matera ravine — Isiwal, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The stone houses and churches of the Sassi overlooking the Matera ravine — Isiwal, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11131,7 +11130,7 @@
             "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea"
           ],
           "rawVisibleCredits": [
-            "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea — Norbert Nagel, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea — Norbert Nagel, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -11172,7 +11171,7 @@
             "Bolzano below the Renon plateau and Dolomite landscape"
           ],
           "rawVisibleCredits": [
-            "Bolzano below the Renon plateau and Dolomite landscape — Bartleby08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Bolzano below the Renon plateau and Dolomite landscape — Bartleby08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11212,7 +11211,7 @@
             "Tre Cime di Lavaredo rising above a Dolomite trail"
           ],
           "rawVisibleCredits": [
-            "Tre Cime di Lavaredo rising above a Dolomite trail — kallerna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Tre Cime di Lavaredo rising above a Dolomite trail — kallerna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11252,7 +11251,7 @@
             "The Brenta Dolomites rising beyond the Trentino valleys"
           ],
           "rawVisibleCredits": [
-            "The Brenta Dolomites rising beyond the Trentino valleys — Zoran Kurelić Rabko, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Brenta Dolomites rising beyond the Trentino valleys — Zoran Kurelić Rabko, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -11373,7 +11372,7 @@
             "Taormina’s ancient theatre overlooking the Ionian Sea and Mount Etna"
           ],
           "rawVisibleCredits": [
-            "Taormina’s ancient theatre overlooking the Ionian Sea and Mount Etna — 231286M, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Taormina’s ancient theatre overlooking the Ionian Sea and Mount Etna — 231286M, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11414,7 +11413,7 @@
             "Historic porticoes leading through central Bologna"
           ],
           "rawVisibleCredits": [
-            "Historic porticoes leading through central Bologna — GennaroBologna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Historic porticoes leading through central Bologna — GennaroBologna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11454,7 +11453,7 @@
             "Modena Cathedral and Piazza Grande along the Via Emilia corridor"
           ],
           "rawVisibleCredits": [
-            "Modena Cathedral and Piazza Grande along the Via Emilia corridor — Gerolamondo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Modena Cathedral and Piazza Grande along the Via Emilia corridor — Gerolamondo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11516,7 +11515,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -11535,7 +11534,7 @@
             "Florence Cathedral dome above the Renaissance city centre"
           ],
           "rawVisibleCredits": [
-            "Florence Cathedral dome above the Renaissance city centre — Txllxt TxllxT, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Florence Cathedral dome above the Renaissance city centre — Txllxt TxllxT, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0."
           ]
         }
       ]
@@ -11557,7 +11556,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -11575,7 +11574,7 @@
             "Florence viewed across the Arno toward the Oltrarno hills"
           ],
           "rawVisibleCredits": [
-            "Florence viewed across the Arno toward the Oltrarno hills — Diego Delso, delso.photo, License CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Florence viewed across the Arno toward the Oltrarno hills — Diego Delso, delso.photo, License CC BY-SA 4.0. Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0."
           ]
         }
       ]
@@ -11597,7 +11596,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -11615,7 +11614,7 @@
             "Lucca’s historic walls and Tuscan city landscape"
           ],
           "rawVisibleCredits": [
-            "Lucca’s historic walls and Tuscan city landscape — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Lucca’s historic walls and Tuscan city landscape — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0."
           ]
         }
       ]
@@ -11695,7 +11694,7 @@
             "A Cinque Terre village compressed between the Ligurian coast and steep hills"
           ],
           "rawVisibleCredits": [
-            "A Cinque Terre village compressed between the Ligurian coast and steep hills — Luca Aless, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "A Cinque Terre village compressed between the Ligurian coast and steep hills — Luca Aless, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11736,7 +11735,7 @@
             "Genoa rising behind the Old Port with historic buildings on the slopes"
           ],
           "rawVisibleCredits": [
-            "Genoa rising behind the Old Port with historic buildings on the slopes — Bbruno, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Genoa rising behind the Old Port with historic buildings on the slopes — Bbruno, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11777,7 +11776,7 @@
             "Varenna and the central waters of Lake Como with mountains beyond"
           ],
           "rawVisibleCredits": [
-            "Varenna and the central waters of Lake Como with mountains beyond — Daniel Case, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Varenna and the central waters of Lake Como with mountains beyond — Daniel Case, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -11937,7 +11936,7 @@
             "The forested Monte Conero headland above the Adriatic Sea"
           ],
           "rawVisibleCredits": [
-            "The forested Monte Conero headland above the Adriatic Sea — Gabri307, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The forested Monte Conero headland above the Adriatic Sea — Gabri307, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -11978,7 +11977,7 @@
             "The Ducal Palace and hill town of Urbino in the Marche"
           ],
           "rawVisibleCredits": [
-            "The Ducal Palace and hill town of Urbino in the Marche — Il conte di Luna, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Ducal Palace and hill town of Urbino in the Marche — Il conte di Luna, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 2.0"
           ]
         }
       ]
@@ -12059,7 +12058,7 @@
             "Santa Maria delle Grazie church and its brick dome in Milan"
           ],
           "rawVisibleCredits": [
-            "Santa Maria delle Grazie church and its brick dome in Milan — Masi27185 ( talk ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Santa Maria delle Grazie church and its brick dome in Milan — Masi27185 ( talk ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -12099,7 +12098,7 @@
             "Evening light along Naviglio Grande in Milan"
           ],
           "rawVisibleCredits": [
-            "Evening light along Naviglio Grande in Milan — Zairon, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Evening light along Naviglio Grande in Milan — Zairon, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12180,7 +12179,7 @@
             "The dense historic centre of Naples beneath Vesuvius"
           ],
           "rawVisibleCredits": [
-            "The dense historic centre of Naples beneath Vesuvius — Giuseppe Guida, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The dense historic centre of Naples beneath Vesuvius — Giuseppe Guida, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12220,7 +12219,7 @@
             "Ancient Pompeii, modern Pompeii and Vesuvius in one view"
           ],
           "rawVisibleCredits": [
-            "Ancient Pompeii, modern Pompeii and Vesuvius in one view — Tracey Hind from Aups, France, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Ancient Pompeii, modern Pompeii and Vesuvius in one view — Tracey Hind from Aups, France, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 2.0"
           ]
         }
       ]
@@ -12260,7 +12259,7 @@
             "Stone trulli dwellings and conical roofs in Alberobello"
           ],
           "rawVisibleCredits": [
-            "Stone trulli dwellings and conical roofs in Alberobello — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Stone trulli dwellings and conical roofs in Alberobello — Palickap, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12301,7 +12300,7 @@
             "A view over historic buildings in Bari"
           ],
           "rawVisibleCredits": [
-            "A view over historic buildings in Bari — Francesco Di Stefano 08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "A view over historic buildings in Bari — Francesco Di Stefano 08, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12341,7 +12340,7 @@
             "Aerial view over Lecce’s rooftops and streets"
           ],
           "rawVisibleCredits": [
-            "Aerial view over Lecce’s rooftops and streets — Joolz, CC BY-SA 2.5. Resized, display-cropped and converted to WebP; no other material edits."
+            "Aerial view over Lecce’s rooftops and streets — Joolz, CC BY-SA 2.5. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 2.5"
           ]
         }
       ]
@@ -12503,7 +12502,7 @@
             "Cagliari’s Castello district rising above the city and the Gulf of Angels"
           ],
           "rawVisibleCredits": [
-            "Cagliari’s Castello district rising above the city and the Gulf of Angels — Municipality of Cagliari, CC BY-SA 3.0 it. Resized, display-cropped and converted to WebP; no other material edits."
+            "Cagliari’s Castello district rising above the city and the Gulf of Angels — Municipality of Cagliari, CC BY-SA 3.0 it. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0 it"
           ]
         }
       ]
@@ -12543,7 +12542,7 @@
             "White limestone cliffs and turquoise water at Cala Goloritzé"
           ],
           "rawVisibleCredits": [
-            "White limestone cliffs and turquoise water at Cala Goloritzé — Nicola Secci, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "White limestone cliffs and turquoise water at Cala Goloritzé — Nicola Secci, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12583,7 +12582,7 @@
             "Granite islands and clear water in the La Maddalena archipelago"
           ],
           "rawVisibleCredits": [
-            "Granite islands and clear water in the La Maddalena archipelago — Gianni Careddu, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Granite islands and clear water in the La Maddalena archipelago — Gianni Careddu, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -12623,7 +12622,7 @@
             "Mediterranean coast and wild landscape in Maremma Natural Park"
           ],
           "rawVisibleCredits": [
-            "Mediterranean coast and wild landscape in Maremma Natural Park — Denis Dascanio, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Mediterranean coast and wild landscape in Maremma Natural Park — Denis Dascanio, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12664,7 +12663,7 @@
             "Medieval palaces surrounding Siena’s Piazza del Campo"
           ],
           "rawVisibleCredits": [
-            "Medieval palaces surrounding Siena’s Piazza del Campo — José Luiz Bernardes Ribeiro, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Medieval palaces surrounding Siena’s Piazza del Campo — José Luiz Bernardes Ribeiro, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12744,7 +12743,7 @@
             "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea"
           ],
           "rawVisibleCredits": [
-            "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12784,7 +12783,7 @@
             "Positano stacked above the sea on the Amalfi Coast"
           ],
           "rawVisibleCredits": [
-            "Positano stacked above the sea on the Amalfi Coast — Nicola Cerroni, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Positano stacked above the sea on the Amalfi Coast — Nicola Cerroni, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12946,7 +12945,7 @@
             "Sacra di San Michele rising above the Susa Valley in Piedmont"
           ],
           "rawVisibleCredits": [
-            "Sacra di San Michele rising above the Susa Valley in Piedmont — Cristian Buda, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Sacra di San Michele rising above the Susa Valley in Piedmont — Cristian Buda, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -12986,7 +12985,7 @@
             "The Basilica of Saint Francis and the hill town of Assisi"
           ],
           "rawVisibleCredits": [
-            "The Basilica of Saint Francis and the hill town of Assisi — Peter K Burian, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Basilica of Saint Francis and the hill town of Assisi — Peter K Burian, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -13026,7 +13025,7 @@
             "Orvieto Cathedral and the town standing above its tufa cliff"
           ],
           "rawVisibleCredits": [
-            "Orvieto Cathedral and the town standing above its tufa cliff — Hans Peter Schaefer, http://www.reserv-a-rt.de, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Orvieto Cathedral and the town standing above its tufa cliff — Hans Peter Schaefer, http://www.reserv-a-rt.de, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -13067,7 +13066,7 @@
             "Perugia’s historic centre rising along its Umbrian ridge"
           ],
           "rawVisibleCredits": [
-            "Perugia’s historic centre rising along its Umbrian ridge — Maddy16869, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Perugia’s historic centre rising along its Umbrian ridge — Maddy16869, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -13107,7 +13106,7 @@
             "The domes of the Basilica of Saint Anthony in Padua"
           ],
           "rawVisibleCredits": [
-            "The domes of the Basilica of Saint Anthony in Padua — Piero tasso (P tasso), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The domes of the Basilica of Saint Anthony in Padua — Piero tasso (P tasso), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -13148,7 +13147,7 @@
             "The Roman Arena facing Piazza Bra in Verona"
           ],
           "rawVisibleCredits": [
-            "The Roman Arena facing Piazza Bra in Verona — David Monniaux, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Roman Arena facing Piazza Bra in Verona — David Monniaux, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -13188,7 +13187,7 @@
             "The Basilica Palladiana on Piazza dei Signori in Vicenza"
           ],
           "rawVisibleCredits": [
-            "The Basilica Palladiana on Piazza dei Signori in Vicenza — Federico, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Basilica Palladiana on Piazza dei Signori in Vicenza — Federico, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -13290,7 +13289,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "visually_reviewed_2026-10-05",
@@ -13309,7 +13308,7 @@
             "The Doge’s Palace and waterfront at San Marco in Venice"
           ],
           "rawVisibleCredits": [
-            "The Doge’s Palace and waterfront at San Marco in Venice — Mariordo (Mario Roberto Durán Ortiz), CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Doge’s Palace and waterfront at San Marco in Venice — Mariordo (Mario Roberto Durán Ortiz), CC BY-SA 4.0. Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0."
           ]
         }
       ]
@@ -13349,7 +13348,7 @@
             "The Temple of Concordia on the archaeological ridge at Agrigento"
           ],
           "rawVisibleCredits": [
-            "The Temple of Concordia on the archaeological ridge at Agrigento — Cayambe, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "The Temple of Concordia on the archaeological ridge at Agrigento — Cayambe, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -13390,7 +13389,7 @@
             "Palermo Cathedral rising above the historic city streets"
           ],
           "rawVisibleCredits": [
-            "Palermo Cathedral rising above the historic city streets — Kiban, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Palermo Cathedral rising above the historic city streets — Kiban, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -13430,7 +13429,7 @@
             "Salt pans and windmills glowing at sunset near Trapani"
           ],
           "rawVisibleCredits": [
-            "Salt pans and windmills glowing at sunset near Trapani — Malcanton, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Salt pans and windmills glowing at sunset near Trapani — Malcanton, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -15547,19 +15546,19 @@
           "assetPath": "/assets/images/kyoto-arashiyama-bamboo.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg",
           "sourceTitle": "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg",
-          "creditLabel": "Arashiyama bamboo forest",
+          "creditLabel": "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15570,8 +15569,7 @@
             "Dense green bamboo along the Arashiyama grove path"
           ],
           "rawVisibleCredits": [
-            "Arashiyama bamboo forest — Basile Morin, CC BY-SA 4.0.",
-            "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -15587,19 +15585,19 @@
           "assetPath": "/assets/images/kyoto-fushimi-sake.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Fushimi_Horikawa01s4592.jpg",
           "sourceTitle": "Kyoto Fushimi Horikawa01s4592.jpg",
-          "creditLabel": "Fushimi canal",
+          "creditLabel": "Kyoto Fushimi Horikawa01s4592.jpg",
           "creator": "663highland",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 3.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 3.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, 663highland creator credit, and CC BY-SA 3.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 1,
           "routes": [
             "/japan/kyoto/fushimi-inari-sake-district/"
@@ -15608,8 +15606,7 @@
             "Traditional boat moving along a green canal in Fushimi's sake district"
           ],
           "rawVisibleCredits": [
-            "Fushimi canal — 663highland, CC BY 2.5.",
-            "Kyoto Fushimi Horikawa01s4592.jpg by 663highland; CC BY-SA 3.0. Resized and converted to WebP; cropped for display."
+            "Kyoto Fushimi Horikawa01s4592.jpg — Photo by 663highland; licensed under CC BY-SA 3.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 3.0 license."
           ]
         }
       ]
@@ -15625,19 +15622,19 @@
           "assetPath": "/assets/images/kyoto-gion.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Streets_of_Gion,_Kyoto_-_Gion7708.jpg",
           "sourceTitle": "Streets of Gion, Kyoto - Gion7708.jpg",
-          "creditLabel": "Gion streets",
+          "creditLabel": "Streets of Gion, Kyoto - Gion7708.jpg",
           "creator": "lumoplank",
           "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "The work is dedicated to the public domain under CC0 1.0. Attribution is not required; source and creator are retained for provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title and lumoplank creator credit checked; the page declares a CC0 1.0 dedication. Creator and source remain credited for provenance.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15648,8 +15645,7 @@
             "Traditional machiya facades along a quiet Gion street at night"
           ],
           "rawVisibleCredits": [
-            "Gion streets — lumoplank, CC0.",
-            "Streets of Gion, Kyoto - Gion7708.jpg by lumoplank; CC0 1.0. Resized and converted to WebP; cropped for display."
+            "Streets of Gion, Kyoto - Gion7708.jpg — Photo by lumoplank; licensed under CC0 1.0. Changes: image resized, display-cropped and converted to WebP."
           ]
         }
       ]
@@ -15665,19 +15661,19 @@
           "assetPath": "/assets/images/kyoto-kinkakuji.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day,_Kyoto,_Japan.jpg",
           "sourceTitle": "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg",
-          "creditLabel": "Kinkakuji reflection",
+          "creditLabel": "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 3,
           "routes": [
             "/japan/kyoto/",
@@ -15689,8 +15685,7 @@
             "Kinkakuji Golden Pavilion reflected in a calm pond"
           ],
           "rawVisibleCredits": [
-            "Kinkakuji reflection — Basile Morin, CC BY-SA 4.0.",
-            "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -15706,19 +15701,19 @@
           "assetPath": "/assets/images/kyoto-kiyomizudera.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-07.jpg",
           "sourceTitle": "Kiyomizu-dera, Kyoto, November 2016 -07.jpg",
-          "creditLabel": "Kiyomizudera at night",
+          "creditLabel": "Kiyomizu-dera, Kyoto, November 2016 -07.jpg",
           "creator": "Martin Falbisoner",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Martin Falbisoner creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15729,8 +15724,7 @@
             "Kiyomizudera temple illuminated above autumn foliage"
           ],
           "rawVisibleCredits": [
-            "Kiyomizudera at night — Martin Falbisoner, CC BY-SA 4.0.",
-            "Kiyomizu-dera, Kyoto, November 2016 -07.jpg by Martin Falbisoner; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Kiyomizu-dera, Kyoto, November 2016 -07.jpg — Photo by Martin Falbisoner; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -15820,19 +15814,19 @@
           "assetPath": "/assets/images/kyoto-nishiki-market.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market,_Kyoto,_Japan.jpg",
           "sourceTitle": "A view of Nishiki Market, Kyoto, Japan.jpg",
-          "creditLabel": "Nishiki Market",
+          "creditLabel": "A view of Nishiki Market, Kyoto, Japan.jpg",
           "creator": "Joli Rumi",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Joli Rumi creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15843,8 +15837,7 @@
             "Colorful stalls beneath the stained-glass roof of Nishiki Market"
           ],
           "rawVisibleCredits": [
-            "Nishiki Market — Joli Rumi, CC BY-SA 4.0.",
-            "A view of Nishiki Market, Kyoto, Japan.jpg by Joli Rumi; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "A view of Nishiki Market, Kyoto, Japan.jpg — Photo by Joli Rumi; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -15860,19 +15853,19 @@
           "assetPath": "/assets/images/kyoto-philosophers-path.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tetsugaku-no-michi_-_Philosopher%27s_Walk_-_Kyoto.jpg",
           "sourceTitle": "Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg",
-          "creditLabel": "Philosopher's Path",
+          "creditLabel": "Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg",
           "creator": "Gzzz",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Gzzz creator credit, and CC BY 4.0 terms checked. Attribution, license linking, and change disclosure were confirmed on the page.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15883,8 +15876,7 @@
             "Green trees shading the canal beside Kyoto's Philosopher's Path"
           ],
           "rawVisibleCredits": [
-            "Philosopher's Path — Gzzz, CC BY 4.0.",
-            "Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg by Gzzz; CC BY 4.0. Resized and converted to WebP; cropped for display."
+            "Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg — Photo by Gzzz; licensed under CC BY 4.0. Changes: image resized, display-cropped and converted to WebP."
           ]
         }
       ]
@@ -15900,19 +15892,19 @@
           "assetPath": "/assets/images/kyoto-pontocho.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg",
           "sourceTitle": "Pontocho Alley, Kyoto - Flickr - Sergiy Galyonkin.jpg",
-          "creditLabel": "Pontocho Alley",
+          "creditLabel": "Pontocho Alley, Kyoto - Flickr - Sergiy Galyonkin.jpg",
           "creator": "Sergiy Galyonkin",
           "license": "CC BY-SA 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 2.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons lists Sergiy Galyonkin; one embedded EXIF field spells it Sergiy Galonkin. The Commons page spelling is used in the visible credit; see the Kyoto source-review report.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 2.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; the page identifies creator Sergiy Galyonkin and states CC BY-SA 2.0. An embedded EXIF field spells the name Sergiy Galonkin; the Commons page spelling is used in the credit, and the variant is recorded for transparency. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Sergiy Galyonkin creator credit, and CC BY-SA 2.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15923,8 +15915,7 @@
             "Narrow Pontocho alley glowing with restaurant lanterns"
           ],
           "rawVisibleCredits": [
-            "Pontocho Alley — Sergiy Galyonkin, CC BY-SA 2.0.",
-            "Pontocho Alley, Kyoto - Flickr - Sergiy Galyonkin.jpg by Sergiy Galyonkin; CC BY-SA 2.0. Resized and converted to WebP; cropped for display."
+            "Pontocho Alley, Kyoto - Flickr - Sergiy Galyonkin.jpg — Photo by Sergiy Galyonkin; licensed under CC BY-SA 2.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 2.0 license."
           ]
         }
       ]
@@ -15977,19 +15968,19 @@
           "assetPath": "/assets/images/kyoto-station.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Station_November_2016_-03.jpg",
           "sourceTitle": "Kyoto Station November 2016 -03.jpg",
-          "creditLabel": "Kyoto Station atrium",
+          "creditLabel": "Kyoto Station November 2016 -03.jpg",
           "creator": "Martin Falbisoner",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Martin Falbisoner creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -16000,8 +15991,7 @@
             "Steel-and-glass interior rising through Kyoto Station's main atrium"
           ],
           "rawVisibleCredits": [
-            "Kyoto Station atrium — Martin Falbisoner, CC BY-SA 4.0.",
-            "Kyoto Station November 2016 -03.jpg by Martin Falbisoner; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Kyoto Station November 2016 -03.jpg — Photo by Martin Falbisoner; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -16017,19 +16007,19 @@
           "assetPath": "/assets/images/kyoto-tenryuji.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tenry%C5%AB-ji_Garten.jpg",
           "sourceTitle": "Tenryū-ji Garten.jpg",
-          "creditLabel": "Tenryuji garden",
+          "creditLabel": "Tenryū-ji Garten.jpg",
           "creator": "Marco Almbauer",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Marco Almbauer creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 1,
           "routes": [
             "/japan/kyoto/arashiyama-sagano/"
@@ -16038,8 +16028,7 @@
             "Pond garden and green landscape at Tenryuji"
           ],
           "rawVisibleCredits": [
-            "Tenryuji garden — Marco Almbauer, CC BY-SA 4.0.",
-            "Tenryū-ji Garten.jpg by Marco Almbauer; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Tenryū-ji Garten.jpg — Photo by Marco Almbauer; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -16092,19 +16081,19 @@
           "assetPath": "/assets/images/kyoto-yasaka-dori.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_(Hokan-ji_Temple),_Kyoto,_Japan.jpg",
           "sourceTitle": "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg",
-          "creditLabel": "Yasaka-dori photo",
+          "creditLabel": "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "source_page_verified_2026-10-05",
-          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
-          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-05",
-          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.",
           "useCount": 3,
           "routes": [
             "/japan/",
@@ -16117,8 +16106,7 @@
             "Yasaka-dori street and pagoda before daytime crowds"
           ],
           "rawVisibleCredits": [
-            "Yasaka-dori photo — Basile Morin, CC BY-SA 4.0.",
-            "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
+            "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -22004,11 +21992,11 @@
           "sourceTitle": "Akihabara Electric Town at night",
           "creditLabel": "Akihabara Electric Town at night",
           "creator": "Phineyes",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22025,7 +22013,7 @@
             "Bright electronic and anime storefronts in Akihabara at night"
           ],
           "rawVisibleCredits": [
-            "Akihabara Electric Town at night — Phineyes, CC0."
+            "Akihabara Electric Town at night — Phineyes, CC0 1.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22047,7 +22035,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22062,7 +22050,7 @@
             "Illuminated Fujiya corner building in Ginza at blue hour"
           ],
           "rawVisibleCredits": [
-            "Ginza at blue hour — Basile Morin, CC BY-SA 4.0."
+            "Ginza at blue hour — Basile Morin, CC BY-SA 4.0. The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22080,11 +22068,11 @@
           "sourceTitle": "Ikebukuro Station east side",
           "creditLabel": "Ikebukuro Station east side",
           "creator": "Asanagi",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22101,7 +22089,7 @@
             "Illuminated commercial buildings on the east side of Ikebukuro Station"
           ],
           "rawVisibleCredits": [
-            "Ikebukuro Station east side — Asanagi, CC0."
+            "Ikebukuro Station east side - Asanagi, CC0 1.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22123,7 +22111,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22138,7 +22126,7 @@
             "Red and green Zuishin gate at Kanda Myojin shrine"
           ],
           "rawVisibleCredits": [
-            "Kanda Myojin Zuishin gate — Zairon, CC BY-SA 4.0."
+            "Kanda Myojin Zuishin gate — Zairon, CC BY-SA 4.0. The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22160,7 +22148,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22177,7 +22165,7 @@
             "Tree-lined approach inside Meiji Jingu near Harajuku"
           ],
           "rawVisibleCredits": [
-            "Meiji Jingu approach — Guilhem Vellut, CC BY 2.0."
+            "Meiji Jingu approach - Guilhem Vellut, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22195,11 +22183,11 @@
           "sourceTitle": "Tokyo Metropolitan Government Building",
           "creditLabel": "Tokyo Metropolitan Government Building",
           "creator": "Asanagi",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22216,7 +22204,7 @@
             "Tokyo Metropolitan Government twin towers illuminated at night"
           ],
           "rawVisibleCredits": [
-            "Tokyo Metropolitan Government Building — Asanagi, CC0."
+            "Tokyo Metropolitan Government Building - Asanagi, CC0 1.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22234,11 +22222,11 @@
           "sourceTitle": "National Art Center, Tokyo",
           "creditLabel": "National Art Center, Tokyo",
           "creator": "Daderot",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22253,7 +22241,7 @@
             "Curving glass facade and interior of the National Art Center Tokyo"
           ],
           "rawVisibleCredits": [
-            "National Art Center, Tokyo — Daderot, CC0."
+            "National Art Center, Tokyo - Daderot, CC0 1.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22271,11 +22259,11 @@
           "sourceTitle": "Odaiba and Rainbow Bridge",
           "creditLabel": "Odaiba and Rainbow Bridge",
           "creator": "Balon Greyjoy",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22292,7 +22280,7 @@
             "Rainbow Bridge and Tokyo skyline viewed across Odaiba waterfront"
           ],
           "rawVisibleCredits": [
-            "Odaiba and Rainbow Bridge — Balon Greyjoy, CC0."
+            "Odaiba and Rainbow Bridge - Balon Greyjoy, CC0 1.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22310,11 +22298,11 @@
           "sourceTitle": "Sensoji in 2023",
           "creditLabel": "Sensoji in 2023",
           "creator": "Akonnchiroll",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22331,7 +22319,7 @@
             "Main hall and visitors at Sensoji temple in Asakusa"
           ],
           "rawVisibleCredits": [
-            "Sensoji in 2023 — Akonnchiroll, CC0."
+            "Sensoji in 2023 — Akonnchiroll, CC0 1.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22346,14 +22334,14 @@
         {
           "assetPath": "/assets/images/tokyo-shinjuku-neon.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colorful_neon_street_signs_in_Kabukich%C5%8D,_Shinjuku,_Tokyo.jpg",
-          "sourceTitle": "Kabukicho neon signs",
-          "creditLabel": "Kabukicho neon signs",
+          "sourceTitle": "Shinjuku neon",
+          "creditLabel": "Shinjuku neon",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22370,7 +22358,7 @@
             "Dense colorful neon signs in Kabukicho, Shinjuku"
           ],
           "rawVisibleCredits": [
-            "Kabukicho neon signs — Basile Morin, CC BY-SA 4.0."
+            "Shinjuku neon - Basile Morin, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -22385,14 +22373,14 @@
         {
           "assetPath": "/assets/images/tokyo-station-night.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_Station_Marunouchi_Building_Night_view1_201912.jpg",
-          "sourceTitle": "Tokyo Station at night",
-          "creditLabel": "Tokyo Station at night",
+          "sourceTitle": "Tokyo Station",
+          "creditLabel": "Tokyo Station",
           "creator": "Wpcpey",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22410,7 +22398,7 @@
             "Restored Tokyo Station Marunouchi building illuminated at night"
           ],
           "rawVisibleCredits": [
-            "Tokyo Station at night — Wpcpey, CC BY 4.0."
+            "Tokyo Station - Wpcpey, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22432,7 +22420,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22447,7 +22435,7 @@
             "Brick terraces and entrance to Sunshine City in Ikebukuro"
           ],
           "rawVisibleCredits": [
-            "Sunshine City — Kakidai, CC BY-SA 3.0."
+            "Sunshine City - Kakidai, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -22462,14 +22450,14 @@
         {
           "assetPath": "/assets/images/tokyo-tower-night.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_at_night_7.JPG",
-          "sourceTitle": "Tokyo Tower at night",
-          "creditLabel": "Tokyo Tower at night",
+          "sourceTitle": "Tokyo Tower",
+          "creditLabel": "Tokyo Tower",
           "creator": "Kakidai",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22486,7 +22474,7 @@
             "Tokyo Tower glowing orange over the city at night"
           ],
           "rawVisibleCredits": [
-            "Tokyo Tower at night — Kakidai, CC BY-SA 4.0."
+            "Tokyo Tower - Kakidai, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
           ]
         }
       ]
@@ -22503,12 +22491,12 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toyosu_Market_Tokyo_2.jpg",
           "sourceTitle": "Toyosu Market",
           "creditLabel": "Toyosu Market",
-          "creator": "Arne Müseler",
+          "creator": "Arne Müseler; photographer website",
           "license": "CC BY-SA 3.0 de",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0 DE",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22523,7 +22511,7 @@
             "Toyosu Market complex and Tokyo Bay viewed from above"
           ],
           "rawVisibleCredits": [
-            "Toyosu Market — Arne Müseler, CC BY-SA 3.0 DE."
+            "Toyosu Market - Arne Müseler; photographer website; CC BY-SA 3.0 DE. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0 DE"
           ]
         }
       ]
@@ -22545,7 +22533,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -22560,7 +22548,7 @@
             "Walkway beside lotus-covered Shinobazu Pond in Ueno Park"
           ],
           "rawVisibleCredits": [
-            "Shinobazu Pond walkway — Ximonic (Simo Räsänen), CC BY-SA 4.0."
+            "Shinobazu Pond walkway — Ximonic (Simo Räsänen), CC BY-SA 4.0. The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -31556,14 +31544,5 @@
     }
   ],
   "unmatchedAssets": [],
-  "sourceMetadataConflicts": [
-    {
-      "assetPath": "/assets/images/kyoto-pontocho.webp",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg",
-      "field": "creator spelling",
-      "commonsFilePage": "Sergiy Galyonkin",
-      "embeddedExif": "Sergiy Galonkin",
-      "resolution": "Use the Commons file-page spelling in the credit; retain the EXIF variant in this inventory note. No contact was made."
-    }
-  ]
+  "sourceMetadataConflicts": []
 }

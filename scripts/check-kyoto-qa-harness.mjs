@@ -8,6 +8,7 @@ const distRoot = path.join(projectRoot, 'dist');
 const harnessRelative = path.join('qa', 'kyoto-responsive');
 const harnessPath = path.join(distRoot, harnessRelative, 'index.html');
 const releasePath = path.join(distRoot, harnessRelative, 'release.json');
+const photoInventoryPath = path.join(projectRoot, 'reports', 'photo-license-inventory.json');
 const liveFlag = process.argv.includes('--live');
 const originArg = process.argv.find((arg) => arg.startsWith('--url='))?.slice('--url='.length);
 const origin = (originArg || 'https://kyoto-qa.trip-68e.pages.dev').replace(/\/+$/, '');
@@ -26,6 +27,16 @@ const expectedLocales = [
   ['th', 'Thai', '/th']
 ];
 const expectedWidths = [320, 390];
+const photoInventory = JSON.parse(fs.readFileSync(photoInventoryPath, 'utf8'));
+const photoRecordByAsset = new Map(photoInventory.entries.flatMap((entry) => entry.sourceRecords || []).map((record) => [record.assetPath, record]));
+const translationsByLocale = new Map();
+for (const [locale] of expectedLocales.filter(([code]) => code !== 'en')) {
+  const batchPath = path.join(projectRoot, 'data', 'i18n', 'reviewed', locale, '90-kyoto-photo-credit-completion.json');
+  if (!fs.existsSync(batchPath)) throw new Error(`Missing reviewed Kyoto photo-credit translations for ${locale}.`);
+  const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
+  if (batch.locale !== locale || batch.qualityStatus !== 'reviewed') throw new Error(`Kyoto photo-credit batch is not reviewed for ${locale}.`);
+  translationsByLocale.set(locale, batch.translations);
+}
 
 function walk(node, visit) {
   visit(node);
@@ -43,6 +54,88 @@ function attr(node, name) {
 
 function hash(value) {
   return createHash('sha256').update(value).digest('hex');
+}
+
+function normalize(value) {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function localizedKey(locale, key) {
+  if (locale === 'en') return key;
+  const value = translationsByLocale.get(locale)?.[normalize(key)];
+  if (!value) throw new Error(`Missing reviewed photo-credit translation for ${locale}: ${normalize(key)}`);
+  return normalize(value);
+}
+
+function assertKyotoCss(css, label) {
+  const scopedRules = [...css.matchAll(/body\[data-city="kyoto"\]\s*\{([^{}]*)\}/gi)];
+  const widthRules = scopedRules.filter((rule) => /\bmin-width\s*:\s*0(?:px)?\s*;/i.test(rule[1]));
+  if (widthRules.length !== 1) {
+    throw new Error(`${label}: expected one scoped Kyoto body min-width: 0 rule.`);
+  }
+  if (/\boverflow(?:-x|-y)?\s*:\s*(?:hidden|clip)\b/i.test(widthRules[0][1])) {
+    throw new Error(`${label}: the Kyoto width rule must not hide or clip overflow.`);
+  }
+  const bodyRule = css.match(/(?:^|\})\s*body\s*\{([^{}]*)\}/i)?.[1] || '';
+  if (!/\bmin-height\s*:\s*100vh\s*;/i.test(bodyRule)) throw new Error(`${label}: the document body lost its natural page-scroll height.`);
+  const navRule = css.match(/\.area-jump-nav\s*\{([^{}]*)\}/i)?.[1] || '';
+  if (!/\boverflow-x\s*:\s*auto\s*;/i.test(navRule) || /\boverflow-x\s*:\s*(?:hidden|clip)\b/i.test(navRule)) {
+    throw new Error(`${label}: Kyoto child-guide jump navigation must remain horizontally scrollable.`);
+  }
+}
+
+function assertPhotoCredits(html, row, label) {
+  const document = parse(html);
+  const imagePaths = new Set();
+  const sourceSections = [];
+  walk(document, (node) => {
+    if (node.tagName === 'img') {
+      const src = attr(node, 'src');
+      if (src.startsWith('/assets/images/')) imagePaths.add(decodeURIComponent(src));
+    }
+    if (node.tagName === 'section' && attr(node, 'class').split(/\s+/).includes('sources')) sourceSections.push(node);
+  });
+  if (sourceSections.length !== 1) throw new Error(`${label}: expected one photo/source-credit section.`);
+  const photoItems = [];
+  walk(sourceSections[0], (node) => { if (node.tagName === 'li' && attr(node, 'data-photo-asset')) photoItems.push(node); });
+  const creditedPaths = photoItems.map((node) => attr(node, 'data-photo-asset'));
+  if (new Set(creditedPaths).size !== creditedPaths.length || JSON.stringify([...new Set(creditedPaths)].sort()) !== JSON.stringify([...imagePaths].sort())) {
+    throw new Error(`${label}: visible photo-credit assets do not exactly match the page images.`);
+  }
+  for (const item of photoItems) {
+    const assetPath = attr(item, 'data-photo-asset');
+    const record = photoRecordByAsset.get(assetPath);
+    if (!record) throw new Error(`${label}: no verified source record for ${assetPath}.`);
+    if (attr(item, 'data-photo-creator') !== record.creator || attr(item, 'data-photo-license') !== record.license) {
+      throw new Error(`${label}: credit metadata mismatch for ${assetPath}.`);
+    }
+    const sourceTitleLinks = [];
+    const licenseLinks = [];
+    const creditNodes = [];
+    const editNodes = [];
+    walk(item, (node) => {
+      if (node.tagName === 'a' && attr(node, 'data-photo-source-title') !== '') sourceTitleLinks.push(node);
+      if (node.tagName === 'a' && attr(node, 'data-photo-license-link') !== '') licenseLinks.push(node);
+      if (attr(node, 'data-photo-credit-key') !== '') creditNodes.push(node);
+      if (attr(node, 'data-photo-edit-key') !== '') editNodes.push(node);
+    });
+    if (sourceTitleLinks.length !== 1 || attr(sourceTitleLinks[0], 'href') !== record.sourceUrl || normalize(text(sourceTitleLinks[0])) !== record.sourceTitle || attr(sourceTitleLinks[0], 'translate') !== 'no' || attr(sourceTitleLinks[0], 'lang') !== 'en') {
+      throw new Error(`${label}: exact source title/link missing for ${assetPath}.`);
+    }
+    if (licenseLinks.length !== 1 || attr(licenseLinks[0], 'href') !== record.licenseUrl || normalize(text(licenseLinks[0])) !== record.license || attr(licenseLinks[0], 'translate') !== 'no' || attr(licenseLinks[0], 'lang') !== 'en') {
+      throw new Error(`${label}: exact linked license/version missing for ${assetPath}.`);
+    }
+    if (creditNodes.length !== 1 || editNodes.length !== 1) throw new Error(`${label}: creator or edit disclosure missing for ${assetPath}.`);
+    const creditKey = attr(creditNodes[0], 'data-photo-credit-key');
+    const editKey = attr(editNodes[0], 'data-photo-edit-key');
+    const creditText = localizedKey(row.locale, creditKey);
+    const editText = localizedKey(row.locale, editKey);
+    if (normalize(text(creditNodes[0])) !== creditText || !creditText.includes(record.creator)) throw new Error(`${label}: localized creator attribution mismatch for ${assetPath}.`);
+    if (normalize(text(editNodes[0])) !== editText) throw new Error(`${label}: localized edit disclosure mismatch for ${assetPath}.`);
+    const requiresShareAlike = record.license.startsWith('CC BY-SA ');
+    if ((attr(item, 'data-photo-share-alike') === 'true') !== requiresShareAlike) throw new Error(`${label}: share-alike marker mismatch for ${assetPath}.`);
+    if (requiresShareAlike && !editText.includes(record.license)) throw new Error(`${label}: derivative notice does not name the same ${record.license} version for ${assetPath}.`);
+  }
 }
 
 function routeRows() {
@@ -93,18 +186,28 @@ function assertNoindex(html, label) {
 function assertRouteHtml(html, row, label) {
   const document = parse(html);
   let root = null;
+  const bodies = [];
+  const jumpNavs = [];
   const titles = [];
   const h1s = [];
   const canonicals = [];
   const alternates = [];
   walk(document, (node) => {
     if (node.tagName === 'html') root = node;
+    if (node.tagName === 'body') bodies.push(node);
+    if (node.tagName === 'nav' && attr(node, 'class').split(/\s+/).includes('area-jump-nav')) jumpNavs.push(node);
     if (node.tagName === 'title') titles.push(text(node).trim());
     if (node.tagName === 'h1' && text(node).trim()) h1s.push(text(node).trim());
     if (node.tagName === 'link' && attr(node, 'rel').toLowerCase() === 'canonical') canonicals.push(attr(node, 'href'));
     if (node.tagName === 'link' && attr(node, 'rel').toLowerCase() === 'alternate') alternates.push(attr(node, 'hreflang'));
   });
   if (attr(root, 'lang') !== row.locale) throw new Error(`${label}: html lang ${attr(root, 'lang')} != ${row.locale}`);
+  if (bodies.length !== 1 || attr(bodies[0], 'data-city') !== 'kyoto') throw new Error(`${label}: route is missing its Kyoto-scoped body marker.`);
+  const isHub = row.path.endsWith('/japan/kyoto/');
+  if (isHub && jumpNavs.length !== 0) throw new Error(`${label}: unexpected child-guide jump scroller on the hub.`);
+  if (!isHub && (jumpNavs.length !== 1 || attr(jumpNavs[0], 'tabindex') !== '0' || !attr(jumpNavs[0], 'aria-label'))) {
+    throw new Error(`${label}: child-guide horizontal jump scroller must remain named and keyboard-focusable.`);
+  }
   if (titles.length !== 1 || !titles[0]) throw new Error(`${label}: title missing or duplicated`);
   if (h1s.length !== 1) throw new Error(`${label}: expected exactly one non-empty H1`);
   if (canonicals.length !== 1 || canonicals[0] !== `https://tripdistill.com${row.path}`) throw new Error(`${label}: canonical mismatch (${canonicals.join(', ')})`);
@@ -125,6 +228,12 @@ if (release.project !== 'trip' || release.branch !== 'kyoto-qa' || release.route
 if (JSON.stringify(release.viewportWidths) !== JSON.stringify(expectedWidths)) throw new Error('Release manifest viewport widths mismatch.');
 if (JSON.stringify(release.routes.map(({ path, label }) => [path, label])) !== JSON.stringify(expectedRoutes)) throw new Error('Release manifest route list mismatch.');
 if (JSON.stringify(release.locales.map(({ code, label }) => [code, label])) !== JSON.stringify(expectedLocales.map(([code, label]) => [code, label]))) throw new Error('Release manifest locale list mismatch.');
+if (release.stylesheet?.path !== '/css/site.css' || !/^[a-f0-9]{64}$/.test(release.stylesheet?.sha256 || '')) throw new Error('Release manifest must include the exact shared stylesheet identity.');
+
+const localStylesheetPath = path.join(distRoot, 'css', 'site.css');
+const localStylesheet = fs.readFileSync(localStylesheetPath);
+if (hash(localStylesheet) !== release.stylesheet.sha256) throw new Error('Local stylesheet hash differs from release manifest.');
+assertKyotoCss(localStylesheet.toString('utf8'), 'local /css/site.css');
 
 const rows = routeRows();
 if (release.pages.length !== rows.length) throw new Error(`Release manifest has ${release.pages.length} localized routes; expected 20.`);
@@ -135,6 +244,7 @@ for (const row of rows) {
   const body = fs.readFileSync(localPath);
   if (hash(body) !== record.sha256) throw new Error(`Local build hash mismatch for ${row.locale} ${row.path}.`);
   assertRouteHtml(body.toString('utf8'), row, `local ${row.locale} ${row.path}`);
+  assertPhotoCredits(body.toString('utf8'), row, `local ${row.locale} ${row.path}`);
 }
 for (const image of release.images) {
   const localPath = path.join(distRoot, decodeURIComponent(image.path).slice(1));
@@ -146,7 +256,7 @@ if ((localSitemap.match(/<loc>/g) || []).length !== 4560) throw new Error('Expec
 
 if (!liveFlag) {
   assertNoindex(localHarness, 'local harness');
-  console.log(`Local Kyoto QA harness passed: noindex; four route options; five locale options; 320/390 CSS-pixel frames; 20 route metadata checks; ${release.images.length} local image hashes; harness absent from 4,560-route sitemap; commit ${release.commit}.`);
+  console.log(`Local Kyoto QA harness passed: noindex; four routes × five locales; paired 320/390 CSS-pixel frames; 20 route, scroller and photo-attribution checks; CSS hash; ${release.images.length} local image hashes; harness absent from 4,560-route sitemap; commit ${release.commit}.`);
 } else {
   if (new URL(origin).hostname !== 'kyoto-qa.trip-68e.pages.dev' && !new URL(origin).hostname.endsWith('.trip-68e.pages.dev')) {
     throw new Error(`Live origin is not a deployment hostname for the verified trip-68e Pages project: ${origin}`);
@@ -169,6 +279,12 @@ if (!liveFlag) {
   if (hash(remoteRelease) !== hash(localReleaseBytes)) throw new Error('Live release manifest differs from local build identity.');
   const liveIdentity = JSON.parse(remoteRelease.toString('utf8'));
 
+  const stylesheetResponse = await fetchNoStore(`${origin}${liveIdentity.stylesheet.path}`);
+  if (stylesheetResponse.status !== 200) throw new Error(`Live stylesheet returned HTTP ${stylesheetResponse.status}.`);
+  const remoteStylesheet = Buffer.from(await stylesheetResponse.arrayBuffer());
+  if (hash(remoteStylesheet) !== liveIdentity.stylesheet.sha256) throw new Error('Live stylesheet hash differs from build.');
+  assertKyotoCss(remoteStylesheet.toString('utf8'), 'live /css/site.css');
+
   let checkedPages = 0;
   for (const row of rows) {
     const pageRecord = liveIdentity.pages.find((page) => page.locale === row.locale && page.path === row.path);
@@ -177,6 +293,7 @@ if (!liveFlag) {
     const body = Buffer.from(await pageResponse.arrayBuffer());
     if (hash(body) !== pageRecord.sha256) throw new Error(`Live HTML hash differs from build for ${row.locale} ${row.path}.`);
     assertRouteHtml(body.toString('utf8'), row, `live ${row.locale} ${row.path}`);
+    assertPhotoCredits(body.toString('utf8'), row, `live ${row.locale} ${row.path}`);
     checkedPages += 1;
   }
 
@@ -192,5 +309,5 @@ if (!liveFlag) {
   const liveSitemap = await sitemapResponse.text();
   if (liveSitemap.includes('/qa/kyoto-responsive/')) throw new Error('Live sitemap must not list the harness.');
   if ((liveSitemap.match(/<loc>/g) || []).length !== 4560) throw new Error('Live sitemap is not the expected 4,560 routes.');
-  console.log(`Live Kyoto QA passed at ${origin}: noindex harness, 20/20 localized HTML hashes and metadata, ${liveIdentity.images.length}/${liveIdentity.images.length} image body hashes, unchanged 4,560-route sitemap; project ${liveIdentity.project}, branch ${liveIdentity.branch}, commit ${liveIdentity.commit}.`);
+  console.log(`Live Kyoto QA passed at ${origin}: noindex harness; 20/20 localized HTML, scroller and photo-attribution checks; stylesheet SHA-256; ${liveIdentity.images.length}/${liveIdentity.images.length} image body hashes; unchanged 4,560-route sitemap; project ${liveIdentity.project}, branch ${liveIdentity.branch}, commit ${liveIdentity.commit}.`);
 }

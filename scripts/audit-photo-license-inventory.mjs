@@ -63,6 +63,66 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_(Hokan-ji_Temple),_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Streets_of_Gion,_Kyoto_-_Gion7708.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title and lumoplank creator credit checked; the page declares a CC0 1.0 dedication. Creator and source remain credited for provenance.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-07.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Martin Falbisoner creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Joli Rumi creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kyoto_Station_November_2016_-03.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Martin Falbisoner creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Tetsugaku-no-michi_-_Philosopher%27s_Walk_-_Kyoto.jpg",
+    "Kyoto photo credit follow-up: exact Commons page title, Gzzz creator credit, and CC BY 4.0 terms checked. Attribution, license linking, and change disclosure were confirmed on the page.",
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Sergiy Galyonkin creator credit, and CC BY-SA 2.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Tenry%C5%AB-ji_Garten.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Marco Almbauer creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kyoto_Fushimi_Horikawa01s4592.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, 663highland creator credit, and CC BY-SA 3.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
     "https://commons.wikimedia.org/wiki/File:Gries-Bozen_vom_Guntschnaberg_Richtung_S%C3%BCden.jpg",
     "Source page checked for Bartleby08, the Bolzano view subject, and CC BY-SA 4.0."
   ],
@@ -146,7 +206,7 @@ const verifiedSourcePageDetails = new Map([
     "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
     "Replacement source page checked for Norbert Nagel, Santa Maria dell’Isola in Tropea, and CC BY-SA 3.0. The page says a specimen copy or link is a request, not a license condition; none was sent."
   ]
-].map(([sourceUrl, detail]) => [sourceUrl, { checkedOn: '2026-10-05', detail }]));
+].map(([sourceUrl, detail, checkedOn]) => [sourceUrl, { checkedOn: checkedOn || '2026-10-05', detail }]));
 
 const genericTokens = new Set(('a an and at by from for in into of on or the to with through view photo image picture scene landscape city town lake river road street park guide travel at the a view panorama night day north south east west central main old new near beyond under over beside walk route district guide file webp jpg jpeg commons official').split(' '));
 
@@ -225,11 +285,12 @@ function parseLicense(creditText) {
   return match[0].replace(/\s+/g, ' ').replace(/\b([a-z]{2})$/i, (m) => m.toLowerCase());
 }
 function parseCredit(li) {
+  const itemAttrs = attrs(li);
   const links = all(li, (node) => node.tagName === 'a').map((a) => ({ href: attrs(a).href || '', label: text(a).replace(/\s+/g, ' ').trim() }));
   const sourceLink = links.find((link) => /commons\.wikimedia\.org\/wiki\/File:/i.test(link.href));
   if (!sourceLink) return null;
   const creditText = text(li).replace(/\s+/g, ' ').trim();
-  const license = parseLicense(creditText);
+  const license = itemAttrs['data-photo-license'] || parseLicense(creditText);
   const at = license ? creditText.toLowerCase().indexOf(license.toLowerCase()) : -1;
   let before = at >= 0 ? creditText.slice(0, at) : creditText;
   if (sourceLink.label) before = before.replace(sourceLink.label, '');
@@ -241,9 +302,10 @@ function parseCredit(li) {
   }
   const declaredLicenseLink = links.find((link) => /creativecommons\.org\/(licenses|publicdomain)\//i.test(link.href));
   return {
+    assetPath: itemAttrs['data-photo-asset'] || null,
     sourceUrl: sourceLink.href,
     creditLabel: sourceLink.label || null,
-    creator,
+    creator: itemAttrs['data-photo-creator'] || creator,
     license,
     licenseUrl: declaredLicenseLink?.href || canonicalLicenseUrl(license),
     creditText,
@@ -309,6 +371,7 @@ for (const name of dataFiles) {
 
 const usesBySrc = new Map();
 const creditsBySrc = new Map();
+const explicitCreditsByAsset = new Map();
 let englishPageCount = 0;
 for (const country of countries) {
   const base = path.join(root, country);
@@ -328,6 +391,10 @@ for (const country of countries) {
     for (const credit of credits) {
       if (!creditsBySrc.has(credit.sourceUrl)) creditsBySrc.set(credit.sourceUrl, []);
       creditsBySrc.get(credit.sourceUrl).push({ ...credit, route });
+      if (credit.assetPath) {
+        if (!explicitCreditsByAsset.has(credit.assetPath)) explicitCreditsByAsset.set(credit.assetPath, []);
+        explicitCreditsByAsset.get(credit.assetPath).push({ ...credit, route });
+      }
     }
     for (const image of imgs) {
       if (!usesBySrc.has(image.src)) usesBySrc.set(image.src, []);
@@ -388,7 +455,11 @@ for (const fullPath of assetPaths) {
   let creditMatch = null;
   const exactDataSource = uniqueValues('sourceUrl')[0] || null;
   const candidateCredits = exactDataSource ? (creditsBySrc.get(exactDataSource) || []) : [];
-  if (candidateCredits.length) {
+  const explicitPageCredits = explicitCreditsByAsset.get(src) || [];
+  const explicitPageIdentities = new Set(explicitPageCredits.map((credit) => [credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|')));
+  if (explicitPageIdentities.size === 1 && explicitPageCredits.length) {
+    creditMatch = { ...explicitPageCredits[0], matching: 'explicit_asset_credit_match', matchNote: 'The English photo-credit row explicitly identifies this exact image asset and links to the source page.' };
+  } else if (candidateCredits.length) {
     creditMatch = { ...candidateCredits[0], matching: 'source_url_match' };
   } else if (!dataRecords.length) {
     const scored = uses.map((use) => {
@@ -513,7 +584,7 @@ const report = {
   verificationMethod: {
     structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',
     visibleCredits: 'Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.',
-    sourcePageChecks: 'Manually checked source pages marked source_page_checked on 2026-10-04 or 2026-10-05, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
+    sourcePageChecks: 'Manually checked source pages marked source_page_checked on 2026-10-04, 2026-10-05, or 2026-10-06, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
     imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
     buildImageCountReconciliation: 'The 779 WebP photos in assets/images plus favicon.svg (an SVG icon counted by build-dist.mjs) explain the previous build tally of 780 images.'
   },
@@ -550,7 +621,7 @@ const summaryLines = [
   '',
   '## Current mismatches',
   '',
-  'The former Trastevere hero showed Piazza Navona and has been replaced. Four replacement images received direct visual review in the 2026-10-05 batch; 22 of 779 current images have direct visual review across the recorded passes. The other 757 inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
+  'The former Trastevere hero showed Piazza Navona and has been replaced. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
   '',
   'Missing source/creator/license fields: ' + unmatchedByAsset.length + '. Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '.'
 ];

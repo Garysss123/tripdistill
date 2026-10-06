@@ -66,6 +66,9 @@ const imageRecords = [...imagePaths].sort().map((urlPath) => {
   if (!fs.existsSync(localPath)) throw new Error(`Missing referenced build image: ${urlPath}`);
   return { path: urlPath, sha256: sha256(fs.readFileSync(localPath)) };
 });
+const stylesheetPath = path.join(distRoot, 'css', 'site.css');
+if (!fs.existsSync(stylesheetPath)) throw new Error('Missing built site stylesheet.');
+const stylesheet = { path: '/css/site.css', sha256: sha256(fs.readFileSync(stylesheetPath)) };
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: projectRoot, encoding: 'utf8' }).trim();
 const branch = execFileSync('git', ['branch', '--show-current'], { cwd: projectRoot, encoding: 'utf8' }).trim();
 const workingTree = execFileSync('git', ['status', '--porcelain'], { cwd: projectRoot, encoding: 'utf8' }).trim();
@@ -80,7 +83,8 @@ const release = {
   routes,
   locales: locales.map(({ code, label }) => ({ code, label })),
   pages: pageRecords,
-  images: imageRecords
+  images: imageRecords,
+  stylesheet
 };
 
 const page = `<!doctype html>

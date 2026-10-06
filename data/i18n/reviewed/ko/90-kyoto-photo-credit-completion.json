@@ -1,0 +1,24 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/kyoto/",
+    "/japan/kyoto/arashiyama-sagano/",
+    "/japan/kyoto/fushimi-inari-sake-district/",
+    "/japan/kyoto/gion-pontocho/"
+  ],
+  "translations": {
+    "Photo by Basile Morin; licensed under": "사진: Basile Morin; 라이선스: ",
+    ". Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.": ". 변경 사항: 이미지 크기를 조정하고, 표시용으로 자른 뒤 WebP로 변환했습니다. 동일조건변경허락: 수정된 이미지는 원본과 동일한 CC BY-SA 4.0 라이선스로 배포됩니다.",
+    "Photo by lumoplank; licensed under": "사진: lumoplank; 라이선스: ",
+    ". Changes: image resized, display-cropped and converted to WebP.": ". 변경 사항: 이미지 크기를 조정하고, 표시용으로 자른 뒤 WebP로 변환했습니다.",
+    "Photo by Joli Rumi; licensed under": "사진: Joli Rumi; 라이선스: ",
+    "Photo by Gzzz; licensed under": "사진: Gzzz; 라이선스: ",
+    "Photo by Martin Falbisoner; licensed under": "사진: Martin Falbisoner; 라이선스: ",
+    "Photo by Sergiy Galyonkin; licensed under": "사진: Sergiy Galyonkin; 라이선스: ",
+    ". Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 2.0 license.": ". 변경 사항: 이미지 크기를 조정하고, 표시용으로 자른 뒤 WebP로 변환했습니다. 동일조건변경허락: 수정된 이미지는 원본과 동일한 CC BY-SA 2.0 라이선스로 배포됩니다.",
+    "Photo by Marco Almbauer; licensed under": "사진: Marco Almbauer; 라이선스: ",
+    "Photo by 663highland; licensed under": "사진: 663highland; 라이선스: ",
+    ". Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 3.0 license.": ". 변경 사항: 이미지 크기를 조정하고, 표시용으로 자른 뒤 WebP로 변환했습니다. 동일조건변경허락: 수정된 이미지는 원본과 동일한 CC BY-SA 3.0 라이선스로 배포됩니다."
+  }
+}
