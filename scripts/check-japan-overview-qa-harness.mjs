@@ -66,7 +66,7 @@ const stylesheetRecord = manifest.assets.find((item) => item.path === '/css/site
 assert(stylesheetRecord, 'Japan overview manifest must pin the shared stylesheet.');
 const siteCss = fs.readFileSync(distFile(stylesheetRecord.path), 'utf8');
 const japanBodyRule = /body\[data-page="japan"\]\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
-const japanCompareRule = /body\[data-page="japan"\]\s+\.compare-wrap\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
+const japanCompareRule = [...siteCss.matchAll(/body\[data-page="japan"\]\s+\.compare-wrap\s*\{([^}]*)\}/gs)].map((match) => match[1]).join('\n');
 const japanHeroRule = /body\[data-page="japan"\]\s+\.page-hero-content\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
 const japanHeroTextRule = /body\[data-page="japan"\]\s+\.page-hero-content\s+p\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
 assert(/min-width\s*:\s*0(?:px)?\s*;/i.test(japanBodyRule), 'Japan overview must override the shared 320px body minimum.');
