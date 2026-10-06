@@ -6,7 +6,7 @@ export const franceImageOverrides = {
     src: '/assets/images/france-paris-louvre-salle-mollien-20261006.webp'
   },
   'paris-region-day-trips/versailles-palace-estate': 'File:Panorama of the Château de Versailles (23673783164).jpg',
-  'paris-region-day-trips/fontainebleau-palace-forest': 'File:2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg',
+  'paris-region-day-trips/fontainebleau-palace-forest': 'File:La cour du cheval blanc (Château de Fontainebleau).jpg',
   'lille-french-flanders/old-lille-roubaix': 'File:Lille grand Place 2012.jpg',
   'lille-french-flanders/arras-vimy-remembrance': 'File:2017-05 Canadian National Vimy Memorial 01.jpg',
   'lille-french-flanders/opal-coast-headlands': 'File:0 Escalles - Le Cap Blanc-Nez (1).JPG',

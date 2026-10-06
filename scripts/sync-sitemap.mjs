@@ -25,11 +25,18 @@ const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
 const parisLastmod = '2026-10-06';
+const parisRegionDayTripsLastmod = '2026-10-06';
 const parisEditedRoutes = [
   '/france/paris/',
   '/france/paris/seine-islands-latin-quarter/',
   '/france/paris/louvre-tuileries-opera/',
   '/france/paris/eiffel-invalides-montparnasse/'
+];
+const parisRegionDayTripsEditedRoutes = [
+  '/france/paris-region-day-trips/',
+  '/france/paris-region-day-trips/versailles-palace-estate/',
+  '/france/paris-region-day-trips/fontainebleau-palace-forest/',
+  '/france/paris-region-day-trips/giverny-monet-vernon/'
 ];
 // These route-specific edit dates come from the current source history:
 // 15147d0 changed the nine Tokyo routes, 42cdc8b changed five Kyoto guides,
@@ -116,6 +123,11 @@ for (const route of parisEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Paris route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: parisLastmod });
+}
+for (const route of parisRegionDayTripsEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Paris region day-trip route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: parisRegionDayTripsLastmod });
 }
 
 const english = [...records.values()];

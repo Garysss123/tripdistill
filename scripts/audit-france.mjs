@@ -148,8 +148,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/paris/louvre-tuileries-opera/',
     '/france/paris/eiffel-invalides-montparnasse/'
   ]);
+  const parisRegionDayTripsEditedRoutes = new Set([
+    '/france/paris-region-day-trips/',
+    '/france/paris-region-day-trips/versailles-palace-estate/',
+    '/france/paris-region-day-trips/fontainebleau-palace-forest/',
+    '/france/paris-region-day-trips/giverny-monet-vernon/'
+  ]);
   for (const route of routes) {
-    const expectedDate = parisEditedRoutes.has(route) ? '2026-10-06' : '2026-09-20';
+    const expectedDate = parisEditedRoutes.has(route) || parisRegionDayTripsEditedRoutes.has(route) ? '2026-10-06' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

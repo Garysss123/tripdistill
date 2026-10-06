@@ -36,8 +36,12 @@ export const franceClusters = franceSourceClusters.map((cluster) => ({
     if (!image) throw new Error(`Missing France image manifest entry: ${key}`);
     return {
       ...guide,
-      reviewDate: cluster.slug === 'paris' ? parisHubEditorial.reviewDate : undefined,
-      reviewDateISO: cluster.slug === 'paris' ? parisHubEditorial.reviewDateISO : undefined,
+      reviewDate: cluster.slug === 'paris'
+        ? parisHubEditorial.reviewDate
+        : cluster.slug === 'paris-region-day-trips' ? (guide.reviewDate || cluster.reviewDate) : undefined,
+      reviewDateISO: cluster.slug === 'paris'
+        ? parisHubEditorial.reviewDateISO
+        : cluster.slug === 'paris-region-day-trips' ? (guide.reviewDateISO || cluster.reviewDateISO) : undefined,
       image: {
         ...image,
         ...(guide.imageAlt ? { alt: guide.imageAlt } : {}),

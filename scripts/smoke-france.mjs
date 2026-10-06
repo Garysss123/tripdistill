@@ -68,7 +68,8 @@ for (const [, prefix] of locales) {
 
 const { body: sitemap } = await request('/sitemap.xml');
 for (const { prefix, route, localized } of pageRoutes) {
-  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-20</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
+  const expectedLastmod = route.startsWith('/france/paris/') || route.startsWith('/france/paris-region-day-trips/') ? '2026-10-06' : '2026-09-20';
+  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
 }
 
 await request('/css/france.css?v=20260919-1', 'France stylesheet');

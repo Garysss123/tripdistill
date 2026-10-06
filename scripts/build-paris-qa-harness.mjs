@@ -31,7 +31,11 @@ const routes = [
   { path: '/france/paris/', label: 'Paris hub' },
   { path: '/france/paris/seine-islands-latin-quarter/', label: 'Seine Islands & Latin Quarter' },
   { path: '/france/paris/louvre-tuileries-opera/', label: 'Louvre, Tuileries & Opera' },
-  { path: '/france/paris/eiffel-invalides-montparnasse/', label: 'Eiffel Tower & Invalides' }
+  { path: '/france/paris/eiffel-invalides-montparnasse/', label: 'Eiffel Tower & Invalides' },
+  { path: '/france/paris-region-day-trips/', label: 'Versailles- Fontainebleau- Giverny hub' },
+  { path: '/france/paris-region-day-trips/versailles-palace-estate/', label: 'Versailles Palace & Estate' },
+  { path: '/france/paris-region-day-trips/fontainebleau-palace-forest/', label: 'Fontainebleau Palace & Forest' },
+  { path: '/france/paris-region-day-trips/giverny-monet-vernon/', label: 'Giverny, Monet & Vernon' }
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -103,7 +107,7 @@ const manifest = {
   routesByLocale: Object.fromEntries(locales.map((locale) => [locale.code, routes.length])),
   maxHtmlBytes: 160_000,
   maxSingleImageBytes: 700_000,
-  maxParisStylesBytes: 350_000,
+  maxRouteStylesBytes: 350_000,
   pages: routeRecords,
   assets
 };
@@ -115,7 +119,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>Paris responsive QA harness</title>
+  <title>Paris and day trips responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -141,8 +145,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">Paris responsive QA harness</h1>
-      <p class="intro">Review the Paris hub and three in-city guides in all five published languages at paired 320 px and 390 px CSS viewport widths. The page frames use the current preview origin, so links, menus and language controls stay available for manual keyboard review.</p>
+      <h1 id="page-title">Paris and day trips responsive QA harness</h1>
+      <p class="intro">Review the Paris routes and the Versailles, Fontainebleau and Giverny day-trip set in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>
@@ -153,8 +157,8 @@ const page = `<!doctype html>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </div>
       <div class="preview-rail"><div class="frames">
-        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="Paris hub, English, 320 CSS pixels wide"></iframe></figure>
-        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="Paris hub, English, 390 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="Paris and day trips, English, 320 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="Paris and day trips, English, 390 CSS pixels wide"></iframe></figure>
       </div></div>
       <p class="meta" id="release"></p>
     </section>

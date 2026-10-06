@@ -140,17 +140,46 @@ export const franceNorthWestClusters = [
     band: 'capital-north',
     family: 'royal-branch-diagram',
     label: 'Day-trip departure board',
-    tagline: 'Choose one estate and solve its station-to-gate contract.',
-    hubIntro: 'The famous excursions around Paris use different rail terminals, local transfers, reservation systems and landscape scales. Treat Versailles, Fontainebleau and Giverny as three separate operating days rather than interchangeable palace cards.',
-    stay: 'Base in Paris for a single excursion; consider an overnight only when the town or surrounding landscape has its own evening purpose. Each route needs most of a day once terminal access and the return are counted.',
-    transfer: 'Versailles has several stations, Fontainebleau requires the correct station plus a bus or walk, and Giverny normally adds a local connection from Vernon–Giverny. Save the complete chain in both directions before departure.',
-    season: 'Garden hours, fountains, house openings, shuttle patterns and daylight vary. Giverny is particularly seasonal; palace interiors remain possible in colder months but outdoor scale and maintenance still change the experience.',
-    fallback: 'If the chosen estate is closed, sold out or transport fails, do not jump blindly to another branch. Use the arrival town, a Paris museum or a closer regional site whose live access is already confirmed.',
+    tagline: "Choose the estate by its story, season and complete rail-to-door route.",
+    hubIntro: "Versailles, Fontainebleau and Giverny sit in different directions and reward different kinds of attention: the state rooms and engineered garden axis at Versailles; a many-period royal residence at Fontainebleau; Monet’s house, Clos Normand and water garden at Giverny. They are separate day plans. A ticket, train or shuttle for one does not solve the others.",
+    stay: "Use Paris as the base for one of these excursions at a time. Keep the chosen rail terminal near the day’s first reservation; changing hotels saves little for a single visit. An overnight in Vernon or Fontainebleau makes sense only when the town or surrounding countryside is part of the plan.",
+    transfer: "Versailles has three stations: RER C to Château–Rive Gauche (about 10 minutes on foot), line N/U to Chantiers (about 18), or line L to Rive Droite (about 17). Fontainebleau uses Transilien R from Gare de Lyon to Fontainebleau–Avon, then local bus 1 to the Château stop. Giverny uses a train to Vernon–Giverny and a separate seasonal last mile. Check both legs and their return.",
+    season: "The château at Versailles and its Trianon estate close on Mondays; gardens and park have different access and event-ticket rules. Fontainebleau closes on Tuesdays and listed public holidays. Monet’s house and gardens operate seasonally: the foundation lists 1 April–1 November 2026, 10:00–18:00, last entry 17:30. Recheck the operator calendar for your date.",
+    fallback: "If a reserved interior is unavailable, keep the day in its arrival town: Versailles town and the Palace’s independently open park or gardens when permitted; Fontainebleau town and only the palace grounds confirmed open; Vernon or a separately confirmed museum when Giverny is closed or full. Do not transfer to a second estate without rebuilding its ticket, last mile and return.",
+    faq: [
+          [
+            "Which estate works best for a first visit?",
+            "Choose Versailles for the palace rooms and long garden axis; Fontainebleau when layered royal history and a real town setting matter; Giverny when Monet’s house and gardens are the purpose and the seasonal date works. Give each a separate day."
+          ],
+          [
+            "Can I combine two estates in one day?",
+            "Not by public transport without sacrificing the visit. Their rail terminals and local connections differ, while Palace, Trianon and Giverny each have separate entry or seasonal limits."
+          ],
+          [
+            "Which day is the most weather-proof?",
+            "Fontainebleau and Versailles have substantial interiors, but room access and Monday/Tuesday closures still control the plan. Giverny is chiefly an outdoor, seasonal visit; keep a Paris or Vernon indoor alternative ready."
+          ],
+          [
+            "What should I book first?",
+            "Reserve the specific timed admission that anchors the day, then buy rail only after checking the station and local connection. For Giverny the foundation recommends online booking and warns that on-site waits can grow after its online quota is reached."
+          ]
+        ],
+    reviewDate: "6 October 2026",
+    reviewDateISO: "2026-10-06",
     sources: [
-      ['https://www.visitparisregion.com/en', 'Paris Region — official regional tourism information'],
-      ['https://www.sncf-connect.com/en-en/', 'SNCF Connect — rail planning and live service information'],
-      ['https://www.iledefrance-mobilites.fr/en/', 'Île-de-France Mobilités — regional network information']
-    ],
+          [
+            "https://www.visitparisregion.com/en",
+            "Paris Region official destination planning"
+          ],
+          [
+            "https://www.sncf-connect.com/en-en/",
+            "SNCF Connect official rail schedules and service notices"
+          ],
+          [
+            "https://www.iledefrance-mobilites.fr/en/",
+            "Île-de-France Mobilités official network, fares and disruption information"
+          ]
+        ],
     guides: [
       g({
         slug: 'versailles-palace-estate',
@@ -158,35 +187,116 @@ export const franceNorthWestClusters = [
         instrument: 'Gate-and-garden docket',
         layout: 'estate-grid',
         imageQuery: 'Palace of Versailles gardens France panorama',
-        imageAlt: 'The Palace of Versailles seen across its formal gardens',
-        purpose: 'Choose which part of the Versailles estate matters, arrive through the correct station and gate, and stop the palace, gardens and Trianon domains from becoming an exhausting race.',
-        summary: 'Use a timed palace entry as one contract, then choose either the main gardens or the Trianon estate as the second; the scale between them is the planning fact most day trips miss.',
+        imageAlt: "The Palace of Versailles facade and Cour Royale viewed from the paved forecourt",
+        purpose: "Plan a timed Palace visit around one legible architectural sequence, then choose either the gardens or Trianon instead of treating this vast estate as a checklist.",
+        summary: "Enter the Palace at the time on your ticket, read the State Apartments through the 73-metre Hall of Mirrors toward Le Nôtre’s garden axis, then choose a bounded garden walk or a separate Trianon block. The three Versailles stations lead to different walks and Paris terminals.",
         choices: [
-          ['Palace rooms first', 'Anchor the day on a reserved palace slot and accept security and dense circulation. Add only the nearest garden axes afterward.'],
-          ['Gardens and fountains', 'Prioritize landscape, groves and any current fountain or musical-garden program. The palace interior becomes optional rather than the price of admission to the grounds.'],
-          ['Trianon estate', 'Use the Grand Trianon, Petit Trianon and Queen’s Hamlet as the main narrative. This requires more walking or a verified internal transport option and leaves less time for the main palace.']
+          [
+            "State Apartments and the Hall of Mirrors",
+            "The Palace route is the strongest first visit: start at the Main Courtyard, read the Marble Courtyard, then follow the official circulation into the King’s Apartments and Hall of Mirrors. The official “Marvels” route estimates 1.5 hours inside."
+          ],
+          [
+            "Garden perspective and fountains",
+            "Choose the formal axis, a single open grove or the Grand Canal and let the fountains calendar set the date. On event days the Gardens require the relevant ticket; the Palace is a separate timed entry."
+          ],
+          [
+            "Trianon and Marie-Antoinette’s Estate",
+            "Make the Grand Trianon, Petit Trianon and Hamlet the main visit. Trianon opens at noon, lies about 30 minutes on foot from the Palace through the Gardens and Park, and the official route suggests four hours."
+          ]
         ],
-        access: 'Choose Versailles Château Rive Gauche, Versailles Chantiers or Versailles Rive Droite from the live network and your Paris origin, then follow the official estate entrance for the ticket held. The nearest-sounding station is not always the simplest connection from your hotel.',
-        tradeoff: 'A first visit cannot study the palace rooms, every formal garden, Trianon and the town at equal depth. The route gives up one estate layer so the remaining two can include meals, walking and a protected train home.',
+        access: "Match the Paris origin to the door: RER C reaches Versailles Château–Rive Gauche, about a 10-minute walk from the Palace; line N/U from Montparnasse reaches Chantiers, about 18 minutes on foot; line L from Saint-Lazare reaches Rive Droite, about 17 minutes. Follow the entrance printed for the ticket. Allow time for bag checks; luggage over 55 × 35 × 25 cm is not admitted.",
+        tradeoff: "The Palace rooms, full garden axis and Trianon are not one compact loop. The visit keeps the timed Palace and one outdoor branch substantial, then leaves the third for another date. The Gardens–Trianon crossing alone is a 30-minute walk each way before the interior visit.",
         stages: [
-          ['Arrive with station and gate paired', 'Follow the saved rail route and walk directly to the named entrance. Keep a security buffer but avoid arriving so early that the town wait consumes the useful morning.'],
-          ['Complete the reserved layer', 'Use the palace slot or garden program first. Move in the official circulation direction and resist detours that require recrossing the same courtyards.'],
-          ['Commit to one outer estate', 'Choose the principal garden axis or Trianon branch. Check the real walking distance and any current internal transport before leaving the palace apron.'],
-          ['Exit before the branch becomes fragile', 'Return toward the station with a meal or town stop only if the chosen train has a generous backup. Save the platform change and Paris arrival connection before walking out of coverage.']
+          [
+            "Choose the matching station",
+            "From Paris, pick the live RER C, N/U or L route by the terminal nearest your hotel, then save the station-to-entrance walk and a return option. Do not choose “Versailles” without its station suffix."
+          ],
+          [
+            "Read the Palace along its axis",
+            "Use the Main Courtyard and Marble Courtyard to notice how Louis XIV’s enlargement surrounds his father’s earlier hunting lodge. Follow the State Apartments to the Hall of Mirrors: its 357 mirrors face windows onto the garden perspective, making the view part of the room’s design."
+          ],
+          [
+            "Spend the second block in one domain",
+            "Take the official garden route toward one grove or the Grand Canal, or reserve the later Trianon visit. The Estate of Trianon ticket covers that estate and the Park, not the Palace; the Passport includes timed Palace entry, Trianon, exhibitions, Gardens and Park. Check the date’s exact product and show calendar."
+          ],
+          [
+            "Return before the estate closes",
+            "The Trianon branch requires retracing or using a verified internal vehicle. Recheck seasonal closing time, gate access and rail works; keep a train in reserve rather than ending at the latest possible departure."
+          ]
         ],
-        fallback: 'If the palace entry is lost, use the gardens or town only when current access permits; if outdoor conditions are poor, focus on the palace and a compact town block. Never assume a garden event ticket automatically grants palace access.',
+        fallback: "If the timed Palace entry is sold out, use only the Park or Gardens that your date’s rules permit; a fountain or Musical Gardens day can require its own ticket. If wind, rain or heat makes the long axis unworkable, keep to the Palace and the town rather than crossing to Trianon late.",
         watch: [
-          ['The estate is much larger than the façade', 'Trianon and the hamlet are not quick rooms behind the palace. Count walking, internal transport and the return to the gate.'],
-          ['Products change by date', 'Palace, gardens, fountain programs and estate bundles may have different access. Read the official calendar for the exact day.'],
-          ['Several stations create false confidence', 'Engineering works can favor a different line. Recalculate both directions on the day rather than following a generic RER instruction.']
+          [
+            "Monday closes both palaces",
+            "The Palace and Trianon estate are closed on Mondays; the Park and Gardens have different hours and access rules. Confirm the exact calendar before buying rail."
+          ],
+          [
+            "The closest station depends on the hotel",
+            "Rive Gauche is the shortest walk, but a direct train from Montparnasse or Saint-Lazare can make another station simpler. Choose by complete journey, not walking distance alone."
+          ],
+          [
+            "Tickets cover different places",
+            "A Trianon ticket is not Palace admission. The Passport includes a timed Palace slot and wider estate access; event days change garden admission. Read the ticket inclusions for your date."
+          ]
         ],
-        duration: 'Allow seven to nine hours from central Paris for a palace-plus-one-estate day. A palace-only visit still needs roughly half a day once transport and security are included.',
-        combine: 'Combine Versailles town with the estate only if the selected estate branch ends early. Do not pair Versailles with Giverny or Fontainebleau in one public-transport day.',
-        verify: 'Check the Château de Versailles calendar and ticket inclusions, then confirm the exact rail line, station and last comfortable return with current regional service notices.',
+        duration: "Planning estimate: allow about seven to nine hours door-to-door from central Paris for a timed Palace visit plus one estate branch. Inside, the official route suggests 1.5 hours for the Palace highlights, two hours for Gardens and Fountains, or four hours for Trianon; queues, meals and walking add time.",
+        combine: "Use the town or a short park walk as the nearby extra. Keep Fontainebleau and Giverny for separate dates: each starts at another Paris terminal and adds a distinct last-mile contract.",
+        verify: "Reopen the dated Versailles calendar, ticket inclusions, garden-event schedule, bag rules, entrance map and Île-de-France service notices. Confirm the return station and latest comfortable train before leaving Paris.",
+        imageCreditTitle: "Versailles Palace from the Cour Royale",
+        imageCaption: "The palace facade and Cour Royale at Versailles",
+        siteContext: {
+          "label": "How to read the estate",
+          "heading": "Follow the rooms out into the landscape.",
+          "intro": "The Palace is not an isolated facade: its central state rooms, garden axis and distant Trianon estate form separate scales of royal display and retreat.",
+          "details": [
+            [
+              "Room to horizon",
+              "The Hall of Mirrors is 73 metres long. Turn from Charles Le Brun’s decorated ceiling and mirrored wall toward the windows: they frame the Grande Perspective laid out by André Le Nôtre."
+            ],
+            [
+              "Garden as a timed visit",
+              "The official Gardens and Fountains route is about two hours. Pick one open grove or the central axis, then turn back when your legs and the return train require it."
+            ],
+            [
+              "Trianon has its own threshold",
+              "The official visit route assigns four hours to Grand Trianon, Petit Trianon and the Queen’s Hamlet. Reach it after noon and budget the crossing as part of the visit."
+            ]
+          ]
+        },
+        faq: [
+          [
+            "Does a Trianon ticket include the Palace?",
+            "No. The official Trianon ticket covers the Trianon estate, its exhibitions and the Park. The Passport includes timed Palace admission plus Trianon, exhibitions, Gardens and Park; event-day garden access and exact products can vary."
+          ],
+          [
+            "How much time do the main routes need?",
+            "The Palace highlights route is estimated at 1.5 hours, Gardens and Fountains at two hours, and Trianon at four hours. Those are on-site route estimates; add transit, security, food and the walk back."
+          ],
+          [
+            "Which Versailles station should I use?",
+            "RER C to Versailles Château–Rive Gauche is about 10 minutes on foot; Chantiers is about 18 minutes and Rive Droite about 17. The best one depends on your Paris origin and current service."
+          ]
+        ],
+        reviewDate: "6 October 2026",
+        reviewDateISO: "2026-10-06",
         sources: [
-          ['https://en.chateauversailles.fr/', 'Palace of Versailles — official tickets, access and estate calendar'],
-          ['https://www.iledefrance-mobilites.fr/en/', 'Île-de-France Mobilités — live regional journey planning']
-        ]
+          [
+            "https://en.chateauversailles.fr/plan-your-visit",
+            "Château de Versailles: opening, tickets and visit planning"
+          ],
+          [
+            "https://en.chateauversailles.fr/plan-your-visit/practical-information",
+            "Official entrances, station walks, access and Trianon transfer"
+          ],
+          [
+            "https://en.chateauversailles.fr/marvels-palace",
+            "Official Palace route and Hall of Mirrors interpretation"
+          ],
+          [
+            "https://www.iledefrance-mobilites.fr/en/",
+            "Live regional rail, fare and disruption information"
+          ]
+        ],
       }),
       g({
         slug: 'fontainebleau-palace-forest',
@@ -194,35 +304,124 @@ export const franceNorthWestClusters = [
         instrument: 'Court-to-forest hinge map',
         layout: 'palace-forest-section',
         imageQuery: 'Chateau Fontainebleau courtyard horseshoe staircase France',
-        imageAlt: 'The horseshoe staircase and courtyard at Château de Fontainebleau',
-        purpose: 'Connect the Fontainebleau–Avon rail arrival to the palace and decide whether the town or a safe forest-edge walk—not an unplanned wilderness detour—finishes the day.',
-        summary: 'Fontainebleau offers a denser royal interior than a casual day-trip label suggests; reserve attention for the palace, then add either town streets or a defined forest edge with a known return.',
+        imageAlt: "The Château de Fontainebleau’s horseshoe staircase framed by the Cour des Adieux wings",
+        purpose: "Make the rail-to-castle transfer explicit, then use the Cour des Adieux as a key to the château’s changing court functions before choosing a measured town or forest-edge finish.",
+        summary: "From Gare de Lyon take Transilien R to Fontainebleau–Avon, then bus 1 toward Les Lilas to the “Château” stop. Begin in the Cour des Adieux: its ceremonial horseshoe staircase and mixed wings reveal a residence assembled across reigns, not a single-period palace.",
         choices: [
-          ['Royal apartments and museum rooms', 'Make the palace the main study and follow current room openings. This is the strongest wet-weather plan and needs no forest promise.'],
-          ['Palace and formal grounds', 'Pair the interiors with the courtyards, gardens and canal. It keeps the day self-contained and avoids a second transport contract.'],
-          ['Palace and forest threshold', 'Add only a named, current, low-risk forest or bouldering-area approach with appropriate footwear and daylight. This suits repeat visitors, not a rushed first palace visit.']
+          [
+            "Château rooms and galleries",
+            "Use the official visitor circuit to compare rooms from successive royal periods. The courtyard arrival gives the clearest start; check the day’s room closures before deciding which interiors anchor the visit."
+          ],
+          [
+            "Château and formal grounds",
+            "After the interiors, keep to the palace courtyards, gardens and the town center. This gives a complete car-free day without adding a separate forest bus or trail return."
+          ],
+          [
+            "Château plus a forest threshold",
+            "Add a signed, short forest walk only after checking the official map, daylight, weather and your return to Fontainebleau–Avon. Forest bouldering sectors and long trails are not an automatic extension of the palace gardens."
+          ]
         ],
-        access: 'Take the correct train to Fontainebleau–Avon, then use the current local bus, bicycle option or taxi to the palace; the station is not at the château gate. Save the return stop and validate the local ticket rules before entering the palace.',
-        tradeoff: 'A forest excursion consumes the time usually given to the palace gardens and town. The plan gives up deep hiking or multiple forest sectors because trail choice, weather and the station connection deserve their own day.',
+        access: "Board Transilien line R at Paris Gare de Lyon for Fontainebleau–Avon. The château’s official directions specify local bus 1 toward Les Lilas to the “Château” stop. The station is not beside the palace: check the bus timetable and stop in both directions, and retain the rail ticket and return connection details.",
+        tradeoff: "The château spans many royal periods and is large enough to reward an interior-focused visit. A forest walk uses the same remaining daylight as the gardens and town; this itinerary gives up a deep trail or second château so the palace circuit and Paris return keep their margin.",
         stages: [
-          ['Solve the last mile', 'At Fontainebleau–Avon, identify the correct bus direction or other verified transfer before leaving the station forecourt. Note the return stop, not just the palace landmark.'],
-          ['Read the palace chronologically', 'Use the official circuit and current closures to move from royal apartments to galleries without bouncing between wings. Pause in the courtyards before museum fatigue sets in.'],
-          ['Choose garden, town or forest', 'Commit to one late block. Gardens need no new transport; town streets support a meal; a forest edge requires daylight, route and return conditions.'],
-          ['Return through a timed connection', 'Reach the station with one train in reserve. Local buses and regional trains may not align perfectly, so build the transfer rather than aiming at the last possible departure.']
+          [
+            "Ride Line R to Fontainebleau–Avon",
+            "Start at Gare de Lyon and verify the train destination on the day. At Fontainebleau–Avon, follow the official bus 1 direction toward Les Lilas and get off at “Château”; do not plan on the station name meaning palace doorstep."
+          ],
+          [
+            "Start with the Cour des Adieux",
+            "Look back across the full horseshoe staircase and the different wings around the courtyard. Château records describe this space as a service court that became a parade court under François I, Henri II and Henri IV; the staircase was rebuilt in 1632–34."
+          ],
+          [
+            "Choose depth before the late block",
+            "Follow the current official interior circuit rather than crossing rooms at random. The courtyard is also called the Cour des Adieux for Napoleon’s farewell to the Old Guard on 20 April 1814; use that moment to place the residence’s imperial layer among its earlier courts."
+          ],
+          [
+            "Return through town or a mapped edge",
+            "Keep the last hour for the town or palace grounds unless a named forest path, closure notice and bus/train return are already checked. Reach the Fontainebleau–Avon stop with one later service still available."
+          ]
         ],
-        fallback: 'In rain, heat or poor trail conditions, keep the palace and town. If palace access changes, use the gardens and Fontainebleau center only after confirming what remains open; the forest should not become an automatic substitute for a missing booking.',
+        fallback: "In rain or when forest access is uncertain, spend the second block in rooms confirmed open, the palace grounds or Fontainebleau town. If the château circuit changes, do not replace it with an unplanned forest trail; use the town’s independent museum or café only after checking its opening day.",
         watch: [
-          ['The station name hides the last mile', 'Fontainebleau–Avon still requires a local transfer. Confirm stop names and service direction in both directions.'],
-          ['Forest navigation is a separate skill', 'Boulder sectors and trails are not a casual extension of the palace lawn. Use official maps, daylight and suitable footwear.'],
-          ['Room access varies', 'Restoration, events and conservation can change the palace circuit. Let the official day notice set expectations.']
+          [
+            "Tuesday is the château closure day",
+            "The château also lists closures on 1 January, 1 May and 25 December. Seasonal hours and last access differ; check the official calendar for your actual date."
+          ],
+          [
+            "Bus 1 has its own timetable",
+            "Fontainebleau–Avon is the rail station, not the château stop. Confirm “Château” in the Les Lilas direction outbound and the correct return service before entering."
+          ],
+          [
+            "Forest routes need their own plan",
+            "The forest is broad and includes bouldering sectors. Use a named official route, signed access, suitable footwear and enough daylight; stay on the palace/town loop when any of those are missing."
+          ]
         ],
-        duration: 'Allow seven to nine hours from Paris for palace, grounds and one compact second block. A palace-and-gardens visit alone usually needs five to six hours including transfers.',
-        combine: 'Combine with Fontainebleau town or a defined forest threshold. Do not attach Vaux-le-Vicomte or another château unless its transport, ticket and return are independently solved.',
-        verify: 'Check Château de Fontainebleau openings and visitor route, SNCF service to Fontainebleau–Avon, the current local bus, weather and any forest access restrictions.',
+        duration: "Planning estimate: reserve roughly three hours for a focused interior and courtyard visit, then add the Line R journey, two bus legs, meals and whichever single garden, town or forest-edge block you choose. A full Paris day is realistic; the official opening and last-entry times govern the usable window.",
+        combine: "Pair the château with Fontainebleau town or one mapped forest-edge loop. Save Vaux-le-Vicomte for another day: it has separate access, hours and a different transport problem.",
+        verify: "Check château opening day, last admission and room status; Transilien R works; bus 1 direction and timetable; and the current ONF map, weather and forest access if walking beyond the palace grounds.",
+        imageCreditTitle: "Fontainebleau’s Cour des Adieux and staircase",
+        imageCaption: "The Cour des Adieux and double horseshoe staircase at Fontainebleau",
+        siteContext: {
+          "label": "Layers in the residence",
+          "heading": "Read the courtyard as a changing stage.",
+          "intro": "Fontainebleau’s significance lies in the way its courts and wings were adapted across generations. Use the entry courtyard to orient yourself before the interior rooms.",
+          "details": [
+            [
+              "A working court becomes ceremonial",
+              "The Cour du Cheval Blanc began as a service court and became a parade court during the reigns of François I, Henri II and Henri IV. Its enclosing wings do not share one architectural moment."
+            ],
+            [
+              "The staircase fixes the view",
+              "The horseshoe staircase was rebuilt by Jean Androuet du Cerceau in 1632–34. Stand opposite it long enough to see how it organizes the central pavilion and courtyard."
+            ],
+            [
+              "Imperial memory is part of the place",
+              "The name Cour des Adieux recalls Napoleon’s farewell to the Old Guard here in April 1814. The same space reads differently as a service court, royal approach and imperial departure."
+            ]
+          ]
+        },
+        faq: [
+          [
+            "How do I get from Paris to the château?",
+            "Take Transilien R from Gare de Lyon to Fontainebleau–Avon, then the château-listed bus 1 toward Les Lilas to “Château.” Check the current return departure before the palace visit."
+          ],
+          [
+            "What should I notice before entering?",
+            "The Cour des Adieux was a service court that became a parade space under several kings. Its horseshoe staircase was rebuilt in 1632–34; the name also recalls Napoleon’s farewell to the Old Guard in 1814."
+          ],
+          [
+            "Can I add a forest walk?",
+            "Yes, if you choose a signed route and check its starting point, current access, weather, daylight and return transport in advance. A short edge walk is not the same as visiting a bouldering sector or crossing the forest."
+          ]
+        ],
+        reviewDate: "6 October 2026",
+        reviewDateISO: "2026-10-06",
         sources: [
-          ['https://www.chateaudefontainebleau.fr/en/', 'Château de Fontainebleau — official visitor information'],
-          ['https://www.fontainebleau-tourisme.com/en/', 'Fontainebleau tourism — official town and forest planning']
-        ]
+          [
+            "https://www.chateaudefontainebleau.fr/en/plan-your-visit/",
+            "Château de Fontainebleau: opening and visitor planning"
+          ],
+          [
+            "https://www.chateaudefontainebleau.fr/en/plan-your-visit/how-to-get-there/",
+            "Official access directions and bus 1 to “Château”"
+          ],
+          [
+            "https://collections-ressources.chateaudefontainebleau.fr/document/cour-d-honneur/6414bdbce655ae02e29713a7",
+            "Château collection record for the Cour d’Honneur and staircase"
+          ],
+          [
+            "https://www.garesetconnexions.sncf/en/stations-services/fontainebleau-avon",
+            "SNCF station services and accessibility"
+          ],
+          [
+            "https://www.fontainebleau-tourisme.com/en/planning-your-stay/how-to-get-here-2/moving-around-fontainebleau/",
+            "Official local bus and town movement information"
+          ],
+          [
+            "https://www.fontainebleau-tourisme.com/en/the-forest/the-forest-2/",
+            "Official regional forest access and trail information"
+          ]
+        ],
       }),
       g({
         slug: 'giverny-monet-vernon',
@@ -230,35 +429,116 @@ export const franceNorthWestClusters = [
         instrument: 'Seasonal shuttle clock',
         layout: 'garden-arrival-clock',
         imageQuery: 'Giverny Monet garden water lilies house France',
-        imageAlt: 'Flower gardens and water garden at Claude Monet’s house in Giverny',
-        purpose: 'Treat Giverny as a seasonal house-and-garden reservation connected through Vernon, not as a Paris rail stop with an automatic final transfer.',
-        summary: 'Build backward from the Vernon–Giverny connection and the foundation ticket, then decide whether Vernon town or a slower village walk is worth the remaining transport margin.',
+        imageAlt: "The green Japanese bridge and pond in Monet’s Water Garden at Giverny",
+        purpose: "Plan the seasonal garden visit around its ticket window and the Vernon last mile, then read Monet’s two gardens as deliberately different compositions instead of making a rushed photo stop.",
+        summary: "Gare Saint-Lazare trains reach Vernon–Giverny, not Monet’s gate; from the station arrange the current shuttle, bus, bicycle or taxi. Inside, compare the flower beds of the Clos Normand with the water, willows and Japanese bridge of the Water Garden.",
         choices: [
-          ['First garden window', 'Use an early reserved entry to see paths before the heaviest circulation. This requires a dependable first-mile and last-mile connection from Paris.'],
-          ['Garden and museum context', 'Pair the Fondation Claude Monet with the Musée des Impressionnismes when its current program matters. This creates a focused art day and leaves little need for extra village stops.'],
-          ['Giverny plus Vernon', 'Keep the garden visit bounded, return to Vernon and use the old town or Seine edge before the train. This is useful when shuttle timing creates a natural gap.']
+          [
+            "House and both gardens",
+            "Book the foundation ticket, then take time for the house, Clos Normand and Water Garden. The operator suggests 1.5–2 hours for an unguided visit; the Vernon transfer and Paris train sit outside that estimate."
+          ],
+          [
+            "Garden with the Impressionism museum",
+            "Add the Musée des Impressionnismes only if its current exhibition is a reason to go. It is a separate admission and visit, so choose it before buying a return connection with little slack."
+          ],
+          [
+            "Giverny and Vernon",
+            "Return to Vernon for the town center or Seine edge only when the shuttle arrival and next train leave real time. This is a lower-pressure extension than adding a second distant Normandy stop."
+          ]
         ],
-        access: 'Rail normally reaches Vernon–Giverny, not Monet’s gate. Confirm the current shuttle, bus, bicycle or taxi link and where it departs; reserve enough time between garden exit and the return connection. Walking the full last mile should be a deliberate choice, not a surprise.',
-        tradeoff: 'The garden is seasonal and often busy, while Vernon and the museum add separate clocks. The route gives up a second distant Normandy stop so one missed shuttle does not threaten the Paris return.',
+        access: "From Paris, use a train from Gare Saint-Lazare to Vernon–Giverny. Continue by the seasonal shuttle or another confirmed local option; the foundation lists train and access information but does not make the last mile part of the rail ticket. Check where the shuttle leaves and match its return to your reserved garden entry and train.",
+        tradeoff: "The garden is the reason for the trip and opens only for a defined season. Adding Vernon or another museum takes time from the house and both garden spaces; this plan gives up a second Normandy destination so a delayed shuttle does not consume the Paris return margin.",
         stages: [
-          ['Arrive at Vernon with the last mile ready', 'Leave the platform knowing the shuttle or other transfer point. If using a bicycle, verify rental hours, route and storage rather than assuming one will be waiting.'],
-          ['Enter on the reserved garden window', 'Use the house and gardens in the directed flow, allowing for narrow paths and dense photo pauses. Treat the water garden and flower garden as separate spaces.'],
-          ['Choose one contextual layer', 'Visit the impressionism museum when its exhibition is the purpose, walk the village respectfully, or return to Vernon. Do not collect all three by shortening the garden.'],
-          ['Protect the Vernon train', 'Take a connection that leaves a recovery option. Use Vernon’s center only when luggage, weather and the next train make the stop genuinely comfortable.']
+          [
+            "Secure the seasonal date",
+            "Check the foundation’s calendar before buying the train. For 2026 it lists daily opening from 1 April through 1 November, 10:00–18:00, last admission 17:30; later seasons need a fresh check. Book online when your date is fixed."
+          ],
+          [
+            "Build the train and last mile together",
+            "Travel from Gare Saint-Lazare to Vernon–Giverny, then use the currently listed shuttle, bus, bicycle or taxi. Save its departure point and the return timetable; the station-to-garden leg is not automatic."
+          ],
+          [
+            "Compare the two designed gardens",
+            "Start with Monet’s house and the Clos Normand flower garden, then follow the signed route to the Water Garden. Slow down at the pond and green Japanese bridge: their water, reflected forms and willows offer a different composition from the ordered beds."
+          ],
+          [
+            "Leave room for the Vernon train",
+            "The foundation’s 1.5–2-hour recommendation covers an unguided house-and-garden visit only. Add the shuttle wait and rail margins before deciding on the Impressionism museum or Vernon; keep one later train available."
+          ]
         ],
-        fallback: 'If the foundation is closed, sold out or transport collapses, Giverny is not a reliable improvised day. Use Vernon only if it still has an independent purpose; otherwise return to Paris or choose a confirmed regional museum rather than touring a closed village gate.',
+        fallback: "If the foundation is closed or its online ticket quota is exhausted, do not travel to Giverny expecting a quick walk-in; the operator warns of significant waits after the online quota is reached. Use Vernon only if its town visit still works for your schedule, or return to Paris and choose an open museum. If mobility access is essential, note that the gardens are accessible but the house is not wheelchair accessible.",
         watch: [
-          ['The attraction is seasonal', 'Opening dates and garden conditions matter more than the generic rail timetable. Confirm the exact visit date first.'],
-          ['The shuttle is not the train', 'A train arrival does not guarantee an immediate local connection. Check both schedules and the departure point.'],
-          ['Narrow paths magnify crowds', 'Mobility devices, strollers and photography stops need patience. Use official accessibility guidance and avoid blocking the garden flow.']
+          [
+            "The opening season ends",
+            "The foundation currently lists 1 April–1 November 2026. Do not use a summer timetable for a date outside that window; verify the next season directly."
+          ],
+          [
+            "Entry and e-ticket rules matter",
+            "Online booking is recommended; on-site tickets may be sold daily but waits can be significant after the online quota fills. E-tickets are non-refundable and change rules depend on purchase date."
+          ],
+          [
+            "Garden and house access differ",
+            "The foundation says the gardens are accessible to visitors with reduced mobility, but the house is not wheelchair accessible. Priority access requires the stated disability card at the group entrance on Sente Leroy."
+          ]
         ],
-        duration: 'Allow seven to nine hours from Paris, including the Vernon transfer. The house and gardens need roughly two to three hours for most visitors; museum or Vernon time is additional.',
-        combine: 'Combine with the Musée des Impressionnismes or Vernon, not Rouen or Versailles. The value is a coherent Monet-and-landscape day, not the number of Normandy labels reached.',
-        verify: 'Check Fondation Claude Monet opening dates and timed admission, the current Vernon connection, SNCF trains and the Musée des Impressionnismes program before buying linked tickets.',
+        duration: "The foundation recommends 1.5–2 hours for an unguided visit to the house and gardens. Add the Paris–Vernon train, local transfer, its waiting buffer and your return train; in practice protect most of a day rather than treating the garden estimate as door-to-door time.",
+        combine: "Use the Musée des Impressionnismes or Vernon as one nearby second layer, not both by default. Keep Rouen, the coast and Versailles for another date with their own rail and return plans.",
+        verify: "Check the Fondation Claude Monet’s opening date, timed ticket and change rules; SNCF trains to Vernon–Giverny; the seasonal shuttle timetable and stop; and the Musée des Impressionnismes calendar if adding it.",
+        imageCreditTitle: "Monet’s Water Garden and bridge at Giverny",
+        imageCaption: "The pond and Japanese bridge in Monet’s Water Garden",
+        siteContext: {
+          "label": "Two gardens, two compositions",
+          "heading": "Follow Monet’s change of scale.",
+          "intro": "The Clos Normand and Water Garden are distinct spaces connected as one visit. The photograph shows the pond and bridge, only one part of the grounds.",
+          "details": [
+            [
+              "Clos Normand",
+              "Read the house and flower garden first: beds, paths and the house front give a close, cultivated scale. Allow room for narrow paths and other visitors rather than trying to hold a fast pace."
+            ],
+            [
+              "Water Garden",
+              "The pond and Japanese bridge introduce reflection, water lilies and overhanging willows. Pause on both sides of the bridge and compare how the same scene changes with your position."
+            ],
+            [
+              "Museum is a separate door",
+              "The Musée des Impressionnismes has its own address, calendar and admission. Treat it as an optional second visit, not as part of the Monet garden ticket."
+            ]
+          ]
+        },
+        faq: [
+          [
+            "How long should I spend in the garden?",
+            "The foundation recommends 1.5–2 hours for the unguided house-and-garden visit. That excludes the Paris train, Vernon transfer and waiting time."
+          ],
+          [
+            "Can I buy a ticket at the gate?",
+            "The foundation says on-site tickets are available daily, but recommends booking online and warns of significant waits once the online quota is reached. E-tickets are non-refundable; check change conditions before purchase."
+          ],
+          [
+            "Is the entire visit wheelchair accessible?",
+            "The foundation says the gardens are accessible to people with reduced mobility, while the house is not wheelchair accessible. Priority access is available with the stated disability card at the group entrance on Sente Leroy."
+          ],
+        ],
+        reviewDate: "6 October 2026",
+        reviewDateISO: "2026-10-06",
         sources: [
-          ['https://fondation-monet.com/en/', 'Fondation Claude Monet — official opening and ticket information'],
-          ['https://www.mdig.fr/en/', 'Musée des Impressionnismes Giverny — official exhibitions and visits']
-        ]
+          [
+            "https://fondation-monet.com/en/useful-information/",
+            "Fondation Claude Monet: 2026 season, tickets, duration and accessibility"
+          ],
+          [
+            "https://fondation-monet.com/en/",
+            "Fondation Claude Monet: house, Clos Normand and Water Garden"
+          ],
+          [
+            "https://www.garesetconnexions.sncf/en/stations-services/vernon-giverny",
+            "SNCF Vernon–Giverny station and intermodal services"
+          ],
+          [
+            "https://www.mdig.fr/en/",
+            "Musée des Impressionnismes Giverny: separate exhibitions and visits"
+          ]
+        ],
       })
     ]
   }),

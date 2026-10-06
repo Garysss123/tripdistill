@@ -21,6 +21,13 @@ export function franceGuide(definition) {
   if (!Array.isArray(definition.sources) || definition.sources.length < 2) {
     throw new Error(`France guide ${definition.slug} must define at least two relevant official sources.`);
   }
+  if (definition.siteContext) {
+    const context = definition.siteContext;
+    if (!context.label || !context.heading || !context.intro || !Array.isArray(context.details) || context.details.length < 3
+      || context.details.some((item) => !Array.isArray(item) || item.length !== 2 || !item[0] || !item[1])) {
+      throw new Error(`France guide ${definition.slug} has an incomplete place-context section.`);
+    }
+  }
   return definition;
 }
 
@@ -37,6 +44,9 @@ export function defineFranceCluster(cluster) {
   }
   if (!Array.isArray(cluster.guides) || cluster.guides.length !== 3) {
     throw new Error(`France cluster ${cluster.slug} must define exactly three focused guides.`);
+  }
+  if (cluster.faq && (!Array.isArray(cluster.faq) || cluster.faq.length < 3 || cluster.faq.some((item) => !Array.isArray(item) || item.length !== 2 || !item[0] || !item[1]))) {
+    throw new Error(`France cluster ${cluster.slug} has an incomplete FAQ.`);
   }
   const seen = new Set();
   const guides = cluster.guides.map((guide, index) => {

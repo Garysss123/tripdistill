@@ -42,13 +42,13 @@ export const franceImageManifest = {
   },
   "paris-region-day-trips/fontainebleau-palace-forest": {
     "src": "/assets/images/france-paris-region-day-trips-fontainebleau-palace-forest.webp",
-    "alt": "The horseshoe staircase and courtyard at Château de Fontainebleau",
-    "source": "https://commons.wikimedia.org/wiki/File:2021-04-26_17-37-23_-_Fontainebleau_-_Cour_du_Cheval_Blanc.jpg",
-    "label": "2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg",
-    "creator": "Baidax",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg",
-    "remoteSha1": "e21d2d75b0517dd19ce88cc6526639b31d34622c"
+    "alt": "The Château de Fontainebleau’s horseshoe staircase framed by the Cour des Adieux wings",
+    "source": "https://commons.wikimedia.org/wiki/File:La_cour_du_cheval_blanc_(Ch%C3%A2teau_de_Fontainebleau).jpg",
+    "label": "La cour du cheval blanc (Château de Fontainebleau).jpg",
+    "creator": "Jean-Pierre Dalbéra",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:La cour du cheval blanc (Château de Fontainebleau).jpg",
+    "remoteSha1": "29b026aac3be816b26381545ab8d486ec605712a"
   },
   "paris-region-day-trips/giverny-monet-vernon": {
     "src": "/assets/images/france-paris-region-day-trips-giverny-monet-vernon.webp",

@@ -13,7 +13,11 @@ const expectedRoutes = [
   ['/france/paris/', 'Paris hub'],
   ['/france/paris/seine-islands-latin-quarter/', 'Seine Islands & Latin Quarter'],
   ['/france/paris/louvre-tuileries-opera/', 'Louvre, Tuileries & Opera'],
-  ['/france/paris/eiffel-invalides-montparnasse/', 'Eiffel Tower & Invalides']
+  ['/france/paris/eiffel-invalides-montparnasse/', 'Eiffel Tower & Invalides'],
+  ['/france/paris-region-day-trips/', 'Versailles- Fontainebleau- Giverny hub'],
+  ['/france/paris-region-day-trips/versailles-palace-estate/', 'Versailles Palace & Estate'],
+  ['/france/paris-region-day-trips/fontainebleau-palace-forest/', 'Fontainebleau Palace & Forest'],
+  ['/france/paris-region-day-trips/giverny-monet-vernon/', 'Giverny, Monet & Vernon']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -102,9 +106,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 20 || manifest.pages?.length !== 20) fail(`${label}: expected 20 localized route records.`);
+  if (manifest.routeCount !== 40 || manifest.pages?.length !== 40) fail(`${label}: expected 40 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris and day-trip scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -119,7 +123,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const htmlNode = nodes(document, 'html')[0];
   if (attr(htmlNode, 'lang') !== record.locale) fail(`${label}: wrong document language on ${record.urlPath}: ${attr(htmlNode, 'lang')}.`);
   const bodyNode = nodes(document, 'body')[0];
-  if (!attr(bodyNode, 'data-page').startsWith('fr-paris')) fail(`${label}: missing Paris page identity on ${record.urlPath}.`);
+  if (!attr(bodyNode, 'data-page').startsWith('fr-paris')) fail(`${label}: missing Paris or day-trip page identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -169,25 +173,38 @@ if (sitemapCount !== 4560 || sitemap.includes('/qa/paris-responsive/')) fail(`Lo
 const pageResults = manifest.pages.map((record) => inspectLocalizedPage(manifest, record, 'local QA'));
 const pagesByRoute = new Map(manifest.pages.map((record, index) => [`${record.locale}${record.path}`, { record, ...pageResults[index] }]));
 for (const locale of expectedLocales) {
-  const hub = pagesByRoute.get(`${locale.code}/france/paris/`);
-  const guidePages = expectedRoutes.slice(1).map(([routePath]) => pagesByRoute.get(`${locale.code}${routePath}`));
-  for (const item of [hub, ...guidePages]) {
-    const styles = nodes(item.document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
-    if (!styles.some((href) => new URL(href, 'https://tripdistill.com').pathname === '/css/france-paris.css')) fail(`Missing Paris stylesheet on ${locale.code} ${item.record.path}.`);
-  }
-  for (const routePath of expectedRoutes.slice(1).map(([routePath]) => routePath)) {
+  for (const [routePath] of expectedRoutes) {
     const { record, document } = pagesByRoute.get(`${locale.code}${routePath}`);
+    const styles = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => new URL(attr(node, 'href'), 'https://tripdistill.com').pathname);
+    const isParisRoute = routePath.startsWith('/france/paris/');
+    const isDayTripChild = ['/versailles-palace-estate/', '/fontainebleau-palace-forest/', '/giverny-monet-vernon/'].some((suffix) => routePath.endsWith(suffix));
+    const expectedFieldCss = isParisRoute ? '/css/france-paris.css' : isDayTripChild ? '/css/france-field.css' : '/css/france.css';
+    if (!styles.includes('/css/france.css') || !styles.includes(expectedFieldCss)) fail(`Missing route stylesheet ${expectedFieldCss} on ${locale.code} ${routePath}.`);
+    const isHub = routePath === '/france/paris/' || routePath === '/france/paris-region-day-trips/';
+    if (isHub) continue;
     if (!nodes(document, 'details').length) fail(`Missing visible FAQ controls on ${locale.code} ${routePath}.`);
-    const bodyText = nodes(document, 'body').map(text).join(' ');
+    const bodyText = text(nodes(document, 'body')[0]);
     if (!bodyText.includes('CC0') && !bodyText.includes('CC BY')) fail(`Missing readable photo license in ${locale.code} ${routePath}.`);
     if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked photo source in ${locale.code} ${routePath}.`);
+    if (routePath.startsWith('/france/paris-region-day-trips/')) {
+      if (/\b[^\s<>]+\.(?:jpe?g|png|webp)\b/i.test(bodyText)) fail(`Raw image filename visible on ${locale.code} ${routePath}.`);
+      if (bodyText.includes('The famous excursions around Paris use different rail terminals')) fail(`Repeated hub copy visible in child route ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const required = routePath.endsWith('/versailles-palace-estate/')
+          ? ['Rive Gauche', 'Hall of Mirrors', 'Passport', '10 minutes']
+          : routePath.endsWith('/fontainebleau-palace-forest/')
+            ? ['Fontainebleau–Avon', 'bus 1', 'Cour des Adieux', 'April 1814']
+            : ['Vernon–Giverny', 'For 2026', '1 April through 1 November', '1.5–2 hours', 'wheelchair accessible'];
+        for (const phrase of required) if (!bodyText.includes(phrase)) fail(`English day-trip content lacks “${phrase}” on ${routePath}.`);
+      }
+    }
   }
 }
 
 const parisCss = manifest.assets.find((asset) => asset.path === '/css/france-paris.css');
 if (!parisCss) fail('The Paris stylesheet is absent from the route asset manifest.');
 const totalStyleBytes = manifest.assets.filter((asset) => asset.path.endsWith('.css')).reduce((sum, asset) => sum + asset.bytes, 0);
-if (totalStyleBytes > manifest.maxParisStylesBytes) fail(`Paris route styles total ${totalStyleBytes} bytes, over the ${manifest.maxParisStylesBytes} byte budget.`);
+if (totalStyleBytes > manifest.maxRouteStylesBytes) fail(`Reviewed route styles total ${totalStyleBytes} bytes, over the ${manifest.maxRouteStylesBytes} byte budget.`);
 const images = manifest.assets.filter((asset) => /\.(?:avif|gif|jpe?g|png|webp)$/i.test(asset.path));
 const tooLarge = images.find((asset) => asset.bytes > manifest.maxSingleImageBytes);
 if (tooLarge) fail(`Image exceeds the ${manifest.maxSingleImageBytes} byte budget: ${tooLarge.path} (${tooLarge.bytes} bytes).`);
@@ -208,7 +225,8 @@ for (const [foreground, background] of contrastPairs) {
 }
 
 if (!isLive) {
-  console.log(`Paris QA harness passed locally: 20/20 route-language HTML hashes, language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, ${totalStyleBytes} stylesheet bytes, 4,560 sitemap URLs, noindex harness.`);
+  const dayTripPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris-region-day-trips/')).length;
+  console.log(`Paris/day-trip QA harness passed locally: ${manifest.pages.length}/40 route-language HTML hashes (${dayTripPages} day-trip records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, ${totalStyleBytes} stylesheet bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -235,5 +253,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`Paris QA preview passed: harness HTTP 200, 20 route pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`Paris/day-trip QA preview passed: harness HTTP 200, 40 route pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }
