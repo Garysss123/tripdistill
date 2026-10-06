@@ -61,6 +61,10 @@ assert(sitemapUrls.length === 4560 && new Set(sitemapUrls).size === 4560, `Expec
 assert(!sitemap.includes('/qa/osaka-responsive/'), 'The QA harness must not be in the public sitemap.');
 assert(harness.includes('name="robots" content="noindex,nofollow,noarchive"'), 'Harness robots policy must remain noindex.');
 assert(harness.includes('width="320"') && harness.includes('width="390"'), 'Harness must show 320px and 390px frames.');
+const siteCss = fs.readFileSync(path.join(root, 'css', 'site.css'), 'utf8');
+const cityShrinkRule = siteCss.match(/body\[data-city="kyoto"\],\s*body\[data-city="osaka"\]\s*\{([^}]*)\}/);
+assert(cityShrinkRule && /min-width:\s*0\s*;/.test(cityShrinkRule[1]), 'Kyoto and Osaka pages must be able to shrink below the global 320px minimum.');
+assert(!/overflow(?:-x)?:\s*hidden/.test(cityShrinkRule[1]), 'The city width fix must not hide overflow.');
 
 const manifestPagePaths = new Set(manifest.pages.map((page) => page.path));
 const expectedPagePaths = [];
@@ -78,12 +82,15 @@ for (const locale of expectedLocales) {
     assert(hash(html) === record.sha256, `Built HTML hash mismatch for ${urlPath}.`);
     const doc = parse(html.toString('utf8'));
     let lang = '';
+    let city = '';
     let h1Count = 0;
     walk(doc, (node) => {
       if (node.tagName === 'html') lang = attr(node, 'lang');
+      if (node.tagName === 'body') city = attr(node, 'data-city');
       if (node.tagName === 'h1') h1Count += 1;
     });
     assert(lang === locale.code, `${urlPath} declares lang=${lang}, expected ${locale.code}.`);
+    assert(city === 'osaka', `${urlPath} must retain the Osaka city marker, got ${city || '(none)'}.`);
     assert(h1Count === 1, `${urlPath} must have exactly one h1, got ${h1Count}.`);
     bodyChecks.push({ path: urlPath, record, html });
   }

@@ -1,0 +1,34 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/osaka/namba/",
+    "/japan/osaka/umeda/",
+    "/japan/osaka/tennoji-shinsekai/"
+  ],
+  "translations": {
+    "CHECK EACH SHOP'S SYSTEM": "점포별 이용 방식을 확인하세요",
+    "Before joining a line, read that shop's ordering and seating instructions and follow the posted directions. Give each stop a different job and check the price before committing.": "줄을 서기 전에 해당 점포의 주문 방법과 좌석 이용 안내를 읽고 게시된 지침을 따르세요. 각 방문지는 목적이 겹치지 않게 정하고, 주문하기 전에 가격을 확인하세요.",
+    "Full day: market to canal": "하루 종일: 시장에서 운하까지",
+    "From Kuromon to Namba Yasaka, then back north to Dotonbori": "구로몬에서 난바 야사카 신사로 갔다가 북쪽 도톤보리로 돌아오기",
+    "Start at Nipponbashi's Kuromon Market, continue south to Namba Yasaka Shrine, then turn back toward Namba Parks before walking via Hozenji to the canal and north to Shinsaibashi. For an evening-only visit, skip the market and shrine and begin near Namba Station.": "닛폰바시의 구로몬 시장에서 시작해 남쪽의 난바 야사카 신사까지 간 뒤, 방향을 돌려 난바파크스 쪽으로 올라오세요. 이어 호젠지를 거쳐 운하까지 걷고 북쪽의 신사이바시로 가세요. 저녁에만 방문한다면 시장과 신사는 건너뛰고 난바역 근처에서 시작하세요.",
+    "Full-day Minami route": "미나미 종일 산책 코스",
+    "South to Yasaka, then north to Shinsaibashi": "야사카 신사까지 남쪽으로 갔다가 신사이바시로 북상",
+    "Late morning / lunch": "늦은 오전 / 점심",
+    "Namba Yasaka Shrine & Namba Parks": "난바 야사카 신사와 난바파크스",
+    "Walk south to the lion-head stage, then turn back toward Namba Parks for a covered lunch or weather pause before heading north again.": "사자 머리 모양의 무대까지 남쪽으로 걸어간 뒤 난바파크스 쪽으로 되돌아와 실내에서 점심을 먹거나 날씨를 피해 쉬고, 다시 북쪽으로 향하세요.",
+    "For a short visit, choose the canal-and-arcade walk": "짧게 둘러볼 때는 운하와 상점가 산책을 선택하세요",
+    "Begin near Namba Station at Hozenji Yokocho, follow the canal at Dotonbori, then continue north through Shinsaibashi. Leave Kuromon and Namba Yasaka for a separate daytime visit.": "난바역 근처의 호젠지요코초에서 시작해 도톤보리 운하를 따라 걷고, 신사이바시를 거쳐 북쪽으로 계속 가세요. 구로몬 시장과 난바 야사카 신사는 별도의 낮 일정으로 남겨 두세요.",
+    ". District details and current facility notices:": ". 지역 상세 정보와 시설의 최신 공지:",
+    "HEP FIVE official site (Japanese)": "HEP FIVE 공식 사이트 (일본어)",
+    "From JR Osaka's north side, walk west via Umekita to the Sky Building": "JR 오사카역 북쪽에서 우메키타를 지나 서쪽의 스카이빌딩까지 걷기",
+    "Keep the core walk to Osaka Station's north side, Grand Front and Umekita, then finish west at the observatory. HEP FIVE and Nakazakicho are east-side alternatives or extra detours; choose one instead, or allow time to return across the district.": "기본 동선은 오사카역 북쪽, 그랜드 프런트, 우메키타로 한정한 뒤 서쪽 전망대에서 마무리하세요. HEP FIVE와 나카자키초는 동쪽의 대안 또는 추가 우회 코스입니다. 스카이빌딩 대신 둘 중 한 곳을 선택하거나, 추가하려면 우메다를 가로질러 돌아올 시간을 확보하세요.",
+    "North-to-west core walk": "북쪽에서 서쪽으로 잇는 기본 동선",
+    "East-side stops require a separate detour": "동쪽 명소는 별도 우회가 필요합니다",
+    "Optional east-side alternative / detour": "선택 가능한 동쪽 대안 / 우회 코스",
+    "HEP FIVE or Nakazakicho": "HEP FIVE 또는 나카자키초",
+    "These sit east of the north-to-west walk. Choose one instead of the Sky Building, or add it only if you have time to return across Umeda; check HEP FIVE's official site for current Ferris wheel operation and last boarding.": "두 곳은 북쪽에서 서쪽으로 이어지는 기본 동선의 동쪽에 있습니다. 스카이빌딩 대신 한 곳을 선택하거나, 우메다를 가로질러 되돌아올 시간이 있을 때만 추가하세요. 대관람차의 현재 운행 여부와 마지막 탑승 시각은 HEP FIVE 공식 사이트에서 확인하세요.",
+    "Start at Shitennoji, cross the park to Abeno Harukas, then head west to Shinsekai.": "시텐노지에서 시작해 덴노지공원을 가로질러 아베노 하루카스로 간 뒤 서쪽의 신세카이로 향하세요.",
+    "Shitennoji: founded in 593, rebuilt after 1945": "시텐노지: 593년 창건, 1945년 이후 재건"
+  }
+}

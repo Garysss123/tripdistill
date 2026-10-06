@@ -1,0 +1,34 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/osaka/namba/",
+    "/japan/osaka/umeda/",
+    "/japan/osaka/tennoji-shinsekai/"
+  ],
+  "translations": {
+    "CHECK EACH SHOP'S SYSTEM": "各店點餐與入座方式不同",
+    "Before joining a line, read that shop's ordering and seating instructions and follow the posted directions. Give each stop a different job and check the price before committing.": "排隊前先看清楚該店的點餐與入座說明，並依現場標示行動。讓每個停留點各有不同用途，決定消費前也先確認價格。",
+    "Full day: market to canal": "一日行程：從市場走到運河",
+    "From Kuromon to Namba Yasaka, then back north to Dotonbori": "從黑門市場南下至難波八阪，再折返北上前往道頓堀",
+    "Start at Nipponbashi's Kuromon Market, continue south to Namba Yasaka Shrine, then turn back toward Namba Parks before walking via Hozenji to the canal and north to Shinsaibashi. For an evening-only visit, skip the market and shrine and begin near Namba Station.": "從日本橋的黑門市場出發，繼續往南到難波八阪神社，再折回 Namba Parks 一帶；接著經法善寺前往運河，最後向北走到心齋橋。若只安排晚間短程行程，可略過市場與神社，改從難波站附近開始。",
+    "Full-day Minami route": "南區（Minami）一日路線",
+    "South to Yasaka, then north to Shinsaibashi": "先往南到難波八阪，再向北走到心齋橋",
+    "Late morning / lunch": "接近中午／午餐",
+    "Namba Yasaka Shrine & Namba Parks": "難波八阪神社與 Namba Parks",
+    "Walk south to the lion-head stage, then turn back toward Namba Parks for a covered lunch or weather pause before heading north again.": "先向南走到獅子頭舞台，再折回 Namba Parks，找有遮蔽的地方用午餐或避雨休息，之後再往北走。",
+    "For a short visit, choose the canal-and-arcade walk": "時間有限時，走運河與拱廊商店街路線",
+    "Begin near Namba Station at Hozenji Yokocho, follow the canal at Dotonbori, then continue north through Shinsaibashi. Leave Kuromon and Namba Yasaka for a separate daytime visit.": "從難波站附近的法善寺橫丁出發，沿著道頓堀運河前行，再往北穿過心齋橋。黑門市場與難波八阪神社留待另一次白天造訪。",
+    ". District details and current facility notices:": "。街區資訊與最新設施公告：",
+    "HEP FIVE official site (Japanese)": "HEP FIVE 官方網站（日文）",
+    "From JR Osaka's north side, walk west via Umekita to the Sky Building": "從 JR 大阪站北側經 Umekita 向西步行至梅田藍天大廈",
+    "Keep the core walk to Osaka Station's north side, Grand Front and Umekita, then finish west at the observatory. HEP FIVE and Nakazakicho are east-side alternatives or extra detours; choose one instead, or allow time to return across the district.": "核心路線集中在大阪站北側、Grand Front 與 Umekita，最後往西到展望台。HEP FIVE 和中崎町位於東側，是可替換景點或額外支線；可以擇一取代梅田藍天大廈，若要加走則須預留穿越梅田折返的時間。",
+    "North-to-west core walk": "北往西的核心步行路線",
+    "East-side stops require a separate detour": "東側景點需另走支線",
+    "Optional east-side alternative / detour": "可選／東側替代景點或支線",
+    "HEP FIVE or Nakazakicho": "HEP FIVE 或中崎町（Nakazakicho）",
+    "These sit east of the north-to-west walk. Choose one instead of the Sky Building, or add it only if you have time to return across Umeda; check HEP FIVE's official site for current Ferris wheel operation and last boarding.": "這兩處都在北往西路線的東側。可選其中一處取代梅田藍天大廈；若要加走，請預留穿越梅田折返所需的時間。HEP FIVE 摩天輪的最新營運情況與末班搭乘時間，請查閱官方網站。",
+    "Start at Shitennoji, cross the park to Abeno Harukas, then head west to Shinsekai.": "從四天王寺出發，穿過天王寺公園前往阿倍野 Harukas，再往西走到新世界。",
+    "Shitennoji: founded in 593, rebuilt after 1945": "四天王寺：593年創建，1945年後重建"
+  }
+}
