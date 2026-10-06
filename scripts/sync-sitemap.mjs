@@ -22,10 +22,15 @@ const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
+const hokkaidoLastmod = '2026-10-06';
 const newRoutes = [
   ['/', italyLastmod, 'weekly', '1.0'],
   ...usaRoutes.map(route=>[route,'2026-09-11','monthly',route==='/usa/'?'0.9':'0.7']),
   ['/about/', italyLastmod, 'monthly', '0.5'],
+  ['/japan/hokkaido/', hokkaidoLastmod, 'monthly', '0.8'],
+  ['/japan/hokkaido/sapporo/', hokkaidoLastmod, 'monthly', '0.7'],
+  ['/japan/hokkaido/otaru-shakotan/', hokkaidoLastmod, 'monthly', '0.7'],
+  ['/japan/hokkaido/hakodate-onuma/', hokkaidoLastmod, 'monthly', '0.7'],
   ['/italy/', italyLastmod, 'monthly', '0.9'],
   ...italyClusters.map((cluster) => [`/italy/${cluster.slug}/`, cluster.slug === 'rome' ? romeLastmod : italyLastmod, 'monthly', '0.8']),
   ...italyGuides.map((guide) => [guide.url, guide.hubSlug === 'rome' ? romeLastmod : italyLastmod, 'monthly', '0.7']),

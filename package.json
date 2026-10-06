@@ -69,13 +69,17 @@
     "build:osaka-qa-harness": "node scripts/build-osaka-qa-harness.mjs",
     "check:osaka-qa-harness": "node scripts/check-osaka-qa-harness.mjs",
     "check:osaka-qa-harness-live": "node scripts/check-osaka-qa-harness.mjs --live",
+    "build:hokkaido-qa-harness": "node scripts/build-hokkaido-qa-harness.mjs",
+    "check:hokkaido-qa-harness": "node scripts/check-hokkaido-qa-harness.mjs",
+    "check:hokkaido-qa-harness-live": "node scripts/check-hokkaido-qa-harness.mjs --live",
     "check:tokyo-qa-harness": "node scripts/check-tokyo-qa-harness.mjs",
     "check:tokyo-qa-harness-live": "node scripts/check-tokyo-qa-harness.mjs --live",
     "deploy:tokyo-qa": "npm run audit && npm run build && npm run build:tokyo-qa-harness && npm run check:tokyo-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch tokyo-qa && npm run check:tokyo-qa-harness-live",
     "check:kyoto-qa-harness": "node scripts/check-kyoto-qa-harness.mjs",
     "check:kyoto-qa-harness-live": "node scripts/check-kyoto-qa-harness.mjs --live",
     "deploy:kyoto-qa": "npm run audit && npm run build && npm run build:kyoto-qa-harness && npm run check:kyoto-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch kyoto-qa && npm run check:kyoto-qa-harness-live",
-    "deploy:osaka-qa": "npm run audit && npm run build && npm run build:osaka-qa-harness && npm run check:osaka-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch osaka-qa && npm run check:osaka-qa-harness-live"
+    "deploy:osaka-qa": "npm run audit && npm run build && npm run build:osaka-qa-harness && npm run check:osaka-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch osaka-qa && npm run check:osaka-qa-harness-live",
+    "deploy:hokkaido-qa": "npm run audit && npm run build && npm run build:hokkaido-qa-harness && npm run check:hokkaido-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch hokkaido-qa && npm run check:hokkaido-qa-harness-live"
   },
   "engines": {
     "node": ">=20.19.0"

@@ -468,10 +468,35 @@ for (const country of countries) {
   }
 }
 
+for (const [sourceUrl, creator, license, title] of [
+  ['https://commons.wikimedia.org/wiki/File:140724_Asahi-dake_and_Sugatami-no-ike_Hokkaido_Japan01bs3.jpg', '663highland', 'CC BY 2.5', 'Asahidake and Sugatami Pond'],
+  ['https://commons.wikimedia.org/wiki/File:Biei_landscape_(7662422372).jpg', 'Chi King', 'CC BY 2.0', 'Biei landscape'],
+  ['https://commons.wikimedia.org/wiki/File:140829_Ichiko_of_Shiretoko_Goko_Lakes_Hokkaido_Japan01s5.jpg', '663highland', 'CC BY 2.5', 'Shiretoko Five Lakes'],
+  ['https://commons.wikimedia.org/wiki/File:Hokkaido_Sapporo_Odori_Park.jpg', 'Nkns', 'CC BY-SA 3.0', 'Sapporo Odori Park'],
+  ['https://commons.wikimedia.org/wiki/File:Susukino-night_from_TV_Tower.JPG', 'Keith Blayney', 'CC BY-SA 3.0', 'Susukino night from TV Tower'],
+  ['https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E6%A8%BD%E9%9B%AA%E3%81%82%E3%81%8B%E3%82%8A%E3%81%AE%E8%B7%AF2013%EF%BC%88Otaru_Snow_Light_Path_2013%EF%BC%89_-_panoramio_(1).jpg', 't-konno', 'CC BY-SA 3.0', 'Otaru Snow Light Path'],
+  ['https://commons.wikimedia.org/wiki/File:130823_Cape_Kamui_Shakotan_Hokkaido_Japan04s3.jpg', '663highland', 'CC BY 2.5', 'Cape Kamui'],
+  ['https://commons.wikimedia.org/wiki/File:View_from_Mount_Hakodate_Japan01o.jpg', '663highland', 'CC BY 2.5', 'View from Mount Hakodate'],
+  ['https://commons.wikimedia.org/wiki/File:Komagatake_dusk.jpg', 'jonny-mt', 'CC BY-SA 3.0', 'Komagatake dusk at Onuma'],
+  ['https://commons.wikimedia.org/wiki/File:Lavender_fields,_Furano_(48254611081).jpg', 'Blondinrikard Fröberg', 'CC BY 2.0', 'Furano lavender fields'],
+  ['https://commons.wikimedia.org/wiki/File:Mount_Y%C5%8Dtei_from_Niseko_Annupuri_(33253188670).jpg', 'MIKI Yoshihito', 'CC BY 2.0', 'Mount Yōtei from Niseko Annupuri'],
+  ['https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg', 'Calistemon', 'CC BY-SA 4.0', 'Noboribetsu Jigokudani'],
+  ['https://commons.wikimedia.org/wiki/File:Kushiro_Marsh.jpg', 'jetalone', 'CC BY 2.0', 'Kushiro Marsh'],
+  ['https://commons.wikimedia.org/wiki/File:Hokkaido-Abashiri_Drift_Icebreaker_Ship_Aurora-xl.jpg', 'kkawamura', 'CC BY 4.0', 'Abashiri drift icebreaker']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, {
+    detail: `Hokkaido image review: exact Commons source title, ${creator} creator credit, and ${license} terms checked against the source page.`,
+    checkedOn: '2026-10-06'
+  });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
   ['/assets/images/china-hangzhou-grand-canal.webp', { creditLabel: 'Gongchen Bridge', creator: 'Windmemories', note: 'Matched the image alt and subject to the identically named Commons credit on both Hangzhou routes.' }],
+  ['/assets/images/biei-landscape.webp', { creditLabel: 'Biei landscape photo', creator: 'Chi King', note: 'Corrected a previous Blue Pond credit match; the displayed image is the agricultural landscape shown in the Commons source page.' }],
+  ['/assets/images/hokkaido-sapporo-odori.webp', { creditLabel: 'Hokkaido Sapporo Odori Park photo', creator: 'Nkns', note: 'Matched the central Sapporo Odori image to its exact Commons photo credit.' }],
+  ['/assets/images/hokkaido-susukino-night.webp', { creditLabel: 'Susukino night from TV Tower photo', creator: 'Keith Blayney', note: 'Corrected an earlier false match to the adjacent Odori Park credit; matched the night image to its exact Commons title and creator.' }],
   ['/assets/images/korea-busan-cityscape.webp', { creditLabel: 'Busan cityscape', creator: 'Hoil Ryu', note: 'Matched the hero image description to the same-route Busan cityscape credit.' }],
   ['/assets/images/korea-busan-gwangalli-music.webp', { creditLabel: 'Gwangalli waterfront musicians', creator: 'Christophe95', note: 'Matched the musicians in the image alt to the same-route credit.' }],
   ['/assets/images/korea-hongdae-night.webp', { creditLabel: 'Hongdae night photo', creator: 'lumoplank', note: 'Matched the route and night-street image alt to the same-route Hongdae credit.' }],
@@ -505,7 +530,21 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/namba-yasaka.webp',
   '/assets/images/osaka-castle-moat.webp',
   '/assets/images/tempozan-dusk.webp',
-  '/assets/images/osaka-skyline.webp'
+  '/assets/images/osaka-skyline.webp',
+  '/assets/images/hokkaido-asahidake.webp',
+  '/assets/images/biei-landscape.webp',
+  '/assets/images/hokkaido-shiretoko-five-lakes.webp',
+  '/assets/images/hokkaido-sapporo-odori.webp',
+  '/assets/images/hokkaido-susukino-night.webp',
+  '/assets/images/hokkaido-otaru-canal.webp',
+  '/assets/images/hokkaido-cape-kamui.webp',
+  '/assets/images/hokkaido-hakodate-night.webp',
+  '/assets/images/hokkaido-onuma-komagatake.webp',
+  '/assets/images/hokkaido-furano-lavender.webp',
+  '/assets/images/hokkaido-niseko-yotei.webp',
+  '/assets/images/hokkaido-noboribetsu-jigokudani.webp',
+  '/assets/images/hokkaido-kushiro-marsh.webp',
+  '/assets/images/hokkaido-abashiri-drift-ice.webp'
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),

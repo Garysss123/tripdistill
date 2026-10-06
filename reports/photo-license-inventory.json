@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T06:11:41.441Z",
+  "generatedAt": "2026-10-06T09:37:24.794Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
-    "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 688,
+    "completeSourceCreatorLicenseRecords": 778,
+    "licenseClaimsNotIndependentlyVerified": 673,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -15,14 +15,14 @@
     "imageReferencesScanned": 3555,
     "assetsUsedByScannedEnglishPages": 779,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 180,
-    "assetsWithExplicitEnglishCreditMatch": 33,
-    "assetsVisuallyReviewed": 30,
+    "assetsWithMatchedEnglishCreditOnly": 176,
+    "assetsWithExplicitEnglishCreditMatch": 36,
+    "assetsVisuallyReviewed": 44,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 91,
-    "metadataOrCreditOnly": 688,
-    "missingSourceCreditMatch": 0,
-    "incompleteAttributionFields": 0,
+    "sourcePageChecked": 105,
+    "metadataOrCreditOnly": 673,
+    "missingSourceCreditMatch": 1,
+    "incompleteAttributionFields": 1,
     "sourceMetadataConflicts": 0,
     "moduleErrors": 0
   },
@@ -3426,21 +3426,21 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/biei-landscape.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Pond_(Aoiike)_at_Biei,_Hokkaido,_Japan.jpg",
-          "sourceTitle": "Blue Pond photo",
-          "creditLabel": "Blue Pond photo",
-          "creator": "OKJaguar",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biei_landscape_(7662422372).jpg",
+          "sourceTitle": "Biei landscape photo",
+          "creditLabel": "Biei landscape photo",
+          "creator": "Chi King",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Corrected a previous Blue Pond credit match; the displayed image is the agricultural landscape shown in the Commons source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Chi King creator credit, and CC BY 2.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/",
@@ -3450,7 +3450,7 @@
             "Rolling green fields in Biei, Hokkaido"
           ],
           "rawVisibleCredits": [
-            "Blue Pond photo — OKJaguar, CC BY-SA 4.0."
+            "Biei landscape photo — Chi King, CC BY 2.0."
           ]
         }
       ]
@@ -10307,15 +10307,15 @@
           "creator": "kkawamura",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, kkawamura creator credit, and CC BY 4.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10346,15 +10346,15 @@
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
           "useCount": 3,
           "routes": [
             "/japan/hokkaido/",
@@ -10460,15 +10460,15 @@
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/otaru-shakotan/"
@@ -10497,15 +10497,15 @@
           "creator": "Blondinrikard Fröberg",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Blondinrikard Fröberg creator credit, and CC BY 2.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10531,20 +10531,20 @@
         {
           "assetPath": "/assets/images/hokkaido-hakodate-night.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_Mount_Hakodate_Japan01o.jpg",
-          "sourceTitle": "Hakodate night-view photo",
-          "creditLabel": "Hakodate night-view photo",
+          "sourceTitle": "View from Mount Hakodate photo",
+          "creditLabel": "View from Mount Hakodate photo",
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10555,7 +10555,7 @@
             "Hakodate city lights glowing between two bays"
           ],
           "rawVisibleCredits": [
-            "Hakodate night-view photo — 663highland, CC BY 2.5."
+            "View from Mount Hakodate photo — 663highland, CC BY 2.5."
           ]
         }
       ]
@@ -10575,15 +10575,15 @@
           "creator": "jetalone",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, jetalone creator credit, and CC BY 2.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10683,20 +10683,20 @@
         {
           "assetPath": "/assets/images/hokkaido-niseko-yotei.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Y%C5%8Dtei_from_Niseko_Annupuri_(33253188670).jpg",
-          "sourceTitle": "Mount Yotei photo",
-          "creditLabel": "Mount Yotei photo",
+          "sourceTitle": "Mount Yōtei from Niseko photo",
+          "creditLabel": "Mount Yōtei from Niseko photo",
           "creator": "MIKI Yoshihito",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, MIKI Yoshihito creator credit, and CC BY 2.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10706,7 +10706,7 @@
             "Snow-covered Mount Yotei seen from Niseko Annupuri"
           ],
           "rawVisibleCredits": [
-            "Mount Yotei photo — MIKI Yoshihito, CC BY 2.0."
+            "Mount Yōtei from Niseko photo — MIKI Yoshihito, CC BY 2.0."
           ]
         }
       ]
@@ -10721,20 +10721,20 @@
         {
           "assetPath": "/assets/images/hokkaido-noboribetsu-jigokudani.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg",
-          "sourceTitle": "Jigokudani photo",
-          "creditLabel": "Jigokudani photo",
+          "sourceTitle": "Noboribetsu Jigokudani photo",
+          "creditLabel": "Noboribetsu Jigokudani photo",
           "creator": "Calistemon",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Calistemon creator credit, and CC BY-SA 4.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10745,7 +10745,7 @@
             "Boardwalk across the volcanic Jigokudani valley at Noboribetsu"
           ],
           "rawVisibleCredits": [
-            "Jigokudani photo — Calistemon, CC BY-SA 4.0."
+            "Noboribetsu Jigokudani photo — Calistemon, CC BY-SA 4.0."
           ]
         }
       ]
@@ -10760,20 +10760,20 @@
         {
           "assetPath": "/assets/images/hokkaido-onuma-komagatake.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Komagatake_dusk.jpg",
-          "sourceTitle": "Onuma and Komagatake photo",
-          "creditLabel": "Onuma and Komagatake photo",
+          "sourceTitle": "Komagatake dusk at Onuma photo",
+          "creditLabel": "Komagatake dusk at Onuma photo",
           "creator": "jonny-mt",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, jonny-mt creator credit, and CC BY-SA 3.0 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/hakodate-onuma/"
@@ -10782,7 +10782,7 @@
             "Mount Komagatake and Onuma lake at dusk"
           ],
           "rawVisibleCredits": [
-            "Onuma and Komagatake photo — jonny-mt, CC BY-SA 3.0."
+            "Komagatake dusk at Onuma photo — jonny-mt, CC BY-SA 3.0."
           ]
         }
       ]
@@ -10797,20 +10797,20 @@
         {
           "assetPath": "/assets/images/hokkaido-otaru-canal.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E6%A8%BD%E9%9B%AA%E3%81%82%E3%81%8B%E3%82%8A%E3%81%AE%E8%B7%AF2013%EF%BC%88Otaru_Snow_Light_Path_2013%EF%BC%89_-_panoramio_(1).jpg",
-          "sourceTitle": "Otaru Canal photo",
-          "creditLabel": "Otaru Canal photo",
+          "sourceTitle": "Otaru Canal snow-light photo",
+          "creditLabel": "Otaru Canal snow-light photo",
           "creator": "t-konno",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, t-konno creator credit, and CC BY-SA 3.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10821,7 +10821,7 @@
             "Otaru Canal glowing beside deep winter snow"
           ],
           "rawVisibleCredits": [
-            "Otaru Canal photo — t-konno, CC BY-SA 3.0."
+            "Otaru Canal snow-light photo — t-konno, CC BY-SA 3.0."
           ]
         }
       ]
@@ -10873,20 +10873,20 @@
         {
           "assetPath": "/assets/images/hokkaido-sapporo-odori.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokkaido_Sapporo_Odori_Park.jpg",
-          "sourceTitle": "Central Sapporo photo",
-          "creditLabel": "Central Sapporo photo",
+          "sourceTitle": "Hokkaido Sapporo Odori Park photo",
+          "creditLabel": "Hokkaido Sapporo Odori Park photo",
           "creator": "Nkns",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Matched the central Sapporo Odori image to its exact Commons photo credit.",
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Nkns creator credit, and CC BY-SA 3.0 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10897,7 +10897,7 @@
             "Snow-covered central Sapporo and Odori Park"
           ],
           "rawVisibleCredits": [
-            "Central Sapporo photo — Nkns, CC BY-SA 3.0."
+            "Hokkaido Sapporo Odori Park photo — Nkns, CC BY-SA 3.0."
           ]
         }
       ]
@@ -10917,15 +10917,15 @@
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
           "useCount": 2,
           "routes": [
             "/japan/hokkaido/",
@@ -10949,21 +10949,21 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/hokkaido-susukino-night.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokkaido_Sapporo_Odori_Park.jpg",
-          "sourceTitle": "Central Sapporo photo",
-          "creditLabel": "Central Sapporo photo",
-          "creator": "Nkns",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Susukino-night_from_TV_Tower.JPG",
+          "sourceTitle": "Susukino night from TV Tower photo",
+          "creditLabel": "Susukino night from TV Tower photo",
+          "creator": "Keith Blayney",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Corrected an earlier false match to the adjacent Odori Park credit; matched the night image to its exact Commons title and creator.",
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Keith Blayney creator credit, and CC BY-SA 3.0 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/sapporo/"
@@ -10972,7 +10972,7 @@
             "Susukino nightlife viewed across central Sapporo"
           ],
           "rawVisibleCredits": [
-            "Central Sapporo photo — Nkns, CC BY-SA 3.0."
+            "Susukino night from TV Tower photo — Keith Blayney, CC BY-SA 3.0."
           ]
         }
       ]
@@ -13444,14 +13444,14 @@
         {
           "assetPath": "/assets/images/kaiyukan-exterior.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osaka_Aquarium_Kaiyukan.jpg",
-          "sourceTitle": "Kaiyukan exterior photo",
-          "creditLabel": "Kaiyukan exterior photo",
-          "creator": "Tokumeigakarinoaoshima",
+          "sourceTitle": "Osaka Aquarium Kaiyukan",
+          "creditLabel": "Osaka Aquarium Kaiyukan",
+          "creator": "by Tokumeigakarinoaoshima, licensed",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "resized and converted to WebP for this page; this version is shared under the same CC BY-SA 4.0 license.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -13466,7 +13466,7 @@
             "Colorful exterior of Osaka Aquarium Kaiyukan at Tempozan Harbor Village"
           ],
           "rawVisibleCredits": [
-            "Kaiyukan exterior photo — Tokumeigakarinoaoshima, CC BY-SA 4.0."
+            "Osaka Aquarium Kaiyukan by Tokumeigakarinoaoshima, licensed CC BY-SA 4.0; resized and converted to WebP for this page; this version is shared under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18301,19 +18301,19 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/osaka-castle-sakura.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg",
-          "sourceTitle": "Osaka Castle photo",
-          "creditLabel": "Osaka Castle photo",
-          "creator": "Luka Peternel",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "sourceUrl": null,
+          "sourceTitle": null,
+          "creditLabel": null,
+          "creator": null,
+          "license": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "metadataOrigin": "unmatched",
+          "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationStatus": "missing_source_credit_match",
           "verificationDate": null,
           "verificationDetail": null,
           "useCount": 2,
@@ -18325,9 +18325,7 @@
             "Osaka Castle above spring cherry blossoms",
             "Osaka Castle framed by cherry blossoms"
           ],
-          "rawVisibleCredits": [
-            "Osaka Castle photo — Luka Peternel, CC BY-SA 4.0."
-          ]
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -31543,6 +31541,15 @@
       ]
     }
   ],
-  "unmatchedAssets": [],
+  "unmatchedAssets": [
+    {
+      "src": "/assets/images/osaka-castle-sakura.webp",
+      "missing": [
+        "sourceUrl",
+        "creator",
+        "license"
+      ]
+    }
+  ],
   "sourceMetadataConflicts": []
 }
