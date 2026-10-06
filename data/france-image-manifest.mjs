@@ -22,7 +22,7 @@ export const franceImageManifest = {
   },
   "paris/eiffel-invalides-montparnasse": {
     "src": "/assets/images/france-paris-eiffel-invalides-montparnasse.webp",
-    "alt": "The Eiffel Tower seen across the Seine from western Paris",
+    "alt": "View from the Eiffel Tower’s third floor across the Seine toward the Trocadéro gardens",
     "source": "https://commons.wikimedia.org/wiki/File:Paris_View_from_the_Eiffel_Tower_third_floor_Seine_upstream_00b_Jardins_du_Trocad%C3%A9ro.jpg",
     "label": "Paris View from the Eiffel Tower third floor Seine upstream 00b Jardins du Trocadéro.jpg",
     "creator": "Maxime Homme",

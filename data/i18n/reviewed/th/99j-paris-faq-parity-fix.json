@@ -1,0 +1,15 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/paris/",
+    "/france/paris/seine-islands-latin-quarter/",
+    "/france/paris/louvre-tuileries-opera/",
+    "/france/paris/eiffel-invalides-montparnasse/"
+  ],
+  "translations": {
+    "It is an uphill branch beyond the lower Latin Quarter, so give it a separate time block and check current entry information. Cluny and Saint-Germain make a flatter finish; Cluny also includes visible remains of Lutetia’s Roman baths, including the monumental frigidarium. Check the museum’s current route and access page before assuming every archaeological space is open on your date.": "Panthéon เป็นเส้นทางขึ้นเนินต่อจากส่วนล่างของ Latin Quarter จึงควรเผื่อเวลาแยกต่างหากและตรวจข้อมูลการเข้าชมล่าสุด Cluny และ Saint-Germain เป็นทางเลือกปิดท้ายที่เดินราบกว่า นอกจากนี้ Cluny ยังมีซากโรงอาบน้ำโรมันแห่ง Lutetia ที่มองเห็นได้ รวมถึง frigidarium หรือห้องอาบน้ำเย็นขนาดใหญ่ ตรวจสอบเส้นทางผู้เข้าชมและข้อมูลการเข้าถึงของพิพิธภัณฑ์ฉบับปัจจุบันก่อนคิดว่าพื้นที่โบราณคดีทุกส่วนจะเปิดในวันที่ไป",
+    "Choose a small connected group that matches your interest and energy. The museum’s official visitor trails and live gallery list help bound the walk. Room 345 for the Venus de Milo, the Daru staircase and room 703 for Winged Victory, and Salle des États / room 711 for the Mona Lisa are route examples, never promises of access; confirm the day’s rooms before choosing two neighboring areas.": "เลือกกลุ่มห้องขนาดเล็กที่อยู่ต่อกันให้เหมาะกับความสนใจและกำลังของคุณ เส้นทางแนะนำผู้เข้าชมอย่างเป็นทางการและรายชื่อแกลเลอรีที่เปิดแบบเรียลไทม์ช่วยกำหนดขอบเขตการเดิน ห้อง 345 ซึ่งจัดแสดง Venus de Milo, บันได Daru และห้อง 703 ซึ่งจัดแสดง Winged Victory รวมถึง Salle des États / ห้อง 711 ซึ่งจัดแสดง Mona Lisa เป็นเพียงตัวอย่างการวางเส้นทาง ไม่ใช่การรับประกันว่าจะเข้าชมได้ ยืนยันห้องที่เปิดในวันนั้นก่อนเลือกชมสองโซนที่อยู่ติดกัน",
+    "Yes, if one is the primary interior. A tower ticket plus a short Champ de Mars walk can fit with an Invalides exterior; a focused Dôme and tomb visit with one museum section can fill a half-day. Several collection periods and a meal can take most of a day; six hours is an optional planning example, not a minimum. Check the live opening and ticket coverage before booking.": "ได้ หากเลือกเพียงแห่งเดียวเป็นสถานที่ในร่มหลัก ซื้อตั๋วขึ้นหอไอเฟลและเดิน Champ de Mars สั้น ๆ ควบคู่กับการชม Invalides จากด้านนอกได้ การเที่ยว Dôme และสุสานแบบเจาะจงพร้อมพิพิธภัณฑ์หนึ่งส่วนใช้เวลาครึ่งวันได้ หากชมคอลเล็กชันหลายยุคและรับประทานอาหาร อาจใช้เวลาเกือบทั้งวัน โดย 6 ชั่วโมงเป็นตัวอย่างสำหรับวางแผน ไม่ใช่เวลาขั้นต่ำ ตรวจสอบเวลาเปิดและสิ่งที่รวมในตั๋วแบบเรียลไทม์ก่อนจอง"
+  }
+}
