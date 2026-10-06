@@ -93,7 +93,7 @@ for(const locale of locales){for(const route of expectedRoutes){
   const required={
    '/japan/hokkaido/noboribetsu-lake-toya/':['1857','110,000 years','45,000 years','14 March 2026','Oyunuma'],
    '/japan/hokkaido/kushiro-lake-akan/':['10 October 2026','1 April 2026–31 March 2027','Akanko Ainu Kotan','November–March','tancho cranes do not inhabit Lake Akan'],
-   '/japan/hokkaido/abashiri-shiretoko/':['June 1–September 30','November 8','May 10–July 31','January 22–March 22','sir.etok'],
+    '/japan/hokkaido/abashiri-shiretoko/':['June 1–September 30','November 8','May 10–July 31','January 22–March 22','sir.etok','5-night sample','not a minimum','separate east-coast extension','+2 suggested nights'],
    '/japan/hokkaido/':['Otaru is a straightforward rail outing','Kushiro and Shiretoko need local nights','one corridor first'],
    '/japan/hokkaido/sapporo/':['Nijo Market','Tanukikoji','Odori Park'],
    '/japan/hokkaido/otaru-shakotan/':['completed in 1923','half the original channel','Shakotan'],

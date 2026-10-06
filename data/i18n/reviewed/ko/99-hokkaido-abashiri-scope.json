@@ -1,0 +1,27 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/abashiri-shiretoko/"
+  ],
+  "translations": {
+    "Plan Abashiri and Shiretoko with a five-night west-coast sample route, shorter-scope choices, a separate Rausu extension and date-specific Five Lakes guidance.": "아바시리와 시레토코를 서쪽 해안 5박 예시 일정으로 계획하고, 짧은 일정 선택지와 별도의 라우스 연장 일정, 날짜별 시레토코 오호 안내를 확인하세요.",
+    "A five-night west-coast sample for Abashiri and Shiretoko; narrower trips can be shorter, with Rausu as a separate east-coast extension.": "아바시리와 시레토코 서쪽 해안 5박 예시입니다. 범위를 좁힌 여행은 더 짧게 계획할 수 있으며, 라우스는 별도의 동쪽 해안 연장 일정으로 둘러보세요.",
+    "A five-night west-coast sample itinerary for Abashiri and Shiretoko. Narrower visits can be shorter; Rausu is a separate optional east-coast extension.": "아바시리와 시레토코 서쪽 해안의 5박 예시 일정입니다. 범위를 좁혀 방문하면 더 짧게 머물 수 있으며, 라우스는 별도로 선택할 수 있는 동쪽 해안 연장 일정입니다.",
+    "No fixed minimum applies. The five-night itinerary is a sample for Abashiri and the Shiretoko west coast; a narrower visit can be shorter. Rausu is a separate east-coast extension, and two nights is a suggested planning allowance, not a rule. If the pass is closed, allow for the longer detour.": "정해진 최소 숙박일은 없습니다. 5박 일정은 아바시리와 시레토코 서쪽 해안의 예시이며, 범위를 좁힌 여행은 더 짧게 잡아도 됩니다. 라우스는 별도의 동쪽 해안 연장 일정이고, 2박은 계획할 때 참고할 권장 일수이지 규칙이 아닙니다. 고개가 폐쇄되면 더 긴 우회 이동에 시간을 배정하세요.",
+    "Abashiri’s drift ice and Shiretoko’s forest lakes need different seasons and access plans. The five-night west-coast itinerary below is a sample, not a minimum; a narrower Abashiri or Utoro trip can be shorter. Rausu is a separate east-coast extension.": "아바시리의 유빙과 시레토코의 숲속 호수는 서로 다른 계절과 접근 계획이 필요합니다. 아래 서쪽 해안 5박 일정은 예시일 뿐 최소 숙박일이 아닙니다. 아바시리나 우토로 한 곳에 집중한다면 더 짧게 여행할 수 있습니다. 라우스는 별도의 동쪽 해안 연장 일정입니다.",
+    "Sample · 5 west-coast nights": "예시 · 서쪽 해안 5박",
+    "Rausu · separate optional extension": "라우스 · 별도 선택 연장 일정",
+    "Five-night sample": "5박 예시",
+    "West-coast sample": "서쪽 해안 예시",
+    "5 nights": "5박",
+    "Recommended route length, not a minimum.": "권장 일정 길이이며 최소 숙박일은 아닙니다.",
+    "The itinerary below covers Abashiri and Utoro as one west-coast sample. A shorter stay focused on one base is reasonable when transport fits; you do not need to cover both peninsula coasts.": "아래 일정은 아바시리와 우토로를 하나의 서쪽 해안 여행 예시로 묶었습니다. 교통편이 맞는다면 한 거점에 집중해 더 짧게 머물러도 좋으며, 반도의 양쪽 해안을 모두 둘러볼 필요는 없습니다.",
+    "Recommended five-night west-coast sample": "권장 서쪽 해안 5박 예시",
+    "Use the buffer in Utoro; plan Rausu separately": "우토로에서 여유 일정을 두고 라우스는 별도로 계획하세요",
+    "Use the five nights for Abashiri and Utoro; add Rausu only as a separate east-coast leg. Two nights is a useful Rausu planning allowance, not a minimum. If Route 334 is closed, allow more time for the around-peninsula detour.": "5박은 아바시리와 우토로 일정에 사용하고, 라우스는 별도의 동쪽 해안 구간으로 추가하세요. 라우스 일정은 2박을 기준으로 계획하면 유용하지만, 최소 숙박일은 아닙니다. 국도 334호선이 폐쇄되면 반도를 돌아가는 우회에 시간을 더 배정하세요.",
+    "5-night sample · west coast": "5박 예시 · 서쪽 해안",
+    "Optional · Rausu extension, +2 suggested nights": "선택 일정 · 라우스 연장, 권장 2박 추가",
+    "Use this as a separate Rausu stay only if Route 334 is open and conditions are good. If the pass is closed, allow the long detour around the peninsula; do not try to fit both coasts between buses or before a flight.": "국도 334호선이 개방되어 있고 여건이 좋을 때만 라우스에 별도로 숙박하는 일정으로 이용하세요. 고개가 폐쇄되면 반도를 도는 긴 우회에 시간을 배정하고, 버스 환승 사이 또는 항공편 전에 양쪽 해안을 모두 둘러보려 하지 마세요."
+  }
+}
