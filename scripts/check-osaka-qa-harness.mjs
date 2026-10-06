@@ -123,6 +123,9 @@ const bayCredits = bayEnglish.match(/<section\b[^>]*\bclass="[^"]*\bsources\b[^"
 for (const phrase of ['Toyotomi stronghold', 'Tokugawa rebuilding', 'reconstructed with donations from Osaka citizens', 'CC BY-SA 4.0']) {
   assert(castleEnglish.includes(phrase), `Castle guide is missing reviewed history or attribution text: ${phrase}.`);
 }
+for (const phrase of ['About three hours for park and keep', 'entry lines', 'outside this core route', 'Optional half-day extension']) {
+  assert(castleEnglish.includes(phrase), `Castle guide is missing the reviewed core-route and optional-museum distinction: ${phrase}.`);
+}
 for (const phrase of ['may or may not require an Area Timed Entry Ticket', 'do not infer benefits from the pass name', '2–3 hours', 'barrier-free guidance']) {
   assert(bayEnglish.includes(phrase), `Bay guide is missing reviewed ticket, visit or access guidance: ${phrase}.`);
 }
