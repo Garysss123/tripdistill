@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { isDeepStrictEqual } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
 
@@ -162,7 +163,7 @@ if (live) {
   const remoteManifestResponse = await fetch(`${origin}/qa/osaka-responsive/release.json`, { redirect: 'follow' });
   assert(remoteManifestResponse.status === 200, `Remote QA manifest returned HTTP ${remoteManifestResponse.status}.`);
   const remoteManifest = await remoteManifestResponse.json();
-  assert(JSON.stringify(remoteManifest) === JSON.stringify(manifest), 'Remote QA manifest identity differs from the local release.');
+  assert(isDeepStrictEqual(remoteManifest, manifest), 'Remote QA manifest identity differs from the local release.');
   const remoteHarnessResponse = await fetch(`${origin}/qa/osaka-responsive/`, { redirect: 'follow' });
   assert(remoteHarnessResponse.status === 200, `Remote QA harness returned HTTP ${remoteHarnessResponse.status}.`);
   const remoteHarness = Buffer.from(await remoteHarnessResponse.arrayBuffer());
