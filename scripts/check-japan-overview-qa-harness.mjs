@@ -14,6 +14,13 @@ const htmlPath = path.join(harnessDir, 'index.html');
 const live = process.argv.includes('--live');
 const origin = (process.argv.find((value) => value.startsWith('--url='))?.slice(6) || 'https://hokkaido-qa.trip-68e.pages.dev').replace(/\/+$/, '');
 const route = { path: '/japan/', label: 'Japan overview' };
+const kyotoRoutes = [
+  '/japan/kyoto/central-kyoto-nishiki/',
+  '/japan/kyoto/kinkakuji-northwest/',
+  '/japan/kyoto/kiyomizudera-higashiyama/',
+  '/japan/kyoto/kyoto-station-south/',
+  '/japan/kyoto/philosophers-path-okazaki/'
+];
 const editedRoutes = [
   '/japan/',
   '/japan/tokyo/',
@@ -69,8 +76,10 @@ const japanBodyRule = /body\[data-page="japan"\]\s*\{([^}]*)\}/s.exec(siteCss)?.
 const japanCompareRule = [...siteCss.matchAll(/body\[data-page="japan"\]\s+\.compare-wrap\s*\{([^}]*)\}/gs)].map((match) => match[1]).join('\n');
 const japanHeroRule = /body\[data-page="japan"\]\s+\.page-hero-content\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
 const japanHeroTextRule = /body\[data-page="japan"\]\s+\.page-hero-content\s+p\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
+const visibleFocusRule = [...siteCss.matchAll(/:focus-visible\s*\{([^}]*)\}/gs)].map((match) => match[1]).join('\n');
 assert(/min-width\s*:\s*0(?:px)?\s*;/i.test(japanBodyRule), 'Japan overview must override the shared 320px body minimum.');
 assert(/max-width\s*:\s*100%\s*;/i.test(japanCompareRule) && /overflow-x\s*:\s*auto\s*;/i.test(japanCompareRule), 'The wide trip comparison must remain available in its own horizontal scroller.');
+assert(/outline\s*:\s*3px\s+solid\b/i.test(visibleFocusRule) && /outline-offset\s*:\s*[^;]+;/i.test(visibleFocusRule), 'Keyboard focus on the scrollable comparison needs a visible outline.');
 const panel = japanHeroRule.match(/background\s*:\s*rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(0?\.\d+)\s*\)/i);
 const heroText = japanHeroTextRule.match(/color\s*:\s*(#[0-9a-f]{6})/i)?.[1];
 assert(panel && heroText, 'Static hero contrast check needs an explicit translucent panel and text color.');
@@ -85,6 +94,9 @@ assert(heroContrastEstimate >= 4.5, `Japan hero text's static worst-case white-i
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 assert(manifest.project === 'trip' && manifest.branch === 'hokkaido-qa', 'Manifest must identify only the existing trip project and hokkaido-qa branch.');
 assert(manifest.routeCount === 5 && isDeepStrictEqual(manifest.route, route), 'Manifest must cover the one Japan country route in five locales.');
+const expectedKyotoPages = locales.flatMap((locale) => kyotoRoutes.map((path) => ({ locale: locale.code, path: `${locale.prefix}${path}` })));
+assert(manifest.kyotoRouteCount === kyotoRoutes.length && manifest.kyotoPages.length === expectedKyotoPages.length, 'Manifest must cover all five updated Kyoto guides in all five locales.');
+assert(isDeepStrictEqual(manifest.kyotoPages.map(({ locale, path }) => ({ locale, path })), expectedKyotoPages), 'Kyoto page route or locale inventory changed.');
 assert(isDeepStrictEqual(manifest.editedSitemapRoutes, editedRoutes.map((path) => ({ path, lastmod: '2026-10-06' }))), 'Manifest must preserve the evidenced 16 route-level source-edit dates.');
 assert(isDeepStrictEqual(manifest.locales, locales.map(({ code, label }) => ({ code, label }))), 'Manifest locale inventory changed.');
 assert(isDeepStrictEqual(manifest.viewportWidths, [320, 390]), 'Harness must retain the 320 and 390 CSS-pixel frames.');
@@ -97,6 +109,7 @@ assert(harness.includes('width="320"') && harness.includes('width="390"'), 'Harn
 
 const pageRecords = [];
 const summaries = new Map();
+const comparisonLabels = new Map();
 for (const locale of locales) {
   const urlPath = `${locale.prefix}${route.path}`;
   const pageRecord = manifest.pages.find((item) => item.locale === locale.code && item.path === urlPath);
@@ -114,6 +127,7 @@ for (const locale of locales) {
   const alternates = new Map();
   const ids = new Set();
   const labels = [];
+  let compareRegion = null;
   const images = [];
   const photoCreditRows = [];
   const stylesheets = [];
@@ -129,6 +143,7 @@ for (const locale of locales) {
     if (node.tagName === 'link' && attr(node, 'rel') === 'canonical') canonical = attr(node, 'href');
     if (node.tagName === 'link' && attr(node, 'rel') === 'alternate' && attr(node, 'hreflang')) alternates.set(attr(node, 'hreflang'), attr(node, 'href'));
     const id = attr(node, 'id'); if (id) { assert(!ids.has(id), `${urlPath} repeats id ${id}.`); ids.add(id); }
+    if (node.tagName === 'div' && attr(node, 'class').split(/\s+/).includes('compare-wrap')) compareRegion = node;
     if (attr(node, 'aria-labelledby')) labels.push(...attr(node, 'aria-labelledby').split(/\s+/));
     if (node.tagName === 'img') { const alt = attr(node, 'alt').trim(); if (!alt) emptyAlt = true; const src = attr(node, 'src'); if (src.startsWith('/')) images.push(src); }
     if (node.tagName === 'li' && attr(node, 'data-photo-asset')) photoCreditRows.push(node);
@@ -137,6 +152,10 @@ for (const locale of locales) {
     if (node.tagName === 'a') { const href = attr(node, 'href'); if (href.startsWith('/')) internalLinks.add(href); if (/^https?:\/\//i.test(href)) externalLinks.add(href); if (attr(node, 'target') === '_blank') assert(attr(node, 'rel').split(/\s+/).includes('noopener'), `${urlPath} has a new-tab link without noopener.`); }
   });
   assert(lang === locale.code && marker === 'japan' && h1Count === 1, `${urlPath} has incorrect language, page marker or heading count.`);
+  assert(compareRegion && attr(compareRegion, 'role') === 'region' && attr(compareRegion, 'tabindex') === '0', `${urlPath} comparison scroller must be a keyboard-focusable region.`);
+  const comparisonLabel = attr(compareRegion, 'aria-label').trim();
+  assert(comparisonLabel && (locale.code === 'en' ? comparisonLabel === 'Japan itinerary comparison' : comparisonLabel !== 'Japan itinerary comparison'), `${urlPath} comparison region needs a localized accessible label.`);
+  comparisonLabels.set(locale.code, comparisonLabel);
   assert(title.length >= 20 && title.length <= 100, `${urlPath} title is empty or out of bounds.`);
   assert(description.length >= 40 && description.length <= 300, `${urlPath} description is empty or out of bounds.`);
   assert(canonical === `https://tripdistill.com${urlPath}`, `${urlPath} canonical does not match the preserved route.`);
@@ -195,6 +214,39 @@ for (const locale of locales) {
   assert(country?.summary?.trim(), `${locale.code} Japan search summary is empty.`);
   summaries.set(locale.code, country.summary);
 }
+assert(new Set([...comparisonLabels.values()]).size === 5, 'The comparison region label must be localized distinctly across the five editions.');
+for (const page of manifest.kyotoPages) {
+  const bytes = fs.readFileSync(distFile(page.path + 'index.html'));
+  assert(hash(bytes) === page.sha256, `Built Kyoto route hash mismatch: ${page.path}.`);
+  const doc = parse(bytes.toString('utf8'));
+  let lang = '';
+  let marker = '';
+  let h1Count = 0;
+  let canonical = '';
+  let description = '';
+  const alternates = new Map();
+  const imageAlts = [];
+  walk(doc, (node) => {
+    if (node.tagName === 'html') lang = attr(node, 'lang');
+    if (node.tagName === 'body') marker = attr(node, 'data-page');
+    if (node.tagName === 'h1') h1Count += 1;
+    if (node.tagName === 'link' && attr(node, 'rel') === 'canonical') canonical = attr(node, 'href');
+    if (node.tagName === 'meta' && attr(node, 'name').toLowerCase() === 'description') description = attr(node, 'content').trim();
+    if (node.tagName === 'link' && attr(node, 'rel') === 'alternate' && attr(node, 'hreflang')) alternates.set(attr(node, 'hreflang'), attr(node, 'href'));
+    if (node.tagName === 'img') imageAlts.push(attr(node, 'alt').trim());
+  });
+  const expectedLocale = locales.slice(1).find((locale) => page.path.startsWith(locale.prefix + '/')) || locales[0];
+  const originalRoute = kyotoRoutes.find((path) => page.path === `${expectedLocale.prefix}${path}`);
+  const expectedMarker = originalRoute?.replace(/\/+$/, '').split('/').at(-1);
+  assert(expectedLocale.code === page.locale && lang === page.locale, `${page.path} declares the wrong locale.`);
+  assert(marker === expectedMarker && h1Count === 1, `${page.path} has the wrong page marker or heading count.`);
+  assert(canonical === `https://tripdistill.com${page.path}`, `${page.path} canonical changed.`);
+  assert(description.length >= 40 && description.length <= 300, `${page.path} has an empty or out-of-range description.`);
+  assert(imageAlts.every(Boolean), `${page.path} has an image without alt text.`);
+  for (const locale of locales) assert(alternates.get(locale.code) === `https://tripdistill.com${locale.prefix}${originalRoute}`, `${page.path} has an incorrect ${locale.code} alternate.`);
+  assert(alternates.get('x-default') === `https://tripdistill.com${originalRoute}`, `${page.path} x-default changed.`);
+  assert(sitemapUrls.includes(`https://tripdistill.com${page.path}`), `Sitemap omits ${page.path}.`);
+}
 for (const locale of locales) {
   for (const editedRoute of manifest.editedSitemapRoutes) {
     const urlPath = `${locale.prefix}${editedRoute.path}`;
@@ -215,7 +267,7 @@ walk(harnessDoc, (node) => { if (node.tagName === 'select' && attr(node, 'id') =
 assert(localeControl && titledFrames === 2, 'Harness needs a labeled language selector and two titled frames.');
 const localCommit = git(['rev-parse', 'HEAD']);
 assert(manifest.commit === localCommit && manifest.branch === 'hokkaido-qa', 'Preview manifest identity must match local branch and commit.');
-console.log(`Local Japan overview harness verified: ${pageRecords.length}/5 locale routes, FAQ/schema, SEO/hreflang, official entry/fare links, six exact visible photo credits per locale, localized search summaries, ${manifest.assets.length} referenced assets, ${manifest.editedSitemapRoutes.length * 5}/80 route-language dates, scoped 320px body shrink, intact table scroller, paired 320/390px frames, static worst-case hero contrast estimate ${heroContrastEstimate.toFixed(2)}:1 (white image under panel), noindex harness and 4,560 sitemap URLs. The static checks do not measure actual browser scrollWidth or image-pixel contrast.`);
+console.log(`Local Japan QA manifest verified: ${pageRecords.length}/5 overview locale pages, ${manifest.kyotoPages.length}/25 Kyoto route-language pages, FAQ/schema, SEO/hreflang, official entry/fare links, six exact visible photo credits per locale, localized search summaries, ${manifest.assets.length} referenced assets, ${manifest.editedSitemapRoutes.length * 5}/80 route-language dates, scoped 320px body shrink, keyboard-focusable comparison with distinct localized names, paired 320/390px frames, static worst-case hero contrast estimate ${heroContrastEstimate.toFixed(2)}:1 (white image under panel), noindex harness and 4,560 sitemap URLs. The static checks do not measure actual browser scrollWidth or image-pixel contrast.`);
 
 if (live) {
   async function fetchBytes(urlPath, expectedHash) {
@@ -230,10 +282,10 @@ if (live) {
   assert(isDeepStrictEqual(remoteManifest, manifest), 'Live preview manifest differs from the local release manifest.');
   const harnessBytes = await fetchBytes('/qa/japan-overview-responsive/', hash(fs.readFileSync(htmlPath)));
   assert(harnessBytes.toString('utf8').includes('name="robots" content="noindex,nofollow,noarchive"'), 'Live harness noindex policy is missing.');
-  for (const page of manifest.pages) await fetchBytes(page.path, page.sha256);
+  for (const page of [...manifest.pages, ...manifest.kyotoPages]) await fetchBytes(page.path, page.sha256);
   for (const item of [...manifest.searchIndexes, ...manifest.assets]) await fetchBytes(item.path, item.sha256);
   const liveSitemap = await fetchBytes('/sitemap.xml', manifest.sitemap.sha256);
   const liveUrls = [...liveSitemap.toString('utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
   assert(liveUrls.length === 4560 && new Set(liveUrls).size === 4560, 'Live sitemap count or uniqueness changed.');
-  console.log(`Live Japan overview preview verified at ${origin}: 5/5 locale pages, ${manifest.assets.length}/${manifest.assets.length} assets, 5/5 localized search indexes, noindex harness and unchanged 4,560-URL sitemap.`);
+  console.log(`Live Japan preview verified at ${origin}: 5/5 overview pages, 25/25 Kyoto route-language pages, ${manifest.assets.length}/${manifest.assets.length} assets, 5/5 localized search indexes, noindex harness and unchanged 4,560-URL sitemap.`);
 }

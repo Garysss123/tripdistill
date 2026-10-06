@@ -11,6 +11,13 @@ const harnessDir = path.join(dist, 'qa', 'japan-overview-responsive');
 const harnessPath = path.join(harnessDir, 'index.html');
 const manifestPath = path.join(harnessDir, 'release.json');
 const route = { path: '/japan/', label: 'Japan overview' };
+const kyotoRoutes = [
+  '/japan/kyoto/central-kyoto-nishiki/',
+  '/japan/kyoto/kinkakuji-northwest/',
+  '/japan/kyoto/kiyomizudera-higashiyama/',
+  '/japan/kyoto/kyoto-station-south/',
+  '/japan/kyoto/philosophers-path-okazaki/'
+];
 const expectedDate = '2026-10-06';
 const editedRoutes = [
   '/japan/',
@@ -58,6 +65,7 @@ function distFile(urlPath) {
 }
 
 const pages = [];
+const kyotoPages = [];
 const searchIndexes = [];
 const assets = new Map();
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
@@ -105,6 +113,44 @@ for (const locale of locales) {
   searchIndexes.push({ locale: locale.code, path: `${locale.prefix}/data/search-index.json`.replace(/^\/data/, '/data'), sha256: sha256(searchBytes) });
 }
 
+for (const locale of locales) {
+  for (const kyotoRoute of kyotoRoutes) {
+    const urlPath = `${locale.prefix}${kyotoRoute}`;
+    const pagePath = path.join(dist, urlPath.slice(1), 'index.html');
+    if (!fs.existsSync(pagePath)) throw new Error(`Missing built Kyoto guide: ${locale.code} ${urlPath}`);
+    const bytes = fs.readFileSync(pagePath);
+    const doc = parse(bytes.toString('utf8'));
+    let declaredLocale = '';
+    let pageMarker = '';
+    let headingCount = 0;
+    const referencedAssets = new Set();
+    walk(doc, (node) => {
+      if (node.tagName === 'html') declaredLocale = attr(node, 'lang');
+      if (node.tagName === 'body') pageMarker = attr(node, 'data-page');
+      if (node.tagName === 'h1') headingCount += 1;
+      if (node.tagName === 'img') {
+        const src = attr(node, 'src');
+        if (src.startsWith('/assets/')) referencedAssets.add(new URL(src, 'https://tripdistill.com').pathname);
+      }
+      if (node.tagName === 'link' && attr(node, 'rel') === 'stylesheet') {
+        const href = attr(node, 'href');
+        if (href.startsWith('/')) referencedAssets.add(new URL(href, 'https://tripdistill.com').pathname);
+      }
+      if (node.tagName === 'script' && attr(node, 'src')) {
+        const src = attr(node, 'src');
+        if (src.startsWith('/')) referencedAssets.add(new URL(src, 'https://tripdistill.com').pathname);
+      }
+    });
+    const expectedMarker = kyotoRoute.replace(/\/+$/, '').split('/').at(-1);
+    if (headingCount !== 1) throw new Error(`${urlPath}: expected one h1, found ${headingCount}.`);
+    if (declaredLocale !== locale.code) throw new Error(`${urlPath}: html lang is ${declaredLocale}, expected ${locale.code}.`);
+    if (pageMarker !== expectedMarker) throw new Error(`${urlPath}: expected data-page=${expectedMarker}, found ${pageMarker}.`);
+    if (!sitemapUrls.includes(`https://tripdistill.com${urlPath}`)) throw new Error(`Sitemap omits ${urlPath}.`);
+    kyotoPages.push({ locale: locale.code, path: urlPath, sha256: sha256(bytes) });
+    for (const assetPath of referencedAssets) assets.set(assetPath, true);
+  }
+}
+
 const releaseAssets = [...assets.keys()].sort().map((urlPath) => {
   const file = distFile(urlPath);
   if (!fs.existsSync(file)) throw new Error(`Missing Japan overview asset: ${urlPath}`);
@@ -119,11 +165,13 @@ const release = {
   branch,
   commit,
   routeCount: pages.length,
+  kyotoRouteCount: kyotoRoutes.length,
   viewportWidths: [320, 390],
   route,
   editedSitemapRoutes: editedRoutes.map((path) => ({ path, lastmod: expectedDate })),
   locales: locales.map(({ code, label }) => ({ code, label })),
   pages,
+  kyotoPages,
   searchIndexes,
   assets: releaseAssets,
   sitemap: { path: '/sitemap.xml', sha256: sha256(fs.readFileSync(sitemapPath)), urlCount: sitemapUrls.length }
