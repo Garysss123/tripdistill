@@ -374,7 +374,7 @@ function parseCredit(li) {
   return {
     assetPath: itemAttrs['data-photo-asset'] || null,
     sourceUrl: sourceLink.href,
-    creditLabel: sourceLink.label || null,
+    creditLabel: itemAttrs['data-photo-title'] || sourceLink.label || null,
     creator: itemAttrs['data-photo-creator'] || creator,
     license,
     licenseUrl: declaredLicenseLink?.href || canonicalLicenseUrl(license),
@@ -486,8 +486,11 @@ for (const [sourceUrl, creator, license, title] of [
   ['https://commons.wikimedia.org/wiki/File:Komagatake_dusk.jpg', 'jonny-mt', 'CC BY-SA 3.0', 'Komagatake dusk at Onuma'],
   ['https://commons.wikimedia.org/wiki/File:Lavender_fields,_Furano_(48254611081).jpg', 'Blondinrikard Fröberg', 'CC BY 2.0', 'Furano lavender fields'],
   ['https://commons.wikimedia.org/wiki/File:Mount_Y%C5%8Dtei_from_Niseko_Annupuri_(33253188670).jpg', 'MIKI Yoshihito', 'CC BY 2.0', 'Mount Yōtei from Niseko Annupuri'],
-  ['https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg', 'Calistemon', 'CC BY-SA 4.0', 'Noboribetsu Jigokudani'],
+  ['https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg', 'Calistemon', 'CC BY-SA 4.0', 'Jigokudani (Hell Valley), Noboribetsu Onsen, Hokkaido, April 2023 02'],
+  ['https://commons.wikimedia.org/wiki/File:130922_Lake_Toya_Toyako_Hokkaido_Japan01s5.jpg', '663highland', 'CC BY 2.5', '130922 Lake Toya Toyako Hokkaido Japan01s5'],
   ['https://commons.wikimedia.org/wiki/File:Kushiro_Marsh.jpg', 'jetalone', 'CC BY 2.0', 'Kushiro Marsh'],
+  ['https://commons.wikimedia.org/wiki/File:Grus_japonensis_-Hokkaido,_Japan_-several-8_(1).jpg', 'Alastair Rae', 'CC BY-SA 2.0', 'Grus japonensis -Hokkaido, Japan -several-8 (1)'],
+  ['https://commons.wikimedia.org/wiki/File:Lake_Akan_Kushiro_Hokkaido_Japan04n.jpg', '663highland', 'CC BY 2.5', 'Lake Akan Kushiro Hokkaido Japan04n'],
   ['https://commons.wikimedia.org/wiki/File:Hokkaido-Abashiri_Drift_Icebreaker_Ship_Aurora-xl.jpg', 'kkawamura', 'CC BY 4.0', 'Abashiri drift icebreaker'],
   ['https://commons.wikimedia.org/wiki/File:Daisetsuzan_National_Park_(44720157870).jpg', 'Raita Futo', 'CC BY 2.0', 'Daisetsuzan National Park, north view from Mount Asahi’s summit'],
   ['https://commons.wikimedia.org/wiki/File:Siripa-misaki7020429.jpg', '\u6211\u8def\u30fb\u5e4c\u5185\u753b\u50cf\u5009\u5eab', 'CC BY-SA 3.0', 'Siripa Cape, Yoichi']
@@ -569,7 +572,14 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/namba-yasaka.webp', '2026-10-06'],
   ['/assets/images/osaka-castle-moat.webp', '2026-10-06'],
   ['/assets/images/tempozan-dusk.webp', '2026-10-06'],
-  ['/assets/images/osaka-skyline.webp', '2026-10-06']
+  ['/assets/images/osaka-skyline.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-noboribetsu-jigokudani.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-lake-toya.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-kushiro-marsh.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-red-crowned-cranes.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-lake-akan.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-abashiri-drift-ice.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-shiretoko-five-lakes.webp', '2026-10-06']
 ]);
 const entries = [];
 const sourceConflicts = [];

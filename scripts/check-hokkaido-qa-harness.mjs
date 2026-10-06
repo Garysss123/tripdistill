@@ -18,9 +18,12 @@ const expectedRoutes=[
  {path:'/japan/hokkaido/sapporo/',label:'Sapporo'},
  {path:'/japan/hokkaido/otaru-shakotan/',label:'Otaru & Shakotan'},
  {path:'/japan/hokkaido/hakodate-onuma/',label:'Hakodate & Onuma'},
+ {path:'/japan/hokkaido/noboribetsu-lake-toya/',label:'Noboribetsu & Lake Toya'},
  {path:'/japan/hokkaido/furano-biei/',label:'Furano & Biei'},
  {path:'/japan/hokkaido/asahikawa-daisetsuzan/',label:'Asahikawa & Daisetsuzan'},
- {path:'/japan/hokkaido/niseko-yoichi/',label:'Niseko & Yoichi'}
+ {path:'/japan/hokkaido/kushiro-lake-akan/',label:'Kushiro & Lake Akan'},
+ {path:'/japan/hokkaido/niseko-yoichi/',label:'Niseko & Yoichi'},
+ {path:'/japan/hokkaido/abashiri-shiretoko/',label:'Abashiri & Shiretoko'}
 ];
 const locales=[
  {code:'en',label:'English',prefix:''},
@@ -44,7 +47,7 @@ const harness=fs.readFileSync(htmlPath,'utf8');
 const sitemap=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');
 const sitemapUrls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
 assert(manifest.project==='trip'&&manifest.branch==='hokkaido-qa','Manifest must identify the existing trip project and hokkaido-qa branch.');
-assert(manifest.routeCount===35,'Manifest must include seven routes in five locales (35 pages).');
+assert(manifest.routeCount===50,'Manifest must include ten routes in five locales (50 pages).');
 assert(isDeepStrictEqual(manifest.routes,expectedRoutes),'Manifest route inventory changed.');
 assert(isDeepStrictEqual(manifest.locales,locales.map(({code,label})=>({code,label}))),'Manifest locale inventory changed.');
 assert(isDeepStrictEqual(manifest.viewportWidths,[320,390]),'Harness must retain the 320 and 390 CSS-pixel frames.');
@@ -53,13 +56,24 @@ assert(!sitemap.includes('/qa/hokkaido-responsive/'),'Harness must stay outside 
 assert(harness.includes('name="robots" content="noindex,nofollow,noarchive"'),'Harness must be explicitly noindex.');
 assert(harness.includes('width="320"')&&harness.includes('width="390"'),'Harness must contain paired 320/390 pixel frames.');
 const css=fs.readFileSync(path.join(root,'css','site.css'),'utf8');
-const shrinkRule=css.match(/((?:body\[data-page="(?:hokkaido|sapporo|otaru-shakotan|hakodate-onuma|furano-biei|asahikawa-daisetsuzan|niseko-yoichi)"\]\s*,?\s*){2,})\{\s*min-width:\s*0\s*;/);
-assert(shrinkRule,'Missing grouped shrinkable body rule for the seven Hokkaido pages.');
-for(const page of ['hokkaido','sapporo','otaru-shakotan','hakodate-onuma','furano-biei','asahikawa-daisetsuzan','niseko-yoichi'])assert(shrinkRule[1].includes(`body[data-page="${page}"]`),`Grouped shrinkable body rule omits ${page}.`);
+const shrinkRule=css.match(/((?:body\[data-page="(?:hokkaido|sapporo|otaru-shakotan|hakodate-onuma|noboribetsu-lake-toya|furano-biei|asahikawa-daisetsuzan|kushiro-lake-akan|niseko-yoichi|abashiri-shiretoko)"\]\s*,?\s*){2,})\{\s*min-width:\s*0\s*;/);
+assert(shrinkRule,'Missing grouped shrinkable body rule for the ten Hokkaido pages.');
+for(const page of ['hokkaido','sapporo','otaru-shakotan','hakodate-onuma','noboribetsu-lake-toya','furano-biei','asahikawa-daisetsuzan','kushiro-lake-akan','niseko-yoichi','abashiri-shiretoko'])assert(shrinkRule[1].includes(`body[data-page="${page}"]`),`Grouped shrinkable body rule omits ${page}.`);
 assert(/@media\s*\(max-width:\s*390px\)[\s\S]*?body\[data-page="hokkaido"\][\s\S]*?min-width:\s*0/.test(css),'Hokkaido 390px responsive shrink guard is missing.');
 assert(/\.hokkaido-live-notice\s*\{[^}]*min-width:0/.test(css)||css.includes('body[data-page="hakodate-onuma"] .hokkaido-live-notice { min-width:0;'),'Hakodate live access note needs a shrink rule.');
-assert(!/body\[data-page="(?:hokkaido|sapporo|otaru-shakotan|hakodate-onuma|furano-biei|asahikawa-daisetsuzan|niseko-yoichi)"\][^{]*\{[^}]*overflow-x:\s*hidden/.test(css),'Hokkaido width guard must not conceal horizontal overflow.');
+assert(!/body\[data-page="(?:hokkaido|sapporo|otaru-shakotan|hakodate-onuma|noboribetsu-lake-toya|furano-biei|asahikawa-daisetsuzan|kushiro-lake-akan|niseko-yoichi|abashiri-shiretoko)"\][^{]*\{[^}]*overflow-x:\s*hidden/.test(css),'Hokkaido width guard must not conceal horizontal overflow.');
 const inventory=freshPhotoInventory();
+const reviewedHokkaidoPhotos=[
+ '/assets/images/hokkaido-noboribetsu-jigokudani.webp',
+ '/assets/images/hokkaido-lake-toya.webp',
+ '/assets/images/hokkaido-kushiro-marsh.webp',
+ '/assets/images/hokkaido-red-crowned-cranes.webp',
+ '/assets/images/hokkaido-lake-akan.webp',
+ '/assets/images/hokkaido-abashiri-drift-ice.webp',
+ '/assets/images/hokkaido-shiretoko-five-lakes.webp'
+];
+assert(fs.existsSync(path.join(root,'reports','hokkaido-east-photo-review-2026-10-06.md')),'Keep the Hokkaido eastern-route photo review evidence.');
+for(const assetPath of reviewedHokkaidoPhotos){const entry=inventory.entries.find(x=>x.assetPaths.includes(assetPath));const record=entry?.sourceRecords.find(x=>x.assetPath===assetPath);assert(record?.verificationStatus==='source_page_checked'&&record.verificationDate==='2026-10-06',`Hokkaido photo source page needs a current check: ${assetPath}`);assert(record.visualReviewStatus==='visually_reviewed_2026-10-06',`Hokkaido photo visual review needs a current record: ${assetPath}`);}
 const pages=[];const imageSet=new Set();const cssPaths=new Set();let visiblePhotoCount=0,maxHtmlBytes=0,maxInitialBytes=0,maxHeroBytes=0;
 for(const locale of locales){for(const route of expectedRoutes){
  const urlPath=locale.prefix+route.path;
@@ -77,6 +91,9 @@ for(const locale of locales){for(const route of expectedRoutes){
   const source=find(doc,n=>n.tagName==='section'&&(n.attrs||[]).some(a=>a.name==='class'&&a.value.split(/\s+/).includes('sources')));assert(source,`${urlPath} has no visible source/credit section.`);const sourceHrefs=new Set();walk(source,n=>{if(n.tagName==='a'&&attr(n,'href'))sourceHrefs.add(attr(n,'href'))});const sourceText=textOf(source).replace(/\s+/g,' ');
   for(const src of imagePaths){const entry=inventory.entries.find(x=>x.assetPaths.includes(src));assert(entry,`${urlPath} image is missing from the license inventory: ${src}`);const r=entry.sourceRecords[0];assert(r?.sourceUrl&&r.creator&&r.license&&r.licenseUrl,`${urlPath} has incomplete image provenance: ${src}`);assert(sourceHrefs.has(r.sourceUrl),`${urlPath} is missing source link ${r.sourceUrl}`);assert(sourceHrefs.has(r.licenseUrl),`${urlPath} is missing linked license ${r.licenseUrl}`);assert(sourceText.includes(r.creator),`${urlPath} is missing creator ${r.creator}`);if(r.license.includes('BY-SA'))assert(/shared under|same license version/i.test(sourceText),`${urlPath} is missing the CC BY-SA same-license note.`);visiblePhotoCount++}
   const required={
+   '/japan/hokkaido/noboribetsu-lake-toya/':['1857','110,000 years','45,000 years','14 March 2026','Oyunuma'],
+   '/japan/hokkaido/kushiro-lake-akan/':['10 October 2026','1 April 2026–31 March 2027','Akanko Ainu Kotan','November–March','tancho cranes do not inhabit Lake Akan'],
+   '/japan/hokkaido/abashiri-shiretoko/':['June 1–September 30','November 8','May 10–July 31','January 22–March 22','sir.etok'],
    '/japan/hokkaido/':['Otaru is a straightforward rail outing','Kushiro and Shiretoko need local nights','one corridor first'],
    '/japan/hokkaido/sapporo/':['Nijo Market','Tanukikoji','Odori Park'],
    '/japan/hokkaido/otaru-shakotan/':['completed in 1923','half the original channel','Shakotan'],
@@ -91,18 +108,18 @@ for(const locale of locales){for(const route of expectedRoutes){
  assert(!externalCriticalAsset,`${urlPath} adds an external stylesheet or script outside the local transfer budget.`);assert(heroPath,`${urlPath} is missing a high-priority hero image.`);const heroFile=localPath(new URL(heroPath,'https://tripdistill.com'+urlPath).pathname);assert(fs.existsSync(heroFile),`${urlPath} hero image is missing.`);const heroBytes=fs.statSync(heroFile).size;const htmlBytes=bytes.length;assert(htmlBytes<=55000,`${urlPath} HTML is ${htmlBytes} bytes; Hokkaido limit is 55,000.`);assert(heroBytes<=650000,`${urlPath} hero is ${heroBytes} bytes; limit is 650,000.`);const criticalPaths=[...new Set([...criticalAssets,heroPath])];let initialBytes=htmlBytes;for(const asset of criticalPaths){const assetFile=localPath(new URL(asset,'https://tripdistill.com'+urlPath).pathname);assert(fs.existsSync(assetFile),`${urlPath} initial resource is missing: ${asset}`);initialBytes+=fs.statSync(assetFile).size}assert(initialBytes<=1000000,`${urlPath} initial local transfer is ${initialBytes} bytes; limit is 1,000,000.`);maxHtmlBytes=Math.max(maxHtmlBytes,htmlBytes);maxHeroBytes=Math.max(maxHeroBytes,heroBytes);maxInitialBytes=Math.max(maxInitialBytes,initialBytes);
  pages.push({locale:locale.code,path:urlPath,record,bytes});
 }}
-assert(manifest.pages.length===35,'Manifest has an unexpected page count.');
+assert(manifest.pages.length===50,'Manifest has an unexpected page count.');
 assert(imageSet.size===manifest.images.length,'Manifest image set does not cover all route images.');
 for(const item of manifest.images){const file=localPath(item.path);assert(fs.existsSync(file),`Missing image ${item.path}.`);const bytes=fs.readFileSync(file);assert(hash(bytes)===item.sha256,`Image hash mismatch ${item.path}.`)}
 for(const item of manifest.stylesheets){const file=localPath(item.path);assert(fs.existsSync(file),`Missing stylesheet ${item.path}.`);const bytes=fs.readFileSync(file);assert(hash(bytes)===item.sha256,`Stylesheet hash mismatch ${item.path}.`);cssPaths.add(item.path)}
 assert(isDeepStrictEqual([...cssPaths],['/css/site.css']),'Hokkaido harness must pin only the shared site stylesheet.');
 const harnessDoc=parse(harness);let routeControl=false,localeControl=false,titledFrames=0;walk(harnessDoc,n=>{if(n.tagName==='select'&&attr(n,'id')==='route')routeControl=true;if(n.tagName==='select'&&attr(n,'id')==='locale')localeControl=true;if(n.tagName==='iframe'&&attr(n,'title'))titledFrames++});assert(routeControl&&localeControl&&titledFrames===2,'Harness needs labeled route/language controls and two titled frames.');
-console.log(`Local Hokkaido harness verified: ${pages.length} route-language pages (7 routes x 5 locales), ${manifest.images.length} images, ${manifest.stylesheets.length} stylesheet, 320/390px frame configuration, responsive shrink guard, SEO, accessibility, photo credits, FAQs, locale metadata, 4,560 sitemap URLs, max HTML ${maxHtmlBytes} bytes, max initial local transfer ${maxInitialBytes} bytes, max hero ${maxHeroBytes} bytes.`);
+console.log(`Local Hokkaido harness verified: ${pages.length} route-language pages (10 routes x 5 locales), ${manifest.images.length} images, ${manifest.stylesheets.length} stylesheet, 320/390px frame configuration, responsive shrink guard, SEO, accessibility, photo credits, FAQs, locale metadata, 4,560 sitemap URLs, max HTML ${maxHtmlBytes} bytes, max initial local transfer ${maxInitialBytes} bytes, max hero ${maxHeroBytes} bytes.`);
 if(live){
  async function remote(urlPath,expectedHash){const response=await fetch(origin+urlPath,{redirect:'follow'});assert(response.status===200,`${urlPath} returned HTTP ${response.status}.`);const bytes=Buffer.from(await response.arrayBuffer());assert(hash(bytes)===expectedHash,`${urlPath} differs from the reviewed build.`)}
  const mr=await fetch(origin+'/qa/hokkaido-responsive/release.json',{redirect:'follow'});assert(mr.status===200,`Remote release manifest HTTP ${mr.status}.`);const remoteManifest=await mr.json();assert(isDeepStrictEqual(remoteManifest,manifest),'Remote preview commit/page manifest differs from local release.');
  const hr=await fetch(origin+'/qa/hokkaido-responsive/',{redirect:'follow'});assert(hr.status===200,`Remote harness HTTP ${hr.status}.`);const hb=Buffer.from(await hr.arrayBuffer());assert(hash(hb)===hash(fs.readFileSync(htmlPath)),'Remote noindex harness differs from local build.');assert(hb.toString('utf8').includes('name="robots" content="noindex,nofollow,noarchive"'),'Live harness noindex policy missing.');
  const sr=await fetch(origin+'/sitemap.xml',{redirect:'follow'});assert(sr.status===200,`Live sitemap HTTP ${sr.status}.`);const sitemapBytes=Buffer.from(await sr.arrayBuffer());const liveUrls=[...sitemapBytes.toString('utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);assert(liveUrls.length===4560&&new Set(liveUrls).size===4560,'Live sitemap route count or uniqueness changed.');assert(hash(sitemapBytes)===hash(fs.readFileSync(path.join(dist,'sitemap.xml'))),'Live sitemap differs from local built sitemap.');
  for(const page of pages)await remote(page.path,page.record.sha256);for(const item of [...manifest.images,...manifest.stylesheets])await remote(item.path,item.sha256);
- console.log(`Live Hokkaido preview verified at ${origin}: 35/35 localized pages, ${manifest.images.length}/${manifest.images.length} images, ${manifest.stylesheets.length}/${manifest.stylesheets.length} stylesheet, noindex harness and unchanged 4,560-URL sitemap.`)
+ console.log(`Live Hokkaido preview verified at ${origin}: 50/50 localized pages, ${manifest.images.length}/${manifest.images.length} images, ${manifest.stylesheets.length}/${manifest.stylesheets.length} stylesheet, noindex harness and unchanged 4,560-URL sitemap.`)
 }

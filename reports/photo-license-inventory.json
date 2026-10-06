@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T12:37:09.714Z",
+  "generatedAt": "2026-10-06T14:35:10.869Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 670,
+    "licenseClaimsNotIndependentlyVerified": 667,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -12,15 +12,15 @@
     "deduplicatedImageCount": 779,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3555,
-    "assetsUsedByScannedEnglishPages": 779,
+    "imageReferencesScanned": 3554,
+    "assetsUsedByScannedEnglishPages": 778,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 170,
-    "assetsWithExplicitEnglishCreditMatch": 43,
-    "assetsVisuallyReviewed": 46,
+    "assetsWithMatchedEnglishCreditOnly": 163,
+    "assetsWithExplicitEnglishCreditMatch": 50,
+    "assetsVisuallyReviewed": 49,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 109,
-    "metadataOrCreditOnly": 670,
+    "sourcePageChecked": 112,
+    "metadataOrCreditOnly": 667,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
@@ -10302,17 +10302,17 @@
         {
           "assetPath": "/assets/images/hokkaido-abashiri-drift-ice.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hokkaido-Abashiri_Drift_Icebreaker_Ship_Aurora-xl.jpg",
-          "sourceTitle": "Abashiri drift-ice photo",
-          "creditLabel": "Abashiri drift-ice photo",
+          "sourceTitle": "Hokkaido-Abashiri Drift Icebreaker Ship Aurora-xl",
+          "creditLabel": "Hokkaido-Abashiri Drift Icebreaker Ship Aurora-xl",
           "creator": "kkawamura",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "editHistory": "Cropped/resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
           "verificationDetail": "Hokkaido image review: exact Commons source title, kkawamura creator credit, and CC BY 4.0 terms checked against the source page.",
@@ -10326,7 +10326,7 @@
             "Drift ice extending from an icebreaker ship off Abashiri"
           ],
           "rawVisibleCredits": [
-            "Abashiri drift-ice photo — kkawamura, CC BY 4.0."
+            "Photo: “Abashiri Aurora icebreaker among drift ice” by kkawamura, CC BY 4.0. Cropped/resized and converted to WebP."
           ]
         }
       ]
@@ -10570,17 +10570,17 @@
         {
           "assetPath": "/assets/images/hokkaido-kushiro-marsh.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kushiro_Marsh.jpg",
-          "sourceTitle": "Kushiro Marsh photo",
-          "creditLabel": "Kushiro Marsh photo",
+          "sourceTitle": "Kushiro Marsh",
+          "creditLabel": "Kushiro Marsh",
           "creator": "jetalone",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "editHistory": "Cropped/resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
           "verificationDetail": "Hokkaido image review: exact Commons source title, jetalone creator credit, and CC BY 2.0 terms checked against the source page.",
@@ -10594,7 +10594,7 @@
             "Broad green reedbeds across Kushiro Marsh"
           ],
           "rawVisibleCredits": [
-            "Kushiro Marsh photo — jetalone, CC BY 2.0."
+            "Photo: “Kushiro Marsh from Kottaro Observatory” by jetalone, CC BY 2.0. Cropped/resized and converted to WebP."
           ]
         }
       ]
@@ -10609,29 +10609,29 @@
         {
           "assetPath": "/assets/images/hokkaido-lake-akan.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Akan_Kushiro_Hokkaido_Japan04n.jpg",
-          "sourceTitle": "Lake Akan photo",
-          "creditLabel": "Lake Akan photo",
+          "sourceTitle": "Lake Akan Kushiro Hokkaido Japan04n",
+          "creditLabel": "Lake Akan Kushiro Hokkaido Japan04n",
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Cropped/resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/kushiro-lake-akan/"
           ],
           "altTexts": [
-            "Forested shore and calm water of Lake Akan"
+            "Forested volcanic ridges beyond the shore of Lake Akan"
           ],
           "rawVisibleCredits": [
-            "Lake Akan photo — 663highland, CC BY 2.5."
+            "Photo: “Lake Akan, Kushiro” by 663highland, CC BY 2.5. Cropped/resized and converted to WebP."
           ]
         }
       ]
@@ -10646,29 +10646,29 @@
         {
           "assetPath": "/assets/images/hokkaido-lake-toya.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:130922_Lake_Toya_Toyako_Hokkaido_Japan01s5.jpg",
-          "sourceTitle": "Lake Toya photo",
-          "creditLabel": "Lake Toya photo",
+          "sourceTitle": "130922 Lake Toya Toyako Hokkaido Japan01s5",
+          "creditLabel": "130922 Lake Toya Toyako Hokkaido Japan01s5",
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Cropped/resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/noboribetsu-lake-toya/"
           ],
           "altTexts": [
-            "Lake Toya and its central islands under a blue sky"
+            "Morning sun over Lake Toya and its central islands, seen from the Windsor Hotel ridge"
           ],
           "rawVisibleCredits": [
-            "Lake Toya photo — 663highland, CC BY 2.5."
+            "Photo: “Morning sun over Lake Toya” by 663highland, CC BY 2.5. Cropped/resized and converted to WebP."
           ]
         }
       ]
@@ -10721,17 +10721,17 @@
         {
           "assetPath": "/assets/images/hokkaido-noboribetsu-jigokudani.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg",
-          "sourceTitle": "Noboribetsu Jigokudani photo",
-          "creditLabel": "Noboribetsu Jigokudani photo",
+          "sourceTitle": "Jigokudani (Hell Valley), Noboribetsu Onsen, Hokkaido, April 2023 02",
+          "creditLabel": "Jigokudani (Hell Valley), Noboribetsu Onsen, Hokkaido, April 2023 02",
           "creator": "Calistemon",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "editHistory": "Cropped/resized and converted to WebP; this image adaptation is shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
           "verificationDetail": "Hokkaido image review: exact Commons source title, Calistemon creator credit, and CC BY-SA 4.0 terms checked against the source page.",
@@ -10745,7 +10745,7 @@
             "Boardwalk across the volcanic Jigokudani valley at Noboribetsu"
           ],
           "rawVisibleCredits": [
-            "Noboribetsu Jigokudani photo — Calistemon, CC BY-SA 4.0."
+            "Photo: “Jigokudani at Noboribetsu Onsen” by Calistemon, CC BY-SA 4.0. Cropped/resized and converted to WebP; this image adaptation is shared under the same license version."
           ]
         }
       ]
@@ -10836,29 +10836,25 @@
         {
           "assetPath": "/assets/images/hokkaido-red-crowned-cranes.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grus_japonensis_-Hokkaido,_Japan_-several-8_(1).jpg",
-          "sourceTitle": "Red-crowned cranes photo",
-          "creditLabel": "Red-crowned cranes photo",
+          "sourceTitle": "Grus japonensis -Hokkaido, Japan -several-8 (1)",
+          "creditLabel": "Grus japonensis -Hokkaido, Japan -several-8 (1)",
           "creator": "Alastair Rae",
           "license": "CC BY-SA 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 1,
-          "routes": [
-            "/japan/hokkaido/kushiro-lake-akan/"
-          ],
-          "altTexts": [
-            "Red-crowned cranes standing on snowy ground in Hokkaido"
-          ],
+          "editHistory": "Cropped/resized and converted to WebP; this image adaptation is shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Alastair Rae creator credit, and CC BY-SA 2.0 terms checked against the source page.",
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
           "rawVisibleCredits": [
-            "Red-crowned cranes photo — Alastair Rae, CC BY-SA 2.0."
+            "Photo: “Several red-crowned cranes in Hokkaido” by Alastair Rae, CC BY-SA 2.0. Cropped/resized and converted to WebP; this image adaptation is shared under the same license version."
           ]
         }
       ]
@@ -10912,17 +10908,17 @@
         {
           "assetPath": "/assets/images/hokkaido-shiretoko-five-lakes.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:140829_Ichiko_of_Shiretoko_Goko_Lakes_Hokkaido_Japan01s5.jpg",
-          "sourceTitle": "Shiretoko Five Lakes photo",
-          "creditLabel": "Shiretoko Five Lakes photo",
+          "sourceTitle": "140829 Ichiko of Shiretoko Goko Lakes Hokkaido Japan01s5",
+          "creditLabel": "140829 Ichiko of Shiretoko Goko Lakes Hokkaido Japan01s5",
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "editHistory": "Cropped/resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
           "verificationDetail": "Hokkaido image review: exact Commons source title, 663highland creator credit, and CC BY 2.5 terms checked against the source page.",
@@ -10932,10 +10928,11 @@
             "/japan/hokkaido/abashiri-shiretoko/"
           ],
           "altTexts": [
-            "Shiretoko mountains reflected in one of the Five Lakes"
+            "Shiretoko mountains reflected in one of the Five Lakes",
+            "Lake Ichiko reflecting forest and the Shiretoko mountain range"
           ],
           "rawVisibleCredits": [
-            "Shiretoko Five Lakes photo — 663highland, CC BY 2.5."
+            "Photo: “Lake Ichiko at Shiretoko Five Lakes” by 663highland, CC BY 2.5. Cropped/resized and converted to WebP."
           ]
         }
       ]
