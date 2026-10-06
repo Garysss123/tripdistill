@@ -80,6 +80,12 @@ Sources checked on 6 October 2026:
 
 Four reviewed locale batches (`93-kyoto-access-copy-refresh.json`) supply the same five-route update in zh-Hant, ja, ko and th. Each has 46/46 newly required targets filled; the exact batch validators and samples passed. Locale review also corrected active older wording in zh-Hant (12 values) and Korean (8 values), then removed 23 superseded entries per locale from the older batch. `npm run audit:i18n` passes with 51,853 required strings per language and no missing or stale translations; 207,412 reviewed targets were checked.
 
-The full `npm run audit` passed all country and editorial regressions and the site audit (4,560 localized routes; 912 per locale; 955 search records per language; 4,560 unique localized titles). `npm run build` passed with 5,430 files, 4,577 HTML files and 780 images (309.0 MiB); it verified all 4,560 sitemap routes and left 14,570 Pages-file slots before the safety boundary. `git diff --check` passed. Final branch, commit, preview URLs and the dedicated 45-route/five-locale harness results are recorded here after preview deployment.
+The full `npm run audit` passed all country and editorial regressions and the site audit (4,560 localized routes; 912 per locale; 955 search records per language; 4,560 unique localized titles). `npm run build` passed with 5,430 files, 4,577 HTML files and 780 images (309.0 MiB); it verified all 4,560 sitemap routes and left 14,570 Pages-file slots before the safety boundary. `git diff --check` passed. The final branch, commit, and deployment identity are included in the delivery handoff.
 
 No local browser was launched and no screenshots or rendered viewport measurements are claimed. The harness defines paired 320/390 CSS-pixel frames and validates localized route metadata, photo credits and asset/style hashes; it is source/artifact verification, not a visual rendering sign-off.
+
+## Preview release
+
+Published to the existing Cloudflare Pages project `trip` on preview branch `kyoto-qa`; the stable preview alias is [kyoto-qa.trip-68e.pages.dev](https://kyoto-qa.trip-68e.pages.dev). Wrangler's read-only project listing confirmed `trip` is mapped to `trip-68e.pages.dev` and `tripdistill.com`. Production was not deployed or changed.
+
+The live harness returned 45/45 localized Kyoto pages with the expected route metadata and photo-credit checks, matching shared and Kyoto stylesheet hashes, and 16/16 referenced image body hashes. The existing 4,560-route sitemap remains unchanged. This verifies the published HTML/assets and release identity; no screenshot, browser-rendered visual inspection, keyboard interaction sweep, or live-web performance measurement was performed.
