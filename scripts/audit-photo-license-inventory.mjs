@@ -270,7 +270,12 @@ const verifiedSourcePageDetails = new Map([
     'https://commons.wikimedia.org/wiki/File:Osaka_skyline_at_night_from_Umeda_Sky_Building.jpg',
     'Osaka source review: exact Commons title, Kaiza96 authorship, Osaka night skyline from the Umeda Sky Building subject, and CC BY-SA 3.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present. The page also carries a Japan architectural-work reproduction notice, recorded in the Osaka source report.',
     '2026-10-06'
-  ]
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg',
+    'Osaka source review: exact Commons title, Luka Peternel authorship, Osaka Castle cherry blossom subject, and CC BY-SA 4.0 terms checked against the source page. Attribution, license link, edit disclosure and same-license terms are present; the image was not visually reviewed in this check.',
+    '2026-10-06'
+  ],
 ].map(([sourceUrl, detail, checkedOn]) => [sourceUrl, { checkedOn: checkedOn || '2026-10-05', detail }]));
 
 const genericTokens = new Set(('a an and at by from for in into of on or the to with through view photo image picture scene landscape city town lake river road street park guide travel at the a view panorama night day north south east west central main old new near beyond under over beside walk route district guide file webp jpg jpeg commons official').split(' '));
@@ -716,6 +721,7 @@ const report = {
     currentFile: 'The current replacement remains included as the current asset at the same path.'
   },
   entries: grouped,
+  countInterpretation: 'licenseClaimsNotIndependentlyVerified and metadataOrCreditOnly count current inventory records without an independently checked source-page entry. They do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and those figures are not additive.',
   unmatchedAssets: unmatchedByAsset,
   sourceMetadataConflicts: sourceConflicts
 };
@@ -734,6 +740,7 @@ const summaryLines = [
   '## Verification limits',
   '',
   'Source-page verification counts are computed per file record. Every independently checked source is tagged with the date and finding; unverified claims are reported separately and must not be treated as confirmed permission. Commercial reuse is described only as allowed by the stated license; that claim does not independently confirm the source rights or attribution details.',
+  'The inventory status `licenseClaimsNotIndependentlyVerified` means this inventory has no independent source-page check recorded for the current asset record; it is not a count of pages never researched. Separate source-review logs record page reach and unresolved cases for overlapping assets, so the counts answer different questions and must not be added together.',
   '',
   'The inventory records share-alike rows with the same-license adaptation term. Review row-level attributionTerms and editHistory before reusing an asset.',
   '',

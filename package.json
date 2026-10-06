@@ -57,7 +57,7 @@
     "localize": "npm run i18n:approve && npm run localize:pages",
     "sync:metadata": "node scripts/sync-language-metadata.mjs",
     "sync:sitemap": "node scripts/sync-sitemap.mjs",
-    "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
+    "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:photo-license-inventory && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
     "build": "npm run localize && node scripts/build-dist.mjs",
     "build:tokyo-qa-harness": "node scripts/build-tokyo-qa-harness.mjs",
     "build:kyoto-qa-harness": "node scripts/build-kyoto-qa-harness.mjs",
@@ -79,7 +79,8 @@
     "check:kyoto-qa-harness-live": "node scripts/check-kyoto-qa-harness.mjs --live",
     "deploy:kyoto-qa": "npm run audit && npm run build && npm run build:kyoto-qa-harness && npm run check:kyoto-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch kyoto-qa && npm run check:kyoto-qa-harness-live",
     "deploy:osaka-qa": "npm run audit && npm run build && npm run build:osaka-qa-harness && npm run check:osaka-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch osaka-qa && npm run check:osaka-qa-harness-live",
-    "deploy:hokkaido-qa": "npm run audit && npm run build && npm run build:hokkaido-qa-harness && npm run check:hokkaido-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch hokkaido-qa && npm run check:hokkaido-qa-harness-live"
+    "deploy:hokkaido-qa": "npm run audit && npm run build && npm run build:hokkaido-qa-harness && npm run check:hokkaido-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch hokkaido-qa && npm run check:hokkaido-qa-harness-live",
+    "audit:photo-license-inventory": "node scripts/test-photo-license-inventory-regression.mjs"
   },
   "engines": {
     "node": ">=20.19.0"

@@ -1,0 +1,19 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/",
+    "/japan/hokkaido/sapporo/",
+    "/japan/hokkaido/otaru-shakotan/"
+  ],
+  "translations": {
+    "Trip shape · regional arc": "รูปแบบทริป · เส้นทางข้ามภูมิภาค",
+    "First trip scope": "กำหนดขอบเขตทริปแรก",
+    "Choose one regional arc": "เลือกเส้นทางหลักข้ามภูมิภาคเพียงหนึ่งแนว",
+    "Central-west, south or east; give longer transfers local nights.": "เลือกเที่ยวฝั่งกลางค่อนไปทางตะวันตก ทางใต้ หรือทางตะวันออก แล้วเผื่อคืนพักในพื้นที่สำหรับช่วงเดินทางต่อที่ใช้เวลานาน",
+    "Three seasonal constraints to plan around": "ข้อจำกัดตามฤดูกาล 3 เรื่องที่ควรวางแผนเผื่อ",
+    "Use the Clock Tower, river, market and tower to read the central grid once. Visit Sapporo’s official one-day walk gives useful bearings: the Clock Tower is about 10 minutes on foot from Sapporo Station or 5 from Odori; to reach Nijo Market, walk east from the Clock Tower, then follow the Sosei River south (about 12 minutes in total). The TV Tower is about 5 minutes farther on foot. Nijo is best earlier in the day, so swap the order when you arrive late.": "ใช้ Clock Tower แม่น้ำ ตลาด และ TV Tower เพื่อทำความเข้าใจผังใจกลางเมืองในคราวเดียว เส้นทางเดินหนึ่งวันอย่างเป็นทางการของ Visit Sapporo ช่วยกะระยะได้: Clock Tower เดินจาก Sapporo Station ประมาณ 10 นาที หรือ 5 นาทีจาก Odori; หากจะไปตลาด Nijo ให้เดินไปทางตะวันออกจาก Clock Tower แล้วเลียบแม่น้ำ Sosei ลงใต้ (ใช้เวลารวมประมาณ 12 นาที) จากนั้น TV Tower อยู่เลยไปอีกประมาณ 5 นาทีเมื่อเดิน ตลาด Nijo เหมาะไปช่วงต้นวันกว่า หากมาถึงช้าให้สลับลำดับการเที่ยว",
+    "Start with the tower’s exhibits. Walk east from the Clock Tower, then follow the Sosei River south to Nijo Market. Check current opening hours and treat the market as a meal stop, not a corridor for close-up photography.": "เริ่มชมใน Clock Tower แล้วเดินไปทางตะวันออกจาก Clock Tower จากนั้นเลียบแม่น้ำ Sosei ลงใต้ไปยังตลาด Nijo ตรวจสอบเวลาเปิดปัจจุบัน และใช้ตลาดเป็นจุดแวะรับประทานอาหาร ไม่ใช่ทางเดินสำหรับถ่ายภาพระยะใกล้",
+    "Otaru Station stands above the waterfront, so walk downhill once: the canal, old warehouses and merchant buildings are one port sequence. The canal was completed in 1923 between the original shoreline and harbor land reclamation; it was not an inland river. A 1960s proposal to fill the whole canal for a road drew a preservation movement that changed the plan. Half the original channel was eventually filled for the road; the remaining half became today’s canal. That history explains the canal’s unusual shape and why the road-side and north end feel different.": "สถานี Otaru อยู่สูงกว่าริมน้ำ จึงเดินลงเนินไปทางท่าเรือได้ในเที่ยวเดียว คลอง โกดังเก่า และอาคารพ่อค้าเรียงต่อกันเป็นเส้นทางเดียวของท่าเรือ คลองสร้างเสร็จในปี 1923 ระหว่างแนวชายฝั่งเดิมกับพื้นที่ถมทะเลของท่าเรือ ไม่ใช่แม่น้ำที่อยู่ลึกเข้าไปในแผ่นดิน ในทศวรรษ 1960 มีข้อเสนอให้ถมคลองทั้งหมดเพื่อสร้างถนน จนเกิดการเคลื่อนไหวเพื่ออนุรักษ์ที่ทำให้แผนเปลี่ยนไป ต่อมาคลองเดิมถูกถมไปครึ่งหนึ่งเพื่อทำถนน ส่วนอีกครึ่งที่เหลือได้รับการอนุรักษ์และกลายเป็นคลองที่เห็นในปัจจุบัน ประวัตินี้อธิบายรูปทรงที่แปลกตาของคลองและความแตกต่างระหว่างฝั่งถนนกับด้านเหนือ"
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-06T09:37:24.794Z",
+  "generatedAt": "2026-10-06T10:41:45.255Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
-    "completeSourceCreatorLicenseRecords": 778,
+    "completeSourceCreatorLicenseRecords": 779,
     "licenseClaimsNotIndependentlyVerified": 673,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
@@ -16,13 +16,13 @@
     "assetsUsedByScannedEnglishPages": 779,
     "assetsWithStructuredSourceRecords": 566,
     "assetsWithMatchedEnglishCreditOnly": 176,
-    "assetsWithExplicitEnglishCreditMatch": 36,
+    "assetsWithExplicitEnglishCreditMatch": 37,
     "assetsVisuallyReviewed": 44,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 105,
+    "sourcePageChecked": 106,
     "metadataOrCreditOnly": 673,
-    "missingSourceCreditMatch": 1,
-    "incompleteAttributionFields": 1,
+    "missingSourceCreditMatch": 0,
+    "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
     "moduleErrors": 0
   },
@@ -18301,21 +18301,21 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/osaka-castle-sakura.webp",
-          "sourceUrl": null,
-          "sourceTitle": null,
-          "creditLabel": null,
-          "creator": null,
-          "license": null,
-          "licenseUrl": null,
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "unmatched",
-          "creditMatchNote": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg",
+          "sourceTitle": "Osaka Castle cherry blossom, 2018",
+          "creditLabel": "Osaka Castle cherry blossom, 2018",
+          "creator": "Luka Peternel",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "resized and converted to WebP for this page; this version is shared under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "missing_source_credit_match",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Luka Peternel authorship, Osaka Castle cherry blossom subject, and CC BY-SA 4.0 terms checked against the source page. Attribution, license link, edit disclosure and same-license terms are present; the image was not visually reviewed in this check.",
           "useCount": 2,
           "routes": [
             "/japan/",
@@ -18325,7 +18325,9 @@
             "Osaka Castle above spring cherry blossoms",
             "Osaka Castle framed by cherry blossoms"
           ],
-          "rawVisibleCredits": []
+          "rawVisibleCredits": [
+            "Osaka Castle cherry blossom, 2018 by Luka Peternel, licensed CC BY-SA 4.0; resized and converted to WebP for this page; this version is shared under the same CC BY-SA 4.0 license."
+          ]
         }
       ]
     },
@@ -31541,15 +31543,7 @@
       ]
     }
   ],
-  "unmatchedAssets": [
-    {
-      "src": "/assets/images/osaka-castle-sakura.webp",
-      "missing": [
-        "sourceUrl",
-        "creator",
-        "license"
-      ]
-    }
-  ],
+  "countInterpretation": "licenseClaimsNotIndependentlyVerified and metadataOrCreditOnly count current inventory records without an independently checked source-page entry. They do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and those figures are not additive.",
+  "unmatchedAssets": [],
   "sourceMetadataConflicts": []
 }

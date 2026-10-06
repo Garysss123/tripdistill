@@ -1,0 +1,19 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/",
+    "/japan/hokkaido/sapporo/",
+    "/japan/hokkaido/otaru-shakotan/"
+  ],
+  "translations": {
+    "Trip shape · regional arc": "여행 구성 · 지역별 이동 축",
+    "First trip scope": "첫 여행의 범위",
+    "Choose one regional arc": "지역별 이동 축 하나를 선택하세요",
+    "Central-west, south or east; give longer transfers local nights.": "중서부, 남부, 동부 중 한 곳을 고르고 이동 시간이 긴 구간은 현지에서 숙박하세요.",
+    "Three seasonal constraints to plan around": "계획에 반영할 세 가지 계절 변수",
+    "Use the Clock Tower, river, market and tower to read the central grid once. Visit Sapporo’s official one-day walk gives useful bearings: the Clock Tower is about 10 minutes on foot from Sapporo Station or 5 from Odori; to reach Nijo Market, walk east from the Clock Tower, then follow the Sosei River south (about 12 minutes in total). The TV Tower is about 5 minutes farther on foot. Nijo is best earlier in the day, so swap the order when you arrive late.": "시계탑과 강, 시장, 타워를 기준으로 도심의 바둑판형 도로망을 한 번 파악하세요. Visit Sapporo의 공식 1일 도보 코스가 유용한 길잡이가 됩니다. 시계탑은 삿포로역에서 걸어서 약 10분, 오도리에서 약 5분 거리입니다. 니조 시장으로 가려면 시계탑에서 동쪽으로 걸은 뒤 소세이강을 따라 남쪽으로 이동하세요(총 약 12분). 삿포로 TV 타워는 여기서 걸어서 약 5분 더 걸립니다. 니조 시장은 이른 시간에 방문하기 좋으므로 늦게 도착하면 순서를 바꾸세요.",
+    "Start with the tower’s exhibits. Walk east from the Clock Tower, then follow the Sosei River south to Nijo Market. Check current opening hours and treat the market as a meal stop, not a corridor for close-up photography.": "시계탑 전시를 먼저 둘러보세요. 시계탑에서 동쪽으로 걸은 뒤 소세이강을 따라 남쪽으로 가면 니조 시장에 도착합니다. 현재 운영 시간을 확인하고, 시장은 가까이서 사진을 찍으며 지나가는 곳이 아니라 식사하는 장소로 이용하세요.",
+    "Otaru Station stands above the waterfront, so walk downhill once: the canal, old warehouses and merchant buildings are one port sequence. The canal was completed in 1923 between the original shoreline and harbor land reclamation; it was not an inland river. A 1960s proposal to fill the whole canal for a road drew a preservation movement that changed the plan. Half the original channel was eventually filled for the road; the remaining half became today’s canal. That history explains the canal’s unusual shape and why the road-side and north end feel different.": "오타루역은 해안보다 높은 곳에 있습니다. 역에서 내리막길을 따라가면 운하와 옛 창고, 상인 건물을 차례로 둘러볼 수 있습니다. 이곳들은 항구를 따라 이어진 동선입니다. 오타루 운하는 원래 해안선과 항만 매립지 사이에 1923년에 완성됐으며, 내륙의 강이 아닙니다. 1960년대에는 도로를 위해 운하 전체를 메우려는 계획이 제안됐습니다. 이에 보존 운동이 일어나 원래 계획이 바뀌었습니다. 이후 도로를 내기 위해 원래 운하의 절반이 메워졌고, 나머지 절반은 현재의 운하로 남았습니다. 이 역사를 알면 운하의 독특한 형태와 도로 쪽 구간 및 북쪽 끝의 분위기가 다른 이유를 이해할 수 있습니다."
+  }
+}
