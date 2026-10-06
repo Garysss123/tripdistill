@@ -1,0 +1,10 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare Tokyo, Kyoto and Osaka city breaks with a separate Hokkaido trip; plan a realistic 7–14 day route, check dated JR fares and use official entry references.": "도쿄·교토·오사카의 도시 여행과 별도의 홋카이도 여행을 비교하고, 현실적인 7–14일 일정을 계획하세요. 날짜별 JR 요금을 확인하고 공식 입국 안내를 참고하세요."
+  }
+}

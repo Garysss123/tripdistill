@@ -23,6 +23,30 @@ const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
+const japanOverviewLastmod = '2026-10-06';
+// These route-specific edit dates come from the current source history:
+// 15147d0 changed the nine Tokyo routes, 42cdc8b changed five Kyoto guides,
+// and 6297cc7 changed Osaka Bay. /japan/ reflects this overview source edit.
+// Dates record content changes, not a full re-check of every operating detail.
+// The localized URLs inherit each date.
+const japanEditedRoutes = [
+  '/japan/',
+  '/japan/tokyo/',
+  '/japan/tokyo/shinjuku/',
+  '/japan/tokyo/shibuya-harajuku/',
+  '/japan/tokyo/asakusa-ueno/',
+  '/japan/tokyo/tokyo-station-ginza/',
+  '/japan/tokyo/akihabara-kanda/',
+  '/japan/tokyo/roppongi-azabu/',
+  '/japan/tokyo/odaiba-toyosu/',
+  '/japan/tokyo/ikebukuro/',
+  '/japan/kyoto/central-kyoto-nishiki/',
+  '/japan/kyoto/kinkakuji-northwest/',
+  '/japan/kyoto/kiyomizudera-higashiyama/',
+  '/japan/kyoto/kyoto-station-south/',
+  '/japan/kyoto/philosophers-path-okazaki/',
+  '/japan/osaka/osaka-bay/'
+];
 const newRoutes = [
   ['/', italyLastmod, 'weekly', '1.0'],
   ...usaRoutes.map(route=>[route,'2026-09-11','monthly',route==='/usa/'?'0.9':'0.7']),
@@ -76,6 +100,11 @@ for (const match of existing.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]
   records.set(route, { route, lastmod: match[2], changefreq: match[3], priority: match[4] });
 }
 for (const [route, lastmod, changefreq, priority] of newRoutes) records.set(route, { route, lastmod, changefreq, priority });
+for (const route of japanEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Japan route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: japanOverviewLastmod });
+}
 
 const english = [...records.values()];
 const lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
