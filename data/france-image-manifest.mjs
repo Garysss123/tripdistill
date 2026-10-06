@@ -11,14 +11,14 @@ export const franceImageManifest = {
     "remoteSha1": "b800c96a980f8ad4c7dc1458859e1d6f392d637f"
   },
   "paris/louvre-tuileries-opera": {
-    "src": "/assets/images/france-paris-louvre-tuileries-opera.webp",
-    "alt": "The Louvre pyramid and palace courtyard in Paris",
-    "source": "https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg",
-    "label": "Louvre Museum Wikimedia Commons.jpg",
-    "creator": "Benh LIEU SONG ( Flickr )",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Louvre Museum Wikimedia Commons.jpg",
-    "remoteSha1": "2eb38e70a2aaec38aaa3fdff7845734d9973b8b7"
+    "src": "/assets/images/france-paris-louvre-salle-mollien-20261006.webp",
+    "alt": "Red-walled Salle Mollien gallery with a skylight inside the Louvre palace",
+    "source": "https://commons.wikimedia.org/wiki/File:Salle_Mollien_(salle_700)_-_Palais_du_Louvre_-_2024.jpg",
+    "label": "Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg",
+    "creator": "Shonagon",
+    "license": "CC0",
+    "commonsTitle": "File:Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg",
+    "remoteSha1": "b9a9f43a6a0cd0fd7f3b971b45a064efcb4fb2f8"
   },
   "paris/eiffel-invalides-montparnasse": {
     "src": "/assets/images/france-paris-eiffel-invalides-montparnasse.webp",

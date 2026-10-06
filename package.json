@@ -87,6 +87,10 @@
     "deploy:kyoto-qa": "npm run audit && npm run build && npm run build:kyoto-qa-harness && npm run check:kyoto-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch kyoto-qa && npm run check:kyoto-qa-harness-live",
     "deploy:osaka-qa": "npm run audit && npm run build && npm run build:osaka-qa-harness && npm run check:osaka-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch osaka-qa && npm run check:osaka-qa-harness-live",
     "deploy:hokkaido-qa": "npm run audit && npm run build && npm run build:hokkaido-qa-harness && npm run check:hokkaido-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch hokkaido-qa && npm run check:hokkaido-qa-harness-live",
+    "build:paris-qa-harness": "node scripts/build-paris-qa-harness.mjs",
+    "check:paris-qa-harness": "node scripts/check-paris-qa-harness.mjs",
+    "check:paris-qa-harness-live": "node scripts/check-paris-qa-harness.mjs --live",
+    "deploy:paris-qa": "npm run audit && npm run build && npm run build:paris-qa-harness && npm run check:paris-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch paris-qa && npm run check:paris-qa-harness-live",
     "audit:photo-license-inventory": "node scripts/test-photo-license-inventory-regression.mjs"
   },
   "engines": {

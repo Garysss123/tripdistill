@@ -1,7 +1,10 @@
 // Manually reviewed Wikimedia Commons file titles used when broad search terms
 // return historic artwork, a homonym, a detail shot, or the wrong destination.
 export const franceImageOverrides = {
-  'paris/louvre-tuileries-opera': 'File:Louvre Museum Wikimedia Commons.jpg',
+  'paris/louvre-tuileries-opera': {
+    title: 'File:Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg',
+    src: '/assets/images/france-paris-louvre-salle-mollien-20261006.webp'
+  },
   'paris-region-day-trips/versailles-palace-estate': 'File:Panorama of the Château de Versailles (23673783164).jpg',
   'paris-region-day-trips/fontainebleau-palace-forest': 'File:2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg',
   'lille-french-flanders/old-lille-roubaix': 'File:Lille grand Place 2012.jpg',

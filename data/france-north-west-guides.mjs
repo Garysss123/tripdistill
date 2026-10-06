@@ -65,7 +65,7 @@ export const franceNorthWestClusters = [
         instrument: 'Reservation-and-distance ruler',
         layout: 'gallery-axis',
         imageQuery: 'Louvre Pyramid Tuileries Paris wide view',
-        imageAlt: 'The Louvre pyramid and palace courtyard in Paris',
+        imageAlt: 'Red-walled Salle Mollien gallery with a skylight inside the Louvre palace',
         purpose: 'Decide whether the Louvre is the day’s main collection or merely one part of a westward city walk, then protect enough attention for the museum, garden and Opéra district you actually choose.',
         summary: 'Anchor the day at one museum entrance, move west through courtyards and the Tuileries, and turn north only once toward Palais Royal, the covered passages or Palais Garnier.',
         choices: [

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { franceClusters, franceCountrySources, franceGuides } from '../data/france-guides.mjs';
+import { franceClusters, franceCountrySources, franceGuides, franceSourceClusters } from '../data/france-guides.mjs';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -52,10 +52,10 @@ function licenseUrl(license) {
   return match ? `https://creativecommons.org/licenses/${match[1].toLowerCase()}/${match[2]}/${match[3] ? `${match[3]}/` : ''}` : '';
 }
 
-function imageCredit(image) {
+function imageCredit(image, humanTitle = false) {
   const license = licenseUrl(image.license);
   const licenseText = license ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>` : escapeHtml(image.license);
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}</li>`;
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(humanTitle ? (image.creditTitle || image.label) : image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}</li>`;
 }
 
 function sourceList(sources) {
@@ -71,11 +71,11 @@ function uniqueSources(...groups) {
   });
 }
 
-function sharedHead({ title, description, route, image, type = 'article', field = false }) {
+function sharedHead({ title, description, route, image, type = 'article', field = false, paris = false }) {
   return `<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
   <meta name="theme-color" content="#183f56"><meta property="og:type" content="${type}"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(image.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">${field ? `<link rel="stylesheet" href="${fieldCss}">` : ''}`;
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">${field ? `<link rel="stylesheet" href="${fieldCss}">` : ''}${paris ? '<link rel="stylesheet" href="/css/france-paris.css?v=20261006-1">' : ''}`;
 }
 
 function shellStart(mainOpen) {
@@ -89,17 +89,46 @@ function faqSchema(faq) {
 }
 
 function guideSchema(guide) {
+  const modified = guide.reviewDateISO || isoDate;
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: modified, dateModified: modified, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['France', absolute('/france/')], [guide.hubName, absolute(`/france/${guide.hubSlug}/`)], [guide.name, absolute(guide.url)]]),
       faqSchema(guide.faq)
     ]
   };
 }
 
+function parisGuidePage(guide, cluster) {
+  const description = metaDescription(`${guide.summary} ${guide.access}`);
+  const planningSources = uniqueSources(guide.sources, cluster.sources);
+  const pageReviewDate = guide.reviewDate || reviewDate;
+  const sourceCreditText = `Planning details were reviewed on ${pageReviewDate}. Admission, room access, security and transport change; confirm the linked official instructions for your date.`;
+  return `<!doctype html>
+<html lang="en" data-adsense-client="ca-pub-1732059148394592">
+<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Paris`, description, route: guide.url, image: guide.image, field: true, paris: true })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script></head>
+<body data-page="fr-paris-${escapeHtml(guide.slug)}" data-parent-page="france" data-country="france" data-region="paris">
+${shellStart(`<main id="main-content" class="page-content fr-field fr-paris-guide" data-fr-family="${escapeHtml(cluster.family)}" data-fr-layout="${escapeHtml(guide.layout)}" data-fr-variant="${guide.chapter}" data-fr-instrument="${escapeHtml(guide.instrument)}" data-paris-design="${escapeHtml(guide.layout)}">`)}
+  <nav class="fr-breadcrumb" aria-label="Breadcrumb"><a href="/france/">France</a><span>›</span><a href="/france/paris/">Paris</a><span>›</span><strong>${escapeHtml(guide.name)}</strong></nav>
+  <section class="fr-paris-guide-hero"><div class="fr-paris-guide-copy"><span class="fr-paris-kicker">Île-de-France · field note ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(pageReviewDate)}</span><h1>${escapeHtml(guide.name)}</h1><p class="fr-paris-summary">${escapeHtml(guide.summary)}</p><div class="fr-purpose"><small>Plan solved here</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#failure-points">Check the alternatives</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${escapeHtml(guide.imageCaption || guide.image.label)}</figcaption></figure><aside class="fr-paris-index"><small>${escapeHtml(guide.instrument)}</small><strong>${escapeHtml(guide.layout.replaceAll('-', ' '))}</strong><span>four linked stops · one deliberate finish</span></aside></section>
+  ${ad}
+  <section class="fr-paris-reading"><header><span class="fr-paris-kicker">Place notes · not a checklist</span><h2>${escapeHtml(guide.editorial.sectionTitle)}</h2><p>${escapeHtml(guide.editorial.sectionIntro)}</p></header><div class="fr-paris-layers">${guide.editorial.layers.map(([label, copy], index) => `<article><span class="fr-paris-layer-number">0${index + 1}</span><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  <section class="fr-choice-deck" aria-label="Three ways to shape the visit">${guide.choices.map(([title, copy], index) => `<article><span>0${index + 1}</span><h2>${escapeHtml(title)}</h2><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
+  <section class="fr-contract fr-paris-contract"><div><span class="fr-label">Arrive</span><h2>Start at the door that fits the day.</h2><p>${escapeHtml(guide.access)}</p></div><div><span class="fr-label">Choose</span><h2>Keep one visit substantial.</h2><p>${escapeHtml(guide.tradeoff)}</p></div><aside><span class="fr-label">Time on the ground</span><p>${escapeHtml(guide.duration)}</p><span class="fr-label">A useful pairing</span><p>${escapeHtml(guide.combine)}</p></aside></section>
+  <section class="fr-route fr-paris-sequence" id="route"><header><span class="fr-paris-kicker">The sequence · four stops</span><h2>${escapeHtml(guide.editorial.routeTitle)}</h2><p>${escapeHtml(guide.editorial.routeIntro)}</p></header><ol>${guide.route.map(([label, title, copy], index) => `<li><span>0${index + 1}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section>
+  <section class="fr-paris-access-note"><div><span class="fr-paris-kicker">Current access note</span><h2>${escapeHtml(guide.editorial.accessTitle)}</h2><p>${escapeHtml(guide.editorial.accessCopy)}</p></div><aside><span>Before departure</span><p>${escapeHtml(guide.verify)}</p></aside></section>
+  <section class="fr-fallback fr-paris-fallback"><div><span class="fr-label">Keep the day intact</span><h2>When one door changes, change the next stop.</h2><p>${escapeHtml(guide.fallback)}</p></div><blockquote>${escapeHtml(guide.tradeoff)}</blockquote></section>
+  <section class="fr-watch fr-paris-watch" id="failure-points"><header><span class="fr-paris-kicker">Route checks</span><h2>Three points where the plan can bend.</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>0${index + 1}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  <section class="fr-live-check fr-paris-live-check"><div><span class="fr-label">Official pages to reopen</span><h2>Use the day’s live instructions.</h2><p>These sources control reservations, current room access, security, opening times and transit. The written sequence is a planning framework; the operator sets the current conditions.</p></div><ul>${sourceList(planningSources)}</ul></section>
+  <section class="fr-related fr-paris-related"><header><span class="fr-paris-kicker">Keep the map compact</span><h2>Choose another Paris field only if it has its own day.</h2></header><div>${cluster.guides.filter((item) => item.slug !== guide.slug).map((item) => `<a href="${item.url}"><img src="${item.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(item.image.alt)}"><div><small>${escapeHtml(item.instrument)}</small><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(compact(item.purpose, 145))}</p><strong>Open this route →</strong></div></a>`).join('')}</div></section>
+  <section class="fr-faq fr-paris-faq" id="faq"><header><span class="fr-paris-kicker">Planning answers</span><h2>${escapeHtml(guide.name)} FAQ</h2></header><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>${escapeHtml(sourceCreditText)} The image source, creator and license are linked below; resizing, display crop and WebP conversion are recorded as the edit.</p><ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image, true)).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
+</main>${shellEnd()}</body></html>`;
+}
+
 function guidePage(guide, cluster, guideIndex) {
+  if (cluster.slug === 'paris') return parisGuidePage(guide, cluster);
   const variant = (guideIndex % 12) + 1;
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const planningSources = uniqueSources(guide.sources, cluster.sources);
@@ -125,6 +154,7 @@ ${shellStart(`<main id="main-content" class="page-content fr-field" data-fr-fami
 }
 
 function hubFaq(cluster) {
+  if (cluster.faq) return cluster.faq;
   return [
     [`How long should I give ${cluster.name}?`, cluster.stay],
     [`What transport decision matters most around ${cluster.name}?`, cluster.transfer],
@@ -134,15 +164,40 @@ function hubFaq(cluster) {
 
 function hubSchema(cluster) {
   const route = `/france/${cluster.slug}/`;
+  const modified = cluster.reviewDateISO || isoDate;
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: modified, dateModified: modified, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['France', absolute('/france/')], [cluster.name, absolute(route)]]), faqSchema(hubFaq(cluster))
     ]
   };
 }
 
+function parisHubPage(cluster) {
+  const route = '/france/paris/';
+  const hero = cluster.guides[0].image;
+  const pageReviewDate = cluster.reviewDate || reviewDate;
+  const description = metaDescription(`${cluster.hubIntro} ${cluster.transfer}`);
+  const caption = cluster.guides[0].imageCaption || hero.label;
+  return `<!doctype html>
+<html lang="en" data-adsense-client="ca-pub-1732059148394592">
+<head>${sharedHead({ title: 'Paris Travel Guide | Three River-City Routes | TripDistill', description, route, image: hero, type: 'website', paris: true })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
+<body data-page="fr-paris" data-parent-page="france" data-country="france" data-region="paris">
+${shellStart(`<main id="main-content" class="page-content fr-hub fr-paris-hub" data-fr-family="${escapeHtml(cluster.family)}" data-fr-hub-variant="1">`)}
+  <section class="fr-paris-hub-hero"><div class="fr-paris-hub-copy"><span class="fr-paris-kicker">France · Île-de-France · reviewed ${escapeHtml(pageReviewDate)}</span><h1>Paris <span>A river city, read one bank at a time.</span></h1><p class="fr-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#route-files">Choose a field guide</a><a class="button secondary" href="#city-rhythm">Plan the city rhythm</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${escapeHtml(caption)}</figcaption></figure><div class="fr-paris-hero-stamp"><small>One city · three scales</small><strong>RIVER / ROOMS / RETURN</strong></div></section>
+  <section class="fr-paris-bank-map" aria-labelledby="paris-bank-title"><header><span class="fr-paris-kicker">A compact mental map</span><h2 id="paris-bank-title">Let the river choose the day’s direction.</h2><p>These are city fields, not measured walking distances. Use them to avoid crossing back and forth for unrelated stops; use the live transport map for exact streets, stations and closures.</p></header><div class="fr-paris-bank-grid"><article><small>Right Bank · westward palace axis</small><h3>Louvre → Tuileries → Opera</h3><p>One bounded collection, a garden or courtyard reset, then a single northward exit. The route works best when the museum’s ticket door and final station are chosen first.</p><a href="/france/paris/louvre-tuileries-opera/">Open the collection-and-exit guide →</a></article><div class="fr-paris-seine-mark" aria-label="The Seine connects the island and the two banks"><span>SEINE</span><i></i><b>ÎLE DE LA CITÉ</b><i></i></div><article><small>Island · civic and devotional center</small><h3>Cité → Petit Pont → Latin Quarter</h3><p>Choose one timed chapel, courthouse or museum; cross once to the Left Bank, then decide between the lower Cluny–Saint-Germain streets and the uphill Panthéon line.</p><a href="/france/paris/seine-islands-latin-quarter/">Open the island crossing guide →</a></article><article><small>West · broad lawns and military history</small><h3>Trocadéro → Eiffel → Invalides</h3><p>Decide between a tower ticket and a full museum visit. The Eiffel approach is exposed and security-managed; the Invalides collections make a distinct indoor anchor.</p><a href="/france/paris/eiffel-invalides-montparnasse/">Open the western field guide →</a></article></div></section>
+  ${ad}
+  <section class="fr-hub-guides fr-paris-routes" id="route-files"><header><span class="fr-paris-kicker">Three complete day files</span><h2>Choose the route whose trade-off you accept.</h2><p>Each guide names an arrival door, a connected sequence, a lower-risk alternative and the official page that controls its moving parts. The three routes do not need to be stacked into three consecutive days.</p></header><div>${cluster.guides.map((guide, index) => `<a class="fr-guide-card fr-paris-route-card" href="${guide.url}" data-fr-layout="${escapeHtml(guide.layout)}"><img src="${guide.image.src}" width="1600" height="1066" loading="${index === 0 ? 'eager' : 'lazy'}" alt="${escapeHtml(guide.image.alt)}"><div><small>${String(index + 1).padStart(2, '0')} · ${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p><strong>Read the route, access notes and alternatives →</strong></div></a>`).join('')}</div></section>
+  <section class="fr-comparison fr-paris-comparison"><header><span class="fr-paris-kicker">Choose by energy and access</span><h2>Three interiors compete for attention.</h2><p>The city is compact on a diagram and tiring at street level. Use one large ticketed visit as the center of a day; let the second place stay outside or move it to another date.</p></header><div>${cluster.guides.map((guide) => `<article><div><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3></div><p><strong>Entry:</strong> ${escapeHtml(guide.access)}</p><p><strong>Trade-off:</strong> ${escapeHtml(guide.tradeoff)}</p><p><strong>Time:</strong> ${escapeHtml(guide.duration)}</p></article>`).join('')}</div></section>
+  <section class="fr-hub-contract fr-paris-rhythm" id="city-rhythm"><article><span>01 · Base</span><h2>Stay for the evenings you want.</h2><p>${escapeHtml(cluster.stay)}</p></article><article><span>02 · Transfer</span><h2>Match the station to the hotel door.</h2><p>${escapeHtml(cluster.transfer)}</p></article><article><span>03 · Season</span><h2>Move the open-air block with the day.</h2><p>${escapeHtml(cluster.season)}</p></article><article><span>04 · Fallback</span><h2>Keep a nearby second plan.</h2><p>${escapeHtml(cluster.fallback)}</p></article></section>
+  <section class="fr-hub-sourceband fr-paris-sourceband"><div><span>Live planning desk</span><h2>Official service pages set today’s limits.</h2><p>Use the route for geography and sequence, then reopen the operator’s notice for tickets, security, transit and access. Paris changes around demonstrations, ceremonies, river levels and maintenance.</p></div><ul>${sourceList(cluster.sources)}</ul></section>
+  <section class="fr-hub-faq fr-paris-hub-faq"><div><span class="fr-paris-kicker">Before choosing dates</span><h2>Paris planning FAQ</h2></div><div class="faq-list">${hubFaq(cluster).map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Paris planning details and the three images were reviewed on ${escapeHtml(pageReviewDate)}. Recheck ticket, transport, access and weather information for the actual date.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image, true)).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
+</main>${shellEnd()}</body></html>`;
+}
+
 function hubPage(cluster, clusterIndex) {
+  if (cluster.slug === 'paris') return parisHubPage(cluster);
   const route = `/france/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
   const faq = hubFaq(cluster);
@@ -189,7 +244,11 @@ const countryGroups = [
 function countryCards(bands) {
   return franceClusters.filter((cluster) => bands.includes(cluster.band)).map((cluster) => {
     const image = cluster.guides[0].image;
-    return `<a class="fr-country-card" href="/france/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(image.alt)}"><div><small>${escapeHtml(cluster.region)} · 3 complete routes</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(cluster.hubIntro, 160))}</p><strong>Open the regional route book →</strong></div><span>${String(franceClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
+    const sourceCluster = franceSourceClusters.find((item) => item.slug === cluster.slug);
+    const sourceGuide = sourceCluster.guides[0];
+    const intro = sourceCluster.hubIntro;
+    const alt = sourceGuide.imageAlt;
+    return `<a class="fr-country-card" href="/france/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(alt)}"><div><small>${escapeHtml(cluster.region)} · 3 complete routes</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(intro, 160))}</p><strong>Open the regional route book →</strong></div><span>${String(franceClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
   }).join('');
 }
 
@@ -280,13 +339,18 @@ function updateFooter() {
 
 function updateSearch() {
   const file = path.join(root, 'data', 'search-index.json');
-  const records = JSON.parse(fs.readFileSync(file, 'utf8')).filter((item) => !item.url.startsWith('/france/'));
+  const existing = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const records = [];
   records.push({ title: 'France Travel Guide', url: '/france/', parent: 'Europe', type: 'Country', summary: 'Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.', keywords: ['France', 'French travel', 'Europe', 'France rail'] });
   for (const cluster of franceClusters) {
     records.push({ title: cluster.name, url: `/france/${cluster.slug}/`, parent: 'France', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
     for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
   }
-  fs.writeFileSync(file, JSON.stringify(records, null, 2) + '\n');
+  const replacements = new Map(records.map((record) => [record.url, record]));
+  const existingUrls = new Set(existing.map((record) => record.url));
+  const merged = existing.map((record) => replacements.get(record.url) || record);
+  for (const record of records) if (!existingUrls.has(record.url)) merged.push(record);
+  fs.writeFileSync(file, JSON.stringify(merged, null, 2) + '\n');
 }
 
 function updateHome() {

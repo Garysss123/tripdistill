@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "paris-island-crossing": "เส้นทางข้าม Île de la Cité ไปฝั่งซ้ายของปารีส",
+    "paris-gallery-axis": "เส้นทาง Louvre–Tuileries–Opera ในปารีส",
+    "paris-western-field": "เส้นทางฝั่งตะวันตกของปารีส: หอไอเฟล–Invalides"
+  }
+}

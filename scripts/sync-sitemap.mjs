@@ -24,6 +24,13 @@ const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
+const parisLastmod = '2026-10-06';
+const parisEditedRoutes = [
+  '/france/paris/',
+  '/france/paris/seine-islands-latin-quarter/',
+  '/france/paris/louvre-tuileries-opera/',
+  '/france/paris/eiffel-invalides-montparnasse/'
+];
 // These route-specific edit dates come from the current source history:
 // 15147d0 changed the nine Tokyo routes, 42cdc8b changed five Kyoto guides,
 // and 6297cc7 changed Osaka Bay. /japan/ reflects this overview source edit.
@@ -104,6 +111,11 @@ for (const route of japanEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Japan route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: japanOverviewLastmod });
+}
+for (const route of parisEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Paris route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: parisLastmod });
 }
 
 const english = [...records.values()];

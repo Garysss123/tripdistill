@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T17:27:19.163Z",
+  "generatedAt": "2026-10-06T20:40:07.562Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 665,
+    "licenseClaimsNotIndependentlyVerified": 664,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -17,10 +17,10 @@
     "assetsWithStructuredSourceRecords": 566,
     "assetsWithMatchedEnglishCreditOnly": 161,
     "assetsWithExplicitEnglishCreditMatch": 52,
-    "assetsVisuallyReviewed": 49,
+    "assetsVisuallyReviewed": 50,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 114,
-    "metadataOrCreditOnly": 665,
+    "sourcePageChecked": 115,
+    "metadataOrCreditOnly": 664,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
@@ -9778,7 +9778,7 @@
           "assetPath": "/assets/images/france-paris-eiffel-invalides-montparnasse.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_View_from_the_Eiffel_Tower_third_floor_Seine_upstream_00b_Jardins_du_Trocad%C3%A9ro.jpg",
           "sourceTitle": "Paris View from the Eiffel Tower third floor Seine upstream 00b Jardins du Trocadéro.jpg",
-          "creditLabel": "Paris View from the Eiffel Tower third floor Seine upstream 00b Jardins du Trocadéro.jpg",
+          "creditLabel": "Eiffel Tower across the Seine from Trocadéro",
           "creator": "Maxime Homme",
           "license": "CC0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -9802,35 +9802,38 @@
             "The Eiffel Tower seen across the Seine from western Paris"
           ],
           "rawVisibleCredits": [
-            "Paris View from the Eiffel Tower third floor Seine upstream 00b Jardins du Trocadéro.jpg — Maxime Homme, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Eiffel Tower across the Seine from Trocadéro — Maxime Homme, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
     },
     {
-      "sha256": "bebec92709212978c38eab2de4561c861762066f6a34d745504809265bfd004f",
+      "sha256": "00e45a605791a18d12587391d8ad699484cd467f6933a255de9acc9637076a04",
       "assetPaths": [
-        "/assets/images/france-paris-louvre-tuileries-opera.webp"
+        "/assets/images/france-paris-louvre-salle-mollien-20261006.webp"
       ],
-      "byteLength": 209294,
+      "byteLength": 196710,
       "sourceRecords": [
         {
-          "assetPath": "/assets/images/france-paris-louvre-tuileries-opera.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg",
-          "sourceTitle": "Louvre Museum Wikimedia Commons.jpg",
-          "creditLabel": "Louvre Museum Wikimedia Commons.jpg",
-          "creator": "Benh LIEU SONG ( Flickr )",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "assetPath": "/assets/images/france-paris-louvre-salle-mollien-20261006.webp",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salle_Mollien_(salle_700)_-_Palais_du_Louvre_-_2024.jpg",
+          "sourceTitle": "Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg",
+          "creditLabel": "Salle Mollien (room 700), Louvre",
+          "creator": "Shonagon",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": {
+            "detail": "Paris Louvre image review: exact Commons title, Shonagon creator credit, CC0 1.0 source-page declaration, and subject match were checked against the downloaded image and converted WebP. The source image depicts the Salle Mollien interior; the site crop does not show the Louvre pyramid. No legal-clearance conclusion is implied.",
+            "checkedOn": "2026-10-06"
+          },
           "useCount": 4,
           "routes": [
             "/france/paris/",
@@ -9839,10 +9842,10 @@
             "/france/paris/seine-islands-latin-quarter/"
           ],
           "altTexts": [
-            "The Louvre pyramid and palace courtyard in Paris"
+            "Red-walled Salle Mollien gallery with a skylight inside the Louvre palace"
           ],
           "rawVisibleCredits": [
-            "Louvre Museum Wikimedia Commons.jpg — Benh LIEU SONG ( Flickr ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Salle Mollien (room 700), Louvre — Shonagon, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -10287,7 +10290,7 @@
             "Vermilion torii gates and a stone lantern at Fushimi Inari Taisha"
           ],
           "rawVisibleCredits": [
-            "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
+            "Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -16107,7 +16110,7 @@
             "Yasaka-dori street and pagoda before daytime crowds"
           ],
           "rawVisibleCredits": [
-            "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
+            "Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18172,7 +18175,7 @@
             "Snow-capped Mount Fuji framed by cherry blossoms"
           ],
           "rawVisibleCredits": [
-            "Mount Fuji April Cherry Blossom.jpg Photo by SRP1998; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
+            "Photo by SRP1998; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18327,7 +18330,7 @@
             "Osaka Castle framed by cherry blossoms"
           ],
           "rawVisibleCredits": [
-            "Osaka Castle cherry blossom, 2018 Photo by Luka Peternel; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
+            "Photo by Luka Peternel; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18405,7 +18408,7 @@
             "Crowds crossing Shibuya at night beneath bright screens"
           ],
           "rawVisibleCredits": [
-            "Shibuya crossing at night, Tokyo, Japan.jpg Photo by Joli Rumi; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
+            "Photo by Joli Rumi; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]

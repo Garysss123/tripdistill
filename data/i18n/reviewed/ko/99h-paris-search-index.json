@@ -1,0 +1,12 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "paris-island-crossing": "파리 시테섬에서 좌안으로 건너는 코스",
+    "paris-gallery-axis": "파리 루브르·튈르리 정원·오페라 축",
+    "paris-western-field": "파리 서부 에펠탑·앵발리드 코스"
+  }
+}

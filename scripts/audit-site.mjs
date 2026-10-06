@@ -275,7 +275,7 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/france/') && baseRoute !== '/france/' && !/<body\b[^>]*\bdata-parent-page="france"/i.test(html)) problems.push(`${relativePath}: France primary navigation parent is not set`);
   if (baseRoute === '/france/' && (html.match(/class="fr-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: France country hub does not contain twenty linked regional cards`);
   if (franceHubRoutes.has(baseRoute)) {
-    if ((html.match(/class="fr-guide-card"/g) || []).length !== 3) problems.push(`${relativePath}: France regional hub does not contain three linked route cards`);
+    if ((html.match(/class="[^"]*\bfr-guide-card\b[^"]*"/g) || []).length !== 3) problems.push(`${relativePath}: France regional hub does not contain three linked route cards`);
     if (!/data-fr-family="[^"]+"/.test(html)) problems.push(`${relativePath}: France regional hub is missing its family marker`);
   }
   const franceGuide = franceByRoute.get(baseRoute);
@@ -284,7 +284,7 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes(`data-fr-family="${franceGuide.family}"`)) problems.push(`${relativePath}: missing ${franceGuide.family} France family marker`);
     if (!html.includes(`data-fr-instrument="${franceGuide.instrument}"`)) problems.push(`${relativePath}: missing ${franceGuide.instrument} France instrument marker`);
     if (!html.includes('class="fr-purpose"')) problems.push(`${relativePath}: France route is missing its independent reader purpose`);
-    if (!html.includes('class="fr-live-check"')) problems.push(`${relativePath}: France route is missing near-claim official sources`);
+    if (!/class="[^"]*\bfr-live-check\b[^"]*"/.test(html)) problems.push(`${relativePath}: France route is missing near-claim official sources`);
     if ((html.match(/<li><span>0[1-4]<\/span><small>/g) || []).length !== 4) problems.push(`${relativePath}: France route does not contain four operating stages`);
   }
   if (baseRoute.startsWith('/united-kingdom/') && !html.includes('/css/united-kingdom.css?v=20260920-1')) problems.push(`${relativePath}: missing United Kingdom signal-book stylesheet`);

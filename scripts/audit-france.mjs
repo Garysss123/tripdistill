@@ -142,7 +142,16 @@ check(home.includes('<!-- FRANCE_HOME_START -->') && home.includes('<!-- FRANCE_
 check(read('scripts/build-dist.mjs').includes("'france'"), 'France absent from build allowlist');
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
-  for (const route of routes) check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>2026-09-20</lastmod>`), `${route}: sitemap missing or stale`);
+  const parisEditedRoutes = new Set([
+    '/france/paris/',
+    '/france/paris/seine-islands-latin-quarter/',
+    '/france/paris/louvre-tuileries-opera/',
+    '/france/paris/eiffel-invalides-montparnasse/'
+  ]);
+  for (const route of routes) {
+    const expectedDate = parisEditedRoutes.has(route) ? '2026-10-06' : '2026-09-20';
+    check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
 }
 
 if (failures.length) {

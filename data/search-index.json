@@ -9805,7 +9805,7 @@
     "url": "/france/paris/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Paris works best as a set of walkable river and neighborhood fields joined by short Métro or RER moves. The useful decision is not how many landmarks fit on a map, but which timed interior anchors the day and which streets, gardens and river crossings form a coherent approach and exit.",
+    "summary": "Paris is easiest to read from the water outward. Île de la Cité holds the old civic and religious center; the Louvre and Tuileries stretch west along the Right Bank; the Latin Quarter climbs away from the Left Bank; and the Eiffel–Invalides landscape opens into larger lawns and military collections. These are different walking scales. Pick one district as the day’s spine, reserve one interior that matters, and let a bridge or garden carry the transition instead of crossing the city for another checklist stop.",
     "keywords": [
       "Paris",
       "Île-de-France",
@@ -9817,38 +9817,38 @@
     "url": "/france/paris/seine-islands-latin-quarter/",
     "parent": "Paris",
     "type": "Local guide",
-    "summary": "Use one reserved interior on the island, cross once into the Latin Quarter, and finish along a different Seine edge so the oldest part of Paris reads as connected ground rather than a queue of monuments.",
+    "summary": "Begin where the Seine narrows around Île de la Cité, compare the royal chapel with the former palace-courthouse, then cross to Cluny and the university quarter. The day works because its medieval, judicial and scholarly layers sit within one compact river field.",
     "keywords": [
       "Seine Islands & the Latin Quarter",
       "Paris",
-      "Two-bank crossing ledger",
-      "river-fold"
+      "Island-to-left-bank crossing plan",
+      "paris-island-crossing"
     ]
   },
   {
-    "title": "Louvre, Tuileries & the Opéra Axis",
+    "title": "Louvre, Tuileries & the Opera Axis",
     "url": "/france/paris/louvre-tuileries-opera/",
     "parent": "Paris",
     "type": "Local guide",
-    "summary": "Anchor the day at one museum entrance, move west through courtyards and the Tuileries, and turn north only once toward Palais Royal, the covered passages or Palais Garnier.",
+    "summary": "The Louvre is a former royal palace and a collection so large that the useful question is where to stop. Select a few adjacent departments before arrival, follow the entrance named by your ticket, then let the Tuileries carry you west or north without promising yourself a second museum.",
     "keywords": [
-      "Louvre, Tuileries & the Opéra Axis",
+      "Louvre, Tuileries & the Opera Axis",
       "Paris",
-      "Reservation-and-distance ruler",
-      "gallery-axis"
+      "Collection-and-exit field plan",
+      "paris-gallery-axis"
     ]
   },
   {
-    "title": "Eiffel Tower, Invalides & Western Views",
+    "title": "Eiffel Tower & Invalides: the Western Axis",
     "url": "/france/paris/eiffel-invalides-montparnasse/",
     "parent": "Paris",
     "type": "Local guide",
-    "summary": "Treat the Eiffel Tower as a ticketed operating system, not a photo stop, then choose either military history, Seine space or a separate skyline view as the day’s second argument.",
+    "summary": "The Eiffel Tower was completed for the 1889 Exposition Universelle; Invalides tells a different story of military care, state ceremony and French campaigns. Choose one major interior, use Trocadéro, Bir-Hakeim or Champ de Mars for a ground-level reading, and treat a tower summit as a ticketed option with real access limits.",
     "keywords": [
-      "Eiffel Tower, Invalides & Western Views",
+      "Eiffel Tower & Invalides: the Western Axis",
       "Paris",
-      "Viewpoint commitment board",
-      "western-aperture"
+      "Skyline-to-ground route board",
+      "paris-western-field"
     ]
   },
   {

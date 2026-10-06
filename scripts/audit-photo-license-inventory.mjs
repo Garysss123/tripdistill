@@ -63,6 +63,13 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Salle_Mollien_(salle_700)_-_Palais_du_Louvre_-_2024.jpg',
+    {
+      detail: 'Paris Louvre image review: exact Commons title, Shonagon creator credit, CC0 1.0 source-page declaration, and subject match were checked against the downloaded image and converted WebP. The source image depicts the Salle Mollien interior; the site crop does not show the Louvre pyramid. No legal-clearance conclusion is implied.',
+      checkedOn: '2026-10-06'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Mount_Fuji_April_Cherry_Blossom.jpg',
     'Japan overview photo review: the exact Commons file title, SRP1998 creator, Mount Fuji/cherry blossom subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.',
     '2026-10-06'
@@ -526,6 +533,7 @@ const explicitCreditMappings = new Map([
   ['/assets/images/thailand-andaman-similan.webp', { creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', note: 'Matched the island group and panoramic view in the image alt to the same-route credit.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/france-paris-louvre-salle-mollien-20261006.webp',
   '/assets/images/italy-rome-ancient-rome-capitoline.webp',
   '/assets/images/italy-rome-historic-centre-trastevere.webp',
   '/assets/images/australia-red-centre-mparntwe-alice-springs.webp',
@@ -571,6 +579,7 @@ const visuallyReviewedAssetPaths = new Set([
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ['/assets/images/france-paris-louvre-salle-mollien-20261006.webp', '2026-10-06'],
   ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
   ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
   ['/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp', '2026-10-05'],
