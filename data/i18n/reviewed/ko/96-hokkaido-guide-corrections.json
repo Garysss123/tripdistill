@@ -1,0 +1,32 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/furano-biei/",
+    "/japan/hokkaido/asahikawa-daisetsuzan/",
+    "/japan/hokkaido/niseko-yoichi/"
+  ],
+  "translations": {
+    "Farms and hills": "농장과 언덕",
+    "Read the flowers, hills and water": "꽃과 언덕, 물의 풍경을 읽다",
+    "Furano and Biei are more than a bloom calendar": "후라노와 비에이에는 꽃철 이외에도 볼거리가 많습니다.",
+    "The color here comes from different things: cultivated flower gardens, private crop fields and water shaped by disaster-prevention works.": "이곳의 색감은 여러 풍경에서 비롯됩니다. 가꾼 꽃밭과 사유지의 농경지, 방재 공사로 형성된 물빛이 어우러집니다.",
+    "Farm Tomita, Nakafurano": "Farm Tomita, 나카후라노",
+    "Read lavender as a sequence rather than one purple peak: Yotei blooms early and Okamurasaki near midseason. Other flower beds widen the display, and Farm Tomita keeps lavender in a warm greenhouse through winter. Compare the named cultivars and check the live bloom report before crossing the valley.": "라벤더는 한 번의 보랏빛 절정만으로 보기보다 품종별 개화 흐름을 따라 살펴보세요. Yotei는 일찍 피고 Okamurasaki는 시즌 중반 무렵에 핍니다. 다른 꽃밭들이 다채로운 풍경을 더하고, Farm Tomita는 따뜻한 온실에서 겨울 내내 라벤더를 재배합니다. 계곡을 건너기 전 품종별 개화 시기를 비교하고 실시간 개화 정보를 확인하세요.",
+    "Shikisai-no-oka and Biei’s farm hills": "Shikisai-no-oka와 비에이의 구릉 농경지",
+    "Shikisai-no-oka is a 15-hectare flower garden on rolling slopes, planted with dozens of varieties. From Shin-ei Hill, the eastern view takes in the Tokachi range and red-roofed houses; around Kashiwa Park, spring tractors give way to summer potato blossoms and golden wheat. These are working, privately held fields: stay on paved public roads and marked viewpoints.": "Shikisai-no-oka는 완만한 구릉에 자리한 15헥타르 규모의 꽃밭으로, 수십 가지 품종의 꽃을 심어 두었습니다. Shin-ei Hill에서는 동쪽으로 도카치 산맥과 붉은 지붕의 집들이 보입니다. Kashiwa Park 주변에서는 봄에 트랙터가 오가고, 여름에는 감자꽃과 황금빛 밀밭이 펼쳐집니다. 이곳은 지금도 경작하는 사유지이므로 포장된 공공도로를 이용하고 표지된 전망 지점에만 머무르세요.",
+    "Shirogane Blue Pond": "시로가네 청의 호수",
+    "The Blue Pond is a product of disaster-prevention works on Tokachi-dake: water accumulated in a dam basin, with standing dead larches left in the view. Biei Tourism attributes its blue appearance to light scattering where mineral-bearing streams mix; spring snowmelt or heavy rain can cloud it. Treat the color as weather-dependent, not a guaranteed turquoise.": "청의 호수는 Tokachi-dake의 방재 공사 과정에서 생겨났습니다. 댐 저수지에 물이 고였고, 고사한 낙엽송들이 풍경에 그대로 남아 있습니다. 비에이 관광협회는 광물질을 함유한 물줄기가 만나는 지점에서 빛이 산란해 푸르게 보인다고 설명합니다. 봄철 눈 녹은 물이나 폭우가 내리면 물이 탁해질 수 있습니다. 선명한 청록색이 늘 보장되는 것은 아니니, 색이 날씨에 따라 달라진다는 점을 염두에 두세요.",
+    "Farm Tomita profile and greenhouse": "Farm Tomita 소개와 온실",
+    "Biei Tourism Association — travel around the hills": "Biei Tourism Association — 언덕 지대 둘러보기",
+    "A practical regional city between two Daisetsuzan gateways. Use Asahikawa for rail, food and the zoo; choose Asahidake or Sounkyo instead of treating the mountain range as a quick day trip.": "다이세쓰산으로 향하는 두 관문 사이에 자리한 실용적인 거점 도시입니다. 철도 이용과 식사, Asahiyama Zoo 방문에는 아사히카와를 거점으로 삼고, 산맥을 가벼운 당일치기 코스로 여기기보다 아사히다케나 소운쿄를 선택해 방문하세요.",
+    "See behavior through the exhibit design": "전시 설계로 동물의 행동을 살펴보다",
+    "Asahiyama’s aim is to make familiar animals’ abilities and behavior visible, not to rely on rare species. Penguin House has a 360-degree underwater tunnel for watching penguins swim; Seal House’s cylindrical Marine Way reveals their characteristic up-and-down movement; Polar Bear House pairs a large pool for dives and swimming with Seal’s Eye, a capsule that views the bears from a seal’s perspective. The snow-season penguin walk takes place when snow has accumulated, so check the day’s schedule.": "Asahiyama Zoo는 희귀종에 기대기보다 익숙한 동물들의 능력과 행동을 보여주는 데 초점을 맞춥니다. Penguin House에는 펭귄이 헤엄치는 모습을 볼 수 있는 360도 수중 터널이 있습니다. Seal House의 원통형 Marine Way에서는 바다표범 특유의 위아래 움직임을 볼 수 있습니다. Polar Bear House에는 잠수와 수영을 위한 대형 수영장이 있고, 바다표범의 시점에서 북극곰을 바라보는 캡슐 Seal's Eye도 있습니다. 눈이 쌓였을 때 겨울철 펭귄 산책이 진행되므로 방문 당일 일정을 확인하세요.",
+    "Asahiyama Zoo — mission and behavior exhibition": "Asahiyama Zoo — 전시 철학과 동물 행동 전시",
+    "Asahiyama Zoo — Penguin House": "Asahiyama Zoo — Penguin House",
+    "Asahiyama Zoo — Seal House": "Asahiyama Zoo — Seal House",
+    "Asahiyama Zoo — Polar Bear House": "Asahiyama Zoo — Polar Bear House",
+    "Powder slopes and summer roads beneath Mount Yotei pair with Yoichi, an orchard-and-coast town at the foot of the Shakotan Peninsula. The right resort village matters more than the word “Niseko” on the booking page.": "Yotei 산 아래의 파우더 슬로프와 여름철 드라이브 코스를 즐기면서, Shakotan 반도 기슭의 과수원과 해안 마을 Yoichi도 함께 둘러보세요. 예약 페이지에 “Niseko”라고 적혀 있는지보다 실제로 어느 리조트 마을에 숙박할지가 더 중요합니다.",
+    "Yoichi Tourism Association — town, orchards and coast": "Yoichi Tourism Association — 마을과 과수원, 해안"
+  }
+}
