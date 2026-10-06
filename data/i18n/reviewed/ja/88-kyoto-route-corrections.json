@@ -1,0 +1,14 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/kyoto/",
+    "/japan/kyoto/fushimi-inari-sake-district/"
+  ],
+  "translations": {
+    "Start at Kiyomizudera and work downhill through the preserved Higashiyama lanes to Yasaka Shrine and Maruyama Park. Stay in Gion for dinner on the east bank, or cross the Kamo River once to Pontocho on the west bank; if hills or crowds stretch the morning, keep the rest of the day on the shrine side instead of doubling back.": "清水寺を出発し、昔ながらの町並みが残る東山の路地を下りながら、八坂神社と円山公園へ向かいます。夕食は鴨川東岸の祇園でとるか、川を一度渡って西岸の先斗町へ。午前中に坂道や人混みで疲れたら、引き返す行程を加えず、残りの時間は八坂神社周辺で過ごしましょう。",
+    "Stay in the lower precinct: pass the Romon and main hall, walk through Senbon Torii to the Okusha Hohaisho, then return along the same gates. This is a satisfying shorter visit to the lower shrine precinct, without committing to the mountain climb.": "山麓の境内を巡る短めの参拝：楼門と本殿を通り、千本鳥居を抜けて奥社奉拝所まで歩いたら、同じ道を戻ります。山全体を登らなくても、山麓の境内をしっかり参拝できる、満足感のある短めのコースです。",
+    "Optional mountain stop: Kumatakasha": "希望者向けの山中立ち寄り先：熊鷹社",
+    "If you want a longer climb, add the optional uphill visit to Kumatakasha, a named mountain sanctuary on the shrine map. Treat it as a choice, not the standard midpoint or a required stage; from there, decide whether to return or continue on the mapped route.": "さらに登りたい場合は、山中にある熊鷹社への立ち寄りを追加できます。熊鷹社は神社の案内図に名前が記された社です。必ず通る標準ルートの中間地点や必須の立ち寄り先とは考えず、あくまで選択肢として扱ってください。そこから引き返すか、案内図に示された道を先へ進むかを決めましょう。"
+  }
+}

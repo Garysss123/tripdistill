@@ -1,0 +1,14 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/kyoto/",
+    "/japan/kyoto/fushimi-inari-sake-district/"
+  ],
+  "translations": {
+    "Start at Kiyomizudera and work downhill through the preserved Higashiyama lanes to Yasaka Shrine and Maruyama Park. Stay in Gion for dinner on the east bank, or cross the Kamo River once to Pontocho on the west bank; if hills or crowds stretch the morning, keep the rest of the day on the shrine side instead of doubling back.": "เริ่มต้นที่ Kiyomizudera แล้วเดินลงเนินผ่านตรอกเก่าแก่ใน Higashiyama ที่ได้รับการอนุรักษ์ไว้ ไปยัง Yasaka Shrine และ Maruyama Park มื้อเย็นเลือกได้ว่าจะรับประทานอาหารใน Gion บนฝั่งตะวันออก หรือข้ามแม่น้ำ Kamo ไปทางตะวันตกเพียงครั้งเดียวเพื่อไป Pontocho หากการเดินขึ้นลงเนินหรือผู้คนหนาแน่นทำให้ช่วงเช้าใช้เวลานานกว่าที่คิด ให้เที่ยวต่อในย่านฝั่งศาลเจ้าแทนการย้อนกลับไปมา",
+    "Stay in the lower precinct: pass the Romon and main hall, walk through Senbon Torii to the Okusha Hohaisho, then return along the same gates. This is a satisfying shorter visit to the lower shrine precinct, without committing to the mountain climb.": "เที่ยวเฉพาะบริเวณศาลเจ้าส่วนล่าง: ผ่านประตู Romon และอาคารหลัก เดินผ่าน Senbon Torii ไปยัง Okusha Hohaisho แล้วเดินกลับตามแนวเสาโทริอิเดิม เส้นทางสั้นนี้ยังให้เวลาเที่ยวชมจุดสำคัญในเขตศาลเจ้าส่วนล่างได้อย่างเต็มที่ โดยไม่ต้องขึ้นเขา",
+    "Optional mountain stop: Kumatakasha": "จุดแวะบนภูเขาที่เลือกได้: Kumatakasha",
+    "If you want a longer climb, add the optional uphill visit to Kumatakasha, a named mountain sanctuary on the shrine map. Treat it as a choice, not the standard midpoint or a required stage; from there, decide whether to return or continue on the mapped route.": "หากต้องการเดินขึ้นเขาให้ไกลขึ้น อาจเลือกแวะขึ้นเนินไปยัง Kumatakasha ซึ่งเป็นศาลเจ้าบนภูเขาที่มีชื่อกำกับในแผนที่ศาลเจ้า ให้ถือเป็นทางเลือก ไม่ใช่จุดกึ่งกลางมาตรฐานหรือช่วงที่จำเป็นของเส้นทาง จากที่นั่นค่อยตัดสินใจว่าจะเดินกลับหรือเดินต่อตามเส้นทางในแผนที่"
+  }
+}

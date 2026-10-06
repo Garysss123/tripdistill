@@ -60,6 +60,7 @@
     "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
     "build": "npm run localize && node scripts/build-dist.mjs",
     "build:tokyo-qa-harness": "node scripts/build-tokyo-qa-harness.mjs",
+    "build:kyoto-qa-harness": "node scripts/build-kyoto-qa-harness.mjs",
     "preview": "node scripts/serve.mjs",
     "qa:visual": "node scripts/visual-audit.mjs",
     "pages:whoami": "npx wrangler@latest whoami",
@@ -67,7 +68,10 @@
     "deploy:trip": "npm run audit && npm run build && npx wrangler@latest pages deploy dist --project-name trip",
     "check:tokyo-qa-harness": "node scripts/check-tokyo-qa-harness.mjs",
     "check:tokyo-qa-harness-live": "node scripts/check-tokyo-qa-harness.mjs --live",
-    "deploy:tokyo-qa": "npm run audit && npm run build && npm run build:tokyo-qa-harness && npm run check:tokyo-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch tokyo-qa && npm run check:tokyo-qa-harness-live"
+    "deploy:tokyo-qa": "npm run audit && npm run build && npm run build:tokyo-qa-harness && npm run check:tokyo-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch tokyo-qa && npm run check:tokyo-qa-harness-live",
+    "check:kyoto-qa-harness": "node scripts/check-kyoto-qa-harness.mjs",
+    "check:kyoto-qa-harness-live": "node scripts/check-kyoto-qa-harness.mjs --live",
+    "deploy:kyoto-qa": "npm run audit && npm run build && npm run build:kyoto-qa-harness && npm run check:kyoto-qa-harness && npx wrangler@latest pages deploy dist --project-name trip --branch kyoto-qa && npm run check:kyoto-qa-harness-live"
   },
   "engines": {
     "node": ">=20.19.0"

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T01:18:24.377Z",
+  "generatedAt": "2026-10-06T00:09:39.000Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 713,
+    "licenseClaimsNotIndependentlyVerified": 701,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -17,19 +17,19 @@
     "assetsWithStructuredSourceRecords": 566,
     "assetsWithMatchedEnglishCreditOnly": 205,
     "assetsWithExplicitEnglishCreditMatch": 8,
-    "assetsVisuallyReviewed": 22,
+    "assetsVisuallyReviewed": 34,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 66,
-    "metadataOrCreditOnly": 713,
+    "sourcePageChecked": 78,
+    "metadataOrCreditOnly": 701,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
-    "sourceMetadataConflicts": 0,
+    "sourceMetadataConflicts": 1,
     "moduleErrors": 0
   },
   "verificationMethod": {
     "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.",
-    "sourcePageChecks": "Manually checked source pages marked source_page_checked on 2026-10-04 or 2026-10-05, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
+    "sourcePageChecks": "Manually checked exact source pages marked source_page_checked, with date and finding on each row. 12 Kyoto images were added to source-page checks on 2026-10-05; see reports/kyoto-photo-source-review-2026-10-05.md. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
     "buildImageCountReconciliation": "The 779 WebP photos in assets/images plus favicon.svg (an SVG icon counted by build-dist.mjs) explain the previous build tally of 780 images."
   },
@@ -10261,20 +10261,20 @@
         {
           "assetPath": "/assets/images/fushimi-inari.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
-          "sourceTitle": "Fushimi Inari torii path",
+          "sourceTitle": "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg",
           "creditLabel": "Fushimi Inari torii path",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 3,
           "routes": [
             "/japan/",
@@ -10287,7 +10287,8 @@
             "Vermilion torii gates and a stone lantern at Fushimi Inari Taisha"
           ],
           "rawVisibleCredits": [
-            "Fushimi Inari torii path — Basile Morin, CC BY-SA 4.0."
+            "Fushimi Inari torii path — Basile Morin, CC BY-SA 4.0.",
+            "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15545,20 +15546,20 @@
         {
           "assetPath": "/assets/images/kyoto-arashiyama-bamboo.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg",
-          "sourceTitle": "Arashiyama bamboo forest",
+          "sourceTitle": "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg",
           "creditLabel": "Arashiyama bamboo forest",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15569,7 +15570,8 @@
             "Dense green bamboo along the Arashiyama grove path"
           ],
           "rawVisibleCredits": [
-            "Arashiyama bamboo forest — Basile Morin, CC BY-SA 4.0."
+            "Arashiyama bamboo forest — Basile Morin, CC BY-SA 4.0.",
+            "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15584,20 +15586,20 @@
         {
           "assetPath": "/assets/images/kyoto-fushimi-sake.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Fushimi_Horikawa01s4592.jpg",
-          "sourceTitle": "Fushimi canal",
+          "sourceTitle": "Kyoto Fushimi Horikawa01s4592.jpg",
           "creditLabel": "Fushimi canal",
           "creator": "663highland",
-          "license": "CC BY 2.5",
-          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 3.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 1,
           "routes": [
             "/japan/kyoto/fushimi-inari-sake-district/"
@@ -15606,7 +15608,8 @@
             "Traditional boat moving along a green canal in Fushimi's sake district"
           ],
           "rawVisibleCredits": [
-            "Fushimi canal — 663highland, CC BY 2.5."
+            "Fushimi canal — 663highland, CC BY 2.5.",
+            "Kyoto Fushimi Horikawa01s4592.jpg by 663highland; CC BY-SA 3.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15621,20 +15624,20 @@
         {
           "assetPath": "/assets/images/kyoto-gion.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Streets_of_Gion,_Kyoto_-_Gion7708.jpg",
-          "sourceTitle": "Gion streets",
+          "sourceTitle": "Streets of Gion, Kyoto - Gion7708.jpg",
           "creditLabel": "Gion streets",
           "creator": "lumoplank",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "The work is dedicated to the public domain under CC0 1.0. Attribution is not required; source and creator are retained for provenance.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15645,7 +15648,8 @@
             "Traditional machiya facades along a quiet Gion street at night"
           ],
           "rawVisibleCredits": [
-            "Gion streets — lumoplank, CC0."
+            "Gion streets — lumoplank, CC0.",
+            "Streets of Gion, Kyoto - Gion7708.jpg by lumoplank; CC0 1.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15660,20 +15664,20 @@
         {
           "assetPath": "/assets/images/kyoto-kinkakuji.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day,_Kyoto,_Japan.jpg",
-          "sourceTitle": "Kinkakuji reflection",
+          "sourceTitle": "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg",
           "creditLabel": "Kinkakuji reflection",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 3,
           "routes": [
             "/japan/kyoto/",
@@ -15685,7 +15689,8 @@
             "Kinkakuji Golden Pavilion reflected in a calm pond"
           ],
           "rawVisibleCredits": [
-            "Kinkakuji reflection — Basile Morin, CC BY-SA 4.0."
+            "Kinkakuji reflection — Basile Morin, CC BY-SA 4.0.",
+            "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15700,20 +15705,20 @@
         {
           "assetPath": "/assets/images/kyoto-kiyomizudera.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-07.jpg",
-          "sourceTitle": "Kiyomizudera at night",
+          "sourceTitle": "Kiyomizu-dera, Kyoto, November 2016 -07.jpg",
           "creditLabel": "Kiyomizudera at night",
           "creator": "Martin Falbisoner",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15724,7 +15729,8 @@
             "Kiyomizudera temple illuminated above autumn foliage"
           ],
           "rawVisibleCredits": [
-            "Kiyomizudera at night — Martin Falbisoner, CC BY-SA 4.0."
+            "Kiyomizudera at night — Martin Falbisoner, CC BY-SA 4.0.",
+            "Kiyomizu-dera, Kyoto, November 2016 -07.jpg by Martin Falbisoner; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15813,20 +15819,20 @@
         {
           "assetPath": "/assets/images/kyoto-nishiki-market.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market,_Kyoto,_Japan.jpg",
-          "sourceTitle": "Nishiki Market",
+          "sourceTitle": "A view of Nishiki Market, Kyoto, Japan.jpg",
           "creditLabel": "Nishiki Market",
           "creator": "Joli Rumi",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15837,7 +15843,8 @@
             "Colorful stalls beneath the stained-glass roof of Nishiki Market"
           ],
           "rawVisibleCredits": [
-            "Nishiki Market — Joli Rumi, CC BY-SA 4.0."
+            "Nishiki Market — Joli Rumi, CC BY-SA 4.0.",
+            "A view of Nishiki Market, Kyoto, Japan.jpg by Joli Rumi; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15852,20 +15859,20 @@
         {
           "assetPath": "/assets/images/kyoto-philosophers-path.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tetsugaku-no-michi_-_Philosopher%27s_Walk_-_Kyoto.jpg",
-          "sourceTitle": "Philosopher's Path",
+          "sourceTitle": "Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg",
           "creditLabel": "Philosopher's Path",
           "creator": "Gzzz",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15876,7 +15883,8 @@
             "Green trees shading the canal beside Kyoto's Philosopher's Path"
           ],
           "rawVisibleCredits": [
-            "Philosopher's Path — Gzzz, CC BY 4.0."
+            "Philosopher's Path — Gzzz, CC BY 4.0.",
+            "Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg by Gzzz; CC BY 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15891,20 +15899,20 @@
         {
           "assetPath": "/assets/images/kyoto-pontocho.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg",
-          "sourceTitle": "Pontocho Alley",
+          "sourceTitle": "Pontocho Alley, Kyoto - Flickr - Sergiy Galyonkin.jpg",
           "creditLabel": "Pontocho Alley",
           "creator": "Sergiy Galyonkin",
           "license": "CC BY-SA 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 2.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons lists Sergiy Galyonkin; one embedded EXIF field spells it Sergiy Galonkin. The Commons page spelling is used in the visible credit; see the Kyoto source-review report.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; the page identifies creator Sergiy Galyonkin and states CC BY-SA 2.0. An embedded EXIF field spells the name Sergiy Galonkin; the Commons page spelling is used in the credit, and the variant is recorded for transparency. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15915,7 +15923,8 @@
             "Narrow Pontocho alley glowing with restaurant lanterns"
           ],
           "rawVisibleCredits": [
-            "Pontocho Alley — Sergiy Galyonkin, CC BY-SA 2.0."
+            "Pontocho Alley — Sergiy Galyonkin, CC BY-SA 2.0.",
+            "Pontocho Alley, Kyoto - Flickr - Sergiy Galyonkin.jpg by Sergiy Galyonkin; CC BY-SA 2.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -15967,20 +15976,20 @@
         {
           "assetPath": "/assets/images/kyoto-station.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyoto_Station_November_2016_-03.jpg",
-          "sourceTitle": "Kyoto Station atrium",
+          "sourceTitle": "Kyoto Station November 2016 -03.jpg",
           "creditLabel": "Kyoto Station atrium",
           "creator": "Martin Falbisoner",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 2,
           "routes": [
             "/japan/kyoto/",
@@ -15991,7 +16000,8 @@
             "Steel-and-glass interior rising through Kyoto Station's main atrium"
           ],
           "rawVisibleCredits": [
-            "Kyoto Station atrium — Martin Falbisoner, CC BY-SA 4.0."
+            "Kyoto Station atrium — Martin Falbisoner, CC BY-SA 4.0.",
+            "Kyoto Station November 2016 -03.jpg by Martin Falbisoner; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -16006,20 +16016,20 @@
         {
           "assetPath": "/assets/images/kyoto-tenryuji.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tenry%C5%AB-ji_Garten.jpg",
-          "sourceTitle": "Tenryuji garden",
+          "sourceTitle": "Tenryū-ji Garten.jpg",
           "creditLabel": "Tenryuji garden",
           "creator": "Marco Almbauer",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 1,
           "routes": [
             "/japan/kyoto/arashiyama-sagano/"
@@ -16028,7 +16038,8 @@
             "Pond garden and green landscape at Tenryuji"
           ],
           "rawVisibleCredits": [
-            "Tenryuji garden — Marco Almbauer, CC BY-SA 4.0."
+            "Tenryuji garden — Marco Almbauer, CC BY-SA 4.0.",
+            "Tenryū-ji Garten.jpg by Marco Almbauer; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -16080,20 +16091,20 @@
         {
           "assetPath": "/assets/images/kyoto-yasaka-dori.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_(Hokan-ji_Temple),_Kyoto,_Japan.jpg",
-          "sourceTitle": "Yasaka-dori photo",
+          "sourceTitle": "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg",
           "creditLabel": "Yasaka-dori photo",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title, link to the source and license, note changes, and release adaptations under CC BY-SA 4.0.",
+          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "metadataOrigin": "source_page_verified_2026-10-05",
+          "creditMatchNote": "Commons source page, creator and exact license version checked; full linked credit and transformation note added to selected Kyoto routes.",
+          "visualReviewStatus": "visually_reviewed_2026-10-05",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-05",
+          "verificationDetail": "Opened and checked the exact Commons file page; creator, file identity and stated license version match. Image visually inspected; selected Kyoto use is subject-relevant. Commercial reuse is allowed under the displayed license terms.",
           "useCount": 3,
           "routes": [
             "/japan/",
@@ -16106,7 +16117,8 @@
             "Yasaka-dori street and pagoda before daytime crowds"
           ],
           "rawVisibleCredits": [
-            "Yasaka-dori photo — Basile Morin, CC BY-SA 4.0."
+            "Yasaka-dori photo — Basile Morin, CC BY-SA 4.0.",
+            "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg by Basile Morin; CC BY-SA 4.0. Resized and converted to WebP; cropped for display."
           ]
         }
       ]
@@ -31544,5 +31556,14 @@
     }
   ],
   "unmatchedAssets": [],
-  "sourceMetadataConflicts": []
+  "sourceMetadataConflicts": [
+    {
+      "assetPath": "/assets/images/kyoto-pontocho.webp",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg",
+      "field": "creator spelling",
+      "commonsFilePage": "Sergiy Galyonkin",
+      "embeddedExif": "Sergiy Galonkin",
+      "resolution": "Use the Commons file-page spelling in the credit; retain the EXIF variant in this inventory note. No contact was made."
+    }
+  ]
 }

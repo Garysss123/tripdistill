@@ -30,6 +30,10 @@ The site uses directory URLs such as `/japan/`, `/south-korea/seoul/` and `/thai
 
 The responsive iframe harness is preview-only: `npm run build` and the production `npm run deploy:trip` deliberately exclude it. For every Tokyo QA deployment, use `npm run deploy:tokyo-qa`. That command runs the full audit and ordinary build, adds `dist/qa/tokyo-responsive/index.html`, checks its noindex metadata and all nine route selector options locally, deploys only to Pages branch `tokyo-qa`, then requires the live alias to return HTTP 200 with the same noindex and selector checks. The harness stays out of the sitemap.
 
+### Kyoto QA preview
+
+The Kyoto responsive harness is also preview-only: `npm run build` and the production `npm run deploy:trip` deliberately exclude it. For the four Kyoto routes, use `npm run deploy:kyoto-qa` only after the reviewed source is committed and pushed to branch `kyoto-qa`. The command runs the complete site audit and ordinary build, adds `dist/qa/kyoto-responsive/index.html`, then checks its noindex metadata, all four route choices, all five language choices and paired fixed 320/390 CSS-pixel frames. Its release manifest records the pushed commit and SHA-256 identities for all 20 localized route documents and their referenced local images. It deploys only to Pages branch `kyoto-qa`; the live check verifies the preview alias, route/image bodies, manifest identity and the unchanged sitemap. The harness and release manifest are excluded from the ordinary build and sitemap.
+
 ## Language editions
 
 English source pages remain the editorial source of truth. Reviewed batch files under `data/i18n/reviewed/` are the versioned translation source. `npm run i18n:approve` validates and merges them into generated `data/i18n/zh-Hant.json`, `ja.json`, `ko.json` and `th.json` catalogs; `npm run localize` then generates the complete static locale trees, shared components and search indexes. The merged catalogs and generated `/zh/`, `/ja/`, `/ko/` and `/th/` trees stay out of Git, but `npm run build` recreates and includes the locale trees in `dist/` for Cloudflare Pages.
