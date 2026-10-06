@@ -120,11 +120,17 @@ if (live) {
   assert(remoteManifestResponse.status === 200, `Remote QA manifest returned HTTP ${remoteManifestResponse.status}.`);
   const remoteManifest = await remoteManifestResponse.json();
   assert(JSON.stringify(remoteManifest) === JSON.stringify(manifest), 'Remote QA manifest identity differs from the local release.');
+  const remoteHarnessResponse = await fetch(`${origin}/qa/osaka-responsive/`, { redirect: 'follow' });
+  assert(remoteHarnessResponse.status === 200, `Remote QA harness returned HTTP ${remoteHarnessResponse.status}.`);
+  const remoteHarness = Buffer.from(await remoteHarnessResponse.arrayBuffer());
+  assert(hash(remoteHarness) === hash(fs.readFileSync(htmlPath)), 'Remote QA harness HTML differs from the local release.');
+  assert(remoteHarness.toString('utf8').includes('name="robots" content="noindex,nofollow,noarchive"'), 'Remote QA harness noindex policy is missing.');
   const liveSitemap = await fetch(`${origin}/sitemap.xml`, { redirect: 'follow' });
   assert(liveSitemap.status === 200, `Live sitemap returned HTTP ${liveSitemap.status}.`);
   const liveSitemapText = await liveSitemap.text();
   const liveUrls = [...liveSitemapText.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
   assert(liveUrls.length === 4560 && new Set(liveUrls).size === 4560, `Live sitemap has ${liveUrls.length} unique URLs, expected 4,560.`);
+  assert(hash(Buffer.from(liveSitemapText)) === hash(fs.readFileSync(path.join(dist, 'sitemap.xml'))), 'Live sitemap body differs from the local artifact.');
   for (const item of bodyChecks) await verifyRemote(item.path, item.record.sha256);
   for (const asset of [...manifest.images, ...manifest.stylesheets]) await verifyRemote(asset.path, asset.sha256);
   console.log(`Live Osaka preview verified at ${origin}: 20/20 pages, ${manifest.images.length}/${manifest.images.length} images, ${manifest.stylesheets.length}/${manifest.stylesheets.length} stylesheets, and 4,560 sitemap URLs.`);
