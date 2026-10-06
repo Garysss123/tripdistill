@@ -4,10 +4,11 @@ Use this checklist whenever a shared layout or a city guide changes its narrow-s
 
 ## Route and viewport matrix
 
-- List every affected route and language before capture. For a four-route, five-language release, inspect all 20 route-language pages at both 320px and 390px (40 renders).
+- List every affected route and language before capture. For the current six-route, five-language Osaka release, inspect all 30 route-language pages at both 320px and 390px (60 renders).
 - Set the browser viewport in CSS pixels. Record `window.innerWidth`, `document.documentElement.clientWidth`, and `document.documentElement.scrollWidth`; classic scrollbars can make the layout viewport narrower than the outer frame.
 - Pass when the document root does not scroll horizontally: `scrollWidth <= clientWidth + 1`. Check the body and main wrapper too; a 320px-wide child inside an overflowing parent still fails.
 - Inspect headings, translated names, image crops, cards, route boards, buttons, and footers in every locale. Look for clipped glyphs, orphaned characters, forced hyphenation, overlays, and controls that extend beyond the visible viewport.
+- Measure compact labels as well as page overflow: compare the bounding boxes of step numbers, short kicker labels, adjacent quick facts, table tags, and their text. Pass only when long CJK and Latin labels wrap within their own cards without overlapping headings, images, or neighboring controls.
 
 ## Scrolling and interaction
 
@@ -21,4 +22,4 @@ Use this checklist whenever a shared layout or a city guide changes its narrow-s
 - Fix the element that establishes the excessive minimum width. Prefer a route- or component-scoped rule when a legacy page needs an exception.
 - Do not mask the defect with page-level `overflow-x: hidden`; preserve focus, scroll affordances, and access to content.
 - Rebuild after each layout change and repeat all affected locale/viewport combinations, not only the page used to find the defect.
-- Record viewport, layout viewport, root `scrollWidth`, routes/locales reviewed, screenshots, keyboard checks, and any remaining exceptions with the release evidence.
+- Record viewport, layout viewport, root `scrollWidth`, label boxes reviewed, routes/locales reviewed, screenshots, keyboard checks, and any remaining exceptions with the release evidence.

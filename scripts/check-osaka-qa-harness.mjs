@@ -21,7 +21,9 @@ const expectedRoutes = [
   { path: '/japan/osaka/', label: 'Osaka city guide' },
   { path: '/japan/osaka/namba/', label: 'Namba' },
   { path: '/japan/osaka/umeda/', label: 'Umeda' },
-  { path: '/japan/osaka/tennoji-shinsekai/', label: 'Tennoji & Shinsekai' }
+  { path: '/japan/osaka/tennoji-shinsekai/', label: 'Tennoji & Shinsekai' },
+  { path: '/japan/osaka/osaka-castle-area/', label: 'Osaka Castle area' },
+  { path: '/japan/osaka/osaka-bay/', label: 'Osaka Bay & USJ' }
 ];
 const expectedLocales = [
   { code: 'en', label: 'English', prefix: '' },
@@ -53,7 +55,7 @@ function assert(condition, message) {
 }
 
 assert(manifest.project === 'trip' && manifest.branch === 'osaka-qa', 'Manifest project/branch identity mismatch.');
-assert(manifest.routeCount === 20, `Expected 20 route-language pages, got ${manifest.routeCount}.`);
+assert(manifest.routeCount === 30, `Expected 30 route-language pages, got ${manifest.routeCount}.`);
 assert(JSON.stringify(manifest.routes) === JSON.stringify(expectedRoutes), 'Manifest route inventory changed.');
 assert(JSON.stringify(manifest.locales) === JSON.stringify(expectedLocales.map(({ code, label }) => ({ code, label }))), 'Manifest locale inventory changed.');
 assert(JSON.stringify(manifest.viewportWidths) === JSON.stringify([320, 390]), 'Manifest viewport widths changed.');
@@ -65,6 +67,13 @@ const siteCss = fs.readFileSync(path.join(root, 'css', 'site.css'), 'utf8');
 const cityShrinkRule = siteCss.match(/body\[data-city="kyoto"\],\s*body\[data-city="osaka"\]\s*\{([^}]*)\}/);
 assert(cityShrinkRule && /min-width:\s*0\s*;/.test(cityShrinkRule[1]), 'Kyoto and Osaka pages must be able to shrink below the global 320px minimum.');
 assert(!/overflow(?:-x)?:\s*hidden/.test(cityShrinkRule[1]), 'The city width fix must not hide overflow.');
+const osakaCss = fs.readFileSync(path.join(root, 'css', 'osaka-editorial.css'), 'utf8');
+const noteGrid = osakaCss.match(/\.osaka-field-notes__grid\s*\{([^}]*)\}/);
+const noteCard = osakaCss.match(/\.osaka-field-note\s*\{([^}]*)\}/);
+assert(noteGrid && /display:\s*grid/.test(noteGrid[1]) && /minmax\(0,\s*1fr\)/.test(noteGrid[1]), 'Osaka editorial note cards need shrinkable grid columns.');
+assert(noteCard && /min-width:\s*0\s*;/.test(noteCard[1]), 'Osaka note cards need min-width: 0 for translated labels.');
+assert(!/white-space:\s*nowrap/.test(osakaCss), 'Osaka editorial note labels must remain free to wrap.');
+assert(/@media\s*\(max-width:\s*700px\)[\s\S]*?\.osaka-field-notes__grid[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(osakaCss), 'Osaka editorial note cards must collapse to one column on narrow screens.');
 
 const manifestPagePaths = new Set(manifest.pages.map((page) => page.path));
 const expectedPagePaths = [];
@@ -84,18 +93,42 @@ for (const locale of expectedLocales) {
     let lang = '';
     let city = '';
     let h1Count = 0;
+    const ids = new Set();
+    const labelledBy = [];
+    let badImageAlt = false;
     walk(doc, (node) => {
       if (node.tagName === 'html') lang = attr(node, 'lang');
       if (node.tagName === 'body') city = attr(node, 'data-city');
       if (node.tagName === 'h1') h1Count += 1;
+      const id = attr(node, 'id');
+      if (id && ids.has(id)) throw new Error(`${urlPath} has a duplicate id: ${id}.`);
+      if (id) ids.add(id);
+      if (attr(node, 'aria-labelledby')) labelledBy.push(...attr(node, 'aria-labelledby').split(/\s+/).filter(Boolean));
+      if (node.tagName === 'img' && !attr(node, 'alt').trim()) badImageAlt = true;
     });
     assert(lang === locale.code, `${urlPath} declares lang=${lang}, expected ${locale.code}.`);
     assert(city === 'osaka', `${urlPath} must retain the Osaka city marker, got ${city || '(none)'}.`);
     assert(h1Count === 1, `${urlPath} must have exactly one h1, got ${h1Count}.`);
+    assert(!badImageAlt, `${urlPath} contains an image without alternative text.`);
+    for (const labelledId of labelledBy) assert(ids.has(labelledId), `${urlPath} has an aria-labelledby reference without a target: ${labelledId}.`);
     bodyChecks.push({ path: urlPath, record, html });
   }
 }
-assert(manifestPagePaths.size === 20 && expectedPagePaths.every((item) => manifestPagePaths.has(item)), 'Manifest contains unexpected or missing public routes.');
+assert(manifestPagePaths.size === 30 && expectedPagePaths.every((item) => manifestPagePaths.has(item)), 'Manifest contains unexpected or missing public routes.');
+
+const castleEnglish = fs.readFileSync(path.join(localPath('/japan/osaka/osaka-castle-area/'), 'index.html'), 'utf8');
+const bayEnglish = fs.readFileSync(path.join(localPath('/japan/osaka/osaka-bay/'), 'index.html'), 'utf8');
+const castleCredits = castleEnglish.match(/<section\b[^>]*\bclass="[^"]*\bsources\b[^"]*"[\s\S]*?<\/section>/i)?.[0] || '';
+const bayCredits = bayEnglish.match(/<section\b[^>]*\bclass="[^"]*\bsources\b[^"]*"[\s\S]*?<\/section>/i)?.[0] || '';
+for (const phrase of ['Toyotomi stronghold', 'Tokugawa rebuilding', 'reconstructed with donations from Osaka citizens', 'CC BY-SA 4.0']) {
+  assert(castleEnglish.includes(phrase), `Castle guide is missing reviewed history or attribution text: ${phrase}.`);
+}
+for (const phrase of ['may or may not require an Area Timed Entry Ticket', 'do not infer benefits from the pass name', '2–3 hours', 'barrier-free guidance']) {
+  assert(bayEnglish.includes(phrase), `Bay guide is missing reviewed ticket, visit or access guidance: ${phrase}.`);
+}
+assert(!bayEnglish.includes('seasonal marine transport when operating'), 'Bay guide must not imply unverified between-cluster marine service.');
+assert(castleEnglish.includes('href="/css/osaka-editorial.css') && bayEnglish.includes('href="/css/osaka-editorial.css'), 'Castle and bay guides must load the Osaka editorial stylesheet used by their field-note panels.');
+assert(castleCredits && !castleCredits.includes('osaka-castle-moat.webp') && !bayCredits.includes('tempozan-dusk.webp'), 'Photo credit labels must not expose raw image filenames.');
 
 for (const asset of [...manifest.images, ...manifest.stylesheets]) {
   const file = localPath(asset.path);
@@ -114,7 +147,7 @@ walk(indexDoc, (node) => {
 });
 assert(hasRouteControl && hasLocaleControl && titledFrames === 2, 'QA controls or accessible iframe titles are missing.');
 
-console.log(`Local Osaka harness verified: ${bodyChecks.length} pages, ${manifest.images.length} images, ${manifest.stylesheets.length} stylesheets, 320/390px frames, 4,560 public URLs.`);
+console.log(`Local Osaka harness verified: ${bodyChecks.length} pages (10 new-route pages across five locales), ${manifest.images.length} images, ${manifest.stylesheets.length} stylesheets, 320/390px frames, shrink/wrap rules, unique IDs, linked labels, image alts and 4,560 public URLs.`);
 
 if (live) {
   async function verifyRemote(urlPath, expectedHash) {
@@ -140,5 +173,5 @@ if (live) {
   assert(hash(Buffer.from(liveSitemapText)) === hash(fs.readFileSync(path.join(dist, 'sitemap.xml'))), 'Live sitemap body differs from the local artifact.');
   for (const item of bodyChecks) await verifyRemote(item.path, item.record.sha256);
   for (const asset of [...manifest.images, ...manifest.stylesheets]) await verifyRemote(asset.path, asset.sha256);
-  console.log(`Live Osaka preview verified at ${origin}: 20/20 pages, ${manifest.images.length}/${manifest.images.length} images, ${manifest.stylesheets.length}/${manifest.stylesheets.length} stylesheets, and 4,560 sitemap URLs.`);
+  console.log(`Live Osaka preview verified at ${origin}: 30/30 pages (including all 10 castle/bay locale routes), ${manifest.images.length}/${manifest.images.length} images, ${manifest.stylesheets.length}/${manifest.stylesheets.length} stylesheets, and 4,560 sitemap URLs.`);
 }

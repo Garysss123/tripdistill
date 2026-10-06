@@ -24,7 +24,9 @@ const routes = [
   { path: '/japan/osaka/', label: 'Osaka city guide' },
   { path: '/japan/osaka/namba/', label: 'Namba' },
   { path: '/japan/osaka/umeda/', label: 'Umeda' },
-  { path: '/japan/osaka/tennoji-shinsekai/', label: 'Tennoji & Shinsekai' }
+  { path: '/japan/osaka/tennoji-shinsekai/', label: 'Tennoji & Shinsekai' },
+  { path: '/japan/osaka/osaka-castle-area/', label: 'Osaka Castle area' },
+  { path: '/japan/osaka/osaka-bay/', label: 'Osaka Bay & USJ' }
 ];
 
 function sha256(value) {
@@ -128,7 +130,7 @@ const shell = `<!doctype html>
 <body>
   <main>
     <h1>Osaka responsive QA harness</h1>
-    <p class="intro">Review the Osaka city guide and three selected district guides in all five published languages. Both previews load the same guide at fixed 320 and 390 CSS-pixel widths. The harness is excluded from indexing and the public sitemap.</p>
+    <p class="intro">Review the Osaka city guide and five selected district guides in all five published languages. Both previews load the same guide at fixed 320 and 390 CSS-pixel widths. The harness is excluded from indexing and the public sitemap.</p>
     <div class="controls">
       <label for="route">Guide<select id="route"></select></label>
       <label for="locale">Language<select id="locale"></select></label>
