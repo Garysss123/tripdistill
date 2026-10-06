@@ -1,0 +1,19 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Read Furano and Biei by flower timing, bus and rail links, Blue Pond’s erosion-control origin, farmland access and separate hill and farm days.": "掌握富良野與美瑛的花期、公車與鐵路銜接、青池的治山防砂工程由來、農地進出規範，以及丘陵與農場行程分日安排。",
+    "shirogane blue pond": "白金青池",
+    "biei hills": "美瑛丘陵",
+    "Plan Asahiyama Zoo by the correct Asahikawa bus, then choose the Asahidake or Sounkyo gateway and match the trail to mountain conditions.": "搭乘正確路線的旭川市區公車前往旭山動物園，再選擇旭岳或層雲峽入口，並依山區狀況挑選步道。",
+    "sugatami pond": "姿見池",
+    "hiking grades": "登山難度分級",
+    "Compare Niseko’s three-town resort bases and seasonal transfers, then plan Yoichi’s Nikka distillery history and sparse rail return.": "比較二世谷三町的度假住宿據點與季節性接駁交通，再安排余市 Nikka 蒸餾所的歷史參訪，並規劃班次稀疏的鐵路返程。",
+    "niseko village": "二世谷村",
+    "nikka distillery": "Nikka 蒸餾所",
+    "ski access": "滑雪場交通"
+  }
+}

@@ -24,7 +24,10 @@ const routes = [
   { path: '/japan/hokkaido/', label: 'Hokkaido' },
   { path: '/japan/hokkaido/sapporo/', label: 'Sapporo' },
   { path: '/japan/hokkaido/otaru-shakotan/', label: 'Otaru & Shakotan' },
-  { path: '/japan/hokkaido/hakodate-onuma/', label: 'Hakodate & Onuma' }
+  { path: '/japan/hokkaido/hakodate-onuma/', label: 'Hakodate & Onuma' },
+  { path: '/japan/hokkaido/furano-biei/', label: 'Furano & Biei' },
+  { path: '/japan/hokkaido/asahikawa-daisetsuzan/', label: 'Asahikawa & Daisetsuzan' },
+  { path: '/japan/hokkaido/niseko-yoichi/', label: 'Niseko & Yoichi' }
 ];
 
 function sha256(value) {
@@ -133,7 +136,7 @@ const shell = `<!doctype html>
 <body>
   <main>
     <h1>Hokkaido responsive QA harness</h1>
-    <p class="intro">Review the Hokkaido regional hub and three selected guides (Sapporo, Otaru & Shakotan, Hakodate & Onuma) in English, Traditional Chinese, Japanese, Korean and Thai.</p>
+    <p class="intro">Review seven Hokkaido routes: the regional hub, Sapporo, Otaru & Shakotan, Hakodate & Onuma, Furano & Biei, Asahikawa & Daisetsuzan, and Niseko & Yoichi, in English, Traditional Chinese, Japanese, Korean and Thai.</p>
     <div class="controls">
       <label for="route">Guide<select id="route"></select></label>
       <label for="locale">Language<select id="locale"></select></label>

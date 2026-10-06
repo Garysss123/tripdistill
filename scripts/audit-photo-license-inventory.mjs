@@ -487,7 +487,9 @@ for (const [sourceUrl, creator, license, title] of [
   ['https://commons.wikimedia.org/wiki/File:Mount_Y%C5%8Dtei_from_Niseko_Annupuri_(33253188670).jpg', 'MIKI Yoshihito', 'CC BY 2.0', 'Mount Yōtei from Niseko Annupuri'],
   ['https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg', 'Calistemon', 'CC BY-SA 4.0', 'Noboribetsu Jigokudani'],
   ['https://commons.wikimedia.org/wiki/File:Kushiro_Marsh.jpg', 'jetalone', 'CC BY 2.0', 'Kushiro Marsh'],
-  ['https://commons.wikimedia.org/wiki/File:Hokkaido-Abashiri_Drift_Icebreaker_Ship_Aurora-xl.jpg', 'kkawamura', 'CC BY 4.0', 'Abashiri drift icebreaker']
+  ['https://commons.wikimedia.org/wiki/File:Hokkaido-Abashiri_Drift_Icebreaker_Ship_Aurora-xl.jpg', 'kkawamura', 'CC BY 4.0', 'Abashiri drift icebreaker'],
+  ['https://commons.wikimedia.org/wiki/File:Daisetsuzan_National_Park_(44720157870).jpg', 'Raita Futo', 'CC BY 2.0', 'Daisetsuzan National Park, north view from Mount Asahi’s summit'],
+  ['https://commons.wikimedia.org/wiki/File:Siripa-misaki7020429.jpg', '\u6211\u8def\u30fb\u5e4c\u5185\u753b\u50cf\u5009\u5eab', 'CC BY-SA 3.0', 'Siripa Cape, Yoichi']
 ]) {
   verifiedSourcePageDetails.set(sourceUrl, {
     detail: `Hokkaido image review: exact Commons source title, ${creator} creator credit, and ${license} terms checked against the source page.`,
@@ -549,7 +551,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/hokkaido-niseko-yotei.webp',
   '/assets/images/hokkaido-noboribetsu-jigokudani.webp',
   '/assets/images/hokkaido-kushiro-marsh.webp',
-  '/assets/images/hokkaido-abashiri-drift-ice.webp'
+  '/assets/images/hokkaido-abashiri-drift-ice.webp',
+  '/assets/images/hokkaido-daisetsuzan-north-view.webp',
+  '/assets/images/hokkaido-yoichi-coast.webp'
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),

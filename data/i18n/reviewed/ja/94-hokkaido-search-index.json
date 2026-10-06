@@ -1,0 +1,19 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Read Furano and Biei by flower timing, bus and rail links, Blue Pond’s erosion-control origin, farmland access and separate hill and farm days.": "花の見頃、バスと鉄道の接続、砂防工事に伴う青い池の成り立ち、農地へのアクセス、丘陵巡りと農園訪問を別日に分ける計画から、富良野・美瑛の旅を読み解きます。",
+    "shirogane blue pond": "白金の青い池",
+    "biei hills": "美瑛の丘",
+    "Plan Asahiyama Zoo by the correct Asahikawa bus, then choose the Asahidake or Sounkyo gateway and match the trail to mountain conditions.": "旭川市内の適切なバスで旭山動物園へ行く計画を立て、旭岳か層雲峡の玄関口を選び、山の状況に合った登山道を選びましょう。",
+    "sugatami pond": "姿見の池",
+    "hiking grades": "登山道のグレード",
+    "Compare Niseko’s three-town resort bases and seasonal transfers, then plan Yoichi’s Nikka distillery history and sparse rail return.": "ニセコの3町にあるリゾート拠点と季節運行の移動手段を比べ、余市ではニッカ蒸溜所の歴史をたどり、本数の少ない帰りの列車も計画します。",
+    "niseko village": "ニセコビレッジ",
+    "nikka distillery": "ニッカの蒸溜所",
+    "ski access": "スキー場へのアクセス"
+  }
+}
