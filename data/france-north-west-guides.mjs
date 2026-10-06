@@ -142,6 +142,7 @@ export const franceNorthWestClusters = [
     label: 'Day-trip departure board',
     tagline: "Choose the estate by its story, season and complete rail-to-door route.",
     hubIntro: "Versailles, Fontainebleau and Giverny sit in different directions and reward different kinds of attention: the state rooms and engineered garden axis at Versailles; a many-period royal residence at Fontainebleau; Monet’s house, Clos Normand and water garden at Giverny. They are separate day plans. A ticket, train or shuttle for one does not solve the others.",
+    countryCardIntro: "Choose Versailles for palace rooms and its formal garden axis, Fontainebleau for layered royal history, or Giverny for Monet's house and seasonal gardens.",
     stay: "Use Paris as the base for one of these excursions at a time. Keep the chosen rail terminal near the day’s first reservation; changing hotels saves little for a single visit. An overnight in Vernon or Fontainebleau makes sense only when the town or surrounding countryside is part of the plan.",
     transfer: "Versailles has three stations: RER C to Château–Rive Gauche (about 10 minutes on foot), line N/U to Chantiers (about 18), or line L to Rive Droite (about 17). Fontainebleau uses Transilien R from Gare de Lyon to Fontainebleau–Avon, then local bus 1 to the Château stop. Giverny uses a train to Vernon–Giverny and a separate seasonal last mile. Check both legs and their return.",
     season: "The château at Versailles and its Trianon estate close on Mondays; gardens and park have different access and event-ticket rules. Fontainebleau closes on Tuesdays and listed public holidays. Monet’s house and gardens operate seasonally: the foundation lists 1 April–1 November 2026, 10:00–18:00, last entry 17:30. Recheck the operator calendar for your date.",
@@ -187,7 +188,7 @@ export const franceNorthWestClusters = [
         instrument: 'Gate-and-garden docket',
         layout: 'estate-grid',
         imageQuery: 'Palace of Versailles gardens France panorama',
-        imageAlt: "The Palace of Versailles facade and Cour Royale viewed from the paved forecourt",
+        imageAlt: "The Orangerie parterre at Versailles, with clipped hedges, potted trees and a central fountain",
         purpose: "Plan a timed Palace visit around one legible architectural sequence, then choose either the gardens or Trianon instead of treating this vast estate as a checklist.",
         summary: "Enter the Palace at the time on your ticket, read the State Apartments through the 73-metre Hall of Mirrors toward Le Nôtre’s garden axis, then choose a bounded garden walk or a separate Trianon block. The three Versailles stations lead to different walks and Paris terminals.",
         choices: [
@@ -242,8 +243,9 @@ export const franceNorthWestClusters = [
         duration: "Planning estimate: allow about seven to nine hours door-to-door from central Paris for a timed Palace visit plus one estate branch. Inside, the official route suggests 1.5 hours for the Palace highlights, two hours for Gardens and Fountains, or four hours for Trianon; queues, meals and walking add time.",
         combine: "Use the town or a short park walk as the nearby extra. Keep Fontainebleau and Giverny for separate dates: each starts at another Paris terminal and adds a distinct last-mile contract.",
         verify: "Reopen the dated Versailles calendar, ticket inclusions, garden-event schedule, bag rules, entrance map and Île-de-France service notices. Confirm the return station and latest comfortable train before leaving Paris.",
-        imageCreditTitle: "Versailles Palace from the Cour Royale",
-        imageCaption: "The palace facade and Cour Royale at Versailles",
+        imageCreditTitle: "Versailles Orangerie parterre and fountain",
+        imageCaption: "The Orangerie parterre, clipped lawns and central fountain at Versailles",
+        imageEditNote: "Cropped and resized from the original to WebP; this adaptation is shared under CC BY-SA 4.0.",
         siteContext: {
           "label": "How to read the estate",
           "heading": "Follow the rooms out into the landscape.",

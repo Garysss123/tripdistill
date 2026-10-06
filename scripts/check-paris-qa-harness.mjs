@@ -189,6 +189,13 @@ for (const locale of expectedLocales) {
     if (routePath.startsWith('/france/paris-region-day-trips/')) {
       if (/\b[^\s<>]+\.(?:jpe?g|png|webp)\b/i.test(bodyText)) fail(`Raw image filename visible on ${locale.code} ${routePath}.`);
       if (bodyText.includes('The famous excursions around Paris use different rail terminals')) fail(`Repeated hub copy visible in child route ${locale.code} ${routePath}.`);
+      if (routePath.endsWith('/versailles-palace-estate/')) {
+        const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+        if (!links.includes('https://commons.wikimedia.org/wiki/File:Palace_of_Versailles_Garden.jpg')) fail(`Verified Versailles Commons source missing on ${locale.code} ${routePath}.`);
+        if (!links.includes('https://creativecommons.org/licenses/by-sa/4.0/')) fail(`Versailles CC BY-SA 4.0 link missing on ${locale.code} ${routePath}.`);
+        if (!bodyText.includes('Rlumstead') || !bodyText.includes('CC BY-SA 4.0')) fail(`Versailles creator/license credit missing on ${locale.code} ${routePath}.`);
+        if (locale.code === 'en' && !bodyText.includes('this adaptation is shared under CC BY-SA 4.0')) fail(`Versailles adaptation/share-alike note missing from English credit on ${routePath}.`);
+      }
       if (locale.code === 'en') {
         const required = routePath.endsWith('/versailles-palace-estate/')
           ? ['Rive Gauche', 'Hall of Mirrors', 'Passport', '10 minutes']

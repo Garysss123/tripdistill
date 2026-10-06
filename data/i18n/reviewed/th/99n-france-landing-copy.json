@@ -1,0 +1,11 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/"
+  ],
+  "translations": {
+    "Notre-Dame and the Seine at Île de la Cité · CC BY-SA 3.0": "Notre-Dame และแม่น้ำแซนที่ Île de la Cité · CC BY-SA 3.0",
+    "Choose Versailles for palace rooms and its formal garden axis, Fontainebleau for layered royal history, or Giverny for Monet's house and seasonal gardens.": "เลือก Versailles หากอยากชมห้องต่าง ๆ ในพระราชวังและแนวสวนแบบเป็นทางการ เลือก Fontainebleau เพื่อชมประวัติศาสตร์ราชวงศ์หลายยุค หรือ Giverny เพื่อไปบ้านของ Monet และสวนที่เปิดตามฤดูกาล"
+  }
+}

@@ -32,13 +32,13 @@ export const franceImageManifest = {
   },
   "paris-region-day-trips/versailles-palace-estate": {
     "src": "/assets/images/france-paris-region-day-trips-versailles-palace-estate.webp",
-    "alt": "The Palace of Versailles seen across its formal gardens",
-    "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_the_Ch%C3%A2teau_de_Versailles_(23673783164).jpg",
-    "label": "Panorama of the Château de Versailles (23673783164).jpg",
-    "creator": "Jorge Láscar from Melbourne, Australia",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:Panorama of the Château de Versailles (23673783164).jpg",
-    "remoteSha1": "b8b99395b95757d2338c57820817263b65a9428b"
+    "alt": "The Orangerie parterre at Versailles, with clipped hedges, potted trees and a central fountain",
+    "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Versailles_Garden.jpg",
+    "label": "Palace of Versailles Garden.jpg",
+    "creator": "Rlumstead",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Palace of Versailles Garden.jpg",
+    "remoteSha1": "841240ba29741e3f5501caf800e91bd3471d7054"
   },
   "paris-region-day-trips/fontainebleau-palace-forest": {
     "src": "/assets/images/france-paris-region-day-trips-fontainebleau-palace-forest.webp",

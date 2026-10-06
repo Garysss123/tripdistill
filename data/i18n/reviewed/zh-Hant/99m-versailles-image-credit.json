@@ -1,0 +1,14 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/paris-region-day-trips/versailles-palace-estate/"
+  ],
+  "translations": {
+    "The Orangerie parterre at Versailles, with clipped hedges, potted trees and a central fountain": "凡爾賽宮橘園花壇，周圍有修剪整齊的樹籬、盆栽樹木和中央噴泉",
+    "The Orangerie parterre, clipped lawns and central fountain at Versailles": "凡爾賽宮橘園花壇、修剪整齊的草坪與中央噴泉",
+    "Versailles Orangerie parterre and fountain": "凡爾賽宮橘園花壇與噴泉",
+    "— Rlumstead,": "— Rlumstead,",
+    ". Cropped and resized from the original to WebP; this adaptation is shared under CC BY-SA 4.0.": "。原圖經裁切並調整尺寸後轉為 WebP；此改作依 CC BY-SA 4.0 授權條款分享。"
+  }
+}
