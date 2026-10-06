@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T10:41:45.255Z",
+  "generatedAt": "2026-10-06T12:37:09.714Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 673,
+    "licenseClaimsNotIndependentlyVerified": 670,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -15,12 +15,12 @@
     "imageReferencesScanned": 3555,
     "assetsUsedByScannedEnglishPages": 779,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 176,
-    "assetsWithExplicitEnglishCreditMatch": 37,
-    "assetsVisuallyReviewed": 44,
+    "assetsWithMatchedEnglishCreditOnly": 170,
+    "assetsWithExplicitEnglishCreditMatch": 43,
+    "assetsVisuallyReviewed": 46,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 106,
-    "metadataOrCreditOnly": 673,
+    "sourcePageChecked": 109,
+    "metadataOrCreditOnly": 670,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
@@ -10341,16 +10341,16 @@
         {
           "assetPath": "/assets/images/hokkaido-asahidake.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:140724_Asahi-dake_and_Sugatami-no-ike_Hokkaido_Japan01bs3.jpg",
-          "sourceTitle": "Asahidake photo",
-          "creditLabel": "Asahidake photo",
+          "sourceTitle": "Asahidake and Sugatami photo",
+          "creditLabel": "Asahidake and Sugatami photo",
           "creator": "663highland",
           "license": "CC BY 2.5",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Image converted to WebP for the site.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "visually_reviewed_2026-10-04",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
@@ -10366,44 +10366,7 @@
             "Mount Asahidake above Sugatami Pond in Daisetsuzan"
           ],
           "rawVisibleCredits": [
-            "Asahidake photo — 663highland, CC BY 2.5."
-          ]
-        }
-      ]
-    },
-    {
-      "sha256": "ca7e7c3c4619cbf8b9142b7d1da84b1aa0359e5cbbbceb4f3e1adf6dd324da4b",
-      "assetPaths": [
-        "/assets/images/hokkaido-asahiyama-zoo.webp"
-      ],
-      "byteLength": 373424,
-      "sourceRecords": [
-        {
-          "assetPath": "/assets/images/hokkaido-asahiyama-zoo.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Winter_in_Hokkaido(Asahiyama_Zoo_%E6%97%AD%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92)_-_03_(26152902302).jpg",
-          "sourceTitle": "Asahiyama Zoo photo",
-          "creditLabel": "Asahiyama Zoo photo",
-          "creator": "Lionel Leong",
-          "license": "CC BY-SA 2.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 1,
-          "routes": [
-            "/japan/hokkaido/asahikawa-daisetsuzan/"
-          ],
-          "altTexts": [
-            "A wolf in a snowy forest enclosure at Asahiyama Zoo"
-          ],
-          "rawVisibleCredits": [
-            "Asahiyama Zoo photo — Lionel Leong, CC BY-SA 2.0."
+            "Asahidake and Sugatami photo — 663highland, CC BY 2.5. Image converted to WebP for the site."
           ]
         }
       ]
@@ -10423,15 +10386,15 @@
           "creator": "OKJaguar",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Converted to WebP; the adaptation is shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, OKJaguar creator credit, and CC BY-SA 4.0 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/furano-biei/"
@@ -10440,7 +10403,7 @@
             "Blue Pond in Biei with pale tree trunks above turquoise water"
           ],
           "rawVisibleCredits": [
-            "Blue Pond photo — OKJaguar, CC BY-SA 4.0."
+            "Blue Pond photo — OKJaguar, CC BY-SA 4.0. Converted to WebP; the adaptation is shared under the same license version."
           ]
         }
       ]
@@ -10483,6 +10446,43 @@
       ]
     },
     {
+      "sha256": "9095b47910ea6068ecb964ba7740e5407fcd7da8b66941ebf4c153e84864e6f0",
+      "assetPaths": [
+        "/assets/images/hokkaido-daisetsuzan-north-view.webp"
+      ],
+      "byteLength": 226096,
+      "sourceRecords": [
+        {
+          "assetPath": "/assets/images/hokkaido-daisetsuzan-north-view.webp",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daisetsuzan_National_Park_(44720157870).jpg",
+          "sourceTitle": "Daisetsuzan National Park, north view from Mount Asahi’s summit",
+          "creditLabel": "Daisetsuzan National Park, north view from Mount Asahi’s summit",
+          "creator": "Raita Futo",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "editHistory": "Image converted to WebP at 1280 px wide.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, Raita Futo creator credit, and CC BY 2.0 terms checked against the source page.",
+          "useCount": 1,
+          "routes": [
+            "/japan/hokkaido/asahikawa-daisetsuzan/"
+          ],
+          "altTexts": [
+            "Looking north from Mount Asahi’s summit across the Daisetsuzan range"
+          ],
+          "rawVisibleCredits": [
+            "Daisetsuzan National Park, north view from Mount Asahi’s summit — Raita Futo, CC BY 2.0. Image converted to WebP at 1280 px wide."
+          ]
+        }
+      ]
+    },
+    {
       "sha256": "487036aa15c86e49f095f2707fc62bbdb3f30f4bdb39773851ff3b86edccd86d",
       "assetPaths": [
         "/assets/images/hokkaido-furano-lavender.webp"
@@ -10499,9 +10499,9 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Image converted to WebP for the site.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "visually_reviewed_2026-10-04",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
@@ -10516,7 +10516,7 @@
             "Purple lavender fields across the Furano countryside"
           ],
           "rawVisibleCredits": [
-            "Furano lavender photo — Blondinrikard Fröberg, CC BY 2.0."
+            "Furano lavender photo — Blondinrikard Fröberg, CC BY 2.0. Image converted to WebP for the site."
           ]
         }
       ]
@@ -10690,9 +10690,9 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Image converted to WebP for the site.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "visually_reviewed_2026-10-04",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
@@ -10706,7 +10706,7 @@
             "Snow-covered Mount Yotei seen from Niseko Annupuri"
           ],
           "rawVisibleCredits": [
-            "Mount Yōtei from Niseko photo — MIKI Yoshihito, CC BY 2.0."
+            "Mount Yōtei from Niseko photo — MIKI Yoshihito, CC BY 2.0. Image converted to WebP for the site."
           ]
         }
       ]
@@ -10992,15 +10992,15 @@
           "creator": "我路・幌内画像倉庫",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Image converted to WebP for the site; adaptation shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-04",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Hokkaido image review: exact Commons source title, 我路・幌内画像倉庫 creator credit, and CC BY-SA 3.0 terms checked against the source page.",
           "useCount": 1,
           "routes": [
             "/japan/hokkaido/niseko-yoichi/"
@@ -11009,7 +11009,7 @@
             "Sunset over the coast near Cape Shiripa in Yoichi"
           ],
           "rawVisibleCredits": [
-            "Yoichi coast photo — 我路・幌内画像倉庫, CC BY-SA 3.0."
+            "Yoichi coast photo — 我路・幌内画像倉庫, CC BY-SA 3.0. Image converted to WebP for the site; adaptation shared under the same license version."
           ]
         }
       ]

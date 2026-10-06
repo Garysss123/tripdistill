@@ -474,6 +474,7 @@ for (const country of countries) {
 }
 
 for (const [sourceUrl, creator, license, title] of [
+  ['https://commons.wikimedia.org/wiki/File:Blue_Pond_(Aoiike)_at_Biei,_Hokkaido,_Japan.jpg', 'OKJaguar', 'CC BY-SA 4.0', 'Blue Pond (Aoiike) at Biei, Hokkaido, Japan'],
   ['https://commons.wikimedia.org/wiki/File:140724_Asahi-dake_and_Sugatami-no-ike_Hokkaido_Japan01bs3.jpg', '663highland', 'CC BY 2.5', 'Asahidake and Sugatami Pond'],
   ['https://commons.wikimedia.org/wiki/File:Biei_landscape_(7662422372).jpg', 'Chi King', 'CC BY 2.0', 'Biei landscape'],
   ['https://commons.wikimedia.org/wiki/File:140829_Ichiko_of_Shiretoko_Goko_Lakes_Hokkaido_Japan01s5.jpg', '663highland', 'CC BY 2.5', 'Shiretoko Five Lakes'],

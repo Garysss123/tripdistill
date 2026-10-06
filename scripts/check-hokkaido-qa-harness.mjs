@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -36,6 +37,7 @@ function walk(node,visit){visit(node);for(const child of node.childNodes||[])wal
 function find(node,predicate){if(predicate(node))return node;for(const child of node.childNodes||[]){const found=find(child,predicate);if(found)return found}return null}
 function textOf(node){if(node.nodeName==='#text')return node.value;if(node.tagName==='br')return ' ';return(node.childNodes||[]).map(textOf).join(' ')}
 function localPath(urlPath){return path.join(dist,decodeURIComponent(urlPath).replace(/^\//,''))}
+function freshPhotoInventory(){const files=['photo-license-inventory.json','photo-license-inventory.md'].map(name=>path.join(root,'reports',name));const originals=files.map(file=>[file,fs.readFileSync(file)]);try{execFileSync(process.execPath,[path.join(root,'scripts','audit-photo-license-inventory.mjs')],{cwd:root,stdio:'ignore'});return JSON.parse(fs.readFileSync(files[0],'utf8'))}finally{for(const[file,bytes]of originals)fs.writeFileSync(file,bytes)}}
 assert(fs.existsSync(manifestPath)&&fs.existsSync(htmlPath),'Build the Hokkaido harness first.');
 const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
 const harness=fs.readFileSync(htmlPath,'utf8');
@@ -57,7 +59,7 @@ for(const page of ['hokkaido','sapporo','otaru-shakotan','hakodate-onuma','furan
 assert(/@media\s*\(max-width:\s*390px\)[\s\S]*?body\[data-page="hokkaido"\][\s\S]*?min-width:\s*0/.test(css),'Hokkaido 390px responsive shrink guard is missing.');
 assert(/\.hokkaido-live-notice\s*\{[^}]*min-width:0/.test(css)||css.includes('body[data-page="hakodate-onuma"] .hokkaido-live-notice { min-width:0;'),'Hakodate live access note needs a shrink rule.');
 assert(!/body\[data-page="(?:hokkaido|sapporo|otaru-shakotan|hakodate-onuma|furano-biei|asahikawa-daisetsuzan|niseko-yoichi)"\][^{]*\{[^}]*overflow-x:\s*hidden/.test(css),'Hokkaido width guard must not conceal horizontal overflow.');
-const inventory=JSON.parse(fs.readFileSync(path.join(root,'reports','photo-license-inventory.json'),'utf8'));
+const inventory=freshPhotoInventory();
 const pages=[];const imageSet=new Set();const cssPaths=new Set();let visiblePhotoCount=0,maxHtmlBytes=0,maxInitialBytes=0,maxHeroBytes=0;
 for(const locale of locales){for(const route of expectedRoutes){
  const urlPath=locale.prefix+route.path;
