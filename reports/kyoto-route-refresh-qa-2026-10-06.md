@@ -58,3 +58,28 @@ A preview-only responsive harness at dist/qa/kyoto-responsive/ checks the four K
 ## Visual QA limit
 
 No local browser or viewport screenshots were used, per the current instruction not to use a local browser. The implementation leaves the existing Kyoto layout and stylesheet untouched; rendered desktop/mobile comparison remains unverified in this batch. The full visual redesign request therefore remains outside this bounded Kyoto content and licensing update.
+
+## Five-guide access and interpretation follow-up
+
+This follow-up edits five existing English child pages only: Central Kyoto & Nishiki, Kyoto Station & South, Philosopher's Path & Okazaki, Kinkakuji & Northwest, and Kiyomizudera & Higashiyama. Their URLs, language prefixes, route hierarchy, stylesheets and image credits are unchanged. No country, route, photograph or third-party runtime was added.
+
+The copy replaces vague directions with executable access choices: it locates Gion east of the Kamo River and Pontocho west, names the single Shijo Bridge crossing, distinguishes JR Inari Station from Keihan Fushimi-inari, and explains that the JR Nara Line runs directly from Kyoto Station to JR Inari. For Ginkakuji, the route now names the Karasuma Line to Imadegawa, the Doshisha-side City Bus 203 stop, Ginkakuji-michi and the eastward canal approach; Keage remains the distinct south-end option. Kinkakuji now has the Kitaoji Blue Bus Stop group E–G / routes 204 or 205 / Kinkakuji-michi sequence. Kiyomizudera now distinguishes City Bus 100/206 to Gojozaka plus the uphill walk from the roughly 25-minute walk from Keihan Kiyomizu-Gojo, and links the temple's visitor, emergency-road and wheelchair access maps.
+
+The rainy-day section gives three nearby museums different reasons to choose them: MoMAK's modern Japanese art with emphasis on nihonga and crafts; the Kyoto City KYOCERA Museum's current exhibitions and seasonal Collection Room; and the Kyoto Museum of Crafts and Design's 74 Kyoto craft product categories and changing demonstrations. It directs readers to current calendars instead of asserting fixed exhibition schedules, prices or timed-entry rules. The museum/library and route notes are paired with official source links on the pages.
+
+Sources checked on 6 October 2026:
+
+- [Kyoto City Official Travel Guide — Ginkakuji and Philosopher's Path access](https://kyoto.travel/en/getting-around/comfortable-access-to-ginkaku-ji-temple-philosophers-path/)
+- [Kyoto City Official Travel Guide — Kinkakuji access](https://kyoto.travel/en/getting-around/comfortable-access-to-kinkaku-ji-temple-kinugasa/)
+- [Kiyomizudera — official location and access](https://www.kiyomizudera.or.jp/en/location/)
+- [Fushimi Inari Taisha — official station access](https://inari.jp/en/access/)
+- [National Museum of Modern Art, Kyoto — collection](https://www.momak.go.jp/English/collection/) and [visitor information](https://www.momak.go.jp/English/guide/hoursAdmission.html)
+- [Kyoto City KYOCERA Museum of Art](https://kyotocity-kyocera.museum/en/)
+- [Kyoto Museum of Crafts and Design](https://kmtc.jp/en/)
+- [Kyoto City Official Travel Guide — Central Kyoto](https://kyoto.travel/en/areas/central/), [Gion and Kiyomizu](https://kyoto.travel/en/areas/gion-kiyomizu/), and [Japan National Tourism Organization — Pontocho](https://www.japan.travel/en/spot/79/)
+
+Four reviewed locale batches (`93-kyoto-access-copy-refresh.json`) supply the same five-route update in zh-Hant, ja, ko and th. Each has 46/46 newly required targets filled; the exact batch validators and samples passed. Locale review also corrected active older wording in zh-Hant (12 values) and Korean (8 values), then removed 23 superseded entries per locale from the older batch. `npm run audit:i18n` passes with 51,853 required strings per language and no missing or stale translations; 207,412 reviewed targets were checked.
+
+The full `npm run audit` passed all country and editorial regressions and the site audit (4,560 localized routes; 912 per locale; 955 search records per language; 4,560 unique localized titles). `npm run build` passed with 5,430 files, 4,577 HTML files and 780 images (309.0 MiB); it verified all 4,560 sitemap routes and left 14,570 Pages-file slots before the safety boundary. `git diff --check` passed. Final branch, commit, preview URLs and the dedicated 45-route/five-locale harness results are recorded here after preview deployment.
+
+No local browser was launched and no screenshots or rendered viewport measurements are claimed. The harness defines paired 320/390 CSS-pixel frames and validates localized route metadata, photo credits and asset/style hashes; it is source/artifact verification, not a visual rendering sign-off.
