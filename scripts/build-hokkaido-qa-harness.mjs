@@ -76,9 +76,14 @@ const stylesheets = ['/css/site.css'].map((urlPath) => {
   return { path: urlPath, sha256: sha256(fs.readFileSync(localPath)) };
 });
 
-const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim();
-const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
-const workingTree = execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim();
+function git(args) {
+  const safeDirectory = root.replaceAll('\\', '/');
+  return execFileSync('git', ['-c', `safe.directory=${safeDirectory}`, ...args], { cwd: root, encoding: 'utf8' }).trim();
+}
+
+const branch = git(['branch', '--show-current']);
+const commit = git(['rev-parse', 'HEAD']);
+const workingTree = git(['status', '--porcelain']);
 if (branch !== 'hokkaido-qa') throw new Error(`Build the Hokkaido preview from hokkaido-qa, not ${branch}.`);
 if (workingTree) throw new Error('Commit and push reviewed source before building the Hokkaido preview manifest.');
 
