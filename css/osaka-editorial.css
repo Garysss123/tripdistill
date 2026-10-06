@@ -1,0 +1,123 @@
+/* Osaka field-note panels add place history without changing the shared layout. */
+.osaka-field-notes {
+  overflow: hidden;
+  padding: clamp(1.4rem, 3.5vw, 2.7rem);
+  border: 1px solid #31504d;
+  border-radius: 1.4rem;
+  background: #102322;
+  color: #f3f2e9;
+}
+
+.osaka-field-notes__heading {
+  max-width: 54rem;
+  margin-bottom: clamp(1.3rem, 3vw, 2.2rem);
+}
+
+.osaka-field-notes__eyebrow {
+  display: inline-block;
+  margin-bottom: .55rem;
+  color: #d8ec8a;
+  font-size: .73rem;
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.osaka-field-notes__heading h2 {
+  max-width: 22ch;
+  margin: 0 0 .6rem;
+  color: inherit;
+  font-size: clamp(1.65rem, 3vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.osaka-field-notes__heading p {
+  max-width: 66ch;
+  margin: 0;
+  color: #d1dfd8;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.osaka-field-notes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.osaka-field-notes__grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.osaka-field-note {
+  min-width: 0;
+  padding: 1.15rem 1.05rem 1.3rem;
+  border: 1px solid #34524e;
+  border-radius: .9rem;
+  background: linear-gradient(155deg, #1b3836, #172e2d 72%);
+}
+
+.osaka-field-note__number {
+  display: block;
+  margin-bottom: 1rem;
+  color: #d8ec8a;
+  font-size: .72rem;
+  font-weight: 750;
+  letter-spacing: .09em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.osaka-field-note h3 {
+  margin: 0 0 .55rem;
+  color: #fffdf3;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.osaka-field-note p {
+  margin: 0;
+  color: #d5e0da;
+  font-size: .93rem;
+  line-height: 1.65;
+}
+
+.osaka-field-notes__source-note {
+  margin: 1rem 0 0;
+  color: #d1dfd8;
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+.osaka-field-notes__source-note a {
+  color: #e6f4a1;
+  font-weight: 650;
+  text-underline-offset: .18em;
+}
+
+.osaka-field-notes a:focus-visible {
+  outline: 3px solid #fff5bd;
+  outline-offset: 3px;
+  border-radius: .15rem;
+}
+
+@media (max-width: 900px) {
+  .osaka-field-notes__grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .osaka-field-notes__grid,
+  .osaka-field-notes__grid--four {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .osaka-field-note {
+    padding: 1.05rem;
+  }
+}

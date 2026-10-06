@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T03:11:02.471Z",
+  "generatedAt": "2026-10-06T06:11:41.441Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 697,
+    "licenseClaimsNotIndependentlyVerified": 688,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -15,12 +15,12 @@
     "imageReferencesScanned": 3555,
     "assetsUsedByScannedEnglishPages": 779,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 189,
-    "assetsWithExplicitEnglishCreditMatch": 24,
-    "assetsVisuallyReviewed": 22,
+    "assetsWithMatchedEnglishCreditOnly": 180,
+    "assetsWithExplicitEnglishCreditMatch": 33,
+    "assetsVisuallyReviewed": 30,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 82,
-    "metadataOrCreditOnly": 697,
+    "sourcePageChecked": 91,
+    "metadataOrCreditOnly": 688,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
@@ -7802,20 +7802,20 @@
         {
           "assetPath": "/assets/images/dotonbori-night.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg",
-          "sourceTitle": "Dotonbori photo",
-          "creditLabel": "Dotonbori photo",
+          "sourceTitle": "Dotonbori, Osaka, at night, November 2016.jpg",
+          "creditLabel": "Dotonbori, Osaka, at night, November 2016.jpg",
           "creator": "Martin Falbisoner",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Edited: resized and converted to WebP; distributed under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Martin Falbisoner authorship, Dotonbori canal and Ebisu Bridge subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.",
           "useCount": 2,
           "routes": [
             "/japan/osaka/",
@@ -7826,7 +7826,7 @@
             "Dotonbori canal illuminated at night in Namba"
           ],
           "rawVisibleCredits": [
-            "Dotonbori photo — Martin Falbisoner, CC BY-SA 4.0."
+            "Dotonbori, Osaka, at night, November 2016.jpg: Martin Falbisoner, CC BY-SA 4.0. Edited: resized and converted to WebP; distributed under the same license."
           ]
         }
       ]
@@ -18186,20 +18186,20 @@
         {
           "assetPath": "/assets/images/namba-yasaka.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-lions_head_theater.jpg",
-          "sourceTitle": "Namba Yasaka photo",
-          "creditLabel": "Namba Yasaka photo",
+          "sourceTitle": "Namba-Yasaka Shrine lions head theater.jpg",
+          "creditLabel": "Namba-Yasaka Shrine lions head theater.jpg",
           "creator": "Immanuelle",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Edited: resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Immanuelle authorship, Namba Yasaka Shrine subject, and CC BY 4.0 terms checked against the visible image. Attribution, license link and change disclosure are present.",
           "useCount": 2,
           "routes": [
             "/japan/osaka/",
@@ -18210,7 +18210,7 @@
             "Giant lion-head stage at Namba Yasaka Shrine in Osaka"
           ],
           "rawVisibleCredits": [
-            "Namba Yasaka photo — Immanuelle, CC BY 4.0."
+            "Namba-Yasaka Shrine lions head theater.jpg: Immanuelle, CC BY 4.0. Edited: resized and converted to WebP."
           ]
         }
       ]
@@ -18263,20 +18263,20 @@
         {
           "assetPath": "/assets/images/osaka-castle-moat.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_Outer_Moat_and_Osaka_Business_Park,_November_2016.jpg",
-          "sourceTitle": "Castle moat photo",
-          "creditLabel": "Castle moat photo",
+          "sourceTitle": "Osaka Castle Outer Moat and Osaka Business Park, November 2016.jpg",
+          "creditLabel": "Osaka Castle Outer Moat and Osaka Business Park, November 2016.jpg",
           "creator": "Martin Falbisoner",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Edited: resized and converted to WebP; distributed under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Martin Falbisoner authorship, Osaka Castle outer moat and Inui-yagura subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.",
           "useCount": 2,
           "routes": [
             "/japan/osaka/",
@@ -18287,7 +18287,7 @@
             "Stone walls, moat and modern skyline in Osaka Castle Park"
           ],
           "rawVisibleCredits": [
-            "Castle moat photo — Martin Falbisoner, CC BY-SA 4.0."
+            "Osaka Castle Outer Moat and Osaka Business Park, November 2016.jpg: Martin Falbisoner, CC BY-SA 4.0. Edited: resized and converted to WebP; distributed under the same license."
           ]
         }
       ]
@@ -18341,20 +18341,20 @@
         {
           "assetPath": "/assets/images/osaka-skyline.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osaka_skyline_at_night_from_Umeda_Sky_Building.jpg",
-          "sourceTitle": "Osaka skyline photo",
-          "creditLabel": "Osaka skyline photo",
+          "sourceTitle": "Osaka skyline at night from Umeda Sky Building.jpg",
+          "creditLabel": "Osaka skyline at night from Umeda Sky Building.jpg",
           "creator": "Kaiza96",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Edited: resized and converted to WebP; distributed under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Kaiza96 authorship, Osaka night skyline from the Umeda Sky Building subject, and CC BY-SA 3.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present. The page also carries a Japan architectural-work reproduction notice, recorded in the Osaka source report.",
           "useCount": 1,
           "routes": [
             "/japan/osaka/umeda/"
@@ -18363,7 +18363,7 @@
             "Wide Osaka skyline under an evening sky"
           ],
           "rawVisibleCredits": [
-            "Osaka skyline photo — Kaiza96, CC BY-SA 3.0."
+            "Osaka skyline at night from Umeda Sky Building.jpg: Kaiza96, CC BY-SA 3.0. Edited: resized and converted to WebP; distributed under the same license."
           ]
         }
       ]
@@ -18419,20 +18419,20 @@
         {
           "assetPath": "/assets/images/shinsekai.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_Tower.jpg",
-          "sourceTitle": "Shinsekai photo",
-          "creditLabel": "Shinsekai photo",
+          "sourceTitle": "Shinsekai and Tsutenkaku Tower.jpg",
+          "creditLabel": "Shinsekai and Tsutenkaku Tower.jpg",
           "creator": "Sakai Yayoi",
-          "license": "CC0",
+          "license": "CC0 1.0",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Sakai Yayoi authorship, Shinsekai and Tsutenkaku subject, and CC0 1.0 dedication checked against the visible image. The page credits the creator for provenance.",
           "useCount": 1,
           "routes": [
             "/japan/osaka/tennoji-shinsekai/"
@@ -18441,7 +18441,7 @@
             "Colorful Shinsekai streets beneath Tsutenkaku Tower"
           ],
           "rawVisibleCredits": [
-            "Shinsekai photo — Sakai Yayoi, CC0."
+            "Shinsekai and Tsutenkaku Tower.jpg: Sakai Yayoi, CC0 1.0."
           ]
         }
       ]
@@ -20383,38 +20383,38 @@
       ]
     },
     {
-      "sha256": "c4f5f8372f716c0b64ffda6878f38936dd22e489c8b58197b946d2d49032e6a5",
+      "sha256": "aaf1e8d2f4cb03c98e0a33b4063f5fccf9daa0b503ac841ea529d6d9fcc8e094",
       "assetPaths": [
         "/assets/images/takoyaki.webp"
       ],
-      "byteLength": 215292,
+      "byteLength": 169128,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/takoyaki.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Takoyaki_Dish.jpg",
-          "sourceTitle": "Takoyaki photo",
-          "creditLabel": "Takoyaki photo",
-          "creator": "SytheeBoyo",
-          "license": "CC0",
-          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_plate_of_assorted_Takoyaki_in_Kuromon_Market_in_Osaka,_Japan.jpg",
+          "sourceTitle": "A plate of assorted Takoyaki in Kuromon Market in Osaka, Japan.jpg",
+          "creditLabel": "A plate of assorted Takoyaki in Kuromon Market in Osaka, Japan.jpg",
+          "creator": "Gatorfan252525",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Edited: cropped, resized and converted to WebP; distributed under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Gatorfan252525 authorship, Kuromon Market takoyaki subject and CC BY-SA 4.0 terms checked against the source page and pixels. Credit, license link, edit disclosure and same-license distribution notice are present.",
           "useCount": 1,
           "routes": [
             "/japan/osaka/"
           ],
           "altTexts": [
-            "A plate of takoyaki topped with sauce and bonito flakes"
+            "A plate of assorted takoyaki in Kuromon Market, Osaka"
           ],
           "rawVisibleCredits": [
-            "Takoyaki photo — SytheeBoyo, CC0."
+            "A plate of assorted Takoyaki in Kuromon Market in Osaka, Japan.jpg: Gatorfan252525, CC BY-SA 4.0. Edited: cropped, resized and converted to WebP; distributed under the same license."
           ]
         }
       ]
@@ -20429,20 +20429,20 @@
         {
           "assetPath": "/assets/images/tempozan-dusk.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg",
-          "sourceTitle": "Tempozan dusk photo",
-          "creditLabel": "Tempozan dusk photo",
+          "sourceTitle": "Tempozan Ferris Wheel in Osaka at Dusk.jpg",
+          "creditLabel": "Tempozan Ferris Wheel in Osaka at Dusk.jpg",
           "creator": "Tim Bray",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Edited: resized and converted to WebP; distributed under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Tim Bray authorship, Tempozan Ferris Wheel at dusk subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.",
           "useCount": 2,
           "routes": [
             "/japan/osaka/",
@@ -20453,46 +20453,46 @@
             "Tempozan Ferris Wheel and Osaka Bay illuminated at dusk"
           ],
           "rawVisibleCredits": [
-            "Tempozan dusk photo — Tim Bray, CC BY-SA 4.0."
+            "Tempozan Ferris Wheel in Osaka at Dusk.jpg: Tim Bray, CC BY-SA 4.0. Edited: resized and converted to WebP; distributed under the same license."
           ]
         }
       ]
     },
     {
-      "sha256": "a36f049dd823790198190adacdeb4cfc507d1fd79b513eed61549883f56feabe",
+      "sha256": "435e1c321576770579c496ca16a03281a8ab659589d2c53405bd8b6686e9cda3",
       "assetPaths": [
         "/assets/images/tennoji-harukas.webp"
       ],
-      "byteLength": 556116,
+      "byteLength": 370608,
       "sourceRecords": [
         {
           "assetPath": "/assets/images/tennoji-harukas.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Illuminated_Tenn%C5%8Dji_Park_and_Abeno_Harukas,_November_2015,_Osaka.jpg",
-          "sourceTitle": "Tennoji and Harukas photo",
-          "creditLabel": "Tennoji and Harukas photo",
-          "creator": "Laitche",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abeno_Harukas_20260223.jpg",
+          "sourceTitle": "Abeno Harukas 20260223.jpg",
+          "creditLabel": "Abeno Harukas 20260223.jpg",
+          "creator": "ノボホショコロトソ",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "editHistory": "Edited: cropped, resized and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-06",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, ノボホショコロトソ authorship, Abeno Harukas subject and CC BY 4.0 terms checked. Credit, license link and crop/resize/conversion notice are present.",
           "useCount": 2,
           "routes": [
             "/japan/osaka/",
             "/japan/osaka/tennoji-shinsekai/"
           ],
           "altTexts": [
-            "Abeno Harukas over Tennoji Park at night",
-            "Abeno Harukas rising above illuminated Tennoji Park at night"
+            "Abeno Harukas rising above a street-level approach in Abeno, Osaka",
+            "Abeno Harukas rises above the street-level approach in Abeno, Osaka"
           ],
           "rawVisibleCredits": [
-            "Tennoji and Harukas photo — Laitche, CC BY-SA 4.0."
+            "Abeno Harukas 20260223.jpg: ノボホショコロトソ, CC BY 4.0. Edited: cropped, resized and converted to WebP."
           ]
         }
       ]
@@ -22562,21 +22562,21 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/umeda-sky-building.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Osaka_skyline_at_night_from_Umeda_Sky_Building.jpg",
-          "sourceTitle": "Osaka skyline photo",
-          "creditLabel": "Osaka skyline photo",
-          "creator": "Kaiza96",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umeda_Sky_Building,_Osaka,_November_2016_-02.jpg",
+          "sourceTitle": "Umeda Sky Building, Osaka, November 2016 -02.jpg",
+          "creditLabel": "Umeda Sky Building, Osaka, November 2016 -02.jpg",
+          "creator": "Martin Falbisoner",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Edited: resized and converted to WebP; distributed under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Osaka source review: exact Commons title, Martin Falbisoner authorship, Umeda Sky Building escalator subject and CC BY-SA 4.0 terms checked. Corrected a prior credit that described a different skyline photo; credit, license link, edit disclosure and same-license distribution notice are present.",
           "useCount": 2,
           "routes": [
             "/japan/osaka/",
@@ -22587,7 +22587,7 @@
             "Enclosed escalator rising through the Umeda Sky Building in Osaka"
           ],
           "rawVisibleCredits": [
-            "Osaka skyline photo — Kaiza96, CC BY-SA 3.0."
+            "Umeda Sky Building, Osaka, November 2016 -02.jpg: Martin Falbisoner, CC BY-SA 4.0. Edited: resized and converted to WebP; distributed under the same license."
           ]
         }
       ]

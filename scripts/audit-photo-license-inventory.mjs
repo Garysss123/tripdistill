@@ -225,6 +225,51 @@ const verifiedSourcePageDetails = new Map([
     'https://commons.wikimedia.org/wiki/File:251213_Nanzen-ji_Suirokaku_Kyoto_Japan05s3.jpg',
     'Kyoto district photo review: exact Commons title, 663highland authorship, and CC BY-SA 4.0 terms checked against the page; attribution, license link, change notice and share-alike terms confirmed.',
     '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Abeno_Harukas_20260223.jpg',
+    'Osaka source review: exact Commons title, ノボホショコロトソ authorship, Abeno Harukas subject and CC BY 4.0 terms checked. Credit, license link and crop/resize/conversion notice are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:A_plate_of_assorted_Takoyaki_in_Kuromon_Market_in_Osaka,_Japan.jpg',
+    'Osaka source review: exact Commons title, Gatorfan252525 authorship, Kuromon Market takoyaki subject and CC BY-SA 4.0 terms checked against the source page and pixels. Credit, license link, edit disclosure and same-license distribution notice are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Umeda_Sky_Building,_Osaka,_November_2016_-02.jpg',
+    'Osaka source review: exact Commons title, Martin Falbisoner authorship, Umeda Sky Building escalator subject and CC BY-SA 4.0 terms checked. Corrected a prior credit that described a different skyline photo; credit, license link, edit disclosure and same-license distribution notice are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_Tower.jpg',
+    'Osaka source review: exact Commons title, Sakai Yayoi authorship, Shinsekai and Tsutenkaku subject, and CC0 1.0 dedication checked against the visible image. The page credits the creator for provenance.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg',
+    'Osaka source review: exact Commons title, Martin Falbisoner authorship, Dotonbori canal and Ebisu Bridge subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-lions_head_theater.jpg',
+    'Osaka source review: exact Commons title, Immanuelle authorship, Namba Yasaka Shrine subject, and CC BY 4.0 terms checked against the visible image. Attribution, license link and change disclosure are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Osaka_Castle_Outer_Moat_and_Osaka_Business_Park,_November_2016.jpg',
+    'Osaka source review: exact Commons title, Martin Falbisoner authorship, Osaka Castle outer moat and Inui-yagura subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg',
+    'Osaka source review: exact Commons title, Tim Bray authorship, Tempozan Ferris Wheel at dusk subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Osaka_skyline_at_night_from_Umeda_Sky_Building.jpg',
+    'Osaka source review: exact Commons title, Kaiza96 authorship, Osaka night skyline from the Umeda Sky Building subject, and CC BY-SA 3.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present. The page also carries a Japan architectural-work reproduction notice, recorded in the Osaka source report.',
+    '2026-10-06'
   ]
 ].map(([sourceUrl, detail, checkedOn]) => [sourceUrl, { checkedOn: checkedOn || '2026-10-05', detail }]));
 
@@ -452,14 +497,30 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/italy-puglia-lecce-otranto-gallipoli.webp',
   '/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp',
   '/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp',
-  '/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp'
+  '/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp',
+  '/assets/images/takoyaki.webp',
+  '/assets/images/tennoji-harukas.webp',
+  '/assets/images/shinsekai.webp',
+  '/assets/images/dotonbori-night.webp',
+  '/assets/images/namba-yasaka.webp',
+  '/assets/images/osaka-castle-moat.webp',
+  '/assets/images/tempozan-dusk.webp',
+  '/assets/images/osaka-skyline.webp'
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
   ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
   ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
   ['/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp', '2026-10-05'],
-  ['/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp', '2026-10-05']
+  ['/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp', '2026-10-05'],
+  ['/assets/images/takoyaki.webp', '2026-10-06'],
+  ['/assets/images/tennoji-harukas.webp', '2026-10-06'],
+  ['/assets/images/shinsekai.webp', '2026-10-06'],
+  ['/assets/images/dotonbori-night.webp', '2026-10-06'],
+  ['/assets/images/namba-yasaka.webp', '2026-10-06'],
+  ['/assets/images/osaka-castle-moat.webp', '2026-10-06'],
+  ['/assets/images/tempozan-dusk.webp', '2026-10-06'],
+  ['/assets/images/osaka-skyline.webp', '2026-10-06']
 ]);
 const entries = [];
 const sourceConflicts = [];

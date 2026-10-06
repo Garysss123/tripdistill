@@ -30,6 +30,15 @@ The prior preview baseline (source commit `a3e95819501c0a53964bec6b801e110718807
 
 `7b22bdcd0ca2b0296726c5e7093e22199352dc7d37e03df900ccada6a9c36e6c`
 
-Because the generated public output is byte-identical, this bookkeeping-only change was not redeployed. The preview remains on source commit `a3e95819501c0a53964bec6b801e110718807af2`; the source branch contains the validation repair, archive, and route-bundle consolidation.
+Because the generated public output is byte-identical, this bookkeeping-only change was not redeployed. The GitHub `kyoto-qa` branch is at commit `a85c6432fd8d5181e548171c04a9df171ba18893`; the existing Cloudflare preview remains on source commit `a3e95819501c0a53964bec6b801e110718807af2`. The source branch contains the validation repair, archive, and route-bundle consolidation.
 
 The merged catalog JSON files are generated artifacts: each approval run writes a new `generatedAt` and current `batchFiles` list. Their raw file hashes therefore differ from an earlier approval run even though the rendered public tree is byte-identical; the generated metadata is not part of `dist`.
+
+## Negative regression fixture evidence
+
+After the repair commit, two temporary mutations of the Japanese Kyoto bundle were passed through the real approval merger (`node scripts/merge-i18n-batches.mjs --approve --locale=ja`):
+
+- Removing the current required source key `. Changes: image resized, display-cropped and converted to WebP` exited 1 with `Cannot approve ja: 1 required translations are missing`.
+- Adding the sentinel source `__qa_stale_fixture_key__` exited 1 with a `stale or unknown source key` error.
+
+The original bundle was restored byte-for-byte in a `finally` block after each case; the fixture script also asserted exact file equality after restoration. No fixture or output artifact was retained.
