@@ -205,6 +205,26 @@ const verifiedSourcePageDetails = new Map([
   [
     "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
     "Replacement source page checked for Norbert Nagel, Santa Maria dell’Isola in Tropea, and CC BY-SA 3.0. The page says a specimen copy or link is a request, not a license condition; none was sent."
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Ninomaru_Palace,_November_2016.jpg',
+    'Kyoto district photo review: Commons source title, Martin Falbisoner authorship, and CC BY-SA 4.0 terms checked against the exact page; attribution, license link, change notice and share-alike terms confirmed.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:View_of_the_Five-storied_Pagoda_from_the_Lotus_Pond,_T%C5%8D-ji_Temple,_Kyoto,_20240821_1015_5226.jpg',
+    'Kyoto district photo review: exact English source title, Jakub Hałun authorship, and CC BY 4.0 terms checked against the page; attribution, license link and change notice confirmed.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kyoto-Ryoan-Ji_MG_4512.jpg',
+    'Kyoto district photo review: exact Commons title, Cquest authorship, and CC BY-SA 2.5 terms checked; attribution, license link, change notice and same-version share-alike requirement confirmed. Replaced the prior Ryoanji file after its embedded metadata conflicted with the Commons licensing section.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:251213_Nanzen-ji_Suirokaku_Kyoto_Japan05s3.jpg',
+    'Kyoto district photo review: exact Commons title, 663highland authorship, and CC BY-SA 4.0 terms checked against the page; attribution, license link, change notice and share-alike terms confirmed.',
+    '2026-10-06'
   ]
 ].map(([sourceUrl, detail, checkedOn]) => [sourceUrl, { checkedOn: checkedOn || '2026-10-05', detail }]));
 

@@ -1,0 +1,65 @@
+/* Editorial layouts for Kyoto's five newly deepened district guides. */
+.kd-story {
+  --kd-accent: #8e3a31;
+  --kd-paper: #f5f0e8;
+  --kd-ink: #242e32;
+  margin-block: clamp(1.4rem, 3.5vw, 3.2rem);
+  padding: clamp(1.1rem, 3.2vw, 2.6rem);
+  border: 1px solid rgba(36, 46, 50, .15);
+  border-radius: 1.4rem;
+  background: var(--kd-paper);
+  color: var(--kd-ink);
+}
+.kd-story *, .kd-story *::before, .kd-story *::after { box-sizing: border-box; }
+.kd-story-intro { display: grid; grid-template-columns: minmax(8rem, .52fr) minmax(0, 1.48fr); column-gap: clamp(1rem, 3vw, 3.25rem); align-items: end; margin: 0 0 clamp(1.25rem, 2.8vw, 2.2rem); }
+.kd-story-kicker { display: block; color: var(--kd-accent); font-size: .74rem; font-weight: 750; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
+.kd-story-intro h2 { max-width: 18ch; margin: .35rem 0 .65rem; color: var(--kd-ink); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.8rem, 3vw, 3.1rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.05; }
+.kd-story-intro p { grid-column: 2; max-width: 64ch; margin: 0; color: #4b5759; font-size: 1rem; line-height: 1.7; }
+.kd-story-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; align-items: stretch; }
+.kd-story-card { min-width: 0; padding: clamp(1rem, 1.6vw, 1.35rem); border: 1px solid rgba(36, 46, 50, .13); border-top: 3px solid var(--kd-accent); border-radius: .7rem; background: rgba(255, 255, 255, .72); }
+.kd-story-marker { display: block; margin: 0 0 .85rem; color: var(--kd-accent); font-size: .68rem; font-weight: 750; letter-spacing: .11em; line-height: 1.45; text-transform: uppercase; }
+.kd-story-card h3 { margin: 0 0 .65rem; color: var(--kd-ink); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.2rem, 1.55vw, 1.65rem); font-weight: 500; line-height: 1.18; }
+.kd-story-card p { margin: 0; color: #435052; font-size: .95rem; line-height: 1.68; }
+.kd-story-note { max-width: 86ch; margin: 1rem 0 0; padding: .95rem 1.15rem; border-left: 3px solid var(--kd-accent); background: rgba(255, 255, 255, .62); color: #354244; line-height: 1.65; }
+.kd-story--slope { --kd-accent: #963b30; --kd-paper: #f5efe7; background: linear-gradient(140deg, #f5efe7 0%, #f3e7d9 100%); }
+.kd-story--slope .kd-story-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.kd-story--market { --kd-accent: #734b30; --kd-paper: #f2ede4; background: linear-gradient(120deg, #f2ede4 0%, #f5f0e9 60%, #eee6d8 100%); }
+.kd-story--market .kd-story-grid { grid-template-columns: 1.02fr 1.13fr 1fr; }
+.kd-story--market .kd-story-card--market { background: #314542; border-top-color: #c57951; }
+.kd-story--market .kd-story-card--market .kd-story-marker { color: #e8b18c; }
+.kd-story--market .kd-story-card--market h3, .kd-story--market .kd-story-card--market p { color: #fffaf2; }
+.kd-story--station { --kd-accent: #285f6a; --kd-paper: #eaf0ed; background: linear-gradient(125deg, #eaf0ed 0%, #e5ecec 100%); }
+.kd-story--station .kd-story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kd-story--station .kd-story-marker { font-size: .72rem; }
+.kd-story--station .kd-story-card--market { background: #234d54; border-top-color: #b68054; }
+.kd-story--station .kd-story-card--market .kd-story-marker { color: #efd4ad; }
+.kd-story--station .kd-story-card--market h3, .kd-story--station .kd-story-card--market p { color: #fff; }
+.kd-story--northwest { --kd-accent: #78601c; --kd-paper: #f4f0e3; background: linear-gradient(135deg, #f4f0e3 0%, #eee8d7 100%); }
+.kd-story--northwest .kd-story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kd-story--northwest .kd-story-card--gold { border-top-color: #b18a22; background: #fffaf0; }
+.kd-story--northwest .kd-story-card--stone { border-top-color: #545b51; background: #f8f8f4; }
+.kd-story--northwest .kd-story-card--season { border-top-color: #975a3f; background: #f7efe9; }
+.kd-story--canal { --kd-accent: #285e57; --kd-paper: #e9f0ea; background: linear-gradient(130deg, #e9f0ea 0%, #e3eeeb 60%, #e9e9dc 100%); }
+.kd-story--canal .kd-story-grid { grid-template-columns: 1.08fr 1fr 1.08fr; }
+.kd-story--canal .kd-story-card--water { background: #28504a; border-top-color: #c48a50; }
+.kd-story--canal .kd-story-card--water .kd-story-marker { color: #efd1a6; }
+.kd-story--canal .kd-story-card--water h3, .kd-story--canal .kd-story-card--water p { color: #fff; }
+@media (max-width: 1020px) {
+  .kd-story-intro { grid-template-columns: minmax(0, 1fr); }
+  .kd-story-intro p { grid-column: 1; }
+  .kd-story--slope .kd-story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kd-story--market .kd-story-grid, .kd-story--station .kd-story-grid, .kd-story--northwest .kd-story-grid, .kd-story--canal .kd-story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kd-story--northwest .kd-story-card--season { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .kd-story { padding: 1rem; border-radius: 1rem; }
+  .kd-story-intro { margin-bottom: 1rem; }
+  .kd-story-intro h2 { max-width: 22ch; font-size: clamp(1.65rem, 8vw, 2.2rem); line-height: 1.1; }
+  .kd-story-intro p { font-size: .95rem; }
+  .kd-story--slope .kd-story-grid, .kd-story--market .kd-story-grid, .kd-story--station .kd-story-grid, .kd-story--northwest .kd-story-grid, .kd-story--canal .kd-story-grid { grid-template-columns: minmax(0, 1fr); }
+  .kd-story--northwest .kd-story-card--season { grid-column: auto; }
+  .kd-story-card { padding: 1rem; }
+  .kd-story-card h3 { font-size: 1.35rem; }
+  .kd-story-note { padding: .8rem .9rem; }
+}
+@media (prefers-reduced-motion: reduce) { .kd-story *, .kd-story *::before, .kd-story *::after { scroll-behavior: auto !important; } }

@@ -17,7 +17,12 @@ const expectedRoutes = [
   ['/japan/kyoto/', 'Kyoto hub'],
   ['/japan/kyoto/arashiyama-sagano/', 'Arashiyama & Sagano'],
   ['/japan/kyoto/fushimi-inari-sake-district/', 'Fushimi Inari & Sake District'],
-  ['/japan/kyoto/gion-pontocho/', 'Gion & Pontocho']
+  ['/japan/kyoto/gion-pontocho/', 'Gion & Pontocho'],
+  ['/japan/kyoto/kiyomizudera-higashiyama/', 'Kiyomizudera & Higashiyama'],
+  ['/japan/kyoto/central-kyoto-nishiki/', 'Central Kyoto & Nishiki'],
+  ['/japan/kyoto/kyoto-station-south/', 'Kyoto Station & South'],
+  ['/japan/kyoto/kinkakuji-northwest/', 'Kinkakuji & Northwest'],
+  ['/japan/kyoto/philosophers-path-okazaki/', "Philosopher's Path & Okazaki"]
 ];
 const expectedLocales = [
   ['en', 'English', ''],
@@ -31,11 +36,15 @@ const photoInventory = JSON.parse(fs.readFileSync(photoInventoryPath, 'utf8'));
 const photoRecordByAsset = new Map(photoInventory.entries.flatMap((entry) => entry.sourceRecords || []).map((record) => [record.assetPath, record]));
 const translationsByLocale = new Map();
 for (const [locale] of expectedLocales.filter(([code]) => code !== 'en')) {
-  const batchPath = path.join(projectRoot, 'data', 'i18n', 'reviewed', locale, '90-kyoto-photo-credit-completion.json');
-  if (!fs.existsSync(batchPath)) throw new Error(`Missing reviewed Kyoto photo-credit translations for ${locale}.`);
-  const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
-  if (batch.locale !== locale || batch.qualityStatus !== 'reviewed') throw new Error(`Kyoto photo-credit batch is not reviewed for ${locale}.`);
-  translationsByLocale.set(locale, batch.translations);
+  const merged = {};
+  for (const batchName of ['90-kyoto-photo-credit-completion.json', '91-kyoto-five-district-guides.json']) {
+    const batchPath = path.join(projectRoot, 'data', 'i18n', 'reviewed', locale, batchName);
+    if (!fs.existsSync(batchPath)) throw new Error(`Missing reviewed Kyoto translation batch ${batchName} for ${locale}.`);
+    const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
+    if (batch.locale !== locale || batch.qualityStatus !== 'reviewed') throw new Error(`Kyoto translation batch ${batchName} is not reviewed for ${locale}.`);
+    Object.assign(merged, batch.translations);
+  }
+  translationsByLocale.set(locale, merged);
 }
 
 function walk(node, visit) {
@@ -82,6 +91,16 @@ function assertKyotoCss(css, label) {
   if (!/\boverflow-x\s*:\s*auto\s*;/i.test(navRule) || /\boverflow-x\s*:\s*(?:hidden|clip)\b/i.test(navRule)) {
     throw new Error(`${label}: Kyoto child-guide jump navigation must remain horizontally scrollable.`);
   }
+}
+
+function assertDistrictCss(css, label) {
+  for (const variant of ['slope', 'market', 'station', 'northwest', 'canal']) {
+    if (!css.includes('.kd-story--' + variant)) throw new Error(`${label}: missing the ${variant} district layout.`);
+  }
+  if (!css.includes('@media (max-width: 620px)') || !css.includes('grid-template-columns: minmax(0, 1fr)')) {
+    throw new Error(`${label}: district cards are missing their narrow-screen single-column layout.`);
+  }
+  if (!/\.kd-story-card\s*\{[^{}]*min-width:\s*0\s*;/s.test(css)) throw new Error(`${label}: district cards need min-width: 0 for translated copy.`);
 }
 
 function assertPhotoCredits(html, row, label) {
@@ -224,7 +243,7 @@ const localHarness = fs.readFileSync(harnessPath, 'utf8');
 const localReleaseBytes = fs.readFileSync(releasePath);
 const release = JSON.parse(localReleaseBytes.toString('utf8'));
 assertNoindex(localHarness, 'dist harness');
-if (release.project !== 'trip' || release.branch !== 'kyoto-qa' || release.routeCount !== 20) throw new Error('Release identity must be project trip, branch kyoto-qa, and 20 routes.');
+if (release.project !== 'trip' || release.branch !== 'kyoto-qa' || release.routeCount !== 45) throw new Error('Release identity must be project trip, branch kyoto-qa, and 45 routes.');
 if (JSON.stringify(release.viewportWidths) !== JSON.stringify(expectedWidths)) throw new Error('Release manifest viewport widths mismatch.');
 if (JSON.stringify(release.routes.map(({ path, label }) => [path, label])) !== JSON.stringify(expectedRoutes)) throw new Error('Release manifest route list mismatch.');
 if (JSON.stringify(release.locales.map(({ code, label }) => [code, label])) !== JSON.stringify(expectedLocales.map(([code, label]) => [code, label]))) throw new Error('Release manifest locale list mismatch.');
@@ -234,9 +253,13 @@ const localStylesheetPath = path.join(distRoot, 'css', 'site.css');
 const localStylesheet = fs.readFileSync(localStylesheetPath);
 if (hash(localStylesheet) !== release.stylesheet.sha256) throw new Error('Local stylesheet hash differs from release manifest.');
 assertKyotoCss(localStylesheet.toString('utf8'), 'local /css/site.css');
+if (release.districtStylesheet?.path !== '/css/kyoto-districts.css' || !/^[a-f0-9]{64}$/.test(release.districtStylesheet?.sha256 || '')) throw new Error('Release manifest must include the exact Kyoto district stylesheet identity.');
+const localDistrictStylesheet = fs.readFileSync(path.join(distRoot, 'css', 'kyoto-districts.css'));
+if (hash(localDistrictStylesheet) !== release.districtStylesheet.sha256) throw new Error('Local Kyoto district stylesheet hash differs from release manifest.');
+assertDistrictCss(localDistrictStylesheet.toString('utf8'), 'local /css/kyoto-districts.css');
 
 const rows = routeRows();
-if (release.pages.length !== rows.length) throw new Error(`Release manifest has ${release.pages.length} localized routes; expected 20.`);
+if (release.pages.length !== rows.length) throw new Error(`Release manifest has ${release.pages.length} localized routes; expected 45.`);
 for (const row of rows) {
   const record = release.pages.find((page) => page.locale === row.locale && page.path === row.path);
   if (!record) throw new Error(`Release manifest missing route ${row.locale} ${row.path}.`);
@@ -256,7 +279,7 @@ if ((localSitemap.match(/<loc>/g) || []).length !== 4560) throw new Error('Expec
 
 if (!liveFlag) {
   assertNoindex(localHarness, 'local harness');
-  console.log(`Local Kyoto QA harness passed: noindex; four routes × five locales; paired 320/390 CSS-pixel frames; 20 route, scroller and photo-attribution checks; CSS hash; ${release.images.length} local image hashes; harness absent from 4,560-route sitemap; commit ${release.commit}.`);
+  console.log(`Local Kyoto QA harness passed: noindex; nine routes × five locales; paired 320/390 CSS-pixel frames; 45 route, scroller and photo-attribution checks; both CSS hashes; ${release.images.length} local image hashes; harness absent from 4,560-route sitemap; commit ${release.commit}.`);
 } else {
   if (new URL(origin).hostname !== 'kyoto-qa.trip-68e.pages.dev' && !new URL(origin).hostname.endsWith('.trip-68e.pages.dev')) {
     throw new Error(`Live origin is not a deployment hostname for the verified trip-68e Pages project: ${origin}`);
@@ -284,6 +307,11 @@ if (!liveFlag) {
   const remoteStylesheet = Buffer.from(await stylesheetResponse.arrayBuffer());
   if (hash(remoteStylesheet) !== liveIdentity.stylesheet.sha256) throw new Error('Live stylesheet hash differs from build.');
   assertKyotoCss(remoteStylesheet.toString('utf8'), 'live /css/site.css');
+  const districtStylesheetResponse = await fetchNoStore(`${origin}${liveIdentity.districtStylesheet.path}`);
+  if (districtStylesheetResponse.status !== 200) throw new Error(`Live district stylesheet returned HTTP ${districtStylesheetResponse.status}.`);
+  const remoteDistrictStylesheet = Buffer.from(await districtStylesheetResponse.arrayBuffer());
+  if (hash(remoteDistrictStylesheet) !== liveIdentity.districtStylesheet.sha256) throw new Error('Live Kyoto district stylesheet hash differs from build.');
+  assertDistrictCss(remoteDistrictStylesheet.toString('utf8'), 'live /css/kyoto-districts.css');
 
   let checkedPages = 0;
   for (const row of rows) {
@@ -309,5 +337,5 @@ if (!liveFlag) {
   const liveSitemap = await sitemapResponse.text();
   if (liveSitemap.includes('/qa/kyoto-responsive/')) throw new Error('Live sitemap must not list the harness.');
   if ((liveSitemap.match(/<loc>/g) || []).length !== 4560) throw new Error('Live sitemap is not the expected 4,560 routes.');
-  console.log(`Live Kyoto QA passed at ${origin}: noindex harness; 20/20 localized HTML, scroller and photo-attribution checks; stylesheet SHA-256; ${liveIdentity.images.length}/${liveIdentity.images.length} image body hashes; unchanged 4,560-route sitemap; project ${liveIdentity.project}, branch ${liveIdentity.branch}, commit ${liveIdentity.commit}.`);
+  console.log(`Live Kyoto QA passed at ${origin}: noindex harness; 45/45 localized HTML, scroller and photo-attribution checks; both stylesheet SHA-256 values; ${liveIdentity.images.length}/${liveIdentity.images.length} image body hashes; unchanged 4,560-route sitemap; project ${liveIdentity.project}, branch ${liveIdentity.branch}, commit ${liveIdentity.commit}.`);
 }

@@ -26,7 +26,12 @@ const routes = [
   { path: '/japan/kyoto/', label: 'Kyoto hub' },
   { path: '/japan/kyoto/arashiyama-sagano/', label: 'Arashiyama & Sagano' },
   { path: '/japan/kyoto/fushimi-inari-sake-district/', label: 'Fushimi Inari & Sake District' },
-  { path: '/japan/kyoto/gion-pontocho/', label: 'Gion & Pontocho' }
+  { path: '/japan/kyoto/gion-pontocho/', label: 'Gion & Pontocho' },
+  { path: '/japan/kyoto/kiyomizudera-higashiyama/', label: 'Kiyomizudera & Higashiyama' },
+  { path: '/japan/kyoto/central-kyoto-nishiki/', label: 'Central Kyoto & Nishiki' },
+  { path: '/japan/kyoto/kyoto-station-south/', label: 'Kyoto Station & South' },
+  { path: '/japan/kyoto/kinkakuji-northwest/', label: 'Kinkakuji & Northwest' },
+  { path: '/japan/kyoto/philosophers-path-okazaki/', label: "Philosopher's Path & Okazaki" }
 ];
 
 function sha256(value) {
@@ -69,6 +74,9 @@ const imageRecords = [...imagePaths].sort().map((urlPath) => {
 const stylesheetPath = path.join(distRoot, 'css', 'site.css');
 if (!fs.existsSync(stylesheetPath)) throw new Error('Missing built site stylesheet.');
 const stylesheet = { path: '/css/site.css', sha256: sha256(fs.readFileSync(stylesheetPath)) };
+const districtStylesheetPath = path.join(distRoot, 'css', 'kyoto-districts.css');
+if (!fs.existsSync(districtStylesheetPath)) throw new Error('Missing built Kyoto district stylesheet.');
+const districtStylesheet = { path: '/css/kyoto-districts.css', sha256: sha256(fs.readFileSync(districtStylesheetPath)) };
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: projectRoot, encoding: 'utf8' }).trim();
 const branch = execFileSync('git', ['branch', '--show-current'], { cwd: projectRoot, encoding: 'utf8' }).trim();
 const workingTree = execFileSync('git', ['status', '--porcelain'], { cwd: projectRoot, encoding: 'utf8' }).trim();
@@ -84,7 +92,8 @@ const release = {
   locales: locales.map(({ code, label }) => ({ code, label })),
   pages: pageRecords,
   images: imageRecords,
-  stylesheet
+  stylesheet,
+  districtStylesheet
 };
 
 const page = `<!doctype html>
