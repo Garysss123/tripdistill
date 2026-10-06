@@ -63,6 +63,16 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Mount_Fuji_April_Cherry_Blossom.jpg',
+    'Japan overview photo review: the exact Commons file title, SRP1998 creator, Mount Fuji/cherry blossom subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Shibuya_crossing_at_night,_Tokyo,_Japan.jpg',
+    'Japan overview photo review: the exact Commons file title, Joli Rumi creator, Shibuya crossing subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.',
+    '2026-10-06'
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_(Hokan-ji_Temple),_Kyoto,_Japan.jpg',
     'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
     '2026-10-06'

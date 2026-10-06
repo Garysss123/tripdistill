@@ -1,0 +1,19 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/"
+  ],
+  "translations": {
+    "A 14-day trip has 13 nights. One workable shape is four nights in Tokyo, three in Kyoto or Osaka, and six in one Hokkaido corridor, with arrival on Day 1, departure on Day 14 and two transfer days; this trades away the other Kansai city. It assumes flights line up for a Tokyo arrival and Hokkaido departure; if you must return to another airport, add a positioning day or choose fewer stops. To keep Tokyo, Kyoto, Osaka and Hokkaido, consider about 19–20 days (18–19 nights) as a flexible planning range, not a minimum.": "14일 여행은 13박입니다. 가능한 일정의 한 예는 도쿄 4박, 교토 또는 오사카 3박, 홋카이도 한 이동 권역 6박으로, 숙박은 4+3+6=13박입니다. 도착은 1일 차, 출발은 14일 차로 잡고 이동일은 이틀 둡니다. 이 일정에서는 간사이의 다른 도시를 제외합니다. 도쿄 도착과 홋카이도 출발에 맞는 항공편이 있다는 전제입니다. 다른 공항으로 돌아와야 한다면 이동을 위한 하루를 추가하거나 방문지를 줄이세요. 도쿄, 교토, 오사카, 홋카이도를 모두 포함하려면 최소 일수가 아닌 유연한 계획 범위로 약 19–20일(18–19박)을 고려하세요.",
+    "Start with a city route through Tokyo, Kyoto and Osaka. Hokkaido is a separate island-scale journey with longer transfers.": "도쿄, 교토, 오사카를 잇는 도시 일정으로 시작하세요. 홋카이도는 이동 시간이 더 긴 섬 규모의 별도 여행입니다.",
+    "14 days (13 nights)": "14일(13박)",
+    "One example: 4 Tokyo nights, 3 in Kyoto or Osaka, then 6 in one Hokkaido corridor (13 nights total). This drops the other Kansai city.": "예시: 도쿄 4박, 교토 또는 오사카 3박, 이어서 홋카이도 한 이동 권역 6박(총 13박)입니다. 간사이의 다른 도시는 제외하는 일정입니다.",
+    "Assumes arrival in Tokyo on Day 1, departure from Hokkaido on Day 14 and two transfer days. Check flight and rail connections first. To keep all three cities plus Hokkaido, consider 19–20 days (18–19 nights); a flexible range, not a minimum.": "도쿄 도착은 1일 차, 홋카이도 출발은 14일 차이며 이동일이 이틀이라고 가정합니다. 먼저 항공편과 철도 연결을 확인하세요. 세 도시와 홋카이도를 모두 포함하려면 최소 일정이 아닌 유연한 범위로 19–20일(18–19박)을 고려하세요.",
+    "Photo by SRP1998; licensed under": "사진: SRP1998, 라이선스:",
+    ". Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.": ". 변경 사항: 크기를 조정하고 WebP로 변환했으며, 화면 크기에 맞춰 반응형으로 잘라 표시합니다. 동일조건변경허락: 이 수정물은 동일한 CC BY-SA 4.0 라이선스로 배포됩니다.",
+    "Photo by Luka Peternel; licensed under": "사진: Luka Peternel, 라이선스:",
+    "Photo by Chi King; licensed under": "사진: Chi King, 라이선스:",
+    ". Changes: converted to WebP and displayed with responsive cover cropping.": ". 변경 사항: WebP로 변환했으며, 화면 크기에 맞춰 반응형으로 잘라 표시합니다."
+  }
+}

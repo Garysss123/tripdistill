@@ -1,0 +1,19 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/"
+  ],
+  "translations": {
+    "A 14-day trip has 13 nights. One workable shape is four nights in Tokyo, three in Kyoto or Osaka, and six in one Hokkaido corridor, with arrival on Day 1, departure on Day 14 and two transfer days; this trades away the other Kansai city. It assumes flights line up for a Tokyo arrival and Hokkaido departure; if you must return to another airport, add a positioning day or choose fewer stops. To keep Tokyo, Kyoto, Osaka and Hokkaido, consider about 19–20 days (18–19 nights) as a flexible planning range, not a minimum.": "14日間の旅行は13泊です。一つの現実的な例は、東京に4泊、京都または大阪に3泊、北海道の一つのエリアに6泊する旅程です（計13泊）。1日目に東京に到着し、14日目に北海道から出発する想定で、移動日は2日です。関西のもう一方の都市は省きます。東京着・北海道発の航空便が都合よくつながる前提です。別の空港まで戻る必要がある場合は、移動用の予備日を1日追加するか、立ち寄り先を減らしてください。東京、京都、大阪、北海道すべてを巡るなら、およそ19〜20日（18〜19泊）を柔軟な計画の目安として検討しましょう。最低日数ではありません。",
+    "Start with a city route through Tokyo, Kyoto and Osaka. Hokkaido is a separate island-scale journey with longer transfers.": "まずは東京・京都・大阪の都市周遊から。北海道は移動に時間のかかる、北の島への別旅行です。",
+    "14 days (13 nights)": "14日間（13泊）",
+    "One example: 4 Tokyo nights, 3 in Kyoto or Osaka, then 6 in one Hokkaido corridor (13 nights total). This drops the other Kansai city.": "一例：東京に4泊、京都または大阪で3泊、その後、北海道の一つのエリアで6泊（合計13泊）。関西のもう一方の都市は省きます。",
+    "Assumes arrival in Tokyo on Day 1, departure from Hokkaido on Day 14 and two transfer days. Check flight and rail connections first. To keep all three cities plus Hokkaido, consider 19–20 days (18–19 nights); a flexible range, not a minimum.": "1日目に東京に到着し、14日目に北海道を出発する想定で、移動日は2日です。先に航空便と鉄道の接続を確認してください。東京・京都・大阪の3都市すべてと北海道を巡る場合は、19〜20日（18〜19泊）を検討できます。これは柔軟な計画の目安で、最低日数ではありません。",
+    "Photo by SRP1998; licensed under": "撮影：SRP1998、ライセンス：",
+    ". Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.": "。変更内容：サイズ変更、WebPへの変換、レスポンシブなカバー表示に合わせたトリミング。継承条件：この改変物は同じバージョンのCC BY-SA 4.0ライセンスで公開しています。",
+    "Photo by Luka Peternel; licensed under": "撮影：Luka Peternel、ライセンス：",
+    "Photo by Chi King; licensed under": "撮影：Chi King、ライセンス：",
+    ". Changes: converted to WebP and displayed with responsive cover cropping.": "。変更内容：WebPへの変換、レスポンシブ表示に合わせたカバー用のトリミング。"
+  }
+}

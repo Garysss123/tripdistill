@@ -39,6 +39,14 @@ const locales = [
   { code: 'ko', label: 'Korean', prefix: '/ko' },
   { code: 'th', label: 'Thai', prefix: '/th' }
 ];
+const expectedPhotoCredits = [
+  { asset: '/assets/images/mount-fuji-sakura.webp', title: 'Mount Fuji April Cherry Blossom.jpg', creator: 'SRP1998', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mount_Fuji_April_Cherry_Blossom.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', shareAlike: true },
+  { asset: '/assets/images/shibuya-night.webp', title: 'Shibuya crossing at night, Tokyo, Japan.jpg', creator: 'Joli Rumi', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Shibuya_crossing_at_night,_Tokyo,_Japan.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', shareAlike: true },
+  { asset: '/assets/images/kyoto-yasaka-dori.webp', title: 'Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg', creator: 'Basile Morin', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_(Hokan-ji_Temple),_Kyoto,_Japan.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', shareAlike: true },
+  { asset: '/assets/images/osaka-castle-sakura.webp', title: 'Osaka Castle cherry blossom, 2018', creator: 'Luka Peternel', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', shareAlike: true },
+  { asset: '/assets/images/biei-landscape.webp', title: 'Biei landscape', creator: 'Chi King', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Biei_landscape_(7662422372).jpg', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', shareAlike: false },
+  { asset: '/assets/images/fushimi-inari.webp', title: 'Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg', creator: 'Basile Morin', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', shareAlike: true }
+];
 function assert(ok, message) { if (!ok) throw new Error(message); }
 function hash(bytes) { return createHash('sha256').update(bytes).digest('hex'); }
 function attr(node, name) { return node.attrs?.find((item) => item.name === name)?.value || ''; }
@@ -54,6 +62,26 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 const harness = fs.readFileSync(htmlPath, 'utf8');
 const sitemapBytes = fs.readFileSync(path.join(dist, 'sitemap.xml'));
 const sitemap = sitemapBytes.toString('utf8');
+const stylesheetRecord = manifest.assets.find((item) => item.path === '/css/site.css');
+assert(stylesheetRecord, 'Japan overview manifest must pin the shared stylesheet.');
+const siteCss = fs.readFileSync(distFile(stylesheetRecord.path), 'utf8');
+const japanBodyRule = /body\[data-page="japan"\]\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
+const japanCompareRule = /body\[data-page="japan"\]\s+\.compare-wrap\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
+const japanHeroRule = /body\[data-page="japan"\]\s+\.page-hero-content\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
+const japanHeroTextRule = /body\[data-page="japan"\]\s+\.page-hero-content\s+p\s*\{([^}]*)\}/s.exec(siteCss)?.[1] || '';
+assert(/min-width\s*:\s*0(?:px)?\s*;/i.test(japanBodyRule), 'Japan overview must override the shared 320px body minimum.');
+assert(/max-width\s*:\s*100%\s*;/i.test(japanCompareRule) && /overflow-x\s*:\s*auto\s*;/i.test(japanCompareRule), 'The wide trip comparison must remain available in its own horizontal scroller.');
+const panel = japanHeroRule.match(/background\s*:\s*rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(0?\.\d+)\s*\)/i);
+const heroText = japanHeroTextRule.match(/color\s*:\s*(#[0-9a-f]{6})/i)?.[1];
+assert(panel && heroText, 'Static hero contrast check needs an explicit translucent panel and text color.');
+const backgroundRgb = panel.slice(1, 4).map(Number).map((channel) => channel * Number(panel[4]) + 255 * (1 - Number(panel[4])));
+const foregroundRgb = heroText.match(/[0-9a-f]{2}/gi).map((channel) => parseInt(channel, 16));
+function luminance(rgb) {
+  const linear = rgb.map((channel) => channel / 255).map((channel) => channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4);
+  return .2126 * linear[0] + .7152 * linear[1] + .0722 * linear[2];
+}
+const heroContrastEstimate = (luminance(foregroundRgb) + .05) / (luminance(backgroundRgb) + .05);
+assert(heroContrastEstimate >= 4.5, `Japan hero text's static worst-case white-image contrast estimate is only ${heroContrastEstimate.toFixed(2)}:1.`);
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 assert(manifest.project === 'trip' && manifest.branch === 'hokkaido-qa', 'Manifest must identify only the existing trip project and hokkaido-qa branch.');
 assert(manifest.routeCount === 5 && isDeepStrictEqual(manifest.route, route), 'Manifest must cover the one Japan country route in five locales.');
@@ -87,6 +115,7 @@ for (const locale of locales) {
   const ids = new Set();
   const labels = [];
   const images = [];
+  const photoCreditRows = [];
   const stylesheets = [];
   const scripts = [];
   const internalLinks = new Set();
@@ -102,6 +131,7 @@ for (const locale of locales) {
     const id = attr(node, 'id'); if (id) { assert(!ids.has(id), `${urlPath} repeats id ${id}.`); ids.add(id); }
     if (attr(node, 'aria-labelledby')) labels.push(...attr(node, 'aria-labelledby').split(/\s+/));
     if (node.tagName === 'img') { const alt = attr(node, 'alt').trim(); if (!alt) emptyAlt = true; const src = attr(node, 'src'); if (src.startsWith('/')) images.push(src); }
+    if (node.tagName === 'li' && attr(node, 'data-photo-asset')) photoCreditRows.push(node);
     if (node.tagName === 'link' && attr(node, 'rel') === 'stylesheet') stylesheets.push(attr(node, 'href'));
     if (node.tagName === 'script' && attr(node, 'src')) scripts.push(attr(node, 'src'));
     if (node.tagName === 'a') { const href = attr(node, 'href'); if (href.startsWith('/')) internalLinks.add(href); if (/^https?:\/\//i.test(href)) externalLinks.add(href); if (attr(node, 'target') === '_blank') assert(attr(node, 'rel').split(/\s+/).includes('noopener'), `${urlPath} has a new-tab link without noopener.`); }
@@ -111,6 +141,23 @@ for (const locale of locales) {
   assert(description.length >= 40 && description.length <= 300, `${urlPath} description is empty or out of bounds.`);
   assert(canonical === `https://tripdistill.com${urlPath}`, `${urlPath} canonical does not match the preserved route.`);
   assert(!emptyAlt, `${urlPath} contains an image with empty alt text.`);
+  assert(photoCreditRows.length === expectedPhotoCredits.length, `${urlPath} must show all ${expectedPhotoCredits.length} overview image credits.`);
+  for (const credit of expectedPhotoCredits) {
+    const row = photoCreditRows.find((item) => attr(item, 'data-photo-asset') === credit.asset);
+    assert(row, `${urlPath} is missing the visible credit for ${credit.asset}.`);
+    assert(attr(row, 'data-photo-title') === credit.title && attr(row, 'data-photo-creator') === credit.creator && attr(row, 'data-photo-license') === credit.license, `${urlPath} has a mismatched title, creator or license for ${credit.asset}.`);
+    const rowLinks = [];
+    const editKeys = [];
+    walk(row, (node) => { if (node.tagName === 'a') rowLinks.push(node); const editKey = attr(node, 'data-photo-edit-key'); if (editKey) editKeys.push(editKey); });
+    const sourceLink = rowLinks.find((node) => attr(node, 'href') === credit.sourceUrl);
+    const licenseLink = rowLinks.find((node) => attr(node, 'href') === credit.licenseUrl);
+    assert(sourceLink && attr(sourceLink, 'data-photo-source-link') === 'true' && textOf(sourceLink).trim() && !/\.(?:jpe?g|webp)$/i.test(textOf(sourceLink).trim()), `${urlPath} must link the translated attribution to the exact source without exposing a raw image filename for ${credit.asset}.`);
+    assert(licenseLink && textOf(licenseLink).trim() === credit.license, `${urlPath} must link the exact license version for ${credit.asset}.`);
+    const editKey = editKeys[0] || '';
+    assert(editKey.includes('converted to WebP'), `${urlPath} must disclose WebP conversion for ${credit.asset}.`);
+    assert((attr(row, 'data-photo-share-alike') === 'true') === credit.shareAlike, `${urlPath} has an incorrect share-alike marker for ${credit.asset}.`);
+    assert(credit.shareAlike ? editKey.includes(`same ${credit.license} license`) : !/share-alike/i.test(editKey), `${urlPath} must accurately state the applicable adaptation terms for ${credit.asset}.`);
+  }
   for (const id of labels) assert(ids.has(id), `${urlPath} has broken aria-labelledby target ${id}.`);
   for (const item of locales) assert(alternates.get(item.code) === `https://tripdistill.com${item.prefix}${route.path}`, `${urlPath} has incorrect ${item.code} alternate.`);
   assert(alternates.get('x-default') === 'https://tripdistill.com/japan/', `${urlPath} x-default must point to the English country route.`);
@@ -168,7 +215,7 @@ walk(harnessDoc, (node) => { if (node.tagName === 'select' && attr(node, 'id') =
 assert(localeControl && titledFrames === 2, 'Harness needs a labeled language selector and two titled frames.');
 const localCommit = git(['rev-parse', 'HEAD']);
 assert(manifest.commit === localCommit && manifest.branch === 'hokkaido-qa', 'Preview manifest identity must match local branch and commit.');
-console.log(`Local Japan overview harness verified: ${pageRecords.length}/5 locale routes, FAQ/schema, SEO/hreflang, official entry/fare links, localized search summaries, ${manifest.assets.length} referenced assets, ${manifest.editedSitemapRoutes.length * 5}/80 route-language dates, paired 320/390px frames, noindex harness and 4,560 sitemap URLs.`);
+console.log(`Local Japan overview harness verified: ${pageRecords.length}/5 locale routes, FAQ/schema, SEO/hreflang, official entry/fare links, six exact visible photo credits per locale, localized search summaries, ${manifest.assets.length} referenced assets, ${manifest.editedSitemapRoutes.length * 5}/80 route-language dates, scoped 320px body shrink, intact table scroller, paired 320/390px frames, static worst-case hero contrast estimate ${heroContrastEstimate.toFixed(2)}:1 (white image under panel), noindex harness and 4,560 sitemap URLs. The static checks do not measure actual browser scrollWidth or image-pixel contrast.`);
 
 if (live) {
   async function fetchBytes(urlPath, expectedHash) {

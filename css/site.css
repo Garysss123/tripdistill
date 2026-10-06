@@ -2589,3 +2589,35 @@ img { height: auto; }
   .page-content { padding-top: 1.25rem; }
   .site-shell { width: min(var(--max-width), calc(100% - 1.25rem)); }
 }
+/* Japan overview: let the document shrink below the shared 320px floor when a
+   classic scrollbar reduces the usable layout viewport. Keep the wide table
+   in its own scroll container so no comparison content is clipped. */
+body[data-page="japan"] { min-width: 0; }
+body[data-page="japan"] .site-shell,
+body[data-page="japan"] .page-content,
+body[data-page="japan"] .page-hero,
+body[data-page="japan"] .page-hero-content,
+body[data-page="japan"] .compare-wrap { min-width: 0; }
+body[data-page="japan"] .compare-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+
+/* A translucent ink panel preserves the Fuji image while giving every hero
+   text line a consistent dark backing at every crop and viewport. */
+body[data-page="japan"] .page-hero-content {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 48rem;
+  flex: 0 1 48rem;
+  margin: 1rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  color: #fff;
+  background: rgba(9, 23, 33, .84);
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 1rem;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+  backdrop-filter: blur(8px);
+}
+body[data-page="japan"] .page-hero-content p { color: #e2ecf1; }
+
+@media (max-width: 640px) {
+  body[data-page="japan"] .page-hero-content { margin: .75rem; padding: 1rem; }
+}

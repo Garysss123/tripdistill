@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-06T14:35:10.869Z",
+  "generatedAt": "2026-10-06T17:27:19.163Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 779,
     "completeSourceCreatorLicenseRecords": 779,
-    "licenseClaimsNotIndependentlyVerified": 667,
+    "licenseClaimsNotIndependentlyVerified": 665,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 1,
@@ -12,15 +12,15 @@
     "deduplicatedImageCount": 779,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3554,
-    "assetsUsedByScannedEnglishPages": 778,
+    "imageReferencesScanned": 3555,
+    "assetsUsedByScannedEnglishPages": 779,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 163,
-    "assetsWithExplicitEnglishCreditMatch": 50,
+    "assetsWithMatchedEnglishCreditOnly": 161,
+    "assetsWithExplicitEnglishCreditMatch": 52,
     "assetsVisuallyReviewed": 49,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 112,
-    "metadataOrCreditOnly": 667,
+    "sourcePageChecked": 114,
+    "metadataOrCreditOnly": 665,
     "missingSourceCreditMatch": 0,
     "incompleteAttributionFields": 0,
     "sourceMetadataConflicts": 0,
@@ -10268,7 +10268,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "editHistory": "Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.",
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -10287,7 +10287,7 @@
             "Vermilion torii gates and a stone lantern at Fushimi Inari Taisha"
           ],
           "rawVisibleCredits": [
-            "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
+            "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -10850,9 +10850,13 @@
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-06",
           "verificationDetail": "Hokkaido image review: exact Commons source title, Alastair Rae creator credit, and CC BY-SA 2.0 terms checked against the source page.",
-          "useCount": 0,
-          "routes": [],
-          "altTexts": [],
+          "useCount": 1,
+          "routes": [
+            "/japan/hokkaido/kushiro-lake-akan/"
+          ],
+          "altTexts": [
+            "Several red-crowned cranes standing on snow in Hokkaido"
+          ],
           "rawVisibleCredits": [
             "Photo: “Several red-crowned cranes in Hokkaido” by Alastair Rae, CC BY-SA 2.0. Cropped/resized and converted to WebP; this image adaptation is shared under the same license version."
           ]
@@ -16084,7 +16088,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.",
+          "editHistory": "Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.",
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -16103,7 +16107,7 @@
             "Yasaka-dori street and pagoda before daytime crowds"
           ],
           "rawVisibleCredits": [
-            "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license."
+            "Yasaka-dori early morning with street lanterns and the Tower of Yasaka (Hokan-ji Temple), Kyoto, Japan.jpg Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18146,20 +18150,20 @@
         {
           "assetPath": "/assets/images/mount-fuji-sakura.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Fuji_April_Cherry_Blossom.jpg",
-          "sourceTitle": "Mount Fuji photo",
-          "creditLabel": "Mount Fuji photo",
+          "sourceTitle": "Mount Fuji April Cherry Blossom.jpg",
+          "creditLabel": "Mount Fuji April Cherry Blossom.jpg",
           "creator": "SRP1998",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Japan overview photo review: the exact Commons file title, SRP1998 creator, Mount Fuji/cherry blossom subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.",
           "useCount": 1,
           "routes": [
             "/japan/"
@@ -18168,7 +18172,7 @@
             "Snow-capped Mount Fuji framed by cherry blossoms"
           ],
           "rawVisibleCredits": [
-            "Mount Fuji photo — SRP1998, CC BY-SA 4.0."
+            "Mount Fuji April Cherry Blossom.jpg Photo by SRP1998; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18306,7 +18310,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP for this page; this version is shared under the same CC BY-SA 4.0 license.",
+          "editHistory": "Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.",
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -18323,7 +18327,7 @@
             "Osaka Castle framed by cherry blossoms"
           ],
           "rawVisibleCredits": [
-            "Osaka Castle cherry blossom, 2018 by Luka Peternel, licensed CC BY-SA 4.0; resized and converted to WebP for this page; this version is shared under the same CC BY-SA 4.0 license."
+            "Osaka Castle cherry blossom, 2018 Photo by Luka Peternel; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -18375,20 +18379,20 @@
         {
           "assetPath": "/assets/images/shibuya-night.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shibuya_crossing_at_night,_Tokyo,_Japan.jpg",
-          "sourceTitle": "Shibuya photo",
-          "creditLabel": "Shibuya photo",
+          "sourceTitle": "Shibuya crossing at night, Tokyo, Japan.jpg",
+          "creditLabel": "Shibuya crossing at night, Tokyo, Japan.jpg",
           "creator": "Joli Rumi",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-06",
+          "verificationDetail": "Japan overview photo review: the exact Commons file title, Joli Rumi creator, Shibuya crossing subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.",
           "useCount": 3,
           "routes": [
             "/japan/",
@@ -18401,7 +18405,7 @@
             "Crowds crossing Shibuya at night beneath bright screens"
           ],
           "rawVisibleCredits": [
-            "Shibuya photo — Joli Rumi, CC BY-SA 4.0."
+            "Shibuya crossing at night, Tokyo, Japan.jpg Photo by Joli Rumi; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]

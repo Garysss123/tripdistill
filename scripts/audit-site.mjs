@@ -12,7 +12,7 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
-const siteCssVersions = ['/css/site.css?v=20260926-1', '/css/site.css?v=20261005-2', '/css/site.css?v=20261006-1'];
+const siteCssVersions = ['/css/site.css?v=20260926-1', '/css/site.css?v=20261005-2', '/css/site.css?v=20261006-1', '/css/site.css?v=20261006-2'];
 const mainJsVersion = '/js/main.js?v=20260911-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
