@@ -847,7 +847,7 @@ body[data-city="kyoto"] .area-jump-nav a:hover { color: var(--area-dark); backgr
 
 .kyoto-hero-market { grid-template-columns: minmax(20rem, .78fr) minmax(0, 1.22fr); color: #2e261d; background: #fff5cf; border-color: #ddc269; }
 .kyoto-hero-market::before { content: "MARKET / GRID / KYOTO"; position: absolute; z-index: 4; top: 1rem; left: 1rem; padding: .45rem .6rem; color: #fff; background: #c54638; font-size: .58rem; font-weight: 900; letter-spacing: .16em; transform: rotate(-2deg); }
-.kyoto-hero-market .kyoto-area-copy { background-image: linear-gradient(rgba(197, 70, 56, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 70, 56, .08) 1px, transparent 1px); background-size: 28px 28px; }
+.kyoto-hero-market .kyoto-area-copy { padding-top: 4.5rem; background-image: linear-gradient(rgba(197, 70, 56, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 70, 56, .08) 1px, transparent 1px); background-size: 28px 28px; }
 .kyoto-hero-market .kyoto-area-copy h1 { font-weight: 900; text-transform: uppercase; }
 .kyoto-hero-market .kyoto-area-media { margin: 1rem; min-height: 34rem; overflow: hidden; border: .55rem solid #fff; box-shadow: 0 20px 45px rgba(91, 60, 27, .22); transform: rotate(1.4deg); }
 .kyoto-hero-market .kyoto-area-meta span { color: #544024; background: rgba(255, 255, 255, .7); }
