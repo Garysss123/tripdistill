@@ -1,0 +1,331 @@
+{
+  "purpose": "Preserve reviewed Kyoto translations while consolidating current route coverage and rehoming one Malaysia credit source.",
+  "sourceDate": "2026-10-06",
+  "originalKyotoBatches": [
+    "05-kyoto.json",
+    "87-kyoto-routing-and-photo-credits.json",
+    "88-kyoto-route-corrections.json",
+    "89-kyoto-fushimi-short-visit-faq.json",
+    "90-kyoto-photo-credit-completion.json",
+    "91-kyoto-five-district-guides.json",
+    "92-kyoto-copy-polish.json",
+    "93-kyoto-access-copy-refresh.json"
+  ],
+  "consolidatedKyotoBatch": "data/i18n/reviewed/<locale>/05-kyoto.json",
+  "rehomedMalaysiaBatch": "data/i18n/reviewed/<locale>/29-malaysia-credit-rehome.json",
+  "movedSource": "— Jakub Hałun, CC BY 4.0.",
+  "locales": {
+    "zh-Hant": {
+      "locale": "zh-Hant",
+      "kyotoRoutes": 9,
+      "kyotoCurrentSourceKeys": 1262,
+      "earlierKyotoSharedKeys": 46,
+      "consolidatedKyotoKeys": 1216,
+      "archivedKyotoKeyCount": 1217,
+      "rehomedMalaysiaCredit": "— Jakub Hałun, CC BY 4.0.",
+      "malaysiaRoutes": 2,
+      "malaysiaCurrentSourceKeys": 425,
+      "malaysiaKeysCoveredByEarlierBundles": 424,
+      "archivedBatches": [
+        {
+          "sourceBatch": "05-kyoto.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/05-kyoto.json",
+          "sha256": "1534698253981c5265ff88f1922a9a23525504a29725070a1141d888b93f1daa",
+          "routeCount": 9,
+          "translationCount": 1005,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "87-kyoto-routing-and-photo-credits.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/87-kyoto-routing-and-photo-credits.json",
+          "sha256": "6de872871298c134835d91cddc06c44a650bcb3ea3d1819542aa0096892b9806",
+          "routeCount": 4,
+          "translationCount": 65,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "88-kyoto-route-corrections.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/88-kyoto-route-corrections.json",
+          "sha256": "26aded9be11a071b10bd87d76c719ee76bf1ac062747112f8f073077f4ab0dfe",
+          "routeCount": 2,
+          "translationCount": 4,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "89-kyoto-fushimi-short-visit-faq.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/89-kyoto-fushimi-short-visit-faq.json",
+          "sha256": "bf896d87247785fad2d615dfb06bca7fe48de61d18b78cf27c2b7df763ccf96e",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "90-kyoto-photo-credit-completion.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/90-kyoto-photo-credit-completion.json",
+          "sha256": "c9aa074daa2145d6dac73678d123fd7793b406dab32bc34740bc6fc9827479d6",
+          "routeCount": 4,
+          "translationCount": 12,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "91-kyoto-five-district-guides.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/91-kyoto-five-district-guides.json",
+          "sha256": "c17690337686e3a365aae9789d8daa7dc34701174e4cc21c12ad03de80a5ea53",
+          "routeCount": 6,
+          "translationCount": 83,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "92-kyoto-copy-polish.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/92-kyoto-copy-polish.json",
+          "sha256": "096b2f38f1108b9ae683ca7c6b0b8363887ddd1644b21b4270133724ebbb20b6",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "93-kyoto-access-copy-refresh.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/zh-Hant/93-kyoto-access-copy-refresh.json",
+          "sha256": "b308757d81e41f70f36c92d3be535a998bfe96341e8b0999f1e774eb0f5e303e",
+          "routeCount": 5,
+          "translationCount": 46,
+          "qualityStatus": "reviewed"
+        }
+      ]
+    },
+    "ja": {
+      "locale": "ja",
+      "kyotoRoutes": 9,
+      "kyotoCurrentSourceKeys": 1262,
+      "earlierKyotoSharedKeys": 46,
+      "consolidatedKyotoKeys": 1216,
+      "archivedKyotoKeyCount": 1217,
+      "rehomedMalaysiaCredit": "— Jakub Hałun, CC BY 4.0.",
+      "malaysiaRoutes": 2,
+      "malaysiaCurrentSourceKeys": 425,
+      "malaysiaKeysCoveredByEarlierBundles": 424,
+      "archivedBatches": [
+        {
+          "sourceBatch": "05-kyoto.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/05-kyoto.json",
+          "sha256": "96b9a460736bca69e76aace2d4e522cba7e6683b2b465ad05d8becf6a8c4c970",
+          "routeCount": 9,
+          "translationCount": 1005,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "87-kyoto-routing-and-photo-credits.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/87-kyoto-routing-and-photo-credits.json",
+          "sha256": "f8dc192b46e0856b4888b261cac78c74efbe14b870cca8c85ea4f97bc0fad0ea",
+          "routeCount": 4,
+          "translationCount": 65,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "88-kyoto-route-corrections.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/88-kyoto-route-corrections.json",
+          "sha256": "70742cee01359440168e1f366890be482d0da82fbc278fc4e400e8f5208182b7",
+          "routeCount": 2,
+          "translationCount": 4,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "89-kyoto-fushimi-short-visit-faq.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/89-kyoto-fushimi-short-visit-faq.json",
+          "sha256": "a737f6823f9c47b1776eccaeef9c4abf9091c0f508c32c1cd07008be858b0e15",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "90-kyoto-photo-credit-completion.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/90-kyoto-photo-credit-completion.json",
+          "sha256": "4ba9f2b0fa6eed4cbdace78e65c4690adffd3700538481892fc9ae345722a106",
+          "routeCount": 4,
+          "translationCount": 12,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "91-kyoto-five-district-guides.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/91-kyoto-five-district-guides.json",
+          "sha256": "8cfb9e6bff2139b646c5316da4f870492a7642b60120ef8ae5b9382a25f1b0f3",
+          "routeCount": 6,
+          "translationCount": 83,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "92-kyoto-copy-polish.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/92-kyoto-copy-polish.json",
+          "sha256": "52fb7c2a42113e1cb8e27663db6b2ce69445b28873ae4ea0c65ba3b3106a1282",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "93-kyoto-access-copy-refresh.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ja/93-kyoto-access-copy-refresh.json",
+          "sha256": "f913469f8cbc924e7d8a6564cd53637766021f02e184d0bdbc650c42d62069b0",
+          "routeCount": 5,
+          "translationCount": 46,
+          "qualityStatus": "reviewed"
+        }
+      ]
+    },
+    "ko": {
+      "locale": "ko",
+      "kyotoRoutes": 9,
+      "kyotoCurrentSourceKeys": 1262,
+      "earlierKyotoSharedKeys": 46,
+      "consolidatedKyotoKeys": 1216,
+      "archivedKyotoKeyCount": 1217,
+      "rehomedMalaysiaCredit": "— Jakub Hałun, CC BY 4.0.",
+      "malaysiaRoutes": 2,
+      "malaysiaCurrentSourceKeys": 425,
+      "malaysiaKeysCoveredByEarlierBundles": 424,
+      "archivedBatches": [
+        {
+          "sourceBatch": "05-kyoto.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/05-kyoto.json",
+          "sha256": "541379382a2c4e9497e93a8130b2a90d15b87688289c8dc9116da61933c80b41",
+          "routeCount": 9,
+          "translationCount": 1005,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "87-kyoto-routing-and-photo-credits.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/87-kyoto-routing-and-photo-credits.json",
+          "sha256": "f8b79b1778a6d349dce8614b9ac848cab250ce5b978d25322e787a59c831e75d",
+          "routeCount": 4,
+          "translationCount": 65,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "88-kyoto-route-corrections.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/88-kyoto-route-corrections.json",
+          "sha256": "0d269afea22560201bc8e0d09c47e85e05d85423e4741aee28a6e9789b76635d",
+          "routeCount": 2,
+          "translationCount": 4,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "89-kyoto-fushimi-short-visit-faq.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/89-kyoto-fushimi-short-visit-faq.json",
+          "sha256": "b9076b88e2268f992694a66fc857f6dc975305c4525750502b865615cf6d29ff",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "90-kyoto-photo-credit-completion.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/90-kyoto-photo-credit-completion.json",
+          "sha256": "e72abb74756a60df616d865aac576652f252034f8c9ee60d7a04a91a3e9b9aee",
+          "routeCount": 4,
+          "translationCount": 12,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "91-kyoto-five-district-guides.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/91-kyoto-five-district-guides.json",
+          "sha256": "4d7478622a8033e5af4e68740d50ded6132d4edf359b6e4f07e17bb9b665b515",
+          "routeCount": 6,
+          "translationCount": 83,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "92-kyoto-copy-polish.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/92-kyoto-copy-polish.json",
+          "sha256": "2b1102fc6fc638340ccef155fb9306900273bc1a4a7d60e995e1b54fb29e1ca5",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "93-kyoto-access-copy-refresh.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/ko/93-kyoto-access-copy-refresh.json",
+          "sha256": "49c6e84376e1c3ad2ee3b1736f469d02bcd3c127b2bf608b45c4290c7cb9cde9",
+          "routeCount": 5,
+          "translationCount": 46,
+          "qualityStatus": "reviewed"
+        }
+      ]
+    },
+    "th": {
+      "locale": "th",
+      "kyotoRoutes": 9,
+      "kyotoCurrentSourceKeys": 1262,
+      "earlierKyotoSharedKeys": 46,
+      "consolidatedKyotoKeys": 1216,
+      "archivedKyotoKeyCount": 1217,
+      "rehomedMalaysiaCredit": "— Jakub Hałun, CC BY 4.0.",
+      "malaysiaRoutes": 2,
+      "malaysiaCurrentSourceKeys": 425,
+      "malaysiaKeysCoveredByEarlierBundles": 424,
+      "archivedBatches": [
+        {
+          "sourceBatch": "05-kyoto.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/05-kyoto.json",
+          "sha256": "65401da7a4015b3c442d72bcf22c69da9425c7731174225fd0133b171a21e6fa",
+          "routeCount": 9,
+          "translationCount": 1005,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "87-kyoto-routing-and-photo-credits.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/87-kyoto-routing-and-photo-credits.json",
+          "sha256": "6e0cac4a83160862574ed69345521c42c702481a6f1b12c58a243f8e8751c1fd",
+          "routeCount": 4,
+          "translationCount": 65,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "88-kyoto-route-corrections.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/88-kyoto-route-corrections.json",
+          "sha256": "c0bfb2259cb333d3a3802d77970933d8e0f07b1d765f75dcc833c6a2edd6dbf9",
+          "routeCount": 2,
+          "translationCount": 4,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "89-kyoto-fushimi-short-visit-faq.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/89-kyoto-fushimi-short-visit-faq.json",
+          "sha256": "edb0963bbb161d346e5246aa3eef1327e826d3b14471c3610b028edc8f14a406",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "90-kyoto-photo-credit-completion.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/90-kyoto-photo-credit-completion.json",
+          "sha256": "4ca8f9b067fc0ac2c4e769675f1caf8c1dfec147ddf30c92f8c77034d2f2574e",
+          "routeCount": 4,
+          "translationCount": 12,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "91-kyoto-five-district-guides.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/91-kyoto-five-district-guides.json",
+          "sha256": "1d0a72ae19255a400d1a51515aee073e40dba0f536348521ff839bff3c5ad304",
+          "routeCount": 6,
+          "translationCount": 83,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "92-kyoto-copy-polish.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/92-kyoto-copy-polish.json",
+          "sha256": "132dc4cf10565a25cb53fb627eacd14049f4983839621a1ba268ac1d430f60f7",
+          "routeCount": 1,
+          "translationCount": 1,
+          "qualityStatus": "reviewed"
+        },
+        {
+          "sourceBatch": "93-kyoto-access-copy-refresh.json",
+          "archivedPath": "data/i18n/archive/kyoto/2026-10-06/th/93-kyoto-access-copy-refresh.json",
+          "sha256": "4dff14096720a96837942d935ec5061d143c5c185462b2e10f178d536e865c82",
+          "routeCount": 5,
+          "translationCount": 46,
+          "qualityStatus": "reviewed"
+        }
+      ]
+    }
+  }
+}
