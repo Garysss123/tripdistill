@@ -518,6 +518,14 @@ for (const [sourceUrl, creator, license, title] of [
   });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Rouen_Old_Town_(30784770452).jpg', 'Normandy image review: the source page identifies Jorge Láscar as creator and CC BY 2.0 as the license. Its description says the image looks east along rue du Gros-Horloge with Rouen Cathedral in the distance; this matches the downloaded and visually reviewed WebP and its human title. Attribution, linked license and WebP/crop disclosure are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Bayeux_cathedral_(498230954).jpg', 'Normandy image review: the source page identifies Paul Holloway as creator and CC BY-SA 2.0 as the license. The downloaded and visually reviewed image depicts Bayeux Cathedral; the route labels it as a town landmark and does not present it as a D-Day scene. Attribution, linked license, WebP/crop disclosure and same-license adaptation terms are present.'],
+  ['https://commons.wikimedia.org/wiki/File:A_view_of_the_Abbey_of_Mont-Saint-Michel_with_the_bay.jpg', 'Normandy image review: the source page identifies Hammondtravels as creator and CC BY-SA 4.0 as the license. The downloaded and visually reviewed image shows the abbey wall and upper buildings above part of the bay; the route title and alt do not claim an unrestricted crossing or broad bay panorama. Attribution, linked license, WebP/crop disclosure and same-license adaptation terms are present.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
@@ -575,7 +583,10 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/hokkaido-kushiro-marsh.webp',
   '/assets/images/hokkaido-abashiri-drift-ice.webp',
   '/assets/images/hokkaido-daisetsuzan-north-view.webp',
-  '/assets/images/hokkaido-yoichi-coast.webp'
+  '/assets/images/hokkaido-yoichi-coast.webp',
+  '/assets/images/france-normandy-rouen-seine-cathedral.webp',
+  '/assets/images/france-normandy-bayeux-dday-landscape.webp',
+  '/assets/images/france-normandy-mont-saint-michel-bay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
@@ -598,7 +609,10 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/hokkaido-red-crowned-cranes.webp', '2026-10-06'],
   ['/assets/images/hokkaido-lake-akan.webp', '2026-10-06'],
   ['/assets/images/hokkaido-abashiri-drift-ice.webp', '2026-10-06'],
-  ['/assets/images/hokkaido-shiretoko-five-lakes.webp', '2026-10-06']
+  ['/assets/images/hokkaido-shiretoko-five-lakes.webp', '2026-10-06'],
+  ['/assets/images/france-normandy-rouen-seine-cathedral.webp', '2026-10-07'],
+  ['/assets/images/france-normandy-bayeux-dday-landscape.webp', '2026-10-07'],
+  ['/assets/images/france-normandy-mont-saint-michel-bay.webp', '2026-10-07']
 ]);
 const entries = [];
 const sourceConflicts = [];

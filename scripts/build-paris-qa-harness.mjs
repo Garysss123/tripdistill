@@ -35,7 +35,11 @@ const routes = [
   { path: '/france/paris-region-day-trips/', label: 'Versailles- Fontainebleau- Giverny hub' },
   { path: '/france/paris-region-day-trips/versailles-palace-estate/', label: 'Versailles Palace & Estate' },
   { path: '/france/paris-region-day-trips/fontainebleau-palace-forest/', label: 'Fontainebleau Palace & Forest' },
-  { path: '/france/paris-region-day-trips/giverny-monet-vernon/', label: 'Giverny, Monet & Vernon' }
+  { path: '/france/paris-region-day-trips/giverny-monet-vernon/', label: 'Giverny, Monet & Vernon' },
+  { path: '/france/normandy/', label: 'Normandy hub' },
+  { path: '/france/normandy/rouen-seine-cathedral/', label: 'Rouen Cathedral, Old Streets & the Seine' },
+  { path: '/france/normandy/bayeux-dday-landscape/', label: 'Bayeux & the D-Day Landscape' },
+  { path: '/france/normandy/mont-saint-michel-bay/', label: 'Mont-Saint-Michel & the Bay Approach' }
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -119,7 +123,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>Paris and day trips responsive QA harness</title>
+  <title>Paris, day trips and Normandy responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -145,8 +149,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">Paris and day trips responsive QA harness</h1>
-      <p class="intro">Review the Paris routes and the Versailles, Fontainebleau and Giverny day-trip set in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
+      <h1 id="page-title">Paris, day trips and Normandy responsive QA harness</h1>
+      <p class="intro">Review the Paris routes, the Versailles, Fontainebleau and Giverny day trips, and the Normandy regional routes in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>
@@ -157,8 +161,8 @@ const page = `<!doctype html>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </div>
       <div class="preview-rail"><div class="frames">
-        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="Paris and day trips, English, 320 CSS pixels wide"></iframe></figure>
-        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="Paris and day trips, English, 390 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="France route, English, 320 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="France route, English, 390 CSS pixels wide"></iframe></figure>
       </div></div>
       <p class="meta" id="release"></p>
     </section>

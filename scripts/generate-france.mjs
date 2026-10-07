@@ -86,6 +86,10 @@ function regionalCss(clusterSlug) {
     : {};
 }
 
+function usesHumanPhotoCredits(clusterSlug) {
+  return clusterSlug === 'paris-region-day-trips' || clusterSlug === 'normandy';
+}
+
 function shellStart(mainOpen) {
   return `<a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>${mainOpen}`;
 }
@@ -141,7 +145,7 @@ function guidePage(guide, cluster, guideIndex) {
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const planningSources = uniqueSources(guide.sources, cluster.sources);
   const pageReviewDate = guide.reviewDate || reviewDate;
-  const imageCaption = cluster.slug === 'paris-region-day-trips'
+  const imageCaption = usesHumanPhotoCredits(cluster.slug)
     ? (guide.imageCaption || guide.image.creditTitle || guide.image.label)
     : `${guide.image.label} · ${guide.image.license}`;
   const context = guide.siteContext;
@@ -165,7 +169,7 @@ ${shellStart(`<main id="main-content" class="page-content fr-field" data-fr-fami
   <section class="fr-watch" id="failure-points"><header><span>Three failure points</span><h2>Change the plan before the problem compounds.</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>0${index + 1}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="fr-related"><header><span>Same regional system</span><h2>Other ways to use ${escapeHtml(cluster.name)}.</h2></header><div>${cluster.guides.filter((item) => item.slug !== guide.slug).map((item) => `<a href="${item.url}"><img src="${item.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(item.image.alt)}"><div><small>${escapeHtml(item.instrument)}</small><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(compact(item.purpose, 125))}</p><strong>Open this guide →</strong></div></a>`).join('')}</div></section>
   <section class="fr-faq"><header><span>Planning answers</span><h2>${escapeHtml(guide.name)} FAQ</h2></header><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2>${cluster.slug === 'paris-region-day-trips' ? '' : `<p>Planning facts and image licensing were reviewed on ${escapeHtml(pageReviewDate)}. Admission, transport, roads, trails, sea, fire, weather and local access can change; reopen the linked authority or operator before travel.</p>`}<ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image, cluster.slug === 'paris-region-day-trips')).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2>${cluster.slug === 'paris-region-day-trips' ? '' : `<p>Planning facts and image licensing were reviewed on ${escapeHtml(pageReviewDate)}. Admission, transport, roads, trails, sea, fire, weather and local access can change; reopen the linked authority or operator before travel.</p>`}<ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image, usesHumanPhotoCredits(cluster.slug))).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -218,7 +222,7 @@ function hubPage(cluster, clusterIndex) {
   const hero = cluster.guides[0].image;
   const faq = hubFaq(cluster);
   const pageReviewDate = cluster.reviewDate || reviewDate;
-  const heroCaption = cluster.slug === 'paris-region-day-trips'
+  const heroCaption = usesHumanPhotoCredits(cluster.slug)
     ? (cluster.guides[0].imageCaption || cluster.guides[0].image.creditTitle || hero.label)
     : `${hero.label} · ${hero.license}`;
   return `<!doctype html>
@@ -233,7 +237,7 @@ ${shellStart(`<main id="main-content" class="page-content fr-hub" data-fr-family
   <section class="fr-comparison"><header><span>Before you choose</span><h2>Three routes, three different sacrifices.</h2></header><div>${cluster.guides.map((guide) => `<article><div><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3></div><p><strong>Access:</strong> ${escapeHtml(guide.access)}</p><p><strong>Trade-off:</strong> ${escapeHtml(guide.tradeoff)}</p><p><strong>Time:</strong> ${escapeHtml(guide.duration)}</p></article>`).join('')}</div></section>
   <section class="fr-hub-sourceband"><div><span>Live planning desk</span><h2>These regional sources control the moving parts.</h2><p>Use the guide for structure, then reopen official transport, destination and weather information for the exact travel date.</p></div><ul>${sourceList(cluster.sources)}</ul></section>
   <section class="fr-hub-faq"><div><span>Regional answers</span><h2>${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${escapeHtml(pageReviewDate)}. Verify current tickets, services, roads, weather and site access before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image, cluster.slug === 'paris-region-day-trips')).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${escapeHtml(pageReviewDate)}. Verify current tickets, services, roads, weather and site access before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image, usesHumanPhotoCredits(cluster.slug))).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 

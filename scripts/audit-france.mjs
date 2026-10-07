@@ -157,8 +157,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/paris-region-day-trips/fontainebleau-palace-forest/',
     '/france/paris-region-day-trips/giverny-monet-vernon/'
   ]);
+  const normandyEditedRoutes = new Set([
+    '/france/normandy/',
+    '/france/normandy/rouen-seine-cathedral/',
+    '/france/normandy/bayeux-dday-landscape/',
+    '/france/normandy/mont-saint-michel-bay/'
+  ]);
   for (const route of routes) {
-    const expectedDate = parisEditedRoutes.has(route) || parisRegionDayTripsEditedRoutes.has(route) ? '2026-10-06' : '2026-09-20';
+    const expectedDate = normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) || parisRegionDayTripsEditedRoutes.has(route) ? '2026-10-06' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

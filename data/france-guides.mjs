@@ -38,10 +38,10 @@ export const franceClusters = franceSourceClusters.map((cluster) => ({
       ...guide,
       reviewDate: cluster.slug === 'paris'
         ? parisHubEditorial.reviewDate
-        : cluster.slug === 'paris-region-day-trips' ? (guide.reviewDate || cluster.reviewDate) : undefined,
+        : (guide.reviewDate || cluster.reviewDate || undefined),
       reviewDateISO: cluster.slug === 'paris'
         ? parisHubEditorial.reviewDateISO
-        : cluster.slug === 'paris-region-day-trips' ? (guide.reviewDateISO || cluster.reviewDateISO) : undefined,
+        : (guide.reviewDateISO || cluster.reviewDateISO || undefined),
       image: {
         ...image,
         ...(guide.imageAlt ? { alt: guide.imageAlt } : {}),
