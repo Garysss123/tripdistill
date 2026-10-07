@@ -1,0 +1,25 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/hanoi/",
+    "/vietnam/sapa-northwest-highlands/",
+    "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Hanoi as distinct rooms around Hoan Kiem: working trade lanes north of the lake, civic and royal history to the west, the colonial-era Opera House and museums to the southeast, and an active rail bridge at the Red…": "ホアンキエム湖を軸に、ハノイをいくつかのエリアに分けて計画しましょう。湖の北には今も商いが続く旧市街の通り、西には市政と王朝の歴史、南東には植民地期のオペラハウスと博物館、紅河沿いには現役の鉄道橋があります。6つの章は選択肢であり、6か所を巡る行程ではありません。入場口の制限、博物館の開館日、交通事情や雨で、地図上では近い2地点の移動にも時間がかかることがあります。",
+    "Choose the Hoan Kiem edge or Old Quarter when a walkable first day matters; choose Trang…": "初日から徒歩で動きたいならホアンキエム湖畔か旧市街、オペラハウスや博物館に近く夜は比較的静かに過ごしたいならチャンティエンやフレンチ・クオーターを拠点に。市の公的施設を中心に回るならバーディンも候補です。ホテルには正確な位置情報を送り、夜間の車両進入、エレベーター、荷物の一時預けを確認してください。細い路地、一方通行、臨時の歩行者規制で、入口までの道が変わることがあります。",
+    "TOWN / TERRACES / SUMMIT / MARKET": "街 / 棚田 / 山頂 / 市場",
+    "Sa Pa sits above the cultivated Muong Hoa valley, with the former hill-station center, Ham Rong’s stairway gardens, the Fansipan summit complex and the working villages below town all competing for the same daylight.": "サパはムオンホア渓谷の耕作地を見下ろす高地にあります。かつての避暑地の中心街、ハムロンの階段庭園、ファンシーパン山頂の複合施設、町の下に広がる暮らしのある村々が、限られた日照時間を分け合います。それぞれに半日から1日を確保しましょう。町は到着拠点として便利ですが、ファンシーパンは視界や運行状況次第。ラオチャイ〜タヴァンは車道と徒歩を組み合わせる1日コースです。カットカットは管理された下りの周遊路で、帰りは上りになります。オークイホー峠と滝へは、明るいうちに車で移動できる時間を見込んでください。バクハーの日曜市とホアンアトゥオン邸は、別日の車移動に組み込みます。ベトナム観光局によると、4〜5月は比較的晴れやすく、6〜8月は暑く、9〜10月は棚田の季節、11〜3月は冷え込みます。実際の稲の色づきや山の眺望は天候で変わります。",
+    "Central Sa Pa is the simplest base for buses, taxis, meals and the church-market center,…": "バス、タクシー、食事、教会前や市場に便利なのはサパ中心部ですが、坂の多い路地では荷物を持って最後に歩くことがあります。農村のホスト宅に泊まりたいならムオンホア渓谷のホームステイを選び、車の乗降地点、階段、食事の時間、出発方法を確認しましょう。バクハー市場の日曜に訪ねるなら、同じ日に長距離を往復せずに済むようバクハーで前泊する方法もあります。",
+    "Country planning was reviewed on 31 August 2026. Image sources and licenses are credited individually; verify current travel rules before booking.": "国別の旅程情報は2026年8月31日に確認しました。画像の出典とライセンスはそれぞれ記載しています。予約前に最新の渡航情報を確認してください。",
+    ". Changes: image resized, display-cropped and converted to WebP; no other material edits.": "。変更点：画像をリサイズし、表示用にトリミングしてWebPに変換しました。その他の実質的な編集はありません。",
+    ". Changes: image resized and converted to WebP; no other material edits. Share-alike: the adapted image is released under CC BY-SA 4.0.": "。変更点：画像をリサイズしてWebPに変換しました。その他の実質的な編集はありません。ライセンスの継承条件により、改変後の画像も CC BY-SA 4.0 の条件で公開しています。",
+    "TOWN / TERRACES / SUMMIT / MARKET · chapter 05 · reviewed 31 August 2026": "街 / 棚田 / 山頂 / 市場 · 第05章 · 2026年8月31日確認",
+    "church square and ham rong stairs": "教会広場とハムロンの階段",
+    "lao chai–ta van terraces and carved stones": "ラオチャイ〜タヴァンの棚田と刻石",
+    "sunday market and hoang a tuong mansion": "日曜市とホアンアトゥオン邸"
+  }
+}

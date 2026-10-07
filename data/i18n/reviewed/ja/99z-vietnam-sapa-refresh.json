@@ -4,9 +4,5 @@
   "routes": [
     "/vietnam/"
   ],
-  "translations": {
-    "Original illustration of the stone church above Sa Pa's steep mountain town; no people are depicted": "サパの急な山あいの町の上に建つ石造教会を描いたオリジナルイラスト。人物は描かれていません。",
-    "TripDistill original Sa Pa hill-town illustration": "TripDistill制作・サパの丘の町のイラスト",
-    "— TripDistill, CC0 1.0. Original text-free vector illustration; no photograph, people, or third-party artwork.": "— TripDistill、CC0 1.0。写真、人物、第三者作品を使わない文字なしのオリジナルベクターイラスト。"
-  }
+  "translations": {}
 }

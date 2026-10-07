@@ -4128,7 +4128,7 @@
     "url": "/vietnam/hanoi/",
     "parent": "Vietnam · Northern Vietnam",
     "type": "Complete regional hub with six field guides",
-    "summary": "Hanoi rewards a layered plan. The Old Quarter is a working urban fabric rather than a museum set, while lakes, colonial institutions, royal archaeology and river infrastructure each need a different pace. Use one central base, separate solemn sites from nightlife, and let these six chapters turn a crowded capital into a sequence that can actually be walked.",
+    "summary": "Plan Hanoi as distinct rooms around Hoan Kiem: working trade lanes north of the lake, civic and royal history to the west, the colonial-era Opera House and museums to the southeast, and an active rail bridge at the Red River edge. These six chapters are choices, not a six-stop itinerary. Controlled entrances, museum calendars, traffic and rain can turn two nearby pins into a long day.",
     "keywords": [
       "hanoi",
       "hanoi",
@@ -4146,7 +4146,7 @@
     "url": "/vietnam/sapa-northwest-highlands/",
     "parent": "Vietnam · Northwest Vietnam",
     "type": "Complete regional hub with six field guides",
-    "summary": "Sapa is a mountain base, not a single viewpoint. The town, Fansipan, Muong Hoa villages, Cat Cat, the Ô Quy Hồ corridor and Bac Ha each demand a different balance of altitude, weather, community access and road time. Build around daylight and current conditions, then let the landscape and local hosts set the pace.",
+    "summary": "Sa Pa sits above the cultivated Muong Hoa valley, with the former hill-station center, Ham Rong’s stairway gardens, the Fansipan summit complex and the working villages below town all competing for the same daylight. Give each a separate half or full day: the town is a useful arrival base, Fansipan depends on visibility and service, and Lao Chai–Ta Van is a road-and-walking day. Cat Cat is a managed downhill circuit with an uphill return; O Quy Ho’s pass and waterfalls need a daylight road window. Bac Ha’s Sunday market and Hoang A Tuong Mansion belong to a separate road day. Vietnam Tourism describes April–May as clearer, June–August as hot, September–October as terrace season and November–March as chilly; field color and mountain views still vary with weather.",
     "keywords": [
       "sapa and the northwest highlands",
       "sapa northwest highlands",
@@ -4380,7 +4380,7 @@
     "url": "/vietnam/hanoi/hoan-kiem-old-quarter/",
     "parent": "Vietnam · Hanoi",
     "type": "Focused area and decision guide",
-    "summary": "A first-day walking chapter linking Hoan Kiem Lake, the Old Quarter’s guild streets, street food and the practical rhythm of central Hanoi.",
+    "summary": "Follow Hoan Kiem Lake north into Hanoi's working Old Quarter, using the old craft-street names to choose a short route and a real stopping point.",
     "keywords": [
       "hoan kiem lake and the old quarter",
       "hanoi",
@@ -4394,7 +4394,7 @@
     "url": "/vietnam/hanoi/ba-dinh-thang-long/",
     "parent": "Vietnam · Hanoi",
     "type": "Focused area and decision guide",
-    "summary": "A respectful history route across Ba Dinh’s civic landmarks and the UNESCO-listed Imperial Citadel of Thang Long.",
+    "summary": "Separate Ba Dinh civic memory from the archaeological layers of Thang Long, then plan around controlled entrances and the citadel’s current visitor window.",
     "keywords": [
       "ba dinh and thang long imperial citadel",
       "hanoi",
@@ -4422,7 +4422,7 @@
     "url": "/vietnam/hanoi/french-quarter-opera-house/",
     "parent": "Vietnam · Hanoi",
     "type": "Focused area and decision guide",
-    "summary": "A compact architecture and performance chapter through the French Quarter, Opera House surroundings and nearby cultural institutions.",
+    "summary": "Read the French Quarter’s early-20th-century civic architecture from the Opera House, then choose a museum visit or a confirmed performance.",
     "keywords": [
       "french quarter and hanoi opera house",
       "hanoi",
@@ -4436,7 +4436,7 @@
     "url": "/vietnam/hanoi/long-bien-red-river/",
     "parent": "Vietnam · Hanoi",
     "type": "Focused area and decision guide",
-    "summary": "A morning-to-afternoon infrastructure route combining Long Bien Bridge, river views and market life with clear rail and river boundaries.",
+    "summary": "Read Long Bien as a working railway bridge and Red River edge, with a daylight plan that does not depend on informal floodplain paths.",
     "keywords": [
       "long bien bridge and the red river edge",
       "hanoi",
@@ -4450,7 +4450,7 @@
     "url": "/vietnam/hanoi/van-mieu-museum-quarter/",
     "parent": "Vietnam · Hanoi",
     "type": "Focused area and decision guide",
-    "summary": "A cultural education route pairing Van Mieu–Quoc Tu Giam with one or two nearby museums and a deliberately quiet reading pace.",
+    "summary": "Follow Van Mieu’s five courtyards from the 1070 temple to the Imperial Academy, then choose one nearby museum rather than a rushed museum crawl.",
     "keywords": [
       "van mieu and the museum quarter",
       "hanoi",
@@ -4464,12 +4464,12 @@
     "url": "/vietnam/sapa-northwest-highlands/town-ham-rong/",
     "parent": "Vietnam · Sapa and the Northwest Highlands",
     "type": "Focused area and decision guide",
-    "summary": "A practical first chapter through Sapa town, the stone church, central lanes and Ham Rong’s elevated viewpoints.",
+    "summary": "Start at Sa Pa’s stone church and market-center lanes, then decide whether Ham Rong’s uphill garden path fits your time, legs and the weather above town.",
     "keywords": [
       "sapa town and ham rong",
       "sapa and the northwest highlands",
       "town ham rong",
-      "mountain town orientation",
+      "church square and ham rong stairs",
       "vietnam travel guide"
     ]
   },
@@ -4478,12 +4478,12 @@
     "url": "/vietnam/sapa-northwest-highlands/fansipan-summit/",
     "parent": "Vietnam · Sapa and the Northwest Highlands",
     "type": "Focused area and decision guide",
-    "summary": "A planning guide for comparing the Fansipan cable car, funicular connections and permitted trekking while respecting altitude and mountain weather.",
+    "summary": "Plan Vietnam’s 3,143-metre summit around the six-kilometre cable-car ride, the final steps above it and colder, less predictable mountain weather.",
     "keywords": [
       "fansipan summit",
       "sapa and the northwest highlands",
       "fansipan summit",
-      "altitude and engineered ascent",
+      "6-kilometre cable car and summit steps",
       "vietnam travel guide"
     ]
   },
@@ -4492,12 +4492,12 @@
     "url": "/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/",
     "parent": "Vietnam · Sapa and the Northwest Highlands",
     "type": "Focused area and decision guide",
-    "summary": "A terrace-and-village chapter for Muong Hoa, Lao Chai and Ta Van with realistic trail, homestay and community etiquette.",
+    "summary": "Choose a named Lao Chai–Ta Van walk through a cultivated valley of rice terraces, irrigation channels, village lanes and carved stones.",
     "keywords": [
       "muong hoa, lao chai and ta van",
       "sapa and the northwest highlands",
       "muong hoa lao chai ta van",
-      "terrace contour and village threshold",
+      "lao chai–ta van terraces and carved stones",
       "vietnam travel guide"
     ]
   },
@@ -4506,12 +4506,12 @@
     "url": "/vietnam/sapa-northwest-highlands/cat-cat-village/",
     "parent": "Vietnam · Sapa and the Northwest Highlands",
     "type": "Focused area and decision guide",
-    "summary": "A managed attraction guide for Cat Cat’s Hmong cultural presentation, steep lanes, craft stops and waterfall circuit.",
+    "summary": "Take the short road from Sa Pa to Cat Cat’s managed downhill visitor route, with 19th-century houses, craft stops, watermills and a waterfall below town.",
     "keywords": [
       "cat cat village and waterfall",
       "sapa and the northwest highlands",
       "cat cat village",
-      "managed culture and steep watercourse",
+      "19th-century houses and waterfall steps",
       "vietnam travel guide"
     ]
   },
@@ -4534,12 +4534,12 @@
     "url": "/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/",
     "parent": "Vietnam · Sapa and the Northwest Highlands",
     "type": "Focused area and decision guide",
-    "summary": "A long-transfer culture chapter for Bac Ha’s market, textiles, livestock trade and Hoang A Tuong heritage house.",
+    "summary": "Give Bac Ha a separate Sunday road day: walk the working market first, then look for the arched courtyard of Hoang A Tuong Mansion if it is open.",
     "keywords": [
       "bac ha market and hoang a tuong",
       "sapa and the northwest highlands",
       "bac ha market hoang a tuong",
-      "market day and highland exchange",
+      "sunday market and hoang a tuong mansion",
       "vietnam travel guide"
     ]
   },

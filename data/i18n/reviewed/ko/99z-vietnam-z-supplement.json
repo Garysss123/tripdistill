@@ -1,0 +1,25 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/hanoi/",
+    "/vietnam/sapa-northwest-highlands/",
+    "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Hanoi as distinct rooms around Hoan Kiem: working trade lanes north of the lake, civic and royal history to the west, the colonial-era Opera House and museums to the southeast, and an active rail bridge at the Red…": "호안끼엠 호수를 기준으로 하노이 일정을 구역별로 나눠 계획하세요. 호수 북쪽은 지금도 상업이 이어지는 골목, 서쪽은 행정과 왕조의 역사, 남동쪽은 식민지 시대의 오페라하우스와 박물관, 홍강 변은 열차가 실제로 다니는 철교…",
+    "Choose the Hoan Kiem edge or Old Quarter when a walkable first day matters; choose Trang…": "첫날 걸어서 둘러보는 것이 중요하다면 호안끼엠 호숫가나 구시가를, 오페라하우스와 박물관 가까이에서 차분한 저녁을 보내고 싶다면 짱띠엔과 프랑스 지구를 숙소로 고르세요…",
+    "TOWN / TERRACES / SUMMIT / MARKET": "마을 / 계단식 논 / 정상 / 시장",
+    "Sa Pa sits above the cultivated Muong Hoa valley, with the former hill-station center, Ham Rong’s stairway gardens, the Fansipan summit complex and the working villages below town all competing for the same daylight.": "사파는 경작지가 펼쳐진 므엉호아 계곡 위에 자리하며, 옛 산악 휴양지 중심가와 함롱산의 계단 정원, 판시판 정상 관광단지, 시내 아래쪽에서 주민들이 생활하는 마을들이 모두 한정된 낮 시간을 나눠 써야 합니다.",
+    "Central Sa Pa is the simplest base for buses, taxis, meals and the church-market center,…": "사파 중심가는 버스와 택시, 식당, 성당과 시장이 모인 중심부를 이용하기 가장 편리한 숙박 거점이지만, 경사진 골목 탓에 짐을 들고 마지막 구간을 걸어야 할 수 있습니다…",
+    "Country planning was reviewed on 31 August 2026. Image sources and licenses are credited individually; verify current travel rules before booking.": "베트남 여행 계획은 2026년 8월 31일 검토했습니다. 이미지 출처와 라이선스는 각각 표기했습니다. 예약 전에 최신 여행 규정을 확인하세요.",
+    ". Changes: image resized, display-cropped and converted to WebP; no other material edits.": ". 변경 사항: 이미지 크기를 조정하고 표시 영역에 맞게 자른 뒤 WebP로 변환했습니다. 그 밖의 실질적인 수정은 없습니다.",
+    ". Changes: image resized and converted to WebP; no other material edits. Share-alike: the adapted image is released under CC BY-SA 4.0.": ". 변경 사항: 이미지 크기를 조정하고 WebP로 변환했으며, 그 밖의 실질적인 수정은 없습니다. 동일조건변경허락: 수정된 이미지는 같은 CC BY-SA 4.0 라이선스로 배포됩니다.",
+    "TOWN / TERRACES / SUMMIT / MARKET · chapter 05 · reviewed 31 August 2026": "마을 / 계단식 논 / 정상 / 시장 · 05장 · 2026년 8월 31일 검토",
+    "church square and ham rong stairs": "성당 광장과 함롱산 계단길",
+    "lao chai–ta van terraces and carved stones": "라오짜이–따반 계단식 논과 새겨진 바위",
+    "sunday market and hoang a tuong mansion": "박하 일요 시장과 호앙아뜨엉 저택"
+  }
+}

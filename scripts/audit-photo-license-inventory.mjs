@@ -548,6 +548,14 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Vue_panoramique_sur_la_ville_de_Sapa,_Vietnam,_entour%C3%A9e_de_montagnes_majestueuses_et_de_rizi%C3%A8res_en_terrasse.jpg', 'Vietnam image review: the exact Commons page identifies Asmara Rodrigue, the Sa Pa town panorama, and CC BY 4.0. The visible credit links the source and license and discloses resizing and WebP conversion. Source page, creator, license and subject were checked; the image pixels were not visually reviewed in this batch.'],
+  ['https://commons.wikimedia.org/wiki/File:Bac_Ha_Dinh_vua_meo.jpg', 'Vietnam image review: the exact Commons page identifies Velvet, Hoang A Tuong Mansion in Bac Ha, and CC BY-SA 4.0. The visible credit links the source and license and discloses resizing, WebP conversion and same-license distribution. Source page, creator, license and subject were checked; the image pixels were not visually reviewed in this batch.'],
+  ['https://commons.wikimedia.org/wiki/File:Hanoi_-_Opera_House_02.jpg', 'Vietnam image review: the exact Commons page identifies P. Hughes, Hanoi Opera House, and CC BY 4.0. The visible credit links the source and license and discloses the resized WebP conversion. Source page, creator, license and subject were checked; the image pixels were not visually reviewed in this batch.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],

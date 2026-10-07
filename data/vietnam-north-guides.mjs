@@ -1492,7 +1492,7 @@ const sapaFaqs = {
 
 for (const guide of sapa.guides) {
   const update = sapaGuideUpdates[guide.slug];
-  if (update) {
+  if (update && sapaDecisionLabels[guide.slug]) {
     Object.assign(guide, update);
     guide.decisions = [
       ...sapaDecisionLabels[guide.slug].map((label, index) => [label, [guide.arrival, guide.sequence, guide.boundary][index]])

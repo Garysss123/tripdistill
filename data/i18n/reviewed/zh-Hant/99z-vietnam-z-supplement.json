@@ -1,0 +1,25 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/hanoi/",
+    "/vietnam/sapa-northwest-highlands/",
+    "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Hanoi as distinct rooms around Hoan Kiem: working trade lanes north of the lake, civic and royal history to the west, the colonial-era Opera House and museums to the southeast, and an active rail bridge at the Red…": "河內適合以還劍湖為中心分區規劃：湖泊北側是仍在營運的商業街巷，西側可探訪城市政務與王朝歷史，東南側有殖民時期的歌劇院與博物館，紅河上的鐵路橋仍有列車行駛。",
+    "Choose the Hoan Kiem edge or Old Quarter when a walkable first day matters; choose Trang…": "若希望第一天以步行為主，住宿可選還劍湖畔或老城區；若想靠近長錢街與法式街區，則可選歌劇院周邊。",
+    "TOWN / TERRACES / SUMMIT / MARKET": "市鎮／梯田／山頂／市集",
+    "Sa Pa sits above the cultivated Muong Hoa valley, with the former hill-station center, Ham Rong’s stairway gardens, the Fansipan summit complex and the working villages below town all competing for the same daylight.": "Sa Pa 位於耕作中的 Muong Hoa 山谷上方；昔日避暑山城中心、Ham Rong 的階梯花園、Fansipan 山頂園區，以及鎮下仍維持日常生活的村落，都得分用有限的白天時段。",
+    "Central Sa Pa is the simplest base for buses, taxis, meals and the church-market center,…": "Sa Pa 市中心最方便搭乘公車、計程車、用餐，也鄰近教堂與市集；但街道坡度陡，拖著行李走最後一段路可能相當吃力。",
+    "Country planning was reviewed on 31 August 2026. Image sources and licenses are credited individually; verify current travel rules before booking.": "越南行程規劃已於 2026 年 8 月 31 日檢視。每張圖片均另行標示來源與授權；預訂前請查核最新旅遊規定。",
+    ". Changes: image resized, display-cropped and converted to WebP; no other material edits.": "。編修內容：調整尺寸、依展示需求裁切並轉為 WebP；未作其他實質修改。",
+    ". Changes: image resized and converted to WebP; no other material edits. Share-alike: the adapted image is released under CC BY-SA 4.0.": "。編修內容：調整尺寸並轉為 WebP；未作其他實質修改。相同方式分享：改作後的圖片依 CC BY-SA 4.0 授權釋出。",
+    "TOWN / TERRACES / SUMMIT / MARKET · chapter 05 · reviewed 31 August 2026": "市鎮／梯田／山頂／市集 · 第 05 章 · 2026 年 8 月 31 日檢視",
+    "church square and ham rong stairs": "教堂廣場與 Ham Rong 階梯",
+    "lao chai–ta van terraces and carved stones": "Lao Chai–Ta Van 梯田與石刻",
+    "sunday market and hoang a tuong mansion": "週日市集與 Hoang A Tuong 大宅"
+  }
+}

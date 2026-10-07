@@ -1,0 +1,25 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/hanoi/",
+    "/vietnam/sapa-northwest-highlands/",
+    "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Hanoi as distinct rooms around Hoan Kiem: working trade lanes north of the lake, civic and royal history to the west, the colonial-era Opera House and museums to the southeast, and an active rail bridge at the Red…": "วางแผนเที่ยวฮานอยโดยแบ่งเป็นย่านต่าง ๆ รอบทะเลสาบ Hoan Kiem: ตรอกการค้าที่ยังคึกคักทางเหนือของทะเลสาบ ประวัติศาสตร์เมืองและราชสำนักทางตะวันตก โรงอุปรากรยุคอาณานิคมกับพิพิธภัณฑ์ทางตะวันออกเฉียงใต้ และสะพานรถไฟที่ยังใช้งานอยู่ริมแม่น้ำแดง ทั้งหกบทเป็นตัวเลือก ไม่ใช่แผนเที่ยวครบหกจุดในวันเดียว ทางเข้าแบบควบคุม ตารางพิพิธภัณฑ์ การจราจร และฝนอาจทำให้การแวะสองจุดที่อยู่ใกล้กันใช้เวลานาน",
+    "Choose the Hoan Kiem edge or Old Quarter when a walkable first day matters; choose Trang…": "เลือกที่พักริมทะเลสาบ Hoan Kiem หรือในย่าน Old Quarter หากอยากเดินเที่ยวได้สะดวกในวันแรก; เลือก Trang Tien และ French Quarter หากต้องการบรรยากาศช่วงค่ำที่สงบกว่าใกล้โรงอุปรากรและพิพิธภัณฑ์ ย่าน Ba Dinh เหมาะเมื่อจุดประสงค์หลักคือเที่ยวสถานที่ราชการและประวัติศาสตร์ ส่งหมุดที่ตั้งโรงแรมให้ตรงและยืนยันว่ารถเข้าถึงช่วงดึกได้หรือไม่ รวมถึงมีลิฟต์และจุดส่งกระเป๋าหรือไม่: ตรอกแคบ ถนนเดินรถทางเดียว และการจำกัดคนเดินเท้าชั่วคราวอาจทำให้เส้นทางเข้าที่พักเปลี่ยนไป",
+    "TOWN / TERRACES / SUMMIT / MARKET": "เมือง / นาขั้นบันได / ยอดเขา / ตลาด",
+    "Sa Pa sits above the cultivated Muong Hoa valley, with the former hill-station center, Ham Rong’s stairway gardens, the Fansipan summit complex and the working villages below town all competing for the same daylight.": "ซาปาตั้งอยู่เหนือหุบเขา Muong Hoa ซึ่งยังทำการเกษตรอยู่ ทั้งย่านใจกลางเมืองตากอากาศบนเขาในอดีต สวนและทางเดินขั้นบันได Ham Rong กลุ่มสถานที่ท่องเที่ยวบนยอด Fansipan และหมู่บ้านเกษตรที่อยู่ใต้ตัวเมืองต่างก็ใช้เวลากลางวันชุดเดียวกัน ควรแยกแต่ละแห่งเป็นทริปครึ่งวันหรือเต็มวัน: ตัวเมืองเหมาะเป็นฐานเมื่อเดินทางมาถึง ส่วน Fansipan ขึ้นอยู่กับทัศนวิสัยและการเปิดให้บริการ และ Lao Chai–Ta Van ควรเผื่อวันเดินทางโดยรถสลับกับการเดิน Cat Cat เป็นเส้นทางลงเขาแบบมีการจัดการ ซึ่งต้องเดินกลับขึ้นเขา ส่วนช่องเขาและน้ำตก O Quy Ho ต้องมีช่วงเดินทางบนถนนในเวลากลางวัน ตลาดวันอาทิตย์ Bac Ha และคฤหาสน์ Hoang A Tuong ควรจัดเป็นทริปขับรถอีกวันหนึ่ง Vietnam Tourism ระบุว่าเดือนเมษายน–พฤษภาคมมักท้องฟ้าแจ่มใสกว่า มิถุนายน–สิงหาคมอากาศร้อน กันยายน–ตุลาคมเป็นฤดูนาขั้นบันได และพฤศจิกายน–มีนาคมอากาศเย็น ทั้งสีสันของพื้นที่และทิวทัศน์ภูเขายังคงแปรผันตามสภาพอากาศ",
+    "Central Sa Pa is the simplest base for buses, taxis, meals and the church-market center,…": "ใจกลางเมือง Sa Pa เป็นฐานที่สะดวกที่สุดสำหรับขึ้นรถโดยสารและแท็กซี่ หาร้านอาหาร และไปยังย่านโบสถ์กับตลาด แต่ตรอกที่ลาดชันอาจทำให้ช่วงสุดท้ายต้องเดินหิ้วสัมภาระ หากต้องการพักค้างคืนกับเจ้าบ้านในหุบเขา Muong Hoa ให้เลือกโฮมสเตย์และยืนยันจุดที่รถส่งถึงจริง จำนวนบันได เวลาอาหาร และแผนออกเดินทาง สำหรับตลาด Bac Ha วันอาทิตย์ การพักค้างคืนใน Bac Ha จะช่วยเลี่ยงการขับรถกลับไกลในวันเดียวกัน",
+    "Country planning was reviewed on 31 August 2026. Image sources and licenses are credited individually; verify current travel rules before booking.": "ทบทวนข้อมูลการวางแผนเที่ยวเวียดนามเมื่อ 31 สิงหาคม 2026 ระบุแหล่งที่มาและสัญญาอนุญาตของภาพแต่ละภาพไว้เป็นรายภาพ โปรดตรวจสอบข้อกำหนดการเดินทางล่าสุดก่อนจอง",
+    ". Changes: image resized, display-cropped and converted to WebP; no other material edits.": ". การแก้ไข: ปรับขนาด ครอปภาพตามกรอบแสดงผล และแปลงเป็น WebP; ไม่มีการแก้ไขสาระสำคัญอื่น",
+    ". Changes: image resized and converted to WebP; no other material edits. Share-alike: the adapted image is released under CC BY-SA 4.0.": ". การแก้ไข: ปรับขนาดและแปลงเป็น WebP; ไม่มีการแก้ไขสาระสำคัญอื่น การเผยแพร่ผลงานดัดแปลงภายใต้สัญญาอนุญาตเดียวกัน: ภาพที่ดัดแปลงนี้เผยแพร่ภายใต้ CC BY-SA 4.0",
+    "TOWN / TERRACES / SUMMIT / MARKET · chapter 05 · reviewed 31 August 2026": "เมือง / นาขั้นบันได / ยอดเขา / ตลาด · บทที่ 05 · ทบทวนเมื่อ 31 สิงหาคม 2026",
+    "church square and ham rong stairs": "ลานหน้าโบสถ์และบันได Ham Rong",
+    "lao chai–ta van terraces and carved stones": "นาขั้นบันได Lao Chai–Ta Van และหินสลัก",
+    "sunday market and hoang a tuong mansion": "ตลาดวันอาทิตย์และคฤหาสน์ Hoang A Tuong"
+  }
+}
