@@ -59,10 +59,18 @@ function sourceList(sources) {
 }
 
 function imageCredit(image, humanTitle = false) {
+  const title = humanTitle || image.useAltAsCreditTitle ? image.alt : image.label;
+  if (image.licenseUrl) {
+    return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(title)}</a><span translate="no"> — ${escapeHtml(image.creator)}, </span><a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener" translate="no">${escapeHtml(image.license)}</a><span>. ${escapeHtml(image.editNote)}</span></li>`;
+  }
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(humanTitle ? image.alt : image.label)}</a> — ${escapeHtml(image.creator)}, ${escapeHtml(image.license)}. ${escapeHtml(image.editNote)}</li>`;
 }
 
 function imageFigureCaption(image, humanTitle = false) {
+  if (image.licenseUrl) {
+    const title = humanTitle || image.useAltAsCreditTitle ? image.alt : image.label;
+    return `<span>${escapeHtml(title)}</span><span aria-hidden="true"> · </span><a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener" translate="no">${escapeHtml(image.license)}</a>`;
+  }
   return humanTitle ? escapeHtml(image.alt) : `${escapeHtml(image.label)} · ${escapeHtml(image.license)}`;
 }
 
@@ -121,6 +129,10 @@ function guidePage(guide, cluster) {
   const route = guide.route.map(([phase, heading, copy], index) => `<article class="vn-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(phase)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const checks = guide.checks.map(([label, copy], index) => `<article class="vn-check"><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(label)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const faq = guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('');
+  const routeLead = guide.hideSequenceLead ? '' : `<p>${escapeHtml(guide.sequence)}</p>`;
+  const checksIntro = guide.checksIntro ?? 'Conditions change faster than an editorial page. Verify the named official source, actual operator and local weather close to travel.';
+  const checksIntroMarkup = checksIntro ? `<p>${escapeHtml(checksIntro)}</p>` : '';
+  const boundary = guide.hideBoundaryBlock ? '' : `<div class="vn-boundary"><small>${escapeHtml(guide.decisions[2][0])}</small><strong>Protect this boundary</strong><p>${escapeHtml(guide.decisions[2][1])}</p></div>`;
   const description = ensureMetaDescription(guide.summary);
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
@@ -144,8 +156,8 @@ function guidePage(guide, cluster) {
       <section class="vn-decision-strip" aria-label="Three planning decisions">${decisions}</section>
       <section class="vn-reading" aria-labelledby="vn-reading-title"><div><span class="vn-section-label">Read the place</span><h2 id="vn-reading-title">Keep the local logic visible.</h2><p>${escapeHtml(guide.lead)}</p></div><aside><small>Orientation note</small><p>${escapeHtml(guide.orientation)}</p></aside></section>
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
-      <section class="vn-field-section" id="route" aria-labelledby="vn-route-title"><div class="vn-section-head"><div><span class="vn-section-label">Four-stage route</span><h2 id="vn-route-title">Let sequence do the editing.</h2></div><p>${escapeHtml(guide.sequence)}</p></div><div class="vn-route">${route}</div></section>
-      <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">Before committing</span><h2 id="vn-checks-title">Three weak points to solve.</h2></div><p>Conditions change faster than an editorial page. Verify the named official source, actual operator and local weather close to travel.</p></div><div class="vn-check-grid">${checks}</div><div class="vn-boundary"><small>${escapeHtml(guide.decisions[2][0])}</small><strong>Protect this boundary</strong><p>${escapeHtml(guide.decisions[2][1])}</p></div></section>
+      <section class="vn-field-section" id="route" aria-labelledby="vn-route-title"><div class="vn-section-head"><div><span class="vn-section-label">Four-stage route</span><h2 id="vn-route-title">Let sequence do the editing.</h2></div>${routeLead}</div><div class="vn-route">${route}</div></section>
+      <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">Before committing</span><h2 id="vn-checks-title">Three weak points to solve.</h2></div>${checksIntroMarkup}</div><div class="vn-check-grid">${checks}</div>${boundary}</section>
       <section class="vn-field-section" aria-labelledby="vn-faq-title"><div class="vn-section-head"><div><span class="vn-section-label">Planning answers</span><h2 id="vn-faq-title">${escapeHtml(guide.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
       <section class="vn-field-section" aria-labelledby="vn-related-title"><div class="vn-section-head"><div><span class="vn-section-label">Continue in ${escapeHtml(cluster.name)}</span><h2 id="vn-related-title">Choose the next chapter by purpose.</h2></div><p>Return to the hub before joining distant branches into one day.</p></div><div class="vn-related">${relatedCards(cluster, guide.slug)}</div><p class="vn-back"><a href="/vietnam/${cluster.slug}/">← Return to the complete ${escapeHtml(cluster.name)} guide</a></p></section>
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${guideReviewDate}. Schedules, access, tickets, weather and operator terms change; verify directly before travel.</p><ul>${sourceList(guide.sources || cluster.sources)}${uniqueImages(cluster.guides).map((image) => imageCredit(image, cluster.slug === 'hanoi')).join('')}</ul><span class="review-note">Editorial review: ${guideReviewDate} · Recheck time-sensitive details before booking.</span></section>
@@ -192,7 +204,7 @@ function hubPage(cluster, index) {
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content vn-hub">
       <section class="vn-hub-hero" aria-labelledby="vn-hub-title"><div class="vn-hub-copy"><span class="vn-kicker">${escapeHtml(cluster.label)} · reviewed ${hubReviewDate}</span><h1 id="vn-hub-title">${escapeHtml(cluster.name)} <span>${escapeHtml(cluster.tagline)}</span></h1><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#area-guides">Choose a chapter</a><a class="button secondary" href="#route-model">Read the route model</a></div><dl><div><dt>Useful stay</dt><dd>${escapeHtml(compactText(cluster.stay))}</dd></div><div><dt>Transfer logic</dt><dd>${escapeHtml(compactText(cluster.transfer))}</dd></div></dl></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${imageFigureCaption(hero, cluster.slug === 'hanoi')}</figcaption></figure><div class="vn-hub-index" aria-hidden="true"><small>Vietnam field atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>06 chapters</span></div></section>
-      ${planner ? `<section class="vn-hanoi-planner" aria-labelledby="vn-hanoi-planner-title"><div class="vn-hanoi-planner-heading"><span>Choose a day shape</span><h2 id="vn-hanoi-planner-title">Three plans with different clocks.</h2></div><div class="vn-hanoi-planner-grid">${planner}</div></section>` : ""}
+${planner ? `      <section class="vn-hanoi-planner" aria-labelledby="vn-hanoi-planner-title"><div class="vn-hanoi-planner-heading"><span>Choose a day shape</span><h2 id="vn-hanoi-planner-title">Three plans with different clocks.</h2></div><div class="vn-hanoi-planner-grid">${planner}</div></section>` : ""}
       <section class="vn-hub-directory" id="area-guides" aria-labelledby="vn-directory-title"><div class="vn-hub-heading"><div><span>Six independent field guides</span><h2 id="vn-directory-title">Open the place at the right scale.</h2></div><p>Each card solves a different transport, access or conduct problem. None is a placeholder.</p></div><div class="vn-hub-grid">${hubCards(cluster)}</div></section>
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
       <section class="vn-hub-section" aria-labelledby="vn-contract-title"><div class="vn-hub-heading"><div><span>Operating contracts</span><h2 id="vn-contract-title">Six chapters, six different conditions.</h2></div><p>Distance, weather, sacred space, working neighborhoods and protected landscapes cannot share one generic checklist.</p></div><div class="vn-contract-grid">${cluster.guides.map((guide, guideIndex) => `<article><small>0${guideIndex + 1} / ${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.arrival)}</p><strong>${escapeHtml(guide.decisions[2][0])}</strong><span>${escapeHtml(guide.boundary)}</span></article>`).join('')}</div></section>

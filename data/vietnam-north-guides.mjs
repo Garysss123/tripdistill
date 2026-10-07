@@ -1339,8 +1339,15 @@ const sapaGuideUpdates = {
     combine: 'This can fit beside a light town visit, but choose Cat Cat or a longer Muong Hoa walk as the day’s main descent rather than doing both in a rush.',
     verify: 'Check current gate hours and entry terms, performance availability, the public route, stair and waterfall conditions, and the return pickup.'
   },
+  'o-quy-ho-waterfalls': {
+    reviewDate: '31 August 2026', isoDate: '2026-08-31'
+  },
   'bac-ha-market-hoang-a-tuong': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: sapa.hubCss,
+    sources: [
+      ['https://www.vietnam.travel/places-to-go/northern-vietnam/sapa', 'Vietnam Tourism — Sapa'],
+      ['https://vietnamtourism.gov.vn/post/33948', 'Vietnam National Authority of Tourism — Hoang A Tuong Mansion']
+    ],
     image: image({ src: '/assets/images/vietnam-bac-ha-market-illustration.svg', alt: 'Original text-free illustration of a Bac Ha market courtyard and mountain terraces; no people are depicted', source: 'https://tripdistill.com/assets/images/vietnam-bac-ha-market-illustration.svg', label: 'TripDistill original Bac Ha market and courtyard illustration', creator: 'TripDistill', license: 'CC0 1.0', editNote: 'Original text-free vector illustration; symbolic architecture, no people or third-party artwork.' }),
     summary: 'Make Bac Ha a separate Sunday road day: observe a working highland market, then visit the 1914–1921 Hoang A Tuong compound if it is open.',
     lead: 'Bac Ha’s Sunday market is a place to trade food, cloth, tools and livestock, not a staged color show. The Vietnam National Authority of Tourism dates Hoang A Tuong Mansion to 1914–1921; its courtyard and formal rooms offer a different history from the market’s everyday exchange. Both belong to Bac Ha, a separate road journey from Sa Pa.',
@@ -1376,10 +1383,27 @@ for (const guide of sapa.guides) {
     ];
     guide.route = guide.stages.map((stage, index) => [['Arrive', 'Read', 'Deepen', 'Exit'][index], stage[0], stage[1]]);
     guide.checks = guide.risks;
+    guide.hideSequenceLead = true;
+    guide.hideBoundaryBlock = true;
+    guide.checksIntro = '';
     guide.faq = [
       [`How much time should ${guide.name} receive?`, guide.duration],
       [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
       ['What should I verify before leaving?', guide.verify]
     ];
   }
+}
+
+const sapaImageLicenses = {
+  'town-ham-rong': ['https://creativecommons.org/publicdomain/zero/1.0/', null],
+  'fansipan-summit': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.'],
+  'muong-hoa-lao-chai-ta-van': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.'],
+  'cat-cat-village': ['https://creativecommons.org/licenses/by-sa/2.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 2.0 license.'],
+  'o-quy-ho-waterfalls': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.'],
+  'bac-ha-market-hoang-a-tuong': ['https://creativecommons.org/publicdomain/zero/1.0/', null]
+};
+for (const guide of sapa.guides) {
+  const [licenseUrl, editNote] = sapaImageLicenses[guide.slug];
+  Object.assign(guide.image, { licenseUrl, useAltAsCreditTitle: true });
+  if (editNote) guide.image.editNote = editNote;
 }

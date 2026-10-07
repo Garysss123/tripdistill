@@ -25,6 +25,77 @@ body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-h
   border-radius: .3rem 3.8rem .3rem .3rem;
 }
 
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy h1,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy h1 {
+  color: #fff;
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy h1 span,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy h1 span,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-hero .vn-kicker,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-hero .vn-kicker,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy dt {
+  color: #f3c89b;
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy > p,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy dd,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy > p {
+  color: rgba(255, 255, 255, .88);
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub .button.secondary,
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field .button.secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .58);
+}
+
 body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-image img {
   object-position: center 54%;
+}
+
+@media (max-width: 720px) {
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] {
+    min-width: 0;
+  }
+
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-hero,
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy,
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy h1,
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 10.5vw, 3rem);
+    line-height: .98;
+    letter-spacing: -.045em;
+    overflow-wrap: anywhere;
+  }
+
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-copy h1 span,
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy h1 span {
+    max-width: 100%;
+    line-height: 1.18;
+    overflow-wrap: anywhere;
+  }
+
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy h1 {
+    font-size: clamp(2.05rem, 8.5vw, 2.75rem);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+  }
+
+  body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-copy h1 span {
+    font-size: .38em;
+  }
 }

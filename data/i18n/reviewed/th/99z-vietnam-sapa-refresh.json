@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/"
+  ],
+  "translations": {
+    "Original illustration of the stone church above Sa Pa's steep mountain town; no people are depicted": "ภาพประกอบต้นฉบับของโบสถ์หินเหนือเมืองภูเขา Sa Pa ที่ลาดชัน ไม่มีภาพบุคคล",
+    "TripDistill original Sa Pa hill-town illustration": "ภาพประกอบเมืองบนเนินซาปาต้นฉบับโดย TripDistill",
+    "— TripDistill, CC0 1.0. Original text-free vector illustration; no photograph, people, or third-party artwork.": "— TripDistill, CC0 1.0 ภาพเวกเตอร์ไร้ข้อความต้นฉบับ ไม่ใช้ภาพถ่าย บุคคล หรือผลงานของบุคคลอื่น"
+  }
+}

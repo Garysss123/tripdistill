@@ -40,7 +40,14 @@ const expectedRoutes = [
   ['/vietnam/hanoi/ba-dinh-thang-long/', 'Ba Dinh & Thang Long'],
   ['/vietnam/hanoi/french-quarter-opera-house/', 'French Quarter & Opera House'],
   ['/vietnam/hanoi/long-bien-red-river/', 'Long Bien & Red River'],
-  ['/vietnam/hanoi/van-mieu-museum-quarter/', 'Van Mieu & Museum Quarter']
+  ['/vietnam/hanoi/van-mieu-museum-quarter/', 'Van Mieu & Museum Quarter'],
+  ['/vietnam/sapa-northwest-highlands/', 'Sapa and the Northwest Highlands hub'],
+  ['/vietnam/sapa-northwest-highlands/town-ham-rong/', 'Sapa Town and Ham Rong'],
+  ['/vietnam/sapa-northwest-highlands/fansipan-summit/', 'Fansipan Summit'],
+  ['/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/', 'Muong Hoa, Lao Chai and Ta Van'],
+  ['/vietnam/sapa-northwest-highlands/cat-cat-village/', 'Cat Cat Village and Waterfall'],
+  ['/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/', 'O Quy Ho, Silver Waterfall and Love Waterfall'],
+  ['/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/', 'Bac Ha Market and Hoang A Tuong']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -52,6 +59,7 @@ const expectedLocales = [
 const expectedHreflangs = new Set(['en', 'zh-Hant', 'ja', 'ko', 'th', 'x-default']);
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const sourceSearchIndex = JSON.parse(fs.readFileSync(path.join(root, 'data', 'search-index.json'), 'utf8'));
+const localeCatalogs = Object.fromEntries(expectedLocales.filter((locale) => locale.code !== 'en').map((locale) => [locale.code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', `${locale.code}.json`), 'utf8')).translations]));
 
 function luminance(color) {
   const channels = color.match(/[0-9a-f]{2}/gi)?.map((part) => parseInt(part, 16) / 255);
@@ -158,9 +166,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 155 || manifest.pages?.length !== 155) fail(`${label}: expected 155 localized route records.`);
+  if (manifest.routeCount !== 190 || manifest.pages?.length !== 190) fail(`${label}: expected 190 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris, Seoul and Hanoi scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris, Seoul, Hanoi and Sapa scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -178,7 +186,8 @@ function inspectLocalizedPage(manifest, record, label) {
   const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
   const hanoiIdentity = record.path.startsWith('/vietnam/hanoi/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hanoi';
-  if (!franceIdentity && !seoulIdentity && !hanoiIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
+  if (!franceIdentity && !seoulIdentity && !hanoiIdentity && !sapaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -274,6 +283,49 @@ for (const locale of expectedLocales) {
                   ? ['working transport landscape', 'legal public edge', 'after rain']
                   : ['1070', '1076', 'five courtyards', '58 Quoc Tu Giam'];
         for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Hanoi editorial QA is missing '${phrase}' on ${routePath}.`);
+      }
+      continue;
+    }
+    if (routePath.startsWith('/vietnam/sapa-northwest-highlands/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const isLegacyOQuyHoPage = routePath.endsWith('/o-quy-ho-waterfalls/');
+      if (attr(body, 'data-country') !== 'vietnam' || attr(body, 'data-region') !== 'sapa-northwest-highlands') fail(`Wrong Sapa responsive scope on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Sapa FAQ controls on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Sapa photo source on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => /vietnam\.travel|sapa-tourism\.com|sunworld\.vn|vietnamtourism\.gov\.vn/.test(href))) fail(`Missing primary Sapa destination source on ${locale.code} ${routePath}.`);
+      for (const license of [
+        'https://creativecommons.org/publicdomain/zero/1.0/',
+        'https://creativecommons.org/licenses/by-sa/4.0/',
+        'https://creativecommons.org/licenses/by-sa/2.0/'
+      ]) if (!links.includes(license)) fail(`Missing linked Sapa image license ${license} on ${locale.code} ${routePath}.`);
+      if (isLegacyOQuyHoPage) {
+        if (!bodyText.includes('CC BY-SA 4.0')) fail(`Missing O Quy Ho photo license text on ${locale.code} ${routePath}.`);
+      } else {
+        for (const licenseVersion of ['4.0', '2.0']) {
+          const sourceNote = `. Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA ${licenseVersion} license.`;
+          const translatedNote = locale.code === 'en' ? sourceNote : localeCatalogs[locale.code][sourceNote];
+          if (!translatedNote || !bodyText.includes(translatedNote)) fail(`Missing localized CC BY-SA ${licenseVersion} adaptation/share-alike note on ${locale.code} ${routePath}.`);
+        }
+        if (classNodes(document, 'vn-boundary').length) fail(`Repeated Sapa boundary block remains on ${locale.code} ${routePath}.`);
+        if (bodyText.includes('Conditions change faster than an editorial page')) fail(`Generic template filler remains on ${locale.code} ${routePath}.`);
+        const currentSapaStyle = styleHrefs.some((href) => /^\/css\/vietnam-sapa\.css\?v=20261007-\d+$/.test(href));
+        if (!styles.includes('/css/vietnam-sapa.css') || !currentSapaStyle) fail(`Missing current Sapa responsive stylesheet on ${locale.code} ${routePath}.`);
+      }
+      if (locale.code === 'en' && !isLegacyOQuyHoPage) {
+        const requirements = routePath === '/vietnam/sapa-northwest-highlands/'
+          ? ['April', 'September', 'Bac Ha', 'Sunday']
+          : routePath.endsWith('/town-ham-rong/')
+            ? ['Ham Rong', 'stone church', 'steep']
+            : routePath.endsWith('/fansipan-summit/')
+              ? ['3,143', '6 kilometres', '15 minutes']
+              : routePath.endsWith('/muong-hoa-lao-chai-ta-van/')
+                ? ['Lao Chai', 'Ta Van', 'three hours', 'worked landscape']
+                : routePath.endsWith('/cat-cat-village/')
+                  ? ['2-kilometre', '19th-century', 'waterfall', 'uphill']
+                  : ['Sunday', '1914', '1921', 'mansion'];
+        for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Sapa editorial QA is missing '${phrase}' on ${routePath}.`);
       }
       continue;
     }
@@ -541,7 +593,8 @@ if (!isLive) {
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const hanoiPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hanoi/')).length;
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/155 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${seoulPages} Seoul, ${hanoiPages} Hanoi records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/190 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${seoulPages} Seoul, ${hanoiPages} Hanoi, ${sapaPages} Sapa records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -568,5 +621,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/155 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/190 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }
