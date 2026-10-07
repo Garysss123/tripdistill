@@ -11,6 +11,11 @@ const fieldCss = '/css/canada-field.css?v=20260912-1';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
+const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
+const pageIsoDate = (cluster) => cluster.isoDate || isoDate;
+const regionCss = (cluster) => cluster.slug === 'montreal'
+  ? '<link rel="stylesheet" href="/css/canada-montreal.css?v=20261007-1">'
+  : '';
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -62,7 +67,10 @@ function imageCredit(image) {
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
     : escapeHtml(image.license);
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}</li>`;
+  const shareAlikeNotice = image.src.startsWith('/assets/images/canada-montreal-') && /^CC BY-SA\b/.test(image.license)
+    ? ` This resized, display-cropped WebP adaptation is offered under the same ${escapeHtml(image.license)} terms.`
+    : '';
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}${shareAlikeNotice}</li>`;
 }
 
 const ad = '<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>';
@@ -82,7 +90,7 @@ function shellEnd() {
   return `</div><div id="layout-footer"></div><script src="${mainJs}" defer></script>`;
 }
 
-function guideSchema(guide) {
+function guideSchema(guide, cluster) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -93,7 +101,7 @@ function guideSchema(guide) {
         description: guide.summary,
         inLanguage: 'en',
         datePublished: isoDate,
-        dateModified: isoDate,
+        dateModified: pageIsoDate(cluster),
         mainEntityOfPage: absolute(guide.url),
         image: absolute(guide.image.src),
         about: { '@type': 'TouristDestination', name: guide.name },
@@ -122,13 +130,14 @@ function relatedCards(cluster, currentSlug) {
 function guidePage(guide, cluster) {
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const route = guide.url;
+  const reviewed = pageReviewDate(cluster);
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Canada`, description, route, image: guide.image, extraCss: `<link rel="stylesheet" href="${fieldCss}">` })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script></head>
+<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Canada`, description, route, image: guide.image, extraCss: `<link rel="stylesheet" href="${fieldCss}">${regionCss(cluster)}` })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide, cluster))}</script></head>
 <body data-page="ca-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="canada" data-country="canada" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-family="${escapeHtml(cluster.family)}" data-ca-layout="${escapeHtml(guide.layout)}" data-ca-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="ca-breadcrumb" aria-label="Breadcrumb"><a href="/canada/">Canada</a><span>/</span><a href="/canada/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav>
-  <section class="ca-field-hero" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(cluster.region)} · survey ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewDate}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">Check the failure points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure><div class="ca-instrument" aria-hidden="true"><span>${escapeHtml(guide.layout)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><small>${escapeHtml(guide.instrument)}</small></div></section>
+  <section class="ca-field-hero" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(cluster.region)} · survey ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewed}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">Check the failure points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure><div class="ca-instrument" aria-hidden="true"><span>${escapeHtml(guide.layout)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><small>${escapeHtml(guide.instrument)}</small></div></section>
   <section class="ca-decision-grid" aria-label="Planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
   ${ad}
   <section class="ca-orientation"><div><span class="ca-section-label">Orientation</span><h2>Make the operating decision before adding distance.</h2><p>${escapeHtml(guide.tradeoff)}</p><p>${escapeHtml(guide.duration)}</p></div><aside><small>Access</small><p>${escapeHtml(guide.access)}</p><small>Combine carefully</small><p>${escapeHtml(guide.combine)}</p></aside></section>
@@ -137,7 +146,7 @@ ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-fami
   <section class="ca-field-section" id="checks"><div class="ca-section-heading"><span>Failure points</span><h2>Three reasons to change the plan.</h2></div><div class="ca-check-grid">${guide.checks.map(([title, copy], index) => `<article><span>0${index + 1}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="ca-field-section"><div class="ca-section-heading"><span>Same survey sheet</span><h2>Continue within ${escapeHtml(cluster.name)}.</h2></div><div class="ca-related-grid">${relatedCards(cluster, guide.slug)}</div><p class="ca-back"><a href="/canada/${cluster.slug}/">← Return to ${escapeHtml(cluster.name)}</a></p></section>
   <section class="ca-field-section"><div class="ca-section-heading"><span>Planning answers</span><h2>${escapeHtml(guide.name)} FAQ</h2></div><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewDate}. Transport, park, weather, reservation and operator status can change; verify the linked source before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewed}. Transport, park, weather, reservation and operator status can change; verify the linked source before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewed} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -157,7 +166,7 @@ function hubSchema(cluster) {
     '@graph': [
       {
         '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro,
-        inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src),
+        inLanguage: 'en', datePublished: isoDate, dateModified: pageIsoDate(cluster), mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src),
         about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
       },
       breadcrumb([['Home', 'https://tripdistill.com/'], ['Canada', 'https://tripdistill.com/canada/'], [cluster.name, absolute(route)]]),
@@ -173,21 +182,22 @@ function hubCards(cluster) {
 function hubPage(cluster, index) {
   const route = `/canada/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
+  const reviewed = pageReviewDate(cluster);
   const description = metaDescription(`${cluster.hubIntro} ${cluster.transfer}`);
   const faq = hubFaq(cluster);
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: `${cluster.name} Travel Guide — 3 Focused Routes | TripDistill`, description, route, image: hero })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
+<head>${sharedHead({ title: `${cluster.name} Travel Guide — 3 Focused Routes | TripDistill`, description, route, image: hero, extraCss: regionCss(cluster) })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
 <body data-page="ca-${escapeHtml(cluster.slug)}" data-parent-page="canada" data-country="canada" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content ca-hub" data-ca-family="${escapeHtml(cluster.family)}">`)}
-  <section class="ca-hub-hero"><div class="ca-hub-copy"><span class="ca-kicker">${escapeHtml(cluster.label)} · reviewed ${reviewDate}</span><h1>${escapeHtml(cluster.name)}</h1><p class="ca-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#guides">Choose a focused route</a><a class="button secondary" href="#operating-model">Read the operating model</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.label)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="ca-map-index" aria-hidden="true"><small>Canada survey atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>${escapeHtml(cluster.region)}</span></div></section>
+  <section class="ca-hub-hero"><div class="ca-hub-copy"><span class="ca-kicker">${escapeHtml(cluster.label)} · reviewed ${reviewed}</span><h1>${escapeHtml(cluster.name)}</h1><p class="ca-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#guides">Choose a focused route</a><a class="button secondary" href="#operating-model">Read the operating model</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.label)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="ca-map-index" aria-hidden="true"><small>Canada survey atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>${escapeHtml(cluster.region)}</span></div></section>
   <section class="ca-hub-stats"><article><small>Useful stay</small><p>${escapeHtml(cluster.stay)}</p></article><article><small>Transfer logic</small><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Season gate</small><p>${escapeHtml(cluster.season)}</p></article></section>
   ${ad}
   <section class="ca-hub-section" id="guides"><div class="ca-hub-heading"><span>Three independent guides</span><h2>Pick the operating system, not every pin.</h2><p>Each route below has its own arrival logic, sequence, weak points, fallback and current-source checks.</p></div><div class="ca-hub-grid">${hubCards(cluster)}</div></section>
-  <section class="ca-hub-section" id="operating-model"><div class="ca-hub-heading"><span>Regional operating model</span><h2>Distance, weather and access are part of the itinerary.</h2></div><div class="ca-contract-grid"><article><small>Base</small><h3>Sleep where the first decision is easy.</h3><p>${escapeHtml(cluster.stay)}</p></article><article><small>Movement</small><h3>Name the rail, road, ferry or flight.</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Season</small><h3>Use the local condition, not a national average.</h3><p>${escapeHtml(cluster.season)}</p></article><article><small>Fallback</small><h3>Keep one lower-risk day ready.</h3><p>${escapeHtml(cluster.fallback)}</p></article><article><small>Respect</small><h3>Community guidance outranks a map pin.</h3><p>Follow current park, community and Indigenous tourism guidance for access, photography, wildlife and cultural places. Proximity never implies permission.</p></article></div></section>
+  <section class="ca-hub-section" id="operating-model"><div class="ca-hub-heading"><span>Regional operating model</span><h2>Distance, weather and access are part of the itinerary.</h2></div><div class="ca-contract-grid"><article><small>Base</small><h3>Sleep where the first decision is easy.</h3><p>${escapeHtml(cluster.stay)}</p></article><article><small>Movement</small><h3>Name the rail, road, ferry or flight.</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Season</small><h3>Use the local condition, not a national average.</h3><p>${escapeHtml(cluster.season)}</p></article><article><small>Fallback</small><h3>Keep one lower-risk day ready.</h3><p>${escapeHtml(cluster.fallback)}</p></article><article><small>Respect</small><h3>Community guidance outranks a map pin.</h3><p>Follow current park, community and Indigenous tourism guidance for access, photography, wildlife and cultural places. Proximity never implies permission.</p></article></div></section>${cluster.firstVisitPlan ? `\n  <section class="ca-hub-section ca-city-plan-section" id="first-visit"><div class="ca-hub-heading"><span>First-visit plan</span><h2>Three days by river, street and slope</h2><p>${escapeHtml(cluster.firstVisitPlan.intro)}</p></div><div class="ca-city-plan">${cluster.firstVisitPlan.days.map(([title, copy], index) => `<article><span aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>` : ''}
   <section class="ca-hub-section"><div class="ca-hub-heading"><span>Route comparison</span><h2>Three different reasons to leave the hotel.</h2></div><div class="ca-route-compare">${cluster.guides.map((guide) => `<a href="${guide.url}"><span>0${guide.chapter}</span><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.tradeoff)}</p><strong>${escapeHtml(compact(guide.duration, 96))}</strong></a>`).join('')}</div></section>
   <section class="ca-hub-section"><div class="ca-hub-heading"><span>Planning answers</span><h2>${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewDate}. Recheck transport, weather, park, marine, reservation and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewed}. Recheck transport, weather, park, marine, reservation and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewed} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 

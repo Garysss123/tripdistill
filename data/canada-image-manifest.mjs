@@ -281,14 +281,14 @@ export const canadaImageManifest = {
     "remoteSha1": "901bb923327efb1942ba3cdaf88b7e1d555666ca"
   },
   "montreal/plateau-mile-end": {
-    "src": "/assets/images/canada-montreal-plateau-mile-end.webp",
-    "alt": "Residential streets and exterior staircases in Montreal Plateau",
-    "source": "https://commons.wikimedia.org/wiki/File:Parc_Lahaie_@_Mile_End_@_Le_Plateau_@_Montr%C3%A9al_(30420821831).jpg",
-    "label": "Parc Lahaie @ Mile End @ Le Plateau @ Montréal (30420821831).jpg",
-    "creator": "Guilhem Vellut from Annecy, France",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:Parc Lahaie @ Mile End @ Le Plateau @ Montréal (30420821831).jpg",
-    "remoteSha1": "65e57c1540ecea1912b936719cd69efd5485affe"
+    "src": "/assets/images/canada-montreal-plateau-mile-end-20261007.webp",
+    "alt": "Byzantine dome and minaret-like tower of St. Michael and St. Anthony Church in Mile End",
+    "source": "https://commons.wikimedia.org/wiki/File:Church_of_St._Michael_and_St._Anthony_exterior,_November_2025.jpg",
+    "label": "Church of St. Michael and St. Anthony exterior, November 2025.jpg",
+    "creator": "Jason Zhang",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Church of St. Michael and St. Anthony exterior, November 2025.jpg",
+    "remoteSha1": "065f2f52860777c8adaede298ac1236c7583fd05"
   },
   "montreal/mount-royal-museums": {
     "src": "/assets/images/canada-montreal-mount-royal-museums.webp",

@@ -1,0 +1,106 @@
+/* Montreal alone: river edge, brick streets and a green summit. */
+body[data-page="ca-montreal"] .ca-hub {
+  --ca-family: #12858a;
+  --ca-family-dark: #173c48;
+  --ca-family-soft: #e7f1ef;
+}
+
+body[data-page^="ca-montreal-"] .ca-field {
+  --ca-family: #12858a;
+  --ca-family-dark: #173c48;
+  --ca-family-soft: #e7f1ef;
+}
+
+body[data-page="ca-montreal-old-montreal-old-port"] .ca-field {
+  --ca-family: #b36b45;
+  --ca-family-dark: #4d352f;
+  --ca-family-soft: #f5ece5;
+}
+
+body[data-page="ca-montreal-plateau-mile-end"] .ca-field {
+  --ca-family: #13858a;
+  --ca-family-dark: #173c48;
+  --ca-family-soft: #e7f1ef;
+}
+
+body[data-page="ca-montreal-mount-royal-museums"] .ca-field {
+  --ca-family: #4c805f;
+  --ca-family-dark: #203c36;
+  --ca-family-soft: #e9f1e8;
+}
+
+body[data-page="ca-montreal"] .ca-hub-hero {
+  border-bottom: .65rem solid #12858a;
+}
+
+body[data-page="ca-montreal"] .ca-hub-hero::before {
+  opacity: .26;
+  background:
+    repeating-linear-gradient(167deg, transparent 0 2.1rem, rgba(255,255,255,.22) 2.14rem 2.2rem, transparent 2.24rem 3.2rem),
+    radial-gradient(ellipse at 74% 66%, rgba(42,139,142,.32), transparent 54%);
+}
+
+body[data-page="ca-montreal"] .ca-map-index {
+  border-color: rgba(255,255,255,.7);
+  background: rgba(23,60,72,.9);
+}
+
+body[data-page="ca-montreal"] .ca-hub-stats article:nth-child(1) { border-top: .28rem solid #b36b45; }
+body[data-page="ca-montreal"] .ca-hub-stats article:nth-child(2) { border-top: .28rem solid #12858a; }
+body[data-page="ca-montreal"] .ca-hub-stats article:nth-child(3) { border-top: .28rem solid #4c805f; }
+
+body[data-page="ca-montreal"] .ca-hub-card:nth-child(1) { border-top: .35rem solid #b36b45; }
+body[data-page="ca-montreal"] .ca-hub-card:nth-child(2) { border-top: .35rem solid #12858a; }
+body[data-page="ca-montreal"] .ca-hub-card:nth-child(3) { border-top: .35rem solid #4c805f; }
+
+body[data-page="ca-montreal"] .ca-route-compare > a:nth-child(1) { border-top: .3rem solid #b36b45; }
+body[data-page="ca-montreal"] .ca-route-compare > a:nth-child(2) { border-top: .3rem solid #12858a; }
+body[data-page="ca-montreal"] .ca-route-compare > a:nth-child(3) { border-top: .3rem solid #4c805f; }
+
+body[data-page="ca-montreal"] .ca-city-plan {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body[data-page="ca-montreal"] .ca-city-plan article {
+  min-width: 0;
+  padding: 1.1rem;
+  border-top: .3rem solid var(--ca-family);
+  background: rgba(255,255,255,.76);
+}
+
+body[data-page="ca-montreal"] .ca-city-plan article > span {
+  color: var(--ca-family-dark);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+body[data-page="ca-montreal"] .ca-city-plan h3 { margin: .5rem 0; }
+body[data-page="ca-montreal"] .ca-city-plan p { margin: 0; }
+
+body[data-page^="ca-montreal-"] .ca-field-hero {
+  border-bottom: .55rem solid var(--ca-family);
+  background-image: linear-gradient(105deg, rgba(255,255,255,.045), transparent 58%);
+}
+
+body[data-page^="ca-montreal-"] .ca-instrument {
+  border-color: rgba(255,255,255,.62);
+  box-shadow: 0 .8rem 2rem rgba(0,0,0,.16);
+}
+
+body[data-page^="ca-montreal-"] .ca-route-step {
+  border-top: .25rem solid var(--ca-family);
+}
+
+body[data-page^="ca-montreal-"] .ca-check-grid article {
+  border-top: .22rem solid var(--ca-family);
+}
+
+@media (max-width: 720px) {
+  body[data-page="ca-montreal"] .ca-city-plan { grid-template-columns: 1fr; }
+  body[data-page^="ca-montreal-"] .ca-field-hero { border-bottom-width: .35rem; }
+  body[data-page^="ca-montreal-"] .ca-instrument { width: 7.25rem; padding: .75rem; }
+  body[data-page="ca-montreal"] .ca-hub-hero { border-bottom-width: .4rem; }
+}

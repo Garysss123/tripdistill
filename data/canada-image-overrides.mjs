@@ -4,6 +4,7 @@ export const canadaImageOverrides = {
   'ottawa-gatineau/parliament-rideau': 'File:Rideau parliament ottawa.jpg',
   'montreal/old-montreal-old-port': 'File:Old Port of Montreal.jpg',
   'montreal/mount-royal-museums': 'File:Mount Royal Montreal View.jpg',
+  'montreal/plateau-mile-end': 'File:Church of St. Michael and St. Anthony exterior, November 2025.jpg',
   'halifax-nova-scotia/peggys-cove-lunenburg': "File:Lighthouse DSC01066 - Peggy's Cove Lighthouse (7612052968).jpg",
   'prince-edward-island/charlottetown': 'File:Charlottetown, PEI skyline.jpg',
   'prince-edward-island/coastal-drives': 'File:Panmure Island Lighthouse.jpg',
