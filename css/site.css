@@ -2621,3 +2621,17 @@ body[data-page="japan"] .page-hero-content p { color: #e2ecf1; }
 @media (max-width: 640px) {
   body[data-page="japan"] .page-hero-content { margin: .75rem; padding: 1rem; }
 }
+
+/* Reviewed compact routes can shrink below the shared 320px body floor when
+   a classic scrollbar reduces the usable layout viewport. Keep content
+   overflow visible so any genuinely wide component remains discoverable. */
+body[data-page="busan"],
+body[data-page="gamcheon-songdo"],
+body[data-page="gwangalli-millak"],
+body[data-page="haeundae-dongbaek"],
+body[data-page="nampo-jagalchi"],
+body[data-page="yeongdo-taejongdae"],
+body[data-page="o-quy-ho-waterfalls"],
+body[data-country="south-korea"][data-city="seoul"] {
+  min-width: 0;
+}
