@@ -43,7 +43,22 @@ const routes = [
   { path: '/france/loire-valley/', label: 'Loire Valley hub' },
   { path: '/france/loire-valley/blois-chambord/', label: 'Blois & Chambord' },
   { path: '/france/loire-valley/amboise-chenonceau/', label: 'Amboise, Clos Lucé & Chenonceau' },
-  { path: '/france/loire-valley/tours-villandry-azay/', label: 'Tours, Villandry & Azay-le-Rideau' }
+  { path: '/france/loire-valley/tours-villandry-azay/', label: 'Tours, Villandry & Azay-le-Rideau' },
+  { path: '/south-korea/seoul/', label: 'Seoul hub' },
+  { path: '/south-korea/seoul/bukchon-seochon/', label: 'Bukchon & Seochon' },
+  { path: '/south-korea/seoul/jongno-gwanghwamun/', label: 'Jongno & Gwanghwamun' },
+  { path: '/south-korea/seoul/myeongdong-namsan/', label: 'Myeongdong & Namsan' },
+  { path: '/south-korea/seoul/hongdae-yeonnam/', label: 'Hongdae & Yeonnam' },
+  { path: '/south-korea/seoul/seongsu-seoul-forest/', label: 'Seongsu & Seoul Forest' },
+  { path: '/south-korea/seoul/gangnam-jamsil/', label: 'Gangnam & Jamsil' },
+  { path: '/south-korea/seoul/itaewon-hannam/', label: 'Itaewon & Hannam' },
+  { path: '/south-korea/seoul/yeouido-hangang/', label: 'Yeouido & Hangang' },
+  { path: '/vietnam/hanoi/', label: 'Hanoi hub' },
+  { path: '/vietnam/hanoi/hoan-kiem-old-quarter/', label: 'Hoan Kiem & Old Quarter' },
+  { path: '/vietnam/hanoi/ba-dinh-thang-long/', label: 'Ba Dinh & Thang Long' },
+  { path: '/vietnam/hanoi/french-quarter-opera-house/', label: 'French Quarter & Opera House' },
+  { path: '/vietnam/hanoi/long-bien-red-river/', label: 'Long Bien & Red River' },
+  { path: '/vietnam/hanoi/van-mieu-museum-quarter/', label: 'Van Mieu & Museum Quarter' }
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -115,7 +130,7 @@ const manifest = {
   routesByLocale: Object.fromEntries(locales.map((locale) => [locale.code, routes.length])),
   maxHtmlBytes: 160_000,
   maxSingleImageBytes: 700_000,
-  maxRouteStylesBytes: 350_000,
+  maxPageStylesBytes: 320_000,
   pages: routeRecords,
   assets
 };
@@ -127,7 +142,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>Paris, day trips, Normandy and Loire responsive QA harness</title>
+  <title>Paris, Seoul and Hanoi responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -153,8 +168,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">Paris, day trips, Normandy and Loire responsive QA harness</h1>
-      <p class="intro">Review the Paris routes, the Versailles, Fontainebleau and Giverny day trips, the Normandy regional routes, and the Loire Valley hub and three estate guides in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
+      <h1 id="page-title">Paris, Seoul and Hanoi responsive QA harness</h1>
+      <p class="intro">Review 16 Paris, regional France and Loire guides, nine Seoul guides, and six Hanoi guides in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>
@@ -165,8 +180,8 @@ const page = `<!doctype html>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </div>
       <div class="preview-rail"><div class="frames">
-        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="France route, English, 320 CSS pixels wide"></iframe></figure>
-        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="France route, English, 390 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="Guide route, English, 320 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="Guide route, English, 390 CSS pixels wide"></iframe></figure>
       </div></div>
       <p class="meta" id="release"></p>
     </section>
