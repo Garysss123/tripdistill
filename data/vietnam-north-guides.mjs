@@ -233,7 +233,7 @@ export const vietnamNorthClusters = [
         name: 'Fansipan Summit',
         motif: 'altitude and engineered ascent',
         instrument: 'contour',
-        image: image({ src: '/assets/images/vietnam-sapa-fansipan.webp', alt: 'Fansipan cable car above Sapa and the Hoang Lien mountains', source: 'https://commons.wikimedia.org/wiki/File:Fansipan_Cable_Car_and_Sa_Pa.jpg', label: 'Fansipan Cable Car and Sa Pa.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0' }),
+        image: image({ src: '/assets/images/vietnam-sapa-fansipan.webp', alt: 'Fansipan cable car above Sapa and the Hoang Lien mountains', source: 'https://commons.wikimedia.org/wiki/File:Fansipan_Cable_Car_and_Sa_Pa.jpg', label: 'Fansipan Cable Car and Sa Pa.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', editNote: 'Resized, display-cropped and converted to WebP; no other material edits. The adapted image remains available under CC BY-SA 4.0.' }),
         summary: 'A planning guide for comparing the Fansipan cable car, funicular connections and permitted trekking while respecting altitude and mountain weather.',
         lead: 'Fansipan can be physically accessible through modern transport while remaining a serious high-altitude environment. The useful decision is not simply cable car versus trek; it is how much cold, wind, elevation gain and weather exposure the group can responsibly absorb.',
         orientation: 'Separate Sapa station logistics, the mountain transport sequence and the summit complex. A clear day at town level does not guarantee visibility or operating conditions at the top.',
@@ -260,7 +260,7 @@ export const vietnamNorthClusters = [
         name: 'Muong Hoa, Lao Chai and Ta Van',
         motif: 'terrace contour and village threshold',
         instrument: 'transect',
-        image: image({ src: '/assets/images/vietnam-sapa-muong-hoa.webp', alt: 'Terraced fields in Muong Hoa Valley near Lao Chai', source: 'https://commons.wikimedia.org/wiki/File:M%C6%B0%E1%BB%9Dng_Hoa_Valley_15.jpg', label: 'Mường Hoa Valley 15.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0' }),
+        image: image({ src: '/assets/images/vietnam-sapa-muong-hoa.webp', alt: 'Terraced fields in Muong Hoa Valley near Lao Chai', source: 'https://commons.wikimedia.org/wiki/File:M%C6%B0%E1%BB%9Dng_Hoa_Valley_15.jpg', label: 'Mường Hoa Valley 15.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', editNote: 'Resized, display-cropped and converted to WebP; no other material edits. The adapted image remains available under CC BY-SA 4.0.' }),
         summary: 'A terrace-and-village chapter for Muong Hoa, Lao Chai and Ta Van with realistic trail, homestay and community etiquette.',
         lead: 'Muong Hoa is a cultivated valley with working fields, streams, homes and tourism paths. The route becomes meaningful when visitors follow a small, well-understood line and pay attention to who owns and maintains each threshold.',
         orientation: 'Use the valley road as a spine and choose one walk between Lao Chai and Ta Van or another locally confirmed segment. The most photogenic trail is not always the safest or least disruptive.',
@@ -314,7 +314,7 @@ export const vietnamNorthClusters = [
         name: 'O Quy Ho, Silver Waterfall and Love Waterfall',
         motif: 'pass weather and waterfall descent',
         instrument: 'roadbook',
-        image: image({ src: '/assets/images/vietnam-sapa-o-quy-ho.webp', alt: 'O Quy Ho mountain pass in the Hoang Lien range', source: 'https://commons.wikimedia.org/wiki/File:O_Quy_Ho_pass.jpg', label: 'O Quy Ho pass.jpg', creator: 'Kiếm Anh', license: 'CC BY-SA 4.0' }),
+        image: image({ src: '/assets/images/vietnam-sapa-o-quy-ho.webp', alt: 'O Quy Ho mountain pass in the Hoang Lien range', source: 'https://commons.wikimedia.org/wiki/File:O_Quy_Ho_pass.jpg', label: 'O Quy Ho pass.jpg', creator: 'Kiếm Anh', license: 'CC BY-SA 4.0', editNote: 'Resized, display-cropped and converted to WebP; no other material edits. The adapted image remains available under CC BY-SA 4.0.' }),
         summary: 'A daylight road chapter linking O Quy Ho Pass with Silver Waterfall and Love Waterfall under mountain-road and weather constraints.',
         lead: 'The O Quy Ho corridor is a mountain journey before it is a collection of waterfalls. The road, fog, temperature and exposure are part of the experience, and a responsible plan gives the driver and weather more authority than the map pin.',
         orientation: 'Choose a pass viewpoint and one or two waterfall stops according to road conditions. The route crosses changing elevations and administrative boundaries, so do not promise identical weather at every stop.',
@@ -1224,16 +1224,17 @@ const sapa = vietnamNorthClusters.find((cluster) => cluster.slug === 'sapa-north
 Object.assign(sapa, {
   reviewDate: '7 October 2026',
   isoDate: '2026-10-07',
-  hubCss: '/css/vietnam-sapa.css?v=20261007-1',
-  label: 'MOUNTAIN TOWN / TERRACES / MARKET',
+  hubCss: '/css/vietnam-sapa.css?v=20261007-2',
+  label: 'TOWN / TERRACES / SUMMIT / MARKET',
   tagline: 'Read the highlands at town, valley and summit scale.',
-  hubIntro: 'Sa Pa began as a French hill station and is now a busy mountain service town above working rice terraces. The church-and-market center, Ham Rong’s managed hillside, Fansipan’s high-altitude transport, the Muong Hoa villages and Bac Ha’s weekly market are different visits with different access and weather. Vietnam Tourism points to April–May for clearer skies and September–October for terraces; June–August is hot, while November–March can be chilly. Treat the Sunday market as a separate road day, not a quick detour from a Sapa itinerary.',
-  stay: 'Stay in central Sa Pa for bus and driver access, restaurants and an easier first orientation; expect steep lanes and confirm whether a vehicle reaches the hotel door. A Muong Hoa homestay is a hosted stay in a working valley, with road, stairs, luggage and meal arrangements to agree directly. If Bac Ha market is the priority, consider sleeping near Bac Ha rather than returning to Sa Pa after a long market day.',
-  transfer: 'From Hanoi, Vietnam Tourism lists 5–6 hours by direct bus or shuttle; the overnight train reaches Lao Cai, followed by a separate road transfer up to Sa Pa. Fog, rain and mountain traffic can stretch either final leg. Leave the arrival day uncommitted and do not buy a timed Fansipan ticket against a same-day connection.',
-  routeModelHeading: 'Give the summit a weather window and Bac Ha a full road day.',
-  routeModelLead: 'Use the town and Ham Rong for arrival or recovery, give Fansipan its own elevation-and-visibility decision, and reserve a separate valley day for Lao Chai and Ta Van. Cat Cat is a short but steep managed descent near town. Bac Ha’s Sunday market and Hoang A Tuong are a different district and deserve a full day from Sa Pa or an overnight nearby.',
+  hubIntro: 'Sa Pa sits above the cultivated Muong Hoa valley, with the former hill-station center, Ham Rong’s stairway gardens, the Fansipan summit complex and the working villages below town all competing for the same daylight. Give each a separate half or full day: the town is a useful arrival base, Fansipan depends on visibility and service, and Lao Chai–Ta Van is a road-and-walking day. Cat Cat is a managed downhill circuit with an uphill return; O Quy Ho’s pass and waterfalls need a daylight road window. Bac Ha’s Sunday market and Hoang A Tuong Mansion belong to a separate road day. Vietnam Tourism describes April–May as clearer, June–August as hot, September–October as terrace season and November–March as chilly; field color and mountain views still vary with weather.',
+  stay: 'Central Sa Pa is the simplest base for buses, taxis, meals and the church-market center, but its steep lanes can leave a final walk with luggage. Choose a Muong Hoa homestay when you want an overnight with a host in the farming valley; confirm the exact vehicle drop-off, stairs, meal time and departure plan. For a Sunday at Bac Ha market, sleeping in Bac Ha avoids making a long return drive part of the same day.',
+  transfer: 'Vietnam Tourism lists five to six hours from Hanoi by direct bus or shuttle. The overnight train stops at Lao Cai; a separate van or car then climbs to Sa Pa. Rain, fog and traffic can extend the road legs, so keep arrival day light and leave a buffer before any fixed Fansipan ticket or onward connection.',
+  routeModelHeading: 'Keep the summit weather-led and Bac Ha on its own day.',
+  routeModelLead: 'Use the church-market center and Ham Rong for a compact town day. Give Fansipan a separate forecast check and enough time for the station, cable car and summit steps. In Muong Hoa, choose one host-confirmed walking section and agree on the finish pickup; Cat Cat is closer but its stone route descends before it climbs back out. Save O Quy Ho and the waterfall stops for daylight with a driver who knows the pass. Bac Ha’s Sunday market and the 1914–1921 Hoang A Tuong Mansion are a different district: make them a full day from Sa Pa or stay nearby.',
   hubSources: [
     ['https://www.vietnam.travel/places-to-go/northern-vietnam/sapa', 'Vietnam Tourism — Sa Pa, seasonal conditions and Hanoi connections'],
+    ['https://sapa-tourism.com/top-10-attractions/', 'Lao Cai Tourist Information and Promotion Center — Ham Rong and Fansipan'],
     ['https://sunworld.vn/en/fansipan', 'Sun World Fansipan Legend — current mountain transport and operating notices'],
     ['https://sapa-tourism.com/most-beautiful-village-in-the-north-of-viet-nam/', 'Lao Cai Tourist Information and Promotion Center — Cat Cat route and village visitor experience'],
     ['https://sapa-tourism.com/exploring-sapa-by-car/', 'Lao Cai Tourist Information and Promotion Center — sample valley and waterfall day routes'],
@@ -1247,12 +1248,13 @@ Object.assign(sapa, {
 const sapaGuideUpdates = {
   'town-ham-rong': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: sapa.hubCss,
-    image: image({ src: '/assets/images/vietnam-sapa-town-illustration.svg', alt: 'Original illustration of Sa Pa’s stone church above a steep mountain town; no people are depicted', source: 'https://tripdistill.com/assets/images/vietnam-sapa-town-illustration.svg', label: 'TripDistill original Sa Pa hill-town illustration', creator: 'TripDistill', license: 'CC0 1.0', editNote: 'Original text-free vector illustration; no photograph, people, or third-party artwork.' }),
-    summary: 'Use Sa Pa’s stone church and crowded center to get oriented, then decide whether the stair climb through Ham Rong’s gardens and viewpoints fits the weather.',
-    lead: 'Sa Pa’s center is a mountain service town rather than a preserved village: the stone church and square sit among hotels, shops, bus pickups and steep side streets. Ham Rong rises directly behind town, where managed gardens and lookout points turn a short map distance into a strenuous stair climb.',
-    orientation: 'Start at the church and central square to locate the market streets, hotel slopes and Ham Rong entrance. The hill path is a sequence of stairs, planted areas and viewpoints; the town may be clear while the upper garden is in cloud. Treat the views as a bonus, not a guaranteed summit panorama.',
+    motif: 'church square and Ham Rong stairs', instrument: 'town walk',
+    image: image({ src: '/assets/images/vietnam-sapa-town-panorama-20261007.webp', alt: 'Sa Pa rooftops on the steep valley slope beneath cloud-covered Hoang Lien mountains', source: 'https://commons.wikimedia.org/wiki/File:Vue_panoramique_sur_la_ville_de_Sapa,_Vietnam,_entour%C3%A9e_de_montagnes_majestueuses_et_de_rizi%C3%A8res_en_terrasse.jpg', label: 'Sa Pa valley-town panorama', creator: 'Asmara Rodrigue', license: 'CC BY 4.0', editNote: 'Resized to 1600 px wide and converted to WebP; no other material edits.' }),
+    summary: 'Start at Sa Pa’s stone church and market-center lanes, then decide whether Ham Rong’s uphill garden path fits your time, legs and the weather above town.',
+    lead: 'Sa Pa’s central square and stone church anchor a former French hill station that now works as the region’s transport and services town. Hotels, bus drop-offs and steep side streets crowd the center; Ham Rong begins behind it and turns a short map distance into a stair climb through managed gardens and lookout points. The town is a practical base, not a stand-in for the farming communities below.',
+    orientation: 'Walk the church-square block first and note the steep streets back to your hotel, the market lanes and a taxi pickup point. Ham Rong is an uphill garden-and-viewpoint route, not a flat park loop. Clear skies at the square do not guarantee a view from the upper path, so choose the climb after checking cloud and rain.',
     arrival: 'Hanoi’s direct bus or shuttle takes about 5–6 hours in Vietnam Tourism’s guidance; the train goes to Lao Cai, then a separate road transfer climbs to Sa Pa. Ask the accommodation for a vehicle-accessible drop-off and the final walk with luggage. Keep the first afternoon local rather than connecting it to a timed mountain service.',
-    sequence: 'Allow a half day: walk the church-square block and adjacent lanes first, pause for food or supplies, then enter Ham Rong only if the current gate is open and the forecast leaves a safe descent window. The route climbs and returns on wet stone steps; turn back when cloud or rain makes the footing uncertain.',
+    sequence: 'Allow half a day. Walk the church and square, pick up water or supplies, then use the current Ham Rong entrance if the hill is open and the descent should remain clear. Expect stairs both ways; turn around if rain makes the stone steps slick or cloud removes the upper view.',
     boundary: 'The center is a commercial town with residents going about daily work. Do not treat traditional dress as a prop or photograph a vendor, child or passerby without consent; choose a paid craft or performance encounter only when it is clearly offered and terms are agreed.',
     stages: [
       ['Find the town anchors', 'Use the stone church and square to orient yourself, then note the hotel approach, market streets and a clear driver pickup point.'],
@@ -1265,17 +1267,18 @@ const sapaGuideUpdates = {
       ['Town-to-hill weather gap', 'A clear church square does not guarantee a clear upper viewpoint. Carry a warm layer and waterproof shell even for a short climb.'],
       ['Luggage and pickup access', 'Many central lanes are steep or narrow. Confirm the exact vehicle drop-off before arrival and do not assume a coach can reach a hotel entrance.']
     ],
-    duration: 'Allow half a day for the town center and Ham Rong. Keep the arrival day lighter if reaching Sa Pa after the Hanoi road or Lao Cai transfer.',
-    combine: 'Pair the town walk with a short evening, not a full Fansipan visit. Use it as the orientation day before a separate summit or valley outing.',
+    duration: 'Allow half a day for the church-square lanes and Ham Rong. If you have just arrived from Hanoi or Lao Cai, do the town walk first and leave the hill climb for a day when your legs and the forecast are better.',
+    combine: 'The church-square walk can fit before dinner or alongside Ham Rong. Keep Fansipan and the Muong Hoa valley for separate days so a delayed transfer does not take away their daylight.',
     verify: 'Check Ham Rong’s current gate and route access, the hill forecast, stair conditions, hotel vehicle access, and market or event changes.'
   },
   'fansipan-summit': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: sapa.hubCss,
-    summary: 'Plan the 3,143-metre Fansipan visit around the official cable-car chain, colder summit conditions and the possibility of a weather closure.',
-    lead: 'Fansipan is Vietnam’s highest peak at 3,143 metres. The official cable car covers about 6 kilometres in roughly 15 minutes, but the visit continues above the valley station through exposed paths, steps and a managed summit complex. Fast transport does not remove altitude, cold, wind or visibility risk.',
-    orientation: 'Separate the drive from Sa Pa to the official station, the cable-car ride and the upper summit area. Sun World lists daily hours but warns that operating schedules can change; cable-car status and any onward services must be checked on the day. The mountain top may be cold and clouded when Sa Pa town is mild and bright.',
+    motif: '6-kilometre cable car and summit steps', instrument: 'summit plan',
+    summary: 'Plan Vietnam’s 3,143-metre summit around the six-kilometre cable-car ride, the final steps above it and colder, less predictable mountain weather.',
+    lead: 'Vietnam Tourism describes the Fansipan cable car as a six-kilometre ride taking about 15 minutes to reach 3,143 metres. The ride ends the long ascent, not the visit: the pagoda complex, exposed paths and final steps still require walking at altitude. On a clear day you can see the Hoang Lien range; in cloud, the upper site may offer little visibility even when Sa Pa is bright.',
+    orientation: 'Treat this as three linked legs: road transfer to Sun World’s station, the cable car, then the upper paths and summit steps. Sun World posts operating notices, and services may pause or change with conditions. Check the mountain forecast and the posted final descent on the day; town weather is not a reliable summit forecast.',
     arrival: 'Pre-arrange a station drop-off and identify the return pickup. Use Sun World’s official ticket and notice channels for the current transport sequence; do not rely on an old screenshot, third-party time table or assumed final descent. A separate day avoids pressure from a Hanoi arrival or valley booking.',
-    sequence: 'Choose a day with a usable mountain forecast, leave early enough to absorb queues or a service pause, and carry a warm layer even in warm-season town weather. Move slowly through the upper station and summit grounds; start down with a buffer before the posted last service. If visibility or operation deteriorates, keep the day in Sa Pa.',
+    sequence: 'Choose the day after checking the summit forecast and Sun World notice. Leave a queue or service-pause buffer, carry a warm shell, then take the upper paths slowly. Begin the return well before the last posted descent; if wind, cloud or a service interruption changes the plan, stay in Sa Pa rather than forcing the summit.',
     boundary: 'Stay on the signed visitor path and outside barriers around the summit’s religious structures. The peak is a managed high-altitude site as well as a transport attraction; do not climb structures or obstruct worship for a photograph.',
     stages: [
       ['Read conditions at elevation', 'Check the operator notice and mountain forecast, not only the town window. Decide in advance what visibility or wind would make you postpone.'],
@@ -1288,16 +1291,17 @@ const sapaGuideUpdates = {
       ['Wind and visibility', 'Cloud, lightning or strong wind can close mountain transport or erase the view. A paid ticket is not proof that the full route will operate.'],
       ['Timed connections', 'A delay above the valley can break a same-day train, bus or other ticket. Do not attach an essential onward connection to the last cable-car return.']
     ],
-    duration: 'Keep most of a day free for the Sa Pa station transfer, cable-car journey, upper summit paths and return buffer.',
-    combine: 'Combine with only a light town evening. Muong Hoa walking and the Bac Ha road day each deserve another date.',
+    duration: 'Keep most of a day for the station transfer, cable-car ride, pagoda complex, summit steps and a return buffer. The cable car is short; the transfer, queues and walking above the station make the outing longer.',
+    combine: 'Add only a short meal or town walk after the summit. Keep Muong Hoa’s uneven valley paths and the Bac Ha road day on different dates.',
     verify: 'On 7 October 2026 Sun World listed 07:30–17:00 and noted schedules may change. Recheck live service notices, last descent, ticket inclusions, forecast, warm clothing and any trekking permission before departure.'
   },
   'muong-hoa-lao-chai-ta-van': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: sapa.hubCss,
-    summary: 'Walk one host-confirmed section of Muong Hoa’s cultivated valley, where Lao Chai and Ta Van sit among terraces, water channels and old carved stones.',
-    lead: 'Muong Hoa is a worked landscape: rice terraces, water channels, homes and footpaths are part of a farming valley, not a scenic set. The official Sapa tourism office describes ancient carved stones here and publishes a sample day combining village roads with about three hours of walking; choose one suitable section instead of assuming a continuous easy trail.',
+    motif: 'Lao Chai–Ta Van terraces and carved stones', instrument: 'valley walk',
+    summary: 'Choose a named Lao Chai–Ta Van walk through a cultivated valley of rice terraces, irrigation channels, village lanes and carved stones.',
+    lead: 'Muong Hoa lies southeast of Sa Pa, where the main valley road drops past Lao Chai and Ta Van. The terraces are working fields: April brings water and planting, June is typically green, and the second half of September into early October is usually harvest-gold. The tourism office also describes about 200 carved stones across several villages; their patterns are not fully interpreted, so treat them as heritage, not a puzzle to solve.',
     orientation: 'Use the valley road as a transfer spine and choose a named start and finish with a local host or guide. Terraces change from water-filled planting beds to green growth and harvest colors through the year; April–May and September–October are distinct windows in Vietnam Tourism’s Sapa guidance, not a promise that every field will match a photograph.',
-    arrival: 'Arrange a vehicle to the exact trailhead or host address and confirm where the walk ends before leaving town. Lao Chai–Ta Van routes include uneven paths and village lanes; the tourism office’s sample day uses both driving and roughly three hours on foot, so do not book a tight onward pickup.',
+    arrival: 'Muong Hoa is about 2 miles southeast of Sa Pa. Arrange a driver to the exact village or trailhead and confirm the end point before leaving town. The tourism office’s longer Lao Chai–Ta Van–Giang Ta Chai–Ban Ho example includes about three hours on foot, three hours driving and lunch; shorter outings exist, but do not book a tight connection after the walk.',
     sequence: 'Make a full day of one valley walk and a hosted meal or rest. Stay on established paths, let a host identify the carved stones without climbing or touching them, and return before heavy rain or darkness. In the wet months, shorten the walk if steps, terrace edges or stream crossings are muddy.',
     boundary: 'A homestay, field or doorway is private unless the host invites you in. Ask before photographing residents, rooms, ceremonies or tools; never step into a crop bed to frame the terraces.',
     stages: [
@@ -1311,19 +1315,20 @@ const sapaGuideUpdates = {
       ['Crop damage', 'Fields are working food plots. Stay on the footpath instead of entering a terrace for a closer view.'],
       ['Unclear road pickup', 'Some homestays and trail finishes are not vehicle-side. Confirm the exact finish pin and return contact before walking away from the road.']
     ],
-    duration: 'Reserve a full day for a valley walk, host stop and vehicle segments. The Sapa tourism office’s sample route includes about three hours of walking plus road time and lunch.',
+    duration: 'Reserve a full day for the walk, host stop and vehicle legs. The tourism office’s longer village circuit allows about three hours walking, three driving and lunch; a shorter Lao Chai–Ta Van version is listed at about two hours on foot plus one hour driving. Confirm which route your guide is actually offering.',
     combine: 'Choose either this valley walk or the Cat Cat descent for the main walking block. Do not stack it with Fansipan transport or the Bac Ha market drive.',
     verify: 'Ask which paths and hosts are open, confirm trailhead and pickup, check rain and stream conditions, and agree on photo and homestay etiquette.'
   },
   'cat-cat-village': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: sapa.hubCss,
+    motif: '19th-century houses and waterfall steps', instrument: 'stair circuit',
     summary: 'Take the short road from Sa Pa to Cat Cat’s managed downhill visitor route, with 19th-century houses, craft stops, watermills and a waterfall below town.',
     lead: 'Cat Cat is close to Sa Pa but not a flat neighborhood stroll. The official tourism office places its entrance about 2 kilometres from town; visitors descend stone steps through a managed route with older houses, craft demonstrations, watermills, a waterfall and performance spaces. The present visit is a curated, commercial route through a place that also has residents.',
     orientation: 'Treat the gate-to-waterfall route as a one-way-feeling descent followed by a real uphill return, not as a brief photo stop. The office describes houses dating to the 19th century; today the managed route presents heritage spaces alongside shopfronts and designated performance areas. Follow the posted route rather than crossing into homes or the stream.',
     arrival: 'Reach the gate by a short vehicle ride or an uphill/downhill walk from central Sa Pa; confirm your driver’s return point before descending. The stone steps add effort and can be slippery, so avoid a late-day arrival that leaves the return climb in darkness.',
     sequence: 'Allow roughly half a day with time for the steps, a pause at the waterfall and an unhurried climb back. If an offered performance or craft demonstration interests you, check its current schedule at the entrance and treat it as a separate stop rather than assuming it is continuous.',
     boundary: 'Cat Cat’s managed route does not grant access to private houses or family life. Ask before taking portraits, keep to the marked path and do not step into watermill channels, gardens or fields for a better angle.',
-    image: image({ src: '/assets/images/vietnam-sapa-cat-cat.webp', alt: 'Waterfall and stream at Cat Cat on the managed village visitor route', source: 'https://commons.wikimedia.org/wiki/File:Catcatfalls7.jpg', label: 'Catcatfalls7.jpg', creator: 'startracker', license: 'CC BY-SA 2.0', editNote: 'Resized, display-cropped and converted to WebP; no other material edits.' }),
+    image: image({ src: '/assets/images/vietnam-sapa-cat-cat.webp', alt: 'Waterfall and stream at Cat Cat on the managed village visitor route', source: 'https://commons.wikimedia.org/wiki/File:Catcatfalls7.jpg', label: 'Catcatfalls7.jpg', creator: 'startracker', license: 'CC BY-SA 2.0', editNote: 'Resized, display-cropped and converted to WebP; no other material edits. The adapted image remains available under CC BY-SA 2.0.' }),
     stages: [
       ['Reach the official gate', 'Confirm the current entrance, ticket terms and vehicle return point before starting the downhill stair route.'],
       ['Follow the heritage path', 'Read the older house forms, craft displays and water-powered features as a managed visitor interpretation, not an untouched village walk.'],
@@ -1331,9 +1336,9 @@ const sapaGuideUpdates = {
       ['Climb back in daylight', 'Allow time for the stone steps uphill and return to the agreed pickup before rain or evening darkness.']
     ],
     risks: [
-      ['Long stair return', 'The way down feels easier than the climb back. Pace the least mobile visitor and save energy for the return.'],
-      ['Wet steps and water', 'Rain makes stone stairs and waterfall edges slick. Respect barriers and skip lower viewpoints during high water.'],
-      ['Uncertain demonstrations', 'Performances, craft activity and access terms can change. Do not promise a show or a particular open house without checking at the gate.']
+      ['Long stair return', 'The route descends to the stream before climbing back toward the gate. Set a turn-around pace before the downhill feels easy.'],
+      ['Wet steps and water', 'Rain makes the stone stairs and waterfall edges slick. Stay behind barriers and skip the lower viewpoint when the stream is high.'],
+      ['Crowded landings', 'Narrow steps and doorways leave little room to pass. Pause at wider signed areas instead of stopping in a shop entrance or stair landing.']
     ],
     duration: 'Allow about half a day for the 2-kilometre approach from town, gate, stair route, waterfall stop and uphill return; travel time depends on whether you walk or hire a vehicle.',
     combine: 'This can fit beside a light town visit, but choose Cat Cat or a longer Muong Hoa walk as the day’s main descent rather than doing both in a rush.',
@@ -1344,27 +1349,29 @@ const sapaGuideUpdates = {
   },
   'bac-ha-market-hoang-a-tuong': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: sapa.hubCss,
+    motif: 'Sunday market and Hoang A Tuong Mansion', instrument: 'market day',
+    image: image({ src: '/assets/images/vietnam-bac-ha-palace-20261007.webp', alt: 'Arched two-storey facade and courtyard of Hoang A Tuong Mansion in Bac Ha', source: 'https://commons.wikimedia.org/wiki/File:Bac_Ha_Dinh_vua_meo.jpg', label: 'Hoang A Tuong Mansion courtyard', creator: 'Velvet', license: 'CC BY-SA 4.0', editNote: 'Resized to 1600 px wide and converted to WebP; no other material edits. The adapted image remains available under CC BY-SA 4.0.' }),
     sources: [
-      ['https://www.vietnam.travel/places-to-go/northern-vietnam/sapa', 'Vietnam Tourism — Sapa'],
-      ['https://vietnamtourism.gov.vn/post/33948', 'Vietnam National Authority of Tourism — Hoang A Tuong Mansion']
+      ['https://www.vietnam.travel/places-to-go/northern-vietnam/sapa', 'Vietnam Tourism — Bac Ha Sunday market and regional access'],
+      ['https://vietnamtourism.gov.vn/post/33948', 'Vietnam National Authority of Tourism — Hoang A Tuong Mansion dates and former owner']
     ],
-    image: image({ src: '/assets/images/vietnam-bac-ha-market-illustration.svg', alt: 'Original text-free illustration of a Bac Ha market courtyard and mountain terraces; no people are depicted', source: 'https://tripdistill.com/assets/images/vietnam-bac-ha-market-illustration.svg', label: 'TripDistill original Bac Ha market and courtyard illustration', creator: 'TripDistill', license: 'CC0 1.0', editNote: 'Original text-free vector illustration; symbolic architecture, no people or third-party artwork.' }),
-    summary: 'Make Bac Ha a separate Sunday road day: observe a working highland market, then visit the 1914–1921 Hoang A Tuong compound if it is open.',
-    lead: 'Bac Ha’s Sunday market is a place to trade food, cloth, tools and livestock, not a staged color show. The Vietnam National Authority of Tourism dates Hoang A Tuong Mansion to 1914–1921; its courtyard and formal rooms offer a different history from the market’s everyday exchange. Both belong to Bac Ha, a separate road journey from Sa Pa.',
-    orientation: 'The market is busiest as people arrive to buy and sell; use the outer edge first, then move through food, textiles and animal areas only where public passage is clear. Treat the mansion as a separate stop with its own access terms. A symbolic illustration is used here instead of a crowd photograph; the real visit should center on consent and the working place.',
-    arrival: 'Set out with a confirmed driver or overnight plan and a daylight return margin. Sa Pa and Bac Ha are not adjacent stops: the mountain-road transfer, market crowds and separate mansion visit make this a full day at minimum. Do not connect the return to a critical train or bus ticket.',
-    sequence: 'Check that the Sunday market is running, arrive early enough to see trading before stalls thin, and leave aisles open for sellers, shoppers and animals. After the market, visit Hoang A Tuong only if its gate is open and there is time to return safely; an overnight in Bac Ha gives the day more room.',
+    summary: 'Give Bac Ha a separate Sunday road day: walk the working market first, then look for the arched courtyard of Hoang A Tuong Mansion if it is open.',
+    lead: 'The Bac Ha Sunday market serves a rural trading day: food, cloth, tools and livestock move through working lanes before visitors arrive with cameras. Hoang A Tuong Mansion is a separate heritage stop, built from 1914 to 1921; the tourism authority identifies Hoang Yen Tchao as its former owner. If the compound is open, its arched facade, upper balustrades and enclosed courtyard make the contrast with the open-air market easy to read.',
+    orientation: 'Start at the market edge and let sellers and shoppers pass before entering the food and textile lanes. Livestock areas are a workplace, not a viewing pen. After the market, go to the mansion only if its gate is open; the courtyard and layered arches reward a slower look, but do not assume every room is accessible.',
+    arrival: 'Book a driver or an overnight base in Bac Ha before Sunday; this is a separate district from Sa Pa, not a quick valley detour. Ask where the market pickup will be after crowds build and preserve daylight for the return. Do not tie that return to a critical train or bus ticket.',
+    sequence: 'Arrive early while the market is actively trading. Walk the outer lanes first, then follow public aisles through produce, textiles and tools; visit livestock sections only where people can pass safely. Add Hoang A Tuong after the market if the compound is open, and stay overnight if both visits would otherwise be rushed.',
+
     boundary: 'Ask before photographing sellers, children, shoppers or livestock. Keep out of stalls and animal handling areas unless invited, agree prices before buying and avoid wildlife products. Clothing is personal and commercial work is not a performance for visitors.',
     stages: [
       ['Make Bac Ha the destination', 'Confirm the Sunday date, driver, return or overnight plan and a saved pickup point before leaving Sa Pa.'],
       ['Observe trade from the edge', 'Give sellers room, keep aisles clear and read the food, textile, tool and livestock sections without interrupting transactions.'],
-      ['Add the mansion visit', 'If open, use Hoang A Tuong’s courtyard and interior as a distinct early-20th-century history stop rather than an extension of the market floor.'],
+      ['Read the mansion separately', 'If its gate is open, notice the enclosed courtyard, arched bays and balcony railings; ask which interior rooms are included before entering.'],
       ['Return with daylight', 'Leave a road and weather buffer; stay overnight if the market, mansion and return would otherwise become a rushed sequence.']
     ],
     risks: [
       ['Long mountain transfer', 'Road time varies with weather, traffic and stops. Do not plan a same-day essential onward connection after the return to Sa Pa.'],
-      ['Crowded working lanes', 'People, carts and animals share narrow market passages. Stand aside for transactions and follow local staff instructions.'],
-      ['Portrait and purchase consent', 'Ask before taking photographs and do not handle animals or buy protected wildlife products. A public market is still people’s workplace.']
+      ['Crowded working lanes', 'People, carts and animals share narrow passages. Stand aside for transactions and never block an animal handler or a doorway.'],
+      ['Uncertain mansion access', 'The market is the fixed Sunday anchor; mansion hours and room access can change. Confirm the gate locally and do not let a closed visit force a rushed return drive.']
     ],
     duration: 'Reserve a full day from Sa Pa or sleep in Bac Ha for a slower visit. The weekly market, rural road and mansion access do not fit a brief Sapa-town add-on.',
     combine: 'Combine the market and mansion within Bac Ha if both are open; do not pair this road day with Fansipan, a full Muong Hoa trek or Cat Cat.',
@@ -1372,35 +1379,65 @@ const sapaGuideUpdates = {
   }
 };
 
+const sapaDecisionLabels = {
+  'town-ham-rong': ['Getting around town', 'When to climb', 'Respect the town'],
+  'fansipan-summit': ['Station transfer', 'Summit sequence', 'Stay on the visitor route'],
+  'muong-hoa-lao-chai-ta-van': ['Trail start and finish', 'Terrace season', 'Ask before entering'],
+  'cat-cat-village': ['Gate and return', 'Waterfall route', 'Respect residents'],
+  'bac-ha-market-hoang-a-tuong': ['Market morning', 'Road-day return', 'Ask before photographing']
+};
+
+const sapaFaqs = {
+  'town-ham-rong': [
+    ['Is Ham Rong a sensible first-day outing?', 'Yes, if you have arrived early enough to settle in and the hill is open. Walk the church-square lanes first; save the stair climb for a day when rain and cloud leave a clear descent.'],
+    ['Is central Sa Pa easy to cross with luggage?', 'Not always. The former hill station has steep streets, and some hotels sit above vehicle drop-off points. Ask the property for its exact car access and the final walk before your bus arrives.'],
+    ['Will the town view continue from Ham Rong?', 'Not necessarily. Cloud can cover the upper gardens while the square below stays clear. Check the hill after reaching town and treat a panorama as weather-dependent.']
+  ],
+  'fansipan-summit': [
+    ['How much of Fansipan is by cable car?', 'Vietnam Tourism describes a 6-kilometre ride of about 15 minutes to 3,143 metres. The pagoda complex and final summit steps are above the station, so allow time to walk slowly at altitude.'],
+    ['What if Fansipan is clouded in?', 'Check Sun World’s operating notice and mountain forecast before leaving. If visibility, wind or service is poor, postpone; a clear Sa Pa town forecast does not guarantee a clear summit.'],
+    ['Is the cable-car visit a trek?', 'No. The cable car is a transport option; a Fansipan trek is a separate route with different fitness, guide and permission requirements. Confirm the exact trek with an authorized local operator.']
+  ],
+  'muong-hoa-lao-chai-ta-van': [
+    ['When do Muong Hoa terraces look green or gold?', 'The local tourism office describes water-filled planting fields from April, green terraces in June and golden rice in the second half of September to the first half of October. Weather and planting dates shift, so color is never guaranteed.'],
+    ['How long is a Lao Chai–Ta Van walk?', 'It depends on the named route. The office’s wider Lao Chai–Ta Van–Giang Ta Chai–Ban Ho day lists about three hours walking, three hours driving and lunch; its shorter Lao Chai–Ta Van outing lists about two hours walking and one hour driving.'],
+    ['Can I cross May Bridge by vehicle?', 'No. The tourism office describes May Bridge as a footbridge made from bamboo, wood and liana; motorbikes and taxis cannot cross it. Confirm the current path and bridge condition with your host.']
+  ],
+  'cat-cat-village': [
+    ['What does the Cat Cat route include?', 'The tourism office places the entrance about 2 kilometres from central Sa Pa and describes a stone-step descent past 19th-century houses, craft stalls, watermills and a waterfall. Access to individual homes or performances is separate.'],
+    ['How much walking is involved?', 'Plan roughly half a day for the approach, downhill steps, waterfall pause and uphill return. The route feels longer in rain or with a slower group; arrange pickup before you descend.'],
+    ['Is Cat Cat a private village visit?', 'It is a managed visitor route through a place where people live. Follow posted public paths, ask before taking portraits and enter a home only by invitation.']
+  ],
+  'bac-ha-market-hoang-a-tuong': [
+    ['Can Bac Ha market be a quick add-on from Sa Pa?', 'It is better treated as its own Sunday road day. Add the mansion only if it is open and leave a daylight return margin; stay overnight in Bac Ha if the drive would make both visits rushed.'],
+    ['What is the history of Hoang A Tuong Mansion?', 'Vietnam’s tourism authority dates the mansion to 1914–1921 and names Hoang Yen Tchao as its former owner. The arched courtyard is a separate heritage visit from the market’s weekly trade.'],
+    ['May I photograph market sellers or animals?', 'Ask people before photographing them, keep out of stalls and animal-handling areas, and leave room for buyers and sellers to work. A public market is still someone’s workplace.']
+  ]
+};
+
 for (const guide of sapa.guides) {
   const update = sapaGuideUpdates[guide.slug];
   if (update) {
     Object.assign(guide, update);
     guide.decisions = [
-      ['Arrival contract', guide.arrival],
-      ['Route logic', guide.sequence],
-      ['Keep the boundary', guide.boundary]
+      ...sapaDecisionLabels[guide.slug].map((label, index) => [label, [guide.arrival, guide.sequence, guide.boundary][index]])
     ];
     guide.route = guide.stages.map((stage, index) => [['Arrive', 'Read', 'Deepen', 'Exit'][index], stage[0], stage[1]]);
     guide.checks = guide.risks;
     guide.hideSequenceLead = true;
     guide.hideBoundaryBlock = true;
     guide.checksIntro = '';
-    guide.faq = [
-      [`How much time should ${guide.name} receive?`, guide.duration],
-      [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
-      ['What should I verify before leaving?', guide.verify]
-    ];
+    guide.faq = sapaFaqs[guide.slug];
   }
 }
 
 const sapaImageLicenses = {
-  'town-ham-rong': ['https://creativecommons.org/publicdomain/zero/1.0/', null],
+  'town-ham-rong': ['https://creativecommons.org/licenses/by/4.0/', 'Changes: image resized, display-cropped and converted to WebP; no other material edits.'],
   'fansipan-summit': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.'],
   'muong-hoa-lao-chai-ta-van': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.'],
   'cat-cat-village': ['https://creativecommons.org/licenses/by-sa/2.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 2.0 license.'],
   'o-quy-ho-waterfalls': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.'],
-  'bac-ha-market-hoang-a-tuong': ['https://creativecommons.org/publicdomain/zero/1.0/', null]
+  'bac-ha-market-hoang-a-tuong': ['https://creativecommons.org/licenses/by-sa/4.0/', 'Changes: image resized and converted to WebP; no other material edits. Share-alike: the adapted image is released under CC BY-SA 4.0.']
 };
 for (const guide of sapa.guides) {
   const [licenseUrl, editNote] = sapaImageLicenses[guide.slug];
