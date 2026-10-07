@@ -22,6 +22,7 @@ const regionCss = (cluster, guide = null) => {
   }
   if (cluster.slug === 'toronto') return '<link rel="stylesheet" href="/css/canada-toronto.css?v=20261007-2">';
   if (cluster.slug === 'quebec-city-charlevoix') return '<link rel="stylesheet" href="/css/canada-quebec-city.css?v=20261007-2">';
+  if (cluster.slug === 'victoria-south-island') return '<link rel="stylesheet" href="/css/canada-victoria.css?v=20261008-1">';
   return '';
 };
 
@@ -75,7 +76,7 @@ function imageCredit(image) {
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
     : escapeHtml(image.license);
-  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
+  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
     ? ` This resized, display-cropped WebP adaptation is offered under the same ${escapeHtml(image.license)} terms.`
     : '';
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}${shareAlikeNotice}</li>`;

@@ -1,0 +1,104 @@
+body[data-region="victoria-south-island"] .ca-hub,
+body[data-region="victoria-south-island"] .ca-field {
+  --ca-family: #3b7977;
+  --ca-family-dark: #193e48;
+  --ca-family-soft: #e7f0ed;
+}
+
+body[data-region="victoria-south-island"] .ca-hub-hero {
+  border-bottom: .55rem solid #d1a66b;
+  background: linear-gradient(125deg, #193e48 0 58%, #28585e 100%);
+}
+
+body[data-region="victoria-south-island"] .ca-hub-hero::before {
+  opacity: .22;
+  background: repeating-linear-gradient(165deg, transparent 0 3.2rem, rgba(219, 233, 221, .28) 3.25rem 3.32rem, transparent 3.38rem 5.6rem);
+}
+
+body[data-region="victoria-south-island"] .ca-hub-copy h1,
+body[data-region="victoria-south-island"] .ca-field-copy h1 {
+  text-wrap: balance;
+}
+
+body[data-region="victoria-south-island"] .ca-hub-hero .ca-tagline {
+  color: #ead3a9 !important;
+}
+
+body[data-region="victoria-south-island"] .ca-map-index {
+  border-color: rgba(234, 211, 169, .72);
+  background: rgba(25, 62, 72, .92);
+}
+
+body[data-region="victoria-south-island"] .ca-hub-stats article:nth-child(2),
+body[data-region="victoria-south-island"] .ca-contract-grid article:nth-child(2n) {
+  background: #edf3ef;
+}
+
+body[data-region="victoria-south-island"] .ca-hub-card {
+  border-color: rgba(59, 121, 119, .38);
+  box-shadow: 0 .8rem 2rem rgba(25, 62, 72, .07);
+}
+
+body[data-region="victoria-south-island"] .ca-hub-card:nth-child(2) {
+  border-radius: 2.3rem 0 2.3rem 0;
+}
+
+body[data-region="victoria-south-island"] .ca-hub-card:nth-child(3) {
+  clip-path: none;
+  border-radius: 0 2.3rem 0 2.3rem;
+}
+
+body[data-region="victoria-south-island"] .ca-field-hero {
+  border-bottom: .55rem solid #d1a66b;
+}
+
+body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-field-hero {
+  --ca-family: #5d8256;
+  --ca-family-dark: #2c4637;
+  --ca-family-soft: #edf2e7;
+}
+
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field-hero {
+  --ca-family: #4d8592;
+  --ca-family-dark: #203e4b;
+  --ca-family-soft: #e8f0f2;
+}
+
+body[data-region="victoria-south-island"] .ca-route-step:nth-child(odd),
+body[data-region="victoria-south-island"] .ca-check-grid article:nth-child(odd) {
+  background: #fffdf8;
+}
+
+body[data-region="victoria-south-island"] .ca-route-step:nth-child(even) {
+  background: #eaf1ed;
+}
+
+body[data-region="victoria-south-island"] .ca-fallback-card {
+  background: linear-gradient(125deg, #193e48, #356d70);
+}
+
+body[data-region="victoria-south-island"] .ca-route-step,
+body[data-region="victoria-south-island"] .ca-hub-card,
+body[data-region="victoria-south-island"] .ca-related-card {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+body[data-region="victoria-south-island"] .ca-hub-card:hover,
+body[data-region="victoria-south-island"] .ca-related-card:hover {
+  border-color: #3b7977;
+  box-shadow: 0 1rem 2rem rgba(25, 62, 72, .14);
+}
+
+@media (max-width: 720px) {
+  body[data-region="victoria-south-island"] .ca-hub-card:nth-child(2) {
+    border-radius: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-region="victoria-south-island"] .ca-route-step,
+  body[data-region="victoria-south-island"] .ca-hub-card,
+  body[data-region="victoria-south-island"] .ca-related-card {
+    transition: none;
+  }
+}

@@ -32,7 +32,7 @@ export const canadaImageManifest = {
   },
   "victoria-south-island/inner-harbour-james-bay": {
     "src": "/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp",
-    "alt": "Victoria Inner Harbour and Parliament Buildings",
+    "alt": "Victoria's Inner Harbour, Parliament Buildings and boats at dusk",
     "source": "https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg",
     "label": "Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg",
     "creator": "DXR",
@@ -42,7 +42,7 @@ export const canadaImageManifest = {
   },
   "victoria-south-island/butchart-saanich": {
     "src": "/assets/images/canada-victoria-south-island-butchart-saanich.webp",
-    "alt": "Formal gardens on the Saanich Peninsula near Victoria",
+    "alt": "Formal garden beds and mature trees at Butchart Gardens",
     "source": "https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg",
     "label": "Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
     "creator": "Fyre Mael",
@@ -52,7 +52,7 @@ export const canadaImageManifest = {
   },
   "victoria-south-island/sooke-juan-de-fuca": {
     "src": "/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp",
-    "alt": "Rocky Pacific shoreline near Sooke on Vancouver Island",
+    "alt": "Rocky low-tide shore on the Juan de Fuca Trail",
     "source": "https://commons.wikimedia.org/wiki/File:Rocky_coast_between_Little_Kuitshe_Campsite_and_Payzant_Campsite,_Juan_de_Fuca_Trail,_Vancouver_Island,_Canada_39.jpg",
     "label": "Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
     "creator": "Michal Klajban",
