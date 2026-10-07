@@ -57,7 +57,7 @@ export const vietnamNorthClusters = [
         orientation: 'Treat Ba Dinh Square, the mausoleum precinct and Thang Long as related but distinct places. The citadel’s 1,300-year political sequence is best understood through its gates, archaeological site and surviving monuments.',
         arrival: 'Use a vehicle drop-off at the currently permitted perimeter, then walk between controlled entrances. The mausoleum and citadel may use different opening calendars, queues and security rules.',
         sequence: 'Start with the site whose official access window is most constrained, continue through the citadel while attention is fresh, and finish in a shaded café or museum rather than adding another distant monument.',
-        boundary: 'Do not merge wartime memory, revolutionary symbolism and imperial archaeology into one generic “old Hanoi” paragraph. Give each layer its own language and behavior.',
+        boundary: 'Ba Dinh is an active civic and memorial area: follow guards’ directions and posted photography limits. Within the citadel, keep to signed paths around the excavations and do not climb or touch monuments.',
         stages: [
           ['Read the civic axis', 'Observe the scale, ceremonial geometry and security presence around Ba Dinh without treating a working national site as a backdrop.'],
           ['Enter the citadel', 'Use the official gate and map to connect Doan Mon, the flag tower, Kinh Thien remains and the archaeological evidence at 18 Hoang Dieu.'],
@@ -105,7 +105,7 @@ export const vietnamNorthClusters = [
         name: 'French Quarter and Hanoi Opera House',
         motif: 'colonial facade to performance room',
         instrument: 'zine',
-        image: image({ src: '/assets/images/vietnam-hanoi-french-quarter.webp', alt: 'Hanoi Opera House in the French Quarter', source: 'https://commons.wikimedia.org/wiki/File:Hanoi-opera_house.jpg', label: 'Hanoi-opera house.jpg', creator: 'Davit et Magalie', license: 'CC BY 2.0' }),
+        image: image({ src: '/assets/images/vietnam-hanoi-french-quarter.webp', alt: 'Hanoi Opera House in the French Quarter', source: 'https://commons.wikimedia.org/wiki/File:Hanoi_-_Opera_House_02.jpg', label: 'Hanoi - Opera House 02.jpg', creator: 'P. Hughes', license: 'CC BY 4.0' }),
         summary: 'A compact architecture and performance chapter through the French Quarter, Opera House surroundings and nearby cultural institutions.',
         lead: 'The French Quarter works best when read as a civic network rather than a collection of yellow façades. Pair the Opera House with one museum or public building, then leave time to notice how embassies, hotels, shops and traffic occupy the same historic grid.',
         orientation: 'Anchor the route at the Opera House and walk a short loop through Trang Tien and adjacent streets. Select a named interior only after confirming its visitor policy or performance ticket.',
@@ -1143,10 +1143,10 @@ const hanoiGuideUpdates = {
   'ba-dinh-thang-long': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
     summary: 'Separate Ba Dinh civic memory from the archaeological layers of Thang Long, then plan around controlled entrances and the citadel’s current visitor window.',
-    lead: 'This is two histories beside one another, not one undifferentiated “old Hanoi.” Ba Dinh Square is the setting of the 2 September 1945 Declaration of Independence; the UNESCO-listed Central Sector of Thang Long preserves a much longer political sequence, with a 7th-century fortress beneath an 11th-century citadel and later layers at 18 Hoang Dieu.',
-    orientation: 'Treat the square, mausoleum precinct and citadel as separate controlled spaces. At Thang Long, Doan Mon, the Kinh Thien Palace remains and the 18 Hoang Dieu excavation tell different parts of the story. The operator currently lists 08:00–17:00 daily (checked 7 October 2026); the mausoleum has its own calendar.',
-    arrival: 'Choose the first gate before booking a car: Thang Long visitors use the Hoang Dieu side, while Ba Dinh memorial access can be restricted by ceremony or security. Save the exact official address and allow a ground-transfer buffer rather than assuming both precincts form one continuous walk.',
-    sequence: 'Check the mausoleum notice first if that visit matters; its access window and security rules can constrain the day. Otherwise give Thang Long a morning or afternoon block, starting at the official gate and following its visitor map to the archaeological site before the open courtyards get tiring.',
+    lead: 'Ba Dinh Square is where the Declaration of Independence was read on 2 September 1945. Thang Long tells a much longer story: the 11th-century citadel was built on the remains of a Chinese fortress dating to the 7th century, and the 18 Hoang Dieu excavation exposes remains from later periods of the capital.',
+    orientation: 'Visitors see standing monuments such as Doan Mon South Gate and the Flag Tower, the Kinh Thien Palace foundation, and excavated layers at 18 Hoang Dieu; each reveals a different part of the citadel. The operator lists 08:00–17:00 every day (checked 7 October 2026); the mausoleum keeps a separate calendar.',
+    arrival: 'Thang Long’s two sections form an integrated heritage complex: the 18 Hoang Dieu Archaeological Site is about 100 metres west of the Kinh Thien Palace foundation. Follow the official visitor map; the operator lists parking at 19C Hoang Dieu. Ba Dinh memorial access is managed separately and can change around ceremonies or security, so save the address for each entrance you plan to use.',
+    sequence: 'Allow a half-day for the citadel’s two sections. Start in the central precinct at Doan Mon South Gate and the Flag Tower, pause at the Kinh Thien Palace foundation, then follow the map west to the 18 Hoang Dieu excavation about 100 metres away. Open courtyards have little shade, so schedule water and a rest, especially in hot weather. If the mausoleum matters, check its access notice before fixing this block.',
     verify: 'Recheck Thang Long’s 08:00–17:00 notice and any gate closure, then check the mausoleum’s official calendar, entry requirements, photography rules, weather and mobility access.',
     sources: [
       ['https://whc.unesco.org/en/list/1328/', 'UNESCO — Thang Long history, archaeology and inscription'],
