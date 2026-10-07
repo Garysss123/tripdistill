@@ -21,7 +21,11 @@ const expectedRoutes = [
   ['/france/normandy/', 'Normandy hub'],
   ['/france/normandy/rouen-seine-cathedral/', 'Rouen Cathedral, Old Streets & the Seine'],
   ['/france/normandy/bayeux-dday-landscape/', 'Bayeux & the D-Day Landscape'],
-  ['/france/normandy/mont-saint-michel-bay/', 'Mont-Saint-Michel & the Bay Approach']
+  ['/france/normandy/mont-saint-michel-bay/', 'Mont-Saint-Michel & the Bay Approach'],
+  ['/france/loire-valley/', 'Loire Valley hub'],
+  ['/france/loire-valley/blois-chambord/', 'Blois & Chambord'],
+  ['/france/loire-valley/amboise-chenonceau/', 'Amboise, Clos Lucé & Chenonceau'],
+  ['/france/loire-valley/tours-villandry-azay/', 'Tours, Villandry & Azay-le-Rideau']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -139,9 +143,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 60 || manifest.pages?.length !== 60) fail(`${label}: expected 60 localized route records.`);
+  if (manifest.routeCount !== 80 || manifest.pages?.length !== 80) fail(`${label}: expected 80 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris, day-trip and Normandy scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris, day-trip, Normandy and Loire scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -156,7 +160,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const htmlNode = nodes(document, 'html')[0];
   if (attr(htmlNode, 'lang') !== record.locale) fail(`${label}: wrong document language on ${record.urlPath}: ${attr(htmlNode, 'lang')}.`);
   const bodyNode = nodes(document, 'body')[0];
-  if (!['fr-paris', 'fr-normandy'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix))) fail(`${label}: missing Paris, day-trip or Normandy page identity on ${record.urlPath}.`);
+  if (!['fr-paris', 'fr-normandy', 'fr-loire-valley'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix))) fail(`${label}: missing Paris, day-trip, Normandy or Loire page identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -213,13 +217,14 @@ for (const locale of expectedLocales) {
     const isParisRoute = routePath.startsWith('/france/paris/');
     const isDayTripChild = ['/versailles-palace-estate/', '/fontainebleau-palace-forest/', '/giverny-monet-vernon/'].some((suffix) => routePath.endsWith(suffix));
     const isNormandyChild = routePath.startsWith('/france/normandy/') && routePath !== '/france/normandy/';
-    const expectedFieldCss = isParisRoute ? '/css/france-paris.css' : isDayTripChild || isNormandyChild ? '/css/france-field.css' : '/css/france.css';
+    const isLoireChild = routePath.startsWith('/france/loire-valley/') && routePath !== '/france/loire-valley/';
+    const expectedFieldCss = isParisRoute ? '/css/france-paris.css' : isDayTripChild || isNormandyChild || isLoireChild ? '/css/france-field.css' : '/css/france.css';
     if (!styles.includes('/css/france.css') || !styles.includes(expectedFieldCss)) fail(`Missing route stylesheet ${expectedFieldCss} on ${locale.code} ${routePath}.`);
     if (routePath.startsWith('/france/paris-region-day-trips/')) {
       if (!styleHrefs.includes('/css/france.css?v=20261007-3')) fail(`Missing current day-trip responsive stylesheet version on ${locale.code} ${routePath}.`);
       if (isDayTripChild && !styleHrefs.includes('/css/france-field.css?v=20261007-3')) fail(`Missing current day-trip field stylesheet version on ${locale.code} ${routePath}.`);
     }
-    const isHub = routePath === '/france/paris/' || routePath === '/france/paris-region-day-trips/' || routePath === '/france/normandy/';
+    const isHub = routePath === '/france/paris/' || routePath === '/france/paris-region-day-trips/' || routePath === '/france/normandy/' || routePath === '/france/loire-valley/';
     if (isHub) continue;
     if (!nodes(document, 'details').length) fail(`Missing visible FAQ controls on ${locale.code} ${routePath}.`);
     const bodyText = text(nodes(document, 'body')[0]);
@@ -258,6 +263,12 @@ const normandyChildRoutes = [
   '/france/normandy/mont-saint-michel-bay/'
 ];
 const normandyMatrixRoutes = ['/france/normandy/', ...normandyChildRoutes];
+const loireChildRoutes = [
+  '/france/loire-valley/blois-chambord/',
+  '/france/loire-valley/amboise-chenonceau/',
+  '/france/loire-valley/tours-villandry-azay/'
+];
+const loireMatrixRoutes = ['/france/loire-valley/', ...loireChildRoutes];
 for (const locale of expectedLocales) {
   for (const routePath of normandyMatrixRoutes) {
     const page = pagesByRoute.get(locale.code + routePath);
@@ -285,6 +296,62 @@ for (const locale of expectedLocales) {
     if (!riskGrid || elementChildren(riskGrid, 'article').length !== 3) fail(`Expected three cards in direct .fr-watch > div risk grid on ${locale.code} ${routePath}.`);
     if (nodes(document, 'details').length !== 3) fail(`Expected three destination-specific FAQ controls on ${locale.code} ${routePath}.`);
   }
+  for (const routePath of loireMatrixRoutes) {
+    const page = pagesByRoute.get(locale.code + routePath);
+    const body = nodes(page.document, 'body')[0];
+    const cssLinks = nodes(page.document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
+    if (attr(body, 'data-country') !== 'france' || attr(body, 'data-region') !== 'loire-valley') fail(`Wrong Loire responsive scope on ${locale.code} ${routePath}.`);
+    if (!cssLinks.includes('/css/france.css?v=20261007-3')) fail(`Current France stylesheet is missing on ${locale.code} ${routePath}.`);
+    if (routePath !== '/france/loire-valley/' && !cssLinks.includes('/css/france-field.css?v=20261007-3')) fail(`Current France field stylesheet is missing on ${locale.code} ${routePath}.`);
+  }
+  for (const routePath of loireChildRoutes) {
+    const page = pagesByRoute.get(locale.code + routePath);
+    const document = page.document;
+    for (const templateClass of ['fr-choice-deck', 'fr-contract', 'fr-regional-context', 'fr-route', 'fr-live-check', 'fr-fallback', 'fr-watch', 'fr-related', 'fr-faq']) {
+      if (!classNodes(document, templateClass, 'section').length) fail(`Missing shared ${templateClass} template on ${locale.code} ${routePath}.`);
+    }
+    const choiceDeck = classNodes(document, 'fr-choice-deck', 'section')[0];
+    if (elementChildren(choiceDeck, 'article').length !== 3) fail(`Expected three direct Loire choice cards on ${locale.code} ${routePath}.`);
+    const routeSection = classNodes(document, 'fr-route', 'section')[0];
+    const routeList = elementChildren(routeSection, 'ol')[0];
+    if (!routeList || elementChildren(routeList, 'li').length !== 4) fail(`Expected four Loire route stages on ${locale.code} ${routePath}.`);
+    const watchSection = classNodes(document, 'fr-watch', 'section')[0];
+    const riskGrid = elementChildren(watchSection, 'div')[0];
+    if (!riskGrid || elementChildren(riskGrid, 'article').length !== 3) fail(`Expected three cards in direct Loire .fr-watch > div risk grid on ${locale.code} ${routePath}.`);
+    if (nodes(document, 'details').length !== 3) fail(`Expected three destination-specific Loire FAQ controls on ${locale.code} ${routePath}.`);
+  }
+}
+
+const loireHubText = pageBodyText('en', '/france/loire-valley/');
+for (const phrase of ['Rémi line 2', 'about 35 minutes', '400 m from Chenonceau’s ticket office', 'Villandry Centre', 'garden-only ticket', '2.1 km walk']) {
+  if (!loireHubText.includes(phrase)) fail(`Loire hub is missing the verified corridor decision “${phrase}”.`);
+}
+const loireEnglishRequirements = [
+  ['/france/loire-valley/blois-chambord/', ['four architectural periods', '1519', 'architect is unknown', 'double-helix staircase', 'Fine Arts Museum', 'Rémi line 2']],
+  ['/france/loire-valley/amboise-chenonceau/', ['400 m', 'Catherine Briçonnet', 'Diane de Poitiers', 'Green Cabinet', 'occupied and free zones', 'Chenonceaux station']],
+  ['/france/loire-valley/tours-villandry-azay/', ['garden-only', '280 m', '2.1 km', 'R5 Résabus', 'Joachim Carvallo', 'eight hectares']]
+];
+for (const [routePath, requiredPhrases] of loireEnglishRequirements) {
+  const bodyText = pageBodyText('en', routePath);
+  for (const phrase of requiredPhrases) if (!bodyText.includes(phrase)) fail(`Loire editorial QA is missing “${phrase}” on ${routePath}.`);
+}
+for (const [routePath, expectedQuestions] of [
+  ['/france/loire-valley/blois-chambord/', ['Does the Blois-Chambord train station sit at Chambord?', 'Was Chambord designed by Leonardo da Vinci?', 'What should I see inside the Château de Blois?']],
+  ['/france/loire-valley/amboise-chenonceau/', ['Can I walk from the Royal Château of Amboise to Clos Lucé?', 'How far is Chenonceaux station from the château?', 'Did Leonardo da Vinci design Chenonceau?']],
+  ['/france/loire-valley/tours-villandry-azay/', ['Can I buy a Villandry garden-only ticket?', 'How far is Azay-le-Rideau station from the château?', 'Which Villandry bus stop should I use?']]
+]) {
+  const page = pagesByRoute.get('en' + routePath);
+  const questions = nodes(page.document, 'summary').map(text).map((value) => value.trim());
+  for (const question of expectedQuestions) if (!questions.includes(question)) fail(`Missing Loire-specific FAQ question “${question}” on ${routePath}.`);
+}
+const loireSourceRequirements = [
+  ['/france/loire-valley/blois-chambord/', ['remi-centrevaldeloire.fr/s-evader/chateau-chambord-lechappee-royale', 'en.chateaudeblois.fr/2194-four-architectural-styles.htm', 'en.chateaudeblois.fr/2369-illustrious-historical-figures.htm', 'chambord.org/en/history/the-chateau/architecture/']],
+  ['/france/loire-valley/amboise-chenonceau/', ['vinci-closluce.com/en/prices/', 'chenonceau.com/en/chateau/the-history-of-the-chateau/', 'chenonceau.com/en/practical-information/how-to-get-here/']],
+  ['/france/loire-valley/tours-villandry-azay/', ['chateauvillandry.fr/useful-information/prices-opening-times-how-to-get-there-how-to-visit-villandry/', 'chateauvillandry.fr/villandry-through-the-ages/the-gardens-of-villandry-are-restored-to-their-renaissance-glory/', 'azay-le-rideau.fr/en/visit/practical-information', 'azay-le-rideau.fr/en/discover/the-landscaped-park']]
+];
+for (const [routePath, requiredSources] of loireSourceRequirements) {
+  const hrefs = nodes(pagesByRoute.get('en' + routePath).document, 'a').map((node) => attr(node, 'href'));
+  for (const source of requiredSources) if (!hrefs.some((href) => href.includes(source))) fail(`Loire route source ${source} is missing from ${routePath}.`);
 }
 const bayeuxBodyText = pageBodyText('en', '/france/normandy/bayeux-dday-landscape/');
 for (const phrase of ['Romanesque and Gothic', '2,300 m²', '7 June to 29 August 1944', 'Allied and German', 'Falaise–Chambois', 'cliff above Omaha Beach', 'Mulberry B', 'autumn 2027', 'not a complete Gold, Juno and Sword battlefield circuit']) {
@@ -393,7 +460,8 @@ if (!isLive) {
   const parisPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris/')).length;
   const dayTripPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris-region-day-trips/')).length;
   const normandyPages = manifest.pages.filter((record) => record.path.startsWith('/france/normandy/')).length;
-  console.log(`France QA harness passed locally: ${manifest.pages.length}/60 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, ${totalStyleBytes} stylesheet bytes, 4,560 sitemap URLs, noindex harness.`);
+  const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
+  console.log(`France QA harness passed locally: ${manifest.pages.length}/80 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, ${totalStyleBytes} stylesheet bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -420,5 +488,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`France QA preview passed: harness HTTP 200, ${manifest.pages.length}/60 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`France QA preview passed: harness HTTP 200, ${manifest.pages.length}/80 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }

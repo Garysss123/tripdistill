@@ -158,7 +158,8 @@ export const franceImageManifest = {
     "creator": "Ignaz Wiradi",
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:Château de Chambord, Loire Valley - FRANCE.jpg",
-    "remoteSha1": "a7540b1bf94e30de27c11b918b67b8b7f3fe469a"
+    "remoteSha1": "a7540b1bf94e30de27c11b918b67b8b7f3fe469a",
+    "creditTitle": "Château de Chambord"
   },
   "loire-valley/amboise-chenonceau": {
     "src": "/assets/images/france-loire-valley-amboise-chenonceau.webp",
@@ -168,17 +169,19 @@ export const franceImageManifest = {
     "creator": "SpottingHistory",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Château de Chenonceau, Loire Valley, France.jpg",
-    "remoteSha1": "66eace6df2efd43c3b7fe5c1a9e565f53655e1f5"
+    "remoteSha1": "66eace6df2efd43c3b7fe5c1a9e565f53655e1f5",
+    "creditTitle": "Château de Chenonceau over the Cher"
   },
   "loire-valley/tours-villandry-azay": {
     "src": "/assets/images/france-loire-valley-tours-villandry-azay.webp",
-    "alt": "Geometric gardens below Château de Villandry",
-    "source": "https://commons.wikimedia.org/wiki/File:Chateau_Villandry_garden,_Loire_Valley,_2004.JPG",
-    "label": "Chateau Villandry garden, Loire Valley, 2004.JPG",
-    "creator": "Daderot at en.wikipedia",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Chateau Villandry garden, Loire Valley, 2004.JPG",
-    "remoteSha1": "10ef86519df00f0789188d5872c1d1f851fd5507"
+    "alt": "A small boat on the Loire beside a riverside path",
+    "source": "https://commons.wikimedia.org/wiki/File:Loire_River,_France_(17376540539).jpg",
+    "label": "Loire River, France (17376540539).jpg",
+    "creator": "Larry from Charlottetown, PEI, Canada",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:Loire River, France (17376540539).jpg",
+    "remoteSha1": "b2a9562c88661b600ecdc0de3bb526aa0cee8e0f",
+    "creditTitle": "Loire River and riverside path"
   },
   "champagne/reims-cathedral-cellars": {
     "src": "/assets/images/france-champagne-reims-cathedral-cellars.webp",

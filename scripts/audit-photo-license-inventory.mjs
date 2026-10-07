@@ -526,6 +526,14 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chambord,_Loire_Valley_-_FRANCE.jpg', 'Loire image review: exact Commons title, Ignaz Wiradi creator credit, CC BY-SA 3.0 photo terms and visual match to the Chambord façade/roofline were checked on 2026-10-07. Separately considered the depicted building: the estate dates the royal project to 1519 and says the architect is unknown. The photo license is not treated as a license to any separate work depicted; this note is not legal clearance.'],
+  ['https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chenonceau,_Loire_Valley,_France.jpg', 'Loire image review: exact Commons title, SpottingHistory creator credit, CC BY-SA 4.0 photo terms and visual match to the château crossing the Cher were checked on 2026-10-07. Separately considered the depicted building: the estate dates the present château to 1513–1517. The photo license is not treated as a license to any separate work depicted; this note is not legal clearance.'],
+  ['https://commons.wikimedia.org/wiki/File:Loire_River,_France_(17376540539).jpg', 'Loire image review: exact Commons title, Larry (Flickr account Larry Tweed) creator credit, CC BY 2.0 photo terms and visual match to the river, small boat and riverside path were checked on 2026-10-07. The landscape image replaces a photo of Villandry’s designed garden after separating the photo license from the underlying work. The river photograph does not show the château or garden design; its image credit links the source and license and discloses the crop/WebP conversion.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
@@ -586,7 +594,10 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/hokkaido-yoichi-coast.webp',
   '/assets/images/france-normandy-rouen-seine-cathedral.webp',
   '/assets/images/france-normandy-bayeux-dday-landscape.webp',
-  '/assets/images/france-normandy-mont-saint-michel-bay.webp'
+  '/assets/images/france-normandy-mont-saint-michel-bay.webp',
+  '/assets/images/france-loire-valley-blois-chambord.webp',
+  '/assets/images/france-loire-valley-amboise-chenonceau.webp',
+  '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
@@ -612,7 +623,10 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/hokkaido-shiretoko-five-lakes.webp', '2026-10-06'],
   ['/assets/images/france-normandy-rouen-seine-cathedral.webp', '2026-10-07'],
   ['/assets/images/france-normandy-bayeux-dday-landscape.webp', '2026-10-07'],
-  ['/assets/images/france-normandy-mont-saint-michel-bay.webp', '2026-10-07']
+  ['/assets/images/france-normandy-mont-saint-michel-bay.webp', '2026-10-07'],
+  ['/assets/images/france-loire-valley-blois-chambord.webp', '2026-10-07'],
+  ['/assets/images/france-loire-valley-amboise-chenonceau.webp', '2026-10-07'],
+  ['/assets/images/france-loire-valley-tours-villandry-azay.webp', '2026-10-07']
 ]);
 const entries = [];
 const sourceConflicts = [];

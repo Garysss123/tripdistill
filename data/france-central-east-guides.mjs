@@ -11,124 +11,206 @@ export const franceCentralEastClusters = [
     band: 'valleys-east',
     family: 'river-estate-sequence',
     label: 'River and estate sequence',
-    tagline: 'Choose a base, two compatible estates and a credible last mile.',
-    hubIntro: 'The Loire Valley is a chain of towns, rail stops, gardens and estates rather than one castle park. Blois and Chambord, Amboise and Chenonceau, and Tours with the western gardens each create a different transport day. Two well-matched sites usually beat a three-château sprint.',
-    stay: 'Three nights in Blois, Amboise or Tours support two estate days without returning to Paris each evening. Choose the base from the châteaux and transport you will actually use, not from a generic “Loire Valley” label.',
-    transfer: 'Some estates have a nearby rail station; others need a seasonal shuttle, bicycle, taxi, tour or car. Confirm the final approach and luggage plan before booking timed admissions across different towns.',
-    season: 'Garden interest, shuttle service, château events and daylight vary. Summer offers the broadest connections but heavier roads and queues; winter can be atmospheric while reducing garden time and local transport.',
-    fallback: 'If a shuttle, bicycle plan or garden visit fails, use the base town and one rail-accessible château rather than hiring an expensive chain of improvised transfers. Keep one indoor estate as the wet-weather anchor.',
+    tagline: 'Follow the river corridors; give each estate its own arrival.',
+    reviewDate: '7 October 2026',
+    reviewDateISO: '2026-10-07',
+    hubIntro: 'The Loire is not one château district with interchangeable stops. Blois places four centuries of royal building inside a walkable town, while Chambord sits beyond the station in a forest estate. Amboise pairs a Loire promontory and Leonardo’s last home; Chenonceau crosses the Cher from its own rail stop. West of Tours, Villandry is a garden visit with a seasonal château calendar, and Azay-le-Rideau is a separate branch-line town. Choose the corridor before choosing the number of tickets.',
+    stay: 'Blois is the practical base for its urban château and a Rémi line 2 day at Chambord; Amboise keeps the Royal Château and Clos Lucé close while Chenonceau needs its own train excursion. Tours has the widest city choice for Villandry or Azay-le-Rideau. Pick one base around the sites you intend to enter, and check the return train before committing to a rural day.',
+    transfer: 'The last mile is different at every stop: Rémi line 2 runs from Blois-Chambord station to Chambord in about 35 minutes; Amboise station is roughly a ten-minute walk from the Royal Château; Chenonceaux station is about 400 m from Chenonceau’s ticket office. Tours bus 32 stops about 280 m from Villandry, while Azay-le-Rideau station is a 2.1 km walk from its château. Recheck dated services and the final return.',
+    season: 'The garden calendar changes the route. Villandry’s gardens remain open through the year except 25 December, while château opening is seasonal and outdoor hours may change in heat. Chenonceau is open daily through the year; Chambord’s château calendar has low-season closure days and holiday exceptions. Use each estate’s live calendar for the exact date, not a summer photograph or an old shuttle timetable.',
+    fallback: 'When a rural link fails, make the town on your booked rail line the complete day: Blois has its royal apartments and Fine Arts Museum, Amboise has the royal site and Clos Lucé, and Tours has its cathedral, museums and old quarters. Do not replace one cancelled transfer with an unverified taxi chain. Keep the estate visit that still has a confirmed arrival and return.',
+    faq: [
+      ['Can I reach Chambord by train?', 'The train reaches Blois-Chambord station, not the château gate. Rémi line 2 currently links the station and estate in about 35 minutes; check the dated service and return before buying timed admission.'],
+      ['Which Loire base suits a first visit?', 'Use Blois for Blois and Chambord, Amboise for its royal château and Clos Lucé, or Tours for a city stay with a Villandry or Azay excursion. Chenonceau is reached from its own Chenonceaux station.'],
+      ['Can I visit Villandry gardens without the château?', 'Yes. Villandry sells a garden-only ticket separately from the combined château-and-gardens ticket; check the current calendar and heat-related hours before travelling.']
+    ],
     sources: [
-      ['https://www.loirevalley-france.co.uk/', 'Loire Valley — official regional tourism guide'],
-      ['https://www.remi-centrevaldeloire.fr/', 'Rémi — official Centre-Val de Loire regional transport'],
-      ['https://www.sncf-connect.com/en-en/', 'SNCF Connect — rail planning and service information']
+      ['https://www.remi-centrevaldeloire.fr/s-evader/chateau-chambord-lechappee-royale', 'Rémi — Blois-Chambord to the estate, line 2'],
+      ['https://www.ter.sncf.com/centre-val-de-loire', 'SNCF TER Centre-Val de Loire — regional rail information'],
+      ['https://www.loirevalley-france.co.uk/', 'Loire Valley — official regional tourism guide']
     ],
     guides: [
       g({
         slug: 'blois-chambord',
         name: 'Blois & Chambord',
+        reviewDate: '7 October 2026',
+        reviewDateISO: '2026-10-07',
         instrument: 'Town-to-domain shuttle docket',
         layout: 'royal-courtyard-ledger',
         imageQuery: 'Chateau de Chambord Loire Valley France panorama',
         imageAlt: 'Château de Chambord and its formal grounds in the Loire Valley',
-        purpose: 'Use Blois as a rail and historical base, then reach Chambord through a verified seasonal shuttle, bicycle, tour or car without pretending the estate stands beside the station.',
-        summary: 'Read the Château Royal de Blois as an urban palace, then give Chambord’s monumental house and forest estate a separate transport and walking envelope.',
+        purpose: 'Compare Blois’s layered royal residence with François I’s vast forest domain while keeping the station-to-Chambord transfer and a realistic return inside the plan.',
+        summary: 'Blois is an urban palace whose wings record changing dynasties; Chambord is a 1519 royal project surrounded by an estate. The 35-minute Rémi line 2 ride from Blois-Chambord station makes the pair possible, but the return timetable decides whether it is sensible.',
+        siteContext: {
+          label: 'Two royal projects, two scales',
+          heading: 'Read the city palace before the forest monument.',
+          intro: 'Blois preserves four architectural periods in sequence without leaving the town. Chambord asks you to step into a planned royal landscape, where the celebrated staircase is only one part of the visit.',
+          details: [
+            ['Blois, four periods', 'The château preserves medieval remains and wings built for Louis XII, François I and Gaston d’Orléans. The Fine Arts Museum occupies rooms in the Louis XII wing, so treat the visit as an architectural and collection route, not just a royal apartment tour.'],
+            ['A court made visible', 'Henry III’s apartments are associated with the 1588 killing of the Duke of Guise during the Wars of Religion. Use the state rooms and official interpretation to understand the event’s political setting; the room is not a generic “royal bedroom.”'],
+            ['Chambord’s double helix', 'François I began Chambord in 1519. Its central keep organizes four towers around a double-helix staircase. Leonardo da Vinci influenced the wider court culture, but the château’s architect is unknown; do not assign the building to Leonardo.'],
+            ['Estate beyond the façade', 'Chambord’s collections exceed 4,500 objects and include works gathered from elsewhere. The château was not continuously furnished as a permanent royal home; combine the interiors with a chosen terrace or grounds loop rather than assuming every room is original to the building.']
+          ]
+        },
         choices: [
-          ['Blois palace and town', 'Stay within the compact center for the royal château, cathedral terraces and Loire edge. This is the strongest car-free half or full day.'],
-          ['Chambord in depth', 'Make the domain the day’s anchor, including the château, roof terraces where open and selected grounds. The last mile and estate scale consume most of the day.'],
-          ['Two-palace comparison', 'Use an early Blois entry and a confirmed onward shuttle to Chambord. This works only when the seasonal timetable and return leave each interior a real block.']
+          ['Blois, rooms and collection', 'Follow the Gothic Louis XII wing into the François I Renaissance wing, then reserve time for the Fine Arts Museum. This is the most flexible option when the Chambord shuttle does not fit.'],
+          ['Chambord and one estate loop', 'Choose the double-helix staircase, selected rooms and a short grounds circuit as the day’s center. Keep the return stop and estate closing time in view.'],
+          ['A two-palace comparison', 'Pair a focused Blois visit with Chambord only when the dated line 2 departures leave protected time at both sites and a later Blois train remains available.']
         ],
-        access: 'Blois–Chambord station serves the city, not the Chambord gate. Walk to the Château Royal de Blois, but use the current regional shuttle, bicycle route, taxi, tour or car for the domain; record the return stop before entering the estate.',
-        tradeoff: 'A two-palace day gives up the full Chambord grounds, a slow Blois museum route and spontaneous river cycling. The plan keeps only the comparison that transport can support.',
+        access: 'Blois–Chambord is the Blois railway station, not a station at the estate. Rémi line 2 currently runs from there to Chambord in about 35 minutes; confirm the service on the travel date, including the return. At the domain, check where the bus drops you and allow time for the walk between the entrance, château and stop. A bike or car is a separate plan, not an automatic fallback.',
+        tradeoff: 'A two-palace day gives up the full Chambord grounds, a slow Fine Arts Museum visit and spontaneous river cycling. Keep the pairing only if the timetable supports an unhurried Blois interior and enough Chambord time for the rooms you selected.',
         stages: [
-          ['Begin with Blois orientation', 'From the station, reach the château and overlook, noting luggage storage and the departure point for any Chambord transfer.'],
-          ['Read one urban palace', 'Follow the official Blois circuit and its different architectural wings rather than racing only to the staircase. Leave on the side that serves the onward connection.'],
-          ['Commit to Chambord’s scale', 'At the domain, choose interiors and roof terraces or a grounds circuit. Check closing times before walking away from the château core.'],
-          ['Return on the booked chain', 'Reach the shuttle or vehicle with margin for estate paths and summer traffic. Keep a later train from Blois as a backup.']
+          ['Start at Blois station', 'Walk into the town and identify the Château Royal entrance, then locate the Rémi line 2 departure point and the last workable return before choosing a combination ticket.'],
+          ['Read Blois by dynasty', 'Trace the medieval remains, Louis XII’s Gothic wing, François I’s Renaissance stair and the unfinished classical wing of Gaston d’Orléans. Enter the Fine Arts Museum if its rooms match your interest.'],
+          ['Choose Chambord’s scale', 'At the 1519 domain, follow the double-helix staircase and a deliberate set of rooms; add a terrace or nearby grounds path only after checking current access and closing time.'],
+          ['Return with a margin', 'Reach the line 2 stop with time for the estate path and the next service. If the timetable has no useful later return, do Chambord alone and keep Blois for a separate day.']
         ],
-        fallback: 'If the Chambord last mile fails, deepen Blois with the royal château, Maison de la Magie where open, cathedral terraces and Loire streets. If Blois interiors close, use Chambord alone rather than replacing them with another distant estate.',
+        fallback: 'If line 2 does not serve the needed return, make Blois the complete day: compare its four architectural periods and visit the Fine Arts Museum when open. If Blois is the fixed arrival, do not improvise a taxi chain to Chambord; use the estate only with a confirmed transfer.',
         watch: [
-          ['The station name is misleading', '“Blois–Chambord” does not mean the estate is walkable from the platform. Solve the road distance explicitly.'],
-          ['Estate walking expands quickly', 'Forest and garden options can draw visitors far from the return point. Set a turnaround before the last shuttle.'],
-          ['Seasonal transport changes the pairing', 'A route that works in peak summer may be impossible on a shoulder-season weekday. Check the exact date.']
+          ['Station name versus estate gate', '“Blois–Chambord” names the Blois station. The Rémi connection is a separate 35-minute ride; check its exact stop and dated return.'],
+          ['A vast domain is not one room', 'The château, gardens and forest routes take different amounts of time. Set the turnaround before walking away from the bus stop.'],
+          ['A two-site ticket cannot fix a timetable', 'Seasonal departures can make the pairing unusable. Confirm the service and each site’s closing hour before buying the second admission.']
         ],
-        duration: 'Allow a full eight-to-ten-hour day for both châteaux and five to seven hours for Chambord alone from Blois. Blois city merits at least three to four hours.',
-        combine: 'Combine Blois and Chambord only through a confirmed connection. Keep Cheverny, Chaumont and Chenonceau for separate days or a planned driving itinerary.',
-        verify: 'Check both château calendars, the Rémi shuttle or chosen transfer, bicycle conditions, estate events and the final Blois train before leaving.',
+        duration: 'Allow about three to four hours for Blois town and its château, then add the full transfer and the interior or grounds time you choose at Chambord. A same-day pairing needs most of a day; the actual Rémi schedule may rule it out.',
+        combine: 'Combine Blois and Chambord only when a dated line 2 service allows protected time at each. Keep Cheverny, Chaumont and Chenonceau for another day; their additional road transfers do not belong in this town-to-domain sequence.',
+        verify: 'Check Blois and Chambord admission calendars, the current Rémi line 2 timetable and stop, Chambord grounds access, and the last useful Blois train before booking the day.',
+        faq: [
+          ['Does the Blois-Chambord train station sit at Chambord?', 'No. It serves Blois. Rémi line 2 currently connects the station to the Chambord estate in about 35 minutes; verify the dated departure and return before treating it as a day trip.'],
+          ['Was Chambord designed by Leonardo da Vinci?', 'The château’s architect is unknown. Leonardo’s influence on the court and the double-helix idea is discussed by the estate, but it is not sound to label him the architect.'],
+          ['What should I see inside the Château de Blois?', 'Compare the medieval remains and the Gothic, Renaissance and classical wings. The Fine Arts Museum is housed in the Louis XII wing and makes the visit broader than the royal apartments alone.']
+        ],
         sources: [
           ['https://www.chateaudeblois.fr/?lang=en', 'Château Royal de Blois — official visitor information'],
-          ['https://www.chambord.org/en/', 'Domaine national de Chambord — official tickets and access']
+          ['https://en.chateaudeblois.fr/2194-four-architectural-styles.htm', 'Château de Blois — four architectural periods'],
+          ['https://en.chateaudeblois.fr/2369-illustrious-historical-figures.htm', 'Château de Blois — Henri III and the Duke of Guise'],
+          ['https://www.chambord.org/en/history/the-chateau/architecture/', 'Domaine national de Chambord — architecture and unknown architect'],
+          ['https://www.chambord.org/en/history/the-chateau/the-collections/', 'Domaine national de Chambord — collections and court use'],
+          ['https://www.remi-centrevaldeloire.fr/s-evader/chateau-chambord-lechappee-royale', 'Rémi — line 2 from Blois-Chambord station']
         ]
       }),
       g({
         slug: 'amboise-chenonceau',
         name: 'Amboise, Clos Lucé & Chenonceau',
+        reviewDate: '7 October 2026',
+        reviewDateISO: '2026-10-07',
         instrument: 'Leonardo-and-Cher branch line',
         layout: 'river-palace-diptych',
         imageQuery: 'Chateau Chenonceau Cher river Loire Valley France',
         imageAlt: 'Château de Chenonceau spanning the River Cher',
-        purpose: 'Choose between Amboise’s royal-and-Leonardo pair and Chenonceau’s river château, then use the rail corridor without turning three substantial interiors into ticket stamps.',
-        summary: 'Amboise rewards a town-based royal narrative; Chenonceau rewards a focused estate visit from its nearby station. Link them only when one Amboise interior is deliberately omitted.',
+        purpose: 'Choose an Amboise story—royal residence or Leonardo’s last home—or give Chenonceau’s bridge-galleries and gardens a separate train day, without stacking three interiors.',
+        summary: 'Amboise’s château rises above a Loire town and its station; Clos Lucé is a 400 m walk away. Chenonceau is another rail stop: the station stands roughly 400 m from the estate ticket office, so the river château can be visited without inventing a long last mile.',
+        siteContext: {
+          label: 'Promontory, workshop and river crossing',
+          heading: 'Keep the three sites distinct in both meaning and movement.',
+          intro: 'The Amboise pair fits on foot once you reach town. Chenonceau belongs to a different station and a different story: a Renaissance residence built across the Cher, repeatedly shaped by women who held political or estate power.',
+          details: [
+            ['Amboise above the Loire', 'The Royal Château occupies a promontory above the town. From Amboise station, cross toward the center and follow the sloping access route from Place Michel Debré; the château’s official visitor guidance describes this approach.'],
+            ['Leonardo’s last home', 'Clos Lucé is about 400 m from the Royal Château. Leonardo spent the final years of his life there and is buried in the château chapel at Amboise. Clos Lucé’s standard self-guided admission includes the house, park and Leonardo galleries; the full visit takes time beyond the short walk.'],
+            ['Chenonceau over water', 'The current château took shape from 1513 to 1517 under Thomas Bohier and Catherine Briçonnet, above the medieval Tour des Marques. Diane de Poitiers and Catherine de’ Medici each shaped the estate; Catherine used the Green Cabinet as a place of government.'],
+            ['A gallery with wartime meaning', 'The long gallery crosses the Cher. During the Second World War, the river marked the boundary between occupied and free zones; the Menier family used the château’s position to help people escape. Read this within the estate’s own interpretation, not as a casual photo stop.']
+          ]
+        },
         choices: [
-          ['Royal Amboise', 'Use the château, town and Loire terrace as the main route. Add Clos Lucé only if Leonardo’s working context is the day’s second argument.'],
-          ['Clos Lucé and invention', 'Prioritize Leonardo-related rooms, models and grounds, then walk Amboise’s center. This trades royal-apartment depth for a clearer theme.'],
-          ['Chenonceau river estate', 'Travel directly to Chenonceaux station and give the château, galleries and gardens most of the day. This is the simplest rail-led estate plan.']
+          ['Royal Amboise and the Loire', 'Follow the promontory rooms and town view, then descend to the old center. Use the sloped visitor approach from Place Michel Debré and allow time for the climb back.'],
+          ['Clos Lucé and Leonardo', 'Spend the visit inside the house and in its park and galleries, all included in the standard self-guided ticket. The 400 m link to the Royal Château makes a second stop possible only with a deliberate time budget.'],
+          ['Chenonceau and the Cher', 'Use Chenonceaux station for the nearby ticket office, then read the long gallery and one garden. Keep the estate as the day’s primary visit rather than squeezing it between two Amboise admissions.']
         ],
-        access: 'Amboise station lies across the Loire from the historic center; Chenonceaux station is close to the estate but train frequency matters. Count the Amboise bridge walk and check the exact station spelling on the ticket.',
-        tradeoff: 'The Royal Château, Clos Lucé and Chenonceau are three paid experiences with gardens and queues. A single day should study two at most, and only when the train schedule leaves a backup return.',
+        access: 'Amboise station is across the Loire from the historic center; the château’s official visitor route uses the bridge and sloping Emir Abd El-Kader path from Place Michel Debré, about a ten-minute walk from the station entrance. Clos Lucé is 400 m from the Royal Château. Chenonceaux station is about 400 m from Chenonceau’s ticket office, but train frequency and the last return still control the day.',
+        tradeoff: 'The Royal Château, Clos Lucé and Chenonceau each have enough rooms or grounds to fill a meaningful visit. A same-day three-site sprint loses the Amboise town context and reduces the Cher crossing to a timetable exercise; choose one Amboise site plus Chenonceau only if service times leave a recovery margin.',
         stages: [
-          ['Cross into Amboise or enter Chenonceau', 'From Amboise station, use the bridge and town approach; from Chenonceaux, follow the signed estate path. Confirm the return platform before the first ticket.'],
-          ['Complete the chosen primary interior', 'Give the Royal Château, Clos Lucé or Chenonceau uninterrupted time. Follow current room openings rather than planning from a historical floor plan.'],
-          ['Add one contrasting layer', 'Pair royal architecture with invention, or Chenonceau’s interior with one garden and river perspective. Stop before every garden becomes mandatory.'],
-          ['Return through the useful station', 'Reach Amboise or Chenonceaux with one service in reserve. If ending in Amboise, finish near the bridge rather than climbing to a distant viewpoint late.']
+          ['Arrive at the intended station', 'For Amboise, cross the Loire toward Place Michel Debré and the sloping château approach. For Chenonceau, follow the signed path from Chenonceaux station to the ticket office; check the return before entering.'],
+          ['Choose the main story', 'At Amboise, follow the elevated royal residence; at Clos Lucé, use the house, park and galleries together; at Chenonceau, connect the bridge-galleries to the Cher and its women patrons.'],
+          ['Add one contrasting place', 'Pair Amboise with Clos Lucé on foot, or pair one Amboise admission with Chenonceau only when the train leaves enough time for the distant site and its grounds.'],
+          ['Keep a rail margin', 'Return to the correct platform with one service in reserve. If the chosen day cannot absorb a delay, finish the Amboise town route and leave Chenonceau for another date.']
         ],
-        fallback: 'If one Amboise site is sold out, use the other with the town and Loire. If Chenonceau rail service is disrupted, do not assume a taxi will appear; retain an Amboise day or a confirmed coach alternative.',
+        fallback: 'If an Amboise admission is unavailable, make the other site and old town the complete outing. If the Chenonceaux service is disrupted, stay with a confirmed Amboise plan rather than relying on an unbooked taxi; the stations are not interchangeable.',
         watch: [
-          ['Similar station names cause errors', 'Check Amboise versus Chenonceaux and the direction of travel before boarding.'],
-          ['Garden time is real time', 'Chenonceau and Clos Lucé grounds add distance. Reserve them intentionally rather than after the last interior slot.'],
-          ['Bridge exposure matters with luggage', 'The Amboise station walk crosses the Loire. Solve bags and weather before treating the town as an easy transfer stop.']
+          ['Amboise and Chenonceaux are different stations', 'The former serves Amboise town; the latter is the small station near Chenonceau. Confirm the destination code and return direction.'],
+          ['Clos Lucé’s ticket covers more than a house', 'The standard visit includes the park and galleries. A 400 m map gap from the Royal Château is not the full visit duration.'],
+          ['The Amboise approach rises from the river', 'The bridge and sloping visitor path take time, especially with bags or limited mobility. Check the official access route and luggage arrangements before arrival.']
         ],
-        duration: 'Allow five to seven hours for one estate and town; give eight to ten hours for a carefully paired Amboise–Chenonceau day. Three interiors require another day.',
-        combine: 'Combine Royal Amboise with Clos Lucé, or one Amboise site with Chenonceau. Do not append Chambord or Villandry to the same rail day.',
-        verify: 'Check exact admission slots, train frequency, room or garden closures and the current pedestrian approach at both stations before booking the sequence.',
+        duration: 'Give several hours to one Amboise site and the town, or to Chenonceau and one garden. Clos Lucé’s standard self-guided visit includes the house, park and galleries and its official visitor information suggests about two to three hours; add the walk to or from the Royal Château separately.',
+        combine: 'The easiest foot pairing is the Royal Château and Clos Lucé, separated by about 400 m. Combine one Amboise admission with Chenonceau only when the dated TER schedule allows the bridge walk, station approach, full visit and a backup return.',
+        verify: 'Check current room and garden access, the Royal Château’s pedestrian approach, Clos Lucé ticket scope, Chenonceaux train times and the final train before buying admissions for the same day.',
+        faq: [
+          ['Can I walk from the Royal Château of Amboise to Clos Lucé?', 'Yes. The two sites are about 400 m apart. Clos Lucé’s standard self-guided ticket includes the château, park and Leonardo galleries, so plan for a full visit rather than only the short walk.'],
+          ['How far is Chenonceaux station from the château?', 'The station is about 400 m from Chenonceau’s ticket office. Check the TER timetable for the exact date and keep a return service in reserve.'],
+          ['Did Leonardo da Vinci design Chenonceau?', 'No. The current château was built from 1513 to 1517 under Thomas Bohier and Catherine Briçonnet. Leonardo’s connection is to Amboise and Clos Lucé, where he lived late in life and is buried in the château chapel.']
+        ],
         sources: [
-          ['https://www.chateau-amboise.com/en/', 'Royal Château of Amboise — official visitor information'],
-          ['https://www.chenonceau.com/en/', 'Château de Chenonceau — official tickets and access']
+          ['https://www.chateau-amboise.com/en/', 'Royal Château of Amboise — visitor access and history'],
+          ['https://www.vinci-closluce.com/en/prices/', 'Château du Clos Lucé — ticket scope and self-guided visit'],
+          ['https://www.chenonceau.com/en/chateau/the-history-of-the-chateau/', 'Château de Chenonceau — history and gallery across the Cher'],
+          ['https://www.chenonceau.com/en/practical-information/how-to-get-here/', 'Château de Chenonceau — access from Chenonceaux station'],
+          ['https://www.chenonceau.com/en/practical-information/', 'Château de Chenonceau — current practical information']
         ]
       }),
       g({
         slug: 'tours-villandry-azay',
         name: 'Tours, Villandry & Azay-le-Rideau',
+        reviewDate: '7 October 2026',
+        reviewDateISO: '2026-10-07',
         instrument: 'Garden-and-rail choice matrix',
         layout: 'garden-corridor-matrix',
-        imageQuery: 'Villandry gardens chateau Loire Valley France',
-        imageAlt: 'Geometric gardens below Château de Villandry',
-        purpose: 'Use Tours as a practical base and choose whether Villandry’s gardens or Azay-le-Rideau’s rail-accessible château is the primary excursion, rather than forcing both last miles into one day.',
-        summary: 'Tours supplies food, rail and city context; Villandry is a garden contract and Azay-le-Rideau is a town-and-château rail branch. Each earns a different schedule.',
+        imageQuery: 'Loire River, France landscape river boat',
+        imageAlt: 'A small boat on the Loire beside a riverside path',
+        purpose: 'Choose between Villandry’s reconstructed garden rooms and Azay-le-Rideau’s château on the Indre, using Tours as a city base instead of forcing two rural last miles into one day.',
+        summary: 'Villandry sells separate garden-only and château-plus-garden admissions; its garden calendar lasts longer than the château’s. Azay-le-Rideau pairs a French-Italian Renaissance interior with an eight-hectare water-framed park, but the station is 2.1 km away.',
+        siteContext: {
+          label: 'Designed garden or water-framed château',
+          heading: 'Two western estates, two different reasons to go.',
+          intro: 'Villandry is read outdoors through a sequence of reconstructed formal gardens. Azay-le-Rideau places a 16th-century château on an island in the Indre and sets it inside a later landscaped park. A ticket and transport plan should reflect which layer you want to see.',
+          details: [
+            ['Villandry’s garden rooms', 'The estate’s terraces organize kitchen, ornamental and water gardens into distinct spaces, each with a different pattern and use. Joachim Carvallo bought the neglected estate in 1906 and recreated its Renaissance gardens from 1908 to 1918; the estate says they have been open to the public since 1920. Its account names painter Lozano and landscape architect Javier de Winthuysen among the collaborators on individual ornamental salons.'],
+            ['Admission follows your interest', 'Villandry offers a garden-only ticket and a combined château-and-gardens ticket. Official planning guidance estimates about an hour inside the château and around an hour and a half in the gardens; use the current calendar because the château and gardens do not share identical opening dates.'],
+            ['Azay on the Indre', 'Financier Gilles Berthelot began the château under François I. Its composition blends French and Italian Renaissance forms, with the river setting shaping the approach and views. The current landscaped park is a later layer, with paths, bridges and water mirrors across eight hectares.'],
+            ['The last mile changes the ticket day', 'Touraine bus 32 stops at Villandry Centre, about 280 m from the entrance; the accessible R5 Résabus must be requested in advance. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.']
+          ]
+        },
         choices: [
-          ['Tours city day', 'Keep the cathedral, old quarters, market and Loire edge together. This is the weather-flexible choice and deserves more than an evening after castles.'],
-          ['Villandry garden day', 'Prioritize the designed gardens and château with a confirmed bus, bicycle, tour or car. Seasonal planting and daylight shape the value.'],
-          ['Azay-le-Rideau by rail', 'Use the branch train and local walk for the château and town. This is the clearer car-free estate choice, subject to service frequency.']
+          ['Villandry, gardens only', 'Buy the garden-only admission when the parterres are your main interest. The 280 m walk from Touraine bus 32 makes this the simplest named public-transport approach from Tours.'],
+          ['Villandry, château and gardens', 'Use the combined ticket when you want both the Renaissance rooms and outdoor garden sequence. Check seasonal château dates and heat adjustments; reserve the accessible R5 Résabus the previous day if needed.'],
+          ['Azay-le-Rideau and the Indre', 'Take the Tours–Chinon rail branch only after planning the 2.1 km station-to-château gap. Give the interior and eight-hectare park a full half-day rather than adding Villandry by default.']
         ],
-        access: 'Tours and Saint-Pierre-des-Corps are separate rail nodes; know where the train arrives and whether a transfer is needed. Villandry requires a verified last mile, while Azay-le-Rideau station still needs a walk or local connection to the château.',
-        tradeoff: 'A Villandry-and-Azay day spends much of its margin on rural transfers. The route gives up one estate so the chosen garden or château, Tours meal and return do not collapse into clock watching.',
+        access: 'Tours Centre and Saint-Pierre-des-Corps are separate rail nodes; check the arrival station before planning a local transfer. From Tours, bus 32 stops at Villandry Centre about 280 m from the gardens. Azay-le-Rideau is on the Tours–Chinon line, but the station-to-château walk is about 2.1 km. The accessible R5 Résabus to Villandry requires advance request, currently by the previous day.',
+        tradeoff: 'Villandry and Azay each need time outdoors and have different last miles. Visiting both from Tours can consume the day in transfers and leave no protected time for the formal garden rooms or the château’s park. Choose one estate and keep Tours itself as the flexible city plan.',
+        siteContext: {
+          label: 'Designed garden or water-framed château',
+          heading: 'Two western estates, two different reasons to go.',
+          intro: 'Villandry is read outdoors through a sequence of reconstructed formal gardens. Azay-le-Rideau places a 16th-century château on an island in the Indre and sets it inside a later landscaped park. A ticket and transport plan should reflect which layer you want to see.',
+          details: [
+            ['Villandry’s garden rooms', 'The estate’s terraces organize kitchen, ornamental and water gardens into distinct spaces, each with a different pattern and use. The formal layout was restored by Joachim Carvallo and Ann Coleman after they acquired the property in 1906; the gardens opened to the public in 1920.'],
+            ['Admission follows your interest', 'Villandry offers a garden-only ticket and a combined château-and-gardens ticket. Official planning guidance estimates about an hour inside the château and around an hour and a half in the gardens; use the current calendar because the château and gardens do not share identical opening dates.'],
+            ['Azay on the Indre', 'Financier Gilles Berthelot began the château under François I. Its composition blends French and Italian Renaissance forms, with the river setting shaping the approach and views. The current landscaped park is a later layer, with paths, bridges and water mirrors across eight hectares.'],
+            ['The last mile changes the ticket day', 'Touraine bus 32 stops at Villandry Centre, about 280 m from the entrance; the accessible R5 Résabus must be requested in advance. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.']
+          ]
+        },
         stages: [
-          ['Set the correct Tours node', 'Confirm Tours Centre versus Saint-Pierre-des-Corps, store luggage and identify the departure point for the chosen branch.'],
-          ['Reach one estate deliberately', 'Use the verified bus, bicycle, tour, car or branch train and note the last return before entering.'],
-          ['Read garden or water château', 'At Villandry, follow the garden rooms and seasonal logic; at Azay, connect the island-like setting, interiors and town without adding a second distant site.'],
-          ['Finish in Tours with a buffer', 'Return for the market quarter, a meal or short old-town loop only after the mainline departure is secure.']
+          ['Choose the Tours departure point', 'Confirm Tours Centre versus Saint-Pierre-des-Corps, and the correct bus stop or Tours–Chinon platform before starting the excursion.'],
+          ['Reach one estate with a return plan', 'Use bus 32 for Villandry, prebook R5 if needed, or follow the rail and 2.1 km last mile for Azay. Save the return service before entering.'],
+          ['Read the landscape you chose', 'At Villandry, follow the garden rooms from one terrace to another and decide whether the château interior belongs in the ticket. At Azay, connect the island setting to the later park paths and bridges.'],
+          ['Return to Tours by the protected service', 'Allow the full walk from Azay station or the bus approach from Villandry. Keep a meal or old-town loop in Tours only after the booked return is secure.']
         ],
-        fallback: 'If the rural connection fails, use Tours as the complete day with cathedral, Musée des Beaux-Arts where open, old streets and Loire. If outdoor conditions undermine Villandry, switch only to a confirmed indoor site rather than an unbooked château chain.',
+        fallback: 'If bus 32 or the branch train does not fit the date, spend the day in Tours: visit the cathedral and Musée des Beaux-Arts where open, walk the old center and follow the Loire edge. If heat changes garden hours, use Villandry’s current notice before switching to any indoor admission.',
         watch: [
-          ['Tours has two rail identities', 'Many TGVs use Saint-Pierre-des-Corps. A tight connection to Tours Centre or a regional branch needs explicit planning.'],
-          ['Bicycle distance needs a return plan', 'Flat terrain does not remove wind, heat, punctures or château closing times. Use official routes and rental hours.'],
-          ['Gardens change through the year', 'A garden-led day should use the current seasonal information rather than assume peak imagery.']
+          ['The bus stop is close, the service is date-specific', 'Touraine bus 32 serves Villandry Centre about 280 m away; check the current line calendar and return rather than assuming a frequent urban bus.'],
+          ['Azay station is not the château entrance', 'The 2.1 km gap can be a significant walk with heat, bags or mobility limits. Verify a local option or use a transport mode that can complete the trip.'],
+          ['Garden and château calendars diverge', 'Villandry’s gardens and château have different opening periods, with outdoor hours also affected by heat. Confirm what your ticket includes on the chosen date.']
         ],
-        duration: 'Allow a full day for Tours plus one estate. Tours alone needs five to seven hours; Villandry or Azay from the city needs at least a generous half-day.',
-        combine: 'Combine Tours with Villandry or Azay-le-Rideau, not both unless using a private vehicle and deliberately shortening each. Keep Amboise and Chenonceau for the eastern corridor.',
-        verify: 'Check château opening and garden conditions, Rémi transport or bicycle rental, the exact rail station and the final service back to the base.',
+        duration: 'Villandry’s official visit guidance allows about one hour for the château and roughly an hour and a half for the gardens. Azay needs time for its rooms, eight-hectare park and the 2.1 km station walk. Give either estate at least a half-day from Tours, plus the outbound and return service.',
+        combine: 'Pair Tours with Villandry or Azay. Do not combine both by public transport without a dated connection plan that includes the Villandry bus or Azay’s 2.1 km station gap. Keep Amboise, Chenonceau and Chambord for separate corridor days.',
+        verify: 'Check the 2026 Villandry garden and château calendar, heat-related hours, bus 32 or an advance R5 booking, and the Tours–Chinon service plus Azay station walk before selecting the estate.',
+        faq: [
+          ['Can I buy a Villandry garden-only ticket?', 'Yes. Villandry sells garden-only admission separately from the château-and-gardens ticket. Check the estate’s current calendar and heat-related opening notices for the date.'],
+          ['How far is Azay-le-Rideau station from the château?', 'The château’s official access page gives the station walk as about 2.1 km. Check for a suitable local connection before treating the branch train as a door-to-door trip.'],
+          ['Which Villandry bus stop should I use?', 'Touraine bus 32 serves Villandry Centre, about 280 m from the entrance. The accessible R5 Résabus is a separate service and currently needs to be requested the previous day.']
+        ],
         sources: [
-          ['https://www.chateauvillandry.fr/en/', 'Château and Gardens of Villandry — official visits'],
-          ['https://www.azay-le-rideau.fr/en/', 'Château d’Azay-le-Rideau — official monument information']
+          ['https://www.chateauvillandry.fr/useful-information/prices-opening-times-how-to-get-there-how-to-visit-villandry/?lang=en', 'Villandry — admission, 2026 calendar and access'],
+          ['https://www.chateauvillandry.fr/villandry-through-the-ages/the-gardens-of-villandry-are-restored-to-their-renaissance-glory/?lang=en', 'Villandry — garden reconstruction history and collaborators'],
+          ['https://www.azay-le-rideau.fr/en/visit/practical-information', 'Château d’Azay-le-Rideau — 2026 practical information'],
+          ['https://www.azay-le-rideau.fr/en/discover/history-of-the-castle', 'Château d’Azay-le-Rideau — history and architecture'],
+          ['https://www.azay-le-rideau.fr/en/discover/the-landscaped-park', 'Château d’Azay-le-Rideau — landscaped park']
         ]
       })
     ]

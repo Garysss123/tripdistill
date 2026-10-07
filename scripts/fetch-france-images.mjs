@@ -133,6 +133,7 @@ async function searchImage(query, usedTitles) {
 
 function entryFrom(candidate, job) {
   const { info, page, license, creator } = candidate;
+  const override = franceImageOverrides[job.key];
   return {
     src: assetPath(job),
     alt: job.guide.imageAlt,
@@ -141,11 +142,14 @@ function entryFrom(candidate, job) {
     creator,
     license,
     commonsTitle: page.title,
-    remoteSha1: info.sha1
+    remoteSha1: info.sha1,
+    ...(typeof override === 'object' && override.creditTitle ? { creditTitle: override.creditTitle } : {})
   };
 }
 
 async function validateEntry(entry, job) {
+  const override = franceImageOverrides[job.key];
+  if (typeof override === 'object' && override.creditTitle) entry.creditTitle = override.creditTitle;
   const candidate = await metadataForTitle(entry.commonsTitle);
   const expectedSrc = assetPath(job);
   if (entry.src !== expectedSrc) throw new Error(`${job.key}: asset path mismatch ${entry.src}`);

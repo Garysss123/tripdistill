@@ -87,7 +87,7 @@ function regionalCss(clusterSlug) {
 }
 
 function usesHumanPhotoCredits(clusterSlug) {
-  return clusterSlug === 'paris-region-day-trips' || clusterSlug === 'normandy';
+  return clusterSlug === 'paris-region-day-trips' || clusterSlug === 'normandy' || clusterSlug === 'loire-valley';
 }
 
 function shellStart(mainOpen) {
