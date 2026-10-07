@@ -1762,13 +1762,133 @@ const ninhBinhUpdates = {
     duration: 'Allow a full day for the boat, a separate transfer and the Bich Dong levels at a relaxed pace. A half day can cover one of the two; trying to add Trang An as well means a second pier and a second boat queue.',
     combine: 'Stay in the Tam Coc area for a local meal after the route. Cơm cháy and goat dishes are well-known Ninh Binh specialties; confirm what is actually available and how it is prepared rather than treating a fixed menu as guaranteed.',
     verify: 'Check Van Lam boat operation and queue, river and weather conditions, current rice stage, Bich Dong access and stairs, cycling comfort, and a return vehicle after dark.'
+  },
+  'hang-mua-dragon-mountain': {
+    motif: 'Stone steps and a Tam Coc panorama',
+    photoNote: false,
+    sources: [
+      ['https://sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/discover-the-mua-cave-in-ninh-binh-358.html', 'Ninh Binh Department of Tourism — Mua Cave location, legend and summit stairs'],
+      ['https://whc.unesco.org/en/list/1438/', 'UNESCO — Trang An Landscape Complex']
+    ],
+    lead: 'Mua Cave sits below Mua Mountain inside the Trang An landscape; the reason to climb is the open view over Tam Coc’s winding river, fields and limestone towers. The Ninh Binh tourism department’s 2017 account calls the cave “Dance Cave” and relates its name to a local story about music and dance for a Tran king near Hoa Lu. Treat that as a legend, not a verified court record. At the summit, the white Avalokitesvara statue faces the ancient-capital landscape; the climb itself is a steep stair outing, not an easy viewpoint stop.',
+    orientation: 'The department places Mua Cave about 3.5 km from the Tam Coc landscape and reports 486 summit steps in its 2017 page. That figure is a dated reference, not a guarantee of the current stair count or access. The panorama is clearest as a geography lesson: Tam Coc lies below, with cultivated fields and karst around it. Choose the summit only if the group is comfortable with sustained steps and exposure.',
+    decisions: [
+      ['Choose a summit attempt deliberately', 'The panorama requires sustained stairs; the lower grounds remain a worthwhile option when heat, balance or mobility argues against the climb.'],
+      ['Climb while conditions suit', 'Use a cool, clear window and preserve time for a controlled descent rather than timing the visit around sunset photographs.'],
+      ['Keep the boundary', 'The nearby cliffs are not safe extensions of the viewpoint; stay within signed visitor areas and put the phone away while moving.']
+    ],
+    presentation: {
+      readingTitle: 'The stairway makes the landscape legible',
+      routeTitle: 'From the entrance steps to a safe return',
+      checksLabel: 'Before the mountain climb',
+      checksTitle: 'Heat, footing, crowding and the descent',
+      checksLead: 'The tourism department reported 486 steps in 2017; check current access and route notices at the entrance. Rain, heat and people moving in both directions can make the same stairway feel much harder.',
+      boundaryTitle: 'The ridge is not a photo platform',
+      faqLabel: 'Hang Mua visit questions',
+      faqTitle: 'How demanding is the climb, and what fits nearby?'
+    },
+    stages: [
+      ['Read the climb first', 'At the entrance, check which summit paths are open, the weather and the return transfer. Choose the lower grounds, a partial climb or a summit attempt before setting off.'],
+      ['Use the stair route', 'The tourism department’s 2017 page lists 486 steps to the summit. Take the number as a dated guide, use the handrail where provided and let descending visitors pass.'],
+      ['Look back over Tam Coc', 'From the signed viewpoint, trace the river and fields below against the limestone ridges. The landscape is the subject; no edge beyond the marked area is worth a photograph.'],
+      ['Descend with daylight left', 'Return before fatigue, rain or darkness affects balance. Only then decide whether a separate boat or meal in Tam Coc still fits.']
+    ],
+    risks: [
+      ['Long exposed stair climb', 'The official tourism account reported 486 steps in 2017. The actual open route can change; do not attempt the summit if stairs, balance or recent exertion make it unsafe.'],
+      ['Heat, rain and crowd flow', 'There is little shade on the climb. Wet stone and two-way foot traffic slow the descent; carry water and leave room at narrow landings.'],
+      ['Unprotected viewpoints', 'The stone dragon and cliff edges are not platforms. Follow barriers and keep cameras secured when standing or walking.']
+    ],
+    duration: 'As an editorial estimate, set aside two to four hours for the entrance, summit attempt, breaks and safe descent. The department’s 486-step count dates to 2017; check the open route on arrival. Allow extra recovery time in hot weather or when the stairs are crowded.',
+    combine: 'Hang Mua gives the above-river view; Tam Coc’s Van Lam boat gives the river-level passage through three caves. They are a useful pair on a full day if the climb is done in cooler hours and the group still has energy. Do not add the summit automatically after a long boat-and-bike itinerary.',
+    verify: 'Check the current entrance and summit route, weather, stair condition, crowd restrictions, return vehicle and remaining daylight. Confirm any same-day Tam Coc boat plan separately at Van Lam.'
+  },
+  'van-long-wetland': {
+    motif: 'A Ramsar wetland watched from a quiet sampan',
+    photoNote: false,
+    sources: [
+      ['https://sodulich.ninhbinh.gov.vn/vi/tai-nguyen-du-lich-tu-nhien/khu-bao-ton-thien-nhien-dat-ngap-nuoc-van-long-18.html', 'Ninh Binh Department of Tourism — Van Long Wetland Nature Reserve, updated 14 August 2025'],
+      ['https://sodulich.ninhbinh.gov.vn/en/news-events/van-long-an-attractive-painting-of-mountains-and-rivers-346.html', 'Ninh Binh Department of Tourism — boats, wildlife and visitor quiet'],
+      ['https://iucngreenlist.org/sites/van-long-nature-reserve/', 'IUCN Green List — Van Long governance, Ramsar status and Delacour’s langur habitat']
+    ],
+    lead: 'Van Long is a protected freshwater wetland framed by limestone cliffs, not a second version of Trang An’s managed boat complex. Ninh Binh’s 2025 tourism page describes more than 3,000 hectares, 32 caves in the surrounding karst and habitat for the endemic Delacour’s langur; the IUCN Green List identifies the reserve as a Ramsar site. Take the sampan for water, reeds, birds and quiet. A langur may remain out of view, and the route must not be altered to force a sighting.',
+    orientation: 'The reserve sits north of the Ninh Binh urban centre; the tourism department’s August 2025 page gives about 17 km. Confirm the current boat point, operator and return pickup for your accommodation rather than navigating to an arbitrary cave pin. The small wooden sampan is the visit; nearby caves and temples are separate stops whose access should be checked independently.',
+    decisions: [
+      ['Choose this for habitat, not a checklist', 'The main value is water, reed edges, limestone and bird habitat; a langur or bird sighting is never guaranteed.'],
+      ['Confirm the reserve landing and ride home', 'This is a rural boat visit, so verify the actual launch point, boat operation and pickup before travelling from town.'],
+      ['Keep the boundary', 'Keep conversation low, observe from the permitted sampan route and accept the distance wildlife chooses.']
+    ],
+    presentation: {
+      readingTitle: 'The wetland is the main attraction',
+      routeTitle: 'From the reserve landing and back',
+      checksLabel: 'Before the rural boat transfer',
+      checksTitle: 'Water, operator, access and wildlife distance',
+      checksLead: 'Water and weather affect a small-boat visit, while operators and return transport are rural. Confirm both ends of the trip before leaving Ninh Binh and keep expectations for animal sightings modest.',
+      boundaryTitle: 'Observe without pursuing',
+      faqLabel: 'Van Long visit questions',
+      faqTitle: 'What can a boat trip show, and how long to leave?'
+    },
+    stages: [
+      ['Confirm the landing', 'Use the current reserve boat point and a named return pickup. Do not treat an old map pin for a cave or temple as the boat entrance.'],
+      ['Check conditions before boarding', 'Ask whether water level, wind or rain has altered the permitted boat route, and confirm the operator’s expected return time.'],
+      ['Look across the wetland', 'Watch the open water, reed edges and limestone cliffs. The Delacour’s langur is a reason the habitat matters, not a sighting the boat should promise.'],
+      ['Return quietly', 'Leave the boat landing clear, carry waste out and reconnect with the confirmed vehicle before attempting another rural site.']
+    ],
+    risks: [
+      ['Wildlife is not scheduled', 'Langurs and birds move with their own needs. The tourism department notes that sightings take patience; absence is not a reason to make noise or request a detour.'],
+      ['Water and weather', 'Wind, rain and changing water can affect the sampan route. Follow the operator’s decision and do not board when staff advise against it.'],
+      ['Remote landing and mobility', 'Boat service and road pickup are rural. Confirm the bank step, seating and return vehicle in advance, especially for anyone who cannot step down easily.']
+    ],
+    duration: 'Allow a half day as a planning estimate, including the rural transfer, boat and pickup buffer. The department’s boat guidance is older and current loop times vary; confirm the actual duration with the operator on the day.',
+    combine: 'A nearby temple or cave may add a cultural layer, but only after checking its separate entrance and access. Keep Cuc Phuong as a different full-day forest visit; combining both reserves can turn observation into a long transfer day.',
+    verify: 'Confirm the operating boat point, route, water and weather, boarding assistance, current conservation guidance, wildlife distance and rural return pickup.'
+  },
+  'cuc-phuong-conservation': {
+    motif: 'Limestone forest, deep time and conservation work',
+    photoNote: false,
+    sources: [
+      ['https://sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/cuc-phuong-national-park-the-oldest-national-park-in-vietnam-359.html', 'Ninh Binh Department of Tourism — park history, limestone forest and prehistoric cave evidence'],
+      ['https://vuonquocgiacucphuong.vn/en/news/v-v-ban-hanh-quy-d-nh-qu-n-ly-phuong-ti-n-giao-thong-di-chuy-n-vao-vung-loi-vu-n-qu-c-gia-cuc-phuong.html', 'Cuc Phuong National Park — core-zone vehicle rules effective 1 September 2026'],
+      ['https://vuonquocgiacucphuong.vn/en/', 'Cuc Phuong National Park — official site and conservation updates']
+    ],
+    lead: 'Cuc Phuong became Vietnam’s first national park in 1962. Here, limestone forest, karst caves and Muong cultural history belong to the same landscape. The provincial tourism authority describes prehistoric human remains in the park’s caves, dating its own account to roughly 7,500 years ago; a cave visit is a separate heritage stop, not a shortcut through the forest. Plan around conservation institutions as well as trails, and do not treat rescue animals as guaranteed public viewing.',
+    orientation: 'The forest interior is reached from the park gate along a core-zone road. Cuc Phuong National Park’s current rule, effective 1 September 2026, bars coaches with 29 or more seats from driving to Bong Center; those groups continue by park electric shuttle, walking or bicycle under park direction. Other combustion-engine vehicles entering the core are capped at 300 per day. Check the official notice before choosing a bus, private vehicle or date.',
+    decisions: [
+      ['Treat the vehicle rule as part of the route', 'Since 1 September 2026, large coaches stop before Bong Center; vehicle caps also apply. Confirm the connection plan before leaving your base.'],
+      ['Choose one interior program', 'A forest walk, prehistoric cave context and conservation facility are distinct stops. Pick the one that is currently open and allow it time.'],
+      ['Keep the boundary', 'Rescue and release work is conservation. Follow ranger access rules and do not expect wildlife to appear on a schedule.']
+    ],
+    presentation: {
+      readingTitle: 'Prehistory and conservation sit inside a working forest',
+      routeTitle: 'Gate, interpretation and one interior route',
+      checksLabel: 'Before driving into the park',
+      checksTitle: 'Vehicle cap, shuttle and open trails',
+      checksLead: 'Park vehicle rules changed on 1 September 2026. Confirm the current core-zone route, coach transfer, daily vehicle limit and whether the specific trail or conservation program you want is open.',
+      boundaryTitle: 'Follow the conservation site’s access rules',
+      faqLabel: 'Cuc Phuong visit questions',
+      faqTitle: 'How much time, and which stop should lead?'
+    },
+    stages: [
+      ['Check the gate plan', 'Read the park’s current transport notice and confirm whether your vehicle can enter the core zone. Groups on larger coaches need the official onward connection.'],
+      ['Choose a specific story', 'Use the park interpretation to distinguish the limestone forest, prehistoric cave record and current rescue work; do not assume every facility accepts walk-in visitors.'],
+      ['Stay with one interior route', 'Set aside time for a single forest trail or cave visit, depending on current access, weather and group ability. Take a ranger’s instruction over a third-party route description.'],
+      ['Return before control hours', 'Reach the gate and confirmed vehicle before dark. The park applies evening exit checks and overnight guest rules; do not improvise a night walk.']
+    ],
+    risks: [
+      ['Vehicle rules and daily cap', 'The park’s notice effective 1 September 2026 excludes 29-plus-seat coaches from the gate-to-Bong route and caps other combustion vehicles at 300 per day. Recheck before travel.'],
+      ['Trail and cave access change', 'Storms, maintenance and ranger decisions can close a route. Confirm the exact trail or cave on arrival; do not substitute an unofficial forest path.'],
+      ['Heat, rain and distance', 'Forest shade does not remove the need for water, secure footwear or a return buffer. Wet roots and cave floors can make a short walk slower than expected.']
+    ],
+    duration: 'Reserve a full day for the rural transfer, gate procedure, one interior forest or cave route and an interpretation or conservation stop. A second day is more realistic if you want two distinct trails or an approved guided program.',
+    combine: 'Keep Hang Mua for another day: its steep summit stairs are a poor add-on after the drive and park walk. Van Long is also a separate wetland visit with its own boat landing, so pair these only in a multi-day plan.',
+    verify: 'Recheck the 2026 core-zone vehicle rule, daily cap, shuttle arrangements, trail and cave openings, conservation-centre access, weather and the time you must leave the forest.'
   }
 };
 
 for (const guide of ninhBinh.guides) {
   const update = ninhBinhUpdates[guide.slug];
   if (!update) continue;
-  Object.assign(guide, update);
+  const { photoNote, ...guideUpdate } = update;
+  Object.assign(guide, guideUpdate);
   guide.reviewDate = '7 October 2026';
   guide.isoDate = '2026-10-07';
   guide.countryCss = '/css/vietnam-ninh-binh.css?v=20261007-1';
@@ -1779,11 +1899,13 @@ for (const guide of ninhBinh.guides) {
     [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
     ['What should I verify before leaving?', guide.verify]
   ];
-  guide.image.editNote = guide.image.license === 'CC BY-SA 3.0'
-    ? 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 3.0.'
-    : guide.image.license === 'CC BY-SA 4.0'
-      ? 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0.'
-      : 'Resized, display-cropped and converted to WebP; no other material edits.';
+  if (photoNote !== false) {
+    guide.image.editNote = guide.image.license === 'CC BY-SA 3.0'
+      ? 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 3.0.'
+      : guide.image.license === 'CC BY-SA 4.0'
+        ? 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0.'
+        : 'Resized, display-cropped and converted to WebP; no other material edits.';
+  }
 }
 
 const ninhBinhLegacyMotifs = {

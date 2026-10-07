@@ -91,7 +91,10 @@ const expectedRoutes = [
   ['/vietnam/ninh-binh/', 'Ninh Binh hub'],
   ['/vietnam/ninh-binh/trang-an-boat-complex/', 'Trang An Boat Complex'],
   ['/vietnam/ninh-binh/hoa-lu-ancient-capital/', 'Hoa Lu Ancient Capital'],
-  ['/vietnam/ninh-binh/tam-coc-bich-dong/', 'Tam Coc & Bich Dong']
+  ['/vietnam/ninh-binh/tam-coc-bich-dong/', 'Tam Coc & Bich Dong'],
+  ['/vietnam/ninh-binh/hang-mua-dragon-mountain/', 'Hang Mua & Dragon Mountain'],
+  ['/vietnam/ninh-binh/van-long-wetland/', 'Van Long Wetland'],
+  ['/vietnam/ninh-binh/cuc-phuong-conservation/', 'Cuc Phuong Forest & Conservation']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -520,7 +523,13 @@ for (const locale of expectedLocales) {
           ? ['whc.unesco.org/en/list/1438', 'vietnam.travel/things-to-do/guide-boat-tours-ninh-binh', 'trangandanhthang.vn/khu-du-lich-trang-an']
           : routePath.endsWith('/hoa-lu-ancient-capital/')
             ? ['whc.unesco.org/en/list/1438', 'sodulich.ninhbinh.gov.vn/en/culture-heritage/hoa-lu-ancient-capital']
-            : ['sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/tam-coc-bich-dong', 'trangandanhthang.vn/tam-coc-bich-dong'];
+            : routePath.endsWith('/tam-coc-bich-dong/')
+              ? ['sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/tam-coc-bich-dong', 'trangandanhthang.vn/tam-coc-bich-dong']
+              : routePath.endsWith('/hang-mua-dragon-mountain/')
+                ? ['sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/discover-the-mua-cave-in-ninh-binh-358', 'whc.unesco.org/en/list/1438']
+                : routePath.endsWith('/van-long-wetland/')
+                  ? ['sodulich.ninhbinh.gov.vn/vi/tai-nguyen-du-lich-tu-nhien/khu-bao-ton-thien-nhien-dat-ngap-nuoc-van-long-18', 'iucngreenlist.org/sites/van-long-nature-reserve']
+                  : ['sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/cuc-phuong-national-park-the-oldest-national-park-in-vietnam-359', 'vuonquocgiacucphuong.vn/en/news/'];
       for (const source of requiredSources) if (!links.some((href) => href.includes(source))) fail(`Missing Ninh Binh primary source ${source} on ${locale.code} ${routePath}.`);
       if (/Conditions change faster than an editorial page|Arrival contract|Three weak points to solve/i.test(bodyText)) fail(`Generic template filler remains on ${locale.code} ${routePath}.`);
       const longParagraphs = nodes(document, 'p').map((node) => text(node).replace(/\s+/g, ' ').trim()).filter((copy) => copy.length >= 100);
@@ -536,8 +545,15 @@ for (const locale of expectedLocales) {
             ? ['official Trang An pier', 'separate from Tam Coc', 'current pier map']
             : routePath.endsWith('/hoa-lu-ancient-capital/')
               ? ['968', '1010', 'Nhat Tru Pagoda', 'stone sutra pillar']
-              : ['three caves', 'Hang Ca, Hang Hai and Hang Ba', '1774', 'Bich Dong'];
+              : routePath.endsWith('/tam-coc-bich-dong/')
+                ? ['three caves', 'Hang Ca, Hang Hai and Hang Ba', '1774', 'Bich Dong']
+                : routePath.endsWith('/hang-mua-dragon-mountain/')
+                  ? ['486 summit steps', 'Tam Coc', 'dated reference', 'controlled descent']
+                  : routePath.endsWith('/van-long-wetland/')
+                    ? ['3,000 hectares', 'Ramsar', 'Delacour', 'half day']
+                    : ['1962', '29 or more seats', 'electric shuttle', '300 per day', '1 September 2026'];
         for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Ninh Binh editorial QA is missing '${phrase}' on ${routePath}.`);
+        if (routePath.endsWith('/van-long-wetland/') && !/never guaranteed|not guaranteed|not a sighting/i.test(bodyText)) fail(`Van Long wildlife sightings must not be promised on ${routePath}.`);
       }
       continue;
     }
