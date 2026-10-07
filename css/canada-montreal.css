@@ -91,6 +91,40 @@ body[data-page="ca-montreal"] .ca-city-plan article > span {
 body[data-page="ca-montreal"] .ca-city-plan h3 { margin: .5rem 0; }
 body[data-page="ca-montreal"] .ca-city-plan p { margin: 0; }
 
+body[data-page="ca-montreal"] .ca-montreal-weather {
+  margin: 1rem 0 2.5rem;
+  padding: 1.25rem clamp(1rem, 3vw, 2rem);
+  border-left: .32rem solid #b36b45;
+  background: #f5ece5;
+  color: #4d352f;
+}
+body[data-page="ca-montreal"] .ca-montreal-weather strong { display: block; margin-bottom: .3rem; }
+body[data-page="ca-montreal"] .ca-montreal-weather p { margin: 0; max-width: 78ch; }
+body[data-page="ca-montreal"] .ca-hub-card { min-height: 100%; }
+body[data-page="ca-montreal"] .ca-hub-card > div { display: flex; flex-direction: column; align-items: flex-start; }
+body[data-page="ca-montreal"] .ca-hub-card strong { margin-top: auto; padding-top: 1rem; }
+body[data-page="ca-montreal"] .ca-montreal-faq { padding-top: .5rem; }
+
+body[data-page^="ca-montreal-"] .ca-montreal-brief {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 1.25rem;
+  align-items: start;
+  margin: 1rem 0 2rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  border: 1px solid rgba(23,60,72,.16);
+  border-radius: 1rem;
+  background: #f4f7f5;
+}
+body[data-page^="ca-montreal-"] .ca-montreal-brief-intro h2 { margin: .4rem 0 .75rem; }
+body[data-page^="ca-montreal-"] .ca-montreal-brief-intro p { margin: 0; }
+body[data-page^="ca-montreal-"] .ca-montreal-quickfacts { display: grid; gap: .8rem; }
+body[data-page^="ca-montreal-"] .ca-montreal-quickfacts article { padding: .8rem 1rem; border-left: .22rem solid var(--ca-family); background: white; }
+body[data-page^="ca-montreal-"] .ca-montreal-quickfacts small { color: var(--ca-family-dark); font-weight: 800; }
+body[data-page^="ca-montreal-"] .ca-montreal-quickfacts p { margin: .3rem 0 0; }
+body[data-page^="ca-montreal-"] .ca-montreal-verify { padding: 1rem 1.25rem; border-left: .25rem solid #b36b45; background: #f7f2ed; }
+body[data-page^="ca-montreal-"] .ca-montreal-verify > p { max-width: 84ch; }
+
 body[data-page^="ca-montreal-"] .ca-field-hero {
   border-bottom: .55rem solid var(--ca-family);
   background-image: linear-gradient(105deg, rgba(255,255,255,.045), transparent 58%);
@@ -111,6 +145,7 @@ body[data-page^="ca-montreal-"] .ca-check-grid article {
 
 @media (max-width: 720px) {
   body[data-page="ca-montreal"] .ca-city-plan { grid-template-columns: 1fr; }
+  body[data-page^="ca-montreal-"] .ca-montreal-brief { grid-template-columns: 1fr; }
   body[data-page^="ca-montreal-"] .ca-field-hero { border-bottom-width: .35rem; }
   body[data-page^="ca-montreal-"] .ca-instrument { width: 7.25rem; padding: .75rem; }
   body[data-page="ca-montreal"] .ca-hub-hero { border-bottom-width: .4rem; }

@@ -120,44 +120,75 @@ function guideSchema(guide, cluster) {
         [guide.hubName, absolute(`/canada/${guide.hubSlug}/`)],
         [guide.name, absolute(guide.url)]
       ]),
-      {
+      ...(guide.faq.length ? [{
         '@type': 'FAQPage',
         mainEntity: guide.faq.map(([question, answer]) => ({
           '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer }
         }))
-      }
+      }] : [])
     ]
   };
 }
 
 function relatedCards(cluster, currentSlug) {
-  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `<a class="ca-related-card" href="${guide.url}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>Survey ${String(guide.chapter).padStart(2, '0')} · ${escapeHtml(guide.layout)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(compact(guide.summary, 122))}</p><strong>Open the guide →</strong></div></a>`).join('');
+  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `<a class="ca-related-card" href="${guide.url}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(cluster.slug === 'montreal' ? guide.cardLabel : `Survey ${String(guide.chapter).padStart(2, '0')} · ${guide.layout}`)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(compact(guide.summary, 122))}</p><strong>Open the guide →</strong></div></a>`).join('');
 }
 
 function guidePage(guide, cluster) {
+  const isMontreal = cluster.slug === 'montreal';
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const route = guide.url;
   const reviewed = pageReviewDate(cluster);
+  const heroKicker = isMontreal
+    ? `${cluster.region} · Montreal route ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewed}`
+    : `${cluster.region} · survey ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewed}`;
+  const planningSections = isMontreal
+    ? `<section class="ca-montreal-brief"><div class="ca-montreal-brief-intro"><span class="ca-section-label">Plan this visit</span><h2>${escapeHtml(guide.planHeading)}</h2><p>${escapeHtml(guide.tradeoff)}</p></div><div class="ca-montreal-quickfacts"><article><small>Getting there</small><p>${escapeHtml(guide.access)}</p></article><article><small>Time to allow</small><p>${escapeHtml(guide.duration)}</p></article><article><small>How to extend the day</small><p>${escapeHtml(guide.combine)}</p></article></div></section>`
+    : `<section class="ca-decision-grid" aria-label="Planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
+  <section class="ca-orientation"><div><span class="ca-section-label">Orientation</span><h2>Make the operating decision before adding distance.</h2><p>${escapeHtml(guide.tradeoff)}</p><p>${escapeHtml(guide.duration)}</p></div><aside><small>Access</small><p>${escapeHtml(guide.access)}</p><small>Combine carefully</small><p>${escapeHtml(guide.combine)}</p></aside></section>`;
+  const routeHeading = isMontreal
+    ? `<div class="ca-section-heading"><span>Route sequence</span><h2>${escapeHtml(guide.routeHeading)}</h2></div>`
+    : `<div class="ca-section-heading"><span>Four-stage route</span><h2>A sequence that protects the return.</h2><p>${escapeHtml(guide.verify)}</p></div>`;
+  const fallbackSection = isMontreal
+    ? `<section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>If the day changes</span><h2>Keep the visit worthwhile with a shorter outdoor section.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p></div></section>`
+    : `<section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>Fallback logic</span><h2>The day still needs a useful shape when conditions change.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p><span>Recheck before leaving: ${escapeHtml(guide.verify)}</span></div></section>`;
+  const verifySection = isMontreal
+    ? `<section class="ca-field-section ca-montreal-verify"><div class="ca-section-heading"><span>Before you go</span><h2>Check the exact entrance and opening status.</h2></div><p>${escapeHtml(guide.verify)}</p></section>`
+    : '';
+  const checkHeading = isMontreal
+    ? `<div class="ca-section-heading"><span>What can change the route</span><h2>Three practical checks for this day.</h2></div>`
+    : `<div class="ca-section-heading"><span>Failure points</span><h2>Three reasons to change the plan.</h2></div>`;
+  const actionLabel = isMontreal ? 'Check route details' : 'Check the failure points';
+  const instrument = isMontreal ? '' : `<div class="ca-instrument" aria-hidden="true"><span>${escapeHtml(guide.layout)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><small>${escapeHtml(guide.instrument)}</small></div>`;
+  const relatedEyebrow = isMontreal ? 'More to explore' : 'Same survey sheet';
+  const relatedHeading = isMontreal ? 'More Montreal routes' : `Continue within ${cluster.name}`;
+  const faqEyebrow = isMontreal ? 'Questions for this route' : 'Planning answers';
+  const faqSection = !isMontreal && guide.faq.length
+    ? `<section class="ca-field-section"><div class="ca-section-heading"><span>${escapeHtml(faqEyebrow)}</span><h2>${escapeHtml(guide.name)} FAQ</h2></div><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>`
+    : '';
+  const sourceNote = isMontreal
+    ? 'These sources describe the historic sites, public paths and visitor schedules. Museum, worship and park access have separate notices; check the page for the place you plan to enter.'
+    : `Planning facts and image licensing were reviewed on ${reviewed}. Transport, park, weather, reservation and operator status can change; verify the linked source before travel.`;
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
 <head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Canada`, description, route, image: guide.image, extraCss: `<link rel="stylesheet" href="${fieldCss}">${regionCss(cluster)}` })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide, cluster))}</script></head>
 <body data-page="ca-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="canada" data-country="canada" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-family="${escapeHtml(cluster.family)}" data-ca-layout="${escapeHtml(guide.layout)}" data-ca-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="ca-breadcrumb" aria-label="Breadcrumb"><a href="/canada/">Canada</a><span>/</span><a href="/canada/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav>
-  <section class="ca-field-hero" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(cluster.region)} · survey ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewed}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">Check the failure points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${heroImageCaption(guide.image)}</figcaption></figure><div class="ca-instrument" aria-hidden="true"><span>${escapeHtml(guide.layout)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><small>${escapeHtml(guide.instrument)}</small></div></section>
-  <section class="ca-decision-grid" aria-label="Planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
+  <section class="ca-field-hero" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(heroKicker)}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">${escapeHtml(actionLabel)}</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${heroImageCaption(guide.image)}</figcaption></figure>${instrument}</section>
+  ${planningSections}
   ${ad}
-  <section class="ca-orientation"><div><span class="ca-section-label">Orientation</span><h2>Make the operating decision before adding distance.</h2><p>${escapeHtml(guide.tradeoff)}</p><p>${escapeHtml(guide.duration)}</p></div><aside><small>Access</small><p>${escapeHtml(guide.access)}</p><small>Combine carefully</small><p>${escapeHtml(guide.combine)}</p></aside></section>
-  <section class="ca-field-section" id="route"><div class="ca-section-heading"><span>Four-stage route</span><h2>A sequence that protects the return.</h2><p>${escapeHtml(guide.verify)}</p></div><div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
-  <section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>Fallback logic</span><h2>The day still needs a useful shape when conditions change.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p><span>Recheck before leaving: ${escapeHtml(guide.verify)}</span></div></section>
-  <section class="ca-field-section" id="checks"><div class="ca-section-heading"><span>Failure points</span><h2>Three reasons to change the plan.</h2></div><div class="ca-check-grid">${guide.checks.map(([title, copy], index) => `<article><span>0${index + 1}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
-  <section class="ca-field-section"><div class="ca-section-heading"><span>Same survey sheet</span><h2>Continue within ${escapeHtml(cluster.name)}.</h2></div><div class="ca-related-grid">${relatedCards(cluster, guide.slug)}</div><p class="ca-back"><a href="/canada/${cluster.slug}/">← Return to ${escapeHtml(cluster.name)}</a></p></section>
-  <section class="ca-field-section"><div class="ca-section-heading"><span>Planning answers</span><h2>${escapeHtml(guide.name)} FAQ</h2></div><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewed}. Transport, park, weather, reservation and operator status can change; verify the linked source before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewed} · Recheck time-sensitive details before booking.</span></section>
+  <section class="ca-field-section" id="route">${routeHeading}<div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  ${fallbackSection}
+  ${verifySection}
+  <section class="ca-field-section" id="checks">${checkHeading}<div class="ca-check-grid">${guide.checks.map(([title, copy], index) => `<article><span>0${index + 1}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  <section class="ca-field-section"><div class="ca-section-heading"><span>${escapeHtml(relatedEyebrow)}</span><h2>${escapeHtml(relatedHeading)}</h2></div><div class="ca-related-grid">${relatedCards(cluster, guide.slug)}</div><p class="ca-back"><a href="/canada/${cluster.slug}/">← Return to ${escapeHtml(cluster.name)}</a></p></section>
+  ${faqSection}
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>${sourceNote}</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewed} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
-
 function hubFaq(cluster) {
+  if (cluster.faq) return cluster.faq;
   return [
     [`How long should I give ${cluster.name}?`, cluster.stay],
     [`What is the main transport decision in ${cluster.name}?`, cluster.transfer],
@@ -183,6 +214,9 @@ function hubSchema(cluster) {
 }
 
 function hubCards(cluster) {
+  if (cluster.slug === 'montreal') {
+    return cluster.guides.map((guide) => `<a class="ca-hub-card" href="${guide.url}" data-layout="${escapeHtml(guide.layout)}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(guide.cardLabel)}</small><h3>${escapeHtml(guide.name)}</h3><strong>Open this day guide</strong></div></a>`).join('');
+  }
   return cluster.guides.map((guide) => `<a class="ca-hub-card" href="${guide.url}" data-layout="${escapeHtml(guide.layout)}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>Survey ${String(guide.chapter).padStart(2, '0')} · ${escapeHtml(guide.layout)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p><strong>Open the focused guide →</strong></div></a>`).join('');
 }
 
@@ -192,6 +226,22 @@ function hubPage(cluster, index) {
   const reviewed = pageReviewDate(cluster);
   const description = metaDescription(`${cluster.hubIntro} ${cluster.transfer}`);
   const faq = hubFaq(cluster);
+  if (cluster.slug === 'montreal') {
+    return `<!doctype html>
+<html lang="en" data-adsense-client="ca-pub-1732059148394592">
+<head>${sharedHead({ title: `${cluster.name} Travel Guide | TripDistill Canada`, description, route, image: hero, extraCss: regionCss(cluster) })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
+<body data-page="ca-${escapeHtml(cluster.slug)}" data-parent-page="canada" data-country="canada" data-region="${escapeHtml(cluster.slug)}">
+${shellStart('<main id="main-content" class="page-content ca-hub ca-montreal-hub" data-ca-family="river-neighborhood">')}
+  <section class="ca-hub-hero"><div class="ca-hub-copy"><span class="ca-kicker">${escapeHtml(cluster.region)} | reviewed ${reviewed}</span><h1>${escapeHtml(cluster.name)}</h1><p class="ca-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#guides">Choose a day</a><a class="button secondary" href="#first-visit">Three-day outline</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.label)} | ${escapeHtml(hero.license)}</figcaption></figure><div class="ca-map-index" aria-hidden="true"><small>Montreal, Quebec</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>Old streets | neighborhood | mountain</span></div></section>
+  <section class="ca-hub-stats"><article><small>Time to give it</small><p>${escapeHtml(cluster.stay)}</p></article><article><small>Getting around</small><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Season and footing</small><p>${escapeHtml(cluster.season)}</p></article></section>
+  ${ad}
+  <section class="ca-hub-section" id="guides"><div class="ca-hub-heading"><span>Choose by interest</span><h2>Three distinct days in Montreal</h2><p>Pick the history, neighborhood or park experience that fits your energy and the weather.</p></div><div class="ca-hub-grid">${hubCards(cluster)}</div></section>
+  <section class="ca-hub-section ca-city-plan-section" id="first-visit"><div class="ca-hub-heading"><span>First visit</span><h2>${escapeHtml(cluster.firstVisitPlan.heading)}</h2><p>${escapeHtml(cluster.firstVisitPlan.intro)}</p></div><div class="ca-city-plan">${cluster.firstVisitPlan.days.map(([title, copy], planIndex) => `<article><span aria-hidden="true">${String(planIndex + 1).padStart(2, '0')}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  <aside class="ca-montreal-weather"><strong>When the weather turns</strong><p>${escapeHtml(cluster.fallback)}</p></aside>
+  <section class="ca-hub-section ca-montreal-faq"><div class="ca-hub-heading"><span>Before you go</span><h2>Questions about the places</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
+  <section class="section sources"><h2>Official visitor information</h2><p>Sources and photo licensing were reviewed on ${reviewed}. Museum entry, worship, transit and park access follow separate schedules; check the operator for the specific place and date.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewed} | Recheck time-sensitive details before booking.</span></section>
+</main>${shellEnd()}</body></html>`;
+  }
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
 <head>${sharedHead({ title: `${cluster.name} Travel Guide — 3 Focused Routes | TripDistill`, description, route, image: hero, extraCss: regionCss(cluster) })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>

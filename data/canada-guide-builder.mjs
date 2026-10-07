@@ -1,4 +1,4 @@
-const stageLabels = ['Arrive', 'Move', 'Read', 'Return'];
+const defaultStageLabels = ['Arrive', 'Move', 'Read', 'Return'];
 
 export function canadaGuide(definition) {
   const required = ['slug', 'name', 'instrument', 'layout', 'imageQuery', 'imageAlt', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
@@ -42,9 +42,13 @@ export function defineCanadaCluster(cluster) {
         ['What this day gives you', guide.tradeoff],
         ['Weather or closure fallback', guide.fallback]
       ],
-      route: guide.stages.map((stage, stageIndex) => [stageLabels[stageIndex], stage[0], stage[1]]),
+      route: guide.stages.map((stage, stageIndex) => [
+        (guide.routeStageLabels || (cluster.slug === 'montreal' ? ['Arrive', 'Walk', 'Explore', 'Finish'] : defaultStageLabels))[stageIndex],
+        stage[0],
+        stage[1]
+      ]),
       checks: guide.watch,
-      faq: [
+      faq: guide.faq || [
         [`How much time should ${guide.name} receive?`, guide.duration],
         [`Can I combine ${guide.name} with another major Canada stop?`, guide.combine],
         ['What should I verify before leaving?', guide.verify]
