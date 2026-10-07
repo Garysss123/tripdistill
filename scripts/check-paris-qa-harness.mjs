@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { Script } from 'node:vm';
 import { parse } from 'parse5';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -221,6 +222,45 @@ function assertHarness(html, label) {
   const frames = nodes(document, 'iframe');
   if (frames.length !== 2 || !frames.some((node) => attr(node, 'id') === 'frame-320') || !frames.some((node) => attr(node, 'id') === 'frame-390')) {
     fail(`${label}: expected paired 320 px and 390 px frames.`);
+  }
+  for (const width of [320, 390]) {
+    const diagnostics = nodes(document, 'p').filter((node) => attr(node, 'id') === `diagnostics-${width}`);
+    if (diagnostics.length !== 1 || attr(diagnostics[0], 'aria-live') !== 'polite' || !attr(diagnostics[0], 'class').split(/\s+/).includes('frame-diagnostics')) {
+      fail(`${label}: expected one visible, politely announced ${width} px frame diagnostics region.`);
+    }
+  }
+  const harnessStyles = nodes(document, 'style').map(text).join('\n');
+  if (!harnessStyles.includes('.frame-diagnostics') || /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(harnessStyles)) {
+    fail(`${label}: frame diagnostics must be visible and the harness must not conceal overflow.`);
+  }
+  const runtimeScripts = nodes(document, 'script').filter((node) => !attr(node, 'id') && !attr(node, 'src') && !attr(node, 'type'));
+  if (runtimeScripts.length !== 1) fail(`${label}: expected one executable harness controller.`);
+  const runtimeScript = text(runtimeScripts[0]);
+  try { new Script(runtimeScript, { filename: `${label}-inline.js` }); }
+  catch (error) { fail(`${label}: inline harness controller has invalid JavaScript: ${error.message}`); }
+  const requiredReadinessChecks = [
+    'FRAME_READY_TIMEOUT_MS = 20000',
+    'selectionGeneration',
+    'frame.dataset.navigationGeneration',
+    'generation !== selectionGeneration',
+    'tripdistill-qa-',
+    "route.path + '#tripdistill-qa-' + generation + '-' + item.width",
+    'expectedUrl.hash',
+    'changedFrames',
+    'doc.readyState !== \'complete\'',
+    'doc.fonts.ready',
+    'tripdistill:components-ready',
+    'Recheck after listener registration',
+    'requestAnimationFrame',
+    'frameWindow.innerWidth',
+    'root.scrollWidth',
+    'root.clientWidth',
+    'getComputedStyle(root).minWidth',
+    'Possible element overhangs',
+    'Timed out after'
+  ];
+  for (const required of requiredReadinessChecks) {
+    if (!runtimeScript.includes(required)) fail(`${label}: harness readiness or width diagnostics are missing ${required}.`);
   }
   const routeOptions = [];
   walk(document, (node) => {

@@ -205,11 +205,15 @@ const page = `<!doctype html>
     select { min-height: 44px; min-width: 0; border: 1px solid #71808a; border-radius: 6px; background: white; color: inherit; font: inherit; padding: 8px 10px; }
     :focus-visible { outline: 3px solid #a14323; outline-offset: 3px; }
     .status { min-height: 1.5em; margin: 14px 0 6px; color: #3d4d56; }
+    .status[data-state="loading"] { color: #654a12; }
+    .status[data-state="error"] { color: #8d241b; font-weight: 700; }
     .preview-rail { overflow-x: auto; padding: 6px 2px 18px; }
     .frames { display: flex; width: max-content; gap: 18px; margin: 0 auto; align-items: start; }
     figure { margin: 0; }
     figcaption { margin: 0 0 8px; font-weight: 700; }
     iframe { display: block; height: min(78vh, 940px); min-height: 660px; border: 0; background: #fff; box-shadow: 0 7px 24px #1e293128; }
+    .frame-diagnostics { max-width: 390px; min-height: 5.5em; margin: 8px 0 0; padding: 8px; border: 1px solid #c4cbc9; border-radius: 4px; background: #fff; color: #24353c; font: 11px/1.45 ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .frame-diagnostics[data-state="error"] { border-color: #b43a2e; color: #7d2119; background: #fff4f1; }
     .meta { margin-top: 16px; color: #59666e; font: 12px/1.45 ui-monospace, monospace; overflow-wrap: anywhere; }
     @media (max-width: 700px) { main { padding: 14px 10px; } .controls { grid-template-columns: 1fr; } .frames { margin-left: 0; } }
   </style>
@@ -230,8 +234,8 @@ const page = `<!doctype html>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </div>
       <div class="preview-rail"><div class="frames">
-        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="Guide route, English, 320 CSS pixels wide"></iframe></figure>
-        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="Guide route, English, 390 CSS pixels wide"></iframe></figure>
+        <figure><figcaption>320 CSS px</figcaption><iframe id="frame-320" title="Guide route, English, 320 CSS pixels wide"></iframe><p class="frame-diagnostics" id="diagnostics-320" aria-label="320 CSS pixel frame diagnostics" aria-live="polite">Waiting for a route and language selection.</p></figure>
+        <figure><figcaption>390 CSS px</figcaption><iframe id="frame-390" title="Guide route, English, 390 CSS pixels wide"></iframe><p class="frame-diagnostics" id="diagnostics-390" aria-label="390 CSS pixel frame diagnostics" aria-live="polite">Waiting for a route and language selection.</p></figure>
       </div></div>
       <p class="meta" id="release"></p>
     </section>
@@ -242,16 +246,295 @@ const page = `<!doctype html>
     const routeSelect = document.querySelector('#route');
     const localeSelect = document.querySelector('#locale');
     const status = document.querySelector('#status');
-    const frames = manifest.viewportWidths.map((width) => ({ width, element: document.querySelector('#frame-' + width) }));
+    const FRAME_READY_TIMEOUT_MS = 20000;
+    const COMPONENT_HOST_IDS = ['layout-header', 'layout-sidebar', 'layout-footer'];
+    const frames = manifest.viewportWidths.map((width) => ({
+      width,
+      element: document.querySelector('#frame-' + width),
+      diagnostics: document.querySelector('#diagnostics-' + width)
+    }));
+    let selectionGeneration = 0;
+    const activeFrameWaits = new Map();
+
+    function setDiagnostic(item, state, message) {
+      item.diagnostics.dataset.state = state;
+      item.diagnostics.textContent = message;
+    }
+
+    function componentReadiness(doc) {
+      const hasMainScript = Array.from(doc.scripts).some(function (script) {
+        try { return new URL(script.src, doc.baseURI).pathname === '/js/main.js'; }
+        catch { return false; }
+      });
+      if (!hasMainScript) return { applicable: false, ready: true, summary: 'shared components: not applicable' };
+      const hosts = COMPONENT_HOST_IDS.map(function (id) { return doc.getElementById(id); });
+      const missing = COMPONENT_HOST_IDS.filter(function (id, index) { return !hosts[index]; });
+      if (missing.length) return { applicable: true, ready: false, error: 'missing component slots: ' + missing.join(', ') };
+      const pending = hosts.filter(function (host) { return host.children.length === 0 && !host.textContent.trim(); });
+      const alerts = hosts.filter(function (host) { return host.querySelector('[role="alert"]'); }).length;
+      return {
+        applicable: true,
+        ready: pending.length === 0,
+        summary: pending.length === 0
+          ? 'shared components: ' + hosts.length + '/' + hosts.length + ' slots populated' + (alerts ? '; ' + alerts + ' visible error fallback(s)' : '')
+          : 'shared components: waiting for ' + pending.length + '/' + hosts.length + ' slots'
+      };
+    }
+
+    function waitForComponents(doc, currentDocumentError) {
+      const initial = componentReadiness(doc);
+      if (!initial.applicable || initial.ready || initial.error) {
+        return { promise: Promise.resolve(initial), cancel: function () {} };
+      }
+      const frameWindow = doc.defaultView;
+      if (!frameWindow) return { promise: Promise.resolve({ applicable: true, ready: false, error: 'page window is unavailable' }), cancel: function () {} };
+      let resolveWait;
+      let complete = false;
+      const promise = new Promise(function (resolve) { resolveWait = resolve; });
+      function finish(result) {
+        if (complete) return;
+        complete = true;
+        frameWindow.removeEventListener('tripdistill:components-ready', checkReadiness);
+        resolveWait(result);
+      }
+      function checkReadiness() {
+        const documentError = currentDocumentError();
+        if (documentError) return finish(documentError);
+        const readiness = componentReadiness(doc);
+        if (readiness.ready || readiness.error) finish(readiness);
+      }
+      frameWindow.addEventListener('tripdistill:components-ready', checkReadiness);
+      // Recheck after listener registration so an already-completed fragment load cannot be missed.
+      checkReadiness();
+      return { promise, cancel: function () { finish({ cancelled: true }); } };
+    }
+
+    function isExpectedDocument(frame, doc, expectedUrl, generation) {
+      if (generation !== selectionGeneration || frame.dataset.navigationGeneration !== String(generation) || !doc || frame.contentDocument !== doc) return false;
+      try {
+        const actualUrl = new URL(doc.location.href);
+        return actualUrl.origin === expectedUrl.origin && actualUrl.pathname === expectedUrl.pathname && actualUrl.search === expectedUrl.search && actualUrl.hash === expectedUrl.hash;
+      } catch { return false; }
+    }
+
+    function frameDiagnostics(doc, expectedUrl, generation, componentSummary, fontSummary) {
+      const root = doc.documentElement;
+      const body = doc.body;
+      const frameWindow = doc.defaultView;
+      const viewportWidth = root.clientWidth;
+      const rootOverflow = Math.max(0, root.scrollWidth - root.clientWidth);
+      const bodyOverflow = body ? Math.max(0, body.scrollWidth - body.clientWidth) : 0;
+      const possibleOverhangs = body ? Array.from(body.querySelectorAll('*')).map(function (element) {
+        const style = frameWindow.getComputedStyle(element);
+        const rect = element.getBoundingClientRect();
+        if (style.display === 'none' || style.visibility === 'hidden' || rect.width === 0) return null;
+        const overBy = Math.max(rect.right - viewportWidth, -rect.left, 0);
+        if (overBy <= 1) return null;
+        const classes = typeof element.className === 'string' ? element.className.trim().split(/\\s+/).filter(Boolean).slice(0, 2) : [];
+        return { label: element.tagName.toLowerCase() + (element.id ? '#' + element.id : '') + (classes.length ? '.' + classes.join('.') : ''), overBy: Math.round(overBy) };
+      }).filter(Boolean).sort(function (a, b) { return b.overBy - a.overBy; }).slice(0, 4) : [];
+      const htmlMinWidth = frameWindow.getComputedStyle(root).minWidth;
+      const bodyMinWidth = body ? frameWindow.getComputedStyle(body).minWidth : 'unavailable';
+      return {
+        rootOverflow,
+        text: [
+          'Ready - selection ' + generation + ' - document complete - ' + componentSummary + ' - ' + fontSummary,
+          'URL: ' + doc.location.pathname + doc.location.hash + ' (expected ' + expectedUrl.pathname + expectedUrl.hash + ')',
+          'Viewport width: inner ' + frameWindow.innerWidth + ' / root client ' + root.clientWidth + ' / root scroll ' + root.scrollWidth + ' CSS px (horizontal overflow ' + rootOverflow + ' px)',
+          'Body width: client ' + (body ? body.clientWidth : 'n/a') + ' / scroll ' + (body ? body.scrollWidth : 'n/a') + ' CSS px (overflow ' + bodyOverflow + ' px)',
+          'Computed min-width: html ' + htmlMinWidth + ' - body ' + bodyMinWidth,
+          'Possible element overhangs: ' + (possibleOverhangs.length ? possibleOverhangs.map(function (entry) { return entry.label + ' (+' + entry.overBy + 'px)'; }).join('; ') : 'none detected')
+        ].join('\\n')
+      };
+    }
+
+    function startFrameWait(item, expectedUrl, sourcePath, generation, onComplete) {
+      const frame = item.element;
+      return new Promise(function (resolve) {
+        let settled = false;
+        let timeoutId;
+        let componentWait = null;
+        let settlingDocument = null;
+        let settlingStarted = false;
+        let phase = 'document load';
+
+        function cleanup() {
+          clearTimeout(timeoutId);
+          frame.removeEventListener('load', onFrameLoad);
+          if (settlingDocument) settlingDocument.removeEventListener('readystatechange', onReadyStateChange);
+          if (componentWait) componentWait.cancel();
+          if (activeFrameWaits.get(frame) === cancelWait) activeFrameWaits.delete(frame);
+        }
+
+        function finish(result) {
+          if (settled) return;
+          settled = true;
+          cleanup();
+          if (generation === selectionGeneration && frame.dataset.navigationGeneration === String(generation)) {
+            if (result.ok) {
+              try {
+                const measurements = frameDiagnostics(result.doc, expectedUrl, generation, result.componentSummary, result.fontSummary);
+                result.rootOverflow = measurements.rootOverflow;
+                setDiagnostic(item, 'ready', measurements.text);
+              } catch (error) {
+                result = { error: 'Width diagnostics failed: ' + error.message };
+                setDiagnostic(item, 'error', 'Error - selection ' + generation + '\\n' + result.error);
+              }
+            } else if (result.error) {
+              setDiagnostic(item, 'error', 'Error - selection ' + generation + '\\n' + result.error);
+            }
+            onComplete(result);
+          }
+          resolve(result);
+        }
+
+        function cancelWait() { finish({ cancelled: true }); }
+
+        function currentDocumentError(doc) {
+          if (generation !== selectionGeneration || frame.dataset.navigationGeneration !== String(generation)) return { cancelled: true };
+          if (!doc || frame.contentDocument !== doc) return { error: 'The active iframe document changed during ' + phase + '.' };
+          let currentUrl;
+          try { currentUrl = new URL(doc.location.href); } catch { return { error: 'The active iframe URL is unavailable during ' + phase + '.' }; }
+          if (currentUrl.origin !== expectedUrl.origin || currentUrl.pathname !== expectedUrl.pathname || currentUrl.search !== expectedUrl.search || currentUrl.hash !== expectedUrl.hash) {
+            return { error: 'The active iframe URL changed during ' + phase + '. Expected ' + expectedUrl.pathname + '; current ' + currentUrl.pathname + '.' };
+          }
+          return null;
+        }
+
+        async function settleDocument(doc) {
+          if (settlingStarted) return;
+          settlingStarted = true;
+          const initialError = currentDocumentError(doc);
+          if (initialError) return finish(initialError);
+          let fontSummary = 'fonts API unavailable';
+          phase = 'font readiness';
+          try {
+            if (doc.fonts && doc.fonts.ready) {
+              await doc.fonts.ready;
+              fontSummary = 'fonts ready';
+            }
+          } catch (error) { return finish({ error: 'Font readiness failed: ' + error.message }); }
+          const afterFontsError = currentDocumentError(doc);
+          if (afterFontsError) return finish(afterFontsError);
+
+          phase = 'shared component fragments';
+          componentWait = waitForComponents(doc, function () { return currentDocumentError(doc); });
+          const componentResult = await componentWait.promise;
+          componentWait = null;
+          if (componentResult.cancelled) return finish({ cancelled: true });
+          if (componentResult.error) return finish({ error: componentResult.error });
+          const afterComponentsError = currentDocumentError(doc);
+          if (afterComponentsError) return finish(afterComponentsError);
+
+          phase = 'two settled animation frames';
+          const frameWindow = doc.defaultView;
+          if (!frameWindow) return finish({ error: 'The active page window is unavailable before layout settled.' });
+          await new Promise(function (resolveFrames) {
+            frameWindow.requestAnimationFrame(function () { frameWindow.requestAnimationFrame(resolveFrames); });
+          });
+          const afterFramesError = currentDocumentError(doc);
+          if (afterFramesError) return finish(afterFramesError);
+          const finalComponents = componentReadiness(doc);
+          if (finalComponents.error) return finish({ error: finalComponents.error });
+          if (!finalComponents.ready) return finish({ error: 'Component fragments became empty before layout settled.' });
+          finish({ ok: true, doc, componentSummary: finalComponents.summary, fontSummary });
+        }
+
+        function onReadyStateChange() {
+          if (settlingDocument && settlingDocument.readyState === 'complete') {
+            void settleDocument(settlingDocument).catch(function (error) { finish({ error: 'Readiness failed during ' + phase + ': ' + error.message }); });
+          }
+        }
+
+        function onFrameLoad() {
+          if (generation !== selectionGeneration || frame.dataset.navigationGeneration !== String(generation)) return;
+          let doc;
+          try { doc = frame.contentDocument; } catch { return; }
+          if (!doc || !isExpectedDocument(frame, doc, expectedUrl, generation)) return; // Ignore load events from the previous selection.
+          if (doc.readyState !== 'complete') {
+            settlingDocument = doc;
+            doc.addEventListener('readystatechange', onReadyStateChange);
+            return;
+          }
+          if (settlingDocument === doc) return;
+          settlingDocument = doc;
+          void settleDocument(doc).catch(function (error) { finish({ error: 'Readiness failed during ' + phase + ': ' + error.message }); });
+        }
+
+        timeoutId = setTimeout(function () {
+          let currentPath = 'unavailable';
+          try { currentPath = frame.contentDocument.location.href; } catch {}
+          finish({ error: 'Timed out after ' + Math.round(FRAME_READY_TIMEOUT_MS / 1000) + 's during ' + phase + '. Expected ' + expectedUrl.pathname + expectedUrl.hash + '; current frame URL is ' + currentPath + '.' });
+        }, FRAME_READY_TIMEOUT_MS);
+        frame.dataset.navigationGeneration = String(generation);
+        frame.addEventListener('load', onFrameLoad);
+        activeFrameWaits.set(frame, cancelWait);
+        frame.src = sourcePath;
+        // Cached pages may already be complete before load dispatch; validate the active document too.
+        queueMicrotask(onFrameLoad);
+      });
+    }
+
     function updateFrames() {
+      const generation = ++selectionGeneration;
+      for (const cancel of activeFrameWaits.values()) cancel();
+      activeFrameWaits.clear();
       const route = manifest.routes[Number(routeSelect.value)];
       const locale = manifest.locales.find((item) => item.code === localeSelect.value);
-      for (const item of frames) {
-        item.element.style.width = item.width + 'px';
-        item.element.src = locale.prefix + route.path;
-        item.element.title = route.label + ', ' + locale.label + ', ' + item.width + ' CSS pixels wide';
+      const completed = new Map();
+      const expectedByWidth = new Map();
+      status.dataset.state = 'loading';
+      status.textContent = 'Loading ' + route.label + ' - ' + locale.label + ' - selection ' + generation + ' - waiting for both frames.';
+
+      function renderProgress() {
+        if (generation !== selectionGeneration) return;
+        const failures = Array.from(completed.entries()).filter(function (entry) { return !entry[1].ok && !entry[1].cancelled; });
+        const pending = frames.filter(function (item) { return !completed.has(item.width); }).map(function (item) { return item.width + 'px'; });
+        if (failures.length) {
+          status.dataset.state = 'error';
+          status.textContent = 'Readiness error: ' + failures.map(function (entry) { return entry[0] + 'px - ' + entry[1].error; }).join(' | ') + (pending.length ? ' - still waiting for ' + pending.join(' and ') : '');
+        } else if (pending.length) {
+          status.dataset.state = 'loading';
+          status.textContent = 'Loading ' + route.label + ' - ' + locale.label + ' - selection ' + generation + ' - ready: ' + Array.from(completed.keys()).map(function (width) { return width + 'px'; }).join(', ') + '; waiting: ' + pending.join(' and ') + '.';
+        } else {
+          const changedFrames = frames.filter(function (item) {
+            const result = completed.get(item.width);
+            return !result || !result.ok || !isExpectedDocument(item.element, result.doc, expectedByWidth.get(item.width), generation);
+          });
+          if (changedFrames.length) {
+            status.dataset.state = 'error';
+            status.textContent = 'Readiness error: current URL changed in ' + changedFrames.map(function (item) { return item.width + 'px'; }).join(' and ') + ' after its selection loaded. Select the route again to restart the measurement.';
+          } else {
+            const overflow = Array.from(completed.entries()).filter(function (entry) { return entry[1].rootOverflow > 0; }).map(function (entry) { return entry[0] + 'px +' + entry[1].rootOverflow + 'px'; });
+            status.dataset.state = 'ready';
+            status.textContent = overflow.length
+              ? 'Both frames ready - root horizontal overflow detected: ' + overflow.join(', ') + '. Inspect the per-frame diagnostics.'
+              : 'Both frames ready - selection ' + generation + ' - no document-root horizontal overflow detected.';
+          }
+        }
       }
-      status.textContent = route.label + ' · ' + locale.label + ' · paired 320 / 390 CSS px';
+
+      const waits = frames.map(function (item) {
+        item.element.style.width = item.width + 'px';
+        item.element.title = route.label + ', ' + locale.label + ', ' + item.width + ' CSS pixels wide';
+        setDiagnostic(item, 'loading', 'Loading ' + locale.prefix + route.path + '...\\nWaiting for the current document, components and settled layout.');
+        const sourcePath = locale.prefix + route.path + '#tripdistill-qa-' + generation + '-' + item.width;
+        const expectedUrl = new URL(sourcePath, window.location.origin);
+        expectedByWidth.set(item.width, expectedUrl);
+        return startFrameWait(item, expectedUrl, sourcePath, generation, function (result) {
+          if (generation !== selectionGeneration || result.cancelled) return;
+          completed.set(item.width, result);
+          renderProgress();
+        });
+      });
+      Promise.all(waits).then(renderProgress).catch(function (error) {
+        if (generation !== selectionGeneration) return;
+        status.dataset.state = 'error';
+        status.textContent = 'Readiness controller error: ' + error.message;
+        frames.filter(function (item) { return !completed.has(item.width); }).forEach(function (item) {
+          setDiagnostic(item, 'error', 'Error - selection ' + generation + '\\nReadiness controller error: ' + error.message);
+        });
+      });
     }
     routeSelect.addEventListener('change', updateFrames);
     localeSelect.addEventListener('change', updateFrames);
