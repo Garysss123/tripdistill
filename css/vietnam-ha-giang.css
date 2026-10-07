@@ -27,3 +27,41 @@ body[data-region="ha-giang"] .vn-field .faq-list details,body[data-region="ha-gi
   body[data-region="ha-giang"] .vn-hub-hero::before { inset:0; }
   body[data-region="ha-giang"] .vn-hub-copy { backdrop-filter:blur(10px); }
 }
+
+/* Let the six reviewed routes shrink when a classic scrollbar leaves a
+   305px layout viewport. Keep cards and hero columns inside that width. */
+body:is(
+  [data-page="ha-giang"],
+  [data-page="quan-ba-heavens-gate"],
+  [data-page="yen-minh-pine-forest"],
+  [data-page="dong-van-old-quarter"],
+  [data-page="lung-cu-flag-tower"],
+  [data-page="ma-pi-leng-nho-que"]
+) { min-width:0; }
+
+body:is(
+  [data-page="ha-giang"],
+  [data-page="quan-ba-heavens-gate"],
+  [data-page="yen-minh-pine-forest"],
+  [data-page="dong-van-old-quarter"],
+  [data-page="lung-cu-flag-tower"],
+  [data-page="ma-pi-leng-nho-que"]
+) :is(
+  .site-shell,
+  .page-content,
+  .vn-hub,
+  .vn-field,
+  .vn-hub-hero,
+  .vn-field-hero,
+  .vn-hub-copy,
+  .vn-field-copy,
+  .vn-field-image,
+  .vn-hub-grid > *,
+  .vn-contract-grid > *,
+  .vn-hub-route > *,
+  .vn-decision-strip > *,
+  .vn-reading > *,
+  .vn-route > *,
+  .vn-check-grid > *,
+  .vn-related > *
+) { min-width:0; }

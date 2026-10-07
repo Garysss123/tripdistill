@@ -378,13 +378,29 @@ for (const locale of expectedLocales) {
       const bodyText = text(body);
       const links = nodes(document, 'a').map((node) => attr(node, 'href'));
       if (attr(body, 'data-country') !== 'vietnam' || attr(body, 'data-region') !== 'ha-giang') fail(`Wrong Ha Giang route scope on ${locale.code} ${routePath}.`);
-      if (!styles.includes('/css/vietnam.css') || !styles.includes('/css/vietnam-ha-giang.css') || !styleHrefs.includes('/css/vietnam-ha-giang.css?v=20261007-1')) fail(`Missing current Ha Giang responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/vietnam.css') || !styles.includes('/css/vietnam-ha-giang.css') || !styleHrefs.includes('/css/vietnam-ha-giang.css?v=20261007-2')) fail(`Missing current Ha Giang responsive stylesheet on ${locale.code} ${routePath}.`);
+      const routeSlug = routePath.split('/').filter(Boolean).at(-1);
+      const haGiangCss = fs.readFileSync(safeDistPath('/css/vietnam-ha-giang.css'), 'utf8');
+      const haGiangBodyWidthRule = cssRuleBlock(haGiangCss, `[data-page="${routeSlug}"]`);
+      if (!/min-width\s*:\s*0\s*;/.test(haGiangBodyWidthRule)) fail(`Ha Giang body keeps the global 320px minimum on ${locale.code} ${routePath}.`);
+      const haGiangContainerWidthRule = cssRuleBlock(haGiangCss, ') :is(');
+      for (const selector of ['.site-shell', '.page-content', '.vn-hub-hero', '.vn-field-hero', '.vn-field-copy']) {
+        if (!haGiangContainerWidthRule.includes(selector)) fail(`Ha Giang narrow-width rule is missing ${selector} on ${locale.code} ${routePath}.`);
+      }
       if (!nodes(document, 'details').length) fail(`Missing visible Ha Giang FAQ controls on ${locale.code} ${routePath}.`);
       const commonsLinks = links.filter((href) => href.includes('commons.wikimedia.org'));
       if (commonsLinks.length !== 6) fail(`Expected six distinct Ha Giang image source credits on ${locale.code} ${routePath}, got ${commonsLinks.length}.`);
       if (!links.some((href) => /vietnam\.travel/.test(href)) || !links.some((href) => /unesco\.org/.test(href))) fail(`Missing official Vietnam Tourism and UNESCO sources on ${locale.code} ${routePath}.`);
       if (!bodyText.includes('CC BY-SA') && !bodyText.includes('CC0') && !bodyText.includes('Public domain')) fail(`Missing readable Ha Giang image license credits on ${locale.code} ${routePath}.`);
       if (/Arrival contract|Check the weak points|Three weak points to solve|weak points/i.test(bodyText)) fail(`Generic Ha Giang contract/weak-points label remains on ${locale.code} ${routePath}.`);
+      const longParagraphs = nodes(document, 'p').map((node) => text(node).replace(/\s+/g, ' ').trim()).filter((copy) => copy.length >= 80);
+      if (new Set(longParagraphs).size !== longParagraphs.length) fail(`A long Ha Giang route paragraph is rendered more than once on ${locale.code} ${routePath}.`);
+      if (locale.code === 'zh-Hant' && ['/vietnam/ha-giang/dong-van-old-quarter/', '/vietnam/ha-giang/ma-pi-leng-nho-que/'].includes(routePath)) {
+        const title = text(nodes(document, 'h1')[0]);
+        const openingParentheses = (title.match(/[（(]/g) || []).length;
+        const closingParentheses = (title.match(/[）)]/g) || []).length;
+        if (openingParentheses !== closingParentheses) fail(`Unbalanced subtitle parentheses on zh-Hant ${routePath}.`);
+      }
       const englishHeadings = [
         'Road-day decisions',
         'Six legs with different road and daylight demands',
