@@ -282,13 +282,13 @@ export const canadaImageManifest = {
   },
   "montreal/plateau-mile-end": {
     "src": "/assets/images/canada-montreal-plateau-mile-end-20261007.webp",
-    "alt": "Byzantine dome and minaret-like tower of St. Michael and St. Anthony Church in Mile End",
-    "source": "https://commons.wikimedia.org/wiki/File:Church_of_St._Michael_and_St._Anthony_exterior,_November_2025.jpg",
-    "label": "Church of St. Michael and St. Anthony exterior, November 2025.jpg",
-    "creator": "Jason Zhang",
+    "alt": "Mile End street corner at Laurier and Henri-Julien, with apartment and storefront buildings",
+    "source": "https://commons.wikimedia.org/wiki/File:20181013_-_01_-_Montreal_(Mile_End).jpg",
+    "label": "20181013 - 01 - Montreal (Mile End).jpg",
+    "creator": "Andre Carrotflower",
     "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Church of St. Michael and St. Anthony exterior, November 2025.jpg",
-    "remoteSha1": "065f2f52860777c8adaede298ac1236c7583fd05"
+    "commonsTitle": "File:20181013 - 01 - Montreal (Mile End).jpg",
+    "remoteSha1": "6daa09e24d7cc1866d805d1cc5621f785f97a44f"
   },
   "montreal/mount-royal-museums": {
     "src": "/assets/images/canada-montreal-mount-royal-museums.webp",
