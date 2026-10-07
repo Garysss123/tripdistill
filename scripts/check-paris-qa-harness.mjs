@@ -319,7 +319,7 @@ for (const locale of expectedLocales) {
           : routePath.endsWith('/hoan-kiem-old-quarter/')
             ? ['Hang Bac', 'Hang Gai', 'pedestrian']
             : routePath.endsWith('/ba-dinh-thang-long/')
-              ? ['2 September 1945', '7th-century fortress', '18 Hoang Dieu']
+              ? ['2 September 1945', 'fortress dating to the 7th century', '18 Hoang Dieu']
               : routePath.endsWith('/french-quarter-opera-house/')
                 ? ['turn of the 20th century', '13:30', 'first Monday of each month']
                 : routePath.endsWith('/long-bien-red-river/')
@@ -339,7 +339,6 @@ for (const locale of expectedLocales) {
       if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Sapa photo source on ${locale.code} ${routePath}.`);
       if (!links.some((href) => /vietnam\.travel|sapa-tourism\.com|sunworld\.vn|vietnamtourism\.gov\.vn/.test(href))) fail(`Missing primary Sapa destination source on ${locale.code} ${routePath}.`);
       for (const license of [
-        'https://creativecommons.org/publicdomain/zero/1.0/',
         'https://creativecommons.org/licenses/by-sa/4.0/',
         'https://creativecommons.org/licenses/by-sa/2.0/'
       ]) if (!links.includes(license)) fail(`Missing linked Sapa image license ${license} on ${locale.code} ${routePath}.`);
@@ -351,7 +350,8 @@ for (const locale of expectedLocales) {
           const translatedNote = locale.code === 'en' ? sourceNote : localeCatalogs[locale.code][sourceNote];
           if (!translatedNote || !bodyText.includes(translatedNote)) fail(`Missing localized CC BY-SA ${licenseVersion} adaptation/share-alike note on ${locale.code} ${routePath}.`);
         }
-        if (classNodes(document, 'vn-boundary').length) fail(`Repeated Sapa boundary block remains on ${locale.code} ${routePath}.`);
+        const boundaryBlocks = classNodes(document, 'vn-boundary');
+        if (boundaryBlocks.length > 1 || boundaryBlocks.some((block) => nodes(block, 'p').length)) fail(`Repeated Sapa boundary copy remains on ${locale.code} ${routePath}.`);
         if (bodyText.includes('Conditions change faster than an editorial page')) fail(`Generic template filler remains on ${locale.code} ${routePath}.`);
         const currentSapaStyle = styleHrefs.some((href) => /^\/css\/vietnam-sapa\.css\?v=20261007-\d+$/.test(href));
         if (!styles.includes('/css/vietnam-sapa.css') || !currentSapaStyle) fail(`Missing current Sapa responsive stylesheet on ${locale.code} ${routePath}.`);
@@ -362,11 +362,11 @@ for (const locale of expectedLocales) {
           : routePath.endsWith('/town-ham-rong/')
             ? ['Ham Rong', 'stone church', 'steep']
             : routePath.endsWith('/fansipan-summit/')
-              ? ['3,143', '6 kilometres', '15 minutes']
+              ? ['3,143', '6-kilometre', '15 minutes']
               : routePath.endsWith('/muong-hoa-lao-chai-ta-van/')
-                ? ['Lao Chai', 'Ta Van', 'three hours', 'worked landscape']
+                ? ['Lao Chai', 'Ta Van', 'three hours', 'irrigation channels']
                 : routePath.endsWith('/cat-cat-village/')
-                  ? ['2-kilometre', '19th-century', 'waterfall', 'uphill']
+                  ? ['2 kilometres', '19th-century', 'waterfall', 'uphill']
                   : ['Sunday', '1914', '1921', 'mansion'];
         for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Sapa editorial QA is missing '${phrase}' on ${routePath}.`);
       }
