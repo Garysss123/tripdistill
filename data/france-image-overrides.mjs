@@ -7,8 +7,8 @@ export const franceImageOverrides = {
   },
   'paris-region-day-trips/versailles-palace-estate': 'File:Palace of Versailles Garden.jpg',
   'loire-valley/blois-chambord': {
-    title: 'File:Château de Chambord, Loire Valley - FRANCE.jpg',
-    creditTitle: 'Château de Chambord'
+    title: 'File:Fleuve Loire - Blois (FR41) - 2022-07-16 - 1.jpg',
+    creditTitle: 'The Loire at Blois'
   },
   'loire-valley/amboise-chenonceau': {
     title: 'File:Château de Chenonceau, Loire Valley, France.jpg',

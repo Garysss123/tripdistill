@@ -323,13 +323,15 @@ for (const locale of expectedLocales) {
 }
 
 const loireHubText = pageBodyText('en', '/france/loire-valley/');
-for (const phrase of ['Rémi line 2', 'about 35 minutes', '400 m from Chenonceau’s ticket office', 'Villandry Centre', 'garden-only ticket', '2.1 km walk']) {
+for (const phrase of ['Rémi line 2', 'about 35 minutes', '400 m from Chenonceau’s ticket office', 'Fil Bleu line 32', 'Villandry Centre', 'garden-only ticket', '2.1 km walk']) {
   if (!loireHubText.includes(phrase)) fail(`Loire hub is missing the verified corridor decision “${phrase}”.`);
 }
+const loireChineseHubText = pageBodyText('zh-Hant', '/france/loire-valley/');
+if (!loireChineseHubText.includes('\u7f85\u4e9e\u723e\u6cb3\u8c37\u554f\u7b54') || loireChineseHubText.includes('\u5df4\u9ece\u5730\u5340\u8cc7\u8a0a')) fail('The zh-Hant Loire hub label must name the Loire and must not call it the Paris region.');
 const loireEnglishRequirements = [
-  ['/france/loire-valley/blois-chambord/', ['four architectural periods', '1519', 'architect is unknown', 'double-helix staircase', 'Fine Arts Museum', 'Rémi line 2']],
-  ['/france/loire-valley/amboise-chenonceau/', ['400 m', 'Catherine Briçonnet', 'Diane de Poitiers', 'Green Cabinet', 'occupied and free zones', 'Chenonceaux station']],
-  ['/france/loire-valley/tours-villandry-azay/', ['garden-only', '280 m', '2.1 km', 'R5 Résabus', 'Joachim Carvallo', 'eight hectares']]
+  ['/france/loire-valley/blois-chambord/', ['four architectural periods', '1519', 'architect is unknown', 'double-helix staircase', 'Fine Arts Museum', 'Rémi line 2 shuttle returns you from the estate to Blois-Chambord station', 'a separately checked onward train', 'The Loire at Blois']],
+  ['/france/loire-valley/amboise-chenonceau/', ['400 m', 'Catherine Briçonnet', 'Diane de Poitiers', 'Green Cabinet', 'occupied and free zones', 'Chenonceaux station', 'surviving keep of the earlier medieval', 'built separately between 1513 and 1517']],
+  ['/france/loire-valley/tours-villandry-azay/', ['garden-only', '280 m', '2.1 km', 'Fil Bleu line 32', 'R5 Résabus', 'on demand', 'Joachim Carvallo', 'eight hectares']]
 ];
 for (const [routePath, requiredPhrases] of loireEnglishRequirements) {
   const bodyText = pageBodyText('en', routePath);
@@ -347,7 +349,7 @@ for (const [routePath, expectedQuestions] of [
 const loireSourceRequirements = [
   ['/france/loire-valley/blois-chambord/', ['remi-centrevaldeloire.fr/s-evader/chateau-chambord-lechappee-royale', 'en.chateaudeblois.fr/2194-four-architectural-styles.htm', 'en.chateaudeblois.fr/2369-illustrious-historical-figures.htm', 'chambord.org/en/history/the-chateau/architecture/']],
   ['/france/loire-valley/amboise-chenonceau/', ['vinci-closluce.com/en/prices/', 'chenonceau.com/en/chateau/the-history-of-the-chateau/', 'chenonceau.com/en/practical-information/how-to-get-here/']],
-  ['/france/loire-valley/tours-villandry-azay/', ['chateauvillandry.fr/useful-information/prices-opening-times-how-to-get-there-how-to-visit-villandry/', 'chateauvillandry.fr/villandry-through-the-ages/the-gardens-of-villandry-are-restored-to-their-renaissance-glory/', 'azay-le-rideau.fr/en/visit/practical-information', 'azay-le-rideau.fr/en/discover/the-landscaped-park']]
+  ['/france/loire-valley/tours-villandry-azay/', ['chateauvillandry.fr/useful-information/prices-opening-times-how-to-get-there-how-to-visit-villandry/', 'chateauvillandry.fr/villandry-through-the-ages/the-gardens-of-villandry-are-restored-to-their-renaissance-glory/', 'azay-le-rideau.fr/en/visit/practical-information', 'azay-le-rideau.fr/en/discover/the-landscaped-park', 'filbleu.fr/en/timetable-routes/all-lines/ligne-32', 'filbleu.fr/en/timetable-routes/all-lines/ligne-r5', 'filbleu.fr/en/services/resabus-transport-on-demand']]
 ];
 for (const [routePath, requiredSources] of loireSourceRequirements) {
   const hrefs = nodes(pagesByRoute.get('en' + routePath).document, 'a').map((node) => attr(node, 'href'));

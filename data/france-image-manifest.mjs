@@ -152,14 +152,14 @@ export const franceImageManifest = {
   },
   "loire-valley/blois-chambord": {
     "src": "/assets/images/france-loire-valley-blois-chambord.webp",
-    "alt": "Château de Chambord and its formal grounds in the Loire Valley",
-    "source": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chambord,_Loire_Valley_-_FRANCE.jpg",
-    "label": "Château de Chambord, Loire Valley - FRANCE.jpg",
-    "creator": "Ignaz Wiradi",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Château de Chambord, Loire Valley - FRANCE.jpg",
-    "remoteSha1": "a7540b1bf94e30de27c11b918b67b8b7f3fe469a",
-    "creditTitle": "Château de Chambord"
+    "alt": "The Loire at Blois, seen from the riverbank with the town beyond",
+    "source": "https://commons.wikimedia.org/wiki/File:Fleuve_Loire_-_Blois_(FR41)_-_2022-07-16_-_1.jpg",
+    "label": "Fleuve Loire - Blois (FR41) - 2022-07-16 - 1.jpg",
+    "creator": "Chabe01",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Fleuve Loire - Blois (FR41) - 2022-07-16 - 1.jpg",
+    "remoteSha1": "f9e48d94a3a2eb075cac6e6464825639bde77bcb",
+    "creditTitle": "The Loire at Blois"
   },
   "loire-valley/amboise-chenonceau": {
     "src": "/assets/images/france-loire-valley-amboise-chenonceau.webp",

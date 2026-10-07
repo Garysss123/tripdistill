@@ -16,7 +16,7 @@ export const franceCentralEastClusters = [
     reviewDateISO: '2026-10-07',
     hubIntro: 'The Loire is not one château district with interchangeable stops. Blois places four centuries of royal building inside a walkable town, while Chambord sits beyond the station in a forest estate. Amboise pairs a Loire promontory and Leonardo’s last home; Chenonceau crosses the Cher from its own rail stop. West of Tours, Villandry is a garden visit with a seasonal château calendar, and Azay-le-Rideau is a separate branch-line town. Choose the corridor before choosing the number of tickets.',
     stay: 'Blois is the practical base for its urban château and a Rémi line 2 day at Chambord; Amboise keeps the Royal Château and Clos Lucé close while Chenonceau needs its own train excursion. Tours has the widest city choice for Villandry or Azay-le-Rideau. Pick one base around the sites you intend to enter, and check the return train before committing to a rural day.',
-    transfer: 'The last mile is different at every stop: Rémi line 2 runs from Blois-Chambord station to Chambord in about 35 minutes; Amboise station is roughly a ten-minute walk from the Royal Château; Chenonceaux station is about 400 m from Chenonceau’s ticket office. Tours bus 32 stops about 280 m from Villandry, while Azay-le-Rideau station is a 2.1 km walk from its château. Recheck dated services and the final return.',
+    transfer: 'The last mile is different at every stop: Rémi line 2 runs from Blois-Chambord station to Chambord in about 35 minutes; Amboise station is roughly a ten-minute walk from the Royal Château; Chenonceaux station is about 400 m from Chenonceau’s ticket office. Fil Bleu line 32 serves Villandry Centre about 280 m from its entrance, while Azay-le-Rideau station is a 2.1 km walk from its château. Recheck dated services and the final return.',
     season: 'The garden calendar changes the route. Villandry’s gardens remain open through the year except 25 December, while château opening is seasonal and outdoor hours may change in heat. Chenonceau is open daily through the year; Chambord’s château calendar has low-season closure days and holiday exceptions. Use each estate’s live calendar for the exact date, not a summer photograph or an old shuttle timetable.',
     fallback: 'When a rural link fails, make the town on your booked rail line the complete day: Blois has its royal apartments and Fine Arts Museum, Amboise has the royal site and Clos Lucé, and Tours has its cathedral, museums and old quarters. Do not replace one cancelled transfer with an unverified taxi chain. Keep the estate visit that still has a confirmed arrival and return.',
     faq: [
@@ -27,7 +27,10 @@ export const franceCentralEastClusters = [
     sources: [
       ['https://www.remi-centrevaldeloire.fr/s-evader/chateau-chambord-lechappee-royale', 'Rémi — Blois-Chambord to the estate, line 2'],
       ['https://www.ter.sncf.com/centre-val-de-loire', 'SNCF TER Centre-Val de Loire — regional rail information'],
-      ['https://www.loirevalley-france.co.uk/', 'Loire Valley — official regional tourism guide']
+      ['https://www.loirevalley-france.co.uk/', 'Loire Valley — official regional tourism guide'],
+      ['https://www.filbleu.fr/en/timetable-routes/all-lines/ligne-32', 'Fil Bleu — line 32, Villandry Centre to Lycée Grandmont'],
+      ['https://www.filbleu.fr/en/timetable-routes/all-lines/ligne-r5', 'Fil Bleu — R5 Résabus for Villandry and Savonnières'],
+      ['https://www.filbleu.fr/en/services/resabus-transport-on-demand', 'Fil Bleu — current on-demand booking information']
     ],
     guides: [
       g({
@@ -37,8 +40,8 @@ export const franceCentralEastClusters = [
         reviewDateISO: '2026-10-07',
         instrument: 'Town-to-domain shuttle docket',
         layout: 'royal-courtyard-ledger',
-        imageQuery: 'Chateau de Chambord Loire Valley France panorama',
-        imageAlt: 'Château de Chambord and its formal grounds in the Loire Valley',
+        imageQuery: 'Loire River at Blois France riverbank',
+        imageAlt: 'The Loire at Blois, seen from the riverbank with the town beyond',
         purpose: 'Compare Blois’s layered royal residence with François I’s vast forest domain while keeping the station-to-Chambord transfer and a realistic return inside the plan.',
         summary: 'Blois is an urban palace whose wings record changing dynasties; Chambord is a 1519 royal project surrounded by an estate. The 35-minute Rémi line 2 ride from Blois-Chambord station makes the pair possible, but the return timetable decides whether it is sensible.',
         siteContext: {
@@ -55,7 +58,7 @@ export const franceCentralEastClusters = [
         choices: [
           ['Blois, rooms and collection', 'Follow the Gothic Louis XII wing into the François I Renaissance wing, then reserve time for the Fine Arts Museum. This is the most flexible option when the Chambord shuttle does not fit.'],
           ['Chambord and one estate loop', 'Choose the double-helix staircase, selected rooms and a short grounds circuit as the day’s center. Keep the return stop and estate closing time in view.'],
-          ['A two-palace comparison', 'Pair a focused Blois visit with Chambord only when the dated line 2 departures leave protected time at both sites and a later Blois train remains available.']
+          ['A two-palace comparison', 'Pair a focused Blois visit with Chambord only when a dated Rémi line 2 shuttle returns you from the estate to Blois-Chambord station in time for a separately checked onward train; confirm both legs before booking.']
         ],
         access: 'Blois–Chambord is the Blois railway station, not a station at the estate. Rémi line 2 currently runs from there to Chambord in about 35 minutes; confirm the service on the travel date, including the return. At the domain, check where the bus drops you and allow time for the walk between the entrance, château and stop. A bike or car is a separate plan, not an automatic fallback.',
         tradeoff: 'A two-palace day gives up the full Chambord grounds, a slow Fine Arts Museum visit and spontaneous river cycling. Keep the pairing only if the timetable supports an unhurried Blois interior and enough Chambord time for the rooms you selected.',
@@ -63,7 +66,7 @@ export const franceCentralEastClusters = [
           ['Start at Blois station', 'Walk into the town and identify the Château Royal entrance, then locate the Rémi line 2 departure point and the last workable return before choosing a combination ticket.'],
           ['Read Blois by dynasty', 'Trace the medieval remains, Louis XII’s Gothic wing, François I’s Renaissance stair and the unfinished classical wing of Gaston d’Orléans. Enter the Fine Arts Museum if its rooms match your interest.'],
           ['Choose Chambord’s scale', 'At the 1519 domain, follow the double-helix staircase and a deliberate set of rooms; add a terrace or nearby grounds path only after checking current access and closing time.'],
-          ['Return with a margin', 'Reach the line 2 stop with time for the estate path and the next service. If the timetable has no useful later return, do Chambord alone and keep Blois for a separate day.']
+          ['Return with a margin', 'Before starting Chambord, confirm a dated Rémi line 2 service will return from the estate to Blois-Chambord station; allow time for the walk to the estate stop. Continue only if a separate onward rail train from that station remains usable. If no workable shuttle return is published, stay in Blois for its château and museum and save Chambord for a date with a verified return.']
         ],
         fallback: 'If line 2 does not serve the needed return, make Blois the complete day: compare its four architectural periods and visit the Fine Arts Museum when open. If Blois is the fixed arrival, do not improvise a taxi chain to Chambord; use the estate only with a confirmed transfer.',
         watch: [
@@ -106,7 +109,7 @@ export const franceCentralEastClusters = [
           details: [
             ['Amboise above the Loire', 'The Royal Château occupies a promontory above the town. From Amboise station, cross toward the center and follow the sloping access route from Place Michel Debré; the château’s official visitor guidance describes this approach.'],
             ['Leonardo’s last home', 'Clos Lucé is about 400 m from the Royal Château. Leonardo spent the final years of his life there and is buried in the château chapel at Amboise. Clos Lucé’s standard self-guided admission includes the house, park and Leonardo galleries; the full visit takes time beyond the short walk.'],
-            ['Chenonceau over water', 'The current château took shape from 1513 to 1517 under Thomas Bohier and Catherine Briçonnet, above the medieval Tour des Marques. Diane de Poitiers and Catherine de’ Medici each shaped the estate; Catherine used the Green Cabinet as a place of government.'],
+            ['Chenonceau over water', 'The Tour des Marques is the surviving keep of the earlier medieval château; the residence seen today was built separately between 1513 and 1517 by Thomas Bohier and Catherine Briçonnet. Diane de Poitiers and Catherine de’ Medici each shaped the estate; Catherine used the Green Cabinet as a place of government.'],
             ['A gallery with wartime meaning', 'The long gallery crosses the Cher. During the Second World War, the river marked the boundary between occupied and free zones; the Menier family used the château’s position to help people escape. Read this within the estate’s own interpretation, not as a casual photo stop.']
           ]
         },
@@ -164,15 +167,15 @@ export const franceCentralEastClusters = [
             ['Villandry’s garden rooms', 'The estate’s terraces organize kitchen, ornamental and water gardens into distinct spaces, each with a different pattern and use. Joachim Carvallo bought the neglected estate in 1906 and recreated its Renaissance gardens from 1908 to 1918; the estate says they have been open to the public since 1920. Its account names painter Lozano and landscape architect Javier de Winthuysen among the collaborators on individual ornamental salons.'],
             ['Admission follows your interest', 'Villandry offers a garden-only ticket and a combined château-and-gardens ticket. Official planning guidance estimates about an hour inside the château and around an hour and a half in the gardens; use the current calendar because the château and gardens do not share identical opening dates.'],
             ['Azay on the Indre', 'Financier Gilles Berthelot began the château under François I. Its composition blends French and Italian Renaissance forms, with the river setting shaping the approach and views. The current landscaped park is a later layer, with paths, bridges and water mirrors across eight hectares.'],
-            ['The last mile changes the ticket day', 'Touraine bus 32 stops at Villandry Centre, about 280 m from the entrance; the accessible R5 Résabus must be requested in advance. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.']
+            ['The last mile changes the ticket day', 'Fil Bleu line 32 stops at Villandry Centre, about 280 m from the entrance; Fil Bleu R5 Résabus serves the Villandry/Savonnières area on demand; check its route-specific service and reserve through the operator before travel. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.']
           ]
         },
         choices: [
-          ['Villandry, gardens only', 'Buy the garden-only admission when the parterres are your main interest. The 280 m walk from Touraine bus 32 makes this the simplest named public-transport approach from Tours.'],
-          ['Villandry, château and gardens', 'Use the combined ticket when you want both the Renaissance rooms and outdoor garden sequence. Check seasonal château dates and heat adjustments; reserve the accessible R5 Résabus the previous day if needed.'],
+          ['Villandry, gardens only', 'Buy the garden-only admission when the parterres are your main interest. Fil Bleu line 32 stops at Villandry Centre, about 280 m from the entrance, making it the simplest named public-transport approach from Tours when its dated timetable fits.'],
+          ['Villandry, château and gardens', 'Use the combined ticket when you want both the Renaissance rooms and outdoor garden sequence. Check seasonal château dates and heat adjustments; check the current R5 Résabus booking details with Fil Bleu before travel.'],
           ['Azay-le-Rideau and the Indre', 'Take the Tours–Chinon rail branch only after planning the 2.1 km station-to-château gap. Give the interior and eight-hectare park a full half-day rather than adding Villandry by default.']
         ],
-        access: 'Tours Centre and Saint-Pierre-des-Corps are separate rail nodes; check the arrival station before planning a local transfer. From Tours, bus 32 stops at Villandry Centre about 280 m from the gardens. Azay-le-Rideau is on the Tours–Chinon line, but the station-to-château walk is about 2.1 km. The accessible R5 Résabus to Villandry requires advance request, currently by the previous day.',
+        access: 'Tours Centre and Saint-Pierre-des-Corps are separate rail nodes; check the arrival station before planning a local transfer. From Tours, Fil Bleu line 32 runs between Lycée Grandmont and Villandry Centre, about 280 m from the gardens; tram A connects with it at Fac 2 Lions. Check the date-specific timetable. Azay-le-Rideau is on the Tours–Chinon line, but the station-to-château walk is about 2.1 km. Fil Bleu R5 Résabus serves the Villandry/Savonnières area on demand; check its route-specific service and reserve through the operator before travel.',
         tradeoff: 'Villandry and Azay each need time outdoors and have different last miles. Visiting both from Tours can consume the day in transfers and leave no protected time for the formal garden rooms or the château’s park. Choose one estate and keep Tours itself as the flexible city plan.',
         siteContext: {
           label: 'Designed garden or water-framed château',
@@ -182,35 +185,38 @@ export const franceCentralEastClusters = [
             ['Villandry’s garden rooms', 'The estate’s terraces organize kitchen, ornamental and water gardens into distinct spaces, each with a different pattern and use. The formal layout was restored by Joachim Carvallo and Ann Coleman after they acquired the property in 1906; the gardens opened to the public in 1920.'],
             ['Admission follows your interest', 'Villandry offers a garden-only ticket and a combined château-and-gardens ticket. Official planning guidance estimates about an hour inside the château and around an hour and a half in the gardens; use the current calendar because the château and gardens do not share identical opening dates.'],
             ['Azay on the Indre', 'Financier Gilles Berthelot began the château under François I. Its composition blends French and Italian Renaissance forms, with the river setting shaping the approach and views. The current landscaped park is a later layer, with paths, bridges and water mirrors across eight hectares.'],
-            ['The last mile changes the ticket day', 'Touraine bus 32 stops at Villandry Centre, about 280 m from the entrance; the accessible R5 Résabus must be requested in advance. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.']
+            ['The last mile changes the ticket day', 'Fil Bleu line 32 stops at Villandry Centre, about 280 m from the entrance; Fil Bleu R5 Résabus serves the Villandry/Savonnières area on demand; check its route-specific service and reserve through the operator before travel. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.']
           ]
         },
         stages: [
           ['Choose the Tours departure point', 'Confirm Tours Centre versus Saint-Pierre-des-Corps, and the correct bus stop or Tours–Chinon platform before starting the excursion.'],
-          ['Reach one estate with a return plan', 'Use bus 32 for Villandry, prebook R5 if needed, or follow the rail and 2.1 km last mile for Azay. Save the return service before entering.'],
+          ['Reach one estate with a return plan', 'Use Fil Bleu line 32 for Villandry, or check whether the on-demand R5 Résabus fits; for Azay, plan the rail journey and 2.1 km last mile. Save the return service before entering.'],
           ['Read the landscape you chose', 'At Villandry, follow the garden rooms from one terrace to another and decide whether the château interior belongs in the ticket. At Azay, connect the island setting to the later park paths and bridges.'],
           ['Return to Tours by the protected service', 'Allow the full walk from Azay station or the bus approach from Villandry. Keep a meal or old-town loop in Tours only after the booked return is secure.']
         ],
         fallback: 'If bus 32 or the branch train does not fit the date, spend the day in Tours: visit the cathedral and Musée des Beaux-Arts where open, walk the old center and follow the Loire edge. If heat changes garden hours, use Villandry’s current notice before switching to any indoor admission.',
         watch: [
-          ['The bus stop is close, the service is date-specific', 'Touraine bus 32 serves Villandry Centre about 280 m away; check the current line calendar and return rather than assuming a frequent urban bus.'],
+          ['The bus stop is close, the service is date-specific', 'Fil Bleu line 32 serves Villandry Centre about 280 m away; check its date-specific timetable and return rather than assuming a frequent urban bus.'],
           ['Azay station is not the château entrance', 'The 2.1 km gap can be a significant walk with heat, bags or mobility limits. Verify a local option or use a transport mode that can complete the trip.'],
           ['Garden and château calendars diverge', 'Villandry’s gardens and château have different opening periods, with outdoor hours also affected by heat. Confirm what your ticket includes on the chosen date.']
         ],
         duration: 'Villandry’s official visit guidance allows about one hour for the château and roughly an hour and a half for the gardens. Azay needs time for its rooms, eight-hectare park and the 2.1 km station walk. Give either estate at least a half-day from Tours, plus the outbound and return service.',
         combine: 'Pair Tours with Villandry or Azay. Do not combine both by public transport without a dated connection plan that includes the Villandry bus or Azay’s 2.1 km station gap. Keep Amboise, Chenonceau and Chambord for separate corridor days.',
-        verify: 'Check the 2026 Villandry garden and château calendar, heat-related hours, bus 32 or an advance R5 booking, and the Tours–Chinon service plus Azay station walk before selecting the estate.',
+        verify: 'Check the 2026 Villandry garden and château calendar, heat-related hours, Fil Bleu line 32 timetable and R5 Résabus booking details, and the Tours–Chinon service plus Azay station walk before selecting the estate.',
         faq: [
           ['Can I buy a Villandry garden-only ticket?', 'Yes. Villandry sells garden-only admission separately from the château-and-gardens ticket. Check the estate’s current calendar and heat-related opening notices for the date.'],
           ['How far is Azay-le-Rideau station from the château?', 'The château’s official access page gives the station walk as about 2.1 km. Check for a suitable local connection before treating the branch train as a door-to-door trip.'],
-          ['Which Villandry bus stop should I use?', 'Touraine bus 32 serves Villandry Centre, about 280 m from the entrance. The accessible R5 Résabus is a separate service and currently needs to be requested the previous day.']
+          ['Which Villandry bus stop should I use?', 'Fil Bleu line 32 serves Villandry Centre, about 280 m from the entrance. Fil Bleu R5 is an on-demand Résabus for Villandry/Savonnières; check its route page and reserve through the operator before travel.']
         ],
         sources: [
           ['https://www.chateauvillandry.fr/useful-information/prices-opening-times-how-to-get-there-how-to-visit-villandry/?lang=en', 'Villandry — admission, 2026 calendar and access'],
           ['https://www.chateauvillandry.fr/villandry-through-the-ages/the-gardens-of-villandry-are-restored-to-their-renaissance-glory/?lang=en', 'Villandry — garden reconstruction history and collaborators'],
           ['https://www.azay-le-rideau.fr/en/visit/practical-information', 'Château d’Azay-le-Rideau — 2026 practical information'],
           ['https://www.azay-le-rideau.fr/en/discover/history-of-the-castle', 'Château d’Azay-le-Rideau — history and architecture'],
-          ['https://www.azay-le-rideau.fr/en/discover/the-landscaped-park', 'Château d’Azay-le-Rideau — landscaped park']
+          ['https://www.azay-le-rideau.fr/en/discover/the-landscaped-park', 'Château d’Azay-le-Rideau — landscaped park'],
+          ['https://www.filbleu.fr/en/timetable-routes/all-lines/ligne-32', 'Fil Bleu — line 32, Villandry Centre to Lycée Grandmont'],
+          ['https://www.filbleu.fr/en/timetable-routes/all-lines/ligne-r5', 'Fil Bleu — R5 Résabus for Villandry and Savonnières'],
+          ['https://www.filbleu.fr/en/services/resabus-transport-on-demand', 'Fil Bleu — on-demand booking information']
         ]
       })
     ]

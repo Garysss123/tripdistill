@@ -1,0 +1,32 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/loire-valley/",
+    "/france/loire-valley/blois-chambord/",
+    "/france/loire-valley/amboise-chenonceau/",
+    "/france/loire-valley/tours-villandry-azay/"
+  ],
+  "translations": {
+    "The Loire at Blois, seen from the riverbank with the town beyond": "ブロワの川岸から望むロワール川と、その向こうに広がる町",
+    "The Loire at Blois": "ブロワのロワール川",
+    "The last mile is different at every stop: Rémi line 2 runs from Blois-Chambord station to Chambord in about 35 minutes; Amboise station is roughly a ten-minute walk from the Royal Château; Chenonceaux station is about 400 m from Chenonceau’s ticket office. Fil Bleu line 32 serves Villandry Centre about 280 m from its entrance, while Azay-le-Rideau station is a 2.1 km walk from its château. Recheck dated services and the final return.": "各地で最後の移動区間は異なります。Rémi 2番系統のシャトルはブロワ・シャンボール駅からシャンボール城まで約35分で、帰りも同駅へ戻ります。駅に戻った後の列車は別に確認し、訪問日と最終便を含めた交通のつながりを確かめてください。アンボワーズ駅から王立城までは徒歩約10分、シュノンソー駅からシュノンソー城のチケット窓口までは約400 mです。Fil Bleu 32番系統は入口から約280 mのVillandry Centreに停車し、アゼ＝ル＝リドー駅から城までは徒歩2.1 kmです。",
+    "Tours Centre and Saint-Pierre-des-Corps are separate rail nodes; check the arrival station before planning a local transfer. From Tours, Fil Bleu line 32 runs between Lycée Grandmont and Villandry Centre, about 280 m from the gardens; tram A connects with it at Fac 2 Lions. Check the date-specific timetable. Azay-le-Rideau is on the Tours–Chinon line, but the station-to-château walk is about 2.1 km. Fil Bleu R5 Résabus serves the Villandry/Savonnières area on demand; check its route-specific service and reserve through the operator before travel.": "Tours CentreとSaint-Pierre-des-Corpsは別の鉄道駅です。市内移動を決める前に到着駅を確認しましょう。トゥールからはFil Bleu 32番系統がLycée GrandmontとVillandry Centreを結び、Villandry Centreは庭園から約280 mです。Fac 2 LionsでトラムAに乗り換えられます。訪問日ごとの時刻表を確認してください。Azay-le-RideauはTours–Chinon線沿いですが、駅から城まで徒歩約2.1 kmあります。Fil Bleu R5 RésabusはVillandry／Savonnières方面のデマンド型サービスです。出発前に運行会社へ路線ごとの運行状況と予約方法を確認してください。",
+    "Fil Bleu — line 32, Villandry Centre to Lycée Grandmont": "Fil Bleu — 32番系統、Villandry Centre～Lycée Grandmont",
+    "Fil Bleu — R5 Résabus for Villandry and Savonnières": "Fil Bleu — R5 Résabus、Villandry／Savonnières方面",
+    "Fil Bleu — current on-demand booking information": "Fil Bleu — デマンド型サービスの最新予約案内",
+    "Loire Valley answers": "ロワール渓谷のよくある質問",
+    "— Chabe01,": "— Chabe01、",
+    "Pair a focused Blois visit with Chambord only when a dated Rémi line 2 shuttle returns you from the estate to Blois-Chambord station in time for a separately checked onward train; confirm both legs before booking.": "ブロワの見学を要点に絞ってシャンボールと組み合わせるのは、日付に合うRémi 2番系統のシャトル復路で城の領地からブロワ・シャンボール駅へ戻り、そこから先へ向かう列車にも間に合うかを両方の時刻表で確認できる場合に限りましょう。予約前にシャトルと後続列車の両方を確認してください。",
+    "Before starting Chambord, confirm a dated Rémi line 2 service will return from the estate to Blois-Chambord station; allow time for the walk to the estate stop. Continue only if a separate onward rail train from that station remains usable. If no workable shuttle return is published, stay in Blois for its château and museum and save Chambord for a date with a verified return.": "シャンボールへ出発する前に、日付入りのRémi 2番系統が城の領地からブロワ・シャンボール駅へ戻ることを確認し、敷地内の停留所まで歩く時間も見込んでください。駅から先へ向かう列車も別に確認し、それに乗れる場合だけ行程を続けましょう。使えるシャトルの復路便が運行表に載っていなければ、ブロワにとどまり、城と美術館を訪れてください。シャンボールは復路を確認できる日に回しましょう。",
+    "The Tour des Marques is the surviving keep of the earlier medieval château; the residence seen today was built separately between 1513 and 1517 by Thomas Bohier and Catherine Briçonnet. Diane de Poitiers and Catherine de’ Medici each shaped the estate; Catherine used the Green Cabinet as a place of government.": "現存するのは、以前の中世城郭に属する主塔「Tour des Marques」です。現在見られる城館は別に建てられたもので、Thomas Bohier（トマ・ボイエ）とCatherine Briçonnet（カトリーヌ・ブリソネ）により1513年から1517年にかけて建設されました。Diane de Poitiers（ディアーヌ・ド・ポワチエ）とCatherine de’ Medici（カトリーヌ・ド・メディシス）がそれぞれ領地の姿を形づくり、カトリーヌはGreen Cabinet（緑の書斎）を政務の場として使いました。",
+    "Fil Bleu line 32 serves Villandry Centre, about 280 m from the entrance. Fil Bleu R5 is an on-demand Résabus for Villandry/Savonnières; check its route page and reserve through the operator before travel.": "Fil Bleuの32番系統はVillandry Centreに停車し、入口から約280 mです。Fil Bleu R5 RésabusはVillandry／Savonnières方面のデマンド型サービスです。利用前にFil Bleuの路線案内を確認し、運行会社に運行状況と予約方法を問い合わせてください。",
+    "Buy the garden-only admission when the parterres are your main interest. Fil Bleu line 32 stops at Villandry Centre, about 280 m from the entrance, making it the simplest named public-transport approach from Tours when its dated timetable fits.": "花壇が主な目的なら、庭園のみの入場券を購入しましょう。Fil Bleu 32番系統は入口から約280 mのVillandry Centreに停車します。訪問日に合う時刻表を確認できれば、トゥールから公共交通で向かう最も簡単なルートです。",
+    "Use the combined ticket when you want both the Renaissance rooms and outdoor garden sequence. Check seasonal château dates and heat adjustments; check the current R5 Résabus booking details with Fil Bleu before travel.": "ルネサンス様式の部屋と屋外の庭園を両方見学するなら共通券を利用しましょう。城の季節ごとの公開日と暑さによる時間変更を確認してください。R5 Résabusの予約方法は、出発前にFil Bleuの最新案内で確認しましょう。",
+    "Fil Bleu line 32 stops at Villandry Centre, about 280 m from the entrance; Fil Bleu R5 Résabus serves the Villandry/Savonnières area on demand; check its route-specific service and reserve through the operator before travel. Azay-le-Rideau station is about 2.1 km from the château, so check a local link or plan the walk before relying on rail alone.": "Fil Bleu 32番系統は入口から約280 mのVillandry Centreに停車します。Fil Bleu R5 RésabusはVillandry／Savonnières方面のデマンド型サービスです。利用前に対象ルートの運行状況を確認し、運行会社を通じて予約してください。Azay-le-Rideau駅から城までは約2.1 kmあるため、鉄道だけで向かう前に地域交通を調べるか、徒歩移動を計画しましょう。",
+    "Check the 2026 Villandry garden and château calendar, heat-related hours, Fil Bleu line 32 timetable and R5 Résabus booking details, and the Tours–Chinon service plus Azay station walk before selecting the estate.": "訪問先を選ぶ前に、2026年のヴィランドリー庭園と城の公開日程、暑さによる時間変更、Fil Bleu 32番系統の時刻表とR5 Résabusの予約情報、Tours–Chinon線の運行、アゼ駅から城までの徒歩区間を確認してください。",
+    "Use Fil Bleu line 32 for Villandry, or check whether the on-demand R5 Résabus fits; for Azay, plan the rail journey and 2.1 km last mile. Save the return service before entering.": "ヴィランドリーへはFil Bleu 32番系統を利用するか、デマンド型のR5 Résabusが使えるか確認しましょう。アゼは鉄道で向かう計画に駅からの2.1 kmを加えてください。入場前に帰りの便を控えておきましょう。",
+    "Fil Bleu — on-demand booking information": "Fil Bleu — デマンド型サービスの予約案内",
+    "Fil Bleu line 32 serves Villandry Centre about 280 m away; check its date-specific timetable and return rather than assuming a frequent urban bus.": "Fil Bleu 32番系統はVillandry Centre（入口から約280 m）に停車します。市内バスのように頻繁に運行すると決めつけず、訪問日の時刻表と帰りの便を確認してください。"
+  }
+}
