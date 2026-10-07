@@ -540,6 +540,7 @@ for (const [sourceUrl, detail] of [
 }
 
 for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:%EC%9A%A9%EB%91%90%EC%95%94.jpg', 'Jeju image review: the exact Commons file page identifies 용두암.jpg (Yongduam), own work by 안범진 (Wikimedia user Kyleahn), dated 2015-12-26, with camera coordinates in Yongdamil-dong on Jeju’s north coast. The source page declares CC BY-SA 4.0. The local WebP pixels show the dragon-shaped volcanic rock and adjacent north-coast shoreline, matching Yongduam rather than Seongsan Ilchulbong; its separate hydrangea photograph and credit are not assigned to this asset.'],
   ['https://commons.wikimedia.org/wiki/File:Hongdae_area_cityscape.jpg', 'Seoul image review: exact Commons page identifies Minseong Kim (IMKSv), the Hongdae cityscape, and CC BY-SA 4.0. Attribution, source/license links, WebP conversion notice and same-version share-alike terms are present.'],
   ['https://commons.wikimedia.org/wiki/File:Itaewon-dong.jpg', 'Seoul image review: exact Commons page identifies Live Studio Kim Hakri and the Itaewon-dong aerial; it declares Korea Open Government License Type 1. The official KOGL Type 1 terms permit commercial use and adaptations with source attribution. The site links both source and license and discloses WebP conversion.'],
   ['https://commons.wikimedia.org/wiki/File:Quiet_alleyway_in_Seongsu-dong.jpg', 'Seoul image review: exact Commons page identifies CartoonChess, the Seongsu-dong alley, and CC BY-SA 4.0. Attribution, source/license links, WebP conversion notice and same-version share-alike terms are present.'],
@@ -558,6 +559,7 @@ for (const [sourceUrl, detail] of [
 
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
+  ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it documents no other material edits.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
   ['/assets/images/china-hangzhou-grand-canal.webp', { creditLabel: 'Gongchen Bridge', creator: 'Windmemories', note: 'Matched the image alt and subject to the identically named Commons credit on both Hangzhou routes.' }],
   ['/assets/images/biei-landscape.webp', { creditLabel: 'Biei landscape photo', creator: 'Chi King', note: 'Corrected a previous Blue Pond credit match; the displayed image is the agricultural landscape shown in the Commons source page.' }],
@@ -628,6 +630,7 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
   ['/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp', '2026-10-05'],
   ['/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp', '2026-10-05'],
+  ['/assets/images/korea-jeju-yongduam.webp', '2026-10-07'],
   ['/assets/images/takoyaki.webp', '2026-10-06'],
   ['/assets/images/tennoji-harukas.webp', '2026-10-06'],
   ['/assets/images/shinsekai.webp', '2026-10-06'],
@@ -686,10 +689,10 @@ for (const fullPath of assetPaths) {
   if (explicit) {
     const candidates = allDistinctCredits.filter((credit) => credit.creditLabel === explicit.creditLabel && credit.creator === explicit.creator);
     const identities = new Set(candidates.map((item) => [item.sourceUrl, item.license, item.creator].join('|')));
-    if (identities.size === 1 && candidates.length) creditMatch = { ...candidates[0], matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+    if (identities.size === 1 && candidates.length) creditMatch = { ...candidates[0], editHistory: explicit.editHistory || candidates[0].editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
   }
   const sourceUrl = uniqueValues('sourceUrl')[0] || creditMatch?.sourceUrl || null;
-  const sourceTitle = uniqueValues('sourceTitle')[0] || creditMatch?.creditLabel || null;
+  const sourceTitle = uniqueValues('sourceTitle')[0] || explicit?.sourceTitle || creditMatch?.creditLabel || null;
   const creator = uniqueValues('creator')[0] || creditMatch?.creator || null;
   const license = uniqueValues('license')[0] || creditMatch?.license || null;
   const licenseUrl = uniqueValues('licenseUrl')[0] || creditMatch?.licenseUrl || canonicalLicenseUrl(license);

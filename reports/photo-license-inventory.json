@@ -15241,21 +15241,21 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/korea-jeju-yongduam.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_in_front_of_Seongsan_Ilchulbong_volcano_at_blue_hour_in_Jeju_Island_South_Korea.jpg",
-          "sourceTitle": "Seongsan Ilchulbong photo",
-          "creditLabel": "Seongsan Ilchulbong photo",
-          "creator": "Basile Morin",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%EC%9A%A9%EB%91%90%EC%95%94.jpg",
+          "sourceTitle": "용두암.jpg",
+          "creditLabel": "Yongduam photo",
+          "creator": "Ahn Beom-jin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it documents no other material edits.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.",
+          "visualReviewStatus": "visually_reviewed_2026-10-07",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-07",
+          "verificationDetail": "Jeju image review: the exact Commons file page identifies 용두암.jpg (Yongduam), own work by 안범진 (Wikimedia user Kyleahn), dated 2015-12-26, with camera coordinates in Yongdamil-dong on Jeju’s north coast. The source page declares CC BY-SA 4.0. The local WebP pixels show the dragon-shaped volcanic rock and adjacent north-coast shoreline, matching Yongduam rather than Seongsan Ilchulbong; its separate hydrangea photograph and credit are not assigned to this asset.",
           "useCount": 2,
           "routes": [
             "/south-korea/jeju/",
@@ -15266,7 +15266,7 @@
             "Dark volcanic rock and waves around Yongduam on the north coast of Jeju"
           ],
           "rawVisibleCredits": [
-            "Seongsan Ilchulbong photo — Basile Morin, CC BY-SA 4.0."
+            "Yongduam photo — Ahn Beom-jin, CC BY-SA 4.0."
           ]
         }
       ]
