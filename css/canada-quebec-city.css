@@ -1,0 +1,109 @@
+/* Québec City and Charlevoix: stone, river and exposed high country. */
+body[data-page="ca-quebec-city-charlevoix"] .ca-hub {
+  --ca-family: #a65036;
+  --ca-family-dark: #422e31;
+  --ca-family-soft: #f3e9df;
+}
+
+body[data-page^="ca-quebec-city-charlevoix-"] .ca-field {
+  --ca-family: #537365;
+  --ca-family-dark: #263f3b;
+  --ca-family-soft: #e9f0e9;
+}
+
+body[data-page="ca-quebec-city-charlevoix-old-quebec"] .ca-field {
+  --ca-family: #a65036;
+  --ca-family-dark: #422e31;
+  --ca-family-soft: #f3e9df;
+}
+
+body[data-page="ca-quebec-city-charlevoix-montmorency-orleans"] .ca-field {
+  --ca-family: #287f88;
+  --ca-family-dark: #20444b;
+  --ca-family-soft: #e5f0ef;
+}
+
+body[data-page="ca-quebec-city-charlevoix-charlevoix-baie-saint-paul"] .ca-field {
+  --ca-family: #617d4d;
+  --ca-family-dark: #344632;
+  --ca-family-soft: #edf0e5;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-hub-hero {
+  border-bottom: .65rem solid #a65036;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-hub-hero::before {
+  opacity: .24;
+  background:
+    repeating-linear-gradient(168deg, transparent 0 2.25rem, rgba(255,255,255,.2) 2.3rem 2.36rem, transparent 2.42rem 3.45rem),
+    radial-gradient(ellipse at 75% 68%, rgba(51,123,125,.3), transparent 55%);
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-map-index {
+  border-color: rgba(255,255,255,.72);
+  background: rgba(38,63,59,.9);
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-hub-card:nth-child(1),
+body[data-page="ca-quebec-city-charlevoix"] .ca-route-compare > a:nth-child(1) {
+  border-top: .34rem solid #a65036;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-hub-card:nth-child(2),
+body[data-page="ca-quebec-city-charlevoix"] .ca-route-compare > a:nth-child(2) {
+  border-top: .34rem solid #287f88;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-hub-card:nth-child(3),
+body[data-page="ca-quebec-city-charlevoix"] .ca-route-compare > a:nth-child(3) {
+  border-top: .34rem solid #617d4d;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-city-plan {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-city-plan article {
+  min-width: 0;
+  padding: 1.1rem;
+  border-top: .3rem solid var(--ca-family);
+  background: rgba(255,255,255,.76);
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-city-plan article > span {
+  color: var(--ca-family-dark);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+body[data-page="ca-quebec-city-charlevoix"] .ca-city-plan h3 { margin: .5rem 0; }
+body[data-page="ca-quebec-city-charlevoix"] .ca-city-plan p { margin: 0; }
+
+body[data-page^="ca-quebec-city-charlevoix-"] .ca-field-hero {
+  border-bottom: .55rem solid var(--ca-family);
+  background-image: linear-gradient(105deg, rgba(255,255,255,.045), transparent 58%);
+}
+
+body[data-page^="ca-quebec-city-charlevoix-"] .ca-instrument {
+  border-color: rgba(255,255,255,.62);
+  box-shadow: 0 .8rem 2rem rgba(0,0,0,.16);
+}
+
+body[data-page^="ca-quebec-city-charlevoix-"] .ca-route-step {
+  border-top: .25rem solid var(--ca-family);
+}
+
+body[data-page^="ca-quebec-city-charlevoix-"] .ca-check-grid article {
+  border-top: .22rem solid var(--ca-family);
+}
+
+@media (max-width: 720px) {
+  body[data-page="ca-quebec-city-charlevoix"] .ca-city-plan { grid-template-columns: 1fr; }
+  body[data-page^="ca-quebec-city-charlevoix-"] .ca-field-hero { border-bottom-width: .35rem; }
+  body[data-page^="ca-quebec-city-charlevoix-"] .ca-instrument { width: 7.25rem; padding: .75rem; }
+  body[data-page="ca-quebec-city-charlevoix"] .ca-hub-hero { border-bottom-width: .4rem; }
+}

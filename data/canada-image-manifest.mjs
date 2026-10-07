@@ -302,7 +302,7 @@ export const canadaImageManifest = {
   },
   "quebec-city-charlevoix/old-quebec": {
     "src": "/assets/images/canada-quebec-city-charlevoix-old-quebec.webp",
-    "alt": "Old Quebec and Château Frontenac above the St Lawrence River",
+    "alt": "A street in Old Québec looking toward Château Frontenac and neighbouring historic buildings",
     "source": "https://commons.wikimedia.org/wiki/File:Chateau_Frontenac_from_a_street_in_Old_Quebec.jpg",
     "label": "Chateau Frontenac from a street in Old Quebec.jpg",
     "creator": "Wilfredor",
@@ -312,7 +312,7 @@ export const canadaImageManifest = {
   },
   "quebec-city-charlevoix/montmorency-orleans": {
     "src": "/assets/images/canada-quebec-city-charlevoix-montmorency-orleans.webp",
-    "alt": "Montmorency Falls near Quebec City",
+    "alt": "Montmorency Falls and its suspension bridge, with visitors on the riverside overlook",
     "source": "https://commons.wikimedia.org/wiki/File:Montmorency_Falls,_Quebec_City,_Canada.jpg",
     "label": "Montmorency Falls, Quebec City, Canada.jpg",
     "creator": "Didier Moïse",
@@ -322,7 +322,7 @@ export const canadaImageManifest = {
   },
   "quebec-city-charlevoix/charlevoix-baie-saint-paul": {
     "src": "/assets/images/canada-quebec-city-charlevoix-charlevoix-baie-saint-paul.webp",
-    "alt": "Charlevoix hills and St Lawrence landscape near Baie-Saint-Paul",
+    "alt": "Autumn forest and hills south of Baie-Saint-Paul in Charlevoix",
     "source": "https://commons.wikimedia.org/wiki/File:Charlevoix_2.jpg",
     "label": "Charlevoix 2.jpg",
     "creator": "LBM1948",
