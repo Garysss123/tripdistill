@@ -284,7 +284,7 @@ body[data-city="gyeongju"] {
 .yangdong-hero-photo { position: relative; overflow: hidden; border: .7rem solid #f8f2e8; box-shadow: 0 20px 40px rgba(68,49,31,.15); transform: rotate(-1deg); }
 .yangdong-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .yangdong-hero-copy { padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
-.yangdong-hero .eyebrow { color: #8b5e35; }
+.yangdong-hero .eyebrow { color: #80512f; }
 .yangdong-hero h1 { margin: .8rem 0 1rem; font-size: clamp(3.1rem, 6vw, 5.6rem); line-height: .9; }
 .yangdong-hero p { color: #685844; }
 .threshold-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #b8a483; }

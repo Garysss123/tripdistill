@@ -83,6 +83,9 @@ const routes = [
   { path: '/south-korea/gyeongju/daereungwon-hwangnidan-gil/', label: 'Daereungwon & Hwangnidan-gil' },
   { path: '/south-korea/gyeongju/wolseong-donggung-wolji/', label: 'Wolseong & Donggung/Wolji' },
   { path: '/south-korea/gyeongju/bulguksa-seokguram/', label: 'Bulguksa & Seokguram' },
+  { path: '/south-korea/gyeongju/namsan/', label: 'Namsan mountain trails' },
+  { path: '/south-korea/gyeongju/yangdong-village/', label: 'Yangdong Village' },
+  { path: '/south-korea/gyeongju/bomun-lake/', label: 'Bomun Lake' },
   { path: '/vietnam/hanoi/', label: 'Hanoi hub' },
   { path: '/vietnam/hanoi/hoan-kiem-old-quarter/', label: 'Hoan Kiem & Old Quarter' },
   { path: '/vietnam/hanoi/ba-dinh-thang-long/', label: 'Ba Dinh & Thang Long' },
@@ -216,7 +219,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, South Korea and Vietnam responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, four Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes and four Ninh Binh routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, seven Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes and four Ninh Binh routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

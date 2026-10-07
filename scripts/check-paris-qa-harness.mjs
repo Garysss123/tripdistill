@@ -65,6 +65,9 @@ const expectedRoutes = [
   ['/south-korea/gyeongju/daereungwon-hwangnidan-gil/', 'Daereungwon & Hwangnidan-gil'],
   ['/south-korea/gyeongju/wolseong-donggung-wolji/', 'Wolseong & Donggung/Wolji'],
   ['/south-korea/gyeongju/bulguksa-seokguram/', 'Bulguksa & Seokguram'],
+  ['/south-korea/gyeongju/namsan/', 'Namsan mountain trails'],
+  ['/south-korea/gyeongju/yangdong-village/', 'Yangdong Village'],
+  ['/south-korea/gyeongju/bomun-lake/', 'Bomun Lake'],
   ['/vietnam/hanoi/', 'Hanoi hub'],
   ['/vietnam/hanoi/hoan-kiem-old-quarter/', 'Hoan Kiem & Old Quarter'],
   ['/vietnam/hanoi/ba-dinh-thang-long/', 'Ba Dinh & Thang Long'],
@@ -208,7 +211,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore/.test(text(intro))) fail(`${label}: harness introduction must count all 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore.`);
+  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro))) fail(`${label}: harness introduction must count all 16 Canada routes and seven Gyeongju routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
     fail(`${label}: expected exactly one robots meta containing noindex.`);
@@ -359,27 +362,73 @@ for (const locale of expectedLocales) {
         ['/south-korea/gyeongju/', 'gyeongju'],
         ['/south-korea/gyeongju/daereungwon-hwangnidan-gil/', 'daereungwon-hwangnidan-gil'],
         ['/south-korea/gyeongju/wolseong-donggung-wolji/', 'wolseong-donggung-wolji'],
-        ['/south-korea/gyeongju/bulguksa-seokguram/', 'bulguksa-seokguram']
+        ['/south-korea/gyeongju/bulguksa-seokguram/', 'bulguksa-seokguram'],
+        ['/south-korea/gyeongju/namsan/', 'namsan'],
+        ['/south-korea/gyeongju/yangdong-village/', 'yangdong-village'],
+        ['/south-korea/gyeongju/bomun-lake/', 'bomun-lake']
       ]);
       if (attr(body, 'data-country') !== 'south-korea' || attr(body, 'data-city') !== 'gyeongju' || attr(body, 'data-page') !== pageIds.get(routePath)) fail(`Wrong Gyeongju responsive scope on ${locale.code} ${routePath}.`);
       if (!styles.includes('/css/gyeongju.css') || !styleHrefs.includes('/css/gyeongju.css?v=20261007-1')) fail(`Missing current Gyeongju responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'details').length) fail(`Missing visible Gyeongju FAQ controls on ${locale.code} ${routePath}.`);
       if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Gyeongju photo source on ${locale.code} ${routePath}.`);
       if (!bodyText.includes('CC BY') && !bodyText.includes('CC0') && !bodyText.includes('Public domain')) fail(`Missing readable Gyeongju photo license on ${locale.code} ${routePath}.`);
-      if (!links.some((href) => /visitkorea\.or\.kr/.test(href)) || !links.some((href) => href.includes('whc.unesco.org'))) fail(`Missing primary Gyeongju tourism and heritage sources on ${locale.code} ${routePath}.`);
+      const hasGyeongjuPrimary = links.some((href) => /visitkorea\.or\.kr/.test(href));
+      const hasRouteSource = routePath.endsWith('/bomun-lake/')
+        ? links.some((href) => href.includes('gyeongju.go.kr/tour/page.do?mnu_uid=4859'))
+        : links.some((href) => href.includes('whc.unesco.org'));
+      if (!hasGyeongjuPrimary || !hasRouteSource) fail(`Missing primary Gyeongju destination sources on ${locale.code} ${routePath}.`);
       const gyeongjuCss = fs.readFileSync(safeDistPath('/css/gyeongju.css'), 'utf8');
       const bodyWidthRule = cssRuleBlock(gyeongjuCss, 'body[data-city="gyeongju"]');
       if (!/min-width\s*:\s*0\s*;/.test(bodyWidthRule)) fail(`Gyeongju body does not shrink below the global 320px floor on ${locale.code} ${routePath}.`);
       if (!gyeongjuCss.includes('.gyeongju-area-hero > * { min-width: 0; }')) fail(`Gyeongju hero/grid children lack narrow-width protection on ${locale.code} ${routePath}.`);
+      if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(bodyWidthRule)) fail(`Gyeongju narrow-width protection must not conceal horizontal overflow on ${locale.code} ${routePath}.`);
+      if (!/\.tumulus-hero,\s*\.namsan-hero,\s*\.bomun-hero,\s*\.yangdong-hero\s*\{\s*grid-template-columns:\s*1fr\s*;/i.test(gyeongjuCss)) fail(`Gyeongju outer guides need a single-column narrow layout on ${locale.code} ${routePath}.`);
       if (locale.code === 'en') {
-        const requirements = routePath === '/south-korea/gyeongju/'
-          ? ['Two full days make a sound first visit', 'Daereungwon', 'Tohamsan', 'KTX Station']
-          : routePath.endsWith('/daereungwon-hwangnidan-gil/')
-            ? ['Cheonmachong', 'only tomb at Daereungwon open to visitors', 'Cheomseongdae', 'Hwangnidan-gil']
-            : routePath.endsWith('/wolseong-donggung-wolji/')
-              ? ['Wolji Gallery', '30,000', '21:30', 'Anapji']
-              : ['Dabotap', 'Seokgatap', '9 km by road', '3 km by hiking trail'];
+        const requirementsByRoute = new Map([
+          ['/south-korea/gyeongju/', ['Two full days make a sound first visit', 'Daereungwon', 'Tohamsan', 'KTX Station']],
+          ['/south-korea/gyeongju/daereungwon-hwangnidan-gil/', ['Cheonmachong', 'only tomb at Daereungwon open to visitors', 'Cheomseongdae', 'Hwangnidan-gil']],
+          ['/south-korea/gyeongju/wolseong-donggung-wolji/', ['Wolji Gallery', '30,000', '21:30', 'Anapji']],
+          ['/south-korea/gyeongju/bulguksa-seokguram/', ['Dabotap', 'Seokgatap', '9 km by road', '3 km by hiking trail']],
+          ['/south-korea/gyeongju/namsan/', ['Dongnamsan', 'Samneung', 'Chilbulam', 'Sinseonam', '7.5 km', '3\u20134 hours']],
+          ['/south-korea/gyeongju/yangdong-village/', ['14th\u201315th centuries', 'Seobaekdang', 'Mucheomdang', 'public paths', 'separate half-day']],
+          ['/south-korea/gyeongju/bomun-lake/', ['10 km east of downtown', '7 km', 'Bomun Water Stage', 'Mulneoul Bridge', 'modern tourism zone']]
+        ]);
+        const requirements = requirementsByRoute.get(routePath) || [];
         for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Gyeongju editorial QA is missing '${phrase}' on ${routePath}.`);
+      }
+      if (routePath.endsWith('/bomun-lake/')) {
+        const imageSources = nodes(document, 'img').map((node) => attr(node, 'src'));
+        const restoredPhoto = '/assets/images/korea-gyeongju-bomun-autumn.webp';
+        const schematic = '/assets/images/korea-gyeongju-bomun-route.svg';
+        if (!imageSources.includes(restoredPhoto) || !imageSources.includes(schematic)) fail(`Bomun must retain both the licensed lake photo and the original route schematic on ${locale.code}.`);
+        if (!links.some((href) => href === 'https://commons.wikimedia.org/wiki/File:Korea-Gyeongju-Bomun_Lake_in_autumn-01.jpg') || !bodyText.includes('Grete Howard') || !bodyText.includes('CC BY 3.0')) fail(`Bomun's restored photo needs its exact Commons source, creator and license on ${locale.code}.`);
+      }
+      const contrastRoute = routePath.endsWith('/namsan/') ? 'namsan' : routePath.endsWith('/yangdong-village/') ? 'yangdong' : routePath.endsWith('/bomun-lake/') ? 'bomun' : '';
+      if (contrastRoute && locale.code === 'en') {
+        const heroRule = cssRuleBlock(gyeongjuCss, `.${contrastRoute}-hero {`);
+        const kickerRule = cssRuleBlock(gyeongjuCss, `.${contrastRoute}-hero .eyebrow`);
+        const titleRule = cssRuleBlock(gyeongjuCss, `.${contrastRoute}-hero h1`);
+        const paragraphRule = cssRuleBlock(gyeongjuCss, `.${contrastRoute}-hero p`);
+        const background = cssHexProperty(heroRule, 'background');
+        const baseText = cssHexProperty(heroRule, 'color');
+        const kicker = cssHexProperty(kickerRule, 'color');
+        const title = cssHexProperty(titleRule, 'color') || baseText;
+        if (!background || !baseText || !kicker || !title || !paragraphRule) fail(`Gyeongju ${contrastRoute} hero is missing measurable text and background colors.`);
+        let contrastSurface = background;
+        if (contrastRoute === 'namsan') {
+          const patternRule = cssRuleBlock(gyeongjuCss, '.namsan-hero::before');
+          const patternColor = patternRule.match(/#([0-9a-f]{6})/i)?.[0];
+          const opacity = Number(patternRule.match(/opacity\s*:\s*([\d.]+)/i)?.[1]);
+          if (!patternColor || !Number.isFinite(opacity)) fail('Namsan pattern contrast needs its actual tint and opacity.');
+          contrastSurface = compositeHex(background, patternColor, opacity);
+        }
+        const paragraphHex = cssHexProperty(paragraphRule, 'color');
+        const paragraphAlpha = paragraphRule.includes('rgba(') ? rgbaColor(paragraphRule, '255,255,255') : null;
+        const paragraphForeground = paragraphHex || (paragraphAlpha ? compositeHex(contrastSurface, paragraphAlpha.hex, paragraphAlpha.alpha) : '');
+        if (!paragraphForeground) fail(`Gyeongju ${contrastRoute} hero paragraph color is not statically measurable.`);
+        const ratios = [contrastRatio(baseText, contrastSurface), contrastRatio(kicker, contrastSurface), contrastRatio(title, contrastSurface), contrastRatio(paragraphForeground, contrastSurface)];
+        if (ratios.some((ratio) => ratio < 4.5)) fail(`Gyeongju ${contrastRoute} hero text contrast falls below WCAG AA: ${ratios.map((ratio) => ratio.toFixed(2)).join(', ')}:1.`);
+        console.log(`Gyeongju ${contrastRoute} static hero text contrast passed (minimum ${Math.min(...ratios).toFixed(2)}:1).`);
       }
       continue;
     }
@@ -436,6 +485,10 @@ for (const locale of expectedLocales) {
       if (/Conditions change faster than an editorial page|Arrival contract|Three weak points to solve/i.test(bodyText)) fail(`Generic template filler remains on ${locale.code} ${routePath}.`);
       const longParagraphs = nodes(document, 'p').map((node) => text(node).replace(/\s+/g, ' ').trim()).filter((copy) => copy.length >= 100);
       if (new Set(longParagraphs).size !== longParagraphs.length) fail(`Repeated long Ninh Binh paragraph remains on ${locale.code} ${routePath}.`);
+      if (locale.code === 'zh-Hant' && routePath.endsWith('/hoa-lu-ancient-capital/')) {
+        if (!bodyText.includes('\u67e5\u770b\u884c\u524d\u6aa2\u67e5')) fail('Hoa Lu Traditional Chinese reader CTA must use practical pre-visit wording.');
+        if (bodyText.includes('\u65e5\u67f1\u5bfa') || !bodyText.includes('Nh\u1ea5t Tr\u1ee5 \u5bfa\uff08\u83ef\u95ad\uff09')) fail('Hoa Lu Traditional Chinese must preserve the Nh\u1ea5t Tr\u1ee5 proper name.');
+      }
       if (locale.code === 'en') {
         const requirements = routePath === '/vietnam/ninh-binh/'
           ? ['more than 30,000 years', '10th-century capital of Hoa Lu', 'Van Lam pier']
