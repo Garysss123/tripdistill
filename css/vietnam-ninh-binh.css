@@ -1,0 +1,111 @@
+/* Ninh Binh: water, limestone and temple-roof palette; scoped to this hub. */
+body[data-country="vietnam"][data-region="ninh-binh"] {
+  min-width: 0;
+  max-width: 100%;
+  --vn-dark: #183d3a;
+  --vn-accent: #d19a57;
+  --vn-accent-2: #4f8d83;
+  --vn-soft: #e8f0eb;
+  --vn-paper: #fbf8ee;
+  --vn-accent-text: #705029;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub,
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field {
+  min-width: 0;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-hero {
+  overflow: hidden;
+  border: 1px solid rgba(209, 154, 87, .46);
+  border-radius: .25rem 4.5rem .25rem .25rem;
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(119, 164, 147, .2), transparent 34%),
+    repeating-linear-gradient(168deg, transparent 0 3.2rem, rgba(232, 240, 235, .09) 3.25rem 3.35rem, transparent 3.4rem 5.1rem),
+    linear-gradient(125deg, #163a37, #274b43 62%, #27463e);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-hero h1 span {
+  max-width: 18ch;
+  color: #fff5dc;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-card {
+  min-width: 0;
+  border-color: rgba(79, 141, 131, .32);
+  border-radius: .2rem 1.8rem .2rem .2rem;
+  box-shadow: 0 .8rem 2rem rgba(24, 61, 58, .08);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-card:nth-child(3n + 2) {
+  background: linear-gradient(150deg, #fffdf5 0 73%, #e8f0eb 100%);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-card img,
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-image img {
+  filter: saturate(.96) contrast(1.03);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-hero {
+  min-width: 0;
+  border: 1px solid rgba(209, 154, 87, .45);
+  border-radius: .25rem 3.8rem .25rem .25rem;
+  background:
+    repeating-radial-gradient(ellipse at 7% 82%, transparent 0 2.4rem, rgba(209, 154, 87, .1) 2.45rem 2.55rem, transparent 2.6rem 4.6rem),
+    linear-gradient(125deg, #183d3a, #31564b);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-copy,
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-hero > *,
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-hero > * {
+  min-width: 0;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-copy h1 span {
+  color: #fff5dc;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-image img {
+  object-position: center 52%;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-decision-strip > article {
+  min-width: 0;
+  background: var(--vn-paper);
+  border-color: rgba(79, 141, 131, .28);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-route-step:nth-child(odd) {
+  background: #f3f1e6;
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-check {
+  min-width: 0;
+  border-top: 3px solid var(--vn-accent-2);
+  background: linear-gradient(155deg, #fffdf6, var(--vn-soft));
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-boundary {
+  background: linear-gradient(120deg, #183d3a, #32665c);
+}
+
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub a:focus-visible,
+body[data-country="vietnam"][data-region="ninh-binh"] .vn-field a:focus-visible {
+  outline: 3px solid #975f28;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1080px) {
+  body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-hero {
+    border-radius: .25rem 2.4rem .25rem .25rem;
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-country="vietnam"][data-region="ninh-binh"] .vn-hub-hero {
+    border-top-right-radius: 2.6rem;
+  }
+  body[data-country="vietnam"][data-region="ninh-binh"] .vn-field-hero {
+    border-top-right-radius: 2.4rem;
+  }
+}

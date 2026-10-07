@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "a boat route through the karst-water maze": "เส้นทางล่องเรือผ่านเขาวงกตสายน้ำและภูเขาหินปูนคาสต์",
+    "ngo dong river, three caves and a cliff pagoda": "แม่น้ำโงด่ง ถ้ำสามแห่ง และเจดีย์บนหน้าผา",
+    "the capital valley through its temple compounds": "หุบเขาเมืองหลวงเก่ากับกลุ่มวัดโบราณ"
+  }
+}

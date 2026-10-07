@@ -1,0 +1,15 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/ninh-binh/hang-mua-dragon-mountain/",
+    "/vietnam/ninh-binh/van-long-wetland/",
+    "/vietnam/ninh-binh/cuc-phuong-conservation/"
+  ],
+  "translations": {
+    "RIVER GORGES / TEMPLE VALLEY / KARST": "川が刻む峡谷・寺院の谷・カルスト地形",
+    "Ninh Binh is a limestone and river landscape with a long human history: UNESCO records cave evidence reaching back more than 30,000 years and the 10th-century capital of Hoa Lu.": "ニンビンは、石灰岩と川が織りなす景観に人々の長い営みが刻まれた土地です。ユネスコの記録によれば、洞窟で見つかった人類の痕跡は30,000年以上前にさかのぼり、10世紀にはホアルーに都が置かれました。",
+    "From Hanoi, compare current train and road options against the actual hotel and first…": "ハノイから向かう際は、実際の宿泊先と最初の立ち寄り先を踏まえ、鉄道と道路の最新の選択肢を比べましょう。"
+  }
+}

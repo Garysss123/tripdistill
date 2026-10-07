@@ -1,0 +1,12 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "a boat route through the karst-water maze": "カルストの水路を縫うボートルート",
+    "ngo dong river, three caves and a cliff pagoda": "ゴー・ドン川、三つの洞窟、崖の寺院",
+    "the capital valley through its temple compounds": "寺院群を巡り、古都の谷をたどる"
+  }
+}

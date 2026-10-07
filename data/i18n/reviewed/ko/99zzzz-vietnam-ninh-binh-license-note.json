@@ -1,0 +1,16 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/ninh-binh/",
+    "/vietnam/ninh-binh/trang-an-boat-complex/",
+    "/vietnam/ninh-binh/hoa-lu-ancient-capital/",
+    "/vietnam/ninh-binh/tam-coc-bich-dong/",
+    "/vietnam/ninh-binh/cuc-phuong-conservation/",
+    "/vietnam/ninh-binh/hang-mua-dragon-mountain/",
+    "/vietnam/ninh-binh/van-long-wetland/"
+  ],
+  "translations": {
+    ". Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 3.0.": "크기를 조정하고 화면 표시용으로 잘라 WebP로 변환했습니다. 수정본도 CC BY-SA 3.0 라이선스로 이용할 수 있습니다."
+  }
+}

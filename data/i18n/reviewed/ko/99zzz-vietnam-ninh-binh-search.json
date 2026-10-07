@@ -1,0 +1,12 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "a boat route through the karst-water maze": "카르스트 물길 미로를 가로지르는 보트 코스",
+    "ngo dong river, three caves and a cliff pagoda": "응오동강, 세 동굴, 절벽 위 사찰",
+    "the capital valley through its temple compounds": "사찰 단지를 중심으로 둘러보는 옛 수도 계곡"
+  }
+}

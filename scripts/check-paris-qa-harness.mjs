@@ -83,7 +83,11 @@ const expectedRoutes = [
   ['/vietnam/ha-giang/yen-minh-pine-forest/', 'Yên Minh & Pine Forest'],
   ['/vietnam/ha-giang/dong-van-old-quarter/', 'Đồng Văn Old Quarter'],
   ['/vietnam/ha-giang/lung-cu-flag-tower/', 'Lũng Cú Flag Tower'],
-  ['/vietnam/ha-giang/ma-pi-leng-nho-que/', 'Mã Pí Lèng & Nho Quế']
+  ['/vietnam/ha-giang/ma-pi-leng-nho-que/', 'Mã Pí Lèng & Nho Quế'],
+  ['/vietnam/ninh-binh/', 'Ninh Binh hub'],
+  ['/vietnam/ninh-binh/trang-an-boat-complex/', 'Trang An Boat Complex'],
+  ['/vietnam/ninh-binh/hoa-lu-ancient-capital/', 'Hoa Lu Ancient Capital'],
+  ['/vietnam/ninh-binh/tam-coc-bich-dong/', 'Tam Coc & Bich Dong']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -231,7 +235,7 @@ function assertHarness(html, label) {
   const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
   if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, South Korea, Hanoi, Sapa and Ha Giang scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, South Korea, Hanoi, Sapa, Ha Giang and Ninh Binh scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -254,7 +258,8 @@ function inspectLocalizedPage(manifest, record, label) {
   const hanoiIdentity = record.path.startsWith('/vietnam/hanoi/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hanoi';
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
   const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
-  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
+  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -399,6 +404,47 @@ for (const locale of expectedLocales) {
                   ? ['working transport landscape', 'legal public edge', 'after rain']
                   : ['1070', '1076', 'five courtyards', '58 Quoc Tu Giam'];
         for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Hanoi editorial QA is missing '${phrase}' on ${routePath}.`);
+      }
+      continue;
+    }
+    if (routePath.startsWith('/vietnam/ninh-binh/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const ninhBinhStyle = '/css/vietnam-ninh-binh.css?v=20261007-1';
+      if (attr(body, 'data-country') !== 'vietnam' || attr(body, 'data-region') !== 'ninh-binh') fail(`Wrong Ninh Binh route scope on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes(ninhBinhStyle)) fail(`Missing current Ninh Binh stylesheet on ${locale.code} ${routePath}.`);
+      const expectedFaqCount = routePath === '/vietnam/ninh-binh/' ? 6 : 3;
+      if (nodes(document, 'details').length !== expectedFaqCount) fail(`Expected ${expectedFaqCount} destination-specific Ninh Binh FAQ controls on ${locale.code} ${routePath}.`);
+      const commonsLinks = [...new Set(links.filter((href) => href.includes('commons.wikimedia.org')))];
+      if (commonsLinks.length < 3) fail(`Ninh Binh photo source credits are incomplete on ${locale.code} ${routePath}.`);
+      const tamCocCredit = nodes(document, 'li').find((node) => text(node).includes('Tycho (Shansov.net)'));
+      if (!tamCocCredit) fail(`Missing Tycho (Shansov.net) attribution on ${locale.code} ${routePath}.`);
+      const creditLinks = nodes(tamCocCredit, 'a').map((node) => attr(node, 'href'));
+      if (!creditLinks.includes('https://creativecommons.org/licenses/by-sa/3.0/')) fail(`Missing linked CC BY-SA 3.0 license on ${locale.code} ${routePath}.`);
+      const adaptationKey = '. Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 3.0.';
+      const visibleAdaptation = locale.code === 'en' ? adaptationKey : localeCatalogs[locale.code][adaptationKey];
+      if (!visibleAdaptation || !text(tamCocCredit).includes(visibleAdaptation)) fail(`Missing localized adaptation note on ${locale.code} ${routePath}.`);
+      const requiredSources = routePath === '/vietnam/ninh-binh/'
+        ? ['whc.unesco.org/en/list/1438', 'vietnam.travel/things-to-do/guide-boat-tours-ninh-binh', 'sodulich.ninhbinh.gov.vn']
+        : routePath.endsWith('/trang-an-boat-complex/')
+          ? ['whc.unesco.org/en/list/1438', 'vietnam.travel/things-to-do/guide-boat-tours-ninh-binh', 'trangandanhthang.vn/khu-du-lich-trang-an']
+          : routePath.endsWith('/hoa-lu-ancient-capital/')
+            ? ['whc.unesco.org/en/list/1438', 'sodulich.ninhbinh.gov.vn/en/culture-heritage/hoa-lu-ancient-capital']
+            : ['sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/tam-coc-bich-dong', 'trangandanhthang.vn/tam-coc-bich-dong'];
+      for (const source of requiredSources) if (!links.some((href) => href.includes(source))) fail(`Missing Ninh Binh primary source ${source} on ${locale.code} ${routePath}.`);
+      if (/Conditions change faster than an editorial page|Arrival contract|Three weak points to solve/i.test(bodyText)) fail(`Generic template filler remains on ${locale.code} ${routePath}.`);
+      const longParagraphs = nodes(document, 'p').map((node) => text(node).replace(/\s+/g, ' ').trim()).filter((copy) => copy.length >= 100);
+      if (new Set(longParagraphs).size !== longParagraphs.length) fail(`Repeated long Ninh Binh paragraph remains on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const requirements = routePath === '/vietnam/ninh-binh/'
+          ? ['more than 30,000 years', '10th-century capital of Hoa Lu', 'Van Lam pier']
+          : routePath.endsWith('/trang-an-boat-complex/')
+            ? ['official Trang An pier', 'separate from Tam Coc', 'current pier map']
+            : routePath.endsWith('/hoa-lu-ancient-capital/')
+              ? ['968', '1010', 'Nhat Tru Pagoda', 'stone sutra pillar']
+              : ['three caves', 'Hang Ca, Hang Hai and Hang Ba', '1774', 'Bich Dong'];
+        for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Ninh Binh editorial QA is missing '${phrase}' on ${routePath}.`);
       }
       continue;
     }
@@ -774,6 +820,32 @@ for (const gridSelector of ['.fr-contract', '.fr-regional-context > div', '.fr-r
   if (!responsiveGridRule.includes(gridSelector)) fail(`Shared France responsive guard omits ${gridSelector}.`);
 }
 if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(responsiveGridRule)) fail('Shared France grid corrections must not conceal horizontal overflow.');
+const ninhBinhCss = fs.readFileSync(safeDistPath('/css/vietnam-ninh-binh.css'), 'utf8');
+const ninhBinhScope = 'body[data-country="vietnam"][data-region="ninh-binh"]';
+const ninhBinhBodyWidthRule = cssRuleBlock(ninhBinhCss, ninhBinhScope);
+if (!/min-width\s*:\s*0\s*;/i.test(ninhBinhBodyWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(ninhBinhBodyWidthRule)) fail('Ninh Binh body does not shrink below the global 320px minimum.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(ninhBinhBodyWidthRule)) fail('Ninh Binh width correction must not hide horizontal overflow.');
+const ninhBinhHubHero = cssRuleBlock(ninhBinhCss, ninhBinhScope + ' .vn-hub-hero');
+const ninhBinhHubKicker = cssRuleBlock(ninhBinhCss, ninhBinhScope + ' .vn-hub-hero h1 span');
+const hubBase = ninhBinhHubHero.match(/linear-gradient\(125deg,\s*#[0-9a-f]{6},\s*#[0-9a-f]{6}\s+62%,\s*(#[0-9a-f]{6})\)/i)?.[1];
+const hubStripeOpacity = Number(ninhBinhHubHero.match(/rgba\(232,\s*240,\s*235,\s*([\d.]+)\)/i)?.[1]);
+const hubRadialOpacity = Number(ninhBinhHubHero.match(/rgba\(119,\s*164,\s*147,\s*([\d.]+)\)/i)?.[1]);
+const hubText = cssHexProperty(ninhBinhHubKicker, 'color');
+if (!hubBase || !Number.isFinite(hubStripeOpacity) || !Number.isFinite(hubRadialOpacity) || !hubText) fail('Unable to derive the Ninh Binh hub hero contrast surfaces from CSS.');
+const hubBackground = compositeHex(compositeHex(hubBase, '#e8f0eb', hubStripeOpacity), '#77a493', hubRadialOpacity);
+const hubContrast = contrastRatio(hubText, hubBackground);
+if (hubContrast < 4.5) fail(`Ninh Binh hub hero kicker contrast is ${hubContrast.toFixed(2)}:1, below WCAG AA 4.5:1.`);
+const ninhBinhFieldHero = cssRuleBlock(ninhBinhCss, ninhBinhScope + ' .vn-field-hero');
+const ninhBinhFieldKicker = cssRuleBlock(ninhBinhCss, ninhBinhScope + ' .vn-field-copy h1 span');
+const fieldBaseStops = [...ninhBinhFieldHero.matchAll(/linear-gradient\(125deg,\s*(#[0-9a-f]{6}),\s*(#[0-9a-f]{6})\)/ig)].flatMap((match) => [match[1], match[2]]);
+const ninhBinhFieldPatternOpacity = Number(ninhBinhFieldHero.match(/repeating-radial-gradient\([\s\S]*?rgba\(209,\s*154,\s*87,\s*([\d.]+)\)/i)?.[1]);
+const fieldText = cssHexProperty(ninhBinhFieldKicker, 'color');
+if (!fieldBaseStops.length || !Number.isFinite(ninhBinhFieldPatternOpacity) || !fieldText) fail('Unable to derive the Ninh Binh field hero contrast surfaces from CSS.');
+const fieldBase = fieldBaseStops.reduce((brightest, color) => luminance(color) > luminance(brightest) ? color : brightest);
+const fieldBackground = compositeHex(fieldBase, '#d19a57', ninhBinhFieldPatternOpacity);
+const fieldContrast = contrastRatio(fieldText, fieldBackground);
+if (fieldContrast < 4.5) fail(`Ninh Binh field hero kicker contrast is ${fieldContrast.toFixed(2)}:1, below WCAG AA 4.5:1.`);
+console.log(`Ninh Binh estimated dark-hero kicker contrast passed: hub ${hubContrast.toFixed(2)}:1, field ${fieldContrast.toFixed(2)}:1.`);
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],
@@ -839,6 +911,7 @@ if (!isLive) {
   const hanoiPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hanoi/')).length;
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
   const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
+  const ninhBinhPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ninh-binh/')).length;
   const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
   const meoVacHtml = fs.readFileSync(path.join(meoVacPath, 'index.html'), 'utf8');
   const meoVacDocument = parse(meoVacHtml);
@@ -847,7 +920,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);

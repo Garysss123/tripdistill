@@ -101,7 +101,11 @@ const routes = [
   { path: '/vietnam/ha-giang/yen-minh-pine-forest/', label: 'Yên Minh & Pine Forest' },
   { path: '/vietnam/ha-giang/dong-van-old-quarter/', label: 'Đồng Văn Old Quarter' },
   { path: '/vietnam/ha-giang/lung-cu-flag-tower/', label: 'Lũng Cú Flag Tower' },
-  { path: '/vietnam/ha-giang/ma-pi-leng-nho-que/', label: 'Mã Pí Lèng & Nho Quế' }
+  { path: '/vietnam/ha-giang/ma-pi-leng-nho-que/', label: 'Mã Pí Lèng & Nho Quế' },
+  { path: '/vietnam/ninh-binh/', label: 'Ninh Binh hub' },
+  { path: '/vietnam/ninh-binh/trang-an-boat-complex/', label: 'Trang An Boat Complex' },
+  { path: '/vietnam/ninh-binh/hoa-lu-ancient-capital/', label: 'Hoa Lu Ancient Capital' },
+  { path: '/vietnam/ninh-binh/tam-coc-bich-dong/', label: 'Tam Coc & Bich Dong' }
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -212,7 +216,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, South Korea and Vietnam responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, four Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, four Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes and four Ninh Binh routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

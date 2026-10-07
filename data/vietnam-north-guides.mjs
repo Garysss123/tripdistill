@@ -1598,3 +1598,206 @@ for (const guide of haGiang.guides) {
 const meoVacCreditGuide = haGiang.guides.find((guide) => guide.slug === 'meo-vac-du-gia');
 meoVacCreditGuide.kickerLabel = 'FRONTIER ROADS / KARST / VILLAGES';
 meoVacCreditGuide.image.editNote = 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0.';
+
+// Keep Ninh Binh's route pages grounded in the actual landscape and heritage
+// sequence. These are per-region data overrides; the shared renderer remains
+// untouched.
+const ninhBinh = vietnamNorthClusters.find((cluster) => cluster.slug === 'ninh-binh');
+const ninhBinhLegacyLabel = ninhBinh.label;
+const ninhBinhLegacySources = ninhBinh.sources;
+ninhBinh.reviewDate = '7 October 2026';
+ninhBinh.isoDate = '2026-10-07';
+ninhBinh.hubCss = '/css/vietnam-ninh-binh.css?v=20261007-1';
+ninhBinh.name = 'Ninh Binh';
+ninhBinh.label = 'RIVER GORGES / TEMPLE VALLEY / KARST';
+ninhBinh.tagline = 'Read the water routes and the old capital as separate chapters.';
+ninhBinh.hubIntro = 'Ninh Binh is a limestone and river landscape with a long human history: UNESCO records cave evidence reaching back more than 30,000 years and the 10th-century capital of Hoa Lu. Today the visitor routes are distinct. Trang An uses its own managed boat pier; Tam Coc follows the Ngo Dong River from Van Lam; Hoa Lu is a temple valley, not an intact palace city. Build days around one boat circuit or one land-history visit, then leave daylight for the rural transfer back.';
+ninhBinh.stay = 'Stay around Tam Coc when Van Lam pier, Bich Dong and village meals are the focus. Choose Ninh Binh City when rail or road arrival is the priority, but allow a separate vehicle transfer to the countryside. On arrival day, settle in and confirm tomorrow’s pier or temple pin instead of assuming the station and boat docks are walkably close.';
+ninhBinh.transfer = 'From Hanoi, compare current train and road options against the actual hotel and first stop; schedules and traffic change. Save each destination in Vietnamese, arrange the last rural pickup before setting out, and keep a half-day boat route separate from a long arrival transfer.';
+ninhBinh.presentation = {
+  conditionsKicker: 'Choose by landscape, not by checklist',
+  conditionsTitle: 'Three visits, three different paces',
+  conditionsLead: 'A managed cave-and-temple boat route, a river-and-pagoda day, and the old capital valley each start in a different place. Pick one main chapter per half day and leave the cross-country transfer visible.',
+  faqKicker: 'Ninh Binh planning questions',
+  faqTitle: 'Which pier, base and day sequence fit?'
+};
+ninhBinh.routeModelHeading = 'Keep each pier and heritage stop in its own sequence';
+ninhBinh.routeModelLead = 'This region is compact on a map but its boat routes do not share a dock. Use a single boat circuit as the day anchor, then add only a nearby land stop if the return transfer and daylight still work.';
+ninhBinh.sources = [
+  ['https://whc.unesco.org/en/list/1438/', 'UNESCO — Trang An Landscape Complex: natural and cultural heritage, archaeology and Hoa Lu'],
+  ['https://vietnam.travel/node/196', 'Vietnam Tourism — Ninh Binh: arrival options and landscape context'],
+  ['https://vietnam.travel/things-to-do/guide-boat-tours-ninh-binh', 'Vietnam Tourism — Ninh Binh boat routes and piers'],
+  ['https://sodulich.ninhbinh.gov.vn/en/culture-heritage/hoa-lu-ancient-capital-380.html', 'Ninh Binh Department of Tourism — Hoa Lu Ancient Capital'],
+  ['https://sodulich.ninhbinh.gov.vn/en/culture-heritage/nhat-tru-pagoda-384.html', 'Ninh Binh Department of Tourism — Nhat Tru Pagoda'],
+  ['https://sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/tam-coc-bich-dong-the-second-most-beautiful-cave-in-northern-vietnam-361.html', 'Ninh Binh Department of Tourism — Tam Coc and Bich Dong'],
+  ['https://sodulich.ninhbinh.gov.vn/en/cuisines/burned-rice-ninh-binh-390.html', 'Ninh Binh Department of Tourism — burned rice and local food']
+];
+
+const ninhBinhUpdates = {
+  'trang-an-boat-complex': {
+    motif: 'A boat route through the karst-water maze',
+    summary: 'Choose one official Trang An loop for its caves, temple landings and water-level view of the UNESCO landscape.',
+    sources: [
+      ['https://whc.unesco.org/en/list/1438/', 'UNESCO — Trang An Landscape Complex and archaeological landscape'],
+      ['https://vietnam.travel/things-to-do/guide-boat-tours-ninh-binh', 'Vietnam Tourism — Ninh Binh boat routes and piers'],
+      ['https://trangandanhthang.vn/khu-du-lich-trang-an/', 'Trang An Landscape Complex Management Board — Trang An visitor area']
+    ],
+    lead: 'Trang An is a mixed natural and cultural property, not just a scenic boat ride. Limestone towers rise above flooded valleys, while caves preserve archaeological evidence and the wider landscape includes villages and historic sites. Visitors see one managed route at a time: route length, cave passages and temple landings vary, so decide from the current pier map rather than expecting every feature on one trip.',
+    orientation: 'The official Trang An pier is separate from Tam Coc’s Van Lam pier. Read the current route board at Trang An, choose a loop for the group’s walking tolerance and cave comfort, then treat the boat ride as the main half-day activity. UNESCO’s deep-time archaeology explains the landscape; it is not an underground museum tour.',
+    arrival: 'Travel to the Trang An ticket and boat area as a dedicated rural transfer. Confirm the exact entrance and current route board before departure; do not navigate to Tam Coc by mistake. On busy dates or after rain, leave queue and weather margin, and agree on a pickup point before boarding.',
+    sequence: 'Choose a current loop at the official pier, secure loose items before cave passages, follow the boatperson’s boarding and landing instructions, and keep a calm pace at temples. Return to the agreed pickup before adding another stop.',
+    boundary: 'Stay seated while underway, keep hands and feet inside near low cave ceilings, carry rubbish back and leave temple landings clear. Do not touch cave surfaces or ask the rower to leave the managed route for a photograph.',
+    decisions: [
+      ['Start at the Trang An pier', 'Van Lam and Trang An are different boat operations; save the correct Vietnamese map pin and return pickup.'],
+      ['Pick one loop before boarding', 'Compare the posted caves, landings and walking demands; half a day for a single circuit is a realistic anchor.'],
+      ['Respect the water and temple stops', 'Stay seated, follow landing instructions, keep caves and ritual areas undisturbed, and carry waste out.']
+    ],
+    presentation: {
+      readingTitle: 'The boat reveals a lived-in heritage landscape',
+      routeTitle: 'From the route board to the last landing',
+      checksLabel: 'Before the boat transfer',
+      checksTitle: 'Loop, queue and cave conditions',
+      checksLead: 'Use the official pier for the current loop and departure process. Rain, demand and temporary access changes can affect both queue and cave conditions; keep the next transfer flexible.',
+      boundaryTitle: 'Leave the managed route undisturbed',
+      faqLabel: 'Trang An visit questions',
+      faqTitle: 'Which route and how much time?'
+    },
+    stages: [
+      ['Choose the loop', 'Read the current pier map for cave passages, temple landings and route effort. Do not select only from a third-party itinerary.'],
+      ['Board with care', 'Secure phones and bags, sit where directed and let the rower set pace through narrow cave sections.'],
+      ['Read the landscape', 'From the water, notice how karst walls, flooded valleys, cave mouths and village land meet. The boat route is one view into a much larger protected area.'],
+      ['Return before adding on', 'Meet the agreed pickup and check the remaining daylight before choosing a nearby land stop such as Hoa Lu.']
+    ],
+    risks: [
+      ['Route differences', 'Loops vary in caves, temple stops and time. Confirm the current route at the official pier and do not promise features that may be on another loop.'],
+      ['Low cave passages and wet landings', 'Remain seated where instructed and take temple steps slowly; bring a dry layer for rain and protect electronics before boarding.'],
+      ['Queue and rural pickup', 'Holiday demand and rural road traffic can push the return later. Keep the pickup point clear and avoid a timed onward train immediately after the ride.']
+    ],
+    duration: 'Set aside a half day for one boat loop, including the transfer, queue and landings. A full day can fit one nearby history stop; it is usually too tight to add Tam Coc’s separate boat route as well.',
+    combine: 'Pair with Hoa Lu only when the group has daylight and a confirmed transfer. Keep Tam Coc for another day because its boat route starts at a different pier and shows a different river landscape.',
+    verify: 'Check the official route board, operating status, queue conditions, forecast, pier entrance, boat instructions and return pickup on the day.'
+  },
+  'hoa-lu-ancient-capital': {
+    motif: 'The capital valley through its temple compounds',
+    summary: 'Read the Dinh and early Le memorial temples against the limestone enclosure of the 968–1010 capital valley.',
+    sources: [
+      ['https://whc.unesco.org/en/list/1438/', 'UNESCO — Hoa Lu in the Trang An cultural landscape'],
+      ['https://sodulich.ninhbinh.gov.vn/en/culture-heritage/hoa-lu-ancient-capital-380.html', 'Ninh Binh Department of Tourism — Hoa Lu Ancient Capital'],
+      ['https://sodulich.ninhbinh.gov.vn/en/culture-heritage/nhat-tru-pagoda-384.html', 'Ninh Binh Department of Tourism — Nhat Tru Pagoda']
+    ],
+    lead: 'Hoa Lu was the capital of Dai Co Viet from 968 until Ly Thai To moved the court to Thang Long in 1010. The visitor sees temple compounds and a protected valley, not an intact 10th-century palace city. Distinguish the later memorial buildings and active worship from the political geography that made this narrow basin defensible.',
+    orientation: 'Start at the Dinh Tien Hoang and Le Dai Hanh temple area, then use the mountains and narrow approaches to imagine a small capital enclosed by karst. Nhat Tru Pagoda lies about 300 metres north of the Le temple; its 10th-century stone sutra pillar is a separate stop, not part of a continuous palace ruin.',
+    arrival: 'Reach the Hoa Lu monument area by confirmed car, taxi, cycle or tour transfer and save the entrance pin. The temples are outside the city center; do not plan a walk from Ninh Binh station. If adding Nhat Tru, check opening and access before routing there.',
+    sequence: 'Visit the Dinh and Le temple compounds first, read the valley from the approaches, then add Nhat Tru Pagoda or one nearby landscape stop if opening and transfer time allow. Leave a quiet interval around worship rather than treating every courtyard as a photo set.',
+    boundary: 'The memorial temples are religious places as well as heritage sites. Dress modestly, keep voices low, ask before photographing worshippers and do not touch inscriptions, offerings or the stone sutra pillar.',
+    decisions: [
+      ['Begin at the Dinh and Le temples', 'The two memorial compounds are the clearest on-site anchors for the 10th-century court history.'],
+      ['Read the valley as the defense', 'The enclosing limestone and narrow approaches explain the setting better than an imagined complete palace plan.'],
+      ['Keep memorial sites active and sacred', 'Wear respectful clothing, lower your voice and leave ritual objects and worshippers undisturbed.']
+    ],
+    presentation: {
+      readingTitle: 'A capital remembered in a temple valley',
+      routeTitle: 'From the Dinh and Le temples to one context stop',
+      checksLabel: 'Before the heritage visit',
+      checksTitle: 'Opening, worship and the side route',
+      checksLead: 'Temple access, ceremonies and restoration may change the usable path. Confirm the correct entrance; verify Nhat Tru Pagoda separately if you intend to add its 10th-century stone pillar.',
+      boundaryTitle: 'Treat the compounds as places of worship',
+      faqLabel: 'Hoa Lu visit questions',
+      faqTitle: 'What remains, and what can fit in a half day?'
+    },
+    stages: [
+      ['Enter the valley', 'Notice the limestone walls and narrow approaches before focusing on the temple courtyards; geography is part of the capital’s story.'],
+      ['Visit the Dinh temple', 'Use the memorial compound to introduce Dinh Bo Linh and the founding of Dai Co Viet, while distinguishing the current structures from the vanished court.'],
+      ['Continue to the Le temple', 'Read the second memorial in the same valley, then add Nhat Tru Pagoda only if its separate access and opening fit the day.'],
+      ['Leave time for the return', 'Use a confirmed rural pickup and keep another boat circuit for a different day rather than rushing between piers.']
+    ],
+    risks: [
+      ['Memorial versus original fabric', 'The temples commemorate rulers but are not a preserved palace complex. Use the site interpretation and avoid calling every building 10th-century.'],
+      ['Ceremony and restoration', 'Events, repairs or ritual use can redirect visitors. Follow posted routes and check current access before adding Nhat Tru.'],
+      ['Heat and exposed stone', 'Courtyards have limited shade. Start earlier, bring water and avoid scheduling a long rural walk in the hottest part of the day.']
+    ],
+    duration: 'Allow three to five hours for the two temple compounds, interpretation and rural transfers. Add Nhat Tru Pagoda only after checking access; a relaxed full day leaves time to understand the valley without stacking another long boat route.',
+    combine: 'Trang An is the closest thematic pairing: the boat shows the wider karst-water landscape and Hoa Lu gives it a political history. Keep the route order flexible and use a driver or transfer confirmed for both stops.',
+    verify: 'Recheck temple and pagoda access, ceremony or restoration notices, transport pickup, weather, photography directions and current visitor conduct.'
+  },
+  'tam-coc-bich-dong': {
+    motif: 'Ngo Dong River, three caves and a cliff pagoda',
+    summary: 'Take the Van Lam boat route through the Ngo Dong River caves, then approach Bich Dong’s three pagoda levels as a separate visit.',
+    sources: [
+      ['https://sodulich.ninhbinh.gov.vn/en/leisure-ecotourism/tam-coc-bich-dong-the-second-most-beautiful-cave-in-northern-vietnam-361.html', 'Ninh Binh Department of Tourism — Tam Coc and Bich Dong'],
+      ['https://trangandanhthang.vn/tam-coc-bich-dong/', 'Trang An Landscape Complex Management Board — Tam Coc and Bich Dong'],
+      ['https://sodulich.ninhbinh.gov.vn/en/cuisines/burned-rice-ninh-binh-390.html', 'Ninh Binh Department of Tourism — burned rice and local food']
+    ],
+    lead: 'Tam Coc means “three caves”: the boat from Van Lam follows the Ngo Dong River through Hang Ca, Hang Hai and Hang Ba. The scenery changes with water level, weather and the rice crop, so no photograph can promise a particular field color. Bich Dong is a separate pagoda complex above the road: its lower, middle and upper levels climb into a limestone hillside, with the middle sanctuary partly set into the rock.',
+    orientation: 'Van Lam pier is the Tam Coc boat starting point; it is not the Trang An pier. Reach Bich Dong separately by a safe cycle or vehicle transfer and expect steps. The name Bich Dong was given in 1774, while the complex combines later religious architecture and active worship rather than one untouched ancient structure.',
+    arrival: 'Base in Tam Coc for local meals and easier access to Van Lam. Check the boat queue and route before setting out, then arrange a bicycle or vehicle to Bich Dong; do not assume the pagoda is an effortless walk from the pier. Use a helmet and a vehicle fallback if road shoulders, heat or rain make cycling uncomfortable.',
+    sequence: 'Visit Bich Dong during cooler hours if the group wants the stair climb, then use Van Lam for the separate boat trip, or reverse the order according to queue and weather. Leave time for a meal in Tam Coc; cơm cháy (crispy rice) and local goat dishes are regional specialties, but menus and preparation vary.',
+    boundary: 'Stay on public lanes and marked temple paths, never walk into rice plots, and ask before photographing residents. At Bich Dong, keep voices low and do not touch shrines or cave-temple surfaces.',
+    decisions: [
+      ['Use Van Lam for the Tam Coc boat', 'The Ngo Dong route and Trang An’s managed loops are separate experiences with different piers.'],
+      ['Treat Bich Dong as a stair visit', 'Its three levels climb the hillside; set a turnaround point that fits mobility, heat and access on the day.'],
+      ['Let the crop and river set expectations', 'Rice color, water and operating conditions change; keep farms private and do not plan around a guaranteed golden view.']
+    ],
+    presentation: {
+      readingTitle: 'A river route below a three-level pagoda',
+      routeTitle: 'Van Lam pier and Bich Dong are separate stops',
+      checksLabel: 'Before the river and temple day',
+      checksTitle: 'Water, weather, crop and stair access',
+      checksLead: 'River conditions and rice growth change the view; rain affects both boat operation and steep temple steps. Check the current pier process and choose a safe cycle or vehicle transfer to Bich Dong.',
+      boundaryTitle: 'Give farms and worshippers space',
+      faqLabel: 'Tam Coc and Bich Dong questions',
+      faqTitle: 'How do the boat caves and pagoda fit together?'
+    },
+    stages: [
+      ['Check the river and crop', 'Ask the current host about water, boat queues and what the fields look like this week. Avoid promising a color or season from an old photo.'],
+      ['Ride from Van Lam', 'Board at Tam Coc’s Van Lam pier for the Ngo Dong route and its three caves; follow the boat staff’s instructions and keep belongings secure.'],
+      ['Climb Bich Dong slowly', 'Transfer separately to the pagoda and take the lower, middle and upper levels at a pace suited to stairs and heat. Turn back when footing or access calls for it.'],
+      ['Return through Tam Coc', 'Choose a public rural lane, keep clear of farm work, then stop for a local meal before arranging the final pickup.']
+    ],
+    risks: [
+      ['Changing river and fields', 'Water level, rain and crop stage change the scenery and boat operation. Check current local conditions instead of relying on a seasonal photo.'],
+      ['Pagoda steps and cave surfaces', 'Stone steps can be uneven or slippery. Use appropriate footwear, keep a hand free and skip upper levels if footing is poor.'],
+      ['Narrow rural roads', 'Bikes share space with local traffic and farm activity. Use a helmet, avoid riding after dark and switch to a vehicle in rain or heavy heat.']
+    ],
+    duration: 'Allow a full day for the boat, a separate transfer and the Bich Dong levels at a relaxed pace. A half day can cover one of the two; trying to add Trang An as well means a second pier and a second boat queue.',
+    combine: 'Stay in the Tam Coc area for a local meal after the route. Cơm cháy and goat dishes are well-known Ninh Binh specialties; confirm what is actually available and how it is prepared rather than treating a fixed menu as guaranteed.',
+    verify: 'Check Van Lam boat operation and queue, river and weather conditions, current rice stage, Bich Dong access and stairs, cycling comfort, and a return vehicle after dark.'
+  }
+};
+
+for (const guide of ninhBinh.guides) {
+  const update = ninhBinhUpdates[guide.slug];
+  if (!update) continue;
+  Object.assign(guide, update);
+  guide.reviewDate = '7 October 2026';
+  guide.isoDate = '2026-10-07';
+  guide.countryCss = '/css/vietnam-ninh-binh.css?v=20261007-1';
+  guide.route = guide.stages.map((stage, index) => [['Arrive', 'Read', 'Deepen', 'Exit'][index], stage[0], stage[1]]);
+  guide.checks = guide.risks;
+  guide.faq = [
+    [`How much time should ${guide.name} receive?`, guide.duration],
+    [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
+    ['What should I verify before leaving?', guide.verify]
+  ];
+  guide.image.editNote = guide.image.license === 'CC BY-SA 3.0'
+    ? 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 3.0.'
+    : guide.image.license === 'CC BY-SA 4.0'
+      ? 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0.'
+      : 'Resized, display-cropped and converted to WebP; no other material edits.';
+}
+
+const ninhBinhLegacyMotifs = {
+  'trang-an-boat-complex': 'submerged karst and managed boat route',
+  'tam-coc-bich-dong': 'rice-season river and cliff pagoda',
+  'hoa-lu-ancient-capital': 'dynastic valley and temple axis'
+};
+for (const guide of ninhBinh.guides) {
+  if (ninhBinhUpdates[guide.slug]) continue;
+  guide.kickerLabel = ninhBinhLegacyLabel;
+  guide.sources ??= ninhBinhLegacySources;
+  guide.relatedMotifOverrides = ninhBinhLegacyMotifs;
+}
+
+const tamCocGuide = ninhBinh.guides.find((guide) => guide.slug === 'tam-coc-bich-dong');
+tamCocGuide.image.creator = 'Tycho (Shansov.net)';
+tamCocGuide.image.licenseUrl = 'https://creativecommons.org/licenses/by-sa/3.0/';
