@@ -9,6 +9,8 @@ const isoDate = '2026-09-19';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/france.css?v=20260919-1';
 const fieldCss = '/css/france-field.css?v=20260919-1';
+const parisRegionCountryCss = '/css/france.css?v=20261007-2';
+const parisRegionFieldCss = '/css/france-field.css?v=20261007-2';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
@@ -71,11 +73,17 @@ function uniqueSources(...groups) {
   });
 }
 
-function sharedHead({ title, description, route, image, type = 'article', field = false, paris = false }) {
+function sharedHead({ title, description, route, image, type = 'article', field = false, paris = false, countryCssHref = countryCss, fieldCssHref = fieldCss }) {
   return `<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
   <meta name="theme-color" content="#183f56"><meta property="og:type" content="${type}"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(image.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">${field ? `<link rel="stylesheet" href="${fieldCss}">` : ''}${paris ? '<link rel="stylesheet" href="/css/france-paris.css?v=20261006-1">' : ''}`;
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCssHref}">${field ? `<link rel="stylesheet" href="${fieldCssHref}">` : ''}${paris ? '<link rel="stylesheet" href="/css/france-paris.css?v=20261006-1">' : ''}`;
+}
+
+function regionalCss(clusterSlug) {
+  return clusterSlug === 'paris-region-day-trips'
+    ? { countryCssHref: parisRegionCountryCss, fieldCssHref: parisRegionFieldCss }
+    : {};
 }
 
 function shellStart(mainOpen) {
@@ -142,7 +150,7 @@ function guidePage(guide, cluster, guideIndex) {
     : `<section class="fr-regional-context"><header><span>Regional operating model</span><h2>Fit this route into ${escapeHtml(cluster.name)}, not into an isolated checklist.</h2><p>${escapeHtml(cluster.hubIntro)}</p></header><div><article><small>Base strategy</small><p>${escapeHtml(cluster.stay)}</p></article><article><small>Transfer system</small><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Season gate</small><p>${escapeHtml(cluster.season)}</p></article><article><small>Regional fallback</small><p>${escapeHtml(cluster.fallback)}</p></article></div></section>`;
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill France`, description, route: guide.url, image: guide.image, field: true })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script></head>
+<head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill France`, description, route: guide.url, image: guide.image, field: true, ...regionalCss(cluster.slug) })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script></head>
 <body data-page="fr-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="france" data-country="france" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content fr-field" data-fr-family="${escapeHtml(cluster.family)}" data-fr-layout="${escapeHtml(guide.layout)}" data-fr-variant="${variant}" data-fr-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="fr-breadcrumb" aria-label="Breadcrumb"><a href="/france/">France</a><span>→</span><a href="/france/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>→</span><strong>${escapeHtml(guide.name)}</strong></nav>
@@ -215,7 +223,7 @@ function hubPage(cluster, clusterIndex) {
     : `${hero.label} · ${hero.license}`;
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: `${cluster.name} Travel Guide ${cluster.slug === 'paris-region-day-trips' ? '–' : '—'} 3 Complete Routes | TripDistill`, description: metaDescription(`${cluster.hubIntro} ${cluster.transfer}`), route, image: hero })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
+<head>${sharedHead({ title: `${cluster.name} Travel Guide ${cluster.slug === 'paris-region-day-trips' ? '–' : '—'} 3 Complete Routes | TripDistill`, description: metaDescription(`${cluster.hubIntro} ${cluster.transfer}`), route, image: hero, ...regionalCss(cluster.slug) })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
 <body data-page="fr-${escapeHtml(cluster.slug)}" data-parent-page="france" data-country="france" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content fr-hub" data-fr-family="${escapeHtml(cluster.family)}" data-fr-hub-variant="${(clusterIndex % 8) + 1}">`)}
   <section class="fr-hub-hero"><div class="fr-hub-copy"><span class="fr-kicker">France route book · ${String(clusterIndex + 1).padStart(2, '0')}${cluster.slug === 'paris-region-day-trips' ? ` · reviewed ${escapeHtml(pageReviewDate)}` : ''}</span><h1>${escapeHtml(cluster.name)}</h1><p class="fr-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#route-files">Choose a route file</a><a class="button secondary" href="#operating-model">Read the operating model</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${escapeHtml(heroCaption)}</figcaption></figure><div class="fr-hub-index"><small>${escapeHtml(cluster.label)}</small><strong>3</strong><span>independent planning routes</span></div></section>

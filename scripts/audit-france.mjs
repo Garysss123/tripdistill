@@ -84,7 +84,9 @@ for (const route of routes) {
   const depth = route.split('/').filter(Boolean).length;
   const floor = route === '/france/' ? 7600 : depth === 2 ? 6500 : 7000;
   check(pageText.length >= floor, `${route}: rendered editorial copy below France floor (${pageText.length} < ${floor})`);
-  check(html.includes('/css/france.css?v=20260919-1'), `${route}: France CSS missing`);
+  const isParisRegionDayTrip = route.startsWith('/france/paris-region-day-trips/');
+  const expectedFranceCss = isParisRegionDayTrip ? '/css/france.css?v=20261007-2' : '/css/france.css?v=20260919-1';
+  check(html.includes(expectedFranceCss), `${route}: France CSS missing`);
   check(html.includes('/js/main.js?v=20260911-1'), `${route}: shared JS missing`);
   check(html.includes('"@type":"BreadcrumbList"') && html.includes('"@type":"FAQPage"'), `${route}: breadcrumb or FAQ JSON-LD missing`);
   check(route === '/france/' ? html.includes('"@type":"WebPage"') : html.includes('"@type":"Article"'), `${route}: page-level JSON-LD type missing`);
@@ -101,7 +103,8 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'fr-country-card')).length === 20, `${route}: expected 20 hub cards`);
     check(dom.filter((node) => classHas(node, 'fr-network-grid')).length === 1, `${route}: national operating model missing`);
   } else if (franceGuides.some((guide) => guide.url === route)) {
-    check(html.includes('/css/france-field.css?v=20260919-1'), `${route}: France field CSS missing`);
+    const expectedFieldCss = isParisRegionDayTrip ? '/css/france-field.css?v=20261007-2' : '/css/france-field.css?v=20260919-1';
+    check(html.includes(expectedFieldCss), `${route}: France field CSS missing`);
     check(dom.filter((node) => classHas(node, 'fr-purpose')).length === 1, `${route}: independent purpose panel missing`);
     check(dom.filter((node) => classHas(node, 'fr-choice-deck')).length === 1 && (html.match(/class="fr-choice-deck"/g) || []).length === 1, `${route}: choice deck missing`);
     check((html.match(/<li><span>0[1-4]<\/span><small>/g) || []).length === 4, `${route}: four route stages missing`);

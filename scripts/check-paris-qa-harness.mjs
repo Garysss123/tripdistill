@@ -75,6 +75,22 @@ function safeDistPath(urlPath) {
   return result;
 }
 
+function cssRuleBlock(css, selector, fromIndex = 0) {
+  const start = css.indexOf(selector, fromIndex);
+  if (start < 0) return '';
+  const open = css.indexOf('{', start);
+  if (open < 0) return '';
+  let depth = 0;
+  for (let index = open; index < css.length; index += 1) {
+    if (css[index] === '{') depth += 1;
+    if (css[index] === '}') {
+      depth -= 1;
+      if (depth === 0) return css.slice(start, index + 1);
+    }
+  }
+  return '';
+}
+
 function getManifest(html, label) {
   const document = parse(html);
   const manifests = nodes(document, 'script').filter((node) => attr(node, 'id') === 'qa-manifest');
@@ -177,10 +193,15 @@ for (const locale of expectedLocales) {
   for (const [routePath] of expectedRoutes) {
     const { record, document } = pagesByRoute.get(`${locale.code}${routePath}`);
     const styles = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => new URL(attr(node, 'href'), 'https://tripdistill.com').pathname);
+    const styleHrefs = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
     const isParisRoute = routePath.startsWith('/france/paris/');
     const isDayTripChild = ['/versailles-palace-estate/', '/fontainebleau-palace-forest/', '/giverny-monet-vernon/'].some((suffix) => routePath.endsWith(suffix));
     const expectedFieldCss = isParisRoute ? '/css/france-paris.css' : isDayTripChild ? '/css/france-field.css' : '/css/france.css';
     if (!styles.includes('/css/france.css') || !styles.includes(expectedFieldCss)) fail(`Missing route stylesheet ${expectedFieldCss} on ${locale.code} ${routePath}.`);
+    if (routePath.startsWith('/france/paris-region-day-trips/')) {
+      if (!styleHrefs.includes('/css/france.css?v=20261007-2')) fail(`Missing current day-trip responsive stylesheet version on ${locale.code} ${routePath}.`);
+      if (isDayTripChild && !styleHrefs.includes('/css/france-field.css?v=20261007-2')) fail(`Missing current day-trip field stylesheet version on ${locale.code} ${routePath}.`);
+    }
     const isHub = routePath === '/france/paris/' || routePath === '/france/paris-region-day-trips/';
     if (isHub) continue;
     if (!nodes(document, 'details').length) fail(`Missing visible FAQ controls on ${locale.code} ${routePath}.`);
@@ -257,6 +278,23 @@ const parisCssText = fs.readFileSync(safeDistPath('/css/france-paris.css'), 'utf
 if (/overflow-x\s*:\s*hidden/i.test(parisCssText)) fail('Paris CSS uses overflow-x:hidden, which can conceal responsive overflow.');
 if (!/body\[data-page="fr-paris"\]/.test(parisCssText) || !/body\[data-page\^="fr-paris-"\]/.test(parisCssText)) fail('Paris min-width/viewport rules are not scoped to Paris page bodies.');
 if (!/:focus-visible/.test(parisCssText) || !/outline\s*:\s*3px/i.test(parisCssText)) fail('Paris CSS must provide a visible keyboard focus indicator.');
+const franceCssText = fs.readFileSync(safeDistPath('/css/france.css'), 'utf8');
+const dayTripWidthRule = cssRuleBlock(franceCssText, 'body[data-region="paris-region-day-trips"]');
+if (!/min-width\s*:\s*0\s*;/i.test(dayTripWidthRule)) fail('Paris-region day-trip body and shells must be allowed to shrink below the global 320 px minimum.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(dayTripWidthRule)) fail('Day-trip width correction must not conceal horizontal overflow.');
+const franceFieldCssText = fs.readFileSync(safeDistPath('/css/france-field.css'), 'utf8');
+const narrowFieldMedia = franceFieldCssText.lastIndexOf('@media (max-width: 620px)');
+if (narrowFieldMedia < 0) fail('France field CSS is missing the narrow mobile breakpoint.');
+const choiceDeckSelector = 'body[data-region="paris-region-day-trips"] .fr-field[data-fr-variant] .fr-choice-deck';
+const choiceDeckRule = cssRuleBlock(franceFieldCssText, choiceDeckSelector, narrowFieldMedia);
+if (!/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(choiceDeckRule) || !/min-width\s*:\s*0\s*;/i.test(choiceDeckRule)) fail('Paris-region choice decks must collapse to one shrinkable column on narrow screens.');
+const choiceCardRule = cssRuleBlock(franceFieldCssText, `${choiceDeckSelector} article`, narrowFieldMedia);
+if (!/min-width\s*:\s*0\s*;/i.test(choiceCardRule) || !/max-width\s*:\s*100%\s*;/i.test(choiceCardRule)) fail('Paris-region choice cards must fit their narrow grid track.');
+const choiceTextRule = cssRuleBlock(franceFieldCssText, `${choiceDeckSelector} h2,`, narrowFieldMedia);
+if (!/overflow-wrap\s*:\s*anywhere\s*;/i.test(choiceTextRule) || !/min-width\s*:\s*0\s*;/i.test(choiceTextRule)) fail('Paris-region choice text must wrap safely inside its cards.');
+for (const [label, rule] of [['choice deck', choiceDeckRule], ['choice card', choiceCardRule], ['choice text', choiceTextRule]]) {
+  if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(rule)) fail(`Day-trip ${label} rule must not conceal horizontal overflow.`);
+}
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],

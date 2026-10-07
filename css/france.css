@@ -9,6 +9,13 @@
   --fr-line: rgba(23, 51, 66, .18);
 }
 
+/* Day-trip layouts must fit the usable viewport when a classic scrollbar takes 15 px. */
+body[data-region="paris-region-day-trips"],
+body[data-region="paris-region-day-trips"] .site-shell,
+body[data-region="paris-region-day-trips"] .page-content {
+  min-width: 0;
+}
+
 .fr-country,
 .fr-hub {
   --fr-accent: var(--fr-red);

@@ -228,3 +228,21 @@
   .fr-regional-context > div,.fr-field[data-fr-variant="9"] .fr-regional-context > div { grid-template-columns: 1fr; }
   .fr-field[data-fr-variant="8"] .fr-contract aside { display: block; }
 }
+
+/* Keep Paris-region choice cards inside the narrower content viewport on mobile. */
+@media (max-width: 620px) {
+  body[data-region="paris-region-day-trips"] .fr-field[data-fr-variant] .fr-choice-deck {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+  }
+  body[data-region="paris-region-day-trips"] .fr-field[data-fr-variant] .fr-choice-deck article {
+    min-width: 0;
+    max-width: 100%;
+  }
+  body[data-region="paris-region-day-trips"] .fr-field[data-fr-variant] .fr-choice-deck h2,
+  body[data-region="paris-region-day-trips"] .fr-field[data-fr-variant] .fr-choice-deck p {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
