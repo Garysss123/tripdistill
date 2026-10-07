@@ -24,6 +24,7 @@ assert.equal(checkedInYongduam.sourceUrl, 'https://commons.wikimedia.org/wiki/Fi
 assert.equal(checkedInYongduam.sourceTitle, '용두암.jpg');
 assert.equal(checkedInYongduam.creator, 'Ahn Beom-jin');
 assert.equal(checkedInYongduam.license, 'CC BY-SA 4.0');
+assert.ok(checkedInYongduam.editHistory.includes('no further per-image edit details'));
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map((item) => [item.name, item.value])); }
 function findAll(node, predicate, output = []) {
