@@ -1,5 +1,6 @@
 /* Gyeongju cluster: archaeological field notes, not another generic city template. */
 body[data-city="gyeongju"] {
+  min-width: 0;
   --gyeongju-ink: #17201d;
   --gyeongju-forest: #273c33;
   --gyeongju-moss: #667a58;
@@ -153,6 +154,12 @@ body[data-city="gyeongju"] {
 .gyeongju-area-hero .eyebrow { font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
 .gyeongju-area-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.35rem; }
 .gyeongju-area-meta span { padding: .48rem .72rem; border: 1px solid currentColor; border-radius: 99px; font-size: .74rem; font-weight: 750; opacity: .82; }
+
+/* Let the reviewed route shells and grid children shrink with a narrow viewport. */
+.gyeongju-hero,
+.gyeongju-area-hero,
+.gyeongju-hero-copy,
+.gyeongju-area-hero > * { min-width: 0; }
 
 /* 01 — tumulus day arc */
 .tumulus-hero { min-height: 36rem; display: grid; grid-template-columns: .9fr 1.1fr; color: #f6f0e4; background: #183029; }

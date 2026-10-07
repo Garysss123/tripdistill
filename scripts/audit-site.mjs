@@ -28,6 +28,12 @@ const unitedKingdomByRoute = new Map(unitedKingdomGuides.map((guide) => [guide.u
 const unitedKingdomHubRoutes = new Set(unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`));
 const italyByRoute = new Map(italyGuides.map((guide) => [guide.url, guide]));
 const italyHubRoutes = new Set(italyClusters.map((cluster) => `/italy/${cluster.slug}/`));
+const gyeongjuReviewedRoutes = new Set([
+  '/south-korea/gyeongju/',
+  '/south-korea/gyeongju/daereungwon-hwangnidan-gil/',
+  '/south-korea/gyeongju/wolseong-donggung-wolji/',
+  '/south-korea/gyeongju/bulguksa-seokguram/'
+]);
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
@@ -222,7 +228,7 @@ for (const absoluteUrl of publishedUrls) {
   if (!html.includes(adsenseJsVersion)) problems.push(`${relativePath}: stale or missing AdSense loader`);
 
   if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20260826-9')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
-  if (baseRoute.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20260826-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
+  if (gyeongjuReviewedRoutes.has(baseRoute) && !html.includes('/css/gyeongju.css?v=20261007-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
   if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);

@@ -71,6 +71,10 @@ const routes = [
   { path: '/south-korea/busan/haeundae-dongbaek/', label: 'Haeundae & Dongbaek' },
   { path: '/south-korea/busan/gwangalli-millak/', label: 'Gwangalli & Millak' },
   { path: '/south-korea/busan/yeongdo-taejongdae/', label: 'Yeongdo & Taejongdae' },
+  { path: '/south-korea/gyeongju/', label: 'Gyeongju hub' },
+  { path: '/south-korea/gyeongju/daereungwon-hwangnidan-gil/', label: 'Daereungwon & Hwangnidan-gil' },
+  { path: '/south-korea/gyeongju/wolseong-donggung-wolji/', label: 'Wolseong & Donggung/Wolji' },
+  { path: '/south-korea/gyeongju/bulguksa-seokguram/', label: 'Bulguksa & Seokguram' },
   { path: '/vietnam/hanoi/', label: 'Hanoi hub' },
   { path: '/vietnam/hanoi/hoan-kiem-old-quarter/', label: 'Hoan Kiem & Old Quarter' },
   { path: '/vietnam/hanoi/ba-dinh-thang-long/', label: 'Ba Dinh & Thang Long' },
@@ -173,7 +177,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>France, Canada, Seoul, Busan, Hanoi, Sapa and Ha Giang responsive QA harness</title>
+  <title>France, Canada, South Korea and Vietnam responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -199,8 +203,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">France, Canada, Seoul, Busan, Hanoi, Sapa and Ha Giang responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, eight Canada routes across Montreal and Quebec City–Charlevoix, nine Seoul routes, six Busan routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <h1 id="page-title">France, Canada, South Korea and Vietnam responsive QA harness</h1>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, eight Canada routes across Montreal and Quebec City—Charlevoix, nine Seoul routes, six Busan routes, four Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

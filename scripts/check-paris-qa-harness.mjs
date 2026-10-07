@@ -53,6 +53,10 @@ const expectedRoutes = [
   ['/south-korea/busan/haeundae-dongbaek/', 'Haeundae & Dongbaek'],
   ['/south-korea/busan/gwangalli-millak/', 'Gwangalli & Millak'],
   ['/south-korea/busan/yeongdo-taejongdae/', 'Yeongdo & Taejongdae'],
+  ['/south-korea/gyeongju/', 'Gyeongju hub'],
+  ['/south-korea/gyeongju/daereungwon-hwangnidan-gil/', 'Daereungwon & Hwangnidan-gil'],
+  ['/south-korea/gyeongju/wolseong-donggung-wolji/', 'Wolseong & Donggung/Wolji'],
+  ['/south-korea/gyeongju/bulguksa-seokguram/', 'Bulguksa & Seokguram'],
   ['/vietnam/hanoi/', 'Hanoi hub'],
   ['/vietnam/hanoi/hoan-kiem-old-quarter/', 'Hoan Kiem & Old Quarter'],
   ['/vietnam/hanoi/ba-dinh-thang-long/', 'Ba Dinh & Thang Long'],
@@ -196,9 +200,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 310 || manifest.pages?.length !== 310) fail(`${label}: expected 310 localized route records.`);
+  if (manifest.routeCount !== 330 || manifest.pages?.length !== 330) fail(`${label}: expected 330 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, Seoul, Busan, Hanoi, Sapa and Ha Giang scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, South Korea, Hanoi, Sapa and Ha Giang scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -217,10 +221,11 @@ function inspectLocalizedPage(manifest, record, label) {
   const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
   const busanIdentity = record.path.startsWith('/south-korea/busan/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'busan';
+  const gyeongjuIdentity = record.path.startsWith('/south-korea/gyeongju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'gyeongju';
   const hanoiIdentity = record.path.startsWith('/vietnam/hanoi/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hanoi';
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
   const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
-  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -309,6 +314,38 @@ for (const locale of expectedLocales) {
       if (locale.code === 'en' && routePath.endsWith('/yeongdo-taejongdae/')) {
         if (!bodyText.includes('Do not rely on a fixed weekly closure claim')) fail(`Danubi timetable uncertainty is not explicit on ${routePath}.`);
         if (!bodyText.includes('day-specific notices can change service')) fail(`Danubi live-check caveat is missing on ${routePath}.`);
+      }
+      continue;
+    }
+    if (routePath.startsWith('/south-korea/gyeongju/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const pageIds = new Map([
+        ['/south-korea/gyeongju/', 'gyeongju'],
+        ['/south-korea/gyeongju/daereungwon-hwangnidan-gil/', 'daereungwon-hwangnidan-gil'],
+        ['/south-korea/gyeongju/wolseong-donggung-wolji/', 'wolseong-donggung-wolji'],
+        ['/south-korea/gyeongju/bulguksa-seokguram/', 'bulguksa-seokguram']
+      ]);
+      if (attr(body, 'data-country') !== 'south-korea' || attr(body, 'data-city') !== 'gyeongju' || attr(body, 'data-page') !== pageIds.get(routePath)) fail(`Wrong Gyeongju responsive scope on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/gyeongju.css') || !styleHrefs.includes('/css/gyeongju.css?v=20261007-1')) fail(`Missing current Gyeongju responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Gyeongju FAQ controls on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Gyeongju photo source on ${locale.code} ${routePath}.`);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0') && !bodyText.includes('Public domain')) fail(`Missing readable Gyeongju photo license on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => /visitkorea\.or\.kr/.test(href)) || !links.some((href) => href.includes('whc.unesco.org'))) fail(`Missing primary Gyeongju tourism and heritage sources on ${locale.code} ${routePath}.`);
+      const gyeongjuCss = fs.readFileSync(safeDistPath('/css/gyeongju.css'), 'utf8');
+      const bodyWidthRule = cssRuleBlock(gyeongjuCss, 'body[data-city="gyeongju"]');
+      if (!/min-width\s*:\s*0\s*;/.test(bodyWidthRule)) fail(`Gyeongju body does not shrink below the global 320px floor on ${locale.code} ${routePath}.`);
+      if (!gyeongjuCss.includes('.gyeongju-area-hero > * { min-width: 0; }')) fail(`Gyeongju hero/grid children lack narrow-width protection on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const requirements = routePath === '/south-korea/gyeongju/'
+          ? ['Two full days make a sound first visit', 'Daereungwon', 'Tohamsan', 'KTX Station']
+          : routePath.endsWith('/daereungwon-hwangnidan-gil/')
+            ? ['Cheonmachong', 'only tomb at Daereungwon open to visitors', 'Cheomseongdae', 'Hwangnidan-gil']
+            : routePath.endsWith('/wolseong-donggung-wolji/')
+              ? ['Wolji Gallery', '30,000', '21:30', 'Anapji']
+              : ['Dabotap', 'Seokgatap', '9 km by road', '3 km by hiking trail'];
+        for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Gyeongju editorial QA is missing '${phrase}' on ${routePath}.`);
       }
       continue;
     }
@@ -702,6 +739,7 @@ if (!isLive) {
   const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/')).length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
+  const gyeongjuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/gyeongju/')).length;
   const hanoiPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hanoi/')).length;
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
   const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
@@ -713,7 +751,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/310 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -740,5 +778,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/310 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }
