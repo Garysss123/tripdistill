@@ -22,7 +22,7 @@ export const canadaImageManifest = {
   },
   "vancouver-north-shore/sea-to-sky-whistler": {
     "src": "/assets/images/canada-vancouver-north-shore-sea-to-sky-whistler.webp",
-    "alt": "Sea-to-Sky mountain landscape near Whistler",
+    "alt": "Misty granite slope, conifers and utility lines along the Sea-to-Sky drive",
     "source": "https://commons.wikimedia.org/wiki/File:Sea_to_sky_Hwy,_going_to_Whistler_by_car_-_panoramio.jpg",
     "label": "Sea to sky Hwy, going to Whistler by car - panoramio.jpg",
     "creator": "bynyalcin",

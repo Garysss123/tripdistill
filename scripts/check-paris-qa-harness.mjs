@@ -42,6 +42,10 @@ const expectedRoutes = [
   ['/canada/quebec-city-charlevoix/old-quebec/', 'Old Québec & the Fortified City'],
   ['/canada/quebec-city-charlevoix/montmorency-orleans/', 'Montmorency Falls & Île d’Orléans'],
   ['/canada/quebec-city-charlevoix/charlevoix-baie-saint-paul/', 'Charlevoix & Baie-Saint-Paul'],
+  ['/canada/vancouver-north-shore/', 'Vancouver & the North Shore hub'],
+  ['/canada/vancouver-north-shore/downtown-stanley-granville/', 'Vancouver Downtown, Stanley Park & Granville Island'],
+  ['/canada/vancouver-north-shore/north-shore-grouse-capilano/', 'Grouse, Capilano & Lynn Canyon'],
+  ['/canada/vancouver-north-shore/sea-to-sky-whistler/', 'Sea-to-Sky & Whistler'],
   ['/south-korea/seoul/', 'Seoul hub'],
   ['/south-korea/seoul/bukchon-seochon/', 'Bukchon & Seochon'],
   ['/south-korea/seoul/jongno-gwanghwamun/', 'Jongno & Gwanghwamun'],
@@ -104,6 +108,24 @@ function contrastRatio(foreground, background) {
   const first = luminance(foreground);
   const second = luminance(background);
   return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05);
+}
+
+function compositeHex(background, foreground, opacity) {
+  const base = background.match(/[0-9a-f]{2}/gi)?.map((part) => parseInt(part, 16));
+  const over = foreground.match(/[0-9a-f]{2}/gi)?.map((part) => parseInt(part, 16));
+  if (!base || !over || base.length !== 3 || over.length !== 3) fail(`Invalid compositing color ${background} over ${foreground}.`);
+  return `#${base.map((channel, index) => Math.round(channel * (1 - opacity) + over[index] * opacity).toString(16).padStart(2, '0')).join('')}`;
+}
+
+function cssHexProperty(cssBlock, property) {
+  return cssBlock.match(new RegExp(`(?:^|[;\\s])${property}\\s*:\\s*(#[0-9a-f]{6})`, 'i'))?.[1]?.toLowerCase() || '';
+}
+
+function rgbaColor(cssBlock, channels) {
+  const match = cssBlock.match(new RegExp(`rgba?\\(\\s*${channels}\\s*,\\s*([\\d.]+)\\s*\\)`, 'i'));
+  if (!match) fail(`Missing RGBA color with channels ${channels}.`);
+  const rgb = channels.split(',').map((value) => Number(value.trim()));
+  return { hex: `#${rgb.map((value) => value.toString(16).padStart(2, '0')).join('')}`, alpha: Number(match[1]) };
 }
 
 function fail(message) {
@@ -182,7 +204,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/12 Canada routes across Montreal, Toronto and Quebec City/.test(text(intro))) fail(`${label}: harness introduction must count all 12 Canada routes across Montreal, Toronto and Quebec City—Charlevoix.`);
+  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore/.test(text(intro))) fail(`${label}: harness introduction must count all 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
     fail(`${label}: expected exactly one robots meta containing noindex.`);
@@ -209,7 +231,7 @@ function assertHarness(html, label) {
   const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
   if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto, South Korea, Hanoi, Sapa and Ha Giang scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, South Korea, Hanoi, Sapa and Ha Giang scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -478,12 +500,13 @@ for (const locale of expectedLocales) {
       }
       continue;
     }
-    if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/') || routePath.startsWith('/canada/toronto/')) {
+    if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/') || routePath.startsWith('/canada/toronto/') || routePath.startsWith('/canada/vancouver-north-shore/')) {
       const isTorontoRoute = routePath.startsWith('/canada/toronto/');
-      const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : isTorontoRoute ? '/css/canada-toronto.css' : '/css/canada-quebec-city.css';
-      const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/' || routePath === '/canada/toronto/';
+      const isVancouverRoute = routePath.startsWith('/canada/vancouver-north-shore/');
+      const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : isTorontoRoute ? '/css/canada-toronto.css' : isVancouverRoute ? '/css/canada-vancouver.css' : '/css/canada-quebec-city.css';
+      const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/' || routePath === '/canada/toronto/' || routePath === '/canada/vancouver-north-shore/';
       if (!styles.includes('/css/canada.css') || !styles.includes(regionCss)) fail(`Missing Canada route stylesheet ${regionCss} on ${locale.code} ${routePath}.`);
-      const regionCssVersion = isTorontoRoute ? '20261007-2' : routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
+      const regionCssVersion = isTorontoRoute ? '20261007-2' : isVancouverRoute ? '20261007-1' : routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
       if (!styleHrefs.some((href) => href === `${regionCss}?v=${regionCssVersion}`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isCanadaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'details').length) fail(`Missing visible Canada FAQ controls on ${locale.code} ${routePath}.`);
@@ -495,6 +518,12 @@ for (const locale of expectedLocales) {
         if (!torontoCss.includes('body[data-page="ca-toronto"]') || !torontoCss.includes('body[data-page^="ca-toronto-"]') || !/min-width:\s*0/.test(torontoCss) || !torontoCss.includes('.ca-field-hero')) fail(`Toronto narrow-width CSS guard is missing on ${locale.code} ${routePath}.`);
         if (!/body\[data-page="ca-toronto"\]\s+\.ca-hub-hero\s+\.ca-kicker,\s*body\[data-page\^="ca-toronto-"\]\s+\.ca-field-hero\s+\.ca-kicker\s*\{\s*color:\s*#f4e4c1;\s*\}/i.test(torontoCss)) fail(`Toronto dark-hero kicker contrast treatment is missing on ${locale.code} ${routePath}.`);
         if (!isCanadaHub && classNodes(document, 'ca-route-step').length !== 4) fail(`Toronto child route must expose four route stages on ${locale.code} ${routePath}.`);
+      }
+      if (isVancouverRoute) {
+        const vancouverCss = fs.readFileSync(safeDistPath('/css/canada-vancouver.css'), 'utf8');
+        if (!vancouverCss.includes('body[data-page="ca-vancouver-north-shore"]') || !vancouverCss.includes('body[data-page^="ca-vancouver-north-shore-"]') || !/min-width:\s*0/.test(vancouverCss) || !/overflow-wrap:\s*anywhere/.test(vancouverCss)) fail(`Vancouver responsive min-width guard is missing on ${locale.code} ${routePath}.`);
+        if (!/body\[data-page="ca-vancouver-north-shore"\]\s+\.ca-hub-hero\s+\.ca-kicker,\s*body\[data-page\^="ca-vancouver-north-shore-"\]\s+\.ca-field-hero\s+\.ca-kicker\s*\{\s*color:\s*#f4e4c1;\s*\}/i.test(vancouverCss)) fail(`Vancouver dark-hero kicker contrast treatment is missing on ${locale.code} ${routePath}.`);
+        if (!isCanadaHub && classNodes(document, 'ca-route-step').length !== 4) fail(`Vancouver child route must expose four route stages on ${locale.code} ${routePath}.`);
       }
       continue;
     }
@@ -760,13 +789,50 @@ const mountRoyalEyebrowRule = cssRuleBlock(montrealCssText, 'body[data-page="ca-
 if (!/color\s*:\s*#f4e4c1\s*;/i.test(mountRoyalEyebrowRule)) fail('Mount Royal date/eyebrow must use the scoped warm neutral foreground.');
 if (contrastRatio('#f4e4c1', '#203c36') < 4.5) fail('Mount Royal eyebrow estimated contrast is below WCAG AA 4.5:1.');
 
+const vancouverCssText = fs.readFileSync(safeDistPath('/css/canada-vancouver.css'), 'utf8');
+const vancouverHubKicker = cssRuleBlock(vancouverCssText, 'body[data-page="ca-vancouver-north-shore"] .ca-hub-hero .ca-kicker,');
+const vancouverFieldKicker = cssRuleBlock(vancouverCssText, 'body[data-page^="ca-vancouver-north-shore-"] .ca-field-hero .ca-kicker');
+if (!/color\s*:\s*#f4e4c1\s*;/i.test(vancouverHubKicker) || !/color\s*:\s*#f4e4c1\s*;/i.test(vancouverFieldKicker)) fail('Vancouver dark-hero kickers must use the scoped Montreal warm-neutral foreground.');
+const vancouverHubRule = cssRuleBlock(vancouverCssText, 'body[data-page="ca-vancouver-north-shore"] .ca-hub-hero {');
+const vancouverHubOverlay = cssRuleBlock(vancouverCssText, 'body[data-page="ca-vancouver-north-shore"] .ca-hub-hero::before');
+const vancouverHubBase = cssHexProperty(vancouverHubRule, 'background');
+const hubGroupOpacity = Number(vancouverHubOverlay.match(/opacity\s*:\s*([\d.]+)/i)?.[1]);
+const hubTeal = rgbaColor(vancouverHubOverlay, '82,162,160');
+const hubWhite = rgbaColor(vancouverHubOverlay, '255,255,255');
+if (!vancouverHubBase || !Number.isFinite(hubGroupOpacity)) fail('Vancouver hub hero base/overlay colors are required for contrast validation.');
+let hubPatternColor = compositeHex(vancouverHubBase, hubTeal.hex, hubTeal.alpha);
+hubPatternColor = compositeHex(hubPatternColor, hubWhite.hex, hubWhite.alpha);
+const vancouverHubWorstBackground = compositeHex(vancouverHubBase, hubPatternColor, hubGroupOpacity);
+const genericFieldPattern = cssRuleBlock(fs.readFileSync(safeDistPath('/css/canada-field.css'), 'utf8'), '.ca-field-hero::before');
+const fieldPatternOpacity = Number(genericFieldPattern.match(/opacity\s*:\s*([\d.]+)/i)?.[1]);
+const vancouverFieldHeroRule = cssRuleBlock(vancouverCssText, 'body[data-page^="ca-vancouver-north-shore-"] .ca-field-hero {');
+const tintPercent = Number(vancouverFieldHeroRule.match(/color-mix\(in\s+srgb,\s*var\(--ca-family\)\s+([\d.]+)%/i)?.[1]);
+if (!Number.isFinite(fieldPatternOpacity) || !Number.isFinite(tintPercent)) fail('Vancouver field hero overlay colors are required for contrast validation.');
+const vancouverHeroSurfaces = [['hub', vancouverHubWorstBackground]];
+for (const [label, page] of [
+  ['downtown', 'ca-vancouver-north-shore-downtown-stanley-granville'],
+  ['North Shore', 'ca-vancouver-north-shore-north-shore-grouse-capilano'],
+  ['Sea-to-Sky', 'ca-vancouver-north-shore-sea-to-sky-whistler']
+]) {
+  const fieldTokens = cssRuleBlock(vancouverCssText, `body[data-page="${page}"] .ca-field {`);
+  const dark = cssHexProperty(fieldTokens, '--ca-family-dark');
+  const family = cssHexProperty(fieldTokens, '--ca-family');
+  if (!dark || !family) fail(`Vancouver ${label} hero palette is missing its actual family colors.`);
+  let background = compositeHex(dark, family, tintPercent / 100);
+  background = compositeHex(background, family, fieldPatternOpacity);
+  vancouverHeroSurfaces.push([label, background]);
+}
+const vancouverContrast = vancouverHeroSurfaces.map(([label, background]) => [label, background, contrastRatio('#f4e4c1', background)]);
+for (const [label, background, ratio] of vancouverContrast) if (ratio < 4.5) fail(`Vancouver ${label} kicker contrast on ${background} is ${ratio.toFixed(2)}:1, below WCAG AA 4.5:1.`);
+console.log(`Vancouver dark-hero kicker contrast passed: ${vancouverContrast.map(([label, background, ratio]) => `${label} ${ratio.toFixed(2)}:1 on ${background}`).join(', ')}.`);
+
 if (!isLive) {
   const parisPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris/')).length;
   const dayTripPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris-region-day-trips/')).length;
   const normandyPages = manifest.pages.filter((record) => record.path.startsWith('/france/normandy/')).length;
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
   const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
-  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/')).length;
+  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/') || record.path.startsWith('/canada/vancouver-north-shore/')).length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
   const gyeongjuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/gyeongju/')).length;

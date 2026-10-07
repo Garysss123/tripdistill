@@ -14,6 +14,7 @@ const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], [
 const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
 const pageIsoDate = (cluster) => cluster.isoDate || isoDate;
 const regionCss = (cluster, guide = null) => {
+  if (cluster.slug === 'vancouver-north-shore') return '<link rel="stylesheet" href="/css/canada-vancouver.css?v=20261007-1">';
   if (cluster.slug === 'montreal') {
     return guide?.slug === 'mount-royal-museums'
       ? '<link rel="stylesheet" href="/css/canada-montreal.css?v=20261007-3">'
@@ -74,14 +75,14 @@ function imageCredit(image) {
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
     : escapeHtml(image.license);
-  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
+  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
     ? ` This resized, display-cropped WebP adaptation is offered under the same ${escapeHtml(image.license)} terms.`
     : '';
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}${shareAlikeNotice}</li>`;
 }
 
 function heroImageCaption(image) {
-  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto)-/.test(image.src)) return escapeHtml(image.alt);
+  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore)-/.test(image.src)) return escapeHtml(image.alt);
   return `${escapeHtml(image.label)} · ${escapeHtml(image.license)}`;
 }
 
@@ -216,54 +217,71 @@ ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-fami
   <section class="section sources"><h2>Official sources and photo credits</h2><p>${sourceNote}</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewed} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
-function guidePageToronto(guide, cluster) {
+function guidePageCityCluster(guide, cluster) {
   const isMontreal = cluster.slug === 'montreal';
   const isToronto = cluster.slug === 'toronto';
+  const isVancouver = cluster.slug === 'vancouver-north-shore';
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const route = guide.url;
   const reviewed = pageReviewDate(cluster);
-  const heroKicker = isMontreal
+  const heroKicker = isVancouver
+    ? `${cluster.region} · ${guide.cardLabel} · reviewed ${reviewed}`
+    : isMontreal
     ? `${cluster.region} · Montreal route ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewed}`
     : isToronto
       ? `${cluster.region} · ${guide.cardLabel} · reviewed ${reviewed}`
     : `${cluster.region} · survey ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewed}`;
-  const planningSections = isMontreal
+  const planningSections = isVancouver
+    ? `<section class="ca-vancouver-brief"><div class="ca-vancouver-brief-intro"><span class="ca-section-label">Plan this route</span><h2>${escapeHtml(guide.planHeading)}</h2><p>${escapeHtml(guide.tradeoff)}</p></div><div class="ca-vancouver-quickfacts"><article><small>Getting there</small><p>${escapeHtml(guide.access)}</p></article><article><small>Time to allow</small><p>${escapeHtml(guide.duration)}</p></article><article><small>How to extend the day</small><p>${escapeHtml(guide.combine)}</p></article></div></section>`
+    : isMontreal
     ? `<section class="ca-montreal-brief"><div class="ca-montreal-brief-intro"><span class="ca-section-label">Plan this visit</span><h2>${escapeHtml(guide.planHeading)}</h2><p>${escapeHtml(guide.tradeoff)}</p></div><div class="ca-montreal-quickfacts"><article><small>Getting there</small><p>${escapeHtml(guide.access)}</p></article><article><small>Time to allow</small><p>${escapeHtml(guide.duration)}</p></article><article><small>How to extend the day</small><p>${escapeHtml(guide.combine)}</p></article></div></section>`
     : isToronto
       ? `<section class="ca-toronto-brief"><div class="ca-toronto-brief-intro"><span class="ca-section-label">Plan this route</span><h2>${escapeHtml(guide.planHeading)}</h2><p>${escapeHtml(guide.tradeoff)}</p></div><div class="ca-toronto-quickfacts"><article><small>Getting there</small><p>${escapeHtml(guide.access)}</p></article><article><small>Time to allow</small><p>${escapeHtml(guide.duration)}</p></article><article><small>Pair it with</small><p>${escapeHtml(guide.combine)}</p></article></div></section>`
     : `<section class="ca-decision-grid" aria-label="Planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
   <section class="ca-orientation"><div><span class="ca-section-label">Orientation</span><h2>Make the operating decision before adding distance.</h2><p>${escapeHtml(guide.tradeoff)}</p><p>${escapeHtml(guide.duration)}</p></div><aside><small>Access</small><p>${escapeHtml(guide.access)}</p><small>Combine carefully</small><p>${escapeHtml(guide.combine)}</p></aside></section>`;
-  const routeHeading = isMontreal
+  const routeHeading = isVancouver
+    ? `<div class="ca-section-heading ca-vancouver-route-heading"><span>Route sequence</span><h2>${escapeHtml(guide.routeHeading)}</h2><p>${escapeHtml(guide.verify)}</p></div>`
+    : isMontreal
     ? `<div class="ca-section-heading"><span>Route sequence</span><h2>${escapeHtml(guide.routeHeading)}</h2></div>`
     : isToronto
       ? `<div class="ca-section-heading ca-toronto-route-heading"><span>Route sequence</span><h2>${escapeHtml(guide.routeHeading)}</h2></div>`
     : `<div class="ca-section-heading"><span>Four-stage route</span><h2>A sequence that protects the return.</h2><p>${escapeHtml(guide.verify)}</p></div>`;
-  const fallbackSection = isMontreal
+  const fallbackSection = isVancouver
+    ? `<section class="ca-field-section ca-fallback-section ca-vancouver-fallback"><div class="ca-section-heading"><span>If the day changes</span><h2>${escapeHtml(guide.fallbackHeading)}</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p></div></section>`
+    : isMontreal
     ? `<section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>If the day changes</span><h2>Keep the visit worthwhile with a shorter outdoor section.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p></div></section>`
     : isToronto
       ? `<section class="ca-field-section ca-fallback-section ca-toronto-fallback"><div class="ca-section-heading"><span>If the day changes</span><h2>${escapeHtml(guide.fallbackHeading)}</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p></div></section>`
     : `<section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>Fallback logic</span><h2>The day still needs a useful shape when conditions change.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p><span>Recheck before leaving: ${escapeHtml(guide.verify)}</span></div></section>`;
-  const verifySection = isMontreal
+  const verifySection = isVancouver
+    ? `<section class="ca-field-section ca-vancouver-verify"><div class="ca-section-heading"><span>Before you go</span><h2>${escapeHtml(guide.verifyHeading)}</h2></div><p>${escapeHtml(guide.verify)}</p></section>`
+    : isMontreal
     ? `<section class="ca-field-section ca-montreal-verify"><div class="ca-section-heading"><span>Before you go</span><h2>Check the exact entrance and opening status.</h2></div><p>${escapeHtml(guide.verify)}</p></section>`
     : isToronto
       ? `<section class="ca-field-section ca-toronto-verify"><div class="ca-section-heading"><span>Before you go</span><h2>${escapeHtml(guide.verifyHeading)}</h2></div><p>${escapeHtml(guide.verify)}</p></section>`
     : '';
-  const checkHeading = isMontreal
+  const checkHeading = isVancouver
+    ? `<div class="ca-section-heading"><span>What can change the route</span><h2>Three checks for this place and this date.</h2></div>`
+    : isMontreal
     ? `<div class="ca-section-heading"><span>What can change the route</span><h2>Three practical checks for this day.</h2></div>`
     : isToronto
       ? `<div class="ca-section-heading"><span>What can change the route</span><h2>Three checks specific to this Toronto day.</h2></div>`
     : `<div class="ca-section-heading"><span>Failure points</span><h2>Three reasons to change the plan.</h2></div>`;
-  const actionLabel = isMontreal ? 'Check route details' : isToronto ? 'Review the practical checks' : 'Check the failure points';
-  const instrument = isMontreal ? '' : isToronto
+  const actionLabel = isVancouver ? 'Review the route checks' : isMontreal ? 'Check route details' : isToronto ? 'Review the practical checks' : 'Check the failure points';
+  const instrument = isVancouver
+    ? `<div class="ca-vancouver-instrument" aria-hidden="true"><span>${escapeHtml(guide.cardLabel)}</span><strong>0${guide.chapter}</strong><small>${escapeHtml(guide.instrument)}</small></div>`
+    : isMontreal ? '' : isToronto
     ? `<div class="ca-toronto-instrument" aria-hidden="true"><span>Toronto route</span><strong>0${guide.chapter}</strong><small>${escapeHtml(guide.instrument)}</small></div>`
     : `<div class="ca-instrument" aria-hidden="true"><span>${escapeHtml(guide.layout)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><small>${escapeHtml(guide.instrument)}</small></div>`;
-  const relatedEyebrow = isToronto ? 'Choose another Toronto day' : isMontreal ? 'More to explore' : 'Same survey sheet';
-  const relatedHeading = isMontreal ? 'More Montreal routes' : isToronto ? 'A different Toronto route' : `Continue within ${cluster.name}`;
-  const faqEyebrow = isMontreal || isToronto ? 'Questions for this route' : 'Planning answers';
+  const relatedEyebrow = isVancouver ? 'Choose another landscape' : isToronto ? 'Choose another Toronto day' : isMontreal ? 'More to explore' : 'Same survey sheet';
+  const relatedHeading = isVancouver ? 'Keep the next day on its own clock' : isMontreal ? 'More Montreal routes' : isToronto ? 'A different Toronto route' : `Continue within ${cluster.name}`;
+  const faqEyebrow = isVancouver || isMontreal || isToronto ? 'Questions for this route' : 'Planning answers';
   const faqSection = (!isMontreal || isToronto) && guide.faq.length
     ? `<section class="ca-field-section"><div class="ca-section-heading"><span>${escapeHtml(faqEyebrow)}</span><h2>${escapeHtml(guide.name)} FAQ</h2></div><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>`
     : '';
-  const sourceNote = isMontreal
+  const sourceNote = isVancouver
+    ? `Place history, route access and photo licensing were reviewed on ${reviewed}. Check live park notices, ferry and bus service, mountain operations and Highway 99 before travel.`
+    : isMontreal
     ? 'These sources describe the historic sites, public paths and visitor schedules. Museum, worship and park access have separate notices; check the page for the place you plan to enter.'
     : isToronto
       ? `Route history, collection details, transit and image licensing were reviewed on ${reviewed}. Station access, museum calendars, ferry routes and park conditions are separate; check the exact operator page for your date.`
@@ -287,7 +305,7 @@ ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-fami
 </main>${shellEnd()}</body></html>`;
 }
 function guidePage(guide, cluster) {
-  if (cluster.slug === 'toronto') return guidePageToronto(guide, cluster);
+  if (cluster.slug === 'toronto' || cluster.slug === 'vancouver-north-shore') return guidePageCityCluster(guide, cluster);
   return cluster.slug === 'montreal' ? guidePageMontreal(guide, cluster) : guidePageLegacy(guide, cluster);
 }
 
