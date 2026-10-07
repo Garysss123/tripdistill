@@ -4,7 +4,5 @@
   "routes": [
     "/france/"
   ],
-  "translations": {
-    "Normandy is three different travel systems, not a chain of nearby icons. Rouen is a compact rail city where a Gothic façade, civic memory and the Seine fit…": "諾曼第有三套不同的旅行系統，並非一串相鄰的地標。魯昂是適合搭火車遊覽的精巧城市；哥德式立面、城市記憶與塞納河可串成一段步行路線…"
-  }
+  "translations": {}
 }

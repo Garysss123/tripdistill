@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "The Loire is not one château district with interchangeable stops. Blois places four centuries of royal building inside a walkable town, while Chambord sits beyond the station in a forest estate. Amboise pairs a Loire promontory and Leonardo’s last home; Chenonceau crosses the Cher from its own rail stop. West of Tours, Villandry is a garden visit with a seasonal château calendar, and Azay-le-Rideau is a separate branch-line town. Choose the corridor before choosing the number of tickets.": "루아르강 유역은 서로 바꿔 끼울 수 있는 성들을 모아 둔 한 구역이 아닙니다. 블루아에서는 걷기 좋은 도시 안에 4세기에 걸친 왕실 건축이 층층이 남아 있지만, 샹보르는 역에서 더 들어간 숲 영지에 자리합니다. 앙부아즈에서는 루아르강 곶 위의 성과 레오나르도 다 빈치의 마지막 거처를 함께 볼 수 있으며, 슈농소성에는 자체 철도역에서 갈 수 있고 성의 회랑은 셰르강을 가로지릅니다. 투르 서쪽의 빌랑드리는 계절별 개관 일정에 맞춰 정원을 보러 가는 곳이며, 아제르리도는 별도의 지선 철도가 닿는 마을입니다. 입장권 수를 정하기 전에 먼저 이동 구간을 선택하세요.",
+    "Blois is an urban palace whose wings record changing dynasties; Chambord is a 1519 royal project surrounded by an estate. The 35-minute Rémi line 2 ride from Blois-Chambord station makes the pair possible, but the return timetable decides whether it is sensible.": "블루아는 시대마다 달라진 왕조를 드러내는 날개 건물의 도심 궁전이고, 샹보르는 영지에 둘러싸인 1519년 왕실 건축 사업입니다. 블루아-샹보르역에서 Rémi 2번 노선으로 35분이면 두 곳을 묶을 수 있지만, 적절한 일정인지는 귀환 시간표가 결정합니다.",
+    "Amboise’s château rises above a Loire town and its station; Clos Lucé is a 400 m walk away. Chenonceau is another rail stop: the station stands roughly 400 m from the estate ticket office, so the river château can be visited without inventing a long last mile.": "앙부아즈성은 루아르강 마을과 역 위쪽에 솟아 있고, 클로 뤼세까지는 400 m 걸어가면 됩니다. 슈농소성은 슈농소역(Chenonceaux)에서 접근합니다. 역에서 영지 매표소까지는 약 400 m이므로 강가의 성까지 먼 마지막 구간을 상정할 필요가 없습니다.",
+    "Villandry sells separate garden-only and château-plus-garden admissions; its garden calendar lasts longer than the château’s. Azay-le-Rideau pairs a French-Italian Renaissance interior with an eight-hectare water-framed park, but the station is 2.1 km away.": "빌랑드리는 정원 단독 입장권과 성·정원 통합 입장권을 따로 판매하며, 정원 개관 기간이 성보다 깁니다. 아제르리도는 프랑스와 이탈리아 르네상스 양식이 결합된 실내와 물에 둘러싸인 8헥타르 공원이 특징이지만, 역에서 2.1 km 떨어져 있습니다."
+  }
+}

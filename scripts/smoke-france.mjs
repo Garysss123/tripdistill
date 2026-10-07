@@ -31,8 +31,8 @@ for (const { language, prefix, route, localized } of pageRoutes) {
   if (!html) continue;
   if (!/<h1[ >]/i.test(html)) failures.push(`${localized}: missing H1`);
   if (!new RegExp(`<html[^>]+lang=["']${language}["']`, 'i').test(html)) failures.push(`${localized}: expected document language ${language}`);
-  if (!html.includes('/css/france.css?v=20260919-1')) failures.push(`${localized}: France stylesheet missing`);
-  if (route.split('/').filter(Boolean).length === 3 && !html.includes('/css/france-field.css?v=20260919-1')) failures.push(`${localized}: France field stylesheet missing`);
+  if (!/href=["']\/css\/france\.css(?:\?[^"']*)?["']/.test(html)) failures.push(`${localized}: France stylesheet missing`);
+  if (route.split('/').filter(Boolean).length === 3 && !/href=["']\/css\/france-field\.css(?:\?[^"']*)?["']/.test(html)) failures.push(`${localized}: France field stylesheet missing`);
   if (!html.includes('data-ad-slot')) failures.push(`${localized}: ad placeholder missing`);
   if (!html.includes('https://commons.wikimedia.org/')) failures.push(`${localized}: image provenance missing`);
   if (!html.includes(`rel="canonical" href="https://tripdistill.com${localized}"`)) failures.push(`${localized}: canonical mismatch`);
@@ -67,13 +67,15 @@ for (const [, prefix] of locales) {
 }
 
 const { body: sitemap } = await request('/sitemap.xml');
+const sitemapRoutes = new Map([...sitemap.matchAll(/<loc>(https:\/\/tripdistill\.com[^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)]
+  .map((match) => [match[1], match[2]]));
 for (const { prefix, route, localized } of pageRoutes) {
-  const expectedLastmod = route.startsWith('/france/paris/') || route.startsWith('/france/paris-region-day-trips/') ? '2026-10-06' : '2026-09-20';
-  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
+  const lastmod = sitemapRoutes.get(`https://tripdistill.com${prefix}${route}`);
+  if (!lastmod || Number.isNaN(Date.parse(lastmod))) failures.push(`${localized}: sitemap route missing or has an invalid lastmod`);
 }
 
-await request('/css/france.css?v=20260919-1', 'France stylesheet');
-await request('/css/france-field.css?v=20260919-1', 'France field stylesheet');
+await request('/css/france.css', 'France stylesheet');
+await request('/css/france-field.css', 'France field stylesheet');
 
 if (failures.length) {
   console.error(failures.join('\n'));

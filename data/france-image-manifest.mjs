@@ -185,7 +185,7 @@ export const franceImageManifest = {
   },
   "champagne/reims-cathedral-cellars": {
     "src": "/assets/images/france-champagne-reims-cathedral-cellars.webp",
-    "alt": "The sculpted façade of Reims Cathedral",
+    "alt": "Sculpted south-side buttresses of Notre-Dame de Reims Cathedral",
     "source": "https://commons.wikimedia.org/wiki/File:Panorama_view_of_notre_dame_de_reims.jpg",
     "label": "Panorama view of notre dame de reims.jpg",
     "creator": "danigmarx",
@@ -195,7 +195,7 @@ export const franceImageManifest = {
   },
   "champagne/epernay-avenue-vineyards": {
     "src": "/assets/images/france-champagne-epernay-avenue-vineyards.webp",
-    "alt": "Champagne vineyards near Épernay in northern France",
+    "alt": "Ornate entrance gate and brick façade of Château Perrier on Avenue de Champagne, Épernay",
     "source": "https://commons.wikimedia.org/wiki/File:Avenue_de_Champagne,_%C3%89pernay_(8132669246).jpg",
     "label": "Avenue de Champagne, Épernay (8132669246).jpg",
     "creator": "Michal Osmenda from Brussels, Belgium",
@@ -205,7 +205,7 @@ export const franceImageManifest = {
   },
   "champagne/troyes-southern-champagne": {
     "src": "/assets/images/france-champagne-troyes-southern-champagne.webp",
-    "alt": "Colorful half-timbered houses in the historic center of Troyes",
+    "alt": "Timber-framed shop façades along Rue Émile-Zola in Troyes",
     "source": "https://commons.wikimedia.org/wiki/File:Troyes_rue_Emile_Zola_maisons_pans_de_bois.jpg",
     "label": "Troyes rue Emile Zola maisons pans de bois.jpg",
     "creator": "Myrabella",

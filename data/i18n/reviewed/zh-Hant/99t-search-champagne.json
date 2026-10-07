@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "The Loire is not one château district with interchangeable stops. Blois places four centuries of royal building inside a walkable town, while Chambord sits beyond the station in a forest estate. Amboise pairs a Loire promontory and Leonardo’s last home; Chenonceau crosses the Cher from its own rail stop. West of Tours, Villandry is a garden visit with a seasonal château calendar, and Azay-le-Rideau is a separate branch-line town. Choose the corridor before choosing the number of tickets.": "羅亞爾河谷不是一個可把各站點互換安排的城堡區。布盧瓦在適合步行遊覽的城鎮中呈現四個世紀的王室建築，而香波堡則位於森林莊園內，離車站還有一段路。昂布瓦斯將羅亞爾河畔的高地與達文西的最後居所串在一起；雪儂梭則橫跨謝爾河，且有自己的火車站。杜爾以西的維朗德里適合安排庭園之旅，城堡開放日期依季節而異；阿宰勒里多則是另一座支線鐵路沿線的城鎮。先選定行程廊道，再決定要買幾張門票。",
+    "Blois is an urban palace whose wings record changing dynasties; Chambord is a 1519 royal project surrounded by an estate. The 35-minute Rémi line 2 ride from Blois-Chambord station makes the pair possible, but the return timetable decides whether it is sensible.": "布盧瓦是城鎮中的宮殿，各翼樓記錄了王朝更迭；香波堡則是 1519 年啟建、四周環繞莊園的王室計畫。從布盧瓦－香波站搭乘 Rémi 2 號線約 35 分鐘即可抵達，讓兩處能安排在同一天；但回程時刻表才決定這樣是否實際可行。",
+    "Amboise’s château rises above a Loire town and its station; Clos Lucé is a 400 m walk away. Chenonceau is another rail stop: the station stands roughly 400 m from the estate ticket office, so the river château can be visited without inventing a long last mile.": "昂布瓦斯城堡高踞在羅亞爾河畔城鎮及其車站之上；克洛呂斯城堡距此步行 400 m。雪儂梭是另一個火車站點：車站距莊園售票處約 400 m，因此不必為河上城堡額外安排一段很長的接駁路程。",
+    "Villandry sells separate garden-only and château-plus-garden admissions; its garden calendar lasts longer than the château’s. Azay-le-Rideau pairs a French-Italian Renaissance interior with an eight-hectare water-framed park, but the station is 2.1 km away.": "維朗德里分開販售庭園單獨門票，以及城堡與庭園聯票；庭園開放季節比城堡更長。阿宰勒里多將法義文藝復興式室內空間與一座以水景環繞的 8 公頃園區相結合，但車站距城堡 2.1 km。"
+  }
+}

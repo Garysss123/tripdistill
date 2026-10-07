@@ -223,21 +223,51 @@ export const franceCentralEastClusters = [
   }),
   c({
     slug: 'champagne',
-    name: 'Reims, Épernay & Champagne Country',
+    name: "Reims, Épernay & Champagne Country",
     region: 'Grand Est',
     band: 'valleys-east',
     family: 'cellar-reservation-book',
     label: 'Cellar and cathedral book',
     tagline: 'Reserve the cellar, respect the working landscape, protect the return.',
-    hubIntro: 'Champagne travel combines cathedral cities, working cellars, regulated tastings and vineyard villages. Reims and Épernay are rail-friendly bases, while rural producers and southern Champagne need appointments or a clear last mile. Alcohol tasting also changes who can drive.',
-    stay: 'Two nights support one city and one vineyard or second-city day. Reims offers the broadest rail and museum base; Épernay places the avenue and nearby vineyards closer; Troyes opens a separate southern circuit.',
-    transfer: 'High-speed and regional trains connect the main cities, but cellar houses, villages and vineyards have different appointments and local transport. Never build a rural tasting day around spontaneous taxis alone.',
-    season: 'Cellar visits operate year-round but schedules, harvest activity and village transport vary. Harvest is working time, not an open festival everywhere; winter offers quieter cities with shorter daylight.',
-    fallback: 'When a rural visit cancels, keep the city’s cathedral, museums and one confirmed house. If tasting is no longer appropriate, use architecture and vineyard landscape without treating consumption as compulsory.',
+    hubIntro: "UNESCO maps Champagne as a working chain, not one tasting strip: historic vineyards around Hautvillers, Aÿ and Mareuil-sur-Aÿ feed production and chalk cellars at Reims’ Saint-Nicaise Hill and Épernay’s Avenue de Champagne and Fort Chabrol. Reims is the cathedral-and-cellar city; Épernay puts the house architecture on one walkable avenue; Troyes opens a separate southern city-and-vineyard day.",
+    stay: "Base in Reims for the cathedral, Saint-Nicaise Hill and the broadest city choice; choose Épernay to put the 1.5 km Avenue de Champagne and its houses at the door; use Troyes for its timber-framed center and a separately planned Aube vineyard excursion. Moving bases is worthwhile only when the second landscape is a real priority.",
+    transfer: "Keep Reims Centre and Champagne-Ardenne TGV at Bezannes distinct: Grand Reims currently sends T1 or T2 from Gare Centre to Opéra-Cathédrale, and T2 toward Neufchâtel from the TGV station. Épernay and Troyes are different rail stops; rural producers and Côte des Bar villages need their own appointment and return plan. Recheck SNCF and local service on the travel date.",
+    season: "Cellar visits are booked experiences, not an always-open street activity. Harvest can bring vineyard work and appointment changes; shorter winter daylight makes village returns less forgiving. Use current house calendars and keep the city’s architecture or museum as a complete alternative in every season.",
+    fallback: "If a tasting or rural appointment falls through, the cathedral and collections in Reims, the Avenue and Château Perrier museum in Épernay, or Troyes’ old center and Cité du Vitrail remain full days. A vineyard view does not require alcohol; keep the driver sober and never enter working rows without permission.",
     sources: [
-      ['https://www.explore-grandest.com/en/champagne/', 'Explore Grand Est — official Champagne destination guide'],
-      ['https://www.champagne.fr/en', 'Comité Champagne — official appellation and responsible-visit context'],
-      ['https://www.ter.sncf.com/grand-est', 'TER Grand Est — official regional rail information']
+      [
+        "https://whc.unesco.org/en/list/1465/",
+        "UNESCO World Heritage Centre — Champagne Hillsides, Houses and Cellars"
+      ],
+      [
+        "https://www.champagne.fr/en/visit-champagne/the-champagne-region/champagne-wine-trails/reims-and-its-region",
+        "Comité Champagne — Reims and its region"
+      ],
+      [
+        "https://www.ter.sncf.com/grand-est",
+        "TER Grand Est — official regional rail information"
+      ],
+      [
+        "https://www.grandreims-mobilites.fr/fr/mMl-Arriver-dans-le-Grand-Reims.html",
+        "Grand Reims Mobilités — arriving in Reims"
+      ]
+    ],
+    countryCardIntro: "Three different Champagne landscapes: Reims’ cathedral and chalk-cellar hill, Épernay’s house-lined avenue, and Troyes with a separately planned Aube vineyard day.",
+    reviewDate: "7 October 2026",
+    reviewDateISO: "2026-10-07",
+    faq: [
+      [
+        "Why are Reims, Épernay and the vineyards grouped together?",
+        "UNESCO describes three connected ensembles: the historic vineyard supply area around Hautvillers, Aÿ and Mareuil-sur-Aÿ; Saint-Nicaise Hill in Reims; and Avenue de Champagne with Fort Chabrol in Épernay. The route pages split the city experiences instead of pretending this is one walk."
+      ],
+      [
+        "Can I visit Champagne without tasting?",
+        "Yes. Reims Cathedral, the chalk-cellar landscape, Épernay’s architecture and Château Perrier museum, Troyes’ old streets and stained glass all make substantial visits. If you do taste, choose a sober return before the appointment."
+      ],
+      [
+        "Can I make a vineyard visit from either city on foot?",
+        "No single vineyard route follows from the city name. Book a named producer or guided route, check its exact address and arrange the outbound and return transport before leaving Reims, Épernay or Troyes."
+      ]
     ],
     guides: [
       g({
@@ -246,35 +276,106 @@ export const franceCentralEastClusters = [
         instrument: 'Cathedral-to-crayère reservation spine',
         layout: 'ceremonial-city-spine',
         imageQuery: 'Reims Cathedral facade France Champagne',
-        imageAlt: 'The sculpted façade of Reims Cathedral',
-        purpose: 'Connect Reims’s cathedral and coronation history to one reserved cellar house, accounting for the distance between the center and the chalk-cellar districts.',
-        summary: 'Use the cathedral and Palais du Tau context in the center, then travel to one house whose tour language, time and tasting conditions are confirmed.',
+        imageAlt: "Sculpted south-side buttresses of Notre-Dame de Reims Cathedral",
+        purpose: "Read Reims as two linked but separate UNESCO landscapes: the cathedral and coronation center above ground, and the chalk quarries reused as cellars at Saint-Nicaise Hill. Put one booked house between them without making alcohol the point of the day.",
+        summary: "Start at Reims Cathedral, note that Palais du Tau is closed for renovation until 2027, then cross the city for one confirmed cellar tour or stay with the museums. The cathedral is not the TGV station, and the cellar requires its own reservation.",
         choices: [
           ['Cathedral and city history', 'Prioritize the cathedral, civic center and museums. This is a complete non-tasting day and the best option when cellar slots do not align.'],
           ['One major cellar house', 'Reserve a specific tour and build the day around its district. Cellar temperature, stairs and tasting rules belong in the plan.'],
           ['Reims plus vineyard edge', 'Use an arranged excursion to a nearby village or producer after a compact city morning. The rural pickup and designated driver must be explicit.']
         ],
-        access: 'Reims Centre station serves the core; Champagne-Ardenne TGV may require a tram or train connection. Many cellar houses are south or east of the cathedral center, so use the current urban route and exact visitor entrance.',
-        tradeoff: 'Two cellar tours can repeat production explanations and crowd out the cathedral. The route chooses one house and one historic layer, leaving comparison tasting or rural producers for another day.',
+        access: "For the center, Grand Reims lists T1 toward Hôpital Debré or T2 toward Champagne-Ardenne TGV from Reims Gare Centre to Opéra-Cathédrale. From Champagne-Ardenne TGV at Bezannes, take T2 toward Neufchâtel to Opéra-Cathédrale. Saint-Nicaise cellar visits begin at each house’s named reception, not at the cathedral.",
+        tradeoff: "A second cellar tour repeats the underground production layer and squeezes the city. Keep one house, then use the Cathedral, its towers if open, or a museum for the other half; a cellar visit can be enjoyed without tasting.",
+        imageCreditTitle: "South side of Reims Cathedral",
+        imageEditNote: "Resized, display-cropped and converted to WebP; shared under the source CC BY-SA 3.0 license. The source page credits danigmarx.",
+        imageCaption: "South side of Reims Cathedral",
+        siteContext: {
+          "label": "Reims in the UNESCO landscape",
+          "heading": "A coronation city above a monumental cellar hill.",
+          "intro": "Reims joins a civic and religious center to an industrial landscape built below ground. UNESCO identifies Saint-Nicaise Hill as one of the Champagne property’s three ensembles; the chalk quarries became part of the cellar network used by Champagne houses.",
+          "details": [
+            [
+              "The Cathedral",
+              "Notre-Dame de Reims anchors the city’s coronation history. Read the west-front sculpture from outside even if an interior, service or tower visit is unavailable."
+            ],
+            [
+              "The Tau closure",
+              "The former archbishop’s palace next door is closed for renovation until 2027. Use the official Cathedral calendar for its tower alternative rather than treating the museum as an open stop."
+            ],
+            [
+              "The cellar hill",
+              "Saint-Nicaise is south-east of the central Cathedral precinct. Tours descend into cool, sometimes stair-heavy chalk spaces; follow the named house entrance and access notes."
+            ]
+          ]
+        },
         stages: [
-          ['Enter through the correct station', 'Confirm whether the train ends at Reims Centre or Champagne-Ardenne TGV and complete the urban transfer before the first reservation.'],
-          ['Read the coronation center', 'Use the cathedral, exterior sculpture and nearby interpretation in a compact loop. Respect services and temporary access controls.'],
-          ['Travel to one booked cellar', 'Arrive at the named visitor reception, dress for cool underground conditions and follow the tour’s age, mobility and language rules.'],
-          ['Return without driving pressure', 'Use tram, bus, taxi or a designated driver and finish near the center. Leave time after tasting before the train and eat before more alcohol.']
+          [
+            "Choose the actual arrival station",
+            "From Reims Gare Centre, take T1 toward Hôpital Debré or T2 toward Champagne-Ardenne TGV to Opéra-Cathédrale. From Champagne-Ardenne TGV at Bezannes, take T2 toward Neufchâtel to the same stop; verify live departures."
+          ],
+          [
+            "Read the coronation center",
+            "Walk the Cathedral exterior and surrounding civic core. Palais du Tau is closed through 2027, so use the official towers page or choose a currently open museum; allow services and event controls to change entry."
+          ],
+          [
+            "Reserve one chalk-cellar visit",
+            "Cross to the named Saint-Nicaise house reception for a booked tour. Reims’ former chalk quarries are part of the UNESCO cellar landscape; confirm language, stairs, temperature, tour length and whether tasting is included."
+          ],
+          [
+            "Protect a sober return",
+            "Return by the confirmed tram, bus or arranged driver, eat and leave margin before the train. Anyone tasting should not drive; keep the central museum route as the alternative if a tour cancels."
+          ]
         ],
-        fallback: 'If the cellar cancels, deepen the cathedral and museum day or reserve a city-based tasting only through a current official provider. If cathedral access pauses, use the exterior and Musée Saint-Remi or another confirmed collection.',
+        fallback: "If the house cancels or access is unsuitable, stay above ground: the Cathedral, Musée Saint-Remi and other confirmed collections can carry a full day. Palais du Tau remains closed for renovation until 2027; its official page points visitors to the Cathedral towers, subject to current access.",
         watch: [
-          ['Cellars are cool and physical', 'Long stairs, uneven surfaces and low temperatures may affect visitors; check accessibility directly with the house.'],
-          ['TGV station assumptions cause delays', 'Champagne-Ardenne TGV is not the cathedral station. Build the connector into every timed booking.'],
-          ['Tasting needs a transport decision', 'Do not drive after alcohol. Confirm a sober driver, transit or tour before the first glass.']
+          [
+            "The two rail stations are not interchangeable",
+            "A ticket for Champagne-Ardenne TGV lands at Bezannes, not beside the Cathedral. Allow for T2 and recheck the direction and service on the day."
+          ],
+          [
+            "Cellar stairs and temperature matter",
+            "A tour may descend into cool chalk galleries and may not suit every mobility need. Ask the specific operator about step-free access, seating and an alternative before paying."
+          ],
+          [
+            "The Tau is closed",
+            "The official Palais du Tau page states closure until 2027. Do not send visitors to its doors; check the Cathedral’s tower calendar if that is a useful substitute."
+          ]
         ],
-        duration: 'Allow six to eight hours for cathedral context, meal and one cellar tour. A rural producer excursion or second house needs another half or full day.',
-        combine: 'Combine the center with one Reims cellar district. Keep Épernay’s avenue and vineyard villages for a separate day.',
-        verify: 'Check cathedral access, the cellar house reservation and language, Reims transit and the correct TGV or central station before departure.',
+        duration: "Allow six to eight hours for the cathedral precinct, meal and one booked cellar visit, including the urban transfer. A second house or arranged vineyard excursion deserves another half or full day.",
+        combine: "Keep the Cathedral and one Saint-Nicaise cellar together. Save Épernay’s avenue and vineyard villages for a separate day rather than adding another cross-city tasting.",
+        verify: "Check Cathedral entry or tower tickets, Palais du Tau status, the selected house’s reservation and tour language, its entrance and stairs, and the T1/T2 route from the exact rail station.",
+        faq: [
+          [
+            "Is Palais du Tau open?",
+            "No. Its official visitor page says the palace is closed for renovation until 2027 and recommends the Cathedral towers during the works. Check the Cathedral’s own calendar before planning the alternative."
+          ],
+          [
+            "Which station should I use for the Cathedral?",
+            "Reims Gare Centre is the central station. Champagne-Ardenne TGV is at Bezannes; Grand Reims currently lists T2 toward Neufchâtel to Opéra-Cathédrale. Confirm live service before a timed entry."
+          ],
+          [
+            "Do I have to taste during a cellar tour?",
+            "Not necessarily: tours and tasting formats vary by house and booking. Ask the operator what is included, and choose a sober way back before the visit. The Cathedral and museum route works without a cellar booking."
+          ]
+        ],
         sources: [
-          ['https://www.reims-tourisme.com/en/', 'Reims Tourism — official city and cellar planning'],
-          ['https://www.cathedrale-reims.com/', 'Notre-Dame de Reims Cathedral — official visitor information']
-        ]
+          [
+            "https://www.cathedrale-reims.fr/en/",
+            "Notre-Dame de Reims Cathedral — official visitor information"
+          ],
+          [
+            "https://www.palais-du-tau.fr/en/visit/visits-and-activities",
+            "Palais du Tau — current renovation and Cathedral-tower guidance"
+          ],
+          [
+            "https://grandreims-mobilites.fr/fr/mMl-Arriver-dans-le-Grand-Reims.html",
+            "Grand Reims Mobilités — current station-to-center routes"
+          ],
+          [
+            "https://www.taittinger.com/en/experiences",
+            "Taittinger — official cellar experiences at Saint-Nicaise Hill"
+          ]
+        ],
       }),
       g({
         slug: 'epernay-avenue-vineyards',
@@ -282,35 +383,102 @@ export const franceCentralEastClusters = [
         instrument: 'Appointment-and-driver ledger',
         layout: 'cellar-avenue-ledger',
         imageQuery: 'Epernay Avenue de Champagne vineyard France',
-        imageAlt: 'Champagne vineyards near Épernay in northern France',
-        purpose: 'Choose between an urban house visit and a rural producer route, then solve appointments and sober transport before arriving in Épernay.',
-        summary: 'The Avenue de Champagne is walkable from town; the vineyards are not a free-form extension. One booked house plus one safely reached village creates the useful day.',
+        imageAlt: "Ornate entrance gate and brick façade of Château Perrier on Avenue de Champagne, Épernay",
+        purpose: "Use Épernay’s walkable avenue to understand the public face of Champagne commerce, then decide whether a cellar tour, Château Perrier museum or separately arranged vineyard visit best fits the day.",
+        summary: "The Avenue de Champagne runs about 1.5 km and begins a five-minute walk from Épernay station. Its house façades and Château Perrier can make a complete city day; vineyard villages need a separate booking and sober transport plan.",
         choices: [
           ['Avenue and house tour', 'Stay in Épernay for one major house, the avenue and town. This is the clearest rail-based option.'],
           ['Small-producer appointments', 'Arrange visits in one village cluster with a driver, guide, bicycle plan or sober car. Appointments and distances determine the route.'],
           ['Landscape without a tasting chain', 'Use a guided walk, viewpoint or museum context and keep alcohol optional. This suits families, non-drinkers and active travelers.']
         ],
-        access: 'Épernay station is close to the center and avenue, but rural villages spread along both sides of the Marne. Confirm the exact producer address, appointment, parking or pickup and return before leaving town.',
-        tradeoff: 'Multiple appointments reduce flexibility and encourage unsafe rushing. The route gives up a long producer list so one house, one village cluster and a meal can be experienced responsibly.',
+        access: "Épernay tourism describes the avenue as a five-minute walk from the station and about 1.5 km long. Follow the public avenue on foot; a named cellar tour may use a separate entrance and appointment. Do not assume vineyards beyond town are part of the same walk.",
+        tradeoff: "A country producer circuit trades away the avenue’s architecture and Château Perrier museum. Choose either one urban cellar appointment plus a short avenue walk, or a pre-arranged rural cluster with a driver; the museum and street are strong non-tasting choices.",
+        imageCreditTitle: "Château Perrier entrance on Avenue de Champagne",
+        imageEditNote: "Resized, display-cropped and converted to WebP; original image credited to Michal Osmenda under CC BY 2.0.",
+        imageCaption: "Château Perrier entrance on Avenue de Champagne",
+        siteContext: {
+          "label": "Épernay’s avenue and underground city",
+          "heading": "A 1.5 km street built to show the trade.",
+          "intro": "Épernay’s Avenue de Champagne is both a walkable civic street and one of UNESCO’s selected commercial ensembles, alongside Fort Chabrol. Its façades and gardens show how Champagne houses presented a product whose storage and maturation happens below the chalk.",
+          "details": [
+            [
+              "Walk from the station",
+              "The local tourist office describes the avenue as a five-minute station walk. The full street is about 1.5 km; choose a return point rather than treating every house entrance as an open attraction."
+            ],
+            [
+              "Read the house frontage",
+              "Courtyards, formal façades and gardens tell a commercial story. Cellar tours are separate timed visits and must be booked with each house."
+            ],
+            [
+              "Use Château Perrier for depth",
+              "At 26 Avenue de Champagne, the former merchant’s home houses the regional wine and archaeology museum, with a collection that starts in geology and continues through archaeology and wine. Check its live hours."
+            ]
+          ]
+        },
         stages: [
-          ['Orient at Épernay station', 'Walk toward the avenue, identify the reserved house and establish the pickup or bicycle point for any rural segment.'],
-          ['Complete one urban appointment', 'Use the cellar tour to understand production and storage, then pause for food and water rather than stacking an immediate second tasting.'],
-          ['Commit to one village cluster', 'Travel only through the pre-arranged method. Keep appointments geographically close and respect working yards and private vineyards.'],
-          ['Return sober and early enough', 'Reach Épernay with a backup train or remain overnight. The driver should not participate in tastings, even when pours seem small.']
+          [
+            "Walk out from Épernay station",
+            "The tourism office places Avenue de Champagne about five minutes from the station. Start on foot, note the return route and decide which house or museum actually has a confirmed entry."
+          ],
+          [
+            "Follow the 1.5 km public avenue",
+            "Read the house architecture, gates, courtyards and gardens from the public street. Only enter a cellar reception with a booking or current visitor permission."
+          ],
+          [
+            "Choose one interior",
+            "Reserve one house tour or visit the Musée du Vin de Champagne et d’Archéologie Régionale at Château Perrier, number 26. The museum’s geology, archaeology and wine sequence gives the day a non-tasting anchor."
+          ],
+          [
+            "Add the countryside only on purpose",
+            "For a village visit, confirm the producer’s address, appointment, driver or tour and return before leaving Épernay. If that arrangement is missing, keep the complete day in town."
+          ]
         ],
-        fallback: 'If a producer cancels, remain in Épernay for the avenue, a confirmed house, museum or self-guided town route. Do not knock on unlisted cellar doors or enter vineyard rows as public trails.',
+        fallback: "If a house visit cancels, keep the avenue walk and check the current opening of the Musée du Vin de Champagne et d’Archéologie Régionale at Château Perrier, 26 avenue de Champagne. It interprets the region from geology and archaeology through wine; no tasting is needed.",
         watch: [
-          ['Appointments are real commitments', 'Small producers may be working and cannot absorb late arrivals. Reconfirm and cancel promptly if plans change.'],
-          ['Vineyards are working property', 'Use signed paths and public roads; avoid rows during operations and never treat harvest as a spectacle without permission.'],
-          ['Bicycle and alcohol conflict', 'Cycling still requires sobriety and road awareness. A guided bicycle product is not permission to over-taste.']
+          [
+            "The street is not a vineyard trail",
+            "Avenue de Champagne is urban. Nearby slopes and villages require a planned route; do not walk into working vineyard rows or private courtyards."
+          ],
+          [
+            "House doors are not all open",
+            "Tours, retail and tasting can operate on different booking rules. Check the exact house schedule and entrance rather than assuming the street-facing gate is a walk-in visitor door."
+          ],
+          [
+            "An appointment can outlast the train gap",
+            "Confirm tour duration and the final rail connection; an overnight is safer than an unplanned rural transfer after tasting."
+          ]
         ],
-        duration: 'Allow six to eight hours for Épernay plus one nearby village cluster. An avenue-only day needs four to six hours; several producer visits require an overnight and arranged transport.',
-        combine: 'Combine one Épernay house with one village or landscape activity. Keep Reims cathedral and Troyes for separate rail days.',
-        verify: 'Confirm every cellar appointment, tour language, designated transport, harvest or road restrictions and the final Épernay train.',
+        duration: "Allow four to six hours for the station, a section of the 1.5 km avenue and Château Perrier or one booked cellar visit. A rural producer cluster adds transport and appointment time; protect most of a day and the return.",
+        combine: "Pair one avenue visit with the museum or one cellar appointment. Use a separate day for Reims Cathedral or a vineyard village; do not stack multiple appointments across the Marne valley.",
+        verify: "Recheck the house’s named entrance, appointment and language, current museum opening at Château Perrier, whether any tasting is included, and the last train or booked rural return.",
+        faq: [
+          [
+            "Can I walk the Avenue de Champagne from the train?",
+            "Yes. Épernay Tourism places it about a five-minute walk from the station and describes the avenue as roughly 1.5 km long. A particular cellar tour may start at another gate, so follow its confirmation."
+          ],
+          [
+            "Does the avenue walk take me through vineyards?",
+            "No. The avenue is an urban heritage route. Vineyard villages and producers are outside that compact walk; book the address and transport, including a sober return, before leaving town."
+          ],
+          [
+            "What is a good non-tasting visit?",
+            "The Musée du Vin de Champagne et d’Archéologie Régionale at Château Perrier, 26 avenue de Champagne, connects local geology and archaeology with the wine landscape. Check its current opening and ticket details before you go."
+          ]
+        ],
         sources: [
-          ['https://www.epernay-tourisme.com/en/', 'Épernay Pays de Champagne tourism — official planning'],
-          ['https://www.champagne.fr/en/visit-champagne', 'Comité Champagne — official visiting and producer context']
-        ]
+          [
+            "https://www.epernay-tourisme.com/en/discover/avenue-de-champagne/",
+            "Épernay Tourism — Avenue de Champagne and Château Perrier museum"
+          ],
+          [
+            "https://www.epernay-tourisme.com/en/champagne-visit/producers-champagne-houses/avenue-de-champagne-epernay/",
+            "Épernay Tourism — houses and visitor appointments on the avenue"
+          ],
+          [
+            "https://whc.unesco.org/en/list/1465/",
+            "UNESCO — Avenue de Champagne and Fort Chabrol"
+          ]
+        ],
       }),
       g({
         slug: 'troyes-southern-champagne',
@@ -318,35 +486,106 @@ export const franceCentralEastClusters = [
         instrument: 'Timber-and-vine southern folio',
         layout: 'medieval-vine-folio',
         imageQuery: 'Troyes old town half timbered houses France',
-        imageAlt: 'Colorful half-timbered houses in the historic center of Troyes',
-        purpose: 'Give Troyes’s half-timbered city and stained-glass collections an independent day, adding southern Champagne only through a deliberate appointment or landscape route.',
-        summary: 'Troyes is not a consolation stop after Reims: its compact medieval streets, churches and museums support a complete city route before any vineyard transfer.',
+        imageAlt: "Timber-framed shop façades along Rue Émile-Zola in Troyes",
+        purpose: "Give Troyes’ timber-framed center, cathedral glass and Cité du Vitrail a complete city route; extend toward Montgueux or the Côte des Bar only when the appointment and rural return are arranged.",
+        summary: "Troyes’ historic center forms a recognizable Bouchon de Champagne outline, with Rue Émile-Zola’s timber façades and a major stained-glass collection at Hôtel-Dieu-Le-Comte. Côte des Bar is a separate road-and-appointment day, not a walk from the station.",
         choices: [
           ['Historic Troyes', 'Follow the “cork-shaped” center, cathedral and selected churches, using one museum or stained-glass collection as the indoor anchor.'],
           ['Textile and design context', 'Use Troyes’s industrial and outlet history selectively, keeping the historic center as a contrasting layer rather than a shopping transfer.'],
           ['Côte des Bar excursion', 'Arrange one southern producer or vineyard landscape route with transport and appointments. This is a separate rural contract from the city walk.']
         ],
-        access: 'Troyes station is walkable to the historic center. Côte des Bar villages lie much farther south and generally need a car, guide or arranged transfer; do not infer a rural route from the city’s Champagne name.',
-        tradeoff: 'A rural excursion removes time for several churches and museums. The route gives up outlet shopping or an additional producer so Troyes remains more than a lunch stop.',
+        access: "Walk from Troyes station into the historic center and keep a station-side exit in mind. The Cité du Vitrail is at Hôtel-Dieu-Le-Comte, 31 quai des Comtes de Champagne. Southern vineyard villages require a separately arranged car, driver or guided visit; check onward service and return.",
+        tradeoff: "Adding Côte des Bar means giving up several churches, lanes or collections in Troyes. Choose the compact city and its stained-glass interpretation, or arrange one rural producer and transport as the main event; do not treat both as casual half-day add-ons.",
+        imageCreditTitle: "Timber-framed façades on Rue Émile-Zola",
+        imageEditNote: "Resized, display-cropped and converted to WebP; shared under the source CC BY-SA 4.0 license. The source page credits Myrabella.",
+        imageCaption: "Timber façades on Rue Émile-Zola",
+        siteContext: {
+          "label": "Troyes, glass and the Aube vineyards",
+          "heading": "A timber-framed city with a separate rural horizon.",
+          "intro": "The city’s old center is known locally as the Bouchon de Champagne for its cork-like outline. Rue Émile-Zola preserves a clear street-level timber-house sequence; the cathedral and Cité du Vitrail shift the reading from façades to stained glass.",
+          "details": [
+            [
+              "Start with the street plan",
+              "Walk the old-center loop before adding a rural destination. Rue Émile-Zola, Ruelle des Chats and the Cathedral area each offer a different scale of the historic core."
+            ],
+            [
+              "Make glass the indoor anchor",
+              "The Cité du Vitrail at Hôtel-Dieu-Le-Comte, 31 quai des Comtes de Champagne, presents stained glass across periods, functions and styles. Its posted hours change by season."
+            ],
+            [
+              "Separate town from vineyard",
+              "The Comité Champagne places Montgueux about 15 km east of Troyes; the Côte des Bar lies on a more southerly rural trail. Confirm the exact place and transport rather than applying one city-walk plan to both."
+            ]
+          ]
+        },
         stages: [
-          ['Enter the cork-shaped center', 'Walk from the station through the western edge, identify the return route and begin with the market or central streets.'],
-          ['Read timber, church and glass', 'Connect cathedral and selected churches with a stained-glass or museum interior. Check religious closures rather than assuming every door is open.'],
-          ['Choose city depth or Côte des Bar', 'Continue through lanes and collections, or meet the booked rural transport. One choice should own the afternoon.'],
-          ['Return through a simple western line', 'Finish near the station side of the center or return from the Côte des Bar with enough road margin for the booked train.']
+          [
+            "Enter the Bouchon on foot",
+            "Walk from Troyes station into the cork-shaped old-center plan. Keep the westward return in view and use Rue Émile-Zola as a clear timber-façade street rather than searching for a single photo stop."
+          ],
+          [
+            "Read the Cathedral and its glass",
+            "Use the Cathedral precinct and one open church interior, checking services and current visitor access. The city’s stained-glass heritage is a subject in its own right, not a tasting-day accessory."
+          ],
+          [
+            "Choose the Cité or a vineyard transfer",
+            "For indoor depth, go to the Cité du Vitrail at Hôtel-Dieu-Le-Comte, 31 quai des Comtes de Champagne. For vineyards, arrange a named Montgueux or Côte des Bar destination and transport; those are different rural directions."
+          ],
+          [
+            "Return on a plan that survives",
+            "Check the seasonal museum closing time and leave margin for the station. A rural tasting day needs a sober driver or suitable guided transport and a pre-agreed return; keep the city loop if either is missing."
+          ]
         ],
-        fallback: 'If a rural appointment fails, use Troyes’s museums, cathedral and old streets. If churches close, the Cité du Vitrail or another current collection can carry the interpretation without an unscheduled drive.',
+        fallback: "If the rural appointment or road plan fails, stay in Troyes: the timber-framed center, cathedral and Cité du Vitrail give the day an independent historical and visual thread. The Cité changes its seasonal hours, so check the current official schedule.",
         watch: [
-          ['Church access changes around services', 'Keep the street and museum route useful even when an interior pauses.'],
-          ['Côte des Bar is not suburban Troyes', 'Road distance and sparse transit require a vehicle and sober-driver plan.'],
-          ['Outlet districts consume time', 'If shopping is a priority, treat it as the main second block rather than a quick stop between heritage sites.']
+          [
+            "Seasonal museum hours change",
+            "The Cité du Vitrail publishes different date ranges and opening hours. Confirm the schedule for your day and do not rely on a generic timetable."
+          ],
+          [
+            "The Bouchon is a city shape, not a vineyard route",
+            "Montgueux and Côte des Bar have different locations and transport needs. A map pin called Champagne does not make a village walkable from Troyes."
+          ],
+          [
+            "Churches may pause for services",
+            "Keep the exterior, lanes and museum route useful if an interior is closed; check local access before crossing the city for one door."
+          ]
         ],
-        duration: 'Allow five to seven hours for Troyes and a full day for a city-plus-Côte des Bar itinerary. Rural appointments work best with an overnight.',
-        combine: 'Combine Troyes with one southern Champagne appointment or nearby lake only on a planned road day. Keep Reims and Épernay on their own northern corridor.',
-        verify: 'Check Troyes museum and church access, any Côte des Bar appointment, road conditions, responsible transport and the final train.',
+        duration: "Allow five to seven hours for the historic core, a selected church or cathedral visit and the Cité du Vitrail. A Côte des Bar producer excursion needs a separately planned full day and may be more useful with an overnight.",
+        combine: "Combine Rue Émile-Zola, the cathedral area and Cité du Vitrail within Troyes. Add Montgueux or Côte des Bar only with a named destination, confirmed appointment and arranged driver; keep Reims and Épernay for separate rail days.",
+        verify: "Check the cathedral’s current entry, Cité du Vitrail seasonal hours and ticket, church service closures, the rural producer’s exact location, sober transport and the return train.",
+        faq: [
+          [
+            "Can I add a Côte des Bar cellar on foot from Troyes?",
+            "No. Treat the Côte des Bar as a rural excursion: name the producer, reserve, and arrange both directions with a sober driver or suitable guided transport before you depart."
+          ],
+          [
+            "What is the Cité du Vitrail?",
+            "It is the Aube department’s stained-glass center at Hôtel-Dieu-Le-Comte, 31 quai des Comtes de Champagne. The permanent exhibition covers windows from different periods, functions and styles; seasonal opening hours change."
+          ],
+          [
+            "Is Troyes worth a day without Champagne tasting?",
+            "Yes. Use the Bouchon-shaped old center, timber-framed Rue Émile-Zola, the Cathedral precinct and the Cité du Vitrail as a self-contained city day. The vineyards are a separate choice, not a requirement."
+          ]
+        ],
         sources: [
-          ['https://en.troyeslachampagne.com/', 'Troyes La Champagne tourism — official city guide'],
-          ['https://www.lacotedesbar.com/en/', 'Côte des Bar tourism — official southern Champagne planning']
-        ]
+          [
+            "https://en.troyeslachampagne.com/cultural-heritage/cite-du-vitrail/",
+            "Troyes Champagne Tourism — Cité du Vitrail, access and seasonal hours"
+          ],
+          [
+            "https://www.champagne.fr/en/visit-champagne/the-champagne-region/champagne-wine-trails/cote-des-bar",
+            "Comité Champagne — Côte des Bar and Troyes landscape"
+          ],
+          [
+            "https://en.troyeslachampagne.com/",
+            "Troyes Champagne Tourism — official city and heritage information"
+          ],
+          [
+            "https://whc.unesco.org/en/list/1465/",
+            "UNESCO — historic Champagne vineyard landscapes"
+          ]
+        ],
       })
     ]
   }),

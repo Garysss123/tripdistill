@@ -4,7 +4,5 @@
   "routes": [
     "/france/"
   ],
-  "translations": {
-    "Normandy is three different travel systems, not a chain of nearby icons. Rouen is a compact rail city where a Gothic façade, civic memory and the Seine fit…": "นอร์ม็องดีประกอบด้วยระบบการเดินทางสามแบบที่แตกต่างกัน ไม่ใช่ชุดสถานที่เด่นที่อยู่ใกล้กัน รูอ็องเป็นเมืองรถไฟขนาดกะทัดรัดที่สามารถเดินชมอาสนวิหารกอทิก ความทรงจำของเมือง และแม่น้ำแซนได้ในเส้นทางเดียว…"
-  }
+  "translations": {}
 }

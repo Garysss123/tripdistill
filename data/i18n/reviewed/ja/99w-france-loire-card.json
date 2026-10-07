@@ -4,7 +4,5 @@
   "routes": [
     "/france/"
   ],
-  "translations": {
-    "The Loire is not one château district with interchangeable stops. Blois places four centuries of royal building inside a walkable town, while Chambord sits…": "ロワール渓谷は、城の立ち寄り先を入れ替えても同じように楽しめる地域ではありません。ブロワでは徒歩で回れる町の中に4世紀にわたる王室建築の変遷が残り、シャンボールは…"
-  }
+  "translations": {}
 }
