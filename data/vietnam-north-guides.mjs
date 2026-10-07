@@ -1252,6 +1252,7 @@ Object.assign(sapa, {
     conditionsTitle: 'Give the summit and long road days their own time.',
     conditionsLead: 'Fansipan visibility, O Quy Ho road weather and Bac Ha’s Sunday market each set a different clock; keep them separate from a town walk or valley trail.',
     faqKicker: 'Sa Pa visitor questions',
+    checksActionText: 'Review the route checks',
     faqTitle: 'What to confirm before each outing'
   },
   hubSources: [
