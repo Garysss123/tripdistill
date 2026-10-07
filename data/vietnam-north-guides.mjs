@@ -1091,3 +1091,129 @@ export const vietnamNorthClusters = [
     ]
   }
 ].map(defineVietnamCluster);
+
+// Hanoi's first editorial release is intentionally scoped to its hub and five
+// existing chapters. Keep these overlays beside the source records so the
+// country generator can regenerate the reviewed pages without hand-edited HTML.
+const hanoi = vietnamNorthClusters.find((cluster) => cluster.slug === 'hanoi');
+Object.assign(hanoi, {
+  reviewDate: '7 October 2026',
+  isoDate: '2026-10-07',
+  hubCss: '/css/vietnam-hanoi.css?v=20261007-1',
+  routeModelHeading: 'Use these as branches, not six stops in one day.',
+  routeModelLead: 'The cards are separate half-day or full-day plans. Group only the compact center; use a vehicle between the civic district, Van Mieu and the river edge.',
+  hubIntro: 'Plan Hanoi as distinct rooms around Hoan Kiem: working trade lanes north of the lake, civic and royal history to the west, the colonial-era Opera House and museums to the southeast, and an active rail bridge at the Red River edge. These six chapters are choices, not a six-stop itinerary. Controlled entrances, museum calendars, traffic and rain can turn two nearby pins into a long day.',
+  stay: 'Choose the Hoan Kiem edge or Old Quarter when a walkable first day matters; choose Trang Tien and the French Quarter for a calmer evening near the Opera House and museums. Ba Dinh makes sense when its civic sites are the focus. Send the hotel your exact pin and confirm late vehicle access, lift and luggage drop-off: narrow lanes, one-way streets and temporary pedestrian controls can change the approach.',
+  transfer: 'Treat Noi Bai as a separate trip from the center. Save the hotel address in Vietnamese, use an agreed airport pickup or reputable ride-hail, and leave a buffer before the first activity. Walk the compact center; use a taxi or ride-hail between Ba Dinh, Van Mieu and the river edge instead of stitching them into one long walk. Recheck pedestrian controls and roadworks on the day.',
+  hubSources: [
+    ['https://www.vietnam.travel/things-to-do/explore-old-quarter-your-way', 'Vietnam Tourism — Explore the Old Quarter'],
+    ['https://vietnam.travel/node/187', 'Vietnam Tourism — Ha Noi'],
+    ['https://whc.unesco.org/en/list/1328/', 'UNESCO — Central Sector of the Imperial Citadel of Thang Long'],
+    ['https://hoangthanhthanglong.vn/en/about-us/', 'Thang Long Heritage Conservation Center — visitor notices and hours'],
+    ['https://bqllang.gov.vn/en/', 'Ho Chi Minh Mausoleum Management Board — current visitor notices'],
+    ['https://baotanglichsu.vn/en/Articles/3196/opening-time', 'Vietnam National Museum of History — current visitor hours'],
+    ['https://nhahatnhacvukichvietnam.com/en/', 'Vietnam National Opera and Ballet — current performance notices'],
+    ['https://vietnam.vnanet.vn/english/printlr/long-bien-bridge-iconic-part-of-hanoi39s-history-321685.html', 'Vietnam News Agency — Long Bien Bridge history'],
+    ['https://vanmieu.gov.vn/en/visitor-information', 'Temple of Literature — visitor map, entry and transport information'],
+    ['https://vnfam.vn/en/visiting', 'Vietnam National Fine Arts Museum — visitor information'],
+    ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — forecasts and warnings']
+  ],
+  planner: [
+    ['CENTER WALK', 'Lake, then one lane pair', 'Start at Hoan Kiem, then choose one Old Quarter thread: Hang Bac for silver, Hang Gai for silk, Hang Ma for festival goods, or Lan Ong for traditional medicine. The names preserve old trades, not a promise that every shop still sells that craft. Add Ngoc Son only after checking its current entry rules.'],
+    ['CIVIC HISTORY', 'Give Ba Dinh and Thang Long a long window', 'Ba Dinh Square is where the Declaration of Independence was read on 2 September 1945. Thang Long layers a 7th-century fortress site and an 11th-century citadel; its operator currently lists 08:00–17:00 daily (checked 7 October 2026). Check that notice and the mausoleum calendar separately before setting the day.'],
+    ['COURTYARDS + MUSEUM', 'Choose one collection after Van Mieu', 'Read Van Mieu as five courtyards, from Khue Van Pavilion and Thien Quang Well to the academy precinct. Its operator currently lists 08:00–17:00 daily and an entrance at No. 58 Quoc Tu Giam (checked 7 October 2026). Pair it with one museum only; keep Long Bien for dry daylight and skip informal riverbank paths after rain.']
+  ]
+});
+
+const hanoiGuideUpdates = {
+  'hoan-kiem-old-quarter': {
+    reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
+    summary: "Follow Hoan Kiem Lake north into Hanoi's working Old Quarter, using the old craft-street names to choose a short route and a real stopping point.",
+    lead: "Hoan Kiem gives you a simple compass: the lake and Ngoc Son Temple form the open southern edge; the tightly subdivided Old Quarter lies immediately north. The familiar '36 streets' story points to historic trade associations, not 36 preserved lanes. Vietnam Tourism still names Hang Bac (silver), Hang Gai (silk), Hang Ma (festival goods) and Lan Ong (medicinal herbs); read today's mixed shopfronts before expecting a specialist craft.",
+    orientation: 'Use two layers, not a citywide loop: walk part of the lake, then choose one lane pair north of the water. Ngoc Son sits on the lake island; its bridge and temple are a separate entry stop, so check current opening and entry terms before adding it. Hang Bac and Hang Gai make a compact first look; Hang Ma is busier and Lan Ong is a farther east-side choice.',
+    arrival: "Set a drop-off at a clear Hoan Kiem edge rather than a shop door in a narrow lane. Save the hotel's Vietnamese address. Weekend pedestrian periods and event days can push car pickup several blocks away; check current city notices and agree on a pickup pin beyond the restriction before walking in.",
+    sequence: 'Allow about 3–4 hours: take the lake edge early, turn north to one pair of named lanes, pause at a public heritage or religious interior only if open, then return to the lake for a meal or coffee. Add the French Quarter only as a second half-day with a real break; Ba Dinh is not a walkable extension.',
+    verify: 'Check the current Hoan Kiem pedestrian notice, Ngoc Son entry and photography rules, any temple opening, the forecast, and a pickup point outside temporary restrictions.',
+    sources: [
+      ['https://www.vietnam.travel/things-to-do/explore-old-quarter-your-way', 'Vietnam Tourism — Explore the Old Quarter'],
+      ['https://vietnam.travel/node/187', 'Vietnam Tourism — Ha Noi'],
+      ['https://hanoi.gov.vn/di-tich-danh-thang', 'Hanoi People’s Committee — heritage and scenic sites']
+    ]
+  },
+  'ba-dinh-thang-long': {
+    reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
+    summary: 'Separate Ba Dinh civic memory from the archaeological layers of Thang Long, then plan around controlled entrances and the citadel’s current visitor window.',
+    lead: 'This is two histories beside one another, not one undifferentiated “old Hanoi.” Ba Dinh Square is the setting of the 2 September 1945 Declaration of Independence; the UNESCO-listed Central Sector of Thang Long preserves a much longer political sequence, with a 7th-century fortress beneath an 11th-century citadel and later layers at 18 Hoang Dieu.',
+    orientation: 'Treat the square, mausoleum precinct and citadel as separate controlled spaces. At Thang Long, Doan Mon, the Kinh Thien Palace remains and the 18 Hoang Dieu excavation tell different parts of the story. The operator currently lists 08:00–17:00 daily (checked 7 October 2026); the mausoleum has its own calendar.',
+    arrival: 'Choose the first gate before booking a car: Thang Long visitors use the Hoang Dieu side, while Ba Dinh memorial access can be restricted by ceremony or security. Save the exact official address and allow a ground-transfer buffer rather than assuming both precincts form one continuous walk.',
+    sequence: 'Check the mausoleum notice first if that visit matters; its access window and security rules can constrain the day. Otherwise give Thang Long a morning or afternoon block, starting at the official gate and following its visitor map to the archaeological site before the open courtyards get tiring.',
+    verify: 'Recheck Thang Long’s 08:00–17:00 notice and any gate closure, then check the mausoleum’s official calendar, entry requirements, photography rules, weather and mobility access.',
+    sources: [
+      ['https://whc.unesco.org/en/list/1328/', 'UNESCO — Thang Long history, archaeology and inscription'],
+      ['https://hoangthanhthanglong.vn/en/about-us/', 'Thang Long Heritage Conservation Center — current visitor hours and contact'],
+      ['https://bqllang.gov.vn/en/', 'Ho Chi Minh Mausoleum Management Board — official visitor notices'],
+      ['https://en.nhandan.vn/megastory/special/2021/09/02/', 'Nhan Dan — Ba Dinh Square and the 1945 Declaration of Independence']
+    ]
+  },
+  'french-quarter-opera-house': {
+    reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
+    summary: 'Read the French Quarter’s early-20th-century civic architecture from the Opera House, then choose a museum visit or a confirmed performance.',
+    lead: 'This is a civic and cultural grid, not a second Old Quarter. The Opera House was built around the turn of the 20th century and refurbished in 1997; today it remains a working performance venue. Pair its exterior with the Vietnam National Museum of History on Trang Tien, but enter only on the museum’s published schedule or a confirmed ticket.',
+    orientation: 'Anchor at the Opera House and Trang Tien, then decide whether your day is a museum afternoon or a ticketed evening. The National Museum of History currently lists morning hours 08:00–12:00, afternoon 13:30–17:00, and closure on the first Monday of each month (checked 6 October 2026). Its split day makes a casual “drop in whenever” plan unreliable.',
+    arrival: 'Use the Opera House perimeter as a meeting point, not a promise that a vehicle can stop at its door. One-way streets, event traffic and limited curb space change the approach; save the venue address and ask the driver to confirm a safe legal drop-off before leaving the car.',
+    sequence: 'Allow 3–4 hours for the exterior and one museum block: look at the Opera House in daylight, then use the museum’s 08:00–12:00 or 13:30–17:00 window. Treat a performance as a separate evening commitment and buy through the official venue notice before fixing dinner or the ride home.',
+    verify: 'Check the History Museum’s dated opening calendar, Opera House performance and ticket notice, venue access, road restrictions, rain and the safe return pickup.',
+    sources: [
+      ['https://vietnam.travel/node/187', 'Vietnam Tourism — Ha Noi'],
+      ['https://baotanglichsu.vn/en/Articles/3196/opening-time', 'Vietnam National Museum of History — visitor hours'],
+      ['https://nhahatnhacvukichvietnam.com/en/', 'Vietnam National Opera and Ballet — official performance information']
+    ]
+  },
+  'long-bien-red-river': {
+    reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
+    summary: 'Read Long Bien as a working railway bridge and Red River edge, with a daylight plan that does not depend on informal floodplain paths.',
+    lead: 'Long Bien was built at the turn of the 20th century and remains part of Hanoi’s working transport landscape. The railway, motorbikes, pedestrians and riverbank activity occupy different spaces. The useful visit is to observe how those layers meet from a legal public edge, not to copy a photograph from a track or maintenance area.',
+    orientation: 'Separate the bridge approach from a floodplain walk. Pick one verified public bridge-end viewpoint, then decide whether a riverbank path is actually open and dry. The historic bridge connects the center to the east bank, but its traffic and rail activity make it a poor place to improvise a crossing or stand for a long photo stop.',
+    arrival: 'Save the exact bridge-end pin in Vietnamese and approach by taxi or ride-hail; confirm which side the driver can legally reach. Do not set a vague “Long Bien Bridge” pickup on the far bank. If you plan a riverbank segment, verify the public access point before setting off and arrange a new pickup rather than assuming the path loops back.',
+    sequence: 'Plan 2–3 daylight hours: view the bridge from a legal approach, watch the separate movement lanes without entering them, then add a riverbank walk only if the access is public and the surface is dry. After rain or when water is high, skip the floodplain and return from the bridge end you know.',
+    verify: 'Check current bridge access and rail notices, the exact public approach, weather and river conditions, any market access, and a pickup point on the same side you can reach.',
+    sources: [
+      ['https://vietnam.vnanet.vn/english/printlr/long-bien-bridge-iconic-part-of-hanoi39s-history-321685.html', 'Vietnam News Agency — Long Bien Bridge history and civic role'],
+      ['https://hanoi.gov.vn/di-tich-danh-thang', 'Hanoi People’s Committee — heritage and scenic sites'],
+      ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — weather and warnings']
+    ]
+  },
+  'van-mieu-museum-quarter': {
+    reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
+    summary: 'Follow Van Mieu’s five courtyards from the 1070 temple to the Imperial Academy, then choose one nearby museum rather than a rushed museum crawl.',
+    lead: 'Van Mieu was built in 1070 and the Imperial Academy opened here in 1076. Its sequence of five courtyards is the visit: Khue Van Pavilion, Thien Quang Well and the doctoral stele garden, the Confucian sanctuary, then the academy precinct. Students still come to pray before exams, so the site is both a historical record and a living place.',
+    orientation: 'Use the official visitor map and follow the one-way sequence from the No. 58 Quoc Tu Giam entrance; current visitor information lists exits on Van Mieu Street and through Giam Garden. The operator currently lists 08:00–17:00 daily (checked 7 October 2026). Leave time to read the courtyards before deciding whether to add the Fine Arts Museum at No. 66 Nguyen Thai Hoc.',
+    arrival: 'Aim for the signed entrance at 58 Quoc Tu Giam, not a pin on the opposite side of the block. The official visitor page currently lists bus 38 at the entrance and routes 02, 41, E08 and E09 opposite No. 40 Ton Duc Thang (checked 7 October 2026); verify routes before boarding. Exits can be on different streets, so save the next destination before entry.',
+    sequence: 'Reserve about two hours for the five-courtyard circuit, then take shade and water before choosing one museum. The Fine Arts Museum at 66 Nguyen Thai Hoc is a distinct next stop, not an interior inside the temple; check its current hours and use a short taxi if heat or mobility makes the walk uncomfortable.',
+    verify: 'Recheck the Temple’s current 08:00–17:00 hours, entry and exit map, bus routes, night-program notice, Fine Arts Museum hours, photography rules and weather.',
+    sources: [
+      ['https://vanmieu.gov.vn/en/visitor-information', 'Temple of Literature — courtyards, entrance, exits and public transport'],
+      ['https://image.vietnam.travel/things-to-do/hanoi-six-heritage-sites', 'Vietnam Tourism — 1070 temple, 1076 academy and five-courtyard sequence'],
+      ['https://vnfam.vn/en/visiting', 'Vietnam National Fine Arts Museum — current visitor information']
+    ]
+  }
+};
+
+for (const guide of hanoi.guides) {
+  const update = hanoiGuideUpdates[guide.slug];
+  if (update) {
+    Object.assign(guide, update);
+    guide.decisions = [
+      ['Arrival contract', guide.arrival],
+      ['Route logic', guide.sequence],
+      ['Keep the boundary', guide.boundary]
+    ];
+    guide.route = guide.stages.map((stage, index) => [['Arrive', 'Read', 'Deepen', 'Exit'][index], stage[0], stage[1]]);
+    guide.checks = guide.risks;
+    guide.faq = [
+      [`How much time should ${guide.name} receive?`, guide.duration],
+      [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
+      ['What should I verify before leaving?', guide.verify]
+    ];
+  }
+}

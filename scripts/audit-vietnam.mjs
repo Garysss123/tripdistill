@@ -124,7 +124,8 @@ for (const record of routes) {
   if (!html.includes('"@type":"Article"')) problems.push(`${record.route}: missing valid Article JSON-LD`);
   if (html.includes('"@type":"TravelGuide"')) problems.push(`${record.route}: uses unregistered TravelGuide JSON-LD type`);
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${record.route}: missing AdSense publisher`);
-  if (!html.includes('31 August 2026')) problems.push(`${record.route}: missing editorial review date`);
+  const expectedReviewDate = record.kind === 'hub' ? (record.cluster.reviewDate || '31 August 2026') : record.kind === 'guide' ? (record.guide.reviewDate || '31 August 2026') : '31 August 2026';
+  if (!html.includes(expectedReviewDate)) problems.push(`${record.route}: missing editorial review date`);
   if (!html.includes(`<link rel="canonical" href="https://tripdistill.com${record.route}">`)) problems.push(`${record.route}: invalid canonical`);
   for (const [locale, prefix] of locales) {
     if (!html.includes(`hreflang="${locale}" href="https://tripdistill.com${prefix}${record.route}"`)) problems.push(`${record.route}: missing ${locale} hreflang`);
