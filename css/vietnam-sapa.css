@@ -1,0 +1,30 @@
+/* Sapa highlands: local palette and layout accents for the hub and its reviewed chapters. */
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] {
+  --vn-dark: #243d37;
+  --vn-accent: #c17a49;
+  --vn-accent-2: #849875;
+  --vn-soft: #eaf0e7;
+  --vn-paper: #fff8ed;
+  --vn-accent-text: #70452b;
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-hero {
+  border-radius: .35rem 5rem .35rem .35rem;
+  background: linear-gradient(135deg, #203c36, #38483c);
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-hero figure img {
+  object-position: center 54%;
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-hub-card {
+  border-radius: .25rem 2rem .25rem .25rem;
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-hero {
+  border-radius: .3rem 3.8rem .3rem .3rem;
+}
+
+body[data-country="vietnam"][data-region="sapa-northwest-highlands"] .vn-field-image img {
+  object-position: center 54%;
+}
