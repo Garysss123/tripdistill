@@ -40,6 +40,10 @@ body[data-page="ca-montreal-mount-royal-museums"] .ca-field {
   --ca-family-soft: #e9f1e8;
 }
 
+body[data-page="ca-montreal-mount-royal-museums"] .ca-field-copy .ca-kicker {
+  color: #f4e4c1;
+}
+
 body[data-page="ca-montreal"] .ca-hub-hero {
   border-bottom: .65rem solid #12858a;
 }

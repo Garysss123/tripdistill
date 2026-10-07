@@ -1,0 +1,29 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/seoul/",
+    "/south-korea/seoul/bukchon-seochon/",
+    "/south-korea/seoul/hongdae-yeonnam/",
+    "/south-korea/seoul/gangnam-jamsil/",
+    "/south-korea/seoul/itaewon-hannam/",
+    "/south-korea/seoul/seongsu-seoul-forest/"
+  ],
+  "translations": {
+    "Panoramic view across low-rise commercial streets in Hongdae": "弘大周辺の低層商業街を見渡すパノラマ",
+    "Aerial view of Itaewon-dong with N Seoul Tower above Namsan": "南山のNソウルタワーを背景に望む梨泰院洞の空撮",
+    "A quiet street lined with low-rise buildings and storefronts in Seongsu-dong": "聖水洞の低層ビルや店舗が並ぶ静かな通り",
+    "Hongdae cityscape / Minseong Kim (IMKSv)": "弘大の街並み / Minseong Kim (IMKSv)",
+    "Converted to WebP.": "WebP形式に変換。",
+    "Itaewon-dong aerial / Live Studio Kim Hakri": "梨泰院洞の空撮 / Live Studio Kim Hakri",
+    "Quiet Seongsu alley / CartoonChess": "聖水洞の静かな路地 / CartoonChess",
+    "Separate coach restriction:": "ツアーバスに関する別の規制:",
+    "From 1 January 2026, chartered tour buses are restricted on a designated 2.3 km road section around the management area. If your group arrives by coach, check the official map and street signs for the permitted drop-off and route.": "2026年1月1日から、管理区域周辺の指定された2.3 km区間では、貸切観光バスの通行が規制されています。団体バスで訪れる場合は、公式地図と現地標識で乗降場所と通行ルートを確認してください。",
+    "Founded as Gyeonseongsa in 794, the temple was refurbished and renamed Bongeunsa in 1498, then moved to its present site in 1562 during King Myeongjong’s reign. Its temple halls and scripture collection now sit north of COEX; keep voices low, leave worship areas clear and follow ceremony notices.": "奉恩寺は794年に見聖寺として創建され、1498年に改修を経て奉恩寺と改称されました。1562年、明宗王の治世に現在の場所へ移りました。堂宇と経典の収蔵が伝わる寺院はCOEXの北側にあります。声を抑え、礼拝場所をふさがず、法要の掲示に従ってください。",
+    "Tree-lined walkway beneath mature trees in Seoul Forest": "ソウルの森の、木々に囲まれた園路",
+    "Seongsu grew as a manufacturing district for shoes, printing and auto repair. From the mid-2000s, parts of its older factory and warehouse stock were reused as workshops, shops and cultural spaces. Today the useful detail is the mix: brick shells, loading doors, working suppliers and new retail on the same blocks. A weathered facade is not automatically a visitor attraction, so keep to public streets and open businesses.": "聖水は靴づくり、印刷、自動車修理などの製造業が集まった地区です。2000年代半ば以降、古い工場や倉庫の一部が工房、店、文化施設に転用されました。今もレンガ造りの建物や搬入口、営業を続ける仕入れ業者、新しい店が同じ街区にあります。古びた外観が観光施設とは限らないので、公開された通りや営業中の店を歩きましょう。",
+    "Cropped to exclude visitors; converted to WebP.": "来園者が写らないようにトリミングし、WebPに変換。",
+    "Korea Open Government License Type 1": "韓国オープン・ガバメント・ライセンス Type 1",
+    "Converted to WebP; open-government terms permit commercial reuse.": "WebP形式に変換。オープンガバメントの条件により商用利用が認められています。"
+  }
+}

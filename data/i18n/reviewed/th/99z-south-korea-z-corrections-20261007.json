@@ -1,0 +1,29 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/seoul/",
+    "/south-korea/seoul/bukchon-seochon/",
+    "/south-korea/seoul/hongdae-yeonnam/",
+    "/south-korea/seoul/gangnam-jamsil/",
+    "/south-korea/seoul/itaewon-hannam/",
+    "/south-korea/seoul/seongsu-seoul-forest/"
+  ],
+  "translations": {
+    "Panoramic view across low-rise commercial streets in Hongdae": "ภาพพาโนรามาของย่านการค้าตึกเตี้ยในฮงแด",
+    "Aerial view of Itaewon-dong with N Seoul Tower above Namsan": "ภาพมุมสูงของอีแทวอนดง โดยมี N Seoul Tower บนเขานัมซานเป็นฉากหลัง",
+    "A quiet street lined with low-rise buildings and storefronts in Seongsu-dong": "ถนนเงียบในซองซูดงที่เรียงรายด้วยอาคารเตี้ยและหน้าร้าน",
+    "Hongdae cityscape / Minseong Kim (IMKSv)": "ทิวทัศน์เมืองฮงแด / Minseong Kim (IMKSv)",
+    "Converted to WebP.": "แปลงเป็นไฟล์ WebP",
+    "Itaewon-dong aerial / Live Studio Kim Hakri": "ภาพมุมสูงของอีแทวอนดง / Live Studio Kim Hakri",
+    "Quiet Seongsu alley / CartoonChess": "ตรอกเงียบในซองซู / CartoonChess",
+    "Separate coach restriction:": "ข้อจำกัดรถทัวร์อีกข้อหนึ่ง:",
+    "From 1 January 2026, chartered tour buses are restricted on a designated 2.3 km road section around the management area. If your group arrives by coach, check the official map and street signs for the permitted drop-off and route.": "ตั้งแต่ 1 มกราคม 2026 รถทัวร์เช่าเหมาคันถูกจำกัดบนถนนช่วงที่กำหนดระยะทาง 2.3 km รอบเขตจัดการพื้นที่ หากเดินทางเป็นกลุ่มด้วยรถโค้ช โปรดตรวจแผนที่ทางการและป้ายริมถนนเพื่อดูจุดรับส่งและเส้นทางที่อนุญาต",
+    "Founded as Gyeonseongsa in 794, the temple was refurbished and renamed Bongeunsa in 1498, then moved to its present site in 1562 during King Myeongjong’s reign. Its temple halls and scripture collection now sit north of COEX; keep voices low, leave worship areas clear and follow ceremony notices.": "วัดแห่งนี้สร้างขึ้นในปี 794 ในชื่อคยอนซองซา (Gyeonseongsa) บูรณะและเปลี่ยนชื่อเป็นพงอึนซา (Bongeunsa) ในปี 1498 ก่อนย้ายมายังที่ตั้งปัจจุบันในปี 1562 ในรัชสมัยพระเจ้ามยองจง อาคารวัดและคัมภีร์อยู่ทางเหนือของ COEX ควรพูดเบา ๆ ไม่กีดขวางพื้นที่ประกอบพิธี และปฏิบัติตามประกาศของวัด",
+    "Tree-lined walkway beneath mature trees in Seoul Forest": "ทางเดินใต้ร่มไม้ใหญ่ในสวนป่าโซล",
+    "Seongsu grew as a manufacturing district for shoes, printing and auto repair. From the mid-2000s, parts of its older factory and warehouse stock were reused as workshops, shops and cultural spaces. Today the useful detail is the mix: brick shells, loading doors, working suppliers and new retail on the same blocks. A weathered facade is not automatically a visitor attraction, so keep to public streets and open businesses.": "ซองซูเติบโตเป็นย่านการผลิตรองเท้า งานพิมพ์ และซ่อมรถยนต์ ตั้งแต่ช่วงกลางทศวรรษ 2000 โรงงานและโกดังเก่าบางส่วนถูกปรับเป็นเวิร์กช็อป ร้านค้า และพื้นที่วัฒนธรรม จุดที่เห็นได้ในปัจจุบันคือการอยู่ร่วมกันของอาคารอิฐ ประตูขนถ่ายสินค้า ร้านค้าส่งที่ยังทำงาน และร้านค้าปลีกใหม่ในบล็อกเดียวกัน อาคารเก่าไม่ได้เปิดให้เข้าชมทุกแห่ง จึงควรเดินบนถนนสาธารณะและเข้าร้านที่เปิดให้บริการ",
+    "Cropped to exclude visitors; converted to WebP.": "ครอปภาพเพื่อตัดผู้เข้าชมออก แล้วแปลงเป็น WebP",
+    "Korea Open Government License Type 1": "สัญญาอนุญาตรัฐบาลเปิดของเกาหลี ประเภท 1 (Korea Open Government License Type 1)",
+    "Converted to WebP; open-government terms permit commercial reuse.": "แปลงเป็นไฟล์ WebP; เงื่อนไขของสัญญาอนุญาตรัฐบาลเปิดอนุญาตให้ใช้เชิงพาณิชย์ได้"
+  }
+}

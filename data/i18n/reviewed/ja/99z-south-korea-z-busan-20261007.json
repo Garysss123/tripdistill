@@ -1,0 +1,34 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/busan/",
+    "/south-korea/busan/nampo-jagalchi/",
+    "/south-korea/busan/gamcheon-songdo/",
+    "/south-korea/busan/haeundae-dongbaek/",
+    "/south-korea/busan/gwangalli-millak/",
+    "/south-korea/busan/yeongdo-taejongdae/"
+  ],
+  "translations": {
+    "Taejongdae coast photograph": "太宗台の海岸写真",
+    "; licensed": "。ライセンス：",
+    "; resized and cropped as WebP.": "。WebP用にサイズ変更・トリミング。",
+    "A market shaped by the port": "港とともに育った市場",
+    "Jagalchi is a working port market, not a single food hall": "チャガルチは一つのフードホールではなく、港の現役市場",
+    "After the Korean War, Jagalchi became a major fish market; many women who sell here are locally known as Jagalchi Ajumeoni. Visitors find live and dried seafood across stalls facing the street and waterfront, so the fish market, dried-fish quarter and restaurant floors are distinct stops rather than one room.": "朝鮮戦争後、チャガルチは大規模な水産市場へと発展し、女性の売り手は地元で「チャガルチ・アジュメニ」と呼ばれてきました。通り側と海辺側の店には生鮮・乾物の魚介が並び、水産市場、乾物街、飲食フロアは一つの屋内市場ではなく、それぞれ別に見て回る場所です。",
+    "The Korea Tourism Organization listing checked 7 October 2026 shows 05:00–22:00 and closures on the first and third Tuesdays. Treat these as the market’s published schedule, not every tenant’s promise: confirm the date and ask the seller to state the item, unit, preparation and full charge before ordering.": "韓国観光公社の案内は2026年10月7日確認時、05:00～22:00営業、第1・第3火曜休業と記載しています。これは市場の公表スケジュールで、個々の店舗の営業を保証するものではありません。訪問日を確認し、注文前に品目、単位、調理方法、総額を店員に確かめましょう。",
+    "Official place and access sources": "公式の観光・アクセス情報",
+    "Planning facts were reviewed on 7 October 2026. Recheck market closures, vendor hours, prices, tower access and event restrictions before visiting.": "計画情報は2026年10月7日に確認しました。訪問前に市場の休業日、店舗の営業時間、価格、展望施設の入場、イベント規制を再確認してください。",
+    "Read the hillside settlement": "斜面の集落として読み解く",
+    "A hillside settlement turned into a public art route": "斜面の集落から公共アートの散策路へ",
+    "Korea’s tourism organization traces Gamcheon’s stair-step hillside settlement to refugees who built homes here during the Korean War. The slopes still read as housing first: narrow lanes, roof lines and resident-made murals and sculptures sit above a coastal mountain foothill. Choose one upper view and one public alley loop, then leave by your planned bus stop; repeatedly dropping downhill and climbing back wastes energy and can strand you below the route you meant to follow. Leave a separate transfer buffer for Songdo: the ridge and bay divide what can look close on a map.": "韓国観光公社は、朝鮮戦争中に避難民が斜面に階段状の家を建ててできた集落として甘川を紹介しています。今もまず住宅地として見る場所です。細い路地、屋根の稜線、住民が手がけた壁画や彫刻が海沿いの山腹に続きます。上の展望地点を一か所、公開路地の小さな周回を一つ選び、帰りに使うバス停を先に決めましょう。何度も下りて上り返すと体力を消耗し、予定した路線の下に出てしまうことがあります。松島へは別の乗り継ぎ時間も確保してください。尾根と湾があるため、地図で近く見えても歩いて簡単に移動できません。",
+    "Korea Tourism Organization — Gamcheon Culture Village history and visitor information": "韓国観光公社 — 甘川文化村の歴史と観光案内",
+    "Haeundae is about 1.5 km long and 30–50 m wide, according to the Korea Tourism Organization; it remains a substantial public shoreline outside managed swimming periods. On Dongbaek, Nurimaru APEC House hosted the 2005 APEC Summit and now serves as a memorial hall and conference venue. As checked 7 October 2026, the organization lists 09:00–18:00, last admission at 17:00, closure on the first Monday and free entry. Give the venue a separate indoor visit block and check its current notice before walking the headland.": "韓国観光公社によると、海雲台海水浴場は長さ約1.5km、幅30～50mで、遊泳管理期間外も長い公共海岸として散策できます。冬柏島のヌリマルAPECハウスは2005年APEC首脳会議の会場で、現在は記念館・会議施設です。2026年10月7日確認時、同公社の案内では09:00～18:00、最終入場17:00、第1月曜休館、入場無料。海岸を歩く前に施設の最新案内を確認し、屋内見学時間を別に確保してください。",
+    "Planning facts were reviewed on 7 October 2026. Recheck beach operation, safety flags, trail conditions, museum hours and events before visiting.": "計画情報は2026年10月7日に確認しました。訪問前に海水浴場の運営、安全旗、遊歩道の状態、博物館の開館時間、イベントを再確認してください。",
+    "Korea Tourism Organization — Haeundae Beach visitor information": "韓国観光公社 — 海雲台海水浴場の観光案内",
+    "Planning facts were reviewed on 7 October 2026. Recheck show notices, weather, crowd controls, beach access and final transit before visiting.": "計画情報は2026年10月7日に確認しました。訪問前に公演情報、天候、混雑規制、海岸へのアクセス、最終交通を再確認してください。",
+    "The Busan Geopark describes Taejongdae as an erosional coast: sea cliffs, wave-cut platforms and sea caves are the landforms to read from the marked park route. They are exposed edges, not beach access; stay behind barriers and use designated viewpoints, especially when swell, wind or fog closes the near-shore sections.": "釜山ジオパークによると、太宗台は侵食で形成された海岸で、指定園路から海食崖、波食棚、海食洞を観察できます。ここは海水浴場ではなく、波にさらされる断崖です。特に高波、強風、霧で海辺の区間が閉鎖された場合は、柵の内側にとどまり、指定展望地点を利用してください。",
+    "Planning facts were reviewed on 7 October 2026. Recheck park access, Danubi operation, buses, museum hours, trail notices and weather before visiting.": "計画情報は2026年10月7日に確認しました。訪問前に公園の入場、タヌビ列車の運行、バス、博物館の開館時間、園路のお知らせ、天候を再確認してください。",
+    "As checked 7 October 2026, the program runs two free Saturday shows: 19:00 and 21:00 from October through February, and 20:00 and 22:00 from March through September. Its published format alternates by week (Drone × Laser on the first and third Saturdays; Drone Light on the second and fourth), with each show lasting more than 12 minutes. Rain, gusts, typhoon conditions, technical problems or crowd controls can delay or cancel it; check the same-day notice before traveling.": "2026年10月7日確認時、土曜は無料公演が2回あり、10～2月は19:00と21:00、3～9月は20:00と22:00です。公表プログラムは週ごとに形式が変わり（第1・第3土曜はドローン×レーザー、第2・第4土曜はドローンライト）、各公演は12分を超えます。雨、突風、台風、技術上の問題、混雑管理で延期・中止になる場合があるため、出発当日に最新のお知らせを確認してください。"
+  }
+}

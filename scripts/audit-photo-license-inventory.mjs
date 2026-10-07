@@ -399,9 +399,9 @@ function parseCredit(li) {
     creditLabel: itemAttrs['data-photo-title'] || sourceLink.label || null,
     creator: itemAttrs['data-photo-creator'] || creator,
     license,
-    licenseUrl: declaredLicenseLink?.href || canonicalLicenseUrl(license),
+    licenseUrl: itemAttrs['data-photo-license-url'] || declaredLicenseLink?.href || canonicalLicenseUrl(license),
     creditText,
-    editHistory,
+    editHistory: itemAttrs['data-photo-edit-note'] || editHistory,
     matching: null
   };
 }
@@ -535,6 +535,15 @@ for (const [sourceUrl, detail] of [
   ['https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chambord,_Loire_Valley_-_FRANCE.jpg', 'Loire image review: exact Commons title, Ignaz Wiradi creator credit, CC BY-SA 3.0 photo terms and visual match to the Chambord façade/roofline were checked on 2026-10-07. Separately considered the depicted building: the estate dates the royal project to 1519 and says the architect is unknown. The photo license is not treated as a license to any separate work depicted; this note is not legal clearance.'],
   ['https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chenonceau,_Loire_Valley,_France.jpg', 'Loire image review: exact Commons title, SpottingHistory creator credit, CC BY-SA 4.0 photo terms and visual match to the château crossing the Cher were checked on 2026-10-07. Separately considered the depicted building: the estate dates the present château to 1513–1517. The photo license is not treated as a license to any separate work depicted; this note is not legal clearance.'],
   ['https://commons.wikimedia.org/wiki/File:Loire_River,_France_(17376540539).jpg', 'Loire image review: exact Commons title, Larry (Flickr account Larry Tweed) creator credit, CC BY 2.0 photo terms and visual match to the river, small boat and riverside path were checked on 2026-10-07. The landscape image replaces a photo of Villandry’s designed garden after separating the photo license from the underlying work. The river photograph does not show the château or garden design; its image credit links the source and license and discloses the crop/WebP conversion.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Hongdae_area_cityscape.jpg', 'Seoul image review: exact Commons page identifies Minseong Kim (IMKSv), the Hongdae cityscape, and CC BY-SA 4.0. Attribution, source/license links, WebP conversion notice and same-version share-alike terms are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Itaewon-dong.jpg', 'Seoul image review: exact Commons page identifies Live Studio Kim Hakri and the Itaewon-dong aerial; it declares Korea Open Government License Type 1. The official KOGL Type 1 terms permit commercial use and adaptations with source attribution. The site links both source and license and discloses WebP conversion.'],
+  ['https://commons.wikimedia.org/wiki/File:Quiet_alleyway_in_Seongsu-dong.jpg', 'Seoul image review: exact Commons page identifies CartoonChess, the Seongsu-dong alley, and CC BY-SA 4.0. Attribution, source/license links, WebP conversion notice and same-version share-alike terms are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Seoul_Forest_Walk_Path.jpg', 'Seoul image review: exact Commons page identifies Qhairy, the Seoul Forest walking path, and CC BY 4.0. Attribution, source/license links and crop/WebP conversion notice are present.']
 ]) {
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
 }

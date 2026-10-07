@@ -1,0 +1,410 @@
+/* Busan route art and editorial refinements. Keep every rule inside this city. */
+body[data-country="south-korea"][data-city="busan"] .busan-route-art {
+  position: relative;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art::before,
+body[data-country="south-korea"][data-city="busan"] .busan-route-art::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-route-art {
+  position: absolute;
+  border: 1px solid rgba(206, 236, 228, .25);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-collage-main.busan-route-art {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 32px, rgba(208, 239, 231, .075) 33px 34px),
+    linear-gradient(162deg, transparent 0 46%, rgba(12, 100, 112, .9) 46.2% 56%, transparent 56.2%),
+    linear-gradient(145deg, #24626a, #102f3a 53%, #0b202d);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-collage-main.busan-route-art::before {
+  inset: 12% 8% 20% 18%;
+  border: 1px solid rgba(236, 246, 233, .32);
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(255, 203, 143, .65) 8.2% 8.7%, transparent 9% 24%, rgba(255, 203, 143, .48) 24.2% 24.8%, transparent 25% 63%, rgba(255, 203, 143, .42) 63.2% 63.8%, transparent 64%),
+    repeating-linear-gradient(0deg, transparent 0 20px, rgba(204, 230, 216, .14) 21px 22px),
+    linear-gradient(90deg, #315962, #47747a 45%, #214854);
+  clip-path: polygon(0 36%, 12% 36%, 12% 14%, 26% 14%, 26% 47%, 41% 47%, 41% 0, 57% 0, 57% 29%, 70% 29%, 70% 9%, 84% 9%, 84% 39%, 100% 39%, 100% 100%, 0 100%);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, .22);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-collage-main.busan-route-art::after {
+  inset: 62% -15% -15% 8%;
+  border-top: 1px solid rgba(188, 235, 222, .5);
+  background: repeating-linear-gradient(174deg, rgba(93, 190, 185, .18) 0 2px, transparent 3px 25px);
+  transform: rotate(-3deg);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-collage-small.busan-route-art {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 17px, rgba(33, 81, 66, .16) 18px 19px),
+    linear-gradient(150deg, #f4d69a, #d98261 54%, #446d60);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-collage-small.busan-route-art::before {
+  inset: 18% 9% 0 0;
+  background:
+    linear-gradient(90deg, transparent 0 16%, #df6f53 16.5% 32%, transparent 32.5% 47%, #f5c77d 47.5% 64%, transparent 64.5% 80%, #4c8275 80.5%),
+    linear-gradient(155deg, transparent 0 33%, #946d58 33.5% 34.5%, transparent 35% 47%, #667f69 47.5% 48.5%, transparent 49%),
+    linear-gradient(160deg, transparent 0 54%, rgba(17, 60, 65, .75) 54.5%);
+  clip-path: polygon(0 44%, 18% 44%, 18% 26%, 36% 26%, 36% 54%, 55% 54%, 55% 10%, 73% 10%, 73% 37%, 88% 37%, 88% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-port-collage > .busan-collage-small.busan-route-art::after {
+  inset: 10% 8%;
+  border-top: 1px solid rgba(255, 249, 221, .7);
+  border-bottom: 1px solid rgba(255, 249, 221, .4);
+  transform: rotate(-14deg);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-atlas-card:not(.has-photo) {
+  border-color: rgba(20, 57, 64, .18);
+  box-shadow: 0 16px 32px rgba(16, 44, 48, .11);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-atlas-card.port:not(.has-photo) {
+  background-image: linear-gradient(150deg, transparent 55%, rgba(33, 13, 13, .2));
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-atlas-card.hillside:not(.has-photo) {
+  background-image: repeating-linear-gradient(145deg, transparent 0 18px, rgba(40, 94, 76, .08) 19px 20px);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-atlas-card.beach:not(.has-photo) {
+  background-image: linear-gradient(170deg, transparent 0 42%, rgba(66, 168, 178, .2) 42.5% 48%, transparent 48.5%);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-atlas-card.night:not(.has-photo) {
+  background-image: radial-gradient(ellipse at 72% 18%, rgba(78, 223, 243, .27), transparent 32%), linear-gradient(135deg, #25184e, #3c2b76);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-atlas-card.island.has-photo > img {
+  filter: saturate(.88) contrast(1.02);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-area-media > .busan-route-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--nampo {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 14px, rgba(248, 208, 149, .18) 15px 16px),
+    repeating-linear-gradient(90deg, transparent 0 56px, rgba(22, 17, 14, .18) 57px 58px),
+    linear-gradient(135deg, #d28a54, #8f4c35 48%, #45271f);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--nampo::before {
+  inset: 15% 10%;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(255, 239, 210, .6) 35px 37px),
+    linear-gradient(90deg, #512f29, #84513c 48%, #b9744a);
+  border: 1px solid rgba(255, 239, 210, .48);
+  box-shadow: 0 30px 48px rgba(25, 12, 12, .3);
+  transform: perspective(450px) rotateY(-15deg) rotateX(3deg);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--nampo::after {
+  inset: 62% -12% -6% 0;
+  border-top: 2px solid rgba(232, 184, 120, .7);
+  background: repeating-linear-gradient(167deg, rgba(15, 44, 53, .36) 0 10px, transparent 11px 28px);
+}
+
+body[data-country="south-korea"][data-city="busan"] .nampo-route-photo > .busan-route-art {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 36px, rgba(245, 210, 138, .18) 37px 38px),
+    linear-gradient(160deg, transparent 0 45%, rgba(220, 124, 65, .52) 45.5% 47%, transparent 47.5%),
+    linear-gradient(135deg, #1c3a40, #335f5c 50%, #8d4b38);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--nampo-street::before {
+  inset: 16% 10% 22%;
+  background: repeating-linear-gradient(90deg, #ffc96e 0 12%, #ad4f46 12.5% 19%, #192d3a 19.5% 31%);
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 76%);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .25);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-elevation-image > .busan-route-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--gamcheon {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 24px, rgba(34, 73, 60, .14) 25px 26px),
+    linear-gradient(160deg, transparent 0 49%, rgba(28, 106, 97, .88) 49.5% 59%, transparent 59.5%),
+    linear-gradient(135deg, #f4d89a, #d77d59 52%, #698875);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--gamcheon::before {
+  inset: 11% 6% 19% 7%;
+  background:
+    linear-gradient(90deg, transparent 0 6%, #a94c45 6.5% 18%, transparent 18.5% 24%, #f7d08a 24.5% 37%, transparent 37.5% 44%, #4d8775 44.5% 58%, transparent 58.5% 64%, #f1a36f 64.5% 78%, transparent 78.5%),
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(55, 89, 69, .32) 28px 30px),
+    linear-gradient(170deg, #f9e7ba, #ce725a 60%, #56796e);
+  clip-path: polygon(0 53%, 18% 45%, 18% 28%, 37% 21%, 37% 37%, 55% 31%, 55% 9%, 74% 16%, 74% 30%, 100% 20%, 100% 100%, 0 100%);
+  box-shadow: 0 25px 48px rgba(47, 74, 57, .2);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--gamcheon::after {
+  inset: 0;
+  background: repeating-linear-gradient(154deg, transparent 0 19px, rgba(255, 255, 255, .17) 20px 21px);
+  mask-image: linear-gradient(135deg, black, transparent 58%);
+}
+
+body[data-country="south-korea"][data-city="busan"] .songdo-horizon > .busan-route-art {
+  width: 100%;
+  min-height: 29rem;
+  background:
+    linear-gradient(174deg, transparent 0 40%, rgba(35, 151, 169, .36) 40.5% 55%, transparent 55.5%),
+    linear-gradient(145deg, #e8c898, #f3ddba 44%, #4c99a4 45%, #1d5667);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--songdo::before {
+  width: 65%;
+  height: 48%;
+  left: 18%;
+  top: 24%;
+  border: 7px solid rgba(236, 245, 225, .76);
+  border-bottom: 0;
+  border-radius: 60% 60% 0 0;
+  transform: perspective(300px) rotateX(10deg);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--songdo::after {
+  inset: 68% -5% -3%;
+  background: repeating-linear-gradient(176deg, rgba(222, 247, 232, .36) 0 2px, transparent 3px 18px);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--haeundae {
+  background:
+    radial-gradient(circle at 72% 21%, #ffe5ad 0 7%, transparent 7.5%),
+    linear-gradient(174deg, transparent 0 55%, rgba(36, 167, 183, .74) 55.5% 72%, #124e65 72.5%),
+    linear-gradient(150deg, #d6eef0, #f4d5ad 50%, #b77765);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--haeundae::before {
+  inset: 17% 8% 32% 5%;
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(43, 82, 97, .86) 8.5% 17%, transparent 17.5% 25%, rgba(61, 100, 109, .8) 25.5% 38%, transparent 38.5% 51%, rgba(43, 78, 94, .8) 51.5% 62%, transparent 62.5% 69%, rgba(73, 103, 106, .85) 69.5% 86%, transparent 86.5%),
+    repeating-linear-gradient(0deg, transparent 0 18px, rgba(253, 232, 197, .35) 19px 20px);
+  clip-path: polygon(0 40%, 10% 40%, 10% 15%, 20% 15%, 20% 34%, 34% 34%, 34% 0, 48% 0, 48% 48%, 60% 48%, 60% 22%, 71% 22%, 71% 10%, 87% 10%, 87% 42%, 100% 42%, 100% 100%, 0 100%);
+}
+
+body[data-country="south-korea"][data-city="busan"] .dongbaek-window > .busan-route-art {
+  min-height: 29rem;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--dongbaek {
+  background:
+    radial-gradient(ellipse at 73% 26%, rgba(250, 205, 128, .78), transparent 22%),
+    linear-gradient(175deg, transparent 0 52%, #0c5362 52.5% 67%, #122f3b 67.5%),
+    linear-gradient(140deg, #4b746c, #1e4347 53%, #172d3a);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--dongbaek::before {
+  inset: 39% 4% 17% 17%;
+  background:
+    linear-gradient(90deg, transparent 0 15%, rgba(238, 224, 193, .85) 15.5% 78%, transparent 78.5%),
+    linear-gradient(175deg, transparent 0 40%, rgba(238, 224, 193, .75) 40.5% 43%, transparent 43.5%),
+    linear-gradient(165deg, transparent 0 65%, rgba(220, 218, 191, .42) 65.5% 67%, transparent 67.5%);
+  clip-path: polygon(0 30%, 16% 25%, 16% 7%, 40% 0, 61% 7%, 61% 26%, 86% 34%, 100% 42%, 100% 100%, 0 100%);
+}
+
+body[data-country="south-korea"][data-city="busan"] .millak-stage > .busan-route-art {
+  min-height: 31rem;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--gwangalli,
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--millak {
+  background:
+    radial-gradient(circle at 18% 30%, rgba(90, 224, 242, .75) 0 2px, transparent 3px),
+    radial-gradient(circle at 69% 22%, rgba(232, 112, 199, .86) 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 43%, rgba(251, 198, 104, .8) 0 2px, transparent 3px),
+    linear-gradient(180deg, #181337, #2c2054 55%, #152f49);
+  background-size: auto, auto, auto, auto;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--gwangalli::before {
+  left: -8%;
+  right: -8%;
+  top: 44%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a8f5f3 10% 18%, #fe9dd6 35%, #b0f5ed 56% 68%, #f3d29a 86%, transparent);
+  box-shadow: 0 0 18px rgba(89, 231, 241, .8);
+  transform: rotate(-7deg);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--gwangalli::after {
+  inset: 47% -12% -10%;
+  background: repeating-linear-gradient(174deg, rgba(106, 211, 230, .34) 0 2px, transparent 3px 19px);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--millak::before {
+  inset: 12% 12% 22%;
+  border: 1px solid rgba(221, 236, 235, .3);
+  background:
+    linear-gradient(90deg, transparent 0 17%, rgba(81, 226, 238, .76) 17.5% 19%, transparent 19.5% 46%, rgba(238, 102, 187, .76) 46.5% 48%, transparent 48.5% 77%, rgba(246, 197, 117, .82) 77.5% 79%, transparent 79.5%),
+    repeating-linear-gradient(0deg, transparent 0 24px, rgba(181, 220, 226, .09) 25px 26px),
+    linear-gradient(135deg, #30214f, #141c38);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--millak::after {
+  inset: 59% -10% -5%;
+  background: repeating-linear-gradient(169deg, rgba(82, 210, 226, .35) 0 2px, transparent 3px 17px);
+}
+
+body[data-country="south-korea"][data-city="busan"] .huinnyeoul-fold > .busan-route-art {
+  min-height: 31rem;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--huinnyeoul {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 23px, rgba(227, 240, 215, .15) 24px 25px),
+    linear-gradient(168deg, transparent 0 53%, rgba(28, 123, 133, .78) 53.5% 70%, #163b4b 70.5%),
+    linear-gradient(140deg, #a5b68e, #456a5d 48%, #24413f);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-route-art--huinnyeoul::before {
+  inset: 16% 11% 23% 23%;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(239, 218, 170, .68) 31px 34px),
+    linear-gradient(90deg, transparent 0 18%, rgba(208, 113, 79, .86) 18.5% 56%, transparent 56.5%),
+    linear-gradient(165deg, #e7c396, #627e70);
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 76% 86%, 76% 72%, 49% 72%, 49% 54%, 24% 54%, 24% 34%, 0 34%);
+  box-shadow: 0 24px 44px rgba(9, 28, 32, .2);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-verified-note {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  color: #183b44;
+  background: #edf5f1;
+  border-left: .28rem solid #df835e;
+  border-radius: 0 .7rem .7rem 0;
+  font-size: .91rem;
+}
+
+@media (max-width: 640px) {
+  body[data-country="south-korea"][data-city="busan"] .songdo-horizon > .busan-route-art,
+  body[data-country="south-korea"][data-city="busan"] .dongbaek-window > .busan-route-art,
+  body[data-country="south-korea"][data-city="busan"] .millak-stage > .busan-route-art,
+  body[data-country="south-korea"][data-city="busan"] .huinnyeoul-fold > .busan-route-art {
+    min-height: 22rem;
+  }
+
+  body[data-country="south-korea"][data-city="busan"] .nampo-route-photo {
+    min-height: 22rem;
+  }
+}
+
+/* Documentary photography and visible provenance credits, limited to Busan pages. */
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-collage .busan-documentary-credit {
+  position: absolute;
+  z-index: 5;
+  top: 1rem;
+  right: 1rem;
+  max-width: min(28rem, 58%);
+  margin: 0;
+  padding: .6rem .75rem;
+  color: #f6f8f4;
+  background: rgba(6, 31, 39, .88);
+  border-radius: .5rem;
+  font-size: .67rem;
+  line-height: 1.5;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-photo-credit {
+  position: absolute;
+  z-index: 5;
+  left: 1rem;
+  bottom: 1rem;
+  max-width: min(24rem, 55%);
+  margin: 0;
+  padding: .55rem .7rem;
+  color: #f6f8f4;
+  background: rgba(6, 31, 39, .9);
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: .45rem;
+  font-size: .66rem;
+  line-height: 1.45;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-area-media .busan-photo-credit {
+  max-width: min(20rem, 48%);
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-panel {
+  height: 38rem;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-panel > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-photo {
+  position: relative;
+  min-height: 29rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-photo > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 29rem;
+  object-fit: cover;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-photo figcaption {
+  position: absolute;
+  right: .8rem;
+  bottom: .8rem;
+  left: .8rem;
+  padding: .55rem .7rem;
+  color: #f6f8f4;
+  background: rgba(6, 31, 39, .9);
+  border-radius: .45rem;
+  font-size: .66rem;
+  line-height: 1.45;
+}
+
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-credit a,
+body[data-country="south-korea"][data-city="busan"] .busan-photo-credit a,
+body[data-country="south-korea"][data-city="busan"] .busan-documentary-photo figcaption a {
+  color: inherit;
+  text-underline-offset: .15em;
+}
+
+@media (max-width: 640px) {
+  body[data-country="south-korea"][data-city="busan"] .busan-documentary-collage .busan-documentary-credit,
+  body[data-country="south-korea"][data-city="busan"] .busan-photo-credit {
+    max-width: min(80%, 20rem);
+    padding: .45rem .55rem;
+    font-size: .6rem;
+  }
+
+  body[data-country="south-korea"][data-city="busan"] .busan-documentary-panel {
+    height: 30rem;
+  }
+}

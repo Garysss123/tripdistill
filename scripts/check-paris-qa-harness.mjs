@@ -47,6 +47,12 @@ const expectedRoutes = [
   ['/south-korea/seoul/gangnam-jamsil/', 'Gangnam & Jamsil'],
   ['/south-korea/seoul/itaewon-hannam/', 'Itaewon & Hannam'],
   ['/south-korea/seoul/yeouido-hangang/', 'Yeouido & Hangang'],
+  ['/south-korea/busan/', 'Busan hub'],
+  ['/south-korea/busan/nampo-jagalchi/', 'Nampo & Jagalchi'],
+  ['/south-korea/busan/gamcheon-songdo/', 'Gamcheon & Songdo'],
+  ['/south-korea/busan/haeundae-dongbaek/', 'Haeundae & Dongbaek'],
+  ['/south-korea/busan/gwangalli-millak/', 'Gwangalli & Millak'],
+  ['/south-korea/busan/yeongdo-taejongdae/', 'Yeongdo & Taejongdae'],
   ['/vietnam/hanoi/', 'Hanoi hub'],
   ['/vietnam/hanoi/hoan-kiem-old-quarter/', 'Hoan Kiem & Old Quarter'],
   ['/vietnam/hanoi/ba-dinh-thang-long/', 'Ba Dinh & Thang Long'],
@@ -184,9 +190,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 250 || manifest.pages?.length !== 250) fail(`${label}: expected 250 localized route records.`);
+  if (manifest.routeCount !== 280 || manifest.pages?.length !== 280) fail(`${label}: expected 280 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, Seoul, Hanoi and Sapa scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, Seoul, Busan, Hanoi and Sapa scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -204,9 +210,10 @@ function inspectLocalizedPage(manifest, record, label) {
   const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley', 'fr-champagne'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
   const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
+  const busanIdentity = record.path.startsWith('/south-korea/busan/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'busan';
   const hanoiIdentity = record.path.startsWith('/vietnam/hanoi/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hanoi';
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
-  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !hanoiIdentity && !sapaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !hanoiIdentity && !sapaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -267,7 +274,8 @@ for (const locale of expectedLocales) {
       if (!nodes(document, 'details').length) fail(`Missing visible Seoul FAQ controls on ${locale.code} ${routePath}.`);
       const bodyText = text(body);
       const routeImages = nodes(document, 'img');
-      if (routeImages.length && !bodyText.includes('CC BY') && !bodyText.includes('CC0') && !bodyText.includes('KOGL')) fail(`Missing readable Seoul photo license in ${locale.code} ${routePath}.`);
+      const linkedKoglLicense = nodes(document, 'a').some((node) => attr(node, 'href').includes('/info/licenseType1.do') && attr(node, 'class').split(/\s+/).includes('photo-license'));
+      if (routeImages.length && !bodyText.includes('CC BY') && !bodyText.includes('CC0') && !bodyText.includes('KOGL') && !linkedKoglLicense) fail(`Missing readable Seoul photo license in ${locale.code} ${routePath}.`);
       if (routeImages.length && !nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org') || attr(node, 'href').includes('archive.visitseoul.net'))) fail(`Missing linked Seoul photo source on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'a').some((node) => /visitseoul\.net|english\.seoul\.go\.kr|english\.visitkorea\.or\.kr/.test(attr(node, 'href')))) fail(`Missing a primary Seoul destination source on ${locale.code} ${routePath}.`);
       const illustrationRequirements = routePath.endsWith('/gangnam-jamsil/')
@@ -279,6 +287,22 @@ for (const locale of expectedLocales) {
             : [];
       for (const className of illustrationRequirements) if (!classNodes(document, className).length) fail(`Missing Seoul editorial illustration ${className} on ${locale.code} ${routePath}.`);
       if (locale.code === 'en' && routePath.endsWith('/bukchon-seochon/') && !bodyText.includes('10 a.m.')) fail(`Bukchon visitor-hour boundary is missing from ${routePath}.`);
+      continue;
+    }
+    if (routePath.startsWith('/south-korea/busan/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      if (attr(body, 'data-country') !== 'south-korea' || attr(body, 'data-city') !== 'busan') fail(`Wrong Busan responsive scope on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/south-korea-busan.css') || !styleHrefs.includes('/css/south-korea-busan.css?v=20261007-2')) fail(`Missing current Busan editorial stylesheet on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Busan FAQ controls on ${locale.code} ${routePath}.`);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Busan photo license on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Busan photo source on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => /visitbusan\.net|busan\.go\.kr|visitkorea\.or\.kr/.test(href))) fail(`Missing a primary Busan destination source on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en' && routePath.endsWith('/yeongdo-taejongdae/')) {
+        if (!bodyText.includes('Do not rely on a fixed weekly closure claim')) fail(`Danubi timetable uncertainty is not explicit on ${routePath}.`);
+        if (!bodyText.includes('day-specific notices can change service')) fail(`Danubi live-check caveat is missing on ${routePath}.`);
+      }
       continue;
     }
     if (routePath.startsWith('/vietnam/hanoi/')) {
@@ -352,7 +376,8 @@ for (const locale of expectedLocales) {
       const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : '/css/canada-quebec-city.css';
       const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/';
       if (!styles.includes('/css/canada.css') || !styles.includes(regionCss)) fail(`Missing Canada route stylesheet ${regionCss} on ${locale.code} ${routePath}.`);
-      if (!styleHrefs.some((href) => href === `${regionCss}?v=20261007-2`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
+      const regionCssVersion = routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
+      if (!styleHrefs.some((href) => href === `${regionCss}?v=${regionCssVersion}`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isCanadaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'details').length) fail(`Missing visible Canada FAQ controls on ${locale.code} ${routePath}.`);
       const canadaBodyText = text(nodes(document, 'body')[0]);
@@ -610,12 +635,17 @@ if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(responsiveGridRule)) fail('Shared F
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],
-  ['#f3d8a9', '#315e69'], ['#174c58', '#fffdf8'], ['#754d2a', '#f1eee5']
+  ['#f3d8a9', '#315e69'], ['#174c58', '#fffdf8'], ['#754d2a', '#f1eee5'],
+  ['#f4e4c1', '#203c36']
 ];
 for (const [foreground, background] of contrastPairs) {
   const ratio = contrastRatio(foreground, background);
   if (ratio < 4.5) fail(`Paris palette pair ${foreground} on ${background} has estimated contrast ${ratio.toFixed(2)}:1, below 4.5:1.`);
 }
+const montrealCssText = fs.readFileSync(safeDistPath('/css/canada-montreal.css'), 'utf8');
+const mountRoyalEyebrowRule = cssRuleBlock(montrealCssText, 'body[data-page="ca-montreal-mount-royal-museums"] .ca-field-copy .ca-kicker');
+if (!/color\s*:\s*#f4e4c1\s*;/i.test(mountRoyalEyebrowRule)) fail('Mount Royal date/eyebrow must use the scoped warm neutral foreground.');
+if (contrastRatio('#f4e4c1', '#203c36') < 4.5) fail('Mount Royal eyebrow estimated contrast is below WCAG AA 4.5:1.');
 
 if (!isLive) {
   const parisPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris/')).length;
@@ -625,9 +655,10 @@ if (!isLive) {
   const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
   const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/')).length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
+  const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
   const hanoiPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hanoi/')).length;
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/250 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${hanoiPages} Hanoi, ${sapaPages} Sapa records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/280 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${hanoiPages} Hanoi, ${sapaPages} Sapa records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -654,5 +685,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/250 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/280 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }

@@ -210,7 +210,9 @@ for (const absoluteUrl of publishedUrls) {
   for (const match of images) {
     if (!/\bwidth="\d+"/i.test(match[0]) || !/\bheight="\d+"/i.test(match[0])) problems.push(`${relativePath}: image is missing numeric width/height attributes`);
   }
-  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html)) {
+  const hasVisibleKoglLicense = /href=["']https:\/\/www\.kogl\.or\.kr\/info\/licenseType1\.do["']/i.test(html)
+    && /class=["'][^"']*\bphoto-license\b[^"']*["']/i.test(html);
+  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense) {
     problems.push(`${relativePath}: image page lacks a visible commercial-use license or provenance entry`);
   }
 
