@@ -1,4 +1,10 @@
 /* Toronto alone: lake blue, station stone and three distinct travel clocks. */
+/* Match Montreal's proven warm-light kicker on Toronto's dark hero fields. */
+body[data-page="ca-toronto"] .ca-hub-hero .ca-kicker,
+body[data-page^="ca-toronto-"] .ca-field-hero .ca-kicker {
+  color: #f4e4c1;
+}
+
 body[data-page="ca-toronto"] .ca-hub,
 body[data-page^="ca-toronto-"] .ca-field {
   --ca-family: #177d89;
