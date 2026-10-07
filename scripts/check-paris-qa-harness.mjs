@@ -94,7 +94,11 @@ const expectedRoutes = [
   ['/vietnam/ninh-binh/tam-coc-bich-dong/', 'Tam Coc & Bich Dong'],
   ['/vietnam/ninh-binh/hang-mua-dragon-mountain/', 'Hang Mua & Dragon Mountain'],
   ['/vietnam/ninh-binh/van-long-wetland/', 'Van Long Wetland'],
-  ['/vietnam/ninh-binh/cuc-phuong-conservation/', 'Cuc Phuong Forest & Conservation']
+  ['/vietnam/ninh-binh/cuc-phuong-conservation/', 'Cuc Phuong Forest & Conservation'],
+  ['/south-korea/jeju/', 'Jeju Island hub'],
+  ['/south-korea/jeju/seogwipo-jeongbang/', 'Seogwipo & Jeongbang'],
+  ['/south-korea/jeju/jungmun-andeok/', 'Jungmun & Andeok'],
+  ['/south-korea/jeju/moseulpo-gapado/', 'Moseulpo & Gapado']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -305,7 +309,8 @@ function inspectLocalizedPage(manifest, record, label) {
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
   const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
-  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
+  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -359,6 +364,30 @@ for (const locale of expectedLocales) {
     const { record, document } = pagesByRoute.get(`${locale.code}${routePath}`);
     const styles = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => new URL(attr(node, 'href'), 'https://tripdistill.com').pathname);
     const styleHrefs = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
+    if (routePath.startsWith('/south-korea/jeju/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      if (attr(body, 'data-country') !== 'south-korea' || attr(body, 'data-city') !== 'jeju') fail(`Wrong Jeju responsive scope on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/jeju.css') || !styleHrefs.includes('/css/jeju.css?v=20261007-1')) fail(`Missing current Jeju responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Jeju FAQ controls on ${locale.code} ${routePath}.`);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0') && !bodyText.includes('Public domain')) fail(`Missing readable Jeju photo license in ${locale.code} ${routePath}.`);
+      if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Jeju photo source on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => /visitjeju\.net/.test(href))) fail(`Missing a primary Jeju destination source on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        if (routePath === '/south-korea/jeju/' && classNodes(document, 'jeju-atlas-card').length !== 8) fail('Jeju hub must retain eight distinct area cards.');
+        if (routePath.endsWith('/seogwipo-jeongbang/') && (!classNodes(document, 'seogwipo-history-grid').length || !['HERITAGE / 2008', 'LEGEND / SEOBUL', 'DOCUMENTED / SONAMMEORI'].every((phrase) => bodyText.includes(phrase)))) fail('Seogwipo guide must retain its three evidence-separated history cards.');
+        if (routePath.endsWith('/jungmun-andeok/') && (!classNodes(document, 'geo-course-picker').length || !['COURSE A', 'COURSE B', 'COURSE C'].every((phrase) => bodyText.includes(phrase)))) fail('Jungmun guide must retain all three official geotrail choices.');
+        if (routePath.endsWith('/moseulpo-gapado/')) {
+          if (!classNodes(document, 'ferry-manifest').length || !classNodes(document, 'gapado-day-clock').length) fail('Gapado guide must retain the passenger manifest and separate crossing/island clocks.');
+          if (!bodyText.includes('10 minutes') || !bodyText.includes('about an hour') || !bodyText.includes('one-way')) fail('Gapado guide must keep source-backed crossing/exploration estimates and one-way-sailing uncertainty.');
+          if (bodyText.includes('06:00')) fail('Gapado guide must not imply a fixed ferry check time.');
+          if (!links.some((href) => href.includes('wonderfulis.co.kr'))) fail('Gapado guide must link to the live ferry operator timetable.');
+        }
+      }
+      if (bodyText.includes('06:00')) fail(`Stale fixed-time ferry check remains in ${locale.code} ${routePath}.`);
+      continue;
+    }
     if (routePath.startsWith('/south-korea/seoul/')) {
       const body = nodes(document, 'body')[0];
       if (attr(body, 'data-country') !== 'south-korea' || attr(body, 'data-city') !== 'seoul') fail(`Wrong Seoul responsive scope on ${locale.code} ${routePath}.`);
@@ -955,6 +984,33 @@ const fieldBackground = compositeHex(fieldBase, '#d19a57', ninhBinhFieldPatternO
 const fieldContrast = contrastRatio(fieldText, fieldBackground);
 if (fieldContrast < 4.5) fail(`Ninh Binh field hero kicker contrast is ${fieldContrast.toFixed(2)}:1, below WCAG AA 4.5:1.`);
 console.log(`Ninh Binh estimated dark-hero kicker contrast passed: hub ${hubContrast.toFixed(2)}:1, field ${fieldContrast.toFixed(2)}:1.`);
+const jejuCssText = fs.readFileSync(safeDistPath('/css/jeju.css'), 'utf8');
+const jejuBodyWidth = cssRuleBlock(jejuCssText, 'body[data-country="south-korea"][data-city="jeju"]');
+if (!/min-width\s*:\s*0\s*;/i.test(jejuBodyWidth) || !/max-width\s*:\s*100%\s*;/i.test(jejuBodyWidth)) fail('Jeju body must shrink below the global 320px minimum without widening the viewport.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(jejuBodyWidth)) fail('Jeju narrow-width protection must not conceal horizontal overflow.');
+if (!/\.jeju-route-units,\s*\.geo-course-picker,\s*\.seogwipo-history-grid,\s*\.gapado-clock-readings\s*\{\s*grid-template-columns:\s*1fr\s*;/i.test(jejuCssText)) fail('Jeju field-guide cards must collapse to one column at the mobile breakpoint.');
+if (!/\.jeju-route-units article,\s*\.geo-course-picker article\s*\{[^}]*min-width:\s*0\s*;/i.test(jejuCssText)) fail('Jeju course cards must be allowed to shrink without clipping content.');
+const jejuKickerRule = cssRuleBlock(jejuCssText, '.jeju-atlas-card.has-photo > span');
+const jejuKicker = cssHexProperty(jejuKickerRule, 'color');
+const jejuKickerPlate = rgbaColor(jejuKickerRule, '8,26,28');
+const jejuKickerOpacity = Number(jejuKickerRule.match(/opacity\s*:\s*([\d.]+)/i)?.[1]);
+if (!jejuKicker || !jejuKickerPlate || !Number.isFinite(jejuKickerOpacity) || jejuKickerOpacity !== 1) fail('Jeju photo-card labels need an opaque readable foreground and dark label plate.');
+const jejuKickerSurface = compositeHex('#ffffff', jejuKickerPlate.hex, jejuKickerPlate.alpha);
+const jejuKickerContrast = contrastRatio(jejuKicker, jejuKickerSurface);
+if (jejuKickerContrast < 4.5) fail('Jeju photo-card top labels fall below estimated WCAG AA contrast on a white-image worst case.');
+const jejuPhotoCards = ['gateway', 'west', 'summit', 'falls', 'geology', 'ferry', 'sunrise', 'lava'];
+const jejuHeroRatios = [];
+for (const card of jejuPhotoCards) {
+  const overlayRule = cssRuleBlock(jejuCssText, `.jeju-atlas-card.${card}.has-photo::before`);
+  const darkStop = [...overlayRule.matchAll(/rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*\)/gi)].at(-1);
+  if (!darkStop || Number(darkStop[4]) < .92) fail(`Jeju ${card} photo card needs a dark lower text surface.`);
+  const darkColor = `#${[darkStop[1], darkStop[2], darkStop[3]].map((channel) => Number(channel).toString(16).padStart(2, '0')).join('')}`;
+  const worstBackground = compositeHex('#ffffff', darkColor, Number(darkStop[4]));
+  const ratios = [contrastRatio('#ffffff', worstBackground), contrastRatio('#ffd19a', worstBackground)];
+  if (ratios.some((ratio) => ratio < 4.5)) fail(`Jeju ${card} photo-card lower text is below estimated WCAG AA contrast on a white-image worst case.`);
+  jejuHeroRatios.push(...ratios);
+}
+console.log(`Jeju static narrow-width checks passed; photo-card kicker and lower text minimum estimated contrast ${Math.min(jejuKickerContrast, ...jejuHeroRatios).toFixed(2)}:1 (CSS estimate, not rendered measurement).`);
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],
@@ -1021,6 +1077,7 @@ if (!isLive) {
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
   const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
   const ninhBinhPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ninh-binh/')).length;
+  const jejuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/jeju/')).length;
   const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
   const meoVacHtml = fs.readFileSync(path.join(meoVacPath, 'index.html'), 'utf8');
   const meoVacDocument = parse(meoVacHtml);
@@ -1029,7 +1086,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);

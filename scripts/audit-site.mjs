@@ -133,6 +133,16 @@ const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((mat
     lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] || ''
   };
 });
+const updatedJejuRoutes = [
+  '/south-korea/jeju/',
+  '/south-korea/jeju/seogwipo-jeongbang/',
+  '/south-korea/jeju/jungmun-andeok/',
+  '/south-korea/jeju/moseulpo-gapado/'
+];
+for (const route of updatedJejuRoutes) {
+  const entry = sitemapEntries.find(({ loc }) => loc === `https://tripdistill.com${route}`);
+  if (!entry || entry.lastmod !== '2026-10-07') problems.push(`sitemap.xml: ${route} must retain its 7 October 2026 editorial update date`);
+}
 const publishedUrls = sitemapEntries.map((entry) => entry.loc);
 const publishedRoutes = publishedUrls.map((absoluteUrl) => new URL(absoluteUrl).pathname);
 const routeSet = new Set(publishedRoutes);
@@ -227,7 +237,7 @@ for (const absoluteUrl of publishedUrls) {
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${relativePath}: missing AdSense publisher declaration`);
   if (!html.includes(adsenseJsVersion)) problems.push(`${relativePath}: stale or missing AdSense loader`);
 
-  if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20260826-9')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
+  if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20261007-1')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
   if (gyeongjuReviewedRoutes.has(baseRoute) && !html.includes('/css/gyeongju.css?v=20261007-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
   if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);

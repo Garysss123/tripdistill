@@ -12,7 +12,7 @@
 .jeju-atlas-card.sunrise.has-photo::before { background:linear-gradient(180deg,rgba(51,31,74,.02),rgba(51,31,74,.17) 35%,rgba(46,29,67,.94)); }
 .jeju-atlas-card.lava.has-photo::before { background:linear-gradient(180deg,rgba(17,64,65,.02),rgba(17,64,65,.14) 35%,rgba(17,57,58,.93)); }
 .jeju-atlas-card.has-photo h3,.jeju-atlas-card.has-photo p { color:#fff; }
-.jeju-atlas-card.has-photo > span { color:#e5fbf7; opacity:.88; }
+.jeju-atlas-card.has-photo > span { padding:.55rem .65rem; border-radius:.25rem; color:#e5fbf7; background:rgba(8,26,28,.94); opacity:1; }
 .jeju-atlas-card.has-photo strong { color:#ffd19a; }
 .jeju-atlas-card.has-photo:hover > img { transform:scale(1.045); filter:saturate(1.08); }
 
@@ -145,3 +145,47 @@
   .carfree-notation > div:first-child { display:block; }.carfree-notation h2 { margin-top:1rem; text-align:left; }.notation-line { grid-template-columns:1fr; }.notation-line i { display:none; }.notation-line article:nth-of-type(3) { grid-column:auto; }.notation-line article { min-height:8rem; }.notation-line p { margin-top:1rem; }
   .village-code > div:first-child { min-height:4rem; flex-direction:row; }.village-code > div:first-child span,.village-code > div:first-child b { writing-mode:horizontal-tb; }
 }
+
+/* Evidence-led visit units shared only by the Jeju country cluster. */
+.jeju-route-units,.geo-course-picker { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
+.jeju-route-units article,.geo-course-picker article { min-width:0; min-height:20rem; padding:1.45rem; border:1px solid #cbd8d2; border-top:5px solid #1f6260; border-radius:1.2rem .35rem 1.2rem .35rem; background:linear-gradient(155deg,#fff 0%,#f0f6f2 100%); box-shadow:0 18px 38px rgba(26,54,48,.07); }
+.jeju-route-units article.jeju-unit-stone,.geo-course-picker article.course-a { border-top-color:#9b6537; background:linear-gradient(155deg,#fff 0%,#f5efe7 100%); }
+.jeju-route-units article.jeju-unit-ferry,.geo-course-picker article.course-c { border-top-color:#26758a; background:linear-gradient(155deg,#fff 0%,#eef6f7 100%); }
+.jeju-route-units article > span,.geo-course-picker article > span { display:block; color:#386b65; font-size:.72rem; font-weight:850; letter-spacing:.12em; line-height:1.4; }
+.jeju-route-units article h3,.geo-course-picker article h3 { margin:1.5rem 0 .65rem; color:#193e3c; font-size:1.35rem; line-height:1.2; }
+.jeju-route-units article p,.geo-course-picker article p { color:#435b59; line-height:1.68; }
+.jeju-route-units article a { display:inline-flex; align-items:center; gap:.45rem; margin-top:1rem; color:#0f5d5a; font-weight:800; text-decoration-thickness:1px; text-underline-offset:.2em; }
+.jeju-route-units article a b { font-size:1.15rem; }
+.geo-course-picker article > b { display:block; margin:.85rem 0; color:#714b27; font-size:1.03rem; letter-spacing:.01em; }
+.seogwipo-history-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin-top:1.2rem; }
+.seogwipo-history-grid article { min-width:0; padding:1rem; border:1px solid #d7c7b4; border-radius:.3rem 1rem .3rem 1rem; background:rgba(255,250,241,.88); }
+.seogwipo-history-grid article b { color:#7f4c30; font-size:.7rem; letter-spacing:.1em; }
+.seogwipo-history-grid h3 { margin:.7rem 0 .45rem; color:#423329; font-size:1.08rem; line-height:1.25; }
+.seogwipo-history-grid p { margin:0; color:#554940; font-size:.94rem; line-height:1.62; }
+.gapado-day-clock { display:grid; grid-template-columns:minmax(14rem,.72fr) minmax(0,1.8fr); gap:1rem; overflow:hidden; padding:1rem; border:1px solid #a8c4bf; border-radius:2.5rem .55rem 2.5rem .55rem; background:linear-gradient(135deg,#e9f1e4 0 35%,#f6f7ef 35% 100%); }
+.gapado-clock-intro { display:flex; flex-direction:column; justify-content:center; padding:1.4rem; border-radius:2rem .4rem 2rem .4rem; background:#193f43; color:#f4f8ef; }
+.gapado-clock-intro > span { color:#b8ded0; font-size:.72rem; font-weight:850; letter-spacing:.14em; }
+.gapado-clock-intro h2 { margin:1.15rem 0 .7rem; color:#fff; font-size:clamp(1.65rem,3vw,2.5rem); line-height:1.1; }
+.gapado-clock-intro p { margin:0; color:#e0eae1; line-height:1.65; }
+.gapado-clock-readings { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+.gapado-clock-readings article { min-width:0; padding:1.1rem; border:1px solid #d2ddce; border-radius:.3rem 1.2rem .3rem 1.2rem; background:rgba(255,255,255,.82); }
+.gapado-clock-readings article > b { color:#4b7065; font-size:.69rem; letter-spacing:.08em; }
+.gapado-clock-readings h3 { margin:.9rem 0 .45rem; color:#244a46; font-size:1.05rem; line-height:1.25; }
+.gapado-clock-readings p { margin:0; color:#425b54; font-size:.92rem; line-height:1.6; }
+
+@media (max-width: 980px) {
+  .jeju-route-units,.geo-course-picker { grid-template-columns:1fr 1fr; }
+  .jeju-route-units article:last-child,.geo-course-picker article:last-child { grid-column:1 / -1; }
+  .seogwipo-history-grid { grid-template-columns:1fr 1fr; }
+  .seogwipo-history-grid article:last-child { grid-column:1 / -1; }
+  .gapado-day-clock { grid-template-columns:1fr; }
+}
+@media (max-width: 640px) {
+  .jeju-route-units,.geo-course-picker,.seogwipo-history-grid,.gapado-clock-readings { grid-template-columns:1fr; }
+  .jeju-route-units article,.geo-course-picker article { min-height:0; }
+  .jeju-route-units article:last-child,.geo-course-picker article:last-child,.seogwipo-history-grid article:last-child { grid-column:auto; }
+  .gapado-day-clock { padding:.6rem; border-radius:1.1rem; }
+  .gapado-clock-intro { padding:1.2rem; border-radius:.8rem; }
+}
+
+body[data-country="south-korea"][data-city="jeju"] { min-width:0; max-width:100%; }
