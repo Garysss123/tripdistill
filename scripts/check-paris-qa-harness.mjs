@@ -352,7 +352,7 @@ for (const locale of expectedLocales) {
       const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : '/css/canada-quebec-city.css';
       const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/';
       if (!styles.includes('/css/canada.css') || !styles.includes(regionCss)) fail(`Missing Canada route stylesheet ${regionCss} on ${locale.code} ${routePath}.`);
-      if (!styleHrefs.some((href) => href === `${regionCss}?v=20261007-1`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.some((href) => href === `${regionCss}?v=20261007-2`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isCanadaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'details').length) fail(`Missing visible Canada FAQ controls on ${locale.code} ${routePath}.`);
       const canadaBodyText = text(nodes(document, 'body')[0]);

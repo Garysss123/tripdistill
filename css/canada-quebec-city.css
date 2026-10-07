@@ -1,4 +1,15 @@
 /* Québec City and Charlevoix: stone, river and exposed high country. */
+/* Keep 320 px viewport content inside the narrower usable width when classic scrollbars are present. */
+body[data-country="canada"] { min-width: 0; }
+body[data-country="canada"] .site-shell,
+body[data-country="canada"] .page-content,
+body[data-country="canada"] .ca-hub,
+body[data-country="canada"] .ca-field { min-width: 0; }
+body[data-country="canada"] .ca-hub,
+body[data-country="canada"] .ca-field { overflow-wrap: anywhere; }
+body[data-country="canada"] .ca-hub *,
+body[data-country="canada"] .ca-field * { min-width: 0; }
+
 body[data-page="ca-quebec-city-charlevoix"] .ca-hub {
   --ca-family: #a65036;
   --ca-family-dark: #422e31;

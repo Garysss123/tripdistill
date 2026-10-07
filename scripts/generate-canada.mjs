@@ -14,9 +14,9 @@ const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], [
 const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
 const pageIsoDate = (cluster) => cluster.isoDate || isoDate;
 const regionCss = (cluster) => cluster.slug === 'montreal'
-  ? '<link rel="stylesheet" href="/css/canada-montreal.css?v=20261007-1">'
+  ? '<link rel="stylesheet" href="/css/canada-montreal.css?v=20261007-2">'
   : cluster.slug === 'quebec-city-charlevoix'
-    ? '<link rel="stylesheet" href="/css/canada-quebec-city.css?v=20261007-1">'
+    ? '<link rel="stylesheet" href="/css/canada-quebec-city.css?v=20261007-2">'
     : '';
 
 const escapeHtml = (value = '') => String(value)
