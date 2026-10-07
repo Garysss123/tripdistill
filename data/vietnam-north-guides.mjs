@@ -1142,6 +1142,21 @@ const hanoiGuideUpdates = {
   },
   'ba-dinh-thang-long': {
     reviewDate: '7 October 2026', isoDate: '2026-10-07', countryCss: hanoi.hubCss,
+    decisions: [
+      ['Choose an entrance', 'Use the Hoang Dieu side for the Thang Long complex; confirm Ba Dinh memorial access separately.'],
+      ['Half-day sequence', 'Start at Doan Mon South Gate and the Flag Tower, continue to the Kinh Thien foundation, then walk west to 18 Hoang Dieu.'],
+      ['Memorial and excavation conduct', 'Follow posted photography and security rules at Ba Dinh; keep to signed paths and do not touch the archaeological remains.']
+    ],
+    presentation: {
+      readingTitle: 'A 1945 civic square beside an older citadel',
+      routeTitle: 'Doan Mon gate to the 18 Hoang Dieu excavation',
+      checksLabel: 'Before your visit',
+      checksTitle: 'Opening hours, entrances and conduct',
+      checksLead: 'Check Thang Long’s 08:00–17:00 notice and visitor map; verify the mausoleum calendar separately because ceremonies can change access.',
+      boundaryTitle: 'Keep memorial access and excavation rules distinct',
+      faqLabel: 'Visitor questions',
+      faqTitle: 'Ba Dinh Square and the Thang Long citadel'
+    },
     summary: 'Separate Ba Dinh civic memory from the archaeological layers of Thang Long, then plan around controlled entrances and the citadel’s current visitor window.',
     lead: 'Ba Dinh Square is where the Declaration of Independence was read on 2 September 1945. Thang Long tells a much longer story: the 11th-century citadel was built on the remains of a Chinese fortress dating to the 7th century, and the 18 Hoang Dieu excavation exposes remains from later periods of the capital.',
     orientation: 'Visitors see standing monuments such as Doan Mon South Gate and the Flag Tower, the Kinh Thien Palace foundation, and excavated layers at 18 Hoang Dieu; each reveals a different part of the citadel. The operator lists 08:00–17:00 every day (checked 7 October 2026); the mausoleum keeps a separate calendar.',
@@ -1203,7 +1218,7 @@ for (const guide of hanoi.guides) {
   const update = hanoiGuideUpdates[guide.slug];
   if (update) {
     Object.assign(guide, update);
-    guide.decisions = [
+    guide.decisions = update.decisions || [
       ['Arrival contract', guide.arrival],
       ['Route logic', guide.sequence],
       ['Keep the boundary', guide.boundary]
@@ -1232,6 +1247,13 @@ Object.assign(sapa, {
   transfer: 'Vietnam Tourism lists five to six hours from Hanoi by direct bus or shuttle. The overnight train stops at Lao Cai; a separate van or car then climbs to Sa Pa. Rain, fog and traffic can extend the road legs, so keep arrival day light and leave a buffer before any fixed Fansipan ticket or onward connection.',
   routeModelHeading: 'Keep the summit weather-led and Bac Ha on its own day.',
   routeModelLead: 'Use the church-market center and Ham Rong for a compact town day. Give Fansipan a separate forecast check and enough time for the station, cable car and summit steps. In Muong Hoa, choose one host-confirmed walking section and agree on the finish pickup; Cat Cat is closer but its stone route descends before it climbs back out. Save O Quy Ho and the waterfall stops for daylight with a driver who knows the pass. Bac Ha’s Sunday market and the 1914–1921 Hoang A Tuong Mansion are a different district: make them a full day from Sa Pa or stay nearby.',
+  presentation: {
+    conditionsKicker: 'Sa Pa day-trip planning',
+    conditionsTitle: 'Give the summit and long road days their own time.',
+    conditionsLead: 'Fansipan visibility, O Quy Ho road weather and Bac Ha’s Sunday market each set a different clock; keep them separate from a town walk or valley trail.',
+    faqKicker: 'Sa Pa visitor questions',
+    faqTitle: 'What to confirm before each outing'
+  },
   hubSources: [
     ['https://www.vietnam.travel/places-to-go/northern-vietnam/sapa', 'Vietnam Tourism — Sa Pa, seasonal conditions and Hanoi connections'],
     ['https://sapa-tourism.com/top-10-attractions/', 'Lao Cai Tourist Information and Promotion Center — Ham Rong and Fansipan'],
@@ -1387,6 +1409,59 @@ const sapaDecisionLabels = {
   'bac-ha-market-hoang-a-tuong': ['Market morning', 'Road-day return', 'Ask before photographing']
 };
 
+const sapaPresentation = {
+  'town-ham-rong': {
+    readingTitle: 'The old hill station and the Ham Rong stairs',
+    routeTitle: 'From the church square to the upper gardens',
+    checksLabel: 'Before your visit',
+    checksTitle: 'Weather, stairs and the downhill return',
+    checksLead: 'Check Ham Rong’s current entrance and opening notice after you arrive; rain can make the stone stair descent slippery.',
+    boundaryTitle: 'Give residents room in the town lanes',
+    faqLabel: 'Visitor questions',
+    faqTitle: 'Central streets, luggage and Ham Rong'
+  },
+  'fansipan-summit': {
+    readingTitle: 'The cable car reaches the summit; altitude still matters',
+    routeTitle: 'From the Sa Pa station to the summit steps',
+    checksLabel: 'Before your visit',
+    checksTitle: 'Visibility, wind and service status',
+    checksLead: 'Confirm Sun World service, cloud visibility and wind before leaving town; a clear Sa Pa forecast does not guarantee a clear summit.',
+    boundaryTitle: 'Follow marked paths at altitude',
+    faqLabel: 'Visitor questions',
+    faqTitle: 'Cable car, summit and trekking'
+  },
+  'muong-hoa-lao-chai-ta-van': {
+    readingTitle: 'Working terraces and village paths',
+    routeTitle: 'A host-confirmed valley walk',
+    checksLabel: 'Before your visit',
+    checksTitle: 'Season, footing and pickup',
+    checksLead: 'Agree with a local host on the named path, finish pickup and current bridge conditions; field routes change with weather and cultivation.',
+    boundaryTitle: 'Enter fields and homes only with permission',
+    faqLabel: 'Visitor questions',
+    faqTitle: 'Terrace season and valley routes'
+  },
+  'cat-cat-village': {
+    readingTitle: 'A managed route through a living village',
+    routeTitle: 'Gate, waterfall and uphill return',
+    checksLabel: 'Before your visit',
+    checksTitle: 'Steps, rain and the return',
+    checksLead: 'Confirm today’s gate route and pickup before descending; rain makes Cat Cat’s stone steps slippery in both directions.',
+    boundaryTitle: 'The visitor route passes through a working village',
+    faqLabel: 'Visitor questions',
+    faqTitle: 'Visitor route and village etiquette'
+  },
+  'bac-ha-market-hoang-a-tuong': {
+    readingTitle: 'Market trade and a separate mansion visit',
+    routeTitle: 'Sunday market, then Hoang A Tuong',
+    checksLabel: 'Before your visit',
+    checksTitle: 'Market day, opening and daylight return',
+    checksLead: 'Verify the Sunday market is running, ask whether the mansion is open and leave daylight for the road back to Sa Pa.',
+    boundaryTitle: 'Let sellers and handlers keep working',
+    faqLabel: 'Visitor questions',
+    faqTitle: 'Sunday market and mansion access'
+  }
+};
+
 const sapaFaqs = {
   'town-ham-rong': [
     ['Is Ham Rong a sensible first-day outing?', 'Yes, if you have arrived early enough to settle in and the hill is open. Walk the church-square lanes first; save the stair climb for a day when rain and cloud leave a clear descent.'],
@@ -1422,10 +1497,11 @@ for (const guide of sapa.guides) {
     guide.decisions = [
       ...sapaDecisionLabels[guide.slug].map((label, index) => [label, [guide.arrival, guide.sequence, guide.boundary][index]])
     ];
+    guide.presentation = sapaPresentation[guide.slug];
     guide.route = guide.stages.map((stage, index) => [['Arrive', 'Read', 'Deepen', 'Exit'][index], stage[0], stage[1]]);
     guide.checks = guide.risks;
     guide.hideSequenceLead = true;
-    guide.hideBoundaryBlock = true;
+    guide.hideBoundaryBlock = false;
     guide.checksIntro = '';
     guide.faq = sapaFaqs[guide.slug];
   }
