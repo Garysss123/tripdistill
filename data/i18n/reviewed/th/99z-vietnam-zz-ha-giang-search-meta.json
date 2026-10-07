@@ -1,0 +1,25 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/components/sidebar.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Hà Giang Karst Plateau chapters": "บทต่าง ๆ เกี่ยวกับที่ราบสูงคาสต์ Hà Giang",
+    "hà giang karst plateau": "ที่ราบสูงคาสต์ Hà Giang",
+    "quản bạ and heaven’s gate": "Quản Bạ และประตูสวรรค์",
+    "yên minh and the pine forest route": "Yên Minh และเส้นทางป่าสน",
+    "đồng văn old quarter": "ย่านเมืองเก่า Đồng Văn",
+    "lũng cú flag tower and border villages": "หอธง Lũng Cú และหมู่บ้านชายแดน",
+    "mã pí lèng pass and nho quế river": "ช่องเขา Mã Pí Lèng และแม่น้ำ Nho Quế",
+    "Quản Bạ and Heaven’s Gate Guide": "คู่มือ Quản Bạ และประตูสวรรค์",
+    "Vietnam · Hà Giang Karst Plateau": "เวียดนาม · ที่ราบสูงคาสต์ Hà Giang",
+    "Yên Minh and the Pine Forest Route Guide": "คู่มือ Yên Minh และเส้นทางป่าสน",
+    "Đồng Văn Old Quarter Guide": "คู่มือย่านเมืองเก่า Đồng Văn",
+    "Lũng Cú Flag Tower and Border Villages Guide": "คู่มือหอธง Lũng Cú และหมู่บ้านชายแดน",
+    "Mã Pí Lèng Pass and Nho Quế River Guide": "คู่มือช่องเขา Mã Pí Lèng และแม่น้ำ Nho Quế",
+    "ha giang karst plateau": "ที่ราบสูงคาสต์ Hà Giang",
+    "Vietnam · Ha Giang Karst Plateau": "เวียดนาม · ที่ราบสูงคาสต์ Hà Giang"
+  }
+}

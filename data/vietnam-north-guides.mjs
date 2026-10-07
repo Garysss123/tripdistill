@@ -367,154 +367,131 @@ export const vietnamNorthClusters = [
   },
   {
     slug: 'ha-giang',
-    name: 'Ha Giang Karst Plateau',
+    name: "Hà Giang Karst Plateau",
     region: 'Northeast Vietnam',
     family: 'karst-roadbook',
-    label: 'FRONTIER ROADS / KARST / VILLAGES',
-    tagline: 'Take the loop slowly: every pass has a road, a community and a boundary.',
-    hubIntro: 'Ha Giang is a road landscape organized around the Dong Van Karst Plateau UNESCO Global Geopark. Quan Ba, Yen Minh, Dong Van, Lung Cu, Ma Pi Leng, Meo Vac and Du Gia are not interchangeable viewpoints: they differ in road exposure, altitude, border sensitivity, market rhythm and community life. The safest editorial plan makes transport time visible and never rewards risky riding.',
-    stay: 'Use Ha Giang City as a practical start, then choose overnight bases according to the actual road sequence. In smaller towns, verify fuel, cash, medical access, hot water and the ability to park or turn around before arrival.',
-    transfer: 'The plateau is reached by long road transfer from Hanoi or another northern base. A local driver, legal tour or experienced rider is strongly preferable to an improvised solo loop; weather and landslides can change the route faster than a static map.',
-    sources: [
-      ['https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark', 'UNESCO — Dong Van Karst Plateau UNESCO Global Geopark'],
-      ['https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang', 'Vietnam Tourism — Ha Giang'],
-      ['https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip', 'Vietnam Tourism — Ha Giang Loop road trip'],
-    ],
+    label: "NORTHEAST LOOP / KARST / COMMUNITIES",
+    tagline: "Read each pass as a place with its own road, history and pace.",
+    hubIntro: "Slow the Hà Giang loop into a chain of distinct places: Quản Bạ’s valley gate, Yên Minh’s pine hills, Đồng Văn’s preserved market quarter, then the northern Lũng Cú spur and Mã Pí Lèng canyon road. They connect through active mountain roads, but their walking time, weather exposure and overnight services differ. Vietnam Tourism’s four-day route is a useful sample, not time for every side trip. Sleep in Hà Giang City before riding, then add daylight for Lũng Cú, any Nho Quế boat descent and the southbound Du Già leg. Change plans for current road, weather or access advice.",
+    stay: "Sleep in Hà Giang City before the loop, then use Yên Minh or Đồng Văn for the northern legs and Mèo Vạc or Du Già as the road turns south. Đồng Văn is the most practical base for the old quarter, an early market visit and the Lũng Cú branch. Confirm meals, fuel, cash, accommodation parking and the next pickup in each town; services thin out between bases.",
+    transfer: "Vietnam Tourism describes Hanoi–Hà Giang City as about 300 km and roughly six hours by bus; keep that transit separate from the first mountain-road day. Its four-day QL4C/QL34 route is a routing reference, not a current timetable or promise every stop is open. Public transport between viewpoints is limited. Choose a qualified driver or a rider with current legal permission, insurance and real mountain-road experience. Vietnam Tourism describes September–November as cooler, April–June as warm and July–August as monsoon season; UNESCO notes buckwheat flowers around October–November and peach or plum blossom around January–February. These are seasonal windows, not bloom or road guarantees. Reserve extra daylight for Lũng Cú, the Nho Quế descent and a Du Già return; do not price the trip from an undated fee estimate.",
+    sources: [["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"],["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"]],
+      hubSources: [["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"],["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"]],
+      hubCss: "/css/vietnam-ha-giang.css?v=20261007-1",
+      reviewDate: "7 October 2026",
+      isoDate: "2026-10-07",
+      routeModelHeading: "A road sequence with daylight at the center.",
+      routeModelLead: "Vietnam Tourism’s four-day example starts in Hà Giang City, uses QL4C north and returns by QL34 via Bảo Lâm. Treat it as a road skeleton: the Hanoi transfer is separate, and a full Lũng Cú branch, Nho Quế boat descent or slower Du Già finish needs extra daylight. Confirm each road and access point locally.",
     guides: [
       {
         slug: 'quan-ba-heavens-gate',
-        name: 'Quan Ba and Heaven’s Gate',
-        motif: 'first pass into the geopark',
+        name: "Quản Bạ and Heaven’s Gate",
+        motif: "valley gate",
         instrument: 'compass',
-        image: image({ src: '/assets/images/vietnam-ha-giang-quan-ba.webp', alt: 'Limestone valleys in Quan Ba District, Ha Giang', source: 'https://commons.wikimedia.org/wiki/File:Qu%E1%BA%A3n_B%E1%BA%A1%2C_Vietnam_-_2.jpg', label: 'Quản Bạ, Vietnam - 2.jpg', creator: 'Benjamin Smith', license: 'CC BY-SA 4.0' }),
-        summary: 'The loop’s northern gateway, pairing Heaven’s Gate viewpoints, Quan Ba valleys and an honest introduction to karst-road travel.',
-        lead: 'Quan Ba is where a northern road trip becomes a mountain route. The point is not to rush toward the famous pass names but to learn how elevation, blind curves, weather and village access change the traveler’s responsibilities.',
-        orientation: 'Use Heaven’s Gate as the first landscape reading point, then connect one valley or community stop. Keep the road itself in the story, including fuel and daylight decisions.',
-        arrival: 'Approach from Ha Giang City on the current permitted road with a skilled driver or legal tour. Pull-offs are limited and a scenic map pin may sit beside an active curve.',
-        sequence: 'Leave with fuel and water, pause only at safe shoulders, read the valley from an official viewpoint and reach the overnight base before darkness.',
-        boundary: 'Do not park on a blind bend or enter a farm to make a photograph. Scenic access is subordinate to residents, traffic and road safety.',
-        stages: [
-          ['Prepare the first climb', 'Check fuel, brakes, weather, helmets and the actual road plan before leaving Ha Giang City.'],
-          ['Use Heaven’s Gate safely', 'Stop only where the driver can clear the carriageway, then read the karst valley without crossing barriers.'],
-          ['Choose a community pause', 'Use an invited local stop or public market, asking before photographs and buying directly when possible.'],
-          ['Finish before dark', 'Reach the base with daylight, food and cash in reserve; the plateau is not a place to discover a failed headlight.']
-        ],
-        risks: [
-          ['Blind curves', 'Mountain traffic and sudden oncoming vehicles make roadside photography dangerous. Use legal pull-offs and keep moving when visibility is poor.'],
-          ['Weather and rockfall', 'Fog, rain and loose rock can change a pass within minutes. Follow local closures and do not force the loop.'],
-          ['Community thresholds', 'Ask permission before entering homes, farms or ceremonies, and do not turn residents into an unconsented backdrop.']
-        ],
-        duration: 'Allow one full road day from Ha Giang City, with extra margin for weather and stops.',
-        combine: 'Combine naturally with Yen Minh as the next overnight leg; avoid adding Lung Cu or Ma Pi Leng to the same compressed day.',
-        verify: 'Check the current road condition, weather, fuel points, driver or tour credentials, safe viewpoints and overnight confirmation.'
+        image: {"src":"/assets/images/vietnam-ha-giang-quan-ba.webp","alt":"Karst valley and terraced fields near Quản Bạ, Hà Giang","source":"https://commons.wikimedia.org/wiki/File:Qu%E1%BA%A3n_B%E1%BA%A1%2C_Vietnam_-_2.jpg","label":"Quản Bạ, Vietnam - 2.jpg","creator":"Benjamin Smith","license":"CC BY-SA 4.0","editNote":"Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0."},
+        summary: "Use Heaven’s Gate for the first wide view of the Đồng Văn plateau, then pause in Tam Sơn before the QL4C climb to Yên Minh.",
+        lead: "Quản Bạ is the loop’s threshold. From Heaven’s Gate, the road looks down into Tam Sơn and the limestone Twin Mountains, a compact valley set against much larger karst folds. The lookout explains the scale; Tam Sơn is where the day becomes practical, with a meal, fuel check and a decision about how far to drive before dark. Vietnam Tourism’s sample route places the pass on the first morning from Hà Giang City and continues to Yên Minh.",
+        orientation: "Treat Heaven’s Gate as a roadside viewpoint and the Twin Mountains as a view over the town, not as a signed walking circuit. Clouds can erase the valley quickly. Tam Sơn is the useful pause for food and supplies before the quieter road toward Yên Minh.",
+        arrival: "Start from Hà Giang City in the morning on the current QL4C alignment with a driver or properly qualified rider. If a Hanoi bus arrives that morning, rest in the city and begin the pass the next day; mountain curves and stops make bus-arrival estimates poor riding schedules.",
+        sequence: "Check fuel and visibility before leaving town, stop only at a safe signed pull-off, then use Tam Sơn for lunch and a fresh road check. Continue to Yên Minh only if the group still has daylight and clear enough weather; skip an extra detour when the pass is wet or fogged in.",
+        boundary: "Do not park on the bend or cross traffic to frame the valley. A viewpoint pin does not grant access to farms, terraces or homes; stay on the public edge and follow any current barriers.",
+        countryCss: "/css/vietnam-ha-giang.css?v=20261007-1",
+        isoDate: "2026-10-07",
+        sources: [["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"],["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"]],
+        reviewDate: "7 October 2026",
+        stages: [["Leave Hà Giang City rested","Separate the Hanoi transfer from the ride. Check brakes, lights, rain layers, fuel and the actual QL4C condition before climbing."],["Read the valley from the lookout","Use the official Heaven’s Gate stop if open. Pick out Tam Sơn and the Twin Mountains, then move on before traffic builds around the shoulder."],["Pause in Tam Sơn","Eat, refill water and check fuel, cash and visibility. Ask locally about weather or road works farther north rather than trusting an old map pin."],["Finish at Yên Minh in daylight","Keep the first day to Quản Bạ and the next town. If fog, rain or fatigue is building, stop early instead of trying to add a famous detour."]],
+        risks: [["Blind bends and pull-offs","The scenic road is active traffic. A wide-looking shoulder may still be a curve, driveway or drainage edge; stop only when the driver can fully clear the lane."],["Fog and monsoon rain","Low cloud removes the view and wet pavement lengthens stopping distance. Turn the lookout into a short pause or skip it when visibility closes."],["Farm and home privacy","Fields are working land. Do not walk into a terrace, move a crop barrier or photograph residents close-up without permission."]],
+        duration: "Use a full daylight road segment from Hà Giang City and sleep in Yên Minh. Vietnam Tourism’s sample gives Heaven’s Gate a morning stop before Tam Sơn and the northbound climb; actual arrival depends on weather, traffic and safe pauses.",
+        combine: "Yên Minh is the natural same-day overnight leg after the pass. Keep Lũng Cú and Mã Pí Lèng for later days; combining either with the city departure turns a first road day into a poor daylight gamble.",
+        verify: "Check the day’s QL4C report, visibility, pass closures, safe viewpoint access, fuel in Tam Sơn and the confirmed Yên Minh arrival before setting out."
       },
       {
         slug: 'yen-minh-pine-forest',
-        name: 'Yen Minh and the Pine Forest Route',
-        motif: 'staging town and upland forest',
+        name: "Yên Minh and the Pine Forest Route",
+        motif: "forest overnight",
         instrument: 'roadbook',
-        image: image({ src: '/assets/images/vietnam-ha-giang-yen-minh.webp', alt: 'Yen Minh town and surrounding mountains in Ha Giang', source: 'https://commons.wikimedia.org/wiki/File:Tt._Y%C3%AAn_Minh%2C_Y%C3%AAn_Minh%2C_H%C3%A0_Giang%2C_Vietnam_-_panoramio.jpg', label: 'Tt. Yên Minh, Yên Minh, Hà Giang, Vietnam - panoramio.jpg', creator: 'trungydang', license: 'CC BY 3.0' }),
-        summary: 'A staging chapter for Yên Minh’s upland forest, road rhythm, supplies and overnight decisions between Quan Ba and Dong Van.',
-        lead: 'Yen Minh is useful because it breaks the loop into a human day rather than a heroic distance claim. Use the pine-forest landscape and town services to teach preparation, not just to fill a card between more famous passes.',
-        orientation: 'Treat Yên Minh as an overnight or supply base with a short forest or valley branch. The route should explain what is available and what is not before sending travelers deeper into the plateau.',
-        arrival: 'Reach town in daylight on the current QL4C alignment, checking roadworks and fuel along the way. Rural detours may not have reliable signal or services.',
-        sequence: 'Refuel and check the vehicle on arrival, take a short daylight landscape branch, then plan the next day to Dong Van without adding an unsafe night segment.',
-        boundary: 'A pine forest or rural shoulder is not automatically public recreation land. Stay on established access and keep noise, litter and drones away from homes and livestock.',
-        stages: [
-          ['Make the town functional', 'Confirm lodging, food, cash, fuel and the next road section before heading to a viewpoint.'],
-          ['Read the forest edge', 'Use a public road or marked access point to observe upland vegetation, fields and the settlement pattern.'],
-          ['Prepare the next pass', 'Check brakes, lights, rain layers, water and the realistic daylight window to Dong Van.'],
-          ['Keep the night simple', 'Eat, rest and protect the next day’s margin instead of chasing an unlit scenic detour.']
-        ],
-        risks: [
-          ['Limited services', 'Fuel, cash, pharmacies and medical support are less predictable than in Hanoi or Sapa. Carry a buffer and do not run the tank low.'],
-          ['Roadside stopping', 'A wide-looking shoulder may hide a curve, drainage or local access. Stop only where the driver confirms it is safe.'],
-          ['Rural privacy', 'Do not fly drones, enter fields or photograph homes and residents without permission.']
-        ],
-        duration: 'Use one overnight and a short daylight branch; a longer forest walk needs local confirmation and additional time.',
-        combine: 'Combine with Quan Ba on arrival or Dong Van on departure, preserving the town as a real recovery point.',
-        verify: 'Check current roadworks, weather, fuel and cash availability, lodging access, daylight and the next day’s route margin.'
+        image: {"src":"/assets/images/vietnam-ha-giang-yen-minh-pines-20261007.webp","alt":"Needle pine forest on the misty upland slopes of Yên Minh district","source":"https://commons.wikimedia.org/wiki/File:Needle_trees_in_the_Yen_Minh_district_1.jpg","label":"Needle trees in the Yen Minh district 1.jpg","creator":"Vuong Tri Binh","license":"CC BY-SA 4.0","editNote":"Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0."},
+        summary: "Use Yên Minh as the forested overnight between the first climb and Đồng Văn: refuel, rest and enter the next pass in daylight.",
+        lead: "Yên Minh earns its place by breaking a long highland drive into a real overnight, not by promising a grand forest trail. The pine belt belongs to the upland road landscape; a misty roadside view does not identify a maintained hiking path or public picnic area. Arrive with enough time to settle into town, arrange the next fuel stop and prepare for the longer limestone road to Đồng Văn.",
+        orientation: "Vietnam Tourism’s four-day example reaches Yên Minh on day one after Heaven’s Gate. The forest scenery sits along the approach, while food, lodging and vehicle checks happen in town. September–November is often cooler, but mist can still hide the pines and July–August monsoon rain can change the road; check local visibility before taking a rural branch.",
+        arrival: "Continue north from Quản Bạ on QL4C, asking the driver about current works and weather. Confirm a room and vehicle parking before leaving Tam Sơn; do not assume a small roadside settlement will have fuel, cash or a pharmacy when you arrive.",
+        sequence: "Reach town before dusk, refuel if available and ask the host what services are open. Use a public roadside pull-off for the pine view, then rest and check the next day’s visibility, clothing and route toward Đồng Văn.",
+        boundary: "Stay on the public road or an explicitly open path. Do not enter forest plots, cut trees, fly a drone over homes or leave food and litter where livestock and wildlife forage.",
+        countryCss: "/css/vietnam-ha-giang.css?v=20261007-1",
+        isoDate: "2026-10-07",
+        sources: [["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"],["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"]],
+        reviewDate: "7 October 2026",
+        stages: [["Arrive before the town closes down","Confirm lodging, meal options and parking while there is still light. Ask whether fuel and cash services are operating that day."],["Take the forest as a short reading stop","Use the publicly accessible road edge to notice the needle pines and changing elevation. The photograph is not evidence of a marked trail."],["Reset the vehicle and the group","Check brakes, lights, layers, water and the next day’s pickup. If rain or fog is forecast, ask the host or driver which road segment is safest."],["Sleep before the longer northbound leg","Keep the evening simple and depart after breakfast. Do not trade an overnight recovery point for a dark detour through rural lanes."]],
+        risks: [["Thin services","Small-town fuel, pharmacy and cash availability can change. Carry a buffer from Hà Giang City and confirm an open option before relying on it."],["Fog on the forest road","Mist can shorten sight lines around bends. A quiet-looking road is still through-traffic; avoid walking or parking in the lane."],["Unmarked access","A pine slope is not necessarily a public recreation site. Ask before using a path and leave homes, forest plots and livestock undisturbed."]],
+        duration: "Stay one night and allow only a short daylight forest pause. The useful visit is the recovery interval between Quản Bạ and Đồng Văn; any longer walk needs a named public access point and local confirmation.",
+        combine: "Pair with Quản Bạ on arrival or Đồng Văn on the following day. Do not turn the overnight into a side trip toward Lũng Cú or the Nho Quế canyon.",
+        verify: "Confirm the open road and weather, lodging and parking, meal options, fuel and cash availability, and whether a specific forest path is public before walking it."
       },
       {
         slug: 'dong-van-old-quarter',
-        name: 'Dong Van Old Quarter',
-        motif: 'stone-town market memory',
+        name: "Đồng Văn Old Quarter",
+        motif: "living heritage quarter",
         instrument: 'zine',
-        image: image({ src: '/assets/images/vietnam-ha-giang-dong-van.webp', alt: 'Dong Van old town in the Dong Van Karst Plateau', source: 'https://commons.wikimedia.org/wiki/File:Dong_Van_old_town.jpg', label: 'Dong Van old town.jpg', creator: 'HuangWending18072009', license: 'CC0' }),
-        summary: 'A compact heritage-town chapter for Dong Van’s preserved houses, market, stone streets and role as a plateau base.',
-        lead: 'Dong Van Old Quarter is a place to pause between roads. Its preserved houses and market spaces are still part of a living town, so the useful guide explains how to walk, observe and stay without turning private life into a staged old-town scene.',
-        orientation: 'Use the old quarter as a walkable evening or morning loop, then keep the larger geopark excursions separate. UNESCO describes a cluster of preserved houses dating from around 1890, but individual access is not guaranteed.',
-        arrival: 'Park or get dropped at the current perimeter and walk the narrow streets. Market days and festivals can alter vehicle access and crowd density.',
-        sequence: 'Arrive before the busiest period, read the square and façades, visit only public interiors, then leave time for a meal and a rested departure.',
-        boundary: 'Do not enter courtyards, guest rooms or shops without invitation. The old quarter is both heritage and home.',
-        stages: [
-          ['Find the stone-town scale', 'Walk slowly from the market area into side lanes, noticing how architecture and commerce share a compact footprint.'],
-          ['Choose one public interior', 'Use an officially open house, museum or cultural space for interpretation rather than peering into private rooms.'],
-          ['Respect market work', 'Stand clear of deliveries and ask before photographing vendors, food preparation or residents.'],
-          ['Protect the next road day', 'Finish early enough to rest, check the vehicle and leave Dong Van with daylight for the next pass.']
-        ],
-        risks: [
-          ['Narrow traffic', 'Scooters, supplies and pedestrians use the same lanes. Do not stop at corners or walk backward into traffic.'],
-          ['Private property', 'Historic appearance does not make a house public. Follow signs and invitations, not curiosity alone.'],
-          ['Market crowding', 'Secure phones and bags, avoid blocking stalls and keep children away from livestock and moving carts.']
-        ],
-        duration: 'Allow a few hours, with an overnight base making the quiet morning or evening much more realistic.',
-        combine: 'Combine with Lung Cu as a dedicated northern branch, or with the Mã Pí Lèng road on the following day.',
-        verify: 'Check current old-quarter access, market or festival conditions, public interiors, lodging and next-day road weather.'
+        image: {"src":"/assets/images/vietnam-ha-giang-dong-van-market-20261007.webp","alt":"Historic covered market building in Đồng Văn Old Quarter","source":"https://commons.wikimedia.org/wiki/File:Covered_market_of_Dong_Van_in_2014.jpg","label":"Covered market of Dong Van in 2014.jpg","creator":"Vuong Tri Binh","license":"CC BY-SA 4.0","editNote":"Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0."},
+        summary: "Walk Đồng Văn’s preserved houses and covered market as a living neighborhood, with time for a quiet morning and the next road day.",
+        lead: "UNESCO describes roughly forty preserved houses dating to around 1890, with market and residential space woven into one compact quarter. Read the place at street level: stone-and-timber facades, the covered market and the shifts between public lane and private threshold. The age of a building does not make its courtyard or interior a visitor attraction; use only spaces clearly open to the public.",
+        orientation: "A short evening or early-morning walk works better than treating the old quarter as a vehicle stop. The market is a working place, not a scheduled show; ask your host which day and hours are current, then leave room for a meal and a slower look at the streets.",
+        arrival: "Come from Yên Minh on QL4C and arrive with enough daylight to park outside the narrowest lanes. On the way, Sa Phin’s Vuong family palace is a separate historic visit; Vietnam Tourism dates the house to 1902, so check its current opening before adding it.",
+        sequence: "Leave the vehicle at an agreed public spot, walk the old quarter on foot, view the covered market from its public edge and ask before photographing stallholders. Keep the next mountain-road start separate from a late market evening.",
+        boundary: "The quarter is both heritage and home. Never enter a courtyard, shop room or upstairs space without invitation; a doorway visible from the street is still private property.",
+        countryCss: "/css/vietnam-ha-giang.css?v=20261007-1",
+        isoDate: "2026-10-07",
+        sources: [["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"],["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"]],
+        reviewDate: "7 October 2026",
+        stages: [["Start with the public street pattern","Walk from the square through the lanes and notice how commerce and homes share the same small footprint. Avoid blocking scooters or deliveries."],["Read the covered market as working space","Look at the roof and market edge from an open public route. Market activity and hours vary, so ask locally rather than promising a particular trading day."],["Choose an open interior only","Visit a house or exhibit only when it is clearly signed or hosted. UNESCO’s count describes the quarter as a whole, not forty doors open to tourists."],["Keep a calm overnight base","Eat, rest and prepare for the next road leg. If Lũng Cú is planned, start early from the Đồng Văn base and keep the return in daylight."]],
+        risks: [["Lane traffic","Scooters, pedestrians and deliveries share narrow streets. Stand clear at corners and never walk backward into moving traffic for a photograph."],["Private homes","A historic facade is not public access. Follow the host’s invitation and any posted entry boundary."],["Market crowds and portraits","Do not block sellers or photograph people at close range without asking. Secure bags and keep clear of livestock and carrying routes."]],
+        duration: "Allow two or three unhurried hours for the lanes and market edge; stay overnight if you want the quieter early period or a separate northern branch. Market hours and interior access need local confirmation.",
+        combine: "Sa Phin is a natural stop on the approach if the palace is open. Use Đồng Văn as the base for a separate Lũng Cú day or continue toward Mã Pí Lèng the next morning; do not stack both long branches.",
+        verify: "Ask a current host about market timing and vehicle access; confirm any house or palace opening, parking, the next road forecast and whether the planned site charges an entry fee."
       },
       {
         slug: 'lung-cu-flag-tower',
-        name: 'Lung Cu Flag Tower and Border Villages',
-        motif: 'border landscape and civic symbol',
+        name: "Lũng Cú Flag Tower and Border Villages",
+        motif: "border-area landmark",
         instrument: 'atlas',
-        image: image({ src: '/assets/images/vietnam-ha-giang-lung-cu.webp', alt: 'Lung Cu Flag Tower on Dragon Mountain', source: 'https://commons.wikimedia.org/wiki/File:C%E1%BB%99t_c%E1%BB%9D_L%C5%A9ng_C%C3%BA_-_H%C3%A0_Giang.JPG', label: 'Cột cờ Lũng Cú - Hà Giang.JPG', creator: 'Leminhel', license: 'Public domain' }),
-        summary: 'A border-area day around Lung Cu Flag Tower, Thèn Pả, Lô Lô Chải and the highland villages beneath Dragon Mountain.',
-        lead: 'Lung Cu carries symbolic weight as well as a wide landscape. A strong page makes the border setting, flag ritual, stairs, village privacy and security instructions visible instead of reducing the visit to a “northernmost selfie.”',
-        orientation: 'Use the flag tower as the anchor and select one village or lake branch that is publicly accessible. Keep the border context explicit and avoid implying that every ridge or road is open for exploration.',
-        arrival: 'Reach the area from Dong Van with a confirmed driver or tour and allow for the additional road distance. Current entry, vehicle and identification rules may differ by site or period.',
-        sequence: 'Check the border-area notices, visit the tower respectfully, then walk or drive only to publicly accessible village spaces before returning in daylight.',
-        boundary: 'Do not photograph sensitive facilities, cross signs, fly a drone or touch the flag. Community houses and fields remain private even when they are visually striking.',
-        stages: [
-          ['Confirm the border context', 'Carry identification as advised, read current signs and ask the driver or local authority where photography and movement are permitted.'],
-          ['Climb with respect', 'Use the official route, take breaks on stairs and treat the flag and ceremony area as a civic symbol rather than a prop.'],
-          ['Visit the village threshold', 'Choose a public path in Thèn Pả or Lô Lô Chải and ask before entering homes, courtyards or private fields.'],
-          ['Return before the road darkens', 'Leave enough daylight for the Dong Van transfer and keep a weather fallback if the exposed ridge becomes unsafe.']
-        ],
-        risks: [
-          ['Border sensitivity', 'Rules can change near sensitive facilities. Obey signs, guards and local instructions immediately.'],
-          ['Stairs and exposure', 'The tower approach combines elevation, stairs, wind and sun. Carry water and avoid the climb during storms.'],
-          ['Cultural privacy', 'Ask for portraits and home visits; do not treat Lo Lo or Hmong communities as a photo set.']
-        ],
-        duration: 'Reserve most of a day from Dong Van, including the return road and weather margin.',
-        combine: 'Combine with Dong Van Old Quarter as a two-day base, not with Mã Pí Lèng and Meo Vac as a same-day checklist.',
-        verify: 'Check current border-area access, identification advice, tower opening, road conditions, weather and photography restrictions.'
+        image: {"src":"/assets/images/vietnam-ha-giang-lung-cu-context-20261007.webp","alt":"Lũng Cú Flag Tower on a wooded karst hill above nearby homes","source":"https://commons.wikimedia.org/wiki/File:To%C3%A0n_c%E1%BA%A3nh.jpg","label":"Toàn cảnh.jpg","creator":"Khoitran1957","license":"CC BY-SA 4.0","editNote":"Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0."},
+        summary: "Plan Lũng Cú as a daylight branch from Đồng Văn: the flag tower, roughly 200 steps and border-area instructions need more than a photo stop.",
+        lead: "Lũng Cú is a civic landmark in a sensitive border landscape, not a casual detour on the way to Mã Pí Lèng. Vietnam Tourism describes about 200 steps to the tower and recommends the cooler late afternoon; its route article calls the road branch roughly three hours. Treat both as planning clues, not a current schedule. Lô Lô Chải below the hill is a lived-in village, so visit only public, hosted spaces.",
+        orientation: "The tower and flag sit above a steep green hill; the approach, climb and return road are part of the visit. The village is a separate human-scale stop below it. Decide whether the group has the time and weather for both before leaving Đồng Văn.",
+        arrival: "Use a confirmed driver or tour from Đồng Văn, check the current road and site notices, and keep a daylight return. Carry identification if local instructions advise it. Do not assume border-area photography, drone use or side-road access is unrestricted.",
+        sequence: "Check access and weather before the branch, climb at an easy pace, then visit Lô Lô Chải only through a public route or host. Return to Đồng Văn rather than pushing on to Mã Pí Lèng after the tower.",
+        boundary: "Obey signs and staff around border facilities, do not cross barriers or photograph restricted infrastructure, and keep the flag and civic grounds free from climbing, touching or staged props.",
+        countryCss: "/css/vietnam-ha-giang.css?v=20261007-1",
+        isoDate: "2026-10-07",
+        sources: [["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"],["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"]],
+        reviewDate: "7 October 2026",
+        stages: [["Decide from a Đồng Văn base","Confirm a driver, road status and a generous return window before setting out. A bus arrival day is not a sensible start for the branch."],["Check the site notices","Read current access, identification and photography directions at the entrance. Follow staff instructions even when an older travel guide says otherwise."],["Climb the official stair route","Allow for about 200 steps, sun, wind and uneven pacing. Take water and turn back if weather or health makes the descent unsafe."],["Visit the village by invitation","Use a public route or hosted stop in Lô Lô Chải, ask before portraits or home visits, then return to Đồng Văn in daylight."]],
+        risks: [["Border-area restrictions","Access, photography and drone rules can change near sensitive sites. Follow local notices and guards; this guide does not establish a permit requirement."],["Stairs and exposure","The climb is short enough to underestimate but includes many steps and weather exposure. Pause, hydrate and avoid storms or a late start."],["Community privacy","Lô Lô Chải is a residential village, not a backdrop. Ask before portraits and enter a home only through a host invitation."]],
+        duration: "Reserve at least a half-day from Đồng Văn, with a large daylight margin. Vietnam Tourism’s older route example gives about three hours for the road detour before the tower climb; recheck current conditions and add time for a hosted village visit.",
+        combine: "Pair with Đồng Văn as a separate base day. Do not combine this branch with the Mã Pí Lèng–Mèo Vạc road and a river descent in one checklist day.",
+        verify: "Check current tower opening, road work, weather, local identification and photography guidance, stair access, driver pickup and any posted entry charge. No current fee is quoted here."
       },
       {
         slug: 'ma-pi-leng-nho-que',
-        name: 'Ma Pi Leng Pass and Nho Que River',
-        motif: 'exposed pass and deep canyon',
+        name: "Mã Pí Lèng Pass and Nho Quế River",
+        motif: "pass above the Nho Quế",
         instrument: 'contour',
-        image: image({ src: '/assets/images/vietnam-ha-giang-ma-pi-leng.webp', alt: 'Ma Pi Leng Pass between Dong Van and Meo Vac', source: 'https://commons.wikimedia.org/wiki/File:Le_col_de_Ma_Pi_Leng_%28Dong_Van-Meo_Vac%29.jpg', label: 'Le col de Ma Pi Leng (Dong Van-Meo Vac).jpg', creator: 'Jaybeelarsay', license: 'CC BY-SA 3.0' }),
-        summary: 'The signature pass-and-canyon chapter, connecting Ma Pi Leng viewpoints with a separately planned Nho Que River descent.',
-        lead: 'Ma Pi Leng is spectacular precisely because the road is narrow, exposed and high above the Nho Que valley. The page should teach visitors to read the pass from safe pull-offs and to treat any river excursion as a separate managed transfer.',
-        orientation: 'Separate the pass crest, marked viewpoints, Tu San Canyon perspective and Nho Que boat access. They may share a landscape but not a single easy parking or walking route.',
-        arrival: 'Travel between Dong Van and Meo Vac with an experienced driver or legal tour. River access may require local transport and current water or weather approval.',
-        sequence: 'Take the pass in clear daylight, stop only at safe viewpoints, check the river descent independently and return before fog, rain or fatigue affects the exposed road.',
-        boundary: 'Never step into the traffic lane, cross a barrier or lean over an unprotected edge for a photograph. Do not swim or improvise a river landing.',
-        stages: [
-          ['Read the road first', 'Check wind, rain, visibility and the driver’s stopping plan before approaching the crest.'],
-          ['Use the safe overlook', 'Stay behind current barriers, keep vehicles clear and let the canyon remain a landscape rather than a stunt platform.'],
-          ['Decide on the river separately', 'Confirm the legal access point, boat operator, water conditions and return transfer before descending.'],
-          ['Exit with daylight', 'Leave the canyon or river area with a generous road margin; do not continue the loop simply to preserve a planned photograph.']
-        ],
-        risks: [
-          ['Cliff and traffic exposure', 'The pass carries active traffic beside steep drops. Experienced driving and legal viewpoints are non-negotiable.'],
-          ['Rain and rockfall', 'Heavy weather can make both pass and river routes unsafe. Follow closures and turn back early.'],
-          ['Water safety', 'Boat and shoreline conditions vary. Use a life jacket, follow the operator and never enter the river alone.']
-        ],
-        duration: 'Allow one daylight road segment; add a separate half day or more for an operating Nho Que boat transfer.',
-        combine: 'Combine with Dong Van or Meo Vac as the road link, keeping the pass and river as distinct planning blocks.',
-        verify: 'Check road and viewpoint closures, driver experience, weather, river operator status, life-jacket rules and daylight.'
+        image: {"src":"/assets/images/vietnam-ha-giang-ma-pi-leng.webp","alt":"Mã Pí Lèng road crossing a dramatic limestone ridge above the Nho Quế valley","source":"https://commons.wikimedia.org/wiki/File:Le_col_de_Ma_Pi_Leng_%28Dong_Van-Meo_Vac%29.jpg","label":"Le col de Ma Pi Leng (Dong Van-Meo Vac).jpg","creator":"Jaybeelarsay","license":"CC BY-SA 3.0","editNote":"Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 3.0."},
+        summary: "The Đồng Văn–Mèo Vạc road climbs above the Nho Quế; any canyon-side boat is a separate descent, operator and return transfer.",
+        lead: "Mã Pí Lèng’s drama comes from the road itself: the short 24-kilometre link between Đồng Văn and Mèo Vạc can take most of a morning when drivers stop at safe views. UNESCO describes Tu San Canyon below at roughly 700–800 metres deep. The river looks close from the pass but reaching a boat point means a different road, operator and return plan; it is not a simple roadside walk.",
+        orientation: "Separate three experiences on the map: the QL4C pass drive, a safe signed overlook and a managed Nho Quế river excursion. A clear view from above does not mean there is a legal or walkable descent at that spot.",
+        arrival: "Travel the pass between Đồng Văn and Mèo Vạc with a driver who knows current stopping areas. Confirm any river transfer before turning off the main road; do not count on phone signal, parking, boat operation or a quick return.",
+        sequence: "Check visibility and road notices, take only the stops the driver can make safely, then decide separately whether an operating river trip fits the remaining daylight. In July and August monsoon rain can close the view or make a descent unsafe; seasonal buckwheat or blossom color is no substitute for a road check. If rain, fog, rockfall or fatigue rises, skip the descent and continue to the confirmed overnight base.",
+        boundary: "Stay behind current barriers and well out of the traffic lane. Do not climb an unprotected edge, swim from an improvised landing or descend a slope that has no public route.",
+        countryCss: "/css/vietnam-ha-giang.css?v=20261007-1",
+        isoDate: "2026-10-07",
+        sources: [["https://www.unesco.org/en/iggp/dong-van-karst-plateau-unesco-global-geopark","UNESCO | Đồng Văn Karst Plateau Global Geopark"],["https://www.vietnam.travel/things-to-do/ha-giang-loop-four-day-road-trip","Vietnam Tourism | Four-day Hà Giang road-trip example"],["https://www.vietnam.travel/places-to-go/northern-vietnam/ha-giang","Vietnam Tourism | Hà Giang: access, seasons and landmarks"]],
+        reviewDate: "7 October 2026",
+        stages: [["Check the pass before leaving","Ask about rain, visibility, closures and the driver’s planned safe stops. A road can be open while a viewpoint or descent is not suitable."],["Take the ridge at road speed","Let the driver choose pull-offs and stay behind barriers. The 24 km link may still occupy the morning once curves and safe pauses are included."],["Plan the river as a separate transfer","Confirm the named access point, boat operator, life jacket, water conditions, return pickup and current operating status before descending."],["Finish at the agreed base","Reach Mèo Vạc or the booked overnight with daylight. Do not continue into a remote southbound leg just to preserve a boat booking."]],
+        risks: [["Traffic beside cliffs","The pass is an active road with limited stopping space and steep exposure. Never stand in the carriageway or lean over a barrier."],["Rain and rockfall","Monsoon rain, fog and loose rock can make the ridge or descent unsafe. Follow closures and local driver decisions."],["Water and return logistics","Boat access and river conditions vary. Use a current operator, wear the supplied life jacket and confirm the return before boarding."]],
+        duration: "Allow a full daylight road segment even though the Đồng Văn–Mèo Vạc distance is short; Vietnam Tourism says viewpoint stops can fill most of the morning. Add at least a separate half-day for a river descent and boat transfer, subject to current operation.",
+        combine: "Travel onward to Mèo Vạc or use Đồng Văn as the start base. Keep Lũng Cú on another day, and do not combine the pass with a long southbound Du Già return after dark.",
+        verify: "Check the pass and viewpoint notices, rain and visibility, safe pull-offs, boat operator and life-jacket terms, the access and return transfer, and current fees before committing."
       },
       {
         slug: 'meo-vac-du-gia',
@@ -1521,3 +1498,98 @@ for (const guide of sapa.guides) {
   Object.assign(guide.image, { licenseUrl, useAltAsCreditTitle: true });
   if (editNote) guide.image.editNote = editNote;
 }
+
+const haGiang = vietnamNorthClusters.find((cluster) => cluster.slug === 'ha-giang');
+haGiang.presentation = {
+  conditionsKicker: 'Road-day decisions',
+  conditionsTitle: 'Six legs with different road and daylight demands',
+  conditionsLead: 'The northern spur, market streets, cliff road and river descent each need their own daylight and access decision.',
+  checksActionText: 'Check conditions',
+  faqKicker: 'Ha Giang planning questions',
+  faqTitle: 'Base nights, branch days and road margins'
+};
+
+const haGiangPresentation = {
+  'quan-ba-heavens-gate': {
+    motif: '(valley overlook and first road day)',
+    decisions: ['Start after the Hà Giang City transfer', 'Tam Sơn is the practical reset', 'Use only safe public pull-offs'],
+    presentation: {
+      readingTitle: 'Heaven’s Gate explains the valley before the climb',
+      routeTitle: 'A daylight run from Hà Giang City to Yên Minh',
+      checksLabel: 'On the first road day',
+      checksTitle: 'Visibility, pull-offs and rider readiness',
+      checksLead: 'Before leaving Hà Giang City, confirm the rider or driver, QL4C conditions, fuel and the day’s weather; reset at Tam Sơn before continuing.',
+      boundaryTitle: 'Keep viewpoints off the live road',
+      faqLabel: 'Quản Bạ visit questions',
+      faqTitle: 'What fits between Hà Giang City and Yên Minh?'
+    }
+  },
+  'yen-minh-pine-forest': {
+    motif: '(overnight reset between long road legs)',
+    decisions: ['Reserve a Yên Minh night', 'Use the pine view as a short stop', 'Confirm public access before walking'],
+    presentation: {
+      readingTitle: 'Treat Yên Minh as recovery, not a trailhead',
+      routeTitle: 'From the pine pause to Đồng Văn',
+      checksLabel: 'At the overnight base',
+      checksTitle: 'Services, fog and forest access',
+      checksLead: 'Town services are thin; confirm lodging, fuel, meals, cash and parking before leaving Tam Sơn. In fog or rain, use only a known public route.',
+      boundaryTitle: 'Treat the pines as roadside scenery',
+      faqLabel: 'Yên Minh overnight questions',
+      faqTitle: 'How to use this stop between the longer drives'
+    }
+  },
+  'dong-van-old-quarter': {
+    motif: '(covered market and lived-in lanes)',
+    decisions: ['Arrive before the lanes tighten', 'Walk the old quarter between road legs', 'Separate street access from house access'],
+    presentation: {
+      readingTitle: 'Street life and the covered market',
+      routeTitle: 'Walk the quarter before the next road day',
+      checksLabel: 'In the old quarter',
+      checksTitle: 'Lane traffic, home thresholds and market work',
+      checksLead: 'UNESCO’s house count describes a neighborhood, not visitor-open interiors. Stay on public lanes, avoid blocking deliveries and ask a current host about any hosted room.',
+      boundaryTitle: 'A doorway is not an invitation',
+      faqLabel: 'Đồng Văn visit questions',
+      faqTitle: 'How much of the quarter is open to visitors?'
+    }
+  },
+  'lung-cu-flag-tower': {
+    motif: '(tower climb and border-area return)',
+    decisions: ['Base the branch in Đồng Văn', 'Budget daylight for the tower return', 'Follow border-site instructions'],
+    presentation: {
+      readingTitle: 'A civic landmark in a border landscape',
+      routeTitle: 'From Đồng Văn to Lũng Cú and back in daylight',
+      checksLabel: 'Before taking the northern spur',
+      checksTitle: 'Stairs, weather and site instructions',
+      checksLead: 'Check the current road, tower access and local photography directions before leaving Đồng Văn; keep enough time for the stair climb and a safe return.',
+      boundaryTitle: 'Obey the posted border-area limits',
+      faqLabel: 'Lũng Cú visit questions',
+      faqTitle: 'How to plan the tower and village branch'
+    }
+  },
+  'ma-pi-leng-nho-que': {
+    motif: '(ridge road and river descent)',
+    decisions: ['Separate the ridge drive and boat trip', 'Choose the river only after a road check', 'Stay behind barriers and out of traffic'],
+    presentation: {
+      readingTitle: 'Pass, overlook and river are three separate visits',
+      routeTitle: 'QL4C ridge first; river only if the return works',
+      checksLabel: 'Before descending toward Nho Quế',
+      checksTitle: 'Traffic, rain and a separate boat transfer',
+      checksLead: 'Confirm safe stopping points, visibility and road status first. Treat a river descent as a second transfer with a named operator, water check and return pickup.',
+      boundaryTitle: 'Do not turn the cliff edge into a viewpoint',
+      faqLabel: 'Mã Pí Lèng and Nho Quế questions',
+      faqTitle: 'When does a river trip fit the pass drive?'
+    }
+  }
+};
+
+for (const guide of haGiang.guides) {
+  const update = haGiangPresentation[guide.slug];
+  if (!update) continue;
+  guide.motif = update.motif;
+  guide.decisions = guide.decisions.map(([, copy], index) => [update.decisions[index], copy]);
+  guide.presentation = update.presentation;
+}
+
+const meoVacCreditGuide = haGiang.guides.find((guide) => guide.slug === 'meo-vac-du-gia');
+meoVacCreditGuide.kickerLabel = 'FRONTIER ROADS / KARST / VILLAGES';
+meoVacCreditGuide.image.editNote = 'Resized, display-cropped and converted to WebP; adapted version remains available under CC BY-SA 4.0.';

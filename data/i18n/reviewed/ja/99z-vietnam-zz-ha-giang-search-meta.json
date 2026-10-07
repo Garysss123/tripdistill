@@ -1,0 +1,25 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/components/sidebar.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Hà Giang Karst Plateau chapters": "ハザン・カルスト高原の各章",
+    "hà giang karst plateau": "ハザン・カルスト高原",
+    "quản bạ and heaven’s gate": "クアンバと天門",
+    "yên minh and the pine forest route": "イエンミンと松林ルート",
+    "đồng văn old quarter": "ドンヴァン旧市街",
+    "lũng cú flag tower and border villages": "ルンクー旗塔と国境沿いの村々",
+    "mã pí lèng pass and nho quế river": "マーピーレン峠とニョークエ川",
+    "Quản Bạ and Heaven’s Gate Guide": "クアンバと天門のガイド",
+    "Vietnam · Hà Giang Karst Plateau": "ベトナム · ハザン・カルスト高原",
+    "Yên Minh and the Pine Forest Route Guide": "イエンミンと松林ルートのガイド",
+    "Đồng Văn Old Quarter Guide": "ドンヴァン旧市街のガイド",
+    "Lũng Cú Flag Tower and Border Villages Guide": "ルンクー旗塔と国境沿いの村々のガイド",
+    "Mã Pí Lèng Pass and Nho Quế River Guide": "マーピーレン峠とニョークエ川のガイド",
+    "ha giang karst plateau": "ハザン・カルスト高原",
+    "Vietnam · Ha Giang Karst Plateau": "ベトナム · ハザン・カルスト高原"
+  }
+}

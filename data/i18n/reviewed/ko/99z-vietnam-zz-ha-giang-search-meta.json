@@ -1,0 +1,25 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/components/sidebar.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Hà Giang Karst Plateau chapters": "하장(Hà Giang) 카르스트 고원 챕터",
+    "hà giang karst plateau": "하장(Hà Giang) 카르스트 고원",
+    "quản bạ and heaven’s gate": "꽌바(Quản Bạ)와 천국의 문",
+    "yên minh and the pine forest route": "옌민(Yên Minh)과 소나무 숲길",
+    "đồng văn old quarter": "동반(Đồng Văn) 구시가지",
+    "lũng cú flag tower and border villages": "룽꾸(Lũng Cú) 깃대탑과 국경 마을",
+    "mã pí lèng pass and nho quế river": "마피렝(Mã Pí Lèng) 고개와 뇨꾸에강(Nho Quế River)",
+    "Quản Bạ and Heaven’s Gate Guide": "꽌바(Quản Bạ)와 천국의 문 가이드",
+    "Vietnam · Hà Giang Karst Plateau": "베트남 · 하장(Hà Giang) 카르스트 고원",
+    "Yên Minh and the Pine Forest Route Guide": "옌민(Yên Minh)과 소나무 숲길 가이드",
+    "Đồng Văn Old Quarter Guide": "동반(Đồng Văn) 구시가지 가이드",
+    "Lũng Cú Flag Tower and Border Villages Guide": "룽꾸(Lũng Cú) 깃대탑과 국경 마을 가이드",
+    "Mã Pí Lèng Pass and Nho Quế River Guide": "마피렝(Mã Pí Lèng) 고개와 뇨꾸에강(Nho Quế River) 가이드",
+    "ha giang karst plateau": "하장 카르스트 고원",
+    "Vietnam · Ha Giang Karst Plateau": "베트남 · 하장 카르스트 고원"
+  }
+}

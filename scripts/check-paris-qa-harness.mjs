@@ -65,7 +65,13 @@ const expectedRoutes = [
   ['/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/', 'Muong Hoa, Lao Chai and Ta Van'],
   ['/vietnam/sapa-northwest-highlands/cat-cat-village/', 'Cat Cat Village and Waterfall'],
   ['/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/', 'O Quy Ho, Silver Waterfall and Love Waterfall'],
-  ['/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/', 'Bac Ha Market and Hoang A Tuong']
+  ['/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/', 'Bac Ha Market and Hoang A Tuong'],
+  ['/vietnam/ha-giang/', 'Hà Giang hub'],
+  ['/vietnam/ha-giang/quan-ba-heavens-gate/', 'Quản Bạ & Heaven’s Gate'],
+  ['/vietnam/ha-giang/yen-minh-pine-forest/', 'Yên Minh & Pine Forest'],
+  ['/vietnam/ha-giang/dong-van-old-quarter/', 'Đồng Văn Old Quarter'],
+  ['/vietnam/ha-giang/lung-cu-flag-tower/', 'Lũng Cú Flag Tower'],
+  ['/vietnam/ha-giang/ma-pi-leng-nho-que/', 'Mã Pí Lèng & Nho Quế']
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -190,9 +196,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 280 || manifest.pages?.length !== 280) fail(`${label}: expected 280 localized route records.`);
+  if (manifest.routeCount !== 310 || manifest.pages?.length !== 310) fail(`${label}: expected 310 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, Seoul, Busan, Hanoi and Sapa scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, Seoul, Busan, Hanoi, Sapa and Ha Giang scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -213,7 +219,8 @@ function inspectLocalizedPage(manifest, record, label) {
   const busanIdentity = record.path.startsWith('/south-korea/busan/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'busan';
   const hanoiIdentity = record.path.startsWith('/vietnam/hanoi/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hanoi';
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
-  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !hanoiIdentity && !sapaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
+  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -326,6 +333,45 @@ for (const locale of expectedLocales) {
                   ? ['working transport landscape', 'legal public edge', 'after rain']
                   : ['1070', '1076', 'five courtyards', '58 Quoc Tu Giam'];
         for (const phrase of requirements) if (!bodyText.includes(phrase)) fail(`Hanoi editorial QA is missing '${phrase}' on ${routePath}.`);
+      }
+      continue;
+    }
+    if (routePath.startsWith('/vietnam/ha-giang/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      if (attr(body, 'data-country') !== 'vietnam' || attr(body, 'data-region') !== 'ha-giang') fail(`Wrong Ha Giang route scope on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/vietnam.css') || !styles.includes('/css/vietnam-ha-giang.css') || !styleHrefs.includes('/css/vietnam-ha-giang.css?v=20261007-1')) fail(`Missing current Ha Giang responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Ha Giang FAQ controls on ${locale.code} ${routePath}.`);
+      const commonsLinks = links.filter((href) => href.includes('commons.wikimedia.org'));
+      if (commonsLinks.length !== 6) fail(`Expected six distinct Ha Giang image source credits on ${locale.code} ${routePath}, got ${commonsLinks.length}.`);
+      if (!links.some((href) => /vietnam\.travel/.test(href)) || !links.some((href) => /unesco\.org/.test(href))) fail(`Missing official Vietnam Tourism and UNESCO sources on ${locale.code} ${routePath}.`);
+      if (!bodyText.includes('CC BY-SA') && !bodyText.includes('CC0') && !bodyText.includes('Public domain')) fail(`Missing readable Ha Giang image license credits on ${locale.code} ${routePath}.`);
+      if (/Arrival contract|Check the weak points|Three weak points to solve|weak points/i.test(bodyText)) fail(`Generic Ha Giang contract/weak-points label remains on ${locale.code} ${routePath}.`);
+      const englishHeadings = [
+        'Road-day decisions',
+        'Six legs with different road and daylight demands',
+        'Visibility, pull-offs and rider readiness',
+        'Services, fog and forest access',
+        'Lane traffic, home thresholds and market work',
+        'Stairs, weather and site instructions',
+        'Traffic, rain and a separate boat transfer'
+      ];
+      if (locale.code !== 'en' && englishHeadings.some((heading) => bodyText.includes(heading))) fail(`English Ha Giang presentation copy leaked into ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const requirements = routePath === '/vietnam/ha-giang/'
+          ? ['Quản Bạ’s valley gate', 'Yên Minh’s pine hills', 'Vietnam Tourism’s four-day route', 'Nho Quế boat descent']
+          : routePath.endsWith('/quan-ba-heavens-gate/')
+            ? ['Twin Mountains', 'Tam Sơn', 'QL4C', 'Visibility, pull-offs and rider readiness']
+            : routePath.endsWith('/yen-minh-pine-forest/')
+              ? ['pine belt', 'September–November', 'Tam Sơn', 'Services, fog and forest access']
+              : routePath.endsWith('/dong-van-old-quarter/')
+                ? ['forty preserved houses', 'covered market', 'private threshold', 'Lane traffic, home thresholds and market work']
+                : routePath.endsWith('/lung-cu-flag-tower/')
+                  ? ['200 steps', 'Lô Lô Chải', 'three hours', 'Stairs, weather and site instructions']
+                  : ['24-kilometre', '700–800 metres', 'different road, operator and return plan', 'Traffic, rain and a separate boat transfer'];
+        for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Ha Giang editorial QA is missing '${phrase}' on ${routePath}.`);
+        if (routePath !== '/vietnam/ha-giang/' && !bodyText.includes('Check conditions')) fail(`Ha Giang route checks action is missing on ${routePath}.`);
       }
       continue;
     }
@@ -658,7 +704,16 @@ if (!isLive) {
   const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
   const hanoiPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hanoi/')).length;
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/280 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${hanoiPages} Hanoi, ${sapaPages} Sapa records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
+  const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
+  const meoVacHtml = fs.readFileSync(path.join(meoVacPath, 'index.html'), 'utf8');
+  const meoVacDocument = parse(meoVacHtml);
+  const meoVacBody = text(nodes(meoVacDocument, 'body')[0]);
+  if (!meoVacBody.includes('reviewed 31 August 2026') || !meoVacHtml.includes('"dateModified":"2026-08-31"')) fail('Meo Vac credit-only dependency must retain its 31 August 2026 editorial date.');
+  for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
+    if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
+  }
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/310 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -685,5 +740,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/280 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/310 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }

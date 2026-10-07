@@ -83,7 +83,13 @@ const routes = [
   { path: '/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/', label: 'Muong Hoa, Lao Chai and Ta Van' },
   { path: '/vietnam/sapa-northwest-highlands/cat-cat-village/', label: 'Cat Cat Village and Waterfall' },
   { path: '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/', label: 'O Quy Ho, Silver Waterfall and Love Waterfall' },
-  { path: '/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/', label: 'Bac Ha Market and Hoang A Tuong' }
+  { path: '/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/', label: 'Bac Ha Market and Hoang A Tuong' },
+  { path: '/vietnam/ha-giang/', label: 'Hà Giang hub' },
+  { path: '/vietnam/ha-giang/quan-ba-heavens-gate/', label: 'Quản Bạ & Heaven’s Gate' },
+  { path: '/vietnam/ha-giang/yen-minh-pine-forest/', label: 'Yên Minh & Pine Forest' },
+  { path: '/vietnam/ha-giang/dong-van-old-quarter/', label: 'Đồng Văn Old Quarter' },
+  { path: '/vietnam/ha-giang/lung-cu-flag-tower/', label: 'Lũng Cú Flag Tower' },
+  { path: '/vietnam/ha-giang/ma-pi-leng-nho-que/', label: 'Mã Pí Lèng & Nho Quế' }
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -167,7 +173,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>France, Canada, Seoul, Busan, Hanoi and Sapa responsive QA harness</title>
+  <title>France, Canada, Seoul, Busan, Hanoi, Sapa and Ha Giang responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -193,8 +199,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">France, Canada, Seoul, Busan, Hanoi and Sapa responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, eight Canada routes across Montreal and Quebec City—Charlevoix, nine Seoul routes, six Busan routes, six Hanoi routes, and seven Sapa and Northwest Highlands routes in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
+      <h1 id="page-title">France, Canada, Seoul, Busan, Hanoi, Sapa and Ha Giang responsive QA harness</h1>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, eight Canada routes across Montreal and Quebec City–Charlevoix, nine Seoul routes, six Busan routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>
