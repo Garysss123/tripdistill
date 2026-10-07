@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/busan/haeundae-dongbaek/"
+  ],
+  "translations": {
+    "Step-free access for the complete loop is not verified here; confirm the entrance and route with Nurimaru before setting out.": "周回ルート全体を段差なく通行できるかは、このガイドでは確認できていません。出発前に、利用する入口とルートをNurimaruに確認してください。",
+    "Nearby choices change the day": "近くの行き先で、一日の過ごし方が変わる"
+  }
+}
