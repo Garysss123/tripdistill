@@ -1,0 +1,21 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/toronto/",
+    "/canada/toronto/downtown-waterfront/",
+    "/canada/toronto/annex-kensington-museums/",
+    "/canada/toronto/toronto-islands/"
+  ],
+  "translations": {
+    "Choose Centre, Ward’s or Hanlan’s for its distinct park or beach. City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal; check the chosen landing’s seasonal timetable and keep a downtown Toronto alternative ready.": "เลือกลงที่ Centre, Ward’s หรือ Hanlan’s ตามสวนสาธารณะหรือชายหาดเฉพาะจุดที่อยากไป ตั๋วเรือเฟอร์รีของ City of Toronto ใช้เดินทางไปยังท่าเรือใดก็ได้บน Toronto Islands และใช้เดินทางกลับจากท่าเรือใดก็ได้ไปยัง Jack Layton Ferry Terminal ได้เช่นกัน ตรวจสอบตารางเดินเรือตามฤดูกาลของท่าที่เลือก และเตรียมแผนสำรองในใจกลาง Toronto ไว้ด้วย",
+    "City of Toronto — Ferry Ticket & Passenger Information": "City of Toronto — ข้อมูลตั๋วเรือเฟอร์รีและผู้โดยสาร",
+    "Can I return to Jack Layton Ferry Terminal from a different Island dock?": "ฉันนั่งเรือกลับไปยัง Jack Layton Ferry Terminal จากท่าเรืออีกแห่งบน Toronto Islands ได้ไหม?",
+    "Yes. City ferry tickets are valid for travel to any dock on the Islands and for the return trip from any island dock to Jack Layton Ferry Terminal. Check the actual operating schedule for your chosen dock and the next return boat; the landings follow separate timetables.": "ได้ ตั๋วเรือเฟอร์รีของ City of Toronto ใช้เดินทางไปยังท่าเรือใดก็ได้บน Toronto Islands และใช้ขึ้นเรือกลับจากท่าเรือใดก็ได้ไปยัง Jack Layton Ferry Terminal ได้ ตรวจสอบตารางเดินเรือที่ให้บริการจริงของท่าที่เลือกและเวลาเรือขากลับเที่ยวถัดไป เพราะแต่ละท่ามีตารางแยกกัน",
+    "Choose your return dock": "เลือกท่าเรือสำหรับขากลับ",
+    "City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal. Before walking to another landing, check that dock’s actual operating schedule and the next departure; keep a downtown Toronto plan ready if service changes.": "ตั๋วเรือเฟอร์รีของ City of Toronto ใช้เดินทางไปยังท่าเรือใดก็ได้บน Toronto Islands และนั่งเรือกลับจากท่าใดก็ได้ไปยัง Jack Layton Ferry Terminal ได้ ก่อนเดินไปยังท่าเรืออีกแห่ง ให้ตรวจสอบตารางเดินเรือที่ให้บริการจริงและเที่ยวเรือถัดไปของท่านั้น หากบริการเปลี่ยนแปลง ให้เตรียมแผนเที่ยวในใจกลาง Toronto ไว้",
+    "If the wind, service notice or queue makes the crossing a poor choice, move the island day and choose a downtown Toronto or museum route instead. The ferry is the day’s commitment, not a small add-on after a timed booking.": "หากสภาพลม ประกาศแจ้งบริการ หรือคิวทำให้ไม่เหมาะที่จะข้ามเกาะ ให้เลื่อนวันเที่ยวเกาะและเลือกเส้นทางในใจกลาง Toronto หรือเส้นทางพิพิธภัณฑ์แทน เรือเฟอร์รีควรเป็นแผนหลักของวัน ไม่ใช่กิจกรรมแวะเพิ่มหลังการจองที่มีกำหนดเวลา",
+    "A ticket does not set the timetable": "ตั๋วไม่ได้กำหนดตารางเดินเรือ",
+    "A City ticket is valid to any island dock and for the return from any island dock to Jack Layton Ferry Terminal. Departures still vary by landing and season, so check the dock you plan to use and its next boat before a long walk.": "ตั๋วของ City of Toronto ใช้เดินทางไปยังท่าเรือใดก็ได้บน Toronto Islands และนั่งเรือกลับจากท่าเรือใดก็ได้ไปยัง Jack Layton Ferry Terminal ได้ เวลาเรือออกยังต่างกันตามท่าและฤดูกาล จึงควรตรวจสอบตารางของท่าที่จะใช้และเวลาเรือเที่ยวถัดไปก่อนเดินไกล"
+  }
+}

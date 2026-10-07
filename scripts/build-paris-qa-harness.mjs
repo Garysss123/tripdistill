@@ -208,7 +208,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, South Korea and Vietnam responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, eight Canada routes across Montreal and Quebec City—Charlevoix, nine Seoul routes, six Busan routes, four Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 12 Canada routes across Montreal, Toronto and Quebec City—Charlevoix, nine Seoul routes, six Busan routes, four Gyeongju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

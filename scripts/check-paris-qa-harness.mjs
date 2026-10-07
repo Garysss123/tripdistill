@@ -181,6 +181,8 @@ function getManifest(html, label) {
 
 function assertHarness(html, label) {
   const document = parse(html);
+  const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
+  if (!intro || !/12 Canada routes across Montreal, Toronto and Quebec City/.test(text(intro))) fail(`${label}: harness introduction must count all 12 Canada routes across Montreal, Toronto and Quebec City—Charlevoix.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
     fail(`${label}: expected exactly one robots meta containing noindex.`);

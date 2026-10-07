@@ -1,0 +1,21 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/toronto/",
+    "/canada/toronto/downtown-waterfront/",
+    "/canada/toronto/annex-kensington-museums/",
+    "/canada/toronto/toronto-islands/"
+  ],
+  "translations": {
+    "Choose Centre, Ward’s or Hanlan’s for its distinct park or beach. City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal; check the chosen landing’s seasonal timetable and keep a downtown Toronto alternative ready.": "Centre、Ward’s、Hanlan’sは、それぞれ異なる公園やビーチを目当てに行き先を選びましょう。トロント市営フェリーの乗船券は島内のどの桟橋へ行く場合にも使え、帰りも島内のどの桟橋からJack Layton Ferry Terminalまで乗船できます。選んだ桟橋の季節運航時刻表を確認し、ダウンタウン・トロントで過ごす代案も用意しておきましょう。",
+    "City of Toronto — Ferry Ticket & Passenger Information": "トロント市 — フェリーの乗船券と利用案内",
+    "Can I return to Jack Layton Ferry Terminal from a different Island dock?": "行きに降りた桟橋とは別の島の桟橋から、Jack Layton Ferry Terminalへ戻れますか？",
+    "Yes. City ferry tickets are valid for travel to any dock on the Islands and for the return trip from any island dock to Jack Layton Ferry Terminal. Check the actual operating schedule for your chosen dock and the next return boat; the landings follow separate timetables.": "はい。トロント市営フェリーの乗船券は、島内のどの桟橋へ行く場合にも、また帰りに島内のどの桟橋からJack Layton Ferry Terminalへ戻る場合にも有効です。利用する桟橋の実際の運航時刻と次の帰りの便を確認してください。桟橋ごとに時刻表が異なります。",
+    "Choose your return dock": "帰りに使う桟橋を選ぶ",
+    "City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal. Before walking to another landing, check that dock’s actual operating schedule and the next departure; keep a downtown Toronto plan ready if service changes.": "トロント市営フェリーの乗船券は島内のどの桟橋へ行く場合にも使え、帰りも島内のどの桟橋からJack Layton Ferry Terminalまで乗船できます。別の乗り場へ歩く前に、その桟橋の実際の運航時刻と次の出発便を確認し、運航に変更があった場合に備えてダウンタウン・トロントで過ごす案も用意しておきましょう。",
+    "If the wind, service notice or queue makes the crossing a poor choice, move the island day and choose a downtown Toronto or museum route instead. The ferry is the day’s commitment, not a small add-on after a timed booking.": "風が強い日や運航のお知らせが出ているとき、または乗船待ちが長いときは、島へ渡る予定を別の日にし、ダウンタウン・トロントか博物館を巡る日に切り替えましょう。フェリーを使う日は、それ自体を旅程の中心に据え、時間指定の予約に付け足すだけの小さな予定として組み込まないようにします。",
+    "A ticket does not set the timetable": "乗船券では運航時刻は決まりません",
+    "A City ticket is valid to any island dock and for the return from any island dock to Jack Layton Ferry Terminal. Departures still vary by landing and season, so check the dock you plan to use and its next boat before a long walk.": "トロント市のフェリーチケットは島内のどの桟橋へ行く場合にも使え、帰りも島内のどの桟橋からJack Layton Ferry Terminalまで乗船できます。桟橋や季節によって運航便は異なるため、遠くまで歩く前に、使う桟橋の時刻表と次の便を確認してください。"
+  }
+}

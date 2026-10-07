@@ -18,7 +18,7 @@ export const canadaCentralClusters = [
       days: [
         ['Day 1 · Union and the lake', 'Read Union Station’s Beaux-Arts Great Hall, then use the 509 Harbourfront streetcar or a shoreline walk to reach Harbourfront and the Bach-inspired Toronto Music Garden. Add one timed skyline attraction only if it is a priority.'],
         ['Day 2 · One museum, one neighborhood', 'Choose ROM plus the Annex for a Bloor-and-collections day, or AGO plus Kensington for Canadian art and an historic market-street walk. Both major museums in one day usually erase the neighborhood time.'],
-        ['Day 3 · One island landing', 'Choose Centre, Ward’s or Hanlan’s from the City timetable before leaving downtown. Keep the return sailing and a mainland alternative visible; the three landings are not interchangeable stops on one continuous ferry loop.']
+        ['Day 3 · One island landing', 'Choose Centre, Ward’s or Hanlan’s for its distinct park or beach. City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal; check the chosen landing’s seasonal timetable and keep a downtown Toronto alternative ready.']
       ]
     },
     faq: [
@@ -39,6 +39,7 @@ export const canadaCentralClusters = [
       ['https://www.heritagetrust.on.ca/heritagematters/articles/kensington-market-hidden-histories', 'Ontario Heritage Trust — Kensington Market history and street boundaries'],
       ['https://www.toronto.ca/explore-enjoy/toronto-island-ferries/', 'City of Toronto — Island cultural context and visitor planning'],
       ['https://www.toronto.ca/explore-enjoy/toronto-island-ferries/ferry-routes-schedules/', 'City of Toronto — ferry routes and seasonal schedules'],
+      ['https://www.toronto.ca/explore-enjoy/toronto-island-ferries/ferry-ticket-passenger-information/', 'City of Toronto — Ferry Ticket & Passenger Information'],
       ['https://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2039&title=Toronto-Island-Park---Ward%27s-Island', 'City of Toronto — Ward’s Island Park access'],
       ['https://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2541&title=Toronto-Island-Park---Hanlan%27s-Point', 'City of Toronto — Hanlan’s Point Park access'],
       ['https://www.toronto.ca/legdocs/1998/agendas/council/cc/cc980708/cs9rpt/cl031.htm', 'City of Toronto — Toronto Islands residential community context'],
@@ -110,7 +111,7 @@ export const canadaCentralClusters = [
         summary: 'The City operates separate ferries to Centre Island, Hanlan’s Point and Ward’s Island, with three-route service from mid-April to mid-October. Pick one landing for its own park or beach focus, then build the visit around that route’s current return sailing.',
         access: 'Board at Jack Layton Ferry Terminal on Queens Quay. City service runs year-round, but the three separate landings follow seasonal schedules. Verify the exact route, ticket instructions, accessibility and return before setting out.',
         tradeoff: 'Centre Island is the convenient choice for the family attraction area; Ward’s suits an east-end shoreline walk beside a year-round residential community; Hanlan’s Point is the west-end park and beach option. A water taxi is a separate operator, not a substitute for the City timetable.',
-        fallback: 'If the wind, service notice or queue makes the crossing a poor choice, move the island day and use a downtown or museum route on the mainland. The ferry is the day’s commitment, not a small add-on after a timed booking.',
+        fallback: 'If the wind, service notice or queue makes the crossing a poor choice, move the island day and choose a downtown Toronto or museum route instead. The ferry is the day’s commitment, not a small add-on after a timed booking.',
         duration: 'Allow about four to six hours door-to-door for one landing, a relaxed walk and queue margin. A beach day or longer cycle makes it longer; this is a planning estimate, not a ferry or park guarantee.',
         combine: 'Pair the return with an easy waterfront evening only if you have a comfortable boat and meal buffer. Do not tie the island day to an airport train, intercity departure or timed museum visit.',
         verify: 'Check the City’s live seasonal timetable for the exact landing and final return, then review weather, park and beach notices, ferry accessibility and any planned event or construction.',
@@ -119,16 +120,16 @@ export const canadaCentralClusters = [
           ['Select a dock at Jack Layton Terminal', 'Centre Island is the family-attraction choice, including the separately operated Centreville; Ward’s Island is the east-end route beside Toronto’s residential island community; Hanlan’s Point leads to the west-end park and beach. These docks are different starting points, not one ferry loop.'],
           ['Read the route board before boarding', 'The City runs ferries year-round, with three distinct landing routes from mid-April to mid-October. Spring service is reduced before the summer pattern begins. Check the exact dock and return sailing for your date, and add queue time before any dinner or rail connection.'],
           ['Stay within one island district', 'Follow public paths from your chosen landing and make one coherent shore, park or beach visit. The Islands have been a place of healing, ceremony and gathering for the Mississaugas of the Credit First Nation and other Indigenous communities for thousands of years, as the City notes; Ward’s and Algonquin also include a residential community, so respect homes and private spaces.'],
-          ['Return from the dock you planned', 'Before walking away from the landing, confirm which dock the return boat serves and when the next departures leave. Do not assume that a ticket to one landing lets you board from another; follow the City’s current route instructions. Keep a mainland museum or downtown day ready if service changes.']
+          ['Choose your return dock', 'City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal. Before walking to another landing, check that dock’s actual operating schedule and the next departure; keep a downtown Toronto plan ready if service changes.']
         ],
         watch: [
-          ['Three landings, separate service', 'The City posts the Centre, Hanlan’s and Ward’s routes separately. A schedule for one dock does not promise a boat from another; plan the return before committing to a long walk.'],
+          ['A ticket does not set the timetable', 'A City ticket is valid to any island dock and for the return from any island dock to Jack Layton Ferry Terminal. Departures still vary by landing and season, so check the dock you plan to use and its next boat before a long walk.'],
           ['A lake crossing is weather-exposed', 'Wind, rain and changing beach or park notices can turn a sunny forecast into a poor swimming or shoreline day. Recheck City notices before leaving the terminal.'],
           ['The park includes living places', 'Indigenous cultural significance predates the visitor park, and Ward’s/Algonquin are residential areas. Keep to public paths, respect homes and avoid photographing residents without permission.']
         ],
         faq: [
           ['Which ferry landing is best for a first visit?', 'Choose Centre for the family-attraction area, Ward’s for the east-end shoreline and residential-island context, or Hanlan’s for the western beach park. The right landing depends on your day, not a universal “best” view.'],
-          ['Can I leave from a different Island dock?', 'Only if the City’s current timetable and boarding instructions support it. The three landings have separate routes; do not assume that a Centre Island ticket or schedule covers Ward’s or Hanlan’s.'],
+          ['Can I return to Jack Layton Ferry Terminal from a different Island dock?', 'Yes. City ferry tickets are valid for travel to any dock on the Islands and for the return trip from any island dock to Jack Layton Ferry Terminal. Check the actual operating schedule for your chosen dock and the next return boat; the landings follow separate timetables.'],
           ['How much time should I leave for the Islands?', 'Plan roughly four to six hours door-to-door for one landing, a relaxed visit and ferry queue margin. Add time for a beach or long cycle, and keep the return clear of a flight or fixed museum booking.']
         ]
       })

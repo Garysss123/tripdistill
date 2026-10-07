@@ -15,7 +15,7 @@ if (!requestedLocale || !requestedFile || !requestedRoutes.length) {
 }
 
 const locale = getLocaleConfig(requestedLocale);
-if (path.basename(requestedFile) !== requestedFile || !/^\d{2}[a-z]?-[a-z0-9-]+\.json$/i.test(requestedFile)) {
+if (path.basename(requestedFile) !== requestedFile || !/^\d{2}[a-z]*-[a-z0-9-]+\.json$/i.test(requestedFile)) {
   throw new Error('--file must be a plain zero-padded batch filename such as 17-new-city.json.');
 }
 if (new Set(requestedRoutes).size !== requestedRoutes.length) {
