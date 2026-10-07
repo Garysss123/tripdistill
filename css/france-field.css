@@ -246,3 +246,53 @@
     overflow-wrap: anywhere;
   }
 }
+
+/* The global shell's 320px minimum is wider than the usable viewport on 320px devices
+   with classic scrollbars. Keep every France regional field route shrinkable. */
+body[data-country="france"][data-region]:not([data-region="paris"]) {
+  min-width: 0;
+}
+body[data-country="france"][data-region]:not([data-region="paris"]) .site-shell,
+body[data-country="france"][data-region]:not([data-region="paris"]) .page-content,
+body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Collapse each shared field template's intrinsic grid tracks before card copy can
+   force a narrow viewport wider. This covers layout variants as well as the base grid. */
+@media (max-width: 620px) {
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-choice-deck,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-contract,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-regional-context > div,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-route ol,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-live-check,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-fallback,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-watch > div,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-related > div {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+  }
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-watch article:first-child {
+    grid-row: auto;
+  }
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-choice-deck article,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-contract > *,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-regional-context > div > *,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-route li,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-live-check > *,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-fallback > *,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-watch > div > *,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-related > div > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-choice-deck h2,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-choice-deck p,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-watch h3,
+  body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-watch p {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}

@@ -71,6 +71,18 @@ function nodes(document, tagName) {
   return found;
 }
 
+function classNodes(rootNode, className, tagName = '') {
+  const found = [];
+  walk(rootNode, (node) => {
+    if (node.tagName && (!tagName || node.tagName === tagName) && attr(node, 'class').split(/\s+/).includes(className)) found.push(node);
+  });
+  return found;
+}
+
+function elementChildren(rootNode, tagName = '') {
+  return (rootNode.childNodes || []).filter((node) => node.tagName && (!tagName || node.tagName === tagName));
+}
+
 function safeDistPath(urlPath) {
   const pathname = new URL(urlPath, 'https://tripdistill.com').pathname;
   if (!pathname.startsWith('/') || pathname.includes('..')) fail(`Unsafe route asset ${urlPath}`);
@@ -204,8 +216,8 @@ for (const locale of expectedLocales) {
     const expectedFieldCss = isParisRoute ? '/css/france-paris.css' : isDayTripChild || isNormandyChild ? '/css/france-field.css' : '/css/france.css';
     if (!styles.includes('/css/france.css') || !styles.includes(expectedFieldCss)) fail(`Missing route stylesheet ${expectedFieldCss} on ${locale.code} ${routePath}.`);
     if (routePath.startsWith('/france/paris-region-day-trips/')) {
-      if (!styleHrefs.includes('/css/france.css?v=20261007-2')) fail(`Missing current day-trip responsive stylesheet version on ${locale.code} ${routePath}.`);
-      if (isDayTripChild && !styleHrefs.includes('/css/france-field.css?v=20261007-2')) fail(`Missing current day-trip field stylesheet version on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/france.css?v=20261007-3')) fail(`Missing current day-trip responsive stylesheet version on ${locale.code} ${routePath}.`);
+      if (isDayTripChild && !styleHrefs.includes('/css/france-field.css?v=20261007-3')) fail(`Missing current day-trip field stylesheet version on ${locale.code} ${routePath}.`);
     }
     const isHub = routePath === '/france/paris/' || routePath === '/france/paris-region-day-trips/' || routePath === '/france/normandy/';
     if (isHub) continue;
@@ -240,6 +252,65 @@ const pageBodyText = (locale, routePath) => {
   if (!page) fail('Missing localized page record for ' + locale + ' ' + routePath + '.');
   return text(nodes(page.document, 'body')[0]);
 };
+const normandyChildRoutes = [
+  '/france/normandy/rouen-seine-cathedral/',
+  '/france/normandy/bayeux-dday-landscape/',
+  '/france/normandy/mont-saint-michel-bay/'
+];
+const normandyMatrixRoutes = ['/france/normandy/', ...normandyChildRoutes];
+for (const locale of expectedLocales) {
+  for (const routePath of normandyMatrixRoutes) {
+    const page = pagesByRoute.get(locale.code + routePath);
+    const body = nodes(page.document, 'body')[0];
+    const cssLinks = nodes(page.document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
+    if (attr(body, 'data-country') !== 'france' || attr(body, 'data-region') !== 'normandy') fail(`Wrong regional width-fix scope on ${locale.code} ${routePath}.`);
+    if (!cssLinks.includes('/css/france.css?v=20261007-3')) fail(`Current France width-fix stylesheet is missing on ${locale.code} ${routePath}.`);
+    if (routePath !== '/france/normandy/' && !cssLinks.includes('/css/france-field.css?v=20261007-3')) fail(`Current France shared-field stylesheet is missing on ${locale.code} ${routePath}.`);
+  }
+  for (const routePath of normandyChildRoutes) {
+    const page = pagesByRoute.get(locale.code + routePath);
+    const document = page.document;
+    const body = nodes(document, 'body')[0];
+    if (attr(body, 'data-country') !== 'france' || attr(body, 'data-region') !== 'normandy') fail(`Wrong shared France responsive scope on ${locale.code} ${routePath}.`);
+    for (const templateClass of ['fr-choice-deck', 'fr-contract', 'fr-regional-context', 'fr-route', 'fr-live-check', 'fr-fallback', 'fr-watch', 'fr-related', 'fr-faq']) {
+      if (!classNodes(document, templateClass, 'section').length) fail(`Missing shared ${templateClass} template on ${locale.code} ${routePath}.`);
+    }
+    const choiceDeck = classNodes(document, 'fr-choice-deck', 'section')[0];
+    if (elementChildren(choiceDeck, 'article').length !== 3) fail(`Expected three direct choice cards on ${locale.code} ${routePath}.`);
+    const routeSection = classNodes(document, 'fr-route', 'section')[0];
+    const routeList = elementChildren(routeSection, 'ol')[0];
+    if (!routeList || elementChildren(routeList, 'li').length !== 4) fail(`Expected four route stages on ${locale.code} ${routePath}.`);
+    const watchSection = classNodes(document, 'fr-watch', 'section')[0];
+    const riskGrid = elementChildren(watchSection, 'div')[0];
+    if (!riskGrid || elementChildren(riskGrid, 'article').length !== 3) fail(`Expected three cards in direct .fr-watch > div risk grid on ${locale.code} ${routePath}.`);
+    if (nodes(document, 'details').length !== 3) fail(`Expected three destination-specific FAQ controls on ${locale.code} ${routePath}.`);
+  }
+}
+const bayeuxBodyText = pageBodyText('en', '/france/normandy/bayeux-dday-landscape/');
+for (const phrase of ['Romanesque and Gothic', '2,300 m²', '7 June to 29 August 1944', 'Allied and German', 'Falaise–Chambois', 'cliff above Omaha Beach', 'Mulberry B', 'autumn 2027', 'not a complete Gold, Juno and Sword battlefield circuit']) {
+  if (!bayeuxBodyText.includes(phrase)) fail(`Bayeux editorial QA is missing the verified interpretation phrase “${phrase}”.`);
+}
+for (const [routePath, expectedQuestions] of [
+  ['/france/normandy/rouen-seine-cathedral/', ['Can I visit Rouen Cathedral while a service is taking place?', 'How should I plan the walk back to Rouen Rive Droite?', 'What is a useful indoor choice if it rains?']],
+  ['/france/normandy/bayeux-dday-landscape/', ['Will the Bayeux Tapestry gallery be open before autumn 2027?', 'Can I reach the D-Day coast from Bayeux without a car?', 'Which Bayeux museum explains the campaign beyond D-Day?']],
+  ['/france/normandy/mont-saint-michel-bay/', ['Do I need an Abbey ticket to enter the village?', 'Can I visit the Abbey if stairs or steep paths are difficult?', 'Can I walk across the bay without a guide?']]
+]) {
+  const page = pagesByRoute.get('en' + routePath);
+  const questions = nodes(page.document, 'summary').map(text).map((value) => value.trim());
+  for (const question of expectedQuestions) if (!questions.includes(question)) fail(`Missing destination-specific FAQ question “${question}” on ${routePath}.`);
+}
+for (const [routePath, forbidden] of [
+  ['/france/normandy/rouen-seine-cathedral/', ['nomad.normandie.fr', 'musee-arromanches.fr', 'ot-montsaintmichel.com']],
+  ['/france/normandy/mont-saint-michel-bay/', ['nomad.normandie.fr/lignes-de-cars/ligne-120', 'nomad.normandie.fr/lignes-de-cars/ligne-121', 'ter.sncf.com/normandie']]
+]) {
+  const page = pagesByRoute.get('en' + routePath);
+  const hrefs = nodes(page.document, 'a').map((node) => attr(node, 'href'));
+  for (const urlPart of forbidden) if (hrefs.some((href) => href.includes(urlPart))) fail(`Irrelevant shared regional source ${urlPart} remains on ${routePath}.`);
+}
+const bayeuxHrefs = nodes(pagesByRoute.get('en/france/normandy/bayeux-dday-landscape/').document, 'a').map((node) => attr(node, 'href'));
+for (const sourceUrl of ['bayeuxmuseum.com/en/memorial-museum-battle-of-normandy/', 'abmc.gov/', 'musee-arromanches.fr/en/history/', 'nomad.normandie.fr/lignes-de-cars/ligne-120', 'nomad.normandie.fr/lignes-de-cars/ligne-121']) {
+  if (!bayeuxHrefs.some((href) => href.includes(sourceUrl))) fail(`Bayeux source scoping omitted ${sourceUrl}.`);
+}
 const versaillesPages = [
   pageBodyText('en', '/france/paris-region-day-trips/'),
   pageBodyText('en', '/france/paris-region-day-trips/versailles-palace-estate/')
@@ -284,22 +355,30 @@ if (/overflow-x\s*:\s*hidden/i.test(parisCssText)) fail('Paris CSS uses overflow
 if (!/body\[data-page="fr-paris"\]/.test(parisCssText) || !/body\[data-page\^="fr-paris-"\]/.test(parisCssText)) fail('Paris min-width/viewport rules are not scoped to Paris page bodies.');
 if (!/:focus-visible/.test(parisCssText) || !/outline\s*:\s*3px/i.test(parisCssText)) fail('Paris CSS must provide a visible keyboard focus indicator.');
 const franceCssText = fs.readFileSync(safeDistPath('/css/france.css'), 'utf8');
-const dayTripWidthRule = cssRuleBlock(franceCssText, 'body[data-region="paris-region-day-trips"]');
-if (!/min-width\s*:\s*0\s*;/i.test(dayTripWidthRule)) fail('Paris-region day-trip body and shells must be allowed to shrink below the global 320 px minimum.');
-if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(dayTripWidthRule)) fail('Day-trip width correction must not conceal horizontal overflow.');
+const regionWidthSelector = 'body[data-country="france"][data-region]:not([data-region="paris"])';
+const regionWidthRule = cssRuleBlock(franceCssText, regionWidthSelector);
+if (!/min-width\s*:\s*0\s*;/i.test(regionWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(regionWidthRule)) fail('France regional bodies, shells and content must be allowed to shrink below the global 320 px minimum.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(regionWidthRule)) fail('France regional width correction must not conceal horizontal overflow.');
 const franceFieldCssText = fs.readFileSync(safeDistPath('/css/france-field.css'), 'utf8');
 const narrowFieldMedia = franceFieldCssText.lastIndexOf('@media (max-width: 620px)');
 if (narrowFieldMedia < 0) fail('France field CSS is missing the narrow mobile breakpoint.');
 const choiceDeckSelector = 'body[data-region="paris-region-day-trips"] .fr-field[data-fr-variant] .fr-choice-deck';
-const choiceDeckRule = cssRuleBlock(franceFieldCssText, choiceDeckSelector, narrowFieldMedia);
+const choiceDeckRule = cssRuleBlock(franceFieldCssText, choiceDeckSelector);
 if (!/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(choiceDeckRule) || !/min-width\s*:\s*0\s*;/i.test(choiceDeckRule)) fail('Paris-region choice decks must collapse to one shrinkable column on narrow screens.');
-const choiceCardRule = cssRuleBlock(franceFieldCssText, `${choiceDeckSelector} article`, narrowFieldMedia);
+const choiceCardRule = cssRuleBlock(franceFieldCssText, `${choiceDeckSelector} article`);
 if (!/min-width\s*:\s*0\s*;/i.test(choiceCardRule) || !/max-width\s*:\s*100%\s*;/i.test(choiceCardRule)) fail('Paris-region choice cards must fit their narrow grid track.');
-const choiceTextRule = cssRuleBlock(franceFieldCssText, `${choiceDeckSelector} h2,`, narrowFieldMedia);
+const choiceTextRule = cssRuleBlock(franceFieldCssText, `${choiceDeckSelector} h2,`);
 if (!/overflow-wrap\s*:\s*anywhere\s*;/i.test(choiceTextRule) || !/min-width\s*:\s*0\s*;/i.test(choiceTextRule)) fail('Paris-region choice text must wrap safely inside its cards.');
 for (const [label, rule] of [['choice deck', choiceDeckRule], ['choice card', choiceCardRule], ['choice text', choiceTextRule]]) {
   if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(rule)) fail(`Day-trip ${label} rule must not conceal horizontal overflow.`);
 }
+const responsiveGridSelector = 'body[data-country="france"][data-region]:not([data-region="paris"]) .fr-field[data-fr-variant] .fr-choice-deck,';
+const responsiveGridRule = cssRuleBlock(franceFieldCssText, responsiveGridSelector, narrowFieldMedia);
+if (!/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(responsiveGridRule) || !/min-width\s*:\s*0\s*;/i.test(responsiveGridRule)) fail('Shared France field grids must collapse to shrinkable single columns at narrow widths.');
+for (const gridSelector of ['.fr-contract', '.fr-regional-context > div', '.fr-route ol', '.fr-live-check', '.fr-fallback', '.fr-watch > div', '.fr-related > div']) {
+  if (!responsiveGridRule.includes(gridSelector)) fail(`Shared France responsive guard omits ${gridSelector}.`);
+}
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(responsiveGridRule)) fail('Shared France grid corrections must not conceal horizontal overflow.');
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],

@@ -84,8 +84,7 @@ for (const route of routes) {
   const depth = route.split('/').filter(Boolean).length;
   const floor = route === '/france/' ? 7600 : depth === 2 ? 6500 : 7000;
   check(pageText.length >= floor, `${route}: rendered editorial copy below France floor (${pageText.length} < ${floor})`);
-  const isParisRegionDayTrip = route.startsWith('/france/paris-region-day-trips/');
-  const expectedFranceCss = isParisRegionDayTrip ? '/css/france.css?v=20261007-2' : '/css/france.css?v=20260919-1';
+  const expectedFranceCss = '/css/france.css?v=20261007-3';
   check(html.includes(expectedFranceCss), `${route}: France CSS missing`);
   check(html.includes('/js/main.js?v=20260911-1'), `${route}: shared JS missing`);
   check(html.includes('"@type":"BreadcrumbList"') && html.includes('"@type":"FAQPage"'), `${route}: breadcrumb or FAQ JSON-LD missing`);
@@ -103,7 +102,7 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'fr-country-card')).length === 20, `${route}: expected 20 hub cards`);
     check(dom.filter((node) => classHas(node, 'fr-network-grid')).length === 1, `${route}: national operating model missing`);
   } else if (franceGuides.some((guide) => guide.url === route)) {
-    const expectedFieldCss = isParisRegionDayTrip ? '/css/france-field.css?v=20261007-2' : '/css/france-field.css?v=20260919-1';
+    const expectedFieldCss = '/css/france-field.css?v=20261007-3';
     check(html.includes(expectedFieldCss), `${route}: France field CSS missing`);
     check(dom.filter((node) => classHas(node, 'fr-purpose')).length === 1, `${route}: independent purpose panel missing`);
     check(dom.filter((node) => classHas(node, 'fr-choice-deck')).length === 1 && (html.match(/class="fr-choice-deck"/g) || []).length === 1, `${route}: choice deck missing`);
@@ -151,20 +150,17 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/paris/louvre-tuileries-opera/',
     '/france/paris/eiffel-invalides-montparnasse/'
   ]);
-  const parisRegionDayTripsEditedRoutes = new Set([
-    '/france/paris-region-day-trips/',
-    '/france/paris-region-day-trips/versailles-palace-estate/',
-    '/france/paris-region-day-trips/fontainebleau-palace-forest/',
-    '/france/paris-region-day-trips/giverny-monet-vernon/'
-  ]);
   const normandyEditedRoutes = new Set([
     '/france/normandy/',
     '/france/normandy/rouen-seine-cathedral/',
     '/france/normandy/bayeux-dday-landscape/',
     '/france/normandy/mont-saint-michel-bay/'
   ]);
+  const franceResponsiveEditedRoutes = new Set(franceClusters
+    .filter((cluster) => cluster.slug !== 'paris')
+    .flatMap((cluster) => [`/france/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)]));
   for (const route of routes) {
-    const expectedDate = normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) || parisRegionDayTripsEditedRoutes.has(route) ? '2026-10-06' : '2026-09-20';
+    const expectedDate = normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

@@ -66,6 +66,11 @@ export const normandyEditorialCluster = defineFranceCluster({
         ['Cross the old street axis once', 'Use the Gros-Horloge and market quarter to reach a meal or the Seine edge. Check the exact train and use a direct return toward Rive Droite before the final climb becomes urgent.']
       ],
       fallback: 'For hard rain, choose one confirmed open interior—cathedral, Historial or Beaux-Arts—and connect it with the covered market streets. If church entry pauses for worship, the carved façade, Saint-Maclou exterior and Aître still make a coherent walk.',
+      faq: [
+        ['Can I visit Rouen Cathedral while a service is taking place?', 'Treat it first as an active church. Check the cathedral’s current visitor notice and service times before planning an interior visit; if visitor access pauses, use the west facade and nearby streets as the fixed part of the walk.'],
+        ['How should I plan the walk back to Rouen Rive Droite?', 'The station sits above the historic center, so a downhill start creates an uphill return. Decide on a direct bus or taxi option before walking down, and keep luggage storage separate from the cathedral route.'],
+        ['What is a useful indoor choice if it rains?', 'Choose one substantial interior: the Historial Jeanne d’Arc for the trial and rehabilitation story, or the Musée des Beaux-Arts for art including the Depeaux collection. Check that institution’s current hours before crossing town.']
+      ],
       watch: [
         ['The station sits above the center', 'A downhill start creates an uphill finish. Keep the return bus or taxi option visible and do not let luggage dictate a rushed cathedral visit.'],
         ['Church access follows worship', 'Masses, ceremonies and maintenance can restrict visitor movement. Treat the exterior as the fixed point and confirm entry on the day.'],
@@ -90,30 +95,30 @@ export const normandyEditorialCluster = defineFranceCluster({
       imageCreditTitle: 'Bayeux Cathedral, an urban landmark rather than a landing-site scene',
       imageCaption: 'Bayeux Cathedral: a town anchor, not a photograph of the landing coast.',
       purpose: 'Use Bayeux as a walkable historic base and make the coast day interpretable: choose a western or eastern corridor, reserve the last mile, and give memorial sites time rather than counting beaches.',
-      summary: 'Plan Bayeux as two honest days: the Tapestry gallery is closed until autumn 2027, while the scattered landing coast needs a chosen sector, exact transport and a protected return.',
+      summary: 'Read Bayeux at two scales: Romanesque and Gothic stone in town, then the 1944 campaign across a coast that needs one chosen corridor and a protected return. The Tapestry gallery remains closed until autumn 2027.',
       choices: [
-        ['Bayeux town and open museums', 'Walk from the station to the cathedral and the former episcopal palace. The MAHB’s 14 sections span prehistory to the 20th century; confirm its current opening and choose whether the Battle of Normandy museum fits your interests.'],
-        ['Western coast corridor', 'NOMAD 120 runs from Bayeux toward Grandcamp-Maisy Monday through Saturday except public holidays and includes communes such as Colleville-sur-Mer and Port-en-Bessin. Match a dated timetable to the actual site entrance; the bus is not a door-to-door battlefield tour.'],
-        ['Eastern landing sector', 'NOMAD 121 links Bayeux and Courseulles via Ryes, Arromanches, Asnelles and Ver-sur-Mer on weekdays in school and short school-vacation periods, plus two Saturday round trips all year except public holidays. A guided route can supply the chronology; choose it when a bus departure and return leave enough time at the sites.']
+        ['Bayeux: stone and campaign', 'The cathedral preserves Romanesque and Gothic work; nearby, the Memorial Museum of the Battle of Normandy follows military operations from 7 June through 29 August 1944. MAHB offers a separate art-and-town collection in the former episcopal palace.'],
+        ['West: Omaha and the cemetery', 'NOMAD 120 lists Colleville-sur-Mer — Cimetière américain and runs between Bayeux and Grandcamp-Maisy Monday to Saturday except public holidays, with some school-period-only services. Match a dated departure and return to the cemetery visit; do not assume the stop is a tour.'],
+        ['East: Arromanches on Gold Beach', 'The remains of the Mulberry B artificial harbour are visible from the D-Day Museum at Arromanches. NOMAD 121 reaches the eastern corridor through Arromanches, Asnelles and Ver-sur-Mer on a limited calendar; it is not a complete Gold, Juno and Sword battlefield circuit.']
       ],
       access: 'Bayeux station is about a 10–15 minute walk from the museum area. The coast is dispersed: NOMAD lines 120 and 121 cover different corridors, some 120 trips vary by school period, and the 121 schedule is limited. For a cemetery or beach, identify the exact stop, walking connection and return from the current timetable—or reserve a guide, car or taxi before arrival.',
       tradeoff: 'No single day can do justice to Bayeux’s town museums and every landing sector. This guide trades name-count for one chronological route, time at memorials, and a return that does not depend on an improvised driver.',
       siteContext: {
-        label: 'Town museums and a dispersed coast',
-        heading: 'Separate what is open in Bayeux from what lies beyond it.',
-        intro: 'Bayeux can support a full car-free town visit, but it is not a transport hub for every beach, cemetery and battery. Start with the distinction between a museum day and a selected coast corridor.',
+        label: 'Town layers, campaign and coast',
+        heading: 'Read the 1944 campaign beyond the first day.',
+        intro: 'Bayeux connects two different kinds of interpretation: a layered cathedral and town museums, then memorials and harbour remains spread along separate stretches of coast. Pick the question and corridor before choosing the transport.',
         details: [
-          ['The Tapestry gallery is closed', 'The official Bayeux Museum notice says renovation keeps the gallery closed until autumn 2027. The museum offers a free scene-by-scene online viewer; it is a useful preparation option, not an in-town substitute visit.'],
-          ['A different palace collection', 'The MAHB occupies the former episcopal palace beside the cathedral. Its 14 sections cover European art and Bayeux history from prehistory to the 20th century; check the museum’s current hours before making it the indoor anchor.'],
-          ['Two limited bus corridors', 'Line 120 runs Bayeux–Grandcamp-Maisy, Monday to Saturday except public holidays; selected departures are school-period dependent. Line 121 links Bayeux and Courseulles via the eastern coast on weekdays in school and short school-vacation periods, plus two Saturday round trips all year except public holidays. Read the current timetable, not just the route map.'],
-          ['An image of the town', 'The guide photograph shows the cathedral and its towers. It helps orient the Bayeux day; it does not depict Omaha, a cemetery or a landing beach.']
+          ['Romanesque below Gothic', 'Bayeux Cathedral was consecrated in 1077 and reveals both Romanesque and Gothic art. Read the older and later fabric together: it was the original display place for the Tapestry, so the town’s medieval monument and narrative textile once shared a setting.'],
+          ['The campaign after 6 June', 'The Memorial Museum uses 2,300 m² to follow operations from 7 June to 29 August 1944, not only the landings. Its chronological displays pair Allied and German soldiers and equipment with archival film and a large diorama of the Falaise–Chambois Pocket.'],
+          ['Omaha and its cemetery', 'The American cemetery stands on the cliff above Omaha Beach. Its cross rows lead to a memorial and chapel, with the Walls of the Missing and garden completing the site; NOMAD 120 lists a dedicated Cimetière américain stop at Colleville-sur-Mer.'],
+          ['Arromanches and Mulberry B', 'At Arromanches on Gold Beach, the D-Day Museum interprets the prefabricated harbour whose remains are still visible outside. Keep this eastern visit distinct from the Omaha corridor: bus 121 serves named towns along the east coast but does not connect every Gold, Juno and Sword site into one circuit.']
         ]
       },
       stages: [
-        ['Anchor the town day separately', 'Walk from the station to the cathedral quarter. Check the MAHB and Battle of Normandy museum notices; the Tapestry gallery remains closed for renovation, although its online scene viewer can prepare the story.'],
-        ['Choose one coast corridor', 'Before booking, compare a guided sector with NOMAD 120 west or 121 east. Write down the exact stop, walking link, operating day and final return; the coast lines do not form a complete hop-on loop.'],
-        ['Follow a sequence, not a checklist', 'For an American route, choose a connected Omaha-area story with the cemetery only if time and respectful conduct allow. For the eastern sector, select Gold, Juno or Sword with a guide who explains the relationship among the chosen sites.'],
-        ['Return to Bayeux with space', 'Leave room for the transfer, weather or a delayed site visit before the last train. A quiet meal or short town walk is a better finish than racing to add another beach.']
+        ['Start with Bayeux’s older layers', 'Walk from the station to the cathedral quarter and compare its Romanesque and Gothic work. The Tapestry gallery is closed until autumn 2027; use the official scene-by-scene viewer to prepare, then choose the open Memorial Museum or MAHB for an in-person visit.'],
+        ['For Omaha, use the western corridor', 'On NOMAD 120, the listed Colleville-sur-Mer — Cimetière américain stop gives a named connection to the cemetery above Omaha. Check the dated timetable, walking link and return before leaving Bayeux; selected departures vary by school period.'],
+        ['For Arromanches, use the eastern corridor', 'NOMAD 121 serves Arromanches and nearby eastern-coast towns on a limited timetable. At Arromanches, read the harbour story in the D-Day Museum and look toward the visible Mulberry B remains; this does not by itself reach every Gold, Juno or Sword site.'],
+        ['Protect time for interpretation and return', 'Choose the west or east day, rather than trying to stitch both corridors together. Leave enough time at the cemetery or museum, then verify the exact final bus and Bayeux connection on the operator’s current sheet.']
       ],
       fallback: 'If coast transport or a tour fails, stay in Bayeux: use the cathedral and a museum confirmed open, then explore the old center. The Tapestry’s online viewer can be followed from your lodging, but do not describe it as an in-person museum visit.',
       watch: [
@@ -124,10 +129,19 @@ export const normandyEditorialCluster = defineFranceCluster({
       duration: 'Give the town museums and cathedral at least half a day. A coast sector merits a separate full day; two nights in Bayeux allow both without squeezing either against a long-distance connection.',
       combine: 'Combine Bayeux with one coast sector only. Keep Rouen, Mont-Saint-Michel and other landing areas for distinct travel days unless a planned multi-day vehicle route connects them.',
       verify: 'Check the current Bayeux Museum renovation notice, MAHB and Memorial Museum hours, NOMAD line 120 or 121 date-specific departures, site access, guide pickup and the return train.',
+      faq: [
+        ['Will the Bayeux Tapestry gallery be open before autumn 2027?', 'No. The official Bayeux Museum notice says the gallery is closed for renovation until autumn 2027. Its full scene-by-scene online viewer is available for preparation, but it is not an in-person gallery visit. Recheck the official notice before a later trip.'],
+        ['Can I reach the D-Day coast from Bayeux without a car?', 'Yes, for a selected stop and date, not as a complete battlefield circuit. NOMAD 120 is the western Bayeux–Grandcamp-Maisy corridor and lists the Colleville-sur-Mer American cemetery stop; 121 serves the eastern Bayeux–Courseulles corridor through Arromanches, Asnelles and Ver-sur-Mer. Timetables are limited and differ by weekday, Saturday and school period, so confirm the walking link and return.'],
+        ['Which Bayeux museum explains the campaign beyond D-Day?', 'The Memorial Museum of the Battle of Normandy covers military operations from 7 June to 29 August 1944 across 2,300 m². It combines a chronological account with Allied and German equipment, archival film and a Falaise–Chambois Pocket diorama.']
+      ],
       sources: [
         ['https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/', 'Bayeux Museum — Tapestry renovation notice and online viewer'],
         ['https://www.bayeuxmuseum.com/en/mahb-museum-of-art-and-history-bayeux/', 'Bayeux Museum — MAHB palace, collection and station access'],
-        ['https://www.bayeuxmuseum.com/en/', 'Bayeux Museum — official museum notices and visitor information'],
+        ['https://www.bayeuxmuseum.com/en/memorial-museum-battle-of-normandy/your-visit/', 'Memorial Museum of the Battle of Normandy — chronological campaign, equipment, film and diorama'],
+        ['https://bayeux-bessin-tourisme.com/en/visits/monuments/bayeux/cathedrale-de-bayeux', 'Bayeux Bessin Tourism — cathedral’s Romanesque and Gothic layers, visitor hours and worship notice'],
+        ['https://www.abmc.gov/plan/plan-your-visit-to-normandy-american-cemetery/', 'American Battle Monuments Commission — Normandy American Cemetery visit information'],
+        ['https://musee-arromanches.fr/en/history/', 'D-Day Museum in Arromanches — history of Mulberry B and visible remains'],
+        ['https://musee-arromanches.fr/en/your-visit/', 'D-Day Museum in Arromanches — visit and interpretation of the artificial harbour'],
         ['https://nomad.normandie.fr/lignes-de-cars/ligne-120', 'NOMAD line 120 — western corridor calendar and stops'],
         ['https://nomad.normandie.fr/lignes-de-cars/ligne-121', 'NOMAD line 121 — eastern corridor calendar and stops'],
         ['https://en.normandie-tourisme.fr/discover/d-day-and-the-battle-of-normandy/dday-landing-beaches/', 'Normandy Tourism — official D-Day coast orientation']
@@ -169,6 +183,11 @@ export const normandyEditorialCluster = defineFranceCluster({
         ['Descend before the connection narrows', 'Leave time for the route back to the shuttle or coach stop and for a queue. Stay for evening light only if the last regional leg or overnight is already secured.']
       ],
       fallback: 'If abbey entry is unavailable, the lower village, signed approach and mainland viewpoints can still explain the mount and bay. If severe weather or transport interrupts access, remain on the mainland; do not substitute an improvised tidal crossing.',
+      faq: [
+        ['Do I need an Abbey ticket to enter the village?', 'No: village streets and the exterior approach are separate from the Abbey visit. The Abbey requires its own ticket and follows its own opening and final-entry rules; check both before choosing a transfer.'],
+        ['Can I visit the Abbey if stairs or steep paths are difficult?', 'Plan with the official reduced-mobility guidance before booking: the route has a steep approach, many steps, and no ramps or lifts. The Abbey describes adapted services and a reservable joëlette with conditions; contact the monument well ahead to confirm what can work for you.'],
+        ['Can I walk across the bay without a guide?', 'No. Stay on the causeway, dam and signed public approaches unless you join an authorized guide for a crossing under current local conditions. A tide table or low-water time is not a safe route instruction.']
+      ],
       watch: [
         ['Tide does not make a crossing safe', 'Channels and quicksand-like sediment make the bay hazardous. Cross only with an authorized guide and current local conditions; never use a photograph or tide time as a route map.'],
         ['The climb is steep and crowded', 'The village and abbey route include stairs and narrow passages. Check official reduced-mobility guidance and ticket access before arrival.'],
@@ -180,6 +199,7 @@ export const normandyEditorialCluster = defineFranceCluster({
       sources: [
         ['https://www.ot-montsaintmichel.com/en/discover/visit-the-mont-saint-michel/access-the-mont-saint-michel/by-bus-and-coach/', 'Mont-Saint-Michel tourism office — bus, visitor parking and shuttle access'],
         ['https://www.abbaye-mont-saint-michel.fr/en/visit/practical-information', 'Abbey of Mont-Saint-Michel — tickets, hours and last entry'],
+        ['https://www.abbaye-mont-saint-michel.fr/en/visit/visitors-with-disabilities', 'Abbey of Mont-Saint-Michel — reduced-mobility access, stairs and adapted visits'],
         ['https://www.abbaye-mont-saint-michel.fr/decouvrir/histoire-du-monument', 'Abbey of Mont-Saint-Michel — official building history and 1023–1421 chronology'],
         ['https://www.abbaye-mont-saint-michel.fr/en/discover/finding-your-way-around-the-monument', 'Abbey of Mont-Saint-Michel — official monument route and architectural history'],
         ['https://www.abbaye-mont-saint-michel.fr/en/discover/the-cloister-between-sky-and-sea', 'Abbey of Mont-Saint-Michel — the Merveille cloister and its columns'],

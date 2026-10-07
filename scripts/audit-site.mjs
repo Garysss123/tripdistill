@@ -271,8 +271,7 @@ for (const absoluteUrl of publishedUrls) {
     if ((html.match(/class="au-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Australia child guide does not contain four route stages`);
     if ((html.match(/class="au-check"/g) || []).length !== 3) problems.push(`${relativePath}: Australia child guide does not contain three weak-point checks`);
   }
-  const isParisRegionDayTrip = baseRoute.startsWith('/france/paris-region-day-trips/');
-  const expectedFranceCss = isParisRegionDayTrip ? '/css/france.css?v=20261007-2' : '/css/france.css?v=20260919-1';
+  const expectedFranceCss = '/css/france.css?v=20261007-3';
   if (baseRoute.startsWith('/france/') && !html.includes(expectedFranceCss)) problems.push(`${relativePath}: missing France correspondence-atlas stylesheet`);
   if (baseRoute.startsWith('/france/') && baseRoute !== '/france/' && !/<body\b[^>]*\bdata-parent-page="france"/i.test(html)) problems.push(`${relativePath}: France primary navigation parent is not set`);
   if (baseRoute === '/france/' && (html.match(/class="fr-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: France country hub does not contain twenty linked regional cards`);
@@ -282,7 +281,7 @@ for (const absoluteUrl of publishedUrls) {
   }
   const franceGuide = franceByRoute.get(baseRoute);
   if (franceGuide) {
-    const expectedFieldCss = isParisRegionDayTrip ? '/css/france-field.css?v=20261007-2' : '/css/france-field.css?v=20260919-1';
+    const expectedFieldCss = '/css/france-field.css?v=20261007-3';
     if (!html.includes(expectedFieldCss)) problems.push(`${relativePath}: missing France route-file stylesheet`);
     if (!html.includes(`data-fr-family="${franceGuide.family}"`)) problems.push(`${relativePath}: missing ${franceGuide.family} France family marker`);
     if (!html.includes(`data-fr-instrument="${franceGuide.instrument}"`)) problems.push(`${relativePath}: missing ${franceGuide.instrument} France instrument marker`);

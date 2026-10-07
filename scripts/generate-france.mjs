@@ -7,10 +7,10 @@ const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '19 September 2026';
 const isoDate = '2026-09-19';
 const siteCss = '/css/site.css?v=20260926-1';
-const countryCss = '/css/france.css?v=20260919-1';
-const fieldCss = '/css/france-field.css?v=20260919-1';
-const parisRegionCountryCss = '/css/france.css?v=20261007-2';
-const parisRegionFieldCss = '/css/france-field.css?v=20261007-2';
+const countryCss = '/css/france.css?v=20261007-3';
+const fieldCss = '/css/france-field.css?v=20261007-3';
+const parisRegionCountryCss = '/css/france.css?v=20261007-3';
+const parisRegionFieldCss = '/css/france-field.css?v=20261007-3';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
@@ -143,7 +143,9 @@ function guidePage(guide, cluster, guideIndex) {
   if (cluster.slug === 'paris') return parisGuidePage(guide, cluster);
   const variant = (guideIndex % 12) + 1;
   const description = metaDescription(`${guide.summary} ${guide.access}`);
-  const planningSources = uniqueSources(guide.sources, cluster.sources);
+  const planningSources = cluster.slug === 'normandy'
+    ? uniqueSources(guide.sources)
+    : uniqueSources(guide.sources, cluster.sources);
   const pageReviewDate = guide.reviewDate || reviewDate;
   const imageCaption = usesHumanPhotoCredits(cluster.slug)
     ? (guide.imageCaption || guide.image.creditTitle || guide.image.label)
@@ -196,7 +198,7 @@ function hubSchema(cluster) {
 function parisHubPage(cluster) {
   const route = '/france/paris/';
   const hero = cluster.guides[0].image;
-  const pageReviewDate = cluster.slug === 'paris-region-day-trips' ? (cluster.reviewDate || reviewDate) : reviewDate;
+  const pageReviewDate = cluster.reviewDate || reviewDate;
   const description = metaDescription(`${cluster.hubIntro} ${cluster.transfer}`);
   const caption = cluster.guides[0].imageCaption || hero.label;
   return `<!doctype html>

@@ -25,8 +25,9 @@ const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
 const parisLastmod = '2026-10-06';
-const parisRegionDayTripsLastmod = '2026-10-06';
+const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';
+const franceResponsiveLastmod = '2026-10-07';
 const parisEditedRoutes = [
   '/france/paris/',
   '/france/paris/seine-islands-latin-quarter/',
@@ -45,6 +46,10 @@ const normandyEditedRoutes = [
   '/france/normandy/bayeux-dday-landscape/',
   '/france/normandy/mont-saint-michel-bay/'
 ];
+// The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
+const franceResponsiveEditedRoutes = franceClusters
+  .filter((cluster) => cluster.slug !== 'paris')
+  .flatMap((cluster) => [`/france/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)]);
 // These route-specific edit dates come from the current source history:
 // 15147d0 changed the nine Tokyo routes, 42cdc8b changed five Kyoto guides,
 // and 6297cc7 changed Osaka Bay. /japan/ reflects this overview source edit.
@@ -135,6 +140,11 @@ for (const route of parisRegionDayTripsEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Paris region day-trip route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: parisRegionDayTripsLastmod });
+}
+for (const route of franceResponsiveEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date France regional responsive edit route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceResponsiveLastmod });
 }
 for (const route of normandyEditedRoutes) {
   const record = records.get(route);

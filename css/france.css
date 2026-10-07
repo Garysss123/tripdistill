@@ -9,11 +9,12 @@
   --fr-line: rgba(23, 51, 66, .18);
 }
 
-/* Day-trip layouts must fit the usable viewport when a classic scrollbar takes 15 px. */
-body[data-region="paris-region-day-trips"],
-body[data-region="paris-region-day-trips"] .site-shell,
-body[data-region="paris-region-day-trips"] .page-content {
+/* France region layouts must fit the usable viewport when a classic scrollbar takes 15 px. */
+body[data-country="france"][data-region]:not([data-region="paris"]),
+body[data-country="france"][data-region]:not([data-region="paris"]) .site-shell,
+body[data-country="france"][data-region]:not([data-region="paris"]) .page-content {
   min-width: 0;
+  max-width: 100%;
 }
 
 .fr-country,
