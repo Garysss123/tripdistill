@@ -274,6 +274,11 @@ const verifiedSourcePageDetails = new Map([
     '2026-10-06'
   ],
   [
+    'https://commons.wikimedia.org/wiki/File:20181013_-_01_-_Montreal_(Mile_End).jpg',
+    'Canada source review: exact Commons title, Andre Carrotflower authorship, Laurier/Henri-Julien street-corner subject, and CC BY-SA 4.0 terms checked against the source page. The image record and visible credit link to the source and license and state the same-license adaptation terms; the WebP pixels were not visually reviewed in this check.',
+    '2026-10-07'
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Osaka_Castle_Outer_Moat_and_Osaka_Business_Park,_November_2016.jpg',
     'Osaka source review: exact Commons title, Martin Falbisoner authorship, Osaka Castle outer moat and Inui-yagura subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
     '2026-10-06'
