@@ -144,7 +144,7 @@ export const franceNorthWestClusters = [
     hubIntro: "Versailles, Fontainebleau and Giverny sit in different directions and reward different kinds of attention: the state rooms and engineered garden axis at Versailles; a many-period royal residence at Fontainebleau; Monet’s house, Clos Normand and water garden at Giverny. They are separate day plans. A ticket, train or shuttle for one does not solve the others.",
     countryCardIntro: "Choose Versailles for palace rooms and its formal garden axis, Fontainebleau for layered royal history, or Giverny for Monet's house and seasonal gardens.",
     stay: "Use Paris as the base for one of these excursions at a time. Keep the chosen rail terminal near the day’s first reservation; changing hotels saves little for a single visit. An overnight in Vernon or Fontainebleau makes sense only when the town or surrounding countryside is part of the plan.",
-    transfer: "Versailles has three stations: RER C to Château–Rive Gauche (about 10 minutes on foot), line N/U to Chantiers (about 18), or line L to Rive Droite (about 17). Fontainebleau uses Transilien R from Gare de Lyon to Fontainebleau–Avon, then local bus 1 to the Château stop. Giverny uses a train to Vernon–Giverny and a separate seasonal last mile. Check both legs and their return.",
+    transfer: "Versailles-Château–Rive Gauche is on RER C; Versailles-Chantiers is served by line N from Paris-Montparnasse and by line U from La Défense toward La Verrière; line L reaches Rive Droite from Saint-Lazare. Fontainebleau uses Transilien R from Gare de Lyon to Fontainebleau–Avon, then bus 3401 (formerly 1) toward Les Lilas to the Château stop. For Giverny, take the train to Vernon–Giverny and book SNGO’s seasonal shuttle separately: SNCF Nomad currently lists €10 return, with departures coordinated to Paris train arrivals. Check each operator’s date-specific timetable and your return.",
     season: "The château at Versailles and its Trianon estate close on Mondays; gardens and park have different access and event-ticket rules. Fontainebleau closes on Tuesdays and listed public holidays. Monet’s house and gardens operate seasonally: the foundation lists 1 April–1 November 2026, 10:00–18:00, last entry 17:30. Recheck the operator calendar for your date.",
     fallback: "If a reserved interior is unavailable, keep the day in its arrival town: Versailles town and the Palace’s independently open park or gardens when permitted; Fontainebleau town and only the palace grounds confirmed open; Vernon or a separately confirmed museum when Giverny is closed or full. Do not transfer to a second estate without rebuilding its ticket, last mile and return.",
     faq: [
@@ -165,8 +165,8 @@ export const franceNorthWestClusters = [
             "Reserve the specific timed admission that anchors the day, then buy rail only after checking the station and local connection. For Giverny the foundation recommends online booking and warns that on-site waits can grow after its online quota is reached."
           ]
         ],
-    reviewDate: "6 October 2026",
-    reviewDateISO: "2026-10-06",
+    reviewDate: "7 October 2026",
+    reviewDateISO: "2026-10-07",
     sources: [
           [
             "https://www.visitparisregion.com/en",
@@ -179,6 +179,30 @@ export const franceNorthWestClusters = [
           [
             "https://www.iledefrance-mobilites.fr/en/",
             "Île-de-France Mobilités official network, fares and disruption information"
+          ],
+          [
+            "https://www.transilien.com/fr/page-lignes/ligne-n",
+            "Transilien line N: Paris-Montparnasse via Versailles-Chantiers"
+          ],
+          [
+            "https://www.transilien.com/fr/page-lignes/ligne-u",
+            "Transilien line U: La Défense to La Verrière via Versailles-Chantiers"
+          ],
+          [
+            "https://presse.iledefrance-mobilites.fr/ile-de-france-mobilites-lance-la-renumerotation-des-lignes-de-bus-du-territoire-de-fontainebleau-moret/?lang=fr",
+            "Île-de-France Mobilités: Fontainebleau bus 1 became line 3401 on 16 September 2024"
+          ],
+          [
+            "https://tzen4.iledefrance-mobilites.fr/top-5-chateaux-ile-de-france",
+            "Île-de-France Mobilités: current bus 3401 direction and Château stop"
+          ],
+          [
+            "https://www.ter.sncf.com/normandie/decouvrir/top-destinations-paris-normandie/giverny",
+            "SNCF Nomad: Vernon–Giverny shuttle details and current return fare"
+          ],
+          [
+            "https://www.sngo.fr/la-navette-shuttle/",
+            "SNGO operator: seasonal Vernon–Giverny shuttle and current timetable"
           ]
         ],
     guides: [
@@ -190,7 +214,7 @@ export const franceNorthWestClusters = [
         imageQuery: 'Palace of Versailles gardens France panorama',
         imageAlt: "The Orangerie parterre at Versailles, with clipped hedges, potted trees and a central fountain",
         purpose: "Plan a timed Palace visit around one legible architectural sequence, then choose either the gardens or Trianon instead of treating this vast estate as a checklist.",
-        summary: "Enter the Palace at the time on your ticket, read the State Apartments through the 73-metre Hall of Mirrors toward Le Nôtre’s garden axis, then choose a bounded garden walk or a separate Trianon block. The three Versailles stations lead to different walks and Paris terminals.",
+        summary: "Enter the Palace at your timed slot and follow the State Apartments through the 73-metre Hall of Mirrors toward Le Nôtre’s garden axis. Choose one bounded garden walk or a separate Trianon block; line N from Montparnasse and line U from La Défense both serve Chantiers.",
         choices: [
           [
             "State Apartments and the Hall of Mirrors",
@@ -205,12 +229,12 @@ export const franceNorthWestClusters = [
             "Make the Grand Trianon, Petit Trianon and Hamlet the main visit. Trianon opens at noon, lies about 30 minutes on foot from the Palace through the Gardens and Park, and the official route suggests four hours."
           ]
         ],
-        access: "Match the Paris origin to the door: RER C reaches Versailles Château–Rive Gauche, about a 10-minute walk from the Palace; line N/U from Montparnasse reaches Chantiers, about 18 minutes on foot; line L from Saint-Lazare reaches Rive Droite, about 17 minutes. Follow the entrance printed for the ticket. Allow time for bag checks; luggage over 55 × 35 × 25 cm is not admitted.",
+        access: "Match the Paris origin to the door: RER C reaches Versailles Château–Rive Gauche, about a 10-minute walk from the Palace. Transilien N runs from Paris-Montparnasse through Versailles-Chantiers, about 18 minutes on foot; line U reaches Chantiers from La Défense on its way to La Verrière. Line L from Saint-Lazare reaches Rive Droite, about 17 minutes away. Follow the entrance printed for your ticket and allow time for bag checks; luggage over 55 × 35 × 25 cm is not admitted.",
         tradeoff: "The Palace rooms, full garden axis and Trianon are not one compact loop. The visit keeps the timed Palace and one outdoor branch substantial, then leaves the third for another date. The Gardens–Trianon crossing alone is a 30-minute walk each way before the interior visit.",
         stages: [
           [
             "Choose the matching station",
-            "From Paris, pick the live RER C, N/U or L route by the terminal nearest your hotel, then save the station-to-entrance walk and a return option. Do not choose “Versailles” without its station suffix."
+            "Start from your actual Paris corridor: RER C reaches Château–Rive Gauche, N runs from Montparnasse via Chantiers, U comes from La Défense via Chantiers toward La Verrière, and L serves Rive Droite from Saint-Lazare. Save the station-to-entrance walk and a return option; do not choose “Versailles” without its station suffix."
           ],
           [
             "Read the Palace along its axis",
@@ -276,11 +300,11 @@ export const franceNorthWestClusters = [
           ],
           [
             "Which Versailles station should I use?",
-            "RER C to Versailles Château–Rive Gauche is about 10 minutes on foot; Chantiers is about 18 minutes and Rive Droite about 17. The best one depends on your Paris origin and current service."
+            "RER C serves Château–Rive Gauche; line N reaches Chantiers from Montparnasse, and line U reaches Chantiers from La Défense toward La Verrière. Line L from Saint-Lazare serves Rive Droite. Walks are about 10, 18 and 17 minutes respectively; choose by origin and live service."
           ]
         ],
-        reviewDate: "6 October 2026",
-        reviewDateISO: "2026-10-06",
+        reviewDate: "7 October 2026",
+        reviewDateISO: "2026-10-07",
         sources: [
           [
             "https://en.chateauversailles.fr/plan-your-visit",
@@ -297,6 +321,14 @@ export const franceNorthWestClusters = [
           [
             "https://www.iledefrance-mobilites.fr/en/",
             "Live regional rail, fare and disruption information"
+          ],
+          [
+            "https://www.transilien.com/fr/page-lignes/ligne-n",
+            "Transilien line N: Paris-Montparnasse to Versailles-Chantiers"
+          ],
+          [
+            "https://www.transilien.com/fr/page-lignes/ligne-u",
+            "Transilien line U: La Défense to La Verrière via Versailles-Chantiers"
           ]
         ],
       }),
@@ -308,39 +340,39 @@ export const franceNorthWestClusters = [
         imageQuery: 'Chateau Fontainebleau courtyard horseshoe staircase France',
         imageAlt: "The Château de Fontainebleau’s horseshoe staircase framed by the Cour des Adieux wings",
         purpose: "Make the rail-to-castle transfer explicit, then use the Cour des Adieux as a key to the château’s changing court functions before choosing a measured town or forest-edge finish.",
-        summary: "From Gare de Lyon take Transilien R to Fontainebleau–Avon, then bus 1 toward Les Lilas to the “Château” stop. Begin in the Cour des Adieux: its ceremonial horseshoe staircase and mixed wings reveal a residence assembled across reigns, not a single-period palace.",
+        summary: "Take Transilien R from Gare de Lyon to Fontainebleau–Avon, then bus 3401 (formerly 1) toward Les Lilas to the Château stop. Inside, compare the François I Gallery’s painted and sculpted Renaissance program with the ballroom and Napoleon I’s former throne room; check which special apartments require a guided visit.",
         choices: [
           [
-            "Château rooms and galleries",
-            "Use the official visitor circuit to compare rooms from successive royal periods. The courtyard arrival gives the clearest start; check the day’s room closures before deciding which interiors anchor the visit."
+            "François I Gallery and the royal circuit",
+            "Follow the long gallery linking the royal apartments with Trinity Chapel. Its frescoes, carved stucco, emblems and mythic scenes stage Renaissance court power; the imagery does not have one settled interpretation."
           ],
           [
-            "Château and formal grounds",
-            "After the interiors, keep to the palace courtyards, gardens and the town center. This gives a complete car-free day without adding a separate forest bus or trail return."
+            "Ballroom and imperial rooms",
+            "If included and open on your ticket’s circuit, compare the ceremonial Salle de Bal with the former royal bedchamber where Napoleon I’s throne is displayed. Smaller apartments and special rooms may have separately listed guided visits; confirm access and booking for your date."
           ],
           [
-            "Château plus a forest threshold",
-            "Add a signed, short forest walk only after checking the official map, daylight, weather and your return to Fontainebleau–Avon. Forest bouldering sectors and long trails are not an automatic extension of the palace gardens."
+            "Palace with town or forest edge",
+            "After the interiors, choose the grounds and town, or one signed forest-edge walk. Do not treat climbing boulders or a long forest trail as an automatic extension of the palace gardens; check the official map, daylight, weather and return to Fontainebleau–Avon."
           ]
         ],
-        access: "Board Transilien line R at Paris Gare de Lyon for Fontainebleau–Avon. The château’s official directions specify local bus 1 toward Les Lilas to the “Château” stop. The station is not beside the palace: check the bus timetable and stop in both directions, and retain the rail ticket and return connection details.",
+        access: "Board Transilien line R at Paris Gare de Lyon for Fontainebleau–Avon, then take bus 3401 (formerly line 1) toward Les Lilas to “Château.” The station is not beside the palace. Check Île-de-France Mobilités for the date-specific bus timetable and stop in both directions, and keep the train and bus return connections together.",
         tradeoff: "The château spans many royal periods and is large enough to reward an interior-focused visit. A forest walk uses the same remaining daylight as the gardens and town; this itinerary gives up a deep trail or second château so the palace circuit and Paris return keep their margin.",
         stages: [
           [
             "Ride Line R to Fontainebleau–Avon",
-            "Start at Gare de Lyon and verify the train destination on the day. At Fontainebleau–Avon, follow the official bus 1 direction toward Les Lilas and get off at “Château”; do not plan on the station name meaning palace doorstep."
+            "Start at Gare de Lyon and verify the Transilien R destination. At Fontainebleau–Avon, take bus 3401 (formerly 1) toward Les Lilas and get off at “Château”; the rail station is not the palace doorstep."
           ],
           [
-            "Start with the Cour des Adieux",
-            "Look back across the full horseshoe staircase and the different wings around the courtyard. Château records describe this space as a service court that became a parade court under François I, Henri II and Henri IV; the staircase was rebuilt in 1632–34."
+            "Read the François I Gallery",
+            "Move through the long gallery as both passage and display: it links the royal apartments to Trinity Chapel. Rosso Fiorentino and Francesco Primaticcio shaped its painted and sculpted Renaissance program; compare repeated frames and figures without forcing one settled interpretation."
           ],
           [
-            "Choose depth before the late block",
-            "Follow the current official interior circuit rather than crossing rooms at random. The courtyard is also called the Cour des Adieux for Napoleon’s farewell to the Old Guard on 20 April 1814; use that moment to place the residence’s imperial layer among its earlier courts."
+            "Compare ceremonial and imperial rooms",
+            "On the open circuit, compare the ballroom’s ceremonial scale with the former royal bedchamber now arranged around Napoleon I’s throne. Treat separately advertised apartments as guided-visit possibilities and confirm their access and booking for your date."
           ],
           [
-            "Return through town or a mapped edge",
-            "Keep the last hour for the town or palace grounds unless a named forest path, closure notice and bus/train return are already checked. Reach the Fontainebleau–Avon stop with one later service still available."
+            "Choose one outdoor finish",
+            "Keep the last hour for palace grounds, the town, or a short mapped forest edge. For a longer trail, check its named start, closures, daylight and bus/train return before leaving; reach Fontainebleau–Avon with a later service in reserve."
           ]
         ],
         fallback: "In rain or when forest access is uncertain, spend the second block in rooms confirmed open, the palace grounds or Fontainebleau town. If the château circuit changes, do not replace it with an unplanned forest trail; use the town’s independent museum or café only after checking its opening day.",
@@ -350,54 +382,54 @@ export const franceNorthWestClusters = [
             "The château also lists closures on 1 January, 1 May and 25 December. Seasonal hours and last access differ; check the official calendar for your actual date."
           ],
           [
-            "Bus 1 has its own timetable",
-            "Fontainebleau–Avon is the rail station, not the château stop. Confirm “Château” in the Les Lilas direction outbound and the correct return service before entering."
+            "Bus 3401 replaced the old line 1",
+            "Since 16 September 2024, use line 3401 toward Les Lilas for the “Château” stop. Confirm its current departure and the return service with Île-de-France Mobilités before entering."
           ],
           [
             "Forest routes need their own plan",
             "The forest is broad and includes bouldering sectors. Use a named official route, signed access, suitable footwear and enough daylight; stay on the palace/town loop when any of those are missing."
           ]
         ],
-        duration: "Planning estimate: reserve roughly three hours for a focused interior and courtyard visit, then add the Line R journey, two bus legs, meals and whichever single garden, town or forest-edge block you choose. A full Paris day is realistic; the official opening and last-entry times govern the usable window.",
+        duration: "Planning estimate: reserve roughly three hours for a focused palace interior visit, then add Line R, both bus legs, meals and one garden, town or forest-edge block. A day trip from Paris can fill a full day; the château’s opening and last-entry times govern the usable window.",
         combine: "Pair the château with Fontainebleau town or one mapped forest-edge loop. Save Vaux-le-Vicomte for another day: it has separate access, hours and a different transport problem.",
-        verify: "Check château opening day, last admission and room status; Transilien R works; bus 1 direction and timetable; and the current ONF map, weather and forest access if walking beyond the palace grounds.",
+        verify: "Check château opening day, last admission and room status; Transilien R works; bus 3401 (formerly 1) direction and timetable; and the current ONF map, weather and forest access if walking beyond the palace grounds.",
         imageCreditTitle: "Fontainebleau’s Cour des Adieux and staircase",
         imageCaption: "The Cour des Adieux and double horseshoe staircase at Fontainebleau",
         siteContext: {
-          "label": "Layers in the residence",
-          "heading": "Read the courtyard as a changing stage.",
-          "intro": "Fontainebleau’s significance lies in the way its courts and wings were adapted across generations. Use the entry courtyard to orient yourself before the interior rooms.",
+          "label": "Painted and carved court imagery",
+          "heading": "Read the François I Gallery as a passage and a display.",
+          "intro": "The gallery joins the royal apartments to Trinity Chapel, but its Renaissance decoration does more than connect rooms: painted scenes, stucco, emblems and mythic figures turn the route into an image of courtly authority.",
           "details": [
             [
-              "A working court becomes ceremonial",
-              "The Cour du Cheval Blanc began as a service court and became a parade court during the reigns of François I, Henri II and Henri IV. Its enclosing wings do not share one architectural moment."
+              "Look along the whole gallery",
+              "Rosso Fiorentino and Francesco Primaticcio shaped a dense painted and sculpted program. Follow repeated frames, figures and emblems from bay to bay; the wider allegorical meaning remains debated."
             ],
             [
-              "The staircase fixes the view",
-              "The horseshoe staircase was rebuilt by Jean Androuet du Cerceau in 1632–34. Stand opposite it long enough to see how it organizes the central pavilion and courtyard."
+              "Set pageantry beside power",
+              "The Salle de Bal gives the palace a ceremonial gathering room; Napoleon I’s throne occupies the former royal bedchamber. These rooms show how the residence’s public image shifted between royal court and empire."
             ],
             [
-              "Imperial memory is part of the place",
-              "The name Cour des Adieux recalls Napoleon’s farewell to the Old Guard here in April 1814. The same space reads differently as a service court, royal approach and imperial departure."
+              "Check which rooms your ticket opens",
+              "Use the current self-guided circuit for the standard visit. Some apartments and special rooms appear only in separately listed guided visits; confirm the exact room and booking on the château’s dated program."
             ]
           ]
         },
         faq: [
           [
             "How do I get from Paris to the château?",
-            "Take Transilien R from Gare de Lyon to Fontainebleau–Avon, then the château-listed bus 1 toward Les Lilas to “Château.” Check the current return departure before the palace visit."
+            "Take Transilien R from Gare de Lyon to Fontainebleau–Avon, then bus 3401 (formerly line 1) toward Les Lilas to “Château.” Check the current return departure before the palace visit."
           ],
           [
             "What should I notice before entering?",
-            "The Cour des Adieux was a service court that became a parade space under several kings. Its horseshoe staircase was rebuilt in 1632–34; the name also recalls Napoleon’s farewell to the Old Guard in 1814."
+            "The François I Gallery links royal apartments to Trinity Chapel. Rosso Fiorentino’s painted and sculpted Renaissance program uses mythic figures, frames and emblems; its complete allegorical reading remains debated."
           ],
           [
             "Can I add a forest walk?",
             "Yes, if you choose a signed route and check its starting point, current access, weather, daylight and return transport in advance. A short edge walk is not the same as visiting a bouldering sector or crossing the forest."
           ]
         ],
-        reviewDate: "6 October 2026",
-        reviewDateISO: "2026-10-06",
+        reviewDate: "7 October 2026",
+        reviewDateISO: "2026-10-07",
         sources: [
           [
             "https://www.chateaudefontainebleau.fr/en/plan-your-visit/",
@@ -405,7 +437,19 @@ export const franceNorthWestClusters = [
           ],
           [
             "https://www.chateaudefontainebleau.fr/en/plan-your-visit/how-to-get-there/",
-            "Official access directions and bus 1 to “Château”"
+            "Official access directions and current bus 3401 to “Château”"
+          ],
+          [
+            "https://presse.iledefrance-mobilites.fr/ile-de-france-mobilites-lance-la-renumerotation-des-lignes-de-bus-du-territoire-de-fontainebleau-moret/?lang=fr",
+            "Île-de-France Mobilités: old bus 1 became line 3401 on 16 September 2024"
+          ],
+          [
+            "https://tzen4.iledefrance-mobilites.fr/top-5-chateaux-ile-de-france",
+            "Île-de-France Mobilités: bus 3401 direction Les Lilas and Château stop"
+          ],
+          [
+            "https://collections-ressources.chateaudefontainebleau.fr/document/galerie-francois-ier/626900dcfca3340f34c61139",
+            "Château collection record for the Galerie François Ier and Renaissance court imagery"
           ],
           [
             "https://collections-ressources.chateaudefontainebleau.fr/document/cour-d-honneur/6414bdbce655ae02e29713a7",
@@ -433,7 +477,7 @@ export const franceNorthWestClusters = [
         imageQuery: 'Giverny Monet garden water lilies house France',
         imageAlt: "The green Japanese bridge and pond in Monet’s Water Garden at Giverny",
         purpose: "Plan the seasonal garden visit around its ticket window and the Vernon last mile, then read Monet’s two gardens as deliberately different compositions instead of making a rushed photo stop.",
-        summary: "Gare Saint-Lazare trains reach Vernon–Giverny, not Monet’s gate; from the station arrange the current shuttle, bus, bicycle or taxi. Inside, compare the flower beds of the Clos Normand with the water, willows and Japanese bridge of the Water Garden.",
+        summary: "From Paris, take the train to Vernon–Giverny, then SNGO’s seasonal shuttle to the village; SNCF Nomad currently lists €10 return, separate from the train. At Monet’s house, read the yellow dining room and Japanese prints before comparing the deliberately planted Clos Normand with the Water Garden.",
         choices: [
           [
             "House and both gardens",
@@ -448,7 +492,7 @@ export const franceNorthWestClusters = [
             "Return to Vernon for the town center or Seine edge only when the shuttle arrival and next train leave real time. This is a lower-pressure extension than adding a second distant Normandy stop."
           ]
         ],
-        access: "From Paris, use a train from Gare Saint-Lazare to Vernon–Giverny. Continue by the seasonal shuttle or another confirmed local option; the foundation lists train and access information but does not make the last mile part of the rail ticket. Check where the shuttle leaves and match its return to your reserved garden entry and train.",
+        access: "Take the train from Paris Saint-Lazare to Vernon–Giverny. SNGO runs the seasonal Navette Giverny from the station toward the village; SNCF Nomad currently lists a €10 return shuttle fare and departures coordinated with Paris train arrivals. The shuttle has its own timetable and limited seats, so check SNGO for your date and keep its return separate from the rail ticket and garden entry.",
         tradeoff: "The garden is the reason for the trip and opens only for a defined season. Adding Vernon or another museum takes time from the house and both garden spaces; this plan gives up a second Normandy destination so a delayed shuttle does not consume the Paris return margin.",
         stages: [
           [
@@ -457,11 +501,11 @@ export const franceNorthWestClusters = [
           ],
           [
             "Build the train and last mile together",
-            "Travel from Gare Saint-Lazare to Vernon–Giverny, then use the currently listed shuttle, bus, bicycle or taxi. Save its departure point and the return timetable; the station-to-garden leg is not automatic."
+            "Travel from Gare Saint-Lazare to Vernon–Giverny, then take SNGO’s seasonal Navette Giverny. SNCF Nomad currently lists €10 return for the shuttle, with departures aligned to Paris trains; check SNGO’s date-specific timetable and limited-seat availability. Buy the rail ticket and garden entry separately."
           ],
           [
-            "Compare the two designed gardens",
-            "Start with Monet’s house and the Clos Normand flower garden, then follow the signed route to the Water Garden. Slow down at the pond and green Japanese bridge: their water, reflected forms and willows offer a different composition from the ordered beds."
+            "Read the house, then the gardens",
+            "Notice the yellow dining room and Japanese prints, the blue Rouen-tile kitchen, and the reconstructed studio before stepping outside. Monet applied pictorial ideas to the Clos Normand’s color-blocked beds and perspectives; the Water Garden shifts the view to pond, bridge, willows and reflection."
           ],
           [
             "Leave room for the Vernon train",
@@ -489,40 +533,40 @@ export const franceNorthWestClusters = [
         imageCreditTitle: "Monet’s Water Garden and bridge at Giverny",
         imageCaption: "The pond and Japanese bridge in Monet’s Water Garden",
         siteContext: {
-          "label": "Two gardens, two compositions",
-          "heading": "Follow Monet’s change of scale.",
-          "intro": "The Clos Normand and Water Garden are distinct spaces connected as one visit. The photograph shows the pond and bridge, only one part of the grounds.",
+          "label": "House and gardens as one work",
+          "heading": "See Monet the gardener inside and out.",
+          "intro": "Giverny was Monet’s home from 1883 to 1926. The colored rooms and Japanese prints inside, then the planted beds and water garden outside, show an artist shaping both domestic space and landscape.",
           "details": [
             [
-              "Clos Normand",
-              "Read the house and flower garden first: beds, paths and the house front give a close, cultivated scale. Allow room for narrow paths and other visitors rather than trying to hold a fast pace."
+              "Color in the house",
+              "The yellow dining room displays Monet’s collection of Japanese prints; the blue Rouen-tile kitchen keeps copper utensils and the large cooker in view. The restored studio/lounge uses reproductions to evoke its historic hanging, so treat it as an interpreted room rather than an untouched studio."
             ],
             [
-              "Water Garden",
-              "The pond and Japanese bridge introduce reflection, water lilies and overhanging willows. Pause on both sides of the bridge and compare how the same scene changes with your position."
+              "The Clos Normand is planted composition",
+              "The foundation says Monet used perspective, shade and single-color rectangular beds as pictorial tools. Follow the paths slowly: the view changes with season and planting, rather than presenting one fixed palette."
             ],
             [
-              "Museum is a separate door",
-              "The Musée des Impressionnismes has its own address, calendar and admission. Treat it as an optional second visit, not as part of the Monet garden ticket."
+              "The Water Garden changes the visual plane",
+              "Pond, water lilies, bridge and overhanging willows invite reflection rather than a straight garden axis. Compare the view from each side of the bridge, then remember that the Musée des Impressionnismes is a separate visit and ticket."
             ]
           ]
         },
         faq: [
           [
             "How long should I spend in the garden?",
-            "The foundation recommends 1.5–2 hours for the unguided house-and-garden visit. That excludes the Paris train, Vernon transfer and waiting time."
+            "The foundation recommends 1.5–2 hours for the unguided house-and-garden visit. Add the Paris train, Vernon shuttle and waiting time to that estimate."
           ],
           [
-            "Can I buy a ticket at the gate?",
-            "The foundation says on-site tickets are available daily, but recommends booking online and warns of significant waits once the online quota is reached. E-tickets are non-refundable; check change conditions before purchase."
+            "How do I get from Vernon station to the gardens?",
+            "SNGO’s Navette Giverny runs seasonally from Vernon–Giverny station toward the village. SNCF Nomad currently lists €10 return and says departures are coordinated with Paris train arrivals; check SNGO’s current timetable and seat availability. This does not replace your Paris–Vernon rail ticket."
           ],
           [
             "Is the entire visit wheelchair accessible?",
             "The foundation says the gardens are accessible to people with reduced mobility, while the house is not wheelchair accessible. Priority access is available with the stated disability card at the group entrance on Sente Leroy."
           ],
         ],
-        reviewDate: "6 October 2026",
-        reviewDateISO: "2026-10-06",
+        reviewDate: "7 October 2026",
+        reviewDateISO: "2026-10-07",
         sources: [
           [
             "https://fondation-monet.com/en/useful-information/",
@@ -531,6 +575,26 @@ export const franceNorthWestClusters = [
           [
             "https://fondation-monet.com/en/",
             "Fondation Claude Monet: house, Clos Normand and Water Garden"
+          ],
+          [
+            "https://claudemonetgiverny.fr/en/decouvrir/claude-monets-house/",
+            "Official house rooms, Japanese prints, kitchen and restored studio"
+          ],
+          [
+            "https://claudemonetgiverny.fr/en/decouvrir/clos-normand/",
+            "Official Clos Normand history, planting and pictorial perspective"
+          ],
+          [
+            "https://claudemonetgiverny.fr/en/decouvrir/water-lily-pond/",
+            "Official Water Garden, pond and Water Lilies context"
+          ],
+          [
+            "https://www.ter.sncf.com/normandie/decouvrir/top-destinations-paris-normandie/giverny",
+            "SNCF Nomad: current Vernon–Giverny shuttle fare and train-aligned service"
+          ],
+          [
+            "https://www.sngo.fr/la-navette-shuttle/",
+            "SNGO: seasonal shuttle operator, Vernon station departure and current timetable"
           ],
           [
             "https://www.garesetconnexions.sncf/en/stations-services/vernon-giverny",

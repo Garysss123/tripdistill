@@ -1,0 +1,10 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/paris-region-day-trips/versailles-palace-estate/"
+  ],
+  "translations": {
+    "Enter the Palace at your timed slot and follow the State Apartments through the 73-metre Hall of Mirrors toward Le Nôtre’s garden axis. Choose one bounded garden walk or a separate Trianon block; line N from Montparnasse and line U from La Défense both serve Chantiers.": "지정된 입장 시간에 궁전에 들어가 국왕의 공식 접견실을 지나 길이 73m인 거울의 방을 거쳐 르 노트르가 설계한 정원 축을 향해 이동하세요. 정원 산책은 한 구간으로 정하거나, 트리아농 구역은 별도 일정으로 잡으세요. Montparnasse에서 출발하는 N선과 La Défense에서 출발하는 U선은 모두 Chantiers역까지 운행합니다."
+  }
+}

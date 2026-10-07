@@ -28,6 +28,7 @@ const expectedLocales = [
 ];
 const expectedHreflangs = new Set(['en', 'zh-Hant', 'ja', 'ko', 'th', 'x-default']);
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
+const sourceSearchIndex = JSON.parse(fs.readFileSync(path.join(root, 'data', 'search-index.json'), 'utf8'));
 
 function luminance(color) {
   const channels = color.match(/[0-9a-f]{2}/gi)?.map((part) => parseInt(part, 16) / 255);
@@ -198,16 +199,51 @@ for (const locale of expectedLocales) {
       }
       if (locale.code === 'en') {
         const required = routePath.endsWith('/versailles-palace-estate/')
-          ? ['Rive Gauche', 'Hall of Mirrors', 'Passport', '10 minutes']
+          ? ['Rive Gauche', 'Hall of Mirrors', 'Passport', '10-minute walk', 'line N from Montparnasse', 'line U from La Défense']
           : routePath.endsWith('/fontainebleau-palace-forest/')
-            ? ['Fontainebleau–Avon', 'bus 1', 'Cour des Adieux', 'April 1814']
-            : ['Vernon–Giverny', 'For 2026', '1 April through 1 November', '1.5–2 hours', 'wheelchair accessible'];
+            ? ['Fontainebleau–Avon', 'bus 3401 (formerly 1)', 'François I Gallery', 'Rosso Fiorentino', 'Salle de Bal', 'Napoleon I', '16 September 2024']
+            : ['Vernon–Giverny', 'SNGO', '€10 return', 'Japanese prints', 'Clos Normand', 'Water Garden', 'For 2026', '1 April through 1 November', '1.5–2 hours', 'wheelchair accessible'];
         for (const phrase of required) if (!bodyText.includes(phrase)) fail(`English day-trip content lacks “${phrase}” on ${routePath}.`);
       }
     }
   }
 }
 
+const pageBodyText = (locale, routePath) => {
+  const page = pagesByRoute.get(locale + routePath);
+  if (!page) fail('Missing localized page record for ' + locale + ' ' + routePath + '.');
+  return text(nodes(page.document, 'body')[0]);
+};
+const versaillesPages = [
+  pageBodyText('en', '/france/paris-region-day-trips/'),
+  pageBodyText('en', '/france/paris-region-day-trips/versailles-palace-estate/')
+];
+for (const routePath of ['/france/paris-region-day-trips/versailles-palace-estate/']) {
+  const record = sourceSearchIndex.find((item) => item.url === routePath);
+  if (!record) fail('Missing English search-index summary for ' + routePath + '.');
+  if (!/line N.{0,100}Montparnasse/i.test(record.summary) || !/line U.{0,100}La Défense/i.test(record.summary)) {
+    fail('Search summary must identify line N from Montparnasse and line U from La Défense on ' + routePath + '.');
+  }
+}
+for (const bodyText of versaillesPages) {
+  const hasLineNOrigin = /(?:line N|Transilien N).{0,100}(?:Paris-Montparnasse|Montparnasse)|(?:Paris-Montparnasse|Montparnasse).{0,100}(?:line N|Transilien N)/i.test(bodyText);
+  const hasLineUOrigin = /line U.{0,100}La Défense|La Défense.{0,100}line U/i.test(bodyText);
+  if (!hasLineNOrigin || !hasLineUOrigin || !/line U.{0,100}La Défense.{0,100}La Verrière/i.test(bodyText) || /line N\/U from Montparnasse/i.test(bodyText)) {
+    fail('Paris–Versailles guidance must keep line N/Montparnasse and line U/La Défense–La Verrière distinct.');
+  }
+}
+const fontainebleauPages = [
+  { routePath: '/france/paris-region-day-trips/fontainebleau-palace-forest/', bodyText: pageBodyText('en', '/france/paris-region-day-trips/fontainebleau-palace-forest/') }
+];
+for (const { routePath, bodyText } of fontainebleauPages) {
+  const record = sourceSearchIndex.find((item) => item.url === routePath);
+  if (!record || !record.summary.includes('3401 (formerly 1)') || !bodyText.includes('3401 (formerly 1)')) {
+    fail('Current Fontainebleau bus 3401 and its former number must be present on ' + routePath + ' and in its search summary.');
+  }
+}
+if (!pageBodyText('en', '/france/paris-region-day-trips/').includes('3401 (formerly 1)')) {
+  fail('The day-trip hub must show Fontainebleau bus 3401 and its former number.');
+}
 const parisCss = manifest.assets.find((asset) => asset.path === '/css/france-paris.css');
 if (!parisCss) fail('The Paris stylesheet is absent from the route asset manifest.');
 const totalStyleBytes = manifest.assets.filter((asset) => asset.path.endsWith('.css')).reduce((sum, asset) => sum + asset.bytes, 0);
