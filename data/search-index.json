@@ -8351,7 +8351,7 @@
     "url": "/canada/toronto/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Toronto is easier when the downtown waterfront, west-side neighborhoods and the island ferry are treated as separate movement systems. Pick a base near the transit you will actually use, then group each day by street grid rather than headline attraction.",
+    "summary": "Toronto’s visitor core runs on three different clocks: Union Station’s active rail hall and the downtown lakefront, the Bloor museum belt with a choice of residential Annex streets or Kensington’s market lanes, and the ferry timetable to the Islands. The map can make these look like one walk; museum hours, streetcar service and the boat return make them different days. Choose a base on Line 1 or near Union, then plan one corridor at a time.",
     "keywords": [
       "Toronto",
       "Ontario",
@@ -8363,7 +8363,7 @@
     "url": "/canada/toronto/downtown-waterfront/",
     "parent": "Toronto",
     "type": "Local guide",
-    "summary": "Use Union Station as the anchor, then walk the waterfront and one downtown cultural corridor without zig-zagging between the lake, shopping streets and distant neighborhoods.",
+    "summary": "Start with Union Station’s 1927 Beaux-Arts Great Hall, then follow the southbound rail-to-waterfront corridor to Harbourfront. The Toronto Music Garden gives the walk a destination; a timed tower visit is an optional extra, not another compulsory stop.",
     "keywords": [
       "Downtown & Waterfront",
       "Toronto",
@@ -8372,13 +8372,13 @@
     ]
   },
   {
-    "title": "The Annex, Kensington & Museum Toronto",
+    "title": "Toronto Museums, the Annex & Kensington",
     "url": "/canada/toronto/annex-kensington-museums/",
     "parent": "Toronto",
     "type": "Local guide",
-    "summary": "Link one serious museum visit to a west-side neighborhood walk so the day alternates collection time with streets, food and independent shops instead of becoming a transit relay.",
+    "summary": "ROM and AGO are different museum days, not adjacent checklist stops: ROM’s broad art, culture and nature collections pair naturally with the Bloor-side Annex; AGO’s Canadian-art focus links more directly to Grange Park and Kensington’s historic market streets.",
     "keywords": [
-      "The Annex, Kensington & Museum Toronto",
+      "Toronto Museums, the Annex & Kensington",
       "Toronto",
       "Ontario",
       "neighborhood-zine"
@@ -8389,7 +8389,7 @@
     "url": "/canada/toronto/toronto-islands/",
     "parent": "Toronto",
     "type": "Local guide",
-    "summary": "Treat the islands as a weather-dependent ferry day with a chosen landing and return sailing, not a small waterfront add-on.",
+    "summary": "The City operates separate ferries to Centre Island, Hanlan’s Point and Ward’s Island, with three-route service from mid-April to mid-October. Pick one landing for its own park or beach focus, then build the visit around that route’s current return sailing.",
     "keywords": [
       "Toronto Islands",
       "Toronto",

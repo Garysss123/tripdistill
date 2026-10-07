@@ -34,6 +34,10 @@ const expectedRoutes = [
   ['/canada/montreal/old-montreal-old-port/', 'Old Montreal & Old Port'],
   ['/canada/montreal/plateau-mile-end/', 'Plateau & Mile End'],
   ['/canada/montreal/mount-royal-museums/', 'Mount Royal & Museum Mile'],
+  ['/canada/toronto/', 'Toronto hub'],
+  ['/canada/toronto/downtown-waterfront/', 'Downtown & Waterfront'],
+  ['/canada/toronto/annex-kensington-museums/', 'Toronto Museums, the Annex & Kensington'],
+  ['/canada/toronto/toronto-islands/', 'Toronto Islands'],
   ['/canada/quebec-city-charlevoix/', 'Quebec City & Charlevoix'],
   ['/canada/quebec-city-charlevoix/old-quebec/', 'Old Québec & the Fortified City'],
   ['/canada/quebec-city-charlevoix/montmorency-orleans/', 'Montmorency Falls & Île d’Orléans'],
@@ -200,9 +204,10 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 330 || manifest.pages?.length !== 330) fail(`${label}: expected 330 localized route records.`);
+  const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
+  if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, South Korea, Hanoi, Sapa and Ha Giang scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto, South Korea, Hanoi, Sapa and Ha Giang scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -471,17 +476,23 @@ for (const locale of expectedLocales) {
       }
       continue;
     }
-    if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/')) {
-      const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : '/css/canada-quebec-city.css';
-      const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/';
+    if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/') || routePath.startsWith('/canada/toronto/')) {
+      const isTorontoRoute = routePath.startsWith('/canada/toronto/');
+      const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : isTorontoRoute ? '/css/canada-toronto.css' : '/css/canada-quebec-city.css';
+      const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/' || routePath === '/canada/toronto/';
       if (!styles.includes('/css/canada.css') || !styles.includes(regionCss)) fail(`Missing Canada route stylesheet ${regionCss} on ${locale.code} ${routePath}.`);
-      const regionCssVersion = routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
+      const regionCssVersion = isTorontoRoute ? '20261007-1' : routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
       if (!styleHrefs.some((href) => href === `${regionCss}?v=${regionCssVersion}`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isCanadaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'details').length) fail(`Missing visible Canada FAQ controls on ${locale.code} ${routePath}.`);
       const canadaBodyText = text(nodes(document, 'body')[0]);
       if (!canadaBodyText.includes('CC BY') && !canadaBodyText.includes('CC0')) fail(`Missing readable Canada photo license in ${locale.code} ${routePath}.`);
       if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Canada photo source on ${locale.code} ${routePath}.`);
+      if (isTorontoRoute) {
+        const torontoCss = fs.readFileSync(safeDistPath('/css/canada-toronto.css'), 'utf8');
+        if (!torontoCss.includes('body[data-page="ca-toronto"]') || !torontoCss.includes('body[data-page^="ca-toronto-"]') || !/min-width:\s*0/.test(torontoCss) || !torontoCss.includes('.ca-field-hero')) fail(`Toronto narrow-width CSS guard is missing on ${locale.code} ${routePath}.`);
+        if (!isCanadaHub && classNodes(document, 'ca-route-step').length !== 4) fail(`Toronto child route must expose four route stages on ${locale.code} ${routePath}.`);
+      }
       continue;
     }
     const isParisRoute = routePath.startsWith('/france/paris/');
@@ -752,7 +763,7 @@ if (!isLive) {
   const normandyPages = manifest.pages.filter((record) => record.path.startsWith('/france/normandy/')).length;
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
   const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
-  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/')).length;
+  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/')).length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
   const gyeongjuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/gyeongju/')).length;
