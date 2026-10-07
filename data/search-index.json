@@ -8504,7 +8504,7 @@
     "url": "/canada/montreal/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Montreal rewards neighborhood depth: Old Montreal is a river-and-history day, the Plateau/Mile End is a street-life day, and Mount Royal/museums form an elevation-and-collection day. The Métro joins them, but should not flatten their rhythm.",
+    "summary": "Montreal’s best first visit is not one continuous checklist. Old Montreal puts the 1642 Ville-Marie foundation and later port beside one another; Plateau and Mile End move from busy commercial streets into residential blocks. Pointe-à-Callière documents Jewish garment workers, postwar Greek settlement around Park Avenue and Portuguese businesses farther south across the wider Plateau—examples, not a complete history of Mile End. Mount Royal turns the city into a park-and-view day. The Métro helps connect these areas, but the riverfront, neighborhood grid and uphill park each need their own pace.",
     "keywords": [
       "Montreal",
       "Quebec",
@@ -8516,7 +8516,7 @@
     "url": "/canada/montreal/old-montreal-old-port/",
     "parent": "Montreal",
     "type": "Local guide",
-    "summary": "Walk Old Montreal downhill toward the river, choose one interior historic or cultural stop, then use the Old Port as the open-space second act instead of looping every cobbled street.",
+    "summary": "Read the city’s 1642 founding at the Pointe-à-Callière site and Place Royale, then follow the old street grid toward the working river edge. Choose one interior—archaeology, a church or another historic space—because the museum, basilica and waterfront together fill a day.",
     "keywords": [
       "Old Montreal & Old Port",
       "Montreal",
@@ -8529,7 +8529,7 @@
     "url": "/canada/montreal/plateau-mile-end/",
     "parent": "Montreal",
     "type": "Local guide",
-    "summary": "Use one northbound neighborhood walk for bakeries, parks, independent shops and residential streets; the point is texture, not an attraction tally.",
+    "summary": "Walk north from the Plateau’s busy east–west commercial streets into Mile End, where Saint-Laurent, Saint-Viateur and Parc Lahaie show a more residential district shaped by immigrant life and textile work. The value is in noticing how the streets change between stops, not collecting famous bakery queues.",
     "keywords": [
       "Plateau & Mile End",
       "Montreal",
@@ -8542,7 +8542,7 @@
     "url": "/canada/montreal/mount-royal-museums/",
     "parent": "Montreal",
     "type": "Local guide",
-    "summary": "Let weather decide whether the day begins on Mount Royal or inside a museum, then connect the two through one downtown slope instead of crossing the mountain repeatedly.",
+    "summary": "Treat Mount Royal as a designed urban landscape, not just a lookout: Frederick Law Olmsted’s park opened in 1876 and its winding route makes elevation part of the visit. Choose the Kondiaronk terrace or Beaver Lake as the outdoor goal, then pair it with one downtown museum only if the descent, visibility and remaining attention allow.",
     "keywords": [
       "Mount Royal & Museum Mile",
       "Montreal",
@@ -8555,7 +8555,7 @@
     "url": "/canada/quebec-city-charlevoix/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Quebec City’s fortified core is a walking trip; Montmorency/Île d’Orléans and Charlevoix are separate regional branches. Protect the hill-and-stair walking day before adding a car-based river corridor.",
+    "summary": "Québec’s UNESCO-listed core reads as two connected but very different neighborhoods: the rampart-lined Upper Town on Cap Diamant and Lower Town around Place Royale and the old harbour. Montmorency Falls and Île d’Orléans make a separate eastbound excursion; Charlevoix is a farther mountain-and-river corridor that deserves its own base.",
     "keywords": [
       "Quebec City & Charlevoix",
       "Quebec",
@@ -8563,13 +8563,13 @@
     ]
   },
   {
-    "title": "Old Quebec & the Fortified Core",
+    "title": "Old Québec & the Fortified City",
     "url": "/canada/quebec-city-charlevoix/old-quebec/",
     "parent": "Quebec City & Charlevoix",
     "type": "Local guide",
-    "summary": "Walk the upper and lower town as a vertical city: ramparts and civic history first, then descend to Petit-Champlain and the river without unnecessary climbs.",
+    "summary": "Read the UNESCO district as a vertical city, not a single postcard square: the Upper Town’s surviving wall and cliff-top institutions above the Lower Town’s Place Royale and former harbour. Walk one level at a time, then use the descent to understand how the two halves fit.",
     "keywords": [
-      "Old Quebec & the Fortified Core",
+      "Old Québec & the Fortified City",
       "Quebec City & Charlevoix",
       "Quebec",
       "fortress-section"
@@ -8580,7 +8580,7 @@
     "url": "/canada/quebec-city-charlevoix/montmorency-orleans/",
     "parent": "Quebec City & Charlevoix",
     "type": "Local guide",
-    "summary": "Make Montmorency the fixed natural anchor and treat Île d’Orléans as a selective food-and-landscape loop with a sober driving plan, not a race around every village.",
+    "summary": "At Montmorency, choose the bridge, cliff-side viewpoints or the 487-step stair for a different view of the 83-metre drop. Then cross the river only if you have time for a purposeful Île d’Orléans village stop; the island’s farms, heritage and roads are a second destination, not an extra waterfall viewpoint.",
     "keywords": [
       "Montmorency Falls & Île d’Orléans",
       "Quebec City & Charlevoix",
@@ -8593,7 +8593,7 @@
     "url": "/canada/quebec-city-charlevoix/charlevoix-baie-saint-paul/",
     "parent": "Quebec City & Charlevoix",
     "type": "Local guide",
-    "summary": "Use Baie-Saint-Paul as the overnight anchor, then choose one St Lawrence or mountain branch so the Charlevoix day is about landscape depth rather than windshield mileage.",
+    "summary": "Use Baie-Saint-Paul as the town base, then choose either a cultural day among its galleries and compact main streets or a mountain-park day in Grands-Jardins. The high trail looks across the Charlevoix impact crater, a landscape story that the riverside town and the trailhead reveal in very different ways.",
     "keywords": [
       "Charlevoix & Baie-Saint-Paul",
       "Quebec City & Charlevoix",

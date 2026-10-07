@@ -44,6 +44,18 @@ const routes = [
   { path: '/france/loire-valley/blois-chambord/', label: 'Blois & Chambord' },
   { path: '/france/loire-valley/amboise-chenonceau/', label: 'Amboise, Clos Lucé & Chenonceau' },
   { path: '/france/loire-valley/tours-villandry-azay/', label: 'Tours, Villandry & Azay-le-Rideau' },
+  { path: '/france/champagne/', label: 'Reims, Épernay & Champagne Country' },
+  { path: '/france/champagne/reims-cathedral-cellars/', label: 'Reims Cathedral & Cellar Districts' },
+  { path: '/france/champagne/epernay-avenue-vineyards/', label: 'Épernay, Avenue de Champagne & Vineyard Villages' },
+  { path: '/france/champagne/troyes-southern-champagne/', label: 'Troyes & Southern Champagne' },
+  { path: '/canada/montreal/', label: 'Montreal' },
+  { path: '/canada/montreal/old-montreal-old-port/', label: 'Old Montreal & Old Port' },
+  { path: '/canada/montreal/plateau-mile-end/', label: 'Plateau & Mile End' },
+  { path: '/canada/montreal/mount-royal-museums/', label: 'Mount Royal & Museum Mile' },
+  { path: '/canada/quebec-city-charlevoix/', label: 'Quebec City & Charlevoix' },
+  { path: '/canada/quebec-city-charlevoix/old-quebec/', label: 'Old Québec & the Fortified City' },
+  { path: '/canada/quebec-city-charlevoix/montmorency-orleans/', label: 'Montmorency Falls & Île d’Orléans' },
+  { path: '/canada/quebec-city-charlevoix/charlevoix-baie-saint-paul/', label: 'Charlevoix & Baie-Saint-Paul' },
   { path: '/south-korea/seoul/', label: 'Seoul hub' },
   { path: '/south-korea/seoul/bukchon-seochon/', label: 'Bukchon & Seochon' },
   { path: '/south-korea/seoul/jongno-gwanghwamun/', label: 'Jongno & Gwanghwamun' },
@@ -149,7 +161,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>Paris, Seoul, Hanoi and Sapa responsive QA harness</title>
+  <title>France, Canada, Seoul, Hanoi and Sapa responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -175,8 +187,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">Paris, Seoul, Hanoi and Sapa responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, regional France and Loire guides, nine Seoul guides, six Hanoi guides, and seven Sapa and Northwest Highlands guides in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
+      <h1 id="page-title">France, Canada, Seoul, Hanoi and Sapa responsive QA harness</h1>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, eight Canada routes across Montreal and Quebec City–Charlevoix, nine Seoul routes, six Hanoi routes, and seven Sapa and Northwest Highlands routes in all five published languages at paired 320 px and 390 px CSS viewport widths. Use the preview frames for visual and keyboard review in your cloud browser.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

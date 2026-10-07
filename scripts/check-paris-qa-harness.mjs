@@ -26,6 +26,18 @@ const expectedRoutes = [
   ['/france/loire-valley/blois-chambord/', 'Blois & Chambord'],
   ['/france/loire-valley/amboise-chenonceau/', 'Amboise, Clos Lucé & Chenonceau'],
   ['/france/loire-valley/tours-villandry-azay/', 'Tours, Villandry & Azay-le-Rideau'],
+  ['/france/champagne/', 'Reims, Épernay & Champagne Country'],
+  ['/france/champagne/reims-cathedral-cellars/', 'Reims Cathedral & Cellar Districts'],
+  ['/france/champagne/epernay-avenue-vineyards/', 'Épernay, Avenue de Champagne & Vineyard Villages'],
+  ['/france/champagne/troyes-southern-champagne/', 'Troyes & Southern Champagne'],
+  ['/canada/montreal/', 'Montreal'],
+  ['/canada/montreal/old-montreal-old-port/', 'Old Montreal & Old Port'],
+  ['/canada/montreal/plateau-mile-end/', 'Plateau & Mile End'],
+  ['/canada/montreal/mount-royal-museums/', 'Mount Royal & Museum Mile'],
+  ['/canada/quebec-city-charlevoix/', 'Quebec City & Charlevoix'],
+  ['/canada/quebec-city-charlevoix/old-quebec/', 'Old Québec & the Fortified City'],
+  ['/canada/quebec-city-charlevoix/montmorency-orleans/', 'Montmorency Falls & Île d’Orléans'],
+  ['/canada/quebec-city-charlevoix/charlevoix-baie-saint-paul/', 'Charlevoix & Baie-Saint-Paul'],
   ['/south-korea/seoul/', 'Seoul hub'],
   ['/south-korea/seoul/bukchon-seochon/', 'Bukchon & Seochon'],
   ['/south-korea/seoul/jongno-gwanghwamun/', 'Jongno & Gwanghwamun'],
@@ -90,6 +102,12 @@ function attr(node, name) {
 function text(node) {
   if (node.nodeName === '#text') return node.value;
   return (node.childNodes || []).map(text).join('');
+}
+
+function textOutsideSourceCredits(node) {
+  if (node.tagName === 'section' && attr(node, 'class').split(/\s+/).includes('sources')) return '';
+  if (node.nodeName === '#text') return node.value;
+  return (node.childNodes || []).map(textOutsideSourceCredits).join('');
 }
 
 function nodes(document, tagName) {
@@ -166,9 +184,9 @@ function assertHarness(html, label) {
   const manifest = getManifest(html, label);
   if (manifest.project !== 'trip' || manifest.branch !== 'paris-qa') fail(`${label}: manifest targets ${manifest.project}/${manifest.branch}, expected trip/paris-qa.`);
   if (!/^[0-9a-f]{40}$/.test(manifest.sourceCommit || '')) fail(`${label}: missing exact source commit.`);
-  if (manifest.routeCount !== 190 || manifest.pages?.length !== 190) fail(`${label}: expected 190 localized route records.`);
+  if (manifest.routeCount !== 250 || manifest.pages?.length !== 250) fail(`${label}: expected 250 localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved Paris, Seoul, Hanoi and Sapa scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada, Seoul, Hanoi and Sapa scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -183,11 +201,12 @@ function inspectLocalizedPage(manifest, record, label) {
   const htmlNode = nodes(document, 'html')[0];
   if (attr(htmlNode, 'lang') !== record.locale) fail(`${label}: wrong document language on ${record.urlPath}: ${attr(htmlNode, 'lang')}.`);
   const bodyNode = nodes(document, 'body')[0];
-  const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
+  const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley', 'fr-champagne'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
+  const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
   const hanoiIdentity = record.path.startsWith('/vietnam/hanoi/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hanoi';
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
-  if (!franceIdentity && !seoulIdentity && !hanoiIdentity && !sapaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !hanoiIdentity && !sapaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -210,8 +229,8 @@ function inspectLocalizedPage(manifest, record, label) {
     const src = attr(image, 'src');
     if (src.startsWith('/') && !fs.existsSync(safeDistPath(src))) fail(`${label}: missing image ${src} from ${record.urlPath}.`);
   }
-  const pageText = text(bodyNode);
-  if (/\b[^\s<>]+\.(?:jpe?g|png|webp)\b/i.test(pageText)) fail(`${label}: raw image filename visible in ${record.urlPath}.`);
+  const editorialText = textOutsideSourceCredits(bodyNode);
+  if (/\b[^\s<>]+\.(?:jpe?g|png|webp)\b/i.test(editorialText)) fail(`${label}: raw image filename visible outside a linked source-credit list in ${record.urlPath}.`);
   const localLinks = nodes(document, 'a').map((node) => attr(node, 'href')).filter((href) => href.startsWith('/') && !href.startsWith('//'));
   for (const href of localLinks) {
     const pathname = new URL(href, 'https://tripdistill.com').pathname;
@@ -327,6 +346,18 @@ for (const locale of expectedLocales) {
                   : ['Sunday', '1914', '1921', 'mansion'];
         for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Sapa editorial QA is missing '${phrase}' on ${routePath}.`);
       }
+      continue;
+    }
+    if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/')) {
+      const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : '/css/canada-quebec-city.css';
+      const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/';
+      if (!styles.includes('/css/canada.css') || !styles.includes(regionCss)) fail(`Missing Canada route stylesheet ${regionCss} on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.some((href) => href === `${regionCss}?v=20261007-1`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!isCanadaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Canada FAQ controls on ${locale.code} ${routePath}.`);
+      const canadaBodyText = text(nodes(document, 'body')[0]);
+      if (!canadaBodyText.includes('CC BY') && !canadaBodyText.includes('CC0')) fail(`Missing readable Canada photo license in ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Canada photo source on ${locale.code} ${routePath}.`);
       continue;
     }
     const isParisRoute = routePath.startsWith('/france/paris/');
@@ -591,10 +622,12 @@ if (!isLive) {
   const dayTripPages = manifest.pages.filter((record) => record.path.startsWith('/france/paris-region-day-trips/')).length;
   const normandyPages = manifest.pages.filter((record) => record.path.startsWith('/france/normandy/')).length;
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
+  const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
+  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/')).length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const hanoiPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hanoi/')).length;
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/190 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${seoulPages} Seoul, ${hanoiPages} Hanoi, ${sapaPages} Sapa records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/250 route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${hanoiPages} Hanoi, ${sapaPages} Sapa records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
@@ -621,5 +654,5 @@ if (!isLive) {
   if (sitemapResponse.status !== 200) fail(`Preview sitemap returned HTTP ${sitemapResponse.status}.`);
   const remoteSitemap = await sitemapResponse.text();
   if ([...remoteSitemap.matchAll(/<loc>/g)].length !== 4560 || remoteSitemap.includes('/qa/paris-responsive/')) fail('Preview sitemap must contain exactly 4,560 site URLs and exclude the harness.');
-  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/190 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
+  console.log(`Responsive QA preview passed: harness HTTP 200, ${manifest.pages.length}/250 route-language pages and ${manifest.assets.length} local assets matched exact SHA-256, noindex, sitemap 4,560 URLs; ${checked} checks at ${liveOrigin}.`);
 }
