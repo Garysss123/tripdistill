@@ -483,7 +483,7 @@ for (const locale of expectedLocales) {
       const regionCss = routePath.startsWith('/canada/montreal/') ? '/css/canada-montreal.css' : isTorontoRoute ? '/css/canada-toronto.css' : '/css/canada-quebec-city.css';
       const isCanadaHub = routePath === '/canada/montreal/' || routePath === '/canada/quebec-city-charlevoix/' || routePath === '/canada/toronto/';
       if (!styles.includes('/css/canada.css') || !styles.includes(regionCss)) fail(`Missing Canada route stylesheet ${regionCss} on ${locale.code} ${routePath}.`);
-      const regionCssVersion = isTorontoRoute ? '20261007-1' : routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
+      const regionCssVersion = isTorontoRoute ? '20261007-2' : routePath === '/canada/montreal/mount-royal-museums/' ? '20261007-3' : '20261007-2';
       if (!styleHrefs.some((href) => href === `${regionCss}?v=${regionCssVersion}`)) fail(`Missing current Canada responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isCanadaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'details').length) fail(`Missing visible Canada FAQ controls on ${locale.code} ${routePath}.`);
@@ -493,6 +493,7 @@ for (const locale of expectedLocales) {
       if (isTorontoRoute) {
         const torontoCss = fs.readFileSync(safeDistPath('/css/canada-toronto.css'), 'utf8');
         if (!torontoCss.includes('body[data-page="ca-toronto"]') || !torontoCss.includes('body[data-page^="ca-toronto-"]') || !/min-width:\s*0/.test(torontoCss) || !torontoCss.includes('.ca-field-hero')) fail(`Toronto narrow-width CSS guard is missing on ${locale.code} ${routePath}.`);
+        if (!/body\[data-page="ca-toronto"\]\s+\.ca-hub-hero\s+\.ca-kicker,\s*body\[data-page\^="ca-toronto-"\]\s+\.ca-field-hero\s+\.ca-kicker\s*\{\s*color:\s*#f4e4c1;\s*\}/i.test(torontoCss)) fail(`Toronto dark-hero kicker contrast treatment is missing on ${locale.code} ${routePath}.`);
         if (!isCanadaHub && classNodes(document, 'ca-route-step').length !== 4) fail(`Toronto child route must expose four route stages on ${locale.code} ${routePath}.`);
       }
       continue;
