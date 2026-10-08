@@ -94,7 +94,7 @@ const hue = defineVietnamCluster({
       slug: 'royal-tombs',
       name: 'Royal Tombs of Minh Mang, Tu Duc & Khai Dinh',
       motif: 'Three rulers, three landscapes',
-      instrument: 'ledger',
+      instrument: 'pair',
       countryCss: '/css/vietnam-hue.css?v=20261008-1',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
@@ -104,14 +104,14 @@ const hue = defineVietnamCluster({
         ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — local transport and seasonal conditions']
       ],
       presentation: {
-        readingTitle: 'The grounds explain the differences.',
-        routeTitle: 'Choose two tombs before you choose a car.',
-        checksLabel: 'Before the road trip',
-        checksTitle: 'Confirm tickets, order and return.',
-        checksLead: 'The monuments are outside the central walking zone. Confirm official site access, an agreed pickup and enough daylight for the return.',
-        boundaryTitle: 'Treat a royal tomb as a memorial place',
-        faqLabel: 'Tomb-day decisions',
-        faqTitle: 'Which pair, and how much time?'
+        readingTitle: 'Three very different grounds; choose a pair.',
+        routeTitle: 'Build the day around two sites, not all three.',
+        checksLabel: 'Before leaving the city',
+        checksTitle: 'Confirm both gates and the return.',
+        checksLead: 'The tombs sit beyond Hue’s central walking area. Check each site’s current access, then agree the pickup order and return with your driver.',
+        boundaryTitle: 'Walk these grounds as memorials',
+        faqLabel: 'Choose your pair',
+        faqTitle: 'Which two fit this visit?'
       },
       image: image({
         src: '/assets/images/vietnam-hue-minh-mang-20261008.webp',
@@ -125,25 +125,25 @@ const hue = defineVietnamCluster({
         editNote: 'Cropped/resized and converted to WebP; this image adaptation is shared under the same license version.'
       }),
       summary: 'Compare Minh Mang’s axial gardens, Tu Duc’s lake-and-pavilion retreat and Khai Dinh’s steep mosaic interior; pick a pair that suits your walking pace.',
-      lead: 'These are funerary landscapes designed around different rulers, not three versions of one palace. Minh Mang’s long axial sequence uses gates, bridges, ponds and pine-covered hills; Tu Duc shaped a lake-and-pavilion retreat associated with his poetry and time spent there during his life; Khai Dinh’s climb ends in a richly tiled interior that combines Vietnamese and European forms. A visit becomes more useful when you choose which contrast you want to see.',
-      orientation: 'Minh Mang suits a visitor interested in symmetry and garden planning; Tu Duc in shaded water, pavilions and the emperor’s literary persona; Khai Dinh in steep stairways, mixed architectural references and dense interior mosaics. The tourism authority describes the sites as distinct, and advises choosing rather than trying to cover all of them in a short stay.',
+      lead: 'These are funerary landscapes shaped by three rulers, not three versions of one palace. At Minh Mang, a formal axis crosses gates and bridges through water gardens toward pine-covered hills. Tu Duc’s compound spreads around lakes and pavilions from the emperor’s lifetime retreat. Khai Dinh compresses its visit into a climb across terraces and a richly tiled interior. Choosing a pair lets you read those differences without turning the day into a race.',
+      orientation: 'Minh Mang and Tu Duc both ask for time outdoors, but their grounds feel different: one is ordered along a long central approach; the other bends around water and shaded pavilions. Khai Dinh is the steepest, most compact contrast, with a stair ascent and a mosaic-lined interior. The official tourism guide treats them as distinct choices and cautions against trying to see every tomb quickly.',
       arrival: 'Arrange a car or taxi with a written pickup point, waiting arrangement and return fare before leaving the city. A bicycle is possible only for riders comfortable with Hue’s roads, distance and heat; do not count on finding a replacement ride at a tomb gate.',
       sequence: 'For a two-site day, choose one broad garden landscape (Minh Mang or Tu Duc) and one contrasting site (often Khai Dinh). Visit the open-air gardens while energy is high, save the more compact tiled interior for the second stop, then return directly to town. The route order depends on road conditions and current opening information.',
       boundary: 'These are memorial places with active visitors and historic fabric. Keep voices low, do not climb tomb structures, touch inscriptions or sit on monuments, and follow barriers even when a viewpoint looks close.',
       stages: [
-        ['Choose your contrast', 'Select two rather than three if heat, stairs or limited time are concerns. Decide whether you want Minh Mang’s axial garden, Tu Duc’s lake pavilions or Khai Dinh’s stair-and-mosaic sequence.'],
-        ['Read Minh Mang outdoors', 'Follow the ceremonial axis across gates and bridges toward the lake and tree-covered hills. The layout was completed in 1843; the site’s scale makes a quiet, unhurried circuit worthwhile.'],
-        ['Compare Tu Duc and Khai Dinh', 'At Tu Duc, notice the water, pavilions and spaces linked to the emperor’s visits in life. At Khai Dinh, pace the climb and look closely at the mosaic-filled interior; the steep platforms change the effort of the visit.'],
-        ['Return before the day thins', 'Keep the driver or taxi pickup fixed, add a meal and rain buffer, and avoid planning a river cruise or airport transfer immediately after the tombs.']
+        ['Choose two before departure', 'For two open-air garden visits, pair Minh Mang with Tu Duc. For a stronger architectural contrast, pair either garden with Khai Dinh. Tu Duc plus Khai Dinh trades a second broad garden walk for the steepest climb. Leave the unchosen tomb for another day.'],
+        ['Start with one garden', 'At Minh Mang, follow the central approach across bridges between ponds and planted slopes. At Tu Duc, read the lake edge, pavilions and courtyards as a retreat the emperor used during his lifetime. Pick one of these as the first stop, not both by default.'],
+        ['Add one contrasting site', 'If Khai Dinh is your second stop, take the terraces slowly and look from the exterior into the mosaic-rich interior; the uphill sequence is the day’s main stair effort. If you chose Minh Mang and Tu Duc, stay with the gardens and skip Khai Dinh entirely.'],
+        ['Return directly to Hue', 'Set the final pickup before entering the second site and keep a meal and road buffer. Do not attach an evening river cruise, airport connection or Bach Ma transfer to this out-of-town pair.']
       ],
       risks: [
-        ['Unlinked locations', 'The tombs are dispersed beyond the city. Confirm with the driver which sites are in the agreed trip, who waits, and where the final pickup occurs.'],
-        ['Stairs and heat', 'Khai Dinh has a steep sequence of platforms; the gardens at Minh Mang and Tu Duc also involve long, exposed walks. Wear shoes with grip and take shade breaks.'],
-        ['Rain and site status', 'Wet steps and late-year flood disruption may change access or the practical order. Check the heritage ticket portal and local weather on the day.']
+        ['A two-site day can stretch', 'Minh Mang and Tu Duc have long outdoor approaches; Khai Dinh is shorter in footprint but its terraces add steep steps. Heat, rain or limited mobility can make even two visits too much—drop the second site rather than rush.'],
+        ['Driver wait and gate order', 'These are separate destinations outside the central walking zone. Agree which two gates are included, where the driver waits and the exact final pickup before leaving Hue; do not assume a ride will be waiting at each entrance.'],
+        ['Rain, stairs and closures', 'Wet stone makes Khai Dinh’s steps and garden paths slippery, while late-year flooding can disrupt roads. If heavy rain or site notices affect either stop, shorten to one accessible visit or reschedule the pair.']
       ],
-      duration: 'Allow about half a day for two tombs with a prearranged vehicle and short pauses; give three tombs a full day. These are planning estimates, and site distance, heat and stairs can stretch them.',
-      combine: 'Return to town for an evening meal. Thien Mu is a separate upstream branch, and Bach Ma or Lang Co is too far to bolt onto a tomb circuit.',
-      verify: 'Use the official Hue heritage ticket portal for current individual or combination admission and opening information. Confirm the vehicle, waiting arrangement, road weather and access to each site before departure.'
+      duration: 'Use a half day as a planning estimate for two tombs with a prearranged car and concise pauses; allow a full day for all three, including road time, lunch and longer walking breaks. The official tourism guide says even two or three can take half a day depending on size and location, so keep the return flexible.',
+      combine: 'For a garden-focused pair, choose Minh Mang plus Tu Duc. For garden-to-mosaic contrast, choose one of those with Khai Dinh. Return to Hue afterward; Thien Mu is a separate upstream visit, while Bach Ma and Lang Co belong to different road days.',
+      verify: 'Check the Hue Monuments Conservation Centre’s current ticket and site-access information for both chosen tombs. Confirm pickup order, driver waiting time, road conditions and a return that leaves daylight before departing.'
     },
     {
       slug: 'thien-mu-perfume-river',
@@ -202,6 +202,24 @@ const hue = defineVietnamCluster({
       name: 'Thanh Toan Rural & Canal Loop',
       motif: 'The working village edge',
       instrument: 'field',
+      countryCss: '/css/vietnam-hue.css?v=20261008-2',
+      reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
+      sources: [
+        ['https://sdl.hue.gov.vn/diem-du-lich-nong-thon/diem-du-lich-cau-ngoi-thanh-toan.html', 'Hue Department of Tourism — bridge structure, Tran Thi Dao, and the agricultural-tool display'],
+        ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — the village ride, seasonal weather, and Hue transport'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official weather warnings']
+      ],
+      presentation: {
+        readingTitle: 'A covered bridge still built for village life.',
+        routeTitle: 'Make the bridge and tool display the two anchors.',
+        checksLabel: 'Before riding out',
+        checksTitle: 'Check lanes, rain and return.',
+        checksLead: 'Choose a bicycle only if you are comfortable sharing narrow local roads. Otherwise agree a car drop-off and pickup around the village market.',
+        boundaryTitle: 'Let the village keep its daily rhythm',
+        faqLabel: 'Village visit planning',
+        faqTitle: 'What fits a half day?'
+      },
       image: image({
         src: '/assets/images/vietnam-hue-thanh-toan.webp',
         alt: 'Thanh Toan tiled bridge near the rural waterways of Hue',
@@ -211,31 +229,49 @@ const hue = defineVietnamCluster({
         license: 'CC BY-SA 4.0'
       }),
       summary: 'Cycle or ride through rice fields, irrigation lanes and Thanh Toan’s tiled bridge to meet the agricultural rhythm just beyond Hue.',
-      lead: 'Thanh Toan is valuable because the bridge sits inside a working community rather than a sealed museum. The route should leave room for farmers, market sellers, worshippers and ordinary traffic.',
-      orientation: 'Use the bridge, canal and agricultural displays as anchors, then let the lanes between them remain unscripted. This is a village edge, not a staged rural theme park.',
+      lead: 'The seven-bay wooden bridge was built in 1776 through the support of Tran Thi Dao, who wanted villagers and travelers to cross the canal and rest under its roof. A small altar to her occupies the central bay. The structure’s “house above, bridge below” form still reads clearly when you walk through it; it is also an active village crossing, not a museum set.',
+      orientation: 'Start with the roofed bridge and its canal, then visit the nearby agricultural-tool display to understand the working landscape around it. The village market sits beside the bridge; the fields and homes beyond are private or working ground, not an open walking attraction. Check whether the display and any demonstrations are operating before building them into the visit.',
       arrival: 'A bicycle, local driver or careful motorbike route works better than a large vehicle on narrow lanes. Confirm the return route and road surface after rain.',
       sequence: 'Leave the city on the quietest safe road, cross the village landscape, pause at the bridge and agricultural interpretation, then return by a different public lane only if conditions allow.',
       boundary: 'Protect the community boundary: ask before photographing residents, homes, shrines or private fields, and never block the bridge or market circulation.',
       stages: [
-        ['Check the wheels', 'Choose a safe bicycle or driver, carry water and a rain layer, and confirm a route that stays on public roads rather than farm tracks.'],
-        ['Read the canal', 'Watch how paths, irrigation, gardens and village traffic fit together; slow down at blind corners and give local vehicles priority.'],
-        ['Meet the bridge', 'Visit the tiled bridge and nearby displays as heritage and community places, leaving room for worship and daily movement.'],
-        ['Return lightly', 'Buy locally where appropriate, take all waste back with you and use the safest available road rather than forcing a scenic shortcut.']
+        ['Choose the return first', 'From central Hue, a prearranged car or taxi is the lower-effort choice; ask for a fixed drop-off and pickup by the market. A bicycle makes the rural approach part of the visit but only suits riders confident in mixed traffic. No dependable public bus timetable is listed in the official visitor sources.'],
+        ['Walk the covered crossing', 'Notice the tiled roof, timber structure, canal below and central altar to Tran Thi Dao. Give people crossing, resting or worshipping room; the bridge is the destination and a community route at once.'],
+        ['Read the agricultural display', 'If the nearby tool house is open, compare the ploughs, sickles, rice-processing tools and wooden water-lifting wheel with the canal and fields outside. Treat demonstrations and market food as optional local activity, not guaranteed scheduled attractions.'],
+        ['Leave by a public lane', 'Return on the agreed road before dusk or heavy rain. Do not turn a half-day village visit into a long unsurveyed farm-track loop; save time for a city meal after you are back in Hue.']
       ],
       risks: [
-        ['Narrow-road traffic', 'Lanes can carry motorcycles, farm vehicles and pedestrians without shoulders; use a helmet and avoid riding beyond your confidence.'],
-        ['Rain and mud', 'Heavy rain can make canalside edges and bridge approaches slippery or flooded; keep a turn-back point visible.'],
-        ['Community privacy', 'A working village is not an open studio; seek consent and do not enter yards, fields, houses or shrines without permission.']
+        ['Cycling confidence', 'The rural approach uses shared local roads rather than a protected cycleway. If you are not comfortable with motorcycles, farm vehicles and narrow crossings, use a driver and walk only around the bridge area.'],
+        ['Canal edge and floodwater', 'Rain can leave the canal path slick or put low approaches under water. Skip the loop if water is rising, and follow local closure guidance rather than trying another lane.'],
+        ['A living memorial', 'The bridge altar and nearby homes are active community spaces. Ask before photographing people, never block the crossing or market, and do not enter yards, fields or shrines.']
       ],
-      duration: 'Plan a half day at an unhurried pace; longer loops should be built around daylight and road confidence, not a fixed mileage target.',
+      duration: 'Plan about half a day for the road out, bridge, agricultural-tool display and return, with time to stop without interrupting the market. Cycling can lengthen the visit; do not plan an additional out-of-town Hue site on the same tight window.',
       combine: 'Pair with a relaxed central-city food stop or riverfront evening; do not bolt it onto three tombs simply because both routes leave Hue.',
-      verify: 'Check local tourism notices, bridge or market access, rain conditions and the selected bicycle or driver arrangement on the day.'
+      verify: 'Check the Hue Department of Tourism’s current bridge and tool-display information, then confirm local access, rain conditions and the selected bicycle or driver return on the day.'
     },
     {
       slug: 'bach-ma-national-park',
       name: 'Bach Ma National Park',
       motif: 'Rainforest above the coast',
       instrument: 'contour',
+      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
+      sources: [
+        ['https://nbca.gov.vn/vuon-quoc-gia-bach-ma/', 'National Biodiversity Conservation — park landscape, rainfall, and named nature trails'],
+        ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — Hue seasonal rain and regional transport'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official rain and storm warnings']
+      ],
+      presentation: {
+        readingTitle: 'Choose a trail by its destination and effort.',
+        routeTitle: 'One trail family is a day; four is a checklist.',
+        checksLabel: 'Before the mountain road',
+        checksTitle: 'Confirm entry, trail and return vehicle.',
+        checksLead: 'The official trail names lead to different endpoints. Check which are open and how visitors reach the upper trailheads before leaving Hue.',
+        boundaryTitle: 'Stay on the park’s permitted routes',
+        faqLabel: 'Trail and weather choices',
+        faqTitle: 'Which route fits this day?'
+      },
       image: image({
         src: '/assets/images/vietnam-hue-bach-ma.webp',
         alt: 'Bach Ma mountain range beneath late-afternoon light on the central coast',
@@ -245,31 +281,49 @@ const hue = defineVietnamCluster({
         license: 'CC0'
       }),
       summary: 'Plan Bach Ma as a managed mountain-forest day or overnight, choosing one official trail family instead of overloading a wet highland route.',
-      lead: 'Bach Ma changes the Hue story from dynastic geometry to biodiversity, elevation and rain. Its trails, waterfalls and viewpoints deserve the same respect as a heritage site, with more attention to weather and rescue distance.',
-      orientation: 'Choose between a short interpretation walk, a waterfall route and a summit or viewpoint day. The park entrance is not the end of the transfer; the mountain road and trail conditions are part of the plan.',
+      lead: 'Bạch Mã rises from lowland evergreen forest to a high ridge; the official conservation portal describes a protected area of more than 37,000 hectares and very heavy annual rain. Its named trails point to different experiences: Ngũ Hồ links five pools, Đỗ Quyên ends at a major waterfall, Vọng Hải Đài is a summit viewpoint, and Trĩ Sao leads to its own waterfall. The trailhead and mountain road matter as much as the map pin.',
+      orientation: 'Choose one endpoint before setting out: Vọng Hải Đài for the high view, Ngũ Hồ for a stream-and-pool route, or a named waterfall trail for the descent. These are not interchangeable short walks, and visibility, stream levels and access can change after rain. Ask the park which route and internal transfer are operating; an entrance ticket alone does not confirm the upper trail is reachable.',
       arrival: 'Use a confirmed vehicle and, when required, park registration, guide or approved transfer. Expect the final approach to be slower than the city-to-gate map suggests.',
       sequence: 'Register and check the day’s permitted zones, move from the lower forest into the chosen trail, stop before fatigue or weather becomes a hazard, and return with daylight margin.',
       boundary: 'Protect the park boundary: stay on marked trails, do not feed wildlife, collect plants, enter closed forest or light fires outside designated areas.',
       stages: [
-        ['Read the forecast', 'Check rain, cloud, road and park notices before leaving Hue; select a route whose return can remain safe if visibility deteriorates.'],
-        ['Register the route', 'Confirm entry, guide, shuttle and trail requirements with the park, then share the intended route and return time with the driver or travel companion.'],
-        ['Move by contour', 'Take measured breaks on the ascent, keep to the trail and observe forest, stream and elevation changes without approaching wildlife.'],
-        ['Exit before dark', 'Turn around with weather and daylight margin, leave no trace, and keep the road journey back separate from an ambitious late-night connection.']
+        ['Pick one trail endpoint', 'Choose Vọng Hải Đài for the ridge view, Ngũ Hồ for its linked pools, Đỗ Quyên for the waterfall, or Trĩ Sao for its waterfall trail. Compare the park’s current access and effort notes; do not treat all four as stops on one hike.'],
+        ['Set the park transfer', 'Confirm entry, any guide or registration requirement, and how the park is moving visitors between the gate and your chosen trailhead. Share the trail and expected return with your driver; do not assume a city taxi will wait inside the park.'],
+        ['Keep the route inside its margin', 'Carry water, a rain layer, shoes with grip and an offline route note. Follow the marked trail, turn back if cloud or stream levels worsen, and never take a shortcut through closed forest.'],
+        ['Return to Hue in daylight', 'Leave time for the internal road down and the drive back to the city. If heavy rain, a park closure or a severe weather warning is active, postpone the forest route rather than swapping to another trail.']
       ],
       risks: [
-        ['Rain and landslide', 'Bach Ma receives heavy rain and mountain weather can shift quickly; trails, streams and roads may close or become unsafe.'],
-        ['Remote response', 'Signal, transport and emergency response are limited compared with Hue; carry essentials and do not split from the group.'],
-        ['Protected habitat', 'Rare species and recovering forest require distance, silence and no collection, feeding, baiting or off-trail shortcuts.']
+        ['Very high rainfall', 'The national conservation portal reports typical annual rainfall of about 3,400–4,000 mm, with higher years possible. A forecast that looks manageable in central Hue can still mean slippery mountain steps, swollen streams or a closed upper road.'],
+        ['A long exit after the walk', 'Each trailhead adds park-road time before the drive to Hue. Keep the group together, carry essentials and leave a daylight margin; do not rely on phone signal or quick outside assistance.'],
+        ['Forest and waterfall edges', 'Stay on signed routes and behind barriers. Do not collect plants, feed or approach wildlife, enter closed forest, or step onto wet rocks for a better waterfall view.']
       ],
-      duration: 'Use a full day for a focused route and an overnight only with confirmed park accommodation, guide and weather margin.',
+      duration: 'Reserve a full day for one trail family: Hue-to-park road time, the internal approach, a measured walk and the return all compete for daylight. An overnight is a separate plan that depends on confirmed park accommodation and current visitor rules.',
       combine: 'Combine with Lang Co only as a separate transfer day when the park and road conditions are stable; do not add the Citadel or tombs after a long trek.',
-      verify: 'Recheck the official park or national conservation notice, trail status, guide or permit requirement, road weather and the return vehicle before setting out.'
+      verify: 'Recheck the National Biodiversity Conservation portal and the park directly for the chosen trail’s status, entry or guide requirements, internal transport and overnight rules. Check the national forecast and agree the return vehicle before leaving Hue.'
     },
     {
       slug: 'lang-co-lap-an-lagoon',
       name: 'Lang Co & Lap An Lagoon',
       motif: 'Where the road meets the lagoon',
       instrument: 'tide',
+      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
+      sources: [
+        ['https://hue.gov.vn/Cong-dan/Giai-trinh-y-kien-cu-tri/action/chitiet/tid/e1577ab0-d248-40f2-9235-b242009286c3', 'Hue City Portal — the lagoon’s local An Cư place-name history'],
+        ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — seasonal rain, flood risk, and Hue-to-coast transport context'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official coastal weather warnings']
+      ],
+      presentation: {
+        readingTitle: 'The lagoon stop and the beach stop are different.',
+        routeTitle: 'Choose a safe stop before committing to the coast road.',
+        checksLabel: 'Before the coastal transfer',
+        checksTitle: 'Agree the road, stop and onward leg.',
+        checksLead: 'A through bus or train is a transfer, not a lagoon visit. If stopping, book a driver who can use a safe public pull-in and keep the onward schedule realistic.',
+        boundaryTitle: 'Keep out of the lagoon work areas',
+        faqLabel: 'Coast and transfer choices',
+        faqTitle: 'Is this a stop or a half-day?'
+      },
       image: image({
         src: '/assets/images/vietnam-hue-lap-an.webp',
         alt: 'Lap An Lagoon and the Bach Ma mountain range near Lang Co',
@@ -279,28 +333,58 @@ const hue = defineVietnamCluster({
         license: 'CC BY 4.0'
       }),
       summary: 'Use Lang Co and Lap An Lagoon as a mountain-and-sea transfer chapter linking Hue, the Hai Van coast, working waters and the Bach Ma foothills.',
-      lead: 'The lagoon is not simply a scenic pause between cities. It is a working waterscape shaped by tide, mountain weather, road safety and local livelihoods, so the route needs a clear departure and return contract.',
-      orientation: 'Read the landscape in layers: road, lagoon, fishing activity, mountain and sea. Leave room for a short stop rather than promising a complete coastal tour in one rigid schedule.',
+      lead: 'Lăng Cô and Lập An sit where the coast road meets the lagoon and the foothills of Bạch Mã. The lagoon’s boats and aquaculture belong to a working water landscape; the open beach is a different stop, and a safe roadside view is different again. Hue’s official records also preserve An Cư as an older local name for this lagoon area, so older maps or documents may use more than one name.',
+      orientation: 'If you are moving between Hue and Đà Nẵng by road, decide whether you want a brief public-edge look at the lagoon or a separate beach-and-coast visit; they need different time and access. If you are on a fixed bus or train schedule, keep it as a transfer and plan a dedicated visit another day. The lagoon edge is not a public promenade through fishing or aquaculture plots.',
       arrival: 'Use a private car, licensed transfer or a carefully planned road itinerary; the best stop depends on traffic, safe pull-outs, weather and current access to the lagoon edge.',
       sequence: 'Travel from the Hue side with a daylight margin, stop only at safe public viewpoints or businesses, observe the lagoon without entering working areas, then continue or return before mountain weather worsens.',
       boundary: 'Protect the working lagoon: do not walk through aquaculture plots, collect shellfish, enter private jetties or treat fishing families as scenery without consent.',
       stages: [
-        ['Contract the road', 'Confirm vehicle, driver, route and weather before leaving; identify a safe public stop and a backup rather than stopping on a high-speed shoulder.'],
-        ['Read the water', 'Observe the lagoon, boats, shore vegetation and mountain backdrop from a permitted edge, keeping clear of work zones and tidal mud.'],
-        ['Choose the coast', 'Decide whether the day continues toward the Hai Van corridor or returns to Hue; do not let a scenic pause erase the transfer buffer.'],
-        ['Close the loop', 'Leave the shoreline clean, keep food and water plans realistic, and finish the road segment in daylight whenever possible.']
+        ['Choose transfer or outing', 'For a Hue–Đà Nẵng road transfer, tell the driver before departure that you want one lagoon stop and agree a safe parking place and onward time. Without a flexible vehicle, skip the roadside detour and keep the booked connection.'],
+        ['Read the lagoon from public ground', 'Look for the contrast between mountain backdrop, enclosed water and working boats. Stay on an access road, public edge or business that welcomes visitors; do not cross tidal mud or walk through fishing gear or jetties.'],
+        ['Decide whether to add the shore', 'A beach visit is a separate choice from a lagoon viewpoint. Add it only if your driver, road route and daylight allow time to park and return safely; otherwise continue toward your booked destination.'],
+        ['Keep the onward leg intact', 'The official Hue portal records the older An Cư name, but current maps may label the lagoon differently. Save the exact pickup pin, check rain and road warnings, and finish the coast road before darkness or deteriorating visibility.']
       ],
       risks: [
-        ['Road exposure', 'Highway traffic, narrow coastal shoulders and poor visibility make informal photo stops dangerous; use marked parking or an operator’s safe stop.'],
-        ['Tide and weather', 'Tide, wind, rain and mountain visibility alter the shoreline experience and may close roads or boat-related activities.'],
-        ['Working waters', 'Aquaculture, fishing gear and private access are not visitor infrastructure; keep distance and ask before photographing people or boats.']
+        ['No improvised shoulder stops', 'Highway traffic and narrow shoulders leave little room to step out safely. Use a public parking area or a driver-approved business stop; if no safe pull-in is available, keep moving.'],
+        ['Coastal weather can cancel the view', 'Rain, wind and low cloud can obscure the Bạch Mã backdrop or affect the coast road. During Hue’s late-year rain and flood season, check warnings and be willing to skip the stop rather than wait beside the highway.'],
+        ['Working lagoon access', 'Fishing gear and jetties mark work areas or private access. Observe from an open public edge, keep clear of boats and ask before photographing people.']
       ],
-      duration: 'Allow a half day for a focused lagoon and coast chapter, or make it a deliberate transfer day between Hue and the central coast.',
+      duration: 'Treat a single safe lagoon stop as a short transfer pause, not a whole coast tour. Allow a half day as an editorial estimate if the lagoon and beach are the main outing; a Hue–Đà Nẵng road-transfer day needs a separately agreed stop and onward buffer.',
       combine: 'Combine with Bach Ma only when the park exit and coastal road are both confirmed; otherwise keep the lagoon as the main destination.',
-      verify: 'Check the current Hue tourism notice, coastal weather, tide, road condition, public access and the driver’s safe stopping plan before departure.'
+      verify: 'Check the National Center for Hydro-Meteorological Forecasting for coastal rain and storm warnings, confirm current road access, and agree the public stop and onward time with your driver. Do not assume an open shoreline is safe to approach at every tide.'
     }
   ]
 });
+
+const hueDecisionCopy = {
+  'royal-tombs': [
+    ['Choose two sites', 'Minh Mang + Tu Duc keeps the day among open-air gardens; pair either one with Khai Dinh for a stair-and-mosaic contrast. Leave the third tomb for another day.'],
+    ['Arrange one return ride', 'Agree the two gates, waiting time, visit order and final pickup in Hue before leaving the city. The tomb grounds are dispersed beyond the central walking area.'],
+    ['Match effort to the pair', 'Khai Dinh adds a steep terrace climb; Minh Mang and Tu Duc involve longer garden paths. Take breaks, and treat each complex as a memorial rather than a shortcut between photo stops.']
+  ],
+  'thanh-toan-rural-loop': [
+    ['Choose a bicycle or car', 'A bicycle makes the rural approach part of the visit but shares narrow village roads. A driver drop-off and agreed pickup keep the half-day plan lower effort.'],
+    ['Visit two village anchors', 'Walk the covered bridge and, if open, the nearby agricultural-tool display. The market and canal are working places, not scheduled performances.'],
+    ['Leave lanes open', 'The bridge, altar and market serve residents. Keep the crossing clear and ask before photographing people or stepping beyond public lanes.']
+  ],
+  'bach-ma-national-park': [
+    ['Choose one trail endpoint', 'Ngũ Hồ links five pools; Đỗ Quyên and Trĩ Sao lead to different waterfalls; Vọng Hải Đài is the ridge viewpoint. Trail status and access vary.'],
+    ['Plan the park road too', 'Confirm entry, any guide or registration rule, internal transfer to the trailhead and your return driver before leaving Hue.'],
+    ['Give rain the deciding vote', 'Heavy rainfall can make streams, stairs and the mountain road unsafe. Stay on permitted trails and postpone the hike when warnings or closures apply.']
+  ],
+  'lang-co-lap-an-lagoon': [
+    ['Choose a stop you can reach safely', 'A scheduled coach or train is point-to-point; arrange a flexible road transfer if you want to stop at the lagoon or beach.'],
+    ['Separate lagoon from beach', 'The working lagoon edge and open coast are different places. Plan one safe public-edge stop, then continue to the booked destination.'],
+    ['Keep the water at work', 'Fishing gear, aquaculture plots and jetties are not visitor paths. Use public access and do not step across tidal mud or gear.']
+  ]
+};
+
+for (const guide of hue.guides) {
+  const decisionCopy = hueDecisionCopy[guide.slug];
+  if (!decisionCopy) continue;
+  guide.decisions = decisionCopy;
+  guide.hideSequenceLead = true;
+}
 
 const daNangHoiAn = defineVietnamCluster({
   slug: 'da-nang-hoi-an',

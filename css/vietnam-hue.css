@@ -49,6 +49,10 @@ body[data-page="thien-mu-perfume-river"] .vn-field-image {
   border-left:5px solid #688e8d;
 }
 
+body[data-page="thanh-toan-rural-loop"] .vn-field-image img {
+  object-position:40% center;
+}
+
 @media (max-width:1080px) {
   body[data-vn-family="violet-rain-archive"] .vn-hub-hero { border-radius:.25rem 2.6rem .25rem 2.6rem; }
   body[data-vn-family="violet-rain-archive"] .vn-field-hero { border-radius:.25rem 2.6rem .25rem 2.6rem; }
