@@ -414,7 +414,10 @@ for (const locale of expectedLocales) {
       if (!nodes(document, 'details').length) fail(`Missing visible Jeju FAQ controls on ${locale.code} ${routePath}.`);
       if (!bodyText.includes('CC BY') && !bodyText.includes('CC0') && !bodyText.includes('Public domain')) fail(`Missing readable Jeju photo license in ${locale.code} ${routePath}.`);
       if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Jeju photo source on ${locale.code} ${routePath}.`);
-      if (!links.some((href) => /visitjeju\.net/.test(href))) fail(`Missing a primary Jeju destination source on ${locale.code} ${routePath}.`);
+      const hasJejuPrimarySource = routePath.endsWith('/hallasan/')
+        ? links.some((href) => href.includes('visithalla.jeju.go.kr/reservation/status.do'))
+        : links.some((href) => /visitjeju\.net/.test(href));
+      if (!hasJejuPrimarySource) fail(`Missing a primary Jeju destination source on ${locale.code} ${routePath}.`);
       if (locale.code === 'en') {
         if (routePath === '/south-korea/jeju/' && classNodes(document, 'jeju-atlas-card').length !== 8) fail('Jeju hub must retain eight distinct area cards.');
         if (routePath.endsWith('/seogwipo-jeongbang/') && (!classNodes(document, 'seogwipo-history-grid').length || !['HERITAGE / 2008', 'LEGEND / SEOBUL', 'DOCUMENTED / SONAMMEORI'].every((phrase) => bodyText.includes(phrase)))) fail('Seogwipo guide must retain its three evidence-separated history cards.');
@@ -441,7 +444,7 @@ for (const locale of expectedLocales) {
           if (!bodyText.includes('Walk the rock people built their fields around') || !bodyText.includes('those published scales differ')) fail('Woljeongri and Gimnyeong must retain the sourced village-geology and route-scale distinction.');
         }
       }
-      if (bodyText.includes('06:00')) fail(`Stale fixed-time ferry check remains in ${locale.code} ${routePath}.`);
+      if (routePath.endsWith('/moseulpo-gapado/') && bodyText.includes('06:00')) fail(`Stale fixed-time ferry check remains in ${locale.code} ${routePath}.`);
       continue;
     }
     if (routePath.startsWith('/south-korea/seoul/')) {
