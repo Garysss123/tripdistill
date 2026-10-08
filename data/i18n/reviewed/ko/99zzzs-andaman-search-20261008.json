@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare Phuket's old-town grid, Phang Nga's karst bay, Krabi's boat-access Railay and southern island gateways before choosing a compatible coast route.": "푸껫 올드타운의 거리망, 팡응아만의 카르스트 지형, 배로 들어가는 끄라비 라일레이, 남부 섬의 선착장을 비교해 이동 여건에 맞는 안다만 해안 동선을 고르세요.",
+    "Walk Thalang Road, Soi Romanee, Dibuk Road and Thai Hua or Chinpracha House, then use a separate road day for Wat Chalong and Karon Viewpoint.": "탈랑 로드(Thalang Road), 소이 로마니(Soi Romanee), 딥북 로드(Dibuk Road), 타이후아 박물관(Thai Hua Museum) 또는 친프라차 하우스(Chinpracha House)를 둘러본 뒤, 왓찰롱과 카론 전망대는 별도의 차량 일정으로 계획하세요.",
+    "Compare Ko Tapu, Ko Phing Kan, Tham Lot and Ko Panyi by bay boat, the inland Wat Bang Riang road day, and Ko Yao Noi’s named pier connection.": "꼬타푸(Ko Tapu)·꼬핑깐(Ko Phing Kan)·탐롯(Tham Lot)·꼬파니(Ko Panyi)는 만 보트로, 왓방리앙은 내륙 도로 일정으로, 코야오노이(Ko Yao Noi)는 지정 선착장 연결편으로 각각 살펴보세요.",
+    "Plan Ao Nang to Railay West by passenger boat, then walk across to Railay East and Phra Nang Cave Beach; compare the road-linked Krabi bases.": "여객선을 타고 아오낭에서 라일레이 웨스트로 간 뒤 라일레이 이스트와 프라낭 동굴 해변까지 걸으세요. 도로로 연결된 끄라비 숙박 거점도 비교하세요."
+  }
+}

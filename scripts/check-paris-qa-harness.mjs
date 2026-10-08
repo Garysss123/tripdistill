@@ -152,7 +152,19 @@ const expectedRoutes = [
   ['/thailand/chiang-mai/nimman-university/', 'Nimman, One Nimman & CMU'],
   ['/thailand/chiang-mai/chang-moi-warorot/', 'Chang Moi & Warorot'],
   ['/thailand/chiang-mai/mae-rim-mae-sa/', 'Mae Rim & Mae Sa'],
+  ['/thailand/andaman/', 'Thailand Andaman hub'],
+  ['/thailand/andaman/phuket-old-town-south/', 'Phuket Old Town & South'],
+  ['/thailand/andaman/phang-nga-ko-yao/', 'Phang Nga Bay & Ko Yao'],
+  ['/thailand/andaman/krabi-railay/', 'Krabi & Railay'],
 ];
+const andamanSiteCss = fs.readFileSync(path.join(distRoot, 'css', 'site.css'), 'utf8');
+const andamanBodyRule = andamanSiteCss.match(/body\[data-region="andaman"\]\s*\{([^}]*)\}/)?.[1] || '';
+if (!/\bmin-width\s*:\s*0\s*;/.test(andamanBodyRule)) {
+  throw new Error('Andaman routes need a body min-width: 0 guard for 320 CSS-pixel layouts.');
+}
+if (/overflow-x\s*:\s*hidden/.test(andamanBodyRule)) {
+  throw new Error('The Andaman narrow-layout guard must not hide horizontal overflow.');
+}
 const expectedLocales = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },

@@ -40,6 +40,10 @@ body[data-city="kyoto"],
 body[data-city="osaka"] {
   min-width: 0;
 }
+/* Let Andaman routes shrink below 320px when a classic scrollbar reduces the layout viewport. */
+body[data-region="andaman"] {
+  min-width: 0;
+}
 a { color: inherit; text-decoration: none; }
 button, input { font: inherit; }
 button { color: inherit; }

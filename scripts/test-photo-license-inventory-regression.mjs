@@ -102,7 +102,7 @@ try {
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 602, 'newly checked Chiang Mai sources reduce the unverified-used-asset count by two and remain separate from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 593, 'nine newly checked Andaman Commons sources reduce the unverified-used-asset count and remain separate from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');

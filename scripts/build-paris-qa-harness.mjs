@@ -170,6 +170,10 @@ const routes = [
   { path: '/thailand/chiang-mai/nimman-university/', label: 'Nimman, One Nimman & CMU' },
   { path: '/thailand/chiang-mai/chang-moi-warorot/', label: 'Chang Moi & Warorot' },
   { path: '/thailand/chiang-mai/mae-rim-mae-sa/', label: 'Mae Rim & Mae Sa' },
+  { path: '/thailand/andaman/', label: 'Thailand Andaman hub' },
+  { path: '/thailand/andaman/phuket-old-town-south/', label: 'Phuket Old Town & South' },
+  { path: '/thailand/andaman/phang-nga-ko-yao/', label: 'Phang Nga Bay & Ko Yao' },
+  { path: '/thailand/andaman/krabi-railay/', label: 'Krabi & Railay' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');

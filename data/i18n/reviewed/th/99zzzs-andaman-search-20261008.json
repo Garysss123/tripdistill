@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare Phuket's old-town grid, Phang Nga's karst bay, Krabi's boat-access Railay and southern island gateways before choosing a compatible coast route.": "ก่อนเลือกเส้นทางชายฝั่งที่เชื่อมต่อกันได้ ให้เปรียบเทียบผังถนนย่านเมืองเก่าภูเก็ต อ่าวหินปูนพังงา ไร่เลย์ในกระบี่ที่ต้องเข้าทางเรือ และท่าเรือสู่เกาะทางใต้",
+    "Walk Thalang Road, Soi Romanee, Dibuk Road and Thai Hua or Chinpracha House, then use a separate road day for Wat Chalong and Karon Viewpoint.": "เดินถนนถลาง ซอยรมณีย์ และถนนดีบุก เลือกแวะพิพิธภัณฑ์ไทยหัวหรือบ้านชินประชา แล้วแยกอีกวันเดินทางทางถนนไปวัดฉลองและจุดชมวิวกะรน",
+    "Compare Ko Tapu, Ko Phing Kan, Tham Lot and Ko Panyi by bay boat, the inland Wat Bang Riang road day, and Ko Yao Noi’s named pier connection.": "เปรียบเทียบเส้นทางเรือชมอ่าวไปเกาะตาปู เกาะพิงกัน ถ้ำลอด และเกาะปันหยี กับวันเดินทางทางถนนไปวัดบางเหรียง และเส้นทางท่าเรือที่ระบุไปเกาะยาวน้อย",
+    "Plan Ao Nang to Railay West by passenger boat, then walk across to Railay East and Phra Nang Cave Beach; compare the road-linked Krabi bases.": "วางแผนขึ้นเรือโดยสารจากอ่าวนางไปหาดไร่เลย์ตะวันตก แล้วเดินข้ามไปหาดไร่เลย์ตะวันออกและหาดถ้ำพระนาง พร้อมเปรียบเทียบฐานพักในกระบี่ที่เชื่อมต่อทางถนน"
+  }
+}
