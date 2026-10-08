@@ -131,6 +131,10 @@ const routes = [
   { path: '/vietnam/hue/thanh-toan-rural-loop/', label: 'Thanh Toan Rural & Canal Loop' },
   { path: '/vietnam/hue/bach-ma-national-park/', label: 'Bach Ma National Park' },
   { path: '/vietnam/hue/lang-co-lap-an-lagoon/', label: 'Lang Co & Lap An Lagoon' },
+  { path: '/vietnam/da-nang-hoi-an/', label: 'Da Nang & Hoi An hub' },
+  { path: '/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/', label: 'Marble Mountains & Non Nuoc' },
+  { path: '/vietnam/da-nang-hoi-an/hoi-an-ancient-town/', label: 'Hoi An Ancient Town' },
+  { path: '/vietnam/da-nang-hoi-an/my-son-sanctuary/', label: 'My Son Sanctuary' },
   { path: '/south-korea/jeju/', label: 'Jeju Island hub' },
   { path: '/south-korea/jeju/hallasan/', label: 'Hallasan summit and lower trails' },
   { path: '/south-korea/jeju/jeju-city-yongduam/', label: 'Jeju City & Yongduam' },
@@ -262,7 +266,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, Zurich, South Korea, Vietnam, Penang and Bangkok responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, and the Hue hub with six detail guides, plus four George Town &amp; Penang routes and four Bangkok routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with three focal guides, plus four George Town &amp; Penang routes and four Bangkok routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

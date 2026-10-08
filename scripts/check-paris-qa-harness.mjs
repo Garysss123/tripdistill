@@ -114,6 +114,10 @@ const expectedRoutes = [
   ['/vietnam/hue/thanh-toan-rural-loop/', 'Thanh Toan Rural & Canal Loop'],
   ['/vietnam/hue/bach-ma-national-park/', 'Bach Ma National Park'],
   ['/vietnam/hue/lang-co-lap-an-lagoon/', 'Lang Co & Lap An Lagoon'],
+  ['/vietnam/da-nang-hoi-an/', 'Da Nang & Hoi An hub'],
+  ['/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/', 'Marble Mountains & Non Nuoc'],
+  ['/vietnam/da-nang-hoi-an/hoi-an-ancient-town/', 'Hoi An Ancient Town'],
+  ['/vietnam/da-nang-hoi-an/my-son-sanctuary/', 'My Son Sanctuary'],
   ['/south-korea/jeju/', 'Jeju Island hub'],
   ['/south-korea/jeju/hallasan/', 'Hallasan summit and lower trails'],
   ['/south-korea/jeju/jeju-city-yongduam/', 'Jeju City & Yongduam'],
@@ -319,7 +323,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/four Bangkok routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 20 Canada routes, seven Gyeongju routes and four George Town & Penang routes and four Bangkok routes.`);
+  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/four Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with three focal guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, four Bangkok routes, and three Da Nang & Hoi An guides.`);
   if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
@@ -415,10 +419,11 @@ function inspectLocalizedPage(manifest, record, label) {
   const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
   const hueIdentity = record.path.startsWith('/vietnam/hue/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hue' && attr(bodyNode, 'data-vn-family') === 'violet-rain-archive';
+  const daNangHoiAnIdentity = record.path.startsWith('/vietnam/da-nang-hoi-an/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'da-nang-hoi-an' && attr(bodyNode, 'data-vn-family') === 'coast-lantern';
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
   const bangkokPage = record.path === '/thailand/bangkok/' ? 'bangkok' : record.path.split('/').filter(Boolean).at(-1);
   const bangkokIdentity = record.path.startsWith('/thailand/bangkok/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-city') === 'bangkok' && attr(bodyNode, 'data-parent-page') === 'bangkok' && attr(bodyNode, 'data-page') === bangkokPage;
-  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity && !bangkokIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -757,6 +762,41 @@ for (const locale of expectedLocales) {
         for (const phrase of requiredByRoute) if (!bodyText.includes(phrase)) fail(`Zurich guide is missing route-specific detail [${phrase}] on ${routePath}.`);
         const searchEntry = sourceSearchIndex.find((item) => item.url === routePath);
         if (!searchEntry) fail(`Zurich page is missing its search record on ${routePath}.`);
+      }
+      continue;
+    }
+    if (routePath.startsWith('/vietnam/da-nang-hoi-an/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const expectedPage = routePath === '/vietnam/da-nang-hoi-an/' ? 'da-nang-hoi-an' : routePath.split('/').filter(Boolean).at(-1);
+      if (attr(body, 'data-page') !== expectedPage || attr(body, 'data-vn-family') !== 'coast-lantern') fail(`Wrong Da Nang & Hoi An page identity on ${locale.code} ${routePath}.`);
+      const coastalStylesheet = '/css/vietnam-da-nang-hoi-an.css?v=20261008-1';
+      if (!styles.includes('/css/vietnam-da-nang-hoi-an.css') || !styleHrefs.includes(coastalStylesheet)) fail(`Missing Da Nang & Hoi An family stylesheet on ${locale.code} ${routePath}.`);
+      const expectedFaqCount = routePath === '/vietnam/da-nang-hoi-an/' ? 6 : 3;
+      if (nodes(document, 'details').length < expectedFaqCount) fail(`Missing Da Nang & Hoi An route FAQs on ${locale.code} ${routePath}.`);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Da Nang & Hoi An photo license on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Da Nang & Hoi An photo source on ${locale.code} ${routePath}.`);
+      const requiredOfficialSource = routePath.endsWith('/hoi-an-ancient-town/')
+        ? 'https://whc.unesco.org/en/list/948'
+        : routePath.endsWith('/my-son-sanctuary/')
+          ? 'https://whc.unesco.org/en/list/949'
+          : 'https://vietnam.travel/places-to-go/central-vietnam/da-nang';
+      if (!links.includes(requiredOfficialSource)) fail(`Missing route-specific official source on ${locale.code} ${routePath}.`);
+      const coastalCss = fs.readFileSync(safeDistPath('/css/vietnam-da-nang-hoi-an.css'), 'utf8');
+      const narrowStart = coastalCss.indexOf('@media (max-width:380px)');
+      const bodyWidthRule = cssRuleBlock(coastalCss, 'body[data-vn-family="coast-lantern"]', narrowStart);
+      const wrapperWidthRule = cssRuleBlock(coastalCss, 'body[data-vn-family="coast-lantern"] .site-shell,', narrowStart);
+      if (narrowStart < 0 || !/min-width\s*:\s*0\s*;/i.test(bodyWidthRule) || !wrapperWidthRule.includes('.page-content') || !/min-width\s*:\s*0\s*;/i.test(wrapperWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(wrapperWidthRule)) fail(`Da Nang & Hoi An 320px rules must release the shared body floor and shrink the page shell on ${locale.code} ${routePath}.`);
+      if (/overflow(?:-x)?:\s*(?:hidden|clip)\b/i.test(coastalCss)) fail(`Da Nang & Hoi An rules must not conceal horizontal overflow on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const requiredByRoute = {
+          '/vietnam/da-nang-hoi-an/': ['Ngu Hanh Son', 'Thu Bon', '15th–19th-century port', '4th to 13th centuries'],
+          '/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/': ['Huyen Khong Cave', 'Tam Thai Pagoda', 'Non Nuoc', '2–3 hours'],
+          '/vietnam/da-nang-hoi-an/hoi-an-ancient-town/': ['1,107 timber-frame buildings', '80,000 VND', '120,000 VND', 'living trading port'],
+          '/vietnam/da-nang-hoi-an/my-son-sanctuary/': ['4th to 13th centuries', 'UXO risk', 'Stay on signed paths', 'morning half-day']
+        }[routePath];
+        for (const phrase of requiredByRoute) if (!bodyText.includes(phrase)) fail(`Da Nang & Hoi An editorial QA is missing '${phrase}' on ${routePath}.`);
       }
       continue;
     }
@@ -1703,7 +1743,8 @@ if (!isLive) {
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
   const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
   const ninhBinhPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ninh-binh/')).length;
-    const huePages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hue/')).length;
+  const huePages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hue/')).length;
+  const daNangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/da-nang-hoi-an/')).length;
   const penangPages = manifest.pages.filter((record) => record.path.startsWith('/malaysia/george-town-penang/')).length;
   const bangkokPages = manifest.pages.filter((record) => record.path.startsWith('/thailand/bangkok/')).length;
   const jejuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/jeju/')).length;
@@ -1715,7 +1756,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang, ${bangkokPages} Bangkok records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets and ${manifest.assets.length} hashed local assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${daNangPages} Da Nang & Hoi An, ${penangPages} Penang, ${bangkokPages} Bangkok records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets and ${manifest.assets.length} hashed local assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);

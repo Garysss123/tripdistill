@@ -391,18 +391,49 @@ const daNangHoiAn = defineVietnamCluster({
   name: 'Da Nang & Hoi An',
   region: 'Central Coast',
   family: 'coast-lantern',
-  label: 'Sea, river and Cham heritage · Central Vietnam',
-  tagline: 'Split the coast by tide, temple and town.',
-  hubIntro: 'Da Nang and Hoi An share an airport corridor but not one travel rhythm. Keep the city beach, Son Tra forest, limestone shrines, living old town and inland Cham sanctuary as separate chapters with their own access, conduct and weather decisions.',
-  stay: 'Use Da Nang for beach, city and Son Tra access; use Hoi An when the old town, countryside or evening heritage rhythm is the main reason for staying. The two bases are connected, but not interchangeable.',
-  transfer: 'Build from the Da Nang airport and city road network, then protect the longer Hoi An and My Son legs with daylight and weather margin. A short map distance does not remove beach traffic, flood or site-entry constraints.',
+  label: "Limestone, lantern streets & Cham towers — Central Vietnam",
+  tagline: "Follow one coast from cave shrines to a trading port and Cham sanctuary.",
+  hubIntro: "Da Nang’s southern edge, Hoi An’s Thu Bon riverfront and My Son’s upland valley are often sold as one loop, yet they tell different histories. At Ngu Hanh Son, limestone caves hold active shrines; Hoi An’s narrow shop rows preserve the plan of a 15th–19th-century port; My Son’s brick towers mark a religious and political center of Champa from the 4th to 13th centuries. Keep road legs distinct so time inside each place is not swallowed by transit.",
+  stay: "Da Nang is the practical base for Ngu Hanh Son and the Cham Museum of Sculpture. Hoi An suits an early or evening old-town visit and shortens the My Son road day. Move bases only if your nights and plans shift south; changing hotels for a single stop can cost more time than it saves.",
+  transfer: "From Da Nang, a taxi or ride-hail works for the city and Marble Mountains. Treat My Son as a separate inland return drive from Da Nang or Hoi An; confirm pickup and return before leaving. In heavy rain, Da Nang’s Cham Museum and Hoi An’s ticketed heritage interiors offer indoor context when valley or street access is poor.",
   sources: [
-    ['https://www.vietnam.travel/places-to-go/central-vietnam/da-nang', 'Vietnam Tourism — Da Nang transport, beach, Son Tra and Marble Mountains'],
-    ['https://whc.unesco.org/en/list/948', 'UNESCO — Hoi An Ancient Town'],
-    ['https://whc.unesco.org/en/list/949', 'UNESCO — My Son Sanctuary'],
-    ['https://hoianheritage.danang.gov.vn/en/news/news-events/announcement-of-the-visiting-in-hoi-an-ancient-town-125.html', 'Hoi An World Cultural Heritage Conservation Center — visitor announcement'],
-    ['https://visitdanang.travel/en/son-tra-peninsula-a-captivating-coastal-and-island-destination-in-da-nang-9028', 'Da Nang Tourism — Son Tra Peninsula']
+    [
+      "https://vietnam.travel/places-to-go/central-vietnam/da-nang",
+      "Vietnam Tourism — Marble Mountains, Cham Museum, transport and seasonal weather"
+    ],
+    [
+      "https://whc.unesco.org/en/list/948",
+      "UNESCO — Hoi An Ancient Town: trading-port plan and living timber town"
+    ],
+    [
+      "https://hoianheritage.danang.gov.vn/en/news/news-events/announcement-of-the-visiting-in-hoi-an-ancient-town-125.html",
+      "Hoi An World Cultural Heritage Conservation Center — visitor and ticket notice; checked 8 October 2026"
+    ],
+    [
+      "https://whc.unesco.org/en/list/949",
+      "UNESCO — My Son Sanctuary: Cham history, architecture and conservation conditions"
+    ],
+    [
+      "https://mysonsanctuary.com.vn/tin-tuc/thong-tin-du-khach",
+      "My Son Sanctuary Management Board — visitor notices; verify current entry arrangements"
+    ],
+    [
+      "https://mysonsanctuary.com.vn/dich-vu.html",
+      "My Son Sanctuary Management Board — listed services; confirm availability before travel"
+    ]
   ],
+  hubCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
+  reviewDate: '8 October 2026',
+  isoDate: '2026-10-08',
+  routeModelHeading: 'Three histories, with road time between them.',
+  routeModelLead: 'Read the limestone shrine landscape first, follow the old port on foot, then give My Son its own inland departure. A morning start protects the cave climb and valley walk from heat; rain changes footing and may change access.',
+  presentation: {
+    conditionsKicker: 'Three landscapes, three ways to visit',
+    conditionsTitle: 'Match the route to the place.',
+    conditionsLead: 'Ngu Hanh Son is a steep, active shrine landscape; Hoi An is a working town of ticketed interiors and shared lanes; My Son is an exposed archaeological valley reached by road.',
+    faqKicker: 'Choosing a central-coast day',
+    faqTitle: 'Where should the extra hour go?'
+  },
   guides: [
     {
       slug: 'han-river-city-core',
@@ -479,32 +510,77 @@ const daNangHoiAn = defineVietnamCluster({
       instrument: 'section',
       image: image({
         src: '/assets/images/vietnam-da-nang-marble-mountains.webp',
-        alt: 'Cave shrine, stone statues and visitors inside the Marble Mountains',
-        source: 'https://commons.wikimedia.org/wiki/File:Marble_Mountains_-_Ngu_Hanh_Son_District_-_South_of_Da_Nang_City_-_Vietnam_(1).jpg',
-        label: 'Marble Mountains, Ngu Hanh Son',
-        creator: 'Muralikrishna m',
-        license: 'CC BY-SA 4.0'
+        alt: 'Tam Thai Pagoda courtyard and ornate roof on Thuy Son in the Marble Mountains',
+        source: 'https://commons.wikimedia.org/wiki/File:Ch%C3%B9a_Tam_Thai,_Th%E1%BB%A7y_S%C6%A1n,_%C4%90%C3%A0_N%E1%BA%B5ng_(Tam_Thai_Pagoda,_Thuy_Son_Marble_Mountain)_-_img_01.jpg',
+        label: 'Tam Thai Pagoda, Thuy Son',
+        creator: 'Chainwit.',
+        license: 'CC BY 4.0'
       }),
-      summary: 'Read the Marble Mountains through limestone, cave light, active worship and Non Nuoc craft rather than treating the site as a quick staircase.',
-      lead: 'Ngu Hanh Son compresses geology, Buddhist and folk practice, cave acoustics, city growth and stone craft into a small but physically demanding landscape.',
-      orientation: 'Choose the mountain, cave and temple layers that match the group’s mobility. The route is vertical and surfaces can be wet, dark and crowded.',
-      arrival: 'A short taxi or ride from Da Nang is practical, but the final visit is on foot with stairs and uneven rock. Check current entrances, elevator availability and permitted areas.',
-      sequence: 'Arrive before the hottest crowd period, climb slowly, move through caves and shrines with quiet attention, then descend to the craft and neighborhood layer without blocking workshops.',
-      boundary: 'Protect cave, temple and craft boundaries: no touching carvings, climbing shrine structures, collecting stone or entering workshops and homes without invitation.',
+      summary: "Trace Ngu Hanh Son from limestone outcrops into Huyen Khong Cave and Tam Thai Pagoda, then meet Non Nuoc craft on its own terms.",
+      lead: "The Marble Mountains are five limestone outcrops south of Da Nang; Thuy Son is the visitor landscape where geology meets active Buddhist and folk worship. Huyen Khong Cave’s high opening changes the light around its shrine, while Tam Thai Pagoda shows how sacred buildings occupy the slope. Below, Non Nuoc’s stone-working history belongs to a living neighborhood.",
+      orientation: "This is a stair-and-cave visit, not a flat viewpoint stop. Start early while the climb is cooler; move slowly through Huyen Khong Cave and the pagoda precinct. Leave time for public craft displays at the base, and enter a workshop only when invited.",
+      arrival: "A taxi or ride-hail from Da Nang is practical; agree a return pickup at the Ngu Hanh Son entrance. Vietnam Tourism describes the five outcrops, pagodas, caves and stone steps and recommends an early visit. Check current entrances, elevator service and permitted cave sections before setting a mobility plan.",
+      sequence: "Follow the signed Thuy Son route to Huyen Khong Cave and Tam Thai Pagoda, then descend before adding a separate Non Nuoc craft stop. Wet stone makes the descent the limiting factor; after rain, shorten the loop instead of trying every chamber.",
+      boundary: "Huyen Khong and Tam Thai remain places of worship. Keep voices low, follow photography signs, leave offerings and carvings untouched, and ask before photographing people or entering a workshop.",
       stages: [
-        ['Choose the climb', 'Check the group’s ability, shoes, water and the current visitor route before selecting a mountain or cave sequence.'],
-        ['Read the rock', 'Notice light, ventilation, erosion and the way temples occupy the limestone rather than rushing from one named chamber to the next.'],
-        ['Respect worship', 'Lower voices, dress appropriately and keep clear of incense, altars and active religious movement inside the caves.'],
-        ['Meet the craft edge', 'Visit public workshops or displays by consent, then leave with no unverified stone extraction or wildlife souvenir.']
+        [
+          "Choose the right route",
+          "Check rain, stair access and mobility. Take a taxi or ride-hail, set a return pickup, carry water and keep hands free for the rails."
+        ],
+        [
+          "Read rock and shrine together",
+          "Follow signed paths to Huyen Khong Cave and Tam Thai Pagoda. Pause where cave light falls across the shrine, then make room for worshippers."
+        ],
+        [
+          "Leave room for the descent",
+          "Use handrails and skip slick or crowded branches. Do not climb onto altars, walls or closed rock formations for a view."
+        ],
+        [
+          "Meet the craft neighborhood",
+          "Use a public display or a workshop that welcomes visitors. Ask before photographing artisans; do not assume every stone object comes from local quarrying."
+        ]
       ],
       risks: [
-        ['Stairs and wet rock', 'Steep steps, low ceilings, darkness and slick surfaces can cause falls; use handrails and turn back when footing deteriorates.'],
-        ['Crowding', 'Narrow caves and stairways amplify congestion; avoid stopping at thresholds and follow staff flow instructions.'],
-        ['Religious sensitivity', 'Shrines remain active places of worship; photography, clothing and behavior must follow local signs and temple guidance.']
+        [
+          "Rain and footing",
+          "Rain can make polished steps slick and cave passages harder to navigate. If footing is poor, shorten the signed loop or choose Da Nang’s indoor Cham Museum."
+        ],
+        [
+          "Access and mobility",
+          "The route has stairs, uneven rock and low ceilings. Ask which sections and elevator service are open before promising a summit or cave visit."
+        ],
+        [
+          "A living shrine",
+          "Follow temple signs on dress, photography and offerings. Keep entrances clear and give worshippers priority around altars."
+        ]
       ],
-      duration: 'Use a focused half day with time for recovery; visitors with limited mobility should verify accessible sections before arrival.',
-      combine: 'Pair with My Khe or Hoi An only when the cave visit ends with a clear road buffer; do not combine it with a full Son Tra circuit by default.',
-      verify: 'Check official or local site notices, access and elevator status, weather, footwear needs and any conservation closures before visiting.'
+      duration: "Allow about 2–3 hours for a focused Thuy Son cave-and-pagoda visit, plus road time and recovery. Add more time only if a public Non Nuoc display or workshop has confirmed visitor access; limited mobility may call for a lower-level visit.",
+      combine: "A late-morning descent can lead to lunch toward Hoi An, but count that as a separate road leg. In heavy rain or intense heat, replace the exposed climb with Da Nang’s indoor Cham Museum of Sculpture.",
+      verify: "Confirm which cave and stair routes are open, whether the elevator is operating, and the weather on the limestone steps. Vietnam Tourism describes an early start but does not publish a live access notice.",
+      reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
+      countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
+      sources: [
+        [
+          "https://vietnam.travel/places-to-go/central-vietnam/da-nang",
+          "Vietnam Tourism — Marble Mountains, early visit, taxis, Cham Museum and seasonal weather"
+        ],
+        [
+          "https://danangfantasticity.com/en/non-nuoc-stone-village",
+          "Da Nang Tourism — Non Nuoc stone village background; confirm workshop access locally"
+        ]
+      ],
+      presentation: {
+        "readingTitle": "Read the shrine and the stone together.",
+        "routeTitle": "Climb slowly; descend before adding the village.",
+        "checksLabel": "Before the climb",
+        "checksTitle": "Steps, rain and worship shape the visit.",
+        "checksLead": "The hills are close to Da Nang; the cave-and-stair sequence needs a measured pace.",
+        "checksActionText": "Check access and footing",
+        "faqLabel": "Ngu Hanh Son in practice",
+        "faqTitle": "Caves, pagodas and the craft village",
+        "boundaryTitle": "Let worship and workshop access lead."
+      }
     },
     {
       slug: 'my-khe-an-thuong',
@@ -553,26 +629,71 @@ const daNangHoiAn = defineVietnamCluster({
         creator: 'Steffen Schmitz',
         license: 'CC BY-SA 4.0'
       }),
-      summary: 'Plan Hoi An as a living World Heritage town of houses, river trade, worship and residents, with entry rules and flood weather built into the walk.',
-      lead: 'Hoi An’s value is the relationship between architecture, commerce, river, memory and present-day residents. The old town should be read slowly enough that living use remains visible.',
-      orientation: 'Choose a compact route by street, river edge or selected ticketed buildings. The town is more rewarding when the group does not try to enter every monument.',
-      arrival: 'Reach Hoi An by road from Da Nang or another regional base, then walk or cycle inside the appropriate pedestrian zone. Entry points, ticket validity and vehicle restrictions can change.',
-      sequence: 'Begin in daylight with a heritage building sequence, pause away from the busiest lanes, then return for the lantern atmosphere only after checking rain, water level and crowd movement.',
-      boundary: 'Protect the living heritage boundary: follow ticket and building rules, do not touch timber or altars, ask residents before photographing and keep doorways clear.',
+      summary: "Follow Hoi An’s river-facing shop rows through selected houses, an assembly hall and a bridge, with ticket and flood context in view.",
+      lead: "Hoi An was an active Southeast Asian port from the 15th through 19th centuries. UNESCO records 1,107 timber-frame buildings in a street grid shaped by trade: shops face narrow lanes, while house backs open toward the Thu Bon for loading. Chinese, Japanese and later European influences remain legible in its houses and religious buildings; today it is still a lived-in commercial center.",
+      orientation: "Read one cross-section, not a monument checklist: choose a preserved house and an assembly hall or temple, then the Japanese Covered Bridge or Quan Cong Temple according to current ticket choices. Notice how narrow lanes lead toward the river edge where port goods once moved through house backs.",
+      arrival: "Travel from Da Nang by car, taxi or ride-hail, then walk inside the current walking-and-cycling zone. The conservation center notice posted 28 January 2026 and checked 8 October 2026 lists 80,000 VND and 120,000 VND ticket options with different monument and museum selections. Verify the live notice before paying.",
+      sequence: "Use daylight for one or two ticketed interiors, compare timber structure and community use, then follow a lane toward the river quay. Return after dark only if the group wants the separate evening atmosphere and current walking hours allow it. The notice says one ticket can remain valid up to three days, so the visit need not be compressed.",
+      boundary: "The heritage buildings are homes, worship spaces and working businesses. Follow ticket and photography rules, step aside for residents and deliveries, and ask before photographing anyone or looking through a private doorway.",
       stages: [
-        ['Choose the town scale', 'Check the current visitor announcement, ticket arrangement and walking restrictions, then select a few buildings that tell a coherent story.'],
-        ['Read the port', 'Follow street, house, assembly hall and river relationships to understand why Hoi An is more than a lantern photograph.'],
-        ['Leave living room', 'Step aside for residents, deliveries and worshippers; use public rest areas rather than occupying private thresholds.'],
-        ['Return by weather', 'Decide whether an evening walk is sensible after checking rain, flood conditions and crowd density, then leave the old town clean and quiet.']
+        [
+          "Pick a short monument set",
+          "Read current ticket choices. Select a preserved house, an assembly hall or temple, and the bridge or Quan Cong Temple if it fits your interests."
+        ],
+        [
+          "Look at the house plan",
+          "Compare shopfronts, timber frames, tiled roofs and family worship spaces. The narrow lanes show how the buildings relate better than isolated stops."
+        ],
+        [
+          "Find the port working edge",
+          "Walk toward the quay and look back at the grid: UNESCO describes house backs opening to the river for loading. Stay in public areas and keep the quay clear."
+        ],
+        [
+          "Choose the evening separately",
+          "Rest outside the busiest lane, then return for lantern-lit streets if the pedestrian window and weather suit the group. A second visit is easier than crowding every interior into one circuit."
+        ]
       ],
       risks: [
-        ['Flood and storms', 'Hoi An’s annual flood and storm pattern can change streets, access and building operations; keep a dry-day alternative.'],
-        ['Heritage wear', 'Crowding, touching, flash and large equipment can damage old interiors; follow the conservation center’s rules.'],
-        ['Shared streets', 'Pedestrian, bicycle, delivery and boat movement overlap; keep children close and avoid stopping in narrow doorways or bridges.']
+        [
+          "Ticket choices and price",
+          "The center’s 28 January 2026 notice lists 80,000 VND and 120,000 VND options with selected monument and museum entries, not unrestricted entry to every building. Recheck current prices before purchase."
+        ],
+        [
+          "River and rain",
+          "UNESCO identifies annual flooding as a management concern. After heavy rain, check town notices and water conditions before using low river lanes; prioritize accessible interiors if streets remain open."
+        ],
+        [
+          "Town hours",
+          "Pedestrian and cycling periods vary by season in the visitor notice. Check the current window before arranging a car drop-off or evening return; do not assume a vehicle can reach old-town lanes."
+        ]
       ],
-      duration: 'Give the old town one full daylight-to-evening arc, or split it into two shorter visits when heat, mobility or rain is a concern.',
-      combine: 'Combine with Cam Kim or Tra Que only as a separate countryside chapter; My Son deserves a different departure and return buffer.',
-      verify: 'Recheck the Hoi An heritage center’s current ticket, hours, pedestrian rules, weather and flood notices before the walk.'
+      duration: "A selected monument walk takes about 3–4 hours at an unhurried pace. Split it across cooler windows if you want interiors and evening lanes; the center’s notice says a ticket can be used during a stay of up to three days, subject to its terms.",
+      combine: "Keep My Son as a separate inland drive. Add a countryside stop only when the town still has a full daylight block. In persistent rain, prioritize open ticketed interiors and check water or access notices before walking low riverfront lanes.",
+      verify: "Check the heritage center notice for ticket price, monument choices, validity, performance times and walking-and-cycling windows. The price snapshot is from its 28 January 2026 notice, checked 8 October 2026; floods and access can change sooner.",
+      reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
+      countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
+      sources: [
+        [
+          "https://whc.unesco.org/en/list/948",
+          "UNESCO — Hoi An port history, timber-frame town and river-facing street plan"
+        ],
+        [
+          "https://hoianheritage.danang.gov.vn/en/news/news-events/announcement-of-the-visiting-in-hoi-an-ancient-town-125.html",
+          "Hoi An World Cultural Heritage Conservation Center — ticket choices and pedestrian windows; posted 28 January 2026, checked 8 October 2026"
+        ]
+      ],
+      presentation: {
+        "readingTitle": "Read a port in the shape of its houses.",
+        "routeTitle": "Choose a few interiors, then find the quay.",
+        "checksLabel": "Before you enter",
+        "checksTitle": "Tickets, water level and town hours.",
+        "checksLead": "Ticket choices are selective; river access and pedestrian windows can change with weather and season.",
+        "checksActionText": "Check the visitor notice",
+        "faqLabel": "Reading the old town",
+        "faqTitle": "A working port, visited at walking pace",
+        "boundaryTitle": "Treat each doorway as somebody’s space."
+      }
     },
     {
       slug: 'my-son-sanctuary',
@@ -587,29 +708,119 @@ const daNangHoiAn = defineVietnamCluster({
         creator: 'Chainwit.',
         license: 'CC BY 4.0'
       }),
-      summary: 'Make My Son an early, respectful inland heritage journey through Cham architecture, valley ecology, conservation and marked visitor routes.',
-      lead: 'My Son is a sacred architectural landscape shaped by a millennium of Cham history, conflict, conservation and weather. Its valley setting and surviving brick technology matter as much as the individual tower group.',
-      orientation: 'Arrive with enough energy for heat and walking, and use official interpretation to distinguish standing monuments, damaged areas and ongoing research.',
-      arrival: 'Travel by confirmed car or regulated excursion from Hoi An or Da Nang. The inland approach, heat and return distance make a late departure a poor default.',
-      sequence: 'Reach the visitor entrance early, follow the permitted shuttle or path, read the main groups in sequence, then return by the marked route without entering forest or unpresented archaeology.',
-      boundary: 'Protect the sanctuary and buffer: never climb or touch towers, leave marked paths, do not disturb soil or artifacts, and treat unexploded-ordnance warnings as absolute.',
+      summary: "Follow My Son’s Cham tower groups through a forested valley, with brick craft, sacred history and marked visitor routes in focus.",
+      lead: "From the 4th to 13th centuries, My Son served as a religious and political center of Champa. Its tower-temples use fired brick, stone pillars and sandstone reliefs; their forms record Cham religious and political life, including a strong Hindu tradition. Conflict damaged many structures, and conservation continues in a humid valley ringed by hills at the source of the Thu Bon River.",
+      orientation: "This is an archaeological landscape, not a single temple. Use current visitor transport if operating, then follow the marked route between standing groups and interpreted ruins. Compare brick joints and sandstone reliefs; damaged areas and barriers are part of its history and conservation.",
+      arrival: "Arrange a confirmed return car or regulated excursion from Hoi An or Da Nang. Hoi An makes the shorter road day; from Da Nang, allow most of a day for the return and valley walk. Management lists electric-car and audio-guide services; confirm what is running on your date.",
+      sequence: "Leave early enough to reach the exposed valley before peak heat. Read the entrance interpretation, use any operating visitor shuttle, then walk the official sequence steadily. Do not cross barriers or leave signed paths: UNESCO notes unresolved UXO risk in parts of the buffer, as well as humidity and flood exposure.",
+      boundary: "Stay on marked visitor paths and obey barriers, including where the forest edge looks open. Do not touch or climb towers, remove soil or artifacts, or enter closed areas; buffer-zone UXO risk is not visible on the ground.",
       stages: [
-        ['Protect the departure', 'Confirm road, weather, entry and return vehicle before leaving the coast; carry water, sun protection and shoes for uneven ground.'],
-        ['Read the valley', 'Notice the ring of hills, stream and forest context before approaching individual tower groups.'],
-        ['Compare the brick', 'Use official interpretation to understand Cham engineering, iconography, damage and conservation without crossing barriers.'],
-        ['Return on the mark', 'Stay on the visitor route, leave no trace and keep the return to Hoi An or Da Nang separate from a tight flight or train connection.']
+        [
+          "Confirm the return",
+          "Arrange a car or regulated excursion with clear pickup and return. Check the management notice, weather and current visitor transport before departure."
+        ],
+        [
+          "Place the valley in context",
+          "Read official interpretation before entering the tower groups. The hills and Thu Bon headwaters explain why this was a sacred and strategic landscape."
+        ],
+        [
+          "Compare brick and relief",
+          "Follow the marked circuit and look at fired-brick construction, stone supports and sandstone figures. Damaged towers and conservation boundaries show what survives after conflict and restoration."
+        ],
+        [
+          "Keep the road leg open",
+          "Use the confirmed pickup and allow time for heat, rain or a slower walk. If the site closes or severe weather arrives, shift to indoor Cham collections in Da Nang or heritage interiors in Hoi An."
+        ]
       ],
       risks: [
-        ['Heat and rain', 'Open valley paths, high humidity, flooding and storms can affect comfort and presentation; carry a weather fallback.'],
-        ['Unexploded ordnance', 'UNESCO identifies unresolved UXO risk in parts of the buffer; never leave marked visitor routes or enter closed vegetation.'],
-        ['Fragile heritage', 'Brick, sandstone and archaeological ground are vulnerable to touch, climbing and unauthorized access; follow staff and barriers.']
+        [
+          "Weather in the valley",
+          "My Son is humid and exposed; UNESCO notes flooding and climatic stress. Start in the morning. For heavy rain or unsafe paths, use a museum or old-town interior instead."
+        ],
+        [
+          "Visitor transport",
+          "The management site lists electric-car and audio-guide services, but a listing does not confirm same-day operation. Ask directly and plan to walk if transport is unavailable."
+        ],
+        [
+          "No path shortcuts",
+          "UXO risk remains unresolved in parts of the buffer. Stay on designated routes, respect barriers and never enter forest or closed archaeological ground."
+        ]
       ],
-      duration: 'Use most of a half day plus road margin; a full day is reasonable when paired with a carefully chosen Cham museum or local food stop.',
-      combine: 'Combine with Hoi An only when the return road and evening plan remain flexible; do not attach Son Tra, Marble Mountains and My Son to one rushed circuit.',
-      verify: 'Check UNESCO or site management notices, current entrance and shuttle arrangements, weather, road conditions and any closed groups before departure.'
+      duration: "From Hoi An, plan a morning half-day with several hours among the monument groups and a return buffer. From Da Nang, reserve most of the day for road time and the exposed walk. Mobility, heat, rain or a slower interpretation visit can extend the schedule.",
+      combine: "Do not attach another long drive to the return. If heavy rain or heat makes the valley a poor fit, visit Da Nang’s Cham Museum of Sculpture or return to Hoi An for ticketed timber houses and assembly halls; each gives related history in a different setting.",
+      verify: "Check My Son’s visitor-notice page for entry, road and transport arrangements; ask whether listed electric cars or audio guides are operating. Review weather and closure notices, and keep the visit on designated paths.",
+      reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
+      countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
+      sources: [
+        ['https://whc.unesco.org/en/list/949', 'UNESCO — My Son Cham history, fired-brick temples, conservation, flooding and UXO context'],
+        ['https://mysonsanctuary.com.vn/tin-tuc/thong-tin-du-khach', 'My Son Sanctuary Management Board — current visitor notices; recheck road and entry arrangements'],
+        ['https://mysonsanctuary.com.vn/dich-vu.html', 'My Son Sanctuary Management Board — listed electric-car and audio-guide services; confirm current operation'],
+        ['https://vietnam.travel/places-to-go/central-vietnam/da-nang', 'Vietnam Tourism — Da Nang Cham Museum of Sculpture as an indoor alternative']
+      ],
+      presentation: {
+        readingTitle: 'See the tower groups as one sacred valley.',
+        routeTitle: 'Arrive early; walk the signed sequence.',
+        checksLabel: 'Before the inland drive',
+        checksTitle: 'Heat, transport and marked ground.',
+        checksLead: 'The coast-to-valley road and open-air circuit need a return buffer, especially in wet weather.',
+        checksActionText: 'Check the site notice',
+        faqLabel: 'Visiting the sanctuary',
+        faqTitle: 'Cham history in an upland setting',
+        boundaryTitle: 'Keep every step on marked ground.'
+      }
     }
   ]
 });
+
+const daNangDecisionOverrides = {
+  "marble-mountains-non-nuoc": [
+    [
+      "Read the site",
+      "Five limestone hills frame shrines. On Thuy Son, Huyen Khong Cave and Tam Thai Pagoda reveal the religious landscape better than a quick summit photograph."
+    ],
+    [
+      "Time and effort",
+      "Budget 2–3 hours for the signed circuit, plus stairs, queues and rest. A lower-level visit is a good alternative when steep or wet steps are a poor fit."
+    ],
+    [
+      "Worship and craft",
+      "Keep the cave quiet and offerings undisturbed. Non Nuoc is a working craft neighborhood; enter a workshop only by invitation."
+    ]
+  ],
+  "hoi-an-ancient-town": [
+    [
+      "Port history",
+      "The 15th–19th-century port survives in timber house rows: street-facing shops and river-facing backs made a working commercial plan, not a decorative set."
+    ],
+    [
+      "Choose interiors",
+      "The center’s 28 January 2026 notice lists 80,000 VND and 120,000 VND options with different monument and museum choices. Check the live notice and select a small set."
+    ],
+    [
+      "Shared town",
+      "Residents, worshippers, shopkeepers and deliveries still use these lanes. Give doorways space, follow each house’s rules and ask before taking portraits."
+    ]
+  ],
+  "my-son-sanctuary": [
+    [
+      "Cham sanctuary",
+      "My Son’s towers formed a religious and political center of Champa from the 4th to 13th centuries. Fired brick, stone pillars and sandstone reliefs reveal engineering and worship."
+    ],
+    [
+      "Road and time",
+      "From Hoi An, make this a morning half-day with a return driver. From Da Nang, allow most of a day; confirm pickup and whether visitor transport is operating."
+    ],
+    [
+      "Marked ground",
+      "UNESCO records unresolved UXO risk in parts of the buffer. Stay on signed paths even when an unmarked area looks accessible."
+    ]
+  ]
+};
+for (const guide of daNangHoiAn.guides) {
+  const decisions = daNangDecisionOverrides[guide.slug];
+  if (decisions) guide.decisions = decisions;
+}
 
 const nhaTrangKhanhHoa = defineVietnamCluster({
   slug: 'nha-trang-khanh-hoa',

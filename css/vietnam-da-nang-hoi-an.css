@@ -1,0 +1,51 @@
+/* Da Nang and Hoi An: river teal, weathered tile and warm lantern light. */
+body[data-vn-family="coast-lantern"] .vn-hub-hero {
+  border-radius:.35rem 4.8rem .35rem .35rem;
+  background:
+    radial-gradient(ellipse at 87% 9%,rgba(237,181,103,.22),transparent 30%),
+    linear-gradient(128deg,#173d43 0%,#24585a 53%,#643d37 100%);
+}
+body[data-vn-family="coast-lantern"] .vn-hub-copy,
+body[data-vn-family="coast-lantern"] .vn-hub-copy h1,
+body[data-vn-family="coast-lantern"] .vn-hub-copy h1 span,
+body[data-vn-family="coast-lantern"] .vn-hub-copy .vn-kicker { color:#fff; }
+body[data-vn-family="coast-lantern"] .vn-hub-copy h1 span,
+body[data-vn-family="coast-lantern"] .vn-hub-copy .vn-kicker { color:#ffd08a; }
+body[data-vn-family="coast-lantern"] .vn-hub-copy > p,
+body[data-vn-family="coast-lantern"] .vn-hub-copy dd { color:rgba(255,255,255,.9); }
+body[data-vn-family="coast-lantern"] .vn-hub-copy dt { color:#f1c987; }
+body[data-vn-family="coast-lantern"] .vn-hub-copy .button.secondary { color:#fff; border-color:rgba(255,255,255,.72); background:rgba(255,255,255,.06); }
+body[data-vn-family="coast-lantern"] .vn-hub-index { background:#193c41; border-color:#e6b16b; color:#fff; }
+body[data-vn-family="coast-lantern"] .vn-hub-index strong { color:#ffd08a; }
+body[data-vn-family="coast-lantern"] .vn-hub-card { border-top:3px solid #b26a50; box-shadow:0 .75rem 1.8rem rgba(33,48,46,.09); }
+body[data-vn-family="coast-lantern"] .vn-hub-card:hover { border-top-color:#d49a54; box-shadow:0 1.1rem 2.2rem rgba(33,48,46,.16); }
+body[data-vn-family="coast-lantern"] .vn-field-hero {
+  border-radius:.3rem 3.8rem .3rem .3rem;
+  background:
+    radial-gradient(ellipse at 7% 0%,rgba(199,127,83,.18),transparent 44%),
+    linear-gradient(135deg,#1b3e43 0%,#263f42 62%,#382e32 100%);
+}
+body[data-vn-family="coast-lantern"] .vn-field-copy,
+body[data-vn-family="coast-lantern"] .vn-field-copy h1,
+body[data-vn-family="coast-lantern"] .vn-breadcrumb,
+body[data-vn-family="coast-lantern"] .vn-breadcrumb a { color:#fff; }
+body[data-vn-family="coast-lantern"] .vn-field-copy h1 span,
+body[data-vn-family="coast-lantern"] .vn-field-copy .vn-kicker,
+body[data-vn-family="coast-lantern"] .vn-breadcrumb strong { color:#ffd08a; }
+body[data-vn-family="coast-lantern"] .vn-field-copy > p { color:rgba(255,255,255,.9); }
+body[data-vn-family="coast-lantern"] .vn-field-copy .button.secondary { color:#fff; border-color:rgba(255,255,255,.72); background:rgba(255,255,255,.06); }
+body[data-vn-family="coast-lantern"] .vn-field-image { border-left:5px solid #d39a57; }
+body[data-vn-family="coast-lantern"] .vn-field-stamp { color:#fff; border-color:#ffd08a; background:#193c41; }
+body[data-vn-family="coast-lantern"] .vn-field-stamp strong { color:#ffd08a; }
+body[data-vn-family="coast-lantern"] .vn-section-label { color:#986046; }
+body[data-vn-family="coast-lantern"] .vn-route-step:nth-child(even) > span,
+body[data-vn-family="coast-lantern"] .vn-route-step:nth-child(even) small { color:#9b6447; }
+@media (max-width:1080px) {
+  body[data-vn-family="coast-lantern"] .vn-hub-hero,
+  body[data-vn-family="coast-lantern"] .vn-field-hero { border-radius:.25rem 2.5rem .25rem .25rem; }
+}
+@media (max-width:380px) {
+  body[data-vn-family="coast-lantern"] { min-width:0; }
+  body[data-vn-family="coast-lantern"] .site-shell,
+  body[data-vn-family="coast-lantern"] .page-content { min-width:0; max-width:100%; }
+}
