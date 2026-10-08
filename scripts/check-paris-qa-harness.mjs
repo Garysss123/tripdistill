@@ -96,6 +96,10 @@ const expectedRoutes = [
   ['/vietnam/ninh-binh/van-long-wetland/', 'Van Long Wetland'],
   ['/vietnam/ninh-binh/cuc-phuong-conservation/', 'Cuc Phuong Forest & Conservation'],
   ['/south-korea/jeju/', 'Jeju Island hub'],
+  ['/south-korea/jeju/hallasan/', 'Hallasan summit and lower trails'],
+  ['/south-korea/jeju/jeju-city-yongduam/', 'Jeju City & Yongduam'],
+  ['/south-korea/jeju/seongsan-udo/', 'Seongsan & Udo'],
+  ['/south-korea/jeju/woljeongri-gimnyeong/', 'Woljeongri & Gimnyeong'],
   ['/south-korea/jeju/seogwipo-jeongbang/', 'Seogwipo & Jeongbang'],
   ['/south-korea/jeju/jungmun-andeok/', 'Jungmun & Andeok'],
   ['/south-korea/jeju/moseulpo-gapado/', 'Moseulpo & Gapado'],
@@ -420,6 +424,21 @@ for (const locale of expectedLocales) {
           if (!bodyText.includes('10 minutes') || !bodyText.includes('about an hour') || !bodyText.includes('one-way')) fail('Gapado guide must keep source-backed crossing/exploration estimates and one-way-sailing uncertainty.');
           if (bodyText.includes('06:00')) fail('Gapado guide must not imply a fixed ferry check time.');
           if (!links.some((href) => href.includes('wonderfulis.co.kr'))) fail('Gapado guide must link to the live ferry operator timetable.');
+        }
+        if (routePath.endsWith('/hallasan/')) {
+          if (!bodyText.includes('The summit is one chapter of Hallasan') || !bodyText.includes('Seongpanak and Gwaneumsa are the two routes shown by the current reservation system')) fail('Hallasan must distinguish summit access from the mountain’s lower-trail experience.');
+          if (!links.some((href) => href.includes('visithalla.jeju.go.kr/reservation/status.do'))) fail('Hallasan must link directly to the live official reservation status.');
+        }
+        if (routePath.endsWith('/jeju-city-yongduam/')) {
+          if (!bodyText.includes('Read the rock from its west side') || !bodyText.includes('about 10 metres high')) fail('Yongduam must retain its local geology and viewpoint interpretation.');
+        }
+        if (routePath.endsWith('/seongsan-udo/')) {
+          if (!bodyText.includes('Official guidance currently lists Seongsan Port and Jongdal Port') || !bodyText.includes('Confirm the exact operator, terminal, outward sailing, arrival port and return on the day')) fail('Udo guidance must cover the two current departure-port options and day-of ferry verification.');
+          if (!links.some((href) => href.includes('contentsid=CONT_000000000500477'))) fail('Seongsan and Udo must link to Visit Jeju’s current island and ferry guidance.');
+          if (!links.some((href) => href.includes('contentsid=CNTS_300000000014703'))) fail('Seongsan and Udo must link to the current Seongsan passenger-terminal guide.');
+        }
+        if (routePath.endsWith('/woljeongri-gimnyeong/')) {
+          if (!bodyText.includes('Walk the rock people built their fields around') || !bodyText.includes('those published scales differ')) fail('Woljeongri and Gimnyeong must retain the sourced village-geology and route-scale distinction.');
         }
       }
       if (bodyText.includes('06:00')) fail(`Stale fixed-time ferry check remains in ${locale.code} ${routePath}.`);
