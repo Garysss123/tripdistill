@@ -1152,11 +1152,12 @@ for (const locale of expectedLocales) {
     if (routePath.startsWith('/canada/victoria-south-island/')) {
       const isVictoriaHub = routePath === '/canada/victoria-south-island/';
       const isSookeRoute = routePath.endsWith('/sooke-juan-de-fuca/');
+      const isInnerHarbourRoute = routePath.endsWith('/inner-harbour-james-bay/');
       const victoriaCss = fs.readFileSync(safeDistPath('/css/canada-victoria.css'), 'utf8');
       if (!styles.includes('/css/canada.css') || !styles.includes('/css/canada-victoria.css')) fail(`Missing Victoria route stylesheets on ${locale.code} ${routePath}.`);
       const isButchartRoute = routePath.endsWith('/butchart-saanich/');
-      const isVictoriaNarrowTarget = isVictoriaHub || isButchartRoute || isSookeRoute;
-      const expectedVictoriaCssVersion = isVictoriaNarrowTarget ? '20261008-3' : '20261008-2';
+      const isVictoriaNarrowTarget = isVictoriaHub || isInnerHarbourRoute || isButchartRoute || isSookeRoute;
+      const expectedVictoriaCssVersion = isVictoriaNarrowTarget ? '20261008-4' : '20261008-2';
       if (!styleHrefs.includes(`/css/canada-victoria.css?v=${expectedVictoriaCssVersion}`)) fail(`Missing current Victoria responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isVictoriaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!attr(nodes(document, 'body')[0], 'data-region').includes('victoria-south-island')) fail(`Missing Victoria region marker on ${locale.code} ${routePath}.`);
@@ -1206,7 +1207,7 @@ for (const locale of expectedLocales) {
       if (isVictoriaNarrowTarget) {
         const targetSelector = `body[data-page="${expectedPage}"]`;
         const contentClass = isVictoriaHub ? '.ca-hub' : '.ca-field';
-        const narrowRuleStart = victoriaCss.indexOf('/* These three Victoria pages must shrink');
+        const narrowRuleStart = victoriaCss.indexOf('/* These four Victoria pages must shrink');
         const bodyWidthRule = cssRuleBlock(victoriaCss, targetSelector, narrowRuleStart);
         const contentWidthRule = cssRuleBlock(victoriaCss, `${targetSelector} .site-shell,`, narrowRuleStart);
         const contentWidthSelectorStart = victoriaCss.indexOf(`${targetSelector} .site-shell,`, narrowRuleStart);
