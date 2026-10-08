@@ -301,3 +301,13 @@ body[data-city="chiang-mai"] .page-content {
 @media (prefers-reduced-motion: reduce) {
   .lanna-atlas-card img { transition: none; }
 }
+
+@media (max-width: 380px) {
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="chiang-mai"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="old-city-moat"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="wat-ket-ping-river"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="doi-suthep-wat-pha-lat"] {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

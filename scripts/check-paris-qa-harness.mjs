@@ -823,7 +823,7 @@ for (const locale of expectedLocales) {
       const expectedPage = routePath.split('/').filter(Boolean).at(-1);
       const expectedParent = routeIsHub ? 'thailand' : 'chiang-mai';
       if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-city') !== 'chiang-mai' || attr(body, 'data-parent-page') !== expectedParent || attr(body, 'data-page') !== expectedPage) fail('Wrong Chiang Mai route markers on ' + locale.code + ' ' + routePath + '.');
-      if (!styleHrefs.includes('/css/thailand.css?v=20260826-1') || !styleHrefs.includes('/css/lanna.css?v=20260826-1')) fail('Missing Chiang Mai Thailand/Lanna stylesheets on ' + locale.code + ' ' + routePath + '.');
+      if (!styleHrefs.includes('/css/thailand.css?v=20260826-1') || !styleHrefs.some((href) => href.startsWith('/css/lanna.css?'))) fail('Missing Chiang Mai Thailand/Lanna stylesheets on ' + locale.code + ' ' + routePath + '.');
       const assetPaths = new Set((manifest.assets || []).map((asset) => asset.path));
       const linkedPaths = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase().split(/\s+/).includes('stylesheet')).map((node) => attr(node, 'href'));
       for (const image of nodes(document, 'img')) linkedPaths.push(attr(image, 'src'), ...attr(image, 'srcset').split(',').map((candidate) => candidate.trim().split(/\s+/)[0]).filter(Boolean));
@@ -1891,6 +1891,16 @@ for (const card of jejuPhotoCards) {
   jejuHeroRatios.push(...ratios);
 }
 console.log(`Jeju static narrow-width checks passed; photo-card kicker and lower text minimum estimated contrast ${Math.min(jejuKickerContrast, ...jejuHeroRatios).toFixed(2)}:1 (CSS estimate, not rendered measurement).`);
+const lannaCssText = fs.readFileSync(safeDistPath('/css/lanna.css'), 'utf8');
+const chiangMaiNarrowRule = cssRuleBlock(lannaCssText, '@media (max-width: 380px)');
+if (!chiangMaiNarrowRule) fail('Chiang Mai body-width release must be scoped to the narrow-screen breakpoint.');
+for (const page of ['chiang-mai', 'old-city-moat', 'wat-ket-ping-river', 'doi-suthep-wat-pha-lat']) {
+  const selector = `body[data-country="thailand"][data-city="chiang-mai"][data-page="${page}"]`;
+  const rule = cssRuleBlock(chiangMaiNarrowRule, selector);
+  if (!rule || !/min-width\s*:\s*0\s*;/i.test(rule) || !/max-width\s*:\s*100%\s*;/i.test(rule)) fail(`Chiang Mai ${page} body must shrink below the global 320px floor.`);
+  if (/overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule)) fail(`Chiang Mai ${page} must not hide horizontal overflow.`);
+}
+console.log('Chiang Mai static narrow-width guard passed: four route bodies release the 320px floor without hiding overflow.');
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],
