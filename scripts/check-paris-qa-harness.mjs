@@ -150,6 +150,8 @@ const expectedRoutes = [
   ['/thailand/chiang-mai/doi-inthanon/', 'Doi Inthanon: Summit & Trails'],
   ['/thailand/chiang-mai/mae-kampong/', 'Mae Kampong: Miang Tea & Village Walk'],
   ['/thailand/chiang-mai/nimman-university/', 'Nimman, One Nimman & CMU'],
+  ['/thailand/chiang-mai/chang-moi-warorot/', 'Chang Moi & Warorot'],
+  ['/thailand/chiang-mai/mae-rim-mae-sa/', 'Mae Rim & Mae Sa'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -430,14 +432,18 @@ function assertHarness(html, label) {
     '/thailand/chiang-mai/doi-suthep-wat-pha-lat/',
     '/thailand/chiang-mai/doi-inthanon/',
     '/thailand/chiang-mai/mae-kampong/',
-    '/thailand/chiang-mai/nimman-university/'
+    '/thailand/chiang-mai/nimman-university/',
+    '/thailand/chiang-mai/chang-moi-warorot/',
+    '/thailand/chiang-mai/mae-rim-mae-sa/'
   ].map((routePath) => [routePath, 350_000]));
   if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Chiang Mai stylesheet budgets are missing or unexpected.`);
   const expectedImageBudgets = Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
     '/assets/images/thailand-chiang-mai-mae-kampong.webp',
     '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
-    '/assets/images/thailand-chiang-mai-old-city.webp'
+    '/assets/images/thailand-chiang-mai-old-city.webp',
+    '/assets/images/thailand-chiang-mai-warorot.webp',
+    '/assets/images/thailand-chiang-mai-mae-rim.webp'
   ].map((assetPath) => [assetPath, 900_000]));
   if (JSON.stringify(manifest.imageBudgets) !== JSON.stringify(expectedImageBudgets)) fail(`${label}: Chiang Mai existing image-size budgets are missing or unexpected.`);
   return manifest;
@@ -546,7 +552,9 @@ const chiangMaiDatedRoutes = [
   '/thailand/chiang-mai/doi-suthep-wat-pha-lat/',
   '/thailand/chiang-mai/doi-inthanon/',
   '/thailand/chiang-mai/mae-kampong/',
-  '/thailand/chiang-mai/nimman-university/'
+  '/thailand/chiang-mai/nimman-university/',
+  '/thailand/chiang-mai/chang-moi-warorot/',
+  '/thailand/chiang-mai/mae-rim-mae-sa/'
 ];
 for (const locale of expectedLocales) {
   for (const route of chiangMaiDatedRoutes) {
@@ -888,6 +896,20 @@ for (const locale of expectedLocales) {
             'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg',
             'https://creativecommons.org/licenses/by-sa/3.0/'
           ],
+          '/thailand/chiang-mai/chang-moi-warorot/': [
+            'https://www.tourismthailand.org/Attraction/warorot-market',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/4884',
+            'https://commons.wikimedia.org/wiki/File:Warorot_market_4.jpg'
+          ],
+          '/thailand/chiang-mai/mae-rim-mae-sa/': [
+            'https://botanic.qsbg.org/',
+            'https://botanic.qsbg.org/where-to-go/show/32',
+            'https://www.tourismthailand.org/Attraction/queen-sirikit-botanical-garden',
+            'https://portal.dnp.go.th/Content/nationalpark?contentId=34707',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/5182',
+            'https://www.cuartculture.chula.ac.th/en/article/27775/',
+            'https://commons.wikimedia.org/wiki/File:View_of_Mae_Sa_Valley,_Chiang_Mai,_Thailand.jpg'
+          ],
           '/thailand/chiang-mai/nimman-university/': [
             'https://www.tourismthailand.org/Attraction/thanon-nimmanhaemin',
             'https://www.onenimman.com/',
@@ -911,7 +933,9 @@ for (const locale of expectedLocales) {
           '/thailand/chiang-mai/doi-suthep-wat-pha-lat/': ['forest temple', 'seven-headed naga', 'gilded chedi', 'Lanna architecture'],
           '/thailand/chiang-mai/doi-inthanon/': ['2,565 m', 'Mae Klang', 'Wachirathan', 'Royal Twin Pagodas', 'Ang Ka Luang', 'Kew Mae Pan', 'Royal Project'],
           '/thailand/chiang-mai/mae-kampong/': ['Mae On', 'miang', 'Wat Khantha Phueksa', 'Mae Kampong Waterfall', 'Lanna'],
-          '/thailand/chiang-mai/nimman-university/': ['One Nimman', 'One Street', 'Nimmanhaeminda Road', 'Ang Kaew', '1962', '1964', '40 baht']
+          '/thailand/chiang-mai/nimman-university/': ['One Nimman', 'One Street', 'Nimmanhaeminda Road', 'Ang Kaew', '1962', '1964', '40 baht'],
+          '/thailand/chiang-mai/chang-moi-warorot/': ['Chang Moi Road', 'Kad Luang', 'Ton Lam Yai Flower Market', 'Nawarat Bridge', 'packaged snacks'],
+          '/thailand/chiang-mai/mae-rim-mae-sa/': ['Canopy Walk', '500 m', '20 m', 'Mae Sa Waterfall', 'Princess Dara Rasmi', 'songthaew']
         }[routePath];
         for (const phrase of requiredPlaceDetails) if (!bodyText.includes(phrase)) fail('Missing Chiang Mai place detail on ' + routePath + ': ' + phrase + '.');
       }
@@ -1935,13 +1959,13 @@ console.log(`Jeju static narrow-width checks passed; photo-card kicker and lower
 const lannaCssText = fs.readFileSync(safeDistPath('/css/lanna.css'), 'utf8');
 const chiangMaiNarrowRule = cssRuleBlock(lannaCssText, '@media (max-width: 380px)');
 if (!chiangMaiNarrowRule) fail('Chiang Mai body-width release must be scoped to the narrow-screen breakpoint.');
-for (const page of ['chiang-mai', 'old-city-moat', 'wat-ket-ping-river', 'doi-suthep-wat-pha-lat', 'doi-inthanon', 'mae-kampong', 'nimman-university']) {
+for (const page of ['chiang-mai', 'old-city-moat', 'wat-ket-ping-river', 'doi-suthep-wat-pha-lat', 'doi-inthanon', 'mae-kampong', 'nimman-university', 'chang-moi-warorot', 'mae-rim-mae-sa']) {
   const selector = `body[data-country="thailand"][data-city="chiang-mai"][data-page="${page}"]`;
   const rule = cssRuleBlock(chiangMaiNarrowRule, selector);
   if (!rule || !/min-width\s*:\s*0\s*;/i.test(rule) || !/max-width\s*:\s*100%\s*;/i.test(rule)) fail(`Chiang Mai ${page} body must shrink below the global 320px floor.`);
   if (/overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule)) fail(`Chiang Mai ${page} must not hide horizontal overflow.`);
 }
-console.log('Chiang Mai static narrow-width guard passed: four route bodies release the 320px floor without hiding overflow.');
+console.log('Chiang Mai static narrow-width guard passed: nine route bodies release the 320px floor without hiding overflow.');
 const contrastPairs = [
   ['#173943', '#f1eee5'], ['#315e69', '#fffdf8'], ['#7a4c26', '#f1eee5'],
   ['#344d54', '#f1eee5'], ['#ffffff', '#315e69'], ['#e6edef', '#214b56'],

@@ -309,7 +309,9 @@ body[data-city="chiang-mai"] .page-content {
   body[data-country="thailand"][data-city="chiang-mai"][data-page="doi-suthep-wat-pha-lat"],
   body[data-country="thailand"][data-city="chiang-mai"][data-page="doi-inthanon"],
   body[data-country="thailand"][data-city="chiang-mai"][data-page="mae-kampong"],
-  body[data-country="thailand"][data-city="chiang-mai"][data-page="nimman-university"] {
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="nimman-university"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="chang-moi-warorot"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="mae-rim-mae-sa"] {
     min-width: 0;
     max-width: 100%;
   }

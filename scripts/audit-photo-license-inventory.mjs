@@ -663,7 +663,17 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatuchak
   detail: 'Exact Commons page checked for the title Chatuchak Weekend Market, Christophe95 as author, the 12 May 2018 photograph date, and CC BY-SA 4.0 terms. The downloaded 4,032 x 3,024 source and local WebP pixels were inspected on 2026-10-08; both show a covered Chatuchak aisle with shoppers, flower stalls and souvenir stalls. The local copy is resized, cropped for display and converted to WebP; the route links both source and license.',
   checkedOn: '2026-10-08'
 });
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Warorot_market_4.jpg', {
+  detail: 'Warorot Market photo review: exact Commons file title, Christophe95 authorship, 6 September 2018 source date, and CC BY-SA 4.0 commercial/adaptation terms checked on 2026-10-08. Local WebP pixels were inspected and show a covered market aisle with packaged foods, stalls and shoppers, matching Warorot Market. The displayed credit links the source and license and states the resize, display crop, WebP conversion and same-version share-alike adaptation.',
+  checkedOn: '2026-10-08'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:View_of_Mae_Sa_Valley,_Chiang_Mai,_Thailand.jpg', {
+  detail: 'Mae Sa Valley photo review: exact Commons title, VN.NguyenDucDuy authorship, and CC BY-SA 4.0 commercial/adaptation terms checked on 2026-10-08. Local WebP pixels were inspected and match a cultivated hillside and valley landscape in Mae Rim District. The Commons page records 20 December 2025, while embedded EXIF records 20 December 2024; the source photograph date is unresolved and is intentionally left null in the inventory. The displayed credit links the source and license and states the resize, display crop, WebP conversion and same-version share-alike adaptation.',
+  checkedOn: '2026-10-08'
+});
 const explicitCreditMappings = new Map([
+  ['/assets/images/thailand-chiang-mai-warorot.webp', { sourceTitle: 'File:Warorot market 4.jpg', creditLabel: 'Warorot Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, creator, 6 September 2018 source date, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08. The image shows the covered Warorot market aisle with packaged foods, stalls and shoppers.' }],
+  ['/assets/images/thailand-chiang-mai-mae-rim.webp', { sourceTitle: 'File:View of Mae Sa Valley, Chiang Mai, Thailand.jpg', creditLabel: 'Mae Sa Valley', creator: 'VN.NguyenDucDuy', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, creator, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08. Pixels match the Mae Rim valley landscape. Commons page date is 20 December 2025 while embedded EXIF says 20 December 2024; the discrepancy remains unresolved, so sourcePhotoDate stays null.' }],
   ['/assets/images/thailand-chatuchak.webp', { sourceTitle: 'File:Chatuchak Weekend Market 2.jpg', creditLabel: 'Chatuchak Weekend Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-05-12', editHistory: 'Resized, cropped for display and converted to WebP.', note: 'The exact Commons source page and downloaded original were checked against the local WebP pixels on 2026-10-08. Both show the same covered market aisle, flower stalls, souvenir stalls and shoppers.' }],
   ['/assets/images/korea-namsan-tower.webp', { sourceTitle: 'File:N Seoul Tower view 2.jpg', creditLabel: 'N Seoul Tower panorama / kallerna', creator: 'kallerna', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2022-11-30', note: 'The exact Commons page and downloaded original were checked against the local WebP pixels on 2026-10-08; the resized crop shows Seoul at night from N Seoul Tower looking south. The linked source, creator, license, and resize/crop notice are present.' }],
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
@@ -692,6 +702,8 @@ const explicitCreditMappings = new Map([
   ['/assets/images/thailand-chiang-mai-ping-river.webp', { sourceTitle: 'File:Ping River in Chiang Mai 3.jpg', creditLabel: 'Ping River from Chansom Memorial Bridge', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/thailand-chiang-mai-warorot.webp',
+  '/assets/images/thailand-chiang-mai-mae-rim.webp',
   '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
   '/assets/images/thailand-chiang-mai-mae-kampong.webp',
   '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
@@ -750,6 +762,8 @@ const visuallyReviewedAssetPaths = new Set([
 const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ['/assets/images/thailand-chiang-mai-warorot.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-mae-rim.webp', '2026-10-08'],
   ['/assets/images/thailand-chiang-mai-doi-inthanon.webp', '2026-10-08'],
   ['/assets/images/thailand-chiang-mai-mae-kampong.webp', '2026-10-08'],
   ['/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', '2026-10-08'],

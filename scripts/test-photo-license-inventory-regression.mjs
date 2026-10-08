@@ -48,6 +48,10 @@ const reviewedChiangMaiImageRecords = [
   { assetPath: '/assets/images/thailand-chiang-mai-mae-kampong.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg', creator: 'LannaPhoto', license: 'CC BY-SA 3.0', sourcePhotoDate: null },
   { assetPath: '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg', creator: 'FredTC', license: 'CC BY-SA 4.0', sourcePhotoDate: '2017-12-20' }
 ];
+const newChiangMaiImageRecords = [
+  { assetPath: '/assets/images/thailand-chiang-mai-warorot.webp', route: 'thailand/chiang-mai/chang-moi-warorot/', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Warorot_market_4.jpg', sourceTitle: 'File:Warorot market 4.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', sourcePhotoDate: '2018-09-06' },
+  { assetPath: '/assets/images/thailand-chiang-mai-mae-rim.webp', route: 'thailand/chiang-mai/mae-rim-mae-sa/', sourceUrl: 'https://commons.wikimedia.org/wiki/File:View_of_Mae_Sa_Valley,_Chiang_Mai,_Thailand.jpg', sourceTitle: 'File:View of Mae Sa Valley, Chiang Mai, Thailand.jpg', creator: 'VN.NguyenDucDuy', license: 'CC BY-SA 4.0', sourcePhotoDate: null }
+];
 const danangImageRecords = [
   { assetPath: '/assets/images/vietnam-da-nang-han-river.webp', sourceDate: '2023-08-19' },
   { assetPath: '/assets/images/vietnam-da-nang-marble-mountains.webp', sourceDate: '2024-08-01' },
@@ -98,7 +102,7 @@ try {
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 604, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 602, 'newly checked Chiang Mai sources reduce the unverified-used-asset count by two and remain separate from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -192,6 +196,26 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08');
     assert.match(record.verificationDetail, /local WebP pixels/i);
   }
+  for (const image of newChiangMaiImageRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, 'https://creativecommons.org/licenses/by-sa/4.0/');
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate, 'unresolved source date must remain null');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08');
+    assert.match(record.verificationDetail, /local WebP pixels were inspected/i);
+    assert.ok(record.editHistory.includes('converted to WebP'));
+  }
+  const maeSaValley = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-chiang-mai-mae-rim.webp');
+  assert.ok(maeSaValley.verificationDetail.includes('20 December 2025'));
+  assert.ok(maeSaValley.verificationDetail.includes('20 December 2024'));
+  assert.ok(maeSaValley.verificationDetail.includes('unresolved'));
   const thailandRoutes = [
     'thailand',
     'thailand/bangkok',
@@ -216,7 +240,8 @@ try {
   const chiangMaiPhotoPages = [
     { route: 'thailand/chiang-mai/doi-inthanon/', ...reviewedChiangMaiImageRecords[0] },
     { route: 'thailand/chiang-mai/mae-kampong/', ...reviewedChiangMaiImageRecords[1] },
-    { route: 'thailand/chiang-mai/nimman-university/', ...reviewedChiangMaiImageRecords[2] }
+    { route: 'thailand/chiang-mai/nimman-university/', ...reviewedChiangMaiImageRecords[2] },
+    ...newChiangMaiImageRecords
   ];
   for (const [locale, prefix] of Object.entries(localeDirs)) {
     for (const image of chiangMaiPhotoPages) {
@@ -392,7 +417,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: the three new Chiang Mai assets retain exact source, creator, commercial license, pixel review and five-locale linked credits; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: five reviewed Chiang Mai images retain exact source, creator, commercial license, pixel review and five-locale linked credits; the new Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);
