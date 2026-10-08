@@ -45,6 +45,7 @@
 .ch-regional-context > header h2 { margin:0; font:700 clamp(2rem,3.5vw,3.5rem)/1 Georgia,serif; }
 .ch-regional-context > header p { margin:0; line-height:1.72; }
 .ch-regional-context > div { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(20,33,43,.14); border:1px solid rgba(20,33,43,.14); }
+.ch-local-context > div { grid-template-columns:repeat(3,1fr); }
 .ch-regional-context article { padding:1.5rem; background:var(--ch-soft); }
 .ch-regional-context small { color:var(--ch-secondary); font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
 .ch-regional-context p { line-height:1.65; }

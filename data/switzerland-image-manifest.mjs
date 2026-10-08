@@ -2,7 +2,8 @@
 export const switzerlandImageManifest = {
   "zurich-lake/old-town-lindenhof": {
     "src": "/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp",
-    "alt": "Zurich old town and the Limmat river",
+    "alt": "Limmat river and Zurich Old Town viewed from Schipfe on the west bank",
+    "displayTitle": "Limmat and Old Town from Schipfe",
     "source": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Limmat_panosphere_20220614.jpg",
     "label": "Zürich Limmat panosphere 20220614.jpg",
     "creator": "Daniel Kraft",
@@ -12,7 +13,8 @@ export const switzerlandImageManifest = {
   },
   "zurich-lake/lake-uetliberg": {
     "src": "/assets/images/switzerland-zurich-lake-lake-uetliberg.webp",
-    "alt": "Lake Zurich with the city and surrounding hills",
+    "alt": "Snowy Zurich and Lake Zurich viewed from Uetliberg under hazy skies",
+    "displayTitle": "Winter view of Zurich and Lake Zurich from Uetliberg",
     "source": "https://commons.wikimedia.org/wiki/File:Snowy_panorama_of_Zurich_from_Uetliberg_2026.JPG",
     "label": "Snowy panorama of Zurich from Uetliberg 2026.JPG",
     "creator": "Mike is Michi",
@@ -22,7 +24,8 @@ export const switzerlandImageManifest = {
   },
   "zurich-lake/zurich-west-museums": {
     "src": "/assets/images/switzerland-zurich-lake-zurich-west-museums.webp",
-    "alt": "Zurich West with converted industrial buildings and modern towers",
+    "alt": "Mobimo Tower and Zölly residential tower above Pfingstweidpark in Zurich West",
+    "displayTitle": "Mobimo and Zölly towers above Pfingstweidpark",
     "source": "https://commons.wikimedia.org/wiki/File:Mobimo_Tower._Z%C3%B6lly_Wohnhochhaus._Z%C3%BCrich_West.jpg",
     "label": "Mobimo Tower. Zölly Wohnhochhaus. Zürich West.jpg",
     "creator": "Photones",

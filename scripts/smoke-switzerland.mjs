@@ -15,6 +15,14 @@ const englishRoutes = [
   ...switzerlandClusters.map((cluster) => `/switzerland/${cluster.slug}/`),
   ...switzerlandGuides.map((guide) => guide.url)
 ];
+const zurichEditedRoutes = new Set([
+  '/switzerland/',
+  '/switzerland/zurich-lake/',
+  '/switzerland/zurich-lake/old-town-lindenhof/',
+  '/switzerland/zurich-lake/lake-uetliberg/',
+  '/switzerland/zurich-lake/zurich-west-museums/'
+]);
+const childRoutes = new Set(switzerlandGuides.map((guide) => guide.url));
 const pageRoutes = locales.flatMap(([language, prefix]) => englishRoutes.map((route) => ({ language, prefix, route, localized: `${prefix}${route}` })));
 const failures = [];
 
@@ -47,6 +55,7 @@ for (const { language, prefix, route, localized } of pageRoutes) {
   if (!/<h1[ >]/i.test(html)) failures.push(`${localized}: missing H1`);
   if (!new RegExp(`<html[^>]+lang=["']${language}["']`, 'i').test(html)) failures.push(`${localized}: expected document language ${language}`);
   if (!html.includes('/css/switzerland.css?v=20260912-1')) failures.push(`${localized}: Switzerland stylesheet missing`);
+  if (childRoutes.has(route) && !html.includes('/css/switzerland-field.css?v=20261008-1')) failures.push(`${localized}: current Switzerland field stylesheet missing`);
   if (!html.includes('data-ad-slot')) failures.push(`${localized}: ad placeholder missing`);
   if (!html.includes('https://commons.wikimedia.org/')) failures.push(`${localized}: image provenance missing`);
   if (!html.includes(`rel="canonical" href="https://tripdistill.com${localized}"`)) failures.push(`${localized}: canonical mismatch`);
@@ -82,11 +91,12 @@ for (const [, prefix] of locales) {
 
 const { body: sitemap } = await request('/sitemap.xml');
 for (const { prefix, route, localized } of pageRoutes) {
-  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-12</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
+  const expectedLastmod = zurichEditedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
 }
 
 await request('/css/switzerland.css?v=20260912-1', 'Switzerland stylesheet');
-await request('/css/switzerland-field.css?v=20260912-1', 'Switzerland field stylesheet');
+await request('/css/switzerland-field.css?v=20261008-1', 'Switzerland field stylesheet');
 
 if (failures.length) {
   console.error(failures.join('\n'));

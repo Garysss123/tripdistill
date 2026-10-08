@@ -6,98 +6,164 @@ const c = (definition) => defineSwitzerlandCluster(definition);
 export const switzerlandWestClusters = [
   c({
     slug: 'zurich-lake', name: 'Zurich & Lake Zurich', region: 'Northern Switzerland', band: 'cities', family: 'lake-grid',
-    label: 'Rail city · lake edge', tagline: 'Use Zurich as a compact rail base, then decide whether the day belongs to the old city, the lake or the western districts.',
-    hubIntro: 'Zurich works because the main station, old town, lakefront and dense tram network compress a large-city itinerary into short moves. The mistake is treating every district as one continuous walk: choose one city layer, protect the lake weather window, and leave Uetliberg or the western industrial quarter as a deliberate contrast rather than an afterthought.',
-    stay: 'Two or three nights suit a first visit. Sleep near Zürich HB for early intercity departures, around the old town for evening walks, or near Enge and Wiedikon if lake access matters more than being beside the main station.',
-    transfer: 'Zürich HB is the national rail anchor; trams and S-Bahn handle almost every city move. Airport rail is frequent, while Uetliberg uses the local S-Bahn. Save the exact stop because similar district names can sit on different tram and rail corridors.',
-    season: 'The city is useful year-round. Summer makes lake swimming and boats valuable; winter shortens outdoor time but strengthens museum and café plans. Fog can erase the Uetliberg view even when the city below is dry.',
-    fallback: 'If the lake or ridge disappears into rain or low cloud, compress the day around the Kunsthaus, Swiss National Museum, covered old-town lanes and tram-connected neighborhoods instead of chasing a viewpoint.',
+    label: 'River city · lake threshold', tagline: 'Read Zurich in three connected scales: the Limmat’s paired old-town banks, the lake’s open edge and the rail-and-reuse streets of Zurich West.',
+    hubIntro: 'Zurich is not one continuous sightseeing walk. The Limmat cuts through the old center before opening into Lake Zurich; Lindenhof sits above the western bank, while the eastern lanes lead toward Grossmünster. Beyond the lake head, parks and boat landings pull the day south. Zurich West is a separate rail-and-tram chapter where the 1894 viaduct now meets markets, galleries and a design campus. Choose the historic river, a visibility-led lake-and-ridge day, or the industrial-to-contemporary district instead of stitching all three into a rushed loop.',
+    stay: 'Two or three nights make it possible to split the old center, lake and west-side district. Zürich HB or the old-town edge keeps rail departures and the first walking route simple; Enge is a better lakeward base if a quieter evening matters more than a short start at Lindenhof. Compare the exact tram or S-Bahn stop with your hotel rather than choosing by neighborhood name alone.',
+    transfer: 'Use Zürich HB for intercity rail and the ZVV network for local trams, buses and S-Bahn. The old center is walkable but the lake shore and Zurich West are separate corridors; check the named stop for each day. Boat trips are date- and route-specific, so compare the ZSG timetable with your return connection before treating a cruise as transport.',
+    season: 'The old-town route is the most weather-resilient; the lake gains most in warm, clear light, while Uetliberg is a view-dependent choice rather than a guaranteed summit panorama. Winter favors shorter shore sections and an indoor collection. In fog, decide from the ridge visibility—not only the city-center forecast—before spending time on the climb.',
+    fallback: 'For rain, keep the river route to one bank and move the indoor decision forward: choose one church interior in the old town, a museum near HB, or the Museum für Gestaltung at Toni-Areal. For low cloud, leave Uetliberg out and use the lakefront parks or a confirmed short ZSG sector. Check the operator’s live timetable and the museum’s own opening calendar.',
+    reviewDate: '8 October 2026', isoDate: '2026-10-08',
     sources: [
-      ['https://www.zuerich.com/en', 'Zurich Tourism'],
-      ['https://www.zvv.ch/zvv/en/home.html', 'ZVV public transport'],
+      ['https://www.zuerich.com/en/visit/nature/lindenhof', 'Zürich Tourism: Lindenhof'],
+      ['https://www.zvv.ch/en/home.html', 'ZVV timetable and traffic information'],
+      ['https://www.zsg.ch/en/', 'Lake Zurich Navigation Company (ZSG)'],
+      ['https://www.zuerich.com/en/visit/nature/uetliberg-zurichs-very-own-mountain', 'Zürich Tourism: Uetliberg access notice'],
+      ['https://museum-gestaltung.ch/en', 'Museum für Gestaltung Zürich'],
+      ['https://im-viadukt.ch/en/infos', 'IM VIADUKT location and district history'],
       ['https://www.sbb.ch/en', 'SBB rail planning'],
       ['https://www.stadt-zuerich.ch/tourism.html', 'City of Zurich — tourism information']
+    ],
+    faq: [
+      ['What should I see if I have only one day in Zurich?', 'Choose one of the three route arguments: the river and old-town churches, the lake edge with a weather-dependent ridge, or Zurich West’s rail-reuse and design district. The hub compares their different reasons to go; the child guide gives the actual sequence.'],
+      ['Is a Lake Zurich cruise a good way to get around?', 'It can be, when the dated ZSG sailing connects the landing you want and has a useful return. Check the operator timetable before walking to the quay; a scenic round trip is not automatically a city-to-city transfer.'],
+      ['What is the strongest rainy-day alternative?', 'Use one indoor anchor rather than trying to save every outdoor stop: a checked church interior or museum in the center, or Museum für Gestaltung at Toni-Areal in Zurich West. Keep the lake and ridge optional until the forecast improves.']
     ],
     guides: [
       g({
         slug: 'old-town-lindenhof', name: 'Old Town, Lindenhof & the Limmat', instrument: 'Limmat crossing ledger', layout: 'river-ledger',
-        imageQuery: 'Zurich old town Limmat Grossmunster Switzerland', imageAlt: 'Zurich old town and the Limmat river',
-        summary: 'Read central Zurich from the station to both banks of the Limmat, using Lindenhof, Bahnhofstrasse, Niederdorf and the Grossmünster side as one connected but selective first-day route.',
-        access: 'Start at Zürich HB and walk the Bahnhofstrasse edge toward the river rather than entering every shopping block. The old town is easiest when you treat Rathausbrücke and Münsterbrücke as planned crossings instead of drifting back and forth between both banks.',
-        tradeoff: 'This route gives architectural context, river views and a strong evening finish without transport complexity. It sacrifices the lake’s outer shore and contemporary west Zurich, so it suits an arrival day or a traveler who wants a compact historical core before wider day trips.',
-        fallback: 'In steady rain, shorten the river sections and use the Swiss National Museum, Kunsthaus or café stops to bridge between old-town segments. The route still works because the tram network can remove most exposed walking.',
+        imageQuery: 'Zurich old town Limmat Grossmunster Switzerland', imageAlt: 'Limmat river and Zurich Old Town viewed from Schipfe on the west bank', imageTitle: 'Limmat and Old Town from Schipfe',
+        summary: 'Walk from Zurich HB to Lindenhof for the city’s Roman and Carolingian layers, descend to the Limmat and make one deliberate church choice before ending toward Bellevue.',
+        access: 'From Zurich HB, use Rennweg as the direct orientation line to Lindenhof, then descend toward Schipfe on the west bank. Cross once toward Grossmünster only if that is your chosen interior; otherwise stay on the west side for Fraumünster. Use ZVV for a tram return if the cobbles or slopes have become the least useful part of the day.',
+        tradeoff: 'This is a compact city-history route: a hilltop civic viewpoint, a river-level lane and one church with a distinct historical or artistic focus. It leaves the lake’s outer shore and Zurich West for another block; adding both churches is less useful than taking time to read one site.',
+        fallback: 'In rain, keep the route to Lindenhof and one indoor stop. The Swiss National Museum is by HB; in the old center choose a church only after checking its current visitor access. Lindenhof is listed as partially accessible and the historic streets include slopes and uneven paving, so confirm a step-free route with the city rather than assuming this loop is fully accessible.',
         duration: 'Allow four to six hours for a deliberate first pass; add a museum only if you are willing to drop part of Bahnhofstrasse or Niederdorf rather than stacking everything into one block.',
         combine: 'Pair it with the lakefront only when the weather is clear and you still have energy. Keep Uetliberg or Zurich West for another half day because both change the city’s scale and transport logic.',
-        verify: 'Check Kunsthaus or museum opening days if they matter, and use ZVV for any tram shortcut. River walks are flexible, but temporary construction can change the most direct crossing or promenade access.',
+        verify: 'Before leaving, check the Grossmünster renovation and tower notice, Fraumünster visitor information if you want to enter, and ZVV for any tram return. Zürich Tourism lists 187 steps to the Grossmünster tower and says its terraces are closed for safety; do not plan around an assumed tower opening.',
         choices: [
-          ['Historic spine', 'Station → Bahnhofstrasse → Lindenhof → river crossings; best when orientation matters more than museums.'],
-          ['Museum-led', 'Swiss National Museum or Kunsthaus plus a shorter old-town circuit; better in rain or winter darkness.'],
-          ['Evening-led', 'Save Niederdorf and the Limmat for late afternoon, then finish near Bellevue rather than returning to the station.']
+          ['Read the hill', 'HB → Rennweg → Lindenhof → Schipfe; best for a first orientation and the west-bank river view.'],
+          ['Choose one church', 'Cross to Grossmünster for Romanesque and Reformation layers, or stay west for Fraumünster’s convent history and Chagall windows.'],
+          ['Rain-shortened', 'Keep Lindenhof as the outdoor overview, then use one checked church interior or the National Museum by HB instead of adding a second river crossing.']
         ],
         stages: [
-          ['Zürich HB to Lindenhof', 'Exit toward the old city, use Bahnhofstrasse as a straight orientation line, then climb briefly to Lindenhof for the river and roofline overview.'],
-          ['Cross the Limmat deliberately', 'Drop toward the Rathaus area, cross once, and walk the east-bank lanes rather than repeatedly switching sides.'],
-          ['Grossmünster to Bellevue', 'Use the cathedral quarter and Münsterbrücke to connect the historic core with the open water at the lake end.'],
-          ['Choose your final bank', 'Return by tram, Bahnhofstrasse or the Niederdorf side according to dinner and hotel location; avoid needless retracing after dark.']
+          ['HB to Lindenhof', 'Walk via Rennweg, then pause above the Limmat: the view makes the two-bank shape of the old center legible before the route descends.'],
+          ['Down to Schipfe', 'Follow the slope to the west-bank river lane; use this lower level to compare the water edge with the elevated Lindenhof rather than doubling back through shops.'],
+          ['Make the church fork', 'Cross Münsterbrücke for Grossmünster, or remain west and turn through Münsterhof to Fraumünster. Treat them as alternatives, not a required pair.'],
+          ['Finish at the lake head', 'Continue south toward Bellevue and choose the return tram or walk to HB based on the day’s remaining energy and the live ZVV connection.']
         ],
         watch: [
-          ['Old-town overload', 'Churches, lanes and viewpoints blur together if every side street becomes a stop. Choose two interiors and keep the rest as movement.'],
-          ['Sunday rhythm', 'Retail opening patterns differ from sightseeing. Do not build a Sunday plan around ordinary shopping hours.'],
-          ['Cobblestone fatigue', 'The historic core is compact but uneven. Use trams to remove the return walk if mobility or weather makes the final kilometer the least useful part.']
+          ['Restoration and stairs', 'Grossmünster is under a published 2025–2029 renovation program; its tower has 187 steps and the terraces are closed for safety. Check the live notice before making it the day’s anchor.'],
+          ['Steep or uneven ground', 'Lindenhof is marked partially accessible. If you need a step-free route, contact the city or check its accessibility listing before choosing this hill-and-river sequence.'],
+          ['Too many interiors', 'The two churches tell different stories. Decide between Grossmünster’s Romanesque/Reformation collection and Fraumünster’s abbess/Chagall story, then leave the other for another visit.']
+        ],
+        fieldContext: {
+          heading: 'Read authority and memory along the west and east banks.',
+          cards: [
+            { title: 'Lindenhof is more than a lookout', copy: 'Zürich Tourism places a 4th-century Roman fort here and a 9th-century royal residence on the same hill. The oath sealing the Helvetic Constitution was taken here in 1798. Read those layers against today’s quiet public square and the view over the river.', sources: [0] },
+            { title: 'Pick the church by its story', copy: 'Grossmünster pairs a Romanesque crypt with Reformation history, Polke stained glass and Giacometti choir windows; its tower is a 187-step climb during a 2025–2029 renovation program. Across the route, Fraumünster’s abbess once held coin-minting rights, and its choir windows include Marc Chagall’s cycle. Choose the interior that interests you; check current access first.', sources: [1, 2] },
+            { title: 'The crossing is the itinerary', copy: 'Lindenhof and Schipfe sit on the west-bank side; Grossmünster is across the Limmat. One crossing gives the walk a clear shape. Re-crossing for every landmark turns a small river corridor into backtracking, so let the church choice determine which bank carries the finish.', sources: [3] }
+          ]
+        },
+        sources: [
+          ['https://www.zuerich.com/en/visit/nature/lindenhof', 'Zürich Tourism: Lindenhof history and accessibility'],
+          ['https://www.zuerich.com/en/visit/attractions/grossmunster', 'Zürich Tourism: Grossmünster renovation and tower'],
+          ['https://www.zuerich.com/en/visit/attractions/fraumunster-art-history-and-divine-stained-glass-windows', 'Zürich Tourism: Fraumünster history and windows'],
+          ['https://www.zvv.ch/en/home.html', 'ZVV local timetable']
+        ],
+        faq: [
+          ['What is worth noticing at Lindenhof besides the view?', 'The official city history places a Roman fort on the hill in the 4th century and a royal residence there in the 9th; the 1798 oath sealing the Helvetic Constitution gives the square a later civic layer.'],
+          ['Which church should I choose?', 'Choose Grossmünster for the Romanesque crypt, Reformation Museum and stained glass, or Fraumünster for the convent’s civic history and Chagall windows. Check current access before setting the route.'],
+          ['Can I make this route step-free?', 'Do not assume so: Zürich Tourism lists Lindenhof as partially accessible, and the historic streets have slopes and uneven paving. Ask the city about a route suited to your mobility needs before starting.']
         ]
       }),
       g({
         slug: 'lake-uetliberg', name: 'Lake Zurich & Uetliberg', instrument: 'water-to-ridge weather dial', layout: 'weather-dial',
-        imageQuery: 'Lake Zurich Uetliberg panorama Switzerland', imageAlt: 'Lake Zurich with the city and surrounding hills',
-        summary: 'Choose between the lake and Zurich’s local ridge according to visibility, then connect Bellevue, the lakeside parks and Uetliberg without pretending both need a full day.',
-        access: 'Bellevue and Bürkliplatz are the useful lake anchors; Uetliberg is reached by local rail rather than a mountain cable car. Check the ZVV journey before leaving because the ridge train and lake boats solve different problems and do not need to be combined automatically.',
-        tradeoff: 'The lake gives low-effort open space and boat options; Uetliberg gives a city-and-Alps overview when visibility cooperates. Combining both creates contrast but reduces time for swimming, a longer boat ride or a proper ridge walk.',
-        fallback: 'If cloud hides the ridge, keep the day at lake level and use the parks, Enge, Rieterpark or a short boat sector. If the lakefront is windier or wetter than expected, move back into the tram network and museums.',
+        imageQuery: 'Lake Zurich Uetliberg panorama Switzerland', imageAlt: 'Snowy Zurich and Lake Zurich viewed from Uetliberg under hazy skies', imageTitle: 'Winter view of Zurich and Lake Zurich from Uetliberg',
+        summary: 'Choose Zurich’s waterline or its local ridge by visibility and the live transport plan: a lake-side half day is low effort, while Uetliberg is a separate view-dependent outing.',
+        access: 'Bellevue and Bürkliplatz orient the central shore; Arboretum and Enge extend the lake-side walk south. ZSG publishes round-trip and one-way sailings by date. For Uetliberg, use ZVV’s journey search: until 12 December 2026, Zurich HB’s SZU platforms 21/22 are closed and S10 runs only to Selnau, so the usual direct-HB assumption is wrong.',
+        tradeoff: 'The lake day is flexible at shore level and can absorb a short boat trip if the departure and return fit. Uetliberg adds elevation and a wider view only when the ridge is clear; combining both compresses the boat or walking time and can create extra transfers during the published S10 works period.',
+        fallback: 'If the summit is in cloud or the Uetliberg reroute does not suit your date, stay low: walk the Bellevue–Bürkliplatz–Arboretum edge, then choose Enge’s Rieterpark or the nearby Museum Rietberg. If a boat is the weather-sensitive part, drop it rather than relying on an unverified return sailing.',
         duration: 'A lakefront half day takes three to four hours; Uetliberg adds roughly another half day once rail, walking and viewpoint time are included. Give the ridge priority only when the forecast supports it.',
         combine: 'This pairs naturally with a short old-town morning. Do not also add Zurich West unless you are comfortable turning the day into a sequence of transfers rather than a coherent city experience.',
-        verify: 'Check ZVV/SBB for the Uetliberg train, current lake-boat timetables and MeteoSwiss visibility. Swimming access and seasonal boat patterns change more than the central promenade itself.',
+        verify: 'Check the Uetliberg notice, ZVV’s exact journey for the date, MeteoSwiss visibility and the ZSG timetable before leaving. The official works notice runs through 12 December 2026; confirm whether the S10 or surface replacement connection serves your chosen start on the actual day.',
         choices: [
-          ['Lake day', 'Bellevue, Arboretum and a boat segment; best for warm weather and low-effort scenery.'],
-          ['Ridge day', 'Uetliberg rail plus viewpoint or short ridge walk; best only with good visibility.'],
-          ['Split day', 'Old town in the morning and one of lake or ridge later; the safest first-visit balance.']
+          ['Waterline', 'Bellevue → Bürkliplatz → Arboretum → Enge; best for a flexible shore walk and park pauses.'],
+          ['Boat as the main event', 'Choose a dated ZSG sailing only after matching the landing and return; useful for a seated lake view, not a guaranteed hop-on network.'],
+          ['Clear-ridge outing', 'Make Uetliberg the focus only when visibility is good and ZVV’s S10 works diversion fits your origin and return.']
         ],
         stages: [
-          ['Start at Bellevue', 'Read the lake width before committing to a boat or a long shore walk; the first open view tells you whether conditions justify the water plan.'],
-          ['Choose water or rail', 'Board a lake service only if the timetable matches the day; otherwise use the promenade and preserve time for Uetliberg.'],
-          ['Use Uetliberg as the weather reward', 'Take the local train when visibility is clearly worthwhile, then walk from the station rather than expecting the view at platform level.'],
-          ['Return by the simplest corridor', 'Descend before dinner and use S-Bahn or tram connections back to the hotel; there is no prize for duplicating the lakefront walk at the end.']
+          ['Read the forecast at Bellevue', 'If the ridge is hidden, commit to the waterline; if it is clear, decide whether the summit matters more than a longer shore walk.'],
+          ['Walk south to Bürkliplatz', 'Continue by the central lake edge toward the Arboretum. At Bürkliplatz, board only a ZSG service whose destination and return match your date.'],
+          ['Use Enge as the lower-level finish', 'If you skip the boat, keep walking toward Enge and Rieterpark; the Museum Rietberg is the named indoor substitute when rain defeats the shore.'],
+          ['Treat Uetliberg as a second route', 'For the ridge, check the date-specific S10 alternative first. During the 2026 HB works the line ends at Selnau; use the current ZVV surface connection or choose another day.']
         ],
         watch: [
-          ['Low cloud', 'A ridge ticket can buy very little when cloud sits on the city. Check visibility, not only rain probability.'],
-          ['Boat assumptions', 'Lake services vary by season and route. Confirm the actual departure rather than assuming a continuous hop-on boat network.'],
-          ['Summer crowding', 'Popular lakeside lawns fill quickly. Carry a second park or simply keep moving along the shore instead of anchoring the day to one patch of grass.']
+          ['Fog inversion', 'The city can be clear while Uetliberg is in cloud. Use the mountain webcam or current visibility report before routing to the ridge.'],
+          ['SZU works at HB', 'From 29 April through 12 December 2026, S10 starts/ends at Selnau rather than the closed Zurich HB platforms 21/22. Recheck the published end date and the exact replacement route.'],
+          ['Boat return mismatch', 'ZSG notes that a landing may have no departure at a chosen time. Confirm both the outbound and return legs before walking to the quay.']
+        ],
+        fieldContext: {
+          heading: 'Use the shore as the flexible layer and the ridge as a forecast bet.',
+          cards: [
+            { title: 'The lake is a route, not a single viewpoint', copy: 'Bellevue and Bürkliplatz mark the central end of Lake Zurich; continuing south adds the Arboretum and Enge without committing to a boat. Start with the shore, then let light, wind and energy decide whether the day stays on foot or moves onto the water.', sources: [1] },
+            { title: 'A boat schedule is part of the itinerary', copy: 'ZSG distinguishes one-way trips from round trips and warns that a landing may have no departure at a selected time. Choose the date and destination first, then protect the return by rail or bus if the sailing does not fit.', sources: [2] },
+            { title: 'Uetliberg is a visibility choice—and the line is diverted', copy: 'The city tourism notice says Zurich HB’s underground SZU tracks 21/22 are closed from 29 April to 12 December 2026; S10 runs only as far as Selnau. ZVV recommends trams and buses. Use its live planner for your actual start rather than reusing an old direct-HB route.', sources: [0, 1] }
+          ]
+        },
+        sources: [
+          ['https://www.zuerich.com/en/visit/nature/uetliberg-zurichs-very-own-mountain', 'Zürich Tourism: Uetliberg and temporary closure'],
+          ['https://www.zvv.ch/en/home.html', 'ZVV timetable and traffic information'],
+          ['https://www.zsg.ch/en/', 'ZSG current sailings and timetable'],
+          ['https://rietberg.ch/en/visit', 'Museum Rietberg visitor information']
+        ],
+        faq: [
+          ['Should I combine the lake and Uetliberg?', 'Only if you want two short contrasts rather than one complete outing. A boat departure and the current S10 diversion can add transfers; choose the shore or ridge as the day’s anchor.'],
+          ['Is the S10 running from Zurich HB in autumn 2026?', 'Not during the published closure: from 29 April to 12 December 2026, the SZU platforms 21/22 at HB are closed and S10 serves Selnau only. Follow the date-specific ZVV alternative and recheck after the stated end date.'],
+          ['What works when the summit is hidden?', 'Stay at lake level: use the Bellevue-to-Arboretum shore, continue toward Enge and Rieterpark, or choose Museum Rietberg. Check the ZSG sailing in both directions before making a boat part of the fallback.']
         ]
       }),
       g({
         slug: 'zurich-west-museums', name: 'Zurich West & Museum Quarter', instrument: 'tram-and-reuse grid', layout: 'industrial-grid',
-        imageQuery: 'Zurich West Prime Tower Viadukt Switzerland', imageAlt: 'Zurich West with converted industrial buildings and modern towers',
-        summary: 'Use Zurich West to see the city beyond the postcard core: converted rail arches, design and food spaces, contemporary neighborhoods and a museum choice that earns its own block.',
-        access: 'Use tram or S-Bahn toward Hardbrücke rather than walking from the old town simply because the map looks continuous. The Viadukt, Löwenbräu area and west-side venues are best treated as a separate urban circuit with one transport anchor.',
-        tradeoff: 'This route is stronger for architecture, design and lived-in city texture than for classic landmarks. It rewards repeat visitors or travelers with an extra afternoon; first-time visitors with only one day should keep the old town and lake ahead of it.',
-        fallback: 'Zurich West is one of the easiest poor-weather plans because trams, covered venues and short blocks keep exposure limited. If a chosen museum is closed, retain the district walk and substitute another indoor stop rather than crossing the whole city.',
+        imageQuery: 'Zurich West Prime Tower Viadukt Switzerland', imageAlt: 'Mobimo Tower and Zölly residential tower above Pfingstweidpark in Zurich West', imageTitle: 'Mobimo and Zölly towers above Pfingstweidpark',
+        summary: 'Follow Zurich West from Hardbrücke’s railway edge to the reused Viadukt arches, then choose one cultural anchor: Löwenbräu-Areal’s contemporary art or Museum für Gestaltung at Toni-Areal.',
+        access: 'Arrive at Zürich Hardbrücke by S-Bahn for the Viadukt and Löwenbräu side; IM VIADUKT also lists tram 4, 13 or 17 to Löwenbräu. Museum für Gestaltung’s Toni-Areal is a separate stop on tram 51, and the museum describes Hardbrücke as a 12-minute walk away. Save the exact destination before setting out.',
+        tradeoff: 'This route reads the city through rail infrastructure, adaptive reuse and contemporary design, not medieval landmarks. Choose either a Viadukt/Löwenbräu architecture circuit or a longer Toni-Areal museum visit; chaining both is possible, but costs the unhurried neighborhood time that makes the district distinctive.',
+        fallback: 'For wet weather, make the Museum für Gestaltung at Toni-Areal the first commitment and use IM VIADUKT’s Markthalle as the indoor food pause. If you prefer contemporary art at Löwenbräu-Areal, check its own opening calendar before crossing the district; do not assume every gallery is open.',
         duration: 'Give the district three to five hours depending on whether a museum or long meal is central. The useful unit is one cultural stop plus a neighborhood circuit, not every gallery and market hall.',
         combine: 'Pair with an evening in the old town or Langstrasse corridor if desired. Avoid combining it with Uetliberg because both work better when given an uninterrupted half day.',
-        verify: 'Check museum opening days and ZVV service around Hardbrücke. Temporary exhibitions, event spaces and restaurant tenants change faster than the district’s street structure.',
+        verify: 'Check the Museum für Gestaltung exhibition calendar and current opening hours, the Löwenbräu-Areal institutions’ own listings, IM VIADUKT’s tenant hours and ZVV for the exact tram stop. The Toni-Areal museum is closed Mondays under its published schedule; confirm before making it the anchor.',
         choices: [
-          ['Design and reuse', 'Viadukt arches, converted industrial fabric and public spaces; strongest for architecture-minded visitors.'],
-          ['Museum block', 'Choose one major collection and let the district walk support it instead of racing between institutions.'],
-          ['Food and evening', 'Arrive later, browse west-side streets and finish with dinner; useful when the old town already filled the morning.']
+          ['Rail and reuse', 'Hardbrücke → 1894 Viadukt arches → Markthalle; strongest for adaptive-reuse architecture and a food pause.'],
+          ['Contemporary art', 'Löwenbräu-Areal brings Kunsthalle Zürich, Migros Museum and galleries together; choose one current exhibition, not every name.'],
+          ['Design campus', 'Tram 51 to Toni-Areal and the Museum für Gestaltung’s Swiss Design Collection; best for a focused indoor visit.']
         ],
         stages: [
-          ['Arrive at Hardbrücke', 'Use the station or tram as a clean break from central Zurich and orient around the rail viaduct rather than continuing a long cross-city walk.'],
-          ['Walk the reuse corridor', 'Follow the Viadukt and nearby streets slowly enough to see how retail, food and public space occupy older infrastructure.'],
-          ['Choose one cultural anchor', 'Commit to a museum or design stop only if its current program interests you; a famous name is not a reason to consume the whole afternoon.'],
-          ['Leave by transit', 'Finish near a tram or S-Bahn stop and return directly to the center, avoiding a low-value walk beside major roads and rail approaches.']
+          ['Start at Hardbrücke', 'Use the station as the northern rail anchor, then enter the Viadukt district on foot; keep the line and road crossings in view as part of the urban story.'],
+          ['Read the arches', 'Follow IM VIADUKT toward the Markthalle. The operator dates the viaduct replacement to 1894 and describes the arches as former workspaces before their current mix of market, shops and culture.'],
+          ['Choose one anchor', 'Continue to Löwenbräu-Areal for contemporary art or take tram 51 to Toni-Areal for design. The museum notes that Toni-Areal is a former milk-processing plant converted for the arts university and museum.'],
+          ['Return from the chosen stop', 'Use the stop named by the venue—Hardbrücke/Löwenbräu for the arch circuit, Toni-Areal for the design campus—and check ZVV before leaving the museum or market.']
         ],
         watch: [
-          ['Expectation mismatch', 'This is contemporary urban Zurich, not a second old town. Visit for contrast, not because you expect another cathedral-and-lake district.'],
-          ['Event dependence', 'Temporary venues and exhibitions can change the character of a block. Verify the one event you truly care about.'],
-          ['Walking continuity', 'Maps understate barriers created by rail lines and major roads. Use the named station and viaduct as navigation anchors.']
+          ['Monday museum closure', 'The Museum für Gestaltung at Toni-Areal lists Monday as closed. Keep that day for Viadukt and the public-realm walk, or select another museum with a confirmed opening.'],
+          ['Changing galleries', 'Löwenbräu tenants and exhibitions have separate schedules. Check the specific institution that interests you rather than treating the whole complex as one ticketed museum.'],
+          ['Two different tram anchors', 'The Viadukt operator lists Löwenbräu for trams 4, 13 and 17; the Toni-Areal museum lists tram 51. They are not interchangeable stop names.']
+        ],
+        fieldContext: {
+          heading: 'Trace the change from railway barrier to cultural district.',
+          cards: [
+            { title: 'The viaduct grew out of a city problem', copy: 'IM VIADUKT’s history says railway embankments blocked expansion in the Industriequartier until viaducts replaced them in 1894. Businesses then occupied the arches; today the same structure holds a market hall, shops and cultural tenants. This is the guide’s main architectural argument—not a second old-town walk.', sources: [0] },
+            { title: 'Löwenbräu and Toni-Areal are different visits', copy: 'Löwenbräu-Areal is the contemporary-art stop identified by the Viadukt operator. Toni-Areal is a separate museum-and-university campus: the Museum für Gestaltung lists a permanent Swiss Design Collection there and describes the 1977 milk plant’s conversion for arts, research and culture. Choose by the collection or exhibition you actually want.', sources: [0, 1] },
+            { title: 'Use the venue’s own arrival stop', copy: 'For IM VIADUKT and Löwenbräu, the operator lists tram 4, 13 and 17 to Löwenbräu plus S-Bahn to Hardbrücke. For the museum, tram 51 stops at Toni-Areal; the museum says Hardbrücke is a 12-minute walk. Build the route around one of these anchors rather than assuming a continuous, barrier-free stroll.', sources: [0, 1, 2] }
+          ]
+        },
+        sources: [
+          ['https://im-viadukt.ch/en/infos', 'IM VIADUKT route, transport and district history'],
+          ['https://museum-gestaltung.ch/en/visit/toni-areal', 'Museum für Gestaltung: Toni-Areal access and exhibitions'],
+          ['https://www.zvv.ch/en/home.html', 'ZVV timetable and traffic information']
+        ],
+        faq: [
+          ['Which single stop should I choose in Zurich West?', 'Choose IM VIADUKT and its Markthalle for the rail-arch reuse story; choose Löwenbräu-Areal for a current contemporary-art exhibition; choose Toni-Areal for the Swiss Design Collection. These are different visit purposes, not interchangeable names for one museum.'],
+          ['How do I reach the design museum?', 'The Museum für Gestaltung lists tram 51 to Toni-Areal and says Hardbrücke is a 12-minute walk. It publishes Monday closure and live exhibition information; check both before building the afternoon around it.'],
+          ['Can I do this in the rain?', 'Yes, if you make one indoor anchor the purpose: Toni-Areal for design or the Viadukt Markthalle for food. Keep the outdoor architecture walk short and verify the selected institution’s own opening hours.']
         ]
       })
     ]

@@ -9,6 +9,9 @@ const failures = [];
 const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const routes = ['/switzerland/', ...switzerlandClusters.map((cluster) => `/switzerland/${cluster.slug}/`), ...switzerlandGuides.map((guide) => guide.url)];
+const zurich = switzerlandClusters.find((cluster) => cluster.slug === 'zurich-lake');
+const zurichRoutes = zurich ? ['/switzerland/', `/switzerland/${zurich.slug}/`, ...zurich.guides.map((guide) => guide.url)] : [];
+const zurichLastmod = '2026-10-08';
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -17,6 +20,12 @@ function nodes(html) {
   const out = [];
   const visit = (node) => { out.push(node); for (const child of node.childNodes || []) visit(child); };
   visit(parse(html));
+  return out;
+}
+function descendants(node) {
+  const out = [];
+  const visit = (item) => { out.push(item); for (const child of item?.childNodes || []) visit(child); };
+  if (node) visit(node);
   return out;
 }
 const attr = (node, name) => node?.attrs?.find((item) => item.name === name)?.value;
@@ -59,6 +68,18 @@ for (const cluster of switzerlandClusters) {
   check(cluster.stay.length >= 100 && cluster.transfer.length >= 120 && cluster.season.length >= 100 && cluster.fallback.length >= 90, `${cluster.slug}: thin hub operating model`);
   check(cluster.sources.length >= 3, `${cluster.slug}: insufficient official sources`);
 }
+check(Boolean(zurich), 'Zurich hub must exist');
+if (zurich) {
+  check(zurich.guides.length === 3, 'Zurich must retain exactly three child guides');
+  check(zurich.reviewDate === '8 October 2026' && zurich.isoDate === zurichLastmod, 'Zurich editorial review metadata must match the source review date');
+  check(zurich.faq?.length === 3 && new Set(zurich.faq.map(([question]) => question)).size === 3, 'Zurich hub must have three distinct, region-specific FAQs');
+  for (const guide of zurich.guides) {
+    check(Boolean(guide.fieldContext?.heading) && guide.fieldContext?.cards?.length === 3, `${guide.url}: three local context cards required instead of inherited hub prose`);
+    check(guide.sources?.length >= 3, `${guide.url}: needs its own route-specific official source list`);
+    check(guide.fieldContext?.cards?.every((card) => card.sources?.length), `${guide.url}: every local context card must cite a source`);
+    check(guide.imageTitle && guide.image.displayTitle === guide.imageTitle, `${guide.url}: image manifest display title must match source editorial data`);
+  }
+}
 for (const guide of switzerlandGuides) {
   check(guide.summary.length >= 120, `${guide.url}: thin summary`);
   check(guide.access.length >= 120 && guide.tradeoff.length >= 120 && guide.fallback.length >= 100, `${guide.url}: thin operating guidance`);
@@ -97,6 +118,13 @@ for (const route of routes) {
   }
   const hub = switzerlandClusters.find((cluster) => route === `/switzerland/${cluster.slug}/` || route.startsWith(`/switzerland/${cluster.slug}/`));
   const credited = route === '/switzerland/' ? switzerlandClusters.map((cluster) => cluster.guides[0]) : hub?.guides || [];
+  if (zurichRoutes.includes(route)) {
+    const visibleGuides = route === '/switzerland/' ? zurich.guides.slice(0, 1) : zurich.guides;
+    for (const guide of visibleGuides) {
+      check(guide.image.displayTitle && html.includes(escape(guide.image.displayTitle)), `${route}: human-readable Zurich image credit missing for ${guide.slug}`);
+      check(!html.includes(escape(guide.image.label)), `${route}: raw Zurich Commons filename is visible for ${guide.slug}`);
+    }
+  }
   for (const guide of credited) check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
   if (route === '/switzerland/') {
     check(dom.filter((node) => classHas(node, 'ch-country-card')).length === 16, `${route}: expected 16 hub cards`);
@@ -104,6 +132,29 @@ for (const route of routes) {
     check(dom.filter((node) => node.tagName === 'li' && node.parentNode && classHas(node.parentNode, 'ch-route')).length === 0 || html.includes('Four-stage operating line'), `${route}: route structure missing`);
     check(dom.filter((node) => classHas(node, 'ch-related')).length === 1, `${route}: related-guide section missing`);
     check(/data-ch-layout="[^"]+"/.test(html) && /data-ch-instrument="[^"]+"/.test(html) && /data-ch-variant="[1-8]"/.test(html), `${route}: child visual instrument markers missing`);
+    check(html.includes('/css/switzerland-field.css?v=20261008-1'), `${route}: current field stylesheet version missing`);
+    const guide = switzerlandGuides.find((item) => item.url === route);
+    if (guide?.fieldContext) {
+      const localContext = dom.find((node) => classHas(node, 'ch-local-context'));
+      const localText = text(localContext).replace(/\s+/g, ' ').trim();
+      const cards = descendants(localContext).filter((node) => node.tagName === 'article');
+      check(Boolean(localContext), `${route}: route-specific local context section missing`);
+      check(cards.length === 3 && cards.length === guide.fieldContext.cards.length, `${route}: local context must render three cards`);
+      for (const field of ['hubIntro', 'stay', 'transfer', 'season', 'fallback']) {
+        check(!localText.includes(zurich[field]), `${route}: local context repeats inherited Zurich ${field}`);
+      }
+      check(html.includes(escape(guide.image.alt)), `${route}: image alt does not match the visually reviewed asset description`);
+      check(guide.image.displayTitle && html.includes(escape(guide.image.displayTitle)), `${route}: human-readable image caption/credit missing`);
+      check(!html.includes(escape(guide.image.label)), `${route}: raw Commons filename is visible in the page copy`);
+      for (const [url, label] of guide.sources || []) {
+        check(html.includes(url) && html.includes(escape(label)), `${route}: route-specific official source missing (${label})`);
+      }
+      for (const [index, card] of guide.fieldContext.cards.entries()) {
+        const actualLinks = descendants(cards[index]).filter((node) => node.tagName === 'a').map((node) => attr(node, 'href'));
+        const expectedLinks = card.sources.map((sourceIndex) => guide.sources[sourceIndex]?.[0]);
+        check(expectedLinks.every((url) => url && actualLinks.includes(url)), `${route}: local context card ${index + 1} is missing its cited source link`);
+      }
+    }
   } else {
     check(dom.filter((node) => classHas(node, 'ch-hub-card')).length === 3, `${route}: expected three child cards`);
     check(/data-ch-family="[^"]+"/.test(html) && /data-ch-hub-variant="[1-6]"/.test(html), `${route}: hub family/variant markers missing`);
@@ -134,7 +185,11 @@ check(home.includes('<!-- SWITZERLAND_HOME_START -->') && home.includes('<!-- SW
 check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland absent from build allowlist');
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
-  for (const route of routes) check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>2026-09-12</lastmod>`), `${route}: sitemap missing or stale`);
+  for (const route of routes) {
+    const expectedLastmod = zurichRoutes.includes(route) ? zurichLastmod : '2026-09-12';
+    check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
+    for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
+  }
 }
 
 if (failures.length) {

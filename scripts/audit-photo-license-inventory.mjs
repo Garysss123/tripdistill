@@ -563,6 +563,14 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Limmat_panosphere_20220614.jpg', 'Zurich Old Town image review: Commons identifies Daniel Kraft, the Limmat/Old Town panorama and CC BY-SA 3.0. The WebP pixels show the river and opposite-bank Old Town from the Schipfe side, matching the revised alt. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.'],
+  ['https://commons.wikimedia.org/wiki/File:Snowy_panorama_of_Zurich_from_Uetliberg_2026.JPG', 'Zurich Uetliberg image review: Commons identifies Mike is Michi, a 29 March 2026 snowy view from Uetliberg, and CC BY-SA 4.0. The WebP pixels show the snow-covered city and lake under haze, matching the revised alt. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.'],
+  ['https://commons.wikimedia.org/wiki/File:Mobimo_Tower._Z%C3%B6lly_Wohnhochhaus._Z%C3%BCrich_West.jpg', 'Zurich West image review: Commons identifies Photones, the Mobimo Tower/Zölly residential tower view in Zurich West, and CC BY-SA 4.0. The WebP pixels show the named towers above Pfingstweidpark; the revised alt describes that visible subject rather than unshown industrial buildings. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
@@ -633,6 +641,9 @@ const visuallyReviewedAssetPaths = new Set([
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
   ['/assets/images/vietnam-hue-minh-mang-20261008.webp', '2026-10-08'],
+  ['/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp', '2026-10-08'],
+  ['/assets/images/switzerland-zurich-lake-lake-uetliberg.webp', '2026-10-08'],
+  ['/assets/images/switzerland-zurich-lake-zurich-west-museums.webp', '2026-10-08'],
   ['/assets/images/france-paris-louvre-salle-mollien-20261006.webp', '2026-10-06'],
   ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
   ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],

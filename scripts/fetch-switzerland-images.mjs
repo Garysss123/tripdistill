@@ -116,6 +116,7 @@ function entryFrom(candidate, job) {
   return {
     src: `/assets/images/switzerland-${job.cluster.slug}-${job.guide.slug}.webp`,
     alt: job.guide.imageAlt,
+    ...(job.guide.imageTitle ? { displayTitle: job.guide.imageTitle } : {}),
     source: info.descriptionurl || `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title).replaceAll('%3A', ':').replaceAll('%20', '_')}`,
     label: page.title.replace(/^File:/, '').replaceAll('_', ' '),
     creator,
@@ -173,6 +174,7 @@ try {
       usedTitles.add(entry.commonsTitle);
     } else {
       if (entry.alt !== job.guide.imageAlt) entry = manifest[job.key] = { ...entry, alt: job.guide.imageAlt };
+      if (job.guide.imageTitle && entry.displayTitle !== job.guide.imageTitle) entry = manifest[job.key] = { ...entry, displayTitle: job.guide.imageTitle };
       candidate = await validateEntry(entry, job);
       usedTitles.add(entry.commonsTitle);
     }

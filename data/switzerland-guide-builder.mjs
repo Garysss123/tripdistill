@@ -59,6 +59,15 @@ export function switzerlandGuide(definition) {
   if (!Array.isArray(definition.watch) || definition.watch.length !== 3) {
     throw new Error(`Switzerland guide ${definition.slug} must define three watch points.`);
   }
+  if (definition.sources && (!Array.isArray(definition.sources) || definition.sources.length < 2 || definition.sources.some(([url, label]) => !/^https:\/\//.test(url) || !label))) {
+    throw new Error(`Switzerland guide ${definition.slug} must define complete HTTPS local sources.`);
+  }
+  if (definition.fieldContext && (!definition.fieldContext.heading || !Array.isArray(definition.fieldContext.cards) || definition.fieldContext.cards.length < 2 || definition.fieldContext.cards.some((card) => !card.title || !card.copy || !Array.isArray(card.sources) || !card.sources.length || card.sources.some((index) => !definition.sources?.[index])))) {
+    throw new Error(`Switzerland guide ${definition.slug} must define sourced local field context.`);
+  }
+  if (definition.faq && (!Array.isArray(definition.faq) || definition.faq.length !== 3 || definition.faq.some(([question, answer]) => !question || !answer))) {
+    throw new Error(`Switzerland guide ${definition.slug} must define three complete FAQs.`);
+  }
   return definition;
 }
 
@@ -87,7 +96,7 @@ export function defineSwitzerlandCluster(cluster) {
       family: cluster.family,
       url: `/switzerland/${cluster.slug}/${guide.slug}/`,
       route: guide.stages.map((stage, stageIndex) => [routeLabels[stageIndex], stage[0], stage[1]]),
-      faq: [
+      faq: guide.faq || [
         [`How much time should I give ${guide.name}?`, guide.duration],
         [`What should I combine with ${guide.name}?`, guide.combine],
         ['What should I verify before leaving?', guide.verify]
