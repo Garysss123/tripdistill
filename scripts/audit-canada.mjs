@@ -130,7 +130,15 @@ check(read('scripts/build-dist.mjs').includes("'canada'"), 'Canada absent from b
 
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
-  for (const route of routes) check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>2026-09-12</lastmod>`), `${route}: sitemap missing or stale`);
+  const layoutUpdatedRoutes = new Set([
+    '/canada/victoria-south-island/',
+    '/canada/victoria-south-island/butchart-saanich/',
+    '/canada/victoria-south-island/sooke-juan-de-fuca/'
+  ]);
+  for (const route of routes) {
+    const lastmod = layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
 }
 
 if (failures.length) {

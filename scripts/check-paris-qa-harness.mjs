@@ -488,7 +488,9 @@ for (const locale of expectedLocales) {
       const expectedPage = isHub ? 'ch-zurich-lake' : 'ch-zurich-lake-' + routePath.split('/').filter(Boolean).at(-1);
       if (attr(body, 'data-country') !== 'switzerland' || attr(body, 'data-region') !== 'zurich-lake' || attr(body, 'data-page') !== expectedPage) fail(`Wrong Zurich page identity on ${locale.code} ${routePath}.`);
       if (!styleHrefs.includes('/css/switzerland.css?v=20260912-1')) fail(`Missing Switzerland stylesheet on ${locale.code} ${routePath}.`);
-      if (!isHub && !styleHrefs.includes('/css/switzerland-field.css?v=20261008-1')) fail(`Missing Zurich field-guide stylesheet on ${locale.code} ${routePath}.`);
+      const isZurichWest = routePath === '/switzerland/zurich-lake/zurich-west-museums/';
+      const expectedFieldCssVersion = '20261008-2';
+      if (!isHub && !styleHrefs.includes(`/css/switzerland-field.css?v=${expectedFieldCssVersion}`)) fail(`Missing Zurich field-guide stylesheet on ${locale.code} ${routePath}.`);
       if (nodes(document, 'details').length < 3) fail(`Missing visible Zurich FAQ controls on ${locale.code} ${routePath}.`);
       if (!links.some((href) => href.includes('commons.wikimedia.org')) || !links.some((href) => href.includes('creativecommons.org/licenses/'))) fail(`Missing linked Zurich photo source or license on ${locale.code} ${routePath}.`);
       if (!/CC BY(?:-SA)? [234]\.0/.test(bodyText)) fail(`Missing visible Zurich image-license version on ${locale.code} ${routePath}.`);
@@ -503,6 +505,16 @@ for (const locale of expectedLocales) {
         for (const staleLabel of ['田野工具', '保護返程', '利馬特河跨越帳冊']) {
           if (bodyText.includes(staleLabel)) fail(`Zurich Traditional Chinese still contains the unclear label [${staleLabel}] on ${routePath}.`);
         }
+      if (isZurichWest) {
+        const mobileMedia = fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8').lastIndexOf('@media (max-width:980px)');
+        const watchSelector = 'body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch > div';
+        const watchGridRule = cssRuleBlock(fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8'), `${watchSelector} {`, mobileMedia);
+        const watchCardRule = cssRuleBlock(fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8'), 'body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch article {', mobileMedia);
+        const watchTextRule = cssRuleBlock(fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8'), 'body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch h3,', mobileMedia);
+        if (mobileMedia < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(watchGridRule) || !/min-width\s*:\s*0\s*;/i.test(watchGridRule)) fail(`Zurich West variant 3 watch grid must override its two-column desktop rule with a shrinkable single mobile column on ${locale.code}.`);
+        if (!/min-width\s*:\s*0\s*;/i.test(watchCardRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(watchTextRule)) fail(`Zurich West watch cards and translated text must shrink and wrap on ${locale.code}.`);
+        if ([watchGridRule, watchCardRule, watchTextRule].some((rule) => /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule))) fail(`Zurich West watch grid must not hide horizontal overflow on ${locale.code}.`);
+      }
         const expectedLocaleLabel = {
           '/switzerland/zurich-lake/lake-uetliberg/': '瑞士北部・路線指南 02',
           '/switzerland/zurich-lake/old-town-lindenhof/': '利馬特河兩岸步行路線',
@@ -918,10 +930,15 @@ for (const locale of expectedLocales) {
       const isSookeRoute = routePath.endsWith('/sooke-juan-de-fuca/');
       const victoriaCss = fs.readFileSync(safeDistPath('/css/canada-victoria.css'), 'utf8');
       if (!styles.includes('/css/canada.css') || !styles.includes('/css/canada-victoria.css')) fail(`Missing Victoria route stylesheets on ${locale.code} ${routePath}.`);
-      if (!styleHrefs.includes('/css/canada-victoria.css?v=20261008-1')) fail(`Missing current Victoria responsive stylesheet on ${locale.code} ${routePath}.`);
+      const isButchartRoute = routePath.endsWith('/butchart-saanich/');
+      const isVictoriaNarrowTarget = isVictoriaHub || isButchartRoute || isSookeRoute;
+      const expectedVictoriaCssVersion = '20261008-2';
+      if (!styleHrefs.includes(`/css/canada-victoria.css?v=${expectedVictoriaCssVersion}`)) fail(`Missing current Victoria responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isVictoriaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!attr(nodes(document, 'body')[0], 'data-region').includes('victoria-south-island')) fail(`Missing Victoria region marker on ${locale.code} ${routePath}.`);
       if (nodes(document, 'details').length < 3) fail(`Missing Victoria route FAQs on ${locale.code} ${routePath}.`);
+      const expectedPage = isVictoriaHub ? 'ca-victoria-south-island' : `ca-victoria-south-island-${routePath.split('/').filter(Boolean).at(-1)}`;
+      if (attr(nodes(document, 'body')[0], 'data-page') !== expectedPage) fail(`Wrong Victoria page identity on ${locale.code} ${routePath}.`);
       const bodyText = text(nodes(document, 'body')[0]);
       if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Victoria photo license on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Victoria photo source on ${locale.code} ${routePath}.`);
@@ -945,6 +962,19 @@ for (const locale of expectedLocales) {
         for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Victoria editorial QA is missing '${phrase}' on ${routePath}.`);
       }
       if (!victoriaCss.includes('body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field-hero--text-visual') || !victoriaCss.includes('@media (max-width: 1040px)') || !victoriaCss.includes('@media (max-width: 720px)') || !/min-width:\s*0/.test(victoriaCss) || /overflow(?:-x)?:\s*(?:hidden|clip)/i.test(victoriaCss)) fail(`Victoria responsive map guard or visible overflow protection is missing on ${locale.code} ${routePath}.`);
+      if (isVictoriaNarrowTarget) {
+        const targetSelector = `body[data-page="${expectedPage}"]`;
+        const contentClass = isVictoriaHub ? '.ca-hub' : '.ca-field';
+        const narrowRuleStart = victoriaCss.indexOf('/* These three Victoria pages must shrink');
+        const bodyWidthRule = cssRuleBlock(victoriaCss, `${targetSelector},`, narrowRuleStart);
+        const contentWidthRule = cssRuleBlock(victoriaCss, `${targetSelector} .site-shell,`, narrowRuleStart);
+        const textWrapRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass},`, narrowRuleStart);
+        const descendantsRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass} *,`, narrowRuleStart);
+        if (narrowRuleStart < 0 || !bodyWidthRule.includes(targetSelector) || !/min-width\s*:\s*0\s*;/i.test(bodyWidthRule)) fail(`Victoria target body must release the 320px floor on ${locale.code} ${routePath}.`);
+        if (!contentWidthRule.includes(`${targetSelector} .page-content`) || !/min-width\s*:\s*0\s*;/i.test(contentWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(contentWidthRule)) fail(`Victoria target shell and content must shrink to the available width on ${locale.code} ${routePath}.`);
+        if (!textWrapRule.includes('overflow-wrap: anywhere') || !descendantsRule.includes('min-width: 0')) fail(`Victoria target content must wrap and release descendant minimum widths on ${locale.code} ${routePath}.`);
+        if ([bodyWidthRule, contentWidthRule, textWrapRule, descendantsRule].some((rule) => /overflow(?:-x)?:\s*(?:hidden|clip)\b/i.test(rule))) fail(`Victoria target rules must not conceal horizontal overflow on ${locale.code} ${routePath}.`);
+      }
       continue;
     }
     if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/') || routePath.startsWith('/canada/toronto/') || routePath.startsWith('/canada/vancouver-north-shore/')) {

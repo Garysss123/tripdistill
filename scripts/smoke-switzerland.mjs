@@ -55,7 +55,7 @@ for (const { language, prefix, route, localized } of pageRoutes) {
   if (!/<h1[ >]/i.test(html)) failures.push(`${localized}: missing H1`);
   if (!new RegExp(`<html[^>]+lang=["']${language}["']`, 'i').test(html)) failures.push(`${localized}: expected document language ${language}`);
   if (!html.includes('/css/switzerland.css?v=20260912-1')) failures.push(`${localized}: Switzerland stylesheet missing`);
-  if (childRoutes.has(route) && !html.includes('/css/switzerland-field.css?v=20261008-1')) failures.push(`${localized}: current Switzerland field stylesheet missing`);
+  if (childRoutes.has(route) && !html.includes('/css/switzerland-field.css?v=20261008-2')) failures.push(`${localized}: current Switzerland field stylesheet missing`);
   if (!html.includes('data-ad-slot')) failures.push(`${localized}: ad placeholder missing`);
   if (!html.includes('https://commons.wikimedia.org/')) failures.push(`${localized}: image provenance missing`);
   if (!html.includes(`rel="canonical" href="https://tripdistill.com${localized}"`)) failures.push(`${localized}: canonical mismatch`);
@@ -96,7 +96,7 @@ for (const { prefix, route, localized } of pageRoutes) {
 }
 
 await request('/css/switzerland.css?v=20260912-1', 'Switzerland stylesheet');
-await request('/css/switzerland-field.css?v=20261008-1', 'Switzerland field stylesheet');
+await request('/css/switzerland-field.css?v=20261008-2', 'Switzerland field stylesheet');
 
 if (failures.length) {
   console.error(failures.join('\n'));

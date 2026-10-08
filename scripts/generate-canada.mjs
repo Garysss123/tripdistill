@@ -22,7 +22,7 @@ const regionCss = (cluster, guide = null) => {
   }
   if (cluster.slug === 'toronto') return '<link rel="stylesheet" href="/css/canada-toronto.css?v=20261007-2">';
   if (cluster.slug === 'quebec-city-charlevoix') return '<link rel="stylesheet" href="/css/canada-quebec-city.css?v=20261007-2">';
-  if (cluster.slug === 'victoria-south-island') return '<link rel="stylesheet" href="/css/canada-victoria.css?v=20261008-1">';
+  if (cluster.slug === 'victoria-south-island') return '<link rel="stylesheet" href="/css/canada-victoria.css?v=20261008-2">';
   return '';
 };
 

@@ -7,7 +7,7 @@ const reviewDate = '12 September 2026';
 const isoDate = '2026-09-12';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/switzerland.css?v=20260912-1';
-const fieldCss = '/css/switzerland-field.css?v=20261008-1';
+const fieldCss = '/css/switzerland-field.css?v=20261008-2';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];

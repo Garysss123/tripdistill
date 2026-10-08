@@ -5,6 +5,39 @@ body[data-region="victoria-south-island"] .ca-field {
   --ca-family-soft: #e7f0ed;
 }
 
+/* These three Victoria pages must shrink below the shared 320px body floor
+   when a classic scrollbar leaves a narrower mobile layout viewport. */
+body[data-page="ca-victoria-south-island"],
+body[data-page="ca-victoria-south-island-butchart-saanich"],
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] {
+  min-width: 0;
+}
+
+body[data-page="ca-victoria-south-island"] .site-shell,
+body[data-page="ca-victoria-south-island-butchart-saanich"] .site-shell,
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .site-shell,
+body[data-page="ca-victoria-south-island"] .page-content,
+body[data-page="ca-victoria-south-island-butchart-saanich"] .page-content,
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .page-content,
+body[data-page="ca-victoria-south-island"] .ca-hub,
+body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-field,
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field {
+  min-width: 0;
+  max-width: 100%;
+}
+
+body[data-page="ca-victoria-south-island"] .ca-hub,
+body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-field,
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field {
+  overflow-wrap: anywhere;
+}
+
+body[data-page="ca-victoria-south-island"] .ca-hub *,
+body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-field *,
+body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field * {
+  min-width: 0;
+}
+
 body[data-region="victoria-south-island"] .ca-hub-hero {
   border-bottom: .55rem solid #d1a66b;
   background: linear-gradient(125deg, #193e48 0 58%, #28585e 100%);

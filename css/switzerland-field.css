@@ -120,6 +120,10 @@
   .ch-field[data-ch-variant="5"] .ch-field-copy { color:var(--ch-ink); background:#fff; }
   .ch-ticket { left:auto; right:1rem; bottom:1rem; transform:none; width:min(350px,75%); }
   .ch-choice-deck,.ch-orientation,.ch-watch > div { grid-template-columns:1fr; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch > div { grid-template-columns:minmax(0,1fr); min-width:0; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch article { min-width:0; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch h3,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch p { min-width:0; overflow-wrap:anywhere; }
   .ch-regional-context > header { grid-template-columns:1fr; }
   .ch-regional-context > div { grid-template-columns:repeat(2,1fr); }
   body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation {
