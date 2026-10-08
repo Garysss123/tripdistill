@@ -48,7 +48,7 @@ export function defineCanadaCluster(cluster) {
       decisions: [
         ['Arrival and base', guide.access],
         ['What this day gives you', guide.tradeoff],
-        ['Weather or closure fallback', guide.fallback]
+        ['Weather or closure fallback', guide.decisionFallback || guide.fallback]
       ],
       route: guide.stages.map((stage, stageIndex) => [
         (guide.routeStageLabels || (cluster.slug === 'montreal' ? ['Arrive', 'Walk', 'Explore', 'Finish'] : defaultStageLabels))[stageIndex],

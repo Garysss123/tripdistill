@@ -149,8 +149,8 @@ export const canadaWestClusters = [
   }),
   defineCanadaCluster({
     slug: 'victoria-south-island', name: 'Victoria & South Vancouver Island', region: 'British Columbia', band: 'pacific', family: 'island-ledger',
-    label: 'Harbour capital · garden rooms · Pacific edge', tagline: 'Three different days, with the island transfer on its own clock.',
-    reviewDate: '7 October 2026', isoDate: '2026-10-07',
+    label: 'Victoria city walk · Butchart garden · west-coast day', tagline: 'Keep the city walk, garden visit and west-coast drive on separate days.',
+    reviewDate: '8 October 2026', isoDate: '2026-10-08',
     hubIntro: 'Victoria’s walkable civic core, the Butchart Gardens in Brentwood Bay, and the Sooke–Juan de Fuca coast are separate outings. A mainland ferry lands at Swartz Bay, north of downtown; the west-coast road runs the other way. Choose a city day first, then add one branch at a time.',
     stay: 'Three nights gives you a harbour day and one outlying branch. Four nights makes room for both Butchart and a west-coast day without turning the ferry arrival or departure into sightseeing time.',
     transfer: 'For the Tsawwassen–Swartz Bay ferry, BC Transit routes 70/70X connect the terminal with downtown. Butchart is 22 km from downtown; its visitor page lists route 75 at about 50–60 minutes and warns that not every afternoon trip enters the garden. Sooke Potholes is about a 45-minute drive from Victoria; bus 61 leaves a several-kilometre walk from the park.',
@@ -186,12 +186,17 @@ export const canadaWestClusters = [
     guides: [
       g({
         slug: 'inner-harbour-james-bay', name: 'Inner Harbour, James Bay & Beacon Hill',
-        instrument: 'harbour-to-park walking line', layout: 'harbour-ledger',
+        instrument: 'Parliament, James Bay and Beacon Hill', layout: 'harbour-ledger',
+        cardLabel: 'Harbour walk', displayInstrument: 'Parliament, James Bay and Beacon Hill',
+        heroIntro: 'Start at Parliament and the Inner Harbour, then walk through James Bay to Beacon Hill and the Dallas Road shore. Keep the Royal BC Museum as one deliberate indoor stop.',
+        orientationHeading: 'Plan around the museum and walking route', routeHeading: 'Walk from Parliament to Beacon Hill',
+        fallbackHeading: 'Use the museum as your wet-weather stop', routeStageLabels: ['Arrive', 'Walk', 'Explore', 'Return'],
         imageQuery: 'Victoria British Columbia Inner Harbour Parliament', imageAlt: 'Victoria Inner Harbour, Parliament Buildings and boats at dusk',
         summary: 'Join the Inner Harbour promenade and Parliament precinct to James Bay and Beacon Hill Park on foot. The civic waterfront, residential streets and open parkland are distinct parts of the city; keep the museum as one deliberate indoor stop.',
         access: 'A downtown base makes this a walking day. The mainland BC Ferries route reaches Swartz Bay, not the Inner Harbour; routes 70/70X connect the terminal and downtown. Coho, Clipper and seaplane arrivals use different downtown terminals, so check your actual arrival point.',
-        tradeoff: 'This route reads Victoria through the legislature and working harbour before turning into James Bay’s quieter residential blocks and the park’s open lawns and shoreline. It is not the Butchart or wild-coast day; those require separate northbound or westbound transport.',
+        tradeoff: 'This walk connects Victoria’s working harbour and Legislature with James Bay, Beacon Hill and the Dallas Road shore. It stays in the city; Butchart and the wild coast require separate trips.',
         fallback: 'In steady rain, keep the Parliament visit and Royal BC Museum as the longer indoor blocks, then walk only the clearest stretch of Beacon Hill or the harbour. The museum recommends allowing 2–4 hours for its galleries and exhibitions; confirm current hours and exhibits.',
+        decisionFallback: 'For a wet day, make Parliament or the museum your main stop; keep the park walk optional.',
         duration: 'Allow a full day for the Legislature, a relaxed James Bay–Beacon Hill walk, meals and one museum. The Assembly lists free guided and self-guided visits on weekdays, 8:30–4:30, with a 10–15 minute security buffer; it closes weekends and holidays. The museum recommends 2–4 hours.',
         combine: 'Start at Parliament and the Inner Harbour, continue through James Bay to Beacon Hill, then return along the waterfront. Add Chinatown and Fan Tan Alley at the beginning or end if you want another compact district; do not add Butchart to this walking day.',
         verify: 'Check the Legislature’s visitor notice and tour schedule, including holiday closures and security screening, then check Royal BC Museum hours and current exhibitions. BC Transit route 2 serves James Bay if you prefer to shorten the walk.',
@@ -203,8 +208,8 @@ export const canadaWestClusters = [
         ],
         watch: [
           ['Weekday-only building access', 'The Assembly lists public hours Monday to Friday and closes on weekends and holidays. Arrive early enough for screening and verify the current tour notice.'],
-          ['A museum is a real time block', 'The Royal BC Museum recommends 2–4 hours for its galleries and exhibitions. Pick it as the indoor anchor instead of treating it as a quick pass-through.'],
-          ['Ferry terminal mismatch', 'Swartz Bay is north of town. A downtown harbour arrival is a different terminal; check the operator and last-mile transfer before fixing a dinner or tour time.']
+          ['Allow time for the museum', 'The Royal BC Museum recommends 2–4 hours for its galleries and exhibitions. Pick it as the indoor anchor instead of treating it as a quick pass-through.'],
+          ['BC Ferries lands north of town', 'Swartz Bay is north of town. A downtown harbour arrival is a different terminal; check the operator and last-mile transfer before fixing a dinner or tour time.']
         ],
         faq: [
           ['What is the difference between the Inner Harbour and James Bay?', 'The Inner Harbour is Victoria’s civic and marine edge around the Legislature and visitor terminals. South of it, James Bay is a residential neighborhood that leads into Beacon Hill Park and the Dallas Road shoreline.'],
@@ -214,25 +219,30 @@ export const canadaWestClusters = [
       }),
       g({
         slug: 'butchart-saanich', name: 'Butchart Gardens & Saanich Peninsula',
-        instrument: 'former-quarry garden sequence', layout: 'season-wheel',
+        instrument: 'Quarry history and garden rooms', layout: 'season-wheel',
+        cardLabel: 'Garden day', displayInstrument: 'Sunken Garden, Japanese Garden, Italian Garden and Rose Garden',
+        heroIntro: 'The Sunken Garden follows the shape of the former quarry; compare it with the later Japanese, Italian and Rose gardens without racing every path.',
+        orientationHeading: 'Plan around opening hours and the return', routeHeading: 'From the old quarry through the garden rooms',
+        fallbackHeading: 'Shorten the garden visit in heavy rain', routeStageLabels: ['Travel', 'Explore', 'Compare', 'Return'],
         imageQuery: 'Butchart Gardens Victoria British Columbia', imageAlt: 'Formal garden beds and mature trees at Butchart Gardens',
         summary: 'Follow the transformation of a limestone quarry into a 55-acre garden: the Sunken Garden occupies the former quarry, while the Japanese, Italian and Rose gardens show how the estate expanded. The gardens are in Brentwood Bay, outside Victoria.',
         access: 'The Butchart Gardens visitor page places the site 22 km from downtown. It lists downtown route 75 at about 50–60 minutes, but says not every afternoon trip enters the gardens. By car it estimates 35–45 minutes depending on traffic. Check the current trip, destination sign and return schedule before leaving.',
-        tradeoff: 'This is a dedicated horticulture day, not a quick stop between downtown museums and Sooke. The sequence of garden rooms makes the old quarry legible; seasonal blooms, daylight, events and operating hours change the experience.',
+        tradeoff: 'Give the estate a day of its own. The Sunken Garden follows the old quarry, while the later rooms show how the gardens expanded; blooms, daylight, events and hours vary by date.',
         fallback: 'Light rain still leaves the garden paths and planting beds as the main event if you are comfortable outdoors. In heavy rain, use the posted calendar and map to make a shorter focused visit, or keep the day in Victoria rather than adding a second peninsula transfer.',
+        decisionFallback: 'If heavy rain is forecast, shorten the garden visit or keep it as a separate optional day.',
         duration: 'Give the garden most of a day once the return journey, a meal and time across several garden rooms are included. The official visitor page estimates 50–60 minutes from downtown by route 75; use the operator’s current calendar for opening and evening hours.',
         combine: 'If you have a car and are already on the north side of the peninsula, add Sidney waterfront after the garden only when its daylight and return connection work. Do not combine this with Sooke or a same-day mainland ferry without a large schedule margin.',
         verify: 'Before choosing the departure, check Butchart’s current hours, event calendar and garden map, then run the exact BC Transit route 75 trip or confirm the driving and parking plan. The garden notes that some afternoon route 75 trips do not enter the grounds.',
         stages: [
           ['Travel north to Brentwood Bay', 'From downtown, check the route 75 trip’s destination before boarding: the garden lists a 50–60 minute ride and notes that not every afternoon trip enters. The 22 km site is a suburban excursion, not an Inner Harbour walk.'],
           ['Start in the Sunken Garden', 'The former cement quarry became Jennie Butchart’s first major garden project. From the overlooks and paths, notice how the planted walls and changing levels keep the industrial excavation visible beneath the display.'],
-          ['Read the later garden rooms', 'Use the map to compare the Japanese Garden by the water, the Italian Garden on the former tennis court, and the Rose Garden. They were added during the site’s expansion from 1906 to 1929; choose the rooms that interest you rather than racing every path.'],
-          ['Return without a second transfer trap', 'Leave time for the return route and check the last useful bus before adding Sidney. Seasonal evening lighting and events can extend a visit, but they depend on the date shown in the official calendar.']
+          ['Explore the later garden rooms', 'Use the map to compare the Japanese Garden by the water, the Italian Garden on the former tennis court, and the Rose Garden. They were added during the site’s expansion from 1906 to 1929; choose the rooms that interest you rather than racing every path.'],
+          ['Check the return bus before adding Sidney', 'Leave time for the return route and check the last useful bus before adding Sidney. Seasonal evening lighting and events can extend a visit, but they depend on the date shown in the official calendar.']
         ],
         watch: [
           ['Route 75 destination', 'The garden’s visitor page says some afternoon commute trips do not enter the grounds. Check the trip details and destination sign, not just the route number.'],
           ['Season changes the garden', 'Bloom displays, evening lighting and holiday events follow different calendars. Use the current hours and events page rather than assuming a summer program.'],
-          ['Peninsula scale', 'Butchart is north of downtown; Sooke lies west. A garden visit plus a west-coast excursion turns two separate transfer days into one rushed loop.']
+          ['Keep Butchart and Sooke on separate days', 'Butchart is north of downtown; Sooke lies west. A garden visit plus a west-coast excursion turns two separate transfer days into one rushed loop.']
         ],
         faq: [
           ['What is unusual about the Sunken Garden?', 'It occupies the former limestone quarry used for the Butcharts’ cement works. Jennie Butchart began transforming the depleted quarry in 1912; the Japanese, Italian and Rose gardens followed as the estate expanded.'],
@@ -242,7 +252,11 @@ export const canadaWestClusters = [
       }),
       g({
         slug: 'sooke-juan-de-fuca', name: 'Sooke & Juan de Fuca Coast',
-        instrument: 'river, forest and tide choices', layout: 'tide-clock',
+        instrument: 'River, forest and tide options', layout: 'tide-clock',
+        cardLabel: 'Coast day', displayInstrument: 'Sooke Potholes, China Beach and Botanical Beach',
+        heroIntro: 'Choose one westbound destination: glacial river pools at Sooke, a forest path to China Beach, or tide pools at Botanical Beach near Port Renfrew.',
+        orientationHeading: 'Plan around the road, tide and return', routeHeading: 'Pick one stop along the west coast',
+        fallbackHeading: 'Choose an open trail if tides or closures change the plan', routeStageLabels: ['Choose', 'Walk', 'Check', 'Return'],
         mapTreatment: {
           heading: 'Three westbound choices',
           note: 'Schematic route choices, not to scale. Access differs by stop.',
@@ -252,10 +266,11 @@ export const canadaWestClusters = [
             ['Farther west near Port Renfrew', 'Botanical Beach', 'Check for a tide at or below 1.2 m; consult the Port Renfrew tide table.']
           ]
         },
-        summary: 'Choose one westbound anchor: Sooke Potholes’ glacially carved river pools, the forest path to China Beach, or Botanical Beach’s tide pools near Port Renfrew. These are different stops along a slower road, not one compact park entrance.',
+        summary: 'Choose one main stop along the slower westbound road: Sooke Potholes, China Beach, or Botanical Beach near Port Renfrew. Each has a different access and walking plan.',
         access: 'A car is the practical way to link the coast stops. The CRD estimates about 45 minutes by car from Victoria to Sooke Potholes; its route 61 option leaves you several kilometres to walk from Sooke River Road. China Beach is 35 km west of Sooke on Highway 14; Botanical Beach is farther west near Port Renfrew.',
-        tradeoff: 'The route trades Victoria’s dense indoor choices for a river valley, mature coastal forest and exposed Strait shoreline. Decide between the inland Potholes, China Beach and the farther Botanical Beach; one clear anchor makes the road and tide schedule legible.',
+        tradeoff: 'The west-coast trip trades museum time for river pools, forest and open shoreline. Choose one main stop because the road is slow and Botanical Beach depends on the tide.',
         fallback: 'If storm damage closes a trail or the Botanical tide window misses your visit, choose the CRD’s Sooke Potholes paths or China Beach’s short day-use trail if their current access is open. Do not substitute the full Juan de Fuca Marine Trail: BC Parks describes it as a remote 47 km wilderness route.',
+        decisionFallback: 'If a closure or tide rules out your first choice, switch to an open short trail and check access again.',
         duration: 'Allow a full day for one coast objective from Victoria, including the drive and walk. For multiple west-coast stops or a longer trail section, sleep in Sooke or Port Renfrew; the 47 km Marine Trail is a multi-day undertaking with separate trailhead logistics.',
         combine: 'Pair the Potholes with another Sooke-area stop, or use China Beach as the day’s west-coast walk. Treat Botanical Beach as the Port Renfrew branch and schedule it around a tide of 1.2 m or lower. Butchart is on the opposite side of the city and belongs on another day.',
         verify: 'Check BC Parks advisories for storm-damaged sections and closures, then match Botanical Beach to the Fisheries and Oceans Port Renfrew tide table. Confirm Highway 14 access and the exact trailhead before departing Victoria.',
@@ -268,7 +283,7 @@ export const canadaWestClusters = [
         watch: [
           ['A bus stop is not the park entrance', 'The CRD says route 61 reaches Sooke River Road, followed by a several-kilometre walk to Sooke Potholes. Plan a car, bike, or a specific local connection rather than assuming the bus drops you at the pools.'],
           ['Tides and trail closures', 'Botanical Beach needs a low tide for tide-pool viewing, and BC Parks posts storm-damage closures. Check both before committing to the farthest westbound branch.'],
-          ['A wilderness trail has different logistics', 'The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.']
+          ['Treat the Marine Trail as a separate hike', 'The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.']
         ],
         faq: [
           ['Can I see the Juan de Fuca tide pools at any time?', 'No. BC Parks says Botanical Beach is best at a tide of 1.2 m or lower. Check the Port Renfrew tide table, and do not touch or remove tide-pool life.'],

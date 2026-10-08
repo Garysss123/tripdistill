@@ -1166,6 +1166,13 @@ for (const locale of expectedLocales) {
       const bodyText = text(nodes(document, 'body')[0]);
       if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Victoria photo license on ${locale.code} ${routePath}.`);
       if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Victoria photo source on ${locale.code} ${routePath}.`);
+      if (isVictoriaHub && classNodes(document, 'ca-route-compare').length) fail(`Victoria hub must not repeat the same route choices in a second comparison block on ${locale.code}.`);
+      if (!isVictoriaHub && classNodes(document, 'ca-related-card').some((card) => nodes(card, 'p').length)) fail(`Victoria related cards must not repeat each guide's summary on ${locale.code} ${routePath}.`);
+      if (!isVictoriaHub) {
+        const decisionCopy = new Set(classNodes(document, 'ca-decision-grid').flatMap((card) => nodes(card, 'p')).map((node) => text(node).trim()).filter(Boolean));
+        const orientationCopy = classNodes(document, 'ca-orientation').flatMap((section) => nodes(section, 'p')).map((node) => text(node).trim()).filter(Boolean);
+        if (orientationCopy.some((copy) => decisionCopy.has(copy))) fail(`Victoria orientation must add route-specific detail instead of repeating a decision card on ${locale.code} ${routePath}.`);
+      }
       if (!isVictoriaHub && classNodes(document, 'ca-route-step').length !== 4) fail(`Victoria child must expose four route stages on ${locale.code} ${routePath}.`);
       if (isSookeRoute) {
         const choices = classNodes(document, 'ca-victoria-route-choices');
@@ -1176,6 +1183,8 @@ for (const locale of expectedLocales) {
         if (nodes(document, 'meta').some((node) => attr(node, 'property') === 'og:image') || graph.some((item) => item['@type'] === 'Article' && item.image)) fail(`Text-only Sooke route must not advertise a removed photo as its social or structured image on ${locale.code}.`);
       }
       if (locale.code === 'en') {
+        const obsoleteVictoriaCopy = ['survey 01', 'same survey sheet', 'three different reasons to leave the hotel', 'pick the operating system, not every pin', 'make the operating decision before adding distance', 'fallback logic', 'failure points', 'read the later garden rooms', 'return without a second transfer trap'];
+        if (obsoleteVictoriaCopy.some((phrase) => bodyText.toLowerCase().includes(phrase))) fail(`Victoria page retains an internal or repetitive label on ${routePath}.`);
         const requirements = isVictoriaHub
           ? ['70/70X', '22 km', 'route 75', '50–60 minutes', '45-minute drive']
           : routePath.endsWith('/inner-harbour-james-bay/')
@@ -1184,6 +1193,14 @@ for (const locale of expectedLocales) {
               ? ['55-acre', 'former quarry', '50–60 minutes', 'Brentwood Bay']
               : ['Sooke Potholes', 'China Beach', 'Botanical Beach', '1.2 m', '47 km', 'route 61', '1 km'];
         for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Victoria editorial QA is missing '${phrase}' on ${routePath}.`);
+        const routeHeading = isVictoriaHub
+          ? 'Choose a Victoria day'
+          : routePath.endsWith('/inner-harbour-james-bay/')
+            ? 'Walk from Parliament to Beacon Hill'
+            : routePath.endsWith('/butchart-saanich/')
+              ? 'From the old quarry through the garden rooms'
+              : 'Pick one stop along the west coast';
+        if (!bodyText.includes(routeHeading)) fail(`Victoria page is missing its route-specific heading '${routeHeading}' on ${routePath}.`);
       }
       if (!victoriaCss.includes('body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field-hero--text-visual') || !victoriaCss.includes('@media (max-width: 1040px)') || !victoriaCss.includes('@media (max-width: 720px)') || !/min-width:\s*0/.test(victoriaCss) || /overflow(?:-x)?:\s*(?:hidden|clip)/i.test(victoriaCss)) fail(`Victoria responsive map guard or visible overflow protection is missing on ${locale.code} ${routePath}.`);
       if (isVictoriaNarrowTarget) {
