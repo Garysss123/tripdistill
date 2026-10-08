@@ -438,10 +438,13 @@ function collect(value, moduleName, seen, depth = 0) {
       src: value.src,
       sourceUrl: value.source ?? null,
       sourceTitle: value.commonsTitle ?? value.label ?? null,
+      sourceDate: value.sourceDate ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
       licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
       editHistory: value.editNote ?? null,
+      attributionTerms: value.attributionTerms ?? null,
+      commercialReuseEligibility: value.commercialReuseEligibility ?? null,
       alt: value.alt ?? null
     };
     if (!recordsBySrc.has(item.src)) recordsBySrc.set(item.src, []);
@@ -572,8 +575,28 @@ for (const [sourceUrl, detail] of [
 }
 
 for (const [sourceUrl, detail] of [
-  ['https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', 'Victoria Inner Harbour image review: the exact Commons page identifies DXR, the Victoria Inner Harbour and Parliament Buildings at dusk, and CC BY-SA 4.0. The required source and license links and resize, display-crop, WebP-conversion, and same-version adaptation disclosures are present. Source-page metadata and license declaration checked 2026-10-08; image pixels were not individually reviewed.'],
-  ['https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', 'Butchart Gardens image review: the exact Commons page identifies Fyre Mael, the Butchart Gardens subject, and CC BY 2.0; the page also records FlickrReview confirmation dated 10 April 2017. The required source and license links and resize, display-crop, and WebP-conversion disclosures are present. Source-page metadata and license declaration checked 2026-10-08; image pixels were not individually reviewed.']
+  ['https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', 'Victoria Inner Harbour image review: the exact Commons page identifies DXR, a photograph dated 27 August 2024, and CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the Inner Harbour and Parliament Buildings at dusk. Source and license links, resize, display-crop, WebP-conversion, and same-version adaptation disclosures are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', 'Butchart Gardens image review: the exact Commons page identifies Fyre Mael, a photograph dated 26 June 2015, and CC BY 2.0; the page also records FlickrReview confirmation dated 10 April 2017. Local WebP pixels were inspected on 2026-10-08 and match the formal garden beds and mature trees. Source and license links and resize, display-crop, and WebP-conversion disclosures are present.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Han_River,_Da_Nang,_Vietnam_-_20230819.jpg', 'Han River, Da Nang — exact Commons page identifies Somerset999 and a photograph dated 19 August 2023 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the river and Da Nang waterfront. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:Ch%C3%B9a_Tam_Thai,_Th%E1%BB%A7y_S%C6%A1n,_%C4%90%C3%A0_N%E1%BA%B5ng_(Tam_Thai_Pagoda,_Thuy_Son_Marble_Mountain)_-_img_01.jpg', 'Chùa Tam Thai, Thủy Sơn, Đà Nẵng (Tam Thai Pagoda, Thuy Son Marble Mountain) — exact Commons page identifies Chainwit. and a photograph dated 1 August 2024 under CC BY 4.0. Local WebP pixels were inspected on 2026-10-08 and match the ornate pagoda courtyard and roof. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:My_Khe_Beach_18.jpg', 'My Khe Beach 18 — exact Commons page identifies Christophe95 and a photograph dated 30 July 2018 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match My Khe Beach. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:Son-Tra-Peninsula_Da-Nang_Vietnam_Linh-Ung-Pagoda-01.jpg', 'Son-Tra-Peninsula Da-Nang Vietnam Linh-Ung-Pagoda-01 — exact Commons page identifies CEphoto, Uwe Aranas and a photograph dated 14 May 2011 under CC BY-SA 3.0. Local WebP pixels were inspected on 2026-10-08 and match the Linh Ung pagoda entrance gate. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-05.jpg', 'Hội An, Ancient Town, 2020-01 CN-05 — exact Commons page identifies Steffen Schmitz and a photograph dated 22 January 2020 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the historic shophouses and street. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:2024_-_M%E1%BB%B9_S%C6%A1n_Sanctuary_Temple_E7_-_img_01.jpg', '2024 - Mỹ Sơn Sanctuary Temple E7 - img 01 — exact Commons page identifies Chainwit. and a photograph dated 2 August 2024 under CC BY 4.0. Local WebP pixels were inspected on 2026-10-08 and match Temple E7 at Mỹ Sơn Sanctuary. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:Wat_Arun_across_Chao_Phraya_River.jpg', 'Wat Arun across Chao Phraya River — exact Commons page identifies Preecha.MJ and a photograph dated 19 June 2016 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match Wat Arun across the river. The original is 4,256 × 2,832; the local 1,920 × 1,278 WebP retains the source proportions.'],
+  ['https://commons.wikimedia.org/wiki/File:Sunset_view_of_Wat_Arun_in_Bangkok.jpg', 'Sunset view of Wat Arun in Bangkok — exact Commons page identifies VN.NguyenDucDuy and a photograph dated 22 October 2024 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match Wat Arun at sunset. The local WebP keeps the original 960 × 1,280 dimensions and proportions.'],
+  ['https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg', 'Temple of the Emerald Buddha — exact Commons page identifies Nawit science and a photograph dated 29 September 2019 under CC BY-SA 4.0. The source page includes a personality-rights warning. Local WebP pixels were inspected on 2026-10-08 and match a monk in front of Wat Phra Kaew in the Grand Palace complex; no conclusion is made about rights separate from the declared photo license. The source is 4,705 × 3,141 and local WebP is 1,920 × 1,282.'],
+  ['https://commons.wikimedia.org/wiki/File:Phra_Athit_Road_-_2017-01-26_(001).jpg', 'Phra Athit Road - 2017-01-26 (001) — exact Commons page identifies Iudexvivorum, a photograph dated 26 January 2017, and a CC0 1.0 worldwide public-domain dedication. Local WebP pixels were inspected on 2026-10-08 and match the wooden street-side building and tree. The page was reached through its Commons category after the direct link did not load.'],
+  ['https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg', 'Yaowarat Road at night — exact Commons page identifies Christophe95 and a photograph dated 10 May 2018 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the illuminated Yaowarat street scene. The source is 4,032 × 3,024 and local WebP is 1,920 × 1,440.'],
+  ['https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg', 'Bangkok skyline at sunset from Siam BTS Skytrain station, Bangkok, Thailand — exact Commons page identifies Vyacheslav Argenberg and a photograph dated 20 January 2010 under CC BY 4.0. Local WebP pixels were inspected on 2026-10-08 and match the Bangkok skyline from the station. The source is 4,032 × 2,688 and local WebP is 1,920 × 1,280.'],
+  ['https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg', 'Night Panorama of Sukhumvit, Bangkok — exact Commons page identifies Slyronit and a photograph dated 24 November 2018 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the Sukhumvit night panorama. The source is 7,288 × 2,157 and local WebP is 1,920 × 568.'],
+  ['https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', 'Lumpini Park, Bangkok — exact Commons page identifies User: (WT-shared) Adestro at wts wikivoyage and a photograph dated 2 October 2006. It records that the author released the work into the public domain worldwide; no separate license URL is present on the page. Local WebP pixels were inspected on 2026-10-08 and match the park lake and Bangkok skyline. This records the source-page basis, not an independent rights-chain finding.'],
+  ['https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', 'Mouth of Khlong Bangkok Yai — exact Commons page identifies Phoebus 28, a photograph dated 13 February 2021, and CC BY-SA 4.0. The page describes the canal as Khlong Bangkok Yai, also known as Khlong Bang Luang. Local WebP pixels were inspected on 2026-10-08 and match the canal mouth. Source and local WebP are both 1,440 × 1,080.']
 ]) {
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
@@ -677,7 +700,24 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/france-normandy-mont-saint-michel-bay.webp', '2026-10-07'],
   ['/assets/images/france-loire-valley-blois-chambord.webp', '2026-10-07'],
   ['/assets/images/france-loire-valley-amboise-chenonceau.webp', '2026-10-07'],
-  ['/assets/images/france-loire-valley-tours-villandry-azay.webp', '2026-10-07']
+  ['/assets/images/france-loire-valley-tours-villandry-azay.webp', '2026-10-07'],
+  ['/assets/images/vietnam-da-nang-han-river.webp', '2026-10-08'],
+  ['/assets/images/vietnam-da-nang-marble-mountains.webp', '2026-10-08'],
+  ['/assets/images/vietnam-da-nang-my-khe.webp', '2026-10-08'],
+  ['/assets/images/vietnam-da-nang-son-tra.webp', '2026-10-08'],
+  ['/assets/images/vietnam-hoi-an-ancient-town.webp', '2026-10-08'],
+  ['/assets/images/vietnam-my-son-sanctuary.webp', '2026-10-08'],
+  ['/assets/images/thailand-wat-arun-river.webp', '2026-10-08'],
+  ['/assets/images/thailand-wat-arun-sunset.webp', '2026-10-08'],
+  ['/assets/images/thailand-grand-palace.webp', '2026-10-08'],
+  ['/assets/images/thailand-phra-athit.webp', '2026-10-08'],
+  ['/assets/images/thailand-yaowarat-night.webp', '2026-10-08'],
+  ['/assets/images/thailand-siam-skyline.webp', '2026-10-08'],
+  ['/assets/images/thailand-sukhumvit-night.webp', '2026-10-08'],
+  ['/assets/images/thailand-lumphini.webp', '2026-10-08'],
+  ['/assets/images/thailand-khlong-bang-luang.webp', '2026-10-08'],
+  ['/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', '2026-10-08'],
+  ['/assets/images/canada-victoria-south-island-butchart-saanich.webp', '2026-10-08']
 ]);
 const entries = [];
 const sourceConflicts = [];
@@ -687,7 +727,7 @@ for (const fullPath of assetPaths) {
   const src = relativePath;
   const dataRecords = recordsBySrc.get(src) || [];
   const uniqueValues = (key) => [...new Set(dataRecords.map((record) => record[key]).filter(Boolean))];
-  const conflicts = ['sourceUrl', 'sourceTitle', 'creator', 'license', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
+  const conflicts = ['sourceUrl', 'sourceTitle', 'sourceDate', 'creator', 'license', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
   if (conflicts.length) sourceConflicts.push({ src, fields: conflicts });
   const uses = usesBySrc.get(src) || [];
   let creditMatch = null;
@@ -719,12 +759,15 @@ for (const fullPath of assetPaths) {
   }
   const sourceUrl = uniqueValues('sourceUrl')[0] || creditMatch?.sourceUrl || null;
   const sourceTitle = uniqueValues('sourceTitle')[0] || explicit?.sourceTitle || creditMatch?.creditLabel || null;
+  const sourcePhotoDate = uniqueValues('sourceDate')[0] || creditMatch?.sourceDate || null;
   const creator = uniqueValues('creator')[0] || creditMatch?.creator || null;
   const license = uniqueValues('license')[0] || creditMatch?.license || null;
   const licenseUrl = uniqueValues('licenseUrl')[0] || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
   const verification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
   const terms = licenseTerms(license, Boolean(verification));
+  const commercialReuseEligibility = uniqueValues('commercialReuseEligibility')[0] || terms.commercialReuseEligibility;
+  const attributionTerms = uniqueValues('attributionTerms')[0] || terms.attributionTerms;
   const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
   const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
   const row = {
@@ -733,12 +776,13 @@ for (const fullPath of assetPaths) {
     byteLength: fs.statSync(fullPath).size,
     sourceUrl,
     sourceTitle,
+    sourcePhotoDate,
     creditLabel: creditMatch?.creditLabel || null,
     creator,
     license,
     licenseUrl,
-    commercialReuseEligibility: terms.commercialReuseEligibility,
-    attributionTerms: terms.attributionTerms,
+    commercialReuseEligibility,
+    attributionTerms,
     editHistory: editHistory || 'No per-image edit note found in the source record or matched English photo credit.',
     metadataOrigin: dataRecords.length ? 'structured_data_record' : creditMatch ? creditMatch.matching : 'unmatched',
     creditMatchNote: creditMatch?.matchNote || (creditMatch?.matching === 'page_credit_lexical_match' ? 'Unique same-page label/alt match.' : null),
@@ -769,6 +813,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
     assetPath: row.assetPath,
     sourceUrl: row.sourceUrl,
     sourceTitle: row.sourceTitle,
+    sourcePhotoDate: row.sourcePhotoDate,
     creditLabel: row.creditLabel,
     creator: row.creator,
     license: row.license,

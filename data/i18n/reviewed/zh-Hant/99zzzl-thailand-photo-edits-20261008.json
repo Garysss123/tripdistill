@@ -1,0 +1,30 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/thailand/",
+    "/thailand/bangkok/",
+    "/thailand/bangkok/rattanakosin-grand-palace/",
+    "/thailand/bangkok/yaowarat-talat-noi/",
+    "/thailand/bangkok/siam-ratchaprasong/",
+    "/thailand/bangkok/silom-sathorn/",
+    "/thailand/bangkok/sukhumvit-thong-lo/",
+    "/thailand/bangkok/thonburi-khlong-bang-luang/"
+  ],
+  "translations": {
+    "Resized to 1,920 × 1,278 and converted to WebP; proportions retained.": "縮放至 1,920 × 1,278 並轉為 WebP；保留原始比例。",
+    "Converted from JPEG to WebP at the original 960 × 1,280 dimensions.": "以原始 960 × 1,280 尺寸將 JPEG 轉為 WebP。",
+    "Resized to 1,920 × 1,282 and converted to WebP; proportions retained.": "縮放至 1,920 × 1,282 並轉為 WebP；保留原始比例。",
+    "Resized to 1,920 × 1,440 and converted to WebP; proportions retained.": "縮放至 1,920 × 1,440 並轉為 WebP；保留原始比例。",
+    "Resized to 1,920 × 1,280 and converted to WebP; proportions retained.": "縮放至 1,920 × 1,280 並轉為 WebP；保留原始比例。",
+    "Resized to 1,920 × 568 and converted to WebP; proportions retained.": "縮放至 1,920 × 568 並轉為 WebP；保留原始比例。",
+    "Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.": "以原始 1,440 × 1,080 尺寸將 JPEG 轉為 WebP。",
+    "— Preecha.MJ, CC BY-SA 4.0": "— Preecha.MJ，CC BY-SA 4.0",
+    "— VN.NguyenDucDuy, CC BY-SA 4.0": "— VN.NguyenDucDuy，CC BY-SA 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain.": "— User: (WT-shared) Adestro at wts wikivoyage，public domain（公有領域）。",
+    "— Vyacheslav Argenberg, CC BY 4.0": "— Vyacheslav Argenberg，CC BY 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain": "— User: (WT-shared) Adestro at wts wikivoyage，public domain（公有領域）",
+    "— Slyronit, CC BY-SA 4.0": "— Slyronit，CC BY-SA 4.0",
+    "— Phoebus 28, CC BY-SA 4.0": "— Phoebus 28，CC BY-SA 4.0"
+  }
+}

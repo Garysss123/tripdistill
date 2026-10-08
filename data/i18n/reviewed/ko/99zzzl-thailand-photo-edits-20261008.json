@@ -1,0 +1,30 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/thailand/",
+    "/thailand/bangkok/",
+    "/thailand/bangkok/rattanakosin-grand-palace/",
+    "/thailand/bangkok/yaowarat-talat-noi/",
+    "/thailand/bangkok/siam-ratchaprasong/",
+    "/thailand/bangkok/silom-sathorn/",
+    "/thailand/bangkok/sukhumvit-thong-lo/",
+    "/thailand/bangkok/thonburi-khlong-bang-luang/"
+  ],
+  "translations": {
+    "Resized to 1,920 × 1,278 and converted to WebP; proportions retained.": "1,920 × 1,278로 크기를 조정해 WebP로 변환했으며 원본 비율을 유지했습니다.",
+    "Converted from JPEG to WebP at the original 960 × 1,280 dimensions.": "원본과 같은 960 × 1,280 크기로 JPEG를 WebP로 변환했습니다.",
+    "Resized to 1,920 × 1,282 and converted to WebP; proportions retained.": "1,920 × 1,282로 크기를 조정해 WebP로 변환했으며 원본 비율을 유지했습니다.",
+    "Resized to 1,920 × 1,440 and converted to WebP; proportions retained.": "1,920 × 1,440로 크기를 조정해 WebP로 변환했으며 원본 비율을 유지했습니다.",
+    "Resized to 1,920 × 1,280 and converted to WebP; proportions retained.": "1,920 × 1,280로 크기를 조정해 WebP로 변환했으며 원본 비율을 유지했습니다.",
+    "Resized to 1,920 × 568 and converted to WebP; proportions retained.": "1,920 × 568로 크기를 조정해 WebP로 변환했으며 원본 비율을 유지했습니다.",
+    "Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.": "원본과 같은 1,440 × 1,080 크기로 JPEG를 WebP로 변환했습니다.",
+    "— Preecha.MJ, CC BY-SA 4.0": "— Preecha.MJ, CC BY-SA 4.0",
+    "— VN.NguyenDucDuy, CC BY-SA 4.0": "— VN.NguyenDucDuy, CC BY-SA 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain.": "— User: (WT-shared) Adestro at wts wikivoyage, public domain(퍼블릭 도메인).",
+    "— Vyacheslav Argenberg, CC BY 4.0": "— Vyacheslav Argenberg, CC BY 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain": "— User: (WT-shared) Adestro at wts wikivoyage, public domain(퍼블릭 도메인)",
+    "— Slyronit, CC BY-SA 4.0": "— Slyronit, CC BY-SA 4.0",
+    "— Phoebus 28, CC BY-SA 4.0": "— Phoebus 28, CC BY-SA 4.0"
+  }
+}

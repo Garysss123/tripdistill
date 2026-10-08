@@ -449,7 +449,8 @@ const daNangHoiAn = defineVietnamCluster({
         source: 'https://commons.wikimedia.org/wiki/File:Han_River,_Da_Nang,_Vietnam_-_20230819.jpg',
         label: 'Han River, Da Nang',
         creator: 'Somerset999',
-        license: 'CC BY-SA 4.0'
+        license: 'CC BY-SA 4.0',
+        sourceDate: '2023-08-19'
       }),
       summary: 'Plan a Han River half-day around the Cham Museum and one chosen riverbank, then decide whether a cross-river walk adds enough to justify its traffic and bridge constraints.',
       lead: 'The Han River divides Da Nang’s civic center from the eastern shore. Bach Dang Street follows the western side through Hai Chau; Tran Hung Dao faces it from Son Tra. A useful city walk reads those two edges, then uses the Cham Museum for the region’s older history instead of treating bridges as a checklist.',
@@ -520,7 +521,8 @@ const daNangHoiAn = defineVietnamCluster({
         source: 'https://commons.wikimedia.org/wiki/File:Son-Tra-Peninsula_Da-Nang_Vietnam_Linh-Ung-Pagoda-01.jpg',
         label: 'Gate to Linh Ung Pagoda, Son Tra Peninsula',
         creator: 'CEphoto, Uwe Aranas',
-        license: 'CC BY-SA 3.0'
+        license: 'CC BY-SA 3.0',
+        sourceDate: '2011-05-14'
       }),
       summary: "See Linh Ung Pagoda’s gate, courtyard and Lady Buddha above Da Nang Bay, then add a forest viewpoint only after checking current road access and your return ride.",
       lead: "Set above Da Nang Bay, Linh Ung is a Buddhist complex with a sequence of spaces, not simply its prominent Lady Buddha statue. Da Nang’s tourism portal describes its design as bringing modern and traditional Vietnamese pagoda architecture together in the three-door gate, main hall and ancestral house. Visitors pass the gate into a courtyard of bonsai and arhat figures, then see Buddhist images and sculptural reliefs of Shakyamuni’s life inside the hall. The principal statue is locally called Lady Buddha; the city portal identifies it as a Lady Bodhisattva and notes the ocean and coastal views along the approach. Local accounts connect the statue with protection for fishermen facing storms and strong waves, giving the sea-facing visit meaning beyond its panorama. Son Tra’s coastal forest is also habitat for the endangered red-shanked douc langur, so a sighting is a chance encounter rather than a promised part of a temple visit.",
@@ -587,7 +589,8 @@ const daNangHoiAn = defineVietnamCluster({
         source: 'https://commons.wikimedia.org/wiki/File:Ch%C3%B9a_Tam_Thai,_Th%E1%BB%A7y_S%C6%A1n,_%C4%90%C3%A0_N%E1%BA%B5ng_(Tam_Thai_Pagoda,_Thuy_Son_Marble_Mountain)_-_img_01.jpg',
         label: 'Tam Thai Pagoda, Thuy Son',
         creator: 'Chainwit.',
-        license: 'CC BY 4.0'
+        license: 'CC BY 4.0',
+        sourceDate: '2024-08-01'
       }),
       summary: "Trace Ngu Hanh Son from limestone outcrops into Huyen Khong Cave and Tam Thai Pagoda, then meet Non Nuoc craft on its own terms.",
       lead: "The Marble Mountains are five limestone outcrops south of Da Nang; Thuy Son is the visitor landscape where geology meets active Buddhist and folk worship. Huyen Khong Cave’s high opening changes the light around its shrine, while Tam Thai Pagoda shows how sacred buildings occupy the slope. Below, Non Nuoc’s stone-working history belongs to a living neighborhood.",
@@ -669,7 +672,8 @@ const daNangHoiAn = defineVietnamCluster({
         source: 'https://commons.wikimedia.org/wiki/File:My_Khe_Beach_18.jpg',
         label: 'My Khe Beach, Da Nang',
         creator: 'Christophe95',
-        license: 'CC BY-SA 4.0'
+        license: 'CC BY-SA 4.0',
+        sourceDate: '2018-07-30'
       }),
       summary: 'Make My Khe a conditions-led beach morning and An Thuong a separate food-and-rest finish, with a real midday shade break if you stay out all day.',
       lead: 'My Khe is both a visitor shoreline and part of Da Nang’s ordinary morning life. Vietnam’s tourism authority describes residents exercising and working here as well as travelers using the coast. Plan around the sea conditions and public beach access, then move inland to An Thuong only after rinsing and drying off.',
@@ -727,7 +731,8 @@ const daNangHoiAn = defineVietnamCluster({
         source: 'https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-05.jpg',
         label: 'Hoi An Ancient Town',
         creator: 'Steffen Schmitz',
-        license: 'CC BY-SA 4.0'
+        license: 'CC BY-SA 4.0',
+        sourceDate: '2020-01-22'
       }),
       summary: "Follow Hoi An’s river-facing shop rows through selected houses, an assembly hall and a bridge, with ticket and flood context in view.",
       lead: "Hoi An was an active Southeast Asian port from the 15th through 19th centuries. UNESCO records 1,107 timber-frame buildings in a street grid shaped by trade: shops face narrow lanes, while house backs open toward the Thu Bon for loading. Chinese, Japanese and later European influences remain legible in its houses and religious buildings; today it is still a lived-in commercial center.",
@@ -806,7 +811,8 @@ const daNangHoiAn = defineVietnamCluster({
         source: 'https://commons.wikimedia.org/wiki/File:2024_-_M%E1%BB%B9_S%C6%A1n_Sanctuary_Temple_E7_-_img_01.jpg',
         label: 'My Son Sanctuary Temple E7',
         creator: 'Chainwit.',
-        license: 'CC BY 4.0'
+        license: 'CC BY 4.0',
+        sourceDate: '2024-08-02'
       }),
       summary: "Follow My Son’s Cham tower groups through a forested valley, with brick craft, sacred history and marked visitor routes in focus.",
       lead: "From the 4th to 13th centuries, My Son served as a religious and political center of Champa. Its tower-temples use fired brick, stone pillars and sandstone reliefs; their forms record Cham religious and political life, including a strong Hindu tradition. Conflict damaged many structures, and conservation continues in a humid valley ringed by hills at the source of the Thu Bon River.",

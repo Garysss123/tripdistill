@@ -17,8 +17,27 @@ const hueTombLicenseUrl = 'https://creativecommons.org/licenses/by-sa/2.0/';
 const legacyHueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
 const legacyHueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
 const victoriaImageRecords = [
-  { assetPath: '/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', creator: 'DXR', license: 'CC BY-SA 4.0' },
-  { assetPath: '/assets/images/canada-victoria-south-island-butchart-saanich.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', creator: 'Fyre Mael', license: 'CC BY 2.0' }
+  { assetPath: '/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', creator: 'DXR', license: 'CC BY-SA 4.0', sourceDate: '2024-08-27' },
+  { assetPath: '/assets/images/canada-victoria-south-island-butchart-saanich.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', creator: 'Fyre Mael', license: 'CC BY 2.0', sourceDate: '2015-06-26' }
+];
+const thailandImageRecords = [
+  { assetPath: '/assets/images/thailand-wat-arun-river.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Arun_across_Chao_Phraya_River.jpg', sourceDate: '2016-06-19', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-wat-arun-sunset.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_view_of_Wat_Arun_in_Bangkok.jpg', sourceDate: '2024-10-22', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-grand-palace.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg', sourceDate: '2019-09-29', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-phra-athit.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phra_Athit_Road_-_2017-01-26_(001).jpg', sourceDate: '2017-01-26', license: 'CC0 1.0' },
+  { assetPath: '/assets/images/thailand-yaowarat-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg', sourceDate: '2018-05-10', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-siam-skyline.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg', sourceDate: '2010-01-20', license: 'CC BY 4.0' },
+  { assetPath: '/assets/images/thailand-sukhumvit-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg', sourceDate: '2018-11-24', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-lumphini.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', sourceDate: '2006-10-02', license: 'Public domain' },
+  { assetPath: '/assets/images/thailand-khlong-bang-luang.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', sourceDate: '2021-02-13', license: 'CC BY-SA 4.0' }
+];
+const danangImageRecords = [
+  { assetPath: '/assets/images/vietnam-da-nang-han-river.webp', sourceDate: '2023-08-19' },
+  { assetPath: '/assets/images/vietnam-da-nang-marble-mountains.webp', sourceDate: '2024-08-01' },
+  { assetPath: '/assets/images/vietnam-da-nang-my-khe.webp', sourceDate: '2018-07-30' },
+  { assetPath: '/assets/images/vietnam-da-nang-son-tra.webp', sourceDate: '2011-05-14' },
+  { assetPath: '/assets/images/vietnam-hoi-an-ancient-town.webp', sourceDate: '2020-01-22' },
+  { assetPath: '/assets/images/vietnam-my-son-sanctuary.webp', sourceDate: '2024-08-02' }
 ];
 const removedUnverifiedVictoriaAsset = '/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp';
 const pagePath = path.join(root, 'japan', 'osaka', 'osaka-castle-area', 'index.html');
@@ -84,7 +103,63 @@ try {
     assert.equal(record.license, image.license);
     assert.equal(record.verificationStatus, 'source_page_checked');
     assert.equal(record.verificationDate, '2026-10-08');
-    assert.equal(record.visualReviewStatus, 'not_individually_visually_reviewed', 'source-page checks must not imply visual review');
+    assert.equal(record.sourcePhotoDate, image.sourceDate, 'Victoria inventory must retain the source photograph date');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
+  }
+  const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  for (const image of [...thailandImageRecords, ...danangImageRecords]) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `source audit must retain ${image.assetPath}`);
+    assert.equal(record.sourcePhotoDate, image.sourceDate, `${image.assetPath} must retain the Commons photograph date`);
+    assert.equal(record.verificationStatus, 'source_page_checked', `${image.assetPath} must record the checked Commons source page`);
+    assert.equal(record.verificationDate, '2026-10-08', `${image.assetPath} Commons page check date must be retained`);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', `${image.assetPath} local pixel review date must be retained`);
+    if (image.license) assert.equal(record.license, image.license, `${image.assetPath} must retain the exact license version`);
+  }
+  const lumphini = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-lumphini.webp');
+  assert.equal(lumphini.creator, 'User: (WT-shared) Adestro at wts wikivoyage');
+  assert.equal(lumphini.licenseUrl, null, 'Lumphini public-domain claim must not gain a fabricated license URL');
+  assert.ok(lumphini.attributionTerms.includes('released this work into the public domain worldwide'));
+  assert.ok(lumphini.verificationDetail.includes('no separate license URL is present'));
+
+  const thailandRoutes = [
+    'thailand',
+    'thailand/bangkok',
+    'thailand/bangkok/rattanakosin-grand-palace',
+    'thailand/bangkok/yaowarat-talat-noi',
+    'thailand/bangkok/siam-ratchaprasong',
+    'thailand/bangkok/silom-sathorn',
+    'thailand/bangkok/sukhumvit-thong-lo',
+    'thailand/bangkok/thonburi-khlong-bang-luang'
+  ];
+  const noteBySource = new Map([
+    ['https://commons.wikimedia.org/wiki/File:Wat_Arun_across_Chao_Phraya_River.jpg', 'Resized to 1,920 × 1,278 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Sunset_view_of_Wat_Arun_in_Bangkok.jpg', 'Converted from JPEG to WebP at the original 960 × 1,280 dimensions.'],
+    ['https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg', 'Resized to 1,920 × 1,282 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg', 'Resized to 1,920 × 1,440 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg', 'Resized to 1,920 × 1,280 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg', 'Resized to 1,920 × 568 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', 'Resized to 1,920 × 1,440 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', 'Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.']
+  ]);
+  const localeDirs = { en: '', 'zh-Hant': 'zh', ja: 'ja', ko: 'ko', th: 'th' };
+  const localeBatch = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99zzzl-thailand-photo-edits-20261008.json'), 'utf8')).translations]));
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    for (const route of thailandRoutes) {
+      const page = path.join(root, prefix, route, 'index.html');
+      const document = parse(fs.readFileSync(page, 'utf8'));
+      const imageSources = findAll(document, (node) => node.tagName === 'img').map((node) => attrs(node).src || '');
+      assert.equal(imageSources.some((src) => src.includes('thailand-chatuchak.webp')), false, `${locale} ${route} must not restore Chatuchak imagery`);
+      assert.equal(imageSources.some((src) => src.includes('thailand-talat-noi.webp')), false, `${locale} ${route} must not restore Talat Noi imagery`);
+      for (const [sourceUrl, englishNote] of noteBySource) {
+        const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (child) => child.tagName === 'a' && attrs(child).href === sourceUrl).length > 0);
+        for (const credit of credits) {
+          const note = locale === 'en' ? englishNote : localeBatch[locale][englishNote];
+          const matches = findAll(credit, (node) => node.tagName === 'span' && attrs(node).class === 'photo-edit-note' && textContent(node).trim() === note);
+          assert.equal(matches.length, 1, `${locale} ${route} must disclose the exact per-image edit for ${sourceUrl}`);
+        }
+      }
+    }
   }
   assert.equal(fs.existsSync(path.join(root, removedUnverifiedVictoriaAsset.slice(1).split('/').join(path.sep))), false, 'removed Sooke image must not remain in the active asset directory');
   assert.ok(fs.readFileSync(path.join(root, 'reports', 'canada-victoria-sooke-photo-status.md'), 'utf8').includes('not independently verified'), 'historical Sooke license claim must remain explicitly unverified');
@@ -194,7 +269,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: Osaka Castle sakura, Jeju Yongduam and the new Hue Minh Mang image retain source/creator/license records; all 35 Hue locale routes show the replacement image credit, the superseded image is absent, and three rewritten siblings carry the October editorial date.');
+  console.log('Photo inventory regression passed: legacy Osaka/Jeju/Hue checks; 17 Da Nang, Bangkok and Victoria source records retain source dates, creators, license versions and visual review; eight Bangkok edit notes appear on every used route in all five locales; retired Chatuchak and Talat Noi images remain unreferenced.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

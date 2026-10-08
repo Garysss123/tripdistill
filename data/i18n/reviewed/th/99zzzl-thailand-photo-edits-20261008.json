@@ -1,0 +1,30 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/thailand/",
+    "/thailand/bangkok/",
+    "/thailand/bangkok/rattanakosin-grand-palace/",
+    "/thailand/bangkok/yaowarat-talat-noi/",
+    "/thailand/bangkok/siam-ratchaprasong/",
+    "/thailand/bangkok/silom-sathorn/",
+    "/thailand/bangkok/sukhumvit-thong-lo/",
+    "/thailand/bangkok/thonburi-khlong-bang-luang/"
+  ],
+  "translations": {
+    "Resized to 1,920 × 1,278 and converted to WebP; proportions retained.": "ปรับขนาดเป็น 1,920 × 1,278 และแปลงเป็น WebP โดยคงสัดส่วนภาพเดิม",
+    "Converted from JPEG to WebP at the original 960 × 1,280 dimensions.": "แปลงจาก JPEG เป็น WebP โดยคงขนาดเดิม 960 × 1,280 พิกเซล",
+    "Resized to 1,920 × 1,282 and converted to WebP; proportions retained.": "ปรับขนาดเป็น 1,920 × 1,282 และแปลงเป็น WebP โดยคงสัดส่วนภาพเดิม",
+    "Resized to 1,920 × 1,440 and converted to WebP; proportions retained.": "ปรับขนาดเป็น 1,920 × 1,440 และแปลงเป็น WebP โดยคงสัดส่วนภาพเดิม",
+    "Resized to 1,920 × 1,280 and converted to WebP; proportions retained.": "ปรับขนาดเป็น 1,920 × 1,280 และแปลงเป็น WebP โดยคงสัดส่วนภาพเดิม",
+    "Resized to 1,920 × 568 and converted to WebP; proportions retained.": "ปรับขนาดเป็น 1,920 × 568 และแปลงเป็น WebP โดยคงสัดส่วนภาพเดิม",
+    "Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.": "แปลงจาก JPEG เป็น WebP โดยคงขนาดเดิม 1,440 × 1,080 พิกเซล",
+    "— Preecha.MJ, CC BY-SA 4.0": "— Preecha.MJ, CC BY-SA 4.0",
+    "— VN.NguyenDucDuy, CC BY-SA 4.0": "— VN.NguyenDucDuy, CC BY-SA 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain.": "— User: (WT-shared) Adestro at wts wikivoyage, public domain (สาธารณสมบัติ)",
+    "— Vyacheslav Argenberg, CC BY 4.0": "— Vyacheslav Argenberg, CC BY 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain": "— User: (WT-shared) Adestro at wts wikivoyage, public domain (สาธารณสมบัติ)",
+    "— Slyronit, CC BY-SA 4.0": "— Slyronit, CC BY-SA 4.0",
+    "— Phoebus 28, CC BY-SA 4.0": "— Phoebus 28, CC BY-SA 4.0"
+  }
+}

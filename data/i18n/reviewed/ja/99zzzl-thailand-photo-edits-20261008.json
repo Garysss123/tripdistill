@@ -1,0 +1,30 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/thailand/",
+    "/thailand/bangkok/",
+    "/thailand/bangkok/rattanakosin-grand-palace/",
+    "/thailand/bangkok/yaowarat-talat-noi/",
+    "/thailand/bangkok/siam-ratchaprasong/",
+    "/thailand/bangkok/silom-sathorn/",
+    "/thailand/bangkok/sukhumvit-thong-lo/",
+    "/thailand/bangkok/thonburi-khlong-bang-luang/"
+  ],
+  "translations": {
+    "Resized to 1,920 × 1,278 and converted to WebP; proportions retained.": "1,920 × 1,278 に縮小して WebP に変換しました。元画像の縦横比を保っています。",
+    "Converted from JPEG to WebP at the original 960 × 1,280 dimensions.": "元画像と同じ 960 × 1,280 の寸法で JPEG から WebP に変換しました。",
+    "Resized to 1,920 × 1,282 and converted to WebP; proportions retained.": "1,920 × 1,282 に縮小して WebP に変換しました。元画像の縦横比を保っています。",
+    "Resized to 1,920 × 1,440 and converted to WebP; proportions retained.": "1,920 × 1,440 に縮小して WebP に変換しました。元画像の縦横比を保っています。",
+    "Resized to 1,920 × 1,280 and converted to WebP; proportions retained.": "1,920 × 1,280 に縮小して WebP に変換しました。元画像の縦横比を保っています。",
+    "Resized to 1,920 × 568 and converted to WebP; proportions retained.": "1,920 × 568 に縮小して WebP に変換しました。元画像の縦横比を保っています。",
+    "Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.": "元画像と同じ 1,440 × 1,080 の寸法で JPEG から WebP に変換しました。",
+    "— Preecha.MJ, CC BY-SA 4.0": "— Preecha.MJ、CC BY-SA 4.0",
+    "— VN.NguyenDucDuy, CC BY-SA 4.0": "— VN.NguyenDucDuy、CC BY-SA 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain.": "— User: (WT-shared) Adestro at wts wikivoyage、public domain（パブリックドメイン）。",
+    "— Vyacheslav Argenberg, CC BY 4.0": "— Vyacheslav Argenberg、CC BY 4.0",
+    "— User: (WT-shared) Adestro at wts wikivoyage, public domain": "— User: (WT-shared) Adestro at wts wikivoyage、public domain（パブリックドメイン）",
+    "— Slyronit, CC BY-SA 4.0": "— Slyronit、CC BY-SA 4.0",
+    "— Phoebus 28, CC BY-SA 4.0": "— Phoebus 28、CC BY-SA 4.0"
+  }
+}

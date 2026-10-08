@@ -38,6 +38,7 @@ export const canadaImageManifest = {
     "creator": "DXR",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg",
+    "sourceDate": "2024-08-27",
     "remoteSha1": "6984388f0d6ba649834c9010f33f2b526dd78c57"
   },
   "victoria-south-island/butchart-saanich": {
@@ -48,6 +49,7 @@ export const canadaImageManifest = {
     "creator": "Fyre Mael",
     "license": "CC BY 2.0",
     "commonsTitle": "File:Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
+    "sourceDate": "2015-06-26",
     "remoteSha1": "495ab547a7fe6dbdefb7314ce62da6e165ee7991"
   },
   "pacific-rim-tofino/long-beach-rainforest": {
