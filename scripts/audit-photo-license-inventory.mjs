@@ -623,8 +623,14 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
 
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:N_Seoul_Tower_view_2.jpg', {
+  detail: 'N Seoul Tower photo review: the exact Commons page identifies kallerna, a 30 November 2022 photograph, and CC BY-SA 4.0. The downloaded original and local WebP pixels were inspected on 2026-10-08; both show Seoul at night from N Seoul Tower looking south, including the Han River and bridges, and the local file is a resized display crop. The site retains the linked source, creator, license, and resize/crop notice.',
+  checkedOn: '2026-10-08'
+});
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
+  ['/assets/images/korea-namsan-tower.webp', { sourceTitle: 'File:N Seoul Tower view 2.jpg', creditLabel: 'N Seoul Tower panorama / kallerna', creator: 'kallerna', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2022-11-30', note: 'The exact Commons page and downloaded original were checked against the local WebP pixels on 2026-10-08; the resized crop shows Seoul at night from N Seoul Tower looking south. The linked source, creator, license, and resize/crop notice are present.' }],
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
   ['/assets/images/china-hangzhou-grand-canal.webp', { creditLabel: 'Gongchen Bridge', creator: 'Windmemories', note: 'Matched the image alt and subject to the identically named Commons credit on both Hangzhou routes.' }],
@@ -645,6 +651,7 @@ const explicitCreditMappings = new Map([
   ['/assets/images/thailand-andaman-similan.webp', { creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', note: 'Matched the island group and panoramic view in the image alt to the same-route credit.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/korea-namsan-tower.webp',
   '/assets/images/vietnam-hue-minh-mang-20261008.webp',
   '/assets/images/france-paris-louvre-salle-mollien-20261006.webp',
   '/assets/images/italy-rome-ancient-rome-capitoline.webp',
@@ -698,6 +705,7 @@ const visuallyReviewedAssetPaths = new Set([
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ['/assets/images/korea-namsan-tower.webp', '2026-10-08'],
   ['/assets/images/vietnam-hue-minh-mang-20261008.webp', '2026-10-08'],
   ['/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp', '2026-10-08'],
   ['/assets/images/switzerland-zurich-lake-lake-uetliberg.webp', '2026-10-08'],
@@ -888,6 +896,7 @@ const counts = {
   assetsWithOnlyRecordedSourceUrlMatch: entries.filter((row) => row.metadataOrigin === 'source_url_match').length,
   sourcePageChecked: entries.filter((row) => row.verificationStatus === 'source_page_checked').length,
   metadataOrCreditOnly: entries.filter((row) => row.verificationStatus === 'site_credit_or_metadata_only').length,
+  usedAssetsWithoutIndependentSourcePageCheck: entries.filter((row) => row.useCount > 0 && row.verificationStatus === 'site_credit_or_metadata_only').length,
   missingSourceCreditMatch: entries.filter((row) => row.verificationStatus === 'missing_source_credit_match').length,
   incompleteAttributionFields: unmatchedByAsset.length,
   activeMissingSourceCreditMatch: entries.filter((row) => row.useCount > 0 && row.verificationStatus === 'missing_source_credit_match').length,
@@ -897,9 +906,7 @@ const counts = {
   sourceMetadataConflicts: sourceConflicts.length,
   moduleErrors: moduleErrors.length
 };
-const openCreditReviews = [
-  { assetPath: '/assets/images/korea-namsan-tower.webp', routes: ['/south-korea/seoul/', '/south-korea/seoul/myeongdong-namsan/'], status: 'open_visual_subject_check', detail: 'Commons describes Seoul seen from N Seoul Tower looking south; site alt text describes the tower rising above the city at dusk. Local pixels have not been inspected, so source-to-image identity and any correction remain unresolved.' }
-];
+const openCreditReviews = [];
 counts.openCreditReviewCount = openCreditReviews.length;
 const report = {
   generatedAt: new Date().toISOString(),

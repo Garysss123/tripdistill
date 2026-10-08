@@ -88,7 +88,8 @@ try {
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 23, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.openCreditReviewCount, 1, 'the N Seoul Tower subject mismatch remains open for visual review');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 611, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
+  assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const hueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === hueTombAssetPath);
   assert.ok(hueTomb, 'inventory regeneration must include the new Hue Minh Mang asset');
   assert.equal(hueTomb.sourceUrl, hueTombSourceUrl);
@@ -132,9 +133,13 @@ try {
   const namsan = photoRecords.find((item) => item.assetPath === '/assets/images/korea-namsan-tower.webp');
   assert.equal(namsan.creator, 'kallerna');
   assert.equal(namsan.license, 'CC BY-SA 4.0');
-  assert.equal(namsan.sourcePhotoDate, null, 'do not assert the Commons date against an image with an unresolved subject mismatch');
-  assert.equal(namsan.verificationStatus, 'site_credit_or_metadata_only', 'leave the N Seoul source-to-image question open');
-  assert.equal(report.openCreditReviews[0].assetPath, '/assets/images/korea-namsan-tower.webp');
+  assert.equal(namsan.sourceTitle, 'File:N Seoul Tower view 2.jpg');
+  assert.equal(namsan.sourcePhotoDate, '2022-11-30');
+  assert.equal(namsan.verificationStatus, 'source_page_checked');
+  assert.equal(namsan.verificationDate, '2026-10-08');
+  assert.equal(namsan.visualReviewStatus, 'visually_reviewed_2026-10-08');
+  assert.ok(namsan.verificationDetail.includes('local WebP pixels were inspected'));
+  assert.deepEqual(report.openCreditReviews, []);
   for (const image of [...thailandImageRecords, ...danangImageRecords]) {
     const record = photoRecords.find((item) => item.assetPath === image.assetPath);
     assert.ok(record, `source audit must retain ${image.assetPath}`);

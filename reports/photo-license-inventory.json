@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T15:30:07.525Z",
+  "generatedAt": "2026-10-08T16:01:40.314Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 789,
     "completeSourceCreatorLicenseRecords": 766,
-    "licenseClaimsNotIndependentlyVerified": 612,
+    "licenseClaimsNotIndependentlyVerified": 611,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -15,12 +15,13 @@
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
     "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 128,
-    "assetsWithExplicitEnglishCreditMatch": 64,
-    "assetsVisuallyReviewed": 78,
+    "assetsWithMatchedEnglishCreditOnly": 127,
+    "assetsWithExplicitEnglishCreditMatch": 65,
+    "assetsVisuallyReviewed": 79,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 154,
-    "metadataOrCreditOnly": 612,
+    "sourcePageChecked": 155,
+    "metadataOrCreditOnly": 611,
+    "usedAssetsWithoutIndependentSourcePageCheck": 611,
     "missingSourceCreditMatch": 23,
     "incompleteAttributionFields": 23,
     "activeMissingSourceCreditMatch": 0,
@@ -29,7 +30,7 @@
     "unreferencedIncompleteAttributionFields": 23,
     "sourceMetadataConflicts": 0,
     "moduleErrors": 0,
-    "openCreditReviewCount": 1
+    "openCreditReviewCount": 0
   },
   "verificationMethod": {
     "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
@@ -15727,29 +15728,28 @@
         {
           "assetPath": "/assets/images/korea-namsan-tower.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:N_Seoul_Tower_view_2.jpg",
-          "sourceTitle": "N Seoul Tower panorama / kallerna",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:N Seoul Tower view 2.jpg",
+          "sourcePhotoDate": "2022-11-30",
           "creditLabel": "N Seoul Tower panorama / kallerna",
           "creator": "kallerna",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized and cropped WebP.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The exact Commons page and downloaded original were checked against the local WebP pixels on 2026-10-08; the resized crop shows Seoul at night from N Seoul Tower looking south. The linked source, creator, license, and resize/crop notice are present.",
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "N Seoul Tower photo review: the exact Commons page identifies kallerna, a 30 November 2022 photograph, and CC BY-SA 4.0. The downloaded original and local WebP pixels were inspected on 2026-10-08; both show Seoul at night from N Seoul Tower looking south, including the Han River and bridges, and the local file is a resized display crop. The site retains the linked source, creator, license, and resize/crop notice.",
           "useCount": 3,
           "routes": [
             "/south-korea/seoul/",
             "/south-korea/seoul/myeongdong-namsan/"
           ],
           "altTexts": [
-            "N Seoul Tower rising above the city at dusk",
-            "N Seoul Tower and the city skyline after sunset"
+            "Seoul's night skyline and Han River, viewed south from N Seoul Tower on Namsan"
           ],
           "rawVisibleCredits": [
             "N Seoul Tower panorama / kallernaCC BY-SA 4.0Resized and cropped WebP."
@@ -32786,16 +32786,6 @@
       "routes": []
     }
   ],
-  "openCreditReviews": [
-    {
-      "assetPath": "/assets/images/korea-namsan-tower.webp",
-      "routes": [
-        "/south-korea/seoul/",
-        "/south-korea/seoul/myeongdong-namsan/"
-      ],
-      "status": "open_visual_subject_check",
-      "detail": "Commons describes Seoul seen from N Seoul Tower looking south; site alt text describes the tower rising above the city at dusk. Local pixels have not been inspected, so source-to-image identity and any correction remain unresolved."
-    }
-  ],
+  "openCreditReviews": [],
   "sourceMetadataConflicts": []
 }
