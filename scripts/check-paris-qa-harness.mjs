@@ -966,10 +966,12 @@ for (const locale of expectedLocales) {
         const targetSelector = `body[data-page="${expectedPage}"]`;
         const contentClass = isVictoriaHub ? '.ca-hub' : '.ca-field';
         const narrowRuleStart = victoriaCss.indexOf('/* These three Victoria pages must shrink');
-        const bodyWidthRule = cssRuleBlock(victoriaCss, `${targetSelector},`, narrowRuleStart);
+        const bodyWidthRule = cssRuleBlock(victoriaCss, targetSelector, narrowRuleStart);
         const contentWidthRule = cssRuleBlock(victoriaCss, `${targetSelector} .site-shell,`, narrowRuleStart);
-        const textWrapRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass},`, narrowRuleStart);
-        const descendantsRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass} *,`, narrowRuleStart);
+        const contentWidthSelectorStart = victoriaCss.indexOf(`${targetSelector} .site-shell,`, narrowRuleStart);
+        const textWrapSelectorStart = victoriaCss.indexOf(`${targetSelector} ${contentClass}`, contentWidthSelectorStart + contentWidthRule.length);
+        const textWrapRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass}`, textWrapSelectorStart);
+        const descendantsRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass} *`, narrowRuleStart);
         if (narrowRuleStart < 0 || !bodyWidthRule.includes(targetSelector) || !/min-width\s*:\s*0\s*;/i.test(bodyWidthRule)) fail(`Victoria target body must release the 320px floor on ${locale.code} ${routePath}.`);
         if (!contentWidthRule.includes(`${targetSelector} .page-content`) || !/min-width\s*:\s*0\s*;/i.test(contentWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(contentWidthRule)) fail(`Victoria target shell and content must shrink to the available width on ${locale.code} ${routePath}.`);
         if (!textWrapRule.includes('overflow-wrap: anywhere') || !descendantsRule.includes('min-width: 0')) fail(`Victoria target content must wrap and release descendant minimum widths on ${locale.code} ${routePath}.`);
