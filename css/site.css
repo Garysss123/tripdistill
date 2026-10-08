@@ -1503,6 +1503,7 @@ body[data-page="japan"] .destination-copy p + p { margin-top: .5rem; }
 
 /* South Korea and Seoul */
 body[data-country="south-korea"] {
+  min-width: 0;
   --korea-red: #c83b45;
   --korea-blue: #245b91;
   --korea-ink: #172232;

@@ -320,7 +320,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley', 'fr-champagne'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
   const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
   const penangIdentity = record.path === '/malaysia/george-town-penang/' ? attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-cluster') === 'malaysia-straits' : record.path.startsWith('/malaysia/george-town-penang/') && attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-region') === 'george-town-penang';
-  const koreaCountryIdentity = record.path === '/south-korea/' && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'south-korea';
+  const koreaCountryIdentity = record.path === '/south-korea/' && attr(bodyNode, 'data-page') === 'south-korea' && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'south-korea';
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
   const busanIdentity = record.path.startsWith('/south-korea/busan/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'busan';
   const gyeongjuIdentity = record.path.startsWith('/south-korea/gyeongju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'gyeongju';
@@ -1093,6 +1093,10 @@ const regionWidthSelector = 'body[data-country="france"][data-region]:not([data-
 const regionWidthRule = cssRuleBlock(franceCssText, regionWidthSelector);
 if (!/min-width\s*:\s*0\s*;/i.test(regionWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(regionWidthRule)) fail('France regional bodies, shells and content must be allowed to shrink below the global 320 px minimum.');
 if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(regionWidthRule)) fail('France regional width correction must not conceal horizontal overflow.');
+const siteCssText = fs.readFileSync(safeDistPath('/css/site.css'), 'utf8');
+const koreaCountryWidthRule = cssRuleBlock(siteCssText, 'body[data-country="south-korea"]');
+if (!/min-width\s*:\s*0\s*;/i.test(koreaCountryWidthRule)) fail('South Korea pages must shrink below the global 320 px body minimum.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(koreaCountryWidthRule)) fail('South Korea country width correction must not conceal horizontal overflow.');
 const franceFieldCssText = fs.readFileSync(safeDistPath('/css/france-field.css'), 'utf8');
 const narrowFieldMedia = franceFieldCssText.lastIndexOf('@media (max-width: 620px)');
 if (narrowFieldMedia < 0) fail('France field CSS is missing the narrow mobile breakpoint.');
