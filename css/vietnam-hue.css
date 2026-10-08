@@ -1,0 +1,55 @@
+/* Hue heritage pages: lacquer, aged brick and river stone. */
+body[data-vn-family="violet-rain-archive"] .vn-hub-hero {
+  border-radius:.35rem 5.5rem .35rem .35rem;
+  background:
+    radial-gradient(ellipse at 88% 12%,rgba(196,157,102,.2),transparent 29%),
+    linear-gradient(126deg,#292430 0%,#46343a 56%,#294547 100%);
+}
+
+body[data-vn-family="violet-rain-archive"] .vn-hub-hero::before {
+  inset:0 48% 0 0;
+  opacity:.2;
+  background:repeating-linear-gradient(90deg,transparent 0 3.6rem,rgba(223,194,150,.2) 3.65rem 3.72rem);
+}
+
+body[data-vn-family="violet-rain-archive"] .vn-hub-index {
+  width:8.6rem;
+  border-radius:.15rem 1.4rem .15rem .15rem;
+  background:rgba(39,35,44,.82);
+}
+
+body[data-vn-family="violet-rain-archive"] .vn-hub-card {
+  border-top:3px solid #a45355;
+  box-shadow:0 .8rem 2rem rgba(49,35,39,.08);
+}
+
+body[data-vn-family="violet-rain-archive"] .vn-hub-card:hover {
+  border-top-color:#c29660;
+  box-shadow:0 1.2rem 2.6rem rgba(49,35,39,.15);
+}
+
+body[data-vn-family="violet-rain-archive"] .vn-field-hero {
+  border-radius:.3rem 4.4rem .3rem .3rem;
+  background:
+    linear-gradient(135deg,rgba(164,83,85,.18),transparent 48%),
+    repeating-linear-gradient(0deg,transparent 0 3.1rem,rgba(255,255,255,.035) 3.15rem 3.2rem),
+    var(--vn-dark);
+}
+
+body[data-page="imperial-city-citadel"] .vn-field-image {
+  border-left:5px solid #c29660;
+}
+
+body[data-page="royal-tombs"] .vn-field-hero {
+  border-style:double;
+  border-width:3px;
+}
+
+body[data-page="thien-mu-perfume-river"] .vn-field-image {
+  border-left:5px solid #688e8d;
+}
+
+@media (max-width:1080px) {
+  body[data-vn-family="violet-rain-archive"] .vn-hub-hero { border-radius:.25rem 2.6rem .25rem 2.6rem; }
+  body[data-vn-family="violet-rain-archive"] .vn-field-hero { border-radius:.25rem 2.6rem .25rem 2.6rem; }
+}

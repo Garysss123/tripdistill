@@ -5,11 +5,23 @@ const hue = defineVietnamCluster({
   name: 'Hue',
   region: 'North Central Coast',
   family: 'violet-rain-archive',
-  label: 'Imperial river city · Central Vietnam',
-  tagline: 'Read the old capital by water, wall and weather.',
-  hubIntro: 'Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.',
-  stay: 'Base on the south bank for walkable access to the Citadel, riverfront and central food streets; move closer to the west or south only when a tombs, village or Bach Ma day justifies the transfer.',
-  transfer: 'Keep the central city on foot or by short local ride, then use a confirmed taxi, private car or licensed boat for dispersed monuments and nature days. Do not treat every riverbank stop as one same-day loop.',
+  label: 'Citadel, court gardens & river · Central Vietnam',
+  tagline: 'Choose between palace walls, tomb gardens and a living pagoda.',
+  hubIntro: 'Hue was Vietnam’s capital under the Nguyen dynasty from 1802 to 1945. Its monuments make more sense as a river-shaped city than a monument checklist: the walled Citadel faces the south-bank civic streets, while Thien Mu and the royal tombs sit farther along the Perfume River. Give the capital, the tomb landscapes and active religious places their own pace; repairs, wartime losses and seasonal flooding are part of what visitors see.',
+  stay: 'The south bank is a practical base for hotels, evening food and the Le Loi riverside; cross to the north-bank Citadel early, when the long courtyards are easier to walk before midday heat.',
+  transfer: 'Walk or take a short local ride around the central riverfront. Thien Mu lies upstream northwest of the Citadel; the tombs are farther out and dispersed. Use a driver or taxi with a clear return plan, or book a river trip only after confirming the operator and boarding point.',
+  hubCss: '/css/vietnam-hue.css?v=20261008-1',
+  reviewDate: '8 October 2026',
+  isoDate: '2026-10-08',
+  presentation: {
+    conditionsKicker: 'A river city, several clocks',
+    conditionsTitle: 'Keep the court, tombs and worship on separate terms.',
+    conditionsLead: 'The central Citadel is a long walking visit. Tombs require road time outside town. Thien Mu is still a place of worship, and any boat approach depends on current service and river conditions.',
+    faqKicker: 'Hue, planned by place',
+    faqTitle: 'Plan by landscape, not by monument count.',
+  },
+  routeModelHeading: 'Walk the capital, then follow the river outward.',
+  routeModelLead: 'Start inside the walled city. Give the upstream pagoda and outlying tombs separate half-day or full-day windows, with a return plan that still works if rain slows the roads or boats.',
   sources: [
     ['https://whc.unesco.org/en/list/678', 'UNESCO — Complex of Hué Monuments'],
     ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — official e-ticket portal'],
@@ -17,12 +29,37 @@ const hue = defineVietnamCluster({
     ['https://hue.gov.vn/en-us/Home/Tourism/Details/tb/Thanh-Toan-tile-roofed-bridge-the-national-art-and-architecture-relic-598030', 'Hue City Portal — Thanh Toan tile-roofed bridge'],
     ['https://nbca.gov.vn/vuon-quoc-gia-bach-ma/', 'National Biodiversity Conservation — Bach Ma National Park']
   ],
+  hubSources: [
+    ['https://whc.unesco.org/en/list/678', 'UNESCO — Complex of Hué Monuments and its river-shaped capital plan'],
+    ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — official e-ticket portal'],
+    ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — Hue food, seasons and transport'],
+    ['https://www.vietnam.travel/things-to-do/an-inside-guide-hue-tombs', 'Vietnam Tourism — distinct landscapes and history of the royal tombs'],
+    ['https://www.vietnam.travel/things-to-do/how-eat-local-hue', 'Vietnam Tourism — Hue dishes and food traditions']
+  ],
   guides: [
     {
       slug: 'imperial-city-citadel',
       name: 'Imperial City & Citadel',
-      motif: 'The court axis',
+      motif: 'A capital within walls',
       instrument: 'axis',
+      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      reviewDate: '8 October 2026',
+      sources: [
+        ['https://whc.unesco.org/en/list/678', 'UNESCO — Complex of Hué Monuments and the Citadel precincts'],
+        ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — current tickets and access'],
+        ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — Hue seasons and transport'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official warnings']
+      ],
+      presentation: {
+        readingTitle: 'A defended capital, not a single palace.',
+        routeTitle: 'Read the city from gate to inner court.',
+        checksLabel: 'Before you enter',
+        checksTitle: 'Check the gate, heat and open areas.',
+        checksLead: 'Use the Hue Monuments Conservation Centre’s current ticket and access information. Restoration and weather can change which buildings are open.',
+        boundaryTitle: 'Give old and repaired fabric room',
+        faqLabel: 'Citadel visit notes',
+        faqTitle: 'Timing, entrance and walking route'
+      },
       image: image({
         src: '/assets/images/vietnam-hue-meridian-gate.webp',
         alt: 'Meridian Gate at Hue Imperial City',
@@ -31,66 +68,100 @@ const hue = defineVietnamCluster({
         creator: 'Vyacheslav Argenberg',
         license: 'CC BY 4.0'
       }),
-      summary: 'Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.',
-      lead: 'The Citadel is not a single photogenic building. It is a planned relationship between walls, water, ceremonial thresholds and repaired or missing structures. Read the geometry first, then let the details explain what survives.',
-      orientation: 'Start with a map and a shaded pause point. The most useful visit links the outer Citadel, Imperial City and remaining Forbidden Purple City traces without pretending every restored surface has the same historical status.',
-      arrival: 'Use the central city as the arrival contract: walk, cycle or take a short local ride to the chosen gate, then keep the rest of the visit inside one coherent heritage zone.',
-      sequence: 'Enter through the principal ceremonial threshold, move through court-facing spaces, compare restored and ruinous edges, then finish with a quiet exterior view of the moat and city wall.',
-      boundary: 'Protect the heritage boundary: never climb, touch, lean on, or cross barriers around walls, timber, stone fragments and active restoration work.',
+      summary: 'Trace Hue’s walled royal capital from the moat and Meridian Gate through court halls to the surviving foundations and repaired palace precincts.',
+      lead: 'The Nguyen capital established in 1802 was planned around the Perfume River, with defensive walls enclosing administrative, military and royal quarters. Inside the larger Citadel, the Imperial City and the Forbidden Purple City formed nested precincts. Visitors now move between restored halls, open foundations and war-damaged traces; those differences are part of the record, not a reason to rush past them.',
+      orientation: 'The Citadel is the broad walled city; the Imperial City is the royal enclosure within it, and the Forbidden Purple City lay deeper inside. Choose the ticketed heritage precinct shown on the current official map, then use the Meridian Gate and the court axis to understand how the spaces narrow toward the ruler’s quarters.',
+      arrival: 'From the south-bank hotel and food streets, cross the river by bridge and use the entrance named on the current Hue heritage ticket. Do not assume a gate, side entrance or combination ticket remains valid from an older itinerary.',
+      sequence: 'Begin outside the moat to see the scale of the wall, then enter at Meridian Gate. Move through the courtyards toward Thai Hoa Palace, continue to the surviving and reconstructed inner-palace traces, and compare repaired timber and tile with open foundations before leaving by a permitted public path.',
+      boundary: 'Stay on public paths and outside restoration barriers. Do not touch carved wood, fragments or inscriptions; avoid blocking the gate and court axis for photographs, and yield to staff and other visitors.',
       stages: [
-        ['Choose the gate', 'Check the current official ticket and access notice, select a permitted entrance and arrive with water, sun protection and enough time for a slow first circuit.'],
-        ['Read the axis', 'Follow the major ceremonial alignment before chasing individual halls; note how courtyards, gates, walls and water organize movement and rank.'],
-        ['Compare evidence', 'Separate original fabric, reconstruction, ruin and interpretation signage. Pause where the site asks for observation rather than another photograph.'],
-        ['Leave by the moat', 'Exit through the permitted route, review the river and defensive landscape from public paths, and avoid compressing another distant monument into the same heat window.']
+        ['Enter the walled city', 'Cross from the south bank, check the day’s official gate and ticket conditions, then approach from the moat so the outer defensive scale is visible.'],
+        ['Follow court order', 'Use Meridian Gate, the courtyards and Thai Hoa Palace to read the ceremonial sequence; the axis explains why one hall is not the whole visit.'],
+        ['Notice what survives', 'Compare repaired halls, bare foundations and gaps in the inner precinct. UNESCO records war damage and ongoing restoration, so do not read every finished surface as untouched original fabric.'],
+        ['Return across the river', 'Allow a shaded rest before crossing back. Dong Ba Market is east of the Citadel for a separate food stop; choose it only if the market is still operating and you have time to browse without rushing.']
       ],
       risks: [
-        ['Entry status', 'Confirm current opening zones, ticket terms and restoration closures through the official Hue heritage portal before setting the day.'],
-        ['Heat and rain', 'Hue rain, flooding and humid heat can change comfort and access quickly; carry water and keep a weather fallback for indoor interpretation.'],
-        ['Surface safety', 'Uneven paving, steps and wet stone require slower movement, especially after rain and for anyone using wheels or limited mobility.']
+        ['Ticket and gate', 'The e-ticket portal lists current site access and combination tickets; check your selected entry before crossing rather than assuming every gate accepts every ticket.'],
+        ['Heat and flood season', 'The national tourism guide describes February–April as the drier spring window, hotter June–July, and rain from August into January, with flooding often later in the year. Check local forecasts and access notices close to travel.'],
+        ['Long exposed walk', 'Courtyards, steps and uneven paving add up. Carry water and sun protection, and ask the site about step-free routes if mobility is limited.']
       ],
-      duration: 'Give the Citadel at least a generous half day; add a second session when the group wants both architectural detail and unhurried riverbank context.',
-      combine: 'Combine with the central riverfront or Dong Ba food area, not with all three royal tombs and a mountain excursion on the same day.',
-      verify: 'Recheck the Hue e-ticket portal, official conservation notices, weather and any temporary access restrictions immediately before visiting.'
+      duration: 'Plan 3–4 hours inside the heritage precinct, plus the river crossing and a cooling break. A longer visit works if you read the outer Citadel as well as the inner courts.',
+      combine: 'A short south-bank riverside walk can follow. Dong Ba Market sits by the northeast edge of the Citadel; keep it as a food-market stop, not another full attraction. Save the outlying tombs for a different day.',
+      verify: 'Check the Hue e-ticket portal for the current entrance, ticket terms and closures; check the National Center for Hydro-Meteorological Forecasting and local notices for rain or flood disruption before setting a walking route.'
     },
     {
       slug: 'royal-tombs',
       name: 'Royal Tombs of Minh Mang, Tu Duc & Khai Dinh',
-      motif: 'Three landscapes of remembrance',
+      motif: 'Three rulers, three landscapes',
       instrument: 'ledger',
+      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      reviewDate: '8 October 2026',
+      sources: [
+        ['https://www.vietnam.travel/things-to-do/an-inside-guide-hue-tombs', 'Vietnam Tourism — tomb histories and differences'],
+        ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — official tickets and open sites'],
+        ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — local transport and seasonal conditions']
+      ],
+      presentation: {
+        readingTitle: 'The grounds explain the differences.',
+        routeTitle: 'Choose two tombs before you choose a car.',
+        checksLabel: 'Before the road trip',
+        checksTitle: 'Confirm tickets, order and return.',
+        checksLead: 'The monuments are outside the central walking zone. Confirm official site access, an agreed pickup and enough daylight for the return.',
+        boundaryTitle: 'Treat a royal tomb as a memorial place',
+        faqLabel: 'Tomb-day decisions',
+        faqTitle: 'Which pair, and how much time?'
+      },
       image: image({
-        src: '/assets/images/vietnam-hue-minh-mang-tomb.webp',
-        alt: 'Stone animals and garden landscape at Minh Mang Tomb in Hue',
-        source: 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg',
-        label: 'Minh Mang Royal Tomb',
-        creator: 'Pham Van Hoa',
-        license: 'CC BY-SA 4.0'
+        src: '/assets/images/vietnam-hue-minh-mang-20261008.webp',
+        alt: 'Đại Hồng Môn, the main gate at Minh Mang Royal Tomb in Hue',
+        source: 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg',
+        label: 'Royal Tomb of Minh Mang',
+        creator: 'Erwin Verbruggen',
+        license: 'CC BY-SA 2.0'
       }),
-      summary: 'Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.',
-      lead: 'The tombs are dispersed memorial landscapes, not interchangeable palace rooms. A useful day compares how each ruler shaped water, terrain, garden, ceremony and the visitor’s approach.',
-      orientation: 'Treat the three sites as separate entries in a visual ledger. Mark the one that needs the most steps and the one that deserves the longest quiet pause before choosing the order.',
-      arrival: 'Leave the central city with a confirmed car, taxi or carefully planned bicycle route; boat combinations can be atmospheric but depend on current river operations and weather.',
-      sequence: 'Begin with the most accessible landscape, use the second site to compare garden and water logic, then reserve the final stop for the steepest or most detailed architecture while light remains usable.',
-      boundary: 'Protect funerary dignity and historic fabric: do not climb roofs, sit on monuments, touch inscriptions or turn prayer and memorial spaces into staged props.',
+      summary: 'Compare Minh Mang’s axial gardens, Tu Duc’s lake-and-pavilion retreat and Khai Dinh’s steep mosaic interior; pick a pair that suits your walking pace.',
+      lead: 'These are funerary landscapes designed around different rulers, not three versions of one palace. Minh Mang’s long axial sequence uses gates, bridges, ponds and pine-covered hills; Tu Duc shaped a lake-and-pavilion retreat associated with his poetry and time spent there during his life; Khai Dinh’s climb ends in a richly tiled interior that combines Vietnamese and European forms. A visit becomes more useful when you choose which contrast you want to see.',
+      orientation: 'Minh Mang suits a visitor interested in symmetry and garden planning; Tu Duc in shaded water, pavilions and the emperor’s literary persona; Khai Dinh in steep stairways, mixed architectural references and dense interior mosaics. The tourism authority describes the sites as distinct, and advises choosing rather than trying to cover all of them in a short stay.',
+      arrival: 'Arrange a car or taxi with a written pickup point, waiting arrangement and return fare before leaving the city. A bicycle is possible only for riders comfortable with Hue’s roads, distance and heat; do not count on finding a replacement ride at a tomb gate.',
+      sequence: 'For a two-site day, choose one broad garden landscape (Minh Mang or Tu Duc) and one contrasting site (often Khai Dinh). Visit the open-air gardens while energy is high, save the more compact tiled interior for the second stop, then return directly to town. The route order depends on road conditions and current opening information.',
+      boundary: 'These are memorial places with active visitors and historic fabric. Keep voices low, do not climb tomb structures, touch inscriptions or sit on monuments, and follow barriers even when a viewpoint looks close.',
       stages: [
-        ['Set the comparison', 'Choose three criteria—approach, water and material—and record them before leaving the first tomb so the visits remain analytical rather than repetitive.'],
-        ['Read the garden', 'Follow the designed relationship between gates, courtyards, lakes, pavilions and hills; let the setting explain the tomb instead of isolating the central structure.'],
-        ['Slow the detail', 'Reserve time for ceramic, stone, brick and inscription work, especially where restoration and weathering make the historical record uneven.'],
-        ['Return with margin', 'Finish at a point with reliable road access, keep a meal and weather buffer, and do not attach a late cross-city transfer to a dispersed heritage day.']
+        ['Choose your contrast', 'Select two rather than three if heat, stairs or limited time are concerns. Decide whether you want Minh Mang’s axial garden, Tu Duc’s lake pavilions or Khai Dinh’s stair-and-mosaic sequence.'],
+        ['Read Minh Mang outdoors', 'Follow the ceremonial axis across gates and bridges toward the lake and tree-covered hills. The layout was completed in 1843; the site’s scale makes a quiet, unhurried circuit worthwhile.'],
+        ['Compare Tu Duc and Khai Dinh', 'At Tu Duc, notice the water, pavilions and spaces linked to the emperor’s visits in life. At Khai Dinh, pace the climb and look closely at the mosaic-filled interior; the steep platforms change the effort of the visit.'],
+        ['Return before the day thins', 'Keep the driver or taxi pickup fixed, add a meal and rain buffer, and avoid planning a river cruise or airport transfer immediately after the tombs.']
       ],
       risks: [
-        ['Dispersed transfers', 'The tombs lie in different directions along and beyond the Perfume River; confirm the vehicle, waiting arrangement and return plan rather than relying on one informal ride.'],
-        ['Steps and exposure', 'Uneven paths, steep stairs, sun and wet surfaces can make the final site slower than expected; plan rests and suitable footwear.'],
-        ['Flood and closure', 'Rain, river conditions, restoration and temporary heritage restrictions can alter the best order; check the official ticket and local notices.']
+        ['Unlinked locations', 'The tombs are dispersed beyond the city. Confirm with the driver which sites are in the agreed trip, who waits, and where the final pickup occurs.'],
+        ['Stairs and heat', 'Khai Dinh has a steep sequence of platforms; the gardens at Minh Mang and Tu Duc also involve long, exposed walks. Wear shoes with grip and take shade breaks.'],
+        ['Rain and site status', 'Wet steps and late-year flood disruption may change access or the practical order. Check the heritage ticket portal and local weather on the day.']
       ],
-      duration: 'Use a full day for three tombs with real pauses; two tombs can form a more comfortable half-day when heat or mobility is a concern.',
-      combine: 'Pair with a central-city evening or Thien Mu on a separate river day; avoid adding Bach Ma or Lang Co to this already dispersed route.',
-      verify: 'Confirm the current multi-site ticket options, road and weather conditions, boat availability if relevant, and each site’s open areas before departure.'
+      duration: 'Allow about half a day for two tombs with a prearranged vehicle and short pauses; give three tombs a full day. These are planning estimates, and site distance, heat and stairs can stretch them.',
+      combine: 'Return to town for an evening meal. Thien Mu is a separate upstream branch, and Bach Ma or Lang Co is too far to bolt onto a tomb circuit.',
+      verify: 'Use the official Hue heritage ticket portal for current individual or combination admission and opening information. Confirm the vehicle, waiting arrangement, road weather and access to each site before departure.'
     },
     {
       slug: 'thien-mu-perfume-river',
       name: 'Thien Mu & Perfume River',
-      motif: 'A river of prayer',
+      motif: 'A pagoda above the river',
       instrument: 'ribbon',
+      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      reviewDate: '8 October 2026',
+      sources: [
+        ['https://whc.unesco.org/en/list/678', 'UNESCO — Thien Mu as an associated monument of the Hue capital'],
+        ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — Thien Mu tower and transport'],
+        ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — current access and river tours']
+      ],
+      presentation: {
+        readingTitle: 'A working pagoda in the river landscape.',
+        routeTitle: 'Approach quietly, then leave room to linger.',
+        checksLabel: 'Before going upstream',
+        checksTitle: 'Check worship, boat and weather.',
+        checksLead: 'The pagoda remains a religious complex. Boat schedules and boarding points are operator-specific; keep a road return available.',
+        boundaryTitle: 'Let worship set the pace',
+        faqLabel: 'Pagoda and river notes',
+        faqTitle: 'Getting there with time to spare'
+      },
       image: image({
         src: '/assets/images/vietnam-hue-thien-mu.webp',
         alt: 'Thien Mu Temple and Pagoda beside the Perfume River in Hue',
@@ -99,26 +170,26 @@ const hue = defineVietnamCluster({
         creator: 'CEphoto, Uwe Aranas',
         license: 'CC BY-SA 3.0'
       }),
-      summary: 'Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.',
-      lead: 'Thien Mu is both a recognizable landmark and a living religious complex. The river approach matters because Hue’s spiritual geography is carried by water, hills, gardens and the pace between them.',
-      orientation: 'Read the pagoda as a working place of devotion before reading it as a viewpoint. Keep the river, tower, courtyards and surrounding shade in one quiet sequence.',
-      arrival: 'Reach the west bank by road or a currently operating river service. Confirm the boarding point and return arrangement because water levels, weather and boat operations change.',
-      sequence: 'Approach along the river, pause outside the main worship flow, visit only public areas, then continue through the nearby landscape rather than treating the pagoda as a quick photo stop.',
-      boundary: 'Protect the religious boundary: dress modestly, lower voices, ask before photographing people or ceremonies, and never enter a marked monastic or ritual area.',
+      summary: 'Visit the seven-tier tower and active Buddhist grounds above the Perfume River; make the river approach an optional, confirmed part of the plan.',
+      lead: 'Thien Mu Pagoda is both a familiar river landmark and an active religious complex associated with Hue’s former capital. Its best-known seven-tier tower is only one part of what visitors see: gates, courtyards, devotional spaces and tree shade sit together above the water. UNESCO also lists the pagoda among the capital’s associated monuments, so the upstream location is part of the historic geography.',
+      orientation: 'Vietnam’s tourism authority identifies the seven-tier tower as Hue’s iconic pagoda landmark. Visit the public compound as a working Buddhist place, not a staged viewpoint; worship, ceremonies or staff direction may temporarily change which spaces are appropriate to enter.',
+      arrival: 'Thien Mu stands upstream northwest of the central Citadel. A taxi or prearranged car gives the clearest return plan. A river approach is atmospheric only when a licensed service confirms its departure pier, operating time and return; do not buy a one-way ride without a land fallback.',
+      sequence: 'Arrive during daylight, pause outside the gate before joining visitor movement, and view the tower from the public courtyard. Continue only through open areas, then take time at a public river edge if conditions allow. Keep the return transfer separate from any tomb circuit.',
+      boundary: 'Dress modestly, lower voices, and give worshippers right of way. Ask before photographing people; never enter a marked monastic, residential or ritual area, and follow staff directions if a ceremony is underway.',
       stages: [
-        ['Choose the waterline', 'Decide whether the day begins on foot, by road or by an authorized boat, then confirm the return path before entering the pagoda grounds.'],
-        ['Pause at the threshold', 'Observe the tower, gate and river relationship from public space; let worshippers move first and avoid blocking stairs or offerings.'],
-        ['Read the living complex', 'Notice courtyards, gardens, incense and ordinary religious activity without turning private devotion into a performance for visitors.'],
-        ['Release the river', 'Continue to a quiet public riverbank, hydrate and return before changing light or weather turns the boat or road connection into a rushed exit.']
+        ['Confirm the approach', 'Set a road pickup or verify a licensed river departure and return before leaving town. The pagoda is upstream, so an unconfirmed boat can strand the second half of the plan.'],
+        ['Meet the tower', 'From the public grounds, notice how the seven-tier tower rises above the river and the gate frames the compound. Keep clear of stairs and offerings.'],
+        ['Read the working pagoda', 'Move slowly through public courtyards and open devotional spaces. The point is to see an active religious place in its river setting, not to photograph every worshipper.'],
+        ['Return in daylight', 'Leave room for a quiet riverside pause, then use the confirmed road or boat return before weather, light or operator hours narrow the options.']
       ],
       risks: [
-        ['Boat variability', 'River departures, boarding points and return times are not guaranteed by an itinerary; confirm the operator and keep a land-side fallback.'],
-        ['Ritual sensitivity', 'Active worship can make areas temporarily unavailable; follow staff instructions and do not photograph restricted rituals.'],
-        ['Wet access', 'Steps, river edges and stone surfaces become slippery after rain; keep children away from unguarded water and move slowly.']
+        ['Boat uncertainty', 'There is no dependable public timetable implied by the river setting. Confirm a licensed operator, pier, price and return time directly before choosing a boat.'],
+        ['Worship and closures', 'Ceremonies and monastic activity may make parts of the grounds private. Follow signs and staff, and skip a room or courtyard if worship is in progress.'],
+        ['River weather', 'Rain can make stone steps and river edges slippery; during Hue’s rainy and flood-prone months, check local warnings and use the road route if water service is suspended.']
       ],
-      duration: 'Allow a calm half day, with extra time if the group wants a river approach and a respectful visit rather than a single viewpoint.',
-      combine: 'Combine with a west-bank garden or monastery only when the group can keep the day quiet; pair the royal tombs on another route.',
-      verify: 'Check current river service, weather, religious-event notices and any visitor restrictions before choosing a boat or fixed return time.'
+      duration: 'Plan 2–3 hours at the pagoda and river edge, plus the round trip from the central city. Add more time only after the boat schedule or driver wait has been confirmed.',
+      combine: 'Pair with a calm central riverfront visit, or choose a separate west-bank garden if it is open and the transfer is clear. Keep the tombs for another route.',
+      verify: 'Check current visitor guidance through the Hue heritage centre, ask staff about access at the gate, and confirm the boat or vehicle return and local rain or flood warning before leaving town.'
     },
     {
       slug: 'thanh-toan-rural-loop',
