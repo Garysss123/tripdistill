@@ -792,6 +792,7 @@ for (const locale of expectedLocales) {
             ]
           : routePath.endsWith('/son-tra-peninsula/')
             ? [
+                'https://danangfantasticity.com/en/linh-ung-pagoda',
                 'https://vietnam.travel/places-to-go/central-vietnam/da-nang',
                 'https://cttdt.danangportal.gov.vn/en/web/dng/-/kham-pha-son-tra-trai-nghiem-can-di-cung-trach-nhiem'
               ]
@@ -813,7 +814,7 @@ for (const locale of expectedLocales) {
         const requiredByRoute = {
           '/vietnam/da-nang-hoi-an/': ['Ngu Hanh Son', 'Thu Bon', '15th–19th-century port', '4th to 13th centuries'],
           '/vietnam/da-nang-hoi-an/han-river-city-core/': ['Bach Dang', 'Tran Hung Dao', 'Museum of Cham Sculpture', '5th to 15th centuries', 'swing-bridge'],
-          '/vietnam/da-nang-hoi-an/son-tra-peninsula/': ['red-shanked douc langur', 'Linh Ung', 'authorized roads', 'half day', 'no sighting is a normal outcome'],
+          '/vietnam/da-nang-hoi-an/son-tra-peninsula/': ['red-shanked douc langur', 'Linh Ung', 'authorized roads', 'half day', 'three-door gate', 'courtyard', 'arhat figures', 'Lady Buddha', 'Shakyamuni', 'protection for fishermen', 'chance encounter'],
           '/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/': ['Huyen Khong Cave', 'Tam Thai Pagoda', 'Non Nuoc', '2–3 hours'],
           '/vietnam/da-nang-hoi-an/my-khe-an-thuong/': ['My Khe', 'An Thuong', 'public beach entrance', 'midday recovery', 'marine forecast'],
           '/vietnam/da-nang-hoi-an/hoi-an-ancient-town/': ['1,107 timber-frame buildings', '80,000 VND', '120,000 VND', 'living trading port'],
