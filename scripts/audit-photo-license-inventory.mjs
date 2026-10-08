@@ -629,7 +629,12 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:N_Seoul_T
 });
 
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg', {
+  detail: 'Exact Commons page checked for the title Chatuchak Weekend Market, Christophe95 as author, the 12 May 2018 photograph date, and CC BY-SA 4.0 terms. The downloaded 4,032 x 3,024 source and local WebP pixels were inspected on 2026-10-08; both show a covered Chatuchak aisle with shoppers, flower stalls and souvenir stalls. The local copy is resized, cropped for display and converted to WebP; the route links both source and license.',
+  checkedOn: '2026-10-08'
+});
 const explicitCreditMappings = new Map([
+  ['/assets/images/thailand-chatuchak.webp', { sourceTitle: 'File:Chatuchak Weekend Market 2.jpg', creditLabel: 'Chatuchak Weekend Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-05-12', editHistory: 'Resized, cropped for display and converted to WebP.', note: 'The exact Commons source page and downloaded original were checked against the local WebP pixels on 2026-10-08. Both show the same covered market aisle, flower stalls, souvenir stalls and shoppers.' }],
   ['/assets/images/korea-namsan-tower.webp', { sourceTitle: 'File:N Seoul Tower view 2.jpg', creditLabel: 'N Seoul Tower panorama / kallerna', creator: 'kallerna', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2022-11-30', note: 'The exact Commons page and downloaded original were checked against the local WebP pixels on 2026-10-08; the resized crop shows Seoul at night from N Seoul Tower looking south. The linked source, creator, license, and resize/crop notice are present.' }],
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
   ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
@@ -704,6 +709,7 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
   ['/assets/images/korea-namsan-tower.webp', '2026-10-08'],
   ['/assets/images/vietnam-hue-minh-mang-20261008.webp', '2026-10-08'],

@@ -77,7 +77,10 @@ const thailandBangkokEditedRoutes = [
   '/thailand/bangkok/',
   '/thailand/bangkok/rattanakosin-grand-palace/',
   '/thailand/bangkok/banglamphu-phra-athit/',
-  '/thailand/bangkok/yaowarat-talat-noi/'
+  '/thailand/bangkok/yaowarat-talat-noi/',
+  '/thailand/bangkok/chatuchak-ari/',
+  '/thailand/bangkok/silom-sathorn/',
+  '/thailand/bangkok/sukhumvit-thong-lo/'
 ];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters

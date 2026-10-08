@@ -88,7 +88,7 @@ try {
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 23, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 611, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 610, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const hueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === hueTombAssetPath);
   assert.ok(hueTomb, 'inventory regeneration must include the new Hue Minh Mang asset');
@@ -191,8 +191,14 @@ try {
   const chatuchakRecord = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-chatuchak.webp');
   assert.equal(chatuchakRecord.useCount, 1);
   assert.deepEqual(chatuchakRecord.routes, ['/thailand/bangkok/chatuchak-ari/']);
+  assert.equal(chatuchakRecord.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg');
+  assert.equal(chatuchakRecord.sourceTitle, 'File:Chatuchak Weekend Market 2.jpg');
+  assert.equal(chatuchakRecord.sourcePhotoDate, '2018-05-12');
   assert.equal(chatuchakRecord.creator, 'Christophe95');
   assert.equal(chatuchakRecord.license, 'CC BY-SA 4.0');
+  assert.equal(chatuchakRecord.verificationStatus, 'source_page_checked');
+  assert.equal(chatuchakRecord.verificationDate, '2026-10-08');
+  assert.equal(chatuchakRecord.visualReviewStatus, 'visually_reviewed_2026-10-08');
   const talatNoiRecord = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-talat-noi.webp');
   assert.ok(fs.existsSync(path.join(root, 'assets', 'images', 'thailand-talat-noi.webp')), 'Talat Noi orphan asset remains present but unused');
   assert.equal(talatNoiRecord.useCount, 0);
@@ -204,6 +210,7 @@ try {
     const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === 'https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg').length > 0);
     assert.equal(credits.length, 1, `${locale} Chatuchak route must retain its visible Commons credit`);
     assert.ok(textContent(credits[0]).includes('Christophe95') && textContent(credits[0]).includes('CC BY-SA 4.0'), `${locale} Chatuchak route must preserve creator and license`);
+    assert.equal(findAll(credits[0], (link) => link.tagName === 'a' && attrs(link).href === 'https://creativecommons.org/licenses/by-sa/4.0/').length, 1, `${locale} Chatuchak route must link the CC BY-SA 4.0 license`);
   }
   for (const [locale, prefix] of Object.entries(localeDirs)) {
     for (const route of thailandRoutes) {
@@ -330,7 +337,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: 17 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak stays credited on its own route and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

@@ -138,6 +138,9 @@ const expectedRoutes = [
   ['/thailand/bangkok/rattanakosin-grand-palace/', 'Rattanakosin & Grand Palace'],
   ['/thailand/bangkok/banglamphu-phra-athit/', 'Banglamphu & Phra Athit'],
   ['/thailand/bangkok/yaowarat-talat-noi/', 'Yaowarat & Talat Noi'],
+  ['/thailand/bangkok/chatuchak-ari/', 'Chatuchak & Ari'],
+  ['/thailand/bangkok/silom-sathorn/', 'Silom & Sathorn'],
+  ['/thailand/bangkok/sukhumvit-thong-lo/', 'Sukhumvit & Thong Lo'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -326,7 +329,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/four Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with six field guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, four Bangkok routes, and six Da Nang & Hoi An guides.`);
+  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/seven Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with six field guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, seven Bangkok routes, and six Da Nang & Hoi An guides.`);
   if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
@@ -478,7 +481,10 @@ const bangkokDatedRoutes = [
   '/thailand/bangkok/',
   '/thailand/bangkok/rattanakosin-grand-palace/',
   '/thailand/bangkok/banglamphu-phra-athit/',
-  '/thailand/bangkok/yaowarat-talat-noi/'
+  '/thailand/bangkok/yaowarat-talat-noi/',
+  '/thailand/bangkok/chatuchak-ari/',
+  '/thailand/bangkok/silom-sathorn/',
+  '/thailand/bangkok/sukhumvit-thong-lo/'
 ];
 for (const locale of expectedLocales) {
   for (const route of bangkokDatedRoutes) {
@@ -640,6 +646,33 @@ for (const locale of expectedLocales) {
         '/thailand/bangkok/yaowarat-talat-noi/': [
           'https://www.tourismthailand.org/Articles/1-day-in-talat-noi',
           'https://metro.bemplc.co.th/'
+        ],
+        '/thailand/bangkok/chatuchak-ari/': [
+          'https://www.chatuchakmarket.org/opening-times/',
+          'https://www.chatuchakmarket.org/map/',
+          'https://invest.bangkok.go.th/park/',
+          'https://www.bts.co.th/eng/routemap.html',
+          'https://metro.bemplc.co.th/',
+          'https://creativecommons.org/licenses/by-sa/4.0/'
+        ],
+        '/thailand/bangkok/silom-sathorn/': [
+          'https://invest.bangkok.go.th/park/',
+          'https://www.tourismthailand.org/Attraction/sri-maha-mariamman-temple',
+          'https://kingpowermahanakhon.co.th/experience/mahanakhon-skywalk',
+          'https://www.bts.co.th/eng/routemap.html',
+          'https://metro.bemplc.co.th/',
+          'https://www.chaophrayaexpressboat.com/chaophrayaexpressboat?lang=en',
+          'https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg'
+        ],
+        '/thailand/bangkok/sukhumvit-thong-lo/': [
+          'https://greener.bangkok.go.th/en/park/benjakitti-park/',
+          'https://greener.bangkok.go.th/en/park/utthayan-benjasiri/',
+          'https://emdistrict.com/tourist/',
+          'https://www.assetworldcorp-th.com/en/portfolio/retails-and-wholesales/80/gateway-ekamai',
+          'https://www.bts.co.th/eng/routemap.html',
+          'https://metro.bemplc.co.th/',
+          'https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg',
+          'https://creativecommons.org/licenses/by-sa/4.0/'
         ]
       }[routePath];
       const anchors = nodes(document, 'a');
@@ -650,7 +683,8 @@ for (const locale of expectedLocales) {
         const sourceLabel = text(anchor).replace(/\s+/g, ' ').trim();
         if (!sourceLabel) fail('Bangkok official link has no visible label on ' + locale.code + ' ' + routePath + ': ' + href + '.');
         const localizedScript = { 'zh-Hant': /[\u4e00-\u9fff]/, ja: /[\u3040-\u30ff\u4e00-\u9fff]/, ko: /[\uac00-\ud7af]/, th: /[\u0e00-\u0e7f]/ }[locale.code];
-        if (localizedScript && !localizedScript.test(sourceLabel)) fail('Bangkok official source label is not localized on ' + locale.code + ' ' + routePath + ': ' + href + '.');
+        const isStandardLicenseLabel = href.startsWith('https://creativecommons.org/licenses/');
+        if (localizedScript && !isStandardLicenseLabel && !localizedScript.test(sourceLabel)) fail('Bangkok official source label is not localized on ' + locale.code + ' ' + routePath + ': ' + href + '.');
       }
       const englishRecord = pagesByRoute.get('en' + routePath);
       const englishHeading = text(nodes(englishRecord.document, 'h1')[0]).replace(/\s+/g, ' ').trim();
@@ -682,6 +716,20 @@ for (const locale of expectedLocales) {
         };
         const btsLink = anchors.find((node) => attr(node, 'href') === 'https://www.bts.co.th/eng/routemap.html');
         if (!btsLink || text(btsLink).trim() !== btsLabels[locale.code]) fail('Bangkok official BTS map label is missing or untranslated on ' + locale.code + '.');
+      }
+      if (locale.code === 'en' && routePath === '/thailand/bangkok/chatuchak-ari/') {
+        for (const phrase of ['Wednesday and Thursday', 'Friday', 'Saturday and Sunday', 'Chatuchak Park', 'literary garden', 'Phahonyothin Soi 7']) if (!bodyText.includes(phrase)) fail('Chatuchak & Ari is missing its market-day distinction, named park details or neighborhood stop: ' + phrase + '.');
+        if (bodyText.includes('Four phases prevent the endless browse') || bodyText.includes('09:00 - ARRIVE')) fail('Chatuchak still uses the superseded generic clock route.');
+        const searchEntry = sourceSearchIndex.find((item) => item.url === routePath);
+        if (!searchEntry?.summary.includes('market day') || !searchEntry.summary.includes('Chatuchak Park')) fail('Chatuchak search summary omits market day and its concrete park exit.');
+      }
+      if (locale.code === 'en' && routePath === '/thailand/bangkok/silom-sathorn/') {
+        for (const phrase of ['King Rama VI statue', 'Sri Maha Mariamman Temple', 'Sathorn Pier', 'BTS Chong Nonsi']) if (!bodyText.includes(phrase)) fail('Silom & Sathorn is missing a named destination or usable branch: ' + phrase + '.');
+        if (bodyText.includes('one hour this is a park-and-office city') || bodyText.includes('Dinner, lights, one venue')) fail('Silom & Sathorn retains generic time-shift copy without place details.');
+      }
+      if (locale.code === 'en' && routePath === '/thailand/bangkok/sukhumvit-thong-lo/') {
+        for (const phrase of ['Benjakitti Park', 'Benchasiri Park', 'Emporium', 'EmQuartier', 'EmSphere', 'Sukhumvit Soi 55', 'Gateway Ekamai']) if (!bodyText.includes(phrase)) fail('Sukhumvit & Thong Lo is missing a named place or practical stop: ' + phrase + '.');
+        if (bodyText.includes('Four stations, four different trips') || bodyText.includes('Contract - know the return')) fail('Sukhumvit & Thong Lo retains generic corridor or awkward meta copy.');
       }
       if (locale.code === 'zh-Hant') {
         if (bodyText.includes('達叻仔') || bodyText.includes('塔拉德諾伊')) fail('Bangkok Traditional Chinese uses an inconsistent Talat Noi transliteration on ' + routePath + '.');

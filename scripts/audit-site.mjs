@@ -14,7 +14,10 @@ const thailandBangkokCssRoutes = new Set([
   '/thailand/bangkok/',
   '/thailand/bangkok/rattanakosin-grand-palace/',
   '/thailand/bangkok/banglamphu-phra-athit/',
-  '/thailand/bangkok/yaowarat-talat-noi/'
+  '/thailand/bangkok/yaowarat-talat-noi/',
+  '/thailand/bangkok/chatuchak-ari/',
+  '/thailand/bangkok/silom-sathorn/',
+  '/thailand/bangkok/sukhumvit-thong-lo/'
 ]);
 const problems = [];
 const notes = [];
