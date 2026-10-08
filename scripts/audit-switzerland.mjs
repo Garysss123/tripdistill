@@ -132,7 +132,8 @@ for (const route of routes) {
     check(dom.filter((node) => node.tagName === 'li' && node.parentNode && classHas(node.parentNode, 'ch-route')).length === 0 || html.includes('Four-stage operating line'), `${route}: route structure missing`);
     check(dom.filter((node) => classHas(node, 'ch-related')).length === 1, `${route}: related-guide section missing`);
     check(/data-ch-layout="[^"]+"/.test(html) && /data-ch-instrument="[^"]+"/.test(html) && /data-ch-variant="[1-8]"/.test(html), `${route}: child visual instrument markers missing`);
-    check(html.includes('/css/switzerland-field.css?v=20261008-2'), `${route}: current field stylesheet version missing`);
+    const fieldCssVersion = route === '/switzerland/zurich-lake/zurich-west-museums/' ? '20261008-3' : '20261008-2';
+    check(html.includes(`/css/switzerland-field.css?v=${fieldCssVersion}`), `${route}: current field stylesheet version missing`);
     const guide = switzerlandGuides.find((item) => item.url === route);
     if (guide?.fieldContext) {
       const localContext = dom.find((node) => classHas(node, 'ch-local-context'));

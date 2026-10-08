@@ -11,6 +11,7 @@ body[data-page="ca-victoria-south-island"],
 body[data-page="ca-victoria-south-island-butchart-saanich"],
 body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] {
   min-width: 0;
+  max-width: 100%;
 }
 
 body[data-page="ca-victoria-south-island"] .site-shell,
@@ -36,6 +37,8 @@ body[data-page="ca-victoria-south-island"] .ca-hub *,
 body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-field *,
 body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field * {
   min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 body[data-region="victoria-south-island"] .ca-hub-hero {
@@ -286,5 +289,47 @@ body[data-region="victoria-south-island"] .ca-related-card:hover {
   body[data-region="victoria-south-island"] .ca-hub-card,
   body[data-region="victoria-south-island"] .ca-related-card {
     transition: none;
+  }
+}
+
+
+@media (max-width: 720px) {
+  body[data-page="ca-victoria-south-island"] .ca-hub-hero,
+  body[data-page="ca-victoria-south-island"] .ca-hub-grid,
+  body[data-page="ca-victoria-south-island"] .ca-hub-stats,
+  body[data-page="ca-victoria-south-island"] .ca-route-compare,
+  body[data-page="ca-victoria-south-island"] .ca-hub-heading {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  body[data-page="ca-victoria-south-island"] .ca-contract-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-field-hero,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-decision-grid,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-orientation,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-route-grid,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-fallback-card,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-check-grid,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-section-heading,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-related-grid,
+  body[data-page="ca-victoria-south-island-butchart-saanich"] .ca-related-card,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field-hero,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-decision-grid,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-orientation,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-route-grid,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-fallback-card,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-check-grid,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-section-heading,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-related-grid,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-related-card {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+    max-width: 100%;
   }
 }

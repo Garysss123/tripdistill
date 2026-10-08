@@ -120,10 +120,29 @@
   .ch-field[data-ch-variant="5"] .ch-field-copy { color:var(--ch-ink); background:#fff; }
   .ch-ticket { left:auto; right:1rem; bottom:1rem; transform:none; width:min(350px,75%); }
   .ch-choice-deck,.ch-orientation,.ch-watch > div { grid-template-columns:1fr; }
-  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch > div { grid-template-columns:minmax(0,1fr); min-width:0; }
-  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch article { min-width:0; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"],
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] * { min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] { overflow-wrap:anywhere; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-regional-context,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-watch,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-faq,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-regional-context *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-watch *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-faq * { min-width:0; max-width:100%; overflow-wrap:anywhere; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch > div { grid-template-columns:minmax(0,1fr); min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck article,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch article { min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck h2,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck p,
   body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch h3,
-  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch p { min-width:0; overflow-wrap:anywhere; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch p { overflow-wrap:anywhere; }
   .ch-regional-context > header { grid-template-columns:1fr; }
   .ch-regional-context > div { grid-template-columns:repeat(2,1fr); }
   body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation {
@@ -159,4 +178,16 @@
   .ch-orientation,.ch-regional-context,.ch-route,.ch-fallback,.ch-watch,.ch-related,.ch-faq { padding:3.2rem 1rem; }
   .ch-regional-context > div { grid-template-columns:1fr; }
   .ch-field[data-ch-variant="8"] .ch-orientation aside { display:block; }
+}
+
+
+@media (max-width:620px) {
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-regional-context > div,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route ol,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related > div,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related a { grid-template-columns:minmax(0,1fr); min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route li,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback > div,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related a > div { min-width:0; max-width:100%; }
 }

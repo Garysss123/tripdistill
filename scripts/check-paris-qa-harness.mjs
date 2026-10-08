@@ -489,7 +489,7 @@ for (const locale of expectedLocales) {
       if (attr(body, 'data-country') !== 'switzerland' || attr(body, 'data-region') !== 'zurich-lake' || attr(body, 'data-page') !== expectedPage) fail(`Wrong Zurich page identity on ${locale.code} ${routePath}.`);
       if (!styleHrefs.includes('/css/switzerland.css?v=20260912-1')) fail(`Missing Switzerland stylesheet on ${locale.code} ${routePath}.`);
       const isZurichWest = routePath === '/switzerland/zurich-lake/zurich-west-museums/';
-      const expectedFieldCssVersion = '20261008-2';
+      const expectedFieldCssVersion = isZurichWest ? '20261008-3' : '20261008-2';
       if (!isHub && !styleHrefs.includes(`/css/switzerland-field.css?v=${expectedFieldCssVersion}`)) fail(`Missing Zurich field-guide stylesheet on ${locale.code} ${routePath}.`);
       if (nodes(document, 'details').length < 3) fail(`Missing visible Zurich FAQ controls on ${locale.code} ${routePath}.`);
       if (!links.some((href) => href.includes('commons.wikimedia.org')) || !links.some((href) => href.includes('creativecommons.org/licenses/'))) fail(`Missing linked Zurich photo source or license on ${locale.code} ${routePath}.`);
@@ -505,16 +505,6 @@ for (const locale of expectedLocales) {
         for (const staleLabel of ['田野工具', '保護返程', '利馬特河跨越帳冊']) {
           if (bodyText.includes(staleLabel)) fail(`Zurich Traditional Chinese still contains the unclear label [${staleLabel}] on ${routePath}.`);
         }
-      if (isZurichWest) {
-        const mobileMedia = fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8').lastIndexOf('@media (max-width:980px)');
-        const watchSelector = 'body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch > div';
-        const watchGridRule = cssRuleBlock(fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8'), `${watchSelector} {`, mobileMedia);
-        const watchCardRule = cssRuleBlock(fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8'), 'body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch article {', mobileMedia);
-        const watchTextRule = cssRuleBlock(fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8'), 'body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch h3,', mobileMedia);
-        if (mobileMedia < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(watchGridRule) || !/min-width\s*:\s*0\s*;/i.test(watchGridRule)) fail(`Zurich West variant 3 watch grid must override its two-column desktop rule with a shrinkable single mobile column on ${locale.code}.`);
-        if (!/min-width\s*:\s*0\s*;/i.test(watchCardRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(watchTextRule)) fail(`Zurich West watch cards and translated text must shrink and wrap on ${locale.code}.`);
-        if ([watchGridRule, watchCardRule, watchTextRule].some((rule) => /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule))) fail(`Zurich West watch grid must not hide horizontal overflow on ${locale.code}.`);
-      }
         const expectedLocaleLabel = {
           '/switzerland/zurich-lake/lake-uetliberg/': '瑞士北部・路線指南 02',
           '/switzerland/zurich-lake/old-town-lindenhof/': '利馬特河兩岸步行路線',
@@ -522,6 +512,37 @@ for (const locale of expectedLocales) {
         }[routePath];
         if (expectedLocaleLabel && !bodyText.includes(expectedLocaleLabel)) fail(`Zurich Traditional Chinese is missing its revised route label [${expectedLocaleLabel}] on ${routePath}.`);
         if (!isHub && !bodyText.includes('抵達後先確認方向、選好路線，並預留回程時間。')) fail(`Zurich Traditional Chinese is missing its practical return-planning cue on ${routePath}.`);
+      }
+      if (isZurichWest) {
+        const zurichFieldCss = fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8');
+        const mobile980 = zurichFieldCss.lastIndexOf('@media (max-width:980px)');
+        const mobile620 = zurichFieldCss.lastIndexOf('@media (max-width:620px)');
+        const scope = 'body[data-page="ch-zurich-lake-zurich-west-museums"]';
+        const choiceDeckRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-choice-deck,', mobile980);
+        const choiceCardRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-choice-deck article,', mobile980);
+        const choiceTextRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-choice-deck h2,', mobile980);
+        const watchGridRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-field[data-ch-variant="3"] .ch-watch > div {', mobile980);
+        const watchCardRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-field[data-ch-variant="3"] .ch-watch article {', mobile980);
+        const watchTextRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-field[data-ch-variant="3"] .ch-watch h3,', mobile980);
+        const sectionScopeRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-regional-context,', mobile980);
+        const sectionDescendantsRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-regional-context *,', mobile980);
+        for (const selector of [scope + ' .ch-regional-context', scope + ' .ch-route', scope + ' .ch-fallback', scope + ' .ch-watch', scope + ' .ch-related', scope + ' .ch-faq']) {
+          if (!sectionScopeRule.includes(selector)) fail('Zurich West mobile section guard is missing ' + selector + '.');
+        }
+        if (!/min-width\s*:\s*0\s*;/i.test(sectionScopeRule) || !/max-width\s*:\s*100%\s*;/i.test(sectionScopeRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(sectionScopeRule)) fail('Zurich West mobile sections must shrink and allow translated words to wrap on ' + locale.code + '.');
+        if (!/min-width\s*:\s*0\s*;/i.test(sectionDescendantsRule) || !/max-width\s*:\s*100%\s*;/i.test(sectionDescendantsRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(sectionDescendantsRule)) fail('Zurich West mobile section content must shrink and wrap on ' + locale.code + '.');
+        if (mobile980 < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(choiceDeckRule) || !/min-width\s*:\s*0\s*;/i.test(choiceDeckRule)) fail('Zurich West choice deck must use one shrinkable mobile column on ' + locale.code + '.');
+        if (!/min-width\s*:\s*0\s*;/i.test(choiceCardRule) || !/max-width\s*:\s*100%\s*;/i.test(choiceCardRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(choiceTextRule)) fail('Zurich West choice cards and text must fit the mobile column on ' + locale.code + '.');
+        if (!/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(watchGridRule) || !/min-width\s*:\s*0\s*;/i.test(watchGridRule) || !/max-width\s*:\s*100%\s*;/i.test(watchGridRule)) fail('Zurich West variant 3 watch grid must use a shrinkable mobile column on ' + locale.code + '.');
+        if (!/min-width\s*:\s*0\s*;/i.test(watchCardRule) || !/max-width\s*:\s*100%\s*;/i.test(watchCardRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(watchTextRule)) fail('Zurich West watch cards and translated text must shrink and wrap on ' + locale.code + '.');
+        const narrowGridRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-regional-context > div,', mobile620);
+        const narrowItemsRule = cssRuleBlock(zurichFieldCss, scope + ' .ch-route li,', mobile620);
+        for (const selector of [scope + ' .ch-regional-context > div', scope + ' .ch-route ol', scope + ' .ch-fallback', scope + ' .ch-related > div', scope + ' .ch-related a']) {
+          if (!narrowGridRule.includes(selector)) fail('Zurich West narrow layout is missing scoped grid selector ' + selector + '.');
+        }
+        if (mobile620 < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(narrowGridRule) || !/min-width\s*:\s*0\s*;/i.test(narrowGridRule) || !/max-width\s*:\s*100%\s*;/i.test(narrowGridRule)) fail('Zurich West context, route, fallback and related grids must use shrinkable columns at 620px on ' + locale.code + '.');
+        if (!narrowItemsRule.includes(scope + ' .ch-fallback > div') || !narrowItemsRule.includes(scope + ' .ch-related a > div') || !/min-width\s*:\s*0\s*;/i.test(narrowItemsRule) || !/max-width\s*:\s*100%\s*;/i.test(narrowItemsRule)) fail('Zurich West narrow grid items must fit their columns on ' + locale.code + '.');
+        if ([choiceDeckRule, choiceCardRule, choiceTextRule, watchGridRule, watchCardRule, watchTextRule, sectionScopeRule, sectionDescendantsRule, narrowGridRule, narrowItemsRule].some((rule) => /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule))) fail('Zurich West responsive rules must not hide horizontal overflow on ' + locale.code + '.');
       }
       if (locale.code === 'en') {
         const requiredByRoute = {
@@ -932,7 +953,7 @@ for (const locale of expectedLocales) {
       if (!styles.includes('/css/canada.css') || !styles.includes('/css/canada-victoria.css')) fail(`Missing Victoria route stylesheets on ${locale.code} ${routePath}.`);
       const isButchartRoute = routePath.endsWith('/butchart-saanich/');
       const isVictoriaNarrowTarget = isVictoriaHub || isButchartRoute || isSookeRoute;
-      const expectedVictoriaCssVersion = '20261008-2';
+      const expectedVictoriaCssVersion = isVictoriaNarrowTarget ? '20261008-3' : '20261008-2';
       if (!styleHrefs.includes(`/css/canada-victoria.css?v=${expectedVictoriaCssVersion}`)) fail(`Missing current Victoria responsive stylesheet on ${locale.code} ${routePath}.`);
       if (!isVictoriaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
       if (!attr(nodes(document, 'body')[0], 'data-region').includes('victoria-south-island')) fail(`Missing Victoria region marker on ${locale.code} ${routePath}.`);
@@ -972,10 +993,29 @@ for (const locale of expectedLocales) {
         const textWrapSelectorStart = victoriaCss.indexOf(`${targetSelector} ${contentClass}`, contentWidthSelectorStart + contentWidthRule.length);
         const textWrapRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass}`, textWrapSelectorStart);
         const descendantsRule = cssRuleBlock(victoriaCss, `${targetSelector} ${contentClass} *`, narrowRuleStart);
-        if (narrowRuleStart < 0 || !bodyWidthRule.includes(targetSelector) || !/min-width\s*:\s*0\s*;/i.test(bodyWidthRule)) fail(`Victoria target body must release the 320px floor on ${locale.code} ${routePath}.`);
+        if (narrowRuleStart < 0 || !bodyWidthRule.includes(targetSelector) || !/min-width\s*:\s*0\s*;/i.test(bodyWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(bodyWidthRule)) fail(`Victoria target body must release the 320px floor and fit the viewport on ${locale.code} ${routePath}.`);
         if (!contentWidthRule.includes(`${targetSelector} .page-content`) || !/min-width\s*:\s*0\s*;/i.test(contentWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(contentWidthRule)) fail(`Victoria target shell and content must shrink to the available width on ${locale.code} ${routePath}.`);
-        if (!textWrapRule.includes('overflow-wrap: anywhere') || !descendantsRule.includes('min-width: 0')) fail(`Victoria target content must wrap and release descendant minimum widths on ${locale.code} ${routePath}.`);
+        if (!textWrapRule.includes('overflow-wrap: anywhere') || !descendantsRule.includes('min-width: 0') || !descendantsRule.includes('max-width: 100%') || !descendantsRule.includes('overflow-wrap: anywhere')) fail(`Victoria target content must wrap and release descendant minimum widths on ${locale.code} ${routePath}.`);
         if ([bodyWidthRule, contentWidthRule, textWrapRule, descendantsRule].some((rule) => /overflow(?:-x)?:\s*(?:hidden|clip)\b/i.test(rule))) fail(`Victoria target rules must not conceal horizontal overflow on ${locale.code} ${routePath}.`);
+        const mobile720 = victoriaCss.lastIndexOf('@media (max-width: 720px)');
+        if (isVictoriaHub) {
+          const hubGridRule = cssRuleBlock(victoriaCss, targetSelector + ' .ca-hub-hero,', mobile720);
+          const contractGridRule = cssRuleBlock(victoriaCss, targetSelector + ' .ca-contract-grid', mobile720);
+          for (const selector of [targetSelector + ' .ca-hub-hero', targetSelector + ' .ca-hub-grid', targetSelector + ' .ca-hub-stats', targetSelector + ' .ca-route-compare', targetSelector + ' .ca-hub-heading']) {
+            if (!hubGridRule.includes(selector)) fail('Victoria hub narrow layout is missing scoped grid selector ' + selector + '.');
+          }
+          if (mobile720 < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(hubGridRule) || !/min-width\s*:\s*0\s*;/i.test(hubGridRule) || !/max-width\s*:\s*100%\s*;/i.test(hubGridRule)) fail('Victoria hub grids must use a shrinkable mobile column on ' + locale.code + '.');
+          if (!/grid-template-columns\s*:\s*repeat\(2\s*,\s*minmax\(0\s*,\s*1fr\)\)\s*;/i.test(contractGridRule) || !/min-width\s*:\s*0\s*;/i.test(contractGridRule)) fail('Victoria hub contract grid must retain two shrinkable mobile columns on ' + locale.code + '.');
+          if ([hubGridRule, contractGridRule].some((rule) => /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule))) fail('Victoria hub responsive rules must not hide horizontal overflow on ' + locale.code + '.');
+        } else {
+          const fieldGridRule = cssRuleBlock(victoriaCss, targetSelector + ' .ca-field-hero,', mobile720);
+          const expectedFieldSelectors = ['.ca-field-hero', '.ca-decision-grid', '.ca-orientation', '.ca-route-grid', '.ca-fallback-card', '.ca-check-grid', '.ca-section-heading', '.ca-related-grid', '.ca-related-card'];
+          for (const selector of expectedFieldSelectors) {
+            if (!fieldGridRule.includes(targetSelector + ' ' + selector)) fail('Victoria field narrow layout is missing scoped grid selector ' + targetSelector + ' ' + selector + '.');
+          }
+          if (mobile720 < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(fieldGridRule) || !/min-width\s*:\s*0\s*;/i.test(fieldGridRule) || !/max-width\s*:\s*100%\s*;/i.test(fieldGridRule)) fail('Victoria field grids must use a shrinkable mobile column on ' + locale.code + '.');
+          if (/overflow-x\s*:\s*(?:hidden|clip)\b/i.test(fieldGridRule)) fail('Victoria field responsive grids must not hide horizontal overflow on ' + locale.code + '.');
+        }
       }
       continue;
     }

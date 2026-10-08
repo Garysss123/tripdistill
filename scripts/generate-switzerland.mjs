@@ -8,6 +8,9 @@ const isoDate = '2026-09-12';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/switzerland.css?v=20260912-1';
 const fieldCss = '/css/switzerland-field.css?v=20261008-2';
+const fieldCssFor = (route) => route === '/switzerland/zurich-lake/zurich-west-museums/'
+  ? '/css/switzerland-field.css?v=20261008-3'
+  : fieldCss;
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
@@ -80,7 +83,7 @@ function sharedHead({ title, description, route, image, type = 'article', field 
   return `<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
   <meta name="theme-color" content="#d71920"><meta property="og:type" content="${type}"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(image.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">${field ? `<link rel="stylesheet" href="${fieldCss}">` : ''}`;
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">${field ? `<link rel="stylesheet" href="${fieldCssFor(route)}">` : ''}`;
 }
 
 function shellStart(mainOpen) {
