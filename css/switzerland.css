@@ -313,3 +313,15 @@
   .ch-country-band,.ch-country-section,.ch-guide-board,.ch-operating,.ch-comparison,.ch-faq { padding:3.3rem 1rem; }
   .ch-timetable-mark { display:none; }
 }
+
+@media (max-width: 980px) {
+  body[data-country="switzerland"][data-region="zurich-lake"] {
+    min-width:0;
+    max-width:100%;
+  }
+  body[data-country="switzerland"][data-region="zurich-lake"] .site-shell,
+  body[data-country="switzerland"][data-region="zurich-lake"] .page-content {
+    min-width:0;
+    max-width:100%;
+  }
+}

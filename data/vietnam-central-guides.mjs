@@ -10,7 +10,7 @@ const hue = defineVietnamCluster({
   hubIntro: 'Hue was Vietnam’s capital under the Nguyen dynasty from 1802 to 1945. Its monuments make more sense as a river-shaped city than a monument checklist: the walled Citadel faces the south-bank civic streets, while Thien Mu and the royal tombs sit farther along the Perfume River. Give the capital, the tomb landscapes and active religious places their own pace; repairs, wartime losses and seasonal flooding are part of what visitors see.',
   stay: 'The south bank is a practical base for hotels, evening food and the Le Loi riverside; cross to the north-bank Citadel early, when the long courtyards are easier to walk before midday heat.',
   transfer: 'Walk or take a short local ride around the central riverfront. Thien Mu lies upstream northwest of the Citadel; the tombs are farther out and dispersed. Use a driver or taxi with a clear return plan, or book a river trip only after confirming the operator and boarding point.',
-  hubCss: '/css/vietnam-hue.css?v=20261008-1',
+  hubCss: '/css/vietnam-hue.css?v=20261008-3',
   reviewDate: '8 October 2026',
   isoDate: '2026-10-08',
   presentation: {
@@ -42,7 +42,7 @@ const hue = defineVietnamCluster({
       name: 'Imperial City & Citadel',
       motif: 'A capital within walls',
       instrument: 'axis',
-      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      countryCss: '/css/vietnam-hue.css?v=20261008-3',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       sources: [
@@ -95,7 +95,7 @@ const hue = defineVietnamCluster({
       name: 'Royal Tombs of Minh Mang, Tu Duc & Khai Dinh',
       motif: 'Three rulers, three landscapes',
       instrument: 'pair',
-      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      countryCss: '/css/vietnam-hue.css?v=20261008-3',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       sources: [
@@ -131,17 +131,17 @@ const hue = defineVietnamCluster({
       sequence: 'For a two-site day, choose one broad garden landscape (Minh Mang or Tu Duc) and one contrasting site (often Khai Dinh). Visit the open-air gardens while energy is high, save the more compact tiled interior for the second stop, then return directly to town. The route order depends on road conditions and current opening information.',
       boundary: 'These are memorial places with active visitors and historic fabric. Keep voices low, do not climb tomb structures, touch inscriptions or sit on monuments, and follow barriers even when a viewpoint looks close.',
       stages: [
-        ['Choose two before departure', 'For two open-air garden visits, pair Minh Mang with Tu Duc. For a stronger architectural contrast, pair either garden with Khai Dinh. Tu Duc plus Khai Dinh trades a second broad garden walk for the steepest climb. Leave the unchosen tomb for another day.'],
+        ['Choose two before departure', 'For two open-air garden visits, pair Minh Mang with Tu Duc. For a stronger architectural contrast, pair either garden with Khai Dinh. Tu Duc plus Khai Dinh trades a second broad garden walk for the steepest climb. Keep the third tomb optional; add it only if you have a full-day window and the confirmed transfer and return still fit.'],
         ['Start with one garden', 'At Minh Mang, follow the central approach across bridges between ponds and planted slopes. At Tu Duc, read the lake edge, pavilions and courtyards as a retreat the emperor used during his lifetime. Pick one of these as the first stop, not both by default.'],
-        ['Add one contrasting site', 'If Khai Dinh is your second stop, take the terraces slowly and look from the exterior into the mosaic-rich interior; the uphill sequence is the day’s main stair effort. If you chose Minh Mang and Tu Duc, stay with the gardens and skip Khai Dinh entirely.'],
-        ['Return directly to Hue', 'Set the final pickup before entering the second site and keep a meal and road buffer. Do not attach an evening river cruise, airport connection or Bach Ma transfer to this out-of-town pair.']
+        ['Add one contrasting site', 'If Khai Dinh is your second stop, take the terraces slowly and look from the exterior into the mosaic-rich interior; the uphill sequence is the day’s main stair effort. If you chose Minh Mang and Tu Duc, keep the garden pair to a half-day plan; add Khai Dinh only if you have a full-day window and the confirmed return still fits.'],
+        ['Return directly to Hue', 'Set the final pickup before entering the second site and keep a meal and road buffer. Add an evening river cruise or airport transfer only when the actual finish time, transfer and current weather leave a confirmed buffer; otherwise keep the evening or connection separate. Treat Bach Ma as a different outing.']
       ],
       risks: [
         ['A two-site day can stretch', 'Minh Mang and Tu Duc have long outdoor approaches; Khai Dinh is shorter in footprint but its terraces add steep steps. Heat, rain or limited mobility can make even two visits too much—drop the second site rather than rush.'],
         ['Driver wait and gate order', 'These are separate destinations outside the central walking zone. Agree which two gates are included, where the driver waits and the exact final pickup before leaving Hue; do not assume a ride will be waiting at each entrance.'],
         ['Rain, stairs and closures', 'Wet stone makes Khai Dinh’s steps and garden paths slippery, while late-year flooding can disrupt roads. If heavy rain or site notices affect either stop, shorten to one accessible visit or reschedule the pair.']
       ],
-      duration: 'Use a half day as a planning estimate for two tombs with a prearranged car and concise pauses; allow a full day for all three, including road time, lunch and longer walking breaks. The official tourism guide says even two or three can take half a day depending on size and location, so keep the return flexible.',
+      duration: 'Use a half day as a planning estimate for two tombs with a prearranged car and concise pauses; add a third only if you can leave a full-day window for road time, lunch and longer walking breaks, and the confirmed return still fits. The official tourism guide says even two or three can take half a day depending on size and location, so keep the return flexible.',
       combine: 'For a garden-focused pair, choose Minh Mang plus Tu Duc. For garden-to-mosaic contrast, choose one of those with Khai Dinh. Return to Hue afterward; Thien Mu is a separate upstream visit, while Bach Ma and Lang Co belong to different road days.',
       verify: 'Check the Hue Monuments Conservation Centre’s current ticket and site-access information for both chosen tombs. Confirm pickup order, driver waiting time, road conditions and a return that leaves daylight before departing.'
     },
@@ -150,7 +150,7 @@ const hue = defineVietnamCluster({
       name: 'Thien Mu & Perfume River',
       motif: 'A pagoda above the river',
       instrument: 'ribbon',
-      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      countryCss: '/css/vietnam-hue.css?v=20261008-3',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       sources: [
@@ -202,7 +202,7 @@ const hue = defineVietnamCluster({
       name: 'Thanh Toan Rural & Canal Loop',
       motif: 'The working village edge',
       instrument: 'field',
-      countryCss: '/css/vietnam-hue.css?v=20261008-2',
+      countryCss: '/css/vietnam-hue.css?v=20261008-3',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       sources: [
@@ -254,7 +254,7 @@ const hue = defineVietnamCluster({
       name: 'Bach Ma National Park',
       motif: 'Rainforest above the coast',
       instrument: 'contour',
-      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      countryCss: '/css/vietnam-hue.css?v=20261008-3',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       sources: [
@@ -306,7 +306,7 @@ const hue = defineVietnamCluster({
       name: 'Lang Co & Lap An Lagoon',
       motif: 'Where the road meets the lagoon',
       instrument: 'tide',
-      countryCss: '/css/vietnam-hue.css?v=20261008-1',
+      countryCss: '/css/vietnam-hue.css?v=20261008-3',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       sources: [

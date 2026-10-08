@@ -122,6 +122,22 @@
   .ch-choice-deck,.ch-orientation,.ch-watch > div { grid-template-columns:1fr; }
   .ch-regional-context > header { grid-template-columns:1fr; }
   .ch-regional-context > div { grid-template-columns:repeat(2,1fr); }
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation {
+    grid-template-columns:minmax(0,1fr);
+    min-width:0;
+    max-width:100%;
+  }
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation > div,
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation > aside {
+    min-width:0;
+    max-width:100%;
+  }
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation h2,
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation p,
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation .ch-label {
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
   .ch-choice-deck article,.ch-field[data-ch-variant="7"] .ch-choice-deck article { display:block; transform:none !important; border-right:0; border-bottom:1px solid rgba(20,33,43,.14); }
   .ch-field[data-ch-variant="2"] .ch-route ol,.ch-route ol,.ch-field[data-ch-variant="6"] .ch-route ol { grid-template-columns:repeat(2,1fr); }
   .ch-field[data-ch-variant="2"] .ch-route li { display:block; min-height:280px; }

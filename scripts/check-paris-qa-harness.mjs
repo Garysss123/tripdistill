@@ -494,6 +494,18 @@ for (const locale of expectedLocales) {
         '/switzerland/zurich-lake/zurich-west-museums/': 'https://im-viadukt.ch/en/infos'
       }[routePath];
       if (!links.includes(requiredOfficialSource)) fail(`Missing route-specific Zurich official source on ${locale.code} ${routePath}.`);
+      if (locale.code === 'zh-Hant') {
+        for (const staleLabel of ['田野工具', '保護返程', '利馬特河跨越帳冊']) {
+          if (bodyText.includes(staleLabel)) fail(`Zurich Traditional Chinese still contains the unclear label [${staleLabel}] on ${routePath}.`);
+        }
+        const expectedLocaleLabel = {
+          '/switzerland/zurich-lake/lake-uetliberg/': '瑞士北部・路線指南 02',
+          '/switzerland/zurich-lake/old-town-lindenhof/': '利馬特河兩岸步行路線',
+          '/switzerland/zurich-lake/zurich-west-museums/': '瑞士北部・路線指南 03'
+        }[routePath];
+        if (expectedLocaleLabel && !bodyText.includes(expectedLocaleLabel)) fail(`Zurich Traditional Chinese is missing its revised route label [${expectedLocaleLabel}] on ${routePath}.`);
+        if (!isHub && !bodyText.includes('抵達後先確認方向、選好路線，並預留回程時間。')) fail(`Zurich Traditional Chinese is missing its practical return-planning cue on ${routePath}.`);
+      }
       if (locale.code === 'en') {
         const requiredByRoute = {
           '/switzerland/zurich-lake/': ['Limmat', 'Lake Zurich', 'Zurich West', 'Do not make every rail line, lake and summit compete for the same day.'],
@@ -513,7 +525,7 @@ for (const locale of expectedLocales) {
       const links = nodes(document, 'a').map((node) => attr(node, 'href'));
       const expectedPage = routePath === '/vietnam/hue/' ? 'hue' : routePath.split('/').filter(Boolean).at(-1);
       if (attr(body, 'data-page') !== expectedPage || attr(body, 'data-vn-family') !== 'violet-rain-archive') fail(`Wrong Hue page identity on ${locale.code} ${routePath}.`);
-      const expectedHueStylesheet = routePath === '/vietnam/hue/thanh-toan-rural-loop/' ? '/css/vietnam-hue.css?v=20261008-2' : '/css/vietnam-hue.css?v=20261008-1';
+      const expectedHueStylesheet = '/css/vietnam-hue.css?v=20261008-3';
       if (!styleHrefs.includes(expectedHueStylesheet)) fail(`Missing Hue edition stylesheet on ${locale.code} ${routePath}.`);
       const requiredOfficialSource = {
         '/vietnam/hue/': 'https://eticket.hueworldheritage.org.vn/',
@@ -537,7 +549,7 @@ for (const locale of expectedLocales) {
         const requiredByRoute = {
           '/vietnam/hue/': ['1802 to 1945', 'north-bank', 'south-bank civic streets', 'Perfume River'],
           '/vietnam/hue/imperial-city-citadel/': ['Meridian Gate', 'Thai Hoa Palace', 'Forbidden Purple City'],
-          '/vietnam/hue/royal-tombs/': ['Minh Mang', 'Tu Duc', 'Khai Dinh', 'Build the day around two sites, not all three.', 'For two open-air garden visits, pair Minh Mang with Tu Duc.', 'For a stronger architectural contrast, pair either garden with Khai Dinh.', 'allow a full day for all three'],
+          '/vietnam/hue/royal-tombs/': ['Minh Mang', 'Tu Duc', 'Khai Dinh', 'Build the day around two sites, not all three.', 'For two open-air garden visits, pair Minh Mang with Tu Duc.', 'For a stronger architectural contrast, pair either garden with Khai Dinh.', 'Keep the third tomb optional; add it only if you have a full-day window', 'keep the garden pair to a half-day plan', 'actual finish time, transfer and current weather leave a confirmed buffer', 'Treat Bach Ma as a different outing.'],
           '/vietnam/hue/thien-mu-perfume-river/': ['seven-tier tower', 'active religious complex', 'licensed service', 'departure pier'],
           '/vietnam/hue/thanh-toan-rural-loop/': ['covered bridge', 'Tran Thi Dao', 'agricultural display', 'public lane'],
           '/vietnam/hue/bach-ma-national-park/': ['do not treat all four as stops on one hike', 'Confirm entry', 'Return to Hue in daylight'],
@@ -549,7 +561,7 @@ for (const locale of expectedLocales) {
           const routeSteps = nodes(routeSection, 'article').filter((node) => (attr(node, 'class') || '').split(/\s+/).includes('vn-route-step'));
           if (routeSteps.length !== 4) fail('Royal Tombs must keep its four route stages after removing the repeated introduction.');
           if (nodes(routeSection, 'p').some((node) => (attr(node.parentNode, 'class') || '').split(/\s+/).includes('vn-section-head'))) fail('Royal Tombs route section repeats itinerary copy before the four stages.');
-          if (!bodyText.includes('Use a half day as a planning estimate for two tombs') || !bodyText.includes('allow a full day for all three')) fail('Royal Tombs must distinguish a two-tomb half-day estimate from a full day for all three.');
+          if (!bodyText.includes('Use a half day as a planning estimate for two tombs') || !bodyText.includes('add a third only if you can leave a full-day window') || bodyText.includes('allow a full day for all three')) fail('Royal Tombs must make a third tomb conditional on a full-day window and confirmed return, rather than a blanket extension.');
         }
         const schemaScripts = nodes(document, 'script').filter((node) => attr(node, 'type') === 'application/ld+json');
         const schema = schemaScripts.flatMap((node) => { try { const parsed = JSON.parse(text(node)); return parsed['@graph'] || [parsed]; } catch { return []; } });
@@ -1158,6 +1170,27 @@ const siteCssText = fs.readFileSync(safeDistPath('/css/site.css'), 'utf8');
 const koreaCountryWidthRule = cssRuleBlock(siteCssText, 'body[data-country="south-korea"]');
 if (!/min-width\s*:\s*0\s*;/i.test(koreaCountryWidthRule)) fail('South Korea pages must shrink below the global 320 px body minimum.');
 if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(koreaCountryWidthRule)) fail('South Korea country width correction must not conceal horizontal overflow.');
+const zurichScope = 'body[data-country="switzerland"][data-region="zurich-lake"]';
+const zurichMobileWidthMedia = fs.readFileSync(safeDistPath('/css/switzerland.css'), 'utf8').lastIndexOf('@media (max-width: 980px)');
+const switzerlandCssText = fs.readFileSync(safeDistPath('/css/switzerland.css'), 'utf8');
+const zurichBodyWidthRule = cssRuleBlock(switzerlandCssText, `${zurichScope} {`, zurichMobileWidthMedia);
+if (zurichMobileWidthMedia < 0 || !/min-width\s*:\s*0\s*;/i.test(zurichBodyWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(zurichBodyWidthRule)) fail('Zurich bodies must shrink below the global 320 px minimum at the responsive breakpoint.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(zurichBodyWidthRule)) fail('Zurich body width correction must not conceal horizontal overflow.');
+const zurichShellWidthRule = cssRuleBlock(switzerlandCssText, `${zurichScope} .site-shell,`, zurichMobileWidthMedia);
+if (!zurichShellWidthRule.includes(`${zurichScope} .page-content`) || !/min-width\s*:\s*0\s*;/i.test(zurichShellWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(zurichShellWidthRule)) fail('Zurich shell and content must remain shrinkable within the viewport.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(zurichShellWidthRule)) fail('Zurich shell/content correction must not conceal horizontal overflow.');
+const zurichFieldCssText = fs.readFileSync(safeDistPath('/css/switzerland-field.css'), 'utf8');
+const zurichFieldMobileMedia = zurichFieldCssText.lastIndexOf('@media (max-width:980px)');
+const zurichOrientationSelector = `${zurichScope} .ch-field .ch-orientation`;
+const zurichOrientationRule = cssRuleBlock(zurichFieldCssText, `${zurichOrientationSelector} {`, zurichFieldMobileMedia);
+if (zurichFieldMobileMedia < 0 || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(zurichOrientationRule) || !/min-width\s*:\s*0\s*;/i.test(zurichOrientationRule) || !/max-width\s*:\s*100%\s*;/i.test(zurichOrientationRule)) fail('Zurich field orientation must collapse into one shrinkable column at mobile widths.');
+const zurichOrientationCardsRule = cssRuleBlock(zurichFieldCssText, `${zurichOrientationSelector} > div,`, zurichFieldMobileMedia);
+if (!/min-width\s*:\s*0\s*;/i.test(zurichOrientationCardsRule) || !/max-width\s*:\s*100%\s*;/i.test(zurichOrientationCardsRule)) fail('Zurich orientation cards and aside must fit their mobile column.');
+const zurichOrientationTextRule = cssRuleBlock(zurichFieldCssText, `${zurichOrientationSelector} h2,`, zurichFieldMobileMedia);
+if (!/min-width\s*:\s*0\s*;/i.test(zurichOrientationTextRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(zurichOrientationTextRule)) fail('Zurich orientation text must wrap inside the mobile column.');
+for (const [label, rule] of [['body', zurichBodyWidthRule], ['shell', zurichShellWidthRule], ['orientation', zurichOrientationRule], ['orientation cards', zurichOrientationCardsRule], ['orientation text', zurichOrientationTextRule]]) {
+  if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(rule)) fail(`Zurich ${label} rule must not hide horizontal overflow.`);
+}
 const franceFieldCssText = fs.readFileSync(safeDistPath('/css/france-field.css'), 'utf8');
 const narrowFieldMedia = franceFieldCssText.lastIndexOf('@media (max-width: 620px)');
 if (narrowFieldMedia < 0) fail('France field CSS is missing the narrow mobile breakpoint.');
@@ -1231,7 +1264,18 @@ const hueGold = cssHexProperty(hueHeroAccentRule, 'color');
 const hueDarkSurfaces = ['#292430', '#46343a', '#294547', hueDark];
 const hueGoldContrast = Math.min(...hueDarkSurfaces.map((surface) => contrastRatio(hueGold, surface)));
 if (hueGoldContrast < 4.5) fail(`Hue gold text is below WCAG AA against the tested dark surfaces (${hueGoldContrast.toFixed(2)}:1).`);
-console.log(`Hue CSS checks passed: body and containers shrink; estimated dark text ${hueInkContrast.toFixed(2)}:1 / ${hueBodyAccentContrast.toFixed(2)}:1, gold on darkest tested surface ${hueGoldContrast.toFixed(2)}:1.`);
+const hueFieldTextRule = cssRuleBlock(hueCssText, `${hueScope} .vn-field-hero .vn-field-copy,`);
+if (!hueFieldTextRule.includes(`${hueScope} .vn-field-hero .vn-field-copy h1`) || !hueFieldTextRule.includes(`${hueScope} .vn-field-hero .vn-breadcrumb a`) || !/color\s*:\s*#fff\s*;/i.test(hueFieldTextRule)) fail('Hue dark field heroes must explicitly set readable white heading and breadcrumb text after instrument-specific styles.');
+const hueFieldAccentRule = cssRuleBlock(hueCssText, `${hueScope} .vn-field-hero .vn-breadcrumb strong,`);
+if (!hueFieldAccentRule.includes(`${hueScope} .vn-field-hero .vn-kicker`) || !hueFieldAccentRule.includes(`${hueScope} .vn-field-hero .vn-field-copy h1 span`) || !/color\s*:\s*#f3c979\s*;/i.test(hueFieldAccentRule)) fail('Hue dark field hero accents must retain the verified high-contrast gold.');
+const hueSecondaryButtonRule = cssRuleBlock(hueCssText, `${hueScope} .vn-field-hero .button.secondary`);
+if (!/color\s*:\s*#fff\s*;/i.test(hueSecondaryButtonRule) || !/border-color\s*:\s*rgba\(255\s*,\s*255\s*,\s*255\s*,\s*\.72\s*\)\s*;/i.test(hueSecondaryButtonRule)) fail('Hue secondary hero action must use readable text and a visible border on the dark hero.');
+const hueStampRule = cssRuleBlock(hueCssText, `${hueScope} .vn-field-stamp {`);
+const hueStampStrongRule = cssRuleBlock(hueCssText, `${hueScope} .vn-field-stamp strong`);
+if (!/color\s*:\s*#fff\s*;/i.test(hueStampRule) || !/background\s*:\s*#292430\s*;/i.test(hueStampRule) || !/border-color\s*:\s*#f3c979\s*;/i.test(hueStampRule) || !/color\s*:\s*#f3c979\s*;/i.test(hueStampStrongRule)) fail('Hue field stamp must have explicit high-contrast text, background and border colors.');
+const hueFieldWhiteContrast = Math.min(...hueDarkSurfaces.map((surface) => contrastRatio('#ffffff', surface)));
+if (hueFieldWhiteContrast < 7) fail(`Hue hero white text is below its 7:1 static contrast target (${hueFieldWhiteContrast.toFixed(2)}:1).`);
+console.log(`Hue CSS checks passed: body and containers shrink; dark text ${hueInkContrast.toFixed(2)}:1 / ${hueBodyAccentContrast.toFixed(2)}:1; hero white ${hueFieldWhiteContrast.toFixed(2)}:1 and gold ${hueGoldContrast.toFixed(2)}:1 on tested dark surfaces.`);
 const jejuCssText = fs.readFileSync(safeDistPath('/css/jeju.css'), 'utf8');
 const jejuBodyWidth = cssRuleBlock(jejuCssText, 'body[data-country="south-korea"][data-city="jeju"]');
 if (!/min-width\s*:\s*0\s*;/i.test(jejuBodyWidth) || !/max-width\s*:\s*100%\s*;/i.test(jejuBodyWidth)) fail('Jeju body must shrink below the global 320px minimum without widening the viewport.');

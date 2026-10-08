@@ -43,6 +43,11 @@ function updateHueSiblingPhotoCredits(cluster) {
     const end = html.indexOf('</section>', start);
     if (start < 0 || end < 0) throw new Error(`Missing bounded source section on Hue sibling ${slug}.`);
     let section = html.slice(start, end + '</section>'.length);
+    if (section.includes(photo.source)) {
+      const refreshed = html.replace(/\/css\/vietnam-hue\.css\?v=20261008-[12]/g, '/css/vietnam-hue.css?v=20261008-3');
+      if (refreshed !== html) fs.writeFileSync(file, refreshed);
+      continue;
+    }
     const oldMatches = [...section.matchAll(new RegExp(previousCredit.source, 'g'))];
     if (oldMatches.length !== 1) throw new Error(`Expected one previous Hue tomb credit in ${slug}, found ${oldMatches.length}.`);
     const oldRow = oldMatches[0][0];
@@ -51,7 +56,8 @@ function updateHueSiblingPhotoCredits(cluster) {
       : oldRow.replace('<li>', `<li data-photo-asset="${previousAsset}">`);
     section = section.replace(oldRow, markedOldRow);
     if (!section.includes(photo.source)) section = section.replace(markedOldRow, `${markedOldRow}${newCredit}`);
-    const updated = html.slice(0, start) + section + html.slice(end + '</section>'.length);
+    const updated = (html.slice(0, start) + section + html.slice(end + '</section>'.length))
+      .replace(/\/css\/vietnam-hue\.css\?v=20261008-[12]/g, '/css/vietnam-hue.css?v=20261008-3');
     if (updated !== html) fs.writeFileSync(file, updated);
   }
 }
