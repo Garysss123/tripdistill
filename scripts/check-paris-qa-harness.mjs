@@ -47,6 +47,10 @@ const expectedRoutes = [
   ['/canada/vancouver-north-shore/downtown-stanley-granville/', 'Vancouver Downtown, Stanley Park & Granville Island'],
   ['/canada/vancouver-north-shore/north-shore-grouse-capilano/', 'Grouse, Capilano & Lynn Canyon'],
   ['/canada/vancouver-north-shore/sea-to-sky-whistler/', 'Sea-to-Sky & Whistler'],
+  ['/switzerland/zurich-lake/', 'Zurich & Lake Zurich'],
+  ['/switzerland/zurich-lake/lake-uetliberg/', 'Lake Zurich & Uetliberg'],
+  ['/switzerland/zurich-lake/old-town-lindenhof/', 'Old Town, Lindenhof & the Limmat'],
+  ['/switzerland/zurich-lake/zurich-west-museums/', 'Zurich West & Museum Quarter'],
   ['/south-korea/', 'South Korea country guide'],
   ['/south-korea/seoul/', 'Seoul hub'],
   ['/south-korea/seoul/bukchon-seochon/', 'Bukchon & Seochon'],
@@ -240,6 +244,7 @@ function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
   if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City–Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 16 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
+  if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
     fail(`${label}: expected exactly one robots meta containing noindex.`);
@@ -305,7 +310,7 @@ function assertHarness(html, label) {
   const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
   if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, South Korea, Hanoi, Sapa, Ha Giang, Ninh Binh and Penang scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, Zurich, South Korea, Vietnam and Penang scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -322,6 +327,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const bodyNode = nodes(document, 'body')[0];
   const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley', 'fr-champagne'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
   const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
+  const zurichIdentity = record.path.startsWith('/switzerland/zurich-lake/') && attr(bodyNode, 'data-country') === 'switzerland' && attr(bodyNode, 'data-region') === 'zurich-lake';
   const penangIdentity = record.path === '/malaysia/george-town-penang/' ? attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-cluster') === 'malaysia-straits' : record.path.startsWith('/malaysia/george-town-penang/') && attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-region') === 'george-town-penang';
   const koreaCountryIdentity = record.path === '/south-korea/' && attr(bodyNode, 'data-page') === 'south-korea' && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'south-korea';
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
@@ -333,7 +339,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
   const hueIdentity = record.path.startsWith('/vietnam/hue/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hue' && attr(bodyNode, 'data-vn-family') === 'violet-rain-archive';
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
-  if (!franceIdentity && !canadaIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -466,6 +472,38 @@ for (const locale of expectedLocales) {
         if (routePath.endsWith('/armenian-street-core-zone/') && !searchEntry.summary.includes('Khoo Kongsi')) fail('Armenian Street search summary omits its named landmark.');
         if (routePath.endsWith('/weld-quay-clan-jetties/') && !searchEntry.summary.includes('Pengkalan Weld')) fail('Weld Quay search summary omits its named waterfront.');
         if (routePath.endsWith('/penang-hill-air-itam/') && !searchEntry.summary.includes('Flagstaff Hill')) fail('Penang Hill search summary omits the funicular terminus.');
+      }
+      continue;
+    }
+    if (routePath.startsWith('/switzerland/zurich-lake/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const isHub = routePath === '/switzerland/zurich-lake/';
+      const expectedPage = isHub ? 'ch-zurich-lake' : 'ch-zurich-lake-' + routePath.split('/').filter(Boolean).at(-1);
+      if (attr(body, 'data-country') !== 'switzerland' || attr(body, 'data-region') !== 'zurich-lake' || attr(body, 'data-page') !== expectedPage) fail(`Wrong Zurich page identity on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/switzerland.css?v=20260912-1')) fail(`Missing Switzerland stylesheet on ${locale.code} ${routePath}.`);
+      if (!isHub && !styleHrefs.includes('/css/switzerland-field.css?v=20261008-1')) fail(`Missing Zurich field-guide stylesheet on ${locale.code} ${routePath}.`);
+      if (nodes(document, 'details').length < 3) fail(`Missing visible Zurich FAQ controls on ${locale.code} ${routePath}.`);
+      if (!links.some((href) => href.includes('commons.wikimedia.org')) || !links.some((href) => href.includes('creativecommons.org/licenses/'))) fail(`Missing linked Zurich photo source or license on ${locale.code} ${routePath}.`);
+      if (!/CC BY(?:-SA)? [234]\.0/.test(bodyText)) fail(`Missing visible Zurich image-license version on ${locale.code} ${routePath}.`);
+      const requiredOfficialSource = {
+        '/switzerland/zurich-lake/': 'https://www.zuerich.com/en/visit/nature/lindenhof',
+        '/switzerland/zurich-lake/lake-uetliberg/': 'https://www.zsg.ch/en/',
+        '/switzerland/zurich-lake/old-town-lindenhof/': 'https://www.zuerich.com/en/visit/nature/lindenhof',
+        '/switzerland/zurich-lake/zurich-west-museums/': 'https://im-viadukt.ch/en/infos'
+      }[routePath];
+      if (!links.includes(requiredOfficialSource)) fail(`Missing route-specific Zurich official source on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const requiredByRoute = {
+          '/switzerland/zurich-lake/': ['Limmat', 'Lake Zurich', 'Zurich West', 'Do not make every rail line, lake and summit compete for the same day.'],
+          '/switzerland/zurich-lake/lake-uetliberg/': ['Bellevue', 'Bürkliplatz', 'S10 runs only to Selnau', '12 December 2026'],
+          '/switzerland/zurich-lake/old-town-lindenhof/': ['Rennweg', 'Lindenhof', 'Schipfe', 'Grossmünster', 'Fraumünster'],
+          '/switzerland/zurich-lake/zurich-west-museums/': ['Hardbrücke', '1894 Viadukt arches', 'Markthalle', 'Toni-Areal']
+        }[routePath];
+        for (const phrase of requiredByRoute) if (!bodyText.includes(phrase)) fail(`Zurich guide is missing route-specific detail [${phrase}] on ${routePath}.`);
+        const searchEntry = sourceSearchIndex.find((item) => item.url === routePath);
+        if (!searchEntry) fail(`Zurich page is missing its search record on ${routePath}.`);
       }
       continue;
     }
@@ -1280,6 +1318,7 @@ if (!isLive) {
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
   const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
   const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/') || record.path.startsWith('/canada/vancouver-north-shore/')).length;
+  const zurichPages = manifest.pages.filter((record) => record.path.startsWith('/switzerland/zurich-lake/')).length;
   const koreaCountryPages = manifest.pages.filter((record) => record.path === '/south-korea/').length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
@@ -1299,7 +1338,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
