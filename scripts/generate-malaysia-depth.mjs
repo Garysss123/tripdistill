@@ -5,6 +5,9 @@ import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-dep
 const root = path.resolve(import.meta.dirname, '..');
 const depthCss = '/css/malaysia-depth.css?v=20260830-1';
 const sarawakCss = '/css/malaysia-sarawak.css?v=20260830-2';
+const malaysiaCss = (hubSlug) => hubSlug === 'george-town-penang'
+  ? '/css/malaysia.css?v=20261008-1'
+  : '/css/malaysia.css?v=20260829-1';
 const markerStart = '<!-- MALAYSIA_DEPTH_START -->';
 const markerEnd = '<!-- MALAYSIA_DEPTH_END -->';
 const sidebarStart = '<!-- MALAYSIA_DEPTH_SIDEBAR_START -->';
@@ -138,7 +141,7 @@ function childPage(guide, cluster) {
   <meta name="theme-color" content="#173f37">
   <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="/css/malaysia.css?v=20260829-1"><link rel="stylesheet" href="${depthCss}">
+  <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="${malaysiaCss(guide.hubSlug)}"><link rel="stylesheet" href="${depthCss}">
   <script src="/js/adsense.js?v=20260826-9" defer></script>
   <script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script>
 </head>
@@ -241,6 +244,7 @@ function injectHubCards(cluster) {
   const file = routeFile(`/malaysia/${cluster.hubSlug}/`);
   let html = fs.readFileSync(file, 'utf8');
   if (cluster.hubSlug === 'george-town-penang') {
+    html = html.replace('/css/malaysia.css?v=20260829-1', malaysiaCss(cluster.hubSlug));
     html = html.replace(`  <link rel="stylesheet" href="${depthCss}">\n`, '');
   } else if (!html.includes(depthCss)) {
     html = html.replace('</head>', `  <link rel="stylesheet" href="${depthCss}">\n</head>`);

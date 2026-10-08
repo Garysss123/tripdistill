@@ -239,7 +239,10 @@ for (const absoluteUrl of publishedUrls) {
 
   if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20261007-1')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
   if (gyeongjuReviewedRoutes.has(baseRoute) && !html.includes('/css/gyeongju.css?v=20261007-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
-  if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
+  const expectedMalaysiaCss = baseRoute.startsWith('/malaysia/george-town-penang/')
+    ? '/css/malaysia.css?v=20261008-1'
+    : '/css/malaysia.css?v=20260829-1';
+  if (baseRoute.startsWith('/malaysia/') && !html.includes(expectedMalaysiaCss)) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
   if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sabah.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);

@@ -377,9 +377,23 @@ for (const locale of expectedLocales) {
       const body = nodes(document, 'body')[0];
       const bodyText = text(body);
       const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const isPenangHub = routePath === '/malaysia/george-town-penang/';
+      const penangBodySelector = isPenangHub
+        ? 'body[data-country="malaysia"][data-cluster="malaysia-straits"][data-page="george-town-penang"]'
+        : 'body[data-country="malaysia"][data-region="george-town-penang"]';
+      const malaysiaCss = fs.readFileSync(safeDistPath('/css/malaysia.css'), 'utf8');
+      const penangBodyRule = cssRuleBlock(malaysiaCss, penangBodySelector);
+      if (!penangBodyRule || !/min-width\s*:\s*0\s*;/.test(penangBodyRule)) fail(`Penang body selector does not release the global 320px floor on ${locale.code} ${routePath}.`);
+      for (const container of ['.site-shell', '.page-content']) {
+        const selector = `${penangBodySelector} ${container}`;
+        const containerRule = cssRuleBlock(malaysiaCss, selector);
+        if (!containerRule || !/min-width\s*:\s*0\s*;/.test(containerRule)) fail(`Penang selector ${selector} does not allow shrinking on ${locale.code} ${routePath}.`);
+        if (/overflow-x\s*:\s*(?:hidden|clip)\b/i.test(containerRule)) fail(`Penang selector ${selector} hides horizontal overflow instead of allowing content to size on ${locale.code} ${routePath}.`);
+      }
+      if (!styleHrefs.includes('/css/malaysia.css?v=20261008-1')) fail(`Missing current Penang narrow-viewport stylesheet on ${locale.code} ${routePath}.`);
       if (attr(body, 'data-country') !== 'malaysia') fail('Wrong Penang route country on ' + locale.code + ' ' + routePath + '.');
-      if (routePath === '/malaysia/george-town-penang/' && attr(body, 'data-cluster') !== 'malaysia-straits') fail('Wrong Penang hub identity on ' + locale.code + '.');
-      if (routePath !== '/malaysia/george-town-penang/' && attr(body, 'data-region') !== 'george-town-penang') fail('Wrong Penang child identity on ' + locale.code + ' ' + routePath + '.');
+      if (isPenangHub && (attr(body, 'data-cluster') !== 'malaysia-straits' || attr(body, 'data-page') !== 'george-town-penang')) fail('Wrong Penang hub identity on ' + locale.code + '.');
+      if (!isPenangHub && attr(body, 'data-region') !== 'george-town-penang') fail('Wrong Penang child identity on ' + locale.code + ' ' + routePath + '.');
       if (nodes(document, 'details').length < 3) fail('Missing destination-specific Penang FAQ controls on ' + locale.code + ' ' + routePath + '.');
       if (!links.some((href) => href.includes('commons.wikimedia.org')) || !links.some((href) => href.includes('creativecommons.org/licenses/'))) fail('Missing linked image source or exact license on ' + locale.code + ' ' + routePath + '.');
       if (!/CC BY(?:-SA)? [234]\.0/.test(bodyText)) fail('Missing visible commercial-use image license on ' + locale.code + ' ' + routePath + '.');
