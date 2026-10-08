@@ -63,6 +63,21 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg',
+    'Doi Inthanon photo review: exact Commons title, Nnthurber authorship, CC BY-SA 4.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and match wild Himalayan cherry blossoms framing a distant mountain ridge. Attribution, linked license, change notice and same-version share-alike terms are present.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg',
+    'Mae Kampong photo review: exact Commons title, LannaPhoto authorship, CC BY-SA 3.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and show a covered terrace overlooking a forested village valley, not a village street. Attribution, linked license, change notice and same-version share-alike terms are present.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg',
+    'Nimman photo review: exact Commons title, FredTC authorship, 20 December 2017 source date, original dimensions and CC BY-SA 4.0 commercial/adaptation terms were checked on 2026-10-08. The downloaded 960 × 1,280 JPEG thumbnail and local WebP pixels match the covered One Street shopping arcade at One Nimman. Attribution, linked license, change notice and same-version share-alike terms are present.',
+    '2026-10-08'
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Salle_Mollien_(salle_700)_-_Palais_du_Louvre_-_2024.jpg',
     {
       detail: 'Paris Louvre image review: exact Commons title, Shonagon creator credit, CC0 1.0 source-page declaration, and subject match were checked against the downloaded image and converted WebP. The source image depicts the Salle Mollien interior; the site crop does not show the Louvre pyramid. No legal-clearance conclusion is implied.',
@@ -669,11 +684,17 @@ const explicitCreditMappings = new Map([
   ['/assets/images/thailand-andaman-ko-lanta.webp', { creditLabel: 'Klong Khong Beach, Ko Lanta', creator: 'Marcin Konsek', note: 'Matched the beach and island in the image alt to the same-route credit.' }],
   ['/assets/images/thailand-andaman-phang-nga.webp', { creditLabel: 'Ko Yao Noi sunrise', creator: 'Vyacheslav Argenberg', note: 'Matched the sunrise, bay, and island in the image alt to the same-route credit.' }],
   ['/assets/images/thailand-andaman-similan.webp', { creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', note: 'Matched the island group and panoramic view in the image alt to the same-route credit.' }],
+  ['/assets/images/thailand-chiang-mai-doi-inthanon.webp', { sourceTitle: 'File:Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon.jpg', creditLabel: 'Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon', creator: 'Nnthurber', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized and converted to WebP; adaptation shared under the same license version.', note: 'Exact Commons title, creator, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08; the image shows wild Himalayan cherry blossoms framing a distant mountain ridge.' }],
+  ['/assets/images/thailand-chiang-mai-mae-kampong.webp', { sourceTitle: 'File:Mae Kum Pong 01.jpg', creditLabel: 'Mae Kum Pong 01', creator: 'LannaPhoto', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', editHistory: 'Resized and converted to WebP; adaptation shared under the same license version.', note: 'Exact Commons title, creator, CC BY-SA 3.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08; the image shows a covered terrace overlooking a forested village valley, not a village street.' }],
+  ['/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', { sourceTitle: 'File:One Nimman - One Street P 20171220 130152.jpg', creditLabel: 'One Nimman - One Street P 20171220 130152', creator: 'FredTC', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-12-20', editHistory: 'Converted from a 960 × 1,280 Commons JPEG thumbnail to WebP; adaptation shared under the same license version.', note: 'Exact Commons title, creator, 20 December 2017 date, original dimensions and CC BY-SA 4.0 commercial reuse terms were checked on 2026-10-08. Local pixels match the covered One Street shopping arcade at One Nimman.' }],
   ['/assets/images/thailand-chiang-mai-old-city.webp', { sourceTitle: 'File:20171105 Wat Chedi Luang Chiang Mai 9897 DxO.jpg', creditLabel: 'Wat Chedi Luang', creator: 'Jakub Hałun', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-11-05', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
   ['/assets/images/thailand-chiang-mai-wat-pha-lat.webp', { sourceTitle: 'File:Chiang Mai - Wat Pha Lat - 0001.jpg', creditLabel: 'Wat Pha Lat', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-05-24', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and commercial-use terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
   ['/assets/images/thailand-chiang-mai-ping-river.webp', { sourceTitle: 'File:Ping River in Chiang Mai 3.jpg', creditLabel: 'Ping River from Chansom Memorial Bridge', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
+  '/assets/images/thailand-chiang-mai-mae-kampong.webp',
+  '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
   '/assets/images/korea-namsan-tower.webp',
   '/assets/images/vietnam-hue-minh-mang-20261008.webp',
   '/assets/images/france-paris-louvre-salle-mollien-20261006.webp',
@@ -729,6 +750,9 @@ const visuallyReviewedAssetPaths = new Set([
 const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ['/assets/images/thailand-chiang-mai-doi-inthanon.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-mae-kampong.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', '2026-10-08'],
   ['/assets/images/korea-namsan-tower.webp', '2026-10-08'],
   ['/assets/images/vietnam-hue-minh-mang-20261008.webp', '2026-10-08'],
   ['/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp', '2026-10-08'],

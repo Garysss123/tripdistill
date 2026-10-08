@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-10-08T17:14:52.885Z",
+  "generatedAt": "2026-10-08T21:20:58.683Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 789,
+    "assetFileCount": 790,
     "completeSourceCreatorLicenseRecords": 766,
-    "licenseClaimsNotIndependentlyVerified": 610,
+    "licenseClaimsNotIndependentlyVerified": 604,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "expectedBuildImageCount": 793,
-    "deduplicatedImageCount": 789,
+    "expectedBuildImageCount": 794,
+    "deduplicatedImageCount": 790,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
     "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 126,
-    "assetsWithExplicitEnglishCreditMatch": 66,
-    "assetsVisuallyReviewed": 80,
+    "assetsWithMatchedEnglishCreditOnly": 120,
+    "assetsWithExplicitEnglishCreditMatch": 72,
+    "assetsVisuallyReviewed": 83,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 156,
-    "metadataOrCreditOnly": 610,
-    "usedAssetsWithoutIndependentSourcePageCheck": 610,
-    "missingSourceCreditMatch": 23,
-    "incompleteAttributionFields": 23,
+    "sourcePageChecked": 162,
+    "metadataOrCreditOnly": 604,
+    "usedAssetsWithoutIndependentSourcePageCheck": 604,
+    "missingSourceCreditMatch": 24,
+    "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
-    "unreferencedMissingSourceCreditMatch": 23,
+    "unreferencedMissingSourceCreditMatch": 24,
     "activeIncompleteAttributionFields": 0,
-    "unreferencedIncompleteAttributionFields": 23,
+    "unreferencedIncompleteAttributionFields": 24,
     "sourceMetadataConflicts": 0,
     "moduleErrors": 0,
     "openCreditReviewCount": 0
@@ -37,7 +37,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 789 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 793 build image files."
+    "buildImageCountReconciliation": "The 790 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 794 build image files."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -21746,21 +21746,21 @@
         {
           "assetPath": "/assets/images/thailand-chiang-mai-doi-inthanon.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg",
-          "sourceTitle": "Doi Inthanon ridge and wild Himalayan cherry blossoms",
+          "sourceTitle": "File:Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Doi Inthanon ridge and wild Himalayan cherry blossoms",
+          "creditLabel": "File:Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon.jpg",
           "creator": "Nnthurber",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized and converted to WebP; adaptation shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Doi Inthanon photo review: exact Commons title, Nnthurber authorship, CC BY-SA 4.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and match wild Himalayan cherry blossoms framing a distant mountain ridge. Attribution, linked license, change notice and same-version share-alike terms are present.",
           "useCount": 2,
           "routes": [
             "/thailand/chiang-mai/",
@@ -21771,7 +21771,7 @@
             "Wild Himalayan cherry blossoms framing a distant Doi Inthanon mountain ridge"
           ],
           "rawVisibleCredits": [
-            "Doi Inthanon ridge and wild Himalayan cherry blossoms — Nnthurber, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon — Nnthurber, CC BY-SA 4.0. Resized and converted to WebP; this adaptation is shared under the same license version."
           ]
         }
       ]
@@ -21786,32 +21786,32 @@
         {
           "assetPath": "/assets/images/thailand-chiang-mai-mae-kampong.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg",
-          "sourceTitle": "Mae Kampong village",
+          "sourceTitle": "File:Mae Kum Pong 01.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Mae Kampong village",
+          "creditLabel": "File:Mae Kum Pong 01.jpg",
           "creator": "LannaPhoto",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized and converted to WebP; adaptation shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Mae Kampong photo review: exact Commons title, LannaPhoto authorship, CC BY-SA 3.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and show a covered terrace overlooking a forested village valley, not a village street. Attribution, linked license, change notice and same-version share-alike terms are present.",
           "useCount": 2,
           "routes": [
             "/thailand/chiang-mai/",
             "/thailand/chiang-mai/mae-kampong/"
           ],
           "altTexts": [
-            "Forest village and traditional buildings in Mae Kampong",
-            "Traditional village buildings surrounded by forest in Mae Kampong"
+            "Covered terrace overlooking a forested Mae Kampong valley",
+            "Covered wooden terrace overlooking a forested valley in Mae Kampong"
           ],
           "rawVisibleCredits": [
-            "Mae Kampong village — LannaPhoto, CC BY-SA 3.0; resized and converted to WebP, display crop."
+            "Mae Kum Pong 01 — LannaPhoto, CC BY-SA 3.0. Resized and converted to WebP; this adaptation is shared under the same license version."
           ]
         }
       ]
@@ -21865,34 +21865,26 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/thailand-chiang-mai-nimman.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Mae_Sa_Valley,_Chiang_Mai,_Thailand.jpg",
-          "sourceTitle": "Mae Sa Valley",
+          "sourceUrl": null,
+          "sourceTitle": null,
           "sourcePhotoDate": null,
-          "creditLabel": "Mae Sa Valley",
-          "creator": "VN.NguyenDucDuy",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "creditLabel": null,
+          "creator": null,
+          "license": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "metadataOrigin": "unmatched",
+          "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationStatus": "missing_source_credit_match",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 2,
-          "routes": [
-            "/thailand/chiang-mai/",
-            "/thailand/chiang-mai/nimman-university/"
-          ],
-          "altTexts": [
-            "Contemporary streetscape on Nimmanhaeminda Road in Chiang Mai",
-            "Contemporary buildings and layered streetscape on Nimmanhaeminda Road"
-          ],
-          "rawVisibleCredits": [
-            "Mae Sa Valley — VN.NguyenDucDuy, CC BY-SA 4.0; resized and converted to WebP, display crop."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -21906,21 +21898,21 @@
         {
           "assetPath": "/assets/images/thailand-chiang-mai-old-city.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg",
-          "sourceTitle": "Wat Chedi Luang",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:20171105 Wat Chedi Luang Chiang Mai 9897 DxO.jpg",
+          "sourcePhotoDate": "2017-11-05",
           "creditLabel": "Wat Chedi Luang",
           "creator": "Jakub Hałun",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Resized and converted to WebP; display crop.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Commons source-page check on 2026-10-08: the page names Jakub Hałun, dates the photograph 5 November 2017, and declares CC BY-SA 4.0. Its terms permit reuse and adaptation with attribution, license link, change notice and same-license sharing. The local WebP pixels were not compared in this source-only check.",
           "useCount": 2,
           "routes": [
             "/thailand/chiang-mai/",
@@ -21937,6 +21929,45 @@
       ]
     },
     {
+      "sha256": "4b010fab86632016c6630cd43626aaca7ab135874ec334fe09fdc7d5209cd21c",
+      "assetPaths": [
+        "/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp"
+      ],
+      "byteLength": 258010,
+      "sourceRecords": [
+        {
+          "assetPath": "/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg",
+          "sourceTitle": "File:One Nimman - One Street P 20171220 130152.jpg",
+          "sourcePhotoDate": "2017-12-20",
+          "creditLabel": "File:One Nimman - One Street P 20171220 130152.jpg",
+          "creator": "FredTC",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Converted from the 960 x 1,280 Commons JPEG thumbnail to WebP; adaptation shared under the same license version.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Nimman photo review: exact Commons title, FredTC authorship, 20 December 2017 source date, original dimensions and CC BY-SA 4.0 commercial/adaptation terms were checked on 2026-10-08. The downloaded 960 × 1,280 JPEG thumbnail and local WebP pixels match the covered One Street shopping arcade at One Nimman. Attribution, linked license, change notice and same-version share-alike terms are present.",
+          "useCount": 2,
+          "routes": [
+            "/thailand/chiang-mai/",
+            "/thailand/chiang-mai/nimman-university/"
+          ],
+          "altTexts": [
+            "Inside the One Street covered shopping arcade at One Nimman"
+          ],
+          "rawVisibleCredits": [
+            "One Nimman - One Street P 20171220 130152 — FredTC, CC BY-SA 4.0. Converted from a 960 × 1,280 Commons JPEG thumbnail to WebP; this adaptation is shared under the same license version."
+          ]
+        }
+      ]
+    },
+    {
       "sha256": "1847b92ebfc210ad6e8f692fa93d5819f1e0b332ad25cc04af63990a73054be7",
       "assetPaths": [
         "/assets/images/thailand-chiang-mai-ping-river.webp"
@@ -21946,21 +21977,21 @@
         {
           "assetPath": "/assets/images/thailand-chiang-mai-ping-river.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ping_River_in_Chiang_Mai_3.jpg",
-          "sourceTitle": "Ping River from Chansom Memorial Bridge",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Ping River in Chiang Mai 3.jpg",
+          "sourcePhotoDate": "2018-09-06",
           "creditLabel": "Ping River from Chansom Memorial Bridge",
           "creator": "Christophe95",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Resized and converted to WebP; display crop.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Commons source-page check on 2026-10-08: the page names Christophe95, dates the photograph 6 September 2018, and declares CC BY-SA 4.0. Its terms permit reuse and adaptation with attribution, license link, change notice and same-license sharing. The local WebP pixels were not compared in this source-only check.",
           "useCount": 2,
           "routes": [
             "/thailand/chiang-mai/",
@@ -22064,21 +22095,21 @@
         {
           "assetPath": "/assets/images/thailand-chiang-mai-wat-pha-lat.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Pha_Lat_-_0001.jpg",
-          "sourceTitle": "Wat Pha Lat",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Chiang Mai - Wat Pha Lat - 0001.jpg",
+          "sourcePhotoDate": "2014-05-24",
           "creditLabel": "Wat Pha Lat",
           "creator": "Stefan Fussan",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Resized and converted to WebP; display crop.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and commercial-use terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Commons source-page check on 2026-10-08: the page names Stefan Fussan, dates the photograph 24 May 2014, and declares CC BY-SA 3.0. The page explicitly permits commercial use and derivative works with attribution, license link, change notice and share-alike. The local WebP pixels were not compared in this source-only check.",
           "useCount": 2,
           "routes": [
             "/thailand/chiang-mai/",
@@ -32707,6 +32738,16 @@
     },
     {
       "src": "/assets/images/korea-yeouido-hangang.webp",
+      "missing": [
+        "sourceUrl",
+        "creator",
+        "license"
+      ],
+      "useCount": 0,
+      "routes": []
+    },
+    {
+      "src": "/assets/images/thailand-chiang-mai-nimman.webp",
       "missing": [
         "sourceUrl",
         "creator",

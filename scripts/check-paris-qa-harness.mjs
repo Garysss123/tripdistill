@@ -147,6 +147,9 @@ const expectedRoutes = [
   ['/thailand/chiang-mai/old-city-moat/', 'Old City & Moat'],
   ['/thailand/chiang-mai/wat-ket-ping-river/', 'Wat Ket & Ping River'],
   ['/thailand/chiang-mai/doi-suthep-wat-pha-lat/', 'Doi Suthep & Wat Pha Lat'],
+  ['/thailand/chiang-mai/doi-inthanon/', 'Doi Inthanon: Summit & Trails'],
+  ['/thailand/chiang-mai/mae-kampong/', 'Mae Kampong: Miang Tea & Village Walk'],
+  ['/thailand/chiang-mai/nimman-university/', 'Nimman, One Nimman & CMU'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -424,12 +427,16 @@ function assertHarness(html, label) {
     '/thailand/chiang-mai/',
     '/thailand/chiang-mai/old-city-moat/',
     '/thailand/chiang-mai/wat-ket-ping-river/',
-    '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'
+    '/thailand/chiang-mai/doi-suthep-wat-pha-lat/',
+    '/thailand/chiang-mai/doi-inthanon/',
+    '/thailand/chiang-mai/mae-kampong/',
+    '/thailand/chiang-mai/nimman-university/'
   ].map((routePath) => [routePath, 350_000]));
   if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Chiang Mai stylesheet budgets are missing or unexpected.`);
   const expectedImageBudgets = Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
-    '/assets/images/thailand-chiang-mai-nimman.webp',
+    '/assets/images/thailand-chiang-mai-mae-kampong.webp',
+    '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
     '/assets/images/thailand-chiang-mai-old-city.webp'
   ].map((assetPath) => [assetPath, 900_000]));
   if (JSON.stringify(manifest.imageBudgets) !== JSON.stringify(expectedImageBudgets)) fail(`${label}: Chiang Mai existing image-size budgets are missing or unexpected.`);
@@ -536,7 +543,10 @@ const chiangMaiDatedRoutes = [
   '/thailand/chiang-mai/',
   '/thailand/chiang-mai/old-city-moat/',
   '/thailand/chiang-mai/wat-ket-ping-river/',
-  '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'
+  '/thailand/chiang-mai/doi-suthep-wat-pha-lat/',
+  '/thailand/chiang-mai/doi-inthanon/',
+  '/thailand/chiang-mai/mae-kampong/',
+  '/thailand/chiang-mai/nimman-university/'
 ];
 for (const locale of expectedLocales) {
   for (const route of chiangMaiDatedRoutes) {
@@ -858,6 +868,34 @@ for (const locale of expectedLocales) {
           '/thailand/chiang-mai/doi-suthep-wat-pha-lat/': [
             'https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep',
             'https://www.thailandtourismdirectory.go.th/en/attraction/98886'
+          ],
+          '/thailand/chiang-mai/doi-inthanon/': [
+            'https://www.nps.dnp.go.th/parksdetail.php?id=121',
+            'https://www.tourismthailand.org/Attraction/doi-inthanon-national-park',
+            'https://www.tourismthailand.org/Articles/chiang-mai-s-lovely-mountains',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/4878',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/5148',
+            'https://www.tmd.go.th/en/',
+            'https://air4thai.pcd.go.th/',
+            'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg',
+            'https://creativecommons.org/licenses/by-sa/4.0/'
+          ],
+          '/thailand/chiang-mai/mae-kampong/': [
+            'https://www.tourismthailand.org/Attraction/mae-kampong-village',
+            'https://www.tourismthailand.org/Articles/chiang-mai-s-lovely-mountains',
+            'https://www.tourismthailand.org/Destinations/Provinces/Chiang-Mai/101',
+            'https://www.tmd.go.th/en/',
+            'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg',
+            'https://creativecommons.org/licenses/by-sa/3.0/'
+          ],
+          '/thailand/chiang-mai/nimman-university/': [
+            'https://www.tourismthailand.org/Attraction/thanon-nimmanhaemin',
+            'https://www.onenimman.com/',
+            'https://chiangmai.airportthai.co.th/service/transportation/detail/145',
+            'https://www.cmu.ac.th/en/cmu/history',
+            'https://www.cmu.ac.th/en/article/f54d0574-5967-4310-a665-84e94592b298',
+            'https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg',
+            'https://creativecommons.org/licenses/by-sa/4.0/'
           ]
         }[routePath];
         const anchors = nodes(document, 'a');
@@ -870,7 +908,10 @@ for (const locale of expectedLocales) {
           '/thailand/chiang-mai/': ['1296', 'Lanna kingdom', 'Ping River', 'Doi Suthep', 'Wat Ket', 'Wat Chedi Luang'],
           '/thailand/chiang-mai/old-city-moat/': ['1296', 'Tha Phae Gate', 'Wat Chedi Luang', 'Wat Phra Singh', '1391'],
           '/thailand/chiang-mai/wat-ket-ping-river/': ['Mae Ping', 'local, Chinese and Western', '08:00 to 16:00', 'Warorot Market'],
-          '/thailand/chiang-mai/doi-suthep-wat-pha-lat/': ['forest temple', 'seven-headed naga', 'gilded chedi', 'Lanna architecture']
+          '/thailand/chiang-mai/doi-suthep-wat-pha-lat/': ['forest temple', 'seven-headed naga', 'gilded chedi', 'Lanna architecture'],
+          '/thailand/chiang-mai/doi-inthanon/': ['2,565 m', 'Mae Klang', 'Wachirathan', 'Royal Twin Pagodas', 'Ang Ka Luang', 'Kew Mae Pan', 'Royal Project'],
+          '/thailand/chiang-mai/mae-kampong/': ['Mae On', 'miang', 'Wat Khantha Phueksa', 'Mae Kampong Waterfall', 'Lanna'],
+          '/thailand/chiang-mai/nimman-university/': ['One Nimman', 'One Street', 'Nimmanhaeminda Road', 'Ang Kaew', '1962', '1964', '40 baht']
         }[routePath];
         for (const phrase of requiredPlaceDetails) if (!bodyText.includes(phrase)) fail('Missing Chiang Mai place detail on ' + routePath + ': ' + phrase + '.');
       }
@@ -1894,7 +1935,7 @@ console.log(`Jeju static narrow-width checks passed; photo-card kicker and lower
 const lannaCssText = fs.readFileSync(safeDistPath('/css/lanna.css'), 'utf8');
 const chiangMaiNarrowRule = cssRuleBlock(lannaCssText, '@media (max-width: 380px)');
 if (!chiangMaiNarrowRule) fail('Chiang Mai body-width release must be scoped to the narrow-screen breakpoint.');
-for (const page of ['chiang-mai', 'old-city-moat', 'wat-ket-ping-river', 'doi-suthep-wat-pha-lat']) {
+for (const page of ['chiang-mai', 'old-city-moat', 'wat-ket-ping-river', 'doi-suthep-wat-pha-lat', 'doi-inthanon', 'mae-kampong', 'nimman-university']) {
   const selector = `body[data-country="thailand"][data-city="chiang-mai"][data-page="${page}"]`;
   const rule = cssRuleBlock(chiangMaiNarrowRule, selector);
   if (!rule || !/min-width\s*:\s*0\s*;/i.test(rule) || !/max-width\s*:\s*100%\s*;/i.test(rule)) fail(`Chiang Mai ${page} body must shrink below the global 320px floor.`);

@@ -8,9 +8,10 @@ const root = path.resolve(import.meta.dirname, '..');
 const distRoot = path.join(root, 'dist');
 const outputDir = path.join(distRoot, 'qa', 'paris-responsive');
 const outputPath = path.join(outputDir, 'index.html');
-const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim();
-const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
-const sourceTreeClean = execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim().length === 0;
+const git = (...args) => execFileSync('git', ['-c', `safe.directory=${root.replaceAll('\\', '/')}`, ...args], { cwd: root, encoding: 'utf8' }).trim();
+const branch = git('branch', '--show-current');
+const sourceCommit = git('rev-parse', 'HEAD');
+const sourceTreeClean = git('status', '--porcelain').length === 0;
 
 if (!fs.existsSync(path.join(distRoot, 'sitemap.xml'))) {
   throw new Error('Build dist first with `npm run build`; no dist/sitemap.xml found.');
@@ -164,6 +165,9 @@ const routes = [
   { path: '/thailand/chiang-mai/old-city-moat/', label: 'Old City & Moat' },
   { path: '/thailand/chiang-mai/wat-ket-ping-river/', label: 'Wat Ket & Ping River' },
   { path: '/thailand/chiang-mai/doi-suthep-wat-pha-lat/', label: 'Doi Suthep & Wat Pha Lat' },
+  { path: '/thailand/chiang-mai/doi-inthanon/', label: 'Doi Inthanon: Summit & Trails' },
+  { path: '/thailand/chiang-mai/mae-kampong/', label: 'Mae Kampong: Miang Tea & Village Walk' },
+  { path: '/thailand/chiang-mai/nimman-university/', label: 'Nimman, One Nimman & CMU' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -240,11 +244,15 @@ const manifest = {
     '/thailand/chiang-mai/',
     '/thailand/chiang-mai/old-city-moat/',
     '/thailand/chiang-mai/wat-ket-ping-river/',
-    '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'
+    '/thailand/chiang-mai/doi-suthep-wat-pha-lat/',
+    '/thailand/chiang-mai/doi-inthanon/',
+    '/thailand/chiang-mai/mae-kampong/',
+    '/thailand/chiang-mai/nimman-university/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
-    '/assets/images/thailand-chiang-mai-nimman.webp',
+    '/assets/images/thailand-chiang-mai-mae-kampong.webp',
+    '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
     '/assets/images/thailand-chiang-mai-old-city.webp'
   ].map((assetPath) => [assetPath, 900_000])),
   pages: routeRecords,
@@ -288,8 +296,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">France, Canada, Zurich, South Korea, Vietnam, Penang and Bangkok responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with six field guides, plus four George Town &amp; Penang routes and nine Bangkok routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <h1 id="page-title">France, Canada, Zurich, South Korea, Vietnam, Penang, Bangkok and Chiang Mai responsive QA harness</h1>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with six field guides, plus four George Town &amp; Penang routes, nine Bangkok routes and the Chiang Mai hub with six area guides in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

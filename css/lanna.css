@@ -306,7 +306,10 @@ body[data-city="chiang-mai"] .page-content {
   body[data-country="thailand"][data-city="chiang-mai"][data-page="chiang-mai"],
   body[data-country="thailand"][data-city="chiang-mai"][data-page="old-city-moat"],
   body[data-country="thailand"][data-city="chiang-mai"][data-page="wat-ket-ping-river"],
-  body[data-country="thailand"][data-city="chiang-mai"][data-page="doi-suthep-wat-pha-lat"] {
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="doi-suthep-wat-pha-lat"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="doi-inthanon"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="mae-kampong"],
+  body[data-country="thailand"][data-city="chiang-mai"][data-page="nimman-university"] {
     min-width: 0;
     max-width: 100%;
   }

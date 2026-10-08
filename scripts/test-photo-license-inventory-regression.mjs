@@ -43,6 +43,11 @@ const chiangMaiImageRecords = [
   { assetPath: '/assets/images/thailand-chiang-mai-wat-pha-lat.webp', sourceDate: '2014-05-24', license: 'CC BY-SA 3.0' },
   { assetPath: '/assets/images/thailand-chiang-mai-ping-river.webp', sourceDate: '2018-09-06', license: 'CC BY-SA 4.0' }
 ];
+const reviewedChiangMaiImageRecords = [
+  { assetPath: '/assets/images/thailand-chiang-mai-doi-inthanon.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg', creator: 'Nnthurber', license: 'CC BY-SA 4.0', sourcePhotoDate: null },
+  { assetPath: '/assets/images/thailand-chiang-mai-mae-kampong.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg', creator: 'LannaPhoto', license: 'CC BY-SA 3.0', sourcePhotoDate: null },
+  { assetPath: '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg', creator: 'FredTC', license: 'CC BY-SA 4.0', sourcePhotoDate: '2017-12-20' }
+];
 const danangImageRecords = [
   { assetPath: '/assets/images/vietnam-da-nang-han-river.webp', sourceDate: '2023-08-19' },
   { assetPath: '/assets/images/vietnam-da-nang-marble-mountains.webp', sourceDate: '2024-08-01' },
@@ -92,8 +97,8 @@ try {
 
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
-  assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 23, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 607, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
+  assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 604, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -173,6 +178,20 @@ try {
     assert.equal(record.license, image.license, image.assetPath + ' must retain the exact license version');
     assert.ok(record.verificationDetail.includes('local WebP pixels were not compared'), image.assetPath + ' must state the source-only visual-review limit');
   }
+  for (const image of reviewedChiangMaiImageRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `reviewed Chiang Mai photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/by-sa/${image.license.endsWith('3.0') ? '3.0' : '4.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08');
+    assert.match(record.verificationDetail, /local WebP pixels/i);
+  }
   const thailandRoutes = [
     'thailand',
     'thailand/bangkok',
@@ -194,6 +213,24 @@ try {
     ['https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', 'Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.']
   ]);
   const localeDirs = { en: '', 'zh-Hant': 'zh', ja: 'ja', ko: 'ko', th: 'th' };
+  const chiangMaiPhotoPages = [
+    { route: 'thailand/chiang-mai/doi-inthanon/', ...reviewedChiangMaiImageRecords[0] },
+    { route: 'thailand/chiang-mai/mae-kampong/', ...reviewedChiangMaiImageRecords[1] },
+    { route: 'thailand/chiang-mai/nimman-university/', ...reviewedChiangMaiImageRecords[2] }
+  ];
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    for (const image of chiangMaiPhotoPages) {
+      const document = parse(fs.readFileSync(path.join(root, prefix, image.route, 'index.html'), 'utf8'));
+      const shownImage = findAll(document, (node) => node.tagName === 'img' && attrs(node).src === image.assetPath);
+      assert.equal(shownImage.length, 1, `${locale} ${image.route} must use the reviewed local image`);
+      const exactCredit = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === image.sourceUrl).length > 0);
+      assert.equal(exactCredit.length, 1, `${locale} ${image.route} must link the exact Commons file page`);
+      assert.ok(textContent(exactCredit[0]).includes(image.creator), `${locale} ${image.route} must retain creator attribution`);
+      assert.ok(textContent(exactCredit[0]).includes(image.license), `${locale} ${image.route} must retain the exact license version`);
+      assert.ok(findAll(exactCredit[0], (link) => link.tagName === 'a' && attrs(link).href === `https://creativecommons.org/licenses/by-sa/${image.license.endsWith('3.0') ? '3.0' : '4.0'}/`).length, `${locale} ${image.route} must link the commercial-use license`);
+      assert.ok(textContent(exactCredit[0]).length > 50, `${locale} ${image.route} must retain a visible adaptation and share-alike credit`);
+    }
+  }
   const localeBatch = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99zzzl-thailand-photo-edits-20261008.json'), 'utf8')).translations]));
   const seoulSourceNote = 'Original source: Seoul Tourism Archive 10341.';
   const seoulSourceNoteTranslations = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99y-south-korea-seoul-20261007.json'), 'utf8')).translations[seoulSourceNote]]));
@@ -355,7 +392,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: the three new Chiang Mai assets retain exact source, creator, commercial license, pixel review and five-locale linked credits; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);
