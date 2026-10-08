@@ -16,6 +16,11 @@ const hueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_
 const hueTombLicenseUrl = 'https://creativecommons.org/licenses/by-sa/2.0/';
 const legacyHueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
 const legacyHueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
+const victoriaImageRecords = [
+  { assetPath: '/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', creator: 'DXR', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/canada-victoria-south-island-butchart-saanich.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', creator: 'Fyre Mael', license: 'CC BY 2.0' }
+];
+const removedUnverifiedVictoriaAsset = '/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp';
 const pagePath = path.join(root, 'japan', 'osaka', 'osaka-castle-area', 'index.html');
 const artifactPaths = [
   path.join(root, 'reports', 'photo-license-inventory.json'),
@@ -71,6 +76,19 @@ try {
   assert.ok(hueTomb.editHistory.includes('same license version'));
   assert.ok(hueTomb.verificationDetail.includes('25 June 2014'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === hueTombAssetPath), false);
+  for (const image of victoriaImageRecords) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Victoria photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.visualReviewStatus, 'not_individually_visually_reviewed', 'source-page checks must not imply visual review');
+  }
+  assert.equal(fs.existsSync(path.join(root, removedUnverifiedVictoriaAsset.slice(1).split('/').join(path.sep))), false, 'removed Sooke image must not remain in the active asset directory');
+  assert.ok(fs.readFileSync(path.join(root, 'reports', 'canada-victoria-sooke-photo-status.md'), 'utf8').includes('not independently verified'), 'historical Sooke license claim must remain explicitly unverified');
+  assert.equal(report.entries.flatMap((group) => group.sourceRecords).some((record) => record.assetPath === removedUnverifiedVictoriaAsset), false, 'removed Sooke image must not reappear as an active inventory record');
   const legacyHueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === legacyHueTombAssetPath);
   assert.ok(legacyHueTomb, 'inventory must retain the superseded Hue tomb asset record');
   assert.equal(legacyHueTomb.useCount, 0, 'superseded tomb image must not remain in any published page');

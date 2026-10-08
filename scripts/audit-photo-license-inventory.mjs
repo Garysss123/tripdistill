@@ -571,6 +571,13 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', 'Victoria Inner Harbour image review: the exact Commons page identifies DXR, the Victoria Inner Harbour and Parliament Buildings at dusk, and CC BY-SA 4.0. The required source and license links and resize, display-crop, WebP-conversion, and same-version adaptation disclosures are present. Source-page metadata and license declaration checked 2026-10-08; image pixels were not individually reviewed.'],
+  ['https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', 'Butchart Gardens image review: the exact Commons page identifies Fyre Mael, the Butchart Gardens subject, and CC BY 2.0; the page also records FlickrReview confirmation dated 10 April 2017. The required source and license links and resize, display-crop, and WebP-conversion disclosures are present. Source-page metadata and license declaration checked 2026-10-08; image pixels were not individually reviewed.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],

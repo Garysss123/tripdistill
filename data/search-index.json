@@ -8092,57 +8092,6 @@
     ]
   },
   {
-    "title": "Victoria & South Vancouver Island",
-    "url": "/canada/victoria-south-island/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Victoria is compact once you arrive, but the island transfer is not. Build the trip around the ferry or flight, then separate the walkable Inner Harbour from Saanich gardens and the west-coast road toward Sooke.",
-    "keywords": [
-      "Victoria & South Vancouver Island",
-      "British Columbia",
-      "pacific"
-    ]
-  },
-  {
-    "title": "Inner Harbour, James Bay & Beacon Hill",
-    "url": "/canada/victoria-south-island/inner-harbour-james-bay/",
-    "parent": "Victoria & South Vancouver Island",
-    "type": "Local guide",
-    "summary": "Walk Victoria as a compact harbour capital: Parliament and the Inner Harbour first, James Bay and Beacon Hill second, then choose museums or food without repeatedly crossing downtown.",
-    "keywords": [
-      "Inner Harbour, James Bay & Beacon Hill",
-      "Victoria & South Vancouver Island",
-      "British Columbia",
-      "harbour-ledger"
-    ]
-  },
-  {
-    "title": "Butchart Gardens & Saanich Peninsula",
-    "url": "/canada/victoria-south-island/butchart-saanich/",
-    "parent": "Victoria & South Vancouver Island",
-    "type": "Local guide",
-    "summary": "Make Butchart Gardens the anchor, then add only one Saanich Peninsula stop so the day remains a garden-and-coast excursion rather than a bus-transfer exercise.",
-    "keywords": [
-      "Butchart Gardens & Saanich Peninsula",
-      "Victoria & South Vancouver Island",
-      "British Columbia",
-      "season-wheel"
-    ]
-  },
-  {
-    "title": "Sooke & Juan de Fuca Coast",
-    "url": "/canada/victoria-south-island/sooke-juan-de-fuca/",
-    "parent": "Victoria & South Vancouver Island",
-    "type": "Local guide",
-    "summary": "Use Sooke as the last reliable base, then choose one west-coast beach or trail by daylight, tide and road time rather than collecting distant pins along Highway 14.",
-    "keywords": [
-      "Sooke & Juan de Fuca Coast",
-      "Victoria & South Vancouver Island",
-      "British Columbia",
-      "tide-clock"
-    ]
-  },
-  {
     "title": "Pacific Rim & Tofino",
     "url": "/canada/pacific-rim-tofino/",
     "parent": "Canada",
@@ -12950,6 +12899,57 @@
       "Coast-mountain expedition gate",
       "coast-mountain-expedition-gate",
       "summit-operating-stack"
+    ]
+  },
+  {
+    "title": "Victoria & South Vancouver Island",
+    "url": "/canada/victoria-south-island/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Victoria’s walkable civic core, the Butchart Gardens in Brentwood Bay, and the Sooke–Juan de Fuca coast are separate outings. A mainland ferry lands at Swartz Bay, north of downtown; the west-coast road runs the other way. Choose a city day first, then add one branch at a time.",
+    "keywords": [
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "pacific"
+    ]
+  },
+  {
+    "title": "Inner Harbour, James Bay & Beacon Hill",
+    "url": "/canada/victoria-south-island/inner-harbour-james-bay/",
+    "parent": "Victoria & South Vancouver Island",
+    "type": "Local guide",
+    "summary": "Join the Inner Harbour promenade and Parliament precinct to James Bay and Beacon Hill Park on foot. The civic waterfront, residential streets and open parkland are distinct parts of the city; keep the museum as one deliberate indoor stop.",
+    "keywords": [
+      "Inner Harbour, James Bay & Beacon Hill",
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "harbour-ledger"
+    ]
+  },
+  {
+    "title": "Butchart Gardens & Saanich Peninsula",
+    "url": "/canada/victoria-south-island/butchart-saanich/",
+    "parent": "Victoria & South Vancouver Island",
+    "type": "Local guide",
+    "summary": "Follow the transformation of a limestone quarry into a 55-acre garden: the Sunken Garden occupies the former quarry, while the Japanese, Italian and Rose gardens show how the estate expanded. The gardens are in Brentwood Bay, outside Victoria.",
+    "keywords": [
+      "Butchart Gardens & Saanich Peninsula",
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "season-wheel"
+    ]
+  },
+  {
+    "title": "Sooke & Juan de Fuca Coast",
+    "url": "/canada/victoria-south-island/sooke-juan-de-fuca/",
+    "parent": "Victoria & South Vancouver Island",
+    "type": "Local guide",
+    "summary": "Choose one westbound anchor: Sooke Potholes’ glacially carved river pools, the forest path to China Beach, or Botanical Beach’s tide pools near Port Renfrew. These are different stops along a slower road, not one compact park entrance.",
+    "keywords": [
+      "Sooke & Juan de Fuca Coast",
+      "Victoria & South Vancouver Island",
+      "British Columbia",
+      "tide-clock"
     ]
   }
 ]

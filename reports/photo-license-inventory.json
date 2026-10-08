@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-10-08T04:59:40.284Z",
+  "generatedAt": "2026-10-08T06:04:18.838Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 790,
-    "completeSourceCreatorLicenseRecords": 763,
-    "licenseClaimsNotIndependentlyVerified": 634,
+    "assetFileCount": 789,
+    "completeSourceCreatorLicenseRecords": 762,
+    "licenseClaimsNotIndependentlyVerified": 631,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "expectedBuildImageCount": 794,
-    "deduplicatedImageCount": 790,
+    "expectedBuildImageCount": 793,
+    "deduplicatedImageCount": 789,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3536,
-    "assetsUsedByScannedEnglishPages": 768,
-    "assetsWithStructuredSourceRecords": 566,
+    "imageReferencesScanned": 3532,
+    "assetsUsedByScannedEnglishPages": 767,
+    "assetsWithStructuredSourceRecords": 565,
     "assetsWithMatchedEnglishCreditOnly": 142,
     "assetsWithExplicitEnglishCreditMatch": 59,
     "assetsVisuallyReviewed": 61,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 133,
-    "metadataOrCreditOnly": 634,
+    "sourcePageChecked": 135,
+    "metadataOrCreditOnly": 631,
     "missingSourceCreditMatch": 23,
     "incompleteAttributionFields": 27,
     "sourceMetadataConflicts": 0,
@@ -31,7 +31,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 790 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 794 build image files."
+    "buildImageCountReconciliation": "The 789 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 793 build image files."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -5191,19 +5191,19 @@
           "assetPath": "/assets/images/canada-victoria-south-island-butchart-saanich.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg",
           "sourceTitle": "File:Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
-          "creditLabel": "Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
+          "creditLabel": "Formal garden beds and mature trees at Butchart Gardens",
           "creator": "Fyre Mael",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Butchart Gardens image review: the exact Commons page identifies Fyre Mael, the Butchart Gardens subject, and CC BY 2.0; the page also records FlickrReview confirmation dated 10 April 2017. The required source and license links and resize, display-crop, and WebP-conversion disclosures are present. Source-page metadata and license declaration checked 2026-10-08; image pixels were not individually reviewed.",
           "useCount": 4,
           "routes": [
             "/canada/victoria-south-island/",
@@ -5212,10 +5212,10 @@
             "/canada/victoria-south-island/sooke-juan-de-fuca/"
           ],
           "altTexts": [
-            "Formal gardens on the Saanich Peninsula near Victoria"
+            "Formal garden beds and mature trees at Butchart Gardens"
           ],
           "rawVisibleCredits": [
-            "Butchart Gardens - Victoria, British Columbia (28938334672).jpg — Fyre Mael, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Formal garden beds and mature trees at Butchart Gardens — Fyre Mael, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -5235,15 +5235,15 @@
           "creator": "DXR",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Victoria Inner Harbour image review: the exact Commons page identifies DXR, the Victoria Inner Harbour and Parliament Buildings at dusk, and CC BY-SA 4.0. The required source and license links and resize, display-crop, WebP-conversion, and same-version adaptation disclosures are present. Source-page metadata and license declaration checked 2026-10-08; image pixels were not individually reviewed.",
           "useCount": 6,
           "routes": [
             "/canada/",
@@ -5253,50 +5253,11 @@
             "/canada/victoria-south-island/sooke-juan-de-fuca/"
           ],
           "altTexts": [
-            "Victoria Inner Harbour and Parliament Buildings"
+            "Victoria Inner Harbour and Parliament Buildings",
+            "Victoria's Inner Harbour, Parliament Buildings and boats at dusk"
           ],
           "rawVisibleCredits": [
             "Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg — DXR, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
-        }
-      ]
-    },
-    {
-      "sha256": "5bc44f417001aa5ee131e5ee40f22d3e1b24b8ed6714274037a9179cbd9b8d1c",
-      "assetPaths": [
-        "/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp"
-      ],
-      "byteLength": 449984,
-      "sourceRecords": [
-        {
-          "assetPath": "/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rocky_coast_between_Little_Kuitshe_Campsite_and_Payzant_Campsite,_Juan_de_Fuca_Trail,_Vancouver_Island,_Canada_39.jpg",
-          "sourceTitle": "File:Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
-          "creditLabel": "Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
-          "creator": "Michal Klajban",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "structured_data_record",
-          "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/canada/victoria-south-island/",
-            "/canada/victoria-south-island/butchart-saanich/",
-            "/canada/victoria-south-island/inner-harbour-james-bay/",
-            "/canada/victoria-south-island/sooke-juan-de-fuca/"
-          ],
-          "altTexts": [
-            "Rocky Pacific shoreline near Sooke on Vancouver Island"
-          ],
-          "rawVisibleCredits": [
-            "Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg — Michal Klajban, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]

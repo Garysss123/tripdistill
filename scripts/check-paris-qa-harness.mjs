@@ -47,6 +47,10 @@ const expectedRoutes = [
   ['/canada/vancouver-north-shore/downtown-stanley-granville/', 'Vancouver Downtown, Stanley Park & Granville Island'],
   ['/canada/vancouver-north-shore/north-shore-grouse-capilano/', 'Grouse, Capilano & Lynn Canyon'],
   ['/canada/vancouver-north-shore/sea-to-sky-whistler/', 'Sea-to-Sky & Whistler'],
+  ['/canada/victoria-south-island/', 'Victoria & South Vancouver Island hub'],
+  ['/canada/victoria-south-island/inner-harbour-james-bay/', 'Inner Harbour, James Bay & Beacon Hill'],
+  ['/canada/victoria-south-island/butchart-saanich/', 'Butchart Gardens & Saanich Peninsula'],
+  ['/canada/victoria-south-island/sooke-juan-de-fuca/', 'Sooke & Juan de Fuca Coast'],
   ['/switzerland/zurich-lake/', 'Zurich & Lake Zurich'],
   ['/switzerland/zurich-lake/lake-uetliberg/', 'Lake Zurich & Uetliberg'],
   ['/switzerland/zurich-lake/old-town-lindenhof/', 'Old Town, Lindenhof & the Limmat'],
@@ -243,7 +247,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City–Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 16 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
+  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 20 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
   if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
@@ -321,7 +325,8 @@ function inspectLocalizedPage(manifest, record, label) {
   const bytes = fs.readFileSync(pagePath);
   if (bytes.byteLength !== record.bytes || hash(bytes) !== record.sha256) fail(`${label}: built route content hash mismatch for ${record.locale} ${record.urlPath}.`);
   if (bytes.byteLength > manifest.maxHtmlBytes) fail(`${label}: ${record.urlPath} exceeds the ${manifest.maxHtmlBytes} byte HTML budget.`);
-  const document = parse(bytes.toString('utf8'));
+  const html = bytes.toString('utf8');
+  const document = parse(html);
   const htmlNode = nodes(document, 'html')[0];
   if (attr(htmlNode, 'lang') !== record.locale) fail(`${label}: wrong document language on ${record.urlPath}: ${attr(htmlNode, 'lang')}.`);
   const bodyNode = nodes(document, 'body')[0];
@@ -371,7 +376,7 @@ function inspectLocalizedPage(manifest, record, label) {
     const file = pathname.endsWith('/') ? path.join(target, 'index.html') : fs.existsSync(target) ? target : path.join(target, 'index.html');
     if (!fs.existsSync(file)) fail(`${label}: broken internal link ${href} from ${record.urlPath}.`);
   }
-  return { document, bytes };
+  return { document, bytes, html };
 }
 
 async function fetchNoStore(url) {
@@ -405,7 +410,7 @@ const pageResults = manifest.pages.map((record) => inspectLocalizedPage(manifest
 const pagesByRoute = new Map(manifest.pages.map((record, index) => [`${record.locale}${record.path}`, { record, ...pageResults[index] }]));
 for (const locale of expectedLocales) {
   for (const [routePath] of expectedRoutes) {
-    const { record, document } = pagesByRoute.get(`${locale.code}${routePath}`);
+    const { record, document, html } = pagesByRoute.get(`${locale.code}${routePath}`);
     const styles = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => new URL(attr(node, 'href'), 'https://tripdistill.com').pathname);
     const styleHrefs = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
     if (routePath === '/south-korea/') {
@@ -908,6 +913,40 @@ for (const locale of expectedLocales) {
       }
       continue;
     }
+    if (routePath.startsWith('/canada/victoria-south-island/')) {
+      const isVictoriaHub = routePath === '/canada/victoria-south-island/';
+      const isSookeRoute = routePath.endsWith('/sooke-juan-de-fuca/');
+      const victoriaCss = fs.readFileSync(safeDistPath('/css/canada-victoria.css'), 'utf8');
+      if (!styles.includes('/css/canada.css') || !styles.includes('/css/canada-victoria.css')) fail(`Missing Victoria route stylesheets on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/canada-victoria.css?v=20261008-1')) fail(`Missing current Victoria responsive stylesheet on ${locale.code} ${routePath}.`);
+      if (!isVictoriaHub && !styles.includes('/css/canada-field.css')) fail(`Missing Canada field stylesheet on ${locale.code} ${routePath}.`);
+      if (!attr(nodes(document, 'body')[0], 'data-region').includes('victoria-south-island')) fail(`Missing Victoria region marker on ${locale.code} ${routePath}.`);
+      if (nodes(document, 'details').length < 3) fail(`Missing Victoria route FAQs on ${locale.code} ${routePath}.`);
+      const bodyText = text(nodes(document, 'body')[0]);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Victoria photo license on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Victoria photo source on ${locale.code} ${routePath}.`);
+      if (!isVictoriaHub && classNodes(document, 'ca-route-step').length !== 4) fail(`Victoria child must expose four route stages on ${locale.code} ${routePath}.`);
+      if (isSookeRoute) {
+        const choices = classNodes(document, 'ca-victoria-route-choices');
+        if (choices.length !== 1 || nodes(choices[0], 'li').length !== 3 || !classNodes(document, 'ca-victoria-route-note').length) fail(`Sooke route must show three labeled schematic choices and its scale note on ${locale.code}.`);
+        if (html.includes('/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp') || html.includes('Rocky_coast_between_Little_Kuitshe')) fail(`Unverified Sooke photo still appears on ${locale.code}.`);
+        const graphScripts = nodes(document, 'script').filter((node) => attr(node, 'type') === 'application/ld+json');
+        const graph = graphScripts.flatMap((node) => { try { const parsed = JSON.parse(text(node)); return parsed['@graph'] || [parsed]; } catch { return []; } });
+        if (nodes(document, 'meta').some((node) => attr(node, 'property') === 'og:image') || graph.some((item) => item['@type'] === 'Article' && item.image)) fail(`Text-only Sooke route must not advertise a removed photo as its social or structured image on ${locale.code}.`);
+      }
+      if (locale.code === 'en') {
+        const requirements = isVictoriaHub
+          ? ['70/70X', '22 km', 'route 75', '50–60 minutes', '45-minute drive']
+          : routePath.endsWith('/inner-harbour-james-bay/')
+            ? ['James Bay', 'Beacon Hill Park', '2–4 hours', 'weekday']
+            : routePath.endsWith('/butchart-saanich/')
+              ? ['55-acre', 'former quarry', '50–60 minutes', 'Brentwood Bay']
+              : ['Sooke Potholes', 'China Beach', 'Botanical Beach', '1.2 m', '47 km', 'route 61', '1 km'];
+        for (const phrase of requirements) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Victoria editorial QA is missing '${phrase}' on ${routePath}.`);
+      }
+      if (!victoriaCss.includes('body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field-hero--text-visual') || !victoriaCss.includes('@media (max-width: 1040px)') || !victoriaCss.includes('@media (max-width: 720px)') || !/min-width:\s*0/.test(victoriaCss) || /overflow(?:-x)?:\s*(?:hidden|clip)/i.test(victoriaCss)) fail(`Victoria responsive map guard or visible overflow protection is missing on ${locale.code} ${routePath}.`);
+      continue;
+    }
     if (routePath.startsWith('/canada/montreal/') || routePath.startsWith('/canada/quebec-city-charlevoix/') || routePath.startsWith('/canada/toronto/') || routePath.startsWith('/canada/vancouver-north-shore/')) {
       const isTorontoRoute = routePath.startsWith('/canada/toronto/');
       const isVancouverRoute = routePath.startsWith('/canada/vancouver-north-shore/');
@@ -1361,7 +1400,7 @@ if (!isLive) {
   const normandyPages = manifest.pages.filter((record) => record.path.startsWith('/france/normandy/')).length;
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
   const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
-  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/') || record.path.startsWith('/canada/vancouver-north-shore/')).length;
+  const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/') || record.path.startsWith('/canada/vancouver-north-shore/') || record.path.startsWith('/canada/victoria-south-island/')).length;
   const zurichPages = manifest.pages.filter((record) => record.path.startsWith('/switzerland/zurich-lake/')).length;
   const koreaCountryPages = manifest.pages.filter((record) => record.path === '/south-korea/').length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;

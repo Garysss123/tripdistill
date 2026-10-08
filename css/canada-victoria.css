@@ -72,6 +72,26 @@ body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-instrument {
   display: none;
 }
 
+@media (max-width: 1040px) {
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-field-hero--text-visual {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-victoria-route-choices {
+    grid-column: 1;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-victoria-route-choices h2,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-victoria-route-choices p,
+  body[data-page="ca-victoria-south-island-sooke-juan-de-fuca"] .ca-victoria-route-choices li {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
 body[data-region="victoria-south-island"] .ca-victoria-route-choices {
   position: relative;
   z-index: 2;
@@ -83,6 +103,10 @@ body[data-region="victoria-south-island"] .ca-victoria-route-choices {
   border-inline-start: .45rem solid #d1a66b;
   clip-path: none;
   box-shadow: 0 1rem 2.5rem rgba(10, 32, 39, .18);
+}
+
+body[data-region="victoria-south-island"] #operating-model .ca-contract-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 body[data-region="victoria-south-island"] .ca-victoria-route-choices .ca-section-label,
@@ -216,6 +240,11 @@ body[data-region="victoria-south-island"] .ca-related-card:hover {
 
   body[data-region="victoria-south-island"] .ca-hub-card:nth-child(2) {
     border-radius: 1rem;
+  }
+
+  body[data-region="victoria-south-island"] .ca-victoria-card-choices li {
+    grid-template-columns: minmax(0, 1fr);
+    overflow-wrap: anywhere;
   }
 }
 
