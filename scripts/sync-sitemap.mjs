@@ -20,6 +20,7 @@ const australiaLastmod = '2026-09-04';
 const canadaLastmod = '2026-09-12';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
+const southKoreaLastmod = '2026-10-08';
 const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
@@ -64,6 +65,7 @@ const zurichEditedRoutes = [
   '/switzerland/zurich-lake/lake-uetliberg/',
   '/switzerland/zurich-lake/zurich-west-museums/'
 ];
+const southKoreaEditedRoutes = ['/south-korea/'];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters
   .filter((cluster) => cluster.slug !== 'paris')
@@ -174,6 +176,12 @@ for (const route of zurichEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Zurich route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: zurichLastmod });
+}
+
+for (const route of southKoreaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited South Korea route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: southKoreaLastmod });
 }
 
 for (const route of vietnamHueEditedRoutes) {
