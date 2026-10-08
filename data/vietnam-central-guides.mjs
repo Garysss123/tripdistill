@@ -440,6 +440,9 @@ const daNangHoiAn = defineVietnamCluster({
       name: 'Han River & Da Nang City Core',
       motif: 'The working waterfront',
       instrument: 'zine',
+      routeLead: "Bach Dang and the Cham Museum make a compact west-bank pairing; Tran Hung Dao is a separate east-bank choice, not the far end of one continuous promenade. A second shore adds a bridge approach and a different pickup plan.",
+      boundaryLabel: "River and museum etiquette",
+      arrivalLabel: "Reaching the riverfront",
       image: image({
         src: '/assets/images/vietnam-da-nang-han-river.webp',
         alt: 'Han River and the Da Nang city waterfront',
@@ -506,6 +509,11 @@ const daNangHoiAn = defineVietnamCluster({
       name: 'Son Tra Peninsula Wildlife & Linh Ung',
       motif: 'Forest above the bay',
       instrument: 'signal',
+      instrumentLabel: 'pagoda',
+      routeLead: "Enter through the three-door gate and move from courtyard to hall and statue; the sea-view balcony is a natural finish when open. Any forest viewpoint is an optional road extension that depends on current permission and a return ride.",
+      boundaryLabel: "Pagoda and forest etiquette",
+      arrivalLabel: "Reaching Linh Ung",
+      kickerLabel: "Son Tra forest & Linh Ung Pagoda",
       image: image({
         src: '/assets/images/vietnam-da-nang-son-tra.webp',
         alt: 'Ornate entrance gate to Linh Ung Pagoda on Son Tra Peninsula',
@@ -514,16 +522,16 @@ const daNangHoiAn = defineVietnamCluster({
         creator: 'CEphoto, Uwe Aranas',
         license: 'CC BY-SA 3.0'
       }),
-      summary: 'Build a Son Tra visit around the open visitor road and Linh Ung Pagoda; decide whether to add a forest viewpoint only after confirming current access and a return ride.',
-      lead: 'Son Tra is a coastal forest beside Da Nang, not a guaranteed wildlife park or a road to explore without limits. Vietnam’s tourism authority identifies it as habitat for the endangered red-shanked douc langur. A good visit keeps the route within currently authorized access, gives Linh Ung Pagoda its own respectful stop and treats a wildlife sighting as a possibility, never the day’s promised reward.',
-      orientation: 'Use Linh Ung as a cultural anchor and choose only marked, open visitor viewpoints that fit the day’s access notice. Do not plan a self-directed forest trek: the peninsula’s access is managed, and rain, barriers or road restrictions can remove an intended stop.',
+      summary: "See Linh Ung Pagoda’s gate, courtyard and Lady Buddha above Da Nang Bay, then add a forest viewpoint only after checking current road access and your return ride.",
+      lead: "Set above Da Nang Bay, Linh Ung is a pagoda complex, not simply its prominent Lady Buddha statue. Visitors pass a three-door gate into a courtyard with bonsai and arhat figures; the compound also includes a main hall and an ancestral house on the hillside. The hall’s Buddhist images and reliefs depict the life of Shakyamuni. Local accounts associate Lady Buddha with protection for fishermen in storms and rough seas, making the sea-facing setting part of a living place of worship. Son Tra’s coastal forest is also habitat for the endangered red-shanked douc langur: let the pagoda visit stand on its own and treat wildlife as a chance encounter.",
+      orientation: "Start at the three-door gate and make the pagoda precinct the core stop: courtyard, main hall, then statue and sea-facing balcony if open. Follow posted worship and photography guidance, and check the same-day Son Tra access notice before adding a forest road; a self-guided trek is not part of this route.",
       arrival: 'Arrange a roadworthy driver and a confirmed pickup or waiting return before leaving the city; do not assume a car will be available at an upper viewpoint. Self-driving is only an option if the current rules permit your vehicle and you are confident on steep, winding roads. Confirm the exact route with the driver before departure.',
       sequence: 'Check the official Son Tra access notice and weather first. Visit Linh Ung during the open part of the day, then continue only to a legal viewpoint on an authorized road. Watch quietly from the permitted area and descend with daylight and rain margin; if a route is restricted, make the pagoda the endpoint and return to the city.',
       boundary: 'Stay on authorized roads and marked public pull-outs, respect barriers and worship spaces, and never leave the permitted route for a closer view. Do not feed, bait, call, chase or approach wildlife. A douc sighting is not guaranteed, and the animals’ distance is part of responsible viewing.',
       stages: [
         ['Confirm the access plan', 'Read the current local notice, check rain and agree on the permitted road and return pickup with your driver. If the upper route or weather is uncertain, choose the shorter Linh Ung visit.'],
-        ['Visit Linh Ung with care', 'Allow a quiet stop at the pagoda, dress modestly and follow signs on worship, photography and visitor access. Keep the temple visit distinct from the forest drive.'],
-        ['Use a permitted viewpoint', 'Continue only when the road is open and the stop is an authorized public pull-out. Scan the forest without calling or feeding animals; no sighting is a normal outcome.'],
+        ["Visit the pagoda precinct","Enter through the three-door gate, pause among courtyard bonsai and arhat sculptures, then step into the main hall for Buddhist images and reliefs of Shakyamuni’s life. Continue to the Lady Buddha at a quiet pace and follow posted worship and photography guidance."],
+        ["Use the open sea-view balcony or road","If access is open, pause at the pagoda’s sea-facing balcony for a view over Da Nang Bay and the coast. Continue to a forest-road viewpoint only when the current notice permits; never call, feed or pursue wildlife."],
         ['Return before conditions narrow', 'Turn back before rain, fading light or fatigue makes the descent harder. Keep the city meal and any beach plan for after the confirmed return, not as a fixed add-on to a delayed drive.']
       ],
       risks: [
@@ -538,6 +546,7 @@ const daNangHoiAn = defineVietnamCluster({
       isoDate: '2026-10-08',
       countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
       sources: [
+        ["https://danangfantasticity.com/en/linh-ung-pagoda","Da Nang City Tourism Information Portal — Linh Ung’s gate, courtyard, pagoda buildings, Lady Buddha and bay setting; checked 8 October 2026"],
         [
           'https://vietnam.travel/places-to-go/central-vietnam/da-nang',
           'Vietnam National Authority of Tourism — Son Tra forest and endangered red-shanked douc langur context; checked 8 October 2026'
@@ -651,6 +660,9 @@ const daNangHoiAn = defineVietnamCluster({
       name: 'My Khe Beach & An Thuong',
       motif: 'The city’s open edge',
       instrument: 'chart',
+      routeLead: "This is a shore-to-neighborhood route, not one continuous beach day: finish the beach leg in the cooler morning, rest in shade or indoors, then cross safely before choosing An Thuong.",
+      boundaryLabel: "Beach and neighborhood care",
+      arrivalLabel: "Reaching the public beach",
       image: image({
         src: '/assets/images/vietnam-da-nang-my-khe.webp',
         alt: 'My Khe Beach on the Da Nang coast',
