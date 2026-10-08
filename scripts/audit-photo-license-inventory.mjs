@@ -378,21 +378,23 @@ function parseLicense(creditText) {
 }
 function parseCredit(li) {
   const itemAttrs = attrs(li);
-  const links = all(li, (node) => node.tagName === 'a').map((a) => ({ href: attrs(a).href || '', label: text(a).replace(/\s+/g, ' ').trim() }));
+  const links = all(li, (node) => node.tagName === 'a').map((a) => ({ href: attrs(a).href || '', label: text(a).replace(/\s+/g, ' ').trim(), className: attrs(a).class || '' }));
   const sourceLink = links.find((link) => /commons\.wikimedia\.org\/wiki\/File:/i.test(link.href));
   if (!sourceLink) return null;
   const creditText = text(li).replace(/\s+/g, ' ').trim();
-  const license = itemAttrs['data-photo-license'] || parseLicense(creditText);
+  const declaredLicenseLink = links.find((link) => /(?:^|\s)photo-license(?:\s|$)/.test(link.className)) || links.find((link) => /(?:creativecommons\.org\/(?:licenses|publicdomain)\/|kogl\.or\.kr\/info\/licenseType1)/i.test(link.href));
+  const license = itemAttrs['data-photo-license'] || declaredLicenseLink?.label || parseLicense(creditText);
   const at = license ? creditText.toLowerCase().indexOf(license.toLowerCase()) : -1;
   let before = at >= 0 ? creditText.slice(0, at) : creditText;
   if (sourceLink.label) before = before.replace(sourceLink.label, '');
-  const creator = before.replace(/^[\s—–,:;.-]+|[\s—–,:;.-]+$/g, '').trim() || null;
+  const parsedCreator = before.replace(/^[\s—–,:;.-]+|[\s—–,:;.-]+$/g, '').trim() || null;
+  const creatorFromLabel = sourceLink.label.match(/^.+?\s+\/\s+(.+)$/)?.[1]?.trim() || null;
+  const creator = parsedCreator || creatorFromLabel;
   let editHistory = null;
   if (at >= 0) {
     const after = creditText.slice(at + license.length).replace(/^[\s.,;:—–-]+/, '').trim();
     editHistory = after || null;
   }
-  const declaredLicenseLink = links.find((link) => /creativecommons\.org\/(licenses|publicdomain)\//i.test(link.href));
   return {
     assetPath: itemAttrs['data-photo-asset'] || null,
     sourceUrl: sourceLink.href,
@@ -404,6 +406,17 @@ function parseCredit(li) {
     editHistory: itemAttrs['data-photo-edit-note'] || editHistory,
     matching: null
   };
+}
+function photoCreditsInDocument(document) {
+  const sourceSections = all(document, (node) => node.tagName === 'section' && (attrs(node).class || '').split(/\s+/).includes('sources'));
+  const listed = sourceSections.flatMap((section) => all(section, (node) => node.tagName === 'li').map(parseCredit).filter(Boolean));
+  const adjacent = all(document, (node) => {
+    const className = attrs(node).class || '';
+    const markedCredit = ['p', 'div'].includes(node.tagName) && /\bphoto-credit\b/.test(className);
+    const figureCredit = node.tagName === 'figcaption' && all(node, (child) => child.tagName === 'a').some((link) => /commons\.wikimedia\.org\/wiki\/File:/i.test(attrs(link).href || ''));
+    return markedCredit || figureCredit;
+  }).map(parseCredit).filter(Boolean);
+  return [...listed, ...adjacent];
 }
 function matchCredit(image, credits) {
   const fileTokens = tokenSet(path.basename(image.src));
@@ -481,8 +494,7 @@ for (const country of countries) {
       const a = attrs(node);
       return { src: a.src?.split(/[?#]/)[0] || '', alt: a.alt || '', route };
     }).filter((img) => img.src.startsWith('/assets/images/'));
-    const sourceSections = all(document, (node) => node.tagName === 'section' && (attrs(node).class || '').split(/\s+/).includes('sources'));
-    const credits = sourceSections.flatMap((section) => all(section, (node) => node.tagName === 'li').map(parseCredit).filter(Boolean));
+    const credits = photoCreditsInDocument(document);
     for (const credit of credits) {
       if (!creditsBySrc.has(credit.sourceUrl)) creditsBySrc.set(credit.sourceUrl, []);
       creditsBySrc.get(credit.sourceUrl).push({ ...credit, route });
@@ -601,6 +613,16 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg', 'Exact Commons page checked for Basile Morin, the 3 June 2024 photograph date, and CC BY-SA 4.0 terms. The existing site credit links this source and license. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:Gyedong-gil_street_with_climbing_plants_at_golden_hour_in_Seoul_South_Korea.jpg', 'Exact Commons page checked for Basile Morin, the 3 June 2024 photograph date, and CC BY-SA 4.0 terms. The existing site credit links this source and license. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg', 'Exact Commons page checked for Seoul Tourism Organization, the 11 December 2024 photograph date, Seoul Tourism Archive 10341 source record, and KOGL Type 1 terms. The official license permits commercial use and adaptation with source attribution. The Commons-linked archive endpoint returned 404 on 8 October 2026. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:BIFF_Square_at_night.jpg', 'Exact Commons page checked for Christophe95, the 27 September 2018 photograph date, and CC BY-SA 4.0 terms. The adjacent same-route credit is explicitly attached to the BIFF hero image. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:Busan_at_dusk._View_of_nurimaru_APEC_house_from_dongbaekseom_lighthouse.jpg', 'Exact Commons page checked for IsouM, the 11 October 2018 photograph date, and CC BY-SA 4.0 terms. The same-route figure caption explicitly credits this Commons file beside the image. Local WebP pixels were not inspected.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
@@ -611,6 +633,12 @@ const explicitCreditMappings = new Map([
   ['/assets/images/hokkaido-susukino-night.webp', { creditLabel: 'Susukino night from TV Tower photo', creator: 'Keith Blayney', note: 'Corrected an earlier false match to the adjacent Odori Park credit; matched the night image to its exact Commons title and creator.' }],
   ['/assets/images/korea-busan-cityscape.webp', { creditLabel: 'Busan cityscape', creator: 'Hoil Ryu', note: 'Matched the hero image description to the same-route Busan cityscape credit.' }],
   ['/assets/images/korea-busan-gwangalli-music.webp', { creditLabel: 'Gwangalli waterfront musicians', creator: 'Christophe95', note: 'Matched the musicians in the image alt to the same-route credit.' }],
+  ['/assets/images/korea-bukchon-blue-hour.webp', { sourceTitle: 'File:Bukchon-ro 11-gil street with hanok houses at blue hour in Bukchon Hanok Village Seoul.jpg', creditLabel: 'Bukchon lane at blue hour / Basile Morin', creator: 'Basile Morin', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2024-06-03', note: 'The existing Seoul credit associates this asset with the exact Commons source, creator, date and CC BY-SA 4.0 terms. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.' }],
+  ['/assets/images/korea-gyedong-alley.webp', { sourceTitle: 'File:Gyedong-gil street with climbing plants at golden hour in Seoul South Korea.jpg', creditLabel: 'Gyedong alley / Basile Morin', creator: 'Basile Morin', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2024-06-03', note: 'The existing Bukchon credit associates this asset with the exact Commons source, creator, date and CC BY-SA 4.0 terms. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.' }],
+  ['/assets/images/korea-gwanghwamun-night.webp', { sourceTitle: 'File:Nightview of the Gwanghwamun Square 2024.jpg', creditLabel: 'Gwanghwamun Square at night / Seoul Tourism Organization', creator: 'Seoul Tourism Organization', license: 'KOGL Type 1', licenseUrl: 'https://www.kogl.or.kr/info/licenseType1.do', sourcePhotoDate: '2024-12-11', attributionTerms: 'Specify Seoul Tourism Archive 10341 as the source and credit Seoul Tourism Organization. The Commons source page states that commercial use and adaptations are permitted.', note: 'The exact Commons page confirms the 11 December 2024 source, Seoul Tourism Organization author, Seoul Tourism Archive 10341 source record, and KOGL Type 1 commercial/adaptation terms. The linked archive endpoint returned 404 on 8 October 2026. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.' }],
+  ['/assets/images/korea-busan-biff-night.webp', { sourceTitle: 'File:BIFF Square at night.jpg', creditLabel: 'BIFF Square at night', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-27', note: 'The same-route hero has an adjacent photo-credit paragraph explicitly naming this exact Commons file, Christophe95, CC BY-SA 4.0, and the WebP derivative edits. Local pixels were not inspected in this pass.' }],
+  ['/assets/images/korea-busan-dongbaek.webp', { sourceTitle: 'File:Busan at dusk. View of nurimaru APEC house from dongbaekseom lighthouse.jpg', creditLabel: 'Dongbaekseom at dusk', creator: 'IsouM', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-10-11', note: 'The same-route figure caption explicitly links this image to the exact Commons file, IsouM, CC BY-SA 4.0, and the WebP derivative edits. Local pixels were not inspected in this pass.' }],
+
   ['/assets/images/korea-hongdae-night.webp', { creditLabel: 'Hongdae night photo', creator: 'lumoplank', note: 'Matched the route and night-street image alt to the same-route Hongdae credit.' }],
   ['/assets/images/thailand-andaman-ko-lanta.webp', { creditLabel: 'Klong Khong Beach, Ko Lanta', creator: 'Marcin Konsek', note: 'Matched the beach and island in the image alt to the same-route credit.' }],
   ['/assets/images/thailand-andaman-phang-nga.webp', { creditLabel: 'Ko Yao Noi sunrise', creator: 'Vyacheslav Argenberg', note: 'Matched the sunrise, bay, and island in the image alt to the same-route credit.' }],
@@ -743,8 +771,7 @@ for (const fullPath of assetPaths) {
     const scored = uses.map((use) => {
       const pageFile = path.join(root, use.route.slice(1), 'index.html');
       const document = parse(fs.readFileSync(pageFile, 'utf8'));
-      const sectionNodes = all(document, (node) => node.tagName === 'section' && (attrs(node).class || '').split(/\s+/).includes('sources'));
-      const pageCredits = sectionNodes.flatMap((section) => all(section, (node) => node.tagName === 'li').map(parseCredit).filter(Boolean));
+      const pageCredits = photoCreditsInDocument(document);
       return matchCredit(use, pageCredits);
     }).filter(Boolean);
     const identities = new Set(scored.map((item) => [item.sourceUrl, item.license, item.creator].join('|')));
@@ -753,21 +780,24 @@ for (const fullPath of assetPaths) {
   }
   const explicit = explicitCreditMappings.get(src);
   if (explicit) {
-    const candidates = allDistinctCredits.filter((credit) => credit.creditLabel === explicit.creditLabel && credit.creator === explicit.creator);
+    const candidates = allDistinctCredits.filter((credit) => credit.creditLabel === explicit.creditLabel && (!credit.creator || credit.creator === explicit.creator));
     const identities = new Set(candidates.map((item) => [item.sourceUrl, item.license, item.creator].join('|')));
-    if (identities.size === 1 && candidates.length) creditMatch = { ...candidates[0], editHistory: explicit.editHistory || candidates[0].editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+    if (identities.size === 1 && candidates.length && candidates[0].creator && candidates[0].creator !== explicit.creator) {
+      throw new Error(`Explicit photo mapping creator disagrees with visible credit for ${src}`);
+    }
+    if (identities.size === 1 && candidates.length) creditMatch = { ...candidates[0], creator: candidates[0].creator || explicit.creator, editHistory: explicit.editHistory || candidates[0].editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
   }
   const sourceUrl = uniqueValues('sourceUrl')[0] || creditMatch?.sourceUrl || null;
   const sourceTitle = uniqueValues('sourceTitle')[0] || explicit?.sourceTitle || creditMatch?.creditLabel || null;
-  const sourcePhotoDate = uniqueValues('sourceDate')[0] || creditMatch?.sourceDate || null;
-  const creator = uniqueValues('creator')[0] || creditMatch?.creator || null;
-  const license = uniqueValues('license')[0] || creditMatch?.license || null;
-  const licenseUrl = uniqueValues('licenseUrl')[0] || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
+  const sourcePhotoDate = uniqueValues('sourceDate')[0] || explicit?.sourcePhotoDate || creditMatch?.sourceDate || null;
+  const creator = uniqueValues('creator')[0] || creditMatch?.creator || explicit?.creator || null;
+  const license = uniqueValues('license')[0] || creditMatch?.license || explicit?.license || null;
+  const licenseUrl = uniqueValues('licenseUrl')[0] || creditMatch?.licenseUrl || explicit?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
   const verification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
   const terms = licenseTerms(license, Boolean(verification));
   const commercialReuseEligibility = uniqueValues('commercialReuseEligibility')[0] || terms.commercialReuseEligibility;
-  const attributionTerms = uniqueValues('attributionTerms')[0] || terms.attributionTerms;
+  const attributionTerms = uniqueValues('attributionTerms')[0] || explicit?.attributionTerms || terms.attributionTerms;
   const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
   const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
   const row = {
@@ -796,7 +826,7 @@ for (const fullPath of assetPaths) {
     moduleSources: [...new Set(dataRecords.map((record) => record.moduleName))],
     rawVisibleCredits: creditMatch?.creditText ? [creditMatch.creditText] : []
   };
-  if (!sourceUrl || !creator || !license) unmatchedByAsset.push({ src, missing: ['sourceUrl', 'creator', 'license'].filter((field) => !row[field]) });
+  if (!sourceUrl || !creator || !license) unmatchedByAsset.push({ src, missing: ['sourceUrl', 'creator', 'license'].filter((field) => !row[field]), useCount: row.useCount, routes: row.routes });
   entries.push(row);
 }
 
@@ -860,16 +890,24 @@ const counts = {
   metadataOrCreditOnly: entries.filter((row) => row.verificationStatus === 'site_credit_or_metadata_only').length,
   missingSourceCreditMatch: entries.filter((row) => row.verificationStatus === 'missing_source_credit_match').length,
   incompleteAttributionFields: unmatchedByAsset.length,
+  activeMissingSourceCreditMatch: entries.filter((row) => row.useCount > 0 && row.verificationStatus === 'missing_source_credit_match').length,
+  unreferencedMissingSourceCreditMatch: entries.filter((row) => row.useCount === 0 && row.verificationStatus === 'missing_source_credit_match').length,
+  activeIncompleteAttributionFields: unmatchedByAsset.filter((item) => item.useCount > 0).length,
+  unreferencedIncompleteAttributionFields: unmatchedByAsset.filter((item) => item.useCount === 0).length,
   sourceMetadataConflicts: sourceConflicts.length,
   moduleErrors: moduleErrors.length
 };
+const openCreditReviews = [
+  { assetPath: '/assets/images/korea-namsan-tower.webp', routes: ['/south-korea/seoul/', '/south-korea/seoul/myeongdong-namsan/'], status: 'open_visual_subject_check', detail: 'Commons describes Seoul seen from N Seoul Tower looking south; site alt text describes the tower rising above the city at dusk. Local pixels have not been inspected, so source-to-image identity and any correction remain unresolved.' }
+];
+counts.openCreditReviewCount = openCreditReviews.length;
 const report = {
   generatedAt: new Date().toISOString(),
   scope: 'Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
   counts,
   verificationMethod: {
     structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',
-    visibleCredits: 'Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.',
+    visibleCredits: 'Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.',
     sourcePageChecks: 'Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
     imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
     buildImageCountReconciliation: `The ${assetPaths.length} WebP photos and ${assetImageExtras.length} other image assets in assets/images, plus ${rootImageExtras.length} root-level image assets, explain the ${counts.expectedBuildImageCount} build image files.`
@@ -884,6 +922,7 @@ const report = {
   entries: grouped,
   countInterpretation: 'licenseClaimsNotIndependentlyVerified and metadataOrCreditOnly count current inventory records without an independently checked source-page entry. They do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and those figures are not additive.',
   unmatchedAssets: unmatchedByAsset,
+  openCreditReviews,
   sourceMetadataConflicts: sourceConflicts
 };
 const outDir = path.join(root, 'reports');
@@ -911,7 +950,7 @@ const summaryLines = [
   '',
   'The former Trastevere hero showed Piazza Navona and has been replaced. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
   '',
-  'Missing source/creator/license fields: ' + unmatchedByAsset.length + '. Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '.'
+  'Missing source/creator/license fields: ' + unmatchedByAsset.length + ' (' + counts.activeIncompleteAttributionFields + ' active, ' + counts.unreferencedIncompleteAttributionFields + ' unused). Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '. Open source-to-image review: N Seoul Tower subject description conflicts with alt text; local pixels remain unreviewed.'
 ];
 fs.writeFileSync(path.join(outDir, 'photo-license-inventory.md'), summaryLines.join('\n') + '\n');
 console.log(JSON.stringify({ counts, unmatchedSamples: unmatchedByAsset.slice(0, 30), sourceConflictSamples: sourceConflicts.slice(0, 10), output: ['reports/photo-license-inventory.json', 'reports/photo-license-inventory.md'] }, null, 2));

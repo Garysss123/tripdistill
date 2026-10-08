@@ -31,6 +31,13 @@ const thailandImageRecords = [
   { assetPath: '/assets/images/thailand-lumphini.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', sourceDate: '2006-10-02', license: 'Public domain' },
   { assetPath: '/assets/images/thailand-khlong-bang-luang.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', sourceDate: '2021-02-13', license: 'CC BY-SA 4.0' }
 ];
+const koreaPhotoRecords = [
+  { assetPath: '/assets/images/korea-bukchon-blue-hour.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg', creator: 'Basile Morin', license: 'CC BY-SA 4.0', sourceDate: '2024-06-03' },
+  { assetPath: '/assets/images/korea-gyedong-alley.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gyedong-gil_street_with_climbing_plants_at_golden_hour_in_Seoul_South_Korea.jpg', creator: 'Basile Morin', license: 'CC BY-SA 4.0', sourceDate: '2024-06-03' },
+  { assetPath: '/assets/images/korea-gwanghwamun-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg', creator: 'Seoul Tourism Organization', license: 'KOGL Type 1', sourceDate: '2024-12-11' },
+  { assetPath: '/assets/images/korea-busan-biff-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:BIFF_Square_at_night.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', sourceDate: '2018-09-27' },
+  { assetPath: '/assets/images/korea-busan-dongbaek.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Busan_at_dusk._View_of_nurimaru_APEC_house_from_dongbaekseom_lighthouse.jpg', creator: 'IsouM', license: 'CC BY-SA 4.0', sourceDate: '2018-10-11' }
+];
 const danangImageRecords = [
   { assetPath: '/assets/images/vietnam-da-nang-han-river.webp', sourceDate: '2023-08-19' },
   { assetPath: '/assets/images/vietnam-da-nang-marble-mountains.webp', sourceDate: '2024-08-01' },
@@ -79,6 +86,9 @@ try {
   assert.ok(findAll(explicitCreditRows[0], (node) => node.tagName === 'a' && attrs(node).href === sourceUrl).length, 'visible credit must link to the exact Commons file page');
 
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
+  assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
+  assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 23, 'the remaining unmatched records are unused assets');
+  assert.equal(report.counts.openCreditReviewCount, 1, 'the N Seoul Tower subject mismatch remains open for visual review');
   const hueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === hueTombAssetPath);
   assert.ok(hueTomb, 'inventory regeneration must include the new Hue Minh Mang asset');
   assert.equal(hueTomb.sourceUrl, hueTombSourceUrl);
@@ -107,6 +117,24 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  for (const image of koreaPhotoRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Seoul/Busan photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.sourcePhotoDate, image.sourceDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.visualReviewStatus, 'not_individually_visually_reviewed', 'source-page checks must not imply local pixel review');
+    assert.ok(record.verificationDetail.includes('pixels were not inspected') || record.verificationDetail.includes('pixels were not inspected in this pass'), 'source-page notes must state that local pixels were not inspected');
+  }
+  const namsan = photoRecords.find((item) => item.assetPath === '/assets/images/korea-namsan-tower.webp');
+  assert.equal(namsan.creator, 'kallerna');
+  assert.equal(namsan.license, 'CC BY-SA 4.0');
+  assert.equal(namsan.sourcePhotoDate, null, 'do not assert the Commons date against an image with an unresolved subject mismatch');
+  assert.equal(namsan.verificationStatus, 'site_credit_or_metadata_only', 'leave the N Seoul source-to-image question open');
+  assert.equal(report.openCreditReviews[0].assetPath, '/assets/images/korea-namsan-tower.webp');
   for (const image of [...thailandImageRecords, ...danangImageRecords]) {
     const record = photoRecords.find((item) => item.assetPath === image.assetPath);
     assert.ok(record, `source audit must retain ${image.assetPath}`);
@@ -144,6 +172,34 @@ try {
   ]);
   const localeDirs = { en: '', 'zh-Hant': 'zh', ja: 'ja', ko: 'ko', th: 'th' };
   const localeBatch = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99zzzl-thailand-photo-edits-20261008.json'), 'utf8')).translations]));
+  const seoulSourceNote = 'Original source: Seoul Tourism Archive 10341.';
+  const seoulSourceNoteTranslations = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99y-south-korea-seoul-20261007.json'), 'utf8')).translations[seoulSourceNote]]));
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    const document = parse(fs.readFileSync(path.join(root, prefix, 'south-korea', 'seoul', 'index.html'), 'utf8'));
+    const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === 'https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg').length > 0);
+    assert.equal(credits.length, 1, `${locale} Seoul hub must retain the Gwanghwamun source credit`);
+    const expectedNote = locale === 'en' ? seoulSourceNote : seoulSourceNoteTranslations[locale];
+    assert.ok(expectedNote, `${locale} must translate the Seoul Tourism Archive source note`);
+    const notes = findAll(credits[0], (node) => node.tagName === 'span' && attrs(node).class === 'photo-source-note' && textContent(node).trim() === expectedNote);
+    assert.equal(notes.length, 1, `${locale} Seoul hub must display the source note in its reviewed language`);
+  }
+  const chatuchakRecord = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-chatuchak.webp');
+  assert.equal(chatuchakRecord.useCount, 1);
+  assert.deepEqual(chatuchakRecord.routes, ['/thailand/bangkok/chatuchak-ari/']);
+  assert.equal(chatuchakRecord.creator, 'Christophe95');
+  assert.equal(chatuchakRecord.license, 'CC BY-SA 4.0');
+  const talatNoiRecord = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-talat-noi.webp');
+  assert.ok(fs.existsSync(path.join(root, 'assets', 'images', 'thailand-talat-noi.webp')), 'Talat Noi orphan asset remains present but unused');
+  assert.equal(talatNoiRecord.useCount, 0);
+  assert.deepEqual(talatNoiRecord.routes, []);
+  assert.equal(talatNoiRecord.sourceUrl, null);
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    const document = parse(fs.readFileSync(path.join(root, prefix, 'thailand', 'bangkok', 'chatuchak-ari', 'index.html'), 'utf8'));
+    assert.equal(findAll(document, (node) => node.tagName === 'img' && attrs(node).src === '/assets/images/thailand-chatuchak.webp').length, 1, `${locale} Chatuchak route must retain its own market photo`);
+    const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === 'https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg').length > 0);
+    assert.equal(credits.length, 1, `${locale} Chatuchak route must retain its visible Commons credit`);
+    assert.ok(textContent(credits[0]).includes('Christophe95') && textContent(credits[0]).includes('CC BY-SA 4.0'), `${locale} Chatuchak route must preserve creator and license`);
+  }
   for (const [locale, prefix] of Object.entries(localeDirs)) {
     for (const route of thailandRoutes) {
       const page = path.join(root, prefix, route, 'index.html');
@@ -269,7 +325,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: legacy Osaka/Jeju/Hue checks; 17 Da Nang, Bangkok and Victoria source records retain source dates, creators, license versions and visual review; eight Bangkok edit notes appear on every used route in all five locales; retired Chatuchak and Talat Noi images remain unreferenced.');
+  console.log('Photo inventory regression passed: 17 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak stays credited on its own route and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

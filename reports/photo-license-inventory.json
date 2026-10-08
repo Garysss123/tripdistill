@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T14:46:28.964Z",
+  "generatedAt": "2026-10-08T15:30:07.525Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 789,
-    "completeSourceCreatorLicenseRecords": 761,
-    "licenseClaimsNotIndependentlyVerified": 615,
+    "completeSourceCreatorLicenseRecords": 766,
+    "licenseClaimsNotIndependentlyVerified": 612,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -15,20 +15,25 @@
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
     "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 132,
-    "assetsWithExplicitEnglishCreditMatch": 59,
+    "assetsWithMatchedEnglishCreditOnly": 128,
+    "assetsWithExplicitEnglishCreditMatch": 64,
     "assetsVisuallyReviewed": 78,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 150,
-    "metadataOrCreditOnly": 615,
-    "missingSourceCreditMatch": 24,
-    "incompleteAttributionFields": 28,
+    "sourcePageChecked": 154,
+    "metadataOrCreditOnly": 612,
+    "missingSourceCreditMatch": 23,
+    "incompleteAttributionFields": 23,
+    "activeMissingSourceCreditMatch": 0,
+    "unreferencedMissingSourceCreditMatch": 23,
+    "activeIncompleteAttributionFields": 0,
+    "unreferencedIncompleteAttributionFields": 23,
     "sourceMetadataConflicts": 0,
-    "moduleErrors": 0
+    "moduleErrors": 0,
+    "openCreditReviewCount": 1
   },
   "verificationMethod": {
     "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
-    "visibleCredits": "Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.",
+    "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
     "buildImageCountReconciliation": "The 789 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 793 build image files."
@@ -13842,21 +13847,21 @@
         {
           "assetPath": "/assets/images/korea-bukchon-blue-hour.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg",
-          "sourceTitle": "Bukchon lane at blue hour / Basile Morin",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Bukchon-ro 11-gil street with hanok houses at blue hour in Bukchon Hanok Village Seoul.jpg",
+          "sourcePhotoDate": "2024-06-03",
           "creditLabel": "Bukchon lane at blue hour / Basile Morin",
-          "creator": "CC BY-SA 4.0Resized and cropped WebP",
-          "license": null,
+          "creator": "Basile Morin",
+          "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Resized and cropped WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The existing Seoul credit associates this asset with the exact Commons source, creator, date and CC BY-SA 4.0 terms. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Exact Commons page checked for Basile Morin, the 3 June 2024 photograph date, and CC BY-SA 4.0 terms. The existing site credit links this source and license. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.",
           "useCount": 2,
           "routes": [
             "/south-korea/seoul/",
@@ -13881,22 +13886,22 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/korea-busan-biff-night.webp",
-          "sourceUrl": null,
-          "sourceTitle": null,
-          "sourcePhotoDate": null,
-          "creditLabel": null,
-          "creator": null,
-          "license": null,
-          "licenseUrl": null,
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "unmatched",
-          "creditMatchNote": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:BIFF_Square_at_night.jpg",
+          "sourceTitle": "File:BIFF Square at night.jpg",
+          "sourcePhotoDate": "2018-09-27",
+          "creditLabel": "BIFF Square at night",
+          "creator": "Christophe95",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "resized, cropped and converted to WebP, with the image derivative under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The same-route hero has an adjacent photo-credit paragraph explicitly naming this exact Commons file, Christophe95, CC BY-SA 4.0, and the WebP derivative edits. Local pixels were not inspected in this pass.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "missing_source_credit_match",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Exact Commons page checked for Christophe95, the 27 September 2018 photograph date, and CC BY-SA 4.0 terms. The adjacent same-route credit is explicitly attached to the BIFF hero image. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.",
           "useCount": 1,
           "routes": [
             "/south-korea/busan/nampo-jagalchi/"
@@ -13904,7 +13909,9 @@
           "altTexts": [
             "BIFF Square food-stall street and umbrellas at night"
           ],
-          "rawVisibleCredits": []
+          "rawVisibleCredits": [
+            "BIFF Square at night — Christophe95, CC BY-SA 4.0; resized, cropped and converted to WebP, with the image derivative under the same license."
+          ]
         }
       ]
     },
@@ -14069,22 +14076,22 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/korea-busan-dongbaek.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Monet_house_and_garden_in_Giverny_(8742620992).jpg",
-          "sourceTitle": "Monet’s Water Garden and bridge at Giverny",
-          "sourcePhotoDate": null,
-          "creditLabel": "Monet’s Water Garden and bridge at Giverny",
-          "creator": "Michal Osmenda from Brussels, Belgium",
-          "license": "CC BY 2.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Busan_at_dusk._View_of_nurimaru_APEC_house_from_dongbaekseom_lighthouse.jpg",
+          "sourceTitle": "File:Busan at dusk. View of nurimaru APEC house from dongbaekseom lighthouse.jpg",
+          "sourcePhotoDate": "2018-10-11",
+          "creditLabel": "Dongbaekseom at dusk",
+          "creator": "IsouM",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "resized, cropped and converted to WebP, with the image derivative under the same license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The same-route figure caption explicitly links this image to the exact Commons file, IsouM, CC BY-SA 4.0, and the WebP derivative edits. Local pixels were not inspected in this pass.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Exact Commons page checked for IsouM, the 11 October 2018 photograph date, and CC BY-SA 4.0 terms. The same-route figure caption explicitly credits this Commons file beside the image. Local WebP pixels were not inspected.",
           "useCount": 1,
           "routes": [
             "/south-korea/busan/haeundae-dongbaek/"
@@ -14093,7 +14100,7 @@
             "Nurimaru APEC House and Gwangan Bridge seen from Dongbaekseom at dusk"
           ],
           "rawVisibleCredits": [
-            "Monet’s Water Garden and bridge at Giverny — Michal Osmenda from Brussels, Belgium, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Dongbaekseom at dusk — IsouM, CC BY-SA 4.0; resized, cropped and converted to WebP, with the image derivative under the same license."
           ]
         }
       ]
@@ -14152,7 +14159,7 @@
           "sourceTitle": null,
           "sourcePhotoDate": null,
           "creditLabel": null,
-          "creator": null,
+          "creator": "Christophe95",
           "license": null,
           "licenseUrl": null,
           "commercialReuseEligibility": "unknown",
@@ -14180,16 +14187,16 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/korea-busan-gwangalli-night.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Illuminated_Woljeonggyo_Bridge_at_blue_hour_in_Gyeongju_South_Korea.jpg",
-          "sourceTitle": "Woljeonggyo",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gwangan_Bridge_and_Gwangalli_Beach_-_Gwangalli2721.jpg",
+          "sourceTitle": "Gwangan Bridge at night",
           "sourcePhotoDate": null,
-          "creditLabel": "Woljeonggyo",
-          "creator": "Basile Morin",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "creditLabel": "Gwangan Bridge at night",
+          "creator": "lumoplank",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
+          "editHistory": "resized, cropped and converted to WebP.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -14204,7 +14211,7 @@
             "Gwangan Bridge illuminated above Gwangalli Beach at night"
           ],
           "rawVisibleCredits": [
-            "Woljeonggyo — Basile Morin, CC BY-SA 4.0."
+            "Gwangan Bridge at night — lumoplank, CC0 1.0; resized, cropped and converted to WebP."
           ]
         }
       ]
@@ -14352,16 +14359,16 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/korea-busan-songdo.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EB%B6%80%EC%82%B0_%EB%8B%A4%EB%8C%80%ED%8F%AC_%ED%95%B4%EB%B3%80_Dadaepo_beach.Busan.South_korea_4.jpg",
-          "sourceTitle": "Dadaepo sunset",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Songdo_Beach_Area_and_Namhang_Bridge_in_Busan.jpg",
+          "sourceTitle": "Songdo Beach and Namhang Bridge",
           "sourcePhotoDate": null,
-          "creditLabel": "Dadaepo sunset",
-          "creator": "Y.c.jang",
-          "license": "CC BY-SA 3.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "creditLabel": "Songdo Beach and Namhang Bridge",
+          "creator": "S h y numis",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "editHistory": "resized, cropped and converted to WebP.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -14376,7 +14383,7 @@
             "Songdo Beach area, Namhang Bridge and coastal towers seen across the water"
           ],
           "rawVisibleCredits": [
-            "Dadaepo sunset — Y.c.jang, CC BY-SA 3.0."
+            "Songdo Beach and Namhang Bridge — S h y numis, CC BY 4.0; resized, cropped and converted to WebP."
           ]
         }
       ]
@@ -14538,21 +14545,21 @@
         {
           "assetPath": "/assets/images/korea-gwanghwamun-night.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg",
-          "sourceTitle": "Gwanghwamun Square at night / Seoul Tourism Organization",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Nightview of the Gwanghwamun Square 2024.jpg",
+          "sourcePhotoDate": "2024-12-11",
           "creditLabel": "Gwanghwamun Square at night / Seoul Tourism Organization",
-          "creator": "KOGL Type 1Resized and cropped WebP",
-          "license": null,
-          "licenseUrl": null,
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "creator": "Seoul Tourism Organization",
+          "license": "KOGL Type 1",
+          "licenseUrl": "https://www.kogl.or.kr/info/licenseType1.do",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Specify Seoul Tourism Archive 10341 as the source and credit Seoul Tourism Organization. The Commons source page states that commercial use and adaptations are permitted.",
+          "editHistory": "Resized and cropped WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The exact Commons page confirms the 11 December 2024 source, Seoul Tourism Organization author, Seoul Tourism Archive 10341 source record, and KOGL Type 1 commercial/adaptation terms. The linked archive endpoint returned 404 on 8 October 2026. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-04",
-          "verificationDetail": "Commons source page checked for Seoul Tourism Organization, KOGL Type 1, commercial use, adaptations, and source-attribution requirements.",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Exact Commons page checked for Seoul Tourism Organization, the 11 December 2024 photograph date, Seoul Tourism Archive 10341 source record, and KOGL Type 1 terms. The official license permits commercial use and adaptation with source attribution. The Commons-linked archive endpoint returned 404 on 8 October 2026. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.",
           "useCount": 2,
           "routes": [
             "/south-korea/seoul/",
@@ -14578,21 +14585,21 @@
         {
           "assetPath": "/assets/images/korea-gyedong-alley.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gyedong-gil_street_with_climbing_plants_at_golden_hour_in_Seoul_South_Korea.jpg",
-          "sourceTitle": "Gyedong alley / Basile Morin",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Gyedong-gil street with climbing plants at golden hour in Seoul South Korea.jpg",
+          "sourcePhotoDate": "2024-06-03",
           "creditLabel": "Gyedong alley / Basile Morin",
-          "creator": "CC BY-SA 4.0Resized and cropped WebP",
-          "license": null,
+          "creator": "Basile Morin",
+          "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Resized and cropped WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The existing Bukchon credit associates this asset with the exact Commons source, creator, date and CC BY-SA 4.0 terms. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Exact Commons page checked for Basile Morin, the 3 June 2024 photograph date, and CC BY-SA 4.0 terms. The existing site credit links this source and license. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.",
           "useCount": 1,
           "routes": [
             "/south-korea/seoul/bukchon-seochon/"
@@ -15157,7 +15164,7 @@
           "sourceTitle": null,
           "sourcePhotoDate": null,
           "creditLabel": null,
-          "creator": null,
+          "creator": "lumoplank",
           "license": null,
           "licenseUrl": null,
           "commercialReuseEligibility": "unknown",
@@ -15723,12 +15730,12 @@
           "sourceTitle": "N Seoul Tower panorama / kallerna",
           "sourcePhotoDate": null,
           "creditLabel": "N Seoul Tower panorama / kallerna",
-          "creator": "CC BY-SA 4.0Resized and cropped WebP",
-          "license": null,
+          "creator": "kallerna",
+          "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Resized and cropped WebP.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -23087,7 +23094,7 @@
           "sourcePhotoDate": null,
           "creditLabel": "Toyosu Market",
           "creator": "Arne Müseler; photographer website",
-          "license": "CC BY-SA 3.0 de",
+          "license": "CC BY-SA 3.0 DE",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
@@ -25687,7 +25694,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25729,7 +25736,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25770,7 +25777,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25811,7 +25818,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25853,7 +25860,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25894,7 +25901,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25935,7 +25942,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -25976,7 +25983,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26018,7 +26025,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26059,7 +26066,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26100,7 +26107,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26142,7 +26149,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26183,7 +26190,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26225,7 +26232,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26266,7 +26273,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26349,7 +26356,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26390,7 +26397,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26431,7 +26438,7 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26513,7 +26520,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26555,7 +26562,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26596,7 +26603,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26637,7 +26644,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26679,7 +26686,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26762,7 +26769,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26803,7 +26810,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26844,7 +26851,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26885,7 +26892,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26927,7 +26934,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -26968,7 +26975,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27010,7 +27017,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27051,7 +27058,7 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27093,7 +27100,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27134,7 +27141,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27175,7 +27182,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27216,7 +27223,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27258,7 +27265,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27299,7 +27306,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27340,7 +27347,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27382,7 +27389,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27423,7 +27430,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27465,7 +27472,7 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27506,7 +27513,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27547,7 +27554,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27588,7 +27595,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27629,7 +27636,7 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27671,7 +27678,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27713,7 +27720,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27754,7 +27761,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27795,7 +27802,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27836,7 +27843,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27877,7 +27884,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27919,7 +27926,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -27960,7 +27967,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28001,7 +28008,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28043,7 +28050,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28084,7 +28091,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28125,7 +28132,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28167,7 +28174,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28209,7 +28216,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28250,7 +28257,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28291,7 +28298,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28332,7 +28339,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28373,7 +28380,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/ca/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28415,7 +28422,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28456,7 +28463,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28498,7 +28505,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28539,7 +28546,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28580,7 +28587,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -28622,7 +28629,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -32556,7 +32563,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-banpo-fountain.webp",
@@ -32564,29 +32573,18 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
-    },
-    {
-      "src": "/assets/images/korea-bukchon-blue-hour.webp",
-      "missing": [
-        "license"
-      ]
-    },
-    {
-      "src": "/assets/images/korea-busan-biff-night.webp",
-      "missing": [
-        "sourceUrl",
-        "creator",
-        "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-busan-gwangalli-music.webp",
       "missing": [
         "sourceUrl",
-        "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-busan-haeundae.webp",
@@ -32594,7 +32592,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-busan-huinnyeoul.webp",
@@ -32602,7 +32602,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-busan-jagalchi.webp",
@@ -32610,7 +32612,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-coex-library.webp",
@@ -32618,19 +32622,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
-    },
-    {
-      "src": "/assets/images/korea-gwanghwamun-night.webp",
-      "missing": [
-        "license"
-      ]
-    },
-    {
-      "src": "/assets/images/korea-gyedong-alley.webp",
-      "missing": [
-        "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-gyeongui-forest.webp",
@@ -32638,7 +32632,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-hannam-art.webp",
@@ -32646,15 +32642,18 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-hongdae-night.webp",
       "missing": [
         "sourceUrl",
-        "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-itaewon-street.webp",
@@ -32662,7 +32661,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-lotte-tower.webp",
@@ -32670,7 +32671,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-myeongdong-night.webp",
@@ -32678,13 +32681,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
-    },
-    {
-      "src": "/assets/images/korea-namsan-tower.webp",
-      "missing": [
-        "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-seongsu-cityscape.webp",
@@ -32692,7 +32691,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-seoul-forest.webp",
@@ -32700,7 +32701,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/korea-yeouido-hangang.webp",
@@ -32708,7 +32711,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/thailand-talat-noi.webp",
@@ -32716,7 +32721,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/vietnam-ha-giang-dong-van.webp",
@@ -32724,7 +32731,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/vietnam-ha-giang-lung-cu.webp",
@@ -32732,7 +32741,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/vietnam-ha-giang-yen-minh.webp",
@@ -32740,7 +32751,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/vietnam-hue-minh-mang-tomb.webp",
@@ -32748,7 +32761,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/vietnam-sapa-bac-ha.webp",
@@ -32756,7 +32771,9 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
     },
     {
       "src": "/assets/images/vietnam-sapa-town.webp",
@@ -32764,7 +32781,20 @@
         "sourceUrl",
         "creator",
         "license"
-      ]
+      ],
+      "useCount": 0,
+      "routes": []
+    }
+  ],
+  "openCreditReviews": [
+    {
+      "assetPath": "/assets/images/korea-namsan-tower.webp",
+      "routes": [
+        "/south-korea/seoul/",
+        "/south-korea/seoul/myeongdong-namsan/"
+      ],
+      "status": "open_visual_subject_check",
+      "detail": "Commons describes Seoul seen from N Seoul Tower looking south; site alt text describes the tower rising above the city at dusk. Local pixels have not been inspected, so source-to-image identity and any correction remain unresolved."
     }
   ],
   "sourceMetadataConflicts": []
