@@ -492,7 +492,10 @@ function inspectLocalizedPage(manifest, record, label) {
   const chiangMaiPage = record.path.split('/').filter(Boolean).at(-1);
   const chiangMaiParent = record.path === '/thailand/chiang-mai/' ? 'thailand' : 'chiang-mai';
   const chiangMaiIdentity = record.path.startsWith('/thailand/chiang-mai/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-city') === 'chiang-mai' && attr(bodyNode, 'data-parent-page') === chiangMaiParent && attr(bodyNode, 'data-page') === chiangMaiPage;
-  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity && !chiangMaiIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const andamanPage = record.path.split('/').filter(Boolean).at(-1);
+  const andamanParent = record.path === '/thailand/andaman/' ? 'thailand' : 'andaman';
+  const andamanIdentity = record.path.startsWith('/thailand/andaman/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-region') === 'andaman' && attr(bodyNode, 'data-parent-page') === andamanParent && attr(bodyNode, 'data-page') === andamanPage;
+  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity && !chiangMaiIdentity && !andamanIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -1595,6 +1598,17 @@ for (const locale of expectedLocales) {
     }
     if (routePath === '/south-korea/') {
       if (!styles.includes('/css/site.css')) fail(`Missing shared site stylesheet on ${locale.code} South Korea overview.`);
+      continue;
+    }
+    if (routePath.startsWith('/thailand/andaman/')) {
+      const body = nodes(document, 'body')[0];
+      if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-region') !== 'andaman') fail(`Wrong Andaman responsive scope on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/site.css') || !styles.includes('/css/thailand.css') || !styles.includes('/css/andaman.css')) fail(`Missing Andaman route stylesheets on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/site.css?v=20261008-1')) fail(`Missing current shared responsive stylesheet version on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Andaman FAQ controls on ${locale.code} ${routePath}.`);
+      const bodyText = text(body);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Andaman photo license on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Andaman photo source on ${locale.code} ${routePath}.`);
       continue;
     }
     const isParisRoute = routePath.startsWith('/france/paris/');
