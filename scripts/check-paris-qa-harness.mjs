@@ -115,7 +115,10 @@ const expectedRoutes = [
   ['/vietnam/hue/bach-ma-national-park/', 'Bach Ma National Park'],
   ['/vietnam/hue/lang-co-lap-an-lagoon/', 'Lang Co & Lap An Lagoon'],
   ['/vietnam/da-nang-hoi-an/', 'Da Nang & Hoi An hub'],
+  ['/vietnam/da-nang-hoi-an/han-river-city-core/', 'Han River & Da Nang City Core'],
+  ['/vietnam/da-nang-hoi-an/son-tra-peninsula/', 'Son Tra Peninsula Wildlife & Linh Ung'],
   ['/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/', 'Marble Mountains & Non Nuoc'],
+  ['/vietnam/da-nang-hoi-an/my-khe-an-thuong/', 'My Khe Beach & An Thuong'],
   ['/vietnam/da-nang-hoi-an/hoi-an-ancient-town/', 'Hoi An Ancient Town'],
   ['/vietnam/da-nang-hoi-an/my-son-sanctuary/', 'My Son Sanctuary'],
   ['/south-korea/jeju/', 'Jeju Island hub'],
@@ -323,7 +326,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/four Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with three focal guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, four Bangkok routes, and three Da Nang & Hoi An guides.`);
+  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/four Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with six field guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, four Bangkok routes, and six Da Nang & Hoi An guides.`);
   if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
@@ -777,12 +780,29 @@ for (const locale of expectedLocales) {
       if (nodes(document, 'details').length < expectedFaqCount) fail(`Missing Da Nang & Hoi An route FAQs on ${locale.code} ${routePath}.`);
       if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Da Nang & Hoi An photo license on ${locale.code} ${routePath}.`);
       if (!links.some((href) => href.includes('commons.wikimedia.org'))) fail(`Missing linked Da Nang & Hoi An photo source on ${locale.code} ${routePath}.`);
-      const requiredOfficialSource = routePath.endsWith('/hoi-an-ancient-town/')
-        ? 'https://whc.unesco.org/en/list/948'
-        : routePath.endsWith('/my-son-sanctuary/')
-          ? 'https://whc.unesco.org/en/list/949'
-          : 'https://vietnam.travel/places-to-go/central-vietnam/da-nang';
-      if (!links.includes(requiredOfficialSource)) fail(`Missing route-specific official source on ${locale.code} ${routePath}.`);
+      const requiredOfficialSources = routePath.endsWith('/han-river-city-core/')
+        ? [
+            'https://visitdanang.travel/en/everything-you-might-not-know-about-da-nangs-han-river-swing-bridge-6917',
+            'https://visitdanang.travel/en/da-nang-museum-of-cham-sculpture-2036'
+          ]
+        : routePath.endsWith('/my-khe-an-thuong/')
+          ? [
+              'https://vietnam.travel/places-to-go/central-vietnam/da-nang',
+              'https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html'
+            ]
+          : routePath.endsWith('/son-tra-peninsula/')
+            ? [
+                'https://vietnam.travel/places-to-go/central-vietnam/da-nang',
+                'https://cttdt.danangportal.gov.vn/en/web/dng/-/kham-pha-son-tra-trai-nghiem-can-di-cung-trach-nhiem'
+              ]
+            : routePath.endsWith('/hoi-an-ancient-town/')
+              ? ['https://whc.unesco.org/en/list/948']
+              : routePath.endsWith('/my-son-sanctuary/')
+                ? ['https://whc.unesco.org/en/list/949']
+                : ['https://vietnam.travel/places-to-go/central-vietnam/da-nang'];
+      for (const source of requiredOfficialSources) {
+        if (!links.includes(source)) fail(`Missing route-specific official source ${source} on ${locale.code} ${routePath}.`);
+      }
       const coastalCss = fs.readFileSync(safeDistPath('/css/vietnam-da-nang-hoi-an.css'), 'utf8');
       const narrowStart = coastalCss.indexOf('@media (max-width:380px)');
       const bodyWidthRule = cssRuleBlock(coastalCss, 'body[data-vn-family="coast-lantern"]', narrowStart);
@@ -792,7 +812,10 @@ for (const locale of expectedLocales) {
       if (locale.code === 'en') {
         const requiredByRoute = {
           '/vietnam/da-nang-hoi-an/': ['Ngu Hanh Son', 'Thu Bon', '15th–19th-century port', '4th to 13th centuries'],
+          '/vietnam/da-nang-hoi-an/han-river-city-core/': ['Bach Dang', 'Tran Hung Dao', 'Museum of Cham Sculpture', '5th to 15th centuries', 'swing-bridge'],
+          '/vietnam/da-nang-hoi-an/son-tra-peninsula/': ['red-shanked douc langur', 'Linh Ung', 'authorized roads', 'half day', 'no sighting is a normal outcome'],
           '/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/': ['Huyen Khong Cave', 'Tam Thai Pagoda', 'Non Nuoc', '2–3 hours'],
+          '/vietnam/da-nang-hoi-an/my-khe-an-thuong/': ['My Khe', 'An Thuong', 'public beach entrance', 'midday recovery', 'marine forecast'],
           '/vietnam/da-nang-hoi-an/hoi-an-ancient-town/': ['1,107 timber-frame buildings', '80,000 VND', '120,000 VND', 'living trading port'],
           '/vietnam/da-nang-hoi-an/my-son-sanctuary/': ['4th to 13th centuries', 'UXO risk', 'Stay on signed paths', 'morning half-day']
         }[routePath];
