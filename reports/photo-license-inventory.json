@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T02:39:29.531Z",
+  "generatedAt": "2026-10-08T04:59:40.284Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 790,
-    "completeSourceCreatorLicenseRecords": 762,
-    "licenseClaimsNotIndependentlyVerified": 637,
+    "completeSourceCreatorLicenseRecords": 763,
+    "licenseClaimsNotIndependentlyVerified": 634,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -13,16 +13,16 @@
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3536,
-    "assetsUsedByScannedEnglishPages": 769,
+    "assetsUsedByScannedEnglishPages": 768,
     "assetsWithStructuredSourceRecords": 566,
-    "assetsWithMatchedEnglishCreditOnly": 146,
-    "assetsWithExplicitEnglishCreditMatch": 55,
-    "assetsVisuallyReviewed": 58,
+    "assetsWithMatchedEnglishCreditOnly": 142,
+    "assetsWithExplicitEnglishCreditMatch": 59,
+    "assetsVisuallyReviewed": 61,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 130,
-    "metadataOrCreditOnly": 637,
+    "sourcePageChecked": 133,
+    "metadataOrCreditOnly": 634,
     "missingSourceCreditMatch": 23,
-    "incompleteAttributionFields": 28,
+    "incompleteAttributionFields": 27,
     "sourceMetadataConflicts": 0,
     "moduleErrors": 0
   },
@@ -13806,16 +13806,16 @@
         {
           "assetPath": "/assets/images/korea-busan-gamcheon.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colorful_houses_in_Gamcheon_Culture_Village_at_sunset_in_Busan_South_Korea.jpg",
-          "sourceTitle": "Gamcheon photo",
-          "creditLabel": "Gamcheon photo",
+          "sourceTitle": "Colorful houses in Gamcheon Culture Village at sunset in Busan South Korea.jpg",
+          "creditLabel": "Colorful houses in Gamcheon Culture Village at sunset in Busan South Korea.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -13831,7 +13831,7 @@
             "Colorful houses stacked across Gamcheon Culture Village hillside"
           ],
           "rawVisibleCredits": [
-            "Gamcheon photo — Basile Morin, CC BY-SA 4.0."
+            "Colorful houses in Gamcheon Culture Village at sunset in Busan South Korea.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -14300,16 +14300,16 @@
         {
           "assetPath": "/assets/images/korea-gyeongbokgung.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gyeonghoeru_(Royal_Banquet_Hall)_at_Gyeongbokgung_Palace,_Seoul.jpg",
-          "sourceTitle": "Gyeonghoeru pavilion / Frank Schulenburg",
-          "creditLabel": "Gyeonghoeru pavilion / Frank Schulenburg",
-          "creator": "CC BY-SA 4.0Resized and cropped WebP",
-          "license": null,
+          "sourceTitle": "Gyeonghoeru (Royal Banquet Hall) at Gyeongbokgung Palace, Seoul.jpg",
+          "creditLabel": "Gyeonghoeru (Royal Banquet Hall) at Gyeongbokgung Palace, Seoul.jpg",
+          "creator": "Frank Schulenburg",
+          "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -14326,7 +14326,7 @@
             "Gyeonghoeru pavilion and pond inside Gyeongbokgung Palace"
           ],
           "rawVisibleCredits": [
-            "Gyeonghoeru pavilion / Frank SchulenburgCC BY-SA 4.0Resized and cropped WebP."
+            "Gyeonghoeru (Royal Banquet Hall) at Gyeongbokgung Palace, Seoul.jpg — Photo by Frank Schulenburg; licensed under CC BY-SA 4.0. Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -14380,16 +14380,16 @@
         {
           "assetPath": "/assets/images/korea-gyeongju-bulguksa.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bulguksa_temple_entrance_gate_stairs_flower_bed_and_blue_sky_in_Gyeongju_South_Korea.jpg",
-          "sourceTitle": "Bulguksa Cheongungyo and Baegungyo stair-bridges",
-          "creditLabel": "Bulguksa Cheongungyo and Baegungyo stair-bridges",
+          "sourceTitle": "Bulguksa temple entrance gate stairs flower bed and blue sky in Gyeongju South Korea.jpg",
+          "creditLabel": "Bulguksa temple entrance gate stairs flower bed and blue sky in Gyeongju South Korea.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -14406,7 +14406,7 @@
             "Bulguksa stone stairways and colorful temple buildings"
           ],
           "rawVisibleCredits": [
-            "Bulguksa Cheongungyo and Baegungyo stair-bridges — Basile Morin, CC BY-SA 4.0."
+            "Bulguksa temple entrance gate stairs flower bed and blue sky in Gyeongju South Korea.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -15156,16 +15156,16 @@
         {
           "assetPath": "/assets/images/korea-jeju-seongsan.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hydrangea_macrophylla_in_front_of_Seongsan_Ilchulbong_volcano_at_blue_hour_in_Jeju_Island_South_Korea.jpg",
-          "sourceTitle": "Seongsan Ilchulbong photo",
-          "creditLabel": "Seongsan Ilchulbong photo",
+          "sourceTitle": "Hydrangea macrophylla in front of Seongsan Ilchulbong volcano at blue hour in Jeju Island South Korea.jpg",
+          "creditLabel": "Hydrangea macrophylla in front of Seongsan Ilchulbong volcano at blue hour in Jeju Island South Korea.jpg",
           "creator": "Basile Morin",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "editHistory": "Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -15182,7 +15182,7 @@
             "Seongsan Ilchulbong rising above hydrangeas at blue hour on eastern Jeju"
           ],
           "rawVisibleCredits": [
-            "Seongsan Ilchulbong photo — Basile Morin, CC BY-SA 4.0."
+            "Hydrangea macrophylla in front of Seongsan Ilchulbong volcano at blue hour in Jeju Island South Korea.jpg — Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -15550,19 +15550,19 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/korea-seoul-skyline.webp",
-          "sourceUrl": null,
-          "sourceTitle": null,
-          "creditLabel": null,
-          "creator": null,
-          "license": null,
-          "licenseUrl": null,
-          "commercialReuseEligibility": "unknown",
-          "attributionTerms": "unknown",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "metadataOrigin": "unmatched",
-          "creditMatchNote": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seoul_Night_Skyline_2022.jpg",
+          "sourceTitle": "Seoul Night Skyline 2022.jpg",
+          "creditLabel": "Seoul Night Skyline 2022.jpg",
+          "creator": "Takipoint123",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "missing_source_credit_match",
+          "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
           "useCount": 2,
@@ -15573,7 +15573,9 @@
           "altTexts": [
             "Seoul skyline glowing across the Han River at night"
           ],
-          "rawVisibleCredits": []
+          "rawVisibleCredits": [
+            "Seoul Night Skyline 2022.jpg — Photo by Takipoint123; licensed under CC BY-SA 4.0. Changes: converted to WebP; responsive layouts may scale or crop the display. This adaptation is released under the same CC BY-SA 4.0 license."
+          ]
         }
       ]
     },
@@ -20347,19 +20349,19 @@
           "assetPath": "/assets/images/switzerland-zurich-lake-lake-uetliberg.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snowy_panorama_of_Zurich_from_Uetliberg_2026.JPG",
           "sourceTitle": "File:Snowy panorama of Zurich from Uetliberg 2026.JPG",
-          "creditLabel": "Snowy panorama of Zurich from Uetliberg 2026.JPG",
+          "creditLabel": "Winter view of Zurich and Lake Zurich from Uetliberg",
           "creator": "Mike is Michi",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Zurich Uetliberg image review: Commons identifies Mike is Michi, a 29 March 2026 snowy view from Uetliberg, and CC BY-SA 4.0. The WebP pixels show the snow-covered city and lake under haze, matching the revised alt. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.",
           "useCount": 4,
           "routes": [
             "/switzerland/zurich-lake/",
@@ -20368,10 +20370,10 @@
             "/switzerland/zurich-lake/zurich-west-museums/"
           ],
           "altTexts": [
-            "Lake Zurich with the city and surrounding hills"
+            "Snowy Zurich and Lake Zurich viewed from Uetliberg under hazy skies"
           ],
           "rawVisibleCredits": [
-            "Snowy panorama of Zurich from Uetliberg 2026.JPG — Mike is Michi, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Winter view of Zurich and Lake Zurich from Uetliberg — Mike is Michi, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -20387,19 +20389,19 @@
           "assetPath": "/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Limmat_panosphere_20220614.jpg",
           "sourceTitle": "File:Zürich Limmat panosphere 20220614.jpg",
-          "creditLabel": "Zürich Limmat panosphere 20220614.jpg",
+          "creditLabel": "Limmat and Old Town from Schipfe",
           "creator": "Daniel Kraft",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Zurich Old Town image review: Commons identifies Daniel Kraft, the Limmat/Old Town panorama and CC BY-SA 3.0. The WebP pixels show the river and opposite-bank Old Town from the Schipfe side, matching the revised alt. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.",
           "useCount": 7,
           "routes": [
             "/switzerland/",
@@ -20409,10 +20411,10 @@
             "/switzerland/zurich-lake/zurich-west-museums/"
           ],
           "altTexts": [
-            "Zurich old town and the Limmat river"
+            "Limmat river and Zurich Old Town viewed from Schipfe on the west bank"
           ],
           "rawVisibleCredits": [
-            "Zürich Limmat panosphere 20220614.jpg — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Limmat and Old Town from Schipfe — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -20428,19 +20430,19 @@
           "assetPath": "/assets/images/switzerland-zurich-lake-zurich-west-museums.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mobimo_Tower._Z%C3%B6lly_Wohnhochhaus._Z%C3%BCrich_West.jpg",
           "sourceTitle": "File:Mobimo Tower. Zölly Wohnhochhaus. Zürich West.jpg",
-          "creditLabel": "Mobimo Tower. Zölly Wohnhochhaus. Zürich West.jpg",
+          "creditLabel": "Mobimo and Zölly towers above Pfingstweidpark",
           "creator": "Photones",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Zurich West image review: Commons identifies Photones, the Mobimo Tower/Zölly residential tower view in Zurich West, and CC BY-SA 4.0. The WebP pixels show the named towers above Pfingstweidpark; the revised alt describes that visible subject rather than unshown industrial buildings. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.",
           "useCount": 4,
           "routes": [
             "/switzerland/zurich-lake/",
@@ -20449,10 +20451,10 @@
             "/switzerland/zurich-lake/zurich-west-museums/"
           ],
           "altTexts": [
-            "Zurich West with converted industrial buildings and modern towers"
+            "Mobimo Tower and Zölly residential tower above Pfingstweidpark in Zurich West"
           ],
           "rawVisibleCredits": [
-            "Mobimo Tower. Zölly Wohnhochhaus. Zürich West.jpg — Photones, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Mobimo and Zölly towers above Pfingstweidpark — Photones, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -30223,11 +30225,14 @@
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-08",
           "verificationDetail": "Hue image review: the exact Commons file page identifies Erwin Verbruggen as creator, dates the photograph 25 June 2014, and declares CC BY-SA 2.0 Generic. The local WebP pixels show the Đại Hồng Môn entrance gate at Minh Mang Royal Tomb. The visible credit links the exact source and canonical version 2.0 license, discloses resize/crop/WebP adaptation and states that the adaptation is shared under the same license version. Source-page details and image subject were checked on 2026-10-08.",
-          "useCount": 4,
+          "useCount": 7,
           "routes": [
             "/vietnam/hue/",
+            "/vietnam/hue/bach-ma-national-park/",
             "/vietnam/hue/imperial-city-citadel/",
+            "/vietnam/hue/lang-co-lap-an-lagoon/",
             "/vietnam/hue/royal-tombs/",
+            "/vietnam/hue/thanh-toan-rural-loop/",
             "/vietnam/hue/thien-mu-perfume-river/"
           ],
           "altTexts": [
@@ -30248,33 +30253,25 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/vietnam-hue-minh-mang-tomb.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg",
-          "sourceTitle": "Minh Mang Royal Tomb",
-          "creditLabel": "Minh Mang Royal Tomb",
-          "creator": "Pham Van Hoa",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "metadataOrigin": "explicit_asset_credit_match",
-          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
+          "sourceUrl": null,
+          "sourceTitle": null,
+          "creditLabel": null,
+          "creator": null,
+          "license": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "metadataOrigin": "unmatched",
+          "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationStatus": "missing_source_credit_match",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 3,
-          "routes": [
-            "/vietnam/hue/bach-ma-national-park/",
-            "/vietnam/hue/lang-co-lap-an-lagoon/",
-            "/vietnam/hue/thanh-toan-rural-loop/"
-          ],
-          "altTexts": [
-            "Stone animals and garden landscape at Minh Mang Tomb in Hue"
-          ],
-          "rawVisibleCredits": [
-            "Minh Mang Royal Tomb — Pham Van Hoa, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -31894,12 +31891,6 @@
       ]
     },
     {
-      "src": "/assets/images/korea-gyeongbokgung.webp",
-      "missing": [
-        "license"
-      ]
-    },
-    {
       "src": "/assets/images/korea-gyeongui-forest.webp",
       "missing": [
         "sourceUrl",
@@ -31970,14 +31961,6 @@
       ]
     },
     {
-      "src": "/assets/images/korea-seoul-skyline.webp",
-      "missing": [
-        "sourceUrl",
-        "creator",
-        "license"
-      ]
-    },
-    {
       "src": "/assets/images/korea-yeouido-hangang.webp",
       "missing": [
         "sourceUrl",
@@ -32003,6 +31986,14 @@
     },
     {
       "src": "/assets/images/vietnam-ha-giang-yen-minh.webp",
+      "missing": [
+        "sourceUrl",
+        "creator",
+        "license"
+      ]
+    },
+    {
+      "src": "/assets/images/vietnam-hue-minh-mang-tomb.webp",
       "missing": [
         "sourceUrl",
         "creator",

@@ -103,6 +103,9 @@ const expectedRoutes = [
   ['/vietnam/hue/imperial-city-citadel/', 'Imperial City & Citadel'],
   ['/vietnam/hue/royal-tombs/', 'Royal Tombs of Minh Mang, Tu Duc & Khai Dinh'],
   ['/vietnam/hue/thien-mu-perfume-river/', 'Thien Mu & Perfume River'],
+  ['/vietnam/hue/thanh-toan-rural-loop/', 'Thanh Toan Rural & Canal Loop'],
+  ['/vietnam/hue/bach-ma-national-park/', 'Bach Ma National Park'],
+  ['/vietnam/hue/lang-co-lap-an-lagoon/', 'Lang Co & Lap An Lagoon'],
   ['/south-korea/jeju/', 'Jeju Island hub'],
   ['/south-korea/jeju/hallasan/', 'Hallasan summit and lower trails'],
   ['/south-korea/jeju/jeju-city-yongduam/', 'Jeju City & Yongduam'],
@@ -472,8 +475,18 @@ for (const locale of expectedLocales) {
       const links = nodes(document, 'a').map((node) => attr(node, 'href'));
       const expectedPage = routePath === '/vietnam/hue/' ? 'hue' : routePath.split('/').filter(Boolean).at(-1);
       if (attr(body, 'data-page') !== expectedPage || attr(body, 'data-vn-family') !== 'violet-rain-archive') fail(`Wrong Hue page identity on ${locale.code} ${routePath}.`);
-      if (!styleHrefs.includes('/css/vietnam-hue.css?v=20261008-1')) fail(`Missing Hue edition stylesheet on ${locale.code} ${routePath}.`);
-      if (!links.includes('https://eticket.hueworldheritage.org.vn/')) fail(`Missing official Hue ticket/access portal on ${locale.code} ${routePath}.`);
+      const expectedHueStylesheet = routePath === '/vietnam/hue/thanh-toan-rural-loop/' ? '/css/vietnam-hue.css?v=20261008-2' : '/css/vietnam-hue.css?v=20261008-1';
+      if (!styleHrefs.includes(expectedHueStylesheet)) fail(`Missing Hue edition stylesheet on ${locale.code} ${routePath}.`);
+      const requiredOfficialSource = {
+        '/vietnam/hue/': 'https://eticket.hueworldheritage.org.vn/',
+        '/vietnam/hue/imperial-city-citadel/': 'https://eticket.hueworldheritage.org.vn/',
+        '/vietnam/hue/royal-tombs/': 'https://eticket.hueworldheritage.org.vn/',
+        '/vietnam/hue/thien-mu-perfume-river/': 'https://eticket.hueworldheritage.org.vn/',
+        '/vietnam/hue/thanh-toan-rural-loop/': 'https://sdl.hue.gov.vn/diem-du-lich-nong-thon/diem-du-lich-cau-ngoi-thanh-toan.html',
+        '/vietnam/hue/bach-ma-national-park/': 'https://nbca.gov.vn/vuon-quoc-gia-bach-ma/',
+        '/vietnam/hue/lang-co-lap-an-lagoon/': 'https://hue.gov.vn/Cong-dan/Giai-trinh-y-kien-cu-tri/action/chitiet/tid/e1577ab0-d248-40f2-9235-b242009286c3'
+      }[routePath];
+      if (!links.includes(requiredOfficialSource)) fail(`Missing route-specific official source on ${locale.code} ${routePath}.`);
       const tombSource = 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg';
       const tombLicense = 'https://creativecommons.org/licenses/by-sa/2.0/';
       const tombCredits = nodes(document, 'li').filter((node) => nodes(node, 'a').some((link) => attr(link, 'href') === tombSource));
@@ -486,10 +499,20 @@ for (const locale of expectedLocales) {
         const requiredByRoute = {
           '/vietnam/hue/': ['1802 to 1945', 'north-bank', 'south-bank civic streets', 'Perfume River'],
           '/vietnam/hue/imperial-city-citadel/': ['Meridian Gate', 'Thai Hoa Palace', 'Forbidden Purple City'],
-          '/vietnam/hue/royal-tombs/': ['Minh Mang', 'Tu Duc', 'Khai Dinh', '1843'],
-          '/vietnam/hue/thien-mu-perfume-river/': ['seven-tier tower', 'active religious complex', 'licensed service', 'departure pier']
+          '/vietnam/hue/royal-tombs/': ['Minh Mang', 'Tu Duc', 'Khai Dinh', 'Build the day around two sites, not all three.', 'For two open-air garden visits, pair Minh Mang with Tu Duc.', 'For a stronger architectural contrast, pair either garden with Khai Dinh.', 'allow a full day for all three'],
+          '/vietnam/hue/thien-mu-perfume-river/': ['seven-tier tower', 'active religious complex', 'licensed service', 'departure pier'],
+          '/vietnam/hue/thanh-toan-rural-loop/': ['covered bridge', 'Tran Thi Dao', 'agricultural display', 'public lane'],
+          '/vietnam/hue/bach-ma-national-park/': ['do not treat all four as stops on one hike', 'Confirm entry', 'Return to Hue in daylight'],
+          '/vietnam/hue/lang-co-lap-an-lagoon/': ['transfer', 'public ground', 'working boats', 'Keep the onward leg intact']
         }[routePath];
         for (const phrase of requiredByRoute) if (!bodyText.includes(phrase)) fail(`Hue route is missing locally specific interpretation or practical choice “${phrase}” on ${routePath}.`);
+        if (routePath === '/vietnam/hue/royal-tombs/') {
+          const routeSection = nodes(document, 'section').find((node) => attr(node, 'id') === 'route');
+          const routeSteps = nodes(routeSection, 'article').filter((node) => (attr(node, 'class') || '').split(/\s+/).includes('vn-route-step'));
+          if (routeSteps.length !== 4) fail('Royal Tombs must keep its four route stages after removing the repeated introduction.');
+          if (nodes(routeSection, 'p').some((node) => (attr(node.parentNode, 'class') || '').split(/\s+/).includes('vn-section-head'))) fail('Royal Tombs route section repeats itinerary copy before the four stages.');
+          if (!bodyText.includes('Use a half day as a planning estimate for two tombs') || !bodyText.includes('allow a full day for all three')) fail('Royal Tombs must distinguish a two-tomb half-day estimate from a full day for all three.');
+        }
         const schemaScripts = nodes(document, 'script').filter((node) => attr(node, 'type') === 'application/ld+json');
         const schema = schemaScripts.flatMap((node) => { try { const parsed = JSON.parse(text(node)); return parsed['@graph'] || [parsed]; } catch { return []; } });
         const article = schema.find((item) => item['@type'] === 'Article');
