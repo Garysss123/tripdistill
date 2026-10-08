@@ -90,6 +90,9 @@ try {
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 23, 'the remaining unmatched records are unused assets');
   assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 610, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
+  const summary = fs.readFileSync(artifactPaths[1], 'utf8');
+  assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
+  assert.ok(!summary.includes('N Seoul Tower subject description conflicts'), 'the resolved N Seoul Tower mismatch must not reappear in the Markdown report');
   const hueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === hueTombAssetPath);
   assert.ok(hueTomb, 'inventory regeneration must include the new Hue Minh Mang asset');
   assert.equal(hueTomb.sourceUrl, hueTombSourceUrl);

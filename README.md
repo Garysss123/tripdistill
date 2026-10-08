@@ -10,6 +10,10 @@ TripDistill is a static five-language travel guide site for `tripdistill.com`.
 
 The same-level Japan reference selected for Han River & Da Nang City Core, Son Tra Peninsula Wildlife & Linh Ung, and My Khe Beach & An Thuong is [/japan/tokyo/asakusa-ueno/](japan/tokyo/asakusa-ueno/), a Tokyo area guide. The source draft has been compared for place-specific routing, transport and access choices, alternatives, contingencies, source dates and visible photo credits. The required side-by-side rendered-content and visual comparison at desktop and mobile widths remains for the separate cloud-browser review. This record does not signal editorial acceptance.
 
+### Bangkok sibling-guide review record — 8 October 2026
+
+The same-level Japan reference for Siam & Ratchaprasong and Thonburi & Khlong Bang Luang is [/japan/tokyo/asakusa-ueno/](japan/tokyo/asakusa-ueno/), a Tokyo area guide. The source comparison checks named places and their cultural meaning, a usable transit sequence, distinct visit choices, current operating details and dated official references. The required rendered desktop/mobile comparison remains with the separate cloud-browser review; no local browser was used. This review record does not signal editorial acceptance.
+
 English uses the root route tree. Traditional Chinese, Japanese, Korean and Thai mirror it under `/zh/`, `/ja/`, `/ko/` and `/th/`. Every published guide must exist in all five editions, keep reciprocal `hreflang` metadata and remain usable without client-side translation.
 
 ## Cloudflare Pages deployment

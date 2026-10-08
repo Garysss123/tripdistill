@@ -158,6 +158,8 @@ const routes = [
   { path: '/thailand/bangkok/chatuchak-ari/', label: 'Chatuchak & Ari' },
   { path: '/thailand/bangkok/silom-sathorn/', label: 'Silom & Sathorn' },
   { path: '/thailand/bangkok/sukhumvit-thong-lo/', label: 'Sukhumvit & Thong Lo' },
+  { path: '/thailand/bangkok/siam-ratchaprasong/', label: 'Siam & Ratchaprasong' },
+  { path: '/thailand/bangkok/thonburi-khlong-bang-luang/', label: 'Thonburi & Khlong Bang Luang' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -272,7 +274,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, Zurich, South Korea, Vietnam, Penang and Bangkok responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with six field guides, plus four George Town &amp; Penang routes and seven Bangkok routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with six field guides, plus four George Town &amp; Penang routes and nine Bangkok routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

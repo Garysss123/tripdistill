@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-08T16:01:40.314Z",
+  "generatedAt": "2026-10-08T17:14:52.885Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 789,
     "completeSourceCreatorLicenseRecords": 766,
-    "licenseClaimsNotIndependentlyVerified": 611,
+    "licenseClaimsNotIndependentlyVerified": 610,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -15,13 +15,13 @@
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
     "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 127,
-    "assetsWithExplicitEnglishCreditMatch": 65,
-    "assetsVisuallyReviewed": 79,
+    "assetsWithMatchedEnglishCreditOnly": 126,
+    "assetsWithExplicitEnglishCreditMatch": 66,
+    "assetsVisuallyReviewed": 80,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 155,
-    "metadataOrCreditOnly": 611,
-    "usedAssetsWithoutIndependentSourcePageCheck": 611,
+    "sourcePageChecked": 156,
+    "metadataOrCreditOnly": 610,
+    "usedAssetsWithoutIndependentSourcePageCheck": 610,
     "missingSourceCreditMatch": 23,
     "incompleteAttributionFields": 23,
     "activeMissingSourceCreditMatch": 0,
@@ -21708,21 +21708,21 @@
         {
           "assetPath": "/assets/images/thailand-chatuchak.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg",
-          "sourceTitle": "Chatuchak Weekend Market",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Chatuchak Weekend Market 2.jpg",
+          "sourcePhotoDate": "2018-05-12",
           "creditLabel": "Chatuchak Weekend Market",
           "creator": "Christophe95",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized, cropped for display and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The exact Commons source page and downloaded original were checked against the local WebP pixels on 2026-10-08. Both show the same covered market aisle, flower stalls, souvenir stalls and shoppers.",
+          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-08",
+          "verificationDetail": "Exact Commons page checked for the title Chatuchak Weekend Market, Christophe95 as author, the 12 May 2018 photograph date, and CC BY-SA 4.0 terms. The downloaded 4,032 x 3,024 source and local WebP pixels were inspected on 2026-10-08; both show a covered Chatuchak aisle with shoppers, flower stalls and souvenir stalls. The local copy is resized, cropped for display and converted to WebP; the route links both source and license.",
           "useCount": 1,
           "routes": [
             "/thailand/bangkok/chatuchak-ari/"
@@ -21731,7 +21731,7 @@
             "Shaded aisle with shoppers and stalls at Chatuchak Weekend Market"
           ],
           "rawVisibleCredits": [
-            "Chatuchak Weekend Market — Christophe95, CC BY-SA 4.0; converted to WebP, display crop."
+            "Chatuchak Weekend Market - Christophe95, CC BY-SA 4.0; Resized to 1,920 x 1,440 and converted to WebP; crop used for display."
           ]
         }
       ]

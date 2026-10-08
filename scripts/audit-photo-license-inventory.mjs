@@ -914,6 +914,9 @@ const counts = {
 };
 const openCreditReviews = [];
 counts.openCreditReviewCount = openCreditReviews.length;
+const openCreditReviewSummary = openCreditReviews.length
+  ? openCreditReviews.map((review) => review.assetPath || review.summary || 'Unspecified review').join('; ')
+  : 'none';
 const report = {
   generatedAt: new Date().toISOString(),
   scope: 'Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
@@ -963,7 +966,7 @@ const summaryLines = [
   '',
   'The former Trastevere hero showed Piazza Navona and has been replaced. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
   '',
-  'Missing source/creator/license fields: ' + unmatchedByAsset.length + ' (' + counts.activeIncompleteAttributionFields + ' active, ' + counts.unreferencedIncompleteAttributionFields + ' unused). Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '. Open source-to-image review: N Seoul Tower subject description conflicts with alt text; local pixels remain unreviewed.'
+  'Missing source/creator/license fields: ' + unmatchedByAsset.length + ' (' + counts.activeIncompleteAttributionFields + ' active, ' + counts.unreferencedIncompleteAttributionFields + ' unused). Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '. Open source-to-image reviews: ' + openCreditReviewSummary + '.'
 ];
 fs.writeFileSync(path.join(outDir, 'photo-license-inventory.md'), summaryLines.join('\n') + '\n');
 console.log(JSON.stringify({ counts, unmatchedSamples: unmatchedByAsset.slice(0, 30), sourceConflictSamples: sourceConflicts.slice(0, 10), output: ['reports/photo-license-inventory.json', 'reports/photo-license-inventory.md'] }, null, 2));

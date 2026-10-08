@@ -528,7 +528,12 @@ body[data-country="thailand"] .talat-mark strong { color: #fff8e9; font: 500 cla
 body[data-country="thailand"][data-city="bangkok"][data-page="bangkok"],
 body[data-country="thailand"][data-city="bangkok"][data-page="rattanakosin-grand-palace"],
 body[data-country="thailand"][data-city="bangkok"][data-page="banglamphu-phra-athit"],
-body[data-country="thailand"][data-city="bangkok"][data-page="yaowarat-talat-noi"] {
+body[data-country="thailand"][data-city="bangkok"][data-page="yaowarat-talat-noi"],
+body[data-country="thailand"][data-city="bangkok"][data-page="chatuchak-ari"],
+body[data-country="thailand"][data-city="bangkok"][data-page="silom-sathorn"],
+body[data-country="thailand"][data-city="bangkok"][data-page="sukhumvit-thong-lo"],
+body[data-country="thailand"][data-city="bangkok"][data-page="siam-ratchaprasong"],
+body[data-country="thailand"][data-city="bangkok"][data-page="thonburi-khlong-bang-luang"] {
   min-width: 0;
   max-width: 100%;
 }
@@ -548,6 +553,14 @@ body[data-country="thailand"][data-city="bangkok"] .zine-walk--field,
 body[data-country="thailand"][data-city="bangkok"] .talat-split--field,
 body[data-country="thailand"][data-city="bangkok"] .talat-mark,
 body[data-country="thailand"][data-city="bangkok"] .thai-day-plan {
+  min-width: 0;
+  max-width: 100%;
+}
+body[data-country="thailand"][data-city="bangkok"][data-page="chatuchak-ari"] .weekend-clock-hero,
+body[data-country="thailand"][data-city="bangkok"][data-page="silom-sathorn"] .day-night-hero,
+body[data-country="thailand"][data-city="bangkok"][data-page="sukhumvit-thong-lo"] .last-train-hero,
+body[data-country="thailand"][data-city="bangkok"][data-page="siam-ratchaprasong"] .interchange-hero,
+body[data-country="thailand"][data-city="bangkok"][data-page="thonburi-khlong-bang-luang"] .waterline-hero {
   min-width: 0;
   max-width: 100%;
 }
@@ -586,4 +599,42 @@ body[data-country="thailand"][data-city="bangkok"] .talat-mark {
   }
   body[data-country="thailand"][data-city="bangkok"] .bangkok-river-ledger { grid-template-columns: 3.5rem minmax(0, 1fr); }
   body[data-country="thailand"][data-city="bangkok"] .neon-menu-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The five Bangkok guide bodies above now resolve their narrowest hero grids to
+   a zero-minimum track; translated headings and cards can wrap at 320px. */
+@media (max-width: 380px) {
+  body[data-country="thailand"][data-city="bangkok"][data-page="chatuchak-ari"] .weekend-clock-hero,
+  body[data-country="thailand"][data-city="bangkok"][data-page="silom-sathorn"] .day-night-hero,
+  body[data-country="thailand"][data-city="bangkok"][data-page="sukhumvit-thong-lo"] .last-train-hero,
+  body[data-country="thailand"][data-city="bangkok"][data-page="siam-ratchaprasong"] .interchange-hero,
+  body[data-country="thailand"][data-city="bangkok"][data-page="thonburi-khlong-bang-luang"] .waterline-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body[data-country="thailand"][data-city="bangkok"][data-page="chatuchak-ari"] .weekend-copy,
+  body[data-country="thailand"][data-city="bangkok"][data-page="silom-sathorn"] .night-half,
+  body[data-country="thailand"][data-city="bangkok"][data-page="sukhumvit-thong-lo"] .last-train-copy,
+  body[data-country="thailand"][data-city="bangkok"][data-page="siam-ratchaprasong"] .interchange-copy,
+  body[data-country="thailand"][data-city="bangkok"][data-page="thonburi-khlong-bang-luang"] .waterline-copy {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  body[data-country="thailand"][data-city="bangkok"][data-page="chatuchak-ari"] .weekend-clock-hero h1,
+  body[data-country="thailand"][data-city="bangkok"][data-page="silom-sathorn"] .day-night-hero h1,
+  body[data-country="thailand"][data-city="bangkok"][data-page="sukhumvit-thong-lo"] .last-train-hero h1,
+  body[data-country="thailand"][data-city="bangkok"][data-page="siam-ratchaprasong"] .interchange-hero h1,
+  body[data-country="thailand"][data-city="bangkok"][data-page="thonburi-khlong-bang-luang"] .waterline-hero h1 {
+    min-width: 0;
+    max-width: 100%;
+    font-size: clamp(2.25rem, 11vw, 3.1rem);
+    line-height: .95;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  body[data-country="thailand"][data-city="bangkok"][data-page="chatuchak-ari"] .weekend-clock-hero h1 .hero-line,
+  body[data-country="thailand"][data-city="bangkok"][data-page="siam-ratchaprasong"] .interchange-hero h1 .hero-line {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }

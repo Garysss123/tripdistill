@@ -141,6 +141,8 @@ const expectedRoutes = [
   ['/thailand/bangkok/chatuchak-ari/', 'Chatuchak & Ari'],
   ['/thailand/bangkok/silom-sathorn/', 'Silom & Sathorn'],
   ['/thailand/bangkok/sukhumvit-thong-lo/', 'Sukhumvit & Thong Lo'],
+  ['/thailand/bangkok/siam-ratchaprasong/', 'Siam & Ratchaprasong'],
+  ['/thailand/bangkok/thonburi-khlong-bang-luang/', 'Thonburi & Khlong Bang Luang'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -293,7 +295,7 @@ function assertBangkokHeroContrast() {
 function assertBangkokLayoutGuards() {
   const css = fs.readFileSync(safeDistPath('/css/thailand.css'), 'utf8');
   const scope = 'body[data-country="thailand"][data-city="bangkok"]';
-  const pages = ['bangkok', 'rattanakosin-grand-palace', 'banglamphu-phra-athit', 'yaowarat-talat-noi'];
+  const pages = ['bangkok', 'rattanakosin-grand-palace', 'banglamphu-phra-athit', 'yaowarat-talat-noi', 'chatuchak-ari', 'silom-sathorn', 'sukhumvit-thong-lo', 'siam-ratchaprasong', 'thonburi-khlong-bang-luang'];
   for (const page of pages) {
     const selector = 'body[data-country="thailand"][data-city="bangkok"][data-page="' + page + '"]';
     const rule = cssRuleBlock(css, selector);
@@ -304,6 +306,22 @@ function assertBangkokLayoutGuards() {
   if (!shellRule.includes(scope + ' .page-content') || !/min-width\s*:\s*0\s*;/i.test(shellRule) || !/max-width\s*:\s*100%\s*;/i.test(shellRule)) fail('Bangkok shell and page content must be allowed to shrink.');
   const textRule = cssRuleBlock(css, scope + ' .bangkok-river-copy,');
   if (!textRule.includes(scope + ' .talat-mark') || !/min-width\s*:\s*0\s*;/i.test(textRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(textRule)) fail('Bangkok text columns must shrink and wrap long translated content.');
+  for (const [page, hero] of [['chatuchak-ari', '.weekend-clock-hero'], ['silom-sathorn', '.day-night-hero'], ['sukhumvit-thong-lo', '.last-train-hero'], ['siam-ratchaprasong', '.interchange-hero'], ['thonburi-khlong-bang-luang', '.waterline-hero']]) {
+    const heroRule = cssRuleBlock(css, `${scope}[data-page="${page}"] ${hero}`);
+    if (!/min-width\s*:\s*0\s*;/i.test(heroRule) || !/max-width\s*:\s*100%\s*;/i.test(heroRule)) fail(`Bangkok ${page} hero must have a shrinkable width.`);
+  }
+  const narrowStart = css.lastIndexOf('@media (max-width: 380px)');
+  if (narrowStart < 0) fail('Bangkok narrow-width hero rules are missing.');
+  const narrowRule = cssRuleBlock(css, `${scope}[data-page="chatuchak-ari"] .weekend-clock-hero,`, narrowStart);
+  if (!/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(narrowRule) || /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(narrowRule)) fail('Bangkok 320 px hero tracks must shrink without hiding overflow.');
+  for (const [page, hero] of [['chatuchak-ari', '.weekend-clock-hero'], ['silom-sathorn', '.day-night-hero'], ['sukhumvit-thong-lo', '.last-train-hero'], ['siam-ratchaprasong', '.interchange-hero'], ['thonburi-khlong-bang-luang', '.waterline-hero']]) {
+    const headingRule = cssRuleBlock(css, `${scope}[data-page="${page}"] ${hero} h1`, narrowStart);
+    if (!/font-size\s*:\s*clamp\(/i.test(headingRule) || !/max-width\s*:\s*100%\s*;/i.test(headingRule) || !/white-space\s*:\s*normal\s*;/i.test(headingRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(headingRule)) fail(`Bangkok 320 px hero heading must scale down and wrap translated words on ${page}.`);
+  }
+  for (const [page, hero] of [['chatuchak-ari', '.weekend-clock-hero'], ['siam-ratchaprasong', '.interchange-hero']]) {
+    const heroLineRule = cssRuleBlock(css, `${scope}[data-page="${page}"] ${hero} h1 .hero-line`, narrowStart);
+    if (!/white-space\s*:\s*normal\s*;/i.test(heroLineRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(heroLineRule)) fail(`Bangkok 320 px split hero title line must wrap when translated on ${page}.`);
+  }
   const mobileStart = css.lastIndexOf('@media (max-width: 760px)');
   if (mobileStart < 0) fail('Bangkok responsive grid rules are missing.');
   for (const selector of ['.bangkok-river-hero', '.threshold-hero', '.zine-hero', '.bangkok-area-atlas', '.thai-day-plan', '.zine-walk--field', '.talat-split--field', '.bangkok-system-strip', '.court-sequence', '.sleep-volume', '.thai-decision-pair']) {
@@ -329,7 +347,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/seven Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with six field guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, seven Bangkok routes, and six Da Nang & Hoi An guides.`);
+  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/nine Bangkok routes/.test(text(intro)) || !/Da Nang & Hoi An with six field guides/.test(text(intro))) fail(`${label}: harness introduction must identify all 20 Canada routes, the South Korea country overview, seven Gyeongju routes, four George Town & Penang routes, nine Bangkok routes, and six Da Nang & Hoi An guides.`);
   if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
@@ -590,7 +608,9 @@ for (const locale of expectedLocales) {
       const isHub = routePath === '/thailand/bangkok/';
       const expectedPage = isHub ? 'bangkok' : routePath.split('/').filter(Boolean).at(-1);
       if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-city') !== 'bangkok' || attr(body, 'data-parent-page') !== 'bangkok' || attr(body, 'data-page') !== expectedPage) fail('Wrong Bangkok route markers on ' + locale.code + ' ' + routePath + '.');
-      if (!styleHrefs.includes('/css/thailand.css?v=20261008-1')) fail('Missing current Bangkok stylesheet version on ' + locale.code + ' ' + routePath + '.');
+      const cacheBustedGuides = new Set(['/thailand/bangkok/chatuchak-ari/', '/thailand/bangkok/silom-sathorn/', '/thailand/bangkok/sukhumvit-thong-lo/', '/thailand/bangkok/siam-ratchaprasong/', '/thailand/bangkok/thonburi-khlong-bang-luang/']);
+      const expectedStylesheet = cacheBustedGuides.has(routePath) ? '/css/thailand.css?v=20261008-3' : '/css/thailand.css?v=20261008-1';
+      if (!styleHrefs.includes(expectedStylesheet)) fail('Missing current Bangkok stylesheet version on ' + locale.code + ' ' + routePath + '.');
       const assetPaths = new Set((manifest.assets || []).map((asset) => asset.path));
       const linkedPaths = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase().split(/\s+/).includes('stylesheet')).map((node) => attr(node, 'href'));
       for (const image of nodes(document, 'img')) linkedPaths.push(attr(image, 'src'), ...attr(image, 'srcset').split(',').map((candidate) => candidate.trim().split(/\s+/)[0]).filter(Boolean));
@@ -673,6 +693,22 @@ for (const locale of expectedLocales) {
           'https://metro.bemplc.co.th/',
           'https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg',
           'https://creativecommons.org/licenses/by-sa/4.0/'
+        ],
+        '/thailand/bangkok/siam-ratchaprasong/': [
+          'https://www.bacc.or.th/en/plan-your-visit',
+          'https://jimthompsonhouse.org/visitor-information/',
+          'https://jimthompsonhouse.org/the-thai-house/',
+          'https://www.erawanbangkok.com/erawan-shrine/',
+          'https://www.bts.co.th/eng/routemap.html',
+          'https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg'
+        ],
+        '/thailand/bangkok/thonburi-khlong-bang-luang/': [
+          'https://www.artisthousebangkok.com/',
+          'https://www.artisthousebangkok.com/locations-contect',
+          'https://www.thailandtourismdirectory.go.th/en/attraction/103612',
+          'https://www.facebook.com/visitbangkok/videos/how-to-go-to-visit-big-buddha-from-bang-phai-mrt-station-by-walking-visitbangkok/1737175463668992/',
+          'https://metro.bemplc.co.th/',
+          'https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg'
         ]
       }[routePath];
       const anchors = nodes(document, 'a');
@@ -730,6 +766,14 @@ for (const locale of expectedLocales) {
       if (locale.code === 'en' && routePath === '/thailand/bangkok/sukhumvit-thong-lo/') {
         for (const phrase of ['Benjakitti Park', 'Benchasiri Park', 'Emporium', 'EmQuartier', 'EmSphere', 'Sukhumvit Soi 55', 'Gateway Ekamai']) if (!bodyText.includes(phrase)) fail('Sukhumvit & Thong Lo is missing a named place or practical stop: ' + phrase + '.');
         if (bodyText.includes('Four stations, four different trips') || bodyText.includes('Contract - know the return')) fail('Sukhumvit & Thong Lo retains generic corridor or awkward meta copy.');
+      }
+      if (locale.code === 'en' && routePath === '/thailand/bangkok/siam-ratchaprasong/') {
+        for (const phrase of ['Bangkok Art and Culture Centre', 'People’s Gallery', 'Jim Thompson House Museum', 'Erawan Shrine', 'Phra Phrom', 'National Stadium', 'Chit Lom']) if (!bodyText.includes(phrase)) fail('Siam & Ratchaprasong is missing a named cultural stop or useful route anchor: ' + phrase + '.');
+        if (bodyText.includes('three versions of the same plan') || bodyText.includes('fast orientation')) fail('Siam & Ratchaprasong retains generic planning copy instead of place detail.');
+      }
+      if (locale.code === 'en' && routePath === '/thailand/bangkok/thonburi-khlong-bang-luang/') {
+        for (const phrase of ['Artist House Bangkok', 'MRT Bang Phai', 'Exit 4', 'Soi Phet Kasem 20', 'Wat Pak Nam', 'Phra Buddha Dhammakaya Thepmongkhon', 'pre-booked private groups']) if (!bodyText.includes(phrase)) fail('Thonburi & Khlong Bang Luang is missing a named place, route detail or current venue condition: ' + phrase + '.');
+        if (bodyText.includes('Four levels of a west-bank visit') || bodyText.includes('first slow circuit')) fail('Thonburi & Khlong Bang Luang retains generic canal copy instead of place detail.');
       }
       if (locale.code === 'zh-Hant') {
         if (bodyText.includes('達叻仔') || bodyText.includes('塔拉德諾伊')) fail('Bangkok Traditional Chinese uses an inconsistent Talat Noi transliteration on ' + routePath + '.');

@@ -74,13 +74,11 @@ const victoriaResponsiveEditedRoutes = [
   '/canada/victoria-south-island/sooke-juan-de-fuca/'
 ];
 const thailandBangkokEditedRoutes = [
-  '/thailand/bangkok/',
-  '/thailand/bangkok/rattanakosin-grand-palace/',
-  '/thailand/bangkok/banglamphu-phra-athit/',
-  '/thailand/bangkok/yaowarat-talat-noi/',
   '/thailand/bangkok/chatuchak-ari/',
   '/thailand/bangkok/silom-sathorn/',
-  '/thailand/bangkok/sukhumvit-thong-lo/'
+  '/thailand/bangkok/sukhumvit-thong-lo/',
+  '/thailand/bangkok/siam-ratchaprasong/',
+  '/thailand/bangkok/thonburi-khlong-bang-luang/'
 ];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters

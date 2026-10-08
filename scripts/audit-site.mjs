@@ -17,7 +17,16 @@ const thailandBangkokCssRoutes = new Set([
   '/thailand/bangkok/yaowarat-talat-noi/',
   '/thailand/bangkok/chatuchak-ari/',
   '/thailand/bangkok/silom-sathorn/',
-  '/thailand/bangkok/sukhumvit-thong-lo/'
+  '/thailand/bangkok/sukhumvit-thong-lo/',
+  '/thailand/bangkok/siam-ratchaprasong/',
+  '/thailand/bangkok/thonburi-khlong-bang-luang/'
+]);
+const thailandBangkokCssV3Routes = new Set([
+  '/thailand/bangkok/chatuchak-ari/',
+  '/thailand/bangkok/silom-sathorn/',
+  '/thailand/bangkok/sukhumvit-thong-lo/',
+  '/thailand/bangkok/siam-ratchaprasong/',
+  '/thailand/bangkok/thonburi-khlong-bang-luang/'
 ]);
 const problems = [];
 const notes = [];
@@ -363,7 +372,9 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes('class="it-live-desk"')) problems.push(`${relativePath}: Italy route is missing near-claim official sources`);
     if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: Italy route does not contain four operating stages`);
   }
-  const expectedThailandStylesheet = thailandBangkokCssRoutes.has(baseRoute) ? '/css/thailand.css?v=20261008-1' : '/css/thailand.css?v=20260826-1';
+  const expectedThailandStylesheet = thailandBangkokCssV3Routes.has(baseRoute)
+    ? '/css/thailand.css?v=20261008-3'
+    : thailandBangkokCssRoutes.has(baseRoute) ? '/css/thailand.css?v=20261008-1' : '/css/thailand.css?v=20260826-1';
   if (baseRoute.startsWith('/thailand/') && !html.includes(expectedThailandStylesheet)) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
