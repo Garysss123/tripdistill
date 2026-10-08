@@ -243,7 +243,15 @@ export const canadaWestClusters = [
       g({
         slug: 'sooke-juan-de-fuca', name: 'Sooke & Juan de Fuca Coast',
         instrument: 'river, forest and tide choices', layout: 'tide-clock',
-        imageQuery: 'Juan de Fuca coast Sooke British Columbia', imageAlt: 'Rocky low-tide shore on the Juan de Fuca Trail',
+        mapTreatment: {
+          heading: 'Three westbound choices',
+          note: 'Schematic route choices, not to scale. Access differs by stop.',
+          choices: [
+            ['Inland from Sooke', 'Sooke Potholes', 'River pools carved by glacial meltwater; route 61 leaves a several-kilometre walk to the park.'],
+            ['West on Highway 14', 'China Beach', 'A 1 km forest path leads to the shore and viewing deck.'],
+            ['Farther west near Port Renfrew', 'Botanical Beach', 'Check for a tide at or below 1.2 m; consult the Port Renfrew tide table.']
+          ]
+        },
         summary: 'Choose one westbound anchor: Sooke Potholes’ glacially carved river pools, the forest path to China Beach, or Botanical Beach’s tide pools near Port Renfrew. These are different stops along a slower road, not one compact park entrance.',
         access: 'A car is the practical way to link the coast stops. The CRD estimates about 45 minutes by car from Victoria to Sooke Potholes; its route 61 option leaves you several kilometres to walk from Sooke River Road. China Beach is 35 km west of Sooke on Highway 14; Botanical Beach is farther west near Port Renfrew.',
         tradeoff: 'The route trades Victoria’s dense indoor choices for a river valley, mature coastal forest and exposed Strait shoreline. Decide between the inland Potholes, China Beach and the farther Botanical Beach; one clear anchor makes the road and tide schedule legible.',

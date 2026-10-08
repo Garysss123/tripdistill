@@ -25,10 +25,13 @@ const classHas = (node, name) => (attr(node, 'class') || '').split(/\s+/).includ
 
 check(canadaClusters.length === 18, `Expected 18 Canada hubs, found ${canadaClusters.length}`);
 check(canadaGuides.length === 54, `Expected 54 Canada guides, found ${canadaGuides.length}`);
+const imageGuides = canadaGuides.filter((guide) => guide.image);
+const mapGuides = canadaGuides.filter((guide) => guide.mapTreatment);
+check(imageGuides.length === 53 && mapGuides.length === 1, `Expected 53 photo guides and one text map treatment, found ${imageGuides.length} and ${mapGuides.length}`);
 check(routes.length === 73 && new Set(routes).size === 73, 'Expected 73 unique English Canada routes');
 check(new Set(canadaClusters.map((item) => item.family)).size === 18, 'Canada hub families must be unique');
 check(new Set(canadaGuides.map((item) => item.instrument)).size === 54, 'Canada planning instruments must be unique');
-check(new Set(canadaGuides.map((item) => item.image.src)).size === 54, 'Canada guide images must be unique');
+check(new Set(imageGuides.map((item) => item.image.src)).size === imageGuides.length, 'Canada guide images must be unique');
 check(new Set(canadaGuides.map((item) => item.layout)).size === 25, 'Expected 25 Canada child layout families');
 
 for (const cluster of canadaClusters) {
@@ -41,6 +44,11 @@ for (const guide of canadaGuides) {
   check(guide.summary.length >= 120, `${guide.url}: thin summary`);
   check(guide.access.length >= 100 && guide.tradeoff.length >= 100 && guide.fallback.length >= 90, `${guide.url}: thin operating guidance`);
   check(guide.route.length === 4 && guide.checks.length === 3 && guide.faq.length === 3, `${guide.url}: route/check/FAQ parity`);
+  check(Boolean(guide.image) !== Boolean(guide.mapTreatment), `${guide.url}: must have exactly one photo or text map treatment`);
+  if (!guide.image) {
+    check(guide.mapTreatment?.choices?.length === 3 && guide.mapTreatment.choices.every((choice) => choice.length === 3), `${guide.url}: incomplete text map choices`);
+    continue;
+  }
   check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1, `${guide.url}: incomplete image provenance`);
   check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
   check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
@@ -72,7 +80,7 @@ for (const route of routes) {
   }
 
   const hub = canadaClusters.find((cluster) => route === `/canada/${cluster.slug}/` || route.startsWith(`/canada/${cluster.slug}/`));
-  const credited = route === '/canada/' ? canadaClusters.map((cluster) => cluster.guides[0]) : hub?.guides || [];
+  const credited = (route === '/canada/' ? canadaClusters.map((cluster) => cluster.guides[0]) : hub?.guides || []).filter((guide) => guide.image);
   for (const guide of credited) {
     check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
   }
@@ -83,6 +91,12 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'ca-route-step')).length === 4, `${route}: expected four route stages`);
     check(dom.filter((node) => classHas(node, 'ca-related-card')).length === 2, `${route}: expected two related child cards`);
     check(/data-ca-layout="[^"]+"/.test(html) && /data-ca-instrument="[^"]+"/.test(html), `${route}: child layout markers missing`);
+    const guide = canadaGuides.find((item) => item.url === route);
+    if (!guide.image) {
+      check(html.includes('ca-victoria-route-choices'), `${route}: text map treatment missing`);
+      check(!html.includes('canada-victoria-south-island-sooke-juan-de-fuca.webp'), `${route}: unverified photo still used`);
+      check(!html.includes('Rocky coast between Little Kuitshe Campsite'), `${route}: unverified photo credit still shown`);
+    }
   } else {
     check(dom.filter((node) => classHas(node, 'ca-hub-card')).length === 3, `${route}: expected three child cards`);
     check(/data-ca-family="[^"]+"/.test(html), `${route}: hub family marker missing`);
@@ -124,5 +138,5 @@ if (failures.length) {
   console.error(`Canada audit: ${failures.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`Canada audit passed: 18 hubs, 54 focused guides, 73 English / 365 five-language routes, 54 credited images and 25 child layout families${englishOnly ? ' (localized file checks deferred)' : ''}.`);
+  console.log(`Canada audit passed: 18 hubs, 54 focused guides, 73 English / 365 five-language routes, 53 credited images, one text map treatment and 25 child layout families${englishOnly ? ' (localized file checks deferred)' : ''}.`);
 }

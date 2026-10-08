@@ -13,13 +13,14 @@ const imageRoot = path.resolve(root, 'assets', 'images') + path.sep;
 const manifestPath = path.join(root, 'data', 'canada-image-manifest.mjs');
 const allClusters = [...canadaWestClusters, ...canadaCentralClusters, ...canadaAtlanticNorthClusters];
 const allGuides = allClusters.flatMap((cluster) => cluster.guides.map((guide) => ({ cluster, guide, key: `${cluster.slug}/${guide.slug}` })));
+const imageGuides = allGuides.filter(({ guide }) => !guide.mapTreatment);
 const force = process.argv.includes('--force');
 const missingOnly = process.argv.includes('--missing');
 const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7) || '';
 const only = new Set(onlyArg.split(',').map((value) => value.trim()).filter(Boolean));
-const jobs = only.size ? allGuides.filter(({ key }) => only.has(key)) : missingOnly ? allGuides.filter(({ key }) => !existingManifest[key]) : allGuides;
-if (only.size && jobs.length !== only.size) throw new Error(`Unknown Canada image key(s): ${[...only].filter((key) => !allGuides.some((job) => job.key === key)).join(', ')}`);
-if (allGuides.length !== 54) throw new Error(`Expected 54 Canada image jobs, found ${allGuides.length}.`);
+const jobs = only.size ? imageGuides.filter(({ key }) => only.has(key)) : missingOnly ? imageGuides.filter(({ key }) => !existingManifest[key]) : imageGuides;
+if (only.size && jobs.length !== only.size) throw new Error(`Unknown Canada image key(s): ${[...only].filter((key) => !imageGuides.some((job) => job.key === key)).join(', ')}`);
+if (allGuides.length !== 54 || imageGuides.length !== 53) throw new Error(`Expected 54 Canada guides with 53 image jobs, found ${allGuides.length} and ${imageGuides.length}.`);
 
 const allowedLicenses = new Set([
   'CC0', 'Public domain',

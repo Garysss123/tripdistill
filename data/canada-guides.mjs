@@ -39,8 +39,9 @@ export const canadaClusters = orderedSlugs.map((slug) => {
     guides: cluster.guides.map((guide) => {
       const key = `${cluster.slug}/${guide.slug}`;
       const image = canadaImageManifest[key];
-      if (!image) throw new Error(`Missing verified Canada image manifest entry: ${key}`);
-      return { ...guide, image: { ...image, editNote: canadaImageEditNote } };
+      if (!image && !guide.mapTreatment) throw new Error(`Missing verified Canada image manifest entry or map treatment: ${key}`);
+      if (image && guide.mapTreatment) throw new Error(`Canada guide cannot use both a photo and map treatment: ${key}`);
+      return { ...guide, image: image ? { ...image, editNote: canadaImageEditNote } : null };
     })
   };
 });
@@ -56,11 +57,13 @@ if (canadaClusters.length !== 18 || canadaGuides.length !== 54) {
 }
 
 const routeSet = new Set(canadaGuides.map((guide) => guide.url));
-const assetSet = new Set(canadaGuides.map((guide) => guide.image.src));
+const imageGuides = canadaGuides.filter((guide) => guide.image);
+const assetSet = new Set(imageGuides.map((guide) => guide.image.src));
 const instrumentSet = new Set(canadaGuides.map((guide) => guide.instrument));
 const familySet = new Set(canadaClusters.map((cluster) => cluster.family));
 if (routeSet.size !== canadaGuides.length) throw new Error('Canada guide routes must be unique.');
-if (assetSet.size !== canadaGuides.length) throw new Error('Canada guide images must be unique.');
+if (assetSet.size !== imageGuides.length) throw new Error('Canada guide images must be unique.');
+if (canadaGuides.some((guide) => Boolean(guide.image) === Boolean(guide.mapTreatment))) throw new Error('Every Canada guide must have exactly one photo or map treatment.');
 if (instrumentSet.size !== canadaGuides.length) throw new Error('Canada guide instruments must be unique.');
 if (familySet.size !== canadaClusters.length) throw new Error('Canada hub families must be unique.');
 

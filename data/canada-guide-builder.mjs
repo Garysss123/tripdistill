@@ -1,9 +1,17 @@
 const defaultStageLabels = ['Arrive', 'Move', 'Read', 'Return'];
 
 export function canadaGuide(definition) {
-  const required = ['slug', 'name', 'instrument', 'layout', 'imageQuery', 'imageAlt', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
+  const required = ['slug', 'name', 'instrument', 'layout', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
   for (const key of required) {
     if (!definition?.[key]) throw new Error(`Canada guide ${definition?.slug || '(unnamed)'} lacks ${key}.`);
+  }
+  if (definition.mapTreatment) {
+    if (definition.imageQuery || definition.imageAlt) throw new Error(`Canada guide ${definition.slug} cannot define a map treatment and photo query together.`);
+    if (!definition.mapTreatment.heading || !definition.mapTreatment.note || !Array.isArray(definition.mapTreatment.choices) || definition.mapTreatment.choices.length !== 3 || definition.mapTreatment.choices.some((choice) => !Array.isArray(choice) || choice.length !== 3 || choice.some((value) => !value))) {
+      throw new Error(`Canada guide ${definition.slug} must define a complete three-choice map treatment.`);
+    }
+  } else if (!definition.imageQuery || !definition.imageAlt) {
+    throw new Error(`Canada guide ${definition.slug} needs imageQuery and imageAlt unless it has a map treatment.`);
   }
   if (!Array.isArray(definition.stages) || definition.stages.length !== 4) {
     throw new Error(`Canada guide ${definition.slug} must define four route stages.`);

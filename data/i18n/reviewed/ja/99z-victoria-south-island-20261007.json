@@ -23,7 +23,6 @@
     "Garden displays and evening programs change through the year. Botanical Beach is a tide-timed visit: BC Parks says tide pools are best at 1.2 m or lower. Coastal storms can close Juan de Fuca trail sections, so check the park advisory and Port Renfrew tide table on the day you go.": "庭園の展示や夜のプログラムは季節ごとに変わります。ボタニカル・ビーチは潮の時間に合わせる場所で、BC Parksは水位1.2m以下を潮だまり観察に適した目安としています。嵐でファン・デ・フカのトレイルが閉鎖されることもあるため、当日は公園の告知とポート・レンフルーの潮汐表を確認してください。",
     "Join the Inner Harbour promenade and Parliament precinct to James Bay and Beacon Hill Park on foot. The civic waterfront, residential streets and open parkland are distinct parts of the city; keep the museum as one deliberate indoor stop.": "インナー・ハーバーの遊歩道から議事堂周辺を通り、ジェームズ・ベイ、ビーコン・ヒル・パークへ歩いてつなげます。行政・港の水辺、住宅街、開けた公園はそれぞれ異なる街の顔です。屋内観光は博物館を一つ選んでしっかり時間を取りましょう。",
     "Follow the transformation of a limestone quarry into a 55-acre garden: the Sunken Garden occupies the former quarry, while the Japanese, Italian and Rose gardens show how the estate expanded. The gardens are in Brentwood Bay, outside Victoria.": "石灰岩の採掘場が55エーカーの庭園へ変わった過程をたどります。サンケン・ガーデンは採掘跡に造られ、日本庭園、イタリア庭園、バラ園は敷地の拡張を示します。庭園はビクトリア市街の外、ブレントウッド・ベイにあります。",
-    "Rocky low-tide shore on the Juan de Fuca Trail": "ファン・デ・フカ・トレイル沿いの岩場の海岸（干潮時）",
     "Choose one westbound anchor: Sooke Potholes’ glacially carved river pools, the forest path to China Beach, or Botanical Beach’s tide pools near Port Renfrew. These are different stops along a slower road, not one compact park entrance.": "西へ向かう日の主目的を一つ選びます。氷河水が削ったスーク・ポットホールズの川の淵、森を抜けるチャイナ・ビーチ、またはポート・レンフルー近くのボタニカル・ビーチの潮だまりです。道路沿いに点在する別々の場所で、入口一つにまとまった公園ではありません。",
     "Keep the harbour and museum day near your base for a wet or short-day forecast. On the coast, choose the short China Beach path or the Botanical Loop instead of committing to the 47 km wilderness trail; closures and tide windows can change the plan.": "雨や日照時間の短い予報なら、港周辺と博物館の日を宿泊地の近くに置きます。海岸では47kmの荒野のトレイルに入らず、チャイナ・ビーチの短い道かボタニカル・ループを選びましょう。閉鎖や干潮の時間帯によって予定は変わります。",
     "A city day, then choose one island branch": "市街を歩く日を過ごしたら、島の郊外へ一方面だけ選ぶ",
@@ -141,6 +140,19 @@
     "Tides and trail closures": "潮位とトレイルの閉鎖",
     "Botanical Beach needs a low tide for tide-pool viewing, and BC Parks posts storm-damage closures. Check both before committing to the farthest westbound branch.": "潮だまり観察にはボタニカル・ビーチの干潮時間が重要で、BC Parksは嵐による閉鎖を告知しています。最も西の行程を決める前に両方を確認しましょう。",
     "A wilderness trail has different logistics": "荒野のトレイルは別の準備が必要",
-    "The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.": "全長47kmのファン・デ・フカ・マリン・トレイルには4か所の登山口があり、高潮時に通れない場所もあります。複数日行程には最新の告知、潮位計画、登山口間の移動が必要です。"
+    "The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.": "全長47kmのファン・デ・フカ・マリン・トレイルには4か所の登山口があり、高潮時に通れない場所もあります。複数日行程には最新の告知、潮位計画、登山口間の移動が必要です。",
+    "Three westbound choices": "西へ向かう3つの選択肢",
+    "Schematic route choices, not to scale. Access differs by stop.": "縮尺図ではなく、ルート選択のための概略です。場所ごとにアクセス方法が異なります。",
+    "Inland from Sooke": "スークから内陸へ",
+    "Sooke Potholes": "Sooke Potholes（スーク・ポットホールズ）",
+    "River pools carved by glacial meltwater; route 61 leaves a several-kilometre walk to the park.": "氷河の融水が削った川床の岩穴です。路線61の終点から公園までは数キロ歩きます。",
+    "West on Highway 14": "ハイウェイ14号線を西へ",
+    "China Beach": "China Beach（チャイナ・ビーチ）",
+    "A 1 km forest path leads to the shore and viewing deck.": "海岸と展望デッキへは、森の道を約1 km歩きます。",
+    "Farther west near Port Renfrew": "さらに西、ポート・レンフルー付近",
+    "Botanical Beach": "Botanical Beach（ボタニカル・ビーチ）",
+    "Check for a tide at or below 1.2 m; consult the Port Renfrew tide table.": "潮位が1.2 m以下の時間に合わせ、ポート・レンフルーの潮汐表を確認してください。",
+    "Victoria's Inner Harbour, Parliament Buildings and boats at dusk": "夕暮れ時のビクトリア・インナー・ハーバー、州議事堂、船",
+    "Formal garden beds and mature trees at Butchart Gardens": "ブッチャート・ガーデンの整形式花壇と成熟した木々"
   }
 }

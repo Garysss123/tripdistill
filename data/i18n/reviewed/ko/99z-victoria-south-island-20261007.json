@@ -23,7 +23,6 @@
     "Garden displays and evening programs change through the year. Botanical Beach is a tide-timed visit: BC Parks says tide pools are best at 1.2 m or lower. Coastal storms can close Juan de Fuca trail sections, so check the park advisory and Port Renfrew tide table on the day you go.": "정원 전시와 저녁 프로그램은 계절마다 바뀝니다. 보태니컬 비치는 조수 시간을 맞춰야 하는 곳으로, BC Parks는 조수 웅덩이 관찰에 수위 1.2m 이하를 권합니다. 폭풍으로 후안 데 푸카 트레일 일부가 폐쇄될 수 있으니 방문 당일 공원 공지와 포트 렌프루 조석표를 확인하세요.",
     "Join the Inner Harbour promenade and Parliament precinct to James Bay and Beacon Hill Park on foot. The civic waterfront, residential streets and open parkland are distinct parts of the city; keep the museum as one deliberate indoor stop.": "이너 하버 산책로에서 주의사당 주변을 지나 제임스 베이와 비컨 힐 파크까지 걸어 연결하세요. 행정·항구 수변, 주거 거리, 탁 트인 공원은 도시의 서로 다른 면입니다. 실내 관람은 박물관 한 곳을 골라 충분히 시간을 쓰세요.",
     "Follow the transformation of a limestone quarry into a 55-acre garden: the Sunken Garden occupies the former quarry, while the Japanese, Italian and Rose gardens show how the estate expanded. The gardens are in Brentwood Bay, outside Victoria.": "석회암 채석장이 55에이커 정원으로 바뀐 과정을 따라가 보세요. 선큰 가든은 옛 채석장 자리에 있고, 일본식·이탈리아식·장미 정원은 부지가 확장된 흔적을 보여 줍니다. 정원은 빅토리아 다운타운 밖 브렌트우드 베이에 있습니다.",
-    "Rocky low-tide shore on the Juan de Fuca Trail": "후안 데 푸카 트레일의 바위 해안과 간조 풍경",
     "Choose one westbound anchor: Sooke Potholes’ glacially carved river pools, the forest path to China Beach, or Botanical Beach’s tide pools near Port Renfrew. These are different stops along a slower road, not one compact park entrance.": "서쪽으로 가는 날의 주목적을 하나 고르세요. 빙하가 깎아 만든 수크 포톨스의 강 웅덩이, 숲을 지나 차이나 비치로 가는 길, 포트 렌프루 인근 보태니컬 비치의 조수 웅덩이 중 하나입니다. 서로 떨어진 도로변 명소이며 하나의 공원 입구에 모여 있지 않습니다.",
     "Keep the harbour and museum day near your base for a wet or short-day forecast. On the coast, choose the short China Beach path or the Botanical Loop instead of committing to the 47 km wilderness trail; closures and tide windows can change the plan.": "비가 계속 오거나 해가 일찍 지는 예보라면 항구와 박물관 일정을 숙소 가까이에 두세요. 해안에서는 47km 야생 트레일에 들어가기보다 차이나 비치의 짧은 길이나 보태니컬 루프를 선택하세요. 폐쇄와 간조 시간이 계획을 바꿀 수 있습니다.",
     "A city day, then choose one island branch": "도심 하루를 보낸 뒤 섬 외곽 한 방향을 고르세요",
@@ -141,6 +140,19 @@
     "Tides and trail closures": "조수와 트레일 폐쇄",
     "Botanical Beach needs a low tide for tide-pool viewing, and BC Parks posts storm-damage closures. Check both before committing to the farthest westbound branch.": "조수 웅덩이 관찰에는 보태니컬 비치의 간조가 필요하고 BC Parks는 폭풍 피해 폐쇄를 공지합니다. 가장 서쪽 지점을 계획하기 전에 두 가지를 확인하세요.",
     "A wilderness trail has different logistics": "야생 트레일은 다른 준비가 필요합니다",
-    "The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.": "47km 후안 데 푸카 마린 트레일에는 네 개의 트레일헤드가 있고 일부 구간은 만조 때 통행할 수 없습니다. 며칠 일정에는 최신 공지, 조수 계획, 트레일헤드 간 이동이 필요합니다."
+    "The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.": "47km 후안 데 푸카 마린 트레일에는 네 개의 트레일헤드가 있고 일부 구간은 만조 때 통행할 수 없습니다. 며칠 일정에는 최신 공지, 조수 계획, 트레일헤드 간 이동이 필요합니다.",
+    "Three westbound choices": "서쪽으로 향하는 세 가지 선택지",
+    "Schematic route choices, not to scale. Access differs by stop.": "축척 지도 대신 경로 선택을 보여주는 도식입니다. 장소마다 접근 방법이 다릅니다.",
+    "Inland from Sooke": "수크에서 내륙으로",
+    "Sooke Potholes": "Sooke Potholes (수크 포트홀스)",
+    "River pools carved by glacial meltwater; route 61 leaves a several-kilometre walk to the park.": "빙하수가 깎아 만든 강바닥의 웅덩이입니다. 61번 버스 종점에서 공원까지 몇 km를 걸어야 합니다.",
+    "West on Highway 14": "하이웨이 14를 따라 서쪽으로",
+    "China Beach": "China Beach (차이나 비치)",
+    "A 1 km forest path leads to the shore and viewing deck.": "해변과 전망 데크까지 숲길로 약 1 km 걸어갑니다.",
+    "Farther west near Port Renfrew": "포트 렌프루 인근 더 서쪽으로",
+    "Botanical Beach": "Botanical Beach (보태니컬 비치)",
+    "Check for a tide at or below 1.2 m; consult the Port Renfrew tide table.": "조수 높이가 1.2m 이하일 때에 맞추고 포트 렌프루 조석표를 확인하세요.",
+    "Victoria's Inner Harbour, Parliament Buildings and boats at dusk": "해질 무렵의 빅토리아 이너 하버, 주의사당, 보트",
+    "Formal garden beds and mature trees at Butchart Gardens": "부차트 가든의 정형 화단과 오래된 나무들"
   }
 }

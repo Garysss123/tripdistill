@@ -72,6 +72,7 @@ function licenseUrl(license) {
 }
 
 function imageCredit(image) {
+  if (!image) return '';
   const license = licenseUrl(image.license);
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
@@ -83,16 +84,18 @@ function imageCredit(image) {
 }
 
 function heroImageCaption(image) {
-  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore)-/.test(image.src)) return escapeHtml(image.alt);
+  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island)-/.test(image.src)) return escapeHtml(image.alt);
   return `${escapeHtml(image.label)} · ${escapeHtml(image.license)}`;
 }
 
 const ad = '<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>';
 
 function sharedHead({ title, description, route, image, type = 'article', extraCss = '' }) {
+  const imageMeta = image ? `<meta property="og:image" content="${absolute(image.src)}">` : '';
+  const twitterCard = image ? 'summary_large_image' : 'summary';
   return `<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
-  <meta name="theme-color" content="#b91c2c"><meta property="og:type" content="${type}"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(image.src)}"><meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#b91c2c"><meta property="og:type" content="${type}"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${absolute(route)}">${imageMeta}<meta name="twitter:card" content="${twitterCard}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">${extraCss}`;
 }
 
@@ -117,7 +120,7 @@ function guideSchema(guide, cluster) {
         datePublished: isoDate,
         dateModified: pageIsoDate(cluster),
         mainEntityOfPage: absolute(guide.url),
-        image: absolute(guide.image.src),
+        ...(guide.image ? { image: absolute(guide.image.src) } : {}),
         about: { '@type': 'TouristDestination', name: guide.name },
         publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
       },
@@ -139,7 +142,21 @@ function guideSchema(guide, cluster) {
 
 function relatedCards(cluster, currentSlug) {
   const isCityEditorial = ['montreal', 'toronto'].includes(cluster.slug);
-  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `<a class="ca-related-card" href="${guide.url}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(isCityEditorial ? guide.cardLabel : `Survey ${String(guide.chapter).padStart(2, '0')} · ${guide.layout}`)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(compact(guide.summary, 122))}</p><strong>Open the guide →</strong></div></a>`).join('');
+  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `<a class="ca-related-card${guide.image ? '' : ' ca-related-card--text'}" href="${guide.url}">${guide.image ? `<img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}">` : ''}<div><small>${escapeHtml(isCityEditorial ? guide.cardLabel : `Survey ${String(guide.chapter).padStart(2, '0')} · ${guide.layout}`)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(compact(guide.summary, 122))}</p><strong>Open the guide →</strong></div></a>`).join('');
+}
+
+function guideVisual(guide) {
+  if (guide.image) return `<figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${heroImageCaption(guide.image)}</figcaption></figure>`;
+  const treatment = guide.mapTreatment;
+  if (!treatment) return '';
+  const mapId = `ca-${guide.hubSlug}-${guide.slug}-choices`;
+  return `<aside class="ca-victoria-route-choices" aria-labelledby="${mapId}"><h2 id="${mapId}">${escapeHtml(treatment.heading)}</h2><p class="ca-victoria-route-note">${escapeHtml(treatment.note)}</p><ol>${treatment.choices.map(([direction, place, detail]) => `<li><small>${escapeHtml(direction)}</small><strong>${escapeHtml(place)}</strong><p>${escapeHtml(detail)}</p></li>`).join('')}</ol></aside>`;
+}
+
+function guideCardVisual(guide) {
+  if (guide.image) return `<img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}">`;
+  if (!guide.mapTreatment) return '';
+  return `<div class="ca-victoria-card-choices"><small>${escapeHtml(guide.mapTreatment.heading)}</small><ol>${guide.mapTreatment.choices.map(([direction, place]) => `<li><span>${escapeHtml(direction)}</span><strong>${escapeHtml(place)}</strong></li>`).join('')}</ol></div>`;
 }
 
 function guidePageLegacy(guide, cluster) {
@@ -293,7 +310,8 @@ function guidePageCityCluster(guide, cluster) {
 <body data-page="ca-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="canada" data-country="canada" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-family="${escapeHtml(cluster.family)}" data-ca-layout="${escapeHtml(guide.layout)}" data-ca-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="ca-breadcrumb" aria-label="Breadcrumb"><a href="/canada/">Canada</a><span>/</span><a href="/canada/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav>
-  <section class="ca-field-hero" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(heroKicker)}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">${escapeHtml(actionLabel)}</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${heroImageCaption(guide.image)}</figcaption></figure>${instrument}</section>
+  <section class="ca-field-hero${guide.image ? '' : ' ca-field-hero--text-visual'}" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(heroKicker)}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">${escapeHtml(actionLabel)}</a></div></div>${guideVisual(guide)}${instrument}</section>
+  <section class="ca-field-hero${guide.image ? '' : ' ca-field-hero--text-visual'}" aria-labelledby="ca-field-title"><div class="ca-field-copy"><span class="ca-kicker">${escapeHtml(heroKicker)}</span><h1 id="ca-field-title">${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Trace the route</a><a class="button secondary" href="#checks">${escapeHtml(actionLabel)}</a></div></div>${guideVisual(guide)}${instrument}</section>
   ${planningSections}
   ${ad}
   <section class="ca-field-section" id="route">${routeHeading}<div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
@@ -343,7 +361,7 @@ function hubCards(cluster) {
   if (cluster.slug === 'toronto') {
     return cluster.guides.map((guide) => `<a class="ca-hub-card" href="${guide.url}" data-layout="${escapeHtml(guide.layout)}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(guide.cardLabel)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p><strong>Open this route</strong></div></a>`).join('');
   }
-  return cluster.guides.map((guide) => `<a class="ca-hub-card" href="${guide.url}" data-layout="${escapeHtml(guide.layout)}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>Survey ${String(guide.chapter).padStart(2, '0')} · ${escapeHtml(guide.layout)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p><strong>Open the focused guide →</strong></div></a>`).join('');
+  return cluster.guides.map((guide) => `<a class="ca-hub-card${guide.image ? '' : ' ca-hub-card--text'}" href="${guide.url}" data-layout="${escapeHtml(guide.layout)}">${guideCardVisual(guide)}<div><small>Survey ${String(guide.chapter).padStart(2, '0')} · ${escapeHtml(guide.layout)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p><strong>Open the focused guide →</strong></div></a>`).join('');
 }
 
 function hubPage(cluster, index) {

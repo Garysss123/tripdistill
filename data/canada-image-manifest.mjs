@@ -50,16 +50,6 @@ export const canadaImageManifest = {
     "commonsTitle": "File:Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
     "remoteSha1": "495ab547a7fe6dbdefb7314ce62da6e165ee7991"
   },
-  "victoria-south-island/sooke-juan-de-fuca": {
-    "src": "/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp",
-    "alt": "Rocky low-tide shore on the Juan de Fuca Trail",
-    "source": "https://commons.wikimedia.org/wiki/File:Rocky_coast_between_Little_Kuitshe_Campsite_and_Payzant_Campsite,_Juan_de_Fuca_Trail,_Vancouver_Island,_Canada_39.jpg",
-    "label": "Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
-    "creator": "Michal Klajban",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
-    "remoteSha1": "9484598fa3f863ddce9582a560b76578737b494a"
-  },
   "pacific-rim-tofino/long-beach-rainforest": {
     "src": "/assets/images/canada-pacific-rim-tofino-long-beach-rainforest.webp",
     "alt": "Long Beach in Pacific Rim National Park Reserve",

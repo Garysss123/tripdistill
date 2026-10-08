@@ -23,7 +23,6 @@
     "Garden displays and evening programs change through the year. Botanical Beach is a tide-timed visit: BC Parks says tide pools are best at 1.2 m or lower. Coastal storms can close Juan de Fuca trail sections, so check the park advisory and Port Renfrew tide table on the day you go.": "花園展陳和夜間活動會隨季節更換。Botanical Beach 必須配合潮汐：BC Parks 指出水位 1.2 公尺或以下較適合觀賞潮池。海岸風暴可能造成 Juan de Fuca 步道區段封閉，出發當天請查看公園公告與 Port Renfrew 潮汐表。",
     "Join the Inner Harbour promenade and Parliament precinct to James Bay and Beacon Hill Park on foot. The civic waterfront, residential streets and open parkland are distinct parts of the city; keep the museum as one deliberate indoor stop.": "步行串連 Inner Harbour 海濱步道與國會大廈周邊，再前往 James Bay 和 Beacon Hill Park。政府與港口水岸、住宅街道、開闊公園呈現不同的城市面貌。室內行程選一間博物館並預留足夠時間。",
     "Follow the transformation of a limestone quarry into a 55-acre garden: the Sunken Garden occupies the former quarry, while the Japanese, Italian and Rose gardens show how the estate expanded. The gardens are in Brentwood Bay, outside Victoria.": "沿著石灰岩採石場變成 55 英畝花園的歷程遊覽：Sunken Garden 位於原採石坑內，日本庭園、義大利庭園和玫瑰園則呈現園區擴建的軌跡。花園位於維多利亞市區外的 Brentwood Bay。",
-    "Rocky low-tide shore on the Juan de Fuca Trail": "Juan de Fuca Trail 上的岩岸低潮景色",
     "Choose one westbound anchor: Sooke Potholes’ glacially carved river pools, the forest path to China Beach, or Botanical Beach’s tide pools near Port Renfrew. These are different stops along a slower road, not one compact park entrance.": "選一個向西行程的主目的地：冰川侵蝕形成的 Sooke Potholes 河流岩池、穿越森林前往 China Beach 的步道，或 Port Renfrew 附近 Botanical Beach 的潮池。這些景點沿較慢的公路分散，各自是不同地點，並非同一個公園入口。",
     "Keep the harbour and museum day near your base for a wet or short-day forecast. On the coast, choose the short China Beach path or the Botanical Loop instead of committing to the 47 km wilderness trail; closures and tide windows can change the plan.": "若預報持續下雨或白天較短，將港區與博物館安排在住宿附近。海岸行程選短程的 China Beach 步道或 Botanical Loop，不要貿然走 47 公里的荒野步道；封閉狀況與潮汐時段都可能改變計畫。",
     "A city day, then choose one island branch": "市區走一日，再選一條島上支線",
@@ -141,6 +140,19 @@
     "Tides and trail closures": "潮汐與步道封閉",
     "Botanical Beach needs a low tide for tide-pool viewing, and BC Parks posts storm-damage closures. Check both before committing to the farthest westbound branch.": "觀賞 Botanical Beach 潮池須配合低潮，BC Parks 也會公告風暴損壞造成的封閉。安排最西側支線前，兩項都要確認。",
     "A wilderness trail has different logistics": "荒野步道需要不同規劃",
-    "The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.": "47 公里的 Juan de Fuca Marine Trail 有四個登山口，部分路段在高潮時無法通行。多日健行須查看最新公告、規劃潮汐並安排登山口間交通。"
+    "The 47 km Juan de Fuca Marine Trail has four trailheads and can be impassable at high tide in places. A multi-day hike needs current advisories, tide planning and point-to-point transport.": "47 公里的 Juan de Fuca Marine Trail 有四個登山口，部分路段在高潮時無法通行。多日健行須查看最新公告、規劃潮汐並安排登山口間交通。",
+    "Three westbound choices": "三條向西的海岸選擇",
+    "Schematic route choices, not to scale. Access differs by stop.": "路線選擇示意，非按比例地圖；各地的交通與步行方式不同。",
+    "Inland from Sooke": "從蘇克往內陸",
+    "Sooke Potholes": "Sooke Potholes（蘇克壺穴）",
+    "River pools carved by glacial meltwater; route 61 leaves a several-kilometre walk to the park.": "這裡是冰川融水侵蝕河床形成的岩穴；61號公車下車後，仍需步行數公里才到公園。",
+    "West on Highway 14": "沿14號公路向西",
+    "China Beach": "China Beach（中國海灘）",
+    "A 1 km forest path leads to the shore and viewing deck.": "沿森林步道步行約1公里，可到海灘與觀景平台。",
+    "Farther west near Port Renfrew": "再往西至Port Renfrew附近",
+    "Botanical Beach": "Botanical Beach（植物海灘）",
+    "Check for a tide at or below 1.2 m; consult the Port Renfrew tide table.": "配合潮位1.2公尺或以下前往，並先查Port Renfrew潮汐表。",
+    "Victoria's Inner Harbour, Parliament Buildings and boats at dusk": "黃昏時的維多利亞內港、省議會大廈與船隻",
+    "Formal garden beds and mature trees at Butchart Gardens": "布查特花園的整形式花壇與成熟樹木"
   }
 }
