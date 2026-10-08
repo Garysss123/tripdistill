@@ -64,6 +64,7 @@ const routes = [
   { path: '/canada/vancouver-north-shore/downtown-stanley-granville/', label: 'Vancouver Downtown, Stanley Park & Granville Island' },
   { path: '/canada/vancouver-north-shore/north-shore-grouse-capilano/', label: 'Grouse, Capilano & Lynn Canyon' },
   { path: '/canada/vancouver-north-shore/sea-to-sky-whistler/', label: 'Sea-to-Sky & Whistler' },
+  { path: '/south-korea/', label: 'South Korea country guide' },
   { path: '/south-korea/seoul/', label: 'Seoul hub' },
   { path: '/south-korea/seoul/bukchon-seochon/', label: 'Bukchon & Seochon' },
   { path: '/south-korea/seoul/jongno-gwanghwamun/', label: 'Jongno & Gwanghwamun' },
@@ -246,7 +247,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, South Korea, Vietnam and Penang responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes and seven Ninh Binh routes, plus four George Town &amp; Penang routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City–Charlevoix and Vancouver &amp; the North Shore, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes and seven Ninh Binh routes, plus four George Town &amp; Penang routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

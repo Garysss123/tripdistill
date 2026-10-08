@@ -47,6 +47,7 @@ const expectedRoutes = [
   ['/canada/vancouver-north-shore/downtown-stanley-granville/', 'Vancouver Downtown, Stanley Park & Granville Island'],
   ['/canada/vancouver-north-shore/north-shore-grouse-capilano/', 'Grouse, Capilano & Lynn Canyon'],
   ['/canada/vancouver-north-shore/sea-to-sky-whistler/', 'Sea-to-Sky & Whistler'],
+  ['/south-korea/', 'South Korea country guide'],
   ['/south-korea/seoul/', 'Seoul hub'],
   ['/south-korea/seoul/bukchon-seochon/', 'Bukchon & Seochon'],
   ['/south-korea/seoul/jongno-gwanghwamun/', 'Jongno & Gwanghwamun'],
@@ -235,7 +236,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must count all 16 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
+  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City–Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 16 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
     fail(`${label}: expected exactly one robots meta containing noindex.`);
@@ -319,6 +320,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley', 'fr-champagne'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
   const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
   const penangIdentity = record.path === '/malaysia/george-town-penang/' ? attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-cluster') === 'malaysia-straits' : record.path.startsWith('/malaysia/george-town-penang/') && attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-region') === 'george-town-penang';
+  const koreaCountryIdentity = record.path === '/south-korea/' && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'south-korea';
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
   const busanIdentity = record.path.startsWith('/south-korea/busan/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'busan';
   const gyeongjuIdentity = record.path.startsWith('/south-korea/gyeongju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'gyeongju';
@@ -328,7 +330,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
   const hueIdentity = record.path.startsWith('/vietnam/hue/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hue' && attr(bodyNode, 'data-vn-family') === 'violet-rain-archive';
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
-  if (!franceIdentity && !canadaIdentity && !penangIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -397,6 +399,27 @@ for (const locale of expectedLocales) {
     const { record, document } = pagesByRoute.get(`${locale.code}${routePath}`);
     const styles = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => new URL(attr(node, 'href'), 'https://tripdistill.com').pathname);
     const styleHrefs = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
+    if (routePath === '/south-korea/') {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      if (!links.includes('https://www.metmuseum.org/toah/ht/06/eak.html')) fail(`Missing the Silla chronology source on ${locale.code} South Korea overview.`);
+      if (!bodyText.includes('676') || !bodyText.includes('935')) fail(`Missing distinct Silla-era dates on ${locale.code} South Korea overview.`);
+      if (locale.code === 'en') {
+        for (const phrase of ['Silla Kingdom (57 BCE', 'Unified Silla (676', 'only by the late seventh century', 'Gyeongju was its capital', 'For separate-ticket flights', 'same-day connection may work']) {
+          if (!bodyText.includes(phrase)) fail(`South Korea overview is missing its reviewed historical/conditional wording: ${phrase}.`);
+        }
+        if (bodyText.includes('The Silla kingdom ruled the Korean peninsula from 57 BCE to 935 CE') || bodyText.includes('Separate the domestic flight from an international departure rather than relying on a same-day connection')) fail('Superseded Silla or categorical flight wording remains on the English overview.');
+      }
+      if (locale.code === 'zh-Hant') {
+        for (const phrase of ['新羅王國（公元前57年至676年）', '統一新羅（676年至935年）', '七世紀後期', '慶州曾是新羅的首都', '機票分開購買', '當日轉機也可能可行']) {
+          if (!bodyText.includes(phrase)) fail(`Traditional Chinese South Korea overview is missing its reviewed historical/conditional wording: ${phrase}.`);
+        }
+        for (const phrase of ['走廊搭鐵路，延伸距離靠公車', '付款安排行程前', '國內線和國際線請分開日期']) {
+          if (bodyText.includes(phrase)) fail(`Superseded Traditional Chinese South Korea wording remains: ${phrase}.`);
+        }
+      }
+    }
     if (routePath.startsWith('/malaysia/george-town-penang/')) {
       const body = nodes(document, 'body')[0];
       const bodyText = text(body);
@@ -839,6 +862,10 @@ for (const locale of expectedLocales) {
       }
       continue;
     }
+    if (routePath === '/south-korea/') {
+      if (!styles.includes('/css/site.css')) fail(`Missing shared site stylesheet on ${locale.code} South Korea overview.`);
+      continue;
+    }
     const isParisRoute = routePath.startsWith('/france/paris/');
     const isDayTripChild = ['/versailles-palace-estate/', '/fontainebleau-palace-forest/', '/giverny-monet-vernon/'].some((suffix) => routePath.endsWith(suffix));
     const isNormandyChild = routePath.startsWith('/france/normandy/') && routePath !== '/france/normandy/';
@@ -1226,6 +1253,7 @@ if (!isLive) {
   const loirePages = manifest.pages.filter((record) => record.path.startsWith('/france/loire-valley/')).length;
   const champagnePages = manifest.pages.filter((record) => record.path.startsWith('/france/champagne/')).length;
   const canadaPages = manifest.pages.filter((record) => record.path.startsWith('/canada/montreal/') || record.path.startsWith('/canada/quebec-city-charlevoix/') || record.path.startsWith('/canada/toronto/') || record.path.startsWith('/canada/vancouver-north-shore/')).length;
+  const koreaCountryPages = manifest.pages.filter((record) => record.path === '/south-korea/').length;
   const seoulPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/seoul/')).length;
   const busanPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/busan/')).length;
   const gyeongjuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/gyeongju/')).length;
@@ -1244,7 +1272,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
