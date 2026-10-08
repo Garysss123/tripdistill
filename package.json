@@ -8,6 +8,7 @@
     "generate:china-expansion": "node scripts/generate-china-expansion.mjs",
     "generate:malaysia-depth": "node scripts/generate-malaysia-depth.mjs",
     "generate:vietnam": "node scripts/generate-vietnam.mjs",
+    "generate:vietnam:hue": "node scripts/generate-vietnam.mjs --hue-only",
     "generate:australia": "node scripts/generate-australia.mjs",
     "generate:usa": "node scripts/generate-usa.mjs",
     "generate:canada": "node scripts/generate-canada.mjs",

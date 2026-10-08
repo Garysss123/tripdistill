@@ -15,6 +15,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
 const vietnamLastmod = '2026-08-31';
+const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
 const canadaLastmod = '2026-09-12';
 const switzerlandLastmod = '2026-09-12';
@@ -39,6 +40,15 @@ const parisRegionDayTripsEditedRoutes = [
   '/france/paris-region-day-trips/versailles-palace-estate/',
   '/france/paris-region-day-trips/fontainebleau-palace-forest/',
   '/france/paris-region-day-trips/giverny-monet-vernon/'
+];
+const vietnamHueEditedRoutes = [
+  '/vietnam/hue/',
+  '/vietnam/hue/imperial-city-citadel/',
+  '/vietnam/hue/royal-tombs/',
+  '/vietnam/hue/thien-mu-perfume-river/',
+  '/vietnam/hue/thanh-toan-rural-loop/',
+  '/vietnam/hue/bach-ma-national-park/',
+  '/vietnam/hue/lang-co-lap-an-lagoon/'
 ];
 const normandyEditedRoutes = [
   '/france/normandy/',
@@ -150,6 +160,12 @@ for (const route of normandyEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Normandy route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: normandyLastmod });
+}
+
+for (const route of vietnamHueEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Hue route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamHueLastmod });
 }
 
 const english = [...records.values()];

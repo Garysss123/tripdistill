@@ -28,6 +28,34 @@ const escapeHtml = (value = '') => String(value)
 const absolute = (route) => `https://tripdistill.com${route}`;
 const routeFile = (route) => path.join(root, route.replace(/^\//, ''), 'index.html');
 
+function updateHueSiblingPhotoCredits(cluster) {
+  const photo = cluster.guides.find((guide) => guide.slug === 'royal-tombs')?.image;
+  if (!photo) throw new Error('Hue sibling credit update requires the current royal-tomb image.');
+  const previousAsset = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
+  const previousSource = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
+  const previousSourcePattern = previousSource.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const previousCredit = new RegExp(`<li(?: data-photo-asset="[^"]+")?><a href="${previousSourcePattern}"[^>]*>.*?<\\/li>`);
+  const newCredit = imageCredit(photo);
+  for (const slug of ['thanh-toan-rural-loop', 'bach-ma-national-park', 'lang-co-lap-an-lagoon']) {
+    const file = routeFile(`/vietnam/hue/${slug}/`);
+    const html = fs.readFileSync(file, 'utf8');
+    const start = html.indexOf('<section class="section sources"');
+    const end = html.indexOf('</section>', start);
+    if (start < 0 || end < 0) throw new Error(`Missing bounded source section on Hue sibling ${slug}.`);
+    let section = html.slice(start, end + '</section>'.length);
+    const oldMatches = [...section.matchAll(new RegExp(previousCredit.source, 'g'))];
+    if (oldMatches.length !== 1) throw new Error(`Expected one previous Hue tomb credit in ${slug}, found ${oldMatches.length}.`);
+    const oldRow = oldMatches[0][0];
+    const markedOldRow = oldRow.startsWith(`<li data-photo-asset="${previousAsset}"`)
+      ? oldRow
+      : oldRow.replace('<li>', `<li data-photo-asset="${previousAsset}">`);
+    section = section.replace(oldRow, markedOldRow);
+    if (!section.includes(photo.source)) section = section.replace(markedOldRow, `${markedOldRow}${newCredit}`);
+    const updated = html.slice(0, start) + section + html.slice(end + '</section>'.length);
+    if (updated !== html) fs.writeFileSync(file, updated);
+  }
+}
+
 function ensureMetaDescription(summary) {
   let value = String(summary).trim();
   if (value.length < 120) value += ' Plan transport, weather, access and a realistic sequence with current official sources.';
@@ -395,17 +423,29 @@ function updateEnglishMainScriptReferences() {
   return changed;
 }
 
-for (const [index, cluster] of vietnamClusters.entries()) {
+const hueOnly = process.argv.includes('--hue-only');
+const clustersToGenerate = hueOnly ? vietnamClusters.filter((cluster) => cluster.slug === 'hue') : vietnamClusters;
+const hueEditorialGuideSlugs = new Set(['imperial-city-citadel', 'royal-tombs', 'thien-mu-perfume-river']);
+const guidesToGenerate = hueOnly ? vietnamGuides.filter((guide) => guide.hubSlug === 'hue' && hueEditorialGuideSlugs.has(guide.slug)) : vietnamGuides;
+if (hueOnly && clustersToGenerate.length !== 1) throw new Error('Hue-only generation requires exactly one Hue cluster.');
+if (hueOnly && guidesToGenerate.length !== hueEditorialGuideSlugs.size) throw new Error('Hue-only generation requires the three approved Hue guide refreshes.');
+
+for (const cluster of clustersToGenerate) {
+  const index = vietnamClusters.indexOf(cluster);
   const file = routeFile(`/vietnam/${cluster.slug}/`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, hubPage(cluster, index));
 }
-for (const guide of vietnamGuides) {
+for (const guide of guidesToGenerate) {
   const cluster = vietnamClusters.find((item) => item.slug === guide.hubSlug);
   const file = routeFile(guide.url);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, guidePage(guide, cluster));
 }
+if (hueOnly) {
+  updateHueSiblingPhotoCredits(clustersToGenerate[0]);
+  console.log('Generated Hue only: 1 hub and 3 refreshed guides; the remaining 3 Hue siblings received only the current tomb-photo credit. Country shell, shared navigation, search and other regions were not rewritten.');
+} else {
 const countryFile = routeFile('/vietnam/');
 fs.mkdirSync(path.dirname(countryFile), { recursive: true });
 fs.writeFileSync(countryFile, countryPage());
@@ -418,3 +458,4 @@ updateAbout();
 const updatedMainReferences = updateEnglishMainScriptReferences();
 
 console.log(`Generated Vietnam: 1 country hub, ${vietnamClusters.length} regional hubs, ${vietnamGuides.length} focused guides, synchronized English shell/search, and ${updatedMainReferences} script references.`);
+}

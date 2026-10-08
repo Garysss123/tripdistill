@@ -95,6 +95,10 @@ const expectedRoutes = [
   ['/vietnam/ninh-binh/hang-mua-dragon-mountain/', 'Hang Mua & Dragon Mountain'],
   ['/vietnam/ninh-binh/van-long-wetland/', 'Van Long Wetland'],
   ['/vietnam/ninh-binh/cuc-phuong-conservation/', 'Cuc Phuong Forest & Conservation'],
+  ['/vietnam/hue/', 'Hue hub'],
+  ['/vietnam/hue/imperial-city-citadel/', 'Imperial City & Citadel'],
+  ['/vietnam/hue/royal-tombs/', 'Royal Tombs of Minh Mang, Tu Duc & Khai Dinh'],
+  ['/vietnam/hue/thien-mu-perfume-river/', 'Thien Mu & Perfume River'],
   ['/south-korea/jeju/', 'Jeju Island hub'],
   ['/south-korea/jeju/hallasan/', 'Hallasan summit and lower trails'],
   ['/south-korea/jeju/jeju-city-yongduam/', 'Jeju City & Yongduam'],
@@ -318,8 +322,9 @@ function inspectLocalizedPage(manifest, record, label) {
   const sapaIdentity = record.path.startsWith('/vietnam/sapa-northwest-highlands/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'sapa-northwest-highlands';
   const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
+  const hueIdentity = record.path.startsWith('/vietnam/hue/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hue' && attr(bodyNode, 'data-vn-family') === 'violet-rain-archive';
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
-  if (!franceIdentity && !canadaIdentity && !penangIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !penangIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -365,6 +370,21 @@ const sitemapPath = path.join(distRoot, 'sitemap.xml');
 const sitemap = fs.readFileSync(sitemapPath, 'utf8');
 const sitemapCount = [...sitemap.matchAll(/<loc>/g)].length;
 if (sitemapCount !== 4560 || sitemap.includes('/qa/paris-responsive/')) fail(`Local sitemap must contain 4,560 site URLs and no QA route; found ${sitemapCount}.`);
+const hueDatedRoutes = [
+  '/vietnam/hue/',
+  '/vietnam/hue/imperial-city-citadel/',
+  '/vietnam/hue/royal-tombs/',
+  '/vietnam/hue/thien-mu-perfume-river/',
+  '/vietnam/hue/thanh-toan-rural-loop/',
+  '/vietnam/hue/bach-ma-national-park/',
+  '/vietnam/hue/lang-co-lap-an-lagoon/'
+];
+for (const locale of expectedLocales) {
+  for (const route of hueDatedRoutes) {
+    const localizedRoute = `${locale.prefix}${route}`;
+    if (!sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-08</lastmod>`)) fail(`Hue sitemap lastmod must be 2026-10-08 for ${localizedRoute}.`);
+  }
+}
 
 const pageResults = manifest.pages.map((record) => inspectLocalizedPage(manifest, record, 'local QA'));
 const pagesByRoute = new Map(manifest.pages.map((record, index) => [`${record.locale}${record.path}`, { record, ...pageResults[index] }]));
@@ -416,6 +436,37 @@ for (const locale of expectedLocales) {
         if (routePath.endsWith('/armenian-street-core-zone/') && !searchEntry.summary.includes('Khoo Kongsi')) fail('Armenian Street search summary omits its named landmark.');
         if (routePath.endsWith('/weld-quay-clan-jetties/') && !searchEntry.summary.includes('Pengkalan Weld')) fail('Weld Quay search summary omits its named waterfront.');
         if (routePath.endsWith('/penang-hill-air-itam/') && !searchEntry.summary.includes('Flagstaff Hill')) fail('Penang Hill search summary omits the funicular terminus.');
+      }
+      continue;
+    }
+    if (routePath.startsWith('/vietnam/hue/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      const expectedPage = routePath === '/vietnam/hue/' ? 'hue' : routePath.split('/').filter(Boolean).at(-1);
+      if (attr(body, 'data-page') !== expectedPage || attr(body, 'data-vn-family') !== 'violet-rain-archive') fail(`Wrong Hue page identity on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/vietnam-hue.css?v=20261008-1')) fail(`Missing Hue edition stylesheet on ${locale.code} ${routePath}.`);
+      if (!links.includes('https://eticket.hueworldheritage.org.vn/')) fail(`Missing official Hue ticket/access portal on ${locale.code} ${routePath}.`);
+      const tombSource = 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg';
+      const tombLicense = 'https://creativecommons.org/licenses/by-sa/2.0/';
+      const tombCredits = nodes(document, 'li').filter((node) => nodes(node, 'a').some((link) => attr(link, 'href') === tombSource));
+      if (tombCredits.length !== 1) fail(`Expected one exact Minh Mang photo credit on ${locale.code} ${routePath}.`);
+      const creditLinks = nodes(tombCredits[0], 'a').map((node) => attr(node, 'href'));
+      const editDisclosure = nodes(tombCredits[0], 'span').map(text).find((value) => value.length > 24);
+      if (!creditLinks.includes(tombLicense) || !text(tombCredits[0]).includes('CC BY-SA 2.0') || !editDisclosure) fail(`Hue tomb credit must show the linked exact license and adapted-image share-alike disclosure on ${locale.code} ${routePath}.`);
+      if (/\b(?:VND|USD)\s*[\d,.]+|[$₫]\s*[\d,.]+/i.test(bodyText)) fail(`Unverified ticket/operator price appears on ${locale.code} ${routePath}.`);
+      if (locale.code === 'en') {
+        const requiredByRoute = {
+          '/vietnam/hue/': ['1802 to 1945', 'north-bank', 'south-bank civic streets', 'Perfume River'],
+          '/vietnam/hue/imperial-city-citadel/': ['Meridian Gate', 'Thai Hoa Palace', 'Forbidden Purple City'],
+          '/vietnam/hue/royal-tombs/': ['Minh Mang', 'Tu Duc', 'Khai Dinh', '1843'],
+          '/vietnam/hue/thien-mu-perfume-river/': ['seven-tier tower', 'active religious complex', 'licensed service', 'departure pier']
+        }[routePath];
+        for (const phrase of requiredByRoute) if (!bodyText.includes(phrase)) fail(`Hue route is missing locally specific interpretation or practical choice “${phrase}” on ${routePath}.`);
+        const schemaScripts = nodes(document, 'script').filter((node) => attr(node, 'type') === 'application/ld+json');
+        const schema = schemaScripts.flatMap((node) => { try { const parsed = JSON.parse(text(node)); return parsed['@graph'] || [parsed]; } catch { return []; } });
+        const article = schema.find((item) => item['@type'] === 'Article');
+        if (article?.dateModified !== '2026-10-08') fail(`Hue reviewed route must expose matching dateModified metadata on ${routePath}.`);
       }
       continue;
     }
@@ -1057,6 +1108,34 @@ const fieldBackground = compositeHex(fieldBase, '#d19a57', ninhBinhFieldPatternO
 const fieldContrast = contrastRatio(fieldText, fieldBackground);
 if (fieldContrast < 4.5) fail(`Ninh Binh field hero kicker contrast is ${fieldContrast.toFixed(2)}:1, below WCAG AA 4.5:1.`);
 console.log(`Ninh Binh estimated dark-hero kicker contrast passed: hub ${hubContrast.toFixed(2)}:1, field ${fieldContrast.toFixed(2)}:1.`);
+const hueCssText = fs.readFileSync(safeDistPath('/css/vietnam-hue.css'), 'utf8');
+const hueScope = 'body[data-vn-family="violet-rain-archive"]';
+const hueBodyWidth = cssRuleBlock(hueCssText, `${hueScope} {`);
+if (!/min-width\s*:\s*0\s*;/i.test(hueBodyWidth)) fail('Hue body selector does not release the global 320px minimum on narrow screens.');
+const hueContainerWidth = cssRuleBlock(hueCssText, `${hueScope} .site-shell,`);
+if (!hueContainerWidth.includes(`${hueScope} .page-content`) || !/min-width\s*:\s*0\s*;/i.test(hueContainerWidth) || !/max-width\s*:\s*100%\s*;/i.test(hueContainerWidth)) fail('Hue shell and content must shrink within the narrow viewport.');
+if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(hueContainerWidth)) fail('Hue shell/content rules must not conceal horizontal overflow.');
+if (hueCssText.lastIndexOf('@media (max-width:380px)') < 0) fail('Hue min-width release must be scoped to its family marker at the narrow breakpoint.');
+const hueVietnamCss = fs.readFileSync(safeDistPath('/css/vietnam.css'), 'utf8');
+const hueThemeRule = cssRuleBlock(hueVietnamCss, '[data-vn-family="violet-rain-archive"]');
+const rootThemeRule = cssRuleBlock(hueVietnamCss, ':root');
+const cssVariable = (block, name) => block.match(new RegExp(`${name}\\s*:\\s*(#[0-9a-f]{6})`, 'i'))?.[1]?.toLowerCase() || '';
+const hueDark = cssVariable(hueThemeRule, '--vn-dark');
+const huePaper = cssVariable(hueThemeRule, '--vn-paper');
+const hueInk = cssVariable(rootThemeRule, '--vn-ink');
+const hueAccentText = cssVariable(rootThemeRule, '--vn-accent-text');
+if (![hueDark, huePaper, hueInk, hueAccentText].every(Boolean)) fail('Cannot derive Hue foreground/background tokens for the static contrast estimate.');
+const hueInkContrast = contrastRatio(hueInk, huePaper);
+const hueBodyAccentContrast = contrastRatio(hueAccentText, huePaper);
+if (hueInkContrast < 4.5 || hueBodyAccentContrast < 4.5) fail(`Hue dark text contrast is below WCAG AA: ink ${hueInkContrast.toFixed(2)}:1, accent ${hueBodyAccentContrast.toFixed(2)}:1.`);
+const hueHeroAccentRule = cssRuleBlock(hueCssText, `${hueScope} .vn-hub-copy h1 span,`);
+const hueStageAccentRule = cssRuleBlock(hueCssText, `${hueScope} .vn-route-step:nth-child(even) > span,`);
+if (!/color\s*:\s*#f3c979\s*;/i.test(hueHeroAccentRule) || !/color\s*:\s*#f3c979\s*;/i.test(hueStageAccentRule)) fail('Hue dark-hero and dark-stage accent text must use the high-contrast gold token.');
+const hueGold = cssHexProperty(hueHeroAccentRule, 'color');
+const hueDarkSurfaces = ['#292430', '#46343a', '#294547', hueDark];
+const hueGoldContrast = Math.min(...hueDarkSurfaces.map((surface) => contrastRatio(hueGold, surface)));
+if (hueGoldContrast < 4.5) fail(`Hue gold text is below WCAG AA against the tested dark surfaces (${hueGoldContrast.toFixed(2)}:1).`);
+console.log(`Hue CSS checks passed: body and containers shrink; estimated dark text ${hueInkContrast.toFixed(2)}:1 / ${hueBodyAccentContrast.toFixed(2)}:1, gold on darkest tested surface ${hueGoldContrast.toFixed(2)}:1.`);
 const jejuCssText = fs.readFileSync(safeDistPath('/css/jeju.css'), 'utf8');
 const jejuBodyWidth = cssRuleBlock(jejuCssText, 'body[data-country="south-korea"][data-city="jeju"]');
 if (!/min-width\s*:\s*0\s*;/i.test(jejuBodyWidth) || !/max-width\s*:\s*100%\s*;/i.test(jejuBodyWidth)) fail('Jeju body must shrink below the global 320px minimum without widening the viewport.');
@@ -1150,6 +1229,7 @@ if (!isLive) {
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
   const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
   const ninhBinhPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ninh-binh/')).length;
+    const huePages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hue/')).length;
   const penangPages = manifest.pages.filter((record) => record.path.startsWith('/malaysia/george-town-penang/')).length;
   const jejuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/jeju/')).length;
   const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
@@ -1160,7 +1240,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);

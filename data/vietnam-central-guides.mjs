@@ -44,6 +44,7 @@ const hue = defineVietnamCluster({
       instrument: 'axis',
       countryCss: '/css/vietnam-hue.css?v=20261008-1',
       reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
       sources: [
         ['https://whc.unesco.org/en/list/678', 'UNESCO — Complex of Hué Monuments and the Citadel precincts'],
         ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — current tickets and access'],
@@ -96,6 +97,7 @@ const hue = defineVietnamCluster({
       instrument: 'ledger',
       countryCss: '/css/vietnam-hue.css?v=20261008-1',
       reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
       sources: [
         ['https://www.vietnam.travel/things-to-do/an-inside-guide-hue-tombs', 'Vietnam Tourism — tomb histories and differences'],
         ['https://eticket.hueworldheritage.org.vn/', 'Hue Monuments Conservation Centre — official tickets and open sites'],
@@ -115,9 +117,12 @@ const hue = defineVietnamCluster({
         src: '/assets/images/vietnam-hue-minh-mang-20261008.webp',
         alt: 'Đại Hồng Môn, the main gate at Minh Mang Royal Tomb in Hue',
         source: 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg',
+        commonsTitle: 'Royal Tomb of Minh Mang (14720605126).jpg',
         label: 'Royal Tomb of Minh Mang',
         creator: 'Erwin Verbruggen',
-        license: 'CC BY-SA 2.0'
+        license: 'CC BY-SA 2.0',
+        licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0/',
+        editNote: 'Cropped/resized and converted to WebP; this image adaptation is shared under the same license version.'
       }),
       summary: 'Compare Minh Mang’s axial gardens, Tu Duc’s lake-and-pavilion retreat and Khai Dinh’s steep mosaic interior; pick a pair that suits your walking pace.',
       lead: 'These are funerary landscapes designed around different rulers, not three versions of one palace. Minh Mang’s long axial sequence uses gates, bridges, ponds and pine-covered hills; Tu Duc shaped a lake-and-pavilion retreat associated with his poetry and time spent there during his life; Khai Dinh’s climb ends in a richly tiled interior that combines Vietnamese and European forms. A visit becomes more useful when you choose which contrast you want to see.',
@@ -147,6 +152,7 @@ const hue = defineVietnamCluster({
       instrument: 'ribbon',
       countryCss: '/css/vietnam-hue.css?v=20261008-1',
       reviewDate: '8 October 2026',
+      isoDate: '2026-10-08',
       sources: [
         ['https://whc.unesco.org/en/list/678', 'UNESCO — Thien Mu as an associated monument of the Hue capital'],
         ['https://www.vietnam.travel/places-to-go/central-vietnam/hue', 'Vietnam Tourism — Thien Mu tower and transport'],

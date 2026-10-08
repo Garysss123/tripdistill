@@ -53,3 +53,15 @@ body[data-page="thien-mu-perfume-river"] .vn-field-image {
   body[data-vn-family="violet-rain-archive"] .vn-hub-hero { border-radius:.25rem 2.6rem .25rem 2.6rem; }
   body[data-vn-family="violet-rain-archive"] .vn-field-hero { border-radius:.25rem 2.6rem .25rem 2.6rem; }
 }
+
+body[data-vn-family="violet-rain-archive"] .vn-route-step:nth-child(even) > span,
+body[data-vn-family="violet-rain-archive"] .vn-route-step:nth-child(even) small { color:#f3c979; }
+
+body[data-vn-family="violet-rain-archive"] .vn-hub-copy h1 span,
+body[data-vn-family="violet-rain-archive"] .vn-field-copy h1 span { color:#f3c979; }
+
+@media (max-width:380px) {
+  body[data-vn-family="violet-rain-archive"] { min-width:0; }
+  body[data-vn-family="violet-rain-archive"] .site-shell,
+  body[data-vn-family="violet-rain-archive"] .page-content { min-width:0; max-width:100%; }
+}

@@ -29,8 +29,10 @@ function localTarget(reference) {
   return reference.endsWith('/') ? routeFile(reference) : path.join(root, reference.replace(/^\//, ''));
 }
 
-function checkImageCredit(html, image, route) {
-  for (const required of [image.src, image.source, image.creator, image.license, image.editNote]) {
+function checkImageCredit(html, image, route, imageIsRendered = true) {
+  const requiredFields = [image.source, image.creator, image.license, image.editNote];
+  if (imageIsRendered) requiredFields.unshift(image.src);
+  for (const required of requiredFields) {
     const escaped = String(required).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
     if (!html.includes(required) && !html.includes(escaped)) problems.push(`${route}: visible image attribution is missing ${required}`);
   }
@@ -142,7 +144,15 @@ for (const record of routes) {
   }
   if (record.kind === 'guide') {
     const cluster = vietnamClusters.find((item) => item.slug === record.guide.hubSlug);
-    for (const sibling of cluster.guides) checkImageCredit(html, sibling.image, record.route);
+    for (const sibling of cluster.guides) checkImageCredit(html, sibling.image, record.route, html.includes(sibling.image.src));
+    const legacyHueTombCard = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
+    if (record.guide.hubSlug === 'hue' && html.includes(legacyHueTombCard)) {
+      for (const required of [
+        'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg',
+        'Pham Van Hoa',
+        'CC BY-SA 4.0'
+      ]) if (!html.includes(required)) problems.push(`${record.route}: the unchanged Minh Mang tomb-card image is missing its existing visible attribution ${required}`);
+    }
     if ((html.match(/class="vn-route-step"/g) || []).length !== 4) problems.push(`${record.route}: expected four route stages`);
     if ((html.match(/class="vn-check"/g) || []).length !== 3) problems.push(`${record.route}: expected three checks`);
     if ((html.match(/class="vn-related-card"/g) || []).length !== 5) problems.push(`${record.route}: expected five sibling links`);
@@ -173,7 +183,8 @@ if (new Set(vietnamSearch.map((item) => item.url)).size !== vietnamSearch.length
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 for (const record of routes) {
   for (const [, prefix] of locales) {
-    if (!sitemap.includes(`<loc>https://tripdistill.com${prefix}${record.route}</loc><lastmod>2026-08-31</lastmod>`)) problems.push(`${record.route}: missing ${prefix || 'English'} sitemap record`);
+    const lastmod = record.route.startsWith('/vietnam/hue/') ? '2026-10-08' : '2026-08-31';
+    if (!sitemap.includes(`<loc>https://tripdistill.com${prefix}${record.route}</loc><lastmod>${lastmod}</lastmod>`)) problems.push(`${record.route}: missing ${prefix || 'English'} sitemap record with lastmod ${lastmod}`);
   }
 }
 

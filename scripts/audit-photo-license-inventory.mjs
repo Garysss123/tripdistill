@@ -437,7 +437,7 @@ function collect(value, moduleName, seen, depth = 0) {
       moduleName,
       src: value.src,
       sourceUrl: value.source ?? null,
-      sourceTitle: value.label ?? value.commonsTitle ?? null,
+      sourceTitle: value.commonsTitle ?? value.label ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
       licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
@@ -557,6 +557,12 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg', 'Hue image review: the exact Commons file page identifies Erwin Verbruggen as creator, dates the photograph 25 June 2014, and declares CC BY-SA 2.0 Generic. The local WebP pixels show the Đại Hồng Môn entrance gate at Minh Mang Royal Tomb. The visible credit links the exact source and canonical version 2.0 license, discloses resize/crop/WebP adaptation and states that the adaptation is shared under the same license version. Source-page details and image subject were checked on 2026-10-08.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
 const explicitCreditMappings = new Map([
   ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
@@ -573,6 +579,7 @@ const explicitCreditMappings = new Map([
   ['/assets/images/thailand-andaman-similan.webp', { creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', note: 'Matched the island group and panoramic view in the image alt to the same-route credit.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/vietnam-hue-minh-mang-20261008.webp',
   '/assets/images/france-paris-louvre-salle-mollien-20261006.webp',
   '/assets/images/italy-rome-ancient-rome-capitoline.webp',
   '/assets/images/italy-rome-historic-centre-trastevere.webp',
@@ -625,6 +632,7 @@ const visuallyReviewedAssetPaths = new Set([
 ]);
 const visualReviewDateByAsset = new Map([
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ['/assets/images/vietnam-hue-minh-mang-20261008.webp', '2026-10-08'],
   ['/assets/images/france-paris-louvre-salle-mollien-20261006.webp', '2026-10-06'],
   ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
   ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
@@ -763,7 +771,10 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
   }))
 }));
 
-const buildImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
+const assetImageExtras = fs.readdirSync(imageDir)
+  .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file));
+const rootImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
+const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
 const counts = {
   assetFileCount: assetPaths.length,
   completeSourceCreatorLicenseRecords: entries.filter((row) => row.sourceUrl && row.creator && row.license).length,
@@ -796,9 +807,9 @@ const report = {
   verificationMethod: {
     structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',
     visibleCredits: 'Parsed photo-credit list items in English page sections with class sources. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; eight explicit source-caption matches are documented by asset path and note.',
-    sourcePageChecks: 'Manually checked source pages marked source_page_checked on 2026-10-04, 2026-10-05, or 2026-10-06, with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
+    sourcePageChecks: 'Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
     imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
-    buildImageCountReconciliation: 'The 779 WebP photos in assets/images plus favicon.svg (an SVG icon counted by build-dist.mjs) explain the previous build tally of 780 images.'
+    buildImageCountReconciliation: `The ${assetPaths.length} WebP photos and ${assetImageExtras.length} other image assets in assets/images, plus ${rootImageExtras.length} root-level image assets, explain the ${counts.expectedBuildImageCount} build image files.`
   },
   knownHistoricalMismatch: {
     status: 'removed_from_current_inventory',
