@@ -255,7 +255,11 @@ const manifest = {
     '/thailand/chiang-mai/mae-kampong/',
     '/thailand/chiang-mai/nimman-university/',
     '/thailand/chiang-mai/chang-moi-warorot/',
-    '/thailand/chiang-mai/mae-rim-mae-sa/'
+    '/thailand/chiang-mai/mae-rim-mae-sa/',
+    '/thailand/andaman/',
+    '/thailand/andaman/phuket-old-town-south/',
+    '/thailand/andaman/phang-nga-ko-yao/',
+    '/thailand/andaman/krabi-railay/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',

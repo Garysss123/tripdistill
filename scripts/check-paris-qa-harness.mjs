@@ -446,9 +446,13 @@ function assertHarness(html, label) {
     '/thailand/chiang-mai/mae-kampong/',
     '/thailand/chiang-mai/nimman-university/',
     '/thailand/chiang-mai/chang-moi-warorot/',
-    '/thailand/chiang-mai/mae-rim-mae-sa/'
+    '/thailand/chiang-mai/mae-rim-mae-sa/',
+    '/thailand/andaman/',
+    '/thailand/andaman/phuket-old-town-south/',
+    '/thailand/andaman/phang-nga-ko-yao/',
+    '/thailand/andaman/krabi-railay/'
   ].map((routePath) => [routePath, 350_000]));
-  if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Chiang Mai stylesheet budgets are missing or unexpected.`);
+  if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Thailand stylesheet budgets are missing or unexpected.`);
   const expectedImageBudgets = Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
     '/assets/images/thailand-chiang-mai-mae-kampong.webp',
