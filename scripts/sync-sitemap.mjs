@@ -18,9 +18,11 @@ const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
 const canadaLastmod = '2026-09-12';
+const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
 const southKoreaLastmod = '2026-10-08';
+const thailandBangkokLastmod = '2026-10-08';
 const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
@@ -66,6 +68,17 @@ const zurichEditedRoutes = [
   '/switzerland/zurich-lake/zurich-west-museums/'
 ];
 const southKoreaEditedRoutes = ['/south-korea/'];
+const victoriaResponsiveEditedRoutes = [
+  '/canada/victoria-south-island/',
+  '/canada/victoria-south-island/butchart-saanich/',
+  '/canada/victoria-south-island/sooke-juan-de-fuca/'
+];
+const thailandBangkokEditedRoutes = [
+  '/thailand/bangkok/',
+  '/thailand/bangkok/rattanakosin-grand-palace/',
+  '/thailand/bangkok/banglamphu-phra-athit/',
+  '/thailand/bangkok/yaowarat-talat-noi/'
+];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters
   .filter((cluster) => cluster.slug !== 'paris')
@@ -172,6 +185,12 @@ for (const route of normandyEditedRoutes) {
   records.set(route, { ...record, lastmod: normandyLastmod });
 }
 
+for (const route of victoriaResponsiveEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date Victoria responsive edit route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: victoriaResponsiveLastmod });
+}
+
 for (const route of zurichEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Zurich route absent from sitemap: ${route}`);
@@ -182,6 +201,12 @@ for (const route of southKoreaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited South Korea route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: southKoreaLastmod });
+}
+
+for (const route of thailandBangkokEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Bangkok route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: thailandBangkokLastmod });
 }
 
 for (const route of vietnamHueEditedRoutes) {

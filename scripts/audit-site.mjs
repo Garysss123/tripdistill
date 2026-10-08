@@ -10,6 +10,12 @@ import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingd
 import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
+const thailandBangkokCssRoutes = new Set([
+  '/thailand/bangkok/',
+  '/thailand/bangkok/rattanakosin-grand-palace/',
+  '/thailand/bangkok/banglamphu-phra-athit/',
+  '/thailand/bangkok/yaowarat-talat-noi/'
+]);
 const problems = [];
 const notes = [];
 const siteCssVersions = ['/css/site.css?v=20260926-1', '/css/site.css?v=20261005-2', '/css/site.css?v=20261006-1', '/css/site.css?v=20261006-2'];
@@ -354,7 +360,8 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes('class="it-live-desk"')) problems.push(`${relativePath}: Italy route is missing near-claim official sources`);
     if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: Italy route does not contain four operating stages`);
   }
-  if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
+  const expectedThailandStylesheet = thailandBangkokCssRoutes.has(baseRoute) ? '/css/thailand.css?v=20261008-1' : '/css/thailand.css?v=20260826-1';
+  if (baseRoute.startsWith('/thailand/') && !html.includes(expectedThailandStylesheet)) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
   if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);

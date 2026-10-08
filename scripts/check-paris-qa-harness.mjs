@@ -127,6 +127,10 @@ const expectedRoutes = [
   ['/malaysia/george-town-penang/armenian-street-core-zone/', 'Armenian Street & Core Zone'],
   ['/malaysia/george-town-penang/weld-quay-clan-jetties/', 'Weld Quay & Clan Jetties'],
   ['/malaysia/george-town-penang/penang-hill-air-itam/', 'Penang Hill & Air Itam'],
+  ['/thailand/bangkok/', 'Bangkok hub'],
+  ['/thailand/bangkok/rattanakosin-grand-palace/', 'Rattanakosin & Grand Palace'],
+  ['/thailand/bangkok/banglamphu-phra-athit/', 'Banglamphu & Phra Athit'],
+  ['/thailand/bangkok/yaowarat-talat-noi/', 'Yaowarat & Talat Noi'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -237,6 +241,74 @@ function cssRuleBlock(css, selector, fromIndex = 0) {
   return '';
 }
 
+
+function assertBangkokHeroContrast() {
+  const thailandCss = fs.readFileSync(safeDistPath('/css/thailand.css'), 'utf8');
+  const siteCss = fs.readFileSync(safeDistPath('/css/site.css'), 'utf8');
+  const scope = 'body[data-country="thailand"][data-city="bangkok"]';
+  const rootRule = cssRuleBlock(siteCss, ':root');
+  const orangeSoft = rootRule.match(/--orange-soft\s*:\s*(#[0-9a-f]{6})/i)?.[1]?.toLowerCase() || '';
+  const sharedEyebrow = cssRuleBlock(siteCss, '.eyebrow');
+  if (!orangeSoft || !/background\s*:\s*var\(--orange-soft\)/i.test(sharedEyebrow)) fail('Shared eyebrow background token is missing from site.css.');
+  const kickerCases = [
+    [scope + ' .bangkok-river-copy .eyebrow', '#46251b', '#fff0c5'],
+    [scope + ' .threshold-hero .eyebrow', '#8e3528', orangeSoft],
+    [scope + ' .zine-hero .eyebrow', '#8f2c29', orangeSoft],
+    [scope + ' .neon-hero .eyebrow', '#ffe2a3', '#211a22']
+  ];
+  const kickerRatios = [];
+  for (const [selector, expectedColor, expectedBackground] of kickerCases) {
+    const rule = cssRuleBlock(thailandCss, selector);
+    const color = cssHexProperty(rule, 'color');
+    const directBackground = cssHexProperty(rule, 'background');
+    const background = directBackground || expectedBackground;
+    if (!rule || !rule.startsWith(scope) || color !== expectedColor || background !== expectedBackground) fail('Bangkok hero kicker colors must remain country-scoped and explicit for ' + selector + '.');
+    const ratio = contrastRatio(color, background);
+    if (ratio < 4.5) fail('Bangkok hero kicker contrast is below 4.5:1 for ' + selector + '.');
+    kickerRatios.push(selector.replace(scope, '').trim() + ' ' + ratio.toFixed(2) + ':1');
+  }
+  const thaiNight = thailandCss.match(/--thai-night\s*:\s*(#[0-9a-f]{6})/i)?.[1]?.toLowerCase() || '';
+  const heroRule = cssRuleBlock(thailandCss, '.bangkok-river-hero');
+  const titleRule = cssRuleBlock(thailandCss, '.bangkok-river-copy h1');
+  const subtitleRule = cssRuleBlock(thailandCss, '.bangkok-river-copy h1 span');
+  const titleColor = cssHexProperty(titleRule, 'color') || (/\bcolor\s*:\s*#fff\b/i.test(titleRule) ? '#ffffff' : '');
+  const subtitleColor = cssHexProperty(subtitleRule, 'color');
+  if (!thaiNight || !/background\s*:\s*var\(--thai-night\)/i.test(heroRule) || titleColor !== '#ffffff' || subtitleColor !== '#5fc0c1') fail('Bangkok hero title and cyan subtitle colors must retain their reviewed theme values.');
+  const titleRatio = contrastRatio(titleColor, thaiNight);
+  const subtitleRatio = contrastRatio(subtitleColor, thaiNight);
+  if (titleRatio < 4.5 || subtitleRatio < 4.5) fail('Bangkok hero title or cyan subtitle contrast is below 4.5:1.');
+  console.log('Bangkok hero static contrast passed: ' + kickerRatios.join(', ') + ', white title ' + titleRatio.toFixed(2) + ':1, cyan subtitle ' + subtitleRatio.toFixed(2) + ':1.');
+}
+
+function assertBangkokLayoutGuards() {
+  const css = fs.readFileSync(safeDistPath('/css/thailand.css'), 'utf8');
+  const scope = 'body[data-country="thailand"][data-city="bangkok"]';
+  const pages = ['bangkok', 'rattanakosin-grand-palace', 'banglamphu-phra-athit', 'yaowarat-talat-noi'];
+  for (const page of pages) {
+    const selector = 'body[data-country="thailand"][data-city="bangkok"][data-page="' + page + '"]';
+    const rule = cssRuleBlock(css, selector);
+    if (!rule || !/min-width\s*:\s*0\s*;/i.test(rule) || !/max-width\s*:\s*100%\s*;/i.test(rule)) fail('Bangkok route body must release the width floor and fit its viewport: ' + page + '.');
+    if (/overflow-x\s*:\s*(?:hidden|clip)\b/i.test(rule)) fail('Bangkok route body must not conceal horizontal overflow: ' + page + '.');
+  }
+  const shellRule = cssRuleBlock(css, scope + ' .site-shell,');
+  if (!shellRule.includes(scope + ' .page-content') || !/min-width\s*:\s*0\s*;/i.test(shellRule) || !/max-width\s*:\s*100%\s*;/i.test(shellRule)) fail('Bangkok shell and page content must be allowed to shrink.');
+  const textRule = cssRuleBlock(css, scope + ' .bangkok-river-copy,');
+  if (!textRule.includes(scope + ' .talat-mark') || !/min-width\s*:\s*0\s*;/i.test(textRule) || !/overflow-wrap\s*:\s*anywhere\s*;/i.test(textRule)) fail('Bangkok text columns must shrink and wrap long translated content.');
+  const mobileStart = css.lastIndexOf('@media (max-width: 760px)');
+  if (mobileStart < 0) fail('Bangkok responsive grid rules are missing.');
+  for (const selector of ['.bangkok-river-hero', '.threshold-hero', '.zine-hero', '.bangkok-area-atlas', '.thai-day-plan', '.zine-walk--field', '.talat-split--field', '.bangkok-system-strip', '.court-sequence', '.sleep-volume', '.thai-decision-pair']) {
+    const rule = cssRuleBlock(css, scope + ' ' + selector, mobileStart);
+    if (!rule || !/grid-template-columns\s*:\s*minmax\(0\s*,\s*1fr\)\s*;/i.test(rule)) fail('Bangkok mobile layout must use a shrinkable single column for ' + selector + '.');
+  }
+  for (const [selector, columns] of [[scope + ' .bangkok-river-ledger', /3\.5rem\s+minmax\(0\s*,\s*1fr\)/i], [scope + ' .neon-menu-row', /minmax\(0\s*,\s*1fr\)/i]]) {
+    const rule = cssRuleBlock(css, selector, mobileStart);
+    if (!rule || !columns.test(rule)) fail('Bangkok mobile content column must be shrinkable for ' + selector + '.');
+  }
+  const marker = '/* Bangkok routes: release the site-wide width floor';
+  const guardCss = css.slice(css.lastIndexOf(marker));
+  if (!guardCss || /overflow-x\s*:\s*(?:hidden|clip)\b/i.test(guardCss)) fail('Bangkok layout guards must not hide horizontal overflow.');
+}
+
 function getManifest(html, label) {
   const document = parse(html);
   const manifests = nodes(document, 'script').filter((node) => attr(node, 'id') === 'qa-manifest');
@@ -247,7 +319,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 20 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
+  if (!intro || !/20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver & the North Shore, and Victoria & South Vancouver Island/.test(text(intro)) || !/the South Korea country overview/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro)) || !/four Bangkok routes/.test(text(intro))) fail(`${label}: harness introduction must identify the South Korea country overview and count all 20 Canada routes, seven Gyeongju routes and four George Town & Penang routes and four Bangkok routes.`);
   if (!/four Zurich & Lake Zurich routes/.test(text(intro))) fail(`${label}: harness introduction must identify all four Zurich routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
@@ -314,7 +386,7 @@ function assertHarness(html, label) {
   const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
   if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, Zurich, South Korea, Vietnam and Penang scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, Zurich, South Korea, Vietnam, Penang and Bangkok scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -344,7 +416,9 @@ function inspectLocalizedPage(manifest, record, label) {
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
   const hueIdentity = record.path.startsWith('/vietnam/hue/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'hue' && attr(bodyNode, 'data-vn-family') === 'violet-rain-archive';
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
-  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const bangkokPage = record.path === '/thailand/bangkok/' ? 'bangkok' : record.path.split('/').filter(Boolean).at(-1);
+  const bangkokIdentity = record.path.startsWith('/thailand/bangkok/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-city') === 'bangkok' && attr(bodyNode, 'data-parent-page') === 'bangkok' && attr(bodyNode, 'data-page') === bangkokPage;
+  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !jejuIdentity && !bangkokIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -386,10 +460,26 @@ async function fetchNoStore(url) {
 if (!fs.existsSync(harnessPath)) fail(`Missing ${path.relative(root, harnessPath)}; run npm run build:paris-qa-harness after npm run build.`);
 const localHarnessHtml = fs.readFileSync(harnessPath, 'utf8');
 const manifest = assertHarness(localHarnessHtml, 'local Paris harness');
+assertBangkokHeroContrast();
+assertBangkokLayoutGuards();
 const sitemapPath = path.join(distRoot, 'sitemap.xml');
 const sitemap = fs.readFileSync(sitemapPath, 'utf8');
 const sitemapCount = [...sitemap.matchAll(/<loc>/g)].length;
 if (sitemapCount !== 4560 || sitemap.includes('/qa/paris-responsive/')) fail(`Local sitemap must contain 4,560 site URLs and no QA route; found ${sitemapCount}.`);
+const bangkokDatedRoutes = [
+  '/thailand/bangkok/',
+  '/thailand/bangkok/rattanakosin-grand-palace/',
+  '/thailand/bangkok/banglamphu-phra-athit/',
+  '/thailand/bangkok/yaowarat-talat-noi/'
+];
+for (const locale of expectedLocales) {
+  for (const route of bangkokDatedRoutes) {
+    const localizedRoute = locale.prefix + route;
+    const dateEntry = '<loc>https://tripdistill.com' + localizedRoute + '</loc><lastmod>2026-10-08</lastmod>';
+    if (!sitemap.includes(dateEntry)) fail('Bangkok sitemap lastmod must be 2026-10-08 for ' + localizedRoute + '.');
+  }
+}
+
 const hueDatedRoutes = [
   '/vietnam/hue/',
   '/vietnam/hue/imperial-city-citadel/',
@@ -477,6 +567,119 @@ for (const locale of expectedLocales) {
         if (routePath.endsWith('/armenian-street-core-zone/') && !searchEntry.summary.includes('Khoo Kongsi')) fail('Armenian Street search summary omits its named landmark.');
         if (routePath.endsWith('/weld-quay-clan-jetties/') && !searchEntry.summary.includes('Pengkalan Weld')) fail('Weld Quay search summary omits its named waterfront.');
         if (routePath.endsWith('/penang-hill-air-itam/') && !searchEntry.summary.includes('Flagstaff Hill')) fail('Penang Hill search summary omits the funicular terminus.');
+      }
+      continue;
+    }
+    if (routePath.startsWith('/thailand/bangkok/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const isHub = routePath === '/thailand/bangkok/';
+      const expectedPage = isHub ? 'bangkok' : routePath.split('/').filter(Boolean).at(-1);
+      if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-city') !== 'bangkok' || attr(body, 'data-parent-page') !== 'bangkok' || attr(body, 'data-page') !== expectedPage) fail('Wrong Bangkok route markers on ' + locale.code + ' ' + routePath + '.');
+      if (!styleHrefs.includes('/css/thailand.css?v=20261008-1')) fail('Missing current Bangkok stylesheet version on ' + locale.code + ' ' + routePath + '.');
+      const assetPaths = new Set((manifest.assets || []).map((asset) => asset.path));
+      const linkedPaths = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase().split(/\s+/).includes('stylesheet')).map((node) => attr(node, 'href'));
+      for (const image of nodes(document, 'img')) linkedPaths.push(attr(image, 'src'), ...attr(image, 'srcset').split(',').map((candidate) => candidate.trim().split(/\s+/)[0]).filter(Boolean));
+      for (const asset of linkedPaths.filter((value) => value.startsWith('/'))) {
+        const assetPath = new URL(asset, 'https://tripdistill.com').pathname;
+        if (!assetPaths.has(assetPath)) fail('Bangkok manifest is missing a linked stylesheet or image hash for ' + locale.code + ' ' + routePath + ': ' + assetPath + '.');
+      }
+      if (!assetPaths.has('/css/thailand.css')) fail('Bangkok stylesheet hash is missing from the route asset manifest.');
+      const heading = text(nodes(document, 'h1')[0]).replace(/\s+/g, ' ').trim();
+      const headingMarkers = {
+        'zh-Hant': {
+          '/thailand/bangkok/': ['曼谷'],
+          '/thailand/bangkok/rattanakosin-grand-palace/': ['拉達那哥欣'],
+          '/thailand/bangkok/banglamphu-phra-athit/': ['邦蘭普'],
+          '/thailand/bangkok/yaowarat-talat-noi/': ['耀華力', '塔拉諾伊']
+        },
+        ja: {
+          '/thailand/bangkok/': ['バンコク'],
+          '/thailand/bangkok/rattanakosin-grand-palace/': ['ラタナコーシン'],
+          '/thailand/bangkok/banglamphu-phra-athit/': ['バンランプー'],
+          '/thailand/bangkok/yaowarat-talat-noi/': ['ヤワラート', 'タラートノーイ']
+        },
+        ko: {
+          '/thailand/bangkok/': ['방콕'],
+          '/thailand/bangkok/rattanakosin-grand-palace/': ['라따나꼬신'],
+          '/thailand/bangkok/banglamphu-phra-athit/': ['방람푸'],
+          '/thailand/bangkok/yaowarat-talat-noi/': ['야오와랏', '딸랏 너이']
+        },
+        th: {
+          '/thailand/bangkok/': ['กรุงเทพฯ'],
+          '/thailand/bangkok/rattanakosin-grand-palace/': ['รัตนโกสินทร์'],
+          '/thailand/bangkok/banglamphu-phra-athit/': ['บางลำพู'],
+          '/thailand/bangkok/yaowarat-talat-noi/': ['เยาวราช', 'ตลาดน้อย']
+        }
+      };
+      const expectedHeadingMarkers = headingMarkers[locale.code] && headingMarkers[locale.code][routePath] || [];
+      for (const marker of expectedHeadingMarkers) if (!heading.includes(marker)) fail('Bangkok localized heading is missing ' + marker + ' on ' + locale.code + ' ' + routePath + '.');
+      const requiredSources = {
+        '/thailand/bangkok/': [
+          'https://www.tourismthailand.org/Destinations/Provinces/Bangkok/219',
+          'https://visit.bangkok.go.th/about',
+          'https://www.bts.co.th/eng/routemap.html'
+        ],
+        '/thailand/bangkok/rattanakosin-grand-palace/': [
+          'https://www.royalgrandpalace.th/en/home',
+          'https://www.watpho.com/en/contact/plan'
+        ],
+        '/thailand/bangkok/banglamphu-phra-athit/': [
+          'https://visit.bangkok.go.th/about',
+          'https://www.chaophrayaexpressboat.com/chaophrayaexpressboat?lang=enLa',
+          'https://www.thailandtourismdirectory.go.th/en/attraction/1296'
+        ],
+        '/thailand/bangkok/yaowarat-talat-noi/': [
+          'https://www.tourismthailand.org/Articles/1-day-in-talat-noi',
+          'https://metro.bemplc.co.th/'
+        ]
+      }[routePath];
+      const anchors = nodes(document, 'a');
+      for (const href of requiredSources) {
+        const anchor = anchors.find((node) => attr(node, 'href') === href);
+        if (!anchor) fail('Missing official Bangkok source link on ' + locale.code + ' ' + routePath + ': ' + href + '.');
+        if (attr(anchor, 'target') !== '_blank' || !attr(anchor, 'rel').toLowerCase().split(/\s+/).includes('noopener')) fail('Bangkok official links must open safely on ' + locale.code + ' ' + routePath + ': ' + href + '.');
+        const sourceLabel = text(anchor).replace(/\s+/g, ' ').trim();
+        if (!sourceLabel) fail('Bangkok official link has no visible label on ' + locale.code + ' ' + routePath + ': ' + href + '.');
+        const localizedScript = { 'zh-Hant': /[\u4e00-\u9fff]/, ja: /[\u3040-\u30ff\u4e00-\u9fff]/, ko: /[\uac00-\ud7af]/, th: /[\u0e00-\u0e7f]/ }[locale.code];
+        if (localizedScript && !localizedScript.test(sourceLabel)) fail('Bangkok official source label is not localized on ' + locale.code + ' ' + routePath + ': ' + href + '.');
+      }
+      const englishRecord = pagesByRoute.get('en' + routePath);
+      const englishHeading = text(nodes(englishRecord.document, 'h1')[0]).replace(/\s+/g, ' ').trim();
+      if (locale.code !== 'en' && heading === englishHeading) fail('Bangkok H1 is still English on ' + locale.code + ' ' + routePath + '.');
+      if (isHub) {
+        const newCopy = {
+          en: 'Choose by the day you want to plan: Rattanakosin for the ticketed palace precinct; Banglamphu for old-city lanes and the river; Yaowarat & Talat Noi for daylight heritage followed by evening food. For rail-led days, compare Siam, Sukhumvit and Silom; save Thonburi for a canal walk and Chatuchak for a weekend-market day.',
+          'zh-Hant': '依想安排的行程選區：購票參觀王宮區，選拉達那哥欣；想走舊城巷弄並看河岸，選邦蘭普；想白天看歷史街區、晚上吃美食，選耀華力與塔拉諾伊。以鐵路為主的行程可比較暹羅、素坤逸與是隆；吞武里適合運河散步，恰圖恰則留給週末市集日。',
+          ja: '予定したい一日から地区を選びましょう。入場券が必要な王宮エリアならラタナコーシン、旧市街の路地と川沿いならバーンランプー、日中の歴史散策から夜の食事へつなぐならヤワラートとタラートノーイが向いています。鉄道中心の日はサイアム、スクンビット、シーロムを比較し、トンブリーは運河散策、チャトゥチャックは週末市場の日に組み込みましょう。',
+          ko: '계획하려는 하루에 맞춰 지역을 고르세요. 입장권이 필요한 왕궁 구역은 랏따나꼬신, 구시가지 골목과 강변은 방람푸, 낮의 역사 산책 뒤 저녁 먹거리를 잇고 싶다면 야오와랏과 따랏노이가 알맞습니다. 철도 중심 일정이라면 시암·수쿰윗·실롬을 비교하고, 톤부리는 운하 산책, 짜뚜짝은 주말 시장을 중심으로 계획하세요.',
+          th: 'เลือกย่านตามรูปแบบวันที่อยากเที่ยว: รัตนโกสินทร์เหมาะกับเขตพระราชฐานที่ต้องซื้อตั๋ว บางลำพูเหมาะกับตรอกเมืองเก่าและริมแม่น้ำ ส่วนเยาวราชกับตลาดน้อยเหมาะกับการชมย่านประวัติศาสตร์ตอนกลางวันต่อด้วยมื้อเย็น หากเน้นรถไฟฟ้าให้เทียบสยาม สุขุมวิท และสีลม แล้วเก็บธนบุรีไว้สำหรับเดินริมคลองและจตุจักรไว้สำหรับวันที่มีตลาดนัดสุดสัปดาห์.'
+        }[locale.code];
+        if (!bodyText.includes(newCopy) || bodyText.includes('Each guide answers a different planning question')) fail('Bangkok hub is missing its localized neighborhood-selection advice on ' + locale.code + '.');
+        const mapPosition = {
+          en: 'north of Ari Station',
+          'zh-Hant': '阿里站北側',
+          ja: 'アーリー駅の北側',
+          ko: '아리역 북쪽',
+          th: 'อยู่ทางเหนือของสถานีอารีย์'
+        }[locale.code];
+        const mapCard = classNodes(document, 'bangkok-atlas-illustration')[0];
+        if (!mapCard || !text(mapCard).includes(mapPosition) || bodyText.includes('before Ari')) fail('Bangkok Chatuchak map must place the market north of Ari Station on ' + locale.code + '.');
+        const btsLabels = {
+          en: 'BTS Skytrain — official route map, fares and timetables',
+          'zh-Hant': 'BTS 空鐵—官方路線圖、票價與時刻表',
+          ja: 'BTSスカイトレイン—公式路線図・運賃・時刻表',
+          ko: 'BTS 스카이트레인—공식 노선도·운임·시간표',
+          th: 'BTS SkyTrain — แผนที่เส้นทาง ค่าโดยสาร และตารางเดินรถอย่างเป็นทางการ'
+        };
+        const btsLink = anchors.find((node) => attr(node, 'href') === 'https://www.bts.co.th/eng/routemap.html');
+        if (!btsLink || text(btsLink).trim() !== btsLabels[locale.code]) fail('Bangkok official BTS map label is missing or untranslated on ' + locale.code + '.');
+      }
+      if (locale.code === 'zh-Hant') {
+        if (bodyText.includes('達叻仔') || bodyText.includes('塔拉德諾伊')) fail('Bangkok Traditional Chinese uses an inconsistent Talat Noi transliteration on ' + routePath + '.');
+        if (bodyText.includes('Talat Noi') && !bodyText.includes('塔拉諾伊')) fail('Bangkok Traditional Chinese Talat Noi references must use the harmonized transliteration on ' + routePath + '.');
+        const navigationName = localeCatalogs['zh-Hant']['Yaowarat & Talat Noi'];
+        if (!navigationName || !navigationName.includes('塔拉諾伊') || !navigationName.includes('Talat Noi')) fail('Traditional Chinese navigation must retain the Talat Noi English name alongside its harmonized transliteration.');
       }
       continue;
     }
@@ -1484,6 +1687,7 @@ if (!isLive) {
   const ninhBinhPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ninh-binh/')).length;
     const huePages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/hue/')).length;
   const penangPages = manifest.pages.filter((record) => record.path.startsWith('/malaysia/george-town-penang/')).length;
+  const bangkokPages = manifest.pages.filter((record) => record.path.startsWith('/thailand/bangkok/')).length;
   const jejuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/jeju/')).length;
   const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
   const meoVacHtml = fs.readFileSync(path.join(meoVacPath, 'index.html'), 'utf8');
@@ -1493,7 +1697,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+    console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${penangPages} Penang, ${bangkokPages} Bangkok records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets and ${manifest.assets.length} hashed local assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
