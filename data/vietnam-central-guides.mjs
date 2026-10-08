@@ -440,9 +440,10 @@ const daNangHoiAn = defineVietnamCluster({
       name: 'Han River & Da Nang City Core',
       motif: 'The working waterfront',
       instrument: 'zine',
+      instrumentLabel: 'riverfront',
       routeLead: "Bach Dang and the Cham Museum make a compact west-bank pairing; Tran Hung Dao is a separate east-bank choice, not the far end of one continuous promenade. A second shore adds a bridge approach and a different pickup plan.",
       boundaryLabel: "River and museum etiquette",
-      arrivalLabel: "Reaching the riverfront",
+      arrivalLabel: "Getting to the riverfront",
       image: image({
         src: '/assets/images/vietnam-da-nang-han-river.webp',
         alt: 'Han River and the Da Nang city waterfront',
@@ -455,13 +456,13 @@ const daNangHoiAn = defineVietnamCluster({
       summary: 'Plan a Han River half-day around the Cham Museum and one chosen riverbank, then decide whether a cross-river walk adds enough to justify its traffic and bridge constraints.',
       lead: 'The Han River divides Da Nang’s civic center from the eastern shore. Bach Dang Street follows the western side through Hai Chau; Tran Hung Dao faces it from Son Tra. A useful city walk reads those two edges, then uses the Cham Museum for the region’s older history instead of treating bridges as a checklist.',
       orientation: 'Choose a west-bank walk if you want to pair Bach Dang with the Cham Museum at 2 Thang 9 Street. Choose the east bank when your hotel or evening plan is already near Tran Hung Dao. Cross once, by a currently open bridge, only when the opposite shore is part of the day.',
-      arrival: 'From the airport or a central hotel, take a taxi or ride-hail to the riverfront or the museum rather than assuming the walk from your lodging is comfortable in heat. Pin the exact pickup and return side: a river crossing, roadworks or event control can turn a short map line into a slow detour.',
-      sequence: 'The riverfront and the Cham Museum make a cultural half-day; the second bank is an optional detour, not a walking-loop assumption.',
+      arrival: 'From the airport or a central hotel, take a taxi or ride-hail to the riverfront or the museum rather than assuming the walk from your lodging is comfortable in heat. Pin a named drop-off and pickup; if they are on opposite banks, decide in advance how you will return.',
+      sequence: 'Begin on Bach Dang in daylight and look across toward Tran Hung Dao to orient yourself. Give the Museum of Cham Sculpture at 2 Thang 9 Street a real indoor block, then choose a meal and either finish on the west bank or add one optional crossing.',
       boundary: 'The river edges are working city streets, not a continuous promenade. Use signed crossings and open walkways, keep out of traffic and follow the museum’s photography and conduct rules. Let the Cham collection explain its own cultural context rather than using sacred objects as props.',
       stages: [
         ['Choose the bank', 'Start at a confirmed public access point on Bach Dang or Tran Hung Dao. The west side is the simpler pairing for the Cham Museum; the east side suits a route already based in Son Tra.'],
-        ['Give the museum a real block', 'At 2 Thang 9 Street, select a few galleries from the collection of more than 400 Cham sculptures and artifacts, spanning the 5th to 15th centuries. Check the current opening notice before setting the day around it.'],
-        ['Make one crossing optional', 'If you want both river edges, choose an open bridge and a clear return plan. Bridge rotation or event controls can interrupt access, so do not build the outing around a fixed swing-bridge time copied from an old schedule.'],
+        ['Give the museum a real block', 'At 2 Thang 9 Street, select a few galleries from the collection of more than 400 Cham sculptures and artifacts, spanning the 5th to 15th centuries.'],
+        ['Make one crossing optional', 'If the opposite bank adds a specific stop, cross once and plan the return; otherwise, finish on the bank where you began.'],
         ['Finish where the ride can reach you', 'Eat on the chosen side or request a pickup at a named street entrance. Keep the museum-and-bank walk as the compact version; add an east-bank circuit only if heat, traffic and the group’s energy still allow it.']
       ],
       risks: [
@@ -471,7 +472,8 @@ const daNangHoiAn = defineVietnamCluster({
       ],
       duration: 'Treat the riverbank and Cham Museum as a half-day plan, with road transfers at either end. A longer outing is a choice to add a second bank, not an assumption that the bridges and waterfront form one uninterrupted walking loop.',
       combine: 'Pair the west bank with the Cham Museum for a compact urban day. Add My Khe only as a separate coast window; keep Son Tra and Marble Mountains for days when their road, footing and weather decisions can be made on their own.',
-      verify: 'On 8 October 2026, use the linked Da Nang tourism pages for bridge and museum context. Before departure, recheck the museum’s live hours, the swing-bridge notice, any event controls and the local forecast; the bridge schedule is not a permanent timetable.',
+      faqLastQuestion: 'Do I need to cross both sides of the Han River?',
+      verify: 'No. The west bank and Cham Museum make a complete half-day; cross only if a specific east-bank stop matters to your plan.',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
@@ -511,9 +513,9 @@ const daNangHoiAn = defineVietnamCluster({
       motif: 'Forest above the bay',
       instrument: 'signal',
       instrumentLabel: 'pagoda',
-      routeLead: "Enter through the three-door gate and move from courtyard to hall and statue; the sea-view balcony is a natural finish when open. Any forest viewpoint is an optional road extension that depends on current permission and a return ride.",
-      boundaryLabel: "Pagoda and forest etiquette",
-      arrivalLabel: "Reaching Linh Ung",
+      routeLead: "Follow the pagoda from its entrance to the main hall and statue; the sea-facing balcony completes the visit, while the forest road is a separate optional extension.",
+      boundaryLabel: "Pagoda etiquette",
+      arrivalLabel: "Getting to Linh Ung",
       kickerLabel: "Son Tra forest & Linh Ung Pagoda",
       image: image({
         src: '/assets/images/vietnam-da-nang-son-tra.webp',
@@ -524,26 +526,27 @@ const daNangHoiAn = defineVietnamCluster({
         license: 'CC BY-SA 3.0',
         sourceDate: '2011-05-14'
       }),
-      summary: "See Linh Ung Pagoda’s gate, courtyard and Lady Buddha above Da Nang Bay, then add a forest viewpoint only after checking current road access and your return ride.",
+      summary: "Visit Linh Ung as a hillside pagoda above Da Nang Bay: pass through its three-door gate and courtyard to the main hall, Lady Buddha and the sea-facing balcony.",
       lead: "Set above Da Nang Bay, Linh Ung is a Buddhist complex with a sequence of spaces, not simply its prominent Lady Buddha statue. Da Nang’s tourism portal describes its design as bringing modern and traditional Vietnamese pagoda architecture together in the three-door gate, main hall and ancestral house. Visitors pass the gate into a courtyard of bonsai and arhat figures, then see Buddhist images and sculptural reliefs of Shakyamuni’s life inside the hall. The principal statue is locally called Lady Buddha; the city portal identifies it as a Lady Bodhisattva and notes the ocean and coastal views along the approach. Local accounts connect the statue with protection for fishermen facing storms and strong waves, giving the sea-facing visit meaning beyond its panorama. Son Tra’s coastal forest is also habitat for the endangered red-shanked douc langur, so a sighting is a chance encounter rather than a promised part of a temple visit.",
-      orientation: "Start at the three-door gate and make the pagoda precinct the core stop: courtyard, main hall, then statue and sea-facing balcony if open. Follow posted worship and photography guidance, and check the same-day Son Tra access notice before adding a forest road; a self-guided trek is not part of this route.",
-      arrival: 'Arrange a roadworthy driver and a confirmed pickup or waiting return before leaving the city; do not assume a car will be available at an upper viewpoint. Self-driving is only an option if the current rules permit your vehicle and you are confident on steep, winding roads. Confirm the exact route with the driver before departure.',
+      orientation: 'Enter through the gate to the courtyard, continue through the main hall and ancestral house, then finish near Lady Buddha and the bay-facing balcony.',
+      arrival: 'Arrange a roadworthy driver and a confirmed pickup or waiting return before leaving the city. Upper viewpoints may not have a car available, so agree on the exact route and meeting point with your driver before departure.',
       sequence: 'Linh Ung is a complete pagoda visit on its own; any forest-road viewpoint is a separate, access-dependent add-on.',
-      boundary: 'Stay on authorized roads and marked public pull-outs, respect barriers and worship spaces, and never leave the permitted route for a closer view. Do not feed, bait, call, chase or approach wildlife. A douc sighting is not guaranteed, and the animals’ distance is part of responsible viewing.',
+      boundary: 'Respect this active place of worship: follow posted photography guidance, keep voices low and give worshippers space. Do not enter closed buildings or interrupt ceremonies.',
       stages: [
-        ['Confirm the access plan', 'Read the current local notice, check rain and agree on the permitted road and return pickup with your driver. If the upper route or weather is uncertain, choose the shorter Linh Ung visit.'],
-        ["Visit the pagoda precinct","Enter through the three-door gate, pause among courtyard bonsai and arhat sculptures, then step into the main hall for Buddhist images and reliefs of Shakyamuni’s life. Continue to the Lady Buddha at a quiet pace and follow posted worship and photography guidance."],
-        ["Use the open sea-view balcony or road","If access is open, pause at the pagoda’s sea-facing balcony for a view over Da Nang Bay and the coast. Continue to a forest-road viewpoint only when the current notice permits; never call, feed or pursue wildlife."],
-        ['Return before conditions narrow', 'Turn back before rain, fading light or fatigue makes the descent harder. Keep the city meal and any beach plan for after the confirmed return, not as a fixed add-on to a delayed drive.']
+        ['Enter through the three-door gate', 'Pause in the courtyard among bonsai and arhat figures, then continue into the precinct toward the main hall and ancestral house.'],
+        ['Read the main hall', 'The Buddhist images and reliefs depict Shakyamuni’s life, placing the architecture within the site’s active religious use.'],
+        ['Finish at Lady Buddha', 'Continue to the sea-facing statue and balcony for views over Da Nang Bay and the coast; the balcony is a natural end to the pagoda visit.'],
+        ['Return to the city', 'Walk back through the pagoda precinct to your agreed pickup; keep a city meal or beach stop as a separate choice.']
       ],
       risks: [
-        ['Managed or closed access', 'Some roads and natural areas are restricted or unsuitable for visitors. Do not cross barriers or treat an unofficial map pin as permission to enter; follow the latest local notice.'],
-        ['Steep road and weather', 'Rain, low visibility, bends and roadside traffic can make the descent the limiting part of the day. Use a capable driver, stop only at marked pull-outs and turn back when conditions worsen.'],
-        ['Wildlife and worship', 'Langurs can be absent or difficult to see. Feeding or pursuing them harms the habitat, while loud or intrusive behavior at Linh Ung disrupts worshippers. Keep the two settings respectful.']
+        ['Check current road permission', 'Son Tra routes can close or be restricted. Before adding an upper road, check the city’s current visitor notice, stay on authorized roads and obey barriers.'],
+        ['Allow for weather and descent', 'Review the official forecast and agree on a return time with your driver. Rain and low visibility make the winding descent harder; skip a forest extension if conditions worsen.'],
+        ['Keep wildlife wild', 'Red-shanked doucs may be absent or difficult to see. Stay at permitted public viewpoints; never feed, bait, call, chase or approach them.']
       ],
-      duration: 'Reserve at least a half day for the pagoda, any confirmed open viewpoint and the return road. Add time only when the access notice and driver support a longer visit; this is not a checklist to finish at any cost.',
+      duration: 'Reserve a half day for the pagoda precinct and return ride. Treat a forest viewpoint as a separate optional extension rather than part of the core visit.',
       combine: 'A short city meal can follow a timely return. Keep Marble Mountains and My Khe on separate route plans so steep-road access and beach conditions are not squeezed into the same day.',
-      verify: 'Check the current Son Tra visitor notice, permitted roads, weather and return-vehicle plan on 8 October 2026 and again before the visit. The linked local guidance warns visitors to stay within approved areas; access can change.',
+      faqLastQuestion: 'Can I visit Linh Ung without adding a forest viewpoint?',
+      verify: 'Yes. The gate, courtyard, main hall, ancestral house, Lady Buddha and sea-facing balcony form a complete pagoda visit; the forest road is optional.',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
@@ -567,15 +570,15 @@ const daNangHoiAn = defineVietnamCluster({
         ]
       ],
       presentation: {
-        readingTitle: 'Let access rules set the forest route.',
-        routeTitle: 'Visit the pagoda; add only an open viewpoint.',
-        checksLabel: 'Before the ascent',
-        checksTitle: 'Road permission and return transport come first.',
-        checksLead: 'Son Tra is managed forest habitat with winding roads and no guaranteed wildlife sightings.',
-        checksActionText: 'Confirm access and pickup',
+        readingTitle: 'Read the pagoda before the bay.',
+        routeTitle: 'From the three-door gate to the bay.',
+        checksLabel: 'Before the forest extension',
+        checksTitle: 'Check access, weather and return transport.',
+        checksLead: 'The pagoda is a complete visit; any forest road depends on same-day permission and conditions.',
+        checksActionText: 'Check current access',
         faqLabel: 'Son Tra in practice',
-        faqTitle: 'Linh Ung, viewpoints and responsible viewing',
-        boundaryTitle: 'Keep wildlife at its distance.'
+        faqTitle: 'A pagoda visit with an optional forest road',
+        boundaryTitle: 'Respect this active place of worship.'
       }
     },
     {
@@ -663,9 +666,10 @@ const daNangHoiAn = defineVietnamCluster({
       name: 'My Khe Beach & An Thuong',
       motif: 'The city’s open edge',
       instrument: 'chart',
-      routeLead: "This is a shore-to-neighborhood route, not one continuous beach day: finish the beach leg in the cooler morning, rest in shade or indoors, then cross safely before choosing An Thuong.",
+      instrumentLabel: 'shore',
+      routeLead: "My Khe and An Thuong are two connected but distinct parts of Da Nang: take the shoreline in the morning, pause inland for shade, then finish among the neighborhood’s cafés and food streets.",
       boundaryLabel: "Beach and neighborhood care",
-      arrivalLabel: "Reaching the public beach",
+      arrivalLabel: "Getting to the public beach",
       image: image({
         src: '/assets/images/vietnam-da-nang-my-khe.webp',
         alt: 'My Khe Beach on the Da Nang coast',
@@ -677,15 +681,15 @@ const daNangHoiAn = defineVietnamCluster({
       }),
       summary: 'Make My Khe a conditions-led beach morning and An Thuong a separate food-and-rest finish, with a real midday shade break if you stay out all day.',
       lead: 'My Khe is both a visitor shoreline and part of Da Nang’s ordinary morning life. Vietnam’s tourism authority describes residents exercising and working here as well as travelers using the coast. Plan around the sea conditions and public beach access, then move inland to An Thuong only after rinsing and drying off.',
-      orientation: 'Choose the beach for dawn walking and, only when local warnings permit, a swim. The weather and waves decide whether this is a swimming day; An Thuong is a neighborhood food stop, not a reason to extend exposure on the sand through the hottest hours.',
-      arrival: 'Take a taxi or ride-hail from central Da Nang to a public beach entrance and confirm the exact drop-off before getting out. The broad coastal road separates the city from the shore: cross only at a signed or controlled crossing, then use a known access point rather than stepping through traffic toward a hotel frontage.',
+      orientation: 'My Khe is a public, lived-in shoreline, while An Thuong is an inland food-and-café neighborhood. Plan one beach window and one neighborhood finish, with time to reset between them.',
+      arrival: 'Take a taxi or ride-hail from central Da Nang to a public beach entrance and confirm the exact drop-off before getting out. My Khe and An Thuong are two separate legs divided by the coastal road, so choose your beach entrance and pickup before settling into the day.',
       sequence: 'My Khe stands on its own as a public shore visit; An Thuong is a separate neighborhood stop after the midday break.',
-      boundary: 'Follow local beach warnings and lifeguard instructions, keep clear of fishing activity and equipment, and leave the shore clean. Respect neighborhood businesses by arriving dry, keeping sand outside and crossing the coastal road at a safe signal or marked crossing.',
+      boundary: 'Keep clear of fishing activity and equipment, leave the shore clean, and arrive dry at neighborhood businesses with sand kept outside.',
       stages: [
-        ['Decide whether the sea is open to you', 'Read the current flags and local notices, check whether lifeguards are present, and look at the tide and marine forecast. If there is no clear safe supervised area, make this a shore walk rather than a swim.'],
+        ['Choose a swim or shore walk', 'Use the beach conditions guidance below to decide whether the morning is for swimming or walking.'],
         ['Walk the working shoreline', 'Use a public entrance and observe the morning exercise and fishing activity without blocking gear or taking close photos of people. Keep a dry change and drinking water ready before the sun rises higher.'],
-        ['Break before the heat', 'Use shade or an indoor pause through the middle of the day instead of staying exposed on the sand. If rain or surf warnings rise, finish at the beach and move the plan to a city meal.'],
-        ['Finish inland in An Thuong', 'Dry off and cross at a controlled point before choosing a café or meal. If the group is tired or the road is crowded, take a ride-hail rather than adding an unsafe scooter crossing or a long hot walk.']
+        ['Break before the heat', 'Leave the sand for shade or an indoor pause through the middle of the day.'],
+        ['Finish inland in An Thuong', 'Dry off and cross at a controlled point before choosing a café or meal. If the group is tired or the road is crowded, take a ride-hail rather than extending the walk in the heat.']
       ],
       risks: [
         ['Surf and current', 'Wind, tide, rip currents, storms and flags can change quickly. Lifeguard presence and local instructions outrank a calm-looking surface or a recommendation from an old travel post.'],
@@ -693,8 +697,9 @@ const daNangHoiAn = defineVietnamCluster({
         ['Road and public access', 'The coastal road is busy and beach density changes by time of day. Cross at marked controls, use public entrances, and keep valuables secure while changing or resting.']
       ],
       duration: 'Use a half day for the morning shore and an An Thuong meal. Stay longer only with a shaded or indoor midday recovery; a full day is not continuous beach time.',
-      combine: 'The riverfront can follow on another urban half-day. Do not schedule a swim immediately before the long road transfer to Hoi An, and keep Son Tra’s road checks separate from a beach day.',
-      verify: 'On 8 October 2026, the linked Vietnam Tourism page describes My Khe’s public and everyday use. Before swimming, check the current beach warnings, lifeguard coverage, tide and official marine forecast; no source here promises fixed lifeguard hours or safe conditions.',
+      combine: 'The riverfront is a separate urban half-day, while Son Tra and Hoi An each deserve their own outing. Do not pack the beach, peninsula roads and a long transfer into one day.',
+      faqLastQuestion: 'What if swimming is not suitable?',
+      verify: 'The route still works as a morning walk along My Khe, a shaded pause, and a dry move inland to An Thuong for food or coffee.',
       reviewDate: '8 October 2026',
       isoDate: '2026-10-08',
       countryCss: '/css/vietnam-da-nang-hoi-an.css?v=20261008-1',
@@ -702,6 +707,10 @@ const daNangHoiAn = defineVietnamCluster({
         [
           'https://vietnam.travel/places-to-go/central-vietnam/da-nang',
           'Vietnam National Authority of Tourism — My Khe beach use and Da Nang local context; checked 8 October 2026'
+        ],
+        [
+          'https://diadiem.danang.gov.vn/63-387-3363/Tourist-Sites/My-Khe-Beach.aspx',
+          'Da Nang City Portal - My Khe lifeguard patrols and safe-swimming flags; checked 8 October 2026'
         ],
         [
           'https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html',

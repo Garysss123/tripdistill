@@ -36,7 +36,7 @@ export function defineVietnamCluster(cluster) {
       faq: [
         [`How much time should ${guide.name} receive?`, guide.duration],
         [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
-        ['What should I verify before leaving?', guide.verify]
+        [guide.faqLastQuestion || 'What should I verify before leaving?', guide.verify]
       ]
     };
   });
