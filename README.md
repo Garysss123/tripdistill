@@ -14,6 +14,10 @@ The same-level Japan reference selected for Han River & Da Nang City Core, Son T
 
 The same-level Japan reference for Siam & Ratchaprasong and Thonburi & Khlong Bang Luang is [/japan/tokyo/asakusa-ueno/](japan/tokyo/asakusa-ueno/), a Tokyo area guide. The source comparison checks named places and their cultural meaning, a usable transit sequence, distinct visit choices, current operating details and dated official references. The required rendered desktop/mobile comparison remains with the separate cloud-browser review; no local browser was used. This review record does not signal editorial acceptance.
 
+### Chiang Mai city and local guide review record - 8 October 2026
+
+The same-level Japan reference for the Chiang Mai city overview is [/japan/osaka/](japan/osaka/); the reference for Old City & Moat, Wat Ket & Ping River, and Doi Suthep & Wat Pha Lat is [/japan/tokyo/asakusa-ueno/](japan/tokyo/asakusa-ueno/), a local guide. The source-content comparison checks a usable base and day-scope choice, distinct route decisions, transport/access, alternatives, place-specific explanation, and dated primary references. Chiang Mai's comparison covers the moat and Lanna Old City, the Wat Ket river community, and the distinct forest and summit temples on Doi Suthep. The required rendered desktop/mobile comparison remains with the separate cloud-browser review; no local browser was used. This review record does not signal editorial acceptance.
+
 English uses the root route tree. Traditional Chinese, Japanese, Korean and Thai mirror it under `/zh/`, `/ja/`, `/ko/` and `/th/`. Every published guide must exist in all five editions, keep reciprocal `hreflang` metadata and remain usable without client-side translation.
 
 ## Cloudflare Pages deployment

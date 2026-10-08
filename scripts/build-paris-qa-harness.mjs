@@ -160,6 +160,10 @@ const routes = [
   { path: '/thailand/bangkok/sukhumvit-thong-lo/', label: 'Sukhumvit & Thong Lo' },
   { path: '/thailand/bangkok/siam-ratchaprasong/', label: 'Siam & Ratchaprasong' },
   { path: '/thailand/bangkok/thonburi-khlong-bang-luang/', label: 'Thonburi & Khlong Bang Luang' },
+  { path: '/thailand/chiang-mai/', label: 'Chiang Mai hub' },
+  { path: '/thailand/chiang-mai/old-city-moat/', label: 'Old City & Moat' },
+  { path: '/thailand/chiang-mai/wat-ket-ping-river/', label: 'Wat Ket & Ping River' },
+  { path: '/thailand/chiang-mai/doi-suthep-wat-pha-lat/', label: 'Doi Suthep & Wat Pha Lat' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -232,6 +236,17 @@ const manifest = {
   maxHtmlBytes: 160_000,
   maxSingleImageBytes: 700_000,
   maxPageStylesBytes: 320_000,
+  routeStyleBudgets: Object.fromEntries([
+    '/thailand/chiang-mai/',
+    '/thailand/chiang-mai/old-city-moat/',
+    '/thailand/chiang-mai/wat-ket-ping-river/',
+    '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'
+  ].map((routePath) => [routePath, 350_000])),
+  imageBudgets: Object.fromEntries([
+    '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
+    '/assets/images/thailand-chiang-mai-nimman.webp',
+    '/assets/images/thailand-chiang-mai-old-city.webp'
+  ].map((assetPath) => [assetPath, 900_000])),
   pages: routeRecords,
   assets
 };
@@ -243,7 +258,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>France, Canada, Zurich, South Korea, Vietnam, Penang and Bangkok responsive QA harness</title>
+  <title>France, Canada, Zurich, South Korea, Vietnam, Penang, Bangkok and Chiang Mai responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }

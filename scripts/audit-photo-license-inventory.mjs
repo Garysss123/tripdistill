@@ -298,6 +298,21 @@ const verifiedSourcePageDetails = new Map([
     'Osaka source review: exact Commons title, Luka Peternel authorship, Osaka Castle cherry blossom subject, and CC BY-SA 4.0 terms checked against the source page. Attribution, license link, edit disclosure and same-license terms are present; the image was not visually reviewed in this check.',
     '2026-10-06'
   ],
+  [
+    'https://commons.wikimedia.org/wiki/File:20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg',
+    'Commons source-page check on 2026-10-08: the page names Jakub Hałun, dates the photograph 5 November 2017, and declares CC BY-SA 4.0. Its terms permit reuse and adaptation with attribution, license link, change notice and same-license sharing. The local WebP pixels were not compared in this source-only check.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Pha_Lat_-_0001.jpg',
+    'Commons source-page check on 2026-10-08: the page names Stefan Fussan, dates the photograph 24 May 2014, and declares CC BY-SA 3.0. The page explicitly permits commercial use and derivative works with attribution, license link, change notice and share-alike. The local WebP pixels were not compared in this source-only check.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Ping_River_in_Chiang_Mai_3.jpg',
+    'Commons source-page check on 2026-10-08: the page names Christophe95, dates the photograph 6 September 2018, and declares CC BY-SA 4.0. Its terms permit reuse and adaptation with attribution, license link, change notice and same-license sharing. The local WebP pixels were not compared in this source-only check.',
+    '2026-10-08'
+  ],
 ].map(([sourceUrl, detail, checkedOn]) => [sourceUrl, { checkedOn: checkedOn || '2026-10-05', detail }]));
 
 const genericTokens = new Set(('a an and at by from for in into of on or the to with through view photo image picture scene landscape city town lake river road street park guide travel at the a view panorama night day north south east west central main old new near beyond under over beside walk route district guide file webp jpg jpeg commons official').split(' '));
@@ -653,7 +668,10 @@ const explicitCreditMappings = new Map([
   ['/assets/images/korea-hongdae-night.webp', { creditLabel: 'Hongdae night photo', creator: 'lumoplank', note: 'Matched the route and night-street image alt to the same-route Hongdae credit.' }],
   ['/assets/images/thailand-andaman-ko-lanta.webp', { creditLabel: 'Klong Khong Beach, Ko Lanta', creator: 'Marcin Konsek', note: 'Matched the beach and island in the image alt to the same-route credit.' }],
   ['/assets/images/thailand-andaman-phang-nga.webp', { creditLabel: 'Ko Yao Noi sunrise', creator: 'Vyacheslav Argenberg', note: 'Matched the sunrise, bay, and island in the image alt to the same-route credit.' }],
-  ['/assets/images/thailand-andaman-similan.webp', { creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', note: 'Matched the island group and panoramic view in the image alt to the same-route credit.' }]
+  ['/assets/images/thailand-andaman-similan.webp', { creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', note: 'Matched the island group and panoramic view in the image alt to the same-route credit.' }],
+  ['/assets/images/thailand-chiang-mai-old-city.webp', { sourceTitle: 'File:20171105 Wat Chedi Luang Chiang Mai 9897 DxO.jpg', creditLabel: 'Wat Chedi Luang', creator: 'Jakub Hałun', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-11-05', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
+  ['/assets/images/thailand-chiang-mai-wat-pha-lat.webp', { sourceTitle: 'File:Chiang Mai - Wat Pha Lat - 0001.jpg', creditLabel: 'Wat Pha Lat', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-05-24', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and commercial-use terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
+  ['/assets/images/thailand-chiang-mai-ping-river.webp', { sourceTitle: 'File:Ping River in Chiang Mai 3.jpg', creditLabel: 'Ping River from Chansom Memorial Bridge', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
   '/assets/images/korea-namsan-tower.webp',

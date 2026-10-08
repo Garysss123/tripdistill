@@ -38,6 +38,11 @@ const koreaPhotoRecords = [
   { assetPath: '/assets/images/korea-busan-biff-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:BIFF_Square_at_night.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', sourceDate: '2018-09-27' },
   { assetPath: '/assets/images/korea-busan-dongbaek.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Busan_at_dusk._View_of_nurimaru_APEC_house_from_dongbaekseom_lighthouse.jpg', creator: 'IsouM', license: 'CC BY-SA 4.0', sourceDate: '2018-10-11' }
 ];
+const chiangMaiImageRecords = [
+  { assetPath: '/assets/images/thailand-chiang-mai-old-city.webp', sourceDate: '2017-11-05', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-chiang-mai-wat-pha-lat.webp', sourceDate: '2014-05-24', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/thailand-chiang-mai-ping-river.webp', sourceDate: '2018-09-06', license: 'CC BY-SA 4.0' }
+];
 const danangImageRecords = [
   { assetPath: '/assets/images/vietnam-da-nang-han-river.webp', sourceDate: '2023-08-19' },
   { assetPath: '/assets/images/vietnam-da-nang-marble-mountains.webp', sourceDate: '2024-08-01' },
@@ -88,7 +93,7 @@ try {
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 23, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 610, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 607, 'used assets without a source-page check must be reported separately from the 23 unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -158,6 +163,16 @@ try {
   assert.ok(lumphini.attributionTerms.includes('released this work into the public domain worldwide'));
   assert.ok(lumphini.verificationDetail.includes('no separate license URL is present'));
 
+  for (const image of chiangMaiImageRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, 'source audit must retain ' + image.assetPath);
+    assert.equal(record.sourcePhotoDate, image.sourceDate, image.assetPath + ' must retain the Commons photograph date');
+    assert.equal(record.verificationStatus, 'source_page_checked', image.assetPath + ' must record its checked Commons source page');
+    assert.equal(record.verificationDate, '2026-10-08', image.assetPath + ' Commons page check date must be retained');
+    assert.equal(record.visualReviewStatus, 'not_individually_visually_reviewed', image.assetPath + ' must not claim a prohibited local pixel review');
+    assert.equal(record.license, image.license, image.assetPath + ' must retain the exact license version');
+    assert.ok(record.verificationDetail.includes('local WebP pixels were not compared'), image.assetPath + ' must state the source-only visual-review limit');
+  }
   const thailandRoutes = [
     'thailand',
     'thailand/bangkok',

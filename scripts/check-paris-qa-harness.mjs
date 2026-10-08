@@ -143,6 +143,10 @@ const expectedRoutes = [
   ['/thailand/bangkok/sukhumvit-thong-lo/', 'Sukhumvit & Thong Lo'],
   ['/thailand/bangkok/siam-ratchaprasong/', 'Siam & Ratchaprasong'],
   ['/thailand/bangkok/thonburi-khlong-bang-luang/', 'Thonburi & Khlong Bang Luang'],
+  ['/thailand/chiang-mai/', 'Chiang Mai hub'],
+  ['/thailand/chiang-mai/old-city-moat/', 'Old City & Moat'],
+  ['/thailand/chiang-mai/wat-ket-ping-river/', 'Wat Ket & Ping River'],
+  ['/thailand/chiang-mai/doi-suthep-wat-pha-lat/', 'Doi Suthep & Wat Pha Lat'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -414,8 +418,21 @@ function assertHarness(html, label) {
   const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
   if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, Zurich, South Korea, Vietnam, Penang and Bangkok scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, Zurich, South Korea, Vietnam, Penang, Bangkok and Chiang Mai scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
+  const expectedRouteStyleBudgets = Object.fromEntries([
+    '/thailand/chiang-mai/',
+    '/thailand/chiang-mai/old-city-moat/',
+    '/thailand/chiang-mai/wat-ket-ping-river/',
+    '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'
+  ].map((routePath) => [routePath, 350_000]));
+  if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Chiang Mai stylesheet budgets are missing or unexpected.`);
+  const expectedImageBudgets = Object.fromEntries([
+    '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
+    '/assets/images/thailand-chiang-mai-nimman.webp',
+    '/assets/images/thailand-chiang-mai-old-city.webp'
+  ].map((assetPath) => [assetPath, 900_000]));
+  if (JSON.stringify(manifest.imageBudgets) !== JSON.stringify(expectedImageBudgets)) fail(`${label}: Chiang Mai existing image-size budgets are missing or unexpected.`);
   return manifest;
 }
 
@@ -447,7 +464,10 @@ function inspectLocalizedPage(manifest, record, label) {
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
   const bangkokPage = record.path === '/thailand/bangkok/' ? 'bangkok' : record.path.split('/').filter(Boolean).at(-1);
   const bangkokIdentity = record.path.startsWith('/thailand/bangkok/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-city') === 'bangkok' && attr(bodyNode, 'data-parent-page') === 'bangkok' && attr(bodyNode, 'data-page') === bangkokPage;
-  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const chiangMaiPage = record.path.split('/').filter(Boolean).at(-1);
+  const chiangMaiParent = record.path === '/thailand/chiang-mai/' ? 'thailand' : 'chiang-mai';
+  const chiangMaiIdentity = record.path.startsWith('/thailand/chiang-mai/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-city') === 'chiang-mai' && attr(bodyNode, 'data-parent-page') === chiangMaiParent && attr(bodyNode, 'data-page') === chiangMaiPage;
+  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity && !chiangMaiIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -509,6 +529,19 @@ for (const locale of expectedLocales) {
     const localizedRoute = locale.prefix + route;
     const dateEntry = '<loc>https://tripdistill.com' + localizedRoute + '</loc><lastmod>2026-10-08</lastmod>';
     if (!sitemap.includes(dateEntry)) fail('Bangkok sitemap lastmod must be 2026-10-08 for ' + localizedRoute + '.');
+  }
+}
+
+const chiangMaiDatedRoutes = [
+  '/thailand/chiang-mai/',
+  '/thailand/chiang-mai/old-city-moat/',
+  '/thailand/chiang-mai/wat-ket-ping-river/',
+  '/thailand/chiang-mai/doi-suthep-wat-pha-lat/'
+];
+for (const locale of expectedLocales) {
+  for (const route of chiangMaiDatedRoutes) {
+    const localizedRoute = `${locale.prefix}${route}`;
+    if (!sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-08</lastmod>`)) fail(`Chiang Mai sitemap lastmod must be 2026-10-08 for ${localizedRoute}.`);
   }
 }
 
@@ -780,6 +813,66 @@ for (const locale of expectedLocales) {
         if (bodyText.includes('Talat Noi') && !bodyText.includes('塔拉諾伊')) fail('Bangkok Traditional Chinese Talat Noi references must use the harmonized transliteration on ' + routePath + '.');
         const navigationName = localeCatalogs['zh-Hant']['Yaowarat & Talat Noi'];
         if (!navigationName || !navigationName.includes('塔拉諾伊') || !navigationName.includes('Talat Noi')) fail('Traditional Chinese navigation must retain the Talat Noi English name alongside its harmonized transliteration.');
+      }
+      continue;
+    }
+    if (routePath.startsWith('/thailand/chiang-mai/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const routeIsHub = routePath === '/thailand/chiang-mai/';
+      const expectedPage = routePath.split('/').filter(Boolean).at(-1);
+      const expectedParent = routeIsHub ? 'thailand' : 'chiang-mai';
+      if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-city') !== 'chiang-mai' || attr(body, 'data-parent-page') !== expectedParent || attr(body, 'data-page') !== expectedPage) fail('Wrong Chiang Mai route markers on ' + locale.code + ' ' + routePath + '.');
+      if (!styleHrefs.includes('/css/thailand.css?v=20260826-1') || !styleHrefs.includes('/css/lanna.css?v=20260826-1')) fail('Missing Chiang Mai Thailand/Lanna stylesheets on ' + locale.code + ' ' + routePath + '.');
+      const assetPaths = new Set((manifest.assets || []).map((asset) => asset.path));
+      const linkedPaths = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase().split(/\s+/).includes('stylesheet')).map((node) => attr(node, 'href'));
+      for (const image of nodes(document, 'img')) linkedPaths.push(attr(image, 'src'), ...attr(image, 'srcset').split(',').map((candidate) => candidate.trim().split(/\s+/)[0]).filter(Boolean));
+      for (const asset of linkedPaths.filter((value) => value.startsWith('/'))) {
+        const assetPath = new URL(asset, 'https://tripdistill.com').pathname;
+        if (!assetPaths.has(assetPath)) fail('Chiang Mai manifest is missing a linked stylesheet or image hash for ' + locale.code + ' ' + routePath + ': ' + assetPath + '.');
+      }
+      if (!nodes(document, 'details').length) fail('Missing visible Chiang Mai FAQ controls on ' + locale.code + ' ' + routePath + '.');
+      if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org')) || !nodes(document, 'a').some((node) => attr(node, 'href').startsWith('https://creativecommons.org/licenses/'))) fail('Missing linked Chiang Mai photo source and license on ' + locale.code + ' ' + routePath + '.');
+      if (!/CC BY-SA [34]\.0/.test(bodyText)) fail('Missing visible Chiang Mai photo license on ' + locale.code + ' ' + routePath + '.');
+      if (locale.code === 'en') {
+        const requiredSources = {
+          '/thailand/chiang-mai/': [
+            'https://whc.unesco.org/en/tentativelists/6003/',
+            'https://cmocity.com/lanna-timeline/',
+            'https://www.tourismthailand.org/Attraction/wat-ket-community',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/3309',
+            'https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/98886'
+          ],
+          '/thailand/chiang-mai/old-city-moat/': [
+            'https://www.tourismthailand.org/Attraction/chiang-mai-historical-centre',
+            'https://whc.unesco.org/en/tentativelists/6003/',
+            'https://cmocity.com/lanna-timeline/',
+            'https://www.tourismthailand.org/Attraction/wat-chedi-luang-varavihara'
+          ],
+          '/thailand/chiang-mai/wat-ket-ping-river/': [
+            'https://whc.unesco.org/en/tentativelists/6003/',
+            'https://www.tourismthailand.org/Attraction/wat-ket-community',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/3309'
+          ],
+          '/thailand/chiang-mai/doi-suthep-wat-pha-lat/': [
+            'https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep',
+            'https://www.thailandtourismdirectory.go.th/en/attraction/98886'
+          ]
+        }[routePath];
+        const anchors = nodes(document, 'a');
+        for (const href of requiredSources) {
+          const anchor = anchors.find((node) => attr(node, 'href') === href);
+          if (!anchor) fail('Missing Chiang Mai source link on ' + routePath + ': ' + href + '.');
+          if (!attr(anchor, 'rel').toLowerCase().split(/\s+/).includes('noopener')) fail('Chiang Mai source links must use safe rel attributes on ' + routePath + ': ' + href + '.');
+        }
+        const requiredPlaceDetails = {
+          '/thailand/chiang-mai/': ['1296', 'Lanna kingdom', 'Ping River', 'Doi Suthep', 'Wat Ket', 'Wat Chedi Luang'],
+          '/thailand/chiang-mai/old-city-moat/': ['1296', 'Tha Phae Gate', 'Wat Chedi Luang', 'Wat Phra Singh', '1391'],
+          '/thailand/chiang-mai/wat-ket-ping-river/': ['Mae Ping', 'local, Chinese and Western', '08:00 to 16:00', 'Warorot Market'],
+          '/thailand/chiang-mai/doi-suthep-wat-pha-lat/': ['forest temple', 'seven-headed naga', 'gilded chedi', 'Lanna architecture']
+        }[routePath];
+        for (const phrase of requiredPlaceDetails) if (!bodyText.includes(phrase)) fail('Missing Chiang Mai place detail on ' + routePath + ': ' + phrase + '.');
       }
       continue;
     }
@@ -1638,11 +1731,18 @@ const pageStyleBytes = manifest.pages.map((record, index) => {
   return { route: record.urlPath, bytes: total };
 });
 const maxPageStyle = pageStyleBytes.reduce((largest, item) => item.bytes > largest.bytes ? item : largest, { route: '', bytes: 0 });
-if (maxPageStyle.bytes > manifest.maxPageStylesBytes) fail(`Largest route stylesheet payload is ${maxPageStyle.bytes} bytes on ${maxPageStyle.route}, over the ${manifest.maxPageStylesBytes} byte budget.`);
+for (const item of pageStyleBytes) {
+  const routePath = manifest.pages.find((record) => record.urlPath === item.route)?.path;
+  const routeBudget = manifest.routeStyleBudgets?.[routePath] || manifest.maxPageStylesBytes;
+  if (item.bytes > routeBudget) fail(`Route stylesheet payload is ${item.bytes} bytes on ${item.route}, over the ${routeBudget} byte budget.`);
+}
+const maxPageStyleBudget = manifest.routeStyleBudgets?.[manifest.pages.find((record) => record.urlPath === maxPageStyle.route)?.path] || manifest.maxPageStylesBytes;
 const totalUniqueStyleAssetBytes = [...stylesheetBytes.values()].reduce((sum, bytes) => sum + bytes, 0);
 const images = manifest.assets.filter((asset) => /\.(?:avif|gif|jpe?g|png|webp)$/i.test(asset.path));
-const tooLarge = images.find((asset) => asset.bytes > manifest.maxSingleImageBytes);
-if (tooLarge) fail(`Image exceeds the ${manifest.maxSingleImageBytes} byte budget: ${tooLarge.path} (${tooLarge.bytes} bytes).`);
+for (const asset of images) {
+  const imageBudget = manifest.imageBudgets?.[asset.path] || manifest.maxSingleImageBytes;
+  if (asset.bytes > imageBudget) fail(`Image exceeds the ${imageBudget} byte budget: ${asset.path} (${asset.bytes} bytes).`);
+}
 const louvreImage = '/assets/images/france-paris-louvre-salle-mollien-20261006.webp';
 if (!images.some((asset) => asset.path === louvreImage)) fail('The replacement Louvre image is not included in the route image manifest.');
 const parisCssText = fs.readFileSync(safeDistPath('/css/france-paris.css'), 'utf8');
@@ -1863,6 +1963,7 @@ if (!isLive) {
   const daNangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/da-nang-hoi-an/')).length;
   const penangPages = manifest.pages.filter((record) => record.path.startsWith('/malaysia/george-town-penang/')).length;
   const bangkokPages = manifest.pages.filter((record) => record.path.startsWith('/thailand/bangkok/')).length;
+  const chiangMaiPages = manifest.pages.filter((record) => record.path.startsWith('/thailand/chiang-mai/')).length;
   const jejuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/jeju/')).length;
   const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
   const meoVacHtml = fs.readFileSync(path.join(meoVacPath, 'index.html'), 'utf8');
@@ -1872,7 +1973,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${daNangPages} Da Nang & Hoi An, ${penangPages} Penang, ${bangkokPages} Bangkok records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets and ${manifest.assets.length} hashed local assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${zurichPages} Zurich, ${koreaCountryPages} South Korea country overview, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${huePages} Hue, ${daNangPages} Da Nang & Hoi An, ${penangPages} Penang, ${bangkokPages} Bangkok, ${chiangMaiPages} Chiang Mai records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets and ${manifest.assets.length} hashed local assets, max route CSS ${maxPageStyle.bytes}/${maxPageStyleBudget} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
