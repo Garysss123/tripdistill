@@ -1,0 +1,17 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/malaysia/george-town-penang/",
+    "/malaysia/george-town-penang/armenian-street-core-zone/",
+    "/malaysia/george-town-penang/weld-quay-clan-jetties/",
+    "/malaysia/george-town-penang/penang-hill-air-itam/"
+  ],
+  "translations": {
+    "George Town:": "조지타운:",
+    "five-foot ways": "오피트 웨이 보행로",
+    "shopfront-to-clan-hall walk": "상점가와 씨족 회관을 잇는 산책길",
+    "Armenian Street & Core Zone — shopfront-to-clan-hall walk": "아르메니안 스트리트와 중심 구역 — 상점가와 씨족 회관을 잇는 산책길",
+    "shopfront-to-clan-hall walk.": "상점가와 씨족 회관을 잇는 산책길."
+  }
+}

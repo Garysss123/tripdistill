@@ -244,7 +244,15 @@ for (const absoluteUrl of publishedUrls) {
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
   if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sabah.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);
   if (malaysiaHubRoutes.has(baseRoute)) {
-    if (!html.includes('/css/malaysia-depth.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia field-guide directory stylesheet`);
+    if (baseRoute === '/malaysia/george-town-penang/') {
+      if (html.includes('/css/malaysia-depth.css?v=20260830-1')
+        || !html.includes('/css/malaysia-straits.css?v=20260829-1')
+        || !read('css/malaysia-straits.css').includes('.penang-guide .md-hub-card')) {
+        problems.push(`${relativePath}: Penang hub must use its focused chapter-card styles in the Strait Cities stylesheet`);
+      }
+    } else if (!html.includes('/css/malaysia-depth.css?v=20260830-1')) {
+      problems.push(`${relativePath}: missing Malaysia field-guide directory stylesheet`);
+    }
     if ((html.match(/class="md-hub-card"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia hub does not contain four linked field-guide cards`);
   }
   if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sarawak.css?v=20260830-2')) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);

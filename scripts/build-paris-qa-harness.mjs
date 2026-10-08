@@ -115,7 +115,11 @@ const routes = [
   { path: '/south-korea/jeju/', label: 'Jeju Island hub' },
   { path: '/south-korea/jeju/seogwipo-jeongbang/', label: 'Seogwipo & Jeongbang' },
   { path: '/south-korea/jeju/jungmun-andeok/', label: 'Jungmun & Andeok' },
-  { path: '/south-korea/jeju/moseulpo-gapado/', label: 'Moseulpo & Gapado' }
+  { path: '/south-korea/jeju/moseulpo-gapado/', label: 'Moseulpo & Gapado' },
+  { path: '/malaysia/george-town-penang/', label: 'George Town & Penang hub' },
+  { path: '/malaysia/george-town-penang/armenian-street-core-zone/', label: 'Armenian Street & Core Zone' },
+  { path: '/malaysia/george-town-penang/weld-quay-clan-jetties/', label: 'Weld Quay & Clan Jetties' },
+  { path: '/malaysia/george-town-penang/penang-hill-air-itam/', label: 'Penang Hill & Air Itam' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -199,7 +203,7 @@ const page = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="referrer" content="same-origin">
-  <title>France, Canada, South Korea and Vietnam responsive QA harness</title>
+  <title>France, Canada, South Korea, Vietnam and Penang responsive QA harness</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f2f0eb; color: #1e2931; }
     * { box-sizing: border-box; }
@@ -229,8 +233,8 @@ const page = `<!doctype html>
   <main>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
-      <h1 id="page-title">France, Canada, South Korea and Vietnam responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, and six Ha Giang loop routes and seven Ninh Binh routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <h1 id="page-title">France, Canada, South Korea, Vietnam and Penang responsive QA harness</h1>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver &amp; the North Shore, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes and seven Ninh Binh routes, plus four George Town &amp; Penang routes in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>

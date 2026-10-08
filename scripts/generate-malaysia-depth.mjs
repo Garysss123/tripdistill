@@ -66,7 +66,13 @@ function sourcesList(sources) {
 }
 
 function imageCredit(image) {
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${escapeHtml(image.license)}. Resized, center-cropped and converted to WebP; no other material edits.</li>`;
+  const attribution = image.attribution || image.creator;
+  const attributionEnd = image.attribution ? '.' : ',';
+  const license = image.licenseUrl
+    ? `<a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
+    : escapeHtml(image.license);
+  const shareAlike = image.licenseUrl && image.license.includes('BY-SA') ? ` The adapted image is shared under ${escapeHtml(image.license)}.` : '';
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> &#8212; ${escapeHtml(attribution)}${attributionEnd} ${license}. Resized, center-cropped and converted to WebP; no other material edits.${shareAlike}</li>`;
 }
 
 function relatedCards(cluster, currentSlug = '') {
@@ -88,7 +94,7 @@ function guideSchema(guide) {
         description: guide.summary,
         url: absolute(guide.url),
         inLanguage: 'en',
-        dateModified: '2026-08-30',
+        dateModified: guide.reviewedOnIso || '2026-08-30',
         image: absolute(guide.image.src),
         about: { '@type': 'TouristDestination', name: guide.name, containedInPlace: { '@type': 'Country', name: 'Malaysia' } },
         publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
@@ -141,7 +147,7 @@ function childPage(guide, cluster) {
   <div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content md-guide">
       <section class="md-hero" aria-labelledby="md-title">
-        <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed 30 August 2026</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
+        <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(guide.reviewedOn || '30 August 2026')}</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
         <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure>
         <div class="md-instrument" aria-hidden="true"><span>${escapeHtml(guide.instrument)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><em>${escapeHtml(guide.motif)}</em></div>
       </section>
@@ -152,15 +158,15 @@ function childPage(guide, cluster) {
 
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
 
-      <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.decisions[1][1])}</p></div><div class="md-route">${route}</div></section>
+      <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.routeLead || 'Use the stops below as handoffs, not a timed march; slow down when access or conditions change.') }</p></div><div class="md-route">${route}</div></section>
 
-      <section class="md-section" id="checks" aria-labelledby="checks-title"><div class="md-section-head"><div><span class="md-section-label">Before committing the day</span><h2 id="checks-title">Three weak points to solve.</h2></div><p>These checks change faster than the page. Reconfirm them with the listed official source and the actual operator close to travel.</p></div><div class="md-check-grid">${checks}</div><div class="md-boundary"><small>Keep this boundary</small><strong>${escapeHtml(guide.decisions[2][0])}</strong><p>${escapeHtml(guide.decisions[2][1])}</p></div></section>
+      <section class="md-section" id="checks" aria-labelledby="checks-title"><div class="md-section-head"><div><span class="md-section-label">Before committing the day</span><h2 id="checks-title">Three weak points to solve.</h2></div><p>These checks change faster than the page. Reconfirm them with the listed official source and the actual operator close to travel.</p></div><div class="md-check-grid">${checks}</div></section>
 
       <section class="md-section md-faq" id="faq" aria-labelledby="faq-title"><div class="md-section-head"><div><span class="md-section-label">Planning answers</span><h2 id="faq-title">${escapeHtml(guide.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
 
       <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div><p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on 30 August 2026. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(cluster.sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: 30 August 2026 · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(guide.sources || cluster.sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>
@@ -234,7 +240,11 @@ function replaceMarked(html, start, end, replacement) {
 function injectHubCards(cluster) {
   const file = routeFile(`/malaysia/${cluster.hubSlug}/`);
   let html = fs.readFileSync(file, 'utf8');
-  if (!html.includes(depthCss)) html = html.replace('</head>', `  <link rel="stylesheet" href="${depthCss}">\n</head>`);
+  if (cluster.hubSlug === 'george-town-penang') {
+    html = html.replace(`  <link rel="stylesheet" href="${depthCss}">\n`, '');
+  } else if (!html.includes(depthCss)) {
+    html = html.replace('</head>', `  <link rel="stylesheet" href="${depthCss}">\n</head>`);
+  }
   if (html.includes(markerStart)) html = replaceMarked(html, markerStart, markerEnd, hubCards(cluster));
   else {
     const main = html.indexOf('<main');
@@ -279,26 +289,43 @@ function updateSidebar() {
   fs.writeFileSync(file, html);
 }
 
-function updateSearch() {
+function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) {
   const file = path.join(root, 'data', 'search-index.json');
   const index = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (targetCluster) {
+    const hubUrl = '/malaysia/' + targetCluster.hubSlug + '/';
+    const hub = index.find((item) => item.url === hubUrl);
+    if (!hub) throw new Error('Missing existing hub search record for ' + targetCluster.hubSlug);
+    hub.summary = targetCluster.hubPrompt;
+    for (const guide of targetGuides) {
+      const entry = index.find((item) => item.url === guide.url);
+      if (!entry) throw new Error('Missing existing search record for ' + guide.url);
+      entry.title = guide.name + ' Guide';
+      entry.parent = 'Malaysia - ' + guide.hubName;
+      entry.type = 'Focused area and field guide';
+      entry.summary = guide.summary;
+      entry.keywords = [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide'];
+    }
+    fs.writeFileSync(file, JSON.stringify(index, null, 2) + '\n');
+    return;
+  }
   const generatedUrls = new Set([
-    ...malaysiaDepthGuides.map((guide) => guide.url),
-    ...malaysiaDepthClusters.filter((cluster) => cluster.newHub).map((cluster) => `/malaysia/${cluster.hubSlug}/`)
+    ...targetGuides.map((guide) => guide.url),
+    ...malaysiaDepthClusters.filter((cluster) => cluster.newHub).map((cluster) => '/malaysia/' + cluster.hubSlug + '/')
   ]);
   const clean = index.filter((item) => !generatedUrls.has(item.url));
   const hubEntries = malaysiaDepthClusters.filter((cluster) => cluster.newHub).map((cluster) => ({
-    title: `${cluster.hubName} Travel Guide`,
-    url: `/malaysia/${cluster.hubSlug}/`,
-    parent: 'Malaysia · Sarawak',
+    title: cluster.hubName + ' Travel Guide',
+    url: '/malaysia/' + cluster.hubSlug + '/',
+    parent: 'Malaysia - Sarawak',
     type: cluster.hubSlug === 'gunung-mulu' ? 'World Heritage cave and rainforest guide' : 'River city, wildlife and coastal park guide',
     summary: cluster.hubPrompt,
     keywords: [cluster.hubName.toLowerCase(), 'sarawak', 'malaysia borneo', ...cluster.guides.map((guide) => guide.name.toLowerCase())]
   }));
-  const guideEntries = malaysiaDepthGuides.map((guide) => ({
-    title: `${guide.name} Guide`,
+  const guideEntries = targetGuides.map((guide) => ({
+    title: guide.name + ' Guide',
     url: guide.url,
-    parent: `Malaysia · ${guide.hubName}`,
+    parent: 'Malaysia - ' + guide.hubName,
     type: 'Focused area and field guide',
     summary: guide.summary,
     keywords: [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide']
@@ -306,22 +333,38 @@ function updateSearch() {
   fs.writeFileSync(file, JSON.stringify([...clean, ...hubEntries, ...guideEntries], null, 2) + '\n');
 }
 
-for (const cluster of malaysiaDepthClusters.filter((item) => item.newHub)) {
-  const file = routeFile(`/malaysia/${cluster.hubSlug}/`);
-  fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, sarawakHubPage(cluster));
+const requestedClusterSlug = process.argv.find((argument) => argument.startsWith('--cluster='))?.slice('--cluster='.length);
+if (requestedClusterSlug) {
+  if (requestedClusterSlug !== 'george-town-penang') throw new Error('This bounded generation mode is only enabled for the reviewed George Town & Penang cluster.');
+  const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
+  const reviewedGuideSlugs = new Set(['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam']);
+  const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugs.has(guide.slug));
+  if (!cluster || guides.length !== reviewedGuideSlugs.size) throw new Error('Penang bounded route list does not match the three reviewed child guides.');
+  for (const guide of guides) {
+    const page = routeFile(guide.url);
+    fs.mkdirSync(path.dirname(page), { recursive: true });
+    fs.writeFileSync(page, childPage(guide, cluster));
+  }
+  injectHubCards(cluster);
+  updateSearch(guides, cluster);
+  console.log('Generated the George Town & Penang hub cards and three reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.');
+} else {
+  for (const cluster of malaysiaDepthClusters.filter((item) => item.newHub)) {
+    const file = routeFile('/malaysia/' + cluster.hubSlug + '/');
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, sarawakHubPage(cluster));
+  }
+
+  for (const guide of malaysiaDepthGuides) {
+    const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === guide.hubSlug);
+    const file = routeFile(guide.url);
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, childPage(guide, cluster));
+  }
+
+  for (const cluster of malaysiaDepthClusters.filter((item) => !item.newHub)) injectHubCards(cluster);
+  updateCountryHub();
+  updateSidebar();
+  updateSearch();
+  console.log('Generated ' + malaysiaDepthGuides.length + ' Malaysia field guides, ' + malaysiaDepthClusters.filter((cluster) => cluster.newHub).length + ' Sarawak hubs, 14 hub directories and synchronized English navigation/search.');
 }
-
-for (const guide of malaysiaDepthGuides) {
-  const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === guide.hubSlug);
-  const file = routeFile(guide.url);
-  fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, childPage(guide, cluster));
-}
-
-for (const cluster of malaysiaDepthClusters.filter((item) => !item.newHub)) injectHubCards(cluster);
-updateCountryHub();
-updateSidebar();
-updateSearch();
-
-console.log(`Generated ${malaysiaDepthGuides.length} Malaysia field guides, ${malaysiaDepthClusters.filter((cluster) => cluster.newHub).length} Sarawak hubs, 14 hub directories and synchronized English navigation/search.`);

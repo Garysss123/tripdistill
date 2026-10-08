@@ -144,6 +144,51 @@ body[data-cluster="malaysia-straits"] {
 .penang-day h3 { margin: 1rem 0 .5rem; font-family: Georgia, serif; }
 .penang-day p { color: #62716c; font-size: .8rem; }
 
+/* Keep the Penang chapter cards inside the already-loaded Strait Cities sheet. */
+.penang-guide .md-hub-section {
+  --md-ink: #262241;
+  --md-paper: #fffaf2;
+  --md-accent: #d45746;
+  --md-accent-2: #14776c;
+  --md-line: rgba(60, 48, 79, .21);
+  --md-dark: #29234a;
+  position: relative;
+  margin: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  color: var(--md-ink);
+  background: color-mix(in srgb, var(--md-paper) 92%, transparent);
+  border: 1px solid var(--md-line);
+  box-shadow: 0 1.4rem 4rem color-mix(in srgb, var(--md-dark) 9%, transparent);
+}
+.penang-guide .md-hub-heading { display: grid; grid-template-columns: minmax(0, .72fr) minmax(16rem, .45fr); gap: 2rem; align-items: end; margin-bottom: 2rem; }
+.penang-guide .md-hub-heading span { color: var(--md-accent); font-size: .69rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+.penang-guide .md-hub-heading h2 { max-width: 14ch; margin: .45rem 0 0; color: var(--md-dark); font: 700 clamp(2rem, 3.8vw, 4rem)/.98 Georgia, serif; letter-spacing: -.045em; }
+.penang-guide .md-hub-heading p { margin: 0; color: color-mix(in srgb, var(--md-ink) 70%, #fff); }
+.penang-guide .md-hub-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+.penang-guide .md-hub-card { position: relative; grid-column: span 5; min-height: 26rem; display: flex; align-items: end; overflow: hidden; color: #fff; background: var(--md-dark); }
+.penang-guide .md-hub-card:nth-child(2), .penang-guide .md-hub-card:nth-child(3) { grid-column: span 7; }
+.penang-guide .md-hub-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+.penang-guide .md-hub-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7, 25, 22, .96), rgba(7, 25, 22, .05) 76%); }
+.penang-guide .md-hub-card > div { position: relative; z-index: 2; width: 100%; padding: 1.5rem; }
+.penang-guide .md-hub-card small { color: color-mix(in srgb, var(--md-accent-2) 65%, #fff); font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.penang-guide .md-hub-card h3 { margin: .45rem 0 .65rem; font: 700 clamp(1.55rem, 2.4vw, 2.35rem)/1 Georgia, serif; }
+.penang-guide .md-hub-card p { max-width: 42rem; margin: 0 0 1rem; color: rgba(255, 255, 255, .72); font-size: .88rem; }
+.penang-guide .md-hub-card strong { color: #fff; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+.penang-guide .md-hub-number { position: absolute; z-index: 3; top: 1rem; right: 1rem; display: grid; width: 3.5rem; height: 3.5rem; place-items: center; border: 1px solid rgba(255, 255, 255, .55); background: rgba(8, 28, 24, .5); font: 700 1.25rem Georgia, serif; backdrop-filter: blur(8px); }
+.penang-guide .md-hub-card:hover img { transform: scale(1.04); }
+
+@media (max-width: 820px) {
+  .penang-guide .md-hub-heading { grid-template-columns: 1fr; }
+  .penang-guide .md-hub-card, .penang-guide .md-hub-card:nth-child(2), .penang-guide .md-hub-card:nth-child(3) { grid-column: span 6; }
+}
+
+@media (max-width: 560px) {
+  .penang-guide .md-hub-section { margin-right: -.35rem; margin-left: -.35rem; padding: 1.2rem; }
+  .penang-guide .md-hub-grid { grid-template-columns: 1fr; }
+  .penang-guide .md-hub-card, .penang-guide .md-hub-card:nth-child(2), .penang-guide .md-hub-card:nth-child(3) { grid-column: auto; min-height: 23rem; }
+  .penang-guide .md-hub-card p { font-size: .83rem; }
+}
+
 /* Melaka: a river-port ledger that reads by bank and hour. */
 .melaka-guide { --mk-red: #aa3f3c; --mk-river: #277982; --mk-gold: #d7a84d; --mk-night: #1f3035; }
 .melaka-hero { position: relative; min-height: 40rem; display: grid; grid-template-columns: .82fr 1.18fr; overflow: hidden; border-radius: .25rem 2.5rem .25rem 2.5rem; background: var(--mk-red); box-shadow: 0 24px 55px rgba(83, 41, 35, .17); }

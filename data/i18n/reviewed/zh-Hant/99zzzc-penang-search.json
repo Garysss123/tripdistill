@@ -1,0 +1,10 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - George Town & Penang": "馬來西亞－喬治市與檳城"
+  }
+}

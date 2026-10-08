@@ -1,0 +1,10 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - George Town & Penang": "มาเลเซีย — จอร์จทาวน์และปีนัง"
+  }
+}

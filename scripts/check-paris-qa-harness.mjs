@@ -98,7 +98,11 @@ const expectedRoutes = [
   ['/south-korea/jeju/', 'Jeju Island hub'],
   ['/south-korea/jeju/seogwipo-jeongbang/', 'Seogwipo & Jeongbang'],
   ['/south-korea/jeju/jungmun-andeok/', 'Jungmun & Andeok'],
-  ['/south-korea/jeju/moseulpo-gapado/', 'Moseulpo & Gapado']
+  ['/south-korea/jeju/moseulpo-gapado/', 'Moseulpo & Gapado'],
+  ['/malaysia/george-town-penang/', 'George Town & Penang hub'],
+  ['/malaysia/george-town-penang/armenian-street-core-zone/', 'Armenian Street & Core Zone'],
+  ['/malaysia/george-town-penang/weld-quay-clan-jetties/', 'Weld Quay & Clan Jetties'],
+  ['/malaysia/george-town-penang/penang-hill-air-itam/', 'Penang Hill & Air Itam'],
 ];
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -219,7 +223,7 @@ function getManifest(html, label) {
 function assertHarness(html, label) {
   const document = parse(html);
   const intro = nodes(document, 'p').find((node) => attr(node, 'class').split(/\s+/).includes('intro'));
-  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro))) fail(`${label}: harness introduction must count all 16 Canada routes and seven Gyeongju routes.`);
+  if (!intro || !/16 Canada routes across Montreal, Toronto, Quebec City—Charlevoix and Vancouver & the North Shore/.test(text(intro)) || !/seven Gyeongju routes/.test(text(intro)) || !/four George Town & Penang routes/.test(text(intro))) fail(`${label}: harness introduction must count all 16 Canada routes, seven Gyeongju routes and four George Town & Penang routes.`);
   const robotEntries = nodes(document, 'meta').filter((node) => attr(node, 'name').toLowerCase() === 'robots');
   if (robotEntries.length !== 1 || !attr(robotEntries[0], 'content').split(',').map((part) => part.trim().toLowerCase()).includes('noindex')) {
     fail(`${label}: expected exactly one robots meta containing noindex.`);
@@ -285,7 +289,7 @@ function assertHarness(html, label) {
   const expectedPageRecords = expectedRoutes.length * expectedLocales.length;
   if (manifest.routeCount !== expectedPageRecords || manifest.pages?.length !== expectedPageRecords) fail(`${label}: expected ${expectedPageRecords} localized route records.`);
   if (JSON.stringify(manifest.viewportWidths) !== JSON.stringify([320, 390])) fail(`${label}: viewport widths must be exactly 320 and 390.`);
-  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, South Korea, Hanoi, Sapa, Ha Giang and Ninh Binh scope.`);
+  if (JSON.stringify(manifest.routes.map(({ path: routePath, label: routeLabel }) => [routePath, routeLabel])) !== JSON.stringify(expectedRoutes)) fail(`${label}: route manifest does not match the approved France, Canada including Toronto and Vancouver, South Korea, Hanoi, Sapa, Ha Giang, Ninh Binh and Penang scope.`);
   if (JSON.stringify(manifest.locales.map(({ code, prefix }) => ({ code, prefix }))) !== JSON.stringify(expectedLocales)) fail(`${label}: locale routing does not match en, zh-Hant, ja, ko, th.`);
   return manifest;
 }
@@ -302,6 +306,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const bodyNode = nodes(document, 'body')[0];
   const franceIdentity = record.path.startsWith('/france/') && attr(bodyNode, 'data-country') === 'france' && ['fr-paris', 'fr-normandy', 'fr-loire-valley', 'fr-champagne'].some((prefix) => attr(bodyNode, 'data-page').startsWith(prefix));
   const canadaIdentity = record.path.startsWith('/canada/') && attr(bodyNode, 'data-country') === 'canada' && attr(bodyNode, 'data-page').startsWith('ca-');
+  const penangIdentity = record.path === '/malaysia/george-town-penang/' ? attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-cluster') === 'malaysia-straits' : record.path.startsWith('/malaysia/george-town-penang/') && attr(bodyNode, 'data-country') === 'malaysia' && attr(bodyNode, 'data-region') === 'george-town-penang';
   const seoulIdentity = record.path.startsWith('/south-korea/seoul/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'seoul';
   const busanIdentity = record.path.startsWith('/south-korea/busan/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'busan';
   const gyeongjuIdentity = record.path.startsWith('/south-korea/gyeongju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'gyeongju';
@@ -310,7 +315,7 @@ function inspectLocalizedPage(manifest, record, label) {
   const haGiangIdentity = record.path.startsWith('/vietnam/ha-giang/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ha-giang';
   const ninhBinhIdentity = record.path.startsWith('/vietnam/ninh-binh/') && attr(bodyNode, 'data-country') === 'vietnam' && attr(bodyNode, 'data-region') === 'ninh-binh';
   const jejuIdentity = record.path.startsWith('/south-korea/jeju/') && attr(bodyNode, 'data-country') === 'south-korea' && attr(bodyNode, 'data-city') === 'jeju';
-  if (!franceIdentity && !canadaIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  if (!franceIdentity && !canadaIdentity && !penangIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !jejuIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -364,6 +369,38 @@ for (const locale of expectedLocales) {
     const { record, document } = pagesByRoute.get(`${locale.code}${routePath}`);
     const styles = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => new URL(attr(node, 'href'), 'https://tripdistill.com').pathname);
     const styleHrefs = nodes(document, 'link').filter((node) => attr(node, 'rel').toLowerCase() === 'stylesheet').map((node) => attr(node, 'href'));
+    if (routePath.startsWith('/malaysia/george-town-penang/')) {
+      const body = nodes(document, 'body')[0];
+      const bodyText = text(body);
+      const links = nodes(document, 'a').map((node) => attr(node, 'href'));
+      if (attr(body, 'data-country') !== 'malaysia') fail('Wrong Penang route country on ' + locale.code + ' ' + routePath + '.');
+      if (routePath === '/malaysia/george-town-penang/' && attr(body, 'data-cluster') !== 'malaysia-straits') fail('Wrong Penang hub identity on ' + locale.code + '.');
+      if (routePath !== '/malaysia/george-town-penang/' && attr(body, 'data-region') !== 'george-town-penang') fail('Wrong Penang child identity on ' + locale.code + ' ' + routePath + '.');
+      if (nodes(document, 'details').length < 3) fail('Missing destination-specific Penang FAQ controls on ' + locale.code + ' ' + routePath + '.');
+      if (!links.some((href) => href.includes('commons.wikimedia.org')) || !links.some((href) => href.includes('creativecommons.org/licenses/'))) fail('Missing linked image source or exact license on ' + locale.code + ' ' + routePath + '.');
+      if (!/CC BY(?:-SA)? [234]\.0/.test(bodyText)) fail('Missing visible commercial-use image license on ' + locale.code + ' ' + routePath + '.');
+      if (locale.code === 'en') {
+        if (routePath === '/malaysia/george-town-penang/' && !['Armenian Street', 'Clan Jetties', 'Air Itam', 'Penang Hill'].every((phrase) => bodyText.includes(phrase))) fail('Penang hub is missing its three distinct area choices.');
+        if (routePath.endsWith('/armenian-street-core-zone/') && !['Cannon Square', 'Khoo Kongsi', 'Cheah Kongsi', '1906', 'Lebuh Pantai'].every((phrase) => bodyText.includes(phrase))) fail('Armenian Street route is missing its named landmarks or exit.');
+        if (routePath.endsWith('/weld-quay-clan-jetties/') && !['Pangkalan Raja Tun Uda', 'Butterworth', 'Pengkalan Weld', 'Chew Jetty'].every((phrase) => bodyText.includes(phrase))) fail('Weld Quay route is missing its ferry or public-path choices.');
+        if (routePath.endsWith('/penang-hill-air-itam/') && !['1924', 'Flagstaff Hill', 'Edgecliff', 'Kek Lok Si', 'Lower Station'].every((phrase) => bodyText.includes(phrase))) fail('Penang Hill route is missing its railway, heritage or exit choices.');
+        if (routePath !== '/malaysia/george-town-penang/') {
+          const decision = classNodes(document, 'md-decision-strip')[0];
+          const routeSection = nodes(document, 'section').find((node) => attr(node, 'id') === 'route');
+          const routeHead = classNodes(routeSection, 'md-section-head')[0];
+          const routeLead = nodes(routeHead, 'p')[0];
+          const decisionParagraphs = nodes(decision, 'p').map((node) => text(node).replace(/\s+/g, ' ').trim().toLowerCase());
+          const normalizedLead = text(routeLead).replace(/\s+/g, ' ').trim().toLowerCase();
+          if (decisionParagraphs.includes(normalizedLead) || classNodes(document, 'md-boundary').length) fail('Penang child repeats a decision paragraph in the route/boundary sections on ' + routePath + '.');
+        }
+        const searchEntry = sourceSearchIndex.find((item) => item.url === routePath);
+        if (!searchEntry) fail('Penang page is missing its search record for ' + routePath + '.');
+        if (routePath.endsWith('/armenian-street-core-zone/') && !searchEntry.summary.includes('Khoo Kongsi')) fail('Armenian Street search summary omits its named landmark.');
+        if (routePath.endsWith('/weld-quay-clan-jetties/') && !searchEntry.summary.includes('Pengkalan Weld')) fail('Weld Quay search summary omits its named waterfront.');
+        if (routePath.endsWith('/penang-hill-air-itam/') && !searchEntry.summary.includes('Flagstaff Hill')) fail('Penang Hill search summary omits the funicular terminus.');
+      }
+      continue;
+    }
     if (routePath.startsWith('/south-korea/jeju/')) {
       const body = nodes(document, 'body')[0];
       const bodyText = text(body);
@@ -1077,6 +1114,7 @@ if (!isLive) {
   const sapaPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/sapa-northwest-highlands/')).length;
   const haGiangPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ha-giang/')).length;
   const ninhBinhPages = manifest.pages.filter((record) => record.path.startsWith('/vietnam/ninh-binh/')).length;
+  const penangPages = manifest.pages.filter((record) => record.path.startsWith('/malaysia/george-town-penang/')).length;
   const jejuPages = manifest.pages.filter((record) => record.path.startsWith('/south-korea/jeju/')).length;
   const meoVacPath = safeDistPath('/vietnam/ha-giang/meo-vac-du-gia/');
   const meoVacHtml = fs.readFileSync(path.join(meoVacPath, 'index.html'), 'utf8');
@@ -1086,7 +1124,7 @@ if (!isLive) {
   for (const source of ['vietnam-ha-giang-yen-minh-pines-20261007.webp', 'vietnam-ha-giang-dong-van-market-20261007.webp', 'vietnam-ha-giang-lung-cu-context-20261007.webp']) {
     if (!meoVacHtml.includes(source)) fail(`Meo Vac credit dependency is missing linked Ha Giang image ${source}.`);
   }
-  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
+  console.log(`Responsive QA harness passed locally: ${manifest.pages.length}/${expectedRoutes.length * expectedLocales.length} route-language HTML hashes (${parisPages} Paris, ${dayTripPages} day-trip, ${normandyPages} Normandy, ${loirePages} Loire, ${champagnePages} Champagne, ${canadaPages} Canada, ${seoulPages} Seoul, ${busanPages} Busan, ${gyeongjuPages} Gyeongju, ${jejuPages} Jeju, ${hanoiPages} Hanoi, ${sapaPages} Sapa, ${haGiangPages} Ha Giang, ${ninhBinhPages} Ninh Binh, ${penangPages} Penang records), language/canonical/hreflang, H1/landmarks, internal links, visible image credits, ${images.length} image assets, max route CSS ${maxPageStyle.bytes}/${manifest.maxPageStylesBytes} bytes, ${totalUniqueStyleAssetBytes} unique CSS bytes, 4,560 sitemap URLs, noindex harness.`);
 } else {
   const harnessResponse = await fetchNoStore(`${liveOrigin}/qa/paris-responsive/?release-check=${Date.now()}`);
   if (harnessResponse.status !== 200) fail(`Live harness returned HTTP ${harnessResponse.status}.`);
