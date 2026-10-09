@@ -168,6 +168,8 @@ const expectedRoutes = [
   ['/thailand/ayutthaya/railway-station-chao-phrom/', 'Rail arrival & Chao Phrom'],
   ['/thailand/ayutthaya/west-island-wat-lokayasutharam/', 'West island & Wat Lokayasutharam'],
   ['/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/', 'Wat Yai & Wat Phanan Choeng'],
+  ['/thailand/ayutthaya/foreign-settlements-south-river/', 'Foreign Settlements & South River'],
+  ['/thailand/ayutthaya/bang-pa-in-palace/', 'Bang Pa-In Palace'],
 ];
 const andamanResponsiveCss = fs.readFileSync(path.join(distRoot, 'css', 'andaman.css'), 'utf8');
 const andamanNarrowGuard = andamanResponsiveCss.slice(andamanResponsiveCss.lastIndexOf('/* These seven reviewed routes'));
@@ -477,7 +479,9 @@ function assertHarness(html, label) {
     '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/',
     '/thailand/ayutthaya/railway-station-chao-phrom/',
     '/thailand/ayutthaya/west-island-wat-lokayasutharam/',
-    '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'
+    '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/',
+    '/thailand/ayutthaya/foreign-settlements-south-river/',
+    '/thailand/ayutthaya/bang-pa-in-palace/'
   ].map((routePath) => [routePath, 350_000]));
   if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Thailand stylesheet budgets are missing or unexpected.`);
   const expectedImageBudgets = Object.fromEntries([
@@ -1711,7 +1715,7 @@ for (const locale of expectedLocales) {
       const body = nodes(document, 'body')[0];
       if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-region') !== 'ayutthaya') fail(`Wrong Ayutthaya responsive scope on ${locale.code} ${routePath}.`);
       if (!styles.includes('/css/site.css') || !styles.includes('/css/thailand.css') || !styles.includes('/css/ayutthaya.css')) fail(`Missing Ayutthaya route stylesheets on ${locale.code} ${routePath}.`);
-      if (!styleHrefs.includes('/css/ayutthaya.css?v=20261009-2')) fail(`Missing current Ayutthaya width-fix stylesheet version on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/ayutthaya.css?v=20261009-3')) fail(`Missing current Ayutthaya width-fix stylesheet version on ${locale.code} ${routePath}.`);
       const ayutthayaCss = fs.readFileSync(safeDistPath('/css/ayutthaya.css'), 'utf8');
       if (routePath === '/thailand/ayutthaya/west-island-wat-lokayasutharam/') {
         const shadeHeroRule = cssRuleBlock(ayutthayaCss, '.shade-register-hero');
@@ -1771,12 +1775,27 @@ for (const locale of expectedLocales) {
           'https://creativecommons.org/licenses/by-sa/3.0/',
         ],
         '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/': [
-          'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg',
+          'https://commons.wikimedia.org/w/index.php?title=File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg&oldid=1192944501',
           'https://creativecommons.org/licenses/by-sa/4.0/',
+        ],
+        '/thailand/ayutthaya/foreign-settlements-south-river/': [
+          'https://commons.wikimedia.org/w/index.php?title=File:%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99_%E0%B8%AD.%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2_%E0%B8%88.%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2_(1).jpg&oldid=960562587',
+          'https://creativecommons.org/licenses/by-sa/4.0/',
+        ],
+        '/thailand/ayutthaya/bang-pa-in-palace/': [
+          'https://commons.wikimedia.org/w/index.php?title=File:Bang_Pa-In_Palace.jpg&oldid=1088101333',
+          'https://creativecommons.org/licenses/by/2.0/',
         ],
       }[routePath];
       const linkedHrefs = nodes(document, 'a').map((node) => attr(node, 'href'));
       for (const href of photoLinksByRoute) if (!linkedHrefs.includes(href)) fail(`Missing exact Ayutthaya photo source or license link on ${locale.code} ${routePath}: ${href}.`);
+      const rejectedPhotoLinksByRoute = {
+        '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/': ["https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg"],
+        '/thailand/ayutthaya/foreign-settlements-south-river/': ["https://commons.wikimedia.org/w/index.php?title=File:%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99_%E0%B8%AD.%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2_%E0%B8%88.%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2_(1).jpg&oldid=960562587"],
+      }[routePath] || [];
+      for (const href of rejectedPhotoLinksByRoute) {
+        if (linkedHrefs.includes(href)) fail("Rejected stale Ayutthaya photo source on " + locale.code + " " + routePath + ": " + href + ".");
+      }
       const adaptationVersionsByRoute = {
         '/thailand/ayutthaya/': ['3.0', '3.0', '4.0'],
         '/thailand/ayutthaya/railway-station-chao-phrom/': ['3.0'],
@@ -1788,6 +1807,12 @@ for (const locale of expectedLocales) {
         const localizedNote = locale.code === 'en' ? sourceNote : localeCatalogs[locale.code][sourceNote];
         if (!localizedNote || !bodyText.includes(localizedNote)) fail(`Missing localized Ayutthaya CC BY-SA ${licenseVersion} adaptation/share-alike note on ${locale.code} ${routePath}.`);
       }
+      const foreignPhotoDisclosure = 'Source review: 9 October 2026. The St Peter excavation article was published 28 February 2022, the Japanese Village article 3 March 2022, and the Portuguese Village entry 2 April 2022. Check current operation and road access with the named operators. Photo taken 1 November 2016 by กสิณธร ราชโอรส; resized, converted to WebP and display-cropped. This display image adaptation is shared under CC BY-SA 4.0.';
+      if (routePath === '/thailand/ayutthaya/foreign-settlements-south-river/') {
+        const localizedDisclosure = locale.code === 'en' ? foreignPhotoDisclosure : localeCatalogs[locale.code][foreignPhotoDisclosure];
+        if (!localizedDisclosure || !bodyText.includes(localizedDisclosure)) fail(`Missing fully localized Foreign Settlements photo and source disclosure on ${locale.code}.`);
+        if (!localizedDisclosure.includes('CC BY-SA 4.0')) fail(`Missing exact Foreign Settlements CC BY-SA 4.0 adaptation statement on ${locale.code}.`);
+      }
       if (locale.code === 'en') {
         const requiredByRoute = {
           '/thailand/ayutthaya/': ['1350', '1767', '289 hectares', 'Naresuan Road', 'Pa Sak'],
@@ -1797,6 +1822,8 @@ for (const locale of expectedLocales) {
           '/thailand/ayutthaya/railway-station-chao-phrom/': ['Pa Sak River', 'Chao Phrom', 'SRT D-Ticket', 'one-way ride or timed hire'],
           '/thailand/ayutthaya/west-island-wat-lokayasutharam/': ['42 metres', 'lotus', '24 octagonal', '1954', '1989'],
           '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/': ['Wat Pa Kaeo', 'King Naresuan', 'Phra Phanarat', '20-metre', '19-metre', 'Highway 3477'],
+          '/thailand/ayutthaya/foreign-settlements-south-river/': ['1511', '1608', '1935', '2015', '254', 'east bank', 'St Peter'],
+          '/thailand/ayutthaya/bang-pa-in-palace/': ['Prasat Thong', 'Rama IV', 'Hema Monthian Thewarat', 'Aisawan Thipphaya-at', 'Warophat Phiman', 'Withun Tasana', 'Wehat Chamrun', '1889', 'station-to-palace'],
         }[routePath];
         for (const phrase of requiredByRoute) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Ayutthaya editorial evidence is missing '${phrase}' on ${routePath}.`);
         if (!sourceSearchIndex.some((item) => item.url === routePath && item.title && item.summary)) fail(`Ayutthaya search-index record is missing for ${routePath}.`);

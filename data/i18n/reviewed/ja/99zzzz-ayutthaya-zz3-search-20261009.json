@@ -1,0 +1,21 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya's Foreign Settlements: Japanese, Portuguese and Dutch Riverbank Sites": "アユタヤの外国人居留地：川岸の日本人町、ポルトガル人地区、オランダ人拠点",
+    "Compare the Japanese Village's modern memorial grounds on the east bank with St Peter's Portuguese excavation opposite; trace Dutch VOC dates, plan the separate Baan Hollanda stop and road transfers.": "東岸にある現代の日本人村記念施設と、対岸のサン・ペトロ教会跡の発掘遺構を比べます。オランダ東インド会社（VOC）の年代をたどり、別の立ち寄り先バーン・ホランダと道路移動を計画しましょう。",
+    "portuguese village": "ポルトガル人村",
+    "st peter church": "サン・ペトロ教会",
+    "dutch voc": "オランダ東インド会社（VOC）",
+    "Bang Pa-In Palace: Thai, Khmer, Chinese and European Architecture": "バーンパイン宮殿：タイ、クメール、中国、ヨーロッパの建築",
+    "Follow Hema Monthian Thewarat, Aisawan Thiphya-at, Warophat Phiman, Withun Tasana and Wehat Chamrun in a south-of-island route; compare rail with its road last mile and verify current palace and Wat Niwet access.": "島の南を巡り、ヘーマー・モンティアン・テワラート、アイサワン・ティッピヤート、ワローパート・ピマーン、ウィトゥン・タッサナー、ウェーハート・チャムルーンを訪ねます。鉄道と最後の道路移動を比べ、宮殿とワット・ニウェートの現在の立入状況を確認しましょう。",
+    "bang pa-in palace": "バーンパイン宮殿",
+    "aisawan thiphya-at": "アイサワン・ティッピヤート",
+    "wat niwet thamma prawat": "ワット・ニウェート・タンマプラワット",
+    "bang pa-in station": "バーンパイン駅",
+    "royal estate": "王室別荘"
+  }
+}

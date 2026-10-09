@@ -165,7 +165,9 @@ const thailandAyutthayaEditedRoutes = [
   '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/',
   '/thailand/ayutthaya/railway-station-chao-phrom/',
   '/thailand/ayutthaya/west-island-wat-lokayasutharam/',
-  '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'
+  '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/',
+  '/thailand/ayutthaya/foreign-settlements-south-river/',
+  '/thailand/ayutthaya/bang-pa-in-palace/',
 ];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters
