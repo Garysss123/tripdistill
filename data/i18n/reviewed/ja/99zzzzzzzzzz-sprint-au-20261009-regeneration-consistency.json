@@ -1,0 +1,22 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/",
+    "/australia/cairns-wet-tropics/",
+    "/australia/red-centre/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose one Top End operating region around your nights, not a pin for every day.": "宿泊地を軸に、トップエンドで訪れるエリアを1つ選び、毎日の立ち寄り先を地図にピン留めする形にはしないでください。",
+    "cooinda cruise-day plan": "Cooindaのクルーズ日程プラン",
+    "Cross in daylight, select a small number of open managed stops such as Dubuji Boardwalk, and reach…": "明るいうちに渡り、Dubuji Boardwalkのような営業中で管理された立ち寄り先を少数選び、到着しましょう…",
+    "DESERT DISTANCE / CULTURAL COUNTRY / HEAT · reviewed 4 October 2026": "砂漠の移動距離 / 先住民のカントリー / 暑さ · 2026年10月4日確認",
+    "falls, access and swim choice": "滝、アクセス、泳ぐ場所の選択",
+    "On a city day, use the signed Esplanade promenade and managed Lagoon, then choose one indoor cultural…": "市内で過ごす日は、案内標識のあるEsplanadeの遊歩道と整備されたLagoonを利用し、その後、屋内の文化施設を1か所選びましょう…",
+    "Planning facts and image licenses were reviewed on 4 October 2026. Recheck transport, park, fire, weather, marine and operator conditions before travel.": "計画情報と画像ライセンスは2026年10月4日に確認しました。旅行前に、交通機関、公園、火災状況・火気規制、天候、海況、各事業者の状況を再確認してください。",
+    "Reach the Centre early enough to use the shuttle and complete one suitable walk, then return to Port…": "シャトルを利用して無理のない散策を1つ終えられるよう、早めにCentreへ到着し、その後Portへ戻りましょう…",
+    "Take the scheduled mode from Cairns or Freshwater, spend a contained visit in Kuranda village, then…": "CairnsまたはFreshwaterから定期運行の交通手段を利用し、Kuranda村で時間を区切って見学してから…",
+    "two separate art-country walks": "アートと先住民のカントリーを巡る、別々の2つの散策"
+  }
+}

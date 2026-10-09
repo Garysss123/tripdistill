@@ -119,10 +119,11 @@ function hubFaqs(cluster) {
 function hubSchema(cluster) {
   const route = `/australia/${cluster.slug}/`;
   const faqs = hubFaqs(cluster);
+  const pageReviewIsoDate = cluster.reviewIsoDate || isoDate;
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: pageReviewIsoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', 'https://tripdistill.com/'], ['Australia', 'https://tripdistill.com/australia/'], [cluster.name, absolute(route)]]),
       { '@type': 'FAQPage', mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) }
     ]
@@ -136,6 +137,7 @@ function hubCards(cluster) {
 function hubPage(cluster, index) {
   const route = `/australia/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
+  const pageReviewDate = cluster.reviewDate || reviewDate;
   const description = ensureMetaDescription(`${cluster.hubIntro} ${cluster.transfer}`);
   const faqs = hubFaqs(cluster);
   return `<!doctype html>
@@ -150,13 +152,13 @@ function hubPage(cluster, index) {
 <body data-page="${escapeHtml(cluster.slug)}" data-parent-page="australia" data-country="australia" data-region="${escapeHtml(cluster.slug)}">
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content au-hub" data-au-family="${escapeHtml(cluster.family)}">
-      <section class="au-hub-hero" aria-labelledby="au-hub-title"><div class="au-hub-copy"><span class="au-kicker">${escapeHtml(cluster.label)} · reviewed ${reviewDate}</span><h1 id="au-hub-title">${escapeHtml(cluster.name)} <span>${escapeHtml(cluster.tagline)}</span></h1><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#field-guides">Choose a field</a><a class="button secondary" href="#operating-model">Read the operating model</a></div><dl><div><dt>Useful stay</dt><dd>${escapeHtml(compactText(cluster.stay))}</dd></div><div><dt>Transfer logic</dt><dd>${escapeHtml(compactText(cluster.transfer))}</dd></div></dl></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.alt)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="au-hub-index" aria-hidden="true"><small>Continental field atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>05 field chapters</span></div></section>
+      <section class="au-hub-hero" aria-labelledby="au-hub-title"><div class="au-hub-copy"><span class="au-kicker">${escapeHtml(cluster.label)} · reviewed ${escapeHtml(pageReviewDate)}</span><h1 id="au-hub-title">${escapeHtml(cluster.name)} <span>${escapeHtml(cluster.tagline)}</span></h1><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#field-guides">Choose a field</a><a class="button secondary" href="#operating-model">Read the operating model</a></div><dl><div><dt>Useful stay</dt><dd>${escapeHtml(compactText(cluster.stay))}</dd></div><div><dt>Transfer logic</dt><dd>${escapeHtml(compactText(cluster.transfer))}</dd></div></dl></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.alt)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="au-hub-index" aria-hidden="true"><small>Continental field atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>05 field chapters</span></div></section>
       <section class="au-hub-directory" id="field-guides" aria-labelledby="au-directory-title"><div class="au-hub-heading"><span>Five independently useful guides</span><h2 id="au-directory-title">Choose the operating system, then the place.</h2><p>Every card opens a full route with transport, access, weak points, official sources and visible image provenance.</p></div><div class="au-hub-grid">${hubCards(cluster)}</div></section>
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot></div></section>
       <section class="au-hub-section" id="operating-model" aria-labelledby="au-operating-title"><div class="au-hub-heading"><span>Regional operating model</span><h2 id="au-operating-title">Distance is part of the content.</h2><p>Australia punishes invisible transfer time. These five contracts keep the route honest.</p></div><div class="au-contract-grid"><article><small>Base</small><h3>Sleep near the first decision.</h3><p>${escapeHtml(cluster.stay)}</p></article><article><small>Movement</small><h3>Name the road, rail, ferry or operator.</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Country guidance</small><h3>Permission and guidance come first.</h3><p>Use recognised Traditional Owner language and visitor guidance. Do not infer access to cultural places, communities or Country from an online pin.</p></article><article><small>Condition</small><h3>One national forecast is not enough.</h3><p>Check the local fire, flood, surf, marine, alpine, heat or cyclone condition that actually governs the selected chapter.</p></article><article><small>Return</small><h3>Protect the last safe movement.</h3><p>Every field guide declares a return, turnaround or overnight before adding optional distance.</p></article></div></section>
       <section class="au-hub-section" aria-labelledby="au-sequence-title"><div class="au-hub-heading"><span>Five-field sequence</span><h2 id="au-sequence-title">Do not clear the map in one day.</h2></div><div class="au-hub-route">${cluster.guides.map((guide) => `<a href="${guide.url}"><span>Field ${String(guide.chapter).padStart(2, '0')}</span><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(compactText(guide.sequence, 105))}</p></a>`).join('')}</div></section>
       <section class="au-hub-section" aria-labelledby="au-hub-faq-title"><div class="au-hub-heading"><span>Planning answers</span><h2 id="au-hub-faq-title">${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faqs.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${reviewDate}. Recheck transport, park, fire, weather, marine and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${escapeHtml(pageReviewDate)}. Recheck transport, park, fire, weather, marine and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="${mainJs}" defer></script>
 </body>
@@ -322,13 +324,12 @@ function updateAbout() {
 }
 
 function updateEnglishAssetReferences() {
-  const excluded = new Set(['.git', 'dist', 'node_modules', 'zh', 'ja', 'ko', 'th']);
-  const stack = [root];
+  const australiaRoot = path.join(root, 'australia');
+  const stack = [australiaRoot];
   let changed = 0;
   while (stack.length) {
     const directory = stack.pop();
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-      if (directory === root && excluded.has(entry.name)) continue;
       const full = path.join(directory, entry.name);
       if (entry.isDirectory()) { stack.push(full); continue; }
       if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
