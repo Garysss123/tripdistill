@@ -35,7 +35,8 @@ for(const [slug,sections] of Object.entries(plans)){
  const assetSlug=slug==='washington-dc'?'dc':slug;
  for(const [i,route] of routes.entries()){
   const html=fs.readFileSync(path.join(root,route.slice(1),'index.html'),'utf8'),dom=flatten(parse(html));
-  check(html.includes(`data-editorial-revision="${assetSlug}-20260911"`),route+': missing editorial marker');
+  const markerDate=['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/'].includes(route)?'20261009':'20260911';
+  check(html.includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),route+': missing editorial marker');
   check(html.includes(`/css/${assetSlug}-editorial.css?v=20260911-1`),route+': missing editorial stylesheet');
   check(!html.includes('A practical visit plan')&&!html.includes('Fit this visit into your trip'),route+': generic body returned');
   check(dom.filter(n=>n.tagName==='h1').length===1,route+': H1 count');
@@ -49,7 +50,7 @@ for(const [slug,sections] of Object.entries(plans)){
   }
   if(!process.argv.includes('--english-only'))for(const locale of ['zh','ja','ko','th']){
    const file=path.join(root,locale,route.slice(1),'index.html');
-   check(fs.existsSync(file)&&fs.readFileSync(file,'utf8').includes(`data-editorial-revision="${assetSlug}-20260911"`),locale+route+': rewritten locale missing');
+   check(fs.existsSync(file)&&fs.readFileSync(file,'utf8').includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),locale+route+': rewritten locale missing');
   }
  }
 }
