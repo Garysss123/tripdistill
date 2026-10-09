@@ -417,32 +417,36 @@ export const unitedKingdomIslandsWalesNiClusters = [
         layout: 'castle-bay-headland-fold',
         imageQuery: 'Conwy Castle Wales river estuary',
         imageAlt: 'Conwy Castle beside the estuary in North Wales',
-        purpose: 'Choose Conwy’s castle-and-walls or Llandudno’s bay-and-Great-Orme system as the main day, using the short rail link once instead of repeatedly crossing the coast corridor.',
-        summary: 'Begin at the station nearest the main anchor, complete the castle or headland, take one rail or bus connection, and finish on the second town’s compact public realm.',
+        purpose: 'Choose Conwy’s compact medieval core or Llandudno’s open bay and headland as the main day. The towns sit on the same coast corridor, but their stations and the Great Orme approaches are not interchangeable.',
+        summary: 'Use Conwy station for the castle and town; use Llandudno station for the seafront. If changing towns, make one TfW rail leg the hinge and decide before leaving which Great Orme mode—tram, bus, cable car or a walked route—fits the weather and your mobility.',
         choices: [
-          ['Conwy depth', 'Use the castle, walls and compact medieval town as the main block. This gives the strongest heritage argument and simple rail access.'],
-          ['Llandudno and Great Orme', 'Prioritize promenade, pier and one tramway, cable or signed headland route. It adds coast and height but depends on weather and operation.'],
-          ['Two-town sampler', 'Use a shorter castle visit plus Llandudno promenade, linked by rail. It gains contrast but sacrifices the complete walls or headland.']
+          ['Conwy, for history without a second transfer', 'Walk from Conwy station into the walled town; choose the castle interior and harbour streets, then check Cadw’s live town-wall notice. On 9 October 2026 Cadw lists a short section between Watch Tower and Wing Gate as closed during safety work, with reopening planned for Easter 2027. Good for a short daylight window or wet weather, but the castle has steep, uneven historic circulation.'],
+          ['Llandudno, for a full coast-and-height day', 'Start at Llandudno station, not Llandudno Junction. Take the promenade and pier, then pick one Great Orme ascent: the tramway, seasonal cable car, bus or a signed walk. Wind, visibility, steep paths and each operator’s live status decide the choice.'],
+          ['A two-town sampler, only with a protected train', 'Do a focused Conwy castle/town visit, take one TfW train to Llandudno station, and finish on the level seafront. This is a contrast day, not a full wall walk plus Great Orme summit circuit.']
         ],
-        access: 'Conwy station is small and close to the walls; Llandudno and Llandudno Junction are different stations. Great Orme attractions start beyond the main station. Choose the town order and final rail station before entering the castle or headland.',
-        tradeoff: 'A deep castle, full walls and Great Orme circuit exceed one relaxed day. Choosing Conwy sacrifices headland depth; choosing Llandudno gives up some medieval interpretation.',
+        access: 'Conwy station is beside the town approach. TfW serves both Conwy and Llandudno; Llandudno Junction is the coast-line interchange about two miles from Llandudno’s seafront, while Llandudno station is the resort terminus. Great Orme transport starts in town and has different endpoints, seasons and access conditions. Save the precise station name and last return before setting out.',
+        tradeoff: 'The high-value decision is historic interior versus exposed headland time. Conwy suits visitors who want a compact heritage core and an easier rail arrival; Llandudno suits people who want a seafront day and can choose an ascent mode. A rainy or windy forecast makes the sampler or a Conwy-only day more robust; it does not make the Great Orme routes equivalent.',
         stages: [
-          ['Enter the primary town', 'Use Conwy or Llandudno station according to the anchor, saving the final train and any local tram or bus schedule.'],
-          ['Complete castle or headland', 'Follow Cadw admission and wall access, or use the verified Great Orme transport and route. Keep weather limits visible.'],
-          ['Take one coast connection', 'Move once by rail or bus to the second town only when a useful window remains. Do not shuttle back for a missed interior.'],
-          ['Finish at the final station', 'Use the promenade, harbour or compact town streets to end near the correct train, allowing summer and event crowding.']
+          ['Arrive at the right station', 'For Conwy, use Conwy station; for the resort, continue to Llandudno station. Llandudno Junction is a separate interchange, not the promenade stop.'],
+          ['Spend the main block in one place', 'In Conwy, choose the castle and harbour streets, then confirm wall access. In Llandudno, walk the seafront before committing to one Great Orme ascent mode.'],
+          ['Cross the coast corridor once', 'Use the TfW Conwy–Llandudno branch only if the second town adds enough value. Check the live timetable and disruptions; do not base the return on a remembered frequency.'],
+          ['End on a low-risk return', 'Finish at Conwy’s town centre or Llandudno’s seafront near the station you saved. If headland visibility or wind worsens, return by the same confirmed mode rather than switching to an unplanned descent.']
         ],
-        fallback: 'If Great Orme transport or weather fails, deepen Llandudno town and promenade or remain in Conwy. If castle access changes, use walls where open, Plas Mawr or the estuary public realm.',
+        fallback: 'In rain or poor visibility, make Conwy’s town streets and any confirmed open interior the main visit, or keep Llandudno to the promenade and town. Do not substitute a steep exposed Great Orme walk for a cancelled lift or tram. Check Cadw’s live notice before travelling because historic sites can close at short notice in extreme weather.',
         watch: [
-          ['Llandudno Junction is not the resort centre', 'Some trains require a branch connection. Read the destination and final return carefully.'],
-          ['Walls and headland include exposure', 'Wind, rain and steps affect both routes. Use street-level alternatives when necessary.'],
-          ['Great Orme products differ', 'Tramway, cable car, bus and walking routes have separate operation and endpoints. Confirm the exact one.']
+          ['Llandudno Junction is not the resort station', 'TfW identifies the Junction as about two miles from town. If your booking says Junction, plan the onward leg; if it says Llandudno, you arrive at the seafront town.'],
+          ['A castle visit is not a step-free wall circuit', 'Cadw’s Conwy Castle information describes historic access. Check the current access guide and distinguish interior circulation from the separate town walls before choosing it for a mobility-limited visitor.'],
+          ['Great Orme ascent modes have separate operating gates', 'The tramway, cable car, bus and footpaths do not share one timetable or endpoint. Check operator notices, wind and visibility on the day; use the promenade as the all-weather lower plan.']
         ],
-        duration: 'Allow a full day for one deep town plus a short second stop. Conwy or Llandudno alone needs five to seven hours.',
-        combine: 'Combine Conwy with Llandudno by one rail move. Keep Yr Wyddfa, Caernarfon and Anglesey for separate days.',
-        verify: 'Check Conwy Castle and wall access, Great Orme operation, coast weather and Transport for Wales service before departure.',
+        duration: 'Give one town the main block: Conwy’s castle and streets or Llandudno’s seafront plus one Great Orme ascent. Add the second town only as a short stop with a checked rail return; trying to do a full castle, complete wall circuit and headland circuit turns this into a rushed transfer day.',
+        combine: 'The practical pairing is Conwy plus Llandudno by one TfW rail leg, with Llandudno promenade as the shorter second stop. Leave Yr Wyddfa, Caernarfon and Anglesey for separate days because their bus, mountain or island connections need their own return margin.',
+        verify: 'Check TfW’s named station and live return, Cadw’s Conwy Castle admission/access and notice, the Great Orme operator’s exact service and endpoint, and a coastal forecast before departure. Sources checked 9 October 2026; recheck time-sensitive details.',
         sources: [
           ['https://cadw.gov.wales/visit/places-to-visit/conwy-castle', 'Cadw — Conwy Castle visitor information'],
+          ['https://cadw.gov.wales/conwy-castle-access-information', 'Cadw — Conwy Castle access guide'],
+          ['https://cadw.gov.wales/visit/places-to-visit/conwy-town-walls', 'Cadw — Conwy Town Walls current access notice'],
+          ['https://tfw.wales/places/stations/llandudno-junction', 'Transport for Wales — Llandudno Junction station and connections'],
+          ['https://tfw.wales/places/destinations/llandudno', 'Transport for Wales — Llandudno arrival by train'],
           ['https://www.greatormetramway.co.uk/plan-your-visit/', 'Great Orme Tramway — official visit planning']
         ]
       }),
@@ -453,33 +457,36 @@ export const unitedKingdomIslandsWalesNiClusters = [
         layout: 'mountain-route-selector',
         imageQuery: 'Yr Wyddfa Snowdon Wales mountain view',
         imageAlt: 'Yr Wyddfa rising above the Eryri landscape in North Wales',
-        purpose: 'Choose a specific Yr Wyddfa route or mountain railway product from its real gateway, matching ability, parking or bus access and summit weather rather than treating every path as one attraction.',
-        summary: 'Reach Llanberis, Pen-y-Pass or another named start, read mountain conditions, complete the booked railway or mapped route with turnaround rules, and return before the gateway transport closes.',
+        purpose: 'Decide whether this is a summit-walking day, a booked railway ride or a lower Llanberis day. Each starts differently, carries a different skill and weather threshold, and has its own return plan.',
+        summary: 'For a walk, select one named trailhead and be equipped to navigate and turn back; for the railway, book the exact Llanberis return product and confirm whether it reaches Clogwyn or the summit; for poor conditions, keep the day below the mountain.',
         choices: [
-          ['Llanberis and lower mountain', 'Use the village, lake, museum and a lower route or railway context. This is the strongest fallback and easiest public-transport base.'],
-          ['Mountain railway product', 'Book the exact destination and departure currently offered. It gives elevation with controlled timing but remains weather-dependent and is not a walking rescue.'],
-          ['Mapped summit walk', 'Choose one path matched to skill, equipment and conditions. It offers the full mountain day but owns all daylight and return margin.']
+          ['Llanberis and lower mountain: visitors who want a flexible day', 'The village, Padarn shore and lower-level options preserve a meaningful outing without a summit claim. Llanberis also has the railway departure point and Sherpa S1/S2 connections, but the train and bus do not guarantee hill weather.'],
+          ['Snowdon Mountain Railway: visitors who want a booked ascent', 'Buy a specific return from Llanberis and read the destination on that date. The operator lists a roughly 2.5-hour summit return or a roughly 2-hour Clogwyn return, each with a same-train return rule; destination and weather operation are not interchangeable with a summit walk.'],
+          ['A named summit path: experienced walkers with mountain kit', 'Choose a single route and trailhead before travel—Llanberis, Pen-y-Pass, Rhyd Ddu or another mapped start. Pyg/Miners’ Paths from Pen-y-Pass are not an automatic loop; navigation, steep rocky ground, cloud and return transport all matter.']
         ],
-        access: 'Yr Wyddfa has multiple trailheads on different roads. Parking, Sherpa’r Wyddfa buses and Llanberis services vary by date. The mountain railway has its own station, booking and operating limits. Confirm the exact start and final return before travel.',
-        tradeoff: 'A summit walk and mountain railway are separate products, not backup versions of the same day. Choosing the summit sacrifices village and museum time; choosing lower Llanberis gives up the top but preserves safety and transport.',
+        access: 'Llanberis is the railway gateway and has Sherpa S1/S2 links. Pen-y-Pass is a separate road-side trailhead served by the seasonal/dated Sherpa network; parking availability is not a walk-up guarantee. The park’s route app/maps identify other trailheads such as Rhyd Ddu. Do not book an arrival at Llanberis and assume it reaches Pen-y-Pass: check the current Sherpa times in both directions and the final onward connection.',
+        tradeoff: 'A railway ticket buys a constrained return itinerary, not a safe substitute for walking skill or a promise of summit conditions. A summit walk needs full-day daylight, navigation and appropriate clothing/equipment; people without those should choose a lower route or the train only if its precise destination and weather operation suit them. In cloud, strong wind or heavy rain, a valley/lake day is the better plan, not a different high path chosen on impulse.',
         stages: [
-          ['Reach the exact gateway', 'Use the booked parking, bus or village arrival and save the final return. Do not navigate to “Snowdon” without a trailhead.'],
-          ['Read the mountain gate', 'Check cloud, wind, rain, temperature, snow or ice and official advice at low level. Activate the lower plan early.'],
-          ['Commit to railway or route', 'Board the exact railway product or follow the chosen mapped path with equipment and a time turnaround. Do not switch paths casually.'],
-          ['Recover the gateway before dark', 'Return to the same or planned exit, allowing descent fatigue and bus gaps. A summit photograph never outranks the final safe connection.']
+          ['Name the trailhead or booked station', 'Save the exact arrival point and a return journey. If travelling without a car, confirm the Sherpa route serves both ends on your date before choosing a linear walk.'],
+          ['Read the mountain forecast, not only the village forecast', 'Use the Met Office Eryri mountain forecast for wind, visibility, precipitation and freezing level. Poor visibility, gale force wind or persistent rain are route-finding, balance and cold hazards; switch to the lower plan before departure.'],
+          ['Keep one route or one railway product', 'Walkers stay on the chosen mapped path with navigation and a turnaround time. Railway passengers verify the date’s destination and the operator’s same-train return rule; do not plan to walk down unless independently equipped and trained.'],
+          ['Protect the way back', 'Count descent time, fatigue, daylight and the final Sherpa/train connection. If the return buffer disappears, turn around while the route remains straightforward.']
         ],
-        fallback: 'If summit conditions or railway operation fail, use Llanberis, the lake, slate museum when open or a signed lower path. Do not drive to another mountain route without reassessing conditions.',
+        fallback: 'For heavy rain, low cloud, strong summit wind, snow/ice or a cancelled railway, keep the visit at Llanberis and Lake Padarn or choose a suitable low-level Eryri option reached by the same confirmed transport. Do not transfer to Pen-y-Pass or another summit because the first plan failed; that creates a new weather, trailhead and return decision.',
         watch: [
-          ['Routes start in different places', 'Llanberis, Pen-y-Pass and other paths cannot be swapped after parking or bus arrival without a new connection.'],
-          ['Railway destination can vary', 'Operations may not always reach the summit. Read the exact booked product and do not infer a guaranteed top.'],
-          ['Mountain rescue is not itinerary support', 'Carry navigation, equipment, food and turnaround discipline appropriate to the route. Change the plan before conditions overwhelm it.']
+          ['The bus network is a route, not a rescue shuttle', 'Sherpa S1 connects Caernarfon–Llanberis–Betws-y-Coed and S2 connects Bangor–Llanberis–Pen-y-Pass, but dates and journey times matter. Match the finish and last bus to the walk.'],
+          ['Railway destination depends on the selected service/date', 'The operator distinguishes summit and Clogwyn returns and requires return on the same train. Read the destination on your booked ticket and live operating notice; do not infer a guaranteed summit visit.'],
+          ['Summit paths require independent mountain competence', 'The Met Office identifies gale-force wind, poor visibility and heavy persistent rain as hazards; cloud can remove visual route references. If your group lacks navigation, equipment or confidence for those conditions, choose the low-level day before setting out.']
         ],
-        duration: 'Allow the full day for a summit walk or railway-and-Llanberis plan. Lower village and lake routes can fit five to seven hours.',
-        combine: 'Combine Llanberis with the booked railway or one lower route. Keep Conwy, Caernarfon and Anglesey for separate days.',
-        verify: 'Check Eryri National Park advice, Met Office mountain weather, Sherpa’r Wyddfa transport, parking and the exact railway status before departure.',
+        duration: 'Reserve the daylight day for a summit walk and build the route timing around your own pace, not an attraction stop. The railway operator quotes about 2.5 hours for its summit return and about 2 hours for a Clogwyn return, including the stop; add Llanberis arrival, weather checks and onward transport. A lower village/lake day can be shortened without risking a remote trailhead return.',
+        combine: 'Pair Llanberis with the booked railway or one low-level lakeside route. Do not combine a summit walk with Conwy, Caernarfon or Anglesey; keep those on separate days so the mountain descent does not compete with a transfer.',
+        verify: 'Check the Eryri Yr Wyddfa guidance/map, Met Office mountain forecast, current Sherpa S1/S2 timetable in both directions, parking restrictions if driving, and Snowdon Mountain Railway’s date-specific destination and notice. Sources checked 9 October 2026; recheck before travel.',
         sources: [
           ['https://snowdonia.gov.wales/visit/yr-wyddfa-snowdon/', 'Eryri National Park — official Yr Wyddfa guidance'],
-          ['https://snowdonrailway.co.uk/plan-your-visit/', 'Snowdon Mountain Railway — official visit planning']
+          ['https://www.metoffice.gov.uk/weather/specialist-forecasts/mountain/snowdonia', 'Met Office — Eryri mountain forecast and hazards'],
+          ['https://www.sherparwyddfa.wales/times.shtml', 'Sherpa’r Wyddfa — current bus times and route corridors'],
+          ['https://www.sherparwyddfa.wales/', 'Sherpa’r Wyddfa — network, park-and-ride and bus planning'],
+          ['https://snowdonrailway.co.uk/plan-your-visit/', 'Snowdon Mountain Railway — return products and operating conditions']
         ]
       }),
       g({
@@ -489,33 +496,37 @@ export const unitedKingdomIslandsWalesNiClusters = [
         layout: 'menai-strait-bridge-plan',
         imageQuery: 'Caernarfon Castle Wales waterfront',
         imageAlt: 'Caernarfon Castle beside the Menai Strait in North Wales',
-        purpose: 'Choose Caernarfon Castle or one Anglesey coast community as the main destination and make the Menai crossing and onward bus or road explicit.',
-        summary: 'Use Caernarfon’s castle and waterfront as one complete field, then cross to Anglesey only for a named town, coast or heritage site with a protected return.',
+        purpose: 'Choose either Caernarfon’s castle town or one named Anglesey coast stop. Bangor is the rail-transfer hinge, the Menai bridges are not a destination, and the island’s last mile determines whether a car-free day is realistic.',
+        summary: 'For a castle day, take the T2 bus from Bangor and stay in Caernarfon. For Anglesey, select a place served by rail or by a named bus-and-walk connection—such as Rhosneigr or Holyhead Mountain—before crossing, then save the return leg.',
         choices: [
-          ['Caernarfon depth', 'Prioritize the castle, walls and waterfront. This creates a complete heritage day with the simplest bus return.'],
-          ['Menai and south Anglesey', 'Use Bangor or the bridges as the gateway to one south-island town or coast. It offers island context but adds another transport layer.'],
-          ['Holyhead or west Anglesey', 'Use the rail corridor for one western destination. This gives a distinct maritime edge but is not compatible with a full Caernarfon day.']
+          ['Caernarfon Castle: visitors focused on Welsh royal and military history', 'From Bangor station, use the T2 bus corridor to Caernarfon and spend the day inside the town. Cadw’s main castle entrance is the King’s Gate; its access guide notes a lift to the gate top, but emergency evacuation and uneven historic spaces need individual planning.'],
+          ['Rhosneigr: car-free beach/coast walk with a simpler rail anchor', 'Use Rhosneigr station as the rail anchor and check Visit Anglesey’s mapped circular walk. The local guide also lists buses 25 and 45 on Mondays to Saturdays; check current dates/times and tide/weather before treating it as a beach day. This is a separate island day, not a quick add-on to Caernarfon.'],
+          ['Holyhead Mountain: west-coast walking with a rail arrival', 'Arrive at Holyhead by rail, then plan the walk’s out-of-town start. Visit Anglesey identifies a local bus stop near the country park and a remaining walk to the trail; this suits walkers who can navigate and adds a real last-mile leg. Do not pair it with the full castle visit.']
         ],
-        access: 'Caernarfon has no mainline rail station and is reached by bus or heritage railway. Anglesey has a rail line but many beaches and villages lie beyond stations. The Menai bridges carry road and bus traffic; select the exact island endpoint before crossing.',
-        tradeoff: 'A deep castle visit and a meaningful west Anglesey coast day are separate plans. Choosing the island sacrifices Caernarfon depth; choosing the castle gives up a distant beach but protects a coherent return.',
+        access: 'Caernarfon has no mainline station: TfW’s T2 bus links it with Bangor, where bus stops are outside/near the rail station. The North Wales coast rail line crosses to Anglesey and serves Holyhead and Rhosneigr, but neither station sits at every coastal walk start. Visit Anglesey’s local pages give the last-mile details. If combining, choose Bangor only as a transfer point and calculate the outward/return bus or train before leaving the castle.',
+        tradeoff: 'Caernarfon is the stronger choice for a contained heritage visit with an identified Bangor bus link; Anglesey is better when the island coast itself is the purpose and you can give it a full day. Rhosneigr’s rail-plus-walk pattern and Holyhead Mountain’s rail-plus-bus/foot approach are distinct choices. A same-day castle-and-island sampler spends much of the margin crossing and makes a missed bus or delayed train expensive.',
         stages: [
-          ['Reach the castle town', 'Use the confirmed bus or heritage service, saving the final departure before entering the walls and waterfront.'],
-          ['Complete one historic anchor', 'Visit Caernarfon Castle or, on an island-first day, a named Anglesey site with current admission and access.'],
-          ['Cross the strait only with purpose', 'Take the verified bus, rail or road connection to one island community. Do not treat the bridge as arrival at every Anglesey sight.'],
-          ['Return before island frequency thins', 'Regain Bangor, Caernarfon or the rail station with margin for road traffic and coastal weather.']
+          ['Choose Bangor transfer or island rail', 'For Caernarfon, change at Bangor to T2 and confirm the same-day bus back. For Anglesey, use the coast-line train to the actual station near your selected walk.'],
+          ['Complete one anchor, not two', 'Castle visitors use Caernarfon’s King’s Gate entrance and keep time for the town. Island visitors follow the mapped Rhosneigr circuit or the Holyhead Mountain approach; check route condition and local access.'],
+          ['Budget the final mile explicitly', 'Rhosneigr has a station near the north end of the lake and mapped public footpaths; Holyhead Mountain requires a separate approach from the town/station, with a local bus stop still some distance from the country park.'],
+          ['Protect the return connection', 'Check TfW for the train and T2 for the bus direction/date; do not treat a ferry departure or bridge crossing as proof that local transport is frequent. Leave a weather/road buffer before the final mainland rail link.']
         ],
-        fallback: 'If island transport or weather fails, use Caernarfon Castle, waterfront and town; if castle access changes, use the public walls and nearby Welsh Highland Railway context only when current service works.',
+        fallback: 'For wind, rain or a missed Anglesey connection, shorten to the nearest confirmed rail town rather than crossing to a different remote beach. Caernarfon’s castle town is a better mainland fallback if T2 is running; verify Cadw notices and the rail/bus before committing. If a visitor needs step-free access, check Cadw’s detailed access guide and contact the castle about evacuation support before buying into the day plan.',
         watch: [
-          ['Caernarfon is not on the mainline railway', 'Include the bus or heritage-rail connection in both directions. Do not plan from Bangor arrival alone.'],
-          ['Anglesey is larger than a bridge view', 'Rail and bus reach selected corridors, not every coast. Name the destination and last mile.'],
-          ['Ferry traffic can load roads and trains', 'Holyhead operations affect the western corridor. Keep extra margin around sailings and disruption.']
+          ['Caernarfon is a bus continuation from Bangor', 'The rail station is not the castle gateway. TfW places the bus stops by Bangor station and identifies T2 as the Caernarfon corridor; confirm both directions and live service before entering the castle.'],
+          ['A station is not the beach/path start', 'Rhosneigr’s official guide links station, mapped footpaths and a local circular walk. Holyhead Mountain starts outside town; check the operator’s stop and the remaining walk rather than assuming a bus drops at the trail.'],
+          ['The walk needs a coastal condition check', 'Anglesey route pages provide mapped walks, but wind, rain, tide and daylight can change exposure or the return. Choose the lower town/coast option when the exposed path is not suitable.']
         ],
-        duration: 'Allow a full day for Caernarfon plus one nearby Menai branch, or a separate full day for west Anglesey. The castle town alone needs four to six hours.',
-        combine: 'Combine Caernarfon with the Menai Strait or one nearby island stop. Keep Yr Wyddfa and Llandudno for separate days.',
-        verify: 'Check Caernarfon Castle access, the exact bus or rail service, Anglesey destination information, road conditions and final return before departure.',
+        duration: 'A Caernarfon castle-and-town visit is a substantial half/full day once the Bangor T2 connection is included. Rhosneigr or Holyhead Mountain each deserves its own island day from the rail station, with time for the approach and return. Combining one of them with the full castle visit leaves little tolerance for a late bus or weather delay.',
+        combine: 'Choose Caernarfon plus the immediate Menai area only when the exact bus/road connection gives a reliable return. Choose one Anglesey walk for the day and keep Yr Wyddfa and Llandudno separate; they use different gateways and add another return clock.',
+        verify: 'Check TfW’s Bangor station bus-stop note and T2 corridor, current T2/rail timetables, Cadw’s Caernarfon Castle hours/access notice, and the exact Visit Anglesey walk map, transport and local conditions. Sources checked 9 October 2026; recheck live details.',
         sources: [
           ['https://cadw.gov.wales/visit/places-to-visit/caernarfon-castle', 'Cadw — Caernarfon Castle visitor information'],
-          ['https://www.visitanglesey.co.uk/', 'Visit Anglesey — official destination guide']
+          ['https://cadw.gov.wales/castell-caernarfon-access-guide', 'Cadw — Caernarfon Castle access guide'],
+          ['https://tfw.wales/places/stations/bangor-gwynedd', 'Transport for Wales — Bangor station and bus interchange'],
+          ['https://tfw.wales/news/5-bus-routes-in-north-wales-which-you-need-to-explore-catch-the-bus-month', 'Transport for Wales — T2 bus link from Bangor to Caernarfon'],
+          ['https://www.visitanglesey.co.uk/en-gb/explore/circular-walks/rhosneigr-circular-walk', 'Visit Anglesey — Rhosneigr circular walk and public transport'],
+          ['https://www.visitanglesey.co.uk/en-gb/explore/circular-walks/holyhead-mountain-circular-walk', 'Visit Anglesey — Holyhead Mountain walk and approach']
         ]
       })
     ]
