@@ -47,6 +47,30 @@ for(const [locale,prefix] of dateLocales)for(const route of usaRoutes){
  check(article.datePublished==='2026-09-11',`${locale}${route}: datePublished changed from original 2026-09-11`);
  check(article.dateModified===expectedModified,`${locale}${route}: expected dateModified ${expectedModified}, found ${article.dateModified}`);
 }
+const reviewSource={updated:'Editorial review: 9 October 2026. Check current official information before travel.',original:'Editorial review: 11 September 2026. Check current official information before travel.'};
+const reviewCatalogs=new Map([['en',null]]);
+for(const [locale] of dateLocales){
+ if(locale==='en')continue;
+ const file=path.join(root,'data','i18n',`${locale}.json`);
+ if(!fs.existsSync(file)){check(false,`Visible review text audit: approved ${locale} catalog missing at ${file}`);continue;}
+ try{reviewCatalogs.set(locale,JSON.parse(fs.readFileSync(file,'utf8')).translations||{});}
+ catch(error){check(false,`Visible review text audit: cannot read approved ${locale} catalog (${error.message})`);}
+}
+for(const [locale,prefix] of dateLocales)for(const route of usaRoutes){
+ const file=path.join(root,prefix,route.slice(1),'index.html');
+ if(!fs.existsSync(file))continue;
+ const dom=flatten(parse(fs.readFileSync(file,'utf8'))),reviewNodes=dom.filter(n=>n.tagName==='p'&&(attr(n,'class')||'').split(/\s+/).includes('us-review'));
+ check(reviewNodes.length===1,`${locale}${route}: expected exactly one visible p.us-review, found ${reviewNodes.length}`);
+ if(reviewNodes.length!==1)continue;
+ const key=dateExceptions.has(route)?reviewSource.updated:reviewSource.original;
+ let expected=key;
+ if(locale!=='en'){
+  const catalog=reviewCatalogs.get(locale),translation=catalog?.[key];
+  if(!translation){check(false,`${locale}${route}: approved catalog missing visible review translation for exact source key "${key}"`);continue;}
+  expected=translation;
+ }
+ check(text(reviewNodes[0]).trim()===expected,`${locale}${route}: visible review text does not match expected ${dateExceptions.has(route)?'9 October':'11 September'} source/catalog string`);
+}
 for(const [slug,sections] of Object.entries(plans)){
  const h=usaHubs.find(h=>h.slug===slug),routes=[`/usa/${slug}/`,...h.guides.map(g=>g.url)];
  const assetSlug=slug==='washington-dc'?'dc':slug;
