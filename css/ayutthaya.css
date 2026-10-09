@@ -161,10 +161,10 @@ body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .
 .axis-plan p { color: rgba(255,255,255,.72); }
 
 /* 04: west-island shade register. */
-.shade-register-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 42rem; color: var(--ayu-ink); background: #d7c7a4; }
-.shade-register-photo { display: grid; place-items: center; padding: 2rem; }
+.shade-register-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); min-height: 42rem; color: var(--ayu-ink); background: #d7c7a4; }
+.shade-register-photo { display: grid; min-width: 0; place-items: center; padding: 2rem; }
 .shade-register-photo img { width: min(44rem,100%); aspect-ratio: 1.35; object-fit: cover; object-position: 10% 65%; border: .85rem solid rgba(255,250,240,.72); border-radius: 50%; box-shadow: 0 0 0 1px var(--ayu-brick-dark); }
-.shade-register-copy { position: relative; padding: clamp(2.5rem,6vw,5.2rem); align-self: center; }
+.shade-register-copy { position: relative; min-width: 0; padding: clamp(2.5rem,6vw,5.2rem); align-self: center; }
 .shade-register-copy::after { content: "SHADE\A CLOCK"; white-space: pre; position: absolute; top: 1.2rem; right: 1.2rem; color: rgba(97,39,31,.45); font-size: .62rem; font-weight: 950; letter-spacing: .16em; text-align: center; }
 .shade-register-copy h1 { margin: .8rem 0 1rem; color: var(--ayu-ink); font: 500 clamp(3.8rem,7vw,6.6rem)/.8 Georgia, serif; }
 .shade-register-copy h1 span { display: block; color: var(--ayu-brick); font-size: .54em; }
@@ -246,6 +246,7 @@ body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .
 
 @media (max-width: 760px) {
   .confluence-hero, .arrival-signal-hero, .strata-hero, .shade-register-hero, .sunset-aperture-hero, .threshold-hero, .cargo-manifest-hero, .garden-cabinet-hero, .river-loop { grid-template-columns: 1fr; }
+  .shade-register-hero { grid-template-columns: minmax(0,1fr); }
   .confluence-hero, .arrival-signal-hero, .strata-hero, .shade-register-hero, .sunset-aperture-hero, .threshold-hero, .cargo-manifest-hero, .garden-cabinet-hero { min-height: 0; }
   .confluence-image { min-height: 30rem; order: -1; }
   .confluence-copy h1, .arrival-signal-copy h1, .strata-copy h1, .royal-axis-copy h1, .shade-register-copy h1, .sunset-aperture-copy h1, .threshold-copy h1, .cargo-manifest-copy h1, .garden-cabinet-copy h1 { font-size: clamp(3.2rem,15vw,5.2rem); }
@@ -270,4 +271,5 @@ body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .
   .shade-clock { border-radius: 2rem; }
   .shade-clock article { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
   .sunset-aperture-copy h1 { font-size: clamp(2.35rem,10.2vw,3rem); }
+  .shade-register-copy h1 { font-size: clamp(2.2rem,11vw,2.8rem); }
 }

@@ -1711,8 +1711,18 @@ for (const locale of expectedLocales) {
       const body = nodes(document, 'body')[0];
       if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-region') !== 'ayutthaya') fail(`Wrong Ayutthaya responsive scope on ${locale.code} ${routePath}.`);
       if (!styles.includes('/css/site.css') || !styles.includes('/css/thailand.css') || !styles.includes('/css/ayutthaya.css')) fail(`Missing Ayutthaya route stylesheets on ${locale.code} ${routePath}.`);
-      if (!styleHrefs.includes('/css/ayutthaya.css?v=20261009-1')) fail(`Missing current Ayutthaya width-fix stylesheet version on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/ayutthaya.css?v=20261009-2')) fail(`Missing current Ayutthaya width-fix stylesheet version on ${locale.code} ${routePath}.`);
       const ayutthayaCss = fs.readFileSync(safeDistPath('/css/ayutthaya.css'), 'utf8');
+      if (routePath === '/thailand/ayutthaya/west-island-wat-lokayasutharam/') {
+        const shadeHeroRule = cssRuleBlock(ayutthayaCss, '.shade-register-hero');
+        const shadeCopyRule = cssRuleBlock(ayutthayaCss, '.shade-register-copy');
+        const tabletAyutthayaCss = ayutthayaCss.slice(ayutthayaCss.lastIndexOf('@media (max-width: 760px)'), ayutthayaCss.lastIndexOf('@media (max-width: 520px)'));
+        const tabletShadeHeroRule = cssRuleBlock(tabletAyutthayaCss, '.shade-register-hero {');
+        const narrowAyutthayaCss = ayutthayaCss.slice(ayutthayaCss.lastIndexOf('@media (max-width: 520px)'));
+        const narrowShadeTitleRule = cssRuleBlock(narrowAyutthayaCss, '.shade-register-copy h1');
+        if (!shadeHeroRule.includes('grid-template-columns: minmax(0,1fr) minmax(0,1fr)') || !shadeCopyRule.includes('min-width: 0;')) fail('Wat Lokayasutharam hero tracks and copy must release min-content width on ' + locale.code + '.');
+        if (!tabletShadeHeroRule.includes('grid-template-columns: minmax(0,1fr)') || !narrowShadeTitleRule.includes('font-size: clamp(2.2rem,11vw,2.8rem)')) fail('Wat Lokayasutharam mobile heading must fit narrow viewports on ' + locale.code + '.');
+      }
       const pageId = routePath.split('/').filter(Boolean).at(-1);
       const ayutthayaBodySelector = `body[data-region="ayutthaya"][data-page="${pageId}"]`;
       const ayutthayaBodyWidthRule = cssRuleBlock(ayutthayaCss, ayutthayaBodySelector);
