@@ -186,6 +186,8 @@ const routes = [
   { path: '/thailand/ayutthaya/railway-station-chao-phrom/', label: 'Rail arrival & Chao Phrom' },
   { path: '/thailand/ayutthaya/west-island-wat-lokayasutharam/', label: 'West island & Wat Lokayasutharam' },
   { path: '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/', label: 'Wat Yai & Wat Phanan Choeng' },
+  { path: '/thailand/ayutthaya/foreign-settlements-south-river/', label: 'Foreign Settlements & South River' },
+  { path: '/thailand/ayutthaya/bang-pa-in-palace/', label: 'Bang Pa-In Palace' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -283,7 +285,9 @@ const manifest = {
     '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/',
     '/thailand/ayutthaya/railway-station-chao-phrom/',
     '/thailand/ayutthaya/west-island-wat-lokayasutharam/',
-    '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'
+    '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/',
+    '/thailand/ayutthaya/foreign-settlements-south-river/',
+    '/thailand/ayutthaya/bang-pa-in-palace/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
@@ -338,7 +342,7 @@ const page = `<!doctype html>
     <a href="#main-content">Skip to controls</a>
     <section id="main-content" aria-labelledby="page-title">
       <h1 id="page-title">France, Canada, Zurich, South Korea, Vietnam, Penang, Bangkok and Chiang Mai responsive QA harness</h1>
-      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with six field guides, plus four George Town &amp; Penang routes, nine Bangkok routes and the Chiang Mai hub with eight area guides in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
+      <p class="intro">Review 16 Paris, day-trip, Normandy and Loire guides, four Champagne routes, 20 Canada routes across Montreal, Toronto, Quebec City–Charlevoix, Vancouver &amp; the North Shore, and Victoria &amp; South Vancouver Island, four Zurich &amp; Lake Zurich routes, the South Korea country overview, nine Seoul routes, six Busan routes, seven Gyeongju routes, four Jeju routes, six Hanoi routes, seven Sapa and Northwest Highlands routes, six Ha Giang loop routes, seven Ninh Binh routes, the Hue hub with six detail guides, and Da Nang &amp; Hoi An with six field guides, plus four George Town &amp; Penang routes, nine Bangkok routes, the Ayutthaya hub with its eight child guides, and the Chiang Mai hub with eight area guides in all five published languages at paired 320 px and 390 px CSS viewport widths.</p>
       <div class="controls">
         <label for="route">Guide
           <select id="route">${routes.map((route, index) => `<option value="${index}">${route.label}</option>`).join('')}</select>
