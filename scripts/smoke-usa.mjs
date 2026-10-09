@@ -8,7 +8,7 @@ const locales=englishOnly?[['en','']]:[['en',''],['zh-Hant','/zh'],['ja','/ja'],
 const origin=new URL(base).origin;
 const failures=[];
 let successes=0;
-const editedRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/']);
+const editedRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/','/usa/utah-parks/','/usa/utah-parks/bryce/','/usa/utah-parks/moab-arches-canyonlands/']);
 async function get(route,allowComponentCanonical=false){
  let response=await fetch(new URL(route,origin),{redirect:'manual',signal:AbortSignal.timeout(30000)});
  // Pages canonicalizes HTML fragments to extensionless URLs. Content-page URLs

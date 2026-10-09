@@ -33,7 +33,7 @@ const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
 const usaEditedLastmod = '2026-10-09';
-// These ten U.S. routes received material editorial updates across three Oct 9 batches.
+// These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
 const usaEditedRoutes = [
   '/usa/alaska/',
@@ -45,7 +45,10 @@ const usaEditedRoutes = [
   '/usa/yellowstone-tetons/',
   '/usa/yellowstone-tetons/geyser-basins/',
   '/usa/yellowstone-tetons/canyon-lamar/',
-  '/usa/yellowstone-tetons/grand-teton/'
+  '/usa/yellowstone-tetons/grand-teton/',
+  '/usa/utah-parks/',
+  '/usa/utah-parks/bryce/',
+  '/usa/utah-parks/moab-arches-canyonlands/'
 ];
 const parisLastmod = '2026-10-06';
 const parisRegionDayTripsLastmod = '2026-10-07';
