@@ -174,6 +174,9 @@ const routes = [
   { path: '/thailand/andaman/phuket-old-town-south/', label: 'Phuket Old Town & South' },
   { path: '/thailand/andaman/phang-nga-ko-yao/', label: 'Phang Nga Bay & Ko Yao' },
   { path: '/thailand/andaman/krabi-railay/', label: 'Krabi & Railay' },
+  { path: '/thailand/andaman/phi-phi-islands/', label: 'Phi Phi Islands' },
+  { path: '/thailand/andaman/ko-lanta/', label: 'Ko Lanta' },
+  { path: '/thailand/andaman/similan-surin/', label: 'Similan & Surin' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -259,7 +262,10 @@ const manifest = {
     '/thailand/andaman/',
     '/thailand/andaman/phuket-old-town-south/',
     '/thailand/andaman/phang-nga-ko-yao/',
-    '/thailand/andaman/krabi-railay/'
+    '/thailand/andaman/krabi-railay/',
+    '/thailand/andaman/phi-phi-islands/',
+    '/thailand/andaman/ko-lanta/',
+    '/thailand/andaman/similan-surin/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
@@ -267,7 +273,10 @@ const manifest = {
     '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
     '/assets/images/thailand-chiang-mai-old-city.webp',
     '/assets/images/thailand-chiang-mai-warorot.webp',
-    '/assets/images/thailand-chiang-mai-mae-rim.webp'
+    '/assets/images/thailand-chiang-mai-mae-rim.webp',
+    '/assets/images/thailand-andaman-phi-phi.webp',
+    '/assets/images/thailand-andaman-ko-lanta.webp',
+    '/assets/images/thailand-andaman-similan.webp'
   ].map((assetPath) => [assetPath, 900_000])),
   pages: routeRecords,
   assets

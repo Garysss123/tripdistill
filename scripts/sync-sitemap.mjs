@@ -92,7 +92,10 @@ const thailandAndamanEditedRoutes = [
   '/thailand/andaman/',
   '/thailand/andaman/phuket-old-town-south/',
   '/thailand/andaman/phang-nga-ko-yao/',
-  '/thailand/andaman/krabi-railay/'
+  '/thailand/andaman/krabi-railay/',
+  '/thailand/andaman/phi-phi-islands/',
+  '/thailand/andaman/ko-lanta/',
+  '/thailand/andaman/similan-surin/'
 ];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters

@@ -1,0 +1,24 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Walk Phi Phi Don from Tonsai Pier and plan a permitted Phi Phi Leh route through Maya Bay, Ao Pi Le and Ao Lo Sama.": "เดินเที่ยว Phi Phi Don จาก Tonsai Pier แล้ววางแผนเรือไป Phi Phi Leh ตามจุดที่ได้รับอนุญาตผ่าน Maya Bay, Ao Pi Le และ Ao Lo Sama",
+    "ao pi le": "อ่าวปิเละ, Ao Pi Le, ao pi le",
+    "ao lo sama": "อ่าวโลซามะ, Ao Lo Sama, ao lo sama",
+    "tonsai pier": "ท่าเรือต้นไทร, Tonsai Pier, tonsai pier",
+    "Cross to Ko Lanta Yai, choose a north or west-coast base, then route Thung Yee Peng, Lanta Old Town and Tanod Cape on separate days.": "ข้ามไป Ko Lanta Yai เลือกที่พักทางเหนือหรือฝั่งตะวันตก แล้วแยกเที่ยว Thung Yee Peng, Lanta Old Town และ Tanod Cape คนละวัน",
+    "saladan": "ศาลาด่าน, Saladan, saladan",
+    "klong nin": "คลองนิน, Klong Nin, klong nin",
+    "thung yee peng": "ทุ่งหยีเพ็ง, Thung Yee Peng, thung yee peng",
+    "tanod cape": "แหลมโตนด, Tanod Cape, tanod cape",
+    "Choose the Similan or Surin park by port and current access; plan one seasonal boat day and approach Ao Bon as a lived-in Moken community.": "เลือกเที่ยว Similan หรือ Surin ตามท่าเรือและการเข้าเที่ยวปัจจุบัน วางแผนออกเรือหนึ่งวันตามฤดูกาล และปฏิบัติต่อ Ao Bon ในฐานะชุมชน Moken ที่มีผู้คนอาศัยอยู่จริง",
+    "thap lamu": "ทับละมุ, Thap Lamu, thap lamu",
+    "ko miang": "เกาะเมียง, Ko Miang, ko miang",
+    "ao bon": "อ่าวบอน, Ao Bon, ao bon",
+    "moken community": "ชุมชนมอแกน, มอแกน, Moken community",
+    "Choose one transfer family: Rassada or Klong Jilad to Tonsai Pier on Phi Phi Don, Krabi or Ao Nang to Railay, or Ko Lanta by car ferry and Siri Lanta Bridge; protect flights with a mainland night.": "เลือกชุดเส้นทางต่อรถให้สอดคล้องกัน: Rassada หรือ Klong Jilad ไป Tonsai Pier บน Phi Phi Don, Krabi หรือ Ao Nang ไป Railay หรือไป Ko Lanta ด้วยเรือข้ามฟากรถยนต์และข้าม Siri Lanta Bridge; เผื่อค้างบนฝั่งแผ่นดินใหญ่หนึ่งคืนก่อนเที่ยวบิน"
+  }
+}

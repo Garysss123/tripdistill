@@ -2005,7 +2005,7 @@
     "url": "/thailand/andaman/",
     "parent": "Thailand · West coast",
     "type": "Region",
-    "summary": "Compare Phuket's old-town grid, Phang Nga's karst bay, Krabi's boat-access Railay and southern island gateways before choosing a compatible coast route.",
+    "summary": "Choose one transfer family: Rassada or Klong Jilad to Tonsai Pier on Phi Phi Don, Krabi or Ao Nang to Railay, or Ko Lanta by car ferry and Siri Lanta Bridge; protect flights with a mainland night.",
     "keywords": [
       "andaman",
       "thailand islands",
@@ -2125,13 +2125,15 @@
     "url": "/thailand/andaman/phi-phi-islands/",
     "parent": "Andaman · Krabi",
     "type": "Islands",
-    "summary": "Separate inhabited Phi Phi Don from protected Phi Phi Leh and plan park rules, capacity and return time.",
+    "summary": "Walk Phi Phi Don from Tonsai Pier and plan a permitted Phi Phi Leh route through Maya Bay, Ao Pi Le and Ao Lo Sama.",
     "keywords": [
       "phi phi",
       "maya bay",
       "phi phi don",
       "phi phi leh",
-      "national park",
+      "ao pi le",
+      "ao lo sama",
+      "tonsai pier",
       "ferry"
     ]
   },
@@ -2140,14 +2142,17 @@
     "url": "/thailand/andaman/ko-lanta/",
     "parent": "Andaman · Krabi",
     "type": "Island",
-    "summary": "Choose a base along Ko Lanta's north-south road spine, from easy northern access to the park edge.",
+    "summary": "Cross to Ko Lanta Yai, choose a north or west-coast base, then route Thung Yee Peng, Lanta Old Town and Tanod Cape on separate days.",
     "keywords": [
       "ko lanta",
       "koh lanta",
+      "saladan",
       "long beach",
       "klong khong",
+      "klong nin",
       "lanta old town",
-      "where to stay"
+      "thung yee peng",
+      "tanod cape"
     ]
   },
   {
@@ -2185,14 +2190,17 @@
     "url": "/thailand/andaman/similan-surin/",
     "parent": "Andaman · Phang Nga",
     "type": "Marine parks",
-    "summary": "Run current park, sea, operator and ability checks before a remote Similan or Surin marine day.",
+    "summary": "Choose the Similan or Surin park by port and current access; plan one seasonal boat day and approach Ao Bon as a lived-in Moken community.",
     "keywords": [
       "similan islands",
       "surin islands",
-      "marine park",
+      "thap lamu",
       "khao lak",
       "khura buri",
-      "diving"
+      "ko miang",
+      "ao bon",
+      "moken community",
+      "marine park"
     ]
   },
   {

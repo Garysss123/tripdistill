@@ -1,0 +1,24 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose one transfer family: Rassada or Klong Jilad to Tonsai Pier on Phi Phi Don, Krabi or Ao Nang to Railay, or Ko Lanta by car ferry and Siri Lanta Bridge; protect flights with a mainland night.": "환승 경로는 한 계열만 선택하세요. 라사다(Rassada) 또는 클롱질라드(Klong Jilad)에서 피피 돈(Phi Phi Don)의 톤사이 부두(Tonsai Pier)로 가거나, 끄라비(Krabi) 또는 아오낭(Ao Nang)에서 라일레이(Railay)로 이동하거나, 코란타(Ko Lanta) 자동차 페리와 시리 란타 다리(Siri Lanta Bridge)를 이용하세요. 항공편 연결을 지키려면 본토에서 하룻밤 묵으세요.",
+    "Walk Phi Phi Don from Tonsai Pier and plan a permitted Phi Phi Leh route through Maya Bay, Ao Pi Le and Ao Lo Sama.": "톤사이 부두에서 피피 돈을 걸어 둘러보고, 마야 베이와 아오 피레, 아오 로 사마를 지나는 피피 레 경로는 허가 여부를 확인하세요.",
+    "ao pi le": "아오 피레 (Ao Pi Le)",
+    "ao lo sama": "아오 로 사마 (Ao Lo Sama)",
+    "tonsai pier": "톤사이 부두 (Tonsai Pier)",
+    "Cross to Ko Lanta Yai, choose a north or west-coast base, then route Thung Yee Peng, Lanta Old Town and Tanod Cape on separate days.": "코란타 야이로 건너가 북쪽이나 서쪽 해안에 숙소를 정하세요. 퉁이펭, 란타 올드타운, 타놋 곶은 날짜를 나눠 둘러보세요.",
+    "saladan": "살라단 (Saladan)",
+    "klong nin": "클롱닌 (Klong Nin)",
+    "thung yee peng": "퉁이펭 (Thung Yee Peng)",
+    "tanod cape": "타놋 곶 (Tanod Cape)",
+    "Choose the Similan or Surin park by port and current access; plan one seasonal boat day and approach Ao Bon as a lived-in Moken community.": "부두와 최신 접근 공지를 확인해 시밀란 또는 수린을 고르세요. 계절에 맞는 보트 여행은 하루만 계획하고, 아오 본은 모켄 주민 공동체의 생활 터전으로 존중하세요.",
+    "thap lamu": "탑라무 (Thap Lamu)",
+    "ko miang": "코미앙 (Ko Miang)",
+    "ao bon": "아오 본 (Ao Bon)",
+    "moken community": "모켄 공동체 (Moken community)"
+  }
+}
