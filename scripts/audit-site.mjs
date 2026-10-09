@@ -381,7 +381,9 @@ for (const absoluteUrl of publishedUrls) {
     ? '/css/andaman.css?v=20261009-1'
     : '/css/andaman.css?v=20260826-1';
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes(andamanStylesheet)) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
-  if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
+  const ayutthayaNarrowFixRoutes = ['/thailand/ayutthaya/', '/thailand/ayutthaya/wat-mahathat-ratchaburana/', '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'];
+  const expectedAyutthayaStylesheet = ayutthayaNarrowFixRoutes.includes(baseRoute) ? '/css/ayutthaya.css?v=20261009-1' : '/css/ayutthaya.css?v=20260826-1';
+  if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes(expectedAyutthayaStylesheet)) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
   const chinaStylesheet = baseRoute === '/china/' ? '/css/china.css?v=20260828-4' : '/css/china.css?v=20260827-3';
   if (baseRoute.startsWith('/china/') && !html.includes(chinaStylesheet)) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
   if (baseRoute.startsWith('/china/shanghai/') && !html.includes('/css/shanghai.css?v=20260827-2')) problems.push(`${relativePath}: missing Shanghai Huangpu-fold stylesheet`);

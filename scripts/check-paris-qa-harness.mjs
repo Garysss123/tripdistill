@@ -1705,6 +1705,18 @@ for (const locale of expectedLocales) {
       const body = nodes(document, 'body')[0];
       if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-region') !== 'ayutthaya') fail(`Wrong Ayutthaya responsive scope on ${locale.code} ${routePath}.`);
       if (!styles.includes('/css/site.css') || !styles.includes('/css/thailand.css') || !styles.includes('/css/ayutthaya.css')) fail(`Missing Ayutthaya route stylesheets on ${locale.code} ${routePath}.`);
+      if (!styleHrefs.includes('/css/ayutthaya.css?v=20261009-1')) fail(`Missing current Ayutthaya width-fix stylesheet version on ${locale.code} ${routePath}.`);
+      const ayutthayaCss = fs.readFileSync(safeDistPath('/css/ayutthaya.css'), 'utf8');
+      const pageId = routePath.split('/').filter(Boolean).at(-1);
+      const ayutthayaBodySelector = `body[data-region="ayutthaya"][data-page="${pageId}"]`;
+      const ayutthayaBodyWidthRule = cssRuleBlock(ayutthayaCss, ayutthayaBodySelector);
+      if (!/min-width\s*:\s*0\s*;/i.test(ayutthayaBodyWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(ayutthayaBodyWidthRule)) fail(`Ayutthaya ${pageId} body must release the shared 320px floor on ${locale.code}.`);
+      if (/overflow(?:-x)?\s*:\s*(?:hidden|clip)\b/i.test(ayutthayaBodyWidthRule)) fail(`Ayutthaya ${pageId} body width correction must not conceal overflow.`);
+      for (const wrapper of ['.site-shell', '.page-content']) {
+        const wrapperWidthRule = cssRuleBlock(ayutthayaCss, `${ayutthayaBodySelector} ${wrapper}`);
+        if (!/min-width\s*:\s*0\s*;/i.test(wrapperWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(wrapperWidthRule)) fail(`Ayutthaya ${pageId} ${wrapper} must fit its parent on ${locale.code}.`);
+        if (/overflow(?:-x)?\s*:\s*(?:hidden|clip)\b/i.test(wrapperWidthRule)) fail(`Ayutthaya ${pageId} ${wrapper} must not conceal overflow.`);
+      }
       if (!nodes(document, 'details').length) fail(`Missing visible Ayutthaya FAQ controls on ${locale.code} ${routePath}.`);
       const bodyText = text(body);
       if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Ayutthaya photo-license credit on ${locale.code} ${routePath}.`);

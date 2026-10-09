@@ -19,6 +19,27 @@ body[data-region="ayutthaya"] {
   background-size: 2rem 2rem;
 }
 
+/* A classic scrollbar can leave these reviewed routes a 305px layout viewport at 320px.
+   Release the shared 320px floor and let the existing shell/navigation size naturally. */
+body[data-region="ayutthaya"][data-page="ayutthaya"],
+body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"],
+body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"],
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] {
+  min-width: 0;
+  max-width: 100%;
+}
+body[data-region="ayutthaya"][data-page="ayutthaya"] .site-shell,
+body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"] .site-shell,
+body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"] .site-shell,
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .site-shell,
+body[data-region="ayutthaya"][data-page="ayutthaya"] .page-content,
+body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"] .page-content,
+body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"] .page-content,
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .page-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .ayu-breadcrumbs { border-bottom-color: rgba(97,39,31,.18); }
 .ayu-breadcrumbs a { color: var(--ayu-brick-dark); }
 .ayu-kicker { display: block; color: var(--ayu-brick); font-size: .69rem; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
