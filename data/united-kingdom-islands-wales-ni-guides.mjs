@@ -25,6 +25,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
     guides: [
       g({
         slug: 'isle-of-skye',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Isle of Skye Road & Weather Plan',
         instrument: 'Peninsula road-and-light compass',
         layout: 'island-road-spokes',
@@ -65,6 +67,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
       }),
       g({
         slug: 'orkney-mainland',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Orkney Mainland & Neolithic Sites',
         instrument: 'Ferry-to-monument reservation wheel',
         layout: 'stone-circle-island-grid',
@@ -108,6 +112,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
       }),
       g({
         slug: 'lewis-harris',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Lewis & Harris',
         instrument: 'Ferry-port and island-road atlas',
         layout: 'machair-mountain-spread',
@@ -428,6 +434,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
     guides: [
       g({
         slug: 'conwy-llandudno',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Conwy Castle & Llandudno',
         instrument: 'Wall-to-headland coast clock',
         layout: 'castle-bay-headland-fold',
@@ -468,6 +476,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
       }),
       g({
         slug: 'yr-wyddfa-gateways',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Yr Wyddfa Gateway Choice',
         instrument: 'Summit-route and rail gate',
         layout: 'mountain-route-selector',
@@ -507,6 +517,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
       }),
       g({
         slug: 'caernarfon-anglesey',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Caernarfon & Anglesey',
         instrument: 'Castle-to-island crossing sheet',
         layout: 'menai-strait-bridge-plan',
