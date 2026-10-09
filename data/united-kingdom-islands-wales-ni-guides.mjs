@@ -157,6 +157,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
   }),
   c({
     slug: 'cardiff-south-wales',
+    reviewDate: '9 October 2026',
+    reviewDateISO: '2026-10-09',
     name: 'Cardiff, Bannau Brycheiniog & Gower',
     nation: 'Wales',
     band: 'wales',
@@ -176,108 +178,128 @@ export const unitedKingdomIslandsWalesNiClusters = [
     guides: [
       g({
         slug: 'cardiff-castle-bay',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Cardiff Castle, Civic Centre & Bay',
         instrument: 'Capital-to-bay line card',
         layout: 'castle-arcade-waterfront-fold',
         imageQuery: 'Cardiff Castle city Wales keep',
         imageAlt: 'Cardiff Castle and its Norman keep in the Welsh capital',
-        purpose: 'Choose Cardiff Castle, the national museum or the bay as the main anchor and use one intentional rail, bus or walking move between centre and waterfront.',
-        summary: 'Start at Cardiff Central or Queen Street, complete the castle and civic core or museum, then move once to Cardiff Bay and return by a direct line.',
+        purpose: 'Choose one city-centre anchor and decide whether Cardiff Bay merits the separate bus leg; use route 6 between Cardiff Bus Interchange and the Millennium Centre rather than treating the waterfront as next door to Cardiff Central.',
+        summary: 'Pair the castle or National Museum with the civic centre, then take Cardiff Bus 6 from the Interchange via Lloyd George Avenue to the Millennium Centre only if the Bay fits the day.',
         choices: [
-          ['Castle and civic centre', 'Use the castle, arcades and civic buildings as the main day. This gives the clearest city history and stays compact.'],
-          ['National collections', 'Prioritize National Museum Cardiff and the civic centre, with the castle exterior. It is resilient in rain and collection-led.'],
-          ['Cardiff Bay', 'Use the Senedd, waterfront and one bay institution as the long block. This reveals modern Cardiff but needs a separate connection.']
+          ['Castle and civic centre', 'Choose the castle, arcades and nearby civic streets when architecture and city history matter most. Keep this walkable centre day; adding the full Bay circuit makes the visit rushed.'],
+          ['Museum first, Bay optional', 'Give National Museum Cardiff the protected block in wet weather or when collections are the priority. Add the Bay only if time and current museum access allow; the castle can be an exterior stop.'],
+          ['Bay by Cardiff Bus 6', 'From Cardiff Bus Interchange, take route 6 via Lloyd George Avenue to Wales Millennium Centre. Choose this for the Senedd and waterfront; it is a distinct district and costs a centre-to-Bay connection in each direction.']
         ],
-        access: 'Cardiff Central serves the southern centre and rail onward journeys; Queen Street is closer to the civic side and local lines. Cardiff Bay lies beyond the centre and can be reached by bus, local rail or a substantial walk. Choose the return before moving south.',
-        tradeoff: 'A deep castle visit, national museum and full bay circuit exceed one relaxed day. Choosing the bay sacrifices one city-centre interior; staying central leaves the waterfront as a short extension.',
+        access: 'Cardiff Central is the main rail gateway for the castle and southern centre; Queen Street is closer to the civic side. For the Bay, reach Cardiff Bus Interchange and use Cardiff Bus 6 to the Wales Millennium Centre via Lloyd George Avenue. Confirm the current route and return before leaving the centre; do not assume the Bay bus boards at Cardiff Central rail platforms.',
+        tradeoff: 'A full castle visit, National Museum galleries and the Bay each compete for a substantial block. A centre-led day trades the waterfront for a deeper indoor visit; a Bay-led day gives up a city-centre interior. The bus connection makes Bay practical, but does not make all three districts one compact walk.',
         stages: [
-          ['Enter from the useful station', 'Use Central for castle and arcades or Queen Street for the civic centre, noting the final bay or rail connection.'],
-          ['Complete one capital anchor', 'Visit the castle or national museum with its current ticket and gallery conditions, then use the arcades or civic streets as context.'],
-          ['Move once to the bay', 'Take the verified bus or local train, or walk a named route. Do not return to the centre for an additional museum.'],
-          ['Exit from the correct network', 'Finish at Cardiff Bay or Central according to the onward journey, allowing stadium and event crowds to alter service.']
+          ['Choose a centre anchor', 'From Cardiff Central, walk to the castle and arcades; use Queen Street for the civic side. Check the castle or museum’s own current access before committing.'],
+          ['Decide whether to add the Bay', 'If the Senedd and waterfront are the priority, reach Cardiff Bus Interchange and take route 6 via Lloyd George Avenue to the Millennium Centre. This named bus leg is the centre-to-Bay hinge.'],
+          ['Keep the Bay as one block', 'Stay around the Millennium Centre, Senedd and waterfront, then use route 6 back toward the city. Do not plan a return to the centre for a second major interior.'],
+          ['Protect the onward trip', 'Check the actual bus and rail journey and allow extra margin on stadium or event days; finish at the station or Bay stop that matches the confirmed connection.']
         ],
-        fallback: 'If bay weather is poor, use the castle, national museum and covered arcades. If the castle closes, retain the civic centre and one bay institution rather than buying an unrelated attraction chain.',
+        fallback: 'In rain or strong waterfront wind, stay with the castle, National Museum Cardiff and arcades as a centre-based day. If an event disrupts the Bay bus or station approaches, drop the Bay rather than building a tight chain of distant attractions.',
         watch: [
           ['Stadium events change the centre', 'Roads, stations and queues can shift sharply. Check the event calendar and leave wider rail margins.'],
-          ['The bay is not beside Cardiff Central', 'It needs a real transit or walking block. Treat it as a second district, not the next street.'],
+          ['The Bay needs a named connection', 'Cardiff Bus 6 runs from the Interchange to the Millennium Centre via Lloyd George Avenue. Check the date-specific service and return; it is not a Cardiff Central platform transfer.'],
           ['Museum and castle products differ', 'Free museum entry and castle tickets have separate security and availability. Confirm the exact anchor.']
         ],
-        duration: 'Allow six to eight hours for one centre anchor and the bay. A castle-and-civic route can fit four to five hours.',
+        duration: 'Set aside a full day if combining one city-centre anchor with Cardiff Bay and its route 6 return. A castle-and-civic or museum-centred day can stay in the central walking area; use current opening and entry information to set the block.',
         combine: 'Combine the castle with arcades or the museum with the bay. Keep Bannau Brycheiniog and Gower for separate full days.',
-        verify: 'Check Cardiff Castle and National Museum access, Cardiff Bay transport, stadium events and Transport for Wales status before departure.',
+        verify: 'Check Cardiff Castle and National Museum access, Cardiff Bus 6 between Cardiff Bus Interchange and the Millennium Centre via Lloyd George Avenue, event impacts and the onward rail connection. Source information checked 9 October 2026; recheck the date-specific bus service.',
         sources: [
+          ['https://www.cardiffbus.com/services/CB/6', 'Cardiff Bus — Service 6 Baycar, Interchange and Millennium Centre via Lloyd George Avenue'],
+          ['https://tfw.wales/plan-a-journey', 'Transport for Wales — current rail journey planner'],
           ['https://www.cardiffcastle.com/visit/', 'Cardiff Castle — official visitor information'],
           ['https://museum.wales/cardiff/visit/', 'Amgueddfa Cymru — National Museum Cardiff visitor information']
         ]
       }),
       g({
         slug: 'bannau-brycheiniog',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Bannau Brycheiniog Gateways',
         instrument: 'Gateway-and-ridge weather board',
         layout: 'upland-gateway-transect',
         imageQuery: 'Bannau Brycheiniog Brecon Beacons mountains Wales',
         imageAlt: 'Green ridges in Bannau Brycheiniog National Park in Wales',
-        purpose: 'Choose one Bannau Brycheiniog gateway and route level, naming the bus, car park or rail-to-bus connection and keeping a lower valley alternative for cloud, wind or saturated ground.',
-        summary: 'Travel to Brecon, Abergavenny, Merthyr Tydfil or another named gateway, assess mountain conditions there, complete one signed route and recover the final transport before dark.',
+        purpose: 'Choose a bus approach to Storey Arms or a car approach to Pont ar Daf, then match the Pen y Fan route to the group and forecast; the bus stop and National Trust car-park trailhead are different start plans.',
+        summary: 'For the no-car route, take TfW from Cardiff Central to Merthyr Tydfil, transfer separately from the rail station to Merthyr Bus Station, then take T4 to Storey Arms; by car, use the Pont ar Daf trailhead.',
         choices: [
-          ['Brecon and lower landscape', 'Use the town, canal or a lower signed route. This provides national-park context with the largest transport and weather margin.'],
-          ['Pen y Fan approach', 'Use one official trailhead and route matched to conditions. It gives the highest-profile ridge but attracts crowd and parking pressure.'],
-          ['Eastern Black Mountains', 'Base from Abergavenny or another named gateway for one mapped route. It offers a distinct landscape but is not interchangeable with central Bannau.']
+          ['No car: Merthyr or Brecon to Storey Arms', 'TfW trains from Cardiff Central reach Merthyr Tydfil in about an hour; the National Trust notes Merthyr station is 12 miles from its property. From Merthyr rail station, make a separate transfer to Merthyr Bus Station, then take T4 to Storey Arms. From Brecon, check the T4/T14 options. As checked 9 October 2026, the live T4 page says it cannot serve Free Street in Brecon until further notice and tells passengers to use Brecon Bus Interchange; recheck whether this diversion is still active. Verify the date-specific transfer, bus, walking route and return; this is a mountain-transit day, not a rail-only day.'],
+          ['Car: Pont ar Daf and the official circular', 'The National Trust lists its 4 mi (6.4 km), 3 hr 30 min Pen y Fan and Corn Du circular as moderate, but describes the overall outing as a strenuous mountain walk. It starts at Pont ar Daf, about 8 mi south of Brecon, and has steep summit steps and narrow, uneven paths. Choose it only if that effort and terrain suit the group. If the car park is full, return later; do not park on the roadside.'],
+          ['Brecon and lower ground', 'Choose Brecon town, the canal or a currently suitable lower route if the ridge forecast, group ability or transport return does not support a summit attempt. You give up the summit view for a more forgiving weather and timing plan.']
         ],
-        access: 'The national park has no single station. Cardiff and other rail cities connect to Merthyr Tydfil, Abergavenny or bus corridors, while trailheads may remain far away. Confirm the exact gateway, stop and final return before leaving the city.',
-        tradeoff: 'A ridge day sacrifices town, canal and museum time but gains elevation. A lower route gives up the summit while protecting safety, public transport and a useful poor-weather day.',
+        access: 'There is no park station at the ridge. TfW says Cardiff Central–Merthyr Tydfil takes about an hour; from Merthyr rail station, transfer separately to Merthyr Bus Station and board T4 to Storey Arms. Merthyr station is 12 miles from the National Trust property, so do not assume the train and bus share a platform. T4/T14 also connect Merthyr or Brecon with Storey Arms. The National Trust’s Pen y Fan circular starts separately at Pont ar Daf, about 8 miles south of Brecon; do not plan that car-park loop as if the Storey Arms stop were the same start. Check the date-specific station transfer, bus, walk and return before leaving Cardiff.',
+        tradeoff: 'The T4/T14 and rail option works for people prepared to plan a bus-linked mountain day and follow the route from Storey Arms. The Pont ar Daf circular gives drivers the published 4 mi / 3 hr 30 min Pen y Fan–Corn Du line; the National Trust rates it moderate but describes the outing as strenuous. Parking capacity and exposed summit conditions control the day. Anyone who needs an even, low-effort surface should choose the lower Brecon plan instead of this route with steep steps and uneven, narrow paths.',
         stages: [
-          ['Reach one named gateway', 'Use the verified train, bus, tour or car route and save the final return. Do not navigate to a generic park centre after arrival.'],
-          ['Read the mountain weather', 'Assess wind, cloud, rain, temperature and path conditions at low ground. Activate the lower route before climbing.'],
-          ['Commit to one mapped line', 'Follow the official or properly mapped route with a time-based turnaround. Stay off eroded shortcuts and private land.'],
-          ['Return before daylight and service edge', 'Regain the gateway with margin for wet surfaces and rural delays, then protect the rail connection to Cardiff or the base.']
+          ['Choose the trailhead by transport', 'Without a car from Cardiff, take TfW to Merthyr Tydfil, transfer from the rail station to Merthyr Bus Station, then board T4 to Storey Arms; check date-specific connection and last return. From Brecon, check T4/T14. By car, navigate to Pont ar Daf for the National Trust circular; it is not the bus stop plan.'],
+          ['Read conditions before choosing the summit', 'Check the Met Office mountain forecast and National Trust guidance before departure and again at the start. Cloud, wind, rain or a group not suited to rough steps is a reason to switch to lower ground.'],
+          ['Use the route’s real effort', 'At Pont ar Daf, the National Trust lists the 4 mi / 6.4 km, 3 hr 30 min Pen y Fan–Corn Du walk as moderate, while its description calls the outing strenuous. Expect steep summit steps and uneven, narrow paths. Keep a turnaround and do not shortcut eroded ground.'],
+          ['Leave recovery margin', 'Allow for the walk back to the chosen stop or car park and check the exact return service. If Pont ar Daf is full, return later rather than stopping on the roadside.']
         ],
-        fallback: 'If ridges are unsuitable, use Brecon, the Monmouthshire and Brecon Canal or a lower woodland and reservoir route approved for current conditions. Do not drive to another exposed summit.',
+        fallback: 'If cloud, wind, rain or saturated ground makes the ridge a poor choice, use Brecon town and a lower canal-side plan or another route confirmed suitable for current conditions. For the car approach, a full Pont ar Daf car park means return later, not roadside parking. Do not salvage a missed summit by racing to another exposed trailhead.',
         watch: [
-          ['Pen y Fan is not the whole park', 'Different gateways and landscapes require different transport. Choose the route from the base and conditions.'],
-          ['Parking pressure can close the plan', 'Do not road-park or block access when official capacity is full. Use public transport or the lower fallback.'],
-          ['Navigation remains necessary', 'Popular paths can disappear in cloud or snow. Carry the correct map and equipment for the chosen level.']
+          ['Merthyr is a rail gateway, not the trailhead', 'TfW’s Cardiff Central train is about an hour, but Merthyr station is 12 miles from the National Trust property. Transfer separately to Merthyr Bus Station for T4 to Storey Arms, and confirm the exact return.'],
+          ['Storey Arms and Pont ar Daf are different starts', 'Use the named bus stop for a bus-led route; the NT Pen y Fan–Corn Du circular starts at Pont ar Daf. Do not assume the two plans share the same trailhead.'],
+          ['Parking and path conditions are hard limits', 'If Pont ar Daf is full, return later and never roadside-park. The NT calls the outing strenuous; steep summit steps and uneven, narrow paths may not suit every walker. Use the low-level alternative when conditions or ability say so.']
         ],
-        duration: 'Allow a full day for any mountain gateway from Cardiff. A lower Brecon-and-canal plan can fit five to seven hours including transport.',
+        duration: 'Keep a full day for the Cardiff–Merthyr–T4/T14 mountain connection or the car-based Pont ar Daf walk; the National Trust estimates 3 hr 30 min for the 4 mi summit circular before travel and return buffers. A lower Brecon plan is a separate, shorter option whose timing depends on the chosen route and current bus.',
         combine: 'Combine Brecon with one lower route or a ridge with its single gateway. Keep Cardiff Bay and Gower for separate days.',
-        verify: 'Check national-park alerts, Met Office mountain weather, the exact train and bus, parking or tour status, daylight and route conditions before departure.',
+        verify: 'Check the Cardiff Central–Merthyr rail journey, separate transfer to Merthyr Bus Station, date-specific T4/T14 connections to Storey Arms and return, Met Office mountain weather, National Trust path/parking notices and daylight. As checked 9 October 2026, the T4 live page says it cannot serve Free Street in Brecon until further notice and directs passengers to Brecon Bus Interchange; recheck whether this remains active. The NT lists the Pont ar Daf circular as 4 mi / 6.4 km, 3 hr 30 min and moderate, but its description calls the overall outing strenuous; steep steps and uneven/narrow paths are part of the route. Source information checked 9 October 2026.',
         sources: [
-          ['https://beacons-npa.gov.uk/learning/learning-centres/national-park-visitor-centre/', 'Bannau Brycheiniog National Park — official visitor centre information'],
-          ['https://tfw.wales/ways-to-travel/bus', 'Transport for Wales — official bus information']
+          ['https://tfw.wales/trains-cardiff-central-to-merthyr-tydfil', 'Transport for Wales — Cardiff Central–Merthyr Tydfil rail journey'],
+          ['https://traws.cymru/en/services/CELT/T4', 'TrawsCymru — T4 bus route to Storey Arms'],
+          ['https://www.nationaltrust.org.uk/visit/wales/bannau-brycheiniog-brecon-beacons', 'National Trust — T4/T14 access from Merthyr or Brecon to Storey Arms; station and property gateways'],
+          ['https://www.nationaltrust.org.uk/visit/wales/bannau-brycheiniog-brecon-beacons/pen-y-fan-and-corn-du-circular-walk', 'National Trust — Pen y Fan and Corn Du circular from Pont ar Daf, route effort and terrain'],
+          ['https://www.nationaltrust.org.uk/visit/wales/bannau-brycheiniog-brecon-beacons/climbing-pen-y-fan-and-walking-in-the-brecon-beacons', 'National Trust — mountain weather, preparation and full-car-park advice'],
+          ['https://www.nationaltrust.org.uk/visit/wales/sustainable-travel-in-wales', 'National Trust — T4 bus access to Storey Arms'],
+          ['https://weather.metoffice.gov.uk/specialist-forecasts/mountain/brecon-beacons', 'Met Office — Brecon Beacons mountain forecast'],
+          ['https://www.traveline.cymru/', 'Traveline Cymru — exact-date bus journey and timetable planner']
         ]
       }),
       g({
         slug: 'swansea-gower',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Swansea & the Gower Peninsula',
         instrument: 'Peninsula bus-and-tide selector',
         layout: 'bay-to-headland-chart',
         imageQuery: 'Rhossili Bay Gower Wales cliffs',
         imageAlt: 'Rhossili Bay and headlands on the Gower Peninsula in Wales',
-        purpose: 'Choose Swansea Bay or one Gower coast branch and match it to the exact bus, tide and cliff conditions rather than presenting the entire peninsula as one easy Cardiff day trip.',
-        summary: 'Use Swansea as the rail-and-bus base, travel to one named Gower village or bay, complete a bounded coast route, and return before sparse evening service.',
+        purpose: 'Choose route 2 to Oystermouth/Mumbles for the nearer coast or route 118 from Swansea Bus Station Stand T to Rhossili for the long west-Gower day; protect the exact return and the Worm’s Head tide window.',
+        summary: 'Use the bus station as the transfer point: route 2 leaves Bay W toward Oystermouth/Mumbles, while 118 leaves Stand T via Sketty Cross, Killay and Parkmill to Rhossili. Choose one branch and verify its date-specific return.',
         choices: [
-          ['Swansea city and bay', 'Keep the day around the market, museum, marina and bay. This is the strongest poor-weather and rail-simple option.'],
-          ['Rhossili and west Gower', 'Use the long bus or road branch for the bay and one headland route. It offers the iconic landscape but owns the whole day.'],
-          ['Mumbles and east Gower', 'Use frequent local connections for promenade, castle context and a shorter coast line. It is easier to combine with Swansea.']
+          ['No car: Rhossili on route 118', 'Board at Swansea Bus Station Stand T; the 118 runs via Sketty Cross, Killay and Parkmill to Rhossili. The current PDF has separate weekday schoolday/school-holiday and Saturday tables. Make this the day’s main branch and confirm the return before walking; do not plan a second Gower area around it.'],
+          ['No car: Mumbles on route 2', 'Route 2 leaves Swansea Bus Station Bay W toward Oystermouth and Mumbles, a closer coast option for a shorter outing. Its Traveline PDF is marked effective 5 January 2025 until further notice; check that the date-specific timetable remains valid and plan the return from the correct stop.'],
+          ['Swansea fallback or car-based west Gower', 'Use Swansea’s museum and waterfront if weather or bus timing weakens the coast plan. A car can make multiple west-Gower stops more feasible, but still choose one coast walk and check parking, tide and cliff conditions rather than combining every beach.']
         ],
-        access: 'Swansea railway station is inland from the marina and serves as the bus gateway. Rhossili, Mumbles and other Gower points use different routes and frequencies. Beaches, causeways and headlands may be tide or weather dependent.',
-        tradeoff: 'West Gower sacrifices Swansea city and any second coast. Mumbles gives up the dramatic western bay but protects frequency and a flexible return. The route chooses one shore system deliberately.',
+        access: 'From Swansea rail station, continue to Swansea Bus Station before boarding. Route 118 to Rhossili boards at Stand T and runs through Sketty Cross, Killay and Parkmill; its 2 January 2026 PDF is valid until further notice and separates weekday schooldays from school holidays plus Saturday. Route 2 toward Mumbles/Oystermouth boards at Bay W; its published PDF says effective 5 January 2025 until further notice. Check the exact date, correct stand/bay, outward and return; timetables can change. Rhossili adds a tide decision if considering Worm’s Head.',
+        tradeoff: 'Rhossili is a committed west-Gower day because route 118 is a date-patterned branch with limited chances to recover a missed return; choose the 1 mi (1.6 km) level-and-even lookout path if you want the Worm’s Head view without crossing the causeway. Mumbles/Oystermouth via route 2 is a nearer coast visit that can leave time for Swansea, but not for the west-Gower circuit. Choose by branch and return, not by trying to link both coasts.',
         stages: [
-          ['Set the Swansea gateway', 'Locate the correct bus stop, final return and city fallback before leaving the station or centre.'],
-          ['Travel to one peninsula branch', 'Use the named service to Rhossili, Mumbles or another selected place. Do not hop between routes without a confirmed connection.'],
-          ['Complete a bounded coast line', 'Follow the signed bay, promenade or headland route with a tide and time turnaround. Stay back from cliffs and surf.'],
-          ['Return before frequency thins', 'Reach the bus stop early and allow traffic before the final rail. Keep Swansea’s marina or market as optional only after return.']
+          ['Find the correct departure', 'From Swansea Bus Station, use Stand T for 118 to Rhossili or Bay W for route 2 to Oystermouth/Mumbles. Match the departure to the weekday schoolday, school-holiday or Saturday table where applicable.'],
+          ['Choose the coast effort', 'At Rhossili, the National Trust lookout walk is 1 mi / 1.6 km on a level, even access track; it includes gentle gradients. Worm’s Head is a separate tidal crossing, not required for the view.'],
+          ['Use the official tide window', 'Only consider the Worm’s Head causeway when the National Trust tide guidance and NCI lookout advice support it: access is possible for about 2½ hours either side of low tide. If timing or conditions do not fit, stay on the lookout path.'],
+          ['Return to Swansea with margin', 'Check the same route’s exact-date return before setting out and get back to the stop early. Keep a missed or changed service from becoming a threatened rail connection.']
         ],
-        fallback: 'If west Gower buses or weather fail, use Swansea museum and bay or Mumbles on the more frequent corridor. If tide removes a route, stay on signed upper paths and never cross exposed sand or causeway.',
+        fallback: 'If west-Gower weather or the 118 return does not support Rhossili, keep the day in Swansea or switch to Mumbles only if route 2’s own date-specific outward and return fit. If the Worm’s Head tide window is unsuitable, use the National Trust’s level, even 1 mi lookout path and do not cross the causeway.',
         watch: [
-          ['Gower is a peninsula, not one beach stop', 'Routes diverge and cross-links are limited. Select the branch before boarding.'],
-          ['Tide alters access', 'Worm’s Head and beach sections require official tide and safety guidance. Do not estimate from visible water.'],
-          ['Evening buses are sparse', 'A missed west-Gower service can threaten the rail return. Know the final two departures.']
+          ['118 and route 2 leave from different stands', 'Rhossili 118 is Stand T; Oystermouth/Mumbles route 2 is Bay W. Verify the stop and current date-specific timetable before travel.'],
+          ['118 has separate day patterns', 'The 2 January 2026 PDF gives weekday schoolday/school-holiday and Saturday tables, not Sunday. The National Trust lists NAT routes 118/119 for Monday–Saturday and says Sunday service is summer-only, naming First Cymru 114 for Sundays. Adventure Travel’s separate 118 Sunday/Bank Holiday notice ran only through 31 August 2026; that date has passed as of this 9 October 2026 check. Confirm whether 114 currently operates and the exact return before committing.'],
+          ['Worm’s Head is tide-gated', 'The National Trust gives an approximate window of 2½ hours either side of low tide and says the NCI lookout offers tide-table advice. Prefer the lookout path if the crossing window is not right.']
         ],
-        duration: 'Allow a full day for Rhossili or another west-Gower branch. Swansea and Mumbles can share a six-to-eight-hour day.',
+        duration: 'Treat Swansea–Rhossili as a full day built around one 118 outward/return pair; use the 1 mi lookout walk if a summit-free coastal option is the priority. Route 2 to Oystermouth/Mumbles is the closer branch and can share a day with Swansea only when the date-specific service and return allow it.',
         combine: 'Combine Swansea with Mumbles or Rhossili with one headland route. Keep Cardiff and Bannau Brycheiniog for separate days.',
-        verify: 'Check the exact bus timetable, Gower National Landscape advice, tide, coast weather, daylight and Transport for Wales service before departure.',
+        verify: 'Check Traveline’s date-specific route 118 timetable (valid from 2 January 2026 until further notice, with schoolday/holiday and Saturday tables), route 2 to Oystermouth/Mumbles (published as effective 5 January 2025 until further notice), any Sunday route 114 service and its return, National Trust Worm’s Head tide guidance/NCI lookout advice and coast weather. The separate Adventure Travel 118 Sunday/Bank Holiday notice ended 31 August 2026. Source information checked 9 October 2026.',
         sources: [
+          ['https://www.traveline.cymru/uploads/OmniPDF/OWPDF__Adventure_Travel-118_-_Swansea_-_Rhossili-9/118NAA9.pdf', 'Traveline Cymru / Adventure Travel — Service 118 Swansea Stand T–Rhossili timetable, effective 2 January 2026 until further notice'],
+          ['https://www.adventuretravel.cymru/bus-services/swansea/118-sundays-bank-holiday', 'Adventure Travel — Service 118 Sunday and Bank Holiday notice for summer 2026'],
+          ['https://www.adventuretravel.cymru/bus-services', 'Adventure Travel — service index listing 118 Sundays and Bank Holidays through 31 August 2026'],
+          ['https://www.traveline.cymru/uploads/OmniPDF/OWPDF__First_Cymru-2_-_Swansea_-_Newton-3/002FCA3.pdf', 'Traveline Cymru / First Cymru — Service 2 Swansea Bay W–Newton via Mumbles, effective 5 January 2025 until further notice'],
+          ['https://www.nationaltrust.org.uk/visit/wales/rhosili-and-south-gower-coast/rhosili-serpents-seascapes-and-shipwrecks-walk', 'National Trust — Rhossili lookout path, Worm’s Head tide window and NCI advice'],
+          ['https://museum.wales/swansea/visit/', 'Amgueddfa Cymru — National Waterfront Museum visitor information'],
           ['https://www.visitswanseabay.com/', 'Visit Swansea Bay — official destination guide'],
           ['https://www.gower-nl.org.uk/', 'Gower National Landscape — official visitor information']
         ]

@@ -121,9 +121,10 @@ function hubFaq(cluster) {
 
 function hubSchema(cluster) {
   const route = `/united-kingdom/${cluster.slug}/`;
+  const hubReviewDateISO = cluster.reviewDateISO || isoDate;
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: isoDate, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: hubReviewDateISO, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['United Kingdom', absolute('/united-kingdom/')], [cluster.name, absolute(route)]]), faqSchema(hubFaq(cluster))
     ]
   };
@@ -131,6 +132,10 @@ function hubSchema(cluster) {
 
 function hubPage(cluster, clusterIndex) {
   const route = `/united-kingdom/${cluster.slug}/`;
+  const hubReviewDate = cluster.reviewDate || reviewDate;
+  const hubPlanningReview = cluster.reviewDate
+    ? `Planning facts and image licensing were reviewed on ${hubReviewDate}. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.`
+    : `Planning facts and image licensing were reviewed on ${hubReviewDate}. Verify current tickets, services, roads, paths, tides and site access before travel.`;
   const hero = cluster.guides[0].image;
   const faq = hubFaq(cluster);
   return `<!doctype html>
@@ -145,7 +150,7 @@ ${shellStart(`<main id="main-content" class="page-content uk-hub" data-uk-family
   <section class="uk-comparison-docket"><header><span>COMPARE BEFORE BOARDING</span><h2>Each route buys something by leaving something else out.</h2></header><div>${cluster.guides.map((guide) => `<article><header><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3></header><p><strong>Gateway:</strong> ${escapeHtml(guide.access)}</p><p><strong>Sacrifice:</strong> ${escapeHtml(guide.tradeoff)}</p><p><strong>Time:</strong> ${escapeHtml(guide.duration)}</p></article>`).join('')}</div></section>
   <section class="uk-hub-live"><div><span>REGIONAL LIVE DESK</span><h2>These sources control the moving parts.</h2><p>Use the route book for structure, then reopen current transport, destination and weather information for the exact date.</p></div><ul>${sourceList(cluster.sources)}</ul></section>
   <section class="uk-hub-faq"><div><span>REGIONAL ANSWERS</span><h2>${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${reviewDate}. Verify current tickets, services, roads, paths, tides and site access before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>${hubPlanningReview}</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${hubReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 

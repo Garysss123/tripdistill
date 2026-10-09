@@ -17,10 +17,17 @@ const baselineReviewSources = [
   'Editorial review: 20 September 2026 · Recheck time-sensitive details before booking.'
 ];
 const targetGuides = unitedKingdomGuides.filter((guide) => guide.reviewDate || guide.reviewDateISO);
-if (targetGuides.length !== 6) throw new Error(`Expected six UK route date overrides, found ${targetGuides.length}.`);
+if (targetGuides.length !== 9) throw new Error(`Expected nine UK route date overrides, found ${targetGuides.length}.`);
 for (const guide of targetGuides) {
   if (guide.reviewDate !== expectedReviewLabel || guide.reviewDateISO !== expectedReviewDate) {
     throw new Error(`Unexpected UK date override on ${guide.url}.`);
+  }
+}
+const targetHubs = unitedKingdomClusters.filter((cluster) => cluster.reviewDate || cluster.reviewDateISO);
+if (targetHubs.length !== 1) throw new Error(`Expected one UK hub date override, found ${targetHubs.length}.`);
+for (const cluster of targetHubs) {
+  if (cluster.reviewDate !== expectedReviewLabel || cluster.reviewDateISO !== expectedReviewDate) {
+    throw new Error(`Unexpected UK date override on /united-kingdom/${cluster.slug}/.`);
   }
 }
 
@@ -30,7 +37,7 @@ const languages = [
 ];
 const routes = [
   { url: '/united-kingdom/', kind: 'country', target: false },
-  ...unitedKingdomClusters.map((cluster) => ({ url: `/united-kingdom/${cluster.slug}/`, kind: 'hub', target: false })),
+  ...unitedKingdomClusters.map((cluster) => ({ url: `/united-kingdom/${cluster.slug}/`, kind: 'hub', target: targetHubs.includes(cluster) })),
   ...unitedKingdomGuides.map((guide) => ({ url: guide.url, kind: 'guide', target: targetGuides.some((item) => item.url === guide.url) }))
 ];
 if (routes.length !== 81) throw new Error(`Expected 81 UK routes, found ${routes.length}.`);
@@ -52,6 +59,12 @@ for (const locale of localeConfigs) {
   const batchPath = path.join(root, 'data', 'i18n', 'reviewed', locale.code, '99zzzzz-sprint-uk-02-20261009.json');
   const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
   targetSourceTranslations.set(locale.code, newReviewSources.map((source) => batch.translations[source]));
+}
+const targetHubSourceTranslations = new Map();
+for (const locale of localeConfigs) {
+  const batchPath = path.join(root, 'data', 'i18n', 'reviewed', locale.code, '99zzzzz-sprint-uk-02-20261009.json');
+  const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
+  targetHubSourceTranslations.set(locale.code, newReviewSources.slice(1).map((source) => batch.translations[source]));
 }
 const baselineTranslations = new Map();
 for (const locale of localeConfigs) {
@@ -80,10 +93,16 @@ for (const route of routes) {
       for (const value of visibleValues) {
         if (!html.includes(value)) throw new Error(`${file}: missing visible review text: ${value}`);
       }
+    } else if (route.kind === 'hub' && route.target) {
+      const visibleValues = locale.code === 'en' ? newReviewSources.slice(1) : targetHubSourceTranslations.get(locale.code);
+      if (visibleValues.some((value) => !value?.trim())) throw new Error(`Missing expected hub review-date translations for ${locale.code}.`);
+      for (const value of visibleValues) {
+        if (!html.includes(value)) throw new Error(`${file}: missing visible hub review text: ${value}`);
+      }
     }
     checked += 1;
   }
 }
 
 if (checked !== 405) throw new Error(`Expected 405 UK language pages, checked ${checked}.`);
-console.log(`United Kingdom route date regression passed: ${checked} language pages; six route overrides; published dates and all other route dates unchanged.`);
+console.log(`United Kingdom route date regression passed: ${checked} language pages; nine route overrides, one hub override; published dates and all other route dates unchanged.`);
