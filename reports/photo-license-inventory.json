@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-09T00:50:05.713Z",
+  "generatedAt": "2026-10-09T03:07:16.395Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 790,
     "completeSourceCreatorLicenseRecords": 766,
-    "licenseClaimsNotIndependentlyVerified": 593,
+    "licenseClaimsNotIndependentlyVerified": 590,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -15,13 +15,13 @@
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
     "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 112,
-    "assetsWithExplicitEnglishCreditMatch": 80,
-    "assetsVisuallyReviewed": 91,
+    "assetsWithMatchedEnglishCreditOnly": 109,
+    "assetsWithExplicitEnglishCreditMatch": 83,
+    "assetsVisuallyReviewed": 94,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 173,
-    "metadataOrCreditOnly": 593,
-    "usedAssetsWithoutIndependentSourcePageCheck": 593,
+    "sourcePageChecked": 176,
+    "metadataOrCreditOnly": 590,
+    "usedAssetsWithoutIndependentSourcePageCheck": 590,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -21465,21 +21465,21 @@
         {
           "assetPath": "/assets/images/thailand-ayutthaya-station.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg",
-          "sourceTitle": "Ayutthaya railway station",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Ayutthaya railway station.jpg",
+          "sourcePhotoDate": "2013-02-13",
           "creditLabel": "Ayutthaya railway station",
           "creator": "Jr8825",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Commons revision 1070665767 and local pixels reviewed on 2026-10-09. The frame shows a shaded station platform and train; no claim about current services or equipment is made.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-09",
+          "verificationDetail": "Commons revision 1070665767 checked on 2026-10-09: Jr8825, a 13 February 2013 photograph, and CC BY-SA 3.0 are identified. Local WebP pixels show a shaded station platform and train. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.",
           "useCount": 2,
           "routes": [
             "/thailand/ayutthaya/",
@@ -21490,7 +21490,7 @@
             "Train beside the platform at Ayutthaya railway station"
           ],
           "rawVisibleCredits": [
-            "Ayutthaya railway station - Jr8825, CC BY-SA 3.0; resized and converted to WebP, display crop."
+            "Ayutthaya railway station - Jr8825, CC BY-SA 3.0; resized and converted to WebP, display crop. This display image adaptation is shared under CC BY-SA 3.0."
           ]
         }
       ]
@@ -21530,7 +21530,7 @@
             "Wat Chaiwatthanaram illuminated against a dark evening sky"
           ],
           "rawVisibleCredits": [
-            "Wat Chaiwatthanaram - KOSIN SUKHUM, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Wat Chaiwatthanaram — KOSIN SUKHUM, CC BY-SA 4.0; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -21545,21 +21545,21 @@
         {
           "assetPath": "/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg",
-          "sourceTitle": "Wat Lokayasutharam",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Wat Lokayasutharam (Temple) Ayuthaya, Thailand.jpg",
+          "sourcePhotoDate": "2014-06-03",
           "creditLabel": "Wat Lokayasutharam",
-          "creator": "Nayika C",
+          "creator": "Nayika C.",
           "license": "CC BY-SA 3.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Commons revision 1243205521 and local pixels reviewed on 2026-10-09. The frame shows the reclining Buddha, brick remains and pagoda.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-09",
+          "verificationDetail": "Commons revision 1243205521 checked on 2026-10-09: Nayika C., a 3 June 2014 photograph, and CC BY-SA 3.0 are identified. Local WebP pixels show the reclining Buddha, brick remains and pagoda. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.",
           "useCount": 2,
           "routes": [
             "/thailand/ayutthaya/",
@@ -21570,7 +21570,7 @@
             "Outdoor reclining Buddha image at Wat Lokayasutharam"
           ],
           "rawVisibleCredits": [
-            "Wat Lokayasutharam - Nayika C., CC BY-SA 3.0; resized and converted to WebP, display crop."
+            "Wat Lokayasutharam - Nayika C., CC BY-SA 3.0; resized and converted to WebP, display crop. This display image adaptation is shared under CC BY-SA 3.0."
           ]
         }
       ]
@@ -21610,7 +21610,7 @@
             "Three aligned chedis and brick foundations at Wat Phra Si Sanphet"
           ],
           "rawVisibleCredits": [
-            "Wat Phra Si Sanphet - Preecha.MJ, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Wat Phra Si Sanphet — Preecha.MJ, CC BY-SA 4.0; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -21624,22 +21624,22 @@
       "sourceRecords": [
         {
           "assetPath": "/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp",
-          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg",
-          "sourceTitle": "Wat Yai Chai Mongkhon",
-          "sourcePhotoDate": null,
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg",
+          "sourceTitle": "File:วัดใหญ่ชัยมงคล_1_จังหวัดพระนครศรีอยุธยา.jpg",
+          "sourcePhotoDate": "2023-12-26",
           "creditLabel": "Wat Yai Chai Mongkhon",
           "creator": "Kriengsak Jirasirirojanakorn",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 4.0.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Commons revision 1192944501 and local pixels reviewed on 2026-10-09. The frame shows the central chedi and two shadowed seated Buddha figures in the foreground.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-09",
+          "verificationDetail": "Commons revision 1192944501 checked on 2026-10-09: Kriengsak Jirasirirojanakorn, a 26 December 2023 photograph, and CC BY-SA 4.0 are identified. Local WebP pixels show the central chedi and two shadowed seated Buddha figures in the foreground. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.",
           "useCount": 2,
           "routes": [
             "/thailand/ayutthaya/",
@@ -21650,7 +21650,7 @@
             "Central chedi and rows of robed Buddha images at Wat Yai Chai Mongkhon"
           ],
           "rawVisibleCredits": [
-            "Wat Yai Chai Mongkhon - Kriengsak Jirasirirojanakorn, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Wat Yai Chai Mongkhon — Kriengsak Jirasirirojanakorn, CC BY-SA 4.0; resized and converted to WebP, display crop. This display image adaptation is shared under CC BY-SA 4.0."
           ]
         }
       ]
@@ -21673,7 +21673,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "per the Commons page; resized and converted to WebP. The file metadata also points to CC BY-SA 4.0.",
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -21693,7 +21693,7 @@
             "Brick prang, columns and Buddha image at Wat Mahathat"
           ],
           "rawVisibleCredits": [
-            "Wat Mahathat - Diego Delso, CC BY-SA 3.0; resized and converted to WebP, display crop."
+            "Wat Mahathat — Diego Delso, CC BY-SA 3.0 per the Commons page; resized and converted to WebP. The file metadata also points to CC BY-SA 4.0."
           ]
         }
       ]

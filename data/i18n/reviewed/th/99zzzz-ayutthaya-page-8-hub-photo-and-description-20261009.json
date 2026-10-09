@@ -1,0 +1,14 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/thailand/ayutthaya/",
+    "/thailand/ayutthaya/west-island-wat-lokayasutharam/"
+  ],
+  "translations": {
+    "- Jr8825,": "- Jr8825,",
+    "- Nayika C.,": "- Nayika C.,",
+    "- Kriengsak Jirasirirojanakorn,": "- Kriengsak Jirasirirojanakorn,",
+    "Read Wat Lokayasutharam’s 42-metre Buddha, lotus head support, lost shelter and surviving pagoda; plan the west-island stop with a return transfer.": "ชมพระพุทธไสยาสน์ยาว 42 เมตร ฐานรองพระเศียรรูปดอกบัว ร่องรอยอาคารคลุมที่หายไป และเจดีย์ที่ยังอยู่ที่วัดโลกยสุธาราม พร้อมวางแผนจุดแวะฝั่งตะวันตกและตรวจเรือขากลับ"
+  }
+}

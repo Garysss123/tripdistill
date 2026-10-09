@@ -183,6 +183,9 @@ const routes = [
   { path: '/thailand/ayutthaya/wat-mahathat-ratchaburana/', label: 'Wat Mahathat & Wat Ratchaburana' },
   { path: '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', label: 'Palace Quarter & Wat Phra Si Sanphet' },
   { path: '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/', label: 'Wat Chaiwatthanaram & west bank' },
+  { path: '/thailand/ayutthaya/railway-station-chao-phrom/', label: 'Rail arrival & Chao Phrom' },
+  { path: '/thailand/ayutthaya/west-island-wat-lokayasutharam/', label: 'West island & Wat Lokayasutharam' },
+  { path: '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/', label: 'Wat Yai & Wat Phanan Choeng' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -277,7 +280,10 @@ const manifest = {
     '/thailand/ayutthaya/',
     '/thailand/ayutthaya/wat-mahathat-ratchaburana/',
     '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/',
-    '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'
+    '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/',
+    '/thailand/ayutthaya/railway-station-chao-phrom/',
+    '/thailand/ayutthaya/west-island-wat-lokayasutharam/',
+    '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',

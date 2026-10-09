@@ -111,7 +111,7 @@ try {
   assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 593, 'nine newly checked Andaman Commons sources reduce the unverified-used-asset count and remain separate from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 590, 'nine Andaman and three Ayutthaya source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -144,6 +144,27 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const ayutthayaPhotos = [
+    { assetPath: '/assets/images/thailand-ayutthaya-station.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creator: 'Jr8825', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-13', revision: '1070665767' },
+    { assetPath: '/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creator: 'Nayika C.', license: 'CC BY-SA 3.0', sourcePhotoDate: '2014-06-03', revision: '1243205521' },
+    { assetPath: '/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', creator: 'Kriengsak Jirasirirojanakorn', license: 'CC BY-SA 4.0', sourcePhotoDate: '2023-12-26', revision: '1192944501' }
+  ];
+  for (const image of ayutthayaPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Ayutthaya inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/${image.license === 'CC BY-SA 3.0' ? 'by-sa/3.0' : 'by-sa/4.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.metadataOrigin, 'explicit_asset_credit_match');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-09');
+    assert.ok(record.verificationDetail.includes(`revision ${image.revision}`));
+    assert.ok(record.verificationDetail.includes('does not independently establish worldwide rights clearance'));
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-09');
+    assert.ok(record.editHistory.includes(`adaptation shared under ${image.license}`));
+  }
   for (const image of koreaPhotoRecords) {
     const record = photoRecords.find((item) => item.assetPath === image.assetPath);
     assert.ok(record, `Seoul/Busan photo inventory must retain ${image.assetPath}`);
@@ -426,7 +447,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: five reviewed Chiang Mai images retain exact source, creator, commercial license, pixel review and five-locale linked credits; the new Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

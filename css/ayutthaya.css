@@ -24,7 +24,10 @@ body[data-region="ayutthaya"] {
 body[data-region="ayutthaya"][data-page="ayutthaya"],
 body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"],
 body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"],
-body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] {
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"],
+body[data-region="ayutthaya"][data-page="railway-station-chao-phrom"],
+body[data-region="ayutthaya"][data-page="west-island-wat-lokayasutharam"],
+body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] {
   min-width: 0;
   max-width: 100%;
 }
@@ -32,10 +35,16 @@ body[data-region="ayutthaya"][data-page="ayutthaya"] .site-shell,
 body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"] .site-shell,
 body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"] .site-shell,
 body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .site-shell,
+body[data-region="ayutthaya"][data-page="railway-station-chao-phrom"] .site-shell,
+body[data-region="ayutthaya"][data-page="west-island-wat-lokayasutharam"] .site-shell,
+body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .site-shell,
 body[data-region="ayutthaya"][data-page="ayutthaya"] .page-content,
 body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"] .page-content,
 body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"] .page-content,
-body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .page-content {
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .page-content,
+body[data-region="ayutthaya"][data-page="railway-station-chao-phrom"] .page-content,
+body[data-region="ayutthaya"][data-page="west-island-wat-lokayasutharam"] .page-content,
+body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .page-content {
   min-width: 0;
   max-width: 100%;
 }

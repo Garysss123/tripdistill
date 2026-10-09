@@ -659,6 +659,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:N_Seoul_T
 });
 
 const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', {
+  detail: 'Commons revision 1070665767 checked on 2026-10-09: Jr8825, a 13 February 2013 photograph, and CC BY-SA 3.0 are identified. Local WebP pixels show a shaded station platform and train. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
+  checkedOn: '2026-10-09'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', {
+  detail: 'Commons revision 1243205521 checked on 2026-10-09: Nayika C., a 3 June 2014 photograph, and CC BY-SA 3.0 are identified. Local WebP pixels show the reclining Buddha, brick remains and pagoda. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
+  checkedOn: '2026-10-09'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', {
+  detail: 'Commons revision 1192944501 checked on 2026-10-09: Kriengsak Jirasirirojanakorn, a 26 December 2023 photograph, and CC BY-SA 4.0 are identified. Local WebP pixels show the central chedi and two shadowed seated Buddha figures in the foreground. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
+  checkedOn: '2026-10-09'
+});
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg', {
   detail: 'Exact Commons page checked for the title Chatuchak Weekend Market, Christophe95 as author, the 12 May 2018 photograph date, and CC BY-SA 4.0 terms. The downloaded 4,032 x 3,024 source and local WebP pixels were inspected on 2026-10-08; both show a covered Chatuchak aisle with shoppers, flower stalls and souvenir stalls. The local copy is resized, cropped for display and converted to WebP; the route links both source and license.',
   checkedOn: '2026-10-08'
@@ -686,6 +698,9 @@ for (const [sourceUrl, detail] of [
 }
 
 const explicitCreditMappings = new Map([
+  ['/assets/images/thailand-ayutthaya-station.webp', { sourceTitle: 'File:Ayutthaya railway station.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creditLabel: 'Ayutthaya railway station', creator: 'Jr8825', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2013-02-13', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.', note: 'Commons revision 1070665767 and local pixels reviewed on 2026-10-09. The frame shows a shaded station platform and train; no claim about current services or equipment is made.' }],
+  ['/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', { sourceTitle: 'File:Wat Lokayasutharam (Temple) Ayuthaya, Thailand.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creditLabel: 'Wat Lokayasutharam', creator: 'Nayika C.', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-06-03', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.', note: 'Commons revision 1243205521 and local pixels reviewed on 2026-10-09. The frame shows the reclining Buddha, brick remains and pagoda.' }],
+  ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', { sourceTitle: 'File:วัดใหญ่ชัยมงคล_1_จังหวัดพระนครศรีอยุธยา.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', creditLabel: 'Wat Yai Chai Mongkhon', creator: 'Kriengsak Jirasirirojanakorn', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2023-12-26', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 4.0.', note: 'Commons revision 1192944501 and local pixels reviewed on 2026-10-09. The frame shows the central chedi and two shadowed seated Buddha figures in the foreground.' }],
   ['/assets/images/thailand-chiang-mai-warorot.webp', { sourceTitle: 'File:Warorot market 4.jpg', creditLabel: 'Warorot Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, creator, 6 September 2018 source date, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08. The image shows the covered Warorot market aisle with packaged foods, stalls and shoppers.' }],
   ['/assets/images/thailand-chiang-mai-mae-rim.webp', { sourceTitle: 'File:View of Mae Sa Valley, Chiang Mai, Thailand.jpg', creditLabel: 'Mae Sa Valley', creator: 'VN.NguyenDucDuy', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, creator, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08. Pixels match the Mae Rim valley landscape. Commons page date is 20 December 2025 while embedded EXIF says 20 December 2024; the discrepancy remains unresolved, so sourcePhotoDate stays null.' }],
   ['/assets/images/thailand-chatuchak.webp', { sourceTitle: 'File:Chatuchak Weekend Market 2.jpg', creditLabel: 'Chatuchak Weekend Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-05-12', editHistory: 'Resized, cropped for display and converted to WebP.', note: 'The exact Commons source page and downloaded original were checked against the local WebP pixels on 2026-10-08. Both show the same covered market aisle, flower stalls, souvenir stalls and shoppers.' }],
@@ -853,7 +868,10 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-lumphini.webp', '2026-10-08'],
   ['/assets/images/thailand-khlong-bang-luang.webp', '2026-10-08'],
   ['/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', '2026-10-08'],
-  ['/assets/images/canada-victoria-south-island-butchart-saanich.webp', '2026-10-08']
+  ['/assets/images/canada-victoria-south-island-butchart-saanich.webp', '2026-10-08'],
+  ['/assets/images/thailand-ayutthaya-station.webp', '2026-10-09'],
+  ['/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', '2026-10-09'],
+  ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', '2026-10-09']
 ]);
 const entries = [];
 const sourceConflicts = [];

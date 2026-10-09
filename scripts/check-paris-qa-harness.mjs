@@ -165,6 +165,9 @@ const expectedRoutes = [
   ['/thailand/ayutthaya/wat-mahathat-ratchaburana/', 'Wat Mahathat & Wat Ratchaburana'],
   ['/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', 'Palace Quarter & Wat Phra Si Sanphet'],
   ['/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/', 'Wat Chaiwatthanaram & west bank'],
+  ['/thailand/ayutthaya/railway-station-chao-phrom/', 'Rail arrival & Chao Phrom'],
+  ['/thailand/ayutthaya/west-island-wat-lokayasutharam/', 'West island & Wat Lokayasutharam'],
+  ['/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/', 'Wat Yai & Wat Phanan Choeng'],
 ];
 const andamanResponsiveCss = fs.readFileSync(path.join(distRoot, 'css', 'andaman.css'), 'utf8');
 const andamanNarrowGuard = andamanResponsiveCss.slice(andamanResponsiveCss.lastIndexOf('/* These seven reviewed routes'));
@@ -471,7 +474,10 @@ function assertHarness(html, label) {
     '/thailand/ayutthaya/',
     '/thailand/ayutthaya/wat-mahathat-ratchaburana/',
     '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/',
-    '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'
+    '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/',
+    '/thailand/ayutthaya/railway-station-chao-phrom/',
+    '/thailand/ayutthaya/west-island-wat-lokayasutharam/',
+    '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/'
   ].map((routePath) => [routePath, 350_000]));
   if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Thailand stylesheet budgets are missing or unexpected.`);
   const expectedImageBudgets = Object.fromEntries([
@@ -1728,6 +1734,11 @@ for (const locale of expectedLocales) {
           'https://commons.wikimedia.org/wiki/File:Wat_Phra_Si_Sanphet,_built_during_the_middle_period_of_the_Ayutthaya.jpg',
           'https://creativecommons.org/licenses/by-sa/4.0/',
           'https://commons.wikimedia.org/wiki/File:Wat_Chaiwatthanaram_Ayutthaya.jpg',
+          'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg',
+          'https://creativecommons.org/licenses/by-sa/3.0/',
+          'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg',
+          'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg',
+          'https://creativecommons.org/licenses/by-sa/4.0/',
         ],
         '/thailand/ayutthaya/wat-mahathat-ratchaburana/': [
           'https://commons.wikimedia.org/wiki/File:Templo_Mahathat,_Ayutthaya,_Tailandia,_2013-08-23,_DD_10.jpg',
@@ -1741,15 +1752,41 @@ for (const locale of expectedLocales) {
           'https://commons.wikimedia.org/wiki/File:Wat_Chaiwatthanaram_Ayutthaya.jpg',
           'https://creativecommons.org/licenses/by-sa/4.0/',
         ],
+        '/thailand/ayutthaya/railway-station-chao-phrom/': [
+          'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg',
+          'https://creativecommons.org/licenses/by-sa/3.0/',
+        ],
+        '/thailand/ayutthaya/west-island-wat-lokayasutharam/': [
+          'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg',
+          'https://creativecommons.org/licenses/by-sa/3.0/',
+        ],
+        '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/': [
+          'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg',
+          'https://creativecommons.org/licenses/by-sa/4.0/',
+        ],
       }[routePath];
       const linkedHrefs = nodes(document, 'a').map((node) => attr(node, 'href'));
       for (const href of photoLinksByRoute) if (!linkedHrefs.includes(href)) fail(`Missing exact Ayutthaya photo source or license link on ${locale.code} ${routePath}: ${href}.`);
+      const adaptationVersionsByRoute = {
+        '/thailand/ayutthaya/': ['3.0', '3.0', '4.0'],
+        '/thailand/ayutthaya/railway-station-chao-phrom/': ['3.0'],
+        '/thailand/ayutthaya/west-island-wat-lokayasutharam/': ['3.0'],
+        '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/': ['4.0'],
+      }[routePath] || [];
+      for (const licenseVersion of adaptationVersionsByRoute) {
+        const sourceNote = `; resized and converted to WebP, display crop. This display image adaptation is shared under CC BY-SA ${licenseVersion}.`;
+        const localizedNote = locale.code === 'en' ? sourceNote : localeCatalogs[locale.code][sourceNote];
+        if (!localizedNote || !bodyText.includes(localizedNote)) fail(`Missing localized Ayutthaya CC BY-SA ${licenseVersion} adaptation/share-alike note on ${locale.code} ${routePath}.`);
+      }
       if (locale.code === 'en') {
         const requiredByRoute = {
           '/thailand/ayutthaya/': ['1350', '1767', '289 hectares', 'Naresuan Road', 'Pa Sak'],
           '/thailand/ayutthaya/wat-mahathat-ratchaburana/': ['1374', '1384', '1424', '1956', 'Naresuan Road'],
           '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/': ['1492', 'three Ceylonese', 'Wihan Phra Mongkhon Bophit', 'old palace'],
           '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/': ['1612', '1630', '1649', 'eight Meru', 'west bank'],
+          '/thailand/ayutthaya/railway-station-chao-phrom/': ['Pa Sak River', 'Chao Phrom', 'SRT D-Ticket', 'one-way ride or timed hire'],
+          '/thailand/ayutthaya/west-island-wat-lokayasutharam/': ['42 metres', 'lotus', '24 octagonal', '1954', '1989'],
+          '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/': ['Wat Pa Kaeo', 'King Naresuan', 'Phra Phanarat', '20-metre', '19-metre', 'Highway 3477'],
         }[routePath];
         for (const phrase of requiredByRoute) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Ayutthaya editorial evidence is missing '${phrase}' on ${routePath}.`);
         if (!sourceSearchIndex.some((item) => item.url === routePath && item.title && item.summary)) fail(`Ayutthaya search-index record is missing for ${routePath}.`);

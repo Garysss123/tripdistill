@@ -1,0 +1,14 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya by Rail: Station, Chao Phrom and the River Transfer": "鉄道で行くアユタヤ：駅、チャオプロム、川を渡る移動",
+    "Check the SRT service and terminal for your date, settle bags, then choose a confirmed Pa Sak crossing or road transfer. Chao Phrom is an island-side market stop; the rail station is across the river on the east bank.": "旅行日のSRT運行とターミナルを確認し、荷物を預けてから、確認済みのパーサック川渡河手段または道路移動を選びましょう。チャオプロムは島側の市場で、駅は川の向こうの東岸にあります。",
+    "Wat Lokayasutharam: 42-Metre Reclining Buddha and West Island": "ワット・ローカヤスターラーム：全長42メートルの涅槃仏と島の西側",
+    "Read the 42-metre image, lotus head support, lost shelter, 24-pillar traces and nearby pagoda; the exact temple foundation date is unknown. Plan one shaded west-island loop and a separate return transfer.": "全長42メートルの像、頭を支える蓮華、失われた覆屋、24基の柱跡、近くの仏塔を見学します。寺院の正確な創建年は不明です。日陰を考慮した島西側の周遊と、別途帰路の移動を計画しましょう。",
+    "Follow Wat Yai’s central chedi, Buddha rows and Naresuan chronicle tradition, then meet Luang Pho To at Phanan Choeng. Link the Highway 3477 road stops and leave room for worship.": "ワット・ヤイの中央仏塔、仏像の列、ナレースワン王に関する年代記の伝承を見てから、パナンチューンでルアンポートーを参拝します。国道3477号線沿いの立ち寄り先を道路で結び、参拝の時間も確保しましょう。"
+  }
+}

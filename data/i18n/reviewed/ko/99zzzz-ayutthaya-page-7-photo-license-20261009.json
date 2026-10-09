@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/thailand/ayutthaya/railway-station-chao-phrom/",
+    "/thailand/ayutthaya/west-island-wat-lokayasutharam/",
+    "/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/"
+  ],
+  "translations": {
+    "; resized and converted to WebP, display crop. This display image adaptation is shared under CC BY-SA 3.0.": "; 크기를 조정하고 WebP로 변환했으며 화면 표시 과정에서 잘릴 수 있습니다. 이 이미지 파생물은 CC BY-SA 3.0 조건으로 공유됩니다.",
+    "; resized and converted to WebP, display crop. This display image adaptation is shared under CC BY-SA 4.0.": "; 크기를 조정하고 WebP로 변환했으며 화면 표시 과정에서 잘릴 수 있습니다. 이 이미지 파생물은 CC BY-SA 4.0 조건으로 공유됩니다."
+  }
+}
