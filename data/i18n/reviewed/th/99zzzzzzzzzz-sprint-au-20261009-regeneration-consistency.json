@@ -1,0 +1,22 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/",
+    "/australia/cairns-wet-tropics/",
+    "/australia/red-centre/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose one Top End operating region around your nights, not a pin for every day.": "เลือกพื้นที่เที่ยวในท็อปเอนด์หนึ่งแห่งโดยยึดตามที่พัก แทนการปักหมุดสถานที่สำหรับทุกวัน",
+    "cooinda cruise-day plan": "แผนเที่ยววันล่องเรือที่ Cooinda",
+    "Cross in daylight, select a small number of open managed stops such as Dubuji Boardwalk, and reach…": "ข้ามในช่วงกลางวัน เลือกแวะเพียงไม่กี่แห่งที่เปิดให้เข้าชมและมีการดูแลจัดการ เช่น Dubuji Boardwalk แล้วไปถึง…",
+    "DESERT DISTANCE / CULTURAL COUNTRY / HEAT · reviewed 4 October 2026": "ระยะทางในเขตทะเลทราย / ผืนดินดั้งเดิมของชนพื้นเมือง / ความร้อน · ตรวจทานเมื่อ 4 ตุลาคม 2026",
+    "falls, access and swim choice": "น้ำตก การเดินทางเข้า และการเลือกจุดว่ายน้ำ",
+    "On a city day, use the signed Esplanade promenade and managed Lagoon, then choose one indoor cultural…": "ในวันที่เที่ยวในเมือง ให้ใช้ทางเดินเลียบ Esplanade ที่มีป้ายบอกทางและ Lagoon ที่มีการดูแลจัดการ จากนั้นเลือกสถานที่ทางวัฒนธรรมในร่มหนึ่งแห่ง…",
+    "Planning facts and image licenses were reviewed on 4 October 2026. Recheck transport, park, fire, weather, marine and operator conditions before travel.": "ตรวจทานข้อมูลการวางแผนและใบอนุญาตภาพแล้วเมื่อ 4 ตุลาคม 2026 ก่อนเดินทาง โปรดตรวจสอบการขนส่ง สวนสาธารณะ ความเสี่ยงไฟป่าและข้อห้ามก่อไฟ สภาพอากาศ สภาพทะเล และสถานะของผู้ให้บริการอีกครั้ง",
+    "Reach the Centre early enough to use the shuttle and complete one suitable walk, then return to Port…": "ไปถึง Centre แต่เนิ่น ๆ เพื่อใช้รถรับส่งและเดินเส้นทางที่เหมาะสมให้จบหนึ่งเส้นทาง จากนั้นกลับไปยัง Port…",
+    "Take the scheduled mode from Cairns or Freshwater, spend a contained visit in Kuranda village, then…": "ใช้บริการขนส่งตามตารางจาก Cairns หรือ Freshwater เที่ยวชมหมู่บ้าน Kuranda ภายในเวลาที่กำหนด แล้ว…",
+    "two separate art-country walks": "เส้นทางเดินแยกกันสองเส้นเพื่อชมศิลปะและผืนดินดั้งเดิมของชนพื้นเมือง"
+  }
+}

@@ -324,13 +324,12 @@ function updateAbout() {
 }
 
 function updateEnglishAssetReferences() {
-  const excluded = new Set(['.git', 'dist', 'node_modules', 'zh', 'ja', 'ko', 'th']);
-  const stack = [root];
+  const australiaRoot = path.join(root, 'australia');
+  const stack = [australiaRoot];
   let changed = 0;
   while (stack.length) {
     const directory = stack.pop();
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-      if (directory === root && excluded.has(entry.name)) continue;
       const full = path.join(directory, entry.name);
       if (entry.isDirectory()) { stack.push(full); continue; }
       if (!entry.isFile() || !entry.name.endsWith('.html')) continue;

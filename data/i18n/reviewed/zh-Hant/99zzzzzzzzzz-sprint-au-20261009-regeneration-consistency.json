@@ -1,0 +1,22 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/",
+    "/australia/cairns-wet-tropics/",
+    "/australia/red-centre/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose one Top End operating region around your nights, not a pin for every day.": "以住宿地為中心，選定一個 Top End 行程區域，而不是每天都在地圖上釘選一個地點。",
+    "cooinda cruise-day plan": "Cooinda 遊船日行程",
+    "Cross in daylight, select a small number of open managed stops such as Dubuji Boardwalk, and reach…": "在白天渡過，挑選少數開放且有人管理的景點，例如 Dubuji Boardwalk，並抵達…",
+    "DESERT DISTANCE / CULTURAL COUNTRY / HEAT · reviewed 4 October 2026": "沙漠路程 / 原住民族傳統領域 / 高溫 · 2026年10月4日審核",
+    "falls, access and swim choice": "瀑布、交通方式與游泳地點選擇",
+    "On a city day, use the signed Esplanade promenade and managed Lagoon, then choose one indoor cultural…": "在市區遊覽日，走有指標的 Esplanade 海濱步道並使用管理完善的 Lagoon，接著選一處室內文化景點…",
+    "Planning facts and image licenses were reviewed on 4 October 2026. Recheck transport, park, fire, weather, marine and operator conditions before travel.": "行程資訊與圖片授權已於2026年10月4日審核。出發前請再次確認交通、公園、火災風險與禁火規定、天氣、海況及業者營運狀況。",
+    "Reach the Centre early enough to use the shuttle and complete one suitable walk, then return to Port…": "提早抵達 Centre，以便搭乘接駁車並完成一條合適的步道，之後返回 Port…",
+    "Take the scheduled mode from Cairns or Freshwater, spend a contained visit in Kuranda village, then…": "從 Cairns 或 Freshwater 搭乘定時班次的交通工具，在 Kuranda 村安排一段時間適中的行程，然後…",
+    "two separate art-country walks": "兩條分開的原住民族藝術與傳統領域步道"
+  }
+}
