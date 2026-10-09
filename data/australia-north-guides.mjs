@@ -4,6 +4,8 @@ export const australiaNorthClusters = [
   cluster({
     slug: 'cairns-wet-tropics',
     name: 'Cairns & Wet Tropics',
+    reviewDate: '9 October 2026',
+    reviewIsoDate: '2026-10-09',
     region: 'Queensland',
     band: 'tropics',
     family: 'reef-rainforest-transect',
@@ -134,6 +136,8 @@ export const australiaNorthClusters = [
   cluster({
     slug: 'whitsundays-great-barrier-reef',
     name: 'Whitsundays & Great Barrier Reef',
+    reviewDate: '9 October 2026',
+    reviewIsoDate: '2026-10-09',
     region: 'Queensland',
     band: 'tropics',
     family: 'coral-forecast-chart',
