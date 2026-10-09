@@ -382,7 +382,10 @@ for (const absoluteUrl of publishedUrls) {
     : '/css/andaman.css?v=20260826-1';
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes(andamanStylesheet)) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
   const ayutthayaNarrowFixRoutes = ['/thailand/ayutthaya/', '/thailand/ayutthaya/wat-mahathat-ratchaburana/', '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/', '/thailand/ayutthaya/railway-station-chao-phrom/', '/thailand/ayutthaya/west-island-wat-lokayasutharam/', '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/', '/thailand/ayutthaya/foreign-settlements-south-river/', '/thailand/ayutthaya/bang-pa-in-palace/'];
-  const expectedAyutthayaStylesheet = ayutthayaNarrowFixRoutes.includes(baseRoute) ? '/css/ayutthaya.css?v=20261009-3' : '/css/ayutthaya.css?v=20260826-1';
+  const ayutthayaHeadingSpacingRoutes = ['/thailand/ayutthaya/foreign-settlements-south-river/', '/thailand/ayutthaya/bang-pa-in-palace/'];
+  const expectedAyutthayaStylesheet = ayutthayaHeadingSpacingRoutes.includes(baseRoute)
+    ? '/css/ayutthaya.css?v=20261009-4'
+    : ayutthayaNarrowFixRoutes.includes(baseRoute) ? '/css/ayutthaya.css?v=20261009-3' : '/css/ayutthaya.css?v=20260826-1';
   if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes(expectedAyutthayaStylesheet)) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
   const chinaStylesheet = baseRoute === '/china/' ? '/css/china.css?v=20260828-4' : '/css/china.css?v=20260827-3';
   if (baseRoute.startsWith('/china/') && !html.includes(chinaStylesheet)) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);

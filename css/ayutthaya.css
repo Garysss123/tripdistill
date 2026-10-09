@@ -279,3 +279,27 @@ body[data-region="ayutthaya"][data-page="bang-pa-in-palace"] .page-content {
   .sunset-aperture-copy h1 { font-size: clamp(2.35rem,10.2vw,3rem); }
   .shade-register-copy h1, .cargo-manifest-copy h1, .garden-cabinet-copy h1 { font-size: clamp(2.2rem,11vw,2.8rem); }
 }
+
+/* Keep the condensed display treatment in English; translated CJK and Thai headings need room for their native glyph metrics. */
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 {
+  line-height: 1.18;
+}
+
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span {
+  margin-block-start: .15em;
+  line-height: 1.28;
+}
