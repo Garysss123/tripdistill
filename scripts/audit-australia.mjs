@@ -9,6 +9,7 @@ const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const lastmod = '2026-09-04';
 const australiaReviewDates = new Map([
+  ['/australia/', '2026-10-09'],
   ...australiaClusters
     .filter((cluster) => cluster.reviewIsoDate)
     .map((cluster) => [`/australia/${cluster.slug}/`, cluster.reviewIsoDate]),

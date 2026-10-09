@@ -84,6 +84,7 @@ const usaEditedRoutes = [
   '/usa/utah-parks/moab-arches-canyonlands/'
 ];
 const australiaReviewDates = new Map([
+  ['/australia/', '2026-10-09'],
   ...australiaClusters
     .filter((cluster) => cluster.reviewIsoDate)
     .map((cluster) => [`/australia/${cluster.slug}/`, cluster.reviewIsoDate]),
