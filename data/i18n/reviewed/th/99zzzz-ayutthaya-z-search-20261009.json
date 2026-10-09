@@ -1,0 +1,19 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya Guide: UNESCO History, Ruins and Routes": "คู่มืออยุธยา: ประวัติศาสตร์ยูเนสโก โบราณสถาน และเส้นทาง",
+    "Plan a three-river heritage visit with a walkable Mahathat–Ratchaburana–Sanphet core, separate east-bank station and west-bank transfers, and a two-day route.": "วางแผนเที่ยวมรดกวัฒนธรรมในเมืองที่มีแม่น้ำสามสาย พร้อมเส้นทางเดินใจกลางจาก Wat Mahathat ไป Wat Ratchaburana และ Wat Phra Si Sanphet การเดินทางแยกจากสถานีฝั่งตะวันออกและไปฝั่งตะวันตก และแผนเที่ยวสองวัน",
+    "Check the SRT origin station and travel date, then plan the separate east-bank station-to-island transfer and return margin.": "ตรวจสถานีต้นทางของ SRT และวันที่เดินทาง จากนั้นวางแผนการเดินทางแยกจากสถานีฝั่งตะวันออกไปเกาะเมือง พร้อมเผื่อเวลาสำหรับขากลับ",
+    "Walk Mahathat to Ratchaburana, continue through the royal quarter, then give living temples or the west-bank route a separate day.": "เดินจาก Wat Mahathat ไป Wat Ratchaburana แล้วเที่ยวต่อในเขตพระราชวัง จัดวันแยกสำหรับวัดที่ยังประกอบศาสนกิจหรือเส้นทางฝั่งตะวันตก",
+    "Wat Mahathat and Wat Ratchaburana: Relics, Prang and Crypt": "Wat Mahathat และ Wat Ratchaburana: พระบรมสารีริกธาตุ ปรางค์ และกรุใต้ปรางค์",
+    "Compare Mahathat's 1374 foundation tradition and 1384 relic deposit with Ratchaburana's 1424 succession account, prang and crypt on a central walk.": "เปรียบเทียบเรื่องเล่าการก่อตั้ง Wat Mahathat ใน ค.ศ. 1374 และการบรรจุพระบรมสารีริกธาตุใน ค.ศ. 1384 กับเรื่องราวการสืบราชสมบัติของ Wat Ratchaburana ใน ค.ศ. 1424 ปรางค์ และกรุใต้ปรางค์ บนเส้นทางเดินในย่านใจกลางเมือง",
+    "Ayutthaya Palace Quarter and Wat Phra Si Sanphet: Three Royal Stupas": "เขตพระราชวังอยุธยาและ Wat Phra Si Sanphet: เจดีย์หลวงสามองค์",
+    "Read the former palace ground as a later ceremonial precinct, compare three Ceylonese-style stupas and plan a separate Chao Sam Phraya Museum visit.": "ทำความเข้าใจพื้นที่พระราชวังเดิมในฐานะเขตพระราชพิธีที่เกิดขึ้นภายหลัง เปรียบเทียบเจดีย์ทรงลังกาสามองค์ และวางแผนแวะพิพิธภัณฑ์เจ้าสามพระยาแยกต่างหาก",
+    "Wat Chaiwatthanaram: Five Prangs and West-Bank Route": "Wat Chaiwatthanaram: ปรางค์ห้าองค์และเส้นทางฝั่งตะวันตก",
+    "Follow its central prang, four satellites, eight Meru structures and gallery; compare the 1630 tradition with phased scholarly dating and plan both transfers.": "ชมปรางค์ประธาน ปรางค์บริวารสี่องค์ มณฑปเมรุแปดหลัง และระเบียงคด เปรียบเทียบเรื่องเล่าปีสร้าง ค.ศ. 1630 กับลำดับการก่อสร้างเป็นระยะตามข้อเสนอทางวิชาการ และวางแผนการเดินทางทั้งขาไปและขากลับ"
+  }
+}

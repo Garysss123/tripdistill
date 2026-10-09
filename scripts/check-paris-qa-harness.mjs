@@ -161,6 +161,10 @@ const expectedRoutes = [
   ['/thailand/andaman/trang-islands/', 'Trang Islands'],
   ['/thailand/andaman/ko-lipe-tarutao/', 'Ko Lipe & Tarutao'],
   ['/thailand/andaman/similan-surin/', 'Similan & Surin'],
+  ['/thailand/ayutthaya/', 'Ayutthaya river island hub'],
+  ['/thailand/ayutthaya/wat-mahathat-ratchaburana/', 'Wat Mahathat & Wat Ratchaburana'],
+  ['/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', 'Palace Quarter & Wat Phra Si Sanphet'],
+  ['/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/', 'Wat Chaiwatthanaram & west bank'],
 ];
 const andamanResponsiveCss = fs.readFileSync(path.join(distRoot, 'css', 'andaman.css'), 'utf8');
 const andamanNarrowGuard = andamanResponsiveCss.slice(andamanResponsiveCss.lastIndexOf('/* These seven reviewed routes'));
@@ -463,7 +467,11 @@ function assertHarness(html, label) {
     '/thailand/andaman/ko-lanta/',
     '/thailand/andaman/trang-islands/',
     '/thailand/andaman/ko-lipe-tarutao/',
-    '/thailand/andaman/similan-surin/'
+    '/thailand/andaman/similan-surin/',
+    '/thailand/ayutthaya/',
+    '/thailand/ayutthaya/wat-mahathat-ratchaburana/',
+    '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/',
+    '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'
   ].map((routePath) => [routePath, 350_000]));
   if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Thailand stylesheet budgets are missing or unexpected.`);
   const expectedImageBudgets = Object.fromEntries([
@@ -515,7 +523,10 @@ function inspectLocalizedPage(manifest, record, label) {
   const andamanPage = record.path.split('/').filter(Boolean).at(-1);
   const andamanParent = record.path === '/thailand/andaman/' ? 'thailand' : 'andaman';
   const andamanIdentity = record.path.startsWith('/thailand/andaman/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-region') === 'andaman' && attr(bodyNode, 'data-parent-page') === andamanParent && attr(bodyNode, 'data-page') === andamanPage;
-  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity && !chiangMaiIdentity && !andamanIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
+  const ayutthayaPage = record.path === '/thailand/ayutthaya/' ? 'ayutthaya' : record.path.split('/').filter(Boolean).at(-1);
+  const ayutthayaParent = record.path === '/thailand/ayutthaya/' ? 'thailand' : 'ayutthaya';
+  const ayutthayaIdentity = record.path.startsWith('/thailand/ayutthaya/') && attr(bodyNode, 'data-country') === 'thailand' && attr(bodyNode, 'data-region') === 'ayutthaya' && attr(bodyNode, 'data-parent-page') === ayutthayaParent && attr(bodyNode, 'data-page') === ayutthayaPage;
+  if (!franceIdentity && !canadaIdentity && !zurichIdentity && !penangIdentity && !koreaCountryIdentity && !seoulIdentity && !busanIdentity && !gyeongjuIdentity && !hanoiIdentity && !sapaIdentity && !haGiangIdentity && !ninhBinhIdentity && !hueIdentity && !daNangHoiAnIdentity && !jejuIdentity && !bangkokIdentity && !chiangMaiIdentity && !andamanIdentity && !ayutthayaIdentity) fail(`${label}: wrong route identity on ${record.urlPath}.`);
   const titles = nodes(document, 'title');
   if (titles.length !== 1 || !text(titles[0]).trim()) fail(`${label}: missing unique title on ${record.urlPath}.`);
   const h1s = nodes(document, 'h1');
@@ -1687,6 +1698,49 @@ for (const locale of expectedLocales) {
           }[routePath];
           for (const href of attribution) if (!nodes(document, 'a').some((node) => attr(node, 'href') === href)) fail(`Missing exact photo source or license link on ${routePath}: ${href}.`);
         }
+      }
+      continue;
+    }
+    if (routePath.startsWith('/thailand/ayutthaya/')) {
+      const body = nodes(document, 'body')[0];
+      if (attr(body, 'data-country') !== 'thailand' || attr(body, 'data-region') !== 'ayutthaya') fail(`Wrong Ayutthaya responsive scope on ${locale.code} ${routePath}.`);
+      if (!styles.includes('/css/site.css') || !styles.includes('/css/thailand.css') || !styles.includes('/css/ayutthaya.css')) fail(`Missing Ayutthaya route stylesheets on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'details').length) fail(`Missing visible Ayutthaya FAQ controls on ${locale.code} ${routePath}.`);
+      const bodyText = text(body);
+      if (!bodyText.includes('CC BY') && !bodyText.includes('CC0')) fail(`Missing readable Ayutthaya photo-license credit on ${locale.code} ${routePath}.`);
+      if (!nodes(document, 'a').some((node) => attr(node, 'href').includes('commons.wikimedia.org'))) fail(`Missing linked Ayutthaya photo source on ${locale.code} ${routePath}.`);
+      const photoLinksByRoute = {
+        '/thailand/ayutthaya/': [
+          'https://commons.wikimedia.org/wiki/File:Templo_Mahathat,_Ayutthaya,_Tailandia,_2013-08-23,_DD_10.jpg',
+          'https://creativecommons.org/licenses/by-sa/3.0/',
+          'https://commons.wikimedia.org/wiki/File:Wat_Phra_Si_Sanphet,_built_during_the_middle_period_of_the_Ayutthaya.jpg',
+          'https://creativecommons.org/licenses/by-sa/4.0/',
+          'https://commons.wikimedia.org/wiki/File:Wat_Chaiwatthanaram_Ayutthaya.jpg',
+        ],
+        '/thailand/ayutthaya/wat-mahathat-ratchaburana/': [
+          'https://commons.wikimedia.org/wiki/File:Templo_Mahathat,_Ayutthaya,_Tailandia,_2013-08-23,_DD_10.jpg',
+          'https://creativecommons.org/licenses/by-sa/3.0/',
+        ],
+        '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/': [
+          'https://commons.wikimedia.org/wiki/File:Wat_Phra_Si_Sanphet,_built_during_the_middle_period_of_the_Ayutthaya.jpg',
+          'https://creativecommons.org/licenses/by-sa/4.0/',
+        ],
+        '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/': [
+          'https://commons.wikimedia.org/wiki/File:Wat_Chaiwatthanaram_Ayutthaya.jpg',
+          'https://creativecommons.org/licenses/by-sa/4.0/',
+        ],
+      }[routePath];
+      const linkedHrefs = nodes(document, 'a').map((node) => attr(node, 'href'));
+      for (const href of photoLinksByRoute) if (!linkedHrefs.includes(href)) fail(`Missing exact Ayutthaya photo source or license link on ${locale.code} ${routePath}: ${href}.`);
+      if (locale.code === 'en') {
+        const requiredByRoute = {
+          '/thailand/ayutthaya/': ['1350', '1767', '289 hectares', 'Naresuan Road', 'Pa Sak'],
+          '/thailand/ayutthaya/wat-mahathat-ratchaburana/': ['1374', '1384', '1424', '1956', 'Naresuan Road'],
+          '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/': ['1492', 'three Ceylonese', 'Wihan Phra Mongkhon Bophit', 'old palace'],
+          '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/': ['1612', '1630', '1649', 'eight Meru', 'west bank'],
+        }[routePath];
+        for (const phrase of requiredByRoute) if (!bodyText.toLowerCase().includes(phrase.toLowerCase())) fail(`Ayutthaya editorial evidence is missing '${phrase}' on ${routePath}.`);
+        if (!sourceSearchIndex.some((item) => item.url === routePath && item.title && item.summary)) fail(`Ayutthaya search-index record is missing for ${routePath}.`);
       }
       continue;
     }

@@ -179,6 +179,10 @@ const routes = [
   { path: '/thailand/andaman/trang-islands/', label: 'Trang Islands' },
   { path: '/thailand/andaman/ko-lipe-tarutao/', label: 'Ko Lipe & Tarutao' },
   { path: '/thailand/andaman/similan-surin/', label: 'Similan & Surin' },
+  { path: '/thailand/ayutthaya/', label: 'Ayutthaya river island hub' },
+  { path: '/thailand/ayutthaya/wat-mahathat-ratchaburana/', label: 'Wat Mahathat & Wat Ratchaburana' },
+  { path: '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', label: 'Palace Quarter & Wat Phra Si Sanphet' },
+  { path: '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/', label: 'Wat Chaiwatthanaram & west bank' },
 ];
 const viewportWidths = [320, 390];
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -269,7 +273,11 @@ const manifest = {
     '/thailand/andaman/ko-lanta/',
     '/thailand/andaman/trang-islands/',
     '/thailand/andaman/ko-lipe-tarutao/',
-    '/thailand/andaman/similan-surin/'
+    '/thailand/andaman/similan-surin/',
+    '/thailand/ayutthaya/',
+    '/thailand/ayutthaya/wat-mahathat-ratchaburana/',
+    '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/',
+    '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
     '/assets/images/thailand-chiang-mai-doi-inthanon.webp',

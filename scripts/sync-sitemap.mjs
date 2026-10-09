@@ -25,6 +25,7 @@ const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
 const thailandAndamanLastmod = '2026-10-09';
+const thailandAyutthayaLastmod = '2026-10-09';
 const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
@@ -96,6 +97,12 @@ const thailandAndamanEditedRoutes = [
   '/thailand/andaman/trang-islands/',
   '/thailand/andaman/ko-lipe-tarutao/',
   '/thailand/andaman/similan-surin/'
+];
+const thailandAyutthayaEditedRoutes = [
+  '/thailand/ayutthaya/',
+  '/thailand/ayutthaya/wat-mahathat-ratchaburana/',
+  '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/',
+  '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/'
 ];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters
@@ -237,6 +244,12 @@ for (const route of thailandAndamanEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Andaman route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: thailandAndamanLastmod });
+}
+
+for (const route of thailandAyutthayaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Ayutthaya route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: thailandAyutthayaLastmod });
 }
 
 for (const route of vietnamHueEditedRoutes) {
