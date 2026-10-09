@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T22:48:31.132Z",
+  "generatedAt": "2026-10-09T00:50:05.713Z",
   "scope": "Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 790,
@@ -15,8 +15,8 @@
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
     "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 114,
-    "assetsWithExplicitEnglishCreditMatch": 78,
+    "assetsWithMatchedEnglishCreditOnly": 112,
+    "assetsWithExplicitEnglishCreditMatch": 80,
     "assetsVisuallyReviewed": 91,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 173,
@@ -13967,7 +13967,7 @@
           "sourceTitle": "Taejongdae coast photograph",
           "sourcePhotoDate": null,
           "creditLabel": "Taejongdae coast photograph",
-          "creator": "by intacto; licensed",
+          "creator": "Hoil Ryu",
           "license": "CC BY 2.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
@@ -21087,10 +21087,10 @@
           ],
           "altTexts": [
             "Klong Khong Beach on the west coast of Ko Lanta Yai",
-            "Wide Klong Khong Beach and low-rise beach businesses on Ko Lanta Yai"
+            "Klong Khong Beach on Ko Lanta Yai, with low-rise beach businesses"
           ],
           "rawVisibleCredits": [
-            "Klong Khong Beach, Ko Lanta — Marcin Konsek, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Klong Khong Beach photograph, Marcin Konsek, 29 February 2016, under CC BY-SA 4.0 International. Resized, display-cropped and converted to WebP; this adaptation is shared under the same license version."
           ]
         }
       ]
@@ -21115,8 +21115,8 @@
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP.",
           "metadataOrigin": "explicit_asset_credit_match",
-          "creditMatchNote": "Exact Commons file page revision 1195639404 checked 2026-10-08; local pixels show Ko Lipe white beach, palms and turquoise sea.",
-          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "creditMatchNote": "Exact Commons file page revision 1195639404 checked 2026-10-08; local pixels rechecked 2026-10-09 and show Ko Lipe white beach, palms and turquoise sea.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-08",
           "verificationDetail": "Commons file page revision 1195639404 checked 2026-10-08: Vyacheslav Argenberg, CC BY 4.0 commercial/adaptation terms, and 12 March 2007 photo date recorded. Local WebP pixels show Ko Lipe beach, palms and turquoise sea.",
@@ -21130,7 +21130,7 @@
             "Palm-framed white beach and turquoise Andaman water on Ko Lipe"
           ],
           "rawVisibleCredits": [
-            "Ko Lipe beach — Vyacheslav Argenberg, CC BY 4.0; resized and converted to WebP, display crop."
+            "Ko Lipe beach, photographed 12 March 2007 — Vyacheslav Argenberg. CC BY 4.0; resized, display-cropped and converted to WebP."
           ]
         }
       ]
@@ -21207,10 +21207,10 @@
           ],
           "altTexts": [
             "Long-tail boats and limestone cliffs at Maya Bay in the Phi Phi islands",
-            "Long-tail boats, turquoise water and limestone walls at Maya Bay in the Phi Phi islands"
+            "Long-tail boats in Maya Bay below Phi Phi Leh's limestone cliffs"
           ],
           "rawVisibleCredits": [
-            "Maya Bay, Phi Phi — Diego Delso, CC BY-SA 3.0; resized and converted to WebP, display crop."
+            "Maya Bay photograph, Diego Delso / delso.photo, 19 August 2013, under CC BY-SA 3.0. Resized, display-cropped and converted to WebP; this derivative is shared under the same license version."
           ]
         }
       ]
@@ -21267,16 +21267,16 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Thailand.jpg",
           "sourceTitle": "File:Railay, Krabi, Thailand.jpg",
           "sourcePhotoDate": "2007-02-24",
-          "creditLabel": "Railay Beach, Krabi",
+          "creditLabel": "Railay Beach",
           "creator": "Vyacheslav Argenberg",
           "license": "CC BY 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "resized and converted to WebP, display crop. CC BY 4.0; resized, converted to WebP and display-cropped",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "editHistory": "Resized, display-cropped and converted to WebP.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact Commons file page revision 1195639962 checked 2026-10-08; local pixels rechecked 2026-10-09 and show Railay limestone karsts, beach, sea and swimmers.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-08",
           "verificationDetail": "Commons file page revision 1195639962 checked 2026-10-08: Vyacheslav Argenberg, CC BY 4.0 commercial/adaptation terms, and 24 February 2007 photo date recorded. Local WebP pixels show Railay limestone karsts, shore, sea and swimmers.",
@@ -21290,7 +21290,7 @@
             "Limestone karst towers rising beside Railay Beach in Krabi"
           ],
           "rawVisibleCredits": [
-            "Railay Beach, Krabi — Vyacheslav Argenberg, CC BY 4.0; resized and converted to WebP, display crop. CC BY 4.0; resized, converted to WebP and display-cropped"
+            "Railay Beach, photographed 24 February 2007 — Vyacheslav Argenberg. CC BY 4.0; resized, display-cropped and converted to WebP."
           ]
         }
       ]
@@ -21315,8 +21315,8 @@
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP.",
           "metadataOrigin": "explicit_asset_credit_match",
-          "creditMatchNote": "Exact Commons file page revision 1252055214 checked 2026-10-08; local pixels show the panoramic Similan cove, granite formations and boats. Commons structured page date is 1 July 2016 but embedded EXIF says 12 November 2016; sourcePhotoDate is intentionally left null until this discrepancy is resolved.",
-          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "creditMatchNote": "Exact Commons file page revision 1252055214 checked 2026-10-08; local pixels rechecked 2026-10-09 and match the panoramic Similan cove, granite formations and boats. Commons structured page date is 1 July 2016 but embedded EXIF says 12 November 2016; sourcePhotoDate remains null until this discrepancy is resolved.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-08",
           "verificationDetail": "Commons file page revision 1252055214 checked 2026-10-08: Sgroey, CC BY 4.0 commercial/adaptation terms, panorama source and creator recorded. Local WebP pixels show the Similan cove, granite formations and boats. Commons structured date is 1 July 2016 while embedded EXIF says 12 November 2016; sourcePhotoDate remains null pending resolution.",
@@ -21327,10 +21327,10 @@
           ],
           "altTexts": [
             "Panoramic bay and granite formations in the Similan Islands",
-            "Wide panoramic view of turquoise bay, granite boulders and forest in the Similan Islands"
+            "Panoramic Similan cove with granite islands, green slopes and boats"
           ],
           "rawVisibleCredits": [
-            "Ko Similan panorama from Sailboat Rock — Sgroey, CC BY 4.0; resized and converted to WebP, display crop."
+            "Ko Similan panorama from Sailboat Rock, Sgroey, under CC BY 4.0 International. Resized, display-cropped and converted to WebP; source-date conflict remains unresolved in the photo review record."
           ]
         }
       ]
@@ -21347,16 +21347,16 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:2016_Prowincja_Trang,_Ko_Kradan_(01).jpg",
           "sourceTitle": "File:2016 Prowincja Trang, Ko Kradan (01).jpg",
           "sourcePhotoDate": "2016-03-02",
-          "creditLabel": "Ko Kradan",
+          "creditLabel": "Ko Kradan, Trang",
           "creator": "Marcin Konsek",
           "license": "CC BY-SA 4.0",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "visually_reviewed_2026-10-08",
+          "editHistory": "Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact Commons file page revision 754685434 checked 2026-10-08; local pixels rechecked 2026-10-09 and show pale sand and shallow turquoise water at Ko Kradan.",
+          "visualReviewStatus": "visually_reviewed_2026-10-09",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-08",
           "verificationDetail": "Commons file page revision 754685434 checked 2026-10-08: Marcin Konsek, CC BY-SA 4.0 commercial/adaptation terms, and 2 March 2016 photo date recorded. Local WebP pixels show Ko Kradan pale sand and shallow turquoise water.",
@@ -21370,7 +21370,7 @@
             "Pale sand and turquoise shallow water on Ko Kradan in Trang Province"
           ],
           "rawVisibleCredits": [
-            "Ko Kradan — Marcin Konsek, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Ko Kradan, photographed 2 March 2016 — Marcin Konsek. CC BY-SA 4.0; resized, display-cropped and converted to WebP; adaptation shared under the same license version."
           ]
         }
       ]

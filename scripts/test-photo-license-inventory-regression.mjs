@@ -100,6 +100,15 @@ try {
   assert.ok(findAll(explicitCreditRows[0], (node) => node.tagName === 'a' && attrs(node).href === sourceUrl).length, 'visible credit must link to the exact Commons file page');
 
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
+  const similan = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/thailand-andaman-similan.webp');
+  assert.ok(similan, 'inventory regeneration must include the Andaman Similan image');
+  assert.equal(similan.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Ko_similan_panorama_from_sailboat_rock.jpg');
+  assert.equal(similan.creator, 'Sgroey');
+  assert.equal(similan.license, 'CC BY 4.0');
+  assert.equal(similan.sourcePhotoDate, null, 'the Commons/EXIF date conflict must remain unresolved');
+  assert.equal(similan.visualReviewStatus, 'visually_reviewed_2026-10-09');
+  assert.equal(similan.verificationStatus, 'source_page_checked');
+  assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
   assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 593, 'nine newly checked Andaman Commons sources reduce the unverified-used-asset count and remain separate from unused incomplete records');

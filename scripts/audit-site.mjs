@@ -377,8 +377,8 @@ for (const absoluteUrl of publishedUrls) {
     : thailandBangkokCssRoutes.has(baseRoute) ? '/css/thailand.css?v=20261008-1' : '/css/thailand.css?v=20260826-1';
   if (baseRoute.startsWith('/thailand/') && !html.includes(expectedThailandStylesheet)) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
   if (baseRoute.startsWith('/thailand/chiang-mai/') && !/<link\b[^>]*href="\/css\/lanna\.css(?:\?[^\"]*)?"/i.test(html)) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
-  const andamanStylesheet = ['/thailand/andaman/phi-phi-islands/', '/thailand/andaman/ko-lanta/', '/thailand/andaman/similan-surin/'].includes(baseRoute)
-    ? '/css/andaman.css?v=20261008-1'
+  const andamanStylesheet = ['/thailand/andaman/', '/thailand/andaman/krabi-railay/', '/thailand/andaman/phi-phi-islands/', '/thailand/andaman/ko-lanta/', '/thailand/andaman/trang-islands/', '/thailand/andaman/ko-lipe-tarutao/', '/thailand/andaman/similan-surin/'].includes(baseRoute)
+    ? '/css/andaman.css?v=20261009-1'
     : '/css/andaman.css?v=20260826-1';
   if (baseRoute.startsWith('/thailand/andaman/') && !html.includes(andamanStylesheet)) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
   if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);

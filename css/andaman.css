@@ -231,51 +231,77 @@ body[data-region="andaman"] { background: #f6f0e2; }
   .lanta-spine { padding-left: 3rem; }.lanta-spine::before { left: 1rem; }.lanta-spine article::before { left: -2.55rem; }
 }
 
-/* These three guides must also shrink when a 320px viewport loses scrollbar width. */
+/* These seven reviewed routes must shrink when a 320px viewport loses scrollbar width. */
 @media (max-width: 340px) {
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"],
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"],
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"],
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"],
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"],
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"],
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] {
+    width: 100%;
     min-width: 0;
     max-width: 100%;
   }
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"] .site-shell,
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"] .site-shell,
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .site-shell,
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .site-shell,
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"] .site-shell,
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"] .site-shell,
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .site-shell,
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"] .page-content,
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"] .page-content,
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .page-content,
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .page-content,
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"] .page-content,
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"] .page-content,
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .page-content {
     width: calc(100% - .5rem);
     min-width: 0;
     max-width: 100%;
   }
-  body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .page-content > *,
-  body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .page-content > *,
-  body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .page-content > *,
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"] .page-content *,
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"] .page-content *,
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .page-content *,
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .page-content *,
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"] .page-content *,
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"] .page-content *,
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .page-content * {
     min-width: 0;
     max-width: 100%;
     overflow-wrap: anywhere;
   }
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"] .chart-room-copy,
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"] .karst-profile-copy,
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .landing-clock-copy,
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .island-spine-copy,
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"] .ferry-constellation-copy,
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"] .archipelago-compass-copy,
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .expedition-board-copy {
     padding: 1rem;
   }
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"] .chart-room-copy h1,
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"] .karst-profile-copy h1,
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .landing-clock-copy h1,
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .island-spine-copy h1,
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"] .ferry-constellation-copy h1,
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"] .archipelago-compass-copy h1,
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .expedition-board-copy h1 {
-    font-size: clamp(2.35rem, 12vw, 3rem);
+    font-size: clamp(2.25rem, 11vw, 2.75rem);
     line-height: .95;
   }
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .lanta-spine { padding-left: 2.35rem; }
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .lanta-spine::before { left: .75rem; }
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .lanta-spine article { padding: 1rem; }
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .lanta-spine article::before { left: -1.85rem; }
+  body[data-country="thailand"][data-region="andaman"][data-page="andaman"] .andaman-meta span,
+  body[data-country="thailand"][data-region="andaman"][data-page="krabi-railay"] .andaman-meta span,
   body[data-country="thailand"][data-region="andaman"][data-page="phi-phi-islands"] .andaman-meta span,
   body[data-country="thailand"][data-region="andaman"][data-page="ko-lanta"] .andaman-meta span,
+  body[data-country="thailand"][data-region="andaman"][data-page="trang-islands"] .andaman-meta span,
+  body[data-country="thailand"][data-region="andaman"][data-page="ko-lipe-tarutao"] .andaman-meta span,
   body[data-country="thailand"][data-region="andaman"][data-page="similan-surin"] .andaman-meta span {
     white-space: normal;
   }

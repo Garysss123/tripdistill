@@ -158,15 +158,20 @@ const expectedRoutes = [
   ['/thailand/andaman/krabi-railay/', 'Krabi & Railay'],
   ['/thailand/andaman/phi-phi-islands/', 'Phi Phi Islands'],
   ['/thailand/andaman/ko-lanta/', 'Ko Lanta'],
+  ['/thailand/andaman/trang-islands/', 'Trang Islands'],
+  ['/thailand/andaman/ko-lipe-tarutao/', 'Ko Lipe & Tarutao'],
   ['/thailand/andaman/similan-surin/', 'Similan & Surin'],
 ];
 const andamanResponsiveCss = fs.readFileSync(path.join(distRoot, 'css', 'andaman.css'), 'utf8');
-const andamanNarrowGuard = andamanResponsiveCss.slice(andamanResponsiveCss.lastIndexOf('/* These three guides'));
+const andamanNarrowGuard = andamanResponsiveCss.slice(andamanResponsiveCss.lastIndexOf('/* These seven reviewed routes'));
 if (!andamanNarrowGuard.includes('@media (max-width: 340px)') || !andamanNarrowGuard.includes('min-width: 0') || !andamanNarrowGuard.includes('overflow-wrap: anywhere')) {
-  throw new Error('The three selected Andaman routes need scoped 340px shrink and text-wrapping rules.');
+  throw new Error('The seven selected Andaman routes need scoped 340px shrink and text-wrapping rules.');
 }
 if (/overflow-x\s*:\s*(?:hidden|clip)/i.test(andamanNarrowGuard)) {
   throw new Error('The selected Andaman narrow-layout guard must reflow content and must not conceal horizontal overflow.');
+}
+for (const pageId of ['andaman', 'krabi-railay', 'phi-phi-islands', 'ko-lanta', 'trang-islands', 'ko-lipe-tarutao', 'similan-surin']) {
+  if (!andamanNarrowGuard.includes(`[data-page="${pageId}"]`)) throw new Error(`The Andaman 320px guard is missing ${pageId}.`);
 }
 const expectedLocales = [
   { code: 'en', prefix: '' },
@@ -456,6 +461,8 @@ function assertHarness(html, label) {
     '/thailand/andaman/krabi-railay/',
     '/thailand/andaman/phi-phi-islands/',
     '/thailand/andaman/ko-lanta/',
+    '/thailand/andaman/trang-islands/',
+    '/thailand/andaman/ko-lipe-tarutao/',
     '/thailand/andaman/similan-surin/'
   ].map((routePath) => [routePath, 350_000]));
   if (JSON.stringify(manifest.routeStyleBudgets) !== JSON.stringify(expectedRouteStyleBudgets)) fail(`${label}: route-specific Thailand stylesheet budgets are missing or unexpected.`);
@@ -593,14 +600,17 @@ for (const locale of expectedLocales) {
 
 const andamanDatedRoutes = [
   '/thailand/andaman/',
+  '/thailand/andaman/krabi-railay/',
   '/thailand/andaman/phi-phi-islands/',
   '/thailand/andaman/ko-lanta/',
+  '/thailand/andaman/trang-islands/',
+  '/thailand/andaman/ko-lipe-tarutao/',
   '/thailand/andaman/similan-surin/'
 ];
 for (const locale of expectedLocales) {
   for (const route of andamanDatedRoutes) {
     const localizedRoute = `${locale.prefix}${route}`;
-    if (!sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-08</lastmod>`)) fail(`Andaman revision sitemap lastmod must be 2026-10-08 for ${localizedRoute}.`);
+    if (!sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-09</lastmod>`)) fail(`Andaman revision sitemap lastmod must be 2026-10-09 for ${localizedRoute}.`);
   }
 }
 
@@ -623,7 +633,7 @@ for (const locale of expectedLocales) {
 const pageResults = manifest.pages.map((record) => inspectLocalizedPage(manifest, record, 'local QA'));
 const pagesByRoute = new Map(manifest.pages.map((record, index) => [`${record.locale}${record.path}`, { record, ...pageResults[index] }]));
 const selectedAndamanPageRecords = manifest.pages.filter((record) => andamanDatedRoutes.includes(record.path));
-if (selectedAndamanPageRecords.length !== andamanDatedRoutes.length * expectedLocales.length) fail('The Andaman hub and three selected child guides must each have five localized QA records.');
+if (selectedAndamanPageRecords.length !== andamanDatedRoutes.length * expectedLocales.length) fail('The Andaman hub and six selected child guides must each have five localized QA records.');
 for (const locale of expectedLocales) {
   for (const [routePath] of expectedRoutes) {
     const { record, document, html } = pagesByRoute.get(`${locale.code}${routePath}`);
@@ -1648,7 +1658,7 @@ for (const locale of expectedLocales) {
         const hubSearch = sourceSearchIndex.find((item) => item.url === routePath);
         if (!hubSearch?.summary.includes('Siri Lanta Bridge') || !hubSearch.summary.includes('Tonsai')) fail('Andaman hub search summary omits its named transfer decisions.');
       }
-      const narrowPages = new Set(['/thailand/andaman/phi-phi-islands/', '/thailand/andaman/ko-lanta/', '/thailand/andaman/similan-surin/']);
+      const narrowPages = new Set(andamanDatedRoutes);
       if (narrowPages.has(routePath)) {
         const pageId = routePath.split('/').filter(Boolean).at(-1);
         const bodySelector = `body[data-country="thailand"][data-region="andaman"][data-page="${pageId}"]`;
@@ -1656,17 +1666,23 @@ for (const locale of expectedLocales) {
         if (!/min-width\s*:\s*0\s*;/i.test(bodyWidthRule) || !/max-width\s*:\s*100%\s*;/i.test(bodyWidthRule)) fail(`Andaman ${pageId} body must release the shared 320px floor on ${locale.code}.`);
         const wrapperRule = cssRuleBlock(andamanResponsiveCss, `${bodySelector} .site-shell,`);
         if (!wrapperRule.includes('.page-content') || !/min-width\s*:\s*0\s*;/i.test(wrapperRule) || !/max-width\s*:\s*100%\s*;/i.test(wrapperRule)) fail(`Andaman ${pageId} shell and content must shrink below the 320px floor on ${locale.code}.`);
-        if (!styleHrefs.includes('/css/andaman.css?v=20261008-1')) fail(`Missing current Andaman narrow-layout stylesheet on ${locale.code} ${routePath}.`);
-        if (locale.code === 'en') {
+        if (!styleHrefs.includes('/css/andaman.css?v=20261009-1')) fail(`Missing current Andaman narrow-layout stylesheet on ${locale.code} ${routePath}.`);
+        if (locale.code === 'en' && routePath !== '/thailand/andaman/') {
           const detailsByRoute = {
+            '/thailand/andaman/krabi-railay/': ['Khao Khanap Nam', 'Ko Klang', 'Railay West', 'Phra Nang Cave'],
             '/thailand/andaman/phi-phi-islands/': ['Tonsai Pier', 'Ao Lo Dalam', 'Maya Bay', 'Ao Pi Le', 'Rassada Pier'],
             '/thailand/andaman/ko-lanta/': ['Siri Lanta Bridge', 'Thung Yee Peng', 'Baan Sriraya', 'Tanod Cape'],
+            '/thailand/andaman/trang-islands/': ['Ko Muk', 'Morakot Cave', 'Ko Kradan', 'Ko Libong', 'Hat Chao Mai'],
+            '/thailand/andaman/ko-lipe-tarutao/': ['Pak Bara', 'Urak Lawoi', 'Ao Talo Udang', 'Ao Talo Wao', '19 April 1974'],
             '/thailand/andaman/similan-surin/': ['Thap Lamu', 'Ko Miang', 'Ao Bon', 'Moken']
           }[routePath];
           for (const phrase of detailsByRoute) if (!bodyText.includes(phrase)) fail(`Missing Andaman place-specific content on ${routePath}: ${phrase}.`);
           const attribution = {
             '/thailand/andaman/phi-phi-islands/': ['https://commons.wikimedia.org/wiki/File:Playa_Maya,_Ko_Phi_Phi,_Tailandia,_2013-08-19,_DD_13.JPG', 'https://creativecommons.org/licenses/by-sa/3.0/'],
             '/thailand/andaman/ko-lanta/': ['https://commons.wikimedia.org/wiki/File:2016_Prowincja_Krabi,_Ko_Lanta_Yai,_Pla%C5%BCa_Klong_Khong_(16).jpg', 'https://creativecommons.org/licenses/by-sa/4.0/'],
+            '/thailand/andaman/krabi-railay/': ['https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Thailand.jpg', 'https://creativecommons.org/licenses/by/4.0/'],
+            '/thailand/andaman/trang-islands/': ['https://commons.wikimedia.org/wiki/File:2016_Prowincja_Trang,_Ko_Kradan_(01).jpg', 'https://creativecommons.org/licenses/by-sa/4.0/'],
+            '/thailand/andaman/ko-lipe-tarutao/': ['https://commons.wikimedia.org/wiki/File:Koh_Lipe_(island),_Thailand.jpg', 'https://creativecommons.org/licenses/by/4.0/'],
             '/thailand/andaman/similan-surin/': ['https://commons.wikimedia.org/wiki/File:Ko_similan_panorama_from_sailboat_rock.jpg', 'https://creativecommons.org/licenses/by/4.0/']
           }[routePath];
           for (const href of attribution) if (!nodes(document, 'a').some((node) => attr(node, 'href') === href)) fail(`Missing exact photo source or license link on ${routePath}: ${href}.`);

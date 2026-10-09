@@ -24,7 +24,7 @@ const zurichLastmod = '2026-10-08';
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
-const thailandAndamanLastmod = '2026-10-08';
+const thailandAndamanLastmod = '2026-10-09';
 const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
@@ -90,11 +90,11 @@ const thailandChiangMaiEditedRoutes = [
 ];
 const thailandAndamanEditedRoutes = [
   '/thailand/andaman/',
-  '/thailand/andaman/phuket-old-town-south/',
-  '/thailand/andaman/phang-nga-ko-yao/',
   '/thailand/andaman/krabi-railay/',
   '/thailand/andaman/phi-phi-islands/',
   '/thailand/andaman/ko-lanta/',
+  '/thailand/andaman/trang-islands/',
+  '/thailand/andaman/ko-lipe-tarutao/',
   '/thailand/andaman/similan-surin/'
 ];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.

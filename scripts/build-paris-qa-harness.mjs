@@ -176,6 +176,8 @@ const routes = [
   { path: '/thailand/andaman/krabi-railay/', label: 'Krabi & Railay' },
   { path: '/thailand/andaman/phi-phi-islands/', label: 'Phi Phi Islands' },
   { path: '/thailand/andaman/ko-lanta/', label: 'Ko Lanta' },
+  { path: '/thailand/andaman/trang-islands/', label: 'Trang Islands' },
+  { path: '/thailand/andaman/ko-lipe-tarutao/', label: 'Ko Lipe & Tarutao' },
   { path: '/thailand/andaman/similan-surin/', label: 'Similan & Surin' },
 ];
 const viewportWidths = [320, 390];
@@ -265,6 +267,8 @@ const manifest = {
     '/thailand/andaman/krabi-railay/',
     '/thailand/andaman/phi-phi-islands/',
     '/thailand/andaman/ko-lanta/',
+    '/thailand/andaman/trang-islands/',
+    '/thailand/andaman/ko-lipe-tarutao/',
     '/thailand/andaman/similan-surin/'
   ].map((routePath) => [routePath, 350_000])),
   imageBudgets: Object.fromEntries([
