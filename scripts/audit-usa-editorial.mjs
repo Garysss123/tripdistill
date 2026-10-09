@@ -24,7 +24,7 @@ plans['new-orleans']=[['base','arrival','days','evening'],['purpose','walk','mus
 plans.atlanta=[['base','airport','days','extra'],['start','places','route','home','meaning'],['arrival','compare','garden','day','access'],['section','arrival','walk','shared','food']];
 plans.texas=[['bases','journey','days','cost'],['arrival','capitol','afternoon','day','music'],['choose','alamo','missions','day','river'],['base','tram','space','museum','return']];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
-const dateExceptions=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/']);
+const dateExceptions=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/']);
 const dateLocales=[['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']];
 const usaRoutes=['/usa/',...usaHubs.flatMap(h=>[`/usa/${h.slug}/`,...h.guides.map(g=>g.url)])];
 plans.miami=[['base','arrival','days','extra'],['start','architecture','walk','shore','finish'],['choose','havana','walls','art','return'],['entrance','shark','royal','day','wildlife']];
@@ -76,7 +76,7 @@ for(const [slug,sections] of Object.entries(plans)){
  const assetSlug=slug==='washington-dc'?'dc':slug;
  for(const [i,route] of routes.entries()){
   const html=fs.readFileSync(path.join(root,route.slice(1),'index.html'),'utf8'),dom=flatten(parse(html));
-  const markerDate=['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/'].includes(route)?'20261009':'20260911';
+  const markerDate=['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/'].includes(route)?'20261009':'20260911';
   check(html.includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),route+': missing editorial marker');
   check(html.includes(`/css/${assetSlug}-editorial.css?v=20260911-1`),route+': missing editorial stylesheet');
   check(!html.includes('A practical visit plan')&&!html.includes('Fit this visit into your trip'),route+': generic body returned');
