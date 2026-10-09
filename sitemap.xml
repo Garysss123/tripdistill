@@ -346,8 +346,8 @@
   <url><loc>https://tripdistill.com/australia/gold-coast-scenic-rim/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/australia/darwin-top-end/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/australia/red-centre/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/australia/darwin-top-end/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/australia/red-centre/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/australia/perth-fremantle-rottnest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/australia/margaret-river-southwest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/australia/broome-kimberley/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -384,26 +384,26 @@
   <url><loc>https://tripdistill.com/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/gold-coast-scenic-rim/springbrook-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/gold-coast-scenic-rim/lamington-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/northern-beaches-palm-cove/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/darwin-top-end/darwin-waterfront-city/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/darwin-top-end/katherine-nitmiluk/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/australia/red-centre/kata-tjuta/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/australia/red-centre/kata-tjuta/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/perth-fremantle-rottnest/kings-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/australia/perth-fremantle-rottnest/walyalup-fremantle/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1258,8 +1258,8 @@
   <url><loc>https://tripdistill.com/zh/australia/gold-coast-scenic-rim/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/red-centre/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/red-centre/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/perth-fremantle-rottnest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/margaret-river-southwest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/broome-kimberley/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -1296,26 +1296,26 @@
   <url><loc>https://tripdistill.com/zh/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/gold-coast-scenic-rim/springbrook-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/gold-coast-scenic-rim/lamington-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/northern-beaches-palm-cove/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/darwin-waterfront-city/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/darwin-top-end/katherine-nitmiluk/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/australia/red-centre/kata-tjuta/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/australia/red-centre/kata-tjuta/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/perth-fremantle-rottnest/kings-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/australia/perth-fremantle-rottnest/walyalup-fremantle/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -2170,8 +2170,8 @@
   <url><loc>https://tripdistill.com/ja/australia/gold-coast-scenic-rim/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/red-centre/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/red-centre/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/perth-fremantle-rottnest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/margaret-river-southwest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/broome-kimberley/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2208,26 +2208,26 @@
   <url><loc>https://tripdistill.com/ja/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/gold-coast-scenic-rim/springbrook-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/gold-coast-scenic-rim/lamington-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/northern-beaches-palm-cove/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/darwin-waterfront-city/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/darwin-top-end/katherine-nitmiluk/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/australia/red-centre/kata-tjuta/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/australia/red-centre/kata-tjuta/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/perth-fremantle-rottnest/kings-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/australia/perth-fremantle-rottnest/walyalup-fremantle/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3082,8 +3082,8 @@
   <url><loc>https://tripdistill.com/ko/australia/gold-coast-scenic-rim/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/red-centre/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/red-centre/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/perth-fremantle-rottnest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/margaret-river-southwest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/broome-kimberley/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -3120,26 +3120,26 @@
   <url><loc>https://tripdistill.com/ko/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/gold-coast-scenic-rim/springbrook-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/gold-coast-scenic-rim/lamington-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/northern-beaches-palm-cove/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/darwin-waterfront-city/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/darwin-top-end/katherine-nitmiluk/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/australia/red-centre/kata-tjuta/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/australia/red-centre/kata-tjuta/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/perth-fremantle-rottnest/kings-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/australia/perth-fremantle-rottnest/walyalup-fremantle/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3994,8 +3994,8 @@
   <url><loc>https://tripdistill.com/th/australia/gold-coast-scenic-rim/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/red-centre/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/red-centre/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/australia/perth-fremantle-rottnest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/australia/margaret-river-southwest/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/australia/broome-kimberley/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -4032,26 +4032,26 @@
   <url><loc>https://tripdistill.com/th/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/gold-coast-scenic-rim/springbrook-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/gold-coast-scenic-rim/lamington-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/kuranda-rail-skyrail/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/northern-beaches-palm-cove/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/port-douglas-mossman/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/cairns-wet-tropics/daintree-cape-tribulation/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/airlie-beach-shute-harbour/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/hamilton-island/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/outer-reef-day/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/darwin-top-end/darwin-waterfront-city/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/litchfield-national-park/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/kakadu-nourlangie-ubirr/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/darwin-top-end/kakadu-yellow-water/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/darwin-top-end/katherine-nitmiluk/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/australia/red-centre/kata-tjuta/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/red-centre/mparntwe-alice-springs/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/red-centre/tjoritja-west-macdonnell/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/red-centre/watarrka-kings-canyon/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/red-centre/uluru-cultural-landscape/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/australia/red-centre/kata-tjuta/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/perth-fremantle-rottnest/kings-park/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/australia/perth-fremantle-rottnest/walyalup-fremantle/</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
