@@ -25,6 +25,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
     guides: [
       g({
         slug: 'isle-of-skye',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Isle of Skye Road & Weather Plan',
         instrument: 'Peninsula road-and-light compass',
         layout: 'island-road-spokes',
@@ -33,34 +35,40 @@ export const unitedKingdomIslandsWalesNiClusters = [
         purpose: 'Choose one Skye peninsula from the actual base, accounting for single-track roads, parking, buses, wind and daylight instead of promoting a full-island highlight loop.',
         summary: 'Start from Portree or another named base, read live road and weather conditions, complete one peninsula or lower-risk island route, and return before darkness or a ferry deadline.',
         choices: [
-          ['Trotternish day', 'Use Portree as the base for one northern road-and-walk sequence with firm parking and turnaround points. This gives the iconic geology but attracts the highest pressure.'],
-          ['Dunvegan and west', 'Focus on castle, coast and one western landscape. It offers history and sea views but is a separate road system from Trotternish.'],
-          ['South Skye and Sleat', 'Use Armadale, Broadford or a southern base for gentler coast and ferry context. It is more compatible with arrival or departure days.']
+          ['No car: Portree and the 57A north', 'Use Portree as the base if the priority is Trotternish. Stagecoach 57A follows the Portree–Uig–Flodigarry corridor; choose a stop the date-specific timetable actually serves and build the day around that bus, not an imagined island-wide hop-on loop. This is for a bounded north-island day, not a flexible Quiraing-to-coast circuit.'],
+          ['Car: bridge entry and one peninsula', 'Drive via Kyle of Lochalsh and the Skye Bridge for the most flexible mainland approach, then base in Portree for Trotternish or Broadford for south Skye. The bridge removes the ferry reservation step, not single-track delays or trailhead parking limits. Keep each day to one road spoke.'],
+          ['Rail + ferry: Mallaig to Armadale', 'Take the rail line to Mallaig, cross on the CalMac ferry to Armadale and use the Stagecoach 52 corridor toward Broadford. This is a useful south-Skye arrival for a foot passenger, but it does not put you in Portree or at a northern trailhead; confirm the onward bus or prebooked transfer before choosing the base.']
         ],
-        access: 'Skye is reached by bridge, Mallaig–Armadale ferry or longer road corridors. Portree is not central to every peninsula in travel time. Public buses exist but do not create a hop-on circuit; car and tour plans must include single-track etiquette and parking capacity.',
-        tradeoff: 'A full-island loop sacrifices time at every stop and magnifies road delay. Choosing one peninsula gives up a famous sight elsewhere but creates a safer, deeper day with a credible return.',
+        access: 'The car-free gateways are distinct: rail to Mallaig, CalMac Mallaig–Armadale, then Stagecoach 52 toward Broadford; or reach Portree from the mainland by a booked coach and use the date-specific 57A Portree–Uig–Flodigarry corridor for Trotternish. A car can instead enter over the Skye Bridge at Kyle of Lochalsh or use the vehicle ferry, but vehicle space must be reserved on the sailing. Pick accommodation at the end of the transport corridor you will use; Portree is not the Armadale ferry terminal, and neither bus route is a whole-island circuit.',
+        tradeoff: 'Without a car, a Portree base and one 57A northbound day or a Broadford/Sleat day are realistic; changing base or reaching distant trailheads can consume a day in transfers. With a car, one peninsula per day gives more choice but still requires parking, fuel and safe passing places. A full-island loop loses time to road distance and delay. Arrival via Mallaig is best treated as a south-Skye transfer day, not as the start of a northern highlights loop.',
         stages: [
-          ['Leave the correct island base', 'Check road incidents, wind, rain and the final light, then start toward one peninsula with fuel and return time known.'],
-          ['Read the first landscape gate', 'At the initial stop, assess parking and path conditions. Skip rather than road-park dangerously when capacity is full.'],
-          ['Commit to one peninsula', 'Complete the selected road, castle or signed route with a time-based turnaround. Do not cross Skye for a second headline viewpoint.'],
-          ['Return before dark or sailing', 'Reach the base, bridge or ferry port with margin for single-track delays and check-in. Treat meals and sunset as optional after the transport edge.']
+          ['Choose the base before booking the bed', 'For no-car Trotternish, use Portree and the 57A corridor; for the Mallaig ferry, use Broadford/Sleat only after confirming the 52 bus or transfer; for a car, choose Portree (north) or Broadford (south).'],
+          ['Match the peninsula to today’s transport', 'No-car visitors use only stops linked by the published bus and leave room for its return. Drivers check road notices, fuel and parking at the first stop; never use a passing place as overflow parking.'],
+          ['Stay inside one road spoke', 'Complete one Trotternish, west, or Sleat plan with a time-based turnaround. The car can reach more places, but the bus visitor should not try to join disconnected corridors in one day.'],
+          ['Finish at the same transport edge', 'Return to Portree, Broadford or the booked ferry terminal with a weather and traffic buffer. If the sailing is the next leg, verify check-in and service status; do not place a remote sunset stop between the base and port.']
         ],
-        fallback: 'If high wind or road pressure makes exposed routes unsuitable, use Portree, Broadford, local museums or a short sheltered coast route. If a ferry cancels, remain near the booked side rather than racing to a distant port.',
+        fallback: 'In high wind, rain or poor visibility, replace an exposed walk with Portree or Broadford town time, a verified indoor stop, or a short lower-level route near the chosen base. If Mallaig–Armadale is disrupted, ask CalMac about that booking and stay near the booked shore until the replacement is clear; do not assume the bridge is reachable by the same bus or that a substitute sailing has vehicle space. In winter, check the reduced ferry pattern and daylight before making the crossing the same-day hinge.',
         watch: [
           ['Single-track roads need passing-place discipline', 'Do not park in passing places or follow an unrealistic app estimate. Let faster traffic pass and protect the return.'],
           ['Parking capacity is a hard limit', 'Popular trailheads can fill. Use official alternatives or leave; roadside improvisation damages safety and land access.'],
-          ['Ferry check-in precedes departure', 'Vehicle and foot-passenger deadlines differ. Build the road day around check-in, not the published sailing minute.']
+          ['Ferry check-in precedes departure', 'Vehicle and foot-passenger check-ins differ. Build the road day around the specific Mallaig–Armadale booking, not the advertised sailing minute.'],
         ],
-        duration: 'Allow a full day for one Skye peninsula and at least three nights for a useful island stay. Arrival or departure days should remain on the relevant shore.',
+        duration: 'Allow a full day per peninsula and at least three nights on Skye. A no-car visitor should keep the arrival day near Armadale/Broadford or Portree, depending on the chosen corridor; a car visitor can reach more of the island but should still leave ferry arrival and departure days light.',
         combine: 'Combine one peninsula with its nearby town or castle. Keep another Skye coast, the mainland Highlands and other island groups for separate days.',
-        verify: 'Check CalMac or bridge route, Highland road notices, detailed weather, attraction access, bus or tour confirmation and daylight before departure.',
+        verify: 'Check CalMac’s Mallaig–Armadale sailing and vehicle reservation or the Kyle of Lochalsh bridge approach; if travelling without a car, check Stagecoach 52 Armadale–Broadford or 57A Portree–Uig–Flodigarry in both directions for the exact date. Recheck road notices, mountain/coastal weather, attraction access and daylight. Route information checked 9 October 2026; timetables change seasonally.',
         sources: [
-          ['https://www.isleofskye.com/', 'Isle of Skye — official local destination guide'],
-          ['https://www.calmac.co.uk/route-information/mallaig-armadale/', 'CalMac — Mallaig to Armadale ferry information']
+          ['https://www.visitscotland.com/places-to-go/islands/skye', 'VisitScotland — Isle of Skye destination guide'],
+          ['https://www.calmac.co.uk/en-gb/destinations/skye', 'CalMac — Skye ferry and arrival options'],
+          ['https://www.citylink.co.uk/our-routes-and-timetables/inverness-skye/', 'Citylink — Inverness, Kyle of Lochalsh and Portree coach corridor'],
+          ['https://www.stagecoachbus.com/routes/north-scotland/52/armadale-broadford/xico052.i', 'Stagecoach — Armadale to Broadford bus corridor'],
+          ['https://www.stagecoachbus.com/routes/north-scotland/57a/portree-square-flodigarry/xado057a.o', 'Stagecoach — Portree, Uig and Flodigarry bus corridor'],
+          ['https://www.calmac.co.uk/route-information/mallaig-armadale/', 'CalMac — Mallaig to Armadale ferry timetable and check-in']
         ]
       }),
       g({
         slug: 'orkney-mainland',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Orkney Mainland & Neolithic Sites',
         instrument: 'Ferry-to-monument reservation wheel',
         layout: 'stone-circle-island-grid',
@@ -69,34 +77,43 @@ export const unitedKingdomIslandsWalesNiClusters = [
         purpose: 'Choose Kirkwall, the west Mainland Neolithic sites or a wartime-and-coast route, and match ferry arrival, timed admission and island transport rather than treating Orkney as a cruise-stop checklist.',
         summary: 'Establish the Kirkwall or Stromness gateway, complete one monument cluster with current booking and access, and keep the return crossing or island bus outside the final minute.',
         choices: [
-          ['West Mainland archaeology', 'Use Skara Brae, Ring of Brodgar and nearby sites as one cluster, with current reservations and road transport. This gives the strongest deep-time narrative.'],
-          ['Kirkwall civic day', 'Prioritize St Magnus Cathedral, museums and harbour streets. It is the best weather fallback and works without a west-island circuit.'],
-          ['Churchill Barriers and wartime coast', 'Use a booked tour or car for southern Mainland and linked islands. It adds modern history but is separate from the Neolithic cluster.']
+          ['No car: Stromness/Kirkwall bus spine', 'Use X1 between Stromness, Kirkwall and St Margaret’s Hope as the transport backbone. The Council’s 2026 April–October summer timetable lists an hourly X1 historic-sites service from Stromness to Skara Brae via Brodgar Road, returning to Stromness, but gives no branch-specific exact end date; check the route-specific dated X1 timetable. Buses do not drop off at the Brodgar Road end, so plan for the final walk and check capacity and return. Service 8S also links Skara Brae with Quoyloo; the notice dates that service Monday–Saturday from 6 April through 30 October 2026. A booked tour or taxi remains an alternative if public-bus timing does not fit.'],
+          ['Car: Scrabster–Stromness for the west', 'Bring a reserved vehicle on NorthLink’s Scrabster–Stromness ferry, then base in Stromness or Kirkwall for one island circuit at a time. This makes the west Mainland sites easier to sequence, but the vessel still has weather exposure and road time; do not assume a vehicle-space walk-up.'],
+          ['No-car arrival from Aberdeen: Hatston and Kirkwall', 'NorthLink’s Aberdeen–Kirkwall calls use Hatston, outside Kirkwall. Choose a Kirkwall base and check the X10 Hatston link and X1 island spine against the actual sailing. This is a town-first arrival, not immediate access to Skara Brae or the southern barriers.']
         ],
-        access: 'NorthLink ferries reach Stromness or Kirkwall-area terminals on different routes; flights reach Kirkwall Airport. Major archaeological sites are not all served by frequent buses. Confirm port, vehicle collection, tour pickup and any timed site entry before crossing.',
-        tradeoff: 'West Mainland archaeology, Kirkwall depth and the southern barriers are three distinct days. Choosing one sacrifices another but protects interpretation and the ferry connection.',
+        access: 'Mainland connections set the first day: NorthLink Scrabster–Stromness is paired with the Far North rail line to Thurso or the X99 Inverness coach, but Thurso station is a separate onward transfer and not every sailing meets public transport. NorthLink’s Aberdeen–Kirkwall calls use Hatston; check X10 to town. On Orkney, X1 is the Stromness–Kirkwall–St Margaret’s Hope spine. The Council’s 2026 April–October summer timetable lists an hourly X1 historic-sites service from Stromness to Skara Brae via Brodgar Road and back, but gives no branch-specific exact end date; check the route-specific dated X1 timetable, outward and return times, and capacity. Buses do not drop off at the Brodgar Road end for safety reasons. The same notice dates the 8S Skara Brae service Monday–Saturday from 6 April through 30 October 2026. A booked tour is another option. With a car, reserve vehicle space on the ferry and use Stromness for west Mainland or Kirkwall for a broader road base. Flights arrive at Kirkwall Airport and need their own onward transfer.',
+        tradeoff: 'Without a car, Kirkwall or Stromness plus the X1 corridor is the dependable shape. The hourly X1 historic-sites service is listed in the Council’s 2026 April–October summer timetable, but the notice gives no branch-specific exact end date; check the route-specific dated X1 timetable. Buses do not drop at the Brodgar Road end, so allow for the final walk and verify capacity and return. The 8S is another Skara Brae option and is explicitly dated Monday–Saturday, 6 April–30 October 2026; a booked tour can simplify a tight connection. With a car, the monuments and Churchill Barriers can be grouped more flexibly, but they remain separate area-days. Scrabster is the direct Stromness gateway; Hatston is the Aberdeen route’s Kirkwall-area terminal. Do not book a lodging or tour assuming those ports are interchangeable.',
         stages: [
-          ['Recover from the crossing', 'Identify the exact port or airport, onward bus or car and accommodation before adding a monument. Keep late arrivals close to the gateway.'],
-          ['Reach one evidence cluster', 'Travel to west Mainland, Kirkwall or southern Mainland with the selected booking and return route.'],
-          ['Complete the island argument', 'Visit the related sites in a coherent order, respecting monument conservation and temporary access changes.'],
-          ['Return with weather margin', 'Regain the town or ferry terminal before check-in and allow for wind or road delay. Do not treat the last monument as more important than the sailing.']
+          ['Match the mainland port to the plan', 'For Scrabster–Stromness, check the train/coach transfer to Scrabster and X1 from Stromness; for Aberdeen–Hatston, check X10 to Kirkwall. Confirm that the sailing and onward bus actually connect before paying for the next leg.'],
+          ['Choose the car or bus version of one district', 'No-car visitors use Kirkwall/Stromness and X1; in the 2026 summer timetable, check the hourly historic-sites X1 via Brodgar Road and its return, allowing for the walk because buses do not drop at the road end. The 8S or a booked tour can also work if the exact date’s times fit. Drivers select the west Mainland or southern barriers and confirm parking/access.'],
+          ['Keep one island area as the day’s field', 'Visit the chosen Neolithic cluster, Kirkwall civic core or southern wartime route without trying to cross back and forth between them. Check monument access and any timed entry before leaving town.'],
+          ['Return to the port town before the transport edge', 'Allow for the actual X1/X10 return, vehicle check-in and road/weather disruption. NorthLink warns that not every Stromness sailing connects with onward public transport; preserve an overnight buffer when the itinerary is tight.']
         ],
-        fallback: 'If west-island roads or sites close, use Kirkwall’s cathedral and museums. If a ferry is delayed, keep the arrival day near Stromness or Kirkwall rather than chasing a booked circuit.',
+        fallback: 'If wind, rain, a road closure or seasonal bus pattern defeats the west-site plan, stay with Kirkwall’s cathedral/museums or Stromness town and harbour. The Council lists the hourly X1 historic-sites service in its 2026 April–October summer timetable, but gives no branch-specific exact end date; check the route-specific dated X1 timetable, including outward/return times and capacity. Buses do not drop off at the Brodgar Road end. The same notice explicitly dates 8S Monday–Saturday from 6 April through 30 October 2026; do not carry those 8S dates into other services. If a sailing is disrupted, keep the booked port as the recovery point and contact NorthLink before changing the crossing.',
         watch: [
-          ['Ports are route-specific', 'Stromness, Hatston and other terminals are not interchangeable. Match accommodation and vehicle collection to the actual sailing.'],
+          ['The bus network changes by season', 'Orkney Islands Council lists the hourly X1 historic-sites service in its 2026 April–October summer timetable, but gives no branch-specific exact end date. It runs from Stromness to Skara Brae via Brodgar Road and back; buses do not drop off at the Brodgar Road end. The notice explicitly dates 8S Monday–Saturday from 6 April through 30 October 2026. Check the exact date’s route-specific X1 or 8S timetable, capacity and return before relying on a no-car archaeology day.'],
           ['Monument access can be controlled', 'Conservation, weather and capacity may alter interiors or parking. Read Historic Environment Scotland notices.'],
           ['Wind affects more than ferries', 'Exposed sites and road travel can become unsuitable even when the crossing operates. Preserve the civic fallback.']
         ],
-        duration: 'Allow at least three full days on Orkney Mainland plus arrival and departure margins. One archaeology cluster needs a complete day.',
+        duration: 'Allow at least three full Mainland days plus arrival/departure margins. A no-car visitor can consider a separate west-site day using the 2026 summer X1 historic-sites service, the published 8S or a booked tour, but should confirm exact-date outward and return times, X1 capacity and the final walk from Brodgar Road; keep Kirkwall/Stromness as a realistic shorter-day fallback. A driver can cover one west or south cluster per day.',
         combine: 'Combine Skara Brae with nearby west Mainland monuments, or Kirkwall with its museums. Keep the southern barriers and outer islands for separate days.',
-        verify: 'Check NorthLink sailing and check-in, the exact monument access and reservations, island buses or tour, weather and daylight before travel.',
+        verify: 'Check NorthLink’s route-specific port, sailing and vehicle check-in; exact-date X1/X10 and 8S times, X1 historic-sites capacity, and the Skara Brae return; Scrabster rail/coach connection if using Stromness; Historic Environment Scotland access and reservations; and weather/road status. The 2026 summer X1 via Brodgar Road does not drop off at the road end. Source information checked 9 October 2026; do not infer a bus connection from a ferry time.',
         sources: [
           ['https://www.historicenvironment.scot/visit-a-place/places/skara-brae/', 'Historic Environment Scotland — Skara Brae visitor information'],
-          ['https://www.northlinkferries.co.uk/destinations/we-sail-to/orkney/', 'NorthLink Ferries — official Orkney planning information']
+          ['https://www.northlinkferries.co.uk/book/routes-times-and-prices/timetables/', 'NorthLink Ferries — 2026 route timetables'],
+          ['https://www.northlinkferries.co.uk/port/scrabster/', 'NorthLink Ferries — Scrabster bus and rail connections'],
+          ['https://www.northlinkferries.co.uk/route/ferry-from-aberdeen-to-kirkwall/', 'NorthLink Ferries — Aberdeen to Hatston/Kirkwall calls'],
+          ['https://www.northlinkferries.co.uk/additional-information/', 'NorthLink Ferries — onward transport connection warning'],
+          ['https://www.orkney.gov.uk/travel-roads-and-parking/travelling-in-orkney/bus-services', 'Orkney Islands Council — Mainland bus routes and live timetables'],
+          ['https://www.orkney.gov.uk/latest-news/orkney-s-public-buses-summer-timetables-changes-from-monday-6-april', 'Orkney Islands Council — dated 2026 summer timetable changes'],
+          ['https://www.orkney.gov.uk/travel-roads-and-parking/travelling-in-orkney/bus-services/service-x1--westbound', 'Orkney Islands Council — Service X1 westbound timetable'],
+          ['https://www.orkney.gov.uk/travel-roads-and-parking/travelling-in-orkney/bus-services/service-8s', 'Orkney Islands Council — Service 8S to Skara Brae']
         ]
       }),
       g({
         slug: 'lewis-harris',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Lewis & Harris',
         instrument: 'Ferry-port and island-road atlas',
         layout: 'machair-mountain-spread',
@@ -105,30 +122,35 @@ export const unitedKingdomIslandsWalesNiClusters = [
         purpose: 'Choose a Lewis archaeology and culture day or a Harris coast day from the actual island base, respecting the long north–south road, ferry ports and limited buses.',
         summary: 'Enter through Stornoway or Tarbert, use one island half as the day’s operating field, complete a named site cluster, and return before sparse transport or ferry check-in controls the evening.',
         choices: [
-          ['West Lewis heritage', 'Use Calanais, a blackhouse site and one coast stop as a booked tour or car circuit. This gives the strongest cultural landscape narrative.'],
-          ['Stornoway and north Lewis', 'Keep the day around town, museum, castle grounds and one northern extension. It is the most resilient public-transport plan.'],
-          ['Harris coast and mountains', 'Use Tarbert or a southern base for one coast road and village cluster. It offers dramatic contrast but is a long transfer from Stornoway.']
+          ['No car via Ullapool: Stornoway base', 'CalMac connects Ullapool with Stornoway. Stay in Stornoway for the town, museum/castle grounds and the local bus network; W10 is the spine to Tarbert via Balallan. West Lewis stone and blackhouse sites need a date-specific bus, taxi or booked tour—do not assume the ferry creates a same-day island circuit.'],
+          ['Car via Ullapool: Lewis north/west day', 'Reserve vehicle space on Ullapool–Stornoway, base in Stornoway or a west-side lodging and keep one Lewis corridor for the day. A car makes Calanais and other dispersed sites easier to link, but ferry arrival and departure still need light plans and a mainland buffer.'],
+          ['Harris via Skye: Tarbert base', 'Take the CalMac Uig–Tarbert ferry from Skye and use Tarbert as the gateway for a south-Harris coast day. Without a car, use the current W10/Tarbert and Harris local bus timetables or prebook a tour/taxi; the ferry terminal is not the beach trailhead. Drivers can reach more coast, but should still choose either a north or south Harris circuit.']
         ],
-        access: 'Stornoway and Tarbert are different ferry gateways, and Lewis with Harris is one landmass with long road times. Buses do not support an unlimited stop-by-stop loop. Book car, tour or accommodation from the exact port and check Sunday and seasonal patterns.',
-        tradeoff: 'West Lewis monuments and Harris beaches do not form one relaxed day. Choosing one island half sacrifices the other’s headline sites but avoids hours of road and a fragile ferry return.',
+        access: 'There are two useful ferry approaches: CalMac Ullapool–Stornoway reaches Lewis from the mainland; CalMac Uig–Tarbert reaches Harris from Skye. No-car travellers should choose Stornoway for the urban base and W10 spine to Tarbert, or Tarbert for a Harris-first stay and a checked local bus/tour; most buses run Monday–Saturday and routes do not serve every beach/site. Drivers should book vehicle space on their exact sailing and choose a north/central Lewis or Harris road base to avoid repeated long cross-island transfers. Rail reaches neither port directly; plan the mainland road/coach leg to Ullapool or the coach connection to Uig separately.',
+        tradeoff: 'No-car travel works best as a Stornoway town-and-spine itinerary or a Tarbert-based Harris trip with local services checked. A driver can combine dispersed Lewis heritage sites or a Harris coast circuit, but west Lewis and remote Harris are still separate full days. The Skye–Tarbert ferry is the direct Harris gateway; Ullapool–Stornoway is the direct mainland–Lewis gateway. Choosing one protects the day from cross-island mileage and missed sailing risk.',
         stages: [
-          ['Leave the correct port base', 'Confirm the day’s road or bus corridor, fuel, final return and ferry check-in before leaving Stornoway or Tarbert.'],
-          ['Read one cultural landscape', 'Use Calanais and related west Lewis sites, Stornoway institutions or one Harris community-and-coast line.'],
-          ['Commit to a bounded island half', 'Continue only within the selected corridor, respecting local communities, weather and parking. Do not cross the island for a sunset after the turnaround.'],
-          ['Return before the port edge', 'Regain accommodation or terminal with margin for single-track roads and wind. Keep the final meal on the same side.']
+          ['Select the ferry port and base together', 'For Ullapool–Stornoway, arrange onward transport and stay in Stornoway if using W10/local buses; for Uig–Tarbert, choose a Tarbert/Harris base and confirm the local route to the planned coast.'],
+          ['Choose the car-free or car day', 'No-car: use Stornoway town or a published bus corridor plus a booked local tour. Car: reserve vehicle space and select one Lewis or Harris road district.'],
+          ['Keep the stops inside that corridor', 'Connect Calanais and west Lewis, or Tarbert with one Harris coast/community area; do not add a far-north Lewis stop to a Harris beach day. Check weather and access before leaving the base.'],
+          ['Return to the same port or overnight base', 'Check the exact CalMac check-in and live sailing status. A Uig–Tarbert cancellation does not make Ullapool reachable without a long mainland transfer; ask the operator before changing ports.']
         ],
-        fallback: 'If coast weather or road conditions fail, use Stornoway Museum nan Eilean, castle grounds and town, or Tarbert’s local services. If a ferry cancels, work with the operator before moving between ports.',
+        fallback: 'In wind or rain, switch a remote coast day to Stornoway’s town and indoor cultural options, or Tarbert/local services if already on Harris; choose a shorter sheltered route only if the bus/road return remains usable. Winter and Sunday service patterns can be thinner, so do not assume a missed bus can be replaced that day. If a ferry is cancelled, stay near the booked port and use CalMac’s rebooking/status advice before considering another port.',
         watch: [
           ['Lewis and Harris are long north to south', 'Shared island status does not make the coasts adjacent. Plan from the overnight base, not a highlights map.'],
-          ['Community life sets the rhythm', 'Sunday opening and local services may differ. Verify respectfully and avoid treating homes or working land as attractions.'],
+          ['The bus spine is date-sensitive', 'W10 links Stornoway and Tarbert via Balallan, but local Harris roads, beaches and the west Lewis sites need their own timetable or tour. Council notes most island bus services run Monday to Saturday; check Sunday and seasonal exceptions.'],
           ['Ferry vehicle space is finite', 'A passenger booking and vehicle space are different. Confirm check-in, port and any standby condition.']
         ],
         duration: 'Allow four to six nights to understand Lewis and Harris without daily road marathons. Each island half deserves a full day.',
         combine: 'Combine Calanais with one west Lewis site cluster or Harris beaches with Tarbert and one community stop. Keep Orkney and Skye for separate itineraries.',
-        verify: 'Check CalMac sailing and vehicle booking, Visit Outer Hebrides service information, site access, weather, Sunday patterns and road conditions before departure.',
+        verify: 'Check the exact CalMac route—Ullapool–Stornoway or Uig–Tarbert—vehicle space, check-in and service status; check Comhairle nan Eilean Siar W10 and relevant Lewis/Harris local bus timetables; then verify site access, weather and Sunday/seasonal service. Sources checked 9 October 2026; exact date schedules govern.',
         sources: [
-          ['https://www.visitouterhebrides.co.uk/', 'Visit Outer Hebrides — official destination guide'],
-          ['https://www.calmac.co.uk/destinations/harris', 'CalMac — Lewis and Harris ferry information']
+          ['https://www.calmac.co.uk/en-gb/destinations/lewis/', 'CalMac — Ullapool–Stornoway Lewis gateway'],
+          ['https://www.calmac.co.uk/en-gb/destinations/harris/', 'CalMac — Uig–Tarbert Harris gateway and coach approach'],
+          ['https://www.calmac.co.uk/en-gb/route-information/uig-tarbert-harris/', 'CalMac — Uig–Tarbert ferry timetable and status'],
+          ['https://www.calmac.co.uk/en-gb/route-information/stornoway-ullapool/', 'CalMac — Stornoway–Ullapool ferry timetable and status'],
+          ['https://www.cne-siar.gov.uk/roads-and-travel/bus-services/lewis-bus-timetables', 'Comhairle nan Eilean Siar — Lewis routes including W10 Stornoway–Tarbert'],
+          ['https://www.cne-siar.gov.uk/roads-and-travel/bus-services/bus-services-overview', 'Comhairle nan Eilean Siar — Lewis and Harris bus service days and connections'],
+          ['https://www.visitouterhebrides.co.uk/planning-your-trip/getting-about/buses', 'Visit Outer Hebrides — public transport planning']
         ]
       })
     ]
@@ -412,110 +434,127 @@ export const unitedKingdomIslandsWalesNiClusters = [
     guides: [
       g({
         slug: 'conwy-llandudno',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Conwy Castle & Llandudno',
         instrument: 'Wall-to-headland coast clock',
         layout: 'castle-bay-headland-fold',
         imageQuery: 'Conwy Castle Wales river estuary',
         imageAlt: 'Conwy Castle beside the estuary in North Wales',
-        purpose: 'Choose Conwy’s castle-and-walls or Llandudno’s bay-and-Great-Orme system as the main day, using the short rail link once instead of repeatedly crossing the coast corridor.',
-        summary: 'Begin at the station nearest the main anchor, complete the castle or headland, take one rail or bus connection, and finish on the second town’s compact public realm.',
+        purpose: 'Choose Conwy’s compact medieval core or Llandudno’s open bay and headland as the main day. The towns sit on the same coast corridor, but their stations and the Great Orme approaches are not interchangeable.',
+        summary: 'Use Conwy station for the castle and town; use Llandudno station for the seafront. If changing towns, make one TfW rail leg the hinge and decide before leaving which Great Orme mode—tram, bus, cable car or a walked route—fits the weather and your mobility.',
         choices: [
-          ['Conwy depth', 'Use the castle, walls and compact medieval town as the main block. This gives the strongest heritage argument and simple rail access.'],
-          ['Llandudno and Great Orme', 'Prioritize promenade, pier and one tramway, cable or signed headland route. It adds coast and height but depends on weather and operation.'],
-          ['Two-town sampler', 'Use a shorter castle visit plus Llandudno promenade, linked by rail. It gains contrast but sacrifices the complete walls or headland.']
+          ['Conwy, for history without a second transfer', 'Walk from Conwy station into the walled town; choose the castle interior and harbour streets, then check Cadw’s live town-wall notice. On 9 October 2026 Cadw lists a short section between Watch Tower and Wing Gate as closed during safety work, with reopening planned for Easter 2027. Good for a short daylight window or wet weather, but the castle has steep, uneven historic circulation.'],
+          ['Llandudno, for a full coast-and-height day', 'Start at Llandudno station, not Llandudno Junction. Take the promenade and pier, then pick one Great Orme ascent: the tramway, seasonal cable car, bus or a signed walk. Wind, visibility, steep paths and each operator’s live status decide the choice.'],
+          ['A two-town sampler, only with a protected train', 'Do a focused Conwy castle/town visit, take one TfW train to Llandudno station, and finish on the level seafront. This is a contrast day, not a full wall walk plus Great Orme summit circuit.']
         ],
-        access: 'Conwy station is small and close to the walls; Llandudno and Llandudno Junction are different stations. Great Orme attractions start beyond the main station. Choose the town order and final rail station before entering the castle or headland.',
-        tradeoff: 'A deep castle, full walls and Great Orme circuit exceed one relaxed day. Choosing Conwy sacrifices headland depth; choosing Llandudno gives up some medieval interpretation.',
+        access: 'Conwy station is beside the town approach. TfW serves both Conwy and Llandudno; Llandudno Junction is the coast-line interchange about two miles from Llandudno’s seafront, while Llandudno station is the resort terminus. Great Orme transport starts in town and has different endpoints, seasons and access conditions. Save the precise station name and last return before setting out.',
+        tradeoff: 'The high-value decision is historic interior versus exposed headland time. Conwy suits visitors who want a compact heritage core and an easier rail arrival; Llandudno suits people who want a seafront day and can choose an ascent mode. A rainy or windy forecast makes the sampler or a Conwy-only day more robust; it does not make the Great Orme routes equivalent.',
         stages: [
-          ['Enter the primary town', 'Use Conwy or Llandudno station according to the anchor, saving the final train and any local tram or bus schedule.'],
-          ['Complete castle or headland', 'Follow Cadw admission and wall access, or use the verified Great Orme transport and route. Keep weather limits visible.'],
-          ['Take one coast connection', 'Move once by rail or bus to the second town only when a useful window remains. Do not shuttle back for a missed interior.'],
-          ['Finish at the final station', 'Use the promenade, harbour or compact town streets to end near the correct train, allowing summer and event crowding.']
+          ['Arrive at the right station', 'For Conwy, use Conwy station; for the resort, continue to Llandudno station. Llandudno Junction is a separate interchange, not the promenade stop.'],
+          ['Spend the main block in one place', 'In Conwy, choose the castle and harbour streets, then confirm wall access. In Llandudno, walk the seafront before committing to one Great Orme ascent mode.'],
+          ['Cross the coast corridor once', 'Use the TfW Conwy–Llandudno branch only if the second town adds enough value. Check the live timetable and disruptions; do not base the return on a remembered frequency.'],
+          ['End on a low-risk return', 'Finish at Conwy’s town centre or Llandudno’s seafront near the station you saved. If headland visibility or wind worsens, return by the same confirmed mode rather than switching to an unplanned descent.']
         ],
-        fallback: 'If Great Orme transport or weather fails, deepen Llandudno town and promenade or remain in Conwy. If castle access changes, use walls where open, Plas Mawr or the estuary public realm.',
+        fallback: 'In rain or poor visibility, make Conwy’s town streets and any confirmed open interior the main visit, or keep Llandudno to the promenade and town. Do not substitute a steep exposed Great Orme walk for a cancelled lift or tram. Check Cadw’s live notice before travelling because historic sites can close at short notice in extreme weather.',
         watch: [
-          ['Llandudno Junction is not the resort centre', 'Some trains require a branch connection. Read the destination and final return carefully.'],
-          ['Walls and headland include exposure', 'Wind, rain and steps affect both routes. Use street-level alternatives when necessary.'],
-          ['Great Orme products differ', 'Tramway, cable car, bus and walking routes have separate operation and endpoints. Confirm the exact one.']
+          ['Llandudno Junction is not the resort station', 'TfW identifies the Junction as about two miles from town. If your booking says Junction, plan the onward leg; if it says Llandudno, you arrive at the seafront town.'],
+          ['A castle visit is not a step-free wall circuit', 'Cadw’s Conwy Castle information describes historic access. Check the current access guide and distinguish interior circulation from the separate town walls before choosing it for a mobility-limited visitor.'],
+          ['Great Orme ascent modes have separate operating gates', 'The tramway, cable car, bus and footpaths do not share one timetable or endpoint. Check operator notices, wind and visibility on the day; use the promenade as the all-weather lower plan.']
         ],
-        duration: 'Allow a full day for one deep town plus a short second stop. Conwy or Llandudno alone needs five to seven hours.',
-        combine: 'Combine Conwy with Llandudno by one rail move. Keep Yr Wyddfa, Caernarfon and Anglesey for separate days.',
-        verify: 'Check Conwy Castle and wall access, Great Orme operation, coast weather and Transport for Wales service before departure.',
+        duration: 'Give one town the main block: Conwy’s castle and streets or Llandudno’s seafront plus one Great Orme ascent. Add the second town only as a short stop with a checked rail return; trying to do a full castle, complete wall circuit and headland circuit turns this into a rushed transfer day.',
+        combine: 'The practical pairing is Conwy plus Llandudno by one TfW rail leg, with Llandudno promenade as the shorter second stop. Leave Yr Wyddfa, Caernarfon and Anglesey for separate days because their bus, mountain or island connections need their own return margin.',
+        verify: 'Check TfW’s named station and live return, Cadw’s Conwy Castle admission/access and notice, the Great Orme operator’s exact service and endpoint, and a coastal forecast before departure. Sources checked 9 October 2026; recheck time-sensitive details.',
         sources: [
           ['https://cadw.gov.wales/visit/places-to-visit/conwy-castle', 'Cadw — Conwy Castle visitor information'],
+          ['https://cadw.gov.wales/conwy-castle-access-information', 'Cadw — Conwy Castle access guide'],
+          ['https://cadw.gov.wales/visit/places-to-visit/conwy-town-walls', 'Cadw — Conwy Town Walls current access notice'],
+          ['https://tfw.wales/places/stations/llandudno-junction', 'Transport for Wales — Llandudno Junction station and connections'],
+          ['https://tfw.wales/places/destinations/llandudno', 'Transport for Wales — Llandudno arrival by train'],
           ['https://www.greatormetramway.co.uk/plan-your-visit/', 'Great Orme Tramway — official visit planning']
         ]
       }),
       g({
         slug: 'yr-wyddfa-gateways',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Yr Wyddfa Gateway Choice',
         instrument: 'Summit-route and rail gate',
         layout: 'mountain-route-selector',
         imageQuery: 'Yr Wyddfa Snowdon Wales mountain view',
         imageAlt: 'Yr Wyddfa rising above the Eryri landscape in North Wales',
-        purpose: 'Choose a specific Yr Wyddfa route or mountain railway product from its real gateway, matching ability, parking or bus access and summit weather rather than treating every path as one attraction.',
-        summary: 'Reach Llanberis, Pen-y-Pass or another named start, read mountain conditions, complete the booked railway or mapped route with turnaround rules, and return before the gateway transport closes.',
+        purpose: 'Decide whether this is a summit-walking day, a booked railway ride or a lower Llanberis day. Each starts differently, carries a different skill and weather threshold, and has its own return plan.',
+        summary: 'For a walk, select one named trailhead and be equipped to navigate and turn back; for the railway, book the exact Llanberis return product and confirm whether it reaches Clogwyn or the summit; for poor conditions, keep the day below the mountain.',
         choices: [
-          ['Llanberis and lower mountain', 'Use the village, lake, museum and a lower route or railway context. This is the strongest fallback and easiest public-transport base.'],
-          ['Mountain railway product', 'Book the exact destination and departure currently offered. It gives elevation with controlled timing but remains weather-dependent and is not a walking rescue.'],
-          ['Mapped summit walk', 'Choose one path matched to skill, equipment and conditions. It offers the full mountain day but owns all daylight and return margin.']
+          ['Llanberis and lower mountain: visitors who want a flexible day', 'The village, Padarn shore and lower-level options preserve a meaningful outing without a summit claim. Llanberis also has the railway departure point and Sherpa S1/S2 connections, but the train and bus do not guarantee hill weather.'],
+          ['Snowdon Mountain Railway: visitors who want a booked ascent', 'Buy a specific return from Llanberis and read the destination on that date. The operator lists a roughly 2.5-hour summit return or a roughly 2-hour Clogwyn return, each with a same-train return rule; destination and weather operation are not interchangeable with a summit walk.'],
+          ['A named summit path: experienced walkers with mountain kit', 'Choose a single route and trailhead before travel—Llanberis, Pen-y-Pass, Rhyd Ddu or another mapped start. Pyg/Miners’ Paths from Pen-y-Pass are not an automatic loop; navigation, steep rocky ground, cloud and return transport all matter.']
         ],
-        access: 'Yr Wyddfa has multiple trailheads on different roads. Parking, Sherpa’r Wyddfa buses and Llanberis services vary by date. The mountain railway has its own station, booking and operating limits. Confirm the exact start and final return before travel.',
-        tradeoff: 'A summit walk and mountain railway are separate products, not backup versions of the same day. Choosing the summit sacrifices village and museum time; choosing lower Llanberis gives up the top but preserves safety and transport.',
+        access: 'Llanberis is the railway gateway and has Sherpa S1/S2 links. Pen-y-Pass is a separate road-side trailhead served by the seasonal/dated Sherpa network; parking availability is not a walk-up guarantee. The park’s route app/maps identify other trailheads such as Rhyd Ddu. Do not book an arrival at Llanberis and assume it reaches Pen-y-Pass: check the current Sherpa times in both directions and the final onward connection.',
+        tradeoff: 'A railway ticket buys a constrained return itinerary, not a safe substitute for walking skill or a promise of summit conditions. A summit walk needs full-day daylight, navigation and appropriate clothing/equipment; people without those should choose a lower route or the train only if its precise destination and weather operation suit them. In cloud, strong wind or heavy rain, a valley/lake day is the better plan, not a different high path chosen on impulse.',
         stages: [
-          ['Reach the exact gateway', 'Use the booked parking, bus or village arrival and save the final return. Do not navigate to “Snowdon” without a trailhead.'],
-          ['Read the mountain gate', 'Check cloud, wind, rain, temperature, snow or ice and official advice at low level. Activate the lower plan early.'],
-          ['Commit to railway or route', 'Board the exact railway product or follow the chosen mapped path with equipment and a time turnaround. Do not switch paths casually.'],
-          ['Recover the gateway before dark', 'Return to the same or planned exit, allowing descent fatigue and bus gaps. A summit photograph never outranks the final safe connection.']
+          ['Name the trailhead or booked station', 'Save the exact arrival point and a return journey. If travelling without a car, confirm the Sherpa route serves both ends on your date before choosing a linear walk.'],
+          ['Read the mountain forecast, not only the village forecast', 'Use the Met Office Eryri mountain forecast for wind, visibility, precipitation and freezing level. Poor visibility, gale force wind or persistent rain are route-finding, balance and cold hazards; switch to the lower plan before departure.'],
+          ['Keep one route or one railway product', 'Walkers stay on the chosen mapped path with navigation and a turnaround time. Railway passengers verify the date’s destination and the operator’s same-train return rule; do not plan to walk down unless independently equipped and trained.'],
+          ['Protect the way back', 'Count descent time, fatigue, daylight and the final Sherpa/train connection. If the return buffer disappears, turn around while the route remains straightforward.']
         ],
-        fallback: 'If summit conditions or railway operation fail, use Llanberis, the lake, slate museum when open or a signed lower path. Do not drive to another mountain route without reassessing conditions.',
+        fallback: 'For heavy rain, low cloud, strong summit wind, snow/ice or a cancelled railway, keep the visit at Llanberis and Lake Padarn or choose a suitable low-level Eryri option reached by the same confirmed transport. Do not transfer to Pen-y-Pass or another summit because the first plan failed; that creates a new weather, trailhead and return decision.',
         watch: [
-          ['Routes start in different places', 'Llanberis, Pen-y-Pass and other paths cannot be swapped after parking or bus arrival without a new connection.'],
-          ['Railway destination can vary', 'Operations may not always reach the summit. Read the exact booked product and do not infer a guaranteed top.'],
-          ['Mountain rescue is not itinerary support', 'Carry navigation, equipment, food and turnaround discipline appropriate to the route. Change the plan before conditions overwhelm it.']
+          ['The bus network is a route, not a rescue shuttle', 'Sherpa S1 connects Caernarfon–Llanberis–Betws-y-Coed and S2 connects Bangor–Llanberis–Pen-y-Pass, but dates and journey times matter. Match the finish and last bus to the walk.'],
+          ['Railway destination depends on the selected service/date', 'The operator distinguishes summit and Clogwyn returns and requires return on the same train. Read the destination on your booked ticket and live operating notice; do not infer a guaranteed summit visit.'],
+          ['Summit paths require independent mountain competence', 'The Met Office identifies gale-force wind, poor visibility and heavy persistent rain as hazards; cloud can remove visual route references. If your group lacks navigation, equipment or confidence for those conditions, choose the low-level day before setting out.']
         ],
-        duration: 'Allow the full day for a summit walk or railway-and-Llanberis plan. Lower village and lake routes can fit five to seven hours.',
-        combine: 'Combine Llanberis with the booked railway or one lower route. Keep Conwy, Caernarfon and Anglesey for separate days.',
-        verify: 'Check Eryri National Park advice, Met Office mountain weather, Sherpa’r Wyddfa transport, parking and the exact railway status before departure.',
+        duration: 'Reserve the daylight day for a summit walk and build the route timing around your own pace, not an attraction stop. The railway operator quotes about 2.5 hours for its summit return and about 2 hours for a Clogwyn return, including the stop; add Llanberis arrival, weather checks and onward transport. A lower village/lake day can be shortened without risking a remote trailhead return.',
+        combine: 'Pair Llanberis with the booked railway or one low-level lakeside route. Do not combine a summit walk with Conwy, Caernarfon or Anglesey; keep those on separate days so the mountain descent does not compete with a transfer.',
+        verify: 'Check the Eryri Yr Wyddfa guidance/map, Met Office mountain forecast, current Sherpa S1/S2 timetable in both directions, parking restrictions if driving, and Snowdon Mountain Railway’s date-specific destination and notice. Sources checked 9 October 2026; recheck before travel.',
         sources: [
           ['https://snowdonia.gov.wales/visit/yr-wyddfa-snowdon/', 'Eryri National Park — official Yr Wyddfa guidance'],
-          ['https://snowdonrailway.co.uk/plan-your-visit/', 'Snowdon Mountain Railway — official visit planning']
+          ['https://www.metoffice.gov.uk/weather/specialist-forecasts/mountain/snowdonia', 'Met Office — Eryri mountain forecast and hazards'],
+          ['https://www.sherparwyddfa.wales/times.shtml', 'Sherpa’r Wyddfa — current bus times and route corridors'],
+          ['https://www.sherparwyddfa.wales/', 'Sherpa’r Wyddfa — network, park-and-ride and bus planning'],
+          ['https://snowdonrailway.co.uk/plan-your-visit/', 'Snowdon Mountain Railway — return products and operating conditions']
         ]
       }),
       g({
         slug: 'caernarfon-anglesey',
+        reviewDate: '9 October 2026',
+        reviewDateISO: '2026-10-09',
         name: 'Caernarfon & Anglesey',
         instrument: 'Castle-to-island crossing sheet',
         layout: 'menai-strait-bridge-plan',
         imageQuery: 'Caernarfon Castle Wales waterfront',
         imageAlt: 'Caernarfon Castle beside the Menai Strait in North Wales',
-        purpose: 'Choose Caernarfon Castle or one Anglesey coast community as the main destination and make the Menai crossing and onward bus or road explicit.',
-        summary: 'Use Caernarfon’s castle and waterfront as one complete field, then cross to Anglesey only for a named town, coast or heritage site with a protected return.',
+        purpose: 'Choose either Caernarfon’s castle town or one named Anglesey coast stop. Bangor is the rail-transfer hinge, the Menai bridges are not a destination, and the island’s last mile determines whether a car-free day is realistic.',
+        summary: 'For a castle day, take the T2 bus from Bangor and stay in Caernarfon. For Anglesey, select a place served by rail or by a named bus-and-walk connection—such as Rhosneigr or Holyhead Mountain—before crossing, then save the return leg.',
         choices: [
-          ['Caernarfon depth', 'Prioritize the castle, walls and waterfront. This creates a complete heritage day with the simplest bus return.'],
-          ['Menai and south Anglesey', 'Use Bangor or the bridges as the gateway to one south-island town or coast. It offers island context but adds another transport layer.'],
-          ['Holyhead or west Anglesey', 'Use the rail corridor for one western destination. This gives a distinct maritime edge but is not compatible with a full Caernarfon day.']
+          ['Caernarfon Castle: visitors focused on Welsh royal and military history', 'From Bangor station, use the T2 bus corridor to Caernarfon and spend the day inside the town. Cadw’s main castle entrance is the King’s Gate; its access guide notes a lift to the gate top, but emergency evacuation and uneven historic spaces need individual planning.'],
+          ['Rhosneigr: car-free beach/coast walk with a simpler rail anchor', 'Use Rhosneigr station as the rail anchor and check Visit Anglesey’s mapped circular walk. The local guide also lists buses 25 and 45 on Mondays to Saturdays; check current dates/times and tide/weather before treating it as a beach day. This is a separate island day, not a quick add-on to Caernarfon.'],
+          ['Holyhead Mountain: west-coast walking with a rail arrival', 'Arrive at Holyhead by rail, then plan the walk’s out-of-town start. Visit Anglesey identifies a local bus stop near the country park and a remaining walk to the trail; this suits walkers who can navigate and adds a real last-mile leg. Do not pair it with the full castle visit.']
         ],
-        access: 'Caernarfon has no mainline rail station and is reached by bus or heritage railway. Anglesey has a rail line but many beaches and villages lie beyond stations. The Menai bridges carry road and bus traffic; select the exact island endpoint before crossing.',
-        tradeoff: 'A deep castle visit and a meaningful west Anglesey coast day are separate plans. Choosing the island sacrifices Caernarfon depth; choosing the castle gives up a distant beach but protects a coherent return.',
+        access: 'Caernarfon has no mainline station: TfW’s T2 bus links it with Bangor, where bus stops are outside/near the rail station. The North Wales coast rail line crosses to Anglesey and serves Holyhead and Rhosneigr, but neither station sits at every coastal walk start. Visit Anglesey’s local pages give the last-mile details. If combining, choose Bangor only as a transfer point and calculate the outward/return bus or train before leaving the castle.',
+        tradeoff: 'Caernarfon is the stronger choice for a contained heritage visit with an identified Bangor bus link; Anglesey is better when the island coast itself is the purpose and you can give it a full day. Rhosneigr’s rail-plus-walk pattern and Holyhead Mountain’s rail-plus-bus/foot approach are distinct choices. A same-day castle-and-island sampler spends much of the margin crossing and makes a missed bus or delayed train expensive.',
         stages: [
-          ['Reach the castle town', 'Use the confirmed bus or heritage service, saving the final departure before entering the walls and waterfront.'],
-          ['Complete one historic anchor', 'Visit Caernarfon Castle or, on an island-first day, a named Anglesey site with current admission and access.'],
-          ['Cross the strait only with purpose', 'Take the verified bus, rail or road connection to one island community. Do not treat the bridge as arrival at every Anglesey sight.'],
-          ['Return before island frequency thins', 'Regain Bangor, Caernarfon or the rail station with margin for road traffic and coastal weather.']
+          ['Choose Bangor transfer or island rail', 'For Caernarfon, change at Bangor to T2 and confirm the same-day bus back. For Anglesey, use the coast-line train to the actual station near your selected walk.'],
+          ['Complete one anchor, not two', 'Castle visitors use Caernarfon’s King’s Gate entrance and keep time for the town. Island visitors follow the mapped Rhosneigr circuit or the Holyhead Mountain approach; check route condition and local access.'],
+          ['Budget the final mile explicitly', 'Rhosneigr has a station near the north end of the lake and mapped public footpaths; Holyhead Mountain requires a separate approach from the town/station, with a local bus stop still some distance from the country park.'],
+          ['Protect the return connection', 'Check TfW for the train and T2 for the bus direction/date; do not treat a ferry departure or bridge crossing as proof that local transport is frequent. Leave a weather/road buffer before the final mainland rail link.']
         ],
-        fallback: 'If island transport or weather fails, use Caernarfon Castle, waterfront and town; if castle access changes, use the public walls and nearby Welsh Highland Railway context only when current service works.',
+        fallback: 'For wind, rain or a missed Anglesey connection, shorten to the nearest confirmed rail town rather than crossing to a different remote beach. Caernarfon’s castle town is a better mainland fallback if T2 is running; verify Cadw notices and the rail/bus before committing. If a visitor needs step-free access, check Cadw’s detailed access guide and contact the castle about evacuation support before buying into the day plan.',
         watch: [
-          ['Caernarfon is not on the mainline railway', 'Include the bus or heritage-rail connection in both directions. Do not plan from Bangor arrival alone.'],
-          ['Anglesey is larger than a bridge view', 'Rail and bus reach selected corridors, not every coast. Name the destination and last mile.'],
-          ['Ferry traffic can load roads and trains', 'Holyhead operations affect the western corridor. Keep extra margin around sailings and disruption.']
+          ['Caernarfon is a bus continuation from Bangor', 'The rail station is not the castle gateway. TfW places the bus stops by Bangor station and identifies T2 as the Caernarfon corridor; confirm both directions and live service before entering the castle.'],
+          ['A station is not the beach/path start', 'Rhosneigr’s official guide links station, mapped footpaths and a local circular walk. Holyhead Mountain starts outside town; check the operator’s stop and the remaining walk rather than assuming a bus drops at the trail.'],
+          ['The walk needs a coastal condition check', 'Anglesey route pages provide mapped walks, but wind, rain, tide and daylight can change exposure or the return. Choose the lower town/coast option when the exposed path is not suitable.']
         ],
-        duration: 'Allow a full day for Caernarfon plus one nearby Menai branch, or a separate full day for west Anglesey. The castle town alone needs four to six hours.',
-        combine: 'Combine Caernarfon with the Menai Strait or one nearby island stop. Keep Yr Wyddfa and Llandudno for separate days.',
-        verify: 'Check Caernarfon Castle access, the exact bus or rail service, Anglesey destination information, road conditions and final return before departure.',
+        duration: 'A Caernarfon castle-and-town visit is a substantial half/full day once the Bangor T2 connection is included. Rhosneigr or Holyhead Mountain each deserves its own island day from the rail station, with time for the approach and return. Combining one of them with the full castle visit leaves little tolerance for a late bus or weather delay.',
+        combine: 'Choose Caernarfon plus the immediate Menai area only when the exact bus/road connection gives a reliable return. Choose one Anglesey walk for the day and keep Yr Wyddfa and Llandudno separate; they use different gateways and add another return clock.',
+        verify: 'Check TfW’s Bangor station bus-stop note and T2 corridor, current T2/rail timetables, Cadw’s Caernarfon Castle hours/access notice, and the exact Visit Anglesey walk map, transport and local conditions. Sources checked 9 October 2026; recheck live details.',
         sources: [
           ['https://cadw.gov.wales/visit/places-to-visit/caernarfon-castle', 'Cadw — Caernarfon Castle visitor information'],
-          ['https://www.visitanglesey.co.uk/', 'Visit Anglesey — official destination guide']
+          ['https://cadw.gov.wales/castell-caernarfon-access-guide', 'Cadw — Caernarfon Castle access guide'],
+          ['https://tfw.wales/places/stations/bangor-gwynedd', 'Transport for Wales — Bangor station and bus interchange'],
+          ['https://tfw.wales/news/5-bus-routes-in-north-wales-which-you-need-to-explore-catch-the-bus-month', 'Transport for Wales — T2 bus link from Bangor to Caernarfon'],
+          ['https://www.visitanglesey.co.uk/en-gb/explore/circular-walks/rhosneigr-circular-walk', 'Visit Anglesey — Rhosneigr circular walk and public transport'],
+          ['https://www.visitanglesey.co.uk/en-gb/explore/circular-walks/holyhead-mountain-circular-walk', 'Visit Anglesey — Holyhead Mountain walk and approach']
         ]
       })
     ]
