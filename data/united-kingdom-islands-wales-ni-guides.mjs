@@ -33,30 +33,34 @@ export const unitedKingdomIslandsWalesNiClusters = [
         purpose: 'Choose one Skye peninsula from the actual base, accounting for single-track roads, parking, buses, wind and daylight instead of promoting a full-island highlight loop.',
         summary: 'Start from Portree or another named base, read live road and weather conditions, complete one peninsula or lower-risk island route, and return before darkness or a ferry deadline.',
         choices: [
-          ['Trotternish day', 'Use Portree as the base for one northern road-and-walk sequence with firm parking and turnaround points. This gives the iconic geology but attracts the highest pressure.'],
-          ['Dunvegan and west', 'Focus on castle, coast and one western landscape. It offers history and sea views but is a separate road system from Trotternish.'],
-          ['South Skye and Sleat', 'Use Armadale, Broadford or a southern base for gentler coast and ferry context. It is more compatible with arrival or departure days.']
+          ['No car: Portree and the 57A north', 'Use Portree as the base if the priority is Trotternish. Stagecoach 57A follows the Portree–Uig–Flodigarry corridor; choose a stop the date-specific timetable actually serves and build the day around that bus, not an imagined island-wide hop-on loop. This is for a bounded north-island day, not a flexible Quiraing-to-coast circuit.'],
+          ['Car: bridge entry and one peninsula', 'Drive via Kyle of Lochalsh and the Skye Bridge for the most flexible mainland approach, then base in Portree for Trotternish or Broadford for south Skye. The bridge removes the ferry reservation step, not single-track delays or trailhead parking limits. Keep each day to one road spoke.'],
+          ['Rail + ferry: Mallaig to Armadale', 'Take the rail line to Mallaig, cross on the CalMac ferry to Armadale and use the Stagecoach 52 corridor toward Broadford. This is a useful south-Skye arrival for a foot passenger, but it does not put you in Portree or at a northern trailhead; confirm the onward bus or prebooked transfer before choosing the base.']
         ],
-        access: 'Skye is reached by bridge, Mallaig–Armadale ferry or longer road corridors. Portree is not central to every peninsula in travel time. Public buses exist but do not create a hop-on circuit; car and tour plans must include single-track etiquette and parking capacity.',
-        tradeoff: 'A full-island loop sacrifices time at every stop and magnifies road delay. Choosing one peninsula gives up a famous sight elsewhere but creates a safer, deeper day with a credible return.',
+        access: 'The car-free gateways are distinct: rail to Mallaig, CalMac Mallaig–Armadale, then Stagecoach 52 toward Broadford; or reach Portree from the mainland by a booked coach and use the date-specific 57A Portree–Uig–Flodigarry corridor for Trotternish. A car can instead enter over the Skye Bridge at Kyle of Lochalsh or use the vehicle ferry, but vehicle space must be reserved on the sailing. Pick accommodation at the end of the transport corridor you will use; Portree is not the Armadale ferry terminal, and neither bus route is a whole-island circuit.',
+        tradeoff: 'Without a car, a Portree base and one 57A northbound day or a Broadford/Sleat day are realistic; changing base or reaching distant trailheads can consume a day in transfers. With a car, one peninsula per day gives more choice but still requires parking, fuel and safe passing places. A full-island loop loses time to road distance and delay. Arrival via Mallaig is best treated as a south-Skye transfer day, not as the start of a northern highlights loop.',
         stages: [
-          ['Leave the correct island base', 'Check road incidents, wind, rain and the final light, then start toward one peninsula with fuel and return time known.'],
-          ['Read the first landscape gate', 'At the initial stop, assess parking and path conditions. Skip rather than road-park dangerously when capacity is full.'],
-          ['Commit to one peninsula', 'Complete the selected road, castle or signed route with a time-based turnaround. Do not cross Skye for a second headline viewpoint.'],
-          ['Return before dark or sailing', 'Reach the base, bridge or ferry port with margin for single-track delays and check-in. Treat meals and sunset as optional after the transport edge.']
+          ['Choose the base before booking the bed', 'For no-car Trotternish, use Portree and the 57A corridor; for the Mallaig ferry, use Broadford/Sleat only after confirming the 52 bus or transfer; for a car, choose Portree (north) or Broadford (south).'],
+          ['Match the peninsula to today’s transport', 'No-car visitors use only stops linked by the published bus and leave room for its return. Drivers check road notices, fuel and parking at the first stop; never use a passing place as overflow parking.'],
+          ['Stay inside one road spoke', 'Complete one Trotternish, west, or Sleat plan with a time-based turnaround. The car can reach more places, but the bus visitor should not try to join disconnected corridors in one day.'],
+          ['Finish at the same transport edge', 'Return to Portree, Broadford or the booked ferry terminal with a weather and traffic buffer. If the sailing is the next leg, verify check-in and service status; do not place a remote sunset stop between the base and port.']
         ],
-        fallback: 'If high wind or road pressure makes exposed routes unsuitable, use Portree, Broadford, local museums or a short sheltered coast route. If a ferry cancels, remain near the booked side rather than racing to a distant port.',
+        fallback: 'In high wind, rain or poor visibility, replace an exposed walk with Portree or Broadford town time, a verified indoor stop, or a short lower-level route near the chosen base. If Mallaig–Armadale is disrupted, ask CalMac about that booking and stay near the booked shore until the replacement is clear; do not assume the bridge is reachable by the same bus or that a substitute sailing has vehicle space. In winter, check the reduced ferry pattern and daylight before making the crossing the same-day hinge.',
         watch: [
           ['Single-track roads need passing-place discipline', 'Do not park in passing places or follow an unrealistic app estimate. Let faster traffic pass and protect the return.'],
           ['Parking capacity is a hard limit', 'Popular trailheads can fill. Use official alternatives or leave; roadside improvisation damages safety and land access.'],
-          ['Ferry check-in precedes departure', 'Vehicle and foot-passenger deadlines differ. Build the road day around check-in, not the published sailing minute.']
+          ['Ferry check-in precedes departure', 'Vehicle and foot-passenger check-ins differ. Build the road day around the specific Mallaig–Armadale booking, not the advertised sailing minute.'],
         ],
-        duration: 'Allow a full day for one Skye peninsula and at least three nights for a useful island stay. Arrival or departure days should remain on the relevant shore.',
+        duration: 'Allow a full day per peninsula and at least three nights on Skye. A no-car visitor should keep the arrival day near Armadale/Broadford or Portree, depending on the chosen corridor; a car visitor can reach more of the island but should still leave ferry arrival and departure days light.',
         combine: 'Combine one peninsula with its nearby town or castle. Keep another Skye coast, the mainland Highlands and other island groups for separate days.',
-        verify: 'Check CalMac or bridge route, Highland road notices, detailed weather, attraction access, bus or tour confirmation and daylight before departure.',
+        verify: 'Check CalMac’s Mallaig–Armadale sailing and vehicle reservation or the Kyle of Lochalsh bridge approach; if travelling without a car, check Stagecoach 52 Armadale–Broadford or 57A Portree–Uig–Flodigarry in both directions for the exact date. Recheck road notices, mountain/coastal weather, attraction access and daylight. Route information checked 9 October 2026; timetables change seasonally.',
         sources: [
-          ['https://www.isleofskye.com/', 'Isle of Skye — official local destination guide'],
-          ['https://www.calmac.co.uk/route-information/mallaig-armadale/', 'CalMac — Mallaig to Armadale ferry information']
+          ['https://www.visitscotland.com/places-to-go/islands/skye', 'VisitScotland — Isle of Skye destination guide'],
+          ['https://www.calmac.co.uk/en-gb/destinations/skye', 'CalMac — Skye ferry and arrival options'],
+          ['https://www.citylink.co.uk/our-routes-and-timetables/inverness-skye/', 'Citylink — Inverness, Kyle of Lochalsh and Portree coach corridor'],
+          ['https://www.stagecoachbus.com/routes/north-scotland/52/armadale-broadford/xico052.i', 'Stagecoach — Armadale to Broadford bus corridor'],
+          ['https://www.stagecoachbus.com/routes/north-scotland/57a/portree-square-flodigarry/xado057a.o', 'Stagecoach — Portree, Uig and Flodigarry bus corridor'],
+          ['https://www.calmac.co.uk/route-information/mallaig-armadale/', 'CalMac — Mallaig to Armadale ferry timetable and check-in']
         ]
       }),
       g({
@@ -69,30 +73,37 @@ export const unitedKingdomIslandsWalesNiClusters = [
         purpose: 'Choose Kirkwall, the west Mainland Neolithic sites or a wartime-and-coast route, and match ferry arrival, timed admission and island transport rather than treating Orkney as a cruise-stop checklist.',
         summary: 'Establish the Kirkwall or Stromness gateway, complete one monument cluster with current booking and access, and keep the return crossing or island bus outside the final minute.',
         choices: [
-          ['West Mainland archaeology', 'Use Skara Brae, Ring of Brodgar and nearby sites as one cluster, with current reservations and road transport. This gives the strongest deep-time narrative.'],
-          ['Kirkwall civic day', 'Prioritize St Magnus Cathedral, museums and harbour streets. It is the best weather fallback and works without a west-island circuit.'],
-          ['Churchill Barriers and wartime coast', 'Use a booked tour or car for southern Mainland and linked islands. It adds modern history but is separate from the Neolithic cluster.']
+          ['No car: Stromness/Kirkwall bus spine', 'Use X1 between Stromness, Kirkwall and St Margaret’s Hope as the transport backbone. The Council’s 2026 April–October summer timetable lists an hourly X1 historic-sites service from Stromness to Skara Brae via Brodgar Road, returning to Stromness, but gives no branch-specific exact end date; check the route-specific dated X1 timetable. Buses do not drop off at the Brodgar Road end, so plan for the final walk and check capacity and return. Service 8S also links Skara Brae with Quoyloo; the notice dates that service Monday–Saturday from 6 April through 30 October 2026. A booked tour or taxi remains an alternative if public-bus timing does not fit.'],
+          ['Car: Scrabster–Stromness for the west', 'Bring a reserved vehicle on NorthLink’s Scrabster–Stromness ferry, then base in Stromness or Kirkwall for one island circuit at a time. This makes the west Mainland sites easier to sequence, but the vessel still has weather exposure and road time; do not assume a vehicle-space walk-up.'],
+          ['No-car arrival from Aberdeen: Hatston and Kirkwall', 'NorthLink’s Aberdeen–Kirkwall calls use Hatston, outside Kirkwall. Choose a Kirkwall base and check the X10 Hatston link and X1 island spine against the actual sailing. This is a town-first arrival, not immediate access to Skara Brae or the southern barriers.']
         ],
-        access: 'NorthLink ferries reach Stromness or Kirkwall-area terminals on different routes; flights reach Kirkwall Airport. Major archaeological sites are not all served by frequent buses. Confirm port, vehicle collection, tour pickup and any timed site entry before crossing.',
-        tradeoff: 'West Mainland archaeology, Kirkwall depth and the southern barriers are three distinct days. Choosing one sacrifices another but protects interpretation and the ferry connection.',
+        access: 'Mainland connections set the first day: NorthLink Scrabster–Stromness is paired with the Far North rail line to Thurso or the X99 Inverness coach, but Thurso station is a separate onward transfer and not every sailing meets public transport. NorthLink’s Aberdeen–Kirkwall calls use Hatston; check X10 to town. On Orkney, X1 is the Stromness–Kirkwall–St Margaret’s Hope spine. The Council’s 2026 April–October summer timetable lists an hourly X1 historic-sites service from Stromness to Skara Brae via Brodgar Road and back, but gives no branch-specific exact end date; check the route-specific dated X1 timetable, outward and return times, and capacity. Buses do not drop off at the Brodgar Road end for safety reasons. The same notice dates the 8S Skara Brae service Monday–Saturday from 6 April through 30 October 2026. A booked tour is another option. With a car, reserve vehicle space on the ferry and use Stromness for west Mainland or Kirkwall for a broader road base. Flights arrive at Kirkwall Airport and need their own onward transfer.',
+        tradeoff: 'Without a car, Kirkwall or Stromness plus the X1 corridor is the dependable shape. The hourly X1 historic-sites service is listed in the Council’s 2026 April–October summer timetable, but the notice gives no branch-specific exact end date; check the route-specific dated X1 timetable. Buses do not drop at the Brodgar Road end, so allow for the final walk and verify capacity and return. The 8S is another Skara Brae option and is explicitly dated Monday–Saturday, 6 April–30 October 2026; a booked tour can simplify a tight connection. With a car, the monuments and Churchill Barriers can be grouped more flexibly, but they remain separate area-days. Scrabster is the direct Stromness gateway; Hatston is the Aberdeen route’s Kirkwall-area terminal. Do not book a lodging or tour assuming those ports are interchangeable.',
         stages: [
-          ['Recover from the crossing', 'Identify the exact port or airport, onward bus or car and accommodation before adding a monument. Keep late arrivals close to the gateway.'],
-          ['Reach one evidence cluster', 'Travel to west Mainland, Kirkwall or southern Mainland with the selected booking and return route.'],
-          ['Complete the island argument', 'Visit the related sites in a coherent order, respecting monument conservation and temporary access changes.'],
-          ['Return with weather margin', 'Regain the town or ferry terminal before check-in and allow for wind or road delay. Do not treat the last monument as more important than the sailing.']
+          ['Match the mainland port to the plan', 'For Scrabster–Stromness, check the train/coach transfer to Scrabster and X1 from Stromness; for Aberdeen–Hatston, check X10 to Kirkwall. Confirm that the sailing and onward bus actually connect before paying for the next leg.'],
+          ['Choose the car or bus version of one district', 'No-car visitors use Kirkwall/Stromness and X1; in the 2026 summer timetable, check the hourly historic-sites X1 via Brodgar Road and its return, allowing for the walk because buses do not drop at the road end. The 8S or a booked tour can also work if the exact date’s times fit. Drivers select the west Mainland or southern barriers and confirm parking/access.'],
+          ['Keep one island area as the day’s field', 'Visit the chosen Neolithic cluster, Kirkwall civic core or southern wartime route without trying to cross back and forth between them. Check monument access and any timed entry before leaving town.'],
+          ['Return to the port town before the transport edge', 'Allow for the actual X1/X10 return, vehicle check-in and road/weather disruption. NorthLink warns that not every Stromness sailing connects with onward public transport; preserve an overnight buffer when the itinerary is tight.']
         ],
-        fallback: 'If west-island roads or sites close, use Kirkwall’s cathedral and museums. If a ferry is delayed, keep the arrival day near Stromness or Kirkwall rather than chasing a booked circuit.',
+        fallback: 'If wind, rain, a road closure or seasonal bus pattern defeats the west-site plan, stay with Kirkwall’s cathedral/museums or Stromness town and harbour. The Council lists the hourly X1 historic-sites service in its 2026 April–October summer timetable, but gives no branch-specific exact end date; check the route-specific dated X1 timetable, including outward/return times and capacity. Buses do not drop off at the Brodgar Road end. The same notice explicitly dates 8S Monday–Saturday from 6 April through 30 October 2026; do not carry those 8S dates into other services. If a sailing is disrupted, keep the booked port as the recovery point and contact NorthLink before changing the crossing.',
         watch: [
-          ['Ports are route-specific', 'Stromness, Hatston and other terminals are not interchangeable. Match accommodation and vehicle collection to the actual sailing.'],
+          ['The bus network changes by season', 'Orkney Islands Council lists the hourly X1 historic-sites service in its 2026 April–October summer timetable, but gives no branch-specific exact end date. It runs from Stromness to Skara Brae via Brodgar Road and back; buses do not drop off at the Brodgar Road end. The notice explicitly dates 8S Monday–Saturday from 6 April through 30 October 2026. Check the exact date’s route-specific X1 or 8S timetable, capacity and return before relying on a no-car archaeology day.'],
           ['Monument access can be controlled', 'Conservation, weather and capacity may alter interiors or parking. Read Historic Environment Scotland notices.'],
           ['Wind affects more than ferries', 'Exposed sites and road travel can become unsuitable even when the crossing operates. Preserve the civic fallback.']
         ],
-        duration: 'Allow at least three full days on Orkney Mainland plus arrival and departure margins. One archaeology cluster needs a complete day.',
+        duration: 'Allow at least three full Mainland days plus arrival/departure margins. A no-car visitor can consider a separate west-site day using the 2026 summer X1 historic-sites service, the published 8S or a booked tour, but should confirm exact-date outward and return times, X1 capacity and the final walk from Brodgar Road; keep Kirkwall/Stromness as a realistic shorter-day fallback. A driver can cover one west or south cluster per day.',
         combine: 'Combine Skara Brae with nearby west Mainland monuments, or Kirkwall with its museums. Keep the southern barriers and outer islands for separate days.',
-        verify: 'Check NorthLink sailing and check-in, the exact monument access and reservations, island buses or tour, weather and daylight before travel.',
+        verify: 'Check NorthLink’s route-specific port, sailing and vehicle check-in; exact-date X1/X10 and 8S times, X1 historic-sites capacity, and the Skara Brae return; Scrabster rail/coach connection if using Stromness; Historic Environment Scotland access and reservations; and weather/road status. The 2026 summer X1 via Brodgar Road does not drop off at the road end. Source information checked 9 October 2026; do not infer a bus connection from a ferry time.',
         sources: [
           ['https://www.historicenvironment.scot/visit-a-place/places/skara-brae/', 'Historic Environment Scotland — Skara Brae visitor information'],
-          ['https://www.northlinkferries.co.uk/destinations/we-sail-to/orkney/', 'NorthLink Ferries — official Orkney planning information']
+          ['https://www.northlinkferries.co.uk/book/routes-times-and-prices/timetables/', 'NorthLink Ferries — 2026 route timetables'],
+          ['https://www.northlinkferries.co.uk/port/scrabster/', 'NorthLink Ferries — Scrabster bus and rail connections'],
+          ['https://www.northlinkferries.co.uk/route/ferry-from-aberdeen-to-kirkwall/', 'NorthLink Ferries — Aberdeen to Hatston/Kirkwall calls'],
+          ['https://www.northlinkferries.co.uk/additional-information/', 'NorthLink Ferries — onward transport connection warning'],
+          ['https://www.orkney.gov.uk/travel-roads-and-parking/travelling-in-orkney/bus-services', 'Orkney Islands Council — Mainland bus routes and live timetables'],
+          ['https://www.orkney.gov.uk/latest-news/orkney-s-public-buses-summer-timetables-changes-from-monday-6-april', 'Orkney Islands Council — dated 2026 summer timetable changes'],
+          ['https://www.orkney.gov.uk/travel-roads-and-parking/travelling-in-orkney/bus-services/service-x1--westbound', 'Orkney Islands Council — Service X1 westbound timetable'],
+          ['https://www.orkney.gov.uk/travel-roads-and-parking/travelling-in-orkney/bus-services/service-8s', 'Orkney Islands Council — Service 8S to Skara Brae']
         ]
       }),
       g({
@@ -105,30 +116,35 @@ export const unitedKingdomIslandsWalesNiClusters = [
         purpose: 'Choose a Lewis archaeology and culture day or a Harris coast day from the actual island base, respecting the long north–south road, ferry ports and limited buses.',
         summary: 'Enter through Stornoway or Tarbert, use one island half as the day’s operating field, complete a named site cluster, and return before sparse transport or ferry check-in controls the evening.',
         choices: [
-          ['West Lewis heritage', 'Use Calanais, a blackhouse site and one coast stop as a booked tour or car circuit. This gives the strongest cultural landscape narrative.'],
-          ['Stornoway and north Lewis', 'Keep the day around town, museum, castle grounds and one northern extension. It is the most resilient public-transport plan.'],
-          ['Harris coast and mountains', 'Use Tarbert or a southern base for one coast road and village cluster. It offers dramatic contrast but is a long transfer from Stornoway.']
+          ['No car via Ullapool: Stornoway base', 'CalMac connects Ullapool with Stornoway. Stay in Stornoway for the town, museum/castle grounds and the local bus network; W10 is the spine to Tarbert via Balallan. West Lewis stone and blackhouse sites need a date-specific bus, taxi or booked tour—do not assume the ferry creates a same-day island circuit.'],
+          ['Car via Ullapool: Lewis north/west day', 'Reserve vehicle space on Ullapool–Stornoway, base in Stornoway or a west-side lodging and keep one Lewis corridor for the day. A car makes Calanais and other dispersed sites easier to link, but ferry arrival and departure still need light plans and a mainland buffer.'],
+          ['Harris via Skye: Tarbert base', 'Take the CalMac Uig–Tarbert ferry from Skye and use Tarbert as the gateway for a south-Harris coast day. Without a car, use the current W10/Tarbert and Harris local bus timetables or prebook a tour/taxi; the ferry terminal is not the beach trailhead. Drivers can reach more coast, but should still choose either a north or south Harris circuit.']
         ],
-        access: 'Stornoway and Tarbert are different ferry gateways, and Lewis with Harris is one landmass with long road times. Buses do not support an unlimited stop-by-stop loop. Book car, tour or accommodation from the exact port and check Sunday and seasonal patterns.',
-        tradeoff: 'West Lewis monuments and Harris beaches do not form one relaxed day. Choosing one island half sacrifices the other’s headline sites but avoids hours of road and a fragile ferry return.',
+        access: 'There are two useful ferry approaches: CalMac Ullapool–Stornoway reaches Lewis from the mainland; CalMac Uig–Tarbert reaches Harris from Skye. No-car travellers should choose Stornoway for the urban base and W10 spine to Tarbert, or Tarbert for a Harris-first stay and a checked local bus/tour; most buses run Monday–Saturday and routes do not serve every beach/site. Drivers should book vehicle space on their exact sailing and choose a north/central Lewis or Harris road base to avoid repeated long cross-island transfers. Rail reaches neither port directly; plan the mainland road/coach leg to Ullapool or the coach connection to Uig separately.',
+        tradeoff: 'No-car travel works best as a Stornoway town-and-spine itinerary or a Tarbert-based Harris trip with local services checked. A driver can combine dispersed Lewis heritage sites or a Harris coast circuit, but west Lewis and remote Harris are still separate full days. The Skye–Tarbert ferry is the direct Harris gateway; Ullapool–Stornoway is the direct mainland–Lewis gateway. Choosing one protects the day from cross-island mileage and missed sailing risk.',
         stages: [
-          ['Leave the correct port base', 'Confirm the day’s road or bus corridor, fuel, final return and ferry check-in before leaving Stornoway or Tarbert.'],
-          ['Read one cultural landscape', 'Use Calanais and related west Lewis sites, Stornoway institutions or one Harris community-and-coast line.'],
-          ['Commit to a bounded island half', 'Continue only within the selected corridor, respecting local communities, weather and parking. Do not cross the island for a sunset after the turnaround.'],
-          ['Return before the port edge', 'Regain accommodation or terminal with margin for single-track roads and wind. Keep the final meal on the same side.']
+          ['Select the ferry port and base together', 'For Ullapool–Stornoway, arrange onward transport and stay in Stornoway if using W10/local buses; for Uig–Tarbert, choose a Tarbert/Harris base and confirm the local route to the planned coast.'],
+          ['Choose the car-free or car day', 'No-car: use Stornoway town or a published bus corridor plus a booked local tour. Car: reserve vehicle space and select one Lewis or Harris road district.'],
+          ['Keep the stops inside that corridor', 'Connect Calanais and west Lewis, or Tarbert with one Harris coast/community area; do not add a far-north Lewis stop to a Harris beach day. Check weather and access before leaving the base.'],
+          ['Return to the same port or overnight base', 'Check the exact CalMac check-in and live sailing status. A Uig–Tarbert cancellation does not make Ullapool reachable without a long mainland transfer; ask the operator before changing ports.']
         ],
-        fallback: 'If coast weather or road conditions fail, use Stornoway Museum nan Eilean, castle grounds and town, or Tarbert’s local services. If a ferry cancels, work with the operator before moving between ports.',
+        fallback: 'In wind or rain, switch a remote coast day to Stornoway’s town and indoor cultural options, or Tarbert/local services if already on Harris; choose a shorter sheltered route only if the bus/road return remains usable. Winter and Sunday service patterns can be thinner, so do not assume a missed bus can be replaced that day. If a ferry is cancelled, stay near the booked port and use CalMac’s rebooking/status advice before considering another port.',
         watch: [
           ['Lewis and Harris are long north to south', 'Shared island status does not make the coasts adjacent. Plan from the overnight base, not a highlights map.'],
-          ['Community life sets the rhythm', 'Sunday opening and local services may differ. Verify respectfully and avoid treating homes or working land as attractions.'],
+          ['The bus spine is date-sensitive', 'W10 links Stornoway and Tarbert via Balallan, but local Harris roads, beaches and the west Lewis sites need their own timetable or tour. Council notes most island bus services run Monday to Saturday; check Sunday and seasonal exceptions.'],
           ['Ferry vehicle space is finite', 'A passenger booking and vehicle space are different. Confirm check-in, port and any standby condition.']
         ],
         duration: 'Allow four to six nights to understand Lewis and Harris without daily road marathons. Each island half deserves a full day.',
         combine: 'Combine Calanais with one west Lewis site cluster or Harris beaches with Tarbert and one community stop. Keep Orkney and Skye for separate itineraries.',
-        verify: 'Check CalMac sailing and vehicle booking, Visit Outer Hebrides service information, site access, weather, Sunday patterns and road conditions before departure.',
+        verify: 'Check the exact CalMac route—Ullapool–Stornoway or Uig–Tarbert—vehicle space, check-in and service status; check Comhairle nan Eilean Siar W10 and relevant Lewis/Harris local bus timetables; then verify site access, weather and Sunday/seasonal service. Sources checked 9 October 2026; exact date schedules govern.',
         sources: [
-          ['https://www.visitouterhebrides.co.uk/', 'Visit Outer Hebrides — official destination guide'],
-          ['https://www.calmac.co.uk/destinations/harris', 'CalMac — Lewis and Harris ferry information']
+          ['https://www.calmac.co.uk/en-gb/destinations/lewis/', 'CalMac — Ullapool–Stornoway Lewis gateway'],
+          ['https://www.calmac.co.uk/en-gb/destinations/harris/', 'CalMac — Uig–Tarbert Harris gateway and coach approach'],
+          ['https://www.calmac.co.uk/en-gb/route-information/uig-tarbert-harris/', 'CalMac — Uig–Tarbert ferry timetable and status'],
+          ['https://www.calmac.co.uk/en-gb/route-information/stornoway-ullapool/', 'CalMac — Stornoway–Ullapool ferry timetable and status'],
+          ['https://www.cne-siar.gov.uk/roads-and-travel/bus-services/lewis-bus-timetables', 'Comhairle nan Eilean Siar — Lewis routes including W10 Stornoway–Tarbert'],
+          ['https://www.cne-siar.gov.uk/roads-and-travel/bus-services/bus-services-overview', 'Comhairle nan Eilean Siar — Lewis and Harris bus service days and connections'],
+          ['https://www.visitouterhebrides.co.uk/planning-your-trip/getting-about/buses', 'Visit Outer Hebrides — public transport planning']
         ]
       })
     ]
