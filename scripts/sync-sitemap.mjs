@@ -32,6 +32,17 @@ const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
+const usaEditedLastmod = '2026-10-09';
+// These six U.S. routes received material editorial updates across two Oct 9 batches.
+// Localized URLs inherit the same date; all other U.S. route dates retain the default.
+const usaEditedRoutes = [
+  '/usa/alaska/',
+  '/usa/alaska/anchorage-kenai/',
+  '/usa/alaska/denali/',
+  '/usa/sierra-parks/',
+  '/usa/sierra-parks/sequoia-giant-forest/',
+  '/usa/sierra-parks/kings-canyon/'
+];
 const parisLastmod = '2026-10-06';
 const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';
@@ -187,6 +198,11 @@ for (const match of existing.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]
   records.set(route, { route, lastmod: match[2], changefreq: match[3], priority: match[4] });
 }
 for (const [route, lastmod, changefreq, priority] of newRoutes) records.set(route, { route, lastmod, changefreq, priority });
+for (const route of usaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited U.S. route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaEditedLastmod });
+}
 for (const route of japanEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Japan route absent from sitemap: ${route}`);
