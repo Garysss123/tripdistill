@@ -24,7 +24,7 @@ for (const guide of targetGuides) {
   }
 }
 const targetHubs = unitedKingdomClusters.filter((cluster) => cluster.reviewDate || cluster.reviewDateISO);
-if (targetHubs.length !== 1) throw new Error(`Expected one UK hub date override, found ${targetHubs.length}.`);
+if (targetHubs.length !== 3) throw new Error(`Expected three UK hub date overrides, found ${targetHubs.length}.`);
 for (const cluster of targetHubs) {
   if (cluster.reviewDate !== expectedReviewLabel || cluster.reviewDateISO !== expectedReviewDate) {
     throw new Error(`Unexpected UK date override on /united-kingdom/${cluster.slug}/.`);
@@ -105,4 +105,4 @@ for (const route of routes) {
 }
 
 if (checked !== 405) throw new Error(`Expected 405 UK language pages, checked ${checked}.`);
-console.log(`United Kingdom route date regression passed: ${checked} language pages; nine route overrides, one hub override; published dates and all other route dates unchanged.`);
+console.log(`United Kingdom route date regression passed: ${checked} language pages; nine route overrides, three hub overrides; published dates and all other route dates unchanged.`);

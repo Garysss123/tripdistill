@@ -32,6 +32,39 @@ const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
+const chinaEditedLastmod = '2026-10-09';
+const chinaEditedRoutes = [
+  '/china/beijing/central-axis-forbidden-city/',
+  '/china/beijing/jingshan-beihai/',
+  '/china/beijing/shichahai-drum-tower/',
+  '/china/datong/',
+  '/china/hangzhou/lingyin-feilai-peak/',
+  '/china/hangzhou/longjing-nine-creeks/',
+  '/china/hangzhou/xixi-wetland/',
+  '/china/luoyang/',
+  '/china/pingyao/',
+  '/china/shanghai/peoples-square-museums/',
+  '/china/shanghai/the-bund-huangpu/',
+  '/china/shanghai/yuyuan-old-city/',
+  '/china/xian/'
+];
+const unitedKingdomEditedLastmod = '2026-10-09';
+// The North Wales and Scottish Islands hubs are updated generated summaries;
+// their dates follow the dated child routes, though hubs do not count as main routes.
+const unitedKingdomEditedRoutes = [
+  '/united-kingdom/cardiff-south-wales/',
+  '/united-kingdom/north-wales-eryri/',
+  '/united-kingdom/north-wales-eryri/caernarfon-anglesey/',
+  '/united-kingdom/north-wales-eryri/conwy-llandudno/',
+  '/united-kingdom/north-wales-eryri/yr-wyddfa-gateways/',
+  '/united-kingdom/scottish-islands/isle-of-skye/',
+  '/united-kingdom/scottish-islands/',
+  '/united-kingdom/scottish-islands/lewis-harris/',
+  '/united-kingdom/scottish-islands/orkney-mainland/',
+  '/united-kingdom/cardiff-south-wales/cardiff-castle-bay/',
+  '/united-kingdom/cardiff-south-wales/bannau-brycheiniog/',
+  '/united-kingdom/cardiff-south-wales/swansea-gower/'
+];
 const usaEditedLastmod = '2026-10-09';
 // These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
@@ -50,6 +83,14 @@ const usaEditedRoutes = [
   '/usa/utah-parks/bryce/',
   '/usa/utah-parks/moab-arches-canyonlands/'
 ];
+const australiaReviewDates = new Map([
+  ...australiaClusters
+    .filter((cluster) => cluster.reviewIsoDate)
+    .map((cluster) => [`/australia/${cluster.slug}/`, cluster.reviewIsoDate]),
+  ...australiaGuides
+    .filter((guide) => guide.reviewIsoDate)
+    .map((guide) => [guide.url, guide.reviewIsoDate])
+]);
 const parisLastmod = '2026-10-06';
 const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';
@@ -205,10 +246,25 @@ for (const match of existing.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]
   records.set(route, { route, lastmod: match[2], changefreq: match[3], priority: match[4] });
 }
 for (const [route, lastmod, changefreq, priority] of newRoutes) records.set(route, { route, lastmod, changefreq, priority });
+for (const route of chinaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaEditedLastmod });
+}
+for (const route of unitedKingdomEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomEditedLastmod });
+}
 for (const route of usaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited U.S. route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaEditedLastmod });
+}
+for (const [route, lastmod] of australiaReviewDates) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Australia route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod });
 }
 for (const route of japanEditedRoutes) {
   const record = records.get(route);

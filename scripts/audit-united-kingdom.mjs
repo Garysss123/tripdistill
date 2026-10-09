@@ -9,6 +9,14 @@ const failures = [];
 const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const routes = ['/united-kingdom/', ...unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`), ...unitedKingdomGuides.map((guide) => guide.url)];
+const materiallyEditedRoutes = new Set([
+  ...unitedKingdomClusters
+    .filter((cluster) => cluster.reviewDateISO === '2026-10-09')
+    .map((cluster) => `/united-kingdom/${cluster.slug}/`),
+  ...unitedKingdomGuides
+    .filter((guide) => guide.reviewDateISO === '2026-10-09')
+    .map((guide) => guide.url)
+]);
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -142,7 +150,10 @@ check(home.includes('<!-- UNITED_KINGDOM_HOME_START -->') && home.includes('<!--
 check(read('scripts/build-dist.mjs').includes("'united-kingdom'"), 'United Kingdom absent from build allowlist');
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
-  for (const route of routes) check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>2026-09-20</lastmod>`), `${route}: sitemap missing or stale`);
+  for (const route of routes) {
+    const expectedLastmod = materiallyEditedRoutes.has(route) ? '2026-10-09' : '2026-09-20';
+    check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
 }
 
 if (failures.length) {

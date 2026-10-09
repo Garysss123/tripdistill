@@ -7,6 +7,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
   c({
     slug: 'scottish-islands',
     name: 'Skye, Orkney & the Outer Hebrides',
+    reviewDate: '9 October 2026',
+    reviewDateISO: '2026-10-09',
     nation: 'Scotland',
     band: 'scotland',
     family: 'ferry-weather-manifest',
@@ -438,6 +440,8 @@ export const unitedKingdomIslandsWalesNiClusters = [
   c({
     slug: 'north-wales-eryri',
     name: 'North Wales & Eryri',
+    reviewDate: '9 October 2026',
+    reviewDateISO: '2026-10-09',
     nation: 'Wales',
     band: 'wales',
     family: 'castle-mountain-coast-board',

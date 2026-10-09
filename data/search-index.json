@@ -5571,1074 +5571,6 @@
     ]
   },
   {
-    "title": "United States Travel Guide",
-    "url": "/usa/",
-    "parent": "North America",
-    "type": "Country",
-    "summary": "Choose a workable United States trip: rail-connected cities, a selective park journey or an island stay, with 24 regional guides and 72 local chapters.",
-    "keywords": [
-      "USA",
-      "United States",
-      "America"
-    ]
-  },
-  {
-    "title": "New York City",
-    "url": "/usa/new-york/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan a first New York trip with neighborhood-by-neighborhood hotel trade-offs, JFK, LaGuardia and Newark transfers, and a realistic three-day itinerary.",
-    "keywords": [
-      "New York City",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Lower Manhattan & the Harbor",
-    "url": "/usa/new-york/lower-manhattan/",
-    "parent": "New York City",
-    "type": "Local guide",
-    "summary": "Choose a Lower Manhattan walking day or a Liberty and Ellis Island visit, with ticket distinctions, a named street route and practical return options.",
-    "keywords": [
-      "Lower Manhattan & the Harbor",
-      "New York City"
-    ]
-  },
-  {
-    "title": "Midtown & Central Park",
-    "url": "/usa/new-york/midtown-central-park/",
-    "parent": "New York City",
-    "type": "Local guide",
-    "summary": "Build a Midtown day around MoMA or The Met, a manageable Central Park walk and Broadway, with geographic trade-offs and realistic alternatives.",
-    "keywords": [
-      "Midtown & Central Park",
-      "New York City"
-    ]
-  },
-  {
-    "title": "Brooklyn Heights & DUMBO",
-    "url": "/usa/new-york/brooklyn-waterfront/",
-    "parent": "New York City",
-    "type": "Local guide",
-    "summary": "Walk Brooklyn Heights and DUMBO through the promenade, Pier 1 and waterfront parks, with subway choices, step-free planning and bridge-return trade-offs.",
-    "keywords": [
-      "Brooklyn Heights & DUMBO",
-      "New York City"
-    ]
-  },
-  {
-    "title": "Boston & Cambridge",
-    "url": "/usa/boston/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Boston or Cambridge hotel base, compare Logan airport transfers, and plan history, university and harbor days without rushing across the city.",
-    "keywords": [
-      "Boston & Cambridge",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Freedom Trail & North End",
-    "url": "/usa/boston/freedom-trail/",
-    "parent": "Boston & Cambridge",
-    "type": "Local guide",
-    "summary": "Walk Boston’s Freedom Trail in manageable sections, choosing historic interiors, a North End break and whether to continue to Charlestown Navy Yard.",
-    "keywords": [
-      "Freedom Trail & North End",
-      "Boston & Cambridge"
-    ]
-  },
-  {
-    "title": "Cambridge & Harvard Square",
-    "url": "/usa/boston/cambridge-harvard/",
-    "parent": "Boston & Cambridge",
-    "type": "Local guide",
-    "summary": "Plan a Harvard Square visit around campus access and a choice of art or natural-history museums, with a Charles River option and a clear subway return.",
-    "keywords": [
-      "Cambridge & Harvard Square",
-      "Boston & Cambridge"
-    ]
-  },
-  {
-    "title": "Boston Harbor & Islands",
-    "url": "/usa/boston/harbor-islands/",
-    "parent": "Boston & Cambridge",
-    "type": "Local guide",
-    "summary": "Choose a Boston Harbor Island by departure pier, seasonal ferry and terrain, with a return-first day plan, packing decisions and a mainland alternative.",
-    "keywords": [
-      "Boston Harbor & Islands",
-      "Boston & Cambridge"
-    ]
-  },
-  {
-    "title": "Philadelphia",
-    "url": "/usa/philadelphia/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Philadelphia around Old City, Center City and the museum parkway, with hotel-base trade-offs, station choices and a selective two- or three-day stay.",
-    "keywords": [
-      "Philadelphia",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Old City & Independence Park",
-    "url": "/usa/philadelphia/old-city/",
-    "parent": "Philadelphia",
-    "type": "Local guide",
-    "summary": "Plan Independence Hall and the Liberty Bell with their different entry rules, then follow an Old City walk with time for interpretation and a real break.",
-    "keywords": [
-      "Old City & Independence Park",
-      "Philadelphia"
-    ]
-  },
-  {
-    "title": "Museum Parkway & Schuylkill River",
-    "url": "/usa/philadelphia/parkway-museums/",
-    "parent": "Philadelphia",
-    "type": "Local guide",
-    "summary": "Choose the Philadelphia Museum of Art, Barnes or Rodin before planning the parkway and Schuylkill, with walking, admission and shorter-day alternatives.",
-    "keywords": [
-      "Museum Parkway & Schuylkill River",
-      "Philadelphia"
-    ]
-  },
-  {
-    "title": "Reading Terminal & Center City",
-    "url": "/usa/philadelphia/reading-terminal/",
-    "parent": "Philadelphia",
-    "type": "Local guide",
-    "summary": "Make Reading Terminal Market a useful Center City meal stop: compare open merchants, plan a short food circuit and continue toward City Hall or Chinatown.",
-    "keywords": [
-      "Reading Terminal & Center City",
-      "Philadelphia"
-    ]
-  },
-  {
-    "title": "Washington, DC",
-    "url": "/usa/washington-dc/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Metro-connected Washington base, compare airport arrivals and plan separate museum, memorial and Georgetown days with realistic return routes.",
-    "keywords": [
-      "Washington, DC",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "National Mall & Memorials",
-    "url": "/usa/washington-dc/national-mall/",
-    "parent": "Washington, DC",
-    "type": "Local guide",
-    "summary": "Plan a selective National Mall memorial walk from the Washington Monument toward Lincoln, with a Tidal Basin alternative and weather-aware exits.",
-    "keywords": [
-      "National Mall & Memorials",
-      "Washington, DC"
-    ]
-  },
-  {
-    "title": "Smithsonian Museums & Capitol Hill",
-    "url": "/usa/washington-dc/smithsonian/",
-    "parent": "Washington, DC",
-    "type": "Local guide",
-    "summary": "Choose a Smithsonian museum by subject, address and entry rules, distinguishing Air and Space locations and a separately reserved Capitol Hill visit.",
-    "keywords": [
-      "Smithsonian Museums & Capitol Hill",
-      "Washington, DC"
-    ]
-  },
-  {
-    "title": "Georgetown & the Potomac",
-    "url": "/usa/washington-dc/georgetown/",
-    "parent": "Washington, DC",
-    "type": "Local guide",
-    "summary": "Explore Georgetown from M Street to the canal and Potomac, choosing a manageable slope, a meal and a clear return rather than an overlong towpath walk.",
-    "keywords": [
-      "Georgetown & the Potomac",
-      "Washington, DC"
-    ]
-  },
-  {
-    "title": "New England Coast & Mountains",
-    "url": "/usa/new-england/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Maine coast or northern mountain trip, compare overnight bases and build a selective New England week without turning every day into a drive.",
-    "keywords": [
-      "New England Coast & Mountains",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Portland, Maine & Casco Bay",
-    "url": "/usa/new-england/portland-maine/",
-    "parent": "New England Coast & Mountains",
-    "type": "Local guide",
-    "summary": "Explore Portland’s Old Port, choose a Casco Bay island sailing and separate a Cape Elizabeth lighthouse visit from the downtown walking day.",
-    "keywords": [
-      "Portland, Maine & Casco Bay",
-      "New England Coast & Mountains"
-    ]
-  },
-  {
-    "title": "Acadia & Mount Desert Island",
-    "url": "/usa/new-england/acadia/",
-    "parent": "New England Coast & Mountains",
-    "type": "Local guide",
-    "summary": "Plan Acadia around coast, Jordan Pond or carriage roads, separating park admission, Cadillac vehicle reservations and the seasonal Island Explorer.",
-    "keywords": [
-      "Acadia & Mount Desert Island",
-      "New England Coast & Mountains"
-    ]
-  },
-  {
-    "title": "White Mountains & Vermont Roads",
-    "url": "/usa/new-england/white-mountains-vermont/",
-    "parent": "New England Coast & Mountains",
-    "type": "Local guide",
-    "summary": "Choose White Mountain bases and a Kancamagus drive before a separate Vermont stay, with legal stops, mountain alternatives and realistic transfer days.",
-    "keywords": [
-      "White Mountains & Vermont Roads",
-      "New England Coast & Mountains"
-    ]
-  },
-  {
-    "title": "Chicago",
-    "url": "/usa/chicago/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Chicago with CTA-connected hotel bases, O’Hare and Midway arrivals, and separate architecture, Museum Campus and neighborhood days.",
-    "keywords": [
-      "Chicago",
-      "Great Lakes"
-    ]
-  },
-  {
-    "title": "The Loop & Chicago Riverwalk",
-    "url": "/usa/chicago/loop-riverwalk/",
-    "parent": "Chicago",
-    "type": "Local guide",
-    "summary": "Choose a Chicago architecture cruise or a flexible Riverwalk and Loop route, with distinct piers, street-level connections and an indoor alternative.",
-    "keywords": [
-      "The Loop & Chicago Riverwalk",
-      "Chicago"
-    ]
-  },
-  {
-    "title": "Museum Campus & Lakefront",
-    "url": "/usa/chicago/museum-lakefront/",
-    "parent": "Chicago",
-    "type": "Local guide",
-    "summary": "Compare the Field Museum, Shedd Aquarium and Adler Planetarium, then plan one Museum Campus visit with a manageable lakeshore walk and return.",
-    "keywords": [
-      "Museum Campus & Lakefront",
-      "Chicago"
-    ]
-  },
-  {
-    "title": "Wicker Park, Logan Square & Neighborhood Chicago",
-    "url": "/usa/chicago/neighborhoods/",
-    "parent": "Chicago",
-    "type": "Local guide",
-    "summary": "Choose Wicker Park or Logan Square for a Chicago neighborhood day, connecting Blue Line stations, shops, food and an optional planned music evening.",
-    "keywords": [
-      "Wicker Park, Logan Square & Neighborhood Chicago",
-      "Chicago"
-    ]
-  },
-  {
-    "title": "Seattle & Puget Sound",
-    "url": "/usa/seattle/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Seattle with light-rail hotel bases, a market and waterfront day, a Bainbridge crossing and a separately planned Mount Rainier outing.",
-    "keywords": [
-      "Seattle & Puget Sound",
-      "Pacific Northwest"
-    ]
-  },
-  {
-    "title": "Pike Place & Seattle Waterfront",
-    "url": "/usa/seattle/pike-place-waterfront/",
-    "parent": "Seattle & Puget Sound",
-    "type": "Local guide",
-    "summary": "Connect Pike Place Market with Overlook Walk and Seattle’s waterfront, choosing market levels, a meal and an aquarium visit without repeated hill climbs.",
-    "keywords": [
-      "Pike Place & Seattle Waterfront",
-      "Seattle & Puget Sound"
-    ]
-  },
-  {
-    "title": "Bainbridge Island Ferry Day",
-    "url": "/usa/seattle/bainbridge/",
-    "parent": "Seattle & Puget Sound",
-    "type": "Local guide",
-    "summary": "Take a walk-on Bainbridge ferry day through Winslow, the art museum and Waterfront Park, separating Bloedel Reserve from the compact town walk.",
-    "keywords": [
-      "Bainbridge Island Ferry Day",
-      "Seattle & Puget Sound"
-    ]
-  },
-  {
-    "title": "Mount Rainier National Park",
-    "url": "/usa/seattle/mount-rainier/",
-    "parent": "Seattle & Puget Sound",
-    "type": "Local guide",
-    "summary": "Plan Mount Rainier through Nisqually, Longmire and Paradise, with current road-closure context, trail choices and a separate park-admission decision.",
-    "keywords": [
-      "Mount Rainier National Park",
-      "Seattle & Puget Sound"
-    ]
-  },
-  {
-    "title": "Portland & the Columbia Gorge",
-    "url": "/usa/portland-oregon/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Portland with MAX-connected hotel choices, a city and garden stay, and separate Columbia Gorge or Cannon Beach days matched to transport and weather.",
-    "keywords": [
-      "Portland & the Columbia Gorge",
-      "Pacific Northwest"
-    ]
-  },
-  {
-    "title": "Washington Park & Portland Gardens",
-    "url": "/usa/portland-oregon/washington-park/",
-    "parent": "Portland & the Columbia Gorge",
-    "type": "Local guide",
-    "summary": "Choose Portland Japanese Garden, the Rose Test Garden or Hoyt Arboretum, with Washington Park station, shuttle and admission differences made clear.",
-    "keywords": [
-      "Washington Park & Portland Gardens",
-      "Portland & the Columbia Gorge"
-    ]
-  },
-  {
-    "title": "Columbia River Gorge",
-    "url": "/usa/portland-oregon/columbia-gorge/",
-    "parent": "Portland & the Columbia Gorge",
-    "type": "Local guide",
-    "summary": "Plan a focused Columbia Gorge outing by car or Gorge Express, distinguishing Multnomah Falls permits, current bus limitations and a Crown Point option.",
-    "keywords": [
-      "Columbia River Gorge",
-      "Portland & the Columbia Gorge"
-    ]
-  },
-  {
-    "title": "Cannon Beach & the Oregon Coast",
-    "url": "/usa/portland-oregon/oregon-coast/",
-    "parent": "Portland & the Columbia Gorge",
-    "type": "Local guide",
-    "summary": "Plan Cannon Beach around town, Haystack Rock and a safe return, with tide-pool guidance, Ecola closure context and an overnight-versus-day-trip comparison.",
-    "keywords": [
-      "Cannon Beach & the Oregon Coast",
-      "Portland & the Columbia Gorge"
-    ]
-  },
-  {
-    "title": "San Francisco & the Bay",
-    "url": "/usa/san-francisco/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a San Francisco base by hills and transit, then build separate Alcatraz, Presidio and Mission days without treating the whole Bay Area as downtown.",
-    "keywords": [
-      "San Francisco & the Bay",
-      "California"
-    ]
-  },
-  {
-    "title": "Embarcadero & Alcatraz",
-    "url": "/usa/san-francisco/waterfront-alcatraz/",
-    "parent": "San Francisco & the Bay",
-    "type": "Local guide",
-    "summary": "Plan an Alcatraz landing from Pier 33 with island interpretation, access and return decisions, or choose a separate Ferry Building and waterfront day.",
-    "keywords": [
-      "Embarcadero & Alcatraz",
-      "San Francisco & the Bay"
-    ]
-  },
-  {
-    "title": "Golden Gate & the Presidio",
-    "url": "/usa/san-francisco/golden-gate-presidio/",
-    "parent": "San Francisco & the Bay",
-    "type": "Local guide",
-    "summary": "Connect Presidio Tunnel Tops, Crissy Field and a selected Golden Gate view, distinguishing bridge pedestrian access, Fort Point and shuttle restrictions.",
-    "keywords": [
-      "Golden Gate & the Presidio",
-      "San Francisco & the Bay"
-    ]
-  },
-  {
-    "title": "Mission District & Neighborhood Walks",
-    "url": "/usa/san-francisco/mission-neighborhoods/",
-    "parent": "San Francisco & the Bay",
-    "type": "Local guide",
-    "summary": "Read Mission District murals around 24th Street or Clarion Alley, with artist context, a neighborhood meal and a separate Mission Dolores choice.",
-    "keywords": [
-      "Mission District & Neighborhood Walks",
-      "San Francisco & the Bay"
-    ]
-  },
-  {
-    "title": "Los Angeles",
-    "url": "/usa/los-angeles/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Los Angeles hotel around district days, with current LAX connections and separate Downtown, Hollywood–Griffith and Santa Monica–Venice plans.",
-    "keywords": [
-      "Los Angeles",
-      "California"
-    ]
-  },
-  {
-    "title": "Downtown LA & the Arts District",
-    "url": "/usa/los-angeles/downtown-arts/",
-    "parent": "Los Angeles",
-    "type": "Local guide",
-    "summary": "Connect The Broad, Bunker Hill, Angels Flight and Grand Central Market, choosing an art or architecture focus instead of treating Downtown LA as one block.",
-    "keywords": [
-      "Downtown LA & the Arts District",
-      "Los Angeles"
-    ]
-  },
-  {
-    "title": "Hollywood & Griffith Park",
-    "url": "/usa/los-angeles/hollywood-griffith/",
-    "parent": "Los Angeles",
-    "type": "Local guide",
-    "summary": "Plan Hollywood and Griffith Observatory around a realistic hill connection, separate planetarium admission and a known evening return.",
-    "keywords": [
-      "Hollywood & Griffith Park",
-      "Los Angeles"
-    ]
-  },
-  {
-    "title": "Santa Monica & Venice",
-    "url": "/usa/los-angeles/santa-monica-venice/",
-    "parent": "Los Angeles",
-    "type": "Local guide",
-    "summary": "Choose Santa Monica Pier, a selected coastal walk or Venice’s boardwalk and canals, with E Line arrival, separate attraction costs and a workable return.",
-    "keywords": [
-      "Santa Monica & Venice",
-      "Los Angeles"
-    ]
-  },
-  {
-    "title": "San Diego",
-    "url": "/usa/san-diego/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan San Diego with a useful airport connection and separate Balboa Park, La Jolla and harbor days, choosing the base and car days around real destinations.",
-    "keywords": [
-      "San Diego",
-      "California"
-    ]
-  },
-  {
-    "title": "Balboa Park",
-    "url": "/usa/san-diego/balboa-park/",
-    "parent": "San Diego",
-    "type": "Local guide",
-    "summary": "Choose Balboa Park museums and gardens around El Prado, with separate admission, current paid parking and a zoo-versus-cultural-day decision.",
-    "keywords": [
-      "Balboa Park",
-      "San Diego"
-    ]
-  },
-  {
-    "title": "La Jolla Coast",
-    "url": "/usa/san-diego/la-jolla/",
-    "parent": "San Diego",
-    "type": "Local guide",
-    "summary": "Plan a land-based La Jolla visit that distinguishes the Cove, Point La Jolla and Children’s Pool, with current wildlife boundaries and a village meal.",
-    "keywords": [
-      "La Jolla Coast",
-      "San Diego"
-    ]
-  },
-  {
-    "title": "San Diego Harbor & Coronado",
-    "url": "/usa/san-diego/harbor-coronado/",
-    "parent": "San Diego",
-    "type": "Local guide",
-    "summary": "Choose a San Diego maritime museum or a Coronado ferry day, identifying the exact departure, bay landing and separate ocean-beach connection.",
-    "keywords": [
-      "San Diego Harbor & Coronado",
-      "San Diego"
-    ]
-  },
-  {
-    "title": "Yosemite & the Sierra Parks",
-    "url": "/usa/sierra-parks/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose separate Sierra park bases for Yosemite Valley, Giant Forest and Kings Canyon, with current access, seasonal shuttle and mountain-road trade-offs.",
-    "keywords": [
-      "Yosemite & the Sierra Parks",
-      "Western Parks"
-    ]
-  },
-  {
-    "title": "Yosemite Valley",
-    "url": "/usa/sierra-parks/yosemite-valley/",
-    "parent": "Yosemite & the Sierra Parks",
-    "type": "Local guide",
-    "summary": "Plan a focused Yosemite Valley visit with the 2026 entry policy, YARTS and Valley shuttle distinctions, and selected meadow or lower-waterfall walks.",
-    "keywords": [
-      "Yosemite Valley",
-      "Yosemite & the Sierra Parks"
-    ]
-  },
-  {
-    "title": "Sequoia Giant Forest",
-    "url": "/usa/sierra-parks/sequoia-giant-forest/",
-    "parent": "Yosemite & the Sierra Parks",
-    "type": "Local guide",
-    "summary": "Visit Giant Forest through a chosen road approach, distinguishing General Sherman access, Big Trees Trail, Congress Trail work and seasonal shuttles.",
-    "keywords": [
-      "Sequoia Giant Forest",
-      "Yosemite & the Sierra Parks"
-    ]
-  },
-  {
-    "title": "Kings Canyon & Grant Grove",
-    "url": "/usa/sierra-parks/kings-canyon/",
-    "parent": "Yosemite & the Sierra Parks",
-    "type": "Local guide",
-    "summary": "Separate Grant Grove from the Cedar Grove canyon drive, with Highway 180 status, a grove-focused day and a deliberately planned deeper-canyon visit.",
-    "keywords": [
-      "Kings Canyon & Grant Grove",
-      "Yosemite & the Sierra Parks"
-    ]
-  },
-  {
-    "title": "Las Vegas & Southern Nevada",
-    "url": "/usa/las-vegas/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Las Vegas around the location of a show and hotel, with separate Strip, downtown and Red Rock days rather than a transfer-heavy attraction list.",
-    "keywords": [
-      "Las Vegas & Southern Nevada",
-      "Southwest"
-    ]
-  },
-  {
-    "title": "The Strip & Shows",
-    "url": "/usa/las-vegas/strip/",
-    "parent": "Las Vegas & Southern Nevada",
-    "type": "Local guide",
-    "summary": "Choose a manageable central Strip visit around Bellagio, a meal and one booked show, distinguishing free displays, changeover dates and Monorail access.",
-    "keywords": [
-      "The Strip & Shows",
-      "Las Vegas & Southern Nevada"
-    ]
-  },
-  {
-    "title": "Downtown Las Vegas",
-    "url": "/usa/las-vegas/downtown/",
-    "parent": "Las Vegas & Southern Nevada",
-    "type": "Local guide",
-    "summary": "Compare the Neon Museum, Mob Museum and Fremont Street as different downtown experiences, with the actual museum location and a planned evening return.",
-    "keywords": [
-      "Downtown Las Vegas",
-      "Las Vegas & Southern Nevada"
-    ]
-  },
-  {
-    "title": "Red Rock Canyon",
-    "url": "/usa/las-vegas/red-rock/",
-    "parent": "Las Vegas & Southern Nevada",
-    "type": "Local guide",
-    "summary": "Plan Red Rock Canyon as a separate desert outing, distinguishing the Scenic Drive reservation season, viewpoints, short walks and a confirmed return.",
-    "keywords": [
-      "Red Rock Canyon",
-      "Las Vegas & Southern Nevada"
-    ]
-  },
-  {
-    "title": "Utah Canyon Country",
-    "url": "/usa/utah-parks/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Zion–Bryce trip or a Moab-based stay before linking Utah parks, with separate bases, seasonal transport and selective park days.",
-    "keywords": [
-      "Utah Canyon Country",
-      "Southwest"
-    ]
-  },
-  {
-    "title": "Zion Canyon",
-    "url": "/usa/utah-parks/zion/",
-    "parent": "Utah Canyon Country",
-    "type": "Local guide",
-    "summary": "Plan Zion Canyon with the Springdale and park shuttle distinction, a Pa’rus or Riverside Walk visit, and separate decisions for Angels Landing and the Narrows.",
-    "keywords": [
-      "Zion Canyon",
-      "Utah Canyon Country"
-    ]
-  },
-  {
-    "title": "Bryce Canyon",
-    "url": "/usa/utah-parks/bryce/",
-    "parent": "Utah Canyon Country",
-    "type": "Local guide",
-    "summary": "Choose Bryce’s Sunrise–Sunset rim section or a separately planned descent, with hoodoo interpretation, shuttle timing and a realistic climb back.",
-    "keywords": [
-      "Bryce Canyon",
-      "Utah Canyon Country"
-    ]
-  },
-  {
-    "title": "Moab, Arches & Canyonlands",
-    "url": "/usa/utah-parks/moab-arches-canyonlands/",
-    "parent": "Utah Canyon Country",
-    "type": "Local guide",
-    "summary": "Give Arches and Canyonlands’ Island in the Sky separate Moab days, distinguishing viewpoints, longer hikes, park districts and Dead Horse Point admission.",
-    "keywords": [
-      "Moab, Arches & Canyonlands",
-      "Utah Canyon Country"
-    ]
-  },
-  {
-    "title": "Arizona & the Grand Canyon",
-    "url": "/usa/arizona/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan an Arizona stay with separate Phoenix, Sedona and Grand Canyon South Rim bases, matching elevation, access and actual transfer days to the trip.",
-    "keywords": [
-      "Arizona & the Grand Canyon",
-      "Southwest"
-    ]
-  },
-  {
-    "title": "Grand Canyon South Rim",
-    "url": "/usa/arizona/grand-canyon/",
-    "parent": "Arizona & the Grand Canyon",
-    "type": "Local guide",
-    "summary": "Choose a Grand Canyon South Rim day around Mather Point, Yavapai and a selected rim section, with shuttle seasons and West/North Rim distinctions.",
-    "keywords": [
-      "Grand Canyon South Rim",
-      "Arizona & the Grand Canyon"
-    ]
-  },
-  {
-    "title": "Sedona & Red Rock Trails",
-    "url": "/usa/arizona/sedona/",
-    "parent": "Arizona & the Grand Canyon",
-    "type": "Local guide",
-    "summary": "Choose a Sedona base and one suitable red-rock visit, distinguishing trailhead shuttle parking, recreation passes, the chapel and town time.",
-    "keywords": [
-      "Sedona & Red Rock Trails",
-      "Arizona & the Grand Canyon"
-    ]
-  },
-  {
-    "title": "Phoenix & Scottsdale",
-    "url": "/usa/arizona/phoenix-scottsdale/",
-    "parent": "Arizona & the Grand Canyon",
-    "type": "Local guide",
-    "summary": "Compare the Heard Museum, Desert Botanical Garden and Old Town Scottsdale for a heat-aware cultural stay without a mandatory summit hike.",
-    "keywords": [
-      "Phoenix & Scottsdale",
-      "Arizona & the Grand Canyon"
-    ]
-  },
-  {
-    "title": "Denver & the Colorado Rockies",
-    "url": "/usa/colorado/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Denver plus either Rocky Mountain National Park or a mountain-town base, with airport rail, separate park access and realistic transfer days.",
-    "keywords": [
-      "Denver & the Colorado Rockies",
-      "Mountain West"
-    ]
-  },
-  {
-    "title": "Denver Union Station & Museums",
-    "url": "/usa/colorado/denver/",
-    "parent": "Denver & the Colorado Rockies",
-    "type": "Local guide",
-    "summary": "Use Denver Union Station for an arrival and neighborhood visit, then choose the Denver Art Museum or History Colorado Center as a separate cultural block.",
-    "keywords": [
-      "Denver Union Station & Museums",
-      "Denver & the Colorado Rockies"
-    ]
-  },
-  {
-    "title": "Rocky Mountain National Park",
-    "url": "/usa/colorado/rocky-mountain/",
-    "parent": "Denver & the Colorado Rockies",
-    "type": "Local guide",
-    "summary": "Distinguish Rocky Mountain timed entry, Bear Lake Road entry and the Estes Park Hiker Shuttle before choosing a lake or Trail Ridge Road day.",
-    "keywords": [
-      "Rocky Mountain National Park",
-      "Denver & the Colorado Rockies"
-    ]
-  },
-  {
-    "title": "Colorado Mountain Towns",
-    "url": "/usa/colorado/mountain-towns/",
-    "parent": "Denver & the Colorado Rockies",
-    "type": "Local guide",
-    "summary": "Choose Summit County, Vail or Aspen as a mountain-town base, with a town-centered first day and separately confirmed lifts, trails and Maroon Bells access.",
-    "keywords": [
-      "Colorado Mountain Towns",
-      "Denver & the Colorado Rockies"
-    ]
-  },
-  {
-    "title": "Yellowstone & Grand Teton",
-    "url": "/usa/yellowstone-tetons/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Yellowstone and Grand Teton bases by actual park roads, separating thermal basins, canyon and wildlife days from a Jenny Lake and mountain stay.",
-    "keywords": [
-      "Yellowstone & Grand Teton",
-      "Mountain West"
-    ]
-  },
-  {
-    "title": "Yellowstone Geyser Basins",
-    "url": "/usa/yellowstone-tetons/geyser-basins/",
-    "parent": "Yellowstone & Grand Teton",
-    "type": "Local guide",
-    "summary": "Visit Yellowstone thermal basins with an Old Faithful focus, distinguishing eruption predictions, Midway boardwalks and the Grand Prismatic Overlook trail.",
-    "keywords": [
-      "Yellowstone Geyser Basins",
-      "Yellowstone & Grand Teton"
-    ]
-  },
-  {
-    "title": "Yellowstone Canyon & Wildlife Valleys",
-    "url": "/usa/yellowstone-tetons/canyon-lamar/",
-    "parent": "Yellowstone & Grand Teton",
-    "type": "Local guide",
-    "summary": "Choose a Yellowstone canyon-and-Hayden day or a northern Lamar outing, with named viewpoints, current wildlife distances and a realistic return.",
-    "keywords": [
-      "Yellowstone Canyon & Wildlife Valleys",
-      "Yellowstone & Grand Teton"
-    ]
-  },
-  {
-    "title": "Grand Teton & Jackson",
-    "url": "/usa/yellowstone-tetons/grand-teton/",
-    "parent": "Yellowstone & Grand Teton",
-    "type": "Local guide",
-    "summary": "Plan Grand Teton around Jenny Lake, a selected historic or mountain viewpoint and a separate base, distinguishing lake boats from longer backcountry walks.",
-    "keywords": [
-      "Grand Teton & Jackson",
-      "Yellowstone & Grand Teton"
-    ]
-  },
-  {
-    "title": "New Orleans",
-    "url": "/usa/new-orleans/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a New Orleans base and distinct Quarter, Garden District and river or wetland days, with airport connections, live-music planning and current closures.",
-    "keywords": [
-      "New Orleans",
-      "South"
-    ]
-  },
-  {
-    "title": "French Quarter & Live Music",
-    "url": "/usa/new-orleans/french-quarter/",
-    "parent": "New Orleans",
-    "type": "Local guide",
-    "summary": "Walk a selected French Quarter route through Jackson Square, Royal Street and museum interpretation, then choose a music program rather than a nightlife checklist.",
-    "keywords": [
-      "French Quarter & Live Music",
-      "New Orleans"
-    ]
-  },
-  {
-    "title": "Garden District & Streetcars",
-    "url": "/usa/new-orleans/garden-district/",
-    "parent": "New Orleans",
-    "type": "Local guide",
-    "summary": "Plan a St. Charles streetcar and Garden District visit with public-street architecture, a Magazine Street meal and the current Lafayette Cemetery No. 1 closure.",
-    "keywords": [
-      "Garden District & Streetcars",
-      "New Orleans"
-    ]
-  },
-  {
-    "title": "Mississippi River & Wetlands",
-    "url": "/usa/new-orleans/river-wetlands/",
-    "parent": "New Orleans",
-    "type": "Local guide",
-    "summary": "Choose an Algiers ferry crossing or a separate wetland outing, with the 2026 Barataria closure, relocated Wetland Trace access and a confirmed return.",
-    "keywords": [
-      "Mississippi River & Wetlands",
-      "New Orleans"
-    ]
-  },
-  {
-    "title": "Atlanta",
-    "url": "/usa/atlanta/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose an Atlanta base near the actual MARTA route, then separate the King historic district, Midtown museums and a selected Beltline outing into useful days.",
-    "keywords": [
-      "Atlanta",
-      "South"
-    ]
-  },
-  {
-    "title": "Martin Luther King, Jr. Historic District",
-    "url": "/usa/atlanta/king-historic-district/",
-    "parent": "Atlanta",
-    "type": "Local guide",
-    "summary": "Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, Birth Home restrictions and distinct King Center spaces.",
-    "keywords": [
-      "Martin Luther King, Jr. Historic District",
-      "Atlanta"
-    ]
-  },
-  {
-    "title": "Midtown Museums & Piedmont Park",
-    "url": "/usa/atlanta/midtown-museums/",
-    "parent": "Atlanta",
-    "type": "Local guide",
-    "summary": "Compare the High Museum, Museum of Design Atlanta and a separate botanical-garden visit, with Arts Center arrival and a collection-led Midtown day.",
-    "keywords": [
-      "Midtown Museums & Piedmont Park",
-      "Atlanta"
-    ]
-  },
-  {
-    "title": "Atlanta BeltLine & Neighborhoods",
-    "url": "/usa/atlanta/beltline/",
-    "parent": "Atlanta",
-    "type": "Local guide",
-    "summary": "Choose a limited Atlanta Beltline Eastside visit around a real access point, Ponce City Market or Krog Street Market, with shared-trail etiquette and a planned return.",
-    "keywords": [
-      "Atlanta BeltLine & Neighborhoods",
-      "Atlanta"
-    ]
-  },
-  {
-    "title": "Texas Cities",
-    "url": "/usa/texas/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose an Austin–San Antonio journey or a Houston stay before connecting three Texas cities, with separate bases, realistic transfers and focused local days.",
-    "keywords": [
-      "Texas Cities",
-      "South"
-    ]
-  },
-  {
-    "title": "Austin & Lady Bird Lake",
-    "url": "/usa/texas/austin/",
-    "parent": "Texas Cities",
-    "type": "Local guide",
-    "summary": "Plan Austin around a Capitol visit, a selected Lady Bird Lake or South Congress portion and an actual music program, with airport and pool distinctions.",
-    "keywords": [
-      "Austin & Lady Bird Lake",
-      "Texas Cities"
-    ]
-  },
-  {
-    "title": "San Antonio Missions & River Walk",
-    "url": "/usa/texas/san-antonio/",
-    "parent": "Texas Cities",
-    "type": "Local guide",
-    "summary": "Separate San Antonio’s Alamo and downtown River Walk from the four southern mission sites, with Church reservations, active worship and a selective route.",
-    "keywords": [
-      "San Antonio Missions & River Walk",
-      "Texas Cities"
-    ]
-  },
-  {
-    "title": "Houston Museums & Space Center",
-    "url": "/usa/texas/houston/",
-    "parent": "Texas Cities",
-    "type": "Local guide",
-    "summary": "Choose a Space Center Houston day or a Museum District visit, distinguishing NASA tram tickets, the Clear Lake journey and separate city museum admissions.",
-    "keywords": [
-      "Houston Museums & Space Center",
-      "Texas Cities"
-    ]
-  },
-  {
-    "title": "Miami & South Florida",
-    "url": "/usa/miami/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Miami Beach or mainland base, then separate Art Deco, Little Havana or Wynwood and an entrance-specific Everglades day with current airport connections.",
-    "keywords": [
-      "Miami & South Florida",
-      "Florida"
-    ]
-  },
-  {
-    "title": "South Beach & Art Deco",
-    "url": "/usa/miami/south-beach/",
-    "parent": "Miami & South Florida",
-    "type": "Local guide",
-    "summary": "Visit South Beach through a selected Ocean Drive architecture walk, the Art Deco Museum or Welcome Center and a separate shoreline portion.",
-    "keywords": [
-      "South Beach & Art Deco",
-      "Miami & South Florida"
-    ]
-  },
-  {
-    "title": "Little Havana & Wynwood",
-    "url": "/usa/miami/little-havana-wynwood/",
-    "parent": "Miami & South Florida",
-    "type": "Local guide",
-    "summary": "Choose a Calle Ocho cultural visit or a Wynwood art day, with Domino Park etiquette, distinct neighborhoods and separate Wynwood Walls admission.",
-    "keywords": [
-      "Little Havana & Wynwood",
-      "Miami & South Florida"
-    ]
-  },
-  {
-    "title": "Everglades National Park",
-    "url": "/usa/miami/everglades/",
-    "parent": "Miami & South Florida",
-    "type": "Local guide",
-    "summary": "Choose Shark Valley or the Homestead–Royal Palm entrance for an Everglades day, with tram and parking distinctions, boardwalk access and confirmed return transport.",
-    "keywords": [
-      "Everglades National Park",
-      "Miami & South Florida"
-    ]
-  },
-  {
-    "title": "Orlando & Central Florida",
-    "url": "/usa/orlando/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose an Orlando base by the actual resort or city visit, with distinct theme-park days, Winter Park and a separately planned Kennedy Space Center journey.",
-    "keywords": [
-      "Orlando & Central Florida",
-      "Florida"
-    ]
-  },
-  {
-    "title": "Orlando Theme-Park Planning",
-    "url": "/usa/orlando/theme-parks/",
-    "parent": "Orlando & Central Florida",
-    "type": "Local guide",
-    "summary": "Compare Disney and Universal park-day choices, admission versus queue products, date-based reservation rules and realistic transfers before buying multiple tickets.",
-    "keywords": [
-      "Orlando Theme-Park Planning",
-      "Orlando & Central Florida"
-    ]
-  },
-  {
-    "title": "Winter Park & Orlando Beyond Resorts",
-    "url": "/usa/orlando/winter-park/",
-    "parent": "Orlando & Central Florida",
-    "type": "Local guide",
-    "summary": "Plan Winter Park through Park Avenue, the Morse Museum and a separate scenic boat option, with weekday SunRail planning and a clear return.",
-    "keywords": [
-      "Winter Park & Orlando Beyond Resorts",
-      "Orlando & Central Florida"
-    ]
-  },
-  {
-    "title": "Kennedy Space Center & Space Coast",
-    "url": "/usa/orlando/kennedy-space-center/",
-    "parent": "Orlando & Central Florida",
-    "type": "Local guide",
-    "summary": "Give Kennedy Space Center a full Space Coast day, distinguishing the included bus route, Atlantis, add-on experiences and mission-specific launch viewing.",
-    "keywords": [
-      "Kennedy Space Center & Space Coast",
-      "Orlando & Central Florida"
-    ]
-  },
-  {
-    "title": "Alaska Gateways & Parks",
-    "url": "/usa/alaska/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Southcentral and Denali or a separate Juneau–Southeast journey, with actual train and ferry seasons, overnight bases and current park access.",
-    "keywords": [
-      "Alaska Gateways & Parks",
-      "Alaska"
-    ]
-  },
-  {
-    "title": "Anchorage, Seward & Kenai Fjords",
-    "url": "/usa/alaska/anchorage-kenai/",
-    "parent": "Alaska Gateways & Parks",
-    "type": "Local guide",
-    "summary": "Plan Anchorage and Seward as a selective Southcentral trip, distinguishing the Coastal Classic season, Exit Glacier road and Nature Center access, and boat routes.",
-    "keywords": [
-      "Anchorage, Seward & Kenai Fjords",
-      "Alaska Gateways & Parks"
-    ]
-  },
-  {
-    "title": "Denali National Park",
-    "url": "/usa/alaska/denali/",
-    "parent": "Alaska Gateways & Parks",
-    "type": "Local guide",
-    "summary": "Plan Denali around the 2026 bus limit at East Fork, separate narrated and transit buses, entrance-area visits and the different fall road arrangements.",
-    "keywords": [
-      "Denali National Park",
-      "Alaska Gateways & Parks"
-    ]
-  },
-  {
-    "title": "Juneau & Southeast Alaska",
-    "url": "/usa/alaska/juneau-southeast/",
-    "parent": "Alaska Gateways & Parks",
-    "type": "Local guide",
-    "summary": "Choose a Juneau stay with the actual airport, cruise or Auke Bay ferry arrival, a current Mendenhall visit and separately planned Southeast connections.",
-    "keywords": [
-      "Juneau & Southeast Alaska",
-      "Alaska Gateways & Parks"
-    ]
-  },
-  {
-    "title": "Hawaii",
-    "url": "/usa/hawaii/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Oahu, Maui or Hawaii Island by the trip you want, with separate island transfers, realistic overnight bases and current park-access decisions.",
-    "keywords": [
-      "Hawaii",
-      "Pacific Islands"
-    ]
-  },
-  {
-    "title": "Oahu: Honolulu & Windward Coast",
-    "url": "/usa/hawaii/oahu/",
-    "parent": "Hawaii",
-    "type": "Local guide",
-    "summary": "Plan separate Honolulu, Pearl Harbor and Windward Coast days, with Diamond Head and Iolani Palace booking distinctions and an unhurried Kailua route.",
-    "keywords": [
-      "Oahu: Honolulu & Windward Coast",
-      "Hawaii"
-    ]
-  },
-  {
-    "title": "Maui: Haleakala & Coastal Days",
-    "url": "/usa/hawaii/maui/",
-    "parent": "Hawaii",
-    "type": "Local guide",
-    "summary": "Separate a Haleakala summit day from the Hana–Kipahulu approach, distinguish sunrise reservations and respect current Lahaina recovery access.",
-    "keywords": [
-      "Maui: Haleakala & Coastal Days",
-      "Hawaii"
-    ]
-  },
-  {
-    "title": "Hawaii Island: Volcanoes & Two Coasts",
-    "url": "/usa/hawaii/hawaii-island/",
-    "parent": "Hawaii",
-    "type": "Local guide",
-    "summary": "Choose Kona, Hilo or a Volcano stay around a realistic Hawaii Island trip, with current Kilauea visitor services and a park day that does not promise lava.",
-    "keywords": [
-      "Hawaii Island: Volcanoes & Two Coasts",
-      "Hawaii"
-    ]
-  },
-  {
     "title": "Australia Travel Guide",
     "url": "/australia/",
     "parent": "Oceania",
@@ -10789,1042 +9721,6 @@
     ]
   },
   {
-    "title": "United Kingdom Travel Guide",
-    "url": "/united-kingdom/",
-    "parent": "Europe",
-    "type": "Country",
-    "summary": "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.",
-    "keywords": [
-      "United Kingdom",
-      "UK travel",
-      "Britain",
-      "England",
-      "Scotland",
-      "Wales",
-      "Northern Ireland"
-    ]
-  },
-  {
-    "title": "London",
-    "url": "/united-kingdom/london/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "London is not one compact centre but a chain of walkable districts joined by rail, Underground, bus and river services. A useful plan fixes one timed interior, reads the correct station exit and keeps the rest of the day on a coherent street or river line instead of repeatedly crossing the city.",
-    "keywords": [
-      "London",
-      "England",
-      "england-south"
-    ]
-  },
-  {
-    "title": "Westminster & the South Bank",
-    "url": "/united-kingdom/london/westminster-south-bank/",
-    "parent": "London",
-    "type": "Local guide",
-    "summary": "Start at the booked Westminster door, read Parliament Square and the abbey precinct, then use one bridge to finish along the South Bank with a direct return from Waterloo or Blackfriars.",
-    "keywords": [
-      "Westminster & the South Bank",
-      "London",
-      "Ceremony-and-crossing clock",
-      "parliament-river-fold"
-    ]
-  },
-  {
-    "title": "Bloomsbury, the British Museum & Covent Garden",
-    "url": "/united-kingdom/london/bloomsbury-covent-garden/",
-    "parent": "London",
-    "type": "Local guide",
-    "summary": "Enter the museum with a bounded collection plan, reset in Bloomsbury, and move south through a single street sequence toward Seven Dials and Covent Garden.",
-    "keywords": [
-      "Bloomsbury, the British Museum & Covent Garden",
-      "London",
-      "Collection-attention register",
-      "museum-quarter-ledger"
-    ]
-  },
-  {
-    "title": "Tower of London, the City & Greenwich",
-    "url": "/united-kingdom/london/tower-city-greenwich/",
-    "parent": "London",
-    "type": "Local guide",
-    "summary": "Start with the controlled fortress or a City walk, move east by rail or river only after the anchor, and finish around Greenwich’s compact maritime sites with the return already selected.",
-    "keywords": [
-      "Tower of London, the City & Greenwich",
-      "London",
-      "Fortress-to-meridian tide board",
-      "east-thames-section"
-    ]
-  },
-  {
-    "title": "Oxford, Blenheim & the Cotswolds",
-    "url": "/united-kingdom/oxford-cotswolds/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Oxford is a rail-connected walking city, while Blenheim Palace and the Cotswold towns depend on buses, tours, bicycles or a car. A strong base plan distinguishes college opening windows from rural timetables and never treats “the Cotswolds” as one station or one attraction.",
-    "keywords": [
-      "Oxford, Blenheim & the Cotswolds",
-      "England",
-      "england-south"
-    ]
-  },
-  {
-    "title": "Oxford Colleges, Libraries & Museums",
-    "url": "/united-kingdom/oxford-cotswolds/oxford-colleges-museums/",
-    "parent": "Oxford, Blenheim & the Cotswolds",
-    "type": "Local guide",
-    "summary": "Start from the railway station or Gloucester Green, confirm the booked or open college, connect Bodleian and Radcliffe Square, then finish with one museum or river edge.",
-    "keywords": [
-      "Oxford Colleges, Libraries & Museums",
-      "Oxford, Blenheim & the Cotswolds",
-      "College-opening matrix",
-      "quadrangle-threshold-plan"
-    ]
-  },
-  {
-    "title": "Blenheim Palace & Woodstock",
-    "url": "/united-kingdom/oxford-cotswolds/blenheim-woodstock/",
-    "parent": "Oxford, Blenheim & the Cotswolds",
-    "type": "Local guide",
-    "summary": "Leave Oxford on a verified service, enter through the correct Blenheim gate, choose palace depth or landscape distance, and protect the return from Woodstock before evening frequency changes.",
-    "keywords": [
-      "Blenheim Palace & Woodstock",
-      "Oxford, Blenheim & the Cotswolds",
-      "Palace-gate connection sheet",
-      "estate-arrival-section"
-    ]
-  },
-  {
-    "title": "Cotswold Towns Without a Car",
-    "url": "/united-kingdom/oxford-cotswolds/cotswold-towns-without-car/",
-    "parent": "Oxford, Blenheim & the Cotswolds",
-    "type": "Local guide",
-    "summary": "Select a rail gateway and one or two connected towns, keep the route inside the published bus pattern, and treat footpaths or a tour as separate products rather than invisible links.",
-    "keywords": [
-      "Cotswold Towns Without a Car",
-      "Oxford, Blenheim & the Cotswolds",
-      "Village-return dependency chart",
-      "bus-window-gazetteer"
-    ]
-  },
-  {
-    "title": "Cambridge & East Anglia",
-    "url": "/united-kingdom/cambridge-east-anglia/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Cambridge, Ely and Norwich sit on useful rail lines, but their stations, historic cores and surrounding fen or coast landscapes operate at different scales. A good plan distinguishes a walkable academic city from a cathedral stop and a wider East Anglian excursion with its own onward connection.",
-    "keywords": [
-      "Cambridge & East Anglia",
-      "England",
-      "england-south"
-    ]
-  },
-  {
-    "title": "Cambridge Colleges & the Backs",
-    "url": "/united-kingdom/cambridge-east-anglia/cambridge-colleges-backs/",
-    "parent": "Cambridge & East Anglia",
-    "type": "Local guide",
-    "summary": "Walk from station to the historic core, meet one verified college gate, continue along public streets and the Backs, and decide separately whether punting or a museum deserves the final block.",
-    "keywords": [
-      "Cambridge Colleges & the Backs",
-      "Cambridge & East Anglia",
-      "College-gate and river clock",
-      "backs-and-courts-fold"
-    ]
-  },
-  {
-    "title": "Ely Cathedral & the Fen Edge",
-    "url": "/united-kingdom/cambridge-east-anglia/ely-cathedral-fens/",
-    "parent": "Cambridge & East Anglia",
-    "type": "Local guide",
-    "summary": "Climb from Ely station and riverside to the cathedral precinct, give the interior a defined block, then choose Oliver Cromwell context or a signed lowland walk before returning downhill.",
-    "keywords": [
-      "Ely Cathedral & the Fen Edge",
-      "Cambridge & East Anglia",
-      "Cathedral-to-fen elevation strip",
-      "island-in-fens-section"
-    ]
-  },
-  {
-    "title": "Norwich & a North Norfolk Branch",
-    "url": "/united-kingdom/cambridge-east-anglia/norwich-north-norfolk/",
-    "parent": "Cambridge & East Anglia",
-    "type": "Local guide",
-    "summary": "Walk Norwich’s castle-to-cathedral spine first, then either keep the complete city day or use one verified rail or bus branch with its final return protected.",
-    "keywords": [
-      "Norwich & a North Norfolk Branch",
-      "Cambridge & East Anglia",
-      "City-to-coast branch board",
-      "lanes-and-rail-branch"
-    ]
-  },
-  {
-    "title": "Bath, Bristol & Somerset",
-    "url": "/united-kingdom/bath-bristol-somerset/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Bath and Bristol are close by rail but reward different days: one concentrates Roman archaeology and Georgian streets, the other a working harbour, collections and steep neighbourhoods. Wells, Glastonbury and the Mendips introduce bus-dependent rural connections that should not be hidden inside a city itinerary.",
-    "keywords": [
-      "Bath, Bristol & Somerset",
-      "England",
-      "england-south"
-    ]
-  },
-  {
-    "title": "Bath: Roman & Georgian City",
-    "url": "/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/",
-    "parent": "Bath, Bristol & Somerset",
-    "type": "Local guide",
-    "summary": "Begin at Bath Spa, complete one booked central interior, climb through Queen Square and the Circus only if energy allows, and return by a different street line.",
-    "keywords": [
-      "Bath: Roman & Georgian City",
-      "Bath, Bristol & Somerset",
-      "Thermal-city time ledger",
-      "stone-terrace-sequence"
-    ]
-  },
-  {
-    "title": "Bristol Harbourside & Clifton",
-    "url": "/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/",
-    "parent": "Bath, Bristol & Somerset",
-    "type": "Local guide",
-    "summary": "Start at Temple Meads or the centre, read the working harbour through one museum or ship, then either finish around Clifton or stay with the water and city centre.",
-    "keywords": [
-      "Bristol Harbourside & Clifton",
-      "Bath, Bristol & Somerset",
-      "Harbour-to-ridge gradient board",
-      "floating-harbour-cross-section"
-    ]
-  },
-  {
-    "title": "Wells, Glastonbury & the Mendip Edge",
-    "url": "/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/",
-    "parent": "Bath, Bristol & Somerset",
-    "type": "Local guide",
-    "summary": "Leave Bath or Bristol on a verified route, give one town and its major site enough time, then use the second place or Mendip landscape only when the onward and return connections are secure.",
-    "keywords": [
-      "Wells, Glastonbury & the Mendip Edge",
-      "Bath, Bristol & Somerset",
-      "Somerset bus-and-weather docket",
-      "cathedral-tor-decision-sheet"
-    ]
-  },
-  {
-    "title": "Cornwall & Devon",
-    "url": "/united-kingdom/cornwall-devon/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Cornwall and Devon contain rail-linked cities and harbour towns, but the peninsula’s headlands, villages and moors depend on slower branches, buses, boats or roads. A useful trip chooses a compact base and one weather-facing landscape each day rather than measuring success by the number of coastal names reached.",
-    "keywords": [
-      "Cornwall & Devon",
-      "England",
-      "england-south"
-    ]
-  },
-  {
-    "title": "St Ives & the Penwith Coast",
-    "url": "/united-kingdom/cornwall-devon/st-ives-penwith/",
-    "parent": "Cornwall & Devon",
-    "type": "Local guide",
-    "summary": "Arrive by the branch line, give St Ives harbour and one collection a coherent block, then use a verified bus or bounded coastal walk only when the return and weather remain secure.",
-    "keywords": [
-      "St Ives & the Penwith Coast",
-      "Cornwall & Devon",
-      "Branch-line and headland clock",
-      "gallery-coast-tide-strip"
-    ]
-  },
-  {
-    "title": "Falmouth Harbour & the Roseland",
-    "url": "/united-kingdom/cornwall-devon/falmouth-roseland/",
-    "parent": "Cornwall & Devon",
-    "type": "Local guide",
-    "summary": "Arrive on the correct Falmouth branch station, use the maritime museum or Pendennis as the fixed anchor, then cross the estuary only with a verified outward and return sailing.",
-    "keywords": [
-      "Falmouth Harbour & the Roseland",
-      "Cornwall & Devon",
-      "Estuary vessel decision card",
-      "harbour-ferry-compass"
-    ]
-  },
-  {
-    "title": "Exeter & the Dartmoor Edge",
-    "url": "/united-kingdom/cornwall-devon/exeter-dartmoor-edge/",
-    "parent": "Cornwall & Devon",
-    "type": "Local guide",
-    "summary": "Read Exeter’s cathedral and quays first, then remain in the city or commit to one verified moor gateway with weather, daylight and the final rail return already checked.",
-    "keywords": [
-      "Exeter & the Dartmoor Edge",
-      "Cornwall & Devon",
-      "Cathedral-to-moor weather gate",
-      "red-stone-moor-transect"
-    ]
-  },
-  {
-    "title": "Kent, Sussex & the South Coast",
-    "url": "/united-kingdom/kent-sussex-south-coast/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Brighton, Canterbury, Dover and the Seven Sisters sit on different rail and bus corridors despite sharing the south-east coast. A useful day chooses one urban or landscape argument, names the station and final connection, and treats exposed chalk paths as weather decisions rather than scenic filler.",
-    "keywords": [
-      "Kent, Sussex & the South Coast",
-      "England",
-      "england-south"
-    ]
-  },
-  {
-    "title": "Brighton Lanes, Pavilion & Seafront",
-    "url": "/united-kingdom/kent-sussex-south-coast/brighton-lanes-seafront/",
-    "parent": "Kent, Sussex & the South Coast",
-    "type": "Local guide",
-    "summary": "Descend from Brighton station through the North Laine or Pavilion precinct, complete one interior, then finish on a bounded seafront section with the uphill return already planned.",
-    "keywords": [
-      "Brighton Lanes, Pavilion & Seafront",
-      "Kent, Sussex & the South Coast",
-      "Seafront weather-and-crowd clock",
-      "regency-to-pier-zigzag"
-    ]
-  },
-  {
-    "title": "Canterbury Cathedral & Dover Castle",
-    "url": "/united-kingdom/kent-sussex-south-coast/canterbury-dover/",
-    "parent": "Kent, Sussex & the South Coast",
-    "type": "Local guide",
-    "summary": "Begin in Canterbury’s walkable core or at Dover’s hillside fortress, complete one deep visit, and add the second place only as a bounded exterior or shorter stop with its return protected.",
-    "keywords": [
-      "Canterbury Cathedral & Dover Castle",
-      "Kent, Sussex & the South Coast",
-      "Two-fortress admission docket",
-      "pilgrim-to-channel-section"
-    ]
-  },
-  {
-    "title": "Seven Sisters & Eastbourne",
-    "url": "/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/",
-    "parent": "Kent, Sussex & the South Coast",
-    "type": "Local guide",
-    "summary": "Arrive at a rail-and-bus gateway, read wind and path conditions, complete one signed chalk-coast segment, and turn back or exit before daylight and the final connection become tight.",
-    "keywords": [
-      "Seven Sisters & Eastbourne",
-      "Kent, Sussex & the South Coast",
-      "Cliff-edge turn-back chart",
-      "chalk-profile-route"
-    ]
-  },
-  {
-    "title": "Birmingham & the West Midlands",
-    "url": "/united-kingdom/birmingham-west-midlands/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Birmingham’s canals, civic centre and Jewellery Quarter form a connected urban day, while Stratford-upon-Avon and Ironbridge require different rail or bus corridors and separate heritage bookings. The region works best from one base with one clearly chosen outward branch per day.",
-    "keywords": [
-      "Birmingham & the West Midlands",
-      "England",
-      "england-midlands-north"
-    ]
-  },
-  {
-    "title": "Birmingham Canals & Jewellery Quarter",
-    "url": "/united-kingdom/birmingham-west-midlands/birmingham-canals-jewellery-quarter/",
-    "parent": "Birmingham & the West Midlands",
-    "type": "Local guide",
-    "summary": "Exit the correct central station, read the civic core, follow one canal line to Gas Street and Brindleyplace, then use tram or a deliberate walk to the Jewellery Quarter.",
-    "keywords": [
-      "Birmingham Canals & Jewellery Quarter",
-      "Birmingham & the West Midlands",
-      "Workshop-to-water city section",
-      "industrial-city-cutaway"
-    ]
-  },
-  {
-    "title": "Stratford-upon-Avon & Shakespeare",
-    "url": "/united-kingdom/birmingham-west-midlands/stratford-shakespeare/",
-    "parent": "Birmingham & the West Midlands",
-    "type": "Local guide",
-    "summary": "Walk from the station into the birthplace and market-town core, continue to the river and theatre, then protect the train return or performance exit before adding another historic property.",
-    "keywords": [
-      "Stratford-upon-Avon & Shakespeare",
-      "Birmingham & the West Midlands",
-      "Performance-day scene sheet",
-      "stage-and-river-sequence"
-    ]
-  },
-  {
-    "title": "Ironbridge Gorge & Shrewsbury",
-    "url": "/united-kingdom/birmingham-west-midlands/ironbridge-shrewsbury/",
-    "parent": "Birmingham & the West Midlands",
-    "type": "Local guide",
-    "summary": "Use Shrewsbury or Telford as the rail gateway, complete one museum cluster or town circuit, and avoid assuming the gorge’s sites form a short walk from a single station.",
-    "keywords": [
-      "Ironbridge Gorge & Shrewsbury",
-      "Birmingham & the West Midlands",
-      "Industrial-valley connection map",
-      "gorge-museum-spine"
-    ]
-  },
-  {
-    "title": "Peak District & Derbyshire",
-    "url": "/united-kingdom/peak-district-derbyshire/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "The Peak District is a group of valleys, moors, towns and estates rather than one arrival point. Hope Valley rail, Bakewell and Chatsworth buses, and the southern dales create different day systems. Every plan needs a named gateway, surface-aware route and protected return.",
-    "keywords": [
-      "Peak District & Derbyshire",
-      "England",
-      "england-midlands-north"
-    ]
-  },
-  {
-    "title": "Bakewell & Chatsworth",
-    "url": "/united-kingdom/peak-district-derbyshire/bakewell-chatsworth/",
-    "parent": "Peak District & Derbyshire",
-    "type": "Local guide",
-    "summary": "Begin at Bakewell or the estate gate, complete one defined Chatsworth product, and use the town only when the return corridor and daylight remain protected.",
-    "keywords": [
-      "Bakewell & Chatsworth",
-      "Peak District & Derbyshire",
-      "Market-to-estate bus ledger",
-      "estate-valley-docket"
-    ]
-  },
-  {
-    "title": "Hope Valley & Edale",
-    "url": "/united-kingdom/peak-district-derbyshire/hope-valley-edale/",
-    "parent": "Peak District & Derbyshire",
-    "type": "Local guide",
-    "summary": "Arrive at Edale, Hope or another chosen station, read the weather from the valley, complete one signed route with a firm turn-back, and reach the railhead before service gaps matter.",
-    "keywords": [
-      "Hope Valley & Edale",
-      "Peak District & Derbyshire",
-      "Railhead-to-ridge turn-back ruler",
-      "moorline-profile"
-    ]
-  },
-  {
-    "title": "Dovedale & Ashbourne",
-    "url": "/united-kingdom/peak-district-derbyshire/dovedale-ashbourne/",
-    "parent": "Peak District & Derbyshire",
-    "type": "Local guide",
-    "summary": "Reach Ashbourne or the named valley approach, assess river and path conditions, complete one out-and-back or bounded dale route, and return before the rural connection thins.",
-    "keywords": [
-      "Dovedale & Ashbourne",
-      "Peak District & Derbyshire",
-      "Dale-water and bus gauge",
-      "stepping-stone-valley-plan"
-    ]
-  },
-  {
-    "title": "Liverpool, Manchester & Chester",
-    "url": "/united-kingdom/liverpool-manchester/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Liverpool and Manchester are close by rail but their useful visitor geographies point in different directions: Mersey waterfront and mercantile streets versus canals, civic collections and industrial quarters. Chester adds a compact walled city on another line. Each deserves a separate day even when journey times look short.",
-    "keywords": [
-      "Liverpool, Manchester & Chester",
-      "England",
-      "england-midlands-north"
-    ]
-  },
-  {
-    "title": "Liverpool Waterfront & Cathedrals",
-    "url": "/united-kingdom/liverpool-manchester/liverpool-waterfront-cathedrals/",
-    "parent": "Liverpool, Manchester & Chester",
-    "type": "Local guide",
-    "summary": "Walk from Lime Street toward the waterfront, use one museum cluster, then climb once toward the cathedrals or remain with the Mersey and finish near a direct station.",
-    "keywords": [
-      "Liverpool Waterfront & Cathedrals",
-      "Liverpool, Manchester & Chester",
-      "Mersey-to-ridge city ruler",
-      "dock-and-cathedral-axis"
-    ]
-  },
-  {
-    "title": "Manchester Industrial City & Collections",
-    "url": "/united-kingdom/liverpool-manchester/manchester-industrial-city/",
-    "parent": "Liverpool, Manchester & Chester",
-    "type": "Local guide",
-    "summary": "Begin at the station serving the chosen district, use one major collection, connect a bounded canal or civic route, and finish on the same tram or rail side.",
-    "keywords": [
-      "Manchester Industrial City & Collections",
-      "Liverpool, Manchester & Chester",
-      "Canal-to-civic innovation grid",
-      "warehouse-city-matrix"
-    ]
-  },
-  {
-    "title": "Chester Walls & Roman City",
-    "url": "/united-kingdom/liverpool-manchester/chester-walls-roman-city/",
-    "parent": "Liverpool, Manchester & Chester",
-    "type": "Local guide",
-    "summary": "Walk from Chester station to a named wall gate, complete a weather-aware section or full circuit, descend once for the Rows and one interior, then return through the compact centre.",
-    "keywords": [
-      "Chester Walls & Roman City",
-      "Liverpool, Manchester & Chester",
-      "Wall-gate circuit register",
-      "walled-city-loop"
-    ]
-  },
-  {
-    "title": "York, Leeds & Yorkshire",
-    "url": "/united-kingdom/yorkshire/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "York’s walls and Minster, Leeds and Saltaire’s civic-industrial collections, and the North York Moors–Whitby line are three distinct travel systems. Fast intercity rail makes the cities easy to pair across nights, but moor and coast branches need their own weather, heritage-rail and return decisions.",
-    "keywords": [
-      "York, Leeds & Yorkshire",
-      "England",
-      "england-midlands-north"
-    ]
-  },
-  {
-    "title": "York Walls, Minster & Medieval Core",
-    "url": "/united-kingdom/yorkshire/york-walls-minster/",
-    "parent": "York, Leeds & Yorkshire",
-    "type": "Local guide",
-    "summary": "Walk from York station to a named wall gate, complete one coherent wall section, meet the Minster or museum booking, and leave through a different gate toward the station.",
-    "keywords": [
-      "York Walls, Minster & Medieval Core",
-      "York, Leeds & Yorkshire",
-      "Gate-to-gate wall clock",
-      "minster-wall-ring"
-    ]
-  },
-  {
-    "title": "Leeds Collections & Saltaire",
-    "url": "/united-kingdom/yorkshire/leeds-saltaire/",
-    "parent": "York, Leeds & Yorkshire",
-    "type": "Local guide",
-    "summary": "Begin at Leeds station for markets, arcades or a museum, then take one verified local train to Saltaire only when the mill, village and return have a useful time window.",
-    "keywords": [
-      "Leeds Collections & Saltaire",
-      "York, Leeds & Yorkshire",
-      "Civic-to-mill rail ledger",
-      "arcade-and-mill-grid"
-    ]
-  },
-  {
-    "title": "Whitby & the North York Moors",
-    "url": "/united-kingdom/yorkshire/whitby-north-york-moors/",
-    "parent": "York, Leeds & Yorkshire",
-    "type": "Local guide",
-    "summary": "Reach Whitby or a moor gateway by the confirmed rail, bus or heritage service, complete one town-and-landscape line, and protect the final return before evening frequency falls away.",
-    "keywords": [
-      "Whitby & the North York Moors",
-      "York, Leeds & Yorkshire",
-      "Moor-to-coast service board",
-      "steam-line-coast-profile"
-    ]
-  },
-  {
-    "title": "Lake District & Cumbria",
-    "url": "/united-kingdom/lake-district-cumbria/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Windermere and Ambleside, Keswick and Derwentwater, and Carlisle with the western Wall use different railheads and buses. The Lake District rewards one basin at a time: weather, boat operation, valley traffic and the last bus matter more than the short distances shown on a map.",
-    "keywords": [
-      "Lake District & Cumbria",
-      "England",
-      "england-midlands-north"
-    ]
-  },
-  {
-    "title": "Windermere, Bowness & Ambleside",
-    "url": "/united-kingdom/lake-district-cumbria/windermere-ambleside/",
-    "parent": "Lake District & Cumbria",
-    "type": "Local guide",
-    "summary": "Arrive at Windermere station, descend to Bowness or connect to Ambleside, use one verified boat or shore line, and protect the final bus or branch train.",
-    "keywords": [
-      "Windermere, Bowness & Ambleside",
-      "Lake District & Cumbria",
-      "Lake-bus-boat interchange card",
-      "shoreline-transfer-ribbon"
-    ]
-  },
-  {
-    "title": "Keswick & Derwentwater",
-    "url": "/united-kingdom/lake-district-cumbria/keswick-derwentwater/",
-    "parent": "Lake District & Cumbria",
-    "type": "Local guide",
-    "summary": "Arrive by the confirmed bus, use Keswick as the service base, complete one water or fell branch, and return to the town before the onward bus window narrows.",
-    "keywords": [
-      "Keswick & Derwentwater",
-      "Lake District & Cumbria",
-      "Launch-and-fell weather dial",
-      "market-lake-spoke-map"
-    ]
-  },
-  {
-    "title": "Carlisle & Hadrian’s Wall West",
-    "url": "/united-kingdom/lake-district-cumbria/carlisle-hadrians-wall-west/",
-    "parent": "Lake District & Cumbria",
-    "type": "Local guide",
-    "summary": "Begin with Carlisle Castle or city context, take one verified corridor to a western fort or wall section, and return before rural frequency and daylight narrow.",
-    "keywords": [
-      "Carlisle & Hadrian’s Wall West",
-      "Lake District & Cumbria",
-      "Fort-and-frontier rail strip",
-      "roman-frontier-section"
-    ]
-  },
-  {
-    "title": "Newcastle, Durham & Northumberland",
-    "url": "/united-kingdom/northeast-northumberland/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Newcastle–Gateshead and Durham are compact rail cities with strong river and collection routes, while Bamburgh and Holy Island introduce long road links and a tidal causeway. The region works when city days remain complete and the coast is planned as a separate weather-and-tide operation.",
-    "keywords": [
-      "Newcastle, Durham & Northumberland",
-      "England",
-      "england-midlands-north"
-    ]
-  },
-  {
-    "title": "Newcastle & Gateshead Quays",
-    "url": "/united-kingdom/northeast-northumberland/newcastle-gateshead-quays/",
-    "parent": "Newcastle, Durham & Northumberland",
-    "type": "Local guide",
-    "summary": "Descend from Newcastle Central through the historic core, use one Quayside collection, cross once to Gateshead, and return by Metro or a different bridge.",
-    "keywords": [
-      "Newcastle & Gateshead Quays",
-      "Newcastle, Durham & Northumberland",
-      "Bridge-and-bank culture ledger",
-      "tyne-bridge-fold"
-    ]
-  },
-  {
-    "title": "Durham Cathedral & River Peninsula",
-    "url": "/united-kingdom/northeast-northumberland/durham-cathedral-city/",
-    "parent": "Newcastle, Durham & Northumberland",
-    "type": "Local guide",
-    "summary": "Descend from Durham station, climb to Palace Green for one controlled interior, follow one side of the River Wear, and return without repeating the peninsula slopes.",
-    "keywords": [
-      "Durham Cathedral & River Peninsula",
-      "Newcastle, Durham & Northumberland",
-      "Peninsula climb-and-loop card",
-      "cathedral-river-meander"
-    ]
-  },
-  {
-    "title": "Bamburgh Castle & Holy Island",
-    "url": "/united-kingdom/northeast-northumberland/bamburgh-holy-island/",
-    "parent": "Newcastle, Durham & Northumberland",
-    "type": "Local guide",
-    "summary": "Leave the rail corridor with a named bus, tour or car plan, complete one castle or island visit, and cross the Holy Island causeway only within the official safe window.",
-    "keywords": [
-      "Bamburgh Castle & Holy Island",
-      "Newcastle, Durham & Northumberland",
-      "Causeway tide-and-road board",
-      "tidal-border-chart"
-    ]
-  },
-  {
-    "title": "Edinburgh & the Lothians",
-    "url": "/united-kingdom/edinburgh-lothians/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Edinburgh’s Old Town ridge, New Town terraces and lower valleys create a vertical city where short map distances conceal stairs and steep streets. East Lothian adds a separate coast railway. A strong plan fixes one controlled interior and uses the city’s level changes as the route rather than an inconvenience.",
-    "keywords": [
-      "Edinburgh & the Lothians",
-      "Scotland",
-      "scotland"
-    ]
-  },
-  {
-    "title": "Old Town, Castle & Royal Mile",
-    "url": "/united-kingdom/edinburgh-lothians/old-town-castle-royal-mile/",
-    "parent": "Edinburgh & the Lothians",
-    "type": "Local guide",
-    "summary": "Enter the Old Town at the correct level, complete one controlled interior, descend the Royal Mile through selected closes, and finish at Holyrood or Waverley without retracing.",
-    "keywords": [
-      "Old Town, Castle & Royal Mile",
-      "Edinburgh & the Lothians",
-      "Ridge-entry and descent clock",
-      "castle-ridge-long-section"
-    ]
-  },
-  {
-    "title": "New Town, Galleries & Dean Village",
-    "url": "/united-kingdom/edinburgh-lothians/new-town-dean-village/",
-    "parent": "Edinburgh & the Lothians",
-    "type": "Local guide",
-    "summary": "Start near Princes Street or the gallery complex, walk one New Town terrace line, descend once to Dean Village, and leave through Stockbridge or a planned climb.",
-    "keywords": [
-      "New Town, Galleries & Dean Village",
-      "Edinburgh & the Lothians",
-      "Terrace-to-water level chart",
-      "georgian-grid-waterline"
-    ]
-  },
-  {
-    "title": "North Berwick & East Lothian",
-    "url": "/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/",
-    "parent": "Edinburgh & the Lothians",
-    "type": "Local guide",
-    "summary": "Walk from North Berwick station to town and harbour, assess wind and sea state, complete one coast activity, and return before the branch service or daylight narrows.",
-    "keywords": [
-      "North Berwick & East Lothian",
-      "Edinburgh & the Lothians",
-      "Coast-train-and-seabird board",
-      "firth-coast-window"
-    ]
-  },
-  {
-    "title": "Glasgow & the Clyde",
-    "url": "/united-kingdom/glasgow-clyde/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Glasgow’s centre, Merchant City and Clyde waterfront form one urban field; the West End has its own museum-and-park rhythm; Loch Lomond adds a rail-to-water branch beyond the city. A useful stay chooses one district per half-day and does not let Subway convenience erase walking and collection scale.",
-    "keywords": [
-      "Glasgow & the Clyde",
-      "Scotland",
-      "scotland"
-    ]
-  },
-  {
-    "title": "Central Glasgow, Merchant City & the Clyde",
-    "url": "/united-kingdom/glasgow-clyde/central-merchant-city-clyde/",
-    "parent": "Glasgow & the Clyde",
-    "type": "Local guide",
-    "summary": "Start at the station serving the first district, complete one civic or collection anchor, descend through Merchant City or the grid, and finish along a bounded Clyde section.",
-    "keywords": [
-      "Central Glasgow, Merchant City & the Clyde",
-      "Glasgow & the Clyde",
-      "Grid-to-river civic register",
-      "merchant-grid-river-drop"
-    ]
-  },
-  {
-    "title": "West End, Kelvingrove & the University",
-    "url": "/united-kingdom/glasgow-clyde/west-end-kelvingrove/",
-    "parent": "Glasgow & the Clyde",
-    "type": "Local guide",
-    "summary": "Arrive by Subway or bus, complete one museum, cross Kelvingrove Park or the university once, and finish around Byres Road or the Botanic Gardens.",
-    "keywords": [
-      "West End, Kelvingrove & the University",
-      "Glasgow & the Clyde",
-      "Museum-park-campus field card",
-      "sandstone-park-cabinet"
-    ]
-  },
-  {
-    "title": "Loch Lomond from Glasgow",
-    "url": "/united-kingdom/glasgow-clyde/loch-lomond-clyde-branch/",
-    "parent": "Glasgow & the Clyde",
-    "type": "Local guide",
-    "summary": "Leave Glasgow for one gateway, assess water and hill weather, complete one shore, boat or lower-walk plan, and return before branch frequency narrows.",
-    "keywords": [
-      "Loch Lomond from Glasgow",
-      "Glasgow & the Clyde",
-      "Rail-to-loch shore selector",
-      "loch-gateway-switchboard"
-    ]
-  },
-  {
-    "title": "Inverness & the Scottish Highlands",
-    "url": "/united-kingdom/scottish-highlands/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Inverness and Loch Ness, Glencoe and Fort William, and Aviemore with the Cairngorms use long, weather-sensitive rail and road corridors. Distances, daylight and sparse alternatives make one named landscape per day the useful maximum. A hotel booking does not make a mountain road, path or cruise operational.",
-    "keywords": [
-      "Inverness & the Scottish Highlands",
-      "Scotland",
-      "scotland"
-    ]
-  },
-  {
-    "title": "Inverness & Loch Ness",
-    "url": "/united-kingdom/scottish-highlands/inverness-loch-ness/",
-    "parent": "Inverness & the Scottish Highlands",
-    "type": "Local guide",
-    "summary": "Begin on the River Ness, use one verified bus, tour or boat to the selected loch site, and return to Inverness before rural frequency or cruise operation becomes the edge.",
-    "keywords": [
-      "Inverness & Loch Ness",
-      "Inverness & the Scottish Highlands",
-      "Loch-road-and-cruise docket",
-      "river-to-loch-spine"
-    ]
-  },
-  {
-    "title": "Glencoe & Fort William",
-    "url": "/united-kingdom/scottish-highlands/glencoe-fort-william/",
-    "parent": "Inverness & the Scottish Highlands",
-    "type": "Local guide",
-    "summary": "Leave the rail or coach town for one verified glen stop, assess conditions at low level, complete a bounded route or visitor-centre day, and recover the return before road delay compounds.",
-    "keywords": [
-      "Glencoe & Fort William",
-      "Inverness & the Scottish Highlands",
-      "Glen-road mountain gate",
-      "mountain-corridor-transect"
-    ]
-  },
-  {
-    "title": "Aviemore & the Cairngorms",
-    "url": "/united-kingdom/scottish-highlands/aviemore-cairngorms/",
-    "parent": "Inverness & the Scottish Highlands",
-    "type": "Local guide",
-    "summary": "Arrive by rail, use Aviemore as the service point, move to one named Cairngorms gateway, and complete a route that can be shortened before the final return.",
-    "keywords": [
-      "Aviemore & the Cairngorms",
-      "Inverness & the Scottish Highlands",
-      "Plateau-weather activity selector",
-      "forest-to-plateau-layers"
-    ]
-  },
-  {
-    "title": "Skye, Orkney & the Outer Hebrides",
-    "url": "/united-kingdom/scottish-islands/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Skye, Orkney and Lewis with Harris are not one archipelago circuit. They use different ferries, flights, road distances and weather patterns. A credible island plan chooses one system, preserves a mainland or gateway buffer and never treats a booked room as evidence that the crossing or onward bus will operate.",
-    "keywords": [
-      "Skye, Orkney & the Outer Hebrides",
-      "Scotland",
-      "scotland"
-    ]
-  },
-  {
-    "title": "Isle of Skye Road & Weather Plan",
-    "url": "/united-kingdom/scottish-islands/isle-of-skye/",
-    "parent": "Skye, Orkney & the Outer Hebrides",
-    "type": "Local guide",
-    "summary": "Start from Portree or another named base, read live road and weather conditions, complete one peninsula or lower-risk island route, and return before darkness or a ferry deadline.",
-    "keywords": [
-      "Isle of Skye Road & Weather Plan",
-      "Skye, Orkney & the Outer Hebrides",
-      "Peninsula road-and-light compass",
-      "island-road-spokes"
-    ]
-  },
-  {
-    "title": "Orkney Mainland & Neolithic Sites",
-    "url": "/united-kingdom/scottish-islands/orkney-mainland/",
-    "parent": "Skye, Orkney & the Outer Hebrides",
-    "type": "Local guide",
-    "summary": "Establish the Kirkwall or Stromness gateway, complete one monument cluster with current booking and access, and keep the return crossing or island bus outside the final minute.",
-    "keywords": [
-      "Orkney Mainland & Neolithic Sites",
-      "Skye, Orkney & the Outer Hebrides",
-      "Ferry-to-monument reservation wheel",
-      "stone-circle-island-grid"
-    ]
-  },
-  {
-    "title": "Lewis & Harris",
-    "url": "/united-kingdom/scottish-islands/lewis-harris/",
-    "parent": "Skye, Orkney & the Outer Hebrides",
-    "type": "Local guide",
-    "summary": "Enter through Stornoway or Tarbert, use one island half as the day’s operating field, complete a named site cluster, and return before sparse transport or ferry check-in controls the evening.",
-    "keywords": [
-      "Lewis & Harris",
-      "Skye, Orkney & the Outer Hebrides",
-      "Ferry-port and island-road atlas",
-      "machair-mountain-spread"
-    ]
-  },
-  {
-    "title": "Cardiff, Bannau Brycheiniog & Gower",
-    "url": "/united-kingdom/cardiff-south-wales/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Cardiff’s civic centre, castle and bay form a rail-and-bus city system. Bannau Brycheiniog and the Gower Peninsula require different gateways, road or bus connections and weather decisions. A strong South Wales stay uses the capital as a base but does not imply the national park or coast begins at Cardiff Central.",
-    "keywords": [
-      "Cardiff, Bannau Brycheiniog & Gower",
-      "Wales",
-      "wales"
-    ]
-  },
-  {
-    "title": "Cardiff Castle, Civic Centre & Bay",
-    "url": "/united-kingdom/cardiff-south-wales/cardiff-castle-bay/",
-    "parent": "Cardiff, Bannau Brycheiniog & Gower",
-    "type": "Local guide",
-    "summary": "Start at Cardiff Central or Queen Street, complete the castle and civic core or museum, then move once to Cardiff Bay and return by a direct line.",
-    "keywords": [
-      "Cardiff Castle, Civic Centre & Bay",
-      "Cardiff, Bannau Brycheiniog & Gower",
-      "Capital-to-bay line card",
-      "castle-arcade-waterfront-fold"
-    ]
-  },
-  {
-    "title": "Bannau Brycheiniog Gateways",
-    "url": "/united-kingdom/cardiff-south-wales/bannau-brycheiniog/",
-    "parent": "Cardiff, Bannau Brycheiniog & Gower",
-    "type": "Local guide",
-    "summary": "Travel to Brecon, Abergavenny, Merthyr Tydfil or another named gateway, assess mountain conditions there, complete one signed route and recover the final transport before dark.",
-    "keywords": [
-      "Bannau Brycheiniog Gateways",
-      "Cardiff, Bannau Brycheiniog & Gower",
-      "Gateway-and-ridge weather board",
-      "upland-gateway-transect"
-    ]
-  },
-  {
-    "title": "Swansea & the Gower Peninsula",
-    "url": "/united-kingdom/cardiff-south-wales/swansea-gower/",
-    "parent": "Cardiff, Bannau Brycheiniog & Gower",
-    "type": "Local guide",
-    "summary": "Use Swansea as the rail-and-bus base, travel to one named Gower village or bay, complete a bounded coast route, and return before sparse evening service.",
-    "keywords": [
-      "Swansea & the Gower Peninsula",
-      "Cardiff, Bannau Brycheiniog & Gower",
-      "Peninsula bus-and-tide selector",
-      "bay-to-headland-chart"
-    ]
-  },
-  {
-    "title": "Pembrokeshire & West Wales",
-    "url": "/united-kingdom/pembrokeshire-west-wales/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "St Davids, Tenby and the Ceredigion coast sit on separate West Wales corridors. Rail reaches Tenby and Aberystwyth, while St Davids needs a bus or road connection. Coast-path sections, boats and island visits add weather, tide and final-service decisions that should be explicit.",
-    "keywords": [
-      "Pembrokeshire & West Wales",
-      "Wales",
-      "wales"
-    ]
-  },
-  {
-    "title": "St Davids & the Pembrokeshire Coast",
-    "url": "/united-kingdom/pembrokeshire-west-wales/st-davids-coast/",
-    "parent": "Pembrokeshire & West Wales",
-    "type": "Local guide",
-    "summary": "Arrive in St Davids, descend to the cathedral precinct, then commit to one signed coast, harbour or boat branch only when weather and return transport remain secure.",
-    "keywords": [
-      "St Davids & the Pembrokeshire Coast",
-      "Pembrokeshire & West Wales",
-      "Cathedral-to-cliff weather card",
-      "saints-city-coast-fold"
-    ]
-  },
-  {
-    "title": "Tenby, Caldey & the South Coast",
-    "url": "/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/",
-    "parent": "Pembrokeshire & West Wales",
-    "type": "Local guide",
-    "summary": "Walk from Tenby station into the walled town, read the harbour’s live boat status, complete one island or coast line, and regain the station before the branch service narrows.",
-    "keywords": [
-      "Tenby, Caldey & the South Coast",
-      "Pembrokeshire & West Wales",
-      "Harbour-tide-island manifest",
-      "walled-harbour-tide-sheet"
-    ]
-  },
-  {
-    "title": "Aberystwyth & the Ceredigion Coast",
-    "url": "/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/",
-    "parent": "Pembrokeshire & West Wales",
-    "type": "Local guide",
-    "summary": "Arrive at Aberystwyth station, complete the town and promenade spine, then add one hill, collection or booked heritage-rail branch with the final train protected.",
-    "keywords": [
-      "Aberystwyth & the Ceredigion Coast",
-      "Pembrokeshire & West Wales",
-      "Rail-end coast-and-hill board",
-      "promenade-railway-horizon"
-    ]
-  },
-  {
-    "title": "North Wales & Eryri",
-    "url": "/united-kingdom/north-wales-eryri/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Conwy and Llandudno, Eryri’s mountain gateways, and Caernarfon with Anglesey form three distinct North Wales systems. Rail follows the coast, while mountain routes and castles add buses, seasonal railways, parking and weather. One named gateway per day is the practical standard.",
-    "keywords": [
-      "North Wales & Eryri",
-      "Wales",
-      "wales"
-    ]
-  },
-  {
-    "title": "Conwy Castle & Llandudno",
-    "url": "/united-kingdom/north-wales-eryri/conwy-llandudno/",
-    "parent": "North Wales & Eryri",
-    "type": "Local guide",
-    "summary": "Begin at the station nearest the main anchor, complete the castle or headland, take one rail or bus connection, and finish on the second town’s compact public realm.",
-    "keywords": [
-      "Conwy Castle & Llandudno",
-      "North Wales & Eryri",
-      "Wall-to-headland coast clock",
-      "castle-bay-headland-fold"
-    ]
-  },
-  {
-    "title": "Yr Wyddfa Gateway Choice",
-    "url": "/united-kingdom/north-wales-eryri/yr-wyddfa-gateways/",
-    "parent": "North Wales & Eryri",
-    "type": "Local guide",
-    "summary": "Reach Llanberis, Pen-y-Pass or another named start, read mountain conditions, complete the booked railway or mapped route with turnaround rules, and return before the gateway transport closes.",
-    "keywords": [
-      "Yr Wyddfa Gateway Choice",
-      "North Wales & Eryri",
-      "Summit-route and rail gate",
-      "mountain-route-selector"
-    ]
-  },
-  {
-    "title": "Caernarfon & Anglesey",
-    "url": "/united-kingdom/north-wales-eryri/caernarfon-anglesey/",
-    "parent": "North Wales & Eryri",
-    "type": "Local guide",
-    "summary": "Use Caernarfon’s castle and waterfront as one complete field, then cross to Anglesey only for a named town, coast or heritage site with a protected return.",
-    "keywords": [
-      "Caernarfon & Anglesey",
-      "North Wales & Eryri",
-      "Castle-to-island crossing sheet",
-      "menai-strait-bridge-plan"
-    ]
-  },
-  {
-    "title": "Belfast, Causeway Coast & Derry",
-    "url": "/united-kingdom/belfast-northern-ireland/",
-    "parent": "United Kingdom",
-    "type": "Regional guide",
-    "summary": "Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Combining them works across several nights, not as a single highlights loop.",
-    "keywords": [
-      "Belfast, Causeway Coast & Derry",
-      "Northern Ireland",
-      "northern-ireland"
-    ]
-  },
-  {
-    "title": "Belfast Civic Quarter & Maritime Mile",
-    "url": "/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/",
-    "parent": "Belfast, Causeway Coast & Derry",
-    "type": "Local guide",
-    "summary": "Begin at City Hall and the central grid, complete one history or civic anchor, then move once to the Titanic Quarter or remain with the city-centre evidence.",
-    "keywords": [
-      "Belfast Civic Quarter & Maritime Mile",
-      "Belfast, Causeway Coast & Derry",
-      "City-hall-to-shipyard route book",
-      "linen-grid-maritime-axis"
-    ]
-  },
-  {
-    "title": "Giant’s Causeway & the Causeway Coast",
-    "url": "/united-kingdom/belfast-northern-ireland/giants-causeway-coast/",
-    "parent": "Belfast, Causeway Coast & Derry",
-    "type": "Local guide",
-    "summary": "Travel from Belfast or a coast base to the visitor route, complete the causeway with official access guidance, then add one named town or viewpoint only when the return remains secure.",
-    "keywords": [
-      "Giant’s Causeway & the Causeway Coast",
-      "Belfast, Causeway Coast & Derry",
-      "Coast-stop weather-and-return chart",
-      "basalt-coast-rail-strip"
-    ]
-  },
-  {
-    "title": "Derry Walls, Bogside & River Foyle",
-    "url": "/united-kingdom/belfast-northern-ireland/derry-walls-bogside/",
-    "parent": "Belfast, Causeway Coast & Derry",
-    "type": "Local guide",
-    "summary": "Arrive at the bus or rail gateway, complete a one-direction wall circuit, descend for one context-rich institution, and finish at Guildhall or the Peace Bridge.",
-    "keywords": [
-      "Derry Walls, Bogside & River Foyle",
-      "Belfast, Causeway Coast & Derry",
-      "Walls-and-memory context ledger",
-      "walled-city-memory-section"
-    ]
-  },
-  {
     "title": "Italy Travel Guide",
     "url": "/italy/",
     "parent": "Europe",
@@ -12969,6 +10865,2110 @@
       "Victoria & South Vancouver Island",
       "British Columbia",
       "tide-clock"
+    ]
+  },
+  {
+    "title": "United States Travel Guide",
+    "url": "/usa/",
+    "parent": "North America",
+    "type": "Country",
+    "summary": "Choose a workable United States trip: rail-connected cities, a selective park journey or an island stay, with 24 regional guides and 72 local chapters.",
+    "keywords": [
+      "USA",
+      "United States",
+      "America"
+    ]
+  },
+  {
+    "title": "New York City",
+    "url": "/usa/new-york/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan a first New York trip with neighborhood-by-neighborhood hotel trade-offs, JFK, LaGuardia and Newark transfers, and a realistic three-day itinerary.",
+    "keywords": [
+      "New York City",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Lower Manhattan & the Harbor",
+    "url": "/usa/new-york/lower-manhattan/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Choose a Lower Manhattan walking day or a Liberty and Ellis Island visit, with ticket distinctions, a named street route and practical return options.",
+    "keywords": [
+      "Lower Manhattan & the Harbor",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Midtown & Central Park",
+    "url": "/usa/new-york/midtown-central-park/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Build a Midtown day around MoMA or The Met, a manageable Central Park walk and Broadway, with geographic trade-offs and realistic alternatives.",
+    "keywords": [
+      "Midtown & Central Park",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Brooklyn Heights & DUMBO",
+    "url": "/usa/new-york/brooklyn-waterfront/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Walk Brooklyn Heights and DUMBO through the promenade, Pier 1 and waterfront parks, with subway choices, step-free planning and bridge-return trade-offs.",
+    "keywords": [
+      "Brooklyn Heights & DUMBO",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Boston & Cambridge",
+    "url": "/usa/boston/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Boston or Cambridge hotel base, compare Logan airport transfers, and plan history, university and harbor days without rushing across the city.",
+    "keywords": [
+      "Boston & Cambridge",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Freedom Trail & North End",
+    "url": "/usa/boston/freedom-trail/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Walk Boston’s Freedom Trail in manageable sections, choosing historic interiors, a North End break and whether to continue to Charlestown Navy Yard.",
+    "keywords": [
+      "Freedom Trail & North End",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Cambridge & Harvard Square",
+    "url": "/usa/boston/cambridge-harvard/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Plan a Harvard Square visit around campus access and a choice of art or natural-history museums, with a Charles River option and a clear subway return.",
+    "keywords": [
+      "Cambridge & Harvard Square",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Boston Harbor & Islands",
+    "url": "/usa/boston/harbor-islands/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Choose a Boston Harbor Island by departure pier, seasonal ferry and terrain, with a return-first day plan, packing decisions and a mainland alternative.",
+    "keywords": [
+      "Boston Harbor & Islands",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Philadelphia",
+    "url": "/usa/philadelphia/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Philadelphia around Old City, Center City and the museum parkway, with hotel-base trade-offs, station choices and a selective two- or three-day stay.",
+    "keywords": [
+      "Philadelphia",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Old City & Independence Park",
+    "url": "/usa/philadelphia/old-city/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Plan Independence Hall and the Liberty Bell with their different entry rules, then follow an Old City walk with time for interpretation and a real break.",
+    "keywords": [
+      "Old City & Independence Park",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Museum Parkway & Schuylkill River",
+    "url": "/usa/philadelphia/parkway-museums/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Choose the Philadelphia Museum of Art, Barnes or Rodin before planning the parkway and Schuylkill, with walking, admission and shorter-day alternatives.",
+    "keywords": [
+      "Museum Parkway & Schuylkill River",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Reading Terminal & Center City",
+    "url": "/usa/philadelphia/reading-terminal/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Make Reading Terminal Market a useful Center City meal stop: compare open merchants, plan a short food circuit and continue toward City Hall or Chinatown.",
+    "keywords": [
+      "Reading Terminal & Center City",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Washington, DC",
+    "url": "/usa/washington-dc/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Metro-connected Washington base, compare airport arrivals and plan separate museum, memorial and Georgetown days with realistic return routes.",
+    "keywords": [
+      "Washington, DC",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "National Mall & Memorials",
+    "url": "/usa/washington-dc/national-mall/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Plan a selective National Mall memorial walk from the Washington Monument toward Lincoln, with a Tidal Basin alternative and weather-aware exits.",
+    "keywords": [
+      "National Mall & Memorials",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "Smithsonian Museums & Capitol Hill",
+    "url": "/usa/washington-dc/smithsonian/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Choose a Smithsonian museum by subject, address and entry rules, distinguishing Air and Space locations and a separately reserved Capitol Hill visit.",
+    "keywords": [
+      "Smithsonian Museums & Capitol Hill",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "Georgetown & the Potomac",
+    "url": "/usa/washington-dc/georgetown/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Explore Georgetown from M Street to the canal and Potomac, choosing a manageable slope, a meal and a clear return rather than an overlong towpath walk.",
+    "keywords": [
+      "Georgetown & the Potomac",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "New England Coast & Mountains",
+    "url": "/usa/new-england/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Maine coast or northern mountain trip, compare overnight bases and build a selective New England week without turning every day into a drive.",
+    "keywords": [
+      "New England Coast & Mountains",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Portland, Maine & Casco Bay",
+    "url": "/usa/new-england/portland-maine/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Explore Portland’s Old Port, choose a Casco Bay island sailing and separate a Cape Elizabeth lighthouse visit from the downtown walking day.",
+    "keywords": [
+      "Portland, Maine & Casco Bay",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "Acadia & Mount Desert Island",
+    "url": "/usa/new-england/acadia/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Plan Acadia around coast, Jordan Pond or carriage roads, separating park admission, Cadillac vehicle reservations and the seasonal Island Explorer.",
+    "keywords": [
+      "Acadia & Mount Desert Island",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "White Mountains & Vermont Roads",
+    "url": "/usa/new-england/white-mountains-vermont/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Choose White Mountain bases and a Kancamagus drive before a separate Vermont stay, with legal stops, mountain alternatives and realistic transfer days.",
+    "keywords": [
+      "White Mountains & Vermont Roads",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "Chicago",
+    "url": "/usa/chicago/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Chicago with CTA-connected hotel bases, O’Hare and Midway arrivals, and separate architecture, Museum Campus and neighborhood days.",
+    "keywords": [
+      "Chicago",
+      "Great Lakes"
+    ]
+  },
+  {
+    "title": "The Loop & Chicago Riverwalk",
+    "url": "/usa/chicago/loop-riverwalk/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Choose a Chicago architecture cruise or a flexible Riverwalk and Loop route, with distinct piers, street-level connections and an indoor alternative.",
+    "keywords": [
+      "The Loop & Chicago Riverwalk",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Museum Campus & Lakefront",
+    "url": "/usa/chicago/museum-lakefront/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Compare the Field Museum, Shedd Aquarium and Adler Planetarium, then plan one Museum Campus visit with a manageable lakeshore walk and return.",
+    "keywords": [
+      "Museum Campus & Lakefront",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Wicker Park, Logan Square & Neighborhood Chicago",
+    "url": "/usa/chicago/neighborhoods/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Choose Wicker Park or Logan Square for a Chicago neighborhood day, connecting Blue Line stations, shops, food and an optional planned music evening.",
+    "keywords": [
+      "Wicker Park, Logan Square & Neighborhood Chicago",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Seattle & Puget Sound",
+    "url": "/usa/seattle/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Seattle with light-rail hotel bases, a market and waterfront day, a Bainbridge crossing and a separately planned Mount Rainier outing.",
+    "keywords": [
+      "Seattle & Puget Sound",
+      "Pacific Northwest"
+    ]
+  },
+  {
+    "title": "Pike Place & Seattle Waterfront",
+    "url": "/usa/seattle/pike-place-waterfront/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Connect Pike Place Market with Overlook Walk and Seattle’s waterfront, choosing market levels, a meal and an aquarium visit without repeated hill climbs.",
+    "keywords": [
+      "Pike Place & Seattle Waterfront",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Bainbridge Island Ferry Day",
+    "url": "/usa/seattle/bainbridge/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Take a walk-on Bainbridge ferry day through Winslow, the art museum and Waterfront Park, separating Bloedel Reserve from the compact town walk.",
+    "keywords": [
+      "Bainbridge Island Ferry Day",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Mount Rainier National Park",
+    "url": "/usa/seattle/mount-rainier/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Plan Mount Rainier through Nisqually, Longmire and Paradise, with current road-closure context, trail choices and a separate park-admission decision.",
+    "keywords": [
+      "Mount Rainier National Park",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Portland & the Columbia Gorge",
+    "url": "/usa/portland-oregon/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Portland with MAX-connected hotel choices, a city and garden stay, and separate Columbia Gorge or Cannon Beach days matched to transport and weather.",
+    "keywords": [
+      "Portland & the Columbia Gorge",
+      "Pacific Northwest"
+    ]
+  },
+  {
+    "title": "Washington Park & Portland Gardens",
+    "url": "/usa/portland-oregon/washington-park/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Choose Portland Japanese Garden, the Rose Test Garden or Hoyt Arboretum, with Washington Park station, shuttle and admission differences made clear.",
+    "keywords": [
+      "Washington Park & Portland Gardens",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "Columbia River Gorge",
+    "url": "/usa/portland-oregon/columbia-gorge/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Plan a focused Columbia Gorge outing by car or Gorge Express, distinguishing Multnomah Falls permits, current bus limitations and a Crown Point option.",
+    "keywords": [
+      "Columbia River Gorge",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "Cannon Beach & the Oregon Coast",
+    "url": "/usa/portland-oregon/oregon-coast/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Plan Cannon Beach around town, Haystack Rock and a safe return, with tide-pool guidance, Ecola closure context and an overnight-versus-day-trip comparison.",
+    "keywords": [
+      "Cannon Beach & the Oregon Coast",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "San Francisco & the Bay",
+    "url": "/usa/san-francisco/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a San Francisco base by hills and transit, then build separate Alcatraz, Presidio and Mission days without treating the whole Bay Area as downtown.",
+    "keywords": [
+      "San Francisco & the Bay",
+      "California"
+    ]
+  },
+  {
+    "title": "Embarcadero & Alcatraz",
+    "url": "/usa/san-francisco/waterfront-alcatraz/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "Plan an Alcatraz landing from Pier 33 with island interpretation, access and return decisions, or choose a separate Ferry Building and waterfront day.",
+    "keywords": [
+      "Embarcadero & Alcatraz",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Golden Gate & the Presidio",
+    "url": "/usa/san-francisco/golden-gate-presidio/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "Connect Presidio Tunnel Tops, Crissy Field and a selected Golden Gate view, distinguishing bridge pedestrian access, Fort Point and shuttle restrictions.",
+    "keywords": [
+      "Golden Gate & the Presidio",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Mission District & Neighborhood Walks",
+    "url": "/usa/san-francisco/mission-neighborhoods/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "Read Mission District murals around 24th Street or Clarion Alley, with artist context, a neighborhood meal and a separate Mission Dolores choice.",
+    "keywords": [
+      "Mission District & Neighborhood Walks",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Los Angeles",
+    "url": "/usa/los-angeles/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Los Angeles hotel around district days, with current LAX connections and separate Downtown, Hollywood–Griffith and Santa Monica–Venice plans.",
+    "keywords": [
+      "Los Angeles",
+      "California"
+    ]
+  },
+  {
+    "title": "Downtown LA & the Arts District",
+    "url": "/usa/los-angeles/downtown-arts/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Connect The Broad, Bunker Hill, Angels Flight and Grand Central Market, choosing an art or architecture focus instead of treating Downtown LA as one block.",
+    "keywords": [
+      "Downtown LA & the Arts District",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "Hollywood & Griffith Park",
+    "url": "/usa/los-angeles/hollywood-griffith/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Plan Hollywood and Griffith Observatory around a realistic hill connection, separate planetarium admission and a known evening return.",
+    "keywords": [
+      "Hollywood & Griffith Park",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "Santa Monica & Venice",
+    "url": "/usa/los-angeles/santa-monica-venice/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Choose Santa Monica Pier, a selected coastal walk or Venice’s boardwalk and canals, with E Line arrival, separate attraction costs and a workable return.",
+    "keywords": [
+      "Santa Monica & Venice",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "San Diego",
+    "url": "/usa/san-diego/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan San Diego with a useful airport connection and separate Balboa Park, La Jolla and harbor days, choosing the base and car days around real destinations.",
+    "keywords": [
+      "San Diego",
+      "California"
+    ]
+  },
+  {
+    "title": "Balboa Park",
+    "url": "/usa/san-diego/balboa-park/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Choose Balboa Park museums and gardens around El Prado, with separate admission, current paid parking and a zoo-versus-cultural-day decision.",
+    "keywords": [
+      "Balboa Park",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "La Jolla Coast",
+    "url": "/usa/san-diego/la-jolla/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Plan a land-based La Jolla visit that distinguishes the Cove, Point La Jolla and Children’s Pool, with current wildlife boundaries and a village meal.",
+    "keywords": [
+      "La Jolla Coast",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "San Diego Harbor & Coronado",
+    "url": "/usa/san-diego/harbor-coronado/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Choose a San Diego maritime museum or a Coronado ferry day, identifying the exact departure, bay landing and separate ocean-beach connection.",
+    "keywords": [
+      "San Diego Harbor & Coronado",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "Yosemite & the Sierra Parks",
+    "url": "/usa/sierra-parks/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose separate Sierra park bases for Yosemite Valley, Giant Forest and Kings Canyon, with current access, seasonal shuttle and mountain-road trade-offs.",
+    "keywords": [
+      "Yosemite & the Sierra Parks",
+      "Western Parks"
+    ]
+  },
+  {
+    "title": "Yosemite Valley",
+    "url": "/usa/sierra-parks/yosemite-valley/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Plan a focused Yosemite Valley visit with the 2026 entry policy, YARTS and Valley shuttle distinctions, and selected meadow or lower-waterfall walks.",
+    "keywords": [
+      "Yosemite Valley",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Sequoia Giant Forest",
+    "url": "/usa/sierra-parks/sequoia-giant-forest/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Visit Giant Forest through a chosen road approach, distinguishing General Sherman access, Big Trees Trail, Congress Trail work and seasonal shuttles.",
+    "keywords": [
+      "Sequoia Giant Forest",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Kings Canyon & Grant Grove",
+    "url": "/usa/sierra-parks/kings-canyon/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Separate Grant Grove from the Cedar Grove canyon drive, with Highway 180 status, a grove-focused day and a deliberately planned deeper-canyon visit.",
+    "keywords": [
+      "Kings Canyon & Grant Grove",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Las Vegas & Southern Nevada",
+    "url": "/usa/las-vegas/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Las Vegas around the location of a show and hotel, with separate Strip, downtown and Red Rock days rather than a transfer-heavy attraction list.",
+    "keywords": [
+      "Las Vegas & Southern Nevada",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "The Strip & Shows",
+    "url": "/usa/las-vegas/strip/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Choose a manageable central Strip visit around Bellagio, a meal and one booked show, distinguishing free displays, changeover dates and Monorail access.",
+    "keywords": [
+      "The Strip & Shows",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Downtown Las Vegas",
+    "url": "/usa/las-vegas/downtown/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Compare the Neon Museum, Mob Museum and Fremont Street as different downtown experiences, with the actual museum location and a planned evening return.",
+    "keywords": [
+      "Downtown Las Vegas",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Red Rock Canyon",
+    "url": "/usa/las-vegas/red-rock/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Plan Red Rock Canyon as a separate desert outing, distinguishing the Scenic Drive reservation season, viewpoints, short walks and a confirmed return.",
+    "keywords": [
+      "Red Rock Canyon",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Utah Canyon Country",
+    "url": "/usa/utah-parks/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Zion–Bryce trip or a Moab-based stay before linking Utah parks, with separate bases, seasonal transport and selective park days.",
+    "keywords": [
+      "Utah Canyon Country",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "Zion Canyon",
+    "url": "/usa/utah-parks/zion/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Plan Zion Canyon with the Springdale and park shuttle distinction, a Pa’rus or Riverside Walk visit, and separate decisions for Angels Landing and the Narrows.",
+    "keywords": [
+      "Zion Canyon",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Bryce Canyon",
+    "url": "/usa/utah-parks/bryce/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Choose Bryce’s Sunrise–Sunset rim section or a separately planned descent, with hoodoo interpretation, shuttle timing and a realistic climb back.",
+    "keywords": [
+      "Bryce Canyon",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Moab, Arches & Canyonlands",
+    "url": "/usa/utah-parks/moab-arches-canyonlands/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Give Arches and Canyonlands’ Island in the Sky separate Moab days, distinguishing viewpoints, longer hikes, park districts and Dead Horse Point admission.",
+    "keywords": [
+      "Moab, Arches & Canyonlands",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Arizona & the Grand Canyon",
+    "url": "/usa/arizona/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan an Arizona stay with separate Phoenix, Sedona and Grand Canyon South Rim bases, matching elevation, access and actual transfer days to the trip.",
+    "keywords": [
+      "Arizona & the Grand Canyon",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "Grand Canyon South Rim",
+    "url": "/usa/arizona/grand-canyon/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Choose a Grand Canyon South Rim day around Mather Point, Yavapai and a selected rim section, with shuttle seasons and West/North Rim distinctions.",
+    "keywords": [
+      "Grand Canyon South Rim",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Sedona & Red Rock Trails",
+    "url": "/usa/arizona/sedona/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Choose a Sedona base and one suitable red-rock visit, distinguishing trailhead shuttle parking, recreation passes, the chapel and town time.",
+    "keywords": [
+      "Sedona & Red Rock Trails",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Phoenix & Scottsdale",
+    "url": "/usa/arizona/phoenix-scottsdale/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Compare the Heard Museum, Desert Botanical Garden and Old Town Scottsdale for a heat-aware cultural stay without a mandatory summit hike.",
+    "keywords": [
+      "Phoenix & Scottsdale",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Denver & the Colorado Rockies",
+    "url": "/usa/colorado/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Denver plus either Rocky Mountain National Park or a mountain-town base, with airport rail, separate park access and realistic transfer days.",
+    "keywords": [
+      "Denver & the Colorado Rockies",
+      "Mountain West"
+    ]
+  },
+  {
+    "title": "Denver Union Station & Museums",
+    "url": "/usa/colorado/denver/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Use Denver Union Station for an arrival and neighborhood visit, then choose the Denver Art Museum or History Colorado Center as a separate cultural block.",
+    "keywords": [
+      "Denver Union Station & Museums",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Rocky Mountain National Park",
+    "url": "/usa/colorado/rocky-mountain/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Distinguish Rocky Mountain timed entry, Bear Lake Road entry and the Estes Park Hiker Shuttle before choosing a lake or Trail Ridge Road day.",
+    "keywords": [
+      "Rocky Mountain National Park",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Colorado Mountain Towns",
+    "url": "/usa/colorado/mountain-towns/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Choose Summit County, Vail or Aspen as a mountain-town base, with a town-centered first day and separately confirmed lifts, trails and Maroon Bells access.",
+    "keywords": [
+      "Colorado Mountain Towns",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Yellowstone & Grand Teton",
+    "url": "/usa/yellowstone-tetons/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Yellowstone and Grand Teton bases by actual park roads, separating thermal basins, canyon and wildlife days from a Jenny Lake and mountain stay.",
+    "keywords": [
+      "Yellowstone & Grand Teton",
+      "Mountain West"
+    ]
+  },
+  {
+    "title": "Yellowstone Geyser Basins",
+    "url": "/usa/yellowstone-tetons/geyser-basins/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Visit Yellowstone thermal basins with an Old Faithful focus, distinguishing eruption predictions, Midway boardwalks and the Grand Prismatic Overlook trail.",
+    "keywords": [
+      "Yellowstone Geyser Basins",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "Yellowstone Canyon & Wildlife Valleys",
+    "url": "/usa/yellowstone-tetons/canyon-lamar/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Choose a Yellowstone canyon-and-Hayden day or a northern Lamar outing, with named viewpoints, current wildlife distances and a realistic return.",
+    "keywords": [
+      "Yellowstone Canyon & Wildlife Valleys",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "Grand Teton & Jackson",
+    "url": "/usa/yellowstone-tetons/grand-teton/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Plan Grand Teton around Jenny Lake, a selected historic or mountain viewpoint and a separate base, distinguishing lake boats from longer backcountry walks.",
+    "keywords": [
+      "Grand Teton & Jackson",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "New Orleans",
+    "url": "/usa/new-orleans/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a New Orleans base and distinct Quarter, Garden District and river or wetland days, with airport connections, live-music planning and current closures.",
+    "keywords": [
+      "New Orleans",
+      "South"
+    ]
+  },
+  {
+    "title": "French Quarter & Live Music",
+    "url": "/usa/new-orleans/french-quarter/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "Walk a selected French Quarter route through Jackson Square, Royal Street and museum interpretation, then choose a music program rather than a nightlife checklist.",
+    "keywords": [
+      "French Quarter & Live Music",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Garden District & Streetcars",
+    "url": "/usa/new-orleans/garden-district/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "Plan a St. Charles streetcar and Garden District visit with public-street architecture, a Magazine Street meal and the current Lafayette Cemetery No. 1 closure.",
+    "keywords": [
+      "Garden District & Streetcars",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Mississippi River & Wetlands",
+    "url": "/usa/new-orleans/river-wetlands/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "Choose an Algiers ferry crossing or a separate wetland outing, with the 2026 Barataria closure, relocated Wetland Trace access and a confirmed return.",
+    "keywords": [
+      "Mississippi River & Wetlands",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Atlanta",
+    "url": "/usa/atlanta/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose an Atlanta base near the actual MARTA route, then separate the King historic district, Midtown museums and a selected Beltline outing into useful days.",
+    "keywords": [
+      "Atlanta",
+      "South"
+    ]
+  },
+  {
+    "title": "Martin Luther King, Jr. Historic District",
+    "url": "/usa/atlanta/king-historic-district/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, Birth Home restrictions and distinct King Center spaces.",
+    "keywords": [
+      "Martin Luther King, Jr. Historic District",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Midtown Museums & Piedmont Park",
+    "url": "/usa/atlanta/midtown-museums/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Compare the High Museum, Museum of Design Atlanta and a separate botanical-garden visit, with Arts Center arrival and a collection-led Midtown day.",
+    "keywords": [
+      "Midtown Museums & Piedmont Park",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Atlanta BeltLine & Neighborhoods",
+    "url": "/usa/atlanta/beltline/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Choose a limited Atlanta Beltline Eastside visit around a real access point, Ponce City Market or Krog Street Market, with shared-trail etiquette and a planned return.",
+    "keywords": [
+      "Atlanta BeltLine & Neighborhoods",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Texas Cities",
+    "url": "/usa/texas/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose an Austin–San Antonio journey or a Houston stay before connecting three Texas cities, with separate bases, realistic transfers and focused local days.",
+    "keywords": [
+      "Texas Cities",
+      "South"
+    ]
+  },
+  {
+    "title": "Austin & Lady Bird Lake",
+    "url": "/usa/texas/austin/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Plan Austin around a Capitol visit, a selected Lady Bird Lake or South Congress portion and an actual music program, with airport and pool distinctions.",
+    "keywords": [
+      "Austin & Lady Bird Lake",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "San Antonio Missions & River Walk",
+    "url": "/usa/texas/san-antonio/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Separate San Antonio’s Alamo and downtown River Walk from the four southern mission sites, with Church reservations, active worship and a selective route.",
+    "keywords": [
+      "San Antonio Missions & River Walk",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "Houston Museums & Space Center",
+    "url": "/usa/texas/houston/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Choose a Space Center Houston day or a Museum District visit, distinguishing NASA tram tickets, the Clear Lake journey and separate city museum admissions.",
+    "keywords": [
+      "Houston Museums & Space Center",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "Miami & South Florida",
+    "url": "/usa/miami/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Miami Beach or mainland base, then separate Art Deco, Little Havana or Wynwood and an entrance-specific Everglades day with current airport connections.",
+    "keywords": [
+      "Miami & South Florida",
+      "Florida"
+    ]
+  },
+  {
+    "title": "South Beach & Art Deco",
+    "url": "/usa/miami/south-beach/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Visit South Beach through a selected Ocean Drive architecture walk, the Art Deco Museum or Welcome Center and a separate shoreline portion.",
+    "keywords": [
+      "South Beach & Art Deco",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Little Havana & Wynwood",
+    "url": "/usa/miami/little-havana-wynwood/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Choose a Calle Ocho cultural visit or a Wynwood art day, with Domino Park etiquette, distinct neighborhoods and separate Wynwood Walls admission.",
+    "keywords": [
+      "Little Havana & Wynwood",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Everglades National Park",
+    "url": "/usa/miami/everglades/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Choose Shark Valley or the Homestead–Royal Palm entrance for an Everglades day, with tram and parking distinctions, boardwalk access and confirmed return transport.",
+    "keywords": [
+      "Everglades National Park",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Orlando & Central Florida",
+    "url": "/usa/orlando/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose an Orlando base by the actual resort or city visit, with distinct theme-park days, Winter Park and a separately planned Kennedy Space Center journey.",
+    "keywords": [
+      "Orlando & Central Florida",
+      "Florida"
+    ]
+  },
+  {
+    "title": "Orlando Theme-Park Planning",
+    "url": "/usa/orlando/theme-parks/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Compare Disney and Universal park-day choices, admission versus queue products, date-based reservation rules and realistic transfers before buying multiple tickets.",
+    "keywords": [
+      "Orlando Theme-Park Planning",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Winter Park & Orlando Beyond Resorts",
+    "url": "/usa/orlando/winter-park/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Plan Winter Park through Park Avenue, the Morse Museum and a separate scenic boat option, with weekday SunRail planning and a clear return.",
+    "keywords": [
+      "Winter Park & Orlando Beyond Resorts",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Kennedy Space Center & Space Coast",
+    "url": "/usa/orlando/kennedy-space-center/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Give Kennedy Space Center a full Space Coast day, distinguishing the included bus route, Atlantis, add-on experiences and mission-specific launch viewing.",
+    "keywords": [
+      "Kennedy Space Center & Space Coast",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Alaska Gateways & Parks",
+    "url": "/usa/alaska/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Southcentral and Denali or a separate Juneau–Southeast journey, with actual train and ferry seasons, overnight bases and current park access.",
+    "keywords": [
+      "Alaska Gateways & Parks",
+      "Alaska"
+    ]
+  },
+  {
+    "title": "Anchorage, Seward & Kenai Fjords",
+    "url": "/usa/alaska/anchorage-kenai/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Plan Anchorage and Seward as a selective Southcentral trip, distinguishing the Coastal Classic season, Exit Glacier road and Nature Center access, and boat routes.",
+    "keywords": [
+      "Anchorage, Seward & Kenai Fjords",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Denali National Park",
+    "url": "/usa/alaska/denali/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Plan Denali around the 2026 bus limit at East Fork, separate narrated and transit buses, entrance-area visits and the different fall road arrangements.",
+    "keywords": [
+      "Denali National Park",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Juneau & Southeast Alaska",
+    "url": "/usa/alaska/juneau-southeast/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Choose a Juneau stay with the actual airport, cruise or Auke Bay ferry arrival, a current Mendenhall visit and separately planned Southeast connections.",
+    "keywords": [
+      "Juneau & Southeast Alaska",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Hawaii",
+    "url": "/usa/hawaii/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Oahu, Maui or Hawaii Island by the trip you want, with separate island transfers, realistic overnight bases and current park-access decisions.",
+    "keywords": [
+      "Hawaii",
+      "Pacific Islands"
+    ]
+  },
+  {
+    "title": "Oahu: Honolulu & Windward Coast",
+    "url": "/usa/hawaii/oahu/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Plan separate Honolulu, Pearl Harbor and Windward Coast days, with Diamond Head and Iolani Palace booking distinctions and an unhurried Kailua route.",
+    "keywords": [
+      "Oahu: Honolulu & Windward Coast",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "Maui: Haleakala & Coastal Days",
+    "url": "/usa/hawaii/maui/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Separate a Haleakala summit day from the Hana–Kipahulu approach, distinguish sunrise reservations and respect current Lahaina recovery access.",
+    "keywords": [
+      "Maui: Haleakala & Coastal Days",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "Hawaii Island: Volcanoes & Two Coasts",
+    "url": "/usa/hawaii/hawaii-island/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Choose Kona, Hilo or a Volcano stay around a realistic Hawaii Island trip, with current Kilauea visitor services and a park day that does not promise lava.",
+    "keywords": [
+      "Hawaii Island: Volcanoes & Two Coasts",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "United Kingdom Travel Guide",
+    "url": "/united-kingdom/",
+    "parent": "Europe",
+    "type": "Country",
+    "summary": "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.",
+    "keywords": [
+      "United Kingdom",
+      "UK travel",
+      "Britain",
+      "England",
+      "Scotland",
+      "Wales",
+      "Northern Ireland"
+    ]
+  },
+  {
+    "title": "London",
+    "url": "/united-kingdom/london/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "London is not one compact centre but a chain of walkable districts joined by rail, Underground, bus and river services. A useful plan fixes one timed interior, reads the correct station exit and keeps the rest of the day on a coherent street or river line instead of repeatedly crossing the city.",
+    "keywords": [
+      "London",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Westminster & the South Bank",
+    "url": "/united-kingdom/london/westminster-south-bank/",
+    "parent": "London",
+    "type": "Local guide",
+    "summary": "Start at the booked Westminster door, read Parliament Square and the abbey precinct, then use one bridge to finish along the South Bank with a direct return from Waterloo or Blackfriars.",
+    "keywords": [
+      "Westminster & the South Bank",
+      "London",
+      "Ceremony-and-crossing clock",
+      "parliament-river-fold"
+    ]
+  },
+  {
+    "title": "Bloomsbury, the British Museum & Covent Garden",
+    "url": "/united-kingdom/london/bloomsbury-covent-garden/",
+    "parent": "London",
+    "type": "Local guide",
+    "summary": "Enter the museum with a bounded collection plan, reset in Bloomsbury, and move south through a single street sequence toward Seven Dials and Covent Garden.",
+    "keywords": [
+      "Bloomsbury, the British Museum & Covent Garden",
+      "London",
+      "Collection-attention register",
+      "museum-quarter-ledger"
+    ]
+  },
+  {
+    "title": "Tower of London, the City & Greenwich",
+    "url": "/united-kingdom/london/tower-city-greenwich/",
+    "parent": "London",
+    "type": "Local guide",
+    "summary": "Start with the controlled fortress or a City walk, move east by rail or river only after the anchor, and finish around Greenwich’s compact maritime sites with the return already selected.",
+    "keywords": [
+      "Tower of London, the City & Greenwich",
+      "London",
+      "Fortress-to-meridian tide board",
+      "east-thames-section"
+    ]
+  },
+  {
+    "title": "Oxford, Blenheim & the Cotswolds",
+    "url": "/united-kingdom/oxford-cotswolds/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Oxford is a rail-connected walking city, while Blenheim Palace and the Cotswold towns depend on buses, tours, bicycles or a car. A strong base plan distinguishes college opening windows from rural timetables and never treats “the Cotswolds” as one station or one attraction.",
+    "keywords": [
+      "Oxford, Blenheim & the Cotswolds",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Oxford Colleges, Libraries & Museums",
+    "url": "/united-kingdom/oxford-cotswolds/oxford-colleges-museums/",
+    "parent": "Oxford, Blenheim & the Cotswolds",
+    "type": "Local guide",
+    "summary": "Start from the railway station or Gloucester Green, confirm the booked or open college, connect Bodleian and Radcliffe Square, then finish with one museum or river edge.",
+    "keywords": [
+      "Oxford Colleges, Libraries & Museums",
+      "Oxford, Blenheim & the Cotswolds",
+      "College-opening matrix",
+      "quadrangle-threshold-plan"
+    ]
+  },
+  {
+    "title": "Blenheim Palace & Woodstock",
+    "url": "/united-kingdom/oxford-cotswolds/blenheim-woodstock/",
+    "parent": "Oxford, Blenheim & the Cotswolds",
+    "type": "Local guide",
+    "summary": "Leave Oxford on a verified service, enter through the correct Blenheim gate, choose palace depth or landscape distance, and protect the return from Woodstock before evening frequency changes.",
+    "keywords": [
+      "Blenheim Palace & Woodstock",
+      "Oxford, Blenheim & the Cotswolds",
+      "Palace-gate connection sheet",
+      "estate-arrival-section"
+    ]
+  },
+  {
+    "title": "Cotswold Towns Without a Car",
+    "url": "/united-kingdom/oxford-cotswolds/cotswold-towns-without-car/",
+    "parent": "Oxford, Blenheim & the Cotswolds",
+    "type": "Local guide",
+    "summary": "Select a rail gateway and one or two connected towns, keep the route inside the published bus pattern, and treat footpaths or a tour as separate products rather than invisible links.",
+    "keywords": [
+      "Cotswold Towns Without a Car",
+      "Oxford, Blenheim & the Cotswolds",
+      "Village-return dependency chart",
+      "bus-window-gazetteer"
+    ]
+  },
+  {
+    "title": "Cambridge & East Anglia",
+    "url": "/united-kingdom/cambridge-east-anglia/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Cambridge, Ely and Norwich sit on useful rail lines, but their stations, historic cores and surrounding fen or coast landscapes operate at different scales. A good plan distinguishes a walkable academic city from a cathedral stop and a wider East Anglian excursion with its own onward connection.",
+    "keywords": [
+      "Cambridge & East Anglia",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Cambridge Colleges & the Backs",
+    "url": "/united-kingdom/cambridge-east-anglia/cambridge-colleges-backs/",
+    "parent": "Cambridge & East Anglia",
+    "type": "Local guide",
+    "summary": "Walk from station to the historic core, meet one verified college gate, continue along public streets and the Backs, and decide separately whether punting or a museum deserves the final block.",
+    "keywords": [
+      "Cambridge Colleges & the Backs",
+      "Cambridge & East Anglia",
+      "College-gate and river clock",
+      "backs-and-courts-fold"
+    ]
+  },
+  {
+    "title": "Ely Cathedral & the Fen Edge",
+    "url": "/united-kingdom/cambridge-east-anglia/ely-cathedral-fens/",
+    "parent": "Cambridge & East Anglia",
+    "type": "Local guide",
+    "summary": "Climb from Ely station and riverside to the cathedral precinct, give the interior a defined block, then choose Oliver Cromwell context or a signed lowland walk before returning downhill.",
+    "keywords": [
+      "Ely Cathedral & the Fen Edge",
+      "Cambridge & East Anglia",
+      "Cathedral-to-fen elevation strip",
+      "island-in-fens-section"
+    ]
+  },
+  {
+    "title": "Norwich & a North Norfolk Branch",
+    "url": "/united-kingdom/cambridge-east-anglia/norwich-north-norfolk/",
+    "parent": "Cambridge & East Anglia",
+    "type": "Local guide",
+    "summary": "Walk Norwich’s castle-to-cathedral spine first, then either keep the complete city day or use one verified rail or bus branch with its final return protected.",
+    "keywords": [
+      "Norwich & a North Norfolk Branch",
+      "Cambridge & East Anglia",
+      "City-to-coast branch board",
+      "lanes-and-rail-branch"
+    ]
+  },
+  {
+    "title": "Bath, Bristol & Somerset",
+    "url": "/united-kingdom/bath-bristol-somerset/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Bath and Bristol are close by rail but reward different days: one concentrates Roman archaeology and Georgian streets, the other a working harbour, collections and steep neighbourhoods. Wells, Glastonbury and the Mendips introduce bus-dependent rural connections that should not be hidden inside a city itinerary.",
+    "keywords": [
+      "Bath, Bristol & Somerset",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Bath: Roman & Georgian City",
+    "url": "/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/",
+    "parent": "Bath, Bristol & Somerset",
+    "type": "Local guide",
+    "summary": "Begin at Bath Spa, complete one booked central interior, climb through Queen Square and the Circus only if energy allows, and return by a different street line.",
+    "keywords": [
+      "Bath: Roman & Georgian City",
+      "Bath, Bristol & Somerset",
+      "Thermal-city time ledger",
+      "stone-terrace-sequence"
+    ]
+  },
+  {
+    "title": "Bristol Harbourside & Clifton",
+    "url": "/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/",
+    "parent": "Bath, Bristol & Somerset",
+    "type": "Local guide",
+    "summary": "Start at Temple Meads or the centre, read the working harbour through one museum or ship, then either finish around Clifton or stay with the water and city centre.",
+    "keywords": [
+      "Bristol Harbourside & Clifton",
+      "Bath, Bristol & Somerset",
+      "Harbour-to-ridge gradient board",
+      "floating-harbour-cross-section"
+    ]
+  },
+  {
+    "title": "Wells, Glastonbury & the Mendip Edge",
+    "url": "/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/",
+    "parent": "Bath, Bristol & Somerset",
+    "type": "Local guide",
+    "summary": "Leave Bath or Bristol on a verified route, give one town and its major site enough time, then use the second place or Mendip landscape only when the onward and return connections are secure.",
+    "keywords": [
+      "Wells, Glastonbury & the Mendip Edge",
+      "Bath, Bristol & Somerset",
+      "Somerset bus-and-weather docket",
+      "cathedral-tor-decision-sheet"
+    ]
+  },
+  {
+    "title": "Cornwall & Devon",
+    "url": "/united-kingdom/cornwall-devon/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Cornwall and Devon contain rail-linked cities and harbour towns, but the peninsula’s headlands, villages and moors depend on slower branches, buses, boats or roads. A useful trip chooses a compact base and one weather-facing landscape each day rather than measuring success by the number of coastal names reached.",
+    "keywords": [
+      "Cornwall & Devon",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "St Ives & the Penwith Coast",
+    "url": "/united-kingdom/cornwall-devon/st-ives-penwith/",
+    "parent": "Cornwall & Devon",
+    "type": "Local guide",
+    "summary": "Arrive by the branch line, give St Ives harbour and one collection a coherent block, then use a verified bus or bounded coastal walk only when the return and weather remain secure.",
+    "keywords": [
+      "St Ives & the Penwith Coast",
+      "Cornwall & Devon",
+      "Branch-line and headland clock",
+      "gallery-coast-tide-strip"
+    ]
+  },
+  {
+    "title": "Falmouth Harbour & the Roseland",
+    "url": "/united-kingdom/cornwall-devon/falmouth-roseland/",
+    "parent": "Cornwall & Devon",
+    "type": "Local guide",
+    "summary": "Arrive on the correct Falmouth branch station, use the maritime museum or Pendennis as the fixed anchor, then cross the estuary only with a verified outward and return sailing.",
+    "keywords": [
+      "Falmouth Harbour & the Roseland",
+      "Cornwall & Devon",
+      "Estuary vessel decision card",
+      "harbour-ferry-compass"
+    ]
+  },
+  {
+    "title": "Exeter & the Dartmoor Edge",
+    "url": "/united-kingdom/cornwall-devon/exeter-dartmoor-edge/",
+    "parent": "Cornwall & Devon",
+    "type": "Local guide",
+    "summary": "Read Exeter’s cathedral and quays first, then remain in the city or commit to one verified moor gateway with weather, daylight and the final rail return already checked.",
+    "keywords": [
+      "Exeter & the Dartmoor Edge",
+      "Cornwall & Devon",
+      "Cathedral-to-moor weather gate",
+      "red-stone-moor-transect"
+    ]
+  },
+  {
+    "title": "Kent, Sussex & the South Coast",
+    "url": "/united-kingdom/kent-sussex-south-coast/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Brighton, Canterbury, Dover and the Seven Sisters sit on different rail and bus corridors despite sharing the south-east coast. A useful day chooses one urban or landscape argument, names the station and final connection, and treats exposed chalk paths as weather decisions rather than scenic filler.",
+    "keywords": [
+      "Kent, Sussex & the South Coast",
+      "England",
+      "england-south"
+    ]
+  },
+  {
+    "title": "Brighton Lanes, Pavilion & Seafront",
+    "url": "/united-kingdom/kent-sussex-south-coast/brighton-lanes-seafront/",
+    "parent": "Kent, Sussex & the South Coast",
+    "type": "Local guide",
+    "summary": "Descend from Brighton station through the North Laine or Pavilion precinct, complete one interior, then finish on a bounded seafront section with the uphill return already planned.",
+    "keywords": [
+      "Brighton Lanes, Pavilion & Seafront",
+      "Kent, Sussex & the South Coast",
+      "Seafront weather-and-crowd clock",
+      "regency-to-pier-zigzag"
+    ]
+  },
+  {
+    "title": "Canterbury Cathedral & Dover Castle",
+    "url": "/united-kingdom/kent-sussex-south-coast/canterbury-dover/",
+    "parent": "Kent, Sussex & the South Coast",
+    "type": "Local guide",
+    "summary": "Begin in Canterbury’s walkable core or at Dover’s hillside fortress, complete one deep visit, and add the second place only as a bounded exterior or shorter stop with its return protected.",
+    "keywords": [
+      "Canterbury Cathedral & Dover Castle",
+      "Kent, Sussex & the South Coast",
+      "Two-fortress admission docket",
+      "pilgrim-to-channel-section"
+    ]
+  },
+  {
+    "title": "Seven Sisters & Eastbourne",
+    "url": "/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/",
+    "parent": "Kent, Sussex & the South Coast",
+    "type": "Local guide",
+    "summary": "Arrive at a rail-and-bus gateway, read wind and path conditions, complete one signed chalk-coast segment, and turn back or exit before daylight and the final connection become tight.",
+    "keywords": [
+      "Seven Sisters & Eastbourne",
+      "Kent, Sussex & the South Coast",
+      "Cliff-edge turn-back chart",
+      "chalk-profile-route"
+    ]
+  },
+  {
+    "title": "Birmingham & the West Midlands",
+    "url": "/united-kingdom/birmingham-west-midlands/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Birmingham’s canals, civic centre and Jewellery Quarter form a connected urban day, while Stratford-upon-Avon and Ironbridge require different rail or bus corridors and separate heritage bookings. The region works best from one base with one clearly chosen outward branch per day.",
+    "keywords": [
+      "Birmingham & the West Midlands",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Birmingham Canals & Jewellery Quarter",
+    "url": "/united-kingdom/birmingham-west-midlands/birmingham-canals-jewellery-quarter/",
+    "parent": "Birmingham & the West Midlands",
+    "type": "Local guide",
+    "summary": "Exit the correct central station, read the civic core, follow one canal line to Gas Street and Brindleyplace, then use tram or a deliberate walk to the Jewellery Quarter.",
+    "keywords": [
+      "Birmingham Canals & Jewellery Quarter",
+      "Birmingham & the West Midlands",
+      "Workshop-to-water city section",
+      "industrial-city-cutaway"
+    ]
+  },
+  {
+    "title": "Stratford-upon-Avon & Shakespeare",
+    "url": "/united-kingdom/birmingham-west-midlands/stratford-shakespeare/",
+    "parent": "Birmingham & the West Midlands",
+    "type": "Local guide",
+    "summary": "Walk from the station into the birthplace and market-town core, continue to the river and theatre, then protect the train return or performance exit before adding another historic property.",
+    "keywords": [
+      "Stratford-upon-Avon & Shakespeare",
+      "Birmingham & the West Midlands",
+      "Performance-day scene sheet",
+      "stage-and-river-sequence"
+    ]
+  },
+  {
+    "title": "Ironbridge Gorge & Shrewsbury",
+    "url": "/united-kingdom/birmingham-west-midlands/ironbridge-shrewsbury/",
+    "parent": "Birmingham & the West Midlands",
+    "type": "Local guide",
+    "summary": "Use Shrewsbury or Telford as the rail gateway, complete one museum cluster or town circuit, and avoid assuming the gorge’s sites form a short walk from a single station.",
+    "keywords": [
+      "Ironbridge Gorge & Shrewsbury",
+      "Birmingham & the West Midlands",
+      "Industrial-valley connection map",
+      "gorge-museum-spine"
+    ]
+  },
+  {
+    "title": "Peak District & Derbyshire",
+    "url": "/united-kingdom/peak-district-derbyshire/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "The Peak District is a group of valleys, moors, towns and estates rather than one arrival point. Hope Valley rail, Bakewell and Chatsworth buses, and the southern dales create different day systems. Every plan needs a named gateway, surface-aware route and protected return.",
+    "keywords": [
+      "Peak District & Derbyshire",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Bakewell & Chatsworth",
+    "url": "/united-kingdom/peak-district-derbyshire/bakewell-chatsworth/",
+    "parent": "Peak District & Derbyshire",
+    "type": "Local guide",
+    "summary": "Begin at Bakewell or the estate gate, complete one defined Chatsworth product, and use the town only when the return corridor and daylight remain protected.",
+    "keywords": [
+      "Bakewell & Chatsworth",
+      "Peak District & Derbyshire",
+      "Market-to-estate bus ledger",
+      "estate-valley-docket"
+    ]
+  },
+  {
+    "title": "Hope Valley & Edale",
+    "url": "/united-kingdom/peak-district-derbyshire/hope-valley-edale/",
+    "parent": "Peak District & Derbyshire",
+    "type": "Local guide",
+    "summary": "Arrive at Edale, Hope or another chosen station, read the weather from the valley, complete one signed route with a firm turn-back, and reach the railhead before service gaps matter.",
+    "keywords": [
+      "Hope Valley & Edale",
+      "Peak District & Derbyshire",
+      "Railhead-to-ridge turn-back ruler",
+      "moorline-profile"
+    ]
+  },
+  {
+    "title": "Dovedale & Ashbourne",
+    "url": "/united-kingdom/peak-district-derbyshire/dovedale-ashbourne/",
+    "parent": "Peak District & Derbyshire",
+    "type": "Local guide",
+    "summary": "Reach Ashbourne or the named valley approach, assess river and path conditions, complete one out-and-back or bounded dale route, and return before the rural connection thins.",
+    "keywords": [
+      "Dovedale & Ashbourne",
+      "Peak District & Derbyshire",
+      "Dale-water and bus gauge",
+      "stepping-stone-valley-plan"
+    ]
+  },
+  {
+    "title": "Liverpool, Manchester & Chester",
+    "url": "/united-kingdom/liverpool-manchester/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Liverpool and Manchester are close by rail but their useful visitor geographies point in different directions: Mersey waterfront and mercantile streets versus canals, civic collections and industrial quarters. Chester adds a compact walled city on another line. Each deserves a separate day even when journey times look short.",
+    "keywords": [
+      "Liverpool, Manchester & Chester",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Liverpool Waterfront & Cathedrals",
+    "url": "/united-kingdom/liverpool-manchester/liverpool-waterfront-cathedrals/",
+    "parent": "Liverpool, Manchester & Chester",
+    "type": "Local guide",
+    "summary": "Walk from Lime Street toward the waterfront, use one museum cluster, then climb once toward the cathedrals or remain with the Mersey and finish near a direct station.",
+    "keywords": [
+      "Liverpool Waterfront & Cathedrals",
+      "Liverpool, Manchester & Chester",
+      "Mersey-to-ridge city ruler",
+      "dock-and-cathedral-axis"
+    ]
+  },
+  {
+    "title": "Manchester Industrial City & Collections",
+    "url": "/united-kingdom/liverpool-manchester/manchester-industrial-city/",
+    "parent": "Liverpool, Manchester & Chester",
+    "type": "Local guide",
+    "summary": "Begin at the station serving the chosen district, use one major collection, connect a bounded canal or civic route, and finish on the same tram or rail side.",
+    "keywords": [
+      "Manchester Industrial City & Collections",
+      "Liverpool, Manchester & Chester",
+      "Canal-to-civic innovation grid",
+      "warehouse-city-matrix"
+    ]
+  },
+  {
+    "title": "Chester Walls & Roman City",
+    "url": "/united-kingdom/liverpool-manchester/chester-walls-roman-city/",
+    "parent": "Liverpool, Manchester & Chester",
+    "type": "Local guide",
+    "summary": "Walk from Chester station to a named wall gate, complete a weather-aware section or full circuit, descend once for the Rows and one interior, then return through the compact centre.",
+    "keywords": [
+      "Chester Walls & Roman City",
+      "Liverpool, Manchester & Chester",
+      "Wall-gate circuit register",
+      "walled-city-loop"
+    ]
+  },
+  {
+    "title": "York, Leeds & Yorkshire",
+    "url": "/united-kingdom/yorkshire/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "York’s walls and Minster, Leeds and Saltaire’s civic-industrial collections, and the North York Moors–Whitby line are three distinct travel systems. Fast intercity rail makes the cities easy to pair across nights, but moor and coast branches need their own weather, heritage-rail and return decisions.",
+    "keywords": [
+      "York, Leeds & Yorkshire",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "York Walls, Minster & Medieval Core",
+    "url": "/united-kingdom/yorkshire/york-walls-minster/",
+    "parent": "York, Leeds & Yorkshire",
+    "type": "Local guide",
+    "summary": "Walk from York station to a named wall gate, complete one coherent wall section, meet the Minster or museum booking, and leave through a different gate toward the station.",
+    "keywords": [
+      "York Walls, Minster & Medieval Core",
+      "York, Leeds & Yorkshire",
+      "Gate-to-gate wall clock",
+      "minster-wall-ring"
+    ]
+  },
+  {
+    "title": "Leeds Collections & Saltaire",
+    "url": "/united-kingdom/yorkshire/leeds-saltaire/",
+    "parent": "York, Leeds & Yorkshire",
+    "type": "Local guide",
+    "summary": "Begin at Leeds station for markets, arcades or a museum, then take one verified local train to Saltaire only when the mill, village and return have a useful time window.",
+    "keywords": [
+      "Leeds Collections & Saltaire",
+      "York, Leeds & Yorkshire",
+      "Civic-to-mill rail ledger",
+      "arcade-and-mill-grid"
+    ]
+  },
+  {
+    "title": "Whitby & the North York Moors",
+    "url": "/united-kingdom/yorkshire/whitby-north-york-moors/",
+    "parent": "York, Leeds & Yorkshire",
+    "type": "Local guide",
+    "summary": "Reach Whitby or a moor gateway by the confirmed rail, bus or heritage service, complete one town-and-landscape line, and protect the final return before evening frequency falls away.",
+    "keywords": [
+      "Whitby & the North York Moors",
+      "York, Leeds & Yorkshire",
+      "Moor-to-coast service board",
+      "steam-line-coast-profile"
+    ]
+  },
+  {
+    "title": "Lake District & Cumbria",
+    "url": "/united-kingdom/lake-district-cumbria/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Windermere and Ambleside, Keswick and Derwentwater, and Carlisle with the western Wall use different railheads and buses. The Lake District rewards one basin at a time: weather, boat operation, valley traffic and the last bus matter more than the short distances shown on a map.",
+    "keywords": [
+      "Lake District & Cumbria",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Windermere, Bowness & Ambleside",
+    "url": "/united-kingdom/lake-district-cumbria/windermere-ambleside/",
+    "parent": "Lake District & Cumbria",
+    "type": "Local guide",
+    "summary": "Arrive at Windermere station, descend to Bowness or connect to Ambleside, use one verified boat or shore line, and protect the final bus or branch train.",
+    "keywords": [
+      "Windermere, Bowness & Ambleside",
+      "Lake District & Cumbria",
+      "Lake-bus-boat interchange card",
+      "shoreline-transfer-ribbon"
+    ]
+  },
+  {
+    "title": "Keswick & Derwentwater",
+    "url": "/united-kingdom/lake-district-cumbria/keswick-derwentwater/",
+    "parent": "Lake District & Cumbria",
+    "type": "Local guide",
+    "summary": "Arrive by the confirmed bus, use Keswick as the service base, complete one water or fell branch, and return to the town before the onward bus window narrows.",
+    "keywords": [
+      "Keswick & Derwentwater",
+      "Lake District & Cumbria",
+      "Launch-and-fell weather dial",
+      "market-lake-spoke-map"
+    ]
+  },
+  {
+    "title": "Carlisle & Hadrian’s Wall West",
+    "url": "/united-kingdom/lake-district-cumbria/carlisle-hadrians-wall-west/",
+    "parent": "Lake District & Cumbria",
+    "type": "Local guide",
+    "summary": "Begin with Carlisle Castle or city context, take one verified corridor to a western fort or wall section, and return before rural frequency and daylight narrow.",
+    "keywords": [
+      "Carlisle & Hadrian’s Wall West",
+      "Lake District & Cumbria",
+      "Fort-and-frontier rail strip",
+      "roman-frontier-section"
+    ]
+  },
+  {
+    "title": "Newcastle, Durham & Northumberland",
+    "url": "/united-kingdom/northeast-northumberland/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Newcastle–Gateshead and Durham are compact rail cities with strong river and collection routes, while Bamburgh and Holy Island introduce long road links and a tidal causeway. The region works when city days remain complete and the coast is planned as a separate weather-and-tide operation.",
+    "keywords": [
+      "Newcastle, Durham & Northumberland",
+      "England",
+      "england-midlands-north"
+    ]
+  },
+  {
+    "title": "Newcastle & Gateshead Quays",
+    "url": "/united-kingdom/northeast-northumberland/newcastle-gateshead-quays/",
+    "parent": "Newcastle, Durham & Northumberland",
+    "type": "Local guide",
+    "summary": "Descend from Newcastle Central through the historic core, use one Quayside collection, cross once to Gateshead, and return by Metro or a different bridge.",
+    "keywords": [
+      "Newcastle & Gateshead Quays",
+      "Newcastle, Durham & Northumberland",
+      "Bridge-and-bank culture ledger",
+      "tyne-bridge-fold"
+    ]
+  },
+  {
+    "title": "Durham Cathedral & River Peninsula",
+    "url": "/united-kingdom/northeast-northumberland/durham-cathedral-city/",
+    "parent": "Newcastle, Durham & Northumberland",
+    "type": "Local guide",
+    "summary": "Descend from Durham station, climb to Palace Green for one controlled interior, follow one side of the River Wear, and return without repeating the peninsula slopes.",
+    "keywords": [
+      "Durham Cathedral & River Peninsula",
+      "Newcastle, Durham & Northumberland",
+      "Peninsula climb-and-loop card",
+      "cathedral-river-meander"
+    ]
+  },
+  {
+    "title": "Bamburgh Castle & Holy Island",
+    "url": "/united-kingdom/northeast-northumberland/bamburgh-holy-island/",
+    "parent": "Newcastle, Durham & Northumberland",
+    "type": "Local guide",
+    "summary": "Leave the rail corridor with a named bus, tour or car plan, complete one castle or island visit, and cross the Holy Island causeway only within the official safe window.",
+    "keywords": [
+      "Bamburgh Castle & Holy Island",
+      "Newcastle, Durham & Northumberland",
+      "Causeway tide-and-road board",
+      "tidal-border-chart"
+    ]
+  },
+  {
+    "title": "Edinburgh & the Lothians",
+    "url": "/united-kingdom/edinburgh-lothians/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Edinburgh’s Old Town ridge, New Town terraces and lower valleys create a vertical city where short map distances conceal stairs and steep streets. East Lothian adds a separate coast railway. A strong plan fixes one controlled interior and uses the city’s level changes as the route rather than an inconvenience.",
+    "keywords": [
+      "Edinburgh & the Lothians",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Old Town, Castle & Royal Mile",
+    "url": "/united-kingdom/edinburgh-lothians/old-town-castle-royal-mile/",
+    "parent": "Edinburgh & the Lothians",
+    "type": "Local guide",
+    "summary": "Enter the Old Town at the correct level, complete one controlled interior, descend the Royal Mile through selected closes, and finish at Holyrood or Waverley without retracing.",
+    "keywords": [
+      "Old Town, Castle & Royal Mile",
+      "Edinburgh & the Lothians",
+      "Ridge-entry and descent clock",
+      "castle-ridge-long-section"
+    ]
+  },
+  {
+    "title": "New Town, Galleries & Dean Village",
+    "url": "/united-kingdom/edinburgh-lothians/new-town-dean-village/",
+    "parent": "Edinburgh & the Lothians",
+    "type": "Local guide",
+    "summary": "Start near Princes Street or the gallery complex, walk one New Town terrace line, descend once to Dean Village, and leave through Stockbridge or a planned climb.",
+    "keywords": [
+      "New Town, Galleries & Dean Village",
+      "Edinburgh & the Lothians",
+      "Terrace-to-water level chart",
+      "georgian-grid-waterline"
+    ]
+  },
+  {
+    "title": "North Berwick & East Lothian",
+    "url": "/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/",
+    "parent": "Edinburgh & the Lothians",
+    "type": "Local guide",
+    "summary": "Walk from North Berwick station to town and harbour, assess wind and sea state, complete one coast activity, and return before the branch service or daylight narrows.",
+    "keywords": [
+      "North Berwick & East Lothian",
+      "Edinburgh & the Lothians",
+      "Coast-train-and-seabird board",
+      "firth-coast-window"
+    ]
+  },
+  {
+    "title": "Glasgow & the Clyde",
+    "url": "/united-kingdom/glasgow-clyde/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Glasgow’s centre, Merchant City and Clyde waterfront form one urban field; the West End has its own museum-and-park rhythm; Loch Lomond adds a rail-to-water branch beyond the city. A useful stay chooses one district per half-day and does not let Subway convenience erase walking and collection scale.",
+    "keywords": [
+      "Glasgow & the Clyde",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Central Glasgow, Merchant City & the Clyde",
+    "url": "/united-kingdom/glasgow-clyde/central-merchant-city-clyde/",
+    "parent": "Glasgow & the Clyde",
+    "type": "Local guide",
+    "summary": "Start at the station serving the first district, complete one civic or collection anchor, descend through Merchant City or the grid, and finish along a bounded Clyde section.",
+    "keywords": [
+      "Central Glasgow, Merchant City & the Clyde",
+      "Glasgow & the Clyde",
+      "Grid-to-river civic register",
+      "merchant-grid-river-drop"
+    ]
+  },
+  {
+    "title": "West End, Kelvingrove & the University",
+    "url": "/united-kingdom/glasgow-clyde/west-end-kelvingrove/",
+    "parent": "Glasgow & the Clyde",
+    "type": "Local guide",
+    "summary": "Arrive by Subway or bus, complete one museum, cross Kelvingrove Park or the university once, and finish around Byres Road or the Botanic Gardens.",
+    "keywords": [
+      "West End, Kelvingrove & the University",
+      "Glasgow & the Clyde",
+      "Museum-park-campus field card",
+      "sandstone-park-cabinet"
+    ]
+  },
+  {
+    "title": "Loch Lomond from Glasgow",
+    "url": "/united-kingdom/glasgow-clyde/loch-lomond-clyde-branch/",
+    "parent": "Glasgow & the Clyde",
+    "type": "Local guide",
+    "summary": "Leave Glasgow for one gateway, assess water and hill weather, complete one shore, boat or lower-walk plan, and return before branch frequency narrows.",
+    "keywords": [
+      "Loch Lomond from Glasgow",
+      "Glasgow & the Clyde",
+      "Rail-to-loch shore selector",
+      "loch-gateway-switchboard"
+    ]
+  },
+  {
+    "title": "Inverness & the Scottish Highlands",
+    "url": "/united-kingdom/scottish-highlands/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Inverness and Loch Ness, Glencoe and Fort William, and Aviemore with the Cairngorms use long, weather-sensitive rail and road corridors. Distances, daylight and sparse alternatives make one named landscape per day the useful maximum. A hotel booking does not make a mountain road, path or cruise operational.",
+    "keywords": [
+      "Inverness & the Scottish Highlands",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Inverness & Loch Ness",
+    "url": "/united-kingdom/scottish-highlands/inverness-loch-ness/",
+    "parent": "Inverness & the Scottish Highlands",
+    "type": "Local guide",
+    "summary": "Begin on the River Ness, use one verified bus, tour or boat to the selected loch site, and return to Inverness before rural frequency or cruise operation becomes the edge.",
+    "keywords": [
+      "Inverness & Loch Ness",
+      "Inverness & the Scottish Highlands",
+      "Loch-road-and-cruise docket",
+      "river-to-loch-spine"
+    ]
+  },
+  {
+    "title": "Glencoe & Fort William",
+    "url": "/united-kingdom/scottish-highlands/glencoe-fort-william/",
+    "parent": "Inverness & the Scottish Highlands",
+    "type": "Local guide",
+    "summary": "Leave the rail or coach town for one verified glen stop, assess conditions at low level, complete a bounded route or visitor-centre day, and recover the return before road delay compounds.",
+    "keywords": [
+      "Glencoe & Fort William",
+      "Inverness & the Scottish Highlands",
+      "Glen-road mountain gate",
+      "mountain-corridor-transect"
+    ]
+  },
+  {
+    "title": "Aviemore & the Cairngorms",
+    "url": "/united-kingdom/scottish-highlands/aviemore-cairngorms/",
+    "parent": "Inverness & the Scottish Highlands",
+    "type": "Local guide",
+    "summary": "Arrive by rail, use Aviemore as the service point, move to one named Cairngorms gateway, and complete a route that can be shortened before the final return.",
+    "keywords": [
+      "Aviemore & the Cairngorms",
+      "Inverness & the Scottish Highlands",
+      "Plateau-weather activity selector",
+      "forest-to-plateau-layers"
+    ]
+  },
+  {
+    "title": "Skye, Orkney & the Outer Hebrides",
+    "url": "/united-kingdom/scottish-islands/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Skye, Orkney and Lewis with Harris are not one archipelago circuit. They use different ferries, flights, road distances and weather patterns. A credible island plan chooses one system, preserves a mainland or gateway buffer and never treats a booked room as evidence that the crossing or onward bus will operate.",
+    "keywords": [
+      "Skye, Orkney & the Outer Hebrides",
+      "Scotland",
+      "scotland"
+    ]
+  },
+  {
+    "title": "Isle of Skye Road & Weather Plan",
+    "url": "/united-kingdom/scottish-islands/isle-of-skye/",
+    "parent": "Skye, Orkney & the Outer Hebrides",
+    "type": "Local guide",
+    "summary": "Start from Portree or another named base, read live road and weather conditions, complete one peninsula or lower-risk island route, and return before darkness or a ferry deadline.",
+    "keywords": [
+      "Isle of Skye Road & Weather Plan",
+      "Skye, Orkney & the Outer Hebrides",
+      "Peninsula road-and-light compass",
+      "island-road-spokes"
+    ]
+  },
+  {
+    "title": "Orkney Mainland & Neolithic Sites",
+    "url": "/united-kingdom/scottish-islands/orkney-mainland/",
+    "parent": "Skye, Orkney & the Outer Hebrides",
+    "type": "Local guide",
+    "summary": "Establish the Kirkwall or Stromness gateway, complete one monument cluster with current booking and access, and keep the return crossing or island bus outside the final minute.",
+    "keywords": [
+      "Orkney Mainland & Neolithic Sites",
+      "Skye, Orkney & the Outer Hebrides",
+      "Ferry-to-monument reservation wheel",
+      "stone-circle-island-grid"
+    ]
+  },
+  {
+    "title": "Lewis & Harris",
+    "url": "/united-kingdom/scottish-islands/lewis-harris/",
+    "parent": "Skye, Orkney & the Outer Hebrides",
+    "type": "Local guide",
+    "summary": "Enter through Stornoway or Tarbert, use one island half as the day’s operating field, complete a named site cluster, and return before sparse transport or ferry check-in controls the evening.",
+    "keywords": [
+      "Lewis & Harris",
+      "Skye, Orkney & the Outer Hebrides",
+      "Ferry-port and island-road atlas",
+      "machair-mountain-spread"
+    ]
+  },
+  {
+    "title": "Cardiff, Bannau Brycheiniog & Gower",
+    "url": "/united-kingdom/cardiff-south-wales/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Cardiff’s civic centre, castle and bay form a rail-and-bus city system. Bannau Brycheiniog and the Gower Peninsula require different gateways, road or bus connections and weather decisions. A strong South Wales stay uses the capital as a base but does not imply the national park or coast begins at Cardiff Central.",
+    "keywords": [
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Wales",
+      "wales"
+    ]
+  },
+  {
+    "title": "Cardiff Castle, Civic Centre & Bay",
+    "url": "/united-kingdom/cardiff-south-wales/cardiff-castle-bay/",
+    "parent": "Cardiff, Bannau Brycheiniog & Gower",
+    "type": "Local guide",
+    "summary": "Pair the castle or National Museum with the civic centre, then take Cardiff Bus 6 from the Interchange via Lloyd George Avenue to the Millennium Centre only if the Bay fits the day.",
+    "keywords": [
+      "Cardiff Castle, Civic Centre & Bay",
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Capital-to-bay line card",
+      "castle-arcade-waterfront-fold"
+    ]
+  },
+  {
+    "title": "Bannau Brycheiniog Gateways",
+    "url": "/united-kingdom/cardiff-south-wales/bannau-brycheiniog/",
+    "parent": "Cardiff, Bannau Brycheiniog & Gower",
+    "type": "Local guide",
+    "summary": "For the no-car route, take TfW from Cardiff Central to Merthyr Tydfil, transfer separately from the rail station to Merthyr Bus Station, then take T4 to Storey Arms; by car, use the Pont ar Daf trailhead.",
+    "keywords": [
+      "Bannau Brycheiniog Gateways",
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Gateway-and-ridge weather board",
+      "upland-gateway-transect"
+    ]
+  },
+  {
+    "title": "Swansea & the Gower Peninsula",
+    "url": "/united-kingdom/cardiff-south-wales/swansea-gower/",
+    "parent": "Cardiff, Bannau Brycheiniog & Gower",
+    "type": "Local guide",
+    "summary": "Use the bus station as the transfer point: route 2 leaves Bay W toward Oystermouth/Mumbles, while 118 leaves Stand T via Sketty Cross, Killay and Parkmill to Rhossili. Choose one branch and verify its date-specific return.",
+    "keywords": [
+      "Swansea & the Gower Peninsula",
+      "Cardiff, Bannau Brycheiniog & Gower",
+      "Peninsula bus-and-tide selector",
+      "bay-to-headland-chart"
+    ]
+  },
+  {
+    "title": "Pembrokeshire & West Wales",
+    "url": "/united-kingdom/pembrokeshire-west-wales/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "St Davids, Tenby and the Ceredigion coast sit on separate West Wales corridors. Rail reaches Tenby and Aberystwyth, while St Davids needs a bus or road connection. Coast-path sections, boats and island visits add weather, tide and final-service decisions that should be explicit.",
+    "keywords": [
+      "Pembrokeshire & West Wales",
+      "Wales",
+      "wales"
+    ]
+  },
+  {
+    "title": "St Davids & the Pembrokeshire Coast",
+    "url": "/united-kingdom/pembrokeshire-west-wales/st-davids-coast/",
+    "parent": "Pembrokeshire & West Wales",
+    "type": "Local guide",
+    "summary": "Arrive in St Davids, descend to the cathedral precinct, then commit to one signed coast, harbour or boat branch only when weather and return transport remain secure.",
+    "keywords": [
+      "St Davids & the Pembrokeshire Coast",
+      "Pembrokeshire & West Wales",
+      "Cathedral-to-cliff weather card",
+      "saints-city-coast-fold"
+    ]
+  },
+  {
+    "title": "Tenby, Caldey & the South Coast",
+    "url": "/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/",
+    "parent": "Pembrokeshire & West Wales",
+    "type": "Local guide",
+    "summary": "Walk from Tenby station into the walled town, read the harbour’s live boat status, complete one island or coast line, and regain the station before the branch service narrows.",
+    "keywords": [
+      "Tenby, Caldey & the South Coast",
+      "Pembrokeshire & West Wales",
+      "Harbour-tide-island manifest",
+      "walled-harbour-tide-sheet"
+    ]
+  },
+  {
+    "title": "Aberystwyth & the Ceredigion Coast",
+    "url": "/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/",
+    "parent": "Pembrokeshire & West Wales",
+    "type": "Local guide",
+    "summary": "Arrive at Aberystwyth station, complete the town and promenade spine, then add one hill, collection or booked heritage-rail branch with the final train protected.",
+    "keywords": [
+      "Aberystwyth & the Ceredigion Coast",
+      "Pembrokeshire & West Wales",
+      "Rail-end coast-and-hill board",
+      "promenade-railway-horizon"
+    ]
+  },
+  {
+    "title": "North Wales & Eryri",
+    "url": "/united-kingdom/north-wales-eryri/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Conwy and Llandudno, Eryri’s mountain gateways, and Caernarfon with Anglesey form three distinct North Wales systems. Rail follows the coast, while mountain routes and castles add buses, seasonal railways, parking and weather. One named gateway per day is the practical standard.",
+    "keywords": [
+      "North Wales & Eryri",
+      "Wales",
+      "wales"
+    ]
+  },
+  {
+    "title": "Conwy Castle & Llandudno",
+    "url": "/united-kingdom/north-wales-eryri/conwy-llandudno/",
+    "parent": "North Wales & Eryri",
+    "type": "Local guide",
+    "summary": "Use Conwy station for the castle and town; use Llandudno station for the seafront. If changing towns, make one TfW rail leg the hinge and decide before leaving which Great Orme mode—tram, bus, cable car or a walked route—fits the weather and your mobility.",
+    "keywords": [
+      "Conwy Castle & Llandudno",
+      "North Wales & Eryri",
+      "Wall-to-headland coast clock",
+      "castle-bay-headland-fold"
+    ]
+  },
+  {
+    "title": "Yr Wyddfa Gateway Choice",
+    "url": "/united-kingdom/north-wales-eryri/yr-wyddfa-gateways/",
+    "parent": "North Wales & Eryri",
+    "type": "Local guide",
+    "summary": "For a walk, select one named trailhead and be equipped to navigate and turn back; for the railway, book the exact Llanberis return product and confirm whether it reaches Clogwyn or the summit; for poor conditions, keep the day below the mountain.",
+    "keywords": [
+      "Yr Wyddfa Gateway Choice",
+      "North Wales & Eryri",
+      "Summit-route and rail gate",
+      "mountain-route-selector"
+    ]
+  },
+  {
+    "title": "Caernarfon & Anglesey",
+    "url": "/united-kingdom/north-wales-eryri/caernarfon-anglesey/",
+    "parent": "North Wales & Eryri",
+    "type": "Local guide",
+    "summary": "For a castle day, take the T2 bus from Bangor and stay in Caernarfon. For Anglesey, select a place served by rail or by a named bus-and-walk connection—such as Rhosneigr or Holyhead Mountain—before crossing, then save the return leg.",
+    "keywords": [
+      "Caernarfon & Anglesey",
+      "North Wales & Eryri",
+      "Castle-to-island crossing sheet",
+      "menai-strait-bridge-plan"
+    ]
+  },
+  {
+    "title": "Belfast, Causeway Coast & Derry",
+    "url": "/united-kingdom/belfast-northern-ireland/",
+    "parent": "United Kingdom",
+    "type": "Regional guide",
+    "summary": "Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Combining them works across several nights, not as a single highlights loop.",
+    "keywords": [
+      "Belfast, Causeway Coast & Derry",
+      "Northern Ireland",
+      "northern-ireland"
+    ]
+  },
+  {
+    "title": "Belfast Civic Quarter & Maritime Mile",
+    "url": "/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/",
+    "parent": "Belfast, Causeway Coast & Derry",
+    "type": "Local guide",
+    "summary": "Begin at City Hall and the central grid, complete one history or civic anchor, then move once to the Titanic Quarter or remain with the city-centre evidence.",
+    "keywords": [
+      "Belfast Civic Quarter & Maritime Mile",
+      "Belfast, Causeway Coast & Derry",
+      "City-hall-to-shipyard route book",
+      "linen-grid-maritime-axis"
+    ]
+  },
+  {
+    "title": "Giant’s Causeway & the Causeway Coast",
+    "url": "/united-kingdom/belfast-northern-ireland/giants-causeway-coast/",
+    "parent": "Belfast, Causeway Coast & Derry",
+    "type": "Local guide",
+    "summary": "Travel from Belfast or a coast base to the visitor route, complete the causeway with official access guidance, then add one named town or viewpoint only when the return remains secure.",
+    "keywords": [
+      "Giant’s Causeway & the Causeway Coast",
+      "Belfast, Causeway Coast & Derry",
+      "Coast-stop weather-and-return chart",
+      "basalt-coast-rail-strip"
+    ]
+  },
+  {
+    "title": "Derry Walls, Bogside & River Foyle",
+    "url": "/united-kingdom/belfast-northern-ireland/derry-walls-bogside/",
+    "parent": "Belfast, Causeway Coast & Derry",
+    "type": "Local guide",
+    "summary": "Arrive at the bus or rail gateway, complete a one-direction wall circuit, descend for one context-rich institution, and finish at Guildhall or the Peace Bridge.",
+    "keywords": [
+      "Derry Walls, Bogside & River Foyle",
+      "Belfast, Causeway Coast & Derry",
+      "Walls-and-memory context ledger",
+      "walled-city-memory-section"
     ]
   }
 ]

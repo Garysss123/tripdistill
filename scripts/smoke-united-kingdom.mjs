@@ -5,6 +5,14 @@ const baseArg = args.find((arg) => arg.startsWith('--base='));
 const base = (baseArg ? baseArg.slice('--base='.length) : 'http://127.0.0.1:4173').replace(/\/$/, '');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const englishRoutes = ['/united-kingdom/', ...unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`), ...unitedKingdomGuides.map((guide) => guide.url)];
+const materiallyEditedRoutes = new Set([
+  ...unitedKingdomClusters
+    .filter((cluster) => cluster.reviewDateISO === '2026-10-09')
+    .map((cluster) => `/united-kingdom/${cluster.slug}/`),
+  ...unitedKingdomGuides
+    .filter((guide) => guide.reviewDateISO === '2026-10-09')
+    .map((guide) => guide.url)
+]);
 const pageRoutes = locales.flatMap(([language, prefix]) => englishRoutes.map((route) => ({ language, prefix, route, localized: `${prefix}${route}` })));
 const failures = [];
 
@@ -66,7 +74,8 @@ for (const [, prefix] of locales) {
 
 const { body: sitemap } = await request('/sitemap.xml');
 for (const { prefix, route, localized } of pageRoutes) {
-  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-20</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
+  const expectedLastmod = materiallyEditedRoutes.has(route) ? '2026-10-09' : '2026-09-20';
+  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
 }
 
 await request('/css/united-kingdom.css?v=20260920-1', 'United Kingdom stylesheet');

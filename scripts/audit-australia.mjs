@@ -8,6 +8,14 @@ const problems = [];
 const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const lastmod = '2026-09-04';
+const australiaReviewDates = new Map([
+  ...australiaClusters
+    .filter((cluster) => cluster.reviewIsoDate)
+    .map((cluster) => [`/australia/${cluster.slug}/`, cluster.reviewIsoDate]),
+  ...australiaGuides
+    .filter((guide) => guide.reviewIsoDate)
+    .map((guide) => [guide.url, guide.reviewIsoDate])
+]);
 const expectedCss = '/css/australia.css?v=20261004-1';
 const expectedFieldCss = '/css/australia-field.css?v=20261004-4';
 const expectedSiteCss = '/css/site.css?v=20260926-1';
@@ -143,7 +151,8 @@ let australiaSitemapCount = 0;
 for (const route of expectedEnglishRoutes) {
   for (const [, prefix] of locales) {
     const localized = prefix + route;
-    const record = `<url><loc>https://tripdistill.com${localized}</loc><lastmod>${lastmod}</lastmod>`;
+    const expectedLastmod = australiaReviewDates.get(route) || lastmod;
+    const record = `<url><loc>https://tripdistill.com${localized}</loc><lastmod>${expectedLastmod}</lastmod>`;
     if (!sitemap.includes(record)) problems.push(`Sitemap missing current Australia record: ${localized}`);
     else australiaSitemapCount += 1;
   }
