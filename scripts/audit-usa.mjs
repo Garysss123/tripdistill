@@ -65,7 +65,7 @@ for(const route of usaRoutes){
  }
 }
 const sitemap=read('sitemap.xml');
-const usaEditedSitemapRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/']);
+const usaEditedSitemapRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/']);
 for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
 const records=JSON.parse(read('data/search-index.json')).filter(x=>x.url.startsWith('/usa/'));
 check(records.length===97&&new Set(records.map(x=>x.url)).size===97,'USA search index parity');

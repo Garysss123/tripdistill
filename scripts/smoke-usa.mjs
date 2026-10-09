@@ -8,6 +8,7 @@ const locales=englishOnly?[['en','']]:[['en',''],['zh-Hant','/zh'],['ja','/ja'],
 const origin=new URL(base).origin;
 const failures=[];
 let successes=0;
+const editedRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/']);
 async function get(route,allowComponentCanonical=false){
  let response=await fetch(new URL(route,origin),{redirect:'manual',signal:AbortSignal.timeout(30000)});
  // Pages canonicalizes HTML fragments to extensionless URLs. Content-page URLs
@@ -28,7 +29,7 @@ const jobs=locales.flatMap(([locale,prefix])=>usaRoutes.map(route=>({label:prefi
  if(!/<h1\b/.test(html)||!html.includes('"@type":"Article"'))throw Error('Missing page content/schema');
  if(route==='/usa/'&&(!html.includes('data-editorial-revision="usa-country-20260911"')||!html.includes('/css/usa-country-editorial.css?v=20260911-1')))throw Error('Old country template served');
  if(route.startsWith('/usa/new-york/')&&(!html.includes('data-editorial-revision="nyc-20260911"')||!html.includes('/css/nyc-editorial.css?v=20260911-2')))throw Error('Old NYC template served instead of the editorial rewrite');
- for(const [slug,asset] of [['boston','boston'],['philadelphia','philadelphia'],['washington-dc','dc'],['new-england','new-england'],['chicago','chicago'],['seattle','seattle'],['portland-oregon','portland-oregon'],['san-francisco','san-francisco'],['los-angeles','los-angeles'],['san-diego','san-diego'],['sierra-parks','sierra-parks'],['las-vegas','las-vegas'],['utah-parks','utah-parks'],['arizona','arizona'],['colorado','colorado'],['yellowstone-tetons','yellowstone-tetons'],['new-orleans','new-orleans'],['atlanta','atlanta'],['texas','texas'],['miami','miami'],['orlando','orlando'],['alaska','alaska'],['hawaii','hawaii']])if(route.startsWith(`/usa/${slug}/`)&&(!html.includes(`data-editorial-revision="${asset}-20260911"`)||!html.includes(`/css/${asset}-editorial.css?v=20260911-1`)))throw Error(`Old ${slug} template served instead of the editorial rewrite`);
+ for(const [slug,asset] of [['boston','boston'],['philadelphia','philadelphia'],['washington-dc','dc'],['new-england','new-england'],['chicago','chicago'],['seattle','seattle'],['portland-oregon','portland-oregon'],['san-francisco','san-francisco'],['los-angeles','los-angeles'],['san-diego','san-diego'],['sierra-parks','sierra-parks'],['las-vegas','las-vegas'],['utah-parks','utah-parks'],['arizona','arizona'],['colorado','colorado'],['yellowstone-tetons','yellowstone-tetons'],['new-orleans','new-orleans'],['atlanta','atlanta'],['texas','texas'],['miami','miami'],['orlando','orlando'],['alaska','alaska'],['hawaii','hawaii']])if(route.startsWith(`/usa/${slug}/`)&&(!html.includes(`data-editorial-revision="${asset}-${editedRoutes.has(route)?'20261009':'20260911'}"`)||!html.includes(`/css/${asset}-editorial.css?v=20260911-1`)))throw Error(`Old ${slug} template served instead of the editorial rewrite`);
 }})));
 for(const [locale,prefix]of locales){
  jobs.push({label:`${locale} search`,run:async()=>{
@@ -54,7 +55,7 @@ for(const [asset,selector] of [['boston','.bo-cover'],['philadelphia','.ph-cover
 jobs.push({label:'NYC Grand Central photograph',run:async()=>{const r=await get('/assets/images/nyc-grand-central-concourse.webp');if(!r.headers.get('content-type')?.startsWith('image/webp'))throw Error('NYC context photograph missing');const b=new Uint8Array(await r.arrayBuffer());if(String.fromCharCode(...b.slice(8,12))!=='WEBP')throw Error('Invalid NYC image');}});
 jobs.push({label:'sitemap dates',run:async()=>{
  const xml=await(await get('/sitemap.xml')).text();
- for(const[,prefix]of locales)for(const route of usaRoutes)if(!xml.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-11</lastmod>`))throw Error(`Missing current ${prefix}${route}`);
+ for(const[,prefix]of locales)for(const route of usaRoutes){const expectedLastmod=editedRoutes.has(route)?'2026-10-09':'2026-09-11';if(!xml.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`))throw Error(`Missing current ${prefix}${route}`);}
 }});
 let cursor=0;
 await Promise.all(Array.from({length:6},async()=>{while(cursor<jobs.length){const job=jobs[cursor++];try{await job.run();successes++;}catch(e){failures.push(`${job.label}: ${e.message}`);}}}));
