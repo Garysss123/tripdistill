@@ -25,6 +25,10 @@ const routes = [
     '/china/beijing/yonghe-guozijian/',
     '/china/beijing/798-chaoyang/',
     '/china/beijing/mutianyu-great-wall/',
+    '/china/nanjing/',
+    '/china/suzhou/',
+    '/china/hangzhou/grand-canal-gongchen-bridge/',
+    '/china/hangzhou/liangzhu-archaeological-city/',
   ].map((route) => ({ route, reviewDate: '2026-10-10' })),
 ];
 const editions = [
@@ -101,4 +105,4 @@ for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
   }
 }
 
-console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); all 100 reviewed sitemap entries match (65 at 2026-10-09, 35 at 2026-10-10), visible dates match, and datePublished remains absent.`);
+console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); all 120 reviewed sitemap entries match (65 at 2026-10-09, 55 at 2026-10-10), visible dates match, and datePublished remains absent.`);

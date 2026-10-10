@@ -2866,13 +2866,15 @@
     "url": "/china/hangzhou/grand-canal-gongchen-bridge/",
     "parent": "Hangzhou · Grand Canal",
     "type": "Canal heritage",
-    "summary": "Read Gongchen Bridge through waterway scale, trade, museums, neighborhood memory and a verified boat or evening-bank route.",
+    "summary": "Cross Gongchen Bridge to Qiaoxi, choose one museum and return over the same span; in rain, use an indoor museum fallback without assuming boat service.",
     "keywords": [
       "gongchen bridge",
       "grand canal",
-      "hangzhou canal",
-      "canal museum",
-      "water bus"
+      "qiaoxi historic and cultural block",
+      "china umbrella museum",
+      "hangzhou arts and crafts museum",
+      "gongchen bridge walking route",
+      "hangzhou canal museum"
     ]
   },
   {
@@ -2908,13 +2910,19 @@
     "url": "/china/hangzhou/liangzhu-archaeological-city/",
     "parent": "Hangzhou · Liangzhu",
     "type": "Archaeology guide",
-    "summary": "Use the Liangzhu Museum to understand jade, settlement hierarchy and water management before reading the protected archaeological landscape.",
+    "summary": "Separate Liangzhu Museum from the ruins park; use the dated 2025 metro and bus routes to the exact entrance, or choose the museum alone in rain.",
     "keywords": [
       "liangzhu",
       "liangzhu museum",
-      "archaeological ruins",
-      "hangzhou archaeology",
-      "liangzhu jade"
+      "liangzhu ancient city ruins park",
+      "liangzhu ruins park south",
+      "liangzhu museum main gate",
+      "liangzhu metro station",
+      "hangzhou metro line 19",
+      "hangzhou metro line 2",
+      "7437m bus",
+      "liangzhu jade",
+      "liangzhu museum in rain"
     ]
   },
   {
@@ -3267,12 +3275,20 @@
     "url": "/china/suzhou/",
     "parent": "China · Jiangsu",
     "type": "Garden and canal city guide",
-    "summary": "Choose two contrasting Suzhou gardens, reserve the museum, then connect canal streets and one deliberate outer-city branch.",
+    "summary": "Choose Suzhou Station or Suzhou North by hotel transfer, pair two gardens with Suzhou Museum, and use dated Line 6 context with booking and weather fallbacks.",
     "keywords": [
       "suzhou",
+      "suzhou railway station",
+      "suzhou north railway station",
+      "suzhou station hotel transfer",
+      "suzhou metro line 6",
       "suzhou gardens",
+      "humble administrators garden",
+      "master of nets garden",
       "suzhou museum",
       "pingjiang road",
+      "lion grove garden",
+      "shiquan street",
       "tiger hill",
       "suzhou itinerary"
     ]
@@ -3282,13 +3298,19 @@
     "url": "/china/nanjing/",
     "parent": "China · Jiangsu",
     "type": "Capital history and memory guide",
-    "summary": "Sequence Nanjing’s walls, museum, Purple Mountain and memorial sites without flattening distinct historical and ethical layers.",
+    "summary": "Compare Nanjing’s rail terminals, use Line 2 for the museum and Memorial Hall, and verify Purple Mountain access for a four-day route.",
     "keywords": [
       "nanjing",
+      "nanjing railway station",
+      "nanjing south railway station",
+      "nanjing metro line 2",
+      "minggugong station",
+      "yunjinlu station",
       "nanjing museum",
       "ming xiaoling",
       "sun yat-sen mausoleum",
-      "nanjing memorial hall",
+      "nanjing massacre memorial hall",
+      "purple mountain access",
       "nanjing itinerary"
     ]
   },
