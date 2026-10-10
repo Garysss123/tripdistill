@@ -106,6 +106,15 @@ const usaFloridaBrightlineRoutes = [
   '/usa/orlando/',
   '/usa/orlando/kennedy-space-center/'
 ];
+const usaTexasLastmod = '2026-10-10';
+// These four Texas routes received the cross-city train and door-to-door update on Oct 10.
+// Localized URLs inherit the same lastmod; all other USA route dates stay unchanged.
+const usaTexasRoutes = [
+  '/usa/texas/',
+  '/usa/texas/austin/',
+  '/usa/texas/san-antonio/',
+  '/usa/texas/houston/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -301,6 +310,11 @@ for (const route of usaFloridaBrightlineRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Florida route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaFloridaBrightlineLastmod });
+}
+for (const route of usaTexasRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot update missing sitemap route ${route}`);
+  records.set(route, { ...record, lastmod: usaTexasLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

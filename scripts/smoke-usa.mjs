@@ -9,7 +9,7 @@ const origin=new URL(base).origin;
 const failures=[];
 let successes=0;
 const editedRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/','/usa/utah-parks/','/usa/utah-parks/bryce/','/usa/utah-parks/moab-arches-canyonlands/']);
-const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/']);
+const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/']);
 async function get(route,allowComponentCanonical=false){
  let response=await fetch(new URL(route,origin),{redirect:'manual',signal:AbortSignal.timeout(30000)});
  // Pages canonicalizes HTML fragments to extensionless URLs. Content-page URLs

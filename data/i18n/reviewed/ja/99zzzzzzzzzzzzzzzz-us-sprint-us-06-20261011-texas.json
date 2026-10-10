@@ -1,0 +1,25 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/texas/",
+    "/usa/texas/austin/",
+    "/usa/texas/san-antonio/",
+    "/usa/texas/houston/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare an Austin–San Antonio Texas Eagle trip with Houston’s separate Amtrak Connection option, hotel transfers and a shorter two-city plan.": "オースティン〜サンアントニオ間のTexas Eagle利用と、ヒューストンへ向かう別サービスのAmtrak Connection、ホテルまでの移動を比べ、2都市に絞った短めの旅程も検討しましょう。",
+    "Austin and San Antonio can form a focused central-to-south Texas journey when the actual road or intercity service fits. The Amtrak Texas Eagle route page lists Austin and San Antonio; on that same page, Houston and Galveston appear separately under Amtrak Connection service. Treat the latter as a connecting transportation option, not evidence of a continuous direct Texas Eagle train to Houston. Houston adds a separate eastward portion and deserves its own usable days. Compare the complete transport arrangement before adding it, rather than treating three city names as one metropolitan area.": "実際の道路事情や都市間交通が合えば、オースティンとサンアントニオを中心に、テキサス州中部から南部を巡る旅を組み立てられます。AmtrakのTexas Eagle路線ページにはオースティンとサンアントニオが掲載され、同じページでヒューストンとガルベストンは別枠のAmtrak Connectionサービスとして案内されています。後者は接続交通の選択肢であり、Texas Eagleがヒューストンまで直通運行していることを示すものではありません。ヒューストンを加えると東方面への移動が別途必要になり、現地で過ごす日数も確保したいところです。3都市をひとつの都市圏のように扱わず、追加前に移動全体の手配を比較しましょう。",
+    "Amtrak: Texas Eagle route and separate Houston / Galveston Connection service": "Amtrak：Texas Eagleの路線と、ヒューストン／ガルベストン方面の別サービスAmtrak Connection",
+    "Amtrak: date- and station-specific timetable lookup": "Amtrak：日付・駅を指定して時刻表を検索",
+    "For a rail plan, enter the actual date and city/station pair in Amtrak’s timetable or booking lookup. Check whether a Houston itinerary includes an Amtrak Connection segment, the precise stations or pickup points, mode, transfer time and final arrival. Compare that full journey from hotel door to hotel door with driving or other intercity options. A train station is not the sightseeing destination or hotel; include the local trip at both ends. If driving, include parking and the hotel’s vehicle terms as well as the road journey.": "鉄道を利用する場合は、Amtrakの時刻表または予約検索で、実際の利用日と都市・駅の組み合わせを入力してください。ヒューストン行きの旅程にAmtrak Connection区間が含まれるか、駅または乗降場所、交通手段、乗り継ぎ時間、最終到着時刻を確認しましょう。ホテルからホテルまでの移動全体を、車やほかの都市間交通と比べてください。駅は観光地でもホテルでもないため、到着側・出発側の両方で市内移動を見込む必要があります。車の場合は道路での所要時間に加え、駐車場とホテルの車両利用条件も確認しましょう。",
+    "Source information checked on 10 October 2026. Route order, comparisons and suggested pacing are TripDistill editorial judgments; they are not official operator itineraries.": "情報確認日：2026年10月10日。ルートの順序、比較内容、おすすめの旅程ペースはTripDistill編集部の判断によるもので、運行会社の公式旅程ではありません。",
+    "Plan Austin from the airport or Texas Eagle station, then match local transport and hotel to Capitol, lake or neighborhood, and music stops.": "空港またはTexas Eagleの駅からオースティンの旅程を組み、州議会議事堂、湖や各地区、音楽スポットに合わせて市内交通とホテルを選びましょう。",
+    "For an intercity arrival, Amtrak lists Austin on the Texas Eagle route. Compare the exact date’s station arrival and local ride or walk to the hotel with the complete airport or road alternative; the train’s city name alone does not make the last mile direct.": "都市間移動で到着する場合、AmtrakのTexas Eagle路線にはオースティンが掲載されています。利用日の駅到着時刻と、駅からホテルまでの移動（車または徒歩）を、空港利用や車移動の全行程と比べましょう。列車の行き先に都市名が載っていても、駅からホテルまで直行できるとは限りません。",
+    "Plan San Antonio from its Texas Eagle station to downtown or separate southern missions; compare last-mile travel and reservations.": "Texas Eagleのサンアントニオ駅を起点に、中心街や南部のミッションを巡る計画を立て、駅からの移動手段と予約の要否を確認しましょう。",
+    "Amtrak lists San Antonio on the Texas Eagle route. For an arrival from Austin, check the travel date, San Antonio station, arrival time and the separate last-mile journey to the hotel before fixing a Church reservation or evening plan. For the southern missions, price and confirm the additional local transport from the chosen base; the intercity train does not remove that leg.": "AmtrakのTexas Eagle路線にはサンアントニオが掲載されています。オースティンから向かう場合は、利用日、サンアントニオの到着駅と到着時刻を確認し、駅からホテルまでの移動も調べてから、Churchの予約や夜の予定を確定しましょう。南部のミッションを訪れる場合は、宿泊拠点からの追加の市内交通について料金を調べ、手配を確定してください。都市間列車を利用しても、この区間の移動は別途必要です。",
+    "Choose Space Center Houston or a Museum District visit, with hotel transfers and Amtrak’s separately labeled Houston Connection checked for your date.": "Space Center Houstonかミュージアム・ディストリクトを訪れる計画を立て、ホテルとの往復手段を確認しましょう。Amtrakの別サービスとして案内されるHouston Connectionも、利用日ごとに確認してください。",
+    "Amtrak’s Texas Eagle route page lists Houston and Galveston under its separate Amtrak Connection service, while naming Austin and San Antonio on the Texas Eagle route. If Houston is part of an Amtrak itinerary, check the exact date and station pair in the timetable, identify the Connection leg’s pickup/drop-off and transfer details, then compare both ends of the trip to your hotel. Do not plan around a direct Texas Eagle train to Houston.": "AmtrakのTexas Eagle路線ページでは、オースティンとサンアントニオがTexas Eagleの路線上に記載される一方、ヒューストンとガルベストンは別サービスのAmtrak Connectionとして案内されています。Amtrakを利用する旅程にヒューストンを含める場合は、時刻表で利用日と駅の組み合わせを確認し、Connection区間の乗降場所や乗り継ぎの詳細を調べたうえで、旅程の両端からホテルまでの移動を比較しましょう。Texas Eagleがヒューストンまで直通する前提で計画しないでください。"
+  }
+}
