@@ -48,6 +48,14 @@ const chinaEditedRoutes = [
   '/china/shanghai/yuyuan-old-city/',
   '/china/xian/'
 ];
+// Three Hangzhou pages received a narrow transit correction on October 10;
+// keep their localized lastmod values current without dating the whole cluster.
+const chinaHangzhouTransitCorrectionLastmod = '2026-10-10';
+const chinaHangzhouTransitCorrectionRoutes = [
+  '/china/hangzhou/west-lake-north-broken-bridge/',
+  '/china/hangzhou/west-lake-south-leifeng/',
+  '/china/hangzhou/hefang-southern-song/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -267,6 +275,11 @@ for (const route of chinaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited China route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaEditedLastmod });
+}
+for (const route of chinaHangzhouTransitCorrectionRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date corrected Hangzhou route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaHangzhouTransitCorrectionLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);
