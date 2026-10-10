@@ -25,7 +25,7 @@ plans.atlanta=[['base','airport','days','extra'],['start','places','route','home
 plans.texas=[['bases','journey','days','cost'],['arrival','capitol','afternoon','day','music'],['choose','alamo','missions','day','river'],['base','tram','space','museum','return']];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const dateExceptions=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/','/usa/utah-parks/','/usa/utah-parks/bryce/','/usa/utah-parks/moab-arches-canyonlands/']);
-const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/']);
+const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/','/usa/colorado/','/usa/colorado/denver/','/usa/colorado/mountain-towns/','/usa/colorado/rocky-mountain/']);
 const dateLocales=[['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']];
 const usaRoutes=['/usa/',...usaHubs.flatMap(h=>[`/usa/${h.slug}/`,...h.guides.map(g=>g.url)])];
 plans.miami=[['base','arrival','corridor','days','extra'],['start','architecture','walk','shore','finish'],['choose','havana','walls','art','return'],['entrance','shark','royal','day','wildlife']];
