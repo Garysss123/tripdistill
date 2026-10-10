@@ -56,7 +56,16 @@ function sourceList(sources) {
 }
 
 function imageCredit(image) {
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${escapeHtml(image.license)}. ${escapeHtml(image.editNote)}</li>`;
+  const rightsDisclosure = image.rightsStatusUrl
+    ? `<a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">${escapeHtml(image.rightsStatus)}</a>`
+    : image.licenseUrl
+      ? `<a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
+      : escapeHtml(image.license);
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${rightsDisclosure}. ${escapeHtml(image.editNote)}</li>`;
+}
+
+function imageRightsText(image) {
+  return image.rightsStatus || image.license;
 }
 
 function relatedCards(cluster, currentSlug) {
@@ -95,7 +104,7 @@ function guidePage(guide, cluster) {
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content au-field" data-au-family="${escapeHtml(cluster.family)}" data-au-instrument="${escapeHtml(guide.instrument)}">
       <nav class="au-breadcrumb" aria-label="Breadcrumb"><a href="/australia/">Australia</a><span>/</span><a href="/australia/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav>
-      <section class="au-field-hero" aria-labelledby="au-field-title"><div class="au-field-copy"><span class="au-kicker">${escapeHtml(cluster.region)} · field ${String(guide.chapter).padStart(2, '0')} · reviewed ${pageReviewDate}</span><h1 id="au-field-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the field sequence</a><a class="button secondary" href="#checks">Read the weak points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.alt)} · ${escapeHtml(guide.image.license)}</figcaption></figure><div class="au-field-index" aria-hidden="true"><small>${escapeHtml(cluster.name)}</small><strong>${String(guide.chapter).padStart(2, '0')}</strong><span>Australia field atlas</span></div></section>
+      <section class="au-field-hero" aria-labelledby="au-field-title"><div class="au-field-copy"><span class="au-kicker">${escapeHtml(cluster.region)} · field ${String(guide.chapter).padStart(2, '0')} · reviewed ${pageReviewDate}</span><h1 id="au-field-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the field sequence</a><a class="button secondary" href="#checks">Read the weak points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.alt)} · ${escapeHtml(imageRightsText(guide.image))}</figcaption></figure><div class="au-field-index" aria-hidden="true"><small>${escapeHtml(cluster.name)}</small><strong>${String(guide.chapter).padStart(2, '0')}</strong><span>Australia field atlas</span></div></section>
       ${guide.decisions.length ? `<section class="au-decision-strip" aria-label="Three planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>\n      ` : ""}<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot></div></section>
       <section class="au-reading" aria-labelledby="au-reading-title"><div><span class="au-section-label">Field orientation</span><h2 id="au-reading-title">${escapeHtml(guide.orientationTitle || "Make the decision before the distance.")}</h2><p>${escapeHtml(guide.orientation)}</p></div><aside class="${guide.interpretation ? "au-reading-note" : ""}">${guide.interpretation ? `<small>On the public path</small><p>${escapeHtml(guide.interpretation)}</p>` : ""}<small>Access first</small><p>${escapeHtml(guide.access)}</p><small>Sequence</small><p>${escapeHtml(guide.sequence)}</p></aside></section>
       <section class="au-field-section" id="route" aria-labelledby="au-route-title"><div class="au-section-heading"><span>Four-stage field sequence</span><h2 id="au-route-title">${escapeHtml(guide.routeTitle || "A route with an exit built in.")}</h2></div><div class="au-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="au-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
@@ -159,6 +168,7 @@ function hubPage(cluster, index) {
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot></div></section>
       <section class="au-hub-section" id="operating-model" aria-labelledby="au-operating-title"><div class="au-hub-heading"><span>Regional operating model</span><h2 id="au-operating-title">Distance is part of the content.</h2><p>Australia punishes invisible transfer time. These five contracts keep the route honest.</p></div><div class="au-contract-grid"><article><small>Base</small><h3>Sleep near the first decision.</h3><p>${escapeHtml(cluster.stay)}</p></article><article><small>Movement</small><h3>Name the road, rail, ferry or operator.</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Country guidance</small><h3>Permission and guidance come first.</h3><p>Use recognised Traditional Owner language and visitor guidance. Do not infer access to cultural places, communities or Country from an online pin.</p></article><article><small>Condition</small><h3>One national forecast is not enough.</h3><p>Check the local fire, flood, surf, marine, alpine, heat or cyclone condition that actually governs the selected chapter.</p></article><article><small>Return</small><h3>Protect the last safe movement.</h3><p>Every field guide declares a return, turnaround or overnight before adding optional distance.</p></article></div></section>
       <section class="au-hub-section" aria-labelledby="au-sequence-title"><div class="au-hub-heading"><span>Five-field sequence</span><h2 id="au-sequence-title">Do not clear the map in one day.</h2></div><div class="au-hub-route">${cluster.guides.map((guide) => `<a href="${guide.url}"><span>Field ${String(guide.chapter).padStart(2, '0')}</span><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(compactText(guide.sequence, 105))}</p></a>`).join('')}</div></section>
+      ${cluster.tripShapes?.length ? `<section class="au-hub-section" id="trip-shapes" aria-labelledby="trip-shapes-title"><div class="au-hub-heading"><span>Choose a trip shape</span><h2 id="trip-shapes-title">A useful route depends on the number of days and the operating system.</h2><p>These examples group real places and protect the return. Check live services, openings, access and weather before fixing the order.</p></div><div class="au-contract-grid">${cluster.tripShapes.map((shape) => `<article><small>${escapeHtml(shape.title)}</small><h3>${escapeHtml(shape.title.split('·').at(-1).trim())}</h3><p>${escapeHtml(shape.copy)}</p></article>`).join('')}</div></section>` : ''}
       <section class="au-hub-section" aria-labelledby="au-hub-faq-title"><div class="au-hub-heading"><span>Planning answers</span><h2 id="au-hub-faq-title">${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faqs.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${escapeHtml(pageReviewDate)}. Recheck transport, park, fire, weather, marine and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
     </main>
@@ -343,17 +353,28 @@ function updateEnglishAssetReferences() {
   return changed;
 }
 
+const selectedRoutes = process.env.AUSTRALIA_GENERATE_ROUTES
+  ? new Set(process.env.AUSTRALIA_GENERATE_ROUTES.split(',').map((route) => route.trim()).filter(Boolean))
+  : null;
 for (const [index, cluster] of australiaClusters.entries()) {
+  if (selectedRoutes && !selectedRoutes.has(`/australia/${cluster.slug}/`)) continue;
   const file = routeFile(`/australia/${cluster.slug}/`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, hubPage(cluster, index));
 }
 for (const guide of australiaGuides) {
+  if (selectedRoutes && !selectedRoutes.has(guide.url)) continue;
   const cluster = australiaClusters.find((item) => item.slug === guide.hubSlug);
   const file = routeFile(guide.url);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, guidePage(guide, cluster));
 }
+if (selectedRoutes) {
+  const validRoutes = new Set(australiaClusters.flatMap((cluster) => [`/australia/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)]));
+  const invalid = [...selectedRoutes].filter((route) => !validRoutes.has(route));
+  if (invalid.length) throw new Error(`Unknown Australia route(s): ${invalid.join(', ')}`);
+  console.log(`Generated only ${selectedRoutes.size} selected Australia route(s); shared shell, search, sitemap, locale and image files were not changed.`);
+} else {
 const countryFile = routeFile('/australia/');
 fs.mkdirSync(path.dirname(countryFile), { recursive: true });
 fs.writeFileSync(countryFile, countryPage());
@@ -365,3 +386,4 @@ updateHome();
 updateAbout();
 const updatedReferences = updateEnglishAssetReferences();
 console.log(`Generated Australia: 1 country hub, ${australiaClusters.length} regional hubs, ${australiaGuides.length} field guides, synchronized English shell/search, and ${updatedReferences} asset references.`);
+}
