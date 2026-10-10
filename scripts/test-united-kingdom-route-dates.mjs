@@ -20,8 +20,8 @@ const reviewGroups = [
   {
     date: '2026-10-10',
     label: '10 October 2026',
-    guideCount: 6,
-    hubCount: 2,
+    guideCount: 12,
+    hubCount: 4,
     batch: '99zzzzzzzz-sprint-uk-20261009-lake-04.json',
     sources: [
       'checked 10 October 2026',

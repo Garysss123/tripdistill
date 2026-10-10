@@ -87,6 +87,13 @@ const unitedKingdomYorkshireEditedRoutes = [
   '/united-kingdom/yorkshire/leeds-saltaire/',
   '/united-kingdom/yorkshire/whitby-north-york-moors/'
 ];
+const unitedKingdomCambridgeLastmod = '2026-10-10';
+const unitedKingdomCambridgeEditedRoutes = [
+  '/united-kingdom/cambridge-east-anglia/',
+  '/united-kingdom/cambridge-east-anglia/cambridge-colleges-backs/',
+  '/united-kingdom/cambridge-east-anglia/ely-cathedral-fens/',
+  '/united-kingdom/cambridge-east-anglia/norwich-north-norfolk/'
+];
 const usaEditedLastmod = '2026-10-09';
 // These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
@@ -295,6 +302,11 @@ for (const route of unitedKingdomYorkshireEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Yorkshire route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomYorkshireLastmod });
+}
+for (const route of unitedKingdomCambridgeEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Cambridge route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomCambridgeLastmod });
 }
 for (const route of usaEditedRoutes) {
   const record = records.get(route);

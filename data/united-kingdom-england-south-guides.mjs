@@ -271,10 +271,12 @@ export const unitedKingdomEnglandSouthClusters = [
     label: 'Fen waterline register',
     tagline: 'Use rail for the cathedral and city spine; make coast and fen edges separate decisions.',
     hubIntro: 'Cambridge, Ely and Norwich sit on useful rail lines, but their stations, historic cores and surrounding fen or coast landscapes operate at different scales. A good plan distinguishes a walkable academic city from a cathedral stop and a wider East Anglian excursion with its own onward connection.',
-    stay: 'Two nights in Cambridge supports the university city and Ely; three or four nights permits Norwich or a selected coast branch without turning every day into a London commute. Norwich can also function as a separate base for northern Norfolk.',
+    stay: 'Use Cambridge for two nights and an Ely day; add a third or fourth night before choosing Norwich or a north-coast branch. The Norwich–Sheringham rail line and onward coast bus are separate connections, so protect a return and choose one branch per day rather than stacking several Norfolk villages into a short stay. Norwich can also function as a separate base for northern Norfolk.',
     transfer: 'Cambridge station is south-east of the colleges, Cambridge North serves a different edge and Ely station sits below the cathedral core. Greater Anglia routes are useful but do not remove the final walk or rural bus; check engineering works, especially at weekends.',
     season: 'College access follows academic use, while fen paths, river activities and coast services respond to weather and daylight. Summer brings punting and visitor pressure; winter gives clear urban days but shorter rural returns.',
     fallback: 'When college access or an outdoor branch fails, Cambridge and Norwich both have complete museum-led alternatives. Keep the fallback in the same rail city rather than chasing a distant village.',
+    reviewDate: '10 October 2026',
+    reviewDateISO: '2026-10-10',
     sources: [
       ['https://www.visitcambridge.org/', 'Visit Cambridge — official destination guide'],
       ['https://www.greateranglia.co.uk/', 'Greater Anglia — rail planning and service updates'],
@@ -284,12 +286,14 @@ export const unitedKingdomEnglandSouthClusters = [
       g({
         slug: 'cambridge-colleges-backs',
         name: 'Cambridge Colleges & the Backs',
+        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-10',
         instrument: 'College-gate and river clock',
         layout: 'backs-and-courts-fold',
         imageQuery: 'Cambridge Kings College Backs river Cam',
         imageAlt: 'King’s College and the River Cam in Cambridge',
         purpose: 'Choose one publicly accessible college and one river-side line, then connect them without assuming every court, chapel and stretch of the Backs is open to visitors.',
-        summary: 'Walk from station to the historic core, meet one verified college gate, continue along public streets and the Backs, and decide separately whether punting or a museum deserves the final block.',
+        summary: 'Walk 1.5 miles from the station to King’s College and the public Backs. In rain, use the Fitzwilliam’s U bus option; protect the return train.',
         choices: [
           ['College and chapel', 'Anchor the day at one college or chapel with current public access. This gives depth but makes the schedule dependent on academic and worship use.'],
           ['Museums and public streets', 'Use the Fitzwilliam and university museums with market streets between them. It is the most weather-resistant option but sees fewer private courts.'],
@@ -313,67 +317,75 @@ export const unitedKingdomEnglandSouthClusters = [
         combine: 'Combine with the Fitzwilliam or a single punt because both remain inside Cambridge. Keep Ely, Norwich and London for separate days.',
         verify: 'Check the selected college, chapel and museum notices, punt conditions, Greater Anglia service and the last comfortable train before leaving.',
         sources: [
-          ['https://www.cam.ac.uk/about-the-university/visiting-the-university', 'University of Cambridge — official visitor information'],
-          ['https://www.fitzmuseum.cam.ac.uk/visit-us', 'Fitzwilliam Museum — official visit planning']
+          ['https://www.kings.cam.ac.uk/getting-kings', 'King’s College — official station, bus and parking directions'],
+          ['https://www.kings.cam.ac.uk/opening-times-and-tickets', 'King’s College — date-specific visitor times and tickets'],
+          ['https://www.kings.cam.ac.uk/accessibility-guide', 'King’s College — visitor accessibility guide'],
+          ['https://www.fitzmuseum.cam.ac.uk/plan-your-visit', 'Fitzwilliam Museum — transport, entry and accessibility']
         ]
       }),
       g({
         slug: 'ely-cathedral-fens',
         name: 'Ely Cathedral & the Fen Edge',
-        instrument: 'Cathedral-to-fen elevation strip',
+        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-10',
+        instrument: 'Cathedral-to-town elevation strip',
         layout: 'island-in-fens-section',
         imageQuery: 'Ely Cathedral fen landscape England',
         imageAlt: 'Ely Cathedral rising above the low Fenland landscape',
-        purpose: 'Use Ely as a complete cathedral-and-fen day, connecting the station, riverside and elevated historic core without mistaking the wider Fens for an unplanned walk from town.',
-        summary: 'Climb from Ely station and riverside to the cathedral precinct, give the interior a defined block, then choose Oliver Cromwell context or a signed lowland walk before returning downhill.',
+        purpose: 'Use Ely as a cathedral-and-town day, connecting the station, riverside and elevated historic core. Treat a wider fen excursion as optional only after an official current source confirms a named route, surface, distance and return.',
+        summary: 'Walk under 10 minutes via Cherry Hill Park; choose the cathedral, town and riverside by default. Add a fen walk only after checking a named official route, surface, distance and return; towers involve 165/288 stairs.',
         choices: [
           ['Cathedral depth', 'Prioritize the cathedral floor, towers or museum product currently available. This gives architectural depth but leaves less time for the fen landscape.'],
           ['City and riverside', 'Use the cathedral exterior, market area, Cromwell context and Great Ouse edge. It is flexible and lower-cost but sacrifices the full interior.'],
-          ['Signed fen extension', 'Add only a verified local walking or cycling line beyond the river. This reveals the lowland setting but depends most on weather and surface conditions.']
+          ['Fen route only after verification', 'Default to the cathedral, town and riverside. Add a fen route only after verifying a named current route, surface, distance and return on an official source. East Cambridgeshire Council’s current trail page could not be verified for this review, so no specific fen route is claimed.']
         ],
-        access: 'Ely station sits below the historic core and near the river. The cathedral approach climbs through the town, while wider fen paths extend beyond ordinary visitor streets. Keep the rail return and daylight limit separate from any countryside extension.',
-        tradeoff: 'A tower or long cathedral visit competes directly with a fen walk. Choosing the landscape gives up some interior interpretation; choosing the cathedral keeps the day compact and weather-resilient.',
+        access: 'Ely station sits below the historic core and near the river; the cathedral approach climbs through town. The council’s detailed trail page could not be verified for this review, so this guide defaults to the town and riverside rather than implying a specific fen route. Keep the rail return and daylight limit in view.',
+        tradeoff: 'A tower or extended cathedral visit uses time available for the town and riverside. Prioritize the cathedral for its interior interpretation, or keep to the compact town-and-river circuit; add a fen excursion only after verifying its route and return from a current official source.',
         stages: [
           ['Orient at river level', 'Leave the station toward the Great Ouse, locate the return path and read how the cathedral rises above the low ground before climbing.'],
           ['Climb into the city', 'Use the signed streets to the market and cathedral precinct. Avoid adding distant residential loops before the booked interior.'],
-          ['Commit to interior or fen', 'Complete the cathedral product or descend for the chosen signed route. Do not begin an open-ended countryside walk late in the day.'],
+          ['Commit to cathedral or town', 'Complete the cathedral visit or keep to the town and riverside. Add a fen route only after checking an official source for its current name, surface, distance and return; the East Cambridgeshire Council trail page could not be verified for this review.'],
           ['Return downhill with margin', 'Finish at the riverside or station with one train in reserve where possible. Wet surfaces and level crossings can slow the final leg.']
         ],
-        fallback: 'In poor weather, keep the cathedral, local museum and compact market-town circuit. If cathedral access changes, use the exterior precinct and riverside rather than extending onto exposed fen paths.',
+        fallback: 'In poor weather, use the cathedral, local museum, market and riverside. The East Cambridgeshire Council trail page could not be verified for this review; skip the fen extension unless a named current route, surface, distance and return are confirmed from an official source.',
         watch: [
           ['Tower products have conditions', 'Access, steps and schedules differ from general cathedral entry. Confirm the exact experience and mobility requirements.'],
-          ['Flat does not mean sheltered', 'Fen wind, rain and saturated ground can make a simple route demanding. Carry a signed plan and turn-back point.'],
+          ['Verify before a fen excursion', 'The current East Cambridgeshire Council trail page could not be verified for this review. If adding a fen route, confirm its current name, surface, distance and return from an official source; wind, rain and saturated ground can change the effort.'],
           ['Station and cathedral are different levels', 'The final descent takes time and can be slippery. Do not leave it to the train’s departure minute.']
         ],
-        duration: 'Allow five to seven hours for the cathedral, town and a bounded river or fen edge. A cathedral-only stop can fit three hours between trains.',
+        duration: 'Allow five to seven hours for the cathedral, town and riverside; a cathedral-only stop can fit three hours between trains. Add a fen route only after an official current source confirms its name, surface, distance and return.',
         combine: 'Combine with Cambridge only as a short second stop when the cathedral is the sole purpose. A full Ely day should not also include Norwich or the Norfolk coast.',
-        verify: 'Check Ely Cathedral opening and tower products, Greater Anglia service, local path conditions and daylight before choosing the fen extension.',
+        verify: 'Check Ely Cathedral opening and tower products and Greater Anglia service. Add a fen route only when a current official source confirms its name, surface, distance and return; East Cambridgeshire Council’s trail page could not be verified for this review.',
         sources: [
-          ['https://www.elycathedral.org/visit', 'Ely Cathedral — official visitor information'],
+          ['https://www.elycathedral.org/plan-your-visit/information-for-visitors/getting-here', 'Ely Cathedral — station walk and arrival options'],
+          ['https://www.elycathedral.org/plan-your-visit/information-for-visitors/accessibility', 'Ely Cathedral — ramps, ground-floor and tower access'],
+          ['https://www.elycathedral.org/plan-your-visit/visitor-tickets-and-tours', 'Ely Cathedral — visitor entry and tours'],
           ['https://www.greateranglia.co.uk/', 'Greater Anglia — rail planning and service updates']
         ]
       }),
       g({
         slug: 'norwich-north-norfolk',
         name: 'Norwich & a North Norfolk Branch',
+        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-10',
         instrument: 'City-to-coast branch board',
         layout: 'lanes-and-rail-branch',
         imageQuery: 'Norwich Cathedral river Wensum England',
         imageAlt: 'Norwich Cathedral above the River Wensum in Norfolk',
         purpose: 'Decide whether Norwich is the full historic-city destination or the rail base for one north Norfolk branch, and name the onward connection instead of advertising city, Broads and coast as one effortless day.',
-        summary: 'Walk Norwich’s castle-to-cathedral spine first, then either keep the complete city day or use one verified rail or bus branch with its final return protected.',
+        summary: 'Choose Norwich or one coast branch. Cromer/Sheringham are by rail; Blakeney, Cley and Wells need a Sheringham change to CH1; check a return.',
         choices: [
           ['Norwich city depth', 'Give the cathedral close, castle area, market and lanes the full day. This provides the strongest city narrative and the most reliable poor-weather plan.'],
           ['Broads gateway', 'Use a rail-served gateway such as Wroxham for a verified boat or waterside plan. This adds water landscape but gives up much of central Norwich.'],
-          ['North coast branch', 'Choose one rail or bus-linked coast town and accept the longer connection. It offers sea landscape but is the least compatible with a full city visit.']
+          ['North coast branch', 'Take the Bittern Line from Norwich to Sheringham, then transfer at Sheringham Railway Approach to Sanders Coasthopper CH1 for one of Blakeney, Cley or Wells-next-the-Sea. Check the date-specific outward and return connections before leaving; this is a poor fit with a full Norwich city day.']
         ],
         access: 'Norwich station is east of the central lanes across the Wensum. Coast and Broads branches depart by specific rail or bus corridors, not from every city stop. Check the exact interchange and final return before beginning the Norwich walk.',
         tradeoff: 'A complete Norwich city day and a meaningful coast excursion are separate products. The branch gains landscape but sacrifices the cathedral, castle and market depth; staying in Norwich gives up the coast but avoids timetable pressure.',
         stages: [
           ['Cross from the station', 'Follow the river or Prince of Wales Road toward the cathedral quarter, recording the station return. Do not detour into the centre before confirming the branch decision.'],
           ['Read the historic spine', 'Connect the cathedral close, Elm Hill and market or castle area in one direction. Keep one interior as the anchor.'],
-          ['Commit to city or branch', 'Stay for collections and lanes or return to the correct station or bus point for the verified outward service. Never improvise both Broads and coast.'],
-          ['Protect the final connection', 'End near Norwich station or the selected branch’s return stop with a service in reserve. Rural evening alternatives can be limited.']
+          ['Commit to city or branch', 'For the coast, take the Bittern Line from Norwich to Sheringham and change at Sheringham Railway Approach to Sanders Coasthopper CH1 for one selected village. Confirm the live outward rail-and-bus leg for the travel date before starting; never improvise both Broads and coast.'],
+          ['Protect the final connection', 'Check the paired CH1 and rail return for the actual travel date before departure. End near the correct return stop with a service in reserve; rural evening alternatives can be limited.']
         ],
         fallback: 'If the branch is disrupted, Norwich remains complete through the cathedral, museum, market and covered or compact lanes. If a city interior closes, use the river and cathedral-close public realm rather than boarding an unresearched bus.',
         watch: [
@@ -386,7 +398,10 @@ export const unitedKingdomEnglandSouthClusters = [
         verify: 'Check cathedral and museum access, Greater Anglia or bus service, any boat booking and the final return from the chosen branch on the actual travel date.',
         sources: [
           ['https://www.visitnorwich.co.uk/', 'Visit Norwich — official destination guide'],
-          ['https://www.greateranglia.co.uk/', 'Greater Anglia — rail planning and service updates']
+          ['https://www.greateranglia.co.uk/media/15508/download?inline=', 'Greater Anglia — Norwich to Cromer and Sheringham timetable (published 14 December 2025; verify current journey)'],
+          ['https://www.greateranglia.co.uk/', 'Greater Anglia — live rail planning and service updates'],
+          ['https://www.sanderscoaches.com/services/SNDR/CH1', 'Sanders Coaches — Coasthopper CH1 live date selector and route map'],
+          ['https://www.sanderscoaches.com/services/SNDR/44', 'Sanders Coaches — routes 44/44A/X40/X41 and date-specific variants']
         ]
       })
     ]
