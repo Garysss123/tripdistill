@@ -25,10 +25,11 @@ plans.atlanta=[['base','airport','days','extra'],['start','places','route','home
 plans.texas=[['bases','journey','days','cost'],['arrival','capitol','afternoon','day','music'],['choose','alamo','missions','day','river'],['base','tram','space','museum','return']];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const dateExceptions=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/']);
+const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/']);
 const dateLocales=[['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']];
 const usaRoutes=['/usa/',...usaHubs.flatMap(h=>[`/usa/${h.slug}/`,...h.guides.map(g=>g.url)])];
-plans.miami=[['base','arrival','days','extra'],['start','architecture','walk','shore','finish'],['choose','havana','walls','art','return'],['entrance','shark','royal','day','wildlife']];
-plans.orlando=[['base','arrival','days','budget'],['choose','disney','universal','day','extras'],['arrival','museum','boat','day','shorten'],['arrival','bus','atlantis','launch','day']];
+plans.miami=[['base','arrival','corridor','days','extra'],['start','architecture','walk','shore','finish'],['choose','havana','walls','art','return'],['entrance','shark','royal','day','wildlife']];
+plans.orlando=[['base','arrival','corridor','days','budget'],['choose','disney','universal','day','extras'],['arrival','museum','boat','day','shorten'],['arrival','bus','atlantis','launch','day']];
 plans.alaska=[['shape','bases','season','time'],['arrival','choose','exit','day','alternative'],['status','bus','base','day','fall'],['arrival','choose','mendenhall','day','onward']];
 plans.hawaii=[['purpose','transfer','days','care'],['base','city','pearl','windward','limits'],['base','summit','east','recovery','days'],['bases','services','park','coasts','change']];
 const text=n=>n.nodeName==='#text'?n.value:['script','style'].includes(n.tagName)?'':(n.childNodes||[]).map(text).join(' ');
@@ -43,11 +44,11 @@ for(const [locale,prefix] of dateLocales)for(const route of usaRoutes){
  }catch(error){check(false,`${locale}${route}: invalid JSON-LD (${error.message})`);continue;}
  check(articles.length===1,`${locale}${route}: expected exactly one JSON-LD Article, found ${articles.length}`);
  if(articles.length!==1)continue;
- const article=articles[0],expectedModified=dateExceptions.has(route)?'2026-10-09':'2026-09-11';
+ const article=articles[0],expectedModified=sprintUsRoutes.has(route)?'2026-10-10':dateExceptions.has(route)?'2026-10-09':'2026-09-11';
  check(article.datePublished==='2026-09-11',`${locale}${route}: datePublished changed from original 2026-09-11`);
  check(article.dateModified===expectedModified,`${locale}${route}: expected dateModified ${expectedModified}, found ${article.dateModified}`);
 }
-const reviewSource={updated:'Editorial review: 9 October 2026. Check current official information before travel.',original:'Editorial review: 11 September 2026. Check current official information before travel.'};
+const reviewSource={sprint:'Editorial review: 10 October 2026. Check current official information before travel.',updated:'Editorial review: 9 October 2026. Check current official information before travel.',original:'Editorial review: 11 September 2026. Check current official information before travel.'};
 const reviewCatalogs=new Map([['en',null]]);
 for(const [locale] of dateLocales){
  if(locale==='en')continue;
@@ -62,21 +63,21 @@ for(const [locale,prefix] of dateLocales)for(const route of usaRoutes){
  const dom=flatten(parse(fs.readFileSync(file,'utf8'))),reviewNodes=dom.filter(n=>n.tagName==='p'&&(attr(n,'class')||'').split(/\s+/).includes('us-review'));
  check(reviewNodes.length===1,`${locale}${route}: expected exactly one visible p.us-review, found ${reviewNodes.length}`);
  if(reviewNodes.length!==1)continue;
- const key=dateExceptions.has(route)?reviewSource.updated:reviewSource.original;
+ const key=sprintUsRoutes.has(route)?reviewSource.sprint:dateExceptions.has(route)?reviewSource.updated:reviewSource.original;
  let expected=key;
  if(locale!=='en'){
   const catalog=reviewCatalogs.get(locale),translation=catalog?.[key];
   if(!translation){check(false,`${locale}${route}: approved catalog missing visible review translation for exact source key "${key}"`);continue;}
   expected=translation;
  }
- check(text(reviewNodes[0]).trim()===expected,`${locale}${route}: visible review text does not match expected ${dateExceptions.has(route)?'9 October':'11 September'} source/catalog string`);
+ check(text(reviewNodes[0]).trim()===expected,`${locale}${route}: visible review text does not match expected ${sprintUsRoutes.has(route)?'10 October':dateExceptions.has(route)?'9 October':'11 September'} source/catalog string`);
 }
 for(const [slug,sections] of Object.entries(plans)){
  const h=usaHubs.find(h=>h.slug===slug),routes=[`/usa/${slug}/`,...h.guides.map(g=>g.url)];
  const assetSlug=slug==='washington-dc'?'dc':slug;
  for(const [i,route] of routes.entries()){
   const html=fs.readFileSync(path.join(root,route.slice(1),'index.html'),'utf8'),dom=flatten(parse(html));
-  const markerDate=['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/'].includes(route)?'20261009':'20260911';
+  const markerDate=sprintUsRoutes.has(route)?'20261010':['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/'].includes(route)?'20261009':'20260911';
   check(html.includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),route+': missing editorial marker');
   check(html.includes(`/css/${assetSlug}-editorial.css?v=20260911-1`),route+': missing editorial stylesheet');
   check(!html.includes('A practical visit plan')&&!html.includes('Fit this visit into your trip'),route+': generic body returned');
