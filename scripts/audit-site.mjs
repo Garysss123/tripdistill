@@ -28,12 +28,6 @@ const unitedKingdomByRoute = new Map(unitedKingdomGuides.map((guide) => [guide.u
 const unitedKingdomHubRoutes = new Set(unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`));
 const italyByRoute = new Map(italyGuides.map((guide) => [guide.url, guide]));
 const italyHubRoutes = new Set(italyClusters.map((cluster) => `/italy/${cluster.slug}/`));
-const gyeongjuReviewedRoutes = new Set([
-  '/south-korea/gyeongju/daereungwon-hwangnidan-gil/',
-  '/south-korea/gyeongju/wolseong-donggung-wolji/',
-  '/south-korea/gyeongju/bulguksa-seokguram/'
-]);
-
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }
@@ -126,9 +120,20 @@ function jsonLdLanguages(value, output = []) {
 }
 
 // The cloud-browser inspection measured this Gyeongju hero surface as #fff0e3.
-const gyeongjuEyebrowColor = read('css/gyeongju.css').match(/\.gyeongju-hero\s+\.eyebrow\s*\{\s*color:\s*(#[0-9a-f]{6})\s*;/i)?.[1];
+const gyeongjuCss = read('css/gyeongju.css');
+const gyeongjuEyebrowColor = gyeongjuCss.match(/\.gyeongju-hero\s+\.eyebrow\s*\{\s*color:\s*(#[0-9a-f]{6})\s*;/i)?.[1];
 if (!gyeongjuEyebrowColor || contrastRatio(gyeongjuEyebrowColor, '#fff0e3') < 4.5) {
   problems.push('css/gyeongju.css: Gyeongju hero eyebrow must meet 4.5:1 contrast against the measured cream hero surface');
+}
+const thaiGyeongjuHeadingRule = gyeongjuCss.match(/html\s*\[\s*lang\s*=\s*["']th["']\s*\]\s+\.gyeongju-hero\s+h1\s*\{([^}]*)\}/i)?.[1] || '';
+const thaiGyeongjuSubtitleRule = gyeongjuCss.match(/html\s*\[\s*lang\s*=\s*["']th["']\s*\]\s+\.gyeongju-hero\s+h1\s+em\s*\{([^}]*)\}/i)?.[1] || '';
+const thaiGyeongjuHeadingLineHeight = Number(thaiGyeongjuHeadingRule.match(/\bline-height\s*:\s*([\d.]+)/i)?.[1]);
+const thaiGyeongjuSubtitleMarginTop = Number(thaiGyeongjuSubtitleRule.match(/\bmargin-top\s*:\s*([\d.]+)em/i)?.[1]);
+if (!Number.isFinite(thaiGyeongjuHeadingLineHeight) || thaiGyeongjuHeadingLineHeight < 1.15) {
+  problems.push('css/gyeongju.css: Thai Gyeongju hero h1 line-height must be at least 1.15 to clear tone marks and below-base vowels');
+}
+if (!Number.isFinite(thaiGyeongjuSubtitleMarginTop) || thaiGyeongjuSubtitleMarginTop < 0.15) {
+  problems.push('css/gyeongju.css: Thai Gyeongju hero subtitle needs at least .15em top spacing');
 }
 
 const sitemap = read('sitemap.xml');
@@ -204,6 +209,9 @@ for (const absoluteUrl of publishedUrls) {
     const hero = html.match(/<header\b[^>]*class="[^"]*\bgyeongju-hero\b[^"]*"[^>]*>([\s\S]*?)<\/header>/i)?.[1] || '';
     const eyebrowCount = (hero.match(/<span\b[^>]*class="[^"]*\beyebrow\b[^"]*"[^>]*>/gi) || []).length;
     if (eyebrowCount !== 1) problems.push(`${relativePath}: Gyeongju hero must contain exactly one localized eyebrow element`);
+    if (locale.code === 'th' && !/<h1\b[^>]*>[\s\S]*?<em\b[^>]*>[^<]+<\/em>[\s\S]*?<\/h1>/i.test(hero)) {
+      problems.push(`${relativePath}: Thai Gyeongju hero must keep its subtitle in the measured em element`);
+    }
   }
 
   if (htmlLanguage !== locale.code) problems.push(`${relativePath}: html lang is "${htmlLanguage}", expected "${locale.code}"`);
@@ -250,8 +258,7 @@ for (const absoluteUrl of publishedUrls) {
   if (!html.includes(adsenseJsVersion)) problems.push(`${relativePath}: stale or missing AdSense loader`);
 
   if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20261007-1')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
-  if (baseRoute === '/south-korea/gyeongju/' && !html.includes('/css/gyeongju.css?v=20261010-1')) problems.push(`${relativePath}: missing Gyeongju overview contrast stylesheet version`);
-  if (gyeongjuReviewedRoutes.has(baseRoute) && !html.includes('/css/gyeongju.css?v=20261007-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
+  if (baseRoute.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20261010-2')) problems.push(`${relativePath}: missing Gyeongju hero spacing stylesheet version`);
   if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
@@ -467,6 +474,7 @@ for (const component of ['components/header.html', 'components/footer.html']) {
 notes.push(`${publishedUrls.length} published routes (${allLocales.map((locale) => `${routesByLocale[locale.code].length} ${locale.code}`).join(' + ')})`);
 notes.push(`${englishSearchIndex.length} search records per language`);
 notes.push(`${hokkaidoSearchAliases.length * allLocales.length} Hokkaido search aliases resolve across five languages`);
+notes.push('Thai Gyeongju hero line-height and subtitle spacing regression passed');
 notes.push(`${allLocales.reduce((sum, locale) => sum + titles[locale.code].size, 0)} unique localized page titles`);
 
 if (problems.length) {

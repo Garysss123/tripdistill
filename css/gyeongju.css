@@ -67,6 +67,10 @@ body[data-city="gyeongju"] {
   letter-spacing: .02em;
 }
 
+/* Thai tone marks and below-base vowels need room before the subtitle. */
+html[lang="th"] .gyeongju-hero h1 { line-height: 1.2; }
+html[lang="th"] .gyeongju-hero h1 em { margin-top: .15em; }
+
 .gyeongju-hero-copy > p { max-width: 36rem; color: rgba(255, 250, 240, .76); font-size: 1.08rem; }
 .gyeongju-hero .page-hero-meta span { border-color: rgba(255,255,255,.18); color: #efe6d2; background: rgba(255,255,255,.06); }
 
