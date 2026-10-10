@@ -56,6 +56,14 @@ const chinaHangzhouTransitCorrectionRoutes = [
   '/china/hangzhou/west-lake-south-leifeng/',
   '/china/hangzhou/hefang-southern-song/'
 ];
+// Four Beijing local guides received a route and transit revision on October 10.
+const chinaBeijingRoutesLastmod = '2026-10-10';
+const chinaBeijingRoutes = [
+  '/china/beijing/temple-of-heaven-qianmen/',
+  '/china/beijing/yonghe-guozijian/',
+  '/china/beijing/798-chaoyang/',
+  '/china/beijing/mutianyu-great-wall/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -280,6 +288,11 @@ for (const route of chinaHangzhouTransitCorrectionRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date corrected Hangzhou route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaHangzhouTransitCorrectionLastmod });
+}
+for (const route of chinaBeijingRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date revised Beijing route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaBeijingRoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);
