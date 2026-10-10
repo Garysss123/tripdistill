@@ -64,6 +64,14 @@ const chinaBeijingRoutes = [
   '/china/beijing/798-chaoyang/',
   '/china/beijing/mutianyu-great-wall/'
 ];
+// Four Lower Yangtze guides received a route and planning review on October 10.
+const chinaLowerYangtzeRoutesLastmod = '2026-10-10';
+const chinaLowerYangtzeRoutes = [
+  '/china/nanjing/',
+  '/china/suzhou/',
+  '/china/hangzhou/grand-canal-gongchen-bridge/',
+  '/china/hangzhou/liangzhu-archaeological-city/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -333,6 +341,11 @@ for (const route of chinaBeijingRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date revised Beijing route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaBeijingRoutesLastmod });
+}
+for (const route of chinaLowerYangtzeRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Lower Yangtze route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaLowerYangtzeRoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);
