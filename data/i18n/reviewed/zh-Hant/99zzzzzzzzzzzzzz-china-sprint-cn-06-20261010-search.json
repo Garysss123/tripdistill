@@ -1,0 +1,12 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Puxi or Pudong by the day’s route; use Airport Link for Hongqiao–Pudong airport transfers, not a hotel-door ride.": "依行程動線選擇浦西或浦東；虹橋與浦東機場間轉機可搭機場聯絡線，前往飯店則另安排點對點交通。",
+    "Choose one Lujiazui deck or Shanghai Museum East; East access is by B1 gate, named Metro exits and current admission rules.": "陸家嘴觀景台與上海博物館東館擇一；前往東館請依 B1 入口、指定地鐵出口及目前入館規定規劃。",
+    "Use Line 17 Exit 1, then the town’s visitor-center bus or named-street walk; trace the tea house, post office and bridges.": "搭乘 17 號線至 1 號出口，再選搭前往遊客服務中心的公車，或沿具名街道步行；一路串連茶樓、郵局與橋梁。"
+  }
+}
