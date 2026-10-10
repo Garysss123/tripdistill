@@ -1,0 +1,22 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "jiao tong university station": "교통대역",
+    "wukang and hunan roads": "우캉루와 후난루",
+    "ba jin former residence": "바진 옛 거주지",
+    "tilanqiao station": "티란차오역",
+    "metro line 12": "지하철 12호선",
+    "Pair Longhua Temple with one current West Bund Museum exhibition, then use its riverside entrance and plan the Line 11 return.": "룽화사와 웨스트번드 미술관의 현재 전시 한 곳을 함께 둘러보고, 강변 출입구로 나간 뒤 11호선 귀가 경로를 계획하세요.",
+    "west bund museum": "웨스트번드 미술관",
+    "yunjin road station": "윈진루역",
+    "xuhui riverside": "쉬후이 빈장",
+    "Plan Hongkou from the museum: a 10 km municipal route, a shorter named-stop edit, or Suzhou Creek’s separate Jing’an walk.": "박물관을 출발점으로 홍커우의 10 km 시 정부 코스, 지점을 추린 단축 코스, 또는 별도의 징안 쑤저우허 산책을 계획하세요.",
+    "beisuzhou road": "베이쑤저우루",
+    "north bund": "노스번드",
+    "Start at Wukang Building; follow No 393 → Wukang Court → Ba Jin’s former residence (No 113), exterior only.": "Wukang Building에서 출발해 393호 → Wukang Court → 바진(Ba Jin) 옛 거주지(113호) 순으로 이동하세요. 113호는 외관만 관람할 수 있습니다."
+  }
+}
