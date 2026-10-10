@@ -362,7 +362,7 @@ export const unitedKingdomImageManifest = {
   },
   "edinburgh-lothians/old-town-castle-royal-mile": {
     "src": "/assets/images/united-kingdom-edinburgh-lothians-old-town-castle-royal-mile.webp",
-    "alt": "Edinburgh Castle above the Old Town skyline",
+    "alt": "Edinburgh Old Town roofscape seen from Castle Hill",
     "source": "https://commons.wikimedia.org/wiki/File:Edinburgh%27s_Skyline_from_Castle_Hill_(1)_-_geograph.org.uk_-_4836425.jpg",
     "label": "Edinburgh's Skyline from Castle Hill (1) - geograph.org.uk - 4836425.jpg",
     "creator": "David Hillas",
@@ -382,7 +382,7 @@ export const unitedKingdomImageManifest = {
   },
   "edinburgh-lothians/north-berwick-east-lothian": {
     "src": "/assets/images/united-kingdom-edinburgh-lothians-north-berwick-east-lothian.webp",
-    "alt": "North Berwick harbour with Bass Rock in the Firth of Forth",
+    "alt": "Bass Rock viewed across the Firth of Forth from the North Berwick shore",
     "source": "https://commons.wikimedia.org/wiki/File:Bass_Rock_from_the_harbour_rocks_-_geograph.org.uk_-_3545720.jpg",
     "label": "Bass Rock from the harbour rocks - geograph.org.uk - 3545720.jpg",
     "creator": "kim traynor",

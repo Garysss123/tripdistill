@@ -300,15 +300,19 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
     family: 'volcanic-ridge-close-book',
     label: 'Ridge-and-close route book',
     tagline: 'Use one ridge, one booked interior and one level change at a time.',
-    hubIntro: 'Edinburgh’s Old Town ridge, New Town terraces and lower valleys create a vertical city where short map distances conceal stairs and steep streets. East Lothian adds a separate coast railway. A strong plan fixes one controlled interior and uses the city’s level changes as the route rather than an inconvenience.',
-    stay: 'Three to five nights supports Old Town, New Town and an East Lothian branch with weather flexibility. Staying near Waverley is central but can involve steep exits; Haymarket suits western connections and some airport journeys.',
-    transfer: 'Waverley station sits in the valley between Old and New Towns, with exits at different levels. Trams, buses and rail serve distinct corridors. Festival periods, rugby and major events can alter central access and accommodation pressure.',
-    season: 'Wind and rain affect exposed viewpoints year-round. Festival season increases crowds and ticket pressure; winter shortens Arthur’s Seat and coast plans but gives strong museum and street-light alternatives.',
-    fallback: 'Keep a complete National Museum, gallery or lower-city route for poor weather. If a castle or palace booking fails, remain on the same ridge instead of crossing the city for another timed monument.',
+    reviewDateISO: '2026-10-10',
+    reviewDate: '10 October 2026',
+    hubIntro: 'Treat Edinburgh as two city days plus a separate East Lothian coast day: the Old Town is a ridge, the New Town sits on the opposite side of Waverley, and Dean Village drops into a river valley. The coast train is easy to reach but the harbour, boat window and return still make North Berwick a full-day choice.',
+    stay: 'Aim for three full sightseeing days: one Old Town ridge, one New Town/Dean Village route, and one North Berwick coast day. A fourth day gives you room to move the coast outing when wind or the boat schedule looks poor. Waverley is the useful rail base for the east-coast branch; Haymarket suits western connections, while either area can require a steep final street depending on the hotel entrance.',
+    transfer: 'Waverley lies in the valley between Old and New Town, so choose the station exit and street level before walking with luggage. The Scottish Seabird Centre describes North Berwick as about 35 minutes by train from Waverley, then a 15-minute downhill walk to the harbour-side centre and uphill on return; check the dated ScotRail journey and return before leaving.',
+    season: 'Rain can turn the New Town into a gallery-and-street day; wind can make both high viewpoints and the East Lothian shore uncomfortable. Scottish Seabird Centre wildlife trips are seasonal (its current page lists late March to early October), so put North Berwick on a date with a confirmed sailing only if the boat is the reason for going. Festival periods also add crowd and ticket pressure around the ridge.',
+    fallback: 'For a wet city day, keep one indoor gallery or the National Museum with the surrounding street grid and skip the Dean Village stair descent. If a North Berwick sailing is cancelled, the harbour, Scottish Seabird Centre Discovery Experience and town make a land-based visit; if sea wind makes the shore unpleasant too, take an earlier checked train back instead of chasing another exposed coast.',
     sources: [
       ['https://edinburgh.org/', 'Forever Edinburgh — official destination guide'],
-      ['https://www.lothianbuses.com/', 'Lothian Buses — official local transport information'],
-      ['https://www.scotrail.co.uk/', 'ScotRail — rail planning and service updates']
+      ['https://www.lothianbuses.com/', 'Lothian Buses — local routes and service updates'],
+      ['https://www.scotrail.co.uk/plan-your-journey', 'ScotRail — date-specific rail planning'],
+      ['https://www.seabird.org/plan-your-visit', 'Scottish Seabird Centre — visitor access and station walk'],
+      ['https://www.seabird.org/boats', 'Scottish Seabird Centre — wildlife boat trips and season']
     ],
     guides: [
       g({
@@ -317,34 +321,38 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         instrument: 'Ridge-entry and descent clock',
         layout: 'castle-ridge-long-section',
         imageQuery: 'Edinburgh Castle Old Town skyline',
-        imageAlt: 'Edinburgh Castle above the Old Town skyline',
-        purpose: 'Choose Edinburgh Castle, the Palace of Holyroodhouse or the public Royal Mile as the main layer, then travel one direction along the ridge instead of climbing it twice.',
-        summary: 'Enter the Old Town at the correct level, complete one controlled interior, descend the Royal Mile through selected closes, and finish at Holyrood or Waverley without retracing.',
+        imageAlt: 'Edinburgh Old Town roofscape seen from Castle Hill',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
+        purpose: 'Choose the Castle end, the Holyrood end or the public street spine, then follow one named Castlehill-to-Canongate sequence and exit without reclimbing.',
+        summary: 'Choose the Castle end or Holyrood end, then follow Castlehill, Lawnmarket, the High Street and Canongate in one direction; book one interior and finish at a named lower-city or station exit.',
         choices: [
-          ['Castle depth', 'Use the timed castle entry and collections as the main event, then descend only as far as energy and time allow. This is the strongest fortress story.'],
-          ['Royal Mile civic route', 'Keep castle and palace mostly exterior, using closes, St Giles’ and public museums. It is flexible and preserves street context.'],
-          ['Holyrood and lower ridge', 'Begin or finish around the palace and Parliament, with a shorter upper Old Town. This gives modern and royal contrast but sacrifices castle depth.']
+          ['Castle and upper ridge', 'Reserve the castle first: Historic Environment Scotland says tickets often sell out well ahead in summer. After one interior, descend through Castlehill and Lawnmarket to St Giles’ or end in the Grassmarket; save Canongate for another day.'],
+          ['Public Royal Mile', 'Walk Castlehill → Lawnmarket → High Street and choose a small number of closes, St Giles’ or the National Museum. It preserves the route’s street and civic story without committing to a timed royal interior.'],
+          ['Canongate and Holyrood', 'Start at the lower end for Canongate, Parliament and the Palace of Holyroodhouse, then climb only as far as the group’s energy allows. It trades castle depth for a lower-ridge focus.']
         ],
-        access: 'Waverley exits reach different street levels; the castle esplanade is uphill and controlled. Buses can place visitors near the upper or lower ridge. Plan the direction first and do not assume a palace ticket includes a route through adjacent royal grounds.',
-        tradeoff: 'A deep castle visit, every close, a museum and Holyrood Palace exceed one useful day. Choosing the castle sacrifices lower-ridge depth; choosing Holyrood means the upper fortress becomes exterior context.',
+        access: 'The full ridge is not a level stroll. The Castle approach includes a 110 m uphill esplanade and its interior route rises over uneven cobbles; HES lists a 15-degree steepest internal section and a 70-step exit. A mobility vehicle to Crown Square can be arranged at the entrance on request, but the rest of the route still needs a personal access check. If stairs, cobbles or sustained slopes are a barrier, make the public lower-ridge section or a bus-linked visit the complete plan.',
+        tradeoff: 'Castle, every close, a museum and Holyroodhouse exceed a useful single day. The Castle is the steep upper anchor; the Palace stands at the end of the Royal Mile and is a separate timed visit. Pick one interior and let the other end become street context.',
         stages: [
-          ['Reach the chosen ridge level', 'Use Waverley’s correct exit or a bus to the upper or lower Old Town, preserving the return route before joining crowds.'],
-          ['Complete one royal anchor', 'Enter the castle or palace with the exact ticket and security instructions. Keep weather and event closures inside the plan.'],
-          ['Move one way through closes', 'Follow the Royal Mile in one direction, selecting a few closes, St Giles’ or one free museum. Do not descend and reclimb every side street.'],
-          ['Exit at valley or Holyrood', 'Finish at Waverley, Canongate or Holyrood with a direct bus, tram or walk. Avoid a late forced climb back to the castle end.']
+          ['Pick the direction before boarding', 'For Castle-first, reach the Castle esplanade and descend Castlehill → Lawnmarket → High Street → Canongate. For Palace-first, begin at Holyrood and climb only to the chosen turn-back point.'],
+          ['Lock the one interior', 'Book the Castle or Palace for the actual date and read its access and closure notes. Castle tickets are often sold out in advance in summer; Palace opening and ceremonial use are separate checks.'],
+          ['Choose stops along the spine', 'On High Street, choose St Giles’ or one museum, then add only a few closes. Avoid turning every stair lane into a return climb.'],
+          ['Finish at a useful lower gateway', 'From a full descent, leave by Canongate/Holyrood; from a shorter walk, use Waverley or the nearest checked bus stop. Do not plan an evening climb back to the Castle.']
         ],
-        fallback: 'If the castle or palace closes, use the National Museum of Scotland, St Giles’, public closes and a shorter ridge route. In severe wind, omit exposed viewpoints and use the lower streets.',
+        fallback: 'If the Castle or Palace is unavailable, use St Giles’, the National Museum of Scotland and a shorter High Street–Canongate section. In heavy rain or strong wind, skip exposed Castle viewpoints and keep one indoor stop close to the chosen end of the ridge.',
         watch: [
-          ['The Royal Mile is a slope', 'The full ridge includes substantial ascent or descent. Choose the direction from walking capacity and final transport.'],
+          ['The Castle interior is a steep, cobbled route', 'HES describes uneven cobbles, steep sections and steps; use its access guide to decide whether the requested route fits the visitor, not only whether the entrance is open.'],
           ['Festival streets are slower', 'Crowds, barriers and performances can alter normal movement. Leave wider margins around timed entries.'],
-          ['Royal sites have separate operations', 'Castle and palace tickets, closures and ceremonial use differ. Verify each institution on the day.']
+          ['The two royal sites operate separately', 'A Castle ticket does not cover Holyroodhouse. Check each site’s ticket, opening and ceremonial-use notice independently.']
         ],
         duration: 'Allow six to eight hours for one royal interior and the Old Town ridge. The castle alone can use three to four hours during busy periods.',
         combine: 'Combine the castle with the upper Royal Mile or Holyrood with Canongate and Parliament. Keep New Town and East Lothian for separate days.',
-        verify: 'Check Edinburgh Castle or Holyroodhouse access, Old Town event controls, Lothian transport and weather before departure.',
+        verify: 'Check the chosen site’s date-specific ticket and access guide, current Old Town street/event controls, bus connection and weather before departure.',
         sources: [
           ['https://www.edinburghcastle.scot/plan-your-visit', 'Historic Environment Scotland — Edinburgh Castle visit planning'],
-          ['https://www.rct.uk/visit/palace-of-holyroodhouse', 'Royal Collection Trust — Palace of Holyroodhouse visitor information']
+          ['https://www.edinburghcastle.scot/plan-your-visit/access-guide/', 'Historic Environment Scotland — Edinburgh Castle access guide'],
+          ['https://www.rct.uk/visit/palace-of-holyroodhouse', 'Royal Collection Trust — Palace of Holyroodhouse visitor information'],
+          ['https://www.nms.ac.uk/national-museum-of-scotland/plan-your-visit', 'National Museums Scotland — National Museum of Scotland visit planning']
         ]
       }),
       g({
@@ -354,33 +362,37 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         layout: 'georgian-grid-waterline',
         imageQuery: 'Edinburgh Dean Village Water of Leith',
         imageAlt: 'Dean Village beside the Water of Leith in Edinburgh',
-        purpose: 'Choose a National Galleries collection or the Georgian street plan as the main argument, then descend to Dean Village and the Water of Leith only with a clear exit from the valley.',
-        summary: 'Start near Princes Street or the gallery complex, walk one New Town terrace line, descend once to Dean Village, and leave through Stockbridge or a planned climb.',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
+        purpose: 'Choose a National Galleries building or the Georgian street grid, then decide whether the stair descent to Dean Village and the Water of Leith suits the group and weather.',
+        summary: 'Link one New Town gallery or Georgian square to Dean Village by the signed Water of Leith path, then leave the valley at St Bernard’s Bridge for Stockbridge; skip the stair descent in wet or slippery weather.',
         choices: [
           ['National Galleries depth', 'Use one gallery building and the mound as the main visit. This gives collection depth and a short New Town circuit.'],
           ['Georgian city grid', 'Prioritize Charlotte Square, terraces and civic streets with selected interiors. It best explains the planned city but remains mostly urban.'],
           ['Dean Village and Water of Leith', 'Give the lower valley and Stockbridge the long block. It offers landscape contrast but requires steps, surfaces and an exit climb.']
         ],
-        access: 'Princes Street and Waverley sit near the New Town edge, while Dean Village is below street level. Water of Leith paths have specific access points. Select the descent and exit before entering the valley; do not rely on the nearest-looking bridge.',
-        tradeoff: 'A deep gallery visit, complete New Town architecture circuit and long Water of Leith walk exceed a relaxed day. Choosing the valley sacrifices a second collection; choosing galleries keeps Dean Village brief.',
+        access: 'The recommended descent from the Modern galleries to the Water of Leith uses a long flight of steps; cross the footbridge and turn left toward Dean Village. The walkway is only partly wheelchair accessible. If stairs, wet steps or uneven riverside surfaces do not suit, stay at street level and use Lothian Buses 24 or 29 to Raeburn Place in Stockbridge instead.',
+        tradeoff: 'One gallery plus the valley walk makes a focused day; adding both Modern galleries, the full Georgian grid and more river miles turns it into a long route. Dean Village is worth the lower-level detour only if the group can manage the stairs and return climb.',
         stages: [
-          ['Begin on the planned grid', 'Use Princes Street, the Mound or Charlotte Square according to the first gallery or terrace line, and note the final bus or tram.'],
-          ['Complete one collection or square set', 'Give the selected gallery or Georgian streets a coherent block before descending. Avoid alternating between Old and New Town.'],
-          ['Drop to the water once', 'Use the named Dean Village access and follow a bounded Water of Leith segment toward Stockbridge or the chosen exit.'],
-          ['Exit before the valley traps the return', 'Climb at the planned point and finish near a bus or tram. Wet steps and darkness can make an improvised exit unpleasant.']
+          ['Choose the upper starting point', 'Use Modern One/Two for a gallery-led day, or Princes Street and Charlotte Square for the Georgian street plan. The gallery-to-river approach is a stair descent, so decide on it before setting out.'],
+          ['Reach Dean Village deliberately', 'From the Modern galleries, follow the signed Water of Leith walkway down the long steps, cross the footbridge and turn left to Dean Village. Do not mistake the nearby-looking bridges for a level street exit.'],
+          ['Walk the river toward Stockbridge', 'Continue beneath Dean Bridge and past St Bernard’s Well; take the St Bernard’s Bridge/Saunders Street climb out to Stockbridge. As a nearby scale reference, the Trust estimates Roseburn–Stockbridge at about 2 miles/45 minutes; pauses and the gallery visit add time.'],
+          ['Use a street-level return', 'Finish in Stockbridge and check the bus from Raeburn Place, or walk back through the New Town grid. If the path is closed, slippery or dark, leave by a signed street exit rather than improvising another river crossing.']
         ],
-        fallback: 'If paths are closed or slippery, stay with the National Galleries, Georgian streets and Stockbridge surface route. If a gallery closes, use the city grid and one safely accessible valley viewpoint.',
+        fallback: 'For rain or slippery steps, keep the gallery and New Town grid, then use bus 24 or 29 to Stockbridge instead of descending to Dean Village. The Trust says the full walkway is only partly wheelchair accessible; check its live closure notice before committing to the valley.',
         watch: [
-          ['Dean Village is below the street grid', 'Photogenic proximity hides steps and gradients. Choose the exit as carefully as the descent.'],
+          ['The direct gallery descent uses stairs', 'The official city itinerary names a long flight of steps between Modern and the river. This route is a poor fit for a step-free day.'],
           ['Gallery buildings are separate', 'National Galleries venues and exhibitions do not share one doorway or schedule. Confirm the exact building.'],
-          ['Water paths can close locally', 'Flood, maintenance and ice can interrupt the route. Respect barriers and return to street level.']
+          ['The walkway is partly accessible and can close locally', 'Surface and access vary by segment. Read current notices, respect barriers and return to street level if the route changes.']
         ],
         duration: 'Allow five to seven hours for one gallery, the New Town and a bounded Water of Leith segment. A gallery-and-grid visit can fit four hours.',
         combine: 'Combine the New Town with Dean Village or Stockbridge. Keep the Old Town ridge and East Lothian for separate days.',
-        verify: 'Check the selected National Galleries venue, Water of Leith path notices, local transport and weather before setting the descent.',
+        verify: 'Check the exact National Galleries venue, Water of Leith closure map, steps/surface fit, Lothian bus and rain forecast before descending.',
         sources: [
           ['https://www.nationalgalleries.org/visit', 'National Galleries of Scotland — official visit information'],
-          ['https://www.waterofleith.org.uk/walkway/', 'Water of Leith Conservation Trust — walkway information']
+          ['https://www.waterofleith.org.uk/walkway/', 'Water of Leith Conservation Trust — walkway mileage, access and closure notice'],
+          ['https://edinburgh.org/things-to-do/itineraries/explore-edinburgh-on-a-budget-in-48-hours/', 'Forever Edinburgh — Modern galleries to Dean Village and Stockbridge walking sequence'],
+          ['https://edinburgh.org/neighbourhoods/stockbridge/', 'Forever Edinburgh — Stockbridge access and local buses']
         ]
       }),
       g({
@@ -389,34 +401,38 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         instrument: 'Coast-train-and-seabird board',
         layout: 'firth-coast-window',
         imageQuery: 'North Berwick harbour Bass Rock Scotland',
-        imageAlt: 'North Berwick harbour with Bass Rock in the Firth of Forth',
-        purpose: 'Use the Edinburgh–North Berwick rail line for one coast town and decide separately whether a seabird boat, beach walk or nearby historic site fits the marine conditions and return.',
-        summary: 'Walk from North Berwick station to town and harbour, assess wind and sea state, complete one coast activity, and return before the branch service or daylight narrows.',
+        imageAlt: 'Bass Rock viewed across the Firth of Forth from the North Berwick shore',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
+        purpose: 'Use the Waverley–North Berwick train for one coast day, then choose the Discovery Experience, a named Scottish Seabird Centre sailing or a short shore visit against sea conditions and the uphill return.',
+        summary: 'Take the roughly 35-minute ScotRail journey from Waverley, walk downhill about 15 minutes from North Berwick station to the harbour, then choose the named Scottish Seabird Centre boat or a land-based visit before the uphill station return.',
         choices: [
-          ['Harbour and seabird centre', 'Keep the day around town, harbour and the Scottish Seabird Centre. It offers marine context without requiring a sailing.'],
-          ['Booked wildlife boat', 'Use one operator and exact sailing as the anchor. It gives the strongest island perspective but can cancel for sea conditions.'],
-          ['Coast walk and town', 'Follow a bounded signed beach or clifftop section with a turn-back. It is flexible but exposed and tide-aware.']
+          ['Discovery Experience and harbour', 'Choose the centre’s indoor exhibits, live island cameras and harbour if you want the Bass Rock story without a sea crossing. This is the resilient plan when boats are off-season or cancelled.'],
+          ['Three Islands Seabird Seafari (RIB)', 'Book this named 1 hour 15 minute trip from North Berwick Harbour to circle the Lamb, Craigleith and Bass Rock. It is a fast, exposed RIB ride and does not mean a landing on Bass Rock.'],
+          ['Seabird Catamaran Cruise', 'Choose the Centre’s separate 55-seat catamaran around Craigleith and Bass Rock if you want a larger vessel than the RIB. If the sea window fails, use the indoor centre and harbour instead of switching to another exposed shore.']
         ],
-        access: 'North Berwick station is inland from the harbour. Boats use specific departure points and weather policies; coast paths and beaches have different surfaces and tide exposure. Save the final ScotRail service before leaving town.',
-        tradeoff: 'A substantial boat trip, long coast walk and relaxed town visit do not fit one weather-resilient day. Choosing the boat sacrifices walking distance; choosing land gives up the island approach but protects flexibility.',
+        access: 'The Scottish Seabird Centre lists the station-to-centre walk as about 15 minutes downhill and uphill on return. Its centre is wheelchair accessible, but it says boat trips are unsuitable for wheelchair users and people with limited mobility; its RIB is also unsuitable for people with back/neck problems or who are pregnant. Bring waterproofs: the operator says they are not provided. Check the dated ScotRail return before leaving Edinburgh.',
+        tradeoff: 'The Waverley rail trip, harbour walk and boat already use most of a day; adding a long shore walk makes the return fragile. Choose the boat for an island-focused view, or choose the centre and town for a flexible day without the RIB’s physical demands or sea-cancellation risk.',
         stages: [
-          ['Walk station to shore', 'Follow the direct town route, locating the final return and any boat check-in before browsing side streets.'],
-          ['Read the marine window', 'Use the harbour and Seabird Centre information to assess wind, visibility and wildlife trip status.'],
-          ['Commit to boat or coast', 'Board the booked sailing or follow one signed land route with a time-based turnaround. Do not add both at maximum length.'],
-          ['Return on the branch line', 'Regain the station with margin for a meal and changing weather. Keep one train in reserve during events or summer peaks.']
+          ['Lock the train and harbour walk', 'Check the date-specific ScotRail journey from Waverley. The Centre describes the journey as about 35 minutes, then a 15-minute downhill walk from North Berwick station to its harbour-side building.'],
+          ['Choose the exact boat product', 'The Three Islands Seabird Seafari leaves North Berwick Harbour by RIB and circles the Lamb, Craigleith and Bass Rock; the separately listed catamaran circles Craigleith and Bass Rock. Check sailing date, check-in, sea-state policy and whether the product lands before booking.'],
+          ['Use the sea or land branch', 'If the booked boat runs, keep the shore walk short. If it is cancelled or conditions are poor, use the Discovery Experience, harbour and town; the Centre’s boat season is listed as late March to early October.'],
+          ['Climb back to the station', 'Allow for the uphill walk and check the actual return train before setting off. Avoid depending on the final train if a delay would strand the day.']
         ],
-        fallback: 'If boats cancel, use the Seabird Centre, harbour, town and a sheltered coast section. If wind makes the shore unpleasant, return early to Edinburgh for galleries rather than transferring to another exposed beach.',
+        fallback: 'If the sailing is cancelled, the indoor Discovery Experience, its live island cameras, harbour and town remain a complete visit. If wind makes the shore unpleasant as well, skip the beach and take an earlier checked train to Edinburgh; do not substitute an unverified boat operator or another exposed coast.',
         watch: [
-          ['Marine cancellation is normal risk', 'A booking does not guarantee sailing. Keep the land day complete and understand the operator’s current policy.'],
-          ['Bass Rock is not a casual landing', 'Trips differ in route, landing and accessibility. Read the exact product rather than assuming every boat reaches the same place.'],
-          ['Branch trains can be busy', 'Festival and summer demand may crowd services. Avoid the final comfortable return where possible.']
+          ['Trips are seasonal and weather-dependent', 'The Centre lists wildlife trips from late March to early October, with individual products on narrower windows. Check its dated booking page and cancellation policy.'],
+          ['Boat type changes who can join', 'The Centre says trips are unsuitable for wheelchair users or people with limited mobility; RIB rules also exclude some back/neck conditions and pregnancy. Read the exact operator terms before buying.'],
+          ['The return walk is uphill', 'The station leg that is downhill toward the harbour is uphill at the end of the day. Keep time and energy for it as well as the train.']
         ],
         duration: 'Allow a full day from Edinburgh with a boat, or five to six hours for town and coast. A long walk needs the full daylight window.',
         combine: 'Combine the harbour with the Seabird Centre or one coast route. Keep Edinburgh’s Old Town and distant castles for separate days.',
-        verify: 'Check ScotRail service, the exact boat operator, Scottish Seabird Centre information, marine weather and tide before departure.',
+        verify: 'Check ScotRail’s date-specific return, the Scottish Seabird Centre product and access terms, sailing status, marine forecast and the uphill station walk before departure.',
         sources: [
           ['https://www.seabird.org/plan-your-visit', 'Scottish Seabird Centre — official visitor information'],
-          ['https://www.visiteastlothian.org/', 'Visit East Lothian — official destination guide']
+          ['https://www.seabird.org/boats', 'Scottish Seabird Centre — named boat products, departure point and operating season'],
+          ['https://www.seabird.org/accessibility', 'Scottish Seabird Centre — centre and boat-trip accessibility'],
+          ['https://www.scotrail.co.uk/plan-your-journey', 'ScotRail — date-specific train planning']
         ]
       })
     ]
