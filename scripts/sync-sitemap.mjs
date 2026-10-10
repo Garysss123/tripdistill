@@ -27,6 +27,13 @@ const thailandChiangMaiLastmod = '2026-10-08';
 const thailandAndamanLastmod = '2026-10-09';
 const thailandAyutthayaLastmod = '2026-10-09';
 const franceLastmod = '2026-09-20';
+const franceBrittanyLastmod = '2026-10-10';
+const franceBrittanyEditedRoutes = [
+  '/france/brittany-coasts/',
+  '/france/brittany-coasts/saint-malo-dinan/',
+  '/france/brittany-coasts/morbihan-carnac/',
+  '/france/brittany-coasts/quimper-crozon/'
+];
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
@@ -403,6 +410,11 @@ for (const route of franceResponsiveEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date France regional responsive edit route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceResponsiveLastmod });
+}
+for (const route of franceBrittanyEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Brittany route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceBrittanyLastmod });
 }
 for (const route of normandyEditedRoutes) {
   const record = records.get(route);
