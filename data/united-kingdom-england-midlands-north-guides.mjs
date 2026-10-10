@@ -522,129 +522,152 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
   }),
   c({
     slug: 'yorkshire',
+    reviewDateISO: '2026-10-10',
+    reviewDate: '10 October 2026',
     name: 'York, Leeds & Yorkshire',
     nation: 'England',
     band: 'england-midlands-north',
     family: 'wall-mill-and-moor-book',
     label: 'Wall, mill and moor book',
     tagline: 'Use York and Leeds as rail cities; make moor and coast a separate operating layer.',
-    hubIntro: 'York’s walls and Minster, Leeds and Saltaire’s civic-industrial collections, and the North York Moors–Whitby line are three distinct travel systems. Fast intercity rail makes the cities easy to pair across nights, but moor and coast branches need their own weather, heritage-rail and return decisions.',
-    stay: 'Three to five nights supports York, Leeds or Saltaire and one moor or coast branch. York is the stronger heritage base; Leeds offers wider evening and rail options. A coast day should not be squeezed between hotel changes.',
-    transfer: 'York and Leeds are major rail stations; Saltaire is a local stop; Whitby and moor gateways use slower rail, bus or heritage services. Engineering work, events and seasonal timetables can change the apparent ease of the branch.',
-    season: 'City routes work year-round, while moor visibility, coast wind and heritage railway operations vary. Summer increases crowding in York and Whitby; winter shortens walls and moor days but strengthens museum alternatives.',
-    fallback: 'Use York or Leeds as the complete poor-weather day. If a heritage train, coast branch or moor walk fails, do not improvise a cross-county road circuit.',
+    hubIntro: 'York’s elevated city-wall circuit and working Minster, Leeds’s civic collections and Saltaire’s planned industrial village, and Whitby with the North York Moors Railway are separate day systems. York and Leeds anchor the rail plan; Saltaire has its own station beside Salts Mill, while Whitby’s regional rail, bus and heritage-rail options each need their own date-specific return check.',
+    stay: 'Three nights gives two full days: pair York with either Leeds/Saltaire or a coast/NYMR day. York fits the Minster-and-walls pairing; Leeds makes Saltaire a local-rail branch. For York, Leeds/Saltaire and a separate coast or moor day, plan four or more nights. Give Whitby or an NYMR trip a full separate day rather than squeezing it between city transfers.',
+    transfer: 'York and Leeds are the main city rail gates. Saltaire station is across the road from Salts Mill; the mill’s galleries, shops and dining spaces do not share one opening schedule. Coastliner 840 serves Whitby via Malton; Coastliner 843 serves Scarborough. Check the chosen route, date-specific timetable and return before committing. Treat NYMR as a separate heritage service with its own seasonal calendar and color-coded timetable.',
+    season: 'York wall access changes with high wind, conservation work, ice and the dusk gate-locking sequence. Salts Mill’s usual Wednesday–Sunday pattern has exceptions and each space sets its own hours. NYMR’s current autumn 2026 season runs Saturday–Wednesday from 12 September to 1 November; moor walks and the exposed Whitby headland still need weather and daylight checks.',
+    fallback: 'When walls, moor weather or heritage trains remove the outdoor plan, keep a city-based day around a Minster visit if sightseeing access permits, or choose one indoor Leeds or Salts Mill space after checking that space’s hours. Do not replace a cancelled moor day with an unverified chain of rural buses.',
     sources: [
       ['https://visityork.org/', 'Visit York — official destination guide'],
       ['https://www.visitleeds.co.uk/', 'Visit Leeds — official destination guide'],
+      ['https://www.york.gov.uk/york-city-centre/city-walls/3', 'City of York Council — City Walls access, gate times and weather closures'],
+      ['https://www.york.gov.uk/york-city-centre/city-walls/2', 'City of York Council — City Walls map and accessibility'],
+      ['https://www.yorkminster.org/visit/', 'York Minster — visitor access, worship and visit planning'],
+      ['https://www.saltsmill.org.uk/', 'Salts Mill — current opening times by space'],
+      ['https://www.nationalrail.co.uk/', 'National Rail — dated route and return planning'],
+      ['https://www.coastliner.co.uk/', 'Coastliner — route 840 to Whitby, route 843 to Scarborough and current service updates'],
+      ['https://www.nymr.co.uk/plan-your-visit/timetable/', 'North Yorkshire Moors Railway — date/color-specific timetable'],
       ['https://www.northyorkmoors.org.uk/visiting', 'North York Moors National Park — official visitor information']
     ],
     guides: [
       g({
         slug: 'york-walls-minster',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'York Walls, Minster & Medieval Core',
         instrument: 'Gate-to-gate wall clock',
         layout: 'minster-wall-ring',
         imageQuery: 'York Minster city walls England',
-        imageAlt: 'York Minster seen from the historic city walls',
-        purpose: 'Choose the Minster or city walls as the main time anchor, then connect gates, medieval streets and one museum without repeating the compact core through crowd pressure.',
-        summary: 'Walk from York station to a named wall gate, complete one coherent wall section, meet the Minster or museum booking, and leave through a different gate toward the station.',
+        imageAlt: 'York Minster viewed from the city wall walkway',
+        purpose: 'Choose a wall section or Minster visit for the protected block, then check wall status and gate locking before choosing a route through York’s compact medieval core.',
+        summary: 'From York station, enter at a named wall gate only after checking the same-day status and dusk lock sequence; pair one wall arc with a Minster visit only when its worship and sightseeing schedule leaves a real window.',
         choices: [
-          ['Minster depth', 'Use the cathedral and any selected tower or undercroft product as the main visit. The wall becomes a shorter approach and exit.'],
-          ['Wall circuit and urban form', 'Prioritize the walls, gates and river views, adding only one compact interior. This is exposed but reveals the whole city plan.'],
-          ['Museum-led York', 'Choose the railway, castle or Yorkshire museum and use the medieval streets as links. It is weather-resilient but sacrifices the complete wall line.']
+          ['Minster and its chosen product', 'Protect time for the cathedral, then choose one current visitor product such as the Undercroft Museum or Central Tower if its date-specific calendar fits. The wall becomes a short view or street-level link.'],
+          ['Walls as the main route', 'The Council map shows an elevated walkway with named gates. Choose an open section and exit before the dusk gate-locking sequence reaches it; a substantial wall walk leaves less time for a deep Minster visit.'],
+          ['Rain or wall-closure city day', 'Choose a Minster visit if sightseeing access is open, or one indoor museum after checking its current hours. Keep the medieval streets and lower riverside as short links; this gives up the uninterrupted wall circuit.']
         ],
-        access: 'York station lies just outside the walls near the western approach. Wall access points include stairs and closures can break the circuit. The Minster has controlled visitor access and worship use; choose the gate and booking order before entering the Shambles crowd.',
-        tradeoff: 'A complete wall circuit, deep Minster visit and major museum exceed a relaxed day. Choosing the walls sacrifices interior depth; choosing the Minster or railway museum turns the wall into selected sections.',
+        access: 'York station sits outside the western wall approach. The elevated wall walkway is reached by steps and has no disabled access; the Council points to the pavement route and close views at Multangular Tower as accessible alternatives. Gates usually open at 8:00, but high winds, conservation work and icy or slippery conditions can prevent opening. Gates close at dusk in an anti-clockwise sequence from Fishergate Postern Tower; the gate-locking process takes about an hour, so plan an exit before it reaches your section. York Minster’s sightseeing schedule differs from its services, and its date calendar controls visitor products and access.',
+        tradeoff: 'The elevated walls require steps and are unsuitable for visitors who need disabled access; the pavement route and Multangular Tower offer lower-barrier ways to see the city walls. A wall section, a Minster interior/tower product and a substantial museum compete for the same block. Choosing the walls leaves less time indoors, while choosing the Minster means accepting a shorter wall section or street-level route.',
         stages: [
-          ['Enter at a named bar', 'Use Micklegate or another gate according to the first anchor, noting closure signs and a street-level alternative.'],
-          ['Read one wall arc', 'Follow the walls in one direction to the Minster or river side. Do not descend for every lane and climb again.'],
-          ['Commit to one interior', 'Complete the Minster or selected museum with its current ticket and access. Keep the Shambles as a street link, not the day’s only purpose.'],
-          ['Exit by river or gate', 'Return through Museum Gardens, the Ouse edge or a second gate, ending near the station without repeating the busiest streets.']
+          ['Check the day before leaving the station', 'Read the Council’s same-day wall status and map, plus the Minster’s visitor/service calendar. If the walls are closed or the dusk sequence is too close, use the lower-city route now.'],
+          ['Set a gate-to-gate section', 'Use Micklegate Bar as your start and planned exit: enter only if the Council map shows the walkway open, follow a chosen section, then return to that gate before its dusk locking window. This avoids depending on a full circuit or a timed connection between gates.'],
+          ['Spend the indoor block once', 'Choose general Minster sightseeing or one current tower/Undercroft product; worship and visitor access are separate uses, and products have their own hours. Do not add a second major interior by default.'],
+          ['Leave on streets, not a closing gate', 'Return to Micklegate Bar and exit well before its locking window, then take the street-level route toward York station. If you choose a different section, use the Council map to confirm its start and exit gates first.']
         ],
-        fallback: 'If walls close, use the Minster, Museum Gardens, riverside and street-level gates. If the Minster is restricted for worship or events, choose one museum and preserve the same city circuit.',
+        fallback: 'High wind, conservation work or ice can close the wall walkway, and the same-day status can change the route. Switch to the Minster only when the sightseeing calendar permits; otherwise take a lower-city street route and a checked indoor museum. Never assume an open gate guarantees a complete circuit later in the day.',
         watch: [
-          ['Wall sections can close independently', 'Weather, maintenance and safety affect individual arcs. Check official notices and accept the street diversion.'],
-          ['Minster products differ', 'General admission, tower access and services have separate conditions. Do not assume one ticket covers every space.'],
-          ['Compact streets still crowd', 'The Shambles and central lanes can slow movement sharply. Use early or late passes and avoid a tight interior connection.']
+          ['The gate-locking sequence is the real deadline', 'Gates close at dusk in order, and the locking process takes about an hour. Start the circuit early enough to reach an exit before that sequence reaches your section.'],
+          ['Weather can erase the wall plan', 'High wind, conservation work and ice/slippery conditions can keep the walkway closed. Check its same-day status and have a lower-city route ready.'],
+          ['The Minster is a working church', 'Sightseeing, services, tower and undercroft use have separate hours or conditions. Check the date calendar and choose one product before setting the wall circuit.']
         ],
-        duration: 'Allow six to eight hours for one substantial interior and a long wall section. A compact Minster-and-core route can fit four to five hours.',
-        combine: 'Combine the Minster with walls or one museum with the river. Keep Leeds, Whitby and the moors for separate days.',
-        verify: 'Check York wall closures, Minster worship and ticket notices, museum status and rail service before departure.',
+        duration: 'Give the walls and one substantial Minster visit separate protected blocks; add a museum only by replacing one of those choices. For a shorter stop, choose either the Minster or one wall section and retain time for the station return.',
+        combine: 'Pair the Minster with one selected wall section only if the visitor calendar and dusk gate sequence allow. Keep Leeds/Saltaire and Whitby/moors for other days.',
+        verify: 'Check the City of York Council’s live wall status and seasonal gate-locking sequence, then York Minster sightseeing, service and product calendar; check National Rail for the dated station return.',
         sources: [
           ['https://yorkminster.org/visit/', 'York Minster — official visitor information'],
-          ['https://www.york.gov.uk/CityWalls', 'City of York Council — official city walls information']
+          ['https://www.york.gov.uk/york-city-centre/city-walls/3', 'City of York Council — City Walls opening, closing and same-day status'],
+          ['https://www.york.gov.uk/york-city-centre/city-walls/2', 'City of York Council — City Walls map and accessibility'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — dated York station planning']
         ]
       }),
       g({
         slug: 'leeds-saltaire',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Leeds Collections & Saltaire',
         instrument: 'Civic-to-mill rail ledger',
         layout: 'arcade-and-mill-grid',
         imageQuery: 'Saltaire Salts Mill Yorkshire canal',
-        imageAlt: 'Salts Mill and the historic village of Saltaire in West Yorkshire',
-        purpose: 'Choose a Leeds civic collection or the Saltaire industrial village as the main destination, using the short local train as a real connection rather than implying both places are one walkable district.',
-        summary: 'Begin at Leeds station for markets, arcades or a museum, then take one verified local train to Saltaire only when the mill, village and return have a useful time window.',
+        imageAlt: 'Canal towpath beneath a bridge beside a Saltaire boat-trip sign',
+        purpose: 'Choose a Leeds civic collection or Saltaire’s model industrial village as the main story; use the local train as the deliberate transfer and check which Salts Mill space is open before leaving Leeds.',
+        summary: 'Start at Leeds station with one city anchor, then use National Rail to check a dated return to Saltaire station, directly across the road from Salts Mill. The mill’s galleries, shops and dining rooms keep different schedules.',
         choices: [
           ['Leeds civic city', 'Use the art gallery, library, market or Royal Armouries as the anchor. This provides the most flexible city day and strong rain cover.'],
-          ['Saltaire depth', 'Go directly to Salts Mill and the model village, with canal or park context. This gives the clearest industrial-community story.'],
-          ['Two-place rail day', 'Use a bounded Leeds morning and Saltaire afternoon. It gains contrast but sacrifices depth and depends on the local service.']
+          ['Saltaire and the mill', 'Walk the UNESCO-listed village plan around Salts Mill, workers’ housing and civic buildings, then choose one gallery or exhibition. This puts the industrial community in context, but individual mill spaces may be closed or follow shorter hours.'],
+          ['Two-place rail day', 'Use a bounded Leeds morning and a selected Saltaire space later only when the dated train return and that space’s hours leave enough time. This adds contrast but trades away depth in both places.']
         ],
-        access: 'Leeds station serves the compact central arcades and river, while the Royal Armouries sits beyond the core. Saltaire has its own station next to the village. Choose the Leeds branch and final train before adding a second museum.',
-        tradeoff: 'A deep Armouries visit, central Leeds and Saltaire do not fit equally. Choosing the mill sacrifices one city collection; staying in Leeds gives up the model village but protects flexibility.',
+        access: 'Saltaire station is across the road from Salts Mill; the mill also reports level access to all public areas and lift access. That does not mean every space is open at the same time: the official schedule separates the 1853 Gallery, Gallery 2, People & Process, shops, diner and café. Leeds remains a separate city stop, and the exact local train and return should be checked for the chosen date.',
+        tradeoff: 'Saltaire is more than a mill interior: UNESCO describes an intact planned industrial village with worker housing, civic buildings and park. A deeper reading takes time outside Salts Mill, while the mill’s separate opening periods make an unplanned Leeds-plus-Saltaire hop less reliable. Choosing one base preserves time for either civic collections or the village streets.',
         stages: [
-          ['Read the station-side city', 'Leave Leeds station toward the arcades, market or waterfront according to the first collection. Keep the return platform and Saltaire train in view.'],
-          ['Complete one civic anchor', 'Use the selected gallery, library, market or Armouries with a firm stop time. Do not cross the city for a second large institution.'],
-          ['Take the local mill line', 'Board the verified train to Saltaire only when opening and daylight remain useful. Walk the village as one planned circuit.'],
-          ['Return from Saltaire station', 'Finish at the station or canal-side route that leads directly back. Keep an earlier train in reserve during events or bad weather.']
+          ['Choose the city or village first', 'From Leeds station, choose one civic anchor or check the National Rail date planner for a Saltaire-focused visit; decide the return before starting the local leg.'],
+          ['Keep Leeds to one collection', 'If combining, use one gallery, library or museum block and leave the second institution for another day. This protects the local train and Salts Mill window.'],
+          ['Walk Saltaire as a planned place', 'From Saltaire station, cross to the intended mill space and check its own opening time. Then read the village plan through worker housing, civic buildings and canal/park edges rather than treating the mill as the whole destination.'],
+          ['Return from the same rail gate', 'The station is across the road from the mill. Recheck the actual train and leave margin for the short station transfer; if the selected space is closed, keep the village walk only if the weather and return still work.']
         ],
-        fallback: 'If the local rail or Salts Mill access fails, deepen Leeds through its gallery, library, market and waterfront. If a city collection closes, use Saltaire as the full day rather than dividing attention.',
+        fallback: 'For rain, Salts Mill can provide the indoor anchor on an open day, but check the exact gallery or dining space rather than assuming the whole building shares one timetable. If the train or chosen space fails, stay in Leeds for one checked civic collection; a village-only walk is the fair-weather fallback.',
         watch: [
-          ['Royal Armouries is not beside every central sight', 'Its waterfront position adds walking or water-taxi decisions. Do not treat it as an arcade stop.'],
-          ['Salts Mill contains independent spaces', 'Gallery, shops and dining may follow different hours. Confirm the part you intend to visit.'],
-          ['The canal is an optional route', 'Towpath surface and light vary. Use village streets for a reliable return when weather or mobility is limiting.']
+          ['The mill has no single universal opening time', 'Salts Mill lists different hours for its galleries, shops, People & Process, diner and café. Check the chosen space and school-holiday exceptions.'],
+          ['The village is the heritage site too', 'UNESCO’s significance is the planned industrial town and its intact layout, not only the mill; leave time for the worker housing, civic buildings and park.'],
+          ['A short local rail leg still has a final train', 'Saltaire station is beside the mill, but do not let a visit run to the last connection. Use National Rail for the date-specific route and return.']
         ],
-        duration: 'Allow a full day for Leeds plus Saltaire, or five to seven hours for either place at depth. Two major Leeds collections should replace the Saltaire branch.',
-        combine: 'Combine central Leeds with one collection, or Saltaire with a short canal and park circuit. Keep York and the moors for separate days.',
-        verify: 'Check the selected Leeds venue, Salts Mill openings, local train status and any event crowding before setting the two-place order.',
+        duration: 'Allow a full day for the two-place rail plan, with one Leeds collection and one chosen Salts Mill space; give Saltaire a separate half or full day if you want both the industrial-village walk and more than one interior.',
+        combine: 'Combine central Leeds with one civic collection, or Saltaire with one mill space and a short village/canal route. Do not schedule York, Saltaire and Whitby as one day chain.',
+        verify: 'Check the selected Leeds venue, Salts Mill’s opening time for the intended space, any school-holiday exception, and National Rail’s date-specific Saltaire return.',
         sources: [
           ['https://royalarmouries.org/leeds', 'Royal Armouries — official Leeds museum information'],
-          ['https://saltsmill.org.uk/', 'Salts Mill — official visitor information']
+          ['https://www.saltsmill.org.uk/', 'Salts Mill — opening times by public space and station directions'],
+          ['https://whc.unesco.org/en/list/1028/', 'UNESCO World Heritage Centre — Saltaire industrial town and planned layout'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — dated Leeds–Saltaire journey and return']
         ]
       }),
       g({
         slug: 'whitby-north-york-moors',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Whitby & the North York Moors',
         instrument: 'Moor-to-coast service board',
         layout: 'steam-line-coast-profile',
         imageQuery: 'Whitby Abbey harbour Yorkshire coast',
-        imageAlt: 'Whitby harbour beneath the abbey ruins on the Yorkshire coast',
-        purpose: 'Choose a coast-town day, a moor railway experience or a signed landscape route, and build the journey around the exact service rather than treating Whitby and the national park as one frequent suburban line.',
-        summary: 'Reach Whitby or a moor gateway by the confirmed rail, bus or heritage service, complete one town-and-landscape line, and protect the final return before evening frequency falls away.',
+        imageAlt: 'A boat approaches Whitby between the harbour entrance piers',
+        purpose: 'Choose Whitby harbour and its clifftop abbey, one date-specific NYMR journey, or a North York Moors walk; do not combine the three service patterns without matching their own operating calendars and final returns.',
+        summary: 'Plan one coast or moor anchor: compare Coastliner 840 for Whitby or 843 for Scarborough with National Rail, check English Heritage’s abbey access and last entry, or use the NYMR date/color calendar for a separate heritage-rail day.',
         choices: [
-          ['Whitby harbour and abbey', 'Use the town, 199 Steps and abbey headland as the complete day. This offers the clearest coast story and a single arrival point.'],
-          ['Heritage railway journey', 'Make the North Yorkshire Moors Railway the booked anchor and choose one intermediate or terminal stop. It adds transport heritage but controls the clock.'],
-          ['Moorland walking gateway', 'Use a named village and signed route with current park guidance. This gives landscape depth but the least tolerance for weather or missed service.']
+          ['Whitby harbour and abbey', 'Use the harbour, town and English Heritage abbey as one coast day. The abbey crowns the clifftop; check its live opening/last-entry notice and access information before choosing the climb. English Heritage currently lists a 20% walk-up discount when you arrive by public transport and show your ticket, subject to its terms.'],
+          ['NYMR as the booked day', 'Choose one date on the railway’s color-coded calendar and plan around that timetable. In the 2026 autumn season it operates Saturday–Wednesday from 12 September to 1 November; it is a separate heritage service, not an assumed connection to a National Rail ticket.'],
+          ['North York Moors walk', 'Pick one signed route and check current park visitor and weather information. A landscape day excludes a full abbey visit and a long heritage railway journey unless the dated transport links genuinely fit.']
         ],
-        access: 'Whitby can be reached by regional rail, bus or heritage railway on different schedules and tickets. The abbey is above the harbour. Moor villages have limited services, so identify the exact return before climbing or leaving town.',
-        tradeoff: 'A long heritage railway day, full Whitby circuit and moor walk do not fit together. Choosing the train sacrifices town depth; choosing Whitby leaves the railway or high moor for another day.',
+        access: 'Coastliner 840 serves Whitby via Malton; Coastliner 843 serves Scarborough. Check the operator’s route and date-specific timetable, then compare actual arrival and last return with National Rail rather than assuming a direct or protected connection. Whitby Abbey sits on the clifftop above the fishing port. English Heritage’s current listing gives opening and last-entry information, detailed access guidance for mobility/older visitors and a public-transport walk-up discount; check the chosen date and access needs before travelling. NYMR has its own date/color-specific timetable: its 2026 autumn operation is Saturday–Wednesday, 12 September–1 November, while its summer period was daily. Check each journey’s dates and times separately from National Rail and the bus return.',
+        tradeoff: 'Whitby’s harbour and abbey give one town-and-cliff route; NYMR gives a full transport-led day; a moor walk needs independent weather and footpath planning. Choosing the heritage train means less time in Whitby, and choosing the abbey does not make the surrounding moor a short add-on.',
         stages: [
-          ['Board the chosen coast line', 'Use the exact operator and ticket for regional rail, bus or heritage service. Do not assume through-ticket or connection protection.'],
-          ['Read harbour or village', 'In Whitby, cross the harbour once and choose the abbey side; in the moors, locate the return station before walking.'],
-          ['Commit to height or journey', 'Climb to the abbey, ride the booked railway or follow one signed moor route. Keep a time-based turnaround.'],
-          ['Return before service gaps', 'Descend to the harbour station or reach the village platform early. Coast traffic and heritage operations can delay tight onward travel.']
+          ['Choose one timetable family', 'For Whitby, check Coastliner 840 via Malton or National Rail’s dated planner; Coastliner 843 serves Scarborough. For NYMR, select the exact date and matching timetable color. Save the final return before leaving your base.'],
+          ['Fix the coast or moor gateway', 'For the abbey, confirm its last entry, access and any public-transport discount terms, then route from the harbour to the clifftop. For a moor walk, use one named village/trailhead and identify the return stop first.'],
+          ['Give the anchor its own block', 'Complete the harbour/abbey route, the chosen heritage train journey, or the single moor walk. Do not add a second timetable system because a map makes it look close.'],
+          ['Return on the service you checked', 'Leave the abbey headland or moor route with margin for the return transport. NYMR and National Rail have different calendars and tickets; confirm a real connection before relying on either for the other.']
         ],
-        fallback: 'If moor weather or heritage service fails, use Whitby’s harbour, museum and lower town, adding the abbey only when wind and steps are suitable. If Whitby access is disrupted, stay in York rather than improvising rural roads.',
+        fallback: 'If moor weather spoils a walk or NYMR has no service on your date, keep a lower Whitby harbour/town visit or move to a city day with a verified rail return. The abbey remains a clifftop visit: check English Heritage’s current access guidance and opening notice before treating it as the indoor substitute.',
         watch: [
-          ['Heritage and national rail are separate', 'Tickets, timetables and delay policies differ. Confirm the exact operator for each leg.'],
-          ['The abbey climb is substantial', 'The 199 Steps and exposed headland require time and weather judgment. Lower town remains a complete alternative.'],
-          ['Moor services can be sparse', 'A missed departure may remove the day’s last useful return. Know the next option before leaving the village.']
+          ['NYMR is seasonal and date-coded', 'Its 2026 autumn service runs Saturday–Wednesday from 12 September through 1 November; choose the date on the timetable calendar and match its color before buying or planning a stop.'],
+          ['The abbey is a clifftop site', 'Opening, last entry and access conditions govern whether the headland fits your day. English Heritage also lists a car-free admission offer with terms; confirm it for your date.'],
+          ['The walk does not end at the viewpoint', 'Check the dated National Rail/bus return and North York Moors weather/access advice before leaving the harbour or village. Do not use a heritage timetable as a backup for an ordinary rail connection.']
         ],
-        duration: 'Allow a full day from York or another regional base. Whitby alone needs five to seven hours; a heritage railway round trip can consume the whole day.',
-        combine: 'Combine Whitby harbour with the abbey or one railway journey with one village. Keep York and Leeds for separate days.',
-        verify: 'Check abbey access, North Yorkshire Moors Railway and regional service, park weather guidance and the final return before travel.',
+        duration: 'Give Whitby harbour and abbey a full day from a regional base; the clifftop visit and town approach use the daylight window. NYMR is itself a day anchor. Allow a separate day for any moor walk and its dated bus or rail transfer.',
+        combine: 'Combine the Whitby harbour with the abbey if opening and access allow, or ride one selected NYMR route. Keep a moor walk and the other Yorkshire cities for separate days.',
+        verify: 'Check English Heritage opening, last entry, access and car-free offer; the 840 Whitby or 843 Scarborough Coastliner route and dated timetable, plus National Rail journeys/returns; NYMR’s date and timetable color; and North York Moors weather and walk information.',
         sources: [
           ['https://www.english-heritage.org.uk/visit/places/whitby-abbey/', 'English Heritage — Whitby Abbey visitor information'],
-          ['https://www.nymr.co.uk/plan-your-visit', 'North Yorkshire Moors Railway — official visit planning']
+          ['https://www.nymr.co.uk/plan-your-visit/timetable/', 'North Yorkshire Moors Railway — 2026 date/color-specific timetable'],
+          ['https://www.nymr.co.uk/plan-your-visit/opening-times', 'North Yorkshire Moors Railway — seasonal operating dates'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — dated Whitby journey and return planning'],
+          ['https://www.coastliner.co.uk/', 'Coastliner — 840/843 route, current timetable and service updates'],
+          ['https://www.northyorkmoors.org.uk/visiting', 'North York Moors National Park — official visitor, weather and walking information']
         ]
       })
     ]

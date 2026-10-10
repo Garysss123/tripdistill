@@ -272,7 +272,7 @@ export const unitedKingdomImageManifest = {
   },
   "yorkshire/york-walls-minster": {
     "src": "/assets/images/united-kingdom-yorkshire-york-walls-minster.webp",
-    "alt": "York Minster seen from the historic city walls",
+    "alt": "York Minster viewed from the wall walkway",
     "source": "https://commons.wikimedia.org/wiki/File:York_Minster_from_Mickelgate_section_of_city_walls_(2).JPG",
     "label": "York Minster from Mickelgate section of city walls (2).JPG",
     "creator": "Harry Mitchell",
@@ -282,7 +282,7 @@ export const unitedKingdomImageManifest = {
   },
   "yorkshire/leeds-saltaire": {
     "src": "/assets/images/united-kingdom-yorkshire-leeds-saltaire.webp",
-    "alt": "Salts Mill and the historic village of Saltaire in West Yorkshire",
+    "alt": "Canal towpath and bridge beside a Saltaire boat-trip sign",
     "source": "https://commons.wikimedia.org/wiki/File:Saltaire,_Canal_bridge_and_Salts_Mill_-_geograph.org.uk_-_5235161.jpg",
     "label": "Saltaire, Canal bridge and Salts Mill - geograph.org.uk - 5235161.jpg",
     "creator": "Dr Neil Clifton",
@@ -292,7 +292,7 @@ export const unitedKingdomImageManifest = {
   },
   "yorkshire/whitby-north-york-moors": {
     "src": "/assets/images/united-kingdom-yorkshire-whitby-north-york-moors.webp",
-    "alt": "Whitby harbour beneath the abbey ruins on the Yorkshire coast",
+    "alt": "A boat between the piers at Whitby harbour entrance",
     "source": "https://commons.wikimedia.org/wiki/File:Harbour_entrance,_Whitby_-_geograph.org.uk_-_3633086.jpg",
     "label": "Harbour entrance, Whitby - geograph.org.uk - 3633086.jpg",
     "creator": "Pauline E",

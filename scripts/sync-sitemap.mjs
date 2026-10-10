@@ -79,6 +79,14 @@ const unitedKingdomNortheastEditedRoutes = [
   '/united-kingdom/northeast-northumberland/durham-cathedral-city/',
   '/united-kingdom/northeast-northumberland/bamburgh-holy-island/'
 ];
+const unitedKingdomYorkshireLastmod = '2026-10-10';
+const unitedKingdomYorkshireEditedRoutes = [
+  '/united-kingdom/',
+  '/united-kingdom/yorkshire/',
+  '/united-kingdom/yorkshire/york-walls-minster/',
+  '/united-kingdom/yorkshire/leeds-saltaire/',
+  '/united-kingdom/yorkshire/whitby-north-york-moors/'
+];
 const usaEditedLastmod = '2026-10-09';
 // These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
@@ -282,6 +290,11 @@ for (const route of unitedKingdomNortheastEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Northeast route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomNortheastLastmod });
+}
+for (const route of unitedKingdomYorkshireEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Yorkshire route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomYorkshireLastmod });
 }
 for (const route of usaEditedRoutes) {
   const record = records.get(route);
