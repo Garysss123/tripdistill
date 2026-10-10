@@ -97,6 +97,15 @@ const usaEditedRoutes = [
   '/usa/utah-parks/bryce/',
   '/usa/utah-parks/moab-arches-canyonlands/'
 ];
+const usaFloridaBrightlineLastmod = '2026-10-10';
+// These four Florida routes received Brightline and onward-transfer updates on Oct 10.
+// Localized URLs inherit the same date; other Florida routes retain their current dates.
+const usaFloridaBrightlineRoutes = [
+  '/usa/miami/',
+  '/usa/miami/everglades/',
+  '/usa/orlando/',
+  '/usa/orlando/kennedy-space-center/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -287,6 +296,11 @@ for (const route of usaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited U.S. route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaEditedLastmod });
+}
+for (const route of usaFloridaBrightlineRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Florida route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaFloridaBrightlineLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);
