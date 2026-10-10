@@ -125,6 +125,13 @@ const unitedKingdomCambridgeEditedRoutes = [
   '/united-kingdom/cambridge-east-anglia/ely-cathedral-fens/',
   '/united-kingdom/cambridge-east-anglia/norwich-north-norfolk/'
 ];
+const unitedKingdomEdinburghLastmod = '2026-10-10';
+const unitedKingdomEdinburghEditedRoutes = [
+  '/united-kingdom/edinburgh-lothians/',
+  '/united-kingdom/edinburgh-lothians/old-town-castle-royal-mile/',
+  '/united-kingdom/edinburgh-lothians/new-town-dean-village/',
+  '/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/'
+];
 const usaEditedLastmod = '2026-10-09';
 // These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
@@ -378,6 +385,11 @@ for (const route of unitedKingdomCambridgeEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Cambridge route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomCambridgeLastmod });
+}
+for (const route of unitedKingdomEdinburghEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Edinburgh route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomEdinburghLastmod });
 }
 for (const route of usaEditedRoutes) {
   const record = records.get(route);
