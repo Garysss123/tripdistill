@@ -65,6 +65,13 @@ const unitedKingdomEditedRoutes = [
   '/united-kingdom/cardiff-south-wales/bannau-brycheiniog/',
   '/united-kingdom/cardiff-south-wales/swansea-gower/'
 ];
+const unitedKingdomLakeLastmod = '2026-10-10';
+const unitedKingdomLakeEditedRoutes = [
+  '/united-kingdom/lake-district-cumbria/',
+  '/united-kingdom/lake-district-cumbria/windermere-ambleside/',
+  '/united-kingdom/lake-district-cumbria/keswick-derwentwater/',
+  '/united-kingdom/lake-district-cumbria/carlisle-hadrians-wall-west/'
+];
 const usaEditedLastmod = '2026-10-09';
 // These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
@@ -258,6 +265,11 @@ for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomEditedLastmod });
+}
+for (const route of unitedKingdomLakeEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Lake route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomLakeLastmod });
 }
 for (const route of usaEditedRoutes) {
   const record = records.get(route);

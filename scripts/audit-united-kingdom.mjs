@@ -9,13 +9,13 @@ const failures = [];
 const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const routes = ['/united-kingdom/', ...unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`), ...unitedKingdomGuides.map((guide) => guide.url)];
-const materiallyEditedRoutes = new Set([
+const reviewedRouteDates = new Map([
   ...unitedKingdomClusters
-    .filter((cluster) => cluster.reviewDateISO === '2026-10-09')
-    .map((cluster) => `/united-kingdom/${cluster.slug}/`),
+    .filter((cluster) => cluster.reviewDateISO)
+    .map((cluster) => [`/united-kingdom/${cluster.slug}/`, cluster.reviewDateISO]),
   ...unitedKingdomGuides
-    .filter((guide) => guide.reviewDateISO === '2026-10-09')
-    .map((guide) => guide.url)
+    .filter((guide) => guide.reviewDateISO)
+    .map((guide) => [guide.url, guide.reviewDateISO])
 ]);
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
@@ -151,7 +151,7 @@ check(read('scripts/build-dist.mjs').includes("'united-kingdom'"), 'United Kingd
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = materiallyEditedRoutes.has(route) ? '2026-10-09' : '2026-09-20';
+    const expectedLastmod = reviewedRouteDates.get(route) || '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }
