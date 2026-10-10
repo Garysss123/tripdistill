@@ -148,6 +148,8 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
   }),
   c({
     slug: 'northeast-northumberland',
+    reviewDateISO: '2026-10-10',
+    reviewDate: '10 October 2026',
     name: 'Newcastle, Durham & Northumberland',
     nation: 'England',
     band: 'england-midlands-north',
@@ -156,38 +158,45 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
     tagline: 'Keep the twin river cities rail-simple; give the tidal coast its own clock.',
     hubIntro: 'Newcastle–Gateshead and Durham are compact rail cities with strong river and collection routes, while Bamburgh and Holy Island introduce long road links and a tidal causeway. The region works when city days remain complete and the coast is planned as a separate weather-and-tide operation.',
     stay: 'Three to five nights in Newcastle supports the Tyne, Durham and one Northumberland branch. Durham also works as a quiet base but offers fewer coast connections. A Holy Island day should never be tied to a hotel-change deadline.',
-    transfer: 'Newcastle Central, Gateshead Metro stops and Durham station sit at different elevations. Northumberland coast buses and roads cover long distances; Holy Island access is governed by published safe crossing times rather than ordinary opening hours.',
+    transfer: 'Newcastle Central, Gateshead and Durham sit at different levels, while the coast needs a separate bus plan: Go North East 54 connects Central Station, Gateshead Interchange, Baltic Square and the Quayside; Arriva X18 links Newcastle Haymarket with Bamburgh via Morpeth, Alnwick and Seahouses. From Berwick, Borders 0918/0418 serves Bamburgh and Church Street. Holy Island adds two independent checks: a date-specific 477 bus and the same-day road crossing window.',
     season: 'City routes remain useful year-round. Coast wind, sea state, causeway windows and winter daylight shape Northumberland; summer increases castle and island pressure. Football and arena events can crowd Tyne transport.',
     fallback: 'If tide, wind or coast transport fails, use Newcastle or Durham as a complete city day. Do not substitute another remote beach or castle without rechecking the return.',
     sources: [
       ['https://newcastlegateshead.com/', 'NewcastleGateshead — official destination guide'],
       ['https://www.thisisdurham.com/', 'Visit County Durham — official destination guide'],
-      ['https://www.visitnorthumberland.com/', 'Visit Northumberland — official destination guide']
+      ['https://www.visitnorthumberland.com/', 'Visit Northumberland — official destination guide'],
+      ['https://www.gonortheast.co.uk/services/GNE/54', 'Go North East — VOLTRA 54 route and stops'],
+      ['https://arrivabus.co.uk/services/NMS_AN_X18', 'Arriva — X18 Newcastle–Northumberland coast route'],
+      ['https://www.bordersbuses.co.uk/services/PERY/0918', 'Borders Buses — Berwick–Chathill route via Bamburgh'],
+      ['https://glenvalley.co.uk/timetables/', 'Glen Valley — 477 Berwick–Beal–Holy Island timetable'],
+      ['https://www.visitnorthumberland.com/travel-tips/while-youre-here/holy-island-crossing-times', 'Visit Northumberland — Holy Island safe road crossing times']
     ],
     guides: [
       g({
         slug: 'newcastle-gateshead-quays',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Newcastle & Gateshead Quays',
         instrument: 'Bridge-and-bank culture ledger',
         layout: 'tyne-bridge-fold',
         imageQuery: 'Newcastle Gateshead Quays Millennium Bridge Tyne',
         imageAlt: 'Bridges and cultural buildings along the Tyne at Newcastle and Gateshead',
         purpose: 'Choose one bank and cultural anchor, then cross the Tyne deliberately so station elevation, bridges and Quayside venues form a route rather than repeated climbs.',
-        summary: 'Descend from Newcastle Central through the historic core, use one Quayside collection, cross once to Gateshead, and return by Metro or a different bridge.',
+        summary: 'Choose the 15–20 minute walk from the city centre or rail station over the pedestrian Millennium Bridge, or use Go North East 54 between Central Station and Baltic Square. Check the return leg before crossing.',
         choices: [
           ['Newcastle historic core', 'Prioritize the castle, cathedral and Grainger Town before a short Quayside finish. This gives the clearest city-origin story.'],
-          ['Two-bank culture route', 'Use Baltic or another Quays venue with the Millennium Bridge and river public realm. It suits contemporary culture but requires elevation planning.'],
+          ['Two-bank culture route', 'Use Baltic and the Millennium Bridge. Baltic is free and open Wednesday–Sunday, 10:00–18:00; the 54 also links Central Station, Gateshead Interchange, Baltic Square and the Quayside.'],
           ['Ouseburn extension', 'Continue east to the Ouseburn for smaller venues and food. It creates a deeper neighbourhood day but sacrifices Gateshead or castle time.']
         ],
-        access: 'Newcastle Central is above the Quayside. Gateshead venues may be closer to Gateshead Metro than to a return climb across the river. Choose the first downhill street, one bridge crossing and the final station before adding Ouseburn.',
+        access: 'Baltic says the walk from Newcastle city centre or rail station takes 15–20 minutes over the pedestrian Millennium Bridge. In rain or when avoiding the descent and climb, Go North East 54 connects Central Station, Gateshead Interchange, Baltic Square and the Quayside; check the date-specific service and stop for the return. The walk and bus are alternatives, not an assumed timed interchange.',
         tradeoff: 'The historic core, Gateshead culture and Ouseburn point in three directions. Choosing one secondary district sacrifices another but avoids repeated steep climbs and bridge crossings.',
         stages: [
-          ['Leave Central on the chosen contour', 'Use Castle Keep and the historic streets or descend directly to the Quayside, recording the final Metro or rail return.'],
-          ['Read one river bank', 'Follow a bounded Quayside section and complete the selected collection or civic site. Avoid crossing for each photograph.'],
+          ['Choose the Baltic approach', 'Walk 15–20 minutes from the city centre or station over the Millennium Bridge, or check the 54 from Central Station to Baltic Square. Save the same-day return plan.'],
+          ['Use Baltic within its opening window', 'Baltic is free and open Wednesday–Sunday, 10:00–18:00; it is closed Monday and Tuesday. In wet weather, make it the indoor anchor only on an open day.'],
           ['Cross once with purpose', 'Use the Millennium, Swing or High Level Bridge according to the next venue and elevation. Continue to Gateshead or Ouseburn, not both.'],
           ['Return above the river', 'Take Metro or a planned uphill street to Central. Event crowds and bridge lifts can add time, so keep margin.']
         ],
-        fallback: 'If wind or a venue closure affects the Quays, use the castle, cathedral, Laing Art Gallery or Grainger Market and a short river view. If the Millennium Bridge is unavailable, use the signed adjacent crossing.',
+        fallback: 'For rain, use Baltic during its Wednesday–Sunday 10:00–18:00 opening window. On Monday or Tuesday, when it is closed, keep the day to the Newcastle historic core or another already-checked indoor venue rather than making the Quays the anchor. If the bus or walk does not suit, change the route before leaving Central.',
         watch: [
           ['The Quayside sits below the stations', 'A flat riverside map hides the final climb. Use Metro or choose a gradual return when mobility is limited.'],
           ['Bridges serve different street levels', 'The same crossing can deliver you above or below the next venue. Read the exit, not only the landmark.'],
@@ -195,14 +204,17 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         ],
         duration: 'Allow six to eight hours for one cultural anchor and two-bank route. A historic core plus short Quayside circuit can fit four to five hours.',
         combine: 'Combine the historic core with Quayside or Gateshead with Ouseburn only when the route stays east. Keep Durham and the coast for separate days.',
-        verify: 'Check Baltic or the selected venue, Nexus Metro, bridge notices, river weather and the city event calendar before travel.',
+        verify: 'Check Baltic opening information and the same-day Go North East 54 timetable before choosing the walk or bus; allow for the return leg and check any venue or event notices.',
         sources: [
-          ['https://baltic.art/visit', 'Baltic Centre for Contemporary Art — official visitor information'],
+          ['https://baltic.art/plan-your-visit/getting-to-baltic/', 'BALTIC — getting to the gallery, walking time, opening days and free entry'],
+          ['https://www.gonortheast.co.uk/services/GNE/54', 'Go North East — VOLTRA 54 route and stops'],
           ['https://www.nexus.org.uk/metro', 'Nexus — official Tyne and Wear Metro information']
         ]
       }),
       g({
         slug: 'durham-cathedral-city',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Durham Cathedral & River Peninsula',
         instrument: 'Peninsula climb-and-loop card',
         layout: 'cathedral-river-meander',
@@ -215,15 +227,15 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
           ['Castle and university context', 'Use an available castle tour or university collection with Palace Green. This depends more on timed access.'],
           ['River and city landscape', 'Keep interiors shorter and complete a signed riverbank or garden route. It offers the best peninsula perspective but includes steps and gradients.']
         ],
-        access: 'Durham station sits high west of the centre, while the cathedral peninsula rises again above the Wear. Buses and taxis can reduce the first climb. Castle access is often by specific tour, and riverside paths may include stairs or mud.',
+        access: 'The Cathedral Bus connects the Cathedral and Castle with the rail station and coach drop-off. Durham Cathedral says it runs through the day Monday–Saturday and on Sundays until 1 November 2026, is suitable for wheelchair users and pushchairs, and has no evening service. Plan the return around that limit; for a later finish, arrange a taxi or allow for the uphill station walk. Riverside paths can still include steps or mud.',
         tradeoff: 'A full cathedral visit, castle tour and complete river loop compete for the same half-day. Choosing the river sacrifices interior depth; choosing both controlled buildings makes the landscape a short viewpoint only.',
         stages: [
-          ['Descend from the rail ridge', 'Use the direct street, bus or taxi toward the market and locate the final station climb before entering the peninsula.'],
+          ['Choose the station connection', 'Use the Cathedral Bus between the rail station and Cathedral/Castle when it operates; it also serves the coach drop-off. Its stated Sunday service runs only until 1 November 2026. Otherwise plan the walk or a taxi and keep the return in view.'],
           ['Meet Palace Green', 'Complete the cathedral or booked castle product with its worship, tour and security conditions. Do not assume both can be improvised.'],
           ['Choose one river side', 'Descend toward the Wear and follow a bounded bank or bridge sequence. Use the opposite side only when the exit supports the return.'],
-          ['Regain the station with margin', 'Climb through the market or use a bus, allowing for gradients and wet surfaces. Keep the final meal below the rail cutoff.']
+          ['Regain the station with margin', 'The Cathedral Bus has no evening service. If staying late, arrange a taxi or allow for the uphill walk to the rail station; check the train as well as the bus before committing to an evening plan.']
         ],
-        fallback: 'If castle or cathedral access is restricted, use Palace Green, the Oriental Museum or city collections and a shorter river viewpoint. If river paths are poor, stay on the upper streets and bridges.',
+        fallback: 'If rain or river paths make the loop unattractive, keep to the Cathedral, Castle and upper-city route and use the Cathedral Bus where it operates. If an evening return is needed, do not rely on that bus: arrange a taxi or allow for the climb back to the station.',
         watch: [
           ['Worship and university use control access', 'Cathedral and castle are working institutions. Check the exact visitor and tour notice for the day.'],
           ['The city is steep', 'Station, river and Palace Green occupy different levels. Build the final climb into the schedule.'],
@@ -231,46 +243,51 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         ],
         duration: 'Allow five to seven hours for one major interior and a river route. A cathedral-and-city stop can fit three to four hours between trains.',
         combine: 'Combine the cathedral with one river loop or a castle tour with the market. Keep Newcastle and Northumberland coast for separate days.',
-        verify: 'Check cathedral services, castle tour availability, river path notices and the rail service before departure.',
+        verify: 'Check the Cathedral Bus operating day and return, noting that the published Sunday extension ends 1 November 2026 and there is no evening service; also check cathedral access, castle tours, river paths and trains.',
         sources: [
-          ['https://www.durhamcathedral.co.uk/visit-us', 'Durham Cathedral — official visitor information'],
+          ['https://www.durhamcathedral.co.uk/visit-us/plan-your-visit/parking-getting-to-durham-cathedral', 'Durham Cathedral — Cathedral Bus, access and getting to the Cathedral'],
           ['https://www.thisisdurham.com/explore-durham/durham-city', 'Visit County Durham — official Durham City guide']
         ]
       }),
       g({
         slug: 'bamburgh-holy-island',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Bamburgh Castle & Holy Island',
         instrument: 'Causeway tide-and-road board',
         layout: 'tidal-border-chart',
         imageQuery: 'Bamburgh Castle Northumberland coast',
         imageAlt: 'Bamburgh Castle above the Northumberland coast',
-        purpose: 'Choose Bamburgh or Holy Island as the main coast destination and make the published causeway window, road distance and final bus or pickup the governing facts.',
-        summary: 'Leave the rail corridor with a named bus, tour or car plan, complete one castle or island visit, and cross the Holy Island causeway only within the official safe window.',
+        purpose: 'Choose Bamburgh or Holy Island as the main coast destination, then confirm the coast bus and, for the island, both the date-specific 477 service and same-day road crossing window.',
+        summary: 'Arrive at Bamburgh by the Newcastle–coast X18 or from Berwick on Borders 0918/0418; plan Holy Island separately around the 477 date and the road crossing window.',
         choices: [
-          ['Bamburgh castle and village', 'Use the castle, beach viewpoint and village as a complete day. It is not tide-gated and offers the simplest coast structure.'],
+          ['Bamburgh castle and village', 'Use the castle, beach and village as a complete day. Arriva X18 runs from Newcastle Haymarket via Morpeth, Alnwick and Seahouses; Borders 0918/0418 links Berwick with Bamburgh and Church Street. Check the exact date and return.'],
           ['Holy Island depth', 'Plan the entire day around the safe causeway crossing, island sites and departure deadline. This gives the strongest tidal-place story.'],
           ['Booked coast circuit', 'Use a guided tour or car to connect selected coast sites. It gains reach but still cannot override tide or attraction access.']
         ],
-        access: 'Neither Bamburgh nor Holy Island has a railway station. Buses, tours and road transfers begin from named towns or stations, and services can be sparse. Holy Island’s causeway becomes unsafe outside published crossing periods; ordinary map travel times are irrelevant then.',
+        access: 'Neither destination has a railway station. Arriva X18 links Newcastle Haymarket to Bamburgh via Morpeth, Alnwick and Seahouses; Borders 0918/0418 connects Berwick to Chathill via Seahouses and Bamburgh, serving Church Street. Check the date-specific timetable and return. Holy Island also requires two independent gates: Glen Valley 477 from Berwick Railway Station via Beal, and the same-day safe road crossing window. On operating days, the 477 provides two journeys in each direction, selected around the tide; some dates have no service. Its dated timetable lists no service on 10 October 2026, so never assume the bus runs on a suitable tide date. Official safe crossing times apply to the road and adjacent causeway path only, not a walk across sands or mud; allow an extra 30 minutes for local conditions or high wind, and check the changing daily window.',
         tradeoff: 'Bamburgh Castle and a meaningful Holy Island visit do not always fit the same tide window. Choosing the island sacrifices a relaxed castle day; choosing Bamburgh gives up the tidal crossing but protects flexibility.',
         stages: [
-          ['Leave the rail corridor', 'Use the confirmed bus, tour pickup or car route and save the final return. Do not board without the exact stop and coast destination.'],
+          ['Choose a coast corridor', 'For Bamburgh, check the X18 from Newcastle Haymarket or Borders 0918/0418 from Berwick, including the stop and return. For Holy Island, separately check whether Glen Valley 477 operates from Berwick Railway Station via Beal on your date.'],
           ['Complete the first coast anchor', 'Visit Bamburgh or, after a safe crossing, begin Holy Island with the departure deadline visible from the start.'],
-          ['Respect the tide gate', 'On Holy Island, turn toward the causeway well before the published safe period ends. Never wait for visible water as the signal.'],
+          ['Pass both Holy Island gates', 'Check the same-day road crossing window independently of the 477 timetable. The safe times cover the road and adjacent causeway path, not walking across sands or mud; allow the recommended extra 30 minutes for local conditions or high wind.'],
           ['Recover the inland connection', 'Reach the rail or bus gateway with margin for coast traffic. Treat any second castle or beach as optional only after the return is secure.']
         ],
-        fallback: 'If the tide window, wind or transport makes Holy Island unsuitable, use Bamburgh or Alnwick as the complete day. If the castle closes, retain the village and public coast only where conditions are safe.',
+        fallback: 'If either Holy Island gate fails—the 477 does not run on the date, or the same-day road crossing window does not fit—choose Bamburgh as a separate day and verify its bus return. At Bamburgh Castle, a free shuttle buggy runs from the uphill car park. The State Room tour lets visitors reach the first five rooms, including King’s Hall; beyond King’s Hall, steps and narrow passages mean wheelchairs, walking aids and crutches cannot continue. The public beach and village are separate, lower-impact options if the castle interior does not suit.',
         watch: [
-          ['The causeway can kill', 'Use only the official safe crossing times and allow a generous margin. Do not copy another vehicle or rely on a general tide app.'],
-          ['Coast buses are limited', 'A missed departure can leave no practical same-day rescue. Know the final two options and the pickup location.'],
+          ['Bus service and road crossing are separate gates', 'On operating days, the 477 provides two journeys in each direction, selected around the tide; some dates have no service. Independently confirm the safe same-day road crossing; neither check substitutes for the other.'],
+          ['The crossing window is for the causeway', 'Official safe times cover the road and adjacent path only, not a walk over sands or mud. Add 30 minutes for local conditions or high wind.'],
           ['Beach and castle weather differ', 'Wind, surf and blowing sand may make the shore unsuitable while the village remains usable. Keep the lower-risk branch.']
         ],
         duration: 'Allow a full day for either Bamburgh or Holy Island from Newcastle. Combining them is appropriate only when a booked route and safe tide window leave real dwell time.',
         combine: 'Combine Bamburgh with its village and beach viewpoint, or Holy Island with its island sites. Keep Durham and Newcastle for separate days.',
-        verify: 'Check official Holy Island crossing times, castle admission, coast buses or tour pickup, weather and the final rail connection before departure.',
+        verify: 'Check the exact X18 or Borders 0918/0418 date-specific timetable and return for Bamburgh; for Holy Island, check the Glen Valley 477 service date and the official same-day road crossing times as independent requirements. Also check castle access, weather and the final rail connection.',
         sources: [
           ['https://www.visitnorthumberland.com/travel-tips/while-youre-here/holy-island-crossing-times', 'Visit Northumberland — current Holy Island safe crossing times'],
-          ['https://www.bamburghcastle.com/visit-us/', 'Bamburgh Castle — official visitor information']
+          ['https://arrivabus.co.uk/services/NMS_AN_X18', 'Arriva — X18 Newcastle Haymarket–Bamburgh route via the coast'],
+          ['https://www.bordersbuses.co.uk/services/PERY/0918', 'Borders Buses — 0918/0418 Berwick–Chathill route via Bamburgh and Seahouses'],
+          ['https://glenvalley.co.uk/timetables/', 'Glen Valley — 477 Berwick Railway Station–Beal–Holy Island timetable'],
+          ['https://www.bamburghcastle.com/visit-us/', 'Bamburgh Castle — visitor access and shuttle buggy information']
         ]
       })
     ]
