@@ -6,6 +6,8 @@ const c = defineUnitedKingdomCluster;
 export const unitedKingdomEnglandNorthScotlandClusters = [
   c({
     slug: 'lake-district-cumbria',
+    reviewDateISO: '2026-10-10',
+    reviewDate: '10 October 2026',
     name: 'Lake District & Cumbria',
     nation: 'England',
     band: 'england-midlands-north',
@@ -25,116 +27,129 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
     guides: [
       g({
         slug: 'windermere-ambleside',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Windermere, Bowness & Ambleside',
         instrument: 'Lake-bus-boat interchange card',
         layout: 'shoreline-transfer-ribbon',
         imageQuery: 'Lake Windermere Ambleside boats mountains',
         imageAlt: 'Boats on Windermere with the Lake District fells beyond',
-        purpose: 'Choose whether the Windermere basin day runs by bus, boat or lakeshore walking, and distinguish the rail town, Bowness pier and Ambleside before their shared name hides three separate stops.',
-        summary: 'Arrive at Windermere station, descend to Bowness or connect to Ambleside, use one verified boat or shore line, and protect the final bus or branch train.',
+        purpose: 'Choose a practical Windermere-basin route from the rail station: use the 555 for Ambleside, plan a separate road transfer to Bowness for the Red Cruise, or stay on a low-level town-and-shore day. The station, Bowness pier and Waterhead are distinct places.',
+        summary: 'Start at Windermere railway station and pick one connection: Stagecoach 555 toward Ambleside, a checked bus to Bowness for the seasonal Red Cruise, or a town-and-shore fallback. Save the return to the branch line before leaving the railhead.',
         choices: [
-          ['Boat-and-town circuit', 'Use one scheduled lake cruise with Bowness or Ambleside as the land anchor. This gives water perspective but depends on marine operation and pier choice.'],
-          ['Low-level shore and town', 'Keep the day on buses, public shores and compact walks. It is the most weather-resilient choice and avoids a vessel cutoff.'],
-          ['Fell-edge viewpoint', 'Add one signed lower fell or viewpoint from a named start. It gains elevation but should replace, not supplement, the long boat circuit.']
+          ['555 to Ambleside, then Waterhead', 'Stagecoach 555 links Windermere station with Ambleside. From Ambleside village centre, Waterhead pier is about a half-mile walk on the flat path; check the local bus if that distance does not suit.'],
+          ['Bowness and the Red Cruise', 'The published 2026 Red Cruise runs Bowness–Waterhead; selected sailings also call at Jetty Museum or Brockhole. It gives a clear lake crossing, but the road transfer to Bowness and the return sailing need separate checks.'],
+          ['Town and near shore', 'Keep the day around Windermere town, Bowness or Ambleside and a short low-level lakeside walk. This suits unsettled weather or anyone who does not want to depend on a boat-to-bus connection.']
         ],
-        access: 'Windermere station is in Windermere town, not beside the lake; Bowness and Ambleside require bus, walk or boat connections. Piers have specific names and stopping patterns. Save the final bus to the station before boarding a vessel or climbing.',
-        tradeoff: 'A multi-stop cruise, Ambleside town and a substantial fell walk do not fit one reliable day. Choosing the boat sacrifices trail time; choosing elevation gives up the long lake circuit and its flexible stops.',
+        access: 'Windermere railway station is in the town, about 1.5 miles uphill from Bowness. From Ambleside village centre, the operator describes Waterhead pier as about a half-mile walk on a flat path. The 555 is a useful station–Ambleside link, but it does not make all three places one walkable interchange. Confirm the exact stop and final service before boarding a boat.',
+        tradeoff: 'Bowness, Ambleside and a long cruise already use several separate transfers. Add a fell walk only by dropping a town or boat leg; a missed sailing can leave a separate bus journey back to the station.',
         stages: [
-          ['Leave the railhead deliberately', 'At Windermere station, choose the Bowness or Ambleside connection and note the final branch train. Do not walk downhill without a return plan.'],
-          ['Read one lakeside town', 'Use Bowness pier and town or Ambleside’s waterfront and centre as the first complete block. Locate the onward bus or pier before lunch.'],
-          ['Commit to boat or height', 'Board the verified sailing or begin the signed lower route only when weather and return times remain sound. Avoid stacking both at maximum length.'],
-          ['Close the interchange', 'Reach the bus stop or station with one connection in reserve. Road traffic and full buses can consume a tight rail transfer.']
+          ['Choose the rail-side branch', 'At Windermere station, use the dated 555 timetable for Ambleside, or check the local bus to Bowness. Record the last connection back to the station before setting off.'],
+          ['Anchor at one pier or town', 'For the Red Cruise, start at Bowness pier and confirm whether the chosen sailing calls at Waterhead, Brockhole or Jetty Museum. For Ambleside, allow for the inland walk or local connection from Waterhead.'],
+          ['Keep one main activity', 'The 2026 Red Cruise is published for 28 March–1 November, with a 35-minute Bowness–Waterhead crossing; its timetable can change. Choose the boat or a lower walk, rather than trying to fit both with a fell visit.'],
+          ['Return by the route you checked', 'Use the confirmed bus or sailing back toward Windermere station and keep a margin before the branch train. Do not assume a cruise ticket covers the bus.']
         ],
-        fallback: 'If boats stop, retain Bowness, Ambleside, buses and a sheltered low-level lakeshore route. If cloud removes the viewpoint, use the town and water edge rather than transferring to another valley.',
+        fallback: 'If wind or seasonal operations stop the boats, keep one town and a short low-level shore walk, then return by bus. On a wet day, choose a sheltered town visit rather than adding another valley or relying on a pier connection.',
         watch: [
-          ['Windermere is three practical places', 'Station, Bowness and Ambleside are not one walkable stop. Name the transfer before setting the itinerary.'],
-          ['Boat and bus tickets are separate', 'A cruise product does not automatically solve the road return. Confirm operator, pier and final sailing.'],
-          ['Valley traffic delays buses', 'Peak traffic and weather can affect connections. Keep margin before the last branch train.']
+          ['Bowness is not the rail station', 'The station-to-lake descent is about 1.5 miles to Bowness. A map pin without a named bus or walk can make a short visit run late.'],
+          ['Red Cruise calls vary', 'The 2026 route links Bowness and Waterhead, while Brockhole and Jetty Museum are served only on some sailings. Check the date-specific timetable and last return.'],
+          ['Boat and bus are separate legs', 'A cruise does not arrange the road transfer back to Windermere station. Leave margin for valley traffic and the final branch train.']
         ],
-        duration: 'Allow a full day for two lakeside towns and one boat or low fell branch. A Bowness-only visit can fit four to five hours from the railhead.',
-        combine: 'Combine Bowness with one lake cruise or Ambleside with a lower walk. Keep Keswick and Carlisle for separate days.',
-        verify: 'Check Windermere Lake Cruises, Stagecoach service, branch trains, detailed weather and any path notice before departure.',
+        duration: 'Allow a full day for a station transfer, one lakeside town and either a cruise or a walk. A Bowness-focused visit still needs a round trip from the rail station and time for the chosen sailing.',
+        combine: 'Pair Bowness with the Red Cruise or Ambleside with a lower walk. Keep Keswick and Carlisle for separate days; the three rail and bus corridors do not form a quick loop.',
+        verify: 'Check the dated Stagecoach 555 and local bus timetables, Windermere Lake Cruises sailing and pier stops, branch trains, weather and any path notice before departure.',
         sources: [
-          ['https://www.windermere-lakecruises.co.uk/', 'Windermere Lake Cruises — official visit planning'],
-          ['https://lakedistrict.gov.uk/explore/plan-your-visit/getting-to-and-around/', 'Lake District National Park — official transport guidance']
+          ['https://www.stagecoachbus.com/promos-and-offers/cumbria-and-north-lancashire/keswick-to-lancaster', 'Stagecoach — 555 Keswick–Lancaster route and Windermere connections'],
+          ['https://www.windermere-lakecruises.co.uk/cruises-fares/red-cruise', 'Windermere Lake Cruises — 2026 Red Cruise route, stops and timetable'],
+          ['https://lakedistrict.gov.uk/explore/places-to-go/explore-windermere-and-ambleside/', 'Lake District National Park — Windermere, Bowness and Ambleside locations']
         ]
       }),
       g({
         slug: 'keswick-derwentwater',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Keswick & Derwentwater',
         instrument: 'Launch-and-fell weather dial',
         layout: 'market-lake-spoke-map',
         imageQuery: 'Derwentwater Keswick Lake District view',
         imageAlt: 'Derwentwater and the fells near Keswick in the Lake District',
-        purpose: 'Choose a Derwentwater launch, low-level shore route or one fell approach from Keswick, and make the bus arrival and last return part of the plan because the town has no railway station.',
-        summary: 'Arrive by the confirmed bus, use Keswick as the service base, complete one water or fell branch, and return to the town before the onward bus window narrows.',
+        purpose: 'Choose between the Keswick Launch, a bounded lakeshore walk, or a lower town day, then protect the bus connection because Keswick has no railway station. In autumn 2026, the Greta bridge closure also changes how to plan the former railway path.',
+        summary: 'Use the bus station as the day’s gate, then take one Derwentwater launch-and-walk leg or stay in Keswick. The Keswick Railway Path is not a dependable full through-route during the published Greta bridge works; check current notices and return buses.',
         choices: [
-          ['Launch-and-shore circuit', 'Use the scheduled launch and one landing for a bounded lakeside walk. This offers flexible scenery but depends on vessel operation.'],
-          ['Keswick and lower lake', 'Keep the market town, museum and accessible shore as the full day. It is the safest poor-weather and short-day option.'],
-          ['Named fell route', 'Choose one signed hill route with a firm turn-back. It gives height but eliminates the assumption of a long boat-and-town day.']
+          ['Keswick Launch and one shore leg', 'Take a confirmed sailing from Keswick to a named jetty such as Hawes End or Lodore, then walk back only as far as conditions and the return bus allow. The operator runs clockwise and anti-clockwise routes; a landing is not automatically a bus stop.'],
+          ['Town and short low route', 'Keep Keswick’s Pencil Museum, Theatre by the Lake and a short shore visit as the day. It works better in rain, low cloud or on a short daylight window than a full basin circuit.'],
+          ['Railway-path history, with a closure check', 'The former Keswick–Penrith railway route is a 5 km path each way, but the Greta bridge at its western end is closed from 22 September 2026 for works expected to take up to eight weeks. Do not plan a through walk until the live notice confirms reopening.']
         ],
-        access: 'Keswick is reached by bus from Penrith, Windermere or other corridors. The bus station, launch landings and trailheads are separate. Confirm the final onward bus and whether the launch is operating before leaving the town.',
-        tradeoff: 'A full launch circuit, long shore walk and fell ascent cannot all absorb weather or delay. Choosing height sacrifices boat flexibility; choosing the launch gives up the summit but creates clearer exits.',
+        access: 'Keswick has no railway station: arrive by a dated bus, often via Penrith, then walk separately to the lake landings. Derwentwater’s 10-mile/18 km circuit is a substantial walk; a launch can shorten it only when the chosen jetty and sailing line up. The railway path’s western Greta bridge closure is active in the 22 September 2026 notice.',
+        tradeoff: 'A lake circuit, town visit and fell route do not fit comfortably in one bus-based day. A launch gives a shorter water crossing but locks you to its service; the former railway path offers a flatter historic route when open, while the current bridge works remove the simple through option.',
         stages: [
-          ['Arrive through the bus gate', 'Save the return stop and timetable at Keswick before walking to the lake. Use the town for supplies and a live weather decision.'],
-          ['Read the basin from low ground', 'Use the waterfront and launch point to assess wind, cloud and water. Select the landing or fell only after conditions are visible.'],
-          ['Commit to one spoke', 'Take the verified launch and shore segment or follow the named route with a time-based turn-back. Do not switch spokes mid-day.'],
-          ['Return to Keswick services', 'Regain the town with enough time for food and the onward bus. A missed rural connection can threaten a mainline train at Penrith.']
+          ['Protect the bus return', 'At Keswick bus station, confirm the day’s onward service and save its final departure before walking to the town centre or lake. A missed bus can also cost a Penrith train connection.'],
+          ['Check launch and path status', 'At the waterfront, confirm the operator’s current sailing and the jetty where you plan to leave. Check the National Park closure notice before choosing the railway path.'],
+          ['Choose one bounded leg', 'Use a launch landing for one shore walk, or make the town and museum the main visit. Treat a full 10-mile lake circuit as its own walk, not an add-on to a boat and town day.'],
+          ['Return to the same transport gate', 'Get back to Keswick with time for the bus station. Do not assume a lake jetty or the closed end of the railway path will provide a bus shortcut.']
         ],
-        fallback: 'If launches stop or fells disappear into cloud, keep Keswick, the museum offer, Hope Park and a short lower-shore route. If buses are disrupted before departure, choose a rail-served Cumbria day.',
+        fallback: 'If wind suspends the launch or cloud covers the fells, stay in Keswick: use the Pencil Museum or Theatre by the Lake if open, then keep any shore walk short. The National Park rates Friar’s Crag “for some”: the rough path has steps up to 70 mm, and the viewpoint section is currently unsafe for people using wheels. Do not treat it as a step-free alternative; recheck the live notice.',
         watch: [
-          ['Keswick has no railway station', 'Every train journey contains a bus connection. Protect both ends and avoid the final bus when possible.'],
-          ['Launch landings are not equal exits', 'Some stops have limited services or longer walks. Choose the landing from the return plan, not the photograph.'],
-          ['Fell weather develops quickly', 'Low cloud and wind can turn an easy-looking ridge into a navigation problem. Use a proper route and early fallback.']
+          ['The Greta bridge is closed in autumn 2026', 'The National Park notice dated 22 September says work is expected to last up to eight weeks. Recheck before relying on a western railway-path connection or describing the path as open end to end.'],
+          ['A lake jetty is not a road interchange', 'Launch landings have different walking links and some sailings are seasonal or weather-limited. Verify both the sailing and the return to Keswick.'],
+          ['Keswick adds a bus leg to every train', 'Penrith connections depend on the dated bus timetable. Avoid planning the day around the final service if a train connection matters.']
         ],
-        duration: 'Allow a full day from Penrith or a Lake District base. A lower Keswick and shore circuit needs five to six hours including bus margin.',
-        combine: 'Combine Keswick with Derwentwater or one lower fell. Keep Windermere, Carlisle and distant valleys for separate days.',
-        verify: 'Check Keswick Launch operation, the dated bus timetable, Lake District alerts, mountain weather and daylight before setting out.',
+        duration: 'Allow a full day from Penrith or a Lake District base, including the bus in both directions. A town-and-short-shore visit can fill several hours; the 10-mile Derwentwater walk needs a separate, weather-aware day.',
+        combine: 'Combine Keswick with one launch landing or one lower walk. Keep Windermere, Carlisle and the full Derwentwater circuit for separate days.',
+        verify: 'Check the dated Penrith–Keswick bus, Keswick Launch times and jetty pattern, Lake District path alerts, the Greta bridge notice, mountain weather and daylight before departure.',
         sources: [
-          ['https://keswick-launch.co.uk/', 'Keswick Launch — official service information'],
-          ['https://www.lakedistrict.gov.uk/visiting/things-to-do/walking', 'Lake District National Park — official walking guidance']
+          ['https://lakedistrict.gov.uk/explore/places-to-go/explore-derwentwater-and-keswick/', 'Lake District National Park — Keswick and Derwentwater routes'],
+          ['https://lakedistrict.gov.uk/route/keswick-railway-path-route/', 'Lake District National Park — railway path route and Greta bridge notice'],
+          ['https://lakedistrict.gov.uk/route/friars-crag/', 'Lake District National Park — Friar’s Crag distance and access status'],
+          ['https://keswick-launch.co.uk/cruises/times/', 'Keswick Launch — dated sailings and operating notices']
         ]
       }),
       g({
         slug: 'carlisle-hadrians-wall-west',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Carlisle & Hadrian’s Wall West',
         instrument: 'Fort-and-frontier rail strip',
         layout: 'roman-frontier-section',
         imageQuery: 'Hadrians Wall Cumbria landscape',
         imageAlt: 'Hadrian’s Wall crossing the Cumbrian landscape',
-        purpose: 'Use Carlisle as the rail and museum base for one western Hadrian’s Wall site, naming the onward train, bus or walk and avoiding an open-ended attempt to cover the entire frontier.',
-        summary: 'Begin with Carlisle Castle or city context, take one verified corridor to a western fort or wall section, and return before rural frequency and daylight narrow.',
+        purpose: 'Decide whether to keep a Carlisle city-and-museum day or use the dated HW1 bus from Carlisle for one western fort or wall section. Rural stops are spaced along a frontier corridor, so choose the return before leaving the city.',
+        summary: 'From Carlisle, use HW1’s Stand K departure and select one named stop such as Birdoswald or Walltown. The published 2026 timetable runs through 3 January 2027; check the actual date, return service and any Walltown connection before setting out.',
         choices: [
-          ['Carlisle city and castle', 'Keep the day around castle, cathedral and museum evidence. This is rail-simple and resilient in poor weather.'],
-          ['Birdoswald and wall landscape', 'Use the named bus or road plan to the fort and one signed wall section. It gives frontier context but depends on rural access.'],
-          ['Solway and western terminus', 'Follow the western frontier toward Bowness-on-Solway or another specific point. It offers landscape and ending context but requires the strongest transport plan.']
+          ['Carlisle city and collections', 'Stay near the station for Carlisle Castle, the cathedral and Tullie’s collections. This is the stronger wet-weather plan and avoids a rural return bus.'],
+          ['HW1 to Birdoswald', 'Board the published Carlisle–Walltown HW1 service at Stand K, West Tower Street, and use the Birdoswald stop for the fort and a bounded wall visit. It is the clearest single-site frontier day, but depends on the dated rural timetable.'],
+          ['HW1 to Walltown, then check AD122', 'Walltown Country Park and the Roman Army Museum sit on the same corridor; a 2026 connection with AD122 is described there, but use it only when the two date-specific timetables actually connect. This adds reach and another failure point.']
         ],
-        access: 'Carlisle is a mainline station, but western Wall sites are dispersed and may need seasonal buses, local rail, taxi or car. Identify the exact fort, stop and final return; “Hadrian’s Wall” is not a single station or continuous day trip.',
-        tradeoff: 'A complete Carlisle heritage day and a meaningful frontier walk are separate plans. Choosing the rural fort sacrifices city depth; staying in Carlisle gives up the open landscape but avoids a fragile last mile.',
+        access: 'The 2026 HW1 timetable starts at Stand K on West Tower Street in Carlisle and lists Brampton, Lanercost, Birdoswald, Gilsland, Greenhead and Walltown Country Park/Roman Army Museum. Carlisle station is a separate walk and interchange; confirm the stop, return and any onward AD122 link for your travel date.',
+        tradeoff: 'A fort visit and a full Carlisle city itinerary compete for the same daylight and rural bus window. Birdoswald gives the longest surviving continuous stretch of wall but costs time in the countryside; a city-only day trades the open frontier for indoor collections and a simpler rail return.',
         stages: [
-          ['Establish the frontier base', 'Use Carlisle station, castle or museum to orient the Roman and border layers, and confirm the onward service before leaving city coverage.'],
-          ['Reach one named site', 'Take the verified bus, rail or road connection to the selected fort or wall segment. Do not navigate toward a generic wall pin.'],
-          ['Read a bounded frontier line', 'Visit the fort and one signed section with a fixed turnaround. Keep farmland access and weather restrictions visible.'],
-          ['Return before the rural cutoff', 'Reach the stop or pickup early, then allow the Carlisle interchange before the mainline train.']
+          ['Find the right Carlisle departure', 'From Carlisle station, walk to Stand K on West Tower Street and check the HW1 date-specific timetable. Choose Birdoswald or Walltown before boarding.'],
+          ['Use one named frontier stop', 'At Birdoswald, focus on the fort and a signed wall section. At Walltown, keep the country park or Roman Army Museum as the anchor; only add AD122 if the posted 2026 connection works both ways.'],
+          ['Read the Wall as a historic system', 'At Birdoswald, the surviving stretch connects the fort to a wider line of milecastles and turrets. Follow permitted paths and turn back on time rather than treating the frontier as one open attraction.'],
+          ['Return to Carlisle with a buffer', 'Reach the same bus stop before the last suitable HW1 journey. Keep time for the city-side interchange before any mainline train; a missed rural service cannot be repaired by walking to a distant fort.']
         ],
-        fallback: 'If rural transport or weather fails, keep Carlisle Castle, cathedral and Tullie collections as a complete frontier-city day. If a fort closes, use only public rights of way with official guidance rather than entering private land.',
+        fallback: 'If rain, rural service changes or a missed connection make the Wall impractical, stay in Carlisle for the castle, cathedral and Tullie collections. Do not swap to a different remote fort without checking its route and return from the beginning.',
         watch: [
-          ['The Wall is a corridor, not an attraction gate', 'Sites, museums and paths have separate ownership and access. Name the exact destination and permitted route.'],
-          ['Seasonal transport can disappear', 'A summer bus shown in an old plan may not run on the travel date. Verify the dated timetable and a return alternative.'],
-          ['Farmland and weather shape the path', 'Livestock, mud and exposed ground require signed access and suitable footwear. Do not use field shortcuts.']
+          ['HW1 is date-bound', 'The council timetable is published for 5 January 2026–3 January 2027. Check the exact day’s stops and last return instead of carrying an old summer plan into another season.'],
+          ['Walltown–AD122 is a connection to verify', 'The 2026 west-route information identifies Walltown as a change point, not a guaranteed timed interchange. Compare both operators’ same-day schedules before choosing it.'],
+          ['The frontier is rural ground', 'Wind, rain, mud and farm access can slow the walk between remains. Stay on signed public routes and leave enough time to reach the bus stop.']
         ],
-        duration: 'Allow a full day for one western Wall site from Carlisle. A castle-and-city day needs five to seven hours; combining both requires a carefully timed shorter visit.',
-        combine: 'Combine Carlisle with one western fort or the castle with city museums. Keep central Hadrian’s Wall and Northumberland coast for other days.',
-        verify: 'Check English Heritage site access, Hadrian’s Wall transport, path guidance, weather and the final Carlisle connection before travel.',
+        duration: 'Allow a full day for one HW1 stop from Carlisle, including the bus in both directions. Keep a separate five-to-seven-hour block for the city; do not count on fitting both at full length.',
+        combine: 'Combine one HW1 stop with a short Carlisle orientation only when the dated bus times leave a real return margin. Keep central Hadrian’s Wall and the Solway coast for separate days.',
+        verify: 'Check Cumberland Council’s dated HW1 timetable, the stop-specific return, English Heritage access, Hadrian’s Wall path guidance, and any same-day AD122 connection before travel.',
         sources: [
-          ['https://www.english-heritage.org.uk/visit/places/carlisle-castle/', 'English Heritage — Carlisle Castle visitor information'],
-          ['https://hadrianswallcountry.co.uk/plan-your-trip/', 'Hadrian’s Wall Country — official trip planning']
+          ['https://www.cumberland.gov.uk/buses/service/HW1', 'Cumberland Council — HW1 route and 2026 timetable'],
+          ['https://hadrianswallcountry.co.uk/explore/explore-hadrians-wall-by-bus/', 'Hadrian’s Wall Country — HW1 and AD122 bus connections'],
+          ['https://www.english-heritage.org.uk/visit/places/birdoswald-roman-fort-hadrians-wall/', 'English Heritage — Birdoswald Roman Fort and surviving wall'],
+          ['https://www.tullie.org.uk/', 'Tullie — Carlisle collections and indoor alternative']
         ]
       })
     ]
   }),
   c({
     slug: 'northeast-northumberland',
+    reviewDateISO: '2026-10-10',
+    reviewDate: '10 October 2026',
     name: 'Newcastle, Durham & Northumberland',
     nation: 'England',
     band: 'england-midlands-north',
@@ -143,38 +158,45 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
     tagline: 'Keep the twin river cities rail-simple; give the tidal coast its own clock.',
     hubIntro: 'Newcastle–Gateshead and Durham are compact rail cities with strong river and collection routes, while Bamburgh and Holy Island introduce long road links and a tidal causeway. The region works when city days remain complete and the coast is planned as a separate weather-and-tide operation.',
     stay: 'Three to five nights in Newcastle supports the Tyne, Durham and one Northumberland branch. Durham also works as a quiet base but offers fewer coast connections. A Holy Island day should never be tied to a hotel-change deadline.',
-    transfer: 'Newcastle Central, Gateshead Metro stops and Durham station sit at different elevations. Northumberland coast buses and roads cover long distances; Holy Island access is governed by published safe crossing times rather than ordinary opening hours.',
+    transfer: 'Newcastle Central, Gateshead and Durham sit at different levels, while the coast needs a separate bus plan: Go North East 54 connects Central Station, Gateshead Interchange, Baltic Square and the Quayside; Arriva X18 links Newcastle Haymarket with Bamburgh via Morpeth, Alnwick and Seahouses. From Berwick, Borders 0918/0418 serves Bamburgh and Church Street. Holy Island adds two independent checks: a date-specific 477 bus and the same-day road crossing window.',
     season: 'City routes remain useful year-round. Coast wind, sea state, causeway windows and winter daylight shape Northumberland; summer increases castle and island pressure. Football and arena events can crowd Tyne transport.',
     fallback: 'If tide, wind or coast transport fails, use Newcastle or Durham as a complete city day. Do not substitute another remote beach or castle without rechecking the return.',
     sources: [
       ['https://newcastlegateshead.com/', 'NewcastleGateshead — official destination guide'],
       ['https://www.thisisdurham.com/', 'Visit County Durham — official destination guide'],
-      ['https://www.visitnorthumberland.com/', 'Visit Northumberland — official destination guide']
+      ['https://www.visitnorthumberland.com/', 'Visit Northumberland — official destination guide'],
+      ['https://www.gonortheast.co.uk/services/GNE/54', 'Go North East — VOLTRA 54 route and stops'],
+      ['https://arrivabus.co.uk/services/NMS_AN_X18', 'Arriva — X18 Newcastle–Northumberland coast route'],
+      ['https://www.bordersbuses.co.uk/services/PERY/0918', 'Borders Buses — Berwick–Chathill route via Bamburgh'],
+      ['https://glenvalley.co.uk/timetables/', 'Glen Valley — 477 Berwick–Beal–Holy Island timetable'],
+      ['https://www.visitnorthumberland.com/travel-tips/while-youre-here/holy-island-crossing-times', 'Visit Northumberland — Holy Island safe road crossing times']
     ],
     guides: [
       g({
         slug: 'newcastle-gateshead-quays',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Newcastle & Gateshead Quays',
         instrument: 'Bridge-and-bank culture ledger',
         layout: 'tyne-bridge-fold',
         imageQuery: 'Newcastle Gateshead Quays Millennium Bridge Tyne',
         imageAlt: 'Bridges and cultural buildings along the Tyne at Newcastle and Gateshead',
         purpose: 'Choose one bank and cultural anchor, then cross the Tyne deliberately so station elevation, bridges and Quayside venues form a route rather than repeated climbs.',
-        summary: 'Descend from Newcastle Central through the historic core, use one Quayside collection, cross once to Gateshead, and return by Metro or a different bridge.',
+        summary: 'Choose the 15–20 minute walk from the city centre or rail station over the pedestrian Millennium Bridge, or use Go North East 54 between Central Station and Baltic Square. Check the return leg before crossing.',
         choices: [
           ['Newcastle historic core', 'Prioritize the castle, cathedral and Grainger Town before a short Quayside finish. This gives the clearest city-origin story.'],
-          ['Two-bank culture route', 'Use Baltic or another Quays venue with the Millennium Bridge and river public realm. It suits contemporary culture but requires elevation planning.'],
+          ['Two-bank culture route', 'Use Baltic and the Millennium Bridge. Baltic is free and open Wednesday–Sunday, 10:00–18:00; the 54 also links Central Station, Gateshead Interchange, Baltic Square and the Quayside.'],
           ['Ouseburn extension', 'Continue east to the Ouseburn for smaller venues and food. It creates a deeper neighbourhood day but sacrifices Gateshead or castle time.']
         ],
-        access: 'Newcastle Central is above the Quayside. Gateshead venues may be closer to Gateshead Metro than to a return climb across the river. Choose the first downhill street, one bridge crossing and the final station before adding Ouseburn.',
+        access: 'Baltic says the walk from Newcastle city centre or rail station takes 15–20 minutes over the pedestrian Millennium Bridge. In rain or when avoiding the descent and climb, Go North East 54 connects Central Station, Gateshead Interchange, Baltic Square and the Quayside; check the date-specific service and stop for the return. The walk and bus are alternatives, not an assumed timed interchange.',
         tradeoff: 'The historic core, Gateshead culture and Ouseburn point in three directions. Choosing one secondary district sacrifices another but avoids repeated steep climbs and bridge crossings.',
         stages: [
-          ['Leave Central on the chosen contour', 'Use Castle Keep and the historic streets or descend directly to the Quayside, recording the final Metro or rail return.'],
-          ['Read one river bank', 'Follow a bounded Quayside section and complete the selected collection or civic site. Avoid crossing for each photograph.'],
+          ['Choose the Baltic approach', 'Walk 15–20 minutes from the city centre or station over the Millennium Bridge, or check the 54 from Central Station to Baltic Square. Save the same-day return plan.'],
+          ['Use Baltic within its opening window', 'Baltic is free and open Wednesday–Sunday, 10:00–18:00; it is closed Monday and Tuesday. In wet weather, make it the indoor anchor only on an open day.'],
           ['Cross once with purpose', 'Use the Millennium, Swing or High Level Bridge according to the next venue and elevation. Continue to Gateshead or Ouseburn, not both.'],
           ['Return above the river', 'Take Metro or a planned uphill street to Central. Event crowds and bridge lifts can add time, so keep margin.']
         ],
-        fallback: 'If wind or a venue closure affects the Quays, use the castle, cathedral, Laing Art Gallery or Grainger Market and a short river view. If the Millennium Bridge is unavailable, use the signed adjacent crossing.',
+        fallback: 'For rain, use Baltic during its Wednesday–Sunday 10:00–18:00 opening window. On Monday or Tuesday, when it is closed, keep the day to the Newcastle historic core or another already-checked indoor venue rather than making the Quays the anchor. If the bus or walk does not suit, change the route before leaving Central.',
         watch: [
           ['The Quayside sits below the stations', 'A flat riverside map hides the final climb. Use Metro or choose a gradual return when mobility is limited.'],
           ['Bridges serve different street levels', 'The same crossing can deliver you above or below the next venue. Read the exit, not only the landmark.'],
@@ -182,14 +204,17 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         ],
         duration: 'Allow six to eight hours for one cultural anchor and two-bank route. A historic core plus short Quayside circuit can fit four to five hours.',
         combine: 'Combine the historic core with Quayside or Gateshead with Ouseburn only when the route stays east. Keep Durham and the coast for separate days.',
-        verify: 'Check Baltic or the selected venue, Nexus Metro, bridge notices, river weather and the city event calendar before travel.',
+        verify: 'Check Baltic opening information and the same-day Go North East 54 timetable before choosing the walk or bus; allow for the return leg and check any venue or event notices.',
         sources: [
-          ['https://baltic.art/visit', 'Baltic Centre for Contemporary Art — official visitor information'],
+          ['https://baltic.art/plan-your-visit/getting-to-baltic/', 'BALTIC — getting to the gallery, walking time, opening days and free entry'],
+          ['https://www.gonortheast.co.uk/services/GNE/54', 'Go North East — VOLTRA 54 route and stops'],
           ['https://www.nexus.org.uk/metro', 'Nexus — official Tyne and Wear Metro information']
         ]
       }),
       g({
         slug: 'durham-cathedral-city',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Durham Cathedral & River Peninsula',
         instrument: 'Peninsula climb-and-loop card',
         layout: 'cathedral-river-meander',
@@ -202,15 +227,15 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
           ['Castle and university context', 'Use an available castle tour or university collection with Palace Green. This depends more on timed access.'],
           ['River and city landscape', 'Keep interiors shorter and complete a signed riverbank or garden route. It offers the best peninsula perspective but includes steps and gradients.']
         ],
-        access: 'Durham station sits high west of the centre, while the cathedral peninsula rises again above the Wear. Buses and taxis can reduce the first climb. Castle access is often by specific tour, and riverside paths may include stairs or mud.',
+        access: 'The Cathedral Bus connects the Cathedral and Castle with the rail station and coach drop-off. Durham Cathedral says it runs through the day Monday–Saturday and on Sundays until 1 November 2026, is suitable for wheelchair users and pushchairs, and has no evening service. Plan the return around that limit; for a later finish, arrange a taxi or allow for the uphill station walk. Riverside paths can still include steps or mud.',
         tradeoff: 'A full cathedral visit, castle tour and complete river loop compete for the same half-day. Choosing the river sacrifices interior depth; choosing both controlled buildings makes the landscape a short viewpoint only.',
         stages: [
-          ['Descend from the rail ridge', 'Use the direct street, bus or taxi toward the market and locate the final station climb before entering the peninsula.'],
+          ['Choose the station connection', 'Use the Cathedral Bus between the rail station and Cathedral/Castle when it operates; it also serves the coach drop-off. Its stated Sunday service runs only until 1 November 2026. Otherwise plan the walk or a taxi and keep the return in view.'],
           ['Meet Palace Green', 'Complete the cathedral or booked castle product with its worship, tour and security conditions. Do not assume both can be improvised.'],
           ['Choose one river side', 'Descend toward the Wear and follow a bounded bank or bridge sequence. Use the opposite side only when the exit supports the return.'],
-          ['Regain the station with margin', 'Climb through the market or use a bus, allowing for gradients and wet surfaces. Keep the final meal below the rail cutoff.']
+          ['Regain the station with margin', 'The Cathedral Bus has no evening service. If staying late, arrange a taxi or allow for the uphill walk to the rail station; check the train as well as the bus before committing to an evening plan.']
         ],
-        fallback: 'If castle or cathedral access is restricted, use Palace Green, the Oriental Museum or city collections and a shorter river viewpoint. If river paths are poor, stay on the upper streets and bridges.',
+        fallback: 'If rain or river paths make the loop unattractive, keep to the Cathedral, Castle and upper-city route and use the Cathedral Bus where it operates. If an evening return is needed, do not rely on that bus: arrange a taxi or allow for the climb back to the station.',
         watch: [
           ['Worship and university use control access', 'Cathedral and castle are working institutions. Check the exact visitor and tour notice for the day.'],
           ['The city is steep', 'Station, river and Palace Green occupy different levels. Build the final climb into the schedule.'],
@@ -218,46 +243,51 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         ],
         duration: 'Allow five to seven hours for one major interior and a river route. A cathedral-and-city stop can fit three to four hours between trains.',
         combine: 'Combine the cathedral with one river loop or a castle tour with the market. Keep Newcastle and Northumberland coast for separate days.',
-        verify: 'Check cathedral services, castle tour availability, river path notices and the rail service before departure.',
+        verify: 'Check the Cathedral Bus operating day and return, noting that the published Sunday extension ends 1 November 2026 and there is no evening service; also check cathedral access, castle tours, river paths and trains.',
         sources: [
-          ['https://www.durhamcathedral.co.uk/visit-us', 'Durham Cathedral — official visitor information'],
+          ['https://www.durhamcathedral.co.uk/visit-us/plan-your-visit/parking-getting-to-durham-cathedral', 'Durham Cathedral — Cathedral Bus, access and getting to the Cathedral'],
           ['https://www.thisisdurham.com/explore-durham/durham-city', 'Visit County Durham — official Durham City guide']
         ]
       }),
       g({
         slug: 'bamburgh-holy-island',
+        reviewDateISO: '2026-10-10',
+        reviewDate: '10 October 2026',
         name: 'Bamburgh Castle & Holy Island',
         instrument: 'Causeway tide-and-road board',
         layout: 'tidal-border-chart',
         imageQuery: 'Bamburgh Castle Northumberland coast',
         imageAlt: 'Bamburgh Castle above the Northumberland coast',
-        purpose: 'Choose Bamburgh or Holy Island as the main coast destination and make the published causeway window, road distance and final bus or pickup the governing facts.',
-        summary: 'Leave the rail corridor with a named bus, tour or car plan, complete one castle or island visit, and cross the Holy Island causeway only within the official safe window.',
+        purpose: 'Choose Bamburgh or Holy Island as the main coast destination, then confirm the coast bus and, for the island, both the date-specific 477 service and same-day road crossing window.',
+        summary: 'Arrive at Bamburgh by the Newcastle–coast X18 or from Berwick on Borders 0918/0418; plan Holy Island separately around the 477 date and the road crossing window.',
         choices: [
-          ['Bamburgh castle and village', 'Use the castle, beach viewpoint and village as a complete day. It is not tide-gated and offers the simplest coast structure.'],
+          ['Bamburgh castle and village', 'Use the castle, beach and village as a complete day. Arriva X18 runs from Newcastle Haymarket via Morpeth, Alnwick and Seahouses; Borders 0918/0418 links Berwick with Bamburgh and Church Street. Check the exact date and return.'],
           ['Holy Island depth', 'Plan the entire day around the safe causeway crossing, island sites and departure deadline. This gives the strongest tidal-place story.'],
           ['Booked coast circuit', 'Use a guided tour or car to connect selected coast sites. It gains reach but still cannot override tide or attraction access.']
         ],
-        access: 'Neither Bamburgh nor Holy Island has a railway station. Buses, tours and road transfers begin from named towns or stations, and services can be sparse. Holy Island’s causeway becomes unsafe outside published crossing periods; ordinary map travel times are irrelevant then.',
+        access: 'Neither destination has a railway station. Arriva X18 links Newcastle Haymarket to Bamburgh via Morpeth, Alnwick and Seahouses; Borders 0918/0418 connects Berwick to Chathill via Seahouses and Bamburgh, serving Church Street. Check the date-specific timetable and return. Holy Island also requires two independent gates: Glen Valley 477 from Berwick Railway Station via Beal, and the same-day safe road crossing window. On operating days, the 477 provides two journeys in each direction, selected around the tide; some dates have no service. Its dated timetable lists no service on 10 October 2026, so never assume the bus runs on a suitable tide date. Official safe crossing times apply to the road and adjacent causeway path only, not a walk across sands or mud; allow an extra 30 minutes for local conditions or high wind, and check the changing daily window.',
         tradeoff: 'Bamburgh Castle and a meaningful Holy Island visit do not always fit the same tide window. Choosing the island sacrifices a relaxed castle day; choosing Bamburgh gives up the tidal crossing but protects flexibility.',
         stages: [
-          ['Leave the rail corridor', 'Use the confirmed bus, tour pickup or car route and save the final return. Do not board without the exact stop and coast destination.'],
+          ['Choose a coast corridor', 'For Bamburgh, check the X18 from Newcastle Haymarket or Borders 0918/0418 from Berwick, including the stop and return. For Holy Island, separately check whether Glen Valley 477 operates from Berwick Railway Station via Beal on your date.'],
           ['Complete the first coast anchor', 'Visit Bamburgh or, after a safe crossing, begin Holy Island with the departure deadline visible from the start.'],
-          ['Respect the tide gate', 'On Holy Island, turn toward the causeway well before the published safe period ends. Never wait for visible water as the signal.'],
+          ['Pass both Holy Island gates', 'Check the same-day road crossing window independently of the 477 timetable. The safe times cover the road and adjacent causeway path, not walking across sands or mud; allow the recommended extra 30 minutes for local conditions or high wind.'],
           ['Recover the inland connection', 'Reach the rail or bus gateway with margin for coast traffic. Treat any second castle or beach as optional only after the return is secure.']
         ],
-        fallback: 'If the tide window, wind or transport makes Holy Island unsuitable, use Bamburgh or Alnwick as the complete day. If the castle closes, retain the village and public coast only where conditions are safe.',
+        fallback: 'If either Holy Island gate fails—the 477 does not run on the date, or the same-day road crossing window does not fit—choose Bamburgh as a separate day and verify its bus return. At Bamburgh Castle, a free shuttle buggy runs from the uphill car park. The State Room tour lets visitors reach the first five rooms, including King’s Hall; beyond King’s Hall, steps and narrow passages mean wheelchairs, walking aids and crutches cannot continue. The public beach and village are separate, lower-impact options if the castle interior does not suit.',
         watch: [
-          ['The causeway can kill', 'Use only the official safe crossing times and allow a generous margin. Do not copy another vehicle or rely on a general tide app.'],
-          ['Coast buses are limited', 'A missed departure can leave no practical same-day rescue. Know the final two options and the pickup location.'],
+          ['Bus service and road crossing are separate gates', 'On operating days, the 477 provides two journeys in each direction, selected around the tide; some dates have no service. Independently confirm the safe same-day road crossing; neither check substitutes for the other.'],
+          ['The crossing window is for the causeway', 'Official safe times cover the road and adjacent path only, not a walk over sands or mud. Add 30 minutes for local conditions or high wind.'],
           ['Beach and castle weather differ', 'Wind, surf and blowing sand may make the shore unsuitable while the village remains usable. Keep the lower-risk branch.']
         ],
         duration: 'Allow a full day for either Bamburgh or Holy Island from Newcastle. Combining them is appropriate only when a booked route and safe tide window leave real dwell time.',
         combine: 'Combine Bamburgh with its village and beach viewpoint, or Holy Island with its island sites. Keep Durham and Newcastle for separate days.',
-        verify: 'Check official Holy Island crossing times, castle admission, coast buses or tour pickup, weather and the final rail connection before departure.',
+        verify: 'Check the exact X18 or Borders 0918/0418 date-specific timetable and return for Bamburgh; for Holy Island, check the Glen Valley 477 service date and the official same-day road crossing times as independent requirements. Also check castle access, weather and the final rail connection.',
         sources: [
           ['https://www.visitnorthumberland.com/travel-tips/while-youre-here/holy-island-crossing-times', 'Visit Northumberland — current Holy Island safe crossing times'],
-          ['https://www.bamburghcastle.com/visit-us/', 'Bamburgh Castle — official visitor information']
+          ['https://arrivabus.co.uk/services/NMS_AN_X18', 'Arriva — X18 Newcastle Haymarket–Bamburgh route via the coast'],
+          ['https://www.bordersbuses.co.uk/services/PERY/0918', 'Borders Buses — 0918/0418 Berwick–Chathill route via Bamburgh and Seahouses'],
+          ['https://glenvalley.co.uk/timetables/', 'Glen Valley — 477 Berwick Railway Station–Beal–Holy Island timetable'],
+          ['https://www.bamburghcastle.com/visit-us/', 'Bamburgh Castle — visitor access and shuttle buggy information']
         ]
       })
     ]
