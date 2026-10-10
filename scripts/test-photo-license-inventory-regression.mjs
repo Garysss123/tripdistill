@@ -16,6 +16,8 @@ const hueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_
 const hueTombLicenseUrl = 'https://creativecommons.org/licenses/by-sa/2.0/';
 const legacyHueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
 const legacyHueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
+const wadjemupDiagramAssetPath = '/assets/images/australia-wadjemup-ferry-day-sequence.svg';
+const wadjemupDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg';
 const victoriaImageRecords = [
   { assetPath: '/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', creator: 'DXR', license: 'CC BY-SA 4.0', sourceDate: '2024-08-27' },
   { assetPath: '/assets/images/canada-victoria-south-island-butchart-saanich.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', creator: 'Fyre Mael', license: 'CC BY 2.0', sourceDate: '2015-06-26' }
@@ -144,6 +146,17 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const wadjemupDiagram = photoRecords.find((item) => item.assetPath === wadjemupDiagramAssetPath);
+  assert.ok(wadjemupDiagram, 'inventory must retain the original Wadjemup planning diagram');
+  assert.equal(wadjemupDiagram.assetType, 'original-planning-diagram');
+  assert.equal(wadjemupDiagram.sourceUrl, wadjemupDiagramSourceUrl);
+  assert.equal(wadjemupDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(wadjemupDiagram.license, 'CC BY 4.0');
+  assert.equal(wadjemupDiagram.licenseUrl, 'https://creativecommons.org/licenses/by/4.0/');
+  assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
+  assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
   const ayutthayaPhotos = [
     { assetPath: '/assets/images/thailand-ayutthaya-station.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creator: 'Jr8825', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-13', revision: '1070665767' },
     { assetPath: '/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creator: 'Nayika C.', license: 'CC BY-SA 3.0', sourcePhotoDate: '2014-06-03', revision: '1243205521' },

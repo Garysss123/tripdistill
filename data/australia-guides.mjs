@@ -40,7 +40,7 @@ export const australiaClusters = orderedSlugs.map((slug) => {
       const key = `${cluster.slug}/${guide.slug}`;
       const image = australiaImageManifest[key];
       if (!image) throw new Error(`Missing verified Australia image manifest entry: ${key}`);
-      return { ...guide, image: { ...image, editNote: australiaImageEditNote } };
+      return { ...guide, image: { ...image, editNote: image.editNote || australiaImageEditNote } };
     })
   };
 });

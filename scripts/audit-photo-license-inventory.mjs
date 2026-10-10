@@ -468,7 +468,7 @@ function matchCredit(image, credits) {
   return { ...top.credit, matching: 'page_credit_lexical_match', matchedTokens: top.distinctiveHits };
 }
 
-const assetPaths = walkFiles(imageDir).filter((file) => /\.webp$/i.test(file));
+const assetPaths = walkFiles(imageDir).filter((file) => /\.webp$/i.test(file) || path.basename(file) === 'australia-wadjemup-ferry-day-sequence.svg');
 const recordsBySrc = new Map();
 const dataDir = path.join(root, 'data');
 const dataFiles = fs.readdirSync(dataDir).filter((name) => name.endsWith('.mjs'));
@@ -479,12 +479,14 @@ function collect(value, moduleName, seen, depth = 0) {
     const item = {
       moduleName,
       src: value.src,
+      assetType: value.assetType ?? null,
       sourceUrl: value.source ?? null,
       sourceTitle: value.commonsTitle ?? value.label ?? null,
       sourceDate: value.sourceDate ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
       licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
+      localSha1: value.localSha1 ?? null,
       editHistory: value.editNote ?? null,
       attributionTerms: value.attributionTerms ?? null,
       commercialReuseEligibility: value.commercialReuseEligibility ?? null,
@@ -926,6 +928,7 @@ for (const fullPath of assetPaths) {
   const license = uniqueValues('license')[0] || explicit?.license || creditMatch?.license || null;
   const licenseUrl = uniqueValues('licenseUrl')[0] || explicit?.licenseUrl || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
+  const authoredDiagram = dataRecords.some((record) => record.assetType === 'original-planning-diagram');
   const verification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
   const terms = licenseTerms(license, Boolean(verification));
   const commercialReuseEligibility = uniqueValues('commercialReuseEligibility')[0] || terms.commercialReuseEligibility;
@@ -936,6 +939,7 @@ for (const fullPath of assetPaths) {
     sha256: hash,
     assetPath: src,
     byteLength: fs.statSync(fullPath).size,
+    assetType: uniqueValues('assetType')[0] || 'photographic-raster',
     sourceUrl,
     sourceTitle,
     sourcePhotoDate,
@@ -951,7 +955,7 @@ for (const fullPath of assetPaths) {
     visualReviewStatus: visualReviewDateByAsset.has(src) ? `visually_reviewed_${visualReviewDateByAsset.get(src)}` : 'not_individually_visually_reviewed',
     verificationStatus: verification ? 'source_page_checked' : sourceUrl ? 'site_credit_or_metadata_only' : 'missing_source_credit_match',
     verificationDate: verification ? (verification.checkedOn || verifiedOn) : null,
-    verificationDetail: verification?.detail || null,
+    verificationDetail: verification?.detail || (authoredDiagram ? 'Original vector planning diagram authored by TripDistill Editorial Team and declared under CC BY 4.0 in the Australia asset manifest. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.' : null),
     useCount: imageUses.length,
     routes: [...new Set(imageUses.map((use) => use.route))],
     altTexts: [...new Set(imageUses.map((use) => use.alt).filter(Boolean))],
@@ -973,6 +977,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
   byteLength: rows[0].byteLength,
   sourceRecords: rows.map((row) => ({
     assetPath: row.assetPath,
+    assetType: row.assetType,
     sourceUrl: row.sourceUrl,
     sourceTitle: row.sourceTitle,
     sourcePhotoDate: row.sourcePhotoDate,
@@ -983,6 +988,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
     commercialReuseEligibility: row.commercialReuseEligibility,
     attributionTerms: row.attributionTerms,
     editHistory: row.editHistory,
+    localSha1: (recordsBySrc.get(row.assetPath) || []).find((record) => record.localSha1)?.localSha1 || null,
     metadataOrigin: row.metadataOrigin,
     creditMatchNote: row.creditMatchNote,
     visualReviewStatus: row.visualReviewStatus,
@@ -997,7 +1003,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
 }));
 
 const assetImageExtras = fs.readdirSync(imageDir)
-  .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file));
+  .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file) && file !== 'australia-wadjemup-ferry-day-sequence.svg');
 const rootImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
 const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
 const counts = {

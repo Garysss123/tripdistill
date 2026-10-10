@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 
@@ -88,18 +89,35 @@ if (australiaGuides.length !== 80) problems.push(`Expected 80 Australia field gu
 if (new Set(australiaClusters.map((cluster) => cluster.family)).size !== 16) problems.push('Australia hubs must use 16 distinct family markers');
 if (new Set(australiaGuides.map((guide) => guide.instrument)).size !== 80) problems.push('Australia field guides must use 80 distinct instrument markers');
 if (new Set(australiaGuides.map((guide) => guide.image.src)).size !== 80) problems.push('Australia image paths are not unique');
-if (new Set(australiaGuides.map((guide) => guide.image.commonsTitle)).size !== 80) problems.push('Australia Commons source files are not unique');
+if (new Set(australiaGuides.map((guide) => guide.image.source)).size !== 80) problems.push('Australia image source records are not unique');
+const commonsGuides = australiaGuides.filter((guide) => guide.image.assetType !== 'original-planning-diagram');
+if (new Set(commonsGuides.map((guide) => guide.image.commonsTitle)).size !== commonsGuides.length) problems.push('Australia Commons source files are not unique');
 
 for (const guide of australiaGuides) {
-  if (!guide.image.source.startsWith('https://commons.wikimedia.org/')) problems.push(`${guide.url}: image source is not Wikimedia Commons`);
-  if (!/^(?:CC0|Public domain|CC BY(?:-SA)?)/i.test(guide.image.license)) problems.push(`${guide.url}: unsupported image license ${guide.image.license}`);
-  if (!guide.image.creator || !guide.image.remoteSha1) problems.push(`${guide.url}: incomplete image provenance`);
   const local = path.join(root, guide.image.src.replace(/^\//, ''));
-  if (!fs.existsSync(local)) {
-    problems.push(`${guide.url}: missing local image ${guide.image.src}`);
+  if (guide.image.assetType === 'original-planning-diagram') {
+    if (guide.image.source !== `https://tripdistill.com${guide.image.src}`) problems.push(`${guide.url}: original diagram source must link to the exact published artwork`);
+    if (guide.image.creator !== 'TripDistill Editorial Team' || guide.image.license !== 'CC BY 4.0' || guide.image.licenseUrl !== 'https://creativecommons.org/licenses/by/4.0/') problems.push(`${guide.url}: original diagram credit or exact license is incomplete`);
+    if (!guide.image.localSha1 || !/^[a-f0-9]{40}$/i.test(guide.image.localSha1)) problems.push(`${guide.url}: original diagram is missing a valid local SHA1`);
+    if (!fs.existsSync(local)) {
+      problems.push(`${guide.url}: missing local diagram ${guide.image.src}`);
+    } else {
+      const svg = fs.readFileSync(local, 'utf8');
+      const localSha1 = crypto.createHash('sha1').update(svg).digest('hex');
+      if (path.extname(local).toLowerCase() !== '.svg' || !svg.includes('viewBox="0 0 1600 1066"')) problems.push(`${guide.url}: original diagram must be an SVG with a 1600x1066 viewBox`);
+      if (localSha1 !== guide.image.localSha1) problems.push(`${guide.url}: original diagram SHA1 does not match the local source file`);
+      if (!svg.includes('not a geographic map') || !svg.includes('CC BY 4.0')) problems.push(`${guide.url}: original diagram must carry its visible provenance note`);
+    }
   } else {
-    const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', local], { encoding: 'utf8' });
-    if (probe.status !== 0 || probe.stdout.trim() !== '1600x1066') problems.push(`${guide.url}: local image is not a valid 1600x1066 WebP`);
+    if (!guide.image.source.startsWith('https://commons.wikimedia.org/')) problems.push(`${guide.url}: image source is not Wikimedia Commons`);
+    if (!/^(?:CC0|Public domain|CC BY(?:-SA)?)/i.test(guide.image.license)) problems.push(`${guide.url}: unsupported image license ${guide.image.license}`);
+    if (!guide.image.creator || !guide.image.remoteSha1) problems.push(`${guide.url}: incomplete image provenance`);
+    if (!fs.existsSync(local)) {
+      problems.push(`${guide.url}: missing local image ${guide.image.src}`);
+    } else {
+      const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', local], { encoding: 'utf8' });
+      if (probe.status !== 0 || probe.stdout.trim() !== '1600x1066') problems.push(`${guide.url}: local image is not a valid 1600x1066 WebP`);
+    }
   }
 }
 

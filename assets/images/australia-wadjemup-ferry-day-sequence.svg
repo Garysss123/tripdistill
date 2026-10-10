@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" fill="none">
+  <metadata>Original planning sequence artwork by TripDistill Editorial Team. Licensed CC BY 4.0. This is not a geographic map and depicts no scale, bearing, distance, or actual route.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 11 6 1 11" stroke="#447771" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="1066" rx="48" fill="#F4F1E8"/>
+  <path d="M150 535H1450" stroke="#A9C4BA" stroke-width="8" stroke-linecap="round"/>
+  <path d="M432 535H484M792 535H844M1152 535H1204" stroke="#447771" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g fill="#FFFCF5" stroke="#D5DED4" stroke-width="3">
+    <rect x="72" y="257" width="328" height="552" rx="32"/>
+    <rect x="432" y="257" width="328" height="552" rx="32"/>
+    <rect x="792" y="257" width="328" height="552" rx="32"/>
+    <rect x="1152" y="257" width="328" height="552" rx="32"/>
+  </g>
+  <g fill="#173D46">
+    <circle cx="128" cy="315" r="34"/><circle cx="488" cy="315" r="34"/>
+    <circle cx="848" cy="315" r="34"/><circle cx="1208" cy="315" r="34"/>
+  </g>
+  <g fill="#F4F1E8" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle">
+    <text x="128" y="326">1</text><text x="488" y="326">2</text>
+    <text x="848" y="326">3</text><text x="1208" y="326">4</text>
+  </g>
+
+  <g stroke="#447771" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M166 531h142l-24 43H194l-28-43Z" fill="#DCE9E2"/>
+    <path d="M194 519h83v12h-83zM218 482h37v37h-37zM224 465h25v17h-25z" fill="#F4F1E8"/>
+    <path d="M184 594c18-11 36-11 54 0s36 11 54 0M171 620c18-11 36-11 54 0s36 11 54 0"/>
+
+    <path d="M525 571h100M540 571v-65h70v65M553 506v-22h44v22M555 530h12M583 530h12"/>
+    <path d="M533 596h84"/>
+
+    <circle cx="870" cy="546" r="37"/><circle cx="1033" cy="546" r="37"/>
+    <path d="m870 546 51-59 43 59H870l37 59M921 487h27M1006 546h27M1033 546l-34-59M999 487h25"/>
+
+    <path d="M1324 529h102l-18 35h-64l-20-35Z" fill="#DCE9E2"/>
+    <path d="M1352 516h50v13h-50zM1365 480h26v36h-26zM1371 463h14v17h-14z" fill="#F4F1E8"/>
+    <path d="M1365 594a52 52 0 1 0-38-16M1366 594l-3-34M1366 594l28 15"/>
+  </g>
+</svg>
