@@ -1,0 +1,28 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/busan/",
+    "/south-korea/busan/nampo-jagalchi/",
+    "/south-korea/busan/gamcheon-songdo/",
+    "/south-korea/busan/haeundae-dongbaek/",
+    "/south-korea/busan/gwangalli-millak/",
+    "/south-korea/busan/yeongdo-taejongdae/"
+  ],
+  "translations": {
+    "Taejongdae coast photograph": "太宗臺海岸照片",
+    "; licensed": "；授權：",
+    "; resized and cropped as WebP.": "；已調整尺寸並裁切為WebP。",
+    "A market shaped by the port": "隨港口發展的市場",
+    "Official place and access sources": "官方景點與交通資訊",
+    "Planning facts were reviewed on 7 October 2026. Recheck market closures, vendor hours, prices, tower access and event restrictions before visiting.": "本頁規劃資訊於2026年10月7日核對。造訪前請再次確認市場休市日、店家營業時間、價格、塔樓開放與活動管制。",
+    "Read the hillside settlement": "讀懂山坡聚落",
+    "Korea Tourism Organization — Gamcheon Culture Village history and visitor information": "韓國觀光公社－甘川文化村歷史與旅遊資訊",
+    "Planning facts were reviewed on 7 October 2026. Recheck beach operation, safety flags, trail conditions, museum hours and events before visiting.": "本頁規劃資訊於2026年10月7日核對。造訪前請再次確認海灘管理、安全旗號、步道狀況、博物館時間與活動。",
+    "Korea Tourism Organization — Haeundae Beach visitor information": "韓國觀光公社－海雲台海灘旅遊資訊",
+    "Planning facts were reviewed on 7 October 2026. Recheck show notices, weather, crowd controls, beach access and final transit before visiting.": "本頁規劃資訊於2026年10月7日核對。造訪前請再次確認演出公告、天氣、人潮管制、海灘通行與末班交通。",
+    "The Busan Geopark describes Taejongdae as an erosional coast: sea cliffs, wave-cut platforms and sea caves are the landforms to read from the marked park route. They are exposed edges, not beach access; stay behind barriers and use designated viewpoints, especially when swell, wind or fog closes the near-shore sections.": "釜山地質公園將太宗臺描述為侵蝕海岸；沿指定園區步道可觀察海蝕崖、海蝕平台與海蝕洞。這些是暴露於海浪的崖岸，並非通往海灘的入口；請留在護欄內並使用指定觀景點，遇到湧浪、強風或濃霧封閉近岸路段時尤其如此。",
+    "Planning facts were reviewed on 7 October 2026. Recheck park access, Danubi operation, buses, museum hours, trail notices and weather before visiting.": "本頁規劃資訊於2026年10月7日核對。造訪前請再次確認公園開放、Danubi遊園車、公車、博物館時間、步道公告與天氣。",
+    "As checked 7 October 2026, the program runs two free Saturday shows: 19:00 and 21:00 from October through February, and 20:00 and 22:00 from March through September. Its published format alternates by week (Drone × Laser on the first and third Saturdays; Drone Light on the second and fourth), with each show lasting more than 12 minutes. Rain, gusts, typhoon conditions, technical problems or crowd controls can delay or cancel it; check the same-day notice before traveling.": "依2026年10月7日查閱的資訊，每週六有兩場免費演出：10月至2月為19:00及21:00，3月至9月為20:00及22:00。官方節目每週交替（每月第一、第三個星期六為無人機×雷射，第二、第四個星期六為無人機燈光秀），每場演出超過12分鐘。降雨、陣風、颱風、技術問題或人潮管制都可能導致延後或取消，出發當天請查看公告。"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/"
+  ],
+  "translations": {
+    "A 14-day trip has 13 nights. One workable shape is four nights in Tokyo, three in Kyoto or Osaka, and six in one Hokkaido corridor, with arrival on Day 1, departure on Day 14 and two transfer days; this trades away the other Kansai city. It assumes flights line up for a Tokyo arrival and Hokkaido departure; if you must return to another airport, add a positioning day or choose fewer stops. To keep Tokyo, Kyoto, Osaka and Hokkaido, consider about 19–20 days (18–19 nights) as a flexible planning range, not a minimum.": "14 天行程共有 13 晚住宿。一種可行的安排是東京住 4 晚、京都或大阪住 3 晚，再於北海道其中一條路線住 6 晚；第 1 天抵達、第 14 天離境，並安排 2 個交通移動日（共 13 晚），這樣就需放棄另一座關西城市。此安排假設航班能配合從東京入境、從北海道離境；若必須返回另一座機場，請多留 1 天移動至該機場，或減少停留地點。若想保留東京、京都、大阪與北海道，可考慮約 19–20 天（18–19 晚）作為彈性規劃範圍，而非最低要求。",
+    "Start with a city route through Tokyo, Kyoto and Osaka. Hokkaido is a separate island-scale journey with longer transfers.": "先安排東京、京都與大阪的城市路線。北海道是另一趟島嶼規模的旅程，交通接駁時間較長。",
+    "14 days (13 nights)": "14 天（13 晚）",
+    "One example: 4 Tokyo nights, 3 in Kyoto or Osaka, then 6 in one Hokkaido corridor (13 nights total). This drops the other Kansai city.": "例如：東京住 4 晚、京都或大阪住 3 晚，再於北海道其中一條路線住 6 晚（共 13 晚）。這樣就不安排另一座關西城市。",
+    "Assumes arrival in Tokyo on Day 1, departure from Hokkaido on Day 14 and two transfer days. Check flight and rail connections first. To keep all three cities plus Hokkaido, consider 19–20 days (18–19 nights); a flexible range, not a minimum.": "此安排假設第 1 天抵達東京、第 14 天從北海道離境，並預留 2 個交通移動日。請先確認航班與鐵路接駁。若要保留三座城市並加入北海道，可考慮 19–20 天（18–19 晚）；這是彈性規劃範圍，並非最低要求。",
+    "Photo by SRP1998; licensed under": "照片由 SRP1998 拍攝，依以下授權條款提供：",
+    ". Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.": "。修改內容：已調整尺寸、轉換為 WebP，並以響應式封面裁切方式呈現。相同方式分享：本改作依相同版本的 CC BY-SA 4.0 授權釋出。",
+    "Photo by Luka Peternel; licensed under": "照片由 Luka Peternel 拍攝，依以下授權條款提供：",
+    "Photo by Chi King; licensed under": "照片由 Chi King 拍攝，依以下授權條款提供：",
+    ". Changes: converted to WebP and displayed with responsive cover cropping.": "。修改內容：已轉換為 WebP，並以響應式封面裁切方式呈現。"
+  }
+}

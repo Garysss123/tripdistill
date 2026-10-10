@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Bomun Lake walking route schematic</title>
+  <desc id="desc">An original, not-to-scale diagram of a lakeside loop with a start marker and midpoint marker.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dfeeea"/>
+      <stop offset="1" stop-color="#f8f5e9"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8dbfc3"/>
+      <stop offset="1" stop-color="#4a858b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" rx="48" fill="url(#sky)"/>
+  <path d="M0 668c158-71 238-80 375-42 143 40 258 20 377-27 159-62 291-56 448 6v295H0z" fill="#d3dfc4"/>
+  <path d="M0 758c171-51 302-47 433-7 127 39 238 45 382 7 146-39 257-37 385 2v140H0z" fill="#b8cb9e"/>
+  <path d="M130 353c58-143 191-221 372-228 149-6 295 33 401 111 89 65 130 163 101 255-31 99-133 166-262 192-161 32-357 8-492-46-128-51-173-158-120-284z" fill="url(#water)" stroke="#f5f3e7" stroke-width="24"/>
+  <path d="M98 352c59-163 213-262 414-272 169-8 338 41 456 134 113 89 160 218 117 339-40 114-156 193-304 222-177 35-393 7-540-52C87 658 41 500 98 352z" fill="none" stroke="#294c43" stroke-width="22" stroke-linecap="round" stroke-dasharray="1 2"/>
+  <path d="M577 98c94-11 191 5 275 43" fill="none" stroke="#f5f3e7" stroke-width="20" stroke-linecap="round"/>
+  <path d="M260 685c-42 43-84 91-105 145M934 694c57 46 100 88 129 133" fill="none" stroke="#8a9e77" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="195" cy="800" r="38" fill="#b85f42" stroke="#fffaf0" stroke-width="13"/>
+  <circle cx="814" cy="110" r="38" fill="#d19a38" stroke="#fffaf0" stroke-width="13"/>
+  <circle cx="195" cy="800" r="8" fill="#fffaf0"/>
+  <circle cx="814" cy="110" r="8" fill="#fffaf0"/>
+  <path d="M195 738v-48M814 48v-20" stroke="#294c43" stroke-width="7" stroke-linecap="round"/>
+  <path d="M145 781l50-48 50 48" fill="none" stroke="#b85f42" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M764 91l50-48 50 48" fill="none" stroke="#d19a38" stroke-width="9" stroke-linejoin="round"/>
+</svg>

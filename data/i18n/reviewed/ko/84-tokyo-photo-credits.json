@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/tokyo/",
+    "/japan/tokyo/ikebukuro/",
+    "/japan/tokyo/odaiba-toyosu/",
+    "/japan/tokyo/roppongi-azabu/"
+  ],
+  "translations": {
+    "- Joli Rumi,": "- Joli Rumi,",
+    "- Basile Morin,": "- Basile Morin,",
+    "- Kakidai,": "- Kakidai,"
+  }
+}

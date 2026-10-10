@@ -2503,3 +2503,107 @@ body[data-area="dadaepo-amisan"] { --area-accent:#a85039; --area-accent-2:#d99a5
 .turnaround-rule { display:grid; grid-template-columns:minmax(16rem,.55fr) minmax(0,1.45fr); overflow:hidden; color:#203c31; background:#e8eee3; border:1px solid #bdcbbd; border-radius:50% .5rem .5rem 50%; }.turnaround-dial { position:relative; min-height:24rem; display:grid; place-content:center; padding:2rem; color:#fff; background:#a64d3d; border-radius:50%; text-align:center; }.turnaround-dial::after { content:""; position:absolute; inset:1rem; border:1px dashed rgba(255,255,255,.55); border-radius:50%; }.turnaround-dial b,.turnaround-dial span { position:relative; z-index:2; display:block; }.turnaround-dial b { font:900 2.5rem/1 ui-monospace,monospace; }.turnaround-dial span { max-width:8rem; margin:.5rem auto 0; font-family:Georgia,serif; font-size:.75rem; }.turnaround-rule > div:last-child { align-self:center; padding:clamp(1.5rem,4vw,2.7rem); }.turnaround-rule h2 { margin:.35rem 0 .6rem; font-family:Georgia,serif; font-size:clamp(1.8rem,3vw,2.55rem); font-weight:500; }.turnaround-rule p,.turnaround-rule li { color:#5b6c61; }.turnaround-rule ul { padding-left:1.1rem; font-size:.78rem; }
 .trail-transfer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }.trail-transfer-grid article { min-height:15rem; padding:1.2rem; color:#eaf5ef; background:#28473a; border-top:.35rem solid #d8ae68; }.trail-transfer-grid article:nth-child(2) { background:#3c594b; transform:translateY(1rem); }.trail-transfer-grid article:nth-child(3) { color:#394038; background:#dedec9; }.trail-transfer-grid span { font:900 .62rem/1 ui-monospace,monospace; color:#e7b767; }.trail-transfer-grid h3 { margin:3.8rem 0 .4rem; }.trail-transfer-grid p { margin:0; color:inherit; opacity:.73; font-size:.75rem; }
 .halla-fallback { display:grid; grid-template-columns:minmax(17rem,.7fr) minmax(0,1.3fr); overflow:hidden; color:#eaf5ef; background:#1b392e; clip-path:polygon(0 0,97% 0,100% 11%,100% 100%,0 100%); }.halla-fallback > div:first-child { padding:clamp(1.5rem,4vw,2.7rem); }.halla-fallback > div:first-child > span { color:#e9b86b; font:900 .61rem/1 ui-monospace,monospace; letter-spacing:.12em; }.halla-fallback h2 { margin:.4rem 0 .6rem; color:#fff; font-family:ui-monospace,monospace; font-size:clamp(1.8rem,3vw,2.55rem); text-transform:uppercase; line-height:1; }.halla-fallback p { color:#bfd1c8; }.halla-fallback > div:last-child { display:grid; grid-template-columns:repeat(3,1fr); }.halla-fallback article { padding:1.2rem; border-left:1px solid rgba(255,255,255,.14); }.halla-fallback article b { color:#93d0b3; font:900 .62rem/1 ui-monospace,monospace; }.halla-fallback article p { margin:3rem 0 0; font-size:.73rem; }
+
+
+/* Japan and South Korea route-scoped fixes selected from the review candidate. */
+body[data-city="kyoto"],
+body[data-city="osaka"] { min-width: 0; }
+body[data-city="tokyo"] { min-width: 0; }
+.tokyo-area-caption strong { color: #f6d88c; }
+.kyoto-hero-market .kyoto-area-copy { padding-top: 4.5rem; }
+body[data-page="japan"] .destination-copy p + p { margin-top: .5rem; }
+body[data-country="south-korea"] { min-width: 0; }
+
+body[data-page="hokkaido"],
+body[data-page="sapporo"],
+body[data-page="otaru-shakotan"],
+body[data-page="hakodate-onuma"],
+body[data-page="furano-biei"],
+body[data-page="asahikawa-daisetsuzan"],
+body[data-page="niseko-yoichi"],
+body[data-page="noboribetsu-lake-toya"],
+body[data-page="kushiro-lake-akan"],
+body[data-page="abashiri-shiretoko"] { min-width: 0; }
+body[data-page="hakodate-onuma"] .hokkaido-live-notice {
+  margin-top: 1rem; padding: 1rem 1.15rem; color: #364550; background: #fff7ec;
+  border: 1px solid #e8cfaa; border-left: 4px solid #bc7140; border-radius: .75rem; line-height: 1.55;
+}
+body[data-page="hakodate-onuma"] .hokkaido-live-notice strong { display: block; color: #754526; }
+body[data-page="hakodate-onuma"] .hokkaido-live-notice p { margin: .35rem 0 0; }
+@media (max-width: 390px) {
+  body[data-page="hokkaido"] .hokkaido-city-hero,
+  body[data-page="sapporo"] .hokkaido-area-hero,
+  body[data-page="otaru-shakotan"] .hokkaido-area-hero,
+  body[data-page="hakodate-onuma"] .hokkaido-area-hero,
+  body[data-page="furano-biei"] .hokkaido-area-hero,
+  body[data-page="asahikawa-daisetsuzan"] .hokkaido-area-hero,
+  body[data-page="niseko-yoichi"] .hokkaido-area-hero,
+  body[data-page="noboribetsu-lake-toya"] .hokkaido-area-hero,
+  body[data-page="kushiro-lake-akan"] .hokkaido-area-hero,
+  body[data-page="abashiri-shiretoko"] .hokkaido-area-hero,
+  body[data-page="hokkaido"] .hokkaido-city-copy,
+  body[data-page="hokkaido"] .hokkaido-city-atlas,
+  body[data-page="sapporo"] .hokkaido-area-copy,
+  body[data-page="otaru-shakotan"] .hokkaido-area-copy,
+  body[data-page="hakodate-onuma"] .hokkaido-area-copy,
+  body[data-page="furano-biei"] .hokkaido-area-copy,
+  body[data-page="asahikawa-daisetsuzan"] .hokkaido-area-copy,
+  body[data-page="niseko-yoichi"] .hokkaido-area-copy,
+  body[data-page="noboribetsu-lake-toya"] .hokkaido-area-copy,
+  body[data-page="kushiro-lake-akan"] .hokkaido-area-copy,
+  body[data-page="abashiri-shiretoko"] .hokkaido-area-copy,
+  body[data-page="hokkaido"] .hokkaido-distance-strip,
+  body[data-page="hokkaido"] .hokkaido-base-grid,
+  body[data-page="hokkaido"] .hokkaido-corridor-grid,
+  body[data-page="sapporo"] .route-board,
+  body[data-page="otaru-shakotan"] .route-board,
+  body[data-page="hakodate-onuma"] .route-board,
+  body[data-page="furano-biei"] .route-board,
+  body[data-page="asahikawa-daisetsuzan"] .route-board,
+  body[data-page="niseko-yoichi"] .route-board,
+  body[data-page="noboribetsu-lake-toya"] .route-board,
+  body[data-page="kushiro-lake-akan"] .route-board,
+  body[data-page="abashiri-shiretoko"] .route-board,
+  body[data-page="hakodate-onuma"] .hokkaido-live-notice {
+    min-width: 0; overflow-wrap: anywhere;
+  }
+  body[data-page="hokkaido"] .hokkaido-city-hero { grid-template-columns: minmax(0, 1fr); }
+  body[data-page="hokkaido"] .hokkaido-atlas-note { max-width: calc(100% - 1.6rem); }
+  body[data-page="sapporo"] .hokkaido-area-copy,
+  body[data-page="otaru-shakotan"] .hokkaido-area-copy,
+  body[data-page="hakodate-onuma"] .hokkaido-area-copy,
+  body[data-page="furano-biei"] .hokkaido-area-copy,
+  body[data-page="asahikawa-daisetsuzan"] .hokkaido-area-copy,
+  body[data-page="niseko-yoichi"] .hokkaido-area-copy,
+  body[data-page="noboribetsu-lake-toya"] .hokkaido-area-copy,
+  body[data-page="kushiro-lake-akan"] .hokkaido-area-copy,
+  body[data-page="abashiri-shiretoko"] .hokkaido-area-copy { width: auto; }
+}
+
+/* Japan overview: keep its comparison table scrollable on narrow viewports. */
+body[data-page="japan"] { min-width: 0; }
+body[data-page="japan"] .site-shell,
+body[data-page="japan"] .page-content,
+body[data-page="japan"] .page-hero,
+body[data-page="japan"] .page-hero-content,
+body[data-page="japan"] .compare-wrap { min-width: 0; }
+body[data-page="japan"] .compare-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+body[data-page="japan"] .page-hero-content {
+  box-sizing: border-box; width: auto; max-width: 48rem; flex: 0 1 48rem; margin: 1rem;
+  padding: clamp(1rem, 4vw, 2rem); color: #fff; background: rgba(9, 23, 33, .84);
+  border: 1px solid rgba(255, 255, 255, .2); border-radius: 1rem;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .24); backdrop-filter: blur(8px);
+}
+body[data-page="japan"] .page-hero-content p { color: #e2ecf1; }
+@media (max-width: 640px) {
+  body[data-page="japan"] .page-hero-content { margin: .75rem; padding: 1rem; }
+}
+
+/* Reviewed South Korea routes can shrink below the shared 320px floor. */
+body[data-page="busan"],
+body[data-page="gamcheon-songdo"],
+body[data-page="gwangalli-millak"],
+body[data-page="haeundae-dongbaek"],
+body[data-page="nampo-jagalchi"],
+body[data-page="yeongdo-taejongdae"],
+body[data-country="south-korea"][data-city="seoul"] { min-width: 0; }

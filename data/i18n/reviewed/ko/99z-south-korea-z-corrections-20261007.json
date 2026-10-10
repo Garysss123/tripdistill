@@ -1,0 +1,29 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/seoul/",
+    "/south-korea/seoul/bukchon-seochon/",
+    "/south-korea/seoul/hongdae-yeonnam/",
+    "/south-korea/seoul/gangnam-jamsil/",
+    "/south-korea/seoul/itaewon-hannam/",
+    "/south-korea/seoul/seongsu-seoul-forest/"
+  ],
+  "translations": {
+    "Panoramic view across low-rise commercial streets in Hongdae": "홍대의 낮은 상가 건물들을 넓게 담은 파노라마",
+    "Aerial view of Itaewon-dong with N Seoul Tower above Namsan": "남산과 N서울타워를 배경으로 본 이태원동 항공 사진",
+    "A quiet street lined with low-rise buildings and storefronts in Seongsu-dong": "성수동의 낮은 건물과 상점이 늘어선 조용한 거리",
+    "Hongdae cityscape / Minseong Kim (IMKSv)": "홍대 시가지 / Minseong Kim (IMKSv)",
+    "Converted to WebP.": "WebP 형식으로 변환.",
+    "Itaewon-dong aerial / Live Studio Kim Hakri": "이태원동 항공 사진 / Live Studio Kim Hakri",
+    "Quiet Seongsu alley / CartoonChess": "성수동의 조용한 골목 / CartoonChess",
+    "Separate coach restriction:": "별도의 전세 관광버스 제한:",
+    "From 1 January 2026, chartered tour buses are restricted on a designated 2.3 km road section around the management area. If your group arrives by coach, check the official map and street signs for the permitted drop-off and route.": "2026년 1월 1일부터 관리 구역 주변의 지정 도로 2.3 km 구간에서 전세 관광버스 통행이 제한됩니다. 단체 버스로 도착한다면 공식 지도와 현장 표지판에서 허용된 승하차 지점과 이동 경로를 확인하세요.",
+    "Founded as Gyeonseongsa in 794, the temple was refurbished and renamed Bongeunsa in 1498, then moved to its present site in 1562 during King Myeongjong’s reign. Its temple halls and scripture collection now sit north of COEX; keep voices low, leave worship areas clear and follow ceremony notices.": "봉은사는 794년 견성사로 창건되었으며, 1498년 중수한 뒤 봉은사로 이름이 바뀌었습니다. 1562년 명종 재위 중 현재 자리로 옮겼습니다. 법당과 경전 소장 공간은 COEX 북쪽에 있습니다. 목소리를 낮추고 예불 공간을 막지 말며, 의식 안내를 따르세요.",
+    "Tree-lined walkway beneath mature trees in Seoul Forest": "서울숲의 오래된 나무 아래로 이어지는 산책로",
+    "Seongsu grew as a manufacturing district for shoes, printing and auto repair. From the mid-2000s, parts of its older factory and warehouse stock were reused as workshops, shops and cultural spaces. Today the useful detail is the mix: brick shells, loading doors, working suppliers and new retail on the same blocks. A weathered facade is not automatically a visitor attraction, so keep to public streets and open businesses.": "성수는 신발 제조, 인쇄, 자동차 정비업이 발달한 지역입니다. 2000년대 중반부터 오래된 공장과 창고 건물 일부가 작업실, 상점, 문화 공간으로 바뀌었습니다. 지금은 벽돌 건물과 하역문, 실제로 영업하는 자재 업체, 새 매장이 같은 블록에 섞여 있는 점이 특징입니다. 낡은 외관이 모두 방문 시설은 아니므로 공개된 거리와 영업 중인 곳을 따라 걸으세요.",
+    "Cropped to exclude visitors; converted to WebP.": "방문객이 보이지 않도록 잘라내고 WebP로 변환.",
+    "Korea Open Government License Type 1": "Korea Open Government License Type 1 (공공누리 제1유형)",
+    "Converted to WebP; open-government terms permit commercial reuse.": "WebP 형식으로 변환. 오픈 정부 라이선스 조건에 따라 상업적 재사용이 허용됩니다."
+  }
+}

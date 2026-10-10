@@ -1,0 +1,19 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/"
+  ],
+  "translations": {
+    "A 14-day trip has 13 nights. One workable shape is four nights in Tokyo, three in Kyoto or Osaka, and six in one Hokkaido corridor, with arrival on Day 1, departure on Day 14 and two transfer days; this trades away the other Kansai city. It assumes flights line up for a Tokyo arrival and Hokkaido departure; if you must return to another airport, add a positioning day or choose fewer stops. To keep Tokyo, Kyoto, Osaka and Hokkaido, consider about 19–20 days (18–19 nights) as a flexible planning range, not a minimum.": "ทริป 14 วันมี 13 คืน ตัวอย่างแผนที่ทำได้จริงคือพักโตเกียว 4 คืน เกียวโตหรือโอซาก้า 3 คืน และเที่ยวเส้นทางหนึ่งโซนในฮอกไกโด 6 คืน โดยเดินทางถึงในวันที่ 1 ออกเดินทางในวันที่ 14 และเผื่อวันย้ายเมือง 2 วัน แผนนี้จึงตัดเมืองอีกแห่งในคันไซออก สมมติว่าเที่ยวบินลงตัวสำหรับการเดินทางถึงโตเกียวและออกจากฮอกไกโด หากจำเป็นต้องกลับไปใช้สนามบินอื่น ให้เพิ่มวันสำหรับย้ายไปยังสนามบินนั้นหรือเลือกเที่ยวให้น้อยแห่งลง หากต้องการเที่ยวโตเกียว เกียวโต โอซาก้า และฮอกไกโดครบ ให้พิจารณาเผื่อเวลาประมาณ 19–20 วัน (18–19 คืน) เป็นช่วงวางแผนแบบยืดหยุ่น ไม่ใช่จำนวนขั้นต่ำ",
+    "Start with a city route through Tokyo, Kyoto and Osaka. Hokkaido is a separate island-scale journey with longer transfers.": "เริ่มด้วยเส้นทางเที่ยวเมืองโตเกียว เกียวโต และโอซาก้า ส่วนฮอกไกโดเป็นทริปเที่ยวเกาะแยกต่างหากที่ต้องเผื่อเวลาเดินทางต่อมากกว่า",
+    "14 days (13 nights)": "14 วัน (13 คืน)",
+    "One example: 4 Tokyo nights, 3 in Kyoto or Osaka, then 6 in one Hokkaido corridor (13 nights total). This drops the other Kansai city.": "ตัวอย่างหนึ่ง: โตเกียว 4 คืน เกียวโตหรือโอซาก้า 3 คืน แล้วเที่ยวเส้นทางหนึ่งโซนในฮอกไกโด 6 คืน (รวม 13 คืน) แผนนี้ตัดเมืองอีกแห่งในคันไซออก",
+    "Assumes arrival in Tokyo on Day 1, departure from Hokkaido on Day 14 and two transfer days. Check flight and rail connections first. To keep all three cities plus Hokkaido, consider 19–20 days (18–19 nights); a flexible range, not a minimum.": "สมมติว่าเดินทางถึงโตเกียวในวันที่ 1 ออกจากฮอกไกโดในวันที่ 14 และเผื่อวันย้ายเมือง 2 วัน ตรวจสอบเที่ยวบินและการต่อรถไฟก่อน หากต้องการเที่ยวทั้ง 3 เมืองและฮอกไกโด ให้พิจารณาเผื่อเวลา 19–20 วัน (18–19 คืน) เป็นช่วงเวลายืดหยุ่น ไม่ใช่จำนวนขั้นต่ำ",
+    "Photo by SRP1998; licensed under": "ภาพถ่ายโดย SRP1998; ใช้ภายใต้สัญญาอนุญาต",
+    ". Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license.": ". การดัดแปลง: ปรับขนาด แปลงเป็น WebP และครอบตัดภาพให้เต็มพื้นที่โดยปรับตามขนาดหน้าจอ การเผยแพร่แบบเดียวกัน: งานดัดแปลงนี้เผยแพร่ภายใต้สัญญาอนุญาต CC BY-SA 4.0 ฉบับเดียวกัน",
+    "Photo by Luka Peternel; licensed under": "ภาพถ่ายโดย Luka Peternel; ใช้ภายใต้สัญญาอนุญาต",
+    "Photo by Chi King; licensed under": "ภาพถ่ายโดย Chi King; ใช้ภายใต้สัญญาอนุญาต",
+    ". Changes: converted to WebP and displayed with responsive cover cropping.": ". การดัดแปลง: แปลงเป็น WebP และแสดงภาพโดยครอบตัดให้เต็มพื้นที่แบบปรับตามขนาดหน้าจอ"
+  }
+}

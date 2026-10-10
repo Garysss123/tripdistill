@@ -1,0 +1,27 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/osaka/osaka-castle-area/"
+  ],
+  "translations": {
+    "Plan a flexible castle-park and main-keep visit; treat the Osaka Museum of History as a separate half-day extension.": "오사카성 공원과 천수각 관람은 여유 있게 계획하고, 오사카 역사박물관은 별도의 반나절 일정으로 잡으세요.",
+    "Plan about three hours for the park approach, moats and gates, an exterior loop and a selective visit to the main keep museum. Treat this as a flexible estimate: entry lines, busy dates and time spent in exhibits can extend it. The main keep currently lists 9:00–18:00 opening and 17:30 final entry; its official guide says the ticket-purchase queue may be restricted earlier depending on conditions. Check the current guide and leave time for the queue. The Osaka Museum of History is outside this core route; add it as a separate half-day extension, checking its hours and admission independently.": "공원 진입로와 해자·성문, 성 외곽 순환, 천수각 박물관을 일부 둘러보는 데 약 3시간을 계획하세요. 다만 유동적인 예상 시간입니다. 입장 대기 줄, 방문객이 많은 날, 전시를 둘러보는 시간에 따라 더 걸릴 수 있습니다. 천수각은 현재 관람 시간을 9:00~18:00, 최종 입장 시각을 17:30으로 안내합니다. 공식 안내에 따르면 당일 상황에 따라 입장권 구매 대기 접수가 안내된 최종 입장 시각보다 일찍 제한될 수 있습니다. 최신 안내를 확인하고 대기 시간을 고려해 여유를 두세요. 오사카 역사박물관은 이 기본 동선에 포함되지 않습니다. 별도의 반나절 일정으로 더하고 운영 시간과 입장료를 따로 확인하세요.",
+    "Tanimachi 4-chome works well for a separate Osaka Museum of History visit, Morinomiya for the southeast park, and Osakajokoen or Osaka Business Park for the northeast side. For the core park-and-keep route, choose the entry and exit that fit your rail line and walking pace.": "오사카 역사박물관을 따로 방문할 때는 다니마치 4초메역이, 공원 남동쪽으로 갈 때는 모리노미야역이, 북동쪽으로 갈 때는 오사카조코엔역이나 오사카 비즈니스파크역이 편리합니다. 공원과 천수각을 둘러보는 기본 동선은 이용할 철도 노선과 걷는 속도에 맞춰 진입 지점과 출구를 고르세요.",
+    "Can I visit the castle grounds without entering the main keep museum?": "천수각 박물관에 들어가지 않고도 오사카성 공원을 둘러볼 수 있나요?",
+    "Yes. The park, exterior, walls, gates and moat offer a worthwhile visit. The Osaka Museum of History and Nishinomaru Garden are separate visits with their own hours and admission.": "네. 공원과 성의 외관, 성벽, 성문, 해자만 둘러봐도 충분히 볼 만합니다. 오사카 역사박물관과 니시노마루 정원은 별도 방문지이며 각각 운영 시간과 입장료가 정해져 있습니다.",
+    "Choose the right gate for a park-and-keep visit; treat the Osaka Museum of History as a separate extension.": "공원과 천수각을 둘러볼 때는 알맞은 출입구를 고르고, 오사카 역사박물관은 별도 일정으로 추가하세요.",
+    "Core visit · About 3 hours, queue-dependent": "기본 관람 · 약 3시간(대기 상황에 따라 변동)",
+    "Use this side when the Osaka Museum of History or Naniwa-no-Miya Palace site is a separate priority before or after the castle.": "오사카 역사박물관이나 나니와노미야 궁터를 성 방문 전후에 별도로 둘러볼 계획이라면 이쪽 진입로를 이용하세요.",
+    "Best · a separate history-museum visit": "추천 상황 · 역사박물관 별도 방문",
+    "About three hours for park and keep": "공원과 천수각 관람에 약 3시간",
+    "This flexible estimate covers a through-route across the park, its walls and gates, an exterior loop and a selective main-keep museum visit. Queue times vary; the official guide says ticket-purchase queue restrictions may begin before the listed 17:30 final entry. Check current hours and leave margin. The Osaka Museum of History is a separate stop, outside this core route.": "공원을 가로질러 성벽과 성문을 지나 성 외곽을 한 바퀴 돈 뒤 천수각 박물관의 전시 일부를 관람하는 데 필요한 유동적인 예상 시간입니다. 대기 시간은 달라질 수 있습니다. 공식 안내에 따르면 입장권 구매 대기 접수는 안내된 최종 입장 시각인 17:30보다 일찍 제한될 수 있습니다. 최신 운영 시간을 확인하고 여유 시간을 두세요. 오사카 역사박물관은 별도 방문지이며 이 기본 동선에는 포함되지 않습니다.",
+    "Castle Park and main keep": "오사카성 공원과 천수각",
+    "Choose a park entry": "공원 진입 지점을 고르세요",
+    "Start at Tanimachi 4-chome and follow the park approach toward the castle. Keep the Osaka Museum of History and Naniwa-no-Miya site as separate add-ons, not stops in this three-hour route.": "다니마치 4초메역에서 출발해 공원 진입로를 따라 성 쪽으로 이동하세요. 오사카 역사박물관과 나니와노미야 궁터는 별도 추가 일정으로 두고, 3시간 기본 동선에는 포함하지 마세요.",
+    "Allow time for the entry line and choose a few exhibits for this estimate. On busy dates or with a longer queue, shorten the indoor visit or leave it for another day. Do not arrive late assuming the full route will fit: the ticket-purchase queue can be restricted before final entry.": "입장 대기 시간을 포함해 예상 시간을 잡고 전시는 몇 가지만 골라 보세요. 혼잡한 날이거나 대기 줄이 길면 실내 관람을 줄이거나 다른 날로 미루세요. 늦게 도착해 전체 동선을 다 돌 수 있다고 여기지 마세요. 최종 입장 시각 전에도 입장권 구매 대기 접수가 제한될 수 있습니다.",
+    "Plan about three hours for the park approach, moats and gates, an exterior loop and a selective main-keep museum visit. Lines and longer exhibit stops add time, so recheck the pace on arrival.": "공원 진입로, 해자와 성문, 외곽 순환 동선, 천수각 박물관의 일부 관람까지 약 3시간으로 계획하세요. 대기 줄이 길거나 전시 관람이 길어지면 시간이 더 걸리므로 도착 후 속도를 다시 조정하세요.",
+    "Optional half-day extension": "선택 일정 · 반나절 추가",
+    "The Osaka Museum of History is a separate visit, outside the castle-park route. Add it when you have a half day or longer; check its hours and admission independently. Nishinomaru Garden also has its own admission and schedule.": "오사카 역사박물관은 오사카성 공원 동선에 포함되지 않는 별도 방문지입니다. 반나절 이상 여유가 있을 때 추가하고 운영 시간과 입장료를 따로 확인하세요. 니시노마루 정원도 입장료와 운영 일정이 별도입니다."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/",
+    "/japan/hokkaido/sapporo/",
+    "/japan/hokkaido/otaru-shakotan/"
+  ],
+  "translations": {
+    "Trip shape · regional arc": "行程架構・區域路線",
+    "First trip scope": "初次造訪的行程範圍",
+    "Choose one regional arc": "選擇一條區域路線",
+    "Central-west, south or east; give longer transfers local nights.": "北海道中西部、南部或東部；若移動距離較長，請在當地安排住宿。",
+    "Three seasonal constraints to plan around": "規劃行程時須留意的三項季節限制",
+    "Use the Clock Tower, river, market and tower to read the central grid once. Visit Sapporo’s official one-day walk gives useful bearings: the Clock Tower is about 10 minutes on foot from Sapporo Station or 5 from Odori; to reach Nijo Market, walk east from the Clock Tower, then follow the Sosei River south (about 12 minutes in total). The TV Tower is about 5 minutes farther on foot. Nijo is best earlier in the day, so swap the order when you arrive late.": "先透過札幌市時計台、創成川、二條市場與電視塔，掌握一次市中心棋盤街區的方位。Visit Sapporo 的官方一日步行路線提供實用的距離參考：從札幌車站步行到時計台約 10 分鐘，從大通站約 5 分鐘；前往二條市場時，先從時計台往東走，再沿創成川向南走（全程約 12 分鐘）。電視塔再往前步行約 5 分鐘。二條市場較適合安排在一天較早時段；若抵達較晚，就對調行程順序。",
+    "Start with the tower’s exhibits. Walk east from the Clock Tower, then follow the Sosei River south to Nijo Market. Check current opening hours and treat the market as a meal stop, not a corridor for close-up photography.": "先參觀時計台的展覽。從時計台往東走，再沿創成川向南前往二條市場。請查詢目前的開放時間；把市場當作用餐地點，避免在市場內近距離拍攝。",
+    "Otaru Station stands above the waterfront, so walk downhill once: the canal, old warehouses and merchant buildings are one port sequence. The canal was completed in 1923 between the original shoreline and harbor land reclamation; it was not an inland river. A 1960s proposal to fill the whole canal for a road drew a preservation movement that changed the plan. Half the original channel was eventually filled for the road; the remaining half became today’s canal. That history explains the canal’s unusual shape and why the road-side and north end feel different.": "小樽車站位於海濱上方，建議一路往下坡方向走：運河、舊倉庫與商人建築串成一段港區路線。小樽運河於 1923 年完工，位於原海岸線與港灣填海地之間，並非內陸河川。1960 年代曾提出填平整條運河、闢建道路的計畫；保存運河的運動促使計畫改變。後來為了闢路而填平了原運河的一半，剩下的一半則保留下來，成為今日的小樽運河。這段歷史解釋了運河不尋常的形狀，以及臨道路側與北段一帶為何風貌不同。"
+  }
+}

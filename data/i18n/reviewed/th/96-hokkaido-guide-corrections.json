@@ -1,0 +1,32 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/furano-biei/",
+    "/japan/hokkaido/asahikawa-daisetsuzan/",
+    "/japan/hokkaido/niseko-yoichi/"
+  ],
+  "translations": {
+    "Farms and hills": "ไร่นาและเนินเขา",
+    "Read the flowers, hills and water": "เที่ยวชมดอกไม้ เนินเขา และผืนน้ำ",
+    "Furano and Biei are more than a bloom calendar": "ฟุราโนะและบิเอะมีมากกว่าช่วงดอกไม้บาน",
+    "The color here comes from different things: cultivated flower gardens, private crop fields and water shaped by disaster-prevention works.": "สีสันของที่นี่เกิดจากสิ่งที่หลากหลาย ทั้งสวนดอกไม้ที่ปลูกไว้ให้ชม ไร่เพาะปลูกของเอกชน และผืนน้ำที่เป็นผลจากงานก่อสร้างเพื่อป้องกันภัยพิบัติ",
+    "Farm Tomita, Nakafurano": "ฟาร์มโทมิตะ (Farm Tomita), นากะฟุราโนะ (Nakafurano)",
+    "Read lavender as a sequence rather than one purple peak: Yotei blooms early and Okamurasaki near midseason. Other flower beds widen the display, and Farm Tomita keeps lavender in a warm greenhouse through winter. Compare the named cultivars and check the live bloom report before crossing the valley.": "ชมลาเวนเดอร์ตามลำดับช่วงบาน แทนที่จะคาดหวังช่วงสีม่วงสะพรั่งเพียงช่วงเดียว: Yotei เริ่มบานในช่วงต้นฤดู ส่วน Okamurasaki บานใกล้ช่วงกลางฤดู แปลงดอกไม้ชนิดอื่นช่วยเติมความหลากหลายให้ทิวทัศน์ และฟาร์มโทมิตะจัดแสดงลาเวนเดอร์ในเรือนกระจกอุ่นตลอดฤดูหนาว เปรียบเทียบช่วงบานของพันธุ์ที่ระบุชื่อไว้ และตรวจรายงานการบานล่าสุดก่อนเดินทางข้ามหุบเขา",
+    "Shikisai-no-oka and Biei’s farm hills": "สวนชิกิไซ-โนะ-โอกะ (Shikisai-no-oka) และเนินเขาท่ามกลางไร่นาในบิเอะ",
+    "Shikisai-no-oka is a 15-hectare flower garden on rolling slopes, planted with dozens of varieties. From Shin-ei Hill, the eastern view takes in the Tokachi range and red-roofed houses; around Kashiwa Park, spring tractors give way to summer potato blossoms and golden wheat. These are working, privately held fields: stay on paved public roads and marked viewpoints.": "สวนชิกิไซ-โนะ-โอกะเป็นสวนดอกไม้บนเนินลาดครอบคลุมพื้นที่ 15 เฮกตาร์ ปลูกดอกไม้หลายสิบสายพันธุ์ จากเนินชมวิว (Shin-ei Hill) มองไปทางตะวันออกจะเห็นแนวเทือกเขาโทคาจิและบ้านหลังคาสีแดง บริเวณสวนสาธารณะ (Kashiwa Park) ในฤดูใบไม้ผลิจะเห็นรถแทรกเตอร์ทำงาน ส่วนฤดูร้อนมีดอกมันฝรั่งบานและทุ่งข้าวสาลีสีทอง พื้นที่เหล่านี้เป็นไร่นาเอกชนที่ยังใช้เพาะปลูกอยู่ โปรดอยู่บนถนนสาธารณะที่ลาดยางและจุดชมวิวที่กำหนดไว้เท่านั้น",
+    "Shirogane Blue Pond": "บ่อน้ำสีฟ้าแห่งชิโรกาเนะ (Shirogane Blue Pond)",
+    "The Blue Pond is a product of disaster-prevention works on Tokachi-dake: water accumulated in a dam basin, with standing dead larches left in the view. Biei Tourism attributes its blue appearance to light scattering where mineral-bearing streams mix; spring snowmelt or heavy rain can cloud it. Treat the color as weather-dependent, not a guaranteed turquoise.": "บ่อน้ำสีฟ้าเป็นผลจากงานป้องกันภัยพิบัติบริเวณภูเขาโทคาจิดาเกะ (Tokachi-dake): น้ำสะสมอยู่ในแอ่งกักเก็บของเขื่อน และมีต้นสนลาร์ชที่ยืนต้นตายหลงเหลืออยู่ในทิวทัศน์ สมาคมท่องเที่ยวบิเอะอธิบายว่าสีฟ้าเกิดจากการกระเจิงของแสงบริเวณที่ลำธารซึ่งมีแร่ธาตุไหลมาผสมกัน น้ำจากหิมะละลายในฤดูใบไม้ผลิหรือฝนตกหนักอาจทำให้น้ำขุ่น สีที่เห็นจึงขึ้นอยู่กับสภาพอากาศ และไม่รับประกันว่าจะเป็นสีเทอร์ควอยซ์เสมอไป",
+    "Farm Tomita profile and greenhouse": "ฟาร์มโทมิตะ — ภาพรวมและเรือนกระจก",
+    "Biei Tourism Association — travel around the hills": "สมาคมท่องเที่ยวบิเอะ — เที่ยวชมเนินเขา",
+    "A practical regional city between two Daisetsuzan gateways. Use Asahikawa for rail, food and the zoo; choose Asahidake or Sounkyo instead of treating the mountain range as a quick day trip.": "เมืองศูนย์กลางที่สะดวกสำหรับภูมิภาคนี้และตั้งอยู่ระหว่างทางเข้าสู่ไดเซ็ตสึซังสองจุด ใช้อาซาฮิกาวะเป็นฐานสำหรับขึ้นรถไฟ รับประทานอาหาร และไปสวนสัตว์อาซาฮิยามะ จากนั้นเลือกไปอาซาฮิดาเกะหรือโซอุนเคียว แทนการมองว่าเทือกเขาทั้งแนวเป็นทริปไปเช้าเย็นกลับได้ง่าย ๆ",
+    "See behavior through the exhibit design": "สังเกตพฤติกรรมสัตว์ผ่านการออกแบบพื้นที่จัดแสดง",
+    "Asahiyama’s aim is to make familiar animals’ abilities and behavior visible, not to rely on rare species. Penguin House has a 360-degree underwater tunnel for watching penguins swim; Seal House’s cylindrical Marine Way reveals their characteristic up-and-down movement; Polar Bear House pairs a large pool for dives and swimming with Seal’s Eye, a capsule that views the bears from a seal’s perspective. The snow-season penguin walk takes place when snow has accumulated, so check the day’s schedule.": "สวนสัตว์อาซาฮิยามะ (Asahiyama Zoo) มุ่งให้ผู้ชมเห็นความสามารถและพฤติกรรมของสัตว์ที่คุ้นเคย ไม่ได้เน้นสัตว์หายากเป็นจุดเด่น อาคารเพนกวิน (Penguin House) มีอุโมงค์ใต้น้ำ 360 องศาให้ชมเพนกวินว่ายน้ำ ส่วนบ้านแมวน้ำ (Seal House) มีส่วนจัดแสดงทรงกระบอก (Marine Way) ให้เห็นการเคลื่อนไหวขึ้นลงอันเป็นลักษณะเด่นของแมวน้ำ บ้านหมีขั้วโลก (Polar Bear House) มีสระขนาดใหญ่ให้ชมการดำน้ำและว่ายน้ำ พร้อมแคปซูลที่ให้มองหมีจากมุมมองของแมวน้ำ (Seal's Eye) กิจกรรมชมเพนกวินเดินในฤดูหิมะจัดขึ้นเมื่อมีหิมะสะสม จึงควรตรวจตารางประจำวัน",
+    "Asahiyama Zoo — mission and behavior exhibition": "สวนสัตว์อาซาฮิยามะ — แนวคิดและการจัดแสดงพฤติกรรมสัตว์",
+    "Asahiyama Zoo — Penguin House": "สวนสัตว์อาซาฮิยามะ — อาคารเพนกวิน",
+    "Asahiyama Zoo — Seal House": "สวนสัตว์อาซาฮิยามะ — บ้านแมวน้ำ",
+    "Asahiyama Zoo — Polar Bear House": "สวนสัตว์อาซาฮิยามะ — บ้านหมีขั้วโลก",
+    "Powder slopes and summer roads beneath Mount Yotei pair with Yoichi, an orchard-and-coast town at the foot of the Shakotan Peninsula. The right resort village matters more than the word “Niseko” on the booking page.": "ลานสกีหิมะผงและเส้นทางขับรถฤดูร้อนบริเวณเชิงภูเขาโยเทอิ (Mount Yotei) สามารถรวมไว้ในทริปเดียวกับโยอิจิ (Yoichi) เมืองที่มีทั้งสวนผลไม้และชายฝั่งบริเวณเชิงคาบสมุทรชาโกตัน (Shakotan Peninsula) ได้ การเลือกหมู่บ้านรีสอร์ตให้ตรงกับแผนสำคัญกว่าชื่อ “Niseko” บนหน้าจองที่พัก",
+    "Yoichi Tourism Association — town, orchards and coast": "สมาคมท่องเที่ยวโยอิจิ — เมือง สวนผลไม้ และชายฝั่ง"
+  }
+}

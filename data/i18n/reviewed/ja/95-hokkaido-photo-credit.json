@@ -1,0 +1,12 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/furano-biei/"
+  ],
+  "translations": {
+    "Blue Pond photo": "美瑛の青い池の写真",
+    "— OKJaguar,": "— OKJaguar,",
+    ". Converted to WebP; the adaptation is shared under the same license version.": "。WebP形式に変換済みです。改変物は同一バージョンのライセンスに基づいて共有しています。"
+  }
+}

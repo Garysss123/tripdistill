@@ -12,7 +12,7 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const problems = [];
 const notes = [];
-const siteCssVersion = '/css/site.css?v=20260926-1';
+const siteCssVersions = ['/css/site.css?v=20260926-1', '/css/site.css?v=20261005-2', '/css/site.css?v=20261006-1', '/css/site.css?v=20261006-2', '/css/site.css?v=20261008-1'];
 const mainJsVersion = '/js/main.js?v=20260911-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
@@ -28,9 +28,27 @@ const unitedKingdomByRoute = new Map(unitedKingdomGuides.map((guide) => [guide.u
 const unitedKingdomHubRoutes = new Set(unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`));
 const italyByRoute = new Map(italyGuides.map((guide) => [guide.url, guide]));
 const italyHubRoutes = new Set(italyClusters.map((cluster) => `/italy/${cluster.slug}/`));
+const gyeongjuReviewedRoutes = new Set([
+  '/south-korea/gyeongju/daereungwon-hwangnidan-gil/',
+  '/south-korea/gyeongju/wolseong-donggung-wolji/',
+  '/south-korea/gyeongju/bulguksa-seokguram/'
+]);
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
+}
+
+function contrastRatio(foreground, background) {
+  const luminance = (hex) => {
+    const channels = hex.match(/[0-9a-f]{2}/gi)?.map((channel) => parseInt(channel, 16) / 255);
+    if (!channels || channels.length !== 3) return null;
+    const linear = channels.map((channel) => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+  };
+  const foregroundLuminance = luminance(foreground);
+  const backgroundLuminance = luminance(background);
+  if (foregroundLuminance === null || backgroundLuminance === null) return 0;
+  return (Math.max(foregroundLuminance, backgroundLuminance) + 0.05) / (Math.min(foregroundLuminance, backgroundLuminance) + 0.05);
 }
 
 function routeToFile(route) {
@@ -107,6 +125,12 @@ function jsonLdLanguages(value, output = []) {
   return output;
 }
 
+// The cloud-browser inspection measured this Gyeongju hero surface as #fff0e3.
+const gyeongjuEyebrowColor = read('css/gyeongju.css').match(/\.gyeongju-hero\s+\.eyebrow\s*\{\s*color:\s*(#[0-9a-f]{6})\s*;/i)?.[1];
+if (!gyeongjuEyebrowColor || contrastRatio(gyeongjuEyebrowColor, '#fff0e3') < 4.5) {
+  problems.push('css/gyeongju.css: Gyeongju hero eyebrow must meet 4.5:1 contrast against the measured cream hero surface');
+}
+
 const sitemap = read('sitemap.xml');
 const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => {
   const entry = match[1];
@@ -115,6 +139,16 @@ const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((mat
     lastmod: entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1] || ''
   };
 });
+const updatedJejuRoutes = [
+  '/south-korea/jeju/',
+  '/south-korea/jeju/seogwipo-jeongbang/',
+  '/south-korea/jeju/jungmun-andeok/',
+  '/south-korea/jeju/moseulpo-gapado/'
+];
+for (const route of updatedJejuRoutes) {
+  const entry = sitemapEntries.find(({ loc }) => loc === `https://tripdistill.com${route}`);
+  if (!entry || entry.lastmod !== '2026-10-07') problems.push(`sitemap.xml: ${route} must retain its 7 October 2026 editorial update date`);
+}
 const publishedUrls = sitemapEntries.map((entry) => entry.loc);
 const publishedRoutes = publishedUrls.map((absoluteUrl) => new URL(absoluteUrl).pathname);
 const routeSet = new Set(publishedRoutes);
@@ -166,6 +200,12 @@ for (const absoluteUrl of publishedUrls) {
   const htmlLanguage = html.match(/<html\b[^>]*\blang="([^"]+)"/i)?.[1] || '';
   const h1Count = (html.match(/<h1\b/gi) || []).length;
 
+  if (baseRoute === '/south-korea/gyeongju/') {
+    const hero = html.match(/<header\b[^>]*class="[^"]*\bgyeongju-hero\b[^"]*"[^>]*>([\s\S]*?)<\/header>/i)?.[1] || '';
+    const eyebrowCount = (hero.match(/<span\b[^>]*class="[^"]*\beyebrow\b[^"]*"[^>]*>/gi) || []).length;
+    if (eyebrowCount !== 1) problems.push(`${relativePath}: Gyeongju hero must contain exactly one localized eyebrow element`);
+  }
+
   if (htmlLanguage !== locale.code) problems.push(`${relativePath}: html lang is "${htmlLanguage}", expected "${locale.code}"`);
   if (!title) problems.push(`${relativePath}: missing title`);
   else if (titles[locale.code].has(title)) problems.push(`${relativePath}: duplicate ${locale.code} title also used by ${titles[locale.code].get(title)}`);
@@ -198,17 +238,20 @@ for (const absoluteUrl of publishedUrls) {
   for (const match of images) {
     if (!/\bwidth="\d+"/i.test(match[0]) || !/\bheight="\d+"/i.test(match[0])) problems.push(`${relativePath}: image is missing numeric width/height attributes`);
   }
-  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html)) {
+  const hasVisibleKoglLicense = /href=["']https:\/\/www\.kogl\.or\.kr\/info\/licenseType1\.do["']/i.test(html)
+    && /class=["'][^"']*\bphoto-license\b[^"']*["']/i.test(html);
+  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense) {
     problems.push(`${relativePath}: image page lacks a visible commercial-use license or provenance entry`);
   }
 
-  if (!html.includes(siteCssVersion)) problems.push(`${relativePath}: stale or missing site stylesheet version`);
+  if (!siteCssVersions.some((version) => html.includes(version))) problems.push(`${relativePath}: stale or missing site stylesheet version`);
   if (!html.includes(mainJsVersion)) problems.push(`${relativePath}: stale or missing main script version`);
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${relativePath}: missing AdSense publisher declaration`);
   if (!html.includes(adsenseJsVersion)) problems.push(`${relativePath}: stale or missing AdSense loader`);
 
-  if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20260826-9')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
-  if (baseRoute.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20260826-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
+  if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20261007-1')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
+  if (baseRoute === '/south-korea/gyeongju/' && !html.includes('/css/gyeongju.css?v=20261010-1')) problems.push(`${relativePath}: missing Gyeongju overview contrast stylesheet version`);
+  if (gyeongjuReviewedRoutes.has(baseRoute) && !html.includes('/css/gyeongju.css?v=20261007-1')) problems.push(`${relativePath}: missing Gyeongju responsive stylesheet`);
   if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);

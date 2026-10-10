@@ -1,0 +1,28 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/busan/",
+    "/south-korea/busan/nampo-jagalchi/",
+    "/south-korea/busan/gamcheon-songdo/",
+    "/south-korea/busan/haeundae-dongbaek/",
+    "/south-korea/busan/gwangalli-millak/",
+    "/south-korea/busan/yeongdo-taejongdae/"
+  ],
+  "translations": {
+    "Taejongdae coast photograph": "태종대 해안 사진",
+    "; licensed": "; 라이선스:",
+    "; resized and cropped as WebP.": "; WebP로 크기를 조정하고 잘라냈습니다.",
+    "A market shaped by the port": "항구와 함께 자란 시장",
+    "Official place and access sources": "공식 관광지 및 교통 정보",
+    "Planning facts were reviewed on 7 October 2026. Recheck market closures, vendor hours, prices, tower access and event restrictions before visiting.": "여행 정보는 2026년 10월 7일 검토했습니다. 방문 전에 시장 휴무일, 점포 영업시간, 가격, 전망 시설 이용과 행사 통제를 다시 확인하세요.",
+    "Read the hillside settlement": "언덕 주거지를 읽어 보기",
+    "Korea Tourism Organization — Gamcheon Culture Village history and visitor information": "한국관광공사 — 감천문화마을 역사 및 방문 정보",
+    "Planning facts were reviewed on 7 October 2026. Recheck beach operation, safety flags, trail conditions, museum hours and events before visiting.": "여행 정보는 2026년 10월 7일 검토했습니다. 방문 전에 해변 운영, 안전 깃발, 산책로 상태, 박물관 운영 시간과 행사를 다시 확인하세요.",
+    "Korea Tourism Organization — Haeundae Beach visitor information": "한국관광공사 — 해운대해수욕장 방문 정보",
+    "Planning facts were reviewed on 7 October 2026. Recheck show notices, weather, crowd controls, beach access and final transit before visiting.": "여행 정보는 2026년 10월 7일 검토했습니다. 방문 전에 공연 공지, 날씨, 인파 통제, 해변 접근과 막차 교통을 다시 확인하세요.",
+    "The Busan Geopark describes Taejongdae as an erosional coast: sea cliffs, wave-cut platforms and sea caves are the landforms to read from the marked park route. They are exposed edges, not beach access; stay behind barriers and use designated viewpoints, especially when swell, wind or fog closes the near-shore sections.": "부산지질공원은 태종대를 침식 해안으로 소개합니다. 지정된 공원 길에서는 해식 절벽, 파식대와 해식 동굴을 볼 수 있습니다. 이곳은 해변으로 내려가는 곳이 아니라 파도에 노출된 절벽입니다. 특히 너울, 바람, 안개로 해안 구간이 통제되면 난간을 넘지 말고 지정 전망대를 이용하세요.",
+    "Planning facts were reviewed on 7 October 2026. Recheck park access, Danubi operation, buses, museum hours, trail notices and weather before visiting.": "여행 정보는 2026년 10월 7일 검토했습니다. 방문 전에 공원 접근, 다누비 열차 운행, 버스, 박물관 시간, 산책로 공지와 날씨를 다시 확인하세요.",
+    "As checked 7 October 2026, the program runs two free Saturday shows: 19:00 and 21:00 from October through February, and 20:00 and 22:00 from March through September. Its published format alternates by week (Drone × Laser on the first and third Saturdays; Drone Light on the second and fourth), with each show lasting more than 12 minutes. Rain, gusts, typhoon conditions, technical problems or crowd controls can delay or cancel it; check the same-day notice before traveling.": "2026년 10월 7일 확인한 일정에는 토요일 무료 공연이 두 차례 있습니다. 10~2월은 19:00와 21:00, 3~9월은 20:00와 22:00입니다. 공지된 프로그램은 주차별로 바뀌며(첫째·셋째 토요일은 드론×레이저, 둘째·넷째 토요일은 드론 라이트), 공연은 각각 12분 넘게 진행됩니다. 비, 돌풍, 태풍, 기술 문제나 인파 통제로 지연 또는 취소될 수 있으니 당일 공지를 확인한 뒤 이동하세요."
+  }
+}

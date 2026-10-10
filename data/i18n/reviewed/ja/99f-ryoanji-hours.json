@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/kyoto/kinkakuji-northwest/"
+  ],
+  "translations": {
+    "Yes. They form a strong northwest pair, but let each site's entry window set the order. Kinkakuji lists 9:00–17:00; no separate last-entry time is shown. Kyoto City Tourism Navi lists Ryoanji daily at 08:00–17:00 (March 1–November 30) or 08:30–16:30 (December 1–end of February), with no regular closing day. That page gives no separate last-entry time; check Ryoanji's latest notice for exceptions before fixing the pair into a day.": "はい。北西部の2か所を組み合わせるのはよいですが、各施設の拝観時間に合わせて順序を決めましょう。金閣寺の公式案内では9:00〜17:00とされていますが、別途の最終入場時刻は記載されていません。京都市観光協会の「Kyoto City Tourism Navi」によると、龍安寺は毎日拝観でき、3月1日〜11月30日は08:00〜17:00、12月1日〜2月末日は08:30〜16:30で、通常の休館日はありません。同ページに別途の最終入場時刻は記載されていません。両寺を同じ日に組み込む前に、例外の有無について龍安寺の最新のお知らせを確認してください。",
+    "Kyoto City Tourism Navi lists Ryoanji daily: 08:00–17:00 (March 1–November 30) and 08:30–16:30 (December 1–end of February), with no regular closing day. It gives no separate last-entry time; check the temple's latest notice for exceptions. Access is about an 8-minute walk from Keifuku Ryoanji Station or 1 minute from the Ryoanji bus stop.": "京都市観光協会の「Kyoto City Tourism Navi」によると、龍安寺は毎日拝観でき、3月1日〜11月30日は08:00〜17:00、12月1日〜2月末日は08:30〜16:30です。通常の休館日はありません。別途の最終入場時刻は記載されておらず、例外については寺院の最新のお知らせを確認してください。アクセスは、京福電鉄龍安寺駅から徒歩約8分、または龍安寺バス停から徒歩約1分です。",
+    "Kinkakuji's official page lists 9:00–17:00; no separate last-entry time is published there. Kyoto City Tourism Navi, published by the Kyoto City Tourism Association, lists Ryoanji's seasonal hours above, no regular closing day, and access from Keifuku Ryoanji Station (about an 8-minute walk) or the Ryoanji bus stop (about 1 minute). Its page gives no separate last-entry time; the temple's latest notice governs exceptions. Checked 6 October 2026. Day-duration ranges are TripDistill editorial pace estimates.": "金閣寺の公式案内は9:00〜17:00で、別途の最終入場時刻は掲載されていません。京都市観光協会の「Kyoto City Tourism Navi」には、龍安寺の季節別拝観時間、通常の休館日がないこと、京福電鉄龍安寺駅から徒歩約8分または龍安寺バス停から徒歩約1分であることが掲載されています。同ページに別途の最終入場時刻は記載されていません。例外の扱いは寺院の最新のお知らせに従ってください。2026年10月6日確認。所要時間の幅はTripDistillによる編集上の目安です。",
+    "Kyoto City Tourism Navi — Ryoanji seasonal hours and access": "Kyoto City Tourism Navi — 龍安寺の季節別拝観時間とアクセス"
+  }
+}

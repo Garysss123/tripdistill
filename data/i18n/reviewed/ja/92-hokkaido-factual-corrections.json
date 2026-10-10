@@ -1,0 +1,19 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/",
+    "/japan/hokkaido/sapporo/",
+    "/japan/hokkaido/otaru-shakotan/"
+  ],
+  "translations": {
+    "Trip shape · regional arc": "旅の構成 · 地域をつなぐルート",
+    "First trip scope": "初めての旅行で回る範囲",
+    "Choose one regional arc": "地域を結ぶルートを一つ選ぶ",
+    "Central-west, south or east; give longer transfers local nights.": "道央・西部、道南、道東のいずれかを選び、長距離移動には現地泊を組み込もう。",
+    "Three seasonal constraints to plan around": "計画に織り込む季節ごとの3つの制約",
+    "Use the Clock Tower, river, market and tower to read the central grid once. Visit Sapporo’s official one-day walk gives useful bearings: the Clock Tower is about 10 minutes on foot from Sapporo Station or 5 from Odori; to reach Nijo Market, walk east from the Clock Tower, then follow the Sosei River south (about 12 minutes in total). The TV Tower is about 5 minutes farther on foot. Nijo is best earlier in the day, so swap the order when you arrive late.": "時計台、川、市場、テレビ塔をたどって、中心部の碁盤目を一度歩いてみよう。Visit Sapporoの公式日帰り徒歩ルートは位置関係の目安になる。時計台は札幌駅から徒歩約10分、大通から徒歩約5分。二条市場へは時計台から東へ歩き、その後、創成川沿いを南へ進む（全体で約12分）。さっぽろテレビ塔はそこから徒歩約5分だ。二条市場は早い時間のほうがよいので、到着が遅ければ順番を入れ替えよう。",
+    "Start with the tower’s exhibits. Walk east from the Clock Tower, then follow the Sosei River south to Nijo Market. Check current opening hours and treat the market as a meal stop, not a corridor for close-up photography.": "時計台の展示から始めよう。時計台から東へ歩き、創成川沿いを南へ進んで二条市場へ。最新の営業時間を確認し、市場では食事を楽しみ、近くから撮影するために通路をふさがないようにしよう。",
+    "Otaru Station stands above the waterfront, so walk downhill once: the canal, old warehouses and merchant buildings are one port sequence. The canal was completed in 1923 between the original shoreline and harbor land reclamation; it was not an inland river. A 1960s proposal to fill the whole canal for a road drew a preservation movement that changed the plan. Half the original channel was eventually filled for the road; the remaining half became today’s canal. That history explains the canal’s unusual shape and why the road-side and north end feel different.": "小樽駅は水辺より高い場所にあるため、坂を下って港へ向かおう。運河、古い倉庫、商人の建物をひと続きの港の景観として歩ける。運河は元の海岸線と港の埋立地の間に1923年に完成したもので、内陸の川ではない。1960年代には、道路を造るため運河全体を埋め立てる計画が提案されたが、保存運動によって計画が変更された。その後、元の水路の半分が道路のために埋め立てられ、残りの半分が現在の運河として保存された。この経緯から、運河の独特な形や道路側と北端の雰囲気の違いが分かる。"
+  }
+}

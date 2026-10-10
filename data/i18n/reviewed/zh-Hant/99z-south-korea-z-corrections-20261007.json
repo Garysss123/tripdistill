@@ -1,0 +1,29 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/south-korea/seoul/",
+    "/south-korea/seoul/bukchon-seochon/",
+    "/south-korea/seoul/hongdae-yeonnam/",
+    "/south-korea/seoul/gangnam-jamsil/",
+    "/south-korea/seoul/itaewon-hannam/",
+    "/south-korea/seoul/seongsu-seoul-forest/"
+  ],
+  "translations": {
+    "Panoramic view across low-rise commercial streets in Hongdae": "弘大低層商業街區的全景",
+    "Aerial view of Itaewon-dong with N Seoul Tower above Namsan": "從高處俯瞰梨泰院洞，南山與N首爾塔位於背景",
+    "A quiet street lined with low-rise buildings and storefronts in Seongsu-dong": "聖水洞低矮建築與店面林立的安靜街道",
+    "Hongdae cityscape / Minseong Kim (IMKSv)": "弘大街景 / Minseong Kim (IMKSv)",
+    "Converted to WebP.": "轉為 WebP 格式。",
+    "Itaewon-dong aerial / Live Studio Kim Hakri": "梨泰院洞空拍 / Live Studio Kim Hakri",
+    "Quiet Seongsu alley / CartoonChess": "聖水洞靜巷 / CartoonChess",
+    "Separate coach restriction:": "另有一項遊覽巴士限制：",
+    "From 1 January 2026, chartered tour buses are restricted on a designated 2.3 km road section around the management area. If your group arrives by coach, check the official map and street signs for the permitted drop-off and route.": "自2026年1月1日起，管理區周邊指定的2.3 km道路路段限制包租遊覽巴士通行。若團體搭乘遊覽巴士前往，請依官方地圖與街道標誌確認允許的上下車位置與路線。",
+    "Founded as Gyeonseongsa in 794, the temple was refurbished and renamed Bongeunsa in 1498, then moved to its present site in 1562 during King Myeongjong’s reign. Its temple halls and scripture collection now sit north of COEX; keep voices low, leave worship areas clear and follow ceremony notices.": "寺院於794年以見聖寺（Gyeonseongsa）之名創建，1498年整修後更名為奉恩寺，並於1562年明宗在位期間遷至現址。寺內殿堂與藏經位於COEX北側；參訪時請降低音量、勿阻擋禮佛區，並遵從法會公告。",
+    "Tree-lined walkway beneath mature trees in Seoul Forest": "首爾林高大樹木下的林蔭步道",
+    "Seongsu grew as a manufacturing district for shoes, printing and auto repair. From the mid-2000s, parts of its older factory and warehouse stock were reused as workshops, shops and cultural spaces. Today the useful detail is the mix: brick shells, loading doors, working suppliers and new retail on the same blocks. A weathered facade is not automatically a visitor attraction, so keep to public streets and open businesses.": "聖水洞原為鞋業、印刷與汽車維修產業聚集地。自2000年代中期起，部分老工廠與倉庫改作工作室、商店及文化空間。如今值得留意的是同一街區裡並存的磚造廠房、卸貨門、仍在營運的供應商與新零售店。老舊外牆不代表可供參觀，請走公共道路並只進入對外營業的場所。",
+    "Cropped to exclude visitors; converted to WebP.": "裁切畫面以避開遊客，再轉為 WebP 格式。",
+    "Korea Open Government License Type 1": "韓國公共開放授權第 1 類（Korea Open Government License Type 1）",
+    "Converted to WebP; open-government terms permit commercial reuse.": "轉為 WebP 格式；開放政府授權條款允許商業使用。"
+  }
+}

@@ -1,5 +1,6 @@
 /* Gyeongju cluster: archaeological field notes, not another generic city template. */
 body[data-city="gyeongju"] {
+  min-width: 0;
   --gyeongju-ink: #17201d;
   --gyeongju-forest: #273c33;
   --gyeongju-moss: #667a58;
@@ -45,7 +46,7 @@ body[data-city="gyeongju"] {
   letter-spacing: .16em;
 }
 
-.gyeongju-hero .eyebrow { color: #f3d697; }
+.gyeongju-hero .eyebrow { color: #5c4335; }
 .gyeongju-hero h1 {
   max-width: 8ch;
   margin: .75rem 0 1.2rem;
@@ -153,6 +154,12 @@ body[data-city="gyeongju"] {
 .gyeongju-area-hero .eyebrow { font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
 .gyeongju-area-meta { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.35rem; }
 .gyeongju-area-meta span { padding: .48rem .72rem; border: 1px solid currentColor; border-radius: 99px; font-size: .74rem; font-weight: 750; opacity: .82; }
+
+/* Let the reviewed route shells and grid children shrink with a narrow viewport. */
+.gyeongju-hero,
+.gyeongju-area-hero,
+.gyeongju-hero-copy,
+.gyeongju-area-hero > * { min-width: 0; }
 
 /* 01 — tumulus day arc */
 .tumulus-hero { min-height: 36rem; display: grid; grid-template-columns: .9fr 1.1fr; color: #f6f0e4; background: #183029; }
@@ -277,7 +284,7 @@ body[data-city="gyeongju"] {
 .yangdong-hero-photo { position: relative; overflow: hidden; border: .7rem solid #f8f2e8; box-shadow: 0 20px 40px rgba(68,49,31,.15); transform: rotate(-1deg); }
 .yangdong-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .yangdong-hero-copy { padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
-.yangdong-hero .eyebrow { color: #8b5e35; }
+.yangdong-hero .eyebrow { color: #80512f; }
 .yangdong-hero h1 { margin: .8rem 0 1rem; font-size: clamp(3.1rem, 6vw, 5.6rem); line-height: .9; }
 .yangdong-hero p { color: #685844; }
 .threshold-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #b8a483; }

@@ -1,0 +1,27 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/abashiri-shiretoko/"
+  ],
+  "translations": {
+    "Plan Abashiri and Shiretoko with a five-night west-coast sample route, shorter-scope choices, a separate Rausu extension and date-specific Five Lakes guidance.": "網走と知床を巡る5泊の西海岸ルート例、範囲を絞った場合の選択肢、羅臼への別立ての延泊、日付に応じた知床五湖の案内を確認しましょう。",
+    "A five-night west-coast sample for Abashiri and Shiretoko; narrower trips can be shorter, with Rausu as a separate east-coast extension.": "網走と知床を巡る5泊の西海岸ルート例です。滞在範囲を絞れば日程を短くでき、羅臼は東海岸への別行程として追加できます。",
+    "A five-night west-coast sample itinerary for Abashiri and Shiretoko. Narrower visits can be shorter; Rausu is a separate optional east-coast extension.": "網走と知床を巡る5泊の西海岸の旅程例です。訪問範囲を絞れば短い日程でも楽しめます。羅臼は東海岸への別の任意延泊先です。",
+    "No fixed minimum applies. The five-night itinerary is a sample for Abashiri and the Shiretoko west coast; a narrower visit can be shorter. Rausu is a separate east-coast extension, and two nights is a suggested planning allowance, not a rule. If the pass is closed, allow for the longer detour.": "最低宿泊数に決まりはありません。5泊の旅程は網走と知床西海岸を巡る一例で、訪問範囲を絞ればより短くできます。羅臼は東海岸への別行程です。羅臼での2泊は計画上の目安であり、最低泊数の決まりではありません。峠が閉鎖されている場合は、迂回にかかる時間を見込んでください。",
+    "Abashiri’s drift ice and Shiretoko’s forest lakes need different seasons and access plans. The five-night west-coast itinerary below is a sample, not a minimum; a narrower Abashiri or Utoro trip can be shorter. Rausu is a separate east-coast extension.": "網走の流氷と知床の森に囲まれた湖では、適した季節もアクセス方法も異なります。以下の5泊の西海岸旅程は一例で、最低泊数ではありません。網走またはウトロの一方に絞れば、より短い旅程も可能です。羅臼は東海岸への別行程です。",
+    "Sample · 5 west-coast nights": "例：西海岸を巡る5泊",
+    "Rausu · separate optional extension": "羅臼・別途追加できる任意の延泊先",
+    "Five-night sample": "5泊の旅程例",
+    "West-coast sample": "西海岸の旅程例",
+    "5 nights": "5泊",
+    "Recommended route length, not a minimum.": "おすすめする旅程の長さであり、最低泊数ではありません。",
+    "The itinerary below covers Abashiri and Utoro as one west-coast sample. A shorter stay focused on one base is reasonable when transport fits; you do not need to cover both peninsula coasts.": "以下は網走とウトロを巡る、西海岸の5泊の旅程例です。交通の便が合えば、一つの拠点に絞った短い滞在も可能です。半島の両海岸を巡る必要はありません。",
+    "Recommended five-night west-coast sample": "おすすめの5泊・西海岸ルート例",
+    "Use the buffer in Utoro; plan Rausu separately": "ウトロに予備日を設け、羅臼は別行程に",
+    "Use the five nights for Abashiri and Utoro; add Rausu only as a separate east-coast leg. Two nights is a useful Rausu planning allowance, not a minimum. If Route 334 is closed, allow more time for the around-peninsula detour.": "5泊は網走とウトロの滞在に充て、羅臼を加える場合は東海岸への別行程として計画しましょう。羅臼での2泊は計画上の目安であり、最低泊数ではありません。道道334号が通行止めの場合、半島を迂回する移動にさらに時間を見込みましょう。",
+    "5-night sample · west coast": "5泊の例・西海岸",
+    "Optional · Rausu extension, +2 suggested nights": "任意・羅臼延泊（追加2泊が計画上の目安）",
+    "Use this as a separate Rausu stay only if Route 334 is open and conditions are good. If the pass is closed, allow the long detour around the peninsula; do not try to fit both coasts between buses or before a flight.": "道道334号が通行可能で、天候などの条件もよい場合に限り、羅臼は別の滞在先として計画しましょう。峠が閉鎖されている場合は、半島を迂回する長距離移動を見込み、バスの乗り継ぎの合間や飛行機に乗る前に両海岸を回ろうとしないでください。"
+  }
+}

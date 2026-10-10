@@ -1,0 +1,27 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/hokkaido/abashiri-shiretoko/"
+  ],
+  "translations": {
+    "Plan Abashiri and Shiretoko with a five-night west-coast sample route, shorter-scope choices, a separate Rausu extension and date-specific Five Lakes guidance.": "วางแผนเที่ยวอาบาชิริและชิเรโตโกะด้วยตัวอย่างเส้นทางชายฝั่งตะวันตก 5 คืน ตัวเลือกสำหรับทริปที่สั้นกว่า การต่อเส้นทางไปราอุสุแยกต่างหาก และคำแนะนำเรื่องทะเลสาบทั้งห้าที่ระบุวันไว้",
+    "A five-night west-coast sample for Abashiri and Shiretoko; narrower trips can be shorter, with Rausu as a separate east-coast extension.": "ตัวอย่างเส้นทางชายฝั่งตะวันตก 5 คืนสำหรับอาบาชิริและชิเรโตโกะ ทริปที่เที่ยวในวงแคบกว่านี้ใช้เวลาสั้นลงได้ ส่วนราอุสุเป็นส่วนต่อขยายไปชายฝั่งตะวันออกแยกต่างหาก",
+    "A five-night west-coast sample itinerary for Abashiri and Shiretoko. Narrower visits can be shorter; Rausu is a separate optional east-coast extension.": "ตัวอย่างแผนเที่ยวชายฝั่งตะวันตก 5 คืนในอาบาชิริและชิเรโตโกะ ทริปที่เน้นพื้นที่น้อยกว่านี้ใช้เวลาสั้นลงได้ ส่วนราอุสุเป็นส่วนต่อขยายไปชายฝั่งตะวันออกที่เลือกเพิ่มได้และแยกต่างหาก",
+    "No fixed minimum applies. The five-night itinerary is a sample for Abashiri and the Shiretoko west coast; a narrower visit can be shorter. Rausu is a separate east-coast extension, and two nights is a suggested planning allowance, not a rule. If the pass is closed, allow for the longer detour.": "ไม่มีจำนวนคืนขั้นต่ำตายตัว แผน 5 คืนเป็นเพียงตัวอย่างสำหรับเที่ยวอาบาชิริและชายฝั่งตะวันตกของชิเรโตโกะ หากเที่ยวในวงแคบกว่านี้ก็ใช้เวลาสั้นลงได้ ราอุสุเป็นส่วนต่อขยายไปชายฝั่งตะวันออกแยกต่างหาก และแนะนำให้เผื่อ 2 คืนสำหรับวางแผน ไม่ใช่ข้อบังคับ หากช่องเขาปิด ให้เผื่อเวลาสำหรับเส้นทางอ้อมที่ยาวกว่า",
+    "Abashiri’s drift ice and Shiretoko’s forest lakes need different seasons and access plans. The five-night west-coast itinerary below is a sample, not a minimum; a narrower Abashiri or Utoro trip can be shorter. Rausu is a separate east-coast extension.": "น้ำแข็งลอยที่อาบาชิริและทะเลสาบกลางป่าของชิเรโตโกะเหมาะกับคนละฤดูกาลและแผนการเดินทาง แผนชายฝั่งตะวันตก 5 คืนด้านล่างเป็นตัวอย่าง ไม่ใช่จำนวนขั้นต่ำ ทริปที่เน้นอาบาชิริหรืออุโทโระเพียงแห่งเดียวใช้เวลาสั้นลงได้ ส่วนราอุสุเป็นส่วนต่อขยายไปชายฝั่งตะวันออกแยกต่างหาก",
+    "Sample · 5 west-coast nights": "ตัวอย่าง · 5 คืนที่ชายฝั่งตะวันตก",
+    "Rausu · separate optional extension": "ราอุสุ · ตัวเลือกต่อขยายแยกต่างหาก",
+    "Five-night sample": "ตัวอย่าง 5 คืน",
+    "West-coast sample": "ตัวอย่างเส้นทางชายฝั่งตะวันตก",
+    "5 nights": "5 คืน",
+    "Recommended route length, not a minimum.": "ระยะเวลาเส้นทางที่แนะนำ ไม่ใช่ขั้นต่ำ",
+    "The itinerary below covers Abashiri and Utoro as one west-coast sample. A shorter stay focused on one base is reasonable when transport fits; you do not need to cover both peninsula coasts.": "แผนด้านล่างครอบคลุมอาบาชิริและอุโทโระเป็นตัวอย่างเส้นทางชายฝั่งตะวันตก หากการเดินทางลงตัว การพักสั้นลงโดยเน้นฐานแห่งเดียวก็เป็นทางเลือกที่เหมาะสม ไม่จำเป็นต้องเที่ยวให้ครบชายฝั่งทั้งสองด้านของคาบสมุทร",
+    "Recommended five-night west-coast sample": "ตัวอย่างเส้นทางชายฝั่งตะวันตก 5 คืนที่แนะนำ",
+    "Use the buffer in Utoro; plan Rausu separately": "เผื่อเวลาสำรองไว้ที่อุโทโระ และวางแผนไปราอุสุแยกต่างหาก",
+    "Use the five nights for Abashiri and Utoro; add Rausu only as a separate east-coast leg. Two nights is a useful Rausu planning allowance, not a minimum. If Route 334 is closed, allow more time for the around-peninsula detour.": "ใช้เวลา 5 คืนเที่ยวอาบาชิริและอุโทโระ เพิ่มราอุสุเป็นเส้นทางชายฝั่งตะวันออกแยกต่างหากเท่านั้น แนะนำให้เผื่อ 2 คืนสำหรับวางแผนเที่ยวราอุสุ ไม่ใช่จำนวนขั้นต่ำ หากถนนหมายเลข 334 ปิด ให้เผื่อเวลาเพิ่มสำหรับเส้นทางอ้อมคาบสมุทร",
+    "5-night sample · west coast": "ตัวอย่าง 5 คืน · ชายฝั่งตะวันตก",
+    "Optional · Rausu extension, +2 suggested nights": "ตัวเลือก · ต่อไปราอุสุ (แนะนำให้เพิ่ม 2 คืน)",
+    "Use this as a separate Rausu stay only if Route 334 is open and conditions are good. If the pass is closed, allow the long detour around the peninsula; do not try to fit both coasts between buses or before a flight.": "เลือกพักที่ราอุสุแยกต่างหากเมื่อถนนหมายเลข 334 เปิดและสภาพการเดินทางเหมาะสมเท่านั้น หากช่องเขาปิด ให้เผื่อเวลาสำหรับเส้นทางอ้อมคาบสมุทรที่ยาวกว่า อย่าพยายามเที่ยวทั้งสองชายฝั่งระหว่างต่อรถบัสหรือก่อนขึ้นเครื่องบิน"
+  }
+}
