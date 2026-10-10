@@ -56,10 +56,16 @@ function sourceList(sources) {
 }
 
 function imageCredit(image) {
-  const license = image.licenseUrl
-    ? `<a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
-    : escapeHtml(image.license);
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${license}. ${escapeHtml(image.editNote)}</li>`;
+  const rightsDisclosure = image.rightsStatusUrl
+    ? `<a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">${escapeHtml(image.rightsStatus)}</a>`
+    : image.licenseUrl
+      ? `<a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
+      : escapeHtml(image.license);
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${rightsDisclosure}. ${escapeHtml(image.editNote)}</li>`;
+}
+
+function imageRightsText(image) {
+  return image.rightsStatus || image.license;
 }
 
 function relatedCards(cluster, currentSlug) {
@@ -98,7 +104,7 @@ function guidePage(guide, cluster) {
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content au-field" data-au-family="${escapeHtml(cluster.family)}" data-au-instrument="${escapeHtml(guide.instrument)}">
       <nav class="au-breadcrumb" aria-label="Breadcrumb"><a href="/australia/">Australia</a><span>/</span><a href="/australia/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav>
-      <section class="au-field-hero" aria-labelledby="au-field-title"><div class="au-field-copy"><span class="au-kicker">${escapeHtml(cluster.region)} · field ${String(guide.chapter).padStart(2, '0')} · reviewed ${pageReviewDate}</span><h1 id="au-field-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the field sequence</a><a class="button secondary" href="#checks">Read the weak points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.alt)} · ${escapeHtml(guide.image.license)}</figcaption></figure><div class="au-field-index" aria-hidden="true"><small>${escapeHtml(cluster.name)}</small><strong>${String(guide.chapter).padStart(2, '0')}</strong><span>Australia field atlas</span></div></section>
+      <section class="au-field-hero" aria-labelledby="au-field-title"><div class="au-field-copy"><span class="au-kicker">${escapeHtml(cluster.region)} · field ${String(guide.chapter).padStart(2, '0')} · reviewed ${pageReviewDate}</span><h1 id="au-field-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the field sequence</a><a class="button secondary" href="#checks">Read the weak points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.alt)} · ${escapeHtml(imageRightsText(guide.image))}</figcaption></figure><div class="au-field-index" aria-hidden="true"><small>${escapeHtml(cluster.name)}</small><strong>${String(guide.chapter).padStart(2, '0')}</strong><span>Australia field atlas</span></div></section>
       ${guide.decisions.length ? `<section class="au-decision-strip" aria-label="Three planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>\n      ` : ""}<section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot></div></section>
       <section class="au-reading" aria-labelledby="au-reading-title"><div><span class="au-section-label">Field orientation</span><h2 id="au-reading-title">${escapeHtml(guide.orientationTitle || "Make the decision before the distance.")}</h2><p>${escapeHtml(guide.orientation)}</p></div><aside class="${guide.interpretation ? "au-reading-note" : ""}">${guide.interpretation ? `<small>On the public path</small><p>${escapeHtml(guide.interpretation)}</p>` : ""}<small>Access first</small><p>${escapeHtml(guide.access)}</p><small>Sequence</small><p>${escapeHtml(guide.sequence)}</p></aside></section>
       <section class="au-field-section" id="route" aria-labelledby="au-route-title"><div class="au-section-heading"><span>Four-stage field sequence</span><h2 id="au-route-title">${escapeHtml(guide.routeTitle || "A route with an exit built in.")}</h2></div><div class="au-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="au-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>

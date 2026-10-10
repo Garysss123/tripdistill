@@ -634,13 +634,15 @@ export const australiaImageManifest = {
     "src": "/assets/images/australia-wadjemup-ferry-day-sequence.svg",
     "alt": "Planning sequence, not to scale: named mainland ferry terminal → Thomson Bay arrival → one chosen island sector → return ferry",
     "source": "https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg",
-    "label": "Original Wadjemup ferry-day planning diagram",
+    "label": "TripDistill original Wadjemup ferry-day planning diagram",
     "creator": "TripDistill Editorial Team",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
     "assetType": "original-planning-diagram",
-    "localSha1": "2c9734e143a5d91f05420bf2e4c5fa8daa5742eb",
-    "editNote": "Original planning diagram; it is not a geographic map and shows no scale, bearing, distance, or actual route."
+    "localSha1": "69aba1eb3072f58b02cf18e03a81c6f58aa6c30b",
+    "editNote": "Planning diagram only; it is not a geographic map and shows no scale, bearing, distance, or actual route."
   },
   "perth-fremantle-rottnest/cottesloe-scarborough": {
     "src": "/assets/images/australia-perth-fremantle-rottnest-cottesloe-scarborough.webp",

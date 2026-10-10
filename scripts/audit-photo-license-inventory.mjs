@@ -485,6 +485,8 @@ function collect(value, moduleName, seen, depth = 0) {
       sourceDate: value.sourceDate ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
+      rightsStatus: value.rightsStatus ?? null,
+      rightsStatusUrl: value.rightsStatusUrl ?? null,
       licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
       localSha1: value.localSha1 ?? null,
       editHistory: value.editNote ?? null,
@@ -883,7 +885,7 @@ for (const fullPath of assetPaths) {
   const src = relativePath;
   const dataRecords = recordsBySrc.get(src) || [];
   const uniqueValues = (key) => [...new Set(dataRecords.map((record) => record[key]).filter(Boolean))];
-  const conflicts = ['sourceUrl', 'sourceTitle', 'sourceDate', 'creator', 'license', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
+  const conflicts = ['sourceUrl', 'sourceTitle', 'sourceDate', 'creator', 'license', 'rightsStatus', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
   if (conflicts.length) sourceConflicts.push({ src, fields: conflicts });
   const uses = usesBySrc.get(src) || [];
   let creditMatch = null;
@@ -926,6 +928,8 @@ for (const fullPath of assetPaths) {
   const sourcePhotoDate = uniqueValues('sourceDate')[0] || explicit?.sourcePhotoDate || creditMatch?.sourceDate || null;
   const creator = uniqueValues('creator')[0] || explicit?.creator || creditMatch?.creator || null;
   const license = uniqueValues('license')[0] || explicit?.license || creditMatch?.license || null;
+  const rightsStatus = uniqueValues('rightsStatus')[0] || null;
+  const rightsStatusUrl = uniqueValues('rightsStatusUrl')[0] || null;
   const licenseUrl = uniqueValues('licenseUrl')[0] || explicit?.licenseUrl || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
   const authoredDiagram = dataRecords.some((record) => record.assetType === 'original-planning-diagram');
@@ -946,6 +950,8 @@ for (const fullPath of assetPaths) {
     creditLabel: creditMatch?.creditLabel || null,
     creator,
     license,
+    rightsStatus,
+    rightsStatusUrl,
     licenseUrl,
     commercialReuseEligibility,
     attributionTerms,
@@ -955,14 +961,16 @@ for (const fullPath of assetPaths) {
     visualReviewStatus: visualReviewDateByAsset.has(src) ? `visually_reviewed_${visualReviewDateByAsset.get(src)}` : 'not_individually_visually_reviewed',
     verificationStatus: verification ? 'source_page_checked' : sourceUrl ? 'site_credit_or_metadata_only' : 'missing_source_credit_match',
     verificationDate: verification ? (verification.checkedOn || verifiedOn) : null,
-    verificationDetail: verification?.detail || (authoredDiagram ? 'Original vector planning diagram authored by TripDistill Editorial Team and declared under CC BY 4.0 in the Australia asset manifest. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.' : null),
+    verificationDetail: verification?.detail || (authoredDiagram ? 'TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.' : null),
     useCount: imageUses.length,
     routes: [...new Set(imageUses.map((use) => use.route))],
     altTexts: [...new Set(imageUses.map((use) => use.alt).filter(Boolean))],
     moduleSources: [...new Set(dataRecords.map((record) => record.moduleName))],
     rawVisibleCredits: creditMatch?.creditText ? [creditMatch.creditText] : []
   };
-  if (!sourceUrl || !creator || !license) unmatchedByAsset.push({ src, missing: ['sourceUrl', 'creator', 'license'].filter((field) => !row[field]), useCount: row.useCount, routes: row.routes });
+  const missingFields = ['sourceUrl', 'creator'].filter((field) => !row[field]);
+  if (row.assetType === 'original-planning-diagram' ? !rightsStatus : !license) missingFields.push(row.assetType === 'original-planning-diagram' ? 'rightsStatus' : 'license');
+  if (missingFields.length) unmatchedByAsset.push({ src, missing: missingFields, useCount: row.useCount, routes: row.routes });
   entries.push(row);
 }
 
@@ -984,6 +992,8 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
     creditLabel: row.creditLabel,
     creator: row.creator,
     license: row.license,
+    rightsStatus: row.rightsStatus,
+    rightsStatusUrl: row.rightsStatusUrl,
     licenseUrl: row.licenseUrl,
     commercialReuseEligibility: row.commercialReuseEligibility,
     attributionTerms: row.attributionTerms,
@@ -1009,6 +1019,7 @@ const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
 const counts = {
   assetFileCount: assetPaths.length,
   completeSourceCreatorLicenseRecords: entries.filter((row) => row.sourceUrl && row.creator && row.license).length,
+  completeProjectOriginalRightsRecords: entries.filter((row) => row.assetType === 'original-planning-diagram' && row.sourceUrl && row.creator && row.rightsStatus).length,
   licenseClaimsNotIndependentlyVerified: entries.filter((row) => row.verificationStatus === 'site_credit_or_metadata_only').length,
   currentKnownUnsuitableImages: 0,
   previouslyMisplacedImageReplaced: 1,
@@ -1043,7 +1054,7 @@ const openCreditReviewSummary = openCreditReviews.length
   : 'none';
 const report = {
   generatedAt: new Date().toISOString(),
-  scope: 'Deduplicated WebP photos under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields are distinct from independent rights verification: independent source-page checks and unverified claims are counted from the current asset records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
+  scope: 'Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
   counts,
   verificationMethod: {
     structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',

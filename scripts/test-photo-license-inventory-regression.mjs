@@ -151,11 +151,17 @@ try {
   assert.equal(wadjemupDiagram.assetType, 'original-planning-diagram');
   assert.equal(wadjemupDiagram.sourceUrl, wadjemupDiagramSourceUrl);
   assert.equal(wadjemupDiagram.creator, 'TripDistill Editorial Team');
-  assert.equal(wadjemupDiagram.license, 'CC BY 4.0');
-  assert.equal(wadjemupDiagram.licenseUrl, 'https://creativecommons.org/licenses/by/4.0/');
+  assert.equal(wadjemupDiagram.license, null, 'a project-original diagram must not claim an unapproved public license');
+  assert.equal(wadjemupDiagram.licenseUrl, null);
+  assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 1, 'inventory must count the explicitly recorded project-original artwork');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
+  assert.ok(wadjemupDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(wadjemupDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
   const ayutthayaPhotos = [
     { assetPath: '/assets/images/thailand-ayutthaya-station.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creator: 'Jr8825', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-13', revision: '1070665767' },
