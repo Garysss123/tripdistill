@@ -146,6 +146,13 @@ const usaTexasRoutes = [
   '/usa/texas/san-antonio/',
   '/usa/texas/houston/'
 ];
+const usaColoradoLastmod = '2026-10-10';
+const usaColoradoRoutes = [
+  '/usa/colorado/',
+  '/usa/colorado/denver/',
+  '/usa/colorado/mountain-towns/',
+  '/usa/colorado/rocky-mountain/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -366,6 +373,11 @@ for (const route of usaTexasRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot update missing sitemap route ${route}`);
   records.set(route, { ...record, lastmod: usaTexasLastmod });
+}
+for (const route of usaColoradoRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot update missing sitemap route ${route}`);
+  records.set(route, { ...record, lastmod: usaColoradoLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);
