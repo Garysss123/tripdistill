@@ -1,29 +1,45 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
-const reviewDate = '2026-10-09';
 const routes = [
-  '/china/datong/',
-  '/china/luoyang/',
-  '/china/pingyao/',
-  '/china/xian/',
-  '/china/beijing/central-axis-forbidden-city/',
-  '/china/beijing/jingshan-beihai/',
-  '/china/beijing/shichahai-drum-tower/',
-  '/china/hangzhou/lingyin-feilai-peak/',
-  '/china/hangzhou/longjing-nine-creeks/',
-  '/china/hangzhou/xixi-wetland/',
-  '/china/shanghai/peoples-square-museums/',
-  '/china/shanghai/yuyuan-old-city/',
-  '/china/shanghai/the-bund-huangpu/',
+  ...[
+    '/china/datong/',
+    '/china/luoyang/',
+    '/china/pingyao/',
+    '/china/xian/',
+    '/china/beijing/central-axis-forbidden-city/',
+    '/china/beijing/jingshan-beihai/',
+    '/china/beijing/shichahai-drum-tower/',
+    '/china/hangzhou/lingyin-feilai-peak/',
+    '/china/hangzhou/longjing-nine-creeks/',
+    '/china/hangzhou/xixi-wetland/',
+    '/china/shanghai/peoples-square-museums/',
+    '/china/shanghai/yuyuan-old-city/',
+    '/china/shanghai/the-bund-huangpu/',
+  ].map((route) => ({ route, reviewDate: '2026-10-09' })),
+  ...[
+    '/china/hangzhou/west-lake-north-broken-bridge/',
+    '/china/hangzhou/west-lake-south-leifeng/',
+    '/china/hangzhou/hefang-southern-song/',
+  ].map((route) => ({ route, reviewDate: '2026-10-10' })),
 ];
 const editions = [
-  { locale: 'en', prefix: '', visibleDate: /(?:9\s+October\s+2026|October\s+9,?\s+2026)/i },
-  { locale: 'zh-Hant', prefix: 'zh/', visibleDate: /2026\s*年\s*10\s*月\s*9\s*日/ },
-  { locale: 'ja', prefix: 'ja/', visibleDate: /2026\s*年\s*10\s*月\s*9\s*日/ },
-  { locale: 'ko', prefix: 'ko/', visibleDate: /2026\s*년\s*10\s*월\s*9\s*일/ },
-  { locale: 'th', prefix: 'th/', visibleDate: /9\s*ตุลาคม\s*2026/ },
+  { locale: 'en', prefix: '' },
+  { locale: 'zh-Hant', prefix: 'zh/' },
+  { locale: 'ja', prefix: 'ja/' },
+  { locale: 'ko', prefix: 'ko/' },
+  { locale: 'th', prefix: 'th/' },
 ];
+
+function visibleDatePattern(date, locale) {
+  const [, year, month, day] = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (month !== '10') throw new Error(`Unsupported review month in ${date}`);
+  if (locale === 'en') return new RegExp(`(?:${Number(day)}\\s+October\\s+${year}|October\\s+${Number(day)},?\\s+${year})`, 'i');
+  if (locale === 'zh-Hant' || locale === 'ja') return new RegExp(`${year}\\s*年\\s*10\\s*月\\s*${Number(day)}\\s*日`);
+  if (locale === 'ko') return new RegExp(`${year}\\s*년\\s*10\\s*월\\s*${Number(day)}\\s*일`);
+  if (locale === 'th') return new RegExp(`${Number(day)}\\s*ตุลาคม\\s*${year}`);
+  throw new Error(`Unsupported locale: ${locale}`);
+}
 
 function schemaObjects(value, found = []) {
   if (!value || typeof value !== 'object') return found;
@@ -37,7 +53,7 @@ function schemaObjects(value, found = []) {
 const roots = ['', 'dist/'];
 let checked = 0;
 for (const root of roots) {
-  for (const route of routes) {
+  for (const { route, reviewDate } of routes) {
     for (const edition of editions) {
       const file = `${root}${edition.prefix}${route.slice(1)}index.html`;
       const html = fs.readFileSync(file, 'utf8');
@@ -63,10 +79,22 @@ for (const root of roots) {
         .replace(/&amp;/g, '&')
         .replace(/&nbsp;/g, ' ')
         .replace(/\s+/g, ' ');
-      assert.match(visible, edition.visibleDate, `${file}: visible review date mismatch`);
+      assert.match(visible, visibleDatePattern(reviewDate, edition.locale), `${file}: visible review date mismatch`);
       checked += 1;
     }
   }
 }
 
-console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); dateModified=${reviewDate}, visible review dates match, and datePublished remains absent.`);
+for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
+  const sitemap = fs.readFileSync(sitemapFile, 'utf8');
+  const records = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
+    .map(([, route, date]) => [route, date]));
+  for (const { route, reviewDate } of routes.slice(-3)) {
+    for (const edition of editions) {
+      const localizedRoute = `/${edition.prefix}${route.slice(1)}`;
+      assert.equal(records.get(localizedRoute), reviewDate, `${sitemapFile}: ${localizedRoute} lastmod mismatch`);
+    }
+  }
+}
+
+console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); 15 Hangzhou sitemap entries match 2026-10-10, other reviewed routes remain 2026-10-09, visible dates match, and datePublished remains absent.`);
