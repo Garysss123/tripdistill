@@ -21,6 +21,10 @@ const routes = [
     '/china/hangzhou/west-lake-north-broken-bridge/',
     '/china/hangzhou/west-lake-south-leifeng/',
     '/china/hangzhou/hefang-southern-song/',
+    '/china/beijing/temple-of-heaven-qianmen/',
+    '/china/beijing/yonghe-guozijian/',
+    '/china/beijing/798-chaoyang/',
+    '/china/beijing/mutianyu-great-wall/',
   ].map((route) => ({ route, reviewDate: '2026-10-10' })),
 ];
 const editions = [
@@ -89,7 +93,7 @@ for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
   const sitemap = fs.readFileSync(sitemapFile, 'utf8');
   const records = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
     .map(([, route, date]) => [route, date]));
-  for (const { route, reviewDate } of routes.slice(-3)) {
+  for (const { route, reviewDate } of routes) {
     for (const edition of editions) {
       const localizedRoute = `/${edition.prefix}${route.slice(1)}`;
       assert.equal(records.get(localizedRoute), reviewDate, `${sitemapFile}: ${localizedRoute} lastmod mismatch`);
@@ -97,4 +101,4 @@ for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
   }
 }
 
-console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); 15 Hangzhou sitemap entries match 2026-10-10, other reviewed routes remain 2026-10-09, visible dates match, and datePublished remains absent.`);
+console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); all 100 reviewed sitemap entries match (65 at 2026-10-09, 35 at 2026-10-10), visible dates match, and datePublished remains absent.`);
