@@ -369,8 +369,8 @@ function updateSearch() {
   const records = [];
   records.push({ title: 'France Travel Guide', url: '/france/', parent: 'Europe', type: 'Country', summary: 'Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.', keywords: ['France', 'French travel', 'Europe', 'France rail'] });
   for (const cluster of franceClusters) {
-    records.push({ title: cluster.name, url: `/france/${cluster.slug}/`, parent: 'France', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
-    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
+    records.push({ title: cluster.name, url: `/france/${cluster.slug}/`, parent: 'France', type: 'Regional guide', summary: cluster.searchSummary || cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
+    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.searchSummary || guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
   }
   const replacements = new Map(records.map((record) => [record.url, record]));
   const existingUrls = new Set(existing.map((record) => record.url));

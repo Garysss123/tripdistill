@@ -8943,7 +8943,7 @@
     "url": "/france/brittany-coasts/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Brittany is not one coastal loop. Saint-Malo and Dinan form a rail-and-bus pair, Carnac and the Gulf of Morbihan revolve around megaliths and boat or local connections, while Quimper and Crozon require a western-base decision. Tides and wind alter each system differently.",
+    "summary": "Use the published BreizhGo corridors to choose one system: Dinan–Saint-Malo in the north; Auray–Carnac or Vannes–Baden–Le Bono–Auray around the Gulf; Camaret-sur-Mer–Quimper or Camaret-sur-Mer–Brest in the west. Enter your travel date and exact town or site stop in the official planner, then confirm the return before choosing a base; corridor labels alone do not guarantee a timed connection or same-day through journey.",
     "keywords": [
       "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
       "Brittany",
@@ -8955,7 +8955,7 @@
     "url": "/france/brittany-coasts/saint-malo-dinan/",
     "parent": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
     "type": "Local guide",
-    "summary": "Walk Saint-Malo by wall, gate and shoreline condition, then add Dinan only when the bus or train and steep port-to-town gradient leave a comfortable return.",
+    "summary": "Saint-Malo station is outside intra-muros; walk or use local transit to the walls. Dinan’s rail or bus arrival sits above or apart from the port. BreizhGo publishes a Dinan–Saint-Malo bus corridor; treat both towns as one day only if the dated planner shows usable town stops and a return that leaves time for Dinan’s climb back from the port. Otherwise choose one town as the day’s base.",
     "keywords": [
       "Saint-Malo Ramparts & Dinan",
       "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
@@ -8968,7 +8968,7 @@
     "url": "/france/brittany-coasts/morbihan-carnac/",
     "parent": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
     "type": "Local guide",
-    "summary": "Start with protected megalithic ground and its interpretation, then choose one water or town layer whose departure point and return are known.",
+    "summary": "Vannes and Auray are the principal rail gateways. For a car-free Carnac plan, start by checking BreizhGo’s published Auray–Carnac corridor (its route detail identifies line 619), then confirm the dated stop and return; do not assume it reaches a particular stone entrance. Gulf quays are a separate dated-stop and boat-operator decision, not an assumed extension of this corridor.",
     "keywords": [
       "Carnac Megaliths & the Gulf of Morbihan",
       "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
@@ -8981,7 +8981,7 @@
     "url": "/france/brittany-coasts/quimper-crozon/",
     "parent": "Brittany: Walled Ports, Megaliths & Atlantic Headlands",
     "type": "Local guide",
-    "summary": "Quimper supplies rail, culture and shelter; Crozon supplies headlands and long last miles. The useful itinerary decides which one owns the day before chasing Atlantic views.",
+    "summary": "Quimper is the rail anchor. BreizhGo publishes separate Camaret-sur-Mer–Quimper and Camaret-sur-Mer–Brest bus corridors. Choose the rail gateway that fits the exact dated bus stop and return in the official planner; the route labels alone do not establish a timed rail–bus interchange or through connection. If neither plan leaves a workable return, choose Quimper or one Crozon headland for the day.",
     "keywords": [
       "Quimper, Cornouaille & the Crozon Peninsula",
       "Brittany: Walled Ports, Megaliths & Atlantic Headlands",

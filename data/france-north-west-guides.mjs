@@ -741,6 +741,8 @@ export const franceNorthWestClusters = [
   normandyEditorialCluster,
   c({
     slug: 'brittany-coasts',
+    reviewDate: '10 October 2026',
+    reviewDateISO: '2026-10-10',
     name: 'Brittany: Walled Ports, Megaliths & Atlantic Headlands',
     region: 'Brittany',
     band: 'capital-north',
@@ -749,7 +751,8 @@ export const franceNorthWestClusters = [
     tagline: 'Let tide, peninsula distance and local buses define the route.',
     hubIntro: 'Brittany is not one coastal loop. Saint-Malo and Dinan form a rail-and-bus pair, Carnac and the Gulf of Morbihan revolve around megaliths and boat or local connections, while Quimper and Crozon require a western-base decision. Tides and wind alter each system differently.',
     stay: 'Use at least three nights for two Breton systems and avoid changing base every day. Saint-Malo, Vannes or Quimper each supports a different coast; a car increases reach but does not erase parking, tide or return constraints.',
-    transfer: 'TGV and regional trains reach the main cities, but peninsulas, alignments and headlands often depend on seasonal buses, boats, bicycles or a car. Confirm the final connection before choosing the postcard.',
+    transfer: 'Use the published BreizhGo corridors to choose one system: Dinan–Saint-Malo in the north; Auray–Carnac or Vannes–Baden–Le Bono–Auray around the Gulf; Camaret-sur-Mer–Quimper or Camaret-sur-Mer–Brest in the west. Enter your travel date and exact town or site stop in the official planner, then confirm the return before choosing a base; corridor labels alone do not guarantee a timed connection or same-day through journey.',
+    searchSummary: 'Use the published BreizhGo corridors to choose one system: Dinan–Saint-Malo in the north; Auray–Carnac or Vannes–Baden–Le Bono–Auray around the Gulf; Camaret-sur-Mer–Quimper or Camaret-sur-Mer–Brest in the west. Enter your travel date and exact town or site stop in the official planner, then confirm the return before choosing a base; corridor labels alone do not guarantee a timed connection or same-day through journey.',
     season: 'Summer adds boats and buses but also pressure on walled towns and coast roads. Shoulder seasons are quieter but services thin out; Atlantic wind and rain can make exposed paths unsuitable even when the town forecast looks mild.',
     fallback: 'Use a walled town, museum, market or sheltered estuary when headland weather fails. Keep the fallback in the same base so a cancelled boat or bus does not trigger a long cross-region drive.',
     sources: [
@@ -760,6 +763,8 @@ export const franceNorthWestClusters = [
     guides: [
       g({
         slug: 'saint-malo-dinan',
+        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-10',
         name: 'Saint-Malo Ramparts & Dinan',
         instrument: 'Tide-and-wall transfer ledger',
         layout: 'walled-port-ledger',
@@ -772,7 +777,8 @@ export const franceNorthWestClusters = [
           ['Dinan hill and port', 'Make Dinan’s upper town, ramparts and descent toward the Rance the central route. The climb back is part of the schedule.'],
           ['Two-town comparison', 'Link a bounded Saint-Malo morning to Dinan by a verified regional connection. This works only when services support a non-fragile evening return.']
         ],
-        access: 'Saint-Malo station is outside intra-muros; walk or use local transit to the walls. Dinan’s rail or bus arrival sits above or apart from the port. Save the exact regional service and stop, especially outside summer.',
+        access: 'Saint-Malo station is outside intra-muros; walk or use local transit to the walls. Dinan’s rail or bus arrival sits above or apart from the port. BreizhGo publishes a Dinan–Saint-Malo bus corridor; treat both towns as one day only if the dated planner shows usable town stops and a return that leaves time for Dinan’s climb back from the port. Otherwise choose one town as the day’s base.',
+        searchSummary: 'Saint-Malo station is outside intra-muros; walk or use local transit to the walls. Dinan’s rail or bus arrival sits above or apart from the port. BreizhGo publishes a Dinan–Saint-Malo bus corridor; treat both towns as one day only if the dated planner shows usable town stops and a return that leaves time for Dinan’s climb back from the port. Otherwise choose one town as the day’s base.',
         tradeoff: 'A two-town day gives up beach time, a boat excursion and most interiors. Staying in Saint-Malo protects tide watching; staying in Dinan protects the port descent and evening streets. Choose the experience, not the number of ramparts.',
         stages: [
           ['Enter Saint-Malo through a named gate', 'Approach intra-muros, identify the return line to the station and check tide conditions before descending toward any beach or causeway.'],
@@ -791,11 +797,14 @@ export const franceNorthWestClusters = [
         verify: 'Check Saint-Malo tide and access notices, BreizhGo or rail service, Dinan visitor information and the final return before leaving the first town.',
         sources: [
           ['https://www.saint-malo-tourisme.co.uk/', 'Saint-Malo Bay tourism — official visitor information'],
-          ['https://www.dinan-capfrehel.com/en/', 'Dinan–Cap Fréhel tourism — official local planning']
+          ['https://www.dinan-capfrehel.com/en/', 'Dinan–Cap Fréhel tourism — official local planning'],
+          ['https://www.breizhgo.bzh/reseau-breizhgo/car/cotes-d-armor', 'BreizhGo Côtes-d’Armor — published Dinan–Saint-Malo bus corridor; check the date, town stops and return']
         ]
       }),
       g({
         slug: 'morbihan-carnac',
+        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-10',
         name: 'Carnac Megaliths & the Gulf of Morbihan',
         instrument: 'Stone-and-water access register',
         layout: 'megalith-estuary-map',
@@ -808,7 +817,8 @@ export const franceNorthWestClusters = [
           ['Gulf boat and islands', 'Use Vannes, Port-Navalo or another verified quay for a current boat itinerary. Tide and operator schedule replace the stone circuit as the main clock.'],
           ['Vannes and estuary edge', 'Keep the walled town and port as the base, adding a short coastal or megalithic excursion only when local transport works.']
         ],
-        access: 'Vannes and Auray are the principal rail gateways; Carnac and many Gulf quays require a current regional bus, bicycle, taxi or car. Confirm whether the bus serves the alignments, town or beach, and where the return stop sits.',
+        access: 'Vannes and Auray are the principal rail gateways. For a car-free Carnac plan, start by checking BreizhGo’s published Auray–Carnac corridor (its route detail identifies line 619), then confirm the dated stop and return; do not assume it reaches a particular stone entrance. Gulf quays are a separate dated-stop and boat-operator decision, not an assumed extension of this corridor.',
+        searchSummary: 'Vannes and Auray are the principal rail gateways. For a car-free Carnac plan, start by checking BreizhGo’s published Auray–Carnac corridor (its route detail identifies line 619), then confirm the dated stop and return; do not assume it reaches a particular stone entrance. Gulf quays are a separate dated-stop and boat-operator decision, not an assumed extension of this corridor.',
         tradeoff: 'Carnac, a substantial island cruise and Vannes all deserve more than a transfer gap. The route gives up one so conservation interpretation, boarding time and the last regional connection remain credible.',
         stages: [
           ['Reach the correct local gateway', 'From Vannes or Auray, follow the verified bus or road plan to the first site. Record the return stop and service number before exploring.'],
@@ -827,11 +837,15 @@ export const franceNorthWestClusters = [
         verify: 'Check Carnac monument access, BreizhGo service, the selected boat operator, tide and weather notices, and the final Auray or Vannes train.',
         sources: [
           ['https://www.menhirs-carnac.fr/en/', 'Carnac alignments — official monument information'],
-          ['https://www.golfedumorbihan.bzh/', 'Gulf of Morbihan tourism — official destination and port planning']
+          ['https://www.golfedumorbihan.bzh/', 'Gulf of Morbihan tourism — official destination and port planning'],
+          ['https://www.breizhgo.bzh/reseau-breizhgo/car/morbihan', 'BreizhGo Morbihan — official departmental bus network and route list'],
+          ['https://www.breizhgo.bzh/9407/le-transport-en-car-dans-le-morbihan-ligne-619', 'BreizhGo — Auray–Carnac line 619 route detail; check the dated stop and return']
         ]
       }),
       g({
         slug: 'quimper-crozon',
+        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-10',
         name: 'Quimper, Cornouaille & the Crozon Peninsula',
         instrument: 'Western-peninsula weather board',
         layout: 'granite-peninsula-section',
@@ -844,7 +858,8 @@ export const franceNorthWestClusters = [
           ['Crozon headland', 'Select one named sector such as Camaret, Pointe de Pen-Hir or another current signed route, then solve its bus, car or bicycle return.'],
           ['Cornouaille coast', 'Use Quimper as a gateway to one nearby town or coast segment with a verified regional connection. This favors a slower base over a peninsula grand tour.']
         ],
-        access: 'Quimper is the rail anchor. Crozon and western headlands require the current BreizhGo network, a car, bicycle or arranged excursion; service patterns can be sparse and seasonal. Do not set out from Quimper without the exact final stop and return.',
+        access: 'Quimper is the rail anchor. BreizhGo publishes separate Camaret-sur-Mer–Quimper and Camaret-sur-Mer–Brest bus corridors. Choose the rail gateway that fits the exact dated bus stop and return in the official planner; the route labels alone do not establish a timed rail–bus interchange or through connection. If neither plan leaves a workable return, choose Quimper or one Crozon headland for the day.',
+        searchSummary: 'Quimper is the rail anchor. BreizhGo publishes separate Camaret-sur-Mer–Quimper and Camaret-sur-Mer–Brest bus corridors. Choose the rail gateway that fits the exact dated bus stop and return in the official planner; the route labels alone do not establish a timed rail–bus interchange or through connection. If neither plan leaves a workable return, choose Quimper or one Crozon headland for the day.',
         tradeoff: 'A single day cannot cover Quimper, Locronan, Pointe du Raz and Crozon responsibly. The route gives up the regional highlights reel to create one readable city or peninsula day.',
         stages: [
           ['Establish the western base', 'At Quimper station, confirm local transport and the last service. Store luggage before the cathedral loop or collect supplies before a peninsula transfer.'],
@@ -863,7 +878,8 @@ export const franceNorthWestClusters = [
         verify: 'Check Quimper attraction openings, the Crozon tourist office trail or access notice, BreizhGo services and the official coastal forecast before departure.',
         sources: [
           ['https://www.quimper-tourisme.bzh/en/', 'Quimper Cornouaille tourism — official visitor information'],
-          ['https://www.crozon-tourisme.bzh/', 'Crozon Peninsula tourism — official local planning']
+          ['https://www.crozon-tourisme.bzh/', 'Crozon Peninsula tourism — official local planning'],
+          ['https://www.breizhgo.bzh/reseau-breizhgo/car/finistere', 'BreizhGo Finistère — published Camaret-sur-Mer–Quimper and Camaret-sur-Mer–Brest corridors; compare dated stops and returns']
         ]
       })
     ]

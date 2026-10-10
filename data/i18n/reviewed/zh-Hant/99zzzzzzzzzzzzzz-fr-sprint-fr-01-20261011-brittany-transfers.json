@@ -1,0 +1,23 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/brittany-coasts/",
+    "/france/brittany-coasts/saint-malo-dinan/",
+    "/france/brittany-coasts/morbihan-carnac/",
+    "/france/brittany-coasts/quimper-crozon/"
+  ],
+  "translations": {
+    "Use the published BreizhGo corridors to choose one system: Dinan–Saint-Malo in the north; Auray–Carnac or Vannes–Baden–Le Bono–Auray around the Gulf; Camaret-sur-Mer–Quimper or Camaret-sur-Mer–Brest in the west. Enter your travel date and exact town or site stop in the official planner, then confirm the return before choosing a base; corridor labels alone do not guarantee a timed connection or same-day through journey.": "依 BreizhGo 公開路線選定一個區域：北部走 Dinan–Saint-Malo；海灣一帶走 Auray–Carnac 或 Vannes–Baden–Le Bono–Auray；西部則有 Camaret-sur-Mer–Quimper 或 Camaret-sur-Mer–Brest。請在官方行程規劃器輸入旅遊日期與城鎮或景點的確切站點，再確認回程後才決定住宿據點；路線名稱本身不保證班次能銜接或當天可完成全程。",
+    "Saint-Malo station is outside intra-muros; walk or use local transit to the walls. Dinan’s rail or bus arrival sits above or apart from the port. BreizhGo publishes a Dinan–Saint-Malo bus corridor; treat both towns as one day only if the dated planner shows usable town stops and a return that leaves time for Dinan’s climb back from the port. Otherwise choose one town as the day’s base.": "Saint-Malo 車站位於城牆內區域之外，可步行或搭市區交通前往城牆。Dinan 的鐵路或巴士到站處位於港口上方或與港口分開。BreizhGo 公開路線列有 Dinan–Saint-Malo 巴士。只有在指定日期的官方行程規劃器能找到兩地可用的站點與回程，且回程時間足以從港口爬坡返回時，才建議把兩個城鎮排在同一天；否則選一處作為當日據點。",
+    "Vannes and Auray are the principal rail gateways. For a car-free Carnac plan, start by checking BreizhGo’s published Auray–Carnac corridor (its route detail identifies line 619), then confirm the dated stop and return; do not assume it reaches a particular stone entrance. Gulf quays are a separate dated-stop and boat-operator decision, not an assumed extension of this corridor.": "Vannes 與 Auray 是主要鐵路入口。若要不開車前往 Carnac，先查 BreizhGo 公開的 Auray–Carnac 路線（路線詳細資訊標示為 619 號），再確認指定日期的站點與回程；不要假設它會到達特定巨石群入口。海灣碼頭需另外按日期確認站點與船公司，不能視為這條路線的延伸。",
+    "Quimper is the rail anchor. BreizhGo publishes separate Camaret-sur-Mer–Quimper and Camaret-sur-Mer–Brest bus corridors. Choose the rail gateway that fits the exact dated bus stop and return in the official planner; the route labels alone do not establish a timed rail–bus interchange or through connection. If neither plan leaves a workable return, choose Quimper or one Crozon headland for the day.": "Quimper 是鐵路據點。BreizhGo 公開了 Camaret-sur-Mer–Quimper 與 Camaret-sur-Mer–Brest 兩條不同巴士路線。請在官方行程規劃器依指定日期的巴士站點和回程，選擇合適的鐵路入口；路線名稱本身無法證明鐵路與巴士時刻已配合，或可一路直達。若找不到可行回程，當天就選擇 Quimper 或 Crozon 的一處海岬。",
+    "BreizhGo Côtes-d’Armor — published Dinan–Saint-Malo bus corridor; check the date, town stops and return": "BreizhGo Côtes-d’Armor — Dinan–Saint-Malo 公開巴士路線；確認日期、城鎮站點與回程",
+    "BreizhGo Finistère — published Camaret-sur-Mer–Quimper and Camaret-sur-Mer–Brest corridors; compare dated stops and returns": "BreizhGo Finistère — Camaret-sur-Mer–Quimper、Camaret-sur-Mer–Brest 公開路線；比對日期、站點與回程",
+    "BreizhGo Morbihan — official departmental bus network and route list": "BreizhGo Morbihan — 官方省級巴士網絡與路線清單",
+    "BreizhGo — Auray–Carnac line 619 route detail; check the dated stop and return": "BreizhGo — Auray–Carnac 619 號路線資訊；確認指定日期的站點與回程",
+    "reviewed 10 October 2026": "已於 2026 年 10 月 10 日審閱",
+    "Planning facts and image licensing were reviewed on 10 October 2026. Verify current tickets, services, roads, weather and site access before travel.": "旅遊規劃資訊與圖片授權於 2026 年 10 月 10 日審閱。出發前請確認最新票務、交通服務、道路、天氣與當地管制。",
+    "Planning facts and image licensing were reviewed on 10 October 2026. Admission, transport, roads, trails, sea, fire, weather and local access can change; reopen the linked authority or operator before travel.": "旅遊資訊與圖片授權於 2026 年 10 月 10 日審閱。入場、交通、道路、步道、海況、火災、天氣與當地管制可能變動；出發前請重新查看連結中的主管機關或營運者資訊。"
+  }
+}

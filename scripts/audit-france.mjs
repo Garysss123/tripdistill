@@ -132,6 +132,42 @@ for (const route of routes) {
 const search = JSON.parse(read('data/search-index.json')).filter((item) => item.url.startsWith('/france/'));
 check(search.length === 81 && new Set(search.map((item) => item.url)).size === 81, 'France search index must contain exactly 81 unique routes');
 for (const route of routes) check(search.some((item) => item.url === route), `${route}: missing from search index`);
+
+const brittany = franceClusters.find((cluster) => cluster.slug === 'brittany-coasts');
+if (brittany) {
+  const brittanySearchRecords = [
+    { route: `/france/${brittany.slug}/`, source: brittany.searchSummary || brittany.hubIntro },
+    ...brittany.guides.map((guide) => ({ route: guide.url, source: guide.searchSummary || guide.summary }))
+  ];
+  for (const [language, prefix] of locales) {
+    let catalog;
+    if (language !== 'en') {
+      try {
+        catalog = JSON.parse(read(`data/i18n/${language}.json`));
+        check(catalog.qualityStatus === 'reviewed', `${language}: Brittany search summary catalog is not approved`);
+      } catch {
+        check(false, `${language}: approved translation catalog is missing`);
+        catalog = { translations: {} };
+      }
+    }
+    const localizedIndexPath = prefix ? `${prefix.slice(1)}/data/search-index.json` : 'data/search-index.json';
+    let localizedSearch;
+    try { localizedSearch = JSON.parse(read(localizedIndexPath)); }
+    catch {
+      check(false, `${language}: search index is missing at ${localizedIndexPath}`);
+      continue;
+    }
+    for (const item of brittanySearchRecords) {
+      const localizedRoute = `${prefix}${item.route}`;
+      const record = localizedSearch.find((entry) => entry.url === localizedRoute);
+      check(!!record, `${language}: ${localizedRoute} missing from search index`);
+      const expectedSummary = language === 'en' ? item.source : catalog?.translations?.[item.source];
+      if (language !== 'en') check(!!expectedSummary, `${language}: no approved translation for Brittany search summary at ${item.route}`);
+      if (record && expectedSummary) check(record.summary === expectedSummary, `${language}: Brittany search summary mismatch at ${localizedRoute}`);
+    }
+  }
+}
+
 const header = read('components/header.html');
 const sidebar = read('components/sidebar.html');
 const footer = read('components/footer.html');
@@ -159,9 +195,21 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const franceResponsiveEditedRoutes = new Set(franceClusters
     .filter((cluster) => cluster.slug !== 'paris')
     .flatMap((cluster) => [`/france/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)]));
+  const brittanyEditedRoutes = new Set([
+    '/france/brittany-coasts/',
+    '/france/brittany-coasts/saint-malo-dinan/',
+    '/france/brittany-coasts/morbihan-carnac/',
+    '/france/brittany-coasts/quimper-crozon/'
+  ]);
   for (const route of routes) {
-    const expectedDate = normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = brittanyEditedRoutes.has(route) ? '2026-10-10' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
+  for (const route of brittanyEditedRoutes) {
+    for (const [language, prefix] of locales) {
+      const localizedRoute = `${prefix}${route}`;
+      check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-10</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-10`);
+    }
   }
 }
 
