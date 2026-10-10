@@ -425,6 +425,36 @@ for (const locale of allLocales) {
   }
 }
 
+const hokkaidoSearchAliases = [
+  { source: 'shirogane blue pond', route: '/japan/hokkaido/furano-biei/' },
+  { source: 'biei hills', route: '/japan/hokkaido/furano-biei/' },
+  { source: 'sugatami pond', route: '/japan/hokkaido/asahikawa-daisetsuzan/' },
+  { source: 'hiking grades', route: '/japan/hokkaido/asahikawa-daisetsuzan/' },
+  { source: 'niseko village', route: '/japan/hokkaido/niseko-yoichi/' },
+  { source: 'nikka distillery', route: '/japan/hokkaido/niseko-yoichi/' },
+  { source: 'ski access', route: '/japan/hokkaido/niseko-yoichi/' }
+];
+for (const locale of allLocales) {
+  const { relativePath, entries } = searchIndexes[locale.code];
+  const translations = locale.code === 'en'
+    ? {}
+    : JSON.parse(read(`data/i18n/reviewed/${locale.code}/94-hokkaido-search-index.json`)).translations;
+  for (const alias of hokkaidoSearchAliases) {
+    const query = locale.code === 'en' ? alias.source : translations[alias.source];
+    const expectedRoute = localizedRoute(alias.route, locale);
+    if (!query) {
+      problems.push(`${relativePath}: missing reviewed translation for Hokkaido search alias "${alias.source}"`);
+      continue;
+    }
+    const normalizedQuery = query.trim().toLowerCase();
+    const matchingRoutes = entries.filter((item) => [item.title, item.parent, item.summary, ...(item.keywords || [])]
+      .some((value) => String(value).toLowerCase().includes(normalizedQuery)));
+    if (!matchingRoutes.some((item) => item.url === expectedRoute)) {
+      problems.push(`${relativePath}: search alias "${query}" does not reach ${expectedRoute}`);
+    }
+  }
+}
+
 const mainScript = read('js/main.js');
 for (const marker of ['tripdistill-language-choice-v1', 'browserPreferredLocale', 'data-language-accept', 'data-language-stay', 'The site will not redirect automatically.', '網站不會自動重新導向。', '日本語版に切り替えますか？', '한국어판으로 전환할까요?', 'เปลี่ยนเป็นภาษาไทยหรือไม่']) {
   if (!mainScript.includes(marker)) problems.push(`js/main.js: missing language-suggestion safeguard "${marker}"`);
@@ -436,6 +466,7 @@ for (const component of ['components/header.html', 'components/footer.html']) {
 
 notes.push(`${publishedUrls.length} published routes (${allLocales.map((locale) => `${routesByLocale[locale.code].length} ${locale.code}`).join(' + ')})`);
 notes.push(`${englishSearchIndex.length} search records per language`);
+notes.push(`${hokkaidoSearchAliases.length * allLocales.length} Hokkaido search aliases resolve across five languages`);
 notes.push(`${allLocales.reduce((sum, locale) => sum + titles[locale.code].size, 0)} unique localized page titles`);
 
 if (problems.length) {

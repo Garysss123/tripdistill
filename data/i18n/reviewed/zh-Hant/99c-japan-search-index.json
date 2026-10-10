@@ -1,0 +1,10 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare Tokyo, Kyoto and Osaka city breaks with a separate Hokkaido trip; plan a realistic 7–14 day route, check dated JR fares and use official entry references.": "比較東京、京都與大阪的城市之旅，並另行規劃北海道行程；安排實際可行的 7–14 天路線，查詢依行程日期計算的 JR 票價，並參考官方入境資料。"
+  }
+}

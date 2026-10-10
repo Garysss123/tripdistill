@@ -226,7 +226,7 @@
     "url": "/japan/",
     "parent": "Japan",
     "type": "Country",
-    "summary": "First-trip framework, regions, transport, seasons, etiquette and practical facts.",
+    "summary": "Compare Tokyo, Kyoto and Osaka city breaks with a separate Hokkaido trip; plan a realistic 7–14 day route, check dated JR fares and use official entry references.",
     "keywords": [
       "japan",
       "tokyo",
@@ -1238,14 +1238,15 @@
     "url": "/japan/hokkaido/furano-biei/",
     "parent": "Hokkaido · Central Fields",
     "type": "Region",
-    "summary": "Match bloom seasons, rural transport and a useful base for Furano fields, Biei hills and Blue Pond.",
+    "summary": "Read Furano and Biei by flower timing, bus and rail links, Blue Pond’s erosion-control origin, farmland access and separate hill and farm days.",
     "keywords": [
       "furano",
       "biei",
       "lavender",
       "blue pond",
-      "flower fields",
-      "farm tomita"
+      "farm tomita",
+      "shirogane blue pond",
+      "biei hills"
     ]
   },
   {
@@ -1253,14 +1254,15 @@
     "url": "/japan/hokkaido/asahikawa-daisetsuzan/",
     "parent": "Hokkaido · Northern Central",
     "type": "Region",
-    "summary": "Use Asahikawa as a base, visit the zoo and choose between the separate Asahidake and Sounkyo gateways.",
+    "summary": "Plan Asahiyama Zoo by the correct Asahikawa bus, then choose the Asahidake or Sounkyo gateway and match the trail to mountain conditions.",
     "keywords": [
       "asahikawa",
       "daisetsuzan",
       "asahidake",
       "sounkyo",
       "asahiyama zoo",
-      "hiking"
+      "sugatami pond",
+      "hiking grades"
     ]
   },
   {
@@ -1268,15 +1270,16 @@
     "url": "/japan/hokkaido/niseko-yoichi/",
     "parent": "Hokkaido · West",
     "type": "Region",
-    "summary": "Compare Niseko resort villages, seasonal airport transfers, winter skiing, green season and a Yoichi stop.",
+    "summary": "Compare Niseko’s three-town resort bases and seasonal transfers, then plan Yoichi’s Nikka distillery history and sparse rail return.",
     "keywords": [
       "niseko",
       "yoichi",
       "hirafu",
-      "annupuri",
       "kutchan",
-      "ski",
-      "mount yotei"
+      "niseko village",
+      "annupuri",
+      "nikka distillery",
+      "ski access"
     ]
   },
   {

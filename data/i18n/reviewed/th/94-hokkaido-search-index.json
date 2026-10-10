@@ -1,0 +1,19 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Read Furano and Biei by flower timing, bus and rail links, Blue Pond’s erosion-control origin, farmland access and separate hill and farm days.": "ทำความเข้าใจฟุราโนะและบิเอะโดยพิจารณาช่วงดอกไม้บาน การเชื่อมต่อรถบัสและรถไฟ ที่มาของบ่อน้ำสีฟ้าซึ่งเกิดจากงานควบคุมการกัดเซาะ การเข้าถึงพื้นที่เกษตร และการแยกวันเที่ยวเนินเขากับฟาร์ม",
+    "shirogane blue pond": "บ่อน้ำสีฟ้าชิโรกาเนะ",
+    "biei hills": "เนินเขาบิเอะ",
+    "Plan Asahiyama Zoo by the correct Asahikawa bus, then choose the Asahidake or Sounkyo gateway and match the trail to mountain conditions.": "วางแผนเดินทางไปสวนสัตว์อาซาฮิยามะด้วยรถบัสสายที่ถูกต้องจากอาซาฮิคาวะ จากนั้นเลือกจุดเข้าสู่พื้นที่ทางอาซาฮิดาเกะหรือโซอุนเคียว และเลือกเส้นทางเดินให้เหมาะกับสภาพภูเขา",
+    "sugatami pond": "บ่อน้ำซูกาตามิ",
+    "hiking grades": "ระดับความยากของเส้นทางเดินป่า",
+    "Compare Niseko’s three-town resort bases and seasonal transfers, then plan Yoichi’s Nikka distillery history and sparse rail return.": "เปรียบเทียบที่พักในรีสอร์ตทั้งสามเมืองของนิเซโกะและรถรับส่งตามฤดูกาล แล้ววางแผนเที่ยวโรงกลั่น Nikka ในโยอิจิ ศึกษาประวัติโรงกลั่นและเผื่อรถไฟขากลับที่มีเที่ยวไม่ถี่",
+    "niseko village": "นิเซโกะวิลเลจ",
+    "nikka distillery": "โรงกลั่น Nikka",
+    "ski access": "การเดินทางไปยังลานสกี"
+  }
+}
