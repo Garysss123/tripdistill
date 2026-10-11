@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T04:13:01.569Z",
+  "generatedAt": "2026-10-11T04:24:22.714Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 793,
@@ -8188,7 +8188,7 @@
           "visualReviewStatus": "visually_reviewed_2026-10-11",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-11",
-          "verificationDetail": "Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this record does not claim independent worldwide rights clearance.",
+          "verificationDetail": "Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this records the declared terms and is not an independent rights clearance or a claim beyond those terms.",
           "useCount": 2,
           "routes": [
             "/china/",
