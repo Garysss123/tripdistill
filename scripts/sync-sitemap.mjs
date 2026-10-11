@@ -14,6 +14,13 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
+const malaysiaIpohLastmod = '2026-10-11';
+const malaysiaIpohEditedRoutes = [
+  '/malaysia/ipoh-kinta-valley/',
+  '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
+  '/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/',
+  '/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/'
+];
 const malaysiaCameronLastmod = '2026-10-11';
 const malaysiaCameronEditedRoutes = [
   '/malaysia/cameron-highlands/',
@@ -491,6 +498,11 @@ for (const match of existing.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]
   records.set(route, { route, lastmod: match[2], changefreq: match[3], priority: match[4] });
 }
 for (const [route, lastmod, changefreq, priority] of newRoutes) records.set(route, { route, lastmod, changefreq, priority });
+for (const route of malaysiaIpohEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
+}
 for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Italy Puglia route absent from sitemap: ${route}`);

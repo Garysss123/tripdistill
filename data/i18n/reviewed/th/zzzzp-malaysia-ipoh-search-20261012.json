@@ -1,0 +1,41 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose an Old Town or New Town base, arrive by KTMB ETS, and plan one Kinta branch with current BAS.MY route and last-mile checks.": "เลือกพักใน Old Town หรือ New Town เดินทางด้วย KTMB ETS ตรวจสอบเส้นทาง BAS.MY ล่าสุดและการต่อรถช่วงสุดท้าย แล้ววางแผนเที่ยว Kinta หนึ่งวัน",
+    "ktmb": "รถไฟ KTMB",
+    "bas.my": "รถโดยสาร BAS.MY",
+    "a100": "รถวนในเมือง A100",
+    "a34": "สาย A34 ไปทาง Gopeng",
+    "a36": "สาย A36 ไปทาง Batu Gajah",
+    "new town": "New Town",
+    "Start at Ipoh Railway Station for the civic and Old Town walk; compare station-side and New Town stays, confirm one interior, and leave a rain-safe meal plan.": "เริ่มเดินชมย่านราชการและ Old Town จากสถานีรถไฟอิโปห์ เปรียบเทียบที่พักใกล้สถานีกับ New Town ยืนยันสถานที่ในร่มหนึ่งแห่ง และเตรียมแผนมื้ออาหารที่ใช้ได้ในวันฝนตก",
+    "ipoh railway station": "สถานีรถไฟอิโปห์",
+    "ktmb ets": "รถไฟ KTMB ETS",
+    "ipoh town hall": "ศาลาว่าการอิโปห์",
+    "civic quarter": "ย่านราชการ",
+    "kong heng": "Kong Heng",
+    "concubine lane": "Concubine Lane",
+    "baggage storage": "ฝากสัมภาระ",
+    "rain plan": "แผนสำรองวันฝนตก",
+    "Plan a respectful visit to Sam Poh Tong and other separate Gunung Rapat temple compounds; verify each gate, hours and ride, since bus-map labels do not confirm access.": "วางแผนเยี่ยมชม Sam Poh Tong และบริเวณวัดอื่น ๆ ใน Gunung Rapat อย่างให้เกียรติ ตรวจสอบทางเข้า เวลาเปิด และรถรับส่งแต่ละแห่ง เพราะป้ายในแผนที่รถโดยสารไม่ได้ยืนยันว่าเข้าได้",
+    "gunung rapat": "Gunung Rapat",
+    "ling sen tong": "Ling Sen Tong",
+    "nam thean tong": "Nam Thean Tong",
+    "cave temples": "วัดถ้ำ",
+    "temple access": "การเข้าวัด",
+    "ceremony": "พิธีกรรม",
+    "last mile": "การเดินทางช่วงสุดท้าย",
+    "Reach Gua Tempurung from Ipoh only after confirming a cave route and the last-mile transfer; BAS.MY A34 reaches a junction label, not a guaranteed cave entrance.": "เดินทางจากอิโปห์ไป Gua Tempurung หลังยืนยันเส้นทางถ้ำและรถต่อช่วงสุดท้ายแล้วเท่านั้น BAS.MY A34 แสดงถึงป้ายทางแยก ไม่ได้รับรองว่าจะถึงทางเข้าถ้ำ",
+    "gopeng": "Gopeng",
+    "gua tempurung": "Gua Tempurung",
+    "medan kidd": "Medan Kidd",
+    "simpang gua tempurung": "ทางแยก Simpang Gua Tempurung",
+    "cave route": "เส้นทางถ้ำ",
+    "permit unknown": "ยังไม่ทราบข้อมูลใบอนุญาต",
+    "rain closure": "ปิดเมื่อฝนตก"
+  }
+}

@@ -82,11 +82,17 @@
     "url": "/malaysia/ipoh-kinta-valley/",
     "parent": "Malaysia · Strait Cities",
     "type": "City and Region Guide",
-    "summary": "Arrive by ETS, walk Ipoh old town and plan cave temples and Kinta limestone as separate road branches.",
+    "summary": "Choose an Old Town or New Town base, arrive by KTMB ETS, and plan one Kinta branch with current BAS.MY route and last-mile checks.",
     "keywords": [
       "ipoh",
       "kinta valley",
       "ets",
+      "ktmb",
+      "bas.my",
+      "a100",
+      "a34",
+      "a36",
+      "new town",
       "cave temple",
       "sam poh tong",
       "limestone",
@@ -3810,13 +3816,18 @@
     "url": "/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/",
     "parent": "Malaysia · Ipoh & Kinta Valley",
     "type": "Focused area and field guide",
-    "summary": "Walk Ipoh’s railway and old-town civic quarter with heat control, one heritage interior, food context and a station-based exit.",
+    "summary": "Start at Ipoh Railway Station for the civic and Old Town walk; compare station-side and New Town stays, confirm one interior, and leave a rain-safe meal plan.",
     "keywords": [
-      "old town, railway & civic quarter",
-      "ipoh & kinta valley",
-      "old town railway civic quarter",
-      "strait cities",
-      "malaysia travel guide"
+      "ipoh railway station",
+      "ktmb ets",
+      "old town",
+      "new town",
+      "ipoh town hall",
+      "civic quarter",
+      "kong heng",
+      "concubine lane",
+      "baggage storage",
+      "rain plan"
     ]
   },
   {
@@ -3824,13 +3835,18 @@
     "url": "/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/",
     "parent": "Malaysia · Ipoh & Kinta Valley",
     "type": "Focused area and field guide",
-    "summary": "Plan Ipoh’s Gunung Rapat cave temples as active worship sites with named stops, road transport and limestone safety.",
+    "summary": "Plan a respectful visit to Sam Poh Tong and other separate Gunung Rapat temple compounds; verify each gate, hours and ride, since bus-map labels do not confirm access.",
     "keywords": [
-      "gunung rapat cave temples",
-      "ipoh & kinta valley",
-      "gunung rapat cave temples",
-      "strait cities",
-      "malaysia travel guide"
+      "gunung rapat",
+      "sam poh tong",
+      "ling sen tong",
+      "nam thean tong",
+      "cave temples",
+      "bas.my",
+      "temple access",
+      "ceremony",
+      "last mile",
+      "rain plan"
     ]
   },
   {
@@ -3838,13 +3854,18 @@
     "url": "/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/",
     "parent": "Malaysia · Ipoh & Kinta Valley",
     "type": "Focused area and field guide",
-    "summary": "Build a Gopeng and Gua Tempurung branch around the selected cave route, operator responsibility, road time and weather.",
+    "summary": "Reach Gua Tempurung from Ipoh only after confirming a cave route and the last-mile transfer; BAS.MY A34 reaches a junction label, not a guaranteed cave entrance.",
     "keywords": [
-      "gopeng & gua tempurung",
-      "ipoh & kinta valley",
-      "gopeng gua tempurung",
-      "strait cities",
-      "malaysia travel guide"
+      "gopeng",
+      "gua tempurung",
+      "a34",
+      "medan kidd",
+      "simpang gua tempurung",
+      "bas.my",
+      "cave route",
+      "permit unknown",
+      "last mile",
+      "rain closure"
     ]
   },
   {

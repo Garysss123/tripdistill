@@ -1,0 +1,41 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose an Old Town or New Town base, arrive by KTMB ETS, and plan one Kinta branch with current BAS.MY route and last-mile checks.": "올드타운이나 뉴타운에 묵고 KTMB ETS로 도착하세요. BAS.MY 최신 노선과 마지막 구간을 확인해 킨타 지역 외곽 일정 한 곳을 계획합니다.",
+    "ktmb": "KTMB 철도",
+    "bas.my": "BAS.MY 버스",
+    "a100": "A100 시내 순환",
+    "a34": "A34 고펭 방면",
+    "a36": "A36 바투 가자흐 방면",
+    "new town": "뉴타운",
+    "Start at Ipoh Railway Station for the civic and Old Town walk; compare station-side and New Town stays, confirm one interior, and leave a rain-safe meal plan.": "이포역에서 출발해 시민지구와 올드타운을 걸으세요. 역 주변과 뉴타운 숙소를 비교하고, 실내 명소 한 곳의 개방 여부와 비 오는 날 식사 장소를 확인하세요.",
+    "ipoh railway station": "이포역",
+    "ktmb ets": "KTMB ETS 열차",
+    "ipoh town hall": "이포 시청",
+    "civic quarter": "시민지구",
+    "kong heng": "콩 헹",
+    "concubine lane": "콘큐바인 레인",
+    "baggage storage": "짐 보관",
+    "rain plan": "우천 대안",
+    "Plan a respectful visit to Sam Poh Tong and other separate Gunung Rapat temple compounds; verify each gate, hours and ride, since bus-map labels do not confirm access.": "삼포통과 구눙 라팟의 여러 사원 구역을 예의를 갖춰 방문하세요. 버스 노선도의 표시는 입장을 보장하지 않으므로 각 입구와 운영 시간, 이동편을 확인해야 합니다.",
+    "gunung rapat": "구눙 라팟",
+    "ling sen tong": "링센통",
+    "nam thean tong": "남티엔통",
+    "cave temples": "동굴 사원",
+    "temple access": "사원 출입",
+    "ceremony": "의식",
+    "last mile": "마지막 구간",
+    "Reach Gua Tempurung from Ipoh only after confirming a cave route and the last-mile transfer; BAS.MY A34 reaches a junction label, not a guaranteed cave entrance.": "동굴 코스와 마지막 구간 이동을 확인한 뒤 이포에서 Gua Tempurung으로 출발하세요. BAS.MY A34는 지도상의 교차로까지 표시하며 동굴 입구까지 직행을 보장하지 않습니다.",
+    "gopeng": "고펭",
+    "gua tempurung": "구아 템푸룽",
+    "medan kidd": "메단 키드",
+    "simpang gua tempurung": "Simpang Gua Tempurung 교차로",
+    "cave route": "동굴 코스",
+    "permit unknown": "허가 정보 미확인",
+    "rain closure": "우천 폐쇄"
+  }
+}
