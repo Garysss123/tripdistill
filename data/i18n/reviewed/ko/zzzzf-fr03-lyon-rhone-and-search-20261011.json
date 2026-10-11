@@ -5,8 +5,7 @@
     "/france/lyon-rhone/",
     "/france/lyon-rhone/vieux-lyon-fourviere/",
     "/france/lyon-rhone/presquile-croix-rousse/",
-    "/france/lyon-rhone/beaujolais-perouges/",
-    "/data/search-index.json"
+    "/france/lyon-rhone/beaujolais-perouges/"
   ],
   "translations": {
     "Use four nights for two full Lyon days and one full excursion, sleeping near Bellecour or Cordeliers in Presqu’île for Métro A/D and walkable river routes. Part-Dieu suits an early TER start, but still needs a city-transit ride for the hills. Three nights works only when arrival or departure supplies one usable day segment; otherwise drop the excursion rather than race.": "리옹에서 온전한 시내 관광 2일과 근교 여행 1일을 보내려면 4박을 권합니다. 프레스킬의 벨쿠르나 코르들리에 인근에 숙소를 잡으면 지하철 A·D선과 강변 도보 동선을 이용하기 편합니다. 파르디외는 이른 TER를 타기 좋지만 언덕 지역까지는 시내 대중교통을 더 이용해야 합니다. 3박은 도착일이나 출발일에 일정 일부를 활용할 수 있을 때만 가능합니다. 그렇지 않다면 서두르기보다 근교 여행을 빼세요.",
@@ -62,7 +61,6 @@
     "Destination Beaujolais — official regional planning and bookable wine experiences": "보졸레 관광 안내 — 공식 지역 여행 정보와 예약 가능한 와인 체험",
     "TER Meximieux-Pérouges station — official location and access": "TER Meximieux-Pérouges역 — 공식 위치와 이용 안내",
     "Plaine de l’Ain Tourism — official Pérouges walking access, map and accessibility": "Plaine de l’Ain 관광 안내 — 페루주 도보 접근·지도·접근성 공식 정보",
-    "Lyon is a four-night base for two focused city days and one regional excursion. Pair Vieux Lyon and Fourvière on one funicular route and Presqu’île with Croix-Rousse on a separate Métro A/C day. On the third full day choose TER to Pérouges or a booked Beaujolais pickup from Villefranche station; these are separate directions.": "리옹을 4박 거점으로 삼아 시내를 집중해서 둘러보는 이틀과 근교 여행 하루를 보내기 좋습니다. Vieux Lyon과 Fourvière는 푸니쿨라를 이용하는 하루 일정으로 묶고, Presqu’île와 Croix-Rousse는 Métro A/C선을 이용하는 별도 일정으로 둘러보세요. 온전한 셋째 날에는 TER로 Pérouges에 가거나, Villefranche역에서 사전 예약 픽업을 이용해 Beaujolais로 향하세요. 두 곳은 서로 다른 방향의 일정이므로 한날에 묶지 마세요.",
     "The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky": "맑고 푸른 하늘 아래 보이는 Notre-Dame de Fourvière 대성당의 석조 탑들",
     "A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees": "Croix-Rousse의 거리 교차로와 TCL 버스 정류장, 노선도, 카페 테라스, 나무들",
     "Vineyards and the village of Juliénas among the Beaujolais hills": "보졸레 언덕 사이 포도밭과 Juliénas 마을",

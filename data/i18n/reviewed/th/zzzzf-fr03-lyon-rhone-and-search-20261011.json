@@ -5,8 +5,7 @@
     "/france/lyon-rhone/",
     "/france/lyon-rhone/vieux-lyon-fourviere/",
     "/france/lyon-rhone/presquile-croix-rousse/",
-    "/france/lyon-rhone/beaujolais-perouges/",
-    "/data/search-index.json"
+    "/france/lyon-rhone/beaujolais-perouges/"
   ],
   "translations": {
     "Use four nights for two full Lyon days and one full excursion, sleeping near Bellecour or Cordeliers in Presqu’île for Métro A/D and walkable river routes. Part-Dieu suits an early TER start, but still needs a city-transit ride for the hills. Three nights works only when arrival or departure supplies one usable day segment; otherwise drop the excursion rather than race.": "วางแผนพัก 4 คืน เพื่อเที่ยวลียงเต็มวัน 2 วันและออกนอกเมืองเต็มวันอีก 1 วัน โดยพักใกล้ Bellecour หรือ Cordeliers ใน Presqu’île ซึ่งต่อ Métro A/D และเดินเลียบแม่น้ำได้สะดวก ที่พักใกล้ Part-Dieu เหมาะหากต้องขึ้น TER แต่ยังต้องนั่งขนส่งในเมืองต่อไปยังย่านเนินเขา การพัก 3 คืนจะพอได้ก็ต่อเมื่อวันมาถึงหรือวันกลับยังมีช่วงเวลาที่ใช้เที่ยวได้จริง มิฉะนั้นให้ตัดทริปนอกเมืองออก แทนการเร่งเที่ยว",
@@ -62,7 +61,6 @@
     "Destination Beaujolais — official regional planning and bookable wine experiences": "Destination Beaujolais — ข้อมูลทางการเพื่อวางแผนเที่ยวภูมิภาคและประสบการณ์ชิมไวน์ที่จองได้",
     "TER Meximieux-Pérouges station — official location and access": "สถานี TER Meximieux-Pérouges — ที่ตั้งและข้อมูลการเดินทางเข้าสถานีทางการ",
     "Plaine de l’Ain Tourism — official Pérouges walking access, map and accessibility": "Plaine de l’Ain Tourism — ข้อมูลทางการเรื่องทางเดินเข้า Pérouges แผนที่ และการเข้าถึงสำหรับผู้มีข้อจำกัดด้านการเคลื่อนไหว",
-    "Lyon is a four-night base for two focused city days and one regional excursion. Pair Vieux Lyon and Fourvière on one funicular route and Presqu’île with Croix-Rousse on a separate Métro A/C day. On the third full day choose TER to Pérouges or a booked Beaujolais pickup from Villefranche station; these are separate directions.": "ลียงเหมาะเป็นที่พักฐาน 4 คืน เพื่อเที่ยวในเมืองเต็มวันแบบเจาะจง 2 วันและออกเที่ยวภูมิภาคอีก 1 วัน จัด Vieux Lyon และ Fourvière ไว้ในแผนวันเดียวโดยใช้รถรางไต่เขา แล้วแยก Presqu’île กับ Croix-Rousse ไปอีกวันโดยใช้ Métro A/C ในวันที่สามซึ่งมีเวลาเที่ยวเต็มวัน ให้เลือกระหว่างนั่ง TER ไป Pérouges หรือใช้รถรับไป Beaujolais ที่จองไว้จากสถานี Villefranche ทั้งสองเส้นทางเป็นคนละทิศทาง",
     "The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky": "ยอดหอคอยหินของมหาวิหาร Notre-Dame de Fourvière ตัดกับท้องฟ้าสีฟ้าใส",
     "A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees": "สี่แยกถนนใน Croix-Rousse มีป้ายรถเมล์ TCL แผนผังเส้นทาง พื้นที่นั่งกลางแจ้งของคาเฟ่ และต้นไม้",
     "Vineyards and the village of Juliénas among the Beaujolais hills": "ไร่องุ่นและหมู่บ้าน Juliénas ท่ามกลางเนินเขาของ Beaujolais",
