@@ -30077,9 +30077,18 @@
       "reviewedTargetProblems": 0,
       "translationApproval": "passed: 52,257 required strings per locale, no stale entries",
       "missingRequiredChinaTranslationKeysPerLocale": 0,
-      "fullAudit": "pending after current-turn translation batches",
-      "build": "pending after full audit",
-      "translationAudit": "passed: 4 localized editions, 52,257 strings each, 0 stale entries"
+      "fullAudit": "passed: npm run audit after a fresh candidate build; i18n and all country/site audits passed",
+      "build": "passed: npm run build; 5,440 files, 4,577 HTML, 787 image assets; 4,560 sitemap routes verified",
+      "translationAudit": "passed: 4 localized editions, 52,257 strings each, 0 stale entries",
+      "chinaRouteDateRegression": "passed: 550 source/dist documents (55 routes × 5 editions × 2), 275 sitemap entries, visible dates match, datePublished absent",
+      "chinaCn14bRegression": "passed: Potala claims withdrawn from source and all five rendered editions; official-live-info caution, legacy-image retirement, original SVG provenance, Xinjiang image provenance, search and sitemap date guards consistent",
+      "siteAudit": "passed: 4,560 routes (912 per edition), 955 search records per language, 35 Hokkaido aliases, Thai Gyeongju spacing and 4,560 unique titles",
+      "nonChinaDistComparison": "passed: 4,290 non-China HTML outputs unchanged; no non-China search-record differences",
+      "auditRepairNotes": [
+        "Updated the China expansion stylesheet guard from stale v20260828-1 to the generator’s current v20261011-1.",
+        "Extended the visible-image-provenance guard to recognize explicit localized TripDistill original-schematic credits; no license status was changed.",
+        "Refreshed candidate dist before rerunning npm run audit so the source/dist route-date regression executed against fresh artifacts."
+      ]
     },
     "mainBaseline": {
       "commit": "ddea19cb80796325ed0a76087c39ad25e17f2b07",
@@ -30103,13 +30112,56 @@
           "candidateTarget": "หงโข่วและแม่น้ำซูโจว"
         }
       ],
-      "nonChinaSearchOutputDifferences": 0
+      "nonChinaSearchOutputDifferences": 0,
+      "phase": "pre-build selective localization comparison; candidate dist did not exist at that time",
+      "candidateDistGeneratedAtComparison": false,
+      "comparisonType": "selective localizeHtml against clean-main generated files, not a post-build dist comparison"
     },
     "newTranslationBatch": {
       "authoredCurrentTurn": true,
       "d130ReuseClaimed": false,
       "keysPerLocale": 38,
       "selfReview": "passed in this turn; not an independent human review"
+    },
+    "preBuildSelectiveComparisonNote": "The previously recorded 3,428-page selective localizeHtml comparison was run before the candidate dist existed. It is retained as a pre-build comparison only; it is not described as candidate build-output evidence.",
+    "postBuildCandidateDistComparison": {
+      "comparisonType": "Actual post-build dist-to-dist comparison",
+      "candidateSourceCommit": "79cb9eaea9a292e13804e7c40f7c720f9ae47a07 (content code under test; evidence-only report commit follows)",
+      "mainBaselineCommit": "ddea19cb80796325ed0a76087c39ad25e17f2b07",
+      "mainDistPath": "C:/Users/abc12/Documents/Codex/2026-10-12/task-3/qa-main-ddea19/dist",
+      "candidateDist": {
+        "files": 5440,
+        "htmlFiles": 4577,
+        "images": 787
+      },
+      "nonChinaHtmlPages": {
+        "candidate": 4290,
+        "main": 4290,
+        "changed": 0,
+        "missingInCandidate": 0
+      },
+      "sharedComponents": {
+        "compared": 15,
+        "changed": 1,
+        "change": [
+          {
+            "path": "th/components/sidebar.html",
+            "before": "หงโข่วและคลองซูโจว",
+            "after": "หงโข่วและแม่น้ำซูโจว",
+            "reason": "The shared sidebar translation corrects the destination name from canal to river."
+          }
+        ]
+      },
+      "nonChinaSearch": {
+        "recordsPerLanguage": 892,
+        "languages": 5,
+        "changedRecords": 0,
+        "changedFiles": 0
+      },
+      "nonChinaStaticAssetChanges": 0,
+      "candidateOnlyChinaAsset": "assets/images/china-lhasa-preparation.svg",
+      "mainOnlyFiles": 0,
+      "method": "Compared actual built files byte-for-byte and filtered search-index records by China route prefix. The five search-index JSON files differ as complete files because of China records; after filtering, all 892 non-China records in each language are equal."
     }
   },
   "d130SnapshotUnmatchedChinaKeys": [
