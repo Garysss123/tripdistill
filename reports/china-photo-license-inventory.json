@@ -9,7 +9,10 @@
     "usedPhotoSourcePagesNotIndependentlyChecked": 7,
     "usedProjectOriginalDiagramCount": 1,
     "unusedLegacyAssetCount": 1,
-    "usedPhotoRecordsWithSourceCreatorAndLicense": 55
+    "usedPhotoRecordsWithSourceCreatorAndLicense": 55,
+    "usedPhotoSourceDeclarationsChecked": 54,
+    "usedPhotoSourceDeclarationsPending": 1,
+    "usedPhotoPixelComparisonsPending": 7
   },
   "pendingPhotoSourceChecks": [
     {
@@ -21,7 +24,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Bund_at_night,_Shanghai,_Aug_10_2023.jpg",
       "creator": "A Chinese ID",
       "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "checked",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (A Chinese ID, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+      "pixelComparisonStatus": "pending"
     },
     {
       "assetPath": "/assets/images/china-shanghai-longhua.webp",
@@ -32,7 +39,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhua_Pagoda_approach_with_lanterns_Shanghai_2026-01-27_dllu.jpg",
       "creator": "Daniel Lu",
       "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "checked",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Lu, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+      "pixelComparisonStatus": "pending"
     },
     {
       "assetPath": "/assets/images/china-shanghai-museum.webp",
@@ -43,7 +54,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_on_People%27s_Square.jpg",
       "creator": "Alexey Yakovlev",
       "license": "CC0 1.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "checked",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Alexey Yakovlev, CC0 1.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+      "pixelComparisonStatus": "pending"
     },
     {
       "assetPath": "/assets/images/china-shanghai-suzhou-creek.webp",
@@ -54,7 +69,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suzhou_Creek_from_Waibaidu_Bridge,_Shanghai.jpg",
       "creator": "Daniel Case",
       "license": "CC BY-SA 3.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "checked",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Case; page offers GFDL or CC BY-SA 3.0, and the current credit selects CC BY-SA 3.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+      "pixelComparisonStatus": "pending"
     },
     {
       "assetPath": "/assets/images/china-shanghai-wukang.webp",
@@ -65,7 +84,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wukang_Mansion_(20191114161507).jpg",
       "creator": "N509FZ",
       "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "checked",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (N509FZ, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+      "pixelComparisonStatus": "pending"
     },
     {
       "assetPath": "/assets/images/china-shanghai-yuyuan.webp",
@@ -76,7 +99,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yu_Garden_Shanghai_November_2017_002.jpg",
       "creator": "King of Hearts",
       "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "checked",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (King of Hearts, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+      "pixelComparisonStatus": "pending"
     },
     {
       "assetPath": "/assets/images/china-shanghai-zhujiajiao.webp",
@@ -87,7 +114,11 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Qingpu_-_Zhujiajiao_IMG_8268_Caohe_canal.jpg",
       "creator": "Bjoertvedt",
       "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only"
+      "verificationStatus": "site_credit_or_metadata_only",
+      "sourceDeclarationStatus": "unavailable",
+      "sourceDeclarationCheckedAt": "2026-10-12",
+      "sourceDeclarationFinding": "The linked Commons file page could not be retrieved with the available official-source reader, so its page declaration is not confirmed in this follow-up.",
+      "pixelComparisonStatus": "pending"
     }
   ],
   "verificationMethod": {
@@ -95,7 +126,9 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 793 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 797 build image files."
+    "buildImageCountReconciliation": "The 793 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 797 build image files.",
+    "sourceDeclarationChecks": "Six Shanghai Commons file pages were read on 2026-10-12 and their visible creator/title/license declarations matched the visible site credits. This is uploader-provided page metadata only; it is distinct from local pixel matching and does not convert the older source_page_checked count into blanket legal clearance. The Zhujiajiao source page could not be retrieved.",
+    "localPixelComparisons": "48 of 55 used photographic assets have the prior source-to-local subject/pixel review recorded. The six Shanghai records with checked declarations and the Zhujiajiao record still have source-to-local pixel comparison pending."
   },
   "entries": [
     {
@@ -2315,7 +2348,11 @@
           ],
           "rawVisibleCredits": [
             "The Bund at night - A Chinese ID, CC BY-SA 4.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (A Chinese ID, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     },
@@ -2407,7 +2444,11 @@
           ],
           "rawVisibleCredits": [
             "Longhua Pagoda lantern approach - Daniel Lu, CC BY-SA 4.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Lu, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     },
@@ -2499,7 +2540,11 @@
           ],
           "rawVisibleCredits": [
             "Shanghai Museum - Alexey Yakovlev, CC0 1.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Alexey Yakovlev, CC0 1.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     },
@@ -2545,7 +2590,11 @@
           ],
           "rawVisibleCredits": [
             "Suzhou Creek from Waibaidu Bridge - Daniel Case, CC BY-SA 3.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Case; page offers GFDL or CC BY-SA 3.0, and the current credit selects CC BY-SA 3.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     },
@@ -2591,7 +2640,11 @@
           ],
           "rawVisibleCredits": [
             "Wukang Mansion - N509FZ, CC BY-SA 4.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (N509FZ, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     },
@@ -2637,7 +2690,11 @@
           ],
           "rawVisibleCredits": [
             "Yuyuan Garden - King of Hearts, CC BY-SA 4.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (King of Hearts, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     },
@@ -2683,7 +2740,11 @@
           ],
           "rawVisibleCredits": [
             "Zhujiajiao Caohe canal - Bjoertvedt, CC BY-SA 4.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "unavailable",
+          "sourceDeclarationCheckedAt": "2026-10-12",
+          "sourceDeclarationFinding": "The linked Commons file page could not be retrieved with the available official-source reader, so its page declaration is not confirmed in this follow-up.",
+          "pixelComparisonStatus": "pending"
         }
       ]
     }
