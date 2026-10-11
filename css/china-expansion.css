@@ -142,6 +142,17 @@
   backdrop-filter: blur(8px);
 }
 
+.exp-hero-diagram { height: auto; min-height: 0; overflow: visible; align-self: start; background: transparent; }
+.exp-hero-diagram::after { display: none; }
+.exp-hero-diagram img { display: block; width: 100%; height: auto; min-height: 0; aspect-ratio: 3 / 2; object-fit: contain; filter: none; }
+.exp-hero-diagram figcaption { position: static; max-width: none; margin-top: 12px; padding: 16px; color: var(--exp-ink); background: color-mix(in srgb, var(--exp-paper) 88%, white); font-size: .7rem; letter-spacing: .04em; }
+.lhasa-diagram-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; text-transform: none; }
+.lhasa-diagram-stages li { display: flex; gap: 9px; padding: 9px; border: 1px solid color-mix(in srgb, var(--exp-ink) 24%, transparent); background: color-mix(in srgb, var(--exp-paper) 70%, white); }
+.lhasa-diagram-stages li > span { flex: 0 0 auto; color: var(--exp-accent); font-weight: 800; }
+.lhasa-diagram-stages strong { display: block; font-size: .7rem; }
+.lhasa-diagram-stages p { margin: 4px 0 0; font-size: .66rem; line-height: 1.4; }
+.lhasa-diagram-note { margin: 10px 0 0; font-size: .62rem; line-height: 1.4; text-transform: none; }
+
 .exp-motif {
   grid-area: motif;
   display: grid;
@@ -385,6 +396,10 @@
   .exp-hero-media img,
   .exp-guide[data-visual="tulou-rings"] .exp-hero-media img,
   .exp-guide[data-visual="lake-horizon"] .exp-hero-media img { min-height:280px; }
+  .exp-hero-diagram { height:auto; min-height:0; max-height:none; }
+  .exp-hero-diagram img { min-height:0; height:auto; }
+  .exp-hero-diagram figcaption { padding:12px; }
+  .lhasa-diagram-stages { grid-template-columns:1fr; }
   .exp-hero-copy,
   .exp-guide[data-visual="teahouse-ledger"] .exp-hero-copy,
   .exp-guide[data-visual="lake-horizon"] .exp-hero-copy { padding:32px 24px 36px; margin:0; }

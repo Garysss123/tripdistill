@@ -63,6 +63,16 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg',
+    'Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this record does not claim independent worldwide rights clearance.',
+    '2026-10-11'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg',
+    'Lhasa legacy photo status checked on 2026-10-11. The Commons page has an unresolved deletion nomination opened 2026-06-04 citing no evidence that the image was released under the stated license. The page label is not treated as permission. The local asset is retained for provenance only and has no current live-page use.',
+    '2026-10-11'
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg',
     'Doi Inthanon photo review: exact Commons title, Nnthurber authorship, CC BY-SA 4.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and match wild Himalayan cherry blossoms framing a distant mountain ridge. Attribution, linked license, change notice and same-version share-alike terms are present.',
     '2026-10-08'
@@ -479,8 +489,8 @@ function collect(value, moduleName, seen, depth = 0) {
       moduleName,
       src: value.src,
       assetType: value.assetType ?? null,
-      sourceUrl: value.source ?? null,
-      sourceTitle: value.commonsTitle ?? value.label ?? null,
+      sourceUrl: value.source ?? value.sourceUrl ?? null,
+      sourceTitle: value.sourceTitle ?? value.commonsTitle ?? value.label ?? null,
       sourceDate: value.sourceDate ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
@@ -930,6 +940,10 @@ for (const assetPath of [
   '/assets/images/china-destination-huangshan.webp',
   '/assets/images/china-destination-qingdao.webp'
 ]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+for (const assetPath of [
+  '/assets/images/china-destination-xinjiang.webp',
+  '/assets/images/china-lhasa-preparation.svg'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
 const entries = [];
 const sourceConflicts = [];
 const unmatchedByAsset = [];
@@ -1028,7 +1042,13 @@ for (const fullPath of assetPaths) {
     rawVisibleCredits: creditMatch?.creditText ? [creditMatch.creditText] : []
   };
   const missingFields = ['sourceUrl', 'creator'].filter((field) => !row[field]);
-  if (row.assetType === 'original-planning-diagram' ? !rightsStatus : !license) missingFields.push(row.assetType === 'original-planning-diagram' ? 'rightsStatus' : 'license');
+  const intentionallyUnlicensedRetiredPhoto = row.assetType === 'photographic-raster'
+    && row.inventoryStatus === 'unused'
+    && Boolean(row.retirementNote && row.rightsStatus)
+    && !row.license;
+  if (row.assetType === 'original-planning-diagram' ? !rightsStatus : !license && !intentionallyUnlicensedRetiredPhoto) {
+    missingFields.push(row.assetType === 'original-planning-diagram' ? 'rightsStatus' : 'license');
+  }
   if (missingFields.length) unmatchedByAsset.push({ src, missing: missingFields, useCount: row.useCount, routes: row.routes });
   entries.push(row);
 }

@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-11T02:02:23.207Z",
+  "generatedAt": "2026-10-11T03:17:58.479Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 792,
-    "completeSourceCreatorLicenseRecords": 765,
-    "completeProjectOriginalRightsRecords": 3,
-    "licenseClaimsNotIndependentlyVerified": 582,
+    "assetFileCount": 793,
+    "completeSourceCreatorLicenseRecords": 764,
+    "completeProjectOriginalRightsRecords": 4,
+    "licenseClaimsNotIndependentlyVerified": 580,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "expectedBuildImageCount": 796,
-    "deduplicatedImageCount": 792,
+    "expectedBuildImageCount": 797,
+    "deduplicatedImageCount": 793,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
-    "unusedAssetCount": 26,
-    "assetsWithStructuredSourceRecords": 577,
-    "assetsWithMatchedEnglishCreditOnly": 100,
+    "unusedAssetCount": 27,
+    "assetsWithStructuredSourceRecords": 580,
+    "assetsWithMatchedEnglishCreditOnly": 98,
     "assetsWithExplicitEnglishCreditMatch": 91,
-    "assetsVisuallyReviewed": 101,
+    "assetsVisuallyReviewed": 103,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 183,
-    "metadataOrCreditOnly": 585,
-    "usedAssetsWithoutIndependentSourcePageCheck": 583,
+    "sourcePageChecked": 185,
+    "metadataOrCreditOnly": 584,
+    "usedAssetsWithoutIndependentSourcePageCheck": 582,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -39,7 +39,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 792 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 796 build image files."
+    "buildImageCountReconciliation": "The 793 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 797 build image files."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -7148,7 +7148,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this site adaptation is shared under the same CC BY-SA 4.0 license.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
@@ -7165,7 +7165,7 @@
             "Erhai Lake reflecting the snow-dusted Cangshan mountains near Dali"
           ],
           "rawVisibleCredits": [
-            "Erhai Lake and Cangshan, Dali — Kcx36, CC BY-SA 4.0."
+            "Erhai Lake and Cangshan, Dali — Kcx36, CC BY-SA 4.0; this site adaptation is shared under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -7418,7 +7418,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this site adaptation is shared under the same CC BY-SA 4.0 license.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
@@ -7435,7 +7435,7 @@
             "Huangguoshu Waterfall plunging through green forest in Guizhou"
           ],
           "rawVisibleCredits": [
-            "Huangguoshu Waterfall, Guizhou — Kcx36, CC BY-SA 4.0."
+            "Huangguoshu Waterfall, Guizhou — Kcx36, CC BY-SA 4.0; this site adaptation is shared under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -7676,37 +7676,30 @@
           "assetPath": "/assets/images/china-destination-lhasa.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg",
-          "sourceTitle": "Potala Palace, Lhasa",
+          "sourceTitle": "File:Potala Palace HQ.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Potala Palace, Lhasa",
-          "creator": "Lhasa Government",
-          "license": "CC BY-SA 4.0",
-          "rightsStatus": null,
-          "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "creditLabel": null,
+          "creator": "Lhasa Government (source-page credit; independently unverified)",
+          "license": null,
+          "rightsStatus": "Reuse permission unverified; a deletion nomination cites missing evidence for the stated license.",
+          "rightsStatusUrl": "https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg",
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from all live display and credit references on 2026-10-11. Commons deletion nomination opened 2026-06-04 cites no evidence that the image was released under the given license. The file is retained locally for provenance; the page license label is not treated as permission.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse permission is asserted; source-page creator attribution is retained as unverified provenance only.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "localSha1": "754b10b0d96795928b082be98de69f92c2b11b73",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 2,
-          "routes": [
-            "/china/",
-            "/china/lhasa-tibetan-plateau/"
-          ],
-          "altTexts": [
-            "Potala Palace rising above Lhasa against high mountain ridges"
-          ],
-          "rawVisibleCredits": [
-            "Potala Palace, Lhasa - Lhasa Government, CC BY-SA 4.0."
-          ]
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Lhasa legacy photo status checked on 2026-10-11. The Commons page has an unresolved deletion nomination opened 2026-06-04 citing no evidence that the image was released under the stated license. The page label is not treated as permission. The local asset is retained for provenance only and has no current live-page use.",
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -8175,8 +8168,8 @@
           "assetPath": "/assets/images/china-destination-xinjiang.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg",
-          "sourceTitle": "Id Kah Mosque, Kashgar",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Hëytgah Mosque, Kashi (20230923100109).jpg",
+          "sourcePhotoDate": "2023-09-23",
           "creditLabel": "Id Kah Mosque, Kashgar",
           "creator": "N509FZ",
           "license": "CC BY-SA 4.0",
@@ -8185,16 +8178,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "editHistory": "Resized to 960 × 640 WebP, display-cropped; adaptation shared under CC BY-SA 4.0.",
+          "localSha1": "178f849a979d7e2053877f189f2bae8cfa1b1495",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this record does not claim independent worldwide rights clearance.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8709,6 +8702,49 @@
           "rawVisibleCredits": [
             "Xixi National Wetland Park — shankar s., CC BY 2.0."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "76deb63dc81e07cdd4c182127d4f8bd37c6677598657e26bcea4657d75cfb2ad",
+      "assetPaths": [
+        "/assets/images/china-lhasa-preparation.svg"
+      ],
+      "byteLength": 2565,
+      "sourceRecords": [
+        {
+          "assetPath": "/assets/images/china-lhasa-preparation.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/china-lhasa-preparation.svg",
+          "sourceTitle": "Original Lhasa travel-preparation schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No separate reuse license is declared; the credit identifies authorship and asset provenance only.",
+          "editHistory": "Original TripDistill planning schematic. Illustrative, not to scale, and not a geographic or navigation map.",
+          "localSha1": "002a4aa4986d6691937a65c3b681f328919b6140",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 2,
+          "routes": [
+            "/china/",
+            "/china/lhasa-tibetan-plateau/"
+          ],
+          "altTexts": [
+            "Original illustrative sequence from access confirmation to arrival, one Lhasa base and an optional higher route; not to scale and not a geographic or navigation map"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -11057,7 +11093,7 @@
             "/france/lyon-rhone/vieux-lyon-fourviere/"
           ],
           "altTexts": [
-            "Vineyards and stone villages in the Beaujolais countryside"
+            "Vineyards and the village of Juliénas among the Beaujolais hills"
           ],
           "rawVisibleCredits": [
             "Juliénas.jpg — Sunappu-shashin, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -11104,7 +11140,7 @@
             "/france/lyon-rhone/vieux-lyon-fourviere/"
           ],
           "altTexts": [
-            "Lyon city streets between Presqu’île and Croix-Rousse hill"
+            "A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees"
           ],
           "rawVisibleCredits": [
             "Lyon croix rousse 01.jpg — Olivier Aumage, CC BY-SA 2.0 fr. Resized, display-cropped and converted to WebP; no other material edits."
@@ -11152,7 +11188,7 @@
             "/france/lyon-rhone/vieux-lyon-fourviere/"
           ],
           "altTexts": [
-            "Fourvière hill and Vieux Lyon above the Saône"
+            "The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky"
           ],
           "rawVisibleCredits": [
             "Basilique de Fourvière from Saone (Lyon).jpg — MickaëlG, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."

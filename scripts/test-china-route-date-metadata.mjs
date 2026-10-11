@@ -54,6 +54,8 @@ const routes = [
   ...[
     '/china/dunhuang-hexi-corridor/',
     '/china/sanya-hainan/',
+    '/china/lhasa-tibetan-plateau/',
+    '/china/xinjiang-corridor/',
   ].map((route) => ({ route, reviewDate: '2026-10-11' })),
 ];
 const editions = [

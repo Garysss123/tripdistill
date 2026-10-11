@@ -1,0 +1,16 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Urumqi, Turpan and Kashgar as separate bases, leave a full transfer day, verify document-specific access and reserve a workable departure chain.": "우루무치·투루판·카슈가르를 각각 거점으로 삼고 이동일을 하루 온전히 비우세요. 서류별 출입 요건을 확인하고 실행 가능한 출발편을 예약하세요.",
+    "identity checks": "신분 확인",
+    "corridor itinerary": "경로별 일정",
+    "Confirm document-specific permission before booking; plan one Lhasa base, a gentle arrival and a separate access and return check for any higher corridor.": "예약 전에 서류별 허가 요건을 확인하세요. 라싸 한곳을 거점으로 삼고 무리 없이 도착하도록 계획하며, 더 높은 지역으로 가려면 출입 허가와 귀환 계획을 별도로 확인하세요.",
+    "potala palace reservation": "포탈라궁 예약",
+    "high altitude": "고지대",
+    "tibetan plateau access": "티베트 고원 출입 허가"
+  }
+}

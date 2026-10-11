@@ -32,6 +32,9 @@ const unknownRoutes = batch.routes.filter((route) => !workByRoute.has(route));
 if (unknownRoutes.length) throw new Error(`Unknown routes: ${unknownRoutes.join(', ')}`);
 
 const records = batch.routes.map((route) => workByRoute.get(route));
+// Search-index review files are additive deltas to one shared synthetic route.
+// Their keys must all be current, while global i18n approval checks total coverage.
+const isSearchIndexDeltaBatch = batch.routes.length === 1 && batch.routes[0] === '/data/search-index.json';
 const isVietnamBatch = batch.routes.some((route) => route === '/vietnam/' || route.startsWith('/vietnam/')) || /^29[a-o]-vietnam/i.test(path.basename(batchPath));
 const isItalyBatch = batch.routes.some((route) => route === '/italy/' || route.startsWith('/italy/')) || /^46[a-v]-italy/i.test(path.basename(batchPath));
 const rawUnits = records.flatMap((record) => record.units);
@@ -503,7 +506,8 @@ for (const [source, target] of localEntries) {
 }
 
 const covered = new Set([...localKeys, ...siblingTranslations.keys()]);
-const missing = [...required].filter((source) => !covered.has(source));
+if (isSearchIndexDeltaBatch && !localEntries.length) problems.push('search-index delta batch must contain at least one translated source key');
+const missing = isSearchIndexDeltaBatch ? [] : [...required].filter((source) => !covered.has(source));
 if (missing.length) {
   for (const source of missing.slice(0, 25)) problems.push(`missing route source key: ${source}`);
   if (missing.length > 25) problems.push(`...and ${missing.length - 25} additional route source keys are missing`);
