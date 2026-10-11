@@ -444,16 +444,33 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
     band: 'scotland',
     family: 'clyde-grid-and-park-book',
     label: 'Clyde grid and park book',
-    tagline: 'Keep the centre, West End and loch branch as three distinct city systems.',
-    hubIntro: 'Glasgow’s centre, Merchant City and Clyde waterfront form one urban field; the West End has its own museum-and-park rhythm; Loch Lomond adds a rail-to-water branch beyond the city. A useful stay chooses one district per half-day and does not let Subway convenience erase walking and collection scale.',
-    stay: 'Three to five nights supports two Glasgow city days and one Clyde or Loch Lomond branch. Central station suits southern and western rail, Queen Street serves Edinburgh and northern routes, and the Subway helps within the city but does not replace every final walk.',
-    transfer: 'Glasgow Central and Queen Street are separate stations. Subway, buses and ScotRail use different fares and corridors. Loch Lomond stations serve distinct shores and boat points; choose the destination before boarding a generic northbound train.',
-    season: 'Rain is common and can be absorbed by Glasgow’s collections. Park, river and loch plans need wind and daylight judgment. Football, concerts and conferences can load transit and accommodation at any time.',
-    fallback: 'Use a complete museum and civic route in Glasgow when loch weather or rail fails. If one large museum is closed, keep the same district through galleries, parks and streets.',
+    reviewDateISO: '2026-10-11',
+    reviewDate: '11 October 2026',
+    tagline: 'Give the centre and West End two city days; add the loch only with a sound return.',
+    hubIntro: 'Glasgow works best as two different urban days: the central grid, Merchant City and a short Clyde reach, then the West End’s museum, park and university edges. Loch Lomond is a separate out-of-city branch, not another district on the Subway map. Start with a central rail base, match each day to its actual station or Subway exit, and add Balloch only when the date-specific return and any boat fit.',
+    stay: 'Three nights at a central base near the station named on your rail ticket gives an arrival window and two full days: the central/Merchant City route, then the West End. Add a fourth night for one full Balloch day without dropping a city district; a fifth is a weather or energy reserve, not a reason to change hotels. A West End base suits a museum-led stay, but first compare its local connection with the exact Glasgow rail terminal you will use.',
+    transfer: 'Glasgow Central and Glasgow Queen Street are separate termini with no same-platform interchange. Save the exact station on every ScotRail journey and do not read “Glasgow” as a single departure point. SPT Subway stations such as Buchanan Street, St Enoch, Kelvinhall, Hillhead and Kelvinbridge serve different edges; Subway, bus and rail tickets are separate products. For Balloch or a west-shore village, plan both outward and return legs by exact date before choosing a pier.',
+    season: 'Rain can turn the central day into a complete gallery or library visit, but Kelvingrove Park, the Clyde path and the loch need a current wind and surface check. Daylight shortens the safe margin for any shore or hill walk. Football, concerts, university events and conferences can tighten rooms and transit, so check the actual calendar. For limited walking, choose one interior and one nearby district edge instead of joining all three systems on foot.',
+    fallback: 'Keep the first two days in Glasgow. In heavy rain, replace the river section with GoMA or another confirmed Glasgow Life venue; for a slower day, choose one museum and return from the same Subway or rail edge. If Balloch rail, pier access or a sailing does not line up, use that day as a second city visit. Do not substitute Luss or a northern shore without a verified road connection and return.',
     sources: [
       ['https://peoplemakeglasgow.com/', 'People Make Glasgow — official destination guide'],
-      ['https://www.spt.co.uk/', 'Strathclyde Partnership for Transport — official network information'],
-      ['https://www.scotrail.co.uk/', 'ScotRail — rail planning and service updates']
+      ['https://www.spt.co.uk/travel-with-spt/subway/maps-stations/', 'SPT — Glasgow Subway maps and station locations'],
+      ['https://www.spt.co.uk/travel-with-spt/accessibility-mobility/', 'SPT — Subway and bus station access guides'],
+      ['https://www.scotrail.co.uk/plan-your-journey', 'ScotRail — date-specific journey, disruption and station planning'],
+      ['https://www.glasgowlife.org.uk/museums', 'Glasgow Life Museums — visitor information and current venues'],
+      ['https://www.lochlomond-trossachs.org/things-to-do/loch-cruises/', 'Loch Lomond & The Trossachs National Park — cruise departure points and season checks'],
+      ['https://www.metoffice.gov.uk/', 'Met Office — official forecasts and weather warnings']
+    ],
+    itinerary: [
+      ['Arrival · choose one rail base', 'Stay near Glasgow Central or Queen Street according to the station on your onward ticket. Use the arrival window for a short central orientation and leave luggage at the hotel; do not add the West End or loch to a transfer day.'],
+      ['City day · grid, Merchant City and Clyde', 'Begin at the rail terminus you will use again. Link George Square and the central grid to one GoMA or Merchant City stop, then make a single short descent to the Broomielaw or Glasgow Bridge reach. Return to the same terminal; save the cathedral and Necropolis hill for another plan.'],
+      ['City day · West End, one main anchor', 'Use the Subway station that serves the chosen door: Kelvinhall for Kelvingrove from the Dumbarton Road side, Kelvinbridge for the park approach, or Hillhead for the university and Byres Road. Give one museum the main block, then add either a park crossing or the neighbourhood, not both at full length.'],
+      ['Optional full day · Balloch (add a night)', 'Check the dated ScotRail route to Balloch and its Glasgow return, then choose one exact pier or a land-only shore visit. Book a named Sweeney’s cruise only after the departure point and last useful train both work. Keep a fifth night as a weather reserve; Luss is a road-based alternative, not a rail continuation from Balloch.']
+    ],
+    faq: [
+      ['How many nights are enough for Glasgow and Loch Lomond?', 'Three nights gives an arrival window and two full Glasgow days for the central grid/Clyde and the West End. Add a fourth night for one Balloch day; keep a fifth only if you want a weather reserve or a slower pace.'],
+      ['Where should I stay for the train?', 'For a short visit, compare a central hotel near the Glasgow Central or Queen Street station printed on your onward ticket. A West End base works when museums and the university dominate, but it adds a local trip before intercity departures.'],
+      ['Should I go to Loch Lomond if the return or boat is uncertain?', 'No. Keep the city day in Glasgow until the dated train return and any exact cruise pier and sailing are confirmed. Balloch is the simpler no-car gateway; Luss needs a separately checked road connection.']
     ],
     guides: [
       g({
@@ -463,33 +480,47 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         layout: 'merchant-grid-river-drop',
         imageQuery: 'Glasgow city centre Clyde architecture',
         imageAlt: 'Glasgow city architecture near the River Clyde',
-        purpose: 'Choose civic architecture, Merchant City or the Clyde as the main line and use one downhill movement to the river, avoiding repeated crossings between Central and Queen Street.',
-        summary: 'Start at the station serving the first district, complete one civic or collection anchor, descend through Merchant City or the grid, and finish along a bounded Clyde section.',
+        reviewDateISO: '2026-10-11',
+        reviewDate: '11 October 2026',
+        showHubOperatingBoard: false,
+        purpose: 'Build one central day around the grid, Merchant City and a short Clyde reach, with the correct rail terminal or Subway station as both entry and return. Keep the uphill Cathedral and Necropolis branch separate.',
+        summary: 'Enter from the Glasgow rail station printed on your ticket, connect George Square and one GoMA or Merchant City stop, descend once to the Broomielaw or Glasgow Bridge, then return through the same station edge.',
         choices: [
-          ['Civic centre and Mackintosh', 'Use the central grid, library or selected architecture interior as the main story. It is compact but depends on current building access.'],
-          ['Merchant City and cathedral edge', 'Move east through Merchant City toward the cathedral and Necropolis. This adds history and elevation while leaving the Clyde shorter.'],
-          ['Clyde and contemporary city', 'Prioritize the river, bridges and one waterfront venue. It reveals regeneration but can require longer walking or transit.']
+          ['Central grid and GoMA', 'Start near George Square, use GoMA as the indoor anchor, then cross Royal Exchange Square toward Merchant City. Glasgow Life lists free general entry; check its current event page for any ticketed exhibition.'],
+          ['Merchant City and the cathedral side', 'Follow Trongate east only if Glasgow Cathedral and the Necropolis are the day’s purpose. The route climbs and uses more energy, so leave the Clyde reach for another day.'],
+          ['Merchant City and the Clyde', 'Keep the route south toward St Enoch and one Broomielaw or Glasgow Bridge reach. This makes a shorter river day and leaves the cathedral hill out.']
         ],
-        access: 'Central and Queen Street sit on different sides of the core; the Clyde is downhill. Choose the arrival station and final bridge or venue before walking. Some celebrated architecture remains under restoration or controlled access, so verify the exact interior.',
-        tradeoff: 'The cathedral edge and western Clyde venues point in opposite directions. Choosing one sacrifices the other but creates a readable city day instead of a transit zig-zag.',
+        access: 'Glasgow Central and Queen Street are separate termini; use the exact one on your ScotRail journey and do not plan a same-platform transfer between them. GoMA is near George Square and within walking range of both rail stations; Buchanan Street is its nearest Subway stop. St Enoch serves the lower centre and Clyde side. Check the SPT station map and access guide before relying on a Subway exit, and plan the return to the original rail terminal.',
+        tradeoff: 'The Cathedral and Necropolis route climbs northeast while the Clyde reach runs south and west. Choose one branch. A 4–6 hour editorial window can hold a central interior, Merchant City and a short river section; it does not include a full cathedral visit, Necropolis climb and West End transfer.',
         stages: [
-          ['Enter the correct grid', 'Leave Central or Queen Street toward the selected civic anchor, noting the final station rather than defaulting to the arrival point.'],
-          ['Complete one city argument', 'Use Merchant City, a museum or architecture stop as a bounded block. Confirm current building access before relying on an interior.'],
-          ['Descend once to river or east', 'Move toward the Clyde or cathedral precinct, not both. Use one bridge or hill sequence with a named endpoint.'],
-          ['Exit on rail or Subway', 'Finish near the matching station, Subway or bus. Event crowds can lengthen the apparent short city connection.']
+          ['Start from the ticketed terminal', 'Use Glasgow Central or Queen Street as shown on your rail ticket. If you arrive with luggage, check into a central base before the walk instead of carrying bags between stations.'],
+          ['Read the central grid once', 'From George Square, choose GoMA and its Royal Exchange Square address or continue through Merchant City. Confirm the exact Glasgow Life opening and exhibition status before making a gallery the day’s fixed anchor.'],
+          ['Choose Clyde or the east hill', 'For the Clyde option, descend once to St Enoch and a bounded Broomielaw or Glasgow Bridge stretch. For the east option, replace the river with the Cathedral and Necropolis; do not try to join both branches.'],
+          ['Return to the same rail edge', 'Finish at the Glasgow station on your onward ticket. Buchanan Street and St Enoch are distinct Subway stops; check the current SPT map and the final train before choosing the last leg.']
         ],
-        fallback: 'If a building is closed, use the Gallery of Modern Art, Mitchell Library or public architecture and continue the same grid. In poor river weather, keep the lower city section short and move to an indoor collection.',
+        fallback: 'For rain, make GoMA the central indoor anchor and shorten the Clyde reach; the Mitchell Library is a second indoor option only when its current visitor hours suit. If a rail or Subway disruption breaks the return, stay in the central grid and follow the live operator notice instead of adding another district.',
         watch: [
-          ['Famous architecture may not be open', 'Restoration, fire recovery and event use affect access. Confirm the specific building rather than planning from an old guide.'],
-          ['The cathedral side climbs', 'Merchant City to cathedral and Necropolis adds elevation. Preserve energy or use a bus.'],
-          ['Central and Queen Street require a street transfer', 'There is no same-platform interchange. Include the walk and station entrances in onward plans.']
+          ['A city name is not a rail terminal', 'Central and Queen Street are separate stations. Compare the station on your onward ticket with your hotel, arrival route and exact final walk.'],
+          ['The east branch has a real climb', 'Merchant City toward the Cathedral and Necropolis gains height. If walking capacity is limited, keep to the grid and river edge or verify a current bus/taxi approach first.'],
+          ['Interiors and exhibitions change', 'GoMA general entry is free, but particular exhibitions or events may have their own ticket. Use Glasgow Life’s current venue page rather than assuming an old opening or access note.']
         ],
-        duration: 'Allow six to eight hours for one civic anchor and one east or river branch. A central grid route can fit four to five hours.',
-        combine: 'Combine Merchant City with cathedral edge or the central grid with the Clyde. Keep the West End and Loch Lomond for separate days.',
-        verify: 'Check Glasgow Life venue access, ScotRail and Subway status, river weather and the event calendar before departure.',
+        duration: 'Allow 4–6 hours as an editorial route window for one central interior, Merchant City and a short Clyde reach. Add the cathedral and Necropolis only by replacing the river section, not by extending the day on foot.',
+        combine: 'Combine GoMA or one central interior with Merchant City and the lower Clyde. Keep the West End and Balloch for separate full days.',
+        verify: 'Check the exact ScotRail terminal and return, the SPT station map and access guide, Glasgow Life venue or ticket status, and river conditions before departure.',
+        faq: [
+          ['Which Glasgow station should I use?', 'Use the one printed on your ScotRail journey: Glasgow Central and Queen Street are separate stations. Check the exact terminal for both arrival and onward departure instead of treating them as an interchangeable city-centre stop.'],
+          ['Can I combine Merchant City, the Cathedral and the Clyde?', 'You can pair Merchant City with either the uphill Cathedral/Necropolis branch or a shorter Clyde reach. Both branches in one day create a long cross-city walk and leave little room for the return.'],
+          ['What works in rain or with limited walking?', 'Choose one confirmed indoor venue such as GoMA, shorten the river walk, and return through the same station edge. Check the SPT access guide before relying on Subway stairs or a particular exit.']
+        ],
         sources: [
-          ['https://www.glasgowlife.org.uk/museums', 'Glasgow Life Museums — official visitor information'],
-          ['https://www.spt.co.uk/travel-with-spt/subway/', 'SPT — Glasgow Subway information']
+          ['https://www.glasgowlife.org.uk/museums/venues/gallery-of-modern-art-goma', 'Glasgow Life — GoMA admission, current exhibitions and visitor information'],
+          ['https://www.glasgowlife.org.uk/libraries/venues/the-mitchell-library', 'Glasgow Life — Mitchell Library visitor and access information'],
+          ['https://www.historicenvironment.scot/visit/all/glasgow-cathedral/', 'Historic Environment Scotland — Glasgow Cathedral visitor information'],
+          ['https://www.glasgownecropolis.org/', 'Friends of Glasgow Necropolis — current visitor and tour information'],
+          ['https://www.spt.co.uk/travel-with-spt/subway/maps-stations/', 'SPT — Subway map and station locations'],
+          ['https://www.spt.co.uk/travel-with-spt/accessibility-mobility/', 'SPT — Subway and bus station access guides'],
+          ['https://www.scotrail.co.uk/plan-your-journey', 'ScotRail — date-specific rail route and disruption checks'],
+          ['https://www.travelinescotland.com/', 'Traveline Scotland — local public-transport journey planning']
         ]
       }),
       g({
@@ -499,33 +530,46 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         layout: 'sandstone-park-cabinet',
         imageQuery: 'Kelvingrove Art Gallery Glasgow exterior',
         imageAlt: 'Kelvingrove Art Gallery and Museum in Glasgow',
-        purpose: 'Choose Kelvingrove, the Hunterian or the Botanic Gardens as the main anchor and connect park, university and neighbourhood without treating every free collection as a compulsory stop.',
-        summary: 'Arrive by Subway or bus, complete one museum, cross Kelvingrove Park or the university once, and finish around Byres Road or the Botanic Gardens.',
+        reviewDateISO: '2026-10-11',
+        reviewDate: '11 October 2026',
+        showHubOperatingBoard: false,
+        purpose: 'Choose one West End door and one main anchor—Kelvingrove, a named Hunterian venue or the gardens—then plan the park crossing and Subway return around your walking capacity.',
+        summary: 'Use Kelvinhall for the Dumbarton Road approach to Kelvingrove, Kelvinbridge for the park approach, or Hillhead for the university and Byres Road. Visit one collection, add one outdoor segment only if conditions and energy allow, and return from a named station.',
         choices: [
-          ['Kelvingrove depth', 'Give the large civic collection the central block and use the park and university as exterior context. This is the strongest all-weather choice.'],
-          ['University and Hunterian', 'Prioritize campus architecture and one Hunterian venue. It offers focused academic collections but requires checking which building is open.'],
-          ['Park, lanes and gardens', 'Use Kelvingrove Park, the West End streets and Botanic Gardens with short interiors. It suits fair weather and repeat visitors.']
+          ['Kelvingrove as the indoor anchor', 'Use the museum’s galleries and café as the main block, then choose a short park or university exterior. General admission is free; the official page lists lifts to public areas and current restoration work, so check today’s venue notice.'],
+          ['University and one Hunterian venue', 'Start at Hillhead for Byres Road and the university edge, then choose the Hunterian Museum or Art Gallery by exact building and current opening notice. They are separate venues, not one campus doorway.'],
+          ['Park and neighbourhood', 'Choose Kelvingrove Park, Byres Road and the Botanic Gardens as the day’s main line, with one short indoor stop. This suits a clear, dry window; it leaves a deep museum visit for another day.']
         ],
-        access: 'Kelvinhall, Hillhead and Kelvinbridge Subway stations serve different edges. Kelvingrove Museum is not directly beside a Subway exit, and Hunterian collections occupy separate university buildings. Choose the first door and final station before crossing the park.',
-        tradeoff: 'Kelvingrove, multiple Hunterian venues and the Botanic Gardens exceed a useful day at depth. Choosing one collection sacrifices another but leaves room to understand the West End streets and park.',
+        access: 'SPT lists Kelvinhall beside Kelvingrove Museum; ScotRail describes a different approach from Kelvinbridge through Kelvingrove Park, while Hillhead serves Byres Road and the University of Glasgow. These are not interchangeable exits. Kelvingrove’s public floors have lift access, but the station approach and park slopes remain separate mobility decisions; read the exact SPT station guide and venue access notes before choosing a route.',
+        tradeoff: 'A full Kelvingrove visit already occupies a substantial indoor block. Adding both Hunterian buildings, a long park crossing and the Botanic Gardens turns the West End into repeated slopes and transfers. Choose one collection and one nearby outdoor line; leave the rest for another visit.',
         stages: [
-          ['Arrive at the useful Subway edge', 'Use Kelvinhall for Kelvingrove or Hillhead for university and Byres Road, recording the final station before entering the park.'],
-          ['Complete one collection', 'Give Kelvingrove or a named Hunterian building a bounded visit. Check gallery and building status rather than following a general campus pin.'],
-          ['Cross park or campus once', 'Move through Kelvingrove Park and university or along Byres Road toward the gardens. Avoid repeating the same slope.'],
-          ['Finish near a direct station', 'End at Hillhead, Kelvinbridge or Kelvinhall according to the branch, allowing for event crowds and park closing conditions.']
+          ['Choose the door before the Subway', 'For Kelvingrove, compare Kelvinhall with the Kelvinbridge park approach; for university, Hunterian and Byres Road, choose Hillhead. Check the SPT map and station access guide rather than assuming the shortest line is step-free.'],
+          ['Give one collection a real block', 'Choose Kelvingrove, the Hunterian Museum or the Hunterian Art Gallery. Confirm that exact venue’s opening and any ticketed exhibition on its official page before leaving the city centre.'],
+          ['Add one park or street segment', 'If weather and walking capacity are good, cross Kelvingrove Park once or continue along Byres Road toward the Botanic Gardens. In heavy rain, stay with the indoor anchor and skip the park crossing.'],
+          ['Return from the planned edge', 'Finish at the station chosen for the route and check its current steps/escalators and service status. If the park slope or Subway access does not fit your needs, arrange a bus or taxi to the selected venue and return from the same door.']
         ],
-        fallback: 'In heavy rain, use Kelvingrove and a single Hunterian venue with Subway between districts. If one museum closes, retain the university architecture and another verified collection in the same West End.',
+        fallback: 'In heavy rain, keep the day inside Kelvingrove or one confirmed Hunterian venue and omit the park. If a venue closes, check another Glasgow Life museum before crossing town; when walking is limited, use one indoor destination with a prechecked station-access or door-to-door ride instead of stitching several sites together.',
         watch: [
-          ['Hunterian is not one doorway', 'Museum, art gallery and collections occupy different locations and opening patterns. Confirm the exact venue.'],
-          ['Park slopes connect different levels', 'The museum, university and river are not flat neighbors. Use the Subway strategically when walking capacity is limited.'],
-          ['Free museums still require time', 'Large collections create fatigue even without ticket queues. Preselect themes and stop before the second museum becomes filler.']
+          ['Three station names mean three approaches', 'Kelvinhall, Kelvinbridge and Hillhead serve different doors. Pick the museum or street first, then check the exact station access guide and return.'],
+          ['The park is a sloped connection', 'Kelvingrove’s public galleries have lifts, but the walk from Subway and the park-to-university ground are separate. If that slope is not suitable, skip the crossing.'],
+          ['Free entry is not an all-day guarantee', 'Check the exact gallery, temporary exhibition and current access notice. A second collection is optional; fatigue and closing time still apply.']
         ],
-        duration: 'Allow six to eight hours for one museum, park and university or gardens. Kelvingrove alone plus a meal can fill four hours.',
-        combine: 'Combine Kelvingrove with the university or Botanic Gardens, not both at full depth. Keep central Glasgow and Loch Lomond for other days.',
-        verify: 'Check Kelvingrove and the exact Hunterian venue, Subway status, park conditions and any university event before travel.',
+        duration: 'Allow 4–6 hours as an editorial estimate for one museum, a meal and one nearby park or street segment. A second full collection should replace, not extend, that plan.',
+        combine: 'Pair one museum with either the university/Byres Road edge or a short garden visit. Keep central Glasgow and Loch Lomond on separate days.',
+        verify: 'Check the exact venue’s current opening, exhibition or booking notice, Kelvingrove’s access and restoration update, SPT station access and live service status, and the park forecast.',
+        faq: [
+          ['Which Subway stop should I use for Kelvingrove?', 'Kelvinhall is listed near Kelvingrove Museum and suits the Dumbarton Road approach. Kelvinbridge gives the park approach described by ScotRail. Compare the station guide and your walking needs before selecting one.'],
+          ['Can I cover Kelvingrove and the Hunterian in one day?', 'Choose one museum as the anchor. The Hunterian Museum and Art Gallery are separate venues with their own notices, and Kelvingrove’s large galleries can already fill a focused visit. Add the second collection only by dropping the park or gardens.'],
+          ['Do I need to book?', 'Glasgow Life lists free general entry at Kelvingrove, but exhibitions or events can have their own ticket rules. The Hunterian also posts venue notices and events; use the official page for the exact building and date.']
+        ],
         sources: [
           ['https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum', 'Glasgow Life — Kelvingrove visitor information'],
-          ['https://www.gla.ac.uk/hunterian/visit/', 'The Hunterian — official visit information']
+          ['https://www.gla.ac.uk/hunterian/visit/', 'The Hunterian — venue notices, events and access information'],
+          ['https://www.scotrail.co.uk/kelvingrove-art-gallery', 'ScotRail — routes to Kelvingrove from Kelvinbridge or Kelvinhall'],
+          ['https://www.glasgow.gov.uk/botanicgardens', 'Glasgow City Council — Botanic Gardens visitor information'],
+          ['https://www.spt.co.uk/travel-with-spt/subway/maps-stations/', 'SPT — Subway stations and West End map'],
+          ['https://www.spt.co.uk/travel-with-spt/accessibility-mobility/', 'SPT — station-specific access guides'],
+          ['https://www.travelinescotland.com/', 'Traveline Scotland — bus and public-transport planning']
         ]
       }),
       g({
@@ -535,33 +579,45 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         layout: 'loch-gateway-switchboard',
         imageQuery: 'Loch Lomond Balloch Scotland view',
         imageAlt: 'Loch Lomond and surrounding hills in Scotland',
-        purpose: 'Choose Balloch, Luss or another named Loch Lomond gateway and match its rail, bus or boat connection, rather than treating the whole loch as one easy excursion from Glasgow.',
-        summary: 'Leave Glasgow for one gateway, assess water and hill weather, complete one shore, boat or lower-walk plan, and return before branch frequency narrows.',
+        reviewDateISO: '2026-10-11',
+        reviewDate: '11 October 2026',
+        showHubOperatingBoard: false,
+        purpose: 'Decide whether Balloch’s rail-and-shore day or a road-based west-shore village actually fits your date; then match the exact pier, booking and Glasgow return before leaving the city.',
+        summary: 'Plan Glasgow–Balloch and its return in ScotRail’s dated journey planner, then choose one land-only shore visit or one prebooked cruise. Luss and the northern piers need separate road access; a Balloch train does not reach them.',
         choices: [
-          ['Balloch rail gateway', 'Use the direct rail line, shore, park and local visitor facilities. It is the simplest car-free choice and strongest poor-weather fallback.'],
-          ['Luss village and west shore', 'Use a verified bus or tour for a smaller village-and-shore day. It offers classic views but adds road dependence.'],
-          ['Boat or lower hill route', 'Book one exact sailing or follow one signed low route from a named gateway. This adds perspective but is most weather-sensitive.']
+          ['Balloch by rail, land only', 'Use the Balloch station and a short village or shore visit. This is the simplest independent, no-car option when no cruise fits the return.'],
+          ['Balloch plus one Sweeney’s cruise', 'Choose either the River Leven departure across from Balloch Railway Station or the separate pontoon at Loch Lomond Shores. Book the exact product and pier with Sweeney’s; they are not one interchangeable boarding point.'],
+          ['Luss or another west-shore pier', 'Treat Luss, Tarbet and northern villages as a road-based branch. Use a date-specific bus, booked tour or car only after the outward and return legs and exact boat pier are confirmed; this is not a continuation of the Balloch rail route.']
         ],
-        access: 'Balloch has a rail station; other loch communities use buses, boats, tours or cars. A train to the loch does not put every cruise or trail at the platform. Confirm the pier, stop and final return before leaving Glasgow.',
-        tradeoff: 'A loch cruise, village visit and significant hill walk do not fit one resilient day. Choosing the boat sacrifices walking flexibility; choosing Luss gives up the rail simplicity of Balloch.',
+        access: 'The National Park Authority places one Balloch cruise departure on the River Leven just across from Balloch Railway Station and another at the Loch Lomond Shores pontoon. The operator’s page must match your chosen sailing and boarding point. Luss and Tarbet cruises leave other villages, so check a separate bus or tour and the final return. Vessel boarding, toilets, shore surfaces and the walk between station, pier and stop vary; if a specific mobility need is not answered in the operator’s access information, contact them before paying or choose a land-only Balloch visit.',
+        tradeoff: 'Balloch keeps the rail connection simple but does not put you on a northern shore or every cruise. A booked boat adds a second schedule and a fixed pier; a Luss day adds road access and may need a tour or car. Choose one gateway and one water or land activity, not a cruise, village transfer and hill walk in one day.',
         stages: [
-          ['Commit to one gateway', 'Board the Balloch train or verified bus or tour and save the final return. Do not change shores mid-day without a booked connection.'],
-          ['Read the loch conditions', 'At the shore, assess wind, visibility and service status before buying or starting the second transport product.'],
-          ['Complete one water or land line', 'Take the exact sailing, village circuit or signed lower walk with a firm turnaround. Avoid an unplanned high route.'],
-          ['Return to Glasgow with margin', 'Reach the station or stop early enough for a missed service, then allow the city interchange between Queen Street and the final accommodation.']
+          ['Lock the Glasgow–Balloch return', 'Set the exact travel date in ScotRail’s journey planner, record both the outbound and return Glasgow station, and leave a missed-service margin. If the dated return does not work, keep this as a city day.'],
+          ['Match the pier to the booking', 'Choose the River Leven departure across from Balloch Railway Station or the Lomond Shores pontoon, then use Sweeney’s own product page and ticket flow. Do not assume a cruise leaves from the train platform or the other pier.'],
+          ['Keep one shore or water plan', 'Check the operator’s current sailing notice and local wind/visibility. For a land day, stay on the lower Balloch shore and turn back when the surface or weather is poor; do not improvise a high route.'],
+          ['Return through the same gateway', 'Reach the pier or station early enough for the exact booked boat and train. For Luss or another west-shore start, verify the road connection and return before booking; do not rely on an unconfirmed late bus.']
         ],
-        fallback: 'If boats or hill weather fail, use Balloch Castle Country Park, village services and lower shore. If branch rail is disrupted before departure, keep the day in Glasgow’s West End.',
+        fallback: 'If wind, cloud or a seasonal timetable removes the cruise, keep a short Balloch village and lower-shore visit only if rail and ground access still work. If station access, the return or mobility needs cannot be verified, stay in Glasgow and use the West End museum day. Do not switch to Luss without a checked road plan.',
         watch: [
-          ['Loch Lomond has many gateways', 'Balloch, Luss and eastern or northern shores are not interchangeable. Choose from transport, not only scenery.'],
-          ['Cruise timetables are separate', 'Sailings and land transport may not connect automatically. Confirm pier and final boat before boarding the train.'],
-          ['Mountain weather can hide the view', 'Low cloud and wind affect hill routes and boats. A lower shore day is a complete alternative.']
+          ['A train serves Balloch, not every shore', 'The Park Authority lists Balloch, Luss, Tarbet and other departure villages separately. Choose the rail-connected shore unless a different road transfer is confirmed both ways.'],
+          ['Two Balloch piers, separate bookings', 'The River Leven and Lomond Shores departures are different locations. Match the operator, boat product, boarding point and return train before buying.'],
+          ['Boat access is vessel-specific', 'The sources do not establish wheelchair access for every sailing or pier. Ask the exact operator about boarding, toilets, shore surface and assistance; if unclear, choose the land-only route or Glasgow fallback.']
         ],
-        duration: 'Allow a full day from Glasgow for one loch gateway. Balloch can fit five to six hours; a boat or Luss branch needs the wider window.',
-        combine: 'Combine Balloch with one cruise or country-park route. Keep central and West End Glasgow for separate days.',
-        verify: 'Check ScotRail or bus service, national park notices, the exact boat operator, detailed weather and daylight before departure.',
+        duration: 'Reserve a full day from Glasgow for one gateway. This is an editorial allowance for the rail or road leg, the shore or exact sailing, and a protected return; no fixed timetable is promised here.',
+        combine: 'Combine Balloch with either one Sweeney’s cruise or a lower-shore visit, not both plus a village transfer. Keep central Glasgow and the West End for separate days.',
+        verify: 'Check the dated ScotRail or Traveline route and return, National Park visitor notices, the exact cruise operator and boarding pier, current weather, daylight and the vessel’s access information.',
+        faq: [
+          ['Can I take the Glasgow train straight to a Loch Lomond cruise?', 'The train reaches Balloch, not every pier. The Park Authority lists separate departures on the River Leven across from the railway station and at Loch Lomond Shores; book the exact Sweeney’s product and location.'],
+          ['Is Luss an easy extension from Balloch?', 'No. Luss is a separate west-shore village with its own road access and cruise departure. Use a dated bus, booked tour or car only when its return and the exact pier are confirmed.'],
+          ['What if weather or limited mobility makes the boat unsuitable?', 'Skip the sailing or high walk. Use a checked lower Balloch shore plan only if the ground route and return fit your needs; otherwise keep the day in Glasgow. Contact the exact operator before booking if vessel or pier access is unclear.']
+        ],
         sources: [
-          ['https://www.lochlomond-trossachs.org/things-to-do/', 'Loch Lomond & The Trossachs National Park — official visitor information'],
-          ['https://www.scotrail.co.uk/', 'ScotRail — Balloch line service information']
+          ['https://www.lochlomond-trossachs.org/things-to-do/loch-cruises/', 'Loch Lomond & The Trossachs National Park — departure villages, Balloch piers and seasonal guidance'],
+          ['https://www.sweeneyscruiseco.com/cruises/', 'Sweeney’s Cruise Company — Balloch cruise products and official booking'],
+          ['https://www.cruiselochlomond.co.uk/timetable', 'Cruise Loch Lomond — date-specific west-shore sailings and booking'],
+          ['https://www.scotrail.co.uk/plan-your-journey', 'ScotRail — dated journey, station and return planning'],
+          ['https://www.travelinescotland.com/', 'Traveline Scotland — date-specific bus journey planning'],
+          ['https://www.metoffice.gov.uk/', 'Met Office — official forecasts and weather warnings']
         ]
       })
     ]
