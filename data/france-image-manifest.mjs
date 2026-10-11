@@ -335,7 +335,7 @@ export const franceImageManifest = {
   },
   "bordeaux-gironde/bordeaux-river-wine-city": {
     "src": "/assets/images/france-bordeaux-gironde-bordeaux-river-wine-city.webp",
-    "alt": "Place de la Bourse reflected beside the Garonne in Bordeaux",
+    "alt": "Place de la Bourse and its facade lights reflected in the Garonne at night",
     "source": "https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_avec_la_Garonne-2015a.JPG",
     "label": "Bordeaux place de la bourse avec la Garonne-2015a.JPG",
     "creator": "Nataloche",
@@ -345,7 +345,7 @@ export const franceImageManifest = {
   },
   "bordeaux-gironde/saint-emilion-vineyards": {
     "src": "/assets/images/france-bordeaux-gironde-saint-emilion-vineyards.webp",
-    "alt": "Saint-Émilion’s stone village surrounded by vineyards",
+    "alt": "Saint-Émilion’s main square and village seen from the monolithic church",
     "source": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg",
     "label": "Saint-Emilion 33 Place 2013.jpg",
     "creator": "JLPC",
@@ -355,7 +355,7 @@ export const franceImageManifest = {
   },
   "bordeaux-gironde/arcachon-dune-pilat": {
     "src": "/assets/images/france-bordeaux-gironde-arcachon-dune-pilat.webp",
-    "alt": "Dune du Pilat between Atlantic water and pine forest",
+    "alt": "Low sun above open water in Arcachon Bay",
     "source": "https://commons.wikimedia.org/wiki/File:Sunrise_Cap_Ferret_Banc_du_Toulinguet_-_Arcachon_-_Oc%C3%A9an_Atlantique_-_Picture_Image_Photography_-_Sunset_-_Coucher_de_soleil_-_Dune_du_pilat_pyla_-_Banc_d%27arguin_water_eau_vagues_waves_beach_plage_sky_colors_red_yellow_(14501089751).jpg",
     "label": "Sunrise Cap Ferret Banc du Toulinguet - Arcachon - Océan Atlantique - Picture Image Photography - Sunset - Coucher de soleil - Dune du pilat pyla - Banc d'arguin water eau vagues waves beach plage sky colors red yellow (14501089751).jpg",
     "creator": "Grand Parc - Bordeaux, France from France",

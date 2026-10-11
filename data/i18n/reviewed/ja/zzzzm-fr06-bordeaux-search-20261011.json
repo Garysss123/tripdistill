@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Gironde looks compact on a map but runs on three different systems: Bordeaux’s TBM tram network, TER rail to Saint-Émilion and Arcachon, then a separate last mile to a booked cellar or the shifting Dune du Pilat. Use Bordeaux Saint-Jean as the hinge, confirm both legs of every excursion, and choose either the dune or a bay crossing on the coastal day.": "ジロンド地方は地図ではコンパクトに見えますが、移動は三つの異なる仕組みで考える必要があります。ボルドー市内はTBMのトラム、サン＝テミリオンとアルカションへはTER、その先のワイナリー見学先や、形を変え続けるデューヌ・デュ・ピラへは別途アクセスを手配します。ボルドー・サン＝ジャン駅を拠点に、日帰り先では往路と復路の両方を確認し、海岸の日は砂丘か湾を渡る船旅のどちらかを選びましょう。",
+    "Follow Place de la Bourse and the Garonne quays once, then choose either a central heritage visit or tram B to La Cité du Vin. The night photograph shows the illuminated facade and river reflection, not daytime conditions.": "まずブルス広場（Place de la Bourse）とガロンヌ川沿いを歩き、その後は中心部の歴史的スポットを訪れるか、トラムB線でワイン博物館ラ・シテ・デュ・ヴァン（La Cité du Vin）へ向かうかを選びます。夜景写真に写っているのは、ライトアップされた建物のファサードと川面の反射で、昼間の様子ではありません。",
+    "The station sits below the medieval village and most vineyards are not walk-up cellar doors. Start at the tourist office, book one official monument tour or one estate appointment, and arrange any rural transfer before travel.": "駅は中世の村より低い場所にあり、周辺のワイナリーの多くは予約なしで気軽に立ち寄れる見学施設ではありません。まず観光案内所へ行き、公式の史跡ツアーかワイナリーの予約見学を一つ選びましょう。村外への移動が必要なら、出発前に手配してください。",
+    "The photograph shows low sun over bay water, not the dune. From Arcachon station, choose one separate route to Dune du Pilat or Cap Ferret; bus, staircase, boat, tide and weather conditions need date-specific checks.": "写真に写っているのは湾の水面の上に低く見える太陽で、砂丘ではありません。アルカション駅からは、デューヌ・デュ・ピラかカップ・フェレ（Cap Ferret）への別々の行き先から一つを選びます。バス、階段、船、潮位、天候の状況は、訪問日ごとに確認が必要です。"
+  }
+}

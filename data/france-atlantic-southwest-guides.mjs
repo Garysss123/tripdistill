@@ -140,16 +140,39 @@ export const franceAtlanticSouthwestClusters = [
     band: 'atlantic-southwest',
     family: 'estuary-vine-dune-chart',
     label: 'Estuary, vine and dune chart',
-    tagline: 'Choose city, vineyard or ocean; each runs on a different clock.',
-    hubIntro: 'Bordeaux’s tram city, Saint-Émilion’s vineyard hill and Arcachon Bay’s dune-and-tide landscape are three complete systems. Regional trains make each reachable, but cellar appointments, dune access and bay boats still require separate decisions.',
-    stay: 'Three or four nights in Bordeaux support the city and two excursions without changing hotels. Stay in Saint-Émilion for vineyard evenings or Arcachon for bay rhythm only when those places—not the Bordeaux commute—are the main trip.',
-    transfer: 'TBM handles the metropolitan core; TER trains reach Saint-Émilion and Arcachon, but the vineyard and Dune du Pilat last miles need current buses, bicycles, tours or cars. Save evening returns.',
-    season: 'Heat and shade matter in Bordeaux and vineyards; Atlantic wind, fire controls and sand exposure shape the dune. Harvest affects appointments, while bay boats and buses vary by season and tide.',
-    fallback: 'Use Bordeaux museums, markets and riverfront when rural appointments or coastal conditions fail. In Arcachon, keep the town and sheltered bay rather than forcing the dune in heat or wind.',
+    tagline: 'Set one Bordeaux base, then give the vineyard hill and bay their own days.',
+    reviewedOn: { label: '11 October 2026', iso: '2026-10-11' },
+    countryCardIntro: 'Bordeaux’s tram city, Saint-Émilion’s vineyard hill and Arcachon Bay’s dune-and-tide landscape are three complete systems. Regional trains make each…',
+    hubIntro: 'Gironde looks compact on a map but runs on three different systems: Bordeaux’s TBM tram network, TER rail to Saint-Émilion and Arcachon, then a separate last mile to a booked cellar or the shifting Dune du Pilat. Use Bordeaux Saint-Jean as the hinge, confirm both legs of every excursion, and choose either the dune or a bay crossing on the coastal day.',
+    stay: 'Three nights in central Bordeaux near a tram stop suit one full city day and one major excursion; choose Saint-Émilion or Arcachon, not both at a relaxed pace. Four nights keep one Bordeaux day plus separate full days for each. Five nights add a second city or weather buffer day. Stay near Saint-Émilion for vineyard evenings and an early appointment, or in Arcachon for dawn shore walks and boat departures; either local night reduces the return commute but adds a hotel move.',
+    transfer: 'Use TBM tram B between central Bordeaux and the La Cité du Vin stop, and TER Nouvelle-Aquitaine from Bordeaux Saint-Jean toward Saint-Émilion or Arcachon. Saint-Émilion station is below the village; an estate may need a prearranged pickup. For the dune, start at Baïa’s official Dune du Pilat stop page, which links the Gare d’Arcachon–Dune du Pilat service and currently identifies on-demand transport; check whether the date requires a reservation. For Cap Ferret, use the UBA crossing from Arcachon Thiers to Bélisaire and confirm the return sailing. Verify live service notices; this guide does not promise a frequency or fare.',
+    season: 'Summer heat makes the exposed Garonne quays, uphill Saint-Émilion approach and loose dune sand harder; start early, carry water and shorten the outdoor route. Harvest work can limit cellar appointments, so book one producer directly and follow its access instructions. Dune stairs are seasonal and may be removed while the sand moves; official access, fire and restoration notices override the plan. Check Baïa and UBA service for the exact date; the UBA operator notes low-tide access difficulty for wheelchair users at its piers.',
+    fallback: 'Keep a Bordeaux city day ready when TER, a cellar appointment or coastal access fails: use one confirmed museum, covered market or tram-linked neighborhood. If the dune is closed or unsafe, stay in Arcachon town and use the Ville d’Hiver or waterfront; take a boat only after the operator confirms the intended crossing and return.',
+    reviewDisclaimer: 'Service, opening, fire, sand-stair, boat and ticket conditions change. The linked authorities set the current rules; no fixed fares or departure times are promised here.',
+    itineraryLabel: 'Four nights · Bordeaux base plan',
+    itineraryHeading: 'Arrival buffer, city day, vineyard day, bay day.',
+    itineraryIntro: 'Sleep near a central TBM stop for all four nights. Keep arrival and departure partial; the three middle days each have one operating system and one return contract.',
+    itinerary: [
+      ['Arrival · settle in', 'Reach central Bordeaux from Saint-Jean by TBM tram or a direct walk; check the next morning’s TER and buy water and snacks before the early start.'],
+      ['Full day · Bordeaux', 'Walk Place de la Bourse and the quays, choose one central civic or museum block, then use tram B to La Cité du Vin only if its timed visit is confirmed.'],
+      ['Full day · Saint-Émilion', 'Take TER to Saint-Émilion, climb to the village, and choose an official monument tour or one winery appointment with transport explicitly arranged. Return to the station with a buffer.'],
+      ['Full day · Arcachon Bay', 'Take TER to Arcachon and choose the dune by date-checked Baïa service or the UBA boat crossing to Cap Ferret. Do not chain both; protect the confirmed route back.'],
+      ['Departure · margin', 'Use a spare morning for the city or recover a weather-displaced coastal day only if the train, access and lodging plan still fit.']
+    ],
+    faq: [
+      ['How many nights suit all three places?', 'Four nights allow a full Bordeaux day and separate Saint-Émilion and Arcachon days from one central base, with arrival and departure treated as partial. Three nights means choosing one excursion; five adds a useful weather or second city day.'],
+      ['Can I walk from Saint-Émilion station to a winery?', 'The station is below the village and many estates are farther across working vineyard roads. Walk to the village only if the route and your mobility suit it; arrange the estate transfer and return before booking.'],
+      ['Can I combine the dune and Cap Ferret?', 'Plan one as the main coastal commitment. The Dune du Pilat and UBA crossing have different last-mile and return systems, and weather, tide or seasonal operation can erase the connection.'],
+      ['When do I need to reserve?', 'Book the specific Saint-Émilion monument tour or estate appointment and any dated Cité du Vin visit once the travel day is set. Recheck TER, Baïa and UBA for the exact date before departure.']
+    ],
     sources: [
       ['https://www.bordeaux-tourism.co.uk/', 'Bordeaux Tourism — official city and regional guide'],
       ['https://www.gironde-tourisme.com/', 'Gironde Tourism — official regional planning'],
-      ['https://www.ter.sncf.com/nouvelle-aquitaine', 'TER Nouvelle-Aquitaine — official regional rail information']
+      ['https://www.infotbm.com/en/network-maps.html', 'TBM — official network maps and route planning'],
+      ['https://www.ter.sncf.com/nouvelle-aquitaine', 'TER Nouvelle-Aquitaine — official regional rail information'],
+      ['https://www.bus-baia.fr/arret-dune-du-pilat-a10.html', 'Baïa — official Dune du Pilat stop and date-specific service links'],
+      ['https://bateliers-arcachon.com/navettes/arcachon-cap-ferret-2/', 'Union des Bateliers Arcachonnais — official Arcachon–Cap Ferret shuttle'],
+      ['https://meteofrance.com/', 'Météo-France — official forecasts and warnings']
     ],
     guides: [
       g({
@@ -158,34 +181,56 @@ export const franceAtlanticSouthwestClusters = [
         instrument: 'Tram-and-quay urban decanter',
         layout: 'river-city-decanter',
         imageQuery: 'Bordeaux Place de la Bourse Garonne France',
-        imageAlt: 'Place de la Bourse reflected beside the Garonne in Bordeaux',
-        purpose: 'Connect Bordeaux’s historic center and Garonne quays to one wine or art institution, using the tram rather than walking the river twice.',
-        summary: 'Start in the stone center, cross the market and quays once, then choose the Cité du Vin, Bassins des Lumières or a central collection as the day’s main interior.',
+        imageAlt: 'Place de la Bourse and its facade lights reflected in the Garonne at night',
+        imageCreditTitle: 'Place de la Bourse at night, Bordeaux',
+        imageCaption: 'Place de la Bourse and its night reflection on the Garonne · Nataloche · CC BY-SA 4.0',
+        imageEditNote: 'Resized, cropped for display and converted to WebP; changes disclosed. Shared under the same CC BY-SA 4.0 license.',
+        purpose: 'Build a northbound day from Bordeaux Saint-Jean through the historic center to one tram-served river or wine stop, with a timed visit and a direct return line.',
+        summary: 'Follow Place de la Bourse and the Garonne quays once, then choose either a central heritage visit or tram B to La Cité du Vin. The night photograph shows the illuminated facade and river reflection, not daytime conditions.',
         choices: [
-          ['Historic center and river', 'Keep the cathedral, civic squares, old gates and Garonne together. This is a complete architecture day without a wine attraction.'],
-          ['Cité du Vin', 'Use the tram to the museum and give its global wine interpretation a substantial block. Tasting is optional and not a substitute for lunch.'],
-          ['Northern docks and art', 'Prioritize Chartrons, Bassins à flot or a current exhibition, using tram and river edges to explain the port’s change.']
+          ['Historic center and civic core', 'Begin at Place de la Bourse, follow the Garonne quays, then walk inland to Cathédrale Saint-André and Hôtel de Ville or Musée d’Aquitaine. Choose one interior.'],
+          ['Cité du Vin by tram B', 'Board tram B for the La Cité du Vin stop, a short walk from the entrance. Reserve a date-specific visit if needed; tasting is optional and does not replace lunch.'],
+          ['Chartrons and Bassins à Flot', 'Follow the northbound tram and river corridor to one confirmed exhibition or the former docks. This sacrifices the full southern historic loop.']
         ],
-        access: 'Bordeaux Saint-Jean station is south of the center; use the tram or a purposeful riverside approach. The Cité du Vin and Bassins area lie north, so plan a one-way city line instead of returning to every square.',
-        tradeoff: 'A major museum, market, long lunch and full historic loop already fill the day. The route gives up a vineyard excursion so Bordeaux is more than the station between wine towns.',
+        access: 'From Bordeaux Saint-Jean, use a TBM tram toward the center or walk north if you have time and light luggage. Tram B serves the named La Cité du Vin stop; the museum is about a two-minute walk from it. Check the live TBM map and service notices before placing a timed visit after arrival.',
+        tradeoff: 'Place de la Bourse, the cathedral area and one major interior make a full day. A market, long lunch, Cité du Vin and Bassins des Lumières do not fit as equal-length visits; choose the northern branch or keep the day central.',
+        hubDuration: 'One full day: six to eight hours for the center, quays and one reserved interior; shorten to a central walk if arriving by train that morning.',
+        hubAccess: 'Bordeaux Saint-Jean → central TBM stop → Place de la Bourse → Saint-André/Hôtel de Ville → tram B La Cité du Vin, if selected. Start from the museum only when a timed ticket makes the reverse line useful.',
+        hubTradeoff: 'The city route trades a second museum and a vineyard excursion for a coherent river-to-tram day.',
         stages: [
-          ['Enter from Saint-Jean or a central stop', 'Use the tram to the chosen southern or central starting point, confirming late service and any ticket validation requirement.'],
-          ['Read the stone city', 'Connect cathedral, Hôtel de Ville area, key squares and one gate without detouring to both banks.'],
-          ['Follow the Garonne north', 'Use the quays and Chartrons direction, then enter the selected museum or wine institution at its reserved time.'],
-          ['Return by tram, not repetition', 'Finish near a direct tram line to Saint-Jean or lodging. Eat and rehydrate before any tasting.']
+          ['Start at Place de la Bourse', 'From a central tram stop, walk the square, pass the Miroir d’eau and orient along the Garonne. The image is a night view; take this walk in daylight for the route.'],
+          ['Turn inland once', 'Continue to Cathédrale Saint-André and Hôtel de Ville, or choose Musée d’Aquitaine. Check current hours and any ticket before committing to the interior.'],
+          ['Choose the northern branch', 'If booked, use tram B to La Cité du Vin and follow the visitor entrance signs. Otherwise spend the saved transfer time in Chartrons or return along the quay.'],
+          ['Close on a tram line', 'Use TBM route planning to return to Saint-Jean or lodging. Leave time for the dated ticket, meal and a direct connection; do not build the train connection around an unverified last tram.']
         ],
-        fallback: 'If the Cité du Vin or exhibition is unavailable, keep the historic center and use the Musée d’Aquitaine, CAPC or another confirmed collection. In heat, replace long quay exposure with tram segments.',
+        fallback: 'If the Cité du Vin or another timed exhibition is unavailable, keep the Place de la Bourse–Saint-André line and choose one currently open central collection. In heat or rain, shorten the exposed quay section and use the tram for the northbound leg.',
         watch: [
-          ['Tram disruptions change the long axis', 'Check TBM notices before placing a timed northern admission after a train arrival.'],
-          ['Riverfront heat and wind are exposed', 'Carry water and use shade; the broad quays can feel longer than the map suggests.'],
-          ['Wine interpretation is not a drinking quota', 'Tastings may have age and service rules; non-alcoholic participation remains a complete visit.']
+          ['A timed museum follows the train, not the reverse', 'Leave a generous Saint-Jean-to-door margin and check TBM service alerts before departure.'],
+          ['The quays are exposed', 'Use shade and water in warm weather; switch to a tram segment rather than extending the walk into midday heat.'],
+          ['A tasting is a separate choice', 'Check the museum’s current booking and visitor conditions. Keep the visit complete without alcohol and arrange a safe onward trip.']
         ],
         duration: 'Allow six to eight hours for the historic center, quays and one major interior. A compact center loop can fit four hours.',
         combine: 'Combine the center with one northern institution. Keep Saint-Émilion, Arcachon and Médoc for separate days.',
-        verify: 'Check TBM service, museum reservation, market or exhibition hours and any riverfront event closure before fixing the direction.',
+        verify: 'Reopen TBM route maps and service notices, the Cité du Vin dated visit page, the selected museum’s current hours and any event access notice before setting the sequence.',
+        siteContext: {
+          label: 'The river-city line',
+          heading: 'Walk south to north once, then let tram B do the long leg.',
+          intro: 'Place de la Bourse gives the route a clear river start; the northern museum district is a separate tram decision, not an extension of every central square.',
+          details: [
+            ['Place de la Bourse', 'Use the square and Miroir d’eau as orientation points on the Garonne. The credited photograph is a night reflection, so it does not represent daytime light or opening conditions.'],
+            ['Saint-André and Hôtel de Ville', 'Turn inland to the cathedral and civic core, or substitute Musée d’Aquitaine. Check current access for the chosen interior.'],
+            ['La Cité du Vin', 'TBM names the Tram B stop La Cité du Vin; the official visitor page places the stop about two minutes on foot from the entrance. Reserve the exact visit date where required.']
+          ]
+        },
+        operations: {
+          entryReturn: 'At Bordeaux Saint-Jean, use the official TBM planner for a central stop. Place de la Bourse to Saint-André is a walk; for the northbound finish, follow Tram B to La Cité du Vin and plan the return to Saint-Jean or lodging from the live network map.',
+          booking: 'Check dated Cité du Vin admission and the selected museum’s current hours before fixing lunch or a train. This guide does not assume walk-up availability or a fare.',
+          weather: 'In heat or heavy rain, reduce time on the open quays. Keep the central civic loop and move between neighborhoods by tram; use a confirmed indoor museum as the main block.'
+        },
         sources: [
-          ['https://www.laciteduvin.com/en', 'Cité du Vin — official visitor information'],
-          ['https://www.infotbm.com/en', 'TBM Bordeaux — official tram, bus and river service']
+          ['https://www.laciteduvin.com/en/info', 'Cité du Vin — official access, visitor and ticket information'],
+          ['https://www.infotbm.com/en/network-maps.html', 'TBM — official network maps'],
+          ['https://www.infotbm.com/en/use-all-our-maps/route-maps.html', 'TBM — official route maps and live planning']
         ]
       }),
       g({
@@ -194,34 +239,57 @@ export const franceAtlanticSouthwestClusters = [
         instrument: 'Hill-cellar appointment map',
         layout: 'vineyard-hill-map',
         imageQuery: 'Saint Emilion village vineyards France panorama',
-        imageAlt: 'Saint-Émilion’s stone village surrounded by vineyards',
-        purpose: 'Reach Saint-Émilion from the correct station, manage the hill and reserve one chateau or underground visit instead of wandering among unavailable cellar doors.',
-        summary: 'The village, monolithic-church context and vineyards form one steep landscape; a booked producer or official tour gives it structure and determines the last mile.',
+        imageAlt: 'Saint-Émilion’s main square and village seen from the monolithic church',
+        imageCreditTitle: 'Saint-Émilion main square from the monolithic church',
+        imageCaption: 'Village and main square seen from the monolithic church · JLPC · CC BY-SA 3.0',
+        imageEditNote: 'Resized, cropped for display and converted to WebP; changes disclosed. Shared under the same CC BY-SA 3.0 license.',
+        purpose: 'Turn the TER arrival into one realistic hill itinerary: reach the village from its lower station, book one restricted heritage visit or one named estate, and protect the return descent.',
+        summary: 'The station sits below the medieval village and most vineyards are not walk-up cellar doors. Start at the tourist office, book one official monument tour or one estate appointment, and arrange any rural transfer before travel.',
         choices: [
-          ['Village and underground heritage', 'Use an official tour for restricted monuments, then walk the upper and lower town. This is the clearest rail-based visit.'],
-          ['One estate appointment', 'Arrange a winery whose access, language and transport are explicit. Many estates are not walkable from the station or village.'],
-          ['Vineyard walk or bicycle', 'Use a signed route with weather, traffic and sober riding limits. This replaces a second tasting and requires a return buffer.']
+          ['Village and monolithic church', 'Book the official guided access for the monolithic church or another restricted monument, then connect the upper lanes, Place des Créneaux and one viewpoint.'],
+          ['One named estate', 'Choose a producer that confirms the appointment address, language, duration and visitor route. Prearrange pickup from the village or station if the estate is outside walking distance.'],
+          ['Public vineyard-edge walk', 'Keep to an official public circuit and return via the village. This is an outdoor day, not permission to enter private rows or replace an appointment with unannounced tasting.']
         ],
-        access: 'Saint-Émilion station is below and outside the village; the uphill walk and some road sections need time. Wineries spread across the appellation, so book transport or choose one genuinely reachable estate before arrival.',
-        tradeoff: 'A village tour, multiple estates and a long vineyard loop do not fit one rail day. The route keeps the heritage center plus one rural contract.',
+        access: 'TER serves Saint-Émilion from Bordeaux Saint-Jean; the station is below and outside the center, and the walk climbs to the village. Start at the Saint-Émilion Tourist Office on Place des Créneaux. Estates are spread across the appellation: confirm an exact meeting point and both directions of any taxi, shuttle or driver before booking.',
+        tradeoff: 'The village, a guided underground visit and one estate already make a full day. Choose the official heritage route for the rail-based version; add a winery only when its confirmed transfer still leaves a safe return buffer.',
+        hubDuration: 'Full excursion day: seven to nine hours including rail, station hill, meal and one booked visit. Village only still needs several hours plus both station walks.',
+        hubAccess: 'TER Bordeaux Saint-Jean → Saint-Émilion station → uphill village route → Place des Créneaux Tourist Office. A winery outside town requires its own prebooked transfer.',
+        hubTradeoff: 'The village and one booked visit replace multiple cellar stops and a long rural loop.',
         stages: [
-          ['Climb from station with the return in mind', 'Follow the safe signed route to the village, noting the downhill time and train frequency before entering the lanes.'],
-          ['Read the village vertically', 'Use the tourism office or official guided access for restricted monuments, then connect upper viewpoints and lower streets without repeated climbs.'],
-          ['Attend one appointment', 'Meet at the exact estate or central pickup. Respect working areas, drink water and keep the driver or cyclist sober.'],
-          ['Descend before the train margin disappears', 'Return to the station early, accounting for cobbles, purchases and heat; keep one later service as backup.']
+          ['Leave the station for the hill', 'Follow the signed uphill pedestrian route toward the village. Check TER for the travel date and decide in advance whether the climb and descent suit your mobility.'],
+          ['Start at Place des Créneaux', 'Use the official tourist office as the village orientation point. Walk the upper lanes, then choose a dated guided tour for the monolithic church, Tour du Roy or another restricted site.'],
+          ['Keep one rural commitment', 'For an estate visit, meet at the confirmed address and use the transport arranged in both directions. If staying in town, choose the public vineyard-edge route and remain outside private property.'],
+          ['Descend with margin', 'Leave the village early enough for the station hill and a missed-connection buffer. Check the live TER return before lunch; do not assume a late train or unscheduled village shuttle.']
         ],
-        fallback: 'If the estate cancels, use the official village tour and public vineyard-edge paths. If heat or mobility makes the station walk unsuitable, arrange a taxi in advance or stay in Bordeaux rather than improvising roadside transport.',
+        fallback: 'If an estate cancels, use the official village tour, public lanes and vineyard-edge walking circuit. If heat, rain or mobility makes the station hill unsuitable, arrange accessible transport in advance or make Bordeaux the base day instead of improvising a roadside pickup.',
         watch: [
-          ['The station is not the village square', 'The uphill approach is meaningful and may lack shade. Carry water and time the descent.'],
-          ['Monuments may require a guided ticket', 'Restricted underground and church areas cannot be assumed open for self-guided entry.'],
-          ['Private vineyards are workplaces', 'Stay on public routes and do not enter rows or yards without an appointment.']
+          ['The station is below the village', 'The signed climb and return descent take effort and may be hot or wet. Check the route before choosing shoes, luggage and appointment time.'],
+          ['Underground access is controlled', 'The official tourism office lists guided visits and appointment booking. Confirm the exact monument, language and meeting point for the date.'],
+          ['A cellar is not a public transit stop', 'Harvest and producer work affect access. Keep the written appointment and arranged ride; do not enter vineyard rows or estate yards uninvited.']
         ],
         duration: 'Allow a full seven-to-nine-hour day from Bordeaux for village, meal and one appointment. Village heritage alone needs four to five hours including station walks.',
         combine: 'Combine Saint-Émilion village with one nearby estate. Keep Bordeaux museums, Médoc and Arcachon for separate days.',
-        verify: 'Check TER trains, village guided-tour availability, estate appointment, taxi or walking access, weather and the final return.',
+        verify: 'Check the live TER planner, the official Saint-Émilion ticket calendar and exact tour meeting point, estate confirmation, transfer both ways, weather and the return train.',
+        siteContext: {
+          label: 'Station-to-village climb',
+          heading: 'Reach the square before deciding whether the vineyard continues.',
+          intro: 'The railway station is outside the hilltop core. The walk, heritage entrance and private estate meeting point are distinct locations; verify each one before the day.',
+          details: [
+            ['Saint-Émilion station', 'TER arrives below town. Use the official signed approach and retain time for the return climb down; do not treat the station as the village stop.'],
+            ['Place des Créneaux', 'The official tourist office is a practical rendezvous and source for guided tickets. Confirm date, language and the entrance shown on the ticket.'],
+            ['Monolithic church and estate doors', 'Restricted underground heritage needs the official visit arrangement. A vineyard appointment has its own address and access contract; reserve a transfer where it is not walkable.']
+          ]
+        },
+        operations: {
+          entryReturn: 'Use TER to Saint-Émilion, walk uphill to the village, and make Place des Créneaux your first checkpoint. Confirm the downhill station approach and current TER return before you leave the square.',
+          booking: 'The official tourism office offers dated guided visits and appointment booking for the monolithic church. Book the exact visit and, for an estate, get written confirmation of its entrance and transport plan.',
+          weather: 'Heat and rain affect the exposed station hill and cobbles. If the climb is unsuitable, arrange a confirmed ride in advance; keep the village monuments or a shorter town visit as the alternative.'
+        },
         sources: [
+          ['https://www.saint-emilion-tourisme.com/en/', 'Saint-Émilion Tourism — official ticket, guided visit and appointment links'],
           ['https://www.saint-emilion-tourisme.com/en/', 'Saint-Émilion Tourism — official village and vineyard planning'],
-          ['https://www.ter.sncf.com/nouvelle-aquitaine', 'TER Nouvelle-Aquitaine — official rail service']
+          ['https://www.ter.sncf.com/nouvelle-aquitaine', 'TER Nouvelle-Aquitaine — live regional rail planning'],
+          ['https://www.gironde-tourisme.com/en/itineraires/boucle-pedestre-aux-portes-de-saint-emilion/', 'Gironde Tourism — official public walking circuit']
         ]
       }),
       g({
@@ -230,34 +298,58 @@ export const franceAtlanticSouthwestClusters = [
         instrument: 'Sand-wind-shuttle compass',
         layout: 'dune-bay-compass',
         imageQuery: 'Dune du Pilat Arcachon France ocean forest',
-        imageAlt: 'Dune du Pilat between Atlantic water and pine forest',
-        purpose: 'Choose whether Arcachon town, a bay boat or the Dune du Pilat carries the day, then match the bus and weather without overloading the exposed sand route.',
-        summary: 'Use the train to Arcachon, read wind and access status, and choose one bay contract plus one town layer; the dune is a moving natural site, not a fixed staircase attraction.',
+        imageAlt: 'Low sun above open water in Arcachon Bay',
+        imageCreditTitle: 'Low sun over Arcachon Bay water',
+        imageCaption: 'Low sun above Arcachon Bay water · Grand Parc · CC BY 2.0',
+        purpose: 'Choose a single coastal commitment from Arcachon station: the dune by the date-checked Baïa connection, or the UBA boat to Cap Ferret with its confirmed return.',
+        summary: 'The photograph shows low sun over bay water, not the dune. From Arcachon station, choose one separate route to Dune du Pilat or Cap Ferret; bus, staircase, boat, tide and weather conditions need date-specific checks.',
         choices: [
-          ['Arcachon town and bay', 'Walk the Ville d’Hiver or waterfront and use one current boat service. This is the more sheltered and tide-aware plan.'],
-          ['Dune du Pilat', 'Take the verified bus or road route, allow for sand climbing and keep forest-fire or heat controls central.'],
-          ['Cap Ferret crossing', 'Use a named seasonal boat and a bounded peninsula route. This replaces the dune and depends on tide, weather and return sailings.']
+          ['Arcachon town and Ville d’Hiver', 'Use the station and Thiers pier as anchors, walk one town or waterfront loop, and take a boat only if the operator confirms the chosen departure and return.'],
+          ['Dune du Pilat', 'Check Baïa’s current Gare d’Arcachon–Dune du Pilat service, including on-demand reservation requirements, then read the Grand Site access, stair and fire notices before climbing.'],
+          ['Cap Ferret by UBA', 'Use the named Arcachon Thiers–Cap Ferret Bélisaire shuttle. Book the intended sailing and return port; this is a boat day and replaces the dune.']
         ],
-        access: 'TER trains reach Arcachon; the dune requires a current bus, bicycle or car, and Cap Ferret uses boat or a long road approach. Check the exact stop, seasonal service and final connection before leaving the station.',
-        tradeoff: 'The dune, a long bay cruise and Cap Ferret cannot all be meaningful in one day. The route chooses one exposed landscape and uses Arcachon as the transport and meal anchor.',
+        access: 'TER reaches Gare d’Arcachon. For the dune, start with Baïa’s official Dune du Pilat stop page: it lists a Gare d’Arcachon–Dune du Pilat service as on-demand and links current timetable or reservation information. The Grand Site page also has transport guidance; when details differ, use the operator’s current service page for the exact date. For Cap Ferret, walk to Arcachon Thiers pier and use the UBA Arcachon–Bélisaire route. Confirm both directions and return mode before departure.',
+        tradeoff: 'The dune climb and Cap Ferret crossing are separate exposed commitments. Choose one, then use Arcachon town for the meal and rail return; a boat delay or fire notice can make a second distant stop fail.',
+        hubDuration: 'One full day from Bordeaux: choose either the dune with its verified bus/road transfer or the UBA Cap Ferret crossing, then return through Arcachon town.',
+        hubAccess: 'TER to Gare d’Arcachon → Baïa’s date-specific Dune du Pilat stop OR Arcachon Thiers pier → UBA to Bélisaire. Verify the return before choosing.',
+        hubTradeoff: 'One coastal system per day: dune or crossing, with Arcachon town as the transfer anchor.',
         stages: [
-          ['Arrive and read conditions', 'At Arcachon, check wind, heat, fire restrictions and boat or bus status before committing to the shore or dune.'],
-          ['Use the town as an anchor', 'Walk a selected waterfront or Ville d’Hiver segment, buy water and identify the return platform or quay.'],
-          ['Commit to dune or bay', 'At the dune, follow official access and stay clear of protected forest; on a boat, board the named route and understand the return port.'],
-          ['Return before coastal options thin', 'Reach Arcachon with a train backup, allowing sand, road traffic or boat delay. Finish near the station rather than adding a distant beach.']
+          ['Arrive at Gare d’Arcachon', 'Choose before leaving the station: open Baïa’s date-specific Dune du Pilat stop and timetable, or walk to Thiers pier for UBA. Check the TER return and current coastal notices.'],
+          ['Keep the town leg bounded', 'For the dune plan, use the station-to-bus connection. For the boat plan, walk via the waterfront to Thiers pier. The Ville d’Hiver is a separate town walk; add it only if the transfer margin allows.'],
+          ['Commit to one landscape', 'At the dune, follow Grand Site access signs and current stair/fire notices. On the UBA shuttle, verify that the ticket covers your intended date, direction and return port; its operator warns that low tide can make wheelchair boarding at the piers difficult.'],
+          ['Return through Arcachon', 'Allow for the dune approach, road traffic or boat delay. Reach the station with the actual TER departure in mind, and do not rely on an unconfirmed connection from the peninsula.']
         ],
-        fallback: 'If the dune closes for fire risk or wind, remain in Arcachon for the town, sheltered shore and a confirmed boat only if operating. If boats cancel, use the land-side route and do not substitute an unfamiliar beach crossing.',
+        fallback: 'If dune access closes for fire, restoration or weather, use Arcachon’s town and waterfront. If the boat cancels, stay on the Arcachon side; choose another peninsula route only after verifying an operating land connection and its return.',
         watch: [
-          ['Sand climbing is strenuous', 'The seasonal staircase may not be present; descend and climb conservatively, especially in heat.'],
-          ['Forest-fire controls can close access', 'Official restrictions override the itinerary. Never enter closed forest or park illegally on approach roads.'],
-          ['Boat return ports matter', 'A crossing may land far from the rail line. Confirm whether it is a round trip and where the last sailing ends.']
+          ['The dune changes shape', 'The staircase is seasonal and can be removed as the sand moves. Check the Grand Site’s current access notice; plan for soft sand and a strenuous climb.'],
+          ['Fire and restoration rules close paths', 'Use official Grand Site alerts and local instructions. Stay out of closed forest and do not stop on restricted approach roads.'],
+          ['A boat ticket needs a return plan', 'The UBA route ends at Bélisaire on Cap Ferret, away from Gare d’Arcachon. Confirm the return sailing and allow for tide, weather or delay before leaving.']
         ],
         duration: 'Allow a full day from Bordeaux for Arcachon plus the dune or one bay route. Either exposed excursion needs four to six hours including local transfers.',
         combine: 'Combine Arcachon with the dune or one boat route, not both major branches. Keep Saint-Émilion and central Bordeaux separate.',
-        verify: 'Check Dune du Pilat official access and fire notices, local bus, bay operator, tide and wind, plus the final TER train.',
+        verify: 'Reopen Grand Site Dune access and staircase notices, Baïa’s exact-date route and stop information, UBA route and return booking if selected, local weather and the TER return.',
+        siteContext: {
+          label: 'Bay-side route contract',
+          heading: 'A station, a dune stop and a boat pier are separate places.',
+          intro: 'Arcachon is the rail and meal anchor. The dune’s bus stop and the UBA departure at Thiers pier each require their own dated return check.',
+          details: [
+            ['Gare d’Arcachon', 'TER arrives at the town station. Open Baïa’s official Dune du Pilat stop page and its linked date-specific schedule before committing to the dune route.'],
+            ['Grand Site Dune du Pilat', 'The sand and access staircase change. The Grand Site posts current access and closure notices; the seasonal stair may be removed, so expect a sand climb.'],
+            ['Arcachon Thiers to Bélisaire', 'UBA names the Arcachon Thiers–Cap Ferret Bélisaire shuttle. Pick the intended direction and return date on the operator’s booking page; the operator warns that low tide can make wheelchair access at the piers difficult.']
+          ]
+        },
+        operations: {
+          entryReturn: 'From Gare d’Arcachon, use the Baïa Dune du Pilat stop page and follow its current line and stop instructions, or walk to Thiers pier for the UBA service to Bélisaire. Both routes return to Arcachon by a different connection; confirm it before leaving.',
+          booking: 'UBA’s official route page lets you select a date and asks for the sailing direction; book the intended return as well. Do not assume a fixed bus, stair or boat schedule from this guide.',
+          weather: 'Check the forecast before choosing an exposed dune or boat day, and follow official fire and access closures. Low tide can make wheelchair access to the UBA piers difficult. If exposed access is unsuitable, stay in Arcachon town and use a currently open indoor or sheltered option.'
+        },
         sources: [
-          ['https://ladunedupilat.com/en/', 'Grand Site de la Dune du Pilat — official access and conditions'],
-          ['https://www.arcachon.com/en/', 'Arcachon Tourist Office — official town and bay planning']
+          ['https://ladunedupilat.com/en/preparation/how-to-come/', 'Grand Site Dune du Pilat — official access guidance; reconfirm bus operation with Baïa'],
+          ['https://ladunedupilat.com/en/inaccessible-staircase-2/', 'Grand Site Dune du Pilat — official seasonal staircase notice'],
+          ['https://www.bus-baia.fr/arret-dune-du-pilat-a10.html', 'Baïa — official stop and timetable links for Dune du Pilat'],
+          ['https://bateliers-arcachon.com/navettes/arcachon-cap-ferret-2/', 'UBA — official Arcachon Thiers–Cap Ferret Bélisaire route'],
+          ['https://www.arcachon.com/en/', 'Arcachon Tourist Office — official town and bay planning'],
+          ['https://meteofrance.com/', 'Météo-France — official forecasts and warnings']
         ]
       })
     ]

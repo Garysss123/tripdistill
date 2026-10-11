@@ -285,6 +285,7 @@ const normandyLastmod = '2026-10-07';
 const franceResponsiveLastmod = '2026-10-07';
 const lyonReviewedLastmod = '2026-10-11';
 const alsaceReviewedLastmod = '2026-10-11';
+const bordeauxGirondeReviewedLastmod = '2026-10-11';
 const parisEditedRoutes = [
   '/france/paris/',
   '/france/paris/seine-islands-latin-quarter/',
@@ -329,6 +330,12 @@ const burgundyReviewedRoutes = [
   '/france/burgundy/dijon-ducal-city/',
   '/france/burgundy/beaune-hospices-vineyards/',
   '/france/burgundy/vezelay-fontenay-abbeys/'
+];
+const bordeauxGirondeReviewedRoutes = [
+  '/france/bordeaux-gironde/',
+  '/france/bordeaux-gironde/bordeaux-river-wine-city/',
+  '/france/bordeaux-gironde/saint-emilion-vineyards/',
+  '/france/bordeaux-gironde/arcachon-dune-pilat/'
 ];
 const zurichEditedRoutes = [
   '/switzerland/',
@@ -635,6 +642,11 @@ for (const route of burgundyReviewedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Burgundy route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: '2026-10-11' });
+}
+for (const route of bordeauxGirondeReviewedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Bordeaux/Gironde route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: bordeauxGirondeReviewedLastmod });
 }
 
 for (const route of victoriaResponsiveEditedRoutes) {
