@@ -70,7 +70,11 @@ for (const [, prefix] of locales) {
 
 const { body: sitemap } = await request('/sitemap.xml');
 for (const { prefix, route, localized } of pageRoutes) {
-  const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : '2026-09-26';
+  const expectedLastmod = route.startsWith('/italy/puglia/')
+    ? '2026-10-11'
+    : route === '/italy/rome/' || route.startsWith('/italy/rome/')
+      ? '2026-10-04'
+      : '2026-09-26';
   if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
 }
 

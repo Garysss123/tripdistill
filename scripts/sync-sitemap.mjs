@@ -45,6 +45,13 @@ const franceBrittanyEditedRoutes = [
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
+const italyPugliaLastmod = '2026-10-11';
+const italyPugliaEditedRoutes = [
+  '/italy/puglia/',
+  '/italy/puglia/bari-trani-castel-del-monte/',
+  '/italy/puglia/alberobello-itria-valley/',
+  '/italy/puglia/lecce-otranto-gallipoli/'
+];
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
 const chinaEditedLastmod = '2026-10-09';
@@ -449,6 +456,11 @@ for (const match of existing.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]
   records.set(route, { route, lastmod: match[2], changefreq: match[3], priority: match[4] });
 }
 for (const [route, lastmod, changefreq, priority] of newRoutes) records.set(route, { route, lastmod, changefreq, priority });
+for (const route of italyPugliaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Italy Puglia route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: italyPugliaLastmod });
+}
 for (const route of chinaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited China route absent from sitemap: ${route}`);

@@ -67,6 +67,18 @@ for (const cluster of italyClusters) {
   check(cluster.hubIntro.length >= 180, `${cluster.slug}: hub introduction below editorial floor`);
   check(cluster.stay.length >= 110 && cluster.transfer.length >= 125 && cluster.season.length >= 110 && cluster.fallback.length >= 100, `${cluster.slug}: thin hub operating model`);
   check(cluster.sources.length >= 3, `${cluster.slug}: insufficient official sources`);
+  if (cluster.slug === 'puglia') {
+    check(cluster.reviewDate === '11 October 2026' && cluster.reviewIsoDate === '2026-10-11', 'Puglia: review date metadata must match the 11 October 2026 refresh');
+    const fields = ['title', 'intro', 'stayTitle', 'stay', 'walkTitle', 'walk', 'bookingTitle', 'booking', 'seasonTitle', 'season'];
+    const allPlanCopy = [];
+    for (const guide of cluster.guides) {
+      check(guide.localPlan && fields.every((field) => typeof guide.localPlan[field] === 'string' && guide.localPlan[field].trim()), `${guide.url}: route-specific stay/walk/booking/season plan missing`);
+      if (guide.localPlan) allPlanCopy.push(...fields.map((field) => guide.localPlan[field]));
+      check(Array.isArray(guide.whatToSee) && guide.whatToSee.length === 3, `${guide.url}: Puglia place-reading notes must identify three route-specific stops`);
+    }
+    check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Puglia: focused local-plan headings must be unique');
+    check(new Set(allPlanCopy).size === allPlanCopy.length, 'Puglia: local-plan copy must not be repeated across children');
+  }
 }
 
 for (const guide of italyGuides) {
@@ -129,6 +141,11 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'it-breakpoints')).length === 1, `${route}: failure-point section missing`);
     check(dom.filter((node) => classHas(node, 'it-live-desk')).length === 1, `${route}: near-claim official-source panel missing`);
     check(dom.filter((node) => classHas(node, 'it-related')).length === 1, `${route}: related-guide section missing`);
+    if (guide.hubSlug === 'puglia') {
+      check(dom.filter((node) => classHas(node, 'it-local-plan')).length === 1, `${route}: route-specific stay/walk/booking/season plan missing`);
+      check(!pageText.includes('Puglia has four layers to align'), `${route}: duplicated hub operating summary remains on focused route`);
+      if (guide.localPlan) check(pageText.includes(guide.localPlan.stay) && pageText.includes(guide.localPlan.walk) && pageText.includes(guide.localPlan.booking) && pageText.includes(guide.localPlan.season), `${route}: route-specific local planning copy is not rendered`);
+    }
     check(html.includes(`data-it-family="${escape(guide.family)}"`), `${route}: guide family marker missing`);
     check(html.includes(`data-it-layout="${escape(guide.layout)}"`), `${route}: guide layout marker missing`);
     check(html.includes(`data-it-structure="${escape(guide.structure)}"`), `${route}: guide structure marker missing`);
@@ -171,7 +188,7 @@ check(read('scripts/build-dist.mjs').includes("'italy'"), 'Italy absent from bui
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : '2026-09-26';
+    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : '2026-09-26';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }
