@@ -677,7 +677,7 @@
   <url><loc>https://tripdistill.com/france/brittany-coasts/</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/loire-valley/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/france/alsace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/burgundy/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/lyon-rhone/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -711,9 +711,9 @@
   <url><loc>https://tripdistill.com/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1589,7 +1589,7 @@
   <url><loc>https://tripdistill.com/zh/france/brittany-coasts/</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/loire-valley/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/alsace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/burgundy/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/lyon-rhone/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -1623,9 +1623,9 @@
   <url><loc>https://tripdistill.com/zh/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -2501,7 +2501,7 @@
   <url><loc>https://tripdistill.com/ja/france/brittany-coasts/</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/loire-valley/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/alsace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/burgundy/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/lyon-rhone/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2535,9 +2535,9 @@
   <url><loc>https://tripdistill.com/ja/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3413,7 +3413,7 @@
   <url><loc>https://tripdistill.com/ko/france/brittany-coasts/</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/loire-valley/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/alsace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/burgundy/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/lyon-rhone/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -3447,9 +3447,9 @@
   <url><loc>https://tripdistill.com/ko/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -4325,7 +4325,7 @@
   <url><loc>https://tripdistill.com/th/france/brittany-coasts/</loc><lastmod>2026-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/loire-valley/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/france/alsace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/burgundy/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/lyon-rhone/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -4359,9 +4359,9 @@
   <url><loc>https://tripdistill.com/th/france/champagne/reims-cathedral-cellars/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/champagne/epernay-avenue-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/champagne/troyes-southern-champagne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/strasbourg-grande-ile/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/colmar-canals-museums/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/alsace/alsace-wine-route-villages/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/burgundy/dijon-ducal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/burgundy/beaune-hospices-vineyards/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/burgundy/vezelay-fontenay-abbeys/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

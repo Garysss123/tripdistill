@@ -215,7 +215,7 @@ export const franceImageManifest = {
   },
   "alsace/strasbourg-grande-ile": {
     "src": "/assets/images/france-alsace-strasbourg-grande-ile.webp",
-    "alt": "Strasbourg Cathedral and historic center near the river",
+    "alt": "Ponts Couverts in Strasbourg’s Petite France, with the cathedral spire beyond the rooftops",
     "source": "https://commons.wikimedia.org/wiki/File:Two_towers_of_Ponts_Couverts_and_Strasbourg_Cathedral_in_the_distance.jpg",
     "label": "Two towers of Ponts Couverts and Strasbourg Cathedral in the distance.jpg",
     "creator": "Christina from Victoria, Canada",
@@ -235,7 +235,7 @@ export const franceImageManifest = {
   },
   "alsace/alsace-wine-route-villages": {
     "src": "/assets/images/france-alsace-alsace-wine-route-villages.webp",
-    "alt": "An Alsace wine-route village surrounded by vineyards",
+    "alt": "Alsace Wine Route road sign among the vineyards near Orschwihr",
     "source": "https://commons.wikimedia.org/wiki/File:Route_des_Vins_d%27Alsace.JPG",
     "label": "Route des Vins d'Alsace.JPG",
     "creator": "Florival fr",
