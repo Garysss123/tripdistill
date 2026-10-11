@@ -21,6 +21,13 @@ const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/',
   '/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/'
 ];
+const malaysiaCameronLastmod = '2026-10-11';
+const malaysiaCameronEditedRoutes = [
+  '/malaysia/cameron-highlands/',
+  '/malaysia/cameron-highlands/tanah-rata-trails/',
+  '/malaysia/cameron-highlands/brinchang-kea-farm/',
+  '/malaysia/cameron-highlands/mossy-forest-gunung-brinchang/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -488,6 +495,11 @@ for (const route of malaysiaIpohEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
+}
+for (const route of malaysiaCameronEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot preserve integrated Cameron route date absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaCameronLastmod });
 }
 for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);
