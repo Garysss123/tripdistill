@@ -1,0 +1,32 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose a China trip by region, realistic nights and rail moves. Compare one-region and multi-city routes, check season by area, and verify visa or transit eligibility for your passport before travel.": "เลือกแผนเที่ยวจีนตามภูมิภาค จำนวนคืนและช่วงเดินทางด้วยรถไฟที่เป็นจริง เปรียบเทียบเส้นทางเที่ยวภูมิภาคเดียวกับหลายเมือง ตรวจฤดูกาลของแต่ละพื้นที่ และตรวจสอบว่าหนังสือเดินทางของคุณเข้าเกณฑ์วีซ่าหรือการผ่านแดนแบบใดก่อนเดินทาง",
+    "trip length": "ระยะเวลาทริป",
+    "regional itinerary": "แผนเที่ยวตามภูมิภาค",
+    "240-hour visa-free transit": "การผ่านแดนโดยไม่ต้องขอวีซ่า 240 ชั่วโมง",
+    "entry eligibility": "คุณสมบัติและสิทธิ์ในการเข้าเมือง",
+    "beijing shanghai hangzhou": "ปักกิ่ง เซี่ยงไฮ้ หางโจว",
+    "Plan five full Beijing days as roughly six nights when travel days are separate. Choose a base by your first mornings, group the Central Axis and neighborhoods, protect one full Mutianyu day, and match the airport or rail station to your return.": "วางแผนเที่ยวปักกิ่งเต็มวัน 5 วัน โดยเผื่อราว 6 คืนเมื่อแยกวันเดินทาง เลือกฐานพักให้เหมาะกับจุดหมายในช่วงเช้าของคุณ จัดเที่ยวแกนกลางเมืองและย่านใกล้กันเป็นกลุ่ม กันวันเต็มไว้เที่ยวมู่เถียนยวี่ และเลือกสนามบินหรือสถานีรถไฟให้ตรงกับเส้นทางกลับ",
+    "airport arrival": "การเดินทางมาถึงสนามบิน",
+    "departure": "วันออกเดินทาง",
+    "Mutianyu Great Wall day": "วันเที่ยวกำแพงเมืองจีนที่มู่เถียนยวี่",
+    "limited walking": "เดินได้จำกัด",
+    "rail station": "สถานีรถไฟ",
+    "Plan the 297-hectare Summer Palace by entrance and exit: East Palace Gate for a court-first route or a north-side gate for a hill-first day. Check current passport booking and seasonal hours, then choose one zone, rain fallback and a realistic walking limit.": "วางแผนเที่ยวพระราชวังฤดูร้อนซึ่งมีพื้นที่ 297 เฮกตาร์โดยเลือกประตูเข้าและออก: ใช้ประตูตงกงเหมินหากจะเริ่มจากเขตพระตำหนัก หรือเลือกประตูฝั่งเหนือหากจะเริ่มเที่ยวเนินเขา ตรวจสอบการจองปัจจุบันโดยใช้หนังสือเดินทางและเวลาเปิดตามฤดูกาล จากนั้นเลือกเพียงหนึ่งโซน เตรียมแผนสำรองเมื่อฝนตก และกำหนดระยะเดินให้เหมาะกับกำลัง",
+    "East Palace Gate": "ประตูตงกงเหมิน",
+    "north entrance": "ประตูทางเข้าฝั่งเหนือ",
+    "passport ticket booking": "การจองตั๋วด้วยหนังสือเดินทาง",
+    "297 hectares": "297 เฮกตาร์",
+    "Give Hangzhou three full days, typically four nights: choose a north-shore sequence, one western-hills day and a south-shore or canal contrast. Add a fourth day for Xixi or Liangzhu, confirm the exact station or airport, and scale walks to rain and mobility.": "จัดเวลาเที่ยวหางโจว 3 วันเต็ม โดยทั่วไปพัก 4 คืน เลือกเส้นทางฝั่งเหนือหนึ่งชุด เที่ยวเนินเขาฝั่งตะวันตกหนึ่งวัน และเลือกฝั่งใต้หรือคลองใหญ่เพื่อเปลี่ยนบรรยากาศ เพิ่มวันที่สี่สำหรับซีซีหรือเหลียงจู่ ยืนยันสถานีหรือสนามบินให้ตรงกับตั๋ว และปรับระยะเดินตามฝนกับความสามารถในการเคลื่อนไหว",
+    "Hangzhou East station": "สถานีหางโจวตะวันออก",
+    "Hangzhou West station": "สถานีหางโจวตะวันตก",
+    "Hangzhou Xiaoshan airport": "สนามบินหางโจวเซียวซาน",
+    "Meiyu rain": "ฝนเหมยอวี่",
+    "mobility": "ข้อจำกัดในการเดินและการเคลื่อนไหว"
+  }
+}

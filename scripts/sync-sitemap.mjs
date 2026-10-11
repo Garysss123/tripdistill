@@ -133,6 +133,14 @@ const chinaCn14bRoutes = [
   '/china/lhasa-tibetan-plateau/',
   '/china/xinjiang-corridor/'
 ];
+// CN15 materially revises the China country, Beijing and Hangzhou hubs and the Summer Palace field guide.
+const chinaCN15RoutesLastmod = '2026-10-11';
+const chinaCN15Routes = [
+  '/china/',
+  '/china/beijing/',
+  '/china/hangzhou/',
+  '/china/beijing/summer-palace/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -473,6 +481,11 @@ for (const route of chinaCn14bRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date CN14B China route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaCn14bLastmod });
+}
+for (const route of chinaCN15Routes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed CN15 China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaCN15RoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);

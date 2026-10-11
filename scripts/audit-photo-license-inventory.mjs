@@ -64,7 +64,7 @@ const verifiedBySourcePattern = [
 const verifiedSourcePageDetails = new Map([
   [
     'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg',
-    'Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this record does not claim independent worldwide rights clearance.',
+    'Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this records the declared terms and is not an independent rights clearance or a claim beyond those terms.',
     '2026-10-11'
   ],
   [
@@ -448,7 +448,10 @@ function parseCredit(li) {
   };
 }
 function photoCreditsInDocument(document) {
-  const sourceSections = all(document, (node) => node.tagName === 'section' && (attrs(node).class || '').split(/\s+/).includes('sources'));
+  const sourceSections = all(document, (node) => {
+    const classes = (attrs(node).class || '').split(/\s+/);
+    return (node.tagName === 'section' && classes.includes('sources')) || (node.tagName === 'details' && classes.includes('destination-credit-ledger'));
+  });
   const listed = sourceSections.flatMap((section) => all(section, (node) => node.tagName === 'li').map(parseCredit).filter(Boolean));
   const adjacent = all(document, (node) => {
     const className = attrs(node).class || '';
@@ -692,6 +695,62 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:%E0%B8%A7
   detail: 'Commons revision 1192944501 checked on 2026-10-09: Kriengsak Jirasirirojanakorn, a 26 December 2023 photograph, and CC BY-SA 4.0 are identified. Local WebP pixels show the central chedi and two shadowed seated Buddha figures in the foreground. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
   checkedOn: '2026-10-09'
 });
+
+// CN15 checked these exact Commons source pages and the corresponding local
+// WebP pixels on 2026-10-11. The declaration is limited to the listed pages;
+// it is not a claim of independent rights-chain or site-wide clearance.
+const chinaCn15CheckedSourceUrls = [
+  'https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg',
+  'https://commons.wikimedia.org/wiki/File:1_lijiang_old_town_2012.jpg',
+  'https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg',
+  'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg',
+  'https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg',
+  'https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_03.jpg',
+  'https://commons.wikimedia.org/wiki/File:27407-Luoyang,_Longmen_Grottoes.jpg',
+  'https://commons.wikimedia.org/wiki/File:67052-The-Great-Wall,_Mutianyu.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beaches_in_Sanya,_Hainan,_China13.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beijing_798_Art_District.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beijing_forbidden_city_Belvedere_of_Embodying_Benevolence-20071018-RM-142403.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beijing_view_from_Jingshan_Park_-_Flickr.jpg',
+  'https://commons.wikimedia.org/wiki/File:Broken_Bridge_(Hangzhou)_20250505.jpg',
+  "https://commons.wikimedia.org/wiki/File:City_wall_of_Xi'an_51550-Xian_(27959363326).jpg",
+  'https://commons.wikimedia.org/wiki/File:Classical_Gardens_of_Suzhou-111927.jpg',
+  'https://commons.wikimedia.org/wiki/File:Crescent_Lake_from_the_Singing_Sand_Dunes_(20230918101214).jpg',
+  'https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG',
+  'https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hangzhou_Liangzhu_Museum_2015.08.02_13-39-09.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hangzhou_Lingyin-Temple_20161003.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hefang_Street,_Hangzhou_-_9.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg',
+  'https://commons.wikimedia.org/wiki/File:Longjing_tea_village_Hangzhou.jpg',
+  'https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg',
+  'https://commons.wikimedia.org/wiki/File:Pearl_River_Canton_Tower_(cropped).JPG',
+  'https://commons.wikimedia.org/wiki/File:Peking_Jonghe_Tempel_-20071022-RM-094926.jpg',
+  'https://commons.wikimedia.org/wiki/File:Pingyao_Yingxun_Gate.jpg',
+  'https://commons.wikimedia.org/wiki/File:Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg',
+  'https://commons.wikimedia.org/wiki/File:Shenzhen_Skyline_from_Futian_District2.jpg',
+  'https://commons.wikimedia.org/wiki/File:Shichahai_pic.jpg',
+  'https://commons.wikimedia.org/wiki/File:Summer_Palace_over_Kunming_Lake_and_Nanhu_Island.jpg',
+  'https://commons.wikimedia.org/wiki/File:Sunset_of_the_Forbidden_City_2006.JPG',
+  'https://commons.wikimedia.org/wiki/File:Three_round,_one_oval,_one_square_(16831811084).jpg',
+  'https://commons.wikimedia.org/wiki/File:View_from_Jiming_Temple,_Nanjing_City_Wall_%26_Lake_Xuanwu_(10150808176).jpg',
+  'https://commons.wikimedia.org/wiki/File:West_lake_and_Leifeng_pagoda_-Hangzhou-China_-_panoramio.jpg',
+  'https://commons.wikimedia.org/wiki/File:Xixi_Wetlands_Park-_endless_beauty_(36443645132).jpg',
+  'https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61416-Wuhan_(49150676682).jpg',
+  'https://commons.wikimedia.org/wiki/File:Yungang11_2010.JPG',
+  'https://commons.wikimedia.org/wiki/File:五华区与盘龙区天际线_-_航拍_-_2025-05-16_03.jpg',
+  'https://commons.wikimedia.org/wiki/File:大理洱海及苍山_01.jpg',
+  'https://commons.wikimedia.org/wiki/File:爱晚亭（秋-侧面）.jpg',
+  'https://commons.wikimedia.org/wiki/File:黄果树瀑布_2026-07-31_01.jpg'
+];
+for (const sourceUrl of chinaCn15CheckedSourceUrls) {
+  // Preserve any richer exact-source review already recorded for a reused China image (CN14B Xinjiang).
+  if (verifiedSourcePageDetails.has(sourceUrl)) continue;
+  verifiedSourcePageDetails.set(sourceUrl, {
+    detail: `CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.`,
+    checkedOn: '2026-10-11'
+  });
+}
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg', {
   detail: 'Exact Commons page checked for the title Chatuchak Weekend Market, Christophe95 as author, the 12 May 2018 photograph date, and CC BY-SA 4.0 terms. The downloaded 4,032 x 3,024 source and local WebP pixels were inspected on 2026-10-08; both show a covered Chatuchak aisle with shoppers, flower stalls and souvenir stalls. The local copy is resized, cropped for display and converted to WebP; the route links both source and license.',
   checkedOn: '2026-10-08'
@@ -747,6 +806,7 @@ for (const [sourceUrl, detail] of [
 }
 
 const explicitCreditMappings = new Map([
+  ['/assets/images/china-hangzhou-leifeng.webp', { sourceTitle: 'File:Hangzhou Leifeng Pagoda 20161006.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg', creditLabel: 'Leifeng Pagoda', creator: 'Tyg728', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized and converted to WebP; responsive display may crop the frame; the adaptation is shared under the same CC BY-SA 4.0 license.', note: 'CN15 pixel review confirmed that this local file shows the close view of Leifeng Pagoda and trees, distinct from the West Lake panorama. The exact Commons credit identifies Tyg728 and CC BY-SA 4.0.' }],
   ['/assets/images/thailand-ayutthaya-station.webp', { sourceTitle: 'File:Ayutthaya railway station.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creditLabel: 'Ayutthaya railway station', creator: 'Jr8825', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2013-02-13', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.', note: 'Commons revision 1070665767 and local pixels reviewed on 2026-10-09. The frame shows a shaded station platform and train; no claim about current services or equipment is made.' }],
   ['/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', { sourceTitle: 'File:Wat Lokayasutharam (Temple) Ayuthaya, Thailand.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creditLabel: 'Wat Lokayasutharam', creator: 'Nayika C.', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-06-03', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.', note: 'Commons revision 1243205521 and local pixels reviewed on 2026-10-09. The frame shows the reclining Buddha, brick remains and pagoda.' }],
   ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', { sourceTitle: 'File:วัดใหญ่ชัยมงคล_1_จังหวัดพระนครศรีอยุธยา.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', creditLabel: 'Wat Yai Chai Mongkhon', creator: 'Kriengsak Jirasirirojanakorn', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2023-12-26', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 4.0.', note: 'Commons revision 1192944501 and local pixels reviewed on 2026-10-09. The frame shows the central chedi and two shadowed seated Buddha figures in the foreground.' }],
@@ -940,10 +1000,59 @@ for (const assetPath of [
   '/assets/images/china-destination-huangshan.webp',
   '/assets/images/china-destination-qingdao.webp'
 ]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
-for (const assetPath of [
+const chinaCn15PhotoAssetPaths = [
+  '/assets/images/china-beijing-798.webp',
+  '/assets/images/china-beijing-forbidden-city-sunset.webp',
+  '/assets/images/china-beijing-jingshan-view.webp',
+  '/assets/images/china-beijing-mutianyu.webp',
+  '/assets/images/china-beijing-palace-detail.webp',
+  '/assets/images/china-beijing-shichahai.webp',
+  '/assets/images/china-beijing-summer-palace.webp',
+  '/assets/images/china-beijing-temple-heaven.webp',
+  '/assets/images/china-beijing-yonghe.webp',
+  '/assets/images/china-destination-changsha.webp',
+  '/assets/images/china-destination-chengdu.webp',
+  '/assets/images/china-destination-chongqing.webp',
+  '/assets/images/china-destination-dali.webp',
+  '/assets/images/china-destination-datong.webp',
+  '/assets/images/china-destination-dunhuang.webp',
+  '/assets/images/china-destination-fujian-tulou.webp',
+  '/assets/images/china-destination-guangzhou.webp',
+  '/assets/images/china-destination-guilin.webp',
+  '/assets/images/china-destination-guizhou.webp',
+  '/assets/images/china-destination-hangzhou.webp',
+  '/assets/images/china-destination-harbin.webp',
+  '/assets/images/china-destination-huangshan.webp',
+  '/assets/images/china-destination-inner-mongolia.webp',
+  '/assets/images/china-destination-kunming.webp',
+  '/assets/images/china-destination-lijiang.webp',
+  '/assets/images/china-destination-luoyang.webp',
+  '/assets/images/china-destination-nanjing.webp',
+  '/assets/images/china-destination-pingyao.webp',
+  '/assets/images/china-destination-qingdao.webp',
+  '/assets/images/china-destination-sanya.webp',
+  '/assets/images/china-destination-shenzhen.webp',
+  '/assets/images/china-destination-suzhou.webp',
+  '/assets/images/china-destination-wuhan.webp',
+  '/assets/images/china-destination-xian.webp',
   '/assets/images/china-destination-xinjiang.webp',
-  '/assets/images/china-lhasa-preparation.svg'
-]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+  '/assets/images/china-destination-zhangjiajie.webp',
+  '/assets/images/china-great-wall-country.webp',
+  '/assets/images/china-hangzhou-broken-bridge.webp',
+  '/assets/images/china-hangzhou-grand-canal.webp',
+  '/assets/images/china-hangzhou-hefang.webp',
+  '/assets/images/china-hangzhou-leifeng.webp',
+  '/assets/images/china-hangzhou-liangzhu.webp',
+  '/assets/images/china-hangzhou-lingyin.webp',
+  '/assets/images/china-hangzhou-longjing.webp',
+  '/assets/images/china-hangzhou-west-lake.webp',
+  '/assets/images/china-hangzhou-xixi.webp',
+  '/assets/images/china-shanghai-huangpu-panorama.webp'
+];
+const chinaCn15PhotoAssetPathSet = new Set(chinaCn15PhotoAssetPaths);
+const chinaCn15TargetRoutes = new Set(['/china/', '/china/beijing/', '/china/hangzhou/', '/china/beijing/summer-palace/']);
+for (const assetPath of chinaCn15PhotoAssetPaths) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+visualReviewDateByAsset.set('/assets/images/china-lhasa-preparation.svg', '2026-10-11');
 const entries = [];
 const sourceConflicts = [];
 const unmatchedByAsset = [];
@@ -955,15 +1064,19 @@ for (const fullPath of assetPaths) {
   const conflicts = ['sourceUrl', 'sourceTitle', 'sourceDate', 'creator', 'license', 'rightsStatus', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
   if (conflicts.length) sourceConflicts.push({ src, fields: conflicts });
   const uses = usesBySrc.get(src) || [];
+  const cn15RouteCreditsFor = (source) => chinaCn15PhotoAssetPathSet.has(src) && source
+    ? (creditsBySrc.get(source) || []).filter((credit) => chinaCn15TargetRoutes.has(credit.route) && uses.some((use) => use.route === credit.route))
+    : [];
   let creditMatch = null;
   const exactDataSource = uniqueValues('sourceUrl')[0] || null;
   const candidateCredits = exactDataSource ? (creditsBySrc.get(exactDataSource) || []) : [];
+  const cn15RouteCredits = cn15RouteCreditsFor(exactDataSource);
   const explicitPageCredits = explicitCreditsByAsset.get(src) || [];
   const explicitPageIdentities = new Set(explicitPageCredits.map((credit) => [credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|')));
   if (explicitPageIdentities.size === 1 && explicitPageCredits.length) {
     creditMatch = { ...explicitPageCredits[0], matching: 'explicit_asset_credit_match', matchNote: 'The English photo-credit row explicitly identifies this exact image asset and links to the source page.' };
   } else if (candidateCredits.length) {
-    creditMatch = { ...candidateCredits[0], matching: 'source_url_match' };
+    creditMatch = { ...(cn15RouteCredits[0] || candidateCredits[0]), matching: 'source_url_match' };
   } else if (!dataRecords.length) {
     const scored = uses.map((use) => {
       const pageFile = path.join(root, use.route.slice(1), 'index.html');
@@ -974,13 +1087,18 @@ for (const fullPath of assetPaths) {
     const identities = new Set(scored.map((item) => [item.sourceUrl, item.license, item.creator].join('|')));
     if (identities.size === 1 && scored.length) creditMatch = scored[0];
     else if (uses.length) creditMatch = matchCredit({ ...uses[0], route: '' }, allDistinctCredits.map((credit) => ({ ...credit, route: '' })));
+    const targetRouteCredit = creditMatch?.sourceUrl ? cn15RouteCreditsFor(creditMatch.sourceUrl)[0] : null;
+    if (targetRouteCredit && targetRouteCredit.license === creditMatch.license && targetRouteCredit.creator === creditMatch.creator) {
+      creditMatch = { ...targetRouteCredit, matching: creditMatch.matching, matchNote: creditMatch.matchNote };
+    }
   }
   const explicit = explicitCreditMappings.get(src);
   if (explicit?.sourceUrl) {
     const exactSourceCredits = (creditsBySrc.get(explicit.sourceUrl) || []).filter((credit) => (credit.license === explicit.license || credit.license === `${explicit.license} International`) && (!explicit.creator || credit.creator === explicit.creator || credit.creditText.includes(explicit.creator)));
     const exactSourceIdentities = new Set(exactSourceCredits.map((credit) => [credit.sourceUrl, credit.license, explicit.creator || credit.creator].join('|')));
     if (exactSourceIdentities.size === 1 && exactSourceCredits.length) {
-      creditMatch = { ...exactSourceCredits[0], creditLabel: explicit.creditLabel || exactSourceCredits[0].creditLabel, creator: explicit.creator || exactSourceCredits[0].creator, editHistory: explicit.editHistory || exactSourceCredits[0].editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+      const selectedCredit = cn15RouteCreditsFor(explicit.sourceUrl)[0] || exactSourceCredits[0];
+      creditMatch = { ...selectedCredit, creditLabel: explicit.creditLabel || selectedCredit.creditLabel, creator: explicit.creator || selectedCredit.creator, editHistory: explicit.editHistory || selectedCredit.editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
     }
   } else if (explicit) {
     const candidates = allDistinctCredits.filter((credit) => credit.creditLabel === explicit.creditLabel && (!credit.creator || credit.creator === explicit.creator));
@@ -988,7 +1106,11 @@ for (const fullPath of assetPaths) {
     if (identities.size === 1 && candidates.length && candidates[0].creator && candidates[0].creator !== explicit.creator) {
       throw new Error(`Explicit photo mapping creator disagrees with visible credit for ${src}`);
     }
-    if (identities.size === 1 && candidates.length) creditMatch = { ...candidates[0], creator: candidates[0].creator || explicit.creator, editHistory: explicit.editHistory || candidates[0].editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+    if (identities.size === 1 && candidates.length) {
+      const scopedCandidate = cn15RouteCreditsFor(candidates[0].sourceUrl).find((credit) => credit.license === candidates[0].license && credit.creator === candidates[0].creator);
+      const selectedCredit = scopedCandidate || candidates[0];
+      creditMatch = { ...selectedCredit, creator: selectedCredit.creator || explicit.creator, editHistory: explicit.editHistory || selectedCredit.editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+    }
   }
   const sourceUrl = uniqueValues('sourceUrl')[0] || explicit?.sourceUrl || creditMatch?.sourceUrl || null;
   const sourceTitle = uniqueValues('sourceTitle')[0] || explicit?.sourceTitle || creditMatch?.creditLabel || null;
@@ -1004,6 +1126,7 @@ for (const fullPath of assetPaths) {
   const terms = licenseTerms(license, Boolean(verification));
   const commercialReuseEligibility = uniqueValues('commercialReuseEligibility')[0] || terms.commercialReuseEligibility;
   const attributionTerms = uniqueValues('attributionTerms')[0] || explicit?.attributionTerms || terms.attributionTerms;
+  const cn15VisibleCredits = cn15RouteCreditsFor(sourceUrl).filter((credit) => credit.license === license && credit.creator === creator).map((credit) => credit.creditText);
   const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
   const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
   const inventoryStatus = imageUses.length ? 'used' : 'unused';
@@ -1039,7 +1162,7 @@ for (const fullPath of assetPaths) {
     routes: [...new Set(imageUses.map((use) => use.route))],
     altTexts: [...new Set(imageUses.map((use) => use.alt).filter(Boolean))],
     moduleSources: [...new Set(dataRecords.map((record) => record.moduleName))],
-    rawVisibleCredits: creditMatch?.creditText ? [creditMatch.creditText] : []
+    rawVisibleCredits: cn15VisibleCredits.length ? [...new Set(cn15VisibleCredits)] : creditMatch?.creditText ? [creditMatch.creditText] : []
   };
   const missingFields = ['sourceUrl', 'creator'].filter((field) => !row[field]);
   const intentionallyUnlicensedRetiredPhoto = row.assetType === 'photographic-raster'

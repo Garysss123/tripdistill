@@ -1,0 +1,32 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose a China trip by region, realistic nights and rail moves. Compare one-region and multi-city routes, check season by area, and verify visa or transit eligibility for your passport before travel.": "현실적인 숙박 일수와 철도 이동을 고려해 중국 여행지를 지역별로 정하세요. 한 지역에 집중하는 일정과 여러 도시를 도는 일정을 비교하고, 지역별 계절을 확인한 뒤 본인의 여권으로 이용할 수 있는 비자·경유 제도를 출발 전에 확인하세요.",
+    "trip length": "여행 기간",
+    "regional itinerary": "지역별 일정",
+    "240-hour visa-free transit": "240시간 무비자 경유",
+    "entry eligibility": "입국 자격",
+    "beijing shanghai hangzhou": "베이징 상하이 항저우",
+    "Plan five full Beijing days as roughly six nights when travel days are separate. Choose a base by your first mornings, group the Central Axis and neighborhoods, protect one full Mutianyu day, and match the airport or rail station to your return.": "이동일을 별도로 두고 베이징에서 온전한 관광일 5일을 보내려면 대략 6박을 잡으세요. 첫날 아침 어디부터 둘러볼지에 따라 숙소를 정하고, 중심축과 주변 동네를 묶어 다니세요. 무톈위 만리장성에는 하루 전체를 따로 배정하고, 돌아갈 때 이용할 공항이나 철도역에 맞춰 계획하세요.",
+    "airport arrival": "공항 도착",
+    "departure": "출발",
+    "Mutianyu Great Wall day": "무톈위 만리장성 당일 일정",
+    "limited walking": "걷는 거리 줄이기",
+    "rail station": "철도역",
+    "Plan the 297-hectare Summer Palace by entrance and exit: East Palace Gate for a court-first route or a north-side gate for a hill-first day. Check current passport booking and seasonal hours, then choose one zone, rain fallback and a realistic walking limit.": "297헥타르에 이르는 이화원은 입구와 출구를 기준으로 계획하세요. 궁궐 구역부터 보는 동선은 동궁문, 언덕부터 오르는 날은 북쪽 문이 어울립니다. 현재 여권 예매 방법과 계절별 운영시간을 확인한 뒤 구역 하나를 고르고, 비 오는 날의 대안과 현실적인 보행 범위를 정하세요.",
+    "East Palace Gate": "동궁문",
+    "north entrance": "북쪽 입구",
+    "passport ticket booking": "여권으로 입장권 예매",
+    "297 hectares": "297헥타르",
+    "Give Hangzhou three full days, typically four nights: choose a north-shore sequence, one western-hills day and a south-shore or canal contrast. Add a fourth day for Xixi or Liangzhu, confirm the exact station or airport, and scale walks to rain and mobility.": "항저우에서는 보통 4박을 하며 온전한 관광일 3일을 보내세요. 북쪽 호숫가 동선과 서쪽 언덕 코스 하루를 정하고, 남쪽 호숫가나 운하를 더해 분위기를 바꿔 보세요. 시시나 량주에서 하루를 더 보내려면 4일째를 추가하세요. 정확한 역이나 공항을 확인하고 비와 보행 여건에 맞춰 걷는 거리를 조절하세요.",
+    "Hangzhou East station": "항저우동역",
+    "Hangzhou West station": "항저우서역",
+    "Hangzhou Xiaoshan airport": "항저우 샤오산 국제공항",
+    "Meiyu rain": "메이위(매실장마)",
+    "mobility": "보행·이동 제약"
+  }
+}

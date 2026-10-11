@@ -56,6 +56,10 @@ const routes = [
     '/china/sanya-hainan/',
     '/china/lhasa-tibetan-plateau/',
     '/china/xinjiang-corridor/',
+    '/china/',
+    '/china/beijing/',
+    '/china/hangzhou/',
+    '/china/beijing/summer-palace/',
   ].map((route) => ({ route, reviewDate: '2026-10-11' })),
 ];
 const editions = [
