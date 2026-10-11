@@ -361,7 +361,7 @@ export const guides = [
     ],
     faqs: [
       { question: 'Can I see Inner Mongolia on a day trip from Hohhot?', answer: 'A nearby managed outing may fit a long day, but it cannot represent the region. Meaningful grassland, desert or heritage routes need explicit geography, road time and usually several nights.' },
-      { question: 'Is Hulun Buir near Hohhot?', answer: 'No. Hulun Buir is far to the northeast and normally requires a separate long-distance transport and itinerary. The page image identifies that regional scale rather than implying it is outside Hohhot.' },
+      { question: 'Is Hulun Buir near Hohhot?', answer: 'No. Hulun Buir is far to the northeast and normally requires a separate long-distance transport and itinerary. The photo shows a distant regional landscape, not nearby Hohhot scenery or a day-trip option.' },
       { question: 'How do I choose a responsible grassland operator?', answer: 'Request exact locations, vehicle and insurance details, land access, host compensation, photography consent and environmental rules in writing. Avoid packages built mainly around staged costumes, forced drinking or uncontrolled off-road driving.' },
       { question: 'How many days should I allow?', answer: 'Two Hohhot days plus three to five days for one selected regional branch is a realistic first route. Longer-distance corridors such as Hulun Buir deserve a separate trip.' }
     ],
@@ -371,7 +371,7 @@ export const guides = [
       { url: 'https://www.unesco.org/en/mab/xilin-gol', label: 'UNESCO Man and the Biosphere Programme — Xilin Gol steppe ecology and conservation context' },
       { url: 'https://whc.unesco.org/en/list/1389/', label: 'UNESCO World Heritage Centre — Site of Xanadu and its protected grassland setting' }
     ],
-    image: { path: '/assets/images/china-destination-inner-mongolia.webp', alt: 'Rolling green Hulun Buir grassland beneath a deep blue sky in Inner Mongolia', caption: 'Hulun Buir / evidence of Inner Mongolia’s scale, not a landscape outside Hohhot', source: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', creditTitle: 'Hulun Buir grassland', creator: 'Emmazzye', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    image: { path: '/assets/images/china-destination-inner-mongolia.webp', alt: 'Rolling green Hulun Buir grassland beneath a deep blue sky in Inner Mongolia', caption: 'Hulun Buir / a distant regional landscape, not a nearby Hohhot attraction or day trip', source: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', creditTitle: 'Hulun Buir grassland', creator: 'Emmazzye', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
     search: { type: 'Regional city and steppe guide', summary: 'Base in Hohhot for city context, then choose one region with confirmed transfers and overnight stops; return to the exact station or airport with a buffer.', keywords: ['hohhot', 'hohhot railway station', 'hohhot east', 'hohhot baita airport', 'inner mongolia', 'xilin gol', 'hulun buir', 'site of xanadu', 'ordos', 'inner mongolia itinerary'] }
   }
 ];
