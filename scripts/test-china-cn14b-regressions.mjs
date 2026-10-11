@@ -20,6 +20,33 @@ const editions = [
   { locale: 'ko', prefix: 'ko/' },
   { locale: 'th', prefix: 'th/' }
 ];
+const potalaChecks = {
+  en: {
+    forbidden: /official booking portal currently describes real-name reservations|does not sell same-day tickets/i,
+    reviewNote: 'official Potala booking portal could not be retrieved in this review',
+    uncertaintyNote: 'no booking window, same-day policy, ticket availability or entry is asserted'
+  },
+  'zh-Hant': {
+    forbidden: /實名預約|不販售當日票/,
+    reviewNote: '本次審查期間無法取得布達拉宮官方訂票入口',
+    uncertaintyNote: '不對預約開放時間、當日售票政策、票券名額或入場作任何聲稱'
+  },
+  ja: {
+    forbidden: /実名予約|当日券は販売しない/,
+    reviewNote: 'ポタラ宮の公式予約ポータルは今回の確認時に内容を取得できなかった',
+    uncertaintyNote: '予約受付期間、当日販売の方針、チケットの空き状況、入場可否については断定していません'
+  },
+  ko: {
+    forbidden: /실명 예약|당일권은 판매하지 않는다고/,
+    reviewNote: '이번 검토에서는 포탈라궁 공식 예약 사이트에 접속할 수 없어',
+    uncertaintyNote: '예약 시기, 당일 판매 정책, 티켓 현황 또는 입장 가능 여부를 단정하지 않습니다'
+  },
+  th: {
+    forbidden: /จองโดยใช้ชื่อจริงตามเอกสาร|ไม่มีจำหน่ายบัตรเข้าชมในวันเดียวกัน/,
+    reviewNote: 'ในการตรวจสอบครั้งนี้ไม่สามารถเรียกดูพอร์ทัลจองอย่างเป็นทางการของ Potala ได้',
+    uncertaintyNote: 'ไม่มีการกล่าวอ้างถึงช่วงเวลาเปิดจอง นโยบายจำหน่ายบัตรในวันเดียวกัน จำนวนบัตรที่ว่าง หรือการได้เข้าชม'
+  }
+};
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map(({ name, value }) => [name, value])); }
 function findAll(node, predicate, output = []) {
@@ -41,6 +68,10 @@ for (const edition of editions) {
       const links = findAll(parse(html), (node) => node.tagName === 'a').map(attrs);
       assert.ok(links.some((link) => link.href === 'https://tripdistill.com/assets/images/china-lhasa-preparation.svg'), `${relative} must visibly link the original diagram source`);
       assert.ok(links.some((link) => link.href === 'https://tripdistill.com/terms-of-use/'), `${relative} must visibly state the reuse terms`);
+      const check = potalaChecks[edition.locale];
+      assert.doesNotMatch(html, check.forbidden, `${relative} must not retain unverified Potala booking claims`);
+      assert.ok(html.includes(check.reviewNote), `${relative} must say the official portal could not be retrieved in this review`);
+      assert.ok(html.includes(check.uncertaintyNote), `${relative} must not assert booking windows, same-day policy, availability or entry`);
     }
     if (route === '/china/xinjiang-corridor/') {
       const document = parse(html);
@@ -56,7 +87,36 @@ for (const edition of editions) {
   }
 }
 
-const retirement = (await import(pathToFileURL(path.join(root, 'data/china-expansion-guides.mjs')).href + '?cn14b-regression=1')).retiredImageRecords[0];
+const { guides, retiredImageRecords } = await import(pathToFileURL(path.join(root, 'data/china-expansion-guides.mjs')).href + '?cn14b-regression=1');
+const lhasaSource = guides.find((guide) => guide.slug === 'lhasa-tibetan-plateau');
+assert.ok(lhasaSource, 'Lhasa source guide must exist');
+const potalaChapter = lhasaSource.chapters.find((chapter) => chapter.label === 'POTALA ENTRY');
+assert.ok(potalaChapter);
+assert.equal(potalaChapter.title, 'Check the live official reservation rules after access is approved');
+assert.match(potalaChapter.text, /could not be retrieved during this review/i);
+assert.match(potalaChapter.text, /no claim about booking windows, same-day sales, ticket availability or entry/i);
+assert.doesNotMatch(potalaChapter.text, /real-name reservations|does not sell same-day tickets/i);
+assert.match(lhasaSource.sourceNote, /official Potala booking portal could not be retrieved in this review/i);
+assert.match(lhasaSource.sourceNote, /no booking window, same-day policy, ticket availability or entry is asserted/i);
+assert.doesNotMatch(lhasaSource.sourceNote, /Potala reservation page.*were reviewed/i);
+
+const distLhasaPages = editions.map((edition) => ({
+  edition,
+  relative: `${edition.prefix}china/lhasa-tibetan-plateau/index.html`
+}));
+const distLhasaCount = distLhasaPages.filter(({ relative }) => fs.existsSync(path.join(root, 'dist', relative))).length;
+if (distLhasaCount > 0) {
+  assert.equal(distLhasaCount, editions.length, 'built output must contain all five Lhasa editions when dist exists');
+  for (const { edition, relative } of distLhasaPages) {
+    const builtHtml = fs.readFileSync(path.join(root, 'dist', relative), 'utf8');
+    const check = potalaChecks[edition.locale];
+    assert.doesNotMatch(builtHtml, check.forbidden, `dist/${relative} must not retain unverified Potala booking claims`);
+    assert.ok(builtHtml.includes(check.reviewNote), `dist/${relative} must say the official portal could not be retrieved in this review`);
+    assert.ok(builtHtml.includes(check.uncertaintyNote), `dist/${relative} must not assert booking windows, same-day policy, availability or entry`);
+  }
+}
+
+const retirement = retiredImageRecords[0];
 assert.equal(retirement.src, oldAsset);
 assert.equal(retirement.license, null, 'the old Commons label must not become an inventory license claim');
 assert.equal(retirement.inventoryStatus, 'unused');
@@ -115,4 +175,4 @@ for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
   }
 }
 
-console.log('China CN14B regressions passed: legacy image has no live HTML references; retirement/inventory rights status, original SVG, Xinjiang source/rights, search records and five-edition sitemap dates are consistent.');
+console.log('China CN14B regressions passed: Potala claims are withdrawn in source and all five rendered editions (including complete dist output when built); the official-live-info caution remains; legacy-image retirement, original SVG rights, Xinjiang photo provenance, search records and five-edition sitemap dates are consistent.');
