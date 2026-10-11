@@ -248,7 +248,12 @@ for (const absoluteUrl of publishedUrls) {
   }
   const hasVisibleKoglLicense = /href=["']https:\/\/www\.kogl\.or\.kr\/info\/licenseType1\.do["']/i.test(html)
     && /class=["'][^"']*\bphoto-license\b[^"']*["']/i.test(html);
-  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense) {
+  const hasProjectOriginalDiagramProvenance = [...html.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].some(([, item]) =>
+    item.includes("/assets/images/china-lhasa-preparation.svg")
+      && /TripDistill/i.test(item)
+      && /(?:project original|原創|オリジナル作品|자체 제작 작품|ผลงานต้นฉบับ)/i.test(item)
+  );
+  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense && !hasProjectOriginalDiagramProvenance) {
     problems.push(`${relativePath}: image page lacks a visible commercial-use license or provenance entry`);
   }
 
@@ -370,7 +375,7 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/china/hangzhou/') && !html.includes('/css/hangzhou.css?v=20260828-1')) problems.push(`${relativePath}: missing Hangzhou West Lake compass stylesheet`);
   const expansionGuide = chinaExpansionByRoute.get(baseRoute);
   if (expansionGuide) {
-    if (!html.includes('/css/china-expansion.css?v=20260828-1')) problems.push(`${relativePath}: missing China destination-system stylesheet`);
+    if (!html.includes('/css/china-expansion.css?v=20261011-1')) problems.push(`${relativePath}: missing China destination-system stylesheet`);
     if (expansionGuide.extraStylesheet && !html.includes(expansionGuide.extraStylesheet)) problems.push(`${relativePath}: missing ${expansionGuide.extraStylesheet} visual-system stylesheet`);
     if (!html.includes(`data-visual="${expansionGuide.visual}"`)) problems.push(`${relativePath}: missing ${expansionGuide.visual} visual-system marker`);
     if ((html.match(/<article id="chapter-\d+">/g) || []).length !== 8) problems.push(`${relativePath}: China destination guide does not contain eight planning chapters`);
