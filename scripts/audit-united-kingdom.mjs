@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
@@ -70,12 +71,28 @@ for (const guide of unitedKingdomGuides) {
   check(guide.duration.length >= 80 && guide.combine.length >= 85 && guide.verify.length >= 95, `${guide.url}: thin duration/combine/verification guidance`);
   check(guide.choices.length === 3 && guide.route.length === 4 && guide.watch.length === 3 && guide.faq.length === 3, `${guide.url}: choice/route/watch/FAQ parity`);
   check(guide.sources.length >= 2 && guide.sources.every(([url, label]) => /^https:\/\//.test(url) && label), `${guide.url}: incomplete route-specific official sources`);
-  check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, `${guide.url}: incomplete image provenance`);
-  check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
-  check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
   const imageFile = path.join(root, guide.image.src.replace(/^\//, ''));
-  const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
-  check(probe.status === 0 && probe.stdout.trim() === '1600x1066', `${guide.url}: image missing or not 1600x1066`);
+  if (guide.image.assetType === 'original-planning-diagram') {
+    check(guide.image.creator === 'TripDistill Editorial Team' && guide.image.license === null && !guide.image.licenseUrl, guide.url + ': original diagram must not claim a public license');
+    check(guide.image.rightsStatus === 'Project original; no separate reuse license declared' && guide.image.rightsStatusUrl === 'https://tripdistill.com/terms-of-use/', guide.url + ': original diagram rights disclosure is incomplete');
+    check(guide.image.source === 'https://tripdistill.com' + guide.image.src && guide.image.editNote.includes('not to scale'), guide.url + ': original diagram source or schematic disclosure is incomplete');
+    check(/^[a-f0-9]{40}$/i.test(guide.image.localSha1 || ''), guide.url + ': original diagram lacks a source SHA1');
+    if (!fs.existsSync(imageFile)) {
+      failures.push(guide.url + ': missing local original diagram ' + guide.image.src);
+    } else {
+      const svg = fs.readFileSync(imageFile, 'utf8');
+      check(path.extname(imageFile).toLowerCase() === '.svg' && svg.includes('viewBox="0 0 1600 1066"'), guide.url + ': original diagram must be a 1600x1066 SVG');
+      check(crypto.createHash('sha1').update(svg).digest('hex') === guide.image.localSha1, guide.url + ': original diagram SHA1 differs from its manifest');
+      check(svg.includes('no separate reuse license declared') && svg.includes('not a geographic map') && svg.includes('not to scale'), guide.url + ': SVG must disclose its original schematic status');
+      check(!/\b(?:CC0\b|CC\s+BY(?:-(?:SA|NC|ND))*\b|Creative\s+Commons\b)/i.test(svg), guide.url + ': original SVG must not claim a public license');
+    }
+  } else {
+    check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, guide.url + ': incomplete image provenance');
+    check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), guide.url + ': image source is not Wikimedia Commons');
+    check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), guide.url + ': unapproved image license ' + guide.image.license);
+    const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
+    check(probe.status === 0 && probe.stdout.trim() === '1600x1066', guide.url + ': image missing or not 1600x1066');
+  }
 }
 
 const titles = new Set();
@@ -107,7 +124,12 @@ for (const route of routes) {
 
   const hub = unitedKingdomClusters.find((cluster) => route === `/united-kingdom/${cluster.slug}/` || route.startsWith(`/united-kingdom/${cluster.slug}/`));
   const credited = route === '/united-kingdom/' ? unitedKingdomClusters.map((cluster) => cluster.guides[0]) : hub?.guides || [];
-  for (const guide of credited) check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+  for (const guide of credited) {
+    const rightsVisible = guide.image.rightsStatusUrl
+      ? html.includes(guide.image.rightsStatusUrl) && html.includes(escape(guide.image.rightsStatus))
+      : html.includes(guide.image.license);
+    check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && rightsVisible, `${route}: visible image credit missing for ${guide.slug}`);
+  }
   if (route === '/united-kingdom/') {
     check(dom.filter((node) => classHas(node, 'uk-country-card')).length === 20, `${route}: expected 20 hub cards`);
     check(dom.filter((node) => classHas(node, 'uk-network-grid')).length === 1, `${route}: national operating model missing`);
@@ -134,7 +156,30 @@ for (const route of routes) {
     if (!fs.existsSync(localizedFile)) continue;
     const localized = fs.readFileSync(localizedFile, 'utf8');
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
-    for (const guide of credited) check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+    for (const guide of credited) {
+      const rightsVisible = guide.image.rightsStatusUrl
+        ? localized.includes(guide.image.rightsStatusUrl) && localized.includes(escape(guide.image.creator))
+        : localized.includes(guide.image.license);
+      check(localized.includes(guide.image.source) && rightsVisible, `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+    }
+  }
+}
+
+const retiredLakeImages = [
+  '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp',
+  '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp',
+  'https://commons.wikimedia.org/wiki/File:Friars%27_Crag_Derwentwater_Lake_District_2022_01.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hadrians_Wall_-_geograph.org.uk_-_3179504.jpg'
+];
+const lakeRoutes = [
+  '/united-kingdom/lake-district-cumbria/',
+  '/united-kingdom/lake-district-cumbria/windermere-ambleside/',
+  '/united-kingdom/lake-district-cumbria/keswick-derwentwater/',
+  '/united-kingdom/lake-district-cumbria/carlisle-hadrians-wall-west/'
+];
+for (const route of lakeRoutes) {
+  for (const retired of retiredLakeImages) {
+    check(!read(route.slice(1) + 'index.html').includes(retired), route + ': retired Lake District photo remains in the English live page');
   }
 }
 

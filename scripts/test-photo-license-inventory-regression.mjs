@@ -18,6 +18,12 @@ const legacyHueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
 const legacyHueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
 const wadjemupDiagramAssetPath = '/assets/images/australia-wadjemup-ferry-day-sequence.svg';
 const wadjemupDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg';
+const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp';
+const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
+const ukLakeDiagramPaths = [
+  '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater-route-choice.svg',
+  '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west-route-choice.svg'
+];
 const victoriaImageRecords = [
   { assetPath: '/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', creator: 'DXR', license: 'CC BY-SA 4.0', sourceDate: '2024-08-27' },
   { assetPath: '/assets/images/canada-victoria-south-island-butchart-saanich.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', creator: 'Fyre Mael', license: 'CC BY 2.0', sourceDate: '2015-06-26' }
@@ -206,13 +212,38 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 1, 'inventory must count the explicitly recorded project-original artwork');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 3, 'inventory must count explicitly recorded project-original artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 582, 'integrated CN12 + Lake inventory excludes project-original diagrams from unverified photo-license claims');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
   assert.ok(wadjemupDiagram.verificationDetail.includes('not an independent source-page check'));
   assert.ok(wadjemupDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
+  const ukKeswickOld = photoRecords.find((item) => item.assetPath === ukKeswickOldAssetPath);
+  assert.ok(ukKeswickOld, 'inventory must retain the retired Keswick photo record');
+  assert.equal(ukKeswickOld.inventoryStatus, 'unused', 'retired Keswick photo must be explicitly marked unused');
+  assert.equal(ukKeswickOld.useCount, 0, 'retired Keswick photo must have no live English references');
+  assert.match(ukKeswickOld.retirementNote, /private-use-only assertion/i, 'Keswick metadata conflict must remain visible without a rights conclusion');
+  const ukCarlisleOld = photoRecords.find((item) => item.assetPath === ukCarlisleOldAssetPath);
+  assert.ok(ukCarlisleOld, 'inventory must retain the retired Carlisle photo record');
+  assert.equal(ukCarlisleOld.inventoryStatus, 'unused', 'retired Carlisle photo must be explicitly marked unused');
+  assert.equal(ukCarlisleOld.useCount, 0, 'retired Carlisle photo must have no live English references');
+  assert.match(ukCarlisleOld.retirementNote, /independent source verification/i, 'Carlisle verification limitation must remain visible');
+  for (const assetPath of ukLakeDiagramPaths) {
+    const diagram = photoRecords.find((item) => item.assetPath === assetPath);
+    assert.ok(diagram, `inventory must include original UK diagram ${assetPath}`);
+    assert.equal(diagram.assetType, 'original-planning-diagram');
+    assert.equal(diagram.inventoryStatus, 'used');
+    assert.ok(diagram.useCount > 0);
+    assert.equal(diagram.creator, 'TripDistill Editorial Team');
+    assert.equal(diagram.license, null, 'original UK diagrams must not claim a public license');
+    assert.equal(diagram.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(diagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+    assert.match(diagram.localSha1, /^[a-f0-9]{40}$/);
+    assert.ok(diagram.verificationDetail.includes('not a geographic map'));
+    assert.equal(report.unmatchedAssets.some((item) => item.src === assetPath), false);
+  }
   const ayutthayaPhotos = [
     { assetPath: '/assets/images/thailand-ayutthaya-station.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creator: 'Jr8825', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-13', revision: '1070665767' },
     { assetPath: '/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creator: 'Nayika C.', license: 'CC BY-SA 3.0', sourcePhotoDate: '2014-06-03', revision: '1243205521' },

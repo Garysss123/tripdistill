@@ -10,7 +10,6 @@ export const unitedKingdomImageOverrides = {
   'peak-district-derbyshire/bakewell-chatsworth': 'File:Chatsworth House - geograph.org.uk - 2191619.jpg',
   'peak-district-derbyshire/hope-valley-edale': 'File:Mam Tor from the Ridge path - Flickr - Donnchadh H.jpg',
   'peak-district-derbyshire/dovedale-ashbourne': 'File:Dovedale - River Dove - Thorpe Cloud - Stepping Stones (15041656340).jpg',
-  'lake-district-cumbria/keswick-derwentwater': "File:Friars' Crag Derwentwater Lake District 2022 01.jpg",
   'edinburgh-lothians/new-town-dean-village': 'File:Dean Village and the Water of Leith - geograph.org.uk - 8303284.jpg',
   'glasgow-clyde/loch-lomond-clyde-branch': 'File:View up Loch Lomond to Cruach Tairbeirt - geograph.org.uk - 7140385.jpg',
   'cardiff-south-wales/cardiff-castle-bay': 'File:Cardiff Castle keep - exterior 01.jpg',

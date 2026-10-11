@@ -38,6 +38,7 @@ function breadcrumb(items) {
 }
 
 function licenseUrl(license) {
+  if (!license) return '';
   if (/^CC0$/i.test(license)) return 'https://creativecommons.org/publicdomain/zero/1.0/';
   if (/^Public domain$/i.test(license)) return 'https://creativecommons.org/publicdomain/mark/1.0/';
   const match = String(license).match(/^CC (BY(?:-SA)?) ([1-4](?:\.\d)?)(?: ([a-z]{2}))?$/i);
@@ -45,9 +46,32 @@ function licenseUrl(license) {
 }
 
 function imageCredit(image) {
-  const license = licenseUrl(image.license);
-  const licenseText = license ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>` : escapeHtml(image.license);
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}</li>`;
+  const rightsUrl = image.rightsStatusUrl || licenseUrl(image.license);
+  const rightsText = image.rightsStatus || image.license;
+  const rightsDisclosure = rightsUrl
+    ? `<a href="${escapeHtml(rightsUrl)}" target="_blank" rel="noopener">${escapeHtml(rightsText)}</a>`
+    : escapeHtml(rightsText);
+  const editDisclosure = image.assetType === 'original-planning-diagram'
+    ? `<span class="credit-note">${escapeHtml(image.editNote)}</span>`
+    : escapeHtml(image.editNote);
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${rightsDisclosure}. ${editDisclosure}</li>`;
+}
+
+function imageRightsText(image) {
+  return image.rightsStatus || image.license;
+}
+
+function imageFigureCaption(image) {
+  const caption = `${escapeHtml(image.label)} · ${escapeHtml(imageRightsText(image))}`;
+  return image.assetType === 'original-planning-diagram'
+    ? `${caption}<p class="uk-diagram-note">${escapeHtml(image.alt)}</p>`
+    : caption;
+}
+
+function imageCreditHeading(cluster) {
+  return cluster.guides.some((guide) => guide.image.assetType === 'original-planning-diagram')
+    ? 'Official sources and image credits'
+    : 'Official sources and photo credits';
 }
 
 const sourceList = (sources) => sources.map(([url, label]) => `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>.</li>`).join('');
@@ -96,7 +120,7 @@ function guidePage(guide, cluster, guideIndex) {
 <body data-page="uk-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="united-kingdom" data-country="united-kingdom" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content uk-field" data-uk-family="${escapeHtml(cluster.family)}" data-uk-layout="${escapeHtml(guide.layout)}" data-uk-variant="${variant}" data-uk-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="uk-breadcrumb" aria-label="Breadcrumb"><a href="/united-kingdom/">United Kingdom</a><span>›</span><a href="/united-kingdom/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>›</span><strong>${escapeHtml(guide.name)}</strong></nav>
-  <section class="uk-field-hero"><figure><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure><div class="uk-field-copy"><span class="uk-kicker">${escapeHtml(cluster.nation)} · signal file ${String(guideIndex + 1).padStart(2, '0')}</span><h1>${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="uk-purpose"><small>Decision this field file resolves</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Follow the line</a><a class="button secondary" href="#failure-points">Check the break points</a></div></div><aside class="uk-signal-tag"><small>${escapeHtml(guide.layout)}</small><strong>${escapeHtml(guide.instrument)}</strong><span>checked ${guideReviewDate}</span></aside></section>
+  <section class="uk-field-hero"><figure${guide.image.assetType === 'original-planning-diagram' ? ' class="uk-diagram-figure"' : ''}><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${imageFigureCaption(guide.image)}</figcaption></figure><div class="uk-field-copy"><span class="uk-kicker">${escapeHtml(cluster.nation)} · signal file ${String(guideIndex + 1).padStart(2, '0')}</span><h1>${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="uk-purpose"><small>Decision this field file resolves</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Follow the line</a><a class="button secondary" href="#failure-points">Check the break points</a></div></div><aside class="uk-signal-tag"><small>${escapeHtml(guide.layout)}</small><strong>${escapeHtml(guide.instrument)}</strong><span>checked ${guideReviewDate}</span></aside></section>
   <section class="uk-choice-switchboard" aria-label="Three ways to shape the visit"><header><span>Set the day</span><h2>Three useful choices, each with a real sacrifice.</h2></header><div>${guide.choices.map(([title, copy], index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   ${ad}
   <section class="uk-window-board"><article><span>ACCESS</span><h2>Meet the day at its real gateway.</h2><p>${escapeHtml(guide.access)}</p></article><article><span>SACRIFICE</span><h2>Know what this route leaves out.</h2><p>${escapeHtml(guide.tradeoff)}</p></article><aside><div><small>TIME WINDOW</small><p>${escapeHtml(guide.duration)}</p></div><div><small>PAIR ONLY WHEN USEFUL</small><p>${escapeHtml(guide.combine)}</p></div></aside></section>
@@ -107,7 +131,7 @@ ${shellStart(`<main id="main-content" class="page-content uk-field" data-uk-fami
   <section class="uk-breakpoints" id="failure-points"><header><span>Three break points</span><h2>Change the plan while the return is still strong.</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="uk-related"><header><span>SAME REGIONAL BOOK</span><h2>Other ways to use ${escapeHtml(cluster.name)}.</h2></header><div>${cluster.guides.filter((item) => item.slug !== guide.slug).map((item) => `<a href="${item.url}"><img src="${item.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(item.image.alt)}"><div><small>${escapeHtml(item.instrument)}</small><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(compact(item.purpose, 125))}</p><strong>Open this field file →</strong></div></a>`).join('')}</div></section>
   <section class="uk-faq"><header><span>PLANNING ANSWERS</span><h2>${escapeHtml(guide.name)} FAQ</h2></header><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Planning facts and image licensing were reviewed on ${guideReviewDate}. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.</p><ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${guideReviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>${imageCreditHeading(cluster)}</h2><p>Planning facts and image licensing were reviewed on ${guideReviewDate}. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.</p><ul>${sourceList(planningSources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${guideReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -150,7 +174,7 @@ ${shellStart(`<main id="main-content" class="page-content uk-hub" data-uk-family
   <section class="uk-comparison-docket"><header><span>COMPARE BEFORE BOARDING</span><h2>Each route buys something by leaving something else out.</h2></header><div>${cluster.guides.map((guide) => `<article><header><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3></header><p><strong>Gateway:</strong> ${escapeHtml(guide.access)}</p><p><strong>Sacrifice:</strong> ${escapeHtml(guide.tradeoff)}</p><p><strong>Time:</strong> ${escapeHtml(guide.duration)}</p></article>`).join('')}</div></section>
   <section class="uk-hub-live"><div><span>REGIONAL LIVE DESK</span><h2>These sources control the moving parts.</h2><p>Use the route book for structure, then reopen current transport, destination and weather information for the exact date.</p></div><ul>${sourceList(cluster.sources)}</ul></section>
   <section class="uk-hub-faq"><div><span>REGIONAL ANSWERS</span><h2>${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>${hubPlanningReview}</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${hubReviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>${imageCreditHeading(cluster)}</h2><p>${hubPlanningReview}</p><ul>${sourceList(cluster.sources)}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${hubReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 

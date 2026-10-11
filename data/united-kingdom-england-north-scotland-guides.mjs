@@ -6,8 +6,8 @@ const c = defineUnitedKingdomCluster;
 export const unitedKingdomEnglandNorthScotlandClusters = [
   c({
     slug: 'lake-district-cumbria',
-    reviewDateISO: '2026-10-10',
-    reviewDate: '10 October 2026',
+    reviewDateISO: '2026-10-11',
+    reviewDate: '11 October 2026',
     name: 'Lake District & Cumbria',
     nation: 'England',
     band: 'england-midlands-north',
@@ -27,8 +27,8 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
     guides: [
       g({
         slug: 'windermere-ambleside',
-        reviewDateISO: '2026-10-10',
-        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-11',
+        reviewDate: '11 October 2026',
         name: 'Windermere, Bowness & Ambleside',
         instrument: 'Lake-bus-boat interchange card',
         layout: 'shoreline-transfer-ribbon',
@@ -66,13 +66,13 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
       }),
       g({
         slug: 'keswick-derwentwater',
-        reviewDateISO: '2026-10-10',
-        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-11',
+        reviewDate: '11 October 2026',
         name: 'Keswick & Derwentwater',
         instrument: 'Launch-and-fell weather dial',
         layout: 'market-lake-spoke-map',
-        imageQuery: 'Derwentwater Keswick Lake District view',
-        imageAlt: 'Derwentwater and the fells near Keswick in the Lake District',
+        imageQuery: 'Project-original Keswick route-choice schematic; no external photograph',
+        imageAlt: 'Schematic, not to scale: Keswick bus gateway, a Derwentwater launch or low-level town choice, and the checked return; use the railway path only when its bridge is open.',
         purpose: 'Choose between the Keswick Launch, a bounded lakeshore walk, or a lower town day, then protect the bus connection because Keswick has no railway station. In autumn 2026, the Greta bridge closure also changes how to plan the former railway path.',
         summary: 'Use the bus station as the day’s gate, then take one Derwentwater launch-and-walk leg or stay in Keswick. The Keswick Railway Path is not a dependable full through-route during the published Greta bridge works; check current notices and return buses.',
         choices: [
@@ -106,13 +106,13 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
       }),
       g({
         slug: 'carlisle-hadrians-wall-west',
-        reviewDateISO: '2026-10-10',
-        reviewDate: '10 October 2026',
+        reviewDateISO: '2026-10-11',
+        reviewDate: '11 October 2026',
         name: 'Carlisle & Hadrian’s Wall West',
         instrument: 'Fort-and-frontier rail strip',
         layout: 'roman-frontier-section',
-        imageQuery: 'Hadrians Wall Cumbria landscape',
-        imageAlt: 'Hadrian’s Wall crossing the Cumbrian landscape',
+        imageQuery: 'Project-original Carlisle and Hadrian’s Wall route-choice schematic; no external photograph',
+        imageAlt: 'Schematic, not to scale: Carlisle station to Stand K, then a city day or one HW1 stop at Birdoswald or Walltown and the confirmed return.',
         purpose: 'Decide whether to keep a Carlisle city-and-museum day or use the dated HW1 bus from Carlisle for one western fort or wall section. Rural stops are spaced along a frontier corridor, so choose the return before leaving the city.',
         summary: 'From Carlisle, use HW1’s Stand K departure and select one named stop such as Birdoswald or Walltown. The published 2026 timetable runs through 3 January 2027; check the actual date, return service and any Walltown connection before setting out.',
         choices: [

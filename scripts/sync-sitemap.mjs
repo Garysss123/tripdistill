@@ -128,7 +128,7 @@ const unitedKingdomEditedRoutes = [
   '/united-kingdom/cardiff-south-wales/bannau-brycheiniog/',
   '/united-kingdom/cardiff-south-wales/swansea-gower/'
 ];
-const unitedKingdomLakeLastmod = '2026-10-10';
+const unitedKingdomLakeLastmod = '2026-10-11';
 const unitedKingdomLakeEditedRoutes = [
   '/united-kingdom/lake-district-cumbria/',
   '/united-kingdom/lake-district-cumbria/windermere-ambleside/',
