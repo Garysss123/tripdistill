@@ -113,7 +113,7 @@ try {
   assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 590, 'nine Andaman and three Ayutthaya source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 587, 'nine Andaman, three Ayutthaya and three Cornwall source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -146,6 +146,29 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const cornwallPhotos = [
+    { assetPath: '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg', sourceTitle: 'File:The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg', creator: 'nick macneill', license: 'CC BY-SA 2.0', sourcePhotoDate: '1991-09-15', originalSize: '1,024 × 693' },
+    { assetPath: '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg', sourceTitle: 'File:Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg', creator: 'Mutney', license: 'CC BY 4.0', sourcePhotoDate: '2025-06-28', originalSize: '4,032 × 2,198' },
+    { assetPath: '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Exeter_,_Exeter_Cathedral_%5E_Green_-_geograph.org.uk_-_3144068.jpg', sourceTitle: 'File:Exeter , Exeter Cathedral ^ Green - geograph.org.uk - 3144068.jpg', creator: 'Lewis Clarke', license: 'CC BY-SA 2.0', sourcePhotoDate: '2012-09-21', originalSize: '4,288 × 2,848' }
+  ];
+  for (const image of cornwallPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Cornwall photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/${image.license === 'CC BY 4.0' ? 'by/4.0' : 'by-sa/2.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.originalSize), 'source page original dimensions must be recorded');
+    assert.ok(record.verificationDetail.includes('Local WebP pixels were inspected'));
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('converted to WebP'));
+  }
   const wadjemupDiagram = photoRecords.find((item) => item.assetPath === wadjemupDiagramAssetPath);
   assert.ok(wadjemupDiagram, 'inventory must retain the original Wadjemup planning diagram');
   assert.equal(wadjemupDiagram.assetType, 'original-planning-diagram');
