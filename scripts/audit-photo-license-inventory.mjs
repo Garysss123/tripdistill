@@ -1052,6 +1052,11 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', '2026-10-09']
 ]);
 for (const assetPath of [
+  '/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp',
+  '/assets/images/france-dordogne-perigord-vezere-prehistory.webp',
+  '/assets/images/france-dordogne-perigord-dordogne-castles-villages.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+for (const assetPath of [
   '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp',
   '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp',
   '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp'
@@ -1119,6 +1124,14 @@ const chinaCn15PhotoAssetPathSet = new Set(chinaCn15PhotoAssetPaths);
 const chinaCn15TargetRoutes = new Set(['/china/', '/china/beijing/', '/china/hangzhou/', '/china/beijing/summer-palace/']);
 for (const assetPath of chinaCn15PhotoAssetPaths) visualReviewDateByAsset.set(assetPath, '2026-10-11');
 visualReviewDateByAsset.set('/assets/images/china-lhasa-preparation.svg', '2026-10-11');
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Castle_and_church_(left)_of_Beynac_along_the_Dordogneriver_-_panoramio.jpg', {
+  detail: 'Dordogne photo review: exact Commons page checked for Henk Monster, the Beynac castle/church viewpoint, source date 16 October 2011, original 4,342 × 3,257 dimensions and CC BY 3.0 declaration. Local WebP pixels match the castle and village across the Dordogne. Attribution, linked license and WebP edit note are present; this documents the page declaration, not an independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sarlat_2008_05.jpg', {
+  detail: 'Dordogne photo review: exact Commons page checked for Manfred Heyde, the south end of Sarlat market square, source date May 2008, original 2,892 × 1,976 dimensions and CC BY-SA 3.0 declaration. Local WebP pixels match the market square and stall shelters. Attribution, linked same-version license and WebP edit note are present; this documents the page declaration, not an independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
 const entries = [];
 const sourceConflicts = [];
 const unmatchedByAsset = [];

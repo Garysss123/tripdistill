@@ -162,7 +162,30 @@ try {
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 530, 'integrated Cameron Highlands, Andaman, Ayutthaya, Bath/Bristol, Bordeaux/Gironde, Cornwall, Oxford/Cotswolds and China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
+  const dordognePhotos = [
+    { assetPath: '/assets/images/france-dordogne-perigord-dordogne-castles-villages.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Castle_and_church_(left)_of_Beynac_along_the_Dordogneriver_-_panoramio.jpg', creator: 'Henk Monster', license: 'CC BY 3.0' },
+    { assetPath: '/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sarlat_2008_05.jpg', creator: 'Manfred Heyde', license: 'CC BY-SA 3.0' },
+    { assetPath: '/assets/images/france-dordogne-perigord-vezere-prehistory.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Les_Eyzies-de-Tayac_falaise_bourg_(2).jpg', creator: 'Père Igor', license: 'CC BY-SA 4.0' }
+  ];
+  for (const photo of dordognePhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Dordogne inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11', 'each Dordogne WebP was inspected at pixel level');
+  }
+  const beynacPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === dordognePhotos[0].assetPath);
+  const sarlatPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === dordognePhotos[1].assetPath);
+  const lesEyziesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === dordognePhotos[2].assetPath);
+  for (const [record, date] of [[beynacPhoto, '16 October 2011'], [sarlatPhoto, 'May 2008']]) {
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.ok(record.verificationDetail.includes(date));
+  }
+  assert.equal(lesEyziesPhoto.verificationStatus, 'site_credit_or_metadata_only', 'an inaccessible exact source page remains explicitly unverified');
+  assert.equal(lesEyziesPhoto.verificationDate, null);
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 528, 'the merged inventory retains integration source-page checks and adds two Dordogne checks while the Les Eyzies claim remains unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -378,7 +401,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 5, 'inventory must count explicitly recorded project-original artwork, including the Somerset planning diagram');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 528, 'integrated Cameron Highlands, Bath/Bristol, Bordeaux/Gironde, Oxford/Cotswolds, CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 526, 'the regenerated merged inventory includes all previously reviewed records; source-page checks do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
