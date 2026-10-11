@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
+
+const projectRoot = path.resolve(import.meta.dirname, '..');
 
 const routes = [
   ...[
@@ -33,6 +36,12 @@ const routes = [
     '/china/shenzhen/',
     '/china/xiamen-fujian-tulou/',
     '/china/guilin-yangshuo/',
+    '/china/shanghai/',
+    '/china/shanghai/lujiazui-pudong/',
+    '/china/shanghai/zhujiajiao-water-town/',
+    '/china/shanghai/hongkou-suzhou-creek/',
+    '/china/shanghai/west-bund-longhua/',
+    '/china/shanghai/wukang-road-xuhui/',
   ].map((route) => ({ route, reviewDate: '2026-10-10' })),
   ...[
     '/china/changsha/',
@@ -91,10 +100,29 @@ function schemaObjects(value, found = []) {
 
 const roots = ['', 'dist/'];
 let checked = 0;
+
+function collectChinaRoutes(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const absolutePath = path.join(directory, entry.name);
+    if (entry.isDirectory()) return collectChinaRoutes(absolutePath);
+    if (!entry.isFile() || entry.name !== 'index.html') return [];
+    const segments = path.relative(projectRoot, path.dirname(absolutePath)).split(path.sep);
+    return [`/${segments.join('/')}/`];
+  }).sort();
+}
+
+assert.equal(routes.length, 55, `Expected 55 dated China routes, found ${routes.length}`);
+assert.equal(new Set(routes.map(({ route }) => route)).size, 55, 'China route date regression contains duplicates');
+assert.deepEqual(
+  routes.map(({ route }) => route).sort(),
+  collectChinaRoutes(path.join(projectRoot, 'china')),
+  'Every published English China content route must have an explicit date regression entry',
+);
+
 for (const root of roots) {
   for (const { route, reviewDate } of routes) {
     for (const edition of editions) {
-      const file = `${root}${edition.prefix}${route.slice(1)}index.html`;
+      const file = path.join(projectRoot, root, edition.prefix, route.slice(1), 'index.html');
       const html = fs.readFileSync(file, 'utf8');
       const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
       assert.ok(scripts.length, `${file}: missing JSON-LD`);
@@ -125,7 +153,7 @@ for (const root of roots) {
 }
 
 for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
-  const sitemap = fs.readFileSync(sitemapFile, 'utf8');
+  const sitemap = fs.readFileSync(path.join(projectRoot, sitemapFile), 'utf8');
   const records = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
     .map(([, route, date]) => [route, date]));
   for (const { route, reviewDate } of routes) {

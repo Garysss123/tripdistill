@@ -71,6 +71,17 @@ const chinaHangzhouTransitCorrectionRoutes = [
   '/china/hangzhou/west-lake-south-leifeng/',
   '/china/hangzhou/hefang-southern-song/'
 ];
+// These six routes have substantive page diffs in the 10 October Shanghai revisions
+// b5394c6315d8424e06dacfc859d51a1d6a8aa644 and 92f55cfba2f5d10253d6a85a5a4e99ed4e465b5f.
+const chinaShanghaiRoutesLastmod = '2026-10-10';
+const chinaShanghaiRoutes = [
+  '/china/shanghai/',
+  '/china/shanghai/lujiazui-pudong/',
+  '/china/shanghai/zhujiajiao-water-town/',
+  '/china/shanghai/hongkou-suzhou-creek/',
+  '/china/shanghai/west-bund-longhua/',
+  '/china/shanghai/wukang-road-xuhui/'
+];
 // Four Beijing local guides received a route and transit revision on October 10.
 const chinaBeijingRoutesLastmod = '2026-10-10';
 const chinaBeijingRoutes = [
@@ -441,6 +452,11 @@ for (const route of chinaHangzhouTransitCorrectionRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date corrected Hangzhou route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaHangzhouTransitCorrectionLastmod });
+}
+for (const route of chinaShanghaiRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date revised Shanghai route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaShanghaiRoutesLastmod });
 }
 for (const route of chinaBeijingRoutes) {
   const record = records.get(route);
