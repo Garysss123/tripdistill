@@ -618,7 +618,7 @@ export const unitedKingdomEnglandSouthClusters = [
           ['Pendennis headland', 'Give the castle and headland views the main block. This adds walking and exposure but remains on the Falmouth side.'],
           ['Roseland crossing', 'Use one confirmed passenger ferry to St Mawes or another named landing. It creates a two-shore day but makes the final sailing non-negotiable.']
         ],
-        access: 'From Truro the Maritime Line calls at Perranwell, Penryn, Penmere, Falmouth Town and Falmouth Docks; select the stop for the first anchor rather than assuming all are interchangeable. Fal River’s St Mawes Ferry runs between Prince of Wales Pier, Falmouth and The Quay, St Mawes; the operator describes it as year-round, with a reduced winter pattern, but all sailings are subject to tide and weather. Its Enterprise Boats are a separate seasonal product from Falmouth to Trelissick and Malpas; low tide can prevent the boat reaching Truro, and the operator identifies bus 496 from Malpas as a separately paid connection. King Harry Ferry is a vehicle crossing between Feock and Philleigh, not the Falmouth passenger ferry. Confirm a named outward and return product, its landing and live sailing status before making a two-shore day.',
+        access: 'From Truro the Maritime Line calls at Perranwell, Penryn, Penmere, Falmouth Town and Falmouth Docks; select the stop for the first anchor rather than assuming all are interchangeable. Fal River’s St Mawes Ferry runs between Prince of Wales Pier, Falmouth and The Quay, St Mawes; the operator describes it as year-round, with a reduced winter pattern, but all sailings are subject to tide and weather. Enterprise Boats is a separate seasonal Falmouth–Trelissick–Malpas route; the operator also lists special high-tide cruises to Truro for 2026. Bus 496 from Malpas is a separately charged onward connection. King Harry Ferry is a vehicle crossing between Feock and Philleigh, not the Falmouth passenger ferry. Confirm a named outward and return product, its landing and live sailing status before making a two-shore day.',
         tradeoff: 'A full museum, Pendennis and a relaxed Roseland crossing do not share one comfortable day. Crossing the estuary sacrifices collection or castle depth; staying in Falmouth gives up the village but removes the marine cutoff.',
         stages: [
           ['Use the correct branch stop', 'Leave the train at the station nearest the first anchor and note the final service. Do not descend to the wrong quay for a similarly named boat.'],
@@ -639,13 +639,14 @@ export const unitedKingdomEnglandSouthClusters = [
           ['https://nmmc.co.uk/visit/', 'National Maritime Museum Cornwall — official visit planning'],
           ['https://www.falriver.co.uk/ferries/st-mawes-ferry', 'Fal River — St Mawes Ferry route and operating information'],
           ['https://www.falriver.co.uk/ferries/enterprise-boats', 'Fal River — Enterprise Boats seasonal route and tide information'],
+          ['https://www.kingharryscornwall.co.uk/getting-about/ferries/king-harry-ferry/', 'King Harry Ferry — Feock–Philleigh crossing and current service information'],
           ['https://www.falriver.co.uk/ferries', 'Fal River — ferry status and product directory'],
           ['https://www.falriver.co.uk/trains/great-western-railway', 'Fal River — Maritime Line stations and rail planning'],
           ['https://www.english-heritage.org.uk/visit/places/pendennis-castle/', 'English Heritage — Pendennis Castle visitor information']
         ],
         faq: [
           ['Which Falmouth stop is closest to the harbour?', 'Falmouth Town is the central-town stop; Falmouth Docks is nearer the docks and Pendennis approach, while Penmere sits uphill from the centre. Check the walk to your first anchor and return to the same or another planned stop.'],
-          ['Is the St Mawes boat the same as Enterprise Boats?', 'No. The St Mawes passenger ferry links Prince of Wales Pier with The Quay at St Mawes. Enterprise Boats is a separate seasonal Falmouth–Trelissick–Malpas service; the operator says low tide may limit the Malpas landing and a bus 496 onward to Truro is separately paid. Check current status and return sailing for either product.'],
+          ['Is the St Mawes boat the same as Enterprise Boats?', 'No. The St Mawes passenger ferry links Prince of Wales Pier with The Quay at St Mawes. Enterprise Boats is a seasonal Falmouth–Trelissick–Malpas route; its operator also lists special high-tide cruises to Truro for 2026. Bus 496 from Malpas is a separately charged onward connection. Check current status and the return sailing for either product.'],
           ['What should I do if wind cancels the crossing?', 'Stay on the Falmouth shore and use the museum, town or Pendennis according to conditions. Do not attempt to recreate the crossing by an unplanned road transfer; King Harry is a separate vehicle ferry route.']
         ]
       }),

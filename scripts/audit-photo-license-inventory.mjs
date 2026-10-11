@@ -687,6 +687,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:View_of_M
   detail: 'Mae Sa Valley photo review: exact Commons title, VN.NguyenDucDuy authorship, and CC BY-SA 4.0 commercial/adaptation terms checked on 2026-10-08. Local WebP pixels were inspected and match a cultivated hillside and valley landscape in Mae Rim District. The Commons page records 20 December 2025, while embedded EXIF records 20 December 2024; the source photograph date is unresolved and is intentionally left null in the inventory. The displayed credit links the source and license and states the resize, display crop, WebP conversion and same-version share-alike adaptation.',
   checkedOn: '2026-10-08'
 });
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg', {
+  detail: 'Cornwall photo review: exact Commons title, nick macneill authorship, 15 September 1991 photograph date, original dimensions 1,024 × 693, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show St Ives harbour at low tide with fishing boats on the sand, matching the source-page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg', {
+  detail: 'Cornwall photo review: exact Commons title, Mutney authorship, 28 June 2025 photograph date, original dimensions 4,032 × 2,198, and CC BY 4.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show a passenger boat with sailing craft at St Mawes Harbour, matching the source title and location. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Exeter_,_Exeter_Cathedral_%5E_Green_-_geograph.org.uk_-_3144068.jpg', {
+  detail: 'Cornwall/Devon photo review: exact Commons title, Lewis Clarke authorship, 21 September 2012 photograph date, original dimensions 4,288 × 2,848, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show Exeter Cathedral and Cathedral Green with restoration scaffolding visible, matching the source page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
 for (const [sourceUrl, detail] of [
   ['https://commons.wikimedia.org/wiki/File:Banana_beach_Phuket_2017_-_01.jpg', 'Commons file page revision 824730361 checked 2026-10-08: page title, Anton Zelenov attribution, CC BY-SA 4.0 commercial/adaptation terms, and 9 December 2017 photo date recorded. Local WebP pixels show the cove, forested headland and offshore rock. Commons attribution and embedded EXIF creator field differ (Anton Zelenov / Tony Zelenoff); this remains unresolved.'],
   ['https://commons.wikimedia.org/wiki/File:Phuket_old_town_(52549766215).jpg', 'Commons file page revision 1163644968 checked 2026-10-08: Mussi Katz, CC0 1.0 public-domain dedication, and 30 November 2022 photo date recorded. Page identifies the old Phuket Municipality Police Station; local WebP pixels show the historic yellow building.'],
@@ -741,6 +753,9 @@ const explicitCreditMappings = new Map([
   ['/assets/images/thailand-chiang-mai-ping-river.webp', { sourceTitle: 'File:Ping River in Chiang Mai 3.jpg', creditLabel: 'Ping River from Chansom Memorial Bridge', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }]
 ]);
 const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp',
+  '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp',
+  '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp',
   '/assets/images/thailand-chiang-mai-warorot.webp',
   '/assets/images/thailand-chiang-mai-mae-rim.webp',
   '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
@@ -877,6 +892,11 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', '2026-10-09'],
   ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', '2026-10-09']
 ]);
+for (const assetPath of [
+  '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp',
+  '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp',
+  '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
 const entries = [];
 const sourceConflicts = [];
 const unmatchedByAsset = [];
