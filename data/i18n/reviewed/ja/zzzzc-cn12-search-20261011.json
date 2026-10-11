@@ -1,0 +1,25 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Start in Daoli, confirm Harbin versus Harbin West from the rail ticket, and use Ice-Snow World only with the season’s official gate and return directions.": "道里区を拠点にし、鉄道切符でハルビン駅とハルビン西駅を確認します。氷雪大世界は、訪問シーズンの公式な入口と帰路案内を確認してから訪れましょう。",
+    "harbin west": "ハルビン西駅",
+    "harbin taiping airport": "ハルビン太平国際空港",
+    "Base in Hohhot for city context, then choose one region with confirmed transfers and overnight stops; return to the exact station or airport with a buffer.": "まずフフホトに泊まって市内を把握し、移動手段と宿泊先を確定した地域を一つ選びましょう。利用する駅または空港を確かめ、時間に余裕をもって戻ってください。",
+    "hohhot railway station": "フフホト駅",
+    "hohhot east": "フフホト東駅",
+    "hohhot baita airport": "フフホト白塔国際空港",
+    "site of xanadu": "上都遺跡",
+    "ordos": "オルドス",
+    "Connect Huangshan North to Tunxi or Tangkou, then match the reserved gate, shuttle, cableway and weather fallback to a safe train return.": "黄山北駅から屯渓または湯口への移動を手配し、予約した入口に合わせてシャトルとロープウェイを確認しましょう。天候に応じた代替案と、列車に間に合う余裕をもった帰路も計画してください。",
+    "huangshan north": "黄山北駅",
+    "tunxi": "屯渓",
+    "south gate huangshan": "黄山南大門",
+    "qingdao north": "青島北駅",
+    "jiaodong international airport": "青島膠東国際空港",
+    "Choose Qingdao or Qingdao North correctly, link Jiaodong Airport to the right base, check beach operating notices and plan one current-rule Laoshan corridor.": "青島駅と青島北駅を正しく区別し、膠東国際空港から拠点までの移動を確認してください。海水浴場の営業情報を最新告知で確認し、崂山では現行ルールに沿って一つのルートを計画しましょう。"
+  }
+}

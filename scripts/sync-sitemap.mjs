@@ -103,6 +103,14 @@ const chinaCentralRoutes = [
   '/china/chengdu/',
   '/china/chongqing/'
 ];
+// Harbin, Hohhot, Huangshan and Qingdao received a northern-route review on October 11.
+const chinaNorthernRoutesLastmod = '2026-10-11';
+const chinaNorthernRoutes = [
+  '/china/harbin/',
+  '/china/hohhot-inner-mongolia/',
+  '/china/huangshan/',
+  '/china/qingdao/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -401,6 +409,11 @@ for (const route of chinaCentralRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Central China route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaCentralRoutesLastmod });
+}
+for (const route of chinaNorthernRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed northern China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaNorthernRoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);

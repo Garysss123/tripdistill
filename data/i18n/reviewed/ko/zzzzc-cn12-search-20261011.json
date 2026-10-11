@@ -1,0 +1,25 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Start in Daoli, confirm Harbin versus Harbin West from the rail ticket, and use Ice-Snow World only with the season’s official gate and return directions.": "다오리에서 일정을 시작하고 열차표에서 하얼빈역과 하얼빈서역 중 어느 역인지 확인하세요. 빙설대세계는 해당 시즌의 공식 입구와 귀환 안내가 확인된 경우에만 방문하세요.",
+    "harbin west": "하얼빈서역",
+    "harbin taiping airport": "하얼빈 타이핑 국제공항",
+    "Base in Hohhot for city context, then choose one region with confirmed transfers and overnight stops; return to the exact station or airport with a buffer.": "후허하오터를 거점으로 시내를 둘러본 뒤, 환승편과 숙박지가 확정된 권역 하나를 선택하세요. 출발할 역이나 공항을 정확히 확인하고 돌아올 때는 여유 시간을 두세요.",
+    "hohhot railway station": "후허하오터역",
+    "hohhot east": "후허하오터동역",
+    "hohhot baita airport": "후허하오터 바이타 공항",
+    "site of xanadu": "원나라 상도 유적",
+    "ordos": "오르도스",
+    "Connect Huangshan North to Tunxi or Tangkou, then match the reserved gate, shuttle, cableway and weather fallback to a safe train return.": "황산북역에서 툰시나 탕커우로 이동한 뒤, 예약한 입장 게이트와 셔틀·케이블카 일정을 맞추고 날씨 악화 시 대안도 마련해 열차로 안전하게 돌아오세요.",
+    "huangshan north": "황산북역",
+    "tunxi": "툰시",
+    "south gate huangshan": "황산 남문",
+    "qingdao north": "칭다오북역",
+    "jiaodong international airport": "칭다오 자오둥 국제공항",
+    "Choose Qingdao or Qingdao North correctly, link Jiaodong Airport to the right base, check beach operating notices and plan one current-rule Laoshan corridor.": "칭다오역과 칭다오북역 중 맞는 역을 확인하고, 자오둥 공항에서 일정에 맞는 숙소 지역까지의 이동편을 확인하세요. 해수욕장 운영 공지를 확인하고 최신 규정에 맞는 라오산 코스 한 곳을 계획하세요."
+  }
+}

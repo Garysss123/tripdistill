@@ -1,0 +1,25 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Start in Daoli, confirm Harbin versus Harbin West from the rail ticket, and use Ice-Snow World only with the season’s official gate and return directions.": "เริ่มเที่ยวจากเขตเต้าหลี่ ตรวจสอบให้ชัดว่าตั๋วรถไฟระบุสถานีฮาร์บินหรือฮาร์บินตะวันตก และไปโลกน้ำแข็งและหิมะเฉพาะเมื่อประกาศทางการประจำฤดูกาลยืนยันทางเข้าและเส้นทางกลับแล้ว",
+    "harbin west": "สถานีฮาร์บินตะวันตก",
+    "harbin taiping airport": "สนามบินนานาชาติฮาร์บินไท่ผิง",
+    "Base in Hohhot for city context, then choose one region with confirmed transfers and overnight stops; return to the exact station or airport with a buffer.": "ตั้งหลักในโฮฮอตเพื่อเที่ยวเมืองและทำความเข้าใจภูมิภาค จากนั้นเลือกเส้นทางภูมิภาคเพียงแห่งเดียวเมื่อยืนยันจุดต่อรถและที่พักค้างคืนแล้ว เผื่อเวลาเดินทางกลับไปยังสถานีหรือสนามบินที่จะใช้จริง",
+    "hohhot railway station": "สถานีรถไฟโฮฮอต",
+    "hohhot east": "สถานีรถไฟโฮฮอตตะวันออก",
+    "hohhot baita airport": "สนามบินนานาชาติโฮฮอตไป๋ถ่า",
+    "site of xanadu": "เมืองซานาดู",
+    "ordos": "ออร์ดอส",
+    "Connect Huangshan North to Tunxi or Tangkou, then match the reserved gate, shuttle, cableway and weather fallback to a safe train return.": "เชื่อมสถานีหวงซานเหนือกับถุนซีหรือถังโข่ว จากนั้นวางแผนประตูทางเข้าที่จองไว้ รถรับส่ง กระเช้า และแผนสำรองตามสภาพอากาศให้สอดคล้องกับการกลับไปขึ้นรถไฟอย่างปลอดภัย",
+    "huangshan north": "สถานีรถไฟหวงซานเหนือ",
+    "tunxi": "ถุนซี",
+    "south gate huangshan": "ประตูใต้หวงซาน",
+    "qingdao north": "สถานีชิงเต่าเหนือ",
+    "jiaodong international airport": "สนามบินนานาชาติชิงเต่าเจียวตง",
+    "Choose Qingdao or Qingdao North correctly, link Jiaodong Airport to the right base, check beach operating notices and plan one current-rule Laoshan corridor.": "เลือกสถานีชิงเต่าหรือสถานีชิงเต่าเหนือให้ตรงกับตั๋วรถไฟ เชื่อมการเดินทางจากสนามบินเจียวตงไปยังฐานที่พักที่เหมาะสม ตรวจสอบประกาศการให้บริการชายหาด และเลือกแนวเที่ยวเหลาซานหนึ่งเส้นทางตามข้อกำหนดปัจจุบัน"
+  }
+}

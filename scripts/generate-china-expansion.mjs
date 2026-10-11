@@ -124,6 +124,9 @@ function renderGuide(guide) {
   const chapters = guide.chapters.map((chapter, index) => `<article id="chapter-${index + 1}"><small>${String(index + 1).padStart(2, '0')} / ${escapeHtml(chapter.label)}</small><h3>${escapeHtml(chapter.title)}</h3><p>${escapeHtml(chapter.text)}</p></article>`).join('');
   const sources = guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.label)}</a>.</li>`).join('');
   const faqHtml = guide.faqs.map((faq) => `<details><summary>${escapeHtml(faq.question)}</summary><div class="faq-answer"><p>${escapeHtml(faq.answer)}</p></div></details>`).join('');
+  const photoLicense = guide.image.licenseUrl
+    ? `<a href="${escapeHtml(guide.image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(guide.image.license)}</a>${guide.image.license.startsWith('CC BY-SA ') ? `; this site adaptation is shared under the same ${escapeHtml(guide.image.license)} license` : ''}`
+    : escapeHtml(guide.image.license);
 
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
@@ -156,7 +159,7 @@ function renderGuide(guide) {
 
       <section class="section" id="faq" aria-labelledby="faq-title"><div class="exp-section-heading"><span>QUICK ANSWERS</span><h2 id="faq-title">${escapeHtml(guide.name)} planning FAQ</h2></div><div class="faq-list">${faqHtml}</div></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${visibleReviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${escapeHtml(guide.image.license)}.</li></ul></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${visibleReviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${photoLicense}.</li></ul></section>
     </article>
   </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body></html>
