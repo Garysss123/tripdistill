@@ -168,6 +168,45 @@ if (brittany) {
   }
 }
 
+const fr02GuideRoutes = new Set([
+  '/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/',
+  '/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/',
+  '/france/provence-inland/luberon-villages-abbey/',
+  '/france/corsica/bastia-cap-corse/',
+  '/france/corsica/bonifacio-porto-vecchio/'
+]);
+const fr02SearchRecords = franceGuides
+  .filter((guide) => fr02GuideRoutes.has(guide.url))
+  .map((guide) => ({ route: guide.url, source: guide.searchSummary || guide.summary }));
+check(fr02SearchRecords.length === 5, 'FR02 must provide a search summary for exactly five target routes');
+for (const [language, prefix] of locales) {
+  let catalog;
+  if (language !== 'en') {
+    try {
+      catalog = JSON.parse(read(`data/i18n/${language}.json`));
+      check(catalog.qualityStatus === 'reviewed', `${language}: FR02 search summary catalog is not approved`);
+    } catch {
+      check(false, `${language}: approved translation catalog is missing`);
+      catalog = { translations: {} };
+    }
+  }
+  const localizedIndexPath = prefix ? `${prefix.slice(1)}/data/search-index.json` : 'data/search-index.json';
+  let localizedSearch;
+  try { localizedSearch = JSON.parse(read(localizedIndexPath)); }
+  catch {
+    check(false, `${language}: search index is missing at ${localizedIndexPath}`);
+    continue;
+  }
+  for (const item of fr02SearchRecords) {
+    const localizedRoute = `${prefix}${item.route}`;
+    const record = localizedSearch.find((entry) => entry.url === localizedRoute);
+    check(!!record, `${language}: ${localizedRoute} missing from search index`);
+    const expectedSummary = language === 'en' ? item.source : catalog?.translations?.[item.source];
+    if (language !== 'en') check(!!expectedSummary, `${language}: no approved FR02 search summary at ${item.route}`);
+    if (record && expectedSummary) check(record.summary === expectedSummary, `${language}: FR02 search summary mismatch at ${localizedRoute}`);
+  }
+}
+
 const header = read('components/header.html');
 const sidebar = read('components/sidebar.html');
 const footer = read('components/footer.html');
@@ -201,9 +240,22 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/brittany-coasts/morbihan-carnac/',
     '/france/brittany-coasts/quimper-crozon/'
   ]);
+  const fr02EditedRoutes = new Set([
+    '/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/',
+    '/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/',
+    '/france/provence-inland/luberon-villages-abbey/',
+    '/france/corsica/bastia-cap-corse/',
+    '/france/corsica/bonifacio-porto-vecchio/'
+  ]);
   for (const route of routes) {
-    const expectedDate = brittanyEditedRoutes.has(route) ? '2026-10-10' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
+  for (const route of fr02EditedRoutes) {
+    for (const [language, prefix] of locales) {
+      const localizedRoute = `${prefix}${route}`;
+      check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-11</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-11`);
+    }
   }
   for (const route of brittanyEditedRoutes) {
     for (const [language, prefix] of locales) {

@@ -28,6 +28,14 @@ const thailandAndamanLastmod = '2026-10-09';
 const thailandAyutthayaLastmod = '2026-10-09';
 const franceLastmod = '2026-09-20';
 const franceBrittanyLastmod = '2026-10-10';
+const franceFr02Lastmod = '2026-10-11';
+const franceFr02EditedRoutes = [
+  '/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/',
+  '/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/',
+  '/france/provence-inland/luberon-villages-abbey/',
+  '/france/corsica/bastia-cap-corse/',
+  '/france/corsica/bonifacio-porto-vecchio/'
+];
 const franceBrittanyEditedRoutes = [
   '/france/brittany-coasts/',
   '/france/brittany-coasts/saint-malo-dinan/',
@@ -473,6 +481,11 @@ for (const route of franceResponsiveEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date France regional responsive edit route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceResponsiveLastmod });
+}
+for (const route of franceFr02EditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited France FR02 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceFr02Lastmod });
 }
 for (const route of franceBrittanyEditedRoutes) {
   const record = records.get(route);

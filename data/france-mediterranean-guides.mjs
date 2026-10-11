@@ -233,32 +233,51 @@ export const franceMediterraneanClusters = [
         imageAlt: 'Gordes and the Luberon’s stone hill landscape in Provence',
         purpose: 'Choose one Luberon village cluster and, if appropriate, Sénanque Abbey through current access and worship rules, replacing the impossible goal of collecting every hill town and lavender field.',
         summary: 'Gordes, Roussillon, Lourmarin and the abbey lie on different road branches. A useful day selects two compatible stops, one meal and a sober, heat-aware return.',
+        hubAccess: 'Regional buses serve some villages on limited schedules, but a tour, bicycle or car is often required. Choose the cluster from the live timetable, road and parking rules; never assume taxis can bridge missed rural buses.',
+        hubTradeoff: 'The route gives up “all the Luberon.” Two villages or one village plus the abbey already consume a full day after parking, heat and meals are counted.',
+        hubDuration: 'Allow a full day for one two-stop cluster. One village alone merits three to five hours with a market or meal; adding a third usually creates road tourism.',
+        searchSummary: 'Choose one Luberon branch: Gordes with a prebooked Sénanque visit, Roussillon with its open ochre trail, or a southern Lourmarin pair. Use Apt/Avignon buses only for listed stops and prearrange the rural last mile.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         choices: [
-          ['Gordes and Sénanque', 'Use the hill village and abbey only with current road, parking and visitor access. Lavender is seasonal agriculture, not guaranteed scenery.'],
-          ['Roussillon and ochre landscape', 'Choose village streets and one official ochre route when heat, fire and trail notices permit.'],
-          ['Southern village pair', 'Use Lourmarin and one nearby village or market on a coherent road line, prioritizing living town rhythm over famous-photo mileage.']
+          ['Gordes and Sénanque Abbey', 'Book a current abbey visit before anchoring the day, then pair it with Gordes. The abbey is a living monastery: visitor hours can pause for prayer and Sunday morning access is not listed. Lavender is seasonal agriculture, not a guaranteed bloom or public field.'],
+          ['Roussillon and the ochre trail', 'Make the village and official Sentier des Ocres one northern cluster. Check the trail opening, heat and fire notices that day; if it closes, keep to public village lanes and a museum only if open.'],
+          ['Lourmarin and one southern village', 'Use Lourmarin with one nearby stop on the same road branch, choosing a village market, château or meal that is actually open. Do not combine this southern route with Gordes and the abbey by map distance alone.']
         ],
-        access: 'Regional buses serve some villages on limited schedules, but a tour, bicycle or car is often required. Choose the cluster from the live timetable, road and parking rules; never assume taxis can bridge missed rural buses.',
-        tradeoff: 'The route gives up “all the Luberon.” Two villages or one village plus the abbey already consume a full day after parking, heat and meals are counted.',
+        access: 'The regional ZOU! page labels line 915 Apt–Avignon–Forcalquier–La Brillanne and notes a new timetable from 1 September 2026; this is a gateway between larger towns, not a promise of last-mile service to Sénanque or every hill village. From Avignon, Apt or Cavaillon, use only the live stop list and date-specific return, then prebook a driver/tour or rent a car for the village/abbey segment. Do not rely on an unbooked rural taxi or bicycle transfer in summer heat.',
+        tradeoff: 'The northern branch (Gordes/Sénanque/Roussillon) and southern branch (Lourmarin and nearby villages) work better as separate days or bases. Gordes is best placed for an early abbey visit, Apt for central services and the regional bus gateway, and Lourmarin for the southern pair; Avignon gives rail access but requires onward ground transport. Choose a two- or three-night base rather than moving hotels each day.',
         stages: [
-          ['Enter through one gateway', 'Start from Avignon, Cavaillon, Apt or Aix according to the chosen cluster, carrying the full return and fuel plan.'],
-          ['Read the first village beyond the viewpoint', 'Walk public lanes, market and interpretation without entering resident courtyards or blocking roads for photographs.'],
-          ['Commit to abbey, ochre or second village', 'Follow current ticket, worship, trail and fire rules. Treat bloom and landscape conditions as variable.'],
-          ['Return before roads and buses narrow', 'Leave with a daylight and congestion buffer, skipping a third village rather than missing the final connection.']
+          ['Select one branch and base', 'From Avignon/Cavaillon/Apt, save the actual ZOU! or rail-to-bus legs only if the listed stops fit your date. Reserve the village last mile and return, or use a car; leave a heat and road buffer.'],
+          ['Walk one village on its own terms', 'In Gordes, use public streets and a designated car park; in Roussillon, make the official ochre trail the main walk; in Lourmarin, take the market or château only after checking its day and entry.'],
+          ['Use the abbey only with a booked time', 'For Sénanque, check the live visit page and book a specific time. Follow prayer and silence rules, keep to visitor paths and do not enter lavender fields. If the time is unavailable, keep the day in Gordes rather than treating the gate as a viewpoint.'],
+          ['Return by the route you booked', 'Reach the driver/parking point and leave well before evening. If heat, a fire notice or the bus margin tightens, drop the second village rather than risk an unplanned rural connection.']
         ],
-        fallback: 'If fire risk, heat or road controls remove the landscape route, stay in the gateway town or use one accessible village and indoor museum. If Sénanque is closed to visitors, respect the monastic closure and do not seek unauthorized viewpoints.',
+        fallback: 'If heat or fire restrictions close the ochre trail or a road, stay in one open village and use a currently open indoor site, or return to Apt/Avignon. If Sénanque has no suitable visit slot or closes for worship, keep to Gordes public lanes and do not seek an unofficial abbey viewpoint or enter farm fields.',
         watch: [
-          ['Lavender is not a fixed calendar prop', 'Bloom, harvest and field access vary; never enter crops or fly drones without permission.'],
-          ['Fire controls can close trails and roads', 'Check official daily access in hot, dry periods and obey barriers.'],
-          ['Village parking protects residents', 'Use designated lots and walk; narrow streets are not drop-off lanes.']
+          ['The line 915 is not village transport', 'Its official page shows the regional Apt–Avignon–Forcalquier–La Brillanne route and a new timetable notice effective 1 September 2026. Confirm your exact stop and last return; it does not solve the abbey or village last mile.'],
+          ['Abbey hours follow a living monastery', 'Use the current booking page for the selected date, expect visitor access to pause around worship, and respect silence, stairs and the no-entry lavender-field rule.'],
+          ['Fire, heat and crops change the plan', 'Check the official local fire-access notice and trail status; bloom and harvest vary by year. Carry water and keep to designated parking, paths and public viewpoints.']
         ],
-        duration: 'Allow a full day for one two-stop cluster. One village alone merits three to five hours with a market or meal; adding a third usually creates road tourism.',
-        combine: 'Combine Gordes with Sénanque, Roussillon with one nearby village, or a southern pair. Keep Marseille and the Camargue separate.',
-        verify: 'Check ZOU! service or tour, abbey access and worship, fire restrictions, market day, road closures and weather immediately before departure.',
+        duration: 'Allow six to eight hours for Gordes plus a booked Sénanque visit once rural transfers and a meal are counted. Roussillon village and its ochre walk need a separate half-to-full day; a Lourmarin pair is a full day when markets or an interior visit are added.',
+        combine: 'Pair Gordes with Sénanque, Roussillon with one northern neighbor, or Lourmarin with one southern village. Keep the north and south branches on separate days and do not add an airport/rail departure day to a countryside loop.',
+        verify: 'Check the current ZOU! line 915 stop list and return, booked rural last mile, Sénanque booking/worship rules, Roussillon trail and fire notice, the chosen market/interior opening, heat forecast and designated parking.',
         sources: [
           ['https://uk.destinationluberon.com/', 'Destination Luberon — official village and landscape planning'],
-          ['https://www.senanque.fr/en/', 'Sénanque Abbey — official visitor and worship information']
-        ]
+          ['https://www.luberon-apt.fr/ligne-15-apt-avignon', 'ZOU! / Luberon Apt — official line 915 route and 2026 timetable notice'],
+          ['https://www.senanque.fr/en/visits-of-the-abbey-2/', 'Notre-Dame de Sénanque — current visit schedule, booking and visitor rules'],
+          ['https://www.senanque.fr/en/map-access/', 'Notre-Dame de Sénanque — official road approach and access map']
+        ],
+        siteContext: {
+          label: 'THREE LUBERON CLUSTERS',
+          heading: 'Pick the village branch before choosing a base',
+          intro: 'Apt–Avignon regional transport is a gateway, while the abbey and hill towns need their own last-mile plan. The shortest map route is not always a workable day.',
+          details: [
+            ['Gordes and Sénanque', 'Use Gordes as the north-side base, book an abbey slot first, and plan parking or a driver on the Gordes-to-abbey road. Visitors must respect prayer, stairs and marked access; lavender fields are not visitor paths.'],
+            ['Roussillon and ochre', 'Treat the village and official Sentier des Ocres as one walk. Check opening, heat and fire controls before arrival; a closed trail means village lanes, not an improvised path into the ochre hillside.'],
+            ['Lourmarin south', 'Stay in or near Lourmarin for a southern pair. Choose one adjacent village by actual market/interior opening and road line rather than crossing back north to Sénanque.'],
+            ['Apt, Avignon and the bus', 'The line 915 page lists the Apt–Avignon–Forcalquier–La Brillanne corridor and a timetable update effective 1 September 2026. Check the stop and return for the day, then prebook the rural leg; do not read the city-to-city bus as abbey access.']
+          ]
+        }
       })
     ]
   }),
@@ -584,32 +603,51 @@ export const franceMediterraneanClusters = [
         imageAlt: 'Bastia’s old port and hillside city in northern Corsica',
         purpose: 'Use Bastia’s old port and citadel as a complete city, adding one side of Cap Corse only through a bounded road, bus, bicycle or tour route.',
         summary: 'Bastia provides ferry, rail and urban context; Cap Corse is a narrow, slow peninsula whose villages and headlands cannot be collected in a quick loop.',
+        hubAccess: 'Bastia ferry port, rail station and old port are distinct but close urban nodes. Cap Corse services are limited and roads narrow; confirm rental terms, bus return and parking before leaving the city.',
+        hubTradeoff: 'A deep Bastia visit and complete Cap Corse loop exceed one day. The route keeps the city plus one northern segment or gives the peninsula its own day.',
+        hubDuration: 'Allow five to seven hours for Bastia and a full day for one Cap Corse sector. A complete peninsula loop may be better with an overnight.',
+        searchSummary: 'Use Bastia for an easy harbor/citadel walk. For Cap Corse, select the east D80 coast through Erbalunga toward Macinaggio or a separate west-coast drive; bus service to Macinaggio is limited, so verify date and return or book a car/tour.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         choices: [
-          ['Bastia city', 'Use Terra Vecchia, old port, market and citadel or museum as a full walk. This is the no-car route.'],
-          ['Eastern Cap Corse', 'Choose Erbalunga, Macinaggio or another defined east-coast segment through current bus, road or boat access.'],
-          ['Peninsula road day', 'Drive or tour one planned circuit with conservative stops, fuel and daylight. A full loop can be tiring and should not precede a ferry departure.']
+          ['Bastia without a car', 'From the ferry or rail node, walk Terra Vecchia and the old port, then climb once to Terra Nova/citadel and the museum only if open. Bastia Airport lists a city shuttle to the station; verify the current stop and transfer before a flight.'],
+          ['East-coast Cap Corse', 'Take the D80 north from Bastia toward Erbalunga, Sisco and Macinaggio, then stop at villages you have chosen. The listed Macinaggio–Bastia bus is described as school-term weekday service, not an all-day visitor shuttle; use a car or prebooked tour unless the current date-specific outbound and return both work.'],
+          ['A full peninsula circuit', 'Drive or book a guided day that deliberately covers both D80 coasts, with Nonza/Centuri or other stops selected in advance. Curves, village parking and slower photo stops make the loop a full day; stay north overnight if the return to Bastia or ferry margin would otherwise be tight.']
         ],
-        access: 'Bastia ferry port, rail station and old port are distinct but close urban nodes. Cap Corse services are limited and roads narrow; confirm rental terms, bus return and parking before leaving the city.',
-        tradeoff: 'A deep Bastia visit and complete Cap Corse loop exceed one day. The route keeps the city plus one northern segment or gives the peninsula its own day.',
+        access: 'Bastia has separate airport, ferry, rail-station and old-port nodes; the airport authority lists a city shuttle to Bastia station. The Cap Corse D80 loop is a slow coastal road rather than a hop-on circuit. The official Visit Corsica listing describes the Macinaggio–Bastia bus as Monday–Friday during school term, so it cannot be assumed for weekends, holidays or convenient village hops. Check the current operator timetable for both legs, or choose a rental car/prebooked tour; do not depend on a taxi appearing in a small village.',
+        tradeoff: 'Base in Bastia for ferry/rail and an easy city evening; sleep in Macinaggio when the north Cape or coastal path is the point; use a rental car for a full west-and-east D80 loop. Bastia plus one east-coast village can fit a long day, but a full peninsula loop needs its own day and preferably an overnight. Spend the last night in Bastia before a ferry or flight rather than combining the loop with departure.',
         stages: [
-          ['Orient among port and station', 'Confirm ferry check-in, rail or bus departure before walking into Terra Vecchia, especially with luggage.'],
-          ['Read Bastia vertically', 'Connect old port, market and citadel through one climb, using the museum or churches selectively.'],
-          ['Commit to one Cap Corse line', 'Take the verified bus, boat or road route along one coast, stopping only where legal parking and public access exist.'],
-          ['Return without a ferry gamble', 'Reach Bastia or lodging well before check-in or darkness; do not schedule the peninsula loop on the same margin as an outbound sailing.']
+          ['Choose the travel node', 'On arrival, confirm whether you are at the airport, ferry port or Bastia station and the onward transfer. Store luggage before walking; the old port is the city center, not the airport.'],
+          ['Walk Bastia from Terra Vecchia uphill', 'Follow the old port and market edge through public lanes, then climb to the citadel/Terra Nova and choose one open museum or church. Return by a different public street rather than carrying bags up the stairs.'],
+          ['Commit to an east or west Cape road', 'For a short north excursion, select the D80 east coast to Erbalunga and a further stop only if the return is certain. For a full loop, arrange the vehicle/tour, fuel, parking stops and daylight before leaving Bastia.'],
+          ['Sleep near the next transport', 'Return to Bastia with ample ferry check-in or airport time. If the trip continues north, an overnight around Macinaggio avoids forcing the loop back after dark; verify the next day’s return separately.']
         ],
-        fallback: 'If peninsula weather or roads fail, stay in Bastia for museum, market and city viewpoints. If a ferry is delayed, keep bags and transport flexible rather than beginning a distant road excursion.',
+        fallback: 'If wind, rain, road work, fire restrictions or the limited bus service defeats the Cape plan, keep a Bastia day: old port, Terra Nova and a currently open museum/church. If the ferry is delayed, stay near the port/station and keep luggage and check-in arrangements flexible instead of starting a distant road trip.',
         watch: [
-          ['Ferry time includes check-in', 'Published departure is not the arrival deadline. Follow the operator’s vehicle and foot-passenger rules.'],
-          ['Peninsula roads demand concentration', 'Narrow curves and limited shoulders make rushed sightseeing unsafe.'],
-          ['Coastal paths may have seasonal controls', 'Check fire, erosion and private-land boundaries before walking beyond a village.']
+          ['The bus listing is not an all-day Cape service', 'The official Macinaggio–Bastia description is school-term weekdays. Verify service on your date and both legs; it is not a dependable weekend peninsula loop.'],
+          ['D80 driving is slow and exposed', 'Narrow curves, limited shoulders, wind and village traffic reward few planned stops. Do not count every headland as a quick pull-off.'],
+          ['Ferry and coast access have separate rules', 'Follow ferry check-in/vehicle instructions, and check local fire/erosion closures before the customs tower, coastal path or any exposed route.']
         ],
-        duration: 'Allow five to seven hours for Bastia and a full day for one Cap Corse sector. A complete peninsula loop may be better with an overnight.',
-        combine: 'Combine Bastia with Erbalunga or another near east-coast stop. Keep Saint-Florent, Calvi and the west side for separate plans.',
-        verify: 'Check ferry or rail, Cap Corse bus or road, museum and market hours, fire and wind notices and the final return.',
+        duration: 'Allow four to six hours for Bastia’s port-to-citadel walk and a meal. Give one D80 coast a full day; a full Cape loop is a long day from Bastia or an easier two-day plan with a Macinaggio overnight.',
+        combine: 'Combine Bastia with Erbalunga for a bounded east-coast day only when road/bus return is solved. Keep the west coast and a full Cap Corse loop separate from ferry departure day and from Calvi/Saint-Florent transfers.',
+        verify: 'Check airport shuttle, ferry check-in, current Macinaggio–Bastia bus operating days and exact return, D80 road notices, selected village parking, Cap Corse coastal-path/fire access and museum opening.',
         sources: [
           ['https://www.bastia-tourisme.com/en/', 'Bastia Tourist Office — official city planning'],
-          ['https://www.capcorse-tourisme.corsica/en/', 'Cap Corse Tourism — official peninsula guide']
-        ]
+          ['https://bastia-aeroport.cci.corsica/en/shuttles/', 'Bastia Airport — official city shuttle and seasonal intercity coach information'],
+          ['https://www.visit-corsica.com/en/Mon-sejour/Transporteurs/Tous-les-transporteurs/LIGNE-DE-BUS-MACINAGGIO-BASTIA-LIGNE-DE-TRANSPORT-SCOLAIRE', 'Visit Corsica — official Macinaggio–Bastia bus operating-day notice'],
+          ['https://www.capcorse-tourisme.corsica/en/', 'Cap Corse Tourism — official peninsula, villages and walking information']
+        ],
+        siteContext: {
+          label: 'BASTIA TO CAP CORSE',
+          heading: 'A city walk, an east-coast outing and the peninsula loop are three different plans',
+          intro: 'The D80 skirts steep coast and villages with slow turns. Pick an end point and return contract before leaving Bastia; the local bus listing has limited school-term service.',
+          details: [
+            ['Bastia, no car', 'Airport shuttle terminates at the station; the ferry and old port are separate arrival points. Store bags first, walk Terra Vecchia/old port and climb to Terra Nova, then return to your actual rail or sailing node.'],
+            ['East D80: Erbalunga to Macinaggio', 'Use a car or tour for a flexible day. The official Macinaggio–Bastia listing says Monday–Friday during school term; verify its current exact route and return before considering it for a visit.'],
+            ['West Cape and full circuit', 'Plan a separate D80 day for the west-coast villages and headlands. Leave time for narrow-road speeds, legal parking, wind and daylight; do not use the loop as a pre-ferry transfer.'],
+            ['Where to sleep', 'Choose Bastia for ferry/rail, Macinaggio for a Cape-focused overnight and early walk, or a mid-route lodging only if a car is already arranged. Move back to Bastia the night before a fixed departure.']
+          ]
+        }
       }),
       g({
         slug: 'bonifacio-porto-vecchio',
@@ -620,32 +658,51 @@ export const franceMediterraneanClusters = [
         imageAlt: 'Bonifacio’s limestone cliffs and harbor in southern Corsica',
         purpose: 'Choose Bonifacio’s cliff city, a licensed sea view or a Porto-Vecchio beach corridor, then solve parking, buses and heat instead of trying to cover the entire south coast.',
         summary: 'Bonifacio’s upper town and marina form one vertical visit; Porto-Vecchio and its beaches require a separate road or bus system. One should be the base, the other an excursion.',
+        hubAccess: 'Figari airport, Porto-Vecchio and Bonifacio require bus, transfer or car planning. Parking sits outside sensitive centers and beaches; summer shuttles and road queues can determine the practical route.',
+        hubTradeoff: 'Bonifacio, a long boat circuit and several beaches exceed one day. The route keeps one town and one sea or beach contract.',
+        hubDuration: 'Allow five to seven hours for Bonifacio alone and a full day for Porto-Vecchio plus one beach. A boat adds several hours and should replace another major layer.',
+        searchSummary: 'For public transport, use Figari’s all-year airport link to Porto-Vecchio as the known anchor, then check the current A Berlina link/return to Bonifacio. No direct Bonifacio airport shuttle is listed; prebook a transfer if timing or lodging there.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         choices: [
-          ['Bonifacio city and cliffs', 'Use the marina, upper town, official stair or viewpoint access and current monument routes. This is a complete day.'],
-          ['Bonifacio boat', 'Choose a licensed circuit with clear sea-state, route and return terms. A boat view replaces a long cliff walk.'],
-          ['Porto-Vecchio and one beach', 'Use the old town and one named, legally accessed beach with parking or shuttle confirmed. Beach-hopping multiplies congestion.']
+          ['Bonifacio upper town and cliffs', 'Base in Bonifacio or arrive early from Porto-Vecchio. Walk from the marina up to the old town and choose the open, signed stair/cliff route; combine it with the citadel lanes, not a distant beach drive.'],
+          ['Boat from Bonifacio', 'Reserve a licensed harbor departure if the sea forecast and operator confirm it. Treat the boat as a substitute for the longer cliff walk; keep time to return to the same marina and reach your booked base.'],
+          ['Porto-Vecchio old town and one beach', 'Use the upper town/port in the cooler hours, then choose one named beach only after checking local shuttle or parking/road access. Do not plan multiple beaches without a car and an explicit return arrangement.']
         ],
-        access: 'Figari airport, Porto-Vecchio and Bonifacio require bus, transfer or car planning. Parking sits outside sensitive centers and beaches; summer shuttles and road queues can determine the practical route.',
-        tradeoff: 'Bonifacio, a long boat circuit and several beaches exceed one day. The route keeps one town and one sea or beach contract.',
+        access: 'The Figari airport’s official page lists a daily, year-round A Berlina link to Porto-Vecchio (about 30 minutes) and links to the current timetable; it does not list an airport shuttle directly to Bonifacio. From Porto-Vecchio, check the current local A Berlina journey to Bonifacio and the return for your date, or prebook a driver/car. Bastia Airport lists a separate seasonal Bastia–Porto-Vecchio option from 1 June to 31 October; verify actual dates and times and do not infer a direct Bastia-to-Bonifacio service.',
+        tradeoff: 'Porto-Vecchio is the practical southern base for shops and the Figari airport bus; Bonifacio is the cliff-town base for an early marina/upper-town start and boat access. Figari works for a rural stay with a car but is remote without one. Choose a round trip through Figari for the simplest public-transport plan; a Bastia arrival means a long, separately verified seasonal transfer south and a different return. For three or four nights, use one south base rather than moving between both towns daily.',
         stages: [
-          ['Reach the selected southern base', 'Complete airport, bus or parking transfer and record the final return before climbing or boarding.'],
-          ['Read harbor and upper town or citadel', 'In Bonifacio, move from marina to upper town once; in Porto-Vecchio, use the old center before driving to the coast.'],
-          ['Commit to boat, cliff or beach', 'Follow licensed operator, official stair and trail, or one named beach’s access rules. Respect heat, sea flags and protected dunes.'],
-          ['Exit before road pressure peaks', 'Return to the base, fuel and pack before an airport or ferry transfer; do not add another beach on the route out.']
+          ['Lock the airport-to-base leg', 'For a Figari arrival, open the current A Berlina timetable for Porto-Vecchio and save the return from town to airport. If staying in Bonifacio or arriving after the listed service, prebook the road transfer; no direct shuttle is shown on the airport page.'],
+          ['Keep each town walk compact', 'In Bonifacio, start at the marina and climb once to the upper town, with one signed cliff stair/path if open. In Porto-Vecchio, walk the old town and harbor before making a separate beach transfer.'],
+          ['Choose sea or sand, not both by default', 'Use a confirmed boat departure from Bonifacio or one selected Porto-Vecchio beach with its own shuttle/parking plan. Check sea state, heat, fire access and the way back to your base.'],
+          ['Return to the airport/ferry buffer', 'For Figari, return through Porto-Vecchio on a service that matches the actual flight time, or use a prebooked transfer with margin. If leaving from Bastia, reach the north the day before a fixed ferry/flight; do not count on a same-day connection across the island.']
         ],
-        fallback: 'If sea or fire conditions close the chosen activity, use the town, museum, harbor and shaded streets. If road congestion blocks a beach, remain in the base rather than parking illegally in vegetation.',
+        fallback: 'If a boat is cancelled by sea state, stay in Bonifacio for the upper town, marina and a currently open museum or choose a signed land route if safe. If heat, fire or traffic removes the beach option, remain in Porto-Vecchio’s town/port and shaded streets. If the last bus does not line up with an airport or town transfer, use a prebooked road alternative rather than gambling on a connection.',
         watch: [
-          ['Cliff stairs and heat are demanding', 'Carry water, use footwear and consult accessibility; do not attempt closed stairs.'],
-          ['Beach access protects fire and habitat', 'Use designated parking or shuttles and keep vehicles off roadside vegetation.'],
-          ['Boats depend on sea state', 'Operator cancellation is a safety decision; do not seek an unofficial substitute.']
+          ['Airport access favors Porto-Vecchio', 'Figari lists an all-year link to Porto-Vecchio, not a direct Bonifacio shuttle. A flight arrival is workable only when its date-specific bus or prebooked transfer matches the lodging.'],
+          ['Bastia’s southbound coach is seasonal', 'The airport authority lists a Bastia–Porto-Vecchio service via Bastia-Poretta from 1 June through 31 October. Recheck operator dates/times and seats; Bonifacio needs another confirmed leg.'],
+          ['Heat, fire and sea can cancel the day', 'Cliff stairs are steep, beach roads congest, and boats depend on sea state. Check current local restrictions, carry water, and do not treat cancellation as permission to use an unsigned coast path.']
         ],
-        duration: 'Allow five to seven hours for Bonifacio alone and a full day for Porto-Vecchio plus one beach. A boat adds several hours and should replace another major layer.',
-        combine: 'Combine Bonifacio with one boat or Porto-Vecchio with one beach. Keep both towns as separate days when using public transport.',
-        verify: 'Check Figari transfer, parking or shuttle, licensed boat, fire and sea conditions, monument or stair access and the final airport or ferry connection.',
+        duration: 'Allow five to seven hours for Bonifacio’s harbor, upper town and one cliff route; a boat is a separate half-day layer. Give Porto-Vecchio old town and one beach a full day, and count each transfer as its own block when using buses.',
+        combine: 'Combine Bonifacio with one booked boat or cliff walk, and Porto-Vecchio with one beach. With buses, plan the two towns as separate days; keep Figari/Bastia airport transfer days free of extra beach stops.',
+        verify: 'Check Figari–Porto-Vecchio A Berlina departures and return, onward Porto-Vecchio–Bonifacio service or a booked transfer, Bastia seasonal coach date if relevant, beach parking/shuttle, fire notices, cliff/stair access, boat sea state and flight/ferry check-in.',
         sources: [
           ['https://www.bonifacio.fr/en/', 'Bonifacio Tourist Office — official city and boat planning'],
-          ['https://www.portovecchio-tourisme.corsica/en/', 'Porto-Vecchio Tourism — official south-coast planning']
-        ]
+          ['https://figari-aeroport.cci.corsica/en/shuttles/', 'Figari Airport — official year-round link and current timetable for Porto-Vecchio'],
+          ['https://bastia-aeroport.cci.corsica/en/shuttles/', 'Bastia Airport — official seasonal Bastia–Porto-Vecchio coach dates'],
+          ['https://www.portovecchio-tourisme.corsica/en/', 'Porto-Vecchio Tourism — official town, beach and local-transport planning']
+        ],
+        siteContext: {
+          label: 'SOUTH CORSICA BASES',
+          heading: 'Figari, Porto-Vecchio and Bonifacio solve different legs',
+          intro: 'The airports and towns do not share one continuous transit system. Confirm each leg and its return before booking a room outside the town you can reach.',
+          details: [
+            ['Figari airport to Porto-Vecchio', 'The airport authority lists a daily, year-round A Berlina service of about 30 minutes and links the current timetable. Use Porto-Vecchio as the public-transport base and check the final airport-bound bus against your flight.'],
+            ['Bonifacio from Figari', 'The Figari shuttle page names Porto-Vecchio, not Bonifacio. Stay there only with a booked car/driver or a verified onward public service; otherwise the airport-to-lodging transfer is unresolved.'],
+            ['Porto-Vecchio to Bonifacio', 'Check current A Berlina service in both directions for the specific day. A same-day town visit is not an all-day flexible connection; one night in Bonifacio helps with early boats and the cliff town.'],
+            ['Bastia to the south', 'Bastia Airport lists the seasonal Bastia–Porto-Vecchio coach via Poretta from 1 June through 31 October. Confirm actual operation and timing; continue to Bonifacio only by a separately verified onward leg. For a fixed Bastia departure, return north the previous evening.']
+          ]
+        }
       })
     ]
   })
