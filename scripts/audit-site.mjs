@@ -8,6 +8,7 @@ import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
 import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
+import { hasVisibleOriginalProjectProvenance } from './site-image-provenance-guard.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const thailandBangkokCssRoutes = new Set([
@@ -246,9 +247,8 @@ for (const absoluteUrl of publishedUrls) {
   }
   const hasVisibleKoglLicense = /href=["']https:\/\/www\.kogl\.or\.kr\/info\/licenseType1\.do["']/i.test(html)
     && /class=["'][^"']*\bphoto-license\b[^"']*["']/i.test(html);
-  const hasVisibleOriginalProjectProvenance = /<a\b[^>]*href="https:\/\/tripdistill\.com\/assets\/images\/china-lhasa-preparation\.svg"/i.test(html)
-    && /<a\b[^>]*href="https:\/\/tripdistill\.com\/terms-of-use\/"/i.test(html);
-  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense && !hasVisibleOriginalProjectProvenance) {
+  const hasVisibleOriginalProjectProvenanceException = hasVisibleOriginalProjectProvenance(html, absoluteUrl);
+  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense && !hasVisibleOriginalProjectProvenanceException) {
     problems.push(`${relativePath}: image page lacks a visible commercial-use license or provenance entry`);
   }
 

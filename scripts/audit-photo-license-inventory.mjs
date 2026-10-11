@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parse } from 'parse5';
+import { missingPhotoAttributionFields, photoLicenseInventoryBlockingProblems } from './photo-license-inventory-guard.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(root, 'assets', 'images');
@@ -1164,14 +1165,7 @@ for (const fullPath of assetPaths) {
     moduleSources: [...new Set(dataRecords.map((record) => record.moduleName))],
     rawVisibleCredits: cn15VisibleCredits.length ? [...new Set(cn15VisibleCredits)] : creditMatch?.creditText ? [creditMatch.creditText] : []
   };
-  const missingFields = ['sourceUrl', 'creator'].filter((field) => !row[field]);
-  const intentionallyUnlicensedRetiredPhoto = row.assetType === 'photographic-raster'
-    && row.inventoryStatus === 'unused'
-    && Boolean(row.retirementNote && row.rightsStatus)
-    && !row.license;
-  if (row.assetType === 'original-planning-diagram' ? !rightsStatus : !license && !intentionallyUnlicensedRetiredPhoto) {
-    missingFields.push(row.assetType === 'original-planning-diagram' ? 'rightsStatus' : 'license');
-  }
+  const missingFields = missingPhotoAttributionFields(row);
   if (missingFields.length) unmatchedByAsset.push({ src, missing: missingFields, useCount: row.useCount, routes: row.routes });
   entries.push(row);
 }
@@ -1310,3 +1304,9 @@ const summaryLines = [
 ];
 fs.writeFileSync(path.join(outDir, 'photo-license-inventory.md'), summaryLines.join('\n') + '\n');
 console.log(JSON.stringify({ counts, unmatchedSamples: unmatchedByAsset.slice(0, 30), sourceConflictSamples: sourceConflicts.slice(0, 10), output: ['reports/photo-license-inventory.json', 'reports/photo-license-inventory.md'] }, null, 2));
+const blockingProblems = photoLicenseInventoryBlockingProblems(unmatchedByAsset);
+if (blockingProblems.length) {
+  console.error('Photo license inventory audit failed:');
+  for (const problem of blockingProblems) console.error(`- ${problem}`);
+  process.exitCode = 1;
+}

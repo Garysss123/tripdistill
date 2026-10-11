@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { collectTranslationWork, localeConfigs, root } from './i18n-lib.mjs';
 import {wrongLocaleScriptReason} from './i18n-locale-script-check.mjs';
-import {inspectTranslationCoverage} from './i18n-translation-coverage.mjs';
+import {globalApprovalBlockers, inspectGlobalMergeCoverage} from './i18n-merge-coverage.mjs';
 
 const requestedLocale = process.argv.find((argument) => argument.startsWith('--locale='))?.split('=')[1];
 const approve = process.argv.includes('--approve');
@@ -52,9 +52,12 @@ for (const locale of selected) {
     }
   }
 
-  const { stale, missing } = inspectTranslationCoverage(required, translations);
+  const { stale, missing } = inspectGlobalMergeCoverage(required, translations);
   for (const source of stale) problems.push(`${owners.get(source) || `data/i18n/reviewed/${locale.code}`}: stale or unknown source key "${source}"`);
-  if (approve && missing.length) problems.push(`Cannot approve ${locale.code}: ${missing.length} required translations are missing`);
+  if (approve) {
+    const approvalBlockers = globalApprovalBlockers(locale.code, missing);
+    problems.push(...approvalBlockers);
+  }
   if (problems.length) {
     console.error(`${locale.code} batch merge failed with ${problems.length} problem(s):`);
     for (const problem of problems.slice(0, 100)) console.error(`- ${problem}`);

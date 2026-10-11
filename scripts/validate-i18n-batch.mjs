@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { collectTranslationWork, getLocaleConfig, root } from './i18n-lib.mjs';
 import {wrongLocaleScriptReason} from './i18n-locale-script-check.mjs';
+import { inspectBatchRouteCoverage } from './i18n-batch-coverage.mjs';
 
 const fileArgument = process.argv.find((argument) => argument.startsWith('--file='))?.slice('--file='.length);
 if (!fileArgument) throw new Error('Usage: node scripts/validate-i18n-batch.mjs --file=data/i18n/reviewed/<locale>/<batch>.json');
@@ -34,7 +35,6 @@ if (unknownRoutes.length) throw new Error(`Unknown routes: ${unknownRoutes.join(
 const records = batch.routes.map((route) => workByRoute.get(route));
 // Search-index review files are additive deltas to one shared synthetic route.
 // Their keys must all be current, while global i18n approval checks total coverage.
-const isSearchIndexDeltaBatch = batch.routes.length === 1 && batch.routes[0] === '/data/search-index.json';
 const isVietnamBatch = batch.routes.some((route) => route === '/vietnam/' || route.startsWith('/vietnam/')) || /^29[a-o]-vietnam/i.test(path.basename(batchPath));
 const isItalyBatch = batch.routes.some((route) => route === '/italy/' || route.startsWith('/italy/')) || /^46[a-v]-italy/i.test(path.basename(batchPath));
 const rawUnits = records.flatMap((record) => record.units);
@@ -433,7 +433,6 @@ function hasExactNumberToken(value, number) {
 for (const [source, target] of localEntries) {
   const wrongScript=wrongLocaleScriptReason(locale.code,source,target);
   if(wrongScript)problems.push(`${wrongScript}: ${source}`);
-  if (!required.has(source)) problems.push(`source key is outside the declared routes: ${source}`);
   if (typeof target !== 'string' || !target.trim()) problems.push(`empty target: ${source}`);
   if (typeof target !== 'string') continue;
   const editionFallback = localeEditionFallbacks[locale.code];
@@ -505,9 +504,15 @@ for (const [source, target] of localEntries) {
   if (sibling && sibling.target === target) problems.push(`duplicates earlier ${sibling.name}; omit this source key: ${source}`);
 }
 
-const covered = new Set([...localKeys, ...siblingTranslations.keys()]);
-if (isSearchIndexDeltaBatch && !localEntries.length) problems.push('search-index delta batch must contain at least one translated source key');
-const missing = isSearchIndexDeltaBatch ? [] : [...required].filter((source) => !covered.has(source));
+const routeCoverage = inspectBatchRouteCoverage({
+  routes: batch.routes,
+  localSources: localKeys,
+  siblingSources: siblingTranslations.keys(),
+  requiredSources: required
+});
+for (const source of routeCoverage.outside) problems.push(`source key is outside the declared routes: ${source}`);
+if (routeCoverage.emptyDelta) problems.push('search-index delta batch must contain at least one translated source key');
+const missing = routeCoverage.missing;
 if (missing.length) {
   for (const source of missing.slice(0, 25)) problems.push(`missing route source key: ${source}`);
   if (missing.length > 25) problems.push(`...and ${missing.length - 25} additional route source keys are missing`);
