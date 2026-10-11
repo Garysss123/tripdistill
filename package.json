@@ -6,6 +6,9 @@
   "type": "module",
   "scripts": {
     "generate:china-expansion": "node scripts/generate-china-expansion.mjs",
+    "test:china-route-dates": "node scripts/test-china-route-date-metadata.mjs",
+    "test:china-cn14b": "node scripts/test-china-cn14b-regressions.mjs",
+    "sync:sitemap:china": "node scripts/sync-sitemap.mjs --china-only",
     "generate:malaysia-depth": "node scripts/generate-malaysia-depth.mjs",
     "generate:vietnam": "node scripts/generate-vietnam.mjs",
     "generate:australia": "node scripts/generate-australia.mjs",
@@ -57,7 +60,7 @@
     "localize": "npm run i18n:approve && npm run localize:pages",
     "sync:metadata": "node scripts/sync-language-metadata.mjs",
     "sync:sitemap": "node scripts/sync-sitemap.mjs",
-    "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
+    "audit": "npm run audit:i18n && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run audit:united-kingdom && npm run audit:italy && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs && npm run test:china-route-dates && npm run test:china-cn14b",
     "build": "npm run localize && node scripts/build-dist.mjs",
     "preview": "node scripts/serve.mjs",
     "qa:visual": "node scripts/visual-audit.mjs",

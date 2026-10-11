@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/china/xian/",
+    "/china/luoyang/",
+    "/china/pingyao/",
+    "/china/datong/"
+  ],
+  "translations": {}
+}

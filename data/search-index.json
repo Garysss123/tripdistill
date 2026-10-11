@@ -2367,14 +2367,18 @@
     "url": "/china/",
     "parent": "Asia · Country guide",
     "type": "Country",
-    "summary": "Choose a regional argument, prepare passport and phone systems, and connect China's first-trip stops without turning the country into a checklist.",
+    "summary": "Choose a China trip by region, realistic nights and rail moves. Compare one-region and multi-city routes, check season by area, and verify visa or transit eligibility for your passport before travel.",
     "keywords": [
       "china",
       "china travel",
       "first trip",
-      "regions",
+      "trip length",
+      "regional itinerary",
       "high speed rail",
-      "beijing"
+      "240-hour visa-free transit",
+      "entry eligibility",
+      "beijing shanghai hangzhou",
+      "monsoon"
     ]
   },
   {
@@ -2425,14 +2429,18 @@
     "url": "/china/beijing/",
     "parent": "China · Capital",
     "type": "City",
-    "summary": "Build five to seven Beijing nights around the Central Axis, reservations, parks, hutongs, western gardens, contemporary art and the Great Wall.",
+    "summary": "Plan five full Beijing days as roughly six nights when travel days are separate. Choose a base by your first mornings, group the Central Axis and neighborhoods, protect one full Mutianyu day, and match the airport or rail station to your return.",
     "keywords": [
       "beijing",
       "beijing travel",
       "central axis",
       "where to stay",
       "itinerary",
-      "china capital"
+      "airport arrival",
+      "departure",
+      "Mutianyu Great Wall day",
+      "limited walking",
+      "rail station"
     ]
   },
   {
@@ -2505,11 +2513,11 @@
     ]
   },
   {
-    "title": "Temple of Heaven and Qianmen Guide",
+    "title": "Temple of Heaven and Qianmen Seasonal Route Guide",
     "url": "/china/beijing/temple-of-heaven-qianmen/",
     "parent": "Beijing · South axis",
     "type": "Ritual landscape",
-    "summary": "Read the Temple of Heaven as a complete ceremonial landscape, then use Qianmen as its commercial counterpoint.",
+    "summary": "Compare seasonal gate sequences and Line 5 or Line 8 access before deciding whether Qianmen belongs in the same full day.",
     "keywords": [
       "temple of heaven",
       "qianmen",
@@ -2534,11 +2542,11 @@
     ]
   },
   {
-    "title": "Yonghe Temple and Guozijian Guide",
+    "title": "Yonghe Temple and Guozijian Access Guide",
     "url": "/china/beijing/yonghe-guozijian/",
     "parent": "Beijing · Northeast old city",
     "type": "Sacred and scholarly",
-    "summary": "Treat Yonghe as an active place of worship and the neighboring Confucian Temple and Imperial College as a different institution.",
+    "summary": "Plan Yonghe Temple, Confucian Temple and Guozijian as separate institutions; use Yonghegong Station and check each site's own entry rules.",
     "keywords": [
       "yonghe temple",
       "lama temple",
@@ -2548,11 +2556,11 @@
     ]
   },
   {
-    "title": "798 Art District and Chaoyang Guide",
+    "title": "798 Art District Metro and Venue Guide",
     "url": "/china/beijing/798-chaoyang/",
     "parent": "Beijing · Chaoyang",
     "type": "Contemporary art",
-    "summary": "Build a 798 visit from the live exhibition program, two anchor venues and the industrial fabric rather than an old place list.",
+    "summary": "Choose Line 12, Line 14 or a listed bus stop by your first gallery, then check each venue's current hours, reservations and Monday closures.",
     "keywords": [
       "798 art district",
       "chaoyang",
@@ -2566,21 +2574,27 @@
     "url": "/china/beijing/summer-palace/",
     "parent": "Beijing · Western gardens",
     "type": "Imperial garden",
-    "summary": "Choose one gate, one hill effort and one final shore so Kunming Lake and Longevity Hill unfold without repeated backtracking.",
+    "summary": "Plan the 297-hectare Summer Palace by entrance and exit: East Palace Gate for a court-first route or a north-side gate for a hill-first day. Check current passport booking and seasonal hours, then choose one zone, rain fallback and a realistic walking limit.",
     "keywords": [
       "summer palace",
       "kunming lake",
       "longevity hill",
       "beijing garden",
-      "yiheyuan"
+      "yiheyuan",
+      "East Palace Gate",
+      "north entrance",
+      "passport ticket booking",
+      "297 hectares",
+      "rain",
+      "limited walking"
     ]
   },
   {
-    "title": "Mutianyu Great Wall Guide",
+    "title": "Mutianyu Great Wall Transit and Return Guide",
     "url": "/china/beijing/mutianyu-great-wall/",
     "parent": "Beijing · Mountain excursion",
     "type": "Day trip",
-    "summary": "Name every link from Beijing departure to ridge effort and return cutoff before committing to a Mutianyu Great Wall day.",
+    "summary": "Compare the published 916–Huairou bus chain, 3 km shuttle and ascent gates; reserve a full day and verify current service before leaving.",
     "keywords": [
       "mutianyu",
       "great wall",
@@ -2607,7 +2621,7 @@
     "url": "/china/shanghai/",
     "parent": "China · Port city",
     "type": "City",
-    "summary": "Plan four to six Shanghai nights around the Huangpu River, exact metro exits, two airports and eight distinct area chapters.",
+    "summary": "Choose Puxi or Pudong by the day’s route; use Airport Link for Hongqiao–Pudong airport transfers, not a hotel-door ride.",
     "keywords": [
       "shanghai",
       "shanghai travel",
@@ -2665,7 +2679,7 @@
     "url": "/china/shanghai/lujiazui-pudong/",
     "parent": "Shanghai · Pudong",
     "type": "Skyline district",
-    "summary": "Choose one observation deck according to visibility, then connect Lujiazui's towers to the river and Shanghai Museum East.",
+    "summary": "Choose one Lujiazui deck or Shanghai Museum East; East access is by B1 gate, named Metro exits and current admission rules.",
     "keywords": [
       "lujiazui",
       "pudong",
@@ -2694,13 +2708,16 @@
     "url": "/china/shanghai/wukang-road-xuhui/",
     "parent": "Shanghai · Xuhui",
     "type": "Neighborhood walk",
-    "summary": "Walk Wukang Road through facades, small institutions and lived-in lanes at a pace that respects residential space.",
+    "summary": "Start at Wukang Building; follow No 393 → Wukang Court → Ba Jin’s former residence (No 113), exterior only.",
     "keywords": [
       "wukang road",
       "wukang mansion",
       "xuhui",
       "former french concession",
-      "shanghai walk"
+      "shanghai walk",
+      "jiao tong university station",
+      "wukang and hunan roads",
+      "ba jin former residence"
     ]
   },
   {
@@ -2722,13 +2739,17 @@
     "url": "/china/shanghai/hongkou-suzhou-creek/",
     "parent": "Shanghai · North riverfront",
     "type": "Memory and waterfront",
-    "summary": "Connect Suzhou Creek's industrial river edge with Hongkou's documented Jewish-refugee history without reducing memory to atmosphere.",
+    "summary": "Plan Hongkou from the museum: a 10 km municipal route, a shorter named-stop edit, or Suzhou Creek’s separate Jing’an walk.",
     "keywords": [
       "hongkou",
       "suzhou creek",
       "jewish refugees museum",
       "waibaidu bridge",
-      "shanghai history"
+      "shanghai history",
+      "tilanqiao station",
+      "metro line 12",
+      "beisuzhou road",
+      "north bund"
     ]
   },
   {
@@ -2736,13 +2757,16 @@
     "url": "/china/shanghai/west-bund-longhua/",
     "parent": "Shanghai · Xuhui waterfront",
     "type": "Art and heritage",
-    "summary": "Move between Longhua's active temple and civic history and West Bund's post-industrial art waterfront with current programs checked.",
+    "summary": "Pair Longhua Temple with one current West Bund Museum exhibition, then use its riverside entrance and plan the Line 11 return.",
     "keywords": [
       "west bund",
       "longhua temple",
       "longhua pagoda",
       "shanghai art",
-      "xuhui waterfront"
+      "xuhui waterfront",
+      "west bund museum",
+      "yunjin road station",
+      "xuhui riverside"
     ]
   },
   {
@@ -2750,7 +2774,7 @@
     "url": "/china/shanghai/zhujiajiao-water-town/",
     "parent": "Shanghai · Qingpu",
     "type": "Water-town excursion",
-    "summary": "Protect an early start for Zhujiajiao, plan the metro last mile and let canals and bridges shape a full-day water-town route.",
+    "summary": "Use Line 17 Exit 1, then the town’s visitor-center bus or named-street walk; trace the tea house, post office and bridges.",
     "keywords": [
       "zhujiajiao",
       "water town",
@@ -2764,14 +2788,19 @@
     "url": "/china/hangzhou/",
     "parent": "China · Zhejiang",
     "type": "City guide",
-    "summary": "Use West Lake as a compass, then choose among temple thresholds, tea hills, canal history, wetland channels and Liangzhu archaeology.",
+    "summary": "Give Hangzhou three full days, typically four nights: choose a north-shore sequence, one western-hills day and a south-shore or canal contrast. Add a fourth day for Xixi or Liangzhu, confirm the exact station or airport, and scale walks to rain and mobility.",
     "keywords": [
       "hangzhou",
       "west lake",
       "zhejiang",
       "longjing",
       "lingyin",
-      "hangzhou itinerary"
+      "hangzhou itinerary",
+      "Hangzhou East station",
+      "Hangzhou West station",
+      "Hangzhou Xiaoshan airport",
+      "Meiyu rain",
+      "mobility"
     ]
   },
   {
@@ -2835,13 +2864,15 @@
     "url": "/china/hangzhou/grand-canal-gongchen-bridge/",
     "parent": "Hangzhou · Grand Canal",
     "type": "Canal heritage",
-    "summary": "Read Gongchen Bridge through waterway scale, trade, museums, neighborhood memory and a verified boat or evening-bank route.",
+    "summary": "Cross Gongchen Bridge to Qiaoxi, choose one museum and return over the same span; in rain, use an indoor museum fallback without assuming boat service.",
     "keywords": [
       "gongchen bridge",
       "grand canal",
-      "hangzhou canal",
-      "canal museum",
-      "water bus"
+      "qiaoxi historic and cultural block",
+      "china umbrella museum",
+      "hangzhou arts and crafts museum",
+      "gongchen bridge walking route",
+      "hangzhou canal museum"
     ]
   },
   {
@@ -2877,13 +2908,19 @@
     "url": "/china/hangzhou/liangzhu-archaeological-city/",
     "parent": "Hangzhou · Liangzhu",
     "type": "Archaeology guide",
-    "summary": "Use the Liangzhu Museum to understand jade, settlement hierarchy and water management before reading the protected archaeological landscape.",
+    "summary": "Separate Liangzhu Museum from the ruins park; use the dated 2025 metro and bus routes to the exact entrance, or choose the museum alone in rain.",
     "keywords": [
       "liangzhu",
       "liangzhu museum",
-      "archaeological ruins",
-      "hangzhou archaeology",
-      "liangzhu jade"
+      "liangzhu ancient city ruins park",
+      "liangzhu ruins park south",
+      "liangzhu museum main gate",
+      "liangzhu metro station",
+      "hangzhou metro line 19",
+      "hangzhou metro line 2",
+      "7437m bus",
+      "liangzhu jade",
+      "liangzhu museum in rain"
     ]
   },
   {
@@ -2891,7 +2928,7 @@
     "url": "/china/guangzhou/",
     "parent": "China · Guangdong",
     "type": "River and food city",
-    "summary": "Plan Guangzhou by Pearl River bank, Lingnan architecture, museum depth, market etiquette and Cantonese meal rhythm.",
+    "summary": "Plan Guangzhou by neighborhood: start with west-side heritage, then shift to the central river axis; move exposed walks indoors in heat or heavy rain.",
     "keywords": [
       "guangzhou",
       "canton",
@@ -2906,7 +2943,7 @@
     "url": "/china/guilin-yangshuo/",
     "parent": "China · Guangxi",
     "type": "River karst guide",
-    "summary": "Separate Guilin arrival context from Yangshuo’s Li River, rural roads and visibility-dependent karst viewpoints.",
+    "summary": "Split Guilin arrival and museum time from Yangshuo rural mornings; choose a Li River trip by confirmed pier and endpoint, with lowland options for poor visibility.",
     "keywords": [
       "guilin",
       "yangshuo",
@@ -2921,7 +2958,7 @@
     "url": "/china/changsha/",
     "parent": "China · Hunan",
     "type": "Museum and food city",
-    "summary": "Build Changsha around Hunan Museum, Yuelu terrain, the Xiang River and a deliberate night-food edit.",
+    "summary": "Plan Changsha in two to four nights: reserve Hunan Museum first, use the matching Line 4/South Gate or Line 2/East Gate route for Yuelu, and keep Orange Isle optional in heat or rain.",
     "keywords": [
       "changsha",
       "hunan museum",
@@ -2936,7 +2973,7 @@
     "url": "/china/wuhan/",
     "parent": "China · Hubei",
     "type": "River metropolis guide",
-    "summary": "Plan Wuhan bank by bank across Wuchang, Hankou and Hanyang, with East Lake and Hubei Museum given their real scale.",
+    "summary": "Use Line 5 for Yellow Crane Tower and Line 8 for Hubei Museum’s South Gate, then plan Wuhan by bank; keep East Lake to one entrance and one return point.",
     "keywords": [
       "wuhan",
       "yellow crane tower",
@@ -2951,10 +2988,12 @@
     "url": "/china/chengdu/",
     "parent": "China · Sichuan",
     "type": "Food and heritage city",
-    "summary": "Balance Chengdu’s panda reservations, archaeology and Sichuan meals with teahouse time and one carefully chosen outer excursion.",
+    "summary": "Reserve the Panda Base by its chosen gate and shuttle; while Jinsha is closed through April 2027, use Chengdu Museum for a rain-proof city day and plan Dujiangyan as a separate rail-and-local-transfer excursion.",
     "keywords": [
       "chengdu",
       "panda base",
+      "chengdu museum",
+      "jinsha closed",
       "dujiangyan",
       "chengdu food",
       "sichuan",
@@ -2966,7 +3005,7 @@
     "url": "/china/shenzhen/",
     "parent": "China · Guangdong",
     "type": "Design and border city",
-    "summary": "Navigate Shenzhen through Futian, Nanshan design, urban villages, bay parks, Dapeng and checkpoint-specific Hong Kong logistics.",
+    "summary": "Base urban days around Futian and Nanshan; keep Dapeng as a separate road day, check current E91/E92 feeder service and protect the return buffer.",
     "keywords": [
       "shenzhen",
       "futian",
@@ -2981,7 +3020,7 @@
     "url": "/china/xiamen-fujian-tulou/",
     "parent": "China · Fujian",
     "type": "Port and rural heritage",
-    "summary": "Separate Xiamen’s ferries, port streets and coast from one respectful, road-realistic Fujian Tulou heritage day.",
+    "summary": "Pair central Xiamen and its ferry routes with one inland Tulou cluster; confirm passenger terminal, rural pickup and road return before booking connections.",
     "keywords": [
       "xiamen",
       "fujian tulou",
@@ -2996,13 +3035,15 @@
     "url": "/china/sanya-hainan/",
     "parent": "China · Hainan",
     "type": "Tropical coast guide",
-    "summary": "Choose a Sanya bay by access and sea conditions, then add one weather-flexible marine, rainforest or island chapter.",
+    "summary": "Use one Sanya bay base for three full days in four nights; check the airport or rail terminal, sea warning and Hainan entry rules before adding a second base.",
     "keywords": [
       "sanya",
       "hainan",
       "yalong bay",
       "haitang bay",
       "sanya beach",
+      "phoenix airport station",
+      "hainan visa-free scope",
       "hainan itinerary"
     ]
   },
@@ -3011,11 +3052,12 @@
     "url": "/china/chongqing/",
     "parent": "China · Chongqing",
     "type": "Vertical city guide",
-    "summary": "Navigate Chongqing by elevation, river crossing and exact station exit, then choose one honest outer day to Dazu or Wulong.",
+    "summary": "Plan Chongqing in three to five nights from a ridge-level base; use Hongya Cave’s mapped Line 2 or Lines 1/6 approach, keep the museum for rain, and verify every outer-site return leg.",
     "keywords": [
       "chongqing",
       "hongya cave",
       "liziba",
+      "three gorges museum",
       "wulong",
       "dazu rock carvings",
       "chongqing itinerary"
@@ -3026,14 +3068,14 @@
     "url": "/china/kunming/",
     "parent": "China · Yunnan",
     "type": "Plateau gateway guide",
-    "summary": "Use Kunming for Yunnan context, Dianchi ecology and Stone Forest geology before choosing one onward provincial corridor.",
+    "summary": "Allow four nights for three full Kunming days: central context, one Dianchi or West Hills route and a conditional Shilin day trip. Check the exact rail station, Shilin West last mile and confirmed return before booking.",
     "keywords": [
       "kunming",
       "stone forest",
+      "shilin west",
       "dianchi",
-      "yunnan museum",
-      "kunming itinerary",
-      "yunnan travel"
+      "kunming south",
+      "kunming itinerary"
     ]
   },
   {
@@ -3041,14 +3083,14 @@
     "url": "/china/dali/",
     "parent": "China · Yunnan",
     "type": "Lake and mountain guide",
-    "summary": "Choose a Dali base, protect Erhai ecology and separate Cangshan, Xizhou and east-shore days instead of racing the ring road.",
+    "summary": "Allow four nights for Dali Old Town plus three full days: Xizhou and west shore, an east-shore out-and-back, and weather-led Cangshan. Confirm each village return and the Xiaguan rail terminal.",
     "keywords": [
       "dali",
       "erhai lake",
       "cangshan",
       "xizhou",
       "shuanglang",
-      "dali itinerary"
+      "dali station"
     ]
   },
   {
@@ -3056,14 +3098,14 @@
     "url": "/china/lijiang-shangri-la/",
     "parent": "China · Yunnan",
     "type": "Heritage and altitude route",
-    "summary": "Read Lijiang’s three UNESCO components through water and community, then ascend gradually toward Shangri-La with altitude limits explicit.",
+    "summary": "Allow five to seven nights, counting two transfer days: spend three Lijiang-area nights on Dayan, Shuhe and Baisha, then two or three in Shangri-La. Check both exact rail stations and transfers; keep the high-town arrival gentle.",
     "keywords": [
       "lijiang",
       "shangri-la",
       "dayan",
       "shuhe",
       "baisha",
-      "tiger leaping gorge"
+      "lijiang shangri-la train"
     ]
   },
   {
@@ -3071,14 +3113,14 @@
     "url": "/china/zhangjiajie/",
     "parent": "China · Hunan",
     "type": "Mountain park planner",
-    "summary": "Choose the correct Wulingyuan gate, shuttle and elevation system, then keep Tianmen Mountain as a separate city-based day.",
+    "summary": "Allow three nights near Wulingyuan for two park days, then add a city night for Tianmen. Match the current ticket to a named gate, verify the assigned exit and return ride, and use weather to swap exposed routes.",
     "keywords": [
       "zhangjiajie",
       "wulingyuan",
+      "wujiayu east gate",
+      "forest park south gate",
       "tianmen mountain",
-      "yuanjiajie",
-      "golden whip stream",
-      "zhangjiajie itinerary"
+      "zhangjiajie west station"
     ]
   },
   {
@@ -3086,14 +3128,14 @@
     "url": "/china/guiyang-guizhou/",
     "parent": "China · Guizhou",
     "type": "Karst and community route",
-    "summary": "Use Guiyang as a transport hinge, then choose one rain-aware corridor to Huangguoshu, Libo, Zhijin or community-led village routes.",
+    "summary": "Plan five nights around one corridor: check date-specific rail to Anshun West for Huangguoshu or Libo station for Xiaoqikong, then verify each last-mile and return. Seven or more nights can fit both with regional overnights and a Guiyang reset.",
     "keywords": [
       "guiyang",
       "guizhou",
       "huangguoshu",
-      "libo",
-      "zhijin cave",
-      "guizhou itinerary"
+      "anshun west",
+      "libo station",
+      "xiaoqikong"
     ]
   },
   {
@@ -3101,14 +3143,16 @@
     "url": "/china/dunhuang-hexi-corridor/",
     "parent": "China · Gansu",
     "type": "Silk Road heritage guide",
-    "summary": "Reserve Mogao first, then fit Dunhuang’s oasis, museum and one desert road around conservation and climate limits.",
+    "summary": "Reserve Mogao through Dunhuang Academy, use Dunhuang as one base for the caves and oasis, and give each Hexi Corridor city its own overnight.",
     "keywords": [
       "dunhuang",
       "mogao caves",
       "crescent lake",
       "mingsha dunes",
       "hexi corridor",
-      "silk road"
+      "silk road",
+      "mogao reservation",
+      "dunhuang railway station"
     ]
   },
   {
@@ -3116,14 +3160,14 @@
     "url": "/china/xinjiang-corridor/",
     "parent": "China · Xinjiang",
     "type": "Continental corridor guide",
-    "summary": "Build one realistic Urumqi–Turpan–Kashgar corridor with long transfers, climate, current access and respectful photography explicit.",
+    "summary": "Plan Urumqi, Turpan and Kashgar as separate bases, leave a full transfer day, verify document-specific access and reserve a workable departure chain.",
     "keywords": [
       "xinjiang",
       "urumqi",
       "turpan",
       "kashgar",
-      "silk road",
-      "xinjiang itinerary"
+      "identity checks",
+      "corridor itinerary"
     ]
   },
   {
@@ -3131,14 +3175,14 @@
     "url": "/china/lhasa-tibetan-plateau/",
     "parent": "China · Tibet",
     "type": "Permit and altitude guide",
-    "summary": "Solve foreign-visitor permission before Lhasa, then stage acclimatization, living heritage visits and any higher plateau route conservatively.",
+    "summary": "Confirm document-specific permission before booking; plan one Lhasa base, a gentle arrival and a separate access and return check for any higher corridor.",
     "keywords": [
       "lhasa",
       "tibet travel permit",
-      "potala palace",
-      "altitude sickness",
+      "potala palace reservation",
+      "high altitude",
       "jokhang",
-      "tibetan plateau"
+      "tibetan plateau access"
     ]
   },
   {
@@ -3206,9 +3250,11 @@
     "url": "/china/harbin/",
     "parent": "China · Heilongjiang",
     "type": "Winter city and architecture guide",
-    "summary": "Build Harbin around the live ice-event calendar, serious cold preparation, architectural history and safe river behavior.",
+    "summary": "Start in Daoli, confirm Harbin versus Harbin West from the rail ticket, and use Ice-Snow World only with the season’s official gate and return directions.",
     "keywords": [
       "harbin",
+      "harbin west",
+      "harbin taiping airport",
       "harbin ice festival",
       "ice snow world",
       "saint sophia harbin",
@@ -3221,13 +3267,17 @@
     "url": "/china/hohhot-inner-mongolia/",
     "parent": "China · Inner Mongolia",
     "type": "Regional city and steppe guide",
-    "summary": "Use Hohhot for context, then choose one ethical Inner Mongolia corridor with real distances, ecology and community consent.",
+    "summary": "Base in Hohhot for city context, then choose one region with confirmed transfers and overnight stops; return to the exact station or airport with a buffer.",
     "keywords": [
       "hohhot",
+      "hohhot railway station",
+      "hohhot east",
+      "hohhot baita airport",
       "inner mongolia",
       "xilin gol",
       "hulun buir",
-      "xanadu",
+      "site of xanadu",
+      "ordos",
       "inner mongolia itinerary"
     ]
   },
@@ -3266,13 +3316,16 @@
     "url": "/china/huangshan/",
     "parent": "China · Anhui",
     "type": "Mountain weather and route guide",
-    "summary": "Solve Huangshan’s gateway, reserved direction, cableway and descent before adding a summit night or Anhui village branch.",
+    "summary": "Connect Huangshan North to Tunxi or Tangkou, then match the reserved gate, shuttle, cableway and weather fallback to a safe train return.",
     "keywords": [
       "huangshan",
+      "huangshan north",
+      "tunxi",
+      "tangkou",
+      "south gate huangshan",
       "mount huangshan",
       "yellow mountain",
       "huangshan cableway",
-      "tangkou",
       "huangshan itinerary"
     ]
   },
@@ -3281,9 +3334,11 @@
     "url": "/china/qingdao/",
     "parent": "China · Shandong",
     "type": "Coastal city and mountain guide",
-    "summary": "Plan Qingdao by west and east coast, respect beach flags, read brewery and architectural history, then give Laoshan a full day.",
+    "summary": "Choose Qingdao or Qingdao North correctly, link Jiaodong Airport to the right base, check beach operating notices and plan one current-rule Laoshan corridor.",
     "keywords": [
       "qingdao",
+      "qingdao north",
+      "jiaodong international airport",
       "zhanqiao",
       "badaguan",
       "tsingtao beer museum",

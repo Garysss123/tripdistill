@@ -1,0 +1,15 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/china/hangzhou/west-lake-north-broken-bridge/",
+    "/china/hangzhou/west-lake-south-leifeng/",
+    "/china/hangzhou/hefang-southern-song/"
+  ],
+  "translations": {
+    "For a Broken Bridge start, use Fengqi Road station (Line 1) as the general metro gateway. The official autumn guide lists a seasonal shuttle from there to Broken Bridge only on 2026 weekends from September through November and during the Mid-Autumn and National Day holidays; check the bus authority’s current route and stop notices for the day. Outside those dates, plan with the metro and a walk or use a live route planner; do not assume a routine shuttle.": "断橋から歩き始める場合は、地下鉄の一般的な玄関口としてFengqi Road駅（1号線）を利用してください。公式の秋季ガイドに季節運行のシャトルが記載されているのは、2026年9月から11月までの週末と中秋節・国慶節の連休に限られ、同駅から断橋まで運行します。当日はバス運行当局の最新の路線・停留所案内を確認してください。それ以外の日は、地下鉄と徒歩を組み合わせるか、リアルタイムの経路検索を利用し、定期シャトルがあるとは考えないでください。",
+    "For the south shore, Wushan Square station (Line 7) and Longxiangqiao station (Line 1) are metro gateways. The official autumn guide lists seasonal shuttles from these stations to Leifeng Pagoda only on 2026 weekends from September through November and during the Mid-Autumn and National Day holidays; check the bus authority’s current routes and stops for the day. The north- and south-shore chapters have different start and finish points, so do not assume a seasonal shuttle connects them. Outside those dates, use a live route planner.": "南岸へ向かう場合、Wushan Square駅（7号線）とLongxiangqiao駅（1号線）が地下鉄の玄関口です。公式の秋季ガイドに季節運行のシャトルが記載されているのは、2026年9月から11月までの週末と中秋節・国慶節の連休に限られ、これらの駅から雷峰塔まで運行します。当日はバス運行当局の最新の路線・停留所案内を確認してください。北岸と南岸の各章では出発地と到着地が異なるため、季節シャトルが両岸を結ぶとは考えないでください。それ以外の日は、リアルタイムの経路検索を利用してください。",
+    "Wushan Square station (Line 7) is a metro gateway; choose the walking connection from the station to the street endpoint you actually plan to visit. For 2026 weekends from September through November and the Mid-Autumn and National Day holidays, the autumn West Lake guide lists seasonal shuttles for Broken Bridge, Leifeng Pagoda, Su Causeway, Lingyin and Manjuelong, but does not list Hefang Street. Do not assume a West Lake shuttle serves this street; check current pedestrian routing and bus notices if combining the visits.": "Wushan Square駅（7号線）は地下鉄の玄関口です。実際に訪れる予定の街歩きの目的地に合わせ、駅から徒歩で向かう経路を選んでください。秋季の西湖ガイドには、2026年9月から11月までの週末と中秋節・国慶節の連休に運行する季節シャトルの行き先として、断橋、雷峰塔、蘇堤、霊隠、満覚隴が記載されていますが、河坊街は含まれていません。西湖のシャトルが河坊街にも停車すると考えないでください。訪問先を組み合わせる場合は、最新の徒歩経路とバス案内を確認してください。",
+    "Hangzhou.com.cn — 2026 autumn West Lake shuttle guide, published 7 September; specific bus routes and stops follow transit-authority notices": "Hangzhou.com.cn — 2026年秋季西湖シャトルガイド（9月7日公開）。具体的なバス路線と停留所は交通当局の案内に準拠"
+  }
+}

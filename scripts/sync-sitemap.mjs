@@ -21,6 +21,7 @@ const switzerlandLastmod = '2026-09-12';
 const franceLastmod = '2026-09-20';
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
+const chinaOnly = process.argv.includes('--china-only');
 const newRoutes = [
   ['/', italyLastmod, 'weekly', '1.0'],
   ...usaRoutes.map(route=>[route,'2026-09-11','monthly',route==='/usa/'?'0.9':'0.7']),
@@ -61,19 +62,69 @@ function localizedRoute(route, locale) {
 
 const existing = fs.readFileSync(sitemapPath, 'utf8');
 const records = new Map();
+const localizedRecords = new Map();
 for (const match of existing.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod><changefreq>([^<]*)<\/changefreq><priority>([^<]*)<\/priority><\/url>/g)) {
   const route = match[1] || '/';
-  if (isLocalizedRoute(route)) continue;
-  records.set(route, { route, lastmod: match[2], changefreq: match[3], priority: match[4] });
+  const record = { route, lastmod: match[2], changefreq: match[3], priority: match[4] };
+  if (isLocalizedRoute(route)) localizedRecords.set(route, record);
+  else records.set(route, record);
 }
-for (const [route, lastmod, changefreq, priority] of newRoutes) records.set(route, { route, lastmod, changefreq, priority });
+for (const [route, lastmod, changefreq, priority] of newRoutes) {
+  if (chinaOnly && !route.startsWith('/china/')) continue;
+  records.set(route, { route, lastmod, changefreq, priority });
+}
+
+function chinaPageRoutes(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const absolute = path.join(directory, entry.name);
+    if (entry.isDirectory()) return chinaPageRoutes(absolute);
+    if (!entry.isFile() || entry.name !== 'index.html') return [];
+    const segments = path.relative(root, path.dirname(absolute)).split(path.sep);
+    return [`/${segments.join('/')}/`];
+  }).sort();
+}
+
+function findWebPageDates(value, found = []) {
+  if (!value || typeof value !== 'object') return found;
+  if (value['@type'] === 'WebPage' && value.dateModified) found.push(value.dateModified);
+  for (const child of Object.values(value)) {
+    if (child && typeof child === 'object') findWebPageDates(child, found);
+  }
+  return found;
+}
+
+// Synchronize China route dates from their source HTML metadata.
+for (const route of chinaPageRoutes(path.join(root, 'china'))) {
+  const relative = `${route.slice(1)}index.html`;
+  const html = fs.readFileSync(path.join(root, relative), 'utf8');
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  const dates = scripts.flatMap(([, raw]) => findWebPageDates(JSON.parse(raw)));
+  const record = records.get(route);
+  if (!record) throw new Error(`China route is absent from sitemap: ${route}`);
+  if (dates.length === 0) continue;
+  if (dates.length !== 1 || !/^\d{4}-\d{2}-\d{2}$/.test(dates[0])) {
+    throw new Error(`Expected one ISO WebPage.dateModified for ${route}`);
+  }
+  records.set(route, { ...record, lastmod: dates[0] });
+}
 
 const english = [...records.values()];
 const lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
 for (const locale of allLocales) {
   for (const record of english) {
     const route = localizedRoute(record.route, locale);
-    lines.push(`  <url><loc>https://tripdistill.com${route}</loc><lastmod>${record.lastmod}</lastmod><changefreq>${record.changefreq}</changefreq><priority>${record.priority}</priority></url>`);
+    const existingLocalized = localizedRecords.get(route);
+    const chinaRoute = record.route.startsWith('/china/');
+    const lastmod = chinaOnly && locale.code !== 'en' && !chinaRoute && existingLocalized
+      ? existingLocalized.lastmod
+      : record.lastmod;
+    const changefreq = chinaOnly && existingLocalized?.changefreq
+      ? existingLocalized.changefreq
+      : record.changefreq;
+    const priority = chinaOnly && existingLocalized?.priority
+      ? existingLocalized.priority
+      : record.priority;
+    lines.push(`  <url><loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`);
   }
 }
 lines.push('</urlset>', '');

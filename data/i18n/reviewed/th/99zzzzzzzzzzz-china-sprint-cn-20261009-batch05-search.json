@@ -1,0 +1,22 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "jiao tong university station": "สถานีมหาวิทยาลัยเจียวทง",
+    "wukang and hunan roads": "ถนนอู่คังและถนนหูหนาน",
+    "ba jin former residence": "บ้านพักเดิมของปาจิ่น",
+    "tilanqiao station": "สถานีถีหลานเฉียว",
+    "metro line 12": "รถไฟใต้ดินสาย 12",
+    "beisuzhou road": "ถนนเป่ยซูโจว",
+    "north bund": "เป่ยว่ายทาน",
+    "Pair Longhua Temple with one current West Bund Museum exhibition, then use its riverside entrance and plan the Line 11 return.": "เที่ยววัดหลงหัวควบคู่กับนิทรรศการปัจจุบันหนึ่งรายการที่พิพิธภัณฑ์เวสต์บันด์ จากนั้นออกทางเข้าริมแม่น้ำและวางแผนกลับด้วยรถไฟใต้ดินสาย 11",
+    "west bund museum": "พิพิธภัณฑ์เวสต์บันด์",
+    "yunjin road station": "สถานีถนนหยุนจิ่น",
+    "xuhui riverside": "ริมน้ำซวีฮุ่ย",
+    "Plan Hongkou from the museum: a 10 km municipal route, a shorter named-stop edit, or Suzhou Creek’s separate Jing’an walk.": "วางแผนเที่ยวหงโข่วโดยเริ่มจากพิพิธภัณฑ์: เลือกเส้นทางเทศบาลระยะ 10 km เส้นทางย่อที่แวะจุดหมายชัดเจน หรือเส้นทางเดินแม่น้ำซูโจวในเขตจิ้งอันซึ่งแยกต่างหาก",
+    "Start at Wukang Building; follow No 393 → Wukang Court → Ba Jin’s former residence (No 113), exterior only.": "เริ่มที่อาคารอู่คัง แล้วเดินตามลำดับเลขที่ 393 → Wukang Court → บ้านพักเดิมของปาจิ่น (เลขที่ 113) โดยชมจากภายนอกเท่านั้น"
+  }
+}
