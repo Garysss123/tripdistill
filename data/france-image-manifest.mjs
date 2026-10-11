@@ -275,7 +275,7 @@ export const franceImageManifest = {
   },
   "lyon-rhone/vieux-lyon-fourviere": {
     "src": "/assets/images/france-lyon-rhone-vieux-lyon-fourviere.webp",
-    "alt": "Fourvière hill and Vieux Lyon above the Saône",
+    "alt": "The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky",
     "source": "https://commons.wikimedia.org/wiki/File:Basilique_de_Fourvi%C3%A8re_from_Saone_(Lyon).jpg",
     "label": "Basilique de Fourvière from Saone (Lyon).jpg",
     "creator": "MickaëlG",
@@ -285,7 +285,7 @@ export const franceImageManifest = {
   },
   "lyon-rhone/presquile-croix-rousse": {
     "src": "/assets/images/france-lyon-rhone-presquile-croix-rousse.webp",
-    "alt": "Lyon city streets between Presqu’île and Croix-Rousse hill",
+    "alt": "A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees",
     "source": "https://commons.wikimedia.org/wiki/File:Lyon_croix_rousse_01.jpg",
     "label": "Lyon croix rousse 01.jpg",
     "creator": "Olivier Aumage",
@@ -295,7 +295,7 @@ export const franceImageManifest = {
   },
   "lyon-rhone/beaujolais-perouges": {
     "src": "/assets/images/france-lyon-rhone-beaujolais-perouges.webp",
-    "alt": "Vineyards and stone villages in the Beaujolais countryside",
+    "alt": "Vineyards and the village of Juliénas among the Beaujolais hills",
     "source": "https://commons.wikimedia.org/wiki/File:Juli%C3%A9nas.jpg",
     "label": "Juliénas.jpg",
     "creator": "Sunappu-shashin",
