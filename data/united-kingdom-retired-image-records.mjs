@@ -26,5 +26,18 @@ export const unitedKingdomRetiredImageRecords = {
     localSha1: 'a0a2e61067c261e5c59e1011e4ab8c9e969c9a9f',
     inventoryStatus: 'unused',
     retirementNote: 'Removed from live displays on 2026-10-11 pending independent source verification. The previous Commons CC BY-SA 2.0 metadata is retained as an unverified claim, not a rights conclusion.'
+  },
+  wellsCathedral: {
+    src: '/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips.webp',
+    alt: 'The west front of Wells Cathedral in Somerset',
+    source: 'https://commons.wikimedia.org/wiki/File:Wells_cathedral,_west_front_1.jpg',
+    label: 'Wells cathedral, west front 1.jpg',
+    creator: 'Tony Grist',
+    license: 'Public domain',
+    commonsTitle: 'File:Wells cathedral, west front 1.jpg',
+    remoteSha1: '3e4e1e82b599e7cf0786a41f5b140965ec9e4b34',
+    localSha1: 'e9321ea744e7f91d38062f9dcd10cef427d532af',
+    inventoryStatus: 'unused',
+    retirementNote: 'Removed from live displays on 2026-10-11. Pixels show a close façade carving and stained-glass/window detail rather than the wide west front named in the alt text; the exact Commons source page could not be independently reached during review. Prior source and Public domain fields remain unverified metadata, not a rights conclusion.'
   }
 };

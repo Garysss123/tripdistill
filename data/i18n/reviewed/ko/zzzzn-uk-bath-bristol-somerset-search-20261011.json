@@ -1,0 +1,35 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Bath Spa": "Bath Spa역",
+    "Bathwick": "Bathwick(배스 동쪽 주거 지구)",
+    "Temple Meads": "Temple Meads역",
+    "Temple Quay": "Temple Quay(브리스톨 사원 부두 지구)",
+    "route 8": "버스 8번",
+    "route 174": "버스 174번",
+    "route 376": "버스 376번",
+    "Wells": "Wells(웰스)",
+    "Glastonbury": "Glastonbury(글래스턴베리)",
+    "Roman Baths": "Roman Baths",
+    "Bath Abbey": "Bath Abbey",
+    "Pulteney Bridge": "Pulteney Bridge",
+    "Royal Crescent": "Royal Crescent",
+    "M Shed": "M Shed",
+    "Floating Harbour": "Floating Harbour",
+    "First Bus 8": "First Bus 8",
+    "T10": "T10 정류장",
+    "T1": "T1 정류장",
+    "Clifton Suspension Bridge": "Clifton Suspension Bridge",
+    "First Bus 174": "First Bus 174",
+    "First Bus 376": "First Bus 376",
+    "Wells Cathedral": "Wells Cathedral",
+    "Glastonbury Abbey": "Glastonbury Abbey",
+    "Glastonbury Tor": "Glastonbury Tor",
+    "Cheddar Gorge": "Cheddar Gorge",
+    "Wookey Hole": "Wookey Hole"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Bath Spa": "Bath Spa 車站",
+    "Bathwick": "Bathwick（巴斯東側住宅區）",
+    "Temple Meads": "Temple Meads 車站",
+    "Temple Quay": "Temple Quay（布里斯托寺廟碼頭區）",
+    "route 8": "8 號巴士路線",
+    "route 174": "174 號巴士路線",
+    "route 376": "376 號巴士路線",
+    "Wells": "Wells（威爾斯）",
+    "Glastonbury": "Glastonbury（格拉斯頓伯里）",
+    "Roman Baths": "Roman Baths",
+    "Bath Abbey": "Bath Abbey",
+    "Pulteney Bridge": "Pulteney Bridge",
+    "Royal Crescent": "Royal Crescent",
+    "M Shed": "M Shed",
+    "Floating Harbour": "Floating Harbour",
+    "First Bus 8": "First Bus 8",
+    "T10": "T10 站",
+    "T1": "T1 站",
+    "Clifton Suspension Bridge": "Clifton Suspension Bridge",
+    "First Bus 174": "First Bus 174",
+    "First Bus 376": "First Bus 376",
+    "Wells Cathedral": "Wells Cathedral",
+    "Glastonbury Abbey": "Glastonbury Abbey",
+    "Glastonbury Tor": "Glastonbury Tor",
+    "Cheddar Gorge": "Cheddar Gorge",
+    "Wookey Hole": "Wookey Hole"
+  }
+}

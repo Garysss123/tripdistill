@@ -12184,7 +12184,16 @@
     "keywords": [
       "Bath, Bristol & Somerset",
       "England",
-      "england-south"
+      "england-south",
+      "Bath Spa",
+      "Bathwick",
+      "Temple Meads",
+      "Temple Quay",
+      "route 8",
+      "route 174",
+      "route 376",
+      "Wells",
+      "Glastonbury"
     ]
   },
   {
@@ -12192,12 +12201,18 @@
     "url": "/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/",
     "parent": "Bath, Bristol & Somerset",
     "type": "Local guide",
-    "summary": "Begin at Bath Spa, complete one booked central interior, climb through Queen Square and the Circus only if energy allows, and return by a different street line.",
+    "summary": "From Bath Spa, book one lower-city interior, link Abbey Green and Pulteney Bridge, then climb Queen Square–the Circus–Royal Crescent only if time and energy allow.",
     "keywords": [
       "Bath: Roman & Georgian City",
       "Bath, Bristol & Somerset",
       "Thermal-city time ledger",
-      "stone-terrace-sequence"
+      "stone-terrace-sequence",
+      "Bath Spa",
+      "Roman Baths",
+      "Bath Abbey",
+      "Bathwick",
+      "Pulteney Bridge",
+      "Royal Crescent"
     ]
   },
   {
@@ -12205,12 +12220,19 @@
     "url": "/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/",
     "parent": "Bath, Bristol & Somerset",
     "type": "Local guide",
-    "summary": "Start at Temple Meads or the centre, read the working harbour through one museum or ship, then either finish around Clifton or stay with the water and city centre.",
+    "summary": "Walk from Temple Meads toward M Shed and the Floating Harbour for one collection and quay loop, or use First Bus 8 to connect a harbour start with Clifton and the suspension bridge.",
     "keywords": [
       "Bristol Harbourside & Clifton",
       "Bath, Bristol & Somerset",
       "Harbour-to-ridge gradient board",
-      "floating-harbour-cross-section"
+      "floating-harbour-cross-section",
+      "Temple Meads",
+      "M Shed",
+      "Floating Harbour",
+      "First Bus 8",
+      "T10",
+      "T1",
+      "Clifton Suspension Bridge"
     ]
   },
   {
@@ -12218,12 +12240,19 @@
     "url": "/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/",
     "parent": "Bath, Bristol & Somerset",
     "type": "Local guide",
-    "summary": "Leave Bath or Bristol on a verified route, give one town and its major site enough time, then use the second place or Mendip landscape only when the onward and return connections are secure.",
+    "summary": "Use First Bus 174 from Bath toward Wells or 376 from Bristol toward Wells and Glastonbury; anchor the day in one town, and arrange a confirmed separate transfer for any Mendip cave.",
     "keywords": [
       "Wells, Glastonbury & the Mendip Edge",
       "Bath, Bristol & Somerset",
       "Somerset bus-and-weather docket",
-      "cathedral-tor-decision-sheet"
+      "cathedral-tor-decision-sheet",
+      "First Bus 174",
+      "First Bus 376",
+      "Wells Cathedral",
+      "Glastonbury Abbey",
+      "Glastonbury Tor",
+      "Cheddar Gorge",
+      "Wookey Hole"
     ]
   },
   {

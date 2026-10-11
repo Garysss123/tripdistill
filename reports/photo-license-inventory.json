@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-11T23:14:36.764Z",
+  "generatedAt": "2026-10-11T23:26:58.564Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 793,
+    "assetFileCount": 794,
     "completeSourceCreatorLicenseRecords": 764,
-    "completeProjectOriginalRightsRecords": 4,
-    "licenseClaimsNotIndependentlyVerified": 530,
+    "completeProjectOriginalRightsRecords": 5,
+    "licenseClaimsNotIndependentlyVerified": 528,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "expectedBuildImageCount": 797,
-    "deduplicatedImageCount": 793,
+    "expectedBuildImageCount": 798,
+    "deduplicatedImageCount": 794,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
-    "unusedAssetCount": 27,
-    "assetsWithStructuredSourceRecords": 580,
+    "unusedAssetCount": 28,
+    "assetsWithStructuredSourceRecords": 581,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 153,
+    "assetsVisuallyReviewed": 155,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 235,
-    "metadataOrCreditOnly": 534,
-    "usedAssetsWithoutIndependentSourcePageCheck": 532,
+    "sourcePageChecked": 237,
+    "metadataOrCreditOnly": 533,
+    "usedAssetsWithoutIndependentSourcePageCheck": 530,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -39,7 +39,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 793 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 797 build image files."
+    "buildImageCountReconciliation": "The 794 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 798 build image files."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -27260,16 +27260,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Bath photo review: exact Commons page identifies Kevin Pearson and CC BY-SA 2.0; source title and photo terms for attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels were inspected and show the Royal Crescent façade and curve, matching the route subject.",
           "useCount": 6,
           "routes": [
             "/united-kingdom/",
@@ -27309,16 +27309,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Bristol photo review: exact Commons page identifies Robert Lamb, 17 September 2023, and CC BY-SA 2.0; attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels show coloured terraced houses above Cumberland Road rather than boats or a quay; the alt was corrected to match the image.",
           "useCount": 4,
           "routes": [
             "/united-kingdom/bath-bristol-somerset/",
@@ -27336,6 +27336,52 @@
       ]
     },
     {
+      "sha256": "3512c907227e8c4fe8651c8b0e835a793b398c548963c84ae440fc8649a769fa",
+      "assetPaths": [
+        "/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips-route-choice.svg"
+      ],
+      "byteLength": 4699,
+      "sourceRecords": [
+        {
+          "sha256": "3512c907227e8c4fe8651c8b0e835a793b398c548963c84ae440fc8649a769fa",
+          "assetPath": "/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips-route-choice.svg",
+          "sourceTitle": "Wells, Glastonbury & Mendip route-choice diagram",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale.",
+          "localSha1": "705a0733d83c55bb3079c11e1e011043146c52e1",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/united-kingdom/bath-bristol-somerset/",
+            "/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/",
+            "/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/",
+            "/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/"
+          ],
+          "altTexts": [
+            "Planning diagram comparing a Wells day, Glastonbury day and separately transferred Mendip visit; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
       "sha256": "a87453127260db1467ed44f744f35cb03e5d0fc847092732c2696bb9e604a408",
       "assetPaths": [
         "/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips.webp"
@@ -27349,37 +27395,28 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wells_cathedral,_west_front_1.jpg",
           "sourceTitle": "File:Wells cathedral, west front 1.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Wells cathedral, west front 1.jpg",
+          "creditLabel": null,
           "creator": "Tony Grist",
           "license": "Public domain",
           "rightsStatus": null,
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-11. Pixels show a close façade carving and stained-glass/window detail rather than the wide west front named in the alt text; the exact Commons source page could not be independently reached during review. Prior source and Public domain fields remain unverified metadata, not a rights conclusion.",
+          "licenseUrl": null,
           "commercialReuseEligibility": "declared_public_domain_not_independently_checked",
           "attributionTerms": "Attribution is not required for public-domain material; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "e9321ea744e7f91d38062f9dcd10cef427d532af",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/united-kingdom/bath-bristol-somerset/",
-            "/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/",
-            "/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/",
-            "/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/"
-          ],
-          "altTexts": [
-            "The west front of Wells Cathedral in Somerset"
-          ],
-          "rawVisibleCredits": [
-            "Wells cathedral, west front 1.jpg — Tony Grist, Public domain. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
