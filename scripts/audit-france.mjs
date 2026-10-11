@@ -86,6 +86,11 @@ for (const route of routes) {
   check(pageText.length >= floor, `${route}: rendered editorial copy below France floor (${pageText.length} < ${floor})`);
   const expectedFranceCss = '/css/france.css?v=20261007-3';
   check(html.includes(expectedFranceCss), `${route}: France CSS missing`);
+  if (route.startsWith('/france/lyon-rhone/')) {
+    check(html.includes('/css/france-lyon-operations.css?v=20261011-1'), `${route}: Lyon operations stylesheet missing`);
+    check(html.includes('11 October 2026') && html.includes('"dateModified":"2026-10-11"'), `${route}: Lyon review date is not synchronized`);
+    check(html.includes('https://meteofrance.com/previsions-meteo-france/lyon/69000'), `${route}: official Lyon forecast source missing`);
+  }
   check(html.includes('/js/main.js?v=20260911-1'), `${route}: shared JS missing`);
   check(html.includes('"@type":"BreadcrumbList"') && html.includes('"@type":"FAQPage"'), `${route}: breadcrumb or FAQ JSON-LD missing`);
   check(route === '/france/' ? html.includes('"@type":"WebPage"') : html.includes('"@type":"Article"'), `${route}: page-level JSON-LD type missing`);
@@ -111,10 +116,15 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'fr-live-check')).length === 1, `${route}: near-claim official-source panel missing`);
     check(dom.filter((node) => classHas(node, 'fr-related')).length === 1, `${route}: related-guide section missing`);
     check(/data-fr-layout="[^"]+"/.test(html) && /data-fr-instrument="[^"]+"/.test(html) && /data-fr-variant="(?:[1-9]|1[0-2])"/.test(html), `${route}: child visual instrument markers missing`);
+    if (route.startsWith('/france/lyon-rhone/')) check(dom.filter((node) => classHas(node, 'fr-route-operations')).length === 1, `${route}: route-specific entry, return and weather plan missing`);
     for (const [url] of franceGuides.find((guide) => guide.url === route).sources) check(html.includes(url), `${route}: route-specific official source missing from rendered page`);
   } else {
     check(dom.filter((node) => classHas(node, 'fr-guide-card')).length === 3, `${route}: expected three child cards`);
     check(/data-fr-family="[^"]+"/.test(html) && /data-fr-hub-variant="[1-8]"/.test(html), `${route}: hub family/variant markers missing`);
+    if (route === '/france/lyon-rhone/') {
+      check(dom.filter((node) => classHas(node, 'fr-hub-itinerary')).length === 1, `${route}: Lyon four-night operating plan missing`);
+      for (const day of ['Day 1 · Vieux Lyon and Fourvière', 'Day 2 · Presqu’île and Croix-Rousse', 'Day 3 · Choose Pérouges or Beaujolais']) check(pageText.includes(day), `${route}: missing actionable itinerary day ${day}`);
+    }
   }
 
   for (const [language, prefix] of locales) {
@@ -132,6 +142,36 @@ for (const route of routes) {
 const search = JSON.parse(read('data/search-index.json')).filter((item) => item.url.startsWith('/france/'));
 check(search.length === 81 && new Set(search.map((item) => item.url)).size === 81, 'France search index must contain exactly 81 unique routes');
 for (const route of routes) check(search.some((item) => item.url === route), `${route}: missing from search index`);
+
+const lyonCluster = franceClusters.find((cluster) => cluster.slug === 'lyon-rhone');
+if (lyonCluster) {
+  const lyonSummary = { route: `/france/${lyonCluster.slug}/`, source: lyonCluster.searchSummary || lyonCluster.hubIntro };
+  for (const [language, prefix] of locales) {
+    let catalog;
+    if (language !== 'en') {
+      try {
+        catalog = JSON.parse(read(`data/i18n/${language}.json`));
+        check(catalog.qualityStatus === 'reviewed', `${language}: Lyon search summary catalog is not approved`);
+      } catch {
+        check(false, `${language}: approved translation catalog is missing`);
+        catalog = { translations: {} };
+      }
+    }
+    const localizedIndexPath = prefix ? `${prefix.slice(1)}/data/search-index.json` : 'data/search-index.json';
+    let localizedSearch;
+    try { localizedSearch = JSON.parse(read(localizedIndexPath)); }
+    catch {
+      check(false, `${language}: search index is missing at ${localizedIndexPath}`);
+      continue;
+    }
+    const localizedRoute = `${prefix}${lyonSummary.route}`;
+    const record = localizedSearch.find((entry) => entry.url === localizedRoute);
+    const expectedSummary = language === 'en' ? lyonSummary.source : catalog?.translations?.[lyonSummary.source];
+    check(!!record, `${language}: ${localizedRoute} missing from search index`);
+    if (language !== 'en') check(!!expectedSummary, `${language}: no approved Lyon search summary`);
+    if (record && expectedSummary) check(record.summary === expectedSummary, `${language}: Lyon search summary mismatch at ${localizedRoute}`);
+  }
+}
 
 const brittany = franceClusters.find((cluster) => cluster.slug === 'brittany-coasts');
 if (brittany) {
@@ -247,8 +287,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/corsica/bastia-cap-corse/',
     '/france/corsica/bonifacio-porto-vecchio/'
   ]);
+  const lyonEditedRoutes = new Set([
+    '/france/lyon-rhone/',
+    '/france/lyon-rhone/vieux-lyon-fourviere/',
+    '/france/lyon-rhone/presquile-croix-rousse/',
+    '/france/lyon-rhone/beaujolais-perouges/'
+  ]);
   for (const route of routes) {
-    const expectedDate = brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = lyonEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
   for (const route of fr02EditedRoutes) {
@@ -261,6 +307,12 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     for (const [language, prefix] of locales) {
       const localizedRoute = `${prefix}${route}`;
       check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-10</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-10`);
+    }
+  }
+  for (const route of lyonEditedRoutes) {
+    for (const [language, prefix] of locales) {
+      const localizedRoute = `${prefix}${route}`;
+      check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-11</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-11`);
     }
   }
 }

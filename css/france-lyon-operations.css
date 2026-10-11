@@ -1,0 +1,25 @@
+.fr-hub-itinerary { padding: clamp(3.4rem,7vw,7rem) clamp(1rem,5vw,5rem); background: #183342; color: #f4f1e9; }
+.fr-hub-itinerary > header { max-width: 880px; margin: 0 auto 2.5rem; }
+.fr-hub-itinerary > header > span,.fr-hub-itinerary article > strong { color: #f0b178; font: 800 .72rem/1.4 ui-monospace,monospace; letter-spacing: .08em; text-transform: uppercase; }
+.fr-hub-itinerary h2 { max-width: 760px; margin: .65rem 0 .9rem; font: 750 clamp(2.1rem,4vw,4rem)/1 Georgia,serif; }
+.fr-hub-itinerary header p { max-width: 760px; color: #dce6e9; line-height: 1.65; }
+.fr-hub-itinerary > div { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; max-width: 1280px; margin: 0 auto; }
+.fr-hub-itinerary article { padding: 1.6rem; background: rgba(255,255,255,.07); border-top: 4px solid #f0b178; }
+.fr-hub-itinerary article p { margin-bottom: 0; color: #e8ece8; line-height: 1.7; }
+.fr-route-operations { padding: clamp(3rem,6vw,6rem) clamp(1rem,5vw,5rem); background: #eff2ed; border-block: 1px solid #d4ddd8; }
+.fr-route-operations > header { max-width: 920px; margin: 0 auto 2rem; }
+.fr-route-operations > header > span { color: #bd4435; font: 800 .72rem/1.4 ui-monospace,monospace; text-transform: uppercase; letter-spacing: .09em; }
+.fr-route-operations h2 { margin: .55rem 0; font: 750 clamp(2rem,4vw,3.7rem)/1.04 Georgia,serif; color: #173342; }
+.fr-route-operations > div { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; max-width: 1280px; margin: auto; }
+.fr-route-operations article { padding: 1.6rem; background: #fffdf8; border-top: 5px solid #bd4435; box-shadow: 0 12px 32px rgba(23,51,66,.06); }
+.fr-route-operations article small { display: block; margin-bottom: .7rem; color: #3e6870; font: 800 .7rem/1.4 ui-monospace,monospace; letter-spacing: .06em; text-transform: uppercase; }
+.fr-route-operations article p { margin: 0; line-height: 1.72; color: #173342; }
+@media (max-width: 980px) {
+  .fr-hub-itinerary > div { grid-template-columns: 1fr; }
+  .fr-route-operations > div { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .fr-hub-itinerary { padding: 3.2rem 1rem; }
+  .fr-route-operations { padding: 3.2rem 1rem; }
+  .fr-route-operations > div { grid-template-columns: 1fr; }
+}

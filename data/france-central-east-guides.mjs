@@ -849,6 +849,7 @@ export const franceCentralEastClusters = [
   }),
   c({
     slug: 'lyon-rhone',
+    reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
     name: 'Lyon & the Rhône Gateway',
     region: 'Auvergne-Rhône-Alpes',
     band: 'valleys-east',
@@ -856,14 +857,26 @@ export const franceCentralEastClusters = [
     label: 'Two-rivers urban section',
     tagline: 'Use the rivers and hills to stop the city from becoming one long climb.',
     hubIntro: 'Lyon’s planning logic comes from the Saône, Rhône and two hills. Vieux Lyon and Fourvière form a vertical historic route; Presqu’île and Croix-Rousse connect commerce to silk-worker history; Beaujolais and Pérouges require separate regional last miles. Choose the hill before the meal reservation so the final descent, not fatigue, decides where the evening ends.',
-    stay: 'Three nights allow two city days and one excursion. Base near a useful Métro or tram connection rather than assuming the old town is easiest for every station, hill and dinner.',
-    transfer: 'Part-Dieu and Perrache are distinct main stations. Metro, tram and funicular lines solve different axes; regional excursions require an exact station, bus or tour rather than a generic Lyon departure.',
-    season: 'Summer heat makes hills and exposed squares harder at midday; winter and rain favor traboules only where publicly signed and museums where open. Festival and major-event periods alter crowds and transit.',
-    fallback: 'Use the city’s museums, covered food hall or flatter Presqu’île route when heat, funicular disruption or rural weather changes the plan. Keep the substitute on the same transport axis.',
+    searchSummary: 'Lyon is a four-night base for two focused city days and one regional excursion. Pair Vieux Lyon and Fourvière on one funicular route and Presqu’île with Croix-Rousse on a separate Métro A/C day. On the third full day choose TER to Pérouges or a booked Beaujolais pickup from Villefranche station; these are separate directions.',
+    stay: 'Use four nights for two full Lyon days and one full excursion, sleeping near Bellecour or Cordeliers in Presqu’île for Métro A/D and walkable river routes. Part-Dieu suits an early TER start, but still needs a city-transit ride for the hills. Three nights works only when arrival or departure supplies one usable day segment; otherwise drop the excursion rather than race.',
+    transfer: 'Part-Dieu and Perrache are different stations. For Pérouges, take TER from Lyon Part-Dieu to Meximieux-Pérouges, walk about 20 minutes uphill from the station to the medieval town, then reverse the same route. For Beaujolais, use TER to Villefranche-sur-Saône and continue only with a booked local pickup; TCL 217 serves named villages and stops, but its school-term, holiday, Saturday and Sunday patterns differ.',
+    season: 'Summer heat makes Fourvière stairs and exposed squares harder at midday; winter rain makes Pérouges cobbles slick and can complicate the rural last mile. Traboules are private residential passages except those currently signed open. Festival dates and major events can alter access and transit.',
+    fallback: 'If hill weather or the F2 funicular fails, keep the day on flat Presqu’île with a booked museum. If the rural return or Beaujolais pickup cannot be confirmed, replace the excursion with Villefranche’s Paul-Dini museum or another Lyon indoor visit; do not improvise a vineyard taxi after arrival.',
+    itinerary: [
+      ['Day 1 · Vieux Lyon and Fourvière', 'Enter at Métro D Vieux Lyon–Cathédrale Saint-Jean. Walk the signed public streets and a small number of open traboules, then take TCL funicular F2 up to Fourvière. Choose the basilica and viewpoints or the Roman theatres as the main upper-hill visit. Return on F2 to Vieux Lyon and Métro D; check the live line and site notices before setting the day.'],
+      ['Day 2 · Presqu’île and Croix-Rousse', 'Start around Bellecour or Cordeliers, follow the central river-to-river spine north, then use Métro A to Hôtel de Ville and transfer to Métro C for Croix-Rousse. Book Maison des Canuts or its guided traboule visit before fixing lunch. Return by Métro C to Hôtel de Ville and Métro A, or walk downhill only if the stairs suit your group.'],
+      ['Day 3 · Choose Pérouges or Beaujolais', 'Pérouges is the self-guided rail choice: TER from Lyon Part-Dieu to Meximieux-Pérouges, the signed uphill walk to the town, and the same walk and train back. For Beaujolais, TER to Villefranche-sur-Saône is only the regional gateway: reserve a driver or tour that confirms pickup and return to the same station, or use TCL 217 only after checking the exact stop and both directions for your date. Never combine both branches in one day.']
+    ],
     sources: [
       ['https://en.visiterlyon.com/', 'ONLYLYON Tourism — official city guide'],
       ['https://www.tcl.fr/en', 'TCL — official Lyon public transport information'],
-      ['https://www.ter.sncf.com/auvergne-rhone-alpes', 'TER Auvergne-Rhône-Alpes — official regional rail information']
+      ['https://www.tcl.fr/lignes/funiculaire-f2', 'TCL F2 — official Vieux Lyon–Fourvière funicular status and timetable'],
+      ['https://www.tcl.fr/lignes/bus-217', 'TCL bus 217 — official route and date-specific timetable'],
+      ['https://www.ter.sncf.com/auvergne-rhone-alpes/trajet-lyon-villefranche-sur-saone', 'TER Lyon–Villefranche-sur-Saône — official rail planning'],
+      ['https://www.ter.sncf.com/auvergne-rhone-alpes/trajet-lyon-meximieux-perouges', 'TER Lyon–Meximieux-Pérouges — official rail planning'],
+      ['https://meteofrance.com/previsions-meteo-france/lyon/69000', 'Météo-France Lyon — official local forecast and warnings'],
+      ['https://maisondescanuts.fr/infos-utiles/', 'Maison des Canuts — official visit, reservation and access information'],
+      ['https://www.plainedelain-tourisme.com/en/discover/the-medieval-city-of-P%C3%A9rouges/', 'Plaine de l’Ain Tourism — official Pérouges walking access and accessibility']
     ],
     guides: [
       g({
@@ -872,7 +885,7 @@ export const franceCentralEastClusters = [
         instrument: 'Funicular-and-traboule elevation card',
         layout: 'vertical-renaissance-section',
         imageQuery: 'Lyon Fourviere old town Saone France panorama',
-        imageAlt: 'Fourvière hill and Vieux Lyon above the Saône',
+        imageAlt: 'The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky',
         purpose: 'Connect Vieux Lyon’s Renaissance streets to Fourvière through one controlled ascent, using only signed public traboules and protecting the downhill finish.',
         summary: 'Read the Saône-side old town at street level, take the funicular or a deliberate climb once, and descend by a different safe route with the Roman or basilica layer clearly chosen.',
         choices: [
@@ -880,13 +893,13 @@ export const franceCentralEastClusters = [
           ['Basilica and Roman hill', 'Ride or climb early, then give the basilica, viewpoints and Roman theaters the main block before descending.'],
           ['Two-level city comparison', 'Use one museum below and one interpreted site above. This needs a full day and a single planned ascent.']
         ],
-        access: 'Vieux Lyon Métro serves the old town and funicular interchange. Check current funicular operation and replacement service before committing; signed public traboules are limited and private passages remain off-limits.',
+        access: 'Enter from Métro D Vieux Lyon–Cathédrale Saint-Jean. TCL funicular F2 runs between Vieux Lyon and Fourvière; check its live status before using it as the hill connection. Only passages currently signed open to visitors are public; private residential courtyards remain off-limits.',
         tradeoff: 'Adding Croix-Rousse creates a second hill and weakens both. The route gives up Presqu’île shopping and distant food stops so Vieux Lyon and Fourvière form one legible vertical story.',
         stages: [
-          ['Begin along the Saône edge', 'Enter Vieux Lyon near Saint-Jean, orient to the river and select a few officially public passages rather than searching every doorway.'],
+          ['Enter at Saint-Jean', 'Use Métro D to Vieux Lyon–Cathédrale Saint-Jean, orient to the Saône and select only public passages with current visitor signage.'],
           ['Read the Renaissance ground', 'Connect cathedral, courtyards and one museum or interpretation site, keeping resident access clear and watching the hill above for weather.'],
-          ['Ascend once', 'Use the operating funicular or a chosen stair route to Fourvière, then select basilica and viewpoint or the Roman theaters as the main upper layer.'],
-          ['Descend on a different line', 'Return by funicular or a signed slope toward Saint-Jean or Saint-Paul, ending near transit instead of climbing again for a missed view.']
+          ['Ascend once', 'Take TCL F2 from Vieux Lyon to Fourvière when it is operating, then choose the basilica and viewpoint or Lugdunum and the Roman theatres as the main upper layer.'],
+          ['Protect the return', 'Return on F2 to Vieux Lyon and Métro D. Use a signed walking descent only when the official transit status, weather, mobility and daylight support it.']
         ],
         fallback: 'If the funicular is disrupted, keep Vieux Lyon and Gadagne or cross to Presqu’île; climb only if heat, mobility and daylight make it reasonable. If passages close, the public streets retain the route.',
         watch: [
@@ -897,9 +910,16 @@ export const franceCentralEastClusters = [
         duration: 'Allow five to seven hours for both levels with one museum. A compact old-town and viewpoint route needs three to four hours.',
         combine: 'Combine Vieux Lyon with Fourvière because they share one vertical axis. Keep Croix-Rousse, Parc de la Tête d’Or and Beaujolais for separate routes.',
         verify: 'Check TCL funicular status, Gadagne or Roman-site openings, basilica access and any event perimeter before beginning the ascent.',
+        operations: {
+          entryReturn: 'Start at Métro D Vieux Lyon–Cathédrale Saint-Jean. Walk the Saône-side streets and only the traboules currently signed open to visitors. Take TCL F2 from Vieux Lyon to Fourvière; return on F2 to the same station, then Métro D toward the central base. If F2 is disrupted, use a signed public street route only when weather, mobility and daylight make the climb reasonable.',
+          booking: 'The basilica is an active place of worship: check its current access and service notices, and confirm Lugdunum or museum opening before choosing the upper-hill anchor. Do not enter private courtyards or assume every traboule is open.',
+          weather: 'In heavy rain or heat, skip the exposed ascent and keep Vieux Lyon at street level with a booked indoor museum, or move to the flatter Presqu’île. Wet stone steps are a reason to cancel the hill, not to hurry down them.'
+        },
         sources: [
           ['https://en.visiterlyon.com/discover/heritage-unesco/vieux-lyon', 'ONLYLYON Tourism — official Vieux Lyon information'],
-          ['https://lugdunum.grandlyon.com/en/', 'Lugdunum Museum and Roman theatres — official visits']
+          ['https://lugdunum.grandlyon.com/en/', 'Lugdunum Museum and Roman theatres — official visits'],
+          ['https://www.tcl.fr/lignes/funiculaire-f2', 'TCL F2 — official Vieux Lyon–Fourvière funicular status and timetable'],
+          ['https://www.fourviere.org/en/times/', 'Notre-Dame de Fourvière — official access, opening and worship information']
         ]
       }),
       g({
@@ -908,7 +928,7 @@ export const franceCentralEastClusters = [
         instrument: 'Slope-and-silk workshop grid',
         layout: 'silk-hill-grid',
         imageQuery: 'Lyon Croix Rousse Presquile France city',
-        imageAlt: 'Lyon city streets between Presqu’île and Croix-Rousse hill',
+        imageAlt: 'A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees',
         purpose: 'Move from Presqu’île’s civic and commercial center to Croix-Rousse’s silk-worker hill through one slope, one workshop or museum, and a planned transit descent.',
         summary: 'Begin between the rivers, climb by Métro or signed slope to the canut district, and use silk history to explain the urban form rather than treating traboules as a scavenger hunt.',
         choices: [
@@ -916,13 +936,13 @@ export const franceCentralEastClusters = [
           ['Croix-Rousse silk history', 'Use a guided passage, Maison des Canuts or current workshop visit, then read the slopes and plateau. Appointments matter.'],
           ['Food and contemporary city', 'Use markets, a reserved food experience or river edges as the main layer, adding only a compact silk-history block.']
         ],
-        access: 'Metro A and C serve the civic center and Croix-Rousse, while many slopes are steep. Decide whether to ride uphill and walk down, and verify any guided traboule or workshop meeting point before arrival.',
+        access: 'Start on Métro A at Bellecour or Cordeliers, change at Hôtel de Ville for Métro C to Croix-Rousse, then return by the same interchange. The steep slopes are optional; confirm any guided visit meeting point and language before arrival.',
         tradeoff: 'A full art museum, long food hall visit and deep Croix-Rousse walk exceed one day. The route keeps one central collection or meal and one hill narrative.',
         stages: [
-          ['Start between the rivers', 'Use Bellecour or Cordeliers to orient Presqu’île, then move north through civic squares without zig-zagging to both riverbanks.'],
+          ['Start between the rivers', 'Use Bellecour or Cordeliers on Métro A, then follow the Presqu’île spine north toward Hôtel de Ville without zig-zagging back across the Rhône.'],
           ['Choose the central anchor', 'Visit the Musée des Beaux-Arts, market or another selected site, keeping the Croix-Rousse reservation time protected.'],
-          ['Ride or climb to silk history', 'Use Métro C or a deliberate slope, then join the official workshop, Maison des Canuts or public passage route.'],
-          ['Descend toward useful transit', 'Walk one signed slope or use the metro, finishing near Hôtel de Ville or a river crossing rather than returning to the plateau.']
+          ['Ride to silk history', 'At Hôtel de Ville, transfer from Métro A to Métro C for Croix-Rousse; join a booked Maison des Canuts or workshop visit.'],
+          ['Return through Hôtel de Ville', 'Take Métro C back to Hôtel de Ville and Métro A to Bellecour or Cordeliers. Walk down only if the steep streets suit your group.']
         ],
         fallback: 'In heat or rain, stay on Presqu’île with museums and covered food options, or ride directly to a booked silk interior. If a guided passage cancels, use the public streets and Maison des Canuts where open.',
         watch: [
@@ -933,6 +953,11 @@ export const franceCentralEastClusters = [
         duration: 'Allow six to eight hours for Presqu’île plus Croix-Rousse and one interior. Either district alone supports four to five hours.',
         combine: 'Combine the central spine with one Croix-Rousse route. Keep Fourvière, Confluence and Beaujolais for their own days.',
         verify: 'Check TCL service, museum and market hours, workshop reservation and public-passage guidance before choosing the slope.',
+        operations: {
+          entryReturn: 'Start at Bellecour or Cordeliers. Ride Métro A north to Hôtel de Ville, transfer to Métro C for Croix-Rousse, and walk between Maison des Canuts and the plateau sights. Return on Métro C to Hôtel de Ville and Métro A to the central base. A downhill walk to Terreaux is an option only for people comfortable with steep, stepped streets.',
+          booking: 'Maison des Canuts lists Métro C, Croix-Rousse, as its stop and accepts online reservations for its program. Its current practical page lists museum opening Tuesday–Saturday; check the selected visit and language before buying, especially for a guided traboule walk. The plateau is a working residential district, not an open-door attraction.',
+          weather: 'For heavy rain or heat, keep the route on Presqu’île: choose the Musée des Beaux-Arts or another confirmed indoor stop and skip the slopes. If the museum or silk visit is closed, do not replace it with an unbooked private passage.'
+        },
         sources: [
           ['https://maisondescanuts.fr/infos-utiles/', 'Maison des Canuts — official silk-history visits'],
           ['https://www.mba-lyon.fr/en', 'Musée des Beaux-Arts de Lyon — official visitor information']
@@ -944,7 +969,7 @@ export const franceCentralEastClusters = [
         instrument: 'Two-excursion decision fork',
         layout: 'regional-choice-fork',
         imageQuery: 'Beaujolais vineyards villages France autumn landscape',
-        imageAlt: 'Vineyards and stone villages in the Beaujolais countryside',
+        imageAlt: 'Vineyards and the village of Juliénas among the Beaujolais hills',
         purpose: 'Choose one Lyon-region excursion—Beaujolais wine villages or the fortified town of Pérouges—and solve its last mile rather than merging them into a generic countryside day.',
         summary: 'Beaujolais needs a sober vineyard route and appointments; Pérouges needs the correct regional stop and a cobbled hill approach. The two branches answer different interests.',
         choices: [
@@ -952,13 +977,13 @@ export const franceCentralEastClusters = [
           ['Pérouges medieval town', 'Use the current rail or bus approach and give the cobbled walled town a half-day, possibly paired with a nearby town on the same line.'],
           ['Stay in Lyon', 'When rural transport or weather is weak, use a Lyon food, silk or river day. This is a legitimate choice, not a failed excursion.']
         ],
-        access: 'Beaujolais villages spread north of Lyon and generally need an arranged route. Pérouges is reached through a nearby station or bus stop rather than a train inside the walls; confirm the exact walk, gradient and return.',
+        access: 'For Pérouges, take TER from Lyon Part-Dieu to Meximieux-Pérouges and walk about 20 minutes uphill to the walled town. For Beaujolais, TER to Villefranche-sur-Saône is the rail gateway; book the vineyard pickup and return before leaving Lyon. TCL 217 stops in the region, but no bus stop is inside every village or cellar.',
         tradeoff: 'The route gives up combining Beaujolais and Pérouges. Their roads run in different directions and each needs time for context, meals and a safe return.',
         stages: [
-          ['Meet the chosen branch', 'Join the booked Beaujolais transport or board the exact regional service for Pérouges. Carry the return details before leaving Lyon.'],
+          ['Board the chosen branch', 'For Pérouges, board TER at Lyon Part-Dieu for Meximieux-Pérouges. For Beaujolais, board TER for Villefranche-sur-Saône only after confirming the booked pickup there.'],
           ['Orient through landscape or walls', 'In Beaujolais, learn the village and climat pattern before tasting; in Pérouges, enter through the public gate and read the street plan.'],
           ['Commit to one encounter', 'Use one producer appointment or one town-and-museum route, keeping private vines and resident doorways clear.'],
-          ['Return before rural options narrow', 'Leave with a road or train backup and eat before the final connection rather than depending on late village service.']
+          ['Return on the confirmed chain', 'Walk back down to Meximieux-Pérouges station and take TER to Part-Dieu, or meet the prebooked Beaujolais driver at Villefranche station for the return TER. Do not depend on an unverified late bus.']
         ],
         fallback: 'If the Beaujolais driver or producer cancels, remain in Lyon or use a confirmed rail town. If Pérouges paths are icy or inaccessible, choose a lower urban route; do not force steep cobbles to preserve a photo plan.',
         watch: [
@@ -969,9 +994,18 @@ export const franceCentralEastClusters = [
         duration: 'Allow a full day for a Beaujolais circuit and five to seven hours for Pérouges including the Lyon return. Do not schedule both.',
         combine: 'Combine Beaujolais with one compact village cluster, or Pérouges with a stop on the same regional line. Keep the two branches separate.',
         verify: 'Check every producer or guide booking, regional train or bus, weather, accessibility and the last comfortable return to Lyon.',
+        operations: {
+          entryReturn: 'For Pérouges, board TER at Lyon Part-Dieu for Meximieux-Pérouges; follow the official walking map uphill for about 20 minutes, then return to the same station on foot and use TER back to Part-Dieu. For Beaujolais, travel by TER to Villefranche-sur-Saône and prebook a driver or tour with a named station pickup and return. TCL 217 also serves Villefranche Gare Routière and stops including Theizé Merloux and Val d’Oingt LBO Centre D120; it does not put you at every old village or vineyard, so use it only with a confirmed last mile and a checked return bus.',
+          booking: 'Choose one branch. Pérouges is an inhabited village with steep access and difficult cobbles for wheelchairs, canes and strollers; use flat, closed shoes and check the current visitor map. Beaujolais cellars are appointment visits: book one producer or a guided route and ask who handles the transfer between stops. Do not drink and drive or assume a local taxi will be waiting.',
+          weather: 'Rain, ice or heat can make Pérouges’s final climb and cobbles unsafe; switch to Lyon or Villefranche indoor culture. If the Beaujolais pickup, winery appointment or matching return cannot be confirmed before departure, stay in Lyon instead of boarding a one-way rural bus.'
+        },
         sources: [
-          ['https://www.beaujolais-tourisme.com/en/', 'Beaujolais tourism — official regional planning'],
-          ['https://www.perouges-bugey-tourisme.com/en/', 'Pérouges Bugey tourism — official visitor information']
+          ['https://www.beaujolais-tourisme.com/en/', 'Destination Beaujolais — official regional planning and bookable wine experiences'],
+          ['https://www.tcl.fr/lignes/bus-217', 'TCL bus 217 — official route and date-specific timetable'],
+          ['https://www.ter.sncf.com/auvergne-rhone-alpes/trajet-lyon-villefranche-sur-saone', 'TER Lyon–Villefranche-sur-Saône — official rail planning'],
+          ['https://www.ter.sncf.com/auvergne-rhone-alpes/trajet-lyon-meximieux-perouges', 'TER Lyon–Meximieux-Pérouges — official rail planning'],
+          ['https://www.ter.sncf.com/auvergne-rhone-alpes/se-deplacer/gares/OCE87723585', 'TER Meximieux-Pérouges station — official location and access'],
+          ['https://www.plainedelain-tourisme.com/en/discover/the-medieval-city-of-P%C3%A9rouges/', 'Plaine de l’Ain Tourism — official Pérouges walking access, map and accessibility']
         ]
       })
     ]

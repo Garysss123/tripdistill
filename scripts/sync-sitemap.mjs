@@ -219,6 +219,7 @@ const parisLastmod = '2026-10-06';
 const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';
 const franceResponsiveLastmod = '2026-10-07';
+const lyonReviewedLastmod = '2026-10-11';
 const parisEditedRoutes = [
   '/france/paris/',
   '/france/paris/seine-islands-latin-quarter/',
@@ -245,6 +246,12 @@ const normandyEditedRoutes = [
   '/france/normandy/rouen-seine-cathedral/',
   '/france/normandy/bayeux-dday-landscape/',
   '/france/normandy/mont-saint-michel-bay/'
+];
+const lyonReviewedRoutes = [
+  '/france/lyon-rhone/',
+  '/france/lyon-rhone/vieux-lyon-fourviere/',
+  '/france/lyon-rhone/presquile-croix-rousse/',
+  '/france/lyon-rhone/beaujolais-perouges/'
 ];
 const zurichEditedRoutes = [
   '/switzerland/',
@@ -337,8 +344,8 @@ const newRoutes = [
   ...unitedKingdomClusters.map((cluster) => [`/united-kingdom/${cluster.slug}/`, unitedKingdomLastmod, 'monthly', '0.8']),
   ...unitedKingdomGuides.map((guide) => [guide.url, unitedKingdomLastmod, 'monthly', '0.7']),
   ['/france/', franceLastmod, 'monthly', '0.9'],
-  ...franceClusters.map((cluster) => [`/france/${cluster.slug}/`, franceLastmod, 'monthly', '0.8']),
-  ...franceGuides.map((guide) => [guide.url, franceLastmod, 'monthly', '0.7']),
+  ...franceClusters.map((cluster) => [`/france/${cluster.slug}/`, cluster.reviewedOn?.iso || franceLastmod, 'monthly', '0.8']),
+  ...franceGuides.map((guide) => [guide.url, guide.reviewedOn?.iso || franceLastmod, 'monthly', '0.7']),
   ['/switzerland/', switzerlandLastmod, 'monthly', '0.9'],
   ...switzerlandClusters.map((cluster) => [`/switzerland/${cluster.slug}/`, switzerlandLastmod, 'monthly', '0.8']),
   ...switzerlandGuides.map((guide) => [guide.url, switzerlandLastmod, 'monthly', '0.7']),
@@ -496,6 +503,11 @@ for (const route of normandyEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Normandy route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: normandyLastmod });
+}
+for (const route of lyonReviewedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Lyon route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: lyonReviewedLastmod });
 }
 
 for (const route of victoriaResponsiveEditedRoutes) {
