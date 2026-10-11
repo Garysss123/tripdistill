@@ -174,6 +174,14 @@ const unitedKingdomEdinburghEditedRoutes = [
   '/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/'
 ];
 const unitedKingdomCornwallLastmod = '2026-10-11';
+const unitedKingdomGlasgowLastmod = '2026-10-11';
+const unitedKingdomGlasgowEditedRoutes = [
+  '/united-kingdom/',
+  '/united-kingdom/glasgow-clyde/',
+  '/united-kingdom/glasgow-clyde/central-merchant-city-clyde/',
+  '/united-kingdom/glasgow-clyde/west-end-kelvingrove/',
+  '/united-kingdom/glasgow-clyde/loch-lomond-clyde-branch/'
+];
 const unitedKingdomCornwallEditedRoutes = [
   '/united-kingdom/cornwall-devon/',
   '/united-kingdom/cornwall-devon/st-ives-penwith/',
@@ -470,6 +478,11 @@ for (const route of unitedKingdomCornwallEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Cornwall route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomCornwallLastmod });
+}
+for (const route of unitedKingdomGlasgowEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Glasgow route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomGlasgowLastmod });
 }
 for (const route of usaEditedRoutes) {
   const record = records.get(route);

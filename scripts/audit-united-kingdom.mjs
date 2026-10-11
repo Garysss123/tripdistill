@@ -11,9 +11,9 @@ const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const routes = ['/united-kingdom/', ...unitedKingdomClusters.map((cluster) => `/united-kingdom/${cluster.slug}/`), ...unitedKingdomGuides.map((guide) => guide.url)];
 const reviewedRouteDates = new Map([
-  // The country page surfaces the current Yorkshire hub summary.
-  // Keep its sitemap date aligned when that derived card changes.
-  ['/united-kingdom/', '2026-10-10'],
+  // The country page surfaces the current Yorkshire and Glasgow hub summaries.
+  // Keep its sitemap date aligned when either derived card changes.
+  ['/united-kingdom/', '2026-10-11'],
   ...unitedKingdomClusters
     .filter((cluster) => cluster.reviewDateISO)
     .map((cluster) => [`/united-kingdom/${cluster.slug}/`, cluster.reviewDateISO]),

@@ -32,8 +32,8 @@ const reviewGroups = [
   {
     date: '2026-10-11',
     label: '11 October 2026',
-    guideCount: 6,
-    hubCount: 2,
+    guideCount: 9,
+    hubCount: 3,
     batch: 'zzzza-cornwall-devon-pages-20261011.json',
     sources: [
       'checked 11 October 2026',
