@@ -339,8 +339,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/burgundy/beaune-hospices-vineyards/',
     '/france/burgundy/vezelay-fontenay-abbeys/'
   ]);
+  const bordeauxGirondeEditedRoutes = new Set([
+    '/france/bordeaux-gironde/',
+    '/france/bordeaux-gironde/bordeaux-river-wine-city/',
+    '/france/bordeaux-gironde/saint-emilion-vineyards/',
+    '/france/bordeaux-gironde/arcachon-dune-pilat/'
+  ]);
   for (const route of routes) {
-    const expectedDate = lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
   for (const route of fr02EditedRoutes) {
@@ -368,6 +374,12 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     }
   }
   for (const route of burgundyEditedRoutes) {
+    for (const [language, prefix] of locales) {
+      const localizedRoute = `${prefix}${route}`;
+      check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-11</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-11`);
+    }
+  }
+  for (const route of bordeauxGirondeEditedRoutes) {
     for (const [language, prefix] of locales) {
       const localizedRoute = `${prefix}${route}`;
       check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-11</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-11`);
