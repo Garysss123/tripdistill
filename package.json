@@ -36,6 +36,7 @@
     "audit:canada-sources": "node scripts/check-canada-sources.mjs",
     "audit:nyc": "node scripts/audit-nyc-editorial.mjs",
     "audit:usa-editorial": "node scripts/audit-usa-editorial.mjs",
+    "test:china-route-dates": "node scripts/test-china-route-date-metadata.mjs",
     "smoke:usa": "node scripts/smoke-usa.mjs",
     "smoke:canada": "node scripts/smoke-canada.mjs",
     "smoke:switzerland": "node scripts/smoke-switzerland.mjs",
