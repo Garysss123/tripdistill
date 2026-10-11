@@ -1,0 +1,32 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose a China trip by region, realistic nights and rail moves. Compare one-region and multi-city routes, check season by area, and verify visa or transit eligibility for your passport before travel.": "中国旅行は地域、現実的な泊数、鉄道移動を踏まえて選びましょう。1地域に絞る旅程と複数都市を巡る旅程を比べ、地域ごとの季節を確認し、渡航前にご自身の旅券に適用される査証・トランジット制度の条件を確認してください。",
+    "trip length": "旅程の日数",
+    "regional itinerary": "地域別の旅程",
+    "240-hour visa-free transit": "240時間査証免除トランジット",
+    "entry eligibility": "入国条件",
+    "beijing shanghai hangzhou": "北京・上海・杭州",
+    "Plan five full Beijing days as roughly six nights when travel days are separate. Choose a base by your first mornings, group the Central Axis and neighborhoods, protect one full Mutianyu day, and match the airport or rail station to your return.": "移動日を別にするなら、北京で丸5日の観光には通常6泊ほど必要です。朝の最初の訪問先に合わせて拠点を選び、北京中軸線と周辺地区をまとめて巡り、慕田峪長城には丸1日を確保しましょう。帰路に合わせて空港または鉄道駅を選んでください。",
+    "airport arrival": "空港到着",
+    "departure": "出発",
+    "Mutianyu Great Wall day": "慕田峪長城の日帰り",
+    "limited walking": "歩行を減らしたい場合",
+    "rail station": "鉄道駅",
+    "Plan the 297-hectare Summer Palace by entrance and exit: East Palace Gate for a court-first route or a north-side gate for a hill-first day. Check current passport booking and seasonal hours, then choose one zone, rain fallback and a realistic walking limit.": "297ヘクタールの頤和園は、入口と出口を決めて計画しましょう。宮殿区を先に巡るなら東宮門、丘を先に巡るなら北側の入口が候補です。旅券を使う最新の予約方法と季節ごとの開園時間を確認し、訪問地区をひとつに絞り、雨天時の代案と無理のない歩行距離を決めてください。",
+    "East Palace Gate": "東宮門",
+    "north entrance": "北側の入口",
+    "passport ticket booking": "旅券での入場券予約",
+    "297 hectares": "297ヘクタール",
+    "Give Hangzhou three full days, typically four nights: choose a north-shore sequence, one western-hills day and a south-shore or canal contrast. Add a fourth day for Xixi or Liangzhu, confirm the exact station or airport, and scale walks to rain and mobility.": "杭州では丸3日、通常4泊を目安に、北岸のルート、西側の丘陵地を巡る日、南岸か運河周辺を対照的に楽しむ行程を選びましょう。西渓湿地か良渚を加えて丸4日回るなら、利用する駅・空港を特定し、雨や歩行の負担に応じて行程を調整してください。",
+    "Hangzhou East station": "杭州東駅",
+    "Hangzhou West station": "杭州西駅",
+    "Hangzhou Xiaoshan airport": "杭州蕭山国際空港",
+    "Meiyu rain": "梅雨",
+    "mobility": "移動に制約がある場合"
+  }
+}

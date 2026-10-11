@@ -2388,14 +2388,18 @@
     "url": "/china/",
     "parent": "Asia · Country guide",
     "type": "Country",
-    "summary": "Choose a regional argument, prepare passport and phone systems, and connect China's first-trip stops without turning the country into a checklist.",
+    "summary": "Choose a China trip by region, realistic nights and rail moves. Compare one-region and multi-city routes, check season by area, and verify visa or transit eligibility for your passport before travel.",
     "keywords": [
       "china",
       "china travel",
       "first trip",
-      "regions",
+      "trip length",
+      "regional itinerary",
       "high speed rail",
-      "beijing"
+      "240-hour visa-free transit",
+      "entry eligibility",
+      "beijing shanghai hangzhou",
+      "monsoon"
     ]
   },
   {
@@ -2446,14 +2450,18 @@
     "url": "/china/beijing/",
     "parent": "China · Capital",
     "type": "City",
-    "summary": "Build five to seven Beijing nights around the Central Axis, reservations, parks, hutongs, western gardens, contemporary art and the Great Wall.",
+    "summary": "Plan five full Beijing days as roughly six nights when travel days are separate. Choose a base by your first mornings, group the Central Axis and neighborhoods, protect one full Mutianyu day, and match the airport or rail station to your return.",
     "keywords": [
       "beijing",
       "beijing travel",
       "central axis",
       "where to stay",
       "itinerary",
-      "china capital"
+      "airport arrival",
+      "departure",
+      "Mutianyu Great Wall day",
+      "limited walking",
+      "rail station"
     ]
   },
   {
@@ -2587,13 +2595,19 @@
     "url": "/china/beijing/summer-palace/",
     "parent": "Beijing · Western gardens",
     "type": "Imperial garden",
-    "summary": "Choose one gate, one hill effort and one final shore so Kunming Lake and Longevity Hill unfold without repeated backtracking.",
+    "summary": "Plan the 297-hectare Summer Palace by entrance and exit: East Palace Gate for a court-first route or a north-side gate for a hill-first day. Check current passport booking and seasonal hours, then choose one zone, rain fallback and a realistic walking limit.",
     "keywords": [
       "summer palace",
       "kunming lake",
       "longevity hill",
       "beijing garden",
-      "yiheyuan"
+      "yiheyuan",
+      "East Palace Gate",
+      "north entrance",
+      "passport ticket booking",
+      "297 hectares",
+      "rain",
+      "limited walking"
     ]
   },
   {
@@ -2795,14 +2809,19 @@
     "url": "/china/hangzhou/",
     "parent": "China · Zhejiang",
     "type": "City guide",
-    "summary": "Use West Lake as a compass, then choose among temple thresholds, tea hills, canal history, wetland channels and Liangzhu archaeology.",
+    "summary": "Give Hangzhou three full days, typically four nights: choose a north-shore sequence, one western-hills day and a south-shore or canal contrast. Add a fourth day for Xixi or Liangzhu, confirm the exact station or airport, and scale walks to rain and mobility.",
     "keywords": [
       "hangzhou",
       "west lake",
       "zhejiang",
       "longjing",
       "lingyin",
-      "hangzhou itinerary"
+      "hangzhou itinerary",
+      "Hangzhou East station",
+      "Hangzhou West station",
+      "Hangzhou Xiaoshan airport",
+      "Meiyu rain",
+      "mobility"
     ]
   },
   {

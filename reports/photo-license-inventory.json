@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T02:02:23.207Z",
+  "generatedAt": "2026-10-11T03:55:42.079Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 792,
     "completeSourceCreatorLicenseRecords": 765,
     "completeProjectOriginalRightsRecords": 3,
-    "licenseClaimsNotIndependentlyVerified": 582,
+    "licenseClaimsNotIndependentlyVerified": 538,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -17,13 +17,13 @@
     "assetsUsedByScannedEnglishPages": 766,
     "unusedAssetCount": 26,
     "assetsWithStructuredSourceRecords": 577,
-    "assetsWithMatchedEnglishCreditOnly": 100,
-    "assetsWithExplicitEnglishCreditMatch": 91,
-    "assetsVisuallyReviewed": 101,
+    "assetsWithMatchedEnglishCreditOnly": 99,
+    "assetsWithExplicitEnglishCreditMatch": 92,
+    "assetsVisuallyReviewed": 144,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 183,
-    "metadataOrCreditOnly": 585,
-    "usedAssetsWithoutIndependentSourcePageCheck": 583,
+    "sourcePageChecked": 227,
+    "metadataOrCreditOnly": 541,
+    "usedAssetsWithoutIndependentSourcePageCheck": 539,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -6596,16 +6596,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 2.0 license.",
           "localSha1": null,
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6616,7 +6616,7 @@
             "Large red 798 numerals at the entrance to Beijing's art district"
           ],
           "rawVisibleCredits": [
-            "Beijing 798 Art District.jpg — Photo by Cory M. Grenier; licensed under CC BY-SA 2.0. Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 2.0 license."
+            "798 Art District - Cory M. Grenier, CC BY-SA 2.0; this adaptation is shared under the same CC BY-SA 2.0 license; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -6642,16 +6642,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 3.0 license; resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 3,
           "routes": [
             "/china/",
@@ -6663,7 +6663,7 @@
             "Forbidden City corner tower reflected in the moat under evening clouds"
           ],
           "rawVisibleCredits": [
-            "Forbidden City corner tower at sunset - kallgan, CC BY-SA 3.0; resized and converted to WebP, display crop."
+            "Forbidden City corner tower at sunset - kallgan, CC BY-SA 3.0; this adaptation is shared under the same CC BY-SA 3.0 license; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -6689,16 +6689,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 2.0 license; resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6709,7 +6709,7 @@
             "Layered Beijing city view from Jingshan Park"
           ],
           "rawVisibleCredits": [
-            "View from Jingshan Park - vincentraal, CC BY-SA 2.0; resized and converted to WebP, display crop."
+            "View from Jingshan Park - vincentraal, CC BY-SA 2.0; this adaptation is shared under the same CC BY-SA 2.0 license; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -6735,16 +6735,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop.",
           "localSha1": null,
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6755,7 +6755,7 @@
             "Restored Great Wall path and watchtower crossing a green ridge at Mutianyu"
           ],
           "rawVisibleCredits": [
-            "67052-The-Great-Wall, Mutianyu.jpg — Photo by xiquinhosilva; licensed under CC BY 2.0. Changes: image resized and converted to WebP; displayed framing may crop."
+            "Mutianyu Great Wall - xiquinhosilva, CC BY 2.0; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -6781,16 +6781,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license; resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6801,7 +6801,7 @@
             "Red palace hall beyond white stone terraces inside the Forbidden City"
           ],
           "rawVisibleCredits": [
-            "Forbidden City palace hall - Ermell, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Forbidden City palace hall - Ermell, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -6827,16 +6827,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6873,16 +6873,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license; resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6893,7 +6893,8 @@
             "Summer Palace and Longevity Hill viewed across Kunming Lake"
           ],
           "rawVisibleCredits": [
-            "Summer Palace over Kunming Lake - Alexturner85, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Summer Palace over Kunming Lake - Alexturner85, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license; resized and converted to WebP, display crop.",
+            "Summer Palace over Kunming Lake - Alexturner85, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license; 3,180 × 4,806 source resized, center-cropped in responsive display and converted to WebP."
           ]
         }
       ]
@@ -6919,16 +6920,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop.",
           "localSha1": null,
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -6939,7 +6940,7 @@
             "Hall of Prayer for Good Harvests beneath a clear blue sky"
           ],
           "rawVisibleCredits": [
-            "20200110_Temple_of_Heaven-1.jpg — Photo by Balon Greyjoy; licensed under CC0 1.0. Changes: image resized and converted to WebP; displayed framing may crop."
+            "Temple of Heaven - Balon Greyjoy, CC0 1.0; resized and converted to WebP, display crop."
           ]
         }
       ]
@@ -6965,16 +6966,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 4.0 license.",
           "localSha1": null,
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/beijing/",
@@ -7011,16 +7012,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7030,7 +7031,7 @@
             "Aiwan Pavilion among autumn foliage on Yuelu Mountain in Changsha"
           ],
           "rawVisibleCredits": [
-            "Aiwan Pavilion, Changsha — Junchong, CC BY-SA 4.0."
+            "Aiwan Pavilion, Changsha - Junchong, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7056,16 +7057,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7075,7 +7076,7 @@
             "Giant panda at the Chengdu Research Base of Giant Panda Breeding"
           ],
           "rawVisibleCredits": [
-            "Giant panda in Chengdu — George Lu, CC BY 2.0."
+            "Giant panda in Chengdu - George Lu, CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7101,16 +7102,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7120,7 +7121,7 @@
             "Hongya Cave glowing at night above a busy Chongqing street"
           ],
           "rawVisibleCredits": [
-            "Hongya Cave at night, Chongqing — Jonashtand, CC BY-SA 4.0."
+            "Hongya Cave at night, Chongqing - Jonashtand, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7146,16 +7147,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7165,7 +7166,7 @@
             "Erhai Lake reflecting the snow-dusted Cangshan mountains near Dali"
           ],
           "rawVisibleCredits": [
-            "Erhai Lake and Cangshan, Dali — Kcx36, CC BY-SA 4.0."
+            "Erhai Lake and Cangshan, Dali - Kcx36, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7191,16 +7192,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7210,7 +7211,7 @@
             "Large seated Buddha carved into the sandstone cliffs at Yungang Grottoes near Datong"
           ],
           "rawVisibleCredits": [
-            "Yungang Grottoes, Datong — Marcin Białek, CC BY-SA 4.0."
+            "Yungang Grottoes, Datong - Marcin Białek, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7236,16 +7237,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7255,7 +7256,7 @@
             "Crescent Lake oasis enclosed by the Singing Sand Dunes near Dunhuang"
           ],
           "rawVisibleCredits": [
-            "Crescent Lake, Dunhuang — N509FZ, CC BY-SA 4.0."
+            "Crescent Lake, Dunhuang - N509FZ, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7281,16 +7282,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7300,7 +7301,7 @@
             "Round and square Fujian tulou clustered among terraced hills"
           ],
           "rawVisibleCredits": [
-            "Fujian tulou cluster - Scott Edmunds, CC BY 2.0."
+            "Fujian tulou cluster - Scott Edmunds, CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7326,16 +7327,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 3.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7345,7 +7346,7 @@
             "Canton Tower and the Guangzhou skyline across the Pearl River"
           ],
           "rawVisibleCredits": [
-            "Pearl River and Canton Tower — Gzdavidwong, CC BY-SA 3.0."
+            "Pearl River and Canton Tower - Gzdavidwong, CC BY-SA 3.0; this adaptation is shared under the same CC BY-SA 3.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7371,16 +7372,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7390,7 +7391,7 @@
             "Li River winding through green karst peaks near Guilin and Yangshuo"
           ],
           "rawVisibleCredits": [
-            "Li River karst near Guilin and Yangshuo — chensiyuan, CC BY-SA 4.0."
+            "Li River karst near Guilin and Yangshuo - chensiyuan, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7416,16 +7417,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7435,7 +7436,7 @@
             "Huangguoshu Waterfall plunging through green forest in Guizhou"
           ],
           "rawVisibleCredits": [
-            "Huangguoshu Waterfall, Guizhou — Kcx36, CC BY-SA 4.0."
+            "Huangguoshu Waterfall, Guizhou - Kcx36, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7461,16 +7462,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 1,
           "routes": [
             "/china/"
@@ -7479,7 +7480,7 @@
             "Boats crossing West Lake with Leifeng Pagoda on the wooded ridge in Hangzhou"
           ],
           "rawVisibleCredits": [
-            "West Lake and Leifeng Pagoda, Hangzhou - Haluk Comertel, CC BY 3.0."
+            "West Lake and Leifeng Pagoda, Hangzhou - Haluk Comertel, CC BY 3.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7524,7 +7525,7 @@
             "Onion domes and crosses of Saint Sophia Cathedral beneath bright clouds in Harbin"
           ],
           "rawVisibleCredits": [
-            "Saint Sophia Cathedral, Harbin — Amarespeco, CC BY-SA 4.0; this site adaptation is shared under the same CC BY-SA 4.0 license."
+            "Saint Sophia Cathedral, Harbin - Amarespeco, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7570,7 +7571,7 @@
             "Granite Huangshan peaks and wind-shaped pines emerging through mountain mist"
           ],
           "rawVisibleCredits": [
-            "Mount Huangshan in mist — eviltomthai, CC BY 2.0."
+            "Huangshan in mist - eviltomthai, CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7615,7 +7616,7 @@
             "Rolling green Hulun Buir grassland beneath a deep blue sky in Inner Mongolia"
           ],
           "rawVisibleCredits": [
-            "Hulun Buir grassland — Emmazzye, CC BY-SA 4.0; this site adaptation is shared under the same CC BY-SA 4.0 license."
+            "Hulun Buir grassland - Emmazzye, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7641,16 +7642,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7660,7 +7661,7 @@
             "Kunming city center and canal stretching toward mountain ridges"
           ],
           "rawVisibleCredits": [
-            "Kunming skyline - 瑞丽江的河水, CC BY-SA 4.0."
+            "Kunming skyline - 瑞丽江的河水, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7731,16 +7732,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7750,7 +7751,7 @@
             "Tiled roofs of Lijiang Old Town spreading beneath Yunnan mountains"
           ],
           "rawVisibleCredits": [
-            "Lijiang Old Town - chensiyuan, CC BY-SA 4.0."
+            "Lijiang Old Town - chensiyuan, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7776,16 +7777,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7795,7 +7796,7 @@
             "Longmen Grottoes carved across limestone cliffs beside the Yi River in Luoyang"
           ],
           "rawVisibleCredits": [
-            "Longmen Grottoes, Luoyang - xiquinhosilva, CC BY 2.0."
+            "Longmen Grottoes, Luoyang - xiquinhosilva, CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7821,16 +7822,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7841,7 +7842,7 @@
             "Nanjing City Wall, Xuanwu Lake and tiled roofs seen from Jiming Temple"
           ],
           "rawVisibleCredits": [
-            "Nanjing City Wall and Xuanwu Lake - Gary Todd, CC0 1.0."
+            "Nanjing City Wall and Xuanwu Lake - Gary Todd, CC0 1.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7867,16 +7868,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7886,7 +7887,7 @@
             "Yingxun Gate rising above the brick walls of Pingyao Ancient City"
           ],
           "rawVisibleCredits": [
-            "Yingxun Gate, Pingyao - Bairuilong, CC BY-SA 4.0."
+            "Yingxun Gate, Pingyao - Bairuilong, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7932,7 +7933,7 @@
             "Qingdao waterfront, sandy beach and red-roofed historic city seen across the bay"
           ],
           "rawVisibleCredits": [
-            "Qingdao waterfront - Vitsuha, CC BY-SA 4.0."
+            "Qingdao waterfront - Vitsuha, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -7958,16 +7959,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7977,7 +7978,7 @@
             "Palm-framed beach and the South China Sea in Sanya"
           ],
           "rawVisibleCredits": [
-            "Sanya beach - Huangdan2060, CC0 1.0."
+            "Sanya beach - Huangdan2060, CC0 1.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8003,16 +8004,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8023,7 +8024,7 @@
             "Shenzhen Civic Center and Futian skyline seen from a green hillside"
           ],
           "rawVisibleCredits": [
-            "Shenzhen skyline from Futian - Huangdan2060, CC BY 3.0."
+            "Shenzhen skyline from Futian - Huangdan2060, CC BY 3.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8049,16 +8050,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit Francesco Bandarin and the work title, link the exact source and license, indicate changes, and distribute this adaptation under the same or compatible license.",
           "editHistory": "Resized, cropped to the 3:2 display frame and converted to WebP; distributed under the same license version.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8069,7 +8070,7 @@
             "Lotus pond, rockery and traditional pavilions inside a classical Suzhou garden"
           ],
           "rawVisibleCredits": [
-            "Classical Gardens of Suzhou - Francesco Bandarin, CC BY-SA 3.0 IGO."
+            "Classical Gardens of Suzhou - Francesco Bandarin, CC BY-SA 3.0 IGO; this adaptation is shared under the same CC BY-SA 3.0 IGO license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8095,16 +8096,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8114,7 +8115,7 @@
             "Pavilions and crane statues on the Yellow Crane Tower grounds above Wuhan"
           ],
           "rawVisibleCredits": [
-            "Yellow Crane Tower grounds, Wuhan - xiquinhosilva, CC BY 2.0."
+            "Yellow Crane Tower grounds, Wuhan - xiquinhosilva, CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8140,16 +8141,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "Matched the image subject to the identically named, same-page Commons credit.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8159,7 +8160,7 @@
             "Watchtowers and battlements along Xi'an City Wall"
           ],
           "rawVisibleCredits": [
-            "Xi'an City Wall — xiquinhosilva, CC BY 2.0."
+            "Xi'an City Wall - xiquinhosilva, CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8185,16 +8186,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8204,7 +8205,7 @@
             "Id Kah Mosque and its square in Kashgar, Xinjiang"
           ],
           "rawVisibleCredits": [
-            "Id Kah Mosque, Kashgar - N509FZ, CC BY-SA 4.0."
+            "Id Kah Mosque, Kashgar - N509FZ, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8230,16 +8231,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8249,7 +8250,7 @@
             "Forested sandstone pillars receding into mist in Zhangjiajie"
           ],
           "rawVisibleCredits": [
-            "Wulingyuan sandstone pillars, Zhangjiajie - chensiyuan, CC BY-SA 4.0."
+            "Wulingyuan sandstone pillars, Zhangjiajie - chensiyuan, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8275,16 +8276,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 1,
           "routes": [
             "/china/"
@@ -8319,16 +8320,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8339,7 +8340,7 @@
             "Broken Bridge and its stone approach crossing misty West Lake"
           ],
           "rawVisibleCredits": [
-            "Broken Bridge — Suicasmo, CC0 1.0."
+            "Broken Bridge — Suicasmo, CC0 1.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8365,16 +8366,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "explicit_asset_credit_match",
           "creditMatchNote": "Matched the image alt and subject to the identically named Commons credit on both Hangzhou routes.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8385,7 +8386,7 @@
             "Stone arches of Gongchen Bridge crossing the Grand Canal in Hangzhou"
           ],
           "rawVisibleCredits": [
-            "Gongchen Bridge — Windmemories, CC BY-SA 4.0."
+            "Gongchen Bridge — Windmemories, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8401,9 +8402,9 @@
           "assetPath": "/assets/images/china-hangzhou-hefang.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hefang_Street,_Hangzhou_-_9.jpg",
-          "sourceTitle": "Hefang Street, Hangzhou",
+          "sourceTitle": "Hefang Street",
           "sourcePhotoDate": null,
-          "creditLabel": "Hefang Street, Hangzhou",
+          "creditLabel": "Hefang Street",
           "creator": "Jason M. C., Han",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
@@ -8411,27 +8412,27 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
             "/china/hangzhou/hefang-southern-song/"
           ],
           "altTexts": [
-            "Historic storefronts and pedestrians along Hefang Street in Hangzhou",
+            "Pedestrians pass storefronts and small landscape displays on Hefang Street in Hangzhou",
             "Traditional shopfronts and pedestrians along Hefang Street in Hangzhou"
           ],
           "rawVisibleCredits": [
-            "Hefang Street, Hangzhou — Jason M. C., Han, CC BY-SA 4.0."
+            "Hefang Street — Jason M. C., Han, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8447,7 +8448,7 @@
           "assetPath": "/assets/images/china-hangzhou-leifeng.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg",
-          "sourceTitle": "Leifeng Pagoda",
+          "sourceTitle": "File:Hangzhou Leifeng Pagoda 20161006.jpg",
           "sourcePhotoDate": null,
           "creditLabel": "Leifeng Pagoda",
           "creator": "Tyg728",
@@ -8457,16 +8458,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized and converted to WebP; responsive display may crop the frame; the adaptation is shared under the same CC BY-SA 4.0 license.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "CN15 pixel review confirmed that this local file shows the close view of Leifeng Pagoda and trees, distinct from the West Lake panorama. The exact Commons credit identifies Tyg728 and CC BY-SA 4.0.",
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8477,7 +8478,7 @@
             "Leifeng Pagoda standing above wooded hills on the south shore of West Lake"
           ],
           "rawVisibleCredits": [
-            "Leifeng Pagoda — Tyg728, CC BY-SA 4.0."
+            "Leifeng Pagoda — Tyg728, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8503,16 +8504,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8523,7 +8524,7 @@
             "Curved modern galleries of Liangzhu Museum near Hangzhou"
           ],
           "rawVisibleCredits": [
-            "Liangzhu Museum — Zhangzhugang, CC BY-SA 4.0."
+            "Liangzhu Museum — Zhangzhugang, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8549,16 +8550,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8569,7 +8570,7 @@
             "Lingyin Temple hall framed by tall trees and incense smoke"
           ],
           "rawVisibleCredits": [
-            "Lingyin Temple — Tyg728, CC BY-SA 4.0."
+            "Lingyin Temple — Tyg728, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8595,16 +8596,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8615,7 +8616,7 @@
             "Rows of green tea bushes following the slopes of Longjing village"
           ],
           "rawVisibleCredits": [
-            "Longjing tea village — Niklas Dougherty, CC BY-SA 4.0."
+            "Longjing tea village — Niklas Dougherty, CC BY-SA 4.0; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8641,16 +8642,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "resized, display-cropped and converted to WebP.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -8661,7 +8662,8 @@
             "West Lake, wooded hills and the Hangzhou skyline beneath a clear sky"
           ],
           "rawVisibleCredits": [
-            "West Lake and Leifeng Pagoda, Hangzhou - Haluk Comertel, CC BY 3.0."
+            "West Lake and Leifeng Pagoda, Hangzhou — Haluk Comertel, CC BY 3.0; resized, display-cropped and converted to WebP.",
+            "West Lake and Leifeng Pagoda, Hangzhou - Haluk Comertel, CC BY 3.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8687,16 +8689,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Image resized and converted to WebP; responsive display may crop the frame.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/hangzhou/",
@@ -8707,7 +8709,7 @@
             "Shaded water channel beneath dense trees in Xixi National Wetland Park, Hangzhou"
           ],
           "rawVisibleCredits": [
-            "Xixi National Wetland Park — shankar s., CC BY 2.0."
+            "Xixi National Wetland Park — shankar s., CC BY 2.0. Image resized and converted to WebP; responsive display may crop the frame."
           ]
         }
       ]
@@ -8769,9 +8771,9 @@
           "assetPath": "/assets/images/china-shanghai-huangpu-panorama.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg",
-          "sourceTitle": "Pudong waterfront skyline",
+          "sourceTitle": "Pudong skyline across the Huangpu River at night",
           "sourcePhotoDate": null,
-          "creditLabel": "Pudong waterfront skyline",
+          "creditLabel": "Pudong skyline across the Huangpu River at night",
           "creator": "Ermell",
           "license": "CC0 1.0",
           "rightsStatus": null,
@@ -8779,16 +8781,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "resized, display-cropped and converted to WebP.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 3,
           "routes": [
             "/china/",
@@ -8799,7 +8801,7 @@
             "Illuminated Pudong skyline seen across the Huangpu River at night"
           ],
           "rawVisibleCredits": [
-            "Pudong waterfront skyline - Ermell, CC0 1.0; resized and converted to WebP, display crop."
+            "Pudong skyline across the Huangpu River at night - Ermell, CC0 1.0; resized, display-cropped and converted to WebP."
           ]
         }
       ]
@@ -8871,16 +8873,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "resized and converted to WebP, display crop.",
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -11057,7 +11059,7 @@
             "/france/lyon-rhone/vieux-lyon-fourviere/"
           ],
           "altTexts": [
-            "Vineyards and stone villages in the Beaujolais countryside"
+            "Vineyards and the village of Juliénas among the Beaujolais hills"
           ],
           "rawVisibleCredits": [
             "Juliénas.jpg — Sunappu-shashin, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -11104,7 +11106,7 @@
             "/france/lyon-rhone/vieux-lyon-fourviere/"
           ],
           "altTexts": [
-            "Lyon city streets between Presqu’île and Croix-Rousse hill"
+            "A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees"
           ],
           "rawVisibleCredits": [
             "Lyon croix rousse 01.jpg — Olivier Aumage, CC BY-SA 2.0 fr. Resized, display-cropped and converted to WebP; no other material edits."
@@ -11152,7 +11154,7 @@
             "/france/lyon-rhone/vieux-lyon-fourviere/"
           ],
           "altTexts": [
-            "Fourvière hill and Vieux Lyon above the Saône"
+            "The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky"
           ],
           "rawVisibleCredits": [
             "Basilique de Fourvière from Saone (Lyon).jpg — MickaëlG, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."

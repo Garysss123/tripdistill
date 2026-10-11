@@ -119,7 +119,7 @@ try {
   assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 583, 'nine Andaman, three Ayutthaya, three Cornwall and four China CN12 source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 539, 'nine Andaman, three Ayutthaya, three Cornwall, four China CN12 and additional China CN15 source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -202,6 +202,47 @@ try {
       assert.ok(record.editHistory.includes(`shared under ${image.license}`), 'share-alike adaptations must keep the exact license version');
     }
   }
+  const chinaCn15Routes = new Set(['/china/', '/china/beijing/', '/china/hangzhou/', '/china/beijing/summer-palace/']);
+  const chinaCn15PhotoRecords = photoRecords.filter((record) => record.routes?.some((route) => chinaCn15Routes.has(route)) && !record.assetPath.includes('lhasa') && !record.assetPath.includes('potala'));
+  assert.equal(chinaCn15PhotoRecords.length, 47, 'the four CN15 routes use 47 distinct reviewed local image assets, excluding the Lhasa image assigned to parallel work');
+  for (const record of chinaCn15PhotoRecords) {
+    assert.ok(!record.assetPath.includes('lhasa') && !record.assetPath.includes('potala'), 'the parallel Lhasa/Potala image must remain outside this review');
+    assert.equal(record.verificationStatus, 'source_page_checked', `${record.assetPath} must have an exact source-page check`);
+    assert.equal(record.verificationDate, '2026-10-11', `${record.assetPath} source page must carry the CN15 check date`);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11', `${record.assetPath} local pixels must be individually reviewed`);
+    assert.ok(/WebP pixels were inspected/i.test(record.verificationDetail), `${record.assetPath} must record a pixel-to-source comparison`);
+    assert.ok(/does not independently establish|not independent|not an independent/i.test(record.verificationDetail), `${record.assetPath} must not imply global rights clearance`);
+    assert.ok(record.sourceUrl?.startsWith('https://commons.wikimedia.org/wiki/File:'), `${record.assetPath} must identify its exact Commons file page`);
+    assert.ok(record.creator && record.license && record.licenseUrl, `${record.assetPath} must retain its author and exact linked license`);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(record.creator) && credit.includes(record.license)), `${record.assetPath} must match its visible creator and license credit`);
+    assert.ok(record.editHistory.includes('WebP'), `${record.assetPath} must disclose the local WebP adaptation`);
+    if (record.license.startsWith('CC BY-SA ')) {
+      for (const credit of record.rawVisibleCredits.filter((item) => /shared under the same/i.test(item))) {
+        assert.ok(credit.includes(record.license), `${record.assetPath} must keep any visible share-alike statement on the exact source license version`);
+      }
+    }
+  }
+  for (const assetPath of ['/assets/images/china-destination-hangzhou.webp', '/assets/images/china-hangzhou-west-lake.webp']) {
+    const record = chinaCn15PhotoRecords.find((item) => item.assetPath === assetPath);
+    assert.ok(record, `CN15 West Lake source review must include ${assetPath}`);
+    assert.equal(record.sourceUrl, 'https://commons.wikimedia.org/wiki/File:West_lake_and_Leifeng_pagoda_-Hangzhou-China_-_panoramio.jpg');
+    assert.equal(record.creator, 'Haluk Comertel');
+    assert.equal(record.license, 'CC BY 3.0');
+  }
+  const hangzhouLeifeng = chinaCn15PhotoRecords.find((record) => record.assetPath === '/assets/images/china-hangzhou-leifeng.webp');
+  assert.ok(hangzhouLeifeng, 'CN15 review must distinguish the close Leifeng Pagoda image from the West Lake panorama');
+  assert.equal(hangzhouLeifeng.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg');
+  assert.equal(hangzhouLeifeng.sourceTitle, 'File:Hangzhou Leifeng Pagoda 20161006.jpg');
+  assert.equal(hangzhouLeifeng.creator, 'Tyg728');
+  assert.equal(hangzhouLeifeng.license, 'CC BY-SA 4.0');
+  assert.equal(hangzhouLeifeng.verificationStatus, 'source_page_checked');
+  assert.equal(hangzhouLeifeng.visualReviewStatus, 'visually_reviewed_2026-10-11');
+  const shanghaiPudong = chinaCn15PhotoRecords.find((record) => record.assetPath === '/assets/images/china-shanghai-huangpu-panorama.webp');
+  assert.ok(shanghaiPudong, 'CN15 Shanghai skyline review must retain the country-hub panorama');
+  assert.equal(shanghaiPudong.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg');
+  assert.equal(shanghaiPudong.creator, 'Ermell');
+  assert.equal(shanghaiPudong.license, 'CC0 1.0');
+  assert.ok(!shanghaiPudong.rawVisibleCredits.some((credit) => credit.includes('King of Hearts')));
   const wadjemupDiagram = photoRecords.find((item) => item.assetPath === wadjemupDiagramAssetPath);
   assert.ok(wadjemupDiagram, 'inventory must retain the original Wadjemup planning diagram');
   assert.equal(wadjemupDiagram.assetType, 'original-planning-diagram');
@@ -213,7 +254,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 3, 'inventory must count explicitly recorded project-original artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 582, 'integrated CN12 + Lake inventory excludes project-original diagrams from unverified photo-license claims');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 538, 'integrated CN12, CN15 and Lake inventory excludes project-original diagrams from unverified photo-license claims');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));

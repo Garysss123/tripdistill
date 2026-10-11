@@ -1,0 +1,16 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/china/",
+    "/china/beijing/",
+    "/china/hangzhou/",
+    "/china/beijing/summer-palace/"
+  ],
+  "translations": {
+    "; this adaptation is shared under the same CC BY-SA 4.0 license. Image resized and converted to WebP; responsive display may crop the frame.": "; ภาพดัดแปลงนี้เผยแพร่ภายใต้สัญญาอนุญาต CC BY-SA 4.0 ฉบับเดียวกัน ภาพถูกปรับขนาดและแปลงเป็น WebP; การแสดงผลแบบปรับตามหน้าจออาจครอบกรอบภาพ",
+    ". Image resized and converted to WebP; responsive display may crop the frame.": ". ภาพถูกปรับขนาดและแปลงเป็น WebP; การแสดงผลแบบปรับตามหน้าจออาจครอบกรอบภาพ",
+    "; this adaptation is shared under the same CC BY-SA 3.0 IGO license. Image resized and converted to WebP; responsive display may crop the frame.": "; ภาพดัดแปลงนี้เผยแพร่ภายใต้สัญญาอนุญาต CC BY-SA 3.0 IGO ฉบับเดียวกัน ภาพถูกปรับขนาดและแปลงเป็น WebP; การแสดงผลแบบปรับตามหน้าจออาจครอบกรอบภาพ",
+    "; this adaptation is shared under the same CC BY-SA 3.0 license. Image resized and converted to WebP; responsive display may crop the frame.": "; ภาพดัดแปลงนี้เผยแพร่ภายใต้สัญญาอนุญาต CC BY-SA 3.0 ฉบับเดียวกัน ภาพถูกปรับขนาดและแปลงเป็น WebP; การแสดงผลแบบปรับตามหน้าจออาจครอบกรอบภาพ"
+  }
+}
