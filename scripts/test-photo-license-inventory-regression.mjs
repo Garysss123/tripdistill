@@ -123,6 +123,7 @@ try {
   assert.equal(similan.verificationStatus, 'source_page_checked');
   assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
+  assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
   assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 582, 'current photo references and original diagrams without independent source-page checks are counted separately from the retired Lhasa photo');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
