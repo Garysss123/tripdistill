@@ -30084,5 +30084,52 @@
     "nonChinaRequiredTranslationKeysCompared": 46551,
     "translationTargetDeltas": 1,
     "translationTargetDeltaDetail": "th: Hongkou & Suzhou Creek in shared sidebar; see nonChinaSharedComponentDelta"
+  },
+  "verification": {
+    "sourceConsistency": {
+      "chinaEnglishRoutes": 55,
+      "chinaSearchRecords": 63,
+      "chinaSearchAnchorRecords": 8,
+      "uniqueChinaSearchRouteRoots": 55,
+      "fiveEditionChinaSitemapUrls": 275,
+      "sourceWebPageDateMetadataCount": 55,
+      "allFiveHreflangAlternatesPresent": true,
+      "lhasaBookingPortalCaveatPresent": true,
+      "lhasaOriginalSvgReferenced": true,
+      "retiredPotalaPhotoReferenced": false
+    },
+    "candidateGates": {
+      "i18nLiteralAndLocaleScriptGuards": "passed",
+      "reviewedTargetsChecked": 208876,
+      "reviewedTargetProblems": 0,
+      "translationApproval": "blocked",
+      "missingRequiredChinaTranslationKeysPerLocale": 38,
+      "fullAudit": "blocked at translation approval before remaining audits",
+      "build": "blocked at translation approval before localization or dist generation"
+    },
+    "mainBaseline": {
+      "commit": "ddea19cb80796325ed0a76087c39ad25e17f2b07",
+      "fullAudit": "passed",
+      "build": "passed",
+      "distFiles": 5439,
+      "distHtmlFiles": 4577
+    },
+    "nonChinaRenderedOutputComparison": {
+      "method": "Rendered non-China English source pages and shared components with candidate reviewed translation batches via localizeHtml, then compared with the clean main worktree generated localized files. Filtered the candidate and main search indices to non-China records for localized search comparison.",
+      "localizedPageOutputsCompared": 3428,
+      "sharedComponentOutputsCompared": 12,
+      "localizedNonChinaSearchRecordsCompared": 3568,
+      "nonChinaPageHtmlOutputDifferences": 0,
+      "sharedComponentOutputDifferences": [
+        {
+          "locale": "th",
+          "path": "th/components/sidebar.html",
+          "key": "Hongkou & Suzhou Creek",
+          "mainTarget": "หงโข่วและคลองซูโจว",
+          "candidateTarget": "หงโข่วและแม่น้ำซูโจว"
+        }
+      ],
+      "nonChinaSearchOutputDifferences": 0
+    }
   }
 }
