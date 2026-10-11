@@ -44,6 +44,13 @@ const routes = [
     '/china/huangshan/',
     '/china/qingdao/',
   ].map((route) => ({ route, reviewDate: '2026-10-11' })),
+  ...[
+    '/china/dali/',
+    '/china/guiyang-guizhou/',
+    '/china/kunming/',
+    '/china/lijiang-shangri-la/',
+    '/china/zhangjiajie/',
+  ].map((route) => ({ route, reviewDate: '2026-10-11' })),
 ];
 const editions = [
   { locale: 'en', prefix: '' },
@@ -119,4 +126,4 @@ for (const sitemapFile of ['sitemap.xml', 'dist/sitemap.xml']) {
   }
 }
 
-console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); all ${routes.length * editions.length} reviewed sitemap entries match (65 at 2026-10-09, 75 at 2026-10-10, 40 at 2026-10-11), visible dates match, and datePublished remains absent.`);
+console.log(`China route date regression passed: ${checked} documents (${routes.length} routes × ${editions.length} editions in source and dist); all ${routes.length * editions.length} reviewed sitemap entries match, visible dates match, and datePublished remains absent.`);

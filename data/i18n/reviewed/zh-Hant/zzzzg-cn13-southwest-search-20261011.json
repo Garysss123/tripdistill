@@ -1,0 +1,24 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Allow four nights for three full Kunming days: central context, one Dianchi or West Hills route and a conditional Shilin day trip. Check the exact rail station, Shilin West last mile and confirmed return before booking.": "若抵達與離開日皆用於轉乘，建議住四晚，安排三個完整日遊覽昆明市區、滇池或西山其中一處，以及石林。預訂前確認確切鐵路車站、石林西至景區的接駁與已確認的返程。",
+    "shilin west": "石林西",
+    "kunming south": "昆明南站",
+    "Allow four nights for Dali Old Town plus three full days: Xizhou and west shore, an east-shore out-and-back, and weather-led Cangshan. Confirm each village return and the Xiaguan rail terminal.": "大理古城建議住四晚，安排抵達後三個完整日：喜洲與西岸、東岸往返，以及依天候安排的蒼山。確認各村落的返程與下關鐵路站交通。",
+    "dali station": "大理站",
+    "Allow five to seven nights, counting two transfer days: spend three Lijiang-area nights on Dayan, Shuhe and Baisha, then two or three in Shangri-La. Check both exact rail stations and transfers; keep the high-town arrival gentle.": "建議住 5–7 晚（含兩天轉乘）：麗江地區住 3 晚，走訪大研、束河和白沙，再於香格里拉住 2 或 3 晚。確認兩段鐵路的確切車站與接駁，並在抵達高海拔城鎮時放慢行程。",
+    "lijiang shangri-la train": "麗江至香格里拉火車",
+    "Allow three nights near Wulingyuan for two park days, then add a city night for Tianmen. Match the current ticket to a named gate, verify the assigned exit and return ride, and use weather to swap exposed routes.": "武陵源附近住三晚安排兩個景區日，然後另加一晚市區住宿遊天門山。依當日車票選擇具名入口，確認可用出口與返程接駁，並依天候避開暴露路線。",
+    "wujiayu east gate": "吳家峪東門",
+    "forest park south gate": "森林公園南門",
+    "zhangjiajie west station": "張家界西站",
+    "Plan five nights around one corridor: check date-specific rail to Anshun West for Huangguoshu or Libo station for Xiaoqikong, then verify each last-mile and return. Seven or more nights can fit both with regional overnights and a Guiyang reset.": "安排五晚專注一條路線：依日期查詢前往安順西（黃果樹）或荔波站（小七孔）的鐵路，再確認每段最後接駁與返程。七晚以上可安排區域住宿，經貴陽轉接兩條路線。",
+    "anshun west": "安順西",
+    "libo station": "荔波站",
+    "xiaoqikong": "小七孔"
+  }
+}

@@ -111,6 +111,15 @@ const chinaNorthernRoutes = [
   '/china/huangshan/',
   '/china/qingdao/'
 ];
+// The five southwest pages received a full route/source and image review on October 11.
+const chinaSouthwestRoutesLastmod = '2026-10-11';
+const chinaSouthwestRoutes = [
+  '/china/dali/',
+  '/china/guiyang-guizhou/',
+  '/china/kunming/',
+  '/china/lijiang-shangri-la/',
+  '/china/zhangjiajie/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -414,6 +423,11 @@ for (const route of chinaNorthernRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed northern China route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaNorthernRoutesLastmod });
+}
+for (const route of chinaSouthwestRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed southwest China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaSouthwestRoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);

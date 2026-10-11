@@ -1,0 +1,24 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Allow four nights for three full Kunming days: central context, one Dianchi or West Hills route and a conditional Shilin day trip. Check the exact rail station, Shilin West last mile and confirmed return before booking.": "หากวันมาถึงและวันออกเดินทางใช้ไปกับการต่อรถ ให้พักสี่คืนเพื่อเที่ยวเต็มวันละหนึ่งวันในตัวเมืองคุนหมิง เส้นทางเตียนฉือหรือซีซานหนึ่งแห่ง และป่าหิน ก่อนจองให้ยืนยันสถานีรถไฟ เส้นทางสุดท้ายจากสือหลินซี และขากลับที่ตรวจสอบแล้ว",
+    "shilin west": "สถานีสือหลินซี",
+    "kunming south": "สถานีคุนหมิงหนาน",
+    "Allow four nights for Dali Old Town plus three full days: Xizhou and west shore, an east-shore out-and-back, and weather-led Cangshan. Confirm each village return and the Xiaguan rail terminal.": "พักสี่คืนที่เมืองเก่าต้าหลี่เพื่อมีวันเที่ยวเต็มสามวันหลังมาถึง ได้แก่ ซีโจวกับชายฝั่งตะวันตก การเดินทางไปกลับฝั่งตะวันออก และชางซานตามสภาพอากาศ ยืนยันรถกลับจากแต่ละหมู่บ้านและสถานีรถไฟเซี่ยกวน",
+    "dali station": "สถานีต้าหลี่",
+    "Allow five to seven nights, counting two transfer days: spend three Lijiang-area nights on Dayan, Shuhe and Baisha, then two or three in Shangri-La. Check both exact rail stations and transfers; keep the high-town arrival gentle.": "พักห้าถึงเจ็ดคืนโดยเผื่อวันต่อรถสองวัน พักลี่เจียงสามคืนเพื่อเที่ยวต้าหยาน ซู่เหอ และไป๋ซา แล้วพักแชงกรีลาอีกสองหรือสามคืน ยืนยันสถานีรถไฟทั้งสองแห่งกับการต่อรถ และจัดวันแรกในเมืองที่สูงให้สบาย",
+    "lijiang shangri-la train": "รถไฟลี่เจียง–แชงกรีลา",
+    "Allow three nights near Wulingyuan for two park days, then add a city night for Tianmen. Match the current ticket to a named gate, verify the assigned exit and return ride, and use weather to swap exposed routes.": "พักใกล้อู่หลิงหยวนสามคืนเพื่อเที่ยวอุทยานสองวัน แล้วเพิ่มที่พักในเมืองอีกหนึ่งคืนสำหรับภูเขาเทียนเหมิน เลือกประตูตามตั๋วปัจจุบัน ยืนยันทางออกและรถกลับ และสลับเส้นทางที่โล่งตามสภาพอากาศ",
+    "wujiayu east gate": "ประตูตะวันออกอู่เจียอวี่",
+    "forest park south gate": "ประตูใต้ป่าชาติสวน",
+    "zhangjiajie west station": "สถานีจางเจียเจี้ยซี",
+    "Plan five nights around one corridor: check date-specific rail to Anshun West for Huangguoshu or Libo station for Xiaoqikong, then verify each last-mile and return. Seven or more nights can fit both with regional overnights and a Guiyang reset.": "วางแผนห้าคืนโดยเลือกเส้นทางเดียว ตรวจรถไฟตามวันไปอันซุ่นซีสำหรับหวงกั่วซู่หรือสถานีลี่โปสำหรับเสี่ยวชีโข่ว จากนั้นยืนยันรถช่วงสุดท้ายและขากลับ เจ็ดคืนขึ้นไปจึงรวมสองพื้นที่โดยพักค้างคืนและกลับมาต่อรถที่กุ้ยหยาง",
+    "anshun west": "สถานีอันซุ่นซี",
+    "libo station": "สถานีลี่โป",
+    "xiaoqikong": "เสี่ยวชีโข่ว"
+  }
+}

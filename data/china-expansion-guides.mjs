@@ -565,6 +565,7 @@ export const guides = [
   },
   {
     slug: 'kunming',
+    dateModified: '2026-10-11',
     name: 'Kunming',
     title: 'Kunming Travel Guide (2026): Plateau City, Stone Forest and Yunnan Routes',
     metaDescription: 'Plan Kunming as a plateau arrival city with museums, Dianchi wetlands and Stone Forest geology, then use it as a deliberate transport hinge for wider Yunnan.',
@@ -586,45 +587,48 @@ export const guides = [
       { label: 'GREEN LAKE', title: 'Cuihu as a civic weather station', text: 'Green Lake works as a morning park and seasonal observation point. Migratory birds, crowds and local activity change across the year; watch without feeding wildlife and ask before photographing people practicing or socializing.' },
       { label: 'DIANCHI EDGE', title: 'Choose one wetland or ridge perspective', text: 'Dianchi is too large for a casual loop. Pick a managed wetland, public lakeside section or West Hills view, confirm transport and protect habitat by staying on designated paths.' },
       { label: 'FLOWER CLOCK', title: 'Seasonal color without a greenhouse marathon', text: 'Markets and botanical collections can reveal Yunnan’s plant economy and biodiversity, but blooming schedules and event crowds vary. Choose one institution and keep plant purchases within customs and biosecurity rules for the onward journey.' },
-      { label: 'KARST DAY', title: 'Stone Forest as geology, not a maze selfie', text: 'The UNESCO component records pinnacle karst shaped over deep time. Use official interpretation, stay on managed routes and allow the road, entrance and walking terrain most of a day rather than attaching the site to an evening flight.' },
-      { label: 'PLATEAU BODY', title: 'Moderate elevation still changes effort', text: 'Kunming is lower than Lijiang or Lhasa but can feel different after sea-level arrival. Hydrate, use sun protection and keep the first climb conservative, especially before continuing higher into northwest Yunnan.' },
-      { label: 'YUNNAN HINGE', title: 'Choose one next corridor', text: 'Dali, Lijiang, Xishuangbanna and eastern Yunnan point in different directions. Reserve the exact station or airport, keep transfer buffers and do not call a province-wide sequence a series of easy day trips.' }
+      { label: 'KARST DAY', title: 'Stone Forest is a separate rail-and-road day', text: 'Shilin is not a short city add-on. Search the date-specific 12306 options to Shilin West, then confirm the last road leg to the current official park entrance and the return to the same station. The official pages available for this review did not verify a current shuttle headway or fare, so do not plan around an old timetable or a tight evening train.' },
+      { label: 'PLATEAU BODY', title: 'Keep the first exposed day modest', text: 'Kunming sits at elevation, and the Stone Forest, lake edge and ridge involve different amounts of sun, walking and climb. Use general high-elevation travel guidance, pace the first outdoor day and keep a lower-effort city option; a Kunming stop is not a guarantee for a later ascent.' },
+      { label: 'YUNNAN HINGE', title: 'Match the departure station to the next corridor', text: 'Dali, Lijiang, Xishuangbanna and eastern Yunnan branch in different directions. Search the actual destination and date on 12306, then arrange the hotel-to-station return for the station printed on that ticket. Kunming and Kunming South are distinct transfer points, not interchangeable labels.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'Kunming South is far from much of the old core', text: 'Many high-speed services use Kunming South, while the main station and airport create different transfers. Match the hotel and onward corridor, and allow enough time to navigate a large station with identity checks.' },
-      { label: 'BASE', title: 'Central city or south-station connection', text: 'A central base supports museums, parks and food; a southern base can make an early train easier but weakens the city experience. Split only when a very early departure justifies moving.' },
-      { label: 'ALTITUDE', title: 'Use Kunming as a staging point, not a guarantee', text: 'Time at Kunming’s elevation may help travelers notice their response before higher routes, but it does not eliminate altitude risk. Increase sleeping elevation gradually and seek medical advice for relevant conditions.' }
+      { label: 'ARRIVAL', title: 'Read the station name on the ticket', text: 'Kunming Station and Kunming South are separate rail terminals on different sides of the city; Kunming Changshui Airport is a third arrival point. Use the exact printed station in your hotel and transfer plan. For a Shilin West train, confirm how you will reach the actual departure station before buying a same-day airport connection.' },
+      { label: 'BASE', title: 'Sleep centrally for the city days', text: 'A Wuhua or Green Lake-side base makes the central park, food and lane day easier. Stay near Kunming South only when a confirmed early departure or arrival makes that trade-off useful. With three nights, keep one hotel; a second base spends time on luggage and cross-city transfers.' },
+      { label: 'ALTITUDE', title: 'Treat elevation as general travel-safety context', text: 'Kunming is already at elevation, and routes farther west can climb higher. A stop here does not promise acclimatization or remove risk. Keep the first outdoor day unhurried and use the linked official health guidance for general information; personal medical questions belong with a qualified clinician.' }
     ],
     itineraryKicker: 'FOUR SEASONS / FOUR FUNCTIONS',
     itineraryTitle: 'Give the gateway a real city day',
-    itineraryIntro: 'One museum day, one lake or ridge day and one geology day create a useful Kunming stay. The fourth function is preparation for the next Yunnan corridor.',
+    itineraryIntro: 'Allow four nights when arrival and departure each use a transfer day; that leaves three full days for the city, one Dianchi/West Hills route and Shilin. Add a fifth night for a separate weather or onward-transfer buffer. Keep these as distinct map blocks.',
     itinerary: [
-      { label: 'DAY 1 / CONTEXT', title: 'Museum and central streets', text: 'Start with the provincial collection, then use one central lane or market to connect objects with contemporary city life without turning the afternoon into shopping.' },
-      { label: 'DAY 2 / WATER', title: 'Green Lake to one Dianchi edge', text: 'Use the cooler morning for civic park life, then travel to one managed lake or wetland perspective with a clear return before dark.' },
-      { label: 'DAY 3 / STONE', title: 'Stone Forest in one geological day', text: 'Depart with official entry and transport known, read the landforms through interpretation and avoid a tight evening connection after the outer trip.' },
-      { label: 'DAY 4 / HINGE', title: 'Botanical detail or onward rail', text: 'Choose one seasonal collection, food chapter or slow morning, then move to Dali or another corridor from the exact station with documents ready.' }
+      { label: 'DAY 1 / CENTRAL', title: 'Cuihu, one museum and a quiet first evening', text: 'Use Green Lake (Cuihu) and one central collection or documented lane as the city orientation. If you arrive at Kunming South or the airport, settle first; do not add a cross-city landmark list to the transfer day.' },
+      { label: 'DAY 2 / DIANCHI', title: 'Choose one managed shore or West Hills approach', text: 'Pick one public lakeside or wetland route, or a single West Hills approach, after checking the current gate and road connection. Do not promise a full Dianchi circuit. Move the outdoor block to the clearer forecast day and keep the return to your base explicit.' },
+      { label: 'DAY 3 / SHILIN', title: 'Book the outbound and return as one conditional chain', text: 'Check whether 12306 offers a suitable Kunming South–Shilin West train on your actual date; the station-to-park transfer is a separate leg. Confirm the park entrance, last-mile vehicle and return to Shilin West with the current official operator or terminal before departure. If no verified return fits, arrange a confirmed driver or add a local night rather than improvising after dark.' },
+      { label: 'DAY 4 / BUFFER', title: 'Use a spare day or leave from the named terminal', text: 'Keep a fourth day for a museum, a weather swap or a calm transfer. Before leaving, match your airport or rail booking to the exact Kunming station on the ticket and arrange the hotel-to-terminal route; do not assume Kunming Station and Kunming South share one city-center approach.' }
     ],
     practicalTitle: 'Plateau sun and long transfers hide behind mild temperatures',
     practical: [
-      { label: 'SUN', title: 'Cloud does not remove ultraviolet exposure', text: 'Carry sun protection and water, pace ridges and exposed karst, and adjust activity if altitude, heat or headache changes how the day feels.' },
+      { label: 'WEATHER', title: 'Check the destination forecast, not only downtown', text: 'Kunming city, the lakeshore, West Hills and Shilin can have different conditions. Check the China Meteorological Administration forecast and current park notices on the day. Swap an exposed walk for a museum or central route during poor visibility, heavy rain or unsafe trail conditions.' },
       { label: 'WETLAND', title: 'Wildlife is not a feeding attraction', text: 'Observe birds from designated areas, keep food and drones away and follow seasonal closures. A crowded migration period requires more distance, not a closer photograph.' },
-      { label: 'TRANSFER', title: 'Write the full station into the itinerary', text: 'Kunming and Kunming South are different operational choices. Confirm the Chinese name, entrance and departure buffer before linking a Stone Forest day to an onward train.' }
+      { label: 'RETURN', title: 'Name every rail terminal and park handoff', text: 'The Kunming-to-Shilin West rail leg does not itself reach the scenic entrance. Confirm the current last mile and return endpoint with the park or terminal; this guide does not assert a bus number, fare or last departure that could not be verified. Save the Chinese station and hotel address offline.' }
     ],
     faqs: [
       { question: 'Is Kunming worth staying in?', answer: 'Yes. Two or three city days add Yunnan context, Dianchi ecology and Stone Forest geology. Treating Kunming only as an airport can make the rest of the province feel like disconnected scenery.' },
-      { question: 'Can Stone Forest be a half-day trip?', answer: 'The road, entrance and substantial walking make a full day more realistic for careful interpretation. A fast half-day may work with private transport, but it leaves little margin for weather or crowds.' },
-      { question: 'Does Kunming help with altitude acclimatization?', answer: 'Time at moderate elevation can help travelers observe their response before going higher, but it is not a medical guarantee. Increase sleeping altitude gradually and consult a qualified clinician when health risks apply.' },
+      { question: 'How do I reach Stone Forest and return?', answer: 'Check whether 12306 offers a suitable Kunming South–Shilin West train on your date, then confirm the separate transfer from Shilin West to the official entrance and back. No current bus headway or fare is promised here; if the official return chain is unclear, use a confirmed driver or stay locally.' },
+      { question: 'Does a Kunming stop remove high-elevation travel risk?', answer: 'No. This is general travel-safety information: a stop in Kunming is not a medical guarantee for a later, higher overnight. Keep the first outdoor day unhurried and use the linked official guidance; seek a qualified clinician for personal medical questions.' },
       { question: 'How many days should I allow in Kunming?', answer: 'Three full days cover city context, one lake or ridge chapter and Stone Forest. Add a fourth for a slower seasonal visit or a calm onward transfer.' }
     ],
     sources: [
       { url: 'https://lcj.yn.gov.cn/special/2025/0512/6616.html', label: 'Yunnan Forestry and Grassland Administration — Stone Forest World Heritage context' },
-      { url: 'https://whc.unesco.org/en/list/1248', label: 'UNESCO World Heritage Centre — South China Karst, including Shilin' }
+      { url: 'https://whc.unesco.org/en/list/1248', label: 'UNESCO World Heritage Centre — South China Karst, including Shilin' },
+      { url: 'https://www.km.gov.cn/', label: 'Kunming Municipal Government — current city notices and visitor-service lookup' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current local forecast lookup' }
     ],
-    image: { path: '/assets/images/china-destination-kunming.webp', alt: 'Kunming city center and canal stretching toward mountain ridges', caption: 'Kunming / plateau light, provincial context and one outer geology day', source: 'https://commons.wikimedia.org/wiki/File:五华区与盘龙区天际线_-_航拍_-_2025-05-16_03.jpg', creditTitle: 'Kunming skyline', creator: '瑞丽江的河水', license: 'CC BY-SA 4.0' },
-    search: { type: 'Plateau gateway guide', summary: 'Use Kunming for Yunnan context, Dianchi ecology and Stone Forest geology before choosing one onward provincial corridor.', keywords: ['kunming', 'stone forest', 'dianchi', 'yunnan museum', 'kunming itinerary', 'yunnan travel'] }
+    image: { path: '/assets/images/china-destination-kunming.webp', alt: 'Kunming city center and canal stretching toward mountain ridges', caption: 'Kunming / plateau light, provincial context and one outer geology day', source: 'https://commons.wikimedia.org/wiki/File:五华区与盘龙区天际线_-_航拍_-_2025-05-16_03.jpg', creditTitle: 'Kunming skyline', creator: '瑞丽江的河水', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Plateau gateway guide', summary: 'Allow four nights for three full Kunming days: central context, one Dianchi or West Hills route and a conditional Shilin day trip. Check the exact rail station, Shilin West last mile and confirmed return before booking.', keywords: ['kunming', 'stone forest', 'shilin west', 'dianchi', 'kunming south', 'kunming itinerary'] }
   },
   {
     slug: 'dali',
+    dateModified: '2026-10-11',
     name: 'Dali',
     title: 'Dali Travel Guide (2026): Erhai, Cangshan and Bai Town Routes',
     metaDescription: 'Plan Dali by base and shoreline, separating old-town crowds, Erhai distance, Cangshan weather and Bai community visits into a low-impact multi-day route.',
@@ -651,40 +655,42 @@ export const guides = [
       { label: 'VILLAGE CONSENT', title: 'Culture is not an open studio', text: 'Markets, craft workshops and homes involve people, livelihoods and selective access. Choose community-led interpretation where possible, ask before photography and avoid buying wildlife, antique or culturally sensitive material with unclear provenance.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'Dali station is in Xiaguan', text: 'High-speed rail arrives south of Dali Old Town, and airport transfers create another route. Save the full accommodation address and do not accept “old town pickup” without a named gate or meeting point.' },
-      { label: 'BASE', title: 'Old Town, Xizhou and east shore solve different stays', text: 'Old Town maximizes food and transport options; Xizhou offers quieter northern access; Shuanglang favors east-shore views with more road dependence. Pick one primary base and split only on a longer trip.' },
+      { label: 'ARRIVAL', title: 'Arrive at Dali station in Xiaguan, then name the last mile', text: 'The rail terminal is in Xiaguan, south of Dali Old Town; it is not a walk-in old-town station. Compare the current station-to-hotel route, save the full Chinese accommodation address and confirm the exact old-town gate or pickup point. For departure, plan hotel → named terminal and verify that the train leaves from Dali rather than another city station.' },
+      { label: 'BASE', title: 'Keep one base for four nights; split only to change the first morning', text: 'Dali Old Town is the practical first base for food and transport; Xizhou moves you north for village mornings, while Shuanglang is an east-shore stay with greater road dependence. Four nights work from one base; on five or more, change base only if it removes a real early transfer, and keep luggage days light.' },
       { label: 'LOOP', title: 'Do not promise the entire Erhai ring in one day', text: 'A full loop turns villages, wetlands and shore into drive-by scenery. Choose west or east, one cultural anchor and one waterside segment, then return without racing sunset traffic.' }
     ],
     itineraryKicker: 'FOUR HORIZONS / NO CHECKLIST LOOP',
     itineraryTitle: 'Alternate settlement, water and height',
     itineraryIntro: 'Begin with old-town context, give one side of Erhai a full day, move north for Bai heritage and keep Cangshan weather-flexible.',
     itinerary: [
-      { label: 'DAY 1 / TOWN', title: 'Old Town and Three Pagodas axis', text: 'Walk the quieter town fabric early, use one institution for context and visit the temple complex with enough time to read the mountain alignment.' },
-      { label: 'DAY 2 / WEST', title: 'Xizhou and one shore section', text: 'Travel north for a respectful architecture and food chapter, then use a designated Erhai path without extending into an improvised lake circuit.' },
-      { label: 'DAY 3 / EAST', title: 'One east-shore village', text: 'Choose Shuanglang or another researched base, accept the road time and focus on one lived place and shoreline rather than collecting photo platforms.' },
-      { label: 'DAY 4 / MOUNTAIN', title: 'Cangshan if conditions allow', text: 'Use the managed cableway or trail suited to weather and mobility. Swap in Xiaguan, museum or slow town time if wind, rain or visibility closes the mountain plan.' }
+      { label: 'DAY 1 / OLD TOWN', title: 'Old Town lanes and Three Pagodas, without a station-day sprint', text: 'After arrival and check-in, walk one compact old-town area. On a full day, add the Three Pagodas complex as a separate west-side visit; confirm the current entrance and road return before setting the order.' },
+      { label: 'DAY 2 / NORTH SHORE', title: 'Xizhou and one western lakeshore segment', text: 'Use a northbound road transfer to Xizhou, allow time for local streets and food, then choose one open Erhai path on the west side. Return to the same base by a confirmed pickup or current public transport; do not assume a lake loop.' },
+      { label: 'DAY 3 / EAST SHORE', title: 'Shuanglang as its own out-and-back day', text: 'Choose the east shore only if its road time suits the day. Confirm drop-off, waiting or return pickup before leaving, and visit one settlement and one permitted shoreline section rather than stacking several villages.' },
+      { label: 'DAY 4 / CANGSHAN', title: 'Use the managed mountain route only in safe conditions', text: 'Check the current cableway or trail notice and weather before departing. Keep a lower-effort Xiaguan museum or old-town option for wind, rain or closure, then preserve a separate transfer buffer for the final rail or airport departure.' }
     ],
     practicalTitle: 'The lake road is not the lake experience',
     practical: [
       { label: 'ECOLOGY', title: 'Observe Erhai protection rules', text: 'Wetland, shoreline and water-quality measures can change access. Stay on open paths, use regulated boats or bicycles and never bypass barriers for a private-water photo.' },
-      { label: 'ALTITUDE', title: 'Pace the first mountain day', text: 'Dali sits at elevation and Cangshan climbs far higher. Hydrate, use sun protection and avoid rapid exertion on arrival; seek professional medical advice when personal conditions raise concern.' },
-      { label: 'DRIVERS', title: 'Name every village and the return', text: 'A generic “Erhai tour” can hide shopping stops or a rushed ring road. Agree on the exact side, stops, waiting time and final drop-off before departure.' }
+      { label: 'ALTITUDE', title: 'Treat elevation as general safety context', text: 'Dali is elevated and Cangshan rises higher. Keep the first outdoor day unhurried, use general official high-elevation travel guidance and select a lower-effort alternative. This guide does not offer personal medical advice.' },
+      { label: 'RETURN', title: 'Confirm the village-to-base chain both ways', text: 'A lake-side drop-off is not a return plan. Before setting out, confirm the named village, pickup point, return mode and latest feasible departure with the current transport operator or accommodation; this guide does not promise a bus frequency or last service.' }
     ],
     faqs: [
       { question: 'Should I stay in Dali Old Town or by Erhai?', answer: 'Old Town is easiest for first-time food and transport; Xizhou or the east shore can suit quieter, place-specific stays. Choose by the first two mornings, not by a lake-view label alone.' },
-      { question: 'Can I cycle all around Erhai in one day?', answer: 'The full distance, road conditions and protected sections make a one-day circuit unsuitable for many visitors. Select an open, managed segment and verify current bicycle access.' },
-      { question: 'How many days does Dali need?', answer: 'Four full days cover old-town context, one west-shore day, one east-shore or village day and Cangshan. Add nights for weather flexibility and a slower base change.' },
+      { question: 'How should I plan a return from Xizhou or Shuanglang?', answer: 'Choose one shore per day and confirm a current return ride or pickup from the exact village before leaving. Public services, road access and operating hours can change, so do not rely on an old frequency or a same-day connection that you have not checked.' },
+      { question: 'How many nights does Dali need?', answer: 'Four nights generally allow three full visitor days after arrival: Old Town, one west-shore/Xizhou day and one east-shore or Cangshan day. Add nights for a fourth full outing or weather flexibility.' },
       { question: 'Is Cangshan always open?', answer: 'No. Wind, rain, fire risk, maintenance and other conditions can affect cableways and trails. Use official notices and keep a lower-elevation alternative ready.' }
     ],
     sources: [
       { url: 'https://www.yn.gov.cn/ztgg/jdbytjwhjc/cyh/zczd/202205/t20220527_242589.html', label: 'Yunnan Provincial Government — Dali, Cangshan and Erhai tourism and conservation planning context' },
-      { url: 'https://www.dali.gov.cn/', label: 'Dali Prefecture Government — official local notices and access information' }
+      { url: 'https://www.dali.gov.cn/', label: 'Dali Prefecture Government — official local notices and access information' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current local forecast lookup' },
     ],
-    image: { path: '/assets/images/china-destination-dali.webp', alt: 'Erhai Lake reflecting the snow-dusted Cangshan mountains near Dali', caption: 'Dali / mountain-lake horizon, separate shore days and living Bai settlements', source: 'https://commons.wikimedia.org/wiki/File:大理洱海及苍山_01.jpg', creditTitle: 'Erhai Lake and Cangshan, Dali', creator: 'Kcx36', license: 'CC BY-SA 4.0' },
-    search: { type: 'Lake and mountain guide', summary: 'Choose a Dali base, protect Erhai ecology and separate Cangshan, Xizhou and east-shore days instead of racing the ring road.', keywords: ['dali', 'erhai lake', 'cangshan', 'xizhou', 'shuanglang', 'dali itinerary'] }
+    image: { path: '/assets/images/china-destination-dali.webp', alt: 'Erhai Lake reflecting the snow-dusted Cangshan mountains near Dali', caption: 'Dali / mountain-lake horizon, separate shore days and living Bai settlements', source: 'https://commons.wikimedia.org/wiki/File:大理洱海及苍山_01.jpg', creditTitle: 'Erhai Lake and Cangshan, Dali', creator: 'Kcx36', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Lake and mountain guide', summary: 'Allow four nights for Dali Old Town plus three full days: Xizhou and west shore, an east-shore out-and-back, and weather-led Cangshan. Confirm each village return and the Xiaguan rail terminal.', keywords: ['dali', 'erhai lake', 'cangshan', 'xizhou', 'shuanglang', 'dali station'] }
   },
   {
     slug: 'lijiang-shangri-la',
+    dateModified: '2026-10-11',
     name: 'Lijiang & Shangri-La',
     title: 'Lijiang and Shangri-La Guide (2026): Water Towns and Altitude Route',
     metaDescription: 'Plan Lijiang through its three UNESCO town components, then ascend toward Shangri-La gradually with rail, weather, cultural respect and altitude risk made explicit.',
@@ -707,13 +713,13 @@ export const guides = [
       { label: 'BLACK DRAGON', title: 'Water source and mountain frame', text: 'Black Dragon Pool helps explain how water reaches the old town and frames Yulong Snow Mountain when visibility allows. Visit for hydrology and urban relationship; never promise the mountain view or treat cloud as a failed day.' },
       { label: 'MOUNTAIN LIMIT', title: 'Yulong Snow Mountain by altitude, not bravado', text: 'Cableway products reach different areas and can close for wind or capacity. Confirm the exact ticket, increase exertion cautiously and do not use bottled oxygen as permission to ignore significant symptoms or official restrictions.' },
       { label: 'GORGE DECISION', title: 'Tiger Leaping Gorge needs trail facts', text: 'Road access, trail condition, weather and overnight choices vary. Use current local and operator information, avoid cliff routes in unsafe conditions and keep a simple viewpoint day separate from a multi-day hike in all descriptions.' },
-      { label: 'NORTHBOUND', title: 'Rail to Shangri-La changes the body clock', text: 'The railway improves access but still raises sleeping elevation. Use the first afternoon for gentle movement, hydration and orientation; avoid scheduling a strenuous monastery, hike or remote drive immediately after arrival.' },
+      { label: 'NORTHBOUND', title: 'Pair Lijiang and Shangri-La rail with separate road legs', text: 'Search the actual date and exact Lijiang–Shangri-La stations on 12306; Lijiang station is outside Dayan, and Shangri-La station still needs a road transfer to a named Dukezong-area hotel. Check the return service before choosing a short stay and do not plan a same-day arrival plus a remote excursion.' },
       { label: 'PLATEAU RESPECT', title: 'Religious and community spaces set the rules', text: 'Follow local photography and behavior guidance in monasteries and Tibetan neighborhoods, avoid intrusive portraiture and choose interpretation that recognizes living religious practice rather than presenting culture as scenery.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'Lijiang station is outside the old lanes', text: 'Rail and airport arrivals require a road transfer to a named old-town gate or other base. Wheeled luggage and vehicles do not move freely through every stone lane, so agree on the actual meeting point.' },
+      { label: 'ARRIVAL', title: 'Name both rail stations and the two hotel transfers', text: 'Lijiang station is outside the old lanes; Shangri-La station is also outside the old-town walking core. Check date-specific services and return on 12306, then confirm each station-to-hotel road leg, gate and luggage handoff. Save the Chinese hotel names offline.' },
       { label: 'BASE', title: 'Dayan, Shuhe and Baisha are not interchangeable', text: 'Dayan maximizes food and transport with the heaviest crowds; Shuhe offers a different developed settlement; Baisha is smaller and less convenient. Choose by the heritage component you want to inhabit respectfully.' },
-      { label: 'ASCENT', title: 'Add Shangri-La only with recovery time', text: 'A faster train does not change the elevation gain. Allow gentle time on arrival, keep symptoms visible and avoid a fixed remote excursion before knowing how the traveler responds.' }
+      { label: 'ASCENT', title: 'Reserve two or three Shangri-La nights', text: 'A 5–7-night trip can use three Lijiang nights plus two or three in Shangri-La, with a gentle arrival afternoon and a return-transfer buffer. Do not compress the higher overnight into a day trip or promise that time in Lijiang removes altitude risk.' }
     ],
     itineraryKicker: 'WATER FIRST / ALTITUDE SECOND',
     itineraryTitle: 'A six-day route that climbs deliberately',
@@ -722,29 +728,31 @@ export const guides = [
       { label: 'DAY 1 / DAYAN', title: 'Water lanes and one institution', text: 'Trace the canal system in quieter hours, use a museum or documented building for Naxi context and stop before night commerce replaces observation.' },
       { label: 'DAY 2 / COMPONENTS', title: 'Shuhe and Baisha without a race', text: 'Choose both only with a simple road chain and generous walking time. Give murals, courtyards and living streets more attention than shopping stops.' },
       { label: 'DAY 3 / WEATHER', title: 'Mountain, gorge or lowland alternative', text: 'Use current visibility and access to choose Yulong, a safe gorge plan or Black Dragon Pool and town depth. Do not force elevation when conditions are poor.' },
-      { label: 'DAYS 4–6 / ASCENT', title: 'Shangri-La with a quiet first day', text: 'Travel north, keep arrival gentle and visit monastery or landscape only after checking health, weather, cultural rules and the exact return route.' }
+      { label: 'DAYS 4–6 / ASCENT', title: 'Rail north, stay two or three nights, return with margin', text: 'Check the date-specific Lijiang–Shangri-La train on 12306, arrange both station-to-hotel road legs and confirm the return before choosing nights. Keep the arrival day gentle, use the next day for Dukezong and one nearby visit only if weather and conditions allow, then leave a buffer before the train. Add a third night instead of connecting from a remote stop.' }
     ],
     practicalTitle: 'Altitude and heritage both require restraint',
     practical: [
-      { label: 'HEALTH', title: 'Do not dismiss symptoms as lack of fitness', text: 'Altitude illness can affect fit travelers. Ascend gradually, keep early exertion mild and seek qualified medical help or descend when serious or worsening symptoms occur; do not self-treat from travel anecdotes.' },
+      { label: 'HEALTH', title: 'Use general high-elevation safety guidance', text: 'Sleeping elevation rises on this route. Keep the first day unhurried, know where local help is available and follow official travel-health guidance. This page is general information, not a personal medical plan; get qualified help for individual questions or serious symptoms.' },
       { label: 'STONE LANES', title: 'Old-town access is not luggage-friendly', text: 'Uneven paving, steps and vehicle restrictions complicate arrival. Confirm the closest usable gate, ask the accommodation about porter arrangements and keep valuables controlled in crowds.' },
       { label: 'PHOTOGRAPHY', title: 'Murals and worship may forbid cameras', text: 'Follow posted rules and staff instructions, ask before photographing people and never use flash, drones or hidden cameras where cultural or conservation restrictions apply.' }
     ],
     faqs: [
       { question: 'How many days do Lijiang and Shangri-La need?', answer: 'Five to seven nights allow three Lijiang-area days and a slower two- or three-night Shangri-La chapter. A shorter trip should choose one base instead of compressing altitude gain.' },
       { question: 'Are Dayan, Shuhe and Baisha all part of the UNESCO property?', answer: 'Yes. The Old Town of Lijiang World Heritage property includes Dayan, Shuhe and Baisha components, each with different form and visitor pressure.' },
-      { question: 'Does taking the train remove altitude risk?', answer: 'No. Rail changes the transport experience, not the final sleeping elevation. Keep the first high-altitude day gentle and follow evidence-based acclimatization guidance.' },
+      { question: 'How do I plan the rail return from Shangri-La?', answer: 'Check the exact date and station names on 12306, then allow separate road transfers between each station and your hotel. Confirm the return train before choosing the number of nights; a nearby outing should not end with a tight rail connection.' },
       { question: 'Can I do Tiger Leaping Gorge as a quick stop?', answer: 'A managed viewpoint and a substantial hiking route are different products. Verify road, trail, weather and mobility before describing or booking either one.' }
     ],
     sources: [
       { url: 'https://whc.unesco.org/en/list/811', label: 'UNESCO World Heritage Centre — Old Town of Lijiang' },
-      { url: 'https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html', label: 'US CDC Yellow Book — evidence-based high-altitude travel guidance' }
+      { url: 'https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html', label: 'US CDC Yellow Book — general high-altitude travel-safety information' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current local forecast lookup' }
     ],
-    image: { path: '/assets/images/china-destination-lijiang.webp', alt: 'Tiled roofs of Lijiang Old Town spreading beneath Yunnan mountains', caption: 'Northwest Yunnan / water-town heritage before a deliberate ascent', source: 'https://commons.wikimedia.org/wiki/File:1_lijiang_old_town_2012.jpg', creditTitle: 'Lijiang Old Town', creator: 'chensiyuan', license: 'CC BY-SA 4.0' },
-    search: { type: 'Heritage and altitude route', summary: 'Read Lijiang’s three UNESCO components through water and community, then ascend gradually toward Shangri-La with altitude limits explicit.', keywords: ['lijiang', 'shangri-la', 'dayan', 'shuhe', 'baisha', 'tiger leaping gorge'] }
+    image: { path: '/assets/images/china-destination-lijiang.webp', alt: 'Tiled roofs of Lijiang Old Town spreading beneath Yunnan mountains', caption: 'Northwest Yunnan / water-town heritage before a deliberate ascent', source: 'https://commons.wikimedia.org/wiki/File:1_lijiang_old_town_2012.jpg', creditTitle: 'Lijiang Old Town', creator: 'chensiyuan', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Heritage and altitude route', summary: 'Allow five to seven nights, counting two transfer days: spend three Lijiang-area nights on Dayan, Shuhe and Baisha, then two or three in Shangri-La. Check both exact rail stations and transfers; keep the high-town arrival gentle.', keywords: ['lijiang', 'shangri-la', 'dayan', 'shuhe', 'baisha', 'lijiang shangri-la train'] }
   },
   {
     slug: 'zhangjiajie',
+    dateModified: '2026-10-11',
     name: 'Zhangjiajie',
     title: 'Zhangjiajie Travel Guide (2026): Wulingyuan Gates and Weather',
     metaDescription: 'Plan Zhangjiajie through Wulingyuan gate choice, park shuttles, cableways, fog and cliff exposure, with city, park and Tianmen routes kept operationally distinct.',
@@ -761,7 +769,7 @@ export const guides = [
     orientationTitle: 'Map the park vertically before tracing it horizontally',
     orientationIntro: 'Valley walks, elevator or cableway access, upper plateaus and city-based Tianmen Mountain create separate operating systems. These chapters keep each gate, queue and descent attached to its actual day.',
     chapters: [
-      { label: 'BASE GATE', title: 'Wulingyuan or Zhangjiajie city', text: 'Wulingyuan places travelers near major park access, while the urban center suits rail, airport and Tianmen Mountain. A single hotel does not minimize both. Choose the base by two consecutive mornings and name the exact entrance in every driver request.' },
+      { label: 'BASE GATE', title: 'Choose a hotel by its gate and your first two mornings', text: 'Wulingyuan town suits repeated park days; the urban core suits Zhangjiajie West station, the airport and Tianmen Mountain. The provincial tourism map names Wujiayu (East Gate), Forest Park (South Gate), Tianzi (North Gate), Zimugang and Yangjiajie as separate entries. Use those names to orient yourself, then follow the entrance and exit allowed by the current ticket and park notice.' },
       { label: 'LOW VALLEY', title: 'Golden Whip Stream as a ground profile', text: 'The valley route offers forest and pillar scale without beginning at a high cliff edge. Check current open sections and shuttle links, avoid feeding macaques and keep food secure; a quiet lower walk can be more rewarding than rushing to every upper platform.' },
       { label: 'ELEVATOR RISE', title: 'Bailong and Yuanjiajie queue logic', text: 'The elevator creates a rapid elevation change but can concentrate demand. Verify ticket relationship, choose ascent or descent strategically and keep an alternative route when wait time would consume the planned plateau walk.' },
       { label: 'UPPER RIDGE', title: 'Yuanjiajie beyond one named pillar', text: 'Viewpoints are connected by shuttles and crowded paths rather than one empty ridge. Use official maps, accept fog and focus on landform scale; fictional movie associations should not replace geological or conservation context.' },
@@ -771,24 +779,24 @@ export const guides = [
       { label: 'CAVE OPTION', title: 'Yellow Dragon Cave as a weather alternative', text: 'A managed cave can offer geological contrast, but stairs, lighting and group flow matter. Verify current operation and use it as a deliberate chapter, not as a promise that every rainy day has a frictionless indoor replacement.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'West station, airport and park town are separate', text: 'Rail arrivals may use Zhangjiajie West, while Wulingyuan accommodation sits farther by road. Confirm the late-arrival connection and do not label a park-town hotel as “beside Zhangjiajie station.”' },
-      { label: 'BASE', title: 'Split city and Wulingyuan on longer stays', text: 'Stay in Wulingyuan for repeated park gates and in the city for Tianmen or early transport. A split stay costs packing time but can prevent two long road commutes.' },
+      { label: 'ARRIVAL', title: 'Zhangjiajie West is a road transfer from Wulingyuan', text: 'Search the exact train date on 12306 and confirm the station is Zhangjiajie West. Wulingyuan town and Tianmen Mountain’s city boarding area are separate road destinations; check the current station-to-hotel connection and a late-arrival fallback before booking. Save the hotel’s Chinese name and exact gate.' },
+      { label: 'BASE', title: 'Use three nights in Wulingyuan; add a city night for Tianmen', text: 'Three nights allow two park mornings from one Wulingyuan base. Four or five nights can add a separate Tianmen day and a city hotel night near the city boarding point or return station. Keep luggage transfer explicit; the ticketed park system does not return you to a city hotel.' },
       { label: 'HEIGHT', title: 'Choose the day by cliff comfort', text: 'Glass paths, exposed viewpoints, cableways and long stairs affect travelers differently. Build a lower-valley alternative and never pressure a companion into a height route because the ticket is prepaid.' }
     ],
     itineraryKicker: 'FOUR PROFILES / ONE GATE EACH',
     itineraryTitle: 'A park plan with a known ascent and descent',
     itineraryIntro: 'Use two Wulingyuan days, one flexible contrast and one separate Tianmen day. Fog is a condition to work with, not a cue to cross closed barriers.',
     itinerary: [
-      { label: 'DAY 1 / VALLEY', title: 'Golden Whip Stream and ground scale', text: 'Enter through the selected gate, keep the lower walk coherent and learn the shuttle system before attempting a complex upper-plateau connection.' },
-      { label: 'DAY 2 / PLATEAU', title: 'One elevator or cableway circuit', text: 'Choose Yuanjiajie or Tianzi as the main upper profile, monitor queues and return through the planned gate without improvising a late stair descent.' },
-      { label: 'DAY 3 / FLEX', title: 'Second branch or cave', text: 'Use visibility and access notices to select a quieter open branch, cave or recovery day. Preserve legs and time for the separate city mountain.' },
-      { label: 'DAY 4 / TIANMEN', title: 'Urban cableway mountain', text: 'Start from the correct city boarding point, follow the booked route and keep weather, glass-walk comfort and the final descent system aligned.' }
+      { label: 'DAY 1 / SOUTH GATE', title: 'Golden Whip Creek from the Forest Park entrance', text: 'For the lower-valley profile, confirm that the current ticket permits entry at Forest Park (South Gate), then follow staff directions for the open creek section. Plan to leave by the same gate and confirm how you return to the Wulingyuan hotel before entering; do not assume a cross-park shuttle is still running at the end of your walk.' },
+      { label: 'DAY 2 / EAST OR NORTH', title: 'One upper-plateau route and its ticketed exit', text: 'If the current ticket and park map allow it, use Wujiayu (East Gate) for an upper route such as Yuanjiajie, or Tianzi (North Gate) for a distinct mountain profile. Confirm the named entrance, included shuttle/elevator or cableway product, last permitted exit and road return before departure. These are separate options, not one guaranteed circuit.' },
+      { label: 'DAY 3 / FLEX', title: 'Add a second branch only after checking today’s access', text: 'Use the park notice to choose an open Yangjiajie or Tianzi branch, repeat a lower route, or stay in town if visibility, rain or closures make exposed terrain a poor fit. Return through the gate printed or assigned for that day, with a confirmed ride back to the base.' },
+      { label: 'DAY 4 / CITY', title: 'Give Tianmen its own city-based day and return', text: 'Travel back to the urban area and use the exact boarding location and route shown by the current Tianmen operator. Keep the return to the city hotel or Zhangjiajie West explicit. If the visit date, ticket or weather status is unclear, use a city museum or rest day instead of joining it to a full Wulingyuan circuit.' }
     ],
     practicalTitle: 'The gate printed on the ticket controls the day',
     practical: [
-      { label: 'MAP', title: 'Use the current official park map', text: 'Old route diagrams may omit closures or changed shuttles. Save the current entrance and last transport, then confirm major changes with staff before leaving the gate area.' },
+      { label: 'GATES', title: 'Recheck ticket access, exits and return vehicle', text: 'The 2022 Hunan provincial transport guide helps identify gate names, not today’s operating hours, ticket inclusions or exits. Check the current operator notice for your date and confirm the Wulingyuan or city return before entering. This guide does not assert current shuttle intervals, fares or reservation conditions.' },
       { label: 'WILDLIFE', title: 'Do not feed or confront macaques', text: 'Keep food and loose items secured, maintain distance and follow park guidance. A close photograph is not worth conditioning wildlife to approach people.' },
-      { label: 'SURFACE', title: 'Rain changes stone and cliff exposure', text: 'Wear shoes with grip, slow down on wet steps and skip exposed routes during unsafe weather. Cableways and outdoor attractions can suspend operation even when the city remains dry.' }
+      { label: 'WEATHER', title: 'Swap high viewpoints for a lower plan', text: 'Check the China Meteorological Administration forecast and current park/Tianmen operator notices for the destination area, not just the city. Fog may hide long views; heavy rain, slick steps or a closure calls for a lower open walk, a confirmed indoor visit or a rest day.' }
     ],
     faqs: [
       { question: 'Is Zhangjiajie National Forest Park the same as Tianmen Mountain?', answer: 'No. The forest park is part of the Wulingyuan scenic system outside the urban core; Tianmen Mountain uses a separate city-based ticket and transport system.' },
@@ -798,13 +806,16 @@ export const guides = [
     ],
     sources: [
       { url: 'https://whc.unesco.org/en/list/640', label: 'UNESCO World Heritage Centre — Wulingyuan Scenic and Historic Interest Area' },
-      { url: 'https://www.enghunan.gov.cn/hneng/Tourism/TourHunan/Zhangjiajie_1/TouristAttractions_12/201507/t20150724_1806737.html', label: 'Hunan Provincial Government — Wulingyuan components and visitor orientation' }
+      { url: 'https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716245.html', label: 'Hunan Provincial Department of Culture and Tourism — Wulingyuan gate names and transport orientation (26 August 2022; verify current entry)' },
+      { url: 'https://www.hnzjj.com/', label: 'Zhangjiajie–Wulingyuan Official Tourism Website — current visitor-service lookup' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current local forecast lookup' },
     ],
-    image: { path: '/assets/images/china-destination-zhangjiajie.webp', alt: 'Forested sandstone pillars receding into mist in Zhangjiajie', caption: 'Wulingyuan / gates, elevation systems and weather-led sandstone routes', source: 'https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg', creditTitle: 'Wulingyuan sandstone pillars, Zhangjiajie', creator: 'chensiyuan', license: 'CC BY-SA 4.0' },
-    search: { type: 'Mountain park planner', summary: 'Choose the correct Wulingyuan gate, shuttle and elevation system, then keep Tianmen Mountain as a separate city-based day.', keywords: ['zhangjiajie', 'wulingyuan', 'tianmen mountain', 'yuanjiajie', 'golden whip stream', 'zhangjiajie itinerary'] }
+    image: { path: '/assets/images/china-destination-zhangjiajie.webp', alt: 'Forested sandstone pillars receding into mist in Zhangjiajie', caption: 'Wulingyuan / gates, elevation systems and weather-led sandstone routes', source: 'https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg', creditTitle: 'Wulingyuan sandstone pillars, Zhangjiajie', creator: 'chensiyuan', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Mountain park planner', summary: 'Allow three nights near Wulingyuan for two park days, then add a city night for Tianmen. Match the current ticket to a named gate, verify the assigned exit and return ride, and use weather to swap exposed routes.', keywords: ['zhangjiajie', 'wulingyuan', 'wujiayu east gate', 'forest park south gate', 'tianmen mountain', 'zhangjiajie west station'] }
   },
   {
     slug: 'guiyang-guizhou',
+    dateModified: '2026-10-11',
     name: 'Guiyang & Guizhou',
     title: 'Guiyang and Guizhou Guide (2026): Karst, Waterfalls and Village Routes',
     metaDescription: 'Use Guiyang as a transport base for Guizhou, choosing one karst, waterfall or community-led village corridor with realistic rail, road, rain and consent planning.',
@@ -822,17 +833,17 @@ export const guides = [
     orientationIntro: 'Libo, Huangguoshu, Zhijin and southeastern village routes are not adjacent. These chapters pair landscape processes with the practical transfer and cultural responsibilities that belong to them.',
     chapters: [
       { label: 'CAPITAL BASE', title: 'Guiyang for transport and provincial context', text: 'Use the city for rail or air arrival, one museum and food orientation. Stay near the station serving the chosen corridor rather than assuming every Guizhou excursion begins from the same platform.' },
-      { label: 'WATERFALL FLOW', title: 'Huangguoshu by water and crowd conditions', text: 'The waterfall system involves shuttles, stairs and several scenic components. Check current water, weather and operating arrangements, wear shoes for spray and choose a limited circuit rather than racing every named fall.' },
-      { label: 'LIBO KARST', title: 'Cone forests and water routes as a separate base', text: 'Libo’s UNESCO karst lies far south of Guiyang and benefits from its own overnight plan. Verify train or road connection, park shuttles and current trail access; protect water quality and remain within managed routes.' },
+      { label: 'WATERFALL FLOW', title: 'Huangguoshu needs an Anshun transfer plan', text: 'If your date-specific rail search lists Anshun West, treat that station and the Huangguoshu visitor entrance as separate legs. Confirm the official last-mile vehicle, park entry instructions and reverse connection from the current operator or terminal before leaving. No current coach schedule, fare or shuttle interval is asserted here; stay near the site if the return chain is uncertain.' },
+      { label: 'LIBO KARST', title: 'Check the rail destination before arranging the Libo last mile', text: 'For Xiaoqikong, search 12306 for a date-specific Guiyang-to-Libo service; if the ticket lists Libo station, arrange the separate station-to-park-town/entrance leg and return. A 2018 official Guizhou travel guide records older Mawei-station and county-coach options, but that is historical orientation, not a current timetable. Verify today’s operator instructions before travel and plan at least one overnight near Libo.' },
       { label: 'CAVE RECORD', title: 'Zhijin Cave by geology and capacity', text: 'The large cave system can involve long walking, stairs, humidity and controlled group flow. Use UNESCO geopark interpretation, follow lighting and photography rules and keep the road transfer visible.' },
       { label: 'VILLAGE ROUTE', title: 'Community visits require consent and context', text: 'Miao, Dong, Bouyei and other communities are not interchangeable cultural displays. Choose locally grounded interpretation, ask before portraits or entering homes and avoid treating festivals, clothing or rituals as guaranteed performances.' },
-      { label: 'RAIL CORRIDOR', title: 'Fast trains do not erase the last road', text: 'High-speed stations can shorten the trunk journey while leaving a long shuttle or driver segment. Name the final county, village or park gate and confirm the last return before booking a same-day round trip.' },
+      { label: 'RAIL CORRIDOR', title: 'Book the trunk and last mile as separate legs', text: 'For each corridor, copy the exact rail station and destination gate in Chinese. Check both outbound and return on 12306, then confirm the separate local vehicle and latest practical return with the current official scenic operator or terminal. If that chain cannot be confirmed, add a nearby overnight rather than rely on a same-day through connection.' },
       { label: 'FOOD TERRAIN', title: 'Sour, fermented and chili flavors by region', text: 'Guizhou cuisine changes across communities and cities. Ask about fish, fermentation, chili and shared broths, carry dietary requests in Chinese and avoid claiming one Guiyang snack represents the whole province.' },
       { label: 'RAIN EDIT', title: 'Wet weather changes more than photographs', text: 'Rain can enrich waterfalls while raising trail, road, cave and flood risk. Follow official closures, keep one museum or city day flexible and do not pressure a driver through unsafe mountain conditions.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'Guiyang North and East direct different corridors', text: 'Major stations sit on different sides of the city and serve different routes. Match the exact train to the first regional leg and avoid a hotel that creates an extra cross-city transfer before dawn.' },
-      { label: 'CORRIDOR', title: 'Select west, south or southeast', text: 'Huangguoshu lies west, Libo south and many community routes southeast. A five-day trip should prioritize one corridor; a longer trip can add another with a deliberate base change.' },
+      { label: 'ARRIVAL', title: 'Use the departure station printed for your corridor', text: 'Guiyang North, Guiyang East and Guiyang station are distinct terminals. Search the exact date and destination on 12306 first, then choose a hotel and station transfer around the ticket actually available. Do not assume a same-morning cross-city transfer is trivial.' },
+      { label: 'CORRIDOR', title: 'Choose one region for five nights; add a second only with seven or more', text: 'For a focused five-night trip, choose either the west (Anshun/Huangguoshu) or south (Libo/Xiaoqikong) corridor after a Guiyang arrival night. Seven or eight nights can combine them with a deliberate return through Guiyang and an overnight at each regional base; do not treat them as neighboring day trips.' },
       { label: 'GUIDE', title: 'Use local expertise without buying a staged village', text: 'Ask how access, consent, fees and photography are handled. Prefer transparent, community-connected interpretation and walk away from products promising private rituals or guaranteed costume portraits.' }
     ],
     itineraryKicker: 'FOUR DRAWERS / ONE REGIONAL CABINET',
@@ -840,29 +851,31 @@ export const guides = [
     itineraryIntro: 'Begin in Guiyang, choose one landscape corridor for two days and use the final day for context or transfer. A second corridor belongs to a longer stay.',
     itinerary: [
       { label: 'DAY 1 / GUIYANG', title: 'Museum, market and route check', text: 'Use a provincial collection and one food neighborhood, then verify the exact train, driver or park connection before leaving the capital.' },
-      { label: 'DAYS 2–3 / WEST', title: 'Huangguoshu with weather margin', text: 'Travel west, choose a measured waterfall circuit and overnight when transport makes the same-day return brittle. Keep spray, stairs and water conditions in the plan.' },
-      { label: 'DAYS 2–4 / SOUTH', title: 'Alternative Libo corridor', text: 'Instead of Huangguoshu, move south for Libo and give karst, water routes and the last-mile transfer enough time. Do not combine both versions at speed.' },
-      { label: 'FINAL DAY / EDIT', title: 'Community context or calm return', text: 'Use a credible nearby cultural chapter or return to Guiyang with enough buffer for the next train. A remote village is not a spare half-day.' }
+      { label: 'DAYS 2–3 / WEST', title: 'Option A: rail to Anshun West only if the date’s service fits', text: 'Check Guiyang → Anshun West for your date; if available, confirm the current road transfer to the official Huangguoshu entrance and stay locally if the return-to-station timing is uncertain. Use one full park day, check entry and return transport before departure, then reverse the chain to Guiyang or your onward terminal.' },
+      { label: 'DAYS 2–4 / SOUTH', title: 'Option B: if available, rail to Libo for Xiaoqikong', text: 'Check whether 12306 lists a suitable Guiyang North → Libo service on your date. If it does, arrange the separate Libo-station-to-park transfer and stay nearby at least one night; otherwise, check current official ground transport. A 2018 Guizhou government travel guide describes older Mawei-station and county-coach links, not a current schedule. Verify rain, park access and the full return chain.' },
+      { label: 'DAYS 5–7 / COMBINE', title: 'Seven or more nights: add the other corridor with a reset', text: 'For a longer trip, return to Guiyang between west and south rather than assuming a direct transfer. Keep a city or museum weather buffer, confirm each station/hotel link and preserve a final night near the correct departure station. If heavy rain closes trails or roads, use the capital day and follow official warnings.' }
     ],
     practicalTitle: 'Consent and catchment conditions are route data',
     practical: [
-      { label: 'WEATHER', title: 'Check rainfall at the destination, not only Guiyang', text: 'Mountain and valley conditions vary across the province. Follow local warnings and park notices, and move the city day when heavy rain compromises roads or trails.' },
+      { label: 'WEATHER', title: 'Use destination forecasts and a rain-day swap', text: 'Check the China Meteorological Administration forecast for the county/park plus current scenic-area and transport notices, not just Guiyang. Move exposed waterfalls or karst trails to the safer clear window; use the city museum/food day during heavy rain or warnings, and do not travel through a closure.' },
       { label: 'LANGUAGE', title: 'Save the county and gate in Chinese', text: 'English names may collapse several villages or scenic sections. Carry the full Chinese destination, accommodation and pickup point offline and confirm them with the operator before departure.' },
       { label: 'PEOPLE', title: 'A ticket never buys a portrait', text: 'Ask before photographing people, domestic space, craft work or religious activity. Respect refusals, pay transparent workshop or guide fees and avoid distributing children’s images without informed permission.' }
     ],
     faqs: [
-      { question: 'Can Guiyang be a base for all of Guizhou?', answer: 'It is a strong transport hub, but the province is too large for repeated same-day returns. Choose one corridor and use an overnight base near Libo, Huangguoshu or a community route when distance requires it.' },
+      { question: 'Which station and how many nights for Huangguoshu or Libo?', answer: 'For the west corridor, check Guiyang to Anshun West and the current transfer to Huangguoshu; for the south, check Guiyang North to Libo station and the onward park transfer. Plan at least one regional overnight and verify both return legs. Five nights suit one corridor; seven or more can fit both with a Guiyang reset.' },
       { question: 'How many days does Guizhou need?', answer: 'Five days support Guiyang plus one substantial regional corridor. Seven or eight allow a second direction with weather margin and without turning village visits into roadside stops.' },
       { question: 'Is Huangguoshu best after heavy rain?', answer: 'More water can increase visual drama but also trail, spray, flood and transport risk. Follow official access and safety information rather than seeking extreme conditions.' },
       { question: 'How should I visit minority villages respectfully?', answer: 'Choose community-connected interpretation, ask permission for people and homes, avoid staged stereotypes and understand that daily life and religious activity are not guaranteed performances.' }
     ],
     sources: [
       { url: 'https://whc.unesco.org/en/list/1248', label: 'UNESCO World Heritage Centre — South China Karst, including Libo' },
-      { url: 'https://www.eguizhou.gov.cn/2018-12/04/c_368390.htm', label: 'Guizhou Provincial Government — Libo Zhangjiang Scenic Spot orientation' },
-      { url: 'https://www.unesco.org/en/iggp/zhijindong-cave-unesco-global-geopark', label: 'UNESCO Global Geoparks — Zhijindong Cave' }
+      { url: 'https://www.eguizhou.gov.cn/2018-12/04/c_368390.htm', label: 'Guizhou Provincial Government travel guide — Libo area and historical transport orientation (2018; not a current timetable)' },
+      { url: 'https://www.guizhou.gov.cn/ztzl/hxxcwf/xqk/', label: 'Guizhou Provincial Government — Xiaoqikong visitor-service lookup (page unavailable during this review; confirm live details)' },
+      { url: 'https://www.unesco.org/en/iggp/zhijindong-cave-unesco-global-geopark', label: 'UNESCO Global Geoparks — Zhijindong Cave' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current local forecast lookup' },
     ],
-    image: { path: '/assets/images/china-destination-guizhou.webp', alt: 'Huangguoshu Waterfall plunging through green forest in Guizhou', caption: 'Guizhou / watershed choices, karst movement and community consent', source: 'https://commons.wikimedia.org/wiki/File:黄果树瀑布_2026-07-31_01.jpg', creditTitle: 'Huangguoshu Waterfall, Guizhou', creator: 'Kcx36', license: 'CC BY-SA 4.0' },
-    search: { type: 'Karst and community route', summary: 'Use Guiyang as a transport hinge, then choose one rain-aware corridor to Huangguoshu, Libo, Zhijin or community-led village routes.', keywords: ['guiyang', 'guizhou', 'huangguoshu', 'libo', 'zhijin cave', 'guizhou itinerary'] }
+    image: { path: '/assets/images/china-destination-guizhou.webp', alt: 'Huangguoshu Waterfall plunging through green forest in Guizhou', caption: 'Guizhou / watershed choices, karst movement and community consent', source: 'https://commons.wikimedia.org/wiki/File:黄果树瀑布_2026-07-31_01.jpg', creditTitle: 'Huangguoshu Waterfall, Guizhou', creator: 'Kcx36', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Karst and community route', summary: 'Plan five nights around one corridor: check date-specific rail to Anshun West for Huangguoshu or Libo station for Xiaoqikong, then verify each last-mile and return. Seven or more nights can fit both with regional overnights and a Guiyang reset.', keywords: ['guiyang', 'guizhou', 'huangguoshu', 'anshun west', 'libo station', 'xiaoqikong'] }
   },
   {
     slug: 'dunhuang-hexi-corridor',
