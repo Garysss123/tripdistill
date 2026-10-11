@@ -142,7 +142,7 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'uk-live-desk')).length === 1, `${route}: near-claim official-source panel missing`);
     check(dom.filter((node) => classHas(node, 'uk-related')).length === 1, `${route}: related-guide section missing`);
     check(/data-uk-layout="[^"]+"/.test(html) && /data-uk-instrument="[^"]+"/.test(html) && /data-uk-variant="(?:[1-9]|1[0-2])"/.test(html), `${route}: child visual instrument markers missing`);
-    for (const [url] of unitedKingdomGuides.find((guide) => guide.url === route).sources) check(html.includes(url), `${route}: route-specific official source missing from rendered page`);
+    for (const [url] of unitedKingdomGuides.find((guide) => guide.url === route).sources) check(html.includes(url) || html.includes(escape(url)), `${route}: route-specific official source missing from rendered page`);
   } else {
     check(dom.filter((node) => classHas(node, 'uk-guide-card')).length === 3, `${route}: expected three child cards`);
     check(/data-uk-family="[^"]+"/.test(html) && /data-uk-hub-variant="[1-8]"/.test(html), `${route}: hub family/variant markers missing`);

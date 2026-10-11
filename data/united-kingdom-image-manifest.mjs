@@ -111,14 +111,17 @@ export const unitedKingdomImageManifest = {
     "remoteSha1": "880813cf722816fa7a4b4f877f131241f41d7e5b"
   },
   "bath-bristol-somerset/wells-glastonbury-mendips": {
-    "src": "/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips.webp",
-    "alt": "The west front of Wells Cathedral in Somerset",
-    "source": "https://commons.wikimedia.org/wiki/File:Wells_cathedral,_west_front_1.jpg",
-    "label": "Wells cathedral, west front 1.jpg",
-    "creator": "Tony Grist",
-    "license": "Public domain",
-    "commonsTitle": "File:Wells cathedral, west front 1.jpg",
-    "remoteSha1": "3e4e1e82b599e7cf0786a41f5b140965ec9e4b34"
+    "src": "/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips-route-choice.svg",
+    "alt": "Planning diagram comparing a Wells day, Glastonbury day and separately transferred Mendip visit; not to scale",
+    "source": "https://tripdistill.com/assets/images/united-kingdom-bath-bristol-somerset-wells-glastonbury-mendips-route-choice.svg",
+    "label": "Wells, Glastonbury & Mendip route-choice diagram",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "705a0733d83c55bb3079c11e1e011043146c52e1"
   },
   "cornwall-devon/st-ives-penwith": {
     "src": "/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp",

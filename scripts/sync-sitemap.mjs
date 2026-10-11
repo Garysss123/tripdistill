@@ -160,6 +160,13 @@ const chinaCN15Routes = [
   '/china/beijing/summer-palace/'
 ];
 const unitedKingdomEditedLastmod = '2026-10-09';
+const unitedKingdomBathLastmod = '2026-10-11';
+const unitedKingdomBathEditedRoutes = [
+  '/united-kingdom/bath-bristol-somerset/',
+  '/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/',
+  '/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/',
+  '/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/'
+];
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
 const unitedKingdomEditedRoutes = [
@@ -525,6 +532,11 @@ for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomEditedLastmod });
+}
+for (const route of unitedKingdomBathEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Bath/Bristol/Somerset route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomBathLastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);

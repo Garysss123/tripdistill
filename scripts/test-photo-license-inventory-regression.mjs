@@ -125,7 +125,7 @@ try {
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 539, 'integrated Andaman, Ayutthaya, Cornwall, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 537, 'integrated Andaman, Ayutthaya, Bath/Bristol, Cornwall, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -259,8 +259,8 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 4, 'inventory must count explicitly recorded project-original artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 537, 'integrated CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 5, 'inventory must count explicitly recorded project-original artwork, including the Somerset planning diagram');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 535, 'integrated Bath/Bristol, CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));

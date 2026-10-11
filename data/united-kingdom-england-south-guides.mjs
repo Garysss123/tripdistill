@@ -408,6 +408,8 @@ export const unitedKingdomEnglandSouthClusters = [
   }),
   c({
     slug: 'bath-bristol-somerset',
+    reviewDate: '11 October 2026',
+    reviewDateISO: '2026-10-11',
     name: 'Bath, Bristol & Somerset',
     nation: 'England',
     band: 'england-south',
@@ -415,37 +417,66 @@ export const unitedKingdomEnglandSouthClusters = [
     label: 'Avon city-pair book',
     tagline: 'Give Bath and Bristol separate city arguments before adding rural Somerset.',
     hubIntro: 'Bath and Bristol are close by rail but reward different days: one concentrates Roman archaeology and Georgian streets, the other a working harbour, collections and steep neighbourhoods. Wells, Glastonbury and the Mendips introduce bus-dependent rural connections that should not be hidden inside a city itinerary.',
-    stay: 'Three nights allows one full day in each city and a selected Somerset branch. Bath is convenient for early heritage visits; Bristol offers broader evening districts and transport. Changing hotels between them rarely saves enough time to justify the move.',
-    transfer: 'Bath Spa and Bristol Temple Meads both sit outside parts of their visitor cores. Regional trains are frequent but engineering works matter; rural Somerset requires named bus routes and a protected return, especially on Sundays.',
-    season: 'Rain can change harbour and hill walks in any season. Summer increases Bath entry pressure and rural road traffic; winter shortens Mendip and Glastonbury extensions but leaves both cities with strong indoor alternatives.',
-    fallback: 'Use a complete museum-led Bath or Bristol day when rural buses, weather or attraction access fail. Do not force Wells and Glastonbury together after a missed connection.',
+    stay: 'For three nights, choose one city base: Bath Spa/SouthGate suits a first Roman-and-Georgian day and onward GWR trains; Bathwick is quieter near the Holburne and Sydney Gardens but adds a river crossing or uphill walk to the centre. Bristol’s Temple Quay/Temple Meads edge makes rail arrivals and early departures easier; Old City/Harbourside shortens evening quay walks, while Clifton Village puts the bridge and Downs closer at the cost of a steep return to the stations. Split the stay only when the Somerset branch or separate city evenings justify moving bags.',
+    transfer: 'GWR links Bristol Temple Meads and Bath Spa; check the dated journey and engineering notice, then walk into each city core from its station. First Bus route 8 serves the Temple Meads–city centre–Clifton Downs corridor; its notice places westbound Clifton journeys at T10 and inbound Clifton journeys at T1 through 31 December 2026, so reopen the live stop notice. First Bus 376 is the Bristol–Wells–Glastonbury spine; 174 connects Bath and Wells via Shepton Mallet. Rural bus stops and Sunday patterns differ, so save the outward and return journeys before choosing a second town.',
+    season: 'Bath’s timed interiors and Bristol’s covered collections help in rain, but the Circus–Royal Crescent climb, harbour paths and exposed Glastonbury Tor are weather-sensitive. Summer weekends bring heavier city and rural demand; reserve a Roman Baths entry slot and check No.1 Royal Crescent if it is an anchor. Bath Abbey can change access for services or events. In winter, shorten the Tor or Mendip walk for daylight and keep Wells Cathedral or an open city museum as the complete alternative.',
+    fallback: 'If the Wells/Glastonbury return no longer works, stay in the departure city: use M Shed and the harbour/Old City in Bristol, or Bath Abbey’s current visitor access, the Victoria Art Gallery and a lower-level river walk in Bath. Check the venue calendar first. Do not try to rescue the rural day with an unverified cave shuttle or an assumed taxi.',
+    itineraryKicker: 'THREE DAYS, ONE RURAL BRANCH',
+    itineraryTitle: 'Give each city its own walk; choose Wells or Glastonbury only after checking the dated bus return.',
+    itineraryIntro: 'A route framework for three full days, not a promise about service frequency or entry availability. Keep the day sequence aligned with booked slots and the operator’s current timetable.',
+    itinerary: [
+      ['Bath lower city, then the Georgian rise', 'From Bath Spa, keep the booked Roman Baths visit, Bath Abbey precinct and Pulteney Bridge in the lower centre. Continue via Queen Square and the Circus to the Royal Crescent only if energy and weather permit; otherwise keep the river line and save the climb.'],
+      ['Bristol harbour or Clifton ridge', 'Walk from Temple Meads toward M Shed and the Floating Harbour for one collection and a quay-side loop. If the bridge and Downs are the priority, use First Bus 8 from the currently signed city-centre stop toward Clifton; check the T10/T1 notice and return before setting out.'],
+      ['One Somerset town, with a second only if the bus fits', 'From Bristol, check First Bus 376 for Wells and Glastonbury; from Bath, check route 174 for Wells. Anchor the day in Wells Cathedral and the close or Glastonbury Abbey and town/Tor. Add the second town only when dated onward and return legs leave a comfortable margin.']
+    ],
+    searchKeywords: ['Bath Spa', 'Bathwick', 'Temple Meads', 'Temple Quay', 'route 8', 'route 174', 'route 376', 'Wells', 'Glastonbury'],
+    faq: [
+      ['Should I stay in Bath or Bristol?', 'Use Bath for a compact Roman, abbey and Georgian walk; choose Bristol for a harbour, museum and evening-district day. Compare the hotel’s exact walk to Bath Spa or Temple Meads if the trip includes rail or a rural-bus start.'],
+      ['Can I visit Wells and Glastonbury on one day?', 'Possibly on a date-specific First Bus 376 plan from Bristol, but the route does not guarantee useful town time or a protected return. Choose one town as the anchor and add the other only after checking both directions and site entry.'],
+      ['What should I do if the Tor or a rural connection fails?', 'Keep the day in Bath or Bristol, or stay in the first Somerset town. Do not assume a cave shuttle, taxi or later bus is available without checking the operator and attraction directly.']
+    ],
     sources: [
+      ['https://www.visitbath.co.uk/travel-and-maps/travelling-to-and-around-bath', 'Visit Bath — getting around and station approaches'],
+      ['https://www.visitbath.co.uk/where-to-stay', 'Visit Bath — official accommodation areas and listings'],
       ['https://www.visitwest.co.uk/', 'Visit West — official regional destination guide'],
-      ['https://www.gwr.com/', 'Great Western Railway — rail planning and service updates'],
-      ['https://www.firstbus.co.uk/bristol-bath-and-west', 'First Bus — Bristol, Bath and West services']
+      ['https://www.gwr.com/stations-and-destinations/popular-routes/bristol-to-bath', 'GWR — Bristol to Bath route information'],
+      ['https://www.gwr.com/travel-information/train-times', 'GWR — live train planning and updates'],
+      ['https://www.firstbus.co.uk/bristol-bath-and-west/plan-journey/timetables?service=376', 'First Bus — route 376 timetable and date selector'],
+      ['https://www.firstbus.co.uk/bristol-bath-and-west/plan-journey/timetables?day=mf&service=174', 'First Bus — route 174 timetable and date selector'],
+      ['https://www.firstbus.co.uk/bristol-bath-and-west/news-and-service-updates/updates/service-8-route-change-temple-meads-8th', 'First Bus — route 8 Temple Meads stop change (through 31 December 2026)'],
+      ['https://www.romanbaths.co.uk/visit', 'Roman Baths — official visit planning'],
+      ['https://no1royalcrescent.org.uk/visit/', 'No.1 Royal Crescent — visit and ticket guidance'],
+      ['https://www.bristolmuseums.org.uk/m-shed/plan-your-visit/', 'M Shed — official planning and visit calendar'],
+      ['https://www.wellscathedral.org.uk/visit/admission-and-opening-times', 'Wells Cathedral — current access and opening information'],
+      ['https://www.glastonburyabbey.com/plan-your-visit.php', 'Glastonbury Abbey — current visit planning']
     ],
     guides: [
       g({
         slug: 'bath-roman-georgian-city',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         name: 'Bath: Roman & Georgian City',
         instrument: 'Thermal-city time ledger',
         layout: 'stone-terrace-sequence',
         imageQuery: 'Bath Royal Crescent England panorama',
         imageAlt: 'Georgian architecture at the Royal Crescent in Bath',
         purpose: 'Choose whether the Roman Baths, abbey or Georgian uphill circuit anchors the day, then connect the thermal centre to the crescents without treating every interior and viewpoint as mandatory.',
-        summary: 'Begin at Bath Spa, complete one booked central interior, climb through Queen Square and the Circus only if energy allows, and return by a different street line.',
+        summary: 'From Bath Spa, book one lower-city interior, link Abbey Green and Pulteney Bridge, then climb Queen Square–the Circus–Royal Crescent only if time and energy allow.',
+        searchKeywords: ['Bath Spa', 'Roman Baths', 'Bath Abbey', 'Bathwick', 'Pulteney Bridge', 'Royal Crescent'],
+        stay: 'Stay around Bath Spa/SouthGate for the simplest luggage and early-entry walk; it trades a quieter evening for station and lower-centre convenience. Bathwick, east of the river, suits the Holburne, Sydney Gardens and a calmer night but adds a bridge crossing. A Royal Crescent or Lansdown-side address brings the upper-city walk close while leaving a longer, sloping station approach; confirm the exact door, lift and bag route before booking.',
+        showHubOperatingBoard: false,
         choices: [
           ['Roman Baths depth', 'Use the timed archaeological visit as the central event and keep the abbey and Georgian city mostly exterior. This offers the clearest ancient-water story.'],
           ['Abbey and compact centre', 'Prioritize the abbey, river and central streets with a shorter museum stop. It reduces queues and elevation but sacrifices the full Roman interpretation.'],
           ['Georgian city climb', 'Use the Circus, Royal Crescent and a selected museum as the main sequence. This reveals later urban planning but requires more uphill walking.']
         ],
-        access: 'Bath Spa station is south of the historic core. The Roman Baths and abbey share a busy central precinct, while the Circus and Royal Crescent climb north-west. Book the central interior first and decide the uphill branch before leaving the lower city.',
+        access: 'Bath Spa is the GWR gateway south of the centre. The Roman Baths and Abbey Green sit together in the lower city; Pulteney Bridge is east, while Queen Square, the Circus and Royal Crescent rise to the north-west. Set a timed interior first, then choose the east-bank loop or upper-city climb rather than crossing back and forth.',
         tradeoff: 'A deep Roman Baths visit, abbey tower product and full Georgian circuit create a rushed sequence. Choosing one major interior gives up another but allows the city’s layers and hills to make sense.',
         stages: [
-          ['Enter from Bath Spa', 'Cross the river or follow the direct central streets, noting the station return. Avoid climbing to the crescents before the timed lower-city booking.'],
-          ['Complete the thermal anchor', 'Use the Roman Baths or abbey product with its current entry and security. Keep the Pump Room and square as context rather than automatic extra tickets.'],
-          ['Climb one Georgian line', 'Move through Queen Square and the Circus to the Royal Crescent, or stay lower along Pulteney Bridge and the river when hills or rain are limiting.'],
-          ['Descend without retracing', 'Return through a parallel street or the park edge, ending near Bath Spa with time for a meal rather than a final sprint downhill.']
+          ['Arrive on the lower-city side', 'Use Bath Spa and walk into the centre; check the exact GWR service and station access on the travel date. Leave bags before the booked entry and keep the station return in mind.'],
+          ['Book one central interior', 'Treat the Roman Baths’ allocated entry as the anchor, or choose Bath Abbey if its visitor access suits the day. Abbey worship and events can change access; do not plan both interiors as guaranteed.'],
+          ['Read the east-bank or Georgian district', 'From Abbey Green, cross Pulteney Bridge for the river and Holburne-side walk, or go via Queen Square and the Circus to the Royal Crescent. The upper line gains elevation; choose one.'],
+          ['Return on the line you chose', 'Come back toward Bath Spa by a parallel lower-city street, or shorten the upper walk when rain, steps or energy make the descent a poor finish. Confirm any bus alternative before relying on it.']
         ],
         fallback: 'If the Roman Baths booking fails, use the abbey, Victoria Art Gallery or No. 1 Royal Crescent only when current access works, plus the exterior thermal and Georgian sequence. In heavy rain, shorten the upper-city loop.',
         watch: [
@@ -458,30 +489,38 @@ export const unitedKingdomEnglandSouthClusters = [
         verify: 'Check Roman Baths and abbey admission products, any event closures, Bath Spa rail service and mobility information before setting the route.',
         sources: [
           ['https://www.romanbaths.co.uk/visit', 'Roman Baths — official visit planning'],
-          ['https://www.bathabbey.org/visiting/', 'Bath Abbey — official visitor information']
+          ['https://www.bathabbey.org/visiting/', 'Bath Abbey — visitor access, worship and event information'],
+          ['https://no1royalcrescent.org.uk/visit/', 'No.1 Royal Crescent — visit and ticket guidance'],
+          ['https://www.visitbath.co.uk/travel-and-maps/travelling-to-and-around-bath', 'Visit Bath — station approach and getting around'],
+          ['https://www.gwr.com/stations-and-destinations/popular-routes/bristol-to-bath', 'GWR — Bristol to Bath rail route']
         ]
       }),
       g({
         slug: 'bristol-harbourside-clifton',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         name: 'Bristol Harbourside & Clifton',
         instrument: 'Harbour-to-ridge gradient board',
         layout: 'floating-harbour-cross-section',
         imageQuery: 'Bristol harbour coloured houses England',
-        imageAlt: 'Boats and waterside buildings around Bristol Floating Harbour',
-        purpose: 'Choose a harbour-led city day or a Clifton ridge day and connect them with one intentional bus or uphill walk, rather than letting the steep gap turn museums, bridge and waterfront into disconnected stops.',
-        summary: 'Start at Temple Meads or the centre, read the working harbour through one museum or ship, then either finish around Clifton or stay with the water and city centre.',
+        imageAlt: 'Colourful terraced houses above Cumberland Road in Bristol',
+        purpose: 'Choose the low harbour loop or the Clifton ridge before leaving Temple Meads; use First Bus 8 for the steep westbound link and check its temporary station stops before setting the return.',
+        summary: 'Walk from Temple Meads toward M Shed and the Floating Harbour for one collection and quay loop, or use First Bus 8 to connect a harbour start with Clifton and the suspension bridge.',
+        searchKeywords: ['Temple Meads', 'M Shed', 'Floating Harbour', 'First Bus 8', 'T10', 'T1', 'Clifton Suspension Bridge'],
+        stay: 'Temple Quay/Temple Meads is practical for GWR arrivals and an early return, but puts an evening harbour walk farther away. Old City or Harbourside keeps M Shed, quays and food streets closer on foot. Clifton Village suits a bridge-and-Downs morning and quieter evening; the climb back to Temple Meads is substantial, so check the First Bus 8 stop and last useful return for the date.',
+        showHubOperatingBoard: false,
         choices: [
           ['Harbour collections', 'Use M Shed, a historic ship or Arnolfini as the main interior and complete the Floating Harbour circuit. This is compact and weather-resilient.'],
           ['Clifton and suspension bridge', 'Give the village, gorge and bridge viewpoint priority, using the harbour as a shorter arrival line. This adds elevation and bus dependence.'],
           ['Street and food city', 'Connect Old City, St Nicholas Market and a shorter waterside section. It suits a flexible day but sacrifices the major bridge panorama.']
         ],
-        access: 'Temple Meads is east of the Floating Harbour; Clifton is uphill and west. Choose a bus or one sustained climb rather than alternating. Harbour ferries, city buses and rail tickets are separate products, and the suspension bridge visitor facilities sit on a specific side.',
+        access: 'Temple Meads is east of the Floating Harbour; M Shed is about a 20-minute walk from the station according to the museum. Clifton is uphill and west. First Bus 8 serves Temple Meads, the centre, Clifton Village and Clifton Downs. The current operator notice (8 September–31 December 2026) sends westbound Clifton journeys from Temple Gate stop T10 and inbound journeys to T1; verify the notice and live stop on your date.',
         tradeoff: 'A full ship visit, harbour circuit and relaxed Clifton bridge walk exceed a casual day. Choosing Clifton sacrifices some museum depth; choosing the harbour avoids the hill but gives up the gorge perspective.',
         stages: [
-          ['Cross from the station', 'Walk or take a verified bus from Temple Meads to the harbour edge, recording the return stop before entering the waterfront maze.'],
-          ['Read one harbour story', 'Choose M Shed, a ship or a compact public-realm circuit. Follow the quays in one direction instead of crossing every footbridge.'],
-          ['Commit to water or ridge', 'Stay with Wapping Wharf and the centre or take the planned climb or bus to Clifton. Do not add the ridge late without checking the return.'],
-          ['Finish at a direct return line', 'End near a bus to Temple Meads or descend through a named route. Avoid relying on an unknown downhill shortcut after dark or rain.']
+          ['Choose the westbound stop before walking', 'For a Clifton-first day, use First Bus 8 from the current Temple Gate stop T10 toward Clifton Downs; its dated notice lists T1 for the inbound Clifton direction. Recheck both stops and the day’s live service.'],
+          ['Keep the harbour in one loop', 'From Temple Meads, walk to M Shed (the museum estimates about 20 minutes), then choose M Shed or one ship as the interior anchor and follow the Floating Harbour toward Wapping Wharf.'],
+          ['Decide at the centre: water or ridge', 'Stay by the quays and Old City, or take route 8 west to Clifton Village and the bridge. The bridge is a pedestrian crossing; check visitor-facility and maintenance notices and choose the Bristol-side or Leigh Woods-side walk deliberately.'],
+          ['Return on a checked corridor', 'From Clifton, use the currently signed route 8 stop for Temple Meads or finish near a verified city-centre rail connection. If the stop notice or service changes, keep the day to the harbour rather than improvising a hill descent.']
         ],
         fallback: 'If wind or rain makes Clifton unpleasant, keep M Shed, Arnolfini and the Old City with short covered links. If a harbour interior closes, use the public quays and one verified city museum.',
         watch: [
@@ -493,31 +532,40 @@ export const unitedKingdomEnglandSouthClusters = [
         combine: 'Combine the harbour with Old City or Clifton with the Downs. Keep Bath and rural Somerset as separate excursions.',
         verify: 'Check M Shed or the selected vessel, suspension bridge visitor information, bus status and any harbour event closure before departure.',
         sources: [
-          ['https://www.bristolmuseums.org.uk/m-shed/', 'M Shed — official museum information'],
-          ['https://cliftonbridge.org.uk/visit/', 'Clifton Suspension Bridge — official visitor information']
+          ['https://www.bristolmuseums.org.uk/m-shed/plan-your-visit/', 'M Shed — visit calendar and access'],
+          ['https://www.bristolmuseums.org.uk/m-shed/plan-your-visit/getting-here/', 'M Shed — official station and harbour approach'],
+          ['https://www.firstbus.co.uk/bristol-bath-and-west/plan-journey/timetables?service=8', 'First Bus — route 8 timetable and route plan'],
+          ['https://www.firstbus.co.uk/bristol-bath-and-west/news-and-service-updates/updates/service-8-route-change-temple-meads-8th', 'First Bus — route 8 stop notice through 31 December 2026'],
+          ['https://cliftonbridge.org.uk/crossing-the-bridge/', 'Clifton Suspension Bridge — crossing and closure information'],
+          ['https://www.gwr.com/travel-information/train-times', 'GWR — live train planning and updates']
         ]
       }),
       g({
         slug: 'wells-glastonbury-mendips',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         name: 'Wells, Glastonbury & the Mendip Edge',
         instrument: 'Somerset bus-and-weather docket',
         layout: 'cathedral-tor-decision-sheet',
         imageQuery: 'Wells Cathedral west front Somerset',
-        imageAlt: 'The west front of Wells Cathedral in Somerset',
+        imageAlt: 'Planning diagram comparing a Wells day, Glastonbury day and separately transferred Mendip visit; not to scale',
         purpose: 'Choose Wells or Glastonbury as the main town and add only the rural edge supported by the day’s bus, weather and daylight, instead of presenting cathedral, tor and caves as a single compact circuit.',
-        summary: 'Leave Bath or Bristol on a verified route, give one town and its major site enough time, then use the second place or Mendip landscape only when the onward and return connections are secure.',
+        summary: 'Use First Bus 174 from Bath toward Wells or 376 from Bristol toward Wells and Glastonbury; anchor the day in one town, and arrange a confirmed separate transfer for any Mendip cave.',
+        searchKeywords: ['First Bus 174', 'First Bus 376', 'Wells Cathedral', 'Glastonbury Abbey', 'Glastonbury Tor', 'Cheddar Gorge', 'Wookey Hole'],
+        stay: 'For a city-led trip, Bath Spa/SouthGate keeps route 174 toward Wells within reach; Bristol’s Temple Quay/Temple Meads edge is the clearer start for route 376 toward Wells and Glastonbury. A Wells-centre overnight puts the cathedral close on foot but still needs a bus for Glastonbury and has no mainline rail station. Glastonbury town suits an Abbey/Tor focus, while cave sites need a separately confirmed road transfer; do not book a remote bed on the assumption that a public bus reaches the attraction.',
+        showHubOperatingBoard: false,
         choices: [
           ['Wells cathedral city', 'Prioritize the cathedral, close and Bishop’s Palace area. This creates the strongest compact heritage day and the simplest return.'],
           ['Glastonbury abbey and Tor', 'Use the abbey and town before a weather-dependent Tor climb. It offers landscape and legend but requires more walking and timing.'],
           ['Mendip or cave branch', 'Choose one booked cave or landscape site with a named bus, tour or car plan. This gains geology but sacrifices the two-town narrative.']
         ],
-        access: 'Wells and Glastonbury have no mainline railway station. Bus origins, stopping patterns and Sunday frequencies differ from Bath and Bristol. Mendip cave sites add another rural connection; confirm the final return before committing to an uphill or underground visit.',
+        access: 'Neither Wells nor Glastonbury has a mainline railway station. From Bristol, First Bus 376 serves the Wells–Glastonbury corridor; from Bath, route 174 reaches Wells via Shepton Mallet. Check the actual dated direction, stop and return, including Sunday/holiday variations. No public bus connection from these town routes to Cheddar Gorge or Wookey Hole was verified for this review; treat either cave as a separate car or confirmed-tour transfer.',
         tradeoff: 'Wells Cathedral, Glastonbury Abbey, the Tor and a cave cannot all receive useful time in one public-transport day. Choosing one town sacrifices the other’s depth but protects the return and a real meal.',
         stages: [
-          ['Board the correct rural service', 'Confirm the destination display, stop and final return before leaving the city base. Keep any booked cave or abbey time clear of a tight arrival.'],
-          ['Read one town completely', 'Use the cathedral close or abbey-and-town spine as the first full block. Locate the onward stop before adding lunch or a climb.'],
-          ['Commit to the secondary layer', 'Add Glastonbury Tor, the second town or one Mendip site only if weather and transport still match the plan. Otherwise deepen the first town.'],
-          ['Return with one service in reserve', 'Reach the correct roadside or town-centre stop early. Rural diversions and traffic can make the last useful connection unforgiving.']
+          ['Choose the route by the overnight base', 'From Bristol, check First Bus 376 for Wells or Glastonbury; from Bath, check route 174 to Wells. Save the correct departure stop and return before leaving the city; do not infer the pattern from a route map.'],
+          ['Anchor one town first', 'In Wells, walk between the cathedral, close and market centre and confirm cathedral access. In Glastonbury, use the Abbey and town as the core before deciding whether the exposed Tor is suitable.'],
+          ['Add only a proven second leg', 'A Wells–Glastonbury link may fit route 376 on some dates, but confirm the direction and gap. Cheddar Gorge and Wookey Hole need a verified car or tour transfer and their own ticket/arrival check; no public link is claimed here.'],
+          ['Protect the return in daylight', 'Be at the correct bus stop with margin and a checked alternative journey. If the second connection or weather fails, remain in the first town instead of relying on a taxi or a final rural service you have not confirmed.']
         ],
         fallback: 'If the onward bus or weather fails, remain in Wells or Glastonbury for the complete town circuit, museum or interior. If rural service is already unstable at the base, replace the day with Bath or Bristol rather than relying on taxis.',
         watch: [
@@ -529,8 +577,11 @@ export const unitedKingdomEnglandSouthClusters = [
         combine: 'Combine Wells with its close and palace edge, or Glastonbury with the Tor. Pairing both towns is reasonable only when the dated bus pattern leaves a protected return.',
         verify: 'Check Wells Cathedral or Glastonbury Abbey access, the exact bus timetable, Tor weather and any cave booking or road disruption on the actual day.',
         sources: [
-          ['https://www.wellscathedral.org.uk/visit', 'Wells Cathedral — official visitor information'],
-          ['https://www.glastonburyabbey.com/plan-your-visit.php', 'Glastonbury Abbey — official visitor information']
+          ['https://www.firstbus.co.uk/bristol-bath-and-west/plan-journey/timetables?day=fr&service=376', 'First Bus — route 376 date selector and current timetable'],
+          ['https://www.firstbus.co.uk/bristol-bath-and-west/plan-journey/timetables?day=mf&service=174', 'First Bus — route 174 date selector and current timetable'],
+          ['https://www.wellscathedral.org.uk/visit/admission-and-opening-times', 'Wells Cathedral — current access and opening information'],
+          ['https://www.glastonburyabbey.com/plan-your-visit.php', 'Glastonbury Abbey — current visit planning'],
+          ['https://www.cheddargorge.co.uk/visit', 'Cheddar Gorge — official visit, ticket and opening checks']
         ]
       })
     ]

@@ -64,6 +64,20 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Royal_Crescent_in_Bath_-_geograph.org.uk_-_7845942.jpg',
+    {
+      detail: 'Bath photo review: exact Commons page identifies Kevin Pearson and CC BY-SA 2.0; source title and photo terms for attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels were inspected and show the Royal Crescent façade and curve, matching the route subject.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:View_of_coloured_houses_on_Cumberland_Road_from_Bristol_Harbour_-_geograph.org.uk_-_7678327.jpg',
+    {
+      detail: 'Bristol photo review: exact Commons page identifies Robert Lamb, 17 September 2023, and CC BY-SA 2.0; attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels show coloured terraced houses above Cumberland Road rather than boats or a quay; the alt was corrected to match the image.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg',
     'Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this records the declared terms and is not an independent rights clearance or a claim beyond those terms.',
     '2026-10-11'
@@ -919,6 +933,8 @@ const visuallyReviewedAssetPaths = new Set([
 ]);
 const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
+  ['/assets/images/united-kingdom-bath-bristol-somerset-bath-roman-georgian-city.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-bath-bristol-somerset-bristol-harbourside-clifton.webp', '2026-10-11'],
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
   ...[
     '/assets/images/thailand-phuket-beach.webp',
