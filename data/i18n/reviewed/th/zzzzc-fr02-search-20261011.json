@@ -1,0 +1,14 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Walk the Saint-Jean-de-Luz harbor and bay, then add either Sare by a date-checked TXIK TXAK itinerary or one bounded coastal path section; return to the rail station with a service buffer.": "เดินเที่ยวท่าเรือและอ่าวของ Saint-Jean-de-Luz แล้วเลือกเพิ่มอย่างใดอย่างหนึ่ง: ไป Sare โดยตรวจแผนเดินทาง TXIK TXAK ตามวันที่เดินทาง หรือเดินเส้นทางชายฝั่งช่วงสั้นที่กำหนดขอบเขตไว้ กลับถึงสถานีรถไฟโดยเผื่อเวลาสำหรับรถเที่ยวกลับ",
+    "From Lourdes rail station, select the 965 liO branch for Cauterets or Luz/Gavarnie; Gavarnie is seasonal. Stay in the chosen valley, check mountain conditions, and verify the exact return before hiking.": "จากสถานีรถไฟ Lourdes เลือกแขนงของรถ liO สาย 965 ไป Cauterets หรือ Luz/Gavarnie; รถไป Gavarnie ให้บริการตามฤดูกาล พักในหุบเขาที่เลือก ตรวจสภาพบนภูเขา และยืนยันเที่ยวกลับที่แน่นอนก่อนออกเดินเขา",
+    "Choose one Luberon branch: Gordes with a prebooked Sénanque visit, Roussillon with its open ochre trail, or a southern Lourmarin pair. Use Apt/Avignon buses only for listed stops and prearrange the rural last mile.": "เลือกเส้นทาง Luberon เพียงหนึ่งฝั่ง: Gordes พร้อมรอบเข้าชม Sénanque ที่จองไว้ล่วงหน้า, Roussillon พร้อมเส้นทางดินสีเหลืองที่เปิดให้เดิน หรือคู่หมู่บ้านทางใต้จาก Lourmarin ใช้รถโดยสารจาก Apt/Avignon เฉพาะป้ายที่ระบุไว้ และจองการเดินทางช่วงสุดท้ายในชนบทล่วงหน้า",
+    "Use Bastia for an easy harbor/citadel walk. For Cap Corse, select the east D80 coast through Erbalunga toward Macinaggio or a separate west-coast drive; bus service to Macinaggio is limited, so verify date and return or book a car/tour.": "ใช้ Bastia สำหรับเดินเที่ยวท่าเรือ/ป้อมปราการแบบสบาย ๆ สำหรับ Cap Corse ให้เลือกชายฝั่งตะวันออกของ D80 ผ่าน Erbalunga ไปทาง Macinaggio หรือขับเที่ยวชายฝั่งตะวันตกแยกต่างหาก รถโดยสารไป Macinaggio มีบริการจำกัด จึงต้องตรวจวันเดินทางและเที่ยวกลับ หรือจองรถ/ทัวร์",
+    "For public transport, use Figari’s all-year airport link to Porto-Vecchio as the known anchor, then check the current A Berlina link/return to Bonifacio. No direct Bonifacio airport shuttle is listed; prebook a transfer if timing or lodging there.": "หากใช้ขนส่งสาธารณะ ให้ใช้เส้นทางรถสนามบินตลอดปีจาก Figari ไป Porto-Vecchio เป็นจุดเชื่อมที่ยืนยันได้ แล้วตรวจเส้นทาง A Berlina ปัจจุบันและเที่ยวกลับไป Bonifacio ไม่มีรถรับส่งตรงจากสนามบินไป Bonifacio ตามข้อมูลที่ระบุ; จองรถต่อไว้ล่วงหน้าหากเวลาเดินทางไม่ลงตัวหรือพักที่นั่น"
+  }
+}

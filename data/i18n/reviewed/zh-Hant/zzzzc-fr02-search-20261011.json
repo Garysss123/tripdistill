@@ -1,0 +1,14 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Walk the Saint-Jean-de-Luz harbor and bay, then add either Sare by a date-checked TXIK TXAK itinerary or one bounded coastal path section; return to the rail station with a service buffer.": "步行遊覽聖讓德呂茲的港口與海灣，接著可依出遊日期查詢 TXIK TXAK 行程前往 Sare，或只走一段範圍明確的海岸步道；返回火車站時，請為交通銜接預留餘裕。",
+    "From Lourdes rail station, select the 965 liO branch for Cauterets or Luz/Gavarnie; Gavarnie is seasonal. Stay in the chosen valley, check mountain conditions, and verify the exact return before hiking.": "從盧爾德火車站出發，選擇 liO 965 前往 Cauterets 或 Luz／Gavarnie 的路線分支；Gavarnie 為季節性服務。住在選定的山谷，查看山區狀況，並在健行前確認確切的回程班次。",
+    "Choose one Luberon branch: Gordes with a prebooked Sénanque visit, Roussillon with its open ochre trail, or a southern Lourmarin pair. Use Apt/Avignon buses only for listed stops and prearrange the rural last mile.": "呂貝宏路線擇一：葛德搭配事先預約的塞南克修道院；魯西雍搭配當天開放的赭土步道；或安排盧馬漢與一座南側村莊。Apt／Avignon 的巴士只搭往時刻表列出的站點，鄉間最後一段交通請預先安排。",
+    "Use Bastia for an easy harbor/citadel walk. For Cap Corse, select the east D80 coast through Erbalunga toward Macinaggio or a separate west-coast drive; bus service to Macinaggio is limited, so verify date and return or book a car/tour.": "以巴斯蒂亞港口至城塞的輕鬆步行為主。前往科西角時，選擇 D80 東岸經 Erbalunga 前往 Macinaggio，或另行安排西岸自駕；前往 Macinaggio 的巴士班次有限，請依日期確認去回程，或預約租車／導覽。",
+    "For public transport, use Figari’s all-year airport link to Porto-Vecchio as the known anchor, then check the current A Berlina link/return to Bonifacio. No direct Bonifacio airport shuttle is listed; prebook a transfer if timing or lodging there.": "若搭大眾運輸，先以 Figari 機場全年營運至韋基奧港的巴士作為已確認的交通依據，再查詢 A Berlina 目前前往博尼法喬的班次與回程。機場未列出直達博尼法喬的接駁；若班次時間不合或住宿在博尼法喬，請預約接駁。"
+  }
+}
