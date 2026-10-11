@@ -186,6 +186,15 @@ for (const route of lakeRoutes) {
 const search = JSON.parse(read('data/search-index.json')).filter((item) => item.url.startsWith('/united-kingdom/'));
 check(search.length === 81 && new Set(search.map((item) => item.url)).size === 81, 'United Kingdom search index must contain exactly 81 unique routes');
 for (const route of routes) check(search.some((item) => item.url === route), `${route}: missing from search index`);
+for (const cluster of unitedKingdomClusters) {
+  const route = `/united-kingdom/${cluster.slug}/`;
+  const record = search.find((item) => item.url === route);
+  check(record?.summary === (cluster.searchSummary || cluster.hubIntro), `${route}: search summary drifted from its reviewed source`);
+}
+for (const guide of unitedKingdomGuides) {
+  const record = search.find((item) => item.url === guide.url);
+  check(record?.summary === (guide.searchSummary || guide.summary), `${guide.url}: search summary drifted from its reviewed source`);
+}
 const header = read('components/header.html');
 const sidebar = read('components/sidebar.html');
 const footer = read('components/footer.html');

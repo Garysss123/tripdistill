@@ -122,10 +122,42 @@ try {
   assert.equal(similan.visualReviewStatus, 'visually_reviewed_2026-10-09');
   assert.equal(similan.verificationStatus, 'source_page_checked');
   assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
+  const oxfordPhotoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const oxfordPhotoChecks = [
+    {
+      assetPath: '/assets/images/united-kingdom-oxford-cotswolds-oxford-colleges-museums.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Oxford_-_Catte_Street_-_View_SSW_on_the_Radcliffe_Camera_1737-48_by_James_Gibbs_-_University_Church_of_St_Mary_the_Virgin_%26_Brasenose_College_in_the_back.jpg',
+      creator: 'Txllxt TxllxT',
+      license: 'CC BY-SA 4.0'
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-oxford-cotswolds-blenheim-woodstock.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Blenheim_Palace_from_the_Water_Terraces_October_2016.jpg',
+      creator: 'DeFacto',
+      license: 'CC BY-SA 4.0'
+    }
+  ];
+  for (const expected of oxfordPhotoChecks) {
+    const record = oxfordPhotoRecords.find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `Oxford/Cotswolds inventory must retain ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.match(record.verificationDetail, /local 1,600 × 1,066 WebP pixels were inspected/i);
+    assert.match(record.verificationDetail, /not independent rights clearance/i);
+  }
+  const cotswoldPhoto = oxfordPhotoRecords.find((item) => item.assetPath === '/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp');
+  assert.ok(cotswoldPhoto, 'Oxford/Cotswolds inventory must retain the Cotswold village image');
+  assert.equal(cotswoldPhoto.verificationStatus, 'site_credit_or_metadata_only', 'the inaccessible Commons page must not be reported as verified');
+  assert.equal(cotswoldPhoto.verificationDate, null);
+  assert.equal(cotswoldPhoto.visualReviewStatus, 'visually_reviewed_2026-10-11', 'local pixel review remains distinct from source-page verification');
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 539, 'integrated Andaman, Ayutthaya, Cornwall, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 537, 'integrated Andaman, Ayutthaya, Cornwall, Oxford/Cotswolds and China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -260,7 +292,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 4, 'inventory must count explicitly recorded project-original artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 537, 'integrated CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 535, 'integrated Oxford/Cotswolds, CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));

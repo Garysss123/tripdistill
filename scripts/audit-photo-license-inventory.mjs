@@ -776,6 +776,14 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Exeter_,_
   detail: 'Cornwall/Devon photo review: exact Commons title, Lewis Clarke authorship, 21 September 2012 photograph date, original dimensions 4,288 × 2,848, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show Exeter Cathedral and Cathedral Green with restoration scaffolding visible, matching the source page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
   checkedOn: '2026-10-11'
 });
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Blenheim_Palace_from_the_Water_Terraces_October_2016.jpg', {
+  detail: 'Oxford/Cotswolds photo review: the exact Commons file page identifies DeFacto as author, 9 October 2016 as the photograph date, original dimensions 4,896 × 3,264, and CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-11 and show Blenheim Palace from the Water Terraces, matching the source; the copy is resized and display-cropped. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Oxford_-_Catte_Street_-_View_SSW_on_the_Radcliffe_Camera_1737-48_by_James_Gibbs_-_University_Church_of_St_Mary_the_Virgin_%26_Brasenose_College_in_the_back.jpg', {
+  detail: 'Oxford/Cotswolds photo review: the exact Commons file page identifies Txllxt TxllxT as author, 18 June 2011 as the photograph date, original dimensions 5,921 × 3,947, and CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-11 and show Catte Street, Radcliffe Camera, St Mary the Virgin and Brasenose College in the background, matching the source; the copy is resized and display-cropped. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', {
   detail: 'China CN12 photo review: the exact Commons file page identifies Amarespeco as author, 14 July 2017 as the photograph date, original dimensions 4,000 × 6,000, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show Saint Sophia Cathedral’s domes and crosses against a summer sky, matching the source; the portrait source is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.',
   checkedOn: '2026-10-11'
@@ -919,6 +927,9 @@ const visuallyReviewedAssetPaths = new Set([
 ]);
 const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
+  ['/assets/images/united-kingdom-oxford-cotswolds-oxford-colleges-museums.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-oxford-cotswolds-blenheim-woodstock.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp', '2026-10-11'],
   ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
   ...[
     '/assets/images/thailand-phuket-beach.webp',
