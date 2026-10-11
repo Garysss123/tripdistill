@@ -51,6 +51,10 @@ const routes = [
     '/china/lijiang-shangri-la/',
     '/china/zhangjiajie/',
   ].map((route) => ({ route, reviewDate: '2026-10-11' })),
+  ...[
+    '/china/lhasa-tibetan-plateau/',
+    '/china/xinjiang-corridor/',
+  ].map((route) => ({ route, reviewDate: '2026-10-11' })),
 ];
 const editions = [
   { locale: 'en', prefix: '' },

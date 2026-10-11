@@ -1,6 +1,26 @@
 import { guides as northPlainsGuides } from './china-north-plains-guides.mjs';
 import { guides as eastLowerYangtzeGuides } from './china-east-lower-yangtze-guides.mjs';
 
+// Retained in the image inventory for provenance only; this photo is not used on any live page.
+export const retiredImageRecords = [
+  {
+    src: '/assets/images/china-destination-lhasa.webp',
+    source: 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg',
+    commonsTitle: 'File:Potala Palace HQ.jpg',
+    creator: 'Lhasa Government (source-page credit; independently unverified)',
+    license: null,
+    rightsStatus: 'Reuse permission unverified; a deletion nomination cites missing evidence for the stated license.',
+    rightsStatusUrl: 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg',
+    commercialReuseEligibility: 'unknown',
+    attributionTerms: 'No reuse permission is asserted; source-page creator attribution is retained as unverified provenance only.',
+    assetType: 'photographic-raster',
+    localSha1: '754b10b0d96795928b082be98de69f92c2b11b73',
+    inventoryStatus: 'unused',
+    retirementNote: 'Removed from all live display and credit references on 2026-10-11. Commons deletion nomination opened 2026-06-04 cites no evidence that the image was released under the given license. The file is retained locally for provenance; the page license label is not treated as permission.',
+    editHistory: 'Legacy resized WebP retained locally for provenance only; no live use or reuse permission is asserted.'
+  }
+];
+
 export const guides = [
   {
     slug: 'guangzhou',
@@ -941,123 +961,159 @@ export const guides = [
     slug: 'xinjiang-corridor',
     name: 'Urumqi, Turpan & Kashgar',
     title: 'Xinjiang Travel Guide (2026): Urumqi, Turpan and Kashgar Corridor',
-    metaDescription: 'Plan one Urumqi–Turpan–Kashgar corridor with realistic distances, current access checks, climate buffers and respectful photography.',
-    ogTitle: 'Xinjiang: Measure the Corridor Before the Dream',
+    metaDescription: 'Build a nine-night Urumqi–Turpan–Kashgar route around three named bases, a full transfer day, current nationality-specific access checks and a confirmed return.',
+    ogTitle: 'Xinjiang: Choose One Corridor and Confirm Each Gate',
     themeColor: '#70472b',
     visual: 'corridor-atlas',
-    eyebrow: 'Xinjiang / continental scale and oasis corridors',
-    titleAccent: 'measure the corridor before the dream',
-    intro: 'Xinjiang is larger than many countries, and Urumqi, Turpan and Kashgar are not neighboring stops. A useful first route follows one east-to-west corridor by rail or air, allowing each oasis city to stand on its own. Current security controls, border-area rules and transport checks can affect plans, so verify access without turning local communities into political or exotic scenery.',
-    nights: '8–12 nights',
-    coreLogic: 'one east–west corridor',
-    watchFirst: 'distance and current access',
-    motifs: ['Urumqi', 'Turpan', 'Rail', 'Kashgar'],
-    orientationTitle: 'Draw the kilometers before naming the highlights',
-    orientationIntro: 'The route begins with Urumqi’s institutions, drops into Turpan’s hot basin and crosses a vast distance to Kashgar. These chapters keep city culture, protected sites, desert climate and any frontier extension attached to their actual requirements.',
+    eyebrow: 'Xinjiang / one corridor, three separate bases',
+    titleAccent: 'choose one corridor, then confirm each gate',
+    intro: 'Urumqi, Turpan and Kashgar sit across a continental region, not a casual city loop. A useful first visit gives each city its own base and treats the Turpan–Kashgar transfer as a full travel day. Official travel advice differs by nationality and can describe identity checks or short-notice restrictions; it does not establish a universal permit rule or guarantee access. Confirm every planned area against your exact travel document and current authority instructions. Do not bypass a restriction or ask anyone to misstate your destination.',
+    nights: '8–12 nights; 9 is a workable three-base example',
+    coreLogic: 'two eastern bases, then Kashgar',
+    watchFirst: 'document category and each route gate',
+    motifs: ['Urumqi base', 'Turpan base', 'Transfer day', 'Kashgar base'],
+    orientationTitle: 'Choose the bases before adding side trips',
+    orientationIntro: 'Keep Urumqi, Turpan and Kashgar as separate city chapters. A northern Xinjiang loop or Pamir road adds different ground transport, weather and access checks; it does not fit as a spare afternoon.',
     chapters: [
-      { label: 'REGIONAL GATE', title: 'Urumqi for context and connection', text: 'Use Urumqi as an air and rail hub and visit a serious regional collection before heading into smaller oasis sites. Confirm current museum entry and photography rules, read labels critically and leave time for additional identity checks at transport facilities.' },
-      { label: 'MOUNTAIN CONTRAST', title: 'Tianshan landscapes are separate excursions', text: 'The UNESCO serial property spans distant protected components, not one park outside Urumqi. Choose a specific managed destination, verify road and weather and do not imply that a brief lake excursion represents the whole Tianshan system.' },
-      { label: 'TURPAN HEAT', title: 'Build the basin day around temperature', text: 'Turpan’s archaeological sites, vineyards and water history are spread beyond the city. Use early and late hours, a reliable driver or official transport and plenty of water; extreme heat can make a standard sightseeing loop unsafe.' },
-      { label: 'ANCIENT CITIES', title: 'Jiaohe and Gaochang as protected evidence', text: 'Earthen ruins are fragile and exposed. Follow managed paths, never climb walls or remove material and use the Silk Roads World Heritage context to distinguish the sites and their historical roles.' },
-      { label: 'WATER SYSTEM', title: 'Karez beyond a cooling-room story', text: 'Interpretation should explain underground water engineering, agriculture and present conservation rather than turning the system into a novelty stop. Use an established museum or site and avoid entering unauthorized shafts or channels.' },
-      { label: 'LONG CROSSING', title: 'Turpan to Kashgar consumes a real travel day', text: 'Rail and flights cover vast distance with different baggage, identity and schedule trade-offs. Protect the arrival evening and do not reserve a remote Kashgar road trip immediately after a delayed overnight journey.' },
-      { label: 'KASHGAR CITY', title: 'Markets and old streets as living commerce', text: 'Walk with respect for residents, traders and religious boundaries. Ask before portraits, avoid photographing security infrastructure and do not reduce Uyghur food, music or craft to a single staged “Silk Road” image.' },
-      { label: 'FRONTIER OPTION', title: 'Pamir roads require current permission checks', text: 'Tashkurgan and other border-region routes can involve permits, checkpoints, altitude and long mountain roads. Verify current eligibility and documentation with competent authorities and a reputable local operator; keep the core corridor valuable without this extension.' }
+      { label: 'DOCUMENTS FIRST', title: 'Read the advice for your own travel documents', text: 'The UK FCDO gives British nationals a specific warning about checks in Xinjiang; Canadian and U.S. advisories give their citizens separate guidance. These notices are not one rule for every passport, Chinese identity document or residence status. Check your own government advice and ask the competent authority and operator to confirm your exact city and site list before payment.' },
+      { label: 'URUMQI BASE', title: 'Start with two nights and one named arrival point', text: 'Use Urumqi for the first city block and regional context. Match the pickup to the airport or railway station shown on the actual ticket, and confirm the hotel’s exact address with the operator. Do not assume a station name, terminal or same-city transfer from a search result.' },
+      { label: 'TURPAN BASE', title: 'Give the basin its own two-night stop', text: 'A central Turpan base makes a full site day possible without turning every ruin into a separate long transfer. Check the exact arrival station, onward vehicle, attraction access and hotel address together before buying. If transport or site entry cannot be confirmed, keep the day in town.' },
+      { label: 'WEATHER WINDOW', title: 'Schedule Jiaohe, Gaochang and Karez by the live forecast', text: 'These exposed places sit outside a simple indoor city loop. In forecast heat, put outdoor walking early or late and keep the middle of the day flexible for a suitable indoor stop. Before fixing the order, check the China Meteorological Administration forecast and the sites’ current notices; no season guarantees that a road or attraction is open.' },
+      { label: 'PROTECTED SITES', title: 'Treat Jiaohe and Gaochang as fragile archaeological ground', text: 'Use the designated visitor route and current site instructions; do not climb earthen walls or enter closed sections. The Silk Roads heritage listing helps distinguish Jiaohe and Gaochang as separate archaeological components rather than interchangeable photo stops.' },
+      { label: 'TRANSFER DAY', title: 'Turpan to Kashgar is not a same-day sightseeing connection', text: 'Compare the exact travel date in China Railway 12306 and the relevant airline before fixing the hotel night. Rail and air have different stations, airport transfers, identity checks and disruption exposure. Keep the arrival evening unbooked, and do not attach a remote road excursion to an overnight arrival.' },
+      { label: 'KASHGAR BASE', title: 'Keep four or five nights for the city and a return decision', text: 'Use Kashgar as a real base for its old city, markets and named institutions, with routes that respect residents and worshippers. Ask before portraits, follow posted photography rules and never photograph security facilities. Confirm whether the trip ends here or needs another long transfer to its departure city.' },
+      { label: 'OPTIONAL FRONTIER', title: 'Pamir and northern routes need separate written checks', text: 'Tashkurgan, border areas, protected landscapes and northern Xinjiang branches are separate itineraries. Requirements can vary by exact route and traveler documents; verify permission, checkpoints, road status, weather, overnight stops and the return with the competent authority. If any part is restricted or unconfirmed, omit it—never route around a control.' }
     ],
+    decisionsTitle: 'Set the document, base and return plan first',
     decisions: [
-      { label: 'ENTRY', title: 'Verify current regional and border access', text: 'Rules and security measures can change, particularly for frontier areas. Check official government travel advice, local authorities and the operator close to departure; carry passport and required permits throughout the route.' },
-      { label: 'TRANSPORT', title: 'Use air or overnight rail as a conscious trade-off', text: 'Flying saves time but adds airport transfers; rail reveals scale but consumes a night or day. Book by actual carriage, station and arrival hour, then protect recovery before the next long road.' },
-      { label: 'SCOPE', title: 'Urumqi–Turpan–Kashgar is already a full trip', text: 'Do not add northern lakes, Ili grasslands and the Pamirs simply because they fit on one regional map. Each branch has a different season, distance and access system.' }
+      { label: 'TRAVEL DOCUMENT', title: 'Confirm the route for your passport or identity category', text: 'Ask the relevant authority and named operator to confirm each city, protected site and border-area segment for the documents you will actually use. UK, Canadian and U.S. government advice is specific to those travelers; no source here establishes a blanket Xinjiang permit requirement for everyone.' },
+      { label: 'BASES', title: 'Use 2 Urumqi + 2 Turpan + 5 Kashgar nights as a planning frame', text: 'This nine-night split is an editorial example, not an operator schedule. If you have fewer nights, remove a whole branch instead of compressing the transfer. Check hotel location against the station or terminal printed on the ticket.' },
+      { label: 'RETURN', title: 'Book the exit before spending the last Kashgar day', text: 'Confirm whether the journey ends at Kashgar or needs a long return to Urumqi. If the departure flight is from another city, leave a separate travel day and overnight buffer where needed; do not rely on an unverified same-day rail-to-air connection.' }
     ],
     itineraryKicker: 'THREE OASES / ONE CONTINENTAL LINE',
-    itineraryTitle: 'A ten-day route with distance left visible',
-    itineraryIntro: 'Use two Urumqi days, two Turpan days, a protected transfer and four Kashgar days. The Pamir extension remains optional and replaces city time rather than appearing from nowhere.',
+    itineraryTitle: 'Ten days and nine nights across three named bases',
+    itineraryIntro: 'Planning example only: two Urumqi nights, two Turpan nights and five Kashgar nights, with one full transfer day between Turpan and Kashgar. It assumes an exit from Kashgar only if a real ticket supports it; a return to Urumqi adds another travel day and night.',
     itinerary: [
-      { label: 'DAYS 1–2 / URUMQI', title: 'Arrival and regional context', text: 'Recover from the long arrival, use one museum and a carefully chosen city or mountain-edge chapter with current access confirmed.' },
-      { label: 'DAYS 3–4 / TURPAN', title: 'Heat-led archaeology and water', text: 'Travel to Turpan, visit selected ruins in cooler hours and use credible interpretation for karez and agriculture rather than racing every basin attraction.' },
-      { label: 'DAY 5 / CROSSING', title: 'Rail or flight west', text: 'Let the cross-region movement occupy the day. Carry food, documents and offline addresses, then keep Kashgar arrival gentle.' },
-      { label: 'DAYS 6–10 / KASHGAR', title: 'City depth or permitted mountain branch', text: 'Give markets, streets and institutions time. Add a Pamir route only after current permissions, altitude, road safety and return buffers are confirmed.' }
+      { label: 'DAYS 1–2 / URUMQI', title: 'Arrive, settle and choose one city chapter', text: 'Use the first night for the transfer from the exact arrival terminal or station and keep the next morning flexible. Pick one museum or city district only after its current access and booking instructions are confirmed.' },
+      { label: 'DAYS 3–4 / TURPAN', title: 'Change base, then take one full basin day', text: 'Use a verified rail or road connection, settle in Turpan and group Jiaohe or Gaochang with one water-history stop. In hot forecast conditions, move exterior walking to cooler hours and keep a named indoor fallback.' },
+      { label: 'DAY 5 / LONG TRANSFER', title: 'Travel to Kashgar with no timed evening plan', text: 'Buy the actual rail or air leg for the date and check the station or airport on the ticket. Carry required identification and confirmations; arrival delays should cost rest, not a non-refundable excursion.' },
+      { label: 'DAYS 6–10 / KASHGAR & EXIT', title: 'Use the city base, then follow the confirmed departure chain', text: 'Keep four full Kashgar days for the old city, markets and institutions. Day 10 is a departure block only if the chosen ticket works; when the exit is Urumqi, add a separate return day and overnight rather than assuming a same-day connection.' }
     ],
-    practicalTitle: 'Distance, climate and scrutiny are part of the itinerary',
+    practicalTitle: 'Weather, booking checks and respectful access shape the day',
     practical: [
-      { label: 'DOCUMENTS', title: 'Keep passport and bookings accessible', text: 'Transport, hotel and checkpoint procedures can involve repeated identity checks. Carry originals securely, retain offline confirmations and allow extra time without photographing control facilities.' },
-      { label: 'CLIMATE', title: 'Prepare for heat, cold and dry air', text: 'Turpan heat and mountain or desert cold can exist within one route. Pack layers, sun protection and water capacity, and follow official weather and road warnings.' },
-      { label: 'RESPECT', title: 'People are not ethnographic props', text: 'Ask before portraits, respect worship and domestic space and avoid captions that flatten diverse Uyghur, Kazakh, Han and other communities into an exotic “frontier.”' }
+      { label: 'LIVE CONDITIONS', title: 'Check each city separately, not one regional forecast', text: 'Use the China Meteorological Administration forecast for Urumqi, Turpan and Kashgar close to travel, then check the relevant road and site notices. Heat, wind, rain or a short-notice closure can change an exposed day; keep a city-based alternative.' },
+      { label: 'RESERVATIONS', title: 'Confirm ticket, identity and entry terms before each transfer', text: 'Use 12306 for the actual rail date and official site or operator notices for attraction entry. Do not rely on old booking windows, fares, headways or a package seller’s claim that a restricted segment will be available.' },
+      { label: 'PEOPLE & SECURITY', title: 'Follow local instructions and keep photography consent-based', text: 'Carry the identification required for your trip, expect the checks described in your own government’s advice and leave security facilities, officials and restricted areas unphotographed. Ask before photographing people or worship; never use a driver or guide to evade a restriction.' }
     ],
     faqs: [
-      { question: 'How many days does a Urumqi, Turpan and Kashgar trip need?', answer: 'Eight to twelve nights make the long corridor realistic. Ten days supports city context, two Turpan days, a transfer day and meaningful Kashgar time.' },
-      { question: 'Do foreign visitors need a special permit for all of Xinjiang?', answer: 'Requirements can vary by specific border or protected area and can change. Verify the exact route with authorities and a reputable local operator; do not assume one traveler’s past experience applies.' },
-      { question: 'Can I combine northern Xinjiang and Kashgar in one week?', answer: 'The distances make that a flight-heavy highlights trip with little depth. Choose the Urumqi–Turpan–Kashgar corridor or a northern landscape route, not both, for a short visit.' },
-      { question: 'How should I photograph markets and religious areas?', answer: 'Ask people first, follow posted rules and never photograph security infrastructure. Keep pathways clear and avoid treating everyday work or worship as a staged travel scene.' }
+      { question: 'How many nights should I plan for Urumqi, Turpan and Kashgar?', answer: 'Eight to twelve nights is a planning range, not a schedule guarantee. The ten-day example uses nine nights: two in Urumqi, two in Turpan and five in Kashgar, with one full transfer day.' },
+      { question: 'Does every foreign traveler need one Xinjiang-wide permit?', answer: 'We could not verify a single blanket rule that applies to every passport, visa, Chinese identity document or route. UK, Canadian and U.S. government advice applies to those travelers and warns about checks or restrictions. Confirm your own document category and exact route with the competent authority; do not assume unrestricted access.' },
+      { question: 'Can I combine northern Xinjiang and Kashgar in one week?', answer: 'That would stack long transfers and leave little time at each base. Keep Urumqi–Turpan–Kashgar as one east–west route, or choose a northern landscape loop; add neither a Pamir nor a border-area extension until separately confirmed.' },
+      { question: 'How should I handle heat, site entry and photography?', answer: 'Check the live city forecast and official site notices, move outdoor walking to cooler hours during heat and use a confirmed indoor fallback. Follow posted entry rules, ask before portraits and do not photograph security facilities or restricted areas.' }
     ],
     sources: [
       { url: 'https://whc.unesco.org/en/list/1414', label: 'UNESCO World Heritage Centre — Xinjiang Tianshan' },
       { url: 'https://wlt.xinjiang.gov.cn/', label: 'Xinjiang Department of Culture and Tourism — official regional notices' },
-      { url: 'https://www.gov.uk/foreign-travel-advice/china/regional-risks', label: 'UK Foreign, Commonwealth and Development Office — current regional travel risks and access cautions' }
+      { url: 'https://www.gov.uk/foreign-travel-advice/china/regional-risks', label: 'UK Foreign, Commonwealth and Development Office — regional advice for British travelers' },
+      { url: 'https://travel.gc.ca/destinations/china', label: 'Government of Canada — current China travel advice for Canadian travelers' },
+      { url: 'https://travel.state.gov/en/international-travel/travel-advisories/china.html', label: 'U.S. Department of State — current China travel advisory for U.S. travelers' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current city forecasts' }
     ],
-    image: { path: '/assets/images/china-destination-xinjiang.webp', alt: 'Id Kah Mosque and its square in Kashgar, Xinjiang', caption: 'Xinjiang / one continental corridor, oasis cities and current access checks', source: 'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg', creditTitle: 'Id Kah Mosque, Kashgar', creator: 'N509FZ', license: 'CC BY-SA 4.0' },
-    search: { type: 'Continental corridor guide', summary: 'Build one realistic Urumqi–Turpan–Kashgar corridor with long transfers, climate, current access and respectful photography explicit.', keywords: ['xinjiang', 'urumqi', 'turpan', 'kashgar', 'silk road', 'xinjiang itinerary'] }
+    image: { path: '/assets/images/china-destination-xinjiang.webp', src: '/assets/images/china-destination-xinjiang.webp', alt: 'Id Kah Mosque and its square in Kashgar, Xinjiang', caption: 'Kashgar / a living religious place within one carefully checked corridor', source: 'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg', sourceTitle: 'File:Hëytgah Mosque, Kashi (20230923100109).jpg', creditTitle: 'Id Kah Mosque, Kashgar', creator: 'N509FZ', sourceDate: '2023-09-23', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', assetType: 'photographic-raster', localSha1: '178f849a979d7e2053877f189f2bae8cfa1b1495', editNote: 'Resized to 960 × 640 WebP, display-cropped; adaptation shared under CC BY-SA 4.0.' },
+    dateModified: '2026-10-11',
+    sourceNote: 'Travel advice, itinerary sources and the exact image file page were checked on 11 October 2026. The cited travel advisories apply to their named nationalities and documents; they do not establish a universal entry rule or guarantee route access. Recheck the authority, weather, site, transport and ticket notices for your own dates. The photograph was resized and converted to WebP; its responsive display crop may vary.',
+    search: { type: 'Continental corridor guide', summary: 'Plan Urumqi, Turpan and Kashgar as separate bases, leave a full transfer day, verify document-specific access and reserve a workable departure chain.', keywords: ['xinjiang', 'urumqi', 'turpan', 'kashgar', 'identity checks', 'corridor itinerary'] }
   },
   {
     slug: 'lhasa-tibetan-plateau',
     name: 'Lhasa & Tibetan Plateau',
     title: 'Lhasa and Tibetan Plateau Guide (2026): Permits and Altitude',
-    metaDescription: 'Plan Lhasa only after current permits and approved arrangements are confirmed, then protect acclimatization, living religious space and plateau limits.',
-    ogTitle: 'Lhasa and the Tibetan Plateau: Ascend by Stages',
+    metaDescription: 'Plan one Lhasa base only after document-specific permission and approved arrangements are confirmed; leave higher plateau travel as a separate decision.',
+    ogTitle: 'Lhasa: Confirm Access, Keep One Base, Reassess Before Going Higher',
     themeColor: '#7b3e2e',
     visual: 'altitude-stages',
-    eyebrow: 'Tibet / permits, living heritage and high altitude',
-    titleAccent: 'ascend by stages',
-    intro: 'Lhasa cannot be planned like another Chinese city break. Foreign visitors generally need advance permission and approved travel arrangements for the Tibet Autonomous Region, while the city sits around 3,700 meters above sea level. Solve legal access first, discuss health risks with a qualified clinician when appropriate, and make the first days gentler than the sightseeing ambition.',
-    nights: '4–7 nights in Lhasa',
-    coreLogic: 'permit + acclimatization',
-    watchFirst: 'symptoms and approved route',
-    motifs: ['Permit', '3,700 m', 'Worship', 'Gradual route'],
-    orientationTitle: 'Every stage needs permission, recovery and respect',
-    orientationIntro: 'The first stage is paperwork, the second is arrival and the third is a slow Lhasa sequence. Only then should any higher or more remote plateau route enter the plan.',
+    eyebrow: 'Tibet / document-specific access, one Lhasa base',
+    titleAccent: 'confirm access before you shape the days',
+    intro: 'For British travelers, the FCDO currently says a permit and organized tour are required for Tibet; Canada gives its citizens similar advice, and the U.S. State Department describes a special permit for U.S. tourist travel. Those government notices do not settle rules for every passport, Chinese identity document, visa or dual-national case. Confirm your exact document category and route with the competent authority and specialist operator before paying. Lhasa sits around 3,700 meters; this guide offers general travel-safety information, not personal medical advice.',
+    nights: '4–7 nights in one Lhasa base',
+    coreLogic: 'confirm access, settle, reassess',
+    watchFirst: 'your document class and entry chain',
+    motifs: ['Confirm access', 'Arrive gently', 'Lhasa base', 'Recheck beyond'],
+    orientationTitle: 'Clear the access gate before choosing day trips',
+    orientationIntro: 'Plan Lhasa as one base visit first. A higher plateau route is a separate approval, road, weather, overnight and health decision—not a spare afternoon.',
     chapters: [
-      { label: 'STAGE 0 / ACCESS', title: 'Confirm the legal route before paying', text: 'Foreign travelers should verify current Tibet travel permission and approved-tour requirements through competent authorities and a reputable specialist operator. Rules and closures can change; do not rely on an old permit guide or a seller who asks you to misstate the route.' },
-      { label: 'STAGE 1 / ARRIVAL', title: 'The first day is for adaptation', text: 'Air or rail arrival can still produce rapid exposure to high sleeping elevation. Keep exertion mild, avoid alcohol at first, hydrate normally and learn how to contact the guide and medical help. Fitness does not guarantee protection from altitude illness.' },
-      { label: 'STAGE 2 / JOKHANG', title: 'Barkhor is a living pilgrimage circuit', text: 'Move with the flow of worshippers, follow clockwise local practice where instructed and never obstruct prostrations. Photography may be restricted inside religious spaces; ask before portraits and avoid treating devotion as street theater.' },
-      { label: 'STAGE 3 / POTALA', title: 'Timed heritage after the body settles', text: 'The palace rises through many steps at high altitude and uses controlled visitor access. Follow the confirmed entry and guide arrangement, move slowly and do not hide significant symptoms merely to preserve a ticket.' },
-      { label: 'STAGE 4 / NORBULINGKA', title: 'Garden space as a gentler heritage day', text: 'Norbulingka provides a lower-intensity component of the UNESCO ensemble, though walking and sun still matter. Use it to balance the harder stair day and interpret the relationship among palace, temple and city.' },
-      { label: 'STAGE 5 / MONASTERIES', title: 'Active institutions define visitor behavior', text: 'Sera, Drepung and other monasteries have worship, teaching and resident communities. Follow guide and site rules, keep voices low, never photograph prohibited interiors or debates and avoid reducing monks to portrait subjects.' },
-      { label: 'STAGE 6 / CITY CONTEXT', title: 'Museums before the distant plateau', text: 'A credible museum can provide archaeological, artistic and regional context while the traveler continues to acclimatize. Read labels critically, respect sensitive material and keep the visit shorter if headache or fatigue worsens.' },
-      { label: 'STAGE 7 / BEYOND', title: 'Higher routes are new medical and permit decisions', text: 'Namtso, Shigatse, Everest-area or other plateau routes may add elevation, distance and additional permissions. Treat each as a separate approved itinerary with staged sleeping altitude, current road information and a clear descent response.' }
+      { label: 'DOCUMENTS FIRST', title: 'Check the rule for your actual passport and identity', text: 'The UK FCDO, Canadian government and U.S. State Department each publish advice for their own travelers about permission and organized arrangements for Tibet. Do not apply one nationality’s advice to every passport, Chinese identity document, visa or dual-national situation. Ask the relevant authority and specialist operator to confirm your exact Lhasa itinerary in writing; if access is unconfirmed, do not pay non-refundable travel.' },
+      { label: 'ARRIVAL CHAIN', title: 'Match pickup and return to the ticketed gateway', text: 'Lhasa Gonggar Airport and Lhasa Railway Station are different arrival points. Confirm the exact terminal or station, the approved pickup and hotel address, and the return transfer before buying. Leave arrival day without a timed palace or long road excursion; the route and document checks are part of the trip.' },
+      { label: 'ONE BASE', title: 'Keep the first four to seven nights in Lhasa', text: 'A single hotel in central Chengguan, near the Barkhor area if the operator confirms it is appropriate for your document and route, reduces luggage moves and pickup confusion. Confirm the actual hotel with the operator; do not assume every property can host every traveler category.' },
+      { label: 'LIVING OLD CITY', title: 'Treat Barkhor and Jokhang as active religious space', text: 'Follow the site and guide instructions, keep worshippers’ paths clear and ask before taking photographs in monasteries or religious interiors. Choose a short, flexible visit and leave room to return to the hotel rather than turning the pilgrimage circuit into a timed photo loop.' },
+      { label: 'POTALA ENTRY', title: 'Use the official reservation system after access is approved', text: 'The Potala Palace’s official booking portal currently describes real-name reservations and says it does not sell same-day tickets. Check its live rules and availability, match the identity used for the approved trip and coordinate the timed entry with the operator. The portal is the booking reference; this guide makes no ticket or entry promise.' },
+      { label: 'SEPARATE DAYS', title: 'Do not stack the palace, gardens and monasteries', text: 'Potala Palace involves steps at high elevation. Keep Norbulingka, Sera or Drepung as separate optional blocks, subject to current opening, permission and guide instructions. If a visit closes or feels too demanding, return to the Lhasa base rather than adding another site to preserve a checklist.' },
+      { label: 'WEATHER & NOTICES', title: 'Check the day’s forecast and each site notice', text: 'Cold, wind, low humidity and strong ultraviolet exposure can occur at high altitude. Check the China Meteorological Administration forecast and current site or operator notices close to travel; no month guarantees an open road or comfortable outdoor day. Keep an indoor or short city alternative.' },
+      { label: 'BEYOND LHASA', title: 'Treat every higher corridor as a new approval and return plan', text: 'Namtso, Shigatse, Everest-area and other remote routes add distance, sleeping elevation, road exposure and possible extra permission. Ask for the exact authorized route, permitted overnight stops, current road/weather status and return chain. Canada’s current advice separately flags Gyirong County after the August 2026 mudslide; that country-specific warning is not a blanket description of the whole region.' }
     ],
+    decisionsTitle: 'Confirm the permit, base and recovery plan before booking',
     decisions: [
-      { label: 'PERMIT', title: 'No confirmed access means no completed booking chain', text: 'Ask the operator which approvals apply to nationality, visa type and exact route, when documents will be issued and what happens if access changes. Keep flexible international and domestic arrangements until the legal route is credible.' },
-      { label: 'HEALTH', title: 'Discuss personal risk before abrupt ascent', text: 'Travelers with heart, lung, sleep or other relevant conditions should seek individualized medical advice. Evidence-based guidance favors gradual acclimatization; medication decisions belong with a qualified clinician, not a tour salesperson.' },
-      { label: 'ITINERARY', title: 'Do not schedule the hardest stairs first', text: 'Place a gentle orientation and lower-intensity heritage day before the Potala or higher excursions. Build the plan so worsening symptoms can trigger rest, assessment or descent without fighting a chain of non-refundable stops.' }
+      { label: 'DOCUMENTS', title: 'Hold payment until your exact access route is confirmed', text: 'Write down the passport or identity document, visa status, Lhasa dates, hotel and any onward corridor. Ask the competent authority and specialist operator which approvals apply and what happens if a permit or site access changes. Do not misstate a route or use an intermediary to evade a restriction.' },
+      { label: 'BASE & TRANSFERS', title: 'Choose one approved Chengguan base and both transfers', text: 'Match the first pickup to Lhasa Gonggar Airport or Lhasa Railway Station as printed on the ticket. Confirm the return from the same named gateway or an approved onward route; add a spare night if a remote excursion precedes departure.' },
+      { label: 'GENERAL HEALTH', title: 'Make the first days gentle and reassess before going higher', text: 'CDC guidance notes that Lhasa is high altitude and that travelers vary in their response. Keep early activity light, avoid planning a higher sleeping altitude as an automatic next step and seek qualified medical advice for individual risk. This page is general travel information, not medical clearance or treatment advice.' }
     ],
-    itineraryKicker: 'SEVEN STAGES / NO HEROIC ASCENT',
-    itineraryTitle: 'A Lhasa sequence led by the body',
-    itineraryIntro: 'The example below is intentionally slow. It is not medical clearance and does not replace the approved itinerary or current advice from qualified professionals.',
+    itineraryKicker: 'ONE BASE / FOUR TO SEVEN NIGHTS',
+    itineraryTitle: 'A flexible Lhasa week with the return left visible',
+    itineraryIntro: 'This is a city-day grouping, not a safe acclimatization interval or medical clearance. Use four to seven nights in Lhasa; keep higher travel separate until access, weather, road, overnight and personal health questions are reassessed.',
     itinerary: [
-      { label: 'DAY 1 / ARRIVE', title: 'Hotel, guide contact and gentle orientation', text: 'Keep movement light, confirm permits and tickets, eat simply and monitor how the traveler feels. Do not add a high viewpoint or long prostration circuit.' },
-      { label: 'DAY 2 / OLD CITY', title: 'Short Barkhor and Jokhang chapter', text: 'Visit only as approved and follow religious behavior and photography rules. Stop early if symptoms or fatigue worsen and preserve a quiet afternoon.' },
-      { label: 'DAY 3 / ENSEMBLE', title: 'Potala or Norbulingka by capacity', text: 'Use the timed heritage visit appropriate to current health and the operator’s sequence. Move slowly on steps and keep the second component optional.' },
-      { label: 'DAYS 4–7 / DEPTH', title: 'Monastery, museum and only then farther travel', text: 'Add one active institution and one contextual collection. Continue to a higher approved route only after health, weather, permits and staged sleeping elevation are all reassessed.' }
+      { label: 'DAY 1 / ARRIVE', title: 'Airport or station, approved pickup, one hotel', text: 'Use the exact Lhasa Gonggar Airport or Lhasa Railway Station on the ticket. Confirm the pre-arranged transfer and hotel before departure. Leave the day unbooked for a gentle arrival and operator contact.' },
+      { label: 'DAYS 2–3 / OLD CITY', title: 'Short Barkhor and Jokhang blocks', text: 'Visit only on the approved route and follow current worship, entry and photography instructions. Keep each block flexible, leave pathways open and return to the same Lhasa base between outings.' },
+      { label: 'DAY 4 / POTALA SLOT', title: 'Use the confirmed reservation, or keep a city day', text: 'If access and the official timed reservation are confirmed, visit the Potala at an unhurried pace. Do not add Norbulingka or a long road excursion to the same block; if the visit is unavailable, choose a suitable city alternative.' },
+      { label: 'DAYS 5–7 / OPTIONAL DEPTH', title: 'Separate monastery, garden and higher-route decisions', text: 'Keep Norbulingka, Sera or Drepung as separate optional days with current site and guide checks. Use remaining nights for rest or a city-based alternative. Any Namtso, Shigatse or Everest-area route requires a new access, weather, road, overnight, health and return review.' }
     ],
-    practicalTitle: 'Altitude symptoms are not a test of character',
+    practicalTitle: 'Effort, weather and access notices control the next step',
     practical: [
-      { label: 'RED FLAGS', title: 'Worsening symptoms require action', text: 'Severe headache, confusion, difficulty walking, breathlessness at rest or other serious symptoms require urgent professional assessment and often descent. Follow medical guidance and the operator’s emergency process; do not continue upward.' },
-      { label: 'SUN AND DRY AIR', title: 'Protect skin, eyes and hydration', text: 'High ultraviolet exposure, cold, low humidity and wind can coexist. Carry layers, sun protection and water, but do not assume excessive water prevents altitude illness.' },
-      { label: 'CULTURAL SPACE', title: 'Ask before every sensitive photograph', text: 'Obey bans inside temples and at security or military facilities, ask before photographing people and let pilgrims maintain movement and privacy. Drones may be restricted and should never be flown without explicit legal permission.' }
+      { label: 'GENERAL ALTITUDE SAFETY', title: 'Do not treat symptoms as a sightseeing hurdle', text: 'CDC travel guidance describes serious warning signs and the need to stop ascent and seek prompt professional help. If someone becomes seriously unwell, follow local emergency and qualified medical instructions; do not push onward to protect a ticket. This is general information, not individualized medical advice.' },
+      { label: 'WEATHER & EFFORT', title: 'Use the current forecast for outdoor and road choices', text: 'Check the China Meteorological Administration forecast for Lhasa and any higher destination close to travel. Cold, wind, low humidity and high ultraviolet exposure can coincide. Keep layers and sun protection, and follow current site and operator closure notices.' },
+      { label: 'BOOKINGS & RETURN', title: 'Leave a buffer after the final remote night', text: 'Coordinate the Potala reservation, approved guide route and exact return transfer. A road closure, delayed arrival or a changed permit should lead to a shorter Lhasa plan, not an improvised route around a restriction.' }
     ],
     faqs: [
-      { question: 'Do foreign visitors need a permit to travel to Lhasa?', answer: 'Current official travel advice says foreign visitors need advance permission and approved arrangements for the Tibet Autonomous Region. Requirements can change, so verify the exact route with competent authorities and a reputable specialist operator.' },
-      { question: 'Does arriving by train prevent altitude sickness?', answer: 'No. Rail may change the ascent profile but Lhasa still has a high sleeping elevation. Travelers remain at risk and should follow evidence-based acclimatization and medical guidance.' },
-      { question: 'How long should I stay in Lhasa before going higher?', answer: 'There is no single safe number for every person. The CDC describes the first several days as important for acute acclimatization and recommends gradual ascent; discuss personal risk with a qualified clinician and reassess symptoms before going higher.' },
-      { question: 'Can I travel independently around the Tibetan Plateau?', answer: 'Foreign-visitor access and approved-tour requirements constrain independent travel in the Tibet Autonomous Region, and some routes need additional permissions. Confirm the current legal arrangement before booking.' }
+      { question: 'Do the permit rules apply to every passport and identity document?', answer: 'No single nationality-specific advisory settles every case. The UK, Canadian and U.S. governments publish requirements for their own travelers; other passport, Chinese identity, visa and dual-national categories must check with their own government and competent Chinese authority. Confirm the exact itinerary before payment.' },
+      { question: 'How many nights should I keep for Lhasa?', answer: 'Four to seven nights is an editorial planning range for one Lhasa base and separate city blocks. It is not a medical threshold or permission to ascend; individual responses and approved routes differ.' },
+      { question: 'Does the train make the altitude safe?', answer: 'No. CDC guidance identifies Lhasa as a high-altitude destination; the arrival mode does not remove that exposure. Use general safety guidance and qualified personal medical advice where needed.' },
+      { question: 'Can I extend to Namtso or the Everest area independently?', answer: 'Do not assume so. Confirm the exact route, document category, additional permissions, overnight stops, current road and weather status, and return with the competent authority and specialist operator. If any part is restricted or unconfirmed, stay with the approved Lhasa plan.' }
     ],
     sources: [
-      { url: 'https://www.gov.uk/foreign-travel-advice/china/regional-risks', label: 'UK Foreign, Commonwealth and Development Office — current Tibet permit and regional access advice' },
+      { url: 'https://www.gov.uk/foreign-travel-advice/china/regional-risks', label: 'UK Foreign, Commonwealth and Development Office — Tibet and Xinjiang regional advice for British travelers' },
+      { url: 'https://travel.gc.ca/destinations/china', label: 'Government of Canada — Tibet and Xinjiang travel advice for Canadian travelers' },
+      { url: 'https://travel.state.gov/en/international-travel/travel-advisories/china.html', label: 'U.S. Department of State — current China travel advisory for U.S. travelers' },
+      { url: 'https://www.potalapalace.cn/ticket.html', label: 'Potala Palace official website — current ticket reservation system' },
       { url: 'https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html', label: 'US CDC Yellow Book — high-altitude travel and altitude illness' },
+      { url: 'https://weather.cma.cn/', label: 'China Meteorological Administration — current city forecasts' },
       { url: 'https://whc.unesco.org/en/list/707/', label: 'UNESCO World Heritage Centre — Historic Ensemble of the Potala Palace, Lhasa' }
     ],
-    image: { path: '/assets/images/china-destination-lhasa.webp', alt: 'Potala Palace rising above Lhasa against high mountain ridges', caption: 'Lhasa / approved access, living religious heritage and staged acclimatization', source: 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg', creditTitle: 'Potala Palace, Lhasa', creator: 'Lhasa Government', license: 'CC BY-SA 4.0' },
-    search: { type: 'Permit and altitude guide', summary: 'Solve foreign-visitor permission before Lhasa, then stage acclimatization, living heritage visits and any higher plateau route conservatively.', keywords: ['lhasa', 'tibet travel permit', 'potala palace', 'altitude sickness', 'jokhang', 'tibetan plateau'] }
+    sourcesHeading: 'Official sources and original image provenance',
+    sourceNote: 'Travel-access advice, the Potala reservation page and general high-altitude guidance were reviewed on 11 October 2026. Government advisories apply to their named nationals and documents; they do not resolve every traveler category. Check the live rule, ticket, forecast and operator notice before each booking. The original TripDistill diagram is illustrative, not to scale, and is neither a geographic nor navigation map.',
+    image: {
+      path: '/assets/images/china-lhasa-preparation.svg',
+      src: '/assets/images/china-lhasa-preparation.svg',
+      alt: 'Original illustrative sequence from access confirmation to arrival, one Lhasa base and an optional higher route; not to scale and not a geographic or navigation map',
+      caption: 'Lhasa planning sequence / permission → arrival → one base → reassess before any higher route',
+      source: 'https://tripdistill.com/assets/images/china-lhasa-preparation.svg',
+      creditTitle: 'Original Lhasa travel-preparation schematic',
+      sourceTitle: 'Original Lhasa travel-preparation schematic',
+      creator: 'TripDistill Editorial Team',
+      license: null,
+      rightsStatus: 'Project original; no separate reuse license declared',
+      rightsStatusUrl: 'https://tripdistill.com/terms-of-use/',
+      attributionTerms: 'No separate reuse license is declared; the credit identifies authorship and asset provenance only.',
+      assetType: 'original-planning-diagram',
+      localSha1: '002a4aa4986d6691937a65c3b681f328919b6140',
+      editNote: 'Original TripDistill planning schematic. Illustrative, not to scale, and not a geographic or navigation map.',
+      diagramStages: [
+        { title: 'Confirm access', text: 'Match advice and approval to the travel documents and exact route.' },
+        { title: 'Arrive and settle', text: 'Use the ticketed gateway and approved pickup; keep day one open.' },
+        { title: 'Keep one Lhasa base', text: 'Group city visits around a confirmed hotel and flexible recovery time.' },
+        { title: 'Reassess before going higher', text: 'Add no distant corridor until access, weather, road and health checks are complete.' }
+      ]
+    },
+    dateModified: '2026-10-11',
+    search: { type: 'Permit and altitude guide', summary: 'Confirm document-specific permission before booking; plan one Lhasa base, a gentle arrival and a separate access and return check for any higher corridor.', keywords: ['lhasa', 'tibet travel permit', 'potala palace reservation', 'high altitude', 'jokhang', 'tibetan plateau access'] }
   },
   ...northPlainsGuides,
   ...eastLowerYangtzeGuides

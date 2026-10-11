@@ -120,6 +120,13 @@ const chinaSouthwestRoutes = [
   '/china/lijiang-shangri-la/',
   '/china/zhangjiajie/'
 ];
+// CN14B updates the two requested guides and the shared destination hub image/credit wiring.
+const chinaCn14bLastmod = '2026-10-11';
+const chinaCn14bRoutes = [
+  '/china/',
+  '/china/lhasa-tibetan-plateau/',
+  '/china/xinjiang-corridor/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -435,6 +442,11 @@ for (const route of chinaSouthwestRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed southwest China route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaSouthwestRoutesLastmod });
+}
+for (const route of chinaCn14bRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date CN14B China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaCn14bLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);

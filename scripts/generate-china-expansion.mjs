@@ -4,7 +4,7 @@ import { guides } from '../data/china-expansion-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '28 August 2026';
-const assetVersion = '20260828-1';
+const assetVersion = '20261011-1';
 const requestedSlugs = process.argv.find((value) => value.startsWith('--slugs='))
   ?.slice('--slugs='.length).split(',').map((slug) => slug.trim()).filter(Boolean);
 if (requestedSlugs?.length && new Set(requestedSlugs).size !== requestedSlugs.length) {
@@ -113,6 +113,16 @@ function serializeSearchIndex(entries) {
   return `${JSON.stringify(entries, null, 2)}\n`;
 }
 
+function renderHeroMedia(guide) {
+  const { image } = guide;
+  if (image.assetType !== 'original-planning-diagram') {
+    return `<figure class="exp-hero-media"><img src="${image.path}" width="960" height="640" alt="${escapeHtml(image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(image.caption)}</figcaption></figure>`;
+  }
+
+  const stages = image.diagramStages.map((stage, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><div><strong>${escapeHtml(stage.title)}</strong><p>${escapeHtml(stage.text)}</p></div></li>`).join('');
+  return `<figure class="exp-hero-media exp-hero-diagram"><img src="${image.path}" width="960" height="640" alt="${escapeHtml(image.alt)}" fetchpriority="high"><figcaption><strong>${escapeHtml(image.caption)}</strong><ol class="lhasa-diagram-stages">${stages}</ol><p class="lhasa-diagram-note">${escapeHtml(image.editNote)}</p></figcaption></figure>`;
+}
+
 function renderGuide(guide) {
   const route = `/china/${guide.slug}/`;
   const visibleReviewDate = guide.dateModified === '2026-10-11'
@@ -124,9 +134,12 @@ function renderGuide(guide) {
   const chapters = guide.chapters.map((chapter, index) => `<article id="chapter-${index + 1}"><small>${String(index + 1).padStart(2, '0')} / ${escapeHtml(chapter.label)}</small><h3>${escapeHtml(chapter.title)}</h3><p>${escapeHtml(chapter.text)}</p></article>`).join('');
   const sources = guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.label)}</a>.</li>`).join('');
   const faqHtml = guide.faqs.map((faq) => `<details><summary>${escapeHtml(faq.question)}</summary><div class="faq-answer"><p>${escapeHtml(faq.answer)}</p></div></details>`).join('');
-  const photoLicense = guide.image.licenseUrl
-    ? `<a href="${escapeHtml(guide.image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(guide.image.license)}</a>${guide.image.license.startsWith('CC BY-SA ') ? `; this site adaptation is shared under the same ${escapeHtml(guide.image.license)} license` : ''}`
-    : escapeHtml(guide.image.license);
+  const originalDiagram = guide.image.assetType === 'original-planning-diagram';
+  const imageCredit = originalDiagram
+    ? `<li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, <a href="${escapeHtml(guide.image.rightsStatusUrl)}" target="_blank" rel="noopener">${escapeHtml(guide.image.rightsStatus)}</a>. ${escapeHtml(guide.image.editNote)}</li>`
+    : `<li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${guide.image.licenseUrl ? `<a href="${escapeHtml(guide.image.licenseUrl)}" target="_blank" rel="noopener">${escapeHtml(guide.image.license)}</a>${guide.image.license.startsWith('CC BY-SA ') ? `; this site adaptation is shared under the same ${escapeHtml(guide.image.license)} license` : ''}` : escapeHtml(guide.image.license)}.</li>`;
+  const sourceHeading = guide.sourcesHeading || (originalDiagram ? 'Official sources and image provenance' : 'Official sources and photo credit');
+  const sourceNote = guide.sourceNote || `Planning facts and licenses were reviewed on ${visibleReviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.`;
 
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
@@ -145,13 +158,13 @@ function renderGuide(guide) {
     <nav class="breadcrumbs china-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/china/">China</a><span>/</span><span aria-current="page">${escapeHtml(guide.name)}</span></nav>
 
     <article class="exp-guide" data-visual="${guide.visual}">
-      <header class="exp-hero"><div class="exp-hero-copy"><span class="exp-kicker">${escapeHtml(guide.eyebrow)}</span><h1>${escapeHtml(guide.name)} <span>${escapeHtml(guide.titleAccent)}</span></h1><p>${escapeHtml(guide.intro)}</p><div class="exp-facts"><span>Useful stay / ${escapeHtml(guide.nights)}</span><span>Core logic / ${escapeHtml(guide.coreLogic)}</span><span>Watch first / ${escapeHtml(guide.watchFirst)}</span></div></div><figure class="exp-hero-media"><img src="${guide.image.path}" width="960" height="640" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.caption)}</figcaption></figure><div class="exp-motif" aria-label="Guide themes">${motifs}</div></header>
+      <header class="exp-hero"><div class="exp-hero-copy"><span class="exp-kicker">${escapeHtml(guide.eyebrow)}</span><h1>${escapeHtml(guide.name)} <span>${escapeHtml(guide.titleAccent)}</span></h1><p>${escapeHtml(guide.intro)}</p><div class="exp-facts"><span>Useful stay / ${escapeHtml(guide.nights)}</span><span>Core logic / ${escapeHtml(guide.coreLogic)}</span><span>Watch first / ${escapeHtml(guide.watchFirst)}</span></div></div>${renderHeroMedia(guide)}<div class="exp-motif" aria-label="Guide themes">${motifs}</div></header>
 
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
 
       <section class="section exp-orientation" id="orientation" aria-labelledby="orientation-title"><div class="exp-section-heading"><span>THE LOCAL INSTRUMENT</span><h2 id="orientation-title">${escapeHtml(guide.orientationTitle)}</h2><p>${escapeHtml(guide.orientationIntro)}</p></div><div class="exp-chapters">${chapters}</div></section>
 
-      <section class="section exp-decisions" id="arrival" aria-labelledby="arrival-title"><div class="exp-section-heading"><span>BEFORE THE FIRST MORNING</span><h2 id="arrival-title">Make three decisions while the map is still quiet</h2></div><div class="exp-decision-grid">${renderCards(guide.decisions, 'exp-decision-grid')}</div></section>
+      <section class="section exp-decisions" id="arrival" aria-labelledby="arrival-title"><div class="exp-section-heading"><span>BEFORE THE FIRST MORNING</span><h2 id="arrival-title">${escapeHtml(guide.decisionsTitle || 'Make three decisions while the map is still quiet')}</h2></div><div class="exp-decision-grid">${renderCards(guide.decisions, 'exp-decision-grid')}</div></section>
 
       <section class="section exp-itinerary" id="itinerary" aria-labelledby="itinerary-title"><div class="exp-section-heading"><span>${escapeHtml(guide.itineraryKicker)}</span><h2 id="itinerary-title">${escapeHtml(guide.itineraryTitle)}</h2><p>${escapeHtml(guide.itineraryIntro)}</p></div><div class="exp-route">${renderCards(guide.itinerary, 'exp-route')}</div></section>
 
@@ -159,7 +172,7 @@ function renderGuide(guide) {
 
       <section class="section" id="faq" aria-labelledby="faq-title"><div class="exp-section-heading"><span>QUICK ANSWERS</span><h2 id="faq-title">${escapeHtml(guide.name)} planning FAQ</h2></div><div class="faq-list">${faqHtml}</div></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${visibleReviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${photoLicense}.</li></ul></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">${escapeHtml(sourceHeading)}</h2><p>${escapeHtml(sourceNote)}</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li>${imageCredit}</ul></section>
     </article>
   </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body></html>

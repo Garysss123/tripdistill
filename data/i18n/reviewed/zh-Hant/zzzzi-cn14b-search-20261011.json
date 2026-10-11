@@ -1,0 +1,16 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Urumqi, Turpan and Kashgar as separate bases, leave a full transfer day, verify document-specific access and reserve a workable departure chain.": "烏魯木齊、吐魯番與喀什各安排一處住宿據點，預留一整天交通移動，依旅行證件確認通行規定，並先訂妥可行的離程交通。",
+    "identity checks": "身分查驗",
+    "corridor itinerary": "廊道路線規劃",
+    "Confirm document-specific permission before booking; plan one Lhasa base, a gentle arrival and a separate access and return check for any higher corridor.": "預訂前先依旅行證件確認所需許可；以拉薩為單一住宿據點，從容抵達，並另行確認任何更高海拔路線的通行資格與返程安排。",
+    "potala palace reservation": "布達拉宮門票預約",
+    "high altitude": "高海拔",
+    "tibetan plateau access": "青藏高原通行規定"
+  }
+}
