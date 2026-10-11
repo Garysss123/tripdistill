@@ -74,6 +74,27 @@ const verifiedSourcePageDetails = new Map([
     '2026-10-11'
   ],
   [
+    'https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_avec_la_Garonne-2015a.JPG',
+    {
+      detail: 'Bordeaux image review: the exact Commons page identifies Nataloche as creator, dates the Place de la Bourse and Garonne photograph to 18 February 2015, and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels were inspected and show the illuminated Place de la Bourse facade and its night reflection in the Garonne. The alt and caption identify the night view; source, creator, linked license, WebP/crop disclosure and same-version share-alike terms are present. The page declaration is recorded without asserting independent rights clearance.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg',
+    {
+      detail: 'Saint-Émilion image review: the exact Commons page identifies JLPC as creator, dates the photograph to 27 May 2013, describes the village and main square as seen from the monolithic church, and declares CC BY-SA 3.0. The 1600 × 1066 local WebP pixels show Saint-Émilion village and main square as seen from the monolithic church. The alt and caption describe the visible angle; source, creator, linked license, WebP/crop disclosure and same-version share-alike terms are present. The page declaration is recorded without asserting independent rights clearance.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Sunrise_Cap_Ferret_Banc_du_Toulinguet_-_Arcachon_-_Oc%C3%A9an_Atlantique_-_Picture_Image_Photography_-_Sunset_-_Coucher_de_soleil_-_Dune_du_pilat_pyla_-_Banc_d%27arguin_water_eau_vagues_waves_beach_plage_sky_colors_red_yellow_(14501089751).jpg',
+    {
+      detail: 'Arcachon Bay image review: the exact Commons page credits Grand Parc - Bordeaux, France from France, describes a low-sun water view in Arcachon Bay, and declares CC BY 2.0. The 1600 × 1066 local WebP pixels show the low orange sun above open bay water; they do not show Dune du Pilat or a forest. The alt and caption identify bay water, not the dune. Source, exact creator, linked license and WebP/crop disclosure are present. The page declaration is recorded without asserting independent rights clearance.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg',
     'Doi Inthanon photo review: exact Commons title, Nnthurber authorship, CC BY-SA 4.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and match wild Himalayan cherry blossoms framing a distant mountain ridge. Attribution, linked license, change notice and same-version share-alike terms are present.',
     '2026-10-08'
@@ -943,6 +964,9 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/switzerland-zurich-lake-lake-uetliberg.webp', '2026-10-08'],
   ['/assets/images/switzerland-zurich-lake-zurich-west-museums.webp', '2026-10-08'],
   ['/assets/images/france-paris-louvre-salle-mollien-20261006.webp', '2026-10-06'],
+  ['/assets/images/france-bordeaux-gironde-bordeaux-river-wine-city.webp', '2026-10-11'],
+  ['/assets/images/france-bordeaux-gironde-saint-emilion-vineyards.webp', '2026-10-11'],
+  ['/assets/images/france-bordeaux-gironde-arcachon-dune-pilat.webp', '2026-10-11'],
   ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
   ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
   ['/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp', '2026-10-05'],
@@ -1123,7 +1147,14 @@ for (const fullPath of assetPaths) {
   const licenseUrl = uniqueValues('licenseUrl')[0] || explicit?.licenseUrl || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
   const authoredDiagram = dataRecords.some((record) => record.assetType === 'original-planning-diagram');
-  const verification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
+  const rawVerification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
+  const verificationDetail = typeof rawVerification?.detail === 'string'
+    ? rawVerification.detail
+    : typeof rawVerification?.detail?.detail === 'string'
+      ? rawVerification.detail.detail
+      : null;
+  const verificationDate = rawVerification?.detail?.checkedOn || rawVerification?.checkedOn || verifiedOn;
+  const verification = rawVerification ? { detail: verificationDetail, checkedOn: verificationDate } : null;
   const terms = licenseTerms(license, Boolean(verification));
   const commercialReuseEligibility = uniqueValues('commercialReuseEligibility')[0] || terms.commercialReuseEligibility;
   const attributionTerms = uniqueValues('attributionTerms')[0] || explicit?.attributionTerms || terms.attributionTerms;
@@ -1180,6 +1211,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
   assetPaths: rows.map((row) => row.assetPath).sort(),
   byteLength: rows[0].byteLength,
   sourceRecords: rows.map((row) => ({
+    sha256: row.sha256,
     assetPath: row.assetPath,
     assetType: row.assetType,
     sourceUrl: row.sourceUrl,

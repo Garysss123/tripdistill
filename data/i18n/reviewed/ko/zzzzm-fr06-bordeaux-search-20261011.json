@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Gironde looks compact on a map but runs on three different systems: Bordeaux’s TBM tram network, TER rail to Saint-Émilion and Arcachon, then a separate last mile to a booked cellar or the shifting Dune du Pilat. Use Bordeaux Saint-Jean as the hinge, confirm both legs of every excursion, and choose either the dune or a bay crossing on the coastal day.": "지도에서는 지롱드가 아담해 보이지만 실제 이동은 세 가지 체계로 나뉩니다. 보르도의 TBM 트램, 생테밀리옹과 아르카숑으로 가는 TER 열차, 그리고 예약한 와이너리 방문이나 지형이 변하는 필라 사구까지 이어지는 별도의 마지막 구간입니다. 보르도 생장역을 거점으로 삼고 모든 당일여행의 왕복 이동을 확인하세요. 해안 일정에서는 사구 방문과 만 건너기를 둘 다 넣지 말고 하나를 고르세요.",
+    "Follow Place de la Bourse and the Garonne quays once, then choose either a central heritage visit or tram B to La Cité du Vin. The night photograph shows the illuminated facade and river reflection, not daytime conditions.": "플라스 드 라 부르스와 가론강변을 한 번 둘러본 뒤, 도심의 역사 유적을 방문할지 B호선을 타고 라 시테 뒤 뱅에 갈지 선택하세요. 야간 사진에는 조명이 켜진 건물 정면과 강물에 비친 모습이 담겨 있으며, 낮 풍경은 아닙니다.",
+    "The station sits below the medieval village and most vineyards are not walk-up cellar doors. Start at the tourist office, book one official monument tour or one estate appointment, and arrange any rural transfer before travel.": "기차역은 중세 마을 아래쪽에 있고, 대부분의 포도밭 와이너리는 걸어서 바로 들어갈 수 있는 곳이 아닙니다. 관광안내소에서 일정을 시작하고, 공식 유적 투어나 와이너리 방문 예약 중 하나를 잡으세요. 마을 밖으로 이동해야 한다면 출발 전에 교통편도 마련하세요.",
+    "The photograph shows low sun over bay water, not the dune. From Arcachon station, choose one separate route to Dune du Pilat or Cap Ferret; bus, staircase, boat, tide and weather conditions need date-specific checks.": "사진에는 사구가 아니라 만 위로 낮게 뜬 해가 보입니다. 아르카숑역에서 출발해 필라 사구 또는 캅 페레 중 한 곳으로 가는 별도 경로를 선택하세요. 버스 운행, 계단 설치 여부, 선박, 조수와 날씨는 방문 날짜에 맞춰 확인해야 합니다."
+  }
+}

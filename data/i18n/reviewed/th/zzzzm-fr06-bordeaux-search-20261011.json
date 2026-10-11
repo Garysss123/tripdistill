@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Gironde looks compact on a map but runs on three different systems: Bordeaux’s TBM tram network, TER rail to Saint-Émilion and Arcachon, then a separate last mile to a booked cellar or the shifting Dune du Pilat. Use Bordeaux Saint-Jean as the hinge, confirm both legs of every excursion, and choose either the dune or a bay crossing on the coastal day.": "แม้ Gironde จะดูมีขนาดกะทัดรัดบนแผนที่ แต่การเดินทางต้องเชื่อมต่อ 3 ระบบ ได้แก่ รถราง TBM ใน Bordeaux รถไฟ TER ไป Saint-Émilion และ Arcachon แล้วต่อการเดินทางช่วงสุดท้ายแยกต่างหากไปยังโรงบ่มไวน์ที่จองไว้หรือเนินทราย Dune du Pilat ซึ่งเคลื่อนตัวตามธรรมชาติ ใช้ Bordeaux Saint-Jean เป็นสถานีเชื่อมต่อ ตรวจสอบทั้งขาไปและขากลับของทุกทริป และเลือกไปเนินทรายหรือข้ามอ่าวอย่างใดอย่างหนึ่งในวันเที่ยวชายฝั่ง",
+    "Follow Place de la Bourse and the Garonne quays once, then choose either a central heritage visit or tram B to La Cité du Vin. The night photograph shows the illuminated facade and river reflection, not daytime conditions.": "เดินชม Place de la Bourse และแนวท่าน้ำริม Garonne แล้วเลือกชมแหล่งมรดกทางประวัติศาสตร์ในใจกลางเมือง หรือขึ้นรถรางสาย B ไป La Cité du Vin ภาพถ่ายยามค่ำคืนแสดงอาคารที่เปิดไฟส่องสว่างและเงาสะท้อนบนแม่น้ำ ไม่ใช่บรรยากาศในเวลากลางวัน",
+    "The station sits below the medieval village and most vineyards are not walk-up cellar doors. Start at the tourist office, book one official monument tour or one estate appointment, and arrange any rural transfer before travel.": "สถานีอยู่ต่ำกว่าหมู่บ้านยุคกลาง และไร่องุ่นส่วนใหญ่ไม่มีห้องชิมไวน์ที่เดินเข้าไปได้โดยไม่ได้นัดหมาย เริ่มต้นที่สำนักงานการท่องเที่ยว จองทัวร์อนุสรณ์สถานอย่างเป็นทางการหนึ่งแห่งหรือนัดหมายเข้าชมไร่องุ่นหนึ่งแห่ง และจัดการรถรับส่งไปยังพื้นที่ชนบทก่อนออกเดินทาง",
+    "The photograph shows low sun over bay water, not the dune. From Arcachon station, choose one separate route to Dune du Pilat or Cap Ferret; bus, staircase, boat, tide and weather conditions need date-specific checks.": "ภาพแสดงแสงอาทิตย์ที่อยู่ต่ำเหนือผิวน้ำในอ่าว ไม่ใช่เนินทราย จากสถานี Arcachon ให้เลือกเส้นทางไป Dune du Pilat หรือ Cap Ferret เพียงแห่งเดียว และตรวจสอบเงื่อนไขรถโดยสาร บันไดขึ้นเนิน เรือ ระดับน้ำขึ้นลง และสภาพอากาศตามวันที่เดินทาง"
+  }
+}

@@ -90,7 +90,7 @@ function regionalCss(clusterSlug) {
 }
 
 function usesHumanPhotoCredits(clusterSlug) {
-  return clusterSlug === 'paris-region-day-trips' || clusterSlug === 'normandy' || clusterSlug === 'loire-valley' || clusterSlug === 'champagne';
+  return clusterSlug === 'paris-region-day-trips' || clusterSlug === 'normandy' || clusterSlug === 'loire-valley' || clusterSlug === 'champagne' || clusterSlug === 'bordeaux-gironde';
 }
 
 function shellStart(mainOpen) {

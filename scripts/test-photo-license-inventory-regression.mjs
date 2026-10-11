@@ -16,6 +16,11 @@ const hueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_
 const hueTombLicenseUrl = 'https://creativecommons.org/licenses/by-sa/2.0/';
 const legacyHueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
 const legacyHueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
+const bordeauxPhotos = [
+  { assetPath: '/assets/images/france-bordeaux-gironde-bordeaux-river-wine-city.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_avec_la_Garonne-2015a.JPG', sourceTitle: 'File:Bordeaux place de la bourse avec la Garonne-2015a.JPG', creator: 'Nataloche', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourceDate: '18 February 2015', localSha256: '53a12b65244cfffd88fa11653287771ef87387108112dca87c18b07f93d36387', subject: 'illuminated Place de la Bourse facade and its night reflection in the Garonne' },
+  { assetPath: '/assets/images/france-bordeaux-gironde-saint-emilion-vineyards.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg', sourceTitle: 'File:Saint-Emilion 33 Place 2013.jpg', creator: 'JLPC', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourceDate: '27 May 2013', localSha256: 'c1a821385fa2aeefcda31feb83400e8c0728142dcfbf0ac3807f381c001bbb64', subject: 'Saint-Émilion village and main square as seen from the monolithic church' },
+  { assetPath: '/assets/images/france-bordeaux-gironde-arcachon-dune-pilat.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunrise_Cap_Ferret_Banc_du_Toulinguet_-_Arcachon_-_Oc%C3%A9an_Atlantique_-_Picture_Image_Photography_-_Sunset_-_Coucher_de_soleil_-_Dune_du_pilat_pyla_-_Banc_d%27arguin_water_eau_vagues_waves_beach_plage_sky_colors_red_yellow_(14501089751).jpg', sourceTitle: "File:Sunrise Cap Ferret Banc du Toulinguet - Arcachon - Océan Atlantique - Picture Image Photography - Sunset - Coucher de soleil - Dune du pilat pyla - Banc d'arguin water eau vagues waves beach plage sky colors red yellow (14501089751).jpg", creator: 'Grand Parc - Bordeaux, France from France', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', localSha256: 'b622a8f4affd7f65a959456ba412e0799bd6484d5b6484ef37ec3009224000b3', subject: 'low orange sun above open bay water' }
+];
 const wadjemupDiagramAssetPath = '/assets/images/australia-wadjemup-ferry-day-sequence.svg';
 const wadjemupDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg';
 const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp';
@@ -125,7 +130,7 @@ try {
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 539, 'integrated Andaman, Ayutthaya, Cornwall, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 536, 'integrated Andaman, Ayutthaya, Cornwall, Bordeaux/Gironde, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -158,6 +163,66 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const bordeauxRoutes = [
+    '/france/bordeaux-gironde/',
+    '/france/bordeaux-gironde/bordeaux-river-wine-city/',
+    '/france/bordeaux-gironde/saint-emilion-vineyards/',
+    '/france/bordeaux-gironde/arcachon-dune-pilat/'
+  ];
+  for (const image of bordeauxPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Bordeaux/Gironde inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, image.licenseUrl);
+    assert.equal(record.sha256, image.localSha256, 'inventory hash must match the reviewed local pixels');
+    assert.equal(record.metadataOrigin, 'structured_data_record');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.subject), 'the source-page and pixel match note must state the inspected subject');
+    if (image.sourceDate) assert.ok(record.verificationDetail.includes(image.sourceDate), 'the source photo date must be recorded');
+    assert.ok(record.verificationDetail.includes('without asserting independent rights clearance'));
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+    if (image.license.includes('BY-SA')) assert.ok(record.editHistory.includes(image.license), 'CC BY-SA adaptations must preserve the exact share-alike license version');
+    assert.ok(bordeauxRoutes.every((route) => record.routes.includes(route)), 'each current Bordeaux image must be used by the four reviewed routes');
+  }
+  const bordeauxLocales = [
+    { locale: 'en', prefix: '' },
+    { locale: 'zh-Hant', prefix: 'zh' },
+    { locale: 'ja', prefix: 'ja' },
+    { locale: 'ko', prefix: 'ko' },
+    { locale: 'th', prefix: 'th' }
+  ];
+  const bordeauxEditNoteSource = (license) => `. Resized, cropped for display and converted to WebP; changes disclosed. Shared under the same ${license} license.`;
+  const bordeauxEditNoteTranslations = Object.fromEntries(bordeauxLocales.filter(({ locale }) => locale !== 'en').map(({ locale }) => {
+    const batch = JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', locale, 'zzzzn-fr06-bordeaux-pages-20261011.json'), 'utf8'));
+    return [locale, batch.translations];
+  }));
+  for (const { locale, prefix } of bordeauxLocales) {
+    for (const route of bordeauxRoutes) {
+      const document = parse(fs.readFileSync(path.join(root, prefix, route, 'index.html'), 'utf8'));
+      for (const image of bordeauxPhotos) {
+        const matchingPixels = findAll(document, (node) => node.tagName === 'img' && attrs(node).src === image.assetPath);
+        assert.ok(matchingPixels.length >= 1, `${locale} ${route} must use the pixel-reviewed image ${image.assetPath}`);
+        const exactCredits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === image.sourceUrl).length > 0);
+        assert.equal(exactCredits.length, 1, `${locale} ${route} must link the exact Commons page for ${image.assetPath}`);
+        const credit = textContent(exactCredits[0]);
+        assert.ok(credit.includes(image.creator), `${locale} ${route} must retain exact creator attribution`);
+        assert.ok(credit.includes(image.license), `${locale} ${route} must retain the exact license version`);
+        assert.ok(findAll(exactCredits[0], (link) => link.tagName === 'a' && attrs(link).href === image.licenseUrl).length, `${locale} ${route} must link the declared license`);
+        assert.ok(credit.includes('WebP'), `${locale} ${route} must show the image adaptation disclosure`);
+        if (image.license.includes('BY-SA')) {
+          const editNote = locale === 'en' ? bordeauxEditNoteSource(image.license) : bordeauxEditNoteTranslations[locale][bordeauxEditNoteSource(image.license)];
+          assert.ok(editNote && credit.includes(editNote), `${locale} ${route} must retain the localized adaptation disclosure and exact share-alike license version`);
+        }
+      }
+    }
+  }
   const cornwallPhotos = [
     { assetPath: '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg', sourceTitle: 'File:The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg', creator: 'nick macneill', license: 'CC BY-SA 2.0', sourcePhotoDate: '1991-09-15', originalSize: '1,024 × 693' },
     { assetPath: '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg', sourceTitle: 'File:Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg', creator: 'Mutney', license: 'CC BY 4.0', sourcePhotoDate: '2025-06-28', originalSize: '4,032 × 2,198' },
@@ -260,7 +325,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 4, 'inventory must count explicitly recorded project-original artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 537, 'integrated CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 534, 'integrated Bordeaux/Gironde, CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
