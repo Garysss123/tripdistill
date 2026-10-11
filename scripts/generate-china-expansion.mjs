@@ -72,7 +72,12 @@ function jsonLd(guide) {
           name: faq.question,
           acceptedAnswer: { '@type': 'Answer', text: faq.answer }
         }))
-      }
+      },
+      ...(guide.dateModified === '2026-10-10' ? [{
+        '@type': 'WebPage',
+        url: `https://tripdistill.com${route}`,
+        dateModified: guide.dateModified
+      }] : [])
     ]
   }).replaceAll('<', '\\u003c');
 }
@@ -94,21 +99,12 @@ function renderCards(items, className) {
 }
 
 function serializeSearchIndex(entries) {
-  const objects = entries.map((entry) => [
-    '  {',
-    `    "title": ${JSON.stringify(entry.title)},`,
-    `    "url": ${JSON.stringify(entry.url)},`,
-    `    "parent": ${JSON.stringify(entry.parent)},`,
-    `    "type": ${JSON.stringify(entry.type)},`,
-    `    "summary": ${JSON.stringify(entry.summary)},`,
-    `    "keywords": [${entry.keywords.map((keyword) => JSON.stringify(keyword)).join(', ')}]`,
-    '  }'
-  ].join('\n'));
-  return `[\n${objects.join(',\n')}\n]\n`;
+  return `${JSON.stringify(entries, null, 2)}\n`;
 }
 
 function renderGuide(guide) {
   const route = `/china/${guide.slug}/`;
+  const visibleReviewDate = guide.dateModified === '2026-10-10' ? '10 October 2026' : reviewDate;
   const motifs = guide.motifs.map((motif, index) => `<span><b>${String(index + 1).padStart(2, '0')}</b>${escapeHtml(motif)}</span>`).join('');
   const chapters = guide.chapters.map((chapter, index) => `<article id="chapter-${index + 1}"><small>${String(index + 1).padStart(2, '0')} / ${escapeHtml(chapter.label)}</small><h3>${escapeHtml(chapter.title)}</h3><p>${escapeHtml(chapter.text)}</p></article>`).join('');
   const sources = guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.label)}</a>.</li>`).join('');
@@ -145,7 +141,7 @@ function renderGuide(guide) {
 
       <section class="section" id="faq" aria-labelledby="faq-title"><div class="exp-section-heading"><span>QUICK ANSWERS</span><h2 id="faq-title">${escapeHtml(guide.name)} planning FAQ</h2></div><div class="faq-list">${faqHtml}</div></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${reviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${escapeHtml(guide.image.license)}.</li></ul></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and licenses were reviewed on ${visibleReviewDate}. Transport, reservations, protected-area access, border rules and local operating arrangements change; verify the current authority or operator close to travel. The image was resized and converted to WebP; its display crop may vary by screen, with no other material changes.</p><ul>${sources}<li><a href="https://www.12306.cn/en/faq.html?item=1" target="_blank" rel="noopener">China Railway 12306 — official ticket and identity-document guidance</a>.</li><li><a href="${escapeHtml(guide.image.source)}" target="_blank" rel="noopener">${escapeHtml(guide.image.creditTitle)}</a> — ${escapeHtml(guide.image.creator)}, ${escapeHtml(guide.image.license)}.</li></ul></section>
     </article>
   </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body></html>
