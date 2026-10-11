@@ -5,6 +5,17 @@ import { guides } from '../data/china-expansion-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '28 August 2026';
 const assetVersion = '20260828-1';
+const requestedSlugs = process.argv.find((value) => value.startsWith('--slugs='))
+  ?.slice('--slugs='.length).split(',').map((slug) => slug.trim()).filter(Boolean);
+if (requestedSlugs?.length && new Set(requestedSlugs).size !== requestedSlugs.length) {
+  throw new Error('--slugs contains duplicates.');
+}
+const requested = requestedSlugs?.length ? new Set(requestedSlugs) : null;
+const selectedGuides = requested ? guides.filter((guide) => requested.has(guide.slug)) : guides;
+if (requested && selectedGuides.length !== requested.size) {
+  const found = new Set(selectedGuides.map((guide) => guide.slug));
+  throw new Error(`Unknown guide slug(s): ${[...requested].filter((slug) => !found.has(slug)).join(', ')}`);
+}
 const searchParents = {
   guangzhou: 'China · Guangdong',
   shenzhen: 'China · Guangdong',
@@ -73,7 +84,7 @@ function jsonLd(guide) {
           acceptedAnswer: { '@type': 'Answer', text: faq.answer }
         }))
       },
-      ...(guide.dateModified === '2026-10-10' ? [{
+      ...(guide.dateModified === '2026-10-10' || guide.dateModified === '2026-10-11' ? [{
         '@type': 'WebPage',
         url: `https://tripdistill.com${route}`,
         dateModified: guide.dateModified
@@ -104,7 +115,11 @@ function serializeSearchIndex(entries) {
 
 function renderGuide(guide) {
   const route = `/china/${guide.slug}/`;
-  const visibleReviewDate = guide.dateModified === '2026-10-10' ? '10 October 2026' : reviewDate;
+  const visibleReviewDate = guide.dateModified === '2026-10-11'
+    ? '11 October 2026'
+    : guide.dateModified === '2026-10-10'
+      ? '10 October 2026'
+      : reviewDate;
   const motifs = guide.motifs.map((motif, index) => `<span><b>${String(index + 1).padStart(2, '0')}</b>${escapeHtml(motif)}</span>`).join('');
   const chapters = guide.chapters.map((chapter, index) => `<article id="chapter-${index + 1}"><small>${String(index + 1).padStart(2, '0')} / ${escapeHtml(chapter.label)}</small><h3>${escapeHtml(chapter.title)}</h3><p>${escapeHtml(chapter.text)}</p></article>`).join('');
   const sources = guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.label)}</a>.</li>`).join('');
@@ -149,7 +164,7 @@ function renderGuide(guide) {
 }
 
 const seen = new Set();
-for (const guide of guides) {
+for (const guide of selectedGuides) {
   if (seen.has(guide.slug)) throw new Error(`Duplicate guide slug: ${guide.slug}`);
   seen.add(guide.slug);
   if (guide.chapters.length !== 8) throw new Error(`${guide.slug}: expected 8 chapters`);
@@ -165,12 +180,12 @@ for (const guide of guides) {
   console.log(`${guide.slug}: ${visibleWords} words`);
 }
 
-console.log(`Generated ${guides.length} complete China destination guides.`);
+console.log(`Generated ${selectedGuides.length} complete China destination guide(s).`);
 
 const searchPath = path.join(root, 'data', 'search-index.json');
 const existingSearch = JSON.parse(fs.readFileSync(searchPath, 'utf8'));
-const expansionUrls = new Set(guides.map((guide) => `/china/${guide.slug}/`));
-const expansionSearch = guides.map((guide) => ({
+const expansionUrls = new Set(selectedGuides.map((guide) => `/china/${guide.slug}/`));
+const expansionSearch = selectedGuides.map((guide) => ({
   title: `${guide.name} Travel Guide`,
   url: `/china/${guide.slug}/`,
   parent: searchParents[guide.slug],
@@ -178,6 +193,9 @@ const expansionSearch = guides.map((guide) => ({
   summary: guide.search.summary,
   keywords: guide.search.keywords
 }));
-const updatedSearch = existingSearch.filter((entry) => !expansionUrls.has(entry.url)).concat(expansionSearch);
+const searchByUrl = new Map(expansionSearch.map((entry) => [entry.url, entry]));
+const existingUrls = new Set(existingSearch.map((entry) => entry.url));
+const updatedSearch = existingSearch.map((entry) => searchByUrl.get(entry.url) || entry)
+  .concat(expansionSearch.filter((entry) => !existingUrls.has(entry.url)));
 fs.writeFileSync(searchPath, serializeSearchIndex(updatedSearch));
 console.log(`Synchronized ${expansionSearch.length} China destination search records.`);
