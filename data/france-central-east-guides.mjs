@@ -834,129 +834,208 @@ export const franceCentralEastClusters = [
   }),
   c({
     slug: 'burgundy',
+    reviewDate: '11 October 2026',
+    reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
     name: 'Dijon, Beaune & Burgundy',
     region: 'Bourgogne-Franche-Comté',
     band: 'valleys-east',
     family: 'climat-cellar-atlas',
     label: 'Climat and cellar atlas',
-    tagline: 'Separate ducal city, wine capital and abbey country.',
-    hubIntro: 'Burgundy’s “climats” are working vineyard parcels, not a single attraction road. Dijon and Beaune are rail-connected city bases; the Route des Grands Crus and abbey hills require a bicycle, tour, car or rural connection plus responsible tasting decisions.',
-    stay: 'Two or three nights between Dijon and Beaune support both cities and one vineyard or abbey day. Dijon has broader rail and museum depth; Beaune makes cellars and the southern Côte-d’Or easier.',
-    transfer: 'Frequent regional trains join Dijon and Beaune, but vineyard villages and abbeys need a deliberate last mile. Bicycle routes can be excellent yet still require weather, rental hours and sober riding.',
-    season: 'Harvest alters vineyard traffic and appointment availability; summer increases heat and bicycle pressure. Winter favors city collections and cellar visits, while rural openings and daylight can be limited.',
-    fallback: 'Use Dijon or Beaune museums and markets when rural appointments or weather fail. A cancelled tasting should become architecture, food and landscape—not a search for an unverified cellar door.',
+    tagline: 'Choose the city base before the vineyard or abbey transfer.',
+    hubIntro: 'Burgundy is a set of different days: Dijon’s ducal center, Beaune’s Hôtel-Dieu and cellar appointments, vineyard villages on the Route des Grands Crus, and two distant abbey landscapes. The Climats are named, bounded vineyard parcels shaped by people and place, not one attraction road. Let the TER and Mobigo spine carry the city move; book each rural last mile separately.',
+    searchSummary: 'Plan Burgundy around a two-city rail spine: give Dijon a city day, use Beaune for the Hôtel-Dieu and one booked vineyard day, and treat Vézelay or Fontenay as separate rural excursions. TER and Mobigo connect named bases; harvest, cellar appointments and the return decide which plan works.',
+    stay: 'For two or three nights, choose one base: Dijon suits the ducal center, museums and a checked Côte de Nuits outing; Beaune suits the Hôtel-Dieu, cellars and the southern vineyard edge. Four or five nights can support two Dijon nights and two or three in Beaune, with one city day in each and a separate vineyard day. Add a fifth or sixth night only when an abbey has a confirmed transfer. Moving hotels costs a usable block, and Vézelay and Fontenay point in different directions.',
+    transfer: 'The named city link is TER Bourgogne-Franche-Comté between Dijon-Ville and Beaune-Ville; Mobigo coach 113 also links Dijon and Beaune, while coach 114 serves the Gevrey-Chambertin and Brochon corridor. Check the exact stop, date and return in the live operator schedule: no headway is promised here. A train or coach to a base does not reach every cellar. Book a tour, taxi or bicycle for a vineyard day, and treat Vézelay and Fontenay as separate rural transfers.',
+    season: 'Spring and summer open longer walking and cycling days, but heat, rain and rental hours can change the route. The Beaune tourism office notes pruning in February and harvest in September; harvest work can restrict access and makes cellar appointments more important. The November Hospices wine sale draws visitors, so check the current event date before choosing a Beaune weekend. Short winter daylight and rural service calendars favor the city museums and a confirmed cellar over an improvised village chain.',
+    fallback: 'If a rural pickup, cellar appointment or weather window falls through, keep the day in its booked city: use Dijon’s Palace and museum, or Beaune’s Hôtel-Dieu and walled center. Do not replace a missed coach with a vineyard road walk or assume a taxi will appear. If the Beaune event calendar or harvest crowds make the base awkward, stay in Dijon and make only a dated rail or coach excursion that has a verified return.',
+    reviewDisclaimer: 'Route and seasonal notes were checked on 11 October 2026. Recheck TER and Mobigo timetables, named stops, market and monument calendars, cellar appointments, harvest access and weather for the actual date; no fare, frequency or journey-time promise is made here.',
+    itineraryLabel: 'Four-night city-and-vineyard plan',
+    itineraryHeading: 'Use the rail spine for the cities; book the vineyard day as its own trip.',
+    itineraryIntro: 'This framework assumes four usable days. If arrival or departure removes a day, drop the rural excursion before compressing the two city visits. Fontenay and Vézelay need separate plans beyond this sequence.',
+    itinerary: [
+      ['Day 1 · Dijon', 'Start at Dijon-Ville, walk into the central pedestrian streets, and give the Palace of the Dukes and Musée des Beaux-Arts one substantial block. Finish at Les Halles or the gastronomy district only if its calendar fits; keep the station return clear.'],
+      ['Day 2 · Côte de Nuits choice', 'Book one cellar or guided vineyard visit. Check Mobigo coach 114 toward Gevrey-Chambertin/Brochon or a named operator pickup, then confirm the outbound and return before paying for the appointment. If the route does not fit, keep a second Dijon museum and market day.'],
+      ['Day 3 · Move to Beaune', 'Use TER between Dijon-Ville and Beaune-Ville or check Mobigo coach 113. Leave luggage at the actual lodging, then visit the Hôtel-Dieu and old center. Do not add a tasting until its time and location fit the hotel move.'],
+      ['Day 4 · Beaune and one vineyard layer', 'Choose a booked cellar in town or a short, signed section of the Voie des Vignes/Chemin des Grands Crus toward a named village such as Pommard or Meursault. The routes are for walking or cycling, not a substitute for return transport; check the exact route, weather and rental return.']
+    ],
+    faq: [
+      ['How many nights should I plan for Burgundy?', 'Two or three nights work best in one base. Four or five can split between Dijon and Beaune for one day in each plus a planned vineyard outing. Reserve extra nights for a rural abbey transfer rather than trying to reach both abbeys from a city day.'],
+      ['Can I use Dijon as a base for Beaune?', 'Yes. TER Bourgogne-Franche-Comté connects Dijon-Ville and Beaune-Ville, and Mobigo lists coach 113 between Dijon and Beaune. Check the date-specific return; staying in Beaune is more useful when the Hôtel-Dieu, cellar appointment and vineyard day are the focus.'],
+      ['Can I reach vineyards by public transport?', 'Some routes reach named towns: Mobigo coach 114 serves the Gevrey-Chambertin/Brochon corridor, and Côte & Bus lists routes between Beaune and nearby villages. A stop is not a cellar appointment. Check its exact location, service date and return, or book a driver, tour or bicycle.'],
+      ['Should I combine Vézelay and Fontenay?', 'Only with a planned vehicle or guided route. Mobigo coach 119 runs between Dijon and Avallon; Fontenay is 6 km from Montbard TGV station and needs its own transfer. They are separate countryside days, not a rail-and-walk pairing.']
+    ],
     sources: [
       ['https://www.burgundy-tourism.com/', 'Burgundy Tourism — official regional guide'],
+      ['https://www.beaune-tourisme.fr/explorer/decouvrir-les-hospices-de-beaune/la-vente-des-vins/', 'Beaune Tourism — official Hospices wine-sale information'],
       ['https://www.ter.sncf.com/bourgogne-franche-comte', 'TER Bourgogne-Franche-Comté — official rail information'],
+      ['https://www.viamobigo.fr/en/route-schedules/6/RouteSchedules/getall', 'Mobigo — current regional coach and city-network route list'],
       ['https://www.climats-bourgogne.com/en/', 'Climats of Burgundy — official World Heritage interpretation']
     ],
     guides: [
       g({
         slug: 'dijon-ducal-city',
+        reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
         name: 'Dijon Ducal City & Markets',
         instrument: 'Owl-trail civic register',
         layout: 'ducal-city-register',
         imageQuery: 'Dijon Palace of Dukes Burgundy France old town',
         imageAlt: 'The Palace of the Dukes in Dijon’s historic center',
-        purpose: 'Use Dijon’s ducal center, Musée des Beaux-Arts and market streets as a complete city decision, not merely a platform before the vineyards.',
-        summary: 'Follow the compact center from station to ducal palace, choose one collection, and use market or gastronomy stops without turning branded foods into the whole story.',
+        purpose: 'Choose a substantial Dijon city day or a separate, booked Côte de Nuits excursion instead of treating the ducal center as a pre-tasting walk.',
+        summary: 'Walk from Dijon-Ville through Place Darcy and the old center to the Palace of the Dukes and Musée des Beaux-Arts; choose a market finish or check Mobigo coach 114 toward Gevrey-Chambertin for a separately planned vineyard day.',
+        searchSummary: 'Dijon works as Burgundy’s rail base: walk from Dijon-Ville through Place Darcy to the Palace of the Dukes, Musée des Beaux-Arts and Les Halles, then add Gevrey only with a checked Mobigo 114 return and a booked cellar.',
+        siteContext: {
+          label: 'Ducal seat, city museum and working market',
+          heading: 'Give the palace, collection and food streets different jobs.',
+          intro: 'Dijon’s historic center is compact enough to walk, but the Palace of the Dukes contains more than one visit. Choose the civic and ducal setting, the museum collection, or a timed rural appointment as the main block.',
+          details: [
+            ['Place Darcy to the old center', 'From Dijon-Ville, use Place Darcy as the first orientation point, then walk east through the central streets toward Notre-Dame and Place de la Libération. Keep the return westward in mind before adding a second district.'],
+            ['Palace and Musée des Beaux-Arts', 'The Palace of the Dukes is both a civic landmark and the home of the Musée des Beaux-Arts. Select the galleries or current exhibition that matter to you; a broad collection is not a quick stop between trains.'],
+            ['Les Halles and gastronomy', 'Use the covered market and nearby food streets as a separate choice from a vineyard tasting. Market days and trading hours change the value of this finish, so check the current city calendar.']
+          ]
+        },
         choices: [
-          ['Ducal history and fine arts', 'Give the palace complex and Musée des Beaux-Arts the main block, then use the Owl Trail for urban context.'],
-          ['Market and architecture', 'Prioritize Les Halles, timbered streets, churches and civic façades. This is more flexible but depends on market day and religious access.'],
-          ['Dijon plus vineyard edge', 'Use the city early, then join a pre-arranged Côte de Nuits excursion. The rural transport and sober return replace a second museum.']
+          ['Palace and a chosen museum collection', 'Enter the Palace of the Dukes for the Musée des Beaux-Arts, then walk the central streets and note how civic rooms share the site. This is the strongest wet-weather and first-visit option.'],
+          ['Market and old-town walk', 'Begin at Les Halles when its current market calendar fits, then follow the old streets toward Notre-Dame and Place de la Libération. This leaves museum galleries for another date and works best when market access is confirmed.'],
+          ['Dijon plus one Côte de Nuits stop', 'Book one cellar or guided visit and check Mobigo coach 114 toward Gevrey-Chambertin/Brochon, including the named stop and return. The transfer and appointment replace a long museum visit; do not drive after tasting.']
         ],
-        access: 'Dijon-Ville station is walkable to the historic center by avenue and pedestrian streets. If continuing to a vineyard, meet the operator at a named point rather than assuming departures use the station forecourt.',
-        tradeoff: 'A Côte de Nuits excursion removes time for the art museum and long market lunch. The route gives up one city layer so Dijon remains legible rather than a hurried pre-tasting walk.',
+        access: 'Arrive at Dijon-Ville and orient at Place Darcy before walking through the center toward Notre-Dame and Place de la Libération. For the rural alternative, Mobigo lists coach 114 through Gevrey-Chambertin and Brochon; verify the exact stop and date in the live route schedule, then meet any cellar or guide at its confirmed pickup point.',
+        tradeoff: 'A vineyard excursion uses a separate coach or booked pickup and removes either the museum block or the market finish. Keep the city day complete unless the return transport and appointment leave an unhurried route.',
         stages: [
-          ['Enter on the station-to-palace line', 'Walk through the western center, note the return route and use the Owl Trail markers as orientation rather than a requirement to collect every plaque.'],
-          ['Anchor at the ducal complex', 'Use the palace courtyards and selected museum galleries. Check current room access before planning around a single artwork.'],
-          ['Choose market or vineyard', 'Continue through Les Halles and churches, or meet the arranged rural transport. Eat before tasting and keep purchases manageable for the return.'],
-          ['Finish near a direct station route', 'Use Darcy or the western center for the final stop so the train does not require another cross-city loop.']
+          ['Start from Dijon-Ville', 'Walk west to Place Darcy, mark the same return point, then turn east into the old center. If you have luggage, settle it before attempting a museum or market day.'],
+          ['Read the ducal center', 'Visit the Palace of the Dukes and choose a meaningful section of the Musée des Beaux-Arts. Check the museum’s current visitor information and any timed entry before setting the day around a specific room.'],
+          ['Choose one city finish', 'Continue to Les Halles and nearby food streets when the market calendar fits, or use the quieter streets and church exteriors. A Côte de Nuits trip is a different day unless coach 114 and a reserved visit line up.'],
+          ['Return through Place Darcy', 'Walk back toward Dijon-Ville before the final train becomes urgent. If you took coach 114, return to the exact stop and direction confirmed in the dated Mobigo schedule; do not assume the vineyard operator returns to the station.']
         ],
-        fallback: 'If the vineyard trip cancels, use the Musée des Beaux-Arts, Musée de la Vie Bourguignonne or covered market where open. If a museum closes, the Owl Trail and church exteriors still produce a coherent city route.',
+        fallback: 'If a rural appointment or coach does not fit, stay in the center: use the current Musée des Beaux-Arts visit, the covered market when open, or a self-guided old-town walk between Place Darcy and Place de la Libération. If the museum schedule changes, do not replace it with an unbooked vineyard taxi.',
         watch: [
-          ['Market days and hours matter', 'Do not build the food section around Les Halles without checking the current trading schedule.'],
-          ['Museum scale can absorb the afternoon', 'Select galleries and stop before a rural appointment becomes rushed.'],
-          ['Tastings change the return', 'Use a tour, driver or train; the person driving the vineyard route remains sober.']
+          ['The market has its own calendar', 'Check Les Halles’ current opening days before choosing it as the lunch anchor; keep the museum or old-town walk as the alternative.'],
+          ['A named coach stop is not a cellar door', 'Mobigo 114 serves a corridor, not every producer. Confirm the stop, appointment address and onward walk or pickup before leaving Dijon.'],
+          ['The return sets the tasting plan', 'Check the last workable coach or booked driver before tasting. Anyone driving the vineyard route stays sober.']
         ],
-        duration: 'Allow five to seven hours for Dijon city and a full day if adding one vineyard cluster. The art museum alone can justify several hours.',
-        combine: 'Combine Dijon with a short, arranged Côte de Nuits visit. Keep Beaune, Vézelay and Fontenay as separate days.',
-        verify: 'Check museum and market opening, any tower reservation, vineyard pickup, urban access and the return train before setting the order.',
+        duration: 'Give Dijon most of a day: allow one substantial block for the Palace and museum, then a market or old-town finish. A Côte de Nuits appointment needs a separate full-day envelope once coach or pickup and return are counted.',
+        combine: 'Combine the Palace and Musée des Beaux-Arts with one walkable city finish. Keep Beaune, Vézelay and Fontenay on separate days; Gevrey belongs only with a dated coach or driver plan.',
+        verify: 'Reopen Dijon Museums’ visitor calendar, Les Halles’ market days, Mobigo coach 114 stops and timetable, the cellar appointment and the return to Dijon-Ville before committing.',
+        faq: [
+          ['Can I see Dijon without a car?', 'Yes. Dijon-Ville, Place Darcy, the Palace of the Dukes, Musée des Beaux-Arts and Les Halles form a walkable city day. A Côte de Nuits cellar is a separate trip; check Mobigo coach 114 or arrange a named pickup.'],
+          ['How long should I give the Musée des Beaux-Arts?', 'Make it the main indoor block and choose the current galleries or exhibition you care about. The museum’s visitor calendar controls access; do not squeeze the Palace into a short gap before a rural booking.'],
+          ['Can I visit Gevrey-Chambertin from Dijon by bus?', 'Mobigo currently lists coach 114 on the Dijon–Saint-Philibert corridor serving Gevrey-Chambertin and Brochon. Check the dated route, exact stop, return and cellar reservation before treating it as a day trip.']
+        ],
         sources: [
-          ['https://en.destinationdijon.com/', 'Dijon Tourism — official city planning'],
-          ['https://beaux-arts.dijon.fr/', 'Musée des Beaux-Arts de Dijon — official visitor information']
+          ['https://musees.dijon.fr/', 'Dijon Museums — current visitor information and collections'],
+          ['https://www.ter.sncf.com/bourgogne-franche-comte', 'TER Bourgogne-Franche-Comté — current rail planning'],
+          ['https://www.viamobigo.fr/en/route-schedules/6/RouteSchedules/getall', 'Mobigo — coach 114 corridor and current route schedule']
         ]
       }),
       g({
         slug: 'beaune-hospices-vineyards',
+        reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
         name: 'Beaune Hospices & Vineyard Edge',
         instrument: 'Hospices-and-climat ledger',
         layout: 'wine-capital-ledger',
         imageQuery: 'Hospices de Beaune Hotel Dieu Burgundy France roof',
         imageAlt: 'Colorful tiled roofs of the Hospices de Beaune',
-        purpose: 'Anchor Beaune on the Hôtel-Dieu and walled center, then choose one cellar or vineyard-edge experience with a responsible return.',
-        summary: 'The Hospices provide the civic and medical-history center; a booked cellar or signed vineyard walk becomes the second layer, not a string of anonymous tastings.',
+        purpose: 'Make the Hôtel-Dieu and Beaune’s historic center the anchor, then add one booked cellar or a clearly bounded vineyard walk with a verified return.',
+        summary: 'From Beaune-Ville, walk to the Hôtel-Dieu and walled center, then choose one cellar appointment or a signed section of the Voie des Vignes. Côte & Bus 20.2 reaches Meursault, but check the exact stop and return before leaving the city.',
+        searchSummary: 'Make Beaune a one-day historic visit or a two-night wine base: visit the Hôtel-Dieu, then choose a cellar appointment or a signed Voie des Vignes segment toward Pommard or Meursault. Check Côte & Bus 20.2, the exact stop and return.',
+        siteContext: {
+          label: 'Hospital foundation and working vineyard landscape',
+          heading: 'Read the Hôtel-Dieu before treating Beaune as a tasting stop.',
+          intro: 'The Hospices site joins medical history, charitable care, art and vineyard endowment. The patterned roofs are an entrance to a larger story; the Côte de Beaune outside town is a working landscape with its own transport.',
+          details: [
+            ['Hôtel-Dieu', 'Use the official visit to understand the hospital’s founders, care and collections, not only the famous roof. Guided programs and special experiences can have their own reservation conditions.'],
+            ['Old town and walls', 'The walled center is a practical walking layer between Beaune-Ville, the Hôtel-Dieu, dining and central cellars. Keep the station return and luggage plan visible if this is a day trip.'],
+            ['Climats and vineyard routes', 'The Climats are distinct parcels; the Route des Grands Crus and marked walking or cycling paths cross a working wine region. Stay on public routes and do not enter planted rows or interrupt harvest work.']
+          ]
+        },
         choices: [
-          ['Hôtel-Dieu and walled town', 'Give the Hospices collections, rampart edge and market streets the full city day. This works by rail without a rural transfer.'],
-          ['Cellar appointment', 'Reserve one house whose tour and tasting style fit. Pair it with the Hospices rather than stacking several commercial visits.'],
-          ['Vineyard edge by foot or bicycle', 'Use an official signed route toward nearby climats with weather, rental and sobriety limits. This replaces a long interior block.']
+          ['Hôtel-Dieu and walled Beaune', 'Walk from Beaune-Ville to the Hôtel-Dieu, spend a substantial block on the hospital and collections, then complete the old center and walls. This is the clearest rail day.'],
+          ['One cellar by appointment', 'Book a single producer or guided visit whose location and duration fit the town plan. Côte & Bus route 20.2 is listed between Beaune and Meursault, but the precise stop and return must fit the appointment.'],
+          ['A signed vineyard segment', 'Choose a short section of the Voie des Vignes or Chemin des Grands Crus toward a named village such as Pommard or Meursault. Walking or cycling replaces a long interior visit; it does not provide a tasting shuttle.']
         ],
-        access: 'Beaune station is an easy walk from the center. Cellars may be central, but vineyard villages require a bicycle, tour, taxi or car; verify rental return hours and do not treat a tasting route as ordinary cycling.',
-        tradeoff: 'The Hospices, wine museum, multiple cellars and a vineyard ride do not fit meaningfully into one day. The route keeps one heritage anchor and one wine-landscape choice.',
+        access: 'Arrive at Beaune-Ville and walk toward the Hôtel-Dieu and walled center. For a Meursault outing, Mobigo’s current Côte & Bus list names route 20.2 between Beaune and Meursault; check the exact stop (including the listed Meursault stop), date and direction, then confirm the walk or pickup to the booked cellar. Do not assume a bus stop is at the vineyard gate.',
+        tradeoff: 'The Hôtel-Dieu, a long wine-museum visit, more than one cellar and a vineyard walk compete for a day. Keep the Hospices as the history anchor and choose either one appointment or one outdoor segment; a tasting route requires a sober return plan.',
         stages: [
-          ['Walk from station to the walls', 'Enter the center from the east, noting the station return and any luggage storage before joining market or Hospices queues.'],
-          ['Complete the Hôtel-Dieu narrative', 'Use the official circuit and current exhibition spaces, allowing time for the hospital, art and charitable history rather than only roof photographs.'],
-          ['Choose cellar or climat', 'Attend one reservation, or follow a signed low-risk walking or cycling segment. Stay on public paths and clear of vineyard work.'],
-          ['Return through the walled center', 'Eat and rehydrate, collect purchases and reach the station or lodging without relying on a last-minute taxi.']
+          ['Start at Beaune-Ville', 'Walk into the walled center and identify the return to Beaune-Ville before visiting. Resolve luggage first; a bottle purchase or late cellar booking changes what is practical by rail.'],
+          ['Visit the Hôtel-Dieu', 'Use the official visitor circuit to read the hospital foundation, care, art and current exhibition. Check the live ticket page; reserve a guided or special experience when its listing requires it.'],
+          ['Choose one wine landscape', 'For a cellar, follow the booked address and confirm whether it is walkable or needs Côte & Bus 20.2, a driver or a tour. For a walk or ride, choose a signed public segment toward Pommard or Meursault and check weather and rental return.'],
+          ['Close the day in Beaune', 'Return to the center, eat and collect purchases before the station. If the November Hospices wine sale coincides with your stay, check the current event date and accommodation early.']
         ],
-        fallback: 'In bad weather, retain the Hospices, wine museum or another confirmed town interior. If a cellar cancels, use the public rampart and market route; do not solicit private producers without appointments.',
+        fallback: 'In rain or high heat, keep the Hôtel-Dieu and a confirmed town museum or indoor stop, then walk the old center when conditions allow. If a cellar cancels, return to Beaune rather than asking an unbooked producer to receive you or stretching the route into a roadside walk.',
         watch: [
-          ['Wine purchases become luggage', 'Plan storage and carrying before buying bottles on a rail day.'],
-          ['Cycling still requires sobriety', 'Limit or skip alcohol and use a guided or driven route when tastings are the purpose.'],
-          ['Vineyards are workplaces', 'Do not enter rows, handle grapes or obstruct machinery, especially at harvest.']
+          ['A village stop is not a winery booking', 'Côte & Bus 20.2 serves a Beaune–Meursault corridor; confirm the current stop and the last useful return, then arrange the walk or pickup to your appointment.'],
+          ['The route is an outdoor day', 'Check heat, rain, bike rental hours and daylight before choosing the Voie des Vignes. Keep wine tasting separate from cycling and driving.'],
+          ['Harvest changes the working landscape', 'Growers prune and harvest in season. Stay on the public signed path, avoid rows and machinery, and expect appointments or access to change.']
         ],
-        duration: 'Allow five to seven hours for Beaune and one cellar. A vineyard bicycle route needs a full day and should reduce museum time.',
-        combine: 'Combine the Hospices with one cellar or a short climat route. Keep Dijon city and distant abbeys for separate days.',
-        verify: 'Check Hospices tickets, cellar appointment, bicycle or tour conditions, harvest activity and the final train before starting.',
+        duration: 'Give the Hôtel-Dieu and old town most of one day. A cellar adds its appointment and transfer; a village walk or cycle route needs a separate full-day envelope and should replace, not follow, a long museum visit.',
+        combine: 'Pair the Hôtel-Dieu with either one central cellar or one signed vineyard segment. Keep Dijon, Vézelay and Fontenay for separate days; Beaune is most useful as the base when the vineyard is the point.',
+        verify: 'Check the Hôtel-Dieu ticket and guided-visit conditions, the cellar booking, Côte & Bus route 20.2 or the selected walking/cycling route, harvest access, weather and return to Beaune-Ville.',
+        faq: [
+          ['Can I visit Beaune as a day trip from Dijon?', 'Yes. TER Bourgogne-Franche-Comté and Mobigo coach 113 link the city bases. Keep the day to the Hôtel-Dieu and old center unless the dated return and a separate cellar appointment both fit.'],
+          ['Can I reach Meursault by bus?', 'Mobigo’s current Côte & Bus list names route 20.2 between Beaune and Meursault. Confirm its dated timetable, exact stop and return, then check the walk or transfer to the cellar; a route label does not guarantee access to a producer.'],
+          ['Should I book the Hospices in advance?', 'Check the official Hôtel-Dieu ticketing page for your date. Guided and special visit experiences are reservation-based; ticket categories and current availability can change.']
+        ],
         sources: [
-          ['https://musee.hospices-de-beaune.com/acces-et-tarifs', 'Hospices Civils de Beaune — official Hôtel-Dieu visits'],
-          ['https://www.beaune-tourism.com/', 'Beaune & Pays Beaunois tourism — official local planning']
+          ['https://musee.hospices-de-beaune.com/acces-et-tarifs', 'Hospices Civils de Beaune — Hôtel-Dieu ticketing and visit reservations'],
+          ['https://www.beaune-tourisme.fr/explorer/decouvrir-les-hospices-de-beaune/la-vente-des-vins/', 'Beaune Tourism — official Hospices wine-sale information'],
+          ['https://www.beaune-tourism.com/to-see-and-do/wine-tourism-experience/4-ways-to-discover-the-vineyards/', 'Beaune Tourism — vineyard visits and Route des Grands Crus'],
+          ['https://www.beaune-tourism.com/to-see-and-do/enjoy-nature/walk-vineyard-path/', 'Beaune Tourism — Chemin des Grands Crus and vineyard walks'],
+          ['https://www.viamobigo.fr/en/route-schedules/6/RouteSchedules/getall', 'Mobigo — Côte & Bus 20.2 and current route schedule']
         ]
       }),
       g({
         slug: 'vezelay-fontenay-abbeys',
+        reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
         name: 'Vézelay, Fontenay & Abbey Country',
         instrument: 'Abbey-hill last-mile chart',
         layout: 'monastic-landscape-chart',
         imageQuery: 'Vezelay basilica hill Burgundy France panorama',
         imageAlt: 'The sculpted western façade of Vézelay Basilica in Burgundy',
-        purpose: 'Choose one abbey landscape and solve its rural access, rather than assuming Vézelay and Fontenay form an easy public-transport pair.',
-        summary: 'Vézelay is a pilgrimage hill with a steep village approach; Fontenay is a secluded Cistercian domain. Each deserves its own last mile, quiet reading and return.',
+        purpose: 'Choose one abbey landscape and secure its last mile before leaving a rail base; the hilltop basilica and secluded valley abbey are separate trips.',
+        summary: 'For Vézelay, Mobigo coach 119 reaches Avallon from Dijon, but the basilica hill needs a separately confirmed onward plan. For Fontenay, take TER to Montbard TGV station and arrange the 6 km transfer to the abbey before travel.',
+        searchSummary: 'Plan Vézelay and Fontenay as separate rural days: Mobigo coach 119 from Dijon reaches Avallon, while Fontenay is 6 km from Montbard TGV station and needs a booked transfer. Check the date, site access, group booking and return before leaving.',
+        siteContext: {
+          label: 'Pilgrimage hill and Cistercian valley',
+          heading: 'The two abbeys ask for different routes and different pace.',
+          intro: 'Vézelay’s basilica rises above a village on a steep hill. Fontenay sits in a quiet valley, where the monastic buildings, gardens and waterworks make the approach part of the visit.',
+          details: [
+            ['Vézelay and the basilica', 'UNESCO describes the basilica, village and surrounding hill as one heritage landscape. Walk the rising village street at a pace that suits your mobility and leave time to descend before the booked return.'],
+            ['Fontenay’s Cistercian plan', 'The abbey’s cloister, church, chapter room, forge and valley setting reward a slow visit. The official FAQ says a half day can include a walk in the valley; the grounds are not a picnic site.'],
+            ['Two different gateways', 'Mobigo coach 119 is listed between Dijon and Avallon; Fontenay’s official visitor FAQ places Montbard TGV station 6 km from the abbey. Neither connection takes you directly to both sites.']
+          ]
+        },
         choices: [
-          ['Vézelay hill and basilica', 'Use the village climb, basilica and viewpoints as one route. Rail travelers need the current connection from a regional station.'],
-          ['Fontenay Abbey', 'Make the preserved monastic complex and valley setting the sole rural anchor. A car, taxi or arranged tour is usually the practical contract.'],
-          ['Two-abbey road day', 'Compare Romanesque pilgrimage and Cistercian seclusion only with a planned car or guide route and ample opening-hour margin.']
+          ['Vézelay from an Avallon base', 'Use Mobigo coach 119 from Dijon toward Avallon only when the dated service fits, then book the separate road transfer to Vézelay and back. Walk the rising village street to the basilica; do not mistake Avallon for the monument entrance.'],
+          ['Fontenay from Montbard', 'Take TER to Montbard TGV station, then pre-book a taxi or arrange the official visitor-office bicycle option for the 6 km last mile. Give the abbey, cloister and valley the day’s main block.'],
+          ['Compare both by private vehicle', 'A two-abbey day is a long road itinerary, not a public-transport combination. Use a confirmed driver or guided route, compare each site’s current visit window and keep time for the return.']
         ],
-        access: 'Neither monument sits beside a major mainline platform. Vézelay commonly requires a bus, taxi, bicycle or car from a regional station; Fontenay requires its own road connection. Confirm pickup and mobile coverage before departure.',
-        tradeoff: 'A two-abbey day gives up museum depth, village meals and walking. The route favors one site by public transport or a deliberate comparative road day, not an improvised rural transfer.',
+        access: 'The two access plans are different. Mobigo lists coach 119 between Dijon and Avallon, but Avallon is not the Vézelay Basilica: book the onward road transfer and return before departure. Fontenay’s official FAQ says Montbard TGV station is 6 km away and identifies taxi or bicycle options. TER or coach arrival alone does not solve either monument’s last mile.',
+        tradeoff: 'Choosing one abbey protects its landscape walk and leaves room for a meal and the confirmed return. A two-site comparison trades away both slow visits and depends on a driver; there is no verified public-transport pairing in this plan.',
         stages: [
-          ['Meet the rural connection', 'Arrive at the correct station or road junction and confirm the return with the driver or timetable before leaving.'],
-          ['Approach through the landscape', 'At Vézelay, accept the village climb; at Fontenay, use the valley approach and grounds to understand seclusion before entering.'],
-          ['Read one abbey slowly', 'Respect worship, silence and conservation. Use current interpretation and do not force access to closed liturgical or restoration areas.'],
-          ['Leave before the last mile becomes uncertain', 'Return to the pickup point early and keep one regional train or road buffer. Rural dining should not endanger the connection.']
+          ['Choose the abbey and gateway', 'For Vézelay, check Mobigo coach 119 to Avallon and book the separate transfer. For Fontenay, find a TER to Montbard and confirm the taxi or bicycle before buying the outward trip.'],
+          ['Arrive at the actual entrance route', 'At Vézelay, allow for the uphill village street and cobbles. At Fontenay, follow the booked transfer to the abbey entrance and use the valley approach to understand its seclusion.'],
+          ['Give one site a full reading', 'At Vézelay, attend to the Romanesque portal and basilica as an active sacred place. At Fontenay, follow the cloister, church, chapter room and forge; add the valley walk only if current conditions and mobility allow.'],
+          ['Return to the named pickup', 'Confirm the driver, stop and exact return before entering. Reach the meeting point early enough for the TER or coach you selected; if no reliable return is confirmed, do not leave the base.']
         ],
-        fallback: 'If the rural connection fails, use Dijon, Beaune, Auxerre or another confirmed rail city rather than attempting a long roadside walk. If an abbey interior closes, keep only the publicly permitted village or grounds route.',
+        fallback: 'If the transfer cannot be confirmed, keep the day in Dijon, Beaune or the rail town already in your itinerary. Do not walk a rural road to the abbey. If the Basilica or Fontenay changes visitor access, keep only the public village or grounds route permitted on that date.',
         watch: [
-          ['Rural taxis need advance booking', 'Do not assume an app car will serve the return. Reconfirm the driver and meeting point.'],
-          ['Vézelay is steep and cobbled', 'Mobility and heat matter on the climb; consult official access options.'],
-          ['Religious sites set their own rhythm', 'Services, retreats and conservation may restrict visits. Quiet conduct is part of access.']
+          ['Avallon is not the Vézelay hill', 'Coach 119 reaches the Avallon corridor, not the basilica door. Confirm the onward transfer and same-day return before treating this as car-free.'],
+          ['Fontenay needs a separate last mile', 'The abbey’s current FAQ places Montbard TGV 6 km away. Book the taxi or check the visitor-office bicycle arrangement; do not rely on an unplanned walk.'],
+          ['Season and group rules matter', 'Fontenay’s current FAQ says individual advance booking is not required, while group visits must be booked; summer attendance is higher. Recheck before travel, and respect worship, conservation and any temporary closure.']
         ],
-        duration: 'Allow most of a day for either abbey from a rail base. A two-site road route needs eight to ten hours and should be booked around opening windows.',
-        combine: 'Combine Vézelay and Fontenay only by deliberate car or guide itinerary. Otherwise pair one abbey with its nearest town or stay overnight.',
-        verify: 'Check monument opening, worship notices, exact rural transport, driver return, road weather and the last regional train before leaving the base.',
+        duration: 'Give either abbey most of a day once the rail or coach trunk, reserved last mile, visit and return are counted. Fontenay can be a half-day on site, but Montbard’s transfer still sets the day. A two-site road plan needs a separate full-day check.',
+        combine: 'Choose Vézelay or Fontenay for one rural day. Combine both only with a pre-arranged driver or guide who confirms each site’s access window and a return to the overnight base.',
+        verify: 'Check Mobigo coach 119 to Avallon, TER to Montbard, the chosen taxi or bicycle transfer, current site opening and group-booking rules, worship or conservation notices, weather and the complete return.',
+        faq: [
+          ['Can I visit Vézelay without a car?', 'Mobigo lists coach 119 between Dijon and Avallon, but Avallon is not the basilica. Confirm the date-specific onward transfer to the hill and its return before leaving; otherwise use a booked car or guided trip.'],
+          ['How do I reach Fontenay Abbey by train?', 'Use TER to Montbard TGV station, then pre-book a taxi or arrange the visitor-office bicycle option. Fontenay’s official FAQ places the station 6 km from the abbey, so the final leg must be part of the plan.'],
+          ['Can I combine both abbeys or book Fontenay as a group?', 'Only with a confirmed private vehicle or guided route. Their transfers start from different gateways, and the comparison day sacrifices time at each site. Fontenay’s current FAQ says individual visitors do not need advance booking while groups do; recheck the live visit notice and picnic rules before travel.']
+        ],
         sources: [
-          ['https://www.basiliquedevezelay.org/en/', 'Basilica of Vézelay — official visitor and worship information'],
-          ['https://www.abbayedefontenay.com/en/', 'Fontenay Abbey — official visitor information']
+          ['https://whc.unesco.org/en/list/84/', 'UNESCO — Vézelay, Church and Hill heritage landscape'],
+          ['https://www.viamobigo.fr/en/route-schedules/6/RouteSchedules/getall', 'Mobigo — coach 119 Dijon–Avallon and current route schedule'],
+          ['https://www.ter.sncf.com/bourgogne-franche-comte', 'TER Bourgogne-Franche-Comté — current rail planning'],
+          ['https://www.abbayedefontenay.com/en/faq', 'Fontenay Abbey — access, individual and group booking, season and facilities'],
+          ['https://www.abbayedefontenay.com/en/decouvrir-fontenay', 'Fontenay Abbey — official buildings and Cistercian history']
         ]
       })
     ]

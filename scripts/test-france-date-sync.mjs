@@ -19,7 +19,13 @@ const alsaceRoutes = [
   '/france/alsace/colmar-canals-museums/',
   '/france/alsace/alsace-wine-route-villages/'
 ];
-const selectedRoutes = [...lyonRoutes, ...alsaceRoutes];
+const burgundyRoutes = [
+  '/france/burgundy/',
+  '/france/burgundy/dijon-ducal-city/',
+  '/france/burgundy/beaune-hospices-vineyards/',
+  '/france/burgundy/vezelay-fontenay-abbeys/'
+];
+const selectedRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const entries = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, route, lastmod]) => [route, lastmod]));
@@ -29,7 +35,7 @@ const reviewedRoutes = [
 ];
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
-check(reviewedRoutes.length === 8 && selectedRoutes.length === 8 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône and Alsace hubs plus their three children to be the only newly review-dated France routes; found ${reviewedRoutes.join(', ')}`);
+check(reviewedRoutes.length === 12 && selectedRoutes.length === 12 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace and Burgundy hubs plus their three children to be the only newly review-dated France routes; found ${reviewedRoutes.join(', ')}`);
 
 for (const route of routes) {
   const englishLastmod = entries.get(route);
@@ -66,5 +72,5 @@ if (errors.length) {
   console.error(`France date synchronization: ${errors.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, and the eight Lyon/Rhône + Alsace routes use 2026-10-11 in all five article schemas and sitemap entries.`);
+  console.log(`France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, and the twelve Lyon/Rhône + Alsace + Burgundy routes use 2026-10-11 in all five article schemas and sitemap entries.`);
 }
