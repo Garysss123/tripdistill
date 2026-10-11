@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Burgundy around a two-city rail spine: give Dijon a city day, use Beaune for the Hôtel-Dieu and one booked vineyard day, and treat Vézelay or Fontenay as separate rural excursions. TER and Mobigo connect named bases; harvest, cellar appointments and the return decide which plan works.": "以兩座城市的鐵路主幹規劃勃艮第：第戎安排一天市區行程，伯恩作為參觀 Hôtel-Dieu 及安排一天已預約葡萄園行程的據點；Vézelay 或 Fontenay 則各自安排為鄉間郊遊。TER 與 Mobigo 連接指定住宿據點；採收作業、酒窖預約和回程交通，決定哪種安排可行。",
+    "Dijon works as Burgundy’s rail base: walk from Dijon-Ville through Place Darcy to the Palace of the Dukes, Musée des Beaux-Arts and Les Halles, then add Gevrey only with a checked Mobigo 114 return and a booked cellar.": "第戎適合作為勃艮第的鐵路住宿據點：從 Dijon-Ville 經 Place Darcy 步行前往公爵宮、Musée des Beaux-Arts 和 Les Halles；只有在確認 Mobigo 114 號公車回程並預約酒窖後，才加排 Gevrey。",
+    "Make Beaune a one-day historic visit or a two-night wine base: visit the Hôtel-Dieu, then choose a cellar appointment or a signed Voie des Vignes segment toward Pommard or Meursault. Check Côte & Bus 20.2, the exact stop and return.": "可安排一天歷史參觀，或以伯恩作為葡萄酒行程的兩晚住宿據點：參觀 Hôtel-Dieu 後，選擇一間已預約的酒窖，或沿 Voie des Vignes 朝 Pommard 或 Meursault 走一段有標示的路線。請確認 Côte & Bus 20.2、確切站點及回程。",
+    "Plan Vézelay and Fontenay as separate rural days: Mobigo coach 119 from Dijon reaches Avallon, while Fontenay is 6 km from Montbard TGV station and needs a booked transfer. Check the date, site access, group booking and return before leaving.": "將 Vézelay 和 Fontenay 分開安排為兩個鄉間日程：Mobigo 119 號公車從第戎可到 Avallon；Fontenay 距 Montbard TGV 車站 6 km，須預約接駁。離開前請確認旅行日期、景點出入規定、團體預約要求及回程。"
+  }
+}

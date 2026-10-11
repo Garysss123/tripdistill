@@ -298,6 +298,12 @@ const alsaceReviewedRoutes = [
   '/france/alsace/colmar-canals-museums/',
   '/france/alsace/alsace-wine-route-villages/'
 ];
+const burgundyReviewedRoutes = [
+  '/france/burgundy/',
+  '/france/burgundy/dijon-ducal-city/',
+  '/france/burgundy/beaune-hospices-vineyards/',
+  '/france/burgundy/vezelay-fontenay-abbeys/'
+];
 const zurichEditedRoutes = [
   '/switzerland/',
   '/switzerland/zurich-lake/',
@@ -583,6 +589,11 @@ for (const route of alsaceReviewedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Alsace route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: alsaceReviewedLastmod });
+}
+for (const route of burgundyReviewedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Burgundy route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: '2026-10-11' });
 }
 
 for (const route of victoriaResponsiveEditedRoutes) {

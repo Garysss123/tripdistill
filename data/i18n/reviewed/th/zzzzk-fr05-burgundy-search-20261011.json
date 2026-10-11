@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Burgundy around a two-city rail spine: give Dijon a city day, use Beaune for the Hôtel-Dieu and one booked vineyard day, and treat Vézelay or Fontenay as separate rural excursions. TER and Mobigo connect named bases; harvest, cellar appointments and the return decide which plan works.": "วางแผนเที่ยวเบอร์กันดีโดยใช้รถไฟเชื่อมสองเมือง: จัดวันเที่ยวเมืองหนึ่งวันไว้ที่ Dijon และใช้ Beaune เป็นฐานสำหรับเที่ยว Hôtel-Dieu กับออกไปไร่องุ่นหนึ่งวันที่จองไว้ ส่วน Vézelay หรือ Fontenay ให้แยกเป็นทริปชนบทคนละวัน TER และ Mobigo เชื่อมเมืองฐานที่ระบุไว้ ส่วนงานเก็บเกี่ยว การนัดหมายเข้าชมห้องเก็บไวน์ และแผนเดินทางกลับเป็นตัวกำหนดว่าแผนใดลงตัว",
+    "Dijon works as Burgundy’s rail base: walk from Dijon-Ville through Place Darcy to the Palace of the Dukes, Musée des Beaux-Arts and Les Halles, then add Gevrey only with a checked Mobigo 114 return and a booked cellar.": "ใช้ Dijon เป็นฐานเดินทางด้วยรถไฟในเบอร์กันดี: เดินจาก Dijon-Ville ผ่าน Place Darcy ไปพระราชวังดยุก, Musée des Beaux-Arts และ Les Halles แล้วเพิ่มการไป Gevrey เฉพาะเมื่อยืนยันเที่ยวกลับของ Mobigo 114 และจองเข้าชมห้องเก็บไวน์แล้ว",
+    "Make Beaune a one-day historic visit or a two-night wine base: visit the Hôtel-Dieu, then choose a cellar appointment or a signed Voie des Vignes segment toward Pommard or Meursault. Check Côte & Bus 20.2, the exact stop and return.": "ใช้ Beaune เป็นเมืองเที่ยวประวัติศาสตร์แบบไปเช้าเย็นกลับ หรือพักเป็นฐานเที่ยวไวน์ 2 คืน: เข้าชม Hôtel-Dieu แล้วเลือกเข้าห้องเก็บไวน์ตามนัด หรือเดินช่วงหนึ่งของ Voie des Vignes ที่มีป้ายชัดเจนไปทาง Pommard หรือ Meursault ตรวจ Côte & Bus 20.2 ป้ายที่แน่นอน และเที่ยวกลับ",
+    "Plan Vézelay and Fontenay as separate rural days: Mobigo coach 119 from Dijon reaches Avallon, while Fontenay is 6 km from Montbard TGV station and needs a booked transfer. Check the date, site access, group booking and return before leaving.": "วางแผน Vézelay และ Fontenay เป็นวันเที่ยวชนบทแยกกัน: รถโค้ช Mobigo สาย 119 จาก Dijon ไปถึง Avallon ส่วน Fontenay อยู่ห่างจากสถานี Montbard TGV 6 km และต้องจองรถต่อไว้ล่วงหน้า ตรวจตารางตามวันที่จะไป เงื่อนไขการเข้าชม การจองสำหรับหมู่คณะ และเที่ยวกลับก่อนออกเดินทาง"
+  }
+}
