@@ -237,6 +237,7 @@ const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';
 const franceResponsiveLastmod = '2026-10-07';
 const lyonReviewedLastmod = '2026-10-11';
+const alsaceReviewedLastmod = '2026-10-11';
 const parisEditedRoutes = [
   '/france/paris/',
   '/france/paris/seine-islands-latin-quarter/',
@@ -269,6 +270,12 @@ const lyonReviewedRoutes = [
   '/france/lyon-rhone/vieux-lyon-fourviere/',
   '/france/lyon-rhone/presquile-croix-rousse/',
   '/france/lyon-rhone/beaujolais-perouges/'
+];
+const alsaceReviewedRoutes = [
+  '/france/alsace/',
+  '/france/alsace/strasbourg-grande-ile/',
+  '/france/alsace/colmar-canals-museums/',
+  '/france/alsace/alsace-wine-route-villages/'
 ];
 const zurichEditedRoutes = [
   '/switzerland/',
@@ -535,6 +542,11 @@ for (const route of lyonReviewedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Lyon route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: lyonReviewedLastmod });
+}
+for (const route of alsaceReviewedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Alsace route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: alsaceReviewedLastmod });
 }
 
 for (const route of victoriaResponsiveEditedRoutes) {

@@ -594,18 +594,44 @@ export const franceCentralEastClusters = [
     name: 'Strasbourg, Colmar & the Alsace Wine Route',
     region: 'Alsace, Grand Est',
     band: 'valleys-east',
+    reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
+    reviewDisclaimer: 'Admission, rail and coach timetables, walking paths, weather, harvest work and local access can change; reopen the linked authority or operator before travel.',
+    countryCardIntro: 'Strasbourg and Colmar are strong rail cities with different urban rhythms; the wine-route villages sit on a patchwork of trains, buses, bicycles and roads. A useful Alsace trip separates city depth from a village circuit and does not reduce living communities to façades.',
+    countryCardImageAlt: 'Ponts Couverts in Strasbourg’s Petite France, with the cathedral spire beyond the rooftops',
     family: 'rhine-vineyard-fold',
     label: 'Rhine and vineyard fold',
-    tagline: 'Use rail for the cities and appointments for the villages.',
-    hubIntro: 'Strasbourg and Colmar are strong rail cities with different urban rhythms; the wine-route villages sit on a patchwork of trains, buses, bicycles and roads. A useful Alsace trip separates city depth from a village circuit and does not reduce living communities to façades.',
-    stay: 'Three nights support Strasbourg, Colmar and one village or castle day. Strasbourg is the stronger international and museum base; Colmar shortens access to central wine-route villages.',
-    transfer: 'Regional rail links Strasbourg, Sélestat, Colmar and Mulhouse well, but the final village may require a bus, bicycle, seasonal shuttle, tour or car. Check Sunday and evening returns carefully.',
-    season: 'Christmas-market periods transform crowding, prices and security; summer increases village and bicycle pressure. Harvest remains working time, while winter reduces some castle, bus and cellar options.',
-    fallback: 'Use Strasbourg or Colmar collections when village buses, heat or storms undermine the route. A closed castle should become a signed lower walk or city day, not a scramble onto an unsafe trail.',
+    tagline: 'Split the city days from one named village corridor.',
+    hubIntro: 'Treat Alsace as two rail cities plus a rural last mile, not as one 170-kilometre village checklist. Strasbourg gives you the Grande Île, museums and a separately reached European Quarter; Colmar puts the old town, Unterlinden and Fluo buses toward Riquewihr, Ribeauvillé and Eguisheim within a different day plan. Pick one village corridor, confirm both directions before leaving, and keep the return at Colmar Gare SNCF visible before booking a cellar.',
+    searchSummary: 'Plan five nights across Strasbourg and Colmar, then choose one precise wine-village route. Compare TER between the two stations with Fluo 816 to Riquewihr/Ribeauvillé, 830 to Eguisheim, or the seasonal Kut’zig loop; preserve the return before booking a cellar.',
+    stay: 'For three nights, stay in one city: Strasbourg suits the cathedral, museums and European Quarter; Colmar suits the old town plus a single rural outing. Five nights support two nights around Strasbourg Gare Centrale or Grande Île, then three near Colmar Gare SNCF or the pedestrian center. With seven nights, add one castle or extra city day rather than changing hotels again; arrival and departure days are not full sightseeing days.',
+    transfer: 'Use TER Grand Est between Strasbourg Gare Centrale and Colmar Gare SNCF, then plan the village leg separately. Fluo line 816 runs from the Colmar station stop to Riquewihr - Poste and Ribeauvillé - Gare Routière; line 830 serves Eguisheim - Place De Gaulle and continues toward Rouffach. Return from the same named stop on the Colmar-bound direction. The Kut’zig loop is a separate seasonal, reserved product; Haut-Koenigsbourg’s line 500 starts at Sélestat SNCF station. Match both outward and return legs to the travel date, day type and exact stop.',
+    season: 'Fluo route numbers and timetables change: the regional network renumbered many coach lines on 1 September 2026, so older 68R016/68R030 references do not replace current lines 816/830. The Colmar tourism page lists Kut’zig as seasonal and reservation-required; its published 3 April–11 October operating period ends on this review date, so do not assume a later service without the next calendar. Summer heat and harvest work favor one early village walk with private vineyard rows left undisturbed. In December, city-market crowd controls and rural service calendars need their own date checks.',
+    fallback: 'If Fluo has no useful same-day return, keep the day in Colmar: Unterlinden and the old-town loop still make a complete plan. If rain, heat or a trail closure removes the vineyard walk, drop the village rather than improvise a roadside transfer. A castle day is a real alternative only when the published line 500 timetable from Sélestat and the castle admission plan agree in both directions.',
+    itineraryLabel: 'Five-night, two-base route',
+    itineraryHeading: 'One city day in each base, then one rural corridor.',
+    itineraryIntro: 'A five-night model uses two nights in Strasbourg and three in Colmar. Keep the hotel-change day light, and choose either line 816, line 830 or a confirmed seasonal alternative for the village day; do not treat every arrival and departure as a full sightseeing day.',
+    itinerary: [
+      ['Day 1 · Arrive Strasbourg', 'Sleep near Strasbourg Gare Centrale or Grande Île. If arrival time and energy allow, take a short orientation walk toward Place Kléber or Petite France; keep the Cathedral interior and any timed visit for the next day.'],
+      ['Day 2 · Strasbourg on foot', 'Follow the Grande Île route from the Cathedral and Place du Château through the civic center to Petite France, Ponts Couverts and Barrage Vauban. Choose one interior or tower visit, not every ticketed option.'],
+      ['Day 3 · TER to Colmar', 'Take TER Grand Est from Strasbourg Gare Centrale to Colmar Gare SNCF, then check in near the station or old town. Keep the afternoon to one museum or a short civic walk rather than adding a village coach after the hotel move.'],
+      ['Day 4 · Colmar city loop', 'Start at Unterlinden or the northern old-town edge, continue through Saint-Martin and the market streets to Petite Venise, then return south toward Place Rapp and Colmar station. Reverse the order if the museum calendar requires it.'],
+      ['Day 5 · One rural decision', 'Choose Riquewihr/Ribeauvillé on Fluo 816, Eguisheim on Fluo 830, or a separately published Kut’zig/line 500 plan. Save the return from the same named stop before reserving a tasting or castle entry.'],
+      ['Day 6 · Depart Colmar', 'Use Colmar Gare SNCF for the onward train, or allow the full TER connection back to Strasbourg only when the booked departure requires it. Add a buffer for the transfer; do not spend the final morning in a village.']
+    ],
     sources: [
-      ['https://www.visit.alsace/en/', 'Visit Alsace — official regional tourism guide'],
-      ['https://www.ter.sncf.com/grand-est', 'TER Grand Est — official regional rail information'],
-      ['https://www.fluo.grandest.fr/', 'Fluo Grand Est — official regional journey planning']
+      ['https://www.visit.alsace/en/the-alsace-wine-route/', 'Visit Alsace — official 170 km Wine Route overview'],
+      ['https://www.ter.sncf.com/grand-est', 'TER Grand Est — rail journey and live timetable planning'],
+      ['https://services.fluo.grandest.fr/fr/schedules/line/30671', 'Fluo Grand Est — current line 816 to Riquewihr and Ribeauvillé'],
+      ['https://services.fluo.grandest.fr/fr/schedules/line/30647', 'Fluo Grand Est — current line 830 to Eguisheim and Rouffach'],
+      ['https://www.tourisme-colmar.com/en/practical/travel-and-mobility/public-transport', 'Colmar Tourist Office — regional bus and station information'],
+      ['https://www.tourisme-colmar.com/en/visit/visit/kut-zig-open-top-bus', 'Colmar Tourist Office — Kut’zig route, season and reservation'],
+      ['https://www.haut-koenigsbourg.fr/en/practical-informations/the-haut-koenigsbourg-shuttle-bus-l500/', 'Haut-Koenigsbourg — line 500 from Sélestat station'],
+      ['https://www.cts-strasbourg.eu/en/cts-network-maps/', 'CTS Strasbourg — official tram and bus network maps']
+    ],
+    faq: [
+      ['How many nights should I spend in Alsace?', 'Three nights work best in one city so the hotel change does not consume the short trip. Five nights can support two in Strasbourg and three in Colmar, with one village day. Count the TER move and partial arrival/departure days honestly.'],
+      ['Can I reach wine-route villages by public transport?', 'Yes, for selected corridors: Fluo 816 serves Riquewihr - Poste and Ribeauvillé - Gare Routière from Colmar Gare SNCF; line 830 serves Eguisheim - Place De Gaulle. Use the date-specific return direction to Colmar before committing.'],
+      ['What if the village bus or weather does not work?', 'Keep Strasbourg or Colmar as a complete city day. The Sélestat-to-Haut-Koenigsbourg line 500 or the Kut’zig loop can replace a village route only when the official annual calendar, reservation and return all fit your date.']
     ],
     guides: [
       g({
@@ -614,34 +640,63 @@ export const franceCentralEastClusters = [
         instrument: 'Island-to-institutions tram map',
         layout: 'rhine-civic-axis',
         imageQuery: 'Strasbourg cathedral Petite France river France',
-        imageAlt: 'Strasbourg Cathedral and historic center near the river',
-        purpose: 'Choose between the cathedral-and-river historic core and the European institutions, then connect them by tram without compressing both into a superficial loop.',
-        summary: 'Walk Grande Île by cathedral, canals and civic streets, then use one tram move for either the Neustadt or European Quarter as the second urban layer.',
+        imageAlt: 'Ponts Couverts in Strasbourg’s Petite France, with the cathedral spire beyond the rooftops',
+        imageCaption: 'Ponts Couverts and the cathedral above Petite France',
+        purpose: 'Choose a complete Grande Île walk or a separately planned European Quarter visit, then use the right CTS stop, booking and return instead of treating the city center and institutions as one short loop.',
+        summary: 'Start at Strasbourg Gare Centrale, walk the Grande Île from Place du Château to Petite France, and decide whether a second day is worth the Tram E trip to Parlement Européen.',
+        searchSummary: 'Follow Strasbourg Gare Centrale to the Cathedral, Place du Château, Petite France and Ponts Couverts; treat the European Quarter as a separate Tram E outing with a booked Parliament visit, physical ID and a planned return.',
         choices: [
-          ['Grande Île in depth', 'Keep the cathedral, Maison Kammerzell area, river edges and Petite France together. This is a complete first day without institutions.'],
-          ['Cathedral and Neustadt', 'Pair medieval and imperial urban layers through Place de la République and selected museums. The route remains mostly central.'],
-          ['European Quarter', 'Use a current booked visit or exterior civic route around the institutions. This requires calendar and security checks, not just a tram ticket.']
+          ['Cathedral, civic core and Petite France', 'Make one walking day of the Cathedral, Place du Château, Place Kléber, the Ill-side lanes, Ponts Couverts and Barrage Vauban. It is the best first-day route when the old town is the reason for the stop.'],
+          ['Cathedral and Neustadt', 'Give the Cathedral and one current museum the main block, then cross toward Place de la République and the imperial-era Neustadt. This keeps the route central and sacrifices the European institutions.'],
+          ['European Quarter by Tram E', 'Take CTS tram E to the stop Parlement Européen for the Parliament or a public-space walk. The institution visit has its own calendar, reservation, physical-ID and security conditions; do not treat the tram ride as admission.']
         ],
-        access: 'Strasbourg station connects to the center by tram or a direct walk. Trams cross the historic area but cathedral-side pedestrian controls and market events may alter the final approach; use the current network map and named stop.',
-        tradeoff: 'The European Quarter removes time from Petite France and museums. The route gives up a wine-route village so Strasbourg’s medieval, imperial or European identity can be read properly.',
+        access: 'Arrive at Strasbourg Gare Centrale. CTS lines A and D serve the underground Gare Centrale stop; use the current CTS map for the central stop that best fits the day, then complete Grande Île on foot. The European Parliament is not beside the Cathedral: tram E serves Parlement Européen. Return from that named stop using the live CTS route planner; bus H may provide a direct Gare Centrale link when the current service shows it.',
+        tradeoff: 'A full Grande Île loop and a Parliament interior compete for time. Keep the Cathedral, Petite France and the river route together; use a second day for the European Quarter or give it priority and drop a museum. Colmar and vineyard villages require a separate rail day.',
         stages: [
-          ['Enter through station and river ring', 'Move from the station toward Grande Île, noting the tram stop for the return and any event perimeter before entering narrow streets.'],
-          ['Anchor at the cathedral', 'Use the exterior, current interior access and surrounding urban fabric; timed astronomical-clock or platform products should be treated as separate reservations.'],
-          ['Choose canal, Neustadt or Europe', 'Walk Petite France, continue to the Neustadt, or take the tram to an arranged institution visit. Do not attempt all three after a long cathedral queue.'],
-          ['Return on a different city edge', 'Use the river ring or tram to finish near the station, avoiding a second pass through the busiest cathedral lanes.']
+          ['Leave Gare Centrale for the island', 'Use CTS A or D from Gare Centrale toward the central area, or walk if the arrival is light and the route is clear. Save the exact return stop before starting; check service changes in the CTS traffic panel.'],
+          ['Read the Cathedral and Place du Château', 'Start at the Cathedral’s west front and Place du Château. If climbing the platform, its entrance is on Place du Château at the Cathedral’s right side; the official seasonal hours, last ascent and access notices control the visit.'],
+          ['Walk the water edge once', 'Continue through Place Kléber and the central streets toward Petite France, then read Ponts Couverts and Barrage Vauban from the river. Choose this walk or the separate Tram E Parliament visit; do not bolt on both after a booked interior.'],
+          ['Return from the stop you saved', 'For the old-town route, use the chosen central CTS stop back to Gare Centrale. For Parlement Européen, depart from the same named stop on the current direct H service if listed, or take Tram E back to a central interchange and transfer.']
         ],
-        fallback: 'In rain or security closures, use one of Strasbourg’s museums and the covered tram network. If an institution visit cancels, substitute the Neustadt or a river circuit, not a distant wine village.',
+        fallback: 'If rain weakens the river walk, choose one open Strasbourg museum or a shorter Cathedral-to-civic-center loop, then use CTS for the return. If Parliament entry is unavailable, keep the European Quarter to its public exterior spaces or return to the Neustadt; do not travel there expecting an interior without a confirmed visit.',
         watch: [
-          ['Cathedral products differ', 'Free worship access, platform access and clock presentation can use different schedules and lines.'],
-          ['Market periods rewrite circulation', 'Christmas and major events add security gates and crowd channels. Allow extra time and avoid large luggage.'],
-          ['Institutions are working buildings', 'Tours may require advance registration, identity documents and security. Confirm the exact institution and entrance.']
+          ['The Cathedral platform is a separate visit', 'The climb has its own entrance at Place du Château and seasonal hours. Check the official last-ascent time and any closure before building the rest of the day around it.'],
+          ['Parliament admission is controlled', 'During plenary sessions, the European Parliament requires a reservation for the Hemicycle and a valid physical identity document; security rules and opening times differ by session.'],
+          ['The return is an operator decision', 'CTS tram, bus and TER are separate networks. Save the actual CTS stop and the Colmar-bound TER station connection you need; maintenance and event control can change the shortest route.']
         ],
-        duration: 'Allow six to eight hours for Grande Île plus one second district. A booked institution tour can turn the route into a full day.',
-        combine: 'Combine Grande Île with Neustadt or the European Quarter. Keep Colmar and wine-route villages for separate rail days.',
-        verify: 'Check cathedral notices, CTS tram service, institution-tour confirmation, museum openings and any event security perimeter before departure.',
+        duration: 'Editorial estimate: allow most of a day for the Cathedral, one selected interior, Petite France and the return. A Parliament visit needs its own timed block and security margin; move the old-town walk to another day if both matter.',
+        combine: 'Pair Grande Île with either Neustadt or the European Quarter. Keep Colmar, line 816/830 villages and Haut-Koenigsbourg for days based from the appropriate rail gateway.',
+        verify: 'Check the Cathedral’s platform entrance and seasonal last ascent, the European Parliament visit calendar and ID rules, the CTS map/traffic status, and the exact CTS-to-TER return before leaving the hotel.',
+        hubAccess: 'Strasbourg Gare Centrale anchors the city walk; CTS A/D reach central stops, while Tram E serves Parlement Européen. The Parliament visit is booked separately and the return to Gare Centrale must be checked in CTS.',
+        hubTradeoff: 'Choose one full historic-core walk or a booked European Quarter visit; a fast tram transfer does not make the two experiences interchangeable.',
+        hubDuration: 'One full day for the Cathedral, Grande Île and Petite France; budget a separate day for Parliament plus a shorter center route.',
+        siteContext: {
+          label: 'Island streets and an institutional edge',
+          heading: 'Read the river city before making the separate tram move.',
+          intro: 'Strasbourg’s Grande Île concentrates the Cathedral, civic streets and canal edges. Petite France preserves the work-and-water character of the former millers, tanners and fishermen district; the European institutions sit beyond the old-town walking circuit.',
+          details: [
+            ['Cathedral and Place du Château', 'Use the west front and surrounding square as the urban anchor. The platform entrance is on Place du Château to the Cathedral’s right; climbing hours and access notices change by season.'],
+            ['Petite France and Ponts Couverts', 'Follow the Ill-side lanes to the covered bridges and Barrage Vauban, then return by a different central street. Keep the bridges and narrow lanes clear for residents and other pedestrians.'],
+            ['European Parliament', 'CTS Tram E stops at Parlement Européen. A Parliament interior is an independent booked visit with a valid physical ID and security checks; the stop name does not guarantee same-day admission.']
+          ]
+        },
+        operations: {
+          entryReturn: 'Start at Strasbourg Gare Centrale. Lines A and D serve the underground station stop; use CTS’s live map to choose a central stop for the Cathedral walk. For the European Quarter, Tram E serves Parlement Européen. At the end, check whether bus H is running directly to Gare Centrale or reverse Tram E to a central interchange and transfer.',
+          booking: 'The Cathedral platform has a separate Place du Château entrance and seasonal last ascent. Parliament visits are free but, during plenary sessions, Hemicycle reservations are compulsory; a valid physical ID is required and security applies. Check the exact session calendar and visit offer before choosing a day.',
+          weather: 'In sustained rain, reduce the Petite France waterfront portion and choose one currently open museum. In heat, begin the exposed civic walk earlier and keep the tram-based Parliament option for a day whose visit slot and return fit.'
+        },
+        faq: [
+          ['Where should I start the Strasbourg walk from the train?', 'Use Strasbourg Gare Centrale. CTS lines A and D serve the underground Gare Centrale stop; choose a current central stop, then walk the Grande Île route. Keep the exact station return in your CTS planner.'],
+          ['Can I visit the European Parliament without booking?', 'The official visitor page changes rules by plenary period and visit type. During plenary sessions, Hemicycle reservations are compulsory for individuals and groups and a valid physical ID is required; check the current calendar before taking Tram E to Parlement Européen.'],
+          ['Is the Cathedral platform the same entrance as the main visit?', 'No. The official platform page places the climb entrance at Place du Château on the Cathedral’s right side and publishes seasonal hours and last ascent times. Confirm access separately from the main Cathedral visit.']
+        ],
         sources: [
-          ['https://www.visitstrasbourg.fr/en/', 'Strasbourg Tourist Office — official city planning'],
-          ['https://www.cts-strasbourg.eu/en/', 'CTS Strasbourg — official tram and bus information']
+          ['https://www.visitstrasbourg.fr/en/welcome-in-strasbourg/', 'Strasbourg Tourist Office — city districts and visit planning'],
+          ['https://www.cts-strasbourg.eu/en/cts-network-maps/', 'CTS Strasbourg — current tram and bus network maps'],
+          ['https://www.cts-strasbourg.eu/en/know-us/our-network/tram-and-bus/', 'CTS Strasbourg — official public transport information'],
+          ['https://www.strasbourg.eu/lieu/-/entity/id/686064/parlement-europeen', 'Strasbourg city — Parliament location and Tram E stop'],
+          ['https://visiting.europarl.europa.eu/en/visitor-offer/strasbourg/hemicycle', 'European Parliament — visitor calendar, booking and security'],
+          ['https://www.cathedrale-strasbourg.fr/ascension-cathedrale', 'Strasbourg Cathedral — platform entrance and seasonal hours']
         ]
       }),
       g({
@@ -651,33 +706,61 @@ export const franceCentralEastClusters = [
         layout: 'canal-museum-score',
         imageQuery: 'Colmar Petite Venise canal France Alsace',
         imageAlt: 'Half-timbered houses and canal in Colmar’s Petite Venise',
-        purpose: 'Decide whether Colmar is a museum city, a market-and-canal walk or the base for a village day, then use a clear station loop instead of repeating Petite Venise.',
-        summary: 'Use the Unterlinden Museum or another selected interior as the attention anchor, then connect the old town and canal without repeating the same crowded lanes.',
+        imageCaption: 'The canal-side houses of Colmar’s Petite Venise',
+        purpose: 'Choose a substantial museum visit, a complete old-town and market walk, or a short city day before a village excursion; connect Colmar Gare SNCF to Petite Venise in one loop rather than retracing its busiest bridge.',
+        summary: 'From Colmar Gare SNCF, walk through Champ de Mars to Unterlinden, Saint-Martin and the covered market, then follow the canal edge through Petite Venise and return south to the station.',
+        searchSummary: 'Walk Colmar Gare SNCF → Champ de Mars → Unterlinden → Saint-Martin/market streets → Petite Venise → Place Rapp → station. Choose one major interior or the street loop; keep Fluo 816/830 for a separate village day.',
         choices: [
-          ['Unterlinden and art history', 'Give the museum the long block and use the old town as approach and decompression. This is the strongest wet-weather plan.'],
-          ['Market and canal city', 'Focus on covered market, Petite Venise, civic streets and architecture. This favors street rhythm over a large collection.'],
-          ['Colmar as a village base', 'Keep the city to a compact morning or evening and reserve the main day for one verified wine-route excursion.']
+          ['Unterlinden first', 'Give the museum the main indoor block, then walk through Saint-Martin and the old town to Petite Venise. Check current ticket, gallery and opening information before choosing a weekday.'],
+          ['Old town and market', 'Skip the long museum visit and read the civic streets, covered market, Koïfhus and canal in one walking circuit. This is easier to shorten around a train departure but depends on the market calendar.'],
+          ['City then village another day', 'Use Colmar as a compact orientation day and base the rural day on one named Fluo route from Colmar Gare SNCF. Do not attach an unverified bus excursion to the end of a museum visit.']
         ],
-        access: 'Colmar station is south-west of the old town. Walk a loop that enters through the museum or Champ de Mars side and exits through the canal or market side, rather than using Petite Venise as an out-and-back photo stop.',
-        tradeoff: 'Colmar plus several villages creates a transport-heavy day with little museum time. The route either treats Colmar as the main city or as the base; it does not pretend both roles fit without sacrifice.',
+        access: 'Colmar Gare SNCF sits south-west of the old town. Walk north through Place Rapp and Champ de Mars toward Unterlinden, continue south-east through Saint-Martin and the covered market to Petite Venise, then return via Place Rapp to the station. The regional Fluo 816 and 830 departure stop is named COLMAR - Gare SNCF; it is not the same as a central-city tram or a hotel pickup.',
+        tradeoff: 'Unterlinden plus a full street route is already a substantial day. A village excursion uses its own Colmar Gare SNCF departure and return block; combine the two only by making the museum a short, preselected visit and verifying the bus connection first.',
         stages: [
-          ['Enter through the museum side', 'From the station, pass Champ de Mars toward Unterlinden or the northern old-town edge, confirming luggage and return timing.'],
-          ['Complete one collection or civic route', 'Use the museum’s current galleries, or trace Maison des Têtes, the Dominican church area and civic streets without rushing to the canal.'],
-          ['Cross market and canal once', 'Move through the covered market and Petite Venise, respecting resident doors and narrow bridges. Use quieter lanes for the return.'],
-          ['Close the loop toward the station', 'Exit through the southern center and Champ de Mars, leaving a meal or wine tasting within walking distance of the train.']
+          ['Leave Colmar Gare SNCF on foot', 'Set the station as both origin and finish. Walk north via Place Rapp and Champ de Mars; keep luggage at your accommodation or storage rather than carrying it through the museum and narrow canal lanes.'],
+          ['Choose the interior before the street loop', 'If Unterlinden is open and is your priority, use its current ticket and gallery information to set the visit block. Otherwise take the civic route through Rue des Têtes and the Saint-Martin precinct.'],
+          ['Walk the market-to-canal section once', 'Continue to the covered market, Koïfhus area and Petite Venise. Use Quai de la Poissonnerie and a different return street so the route is a loop, not a second queue at the same bridge.'],
+          ['Return south to the rail station', 'Leave the old town via Place Rapp and Champ de Mars to Colmar Gare SNCF. If continuing to a village, make that a separate day using Fluo 816 or 830 and its published return from the named stop.']
         ],
-        fallback: 'If weather turns, use Unterlinden and another confirmed museum or church interior. If the museum closes, retain the architecture, market and canal loop rather than boarding an unverified village bus.',
+        fallback: 'For a wet or very hot day, shorten the outdoor canal section and make Unterlinden the anchor if its current calendar suits. If the museum is closed or unavailable, keep a shorter architecture-and-market walk and do not force a rural bus connection into the same day.',
         watch: [
-          ['Petite Venise bottlenecks', 'Narrow bridges are circulation space, not private photo sets. Keep moving and use side streets for longer pauses.'],
-          ['Market and museum calendars differ', 'Check Monday, holiday and seasonal hours before assigning the morning.'],
-          ['Wine tasting still needs limits', 'City-center tastings do not remove alcohol responsibility or the need to catch the correct train.']
+          ['The station and old town are different doors', 'Regional buses 816 and 830 use COLMAR - Gare SNCF; allow time to reach that stop from the center and verify the opposite-direction departure before going rural.'],
+          ['Museum and market days do not match', 'Check Unterlinden’s current opening/ticket information and the covered market calendar separately. Do not assume a Monday, holiday or seasonal opening.'],
+          ['The canal is a lived street', 'Petite Venise bridges and lanes carry residents and local activity. Keep the narrow route moving and use a wider quay or civic square for a longer pause.']
         ],
         duration: 'Allow five to seven hours with Unterlinden and a meal; three to four hours suits a street-and-market loop. A village excursion should have its own half or full day.',
-        combine: 'Combine Colmar with one nearby village only when transit is direct and the museum plan is short. Keep Strasbourg as another full city day.',
-        verify: 'Check Unterlinden and market opening, Colmar local events, regional rail and any selected village connection before setting the route.',
+        combine: 'Keep Strasbourg as a separate full city day. Pair Colmar with one nearby village only when the museum plan is short and the date-specific Fluo return still reaches Colmar Gare SNCF with time to spare.',
+        verify: 'Check Unterlinden’s current tickets, gallery status and opening day; the covered market calendar; Colmar Gare SNCF departure point; and the exact Fluo 816/830 round trip if a village is added.',
+        hubAccess: 'Colmar Gare SNCF anchors the walk and the regional Fluo departures. The old-town loop is on foot; Fluo 816 and 830 are separate rural products, not a continuation of the city walk.',
+        hubTradeoff: 'Choose a museum-led Colmar day or a full village excursion; trying to fit both usually turns the rural return into a time pressure.',
+        hubDuration: 'One full walking day with a selected museum, or a compact city walk before a separate all-day village route.',
+        siteContext: {
+          label: 'Museum threshold to canal quay',
+          heading: 'Use a north-to-south loop to keep the city legible.',
+          intro: 'Colmar’s center is compact enough for a deliberate walking route, but the station, Unterlinden, covered market and Petite Venise each occupy a different edge of the day. Choose one large indoor anchor before adding the popular canal lanes.',
+          details: [
+            ['Unterlinden', 'The museum is the north-side interior anchor. Check its live ticket, gallery and opening information before assigning it as the rainy-day guarantee.'],
+            ['Saint-Martin and the market', 'Use the collegiate church precinct, Koïfhus area and covered market as the civic middle of the route. Market hours are a separate calendar from museum opening.'],
+            ['Petite Venise', 'Finish at the canal and Quai de la Poissonnerie, then leave by Place Rapp toward Colmar Gare SNCF. The narrow bridges are circulation space, not a place to stop a group.']
+          ]
+        },
+        operations: {
+          entryReturn: 'From Colmar Gare SNCF, walk north through Place Rapp and Champ de Mars toward Unterlinden. Continue through Saint-Martin and the market to Petite Venise, then return south through Place Rapp. The Fluo rural stop is also named COLMAR - Gare SNCF; check the live stop location and direction before boarding.',
+          booking: 'Unterlinden’s ticketing, galleries and opening calendar control the museum block; do not assume that a specific room or a same-day ticket is available. Reserve only when its current official ticket flow offers the needed slot. The city walk itself has no single gate.',
+          weather: 'In rain, prioritize one confirmed museum and shorten the canal loop. In heat, use the shaded civic streets and a shorter exterior route; postpone the village bus rather than adding a rural last mile after the hottest part of the day.'
+        },
+        faq: [
+          ['How long does the Colmar walking route take?', 'Allow five to seven hours if Unterlinden is the main interior plus lunch; a three-to-four-hour street route can cover the civic center and Petite Venise. These are planning estimates, not museum visit measurements.'],
+          ['Where do I catch the village buses?', 'The Colmar Tourist Office identifies the station as a regional coach departure point; Fluo names the stop COLMAR - Gare SNCF. Current lines 816 and 830 use that stop, but each has its own route and date-specific return.'],
+          ['What is the better rainy-day choice?', 'Use Unterlinden if its current ticketing and gallery calendar fit. If it is closed or unavailable, keep the market-and-architecture loop shorter and leave the rural village day for a date when the outdoor route and return work.']
+        ],
         sources: [
           ['https://www.tourisme-colmar.com/en/', 'Colmar Tourist Office — official city guide'],
-          ['https://www.musee-unterlinden.com/en/', 'Unterlinden Museum — official visitor information']
+          ['https://www.tourisme-colmar.com/en/practical/travel-and-mobility/public-transport', 'Colmar Tourist Office — station and regional-coach information'],
+          ['https://www.musee-unterlinden.com/en/', 'Unterlinden Museum — official tickets and visitor calendar'],
+          ['https://services.fluo.grandest.fr/fr/schedules/line/30671', 'Fluo Grand Est — current line 816 stop list and timetable'],
+          ['https://services.fluo.grandest.fr/fr/schedules/line/30647', 'Fluo Grand Est — current line 830 stop list and timetable']
         ]
       }),
       g({
@@ -686,34 +769,65 @@ export const franceCentralEastClusters = [
         instrument: 'Village-cluster sober route',
         layout: 'vineyard-village-cluster',
         imageQuery: 'Alsace wine route village vineyards France Riquewihr',
-        imageAlt: 'An Alsace wine-route village surrounded by vineyards',
-        purpose: 'Choose one connected village cluster and a sober transport method, replacing the impossible goal of collecting every half-timbered village on the 170-kilometre route.',
-        summary: 'Use Sélestat, Colmar or another rail gateway to reach one village pair, one walk and one reserved producer, with the return fixed before tasting.',
+        imageAlt: 'Alsace Wine Route road sign among the vineyards near Orschwihr',
+        imageCaption: 'Route des Vins d’Alsace sign among vineyards near Orschwihr',
+        purpose: 'Choose one named village corridor and a sober return plan instead of trying to collect the villages along the 170-kilometre route.',
+        summary: 'From Colmar Gare SNCF, line 816 serves Riquewihr - Poste and Ribeauvillé - Gare Routière; line 830 serves Eguisheim - Place De Gaulle. Plan one corridor, then add a second village only if the dated timetable gives a workable return.',
+        searchSummary: 'From Colmar Gare SNCF, compare Fluo 816 to Riquewihr - Poste/Ribeauvillé - Gare Routière with 830 to Eguisheim - Place De Gaulle. Save the date-specific Colmar-bound return first; use Kut’zig only on its published reserved season.',
         choices: [
-          ['Central village pair', 'Select two nearby places such as Kaysersberg and Riquewihr or Eguisheim and Colmar’s edge, based on current bus or bicycle links.'],
-          ['Vineyard walk', 'Choose one signed trail with a clear start, finish and weather plan. Working vines and harvest equipment require respectful boundaries.'],
-          ['Castle and village', 'Pair a village with Haut-Koenigsbourg or another open site through the verified shuttle or car route. This substitutes for a second village cluster.']
+          ['Riquewihr, one village day', 'Use Fluo 816 from COLMAR - Gare SNCF to RIQUIEWIHR - Poste and return from that same named stop on the Colmar-bound direction. Walk the public village streets; add Ribeauvillé only if the date-specific onward and return legs both fit.'],
+          ['Eguisheim, a separate corridor', 'Use Fluo 830 from COLMAR - Gare SNCF to EGUISHEIM - Place De Gaulle and plan the reverse direction back to Colmar. Do not assume the line 816 villages share this route or that the timetable supports a same-day pair.'],
+          ['Seasonal loop or castle', 'Kut’zig is a separate seasonal open-top loop with reservation; its current published 2026 season ends 11 October. For a castle day, check Fluo line 500 from Sélestat SNCF to Haut-Koenigsbourg. Either replaces the village corridor.']
         ],
-        access: 'Regional trains reach Strasbourg, Sélestat, Colmar and other gateways; most famous villages need a bus, bicycle, seasonal shuttle, tour or car. Build the exact outward and return chain, including the stop side and Sunday service.',
-        tradeoff: 'The route gives up the full Wine Route. Two villages and one appointment already fill a useful day once meals, walking and rural transport are honest.',
+        access: 'Reach Colmar Gare SNCF by TER, then use the exact Fluo departure stop of the same name. Line 816 serves Riquewihr - Poste and Ribeauvillé - Gare Routière; line 830 serves Eguisheim - Place De Gaulle and continues toward Rouffach. Open the official dated timetable for both outbound and Colmar-bound return, day type and any stop notice before leaving. The regional Wine Route is about 170 km from Marlenheim to Thann, not a walkable village chain.',
+        tradeoff: 'One bus corridor leaves time for the village and a respectful public-street walk. A second village, producer appointment or castle uses a separate transfer block; choose which one matters and drop the rest. A tasting also requires a sober return, so do not plan to drive afterward.',
         stages: [
-          ['Choose a gateway from the live timetable', 'Arrive at Sélestat, Colmar or another station and locate the rural connection before leaving for breakfast or sightseeing.'],
-          ['Read one village before tasting', 'Walk the public streets, interpretation and vineyard edge first, keeping resident lanes and working yards clear.'],
-          ['Commit to one producer or castle', 'Honor the reservation and use a sober driver or transit. If visiting a castle, follow current trail or shuttle access and closing times.'],
-          ['Return through a second nearby stop', 'Add only a village on the same connection; otherwise return directly to the gateway with one service in reserve.']
+          ['Start at the rail-coach interchange', 'Use Colmar Gare SNCF as the base gateway. Check the train arrival and exact Fluo 816 or 830 stop and direction before buying any tasting slot.'],
+          ['Choose one stop and one walk', 'For Riquewihr, use RIQUIEWIHR - Poste on line 816; for Eguisheim, use EGUISHEIM - Place De Gaulle on line 830. Walk the public center and a currently open signed route without entering vineyards or work yards.'],
+          ['Book one visit only after the return works', 'If you want a cellar visit, confirm its appointment directly with the producer, travel time from the named stop and enough margin for the Colmar-bound departure. Keep the driver sober or use transit throughout.'],
+          ['Return from the same stop', 'Recheck the Colmar-bound line, date and stop notices. Add Ribeauvillé after Riquewihr only if both lines and the last return are feasible; otherwise keep one village and return to Colmar.']
         ],
-        fallback: 'If rural transit or weather fails, remain in Colmar, Sélestat or Strasbourg. If a producer cancels, use a public vineyard trail or museum only where officially open; do not enter private cellars or rows.',
+        fallback: 'If the dated outward/return pair is poor, use a full Colmar day instead of a one-way rural trip. In rain, heat or a harvest closure, stay on public streets or move the outing to a later date. The Kut’zig loop or line 500 to the castle is a substitute only when its own current operating calendar, reservation/admission and return fit.',
         watch: [
-          ['Village buses can be sparse', 'A morning departure may have no symmetric evening return. Save the full timetable, not a single journey result.'],
-          ['Harvest is active work', 'Keep clear of machinery, do not pick grapes and follow any temporary route closure.'],
-          ['A designated driver must remain sober', 'Small pours add up across appointments. Use a tour, taxi or transit if everyone wishes to taste.']
+          ['Line numbers and timetables change', 'Fluo renumbered many Grand Est coach lines on 1 September 2026. Use current lines 816/830 rather than legacy 68R016/68R030 references, and verify stop notices and both directions for your travel date.'],
+          ['Kut’zig is seasonal and reserved', 'The Colmar Tourist Office lists an operating season of 3 April–11 October 2026 and requires reservation. That period ends on this review date; a later trip needs the next published calendar.'],
+          ['A tasting changes the return plan', 'The Fluo 8152 school route is access-limited and is not a tourist substitute. Do not rely on it. After any tasting, use the confirmed public transport or a pre-arranged sober driver; never drive after drinking.']
         ],
-        duration: 'Allow a full day for two nearby villages and one appointment. A castle or long vineyard walk should replace, not supplement, the second cluster.',
-        combine: 'Combine villages that share one transit or bicycle corridor. Do not add Strasbourg, multiple castles and both ends of the Wine Route in one day.',
-        verify: 'Check Fluo or TER connections, producer appointment, castle access, trail condition, harvest notices and weather before leaving the gateway.',
+        duration: 'Allow most of a day for one coach corridor, a village walk, meal and return. If a producer appointment is added, budget its booked duration and travel to the actual cellar; the second village is optional only when the timetable still protects the return.',
+        combine: 'Choose Riquewihr (and conditionally Ribeauvillé) on line 816, or Eguisheim on line 830. Keep Strasbourg, the 170-km route’s distant sections and the Sélestat castle shuttle for separate days.',
+        verify: 'Open the official Fluo 816 or 830 date-specific timetable, stop list and service notices; verify the return from the same stop to Colmar Gare SNCF. Confirm the producer appointment and walk, current weather/harvest notices, and the next Kut’zig or line 500 calendar if substituting.',
+        hubAccess: 'From Colmar Gare SNCF, line 816 serves RIQUIEWIHR - Poste and RIBEAUVILLE - Gare Routière; 830 serves EGUISHEIM - Place De Gaulle. Both are date-specific coach trips with their own return directions.',
+        hubTradeoff: 'Choose one corridor and protect its return. Add a second village or cellar only when the actual timetable and appointment fit without sacrificing the connection back to Colmar.',
+        hubDuration: 'Most of a day for one village and its bus return; a second stop depends on the specific date and a remaining return service.',
+        siteContext: {
+          label: 'A long route, several local decisions',
+          heading: 'Treat the Wine Route as a corridor, not one walk.',
+          intro: 'The official Wine Route extends about 170 km between Marlenheim and Thann. Its villages are separate communities with different public-transport stops and calendars. This page uses two concrete Colmar corridors as examples; each trip still needs a dated return plan.',
+          details: [
+            ['North-central: Riquewihr and Ribeauvillé', 'Current Fluo 816 lists Colmar Gare SNCF, Riquewihr - Poste and Ribeauvillé - Gare Routière. These stops make the places possible by coach on selected dates, but do not guarantee a convenient sequence or connection between villages.'],
+            ['South-central: Eguisheim', 'Current Fluo 830 lists Colmar Gare SNCF and Eguisheim - Place De Gaulle. Plan Eguisheim on its own route and check the Colmar-bound departure before leaving the village.'],
+            ['What an image can and cannot show', 'The page image is a Route des Vins d’Alsace road sign among vineyards near Orschwihr; it does not depict a named village. Use it as route context rather than as a claim about a destination façade.']
+          ]
+        },
+        operations: {
+          entryReturn: 'Use TER to Colmar Gare SNCF, then the Fluo coach stop COLMAR - Gare SNCF. For Riquewihr, check line 816 to RIQUIEWIHR - Poste; for Eguisheim, line 830 to EGUISHEIM - Place De Gaulle. Read the outbound and Colmar-bound listings for your exact date and stop; save a return with margin before any village walk.',
+          booking: 'There is no single Wine Route ticket or universal cellar walk-in. Contact a named producer directly for its current visitor calendar and reservation conditions. Kut’zig requires reservation through the official visitor channel during its published season; its 2026 listing ends 11 October. The castle shuttle has a separate annual calendar.',
+          weather: 'Check the official forecast and local route notices. Rain, heat, harvest machinery or a temporary vineyard-path closure should shorten or cancel the exposed walk; preserve a full Colmar museum and old-town day rather than improvising on a roadside.'
+        },
+        faq: [
+          ['Which bus reaches Riquewihr from Colmar?', 'Fluo’s current line 816 lists COLMAR - Gare SNCF and RIQUIEWIHR - Poste, plus RIBEAUVILLE - Gare Routiere. Confirm both directions and the exact travel date in the live Fluo timetable.'],
+          ['Can I visit Eguisheim on the same bus route?', 'Eguisheim is on current Fluo line 830 at EGUISHEIM - Place De Gaulle, not line 816. Treat it as a separate corridor unless a date-specific connection plan explicitly joins them.'],
+          ['Can I use Kut’zig after 11 October 2026?', 'The Colmar Tourist Office currently lists 3 April through 11 October 2026 and says reservation is required. Check for a newly published season before planning a later trip; do not assume winter operation.']
+        ],
         sources: [
-          ['https://www.visit.alsace/en/the-alsace-wine-route/', 'Visit Alsace — official Wine Route planning'],
-          ['https://www.haut-koenigsbourg.fr/en/', 'Haut-Koenigsbourg Castle — official access and visits']
+          ['https://pro.visit.alsace/en/the-wine-route/', 'Visit Alsace — official route length and Marlenheim–Thann extent'],
+          ['https://pro.visit.alsace/en/discover-alsace-without-a-car/', 'Visit Alsace — regional rail and car-free planning'],
+          ['https://services.fluo.grandest.fr/fr/schedules/line/30671', 'Fluo Grand Est — line 816 stop list and live timetable'],
+          ['https://services.fluo.grandest.fr/fr/schedules/line/30647', 'Fluo Grand Est — line 830 stop list and live timetable'],
+          ['https://www.fluo.grandest.fr/cars-fluo/', 'Fluo Grand Est — current coach network and 2026 renumbering'],
+          ['https://www.tourisme-colmar.com/en/practical/travel-and-mobility/public-transport', 'Colmar Tourist Office — station and regional-coach planning'],
+          ['https://www.tourisme-colmar.com/en/visit/visit/kut-zig-open-top-bus', 'Colmar Tourist Office — Kut’zig season and reservation'],
+          ['https://www.haut-koenigsbourg.fr/en/practical-informations/the-haut-koenigsbourg-shuttle-bus-l500/', 'Haut-Koenigsbourg — current seasonal line 500 from Sélestat']
         ]
       })
     ]
