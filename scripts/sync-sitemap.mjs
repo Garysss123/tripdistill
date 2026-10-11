@@ -132,6 +132,13 @@ const unitedKingdomEdinburghEditedRoutes = [
   '/united-kingdom/edinburgh-lothians/new-town-dean-village/',
   '/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/'
 ];
+const unitedKingdomCornwallLastmod = '2026-10-11';
+const unitedKingdomCornwallEditedRoutes = [
+  '/united-kingdom/cornwall-devon/',
+  '/united-kingdom/cornwall-devon/st-ives-penwith/',
+  '/united-kingdom/cornwall-devon/falmouth-roseland/',
+  '/united-kingdom/cornwall-devon/exeter-dartmoor-edge/'
+];
 const usaEditedLastmod = '2026-10-09';
 // These thirteen U.S. routes received material editorial updates across four Oct 9 batches.
 // Localized URLs inherit the same date; all other U.S. route dates retain the default.
@@ -390,6 +397,11 @@ for (const route of unitedKingdomEdinburghEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Edinburgh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomEdinburghLastmod });
+}
+for (const route of unitedKingdomCornwallEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Cornwall route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomCornwallLastmod });
 }
 for (const route of usaEditedRoutes) {
   const record = records.get(route);

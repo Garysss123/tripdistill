@@ -122,7 +122,7 @@ export const unitedKingdomImageManifest = {
   },
   "cornwall-devon/st-ives-penwith": {
     "src": "/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp",
-    "alt": "St Ives harbour and waterfront in Cornwall",
+    "alt": "Fishing boats in St Ives harbour at low tide",
     "source": "https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg",
     "label": "The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg",
     "creator": "nick macneill",
@@ -132,7 +132,7 @@ export const unitedKingdomImageManifest = {
   },
   "cornwall-devon/falmouth-roseland": {
     "src": "/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp",
-    "alt": "Falmouth harbour and the Carrick Roads estuary in Cornwall",
+    "alt": "A passenger boat and sailing craft at St Mawes Harbour on the Roseland",
     "source": "https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg",
     "label": "Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg",
     "creator": "Mutney",
@@ -142,7 +142,7 @@ export const unitedKingdomImageManifest = {
   },
   "cornwall-devon/exeter-dartmoor-edge": {
     "src": "/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp",
-    "alt": "Exeter Cathedral and Cathedral Green in Devon",
+    "alt": "Exeter Cathedral and Cathedral Green with restoration scaffolding visible",
     "source": "https://commons.wikimedia.org/wiki/File:Exeter_,_Exeter_Cathedral_%5E_Green_-_geograph.org.uk_-_3144068.jpg",
     "label": "Exeter , Exeter Cathedral ^ Green - geograph.org.uk - 3144068.jpg",
     "creator": "Lewis Clarke",
