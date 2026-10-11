@@ -41,6 +41,10 @@ for (const edition of editions) {
       const links = findAll(parse(html), (node) => node.tagName === 'a').map(attrs);
       assert.ok(links.some((link) => link.href === 'https://tripdistill.com/assets/images/china-lhasa-preparation.svg'), `${relative} must visibly link the original diagram source`);
       assert.ok(links.some((link) => link.href === 'https://tripdistill.com/terms-of-use/'), `${relative} must visibly state the reuse terms`);
+      if (edition.locale === 'en') {
+        assert.doesNotMatch(html, /official booking portal currently describes real-name reservations|does not sell same-day tickets/i, `${relative} must not assert Potala booking rules that could not be verified`);
+        assert.match(html, /official Potala booking portal could not be retrieved in this review/i, `${relative} must tell readers to verify the live official portal`);
+      }
     }
     if (route === '/china/xinjiang-corridor/') {
       const document = parse(html);
