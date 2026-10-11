@@ -51,7 +51,7 @@ export function defineUnitedKingdomCluster(cluster) {
       family: cluster.family,
       url: `/united-kingdom/${cluster.slug}/${guide.slug}/`,
       route: guide.stages.map((stage, stageIndex) => [routeLabels[stageIndex], stage[0], stage[1]]),
-      faq: [
+      faq: guide.faq || [
         [`How much time should I give ${guide.name}?`, guide.duration],
         [`What should I combine with ${guide.name}?`, guide.combine],
         ['What should I verify before leaving?', guide.verify]

@@ -537,17 +537,19 @@ export const unitedKingdomEnglandSouthClusters = [
   }),
   c({
     slug: 'cornwall-devon',
+    reviewDate: '11 October 2026',
+    reviewDateISO: '2026-10-11',
     name: 'Cornwall & Devon',
     nation: 'England',
     band: 'england-south',
     family: 'peninsula-weather-log',
     label: 'Peninsula weather log',
-    tagline: 'Treat railheads, coastal buses and moor roads as separate layers.',
-    hubIntro: 'Cornwall and Devon contain rail-linked cities and harbour towns, but the peninsula’s headlands, villages and moors depend on slower branches, buses, boats or roads. A useful trip chooses a compact base and one weather-facing landscape each day rather than measuring success by the number of coastal names reached.',
-    stay: 'Four to six nights allows one west Cornwall base plus a Devon or central Cornwall base. A two-night visit should stay on one branch line or harbour system; moving luggage across the peninsula can consume the usable day.',
-    transfer: 'Mainline trains reach Exeter, Plymouth, Truro and Penzance, with branches to St Ives and Falmouth. Coastal buses, ferries and moor services are separate networks with seasonal patterns. Protect the connection back to the railhead before walking beyond town.',
-    season: 'Atlantic wind and rain affect cliffs, boats and exposed paths in every season. Summer improves frequency but increases road and parking pressure; winter and shoulder months reward towns and museums but demand earlier turn-backs.',
-    fallback: 'Keep a complete harbour, gallery or cathedral day near each base. If wind cancels a boat or makes a headland unsafe, do not substitute another exposed coast simply because it is nearby.',
+    tagline: 'Choose a rail spine, then add only the coast or moor return you can protect.',
+    hubIntro: 'This is a long peninsula, not one compact day-trip region. The dependable rail spine reaches Exeter St David’s, Plymouth, Truro and Penzance; the St Ives and Maritime branches serve separate west and south-coast bases. St Erth is the transfer for the St Ives branch; Truro is the Maritime Line gateway to Perranwell, Penryn, Penmere, Falmouth Town and Falmouth Docks. Dartmoor is a different Exeter-based day: the Dartmoor Line reaches Okehampton, but the station, town interchange and open-moor trailheads are not interchangeable. Choose one corridor per day and preserve its final return.',
+    stay: 'For four to six nights, use two bases only if the trip genuinely crosses the peninsula: St Ives or Penzance for west Cornwall, Falmouth or Truro for the Fal, and Exeter for the city and Dartmoor Line. St Ives keeps the harbour and Tate close but does not make Land’s End a casual extension; Penzance is the stronger western rail-and-bus interchange. Falmouth suits the Maritime Line and harbour; Truro is the better central rail junction. Exeter is the resilient Devon base; Okehampton is useful for a deliberately moor-focused overnight. A two-night trip should stay on one line rather than spend a daylight block changing hotels.',
+    transfer: 'Use named rail corridors: the St Erth–Lelant–Carbis Bay–St Ives branch; Truro’s Maritime Line through Perranwell, Penryn and Penmere to Falmouth Town and Falmouth Docks; and the Exeter St David’s–Crediton–Okehampton Dartmoor Line. They solve different days, not one coast circuit. Transport for Cornwall’s route 16/16A timetable has inland trips via Gulval and Nancledra and selected 16A journeys via Gurnards Head Hotel and Zennor Turn; the variants make a date- and direction-specific check essential. A ferry from Falmouth is a separate water crossing, not a rail replacement, and rural Dartmoor buses vary by day and season.',
+    season: 'Atlantic wind, rain, surf and tide affect cliff paths and ferry operation throughout the year. Fal River lists the St Mawes passenger ferry as year-round but says sailings remain subject to weather and tide; its Enterprise Boats Falmouth–Trelissick–Malpas product is seasonal, with the 2026 window shown by the operator. Do not carry that 2026 season into a later year. Short winter daylight also makes an exposed Penwith or moor walk a poor late start. Before leaving the base, compare the dated operator timetable, live disruption, tide, forecast and sunset; if the last useful connection cannot be protected, choose the town day.',
+    fallback: 'Keep one complete indoor-and-town alternative beside each base: Tate and the harbour at St Ives; the National Maritime Museum Cornwall and Falmouth town; or Exeter Cathedral, RAMM and the quays. If a boat is cancelled, remain on its departure shore. If a rural bus return is uncertain, shorten to a signed walk from the rail station or make the city the whole day. Never treat a taxi as the planned rescue for a remote coastal or moor route.',
     sources: [
       ['https://www.visitcornwall.com/', 'Visit Cornwall — official destination guide'],
       ['https://www.visitdevon.co.uk/', 'Visit Devon — official destination guide'],
@@ -556,19 +558,21 @@ export const unitedKingdomEnglandSouthClusters = [
     guides: [
       g({
         slug: 'st-ives-penwith',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         name: 'St Ives & the Penwith Coast',
         instrument: 'Branch-line and headland clock',
         layout: 'gallery-coast-tide-strip',
         imageQuery: 'St Ives Cornwall harbour beach',
         imageAlt: 'St Ives harbour and waterfront in Cornwall',
-        purpose: 'Choose a gallery-and-harbour day or one exposed Penwith extension, matching the St Ives branch train, local bus and coastal conditions instead of stacking Land’s End, beaches and art into one loop.',
-        summary: 'Arrive by the branch line, give St Ives harbour and one collection a coherent block, then use a verified bus or bounded coastal walk only when the return and weather remain secure.',
+        purpose: 'Choose a station-to-gallery town day or one separately verified Penwith bus or coast section, matching the St Erth branch connection to the last practical return.',
+        summary: 'From St Erth, use the branch through Lelant and Carbis Bay to St Ives; stay in town for Tate or the Hepworth, or commit to one dated bus corridor with its return saved before leaving the harbour.',
         choices: [
           ['St Ives art and harbour', 'Use Tate St Ives, Barbara Hepworth or one collection plus the harbour and beaches. This is the strongest poor-weather and car-free day.'],
           ['Short coast walk', 'Take one signed section from St Ives with a clear turn-back or bus return. It adds landscape but sacrifices museum depth.'],
           ['Penwith bus circuit', 'Use a verified bus to one further town or headland, not every famous stop. This gains reach but depends most on seasonal frequency.']
         ],
-        access: 'The St Ives branch from St Erth is distinct from the main line. The station is above the town, while galleries, harbour and bus stops sit at different levels. For Penwith, confirm the exact route and final service before leaving the compact centre.',
+        access: 'Change at St Erth for the St Ives branch; its named stops are Lelant, Carbis Bay and St Ives, whose station stands above town. Transport for Cornwall route 16/16A connects Penzance and St Ives: the operator timetable shows inland journeys via Gulval and Nancledra plus selected 16A journeys at Gurnards Head Hotel and Zennor Turn. Do not assume every 16A run serves the coastal stops; choose a journey for the exact date and direction and confirm the return before leaving St Ives. The separate 14/18 corridor links St Ives/Penzance with Truro via Hayle, Camborne and Redruth. None of these claims a Land’s End connection; verify a separate current route and stop if adding that area.',
         tradeoff: 'Tate St Ives, the Hepworth garden and a substantial coast extension compete for the same daylight. Choosing art gives up the distant headland; choosing Penwith gives up collection depth and a relaxed harbour meal.',
         stages: [
           ['Ride the branch deliberately', 'Make the St Erth connection with enough margin and note the final branch train. Descend toward the first booked gallery or harbour line.'],
@@ -587,11 +591,21 @@ export const unitedKingdomEnglandSouthClusters = [
         verify: 'Check Tate and Hepworth admission, the St Erth branch service, Transport for Cornwall buses, tide and coast-path weather before departure.',
         sources: [
           ['https://www.tate.org.uk/visit/tate-st-ives', 'Tate St Ives — official visitor information'],
-          ['https://www.transportforcornwall.co.uk/', 'Transport for Cornwall — official bus information']
+          ['https://www.tate.org.uk/visit/tate-st-ives/barbara-hepworth-museum-and-sculpture-garden', 'Barbara Hepworth Museum and Sculpture Garden — official visitor information'],
+          ['https://www.transportforcornwall.co.uk/services/TFCN/16', 'Transport for Cornwall route 16/16A — Penzance and St Ives corridor'],
+          ['https://www.transportforcornwall.co.uk/services/TFCN/14', 'Transport for Cornwall route 14/18 — St Ives, Penzance and Truro corridor'],
+          ['https://www.gwr.com/plan-journey/train-times', 'Great Western Railway — dated rail journey planning']
+        ],
+        faq: [
+          ['Where do I change for St Ives?', 'Change from the main line at St Erth for the branch via Lelant and Carbis Bay to St Ives. Allow time for the uphill station-to-town walk on return and check the day’s GWR timetable.'],
+          ['Can I reach Zennor on the St Ives bus?', 'Some selected route 16A journeys call at Gurnards Head Hotel and Zennor Turn, while other 16/16A journeys use the inland corridor via Gulval and Nancledra. Read the operator timetable for your chosen date and direction, then save the return before starting a one-way coastal walk.'],
+          ['What is the low-weather plan?', 'Stay near the harbour and choose Tate St Ives or the Barbara Hepworth Museum and Sculpture Garden, subject to each venue’s opening and admission information. Keep the other visit or an exposed coast walk for another day.']
         ]
       }),
       g({
         slug: 'falmouth-roseland',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         name: 'Falmouth Harbour & the Roseland',
         instrument: 'Estuary vessel decision card',
         layout: 'harbour-ferry-compass',
@@ -604,7 +618,7 @@ export const unitedKingdomEnglandSouthClusters = [
           ['Pendennis headland', 'Give the castle and headland views the main block. This adds walking and exposure but remains on the Falmouth side.'],
           ['Roseland crossing', 'Use one confirmed passenger ferry to St Mawes or another named landing. It creates a two-shore day but makes the final sailing non-negotiable.']
         ],
-        access: 'Falmouth Town, Falmouth Docks and Penmere stations serve different parts of the town. Ferries use named quays and seasonal schedules. Match the rail stop to the first anchor and confirm whether the return landing connects to the station route.',
+        access: 'From Truro the Maritime Line calls at Perranwell, Penryn, Penmere, Falmouth Town and Falmouth Docks; select the stop for the first anchor rather than assuming all are interchangeable. Fal River’s St Mawes Ferry runs between Prince of Wales Pier, Falmouth and The Quay, St Mawes; the operator describes it as year-round, with a reduced winter pattern, but all sailings are subject to tide and weather. Its Enterprise Boats are a separate seasonal product from Falmouth to Trelissick and Malpas; low tide can prevent the boat reaching Truro, and the operator identifies bus 496 from Malpas as a separately paid connection. King Harry Ferry is a vehicle crossing between Feock and Philleigh, not the Falmouth passenger ferry. Confirm a named outward and return product, its landing and live sailing status before making a two-shore day.',
         tradeoff: 'A full museum, Pendennis and a relaxed Roseland crossing do not share one comfortable day. Crossing the estuary sacrifices collection or castle depth; staying in Falmouth gives up the village but removes the marine cutoff.',
         stages: [
           ['Use the correct branch stop', 'Leave the train at the station nearest the first anchor and note the final service. Do not descend to the wrong quay for a similarly named boat.'],
@@ -623,11 +637,22 @@ export const unitedKingdomEnglandSouthClusters = [
         verify: 'Check museum or castle access, the exact Fal River sailing, branch-line service, wind and the final return before committing to the second shore.',
         sources: [
           ['https://nmmc.co.uk/visit/', 'National Maritime Museum Cornwall — official visit planning'],
-          ['https://www.falriver.co.uk/', 'Fal River — official ferry and river information']
+          ['https://www.falriver.co.uk/ferries/st-mawes-ferry', 'Fal River — St Mawes Ferry route and operating information'],
+          ['https://www.falriver.co.uk/ferries/enterprise-boats', 'Fal River — Enterprise Boats seasonal route and tide information'],
+          ['https://www.falriver.co.uk/ferries', 'Fal River — ferry status and product directory'],
+          ['https://www.falriver.co.uk/trains/great-western-railway', 'Fal River — Maritime Line stations and rail planning'],
+          ['https://www.english-heritage.org.uk/visit/places/pendennis-castle/', 'English Heritage — Pendennis Castle visitor information']
+        ],
+        faq: [
+          ['Which Falmouth stop is closest to the harbour?', 'Falmouth Town is the central-town stop; Falmouth Docks is nearer the docks and Pendennis approach, while Penmere sits uphill from the centre. Check the walk to your first anchor and return to the same or another planned stop.'],
+          ['Is the St Mawes boat the same as Enterprise Boats?', 'No. The St Mawes passenger ferry links Prince of Wales Pier with The Quay at St Mawes. Enterprise Boats is a separate seasonal Falmouth–Trelissick–Malpas service; the operator says low tide may limit the Malpas landing and a bus 496 onward to Truro is separately paid. Check current status and return sailing for either product.'],
+          ['What should I do if wind cancels the crossing?', 'Stay on the Falmouth shore and use the museum, town or Pendennis according to conditions. Do not attempt to recreate the crossing by an unplanned road transfer; King Harry is a separate vehicle ferry route.']
         ]
       }),
       g({
         slug: 'exeter-dartmoor-edge',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         name: 'Exeter & the Dartmoor Edge',
         instrument: 'Cathedral-to-moor weather gate',
         layout: 'red-stone-moor-transect',
@@ -640,7 +665,7 @@ export const unitedKingdomEnglandSouthClusters = [
           ['Rail-to-moor gateway', 'Use a current Dartmoor Line or other rail gateway and a bounded local walk. It adds landscape while preserving a train-based return.'],
           ['Bus or guided moor day', 'Reach a deeper moor village or trail by verified bus, tour or car. This gives broader scenery but depends most on weather and sparse frequency.']
         ],
-        access: 'Exeter St David’s and Exeter Central serve different levels of the city. Dartmoor gateways require the correct rail or bus corridor and may still sit outside open moor routes. Match the station to the plan and keep the final connection visible.',
+        access: 'For a car-free northern edge, board the Dartmoor Line from Exeter St David’s via Crediton. The line serves both Okehampton Station and the newer Okehampton Interchange: the station is the named start for the Yes Tor and High Willhays walk, while the interchange is on the town’s eastern side and is not the trailhead. The walk is a serious open-moor route, not a station stroll: carry a map, set a daylight turn-back, check weather and heed military red flags. Haytor Visitor Centre is a different eastern gateway at Haytor Vale, with the lower car park and walks to Haytor Rocks and the old Granite Tramway; use it by car or only with a dated bus/tour plan verified for that day. Do not infer a direct Exeter-to-Haytor bus from the rail map.',
         tradeoff: 'A full Exeter heritage day and a meaningful moor walk are separate days. Choosing the moor sacrifices cathedral and museum depth; staying in the city gives up open landscape but avoids an exposed, timetable-bound return.',
         stages: [
           ['Choose city station or gateway', 'Leave Exeter Central for the compact city or use St David’s and the correct branch for the rural plan. Do not cross the city with luggage between them without time.'],
@@ -659,7 +684,16 @@ export const unitedKingdomEnglandSouthClusters = [
         verify: 'Check cathedral access, Dartmoor National Park alerts, GWR or local bus service, Met Office conditions and daylight before leaving the city.',
         sources: [
           ['https://www.exeter-cathedral.org.uk/plan-your-visit/', 'Exeter Cathedral — official visitor information'],
-          ['https://www.dartmoor.gov.uk/enjoy-dartmoor', 'Dartmoor National Park — official visitor and safety guidance']
+          ['https://dartmoorline.com/', 'Dartmoor Line — official railway route and service planning'],
+          ['https://greatscenicrailways.co.uk/lines/dartmoor-line/', 'Great Scenic Railways — Okehampton station and named walk access'],
+          ['https://www.dartmoor.gov.uk/enjoy-dartmoor/planning-your-visit/travel-information', 'Dartmoor National Park — seasonal public transport guidance'],
+          ['https://www.dartmoor.gov.uk/enjoy-dartmoor/planning-your-visit/our-visitor-centres/haytor-visitor-centre', 'Dartmoor National Park — Haytor Visitor Centre and access'],
+          ['https://rammuseum.org.uk/visit/', 'Royal Albert Memorial Museum — official visitor information']
+        ],
+        faq: [
+          ['Which station starts the Okehampton moor walk?', 'Okehampton Station is the walk gateway identified for Yes Tor and High Willhays. Okehampton Interchange is a separate station on the town’s eastern side; do not confuse it with the trail start. Check the Dartmoor Line timetable and your return before setting out.'],
+          ['Can I take the train to Haytor?', 'No rail station serves Haytor Visitor Centre. It is at Haytor Vale, about three miles west of Bovey Tracey. Plan a car journey or verify a dated seasonal bus or tour; if that connection is not confirmed, choose the Okehampton rail gateway or remain in Exeter.'],
+          ['What is the safer bad-weather alternative?', 'Make Exeter the full day: Cathedral Green and Exeter Cathedral, the Royal Albert Memorial Museum when open, and the quays. Open-moor visibility, wind, wet ground, military red flags and short daylight can make the walk unsuitable even while the train is running.']
         ]
       })
     ]
