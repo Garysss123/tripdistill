@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" fill="none">
+  <metadata>TripDistill project original; no separate reuse license declared. Planning schematic only: not a geographic map and not to scale.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2 12 7 2 12" stroke="#42746A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <pattern id="grain" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.2" fill="#D9D3C7" opacity=".48"/><circle cx="22" cy="23" r="1" fill="#D9D3C7" opacity=".3"/></pattern>
+  </defs>
+  <rect width="1600" height="1066" rx="48" fill="#F2EFE5"/>
+  <rect width="1600" height="1066" rx="48" fill="url(#grain)"/>
+  <path d="M64 144H1536" stroke="#C8D7CF" stroke-width="3"/>
+  <path d="M64 920H1536" stroke="#C8D7CF" stroke-width="3"/>
+  <rect x="76" y="198" width="292" height="672" rx="38" fill="#173A42"/>
+  <circle cx="222" cy="454" r="105" fill="#DCE9E1"/>
+  <g stroke="#173A42" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 480v-59c0-22 17-39 39-39h50c22 0 39 17 39 39v59h-18v18h-17v-18h-58v18h-17v-18z" fill="#FFFDF8"/>
+    <path d="M179 402h86v43h-86z" fill="#BBD4C8"/>
+    <path d="M169 461h106M179 492h9m75 0h9"/>
+  </g>
+  <path d="M367 532C405 532 408 322 444 322M367 532H444M367 532C405 532 408 742 444 742" stroke="#42746A" stroke-width="7" stroke-linecap="round"/>
+  <g>
+    <rect x="428" y="224" width="1100" height="196" rx="30" fill="#FFFDF8" stroke="#D4DED4" stroke-width="3"/>
+    <rect x="428" y="434" width="1100" height="196" rx="30" fill="#E3ECE5" stroke="#C9D9D0" stroke-width="3"/>
+    <rect x="428" y="644" width="1100" height="196" rx="30" fill="#FFFDF8" stroke="#D4DED4" stroke-width="3"/>
+  </g>
+  <g fill="#173A42"><circle cx="500" cy="322" r="38"/><circle cx="500" cy="532" r="38"/><circle cx="500" cy="742" r="38"/></g>
+  <g fill="#FFFDF8" font-family="Arial,sans-serif" font-size="34" font-weight="700" text-anchor="middle"><text x="500" y="334">1</text><text x="500" y="544">2</text><text x="500" y="754">3</text></g>
+  <g stroke="#42746A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M555 322H664M790 322H926M1050 322H1198"/>
+    <path d="M555 532H674M800 532H926M1050 532H1198"/>
+    <path d="M555 742H674M815 742H926M1050 742H1198"/>
+  </g>
+  <g stroke="#2B5B58" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M690 327h84l-14 26h-55l-15-26Z" fill="#BBD4C8"/><path d="M706 319h48v8h-48zM722 293h18v26h-18z" fill="#FFFDF8"/>
+    <path d="M948 354c18-18 36-18 54 0m-44-30 16-28 17 28m-29 0h24"/><circle cx="974" cy="275" r="9" fill="#D7A76A"/>
+    <path d="M692 549h88v-66h-88zM706 483v-20h60v20M708 516h15m24 0h15" fill="#DCE9E1"/><path d="M704 572h64"/>
+    <path d="M944 552c22-14 44-14 66 0m-66 18c22-14 44-14 66 0m-66 18c22-14 44-14 66 0"/>
+    <path d="M692 769v-44a44 44 0 0 1 88 0v44M692 742h88M712 742v27m48-27v27" fill="#DCE9E1"/>
+    <path d="M946 779c21-8 41-8 62 0m-51-30 15-25 17 25m-31 1h31"/><path d="M1000 702l19 0 10 17-10 17-19 0-10-17z" fill="#F1D4AE"/>
+  </g>
+  <g>
+    <circle cx="1280" cy="322" r="54" fill="#DCE9E1"/><circle cx="1280" cy="532" r="54" fill="#FFFDF8"/><circle cx="1280" cy="742" r="54" fill="#DCE9E1"/>
+    <g stroke="#173A42" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><rect x="1246" y="300" width="68" height="47" rx="8" fill="#FFFDF8"/><path d="M1255 312h49v19h-49zM1257 354h46"/><circle cx="1260" cy="350" r="5" fill="#173A42"/><circle cx="1300" cy="350" r="5" fill="#173A42"/>
+      <rect x="1246" y="510" width="68" height="47" rx="8" fill="#E3ECE5"/><path d="M1255 522h49v19h-49zM1257 564h46"/><circle cx="1260" cy="560" r="5" fill="#173A42"/><circle cx="1300" cy="560" r="5" fill="#173A42"/>
+      <rect x="1246" y="720" width="68" height="47" rx="8" fill="#FFFDF8"/><path d="M1255 732h49v19h-49zM1257 774h46"/><circle cx="1260" cy="770" r="5" fill="#173A42"/><circle cx="1300" cy="770" r="5" fill="#173A42"/></g>
+    <path d="M1340 322h94m-18-18 18 18-18 18M1340 532h94m-18-18 18 18-18 18M1340 742h94m-18-18 18 18-18 18" stroke="#D07854" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <circle cx="222" cy="792" r="17" fill="#D07854"/><circle cx="222" cy="792" r="7" fill="#FFFDF8"/>
+</svg>

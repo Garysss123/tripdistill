@@ -311,24 +311,32 @@ export const unitedKingdomImageManifest = {
     "remoteSha1": "176ba38e3376f54436dd5c5084519d0fcd5a6d78"
   },
   "lake-district-cumbria/keswick-derwentwater": {
-    "src": "/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp",
-    "alt": "Derwentwater and the fells near Keswick in the Lake District",
-    "source": "https://commons.wikimedia.org/wiki/File:Friars%27_Crag_Derwentwater_Lake_District_2022_01.jpg",
-    "label": "Friars' Crag Derwentwater Lake District 2022 01.jpg",
-    "creator": "Julian Herzog ( Website ),",
-    "license": "CC BY 4.0",
-    "commonsTitle": "File:Friars' Crag Derwentwater Lake District 2022 01.jpg",
-    "remoteSha1": "1e63df38f35979d64cd44bb9b2f86513c55d7413"
+    "src": "/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater-route-choice.svg",
+    "alt": "Schematic, not to scale: From the Keswick bus gateway choose 1) a Derwentwater launch, 2) town and a short low-level route, or 3) the former railway path only when its bridge is open. Check the return bus.",
+    "source": "https://tripdistill.com/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater-route-choice.svg",
+    "label": "Keswick & Derwentwater route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "attributionTerms": "No separate reuse license is declared; the credit identifies authorship and asset provenance only.",
+    "assetType": "original-planning-diagram",
+    "localSha1": "5d912710846a3a90543735c3c36739dc7a214c92",
+    "editNote": "Planning schematic; not a geographic map and not to scale. It shows only the named route choices and return checks."
   },
   "lake-district-cumbria/carlisle-hadrians-wall-west": {
-    "src": "/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp",
-    "alt": "Hadrian’s Wall crossing the Cumbrian landscape",
-    "source": "https://commons.wikimedia.org/wiki/File:Hadrians_Wall_-_geograph.org.uk_-_3179504.jpg",
-    "label": "Hadrians Wall - geograph.org.uk - 3179504.jpg",
-    "creator": "Chris McAuley",
-    "license": "CC BY-SA 2.0",
-    "commonsTitle": "File:Hadrians Wall - geograph.org.uk - 3179504.jpg",
-    "remoteSha1": "02ee886bb3decfaceedb0c8565567cc62a372d01"
+    "src": "/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west-route-choice.svg",
+    "alt": "Schematic, not to scale: From Carlisle station, walk to Stand K and choose 1) a Carlisle city day, 2) an HW1 stop at Birdoswald, or 3) an HW1 stop at Walltown. Confirm the return service.",
+    "source": "https://tripdistill.com/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west-route-choice.svg",
+    "label": "Carlisle & Hadrian’s Wall West route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "attributionTerms": "No separate reuse license is declared; the credit identifies authorship and asset provenance only.",
+    "assetType": "original-planning-diagram",
+    "localSha1": "ca32f72f67ebd57a1b5064ba1abfb5ca95bc54d6",
+    "editNote": "Planning schematic; not a geographic map and not to scale. It shows only the named route choices and return checks."
   },
   "northeast-northumberland/newcastle-gateshead-quays": {
     "src": "/assets/images/united-kingdom-northeast-northumberland-newcastle-gateshead-quays.webp",

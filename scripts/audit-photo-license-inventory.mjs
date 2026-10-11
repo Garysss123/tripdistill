@@ -468,7 +468,6 @@ function matchCredit(image, credits) {
   return { ...top.credit, matching: 'page_credit_lexical_match', matchedTokens: top.distinctiveHits };
 }
 
-const assetPaths = walkFiles(imageDir).filter((file) => /\.webp$/i.test(file) || path.basename(file) === 'australia-wadjemup-ferry-day-sequence.svg');
 const recordsBySrc = new Map();
 const dataDir = path.join(root, 'data');
 const dataFiles = fs.readdirSync(dataDir).filter((name) => name.endsWith('.mjs'));
@@ -492,7 +491,9 @@ function collect(value, moduleName, seen, depth = 0) {
       editHistory: value.editNote ?? null,
       attributionTerms: value.attributionTerms ?? null,
       commercialReuseEligibility: value.commercialReuseEligibility ?? null,
-      alt: value.alt ?? null
+      alt: value.alt ?? null,
+      inventoryStatus: value.inventoryStatus ?? null,
+      retirementNote: value.retirementNote ?? null
     };
     if (!recordsBySrc.has(item.src)) recordsBySrc.set(item.src, []);
     recordsBySrc.get(item.src).push(item);
@@ -510,6 +511,12 @@ for (const name of dataFiles) {
     moduleErrors.push({ module: name, error: error.message });
   }
 }
+
+const assetPaths = walkFiles(imageDir).filter((file) => {
+  if (/\.webp$/i.test(file)) return true;
+  const src = '/' + path.relative(root, file).replaceAll('\\', '/');
+  return recordsBySrc.get(src)?.some((record) => record.assetType === 'original-planning-diagram') || false;
+});
 
 const usesBySrc = new Map();
 const creditsBySrc = new Map();
@@ -939,6 +946,10 @@ for (const fullPath of assetPaths) {
   const attributionTerms = uniqueValues('attributionTerms')[0] || explicit?.attributionTerms || terms.attributionTerms;
   const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
   const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
+  const inventoryStatus = imageUses.length ? 'used' : 'unused';
+  if (imageUses.length && uniqueValues('inventoryStatus').includes('unused')) {
+    throw new Error(`Asset ${src} is declared unused but remains referenced by a current English page.`);
+  }
   const row = {
     sha256: hash,
     assetPath: src,
@@ -962,6 +973,8 @@ for (const fullPath of assetPaths) {
     verificationStatus: verification ? 'source_page_checked' : sourceUrl ? 'site_credit_or_metadata_only' : 'missing_source_credit_match',
     verificationDate: verification ? (verification.checkedOn || verifiedOn) : null,
     verificationDetail: verification?.detail || (authoredDiagram ? 'TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.' : null),
+    inventoryStatus,
+    retirementNote: uniqueValues('retirementNote')[0] || null,
     useCount: imageUses.length,
     routes: [...new Set(imageUses.map((use) => use.route))],
     altTexts: [...new Set(imageUses.map((use) => use.alt).filter(Boolean))],
@@ -994,6 +1007,8 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
     license: row.license,
     rightsStatus: row.rightsStatus,
     rightsStatusUrl: row.rightsStatusUrl,
+    inventoryStatus: row.inventoryStatus,
+    retirementNote: row.retirementNote,
     licenseUrl: row.licenseUrl,
     commercialReuseEligibility: row.commercialReuseEligibility,
     attributionTerms: row.attributionTerms,
@@ -1013,14 +1028,14 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
 }));
 
 const assetImageExtras = fs.readdirSync(imageDir)
-  .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file) && file !== 'australia-wadjemup-ferry-day-sequence.svg');
+  .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file) && !assetPaths.includes(path.join(imageDir, file)));
 const rootImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
 const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
 const counts = {
   assetFileCount: assetPaths.length,
   completeSourceCreatorLicenseRecords: entries.filter((row) => row.sourceUrl && row.creator && row.license).length,
   completeProjectOriginalRightsRecords: entries.filter((row) => row.assetType === 'original-planning-diagram' && row.sourceUrl && row.creator && row.rightsStatus).length,
-  licenseClaimsNotIndependentlyVerified: entries.filter((row) => row.verificationStatus === 'site_credit_or_metadata_only').length,
+  licenseClaimsNotIndependentlyVerified: entries.filter((row) => row.assetType === 'photographic-raster' && row.verificationStatus === 'site_credit_or_metadata_only').length,
   currentKnownUnsuitableImages: 0,
   previouslyMisplacedImageReplaced: 1,
   buildImageFilesOutsidePhotoInventory: buildImageExtras.length,
@@ -1030,6 +1045,7 @@ const counts = {
   englishCountryPagesScanned: englishPageCount,
   imageReferencesScanned: [...usesBySrc.values()].reduce((total, items) => total + items.length, 0),
   assetsUsedByScannedEnglishPages: entries.filter((row) => row.useCount > 0).length,
+  unusedAssetCount: entries.filter((row) => row.inventoryStatus === 'unused').length,
   assetsWithStructuredSourceRecords: entries.filter((row) => row.metadataOrigin === 'structured_data_record').length,
   assetsWithMatchedEnglishCreditOnly: entries.filter((row) => row.metadataOrigin === 'page_credit_lexical_match').length,
   assetsWithExplicitEnglishCreditMatch: entries.filter((row) => row.metadataOrigin === 'explicit_asset_credit_match').length,
@@ -1071,7 +1087,7 @@ const report = {
     currentFile: 'The current replacement remains included as the current asset at the same path.'
   },
   entries: grouped,
-  countInterpretation: 'licenseClaimsNotIndependentlyVerified and metadataOrCreditOnly count current inventory records without an independently checked source-page entry. They do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and those figures are not additive.',
+  countInterpretation: 'licenseClaimsNotIndependentlyVerified counts photographic-raster records without an independently checked source page; original diagrams declare no separate reuse license and are excluded. metadataOrCreditOnly counts all asset records without an independent source-page check. These metrics do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and the figures are not additive.',
   unmatchedAssets: unmatchedByAsset,
   openCreditReviews,
   sourceMetadataConflicts: sourceConflicts
