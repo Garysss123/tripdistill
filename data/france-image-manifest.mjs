@@ -365,7 +365,7 @@ export const franceImageManifest = {
   },
   "dordogne-perigord/sarlat-market-old-town": {
     "src": "/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp",
-    "alt": "Golden limestone buildings in Sarlat’s historic center",
+    "alt": "Market stalls beneath timber shelters on Sarlat’s Place de la Liberté",
     "source": "https://commons.wikimedia.org/wiki/File:Sarlat_2008_05.jpg",
     "label": "Sarlat 2008 05.jpg",
     "creator": "Manfred Heyde",
@@ -375,7 +375,7 @@ export const franceImageManifest = {
   },
   "dordogne-perigord/vezere-prehistory": {
     "src": "/assets/images/france-dordogne-perigord-vezere-prehistory.webp",
-    "alt": "Limestone cliffs and river landscape in the Vézère Valley",
+    "alt": "Limestone overhang rising above buildings in Les Eyzies-de-Tayac",
     "source": "https://commons.wikimedia.org/wiki/File:Les_Eyzies-de-Tayac_falaise_bourg_(2).jpg",
     "label": "Les Eyzies-de-Tayac falaise bourg (2).jpg",
     "creator": "Père Igor",

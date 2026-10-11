@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T04:24:22.714Z",
+  "generatedAt": "2026-10-11T23:12:12.826Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 793,
     "completeSourceCreatorLicenseRecords": 764,
     "completeProjectOriginalRightsRecords": 4,
-    "licenseClaimsNotIndependentlyVerified": 537,
+    "licenseClaimsNotIndependentlyVerified": 535,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -19,11 +19,11 @@
     "assetsWithStructuredSourceRecords": 580,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 145,
+    "assetsVisuallyReviewed": 148,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 228,
-    "metadataOrCreditOnly": 541,
-    "usedAssetsWithoutIndependentSourcePageCheck": 539,
+    "sourcePageChecked": 230,
+    "metadataOrCreditOnly": 539,
+    "usedAssetsWithoutIndependentSourcePageCheck": 537,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -10367,16 +10367,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Dordogne photo review: exact Commons page checked for Henk Monster, the Beynac castle/church viewpoint, source date 16 October 2011, original 4,342 × 3,257 dimensions and CC BY 3.0 declaration. Local WebP pixels match the castle and village across the Dordogne. Attribution, linked license and WebP edit note are present; this documents the page declaration, not an independent rights clearance.",
           "useCount": 4,
           "routes": [
             "/france/dordogne-perigord/",
@@ -10414,16 +10414,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Dordogne photo review: exact Commons page checked for Manfred Heyde, the south end of Sarlat market square, source date May 2008, original 2,892 × 1,976 dimensions and CC BY-SA 3.0 declaration. Local WebP pixels match the market square and stall shelters. Attribution, linked same-version license and WebP edit note are present; this documents the page declaration, not an independent rights clearance.",
           "useCount": 6,
           "routes": [
             "/france/",
@@ -10433,7 +10433,7 @@
             "/france/dordogne-perigord/vezere-prehistory/"
           ],
           "altTexts": [
-            "Golden limestone buildings in Sarlat’s historic center"
+            "Market stalls beneath timber shelters on Sarlat’s Place de la Liberté"
           ],
           "rawVisibleCredits": [
             "Sarlat 2008 05.jpg — Manfred Heyde, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -10468,7 +10468,7 @@
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
@@ -10480,7 +10480,7 @@
             "/france/dordogne-perigord/vezere-prehistory/"
           ],
           "altTexts": [
-            "Limestone cliffs and river landscape in the Vézère Valley"
+            "Limestone overhang rising above buildings in Les Eyzies-de-Tayac"
           ],
           "rawVisibleCredits": [
             "Les Eyzies-de-Tayac falaise bourg (2).jpg — Père Igor, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."

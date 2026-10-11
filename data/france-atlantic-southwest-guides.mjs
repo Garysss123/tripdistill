@@ -264,129 +264,166 @@ export const franceAtlanticSouthwestClusters = [
   }),
   c({
     slug: 'dordogne-perigord',
+    reviewDate: '11 October 2026',
+    reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
     name: 'Dordogne & Périgord Noir',
     region: 'Dordogne, Nouvelle-Aquitaine',
     band: 'atlantic-southwest',
     family: 'limestone-river-fieldbook',
     label: 'Limestone and river fieldbook',
-    tagline: 'Choose one valley system; sparse transport makes distance the first decision.',
-    hubIntro: 'Sarlat’s market city, the Vézère’s prehistoric sites and the Dordogne’s cliff villages and castles are close on a map but dispersed across rural roads. A car, driver, bicycle or arranged tour often determines what is responsible and possible. Build each day inside one valley so a missed cave slot, river shuttle or castle closing does not trigger a long corrective drive.',
-    stay: 'Three or four nights around Sarlat, Les Eyzies or a valley base support two complete route days. Moving lodging can cost more time than it saves unless the trip continues beyond Périgord.',
-    transfer: 'Rail reaches Sarlat and other gateways on limited schedules; major caves, castles and villages need a planned last mile. Taxis and app cars are not dependable spontaneous returns.',
-    season: 'Cave and monument reservations, river conditions, market days, summer heat and road pressure all matter. Winter and shoulder seasons are quieter but reduce openings and local services.',
-    fallback: 'Keep Sarlat or another town day ready when a cave ticket, canoe route or rural driver fails. Replace river activity with one accessible château or museum, not with a chain of unverified roads.',
+    tagline: 'Choose a base and valley before choosing the headline sights.',
+    hubIntro: 'Sarlat, the Vézère prehistoric sites and the Dordogne’s cliff villages belong to one broad Périgord trip, but not to one compact day. Rail gets you to Sarlat or Les Eyzies; it does not put you at Lascaux, Font-de-Gaume or a hilltop château. Pick a base around the first two nights, book any timed cave before lodging, then give each valley a full day with its return already solved.',
+    searchSummary: 'Plan four nights from one Sarlat or Les Eyzies base for a market-town day, one Vézère day and one Dordogne castles day. TER line D33/L33 serves Sarlat, L34 serves Les Eyzies; summer coaches 337, 338 and 339 are date-dependent, so verify the final leg before booking caves or hotels.',
+    stay: 'For three nights, sleep in Sarlat and choose only two full days: Sarlat plus either the Vézère or the castle valley. Four nights suit one base—Sarlat for the market and southern castles, Les Eyzies for early cave entry—plus three full days and a weather or transport buffer. Five nights can split two nights in Sarlat and three in Les Eyzies only when timed visits and the luggage transfer justify moving; otherwise keep one room and book the last mile.',
+    transfer: 'TER line D33/L33 links Bordeaux, Bergerac and Sarlat; TER line L34 connects Périgueux, Les Eyzies and Sarlat on its route. Seasonal regional coaches list line 337 Sarlat–Les Eyzies, 338 Dordogne Valley and 339 Vézère Valley; their operating dates and onward links change, and some coaches require advance reservation. No train or coach stop is a promise of a cave shuttle. Check the Nouvelle-Aquitaine timetable search, exact stop, reservation rule and return; prebook a driver or tour where the final leg is absent.',
+    season: 'Sarlat’s food market is Wednesday and Saturday morning; the Saturday market is larger, while Thursday’s organic market and winter truffle schedule are seasonal. Regional coach 338 to Castelnaud is shown as a summer service, and the other valley coaches have date-bound calendars. Cave slots, château openings, canoe launches, river levels, heat and harvest traffic also move with season. Check the dated operator calendar, attraction ticket and river notice together before buying a non-refundable room.',
+    fallback: 'If a cave slot, seasonal coach, driver or river operator drops out, keep the day in the base town: Sarlat’s market-and-heritage loop or Les Eyzies’ National Museum of Prehistory is a real alternative. Replace a missed river activity with one open château reached by confirmed transport; do not patch rural gaps with an assumed taxi or an unverified bus connection.',
+    reviewDisclaimer: 'Recheck date-specific TER and coach itineraries, reservations, market and monument calendars, river notices and weather before travel; no fare, headway or journey-time promise is made here.',
+    itineraryLabel: 'Four-night Périgord plan',
+    itineraryHeading: 'Keep one base, then give each valley its own day.',
+    itineraryIntro: 'The four nights below mean three complete touring days; add another night if arrival or departure removes a day. Book the cave slot and last-mile transfer before fixing the room. A three-night trip should drop one valley rather than rush through all three.',
+    itinerary: [
+      ['Day 1 · Sarlat and arrival', 'Stay within Sarlat’s walkable center. If it is Wednesday or Saturday, start with the food market; otherwise follow Place du Peyrou, Saint-Sacerdos Cathedral, the Lantern of the Dead and the former Sainte-Marie church market hall. Check the station or driver return before a long dinner.'],
+      ['Day 2 · Choose the Vézère anchor', 'Use TER L34 to Les Eyzies when its date-specific service fits, then visit the National Museum of Prehistory and one pre-booked original site with a confirmed local transfer. Or use Sarlat as the base for a separately booked Montignac/Lascaux IV day. Do not combine both branches without checking their connection.'],
+      ['Day 3 · Dordogne river and one château', 'Choose Beynac or Castelnaud, not both by default. Use the summer line 338 only if it runs on the exact date and has a workable return; otherwise arrange a car, driver or tour. Pair the hill visit with La Roque-Gageac at river level only when your transfer or named boat departure is confirmed.'],
+      ['Day 4 · Buffer and onward journey', 'Keep this for the valley you could not fit, a weather recovery or a slower Sarlat morning. Collect luggage and return to the rail station with a margin; a rural attraction is not a safe final stop before a fixed train unless the transfer is booked.']
+    ],
+    faq: [
+      ['How many nights make the Dordogne workable?', 'Four nights allow one Sarlat or Les Eyzies base and three complete days: the town, one Vézère day and one Dordogne château day. With three nights, choose only two full-day themes; five nights allow a split base if the timed cave and luggage transfer support it.'],
+      ['Can I tour the valleys without a car?', 'Some rail and seasonal coach links serve Sarlat and Les Eyzies, including routes 337, 338 and 339 on date-dependent calendars. They do not guarantee a link to every cave, château or return. Confirm exact stops and both directions, reserve on-demand coaches where required, or book a driver/tour.'],
+      ['When should I visit Sarlat’s market?', 'The city lists food markets on Wednesday and Saturday mornings, with Saturday also hosting the wider market. Thursday organic and winter truffle markets follow separate seasonal calendars; confirm the current hours and location before building the day.']
+    ],
     sources: [
-      ['https://en.sarlat-tourisme.com/', 'Sarlat Périgord Noir tourism — official destination guide'],
-      ['https://www.dordogne-perigord-tourisme.fr/', 'Dordogne Périgord Tourism — official regional planning'],
-      ['https://www.ter.sncf.com/nouvelle-aquitaine', 'TER Nouvelle-Aquitaine — official regional rail information']
+      ['https://www.dordogne-perigord-tourisme.fr/cote-pratique/comment-se-deplacer-en-dordogne-sans-voiture/', 'Dordogne Périgord Tourism — named TER and seasonal regional coach routes'],
+      ['https://transports.nouvelle-aquitaine.fr/cars-regionaux/dordogne', 'Nouvelle-Aquitaine regional coaches — live Dordogne schedules and reservation notes'],
+      ['https://www.ter.sncf.com/nouvelle-aquitaine/trajet-bordeaux-sarlat', 'TER Nouvelle-Aquitaine — Bordeaux–Bergerac–Sarlat rail route'],
+      ['https://en.sarlat-tourisme.com/discover-sarlat-and-the-perigord/a-gourmet-escapade-through-the-sarlat-market/', 'Sarlat Tourism — market days and seasonal food markets'],
+      ['https://sarlat.fr/mon-quotidien/commerces-et-marches/les-marches/', 'City of Sarlat — current market calendar']
     ],
     guides: [
       g({
         slug: 'sarlat-market-old-town',
         name: 'Sarlat Market & Old Town',
+        reviewDate: '11 October 2026',
+        reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
         instrument: 'Market-day limestone clock',
         layout: 'market-street-clock',
         imageQuery: 'Sarlat la Caneda old town market Dordogne France',
-        imageAlt: 'Golden limestone buildings in Sarlat’s historic center',
-        purpose: 'Use Sarlat’s market calendar and compact lanes to build a complete town day, choosing one food or heritage experience rather than treating the center as a parking stop for valley drives.',
-        summary: 'Enter before the densest market period, trace civic lanes and one viewpoint or museum, then use Sarlat as the meal and transport anchor for the region.',
+        imageAlt: 'Market stalls beneath timber shelters on Sarlat’s Place de la Liberté',
+        purpose: 'Plan around Sarlat’s separate Wednesday and Saturday markets, then connect its named medieval landmarks on foot and protect the station or parking return.',
+        summary: 'Use Wednesday or Saturday morning for the food market, then walk Place du Peyrou, Saint-Sacerdos Cathedral, the Lantern of the Dead and Sainte-Marie’s covered market hall. Keep rural caves and castles for a separately routed day.',
+        searchSummary: 'Sarlat’s food market is Wednesday and Saturday morning; trace Place du Peyrou, Saint-Sacerdos Cathedral, the Lantern of the Dead and the Sainte-Marie covered market hall on foot. Check the station return before adding any rural stop.',
         choices: [
-          ['Market morning', 'Build around the official market day, buy selectively and keep pedestrian space clear. The market replaces a long museum block.'],
-          ['Architecture and heritage', 'Use the cathedral area, former church spaces, lanes and a guided or interpreted route. This works on non-market days.'],
+          ['Wednesday or Saturday market', 'The city lists food stalls from 08:00 to 13:00; Saturday also has a broader market. Arrive early, keep an open walking lane and choose one heritage stop after the busiest period.'],
+          ['Non-market heritage loop', 'Walk from Place du Peyrou and La Boétie’s house to Saint-Sacerdos Cathedral, the Lantern of the Dead and Sainte-Marie’s covered market hall. Its panoramic lift has its own seasonal hours and ticket; check before relying on it.'],
           ['Sarlat as rural base', 'Keep the town for early or evening hours and reserve the main day for one valley circuit with transport already arranged.']
         ],
-        access: 'Sarlat station lies south of the center and rail service can be limited. Walk, use local transport or a taxi with the return in mind; drivers should use designated parking rather than entering restricted medieval streets.',
-        tradeoff: 'A full market, long lunch and distant cave or castle visit exceed a relaxed day. The route either treats Sarlat as the destination or as a base, not both at maximum depth.',
+        access: 'Sarlat station is south of the historic core. Check TER D33/L33 or the SNCF itinerary for your date, then walk into town with luggage kept out of the market lanes; drivers should use signed public parking outside restricted streets. Do not rely on a taxi appearing for the return.',
+        tradeoff: 'The food market is a morning commitment, while the old-town walk and lift need their own time. Adding Lascaux or a castle creates a second transport contract and usually turns the day into a rushed transfer rather than a Sarlat visit.',
         stages: [
-          ['Enter before or after peak pressure', 'Approach from the station or designated parking, identify the return line and avoid carrying luggage into the busiest market lanes.'],
-          ['Read the civic core', 'Connect cathedral square, former Sainte-Marie church area and a few named lanes, using a guide or official circuit when available.'],
-          ['Choose food or heritage depth', 'Eat and browse the market with purpose, or use a museum, panoramic lift or guided visit where operating.'],
-          ['Close near the transport edge', 'Finish south or west of the core, collect purchases and reach the station or lodging without searching for a late rural taxi.']
+          ['Start at Place du Peyrou', 'On Wednesday or Saturday, reach the market early and keep Place de la Liberté clear for vendors. On another day, begin at Place du Peyrou and La Boétie’s house.'],
+          ['Walk the medieval center', 'Continue to Saint-Sacerdos Cathedral and the Lantern of the Dead, then turn toward the former Sainte-Marie church, now the covered market hall.'],
+          ['Choose market or viewpoint time', 'Eat and shop before 13:00 on a food-market day, or check the former church’s panoramic lift hours and tickets for a compact view.'],
+          ['Return through the south edge', 'Walk back toward the station or your designated parking. Use TER D33/L33 only after checking the day’s final useful departure; skip a distant add-on if it makes the return fragile.']
         ],
-        fallback: 'If the market is absent or weather turns, use the heritage circuit, church spaces and a confirmed museum or guided visit. If rail is disrupted, remain in the base rather than attempting a distant one-way taxi.',
+        fallback: 'If it is not a market day, follow the Place du Peyrou–cathedral–Lantern–Sainte-Marie walk and confirm the lift or a guided visit. If rain closes the viewpoint or rail is disrupted, keep the day within the old town and lodging base instead of adding a one-way rural taxi.',
         watch: [
-          ['Market days reshape the streets', 'Crowds and delivery vehicles change circulation. Keep bags controlled and do not block vendor access.'],
-          ['Regional rail can be sparse', 'Know the final train and any replacement bus before settling into dinner.'],
+          ['Market hours are not interchangeable', 'The Wednesday and Saturday food markets run in the morning; the wider Saturday market and seasonal Thursday/truffle markets follow separate calendars. Check the City of Sarlat listing for the date.'],
+          ['The lift is a seasonal attraction', 'The Sainte-Marie panoramic lift operates on its own calendar and may not be open when the covered hall is. Confirm its ticket and hours before planning around the viewpoint.'],
           ['Food names need informed buying', 'Ask about origin and season rather than assuming every stall product is local or currently harvested.']
         ],
-        duration: 'Allow five to seven hours for Sarlat with market and meal. A compact evening or non-market loop needs three to four hours.',
-        combine: 'Combine Sarlat with a very near village only when transport is solved. Keep the Vézère and Dordogne valley circuits for full days.',
-        verify: 'Check official market day, attraction opening, rail schedule, parking or shuttle rules and any guided visit before setting the morning.',
+        duration: 'Allow five to seven hours for the market, old-town walk and meal; reserve a separate day for caves or castles. A non-market landmark loop needs about three to four hours, plus the station transfer.',
+        combine: 'Pair the morning market with the named old-town loop only. Save Montignac/Lascaux, Les Eyzies and the Dordogne castles for full days with a confirmed return.',
+        verify: 'Check the City of Sarlat market calendar, lift tickets and seasonal hours, TER D33/L33 for the exact date, the station walk and designated parking before departure.',
         sources: [
-          ['https://en.sarlat-tourisme.com/discover-sarlat-and-the-perigord/what-is-there-to-do-in-sarlat-capital-of-the-perigord/history-of-the-town/sarlat-from-the-origins-to-the-14th-century/', 'Sarlat Tourism — official town history and planning'],
-          ['https://www.sncf-connect.com/en-en/', 'SNCF Connect — current Sarlat rail service']
+          ['https://en.sarlat-tourisme.com/discover-sarlat-and-the-perigord/a-gourmet-escapade-through-the-sarlat-market/', 'Sarlat Tourism — official food and market days'],
+          ['https://sarlat.fr/mon-quotidien/commerces-et-marches/les-marches/', 'City of Sarlat — current market calendar'],
+          ['https://en.sarlat-tourisme.com/choose-your-activities/discovery-tours-of-sarlat/a-birds-eye-view-of-sarlat/', 'Sarlat Tourism — Sainte-Marie panoramic lift'],
+          ['https://www.ter.sncf.com/nouvelle-aquitaine/trajet-bordeaux-sarlat', 'TER Nouvelle-Aquitaine — Sarlat rail connection']
         ]
       }),
       g({
         slug: 'vezere-prehistory',
         name: 'Vézère Valley Prehistory',
+        reviewDate: '11 October 2026',
+        reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
         instrument: 'Timed-cave evidence ledger',
         layout: 'prehistoric-valley-ledger',
         imageQuery: 'Vezere Valley Les Eyzies Dordogne France cliffs',
-        imageAlt: 'Limestone cliffs and river landscape in the Vézère Valley',
-        purpose: 'Choose one original or reconstructed cave experience and one museum or shelter, keeping reservations, conservation rules and rural transport honest.',
-        summary: 'Use Les Eyzies or Montignac as the valley anchor, distinguish original art from facsimile interpretation, and avoid claiming that several timed caves can be improvised in one day.',
+        imageAlt: 'Limestone overhang rising above buildings in Les Eyzies-de-Tayac',
+        purpose: 'Choose Montignac’s Lascaux IV replica or a booked original cave near Les Eyzies, then add one museum stop without inventing a rural bus connection.',
+        summary: 'Use TER L34 to Les Eyzies for the National Museum of Prehistory and a separately booked cave transfer, or route a full day from Sarlat to Montignac for Lascaux IV. Lascaux IV is a complete replica; the original cave remains closed to visitors.',
+        searchSummary: 'Compare the L34 rail stop at Les Eyzies and its National Museum of Prehistory with a separate Sarlat–Montignac/Lascaux IV day. Reserve timed cave entry first, then confirm the last mile and return; Lascaux IV is a replica, not the closed original.',
         choices: [
           ['Lascaux interpretation', 'Use Lascaux IV and Montignac as a complete interpretive visit. It is a facsimile center, which should be stated clearly rather than presented as the original cave.'],
           ['Les Eyzies museum base', 'Build around the National Museum of Prehistory and a nearby official shelter or site. This gives artifacts and landscape a strong connection.'],
           ['Limited-access original cave', 'Pursue Font-de-Gaume or another original site only through its current official reservation rules. Scarcity is not a reason to use unofficial sellers.']
         ],
-        access: 'The valley’s sites are distributed between Montignac, Les Eyzies and smaller roads. Arrange a car, driver, bicycle plan or official tour and place timed entries far enough apart for parking, check-in and traffic.',
-        tradeoff: 'The route gives up collecting every cave name. One major interpretive center plus one museum or landscape site lets visitors understand evidence, conservation and chronology.',
+        access: 'TER line L34 serves Les Eyzies on its Périgueux–Sarlat route; regional coach 337 is listed seasonally between Sarlat and Les Eyzies, while 339 serves the Vézère Valley. Neither is a guaranteed cave shuttle. Lascaux IV is in Montignac, reached by a separate road transfer; reserve a driver, operator or car and confirm both directions before buying a timed ticket.',
+        tradeoff: 'Les Eyzies and Montignac are separate day plans: choose the National Museum of Prehistory plus one officially booked original site around Les Eyzies, or Lascaux IV and its interpretation in Montignac. The official Lascaux visit averages 1–1.5 hours, with 2–3 hours recommended for the whole center; leave other timed visits for another day.',
         stages: [
-          ['Arrive at the chosen valley anchor', 'Begin in Montignac or Les Eyzies, confirm the ticket location and collect current site information before driving onward.'],
-          ['Complete one timed cave contract', 'Arrive before check-in, follow photography and bag rules, and distinguish original, replica and museum evidence in your notes.'],
-          ['Add one contextual collection', 'Use the prehistory museum, a signed shelter or a short landscape trail to place the art and occupation in the valley.'],
-          ['Return before rural roads darken', 'Leave enough daylight and fuel margin, especially outside summer. Do not depend on a last-minute taxi from a cave car park.']
+          ['Choose one rail or road anchor', 'For Les Eyzies, check TER L34 to Les Eyzies station and walk/transfer to the town; for Lascaux, start from Montignac with the final road leg arranged.'],
+          ['Complete the timed booking', 'For Lascaux IV, select the date and time on the official ticket office; for Font-de-Gaume, use the Centre des monuments nationaux ticket channel and follow its arrival instructions.'],
+          ['Add one nearby context stop', 'At Les Eyzies, give the National Museum of Prehistory a substantial block. In Montignac, use Lascaux IV’s interpretation rather than adding an unverified second cave transfer.'],
+          ['Protect the station or driver return', 'Check the last useful L34 train or the booked pickup before entering a site. Do not rely on a taxi appearing at a cave car park.']
         ],
-        fallback: 'If a limited cave ticket is unavailable, Lascaux IV or the National Museum of Prehistory offers substantial interpretation. If weather closes an outdoor shelter, keep one indoor center rather than driving among closed sites.',
+        fallback: 'If Font-de-Gaume has no official timed ticket, use the National Museum of Prehistory and a confirmed Les Eyzies site; if Lascaux IV is sold out, keep the day in the museum or town rather than buying from an unofficial reseller. Rain or closure favors one indoor museum, not a chain of substitute caves.',
         watch: [
           ['Original and replica are different claims', 'Label the experience accurately and use official interpretation to understand why originals need protection.'],
-          ['Tickets may be personal and scarce', 'Follow the official booking channel and identification requirements; avoid resale promises.'],
-          ['Rural transfer time is real', 'Narrow roads and parking make back-to-back admissions fragile even when map distances look short.']
+          ['Tickets may be personal and scarce', 'Use Lascaux’s official date/time ticket office or the national-monument booking route for Font-de-Gaume. Recheck identification, check-in and cancellation rules for your ticket.'],
+          ['The valley buses are seasonal', 'Coach 337/339 calendars and the TER L34 return can leave large gaps. Check current operator schedules; reserve on-demand service in advance where required.']
         ],
         duration: 'Allow a full day for one major cave experience and one contextual site. Two towns or several timed caves need another day.',
         combine: 'Combine Lascaux with Montignac, or an original cave with Les Eyzies museum. Keep Dordogne castles and Sarlat market separate.',
-        verify: 'Check official cave ticket rules, museum opening, photography and bag restrictions, road access, weather and the arranged return before travel.',
+        verify: 'Check Lascaux or CMN ticket status, the National Museum of Prehistory calendar, TER L34 or coach 337/339 dates, cave check-in rules and the arranged last mile for the same date.',
         sources: [
-          ['https://www.lascaux.fr/en', 'Lascaux — official visitor and interpretation information'],
-          ['https://musee-prehistoire-eyzies.fr/en', 'National Museum of Prehistory, Les Eyzies — official visits']
+          ['https://lascaux.fr/en/lascaux-ticket-office/', 'Lascaux IV — official date-and-time ticket office'],
+          ['https://lascaux.fr/en/questions/', 'Lascaux — official visit duration and original-cave closure FAQ'],
+          ['https://musee-prehistoire-eyzies.fr/en/opening-hours', 'National Museum of Prehistory — current seasonal opening calendar'],
+          ['https://tickets.monuments-nationaux.fr/fr-FR/familles?site=2117969240920404140', 'Centre des monuments nationaux — Font-de-Gaume official ticket office'],
+          ['https://www.dordogne-perigord-tourisme.fr/cote-pratique/comment-se-deplacer-en-dordogne-sans-voiture/', 'Dordogne Périgord Tourism — TER and seasonal coach line list']
         ]
       }),
       g({
         slug: 'dordogne-castles-villages',
         name: 'Dordogne Valley Castles & Cliff Villages',
+        reviewDate: '11 October 2026',
+        reviewedOn: { iso: '2026-10-11', label: '11 October 2026' },
         instrument: 'River-bank castle selector',
         layout: 'castle-river-selector',
         imageQuery: 'Beynac Dordogne river castle France panorama',
         imageAlt: 'Beynac castle and village above the Dordogne River',
-        purpose: 'Choose one castle pairing and one river village based on bank, access and transport, rather than trying to photograph every cliff settlement in a single drive.',
-        summary: 'Use Beynac, Castelnaud, La Roque-Gageac or Domme as a coherent bank-and-height route, then add canoeing only when water, operator and return conditions are suitable.',
+        purpose: 'Compare the steep Beynac ascent, Castelnaud’s seasonal Sarlat coach and La Roque-Gageac’s named boat departure before choosing one hill-and-river day.',
+        summary: 'Use summer regional coach 338 only when its dated Sarlat–Castelnaud service and return fit; otherwise book a driver or car. Beynac’s designated lower parking adds a steep 15-minute climb, while Gabares Norbert departs and returns to Port de la Malartrie at La Roque-Gageac.',
+        searchSummary: 'For one Dordogne day, compare Castelnaud’s summer regional coach 338 from Sarlat with its dated timetable, or book transport to Beynac’s designated parking and allow the uphill walk. Gabares Norbert boats return to Port de la Malartrie; verify departure date and river conditions.',
         choices: [
           ['Beynac and French-bank history', 'Climb the village and visit the château where open, then use river viewpoints. Steep access makes this a substantial half-day.'],
           ['Castelnaud and conflict interpretation', 'Use the château museum and opposing-bank geography to understand the valley. Pair with one nearby village, not another distant castle.'],
           ['River-level route', 'Use a licensed canoe or boat product with named start, finish and shuttle, or stay in La Roque-Gageac for a lower-impact village day.']
         ],
-        access: 'Public transport is limited. Use a car, driver, bicycle or booked excursion, and identify legal parking before each cliff village. Canoe trips require the operator’s exact base, shuttle and river conditions.',
-        tradeoff: 'Climbing two villages, touring two castles and paddling is too much for most days. The route chooses one elevation story and one river-level experience.',
+        access: 'Regional coach 338 is shown by Castelnaud as a summer Sarlat–Castelnaud-la-Chapelle link; verify the date, stop and return in the Nouvelle-Aquitaine schedule search before using it. At Beynac, use the designated village parking: the lower parking-to-château walk takes about 15 minutes uphill. Gabares Norbert sails from and returns to Port de la Malartrie in La Roque-Gageac; check its current departures and river notices.',
+        tradeoff: 'Beynac and Castelnaud both involve steep historic access; combining both plus a village and boat usually turns a scenic day into a transfer race. Pick one château, then either the La Roque-Gageac boat or a lower riverside walk. A canoe route has separate launch, endpoint and shuttle logistics.',
         stages: [
-          ['Choose the bank and parking', 'Approach the selected village through official parking or pickup, keeping narrow resident roads clear and noting the return path.'],
-          ['Climb one historical layer', 'Visit Beynac or Castelnaud with enough time for steep streets, museum interpretation and viewpoints.'],
-          ['Return to river level', 'Eat in one village, take a booked boat or canoe, or walk a signed river segment. Confirm where the activity actually ends.'],
-          ['Leave before road and river margins close', 'Use the shuttle or vehicle with daylight and traffic buffer, avoiding an unscheduled second hill town.']
+          ['Select the transport branch', 'For Castelnaud, test seasonal line 338 against your date-specific Sarlat departure and return. For Beynac or Domme, arrange the vehicle/driver and legal parking before leaving Sarlat.'],
+          ['Visit one château', 'At Beynac, allow the designated lower parking’s roughly 15-minute uphill walk and use the marked village approach. At Castelnaud, check the museum calendar and parking entrance before climbing.'],
+          ['Add a named river option', 'From La Roque-Gageac, book Gabares Norbert at Port de la Malartrie for its listed round trip, or use a licensed canoe operator only after confirming the endpoint and shuttle.'],
+          ['Close at the same agreed return', 'Reach the bus stop or driver pickup before the final planned departure; check the river operator’s last return and current water restrictions before adding a paddle.']
         ],
-        fallback: 'If the river is unsuitable, keep the castle and village route. If heat or mobility blocks the hill, use a lower village, garden or boat only when current access and return are confirmed.',
+        fallback: 'If coach 338 does not run or the return is weak, keep Sarlat or book a driver rather than attempting an improvised taxi chain. If river levels cancel the boat or canoe, retain one open château and village walk; for steep climbs, choose a lower riverside stop and confirm its accessible path.',
         watch: [
           ['Cliff villages are steep', 'Cobbles, heat and stairs require footwear, water and a conservative route.'],
-          ['Canoe endpoints are not the start', 'Understand the shuttle and pickup before launching; carry required safety equipment.'],
+          ['Coach 338 is seasonal', 'The castle’s own access page describes a summer link. Do not treat it as year-round; check the operator’s date-specific timetable and any reservation requirement.'],
           ['Parking pressure affects residents', 'Use designated areas and never enter narrow village lanes to save a climb.']
         ],
         duration: 'Allow a full day for one castle, one village and a river activity. A castle-and-village route without paddling needs five to seven hours.',
         combine: 'Combine Beynac with a nearby river stop or Castelnaud with one neighboring village. Keep the Vézère caves and Sarlat market separate.',
-        verify: 'Check château opening, parking, river level, canoe operator and shuttle, heat or storm forecast and the road return before departure.',
+        verify: 'Check line 338 dates and return, Beynac parking/approach, the château calendar, Gabares Norbert or canoe booking, river-level notice and driver pickup for the exact travel date.',
         sources: [
-          ['https://en.sarlat-tourisme.com/discover-sarlat-and-the-perigord/the-dordogne-valley/', 'Sarlat Tourism — official Dordogne Valley planning'],
-          ['https://castelnaud.com/en/', 'Château de Castelnaud — official visitor information']
+          ['https://castelnaud.com/access-services/?lang=en', 'Château de Castelnaud — summer line 338, station and parking access'],
+          ['https://transports.nouvelle-aquitaine.fr/cars-regionaux/dordogne', 'Nouvelle-Aquitaine regional coaches — dated line 338 timetable'],
+          ['https://chateau-beynac.com/infos-pratiques/?lang=en', 'Château de Beynac — designated parking and uphill village approach'],
+          ['https://gabarres.com/', 'Gabares Norbert — La Roque-Gageac departure and return port'],
+          ['https://www.sites-les-eyzies.fr/en/visit/practical-information', 'Les Eyzies tourism — site and valley access information']
         ]
       })
     ]

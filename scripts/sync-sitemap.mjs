@@ -29,6 +29,13 @@ const thailandAyutthayaLastmod = '2026-10-09';
 const franceLastmod = '2026-09-20';
 const franceBrittanyLastmod = '2026-10-10';
 const franceFr02Lastmod = '2026-10-11';
+const franceDordogneLastmod = '2026-10-11';
+const franceDordogneEditedRoutes = [
+  '/france/dordogne-perigord/',
+  '/france/dordogne-perigord/sarlat-market-old-town/',
+  '/france/dordogne-perigord/vezere-prehistory/',
+  '/france/dordogne-perigord/dordogne-castles-villages/'
+];
 const franceFr02EditedRoutes = [
   '/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/',
   '/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/',
@@ -610,6 +617,11 @@ for (const route of franceFr02EditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited France FR02 route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceFr02Lastmod });
+}
+for (const route of franceDordogneEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Dordogne route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceDordogneLastmod });
 }
 for (const route of franceBrittanyEditedRoutes) {
   const record = records.get(route);
