@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-10T05:26:09.408Z",
+  "generatedAt": "2026-10-11T01:34:57.919Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 790,
     "completeSourceCreatorLicenseRecords": 765,
     "completeProjectOriginalRightsRecords": 1,
-    "licenseClaimsNotIndependentlyVerified": 590,
+    "licenseClaimsNotIndependentlyVerified": 583,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -15,14 +15,14 @@
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
-    "assetsWithStructuredSourceRecords": 574,
-    "assetsWithMatchedEnglishCreditOnly": 109,
-    "assetsWithExplicitEnglishCreditMatch": 83,
-    "assetsVisuallyReviewed": 94,
+    "assetsWithStructuredSourceRecords": 575,
+    "assetsWithMatchedEnglishCreditOnly": 100,
+    "assetsWithExplicitEnglishCreditMatch": 91,
+    "assetsVisuallyReviewed": 101,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 176,
-    "metadataOrCreditOnly": 590,
-    "usedAssetsWithoutIndependentSourcePageCheck": 590,
+    "sourcePageChecked": 183,
+    "metadataOrCreditOnly": 583,
+    "usedAssetsWithoutIndependentSourcePageCheck": 583,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -5863,7 +5863,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg",
           "sourceTitle": "File:Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg",
           "sourcePhotoDate": "2024-08-27",
-          "creditLabel": "Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg",
+          "creditLabel": "Victoria's Inner Harbour, Parliament Buildings and boats at dusk",
           "creator": "DXR",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
@@ -5888,11 +5888,10 @@
             "/canada/victoria-south-island/sooke-juan-de-fuca/"
           ],
           "altTexts": [
-            "Victoria Inner Harbour and Parliament Buildings",
             "Victoria's Inner Harbour, Parliament Buildings and boats at dusk"
           ],
           "rawVisibleCredits": [
-            "Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg — DXR, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Victoria's Inner Harbour, Parliament Buildings and boats at dusk — DXR, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 4.0 terms."
           ]
         }
       ]
@@ -6316,9 +6315,9 @@
           "assetPath": "/assets/images/china-beijing-798.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beijing_798_Art_District.jpg",
-          "sourceTitle": "798 Art District entrance",
+          "sourceTitle": "Beijing 798 Art District.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "798 Art District entrance",
+          "creditLabel": "Beijing 798 Art District.jpg",
           "creator": "Cory M. Grenier",
           "license": "CC BY-SA 2.0",
           "rightsStatus": null,
@@ -6326,10 +6325,10 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 2.0 license.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -6344,7 +6343,7 @@
             "Large red 798 numerals at the entrance to Beijing's art district"
           ],
           "rawVisibleCredits": [
-            "798 Art District entrance - Cory M. Grenier, CC BY-SA 2.0; resized and converted to WebP, display crop."
+            "Beijing 798 Art District.jpg — Photo by Cory M. Grenier; licensed under CC BY-SA 2.0. Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 2.0 license."
           ]
         }
       ]
@@ -6449,9 +6448,9 @@
           "assetPath": "/assets/images/china-beijing-mutianyu.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:67052-The-Great-Wall,_Mutianyu.jpg",
-          "sourceTitle": "Mutianyu Great Wall",
+          "sourceTitle": "67052-The-Great-Wall, Mutianyu.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Mutianyu Great Wall",
+          "creditLabel": "67052-The-Great-Wall, Mutianyu.jpg",
           "creator": "xiquinhosilva",
           "license": "CC BY 2.0",
           "rightsStatus": null,
@@ -6459,10 +6458,10 @@
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -6477,7 +6476,7 @@
             "Restored Great Wall path and watchtower crossing a green ridge at Mutianyu"
           ],
           "rawVisibleCredits": [
-            "Mutianyu Great Wall - xiquinhosilva, CC BY 2.0; resized and converted to WebP, display crop."
+            "67052-The-Great-Wall, Mutianyu.jpg — Photo by xiquinhosilva; licensed under CC BY 2.0. Changes: image resized and converted to WebP; displayed framing may crop."
           ]
         }
       ]
@@ -6625,9 +6624,9 @@
           "assetPath": "/assets/images/china-beijing-temple-heaven.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg",
-          "sourceTitle": "Temple of Heaven",
+          "sourceTitle": "20200110_Temple_of_Heaven-1.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Temple of Heaven",
+          "creditLabel": "20200110_Temple_of_Heaven-1.jpg",
           "creator": "Balon Greyjoy",
           "license": "CC0 1.0",
           "rightsStatus": null,
@@ -6635,10 +6634,10 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -6653,7 +6652,7 @@
             "Hall of Prayer for Good Harvests beneath a clear blue sky"
           ],
           "rawVisibleCredits": [
-            "Temple of Heaven - Balon Greyjoy, CC0 1.0; resized and converted to WebP, display crop."
+            "20200110_Temple_of_Heaven-1.jpg — Photo by Balon Greyjoy; licensed under CC0 1.0. Changes: image resized and converted to WebP; displayed framing may crop."
           ]
         }
       ]
@@ -6669,20 +6668,20 @@
           "assetPath": "/assets/images/china-beijing-yonghe.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peking_Jonghe_Tempel_-20071022-RM-094926.jpg",
-          "sourceTitle": "Yonghe Temple guardian",
+          "sourceTitle": "Peking Jonghe Tempel -20071022-RM-094926.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Yonghe Temple guardian",
-          "creator": "Ermell",
+          "creditLabel": "Peking Jonghe Tempel -20071022-RM-094926.jpg",
+          "creator": "Reinhold Möller (user Ermell)",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "resized and converted to WebP, display crop.",
+          "editHistory": "Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 4.0 license.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "The English photo-credit row explicitly identifies this exact image asset and links to the source page.",
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -6697,7 +6696,7 @@
             "Carved guardian lion with incense haze at Yonghe Temple"
           ],
           "rawVisibleCredits": [
-            "Yonghe Temple guardian - Ermell, CC BY-SA 4.0; resized and converted to WebP, display crop."
+            "Peking Jonghe Tempel -20071022-RM-094926.jpg — Photo by Reinhold Möller (user Ermell); licensed under CC BY-SA 4.0. Changes: image resized and converted to WebP; displayed framing may crop. Share-alike: the adapted image is shared under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -7185,24 +7184,24 @@
           "assetPath": "/assets/images/china-destination-harbin.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg",
-          "sourceTitle": "Saint Sophia Cathedral, Harbin",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Harbin Saint Sophia Cathedral 2017 summer.jpg",
+          "sourcePhotoDate": "2017-07-14",
           "creditLabel": "Saint Sophia Cathedral, Harbin",
           "creator": "Amarespeco",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized and display-cropped from a 4,000 × 6,000 portrait original to 960 × 640 WebP; adaptation shared under CC BY-SA 4.0.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact Commons title, Amarespeco authorship, 14 July 2017 photograph date, original dimensions and CC BY-SA 4.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show Saint Sophia Cathedral’s domes and crosses beneath a summer sky.",
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "China CN12 photo review: the exact Commons file page identifies Amarespeco as author, 14 July 2017 as the photograph date, original dimensions 4,000 × 6,000, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show Saint Sophia Cathedral’s domes and crosses against a summer sky, matching the source; the portrait source is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7212,7 +7211,7 @@
             "Onion domes and crosses of Saint Sophia Cathedral beneath bright clouds in Harbin"
           ],
           "rawVisibleCredits": [
-            "Saint Sophia Cathedral, Harbin — Amarespeco, CC BY-SA 4.0."
+            "Saint Sophia Cathedral, Harbin — Amarespeco, CC BY-SA 4.0; this site adaptation is shared under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -7228,24 +7227,24 @@
           "assetPath": "/assets/images/china-destination-huangshan.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg",
-          "sourceTitle": "Mount Huangshan in mist",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Huangshan pic 6.jpg",
+          "sourcePhotoDate": "2009-09-28",
           "creditLabel": "Mount Huangshan in mist",
           "creator": "eviltomthai",
           "license": "CC BY 2.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized to 960 × 640 and converted to WebP at the source aspect ratio.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact Commons title, eviltomthai authorship, 28 September 2009 photograph date, original dimensions and CC BY 2.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show Huangshan peaks and pines emerging through mountain mist.",
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "China CN12 photo review: the exact Commons file page identifies eviltomthai as author, 28 September 2009 as the photograph date, original dimensions 3,888 × 2,592, and CC BY 2.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show Huangshan granite peaks and pines emerging through mist, matching the source; the image is resized and converted to WebP at the same aspect ratio. The visible credit links the exact source and CC BY 2.0 license and discloses the site edits. This records the source page declaration, not independent rights clearance.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7272,24 +7271,24 @@
           "assetPath": "/assets/images/china-destination-inner-mongolia.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg",
-          "sourceTitle": "Hulun Buir grassland",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Hulun Buir.jpg",
+          "sourcePhotoDate": "2018-07-15",
           "creditLabel": "Hulun Buir grassland",
           "creator": "Emmazzye",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized and display-cropped to 960 × 640 WebP; adaptation shared under CC BY-SA 4.0.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact Commons title, Emmazzye authorship, 15 July 2018 photograph date, original dimensions and CC BY-SA 4.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show rolling green Hulun Buir grassland beneath a blue sky.",
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "China CN12 photo review: the exact Commons file page identifies Emmazzye as author, 15 July 2018 as the photograph date, original dimensions 4,213 × 3,160, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show rolling green Hulun Buir grassland beneath blue sky, matching the source; the image is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7299,7 +7298,7 @@
             "Rolling green Hulun Buir grassland beneath a deep blue sky in Inner Mongolia"
           ],
           "rawVisibleCredits": [
-            "Hulun Buir grassland — Emmazzye, CC BY-SA 4.0."
+            "Hulun Buir grassland — Emmazzye, CC BY-SA 4.0; this site adaptation is shared under the same CC BY-SA 4.0 license."
           ]
         }
       ]
@@ -7574,24 +7573,24 @@
           "assetPath": "/assets/images/china-destination-qingdao.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg",
-          "sourceTitle": "Qingdao waterfront",
-          "sourcePhotoDate": null,
-          "creditLabel": "Qingdao waterfront",
+          "sourceTitle": "File:Qingdao Zhanqiao.jpg",
+          "sourcePhotoDate": "2021-07-19",
+          "creditLabel": "Qingdao waterfront and Zhanqiao",
           "creator": "Vitsuha",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized and display-cropped to 960 × 640 WebP; adaptation shared under CC BY-SA 4.0.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "metadataOrigin": "explicit_asset_credit_match",
+          "creditMatchNote": "Exact Commons title, Vitsuha authorship, 19 July 2021 photograph date, original dimensions and CC BY-SA 4.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show Zhanqiao, Qingdao’s sandy waterfront and bayfront.",
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "China CN12 photo review: the exact Commons file page identifies Vitsuha as author, 19 July 2021 as the photograph date, original dimensions 3,648 × 2,736, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show the Zhanqiao waterfront, sandy shore and Qingdao bayfront, matching the source; the image is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.",
           "useCount": 2,
           "routes": [
             "/china/",
@@ -7705,20 +7704,20 @@
           "assetPath": "/assets/images/china-destination-suzhou.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Classical_Gardens_of_Suzhou-111927.jpg",
-          "sourceTitle": "Classical Gardens of Suzhou",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Classical Gardens of Suzhou-111927.jpg",
+          "sourcePhotoDate": "2004-07-01",
           "creditLabel": "Classical Gardens of Suzhou",
           "creator": "Francesco Bandarin",
-          "license": "CC BY-SA 3.0 ig",
+          "license": "CC BY-SA 3.0 IGO",
           "rightsStatus": null,
           "rightsStatusUrl": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/ig/",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "O.",
+          "attributionTerms": "Credit Francesco Bandarin and the work title, link the exact source and license, indicate changes, and distribute this adaptation under the same or compatible license.",
+          "editHistory": "Resized, cropped to the 3:2 display frame and converted to WebP; distributed under the same license version.",
           "localSha1": null,
-          "metadataOrigin": "page_credit_lexical_match",
-          "creditMatchNote": "Unique same-page label/alt match.",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
@@ -26190,23 +26189,23 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Exeter_,_Exeter_Cathedral_%5E_Green_-_geograph.org.uk_-_3144068.jpg",
           "sourceTitle": "File:Exeter , Exeter Cathedral ^ Green - geograph.org.uk - 3144068.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2012-09-21",
           "creditLabel": "Exeter , Exeter Cathedral ^ Green - geograph.org.uk - 3144068.jpg",
           "creator": "Lewis Clarke",
           "license": "CC BY-SA 2.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Cornwall/Devon photo review: exact Commons title, Lewis Clarke authorship, 21 September 2012 photograph date, original dimensions 4,288 × 2,848, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show Exeter Cathedral and Cathedral Green with restoration scaffolding visible, matching the source page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.",
           "useCount": 4,
           "routes": [
             "/united-kingdom/cornwall-devon/",
@@ -26215,7 +26214,7 @@
             "/united-kingdom/cornwall-devon/st-ives-penwith/"
           ],
           "altTexts": [
-            "Exeter Cathedral and Cathedral Green in Devon"
+            "Exeter Cathedral and Cathedral Green with restoration scaffolding visible"
           ],
           "rawVisibleCredits": [
             "Exeter , Exeter Cathedral ^ Green - geograph.org.uk - 3144068.jpg — Lewis Clarke, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -26235,23 +26234,23 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg",
           "sourceTitle": "File:Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2025-06-28",
           "creditLabel": "Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg",
           "creator": "Mutney",
           "license": "CC BY 4.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Cornwall photo review: exact Commons title, Mutney authorship, 28 June 2025 photograph date, original dimensions 4,032 × 2,198, and CC BY 4.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show a passenger boat with sailing craft at St Mawes Harbour, matching the source title and location. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.",
           "useCount": 4,
           "routes": [
             "/united-kingdom/cornwall-devon/",
@@ -26260,7 +26259,7 @@
             "/united-kingdom/cornwall-devon/st-ives-penwith/"
           ],
           "altTexts": [
-            "Falmouth harbour and the Carrick Roads estuary in Cornwall"
+            "A passenger boat and sailing craft at St Mawes Harbour on the Roseland"
           ],
           "rawVisibleCredits": [
             "Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg — Mutney, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -26280,23 +26279,23 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg",
           "sourceTitle": "File:The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "1991-09-15",
           "creditLabel": "The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg",
           "creator": "nick macneill",
           "license": "CC BY-SA 2.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-11",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-11",
+          "verificationDetail": "Cornwall photo review: exact Commons title, nick macneill authorship, 15 September 1991 photograph date, original dimensions 1,024 × 693, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show St Ives harbour at low tide with fishing boats on the sand, matching the source-page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.",
           "useCount": 6,
           "routes": [
             "/united-kingdom/",
@@ -26306,7 +26305,7 @@
             "/united-kingdom/cornwall-devon/st-ives-penwith/"
           ],
           "altTexts": [
-            "St Ives harbour and waterfront in Cornwall"
+            "Fishing boats in St Ives harbour at low tide"
           ],
           "rawVisibleCredits": [
             "The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg — nick macneill, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -26396,7 +26395,7 @@
             "/united-kingdom/edinburgh-lothians/old-town-castle-royal-mile/"
           ],
           "altTexts": [
-            "North Berwick harbour with Bass Rock in the Firth of Forth"
+            "Bass Rock viewed across the Firth of Forth from the North Berwick shore"
           ],
           "rawVisibleCredits": [
             "Bass Rock from the harbour rocks - geograph.org.uk - 3545720.jpg — kim traynor, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -26442,7 +26441,7 @@
             "/united-kingdom/edinburgh-lothians/old-town-castle-royal-mile/"
           ],
           "altTexts": [
-            "Edinburgh Castle above the Old Town skyline"
+            "Edinburgh Old Town roofscape seen from Castle Hill"
           ],
           "rawVisibleCredits": [
             "Edinburgh's Skyline from Castle Hill (1) - geograph.org.uk - 4836425.jpg — David Hillas, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -28119,7 +28118,7 @@
             "/united-kingdom/yorkshire/york-walls-minster/"
           ],
           "altTexts": [
-            "Salts Mill and the historic village of Saltaire in West Yorkshire"
+            "Canal towpath and bridge beside a Saltaire boat-trip sign"
           ],
           "rawVisibleCredits": [
             "Saltaire, Canal bridge and Salts Mill - geograph.org.uk - 5235161.jpg — Dr Neil Clifton, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -28164,7 +28163,7 @@
             "/united-kingdom/yorkshire/york-walls-minster/"
           ],
           "altTexts": [
-            "Whitby harbour beneath the abbey ruins on the Yorkshire coast"
+            "A boat between the piers at Whitby harbour entrance"
           ],
           "rawVisibleCredits": [
             "Harbour entrance, Whitby - geograph.org.uk - 3633086.jpg — Pauline E, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -28210,7 +28209,7 @@
             "/united-kingdom/yorkshire/york-walls-minster/"
           ],
           "altTexts": [
-            "York Minster seen from the historic city walls"
+            "York Minster viewed from the wall walkway"
           ],
           "rawVisibleCredits": [
             "York Minster from Mickelgate section of city walls (2).JPG — Harry Mitchell, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."

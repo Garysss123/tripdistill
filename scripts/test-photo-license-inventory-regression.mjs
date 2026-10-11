@@ -113,7 +113,7 @@ try {
   assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 587, 'nine Andaman, three Ayutthaya and three Cornwall source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 583, 'nine Andaman, three Ayutthaya, three Cornwall and four China CN12 source-page checks reduce the unverified-used-asset count and remain separate from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -167,7 +167,34 @@ try {
     assert.ok(record.verificationDetail.includes(image.originalSize), 'source page original dimensions must be recorded');
     assert.ok(record.verificationDetail.includes('Local WebP pixels were inspected'));
     assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
-    assert.ok(record.editHistory.includes('converted to WebP'));
+    assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+  }
+  const chinaCn12Photos = [
+    { assetPath: '/assets/images/china-destination-harbin.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', sourceTitle: 'File:Harbin Saint Sophia Cathedral 2017 summer.jpg', creator: 'Amarespeco', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-07-14', originalSize: '4,000 × 6,000' },
+    { assetPath: '/assets/images/china-destination-inner-mongolia.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', sourceTitle: 'File:Hulun Buir.jpg', creator: 'Emmazzye', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-07-15', originalSize: '4,213 × 3,160' },
+    { assetPath: '/assets/images/china-destination-huangshan.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg', sourceTitle: 'File:Huangshan pic 6.jpg', creator: 'eviltomthai', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', sourcePhotoDate: '2009-09-28', originalSize: '3,888 × 2,592' },
+    { assetPath: '/assets/images/china-destination-qingdao.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg', sourceTitle: 'File:Qingdao Zhanqiao.jpg', creator: 'Vitsuha', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2021-07-19', originalSize: '3,648 × 2,736' }
+  ];
+  for (const image of chinaCn12Photos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `China CN12 photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, image.licenseUrl);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.originalSize), 'Commons original dimensions must be recorded');
+    assert.ok(record.verificationDetail?.includes('WebP pixels were inspected'), `${image.assetPath}: source-page metadata does not stand in for pixel review (${record.verificationDetail || 'no verification detail'})`);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+    if (image.license.startsWith('CC BY-SA ')) {
+      assert.ok(record.editHistory.includes(`shared under ${image.license}`), 'share-alike adaptations must keep the exact license version');
+    }
   }
   const wadjemupDiagram = photoRecords.find((item) => item.assetPath === wadjemupDiagramAssetPath);
   assert.ok(wadjemupDiagram, 'inventory must retain the original Wadjemup planning diagram');

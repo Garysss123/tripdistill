@@ -15,8 +15,8 @@ if (!requestedLocale || !requestedFile || !requestedRoutes.length) {
 }
 
 const locale = getLocaleConfig(requestedLocale);
-if (path.basename(requestedFile) !== requestedFile || !/^\d{2}[a-z]*-[a-z0-9-]+\.json$/i.test(requestedFile)) {
-  throw new Error('--file must be a plain zero-padded batch filename such as 17-new-city.json.');
+if (path.basename(requestedFile) !== requestedFile || !(/^(?:\d{2}[a-z]*|zzzz[a-z]*)-[a-z0-9-]+\.json$/i.test(requestedFile))) {
+  throw new Error('--file must be a zero-padded batch filename (17-new-city.json) or a terminal review batch (zzzzc-search.json).');
 }
 if (new Set(requestedRoutes).size !== requestedRoutes.length) {
   throw new Error('--routes contains duplicates.');

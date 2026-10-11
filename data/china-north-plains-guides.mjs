@@ -249,6 +249,7 @@ export const guides = [
   },
   {
     slug: 'harbin',
+    dateModified: '2026-10-11',
     name: 'Harbin',
     title: 'Harbin Travel Guide (2026): Winter Events, Architecture and Cold',
     metaDescription: 'Plan Harbin by the live winter event calendar, serious cold-weather preparation and architectural history, with safe river and memorial visits.',
@@ -264,7 +265,7 @@ export const guides = [
     watchFirst: 'temperature and event status',
     motifs: ['Frost', 'Facade', 'Event clock', 'Memory'],
     orientationTitle: 'Switch on only the venues that actually exist today',
-    orientationIntro: 'The eight panels separate permanent architecture and institutions from seasonal ice construction, river conditions and a serious memorial visit. The city should remain useful outside peak winter and safe when temperatures fall far below a generic coat recommendation.',
+    orientationIntro: 'The eight panels separate permanent architecture and institutions from seasonal ice construction, river conditions and a serious memorial visit. Use the station printed on your 12306 ticket and the exact airport on your flight booking; Harbin Station and Harbin West are separate arrival choices. Daoli near Saint Sophia and Central Street is the flexible first base, while a Songbei stay only makes sense when a dated event plan and its late return both work. The city remains useful outside peak winter.',
     chapters: [
       { label: 'FACADE 01', title: 'Saint Sophia needs architectural context', text: 'Check the current museum or exhibition access and read the former church within Harbin’s railway-era and religious history. The square is active public space; photograph without blocking movement and avoid using “European” as a substitute for the city’s specific Russian, Chinese and migrant layers.' },
       { label: 'FACADE 02', title: 'Central Street is an urban archive and shopping street', text: 'Walk a selected length for paving, facades and commercial change, then step into side streets or institutions that explain the architecture. Ice cream in extreme cold can be a novelty, but it is not evidence for the entire city and should not replace a warm recovery stop.' },
@@ -278,16 +279,16 @@ export const guides = [
     decisions: [
       { label: 'SEASON', title: 'Choose winter events or the year-round city', text: 'If ice architecture is essential, book only after the current season publishes credible operating information and keep flexible margins. In warmer months, center architecture, parks, museums and food rather than promising vanished winter scenery.' },
       { label: 'CLOTHING', title: 'Build a complete cold system before arrival', text: 'Use layered insulation, wind protection, warm footwear, gloves and face coverage suited to the forecast and personal risk. Create planned indoor recovery stops; fashion labels and a single temperature rating are not a safety plan.' },
-      { label: 'BASE', title: 'Central access and late-event return must agree', text: 'A central Daoli base suits architecture and dining, while seasonal venues may require long rides and late queues. Confirm the final return route and ride-hailing pickup before buying a late entry slot.' }
+      { label: 'BASE', title: 'Match the station, hotel and final event return', text: 'Daoli keeps Saint Sophia, Central Street and year-round museums together; the airport and Harbin or Harbin West rail stations are separate transfer decisions. Use current municipal or transit-operator directions for the exact terminal. The Ice-Snow World operator’s dated guide identifies the live entrance and visitor-transport options for its season; if the return to your booked base is unclear, go in daylight or stay near the event rather than assuming late transit.' }
     ],
     itineraryKicker: 'FOUR EXPOSURES / WARMING BUILT IN',
     itineraryTitle: 'A Harbin route that alternates cold and shelter',
     itineraryIntro: 'This winter example depends on current operation. Outside winter, replace the event panels with parks, museums and deeper architectural walks.',
     itinerary: [
-      { label: 'DAY 1 / CITY', title: 'Saint Sophia, one archive and a warm evening', text: 'Settle centrally, read one architectural cluster and use an indoor institution before a short Central Street walk. Test clothing before the longest outdoor night.' },
-      { label: 'DAY 2 / ICE', title: 'One major event with protected recovery', text: 'Check live status, conserve phone power and use a substantial warm break before and after Ice-Snow World. Confirm the final ride and never improvise on unapproved river ice.' },
-      { label: 'DAY 3 / SNOW', title: 'Daylight sculpture or permanent city depth', text: 'Use Sun Island only when the current exhibition and weather justify it. Otherwise choose museum, railway history and another neighborhood without treating the day as failed.' },
-      { label: 'DAY 4 / MEMORY', title: 'Serious memorial or slower architectural route', text: 'Give the documented wartime site its own emotional register and transport plan, or remain central for community history and food. Do not rush to a late train after prolonged cold exposure.' }
+      { label: 'DAY 1 / ARRIVAL + DAOLI', title: 'Match the booked terminal to a warm central base', text: 'Before paying for a hotel, check whether the ticket says Harbin or Harbin West and whether the flight arrives at Harbin Taiping. Choose Daoli for Saint Sophia, Central Street and flexible meals; check the city or transport operator’s current directions for that exact terminal, or arrange a confirmed licensed transfer. Walk the nearby architecture only after bags are stored.' },
+      { label: 'DAY 2 / OLD CITY', title: 'Saint Sophia, one archive and a short Central Street walk', text: 'Keep this route in the west-central city: choose one museum or railway-history collection, then walk only the Central Street section that fits the weather. Save the exact hotel entrance and the current return route before the coldest evening.' },
+      { label: 'DAY 3 / EVENT OR MUSEUM', title: 'Use the operator’s dated gate and return directions', text: 'Book Ice-Snow World only after its current official notice confirms that the season, ticket channel and visit date are active. Open the operator’s traffic guide for the named entrance and journey back, then compare its live advice with the last usable return to your base. If a late return is unclear, go in daylight or replace the event with a warm museum day.' },
+      { label: 'DAY 4 / SNOW OR MEMORY', title: 'Choose one separate branch and protect departure day', text: 'Use Sun Island only if the current exhibition, weather and approach are confirmed; otherwise stay with indoor city history. Give Unit 731 a separate, sober visit with its own official access check. Return to your booked base before an onward train or flight day; do not make the farthest site the final stop before departure.' }
     ],
     practicalTitle: 'Cold changes batteries, surfaces and judgment',
     practical: [
@@ -303,30 +304,31 @@ export const guides = [
     ],
     sources: [
       { url: 'https://www.harbin.gov.cn/', label: 'Harbin Municipal People’s Government — current city, event and safety notices' },
-      { url: 'https://english.www.gov.cn/news/202502/26/content_WS67bf0a0cc6d0868f4e8effd2.html', label: 'State Council of the People’s Republic of China — official Ice-Snow World season reporting' },
+      { url: 'https://ice.hrbicesnow.com/post/index/31', label: 'Harbin Ice and Snow World — official ticket, operating and visitor-transport channel; verify the notice for your season' },
       { url: 'https://www.cma.gov.cn/en/', label: 'China Meteorological Administration — current forecasts and severe-weather information' }
     ],
-    image: { path: '/assets/images/china-destination-harbin.webp', alt: 'Onion domes and crosses of Saint Sophia Cathedral beneath bright clouds in Harbin', caption: 'Harbin / permanent urban history beneath a live winter-event calendar', source: 'https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', creditTitle: 'Saint Sophia Cathedral, Harbin', creator: 'Amarespeco', license: 'CC BY-SA 4.0' },
-    search: { type: 'Winter city and architecture guide', summary: 'Build Harbin around the live ice-event calendar, serious cold preparation, architectural history and safe river behavior.', keywords: ['harbin', 'harbin ice festival', 'ice snow world', 'saint sophia harbin', 'songhua river', 'harbin itinerary'] }
+    image: { path: '/assets/images/china-destination-harbin.webp', alt: 'Onion domes and crosses of Saint Sophia Cathedral beneath bright clouds in Harbin', caption: 'Harbin / permanent urban history beneath a live winter-event calendar', source: 'https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', creditTitle: 'Saint Sophia Cathedral, Harbin', creator: 'Amarespeco', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Winter city and architecture guide', summary: 'Start in Daoli, confirm Harbin versus Harbin West from the rail ticket, and use Ice-Snow World only with the season’s official gate and return directions.', keywords: ['harbin', 'harbin west', 'harbin taiping airport', 'harbin ice festival', 'ice snow world', 'saint sophia harbin', 'songhua river', 'harbin itinerary'] }
   },
   {
     slug: 'hohhot-inner-mongolia',
+    dateModified: '2026-10-11',
     name: 'Hohhot & Inner Mongolia',
     title: 'Hohhot and Inner Mongolia Guide (2026): City, Steppe and Distance',
     metaDescription: 'Use Hohhot for regional context, then choose one realistic Inner Mongolia grassland, heritage or desert corridor with ethical operators and real distance.',
-    ogTitle: 'Hohhot and Inner Mongolia: Keep the Horizon Honest',
+    ogTitle: 'Hohhot and Inner Mongolia: One Corridor at a Time',
     themeColor: '#3f6443',
     visual: 'steppe-horizon',
     extraStylesheet,
     eyebrow: 'Inner Mongolia / city institutions and continental distance',
-    titleAccent: 'keep the horizon honest',
+    titleAccent: 'plan the region one corridor at a time',
     intro: 'Hohhot is a useful cultural and transport base, but it is not a shortcut to every grassland, desert and Mongolian community in the autonomous region. Inner Mongolia stretches across immense east-west distance. Begin with museums and living religious sites in the capital, then choose one regional corridor with an accountable operator, current land access and consent-based encounters instead of buying a generic “nomadic day.”',
     nights: '5–8 nights',
     coreLogic: 'Hohhot + one regional corridor',
     watchFirst: 'distance, season and operator',
     motifs: ['City', 'Horizon', 'Kilometers', 'Consent'],
-    orientationTitle: 'Measure the horizon before assigning it to Hohhot',
-    orientationIntro: 'The eight bands below begin with the regional capital and move outward by evidence: collection, living religion, city history, then one selected steppe, heritage or desert route. Hulun Buir, Xilin Gol and Ordos are not interchangeable scenery and do not sit just beyond the hotel ring road.',
+    orientationTitle: 'Separate Hohhot from the region’s long-distance routes',
+    orientationIntro: 'The eight bands below begin with the regional capital and move outward by evidence: collection, living religion, city history, then one selected steppe, heritage or desert route. Book rail to the precise Hohhot station shown on 12306, or match a flight to Hohhot Baita; neither label substitutes for the other terminal. Use one central Hohhot base for the first two city days, place regional nights only after the exact pickup, lodging and return are agreed, and sleep back in Hohhot before an onward departure. Hulun Buir, Xilin Gol and Ordos are separate corridors, not scenery beyond the hotel ring road.',
     chapters: [
       { label: 'CITY BAND', title: 'Inner Mongolia Museum establishes regional scale', text: 'Use the regional collection for archaeology, ecology and the histories of multiple communities before traveling outward. Verify current reservation and language support, read ethnographic displays critically and avoid treating a single costume or pastoral object as a complete account of contemporary life.' },
       { label: 'TEMPLE BAND', title: 'Dazhao and nearby monasteries are living spaces', text: 'Follow dress, voice, prayer and photography rules, distinguish different institutions and let worshippers move first. The old-city setting adds commercial texture, but a temple visit should not become a costume backdrop or a claim that one precinct represents all Mongolian Buddhism.' },
@@ -338,7 +340,7 @@ export const guides = [
       { label: 'PASTORAL ETHICS', title: 'Hospitality is not unlimited permission', text: 'A family visit, meal, festival or livestock encounter should have clear local consent, fair compensation and photography boundaries. Reject operators that script residents as props, pressure alcohol consumption or drive off approved tracks for a more “authentic” image.' }
     ],
     decisions: [
-      { label: 'SCOPE', title: 'Name one corridor, not the entire autonomous region', text: 'For a short trip, Hohhot plus a nearby researched branch is enough. Hulun Buir usually needs separate flights or rail and its own itinerary; Xilin Gol, Ordos and Xanadu also require distinct routes.' },
+      { label: 'SCOPE', title: 'Name one corridor and give it its own nights', text: 'For a five-to-eight-night trip, use two Hohhot nights, two to four nights in one researched regional branch, then a final Hohhot night before onward travel. Treat Xilin Gol, Ordos and the Site of Xanadu as separate plans. Hulun Buir is a different long-distance journey and normally merits another trip rather than a rushed extension.' },
       { label: 'OPERATOR', title: 'Demand a written road and consent plan', text: 'Ask for vehicle, insurance, driver hours, exact accommodation, included activities, land access, cancellation and community-payment details. A generic photo gallery and the word “grassland” do not establish responsible operations.' },
       { label: 'SEASON', title: 'Weather decides color, access and comfort', text: 'Green grass, autumn color, winter cold and desert conditions occur on different calendars across a huge region. Use current local forecasts and operator reports, pack for wind and large temperature swings and accept that a marketing image may belong to another month.' }
     ],
@@ -346,10 +348,10 @@ export const guides = [
     itineraryTitle: 'A regional route with the kilometers left visible',
     itineraryIntro: 'The example uses Hohhot for two days and reserves the remaining time for one selected corridor. Do not combine the grassland, desert and Hulun Buir branches into the same week.',
     itinerary: [
-      { label: 'DAYS 1–2 / HOHHOT', title: 'Museum, living religion and contemporary city', text: 'Build regional context in one major collection, visit one or two active religious sites respectfully and use a named neighborhood or food tradition for the evening.' },
-      { label: 'DAY 3 / VERIFY', title: 'Weather, vehicle and community agreement', text: 'Confirm the exact regional route, current land and road access, driver hours and consent rules before departure. Use a city day if those details remain vague.' },
-      { label: 'DAYS 4–6 / CORRIDOR', title: 'One steppe, heritage or desert branch', text: 'Travel the chosen direction slowly enough to understand ecology and settlement, keep off-road movement managed and leave unscripted time without demanding staged hospitality.' },
-      { label: 'DAYS 7–8 / RETURN', title: 'Buffer the long road and close the context', text: 'Return to Hohhot with margin for weather and road delays. Use a final museum, meal or market to connect the regional branch back to the capital before onward rail or flight.' }
+      { label: 'DAYS 1–2 / HOHHOT', title: 'Arrive at the named terminal, then work the city', text: 'Use the exact rail station printed on your 12306 ticket or Hohhot Baita International Airport as the arrival point in your current route planner. Keep one central hotel for Dazhao, the Inner Mongolia Museum and the old-city food streets; check each institution’s current visitor notice before setting the day order.' },
+      { label: 'DAY 3 / TRANSFER CHECK', title: 'Leave only with a written pickup and return plan', text: 'For a Xilin Gol, Ordos or other steppe branch, ask the licensed operator to state the exact pickup and drop-off, route, road-time estimate, overnight address, land access, driver rest and weather cancellation terms in writing. Confirm the return to Hohhot and the final station or airport in advance. If any leg is vague, stay in the city and use the extra day for a museum or neighborhood instead.' },
+      { label: 'DAYS 4–6 / ONE CORRIDOR', title: 'Stay locally; do not combine far-apart regions', text: 'Spend the booked regional nights in one selected landscape and keep the agreed return path intact. Xilin Gol, Ordos and Xanadu each need their own transport and access check; do not join them into one improvised circuit, and do not portray Hulun Buir as a day trip from the capital.' },
+      { label: 'DAYS 7–8 / RETURN + BUFFER', title: 'Return to Hohhot before the departure connection', text: 'Use the operator-confirmed return to Hohhot with a weather and road margin, then spend the last night near the exact rail station or airport you will use. A missed intercity connection is avoidable: do not book the far corridor’s return for the same morning as an irreplaceable train or flight.' }
     ],
     practicalTitle: 'Distance and consent are infrastructure',
     practical: [
@@ -364,11 +366,12 @@ export const guides = [
       { question: 'How many days should I allow?', answer: 'Two Hohhot days plus three to five days for one selected regional branch is a realistic first route. Longer-distance corridors such as Hulun Buir deserve a separate trip.' }
     ],
     sources: [
-      { url: 'https://wlgd.huhhot.gov.cn/', label: 'Hohhot Culture, Tourism, Radio and Television Bureau — current city and visitor notices' },
+      { url: 'https://wlgd.huhhot.gov.cn/ggfw/lyqy/', label: 'Hohhot Culture, Tourism, Radio and Television Bureau — public visitor-service and travel notices' },
+      { url: 'https://www.huhhot.gov.cn/', label: 'Hohhot Municipal People’s Government — current city and transport notices' },
       { url: 'https://www.unesco.org/en/mab/xilin-gol', label: 'UNESCO Man and the Biosphere Programme — Xilin Gol steppe ecology and conservation context' },
       { url: 'https://whc.unesco.org/en/list/1389/', label: 'UNESCO World Heritage Centre — Site of Xanadu and its protected grassland setting' }
     ],
-    image: { path: '/assets/images/china-destination-inner-mongolia.webp', alt: 'Rolling green Hulun Buir grassland beneath a deep blue sky in Inner Mongolia', caption: 'Hulun Buir / evidence of Inner Mongolia’s scale, not a landscape outside Hohhot', source: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', creditTitle: 'Hulun Buir grassland', creator: 'Emmazzye', license: 'CC BY-SA 4.0' },
-    search: { type: 'Regional city and steppe guide', summary: 'Use Hohhot for context, then choose one ethical Inner Mongolia corridor with real distances, ecology and community consent.', keywords: ['hohhot', 'inner mongolia', 'xilin gol', 'hulun buir', 'xanadu', 'inner mongolia itinerary'] }
+    image: { path: '/assets/images/china-destination-inner-mongolia.webp', alt: 'Rolling green Hulun Buir grassland beneath a deep blue sky in Inner Mongolia', caption: 'Hulun Buir / evidence of Inner Mongolia’s scale, not a landscape outside Hohhot', source: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', creditTitle: 'Hulun Buir grassland', creator: 'Emmazzye', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Regional city and steppe guide', summary: 'Base in Hohhot for city context, then choose one region with confirmed transfers and overnight stops; return to the exact station or airport with a buffer.', keywords: ['hohhot', 'hohhot railway station', 'hohhot east', 'hohhot baita airport', 'inner mongolia', 'xilin gol', 'hulun buir', 'site of xanadu', 'ordos', 'inner mongolia itinerary'] }
   }
 ];
