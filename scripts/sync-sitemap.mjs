@@ -14,6 +14,13 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
+const malaysiaCameronHighlandsLastmod = '2026-10-11';
+const malaysiaCameronHighlandsEditedRoutes = [
+  '/malaysia/cameron-highlands/',
+  '/malaysia/cameron-highlands/tanah-rata-trails/',
+  '/malaysia/cameron-highlands/brinchang-kea-farm/',
+  '/malaysia/cameron-highlands/mossy-forest-gunung-brinchang/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -43,6 +50,13 @@ const franceBrittanyEditedRoutes = [
   '/france/brittany-coasts/quimper-crozon/'
 ];
 const unitedKingdomLastmod = '2026-09-20';
+const unitedKingdomLondonLastmod = '2026-10-11';
+const unitedKingdomLondonEditedRoutes = [
+  '/united-kingdom/london/',
+  '/united-kingdom/london/westminster-south-bank/',
+  '/united-kingdom/london/bloomsbury-covent-garden/',
+  '/united-kingdom/london/tower-city-greenwich/'
+];
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const italyPugliaLastmod = '2026-10-11';
@@ -540,6 +554,11 @@ for (const route of unitedKingdomEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited UK route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomEditedLastmod });
 }
+for (const route of unitedKingdomLondonEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited London route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomLondonLastmod });
+}
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Lake route absent from sitemap: ${route}`);
@@ -604,6 +623,11 @@ for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Australia route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod });
+}
+for (const route of malaysiaCameronHighlandsEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date refreshed Cameron Highlands route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaCameronHighlandsLastmod });
 }
 for (const route of japanEditedRoutes) {
   const record = records.get(route);

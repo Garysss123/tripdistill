@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan London as one hotel base and three district days: Westminster/South Bank, Bloomsbury/Covent Garden, and Tower/City or Greenwich. Compare four, five and six nights; name the arrival station, transfer and return before adding another interior.": "런던은 숙소를 한곳에 두고 세 지역을 하루씩 둘러보세요. 웨스트민스터/사우스뱅크, 블룸즈버리/코벤트 가든, 런던탑/시티 또는 그리니치입니다. 4·5·6박의 차이를 비교하고 실내 방문지를 더하기 전에 도착역·환승·귀가 경로를 정하세요.",
+    "Walk Parliament Square and Whitehall from a booked Parliament or Abbey entrance, cross the Thames once, and finish by Waterloo. Budget security time and do not add another timed interior.": "예약한 의사당 또는 웨스트민스터 사원 입구에서 출발해 의회 광장과 화이트홀을 걷고 템스강은 한 번만 건너 워털루 근처에서 마치세요. 보안 검색 시간을 확보하고 시간 지정 실내 방문지를 더하지 마세요.",
+    "Use Russell Square or a south-side Tube station to reach the British Museum, select a bounded gallery plan, pause in Bloomsbury, then walk through Seven Dials to Covent Garden. Save other major museums for another day.": "Russell Square 또는 남쪽 지하철역에서 대영박물관으로 가서 전시실 관람 범위를 정하세요. 블룸즈버리에서 쉰 뒤 세븐 다이얼스를 지나 코벤트 가든까지 걷고, 다른 대형 박물관은 다른 날로 미루세요.",
+    "Choose a Tower Hill and City day or a separate Greenwich day; do not plan both as one guaranteed transfer. Royal Museums Greenwich currently says the Observatory closes from 2 November 2026 for refurbishment, so verify the date-specific site status.": "Tower Hill과 시티 일정 또는 별도의 그리니치 일정을 선택하세요. 두 지역을 같은 날 확실히 연결할 수 있다고 계획하지 마세요. 현재 Royal Museums Greenwich는 왕립 천문대가 보수 공사로 2026년 11월 2일부터 문을 닫는다고 안내하므로 여행 날짜에 맞춰 각 장소의 운영 상태를 확인하세요."
+  }
+}

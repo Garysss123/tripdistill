@@ -11,12 +11,29 @@ export const unitedKingdomEnglandSouthClusters = [
     band: 'england-south',
     family: 'thames-signal-book',
     label: 'Capital line book',
-    tagline: 'Build each day around one booked door and one side of the Thames.',
+    tagline: 'Choose the London base by the last return, then give each day one district spine.',
     hubIntro: 'London is not one compact centre but a chain of walkable districts joined by rail, Underground, bus and river services. A useful plan fixes one timed interior, reads the correct station exit and keeps the rest of the day on a coherent street or river line instead of repeatedly crossing the city.',
-    stay: 'Four to six nights gives a first visit enough room for Westminster, one collection-led day and the eastern City or Greenwich without turning every meal into a transfer. Choose accommodation by the late-evening line you will actually use, not by the nearest famous landmark.',
-    transfer: 'Heathrow, Gatwick, Stansted, Luton and London City use different rail products and terminals. Within London, large stations such as Bank–Monument, King’s Cross St Pancras and Waterloo are multi-entrance systems; the wrong exit can add a substantial street detour.',
-    season: 'Rain and wind can arrive in any month. Summer brings long light but heavier attraction pressure, while winter shortens outdoor sequences and rewards museum-led days. Ceremonies, demonstrations, engineering works and security zones can alter central streets at short notice.',
-    fallback: 'Keep a same-district alternative for every booked interior: a free collection, covered market, church, riverside or smaller museum. Replacing a closure locally protects the route; crossing London to chase another headline sight usually destroys it.',
+    searchSummary: 'Plan London as one hotel base and three district days: Westminster/South Bank, Bloomsbury/Covent Garden, and Tower/City or Greenwich. Compare four, five and six nights; name the arrival station, transfer and return before adding another interior.',
+    stay: 'Four nights usually means two or three full sightseeing days after the arrival and departure days are protected: choose Westminster, one museum district and either the Tower/City or Greenwich. Five nights lets you add the other eastern choice or a genuine weather-and-rest day without changing rooms. Six nights can support both east routes or one outer-day trip, but only if that extra journey matters more than a slower London day. Keep one hotel for the stay: a one-night move often trades away the time it saves. Bloomsbury or Holborn suits museum-and-West-End walking; King’s Cross/St Pancras suits a rail arrival and onward train, with more cross-city trips to southern sights; the South Bank/Waterloo area shortens river-side returns but can feel busy around events. Compare the actual evening route to the hotel, not just the daytime map pin.',
+    transfer: 'Start with the station or terminal that matches the room. Heathrow offers Elizabeth line and Piccadilly line routes into London, but the best interchange depends on whether you are staying near Paddington, Bloomsbury, Westminster or the eastern City; confirm the dated service and step-free path before choosing. Gatwick, Stansted, Luton and London City use different rail links and London arrival points, so do not treat “central London” as one terminal. For sightseeing, Westminster is the shared starting area for Parliament and the Abbey; Russell Square, Holborn and Tottenham Court Road serve different sides of Bloomsbury; Tower Hill is not London Bridge; and Bank–Monument is a large, multi-level interchange. Name the operator, station and exit for each leg, then check the Transport for London map/status board and National Rail for the travel date.',
+    season: 'Rain and gusts can arrive in any month, so keep an indoor anchor and a short outside loop in the same district. Summer gives longer evening light but more pressure at timed doors, popular museums and river piers; book the one interior that shapes the day, then verify current entry rules rather than assuming space remains. Short winter daylight argues for ending the South Bank or Greenwich walk at a station before dusk. Parliamentary business, ceremonies, demonstrations, security perimeters and engineering work can change street access or the useful station exit at short notice. As reviewed on 11 October 2026, Royal Museums Greenwich says the Royal Observatory closes from 2 November 2026 for refurbishment; check its current notice if the trip overlaps that date, and do not assume this means every Greenwich museum is closed.',
+    fallback: 'If weather, a closure or a late arrival removes an anchor, shorten the same district instead of crossing town: keep Parliament Square and one bridge; use a prechecked Bloomsbury museum or a shorter Seven Dials walk; or choose the Tower/City day or the Greenwich day, not an improvised chain of both. For Greenwich, retain the low-ground National Maritime Museum/Queen’s House/Cutty Sark option when hill access or weather is poor, but verify which sites are operating on the date. A central hotel base makes the shortened return practical without a second check-in.',
+    reviewDate: '11 October 2026',
+    reviewDateISO: '2026-10-11',
+    sources: [
+      ['https://www.visitlondon.com/', 'Visit London — official visitor guide and accommodation areas'],
+      ['https://tfl.gov.uk/maps/track', 'Transport for London — Tube, rail, DLR and live route map'],
+      ['https://tfl.gov.uk/', 'Transport for London — current service status and journey planning'],
+      ['https://www.nationalrail.co.uk/', 'National Rail — rail planning and disruption information'],
+      ['https://www.parliament.uk/visiting/', 'UK Parliament — visitor planning and current booking guidance'],
+      ['https://www.britishmuseum.org/visit', 'British Museum — current entry and gallery notices'],
+      ['https://www.rmg.co.uk/plan-your-visit', 'Royal Museums Greenwich — current site hours and Observatory refurbishment notice']
+    ],
+    faq: [
+      ['How many nights should I book for London?', 'Four nights can support two or three full days if arrival and departure are not treated as sightseeing days. Five nights makes room for a fourth district day or a weather reserve. Six nights can add both eastern choices or an outward trip; keep one hotel unless the second base serves a separately planned journey.'],
+      ['Where should I stay for a first visit?', 'Bloomsbury or Holborn works well for museum and theatre walks; King’s Cross/St Pancras favors rail arrivals and onward trains; Waterloo or the South Bank shortens some river-side returns. Compare the specific hotel-to-station route you will use at night, and do not assume one famous landmark is a useful base for every district.'],
+      ['Should I combine the Tower of London and Greenwich in one day?', 'Usually choose one anchor. The Tower plus a compact City walk is a full day; Greenwich has its own clustered museums, park and hill. The two districts sit on different operating routes, so combining them cuts the time available at both and adds a transfer that depends on the day’s live service.']
+    ],
     sources: [
       ['https://www.visitlondon.com/', 'Visit London — official city visitor guide'],
       ['https://tfl.gov.uk/', 'Transport for London — fares, routes and service status'],
@@ -30,33 +47,45 @@ export const unitedKingdomEnglandSouthClusters = [
         layout: 'parliament-river-fold',
         imageQuery: 'Westminster Parliament Thames London panorama',
         imageAlt: 'The Palace of Westminster beside the River Thames in London',
-        purpose: 'Choose whether Parliament, Westminster Abbey or the public river landscape is the day’s main commitment, then cross the Thames only once so security queues and bridge backtracking do not consume the historic core.',
-        summary: 'Start at the booked Westminster door, read Parliament Square and the abbey precinct, then use one bridge to finish along the South Bank with a direct return from Waterloo or Blackfriars.',
+        purpose: 'Decide which single interior, if any, will anchor the day—Parliament, Westminster Abbey or neither—then make a one-way civic-to-river walk with one planned bridge crossing and an explicit Waterloo-side return.',
+        summary: 'Start at the booked Parliament or Abbey entrance, connect Parliament Square and Whitehall on foot, then cross once to the South Bank and finish near Waterloo; save a longer Blackfriars extension for a separate choice.',
+        searchSummary: 'Walk Parliament Square and Whitehall from a booked Parliament or Abbey entrance, cross the Thames once, and finish by Waterloo. Budget security time and do not add another timed interior.',
+        showHubOperatingBoard: false,
         choices: [
-          ['Parliament visit', 'Use the exact visitor entrance and session or tour instructions as the fixed event. This gives the strongest civic reading but leaves little tolerance for a second controlled interior.'],
-          ['Abbey and royal precinct', 'Make Westminster Abbey the timed anchor, then connect St James’s Park and Whitehall before crossing the river. It suits architectural history but sacrifices a full parliamentary interior.'],
-          ['River and public realm', 'Keep the controlled buildings mostly exterior and give the South Bank, bridges and river views the long block. This is the most flexible choice for families or uncertain bookings.']
+          ['Parliament interior', 'Book a tour or other visit that is actually offered for your date and follow its named entrance, ticket and security instructions. This gives the strongest institutional context, but the queue and visit displace the Abbey interior.'],
+          ['Abbey and royal precinct', 'Make Westminster Abbey the only planned interior, then connect Parliament Square, St James’s Park or Whitehall as the outdoor context. This suits architecture and worship history, but leaves Parliament outside.'],
+          ['Civic walk without an interior', 'Read the Palace exterior, Parliament Square, Whitehall and the Thames, then spend the longer block on the South Bank. It keeps the day adaptable, but does not include a Parliament or Abbey visit inside.']
         ],
-        access: 'Westminster station serves Parliament Square but its exits emerge on different sides of busy roads. St James’s Park suits an abbey-first approach, while Waterloo is the cleanest South Bank finish. Identify the controlled entrance on the official booking, not on a generic map pin.',
-        tradeoff: 'Parliament, Westminster Abbey and a major South Bank attraction do not form a comfortable three-interior day. Choosing one booked door gives up another interior but preserves time to understand Whitehall, the bridges and the river as connected civic space.',
+        access: 'Westminster station is served by the District, Circle and Jubilee lines and sits beside Parliament Square, but the pavement exit is not the visitor entrance. Parliament’s main public entrance for tours is Cromwell Green on St Margaret Street; the Abbey’s own visit instructions govern its entrance. Parliament currently advises allowing time for security searches and reports longer average queues at busy periods, so use its live guidance rather than a fixed transfer estimate. Waterloo is a practical South Bank return; Blackfriars only makes sense if you deliberately extend east.',
+        tradeoff: 'A Parliament tour, Abbey visit, ceremonial detours and a South Bank attraction cannot all be equal priorities in one day. One booked door already creates a security and entry block; choosing it means giving up the other interior and keeping the river walk bounded. An exterior day trades interior access for a looser route and more time at bridges and public spaces.',
         stages: [
-          ['Meet the controlled door', 'Arrive from the station exit nearest the booked entrance, clear security and keep the ticketed time separate from any ceremony or public-session expectation.'],
-          ['Read Parliament Square', 'Use the square, abbey precinct and Whitehall edge as one civic field. Do not detour to Buckingham Palace unless the route was designed to leave from St James’s Park.'],
-          ['Cross once', 'Choose Westminster Bridge for the classic river turn or the Golden Jubilee bridges after Whitehall. Stay on the selected bank rather than alternating for photographs.'],
-          ['Finish along the South Bank', 'Walk only as far as the chosen final station or venue, ending at Waterloo, Southwark or Blackfriars. Protect the return before adding a late river attraction.']
+          ['Morning · reach the named door', 'Use Westminster station for the square, then follow the ticket’s route to Cromwell Green or the Abbey entrance. Keep the booked time and Parliament’s current security-queue guidance in the plan; do not count a ceremony as a timed connection.'],
+          ['Late morning · Parliament Square to Whitehall', 'After the interior, or on an exterior-only day, take one compact loop past Parliament Square and the Abbey precinct, then choose either St James’s Park or the Whitehall frontage. Allow a real sit-down break before the river crossing.'],
+          ['Early afternoon · choose one bridge', 'Cross Westminster Bridge for the direct South Bank turn, or use the Golden Jubilee pedestrian bridges if the route comes north through Whitehall. Pick one; crossing back for a second photograph adds steps without adding a new district.'],
+          ['Afternoon · end near Waterloo', 'Keep the South Bank segment to Jubilee Gardens, Southbank Centre or another chosen riverside stop, then finish at Waterloo. Continue east toward Tate Modern and Blackfriars only if that was the day’s selected venue and you have preserved the return.']
         ],
-        fallback: 'If the booked interior closes or a security perimeter expands, keep the civic route outdoors, add St Margaret’s Church or the Supreme Court when open, then cross to the South Bank. The day still explains the institutions and river without a cross-city rescue.',
+        fallback: 'In rain or after a ticket change, keep the same west-side base: use the booked Parliament or Abbey interior only if your date-specific entry is confirmed, shorten the outdoor loop to Parliament Square and Whitehall, then decide whether the river crossing is still comfortable. If you need another indoor stop, verify a local venue’s current entry first; do not rescue the day by adding the Tower or a second timed ticket.',
         watch: [
-          ['Security changes the clock', 'Bag rules, controlled entrances and parliamentary business can alter admission. Treat the official arrival instruction as part of the visit rather than an optional buffer.'],
-          ['Ceremony is not guaranteed', 'Changing the Guard and state events vary and can close streets. Do not make an unconfirmed ceremony the connection between two timed tickets.'],
-          ['The river walk is longer than it looks', 'Crowds, crossings and steps slow the South Bank. Choose an end station in advance instead of assuming Tower Bridge is an easy extension.']
+          ['Security time is real route time', 'Parliament searches bags and people; its visitor guidance publishes current queue expectations. Arrive by the instructed entrance, keep prohibited-item rules in view and do not schedule the Abbey or a performance immediately after.'],
+          ['Public events can close the line', 'Parliamentary business, ceremonies, demonstrations and protective perimeters can change access around Parliament Square or Whitehall. Check official notices and TfL status on the day, and keep the exterior loop reversible.'],
+          ['A second crossing costs more than a photo stop', 'The South Bank is busy and crossings have signals, steps and crowd slowdowns. Choose Waterloo as the default finish; treat Tate Modern or Blackfriars as an intentional extension, not a guaranteed short stroll.']
         ],
-        duration: 'Allow six to eight hours with one controlled interior and a South Bank finish. An exterior Westminster circuit can fit three to four hours, but combining two major booked buildings normally uses most of the day.',
-        combine: 'Combine with St James’s Park or a bounded South Bank venue because both preserve the same geography. Keep the Tower, British Museum and Greenwich for separate route days.',
-        verify: 'Check the Parliament or abbey ticket instructions, current security restrictions, Transport for London status and any event-related road or pedestrian closure before departure.',
+        duration: 'Treat six to eight hours as an editorial day allowance for one interior, a proper break and a bounded South Bank finish; it is not a measured visit time. A shorter exterior circuit can work in roughly three to four hours if the event calendar and walking pace cooperate. Do not attach another major booked site.',
+        combine: 'Pair the civic core with St James’s Park or one South Bank stop because they share this west-to-south river line. Keep Bloomsbury, the Tower, Greenwich and a West End performance for separate days unless one explicitly replaces the main interior.',
+        verify: 'Reopen Parliament’s visit, entrance and security guidance or Westminster Abbey’s date-specific visit notices; check TfL status, the bridge route and any public-event or road closure. Confirm that the return station matches the final South Bank stop.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
+        faq: [
+          ['How long should I allow for Westminster and the South Bank?', 'Use six to eight hours as a planning allowance for one interior, a break and a short riverside finish. Parliament’s security queue is variable, so do not treat the published average as a maximum or schedule a second timed entry against it.'],
+          ['Which station should I use for Parliament Square?', 'Westminster station is the closest Underground arrival and serves the District, Circle and Jubilee lines. The correct public entrance still depends on the ticket: Parliament visitors generally follow the Cromwell Green instructions, while the Abbey provides its own route.'],
+          ['What if I cannot book Parliament or Westminster Abbey?', 'Keep the Palace and Abbey precinct as an exterior civic walk, then choose one South Bank stop. If rain makes that uncomfortable, replace the outdoor leg with a verified local indoor visit rather than crossing the city for another headline attraction.']
+        ],
         sources: [
           ['https://www.parliament.uk/visiting/', 'UK Parliament — official visitor information'],
-          ['https://www.westminster-abbey.org/visit-us', 'Westminster Abbey — official visitor information']
+          ['https://www.parliament.uk/visiting/access/directions/', 'UK Parliament — visitor entrances and public-transport directions'],
+          ['https://www.parliament.uk/visiting/access/disabled-access/getting-in/', 'UK Parliament — arrival, security and access guidance'],
+          ['https://www.westminster-abbey.org/visit-us', 'Westminster Abbey — official visitor information'],
+          ['https://tfl.gov.uk/maps/track', 'Transport for London — current route map and service board']
         ]
       }),
       g({
@@ -66,33 +95,44 @@ export const unitedKingdomEnglandSouthClusters = [
         layout: 'museum-quarter-ledger',
         imageQuery: 'British Museum Great Court London interior',
         imageAlt: 'The Great Court inside the British Museum in London',
-        purpose: 'Decide how much attention to give the British Museum, then connect Bloomsbury squares to Covent Garden without pretending a vast collection, two shopping districts and the West End all fit at equal depth.',
-        summary: 'Enter the museum with a bounded collection plan, reset in Bloomsbury, and move south through a single street sequence toward Seven Dials and Covent Garden.',
+        purpose: 'Choose between a bounded British Museum visit and a street-and-performance day, then walk south through Bloomsbury and Seven Dials without doubling back for another major collection.',
+        summary: 'Start with the British Museum’s Great Court and a short, preselected gallery route, pause in Bloomsbury, then follow Bedford Square and Seven Dials toward Covent Garden or a booked West End evening.',
+        searchSummary: 'Use Russell Square or a south-side Tube station to reach the British Museum, select a bounded gallery plan, pause in Bloomsbury, then walk through Seven Dials to Covent Garden. Save other major museums for another day.',
+        showHubOperatingBoard: false,
         choices: [
-          ['British Museum depth', 'Choose two neighboring collection areas and let the museum occupy the central block. Covent Garden becomes a meal and evening finish rather than another full attraction.'],
-          ['Two smaller collections', 'Use the National Gallery, Courtauld or another verified venue instead of the British Museum. This reduces scale but may add a separate timed-entry and walking decision.'],
-          ['Streets and performance district', 'Keep museums short or exterior, then prioritize Bloomsbury squares, Seven Dials and a booked performance. It offers better pacing but less collection context.']
+          ['British Museum first', 'Use the Great Court to orient, then choose one story from galleries that the current floor plan confirms are open. Covent Garden becomes a meal and street finish, not a second collection.'],
+          ['One smaller collection instead', 'Choose the National Gallery or Courtauld as the day’s only museum, then shape the walk around its own location and entry rules. You give up the Bloomsbury-to-Covent Garden line but spend less time in a vast building.'],
+          ['Bloomsbury and theatre', 'Keep the British Museum exterior or brief, use the squares and Seven Dials for the main walk, and work back from a performance door. This gives the collection less time but protects a meal and a firm evening arrival.']
         ],
-        access: 'Tottenham Court Road, Holborn and Russell Square approach different sides of Bloomsbury. Use the museum’s current entrance guidance and do not assume the nearest named station creates the best exit toward Covent Garden. Leicester Square or Covent Garden can serve the final leg.',
-        tradeoff: 'A serious British Museum visit uses the same attention needed for the National Gallery or a matinee. This route deliberately chooses one collection argument, giving up a second major museum so food, streets and an evening booking remain usable.',
+        access: 'Russell Square on the Piccadilly line is a useful north-side approach; Holborn (Central/Piccadilly) and Tottenham Court Road (Central/Northern/Elizabeth line) serve different southern approaches and onward connections. Treat each as a different start point, not as interchangeable “British Museum” stops. Follow the Museum’s current entrance, bag and room notices; use Covent Garden or Leicester Square only for the south-side finish, after checking service and step-free access for the date.',
+        tradeoff: 'The British Museum’s scale makes a short highlight list feel like a whole visit when the internal walking and standing still take time. This plan gives one collection a clear morning block and releases the afternoon for a real break and a single southern street sequence. A second major museum or a matinee must replace part of that sequence, not be stacked on top.',
         stages: [
-          ['Enter from the useful square', 'Approach from Russell Square or Tottenham Court Road according to the first gallery and current entrance. Note the return station before phones and bags enter security.'],
-          ['Work a bounded collection', 'Follow current room status and keep adjacent departments together. Stop when attention drops instead of crossing the entire building for one object.'],
-          ['Reset in Bloomsbury', 'Use Bedford Square, Russell Square or a planned café as a real break. This separates collection time from the busier theatre and market district.'],
-          ['Descend to Covent Garden', 'Move through Seven Dials or Drury Lane once, ending near the booked restaurant, performance or station. Do not loop back north after the evening crowd builds.']
+          ['Morning · enter with a room plan', 'Start at the Great Court, read the day’s gallery and entrance notices, then select one story and a nearby fallback room from the current floor plan. Keep Russell Square as the north-side start unless your hotel or service status points elsewhere.'],
+          ['Late morning · follow one collection line', 'Stay within one or two neighboring galleries that are open on the date. Ancient Egypt or the Parthenon displays can anchor a visit if the current room status supports that choice; do not cross the building to collect unrelated famous objects. A two-to-three-hour museum allowance is an editorial estimate, not a measured visit.'],
+          ['Lunch · reset in Bloomsbury', 'Leave time to sit in Russell Square or Bedford Square before the busier southern stretch. This is a real rest between standing indoors and navigating Covent Garden crowds, not spare time to add another museum.'],
+          ['Afternoon · Bedford Square to Seven Dials', 'Walk south by a single street line through Bedford Square and Seven Dials toward Covent Garden. Reserve roughly thirty to forty-five minutes for this moving leg before stops and crowds, then choose Covent Garden or a booked theatre as the finish; return from Covent Garden or Leicester Square rather than retracing north.']
         ],
-        fallback: 'If museum entry or a gallery closure breaks the plan, retain the district with the Foundling Museum, Sir John Soane’s Museum when its admission works, Bloomsbury squares and a longer Covent Garden street route. Do not replace it with a distant headline museum.',
+        fallback: 'If entry arrangements or a gallery closure change the museum block, keep the same district: use the Great Court only if the Museum confirms access, take the squares and Bedford Square as the longer outdoor route, and continue to Seven Dials if the weather permits. A smaller nearby museum is a replacement only after its opening and admission rules are checked for that date; do not replace a closed gallery with a cross-city queue.',
         watch: [
-          ['Free does not mean frictionless', 'Capacity controls, security and temporary gallery closures still matter. Read current entry advice even when no admission charge applies.'],
-          ['Collection scale disguises distance', 'Internal walking and standing accumulate quickly. Preselect rooms and a meeting point instead of relying on a single famous-object list.'],
-          ['Evening tickets set the exit', 'A theatre start time changes meal and museum cutoffs. Work backward from the performance door, not from an optimistic gallery finish.']
+          ['Admission and rooms are separate checks', 'A general museum visit does not promise that a particular exhibition or gallery is open. Reopen the Museum’s entry, security and collection notices for the date, especially before centering the day on one room.'],
+          ['Indoor distance drains the afternoon', 'Standing and walking accumulate inside a large museum. Name a stop point and café or square before entering; if attention or mobility drops, go straight to the southern street leg.'],
+          ['The theatre clock decides dinner', 'A performance fixes the finish and can make a full museum morning too long. Check the actual theatre entrance and curtain time, set a museum exit point, and keep a direct route south instead of returning to the hotel first.']
         ],
-        duration: 'Allow five to seven hours for a bounded museum visit, a proper break and Covent Garden. Add an evening performance only with a firm museum stop time; two major collections should be separate days.',
-        combine: 'Combine with Seven Dials, Soho’s eastern edge or a West End performance. Do not add Westminster or the Tower merely because both appear close on the Tube map.',
-        verify: 'Check the selected museum’s entry and gallery notices, any performance ticket conditions, step-free station information and current central-line or Piccadilly-line service changes.',
+        duration: 'Allow about five to seven hours for a bounded museum visit, a seated break, the southbound street walk and time in Covent Garden. The museum and street allocations are planning estimates; crowds, room availability and walking pace change them. Add a performance only when its entrance and start time are confirmed, and do not add a second major collection.',
+        combine: 'Combine this line with Seven Dials, Covent Garden or a West End performance whose location fits the return. If the National Gallery or Courtauld is the priority, let it replace the British Museum and redesign the route around Trafalgar Square or Somerset House instead of adding both.',
+        verify: 'Check the British Museum’s visit, entrance, security and gallery notices; confirm any exhibition or theatre ticket for the date; and check TfL status and step-free access for the chosen Russell Square, Holborn, Tottenham Court Road or Covent Garden leg.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
+        faq: [
+          ['How long do the British Museum and Covent Garden need?', 'For this route, reserve a two-to-three-hour museum block as a planning estimate, a proper seated break, then a single southbound walk and a shorter Covent Garden finish. A more detailed museum visit should replace the evening add-on.'],
+          ['Which station is best for Bloomsbury?', 'Russell Square fits a north-side arrival; Holborn or Tottenham Court Road can suit a southbound finish or a different hotel line. Check the actual museum entrance and live station access before choosing rather than selecting only by the word “closest”.'],
+          ['Can I add a West End show?', 'Yes if the performance is the day’s fixed finish. Work backward from its named entrance, allow for the meal and southbound walk, and leave the museum at a planned time. Do not add a second major collection before the show.']
+        ],
         sources: [
           ['https://www.britishmuseum.org/visit', 'British Museum — official visitor information'],
-          ['https://www.nationalgallery.org.uk/visiting', 'National Gallery — official visitor information']
+          ['https://www.nationalgallery.org.uk/visiting', 'National Gallery — official visitor information'],
+          ['https://courtauld.ac.uk/visit/', 'Courtauld Gallery — official visitor information'],
+          ['https://tfl.gov.uk/maps/track', 'Transport for London — current route map and service board']
         ]
       }),
       g({
@@ -102,33 +142,44 @@ export const unitedKingdomEnglandSouthClusters = [
         layout: 'east-thames-section',
         imageQuery: 'Tower of London Thames city skyline wide',
         imageAlt: 'The Tower of London beside the Thames and the City skyline',
-        purpose: 'Choose whether the Tower of London or Greenwich is the paid anchor, then use the eastern Thames as a one-direction transfer rather than forcing the fortress, City lanes and every Greenwich museum into one compressed checklist.',
-        summary: 'Start with the controlled fortress or a City walk, move east by rail or river only after the anchor, and finish around Greenwich’s compact maritime sites with the return already selected.',
+        purpose: 'Choose one complete day—Tower of London with a compact City walk, or Greenwich’s maritime quarter—before choosing the paid site, station and return; do not treat a river hop as enough time for both.',
+        summary: 'Use Tower Hill for a Tower-and-City day, or begin separately at Cutty Sark/Greenwich for the maritime district. Keep the two plans distinct, and check the Observatory’s current operating notice before choosing the hill.',
+        searchSummary: 'Choose a Tower Hill and City day or a separate Greenwich day; do not plan both as one guaranteed transfer. Royal Museums Greenwich currently says the Observatory closes from 2 November 2026 for refurbishment, so verify the date-specific site status.',
+        showHubOperatingBoard: false,
         choices: [
-          ['Tower depth', 'Reserve the fortress early and give its grounds, collections and queues the main block. Greenwich becomes an exterior river-and-park finish or moves to another day.'],
-          ['City evidence and river transfer', 'Keep the Tower exterior, trace Roman and financial-city layers, then use a boat or rail connection east. This favors urban history over the Crown Jewels.'],
-          ['Greenwich maritime day', 'Go directly to Greenwich for the museums, observatory or park, using the Tower only as a river landmark. This gives the clearest meridian and naval story.']
+          ['Tower and nearby City', 'Use Tower Hill for the Tower’s own entry and visit, then add one compact City line such as St Dunstan-in-the-East and Leadenhall Market. This prioritizes the fortress and urban fabric; Greenwich is another day.'],
+          ['Greenwich low ground', 'Start at Cutty Sark DLR or Greenwich station, then choose the National Maritime Museum, Queen’s House and Cutty Sark according to current entry and available time. This builds a complete river-and-maritime day without the uphill Observatory.'],
+          ['Greenwich with the Observatory hill', 'Choose Greenwich Park and the hill only if the Royal Observatory’s date-specific opening, ticket and access notice supports the visit. At review on 11 October 2026, Royal Museums Greenwich says the Observatory closes from 2 November 2026 for refurbishment; do not infer a reopening date.']
         ],
-        access: 'Tower Hill, Fenchurch Street and London Bridge serve different approaches to the Tower and City. Greenwich, Cutty Sark and Maze Hill are separate stations, while river boats use named piers and schedules. Match the arrival to the first door and the return to the final hill or museum.',
-        tradeoff: 'A full Tower visit and the Royal Observatory’s hilltop interior are both substantial. Choosing both sacrifices the City walk and much of Greenwich; choosing one anchor makes the river transfer and return leg intelligible.',
+        access: 'Tower Hill Underground (District/Circle) is the Tower-side approach; Tower Gateway DLR is a separate station, and London Bridge is a different entrance to the wider City. For Greenwich, choose Cutty Sark DLR or Greenwich/Maze Hill rail by the first and last venue, not by a generic “Greenwich” pin. DLR, National Rail and river boats have separate service, pier and ticket rules; confirm the chosen operator and return for the exact date.',
+        tradeoff: 'The Tower’s controlled entrance, grounds and internal queues can use a large part of the day; Greenwich then needs its own journey, low-ground museums and possibly a steep park climb. Choosing one district leaves the other for another day but gives the selected visit a real margin. A tower-exterior and City walk is a lighter alternative, not a substitute for a Tower ticket.',
         stages: [
-          ['Start at the fixed gate', 'Meet the Tower ticket time or begin at a named City station. Keep fortress security and queue time inside the plan before considering the river connection.'],
-          ['Read one eastern-city line', 'Use the Roman wall, St Dunstan-in-the-East, Monument or Borough Market as one bounded branch. Do not zig-zag between both banks.'],
-          ['Transfer east with intent', 'Choose DLR, rail or a verified river departure according to weather, cost and arrival point. A sightseeing boat is not interchangeable with the fastest connection.'],
-          ['Finish around Greenwich', 'Select the maritime museum and Cutty Sark low ground or the observatory hill. End at the station or pier that avoids climbing back across the park with tired legs.']
+          ['Before leaving · select a district', 'Check the Tower admission/security instructions or the Royal Museums Greenwich site and ticket notices. If choosing Greenwich, read the current Observatory refurbishment notice first; there is no assumption that the hilltop site is open on every travel date.'],
+          ['Tower day · Tower Hill to one City line', 'Enter at the Tower’s instructed door and protect a substantial visit block. Afterward, choose either St Dunstan-in-the-East and Leadenhall Market or a direct riverside return; finish at Tower Hill, Monument/Bank or London Bridge according to the last stop.'],
+          ['Greenwich day · DLR/rail to low ground', 'Arrive at Cutty Sark DLR or Greenwich station, then group the National Maritime Museum, Queen’s House and Cutty Sark from their current operating notices. Leave a seated break before deciding whether the park slope is worth adding.'],
+          ['Return · match the final door', 'For Greenwich low ground, leave from Cutty Sark DLR, Greenwich or Maze Hill only after checking the live route and walking connection; the Observatory hill adds a climb back down. Use a named river pier only when its current departure and return fit the day. Do not cross back to the Tower as a default finale.']
         ],
-        fallback: 'If the Tower or river service is disrupted, use the City’s exterior remains, London Mithraeum when available and DLR to Greenwich; if Greenwich interiors close, retain the market, naval college grounds and park. Keep the same eastward geography.',
+        fallback: 'If the Tower entry or City service changes, keep a Tower exterior-and-nearby-street day or move the interior to a date with confirmed admission. If the Observatory is closed or the park hill is unsuitable, use Greenwich low ground only after checking the National Maritime Museum, Queen’s House and Cutty Sark individually; each site’s status is separate. Rain or a delayed river boat is a reason to omit the transfer, not to assume a replacement sailing.',
         watch: [
-          ['Pier names and boat products differ', 'Commuter and sightseeing services have different tickets and stopping patterns. Confirm the operator, pier and final departure rather than following a generic boat symbol.'],
-          ['Greenwich includes a real hill', 'The observatory approach is steep. Keep museum-and-river low ground as the accessible branch when walking or weather is limiting.'],
-          ['Fortress queues move inside the walls', 'Admission does not remove internal waits. Prioritize the specific Tower experiences that matter instead of treating every exhibit as compulsory.']
+          ['A river boat is a separate operating choice', 'A river-bus connection and a sightseeing cruise are different products and stopping patterns. Confirm the exact operator, pier, departure and return; never build the Tower-to-Greenwich sequence on an assumed sailing.'],
+          ['The Observatory is a dated gate', 'Royal Museums Greenwich currently lists a refurbishment closure from 2 November 2026. Recheck its notice for later dates, and do not describe the whole Greenwich quarter as closed if only one site is affected.'],
+          ['The Greenwich Park climb changes the finish', 'The Royal Observatory sits uphill from the low-ground museums. If rain, fatigue or mobility makes that climb unsuitable, leave the hill out and return from the museum-side station or pier you have checked.']
         ],
-        duration: 'Allow a full seven-to-nine-hour day for one major interior plus the eastward transfer. The Tower alone can use four hours; Greenwich alone merits at least half a day.',
-        combine: 'Combine the Tower with one City line or Greenwich with a river arrival. Do not add Westminster, Bloomsbury or a West End performance to the same day.',
-        verify: 'Check Tower admission and security, Royal Museums Greenwich hours and ticket products, the chosen river or DLR service, and the last practical return from the final Greenwich stop.',
+        duration: 'Use about five to seven hours as an editorial allowance for a Tower visit and one compact City line, or a separate half-to-full day for Greenwich’s selected museums and park. These are planning estimates, not operator visit times. Do not add the other district, Westminster or Bloomsbury to the same schedule.',
+        combine: 'Pair the Tower with St Dunstan-in-the-East or Leadenhall Market on the same City line. Pair Greenwich with the National Maritime Museum, Queen’s House, Cutty Sark and—only if open and suitable—the Observatory hill. Choose one pair; keep the other district for another day.',
+        verify: 'Check Historic Royal Palaces’ Tower entry and security guidance, Royal Museums Greenwich’s site-by-site hours and dated Observatory notice, TfL DLR status, National Rail service and any chosen river operator’s named pier and return. None of these pages guarantees same-day availability.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
+        faq: [
+          ['Can I visit the Tower of London and Greenwich in one day?', 'It is possible to travel between them, but the guide recommends choosing one as the main day. A Tower visit plus one City walk is already a full plan; Greenwich has its own museums and park. A river boat does not guarantee a convenient connection or enough visit time.'],
+          ['Is the Royal Observatory open for a late-2026 visit?', 'At editorial review on 11 October 2026, Royal Museums Greenwich says the Observatory closes from 2 November 2026 for refurbishment and does not state a reopening date on the planning page. Recheck the current notice for your travel date; the National Maritime Museum, Queen’s House and Cutty Sark each have separate status.'],
+          ['Which station should I use for Greenwich?', 'Cutty Sark DLR suits the low-ground maritime quarter; Greenwich and Maze Hill are separate rail approaches. Choose by the first and final venue, current step-free access and the live return rather than assuming one station serves the whole park.']
+        ],
         sources: [
           ['https://www.hrp.org.uk/tower-of-london/visit/', 'Historic Royal Palaces — Tower of London visits'],
-          ['https://www.rmg.co.uk/plan-your-visit', 'Royal Museums Greenwich — official visit planning']
+          ['https://www.rmg.co.uk/plan-your-visit', 'Royal Museums Greenwich — current site hours, tickets and refurbishment notice'],
+          ['https://tfl.gov.uk/maps/track', 'Transport for London — DLR, rail and river service map'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — current rail planning and disruptions']
         ]
       })
     ]
