@@ -72,6 +72,14 @@ const chinaLowerYangtzeRoutes = [
   '/china/hangzhou/grand-canal-gongchen-bridge/',
   '/china/hangzhou/liangzhu-archaeological-city/'
 ];
+// Four Guangdong, Fujian, and Guangxi local guides received a route review on October 10.
+const chinaSouthernChinaRoutesLastmod = '2026-10-10';
+const chinaSouthernChinaRoutes = [
+  '/china/guangzhou/',
+  '/china/shenzhen/',
+  '/china/xiamen-fujian-tulou/',
+  '/china/guilin-yangshuo/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -346,6 +354,11 @@ for (const route of chinaLowerYangtzeRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Lower Yangtze route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaLowerYangtzeRoutesLastmod });
+}
+for (const route of chinaSouthernChinaRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed southern China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaSouthernChinaRoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);

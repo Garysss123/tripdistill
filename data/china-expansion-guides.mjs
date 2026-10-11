@@ -4,6 +4,7 @@ import { guides as eastLowerYangtzeGuides } from './china-east-lower-yangtze-gui
 export const guides = [
   {
     slug: 'guangzhou',
+    dateModified: '2026-10-10',
     name: 'Guangzhou',
     title: 'Guangzhou Travel Guide (2026): Pearl River, Food and Lingnan Routes',
     metaDescription: 'Plan Guangzhou through Pearl River geography, Lingnan architecture, museums, markets and Cantonese meals, with four coherent days and station-specific advice.',
@@ -12,7 +13,7 @@ export const guides = [
     visual: 'pearl-banquet',
     eyebrow: 'Guangdong / river port and food city',
     titleAccent: 'read the Pearl River like a banquet table',
-    intro: 'Guangzhou rewards sequencing rather than landmark collecting. The old trading districts, Lingnan clan architecture, contemporary Zhujiang New Town and the riverfront belong to different urban stories. Give each story a course of its own, then let Cantonese meals connect the day without reducing the city to a restaurant checklist.',
+    intro: 'Guangzhou rewards sequencing rather than landmark collecting. The old trading districts, Lingnan clan architecture, contemporary Zhujiang New Town and the riverfront belong to different urban stories. Base yourself near the first two days’ sights, work west-side heritage before shifting to the central and southern river axis, and use the museum or a meal as the indoor anchor when heat or rain makes long walks unpleasant. It suits visitors who enjoy food, museums and several distinct neighborhoods; it is a poor match for a one-day, walk-only landmark sprint.',
     nights: '3–4 nights',
     coreLogic: 'old west + river + new axis',
     watchFirst: 'station name and meal timing',
@@ -31,21 +32,21 @@ export const guides = [
     ],
     decisions: [
       { label: 'ARRIVAL', title: 'Name Guangzhou South, East or Baiyun', text: 'Guangzhou South is a vast high-speed rail hub south of the historic core; Guangzhou East serves different corridors, while Baiyun Airport has its own long city transfer. Save the complete station name, metro interchange and final hotel exit before boarding.' },
-      { label: 'BASE', title: 'Choose old west or central interchange', text: 'Liwan favors heritage walks and food texture; Yuexiu and central metro corridors simplify a mixed first visit; Zhujiang New Town suits modern architecture and business travel. A hotel marketed as riverfront may still sit far from a useful crossing.' },
+      { label: 'BASE', title: 'Choose a base by the first two days', text: 'Stay in or near Liwan for Chen Clan Ancestral Hall, Xiguan and old-west food; choose Yuexiu or another central location if the plan divides between the old city and the river axis. Zhujiang New Town fits a modern-city focus. Compare the hotel’s actual door-to-door route to your arrival station and the first day’s venue before booking.' },
       { label: 'BORDER LOGIC', title: 'Hong Kong is a separate immigration movement', text: 'A Greater Bay Area map can hide a real border. Check documents, station, ticket, baggage and arrival procedures for every cross-boundary trip, and do not treat Hong Kong or Macau as frictionless Guangzhou metro extensions.' }
     ],
     itineraryKicker: 'FOUR COURSES / NO CROSS-CITY DASH',
     itineraryTitle: 'A Guangzhou sequence with room to taste',
     itineraryIntro: 'Keep the first three days on coherent sides of the city. Use the fourth for the modern river axis or a carefully researched outer excursion, not as a bin for missed landmarks.',
     itinerary: [
-      { label: 'DAY 1 / WEST', title: 'Lingnan craft and Xiguan lanes', text: 'Start at Chen Clan Academy, continue through one Liwan street sequence and protect a proper lunch. Finish around Shamian or the nearby waterfront only if heat and walking energy remain.' },
+      { label: 'DAY 1 / WEST', title: 'Chen Clan, then one Liwan walk', text: 'Start at Chen Clan Ancestral Hall, then choose either one Xiguan or Enning Road street loop and lunch nearby. Add Shamian only if the group still has energy; this keeps the day on the old-west side instead of crossing town between stops.' },
       { label: 'DAY 2 / ORIGIN', title: 'Yuexiu and one deep museum', text: 'Use the morning for park and city context, then give one museum collection a full visit. Shift into Beijing Road or another central food area after the main cultural work is complete.' },
-      { label: 'DAY 3 / RIVER', title: 'Civic axis to night water', text: 'Choose Guangdong Museum or the architectural axis in daylight, cross the river for a tower or skyline position, and end with one verified bank or cruise plan.' },
+      { label: 'DAY 3 / RIVER', title: 'Choose one Zhujiang New Town focus', text: 'Make the Guangdong Museum your indoor anchor or spend daylight on the civic architecture, then choose one skyline viewpoint for evening. If booking a cruise, use the ticket’s named pier and return details; do not assume a riverfront pin is the departure point.' },
       { label: 'DAY 4 / EDIT', title: 'Food chapter or regional contrast', text: 'Repeat the neighborhood that deserved more attention, explore a specialist food district, or take one realistic regional excursion. Do not combine Foshan, Kaiping and multiple Guangzhou sights in a single improvised day.' }
     ],
     practicalTitle: 'Humidity, language and payment shape the route',
     practical: [
-      { label: 'WEATHER', title: 'Build a heat-and-rain edit', text: 'Warm humid conditions and intense rain can make exposed plazas and long arcade walks exhausting. Put the museum or meal anchor at the hottest point, carry water and use current weather warnings rather than a fixed seasonal slogan.' },
+      { label: 'WEATHER', title: 'Swap the exposed walk for an indoor anchor', text: 'Heat and heavy rain can make long arcade walks and open plazas tiring. Move the museum or a nearby meal earlier, shorten the outdoor loop, and use current venue notices and weather alerts before setting out.' },
       { label: 'NAMES', title: 'Keep Chinese place names offline', text: 'English spellings vary across map and ticket interfaces. Save the Chinese hotel address, full railway station and destination name as text and screenshot; show the exact entrance rather than relying on a district name.' },
       { label: 'PAYMENT', title: 'Prepare a second way to pay', text: 'Set up a supported mobile or bank-card route before arrival and keep some RMB cash. Test a low-stakes purchase early, retain passport access for real-name bookings and never depend on a single phone with no offline address record.' }
     ],
@@ -57,13 +58,15 @@ export const guides = [
     ],
     sources: [
       { url: 'https://www.gz.gov.cn/guangzhouinternational/home/citynews/content/post_7813722.html', label: 'Guangzhou Municipal Government — visitor orientation and major city sights' },
-      { url: 'https://www.gz.gov.cn/guangzhouinternational/government/honoursandawards/content/post_9721812.html', label: 'Guangzhou Municipal Government — Chen Clan Ancestral Hall and Lingnan craft context' }
+      { url: 'https://www.gz.gov.cn/guangzhouinternational/government/honoursandawards/content/post_9721812.html', label: 'Guangzhou Municipal Government — Chen Clan Ancestral Hall and Lingnan craft context' },
+      { url: 'https://www.gz.gov.cn/guangzhouinternational/the137thcantonfair/content/post_10206654.html', label: 'Guangzhou Municipal Government — Expat guide to local transport, cultural venues and visitor services' }
     ],
     image: { path: '/assets/images/china-destination-guangzhou.webp', alt: 'Canton Tower and the Guangzhou skyline across the Pearl River', caption: 'Pearl River / old port city, modern civic axis and distinct banks', source: 'https://commons.wikimedia.org/wiki/File:Pearl_River_Canton_Tower_(cropped).JPG', creditTitle: 'Pearl River and Canton Tower', creator: 'Gzdavidwong', license: 'CC BY-SA 3.0' },
-    search: { type: 'River and food city', summary: 'Plan Guangzhou by Pearl River bank, Lingnan architecture, museum depth, market etiquette and Cantonese meal rhythm.', keywords: ['guangzhou', 'canton', 'pearl river', 'lingnan', 'dim sum', 'guangzhou itinerary'] }
+    search: { type: 'River and food city', summary: 'Plan Guangzhou by neighborhood: start with west-side heritage, then shift to the central river axis; move exposed walks indoors in heat or heavy rain.', keywords: ['guangzhou', 'canton', 'pearl river', 'lingnan', 'dim sum', 'guangzhou itinerary'] }
   },
   {
     slug: 'guilin-yangshuo',
+    dateModified: '2026-10-10',
     name: 'Guilin & Yangshuo',
     title: 'Guilin and Yangshuo Guide (2026): Li River and Karst Routes',
     metaDescription: 'Plan Guilin and Yangshuo through Li River transport, karst viewpoints, rural-road choices and weather, with separate bases and low-impact landscape days.',
@@ -72,7 +75,7 @@ export const guides = [
     visual: 'karst-scroll',
     eyebrow: 'Guangxi / river karst and rural roads',
     titleAccent: 'read the karst in profile',
-    intro: 'The famous Li River image is only one cross-section through a large karst landscape. Guilin works as a transport and museum city; Yangshuo opens rural roads, river sections and viewpoints whose value changes with cloud, flood, heat and traffic. Choose the movement first—boat, road, bicycle or foot—then accept that visibility sets the pace.',
+    intro: 'The famous Li River image is only one cross-section through a large karst landscape. Guilin works as an arrival and museum base; Yangshuo is the better base for rural mornings and the river landscape. If both city collections and countryside matter, split the stay once instead of commuting; the route suits weather-flexible landscape travelers and is less suited to a fixed, tightly timed viewpoint checklist.',
     nights: '3–5 nights',
     coreLogic: 'Guilin arrival + Yangshuo landscape',
     watchFirst: 'river status and visibility',
@@ -81,7 +84,7 @@ export const guides = [
     orientationIntro: 'City context sits at the bottom, river passage through the center and exposed viewpoints at the top. These chapters keep transfer products, quiet rural movement and protected karst interpretation from becoming one generic “Li River day.”',
     chapters: [
       { label: 'CITY GATE', title: 'Guilin as an arrival and context base', text: 'Use Guilin for rail or air arrival, one museum or urban karst park and the exact onward connection. The city can fill a day, but travelers focused on rural landscapes should not repeatedly commute from Guilin merely to avoid changing hotels.' },
-      { label: 'RIVER PASSAGE', title: 'Li River boat products are not identical', text: 'Departure wharf, vessel class, included transport, river level and endpoint differ. Verify the operator and exact landing, keep luggage arrangements explicit and treat scenic narration as a supplement to the landscape rather than a substitute for research.' },
+      { label: 'RIVER PASSAGE', title: 'Let the ticket define the river handoff', text: 'The Li River Scenic Area lists cruise, raft and ticket information separately. Choose one official product, then follow its confirmed departure pier, landing point and included transfers; keep luggage and onward Yangshuo lodging aligned with that endpoint. Check the scenic area’s current pier and operation notices before leaving.' },
       { label: 'YANGSHUO BASE', title: 'Town convenience versus countryside quiet', text: 'Central Yangshuo simplifies food and transport but carries nightlife and crowd pressure. A rural guesthouse offers space and views yet can require a driver for every meal or stormy return. Choose by evening independence, not by a wide-angle room photo.' },
       { label: 'YULONG RIVER', title: 'A smaller waterway with capacity limits', text: 'Walking, cycling and regulated raft products produce different experiences. Check current operating sections and safety restrictions, avoid entering farm plots for photographs and leave narrow paths clear for residents and local traffic.' },
       { label: 'RURAL LOOP', title: 'Cycle only the road you can return from', text: 'E-bikes and bicycles expand the countryside but introduce heat, traffic, battery and weather risk. Select a short loop with named bridges or villages, wear protection and turn back before a distant viewpoint becomes a night ride.' },
@@ -91,7 +94,7 @@ export const guides = [
     ],
     decisions: [
       { label: 'ARRIVAL', title: 'Guilin North, West and main station differ', text: 'Rail services use multiple stations on different sides of the city. Record the complete station and onward transfer; if continuing directly toward Yangshuo, compare the actual road or rail chain rather than choosing by the word “Yangshuo” alone.' },
-      { label: 'BASE', title: 'Split only when both city and countryside matter', text: 'One or two Guilin nights suit arrivals and collections, while Yangshuo deserves its own base for rural mornings. A short trip can stay in one place, but repeated transfers should not consume the best light.' },
+      { label: 'BASE', title: 'Use Guilin for arrival, Yangshuo for rural starts', text: 'Stay in Guilin when rail arrival, city collections or an early onward transfer lead the plan; move to Yangshuo when you want rural mornings and time around the river. For a short visit, choose one base by the confirmed arrival and departure station rather than losing daylight to repeated hotel changes.' },
       { label: 'MODE', title: 'Boat, bike and driver solve different terrain', text: 'A river cruise is linear, a bicycle loop is self-paced and a driver reaches scattered viewpoints. Choose one dominant mode each day and keep a weather fallback rather than stacking all three into a logistics contest.' }
     ],
     itineraryKicker: 'FOUR PANELS / ONE LANDSCAPE',
@@ -99,9 +102,9 @@ export const guides = [
     itineraryIntro: 'Do not schedule the most exposed viewpoint and the least flexible ticket on the same weather gamble. Keep one panel movable.',
     itinerary: [
       { label: 'DAY 1 / GUILIN', title: 'Arrival, collection and city karst', text: 'Settle near the useful station, choose one museum or managed urban formation and prepare the next day’s exact wharf or transfer without chasing every lake light display.' },
-      { label: 'DAY 2 / RIVER', title: 'Linear passage to Yangshuo', text: 'Use a verified Li River product or land transfer, watch the landscape change and end at the chosen base with enough daylight to learn its return routes.' },
-      { label: 'DAY 3 / RURAL', title: 'Yulong or countryside loop', text: 'Select one river section and one short road or path loop. Weather, crowd pressure and local access decide how far to extend, not the number of saved map pins.' },
-      { label: 'DAY 4 / HEIGHT', title: 'Viewpoint or deeper lowland day', text: 'Climb only if visibility and surface conditions justify it. Otherwise choose geology interpretation, a cave with managed access or a slower return through the lowlands.' }
+      { label: 'DAY 2 / RIVER', title: 'Book the river route as a one-way transfer', text: 'Select an official Li River ticket and use its named departure pier and landing as the day’s transport handoff. Arrange luggage and the onward trip to your Yangshuo base around the ticket’s endpoint; if service or visibility is unsuitable, keep a land transfer option.' },
+      { label: 'DAY 3 / RURAL', title: 'Choose one managed river or road loop', text: 'Plan either a current, permitted Yulong River activity or a short countryside route, and decide the return point before setting out. If rain or low visibility makes the rural route unattractive, use a town-based indoor stop and save the loop for a clearer window.' },
+      { label: 'DAY 4 / HEIGHT', title: 'Make elevation conditional on visibility', text: 'Use a viewpoint only when current access, weather and the return ride are confirmed. With low cloud or poor conditions, stay in the lowlands and choose a managed cave or geology interpretation instead of spending the day on a view that may not appear.' }
     ],
     practicalTitle: 'Water level and cloud are itinerary inputs',
     practical: [
@@ -117,10 +120,12 @@ export const guides = [
     ],
     sources: [
       { url: 'https://whc.unesco.org/en/list/1248', label: 'UNESCO World Heritage Centre — South China Karst, including the Guilin component' },
-      { url: 'https://www.guilin.gov.cn/', label: 'Guilin Municipal Government — official local notices and destination services' }
+      { url: 'https://www.guilin.gov.cn/', label: 'Guilin Municipal Government — official local notices and destination services' },
+      { url: 'https://www.liriver.com.cn/', label: 'Li River Scenic Area Administration — current cruise, raft, pier and operation notices' },
+      { url: 'https://www.liriver.com.cn/page/article/lyfw.pwxx', label: 'Li River Scenic Area Administration — ticket information' }
     ],
     image: { path: '/assets/images/china-destination-guilin.webp', alt: 'Li River winding through green karst peaks near Guilin and Yangshuo', caption: 'Guangxi / river passage, tower karst and weather-led rural movement', source: 'https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg', creditTitle: 'Li River karst near Guilin and Yangshuo', creator: 'chensiyuan', license: 'CC BY-SA 4.0' },
-    search: { type: 'River karst guide', summary: 'Separate Guilin arrival context from Yangshuo’s Li River, rural roads and visibility-dependent karst viewpoints.', keywords: ['guilin', 'yangshuo', 'li river', 'yulong river', 'guilin karst', 'yangshuo itinerary'] }
+    search: { type: 'River karst guide', summary: 'Split Guilin arrival and museum time from Yangshuo rural mornings; choose a Li River trip by confirmed pier and endpoint, with lowland options for poor visibility.', keywords: ['guilin', 'yangshuo', 'li river', 'yulong river', 'guilin karst', 'yangshuo itinerary'] }
   },
   {
     slug: 'changsha',
@@ -304,6 +309,7 @@ export const guides = [
   },
   {
     slug: 'shenzhen',
+    dateModified: '2026-10-10',
     name: 'Shenzhen',
     title: 'Shenzhen Travel Guide (2026): Design, Urban Villages and Coast',
     metaDescription: 'Plan Shenzhen through Futian, contemporary design, urban villages, border logistics and the Dapeng coast, with metro-aware days and a clear Hong Kong crossing.',
@@ -312,7 +318,7 @@ export const guides = [
     visual: 'border-grid',
     eyebrow: 'Guangdong / design city and border system',
     titleAccent: 'read a fast city through its edges',
-    intro: 'Shenzhen is not an unfinished version of Hong Kong and not only a technology skyline. It is a deliberately planned metropolis with design institutions, layered urban villages, mountain-to-sea edges and multiple border checkpoints. Build the trip around one urban question at a time, because a short rail distance can still hide a long station or immigration chain.',
+    intro: 'Shenzhen is not an unfinished version of Hong Kong and not only a technology skyline. It is a deliberately planned metropolis with design institutions, layered urban villages, mountain-to-sea edges and multiple border checkpoints. Build the trip around one urban question at a time, because a short rail distance can still hide a long station or immigration chain. It suits travelers interested in contemporary city-making and neighborhood contrasts; a short stay focused on one compact, walkable center should skip the far-eastern coast.',
     nights: '2–4 nights',
     coreLogic: 'metro spine + border edges',
     watchFirst: 'checkpoint and last return',
@@ -326,7 +332,7 @@ export const guides = [
       { label: 'BAY LAYER', title: 'Shenzhen Bay and mangrove distance', text: 'The bayfront is long, exposed and segmented by transport infrastructure. Pick one park entrance and one direction, check heat and tide conditions, and do not assume a waterfront path automatically connects to every museum or border checkpoint shown nearby.' },
       { label: 'MOUNTAIN WINDOW', title: 'Lianhuashan for city orientation', text: 'Use the park as an elevation check on Futian rather than a compulsory monument stop. Early or late light is kinder, but opening conditions, storms and heat still matter; keep the descent and next metro entrance clear before lingering.' },
       { label: 'LUOHU MEMORY', title: 'Old commercial Shenzhen and the rail edge', text: 'Luohu’s stations, markets and older commercial streets tell a different story from Futian. Treat counterfeit sales and aggressive solicitation cautiously, guard documents in crowds, and verify whether your next movement is metro, rail or an immigration checkpoint.' },
-      { label: 'EASTERN COAST', title: 'Dapeng is a separate road day', text: 'Dapeng Fortress, beaches and coastal villages lie far beyond the central metro grid. Choose history or beach time as the main purpose, verify bus or driver arrangements and weather, and leave a generous return buffer for weekend congestion.' },
+      { label: 'EASTERN COAST', title: 'Choose a Dapeng bus handoff before leaving', text: 'Dapeng is a separate road day beyond the central metro grid. Shenzhen’s January 2026 notice describes Xichong Station on Line 8 and feeder routes including E91 toward Dapeng Fortress and Jiaochangwei and E92 toward Nan’ao and Shuitou. Decide whether the day is for the fortress or coast, then recheck current route operation and the return connection before travel.' },
       { label: 'BORDER PROTOCOL', title: 'Match Hong Kong transport to the checkpoint', text: 'Futian, Luohu, Shenzhen Bay and other crossings are not interchangeable. Ticket, baggage, operating hours and onward Hong Kong transport differ, so write the full checkpoint name into every booking and never navigate from the word “border” alone.' }
     ],
     decisions: [
@@ -341,12 +347,12 @@ export const guides = [
       { label: 'DAY 1 / FUTIAN', title: 'Civic center and hill overview', text: 'Start with one cultural institution around the civic axis, use Lianhuashan for orientation and finish with a measured skyline or food chapter instead of a mall crawl.' },
       { label: 'DAY 2 / NANSHAN', title: 'Design, older fabric and bay', text: 'Choose one design program, pair it with Nantou or another context-rich neighborhood, then walk a defined Shenzhen Bay segment only if weather and distance support it.' },
       { label: 'DAY 3 / LUOHU', title: 'Commercial memory and border systems', text: 'Read older Shenzhen through Luohu’s station edge and streets. If crossing to Hong Kong, make that the dominant logistics task rather than squeezing it after a full mainland day.' },
-      { label: 'DAY 4 / DAPENG', title: 'One coast with a return buffer', text: 'Commit the day to either Dapeng heritage and nearby coast or a beach-focused route. Verify weather and transport, then return before road congestion turns the evening into a missed connection.' }
+      { label: 'DAY 4 / DAPENG', title: 'E91 for the fortress side, E92 for Nan’ao', text: 'Use Xichong as the documented Line 8 transfer point and choose E91 for the Dapeng Fortress/Jiaochangwei side or E92 for Nan’ao and Shuitou, based on current service information. Keep the day to one coast purpose and confirm the return connection; if storms or heat make it a poor outdoor day, switch to a Nanshan indoor venue.' }
     ],
     practicalTitle: 'A digital city still needs offline precision',
     practical: [
       { label: 'MAPS', title: 'Save entrances, not just pins', text: 'Superblocks, elevated roads and station complexes can separate a map pin from the usable door. Screenshot the Chinese entrance name and walking approach, especially for museums, intercity rail and border facilities.' },
-      { label: 'COAST', title: 'Weather can cancel the outer day', text: 'Typhoon alerts, heavy rain, heat and rough coastal conditions can undermine a Dapeng plan. Keep a Nanshan museum alternative and follow official warnings rather than an accommodation host’s optimism.' },
+      { label: 'COAST', title: 'Weather can cancel the outer day', text: 'Typhoon alerts, heavy rain, heat and rough coastal conditions can undermine a Dapeng plan. Keep a Nanshan museum alternative and check official weather, transport and coastal notices before leaving; feeder routes and road conditions need a fresh check.' },
       { label: 'PHOTOGRAPHY', title: 'Respect security and residential boundaries', text: 'Do not photograph immigration, police, military or restricted infrastructure. In urban villages and working technology districts, ask before photographing people or interiors and move on when a space is clearly private.' }
     ],
     faqs: [
@@ -357,13 +363,15 @@ export const guides = [
     ],
     sources: [
       { url: 'https://wtl.sz.gov.cn/', label: 'Shenzhen Culture, Radio, Television, Tourism and Sports Bureau — official destination notices' },
-      { url: 'https://www.sz.gov.cn/en/', label: 'Shenzhen Municipal Government — official city services and current notices' }
+      { url: 'https://www.sz.gov.cn/en/', label: 'Shenzhen Municipal Government — official city services and current notices' },
+      { url: 'https://www.sz.gov.cn/en_szgov/news/notices/content/post_12589348.html', label: 'Shenzhen Municipal Government — 2026 Line 8 Xichong Station feeder-bus network' }
     ],
     image: { path: '/assets/images/china-destination-shenzhen.webp', alt: 'Shenzhen Civic Center and Futian skyline seen from a green hillside', caption: 'Futian / civic grid, metro spine and border-facing metropolis', source: 'https://commons.wikimedia.org/wiki/File:Shenzhen_Skyline_from_Futian_District2.jpg', creditTitle: 'Shenzhen skyline from Futian', creator: 'Huangdan2060', license: 'CC BY 3.0' },
-    search: { type: 'Design and border city', summary: 'Navigate Shenzhen through Futian, Nanshan design, urban villages, bay parks, Dapeng and checkpoint-specific Hong Kong logistics.', keywords: ['shenzhen', 'futian', 'nanshan', 'dapeng', 'shenzhen hong kong border', 'shenzhen itinerary'] }
+    search: { type: 'Design and border city', summary: 'Base urban days around Futian and Nanshan; keep Dapeng as a separate road day, check current E91/E92 feeder service and protect the return buffer.', keywords: ['shenzhen', 'futian', 'nanshan', 'dapeng', 'shenzhen hong kong border', 'shenzhen itinerary'] }
   },
   {
     slug: 'xiamen-fujian-tulou',
+    dateModified: '2026-10-10',
     name: 'Xiamen & Fujian Tulou',
     title: 'Xiamen and Fujian Tulou Guide (2026): Island Port and Earthen Villages',
     metaDescription: 'Plan Xiamen as a walkable port-city stay and Fujian Tulou as a separate rural heritage day, with ferry, rail, road and conservation decisions kept distinct.',
@@ -372,7 +380,7 @@ export const guides = [
     visual: 'tulou-rings',
     eyebrow: 'Fujian / island port and earthen settlements',
     titleAccent: 'move from port veranda to mountain rings',
-    intro: 'Xiamen and the Fujian Tulou belong in one regional guide only if their scales remain separate. Xiamen is a coastal city of ferries, shaded streets and layered port history. The inscribed tulou are living earthen settlements scattered across inland valleys. Treat the rural day as a conservation and road decision, not as an accessory to an island photo walk.',
+    intro: 'Xiamen and the Fujian Tulou belong in one regional guide only if their scales remain separate. Xiamen is a coastal city of ferries, shaded streets and layered port history. The UNESCO-inscribed Fujian Tulou property spans clusters of earthen buildings across inland valleys. Keep a central Xiamen base for city and ferry days, then give one named tulou cluster its own inland day. This route suits visitors willing to plan a ferry and a rural transfer; it is not a quick island-and-many-tulou checklist.',
     nights: '3–5 nights',
     coreLogic: 'island base + one rural cluster',
     watchFirst: 'ferry identity and tulou road',
@@ -382,30 +390,30 @@ export const guides = [
     chapters: [
       { label: 'PORT VERANDA', title: 'Shapowei and the working harbor edge', text: 'Read fishing-port traces, university influence and creative reuse without assuming every painted facade is old. Walk one compact loop, keep working access clear and pair it with a nearby museum or waterfront rather than hopping repeatedly across the island.' },
       { label: 'OLD STREET', title: 'Zhongshan Road beyond the shopfront', text: 'Arcades, side lanes and religious buildings reveal a port-city fabric that the main commercial strip can obscure. Go in cooler hours, turn into one parallel street and distinguish restored spectacle from businesses still serving residents.' },
-      { label: 'ISLAND SETTLEMENT', title: 'Kulangsu by reservation and ferry', text: 'The historic settlement has protected heritage, steep lanes and controlled ferry logistics. Confirm the eligible passenger terminal, identity rules and return window; choose a small set of buildings and museums rather than queueing at every viewpoint.' },
+      { label: 'ISLAND SETTLEMENT', title: 'Let the ferry ticket set the island route', text: 'Kulangsu is reached by ferry, and Xiamen Ferry’s current ticket channel identifies the route and passenger terminal. Buy or verify the ticket before navigating to a pier, then follow its exact terminal, destination and return instructions; choose a small set of buildings and museums rather than queueing at every viewpoint.' },
       { label: 'COASTAL LINE', title: 'One beach or boardwalk segment', text: 'Xiamen’s coast is long and seasonally exposed. Select one reachable section, check heat, rain, wind and swimming conditions, and let the sea be a slower chapter instead of forcing it between ferry and railway deadlines.' },
       { label: 'COLLECTION', title: 'Overseas exchange needs a museum anchor', text: 'Fujian’s maritime and migration histories deserve more than decorative “international” labels. Choose an institutional collection or documented building, allow time for translation gaps and keep claims tied to the material actually on display.' },
       { label: 'EARTHEN RING', title: 'Choose one inscribed tulou cluster', text: 'UNESCO’s Fujian Tulou property contains multiple clusters and individual buildings across a broad inland area. Select Tianluokeng, Hongkeng, Chuxi or another researched component by road logic and conservation value rather than trying to collect circular forms.' },
-      { label: 'LIVING COURTYARD', title: 'A heritage home is not an empty set', text: 'Many tulou remain connected to residents and family life. Follow posted access, ask before portraits or interior photography, avoid blocking thresholds and support local interpretation without demanding staged domestic scenes.' },
+      { label: 'LIVING COURTYARD', title: 'A heritage home is not an empty set', text: 'Follow posted visitor routes. Treat any room or courtyard marked private as off limits; ask before close portraits or interior photography, keep thresholds clear, and follow posted site interpretation. Do not request staged domestic scenes.' },
       { label: 'RURAL RETURN', title: 'Protect the road back to Xiamen', text: 'Driver, bus or rail-plus-road arrangements must name the exact cluster and pickup point. Mountain roads, meal stops and crowd controls can extend the day, so carry the destination in Chinese and avoid booking a tight evening train or flight.' }
     ],
     decisions: [
       { label: 'ARRIVAL', title: 'Separate Xiamen station from Xiamen North', text: 'The central and northern railway stations leave different final transfers. Xiamen Gaoqi Airport and ferry terminals add another naming layer; save the full Chinese name for the transport facility, not merely “Xiamen.”' },
       { label: 'BASE', title: 'Stay for city movement, not a tulou fantasy', text: 'A central island base helps old streets, waterfront and ferries. Tulou access is a separate operator or transport decision, and choosing an inconvenient Xiamen hotel rarely makes the inland road meaningfully shorter.' },
-      { label: 'CLUSTER', title: 'One tulou route is enough for one day', text: 'The World Heritage property is dispersed. Compare drive time, walking terrain, visitor pressure and the quality of interpretation, then choose a coherent cluster instead of paying for a rushed “all famous tulou” circuit.' }
+      { label: 'CLUSTER', title: 'Pick one inland cluster and name the pickup', text: 'UNESCO describes Fujian Tulou as a distributed property across southwestern Fujian. Choose one cluster, such as Tianluokeng or Hongkeng, and confirm the exact pickup and drop-off with the transport provider before booking; do not combine distant clusters into a rushed circuit.' }
     ],
     itineraryKicker: 'TWO CIRCLES / FOUR DAYS',
     itineraryTitle: 'Let the port and the mountains keep their scale',
     itineraryIntro: 'Use two Xiamen days to understand the city, one deliberate ferry day and one protected rural day. Move the tulou chapter when weather or road confidence is poor.',
     itinerary: [
       { label: 'DAY 1 / PORT', title: 'Old streets and Shapowei', text: 'Begin with an old-street loop, add one museum or religious building and end by the harbor edge. Keep the route compact enough to notice architecture rather than collecting snack queues.' },
-      { label: 'DAY 2 / ISLAND', title: 'Kulangsu with a short building list', text: 'Use the reserved ferry, walk a clear loop through selected heritage buildings and allow hills and crowds to slow you. Return before the final crossing becomes the day’s main memory.' },
+      { label: 'DAY 2 / ISLAND', title: 'Kulangsu with a ticket-led ferry handoff', text: 'Check the Xiamen Ferry ticket for the actual departure terminal, destination pier and return instructions, then keep the island walk to a small building list. If rain or ferry disruption interrupts the plan, move the indoor Xiamen collection here and follow current operator notices.' },
       { label: 'DAY 3 / COAST', title: 'Institution and sea air', text: 'Choose one serious cultural collection, then a nearby coastal segment. Rain or heat can invert the order, and swimming should depend on posted local conditions rather than the look of the water.' },
-      { label: 'DAY 4 / TULOU', title: 'One valley, one cluster, one return', text: 'Travel inland with the exact heritage component named, spend time understanding communal form and conservation, and leave enough road buffer to return without a late transport gamble.' }
+      { label: 'DAY 4 / TULOU', title: 'One cluster, with a named road handoff', text: 'Confirm the exact tulou cluster, pickup point and return arrangement with the operator before leaving Xiamen. Give the inland heritage visit its own day; if heavy rain or poor road conditions are reported, replace it with a city museum and reschedule rather than improvising a multi-cluster trip.' }
     ],
     practicalTitle: 'Ferries and mountain roads punish vague bookings',
     practical: [
-      { label: 'FERRY', title: 'Use the passenger terminal on your ticket', text: 'Visitor ferries and resident services may use different terminals or rules. Match passport details, departure point and time slot, and do not follow a generic map pin to whichever pier looks closest.' },
+      { label: 'FERRY', title: 'Use the passenger terminal on your ticket', text: 'Xiamen Ferry’s own guide says terminal and route depend on the purchased ticket. Match the passenger name, departure pier, destination and return details to that ticket, and do not follow a generic map pin to whichever pier looks closest.' },
       { label: 'HERITAGE', title: 'Do not enter private rooms for a photograph', text: 'A ticket to a scenic area does not erase residential boundaries. Follow local signage, ask permission and keep voices and drones away from domestic and ritual spaces.' },
       { label: 'RAIN', title: 'Stone, tile and mountain roads become slower', text: 'Coastal rain and inland mountain weather affect different parts of the trip. Keep a city museum alternative, wear shoes suited to wet paving and let the tulou operator confirm road conditions before departure.' }
     ],
@@ -416,11 +424,12 @@ export const guides = [
       { question: 'How many nights work for Xiamen and tulou?', answer: 'Three nights support two city days and one tulou day. Four or five nights give Kulangsu, museums, coast and the rural excursion enough space to respond to weather.' }
     ],
     sources: [
-      { url: 'https://whc.unesco.org/en/list/1113', label: 'UNESCO World Heritage Centre — Fujian Tulou' },
-      { url: 'https://whc.unesco.org/en/list/1541', label: 'UNESCO World Heritage Centre — Kulangsu, a Historic International Settlement' }
+      { url: 'https://whc.unesco.org/en/list/1113/', label: 'UNESCO World Heritage Centre — Fujian Tulou and its distributed heritage property' },
+      { url: 'https://whc.unesco.org/en/list/1541/', label: 'UNESCO World Heritage Centre — Kulangsu, a Historic International Settlement' },
+      { url: 'https://m.xmferry.com/wx/hbjgd/index.htm', label: 'Xiamen Ferry — official travel guide and passenger terminal information' },
     ],
     image: { path: '/assets/images/china-destination-fujian-tulou.webp', alt: 'Round and square Fujian tulou clustered among terraced hills', caption: 'Fujian / walkable island port and dispersed inland heritage', source: 'https://commons.wikimedia.org/wiki/File:Three_round,_one_oval,_one_square_(16831811084).jpg', creditTitle: 'Fujian tulou cluster', creator: 'Scott Edmunds', license: 'CC BY 2.0' },
-    search: { type: 'Port and rural heritage', summary: 'Separate Xiamen’s ferries, port streets and coast from one respectful, road-realistic Fujian Tulou heritage day.', keywords: ['xiamen', 'fujian tulou', 'kulangsu', 'gulangyu', 'tulou day trip', 'xiamen itinerary'] }
+    search: { type: 'Port and rural heritage', summary: 'Pair central Xiamen and its ferry routes with one inland Tulou cluster; confirm passenger terminal, rural pickup and road return before booking connections.', keywords: ['xiamen', 'fujian tulou', 'kulangsu', 'gulangyu', 'tulou day trip', 'xiamen itinerary'] }
   },
   {
     slug: 'sanya-hainan',
