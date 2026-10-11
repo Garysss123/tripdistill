@@ -6,10 +6,6 @@ const projectRoot = path.resolve(import.meta.dirname, '..');
 
 const routes = [
   ...[
-    '/china/datong/',
-    '/china/luoyang/',
-    '/china/pingyao/',
-    '/china/xian/',
     '/china/beijing/central-axis-forbidden-city/',
     '/china/beijing/jingshan-beihai/',
     '/china/beijing/shichahai-drum-tower/',
@@ -21,6 +17,14 @@ const routes = [
     '/china/shanghai/the-bund-huangpu/',
   ].map((route) => ({ route, reviewDate: '2026-10-09' })),
   ...[
+    '/china/datong/',
+    '/china/luoyang/',
+    '/china/nanjing/',
+    '/china/pingyao/',
+    '/china/suzhou/',
+    '/china/xian/',
+  ].map((route) => ({ route, reviewDate: '2026-08-28' })),
+  ...[
     '/china/hangzhou/west-lake-north-broken-bridge/',
     '/china/hangzhou/west-lake-south-leifeng/',
     '/china/hangzhou/hefang-southern-song/',
@@ -28,8 +32,6 @@ const routes = [
     '/china/beijing/yonghe-guozijian/',
     '/china/beijing/798-chaoyang/',
     '/china/beijing/mutianyu-great-wall/',
-    '/china/nanjing/',
-    '/china/suzhou/',
     '/china/hangzhou/grand-canal-gongchen-bridge/',
     '/china/hangzhou/liangzhu-archaeological-city/',
     '/china/guangzhou/',
@@ -81,12 +83,14 @@ const editions = [
 
 function visibleDatePattern(date, locale) {
   const [, year, month, day] = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (month !== '10') throw new Error(`Unsupported review month in ${date}`);
-  if (locale === 'en') return new RegExp(`(?:${Number(day)}\\s+October\\s+${year}|October\\s+${Number(day)},?\\s+${year})`, 'i');
-  if (locale === 'zh-Hant' || locale === 'ja') return new RegExp(`${year}\\s*年\\s*10\\s*月\\s*${Number(day)}\\s*日`);
-  if (locale === 'ko') return new RegExp(`${year}\\s*년\\s*10\\s*월\\s*${Number(day)}\\s*일`);
-  if (locale === 'th') return new RegExp(`${Number(day)}\\s*ตุลาคม\\s*${year}`);
-  throw new Error(`Unsupported locale: ${locale}`);
+  const englishMonths = { '08': 'August', '10': 'October' };
+  const thaiMonths = { '08': 'สิงหาคม', '10': 'ตุลาคม' };
+  if (!englishMonths[month]) throw new Error('Unsupported review month in ' + date);
+  if (locale === 'en') return new RegExp('(?:' + Number(day) + '\\s+' + englishMonths[month] + '\\s+' + year + '|' + englishMonths[month] + '\\s+' + Number(day) + ',?\\s+' + year + ')', 'i');
+  if (locale === 'zh-Hant' || locale === 'ja') return new RegExp(year + '\\s*年\\s*' + Number(month) + '\\s*月\\s*' + Number(day) + '\\s*日');
+  if (locale === 'ko') return new RegExp(year + '\\s*년\\s*' + Number(month) + '\\s*월\\s*' + Number(day) + '\\s*일');
+  if (locale === 'th') return new RegExp(Number(day) + '\\s*' + thaiMonths[month] + '\\s*' + year);
+  throw new Error('Unsupported locale: ' + locale);
 }
 
 function schemaObjects(value, found = []) {
