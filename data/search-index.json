@@ -2960,7 +2960,7 @@
     "url": "/china/changsha/",
     "parent": "China · Hunan",
     "type": "Museum and food city",
-    "summary": "Build Changsha around Hunan Museum, Yuelu terrain, the Xiang River and a deliberate night-food edit.",
+    "summary": "Plan Changsha in two to four nights: reserve Hunan Museum first, use the matching Line 4/South Gate or Line 2/East Gate route for Yuelu, and keep Orange Isle optional in heat or rain.",
     "keywords": [
       "changsha",
       "hunan museum",
@@ -2975,7 +2975,7 @@
     "url": "/china/wuhan/",
     "parent": "China · Hubei",
     "type": "River metropolis guide",
-    "summary": "Plan Wuhan bank by bank across Wuchang, Hankou and Hanyang, with East Lake and Hubei Museum given their real scale.",
+    "summary": "Use Line 5 for Yellow Crane Tower and Line 8 for Hubei Museum’s South Gate, then plan Wuhan by bank; keep East Lake to one entrance and one return point.",
     "keywords": [
       "wuhan",
       "yellow crane tower",
@@ -2990,10 +2990,12 @@
     "url": "/china/chengdu/",
     "parent": "China · Sichuan",
     "type": "Food and heritage city",
-    "summary": "Balance Chengdu’s panda reservations, archaeology and Sichuan meals with teahouse time and one carefully chosen outer excursion.",
+    "summary": "Reserve the Panda Base by its chosen gate and shuttle; while Jinsha is closed through April 2027, use Chengdu Museum for a rain-proof city day and plan Dujiangyan as a separate rail-and-local-transfer excursion.",
     "keywords": [
       "chengdu",
       "panda base",
+      "chengdu museum",
+      "jinsha closed",
       "dujiangyan",
       "chengdu food",
       "sichuan",
@@ -3050,11 +3052,12 @@
     "url": "/china/chongqing/",
     "parent": "China · Chongqing",
     "type": "Vertical city guide",
-    "summary": "Navigate Chongqing by elevation, river crossing and exact station exit, then choose one honest outer day to Dazu or Wulong.",
+    "summary": "Plan Chongqing in three to five nights from a ridge-level base; use Hongya Cave’s mapped Line 2 or Lines 1/6 approach, keep the museum for rain, and verify every outer-site return leg.",
     "keywords": [
       "chongqing",
       "hongya cave",
       "liziba",
+      "three gorges museum",
       "wulong",
       "dazu rock carvings",
       "chongqing itinerary"

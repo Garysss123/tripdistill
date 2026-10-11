@@ -28,6 +28,18 @@ const reviewGroups = [
       'Planning facts and image licensing were reviewed on 10 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
       'Editorial review: 10 October 2026 · Recheck time-sensitive details before booking.'
     ]
+  },
+  {
+    date: '2026-10-11',
+    label: '11 October 2026',
+    guideCount: 3,
+    hubCount: 1,
+    batch: 'zzzza-cornwall-devon-pages-20261011.json',
+    sources: [
+      'checked 11 October 2026',
+      'Planning facts and image licensing were reviewed on 11 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
+      'Editorial review: 11 October 2026 · Recheck time-sensitive details before booking.'
+    ]
   }
 ];
 const baselineReviewSources = [

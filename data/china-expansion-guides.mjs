@@ -129,6 +129,7 @@ export const guides = [
   },
   {
     slug: 'changsha',
+    dateModified: '2026-10-11',
     name: 'Changsha',
     title: 'Changsha Travel Guide (2026): Museums, Yuelu and Night Food',
     metaDescription: 'Plan Changsha through Mawangdui collections, Yuelu Mountain, river islands and night food, with reservation-aware museums and a separate Zhangjiajie connection.',
@@ -138,7 +139,7 @@ export const guides = [
     eyebrow: 'Hunan / archaeology, river and night appetite',
     titleAccent: 'edit the city like a late-night paper',
     intro: 'Changsha is often flattened into spicy food and neon crowds, but its strongest route begins with serious archaeology, crosses the Xiang River and ends in living contemporary streets. Use museum reservations and Yuelu terrain as the day’s hard deadlines; let night food become the flexible edition rather than the only story.',
-    nights: '2–4 nights',
+    nights: '2–4 nights (2 for the core, 3–4 for the river and slower west-bank time)',
     coreLogic: 'museum morning + river west',
     watchFirst: 'reservation and heat',
     motifs: ['Mawangdui', 'Xiang River', 'Yuelu', 'Night food'],
@@ -146,8 +147,8 @@ export const guides = [
     orientationIntro: 'The city’s cultural institutions, west-bank university landscape, river island and central food streets have distinct peak times. These eight sections keep historical depth, terrain and appetite in a readable order.',
     chapters: [
       { label: 'FRONT PAGE', title: 'Hunan Museum and Mawangdui depth', text: 'The Mawangdui Han tomb material deserves a substantial visit rather than a quick object hunt. Secure the current real-name reservation, check opening days and read the permanent exhibition sequence before adding another major museum.' },
-      { label: 'WEST BANK', title: 'Yuelu Academy and university landscape', text: 'Treat academy, campus and mountain as related but separate layers. Verify access to institutional grounds, respect teaching areas and decide whether the day is architectural, intellectual or a full climb before entering the gate.' },
-      { label: 'AUTUMN LEAF', title: 'Yuelu Mountain by effort, not icon', text: 'Aiwan Pavilion is one point in a larger slope and seasonal park. Choose the ascent and descent by mobility and weather, avoid peak-time vehicle assumptions and keep the riverside continuation optional.' },
+      { label: 'WEST BANK', title: 'Yuelu Academy and university landscape', text: 'Treat academy, campus and mountain as related but separate layers. The Hunan government visitor guide lists Line 4 to Hunan University Station for the South Gate and Line 2 to Yingwanzhen Station for the East Gate; pick one gate-to-station pair and return by that same pair rather than assuming the entrances meet at the summit. Verify academy and campus access before setting out.' },
+      { label: 'AUTUMN LEAF', title: 'Yuelu Mountain by effort, not icon', text: 'Aiwan Pavilion is one point in a larger slope and seasonal park. A full climb is a sustained uphill walk with steps; for limited mobility, use the lower university and academy approach only if access is open, and do not assume a vehicle or cableway will remove the climb. Choose the ascent and descent by weather and keep the riverside continuation optional.' },
       { label: 'RIVER INSERT', title: 'Orange Isle is longer than it looks', text: 'The island’s main paths and transport can consume more time than a map suggests. Select one direction or viewpoint, check heat and crowd controls and avoid pairing a full island traverse with a rushed museum slot.' },
       { label: 'STREET COLUMN', title: 'Taiping Street and older urban grain', text: 'Historic labels, reconstructed shopfronts and working side streets coexist. Move beyond the busiest snack line, read one documented building and do not treat every commercial facade as surviving evidence.' },
       { label: 'NIGHT EDITION', title: 'Wuyi Square without queue collecting', text: 'Central Changsha becomes intensely busy after dark. Choose two or three dishes, share portions, keep allergy text ready and move to parallel streets when one famous stall turns dinner into an hour-long line.' },
@@ -155,23 +156,23 @@ export const guides = [
       { label: 'OUTWARD TRAIN', title: 'Zhangjiajie is a separate landscape cluster', text: 'Rail links make onward travel possible, but Wulingyuan gates, hotels and weather require their own plan. Finish Changsha first, then move with the exact Zhangjiajie station and park base recorded.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'South station and central station are not substitutes', text: 'Changsha South handles many high-speed services and requires an urban transfer; the central station serves other routes. Match the station to the hotel and do not reserve a museum entry too soon after arrival.' },
-      { label: 'BASE', title: 'Central access or west-bank calm', text: 'Wuyi Square offers late food and broad transit with intense noise; west-bank areas suit Yuelu and universities but change evening movement. Inspect the exact metro walk and late-night sound reviews.' },
+      { label: 'ARRIVAL', title: 'South station and central station are not substitutes', text: 'Changsha South handles many high-speed services and is a separate urban transfer from Changsha Railway Station. Use the exact station printed on the 12306 ticket, then route to the hotel before choosing a museum slot; do not plan a tight South-station-to-museum connection on arrival day.' },
+      { label: 'BASE', title: 'Central access or west-bank calm', text: 'For two nights, Wuyi Square or a nearby central Line 2/1 base makes museum transfers and late meals simpler. Choose a west-bank base only for three or four nights centered on Yuelu; crossing back for night food adds a separate river trip. Inspect the hotel’s real station entrance and luggage route, and read late-night noise reviews.' },
       { label: 'TICKET', title: 'Give the museum the hard time slot', text: 'Real-name museum capacity can be the day’s least flexible element. Build Yuelu, river and food around the confirmed entry rather than buying an onward ticket that forces a shallow visit.' }
     ],
     itineraryKicker: 'FOUR EDITIONS / ONE CITY',
     itineraryTitle: 'Publish the history before the nightlife',
-    itineraryIntro: 'Start with the hardest reservation, move west for terrain and keep one evening light. Zhangjiajie belongs after this city sequence, not inside it.',
+    itineraryIntro: 'For two nights, do Days 1–2 and leave Orange Isle for another visit. Three nights add Day 3; use Day 4 only when the extra night is already booked. Start with the hardest reservation and keep Zhangjiajie outside this city sequence.',
     itinerary: [
-      { label: 'DAY 1 / ARCHIVE', title: 'Hunan Museum with breathing room', text: 'Use the confirmed entry for the permanent collections, then recover in a nearby park or quiet meal. Do not add Yuelu simply because the evening remains open.' },
-      { label: 'DAY 2 / WEST', title: 'Academy, campus and mountain', text: 'Begin at the academy or institutional core, choose a measured Yuelu route and descend before heat or darkness makes the river crossing a chore.' },
-      { label: 'DAY 3 / RIVER', title: 'Orange Isle and central streets', text: 'Walk only the island section that adds a useful perspective, then return to older street fabric and a planned food sequence after peak afternoon heat.' },
-      { label: 'DAY 4 / REVISION', title: 'Second collection or onward rail', text: 'Use the morning for a smaller museum, neighborhood or missed food chapter. Transfer to Zhangjiajie only with the correct station and next base already resolved.' }
+      { label: 'DAY 1 / ARCHIVE', title: 'Hunan Museum with breathing room', text: 'Set the destination to 湖南博物院 (Hunan Museum), 50 Dongfeng Road, in the official ticket portal or a live local route planner; the official English page did not expose a verified metro station/exit in this review, so no line or walk time is guessed. Reserve the official entry first, save the museum entrance pin, and route back to the same transit stop after your visit. Give Mawangdui the full booked block, then eat near the hotel rather than crossing town.' },
+      { label: 'DAY 2 / WEST', title: 'Choose one Yuelu gate and return', text: 'For the South Gate, use Line 4 to Hunan University Station; for the East Gate, use Line 2 to Yingwanzhen. Visit the academy and university landscape, then add a climb only if weather, mobility and the remaining daylight fit. Exit at your arrival gate and return to its matching station; rain or steep steps are a reason to stop at the lower campus layer.' },
+      { label: 'DAY 3 / RIVER', title: 'Orange Isle as a timed out-and-back', text: 'Use the official Orange Isle/Orange Island station on Line 2 and choose a single stretch of the long island path before entering. Turn back to that station rather than assuming a vehicle or island exit will be operating; after rain, swap the exposed walk for Hunan Museum if you secured entry, or a central covered meal and street-history loop.' },
+      { label: 'DAY 4 / REVISION', title: 'Keep a local day or make a separate rail move', text: 'Use this day for an unhurried central neighborhood, a second museum only after checking its official notice, or recovery before onward travel. For Zhangjiajie, book the actual train and Wulingyuan base separately; railway arrival is not park-gate arrival.' }
     ],
     practicalTitle: 'Crowds concentrate where maps look simplest',
     practical: [
-      { label: 'RESERVE', title: 'Official museum channels come first', text: 'Opening schedules and reservation windows change. Use the official museum source, match passport details and carry the original document rather than trusting a reseller’s “skip the queue” claim.' },
-      { label: 'HEAT', title: 'Move exposed terrain out of midday', text: 'Yuelu slopes, Orange Isle and large squares become tiring in heat or rain. Give midday to collections or meals and keep water and a weather alternative ready.' },
+      { label: 'RESERVE', title: 'Confirm Hunan Museum before building Day 1', text: 'The official booking portal is live, but current hours, reservation lead time and foreign-passport steps could not be confirmed from its rendered English information. Check the portal for your date, reserve with the same passport you will present and carry that original document. If confirmation is unavailable, make Day 1 a flexible central-city day instead of relying on a reseller.' },
+      { label: 'WEATHER + ACCESS', title: 'Keep a covered plan and a short route', text: 'For heavy rain, move the Hunan Museum reservation to the wettest window and keep Taiping Street to a short covered section; skip Orange Isle and the Yuelu ascent on slick steps. Wheelchair and elevator availability for the mountain routes was not confirmed in the official English material reviewed, so travelers who need step-free access should verify directly and plan the lower campus/indoor day.' },
       { label: 'FOOD', title: 'One queue is enough', text: 'Viral stalls can cluster demand without representing the whole cuisine. Share small portions, verify hygiene and ingredients, and leave room for a quieter neighborhood restaurant where the meal can actually be discussed.' }
     ],
     faqs: [
@@ -182,13 +183,15 @@ export const guides = [
     ],
     sources: [
       { url: 'https://www.enghunan.gov.cn/hneng/Tourism/TourHunan/Changsha_55545/TouristAttractions/202606/t20260611_33999264.html', label: 'Hunan Provincial Government — Yuelu Mountain visitor information' },
-      { url: 'https://www.hnmuseum.com/en', label: 'Hunan Museum — official exhibitions, reservations and visitor notices' }
+      { url: 'https://www.hnmuseum.com/en', label: 'Hunan Museum — official exhibitions and visitor notices (English page was not reliably reachable in this review)' },
+      { url: 'https://yuyues.hnmuseum.com/', label: 'Hunan Museum — official ticket reservation portal and address' }
     ],
     image: { path: '/assets/images/china-destination-changsha.webp', alt: 'Aiwan Pavilion among autumn foliage on Yuelu Mountain in Changsha', caption: 'Changsha / archaeology in daylight, Xiang River and night appetite', source: 'https://commons.wikimedia.org/wiki/File:爱晚亭（秋-侧面）.jpg', creditTitle: 'Aiwan Pavilion, Changsha', creator: 'Junchong', license: 'CC BY-SA 4.0' },
-    search: { type: 'Museum and food city', summary: 'Build Changsha around Hunan Museum, Yuelu terrain, the Xiang River and a deliberate night-food edit.', keywords: ['changsha', 'hunan museum', 'mawangdui', 'yuelu mountain', 'orange isle', 'changsha food'] }
+    search: { type: 'Museum and food city', summary: 'Plan Changsha in two to four nights: reserve Hunan Museum first, use the matching Line 4/South Gate or Line 2/East Gate route for Yuelu, and keep Orange Isle optional in heat or rain.', keywords: ['changsha', 'hunan museum', 'mawangdui', 'yuelu mountain', 'orange isle', 'changsha food'] }
   },
   {
     slug: 'wuhan',
+    dateModified: '2026-10-11',
     name: 'Wuhan',
     title: 'Wuhan Travel Guide (2026): Three Towns, Yangtze and Museums',
     metaDescription: 'Plan Wuhan by Wuchang, Hankou and Hanyang, using Yangtze crossings, Hubei collections, lake scale and station-specific transport to keep each day on the right bank.',
@@ -198,15 +201,15 @@ export const guides = [
     eyebrow: 'Hubei / three towns and two rivers',
     titleAccent: 'plan the three towns as a confluence',
     intro: 'Wuhan is easiest to understand as Wuchang, Hankou and Hanyang meeting across the Yangtze and Han rivers. A bridge that looks close may still impose a long approach, and East Lake creates another scale entirely. Choose the bank before the attraction, then use museums, river history and food to explain why the metropolis feels plural.',
-    nights: '3–4 nights',
+    nights: '3–4 nights (3 for Wuchang + Hankou, 4 to slow down or add Hanyang)',
     coreLogic: 'one bank per half-day',
     watchFirst: 'crossing and station',
     motifs: ['Wuchang', 'Hankou', 'Hanyang', 'East Lake'],
     orientationTitle: 'Treat every crossing as a line in the itinerary',
     orientationIntro: 'The confluence is not background scenery; it determines travel time. These eight chapters distribute towers, concessions, museums, industry, lake paths and food across the correct banks.',
     chapters: [
-      { label: 'WUCHANG HEIGHT', title: 'Yellow Crane Tower with river context', text: 'The current tower complex offers a high view and cultural interpretation rather than an untouched ancient structure. Go for the relationship between Snake Hill, bridge and Yangtze, check current entry and avoid presenting a reconstructed landmark as one continuous building.' },
-      { label: 'COLLECTION BANK', title: 'Hubei Provincial Museum deserves depth', text: 'Bronzes, musical instruments and regional archaeology can absorb most of a day. Confirm reservations and performances through official channels, choose the permanent collection first and resist adding a distant Hankou evening immediately afterward.' },
+      { label: 'WUCHANG HEIGHT', title: 'Yellow Crane Tower with river context', text: 'The current tower complex offers a high view and cultural interpretation rather than an untouched ancient structure. Wuhan public-safety visitor guidance identifies Line 5 at Huanghelou or Pengliuyang and the East Gate approach; check the site’s own current entry notice, then leave through the West Gate only if taking the walk toward the Yangtze bridge. Return via the named Line 5 station that fits your route.' },
+      { label: 'COLLECTION BANK', title: 'Hubei Provincial Museum deserves depth', text: 'Bronzes, musical instruments and regional archaeology can absorb most of a day. The city’s published visitor guidance routes visitors by Line 8 to Shengbo Hubei Daily, then via Exit A and the pedestrian channel/walk to the museum’s South Gate; verify today’s station exits and museum reservation notice before travel. Return from that same named station rather than trying to cross the lake on foot.' },
       { label: 'EAST LAKE SCALE', title: 'Select one lake edge', text: 'East Lake is a system of long greenways, scenic areas and institutional campuses. Pick one entrance and mode, verify bicycle rules and weather, and do not use “East Lake” as if it described a single compact park.' },
       { label: 'HANKOU FACADES', title: 'Former concession streets in sequence', text: 'Historic bank buildings and inland streets carry commercial and colonial layers that need names and dates. Walk one measured route, use a documented interior or museum where possible and avoid turning architecture into a context-free European backdrop.' },
       { label: 'RIVER PORT', title: 'Jianghan and the working waterfront', text: 'The riverfront changes with flood-control space, evening crowds and cruise operations. Check pier and service information, give working areas room and keep the final metro or ferry connection visible before staying for lights.' },
@@ -216,21 +219,21 @@ export const guides = [
     ],
     decisions: [
       { label: 'ARRIVAL', title: 'Wuhan, Hankou and Wuchang stations are different', text: 'The three major rail names correspond to different urban positions and service patterns. Match the booked train to the first bank and hotel; a wrong assumption can add a river crossing before the trip has begun.' },
-      { label: 'BASE', title: 'Choose the bank with two morning starts', text: 'Wuchang suits museums, East Lake and universities; Hankou favors historic streets and commercial riverfront. Hanyang works for a more specific route. Central on a regional map does not mean easy across bridges.' },
+      { label: 'BASE', title: 'Choose the bank with two morning starts', text: 'For three nights, stay near a Wuchang Line 2/4 interchange if the museum and tower lead, or near Hankou/Jianghan Road if old streets and riverfront lead; the East Lake campus area is quieter but adds a daily return ride. A fourth night makes the opposite bank or Hanyang feasible without changing hotels. Choose for two early starts, not a map’s apparent center.' },
       { label: 'SEASON', title: 'Flood, heat and blossom change public space', text: 'River levels, summer heat, rain and spring events reshape paths and crowds. Use current official notices, avoid closed embankments and keep an indoor collection as the flexible anchor.' }
     ],
     itineraryKicker: 'THREE TOWNS / FOUR DAYS',
     itineraryTitle: 'Cross the river for a reason',
-    itineraryIntro: 'Give Wuchang two days because its museum and lake occupy different scales, then devote one day to Hankou and one to a chosen bridge or Hanyang contrast.',
+    itineraryIntro: 'Three nights can cover Days 1–3 at a brisk but workable pace. Add Day 4 only with another night; East Lake is a separate half-day and Hanyang needs its own crossing.',
     itinerary: [
-      { label: 'DAY 1 / WUCHANG', title: 'Tower and river section', text: 'Use Yellow Crane Tower to understand the confluence, then walk one nearby historical or bridge-view sequence without crossing repeatedly.' },
-      { label: 'DAY 2 / COLLECTION', title: 'Hubei Museum and one lake edge', text: 'Let the museum hold the morning and early afternoon. Continue only to the nearest useful East Lake section if daylight, reservations and energy remain.' },
-      { label: 'DAY 3 / HANKOU', title: 'Facades, market streets and waterfront', text: 'Trace one historical street line toward the river, stop at a documented interior and finish with food or lights near the same bank.' },
-      { label: 'DAY 4 / HANYANG', title: 'One final crossing', text: 'Choose Qingchuan, industrial history or a longer East Lake return—not all three. Leave from the station that fits the next journey rather than the hotel’s marketing map.' }
+      { label: 'DAY 1 / WUCHANG', title: 'Tower, West Gate and bridge edge', text: 'Enter Yellow Crane Tower from its current ticketed entrance using Line 5 to Huanghelou or Pengliuyang, as identified in Wuhan visitor guidance published in 2025; confirm the current station/exit and admission notice before leaving. If conditions and legs allow, leave by the West Gate for the documented bridge approach; otherwise return to the same Line 5 station. Keep the rest of the day on Wuchang’s side.' },
+      { label: 'DAY 2 / COLLECTION', title: 'Hubei Museum, South Gate out and back', text: 'Reserve through the museum’s official channel first. Wuhan’s 2025 visitor guidance routes travelers on Line 8 to Shengbo Hubei Daily, then Exit A and the pedestrian channel to the South Gate; confirm the current station exit and museum notice. Let the collection take the main block. Add only one East Lake edge after checking its exact entrance, park access and daylight; in rain the museum is the full-day plan.' },
+      { label: 'DAY 3 / HANKOU', title: 'One concession-street line to the river', text: 'Use a single Hankou district as the route anchor: walk one documented street sequence, then finish at Jianghan Road or the waterfront only if the live map shows a simple return to your hotel. Do not cross to Hanyang after dark to complete a checklist.' },
+      { label: 'DAY 4 / HANYANG', title: 'Take one extra night for the third town', text: 'With a fourth night, cross once to Qingchuan Pavilion or another Hanyang stop you have confirmed open, then return to the same river crossing/metro corridor. If you have only three nights, use this as a weather or recovery buffer rather than moving hotels.' }
     ],
     practicalTitle: 'River scale defeats casual backtracking',
     practical: [
-      { label: 'CROSSING', title: 'Bridge approaches consume time', text: 'A destination visible across the water may require a long metro or road chain. Check the actual entrance-to-entrance route and group stops by bank before paying for a car that will sit in traffic.' },
+      { label: 'CROSSING', title: 'Bridge approaches consume time', text: 'A destination visible across the water may require a long metro or road chain. Use the exact destination entrance and the actual return station when routing. For Yellow Crane Tower, the West Gate-to-river walk is one-way toward the bridge; book the exit/metro return before entering rather than assuming you can rejoin the Line 5 stop from the waterfront.' },
       { label: 'LAKE', title: 'Name the East Lake entrance', text: 'Different scenic areas and greenway segments are not interchangeable. Save the Chinese entrance, return point and bicycle policy, and avoid beginning a long loop late in the day.' },
       { label: 'CLIMATE', title: 'Heat and rain favor early movement', text: 'Exposed embankments, large parks and tower steps can become punishing. Move outside chapters to morning or evening, preserve museum time for the worst weather and follow flood-related closures.' }
     ],
@@ -242,13 +245,15 @@ export const guides = [
     ],
     sources: [
       { url: 'https://english.wuhan.gov.cn/travel/tourist4attractions4an4incomplete4list/202110/t20211026_1819226.shtml', label: 'Wuhan Municipal Government — Yellow Crane Tower and city orientation' },
+      { url: 'https://gaj.wuhan.gov.cn/jmzx/ttxw/202505/t20250530_2588560.html', label: 'Wuhan Public Security Bureau — 2025 visitor directions for Yellow Crane Tower and Hubei Provincial Museum' },
       { url: 'https://wlt.hubei.gov.cn/hbsbwg/', label: 'Hubei Provincial Museum — official visitor and exhibition information' }
     ],
     image: { path: '/assets/images/china-destination-wuhan.webp', alt: 'Pavilions and crane statues on the Yellow Crane Tower grounds above Wuhan', caption: 'Wuhan / three towns, two rivers and one bank at a time', source: 'https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61416-Wuhan_(49150676682).jpg', creditTitle: 'Yellow Crane Tower grounds, Wuhan', creator: 'xiquinhosilva', license: 'CC BY 2.0' },
-    search: { type: 'River metropolis guide', summary: 'Plan Wuhan bank by bank across Wuchang, Hankou and Hanyang, with East Lake and Hubei Museum given their real scale.', keywords: ['wuhan', 'yellow crane tower', 'east lake', 'hubei museum', 'hankou', 'wuchang'] }
+    search: { type: 'River metropolis guide', summary: 'Use Line 5 for Yellow Crane Tower and Line 8 for Hubei Museum’s South Gate, then plan Wuhan by bank; keep East Lake to one entrance and one return point.', keywords: ['wuhan', 'yellow crane tower', 'east lake', 'hubei museum', 'hankou', 'wuchang'] }
   },
   {
     slug: 'chengdu',
+    dateModified: '2026-10-11',
     name: 'Chengdu',
     title: 'Chengdu Travel Guide (2026): Pandas, Teahouses and Sichuan Routes',
     metaDescription: 'Plan Chengdu through real-name panda reservations, teahouse rhythm, Sichuan museums and deliberate excursions to Dujiangyan, with food and transit kept practical.',
@@ -266,7 +271,7 @@ export const guides = [
     orientationIntro: 'Eight chapters divide animal welfare, collections, ritual streets, parks, food and outer engineering heritage. The rhythm is intentional: one fixed morning should not become three fixed afternoons.',
     chapters: [
       { label: 'RESERVATION', title: 'Panda Base as a managed wildlife visit', text: 'Use the official real-name channel, arrive for the booked period and follow current entrance instructions. Cooler early hours can support animal activity, but welfare and husbandry determine what is visible; never demand feeding, noise or a close encounter for a photograph.' },
-      { label: 'COLLECTION', title: 'Jinsha and Sichuan archaeology', text: 'Jinsha Site Museum can anchor a deep half-day through excavated context and objects. Check opening days, give the site and galleries time, and do not compress it into the same morning as a distant panda reservation.' },
+      { label: 'COLLECTION', title: 'The Jinsha closure changes the archaeology day', text: 'Jinsha Site Museum’s current official notice says it is closed from 5 December 2025 through 30 April 2027. Do not route visitors there during this interval; recheck the official notice for any change after that date. Until it reopens, use Chengdu Museum at Tianfu Square for an indoor city-history day, or choose Sanxingdui only as a separate, reserved outer excursion.' },
       { label: 'SHRINE STREET', title: 'Wuhou and Jinli as separate layers', text: 'Wuhou Shrine offers historical and ritual context; adjacent Jinli is a commercial interpretation. Visit the institution first, then decide how much performance and food-stall atmosphere adds, rather than allowing the busiest lane to define the history.' },
       { label: 'TEA CLOCK', title: 'People’s Park without treating life as a show', text: 'A teahouse afternoon works best without a checklist. Order clearly, share tables respectfully, ask before photographing patrons and let park routines continue around you. Ear-cleaning or other services should be chosen by comfort and hygiene, not social pressure.' },
       { label: 'FOOD LEDGER', title: 'Heat, numbing spice and ingredient clarity', text: 'Hotpot, noodles and small dishes carry different chili and Sichuan pepper profiles. Write allergies and dietary limits in Chinese, ask about broths and oils, and plan lighter meals around a major hotpot rather than testing tolerance three times a day.' },
@@ -275,24 +280,24 @@ export const guides = [
       { label: 'REGIONAL EDIT', title: 'Choose one Sichuan excursion', text: 'Leshan, Mount Qingcheng, Dujiangyan, Sanxingdui and farther landscapes solve different interests and transport chains. Select one for a short stay, verify its reservation and station, and avoid selling a five-hour road as a convenient city detour.' }
     ],
     decisions: [
-      { label: 'ARRIVAL', title: 'East, South and West stations serve different corridors', text: 'Chengdu East handles many high-speed arrivals, while other stations and Tianfu or Shuangliu airports produce very different final transfers. Save the complete facility name and check late arrival transport before choosing a bargain flight.' },
-      { label: 'BASE', title: 'Central metro access beats a themed lane', text: 'A base near a useful interchange simplifies panda, museum and rail movements. Staying beside a famous alley may bring crowds without reducing the longest transfer; inspect walking access to the exact metro entrance.' },
+      { label: 'ARRIVAL', title: 'East, South, West and the airports differ', text: 'Chengdu East, South and West are separate rail terminals; Tianfu and Shuangliu airports also sit on different transfer chains. Use the station printed on the China Railway 12306 ticket, save its Chinese name, and compare the last train/airport transfer with your hotel before booking a late arrival.' },
+      { label: 'BASE', title: 'Central access for four nights; split only on a longer stay', text: 'For four nights, use a central Line 1/2-accessible base near Tianfu Square or a major interchange: it keeps the Chengdu Museum and rail connections straightforward. Panda Base is a long northern excursion from any central hotel, so stay near the base only if you have a second early visit or a five-to-six-night trip. Check the actual door-to-platform walk, not a named lane’s map pin.' },
       { label: 'OUTER DAY', title: 'Reserve the anchor before the driver', text: 'For pandas, Sanxingdui or protected heritage, secure the official visit first. Then match train, shuttle or driver to the confirmed slot and keep the return generous enough for an unhurried meal.' }
     ],
     itineraryKicker: 'FOUR CUPS / FOUR PACES',
     itineraryTitle: 'Alternate fixed mornings and slow afternoons',
-    itineraryIntro: 'One early wildlife visit, one archaeology day, one city-history day and one outer engineering chapter create range without destroying the city’s slower rhythm.',
+    itineraryIntro: 'Four nights work as three central days plus one regional day. Jinsha remains closed through 30 April 2027; use the Chengdu Museum on the west side of Tianfu Square for the indoor archaeology/history slot, and add a second regional day only with five or six nights.',
     itinerary: [
-      { label: 'DAY 1 / CARE', title: 'Pandas early, park life later', text: 'Use the official reservation, follow keeper rules and leave before crowd fatigue. Recover with a central park or teahouse instead of racing to another timed institution.' },
-      { label: 'DAY 2 / ARCHAEOLOGY', title: 'Jinsha and west-side city', text: 'Give excavation and galleries most of the day, then eat in the same side of the city and keep the evening free of long cross-town queues.' },
-      { label: 'DAY 3 / HISTORY', title: 'Wuhou, one lane and one serious meal', text: 'Read the shrine before Jinli’s commercial layer, step into a quieter neighborhood and make one Sichuan dinner the planned endpoint.' },
-      { label: 'DAY 4 / WATER', title: 'Dujiangyan or another single excursion', text: 'Travel with the exact station and site entry known. Pair Mount Qingcheng only if mobility, weather and opening conditions support the extra elevation.' }
+      { label: 'DAY 1 / CARE', title: 'Pick one Panda Base gate and its shuttle', text: 'Book the real-name entry on the official Panda Base site before travel. From Line 3 Panda Avenue Station, Exit A connects to shuttle 408 for the South Gate; alternatively Junqu General Hospital Station, Exit B connects to shuttle 409 for the West Gate. Choose one gate, save its Chinese name, and return by the matching shuttle and station. Do not assume the two entrances make a short walk between them.' },
+      { label: 'DAY 2 / CITY COLLECTION', title: 'Chengdu Museum at Tianfu Square', text: 'Jinsha is closed through 30 April 2027. Use Chengdu Museum at the west side of Tianfu Square instead: its official visitor guide lists Tianfu Square on Metro Lines 1/2 and the West 1 North/South exits. Check the same guide for the current day’s hours and reservation button before setting off. In heavy rain, keep the museum as the full indoor day; in clearer weather, add only a nearby central street.' },
+      { label: 'DAY 3 / HISTORY', title: 'Wuhou, then one lane and a planned return', text: 'Start at Wuhou Shrine, then decide on Jinli only after the shrine visit; the adjacent commercial lane is not a second museum. Use a named Metro Line 3/5 stop or a door-to-door car to return from the actual exit you use; late queues and crowds make an unplanned cross-town dinner a poor finish.' },
+      { label: 'DAY 4 / WATER', title: 'Give Dujiangyan one complete day', text: 'Use 12306 to choose the actual Chengdu-area departure station and Dujiangyan-side arrival station for your date, then check the last return train before you buy; schedules and station names change, so none is quoted here. From arrival station, plan the local leg to the scenic entrance separately. Skip Qingcheng on this first outer day unless daylight, mobility and both return legs are confirmed.' }
     ],
     practicalTitle: 'Reservations and appetite need recovery time',
     practical: [
-      { label: 'IDENTITY', title: 'Carry the booked document', text: 'Real-name systems may require the original passport used in the reservation. Keep confirmation screenshots and official Chinese venue names offline, and ignore unofficial “fast entry” offers.' },
+      { label: 'IDENTITY', title: 'Panda Base is a timed, real-name visit', text: 'The official Panda Base ticket page describes online real-name booking, the original identity document, an entry time period and a booking window that can change by date/season. Book only through its listed official channel, save the confirmation and exact gate offline, and ignore unofficial “fast entry” offers. Do not publish a fare or promise animal activity at a particular hour.' },
       { label: 'FOOD', title: 'Communicate limits before the pot arrives', text: 'Chili, Sichuan pepper, animal fats and shared broths can complicate dietary needs. Use written Chinese, ask before ordering and choose individual dishes when cross-contact is a serious concern.' },
-      { label: 'AIR', title: 'Weather can flatten the basin view', text: 'Rain, heat and low visibility affect parks and outer mountains. Use current forecasts, protect indoor collections and do not promise a mountain panorama from a fixed ticket date.' }
+      { label: 'RAIN + MOBILITY', title: 'Keep the city museum for a wet day', text: 'For rain, move Chengdu Museum to the wettest forecast window and keep People’s Park or the Panda Base for a clearer day; Panda Base is largely outdoors. The base’s two gates have different shuttle approaches, and accessible routes/vehicle operation need same-day confirmation. If steps or long outdoor distances are a limit, omit the Base rather than assume the shuttle removes the walking.' }
     ],
     faqs: [
       { question: 'Do I need to reserve the Chengdu Panda Base?', answer: 'Yes, treat it as an official real-name reservation with a specific entry period. Procedures can change, so use the base’s own visitor information and carry the original identity document.' },
@@ -302,10 +307,14 @@ export const guides = [
     ],
     sources: [
       { url: 'https://www.panda.org.cn/en/service/ticket/', label: 'Chengdu Research Base of Giant Panda Breeding — official tickets and visitor rules' },
+      { url: 'https://www.panda.org.cn/en/service/transit/', label: 'Chengdu Research Base of Giant Panda Breeding — official transit and shuttle guidance' },
+      { url: 'https://www.jinshasitemuseum.com/site-75', label: 'Jinsha Site Museum — official closure notice' },
+      { url: 'https://www.cdmuseum.com/zhinan/', label: 'Chengdu Museum — official visitor guide, hours, location and booking' },
+      { url: 'https://www.sxd.cn/Guide?type=3', label: 'Sanxingdui Museum — official visitor guide and access information' },
       { url: 'https://whc.unesco.org/en/list/1001/', label: 'UNESCO World Heritage Centre — Mount Qingcheng and the Dujiangyan Irrigation System' }
     ],
     image: { path: '/assets/images/china-destination-chengdu.webp', alt: 'Giant panda at the Chengdu Research Base of Giant Panda Breeding', caption: 'Chengdu / managed wildlife, teahouse time and one deliberate outer day', source: 'https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg', creditTitle: 'Giant panda in Chengdu', creator: 'George Lu', license: 'CC BY 2.0' },
-    search: { type: 'Food and heritage city', summary: 'Balance Chengdu’s panda reservations, archaeology and Sichuan meals with teahouse time and one carefully chosen outer excursion.', keywords: ['chengdu', 'panda base', 'dujiangyan', 'chengdu food', 'sichuan', 'chengdu itinerary'] }
+    search: { type: 'Food and heritage city', summary: 'Reserve the Panda Base by its chosen gate and shuttle; while Jinsha is closed through April 2027, use Chengdu Museum for a rain-proof city day and plan Dujiangyan as a separate rail-and-local-transfer excursion.', keywords: ['chengdu', 'panda base', 'chengdu museum', 'jinsha closed', 'dujiangyan', 'chengdu food', 'sichuan', 'chengdu itinerary'] }
   },
   {
     slug: 'shenzhen',
@@ -493,6 +502,7 @@ export const guides = [
   },
   {
     slug: 'chongqing',
+    dateModified: '2026-10-11',
     name: 'Chongqing',
     title: 'Chongqing Travel Guide (2026): Vertical City, Rivers and Wulong',
     metaDescription: 'Plan Chongqing by elevation, river crossing and station exit, then choose one separate outer route to Dazu or Wulong with weather, rail and road time made explicit.',
@@ -502,7 +512,7 @@ export const guides = [
     eyebrow: 'Chongqing / vertical metropolis and river confluence',
     titleAccent: 'read the vertical city in section',
     intro: 'In Chongqing, a point that appears next door can sit several levels, escalators or road loops away. The Jialing and Yangtze rivers, steep peninsula and elevated transit turn altitude into ordinary navigation. Read the city in section—upper street, lower bank, bridge and station exit—before chasing night views or distant karst.',
-    nights: '3–5 nights',
+    nights: '3–5 nights (3 for the core, 4 for an outer day, 5 for a slower or overnight excursion)',
     coreLogic: 'elevation + one river crossing',
     watchFirst: 'exit number and last ascent',
     motifs: ['Upper street', 'Lower bank', 'Bridge', 'Night'],
@@ -510,7 +520,7 @@ export const guides = [
     orientationIntro: 'The eight chapters move from Yuzhong’s ridge to lower riverbanks, across transit lines and finally out to protected heritage. Every descent creates a future ascent, so each route includes its return.',
     chapters: [
       { label: 'RIDGE LINE', title: 'Jiefangbei and the upper peninsula', text: 'Use Jiefangbei as an orientation point, not as the whole center. Walk one ridge-level street sequence, note which entrances descend toward the rivers and keep the hotel return on the same elevation whenever a late meal follows.' },
-      { label: 'LOWER GLOW', title: 'Hongya Cave from outside first', text: 'The complex is most legible as a vertical circulation and riverfront phenomenon. View it from a safe public position, expect intense night crowds and do not assume the entrance nearest a map pin leads to the level shown in photographs.' },
+      { label: 'LOWER GLOW', title: 'Hongya Cave from outside first', text: 'The complex is most legible as a vertical circulation and riverfront phenomenon. iChongqing’s visitor guide maps two practical subway approaches: Line 2 to Linjiangmen, Exit A, then east along Linjiang Road; or Line 1/6 to Xiaoshizi, Exit 6, then north along Cangbai Road. Choose one for approach and return rather than trying to cross the whole complex; check the current map and crowd controls before leaving. Expect stairs and a steep riverside grade.' },
       { label: 'CABLE CROSSING', title: 'Yangtze River Cableway as transport theater', text: 'The cableway can have long queues and weather-related changes. Compare the wait with a metro or bridge crossing, verify the boarding side and treat the ride as optional rather than sacrificing a full afternoon to a few minutes in the air.' },
       { label: 'TRANSIT SECTION', title: 'Liziba and rail without blocking daily life', text: 'The train-through-building view is part of a functioning neighborhood and transit system. Use the designated viewing area, keep sidewalks and station movement clear and combine it with one nearby route rather than arriving solely for repeated video takes.' },
       { label: 'PORT MEMORY', title: 'Chaotianmen and the confluence', text: 'Construction, cruise terminals and public-space access can change around the river meeting. Verify the usable viewpoint and pier, keep the steep return in mind and avoid describing a shopping complex as if it were the historic port itself.' },
@@ -520,21 +530,21 @@ export const guides = [
     ],
     decisions: [
       { label: 'ARRIVAL', title: 'Chongqing North, West and Shapingba differ', text: 'Major rail stations serve different corridors and city edges. Match the exact station to the hotel and first-day elevation, and preserve extra time for large internal walks and an unfamiliar exit.' },
-      { label: 'BASE', title: 'A ridge-level metro base reduces daily climbs', text: 'Yuzhong offers iconic density but hotels on lower roads or steep lanes can be awkward with luggage. Jiangbei and Shapingba suit different plans. Confirm the door’s elevation and accessible route, not only its distance from a station pin.' },
+      { label: 'BASE', title: 'Use Jiefangbei/Yuzhong for three nights; change only for a reason', text: 'For three nights, a ridge-level Jiefangbei/Yuzhong base gives the simplest start for the peninsula’s central sights; add a fourth for one outer excursion and a fifth if you want to overnight beyond the city. North-bank Jiangbei or west-side Shapingba can work for their own neighborhoods, but add river/metro crossings to each central day. Confirm the hotel door elevation, lift and luggage path before booking.' },
       { label: 'OUTER', title: 'Choose Dazu or Wulong, not both at speed', text: 'Dazu is a cultural heritage day; Wulong is a terrain and weather day. On a short stay, select the one that fits the trip’s argument and leave the other for a return.' }
     ],
     itineraryKicker: 'FOUR LEVELS / NO RANDOM DESCENTS',
     itineraryTitle: 'A route that always knows how it gets back up',
-    itineraryIntro: 'Use one ridge day, one river-and-transit day, one slower neighborhood day and one optional outer chapter. Night views should finish a coherent route rather than start an improvised climb.',
+    itineraryIntro: 'Three nights cover the first three city days. Add Day 4 only after booking a fourth night; Wulong works better with a fifth or an overnight. Keep the central base and plan each descent with a same-route return.',
     itinerary: [
-      { label: 'DAY 1 / RIDGE', title: 'Jiefangbei to one river edge', text: 'Learn Yuzhong at upper-street level, descend once for a confluence or Hongya perspective and return by a known metro, escalator or road chain.' },
-      { label: 'DAY 2 / CROSSING', title: 'Transit as urban section', text: 'Use rail and one bridge or cableway to understand the city’s vertical mechanics. Keep Liziba or another viewpoint brief and spend time in the connected neighborhood.' },
-      { label: 'DAY 3 / CITY', title: 'Museum, food and a quiet bank', text: 'Choose one institution or historical district, then one hotpot or noodle focus. Stay near the same transit corridor for the evening rather than collecting distant neon scenes.' },
-      { label: 'DAY 4 / OUTER', title: 'Dazu or Wulong', text: 'Commit to one landscape with the correct station, shuttle and entry known. Keep the city alternative ready when weather or ticket availability undermines the outer plan.' }
+      { label: 'DAY 1 / RIDGE', title: 'Jiefangbei to Hongya Cave and the upper return', text: 'Start at the ridge and descend by one mapped route: Line 2 Linjiangmen Exit A, or Line 1/6 Xiaoshizi Exit 6, then follow the current pedestrian route to Hongya Cave. View the complex from outside before deciding to enter; return via the same station approach. If rain makes the riverside steps slick or crowds close a route, stay on the upper commercial streets.' },
+      { label: 'DAY 2 / CROSSING', title: 'Liziba, then one connected west-side stop', text: 'Ride Line 2 to Liziba Station for the designated viewing area, then return to that station and continue to one nearby west-side neighborhood. Do not combine Liziba with a distant riverbank and a cableway ticket in one fixed-time chain; operating hours and weather rules for the cableway were not verifiable here.' },
+      { label: 'DAY 3 / CITY', title: 'Three Gorges Museum as the rain plan', text: 'Use the official museum’s visitor guide for Chongqing China Three Gorges Museum, 236 Renmin Road, as the indoor anchor; verify current opening and reservation notices first. The page confirms the address but did not expose a reliable station/exit in this review, so route by the exact Chinese address in a current local planner and plan a return from that same named stop or vehicle pickup. Pair it with the nearby People’s Great Hall only if the grounds are open; avoid a steep old-street walk in heavy rain.' },
+      { label: 'DAY 4 / OUTER', title: 'Choose one excursion and check the last leg', text: 'For Dazu or Wulong, name the exact site, rail terminal or driver pickup, local shuttle and return point before paying. Use 12306 for date-specific train options and the site’s current official visitor notice; a railway station is not the scenic-area entrance. If any leg or return is unconfirmed, use Day 4 for a central indoor/cultural route instead.' }
     ],
     practicalTitle: 'Elevation is the hidden fare',
     practical: [
-      { label: 'EXITS', title: 'One wrong exit can add a hill', text: 'Record the metro exit and whether it opens above or below the destination. When accessibility matters, verify elevators and road approaches rather than relying on a staircase-heavy walking route.' },
+      { label: 'EXITS + ACCESS', title: 'Record the street level, then the matching return', text: 'Hongya Cave’s two mapped approaches begin at Linjiangmen Exit A or Xiaoshizi Exit 6; save the exit and use the same approach for return. In Chongqing, a short map distance can still mean steep stairs, lift queues or a long road loop. Step-free lines/elevators for the full route were not confirmed in the source review; request current station accessibility details and a door-to-door alternative before choosing a route.' },
       { label: 'FOG', title: 'Visibility changes the night-view value', text: 'Mist and rain can erase skyline depth and make steps slick. Keep night viewpoints optional, protect a museum or food route and never cross barriers for a clearer angle.' },
       { label: 'OUTER PARKS', title: 'Rail arrival is not park arrival', text: 'Wulong and Dazu still require local transfers after intercity movement. Name the exact scenic component, shuttle and final departure before committing to a same-day return.' }
     ],
@@ -546,10 +556,12 @@ export const guides = [
     ],
     sources: [
       { url: 'https://english.cq.gov.cn/aboutchongqing/culture/NaturalHeritage/202606/t20260612_15751145.html', label: 'Chongqing Municipal Government — Wulong karst and official destination context' },
-      { url: 'https://english.cq.gov.cn/aboutchongqing/travel/5ALevelTouristAttraction/202606/t20260611_15745500.html', label: 'Chongqing Municipal Government — Dazu Rock Carvings visitor context' }
+      { url: 'https://english.cq.gov.cn/aboutchongqing/travel/5ALevelTouristAttraction/202606/t20260611_15745500.html', label: 'Chongqing Municipal Government — Dazu Rock Carvings visitor context' },
+      { url: 'https://www.ichongqing.info/attraction/hongyadong/', label: 'iChongqing / Western China International Communication Organization — Hongya Cave visitor access' },
+      { url: 'https://www.3gmuseum.cn/web/column/col5009271.html', label: 'Chongqing China Three Gorges Museum — official visitor guide and notices (station access not exposed in English)' }
     ],
     image: { path: '/assets/images/china-destination-chongqing.webp', alt: 'Hongya Cave glowing at night above a busy Chongqing street', caption: 'Chongqing / upper streets, lower banks and elevation-aware night routes', source: 'https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg', creditTitle: 'Hongya Cave at night, Chongqing', creator: 'Jonashtand', license: 'CC BY-SA 4.0' },
-    search: { type: 'Vertical city guide', summary: 'Navigate Chongqing by elevation, river crossing and exact station exit, then choose one honest outer day to Dazu or Wulong.', keywords: ['chongqing', 'hongya cave', 'liziba', 'wulong', 'dazu rock carvings', 'chongqing itinerary'] }
+    search: { type: 'Vertical city guide', summary: 'Plan Chongqing in three to five nights from a ridge-level base; use Hongya Cave’s mapped Line 2 or Lines 1/6 approach, keep the museum for rain, and verify every outer-site return leg.', keywords: ['chongqing', 'hongya cave', 'liziba', 'three gorges museum', 'wulong', 'dazu rock carvings', 'chongqing itinerary'] }
   },
   {
     slug: 'kunming',
