@@ -126,6 +126,7 @@ function guideSchema(guide) {
 function childPage(guide, cluster) {
   const description = ensureMetaDescription(guide.summary);
   const title = `${guide.name} | TripDistill`;
+  const sources = [...new Map([...cluster.sources, ...(guide.sources || [])].map(([href, label]) => [href, [href, label]])).values()];
   const checks = guide.checks.map(([label, copy], index) => `<article class="md-check"><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(label)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const decisions = guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('');
   const route = guide.route.map(([phase, heading, copy], index) => `<article class="md-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(phase)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
@@ -169,7 +170,7 @@ function childPage(guide, cluster) {
 
       <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div><p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(guide.sources || cluster.sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>
@@ -305,7 +306,7 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
       const entry = index.find((item) => item.url === guide.url);
       if (!entry) throw new Error('Missing existing search record for ' + guide.url);
       entry.title = guide.name + ' Guide';
-      entry.parent = 'Malaysia - ' + guide.hubName;
+      entry.parent = (targetCluster?.hubSlug === 'cameron-highlands' ? 'Malaysia · ' : 'Malaysia - ') + guide.hubName;
       entry.type = 'Focused area and field guide';
       entry.summary = guide.summary;
       entry.keywords = [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide'];
@@ -339,11 +340,16 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
 
 const requestedClusterSlug = process.argv.find((argument) => argument.startsWith('--cluster='))?.slice('--cluster='.length);
 if (requestedClusterSlug) {
-  if (requestedClusterSlug !== 'george-town-penang') throw new Error('This bounded generation mode is only enabled for the reviewed George Town & Penang cluster.');
+  const boundedGuideLists = {
+    'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
+    'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang']
+  };
+  const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for the reviewed George Town & Penang and Cameron Highlands source clusters.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
-  const reviewedGuideSlugs = new Set(['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam']);
-  const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugs.has(guide.slug));
-  if (!cluster || guides.length !== reviewedGuideSlugs.size) throw new Error('Penang bounded route list does not match the three reviewed child guides.');
+  const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
+  const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
+  if (!cluster || guides.length !== reviewedGuideSlugSet.size) throw new Error(`${requestedClusterSlug} bounded route list does not match the three reviewed child guides.`);
   for (const guide of guides) {
     const page = routeFile(guide.url);
     fs.mkdirSync(path.dirname(page), { recursive: true });
@@ -351,7 +357,7 @@ if (requestedClusterSlug) {
   }
   injectHubCards(cluster);
   updateSearch(guides, cluster);
-  console.log('Generated the George Town & Penang hub cards and three reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.');
+  console.log(`Generated the ${cluster.hubName} hub cards and three reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.`);
 } else {
   for (const cluster of malaysiaDepthClusters.filter((item) => item.newHub)) {
     const file = routeFile('/malaysia/' + cluster.hubSlug + '/');

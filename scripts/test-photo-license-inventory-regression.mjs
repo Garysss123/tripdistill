@@ -125,7 +125,7 @@ try {
   assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
   assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
   assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 539, 'integrated Andaman, Ayutthaya, Cornwall, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 537, 'integrated Cameron Highlands, Andaman, Ayutthaya, Cornwall, China CN12, CN14B and CN15 source-page checks are counted separately from unused incomplete records');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -180,6 +180,27 @@ try {
     assert.ok(record.verificationDetail.includes('Local WebP pixels were inspected'));
     assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
     assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+  }
+  const cameronPhotos = [
+    { assetPath: '/assets/images/malaysia-cameron-highlands.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cameron_Bharat_Tea_Plantation,_Cameron_Highlands,_Malaysia,_20250829_1535_4120.jpg', creator: 'Jakub Hałun', license: 'CC BY 4.0', sourcePhotoDate: '2025-08-29', originalSize: '5,439 × 3,631' },
+    { assetPath: '/assets/images/malaysia-cameron-mossy-forest.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Big_Mossy_Tree_at_Mossy_Forest,_Cameron_Highlands.jpg', creator: 'Pro QueeNia', license: 'CC BY-SA 4.0', sourcePhotoDate: '2019-10-15', originalSize: '2,448 × 3,264' }
+  ];
+  for (const image of cameronPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Cameron Highlands photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/${image.license === 'CC BY 4.0' ? 'by/4.0' : 'by-sa/4.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.originalSize));
+    assert.ok(record.verificationDetail.includes('Local WebP pixels show'));
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'));
   }
   const chinaCn12Photos = [
     { assetPath: '/assets/images/china-destination-harbin.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', sourceTitle: 'File:Harbin Saint Sophia Cathedral 2017 summer.jpg', creator: 'Amarespeco', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-07-14', originalSize: '4,000 × 6,000' },
@@ -260,7 +281,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 4, 'inventory must count explicitly recorded project-original artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 537, 'integrated CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 535, 'integrated Cameron Highlands, CN14B and CN15 source-page checks reduce unverified photo-license claims while project-original diagrams remain excluded');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
