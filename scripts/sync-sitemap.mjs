@@ -213,6 +213,13 @@ const unitedKingdomEdinburghEditedRoutes = [
   '/united-kingdom/edinburgh-lothians/north-berwick-east-lothian/'
 ];
 const unitedKingdomCornwallLastmod = '2026-10-11';
+const unitedKingdomOxfordLastmod = '2026-10-11';
+const unitedKingdomOxfordEditedRoutes = [
+  '/united-kingdom/oxford-cotswolds/',
+  '/united-kingdom/oxford-cotswolds/oxford-colleges-museums/',
+  '/united-kingdom/oxford-cotswolds/blenheim-woodstock/',
+  '/united-kingdom/oxford-cotswolds/cotswold-towns-without-car/'
+];
 const unitedKingdomGlasgowLastmod = '2026-10-11';
 const unitedKingdomGlasgowEditedRoutes = [
   '/united-kingdom/',
@@ -562,6 +569,11 @@ for (const route of unitedKingdomCornwallEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Cornwall route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomCornwallLastmod });
+}
+for (const route of unitedKingdomOxfordEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Oxford/Cotswolds route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomOxfordLastmod });
 }
 for (const route of unitedKingdomGlasgowEditedRoutes) {
   const record = records.get(route);

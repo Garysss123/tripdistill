@@ -140,16 +140,27 @@ export const unitedKingdomEnglandSouthClusters = [
     band: 'england-south',
     family: 'college-and-coach-docket',
     label: 'College-and-coach docket',
-    tagline: 'Separate walkable Oxford from every rural last mile beyond it.',
+    tagline: 'Keep Oxford on foot; give Blenheim and each Cotswold corridor its own outward day.',
     hubIntro: 'Oxford is a rail-connected walking city, while Blenheim Palace and the Cotswold towns depend on buses, tours, bicycles or a car. A strong base plan distinguishes college opening windows from rural timetables and never treats “the Cotswolds” as one station or one attraction.',
-    stay: 'Two nights supports a complete Oxford day plus one palace or rural excursion. Three nights allows a weather-safe museum alternative and a second landscape day without carrying luggage onto local buses.',
-    transfer: 'Oxford railway station, Gloucester Green coach station and suburban park-and-ride stops solve different arrivals. For Blenheim or villages, verify the exact stop, Sunday pattern and return before boarding; a place name on a regional map is not a walkable connection.',
-    season: 'College access changes with terms, ceremonies and private events. Rural buses thin on some days, winter light shortens village walks, and peak weekends increase road pressure around Woodstock and popular Cotswold towns.',
-    fallback: 'When a college, palace interior or rural connection fails, keep a complete Oxford museum-and-river day. Do not improvise a taxi chain through multiple villages without a confirmed return.',
+    searchSummary: 'Oxford is a walkable base; choose Blenheim by Stagecoach S3 or S7, or plan one dated Pulhams 801 corridor from Moreton-in-Marsh. Give each rural area its own day.',
+    stay: 'Two nights in Oxford is a short base: protect one full city day and choose either Blenheim or one rural corridor, not both. Three nights keeps the same room for Oxford plus a single outward day and a weather reserve. With four or five nights, consider keeping Oxford nights together and adding two nights near Moreton-in-Marsh only if the Pulhams 801 route fits the dated plan; a one-night hotel split can cost the time it was meant to save. Keep arrival and departure days separate from these full-day allowances.',
+    transfer: 'Oxford Railway Station and Gloucester Green coach station serve different arrivals. Walk the Oxford centre from one base; take Stagecoach S3 from Oxford Railway Station/Magdalen Street or S7 via Oxford Parkway for Blenheim, then follow the Palace pedestrian approach. For a Cotswold day, plan the rail leg to Moreton-in-Marsh and use Pulhams 801 only for its named corridor through Stow-on-the-Wold and Bourton-on-the-Water. Check the exact date, direction, stop and return before committing; no bus frequency or same-day rail connection is assumed here.',
+    season: 'College doors, Bodleian tours and museum access follow their own calendars and can change for academic use, ceremonies or events; check the place you actually intend to enter. Rural bus timetables are date-specific, while short winter daylight and wet paths argue for fewer stops. Summer weekends and Palace events can add visitor and road pressure around Woodstock. Recheck the operator and venue on the travel date.',
+    fallback: 'If a college or library interior is closed, keep the Oxford walk through Carfax, Broad Street and Radcliffe Square, then choose one open museum such as the Ashmolean. If the 801 connection does not leave a sound return, stay in Moreton-in-Marsh or make the Cotswolds a separate booked tour; do not link villages with an assumed roadside walk or an unbooked taxi chain.',
+    reviewDate: '11 October 2026',
+    reviewDateISO: '2026-10-11',
     sources: [
-      ['https://www.experienceoxfordshire.org/', 'Experience Oxfordshire — official destination guide'],
-      ['https://www.gwr.com/', 'Great Western Railway — train planning and service updates'],
-      ['https://www.oxfordbus.co.uk/', 'Oxford Bus Company — local and regional bus information']
+      ['https://www.ox.ac.uk/visitors/visiting-oxford', 'University of Oxford — visitor guidance'],
+      ['https://www.blenheimpalace.com/visitus/getting-here/', 'Blenheim Palace — public-transport and pedestrian access'],
+      ['https://www.stagecoachbus.com/routes/oxfordshire/s3/oxford-chipping-norton/xoas003.o', 'Stagecoach — S3 route and date-specific timetable'],
+      ['https://www.pulhams.co.uk/busservices/timetables/service801/', 'Pulhams — 801 route and timetable'],
+      ['https://www.nationalrail.co.uk/stations/moreton-in-marsh/', 'National Rail — Moreton-in-Marsh station']
+    ],
+    faq: [
+      ['How many nights should I book for Oxford, Blenheim and the Cotswolds?', 'Two nights leaves room for Oxford and one outward choice if your arrival and departure allow it. Three nights supports Oxford plus a separate rural day. Four or five nights can justify a rural base near Moreton-in-Marsh, but only when the dated rail and 801 return suit the stay.'],
+      ['Can I visit Blenheim without a car?', 'Yes. Blenheim lists Stagecoach S3 from Oxford Railway Station/Magdalen Street and S7 via Oxford Parkway. Use its current directions from the bus stop to the pedestrian entrance and check the exact date and return before buying a timed ticket.'],
+      ['Can I cover several Cotswold villages by bus?', 'Build around one corridor, not a map-wide village list. Pulhams 801 serves Bourton-on-the-Water, Stow-on-the-Wold and Moreton-in-Marsh; select one or two stops only after checking the travel-date timetable in both directions.'],
+      ['Should I change hotels between Oxford and the Cotswolds?', 'Stay in Oxford if the rural visit is one day. A Moreton-in-Marsh base is more useful when you have enough nights to use its railway station and the 801 corridor without moving luggage for a single outing.']
     ],
     guides: [
       g({
@@ -159,34 +170,44 @@ export const unitedKingdomEnglandSouthClusters = [
         layout: 'quadrangle-threshold-plan',
         imageQuery: 'Oxford Radcliffe Camera university street',
         imageAlt: 'Radcliffe Camera and historic university buildings in Oxford',
-        purpose: 'Choose one college or library interior and build a coherent university-city walk around its actual public opening window, rather than arriving with a list of quadrangles that may be closed for academic use.',
-        summary: 'Start from the railway station or Gloucester Green, confirm the booked or open college, connect Bodleian and Radcliffe Square, then finish with one museum or river edge.',
+        purpose: 'Choose one genuinely visitable college or Bodleian experience, then connect Oxford’s academic quarter to one collection or river edge. The plan distinguishes public streets and exteriors from doors that require their own visitor window or booking.',
+        summary: 'Walk from Oxford Railway Station through Carfax to Broad Street and Radcliffe Square; use one checked college or Bodleian entry, then finish at the Ashmolean or one university museum.',
+        searchSummary: 'Plan Oxford on foot from Carfax to Broad Street and Radcliffe Square, then choose one date-checked college or Bodleian visit and one museum collection.',
         choices: [
-          ['College and library interiors', 'Prioritize one verified college plus the Bodleian visit product that matters. This gives the strongest institutional reading but makes the day least flexible.'],
-          ['Free collections', 'Use the Ashmolean, Pitt Rivers or Museum of Natural History as the anchor, with university exteriors between them. It is resilient in poor weather but lighter on private quadrangles.'],
-          ['City and river walk', 'Keep interiors minimal and connect Carfax, Radcliffe Square, Christ Church Meadow and the Thames or Cherwell edge. This suits uncertain openings but sacrifices collection depth.']
+          ['One college interior', 'Pick a named college only after its own visitor page confirms the gate and date; Christ Church is a separate ticketed visit. This gives a close view of college life but makes the day depend on one opening window.'],
+          ['Bodleian plus Radcliffe Square', 'Reserve a public Bodleian tour or choose its currently listed visitor experience, then read the Old Schools and Radcliffe Camera from Catte Street. This gives library context without treating a working reading room as a walk-in museum.'],
+          ['Museum-first Oxford', 'Choose the Ashmolean on Beaumont Street or the Oxford University Museum of Natural History/Pitt Rivers on Parks Road, then keep the college precinct to its public streets. This is the rain-resilient option but offers less access to private quads.']
         ],
-        access: 'Oxford station is west of the historic core; Gloucester Green is closer to the northern pedestrian approaches. Buses do not cross every central street. Walk in one direction and identify the college’s current visitor gate, because ceremonial and student entrances may differ.',
-        tradeoff: 'Multiple colleges, a full Ashmolean visit and a river walk exceed a comfortable day. Choose one controlled interior and one secondary layer; the sacrifice is deliberate because opening windows and security cannot be compressed.',
+        access: 'Oxford Railway Station lies west of the centre; Gloucester Green is a separate coach arrival. Walk east via Park End Street and George Street to Carfax, continue through Cornmarket to Broad Street, then use Catte Street for Radcliffe Square and the Bodleian visitor entrance. College gates are not interchangeable: follow the named visitor door on that college’s current page.',
+        tradeoff: 'A full museum visit, a Bodleian tour and several college interiors compete for the same hours. Choose one booked or controlled interior and one secondary layer; Radcliffe Camera is a reading library, not an unreserved public interior.',
         stages: [
-          ['Enter through the working city', 'Walk from the station through Carfax or approach from Gloucester Green, noting the final return line. Do not begin with an unverified college queue.'],
-          ['Meet the booked threshold', 'Use the official visitor gate and respect academic closures. Keep the Bodleian or college tour in its exact product and time slot.'],
-          ['Connect the public squares', 'Move through Radcliffe Square, Broad Street and one neighboring lane without collecting every college frontage. Pause before choosing museum or meadow.'],
-          ['Finish at collection or water', 'End at the Ashmolean for a bounded gallery set or at Christ Church Meadow and the river. Leave toward the station without retracing the full historic core.']
+          ['Arrive at Carfax', 'From Oxford Railway Station use Park End Street and George Street; from Gloucester Green enter from the north. Set a return station and keep luggage out of the narrow centre streets.'],
+          ['Use one confirmed door', 'Follow the current visitor entrance and time for the college or Bodleian product you selected. If no suitable slot or public opening is listed, keep the visit exterior.'],
+          ['Read the academic quarter', 'Walk Broad Street, Catte Street and Radcliffe Square; use the University Church viewpoint only if it is open. Keep the route on public streets instead of trying several college porter’s lodges.'],
+          ['Choose one indoor finish', 'Turn west to the Ashmolean or north to the Natural History Museum/Pitt Rivers pair, following their current visit notices. Leave time for the station walk; the meadow is a separate outdoor extension, not an automatic add-on.']
         ],
-        fallback: 'If the chosen college closes, retain Radcliffe Square and Broad Street, then use the Ashmolean or university museums according to current admission. The city’s public realm remains coherent without forcing another private interior.',
+        fallback: 'If a college or Bodleian slot is unavailable, keep the same walk through Broad Street and Radcliffe Square, then move to the Ashmolean or the Natural History Museum/Pitt Rivers if its current visitor notice fits. The day still has a complete Oxford story without a second private gate.',
         watch: [
-          ['Academic use overrides tourism', 'Terms, ceremonies and examinations can change access. A college website is more reliable than a generic opening-hours list.'],
-          ['Similar names hide different doors', 'Libraries, colleges and churches may share precincts but use separate visitor entrances. Read the booked product carefully.'],
-          ['Punting is a separate weather decision', 'River hire adds time, conditions and a different starting point. Do not use it as an automatic final hour when wind, queues or daylight are poor.']
+          ['College pages control the door', 'Opening windows and visitor products are set by each college; ceremonies, teaching and private events can change access. Check the exact date before shaping the route around an interior.'],
+          ['A library tour is a timed product', 'Bodleian public tours and library access are separate from the street-side Radcliffe Camera view. Read the current ticket and arrival instructions; do not arrive at a reading-room entrance expecting general admission.'],
+          ['Rain changes the finish', 'Christ Church Meadow and the river edge are exposed and can be muddy. Trade that outdoor leg for one museum rather than crossing town to rescue every planned stop.']
         ],
-        duration: 'Allow six to eight hours with one controlled interior, one museum or meadow branch and breaks. A compact exterior university circuit can fit three hours.',
-        combine: 'Combine with Jericho or Christ Church Meadow because both extend the walk without another rural transfer. Keep Blenheim and Cotswold villages for separate days.',
-        verify: 'Check the exact college and Bodleian visitor notices, museum entry conditions, university event closures and rail service before setting the order.',
+        duration: 'Allow five to seven hours for the Carfax–Broad Street–Radcliffe Square walk, one booked or open interior, one museum choice and a break. A shorter exterior-only circuit can be planned separately; these are editorial allowances, not venue visit times.',
+        combine: 'Keep the sequence within the centre: pair the academic quarter with one museum or, on a dry day, a short Christ Church Meadow walk. Blenheim and the Cotswold towns need their own outward day.',
+        verify: 'Check the chosen college’s own visitor page, Bodleian tour availability, the Ashmolean or university museum notices, and the Oxford station return before fixing the order.',
+        faq: [
+          ['Can visitors walk into any Oxford college?', 'No. Public access and entry times vary by college and date. Choose one college whose own visitor page lists the exact door and conditions; keep other colleges as exteriors.'],
+          ['Can I go inside the Radcliffe Camera?', 'Treat it as an exterior landmark unless the Bodleian’s current visitor information explicitly includes an interior experience. Public tours and working library access have their own terms and availability.'],
+          ['Which museum fits this walk?', 'The Ashmolean sits west of the academic quarter; the Natural History Museum and Pitt Rivers are the north-side option. Choose one based on its current opening notice and collection interest instead of trying to do both in a short city day.']
+        ],
         sources: [
           ['https://www.ox.ac.uk/visitors/visiting-oxford', 'University of Oxford — official visitor information'],
+          ['https://www.experienceoxfordshire.org/things-to-do/top-10-oxford-university-colleges-to-visit/', 'Experience Oxfordshire — college visitor guide'],
+          ['https://visit.bodleian.ox.ac.uk/plan-your-visit', 'Bodleian Libraries — tours and visit planning'],
           ['https://www.ashmolean.org/plan-your-visit', 'Ashmolean Museum — official visit planning']
-        ]
+        ],
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11'
       }),
       g({
         slug: 'blenheim-woodstock',
@@ -195,69 +216,88 @@ export const unitedKingdomEnglandSouthClusters = [
         layout: 'estate-arrival-section',
         imageQuery: 'Blenheim Palace Oxfordshire landscape',
         imageAlt: 'Blenheim Palace and its landscaped grounds in Oxfordshire',
-        purpose: 'Plan the bus, palace gate, ticketed interior and landscaped grounds as one estate day, while deciding whether Woodstock is a meal-and-return base or a meaningful town stop.',
-        summary: 'Leave Oxford on a verified service, enter through the correct Blenheim gate, choose palace depth or landscape distance, and protect the return from Woodstock before evening frequency changes.',
+        purpose: 'Make the bus approach, Palace pedestrian entrance, ticketed rooms and long parkland compete honestly for one day; use Woodstock as a real town stop only when the dated return still works.',
+        summary: 'From Oxford Railway Station use Stagecoach S3, or check S7 via Oxford Parkway; follow Blenheim’s current pedestrian directions, choose Palace-and-garden depth or a longer park walk, then protect the return.',
+        searchSummary: 'Reach Blenheim from Oxford on Stagecoach S3 or S7 via Oxford Parkway, follow the Palace pedestrian approach, and choose State Rooms, gardens or parkland before planning the Woodstock return.',
         choices: [
-          ['Palace interior and core grounds', 'Use the main visitor product and concentrate on state rooms, formal gardens and the nearby lake edge. This is the clearest first visit but not the longest landscape walk.'],
-          ['Estate landscape day', 'Give the park, lake and longer paths priority, treating the palace interior as short or optional. It suits fair weather and stronger walkers.'],
-          ['Woodstock and selective estate', 'Use Woodstock streets, church and a meal around a shorter palace or garden visit. This reduces estate depth but creates a less pressured day.']
+          ['State Rooms and formal gardens', 'Give the Palace interior and Water Terraces the protected block, then use the nearby garden paths. This is the clearest first visit, but leaves the wider park and a long Woodstock stop for another day.'],
+          ['Parkland and Great Lake', 'Choose the outdoor landscape and set a turning point before leaving the garden core. It suits a dry, longer day but gives up detailed State Room time and depends more on path and daylight conditions.'],
+          ['Woodstock with a shorter Palace visit', 'Walk Woodstock’s centre and use the Marlborough Arms stop only after matching the outbound and return direction in the current timetable. This adds town context but reduces time for both the house and estate.']
         ],
-        access: 'Blenheim is outside Oxford, and the useful bus stop and pedestrian gate must be confirmed with the current operator and palace advice. Do not navigate to the vehicle entrance by default. Record the final practical return from Woodstock before entering the estate.',
-        tradeoff: 'A full state-room visit, formal gardens, distant park circuit and relaxed Woodstock meal do not fit equally. Choosing the interior sacrifices landscape distance; choosing the long park walk sacrifices indoor interpretation.',
+        access: 'Blenheim’s current getting-here page lists Stagecoach S3 from Oxford Railway Station/Magdalen Street and S7 via Oxford Parkway. It describes the bus arrival by the main entrance and a further walk through the park to the Palace; follow that pedestrian route, not the vehicle gate. Confirm the stop and direction on the exact departure you will use.',
+        tradeoff: 'The State Rooms, formal gardens, Great Lake circuit and Woodstock streets are separate time blocks. Choose one main estate depth plus a short town stop; the park walk is not a compressed indoor tour, and the Palace interior is not a substitute for the wider landscape.',
         stages: [
-          ['Commit to the outbound service', 'Board the verified Oxford–Woodstock service with the correct stop identified. Keep the palace booking late enough to absorb ordinary road delay.'],
-          ['Enter the right gate', 'Follow current pedestrian directions and ticket conditions. Use the estate map to separate formal gardens from longer park routes before walking.'],
-          ['Choose interior or distance', 'Complete the palace-and-garden core or the landscape loop, not both at maximum depth. Keep weather and closing gates visible.'],
-          ['Return through Woodstock', 'Use the town for a planned meal or short street circuit, then reach the correct stop before the service gap. Do not assume a taxi will solve a missed final bus.']
+          ['Choose the right bus leg', 'From Oxford Railway Station or Magdalen Street compare the date-specific S3; S7 is the Oxford Parkway approach. Save the return stop and departure before leaving the city.'],
+          ['Walk to the visitor threshold', 'At the bus arrival follow Blenheim’s current signed pedestrian approach through the park. Check that your ticket covers the Palace, gardens or event you intend to enter.'],
+          ['Set one estate turning point', 'Visit the State Rooms and Water Terraces, or give the Great Lake/parkland the longer block. Shorten the outdoor branch first in rain, heat or limited-walking conditions.'],
+          ['Add Woodstock only if it fits', 'Use the town streets for a planned break, then board at the confirmed Woodstock stop for Oxford. Do not infer a later return from the morning pattern or rely on an unbooked taxi.']
         ],
-        fallback: 'If the palace interior is unavailable, use Woodstock and the estate areas included in the current ticket only when access remains open. In severe weather, replace the excursion with Oxford museums rather than waiting at rural stops.',
+        fallback: 'If an interior or event area is closed, use only the gardens or parkland included in the day’s ticket and still open. If rain or a bus disruption breaks the outdoor plan, return to Oxford for the Ashmolean or another currently open museum instead of waiting at a rural stop.',
         watch: [
-          ['Ticket products change access', 'Palace, park, garden and event products may not cover identical areas. Read the current inclusion rather than relying on an older estate map.'],
-          ['The grounds are real distance', 'The lake and wider park consume more time than the formal gardens. Pick a turning point before leaving the core.'],
-          ['Evening frequency matters', 'Road traffic and thinner later buses can turn a relaxed meal into a missed return. Save the stop and timetable before arrival.']
+          ['Entry products and events differ', 'The Palace, gardens, park and special events do not always share the same access conditions. Confirm what your selected date and ticket include before leaving Oxford.'],
+          ['The pedestrian leg is part of the day', 'The Palace site describes a walk through the park from the bus arrival. Count it both ways and choose a shorter route if the estate distance, terrain or weather is limiting.'],
+          ['A Woodstock stop changes the return', 'The S3 and S7 are separate route choices and stop patterns can vary by date. Match the town stop and direction to the live operator timetable; do not use an old frequency estimate.']
         ],
-        duration: 'Allow six to eight hours from Oxford for the estate, one chosen depth and Woodstock. A short interior-and-garden visit still requires at least half a day including buses.',
-        combine: 'Combine with Woodstock only; Oxford’s colleges or museums work better on another day. Do not add a second Cotswold village without a private transport plan.',
-        verify: 'Check Blenheim’s current ticket areas and event closures, the exact bus operator and stop, the return timetable and weather before leaving Oxford.',
+        duration: 'Allow most of a day from Oxford for the bus legs, pedestrian approach, one estate focus and a short Woodstock stop. This is a planning allowance; use the Palace map and your own walking needs to set the turning point.',
+        combine: 'Combine with Woodstock only when its stop and return fit the dated plan. Oxford colleges, museums and Cotswold villages deserve separate days.',
+        verify: 'Check Blenheim’s dated ticket inclusions and event notices, the Stagecoach S3/S7 direction and stop, the return service, and the day’s weather before leaving Oxford.',
+        faq: [
+          ['Which bus should I take from Oxford?', 'Blenheim lists Stagecoach S3 from Oxford Railway Station/Magdalen Street and S7 via Oxford Parkway. Compare the exact travel date and direction on the operator page; the two routes do not share every stop.'],
+          ['How far is the Palace from the bus?', 'Blenheim’s getting-here page describes a walk through the park from the bus arrival to the Palace. Follow its current pedestrian directions and allow for the return leg; do not navigate to the vehicle entrance.'],
+          ['Can I add Woodstock after the Palace?', 'Yes if the estate visit and the date-specific bus return leave enough time. Use the current timetable for the Woodstock stop and return direction; otherwise keep Woodstock for another visit and return directly from the estate.']
+        ],
         sources: [
           ['https://www.blenheimpalace.com/visitus/', 'Blenheim Palace — official visitor information'],
-          ['https://www.oxfordbus.co.uk/', 'Oxford Bus Company — Woodstock service information']
-        ]
+          ['https://www.blenheimpalace.com/visitus/getting-here/', 'Blenheim Palace — directions and public transport'],
+          ['https://www.stagecoachbus.com/routes/oxfordshire/s3/oxford-chipping-norton/xoas003.o', 'Stagecoach — S3 route and timetable'],
+          ['https://www.nationalrail.co.uk/stations/oxford/', 'National Rail — Oxford station']
+        ],
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11'
       }),
       g({
         slug: 'cotswold-towns-without-car',
         name: 'Cotswold Towns Without a Car',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-10-11',
         instrument: 'Village-return dependency chart',
         layout: 'bus-window-gazetteer',
         imageQuery: 'Cotswolds village stone houses England',
         imageAlt: 'Honey-coloured stone houses in a Cotswold village',
-        purpose: 'Choose one realistic public-transport corridor through the Cotswolds, identify the final return before departure and avoid presenting scattered villages as a walkable open-air attraction.',
-        summary: 'Select a rail gateway and one or two connected towns, keep the route inside the published bus pattern, and treat footpaths or a tour as separate products rather than invisible links.',
+        purpose: 'Plan a single no-car day by joining a real rail gateway to one named bus corridor, then cap the village count at the return the dated timetable supports. The map is not a substitute for the final rural connection.',
+        summary: 'Use Moreton-in-Marsh station and the Pulhams 801 as a planning spine; choose Bourton-on-the-Water, Stow-on-the-Wold or both only after checking the exact-date journey and return.',
+        searchSummary: 'No-car Cotswolds day: plan Moreton-in-Marsh rail and Pulhams 801 to a named Bourton or Stow stop; add a second town only if dated return services fit.',
         choices: [
-          ['Moreton-in-Marsh corridor', 'Use the rail station as the firm gateway and connect only villages served by a verified bus or booked tour. This is the strongest car-free structure but not the broadest circuit.'],
-          ['Bourton and Stow focus', 'Base the day on two popular towns with a known connection. It gives classic streets and services but can be crowded and timetable-dependent.'],
-          ['Guided or private circuit', 'Use a licensed tour or car when several villages and rural stops matter. This buys geographic reach but gives up independent timing and increases cost.']
+          ['Moreton-in-Marsh plus one town', 'Arrive at Moreton-in-Marsh Railway Station, confirm the Pulhams 801 stop and direction, then choose either Stow-on-the-Wold Library or Bourton-on-the-Water Edinburgh Wool Shop. One town leaves the clearest margin for the station return.'],
+          ['Bourton and Stow on the 801', 'The published 801 corridor includes Moreton-in-Marsh, Bourton-on-the-Water and Stow-on-the-Wold. Treat the two-town day as conditional: verify that the service dates, stop order and both onward and return legs line up before booking rail.'],
+          ['A wider village circuit', 'If several smaller villages or a specific walking route matter, book a tour with confirmed pickup/drop-off or arrange a car. This extends geographic reach but is a separate product with its own booking, pickup and cancellation terms.']
         ],
-        access: 'There is no single Cotswolds station. Moreton-in-Marsh, Cheltenham, Oxford and other gateways serve different edges. Build the day from the actual rail arrival, bus route and final return, and distinguish a roadside stop from a town centre.',
-        tradeoff: 'Public transport protects independence and cost but restricts the number and order of villages. A tour increases reach but reduces dwell-time control. The route refuses to promise multiple famous villages without naming the connection between them.',
+        access: 'There is no single Cotswolds station. Moreton-in-Marsh Railway Station is a rail gateway for the 801 corridor; the bus lists Moreton-in-Marsh Railway Station, Stow-on-the-Wold Library and Bourton-on-the-Water Edinburgh Wool Shop as stops. Match the stop name to the destination centre and leave walking time at each end. If travelling from Oxford, plan the dated rail journey separately; this guide does not assume a direct train or a guaranteed same-day connection.',
+        tradeoff: 'The 801 offers a named corridor, not an all-villages shuttle. A one-town visit gives more time for streets, an interior and a meal; adding a second town makes the day depend on the published timetable and leaves less slack. A footpath is an independent walking choice, not an automatic link between bus stops.',
         stages: [
-          ['Arrive at one gateway', 'Use the rail or coach arrival that connects to the chosen bus corridor. Do not change gateways mid-day simply because two villages look close on a map.'],
-          ['Read the first town fully', 'Walk a bounded town circuit, include a meal or interior and locate the onward stop before leaving the centre.'],
-          ['Commit to one connection', 'Take the verified bus, booked tour or signed path to the second place. If it is late or full, activate the same-town fallback rather than improvising a third village.'],
-          ['Protect the rail return', 'Reach the gateway with one service in reserve where possible. Keep taxi numbers as contingency, not as the primary unbooked plan.']
+          ['Build outward from the station', 'Check National Rail for the date-specific journey to Moreton-in-Marsh and Pulhams for the 801 service in your direction. Save the exact stop names and return plan before buying a train ticket.'],
+          ['Choose one first town', 'At Moreton, board only after checking the 801 departure and destination display. In Bourton or Stow, walk the centre from the named stop and locate that same stop for the onward leg.'],
+          ['Add a second town only on paper first', 'Check both 801 legs and leave time for a missed connection or a shorter visit. If the timetable leaves no workable return, keep the second town for another day instead of improvising a roadside walk.'],
+          ['Protect the gateway return', 'Return to Moreton with daylight and rail disruption information in view. Keep the operator’s service updates and a pre-decided same-town fallback; an unbooked rural taxi is not the base plan.']
         ],
-        fallback: 'If the connecting bus fails, stay in the gateway or first town and use its church, market streets, local walk and meal options. If weather affects paths, remove the rural walk before removing the protected return.',
+        fallback: 'If the connecting bus is cancelled, disrupted or unsuitable for your date, stay in Moreton-in-Marsh or spend the day in the first town you can reach. Choose a local museum, church, high street or meal, and drop the second village before sacrificing the return journey.',
         watch: [
-          ['Sunday is a different network', 'Routes and frequencies can change sharply on Sundays and holidays. Check the exact travel date, not a weekday screenshot.'],
-          ['Village names do not imply proximity', 'Narrow roads and sparse cross-links make map distance misleading. Never assume a short taxi wait or safe roadside walk.'],
-          ['Footpaths need their own evidence', 'A public right of way can be muddy, unsigned at junctions or far from a bus stop. Carry a proper route and turn-back point.']
+          ['The dated timetable decides the village count', 'Pulhams publishes the 801 timetable separately from the route description. Check the service date, direction, stop and any holiday variation; this guide makes no frequency or last-bus promise.'],
+          ['Stops can sit outside the place you pictured', 'Confirm the named stop and walking route to the town centre. Narrow roads and fields are not safe default shortcuts between villages.'],
+          ['Walking routes need a separate plan', 'Check path condition, distance, daylight, access and a turn-back point. Remove a rural walk in wet or short-day conditions before compressing the transit return.']
         ],
-        duration: 'Allow a full day for one gateway and one or two connected towns. More than two independent stops usually requires a booked tour, car or an overnight stay.',
-        combine: 'Combine villages that share the same published corridor. Keep Oxford, Blenheim or Bath as separate base days rather than using them as last-minute add-ons.',
-        verify: 'Check the official destination transport advice, the named bus operator’s dated timetable, rail disruptions, daylight and any walking-route condition before departure.',
+        duration: 'Reserve a full day for the gateway and one town. A second town is a timetable-dependent addition, not a standard promise. If you want multiple rural stops on separate days, consider a booked base near the corridor; avoid changing hotels for one marginal bus connection.',
+        combine: 'Pair Moreton-in-Marsh with one 801 stop, or link Bourton and Stow only if the dated service allows both directions. Keep Oxford and Blenheim as separate days; they are not Cotswold bus stops.',
+        verify: 'Check Pulhams 801 timetable and service updates, the Moreton-in-Marsh rail journey and disruption notice, stop names in both directions, holiday service changes, daylight, weather and any planned footpath before departure.',
+        faq: [
+          ['Which Cotswold towns does the 801 serve?', 'Pulhams lists Moreton-in-Marsh Railway Station, Stow-on-the-Wold Library and Bourton-on-the-Water Edinburgh Wool Shop among the 801 stops. Check the current route and dated timetable for the direction and service you need.'],
+          ['Can I see Bourton and Stow in one day without a car?', 'The 801 route links both towns, but a visit is practical only if the exact-date timetable supports your rail arrival, both town stops and the return to Moreton. If it does not, choose one town or book a tour with confirmed pickup.'],
+          ['Can I walk between villages when the bus does not fit?', 'Only with a separately checked walking route, daylight, weather and safe access. A short map distance beside a rural road is not an assumed footpath or a safe connection.']
+        ],
         sources: [
-          ['https://www.cotswolds.com/plan-your-trip/getting-to-the-cotswolds/', 'Cotswolds tourism — official access guidance'],
-          ['https://www.gwr.com/', 'Great Western Railway — rail planning and service updates']
+          ['https://www.pulhams.co.uk/busservices/timetables/service801/', 'Pulhams — 801 route and timetable'],
+          ['https://www.oxfordbus.co.uk/services/PULH/801', 'Oxford Bus Company — Pulhams 801 route and stops'],
+          ['https://www.nationalrail.co.uk/stations/moreton-in-marsh/', 'National Rail — Moreton-in-Marsh station']
         ]
       })
     ]

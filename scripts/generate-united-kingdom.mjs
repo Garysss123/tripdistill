@@ -281,8 +281,8 @@ function updateSearch() {
   const records = JSON.parse(fs.readFileSync(file, 'utf8')).filter((item) => !item.url.startsWith('/united-kingdom/'));
   records.push({ title: 'United Kingdom Travel Guide', url: '/united-kingdom/', parent: 'Europe', type: 'Country', summary: 'Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.', keywords: ['United Kingdom', 'UK travel', 'Britain', 'England', 'Scotland', 'Wales', 'Northern Ireland'] });
   for (const cluster of unitedKingdomClusters) {
-    records.push({ title: cluster.name, url: `/united-kingdom/${cluster.slug}/`, parent: 'United Kingdom', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.nation, cluster.band] });
-    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
+    records.push({ title: cluster.name, url: `/united-kingdom/${cluster.slug}/`, parent: 'United Kingdom', type: 'Regional guide', summary: cluster.searchSummary || cluster.hubIntro, keywords: [cluster.name, cluster.nation, cluster.band] });
+    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.searchSummary || guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
   }
   fs.writeFileSync(file, JSON.stringify(records, null, 2) + '\n');
 }

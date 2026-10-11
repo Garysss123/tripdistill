@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Oxford is a walkable base; choose Blenheim by Stagecoach S3 or S7, or plan one dated Pulhams 801 corridor from Moreton-in-Marsh. Give each rural area its own day.": "Oxfordを拠点に徒歩で市内を巡り、Blenheim PalaceへはStagecoach S3またはS7を利用するか、Moreton-in-Marsh発で利用日を確認したPulhams 801の沿線を1方面計画しましょう。郊外の各エリアには、それぞれ別の日を充ててください。",
+    "Plan Oxford on foot from Carfax to Broad Street and Radcliffe Square, then choose one date-checked college or Bodleian visit and one museum collection.": "CarfaxからBroad Street、Radcliffe Squareまで徒歩で巡り、訪問日の案内を確認したカレッジまたはBodleianの見学を1つと、博物館のコレクションを1つ選びましょう。",
+    "Reach Blenheim from Oxford on Stagecoach S3 or S7 via Oxford Parkway, follow the Palace pedestrian approach, and choose State Rooms, gardens or parkland before planning the Woodstock return.": "OxfordからStagecoach S3またはOxford Parkway経由のS7でBlenheim Palaceへ。宮殿へは歩行者用ルートに従い、State Rooms、庭園、公園のどれを中心にするか決めてから、Woodstock経由の帰路を計画しましょう。",
+    "No-car Cotswolds day: plan Moreton-in-Marsh rail and Pulhams 801 to a named Bourton or Stow stop; add a second town only if dated return services fit.": "車なしで巡るCotswoldsの日帰り旅では、Moreton-in-Marshまでの鉄道と、Pulhams 801でBourtonまたはStowの指定停留所へ向かう行程を計画しましょう。利用日別の帰りの便が合う場合に限り、2つ目の町を加えてください。"
+  }
+}
