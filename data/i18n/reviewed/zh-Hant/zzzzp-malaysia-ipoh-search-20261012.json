@@ -1,0 +1,41 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose an Old Town or New Town base, arrive by KTMB ETS, and plan one Kinta branch with current BAS.MY route and last-mile checks.": "選擇舊城區或新城區住宿，搭乘 KTMB ETS 抵達，查核 BAS.MY 最新路線與末段接駁，再安排一趟近打谷地支線。",
+    "ktmb": "KTMB 鐵路",
+    "bas.my": "BAS.MY 公車",
+    "a100": "A100 市區環線",
+    "a34": "A34 務邊線",
+    "a36": "A36 華都牙也線",
+    "new town": "新城區",
+    "Start at Ipoh Railway Station for the civic and Old Town walk; compare station-side and New Town stays, confirm one interior, and leave a rain-safe meal plan.": "從怡保火車站出發步行遊覽市政街區與舊城區；比較車站旁和新城區住宿，確認一處室內景點開放，並安排雨天也可用餐的備案。",
+    "ipoh railway station": "怡保火車站",
+    "ktmb ets": "KTMB ETS 列車",
+    "ipoh town hall": "怡保市政廳",
+    "civic quarter": "市政街區",
+    "kong heng": "光興廣場",
+    "concubine lane": "二奶巷",
+    "baggage storage": "行李寄放",
+    "rain plan": "雨天備案",
+    "Plan a respectful visit to Sam Poh Tong and other separate Gunung Rapat temple compounds; verify each gate, hours and ride, since bus-map labels do not confirm access.": "尊重宗教規範地參訪三寶洞及昆侖喇叭其他獨立寺院；逐一確認入口、開放時間與接駁，公車地圖標示不等於可進入。",
+    "gunung rapat": "昆侖喇叭",
+    "ling sen tong": "靈仙岩",
+    "nam thean tong": "南天洞",
+    "cave temples": "洞穴寺廟",
+    "temple access": "寺廟通行",
+    "ceremony": "法會",
+    "last mile": "末段接駁",
+    "Reach Gua Tempurung from Ipoh only after confirming a cave route and the last-mile transfer; BAS.MY A34 reaches a junction label, not a guaranteed cave entrance.": "確認洞穴路線與末段接駁後再從怡保前往霹靂洞；BAS.MY A34 到達地圖標示的路口，並不保證直達洞穴入口。",
+    "gopeng": "務邊",
+    "gua tempurung": "霹靂洞",
+    "medan kidd": "Medan Kidd 公車站",
+    "simpang gua tempurung": "霹靂洞路口",
+    "cave route": "洞穴路線",
+    "permit unknown": "許可資訊未知",
+    "rain closure": "雨天關閉"
+  }
+}
