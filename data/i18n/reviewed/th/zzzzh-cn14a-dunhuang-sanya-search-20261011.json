@@ -1,0 +1,15 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use one Sanya bay base for three full days in four nights; check the airport or rail terminal, sea warning and Hainan entry rules before adding a second base.": "พักในอ่าวเดียวของซานย่าเป็นฐาน ให้มีวันเที่ยวเต็ม 3 วันเมื่อพัก 4 คืน ตรวจสอบสนามบินหรือสถานีรถไฟ ประกาศเตือนทางทะเล และกฎการเข้าไห่หนานก่อนเพิ่มฐานพักแห่งที่สอง",
+    "phoenix airport station": "สถานีสนามบินฟีนิกซ์ (Phoenix Airport Station)",
+    "hainan visa-free scope": "ขอบเขตการยกเว้นวีซ่าไห่หนาน (Hainan visa-free scope)",
+    "Reserve Mogao through Dunhuang Academy, use Dunhuang as one base for the caves and oasis, and give each Hexi Corridor city its own overnight.": "จองเข้าชมโมเกา (Mogao) ผ่านสถาบันตุนหวง ใช้ตุนหวงเป็นฐานเดียวสำหรับเที่ยวถ้ำและโอเอซิส และพักค้างคืนแยกในแต่ละเมืองตามระเบียงเหอซี (Hexi Corridor)",
+    "mogao reservation": "การจองเข้าชมโมเกา (Mogao reservation)",
+    "dunhuang railway station": "สถานีรถไฟตุนหวง (Dunhuang Railway Station)"
+  }
+}

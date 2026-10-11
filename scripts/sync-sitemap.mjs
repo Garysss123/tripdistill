@@ -120,6 +120,12 @@ const chinaSouthwestRoutes = [
   '/china/lijiang-shangri-la/',
   '/china/zhangjiajie/'
 ];
+// CN14A refreshed Sanya and Dunhuang with route, access and current-source updates.
+const chinaCn14aRoutesLastmod = '2026-10-11';
+const chinaCn14aRoutes = [
+  '/china/dunhuang-hexi-corridor/',
+  '/china/sanya-hainan/'
+];
 const unitedKingdomEditedLastmod = '2026-10-09';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -443,6 +449,11 @@ for (const route of chinaSouthwestRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed southwest China route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: chinaSouthwestRoutesLastmod });
+}
+for (const route of chinaCn14aRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date revised CN14A China route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: chinaCn14aRoutesLastmod });
 }
 for (const route of unitedKingdomEditedRoutes) {
   const record = records.get(route);
