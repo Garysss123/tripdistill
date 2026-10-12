@@ -152,7 +152,7 @@
     "url": "/malaysia/perhentian-redang/",
     "parent": "Malaysia · Peninsula Wild",
     "type": "Island and Marine Park Guide",
-    "summary": "Choose one island system, confirm season and jetty, and plan boats, reef conduct and return buffers.",
+    "summary": "Choose one island system and one named shore. Count island nights separately from mainland transfers, then connect the airport, rail or coach arrival, jetty, boat and exact accommodation landing with a weather-safe return.",
     "keywords": [
       "perhentian",
       "redang",
@@ -3646,9 +3646,9 @@
   {
     "title": "Kuala Besut & Perhentian Transfer Guide",
     "url": "/malaysia/perhentian-redang/kuala-besut-transfer/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Protect the Kuala Besut–Perhentian boat chain with exact jetty, operator, accommodation landing, season and final return.",
+    "summary": "Join Sultan Ismail Petra Airport or a confirmed KTMB Intercity/coach arrival to Kuala Besut Jetty, then verify the operator, island landing and full return chain.",
     "keywords": [
       "kuala besut & perhentian transfer",
       "perhentian & redang",
@@ -3660,9 +3660,9 @@
   {
     "title": "Perhentian Kecil Guide",
     "url": "/malaysia/perhentian-redang/perhentian-kecil/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Choose a Perhentian Kecil base between Long Beach and Coral Bay with footpath, boat, nightlife and reef conduct in view.",
+    "summary": "Compare Long Beach and Coral Bay for noise, meals, landing and evening access, then plan Kecil around one shore and a daylight-only cross-island link.",
     "keywords": [
       "perhentian kecil",
       "perhentian & redang",
@@ -3674,9 +3674,9 @@
   {
     "title": "Perhentian Besar Guide",
     "url": "/malaysia/perhentian-redang/perhentian-besar/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Plan Perhentian Besar by exact resort shore, boat dependence, family swimming needs and protected marine conduct.",
+    "summary": "Choose Besar by exact resort shore, meal plan and boat dependence; build a low-transfer stay with a protected reef day and a mainland return margin.",
     "keywords": [
       "perhentian besar",
       "perhentian & redang",
@@ -3688,9 +3688,9 @@
   {
     "title": "Redang & Mainland Transfer Guide",
     "url": "/malaysia/perhentian-redang/redang-merang-transfer/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Book Redang through its exact mainland jetty, resort boat, conservation procedure, sea window and protected departure buffer.",
+    "summary": "Connect Sultan Mahmud Airport or Kuala Terengganu to the resort-confirmed Merang or Shahbandar jetty, boat, island landing and return buffer.",
     "keywords": [
       "redang & mainland transfer",
       "perhentian & redang",

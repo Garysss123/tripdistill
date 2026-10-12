@@ -416,14 +416,15 @@ if (requestedClusterSlug) {
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
-    melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement']
+    melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
+    'perhentian-redang': ['kuala-besut-transfer', 'perhentian-kecil', 'perhentian-besar', 'redang-merang-transfer']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi and Melaka source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed Malaysia source clusters listed in boundedGuideLists.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
-  if (!cluster || guides.length !== reviewedGuideSlugSet.size) throw new Error(`${requestedClusterSlug} bounded route list does not match the three reviewed child guides.`);
+  if (!cluster || guides.length !== reviewedGuideSlugSet.size) throw new Error(`${requestedClusterSlug} bounded route list does not match its reviewed child guides.`);
   for (const guide of guides) {
     const page = routeFile(guide.url);
     fs.mkdirSync(path.dirname(page), { recursive: true });
