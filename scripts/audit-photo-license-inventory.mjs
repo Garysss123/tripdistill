@@ -819,6 +819,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Oxford_-_
   detail: 'Oxford/Cotswolds photo review: the exact Commons file page identifies Txllxt TxllxT as author, 18 June 2011 as the photograph date, original dimensions 5,921 × 3,947, and CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-11 and show Catte Street, Radcliffe Camera, St Mary the Virgin and Brasenose College in the background, matching the source; the copy is resized and display-cropped. This records the source page declaration, not independent rights clearance.',
   checkedOn: '2026-10-11'
 });
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatsworth_House_-_geograph.org.uk_-_2191619.jpg', {
+  detail: 'Peak District photo review: the exact Commons page identifies Trevor Rickard as author, 22 October 2010 as the photograph date, original dimensions 1,024 × 768, and CC BY-SA 2.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Chatsworth House across the lawn, matching the source-page subject. The visible credit links the source and versioned license and discloses resizing, display crop and WebP conversion. This records the page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Mam_Tor_from_the_Ridge_path_-_Flickr_-_Donnchadh_H.jpg', {
+  detail: 'Peak District photo review: the exact Commons page identifies Donnchadh H as author, 17 April 2025 as the photograph date, original dimensions 5,568 × 3,712, and CC BY 2.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Great Ridge footpath and open moorland described by the source. The visible credit links the source and license and discloses resizing, display crop and WebP conversion. This records the page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Dovedale_-_River_Dove_-_Thorpe_Cloud_-_Stepping_Stones_(15041656340).jpg', {
+  detail: 'Peak District photo review: the exact Commons page identifies Elliott Brown from Birmingham as author, 5 September 2014 as the photograph date, original dimensions 3,072 × 2,304, and CC BY-SA 2.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the River Dove stepping stones with Thorpe Cloud behind, matching the source. The visible credit links the source and versioned license and discloses resizing, display crop and WebP conversion. This records the page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Cameron_Bharat_Tea_Plantation,_Cameron_Highlands,_Malaysia,_20250829_1535_4120.jpg', {
   detail: 'Cameron Highlands photo review: exact Commons title, Jakub Hałun authorship, 29 August 2025 photograph date, original dimensions 5,439 × 3,631, and CC BY 4.0 terms checked on 2026-10-11. Local WebP pixels show tea rows across Cameron Highlands slopes with a road in the foreground, matching the source page. The displayed asset is resized, center-cropped and converted to WebP; its visible credit links the exact source and license and discloses those changes. This records the source page declaration, not independent rights clearance.',
   checkedOn: '2026-10-11'
@@ -972,6 +984,9 @@ const visuallyReviewedAssetPaths = new Set([
 ]);
 const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
+  ['/assets/images/united-kingdom-peak-district-derbyshire-bakewell-chatsworth.webp', '2026-10-12'],
+  ['/assets/images/united-kingdom-peak-district-derbyshire-hope-valley-edale.webp', '2026-10-12'],
+  ['/assets/images/united-kingdom-peak-district-derbyshire-dovedale-ashbourne.webp', '2026-10-12'],
   ['/assets/images/united-kingdom-oxford-cotswolds-oxford-colleges-museums.webp', '2026-10-11'],
   ['/assets/images/united-kingdom-oxford-cotswolds-blenheim-woodstock.webp', '2026-10-11'],
   ['/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp', '2026-10-11'],

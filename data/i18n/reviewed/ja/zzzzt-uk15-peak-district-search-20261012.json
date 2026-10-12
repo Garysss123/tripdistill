@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Take TM Travel 218 from Sheffield to Chatsworth or Bakewell; choose one stop as the day’s anchor, verify the dated return, and check the estate ticket before travel.": "シェフィールドからTM Travel 218でチャッツワースまたはベイクウェルへ。訪問先を1つに絞り、日付指定の帰りの便と施設チケットを事前に確認してください。運賃や空き状況は保証されません。",
+    "Use Northern’s all-stations Hope Valley train for Edale, Hope, Bamford or Hathersage; choose the lower valley or a mapped Great Ridge walk, then return from the same railhead.": "Northernのホープ・バレー各駅停車でエダール、ホープ、バンフォード、ハザーセージへ。谷の低地か地図で確認したグレート・リッジを歩き、同じ駅へ戻りましょう。",
+    "Compare the bus from Buxton station with book-ahead Derbyshire Connect; the Thorpe and Ilam stops differ by operating day, and the stepping stones remain optional.": "バクストン駅発のバスと事前予約制のDerbyshire Connectを比較しましょう。ソープとイラムの停留所は運行日によって異なり、石の渡渉は必須ではありません。",
+    "Choose Sheffield for Northern’s Hope Valley trains and TM Travel 218; Buxton shortens the southern-dale approach, while Bakewell has no rail station. Three nights gives about two full days; four gives three days for the three areas but no weather spare; five gives four full days with a weather buffer.": "Northernのホープ・バレー線とTM Travel 218を使うならシェフィールドを拠点に。バクストンは南部の谷に便利で、ベイクウェルに鉄道駅はありません。3泊なら丸2日ほど、4泊なら3エリアを各1日で回れますが、天候予備日はありません。5泊なら丸4日となり、天候予備日を1日確保できます。"
+  }
+}

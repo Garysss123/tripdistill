@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Take TM Travel 218 from Sheffield to Chatsworth or Bakewell; choose one stop as the day’s anchor, verify the dated return, and check the estate ticket before travel.": "Sheffield에서 TM Travel 218번을 타고 Chatsworth 또는 Bakewell로 가세요. 하루의 중심 방문지 하나를 고르고 날짜별 귀환편을 확인한 다음, 출발 전에 영지 입장권도 확인하세요.",
+    "Use Northern’s all-stations Hope Valley train for Edale, Hope, Bamford or Hathersage; choose the lower valley or a mapped Great Ridge walk, then return from the same railhead.": "Northern의 Hope Valley 전역정차 열차로 Edale, Hope, Bamford 또는 Hathersage에 가세요. 낮은 계곡길이나 지도를 확인한 Great Ridge 코스를 고르고 같은 역으로 돌아오세요.",
+    "Compare the bus from Buxton station with book-ahead Derbyshire Connect; the Thorpe and Ilam stops differ by operating day, and the stepping stones remain optional.": "벅스턴역 출발 버스와 사전 예약 Derbyshire Connect를 비교하세요. Thorpe와 Ilam 정류장은 운행 요일이 다르며 디딤돌 건너기는 선택 사항입니다.",
+    "Choose Sheffield for Northern’s Hope Valley trains and TM Travel 218; Buxton shortens the southern-dale approach, while Bakewell has no rail station. Three nights gives about two full days; four gives three days for the three areas but no weather spare; five gives four full days with a weather buffer.": "Northern의 Hope Valley 열차와 TM Travel 218번을 이용하기엔 Sheffield가 편리합니다. Buxton은 남부 계곡으로 가는 시간을 줄여 주고 Bakewell에는 기차역이 없습니다. 3박이면 온종일 일정은 약 2일, 4박이면 세 지역을 하루씩 보는 3일이 가능하지만 날씨 대비일은 없습니다. 5박이면 온종일 일정 4일로 세 지역과 날씨 대비일까지 챙길 수 있습니다."
+  }
+}
