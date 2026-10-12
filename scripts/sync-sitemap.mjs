@@ -77,6 +77,13 @@ const franceDordogneLastmod = '2026-10-11';
 const franceToulouseOccitanieLastmod = '2026-10-11';
 const franceMarseilleLastmod = '2026-10-12';
 const franceLanguedocLastmod = '2026-10-12';
+const franceCorsicaLastmod = '2026-10-12';
+const franceCorsicaEditedRoutes = [
+  '/france/corsica/',
+  '/france/corsica/ajaccio-west-coast/',
+  '/france/corsica/bastia-cap-corse/',
+  '/france/corsica/bonifacio-porto-vecchio/'
+];
 const franceLanguedocEditedRoutes = [
   '/france/languedoc-camargue/',
   '/france/languedoc-camargue/montpellier-sete/',
@@ -105,9 +112,7 @@ const franceDordogneEditedRoutes = [
 const franceFr02EditedRoutes = [
   '/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/',
   '/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/',
-  '/france/provence-inland/luberon-villages-abbey/',
-  '/france/corsica/bastia-cap-corse/',
-  '/france/corsica/bonifacio-porto-vecchio/'
+  '/france/provence-inland/luberon-villages-abbey/'
 ];
 const franceBrittanyEditedRoutes = [
   '/france/brittany-coasts/',
@@ -838,6 +843,11 @@ for (const route of franceLanguedocEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Languedoc-Camargue route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceLanguedocLastmod });
+}
+for (const route of franceCorsicaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Corsica route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceCorsicaLastmod });
 }
 for (const route of franceProvenceEditedRoutes) {
   const record = records.get(route);

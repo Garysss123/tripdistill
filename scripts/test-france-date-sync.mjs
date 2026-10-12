@@ -67,6 +67,12 @@ const languedocRoutes = [
   '/france/languedoc-camargue/nimes-pont-du-gard/',
   '/france/languedoc-camargue/arles-camargue/'
 ];
+const corsicaRoutes = [
+  '/france/corsica/',
+  '/france/corsica/ajaccio-west-coast/',
+  '/france/corsica/bastia-cap-corse/',
+  '/france/corsica/bonifacio-porto-vecchio/'
+];
 const octoberElevenRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes, ...dordogneRoutes, ...occitanieRoutes];
 const selectedRoutes = [...octoberElevenRoutes, ...coteDAzurRoutes];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -88,6 +94,10 @@ const languedocReviewedRoutes = [
   ...franceClusters.filter((cluster) => cluster.hubContent?.reviewedOn?.iso === '2026-10-12').map((cluster) => `/france/${cluster.slug}/`),
   ...franceGuides.filter((guide) => guide.reviewedOn?.iso === '2026-10-12').map((guide) => guide.url)
 ].filter((route) => languedocRoutes.includes(route));
+const corsicaReviewedRoutes = [
+  ...franceClusters.filter((cluster) => cluster.slug === 'corsica' && cluster.reviewDateISO === '2026-10-12').map((cluster) => `/france/${cluster.slug}/`),
+  ...franceGuides.filter((guide) => guide.hubSlug === 'corsica' && guide.reviewDateISO === '2026-10-12').map((guide) => guide.url)
+].filter((route) => corsicaRoutes.includes(route));
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
 check(reviewedRoutes.length === 24 && octoberElevenRoutes.length === 24 && octoberElevenRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde, Dordogne and Toulouse/Occitanie hubs plus their three children to retain their review dates; found ${reviewedRoutes.join(', ')}`);
@@ -99,6 +109,7 @@ check(coteDAzurRoutes.length === 4 && coteDAzurRoutes.every((route) => {
 }), 'Expected the Nice/Côte d’Azur hub and its three existing children to use 2026-10-12');
 check(provenceReviewedRoutes.length === 3 && provenceRoutes.length === 3 && provenceRoutes.every((route) => provenceReviewedRoutes.includes(route)), `Expected the Provence inland hub, Avignon and Aix to carry the 2026-10-12 review date; found ${provenceReviewedRoutes.join(', ')}`);
 check(languedocReviewedRoutes.length === 4 && languedocRoutes.length === 4 && languedocRoutes.every((route) => languedocReviewedRoutes.includes(route)), `Expected the Languedoc-Camargue hub and all three guides to carry the 2026-10-12 review date; found ${languedocReviewedRoutes.join(', ')}`);
+check(corsicaReviewedRoutes.length === 4 && corsicaRoutes.length === 4 && corsicaRoutes.every((route) => corsicaReviewedRoutes.includes(route)), `Expected the Corsica hub and all three guides to carry the 2026-10-12 review date; found ${corsicaReviewedRoutes.join(', ')}`);
 
 for (const route of routes) {
   const englishLastmod = entries.get(route);
@@ -169,6 +180,26 @@ for (const route of languedocRoutes) {
   }
 }
 
+for (const route of corsicaRoutes) {
+  const expectedPublished = route === '/france/corsica/bastia-cap-corse/' || route === '/france/corsica/bonifacio-porto-vecchio/' ? '2026-10-11' : '2026-09-19';
+  for (const prefix of locales) {
+    const localizedRoute = `${prefix}${route}`;
+    const htmlPath = path.join(root, localizedRoute.slice(1), 'index.html');
+    if (!fs.existsSync(htmlPath)) {
+      errors.push(`${localizedRoute}: built page missing; run npm run build after all four locale batches are reviewed`);
+      continue;
+    }
+    const html = fs.readFileSync(htmlPath, 'utf8');
+    const schemaRaw = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+    let schema;
+    try { schema = JSON.parse(schemaRaw); } catch { errors.push(`${localizedRoute}: JSON-LD missing or invalid`); continue; }
+    const page = (schema['@graph'] || []).find((item) => item['@type'] === 'Article');
+    check(page?.datePublished === expectedPublished, `${localizedRoute}: unexpected original publication date`);
+    check(page?.dateModified === '2026-10-12', `${localizedRoute}: dateModified should be 2026-10-12, found ${page?.dateModified || '(missing)'}`);
+    check(entries.get(localizedRoute) === '2026-10-12', `${localizedRoute}: sitemap lastmod should be 2026-10-12`);
+  }
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   console.error(`France date synchronization: ${errors.length} failure(s).`);
@@ -176,5 +207,5 @@ if (errors.length) {
 } else {
   console.log(englishOnly
     ? `France English date synchronization passed: ${routes.length} English routes; the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques, four Nice/Côte d’Azur, three Provence inland and four Languedoc-Camargue routes use 2026-10-12 with original publication dates preserved.`
-    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, the twenty-four earlier reviewed routes use 2026-10-11, and Marseille/Calanques, Nice/Côte d’Azur, Provence inland and Languedoc-Camargue use 2026-10-12 in all five article schemas and sitemap entries.`);
+    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, the twenty-four earlier reviewed routes use 2026-10-11, and Marseille/Calanques, Nice/Côte d’Azur, Provence inland, Languedoc-Camargue and Corsica use 2026-10-12 in all five article schemas and sitemap entries.`);
 }

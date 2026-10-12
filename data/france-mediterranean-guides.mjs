@@ -900,15 +900,18 @@ export const franceMediterraneanClusters = [
     family: 'island-road-ferry-atlas',
     label: 'Island road and ferry atlas',
     tagline: 'Choose one coast; mountain roads make the island larger than its outline.',
-    hubIntro: 'Corsica’s airports, ferry ports, rail lines and mountain roads create several separate island systems. Ajaccio and the west coast, Bastia and Cap Corse, and Bonifacio–Porto-Vecchio in the south each deserve a base. Driving time, parking and weather outweigh straight-line distance.',
-    stay: 'Use at least five to seven nights for two island regions and more for a wider circuit. One base cannot serve every coast efficiently; change lodging only when the new base removes a repeated mountain-road transfer.',
+    hubIntro: 'Corsica’s three route files run on different transport systems: Ajaccio and the west, Bastia and Cap Corse, and the south via Figari, Porto-Vecchio or Bonifacio. Choose bases around a verified arrival and return; mountain roads make map distance misleading.',
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
+    stay: 'Keep the first and last nights near the arrival and departure node. For five nights, choose Ajaccio plus Bastia, or Bastia plus the south; give each a real base and one weather buffer. A single base suits a focused region, not island-wide day trips. Do not count a ferry or flight day as a full sightseeing day.',
     transfer: 'Flights and ferries arrive at different cities; the island railway covers selected corridors, not the entire coast. Rural buses can be limited, and rental-car pickup, fuel and parking need to be confirmed before arrival.',
     season: 'Summer adds heat, fire risk, congestion and full boats; shoulder seasons reduce services and some businesses. Mountain weather can differ sharply from the coast, and sea state affects ferries and boat excursions.',
     fallback: 'Keep a city, museum, market or short signed coastal route for days when boats, roads or fire controls disrupt the plan. Do not reroute onto unfamiliar mountain roads simply because one coast is closed.',
     sources: [
       ['https://www.visit-corsica.com/en', 'Visit Corsica — official island tourism guide'],
-      ['https://www.train-corse.com/', 'Chemins de fer de la Corse — official island rail information'],
-      ['https://meteofrance.com/', 'Météo-France — official island and marine weather']
+      ['https://cf-corse.corsica/', 'Chemins de fer de la Corse — official island rail information'],
+      ['https://meteofrance.com/', 'Météo-France — official island and marine weather'],
+      ['https://meteofrance.com/meteo-des-forets', 'Météo-France — forest-fire danger forecast']
     ],
     guides: [
       g({
@@ -919,7 +922,9 @@ export const franceMediterraneanClusters = [
         imageQuery: 'Ajaccio gulf Corsica France coast city',
         imageAlt: 'Ajaccio and its Mediterranean gulf on Corsica’s west coast',
         purpose: 'Use Ajaccio as a walkable port-and-museum base, adding the Sanguinaires or a Piana–Porto excursion only through a defined boat or road contract.',
-        summary: 'Ajaccio’s center, market and Napoleonic context form one city route; the red-cliff west coast is a separate long road or sea day with limited shortcuts.',
+        summary: 'Ajaccio’s walkable port-and-museum center is a different day from the red-cliff west coast. Give Piana and Porto a full day or a separate night, and decide the road, boat or return leg before leaving the city.',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         choices: [
           ['Ajaccio city and gulf', 'Keep market, old streets, Fesch Museum or another collection and a gulf-side bus or walk together. This is the car-free option.'],
           ['Sanguinaires sunset route', 'Use the current city bus, road or licensed boat to a defined endpoint, preserving the after-dark return.'],
@@ -944,7 +949,10 @@ export const franceMediterraneanClusters = [
         verify: 'Check airport or ferry arrival, Muvistrada transit, museum opening, boat or west-road conditions, fire risk and the return before departure.',
         sources: [
           ['https://www.ajaccio-tourisme.com/en/', 'Ajaccio Tourism — official city and west-coast planning'],
-          ['https://www.visit-corsica.com/en/Explore-Corsica/A-land-waiting-to-be-discovered/9-destinations-to-explore/Western-Corsica-Spelunca-Liamone', 'Visit Corsica — official western Corsica guide']
+          ['https://www.ajaccio-tourisme.com/en/organize/getting-around/urban-and-periurban-transport/', 'Ajaccio Tourism — official city transport and ferry/rail map'],
+          ['https://ajaccio-aeroport.cci.corsica/en/shuttles/', 'Ajaccio Airport — current shuttle information'],
+          ['https://www.visit-corsica.com/en/Explore-Corsica/A-land-waiting-to-be-discovered/9-destinations-to-explore/Western-Corsica-Spelunca-Liamone', 'Visit Corsica — official western Corsica guide'],
+          ['https://meteofrance.com/meteo-des-forets', 'Météo-France — forest-fire danger forecast']
         ]
       }),
       g({
@@ -960,8 +968,10 @@ export const franceMediterraneanClusters = [
         hubTradeoff: 'A deep Bastia visit and complete Cap Corse loop exceed one day. The route keeps the city plus one northern segment or gives the peninsula its own day.',
         hubDuration: 'Allow five to seven hours for Bastia and a full day for one Cap Corse sector. A complete peninsula loop may be better with an overnight.',
         searchSummary: 'Use Bastia for an easy harbor/citadel walk. For Cap Corse, select the east D80 coast through Erbalunga toward Macinaggio or a separate west-coast drive; bus service to Macinaggio is limited, so verify date and return or book a car/tour.',
-        reviewDate: '11 October 2026',
-        reviewDateISO: '2026-10-11',
+        summary: 'Bastia connects ferry, rail and a listed airport shuttle; Cap Corse is a slower road excursion. Choose Erbalunga, Macinaggio or the full D80 loop only after checking the date-specific outward and return legs.',
+        searchSummary: 'Bastia connects ferry, rail and a listed airport shuttle; Cap Corse is a slower road excursion. Choose Erbalunga, Macinaggio or the full D80 loop only after checking the date-specific outward and return legs.',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         choices: [
           ['Bastia without a car', 'From the ferry or rail node, walk Terra Vecchia and the old port, then climb once to Terra Nova/citadel and the museum only if open. Bastia Airport lists a city shuttle to the station; verify the current stop and transfer before a flight.'],
           ['East-coast Cap Corse', 'Take the D80 north from Bastia toward Erbalunga, Sisco and Macinaggio, then stop at villages you have chosen. The listed Macinaggio–Bastia bus is described as school-term weekday service, not an all-day visitor shuttle; use a car or prebooked tour unless the current date-specific outbound and return both work.'],
@@ -988,7 +998,8 @@ export const franceMediterraneanClusters = [
           ['https://www.bastia-tourisme.com/en/', 'Bastia Tourist Office — official city planning'],
           ['https://bastia-aeroport.cci.corsica/en/shuttles/', 'Bastia Airport — official city shuttle and seasonal intercity coach information'],
           ['https://www.visit-corsica.com/en/Mon-sejour/Transporteurs/Tous-les-transporteurs/LIGNE-DE-BUS-MACINAGGIO-BASTIA-LIGNE-DE-TRANSPORT-SCOLAIRE', 'Visit Corsica — official Macinaggio–Bastia bus operating-day notice'],
-          ['https://www.capcorse-tourisme.corsica/en/', 'Cap Corse Tourism — official peninsula, villages and walking information']
+          ['https://www.capcorse-tourisme.corsica/en/', 'Cap Corse Tourism — official peninsula, villages and walking information'],
+          ['https://meteofrance.com/meteo-des-forets', 'Météo-France — forest-fire danger forecast']
         ],
         siteContext: {
           label: 'BASTIA TO CAP CORSE',
@@ -1015,8 +1026,10 @@ export const franceMediterraneanClusters = [
         hubTradeoff: 'Bonifacio, a long boat circuit and several beaches exceed one day. The route keeps one town and one sea or beach contract.',
         hubDuration: 'Allow five to seven hours for Bonifacio alone and a full day for Porto-Vecchio plus one beach. A boat adds several hours and should replace another major layer.',
         searchSummary: 'For public transport, use Figari’s all-year airport link to Porto-Vecchio as the known anchor, then check the current A Berlina link/return to Bonifacio. No direct Bonifacio airport shuttle is listed; prebook a transfer if timing or lodging there.',
-        reviewDate: '11 October 2026',
-        reviewDateISO: '2026-10-11',
+        summary: 'Use Porto-Vecchio as the known Figari airport-bus anchor, or Bonifacio for an early cliff-town and harbor start. The Figari shuttle listing does not name Bonifacio, so verify that separate transfer before booking.',
+        searchSummary: 'Use Porto-Vecchio as the known Figari airport-bus anchor, or Bonifacio for an early cliff-town and harbor start. The Figari shuttle listing does not name Bonifacio, so verify that separate transfer before booking.',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         choices: [
           ['Bonifacio upper town and cliffs', 'Base in Bonifacio or arrive early from Porto-Vecchio. Walk from the marina up to the old town and choose the open, signed stair/cliff route; combine it with the citadel lanes, not a distant beach drive.'],
           ['Boat from Bonifacio', 'Reserve a licensed harbor departure if the sea forecast and operator confirm it. Treat the boat as a substitute for the longer cliff walk; keep time to return to the same marina and reach your booked base.'],
@@ -1043,7 +1056,8 @@ export const franceMediterraneanClusters = [
           ['https://www.bonifacio.fr/en/', 'Bonifacio Tourist Office — official city and boat planning'],
           ['https://figari-aeroport.cci.corsica/en/shuttles/', 'Figari Airport — official year-round link and current timetable for Porto-Vecchio'],
           ['https://bastia-aeroport.cci.corsica/en/shuttles/', 'Bastia Airport — official seasonal Bastia–Porto-Vecchio coach dates'],
-          ['https://www.portovecchio-tourisme.corsica/en/', 'Porto-Vecchio Tourism — official town, beach and local-transport planning']
+          ['https://www.portovecchio-tourisme.corsica/en/', 'Porto-Vecchio Tourism — official town, beach and local-transport planning'],
+          ['https://meteofrance.com/meteo-des-forets', 'Météo-France — forest-fire danger forecast']
         ],
         siteContext: {
           label: 'SOUTH CORSICA BASES',
