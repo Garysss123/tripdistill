@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T03:34:03.987Z",
+  "generatedAt": "2026-10-12T12:41:37.239Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 797,
+    "assetFileCount": 800,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 8,
-    "licenseClaimsNotIndependentlyVerified": 514,
+    "completeProjectOriginalRightsRecords": 11,
+    "licenseClaimsNotIndependentlyVerified": 511,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 800,
-    "deduplicatedImageCount": 797,
+    "buildImageFilesExcludedForRightsReview": 3,
+    "expectedBuildImageCount": 801,
+    "deduplicatedImageCount": 800,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3518,
     "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 584,
+    "unusedAssetCount": 32,
+    "assetsWithStructuredSourceRecords": 587,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 170,
+    "assetsVisuallyReviewed": 173,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 251,
+    "sourcePageChecked": 254,
     "metadataOrCreditOnly": 522,
-    "usedAssetsWithoutIndependentSourcePageCheck": 518,
+    "usedAssetsWithoutIndependentSourcePageCheck": 516,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 796 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 800 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 3 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -10731,16 +10731,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "French Alps photo review: the exact Commons page identifies Guilhem Vellut, the Annecy old-town canal subject, and CC BY 2.0. The page lists the original 5,472 × 3,648 source and SHA-1 67906f432c94821646db902c7f98a1ce8b0294fe. Local WebP pixels match the canals and old-town waterfront; this records the source-page declaration, not independent rights clearance.",
           "useCount": 6,
           "routes": [
             "/france/",
@@ -10780,16 +10780,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "French Alps photo review: the exact Commons page identifies DimiTalen, the Chamonix valley/Mont Blanc subject, and a CC0 1.0 dedication. The page lists the original 2,982 × 1,983 file and SHA-1 c24f0e9cc3f6d43563b34e716073879879e145ae. Local WebP pixels show the valley from Aiguille du Midi; this records the source-page declaration, not independent rights clearance.",
           "useCount": 4,
           "routes": [
             "/france/french-alps/",
@@ -10820,24 +10820,63 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:T%C3%A9l%C3%A9ph%C3%A9rique_de_Grenoble_Bastille_-_Grenoble-Bastille_cable_car_-_%D9%86%D9%82%D9%84_%D8%A8%D8%A7%D9%84%D9%83%D8%A7%D8%A8%D9%84%D8%A7%D8%AA_%D8%BA%D8%B1%D9%88%D9%86%D9%88%D8%A8%D9%84-%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%AA%D9%8A%D9%84.jpg",
           "sourceTitle": "File:Téléphérique de Grenoble Bastille - Grenoble-Bastille cable car - نقل بالكابلات غرونوبل-الباستيل.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Téléphérique de Grenoble Bastille - Grenoble-Bastille cable car - نقل بالكابلات غرونوبل-الباستيل.jpg",
+          "creditLabel": null,
           "creator": "Sami Mlouhi",
           "license": "CC BY-SA 4.0",
-          "rightsStatus": null,
-          "rightsStatusUrl": null,
+          "rightsStatus": "Wikimedia Commons declares CC BY-SA 4.0 on the source page; this retained claim is not independent rights or chain-of-title verification.",
+          "rightsStatusUrl": "https://commons.wikimedia.org/wiki/File:T%C3%A9l%C3%A9ph%C3%A9rique_de_Grenoble_Bastille_-_Grenoble-Bastille_cable_car_-_%D9%86%D9%82%D9%84_%D8%A8%D8%A7%D9%84%D9%83%D8%A7%D8%A8%D9%84%D8%A7%D8%AA_%D8%BA%D8%B1%D9%88%D9%86%D9%88%D8%A8%D9%84-%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%AA%D9%8A%D9%84.jpg",
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from all live displays on 12 October 2026. Pixel review shows a close-up of the Bastille cable-car cabin/support, not the city basin described by the guide alt text. The local WebP is retained unchanged for provenance; no rights conclusion is made.",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "b648f0af01894517700af607d7b1a40b41b9ac6e",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "French Alps retired-photo source review: the exact Commons page identifies Sami Mlouhi and declares CC BY-SA 4.0. Local pixels show a close-up of the Grenoble Bastille cable-car cabin/support, not the basin panorama named by the old guide alt text. The unchanged derivative is retained but no longer used; the source-page declaration is not independent rights or chain-of-title verification.",
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "8bc9b7b2f837e0e8d4b3b8f43e6edea0d9960d666897d6246689edf091f9cca3",
+      "assetPaths": [
+        "/assets/images/france-grenoble-bastille-route-sequence.svg"
+      ],
+      "byteLength": 6326,
+      "sourceRecords": [
+        {
+          "sha256": "8bc9b7b2f837e0e8d4b3b8f43e6edea0d9960d666897d6246689edf091f9cca3",
+          "assetPath": "/assets/images/france-grenoble-bastille-route-sequence.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/france-grenoble-bastille-route-sequence.svg",
+          "sourceTitle": "Grenoble Bastille route sequence — original schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
           "inventoryStatus": "used",
           "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original editorial sequence diagram. It is schematic, not geographically scaled; no separate reuse license is declared.",
+          "localSha1": "e3260df3cc414cf3a13616b0ce30f1246a2f2f2f",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
-          "verificationDetail": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
           "useCount": 4,
           "routes": [
             "/france/french-alps/",
@@ -10846,11 +10885,9 @@
             "/france/french-alps/grenoble-bastille-chartreuse/"
           ],
           "altTexts": [
-            "Grenoble and its Alpine basin seen from the Bastille"
+            "Original five-language schematic from Grenoble Gare through the city centre to the Bastille cable-car lower station and fort; not a map to scale"
           ],
-          "rawVisibleCredits": [
-            "Téléphérique de Grenoble Bastille - Grenoble-Bastille cable car - نقل بالكابلات غرونوبل-الباستيل.jpg — Sami Mlouhi, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -29825,6 +29862,53 @@
       ]
     },
     {
+      "sha256": "12ff8efa1983e147c2d6c7c89b1fe9e2462f52828b3afb8e9c75cd616af8c4dc",
+      "assetPaths": [
+        "/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast-route-choice.svg"
+      ],
+      "byteLength": 5135,
+      "sourceRecords": [
+        {
+          "sha256": "12ff8efa1983e147c2d6c7c89b1fe9e2462f52828b3afb8e9c75cd616af8c4dc",
+          "assetPath": "/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast-route-choice.svg",
+          "sourceTitle": "St Davids city and coast five-language route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No separate reuse license is declared; the credit identifies authorship and asset provenance only.",
+          "editHistory": "Five-language planning schematic; not a geographic map and not to scale. It separates the St Davids city walk from coast transfers and shows the checked 2026 winter-bus limitation.",
+          "localSha1": "2cb40d843490ba6dfa3ac1405b13d3103a01fb57",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 6,
+          "routes": [
+            "/united-kingdom/",
+            "/united-kingdom/pembrokeshire-west-wales/",
+            "/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/",
+            "/united-kingdom/pembrokeshire-west-wales/st-davids-coast/",
+            "/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/"
+          ],
+          "altTexts": [
+            "Five-language planning schematic: walk St Davids Cathedral Close, High Street and Oriel y Parc as one city zone; treat St Non’s, Caerfai or a harbour as a separate road or bus transfer with a confirmed return; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
       "sha256": "bea76637a913ffa9ae5c4267e3177ea76cf1852acc4593de4a4ec0d8b58a7093",
       "assetPaths": [
         "/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp"
@@ -29836,40 +29920,30 @@
           "assetPath": "/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Davids_Cathedral_Wales_Pembrokeshire.jpg",
-          "sourceTitle": "File:St Davids Cathedral Wales Pembrokeshire.jpg",
+          "sourceTitle": "St Davids Cathedral Wales Pembrokeshire.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "St Davids Cathedral Wales Pembrokeshire.jpg",
-          "creator": "Aqwis",
+          "creditLabel": null,
+          "creator": "Aqwis (Commons source-page declaration)",
           "license": "CC BY-SA 3.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Retained unused after an embedded EXIF user-comments field named a different copyright holder; resolve attribution before any future use.",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "6cf4c89544ad5b08397d395b9cc2dc4cec49bb44",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
-          "routes": [
-            "/united-kingdom/",
-            "/united-kingdom/pembrokeshire-west-wales/",
-            "/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/",
-            "/united-kingdom/pembrokeshire-west-wales/st-davids-coast/",
-            "/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/"
-          ],
-          "altTexts": [
-            "St Davids Cathedral set in its valley in Pembrokeshire"
-          ],
-          "rawVisibleCredits": [
-            "St Davids Cathedral Wales Pembrokeshire.jpg — Aqwis, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -29922,6 +29996,52 @@
       ]
     },
     {
+      "sha256": "a01ac0efcaf40067a62783dd1889813bc14ad927e6ced862d404e4ec10ccdb54",
+      "assetPaths": [
+        "/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms-route-choice.svg"
+      ],
+      "byteLength": 6427,
+      "sourceRecords": [
+        {
+          "sha256": "a01ac0efcaf40067a62783dd1889813bc14ad927e6ced862d404e4ec10ccdb54",
+          "assetPath": "/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms-route-choice.svg",
+          "sourceTitle": "Aviemore & Cairngorms five-language route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No separate reuse license is declared; the credit identifies authorship and asset provenance only.",
+          "editHistory": "Five-language planning schematic; not a geographic map and not to scale. It separates the Stagecoach 30 mountain corridor from the Rothiemurchus transfer and requires a dated return check.",
+          "localSha1": "22fb441368c777e8b3d73cf38e959444093bc009",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/united-kingdom/scottish-highlands/",
+            "/united-kingdom/scottish-highlands/aviemore-cairngorms/",
+            "/united-kingdom/scottish-highlands/glencoe-fort-william/",
+            "/united-kingdom/scottish-highlands/inverness-loch-ness/"
+          ],
+          "altTexts": [
+            "Five-language planning schematic: from Aviemore choose the Stagecoach 30 Glenmore/Cairngorm Mountain corridor or separately confirm Rothiemurchus, then check the date-specific return; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
       "sha256": "4b6c75530bbd18100d6929d22a5ba4b1f91e714e69ac6620561e3b2fcec6c38e",
       "assetPaths": [
         "/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp"
@@ -29933,39 +30053,30 @@
           "assetPath": "/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cairngorms_National_Park,_United_Kingdom_(Unsplash).jpg",
-          "sourceTitle": "File:Cairngorms National Park, United Kingdom (Unsplash).jpg",
+          "sourceTitle": "Cairngorms National Park, United Kingdom (Unsplash).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Cairngorms National Park, United Kingdom (Unsplash).jpg",
-          "creator": "Daniël Hartog danielhartog",
-          "license": "CC0",
+          "creditLabel": null,
+          "creator": "Daniël Hartog",
+          "license": "CC0 1.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Retained unused after a conflicting embedded EXIF copyright statement was found; verify permission before any future use.",
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "ffaf50429bcb54be514707e803d154a396f52dc4",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/united-kingdom/scottish-highlands/",
-            "/united-kingdom/scottish-highlands/aviemore-cairngorms/",
-            "/united-kingdom/scottish-highlands/glencoe-fort-william/",
-            "/united-kingdom/scottish-highlands/inverness-loch-ness/"
-          ],
-          "altTexts": [
-            "The Cairngorm Mountains near Aviemore in Scotland"
-          ],
-          "rawVisibleCredits": [
-            "Cairngorms National Park, United Kingdom (Unsplash).jpg — Daniël Hartog danielhartog, CC0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },

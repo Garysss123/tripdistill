@@ -1,0 +1,20 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/french-alps/",
+    "/france/french-alps/annecy-lake-old-town/",
+    "/france/french-alps/chamonix-mountain-systems/",
+    "/france/french-alps/grenoble-bastille-chartreuse/"
+  ],
+  "translations": {
+    "Departure · Chamonix base": "출발일 · 샤모니 거점",
+    "For a rail departure, sleep near Chamonix-Mont-Blanc station the night before. Check the dated connection through Saint-Gervais–Le Fayet, leave a transfer margin and do not schedule a lift or boat before departure.": "기차로 출발한다면 전날 밤 Chamonix-Mont-Blanc역 근처에 묵으세요. Saint-Gervais–Le Fayet 경유 날짜별 연결편을 확인하고 환승 여유를 두며, 출발 전에 리프트나 유람선을 일정에 넣지 마세요.",
+    "Compagnie des Bateaux du Lac d’Annecy — official cruise routes and bookings": "Compagnie des Bateaux du Lac d’Annecy — 공식 유람선 노선 및 예약"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

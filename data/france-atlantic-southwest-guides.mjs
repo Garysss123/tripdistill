@@ -12,19 +12,46 @@ export const franceAtlanticSouthwestClusters = [
     family: 'lake-glacier-altitude-board',
     label: 'Lake and altitude board',
     tagline: 'Buy elevation only after weather, operating status and descent agree.',
-    hubIntro: 'Annecy, Chamonix and Grenoble expose three different Alpine systems: a lake city with busy shores, a high-mountain valley whose lifts are weather-dependent, and an urban basin opening into Chartreuse and Vercors. A clear valley forecast does not guarantee a useful summit day.',
-    stay: 'Use at least three nights for two Alpine systems. Annecy suits lake and old-town days; Chamonix rewards a valley base with a flexible weather window; Grenoble works for museums, Bastille and lower mountain gateways.',
-    transfer: 'Regional trains and buses connect the gateways, but mountain lift, lake boat and trail access operate on their own clocks. Build the final descent and valley return before buying a high-altitude product.',
-    season: 'Snow, maintenance, wind, thunderstorms and trail condition matter more than a simple summer/winter label. Shoulder seasons can close lifts while towns remain fully usable; heat can also intensify lake crowding and afternoon storms.',
-    fallback: 'Keep a complete valley or city day ready: Annecy old town and lakeshore, Chamonix museums and lower walks, or Grenoble collections and Bastille. Never replace a closed lift with an unassessed mountain trail.',
+    reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
+    publishedDateISO: '2026-09-19',
+    countryCardIntro: 'Annecy, Chamonix and Grenoble expose three different Alpine systems: a lake city with busy shores, a high-mountain valley whose lifts are weather-dependent, and an urban basin opening into Chartreuse and Vercors. A clear valley forecast does not guarantee a useful summit day.',
+    hubIntro: 'Annecy, Chamonix and Grenoble are separate Alpine systems, not three stops on one convenient day-trip loop. Annecy pairs a compact canal centre with a long lake shore; Chamonix is a valley of independent railways and weather-sensitive lifts; Grenoble is an urban basin with the Bastille above the Isère and the Chartreuse gateway beyond it. Choose a corridor first, then let the dated forecast, operating board and safe return set the elevation. This guide gives the lake and high-valley route a five-night sample and keeps Grenoble as its own city-and-park choice.',
+    stay: 'Count full days as well as nights. Three nights suit one gateway: sleep by Annecy Gare/old town for a lake-city stay, in central Chamonix near its station and valley buses for lift flexibility, or near Grenoble Gare/Europole for tram and rail access. Five nights can split into two nights in Annecy and three in Chamonix, with a separate transfer morning and two mountain-weather days; this skips Grenoble. Seven nights can add two Grenoble nights, but hotel changes and cross-valley rail connections consume time. Choose Chamonix Centre for the central lift and rail terminals, Les Praz only if its local train/bus connection fits your plans, and a lakeshore lodging outside Annecy centre only after checking the SIBRA return. Sleeping in a remote hamlet saves no time if the last bus fails.',
+    transfer: 'Use TER Auvergne-Rhône-Alpes for the regional rail legs. From Annecy toward Chamonix, check the dated TER journey to Saint-Gervais–Le Fayet and the onward Mont-Blanc Express connection to Chamonix-Mont-Blanc; they are separate legs, not one guaranteed through service. Chamonix’s local bus and Mont-Blanc Express stops serve different valley sites. In Annecy, walk from Annecy Gare to the Thiou/old-town core, then use SIBRA for a named shore stop; the lake boats are a separate operator and timetable. In Grenoble, use M Réso’s live planner and tram map between Gare, the centre and the Isère-side Bastille terminal. None of these networks guarantees the last lift, boat or bus will connect to your intercity train: save both directions and the final return before leaving lodging.',
+    season: 'Treat the season as an operating calendar, not a weather label. Wind, cloud, snow, storms, trail maintenance, lake traffic and shoulder-season closures can split a clear town day from a closed summit day. Check Météo-France’s mountain forecast and each operator’s live board before committing to Aiguille du Midi, Montenvers, a boat crossing or a steep trail. On 12 October 2026, Montenvers’ official 2026 page listed the summer train season through 1 November, while its cable car was shown closed 28 September–16 October and the ice cave closed through 1 November; these are dated 2026 notices, not a promise for later seasons. Confirm the actual product, date-specific ticket conditions, any departure reservation and current price with its operator; no fixed fare or timetable is promised here.',
+    fallback: 'Give every gateway a complete low-risk day: Annecy’s Thiou lanes, château museum if open, Jardins de l’Europe and one sheltered shore; Chamonix’s valley centre, Alpine Museum and a verified lower-valley walk; or Grenoble’s Musée de Grenoble, old centre and Isère banks. If the Grenoble cable car is closed, stay with the flat city sequence rather than assuming the climb is safe. A closed lift is not permission to use an exposed or unassessed path, and a cancelled boat is not a reason to cross the lake by an unconfirmed bus.',
+    reviewDisclaimer: 'The operator controls date-specific lift, rail, boat and ticket conditions. Check exact opening, weather, reservation rules, prices and the last return for the travel date; this guide does not promise a fare, departure time or future operating calendar.',
+    itineraryLabel: 'Five nights · Annecy to Chamonix',
+    itineraryHeading: 'One lake day, one transfer, then a flexible mountain window.',
+    itineraryIntro: 'Use Annecy Gare/old town for two nights and central Chamonix for three. The sample gives four usable days around partial arrival and departure days; it deliberately leaves Grenoble and a second high system out.',
+    itinerary: [
+      ['Arrival · Annecy base', 'Sleep near Annecy Gare or the old-town edge. Walk the Thiou only if the arrival leaves time; check SIBRA, the lake-boat operator and the next day’s weather before choosing a shore.'],
+      ['Full day · Annecy', 'Walk the Thiou canals and Palais de l’Île area, then choose one: Jardins de l’Europe/Le Pâquier and a booked lake boat, or a SIBRA ride to one named shore. Do not add a full lake circuit.'],
+      ['Transfer · Annecy to Chamonix', 'Check TER to Saint-Gervais–Le Fayet and the onward Mont-Blanc Express to Chamonix-Mont-Blanc. Treat this as a transfer day; confirm the connection and final lodging stop before booking.'],
+      ['Full day · first mountain system', 'Choose Aiguille du Midi or Montenvers–Mer de Glace only after its separate operating board, ticket product, visibility, last descent and current access agree. Keep the other system for another date.'],
+      ['Weather buffer · valley finish', 'Use the second Chamonix day for a weather-shifted single system or the Alpine Museum, centre and verified lower-valley route. Depart only after the rail/bus return is rechecked.'],
+      ['Departure · Chamonix base', 'For a rail departure, sleep near Chamonix-Mont-Blanc station the night before. Check the dated connection through Saint-Gervais–Le Fayet, leave a transfer margin and do not schedule a lift or boat before departure.']
+    ],
+    faq: [
+      ['How many nights do the three gateways need?', 'Three nights works best for one base and its local system. Five nights can split Annecy and Chamonix as shown, with one transfer morning and two Chamonix weather days. Give Grenoble at least two more nights; seven nights is a workable three-gateway sample, not a guarantee that every mountain attraction will operate.'],
+      ['Where should I stay if I want to avoid a car?', 'In Annecy, choose the Gare/old-town edge for rail and walking, or a named north-shore stop only after confirming SIBRA service back. In Chamonix, central lodging near Chamonix-Mont-Blanc station and the bus network handles the most systems; Les Praz is a separate choice with a local connection to verify. In Grenoble, Gare/Europole or the tram-served centre makes the city route simpler than sleeping up-valley.'],
+      ['Can I buy one ticket for the whole Alpine route?', 'No single ticket is assumed here. TER, the Mont-Blanc Express, SIBRA, Grenoble M Réso, boats and each mountain lift or railway have separate operators, dates and conditions. Confirm every leg and the last return before buying a timed excursion.']
+    ],
     sources: [
-      ['https://www.france-montagnes.com/', 'France Montagnes — official French mountain destination guide'],
       ['https://www.ter.sncf.com/auvergne-rhone-alpes', 'TER Auvergne-Rhône-Alpes — official regional transport'],
-      ['https://meteofrance.com/', 'Météo-France — official mountain forecasts and warnings']
+      ['https://www.mont-blanc-express.ch/en/experiences-lm', 'Mont-Blanc Express — official route, timetable and live traffic information'],
+      ['https://www.bateaux-annecy.com/', 'Compagnie des Bateaux du Lac d’Annecy — official cruise routes and bookings'],
+      ['https://meteofrance.com/meteo-montagne', 'Météo-France — official mountain forecasts'],
+      ['https://www.sibra.fr/', 'SIBRA — official Annecy transit planner'],
+      ['https://www.reso-m.fr/', 'M réso — official Grenoble network, route planner and traffic information'],
+      ['https://www.grenoble-tourisme.com/en/', 'Grenoble Alpes Tourisme — official city and Chartreuse gateway planning']
     ],
     guides: [
       g({
         slug: 'annecy-lake-old-town',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         name: 'Annecy Old Town & Lake',
         instrument: 'Canal-to-lake crowd clock',
         layout: 'lake-city-ribbon',
@@ -34,16 +61,27 @@ export const franceAtlanticSouthwestClusters = [
         summary: 'Use the Thiou canals and old streets early, then choose a western-shore walk, a booked boat or a bounded bicycle section whose return works in heat and traffic.',
         choices: [
           ['Old town and museum', 'Prioritize the canals, Palais de l’Île area, château museum where open and market streets. This is the weather-flexible city route.'],
-          ['Lakeshore and boat', 'Use Jardins de l’Europe and the shore, then board one verified cruise or crossing. The quay and seasonal timetable become the main clock.'],
+          ['Lakeshore and boat', 'Use Jardin de l’Europe and Le Pâquier, then board one verified Compagnie des Bateaux du Lac d’Annecy cruise. The exact quay, dated sailing and return become the main clock.'],
           ['Bicycle segment', 'Ride a defined section of the lake route with rental hours, skill, heat and turnaround fixed. A complete circuit is a separate athletic day.']
         ],
-        access: 'Annecy station is walkable to the old town. Boat quays, bicycle rental points and bus stops serve different shore sections; identify the exact departure and return before leaving the center.',
-        tradeoff: 'A full lake circuit, museum visit, market lunch and boat do not fit as a relaxed city day. The route keeps the old town plus one water contract and gives up the rest.',
+        access: 'Arrive at Annecy Gare, walk by Rue de la Gare toward the Thiou canals and Palais de l’Île, then continue to Jardin de l’Europe and Le Pâquier. For a longer shore, choose one SIBRA stop such as Albigny in the live planner; lake boats depart from their own quay and do not share the bus timetable. Save the exact SIBRA stop and return before leaving the centre.',
+        tradeoff: 'A full lake circuit, museum visit, market lunch and boat do not fit as a relaxed city day. The route keeps the old town plus one water contract and gives up the rest; a night on the shore trades quieter lodging for a longer return to the station and restaurants.',
+        siteContext: {
+          label: 'Sleep and walk by shore segment',
+          heading: 'Make the lake a choice of districts, not one loop.',
+          intro: 'The station, old-town lanes and northern shore have different end-of-day connections. Choose the district that matches the last activity and the return you have actually checked.',
+          details: [
+            ['Annecy Gare / old-town edge', 'Best for a short stay without a car: reach the Thiou, Palais de l’Île and food streets on foot, then walk back to the regional train. The market lanes are cramped with bags, so drop luggage first.'],
+            ['Jardin de l’Europe → Le Pâquier', 'A broad, legible first shore section after the old town. Walk the public lakeside path, then turn back or board one confirmed cruise from its named quay; this is not the beginning of a full circuit.'],
+            ['Albigny / north shore', 'Choose this only for a shore-focused night or a confirmed SIBRA connection. The bus stop, boat landing and lodging door are separate points; check the last return and do not assume a lake cruise lands here.'],
+            ['Route shape', 'Gare → Rue de la Gare → Thiou → Palais de l’Île/Pont Perrière → Jardin de l’Europe → Le Pâquier → return by the open shore edge. Add one museum or one water mode, then stop.']
+          ]
+        },
         stages: [
-          ['Enter along the Thiou', 'Walk from the station toward the river, orient to the old-town bridges and avoid stopping in the narrowest market lanes with luggage.'],
-          ['Read the compact historic core', 'Use the canal streets, church exteriors and one museum or market block, then leave before the same bridges become repeated photo stops.'],
-          ['Commit to one lake mode', 'Walk one shore, board the named boat or begin a bounded bicycle segment. Check wind, heat and the operator’s actual return.'],
-          ['Return through the open park edge', 'Finish via Jardins de l’Europe or another broad shore route, reaching the station or lodging without re-entering the densest lanes.']
+          ['Gare to the Thiou', 'Walk from Annecy Gare via Rue de la Gare to the Thiou. Cross the old-town bridges without blocking the market lanes; leave bags at the lodging before continuing.'],
+          ['Canal and old-town block', 'Follow the canal streets toward Palais de l’Île and Pont Perrière, then choose one indoor visit or market block. Use the named entry and opening notice for the museum; do not stack two timed interiors.'],
+          ['One shore contract', 'Continue to Jardin de l’Europe and Le Pâquier. Either walk that same public edge back, board one booked Compagnie des Bateaux du Lac d’Annecy departure, or use SIBRA to Albigny after checking the return.'],
+          ['Return by the open edge', 'Use the broad park-side shore to return toward Gare/old town. Check the SIBRA or boat return before committing to a distant shore; a full lake circuit is a separate day.']
         ],
         fallback: 'If boats stop or storms threaten, keep the old town, château museum and short sheltered lake edge. If the center is overwhelmed, use a quieter park and museum rather than extending onto an exposed shore.',
         watch: [
@@ -53,14 +91,21 @@ export const franceAtlanticSouthwestClusters = [
         ],
         duration: 'Allow five to seven hours for old town plus one lake mode. A full bicycle circuit or distant shore excursion should be a separate full day.',
         combine: 'Combine the center with one western or northern lake segment. Keep Chamonix, Geneva and remote mountain viewpoints for separate days.',
-        verify: 'Check Annecy boat or bicycle operator, museum and market calendar, local transport, weather and any lakeshore event closures before departure.',
+        verify: 'Check Compagnie des Bateaux du Lac d’Annecy for the exact quay and return, SIBRA for the chosen shore stop, the Château d’Annecy visitor page, market calendar, weather and any lakeside event closure.',
+        operations: {
+          entryReturn: 'From Annecy Gare, walk via Rue de la Gare to the Thiou and Palais de l’Île; continue along Jardin de l’Europe to Le Pâquier. For Albigny, use SIBRA’s live planner to select the current stop and direction. The Compagnie des Bateaux du Lac d’Annecy uses a separate quay and dated sailing plan; do not treat it as a through bus.',
+          booking: 'Check the Château d’Annecy’s dated access and the boat operator’s route, ticket and return for the chosen date. Reserve only the specific departure or timed entry the official operator requires; this guide quotes no fare or sailing time.',
+          weather: 'Heat, thunderstorms and event crowding make the shore the adjustable section. Keep the old-town/castle block and one sheltered café or museum, shorten the open-water walk, and do not hire a bicycle unless its rental hours, route condition and turnaround all fit.'
+        },
         sources: [
           ['https://en.lac-annecy.com/', 'Lake Annecy Tourist Office — official destination planning'],
-          ['https://www.sibra.fr/en/', 'SIBRA — official Annecy bus network information']
+          ['https://www.sibra.fr/en/', 'SIBRA — official Annecy bus network information'],
+          ['https://www.bateaux-annecy.com/', 'Compagnie des Bateaux du Lac d’Annecy — official cruise routes and bookings']
         ]
       }),
       g({
         slug: 'chamonix-mountain-systems',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         name: 'Chamonix Mountain Systems',
         instrument: 'Lift-visibility-descent control panel',
         layout: 'altitude-control-panel',
@@ -73,13 +118,24 @@ export const franceAtlanticSouthwestClusters = [
           ['Montenvers–Mer de Glace', 'Choose the rack railway and current glacier-site access for landscape and climate interpretation. Construction and stair or gondola arrangements can change.'],
           ['Lower panorama or valley day', 'Use Brévent, Flégère or a lower signed route only when its specific lift and trail status are confirmed; otherwise keep museums, villages and valley transport.']
         ],
-        access: 'Arrive through Chamonix station or the valley bus and Mont-Blanc Express network, then walk to the exact lift or railway terminal. Products, departure points and maintenance calendars differ; one open valley does not mean all systems operate.',
-        tradeoff: 'Two major mountain systems in one day multiply cost and weather risk while shortening both. The route chooses one elevation contract and uses the valley for the remaining time.',
+        access: 'Arrive at Chamonix-Mont-Blanc on the TER Mont-Blanc Express, then use the valley bus or walk to the exact terminal. Aiguille du Midi begins in central Chamonix; the Montenvers rack railway has its own station, ticket and site access; Tramway du Mont-Blanc starts at Le Fayet and is a separate excursion. One open valley does not mean all systems operate.',
+        tradeoff: 'Two major mountain systems in one day multiply cost and weather risk while shortening both. The route chooses one elevation contract and uses the valley for the remaining time. Sleep in Chamonix Centre for station and bus access; a Les Praz or Argentière night suits a specific valley segment only if its last Mont-Blanc Express/bus return is confirmed.',
+        siteContext: {
+          label: 'Valley base and summit day',
+          heading: 'Sleep by the return corridor you will use.',
+          intro: 'Chamonix’s rail line, buses and lift terminals are spaced along the valley. The station name on an attraction page may not be the same station that brings you home.',
+          details: [
+            ['Chamonix Centre', 'Best first base for a short stay: walk to the Chamonix-Mont-Blanc SNCF station, the Aiguille du Midi terminal and the central bus corridor. The central hotel is more useful than a cheaper room with an unverified late transfer.'],
+            ['Les Praz', 'Use for a lower valley or Flégère-area plan only after checking the local Mont-Blanc Express stop, bus and trail status. It is not the Aiguille du Midi terminal and does not remove the need to return through the centre.'],
+            ['Argentière / Vallorcine', 'These are distinct northern valley bases served along the Mont-Blanc Express corridor. Choose them for a planned northern day, not as a last-minute substitute when the central lifts close.'],
+            ['One-day sequence', 'Chamonix station/centre → one lift or Montenvers station → the signed visitor area → earlier descent → centre. Do not add Le Fayet’s Tramway du Mont-Blanc or a second summit system to this chain.']
+          ]
+        },
         stages: [
           ['Check the live operating board', 'Before buying or leaving lodging, read lift, railway, road and weather status for the exact system. Confirm the ticket window and last descent.'],
-          ['Acclimatize through the valley terminal', 'Arrive early, eat and hydrate. At high altitude, follow operator health guidance and turn back if symptoms appear.'],
-          ['Use one mountain system fully', 'Follow signed visitor areas, current glacier access or maintained trails. Do not leave controlled areas to chase an image or shortcut.'],
-          ['Descend with an earlier backup', 'Return before the final advertised descent, allowing wind or queue delays, then finish with a valley museum or river walk.']
+          ['Start from the right terminal', 'Walk from Chamonix-Mont-Blanc station to the central Aiguille du Midi terminal, or to the separate Gare du Montenvers for the rack railway. These are not one ticket or boarding point.'],
+          ['Use one signed mountain system', 'Follow the selected operator’s visitor sequence and live glacier-access instructions. The 2026 Montenvers notice listed a summer train period to 1 November but separate cable-car and ice-cave closures; check the component you intend to use.'],
+          ['Descend before the last slot', 'Plan the return while still at the valley terminal, with queue and weather margin; then walk the central streets or visit a verified museum. If a same-day return is uncertain, do not start the excursion.']
         ],
         fallback: 'If wind, cloud, maintenance or health removes elevation, use the Alpine Museum or current Mont Blanc interpretation, Chamonix streets, Les Praz or another verified low valley route. Do not substitute an unsupervised high trail.',
         watch: [
@@ -89,19 +145,47 @@ export const franceAtlanticSouthwestClusters = [
         ],
         duration: 'Give one mountain system four to six hours plus valley margin; make the whole day available for Aiguille du Midi or Montenvers. Two systems need another day.',
         combine: 'Combine one high system with Chamonix valley only. Keep Annecy, Courmayeur and long hikes for separate weather windows.',
-        verify: 'Check Chamonix official live lift, Montenvers and trail status, Météo-France mountain forecast, health guidance and the last descent immediately before travel.',
+        verify: 'Check the Compagnie du Mont-Blanc live board, Montenvers date-specific opening and ticket page, Mont-Blanc Express traffic information, Météo-France mountain forecast and the exact last descent.',
+        operations: {
+          entryReturn: 'Use TER to Chamonix-Mont-Blanc on the Mont-Blanc Express corridor. Walk to the central Aiguille du Midi terminal or the distinct Gare du Montenvers for the rack railway; use the valley bus for a different lift stop only after checking its current direction and return. Leave the Tramway du Mont-Blanc at Le Fayet as another day.',
+          booking: 'Choose one named product and read its date-specific ticket rules, departure reservation, included components and refund terms before paying. Montenvers currently publishes separate train, cable-car, ice-cave and glacier-site status; a train ticket does not prove every component is open. Prices and departure times remain with the operator.',
+          weather: 'If cloud, wind, maintenance or altitude health removes the summit, stay below: use the Alpine Museum and centre, or a lower route explicitly shown open by the destination and trail authority. Do not replace a cancelled lift with an unassessed high path.'
+        },
         sources: [
           ['https://www.chamonix.com/', 'Chamonix-Mont-Blanc Tourist Office — official live valley planning'],
-          ['https://www.montblancnaturalresort.com/en/', 'Compagnie du Mont-Blanc — official lift and railway operations']
+          ['https://www.montblancnaturalresort.com/en', 'Compagnie du Mont-Blanc — official lift and railway operations'],
+          ['https://www.montenverstrain.com/en/opening-hours-and-prices/', 'Montenvers — dated train, cable-car, glacier-site and ticket information'],
+          ['https://www.mont-blanc-express.ch/en/experiences-lm', 'Mont-Blanc Express — official timetable and live traffic information'],
+          ['https://meteofrance.com/meteo-montagne', 'Météo-France — official mountain forecast']
         ]
       }),
       g({
         slug: 'grenoble-bastille-chartreuse',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         name: 'Grenoble, Bastille & Chartreuse Edge',
         instrument: 'Basin-to-mountain gateway section',
         layout: 'urban-alpine-section',
         imageQuery: 'Grenoble Bastille cable car Alps France city panorama',
         imageAlt: 'Grenoble and its Alpine basin seen from the Bastille',
+        imageOverride: {
+          src: '/assets/images/france-grenoble-bastille-route-sequence.svg',
+          alt: 'Original five-language schematic from Grenoble Gare through the city centre to the Bastille cable-car lower station and fort; not a map to scale',
+          label: 'Grenoble Bastille route sequence — original schematic',
+          creditTitle: 'Grenoble Bastille route sequence — original schematic',
+          caption: 'Original TripDistill route sequence · schematic, not to scale · see the five-language key in the graphic',
+          source: 'https://tripdistill.com/assets/images/france-grenoble-bastille-route-sequence.svg',
+          sourceTitle: 'Grenoble Bastille route sequence — original schematic',
+          commonsTitle: null,
+          creator: 'TripDistill Editorial Team',
+          license: null,
+          rightsStatus: 'Project original; no separate reuse license declared',
+          rightsStatusUrl: 'https://tripdistill.com/terms-of-use/',
+          commercialReuseEligibility: 'unknown',
+          attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
+          assetType: 'original-planning-diagram',
+          localSha1: 'e3260df3cc414cf3a13616b0ce30f1246a2f2f2f',
+          editNote: 'Original editorial sequence diagram. It is schematic, not geographically scaled; no separate reuse license is declared.'
+        },
         purpose: 'Use Grenoble’s museums and Bastille as one urban-Alpine section, adding Chartreuse only through a named, reachable gateway rather than an improvised mountain drive.',
         summary: 'Cross the historic center and Isère, ascend once to the Bastille by cable car or foot, and decide whether the city or a separate lower-mountain excursion carries the afternoon.',
         choices: [
@@ -109,15 +193,26 @@ export const franceAtlanticSouthwestClusters = [
           ['Bastille ascent', 'Ride the cable car or choose a signed climb, then use the fort and panorama as the city’s geographic explanation.'],
           ['Chartreuse gateway', 'Travel to one reachable park town, museum or signed trail through current regional transport or a car. This replaces most of the city museum time.']
         ],
-        access: 'Grenoble station connects to tram lines and a walkable center. The Bastille cable-car lower station is by the Isère; Chartreuse destinations require a specific bus, car or tour and may not support late returns.',
-        tradeoff: 'A deep museum visit, Bastille hike and mountain-park excursion exceed one day. The route keeps two layers at most and gives up the distant ridge chase.',
+        access: 'Arrive at Grenoble Gare and use the M Réso live route planner or tram map for the city centre. For the Bastille, the lower cable-car station is beside the Isère near Jardin de Ville; the urban route connects the Musée de Grenoble/Place de Lavalette, Place Saint-André and Quai Stéphane Jay. Chartreuse is a separate excursion: enter Le Sappey-en-Chartreuse as the destination in the current regional planner and confirm the outward and evening return before leaving Grenoble.',
+        tradeoff: 'A deep Musée de Grenoble visit, the Bastille and a Chartreuse park excursion exceed one day. Keep the city-and-Bastille pair, or give Le Sappey-en-Chartreuse a separate day that replaces the museum and much of the centre. Sleep near Gare/Europole for TER and tram connections or in the tram-served hyper-centre; do not book an up-valley night without a confirmed last service.',
+        siteContext: {
+          label: 'Choose a basin-side walking zone',
+          heading: 'Read the city before climbing above it.',
+          intro: 'The Bastille is attached to Grenoble’s centre, while Chartreuse is a separate transport decision. A useful day follows the river and civic core in one direction before ascending once.',
+          details: [
+            ['Gare / Europole', 'Best for a TER arrival or departure and M Réso tram access. Drop luggage, then use the current tram map or walk into the centre; do not assume the Bastille cable-car lower station is at the rail forecourt.'],
+            ['Place de Lavalette → Place Saint-André', 'Use the Musée de Grenoble as the indoor anchor, then walk the old-centre streets toward Place Saint-André and the Isère. Choose either the museum interior or an extended centre visit if time is short.'],
+            ['Jardin de Ville → Quai Stéphane Jay', 'The cable-car lower station sits by the river. Approach from Jardin de Ville, check the Bastille operator’s opening calendar and final ascent, then use the fort/panorama before returning by the same verified system.'],
+            ['Le Sappey-en-Chartreuse', 'This is a named gateway, not a walk from the Bastille. Plan it as a second day using the current M Réso/Cars Région itinerary and a return that leaves enough margin for the last Grenoble tram or train.']
+          ]
+        },
         stages: [
-          ['Enter through tram or center', 'From the station, use tram or a direct walk to the selected museum or river edge, recording the final station connection.'],
-          ['Read the basin at street level', 'Connect the old center, museum and Isère before ascending, so the mountain panorama has urban context.'],
-          ['Ascend once or leave for Chartreuse', 'Use the operating cable car or signed path, or board the verified regional connection. Do not combine a late ascent with a remote trail.'],
-          ['Return before valley weather shifts', 'Descend or leave the park with a backup service, finishing near a tram line rather than across the city from the train.']
+          ['Gare to the centre', 'Use M Réso from Grenoble Gare to the central tram corridor, or walk to the selected museum entrance. Check the current stop and service notice rather than assuming a station-to-cable-car transfer.'],
+          ['Museum and civic block', 'Choose Musée de Grenoble/Place de Lavalette, then walk the old centre toward Place Saint-André and the Isère. If the museum visit runs long, leave the riverside ascent for another date.'],
+          ['Jardin de Ville to Bastille', 'Reach the lower station beside the Isère from Jardin de Ville. Ride the Grenoble-Bastille Cable Car when open, or omit the climb; the graphic shows order only and is not a navigational map.'],
+          ['Return through the same gateway', 'Descend by the operating cable car and return toward the tram corridor or Gare. For a Chartreuse day, use the confirmed Le Sappey-en-Chartreuse bus return instead of combining it with a late ascent.']
         ],
-        fallback: 'If the cable car or mountain bus stops, use Grenoble museums, the Isère banks and the flatter center. If heat makes the climb unsuitable, ride only when operating or omit elevation without replacing it with an exposed trail.',
+        fallback: 'If the cable car is closed or heat makes the climb unsuitable, stay in the lower city: Musée de Grenoble if open, Place Saint-André, the Isère banks and tram-served centre. If a Chartreuse bus is cancelled, do not improvise a trail or taxi-free return; keep a Grenoble museum and city walk instead.',
         watch: [
           ['The basin can trap heat', 'Summer afternoons may make steep paths unpleasant; move the ascent earlier and carry water.'],
           ['Cable-car and path conditions differ', 'A technical closure does not automatically make the footpath safe or appropriate.'],
@@ -125,10 +220,18 @@ export const franceAtlanticSouthwestClusters = [
         ],
         duration: 'Allow five to seven hours for Grenoble and the Bastille. A Chartreuse excursion needs a full separate day or replaces the museum block.',
         combine: 'Combine the city with Bastille, or use Grenoble as the departure point for one Chartreuse gateway. Keep Annecy and Chamonix separate.',
-        verify: 'Check cable-car operation, museum hours, park access, regional bus return and mountain weather before choosing the upper layer.',
+        verify: 'Check the Grenoble-Bastille Cable Car’s dated operating calendar and last ascent, Musée de Grenoble visitor notice, M Réso live planner, Le Sappey-en-Chartreuse bus return, park access and Météo-France mountain forecast.',
+        operations: {
+          entryReturn: 'From Grenoble Gare, use M Réso’s current tram planner/map for the city-centre stop, then walk Place de Lavalette → Place Saint-André → Jardin de Ville → Quai Stéphane Jay and the Bastille lower station. For Le Sappey-en-Chartreuse, plan the destination separately in the regional network and save both the outbound and evening return.',
+          booking: 'The Grenoble-Bastille operator publishes a date-specific hours calendar and states that the last ascent is before closing; check the actual day and current fare directly. Check Musée de Grenoble access separately. No combined city/cable-car ticket, fare or bus frequency is assumed.',
+          weather: 'In basin heat, heavy rain or a cable-car closure, keep the flat Musée de Grenoble/old-centre/Isère sequence and use M Réso between districts. A closed lift does not make the uphill footpath a safe substitute; only use a route explicitly open and suitable for your group.'
+        },
         sources: [
           ['https://www.grenoble-tourisme.com/en/', 'Grenoble Alpes Tourist Office — official destination planning'],
-          ['https://www.parc-chartreuse.net/', 'Chartreuse Regional Nature Park — official access and conduct']
+          ['https://bastille-grenoble.fr/en/', 'Grenoble-Bastille Cable Car — official hours, fares and visitor access'],
+          ['https://www.reso-m.fr/', 'M réso — official transit planner, network map and service notices'],
+          ['https://www.parc-chartreuse.net/', 'Chartreuse Regional Nature Park — official access and conduct'],
+          ['https://meteofrance.com/meteo-montagne', 'Météo-France — official mountain forecast']
         ]
       })
     ]

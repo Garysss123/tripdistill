@@ -23,6 +23,7 @@ const bordeauxPhotos = [
 ];
 const wadjemupDiagramAssetPath = '/assets/images/australia-wadjemup-ferry-day-sequence.svg';
 const wadjemupDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg';
+const frenchAlpsDiagramAssetPath = '/assets/images/france-grenoble-bastille-route-sequence.svg';
 const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp';
 const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
 const chinaLhasaRetiredAssetPath = '/assets/images/china-destination-lhasa.webp';
@@ -304,7 +305,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 518, 'the merged inventory records Côte d’Azur, Marseille, Peak District and Provence inland photo checks while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 516, 'the merged inventory records current UK19, Côte d’Azur, Marseille, Peak District, Provence inland and French Alps source-page checks while project-original diagrams remain separate');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -519,14 +520,25 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 514, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 11, 'inventory must count the UK19 and France Alps diagrams plus existing Melaka, Somerset, Peak District and Malaysia project-original artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 511, 'source-page declarations from the merged UK19, Côte d’Azur, Marseille, Peak District, Provence inland and French Alps checks do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
   assert.ok(wadjemupDiagram.verificationDetail.includes('not an independent source-page check'));
   assert.ok(wadjemupDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
+  const frenchAlpsDiagram = photoRecords.find((item) => item.assetPath === frenchAlpsDiagramAssetPath);
+  assert.ok(frenchAlpsDiagram, 'inventory must retain the original French Alps planning diagram');
+  assert.equal(frenchAlpsDiagram.sourceTitle, 'Grenoble Bastille route sequence — original schematic');
+  assert.equal(frenchAlpsDiagram.assetType, 'original-planning-diagram');
+  assert.equal(frenchAlpsDiagram.sourceUrl, 'https://tripdistill.com/assets/images/france-grenoble-bastille-route-sequence.svg');
+  assert.equal(frenchAlpsDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(frenchAlpsDiagram.license, null, 'the original French Alps SVG must not claim a public photo license');
+  assert.equal(frenchAlpsDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(frenchAlpsDiagram.useCount, 4);
+  assert.equal(report.counts.sourceMetadataConflicts, 0, 'retired Commons metadata must not conflict with the replacement original schematic');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === frenchAlpsDiagramAssetPath), false);
   const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
   assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');
   assert.equal(melakaDiagram.assetType, 'original-planning-diagram');
@@ -560,8 +572,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 800, 'the two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 3, 'the Melaka source photo and two UK19 source photos with unresolved attribution conflicts must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 801, 'the French Alps and original Malaysia and UK diagrams must be included while all three retained rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
