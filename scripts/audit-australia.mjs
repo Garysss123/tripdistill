@@ -110,7 +110,14 @@ for (const guide of australiaGuides) {
     } else {
       const svg = fs.readFileSync(local, 'utf8');
       const localSha1 = crypto.createHash('sha1').update(svg).digest('hex');
-      if (path.extname(local).toLowerCase() !== '.svg' || !svg.includes('viewBox="0 0 1600 1066"')) problems.push(`${guide.url}: original diagram must be an SVG with a 1600x1066 viewBox`);
+      const viewBox = svg.match(/\bviewBox="([^"]+)"/i)?.[1]?.trim().split(/\s+/).map(Number) || [];
+      const dimensionsMatch = path.extname(local).toLowerCase() === '.svg'
+        && viewBox.length === 4
+        && viewBox[0] === 0 && viewBox[1] === 0
+        && viewBox[2] > 0 && viewBox[3] > 0
+        && (!guide.image.width || guide.image.width === viewBox[2])
+        && (!guide.image.height || guide.image.height === viewBox[3]);
+      if (!dimensionsMatch) problems.push(`${guide.url}: original diagram must be an SVG with a positive viewBox matching any declared width and height`);
       if (localSha1 !== guide.image.localSha1) problems.push(`${guide.url}: original diagram SHA1 does not match the local source file`);
       if (!svg.includes('Project original') || !svg.includes('no separate reuse license declared') || !svg.includes('not a geographic map') || /\b(?:CC0\b|CC\s+BY(?:-(?:SA|NC|ND))*\b|Creative\s+Commons\b)/i.test(svg)) problems.push(`${guide.url}: original diagram must state project-original rights without claiming a Creative Commons grant`);
     }

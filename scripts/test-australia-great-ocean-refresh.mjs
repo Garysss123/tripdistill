@@ -17,6 +17,12 @@ const routes = [
   '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
   '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
 ];
+const laterGoldCoastRoutes = [
+  '/australia/gold-coast-scenic-rim/',
+  '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
+  '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
+  '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -146,10 +152,10 @@ const localizedReviewDate = {
   ko: '2026년 10월 12일',
   th: '12 ตุลาคม 2026'
 };
-const expectedHtml = routes.map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...laterGoldCoastRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English source pages may change in the tracked source tree.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four Great Ocean Road pages and later four Gold Coast pages may change in the tracked source tree.');
 
 const deltas = [];
 for (const route of routes) {
@@ -211,7 +217,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'Only four selected search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGoldCoastRoutes].sort(), 'Only the four Great Ocean Road and four later Gold Coast search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -227,10 +233,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = routes.flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterGoldCoastRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected routes across five editions may receive a new lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only four Great Ocean Road and four later Gold Coast routes across five editions may receive a new lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
 
 const svgFile = path.join(root, svgPath);

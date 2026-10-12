@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1380" viewBox="0 0 1600 1380" role="img" aria-labelledby="title desc">
+  <title id="title">Gold Coast coast-to-range planning schematic</title>
+  <desc id="desc">A not-to-scale planning instrument. A solid station spine lists the Translink L1 corridor from Helensvale through Surfers Paradise and Broadbeach to Burleigh Heads. Separate dashed boxes describe an independently planned southern coast visit to Coolangatta and a separate road or operator choice for Springbrook or Lamington. No geographic positions, routes, distances, bearings, timetables or service guarantees are shown. The key is in five languages. Project original; no separate reuse license declared. Commercial reuse eligibility unknown.</desc>
+  <defs>
+    <linearGradient id="gc-paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7ead4"/><stop offset="1" stop-color="#e2eee8"/></linearGradient>
+    <style>
+      .ink{fill:#193e45;font-family:Arial,Helvetica,sans-serif}.muted{fill:#536c68;font-family:Arial,Helvetica,sans-serif}.accent{fill:#a34f31;font-family:Arial,Helvetica,sans-serif}.small{font-size:19px}.body{font-size:23px}.label{font-size:20px;font-weight:700;letter-spacing:1px}.title{font-size:45px;font-weight:700}.panel{fill:#fffdf7;stroke:#bdcbbf;stroke-width:2}.node{fill:#fffaf0;stroke:#173d46;stroke-width:5}.l1{fill:none;stroke:#173d46;stroke-width:10;stroke-linecap:round}.separate{fill:#fffaf0;stroke:#a34f31;stroke-width:3;stroke-dasharray:12 10}.station{font-size:22px;font-weight:700}.key{font-size:17px}
+    </style>
+  </defs>
+  <rect width="1600" height="1380" rx="38" fill="url(#gc-paper)"/>
+  <text class="muted label" x="84" y="72">AUSTRALIA FIELD ATLAS · QUEENSLAND</text>
+  <text class="ink title" x="84" y="136">One tram spine; two separate travel plans.</text>
+  <text class="muted body" x="88" y="178">A trip-selection instrument, not a geographic map, navigation aid or timetable.</text>
+
+  <rect class="panel" x="72" y="218" width="1456" height="382" rx="28"/>
+  <text class="ink label" x="108" y="266">TRANSLINK L1 · LISTED STATION ORDER · VERIFY THE TRAVEL-DATE SERVICE</text>
+  <text class="muted small" x="110" y="300">Choose the stop for the actual hotel, beach access or venue; the spacing below carries no geographic meaning.</text>
+  <line class="l1" x1="224" y1="393" x2="1376" y2="393"/>
+  <circle class="node" cx="246" cy="393" r="22"/>
+  <circle class="node" cx="588" cy="393" r="22"/>
+  <circle class="node" cx="968" cy="393" r="22"/>
+  <circle class="node" cx="1354" cy="393" r="22"/>
+  <text class="ink station" text-anchor="middle" x="246" y="450">Helensvale</text>
+  <text class="muted small" text-anchor="middle" x="246" y="480">train interchange</text>
+  <text class="ink station" text-anchor="middle" x="588" y="450">Surfers Paradise</text>
+  <text class="muted small" text-anchor="middle" x="588" y="480">including Cavill Avenue</text>
+  <text class="ink station" text-anchor="middle" x="968" y="450">Broadbeach</text>
+  <text class="muted small" text-anchor="middle" x="968" y="480">North and South stations</text>
+  <text class="ink station" text-anchor="middle" x="1354" y="450">Burleigh Heads</text>
+  <text class="muted small" text-anchor="middle" x="1354" y="480">listed L1 endpoint</text>
+  <text class="accent label" x="110" y="548">A STATION DOES NOT CONFIRM THE BEACH ENTRANCE, STEP-FREE ACCESS OR A RETURN SERVICE.</text>
+
+  <rect class="separate" x="72" y="630" width="700" height="268" rx="28"/>
+  <text class="accent label" x="108" y="681">SEPARATE SOUTHERN COAST PLAN</text>
+  <text class="ink title" x="108" y="738" style="font-size:36px">Coolangatta &amp; Snapper Rocks</text>
+  <text class="muted body" x="110" y="783">Beyond Burleigh: enter the exact endpoint in Translink</text>
+  <text class="muted body" x="110" y="817">or plan a road leg. No tram, bus route or time is drawn.</text>
+  <text class="accent small" x="110" y="864">Point Danger · surf viewing · patrolled beach are different decisions.</text>
+
+  <rect class="separate" x="802" y="630" width="726" height="268" rx="28"/>
+  <text class="accent label" x="838" y="681">SEPARATE HINTERLAND PLAN</text>
+  <text class="ink title" x="838" y="738" style="font-size:36px">Choose one park and its gateway.</text>
+  <rect class="panel" x="838" y="770" width="288" height="82" rx="16"/>
+  <rect class="panel" x="1152" y="770" width="338" height="82" rx="16"/>
+  <text class="ink station" text-anchor="middle" x="982" y="805">Springbrook</text>
+  <text class="muted small" text-anchor="middle" x="982" y="833">road or suitable operator</text>
+  <text class="ink station" text-anchor="middle" x="1321" y="805">Lamington</text>
+  <text class="muted small" text-anchor="middle" x="1321" y="833">road or suitable operator</text>
+  <text class="muted small" x="838" y="876">Use a separate base, park alert and weather check; no direct transfer is implied.</text>
+
+  <rect class="panel" x="72" y="928" width="1456" height="418" rx="25"/>
+  <text class="ink label" x="108" y="974">FIVE-LANGUAGE KEY · SOLID IS THE LISTED STATION ORDER; DASHED BOXES MEAN A SEPARATE PLAN</text>
+  <text class="ink key" x="108" y="1021" lang="en">EN · L1 stations are shown in listed order, not to scale. Dashed boxes need a separate trip plan. No distance, route shape, timetable or service is guaranteed.</text>
+  <text class="ink key" x="108" y="1070" lang="zh-Hant">繁中・L1 車站依目前列示順序排列，非比例。虛線框代表須另行規劃的行程。不標示距離、路線形狀或時刻表，也不保證交通服務。</text>
+  <text class="ink key" x="108" y="1119" lang="ja">日本語・L1の駅は掲載順に表示（縮尺なし）。破線枠は別途計画する行程です。距離、路線形状、時刻表、運行は示さず保証しません。</text>
+  <text class="ink key" x="108" y="1168" lang="ko">한국어 · L1 역은 표시된 순서이며 축척과 무관합니다. 점선 상자는 별도 계획이 필요한 여정입니다. 거리, 실제 노선 형태, 시간표 또는 운행을 보장하지 않습니다.</text>
+  <text class="ink key" x="108" y="1217" lang="th">ไทย · สถานี L1 เรียงตามลำดับที่แสดง ไม่เป็นมาตราส่วน กรอบเส้นประคือทริปที่ต้องวางแผนแยก ไม่รับประกันระยะทาง รูปแบบเส้นทาง ตารางเวลา หรือบริการ</text>
+  <line x1="108" y1="1241" x2="1492" y2="1241" stroke="#bdcbbf" stroke-width="2"/>
+  <text class="muted small" x="108" y="1276">Check the current Translink planner, park alerts, Beachsafe advice and weather before each leg.</text>
+  <text class="muted small" x="108" y="1305">No geographic position, direction, distance, scheduled transfer or access guarantee is represented.</text>
+</svg>

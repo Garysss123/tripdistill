@@ -1,0 +1,23 @@
+export const australiaGoldCoastDiagram = {
+  src: '/assets/images/australia-gold-coast-coast-to-range-planning.svg',
+  alt: 'Not-to-scale Gold Coast planning schematic separating the Helensvale–Burleigh Heads L1 corridor, a separately planned southern bus or road leg to Coolangatta, and independent road or operator access to Springbrook and Lamington; it promises no connection or service.',
+  caption: 'TripDistill original planning schematic, not a geographic map or timetable. The solid line represents the L1 station corridor listed by Translink at the 12 October 2026 review. Dashed branches mean plan and check a separate leg; they do not represent roads, transfers, distances or guaranteed service.',
+  source: 'https://tripdistill.com/assets/images/australia-gold-coast-coast-to-range-planning.svg',
+  label: 'TripDistill original Gold Coast coast-to-range planning schematic',
+  creator: 'TripDistill Editorial Team',
+  license: null,
+  rightsStatus: 'Project original; no separate reuse license declared',
+  rightsStatusUrl: 'https://tripdistill.com/terms-of-use/',
+  attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
+  commercialReuseEligibility: 'unknown',
+  assetType: 'original-planning-diagram',
+  localSha1: 'bc5fb711d29578a4a76b63498c9799f00c9c02bb',
+  editNote: 'The solid line is a station-planning spine, not a timetable. Dashed branches mark separate Coolangatta and hinterland trip decisions without drawing a route or promising a transfer. The SVG contains no photographic pixels. Its five-language key states that geometry, direction, distance and service are not represented. Project original; no separate reuse license is declared and commercial reuse eligibility is unknown.',
+  inventoryStatus: 'used',
+  sectionId: 'au-gold-coast-diagram-title',
+  sectionEyebrow: 'Station spine · separate coast leg · five-language key',
+  sectionTitle: 'Set the tram end, then plan south or uphill.',
+  sectionIntro: 'The L1 spine reaches Burleigh Heads. Coolangatta and the hinterland require separate arrival, access and return checks; the schematic does not supply a route or timetable.',
+  width: 1600,
+  height: 1380
+};

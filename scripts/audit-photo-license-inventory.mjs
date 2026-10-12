@@ -903,6 +903,14 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
 
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Surfers_Paradise_Beach_with_skyline.jpg', 'Gold Coast photo review: the exact Commons page identifies Bernard Spragg. NZ from Christchurch, New Zealand and declares a CC0 1.0 dedication. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Surfers Paradise beach, surf and skyline, matching the route image and alt. The visible credit links the source and license and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.'],
+  ['https://commons.wikimedia.org/wiki/File:Burleigh_Heads_and_Tallebudgera_Creek_2.JPG', 'Gold Coast photo review: the exact Commons page identifies Shiftchange and declares the photograph public domain. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Tallebudgera Creek shoreline and nearby beach, matching the route image and alt. The visible credit links the source and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.'],
+  ['https://commons.wikimedia.org/wiki/File:Snapper_Rocks,_Coolangatta,_Gold_Coast,_Queensland_03.jpg', 'Gold Coast photo review: the exact Commons page identifies Kgbo and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Snapper Rocks surf breaking across the rocky coast, matching the route image and alt. The visible credit links the source and versioned license, discloses resize, display crop and WebP conversion, and keeps the adaptation under CC BY-SA 4.0. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-12' });
+}
+
 const explicitCreditMappings = new Map([
   ['/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', { sourceTitle: 'File:Marseille - Vieux Port - MUCEM.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', creditLabel: 'Marseille - Vieux Port - MUCEM.jpg', creator: 'Remi Mathis', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2011-08-07', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, license declaration and local subject match checked 2026-10-12. The historic photograph shows scaffolding, not the completed Mucem; the page declaration is not independent rights clearance.' }],
   ['/assets/images/france-marseille-calanques-calanques-access-choice.webp', { sourceTitle: 'File:Calanques National Park seen from the airplane.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', creditLabel: 'Calanques National Park seen from the airplane.jpg', creator: 'MikkoNilssonCom', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-02-13', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, license declaration and local aerial subject match checked 2026-10-12; an aircraft/window reflection remains visible. The page declaration is not independent rights clearance.' }],
@@ -1020,6 +1028,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp', '2026-10-12'],
+  ['/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp', '2026-10-12'],
+  ['/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp', '2026-10-12'],
   ['/assets/images/australia-blue-mountains-nsw-coast-katoomba-echo-point.webp', '2026-10-12'],
   ['/assets/images/australia-blue-mountains-nsw-coast-wentworth-falls-tableland.webp', '2026-10-12'],
   ['/assets/images/australia-blue-mountains-nsw-coast-blackheath-grose-valley.webp', '2026-10-12'],

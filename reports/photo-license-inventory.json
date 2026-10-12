@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T03:34:03.987Z",
+  "generatedAt": "2026-10-12T17:59:09.031Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 797,
+    "assetFileCount": 801,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 8,
-    "licenseClaimsNotIndependentlyVerified": 514,
+    "completeProjectOriginalRightsRecords": 12,
+    "licenseClaimsNotIndependentlyVerified": 511,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
-    "buildImageFilesOutsidePhotoInventory": 4,
+    "buildImageFilesOutsidePhotoInventory": 5,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 800,
-    "deduplicatedImageCount": 797,
+    "expectedBuildImageCount": 805,
+    "deduplicatedImageCount": 801,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3518,
-    "assetsUsedByScannedEnglishPages": 768,
+    "imageReferencesScanned": 3522,
+    "assetsUsedByScannedEnglishPages": 772,
     "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 584,
+    "assetsWithStructuredSourceRecords": 588,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 170,
+    "assetsVisuallyReviewed": 173,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 251,
-    "metadataOrCreditOnly": 522,
-    "usedAssetsWithoutIndependentSourcePageCheck": 518,
+    "sourcePageChecked": 254,
+    "metadataOrCreditOnly": 523,
+    "usedAssetsWithoutIndependentSourcePageCheck": 519,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 796 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 800 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 800 published WebP photos and 4 other image assets in assets/images, plus 1 root-level image assets, explain the 805 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -323,16 +323,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Blue Mountains photo review: the exact Commons page identifies Pavel Špindler, dates the photograph to 16 April 2005, and declares CC BY 3.0 terms; the original is 2,048 × 1,536. The local WebP pixels show the Govetts Leap lookout marker and Grose Valley view near Blackheath. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.",
           "useCount": 6,
           "routes": [
             "/australia/blue-mountains-nsw-coast/",
@@ -423,16 +423,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Blue Mountains photo review: the exact Commons page identifies Alicia Brogan (Ali b at English Wikipedia), the Three Sisters at Echo Point, and CC BY-SA 3.0 terms; the original is 2,304 × 1,728. The local WebP pixels show the Three Sisters above Jamison Valley from the Echo Point area. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.",
           "useCount": 8,
           "routes": [
             "/australia/",
@@ -524,16 +524,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Blue Mountains photo review: the exact Commons page identifies Lschoen, the view of Wentworth Falls from Princes Rock, and CC BY-SA 4.0 terms; the original is 2,157 × 1,440. The local WebP pixels show the waterfall and escarpment, matching the route subject. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.",
           "useCount": 6,
           "routes": [
             "/australia/blue-mountains-nsw-coast/",
@@ -549,6 +549,49 @@
           "rawVisibleCredits": [
             "Wentworth Falls from Princes Rock.jpg — Lschoen, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "26336078966efd54574edafe8f590d64e477ed545c12b124815c2171fe5091d3",
+      "assetPaths": [
+        "/assets/images/australia-blue-mountains-western-line-planning.svg"
+      ],
+      "byteLength": 5513,
+      "sourceRecords": [
+        {
+          "sha256": "26336078966efd54574edafe8f590d64e477ed545c12b124815c2171fe5091d3",
+          "assetPath": "/assets/images/australia-blue-mountains-western-line-planning.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-blue-mountains-western-line-planning.svg",
+          "sourceTitle": "TripDistill original Blue Mountains rail gateway planning schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Not to geographic scale; the lines do not establish rail service, last-mile transport, distance, direction or access. The five-language key explains the solid and dashed lines.",
+          "localSha1": "ef75f70d9629235f258619f28f2d95e622ffaced",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/blue-mountains-nsw-coast/"
+          ],
+          "altTexts": [
+            "Not-to-scale planning schematic of the Western rail corridor through Wentworth Falls, Katoomba and Blackheath, with separate last-mile plans to formal visitor gateways; no service or timetable is implied."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -584,7 +627,7 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 8,
+          "useCount": 7,
           "routes": [
             "/australia/",
             "/australia/brisbane-moreton-bay/",
@@ -1808,6 +1851,49 @@
       ]
     },
     {
+      "sha256": "e341e931bd69d4ac9c0b4ca9002eaadb0780306f4dcfdfa2aca526b48c71a631",
+      "assetPaths": [
+        "/assets/images/australia-gold-coast-coast-to-range-planning.svg"
+      ],
+      "byteLength": 6977,
+      "sourceRecords": [
+        {
+          "sha256": "e341e931bd69d4ac9c0b4ca9002eaadb0780306f4dcfdfa2aca526b48c71a631",
+          "assetPath": "/assets/images/australia-gold-coast-coast-to-range-planning.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-gold-coast-coast-to-range-planning.svg",
+          "sourceTitle": "TripDistill original Gold Coast coast-to-range planning schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "The solid line is a station-planning spine, not a timetable. Dashed branches mark separate Coolangatta and hinterland trip decisions without drawing a route or promising a transfer. The SVG contains no photographic pixels. Its five-language key states that geometry, direction, distance and service are not represented. Project original; no separate reuse license is declared and commercial reuse eligibility is unknown.",
+          "localSha1": "bc5fb711d29578a4a76b63498c9799f00c9c02bb",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/gold-coast-scenic-rim/"
+          ],
+          "altTexts": [
+            "Not-to-scale Gold Coast trip-planning schematic separating the Helensvale–Burleigh Heads L1 station spine, a separately planned southern-coast leg to Coolangatta, and independent road or operator access to Springbrook and Lamington; no distances, bearings, transfer or service promise is shown."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
       "sha256": "cb1b60113db52aea61bfe5aeca41c6be9750b7b2a4feebb4a786f6d03f1278cd",
       "assetPaths": [
         "/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp"
@@ -2310,6 +2396,49 @@
       ]
     },
     {
+      "sha256": "b3f584a2c65f72d49e3931e4700da59571bddae1d8a21fe8c37a0760d5256919",
+      "assetPaths": [
+        "/assets/images/australia-great-ocean-road-route-schematic.svg"
+      ],
+      "byteLength": 6370,
+      "sourceRecords": [
+        {
+          "sha256": "b3f584a2c65f72d49e3931e4700da59571bddae1d8a21fe8c37a0760d5256919",
+          "assetPath": "/assets/images/australia-great-ocean-road-route-schematic.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-great-ocean-road-route-schematic.svg",
+          "sourceTitle": "TripDistill original Great Ocean Road and Gariwerd planning schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "The conceptual coast sequence is numbered Torquay, Lorne, Apollo Bay and Port Campbell. The dashed Gariwerd branch is a separate itinerary-planning cue, not a route, distance, bearing, timetable, transfer or service promise. Original SVG artwork; no separate reuse license is declared, and commercial reuse eligibility is unknown.",
+          "localSha1": "a42e6895290dbbd74720456ca4e2d00db29a33db",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/great-ocean-road-gariwerd/"
+          ],
+          "altTexts": [
+            "Not-to-scale planning schematic showing the Great Ocean Road sequence from Torquay through Lorne and Apollo Bay to Port Campbell, with a clearly separate inland planning branch to Gariwerd; no distance, bearing, timetable or service promise is made."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
       "sha256": "ba4ad7e99641922b59d376ebddfe8e2cbc096472cbd54bb24bc917b5a91f3c3d",
       "assetPaths": [
         "/assets/images/australia-margaret-river-southwest-albany-torndirrup.webp"
@@ -2603,7 +2732,8 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Melbourne central business district seen from above"
+            "Melbourne central business district seen from above",
+            "Melbourne central business district viewed from above"
           ],
           "rawVisibleCredits": [
             "Melbourne CBD 2008.jpg — Bidgee, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2653,6 +2783,7 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
+            "Yarra River and Princes Bridge beneath Melbourne’s night skyline",
             "Federation Square and the Yarra River in central Melbourne"
           ],
           "rawVisibleCredits": [
@@ -2803,6 +2934,7 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
+            "St Kilda Beach, pier and Port Phillip Bay before midday",
             "St Kilda Pier and Port Phillip Bay near Melbourne"
           ],
           "rawVisibleCredits": [
@@ -3406,7 +3538,8 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Circular Quay and The Rocks beside Sydney Harbour"
+            "Circular Quay and The Rocks beside Sydney Harbour",
+            "Sydney Harbour Bridge viewed across Sydney Cove from Circular Quay"
           ],
           "rawVisibleCredits": [
             "Photo of the Sydney Harbour Bridge from Circular Quay.jpg — JCL888, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -3461,6 +3594,49 @@
           "rawVisibleCredits": [
             "Sydney Ferry NORTH HEAD en route to Manly at the Heads on Sydney Harbour 20 January 1973.jpg — John Ward, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "2c191a5408734d3957aa012fc18d963e0979a8996e848203dda37c5e52660f84",
+      "assetPaths": [
+        "/assets/images/australia-sydney-harbour-coast-network-schematic.svg"
+      ],
+      "byteLength": 5611,
+      "sourceRecords": [
+        {
+          "sha256": "2c191a5408734d3957aa012fc18d963e0979a8996e848203dda37c5e52660f84",
+          "assetPath": "/assets/images/australia-sydney-harbour-coast-network-schematic.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-sydney-harbour-coast-network-schematic.svg",
+          "sourceTitle": "TripDistill original Sydney harbour and coast planning schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; paths are indicative, not geographic, and do not show distance, bearing, timetable or service availability.",
+          "localSha1": "67a25f29090493988d5a5fcd126f95890bd3c465",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/sydney-harbour-coast/"
+          ],
+          "altTexts": [
+            "Not-to-scale route schematic linking Sydney rail, walking, ferry and bus legs between the city, harbour and coast."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
