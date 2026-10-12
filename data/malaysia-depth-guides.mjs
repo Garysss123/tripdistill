@@ -97,9 +97,9 @@ const imageCredits = {
   cameronTea: { src: '/assets/images/malaysia-cameron-highlands.webp', alt: 'Tea rows folding across the slopes of Cameron Highlands', source: 'https://commons.wikimedia.org/wiki/File:Cameron_Bharat_Tea_Plantation,_Cameron_Highlands,_Malaysia,_20250829_1535_4120.jpg', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', label: 'Cameron Bharat tea landscape', creator: 'Jakub Hałun', license: 'CC BY 4.0' },
   cameronMoss: { src: '/assets/images/malaysia-cameron-mossy-forest.webp', alt: 'Moss-covered tree and boardwalk in Cameron Highlands cloud forest', source: 'https://commons.wikimedia.org/wiki/File:Big_Mossy_Tree_at_Mossy_Forest,_Cameron_Highlands.jpg', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', label: 'Mossy Forest tree', creator: 'Pro QueeNia', license: 'CC BY-SA 4.0' },
   cameronBertam: { src: '/assets/images/malaysia-cameron-bertam.webp', alt: 'Agricultural valley and settlement around Bertam in Cameron Highlands', source: 'https://commons.wikimedia.org/wiki/File:Bertam_1.jpg', label: 'Bertam agricultural landscape', creator: 'Slleong', license: 'CC0 1.0' },
-  tamanPanorama: { src: '/assets/images/malaysia-taman-negara.webp', alt: 'Layered rainforest canopy in Taman Negara', source: 'https://commons.wikimedia.org/wiki/File:Taman_Negara,_Malaysia,_Panoramic_view.jpg', label: 'Taman Negara panorama', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0' },
-  tamanCanopy: { src: '/assets/images/malaysia-taman-canopy.webp', alt: 'Suspended canopy walkway among tall rainforest trees in Taman Negara', source: 'https://commons.wikimedia.org/wiki/File:Taman_Negara,_Malaysia,_Canopy_Walkway.jpg', label: 'Taman Negara canopy walkway', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0' },
-  tamanTembeling: { src: '/assets/images/malaysia-taman-tembeling.webp', alt: 'River landing at Kuala Tembeling on the approach to Taman Negara', source: 'https://commons.wikimedia.org/wiki/File:Kuala_Tembeling_1.jpg', label: 'Kuala Tembeling landing', creator: 'Slleong', license: 'CC0 1.0' },
+  tamanPanorama: { src: '/assets/images/malaysia-taman-negara.webp', alt: 'Layered rainforest canopy in Taman Negara', source: 'https://commons.wikimedia.org/wiki/File:Taman_Negara,_Malaysia,_Panoramic_view.jpg', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', label: 'Taman Negara panorama', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0' },
+  tamanCanopy: { src: '/assets/images/malaysia-taman-canopy.webp', alt: 'Suspended canopy walkway among tall rainforest trees in Taman Negara', source: 'https://commons.wikimedia.org/wiki/File:Taman_Negara,_Malaysia,_Canopy_Walkway.jpg', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', label: 'Taman Negara canopy walkway', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0' },
+  tamanTembeling: { src: '/assets/images/malaysia-taman-tembeling.webp', alt: 'River landing at Kuala Tembeling on the approach to Taman Negara', source: 'https://commons.wikimedia.org/wiki/File:Kuala_Tembeling_1.jpg', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', label: 'Kuala Tembeling landing', creator: 'Slleong', license: 'CC0 1.0' },
   perhentianBeach: { src: '/assets/images/malaysia-perhentian.webp', alt: 'Clear water and beach on Perhentian Kecil', source: 'https://commons.wikimedia.org/wiki/File:Perhentian_Kecil_Island,_Malaysia,_Beach.jpg', label: 'Perhentian Kecil beach', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0' },
   perhentianCoral: { src: '/assets/images/malaysia-perhentian-coral-bay.webp', alt: 'Boats and shoreline at Coral Bay on Perhentian Kecil', source: 'https://commons.wikimedia.org/wiki/File:Coral_Bay,_Perhentian_Kecil.JPG', label: 'Coral Bay, Perhentian Kecil', creator: 'DTravel AU', license: 'CC BY-SA 3.0' },
   redangBeach: { src: '/assets/images/malaysia-redang-beach.webp', alt: 'White sand and blue water on Pulau Redang', source: 'https://commons.wikimedia.org/wiki/File:Pulau_Redang_-_White_sandy_beach.jpg', label: 'Redang white-sand beach', creator: 'Azreey', license: 'CC BY-SA 4.0' },
@@ -362,12 +362,15 @@ export const malaysiaDepthClusters = [
   },
   {
     hubSlug: 'taman-negara', hubName: 'Taman Negara', family: 'river-canopy-transect', region: 'Peninsula Wild',
-    hubPrompt: 'Choose the gateway before the activity. Kuala Tahan, canopy and river routes, and the Merapoh expedition side require different permits, guides and return plans.',
+    hubPrompt: 'Base a short visit in Kuala Tahan and keep the Jerantut rail-to-road/boat chain, village-versus-park-bank lodging, canopy walk, Tahan River and weather reserve visible. Merapoh/Sungai Relau is a separate expedition gateway, not a day trip.',
     sources: [
       ['https://www.wildlife.gov.my/en/taman-negara-pahang-kuala-tahan/', 'PERHILITAN — Taman Negara Pahang, Kuala Tahan'],
       ['https://www.wildlife.gov.my/en/soalan-lazim-ekopelancongan/', 'PERHILITAN — ecotourism FAQ, gateways and permits'],
       ['https://www.wildlife.gov.my/en/taman-negara-pahang-sg-relau-merapoh/', 'PERHILITAN — Sungai Relau, Merapoh gateway'],
-      ['https://www.met.gov.my/en/forecast/weather/district/', 'METMalaysia — district weather forecast']
+      ['https://www.pahangtourism.org.my/destination/nature-adventure/jerantut/taman-negara', 'Tourism Pahang — Taman Negara, Kuala Tahan and Jerantut access'],
+      ['https://www.pahangtourism.org.my/travel-info/downloads/1-brochure?download=12:taman-negara-brochure', 'Tourism Pahang — Taman Negara essential guide and gateway map'],
+      ['https://www.ktmb.com.my/TrainTime.html', 'KTMB — current KTM Intercity timetable and ticketing'],
+      ['https://www.met.gov.my/en/forecast/weather/district/', 'METMalaysia — current district forecast and warnings']
     ],
     guides: [
       cg({ slug: 'kuala-tahan-park-headquarters', name: 'Kuala Tahan & Park Headquarters', motif: 'gateway register', instrument: 'ledger', image: imageCredits.tamanPanorama,
@@ -381,7 +384,10 @@ export const malaysiaDepthClusters = [
         risks: [['Cash and signal', 'Small payments and connectivity can fail.'], ['River crossing', 'Know the final practical crossing for the evening.'], ['Permit scope', 'Different activities may require different arrangements.']],
         duration: 'Two or three nights support a useful first park visit; arrival day should remain light.',
         combine: 'Canopy and Lata Berkoh fit on separate blocks from the same base. Merapoh is a different gateway.',
-        verify: 'Check PERHILITAN guidance, accommodation, transfer, weather and guide arrangements.' }),
+        verify: 'Check PERHILITAN guidance, accommodation, transfer, weather and guide arrangements.',
+        planningNotes: 'Choose two nights for one complete field day, three for the canopy or authorized forest walk plus a separate river program, and four if you want a moveable weather day. Compare Kuala Tahan village stays with Mutiara Taman Negara Resort on the park side: check the exact riverbank, meal plan, guide meeting point and last return crossing before booking. Tourism Pahang names Jerantut as the nearest rail station. Check a current KTM Intercity ticket, then separately reserve a road transfer to your lodging or Kuala Tembeling Jetty; the onward boat is another booking and its current operator, fare and departure need direct confirmation. For weekends and school/public holidays, reserve a bed and guide early. Keep the first afternoon local and avoid a fixed connection after the exit transfer.',
+        weatherFallback: 'If heavy rain or a closure changes the plan, ask park staff which short authorized path remains open, or use the day to rest and rebook. Do not cross or enter a trail on an unconfirmed schedule.',
+        reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12' }),
       cg({ slug: 'canopy-bukit-teresek', name: 'Canopy Walkway & Bukit Teresek', motif: 'vertical forest profile', instrument: 'transect', image: imageCredits.tamanCanopy,
         summary: 'Plan the canopy walkway and Bukit Teresek with current opening, trail conditions, heat, fitness and a guide-informed return.',
         lead: 'The canopy and Bukit Teresek form a vertical forest chapter, but neither is guaranteed open or suitable every day. Trail and walkway status must shape the route.',
@@ -393,7 +399,10 @@ export const malaysiaDepthClusters = [
         risks: [['Closure', 'Weather or maintenance may close the walkway.'], ['Heat and humidity', 'Short distances can be physically demanding.'], ['Trail surface', 'Roots, mud and steps require stable footwear.']],
         duration: 'Allow half a day, longer for a careful hill route and interpretation.',
         combine: 'A night walk should remain a separate guided block. Do not add a long river trip after fatigue.',
-        verify: 'Check current walkway status, trail conditions, weather, permit and guide advice.' }),
+        verify: 'Check current walkway status, trail conditions, weather, permit and guide advice.',
+        planningNotes: 'Start from the park headquarters only after staff confirm today’s authorized path and canopy status. Walk the near forest trail at a steady pace; boardwalks, roots, mud, steps and steep rope-assisted sections can make a short distance tiring in humid heat. Take the canopy only when it is open, then decide on Bukit Teresek using current footing, time, weather and the group’s energy. Two nights in Kuala Tahan allow one full walking day; with three nights, put the Tahan River/Lata Berkoh boat on another day rather than stacking it after the hill. The village bank and the park-side resort change where the crossing and guide meeting start, so pin both before choosing a room. Reserve a bed and qualified guide early for weekends or school/public holidays, but keep the activity day movable when rain is forecast. No current hours or ticket price is confirmed here.',
+        weatherFallback: 'If the canopy closes or rain makes the hill unwise, do not bypass a barrier. Ask staff for a shorter open route, or return to the village and shift the walk into a reserve day.',
+        reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12' }),
       cg({ slug: 'tahan-river-lata-berkoh', name: 'Tahan River & Lata Berkoh', motif: 'river contract', instrument: 'tide', image: imageCredits.tamanTembeling,
         summary: 'Build a Tahan River and Lata Berkoh outing around boat terms, water conditions, swimming judgment and a fixed return.',
         lead: 'Lata Berkoh is reached through a river-and-trail chain whose exact form depends on water level, boat operation and current park guidance. It is not merely a swimming stop.',
@@ -405,7 +414,10 @@ export const malaysiaDepthClusters = [
         risks: [['River level', 'Rain upstream can change conditions.'], ['Slippery rock', 'Cascade edges demand conservative movement.'], ['Boat identity', 'Know the operator and full fare.']],
         duration: 'Protect most of a day including boat, trail, rest and return.',
         combine: 'Do not add the full canopy-and-hill route. A quiet village evening is enough.',
-        verify: 'Check park approval, operator, water and weather conditions, equipment and return time.' }),
+        verify: 'Check park approval, operator, water and weather conditions, equipment and return time.',
+        planningNotes: 'Give this a separate day from the canopy and Bukit Teresek walk. Before booking, get the boat provider’s name, exact Kuala Tahan landing, route to Lata Berkoh, walking section, passenger and life-jacket terms, total price, weather cancellation and return meeting time. Tourism Pahang confirms the Tahan River and Lata Berkoh as part of the area, but current boat departures, fares and swimming access are not verified here. Ask the park counter and crew about water level and rain upstream on the day; a general forecast is not a go/no-go decision. Carry water, sun and insect protection, a dry bag and grippy footwear for a wet landing. Two nights leave little flexibility; three or four give you a distinct river block and a chance to move it after rain. Reserve a boat and lodging ahead on busy weekends, but do not prepay on terms that ignore closures.',
+        weatherFallback: 'If the park or crew advises against boating, cancel or shorten the trip and use a staff-approved village-side walk or rest day. Do not substitute an unapproved swim.',
+        reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12' }),
       cg({ slug: 'merapoh-sungai-relau', name: 'Merapoh & Sungai Relau', motif: 'expedition gate', instrument: 'docket', image: imageCredits.tamanPanorama,
         summary: 'Use Merapoh and Sungai Relau as a separate Taman Negara expedition gateway with permits, guides, transport and multi-day scope.',
         lead: 'Sungai Relau near Merapoh is a western park gateway associated with deeper trekking and Gunung Tahan routes. It is not a side entrance to add after Kuala Tahan.',
@@ -417,7 +429,10 @@ export const malaysiaDepthClusters = [
         risks: [['Seasonal closure', 'Remote routes can close for weather and maintenance.'], ['Duration', 'Gunung Tahan is a multi-day expedition.'], ['Last mile', 'The park gateway requires planned local transport.']],
         duration: 'Allow dedicated arrival and expedition days; this is not a half-day extension.',
         combine: 'Treat it as an alternative to Kuala Tahan, not a same-trip shuttle between gateways unless the approved trek itself connects them.',
-        verify: 'Confirm route, dates, permits, guide, capacity, weather, equipment and transport directly with PERHILITAN.' })
+        verify: 'Confirm route, dates, permits, guide, capacity, weather, equipment and transport directly with PERHILITAN.',
+        planningNotes: 'Treat Merapoh/Sungai Relau as its own multi-day plan rather than an excursion from Kuala Tahan. Before booking, ask PERHILITAN for route availability on your dates, required registration and permits, guide and group-capacity rules, realistic trek duration, accommodation or camping, equipment and emergency exit. Then check KTMB’s current ticket search and routes/stations for a bookable KTM Intercity service to the correct approach; do not infer passenger service from an old station label. Arrange the last-mile road transfer to the specific Sungai Relau park office and confirm who meets you. Include a separate arrival block, the authority-approved trek length and a protected exit day. For weekends or public holidays, reserve guide and lodging only after the authority confirms capacity. No current fare, train schedule, local transfer provider, park hours or route opening is confirmed here.',
+        weatherFallback: 'If the authority closes the route or your guide sets a no-go threshold, postpone or choose a different confirmed route. Do not enter remotely or attempt Gunung Tahan without approval and a full expedition plan.',
+        reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12' })
     ]
   },
   {

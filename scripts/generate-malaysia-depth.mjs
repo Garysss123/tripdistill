@@ -229,6 +229,8 @@ ${figureDiagramKey ? `\n      ${figureDiagramKey}` : ''}
 
       <section class="md-section md-orientation" aria-labelledby="orientation-title"><div><span class="md-section-label">Read the place</span><h2 id="orientation-title">One chapter, with its edges left visible.</h2><p class="md-lead">${escapeHtml(guide.lead)}</p></div><aside><small>Orientation note</small><p>${escapeHtml(guide.orientation)}</p></aside></section>
 
+      ${guide.planningNotes ? `<section class="md-section md-orientation" aria-labelledby="planning-title"><div><span class="md-section-label">Stay, transfer and season plan</span><h2 id="planning-title">Choose the nights that protect the route.</h2><p class="md-lead">${escapeHtml(guide.planningNotes)}</p></div><aside><small>Flexible fallback</small><p>${escapeHtml(guide.weatherFallback)}</p></aside></section>` : ''}
+
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
 
       <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.routeLead || 'Use the stops below as handoffs, not a timed march; slow down when access or conditions change.') }</p></div><div class="md-route">${route}</div></section>
@@ -416,14 +418,15 @@ if (requestedClusterSlug) {
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
-    melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement']
+    melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
+    'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi and Melaka source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi, Melaka and Taman Negara source clusters.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
-  if (!cluster || guides.length !== reviewedGuideSlugSet.size) throw new Error(`${requestedClusterSlug} bounded route list does not match the three reviewed child guides.`);
+  if (!cluster || guides.length !== reviewedGuideSlugSet.size) throw new Error(`${requestedClusterSlug} bounded route list does not match its reviewed child guides.`);
   for (const guide of guides) {
     const page = routeFile(guide.url);
     fs.mkdirSync(path.dirname(page), { recursive: true });

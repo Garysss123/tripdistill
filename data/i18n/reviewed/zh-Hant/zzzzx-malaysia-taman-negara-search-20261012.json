@@ -1,0 +1,10 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Taman Negara": "馬來西亞 — Taman Negara"
+  }
+}

@@ -23,6 +23,14 @@ const malaysiaMelakaEditedRoutes = [
   '/malaysia/melaka/bandar-hilir-portuguese-settlement/'
 ];
 const malaysiaIpohLastmod = '2026-10-11';
+const malaysiaTamanNegaraLastmod = '2026-10-12';
+const malaysiaTamanNegaraEditedRoutes = [
+  '/malaysia/taman-negara/',
+  '/malaysia/taman-negara/kuala-tahan-park-headquarters/',
+  '/malaysia/taman-negara/canopy-bukit-teresek/',
+  '/malaysia/taman-negara/tahan-river-lata-berkoh/',
+  '/malaysia/taman-negara/merapoh-sungai-relau/'
+];
 const malaysiaLangkawiLastmod = '2026-10-12';
 const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/',
@@ -581,9 +589,14 @@ for (const route of malaysiaIpohEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
 }
+for (const route of malaysiaTamanNegaraEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Taman Negara route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaTamanNegaraLastmod });
+}
 for (const route of malaysiaMelakaEditedRoutes) {
   const record = records.get(route);
-  if (!record) throw new Error(`Cannot date edited Melaka route absent from sitemap: ${route}`);
+  if (!record) throw new Error(`Cannot preserve edited Melaka route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaMelakaLastmod });
 }
 for (const route of italyPugliaEditedRoutes) {
