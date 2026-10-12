@@ -134,6 +134,7 @@ export const integrationRouteGroups = Object.freeze({
     '/italy/western-sicily/trapani-erice-egadi/',
   ]),
   canada: Object.freeze([
+    '/canada/',
     '/canada/pacific-rim-tofino/',
     '/canada/pacific-rim-tofino/long-beach-rainforest/',
     '/canada/pacific-rim-tofino/tofino-marine-day/',
@@ -141,7 +142,19 @@ export const integrationRouteGroups = Object.freeze({
     '/canada/banff-lake-louise/',
     '/canada/banff-lake-louise/banff-town-bow-valley/',
     '/canada/banff-lake-louise/johnston-minnewanka/',
-    '/canada/banff-lake-louise/lake-louise-moraine/'
+    '/canada/banff-lake-louise/lake-louise-moraine/',
+    '/canada/jasper-icefields/',
+    '/canada/jasper-icefields/jasper-town-maligne/',
+    '/canada/jasper-icefields/icefields-parkway/',
+    '/canada/jasper-icefields/athabasca-sunwapta/',
+    '/canada/calgary-badlands/',
+    '/canada/calgary-badlands/calgary-core/',
+    '/canada/calgary-badlands/drumheller-royal-tyrrell/',
+    '/canada/calgary-badlands/dinosaur-provincial-park/',
+    '/canada/newfoundland-labrador/',
+    '/canada/newfoundland-labrador/st-johns-signal-hill/',
+    '/canada/newfoundland-labrador/bonavista-trinity/',
+    '/canada/newfoundland-labrador/gros-morne/'
   ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',
@@ -203,6 +216,7 @@ export const integrationSitemapRoutes = Object.freeze(
 
 export const integrationSearchRoutes = Object.freeze(
   integrationRoutes.filter((route) => ![
+    '/canada/',
     '/france/french-alps/annecy-lake-old-town/',
     '/france/french-alps/chamonix-mountain-systems/',
     '/france/french-alps/grenoble-bastille-chartreuse/',

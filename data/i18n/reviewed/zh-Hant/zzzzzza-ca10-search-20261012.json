@@ -1,0 +1,22 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "regional bases": "區域住宿據點",
+    "Signal Hill": "Signal Hill",
+    "Cape Spear": "Cape Spear",
+    "Bonavista Peninsula": "Bonavista 半島",
+    "Ryan Premises": "Ryan Premises",
+    "Western Brook Pond": "Western Brook Pond",
+    "Tablelands": "Tablelands",
+    "Gros Morne Mountain": "Gros Morne Mountain"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

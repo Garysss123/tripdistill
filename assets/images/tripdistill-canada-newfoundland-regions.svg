@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Three Newfoundland stays and a separate Labrador plan</title>
+  <desc id="desc">A conceptual regional diagram places St. John’s and Avalon in the east, Bonavista and Trinity farther west, Gros Morne on the west coast, and Labrador on the mainland as a separate itinerary. It shows no road line, distance, travel time, ferry or schedule. Labels appear in English, Traditional Chinese, Japanese, Korean and Thai.</desc>
+  <rect x="0" y="0" width="860" height="1120" rx="24" fill="#eef5f3"/>
+  <rect x="34" y="34" width="792" height="1052" rx="18" fill="none" stroke="#bfd4d0" stroke-width="2"/>
+  <text x="74" y="91" font-family="system-ui,sans-serif" font-size="29" font-weight="700" fill="#183b3c">Three Newfoundland bases · Labrador separate</text>
+  <text x="76" y="125" font-family="system-ui,sans-serif" font-size="16" fill="#466260">Concept only · not to scale · no route line or travel-time claim</text>
+
+  <rect x="68" y="158" width="724" height="390" rx="16" fill="#fff" stroke="#bfd4d0" stroke-width="2"/>
+  <text x="92" y="193" font-family="system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#466260">REGIONAL POSITION · CHOOSE SEPARATE OVERNIGHT BASES</text>
+
+  <!-- Generalized island silhouette; the numbered circles show relative planning regions only. -->
+  <polygon points="102,362 124,337 153,325 174,296 204,290 222,304 244,295 267,312 294,315 315,329 344,326 368,340 390,341 412,351 434,353 455,367 472,373 480,389 468,401 450,397 438,411 415,406 401,421 379,414 361,430 342,424 326,438 304,432 290,444 270,435 253,438 238,427 222,423 208,409 190,405 174,391 157,384 143,372 124,371" fill="#dcebe7" stroke="#367d75" stroke-width="3" stroke-linejoin="round"/>
+  <text x="115" y="468" font-family="system-ui,sans-serif" font-size="13" fill="#466260">Newfoundland Island · relative position only</text>
+
+  <circle id="gros-morne" cx="208" cy="370" r="20" fill="#367d75"/>
+  <text x="208" y="376" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">03</text>
+  <circle id="bonavista-trinity" cx="365" cy="356" r="20" fill="#d47a45"/>
+  <text x="365" y="362" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">02</text>
+  <circle id="st-johns" cx="446" cy="405" r="20" fill="#173c3a"/>
+  <text x="446" y="411" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">01</text>
+
+  <rect x="545" y="240" width="214" height="198" rx="14" fill="#e6edf4" stroke="#718ba3" stroke-width="2"/>
+  <text x="565" y="274" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#183b3c">LABRADOR</text>
+  <text x="565" y="305" font-family="system-ui,sans-serif" font-size="14" fill="#344d62">Separate mainland plan</text>
+  <text x="565" y="332" font-family="system-ui,sans-serif" font-size="13" fill="#344d62">Confirm the road, ferry</text>
+  <text x="565" y="352" font-family="system-ui,sans-serif" font-size="13" fill="#344d62">or flight connection.</text>
+  <text x="565" y="391" font-family="system-ui,sans-serif" font-size="12" fill="#466260">No connection is drawn here.</text>
+  <text x="92" y="520" font-family="system-ui,sans-serif" font-size="13" fill="#466260">01–03 are itinerary choices, not a prescribed driving sequence.</text>
+
+  <rect x="68" y="572" width="724" height="455" rx="16" fill="#fff" stroke="#bfd4d0" stroke-width="2"/>
+  <text x="92" y="609" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#183b3c">Five-language region legend</text>
+  <line x1="92" y1="626" x2="768" y2="626" stroke="#d6e3df" stroke-width="2"/>
+
+  <text x="94" y="665" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#466260">EN</text>
+  <text id="legend-en-1" x="146" y="663" font-family="system-ui,sans-serif" font-size="14" fill="#183b3c">01 St. John’s &amp; Avalon · 02 Bonavista &amp; Trinity · 03 Gros Morne</text>
+  <text id="legend-en-2" x="146" y="686" font-family="system-ui,sans-serif" font-size="14" fill="#466260">Labrador is a separate mainland itinerary.</text>
+  <line x1="92" y1="704" x2="768" y2="704" stroke="#e5eeeb"/>
+
+  <text x="94" y="744" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#466260">繁中</text>
+  <text id="legend-zh-1" x="146" y="742" font-family="system-ui,sans-serif" font-size="14" fill="#183b3c">01 St. John’s 與阿瓦隆半島 · 02 Bonavista 與 Trinity · 03 Gros Morne</text>
+  <text id="legend-zh-2" x="146" y="765" font-family="system-ui,sans-serif" font-size="14" fill="#466260">拉布拉多位於大陸，是另一套獨立行程。</text>
+  <line x1="92" y1="783" x2="768" y2="783" stroke="#e5eeeb"/>
+
+  <text x="94" y="823" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#466260">日本語</text>
+  <text id="legend-ja-1" x="146" y="821" font-family="system-ui,sans-serif" font-size="14" fill="#183b3c">01 St. John’s &amp; Avalon Peninsula · 02 Bonavista &amp; Trinity · 03 Gros Morne</text>
+  <text id="legend-ja-2" x="146" y="844" font-family="system-ui,sans-serif" font-size="14" fill="#466260">Labradorは本土にある独立した旅程です。</text>
+  <line x1="92" y1="862" x2="768" y2="862" stroke="#e5eeeb"/>
+
+  <text x="94" y="902" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#466260">한국어</text>
+  <text id="legend-ko-1" x="146" y="900" font-family="system-ui,sans-serif" font-size="14" fill="#183b3c">01 St. John’s · Avalon Peninsula · 02 Bonavista · Trinity · 03 Gros Morne</text>
+  <text id="legend-ko-2" x="146" y="923" font-family="system-ui,sans-serif" font-size="14" fill="#466260">Labrador는 본토에 있는 별도 여행 일정입니다.</text>
+  <line x1="92" y1="941" x2="768" y2="941" stroke="#e5eeeb"/>
+
+  <text x="94" y="981" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#466260">ไทย</text>
+  <text id="legend-th-1" x="146" y="979" font-family="system-ui,sans-serif" font-size="14" fill="#183b3c">01 St. John’s และ Avalon Peninsula · 02 Bonavista และ Trinity · 03 Gros Morne</text>
+  <text id="legend-th-2" x="146" y="1002" font-family="system-ui,sans-serif" font-size="14" fill="#466260">Labrador เป็นแผนการเดินทางแยกต่างหากบนแผ่นดินใหญ่</text>
+
+  <text x="690" y="1057" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#466260">TripDistill original · source and terms linked on page</text>
+</svg>

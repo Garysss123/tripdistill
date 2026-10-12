@@ -102,6 +102,11 @@ assert.equal(checkedInYongduam.sourceTitle, '용두암.jpg');
 assert.equal(checkedInYongduam.creator, 'Ahn Beom-jin');
 assert.equal(checkedInYongduam.license, 'CC BY-SA 4.0');
 assert.ok(checkedInYongduam.editHistory.includes('no further per-image edit details'));
+const checkedInNewfoundlandDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-newfoundland-regions.svg');
+assert.ok(checkedInNewfoundlandDiagram, 'checked-in inventory must include the Newfoundland planning diagram');
+assert.equal(checkedInNewfoundlandDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInNewfoundlandDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInNewfoundlandDiagram.visualReviewStatus, 'visually_reviewed_2026-10-12', 'the supplied native render/pixel check must be recorded');
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map((item) => [item.name, item.value])); }
 function findAll(node, predicate, output = []) {
@@ -424,9 +429,9 @@ try {
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the merged inventory retains the exact used asset count without independent source-page checks across UK, France, Italy, Canada, Malaysia and Switzerland');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 500, 'the merged inventory retains the exact used asset count without independent source-page checks across UK, France, Italy, Canada, Malaysia and Switzerland');
   assert.equal(report.counts.sourcePageChecked, 277, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
-  assert.equal(report.counts.assetsVisuallyReviewed, 195, 'the merged inventory retains the exact current visual-review count across UK, France, Italy, Canada, Malaysia and Switzerland');
+  assert.equal(report.counts.assetsVisuallyReviewed, 198, 'the merged inventory records the supplied Banff, Jasper and Newfoundland SVG pixel checks along with prior photo reviews');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -678,13 +683,26 @@ try {
   assert.equal(jasperDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(jasperDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(jasperDiagram.commercialReuseEligibility, 'unknown');
+  const canadianPixelCheckedDiagrams = [
+    '/assets/images/tripdistill-canada-banff-two-corridors.svg',
+    '/assets/images/tripdistill-canada-jasper-three-corridors.svg',
+    '/assets/images/tripdistill-canada-newfoundland-regions.svg'
+  ];
+  for (const assetPath of canadianPixelCheckedDiagrams) {
+    const diagram = photoRecords.find((item) => item.assetPath === assetPath);
+    assert.ok(diagram, `inventory must include ${assetPath}`);
+    assert.equal(diagram.assetType, 'original-planning-diagram');
+    assert.equal(diagram.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(diagram.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(diagram.commercialReuseEligibility, 'unknown');
+  }
   const retiredJohnston = photoRecords.find((item) => item.assetPath === '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp');
   assert.ok(retiredJohnston, 'inventory must retain the mismatched Johnston source photo');
   assert.equal(retiredJohnston.inventoryStatus, 'unused');
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 23, 'the merged inventory counts UK, France, Italy, Canada, Malaysia and Switzerland project-original diagrams plus existing artwork');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 24, 'the merged inventory counts UK, France, Italy, Canada, Malaysia and Switzerland project-original diagrams plus existing artwork');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 488, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -824,7 +842,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 809, 'Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 810, 'Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

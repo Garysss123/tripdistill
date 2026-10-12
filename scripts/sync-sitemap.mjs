@@ -155,6 +155,13 @@ const calgaryBadlandsEditedRoutes = [
   '/canada/calgary-badlands/drumheller-royal-tyrrell/',
   '/canada/calgary-badlands/dinosaur-provincial-park/'
 ];
+const newfoundlandLastmod = '2026-10-12';
+const newfoundlandEditedRoutes = [
+  '/canada/newfoundland-labrador/',
+  '/canada/newfoundland-labrador/st-johns-signal-hill/',
+  '/canada/newfoundland-labrador/bonavista-trinity/',
+  '/canada/newfoundland-labrador/gros-morne/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1220,6 +1227,12 @@ for (const route of calgaryBadlandsEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Calgary/Badlands route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: calgaryBadlandsLastmod });
+}
+
+for (const route of newfoundlandEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Newfoundland route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: newfoundlandLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

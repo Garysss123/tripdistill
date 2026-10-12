@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T15:14:22.122Z",
+  "generatedAt": "2026-10-12T15:22:06.116Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 812,
+    "assetFileCount": 813,
     "completeSourceCreatorLicenseRecords": 757,
-    "completeProjectOriginalRightsRecords": 23,
+    "completeProjectOriginalRightsRecords": 24,
     "licenseClaimsNotIndependentlyVerified": 488,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 809,
-    "deduplicatedImageCount": 812,
+    "expectedBuildImageCount": 810,
+    "deduplicatedImageCount": 813,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3507,
-    "assetsUsedByScannedEnglishPages": 770,
+    "imageReferencesScanned": 3508,
+    "assetsUsedByScannedEnglishPages": 771,
     "unusedAssetCount": 42,
-    "assetsWithStructuredSourceRecords": 599,
+    "assetsWithStructuredSourceRecords": 600,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 195,
+    "assetsVisuallyReviewed": 198,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 277,
-    "metadataOrCreditOnly": 511,
-    "usedAssetsWithoutIndependentSourcePageCheck": 499,
+    "metadataOrCreditOnly": 512,
+    "usedAssetsWithoutIndependentSourcePageCheck": 500,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 805 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 809 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 806 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 810 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -4475,7 +4475,7 @@
             "/canada/calgary-badlands/drumheller-royal-tyrrell/"
           ],
           "altTexts": [
-            "Alberta badlands near Drumheller"
+            "Dinosaur displays inside the Royal Tyrrell Museum"
           ],
           "rawVisibleCredits": [
             "Albertosaurus - Canada's Dinosaur Museum. (12643048524).jpg — Bernard Spragg. NZ from Christchurch, New Zealand, CC0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -5008,7 +5008,7 @@
             "/canada/newfoundland-labrador/st-johns-signal-hill/"
           ],
           "altTexts": [
-            "North Atlantic coastal village in Newfoundland"
+            "St. Paul’s Anglican Church and graveyard in Trinity, Newfoundland"
           ],
           "rawVisibleCredits": [
             "Stpaulsanglican-trinitynewfoundland.jpg — The original uploader was Staib at English Wikipedia ., CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -5057,7 +5057,7 @@
             "/canada/newfoundland-labrador/st-johns-signal-hill/"
           ],
           "altTexts": [
-            "Mountain and fjord landscape in Gros Morne National Park"
+            "Rocky shore and mountains at Western Brook Pond in Gros Morne National Park"
           ],
           "rawVisibleCredits": [
             "Western Brook Pond.jpg — Bigg(g)er, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -5107,7 +5107,7 @@
             "/canada/newfoundland-labrador/st-johns-signal-hill/"
           ],
           "altTexts": [
-            "St. John’s harbour and colorful hillside houses in Newfoundland"
+            "Rocky Signal Hill headland above the Atlantic at St. John’s"
           ],
           "rawVisibleCredits": [
             "Signal Hill St John Harbour Newfoundland (41364638351).jpg — Michel Rathwell from Cornwall, Canada, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -27995,7 +27995,7 @@
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
@@ -28040,7 +28040,7 @@
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
@@ -28050,6 +28050,50 @@
           ],
           "altTexts": [
             "Not-to-scale diagram separating Jasper town, Maligne Valley and the southbound Icefields Parkway corridor"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "f12e6d3ed6141b68b6350b15962d36d9f8b24a610730777fa716dee82ba8c8c8",
+      "assetPaths": [
+        "/assets/images/tripdistill-canada-newfoundland-regions.svg"
+      ],
+      "byteLength": 6759,
+      "sourceRecords": [
+        {
+          "sha256": "f12e6d3ed6141b68b6350b15962d36d9f8b24a610730777fa716dee82ba8c8c8",
+          "assetPath": "/assets/images/tripdistill-canada-newfoundland-regions.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-newfoundland-regions.svg",
+          "sourceTitle": "TripDistill original Newfoundland regional planning schematic with five-language legend",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original XML vector schematic, not to scale, with visible route-region labels in English, Traditional Chinese, Japanese, Korean and Thai.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/canada/newfoundland-labrador/gros-morne/"
+          ],
+          "altTexts": [
+            "Conceptual, not-to-scale regional diagram: Gros Morne on Newfoundland’s west coast, Bonavista and Trinity to the east, St. John’s on Avalon, and Labrador as a separate mainland plan"
           ],
           "rawVisibleCredits": []
         }
