@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "這是三座城市的鐵路行程，不是可以互換的站點串遊。利物浦 Pier Head、碼頭與座堂山脊位於 Lime Street 西側與南側；曼徹斯特則從 Piccadilly、Oxford Road、Victoria 和 Deansgate 延伸至各自不同的電車與博物館街區；切斯特是須另搭一段鐵路抵達的緊湊城牆古城。每天集中走一座城市。城際車程短，不代表水岸博物館、大學區展館與切斯特城牆能排成同一天的可行路線。",
+    "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.": "從利物浦 Lime Street 經市政中心下坡至 Pier Head，先查當日狀況再決定是否參觀利物浦博物館，之後可留在碼頭區，或再上坡前往座堂山脊，最後從符合回程安排的車站離開。",
+    "Choose Castlefield from Deansgate or Deansgate–Castlefield, the university collections from Oxford Road, or a booked Salford Quays visit from its tram branch; do not zigzag between all three.": "依車站與主題選一個街區：從 Deansgate 或 Deansgate–Castlefield 走 Castlefield，從 Oxford Road 前往大學館藏，或搭電車去已預約的 Salford Quays 場館；別在三區之間來回折返。",
+    "Walk from Chester station to Eastgate, use the current wall-access notice to choose an open section, then descend once to the Roman Amphitheatre, Roman Gardens or The Rows and return through the centre.": "從切斯特站走到 Eastgate，先讀取最新城牆通行公告再選擇開放路段，接著下城一次，參觀羅馬圓形劇場、羅馬花園或 The Rows，最後穿過市中心返程。"
+  }
+}

@@ -12485,7 +12485,7 @@
     "url": "/united-kingdom/liverpool-manchester/",
     "parent": "United Kingdom",
     "type": "Regional guide",
-    "summary": "Liverpool and Manchester are close by rail but their useful visitor geographies point in different directions: Mersey waterfront and mercantile streets versus canals, civic collections and industrial quarters. Chester adds a compact walled city on another line. Each deserves a separate day even when journey times look short.",
+    "summary": "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.",
     "keywords": [
       "Liverpool, Manchester & Chester",
       "England",
@@ -12497,7 +12497,7 @@
     "url": "/united-kingdom/liverpool-manchester/liverpool-waterfront-cathedrals/",
     "parent": "Liverpool, Manchester & Chester",
     "type": "Local guide",
-    "summary": "Walk from Lime Street toward the waterfront, use one museum cluster, then climb once toward the cathedrals or remain with the Mersey and finish near a direct station.",
+    "summary": "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.",
     "keywords": [
       "Liverpool Waterfront & Cathedrals",
       "Liverpool, Manchester & Chester",
@@ -12510,7 +12510,7 @@
     "url": "/united-kingdom/liverpool-manchester/manchester-industrial-city/",
     "parent": "Liverpool, Manchester & Chester",
     "type": "Local guide",
-    "summary": "Begin at the station serving the chosen district, use one major collection, connect a bounded canal or civic route, and finish on the same tram or rail side.",
+    "summary": "Choose Castlefield from Deansgate or Deansgate–Castlefield, the university collections from Oxford Road, or a booked Salford Quays visit from its tram branch; do not zigzag between all three.",
     "keywords": [
       "Manchester Industrial City & Collections",
       "Liverpool, Manchester & Chester",
@@ -12523,7 +12523,7 @@
     "url": "/united-kingdom/liverpool-manchester/chester-walls-roman-city/",
     "parent": "Liverpool, Manchester & Chester",
     "type": "Local guide",
-    "summary": "Walk from Chester station to a named wall gate, complete a weather-aware section or full circuit, descend once for the Rows and one interior, then return through the compact centre.",
+    "summary": "Walk from Chester station to Eastgate, use the current wall-access notice to choose an open section, then descend once to the Roman Amphitheatre, Roman Gardens or The Rows and return through the centre.",
     "keywords": [
       "Chester Walls & Roman City",
       "Liverpool, Manchester & Chester",

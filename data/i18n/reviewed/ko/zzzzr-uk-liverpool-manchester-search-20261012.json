@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "이 일정은 세 도시를 철도로 연결하는 계획이지, 서로 바꿔 갈 수 있는 정류장을 이어 붙인 코스가 아닙니다. 리버풀의 Pier Head, 부두, 대성당 언덕은 Lime Street역 서쪽과 남쪽에 있습니다. 맨체스터는 Piccadilly, Oxford Road, Victoria, Deansgate를 중심으로 서로 다른 트램·박물관 구역이 펼쳐집니다. 체스터는 별도의 철도 구간으로 가는 성벽 도시입니다. 하루에 한 도시씩 집중하세요. 도시 간 열차가 짧게 걸려도 워터프런트 박물관, 대학 전시관, 체스터 성벽을 하루에 모두 엮을 수 있는 것은 아닙니다.",
+    "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.": "Liverpool Lime Street에서 시청 구역을 지나 Pier Head로 내려갑니다. 날짜별 상황을 확인한 뒤 Museum of Liverpool을 들를지 정하고, 부두에 머물거나 한 번 언덕을 올라 대성당 구역으로 향한 다음 귀가에 맞는 역에서 마무리하세요.",
+    "Choose Castlefield from Deansgate or Deansgate–Castlefield, the university collections from Oxford Road, or a booked Salford Quays visit from its tram branch; do not zigzag between all three.": "도착역에 맞춰 Deansgate나 Deansgate–Castlefield에서 Castlefield로, Oxford Road에서 대학 컬렉션으로, 또는 트램을 타고 예약한 Salford Quays 시설로 향하세요. 세 곳을 모두 오가며 지그재그로 이동하지 마세요.",
+    "Walk from Chester station to Eastgate, use the current wall-access notice to choose an open section, then descend once to the Roman Amphitheatre, Roman Gardens or The Rows and return through the centre.": "Chester역에서 Eastgate로 걸어가 최신 성벽 안내를 보고 열린 구간을 고른 다음 한 번 내려와 Roman Amphitheatre, Roman Gardens, The Rows 중 하나를 들르고 중심가를 통해 돌아옵니다."
+  }
+}
