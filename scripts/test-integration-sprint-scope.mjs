@@ -25,10 +25,10 @@ assert.equal(integrationRouteGroups.switzerland.length, 52);
 assert.equal(integrationRouteGroups.italy.length, 61);
 assert.equal(integrationRouteGroups.canada.length, 37);
 assert.equal(integrationRouteGroups.malaysia.length, 41);
-assert.equal(integrationRouteGroups.vietnam.length, 8);
-assert.equal(integrationRoutes.length, 257);
-assert.equal(integrationSitemapRoutes.length, 256);
-assert.equal(integrationSearchRoutes.length, 225);
+assert.equal(integrationRouteGroups.vietnam.length, 12);
+assert.equal(integrationRoutes.length, 261);
+assert.equal(integrationSitemapRoutes.length, 260);
+assert.equal(integrationSearchRoutes.length, 229);
 
 const changedFiles = git([
   'diff', '--name-only', integrationSprintBaseline, '--',
@@ -54,7 +54,7 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedIntegrationSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 1280);
+assert.equal(changedSitemapUrls.length, 1300);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
@@ -73,7 +73,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 225);
+assert.equal(changedSearchRoutes.length, 229);
 assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact 225 expected English search records changed');
 
-console.log('Integration scope regression passed: 257 exact English bodies, 1,280 date changes over 256 routes × five editions, 225 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 261 exact English bodies, 1,300 date changes over 260 routes × five editions, 229 English search changes, and the unchanged 4,560-URL set.');

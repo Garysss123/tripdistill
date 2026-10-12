@@ -70,7 +70,7 @@ assert.deepEqual(new Set(sitemap.keys()), new Set(baseSitemap.keys()), 'refresh 
 const localizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const changedSitemapRoutes = [...sitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
 const expectedIntegratedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
-assert.equal(integrationRoutes.length, 257, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus eight Vietnam pages');
+assert.equal(integrationRoutes.length, 261, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus twelve Vietnam pages');
 assert.deepEqual(new Set(changedSitemapRoutes), expectedIntegratedLocalizedRoutes, 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Vietnam routes receive new lastmod values');
 for (const route of localizedRoutes) assert.equal(sitemap.get(route), reviewedDate, route + ' sitemap lastmod');
 

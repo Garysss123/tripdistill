@@ -391,6 +391,12 @@ function updateSearch(routeFilter = null) {
       country.summary = countryDescription;
       country.keywords = ['vietnam', 'viet nam', 'hanoi', 'ninh binh', 'hue', 'da nang', 'hoi an', 'ho chi minh city', 'can tho', 'mekong delta', '7 night vietnam itinerary', '12 night vietnam itinerary', '14 night vietnam itinerary', 'vietnam railway schedule', 'vietnam travel guide'];
     }
+    for (const cluster of vietnamClusters.filter((item) => routeFilter.has(`/vietnam/${item.slug}/`))) {
+      const record = byUrl.get(`/vietnam/${cluster.slug}/`);
+      if (!record) throw new Error(`Cannot update missing Vietnam hub search record /vietnam/${cluster.slug}/`);
+      record.summary = cluster.hubIntro;
+      if (cluster.slug === 'ha-long-cat-ba') record.keywords = ['ha long bay', 'bai tu long bay', 'ao tien port van don', 'tuan chau cruise port', 'ha long international passenger port', 'cat ba ferry dong bai cai vieng', 'cat ba town', 'ben beo lan ha pier', 'lan ha bay', 'cat ba national park', 'vietnam maritime karst route'];
+    }
     for (const guide of vietnamGuides.filter((item) => routeFilter.has(item.url))) {
       const record = byUrl.get(guide.url);
       if (!record) throw new Error(`Cannot update missing Vietnam search record ${guide.url}`);
@@ -476,11 +482,15 @@ const targeted = routeArgument !== undefined;
 if (hueOnly && targeted) throw new Error('Use either --hue-only or --routes, not both.');
 if (targeted && (!requestedRoutes.length || new Set(requestedRoutes).size !== requestedRoutes.length)) throw new Error('--routes must contain unique, non-empty public route paths.');
 const guidesByRoute = new Map(vietnamGuides.map((guide) => [guide.url, guide]));
+const clustersByRoute = new Map(vietnamClusters.map((cluster) => [`/vietnam/${cluster.slug}/`, cluster]));
 const countryRouteRequested = requestedRoutes.includes('/vietnam/');
-const requestedGuideRoutes = requestedRoutes.filter((route) => route !== '/vietnam/');
+const requestedHubRoutes = requestedRoutes.filter((route) => clustersByRoute.has(route));
+const requestedGuideRoutes = requestedRoutes.filter((route) => route !== '/vietnam/' && !clustersByRoute.has(route));
 const unknownRoutes = requestedGuideRoutes.filter((route) => !guidesByRoute.has(route));
 if (unknownRoutes.length) throw new Error(`Unknown Vietnam child routes: ${unknownRoutes.join(', ')}`);
-const clustersToGenerate = hueOnly ? vietnamClusters.filter((cluster) => cluster.slug === 'hue') : targeted ? [] : vietnamClusters;
+const unknownHubRoutes = requestedRoutes.filter((route) => route !== '/vietnam/' && route.endsWith('/') && route.split('/').filter(Boolean).length === 2 && !clustersByRoute.has(route));
+if (unknownHubRoutes.length) throw new Error(`Unknown Vietnam hub routes: ${unknownHubRoutes.join(', ')}`);
+const clustersToGenerate = hueOnly ? vietnamClusters.filter((cluster) => cluster.slug === 'hue') : targeted ? requestedHubRoutes.map((route) => clustersByRoute.get(route)) : vietnamClusters;
 const hueEditorialGuideSlugs = new Set(['imperial-city-citadel', 'royal-tombs', 'thien-mu-perfume-river']);
 const guidesToGenerate = hueOnly ? vietnamGuides.filter((guide) => guide.hubSlug === 'hue' && hueEditorialGuideSlugs.has(guide.slug)) : targeted ? requestedGuideRoutes.map((route) => guidesByRoute.get(route)) : vietnamGuides;
 if (hueOnly && clustersToGenerate.length !== 1) throw new Error('Hue-only generation requires exactly one Hue cluster.');
@@ -505,7 +515,7 @@ if (targeted) {
     fs.writeFileSync(countryFile, countryPage());
   }
   updateSearch(new Set(requestedRoutes));
-  console.log(`Generated ${countryRouteRequested ? 'the Vietnam country page and ' : ''}${guidesToGenerate.length} requested Vietnam child pages, and synchronized only their search records: ${requestedRoutes.join(', ')}.`);
+  console.log(`Generated ${countryRouteRequested ? 'the Vietnam country page, ' : ''}${clustersToGenerate.length} requested Vietnam hubs, ${guidesToGenerate.length} requested Vietnam child pages, and synchronized only their search records: ${requestedRoutes.join(', ')}.`);
 } else if (hueOnly) {
   updateHueSiblingPhotoCredits(clustersToGenerate[0]);
   console.log('Generated Hue only: 1 hub and 3 refreshed guides; the remaining 3 Hue siblings received only the current tomb-photo credit. Country shell, shared navigation, search and other regions were not rewritten.');

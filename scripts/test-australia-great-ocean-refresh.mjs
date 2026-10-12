@@ -59,6 +59,12 @@ const laterVietnamRoutes = [
   '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
   '/vietnam/ha-giang/meo-vac-du-gia/'
 ];
+const currentVietnamRoutes = [
+  '/vietnam/ha-long-cat-ba/',
+  '/vietnam/ha-long-cat-ba/bai-tu-long/',
+  '/vietnam/ha-long-cat-ba/lan-ha-town/',
+  '/vietnam/ha-long-cat-ba/national-park/'
+];
 const laterSwitzerlandCh14DateRoutes = laterSwitzerlandCh14Routes.slice(1);
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
@@ -258,7 +264,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes].sort(), 'Only four selected Great Ocean Road, exact later CA13, CA14 child, Gold Coast, Cairns, CH14 and Vietnam search records may change since the prior integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes, ...currentVietnamRoutes].sort(), 'Only four selected Great Ocean Road, exact later CA13, CA14 child, Gold Coast, Cairns, CH14 and Vietnam search records may change since the prior integration checkpoint.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -274,7 +280,7 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', integrationBase + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...laterVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road, exact later CA13/CA14, Gold Coast, Cairns, CH14 and Vietnam routes across five editions may receive a new lastmod since the prior integration checkpoint.');

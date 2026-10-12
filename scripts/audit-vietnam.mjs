@@ -135,7 +135,10 @@ for (const record of routes) {
     if (!html.includes(`hreflang="${locale}" href="https://tripdistill.com${prefix}${record.route}"`)) problems.push(`${record.route}: missing ${locale} hreflang`);
   }
   if (!html.includes(`hreflang="x-default" href="https://tripdistill.com${record.route}"`)) problems.push(`${record.route}: missing x-default hreflang`);
-  const requiredFieldCss = record.kind === 'guide' && record.guide.routeDiagram ? diagramFieldCss : expectedFieldCss;
+  const requiredFieldCss = (record.kind === 'guide' && record.guide.routeDiagram)
+    || (record.kind === 'hub' && record.route === '/vietnam/ha-long-cat-ba/')
+    ? diagramFieldCss
+    : expectedFieldCss;
   if (record.kind !== 'country' && !html.includes(requiredFieldCss)) problems.push(`${record.route}: missing Vietnam field stylesheet ${requiredFieldCss}`);
   if (record.kind === 'country' && (html.match(/class="vn-country-card"/g) || []).length !== 14) problems.push(`${record.route}: expected fourteen country cards`);
   if (record.kind === 'country') {
@@ -197,7 +200,15 @@ if (new Set(vietnamSearch.map((item) => item.url)).size !== vietnamSearch.length
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 for (const record of routes) {
   for (const [, prefix] of locales) {
-    const lastmod = record.route === '/vietnam/' ? '2026-10-12' : record.route.startsWith('/vietnam/hue/') ? '2026-10-08' : record.kind === 'guide' && record.guide.isoDate === '2026-10-12' ? record.guide.isoDate : '2026-08-31';
+    const lastmod = record.route === '/vietnam/'
+      ? '2026-10-12'
+      : record.route.startsWith('/vietnam/hue/')
+        ? '2026-10-08'
+        : record.kind === 'hub' && record.route === '/vietnam/ha-long-cat-ba/'
+          ? '2026-10-12'
+          : record.kind === 'guide' && record.guide.isoDate === '2026-10-12'
+            ? '2026-10-12'
+            : '2026-08-31';
     if (!sitemap.includes(`<loc>https://tripdistill.com${prefix}${record.route}</loc><lastmod>${lastmod}</lastmod>`)) problems.push(`${record.route}: missing ${prefix || 'English'} sitemap record with lastmod ${lastmod}`);
   }
 }
