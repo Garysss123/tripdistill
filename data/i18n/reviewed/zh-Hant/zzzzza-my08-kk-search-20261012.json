@@ -1,0 +1,30 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kota kinabalu international airport": "亞庇國際機場",
+    "jesselton point south jetty": "Jesselton Point 南碼頭",
+    "dbkk jetty": "DBKK 碼頭",
+    "sabah state museum": "沙巴州博物館",
+    "tanjung aru beach": "丹絨亞路海灘",
+    "metmalaysia marine forecast": "馬來西亞氣象局海況預報",
+    "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park": "馬來西亞 — 亞庇與東姑阿都拉曼公園",
+    "gaya street sunday market": "加雅街週日市集",
+    "atkinson clock tower": "Atkinson Clock Tower",
+    "kk heritage walk": "亞庇古蹟步行路線",
+    "sabah tourism building": "沙巴旅遊局大樓",
+    "jesselton point waterfront": "Jesselton Point 海濱",
+    "jalan muzium": "Jalan Muzium",
+    "perdana park": "Perdana Park",
+    "manukan island": "馬努干島",
+    "mamutik island": "馬穆迪島",
+    "sabah parks island facilities": "沙巴公園局島上設施",
+    "sapi island": "沙比島",
+    "gaya island": "加雅島",
+    "gaya island resort": "加雅島度假村",
+    "sutera harbour marina": "Sutera Harbour 遊艇碼頭"
+  }
+}

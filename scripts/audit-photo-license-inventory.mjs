@@ -1092,6 +1092,11 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', '2026-10-09']
 ]);
 for (const assetPath of [
+  '/assets/images/malaysia-kota-kinabalu.webp',
+  '/assets/images/malaysia-kota-kinabalu-jetty.webp',
+  '/assets/images/malaysia-kota-kinabalu-islands.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+for (const assetPath of [
   '/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp',
   '/assets/images/france-dordogne-perigord-vezere-prehistory.webp',
   '/assets/images/france-dordogne-perigord-dordogne-castles-villages.webp'
@@ -1194,6 +1199,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:France-00
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg', {
   detail: 'Provence inland photo review: the exact Commons page lists Einaz80 and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show Gordes hillside village and stone buildings in the Luberon, consistent with the route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', {
+  detail: 'Kota Kinabalu photo review: the exact Commons page lists Garysawjuntiek, 25 August 2018, 4,160 × 3,120 original pixels and CC BY-SA 4.0. The local 1,440 × 960 WebP pixels show the Kota Kinabalu waterfront, sea, islands and sunset, consistent with the image description. The exact source, creator and license version appear in the page credits; the page also discloses resizing, center-cropping and WebP conversion. This records the page declaration and local subject match, not independent rights or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', {
+  detail: 'Kota Kinabalu photo review: the exact Commons page identifies Stefan Fussan, 1 January 2012, 1,200 × 729 original pixels and a CC BY-SA 3.0 declaration among its listed license versions; the author text also names CC BY-SA 4.0 as a later option. The local 1,440 × 960 WebP pixels show passenger boats moored at the Kota Kinabalu waterfront, matching the route image description. The visible credit selects CC BY-SA 3.0 and links to the exact page; the page discloses resizing, center-cropping and WebP conversion. This records the page declarations and local subject match, not independent rights or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg', {
+  detail: 'Kota Kinabalu photo review: the exact Commons page lists Thien Zie Yung, 16 December 2008, 3,648 × 2,736 original pixels and CC BY 2.0. The local 1,440 × 960 WebP pixels show the Sabah coast and several islands from the air, consistent with the Tunku Abdul Rahman Park image description. The exact source, creator and license appear in the page credits; the page discloses resizing, center-cropping and WebP conversion. This records the page declaration and local subject match, not independent rights or chain-of-title clearance.',
   checkedOn: '2026-10-12'
 });
 const entries = [];

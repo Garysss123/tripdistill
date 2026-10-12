@@ -376,6 +376,7 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
     const hub = index.find((item) => item.url === hubUrl);
     if (!hub) throw new Error('Missing existing hub search record for ' + targetCluster.hubSlug);
     hub.summary = targetCluster.hubPrompt;
+    if (targetCluster.searchKeywords) hub.keywords = targetCluster.searchKeywords.map((keyword) => keyword.toLowerCase());
     for (const guide of targetGuides) {
       const entry = index.find((item) => item.url === guide.url);
       if (!entry) throw new Error('Missing existing search record for ' + guide.url);
@@ -383,7 +384,8 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
       entry.parent = (targetCluster?.hubSlug === 'cameron-highlands' ? 'Malaysia · ' : 'Malaysia - ') + guide.hubName;
       entry.type = 'Focused area and field guide';
       entry.summary = guide.summary;
-      entry.keywords = [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide'];
+      entry.keywords = guide.searchKeywords?.map((keyword) => keyword.toLowerCase())
+        ?? [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide'];
     }
     fs.writeFileSync(file, JSON.stringify(index, null, 2) + '\n');
     return;
@@ -418,6 +420,7 @@ if (requestedClusterSlug) {
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
+    'kota-kinabalu-tunku-abdul-rahman': ['gaya-street-waterfront', 'tanjung-aru-museum', 'manukan-mamutik', 'sapi-gaya-islands'],
     melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
     'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau']
   };

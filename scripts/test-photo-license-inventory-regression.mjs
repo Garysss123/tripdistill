@@ -122,6 +122,48 @@ try {
   assert.ok(findAll(explicitCreditRows[0], (node) => node.tagName === 'a' && attrs(node).href === sourceUrl).length, 'visible credit must link to the exact Commons file page');
 
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
+  const kotaKinabaluPhotos = [
+    { assetPath: '/assets/images/malaysia-kota-kinabalu.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', creator: 'Garysawjuntiek', license: 'CC BY-SA 4.0', sourceDate: '2018-08-25', originalSize: '4,160 × 3,120' },
+    { assetPath: '/assets/images/malaysia-kota-kinabalu-jetty.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', sourceDate: '2012-01-01', originalSize: '1,200 × 729' },
+    { assetPath: '/assets/images/malaysia-kota-kinabalu-islands.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg', creator: 'Thien Zie Yung', license: 'CC BY 2.0', sourceDate: '2008-12-16', originalSize: '3,648 × 2,736' }
+  ];
+  const allPhotoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  for (const image of kotaKinabaluPhotos) {
+    const record = allPhotoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Kota Kinabalu inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.sourcePhotoDate, image.sourceDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(image.originalSize), 'Commons original dimensions must be recorded');
+    assert.ok(record.verificationDetail.includes('local 1,440 × 960 WebP pixels'), 'local pixel dimensions and subject check must be explicit');
+    assert.match(record.verificationDetail, /not independent rights|not independent.*clearance/i, 'page declarations must not imply chain-of-title clearance');
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.match(record.editHistory, /center-cropped to 1440 × 960 and converted to WebP/i);
+    if (image.license.includes('BY-SA')) assert.ok(record.editHistory.includes(image.license), 'the adapted photo must retain the exact share-alike version');
+  }
+  const kotaKinabaluLocaleHubs = [
+    { prefix: '', label: 'English' },
+    { prefix: 'zh', label: 'Traditional Chinese' },
+    { prefix: 'ja', label: 'Japanese' },
+    { prefix: 'ko', label: 'Korean' },
+    { prefix: 'th', label: 'Thai' }
+  ];
+  for (const { prefix, label } of kotaKinabaluLocaleHubs) {
+    const page = parse(fs.readFileSync(path.join(root, prefix, 'malaysia/kota-kinabalu-tunku-abdul-rahman/index.html'), 'utf8'));
+    const sources = findAll(page, (node) => node.tagName === 'section' && attrs(node).class?.split(/\s+/).includes('sources'));
+    assert.equal(sources.length, 1, `${label} Kota Kinabalu hub must retain one source and photo-credit section`);
+    for (const image of kotaKinabaluPhotos) {
+      const credits = findAll(sources[0], (node) => node.tagName === 'a' && attrs(node).href === image.sourceUrl);
+      assert.equal(credits.length, 1, `${label} Kota Kinabalu hub must link the exact Commons page`);
+      const creditText = textContent(credits[0].parentNode);
+      assert.ok(creditText.includes(image.creator), `${label} Kota Kinabalu hub must retain the credited creator`);
+      assert.ok(creditText.includes(image.license), `${label} Kota Kinabalu hub must retain the declared license version`);
+    }
+  }
   const similan = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/thailand-andaman-similan.webp');
   assert.ok(similan, 'inventory regeneration must include the Andaman Similan image');
   assert.equal(similan.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Ko_similan_panorama_from_sailboat_rock.jpg');
@@ -304,7 +346,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 518, 'the merged inventory records Côte d’Azur, Marseille, Peak District and Provence inland photo checks while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 515, 'the merged inventory records Kota Kinabalu, Côte d’Azur, Marseille, Peak District and Provence inland photo checks while unresolved claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -520,7 +562,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 514, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 511, 'the regenerated merged inventory includes Kota Kinabalu, Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -952,7 +994,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; the three Côte d’Azur photos retain pixel reviews and source-page declarations without implying independent clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: three Kota Kinabalu WebPs retain 1440 × 960 pixel reviews, checked Commons declarations, exact license versions and edit notes without implying independent rights clearance; three Ayutthaya Commons revisions, the Côte d’Azur photos, five Chiang Mai images and 18 Da Nang, Bangkok and Victoria images retain their source, license and pixel checks; the Mae Sa date discrepancy stays unresolved; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

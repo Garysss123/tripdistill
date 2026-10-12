@@ -1,0 +1,13 @@
+# Kota Kinabalu photo review — 12 October 2026
+
+The three existing local images were opened at pixel level, checked against their linked Wikimedia Commons file pages, and compared with the English visible credit. All local assets are 1440 × 960 WebP files. Their pixel subjects agree with their page descriptions and the credited subjects, so no replacement SVG was needed. The originals remain in place.
+
+| Local asset | Pixel finding | Commons page declaration | Local SHA-256 |
+|---|---|---|---|
+| `/assets/images/malaysia-kota-kinabalu.webp` | Kota Kinabalu waterfront at sunset, with the sea and islands in frame. | [Sunset of Segala Waterfront Kota Kinabalu, Sabah Malaysia.jpg](https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg) — Garysawjuntiek; photo dated 25 August 2018; original 4,160 × 3,120; CC BY-SA 4.0. | `71906452a28e86d5197450a15485f52bf9d4ad6ca4e93fa1bb4bbb123f24139a` |
+| `/assets/images/malaysia-kota-kinabalu-jetty.webp` | Passenger boats moored at the Kota Kinabalu waterfront. | [Kota Kinabalu - Boats to TAR Marine Park.jpg](https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg) — Stefan Fussan; photo dated 1 January 2012; original 1,200 × 729. The page lists CC BY-SA 3.0 among its versions and separately describes CC BY-SA 4.0 as a later option. TripDistill retains the explicit CC BY-SA 3.0 credit. | `a0a80009105a46e9e7e2f769af706d83189ea8182e785f03b92b5946d64aec3f` |
+| `/assets/images/malaysia-kota-kinabalu-islands.webp` | Aerial view of the Sabah coastline and several islands. | [Manukan, Mamutik & Sulug - Happy Islands.jpg](https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg) — Thien Zie Yung; photo dated 16 December 2008; original 3,648 × 2,736; CC BY 2.0. | `6746e532b8e7f9525d2fe65c82e4837c854ebbf56b4aa1bdff49a547404b502e` |
+
+The English hub and all four child source sections disclose that the photos were resized, center-cropped to 1440 × 960 and converted to WebP, with no other material edits. The five localized hub credit sections preserve the exact Commons page link, creator and selected license version. The photo inventory now records all three pixel reviews on 12 October 2026 and the per-image edit history.
+
+The Commons pages are the sources of the declarations recorded above. This review does not independently establish underlying ownership, chain of title, or any third-party rights beyond those declarations. The boat photograph page lists several license versions; the site keeps its existing CC BY-SA 3.0 attribution and discloses the WebP adaptation under that version.

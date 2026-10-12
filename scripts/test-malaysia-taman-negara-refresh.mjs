@@ -153,9 +153,18 @@ const provenceRoutes = [
   '/france/provence-inland/aix-markets-cezanne/'
 ];
 const provenceTargets = new Set(localePrefixes.flatMap((prefix) => provenceRoutes.map((route) => `${prefix}${route}`)));
+const kotaKinabaluRoutes = [
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
+const kotaKinabaluTargets = new Set(localePrefixes.flatMap((prefix) => kotaKinabaluRoutes.map((route) => `${prefix}${route}`)));
 const expectedUpdates = new Map([
   ...[...tamanTargets].map((url) => [url, reviewedDate]),
-  ...[...provenceTargets].map((url) => [url, '2026-10-12'])
+  ...[...provenceTargets].map((url) => [url, '2026-10-12']),
+  ...[...kotaKinabaluTargets].map((url) => [url, '2026-10-12'])
 ]);
 for (const [url, date] of baseSitemap) {
   assert.equal(sitemapEntries.get(url), expectedUpdates.get(url) || date, `sitemap date scope: ${url}`);
@@ -163,5 +172,6 @@ for (const [url, date] of baseSitemap) {
 }
 assert.equal(tamanTargets.size, 25, 'expected exactly 5 Taman routes × 5 language editions');
 assert.equal(provenceTargets.size, 15, 'expected only the three Provence routes × 5 language editions as the separate concurrent date change');
+assert.equal(kotaKinabaluTargets.size, 25, 'expected exactly 5 Kota Kinabalu routes × 5 language editions');
 
-console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, 25 Taman and 15 Provence date entries, synchronized search, linked official sources, and no URL-set changes.`);
+console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, 25 Taman, 15 Provence and 25 Kota Kinabalu date entries, synchronized search, linked official sources, and no URL-set changes.`);

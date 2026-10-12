@@ -58,6 +58,14 @@ const malaysiaFourthChildrenRoutes = [
   '/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/',
   '/malaysia/langkawi/dayang-bunting-island/'
 ];
+const malaysiaKotaKinabaluLastmod = '2026-10-12';
+const malaysiaKotaKinabaluRoutes = [
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -794,6 +802,11 @@ for (const route of malaysiaFourthChildrenRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Malaysia child route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaFourthChildrenLastmod });
+}
+for (const route of malaysiaKotaKinabaluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kota Kinabalu route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKotaKinabaluLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
