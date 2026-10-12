@@ -3,6 +3,8 @@ const extraStylesheet = '/css/china-north-plains.css?v=20260828-1';
 export const guides = [
   {
     slug: 'datong',
+    dateModified: '2026-08-28',
+    webPageIdentity: true,
     name: 'Datong',
     title: 'Datong Travel Guide (2026): Yungang Grottoes and Shanxi Routes',
     metaDescription: 'Plan Datong around Yungang conservation, city museums and temples, then give the Hanging Temple or farther Shanxi sites a separate road day.',
@@ -64,6 +66,8 @@ export const guides = [
   },
   {
     slug: 'pingyao',
+    dateModified: '2026-08-28',
+    webPageIdentity: true,
     name: 'Pingyao',
     title: 'Pingyao Travel Guide (2026): Walls, Courtyards and Merchant History',
     metaDescription: 'Plan Pingyao as a living walled city with merchant history, courtyards and quiet hours, then connect Shuanglin or Zhenguo Temple without rushing.',
@@ -125,6 +129,8 @@ export const guides = [
   },
   {
     slug: 'luoyang',
+    dateModified: '2026-08-28',
+    webPageIdentity: true,
     name: 'Luoyang',
     title: 'Luoyang Travel Guide (2026): Longmen Grottoes and Capital Layers',
     metaDescription: 'Plan Luoyang through Longmen conservation, museums and successive capital layers, with peony season and any Shaolin excursion treated separately.',
@@ -187,6 +193,8 @@ export const guides = [
   },
   {
     slug: 'xian',
+    dateModified: '2026-08-28',
+    webPageIdentity: true,
     name: "Xi'an",
     title: "Xi'an Travel Guide (2026): Terracotta Army, Museums and City Walls",
     metaDescription: "Plan Xi'an through archaeology, reservation-heavy museums, the city wall and living religious quarters, with the Terracotta Army given a separate day.",

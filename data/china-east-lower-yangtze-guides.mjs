@@ -3,6 +3,8 @@ const extraStylesheet = '/css/china-east-lower-yangtze.css?v=20260828-1';
 export const guides = [
   {
     slug: 'suzhou',
+    dateModified: '2026-08-28',
+    webPageIdentity: true,
     name: 'Suzhou',
     title: 'Suzhou Travel Guide (2026): Classical Gardens, Canals and Craft',
     metaDescription: 'Plan Suzhou through a small number of classical gardens, canal streets, museum reservations and one deliberate outer-city branch.',
@@ -65,6 +67,8 @@ export const guides = [
   },
   {
     slug: 'nanjing',
+    dateModified: '2026-08-28',
+    webPageIdentity: true,
     name: 'Nanjing',
     title: 'Nanjing Travel Guide (2026): City Walls, Museums and Memory',
     metaDescription: 'Plan Nanjing through Ming, republican and wartime layers with museum reservations, respectful memorial visits and realistic Purple Mountain days.',

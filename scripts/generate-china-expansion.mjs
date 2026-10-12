@@ -4,7 +4,7 @@ import { guides } from '../data/china-expansion-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '28 August 2026';
-const assetVersion = '20261011-1';
+const assetVersion = '20261012-1';
 const requestedSlugs = process.argv.find((value) => value.startsWith('--slugs='))
   ?.slice('--slugs='.length).split(',').map((slug) => slug.trim()).filter(Boolean);
 if (requestedSlugs?.length && new Set(requestedSlugs).size !== requestedSlugs.length) {
@@ -84,9 +84,11 @@ function jsonLd(guide) {
           acceptedAnswer: { '@type': 'Answer', text: faq.answer }
         }))
       },
-      ...(guide.dateModified === '2026-10-10' || guide.dateModified === '2026-10-11' ? [{
+      ...(guide.dateModified ? [{
         '@type': 'WebPage',
+        ...(guide.webPageIdentity ? { '@id': `https://tripdistill.com${route}#webpage` } : {}),
         url: `https://tripdistill.com${route}`,
+        ...(guide.webPageIdentity ? { inLanguage: 'en' } : {}),
         dateModified: guide.dateModified
       }] : [])
     ]
@@ -149,7 +151,7 @@ function renderGuide(guide) {
   <meta name="description" content="${escapeHtml(guide.metaDescription)}">
   <link rel="canonical" href="https://tripdistill.com${route}">${alternates(route)}<meta name="theme-color" content="${guide.themeColor}">
   <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.ogTitle)}"><meta property="og:description" content="${escapeHtml(guide.metaDescription)}"><meta property="og:url" content="https://tripdistill.com${route}"><meta property="og:image" content="https://tripdistill.com${guide.image.path}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="/css/china.css?v=20260827-3"><link rel="stylesheet" href="/css/china-expansion.css?v=${assetVersion}">${guide.extraStylesheet ? `<link rel="stylesheet" href="${escapeHtml(guide.extraStylesheet)}">` : ''}<script src="/js/adsense.js?v=20260826-9" defer></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="/css/china.css?v=20261012-1"><link rel="stylesheet" href="/css/china-expansion.css?v=${assetVersion}">${guide.extraStylesheet ? `<link rel="stylesheet" href="${escapeHtml(guide.extraStylesheet)}">` : ''}<script src="/js/adsense.js?v=20260826-9" defer></script>
   <script type="application/ld+json">${jsonLd(guide)}</script>
 </head>
 <body class="china-expansion-page" data-page="${guide.slug}" data-parent-page="china" data-country="china" data-region="${guide.slug}">

@@ -187,3 +187,22 @@ html[lang="th"] .shanghai-river-copy h1 { font-size: clamp(3.2rem,5vw,5.2rem); l
 @media (prefers-reduced-motion: reduce) {
   .shanghai-card img { transition: none; }
 }
+
+/* Shanghai hero typography guard: keep translated descenders clear of the accent line. */
+.shanghai-river-copy h1,
+.sh-chapter-copy h1,
+html[lang="ko"] .shanghai-river-copy h1,
+html[lang="th"] .shanghai-river-copy h1 {
+  line-height: 1.08;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.shanghai-river-copy h1 > span,
+.sh-chapter-copy h1 > span {
+  display: block;
+  max-width: 100%;
+  margin-block-start: max(16px, .2em);
+  line-height: 1.18;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}

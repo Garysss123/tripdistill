@@ -295,3 +295,36 @@ body[data-country="china"] {
 @media (prefers-reduced-motion: reduce) {
   .beijing-card img, .destination-card img { transition: none; }
 }
+
+/* China hero typography guard: keep translated descenders clear of the accent line. */
+.china-country-copy h1,
+.axis-hero h1,
+.palace-gate-copy h1,
+.hill-lake-copy h1,
+.ritual-hero-copy h1,
+.clock-hero-copy h1,
+.courtyard-hero-copy h1,
+.gallery-hero-copy h1,
+.garden-scroll-copy h1,
+.ridge-hero-copy h1 {
+  line-height: 1.08;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.china-country-copy h1 > span,
+.axis-hero h1 > span,
+.palace-gate-copy h1 > span,
+.hill-lake-copy h1 > span,
+.ritual-hero-copy h1 > span,
+.clock-hero-copy h1 > span,
+.courtyard-hero-copy h1 > span,
+.gallery-hero-copy h1 > span,
+.garden-scroll-copy h1 > span,
+.ridge-hero-copy h1 > span {
+  display: block;
+  max-width: 100%;
+  margin-block-start: max(16px, .2em);
+  line-height: 1.18;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}

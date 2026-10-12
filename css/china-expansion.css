@@ -433,3 +433,33 @@
 @media (prefers-reduced-motion: reduce) {
   .exp-guide * { scroll-behavior:auto !important; }
 }
+
+/* China destination hero typography guard; the vertical scroll keeps its sideways gap. */
+.exp-guide .exp-hero h1,
+.exp-guide[data-visual="karst-scroll"] .exp-hero h1 {
+  line-height: 1.08;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.exp-guide .exp-hero h1 > span {
+  display: block;
+  max-width: 100%;
+  margin-block-start: max(16px, .2em);
+  line-height: 1.18;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.exp-guide[data-visual="karst-scroll"] .exp-hero h1 > span {
+  display: inline;
+  margin: 0 14px 0 0;
+  line-height: 1.18;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 760px) {
+  .exp-guide[data-visual="karst-scroll"] .exp-hero h1 > span {
+    display: block;
+    margin: 16px 0 0;
+    line-height: 1.18;
+  }
+}

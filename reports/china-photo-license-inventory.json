@@ -1,134 +1,31 @@
 {
-  "generatedAt": "2026-10-11T04:24:22.714Z",
+  "generatedAt": "2026-10-12T00:18:10Z",
   "scope": "China-only asset provenance evidence for the China release candidate. Each row records the source page and/or local credit status in this snapshot. Counts are inventory coverage only; source-page checks do not establish uploader authority or complete rights clearance.",
-  "rightsBoundary": "Do not treat inventory totals, a Creative Commons label transcribed from a page, or source_page_checked as blanket permission. The unresolved Potala image is retained as unused with a null license. The original Lhasa SVG has no separately declared reuse license.",
+  "rightsBoundary": "All 55 used-photo source pages/declarations have been checked against visible credits. Fifty-four local WebP assets have recorded source-to-local visual reviews; the distinct Lujiazui asset remains pending an individual comparison. Commons license labels are uploader-provided statements; no independent uploader-authority or complete rights-chain verification is claimed (count 0). Inventory coverage is not blanket legal clearance. The unresolved Potala image remains unused with a null license. The original Lhasa SVG has no separately declared reuse license.",
   "counts": {
     "assetRecordCount": 57,
     "usedPhotoAssetCount": 55,
-    "usedPhotoSourcePagesChecked": 48,
-    "usedPhotoSourcePagesNotIndependentlyChecked": 7,
+    "usedPhotoSourcePagesChecked": 55,
+    "usedPhotoSourcePagesNotIndependentlyChecked": 0,
     "usedProjectOriginalDiagramCount": 1,
     "unusedLegacyAssetCount": 1,
     "usedPhotoRecordsWithSourceCreatorAndLicense": 55,
-    "usedPhotoSourceDeclarationsChecked": 54,
-    "usedPhotoSourceDeclarationsPending": 1,
-    "usedPhotoPixelComparisonsPending": 7
+    "usedPhotoSourceDeclarationsChecked": 55,
+    "usedPhotoSourceDeclarationsPending": 0,
+    "usedPhotoPixelComparisonsPending": 1,
+    "usedPhotoPixelComparisonsChecked": 54,
+    "usedPhotoRightsChainsIndependentlyVerified": 0
   },
-  "pendingPhotoSourceChecks": [
-    {
-      "assetPath": "/assets/images/china-shanghai-bund-night.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/the-bund-huangpu/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Bund_at_night,_Shanghai,_Aug_10_2023.jpg",
-      "creator": "A Chinese ID",
-      "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "checked",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (A Chinese ID, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-      "pixelComparisonStatus": "pending"
-    },
-    {
-      "assetPath": "/assets/images/china-shanghai-longhua.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/west-bund-longhua/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longhua_Pagoda_approach_with_lanterns_Shanghai_2026-01-27_dllu.jpg",
-      "creator": "Daniel Lu",
-      "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "checked",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Lu, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-      "pixelComparisonStatus": "pending"
-    },
-    {
-      "assetPath": "/assets/images/china-shanghai-museum.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/peoples-square-museums/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_on_People%27s_Square.jpg",
-      "creator": "Alexey Yakovlev",
-      "license": "CC0 1.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "checked",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Alexey Yakovlev, CC0 1.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-      "pixelComparisonStatus": "pending"
-    },
-    {
-      "assetPath": "/assets/images/china-shanghai-suzhou-creek.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/hongkou-suzhou-creek/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suzhou_Creek_from_Waibaidu_Bridge,_Shanghai.jpg",
-      "creator": "Daniel Case",
-      "license": "CC BY-SA 3.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "checked",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Case; page offers GFDL or CC BY-SA 3.0, and the current credit selects CC BY-SA 3.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-      "pixelComparisonStatus": "pending"
-    },
-    {
-      "assetPath": "/assets/images/china-shanghai-wukang.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/wukang-road-xuhui/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wukang_Mansion_(20191114161507).jpg",
-      "creator": "N509FZ",
-      "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "checked",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (N509FZ, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-      "pixelComparisonStatus": "pending"
-    },
-    {
-      "assetPath": "/assets/images/china-shanghai-yuyuan.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/yuyuan-old-city/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yu_Garden_Shanghai_November_2017_002.jpg",
-      "creator": "King of Hearts",
-      "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "checked",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (King of Hearts, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-      "pixelComparisonStatus": "pending"
-    },
-    {
-      "assetPath": "/assets/images/china-shanghai-zhujiajiao.webp",
-      "routes": [
-        "/china/shanghai/",
-        "/china/shanghai/zhujiajiao-water-town/"
-      ],
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Qingpu_-_Zhujiajiao_IMG_8268_Caohe_canal.jpg",
-      "creator": "Bjoertvedt",
-      "license": "CC BY-SA 4.0",
-      "verificationStatus": "site_credit_or_metadata_only",
-      "sourceDeclarationStatus": "unavailable",
-      "sourceDeclarationCheckedAt": "2026-10-12",
-      "sourceDeclarationFinding": "The linked Commons file page could not be retrieved with the available official-source reader, so its page declaration is not confirmed in this follow-up.",
-      "pixelComparisonStatus": "pending"
-    }
-  ],
+  "pendingPhotoSourceChecks": [],
   "verificationMethod": {
     "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
-    "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
+    "sourcePageChecks": "All 55 used-photo source pages have a recorded page-declaration check and check date. The six earlier Shanghai page statements were checked against their visible site credits; the parent read the Zhujiajiao Commons page on 2026-10-12 and confirmed Bjoertvedt / Own work / CC BY-SA 4.0. Page checks record uploader statements only, not independent authority or complete rights clearance.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
     "buildImageCountReconciliation": "The 793 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 797 build image files.",
-    "sourceDeclarationChecks": "Six Shanghai Commons file pages were read on 2026-10-12 and their visible creator/title/license declarations matched the visible site credits. This is uploader-provided page metadata only; it is distinct from local pixel matching and does not convert the older source_page_checked count into blanket legal clearance. The Zhujiajiao source page could not be retrieved.",
-    "localPixelComparisons": "48 of 55 used photographic assets have the prior source-to-local subject/pixel review recorded. The six Shanghai records with checked declarations and the Zhujiajiao record still have source-to-local pixel comparison pending."
+    "sourceDeclarationChecks": "55/55 used photo source declarations checked against visible credits. This includes the parent-read Zhujiajiao page on 2026-10-12; its uploader-stated creator, Own work claim and CC BY-SA 4.0 match the inventory.",
+    "localPixelComparisons": "54/55 used photographic assets have a recorded source-to-local visual match. Parent independent review compared all seven Shanghai source originals with the repo raw WebPs from e964b4c3ae9388e8eee2f792d9a6455c83bf24e8 on 2026-10-12; each matched composition, object positions and crop. The distinct Lujiazui WebP remains pending individual comparison.",
+    "rightsAuthority": "Independent uploader-authority or complete legal rights-chain review was not performed (0/55). Stated-license eligibility fields remain explicitly qualified and are not a blanket clearance finding."
   },
   "entries": [
     {
@@ -2333,10 +2230,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The dome, clock tower, green spire and foreground people align with the Commons original; displayed framing matches. Original dimensions: 4032 × 3024 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2351,8 +2248,18 @@
           ],
           "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (A Chinese ID, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Commons page checked 2026-10-12: displayed creator A Chinese ID and declared license CC BY-SA 4.0 match the visible site credit. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The dome, clock tower, green spire and foreground people align with the Commons original; displayed framing matches. Original dimensions: 4032 × 3024 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 4032,
+            "height": 3024
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
     },
@@ -2429,10 +2336,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The pagoda is centered at the end of the lantern-lined approach; object placement and crop match. Original dimensions: 11373 × 8557 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2447,8 +2354,18 @@
           ],
           "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Lu, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Commons page checked 2026-10-12: displayed creator Daniel Lu and declared license CC BY-SA 4.0 match the visible site credit. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The pagoda is centered at the end of the lantern-lined approach; object placement and crop match. Original dimensions: 11373 × 8557 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 11373,
+            "height": 8557
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
     },
@@ -2482,7 +2399,7 @@
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-11",
-          "verificationDetail": "CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.",
+          "verificationDetail": "CN15 review checked the exact Commons page for title, creator, and CC0 1.0 declaration on 2026-10-11. The source-to-local visual identity of this distinct Lujiazui WebP has not been individually reviewed; keep its pixel comparison pending. This is not an independent rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2494,7 +2411,12 @@
           ],
           "rawVisibleCredits": [
             "Pudong waterfront skyline - Ermell, CC0 1.0; resized and converted to WebP, display crop."
-          ]
+          ],
+          "sourceDeclarationStatus": "checked",
+          "sourceDeclarationCheckedAt": "2026-10-11",
+          "sourceDeclarationFinding": "The Commons page declaration for the source title, creator Ermell, and CC0 1.0 was checked during the 2026-10-11 CN15 review. The exact source-to-local visual comparison was not individually completed for this Lujiazui WebP and remains pending.",
+          "pixelComparisonStatus": "pending",
+          "pixelComparisonFinding": "Exact source-to-local visual comparison remains pending; do not infer it from the shared Commons source declaration."
         }
       ]
     },
@@ -2525,10 +2447,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The atrium’s intersecting white stairways align; composition and crop match. Original dimensions: 2560 × 3584 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2543,8 +2465,18 @@
           ],
           "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Alexey Yakovlev, CC0 1.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Commons page checked 2026-10-12: displayed creator Alexey Yakovlev and declared license CC0 1.0 match the visible site credit. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The atrium’s intersecting white stairways align; composition and crop match. Original dimensions: 2560 × 3584 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 2560,
+            "height": 3584
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
     },
@@ -2575,10 +2507,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The river, bridge, clock tower and high-rises align; the visible credit selects CC BY-SA 3.0 from the page’s GFDL or CC BY-SA 3.0 options. Original dimensions: 4288 × 2516 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2593,8 +2525,18 @@
           ],
           "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (Daniel Case; page offers GFDL or CC BY-SA 3.0, and the current credit selects CC BY-SA 3.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Commons page checked 2026-10-12: Daniel Case is named and the page offers GFDL or CC BY-SA 3.0; the visible site credit selects CC BY-SA 3.0. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The river, bridge, clock tower and high-rises align; the visible credit selects CC BY-SA 3.0 from the page’s GFDL or CC BY-SA 3.0 options. Original dimensions: 4288 × 2516 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 4288,
+            "height": 2516
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
     },
@@ -2625,10 +2567,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The wedge-shaped mansion and traffic lights align; composition and crop match. Original dimensions: 7162 × 4775 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2643,8 +2585,18 @@
           ],
           "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (N509FZ, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Commons page checked 2026-10-12: displayed creator N509FZ and declared license CC BY-SA 4.0 match the visible site credit. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The wedge-shaped mansion and traffic lights align; composition and crop match. Original dimensions: 7162 × 4775 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 7162,
+            "height": 4775
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
     },
@@ -2675,10 +2627,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The lakeside food building, pond, flower beds and rockeries align; composition and crop match. Original dimensions: 6016 × 4016 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2693,8 +2645,18 @@
           ],
           "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Wikimedia Commons file page was read on 2026-10-12. Its visible source title, creator and declared license/version are consistent with the inventory and site credit (King of Hearts, CC BY-SA 4.0). This records the uploader-provided source-page declaration only; a source-to-local pixel comparison was not completed.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Commons page checked 2026-10-12: displayed creator King of Hearts and declared license CC BY-SA 4.0 match the visible site credit. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The lakeside food building, pond, flower beds and rockeries align; composition and crop match. Original dimensions: 6016 × 4016 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 6016,
+            "height": 4016
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
     },
@@ -2725,10 +2687,10 @@
           "localSha1": null,
           "metadataOrigin": "page_credit_lexical_match",
           "creditMatchNote": "Unique same-page label/alt match.",
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The white walls, dark tiled roofs, stone bank, tree shade and water align. The Commons page states Bjoertvedt / Own work / CC BY-SA 4.0, matching the inventory and visible credit. Original dimensions: 4032 × 3024 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
           "useCount": 2,
           "routes": [
             "/china/shanghai/",
@@ -2741,12 +2703,37 @@
           "rawVisibleCredits": [
             "Zhujiajiao Caohe canal - Bjoertvedt, CC BY-SA 4.0; resized and converted to WebP, display crop."
           ],
-          "sourceDeclarationStatus": "unavailable",
+          "sourceDeclarationStatus": "checked",
           "sourceDeclarationCheckedAt": "2026-10-12",
-          "sourceDeclarationFinding": "The linked Commons file page could not be retrieved with the available official-source reader, so its page declaration is not confirmed in this follow-up.",
-          "pixelComparisonStatus": "pending"
+          "sourceDeclarationFinding": "Parent read the Commons page on 2026-10-12. It states Bjoertvedt / Own work / CC BY-SA 4.0, matching the inventory and visible site credit. This records an uploader-provided source-page statement, not independent proof of authority or full legal clearance.",
+          "pixelComparisonStatus": "visual_match",
+          "pixelComparisonCheckedAt": "2026-10-12",
+          "pixelComparisonFinding": "Parent independent visual review on 2026-10-12 compared the Commons original with the repository raw WebP from commit e964b4c3ae9388e8eee2f792d9a6455c83bf24e8. The white walls, dark tiled roofs, stone bank, tree shade and water align. The Commons page states Bjoertvedt / Own work / CC BY-SA 4.0, matching the inventory and visible credit. Original dimensions: 4032 × 3024 px. Local WebP: 1920 px wide with aspect ratio preserved. This is a visual source-to-local identity review, not binary pixel equality or a full rights-chain finding.",
+          "sourceDimensionsPx": {
+            "width": 4032,
+            "height": 3024
+          },
+          "localImageDimensionsPx": {
+            "width": 1920,
+            "aspectRatioPreserved": true
+          }
         }
       ]
+    }
+  ],
+  "pendingPhotoPixelComparisons": [
+    {
+      "assetPath": "/assets/images/china-shanghai-lujiazui.webp",
+      "routes": [
+        "/china/shanghai/",
+        "/china/shanghai/lujiazui-pudong/"
+      ],
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg",
+      "creator": "Ermell",
+      "license": "CC0 1.0",
+      "sourceDeclarationStatus": "checked",
+      "pixelComparisonStatus": "pending",
+      "visualReviewStatus": "not_individually_visually_reviewed"
     }
   ]
 }

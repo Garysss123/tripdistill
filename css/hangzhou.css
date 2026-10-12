@@ -199,3 +199,24 @@ html[lang="th"] .hz-chapter-copy h1 { font-size: clamp(3rem,5vw,5.2rem); line-he
 @media (prefers-reduced-motion: reduce) {
   .hz-card img { transition: none; }
 }
+
+/* Hangzhou hero typography guard: keep translated descenders clear of the accent line. */
+.hz-lake-copy h1,
+.hz-chapter-copy h1,
+html[lang="ko"] .hz-lake-copy h1,
+html[lang="th"] .hz-lake-copy h1,
+html[lang="ko"] .hz-chapter-copy h1,
+html[lang="th"] .hz-chapter-copy h1 {
+  line-height: 1.08;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.hz-lake-copy h1 > span,
+.hz-chapter-copy h1 > span {
+  display: block;
+  max-width: 100%;
+  margin-block-start: max(16px, .2em);
+  line-height: 1.18;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
