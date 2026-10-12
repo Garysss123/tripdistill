@@ -6,6 +6,7 @@ const outputRoot = path.resolve(sourceRoot, 'dist');
 const hardLimit = 20_000;
 const warningLimit = 18_000;
 const maxFileBytes = 25 * 1024 * 1024;
+const retainedLocalOnlyAssets = ['assets/images/malaysia-melaka-kampung-morten.webp'];
 
 const publicDirectories = [
   'about',
@@ -80,6 +81,11 @@ for (const directory of publicDirectories) {
   fs.cpSync(requireSource(directory), path.join(outputRoot, directory), { recursive: true });
 }
 
+for (const relativePath of retainedLocalOnlyAssets) {
+  requireSource(relativePath);
+  fs.rmSync(path.join(outputRoot, relativePath), { force: true });
+}
+
 for (const file of publicFiles) {
   const output = path.join(outputRoot, file);
   fs.mkdirSync(path.dirname(output), { recursive: true });
@@ -92,6 +98,10 @@ if (fs.existsSync(previewHarness)) {
 }
 
 const outputFiles = collectFiles(outputRoot);
+const accidentallyPublishedLocalOnlyAssets = retainedLocalOnlyAssets.filter((relativePath) => fs.existsSync(path.join(outputRoot, relativePath)));
+if (accidentallyPublishedLocalOnlyAssets.length) {
+  throw new Error(`Build must retain but not publish rights-review assets: ${accidentallyPublishedLocalOnlyAssets.join(', ')}`);
+}
 const sitemap = fs.readFileSync(requireSource('sitemap.xml'), 'utf8');
 const publishedPaths = [...sitemap.matchAll(/<loc>(https:\/\/tripdistill\.com[^<]+)<\/loc>/g)].map((match) => new URL(match[1]).pathname);
 const missingPublishedRoutes = publishedPaths.filter((pathname) => {

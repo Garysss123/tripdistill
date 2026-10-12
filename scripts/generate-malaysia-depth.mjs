@@ -4,7 +4,9 @@ import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-dep
 
 const root = path.resolve(import.meta.dirname, '..');
 const depthCss = '/css/malaysia-depth.css?v=20260830-1';
+const melakaDepthCss = '/css/malaysia-depth.css?v=20261012-1';
 const sarawakCss = '/css/malaysia-sarawak.css?v=20260830-2';
+const depthCssFor = (hubSlug) => hubSlug === 'melaka' ? melakaDepthCss : depthCss;
 const malaysiaCss = (hubSlug) => hubSlug === 'george-town-penang'
   ? '/css/malaysia.css?v=20261008-1'
   : '/css/malaysia.css?v=20260829-1';
@@ -69,6 +71,9 @@ function sourcesList(sources) {
 }
 
 function imageCredit(image) {
+  if (image.assetType === 'original-planning-diagram') {
+    return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> &#8212; <span>${escapeHtml(image.creator)}</span>. <span>${escapeHtml(image.creditText)}</span> <a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of use</a>.</li>`;
+  }
   const attribution = image.attribution || image.creator;
   const attributionEnd = image.attribution ? '.' : ',';
   const license = image.licenseUrl
@@ -76,6 +81,25 @@ function imageCredit(image) {
     : escapeHtml(image.license);
   const shareAlike = image.licenseUrl && image.license.includes('BY-SA') ? ` The adapted image is shared under ${escapeHtml(image.license)}.` : '';
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> &#8212; ${escapeHtml(attribution)}${attributionEnd} ${license}. Resized, center-cropped and converted to WebP; no other material edits.${shareAlike}</li>`;
+}
+
+function melakaRouteKey() {
+  const stages = [
+    'Start at the historic-core public riverfront.',
+    'Follow one confirmed public riverbank path.',
+    'Cross one public bridge only after confirming it is open today.',
+    'Walk Kampung Morten’s public streets; homes and yards are private.'
+  ];
+  return `<aside class="melaka-route-key" aria-label="Melaka route diagram key"><h3>Read the numbered route</h3><ol>${stages.map((stage, index) => `<li><b aria-hidden="true">${index + 1}</b><span>${escapeHtml(stage)}</span></li>`).join('')}</ol><div class="melaka-route-key-lines"><p><span class="melaka-route-line is-solid" aria-hidden="true"></span><span>Solid route: return along the same confirmed public path.</span></p><p><span class="melaka-route-line is-dashed" aria-hidden="true"></span><span>Dashed route: optional return only if today’s bridge and opposite-bank public path are confirmed open.</span></p></div></aside>`;
+}
+
+function addMelakaHubRouteKey(html) {
+  const existingKey = /<aside class="melaka-route-key"[\s\S]*?<\/aside>/;
+  if (existingKey.test(html)) return html.replace(existingKey, melakaRouteKey());
+  const sectionStart = html.indexOf('<section class="sg-section" id="living"');
+  const sectionEnd = html.indexOf('</section>', sectionStart);
+  if (sectionStart === -1 || sectionEnd === -1) throw new Error('Cannot find Melaka living-neighborhood section for the route key.');
+  return html.slice(0, sectionEnd) + `\n${melakaRouteKey()}\n` + html.slice(sectionEnd);
 }
 
 function relatedCards(cluster, currentSlug = '') {
@@ -102,6 +126,17 @@ function guideSchema(guide) {
         about: { '@type': 'TouristDestination', name: guide.name, containedInPlace: { '@type': 'Country', name: 'Malaysia' } },
         publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
       },
+      ...(guide.image.assetType === 'original-planning-diagram' ? [{
+        '@type': 'ImageObject',
+        '@id': `${absolute(guide.image.src)}#artwork`,
+        contentUrl: absolute(guide.image.src),
+        name: guide.image.label,
+        description: guide.image.alt,
+        caption: guide.image.caption,
+        creator: { '@type': 'Organization', name: guide.image.creator },
+        creditText: guide.image.creditText,
+        usageInfo: guide.image.rightsStatusUrl
+      }] : []),
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -127,6 +162,18 @@ function childPage(guide, cluster) {
   const description = ensureMetaDescription(guide.summary);
   const title = `${guide.name} | TripDistill`;
   const sources = [...new Map([...cluster.sources, ...(guide.sources || [])].map(([href, label]) => [href, [href, label]])).values()];
+  const originalDiagram = guide.image.assetType === 'original-planning-diagram';
+  const sourceHeading = originalDiagram ? 'Official sources and original diagram' : 'Official sources and photo credit';
+  const sourceIntro = originalDiagram
+    ? 'Planning facts and public route details were reviewed on 12 October 2026. The original diagram is a non-scale planning schematic, not navigation; confirm the public path, bridge access and return route before walking.'
+    : `Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.`;
+  const relatedImageCredits = originalDiagram
+    ? [...new Map(cluster.guides.filter((related) => related.slug !== guide.slug && related.image.assetType !== 'original-planning-diagram').map((related) => [related.image.src, related.image])).values()].map(imageCredit).join('')
+    : '';
+  const relatedDiagramKey = !originalDiagram && cluster.guides.some((related) => related.image.assetType === 'original-planning-diagram')
+    ? melakaRouteKey()
+    : '';
+  const figureCaption = guide.image.caption || `${guide.image.label} · ${guide.image.license}`;
   const checks = guide.checks.map(([label, copy], index) => `<article class="md-check"><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(label)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const decisions = guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('');
   const route = guide.route.map(([phase, heading, copy], index) => `<article class="md-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(phase)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
@@ -140,9 +187,9 @@ function childPage(guide, cluster) {
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(guide.url)}">${hreflang(guide.url)}
   <meta name="theme-color" content="#173f37">
-  <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta property="og:image:alt" content="${escapeHtml(guide.image.alt)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image:alt" content="${escapeHtml(guide.image.alt)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="${malaysiaCss(guide.hubSlug)}"><link rel="stylesheet" href="${depthCss}">
+  <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="${malaysiaCss(guide.hubSlug)}"><link rel="stylesheet" href="${depthCssFor(guide.hubSlug)}">
   <script src="/js/adsense.js?v=20260826-9" defer></script>
   <script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script>
 </head>
@@ -152,9 +199,11 @@ function childPage(guide, cluster) {
     <main id="main-content" class="page-content md-guide">
       <section class="md-hero" aria-labelledby="md-title">
         <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(guide.reviewedOn || '30 August 2026')}</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
-        <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure>
+        <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(figureCaption)}</figcaption></figure>
         <div class="md-instrument" aria-hidden="true"><span>${escapeHtml(guide.instrument)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><em>${escapeHtml(guide.motif)}</em></div>
       </section>
+
+${originalDiagram ? `\n      ${melakaRouteKey()}\n` : ''}
 
       <section class="md-decision-strip" aria-label="Three planning decisions">${decisions}</section>
 
@@ -168,9 +217,9 @@ function childPage(guide, cluster) {
 
       <section class="md-section md-faq" id="faq" aria-labelledby="faq-title"><div class="md-section-head"><div><span class="md-section-label">Planning answers</span><h2 id="faq-title">${escapeHtml(guide.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
 
-      <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div><p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
+      <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div>${relatedDiagramKey}<p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">${escapeHtml(sourceHeading)}</h2><p>${escapeHtml(sourceIntro)}</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}${relatedImageCredits}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>
@@ -244,12 +293,15 @@ function replaceMarked(html, start, end, replacement) {
 function injectHubCards(cluster) {
   const file = routeFile(`/malaysia/${cluster.hubSlug}/`);
   let html = fs.readFileSync(file, 'utf8');
+  const clusterDepthCss = depthCssFor(cluster.hubSlug);
   if (cluster.hubSlug === 'george-town-penang') {
     html = html.replace('/css/malaysia.css?v=20260829-1', malaysiaCss(cluster.hubSlug));
-    html = html.replace(`  <link rel="stylesheet" href="${depthCss}">\n`, '');
-  } else if (!html.includes(depthCss)) {
-    html = html.replace('</head>', `  <link rel="stylesheet" href="${depthCss}">\n</head>`);
+    html = html.replace(`  <link rel="stylesheet" href="${clusterDepthCss}">\n`, '');
+  } else {
+    html = html.replace(`href="${depthCss}"`, `href="${clusterDepthCss}"`);
+    if (!html.includes(clusterDepthCss)) html = html.replace('</head>', `  <link rel="stylesheet" href="${clusterDepthCss}">\n</head>`);
   }
+  if (cluster.hubSlug === 'melaka') html = addMelakaHubRouteKey(html);
   if (html.includes(markerStart)) html = replaceMarked(html, markerStart, markerEnd, hubCards(cluster));
   else {
     const main = html.indexOf('<main');
@@ -343,10 +395,11 @@ if (requestedClusterSlug) {
   const boundedGuideLists = {
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
-    'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest']
+    'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
+    melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands and Langkawi source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi and Melaka source clusters.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
@@ -358,7 +411,7 @@ if (requestedClusterSlug) {
   }
   injectHubCards(cluster);
   updateSearch(guides, cluster);
-  console.log(`Generated the ${cluster.hubName} hub cards and three reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.`);
+  console.log(`Generated the ${cluster.hubName} hub cards and ${guides.length} reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.`);
 } else {
   for (const cluster of malaysiaDepthClusters.filter((item) => item.newHub)) {
     const file = routeFile('/malaysia/' + cluster.hubSlug + '/');

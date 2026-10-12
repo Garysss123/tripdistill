@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Melaka River and Kampung Morten route planning schematic</title>
+  <desc id="desc">A non-scale route sequence from the historic riverfront, along a checked public bank, across a bridge only if open, through public Kampung Morten streets, and back by a confirmed route. A dashed return option is conditional.</desc>
+  <metadata>Original TripDistill Editorial Team planning diagram, created 2026-10-12. Route sequence only: no geographic scale, compass, measured distance, surveyed street position, or live access status is represented. No separate reuse license is declared.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M2 2 14 8 2 14" fill="none" stroke="#2D6B62" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="arrow-small" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M2 2 11 6.5 2 11" fill="none" stroke="#BC6949" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <pattern id="paper" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="5" cy="8" r="1.2" fill="#C8C1B3" opacity=".35"/><circle cx="27" cy="25" r="1" fill="#C8C1B3" opacity=".3"/></pattern>
+  </defs>
+  <rect width="1440" height="960" rx="44" fill="#F4F0E6"/>
+  <rect width="1440" height="960" rx="44" fill="url(#paper)"/>
+  <path d="M72 144H1368M72 842H1368" stroke="#CBD5C9" stroke-width="3"/>
+
+  <!-- Route sequence: relative placement is graphic only and makes no geographic claim. -->
+  <path d="M192 420H1248" stroke="#D1D8CC" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M350 420H445M650 420H745M950 420H1045" stroke="#2D6B62" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- The river is a motif, not a traced course. -->
+  <path d="M420 525c36-28 72-28 108 0s72 28 108 0 72-28 108 0 72 28 108 0 72-28 108 0" stroke="#80AEB2" stroke-width="26" stroke-linecap="round" opacity=".75"/>
+  <path d="M420 565c36-20 72-20 108 0s72 20 108 0 72-20 108 0 72 20 108 0 72-20 108 0" stroke="#A8C8C7" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+  <path d="M520 518v-28m86 42v-28m86 42v-28m86 42v-28m86 42v-28" stroke="#F4F0E6" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+
+  <!-- Four route stages. -->
+  <g>
+    <circle cx="250" cy="420" r="104" fill="#FFFDF8" stroke="#24454B" stroke-width="5"/>
+    <circle cx="250" cy="420" r="82" fill="#E4ECE3"/>
+    <path d="M199 466h103M211 458V379l39-31 39 31v79M228 458v-45h24v45m17-65h16v18h-16" stroke="#24454B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="174" cy="333" r="27" fill="#D07854"/><text x="174" y="343" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">1</text>
+  </g>
+  <g>
+    <circle cx="550" cy="420" r="104" fill="#FFFDF8" stroke="#24454B" stroke-width="5"/>
+    <circle cx="550" cy="420" r="82" fill="#E6EFEB"/>
+    <path d="M495 459c20-20 40-20 60 0s40 20 60 0M495 433c20-20 40-20 60 0s40 20 60 0" stroke="#4A8B82" stroke-width="8" stroke-linecap="round"/>
+    <path d="M511 391l14-22 14 22-14 8-14-8zm30-5 14-22 14 22-14 8-14-8zm30 7 14-22 14 22-14 8-14-8z" fill="#D07854"/>
+    <circle cx="474" cy="333" r="27" fill="#D07854"/><text x="474" y="343" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">2</text>
+  </g>
+  <g>
+    <circle cx="850" cy="420" r="104" fill="#FFFDF8" stroke="#24454B" stroke-width="5"/>
+    <circle cx="850" cy="420" r="82" fill="#F0E8D7"/>
+    <path d="M794 458v-37a56 56 0 0 1 112 0v37M794 421h112M812 421v37m76-37v37M785 463h130" stroke="#24454B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M822 393v-17m28 17v-17m28 17v-17" stroke="#BC6949" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="774" cy="333" r="27" fill="#D07854"/><text x="774" y="343" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">3</text>
+    <circle cx="919" cy="343" r="23" fill="#D07854"/><path d="M919 329v17m0 9v1" stroke="#FFFDF8" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="1150" cy="420" r="104" fill="#FFFDF8" stroke="#24454B" stroke-width="5"/>
+    <circle cx="1150" cy="420" r="82" fill="#E8ECE1"/>
+    <path d="M1094 459v-50l56-43 56 43v50h-112zM1117 459v-31h24v31m24-50h22v20h-22m-92 59h118" stroke="#24454B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M1089 478h122" stroke="#D07854" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/>
+    <circle cx="1074" cy="333" r="27" fill="#D07854"/><text x="1074" y="343" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle">4</text>
+  </g>
+
+  <!-- Return choices: solid is a checked out-and-back; dashed is conditional. -->
+  <path d="M1160 620c0 112-132 156-290 156H548c-158 0-268-44-268-156" stroke="#2D6B62" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M1175 625c0 72-92 108-205 108H663" stroke="#BC6949" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 16" marker-end="url(#arrow-small)"/>
+  <circle cx="980" cy="730" r="30" fill="#F0D9BC" stroke="#BC6949" stroke-width="4"/>
+  <path d="M968 731l9 9 17-21" stroke="#7A4D37" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="318" cy="736" r="34" fill="#E4ECE3" stroke="#2D6B62" stroke-width="4"/>
+  <path d="M333 736h-30m0 0 12-12m-12 12 12 12" stroke="#2D6B62" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M72 886H1368" stroke="#CBD5C9" stroke-width="3"/>
+</svg>

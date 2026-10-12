@@ -1,28 +1,29 @@
 {
-  "generatedAt": "2026-10-12T01:36:09.727Z",
+  "generatedAt": "2026-10-12T01:55:47.238Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 794,
-    "completeSourceCreatorLicenseRecords": 764,
-    "completeProjectOriginalRightsRecords": 5,
+    "assetFileCount": 795,
+    "completeSourceCreatorLicenseRecords": 763,
+    "completeProjectOriginalRightsRecords": 6,
     "licenseClaimsNotIndependentlyVerified": 520,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
+    "buildImageFilesExcludedForRightsReview": 1,
     "expectedBuildImageCount": 798,
-    "deduplicatedImageCount": 794,
+    "deduplicatedImageCount": 795,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
-    "unusedAssetCount": 28,
-    "assetsWithStructuredSourceRecords": 581,
+    "unusedAssetCount": 29,
+    "assetsWithStructuredSourceRecords": 582,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 164,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 245,
-    "metadataOrCreditOnly": 525,
+    "metadataOrCreditOnly": 526,
     "usedAssetsWithoutIndependentSourcePageCheck": 522,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
@@ -39,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 794 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 798 build image files."
+    "buildImageCountReconciliation": "The 794 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 798 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -20711,39 +20712,28 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg",
           "sourceTitle": "Waiting for iftar at Kampung Morten",
           "sourcePhotoDate": null,
-          "creditLabel": "Waiting for iftar at Kampung Morten",
+          "creditLabel": null,
           "creator": "Scrivenshaft",
-          "license": "CC BY-SA 4.0",
-          "rightsStatus": null,
+          "license": null,
+          "rightsStatus": "Unresolved: the Commons page claims CC BY-SA 4.0, while the embedded EXIF says “Copyright 2019. All rights reserved.” Neither statement is treated as clearance.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from every live display, metadata field and credit on 2026-10-12 after the page-license/EXIF conflict was confirmed. Rights remain unresolved. The unchanged WebP stays in the repository only for provenance and must not be used on the site.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "The original local derivative is retained byte-for-byte for audit; it is not an approved page asset.",
+          "localSha1": "d8aa5b1ef6a1e8829cb5df24c4062fcd80bb1026",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
-          "routes": [
-            "/malaysia/melaka/",
-            "/malaysia/melaka/bandar-hilir-portuguese-settlement/",
-            "/malaysia/melaka/dutch-square-st-pauls/",
-            "/malaysia/melaka/jonker-harmony-street/",
-            "/malaysia/melaka/melaka-river-kampung-morten/"
-          ],
-          "altTexts": [
-            "Residents gathering near traditional houses in Kampung Morten",
-            "Traditional riverside house and palms at Kampung Morten with modern towers beyond"
-          ],
-          "rawVisibleCredits": [
-            "Waiting for iftar at Kampung Morten — Scrivenshaft, CC BY-SA 4.0."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -20788,8 +20778,7 @@
             "/malaysia/melaka/melaka-river-kampung-morten/"
           ],
           "altTexts": [
-            "Melaka River promenade beside painted historic buildings",
-            "Melaka River beside historic buildings and church towers"
+            "Old riverside houses and a church beside the Melaka River promenade"
           ],
           "rawVisibleCredits": [
             "Melaka River Walk — Philip Nalangan, CC BY 4.0. Resized, center-cropped and converted to WebP; no other material edits."
@@ -20844,6 +20833,53 @@
           "rawVisibleCredits": [
             "Stadthuys complex — CEphoto, Uwe Aranas, CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "7556d7f074ff61424afe3abd7ef0adfcde66018368b77fef29f0cc58331f98b0",
+      "assetPaths": [
+        "/assets/images/malaysia-melaka-two-bank-route.svg"
+      ],
+      "byteLength": 5897,
+      "sourceRecords": [
+        {
+          "sha256": "7556d7f074ff61424afe3abd7ef0adfcde66018368b77fef29f0cc58331f98b0",
+          "assetPath": "/assets/images/malaysia-melaka-two-bank-route.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/malaysia-melaka-two-bank-route.svg",
+          "sourceTitle": "TripDistill original Melaka River and Kampung Morten route schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original route-sequence schematic only; it is not a geographic map, is not to scale, and does not establish live access or exact street positions.",
+          "localSha1": "2ab09c739dae06bcb4d41230759379401274e062",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 6,
+          "routes": [
+            "/malaysia/melaka/",
+            "/malaysia/melaka/bandar-hilir-portuguese-settlement/",
+            "/malaysia/melaka/dutch-square-st-pauls/",
+            "/malaysia/melaka/jonker-harmony-street/",
+            "/malaysia/melaka/melaka-river-kampung-morten/"
+          ],
+          "altTexts": [
+            "Non-scale route schematic: follow one confirmed public Melaka River bank from the historic core, check a public bridge before entering Kampung Morten’s public streets, then return on verified paths; an opposite-bank leg is optional only when open."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
