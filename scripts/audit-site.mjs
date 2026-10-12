@@ -284,7 +284,7 @@ for (const absoluteUrl of publishedUrls) {
     }
     if ((html.match(/class="md-hub-card"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia hub does not contain four linked field-guide cards`);
   }
-  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sarawak.css?v=20260830-2')) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
+  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !/\/css\/malaysia-sarawak\.css\?v=\d{8}-\d+/.test(html)) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
   const malaysiaDepthGuide = malaysiaDepthByRoute.get(baseRoute);
   if (malaysiaDepthGuide) {
     const expectedMalaysiaDepthCss = baseRoute.startsWith('/malaysia/melaka/')

@@ -66,6 +66,14 @@ const malaysiaFourthChildrenRoutes = [
   '/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/',
   '/malaysia/langkawi/dayang-bunting-island/'
 ];
+const malaysiaKuchingLastmod = '2026-10-12';
+const malaysiaKuchingRoutes = [
+  '/malaysia/kuching-bako/',
+  '/malaysia/kuching-bako/kuching-waterfront-old-courthouse/',
+  '/malaysia/kuching-bako/borneo-cultures-museum/',
+  '/malaysia/kuching-bako/semenggoh-wildlife-centre/',
+  '/malaysia/kuching-bako/bako-national-park/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -819,6 +827,11 @@ for (const route of malaysiaFourthChildrenRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Malaysia child route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaFourthChildrenLastmod });
+}
+for (const route of malaysiaKuchingRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kuching route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKuchingLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
