@@ -29,6 +29,14 @@ const locales = [
 const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === 'gunung-mulu');
 const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === 'gunung-mulu');
 const selectedRoutes = new Set(routes);
+const subsequentlyReviewedKualaLumpurRoutes = [
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
+];
+const subsequentlyReviewedKualaLumpur = new Set(subsequentlyReviewedKualaLumpurRoutes);
 assert.ok(cluster, 'Gunung Mulu source cluster exists');
 assert.equal(cluster.reviewedOnIso, reviewedDate, 'hub source review date is current');
 assert.deepEqual(guides.map((guide) => guide.url), routes.slice(1), 'the existing hub has exactly four child routes');
@@ -69,7 +77,8 @@ assert.equal(sitemap.size, 4560, 'sitemap remains at 4,560 localized URLs');
 assert.deepEqual(new Set(sitemap.keys()), new Set(baseSitemap.keys()), 'refresh adds or removes no sitemap URL');
 const localizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const changedSitemapRoutes = [...sitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
-assert.deepEqual(new Set(changedSitemapRoutes), localizedRoutes, 'only the five Mulu routes receive new lastmod values');
+const subsequentlyReviewedKualaLumpurLocalized = new Set(locales.flatMap(({ prefix }) => subsequentlyReviewedKualaLumpurRoutes.map((route) => prefix + route)));
+assert.deepEqual(new Set(changedSitemapRoutes), new Set([...localizedRoutes, ...subsequentlyReviewedKualaLumpurLocalized]), 'only the five Mulu routes and subsequent Kuala Lumpur routes receive new lastmod values');
 for (const route of localizedRoutes) assert.equal(sitemap.get(route), reviewedDate, route + ' sitemap lastmod');
 
 const baseSearch = JSON.parse(gitBytes(baselineCommit + ':data/search-index.json').toString('utf8'));
@@ -79,7 +88,7 @@ const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), selectedRoutes, 'only the five Mulu search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...selectedRoutes, ...subsequentlyReviewedKualaLumpur]), 'only the five Mulu and subsequent Kuala Lumpur search records changed');
 for (const route of routes) assert.ok(currentSearchByUrl.has(route), route + ' remains searchable');
 
 for (const locale of locales.filter(({ dir }) => dir)) {

@@ -32,7 +32,12 @@ const newlyIntegratedRoutes = [
   '/malaysia/gunung-mulu/deer-lang-caves/',
   '/malaysia/gunung-mulu/clearwater-wind-caves/',
   '/malaysia/gunung-mulu/pinnacles-expedition/',
-  '/malaysia/gunung-mulu/canopy-night-walks/'
+  '/malaysia/gunung-mulu/canopy-night-walks/',
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
 ];
 const locales = [
   { prefix: '', searchPrefix: '', dateNeedle: '12 October 2026' },

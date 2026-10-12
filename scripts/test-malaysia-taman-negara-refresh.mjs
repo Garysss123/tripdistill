@@ -176,12 +176,21 @@ const perhentianRedangRoutes = [
   '/malaysia/perhentian-redang/redang-merang-transfer/'
 ];
 const perhentianRedangTargets = new Set(localePrefixes.flatMap((prefix) => perhentianRedangRoutes.map((route) => `${prefix}${route}`)));
+const kualaLumpurPutrajayaRoutes = [
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
+];
+const kualaLumpurPutrajayaTargets = new Set(localePrefixes.flatMap((prefix) => kualaLumpurPutrajayaRoutes.map((route) => `${prefix}${route}`)));
 const expectedUpdates = new Map([
   ...[...tamanTargets].map((url) => [url, reviewedDate]),
   ...[...provenceTargets].map((url) => [url, '2026-10-12']),
   ...[...belfastTargets].map((url) => [url, '2026-10-12']),
   ...[...kotaKinabaluTargets].map((url) => [url, '2026-10-12']),
-  ...[...perhentianRedangTargets].map((url) => [url, '2026-10-12'])
+  ...[...perhentianRedangTargets].map((url) => [url, '2026-10-12']),
+  ...[...kualaLumpurPutrajayaTargets].map((url) => [url, '2026-10-12'])
 ]);
 for (const [url, date] of baseSitemap) {
   assert.equal(sitemapEntries.get(url), expectedUpdates.get(url) || date, `sitemap date scope: ${url}`);
@@ -192,5 +201,6 @@ assert.equal(provenceTargets.size, 15, 'expected only the three Provence routes 
 assert.equal(belfastTargets.size, 20, 'expected exactly four Belfast routes × five language editions as the separate integration date change');
 assert.equal(kotaKinabaluTargets.size, 25, 'expected exactly five Kota Kinabalu routes × five language editions as the separate Malaysia date change');
 assert.equal(perhentianRedangTargets.size, 25, 'expected exactly five Perhentian/Redang routes × five language editions as the separate Malaysia date change');
+assert.equal(kualaLumpurPutrajayaTargets.size, 25, 'expected exactly five Kuala Lumpur/Putrajaya routes × five language editions as the separate Malaysia date change');
 
-console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, with exact date cohorts for Taman, Provence, Belfast, Kota Kinabalu and Perhentian/Redang, synchronized search, linked official sources, and no URL-set changes.`);
+console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, with exact date cohorts for Taman, Provence, Belfast, Kota Kinabalu, Perhentian/Redang and Kuala Lumpur/Putrajaya, synchronized search, linked official sources, and no URL-set changes.`);

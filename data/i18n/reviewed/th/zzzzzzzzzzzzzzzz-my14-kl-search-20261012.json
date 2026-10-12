@@ -1,0 +1,15 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Kuala Lumpur & Putrajaya": "มาเลเซีย — กัวลาลัมเปอร์และปุตราจายา"
+  },
+  "reviewProvenance": {
+    "writer": "Codex GPT-6",
+    "reviewer": "Codex GPT-6; same-model self-review",
+    "independentSecondModel": false
+  }
+}

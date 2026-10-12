@@ -106,6 +106,14 @@ const malaysiaMuluRoutes = [
   '/malaysia/gunung-mulu/pinnacles-expedition/',
   '/malaysia/gunung-mulu/canopy-night-walks/'
 ];
+const malaysiaKualaLumpurLastmod = '2026-10-12';
+const malaysiaKualaLumpurRoutes = [
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -884,6 +892,11 @@ for (const route of malaysiaMuluRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Gunung Mulu route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaMuluLastmod });
+}
+for (const route of malaysiaKualaLumpurRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kuala Lumpur & Putrajaya route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKualaLumpurLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);

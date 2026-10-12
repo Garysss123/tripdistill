@@ -1450,6 +1450,144 @@ export const malaysiaDepthClusters = [
   }
 ];
 
+// MY14: independently useful Kuala Lumpur and Putrajaya planning content.
+// Keep this bounded override next to the source collection so regenerating
+// only this reviewed cluster preserves the five existing URLs and dates.
+const klPutrajaya = malaysiaDepthClusters.find((item) => item.hubSlug === 'kuala-lumpur-putrajaya');
+Object.assign(klPutrajaya, {
+  reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12',
+  hubPrompt: 'Choose a three-, four- or five-night capital base, then separate the walkable historic core, the rail-linked tower districts, Batu Caves and Putrajaya into named day routes. Check the live operator and visitor notices for each branch; keep one weather and transfer reserve.',
+  hubFaq: [
+    ['How many nights should I plan?', 'Three nights can cover two full Kuala Lumpur days; four nights add one separate branch such as Batu Caves or Putrajaya; five nights allow both branches plus a weather or rest reserve. Arrival and departure times determine how many full days those nights create.'],
+    ['Which Kuala Lumpur base is easiest?', 'KL Sentral/Brickfields simplifies rail and airport connections; Chinatown/Merdeka supports a central walking day; KLCC suits the park and towers; Bukit Bintang suits late food and MRT/Monorail access. Choose by the transfer you want to simplify.'],
+    ['Can I do Batu Caves and Putrajaya on one day?', 'Plan separate days. Batu Caves is a northbound KTM Komuter and temple visit; Putrajaya needs KLIA Transit plus a separate local transfer from Putrajaya & Cyberjaya station. Combining them creates two distant branches and fragile returns.'],
+    ['Does KLIA Transit reach Putrajaya’s visitor sites?', 'It serves Putrajaya & Cyberjaya station, not every precinct. Confirm a local bus, taxi or licensed ride to the exact destination and book or check the return leg.'],
+    ['Can Putrajaya be an airport layover?', 'Only if the whole sequence—baggage, station, local transfer, terminal and airline cutoffs—has a conservative verified buffer. A dedicated day is the more robust plan.']
+  ],
+  sources: [
+    ['https://ebrochures.malaysia.travel/destination-guide/', 'Tourism Malaysia — destination guides'],
+    ['https://myrapid.com.my/', 'MyRapid — Journey Planner and service status'],
+    ['https://myrapid.com.my/wp-content/uploads/2026/06/Integrated-Transit-Map_110626_V2.pdf', 'MyRapid — integrated rail and bus map, dated 11 June 2026'],
+    ['https://www.ktmb.com.my/traintime.html', 'KTM Berhad — published train timetables'],
+    ['https://online.ktmb.com.my/TimeTable/Search', 'KTM Berhad — MyRailtime date-specific lookup'],
+    ['https://www.kliaekspres.com/products-fares/klia-transit/', 'KLIA Ekspres — KLIA Transit stations and current service information'],
+    ['https://www.petronastwintowers.com.my/plan-your-visit/admission-ticketing/', 'PETRONAS Twin Towers — admission and ticketing'],
+    ['https://www.suriaklcc.com.my/attractions/klcc-park/', 'Suria KLCC — KLCC Park visitor information'],
+    ['https://tourism.ppj.gov.my/destination', 'Perbadanan Putrajaya — visitor destinations'],
+    ['https://tourism.ppj.gov.my/map', 'Perbadanan Putrajaya — visitor map']
+  ]
+});
+
+const klGuideRefresh = {
+  'merdeka-chinatown': {
+    reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12',
+    summary: 'Walk the Klang–Gombak confluence, Merdeka Square and Petaling Street as one shaded, station-to-station day, with active worship and museum access kept conditional.',
+    lead: 'This is the capital’s most coherent on-foot chapter, but its close landmarks have different thresholds: river edges, a ceremonial square, working market lanes, temples and mosques do not share one visitor rule.',
+    orientation: 'Use Masjid Jamek as the north-side rail arrival and Pasar Seni as the Chinatown-side exit, checking the current Rapid KL map and station approaches before setting out. They make a useful one-way walk without a forced return across the same streets.',
+    arrival: 'Stay at least two nights in Chinatown/Merdeka for an early start on foot, or at KL Sentral/Brickfields when rail connections matter more; keep one accommodation base and use LRT/MRT for the approach and return.',
+    sequence: 'Masjid Jamek station → the public river-confluence viewpoint → Sultan Abdul Samad Building and Merdeka Square → one chosen museum or civic interior → Petaling Street and a public temple visit if open → Pasar Seni station.',
+    boundary: 'Keep to public paths and marked crossings; worship rooms, government interiors, homes and working shop thresholds are not photo props. Ask before taking close portraits or entering a religious space.',
+    routeLead: 'Walk the central sequence once, north to south. Treat opening hours, prayer access, river works and station exits as same-day checks rather than a timed promise.',
+    stages: [
+      ['Start · Masjid Jamek', 'Check the LRT entrance and exit on the current Rapid KL map, then orient at the public edge of the Klang–Gombak confluence. Do not enter a prayer area during restricted visitor periods.'],
+      ['Morning · Merdeka Square', 'Follow public pavements toward Sultan Abdul Samad Building and the square. Read the civic ensemble from outside first; choose only one verified interior instead of adding several queues.'],
+      ['After a shaded pause · Chinatown', 'Walk by public streets toward Petaling Street; choose a specific market lane, temple or meal, and leave room for heat and rain rather than treating every mural as a stop.'],
+      ['Return · Pasar Seni', 'Finish at Pasar Seni LRT/MRT after checking the actual platform and onward route to your base. If a storm makes the final walk uncomfortable, use a short licensed ride rather than an unplanned cross-city detour.']
+    ],
+    planningNotes: 'A Chinatown/Merdeka or KL Sentral base for two or three nights avoids a hotel move for this chapter; extend to four nights if this is paired with the tower district and Batu Caves. Reserve a museum slot only when the institution requires one; the street walk itself does not need a paid tour.',
+    weatherFallback: 'Use one verified museum or covered market interval during a storm, shorten the exposed square, and keep the same Pasar Seni exit. If worship or river access is restricted, read the public exterior and continue without trying a closed gate.',
+    risks: [['Station choice', 'Masjid Jamek and Pasar Seni serve different lines and street approaches; check the current map and follow the station sign at street level.'], ['Worship and access', 'Visitor entry, ceremonies and government-site rules can change; follow posted directions and staff.'], ['Heat and rain', 'The square is exposed and crossings take time. Carry water, pause indoors and shorten the loop if the weather changes.']],
+    faq: [
+      ['How many nights should I use this base?', 'Two nights in Chinatown/Merdeka or KL Sentral can support this chapter; three or four nights make a better single-base city stay if you also plan the tower district or Batu Caves.'],
+      ['Which stations make a one-way walk?', 'Masjid Jamek is a useful arrival for the confluence and Merdeka Square; Pasar Seni is a useful Chinatown-side exit. Check current service and entrances before travel.'],
+      ['What is the rain plan?', 'Keep one verified indoor museum or covered-market stop, reduce time in the exposed square, then finish at the planned Pasar Seni station or a confirmed pickup point.']
+    ]
+  },
+  'klcc-bukit-bintang': {
+    reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12',
+    summary: 'Pair one timed KLCC visit with the named KLCC–Bukit Bintang Walkway and a Bukit Bintang evening, using a same-district base and a clear rail return.',
+    lead: 'KLCC and Bukit Bintang look like a single center on a map, yet the useful day has three different gears: a timed tower or park visit, a covered connector, then the busier street-level evening district.',
+    orientation: 'Choose either KLCC or Bukit Bintang as the hotel base for two or three nights. The KLCC–Bukit Bintang Walkway offers a signed covered connection between the districts when open; confirm access, then use the relevant rail station for the return rather than assuming every mall exit remains available.',
+    arrival: 'Sleep in KLCC for an early park and tower start, or Bukit Bintang for Jalan Alor and evening activity. Keep one base for at least two nights; use the current Rapid KL Journey Planner to join KLCC LRT with Bukit Bintang MRT/Monorail as needed.',
+    sequence: 'KLCC LRT or your nearby hotel → KLCC Park and the booked PETRONAS Twin Towers entry → Suria KLCC → signed KLCC–Bukit Bintang Walkway if open → Pavilion/Kuala Lumpur Convention Centre side → one Bukit Bintang meal → the station or pickup point chosen before the evening crowd.',
+    boundary: 'The walkway is a pedestrian connector, not a promise that every building entrance or adjacent attraction is open. Follow signs, use marked crossings at street level and respect photography and bag rules at ticketed venues.',
+    routeLead: 'Protect one timed entry and use the connector as a flexible transfer. Current park, tower, mall and transit access can differ by date.',
+    stages: [
+      ['Morning · KLCC Park', 'Enter from the open public approach, walk the park perimeter at a comfortable pace and check current park notices before making it the day’s anchor.'],
+      ['Late morning · One tower booking', 'Use the official PETRONAS ticketing channel for the exact date and arrive for the confirmed slot. If no suitable ticket is available, keep the park and public city views as the visit instead of buying from an unverified seller.'],
+      ['Afternoon · Covered link', 'Follow the signed KLCC–Bukit Bintang Walkway toward the Pavilion side only if it is open; otherwise use a current mapped rail or street route and avoid cutting across roads informally.'],
+      ['Evening · Bukit Bintang', 'Choose one dinner or food street, then return from Bukit Bintang MRT/Monorail or a preselected licensed pickup. Do not assume the late service or a building shortcut without checking it.']
+    ],
+    planningNotes: 'Two nights in KLCC suit park-first mornings; two or three in Bukit Bintang suit late meals and the MRT/Monorail network. For a four-night city itinerary, keep one hotel and commute between these linked districts instead of moving luggage for a short distance.',
+    weatherFallback: 'A heavy shower can interrupt the open park and street-level gaps. Move the walk to Suria KLCC or another confirmed indoor stop, check whether the covered connector remains accessible, and choose a live rail route if it does not.',
+    risks: [['Tower inventory', 'Ticket dates and entry availability change; buy only through the official admission channel.'], ['Connector access', 'The covered walk and its building entrances may have temporary limits. Follow current signs and keep a mapped alternative.'], ['Late return', 'Choose the exact station exit or pickup point before dinner and check current service status.']],
+    faq: [
+      ['How many nights are useful here?', 'Two nights can support a focused KLCC and Bukit Bintang day; three nights allow a slower tower booking, park time and a separate evening without changing hotels.'],
+      ['Is the walkway always open?', 'Do not assume that. Follow current signs for the KLCC–Bukit Bintang Walkway and use the Rapid KL Journey Planner or a marked street route if access changes.'],
+      ['What should I book first?', 'If the PETRONAS Twin Towers visit matters, check its official date-specific ticketing before fixing the day around it. Park access and weather still need a current check.']
+    ]
+  },
+  'batu-caves': {
+    reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12',
+    summary: 'Make Batu Caves a half-day rail branch from a KL Sentral or central-city base, with KTM Komuter return, active-temple conduct and a heat-safe stair decision.',
+    lead: 'Batu Caves is an active Hindu temple complex and a limestone landscape reached by a separate rail branch. The famous 272-step climb is only one part of a visit that also needs a train, weather and worship plan.',
+    orientation: 'Keep a central Kuala Lumpur base for three or four nights rather than moving north for a single visit. KTM Komuter links the city rail network with Batu Caves station, but use the date-specific KTMB lookup in both directions and confirm current temple access before leaving.',
+    arrival: 'Choose KL Sentral for the simplest rail departure and airport/intercity connections, or a central base with a checked LRT/MRT link to the KTM platform. Leave at least one flexible half-day and do not pin an airport departure to the return leg.',
+    sequence: 'KL Sentral or a confirmed city interchange → KTM Komuter toward Batu Caves → signed public approach and temple grounds → decide at the stair foot whether the 272-step climb is right today → same station and checked train or pre-arranged road fallback back to town.',
+    boundary: 'This is a living Hindu worship site: cover shoulders and knees, follow current entry instructions and ask before photography. Do not feed or approach macaques; secure food, glasses and loose belongings.',
+    routeLead: 'Treat the rail ride, temple grounds, stair choice and return as one half-day commitment. Festival dates can change the whole scale of access.',
+    stages: [
+      ['Before leaving · Check both legs', 'Use KTMB MyRailtime for the travel date and verify the relevant KTM Komuter service in both directions. If no workable return is published, choose another day or arrange a confirmed road transfer before departure.'],
+      ['Arrival · Ground-level temple context', 'From Batu Caves station follow signed public access to the temple forecourt. Pause, observe worship and check visitor guidance before approaching the stairs.'],
+      ['Climb decision · 272 steps', 'Attempt the main cave stair only if heat, rain, footwear, mobility and crowd conditions feel manageable. Keep food covered and give macaques space; returning at ground level is a complete valid visit.'],
+      ['Return · Same station or named pickup', 'Allow time to reach Batu Caves station and verify the return train. If the train plan changes, use only the pre-arranged licensed ride pickup; add at most one light city stop after a rest.']
+    ],
+    planningNotes: 'Use KL Sentral/Brickfields or a central rail-connected hotel for three nights if Batu Caves is one of two or three city chapters. No overnight move is required; add a fourth or fifth night if you want the visit to remain movable around a major festival or unsettled weather.',
+    weatherFallback: 'Rain makes the stair route slick and heat builds quickly after showers. Skip the climb if the surface or your condition is poor, enjoy only open ground-level areas, or return to Kuala Lumpur; do not treat the ascent as a must-do.',
+    risks: [['Rail return', 'KTMB changes dated timetables; confirm the outward and return plan on the official lookup.'], ['Festival pressure', 'Thaipusam and other observances can alter crowding and transport; plan around the published event and operator notices.'], ['Steps and wildlife', 'The main cave has 272 steps and macaques are present. Secure food and turn back when conditions are unsuitable.']],
+    faq: [
+      ['How many nights should I stay in Kuala Lumpur?', 'Three nights can fit Batu Caves and two central days if arrival times leave enough full days; four or five nights create room for a changed train, festival crowd or rain day.'],
+      ['Can I reach the caves by train?', 'KTM Komuter serves Batu Caves station, but check KTMB’s date-specific timetable and both directions before you leave. The station is not a guarantee of the next return departure.'],
+      ['Do I have to climb the stairs?', 'No. The 272-step main approach is a strenuous choice at an active temple. A respectful ground-level visit or an early return is appropriate when heat, rain, crowding or mobility argues against the climb.']
+    ]
+  },
+  'putrajaya-civic-core': {
+    reviewedOn: '12 October 2026', reviewedOnIso: '2026-10-12',
+    summary: 'Give Putrajaya its own day from a KL Sentral base: KLIA Transit to Putrajaya & Cyberjaya, a prearranged precinct transfer, then a compact civic and lake walk.',
+    lead: 'Putrajaya’s ceremonial core, active institutions and lakefront are spread across planned precincts. The railway station is a gateway, not the doorstep of every landmark; a named last-mile transfer makes the day possible.',
+    orientation: 'For a Kuala Lumpur stay, use KL Sentral and KLIA Transit to Putrajaya & Cyberjaya station, then book or verify the local transfer to Precinct 1 before boarding. A separate Putrajaya night is optional for a slower lake or park day, not a shortcut to either airport terminal.',
+    arrival: 'Keep four or five nights in Kuala Lumpur if Putrajaya is one full branch day; KL Sentral simplifies the airport-train leg. If you add a Putrajaya overnight, confirm the accommodation’s exact precinct and evening access instead of assuming station-to-hotel walking.',
+    sequence: 'KL Sentral → KLIA Transit → Putrajaya & Cyberjaya station → preconfirmed local bus, taxi or licensed ride to Precinct 1 → Dataran Putra and the public approach to Putra Mosque if visitors are admitted → one chosen lake or civic edge → the same planned local transfer and KLIA Transit return.',
+    boundary: 'Putra Mosque is an active place of worship; follow its current visitor windows, dress guidance and photography rules. Government buildings and waterfront paths may have separate restricted areas or temporary events.',
+    routeLead: 'Choose one precinct and its walkable civic spine. Plan both first-mile and last-mile rides around the train, not around a map pin at the station.',
+    stages: [
+      ['Rail leg · KL Sentral', 'Check the date-specific KLIA Transit station list and service information, then travel from KL Sentral to Putrajaya & Cyberjaya. Do not confuse that station with the airport terminals.'],
+      ['Last mile · Precinct 1', 'Meet the confirmed local bus, taxi or licensed ride at its named pickup point; go to Dataran Putra or the visitor-approved Putra Mosque entrance rather than asking for “Putrajaya” generally.'],
+      ['Walk · Civic core to lake edge', 'Walk only the signed public approach between Dataran Putra, the mosque exterior or admitted interior, and one confirmed waterfront section. Check heat, prayer access and event barriers before extending the loop.'],
+      ['Return · Reverse the chain', 'Use the named local pickup to Putrajaya & Cyberjaya station and check the KLIA Transit trip back to KL Sentral. Keep this separate from an international flight unless the complete airport and baggage buffer has been independently verified.']
+    ],
+    planningNotes: 'A four-night KL Sentral base can cover three city chapters and a separate Putrajaya day without moving bags. Five nights leave a rest or weather reserve. Add one Putrajaya night only if you have a verified precinct base and want a slower park visit; confirm the station-to-hotel ride and the evening return before booking.',
+    weatherFallback: 'Heat, heavy rain or a civic event can shorten exposed walks and restrict access. Keep the day to Dataran Putra and one available indoor/public stop, or return to Kuala Lumpur early; do not replace a closed precinct with an improvised airport transfer.',
+    risks: [['Rail and terminal identity', 'KLIA Transit’s Putrajaya & Cyberjaya station is a separate stop from KLIA T1 and T2; check the route and ticket for the exact trip.'], ['Last-mile gap', 'Name the pickup and destination precinct before travel; the station does not put every visitor site within an easy walk.'], ['Worship and event access', 'Mosque, government and lake access can be conditional. Follow current PPJ and site notices and keep a smaller route in reserve.']],
+    faq: [
+      ['How many nights do I need?', 'Four nights in Kuala Lumpur can support three full city days and a separate Putrajaya branch if arrival timing allows; five nights give a more useful weather or rest reserve.'],
+      ['Does KLIA Transit stop at the civic core?', 'No. It serves Putrajaya & Cyberjaya station. Plan a separate local bus, taxi or licensed ride to the exact precinct and reserve the return leg too.'],
+      ['Can I visit Putrajaya before an international flight?', 'Only after checking the full rail, terminal, baggage and airline requirements with a conservative buffer. A separate day is safer than turning the visit into a flight connection.']
+    ]
+  }
+};
+const klGuideDecisions = {
+  'merdeka-chinatown': [['Arrive from the north', 'Use the current Rapid KL map to select a Masjid Jamek LRT entrance, then begin at the public Klang–Gombak confluence.'], ['Choose one interior', 'Verify opening and visitor rules for one museum, mosque or temple; keep the hottest part of the day for a shaded pause.'], ['Exit toward Chinatown', 'Continue by public streets to Petaling Street and finish at Pasar Seni LRT/MRT after checking the onward route to your base.']],
+  'klcc-bukit-bintang': [['Reserve one height', 'Use the official PETRONAS Twin Towers ticketing page if a tower visit matters; do not make an unverified slot the anchor of the day.'], ['Check the connector', 'Follow the KLCC–Bukit Bintang Walkway only when current signs show it open; otherwise use mapped rail or street access.'], ['Choose a night base', 'Stay in KLCC for park-first mornings or Bukit Bintang for evening activity, then name the station or licensed pickup before dinner.']],
+  'batu-caves': [['Keep the city base', 'Stay near KL Sentral or on a verified Rapid KL link for three nights or longer; a one-off visit does not justify moving hotels.'], ['Check both train legs', 'Use KTMB MyRailtime for the travel date and arrange a road fallback before leaving if the return does not fit.'], ['Decide at the stair foot', 'Treat the 272 steps as optional; heat, rain, footwear, mobility and crowding all count.']],
+  'putrajaya-civic-core': [['Choose the KL base', 'A four-night KL Sentral base can support three city days and a separate Putrajaya day; five nights leave a weather or rest reserve.'], ['Name the road leg', 'Book or verify the local bus, taxi or licensed ride from Putrajaya & Cyberjaya station to Precinct 1 and its return pickup.'], ['Protect the rail return', 'Check KLIA Transit service and keep the visit separate from a flight unless the full terminal and baggage buffer is confirmed.']]
+};
+for (const guide of klPutrajaya.guides) Object.assign(guide, klGuideRefresh[guide.slug], {
+  route: klGuideRefresh[guide.slug].stages,
+  checks: klGuideRefresh[guide.slug].risks,
+  decisions: klGuideDecisions[guide.slug]
+});
+
 export const malaysiaDepthGuides = malaysiaDepthClusters.flatMap((cluster) =>
   cluster.guides.map((guide, index) => ({
     ...guide,

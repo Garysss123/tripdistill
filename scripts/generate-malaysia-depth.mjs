@@ -386,6 +386,27 @@ function replaceMarked(html, start, end, replacement) {
   return html.slice(0, startAt) + replacement + html.slice(endAt + end.length);
 }
 
+function refreshKualaLumpurHubMetadata(html, cluster) {
+  const schemaPattern = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
+  const match = html.match(schemaPattern);
+  if (!match) throw new Error('Cannot find Kuala Lumpur hub JSON-LD.');
+  const schema = JSON.parse(match[1]);
+  for (const item of schema['@graph'] || []) {
+    if (item['@type'] === 'TravelGuide') {
+      item.dateModified = cluster.reviewedOnIso;
+      item.description = cluster.hubPrompt;
+    }
+    if (item['@type'] === 'FAQPage' && cluster.hubFaq) {
+      item.mainEntity = cluster.hubFaq.map(([question, answer]) => ({
+        '@type': 'Question', name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer }
+      }));
+    }
+  }
+  return html.replace(match[0], `<script type="application/ld+json">\n  ${JSON.stringify(schema)}\n  </script>`)
+    .replaceAll('29 August 2026', cluster.reviewedOn || '12 October 2026');
+}
+
 function injectHubCards(cluster) {
   const file = routeFile(`/malaysia/${cluster.hubSlug}/`);
   let html = fs.readFileSync(file, 'utf8');
@@ -407,6 +428,7 @@ function injectHubCards(cluster) {
     const insertAt = heroEnd + '</section>'.length;
     html = html.slice(0, insertAt) + `\n\n      ${hubCards(cluster)}` + html.slice(insertAt);
   }
+  if (cluster.hubSlug === 'kuala-lumpur-putrajaya') html = refreshKualaLumpurHubMetadata(html, cluster);
   fs.writeFileSync(file, html);
 }
 
@@ -491,6 +513,7 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
 const requestedClusterSlug = process.argv.find((argument) => argument.startsWith('--cluster='))?.slice('--cluster='.length);
 if (requestedClusterSlug) {
   const boundedGuideLists = {
+    'kuala-lumpur-putrajaya': ['merdeka-chinatown', 'klcc-bukit-bintang', 'batu-caves', 'putrajaya-civic-core'],
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
