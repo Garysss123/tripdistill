@@ -41,6 +41,12 @@ const currentBrisbaneGoldCoastGapRoutes = [
   '/australia/gold-coast-scenic-rim/springbrook-national-park/',
   '/australia/gold-coast-scenic-rim/lamington-national-park/'
 ];
+const currentMelbourneOceanGapRoutes = [
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -170,10 +176,10 @@ const localizedReviewDate = {
   ko: '2026년 10월 12일',
   th: '12 ตุลาคม 2026'
 };
-const expectedHtml = [...routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the existing Great Ocean Road, later Gold Coast and Cairns batches plus current Sydney/NSW and Brisbane/Gold Coast gap routes may change in the tracked source tree.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the existing Great Ocean Road, later Gold Coast and Cairns batches plus current Sydney/NSW, Brisbane/Gold Coast, and Melbourne/Ocean gap routes may change in the tracked source tree.');
 
 const deltas = [];
 for (const route of routes) {
@@ -235,7 +241,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes].sort(), 'Only existing Great Ocean Road, later Gold Coast, Cairns, Sydney/NSW and Brisbane/Gold Coast gap search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes].sort(), 'Only existing Great Ocean Road, later Gold Coast, Cairns, Sydney/NSW, Brisbane/Gold Coast, and Melbourne/Ocean gap search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -251,10 +257,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only existing Great Ocean Road, later Gold Coast, Cairns, Sydney/NSW and Brisbane/Gold Coast gap routes across five editions may receive a new lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only existing Great Ocean Road, later Gold Coast, Cairns, Sydney/NSW, Brisbane/Gold Coast, and Melbourne/Ocean gap routes across five editions may receive a new lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
 
 const svgFile = path.join(root, svgPath);
@@ -337,8 +343,7 @@ for (const photo of photoChecks) {
 
 for (const slug of ['lorne-waterfalls', 'gariwerd-grampians']) {
   const route = '/australia/great-ocean-road-gariwerd/' + slug + '/';
-  const englishFile = route.replace(/^\//, '') + 'index.html';
-  assert.equal(sha256(fs.readFileSync(pageFile(route))), sha256(git(['show', base + ':' + englishFile], true)), englishFile + ': unselected English route must remain byte-identical.');
+  assert(currentMelbourneOceanGapRoutes.includes(route), route + ': later Melbourne/Ocean regression must own the changed child-page checks.');
   for (const [locale, prefix] of locales.slice(1)) {
     const localized = pageFile(route, prefix);
     assert(fs.existsSync(localized), locale + ' ' + route + ': unselected localized route must still be generated.');
@@ -349,4 +354,4 @@ for (const slug of ['lorne-waterfalls', 'gariwerd-grampians']) {
   }
 }
 
-console.log('Great Ocean Road Australia regression passed: body deltas ' + deltas.join(', ') + '; four existing route paths in five editions; dates, schemas, search and sitemap scope; reviewed translation provenance; SVG XML/geometry/five-language legend/rights; retained photo bytes/source/license records; and unchanged Lorne/Gariwerd child pages.');
+console.log('Great Ocean Road Australia regression passed: body deltas ' + deltas.join(', ') + '; four existing route paths in five editions; dates, schemas, search and sitemap scope; reviewed translation provenance; SVG XML/geometry/five-language legend/rights; retained photo bytes/source/license records; and localized Lorne/Gariwerd pages owned by the later gap regression.');

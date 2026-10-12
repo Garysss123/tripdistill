@@ -1,0 +1,34 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Carlton Gardens and Melbourne Museum with one connected Fitzroy or Collingwood street. Choose two precincts, check the live tram return beyond the Free Tram Zone, and verify market or event dates before going.": "วางแผน Carlton Gardens และ Melbourne Museum คู่กับถนนใน Fitzroy หรือ Collingwood ที่เชื่อมถึงกัน เลือกเพียงสองย่าน ตรวจรถรางขากลับแบบสดซึ่งออกนอก Free Tram Zone และยืนยันวันตลาดหรืองานอีเวนต์ก่อนออกเดินทาง",
+    "melbourne museum": "พิพิธภัณฑ์เมลเบิร์น",
+    "carlton gardens": "สวน Carlton",
+    "brunswick street": "ถนน Brunswick",
+    "smith street": "ถนน Smith",
+    "The Penguin Parade is a booked sunset event, not an easy Melbourne day trip: confirm the evening transport because V/Line serves Cowes but has no parade-end return. Add Nobbies only if current access and weather suit.": "Penguin Parade เป็นกิจกรรมชมพระอาทิตย์ตกที่ต้องจอง ไม่ใช่ทริปไปเช้าเย็นกลับจากเมลเบิร์นที่ง่าย ๆ ยืนยันรถเที่ยวเย็นเพราะ V/Line ไปถึง Cowes แต่ไม่มีรถกลับหลัง Parade จบ เพิ่ม Nobbies เฉพาะเมื่อการเข้าถึงปัจจุบันและสภาพอากาศเหมาะสม",
+    "penguin parade": "ขบวนพาเหรดเพนกวิน",
+    "nobbies boardwalk": "ทางเดินริมทะเล Nobbies",
+    "cowes bus": "รถไป Cowes",
+    "phillip island wildlife": "สัตว์ป่า Phillip Island",
+    "From Lorne, choose Sheoak Falls for a short creek walk or Erskine Falls for a five-minute lookout plus optional 230 stairs. Separate the farther Hopetoun and Triplet Falls from this day.": "จาก Lorne เลือก Sheoak Falls สำหรับทางเดินเลียบลำธารสั้น ๆ หรือ Erskine Falls สำหรับจุดชมวิวที่เดินถึงในห้านาทีและบันไดเสริม 230 ขั้น แยก Hopetoun และ Triplet Falls ที่ไกลกว่าไปอีกวัน",
+    "erskine falls stairs": "บันได Erskine Falls",
+    "sheoak falls walk": "ทางเดิน Sheoak Falls",
+    "lorne coach": "รถโค้ชไป Lorne",
+    "great otway waterfall day": "วันเที่ยวน้ำตก Great Otway",
+    "Use Halls Gap as a base for one Grampians subregion and choose only an open walk or lookout. Mackenzie Falls precinct is closed through end-2026; check the dated Parks Victoria alerts, fire risk and trail access.": "ใช้ Halls Gap เป็นฐานสำหรับเขตย่อยหนึ่งแห่งใน Grampians และเลือกเฉพาะเส้นทางเดินหรือจุดชมวิวที่เปิด เขต Mackenzie Falls ปิดถึงสิ้นปี 2026 ตรวจประกาศ Parks Victoria ที่ระบุวันที่ ความเสี่ยงไฟป่า และการเข้าถึงเส้นทาง",
+    "halls gap walks": "เส้นทางเดิน Halls Gap",
+    "boroka lookout": "จุดชมวิว Boroka",
+    "reeds lookout": "จุดชมวิว Reeds",
+    "mackenzie falls closure": "การปิด Mackenzie Falls"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Luna requested, exact runtime identity unverified",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact runtime identity unverified",
+    "independentSecondModel": false
+  }
+}
