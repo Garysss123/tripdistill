@@ -1,0 +1,10 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/united-kingdom/"
+  ],
+  "translations": {
+    "Plan UK trip length, overnight bases, airport entry and exit, rail, coach, car and weather-aware rural last-mile connections.": "영국 여행 기간, 숙박 거점, 입국·출국 공항, 철도, 장거리 버스, 렌터카와 날씨를 고려한 지방의 마지막 연결 구간을 계획하세요."
+  }
+}
