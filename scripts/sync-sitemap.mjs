@@ -413,6 +413,12 @@ const australiaReviewDates = new Map([
     .filter((guide) => guide.reviewIsoDate)
     .map((guide) => [guide.url, guide.reviewIsoDate])
 ]);
+for (const route of [
+  '/australia/brisbane-moreton-bay/',
+  '/australia/brisbane-moreton-bay/city-river-south-bank/',
+  '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
+]) australiaReviewDates.set(route, '2026-10-12');
 const parisLastmod = '2026-10-06';
 const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';

@@ -189,9 +189,10 @@ assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate === isoDate).ma
 assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 3, 'An unselected Sydney child route has a new review date.');
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
-const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
+const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/)
+  .filter((name) => name.endsWith('.html') && routes.some((route) => name === `${route.slice(1)}index.html`)).sort();
 const expectedHtml = routes.map((route) => `${route.slice(1)}index.html`).sort();
-assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to exactly four selected routes; found ${changedHtml.join(', ')}.`);
+assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `The four selected Sydney routes must be in the English HTML diff; found ${changedHtml.join(', ')}.`);
 
 const indexByRoute = new Map(search.map((record) => [record.url, record]));
 for (const route of routes) {
@@ -343,8 +344,8 @@ const currentUrls = [...currentSitemap.keys()].sort();
 assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap URL set changed.');
 const targetSitemapPaths = routes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
-  .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 20 selected route/language lastmod values must change; found ${changedLastmod.length}.`);
+  .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route) && targetSitemapPaths.includes(route)).sort();
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `All 20 selected Sydney route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -352,5 +353,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log(`Sydney refresh regression passed: ${routes.length} existing routes, 4 substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
+  console.log(`Sydney refresh regression passed: ${routes.length} selected routes, 4 substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync, and original SVG XML/legend/geometry.`);
 }

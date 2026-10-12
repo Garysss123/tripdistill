@@ -3,6 +3,7 @@ import { parse } from 'parse5';
 const SITE_ORIGIN = 'https://tripdistill.com';
 const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/china-lhasa-preparation.svg',
+  '/assets/images/tripdistill-brisbane-bay-crossings.svg',
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
   '/assets/images/tripdistill-kellies-castle-transfer.svg'
 ]);
@@ -32,9 +33,9 @@ function normalizeSitePath(value, pageUrl) {
 export function hasVisibleOriginalProjectProvenance(html, pageUrl) {
   const document = parse(html);
   const images = findAll(document, (node) => node.tagName === 'img');
-  if (images.length !== 1) return false;
-  const imagePath = normalizeSitePath(attributes(images[0]).src, pageUrl);
-  if (!ORIGINAL_IMAGE_PATHS.has(imagePath)) return false;
+  const originalImages = images.filter((image) => ORIGINAL_IMAGE_PATHS.has(normalizeSitePath(attributes(image).src, pageUrl)));
+  if (originalImages.length !== 1) return false;
+  const imagePath = normalizeSitePath(attributes(originalImages[0]).src, pageUrl);
 
   const creditItems = findAll(document, (node) => node.tagName === 'li');
   return creditItems.some((item) => {
