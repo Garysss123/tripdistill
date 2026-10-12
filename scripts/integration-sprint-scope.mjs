@@ -68,7 +68,15 @@ export const integrationRouteGroups = Object.freeze({
     '/switzerland/zermatt-matterhorn/',
     '/switzerland/zermatt-matterhorn/glacier-paradise/',
     '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
-    '/switzerland/zermatt-matterhorn/village-gornergrat/'
+    '/switzerland/zermatt-matterhorn/village-gornergrat/',
+    '/switzerland/st-moritz-engadin/',
+    '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+    '/switzerland/st-moritz-engadin/bernina-pontresina/',
+    '/switzerland/st-moritz-engadin/muottas-diavolezza/',
+    '/switzerland/st-gallen-appenzell/',
+    '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+    '/switzerland/st-gallen-appenzell/appenzell-village/',
+    '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
   ]),
   italy: Object.freeze([
     '/italy/',

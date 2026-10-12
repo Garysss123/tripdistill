@@ -8427,7 +8427,7 @@
     "url": "/switzerland/st-moritz-engadin/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "St Moritz is the transport and hotel anchor, but the Upper Engadin’s identity stretches through lakes, Pontresina and the Bernina corridor. Distances are modest by rail yet elevation and winter conditions remain real. Choose one landscape system per day instead of repeatedly returning to St Moritz between every stop.",
+    "summary": "St Moritz is the valley’s best-known base, but the useful planning question is which Upper Engadin system belongs in each day. Keep Lake St Moritz and nearby villages as a lower-valley block; use Pontresina to orient a Bernina rail day; choose only one mountain railway when visibility and operations support it. The base town and the excursion are separate decisions, and each return should be checked before leaving the valley floor.",
     "keywords": [
       "St Moritz & Upper Engadin",
       "Graubünden",
@@ -8439,7 +8439,7 @@
     "url": "/switzerland/st-moritz-engadin/st-moritz-lakes/",
     "parent": "St Moritz & Upper Engadin",
     "type": "Local guide",
-    "summary": "Use St Moritz as the base but let the lake chain define the day, moving by rail/bus between viewpoints and villages rather than walking every shoreline.",
+    "summary": "Build a lower-valley day around Lake St Moritz and one mapped walk toward Lej da Staz or a neighboring village, then use a confirmed rail or bus return instead of trying to trace every shore.",
     "keywords": [
       "St Moritz & Engadin Lakes",
       "St Moritz & Upper Engadin",
@@ -8452,7 +8452,7 @@
     "url": "/switzerland/st-moritz-engadin/bernina-pontresina/",
     "parent": "St Moritz & Upper Engadin",
     "type": "Local guide",
-    "summary": "Ride the Bernina corridor as a real rail journey through changing elevation, choosing one turnaround or stop rather than treating every station as a photo target.",
+    "summary": "Make Pontresina the rail gateway, choose one outward-and-return Bernina segment before boarding, and decide deliberately between the named panoramic product and an ordinary regional journey.",
     "keywords": [
       "Pontresina & Bernina Railway",
       "St Moritz & Upper Engadin",
@@ -8465,7 +8465,7 @@
     "url": "/switzerland/st-moritz-engadin/muottas-diavolezza/",
     "parent": "St Moritz & Upper Engadin",
     "type": "Local guide",
-    "summary": "Choose one Engadin high viewpoint by scale and effort: Muottas Muragl for valley geometry or Diavolezza for glacier-facing high terrain, then keep Pontresina as the base layer.",
+    "summary": "Choose Muottas Muragl’s valley overlook or Diavolezza’s higher Bernina landscape, then follow that one access chain and keep Pontresina as the lower fallback.",
     "keywords": [
       "Muottas Muragl, Pontresina & Diavolezza",
       "St Moritz & Upper Engadin",
@@ -8682,7 +8682,7 @@
     "url": "/switzerland/st-gallen-appenzell/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "St Gallen’s Abbey District, Appenzell’s compact village and the Alpstein mountains form three different travel modes within a short regional network. The key is not distance but elevation: culture and village days remain robust when the high trails or cable car are in cloud.",
+    "summary": "St Gallen and Appenzell share a regional rail spine, but they solve different days: the Abbey District is an indoor-led city visit; Appenzell is a compact lived-in center; and Wasserauen is the gateway to a higher-exposure mountain choice. Decide which operating system fits the group, forecast and night base before counting stops.",
     "keywords": [
       "St Gallen & Appenzell",
       "Eastern Switzerland",
@@ -8694,12 +8694,12 @@
     "url": "/switzerland/st-gallen-appenzell/st-gallen-abbey/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Build St Gallen around the Abbey District and its library context, then use the old town’s oriel windows and compact streets as a supporting urban chapter.",
+    "summary": "Make the Abbey District the day’s anchor: choose the Abbey Library or a wider exhibition visit, then read the cathedral and old-town lanes as distinct stops before returning to rail.",
     "keywords": [
       "St Gallen Abbey District & Old Town",
       "St Gallen & Appenzell",
-      "manuscript-city folio",
-      "manuscript-folio"
+      "Abbey access ledger",
+      "abbey-access-ledger"
     ]
   },
   {
@@ -8707,12 +8707,12 @@
     "url": "/switzerland/st-gallen-appenzell/appenzell-village/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Use Appenzell village as a compact cultural center, then add one signed countryside walk instead of treating private farms and painted houses as an open-air theme park.",
+    "summary": "Read Appenzell on foot from its station to the ornamental houses of Landsgemeindeplatz, then choose a museum or one officially mapped public walk instead of stretching the village into a mountain day.",
     "keywords": [
       "Appenzell Village & Rolling Country",
       "St Gallen & Appenzell",
-      "village-to-meadow notebook",
-      "meadow-notebook"
+      "Appenzell village route folio",
+      "village-square-folio"
     ]
   },
   {
@@ -8720,12 +8720,12 @@
     "url": "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Treat Ebenalp and Seealpsee as mountain terrain with a cable-car access point, choosing viewpoint, cave path or lake hike only when trails and weather are suitable.",
+    "summary": "Choose one mountain system from Wasserauen: the Ebenalp cableway and an open signed upper route, the official Seealpsee walking loop, or a lower Appenzell/St Gallen day when weather or service removes both.",
     "keywords": [
       "Ebenalp & Seealpsee",
       "St Gallen & Appenzell",
-      "pre-Alp trail gate",
-      "trail-gate"
+      "Alpine access decision board",
+      "alpine-access-board"
     ]
   },
   {

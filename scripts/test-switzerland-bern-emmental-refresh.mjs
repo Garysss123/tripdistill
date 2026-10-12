@@ -9,6 +9,7 @@ import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../dat
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '1d6da4bf2fff506f290b2132b093f124d4252289';
+const dateBaseCommit = 'bc1c7ddf96820b3455986efa202588ffc0d2ae6b';
 const routes = [
   '/switzerland/bern-emmental/',
   '/switzerland/bern-emmental/old-city-aare/',
@@ -71,7 +72,7 @@ function mainWordCount(html) {
   return text(main).trim().split(/\s+/).filter(Boolean).length;
 }
 
-const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
+const baseSitemap = execFileSync('git', ['show', `${dateBaseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
 const currentRecords = sitemapRecords(currentSitemap);
@@ -84,13 +85,27 @@ const baselRoutes = [
   '/switzerland/basel-rhine/art-museums/',
   '/switzerland/basel-rhine/kleinbasel-border-rhine/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 40, 'the Bern/Emmental and Basel batches date only their four routes in five editions each');
+const stMoritzRoutes = [
+  '/switzerland/st-moritz-engadin/',
+  '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+  '/switzerland/st-moritz-engadin/bernina-pontresina/',
+  '/switzerland/st-moritz-engadin/muottas-diavolezza/'
+];
+const stGallenRoutes = [
+  '/switzerland/st-gallen-appenzell/',
+  '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+  '/switzerland/st-gallen-appenzell/appenzell-village/',
+  '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
+];
+const expectedNewDateChanges = new Set(locales.flatMap((locale) => [...stMoritzRoutes, ...stGallenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const retainedDateRoutes = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
+assert.equal(dateChanges.length, expectedNewDateChanges.size, 'only CH11 and CH12 add dates relative to the exact pre-Switzerland integration checkpoint');
 for (const [url, date] of dateChanges) {
-  assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
-  assert.equal(date, '2026-10-12', `Bern/Emmental review date for ${url}`);
+  assert.ok(expectedNewDateChanges.has(url), `unexpected Swiss sitemap date change: ${url}`);
+  assert.equal(date, '2026-10-12', `Swiss review date for ${url}`);
 }
+for (const url of retainedDateRoutes) assert.equal(currentRecords.get(url), '2026-10-12', `earlier Bern/Basel date remains: ${url}`);
 
 const englishBodies = new Map();
 for (const locale of locales) {
@@ -188,15 +203,13 @@ assert.equal(retired.license, null, 'retired record does not claim rights cleara
 assert.deepEqual(retired.sourceDeclaredLicenses, ['CC BY-SA 4.0'], 'source declaration remains historical metadata');
 assert.equal(retired.localSha1, 'cec21b3831e0d8421e32b36a142f973a64f55f47');
 
-const protectedImageSourceCommits = {
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '20c0023e15bd8178f6d89e7837ce774c3522620c',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '2566e88965470810f8ae997d2a69f501aa7e3a35',
-  'assets/images/switzerland-bern-emmental-emmental-day-trip.webp': baseCommit
-};
 for (const relative of protectedImages) {
-  const sourceCommit = protectedImageSourceCommits[relative];
-  const previous = execFileSync('git', ['show', `${sourceCommit}:${relative}`], { cwd: root });
-  assert.deepEqual(fs.readFileSync(path.join(root, relative)), previous, `protected/archived asset retains its recorded source version: ${relative}`);
+  // Keep the Lucerne and Zermatt diagrams at their separately pixel-validated integration revisions.
+  const imageBaseline = relative.includes('switzerland-lucerne-lake-mountains-rigi-route-choice.svg') || relative.includes('tripdistill-zermatt-glacier-route-choice.svg')
+    ? dateBaseCommit
+    : baseCommit;
+  const previous = execFileSync('git', ['show', `${imageBaseline}:${relative}`], { cwd: root });
+  assert.deepEqual(fs.readFileSync(path.join(root, relative)), previous, `protected or archived image bytes stay unchanged: ${relative}`);
 }
 
 const svg = fs.readFileSync(path.join(root, diagramPath.slice(1)), 'utf8');
@@ -253,4 +266,4 @@ print(json.dumps({'root': tag(root), 'elements': len(nodes), 'texts': len(texts)
 `;
 const xmlResult = spawnSync('python3', ['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
 assert.equal(xmlResult.status, 0, `SVG must parse as XML and fit its geometry: ${xmlResult.stderr}`);
-console.log(`Bern/Emmental refresh regressions passed: 20 date updates, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);
+console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11/CH12, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);

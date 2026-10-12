@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-12T15:22:06.116Z",
+  "generatedAt": "2026-10-12T15:38:39.949Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 813,
-    "completeSourceCreatorLicenseRecords": 757,
-    "completeProjectOriginalRightsRecords": 24,
+    "assetFileCount": 814,
+    "completeSourceCreatorLicenseRecords": 756,
+    "completeProjectOriginalRightsRecords": 25,
     "licenseClaimsNotIndependentlyVerified": 488,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 810,
-    "deduplicatedImageCount": 813,
+    "expectedBuildImageCount": 811,
+    "deduplicatedImageCount": 814,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3508,
     "assetsUsedByScannedEnglishPages": 771,
-    "unusedAssetCount": 42,
-    "assetsWithStructuredSourceRecords": 600,
+    "unusedAssetCount": 43,
+    "assetsWithStructuredSourceRecords": 601,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 198,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 277,
-    "metadataOrCreditOnly": 512,
+    "metadataOrCreditOnly": 513,
     "usedAssetsWithoutIndependentSourcePageCheck": 500,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 806 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 810 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 807 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 811 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -24688,7 +24688,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Appenzell_Landsgemeindeplatz_20210528.jpg",
           "sourceTitle": "File:Appenzell Landsgemeindeplatz 20210528.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Appenzell Landsgemeindeplatz 20210528.jpg",
+          "creditLabel": "Ornamental houses at Appenzell’s Landsgemeindeplatz during street works",
           "creator": "Daniel Kraft",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24715,10 +24715,10 @@
             "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
           ],
           "altTexts": [
-            "Colorful Appenzell village with green hills"
+            "Ornamental painted houses on Appenzell’s Landsgemeindeplatz, with a construction crane and cars visible in the foreground"
           ],
           "rawVisibleCredits": [
-            "Appenzell Landsgemeindeplatz 20210528.jpg — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Ornamental houses at Appenzell’s Landsgemeindeplatz during street works — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24737,38 +24737,31 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ebenalp_-_panoramio_(105).jpg",
           "sourceTitle": "File:Ebenalp - panoramio (105).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Ebenalp - panoramio (105).jpg",
+          "creditLabel": null,
           "creator": "Patrick Nouhailler's…",
-          "license": "CC BY-SA 3.0",
-          "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
+          "license": null,
+          "sourceDeclaredLicenses": [
+            "CC BY-SA 3.0"
+          ],
+          "rightsStatus": "The previous manifest recorded CC BY-SA 3.0 as source-declared metadata. The Commons page could not be independently opened in this environment; no license verification or rights clearance is claimed.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-12 after the direct Commons page request was blocked by the execution network (HTTP 403). Local pixel review confirmed Seealpsee below the Alpstein cliffs, so the subject is relevant; however, the prior CC BY-SA 3.0 declaration could not be rechecked here. Original WebP bytes and the historical metadata remain archived without claiming independent licensing verification.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "d1f18c04bea0a04a6e141f99e11106b0ad2650e4",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/switzerland/st-gallen-appenzell/",
-            "/switzerland/st-gallen-appenzell/appenzell-village/",
-            "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
-            "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
-          ],
-          "altTexts": [
-            "Alpstein mountains near Ebenalp and Seealpsee"
-          ],
-          "rawVisibleCredits": [
-            "Ebenalp - panoramio (105).jpg — Patrick Nouhailler's…, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -24814,7 +24807,8 @@
             "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
           ],
           "altTexts": [
-            "Abbey District and old town of St Gallen"
+            "Abbey District and old town of St Gallen",
+            "Baroque façade and towers of St Gallen Cathedral in the Abbey District"
           ],
           "rawVisibleCredits": [
             "Kathedrale St-Gallen.jpg — Pablodbds, CC0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -24836,7 +24830,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhb_Bernina-Express_%C3%BCberquert_obere_Berninabach-Br%C3%BCcke.jpg",
           "sourceTitle": "File:Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
+          "creditLabel": "Bernina Express crossing the upper Berninabach Bridge",
           "creator": "Kabelleger / David Gubler ( http://www.bahnbilder.ch )",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24866,7 +24860,7 @@
             "Rhaetian Railway train on the Bernina line in Switzerland"
           ],
           "rawVisibleCredits": [
-            "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg — Kabelleger / David Gubler ( http://www.bahnbilder.ch ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Bernina Express crossing the upper Berninabach Bridge — Kabelleger / David Gubler ( http://www.bahnbilder.ch ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24885,7 +24879,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muottas_Muragl3.jpg",
           "sourceTitle": "File:Muottas Muragl3.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Muottas Muragl3.jpg",
+          "creditLabel": "Muottas Muragl funicular station and track",
           "creator": "Adrian Michael",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24912,10 +24906,10 @@
             "/switzerland/st-moritz-engadin/st-moritz-lakes/"
           ],
           "altTexts": [
-            "Upper Engadin panorama from Muottas Muragl"
+            "Muottas Muragl funicular station and track above the Upper Engadin"
           ],
           "rawVisibleCredits": [
-            "Muottas Muragl3.jpg — Adrian Michael, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Muottas Muragl funicular station and track — Adrian Michael, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -28371,6 +28365,53 @@
           ],
           "altTexts": [
             "Original non-scale planning flow: confirm a named Sipadan date and licensed operator, current Sabah Parks permit allocation, diver readiness, briefing and a post-dive flight buffer; five-language key states allocation and access must be reconfirmed."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "7085d52e43e1c6f9f94ec89eba080f1798165503a329717f2cd5bba6dca193e3",
+      "assetPaths": [
+        "/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg"
+      ],
+      "byteLength": 11043,
+      "sourceRecords": [
+        {
+          "sha256": "7085d52e43e1c6f9f94ec89eba080f1798165503a329717f2cd5bba6dca193e3",
+          "assetPath": "/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+          "sourceTitle": "Ebenalp and Seealpsee access-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Conceptual route-choice schematic only; not a geographic map and not to scale.",
+          "localSha1": "3065eeb3b048a025fece1bafb936d423b42048d5",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/switzerland/st-gallen-appenzell/",
+            "/switzerland/st-gallen-appenzell/appenzell-village/",
+            "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
+            "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
+          ],
+          "altTexts": [
+            "Original conceptual access diagram comparing the Ebenalp cableway, the Wasserauen–Seealpsee walking loop and a lower village or city fallback; route order only, not to scale"
           ],
           "rawVisibleCredits": []
         }

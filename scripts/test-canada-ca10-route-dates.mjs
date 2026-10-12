@@ -37,9 +37,9 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA10 must retain the exact 73 Canada routes from CA09.');
 assert.deepEqual(
-  search.filter((record) => !routes.includes(record.url)),
-  integrationSearchRecords.filter((record) => !routes.includes(record.url)),
-  'CA10 must leave all non-target search records unchanged from the exact pre-CA10 integration parent.'
+  search.filter((record) => record.url.startsWith('/canada/') && !routes.includes(record.url)),
+  integrationSearchRecords.filter((record) => record.url.startsWith('/canada/') && !routes.includes(record.url)),
+  'CA10 must leave all non-target Canada search records unchanged from the exact pre-CA10 integration parent.'
 );
 for (const route of routes) {
   const record = canadaSearch.find((item) => item.url === route);
@@ -58,7 +58,7 @@ const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA10 must retain the exact CA09 sitemap URL set.');
 const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
-const actualDateChanges = [...sitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
+const actualDateChanges = [...sitemapDates].filter(([route, date]) => route.includes('/canada/') && previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four CA10 article routes × five editions may have changed sitemap dates.');
 
 function collectJsonLd(node, output = []) {

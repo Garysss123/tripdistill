@@ -343,6 +343,7 @@ export const switzerlandImageManifest = {
   "st-moritz-engadin/st-moritz-lakes": {
     "src": "/assets/images/switzerland-st-moritz-engadin-st-moritz-lakes.webp",
     "alt": "St Moritz and its lake in the Engadin valley",
+    "displayTitle": "Lake St Moritz and the Upper Engadin",
     "source": "https://commons.wikimedia.org/wiki/File:Switzerland-01761_-_Lake_St._Moritz_(22298240145).jpg",
     "label": "Switzerland-01761 - Lake St. Moritz (22298240145).jpg",
     "creator": "Dennis G. Jarvis",
@@ -353,6 +354,7 @@ export const switzerlandImageManifest = {
   "st-moritz-engadin/bernina-pontresina": {
     "src": "/assets/images/switzerland-st-moritz-engadin-bernina-pontresina.webp",
     "alt": "Rhaetian Railway train on the Bernina line in Switzerland",
+    "displayTitle": "Bernina Express crossing the upper Berninabach Bridge",
     "source": "https://commons.wikimedia.org/wiki/File:Rhb_Bernina-Express_%C3%BCberquert_obere_Berninabach-Br%C3%BCcke.jpg",
     "label": "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
     "creator": "Kabelleger / David Gubler ( http://www.bahnbilder.ch )",
@@ -362,7 +364,8 @@ export const switzerlandImageManifest = {
   },
   "st-moritz-engadin/muottas-diavolezza": {
     "src": "/assets/images/switzerland-st-moritz-engadin-muottas-diavolezza.webp",
-    "alt": "Upper Engadin panorama from Muottas Muragl",
+    "alt": "Muottas Muragl funicular station and track above the Upper Engadin",
+    "displayTitle": "Muottas Muragl funicular station and track",
     "source": "https://commons.wikimedia.org/wiki/File:Muottas_Muragl3.jpg",
     "label": "Muottas Muragl3.jpg",
     "creator": "Adrian Michael",
@@ -492,7 +495,8 @@ export const switzerlandImageManifest = {
   },
   "st-gallen-appenzell/st-gallen-abbey": {
     "src": "/assets/images/switzerland-st-gallen-appenzell-st-gallen-abbey.webp",
-    "alt": "Abbey District and old town of St Gallen",
+    "alt": "Baroque façade and towers of St Gallen Cathedral in the Abbey District",
+    "displayTitle": "St Gallen Cathedral façade in the Abbey District",
     "source": "https://commons.wikimedia.org/wiki/File:Kathedrale_St-Gallen.jpg",
     "label": "Kathedrale St-Gallen.jpg",
     "creator": "Pablodbds",
@@ -502,7 +506,8 @@ export const switzerlandImageManifest = {
   },
   "st-gallen-appenzell/appenzell-village": {
     "src": "/assets/images/switzerland-st-gallen-appenzell-appenzell-village.webp",
-    "alt": "Colorful Appenzell village with green hills",
+    "alt": "Ornamental painted houses on Appenzell’s Landsgemeindeplatz, with a construction crane and cars visible in the foreground",
+    "displayTitle": "Ornamental houses at Appenzell’s Landsgemeindeplatz during street works",
     "source": "https://commons.wikimedia.org/wiki/File:Appenzell_Landsgemeindeplatz_20210528.jpg",
     "label": "Appenzell Landsgemeindeplatz 20210528.jpg",
     "creator": "Daniel Kraft",
@@ -511,14 +516,20 @@ export const switzerlandImageManifest = {
     "remoteSha1": "1d3a12b33ffeb4572402166c15e2c8b38d2c9dac"
   },
   "st-gallen-appenzell/ebenalp-seealpsee": {
-    "src": "/assets/images/switzerland-st-gallen-appenzell-ebenalp-seealpsee.webp",
-    "alt": "Alpstein mountains near Ebenalp and Seealpsee",
-    "source": "https://commons.wikimedia.org/wiki/File:Ebenalp_-_panoramio_(105).jpg",
-    "label": "Ebenalp - panoramio (105).jpg",
-    "creator": "Patrick Nouhailler's…",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Ebenalp - panoramio (105).jpg",
-    "remoteSha1": "0a297066d568269168765eb0c4a4ec0bf8d3ec2b"
+    "src": "/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+    "alt": "Original conceptual access diagram comparing the Ebenalp cableway, the Wasserauen–Seealpsee walking loop and a lower village or city fallback; route order only, not to scale",
+    "displayTitle": "Ebenalp and Seealpsee access-choice schematic",
+    "diagramNote": "Five-language route and color key: red marks the checked rail/cableway access, gold the official signed Seealpsee walking line, and teal the lower village/city alternative. The place names and route order are conceptual, not geographic. Recheck current service, path status, weather and the official route figures before travel.",
+    "diagramCardNote": "Five-language key: red rail/cableway, gold signed Seealpsee path, teal low-elevation alternative. Conceptual route order only; not to scale or live status.",
+    "source": "https://tripdistill.com/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+    "label": "Ebenalp and Seealpsee access-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Conceptual route-choice schematic only; not a geographic map and not to scale.",
+    "localSha1": "3065eeb3b048a025fece1bafb936d423b42048d5"
   }
 };
 
@@ -538,6 +549,21 @@ export const switzerlandRetiredImageRecords = {
     inventoryStatus: 'unused',
     rightsStatus: 'The Commons page declares CC BY-SA 4.0; retained as source metadata only. No independent rights or chain-of-title verification.',
     retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed a sunset silhouette of two visitors beneath a bare tree, with no visible farmhouse or identifiable Emmental detail. The original WebP bytes and source metadata remain archived; this record does not independently verify the location, uploader authority or rights.'
+  },
+  stGallenEbenalpPhoto: {
+    src: '/assets/images/switzerland-st-gallen-appenzell-ebenalp-seealpsee.webp',
+    alt: 'Alpstein cliffs and forest above Seealpsee',
+    source: 'https://commons.wikimedia.org/wiki/File:Ebenalp_-_panoramio_(105).jpg',
+    label: 'Ebenalp - panoramio (105).jpg',
+    creator: "Patrick Nouhailler's…",
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 3.0'],
+    commonsTitle: 'File:Ebenalp - panoramio (105).jpg',
+    remoteSha1: '0a297066d568269168765eb0c4a4ec0bf8d3ec2b',
+    localSha1: 'd1f18c04bea0a04a6e141f99e11106b0ad2650e4',
+    inventoryStatus: 'unused',
+    rightsStatus: 'The previous manifest recorded CC BY-SA 3.0 as source-declared metadata. The Commons page could not be independently opened in this environment; no license verification or rights clearance is claimed.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after the direct Commons page request was blocked by the execution network (HTTP 403). Local pixel review confirmed Seealpsee below the Alpstein cliffs, so the subject is relevant; however, the prior CC BY-SA 3.0 declaration could not be rechecked here. Original WebP bytes and the historical metadata remain archived without claiming independent licensing verification.'
   },
   lucerneRigiView: {
     src: '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp',

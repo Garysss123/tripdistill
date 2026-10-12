@@ -40,6 +40,18 @@ const interlakenRoutes = [
   '/switzerland/interlaken-lakes/brienz-giessbach/',
   '/switzerland/interlaken-lakes/thun-spiez/'
 ];
+const stMoritzRoutes = [
+  '/switzerland/st-moritz-engadin/',
+  '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+  '/switzerland/st-moritz-engadin/bernina-pontresina/',
+  '/switzerland/st-moritz-engadin/muottas-diavolezza/'
+];
+const stGallenRoutes = [
+  '/switzerland/st-gallen-appenzell/',
+  '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+  '/switzerland/st-gallen-appenzell/appenzell-village/',
+  '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
+];
 const diagramPath = '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg';
 const diagramSha1 = 'd4bb15e809a0cf876db15a4f7e0309cf5f8d7404';
 
@@ -89,7 +101,7 @@ const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'source route inventory');
 assert.equal(currentRecords.size, baseRecords.size, 'no sitemap URL additions or removals');
 assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'route inventory is unchanged');
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes, ...stMoritzRoutes, ...stGallenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const genevaDateRoutes = [
   '/switzerland/',
   '/switzerland/geneva-lake/',
@@ -122,12 +134,12 @@ const baselRoutes = [
   '/switzerland/basel-rhine/kleinbasel-border-rhine/'
 ];
 for (const locale of locales) {
-  for (const route of [...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes]) {
+  for (const route of [...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes]) {
     expectedDateChanges.add(`https://tripdistill.com${locale.prefix}${route}`);
   }
 }
 const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 165, 'the reviewed Switzerland clusters and overview routes retain their five-language date history');
+assert.equal(dateChanges.length, 205, 'the reviewed Switzerland clusters and overview routes retain their five-language date history');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `review date for ${url}`);

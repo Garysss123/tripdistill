@@ -142,9 +142,23 @@ const baselRoutes = [
   '/switzerland/basel-rhine/kleinbasel-border-rhine/'
 ];
 const baselLocs = new Set(baselRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+const stMoritzRoutes = [
+  '/switzerland/st-moritz-engadin/',
+  '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+  '/switzerland/st-moritz-engadin/bernina-pontresina/',
+  '/switzerland/st-moritz-engadin/muottas-diavolezza/'
+];
+const stMoritzLocs = new Set(stMoritzRoutes.flatMap((route) => locales.map((locale) => 'https://tripdistill.com' + locale.prefix + route)));
+const stGallenRoutes = [
+  '/switzerland/st-gallen-appenzell/',
+  '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+  '/switzerland/st-gallen-appenzell/appenzell-village/',
+  '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
+];
+const stGallenLocs = new Set(stGallenRoutes.flatMap((route) => locales.map((locale) => 'https://tripdistill.com' + locale.prefix + route)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
 const changedDates = new Set([...currentMap].filter(([loc, date]) => loc.includes('/switzerland/') && baseMap.get(loc) !== date).map(([loc]) => loc));
-assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
+assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
 const oldPhoto = switzerlandRetiredImageRecords.montreuxRochersTrainMismatch;
