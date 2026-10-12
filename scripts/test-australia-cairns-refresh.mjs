@@ -11,6 +11,7 @@ import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
+const priorCairnsBodyCommit = '43551cf59c9f9be20639130970e933c54f10b568';
 const cluster = australiaClusters.find(({ slug }) => slug === 'cairns-wet-tropics');
 assert(cluster, 'Cairns cluster must exist.');
 const routes = [
@@ -135,6 +136,19 @@ function sitemapEntries(xml) {
 const expectedHtml = [...routes, ...currentSydneyNswGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected Cairns routes and four current Sydney/NSW gap routes may change.');
+const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
+  .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
+const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
+const repeatRoutes = routes.filter((route) => priorBodyRoutes.includes(route)).sort();
+const newCoverageRoutes = routes.filter((route) => !priorBodyRoutes.includes(route)).sort();
+assert.deepEqual(repeatRoutes, [
+  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/'
+], 'Only the Esplanade and Kuranda routes repeat the earlier substantive Cairns batch.');
+assert.deepEqual(newCoverageRoutes, [
+  '/australia/cairns-wet-tropics/',
+  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
+], 'Only the Cairns hub and Palm Cove are new substantive coverage in this batch.');
 
 const deltas = [];
 for (const route of routes) {
@@ -177,8 +191,8 @@ for (const locale of ['zh-Hant', 'ja', 'ko', 'th']) {
   assert.deepEqual(pageBatch.routes, routes, locale + ': page batch route scope.');
   assert.equal(Object.keys(pageBatch.translations).length, 125, locale + ': expected current page-key delta.');
   assert(Object.values(pageBatch.translations).every((value) => typeof value === 'string' && value.trim()), locale + ': page translations must be complete.');
-  assert.equal(pageBatch.reviewProvenance?.writer, 'GPT-6 Luna', locale + ': translation writer provenance.');
-  assert.equal(pageBatch.reviewProvenance?.reviewer, 'GPT-6 Luna; same-model self-review', locale + ': same-model reviewer provenance.');
+  assert.equal(pageBatch.reviewProvenance?.writer, 'GPT-6 Luna (original entries); continuation model unverified', locale + ': original-entry and continuation writer provenance.');
+  assert.equal(pageBatch.reviewProvenance?.reviewer, 'GPT-6 Luna same-model self-review (original entries); continuation re-read, model unverified', locale + ': original-entry and continuation review provenance.');
   assert.equal(pageBatch.reviewProvenance?.independentSecondModel, false, locale + ': independent-model field.');
   for (const source of Object.keys(pageBatch.translations)) assert(requiredPageKeys.has(source), locale + ': page batch contains a key outside the four selected routes.');
 
@@ -233,4 +247,4 @@ for (const [route, requiredText] of [
   [routes[3], 'Surf Life Saving Australia — Beachsafe beach information']
 ]) assert(fs.readFileSync(pageFile(route), 'utf8').includes(requiredText), `${route}: missing targeted official source ${requiredText}.`);
 
-console.log(`Cairns Australia regression passed: four existing route bodies (+${deltas.map(({ words }) => words).join(', ')} words), five-language dates/FAQ/canonical parity, exact search and sitemap scope, 125 page keys + four search keys per locale, Luna same-model provenance, and unchanged photo bytes.`);
+console.log(`Cairns Australia regression passed: four edited routes (+${deltas.map(({ words }) => words).join(', ')} words), two repeat improvements and two new substantive routes, five-language dates/FAQ/canonical parity, exact search and sitemap scope, 125 page keys + four search keys per locale, original Luna provenance and unverified continuation runtime, and unchanged photo bytes.`);
