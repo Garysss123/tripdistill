@@ -133,6 +133,16 @@ export const integrationRouteGroups = Object.freeze({
     '/italy/western-sicily/palermo-monreale-cefalu/',
     '/italy/western-sicily/trapani-erice-egadi/',
   ]),
+  canada: Object.freeze([
+    '/canada/pacific-rim-tofino/',
+    '/canada/pacific-rim-tofino/long-beach-rainforest/',
+    '/canada/pacific-rim-tofino/tofino-marine-day/',
+    '/canada/pacific-rim-tofino/ucluelet-wild-pacific/',
+    '/canada/banff-lake-louise/',
+    '/canada/banff-lake-louise/banff-town-bow-valley/',
+    '/canada/banff-lake-louise/johnston-minnewanka/',
+    '/canada/banff-lake-louise/lake-louise-moraine/'
+  ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',
     '/malaysia/semporna-tun-sakaran/semporna-jetty-operator/',
@@ -183,6 +193,7 @@ export const integrationRoutes = Object.freeze([
   ...integrationRouteGroups.france,
   ...integrationRouteGroups.switzerland,
   ...integrationRouteGroups.italy,
+  ...integrationRouteGroups.canada,
   ...integrationRouteGroups.malaysia
 ]);
 

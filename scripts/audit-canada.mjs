@@ -27,7 +27,7 @@ check(canadaClusters.length === 18, `Expected 18 Canada hubs, found ${canadaClus
 check(canadaGuides.length === 54, `Expected 54 Canada guides, found ${canadaGuides.length}`);
 const imageGuides = canadaGuides.filter((guide) => guide.image);
 const mapGuides = canadaGuides.filter((guide) => guide.mapTreatment);
-check(imageGuides.length === 53 && mapGuides.length === 1, `Expected 53 photo guides and one text map treatment, found ${imageGuides.length} and ${mapGuides.length}`);
+check(imageGuides.length === 52 && mapGuides.length === 2, `Expected 52 photo guides and two map treatments, found ${imageGuides.length} and ${mapGuides.length}`);
 check(routes.length === 73 && new Set(routes).size === 73, 'Expected 73 unique English Canada routes');
 check(new Set(canadaClusters.map((item) => item.family)).size === 18, 'Canada hub families must be unique');
 check(new Set(canadaGuides.map((item) => item.instrument)).size === 54, 'Canada planning instruments must be unique');
@@ -80,9 +80,10 @@ for (const route of routes) {
   }
 
   const hub = canadaClusters.find((cluster) => route === `/canada/${cluster.slug}/` || route.startsWith(`/canada/${cluster.slug}/`));
-  const credited = (route === '/canada/' ? canadaClusters.map((cluster) => cluster.guides[0]) : hub?.guides || []).filter((guide) => guide.image);
+  const credited = (route === '/canada/' ? canadaClusters.map((cluster) => cluster.guides[0]) : hub?.guides || []);
   for (const guide of credited) {
-    check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+    if (guide.image) check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+    if (guide.mapTreatment?.src) check(html.includes(guide.mapTreatment.src) && html.includes(guide.mapTreatment.source) && html.includes(guide.mapTreatment.rightsStatusUrl), `${route}: original diagram provenance missing for ${guide.slug}`);
   }
 
   if (route === '/canada/') {
@@ -94,8 +95,14 @@ for (const route of routes) {
     const guide = canadaGuides.find((item) => item.url === route);
     if (!guide.image) {
       check(html.includes('ca-victoria-route-choices'), `${route}: text map treatment missing`);
-      check(!html.includes('canada-victoria-south-island-sooke-juan-de-fuca.webp'), `${route}: unverified photo still used`);
-      check(!html.includes('Rocky coast between Little Kuitshe Campsite'), `${route}: unverified photo credit still shown`);
+      if (guide.slug === 'sooke-juan-de-fuca') {
+        check(!html.includes('canada-victoria-south-island-sooke-juan-de-fuca.webp'), `${route}: unverified photo still used`);
+        check(!html.includes('Rocky coast between Little Kuitshe Campsite'), `${route}: unverified photo credit still shown`);
+      }
+      if (guide.mapTreatment?.src) {
+        check(html.includes(guide.mapTreatment.src), `${route}: original SVG is not rendered`);
+        check(!html.includes('/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp'), `${route}: retired mismatched Banff photo is still referenced`);
+      }
     }
   } else {
     check(dom.filter((node) => classHas(node, 'ca-hub-card')).length === 3, `${route}: expected three child cards`);
@@ -110,7 +117,10 @@ for (const route of routes) {
     if (!fs.existsSync(localizedFile)) continue;
     const localized = fs.readFileSync(localizedFile, 'utf8');
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
-    for (const guide of credited) check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+    for (const guide of credited) {
+      if (guide.image) check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+      if (guide.mapTreatment?.src) check(localized.includes(guide.mapTreatment.source) && localized.includes(guide.mapTreatment.rightsStatusUrl), `${prefix + route}: localized original-diagram provenance missing for ${guide.slug}`);
+    }
   }
 }
 
@@ -135,8 +145,20 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/victoria-south-island/butchart-saanich/',
     '/canada/victoria-south-island/sooke-juan-de-fuca/'
   ]);
+  const pacificRimUpdatedRoutes = new Set([
+    '/canada/pacific-rim-tofino/',
+    '/canada/pacific-rim-tofino/long-beach-rainforest/',
+    '/canada/pacific-rim-tofino/ucluelet-wild-pacific/',
+    '/canada/pacific-rim-tofino/tofino-marine-day/'
+  ]);
+  const banffUpdatedRoutes = new Set([
+    '/canada/banff-lake-louise/',
+    '/canada/banff-lake-louise/banff-town-bow-valley/',
+    '/canada/banff-lake-louise/lake-louise-moraine/',
+    '/canada/banff-lake-louise/johnston-minnewanka/'
+  ]);
   for (const route of routes) {
-    const lastmod = layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }
@@ -146,5 +168,5 @@ if (failures.length) {
   console.error(`Canada audit: ${failures.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`Canada audit passed: 18 hubs, 54 focused guides, 73 English / 365 five-language routes, 53 credited images, one text map treatment and 25 child layout families${englishOnly ? ' (localized file checks deferred)' : ''}.`);
+  console.log(`Canada audit passed: 18 hubs, 54 focused guides, 73 English / 365 five-language routes, 52 credited photos, two map treatments and 25 child layout families${englishOnly ? ' (localized file checks deferred)' : ''}.`);
 }

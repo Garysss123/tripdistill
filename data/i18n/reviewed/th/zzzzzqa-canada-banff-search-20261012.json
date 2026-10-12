@@ -1,0 +1,14 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use Banff town as the walkable base, give Lake Louise and Moraine Lake their own reservation-led day, then choose Johnston Canyon or the Lake Minnewanka corridor as a separate outing. Named Roam routes, Parks Canada boarding rules and seasonal road notices determine whether those days work; keep one movable day for weather or a service change.": "ใช้ Banff town เป็นฐานที่เดินได้ และจัด Lake Louise กับ Moraine Lake เป็นวันหนึ่งที่วางแผนตามการจอง ส่วน Johnston Canyon หรือ Lake Minnewanka แยกไปอีกวัน ตรวจสาย Roam กฎการขึ้นรถของ Parks Canada และประกาศถนนตามฤดูกาล แล้วเผื่อวันยืดหยุ่นไว้หากอากาศหรือบริการเปลี่ยน",
+    "Make Banff town the recovery base: walk Banff Avenue and the Bow River, learn the Roam stop you need, then use one nearby named path before committing to a higher or more remote day.": "ใช้ Banff town เป็นฐานพัก: เดิน Banff Avenue และบริเวณ Bow River ทำความรู้จักป้าย Roam ที่ต้องใช้ แล้วเลือกเส้นทางใกล้เมืองที่ระบุชื่อหนึ่งเส้นก่อนวางแผนไปพื้นที่สูงหรือไกล",
+    "Choose transport before choosing a trail: private cars cannot use Moraine Lake Road, while Parks Canada shuttle reservations and Roam 8X have different boarding points, seasons and return conditions.": "เลือกขนส่งก่อนเลือกเส้นทางเดิน รถส่วนตัวใช้ Moraine Lake Road ไม่ได้ ขณะที่รถรับส่ง Parks Canada ที่จองไว้กับ Roam 8X มีจุดขึ้นรถ ฤดูกาล และเงื่อนไขขากลับต่างกัน",
+    "Johnston Canyon and Lake Minnewanka sit on different corridors. Choose one per day from the dated Roam service notice, then follow a named trail or lakeside stop with a confirmed return.": "Johnston Canyon และ Lake Minnewanka อยู่คนละแนวทาง เลือกเพียงแห่งเดียวต่อวันจากประกาศบริการ Roam ที่มีวันที่ แล้วเดินเส้นทางที่มีชื่อหรือแวะจุดริมทะเลสาบหลังยืนยันขากลับ",
+    "Lake Louise": "ทะเลสาบหลุยส์"
+  }
+}

@@ -15,6 +15,7 @@ const retainedLocalOnlyAssetPaths = [
   '/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp',
   '/assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp',
   '/assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp',
+  '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp',
 ];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
@@ -79,9 +80,23 @@ const verifiedSourcePageDetails = new Map([
     }
   ],
   [
+    'https://commons.wikimedia.org/wiki/File:%27You_are_in_AVALANCHE_country%27_--_Cascade_Mountain_on_the_the_Road_to_Banff,_Alberta_(CA)_September_2019_(49559005101).jpg',
+    {
+      detail: 'Banff town/base image check: Commons file page identifies Ron Cogswell, 5 September 2019, 5324 × 3537 original pixels and CC BY 2.0; the local 1600 × 1066 pixels show Cascade Mountain beside avalanche warning signage on the Banff approach, not the town itself. The alt text now describes the visible scene. The page declaration and image match are recorded without asserting independent uploader authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG',
     {
       detail: 'Lake Brienz photo review: the exact Commons page identifies Andrew Bossi, describes the view from Iseltwald toward Giessbach and Brienz, and declares CC BY-SA 2.5 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show the Iseltwald shoreline and village, matching the corrected alt and display title. The visible credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Moraine_Lake_Alberta_Canada.jpg',
+    {
+      detail: 'Banff lake image check: Commons file page identifies Bede735, 19 June 2008, 3872 × 2592 original pixels and CC BY-SA 3.0; the local 1600 × 1066 pixels show Moraine Lake and the Ten Peaks. The WebP resize/crop is disclosed, its credit links the exact license version and states the same-version share-alike term. The page declaration is recorded without asserting independent uploader authority or rights-chain clearance.',
       checkedOn: '2026-10-12'
     }
   ],
@@ -1085,6 +1100,9 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/malaysia-kinabatangan-proboscis.webp', '2026-10-12'],
   ['/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp', '2026-10-12'],
   ['/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp', '2026-10-12'],
+  ['/assets/images/canada-banff-lake-louise-banff-town-bow-valley.webp', '2026-10-12'],
+  ['/assets/images/canada-banff-lake-louise-lake-louise-moraine.webp', '2026-10-12'],
+  ['/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
@@ -1515,7 +1533,7 @@ const counts = {
   completeProjectOriginalRightsRecords: entries.filter((row) => row.assetType === 'original-planning-diagram' && row.sourceUrl && row.creator && row.rightsStatus).length,
   licenseClaimsNotIndependentlyVerified: entries.filter((row) => row.assetType === 'photographic-raster' && row.verificationStatus === 'site_credit_or_metadata_only').length,
   currentKnownUnsuitableImages: 0,
-  previouslyMisplacedImageReplaced: 1,
+  previouslyMisplacedImageReplaced: 2,
   buildImageFilesOutsidePhotoInventory: buildImageExtras.length,
   buildImageFilesExcludedForRightsReview: retainedLocalOnlyAssets.length,
   expectedBuildImageCount: publishedWebpCount + buildImageExtras.length,
@@ -1565,6 +1583,13 @@ const report = {
     correction: 'Replaced with a visually checked photograph of the fountain in Piazza Santa Maria in Trastevere.',
     currentFile: 'The current replacement remains included as the current asset at the same path.'
   },
+  boundedImageReview: {
+    checkedOn: '2026-10-12',
+    route: '/canada/banff-lake-louise/johnston-minnewanka/',
+    mismatch: 'The retained Johnston Canyon source WebP shows a forest stream, not the represented canyon/lake corridor subject. It is unreferenced by current English pages and replaced by an original schematic with visible SVG source and Terms links.',
+    remainingPhotoPageCheck: 'The exact Commons page for the retired Johnston Canyon source could not be fetched. Its listed creator and CC BY-SA 4.0 declaration are preserved as metadata only; no source-page verification or independent rights clearance is claimed.',
+    licenseVersionNote: 'CC BY 2.0, CC BY-SA 3.0 and CC BY-SA 4.0 are separate declared license versions, but different versions alone are not a metadata conflict. Each active photo is credited against its own exact source-page declaration.'
+  },
   entries: grouped,
   countInterpretation: 'licenseClaimsNotIndependentlyVerified counts photographic-raster records without an independently checked source page; original diagrams declare no separate reuse license and are excluded. metadataOrCreditOnly counts all asset records without an independent source-page check. These metrics do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and the figures are not additive.',
   unmatchedAssets: unmatchedByAsset,
@@ -1594,7 +1619,7 @@ const summaryLines = [
   '',
   '## Current mismatches',
   '',
-  'The former Trastevere hero showed Piazza Navona and has been replaced. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
+  'The former Trastevere hero showed Piazza Navona and has been replaced. On 12 October 2026, the Banff Johnston/Minnewanka page photo was also found to show a forest stream; its file and metadata remain in the inventory but it is no longer referenced by a current page and is excluded from dist. An original two-corridor SVG replaces it. The exact Commons page for that retired photo could not be fetched, so its source-page claim remains unverified. Active Banff photo pixels and their two exact Commons pages were checked; declared license versions differ by image and are not treated as a conflict. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
   '',
   'Missing source/creator/license fields: ' + unmatchedByAsset.length + ' (' + counts.activeIncompleteAttributionFields + ' active, ' + counts.unreferencedIncompleteAttributionFields + ' unused). Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '. Open source-to-image reviews: ' + openCreditReviewSummary + '.'
 ];

@@ -20,7 +20,7 @@ const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))?.slice(7) 
 const only = new Set(onlyArg.split(',').map((value) => value.trim()).filter(Boolean));
 const jobs = only.size ? imageGuides.filter(({ key }) => only.has(key)) : missingOnly ? imageGuides.filter(({ key }) => !existingManifest[key]) : imageGuides;
 if (only.size && jobs.length !== only.size) throw new Error(`Unknown Canada image key(s): ${[...only].filter((key) => !imageGuides.some((job) => job.key === key)).join(', ')}`);
-if (allGuides.length !== 54 || imageGuides.length !== 53) throw new Error(`Expected 54 Canada guides with 53 image jobs, found ${allGuides.length} and ${imageGuides.length}.`);
+if (allGuides.length !== 54 || imageGuides.length !== 52) throw new Error(`Expected 54 Canada guides with 52 image jobs, found ${allGuides.length} and ${imageGuides.length}.`);
 
 const allowedLicenses = new Set([
   'CC0', 'Public domain',

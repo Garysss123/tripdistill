@@ -64,7 +64,7 @@ export const canadaImageManifest = {
   },
   "pacific-rim-tofino/ucluelet-wild-pacific": {
     "src": "/assets/images/canada-pacific-rim-tofino-ucluelet-wild-pacific.webp",
-    "alt": "Rocky Pacific coast and forest near Ucluelet",
+    "alt": "Bald eagle perched among Sitka spruce along the Wild Pacific Trail in Ucluelet",
     "source": "https://commons.wikimedia.org/wiki/File:Picea_sitchensis_Wild_Pacific_Trail,_Ucluelet_2.jpg",
     "label": "Picea sitchensis Wild Pacific Trail, Ucluelet 2.jpg",
     "creator": "Roland Tanglao from Vancouver, Canada",
@@ -84,7 +84,7 @@ export const canadaImageManifest = {
   },
   "banff-lake-louise/banff-town-bow-valley": {
     "src": "/assets/images/canada-banff-lake-louise-banff-town-bow-valley.webp",
-    "alt": "Banff town set below the Rocky Mountains",
+    "alt": "Cascade Mountain and avalanche signage on the Banff approach",
     "source": "https://commons.wikimedia.org/wiki/File:%27You_are_in_AVALANCHE_country%27_--_Cascade_Mountain_on_the_the_Road_to_Banff,_Alberta_(CA)_September_2019_(49559005101).jpg",
     "label": "'You are in AVALANCHE country' -- Cascade Mountain on the the Road to Banff, Alberta (CA) September 2019 (49559005101).jpg",
     "creator": "Ron Cogswell from Arlington, Virginia, USA",
@@ -110,7 +110,9 @@ export const canadaImageManifest = {
     "creator": "Amber Mac75",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Johnston Canyon Banff National Park.jpg",
-    "remoteSha1": "86651f4829a1254e188595ed426254144ff48898"
+    "remoteSha1": "86651f4829a1254e188595ed426254144ff48898",
+    "inventoryStatus": "unused",
+    "retirementNote": "Local pixels show a forest stream that does not match the Johnston Canyon and Lake Minnewanka route described by this page. Retained for provenance, removed from all live page references, and replaced by an original planning schematic. The source-page declaration and uploader authority were not independently verified in this review."
   },
   "jasper-icefields/jasper-town-maligne": {
     "src": "/assets/images/canada-jasper-icefields-jasper-town-maligne.webp",

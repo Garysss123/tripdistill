@@ -13,6 +13,7 @@ const retainedLocalOnlyAssets = [
   'assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp',
   'assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp',
   'assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp',
+  'assets/images/canada-banff-lake-louise-johnston-minnewanka.webp',
 ];
 
 const publicDirectories = [

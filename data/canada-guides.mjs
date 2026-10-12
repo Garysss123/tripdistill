@@ -38,7 +38,8 @@ export const canadaClusters = orderedSlugs.map((slug) => {
     ...cluster,
     guides: cluster.guides.map((guide) => {
       const key = `${cluster.slug}/${guide.slug}`;
-      const image = canadaImageManifest[key];
+      const manifestImage = canadaImageManifest[key];
+      const image = manifestImage?.inventoryStatus === 'unused' ? null : manifestImage;
       if (!image && !guide.mapTreatment) throw new Error(`Missing verified Canada image manifest entry or map treatment: ${key}`);
       if (image && guide.mapTreatment) throw new Error(`Canada guide cannot use both a photo and map treatment: ${key}`);
       return { ...guide, image: image ? { ...image, editNote: canadaImageEditNote } : null };

@@ -11,6 +11,7 @@ const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg',
   '/assets/images/tripdistill-italy-bologna-portico-plan.svg',
   '/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg',
+  '/assets/images/tripdistill-canada-banff-two-corridors.svg',
 ]);
 const TERMS_PATH = '/terms-of-use/';
 
