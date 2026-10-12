@@ -6,7 +6,10 @@ const outputRoot = path.resolve(sourceRoot, 'dist');
 const hardLimit = 20_000;
 const warningLimit = 18_000;
 const maxFileBytes = 25 * 1024 * 1024;
-const retainedLocalOnlyAssets = ['assets/images/malaysia-melaka-kampung-morten.webp'];
+const retainedLocalOnlyAssets = [
+  'assets/images/malaysia-melaka-kampung-morten.webp',
+  'assets/images/canada-banff-lake-louise-johnston-minnewanka.webp'
+];
 
 const publicDirectories = [
   'about',

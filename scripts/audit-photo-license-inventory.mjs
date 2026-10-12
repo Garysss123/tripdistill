@@ -8,7 +8,10 @@ import { missingPhotoAttributionFields, photoLicenseInventoryBlockingProblems } 
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(root, 'assets', 'images');
-const retainedLocalOnlyAssetPaths = ['/assets/images/malaysia-melaka-kampung-morten.webp'];
+const retainedLocalOnlyAssetPaths = [
+  '/assets/images/malaysia-melaka-kampung-morten.webp',
+  '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp'
+];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
   'south-korea', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
@@ -1475,7 +1478,7 @@ const summaryLines = [
   '',
   '## Current mismatches',
   '',
-  'The former Trastevere hero showed Piazza Navona and has been replaced. On 12 October 2026, the Banff Johnston/Minnewanka page photo was also found to show a forest stream; its file and metadata remain in the inventory but it is no longer referenced by a current English page. An original two-corridor SVG replaces it. The exact Commons page for that retired photo could not be fetched, so its source-page claim remains unverified. Active Banff photo pixels and their two exact Commons pages were checked; declared license versions differ by image and are not treated as a conflict. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
+  'The former Trastevere hero showed Piazza Navona and has been replaced. On 12 October 2026, the Banff Johnston/Minnewanka page photo was also found to show a forest stream; its file and metadata remain in the inventory but it is no longer referenced by a current page and is excluded from dist. An original two-corridor SVG replaces it. The exact Commons page for that retired photo could not be fetched, so its source-page claim remains unverified. Active Banff photo pixels and their two exact Commons pages were checked; declared license versions differ by image and are not treated as a conflict. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
   '',
   'Missing source/creator/license fields: ' + unmatchedByAsset.length + ' (' + counts.activeIncompleteAttributionFields + ' active, ' + counts.unreferencedIncompleteAttributionFields + ' unused). Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '. Open source-to-image reviews: ' + openCreditReviewSummary + '.'
 ];

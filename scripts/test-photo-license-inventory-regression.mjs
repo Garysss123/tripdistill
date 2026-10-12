@@ -569,8 +569,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 801, 'the Banff and two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 2, 'the preserved Melaka and Banff rights-review files must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 800, 'the Banff and two original Malaysia diagrams must be included while both preserved rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
