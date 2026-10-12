@@ -8,18 +8,24 @@ export const italyCentralNortheastClusters = [
     slug: 'umbria',
     name: 'Umbria',
     region: 'Central Italy',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     band: 'central',
     family: 'umbrian-ridge-thresholds',
     label: 'Ridge-town section',
     tagline: 'Climb once, choose one sacred or civic layer, and keep the descent connected to the last train.',
     hubIntro: 'Umbria’s headline towns occupy different ridges rather than one easy urban corridor. Perugia asks travelers to understand a lower railway station and an upper civic core; Assisi separates Santa Maria degli Angeli from the basilica city above; Orvieto begins with a cliff transfer from the scalo. A useful stay chooses one hill-town threshold per day and protects the descent before adding another church, gallery or viewpoint.',
-    stay: 'Three to five nights works well from Perugia when the trip favors regional rail and buses, while an Assisi or Orvieto overnight buys quieter sacred or civic hours. Changing hotels between all three towns usually adds more luggage climbing than useful access.',
-    transfer: 'Regional trains connect the main valleys, but they do not finish the journey: Perugia Fontivegge needs Minimetrò, bus or escalator access; Assisi station needs an onward bus from Santa Maria degli Angeli; Orvieto Scalo needs the funicular or replacement service. Confirm the final uphill and downhill leg as part of each ticketed day.',
-    season: 'Summer heat makes exposed ridge streets and stone stairways slower than the rail map suggests. Spring and autumn can bring major religious observances, school groups and rain on polished slopes; winter shortens daylight and may reduce peripheral services even when the principal basilicas and museums remain open.',
-    fallback: 'Keep a complete indoor-and-covered route in the same town: Perugia’s collections and Rocca Paolina, Assisi’s basilica sequence, or Orvieto’s cathedral and civic museums. If an uphill connection fails before departure, stay in the rail-served valley town rather than improvising a costly cross-region rescue.',
+    stay: 'Use three nights in Perugia’s upper centre for one full civic day and an Assisi day trip; choose the historic centre around Corso Vannucci for walkable evenings, or Fontivegge only when rail-first departures outweigh the daily climb. With four nights, add one night in Assisi or Orvieto for an early start or later finish. Five nights can support one night in each hill town around a two- or three-night Perugia base; avoid three consecutive one-night hotel moves.',
+    transfer: 'Treat each station as a different last-mile problem. From Perugia Fontivegge, use the Minimetrò toward Pincetto or a currently operating bus or mechanized route. Assisi station is in Santa Maria degli Angeli: Busitalia’s Assisi Link departs by the station exit for the hill city. At Orvieto Scalo, cross the station forecourt for the funicular to Piazza Cahen, then continue by the current town bus or on foot. Recheck the chosen uphill and return connection with its operator before relying on a rail change.',
+    season: 'In summer, put the exposed ridge walk early and use a booked interior or covered passage for the hottest hours. Spring and autumn bring feast days, school visits, rain and slick stone; check Assisi worship notices and event calendars before fixing a room or timed visit. Winter daylight and peripheral service patterns can narrow the return window. If a lift, funicular or bus is suspended, shorten the town plan before protecting the last train.',
+    fallback: 'Keep a complete same-town day ready: Perugia’s Palazzo dei Priori and Rocca Paolina civic core, Assisi’s basilica-to-Piazza del Comune walk, or Orvieto’s Duomo and plateau museums. If the uphill link fails, switch to an operator-confirmed alternative before leaving the station; if none fits, stay in the rail-served valley town. Do not replace one missed hill connection with an unplanned cross-region transfer.',
     sources: [
       ['https://www.umbriatourism.it/en/', 'Umbria Tourism — official regional destination information'],
       ['https://www.fsbusitalia.it/eng/umbria.html', 'Busitalia Umbria — official regional bus information'],
+      ['https://www.fsbusitalia.it/it/umbria/orari-linee-umbria/mobilita-alternativa-parcheggi-umbria.html', 'Busitalia Umbria — mechanized routes and service notices for Perugia and Orvieto'],
+      ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/assisi-link.html', 'Busitalia Assisi Link — train and bus access from Assisi station'],
+      ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/orvieto-link.html', 'Busitalia Orvieto Link — station, funicular and town-bus connection'],
       ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning and service information']
     ],
     guides: [
@@ -32,7 +38,7 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Perugia historic centre Palazzo dei Priori Umbria panorama',
         imageAlt: 'Perugia’s historic centre rising along its Umbrian ridge',
         purpose: 'Choose whether Perugia’s National Gallery, its Etruscan and medieval layers, or the ridge streets are the main reason for the day, then connect Fontivegge to the upper city through one deliberate ascent instead of repeatedly losing height.',
-        summary: 'Arrive below the historic core, use Minimetrò or the Rocca Paolina escalator system as part of the city reading, anchor the visit in one collection or archaeological layer, and descend by the connection whose operating window you have already checked.',
+        summary: 'From Fontivegge, choose the Minimetrò or a verified bus and escalator approach, walk one continuous line through the civic ridge, and reserve time for a single gallery or archaeological anchor before the checked descent.',
         choices: [
           ['National Gallery and civic core', 'Give the Galleria Nazionale dell’Umbria and Palazzo dei Priori the central block, then use Corso Vannucci and Piazza IV Novembre as context. This offers the deepest art reading but leaves little time for distant ridge churches.'],
           ['Etruscan and underground Perugia', 'Prioritize the Etruscan Arch, Rocca Paolina passages and one compatible archaeological interior. The route explains how later streets sit over earlier structures, but sacrifices a long gallery visit.'],
@@ -54,10 +60,23 @@ export const italyCentralNortheastClusters = [
         ],
         duration: 'Allow five to seven hours from Fontivegge for one substantial collection or archaeology route plus the ridge streets. A shorter three-hour visit should keep one ascent, one anchor and one reliable descent.',
         combine: 'Combine the National Gallery with the immediate civic core, or the Etruscan Arch with the aqueduct and northern ridge. Do not add Assisi or Orvieto unless Perugia is deliberately reduced to a transfer stop.',
-        verify: 'Check the selected museum’s current admission, the Minimetrò operating notice, regional bus or train status and any city-centre event restrictions before leaving the lower station.',
+        verify: 'Check the Galleria Nazionale’s current visit information, the Minimetrò notice, Busitalia’s separate mechanized-route page, and rail or event changes before leaving Fontivegge.',
+        localPlan: {
+          title: 'Make Perugia a one-ascent day',
+          intro: 'Choose a base and one ridge line that fit the first doorway and the return to Fontivegge.',
+          stayTitle: 'Sleep above the station when the ridge owns the day',
+          stay: 'For one or two nights, stay in the historic centre around Corso Vannucci or Piazza IV Novembre if evenings and a walk-first start matter. Choose Fontivegge only when rail-first departures outweigh the daily uphill transfer. With three nights, keep one room and use a full day for the civic ridge; another hotel rarely improves access.',
+          walkTitle: 'Pincetto to the civic core, then one northern branch',
+          walk: 'From Pincetto, use the signed escalators or lift into the upper city, then follow Corso Vannucci to Piazza IV Novembre and Fontana Maggiore. Visit Palazzo dei Priori and the Galleria Nazionale only after checking the current entrance and admission plan. Continue either to the Etruscan Arch or along the aqueduct as one northern branch, then return by a verified descent.',
+          bookingTitle: 'Confirm the gallery door and the descent separately',
+          booking: 'Check current Galleria access and the Minimetrò notice on its operator’s site; Busitalia lists Perugia’s mechanized routes separately. If a system is suspended, choose a currently listed bus or lift approach before leaving the station and do not assume step-free access. Check civic-event diversions and leave margin for the actual rail service from Fontivegge.',
+          seasonTitle: 'Move the climb ahead of heat and event crowds',
+          season: 'On hot days, make the uphill transfer early and place a gallery or Rocca Paolina’s covered passages in the hottest block. Rain slows the stone lanes, so shorten the route to the Corso Vannucci and Piazza IV Novembre spine with interiors whose access is confirmed. Umbria Jazz, Eurochocolate and public events can change street flow and room demand; check dates before booking.'
+        },
         sources: [
           ['https://turismo.comune.perugia.it/', 'Comune di Perugia — official tourism and city information'],
-          ['https://www.minimetrospa.it/', 'Minimetrò Perugia — official service information']
+          ['https://www.minimetrospa.it/', 'Minimetrò Perugia — official service information'],
+          ['https://www.fsbusitalia.it/it/umbria/orari-linee-umbria/mobilita-alternativa-parcheggi-umbria.html', 'Busitalia Umbria — escalators, lifts and service notices']
         ]
       }),
       g({
@@ -69,16 +88,16 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Assisi Basilica Saint Francis Umbria hillside panorama',
         imageAlt: 'The Basilica of Saint Francis and the hill town of Assisi',
         purpose: 'Decide whether the Franciscan basilica sequence, Assisi’s upper medieval town, or the edge of Mount Subasio is the visit’s main act, then respect worship hours and the station-to-hill transfer instead of treating the sacred city as a continuous attraction.',
-        summary: 'Transfer from Assisi station in Santa Maria degli Angeli to one end of the hill city, read the basilica or upper-town layer without rushing worship spaces, and finish beside the bus stop that protects the return to the valley railway.',
+        summary: 'Take the station-side Assisi Link from Santa Maria degli Angeli, walk the basilica-to-civic-square axis at worship-friendly pace, and confirm the return stop before climbing toward the Rocca.',
         choices: [
           ['Franciscan basilica sequence', 'Give the Lower and Upper Basilicas, the tomb and the adjoining sacred precinct unhurried attention. This is the strongest Franciscan reading, but it means the Rocca and a Subasio excursion remain optional.'],
           ['Upper town and Rocca line', 'Climb through Piazza del Comune toward the upper medieval streets and fortress outlook, using the basilica as a shorter threshold. The reward is urban topography; the sacrifice is detailed time with the fresco cycles.'],
           ['Subasio edge and hermitage context', 'Use an authorized bus, taxi or planned walk toward Eremo delle Carceri or another verified park edge, with Assisi’s core kept brief. This adds landscape context but depends on weather and a separately secured return.']
         ],
-        access: 'The railway station named Assisi stands in Santa Maria degli Angeli below the historic city. Regional buses climb to stops serving the basilica and upper town; walking the entire ascent consumes time and shade. Choose the first bus stop from the direction of the planned route and note where the return bus actually boards.',
+        access: 'The railway station named Assisi stands in Santa Maria degli Angeli below the historic city. Busitalia’s Assisi Link leaves by the station exit for the centre; use the current operator plan to choose the stop nearest the basilica or upper-town start. Walking the full ascent consumes time and shade, so identify the actual downhill boarding point before setting out.',
         tradeoff: 'The basilica complex operates as a living place of worship, not an ordinary museum, and its two churches reward slow looking. A Rocca climb or Subasio branch uses the same time and physical reserve, so choosing a landscape extension necessarily shortens the central Franciscan sequence.',
         stages: [
-          ['Transfer from the valley', 'At Assisi station, identify the correct uphill bus and validate the fare according to current instructions. Keep Santa Maria degli Angeli only if its basilica forms part of the chosen argument.'],
+          ['Transfer from the valley', 'At Assisi station in Santa Maria degli Angeli, check the current Assisi Link stop and ticket instructions before leaving the rail concourse. Keep the lower basilica only if it belongs to the day’s chosen route.'],
           ['Enter at the right sacred door', 'Approach the Basilica of Saint Francis from the stop that avoids unnecessary height loss, observe current security and worship guidance, and distinguish the Lower and Upper Basilica sequence.'],
           ['Climb only for the chosen layer', 'Continue through Via San Francesco to Piazza del Comune and, only if selected, toward the Rocca or Subasio edge. Do not climb high merely to descend for an unplanned interior.'],
           ['Close beside the downhill bus', 'Finish near a confirmed return stop with margin for crowding, evening worship or traffic. Protect the valley train rather than waiting for a bus that leaves from the opposite side of town.']
@@ -91,10 +110,23 @@ export const italyCentralNortheastClusters = [
         ],
         duration: 'Allow five to seven hours for the basilica sequence and upper town, plus the station transfers. A Mount Subasio or hermitage branch needs most of a separate day or a deliberately shortened city route.',
         combine: 'Combine the basilica with Piazza del Comune and one upper-town layer because they share the same hill axis. Pair Santa Maria degli Angeli only when train and bus timing leaves a genuine block before departure.',
-        verify: 'Check basilica visitor and liturgy notices, the official Assisi event calendar, the current station bus timetable and any Subasio path or road restriction before travel.',
+        verify: 'Check Basilica visitor and liturgy notices, the official Assisi event calendar, the Assisi Link schedule and the exact Subasio path or road restriction before travel.',
+        localPlan: {
+          title: 'Let the basilica set the Assisi walking order',
+          intro: 'The station is below the hill; choose lodging and the uphill stop around the worship schedule and return.',
+          stayTitle: 'Stay in the upper town for a quieter first hour',
+          stay: 'For one night, choose the historic centre near the basilica or Piazza del Comune when an early visit or an evening on the hill is the point. Santa Maria degli Angeli suits a first or last train better, but adds the bus climb each time. From a Perugia base, make Assisi a single full day and keep the same room.',
+          walkTitle: 'Basilica lower square to Piazza del Comune',
+          walk: 'From the current Assisi Link stop serving the basilica, begin at Piazza Inferiore di San Francesco and give the Lower and Upper Basilicas their own unhurried block. Walk uphill on Via San Francesco to Piazza del Comune and the Tempio di Minerva. Continue to Rocca Maggiore only if time, weather and legs allow, then return to a confirmed downhill bus stop.',
+          bookingTitle: 'Check worship access and the train-bus combination',
+          booking: 'Reopen the Basilica visitor and liturgy notices before fixing the day: worship can change which areas are accessible. Check whether the train-plus-bus Assisi Link option fits the actual origin and date, and save the return stop and timetable. If the upper-town branch is restricted, complete the basilica and Piazza del Comune loop rather than forcing a timed interior.',
+          seasonTitle: 'Give feast days and summer heat room in the plan',
+          season: 'Religious observances, school groups and major events can change basilica access and room demand, especially on spring and autumn weekends. Check notices before booking an overnight. In heat or rain, omit the Rocca and Subasio branch; keep the basilica and central square as the complete visit, then use only a confirmed return bus.'
+        },
         sources: [
           ['https://www.visit-assisi.it/en/', 'Visit Assisi — official city visitor information'],
-          ['https://www.sanfrancescoassisi.org/', 'Basilica of Saint Francis of Assisi — official information']
+          ['https://www.sanfrancescoassisi.org/', 'Basilica of Saint Francis of Assisi — official information'],
+          ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/assisi-link.html', 'Busitalia Assisi Link — station bus and integrated train information']
         ]
       }),
       g({
@@ -106,13 +138,13 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Orvieto Duomo tufa cliff Umbria panorama',
         imageAlt: 'Orvieto Cathedral and the town standing above its tufa cliff',
         purpose: 'Choose the cathedral, an underground appointment, or the fortress-and-cliff edge as Orvieto’s main layer, then join Orvieto Scalo, the funicular and the upper-town streets into one controlled ascent and descent.',
-        summary: 'Meet the cliff at Orvieto Scalo, use the current funicular or replacement connection to the old town, reserve only the underground experience that fits the cathedral clock, and return downhill before a thin regional-train connection becomes the day’s final risk.',
+        summary: 'Connect Orvieto Scalo to Piazza Cahen by the current funicular or replacement, walk the plateau toward the Duomo, and fit one booked underground visit around the checked return train.',
         choices: [
           ['Cathedral and sacred art', 'Make the Duomo, its chapels and related museum material the central commitment. This gives the facade and interior proper time, but leaves the underground city as a short or separate appointment.'],
           ['Underground Orvieto', 'Book one authorized cave or well experience and connect it to the streets above. The controlled entry reveals the cliff’s hidden infrastructure, but sacrifices a long cathedral-museum sequence.'],
           ['Fortress and cliff circuit', 'Prioritize the Albornoz fortress edge, viewpoints and a bounded walk through the upper town. It is flexible in ticket terms, yet weather and steep surfaces can remove the very views that justify it.']
         ],
-        access: 'Mainline and regional trains arrive at Orvieto Scalo beneath the cliff. The funicular climbs toward Piazza Cahen, from which local buses or an uphill walk reach the Duomo; replacement arrangements can differ during maintenance. Treat Scalo-to-centre and centre-to-platform as timed legs, not a station forecourt crossing.',
+        access: 'Mainline and regional trains arrive at Orvieto Scalo beneath the cliff. The Orvieto Link interchange is in the station forecourt: its funicular reaches Piazza Cahen, where the current town bus or a planned walk continues to the Duomo. Replacement arrangements can differ during maintenance, so check the operator notice before treating either end as a simple platform change.',
         tradeoff: 'A scheduled underground tour or well visit fixes the middle of the day, while the cathedral complex can absorb the same attention window. Choosing both at maximum depth crowds out the cliff circuit and a calm descent, so one controlled threshold must remain secondary.',
         stages: [
           ['Read the scalo connection', 'On arrival, confirm the funicular or replacement service and the next realistic downhill connection. Do not buy an upper-town ticket before knowing how it fits the departure train.'],
@@ -128,10 +160,24 @@ export const italyCentralNortheastClusters = [
         ],
         duration: 'Allow five to seven hours from Orvieto Scalo for the cathedral and one additional layer. A compact cathedral-and-streets visit can fit four hours only with generous rail and funicular margins.',
         combine: 'Combine the Duomo with one official underground appointment or the fortress edge, since each makes a different claim about the same tufa plateau. Do not add Civita di Bagnoregio without a separate last-mile plan.',
-        verify: 'Check the Duomo and chapel access, the exact underground meeting point and slot, current funicular operation and the return train before ascending from Orvieto Scalo.',
+        verify: 'Check Duomo and chapel access, the underground operator’s exact meeting point and slot, the Orvieto Link or replacement notice, and the return train before leaving Scalo.',
+        localPlan: {
+          title: 'Keep the Orvieto plateau and cliff connection together',
+          intro: 'Choose an upper-town base for the walk, or the scalo only when the first or last train dominates.',
+          stayTitle: 'Sleep near Corso Cavour for the Duomo day',
+          stay: 'For one or two nights, choose the upper town around Corso Cavour or Piazza della Repubblica when the cathedral, dinner and an early walk matter. Stay near Orvieto Scalo only when a late arrival or early departure outweighs using the funicular at both ends. An overnight gives a booked underground visit room without compressing the descent.',
+          walkTitle: 'Piazza Cahen to the Duomo by the civic spine',
+          walk: 'From the funicular at Piazza Cahen, visit Pozzo di San Patrizio only if its current access fits, then follow Corso Cavour through Piazza della Repubblica to the Duomo and Cappella di San Brizio. Put any booked cave or well tour at its stated meeting point, not where the map seems close. Return toward Piazza Cahen before descending to Scalo.',
+          bookingTitle: 'Book one underground threshold and verify both ends',
+          booking: 'The Duomo, chapel, wells and cave tours have separate admission rules and meeting points. Confirm the exact operator, slot, duration and access limits for the one underground visit you choose. Then check the Orvieto Link/funicular notice and the rail return; if the booked slot is unavailable, use the cathedral and plateau museums as the complete alternative.',
+          seasonTitle: 'Keep a plateau route for weather or maintenance',
+          season: 'Spring weekends and autumn can concentrate visitors around the Duomo and underground slots, so check timed-entry availability before fixing a short stay. Summer heat favors interiors through midday; rain and wind make the cliff-edge walk less useful. If the funicular is suspended or weather closes an exposed viewpoint, shorten the day to the plateau and follow the operator’s current replacement plan.'
+        },
         sources: [
           ['https://www.umbriatourism.it/en/', 'Umbria Tourism — official Orvieto and regional planning information'],
-          ['https://www.duomodiorvieto.it/', 'Opera del Duomo di Orvieto — official cathedral information']
+          ['https://www.duomodiorvieto.it/', 'Opera del Duomo di Orvieto — official cathedral information'],
+          ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/orvieto-link.html', 'Busitalia Orvieto Link — train station, funicular and Piazza Cahen'],
+          ['https://www.fsbusitalia.it/it/umbria/orari-linee-umbria/mobilita-alternativa-parcheggi-umbria.html', 'Busitalia Umbria — funicular operation and service notices']
         ]
       })
     ]
@@ -140,17 +186,21 @@ export const italyCentralNortheastClusters = [
     slug: 'emilia-romagna',
     name: 'Emilia-Romagna',
     region: 'Northern Italy',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     band: 'north',
     family: 'via-emilia-booking-spine',
     label: 'Rail-and-reservation transect',
-    tagline: 'Use the Via Emilia as a spine, then give each collection, producer or wetland branch its own booking contract.',
-    hubIntro: 'Emilia-Romagna looks simple because frequent trains join Bologna, Modena, Parma, Ferrara and Ravenna, yet the useful trip splits at each station. Towers and mosaics have entry clocks, food producers require real appointments, Maranello is a last-mile branch, and the Po Delta is not on the city-centre rail spine. The region works when one rail city anchors the day and only one reserved branch leaves it.',
-    stay: 'Four to six nights supports Bologna as a central rail base plus one eastern or western overnight when early mosaics, an evening performance or a Delta departure matters. A single Bologna base is efficient for city days but should not be used to disguise long returns from Ravenna, Parma or the coast.',
-    transfer: 'High-speed and regional services share Bologna Centrale but use different levels, operators and connection margins. Trenitalia TPER covers much of the regional spine; Maranello, rural producers, Comacchio and Delta habitats require buses, booked visits, boats or a car. Name the station exit and the non-rail leg before buying the trunk ticket.',
-    season: 'Porticoes soften summer heat and rain in Bologna, but exposed squares, walls and wetlands remain demanding. Autumn food events and trade fairs can compress rooms and trains; winter fog shortens landscape views; spring water levels, storms or conservation work can alter Delta access without affecting the rail cities.',
-    fallback: 'When a producer cancels, a tower closes or wetland weather deteriorates, keep a full day in the nearest rail city: Bologna’s civic museums and porticoes, Modena or Parma’s central collections, Ravenna’s confirmed mosaic circuit, or Ferrara’s walls and museums. Do not replace a failed branch with another distant reservation.',
+    tagline: 'Choose one rail city for each day, then add only the booked branch whose return you can protect.',
+    hubIntro: 'Plan Emilia-Romagna as three operating zones rather than a checklist: Bologna’s walkable portico centre, the Via Emilia rail pair of Modena and Parma, and the eastern choice among Ravenna, Ferrara or a separately organized Po Delta visit. Bologna Centrale is the trunk junction, but station changes, timed monuments, working food producers and rural last miles create separate days. Four nights gives two full city days and one flexible excursion; five or six nights can add a second base without turning the Delta or Maranello into an assumed rail stop.',
+    stay: 'Use Bologna for three or four nights if most days follow the mainline and you want evenings in one walkable centre. A four-night trip can cover Bologna, one Modena-or-Parma day and one eastern day, but not all three eastern systems in depth. Add a fifth night in Ravenna or Ferrara when a first-entry mosaic booking, a full wall walk or a prearranged Delta departure needs an early start. A sixth night makes a second Via Emilia city or a producer appointment realistic; avoid changing hotels for a short rail hop.',
+    transfer: 'From Bologna Centrale, distinguish the high-speed platforms and concourses from Trenitalia TPER regional services; check the named arrival station in Modena, Parma, Ferrara or Ravenna before choosing accommodation. Walk Via dell’Indipendenza from Bologna station toward Piazza Maggiore, or use TPER only after checking the stop that serves your first door. Maranello, an acetaia or dairy, Comacchio and Delta habitats are separate last-mile journeys: confirm the operator, meeting address and return before buying the trunk ticket.',
+    season: 'Bologna’s porticoes provide cover, not air conditioning; plan shaded pauses and reduce exposed Piazza Maggiore time in summer. Spring and autumn suit longer wall and wetland walks but bring rain, wind and variable ground conditions. Winter fog can flatten Delta bird and water views and shorten daylight. Food-event and trade-fair dates can change Bologna room demand, while religious observances or conservation work can change individual monument or habitat access; check the date-specific notice before fixing the base.',
+    fallback: 'If a tower, producer or Delta outing is unavailable, keep the day in its chosen rail city. Bologna has a complete portico-to-civic-museum walk; Modena and Parma each support a separate cathedral-centred route; Ravenna’s monuments can be grouped only after confirming their individual entrances; Ferrara works as a bounded centre-and-wall day. A weather or booking failure is not a reason to race to another distant city.',
     sources: [
       ['https://emiliaromagnaturismo.it/en', 'Emilia-Romagna Turismo — official regional destination information'],
+      ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning and service information'],
       ['https://www.trenitaliatper.it/', 'Trenitalia TPER — official regional rail information'],
       ['https://www.bolognawelcome.com/en', 'Bologna Welcome — official city visitor information']
     ],
@@ -162,9 +212,23 @@ export const italyCentralNortheastClusters = [
         layout: 'portico-shade-city-grid',
         structure: 'market-daypart-table',
         imageQuery: 'Bologna porticoes Piazza Maggiore historic centre',
-        imageAlt: 'Historic porticoes leading through central Bologna',
-        purpose: 'Choose Bologna’s civic core and towers, a collection-led day, or a portico-and-market route, then use the covered street network to control heat and distance rather than treating San Luca, every market and every museum as one centre walk.',
-        summary: 'Leave Bologna Centrale on one southbound line, fix any tower or museum booking before the markets, use the porticoes as an operating grid between pauses, and finish near the station-facing side of the centre unless San Luca was chosen as the day’s single extension.',
+        imageAlt: 'Original schematic linking Bologna Centrale, the porticoed centre and the San Luca branch',
+        imageLegendTitle: 'Diagram key · route logic, not a map',
+        imageLegend: ['1 · Bologna Centrale to Via dell’Indipendenza', '2 · Piazza Maggiore, civic doors and nearby markets', '3 · San Luca is a separate branch; verify its return'],
+        purpose: 'Choose a compact civic walk, one controlled interior or a food-and-market morning, then keep San Luca as a separate half-day. Bologna’s porticoes connect the station approach and historic centre, but the tower, museums, market stalls and sanctuary each have different access conditions and should not be promised as one uninterrupted attraction.',
+        summary: 'Walk south from Bologna Centrale along Via dell’Indipendenza to Piazza Maggiore, reserve one tower or museum only after checking its current status, then connect the Quadrilatero or Mercato delle Erbe under the porticoes; save San Luca for a separately checked bus or walking return.',
+        localPlan: {
+          title: 'One portico loop, one fixed doorway',
+          intro: 'Use the railway station as the northern edge and Piazza Maggiore as the decision point. This plan stays inside Bologna’s central walking grid; San Luca changes the transport contract and should replace, not trail behind, the city route.',
+          stayTitle: 'Stay within the station-to-core band',
+          stay: 'For one or two nights, choose an address near Bologna Centrale if an early regional departure matters, or near Via dell’Indipendenza, Piazza Maggiore or the Quadrilatero for a shorter evening walk. Three nights is a useful Bologna base for a separate city day and one day trip. Do not move hotels just to sleep beside a single museum slot; compare luggage handling with the extra return leg first.',
+          walkTitle: 'Walk the central spine south, then loop east',
+          walk: 'From Bologna Centrale, follow Via dell’Indipendenza beneath the porticoes to Piazza Maggiore. Continue around San Petronio and the Palazzo d’Accursio exterior, then choose the Quadrilatero lanes or turn west toward Mercato delle Erbe. Finish through a parallel covered street toward the station. This is a compact civic route; the Sanctuary of San Luca is a separate western branch, not the next walking block.',
+          bookingTitle: 'Verify the tower and each market separately',
+          booking: 'Bologna Welcome displayed an Asinelli Tower maintenance closure during this review, so do not build the day around an assumed climb; reopen its current notice before travel. Check the chosen civic museum’s own admission page and the specific market’s trading information. Bologna Welcome describes Via dell’Indipendenza as the link between the station and Piazza Maggiore. TPER journey planning is date-specific; this guide makes no fare or departure-time promise.',
+          seasonTitle: 'Use covered streets, with a real weather pause',
+          season: 'In summer, walk the open square early or later and use the porticoes for the connecting legs, with water and an indoor break. Rain keeps much of the route sheltered, but stone paving can be slick and stalls may follow individual hours. For a separate San Luca day, check the sanctuary notice and the TPER service or planned walking approach; shorten the route if heat, rain or reduced winter daylight removes the return margin.'
+        },
         choices: [
           ['Civic core and tower', 'Anchor Piazza Maggiore, the municipal complex and a confirmed tower product. This gives a strong vertical and civic reading, but San Luca and a deep museum visit must drop away.'],
           ['One collection argument', 'Choose the archaeological, medieval, modern-art or music collections that best match the trip, then connect only the nearest squares. Indoor depth protects a hot or wet day but reduces market and viewpoint time.'],
@@ -189,7 +253,9 @@ export const italyCentralNortheastClusters = [
         verify: 'Check Bologna Welcome for current tower and attraction access, the selected civic museum’s official hours, market trading patterns and Bologna Centrale service information before departure.',
         sources: [
           ['https://www.bolognawelcome.com/en', 'Bologna Welcome — official city visitor and booking information'],
-          ['https://www.museibologna.it/', 'Musei Civici Bologna — official civic museum information']
+          ['https://www.museibologna.it/', 'Musei Civici Bologna — official civic museum information'],
+          ['https://whc.unesco.org/en/list/1650/', 'UNESCO — Porticoes of Bologna World Heritage description'],
+          ['https://www.tper.it/', 'TPER — official local public transport information']
         ]
       }),
       g({
@@ -199,9 +265,23 @@ export const italyCentralNortheastClusters = [
         layout: 'via-emilia-reservation-circuit',
         structure: 'rail-to-street-braid',
         imageQuery: 'Modena cathedral Piazza Grande Emilia Romagna',
-        imageAlt: 'Modena Cathedral and Piazza Grande along the Via Emilia corridor',
-        purpose: 'Choose Modena’s civic and motor story, Parma’s cathedral and cultural collections, or one genuinely reserved food-production visit, then keep factory, dairy, cellar and Maranello branches separate from the easy-looking rail spine.',
-        summary: 'Use one Via Emilia station as the day’s base, complete its cathedral, museum or food argument before any last-mile appointment, and return to that station rather than turning Modena, Maranello, Parma and a rural producer into an impossible tasting circuit.',
+        imageAlt: 'Original schematic showing the Modena and Parma rail pair and optional booked branches',
+        imageLegendTitle: 'Diagram key · schematic, not to scale',
+        imageLegend: ['1 · Choose Modena or Parma as the day base', '2 · Walk station–historic core–station', '3 · Maranello or a producer needs a confirmed last mile'],
+        purpose: 'Choose one city for the day: Modena’s cathedral and motor story, Parma’s cathedral and cultural interiors, or one booked producer visit reached from a named gateway. These are competing plans, because Maranello and rural dairies or acetaie sit beyond the station-to-centre walk and each needs its own transport, appointment and return.',
+        summary: 'Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.',
+        localPlan: {
+          title: 'Choose a city before choosing the appointment',
+          intro: 'Modena and Parma share the Via Emilia rail corridor, but the useful walk begins only after you select one station. A rural producer or Maranello visit changes the day into an appointment-led transfer, not a simple extension of the city centre.',
+          stayTitle: 'Keep the bed by the rail day you actually chose',
+          stay: 'For one night, sleep near Modena station or its historic core when the cathedral and Enzo Ferrari Museum are the focus; choose Parma station or the centre for its cathedral quarter and Teatro Farnese. With two or three nights, Bologna can remain the base for regional rail if arrival and return times suit the planned doors. An early rural producer appointment may justify a night in its actual gateway town, but confirm access before booking a remote stay.',
+          walkTitle: 'Make one station-to-centre circuit',
+          walk: 'In Modena, walk from the station toward Piazza Grande, Duomo di Modena and the covered Mercato Albinelli, then return by the most direct central streets. In Parma, connect Parma station with Piazza Garibaldi, the cathedral and baptistery area, then choose Teatro Farnese or a bounded central walk. Do not append the other city after a long museum block; each is a separate station-based day.',
+          bookingTitle: 'Treat Maranello and food producers as appointments',
+          booking: 'Visit Modena currently directs visitors to book access for the Acetaia Comunale, Palazzo Comunale and Ghirlandina; check each product and notice separately. For Ferrari museums, identify the exact museum and its actual arrival point before adding a bus or road leg to Maranello. Dairies and private acetaie set their own tour times and meeting locations. Verify the operator, confirmation, return and non-drinking transport plan; no walk-in tasting or schedule is assumed.',
+          seasonTitle: 'Move interiors around heat, rain and event days',
+          season: 'Use the cathedral quarter and covered market earlier on hot days, then put a confirmed museum block in the brighter hours. Rain favors a compact centre itinerary but can make an unplanned rural walk impractical. Winter daylight and fog tighten the countryside margin; food festivals, holidays and venue events can change access. If the appointment or road leg is uncertain, keep the complete Modena or Parma city loop instead.'
+        },
         choices: [
           ['Modena city and motor culture', 'Pair the cathedral and Piazza Grande with one confirmed city museum or a preplanned Maranello branch. Choosing the motor extension sacrifices Parma and requires a separate bus or road transfer.'],
           ['Parma sacred and performing city', 'Give the cathedral-baptistery group, Teatro Farnese or another compatible collection the long block. This keeps the day walkable, but does not include a countryside dairy by implication.'],
@@ -225,8 +305,10 @@ export const italyCentralNortheastClusters = [
         combine: 'Combine one city core with one confirmed specialist visit that departs from the same base. Keep Modena and Parma on separate days when either food production, motor culture or major collections matter.',
         verify: 'Confirm the producer or museum directly, the complete last-mile transport, regional train status, holiday closures and any tasting or driver conditions before committing the day.',
         sources: [
-          ['https://www.visitmodena.it/en/', 'Visit Modena — official destination and visitor information'],
-          ['https://www.parmawelcome.it/en/', 'Parma Welcome — official city visitor information']
+          ['https://www.visitmodena.it/en/', 'Visit Modena — official destination, booking and visitor information'],
+          ['https://www.parmawelcome.it/en/', 'Parma Welcome — official city visitor information'],
+          ['https://www.trenitaliatper.it/', 'Trenitalia TPER — official regional rail information'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning and service information']
         ]
       }),
       g({
@@ -237,8 +319,20 @@ export const italyCentralNortheastClusters = [
         structure: 'two-shore-clock',
         imageQuery: 'Ravenna San Vitale exterior Emilia Romagna',
         imageAlt: 'The Basilica of San Vitale in Ravenna',
-        purpose: 'Choose Ravenna’s mosaic circuit, Ferrara’s walled civic landscape, or a properly arranged Comacchio and Po Delta day; use one as the actual base instead of treating three eastern Emilia-Romagna systems as one rapid excursion.',
-        summary: 'Begin at the rail station or Delta gateway that belongs to the chosen argument, work one complete urban or wetland sequence, and keep weather and last-mile transport from turning a distant second stop into the return risk.',
+        purpose: 'Choose one eastern base and one complete route: Ravenna’s mosaic sites, Ferrara’s civic centre and a bounded wall section, or a prearranged Comacchio/Po Delta program. The first two begin at railway stations; the third begins wherever its named operator meets you, so they are alternatives rather than same-day stops.',
+        summary: 'Take the regional rail branch to Ravenna or Ferrara for a station-to-centre walking day, or meet a confirmed Delta operator at its stated gateway; reserve the return before setting out and do not combine these separate systems by map distance alone.',
+        localPlan: {
+          title: 'Pick Ravenna, Ferrara or the wetland gateway',
+          intro: 'These routes start in different transport systems. Use a rail-centred base for Ravenna or Ferrara; choose Comacchio or another operator-specified meeting point only after the Delta activity and its round trip are confirmed.',
+          stayTitle: 'Sleep near the chosen morning threshold',
+          stay: 'One night in Ravenna places you near the station and gives an earlier start for its separate monument entrances. One night in Ferrara favors the centre and a longer wall walk. Two or three nights in Bologna can support one eastern rail day if the actual regional services fit the plan, but do not treat the late return as guaranteed. For a dawn birding or boat program, stay near the operator’s confirmed meeting point or arrange the transfer the previous day.',
+          walkTitle: 'Keep each city on its own walking line',
+          walk: 'In Ravenna, walk from the station toward the Basilica of San Vitale and nearby mosaic monuments, then group only sites whose current custodians and entrances you have confirmed. In Ferrara, move from the station toward Castello Estense and the cathedral quarter, then choose one legible section of the walls before returning. Comacchio and Delta habitats require a separate bus, car, boat or guided route from the exact gateway; there is no single station-to-wetland promenade.',
+          bookingTitle: 'Check each monument and the Delta operator',
+          booking: 'Ravenna’s mosaic monuments can have different custodians, entry conditions and ticket coverage, so verify each intended site on Ravenna Turismo or its named operator. For Ferrara, check current visitor access and bicycle or wall conditions with Ferrara Info. For the Po Delta, reserve the exact boat, guide, bus or visitor-centre program and record its meeting location, duration, weather cancellation terms and return. The park’s conservation notices govern access; this page supplies no unverified service or fare.',
+          seasonTitle: 'Let wind and water decide the outdoor block',
+          season: 'Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.'
+        },
         choices: [
           ['Ravenna mosaic circuit', 'Select a compatible group of late-antique and early-Christian sites and leave walking time between them. This gives the strongest art-historical day, but Ferrara and the Delta disappear.'],
           ['Ferrara walls and civic city', 'Use the castle, cathedral quarter, Renaissance streets and a bounded wall segment from Ferrara station. It offers a legible bicycle or walking city, but not Ravenna’s mosaic depth.'],
@@ -264,7 +358,8 @@ export const italyCentralNortheastClusters = [
         sources: [
           ['https://www.turismo.ra.it/en/', 'Ravenna Tourism — official city visitor information'],
           ['https://www.parcodeltapo.it/', 'Po Delta Park — official protected-area information'],
-          ['https://www.ferrarainfo.com/en/', 'Ferrara Info — official destination information']
+          ['https://www.ferrarainfo.com/en/', 'Ferrara Info — official destination information'],
+          ['https://www.trenitaliatper.it/', 'Trenitalia TPER — official regional rail information']
         ]
       })
     ]

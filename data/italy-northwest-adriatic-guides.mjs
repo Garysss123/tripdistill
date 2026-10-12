@@ -7,20 +7,25 @@ export const italyNorthwestAdriaticClusters = [
   c({
     slug: 'milan',
     name: 'Milan',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     region: 'Lombardy',
     band: 'northwest-adriatic',
     family: 'metropolitan-threshold-section',
     label: 'Booked-door city section',
-    tagline: 'Fix one controlled interior, then keep the rest of Milan on one legible street and transit line.',
-    hubIntro: 'Milan rewards deliberate transitions rather than landmark accumulation. The cathedral complex, Brera, Santa Maria delle Grazie, the Castello, Porta Nuova and the Navigli sit in different operating zones, and the scarce reservation or exact museum entrance should determine the direction of the day rather than become one more pin in a cross-city loop.',
-    stay: 'Three nights supports one historic-centre and collection day, one fixed-reservation or castle day and one modern-city to canal sequence. A fourth night makes room for a fair, major exhibition or a lower-pressure evening without forcing an airport move and a timed admission onto the same clock.',
-    transfer: 'Milano Centrale, Porta Garibaldi and Cadorna are separate rail gateways, while the city airports use different rail, coach and terminal arrangements. Match the arrival product to the hotel and first booked door, then save the ATM line and station exit that serve the actual entrance rather than navigating only to a district name.',
-    season: 'Summer heat makes exposed piazzas and rooftop visits more demanding, while rain shifts value toward collections and covered passages. Trade fairs, fashion and design events can tighten rooms and alter public-space access; they should be checked as dated operating conditions, not assumed attractions.',
-    fallback: 'Keep a same-zone alternative for every controlled interior. Cathedral exteriors, the Galleria, Brera streets, Castello courtyards, Porta Nuova public space and a bounded canal walk can preserve a coherent day when a roof, gallery or reserved visit changes, without sending the traveler across Milan to chase a replacement headline.',
+    tagline: 'Choose your Milan base by the first booked door and the evening you want to walk home from.',
+    hubIntro: 'Milan is easier to plan as three separate route days than as a list of famous names. The Duomo and Brera occupy the central northbound walk; Santa Maria delle Grazie and the Castello form a west-to-east sequence around a fixed Last Supper visit; Porta Nuova and the Navigli make a north-to-south day with one deliberate transit crossing. Choose the controlled interior first, then connect only the streets and stations that serve that district.',
+    stay: 'Two nights gives you one full route day plus either a shorter centre walk or a protected Last Supper slot; do not count a late arrival as a full sightseeing day. Three nights suits one day for the Duomo/Brera, one for Santa Maria delle Grazie/Castello and one for Porta Nuova/Navigli. A fourth night is useful when a timed booking, rain or a Milan fair calendar makes one of those days hard to shift. Sleep near Duomo, Missori or Brera for the historic centre; near Cadorna or Magenta for the Cenacolo and Castello; around Porta Garibaldi/Isola for the northern city; or by Porta Genova if a late Navigli return matters most. Centrale and Porta Venezia simplify rail arrivals but leave more evening travel to the canal or castle districts.',
+    transfer: 'Match the airport leg to the hotel before buying a ticket. Malpensa Express serves Milan rail gateways including Milano Centrale and Milano Cadorna; its exact line and disruption notices decide which is useful on your date. Linate connects to the city by ATM Metro M4, with San Babila a practical central interchange. For intercity trains, Milano Centrale is the main long-distance gateway, Porta Garibaldi fits the north/Isola side, and Cadorna is useful for Santa Maria delle Grazie and the Castello. The Last Supper Museum lists M1 stops Cadorna or Conciliazione and M2 at Cadorna, plus Tram 16 at Santa Maria delle Grazie. Use ATM’s current journey planner and service notices to select the actual station exit and return; no fare or departure is promised here.',
+    season: 'Reserve the Cenacolo Vinciano before fixing the rest of its day: the museum currently requires advance reservations for every admission type and publishes its own ticket-release and identity instructions. Confirm the exact Duomo product and roof access separately, then check Pinacoteca di Brera, Castello museums and ADI Design Museum calendars on their own pages. In warm weather, keep the exposed cathedral square and rooftop for the cooler part of the day; in rain or winter dusk, shift toward one confirmed indoor collection and shorten the canal walk. Fashion, furniture-design and trade-fair weeks can change room demand and transit pressure, so check the dated city/event calendar before choosing a hotel or assuming a showroom is open to visitors.',
+    fallback: 'Keep a same-district version for each route. If the Duomo roof or Brera interior is unavailable, use the Piazza del Duomo, Galleria Vittorio Emanuele II, Piazza della Scala and Via Brera walk. If the Last Supper is sold out, do not rely on a reseller: keep Santa Maria delle Grazie subject to church access, continue along Corso Magenta to the Castello courtyards and choose one currently open museum or Parco Sempione. If a design venue or evening transit changes, keep Porta Nuova/Isola or Darsena/Naviglio Grande as separate walks instead of crossing the city to salvage both.',
     sources: [
       ['https://www.duomomilano.it/en/', 'Duomo di Milano — official cathedral-complex visits'],
       ['https://www.yesmilano.it/en/must-see-attractions', 'YesMilano — official city attractions and planning context'],
-      ['https://www.atm.it/en/Pages/default.aspx', 'ATM Milano — official urban transport information']
+      ['https://www.atm.it/en/Pages/default.aspx', 'ATM Milano — official journey planner, maps and service notices'],
+      ['https://www.malpensaexpress.it/', 'Malpensa Express — official airport rail lines and service notices'],
+      ['https://cenacolovinciano.org/en/info/', 'Museo del Cenacolo Vinciano — official visit and reservation instructions']
     ],
     guides: [
       g({
@@ -32,7 +37,19 @@ export const italyNorthwestAdriaticClusters = [
         imageQuery: 'Milan Duomo cathedral facade piazza wide',
         imageAlt: 'The facade of Milan Cathedral facing Piazza del Duomo',
         purpose: 'Choose whether the cathedral complex or the Pinacoteca di Brera receives the day’s main attention, then cross the historic centre once without treating terraces, church, galleries, shopping arcade and every Brera interior as equal commitments.',
-        summary: 'Meet the exact Duomo or Brera entrance, read the cathedral square and Galleria as a civic threshold, then move north through one deliberate street line and finish near the station that serves the chosen collection.',
+        summary: 'Start at the booked Duomo or Brera door, cross the cathedral square and Galleria once, then walk past Piazza della Scala into Via Brera and finish near the station for your chosen collection.',
+        localPlan: {
+          title: 'One centre walk, one chosen interior',
+          intro: 'The cathedral square, covered Galleria and Brera lanes form a northbound sequence; the Duomo and Pinacoteca are separate commitments, not adjacent rooms in one ticket.',
+          stayTitle: 'Sleep by the first door you plan to use',
+          stay: 'One or two nights around Duomo, Missori or Brera keeps this walk simple. A Duomo-side base shortens an early cathedral start; a Brera or Lanza-side base makes a gallery visit and evening meal easier. Centrale or Porta Venezia gives stronger rail/Metro access but adds a ride or a longer walk to this route. If you are also visiting the Cenacolo, decide whether to keep one central base or move only when luggage and arrival times justify it.',
+          walkTitle: 'Walk north from the square in clear zones',
+          walk: 'Begin at Piazza del Duomo and identify the actual church, museum or terrace entrance on your booking. Cross the Galleria Vittorio Emanuele II to Piazza della Scala, continue along Via Brera, then choose either the Pinacoteca entrance and a bounded gallery visit or the surrounding lanes and Orto Botanico. Finish toward Lanza or Montenapoleone according to your next transfer; do not double back to Duomo just to collect another interior.',
+          bookingTitle: 'Book the roof, church and gallery as separate doors',
+          booking: 'Read the Duomo ticket description for the exact spaces and entrance included; cathedral access, archaeological areas, museum rooms and terraces are distinct choices and operating conditions can change. Check the Pinacoteca di Brera calendar and admission instructions separately. If neither interior is confirmed, use the public square, Galleria, Piazza della Scala and Brera street sequence as the full route rather than joining an unplanned queue.',
+          seasonTitle: 'Move exposed time away from heat and rain',
+          season: 'In hot weather, walk the open Piazza del Duomo and any confirmed terrace early or later in the day, then use a booked collection for the brighter hours. Rain makes the Galleria a useful covered link, but it does not replace the gallery entrance. Around services or civic events, follow the cathedral’s day-specific visitor notices and keep Brera as the same-area alternative.'
+        },
         choices: [
           ['Cathedral complex depth', 'Use the current Duomo product for the church, archaeological area or terraces that matter most. This gives the strongest building-led day but leaves Brera as streets, a meal or a short exterior finish.'],
           ['Brera collection depth', 'Reserve the Pinacoteca as the fixed interior and keep the Duomo mostly to its piazza or a bounded visit. This protects attention for the collection but gives up a complete cathedral-and-roof sequence.'],
@@ -55,6 +72,9 @@ export const italyNorthwestAdriaticClusters = [
         duration: 'Allow six to eight hours for one substantial controlled interior, the historic-centre walk and a real break. A public-realm circuit without a major interior can fit three to four hours.',
         combine: 'Combine the Duomo with Brera only when one is clearly the anchor and the other is a lighter layer. Keep Santa Maria delle Grazie, the Navigli and Porta Nuova for separate route days.',
         verify: 'Check the exact Duomo ticket and entrance, terrace and weather notices, Pinacoteca di Brera admission and closure information, and ATM service to the chosen start and finish before departure.',
+        reviewDate: '12 October 2026',
+        reviewIsoDate: '2026-10-12',
+        publishedIsoDate: '2026-09-26',
         sources: [
           ['https://www.duomomilano.it/en/', 'Duomo di Milano — official visits and ticket information'],
           ['https://pinacotecabrera.org/en/', 'Pinacoteca di Brera — official gallery information']
@@ -69,7 +89,19 @@ export const italyNorthwestAdriaticClusters = [
         imageQuery: 'Santa Maria delle Grazie Milan exterior church',
         imageAlt: 'Santa Maria delle Grazie church and its brick dome in Milan',
         purpose: 'Build the day around the exact Last Supper admission slot, then decide whether Santa Maria delle Grazie, the Castello museums or the park receives the remaining attention instead of assuming one famous image unlocks the whole western centre.',
-        summary: 'Arrive early at the Cenacolo entrance, keep the church and museum as separate thresholds, then follow one eastward line to the Castello and finish in its courtyards, museums or Parco Sempione.',
+        summary: 'Protect the named Cenacolo slot, treat the church as a separate visit, then walk east along Corso Magenta to the Castello and finish in one courtyard, museum or Parco Sempione.',
+        localPlan: {
+          title: 'A timed west-side visit with a castle finish',
+          intro: 'This day has one immovable point. Keep the Cenacolo visit, the church precinct and the Castello on one west-to-east line, with a complete alternative if the mural ticket is unavailable.',
+          stayTitle: 'Use Cadorna or Magenta for an early slot',
+          stay: 'One night in the Cadorna/Magenta area can make an early visit and the Castello walk easier; two nights suit a slower west-side day without switching hotels. A Duomo or Brera base remains practical if the rest of the trip is central. Avoid planning this admission after a flight, a long-distance train or a hotel change: delay at the arrival gateway can consume the fixed entry window.',
+          walkTitle: 'Keep the route west to east',
+          walk: 'Approach Piazza Santa Maria delle Grazie from Cadorna or Conciliazione using the exact Metro exit or the official Tram 16 stop. After the timed visit, treat the church as a separate stop subject to worship access. Continue along Corso Magenta toward Via Carducci and the Castello entrance; choose one museum, the courtyards or Parco Sempione, then finish toward Cairoli or Cadorna rather than returning to the first church door.',
+          bookingTitle: 'Let the confirmed ticket set the day',
+          booking: 'The official Cenacolo page currently says advance reservations are mandatory for all admission types; tickets are named, date/time changes are not accepted, and visitors are instructed to arrive at least 30 minutes before entry. Reopen the page and the exact ticket for your date because release windows and instructions may change. The church and Castello museums have separate access and calendars. If no official ticket is confirmed, do not buy a purported substitute from a reseller.',
+          seasonTitle: 'Protect the slot through event and weather changes',
+          season: 'Keep the timed admission away from airport arrivals, and check the church and selected Castello museum notices for the same date. In rain, shorten Parco Sempione and use one confirmed indoor museum; in heat, take a real break after the controlled visit before continuing outside. On a closed or changed day, keep the Corso Magenta and Castello courtyard route only where public access is confirmed.'
+        },
         choices: [
           ['Cenacolo as the fixed anchor', 'Protect the named ticket and its arrival instructions, then give the church precinct and a selective Castello visit the rest of the day. This is reservation-led and least tolerant of delay.'],
           ['Castello museum depth', 'Use a current Castello museum or exhibition as the main interior and treat Santa Maria delle Grazie as an exterior or church visit when access permits. This gains collection depth but gives up the Last Supper without a ticket.'],
@@ -92,6 +124,9 @@ export const italyNorthwestAdriaticClusters = [
         duration: 'Allow five to seven hours for the fixed Cenacolo visit, the church precinct, a meal and one bounded Castello or park layer. The Last Supper itself should never be scheduled as a connection-day afterthought.',
         combine: 'Combine with the Castello and Parco Sempione because they preserve one west-to-east line. Keep the Duomo, Brera and the Navigli for other days.',
         verify: 'Reopen the Cenacolo ticket and identity instructions, Santa Maria delle Grazie visitor conditions, the selected Castello museum notice and ATM service before leaving.',
+        reviewDate: '12 October 2026',
+        reviewIsoDate: '2026-10-12',
+        publishedIsoDate: '2026-09-26',
         sources: [
           ['https://cenacolovinciano.org/en/info/', 'Museo del Cenacolo Vinciano — official visit information'],
           ['https://www.milanocastello.it/en', 'Castello Sforzesco — official museum and visit information']
@@ -106,7 +141,19 @@ export const italyNorthwestAdriaticClusters = [
         imageQuery: 'Naviglio Grande Milan canal evening',
         imageAlt: 'Evening light along Naviglio Grande in Milan',
         purpose: 'Decide whether contemporary Porta Nuova, a current design attraction or the Navigli evening is the main layer, then make only one north-to-south transit move so fashionable districts do not become a day of disconnected photo stops.',
-        summary: 'Begin around Porta Garibaldi and Porta Nuova, use one verified design or public-space focus, pause before crossing the city, and reserve the canal district for the time of day it actually serves.',
+        summary: 'Read Porta Garibaldi, Piazza Gae Aulenti and Isola as one northern walk, then make one ATM transfer to Porta Genova for Darsena and a single Naviglio Grande bank.',
+        localPlan: {
+          title: 'One northern district and one canal evening',
+          intro: 'Porta Nuova/Isola and the Navigli are different parts of Milan. Choose a daylight focus in the north, make one planned Metro crossing, and let the canal walk be the evening rather than a distant final pin.',
+          stayTitle: 'Choose the base that fits your return',
+          stay: 'Two nights around Porta Garibaldi or Isola suits the northern design route and rail arrival, but the Navigli still needs a return transfer. A Porta Genova or Navigli base makes a late canal dinner easier and adds a Metro ride to Porta Nuova. Three nights lets you keep this as its own afternoon/evening instead of combining it with the Duomo or Last Supper. Centrale and Cadorna work when intercity access outranks walking home from either district.',
+          walkTitle: 'Read the north and south as separate walks',
+          walk: 'Start at Milano Porta Garibaldi, walk to Piazza Gae Aulenti, continue toward the Bosco Verticale exterior and choose either Corso Como or the Isola streets as the northern finish. Pause before taking the ATM connection to Porta Genova. From there, walk to Darsena and choose one bank of Naviglio Grande; keep the opposite bank, Naviglio Pavese and extra dinner stops optional so the station return remains clear.',
+          bookingTitle: 'Confirm one public design door before crossing',
+          booking: 'A design district name does not establish that a showroom or event is open to individual visitors. If ADI Design Museum is your anchor, check its current exhibition, admission and visitor information; verify any YesMilano event on the actual day. Keep the Navigli walk public and flexible, and save the ATM route from Porta Genova before the evening. No late service or event access is assumed.',
+          seasonTitle: 'Use the calendar to handle fair weeks and weather',
+          season: 'Milan design and fashion weeks can change room demand and make public-space/event access different from an ordinary week. Check the dated city calendar before booking accommodation and do not plan a showroom visit without its own public opening notice. In summer heat, move the northern streets to morning or late afternoon; in rain or early winter dusk, shorten the canal exposure and use a confirmed museum or meal near a direct return line.'
+        },
         choices: [
           ['Porta Nuova and Isola', 'Give the contemporary skyline, public spaces and adjacent neighborhood a long daytime block. This produces the clearest modern-city reading but makes the Navigli a short evening finish.'],
           ['ADI Design Museum focus', 'Use the ADI Design Museum as the named public interior, checking current exhibitions and admission before travel. This gains curatorial depth but requires giving up broad shopping and architecture coverage.'],
@@ -129,6 +176,9 @@ export const italyNorthwestAdriaticClusters = [
         duration: 'Allow a full afternoon and evening for one northern or design anchor plus the Navigli. A single district can fill three to four hours; all-day coverage of both should include a real rest and one transit crossing.',
         combine: 'Combine Porta Nuova with Isola, or the Navigli with the Darsena. Treat the Duomo, Brera and the fixed Last Supper visit as separate route anchors.',
         verify: 'Check ADI Design Museum admission and current exhibitions, any selected YesMilano event on the actual date, ATM service between the two gateways and the practical late return from Porta Genova.',
+        reviewDate: '12 October 2026',
+        reviewIsoDate: '2026-10-12',
+        publishedIsoDate: '2026-09-26',
         sources: [
           ['https://www.yesmilano.it/en/must-see-attractions', 'YesMilano — official city attractions and current visitor context'],
           ['https://www.atm.it/en/Pages/default.aspx', 'ATM Milano — official Metro, tram and service information'],
@@ -140,16 +190,19 @@ export const italyNorthwestAdriaticClusters = [
   c({
     slug: 'italian-lakes',
     name: 'Italian Lakes',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     region: 'Lombardy, Piedmont & Veneto',
     band: 'northwest-adriatic',
     family: 'waterline-and-gateway-section',
     label: 'Two-shore landing clock',
     tagline: 'Choose one rail gateway, one water crossing and a return that still works after the postcard.',
     hubIntro: 'Como, Maggiore and Garda are separate transport systems rather than interchangeable blue scenery. Rail reaches particular shore towns, boats operate named routes and seasons, and buses or roads complete other edges. A useful lake plan begins with the mainland gateway and final return before selecting villas, islands or a second shore.',
-    stay: 'Two nights on one lake creates a full water day without tying it to a Milan arrival. Three nights allows a poor-weather mainland day and a second shore. Switching accommodation between lakes usually spends more time on rail gateways and luggage than on the water.',
-    transfer: 'Como, Varenna, Stresa, Desenzano and Peschiera solve different arrivals; some celebrated lake towns have no rail station. Match the train to a named pier or bus connection, distinguish similarly named stations and docks, and record the final practical boat and onward rail before leaving the gateway.',
-    season: 'Boat routes, frequencies, villa access and daylight vary by season, while storms, wind and high visitor pressure can remove a planned crossing. Summer heat makes exposed docks and steep lanes harder; shoulder seasons need a complete mainland plan when reduced services break a multi-stop circuit.',
-    fallback: 'Build every lake day around a rail-connected or road-connected gateway with enough streets, waterfront and indoor options to remain worthwhile. When boats are suspended or full, stay on that shore and protect the train or bus return instead of assembling taxis around the water.',
+    stay: 'Two nights suits one lake with a full day on the water and keeps arrival or departure from consuming the only walking day. Three nights can support two days on one lake, or two nights in one lake town plus a deliberate transfer night elsewhere; do not count a late arrival as a lake day. Four nights supports two bases, usually Como/Varenna plus Stresa or a southern Garda rail town, but three lakes in four nights means repeated packing and little weather reserve. Choose a base beside the actual gateway: Como city serves the southern lake, Varenna-Esino the central eastern shore, Stresa the Borromean Islands, and Desenzano or Peschiera the southern Garda rail edge. Bellagio, Isola Bella and Malcesine are not rail bases.',
+    transfer: 'On Como, distinguish Trenord’s Como Lago from Trenitalia’s Como S. Giovanni and from the Como, Varenna and Bellagio ferry landings; they are not interchangeable doors. Varenna-Esino has a steep station-to-waterfront connection, while Bellagio and Menaggio need a boat or road leg. Stresa’s rail station sits uphill from its waterfront pier; verify the exact island operator and landing. Desenzano del Garda-Sirmione and Peschiera del Garda are separate southern gateways, while Malcesine needs an onward shore connection. Save the named operator, stop or pier, date-valid outward and return legs, and a land route back before boarding.',
+    season: 'Navigazione Laghi publishes separate Como, Maggiore and Garda tables with date windows and day-type differences; its pages also carry service notices. As checked on 12 October 2026, the operator had autumn/winter timetable pages in effect, but those notices do not promise a future sailing. Recheck the exact travel date, weekday or holiday pattern, weather, capacity and the last usable return. Summer heat and queues stretch exposed docks and steep approaches; reduced shoulder-season service, wind or high water can remove a crossing. Give each day a complete shore-side version and keep opening dates for villas, gardens and cableways on their own official pages.',
+    fallback: 'For Como, stay around Como city or the already chosen Varenna shore; for Maggiore, keep Stresa’s waterfront and one date-confirmed mainland attraction; for Garda, use the rail-connected streets of Desenzano or Peschiera. These are complete lower-risk days when boats stop or queues overrun the plan. Drop the second shore, island or lift first, and preserve the known bus or rail return; do not improvise a private-boat or taxi chain across the lake.',
     sources: [
       ['https://www.navigazionelaghi.it/en/', 'Navigazione Laghi — official services for Lakes Maggiore, Garda and Como'],
       ['https://www.in-lombardia.it/en', 'in-Lombardia — official regional destination information'],
@@ -165,7 +218,19 @@ export const italyNorthwestAdriaticClusters = [
         imageQuery: 'Lake Como Varenna Bellagio ferry panorama',
         imageAlt: 'Varenna and the central waters of Lake Como with mountains beyond',
         purpose: 'Choose Varenna, Bellagio or the western shore as the day’s anchor, then make one purposeful central-lake crossing while retaining a direct route back to the rail or accommodation gateway.',
-        summary: 'Arrive at the named station or pier, read the current central-lake board before committing, give one town real time and cross only when the return still leaves a service in reserve.',
+        summary: 'Base in Como or Varenna for the rail return, walk one central-shore district, and cross to Bellagio or Menaggio only after checking the dated ferry pattern and the uphill station leg.',
+        localPlan: {
+          title: 'Base the day on one Como shore',
+          intro: 'Como city and Varenna-Esino are useful rail gateways; Bellagio is a boat-linked visit, not a train base.',
+          stayTitle: 'Choose Como or Varenna for the night',
+          stay: 'Stay near Como S. Giovanni or Como Lago only after matching the station to your arrival line and the accommodation walk; the two stations sit in different parts of the city. Choose Varenna for a slower central-lake start, but confirm luggage access and the uphill return from the waterfront to Varenna-Esino. Bellagio suits a boat-led overnight, yet the next rail day still begins with a crossing. Two nights protects one full lake day; add a third if you want a separate villa or second-shore day without moving hotels.',
+          walkTitle: 'Walk one shore before crossing',
+          walk: 'For Varenna, descend from Varenna-Esino toward the old town, follow the lakefront and Piazza San Giorgio, then choose either Villa Monastero’s gardens or the ferry landing as the day’s anchor. Bellagio is a separate, steep peninsula walk: connect the landing, Salita Serbelloni, the upper lanes and Punta Spartivento, then return to the same named pier. If starting in Como city, keep the Duomo, old centre and lakefront together; do not add Varenna on foot.',
+          bookingTitle: 'Keep the villa and ferry as separate doors',
+          booking: 'Check Navigazione Laghi’s exact-date central-lake routes and notices before fixing an island or second-town sequence. Check Villa Monastero’s current museum and garden openings and ticket conditions independently; a garden visit does not include the boat. Confirm the final landing and onward train, allowing time for Varenna’s climb. No timetable or fare is guaranteed by this plan.',
+          seasonTitle: 'Set a shore-side version for every season',
+          season: 'Summer queues, heat and rough water can make a one-crossing day longer than the map suggests. Autumn and winter tables use dated service periods and can differ by weekday, Sunday or holiday; the current operator notice is the source of truth for your date. In wind or suspension, keep the whole day on the chosen shore and leave the villa out if its seasonal hours do not fit.'
+        },
         choices: [
           ['Varenna rail gateway', 'Use Varenna-Esino as the firm arrival and give Varenna’s lanes and waterfront the deepest block. This protects the rail return but limits western-shore depth.'],
           ['Bellagio as the pivot', 'Travel by boat to a central peninsula base and keep the day focused around Bellagio and one crossing. This buys the strongest water orientation but makes the whole day boat-dependent.'],
@@ -190,7 +255,9 @@ export const italyNorthwestAdriaticClusters = [
         verify: 'Check Navigazione Laghi’s dated Lake Como timetable and service notices, the exact rail station and pier, the selected attraction’s admission and the final train or bus connection before departure.',
         sources: [
           ['https://www.navigazionelaghi.it/en/', 'Navigazione Laghi — official Lake Como timetables and notices'],
-          ['https://www.in-lombardia.it/en', 'in-Lombardia — official Lake Como destination context']
+          ['https://www.in-lombardia.it/en', 'in-Lombardia — official Lake Como destination context'],
+          ['https://www.villamonastero.eu/en/', 'Villa Monastero — official museum and garden visitor information'],
+          ['https://www.trenord.it/en/routes-and-timetables/', 'Trenord — official routes, stations and dated rail planning']
         ]
       }),
       g({
@@ -202,7 +269,19 @@ export const italyNorthwestAdriaticClusters = [
         imageQuery: 'Isola Bella Lake Maggiore Borromean Islands',
         imageAlt: 'Isola Bella rising from Lake Maggiore against an Alpine backdrop',
         purpose: 'Choose whether one Borromean island, a two-island sequence or the mainland shore is the main visit, and treat boat transport and each admission as separate commitments rather than a single “islands” ticket.',
-        summary: 'Begin at a named mainland pier, protect the return sailing and rail connection, land on one island with enough time to read it, and add a second only after current service and admissions still agree.',
+        summary: 'Sleep in Stresa or another confirmed mainland gateway, walk the waterfront and one Borromean island deeply, then add a second landing only if its admission and return sailing fit.',
+        localPlan: {
+          title: 'Use Stresa as the island gateway, not a promise of a boat',
+          intro: 'The station, waterfront and island piers are separate legs; pick the mainland base before choosing the island count.',
+          stayTitle: 'Stay by the station or lakefront deliberately',
+          stay: 'Stresa is the simplest overnight base for an island-first day: the railway station is above the waterfront, so test the luggage walk and accommodation access before booking. Verbania-Pallanza gives a different west-shore base and works for Villa Taranto, but it does not replace the Stresa pier; check its actual rail or bus gateway. Two nights gives one full island day without combining it with arrival. A third night can absorb a weather reserve or a separate garden visit; do not move beds between towns just to chase another landing.',
+          walkTitle: 'Pair one island with its own mainland walk',
+          walk: 'From Stresa, walk the waterfront to the operator’s named pier, then follow the current landing sequence on Isola Bella: palace threshold, terraced garden and village lanes each take time. Isola dei Pescatori is a separate compact settlement walk; include it only after checking both the outbound and return calls. Back on shore, keep Stresa’s promenade and old-centre lanes as the easy finish. Do not treat the island pier as the same place as the station.',
+          bookingTitle: 'Verify boat and island admission independently',
+          booking: 'Use Navigazione Laghi’s date-specific Lake Maggiore table and service notices for the exact pier, stop pattern and return. Terre Borromeo publishes the current Isola Bella hours and ticket conditions separately; check the garden/palace admission window and last entry for your date. Boat products and island entry are distinct commitments, and a second island should remain optional until both are confirmed.',
+          seasonTitle: 'Let the published date window determine the route',
+          season: 'Maggiore sailings and Borromean visitor access change by season, with different date ranges and potential weather notices. Summer queues can consume a second landing; shoulder-season days may have fewer useful calls or shorter attraction hours. As of 12 October 2026, consult the active autumn/winter operator table, then recheck before departure. If boats are reduced or suspended, make Stresa waterfront and a separately open mainland attraction the full day.'
+        },
         choices: [
           ['One island in depth', 'Choose the palace-and-garden or village experience that matters and allow its full admission and walking time. This sacrifices island count but creates the least rushed day.'],
           ['Two-island sequence', 'Use a verified service pattern to connect two landings, preselecting what each island contributes. This gains contrast but leaves little tolerance for queues or a late first visit.'],
@@ -228,7 +307,9 @@ export const italyNorthwestAdriaticClusters = [
         sources: [
           ['https://www.distrettolaghi.it/en', 'Distretto Turistico dei Laghi — official Lake Maggiore destination information'],
           ['https://www.navigazionelaghi.it/en/', 'Navigazione Laghi — official Lake Maggiore services'],
-          ['https://www.villataranto.it/en/', 'Villa Taranto Botanical Gardens — official visitor information']
+          ['https://www.villataranto.it/en/', 'Villa Taranto Botanical Gardens — official visitor information'],
+          ['https://www.terreborromeo.it/en/isola-bella/hours-prices', 'Terre Borromeo — official Isola Bella seasonal hours and tickets'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — official date-specific rail planning']
         ]
       }),
       g({
@@ -240,7 +321,19 @@ export const italyNorthwestAdriaticClusters = [
         imageQuery: 'Lake Garda Malcesine castle waterfront mountains',
         imageAlt: 'Malcesine waterfront, castle and mountains on Lake Garda',
         purpose: 'Choose a southern rail gateway, an eastern-shore corridor or a northern mountain-edge day before travel, because Lake Garda’s length and changing road, bus and boat links make a spontaneous full circuit unrealistic.',
-        summary: 'Enter through one gateway, follow one shore with a defined turning point, use a boat only when it simplifies rather than expands the route, and return along the protected rail or bus corridor.',
+        summary: 'Base at Desenzano, Peschiera or a chosen shore town, walk one Garda district and use a named ferry, bus or cableway only when its dated return remains viable.',
+        localPlan: {
+          title: 'Pick a southern rail base or commit to the north',
+          intro: 'Desenzano and Peschiera are southern rail gateways; Malcesine is a separate northern-shore stay with onward transport.',
+          stayTitle: 'Match nights to the shore you will walk',
+          stay: 'Two nights in Desenzano or Peschiera supports a walkable southern day and a date-checked shore extension without moving luggage. Choose Malcesine or another northern town for two or more nights when the mountain setting is the point; its bus/boat arrival and return are separate from the national rail line. Three nights can support one southern base plus one northern overnight, but only if you want the relocation and have checked the link with bags. Do not book one hotel expecting a relaxed full-lake circuit.',
+          walkTitle: 'Keep the walk inside one Garda zone',
+          walk: 'From Desenzano station, descend into the old centre and harbour, continue along the lakeside promenade, then return through the historic lanes. From Peschiera, follow the fortified canal edge and old-town paths around the walls before extending to the waterfront. In Malcesine, join the Porto Vecchio, old-town lanes and Castello Scaligero; treat the cableway station and mountain route as a distinct uphill excursion with its own weather and queue check. These are separate walks, not one continuous lakeside path.',
+          bookingTitle: 'Name every road, pier and lift connection',
+          booking: 'Confirm Trenord/Trenitalia station identity and the onward bus stop or ferry pier for the exact shore. Navigazione Laghi lists date-specific Garda sailings and service notices; the Monte Baldo cableway has its own seasonal operating calendar and weather/maintenance conditions. Do not assume that a boat, bus and lift accept one another’s ticket or that the final connection is guaranteed. Save a usable return before leaving the southern rail gateway.',
+          seasonTitle: 'Separate the summer lake from the mountain clock',
+          season: 'Summer brings heat, road traffic, full buses and longer queues at waterfronts; start the exposed walk early and keep a shore-side alternative. Cableway seasons and maintenance periods are published separately from ferry tables, and bad weather can alter mountain service. The official Monte Baldo page checked for 2026 listed its own summer, maintenance and winter periods; use the live notice for the intended date. In shoulder season, plan only one shore and preserve the dated rail/bus return.'
+        },
         choices: [
           ['Southern rail shore', 'Base the day around Desenzano or Peschiera and a bounded lakeside extension. This offers the strongest rail recovery but less of the dramatic northern setting.'],
           ['Eastern-shore progression', 'Use a verified bus or boat line toward Garda or Malcesine, stopping deeply in one town. This reaches steeper scenery but becomes dependent on road and seasonal service.'],
@@ -265,7 +358,9 @@ export const italyNorthwestAdriaticClusters = [
         verify: 'Check Navigazione Laghi’s dated Garda service, Visit Garda’s current local access information, the exact bus or rail gateway, road notices and the last practical return.',
         sources: [
           ['https://www.navigazionelaghi.it/en/', 'Navigazione Laghi — official Lake Garda services'],
-          ['https://www.visitgarda.com/en/', 'Visit Garda — official shore and access information']
+          ['https://www.visitgarda.com/en/', 'Visit Garda — official shore and access information'],
+          ['https://www.funiviedelbaldo.it/en/', 'Funivia Malcesine–Monte Baldo — official seasonal service and notices'],
+          ['https://www.trenord.it/en/routes-and-timetables/', 'Trenord — official routes, stations and dated rail planning']
         ]
       })
     ]

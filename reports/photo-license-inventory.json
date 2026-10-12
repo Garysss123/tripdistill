@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T14:32:26.973Z",
+  "generatedAt": "2026-10-12T14:41:58.556Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 808,
-    "completeSourceCreatorLicenseRecords": 759,
-    "completeProjectOriginalRightsRecords": 19,
+    "assetFileCount": 810,
+    "completeSourceCreatorLicenseRecords": 757,
+    "completeProjectOriginalRightsRecords": 21,
     "licenseClaimsNotIndependentlyVerified": 493,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "buildImageFilesExcludedForRightsReview": 4,
+    "buildImageFilesExcludedForRightsReview": 6,
     "expectedBuildImageCount": 808,
-    "deduplicatedImageCount": 808,
+    "deduplicatedImageCount": 810,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3510,
     "assetsUsedByScannedEnglishPages": 769,
-    "unusedAssetCount": 39,
-    "assetsWithStructuredSourceRecords": 595,
+    "unusedAssetCount": 41,
+    "assetsWithStructuredSourceRecords": 597,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 189,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 272,
-    "metadataOrCreditOnly": 512,
-    "usedAssetsWithoutIndependentSourcePageCheck": 501,
+    "metadataOrCreditOnly": 514,
+    "usedAssetsWithoutIndependentSourcePageCheck": 503,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 804 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 808 build image files. 4 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 804 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 808 build image files. 6 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -14034,41 +14034,31 @@
           "assetPath": "/assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_11.jpg",
-          "sourceTitle": "File:Bologna Piazza Maggiore 11.jpg",
+          "sourceTitle": "Bologna Piazza Maggiore 11.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Historic porticoes leading through central Bologna",
+          "creditLabel": null,
           "creator": "GennaroBologna",
-          "license": "CC BY-SA 4.0",
+          "license": null,
           "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
-          "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "rightsStatus": "Unresolved separate authorisation link; retained internally and removed from public use.",
+          "rightsStatusUrl": "https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_11.jpg",
+          "inventoryStatus": "unused",
+          "retirementNote": "Pixels show Piazza Maggiore rather than a clear portico route; Commons page links a separate authorisations page whose conditions were not verified. Not treated as a license conflict.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "e1033c07e7f20b2925bbc90b10056101a16aeeaf",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-04",
           "verificationDetail": "Commons source page checked for GennaroBologna, Piazza Maggiore subject, and CC BY-SA 4.0.",
-          "useCount": 6,
-          "routes": [
-            "/italy/",
-            "/italy/emilia-romagna/",
-            "/italy/emilia-romagna/bologna-porticoes-markets/",
-            "/italy/emilia-romagna/modena-parma-via-emilia/",
-            "/italy/emilia-romagna/ravenna-ferrara-po-delta/"
-          ],
-          "altTexts": [
-            "Historic porticoes leading through central Bologna"
-          ],
-          "rawVisibleCredits": [
-            "Historic porticoes leading through central Bologna — GennaroBologna, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -14084,40 +14074,31 @@
           "assetPath": "/assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modena_-_Piazza_Grande_-_Duomo.jpg",
-          "sourceTitle": "File:Modena - Piazza Grande - Duomo.jpg",
+          "sourceTitle": "Modena - Piazza Grande - Duomo.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Modena Cathedral and Piazza Grande along the Via Emilia corridor",
+          "creditLabel": null,
           "creator": "Gerolamondo",
-          "license": "CC BY-SA 4.0",
+          "license": null,
           "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
-          "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "rightsStatus": "Unresolved separate authorisation link; retained internally and removed from public use.",
+          "rightsStatusUrl": "https://commons.wikimedia.org/wiki/File:Modena_-_Piazza_Grande_-_Duomo.jpg",
+          "inventoryStatus": "unused",
+          "retirementNote": "Pixels match the Modena Cathedral subject, but the Commons page links a separate authorisations page whose conditions were not verified. Not treated as a license conflict.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "3e565f6edcfcaa71c992acdcd107fe99f04776be",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-04",
           "verificationDetail": "Commons source page checked for Gerolamondo, Piazza Grande subject, and CC BY-SA 4.0.",
-          "useCount": 4,
-          "routes": [
-            "/italy/emilia-romagna/",
-            "/italy/emilia-romagna/bologna-porticoes-markets/",
-            "/italy/emilia-romagna/modena-parma-via-emilia/",
-            "/italy/emilia-romagna/ravenna-ferrara-po-delta/"
-          ],
-          "altTexts": [
-            "Modena Cathedral and Piazza Grande along the Via Emilia corridor"
-          ],
-          "rawVisibleCredits": [
-            "Modena Cathedral and Piazza Grande along the Via Emilia corridor — Gerolamondo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 4.0"
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -16157,7 +16138,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
           "sourceTitle": "File:Verona Italy Piazza Bra from arena DSC08039.JPG",
           "sourcePhotoDate": null,
-          "creditLabel": "The Roman Arena facing Piazza Bra in Verona",
+          "creditLabel": "Piazza Bra’s arcaded façades viewed from the Verona Arena",
           "creator": "David Monniaux",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -16185,10 +16166,10 @@
             "/italy/veneto-art-cities/vicenza-palladian-city/"
           ],
           "altTexts": [
-            "The Roman Arena facing Piazza Bra in Verona"
+            "Piazza Bra’s arcaded façades viewed from the Verona Arena"
           ],
           "rawVisibleCredits": [
-            "The Roman Arena facing Piazza Bra in Verona — David Monniaux, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
+            "Piazza Bra’s arcaded façades viewed from the Verona Arena — David Monniaux, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. The image derivative remains under the same license: CC BY-SA 3.0"
           ]
         }
       ]
@@ -28028,6 +28009,101 @@
           ],
           "altTexts": [
             "Original planning diagram showing a mainland pickup, operator-confirmed jetty, boat crossing, island landing, uphill forest path to the lake, and the same return chain; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "acf21d73c481944c8296eeab1eac5e4dae6b2a885eee255d7d27ab2b5b49070a",
+      "assetPaths": [
+        "/assets/images/tripdistill-italy-bologna-portico-plan.svg"
+      ],
+      "byteLength": 1141,
+      "sourceRecords": [
+        {
+          "sha256": "acf21d73c481944c8296eeab1eac5e4dae6b2a885eee255d7d27ab2b5b49070a",
+          "assetPath": "/assets/images/tripdistill-italy-bologna-portico-plan.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-italy-bologna-portico-plan.svg",
+          "sourceTitle": "Bologna portico route schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 6,
+          "routes": [
+            "/italy/",
+            "/italy/emilia-romagna/",
+            "/italy/emilia-romagna/bologna-porticoes-markets/",
+            "/italy/emilia-romagna/modena-parma-via-emilia/",
+            "/italy/emilia-romagna/ravenna-ferrara-po-delta/"
+          ],
+          "altTexts": [
+            "Original schematic linking Bologna Centrale, the porticoed centre and the San Luca branch"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "0e2cf3c3eba466a784ebf2b09dbcab24742ee7b04c6e42067ace775b82cd95e3",
+      "assetPaths": [
+        "/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg"
+      ],
+      "byteLength": 1444,
+      "sourceRecords": [
+        {
+          "sha256": "0e2cf3c3eba466a784ebf2b09dbcab24742ee7b04c6e42067ace775b82cd95e3",
+          "assetPath": "/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg",
+          "sourceTitle": "Modena and Parma rail and booking schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/italy/emilia-romagna/",
+            "/italy/emilia-romagna/bologna-porticoes-markets/",
+            "/italy/emilia-romagna/modena-parma-via-emilia/",
+            "/italy/emilia-romagna/ravenna-ferrara-po-delta/"
+          ],
+          "altTexts": [
+            "Original schematic showing the Modena and Parma rail pair and optional booked branches"
           ],
           "rawVisibleCredits": []
         }

@@ -1,0 +1,39 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/",
+    "/italy/sardinia/",
+    "/italy/sardinia/cagliari-su-nuraxi/",
+    "/italy/sardinia/la-maddalena-gallura/",
+    "/italy/sardinia/gulf-orosei-gennargentu/"
+  ],
+  "translations": {
+    "Peninsula field atlas · reviewed 12 October 2026": "半島路線圖集 · 2026 年 10 月 12 日審閱",
+    "Plan Italy by stable nights and transport corridors: keep timed art doors, mountain seasons and island returns in separate day plans.": "依穩定住宿晚數與交通走廊規劃義大利：定時入場的藝術場館、山區季節與島嶼返程，應安排在不同日程。",
+    "Genoa’s Porto Antico and caruggi use AMT lifts, metro and steep streets; Cinque Terre hiking uses park rules and coastal rail; Portofino and San Fruttuoso can add…": "熱那亞 Porto Antico 與舊巷區使用 AMT 電梯、地鐵及陡坡街道；五漁村健行須遵守公園規定並搭沿海鐵路；波托菲諾與聖弗魯托索還可能增加……",
+    "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit…": "維洛納、維琴察與帕多瓦透過東西向鐵路主幹相連，但競技場、帕拉迪奧建築內部與斯克羅威尼禮拜堂各有不同參觀時程……",
+    "Pesaro, Ancona, the Adriatic coast and the Apennine parks connect through different rail, regional bus and road systems. Three nights can support one coast city…": "佩薩羅、安科納、亞得里亞海岸與亞平寧山區國家公園，分別由鐵路、區域公車與道路系統連接。住三晚可選一座海岸城市……",
+    "Matera’s Sassi, Maratea’s coast, the Pollino villages and Calabria’s Tyrrhenian towns form separate bases rather than one short loop. Three nights fits Matera and…": "馬泰拉的洞窟區、馬拉泰亞海岸、波利諾山村與卡拉布里亞第勒尼安海沿岸城鎮，應分成不同住宿基地，不是短程環線……",
+    "Palermo, Agrigento and Trapani are connected by rail and bus in parts, but Monreale, Selinunte, Erice and the Egadi islands add different last miles. Four nights…": "巴勒摩、阿格里真托與特拉帕尼部分路段有鐵路或公車相連，但蒙雷阿萊、塞利農特、埃里切與埃加迪群島各有不同末段交通。巴勒摩住四晚……",
+    "Catania, Taormina and Syracuse anchor three different eastern-Sicily day systems: Etna access follows current volcanic and mountain controls; Taormina and Naxos…": "卡塔尼亞、陶爾米納與錫拉庫薩各自形成不同的東西西里行程：埃特納火山依現行火山與山區管制通行；陶爾米納與納克索斯……",
+    "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern…": "卡利亞里與巴魯米尼、帕勞與馬達萊納群島、奧羅塞灣與傑納爾傑圖山區，是三套不同的島嶼行程系統。住三晚可先選一處南部基地……",
+    "One corridor, two or three bases": "一條交通走廊，兩或三個住宿基地",
+    "Choose a connected rail region or one island system. Keep a timed museum, rural branch or exposed coast day separate from the main transfer.": "選一段鐵路相連的區域，或專注一套島嶼交通。定時博物館、鄉間支線或曝曬海岸日，應與主要轉乘日分開。",
+    "Two systems with a protected transfer": "兩套交通系統，預留轉場時間",
+    "Pair a northern or central rail line with one southern or island region. Count the luggage move, ferry or mountain gateway as its own day when needed.": "把北部或中部鐵路線搭配一個南部或島嶼區域。需要時把搬行李、搭渡船或前往山區入口，分開計作一天。",
+    "Three stable bases and one landscape branch": "三處穩定基地，一條景觀支線",
+    "Add a lake, hill-town, coast or mountain overnight only when it protects the route and return; do not use every spare night to collect another region.": "只有在湖區、山城、海岸或山區過夜能保護路線與返程時才加入；不要用每個空檔來收集另一個區域。",
+    "Country planning and image licensing were reviewed on 12 October 2026. Entry, rail, roads, ZTLs, paths, ferries, weather and operating status change; verify directly before travel.": "國家規劃資訊與照片授權已於 2026 年 10 月 12 日審閱。入場、鐵路、道路、ZTL、步道、渡船、天氣與營運狀況會變動；出發前請直接查核。",
+    "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern base;…": "卡利亞里與巴魯米尼、帕勞與馬達萊納群島、奧羅塞灣與傑納爾傑圖山區，是三套不同的島嶼行程系統。住三晚可選一處南部基地……",
+    "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern base; four or five fits one Gallura or east-coast objective with weather reserve; a north–south itinerary needs deliberate transfer nights. ARST, scheduled ferries, authorized boat tours and protected-area access each control a different threshold.": "卡利亞里與巴魯米尼、帕勞與馬達萊納群島，以及奧羅塞灣與傑納爾傑圖山區，是三套不同的島嶼交通系統。住三晚可選一處南部基地；四或五晚適合專注加盧拉或東岸，並留天候緩衝；南北縱走則要刻意安排轉場住宿。ARST、定期渡船、核准船遊與保護區通行，各自管理不同入口。",
+    "Choose two or three nights in Cagliari for the city and one guided Barumini excursion; three or four around Palau or La Maddalena for one archipelago plan; four or five at Cala Gonone, Orosei or Baunei for one coast or mountain route. A full island traverse needs ten days or more and separate overnight gateways.": "卡利亞里住兩或三晚遊市區並安排一趟巴魯米尼導覽；帕勞或馬達萊納群島住三或四晚，安排一套群島行程；卡拉戈諾內、奧羅塞或巴烏內伊住四或五晚，選一條海岸或山區路線。完整橫越全島至少需十天，並在不同交通入口過夜。",
+    "Check ARST for regional buses, Trenitalia for rail where available, and the scheduled Palau–La Maddalena ferry separately from sightseeing boats. Barumini guided entry, Cala Goloritzè reservations and Gennargentu trailheads have their own land approaches. Confirm the exact stop, port, permit and return, not just the destination name.": "區域公車查 ARST，有鐵路的路段查 Trenitalia；帕勞—馬達萊納定期渡船要與觀光船分開查。巴魯米尼導覽入場、Cala Goloritzè 預約與傑納爾傑圖步道口，都有各自的陸路接近方式。確認確切車站、港口、許可與返程，不要只看地名。",
+    "Keep a same-quadrant land alternative: Cagliari’s museums and old town, Palau or Caprera on an open road day, or Orosei and Cala Gonone without a boat. If a coast or mountain gate closes, do not drive across the island to recover it.": "保留同一象限內的陸路備案：卡利亞里博物館與舊城、在道路開放時遊帕勞或卡普雷拉，或不搭船遊奧羅塞與卡拉戈諾內。若海岸或山區入口關閉，不要開車橫越全島補行程。",
+    "Base one quadrant at a time and make the port or trail return explicit.": "一次安排一個象限，並明確確認港口或步道返程。",
+    "Mistral and local wind can change boats and exposed beaches; summer visitor limits, fire restrictions and heat can change access. High mountain routes need their own weather and daylight checks. Reopen ARST, park, municipality and operator notices on the actual date; no seat, landing or permit is guaranteed.": "密史脫拉風與當地風勢會影響船班及曝曬海灘；夏季訪客管制、火災限制與高溫也會改變通行。高山路線要另外查天候和日照。按實際日期重查 ARST、公園、市鎮與業者公告；不保證有座位、可登島或取得許可。",
+    "Cagliari station → Marina → Castello via the verified lift or uphill street → cathedral quarter and Cittadella dei Musei → descend to the station. Keep Poetto or Barumini as separate routes.": "卡利亞里車站 → Marina 區 → 搭已確認的電梯或沿上坡街道到 Castello → 大教堂區與 Cittadella dei Musei → 下行返回車站。Poetto 海灘或巴魯米尼另排一天。",
+    "Palau port → scheduled passenger or vehicle ferry → La Maddalena town → choose one island road or Caprera bridge route → return to the correct public ferry pier. A sightseeing boat uses its own check-in and landing plan.": "帕勞港 → 搭定期客船或車輛渡船 → 馬達萊納鎮 → 選一條島上道路或經橋前往卡普雷拉 → 返回正確的公共渡輪碼頭。觀光船有自己獨立的報到與登島方式。",
+    "Name the port, Baunei trailhead or inland municipality before leaving. Complete one official route, carry the required water and follow its signed turnaround; return to the same gateway before sea, heat or daylight limits close.": "出發前先確定港口、巴烏內伊步道口或內陸市鎮。完成一條官方路線，帶足所需飲水並依標示折返；在海況、高溫或日照限制前回到同一交通入口。"
+  }
+}

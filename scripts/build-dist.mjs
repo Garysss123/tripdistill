@@ -10,7 +10,9 @@ const retainedLocalOnlyAssets = [
   'assets/images/malaysia-melaka-kampung-morten.webp',
   'assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp',
   'assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp',
-  'assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp'
+  'assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp',
+  'assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp',
+  'assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp',
 ];
 
 const publicDirectories = [

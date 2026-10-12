@@ -11,6 +11,22 @@ const routes = [
   '/italy/puglia/alberobello-itria-valley/',
   '/italy/puglia/lecce-otranto-gallipoli/'
 ];
+const it12Slugs = [
+  'veneto-art-cities',
+  'dolomites-trentino-south-tyrol',
+  'turin-piedmont',
+  'genoa-liguria',
+  'marche-abruzzo',
+  'basilicata-calabria',
+  'western-sicily',
+  'eastern-sicily',
+  'sardinia'
+];
+const it12Routes = new Set([
+  '/italy/',
+  ...italyClusters.filter((cluster) => it12Slugs.includes(cluster.slug))
+    .flatMap((cluster) => [`/italy/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])
+]);
 const entries = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map((match) => [match[1], match[2]]));
 const failures = [];
@@ -20,6 +36,9 @@ const puglia = italyClusters.find((cluster) => cluster.slug === 'puglia');
 check(Boolean(puglia), 'Italy Puglia cluster is missing');
 check(puglia?.reviewIsoDate === '2026-10-11', 'Puglia source review ISO date is not 2026-10-11');
 check(puglia?.reviewDate === '11 October 2026', 'Puglia visible review date is not 11 October 2026');
+const lakes = italyClusters.find((cluster) => cluster.slug === 'italian-lakes');
+check(lakes?.reviewIsoDate === '2026-10-12', 'Italian Lakes source review ISO date is not 2026-10-12');
+check(lakes?.reviewDate === '12 October 2026', 'Italian Lakes visible review date is not 12 October 2026');
 
 for (const route of routes) {
   for (const [, prefix] of locales) {
@@ -36,9 +55,16 @@ for (const route of routes) {
 
 const italianRoutes = [...entries.keys()].filter((route) => route.startsWith('/italy/') || /^\/(?:zh|ja|ko|th)\/italy\//.test(route));
 for (const route of italianRoutes) {
+  const canonicalRoute = route.replace(/^\/(?:zh|ja|ko|th)(?=\/italy\/)/, '');
   const isRome = route.includes('/rome/');
   const isPuglia = route.includes('/puglia/');
-  const expected = isPuglia ? '2026-10-11' : isRome ? '2026-10-04' : '2026-09-26';
+  const isEmiliaRomagna = route.includes('/emilia-romagna/');
+  const isLakes = route.includes('/italian-lakes/');
+  const isSiena = route.includes('/siena-southern-tuscany/');
+  const isMilan = route.includes('/milan/');
+  const isUmbria = route.includes('/umbria/');
+  const isSorrento = route.includes('/sorrento-amalfi-capri/');
+  const expected = it12Routes.has(canonicalRoute) ? '2026-10-12' : isPuglia ? '2026-10-11' : isRome ? '2026-10-04' : isEmiliaRomagna || isLakes || isSiena || isMilan || isUmbria || isSorrento ? '2026-10-12' : '2026-09-26';
   check(entries.get(route) === expected, `${route}: expected Italy date ${expected}, found ${entries.get(route)}`);
 }
 check(italianRoutes.length === 81 * locales.length, `Expected 405 Italy sitemap entries, found ${italianRoutes.length}`);

@@ -1,0 +1,39 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/",
+    "/italy/sardinia/",
+    "/italy/sardinia/cagliari-su-nuraxi/",
+    "/italy/sardinia/la-maddalena-gallura/",
+    "/italy/sardinia/gulf-orosei-gennargentu/"
+  ],
+  "translations": {
+    "Peninsula field atlas · reviewed 12 October 2026": "이탈리아 반도 여행 안내 · 2026년 10월 12일 검토",
+    "Plan Italy by stable nights and transport corridors: keep timed art doors, mountain seasons and island returns in separate day plans.": "확실한 숙박 일수와 교통 경로를 바탕으로 이탈리아를 계획하세요. 시간 예약이 필요한 미술관, 산악 시즌, 섬에서 돌아오는 일정은 서로 다른 날로 나누세요.",
+    "Genoa’s Porto Antico and caruggi use AMT lifts, metro and steep streets; Cinque Terre hiking uses park rules and coastal rail; Portofino and San Fruttuoso can add…": "제노바 포르토 안티코와 구시가지 골목은 AMT 승강기·지하철과 가파른 길을 이용합니다. 친퀘테레 걷기는 공원 규정과 해안 철도를 따르며 포르토피노와 산 프루투오소는 날씨에 따라 배나 길이 추가됩니다.",
+    "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit…": "베로나, 비첸차, 파도바는 동서 철도로 연결되지만 아레나, 팔라디오 건축물, 스크로베니 예배당은 관람 시간이 다릅니다.",
+    "Pesaro, Ancona, the Adriatic coast and the Apennine parks connect through different rail, regional bus and road systems. Three nights can support one coast city…": "페사로, 안코나, 아드리아해 해안, 아펜니노 공원은 철도·지역 버스·도로 체계가 다릅니다. 3박이면 해안 도시 하나와 언덕 마을 하나를 고를 수 있습니다.",
+    "Matera’s Sassi, Maratea’s coast, the Pollino villages and Calabria’s Tyrrhenian towns form separate bases rather than one short loop. Three nights fits Matera and…": "마테라, 마라테아 해안, 폴리노 마을, 칼라브리아 티레니아해 도시들은 서로 다른 숙소 거점입니다. 짧은 한 바퀴로 묶지 말고 3박은 마테라부터 선택하세요.",
+    "Palermo, Agrigento and Trapani are connected by rail and bus in parts, but Monreale, Selinunte, Erice and the Egadi islands add different last miles. Four nights…": "팔레르모, 아그리젠토, 트라파니는 일부 철도·버스로 연결되지만 몬레알레, 셀리눈테, 에리체, 에가디 제도는 마지막 이동이 다릅니다. 팔레르모 4박이면 시내와 당일 일정 하나를 둘러볼 수 있습니다.",
+    "Catania, Taormina and Syracuse anchor three different eastern-Sicily day systems: Etna access follows current volcanic and mountain controls; Taormina and Naxos…": "카타니아, 타오르미나, 시라쿠사는 동부 시칠리아의 서로 다른 일정 거점입니다. 에트나는 화산·산악 규정, 타오르미나와 낙소스는 별도의 해안·극장·선박 연결을 따릅니다.",
+    "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern…": "칼리아리와 바루미니, 팔라우와 라 마달레나, 오로세이만과 제날젠투는 서로 다른 섬 일정입니다. 3박이면 남부 거점 하나를 둘 수 있습니다.",
+    "One corridor, two or three bases": "한 교통 경로와 두세 숙소",
+    "Choose a connected rail region or one island system. Keep a timed museum, rural branch or exposed coast day separate from the main transfer.": "철도 연결 지역이나 섬 하나에 집중하세요. 예약 박물관, 시골 일정, 햇빛에 노출된 해안은 주요 이동일과 분리하세요.",
+    "Two systems with a protected transfer": "두 교통 체계 사이에 이동 여유 두기",
+    "Pair a northern or central rail line with one southern or island region. Count the luggage move, ferry or mountain gateway as its own day when needed.": "북부나 중부 철도 노선에 남부나 섬 지역 하나를 더하세요. 짐 이동, 페리, 산악 연결은 필요하면 하루로 계산하세요.",
+    "Three stable bases and one landscape branch": "세 개의 안정적 숙소와 풍경 코스 하나",
+    "Add a lake, hill-town, coast or mountain overnight only when it protects the route and return; do not use every spare night to collect another region.": "호수, 언덕 마을, 해안, 산 숙박은 이동과 귀환을 지키는 경우에만 추가하세요. 남는 밤마다 다른 지역을 넣지 마세요.",
+    "Country planning and image licensing were reviewed on 12 October 2026. Entry, rail, roads, ZTLs, paths, ferries, weather and operating status change; verify directly before travel.": "국가 계획 정보와 사진 이용 조건은 2026년 10월 12일 검토했습니다. 입장, 철도, 도로, ZTL, 등산로, 배편, 날씨, 운영은 바뀔 수 있으니 출발 전에 직접 확인하세요.",
+    "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern base;…": "칼리아리·바루미니, 팔라우·라 마달레나, 오로세이만·제날젠투는 서로 다른 섬 지역입니다. 3박은 남부 거점 하나에 적합합니다.",
+    "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern base; four or five fits one Gallura or east-coast objective with weather reserve; a north–south itinerary needs deliberate transfer nights. ARST, scheduled ferries, authorized boat tours and protected-area access each control a different threshold.": "세 섬 교통 체계를 따로 계획하세요. 3박은 남부 거점 하나, 4~5박은 갈루라나 동해안 한 곳과 날씨 예비일이 적합합니다. 남북 횡단은 이동 숙박을 계획해야 합니다. ARST, 정기 페리, 허가된 보트 투어, 보호 구역은 서로 다른 출입 조건을 관리합니다.",
+    "Choose two or three nights in Cagliari for the city and one guided Barumini excursion; three or four around Palau or La Maddalena for one archipelago plan; four or five at Cala Gonone, Orosei or Baunei for one coast or mountain route. A full island traverse needs ten days or more and separate overnight gateways.": "칼리아리에서 2~3박하며 도시와 가이드 동행 바루미니를 둘러보세요. 팔라우나 라 마달레나에서는 3~4박으로 군도 일정을, 칼라 고노네·오로세이·바우네이에서는 4~5박으로 해안이나 산행 하나를 선택하세요. 섬 횡단은 10일 이상과 여러 교통 거점 숙박이 필요합니다.",
+    "Check ARST for regional buses, Trenitalia for rail where available, and the scheduled Palau–La Maddalena ferry separately from sightseeing boats. Barumini guided entry, Cala Goloritzè reservations and Gennargentu trailheads have their own land approaches. Confirm the exact stop, port, permit and return, not just the destination name.": "지역 버스는 ARST, 철도 운행 구간은 Trenitalia를 확인하고 팔라우–라 마달레나 정기 페리는 관광선과 따로 살펴보세요. 바루미니 가이드 입장, 칼라 골로리체 예약, 제날젠투 등산로는 각각 육상 접근이 필요합니다. 목적지 이름만 보지 말고 정류장, 항구, 허가, 귀환을 확인하세요.",
+    "Keep a same-quadrant land alternative: Cagliari’s museums and old town, Palau or Caprera on an open road day, or Orosei and Cala Gonone without a boat. If a coast or mountain gate closes, do not drive across the island to recover it.": "같은 지역에서 육로 대안을 마련하세요. 칼리아리의 박물관과 구시가지, 도로가 열린 날의 팔라우나 카프레라, 배 없이 둘러보는 오로세이와 칼라 고노네를 고를 수 있습니다. 해안이나 산 입구가 닫혀도 섬을 가로질러 만회하지 마세요.",
+    "Base one quadrant at a time and make the port or trail return explicit.": "한 번에 섬의 한 구역을 계획하고 항구나 등산로에서 돌아오는 길을 명확히 하세요.",
+    "Mistral and local wind can change boats and exposed beaches; summer visitor limits, fire restrictions and heat can change access. High mountain routes need their own weather and daylight checks. Reopen ARST, park, municipality and operator notices on the actual date; no seat, landing or permit is guaranteed.": "미스트랄과 지역 풍향은 배편과 노출된 해변에 영향을 줍니다. 여름 인원 제한, 산불 규정, 더위도 접근에 영향을 줄 수 있습니다. 높은 산길은 날씨와 일조를 따로 확인하세요. 실제 날짜의 ARST, 공원, 지자체, 운영사 공지를 다시 보고 좌석, 상륙, 허가를 보장하지 마세요.",
+    "Cagliari station → Marina → Castello via the verified lift or uphill street → cathedral quarter and Cittadella dei Musei → descend to the station. Keep Poetto or Barumini as separate routes.": "칼리아리 역 → 마리나 → 확인된 엘리베이터나 오르막길로 카스텔로 → 대성당 지구와 시립 박물관 → 역으로 내려옵니다. 포에토나 바루미니는 별도 일정으로 두세요.",
+    "Palau port → scheduled passenger or vehicle ferry → La Maddalena town → choose one island road or Caprera bridge route → return to the correct public ferry pier. A sightseeing boat uses its own check-in and landing plan.": "팔라우 항구 → 정기 여객선이나 차량 페리 → 라 마달레나 마을 → 섬 도로 또는 카프레라 다리 경로 하나 선택 → 올바른 공공 페리 부두로 돌아옵니다. 관광선은 별도 체크인과 상륙 방식이 있습니다.",
+    "Name the port, Baunei trailhead or inland municipality before leaving. Complete one official route, carry the required water and follow its signed turnaround; return to the same gateway before sea, heat or daylight limits close.": "출발 전에 항구, 바우네이 등산로 입구, 내륙 마을을 정하세요. 공식 경로 하나를 걷고 물을 챙기며 표지에 맞춰 돌아서고, 바다·더위·해 질 녘 한계 전에 같은 거점으로 돌아오세요."
+  }
+}

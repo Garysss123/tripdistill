@@ -424,9 +424,9 @@ try {
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 501, 'the inventory counts used assets without independent source-page checks across the merged UK, France, Malaysia and Switzerland scope');
-  assert.equal(report.counts.sourcePageChecked, 272, 'the inventory counts checked source pages across the merged UK, France, Malaysia and Switzerland scope');
-  assert.equal(report.counts.assetsVisuallyReviewed, 189, 'the inventory counts current visual reviews across merged UK, France, Malaysia and Switzerland routes');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 503, 'the combined inventory retains the exact count of used assets without independent source-page checks');
+  assert.equal(report.counts.sourcePageChecked, 272, 'the combined inventory retains the exact source-page checked count');
+  assert.equal(report.counts.assetsVisuallyReviewed, 189, 'the combined inventory retains the exact current visual-review count');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -641,8 +641,8 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 19, 'inventory counts the original UK, France, Malaysia and Switzerland diagrams plus existing artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 493, 'source-page declarations across the merged UK, France, Malaysia and Switzerland checks do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 21, 'the combined inventory retains the original UK, France, Italy, Malaysia and Switzerland diagrams plus existing artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 493, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -780,8 +780,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 4, 'the Melaka, UK19 and Vimy source photos with unresolved rights or attribution issues must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 808, 'the France, UK, Malaysia and Switzerland original diagrams remain included while all four retained rights-review photos stay excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 6, 'the Melaka, UK19, Vimy and Emilia-Romagna source photos with unresolved rights or attribution issues are excluded from dist');
+  assert.equal(report.counts.expectedBuildImageCount, 808, 'the France, UK, Italy, Malaysia and Switzerland original diagrams remain included while all six retained rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

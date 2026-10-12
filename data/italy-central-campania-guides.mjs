@@ -471,19 +471,27 @@ export const italyCentralCampaniaClusters = [
     slug: 'sorrento-amalfi-capri',
     name: 'Sorrento, Amalfi Coast & Capri',
     region: 'Campania',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     band: 'south-volcano-coast',
     family: 'tyrrhenian-return-manifest',
     label: 'Campania · coastal folio 03',
     tagline: 'Choose the base, the vessel or road spine and the final return before the celebrated view.',
-    hubIntro: 'Sorrento, the Amalfi Coast and Capri sit close on a map but operate through different rail, bus, road and marine systems. A credible plan chooses Sorrento, Salerno or a coast village as the base, names the port or bus stop and keeps one complete land-side alternative for rough sea or road disruption.',
-    stay: 'Three to five nights gives room for one peninsula day, one coast route and one island window without making every evening a transfer. Sorrento works well for Naples rail and Capri boats; Salerno is strong for the eastern coast; a village stay reduces sightseeing transfers but complicates luggage and departure-day reliability.',
-    transfer: 'EAV rail reaches Sorrento, mainline rail reaches Salerno, coast buses use named stops and ferries use specific ports with seasonal schedules. Marina Piccola, Sorrento’s centre and the rail station have a real height gap. Build every route from the final return backward.',
-    season: 'Marine service, heat, cliff paths and road congestion are strongly seasonal. Summer adds frequency but also full vessels, queues and road pressure; winter can remove routes entirely. Sea state and fire or path controls can override a sunny forecast.',
-    fallback: 'Keep a complete land day in the base: Sorrento’s historic centre, Salerno and its collections, or one coast town reached by the most reliable current road service. A cancelled boat is not permission to improvise a multi-town taxi chase.',
+    hubIntro: 'Sorrento, the Amalfi Coast and Capri sit close on a map but operate through different rail, bus, road and marine systems. A credible plan chooses Sorrento, Salerno or a coast village as the base, names the port or bus stop and keeps one complete land-side alternative for rough sea or road disruption. Sorrento is the Naples-and-Capri anchor; Salerno links mainline rail with the eastern coast; Amalfi puts the cathedral town and Ravello road connection at the centre but adds stairs and luggage handling. Choose the nights first, then build each day around one verified outward-and-return spine.',
+    stay: 'Three nights: keep one Sorrento room near Piazza Tasso or the Circumvesuviana station and give the days separate jobs—Sorrento or the peninsula, the coast, and Capri if a direct sailing is operating. Four nights can stay in Sorrento with a weather or arrival buffer, or split two Sorrento nights and two Salerno nights when Capri and the eastern coast both matter. Five nights can support three Sorrento nights plus two in Salerno or Amalfi: Salerno favors mainline rail and the eastern bus corridor; Amalfi favors an early coast start but requires a realistic plan for stairs and bags. Avoid a one-night sequence through Positano, Amalfi and Ravello.',
+    transfer: 'From Napoli Centrale, use the EAV Circumvesuviana from Napoli Garibaldi to Sorrento; it is a separate local railway, not the high-speed train. The Sorrento station is above the centre, while Marina Piccola is below it; choose the current lift, bus, road or stair access before carrying luggage downhill. Capri boats use Marina Piccola in Sorrento and Marina Grande on Capri, but the exact operator and seasonal departure must be confirmed. On the coast, SITA Sud serves named road stops and its 5110 route links Amalfi, Ravello and Scala when operating; Travelmar uses separate passenger-ferry piers. Save the return from the same town and port before buying an outward ticket.',
+    season: 'Coast ferries and island sailings are date- and sea-state dependent; a sunny forecast does not promise a route or landing. Summer brings heat, queues, road pressure and high demand for boats and timed interiors, so choose one town pair and check the operator before reserving the rest of the day. Shoulder and winter dates can have fewer or no marine options. SITA Sud timetables also carry route and day-type notices; recheck the exact stop, service date and return before fixing an overnight outside the rail towns. Treat path, fire and sea notices as separate gates.',
+    fallback: 'Keep one complete land day matched to the booked base: from Sorrento, walk Piazza Tasso, Via San Cesareo, the cathedral quarter and Villa Comunale without descending to the marina; from Salerno, use the old town and waterfront; from Amalfi, stay within the port-to-cathedral core and check the paper-museum opening. If a sailing is cancelled, do not replace it with a taxi chain across several villages. If the road corridor is disrupted, shorten to the town already reached and protect the rail or accommodation return.',
     sources: [
-      ['https://www.eavsrl.it/', 'EAV — official rail information for Sorrento'],
-      ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — official coast bus information'],
-      ['https://www.travelmar.it/en', 'Travelmar — official Amalfi Coast ferry information']
+      ['https://www.eavsrl.it/', 'EAV — route planning, ticket and service information'],
+      ['https://orariotreni.eavsrl.it/', 'EAV — current station departures and arrivals'],
+      ['https://www.eavsrl.it/infomobilita-ferrovia/', 'EAV — railway service notices'],
+      ['https://sitasudtrasporti.it/campania/orari/', 'SITA Sud Campania — current bus timetables and line stops'],
+      ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — tickets and service notices'],
+      ['https://www.travelmar.it/en/timetable', 'Travelmar — ferry timetables and fares'],
+      ['https://www.snav.it/en/shop-2', 'SNAV — current ferry routes and booking'],
+      ['https://www.capritourism.com/en', 'Capri Tourism — official island planning information']
     ],
     guides: [
       g({
@@ -495,7 +503,7 @@ export const italyCentralCampaniaClusters = [
         imageQuery: 'Sorrento cliffs Marina Piccola Bay of Naples',
         imageAlt: 'Sorrento’s cliffs and marina above the Bay of Naples',
         purpose: 'Decide whether the day belongs to Sorrento itself, a Massa Lubrense–Punta Campanella peninsula branch or a direct island departure, then account for the station-to-marina height change and luggage before adding distance.',
-        summary: 'Arrive by the confirmed EAV service, orient between station, old town and marina, choose the Sorrento, protected-peninsula or port layer and finish near the transport used the next morning.',
+        summary: 'Use EAV to reach Sorrento, choose the upper-town walk or the descent to Marina Piccola, and confirm the ferry return before fixing the next day’s base.',
         choices: [
           ['Sorrento base day', 'Use the old town, cliff viewpoints and marina as an arrival or reset day. It gives low transport risk but sacrifices a major coast or island excursion.'],
           ['Massa Lubrense & Punta Campanella branch', 'Use one verified bus, tour or legal road approach toward Massa Lubrense, Termini or a currently open protected-area route. It adds peninsula landscape but depends on the named return and current trail access.'],
@@ -517,11 +525,25 @@ export const italyCentralCampaniaClusters = [
         ],
         duration: 'Allow four to six hours for a complete Sorrento arrival day, or most of a day for one peninsula branch. Keep a ferry departure day lightly scheduled.',
         combine: 'Combine the old town with the marina or a single nearby land branch. Keep Capri and the full Amalfi coast line as their own days.',
-        verify: 'Check EAV rail, the current station-to-marina connection, the exact ferry port and any hotel or road access restriction before travel.',
+        verify: 'Check EAV departures and railway notices, the current station-to-marina connection, the exact ferry operator and port, and any hotel or road access restriction before travel.',
+        localPlan: {
+          title: 'A Sorrento day with one descent',
+          intro: 'Keep the station, upper town and lower marina in one deliberate loop. Do not cross the peninsula to meet a boat.',
+          stayTitle: 'Sleep near the first morning threshold',
+          stay: 'For one to three nights, choose the upper centre around Piazza Tasso for food and a walk-first morning, or the station side if an early EAV departure matters more. The lower Marina Piccola is convenient only when the hotel’s uphill access and luggage route are clear. If the next day starts with a ferry, stay close enough to reach the port without assuming the lift or shuttle will operate at your preferred time.',
+          walkTitle: 'Read the upper town before the cliff',
+          walk: 'Start at Sorrento station and walk toward Piazza Tasso; continue through Via San Cesareo to Sedil Dominova and the cathedral quarter. Follow the old lanes to the Chiostro di San Francesco, then use Villa Comunale for the cliff edge and bay view. Descend to Marina Piccola only if stairs or the currently operating lift fit the group; otherwise return to Piazza Tasso by the same upper route. This is a town loop with one optional vertical branch, not a marina-to-station shortcut.',
+          bookingTitle: 'Book the sailing; treat caves as conditional',
+          booking: 'For a Capri day, check SNAV and any other current operator from Marina Piccola to Marina Grande for the exact date, baggage rules, check-in and return port. Keep the return ticket and boarding margin visible before leaving the town. A Blue Grotto or boat circuit is a separate sea-state and queue decision; do not treat an island ferry ticket as a reservation or guarantee for it. Check the Sorrento municipality and venue pages for any local event or interior opening that changes the walk.',
+          seasonTitle: 'Shift the descent around heat and sea',
+          season: 'In hot months, walk the upper centre first and place the exposed cliff and marina branch later, only if the lift, stairs or bus access is available. Leave a separate full day for a boat rather than joining it to the arrival walk. In shoulder or winter dates, verify the sailing calendar before choosing a port-side hotel; in rain or rough sea, stay on the upper-town loop and remove the descent.'
+        },
         sources: [
           ['https://www.eavsrl.it/', 'EAV — official Sorrento rail information'],
           ['https://www.comune.sorrento.na.it/', 'Comune di Sorrento — official municipal information'],
-          ['https://www.puntacampanella.org/', 'Punta Campanella Marine Protected Area — official access information']
+          ['https://www.puntacampanella.org/', 'Punta Campanella Marine Protected Area — official access information'],
+          ['https://www.snav.it/en/shop-2', 'SNAV — ferry routes, booking and current trip conditions'],
+          ['https://www.capritourism.com/en', 'Capri Tourism — official island planning information']
         ]
       }),
       g({
@@ -533,7 +555,7 @@ export const italyCentralCampaniaClusters = [
         imageQuery: 'Amalfi Coast Positano cliff town sea panorama',
         imageAlt: 'Positano stacked above the sea on the Amalfi Coast',
         purpose: 'Choose Positano’s stair town, Amalfi plus Ravello or a limited ferry corridor as the day’s main coast argument, then protect the last road or marine return before adding another village.',
-        summary: 'Enter from Sorrento or Salerno on one verified mode, complete one town pair or bounded coast view and leave before vessel capacity, road congestion or darkness removes the return.',
+        summary: 'Choose one Positano landing or an Amalfi-to-Ravello road pair; walk from the named pier or stop, then verify the SITA Sud or Travelmar return for that date.',
         choices: [
           ['Positano depth', 'Use one landing or bus stop and accept the town’s vertical streets. It gives iconic coast scale but sacrifices Ravello and a long Amalfi interior.'],
           ['Amalfi and Ravello', 'Use Amalfi as the transport hinge and one confirmed uphill connection to Ravello. This gives cathedral and terrace contrast but not a relaxed Positano visit.'],
@@ -555,10 +577,24 @@ export const italyCentralCampaniaClusters = [
         ],
         duration: 'Allow a full day for one town pair or a coast sailing with one meaningful stop. A single town still deserves five to seven hours including transport.',
         combine: 'Combine Amalfi with Ravello or Positano with one bounded sea view. Do not add Capri or Pompeii to the same operating day.',
-        verify: 'Check SITA and Travelmar schedules, marine weather, stop or port identity, any path closure and the last return to the accommodation base.',
+        verify: 'Check SITA Sud route 5110 and its day-specific notices, Travelmar’s actual departure pier, marine weather, any path closure and the final return to the booked base.',
+        localPlan: {
+          title: 'One coast pair, one named return',
+          intro: 'Use Amalfi as the road-and-sea hinge only when the return from the chosen town is already clear.',
+          stayTitle: 'Choose the bed by tomorrow’s exit',
+          stay: 'For a day trip, Sorrento works when Naples rail or a Capri sailing is the next priority; Salerno is stronger for mainline rail and an eastern-coast start. An Amalfi night places the cathedral, ferry pier and Ravello bus nearer, but upper lodging can mean stairs with bags. Positano suits an early beach or town start only if the booked room’s actual level and arrival stop are manageable. For two nights, keep the same room rather than changing towns after a full coast day.',
+          walkTitle: 'Walk Amalfi, then decide on Ravello',
+          walk: 'From Amalfi’s passenger pier, follow the waterfront into Piazza Flavio Gioia and Piazza Duomo; take the cathedral steps only if the interior visit fits the day, then walk the level lanes toward the Paper Museum if it is open. For a second layer, use the confirmed SITA Sud 5110 bus from Amalfi to Ravello, then walk from the stop through Piazza Duomo toward Villa Rufolo; treat Villa Cimbrone as a farther uphill extension, not an automatic add-on. Return by the checked bus to Amalfi or use one Positano landing as a separate day instead of compressing three towns.',
+          bookingTitle: 'Match each ticket to its terminal',
+          booking: 'Before buying a Travelmar sailing, confirm that the departure is from the pier beside the town you plan to visit and that the return still reaches your accommodation base. For the road option, check SITA Sud’s 5110 line, stop sequence, valid service date and notices; a route listing is not a promise of a particular departure. Check current cathedral, garden and museum access separately. Never build a timed ferry-to-bus transfer on two independently changing tickets.',
+          seasonTitle: 'Make heat, sea and road a three-way gate',
+          season: 'In summer, start the town walk early and choose ferry or bus as the main spine; do not add a cliff path at midday without checking its status and shade. Shoulder and winter service can differ from the summer pattern, and sea state can remove a sailing after a land plan is fixed. If ferries stop, choose Amalfi plus the verified Ravello bus or one road-served town only. If the road is congested or disrupted, stay in the town already reached and protect the return.'
+        },
         sources: [
-          ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — official bus information'],
-          ['https://www.travelmar.it/en', 'Travelmar — official Amalfi Coast ferry information']
+          ['https://sitasudtrasporti.it/campania/orari/', 'SITA Sud Campania — current route timetables and stops'],
+          ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — tickets and service notices'],
+          ['https://www.travelmar.it/en/timetable', 'Travelmar — ferry timetables and fares'],
+          ['https://www.visitamalfi.info/en/', 'Visit Amalfi — official town planning information']
         ]
       }),
       g({
@@ -570,7 +606,7 @@ export const italyCentralCampaniaClusters = [
         imageQuery: 'Capri Faraglioni island coast panorama Italy',
         imageAlt: 'Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea',
         purpose: 'Choose Capri town and Villa Jovis, Anacapri and Monte Solaro or a marine circuit as the island’s primary line, then fit funicular, bus and boat products around the last mainland return.',
-        summary: 'Land at Marina Grande, move once to the chosen island half, complete one cultural or landscape sequence and return to the port before the sailing queue controls the evening.',
+        summary: 'From Marina Piccola, choose Capri town or Anacapri, verify SNAV and island transport for the date, and return to Marina Grande with boarding margin.',
         choices: [
           ['Capri town and Villa Jovis', 'Use the funicular or bus for the upper town and a bounded historical walk. It gives Roman and civic context but sacrifices Anacapri depth.'],
           ['Anacapri and Monte Solaro', 'Move directly to Anacapri for the chairlift or town layer. It offers elevation and quieter streets but less Capri-town time.'],
@@ -592,10 +628,23 @@ export const italyCentralCampaniaClusters = [
         ],
         duration: 'Allow a full day from the mainland for one island half plus a secondary stop. An overnight stay supports both halves without making the last sailing the central anxiety.',
         combine: 'Combine Capri town with one villa, or Anacapri with Monte Solaro when operating. Keep the Amalfi Coast and Pompeii for other days.',
-        verify: 'Check the exact mainland port, ferry operator and check-in, island transport status, official cultural-site openings and marine conditions before departure.',
+        verify: 'Check SNAV or the operating ferry company for the exact Marina Piccola–Marina Grande date and return, then verify the island bus, funicular, lift and cultural-site notices.',
+        localPlan: {
+          title: 'One island half, one mainland return',
+          intro: 'Decide whether Capri town or Anacapri is the main ascent before joining the Marina Grande queues.',
+          stayTitle: 'Use a base that survives a late boat',
+          stay: 'With one Capri day, stay in Sorrento near the upper station or Piazza Tasso if the EAV arrival and the next mainland rail day matter; budget the separate descent to Marina Piccola. An overnight on Capri earns a second day for the other island half and removes the last-sailing pressure, but choose lodging only after checking its stair or bus access from the port. A Salerno base is less direct for this route, so confirm the specific operator and departure pier before booking around it.',
+          walkTitle: 'Choose Capri town or Anacapri, not both at full depth',
+          walk: 'From Marina Grande, use the currently operating funicular or a checked bus to Capri town. Walk the Piazzetta and Via Camerelle, then continue toward the Gardens of Augustus only if open; return by the same upper connection with time for the port queue. For Anacapri, take the confirmed island bus to Piazza Vittoria, choose Villa San Michele or the Monte Solaro chairlift, and retrace to the bus for Marina Grande. These are alternative uphill lines; do not promise time for both plus a Blue Grotto queue.',
+          bookingTitle: 'Protect the return before the viewpoint',
+          booking: 'Check the SNAV sailing or the operator serving Sorrento Marina Piccola to Capri Marina Grande on the exact date, including return, check-in, baggage and any separate ticket condition. If the intended return is full or seasonal service is absent, change the day before leaving Sorrento. Confirm the funicular and island-bus notices and the official opening or booking conditions for the chosen site. Blue Grotto entry and around-island circuits remain separate, weather-sensitive activities.',
+          seasonTitle: 'Let marine operation set the island day',
+          season: 'During busy warm-weather dates, select one town-half route and verify the boat before reserving other activities; queues can form at the port and at the island’s small uphill services. Shoulder and winter schedules may reduce direct sailings, so do not assume the coast route shown for summer will run. If rough sea cancels the crossing, move the island day rather than replacing it with an improvised bus-and-taxi chain; if upper services stop, stay around Marina Grande and the accessible lower town.'
+        },
         sources: [
           ['https://www.capritourism.com/en', 'Capri official tourism — island planning information'],
-          ['https://museicapri.cultura.gov.it/', 'Musei e Parchi Archeologici di Capri — official sites']
+          ['https://museicapri.cultura.gov.it/', 'Musei e Parchi Archeologici di Capri — official sites'],
+          ['https://www.snav.it/en/shop-2', 'SNAV — ferry routes, booking and current trip conditions']
         ]
       })
     ]
@@ -809,20 +858,29 @@ export const italyCentralCampaniaClusters = [
   c({
     slug: 'siena-southern-tuscany',
     name: 'Siena, Val d’Orcia & Maremma',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     region: 'Tuscany',
     band: 'central-art-cities',
     family: 'hill-town-last-mile-folio',
     label: 'Tuscany · hill-country folio 05',
-    tagline: 'Name the hill-town gate, rural corridor and return before the road becomes the itinerary.',
-    hubIntro: 'Siena is a bus-and-walking city whose rail station sits below the historic core; Val d’Orcia and Maremma depend on sparse buses, deliberate road routes or booked excursions. A useful southern Tuscany plan chooses one town corridor or protected landscape per day and treats ZTL boundaries, heat and Sunday service as core decisions.',
-    stay: 'Two to four nights in Siena supports a complete civic day and one rural branch. A Val d’Orcia village stay reduces repeated outbound travel but makes arrival, meals and car-free movement less flexible; Grosseto is a stronger rail base for Maremma than Siena. Moving hotels only helps when the landscape system truly changes.',
-    transfer: 'Siena rail station, Piazza Gramsci buses and escalator approaches enter the city at different levels. Val d’Orcia towns do not share one station, while Maremma park access begins at named visitor centres and seasonal shuttles. Save the last return and legal parking threshold first.',
-    season: 'Summer heat, Palio periods, harvest traffic, fire risk and seasonal park services alter capacity and route length. Rain makes stone streets and country paths slower. Keep Siena or Grosseto collections as the stable fallback.',
-    fallback: 'Use a complete rail- or bus-served city day when the countryside chain fails: Siena museums and cathedral, Grosseto walls and collections, or the first selected town without the second rural stop.',
+    tagline: 'Set the night base, rural corridor and return before treating southern Tuscany as one day trip.',
+    hubIntro: 'Siena, Val d’Orcia and the Maremma are three different operating systems: a steep, walkable city; a group of hill towns reached by specific rural bus lines or road; and a protected park reached through Grosseto, Alberese and a conditional last mile. Choose one countryside branch per day, name the outward and return legs, and keep a full Siena day available when the rural chain does not fit.',
+    stay: 'Two nights in Siena gives you one full civic day plus arrival or departure; it does not cover both countryside regions. Three nights works as a Siena base for one rural day and a spare city or weather day. Four nights can support two nights in Siena plus one or two around the chosen rural system: Pienza or Montalcino only when the bus and evening plan work, or Grosseto/Alberese for a park-led stay. If you want just one day out, remain in Siena: lodging near Campo or Piazza Gramsci favors walking and bus starts, while a station-side room helps an early rail departure but adds the climb back to the upper city.',
+    transfer: 'Visit Siena places the railway station about 2 km from the centre and lists city buses as an alternative to the uphill walk. For Val d’Orcia, Autolinee Toscane line 112 runs on the Siena–Buonconvento–Pienza–Montepulciano corridor; line 114 follows Siena–Buonconvento–Torrenieri–Montalcino. Pick one line and check its direction, date and return rather than combining both towns by assumption. For the park, the official chain is Trenitalia to Grosseto, then an Autolinee Toscane bus to Alberese Visitor Centre; Pinottolai and Marina di Alberese are a separate park access leg.',
+    season: 'Palio and other event periods can tighten Siena lodging and alter street access, so check the official city calendar before choosing dates. Summer heat and fire-risk rules can restrict Maremma paths or change guided access; the park’s transport page still exposes 2025 seasonal shuttle dates, so verify the current season instead of reusing that timetable. Val d’Orcia has little shade on open approaches, while rain slows Siena’s stone slopes and rural paths. Reserve a producer, controlled interior or park activity only after the transport shape is clear.',
+    fallback: 'When a 112/114 return does not fit, keep the day in Siena: Piazza del Campo, one chosen civic or cathedral interior, then the Via di Città/Banchi di Sopra street loop. If the park path or shuttle is unavailable, make Grosseto a complete walls-and-museum day only if you are already based there; do not add it after a fragile Siena-to-park transfer. In Pienza or Montalcino, stay in the first town and drop the second stop.',
     sources: [
-      ['https://www.visitsiena.it/en/', 'Visit Siena — official visitor information'],
-      ['https://www.visittuscany.com/en/areas/maremma/', 'Visit Tuscany — official Maremma information'],
-      ['https://www.at-bus.it/en', 'Autolinee Toscane — official regional bus information']
+      ['https://www.visitsiena.it/en/siena-tourist-information/', 'Visit Siena — walking, city transport and rail-station access'],
+      ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-112', 'Autolinee Toscane — line 112: Siena, Buonconvento and Pienza corridor'],
+      ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-114', 'Autolinee Toscane — line 114: Siena, Buonconvento, Torrenieri and Montalcino'],
+      ['https://www.trenitalia.com/en.html', 'Trenitalia — date-specific rail planner'],
+      ['https://operaduomo.siena.it/en/', 'Opera della Metropolitana — cathedral complex, access and current opening notices'],
+      ['https://parco-maremma.it/en/visit/how-to-reach-us/', 'Maremma Park — rail, bus and seasonal shuttle access'],
+      ['https://parco-maremma.it/en/visiting-rules/', 'Maremma Park — trail access and seasonal visiting rules'],
+      ['https://parco-maremma.it/en/itineraries/walks/', 'Maremma Park — official walking itineraries and route grades'],
+      ['https://www.visittuscany.com/en/towns-and-villages/pienza/', 'Visit Tuscany — Pienza’s central monuments and walking context']
     ],
     guides: [
       g({
@@ -833,33 +891,51 @@ export const italyCentralCampaniaClusters = [
         structure: 'living-sacred-threshold',
         imageQuery: 'Siena Piazza del Campo cathedral skyline panorama',
         imageAlt: 'Medieval palaces surrounding Siena’s Piazza del Campo',
-        purpose: 'Choose the civic museum and tower, the cathedral complex or the contrada street layers as the main argument, then enter Siena through the transport and escalator threshold that fits the first door.',
-        summary: 'Climb from the rail or bus arrival into one civic or sacred layer, complete a single ordered centre circuit and leave through the access system nearest the return.',
+        purpose: 'Build one upper-city walk from Piazza Gramsci or the signed station lift/bus connection to Piazza del Campo, Via di Città and the Duomo precinct; choose the Museo Civico/Torre del Mangia, the cathedral complex or public contrada streets as the one deep layer.',
+        summary: 'Use Siena’s 2 km station-to-centre gap as a transfer decision, not an assumed stroll: reach the upper city, walk from Banchi di Sopra to Campo and Via di Città, visit one interior, then return by the bus, lift or rail approach that fits your departure.',
+        localPlan: {
+          title: 'One upper-city loop, one interior anchor',
+          intro: 'Keep this route on Siena’s central ridge: solve the lower-station climb first, then join the Campo and Duomo streets without doubling back across the city.',
+          stayTitle: 'Sleep for the first walk, not the photo',
+          stay: 'For a two-night Siena stay, choose the historic centre around Campo/Banchi di Sopra if you want the first walk to begin on foot; choose the station side only when a rail arrival or departure outweighs the uphill return. Piazza Gramsci is useful for bus arrival, but a room near it still needs a station plan. Add a third Siena night if the next day is a Val d’Orcia or Maremma outing.',
+          walkTitle: 'Walk from Banchi di Sopra to the Duomo ridge',
+          walk: 'Start at Piazza Gramsci or the upper-centre stop that serves your first door. Follow Via Banchi di Sopra to Piazza del Campo, pause before choosing an interior, then continue by Via di Città toward the Duomo and Santa Maria della Scala. Return through the Campo/Banchi di Sopra axis; do not add the lower railway station on foot unless the slope and time suit you.',
+          bookingTitle: 'Choose the civic tower or the connected cathedral complex',
+          booking: 'The Opera della Metropolitana describes one cathedral-complex ticket covering several connected spaces, but worship, floor displays, access and last entry change by date. Check its current visit page before choosing that long block. If you prefer the civic story, verify Museo Civico and Torre del Mangia access separately; leave the other interior for another visit.',
+          seasonTitle: 'Move the walk around event and weather gates',
+          season: 'Palio and city-event dates can change access and crowd movement around Campo. In summer, start the exposed street circuit earlier; in rain, the stone slopes and steps slow the return. The Opera’s current access notes distinguish the Cathedral ramp from Museum, Crypt and Baptistery access, so confirm the exact spaces for limited mobility.'
+        },
         choices: [
-          ['Civic Siena', 'Use Piazza del Campo, Museo Civico and the tower if operating as the main block. It gives political and urban history but limits cathedral depth.'],
-          ['Cathedral complex', 'Choose the current cathedral product and give its connected spaces protected time. It offers sacred art and architecture but less contrada wandering.'],
-          ['Contrada street circuit', 'Keep major interiors limited and read fountains, streets and neighborhood boundaries respectfully. It gives living-city context but fewer headline interiors.']
+          ['Campo and civic government', 'Anchor the day on Piazza del Campo, Palazzo Pubblico/Museo Civico and the Torre del Mangia if current access allows. This gives the strongest civic reading but leaves less time for the cathedral complex.'],
+          ['Duomo and connected rooms', 'Use the Opera della Metropolitana’s current cathedral-complex access information and protect one long visit block. It adds the cathedral, library and associated museum spaces but limits the contrada street walk.'],
+          ['Contrada streets without a tower climb', 'Follow the public Campo–Via di Città–Fontebranda edge and read the districts as lived neighborhoods. This lowers the interior load but gives up the tower and deeper collections.']
         ],
-        access: 'Piazza Gramsci buses arrive near the upper centre; the railway station lies below and connects through local transport and escalator systems. ZTL limits road access. Decide the first gate and the final descent rather than navigating to Piazza del Campo alone.',
-        tradeoff: 'The tower, civic museum and cathedral complex can each occupy the best part of a day. Choosing one gives up another interior but creates time to understand streets and contrade without treating a living neighborhood as festival scenery.',
+        access: 'Visit Siena lists the railway station about 2 km from the historic centre and points visitors to Autolinee Toscane for local buses. Choose the station lift/bus approach or start at Piazza Gramsci; the upper city is hilly and the ZTL is not a drop-off plan. Continue on foot from Campo to Via di Città and the Duomo, then retrace toward the return stop.',
+        tradeoff: 'The civic tower, Museo Civico and cathedral complex each deserve a separate protected block. Choosing one gives up another interior but leaves enough attention for the Campo, Via di Città and neighborhood streets. Religious services, crowds and resident routines take priority over a checklist.',
         stages: [
-          ['Enter through the useful level', 'Use the bus stop, escalator or legal parking boundary that serves the first reserved door.'],
-          ['Complete civic or sacred depth', 'Give the selected museum, tower or cathedral product the long block and respect worship or capacity controls.'],
-          ['Read one contrada line', 'Follow a bounded street sequence with public-space conduct rather than chasing every emblem.'],
-          ['Descend toward the return', 'Leave through the transport threshold serving the station or bus before hill fatigue controls the evening.']
+          ['Choose the arrival level', 'Use Trenitalia to Siena station and check the current urban bus/lift link, or arrive directly at the upper-city bus area around Piazza Gramsci.'],
+          ['Walk Banchi di Sopra to Campo', 'Follow the named main street into Piazza del Campo; pause here before committing to a second uphill interior.'],
+          ['Continue by Via di Città to one door', 'Choose Museo Civico/Torre del Mangia or the Opera cathedral complex, then keep the other interior for a separate day.'],
+          ['Return on the same transport spine', 'Use the current bus/lift connection to the lower station or the upper bus stop; check service and slope before fixing a train.']
         ],
-        fallback: 'If tower access closes for wind or capacity, retain the civic museum and Campo. If cathedral access changes, use the civic layer and a respectful street circuit without substituting another distant sacred site.',
+        fallback: 'If a tower or cathedral space closes or conflicts with worship, keep the Campo–Via di Città street circuit and choose whichever nearby civic or museum interior is open. For rain, shorten the outer walk and use Santa Maria della Scala or the confirmed interior rather than adding a distant site.',
         watch: [
-          ['Event periods rewrite movement', 'Palio and civic events can change access, capacity and resident priorities. Follow current official instructions.'],
-          ['The station is below the centre', 'The return includes a real descent and connection; leave energy and time.'],
-          ['Contrade are living communities', 'Observe public space respectfully and do not treat residents, doorways or ceremonies as an attraction set.']
+          ['The centre-to-station link is a real leg', 'The official tourism page puts the rail station about 2 km from the centre; check the lift/bus link and allow a return margin.'],
+          ['Worship, last entry and access differ by room', 'The Opera posts current opening and accessibility conditions for the Cathedral, Museum, Crypt and Baptistery; do not transfer one room’s access to the whole complex.'],
+          ['Campo events change the public route', 'Check the city calendar for Palio and other events; use current local barriers and keep contrada spaces respectful.']
         ],
-        duration: 'Allow six to eight hours for one deep interior layer plus a complete centre circuit. A lower-mobility version should prioritize the arrival level and one collection.',
-        combine: 'Combine a civic or cathedral visit with a bounded contrada route. Keep San Gimignano, Val d’Orcia and Maremma for separate days.',
-        verify: 'Check Museo Civico and tower access, the cathedral product and worship conditions, event restrictions and the current station or bus route.',
+        duration: 'Treat this as one full city day: allow time for the upper-city walk, one controlled interior, a meal break and the down-to-station or bus return. That is an editorial planning envelope, not a measured visit time.',
+        combine: 'Combine one civic or sacred interior with the Campo/Via di Città street loop. Keep San Gimignano, Val d’Orcia and the Maremma for separate days.',
+        verify: 'Check Visit Siena’s event and urban transport notices, the Opera’s current room openings/access notes or Museo Civico/Torre access, and the station bus/lift for your departure date.',
+        faq: [
+          ['Can I walk from Siena station to Piazza del Campo?', 'Visit Siena places the station about 2 km from the centre. The route climbs; check the current Autolinee Toscane city service or lift access if you do not want that uphill leg.'],
+          ['Should I visit the civic museum and the cathedral complex on one day?', 'Choose one as the long interior block, then use Campo, Via di Città and the surrounding streets for the second layer. The Opera’s connected rooms and the civic tower have separate access and current operating conditions.'],
+          ['What is the shorter city fallback?', 'Use Piazza Gramsci to Piazza del Campo to Via di Città and return along Banchi di Sopra, with one open interior. Keep the station transfer on a current bus/lift plan.']
+        ],
         sources: [
-          ['https://www.visitsiena.it/en/', 'Visit Siena — official city planning'],
-          ['https://museocivico.comune.siena.it/organizza-la-tua-visita', 'Museo Civico Siena — official visit information']
+          ['https://www.visitsiena.it/en/siena-tourist-information/', 'Visit Siena — walking, city transport and rail-station access'],
+          ['https://operaduomo.siena.it/en/', 'Opera della Metropolitana — cathedral rooms, access and current openings'],
+          ['https://museocivico.comune.siena.it/organizza-la-tua-visita', 'Museo Civico Siena — current visit information']
         ]
       }),
       g({
@@ -870,33 +946,52 @@ export const italyCentralCampaniaClusters = [
         structure: 'ztl-threshold-ring',
         imageQuery: 'Val d Orcia Pienza Tuscany rolling hills road',
         imageAlt: 'Rolling hills and stone towns in Val d’Orcia, Tuscany',
-        purpose: 'Choose the Pienza–San Quirico corridor, Montalcino or Bagno Vignoni as one workable town line, then define the bus, booked tour, bicycle or legal road threshold instead of treating the valley as a single station.',
-        summary: 'Enter one town through its actual stop or parking boundary, connect at most one second place on a confirmed corridor and return before sparse service or darkness removes the options.',
+        purpose: 'Choose the Pienza/San Quirico bus corridor on Autolinee Toscane line 112, the Montalcino approach on line 114 via Torrenieri, or one booked road-based visit; each has a different last mile and return.',
+        summary: 'Use line 112 for a Pienza-centered day or line 114 for Montalcino via Buonconvento and Torrenieri; walk one town in depth, verify the matching return, and add a second place only when the exact date’s service supports it.',
+        localPlan: {
+          title: 'One town corridor, one return ticket',
+          intro: 'Pienza and Montalcino are not one compact stop. Treat the bus line, legal parking edge and booked tasting as separate decisions, then walk the chosen town rather than touring the whole valley by checklist.',
+          stayTitle: 'Keep Siena as the base for one day out',
+          stay: 'For one Val d’Orcia day, two or three nights in Siena avoids an unnecessary hotel move and keeps the station/bus gateway familiar. If you want a slow town evening or an early booked producer visit, add a Pienza or Montalcino night only after confirming the last bus, dinner and luggage transfer. Rural agriturismi may need a car or prearranged ride even when the town itself is walkable.',
+          walkTitle: 'Walk Pienza’s central square and edge viewpoints',
+          walk: 'On line 112, use the stop currently shown for Pienza, then walk through Piazza Pio II to the Cathedral of the Assunta, Palazzo Piccolomini and Palazzo Comunale. Choose one interior, continue along the historic centre’s outer edge/viewpoint path if it is open, and return to the same named stop. Do not add San Quirico or a winery until the bus map and return make the second leg real.',
+          bookingTitle: 'Confirm the bus before the cellar',
+          booking: 'The current Autolinee Toscane pages identify line 112 on the Siena–Buonconvento–Pienza–Montepulciano corridor and line 114 through Torrenieri toward Montalcino. Open the correct direction and date, then set any tasting or museum booking around that window. The operator’s current notices include service changes; no departure or fare is guaranteed here.',
+          seasonTitle: 'Treat heat, harvest and Sunday as itinerary inputs',
+          season: 'Open slopes and exposed town edges are tiring in summer heat, while rain makes stone lanes and rural shoulders slower. Autumn winery visits may need earlier booking. Bus calendars can distinguish school, weekday, holiday and seasonal service; if the required return is absent, make one town the whole day.'
+        },
         choices: [
-          ['Pienza and San Quirico', 'Use two connected town centres only when the day’s bus, tour or road sequence is confirmed. This gives classic valley contrast but little winery depth.'],
-          ['Montalcino focus', 'Give the fortress town, civic context and one booked producer the full day. It sacrifices wider valley sampling but reduces road churn.'],
-          ['Bagno Vignoni and landscape', 'Use the thermal-village setting and one bounded walk or nearby town. It provides a slower route but depends on a precise last mile.']
+          ['Pienza by line 112', 'Choose the Renaissance square, cathedral and one interior; add the outer viewpoint walk if access and weather suit. It has a named operator corridor but not an automatic second-town connection.'],
+          ['Montalcino by line 114', 'Use the Siena–Buonconvento–Torrenieri–Montalcino route for the fortress town and one booked producer. This sacrifices broad valley sampling and depends on the date’s bus return.'],
+          ['San Quirico or a producer by road', 'Use a booked driver/tour or a verified line 112 stop only after you have the return. This can fit a second village or tasting but is not a reason to drive into a ZTL or assume a winery transfer.']
         ],
-        access: 'Val d’Orcia has no single rail arrival. Buses vary by day and season; Sunday patterns can be sparse. Drivers must respect ZTL boundaries and use legal lots outside historic centres. A winery reservation does not supply transport unless explicitly stated.',
-        tradeoff: 'A broad scenic loop creates more windshield time than town depth. Choosing one corridor gives up several famous viewpoints but leaves time for streets, a meal and a safe return without illegal centre access.',
+        access: 'There is no single Val d’Orcia rail station. Autolinee Toscane’s current line pages show 112 from Siena via Buonconvento to Pienza and onward toward Montepulciano, and 114 via Buonconvento/Torrenieri to Montalcino. A car needs a legal lot outside each ZTL; a tasting reservation does not include transport unless the provider says so.',
+        tradeoff: 'Trying to join Pienza, San Quirico, Montalcino and a tasting in one loop spends the day waiting or driving between hill towns. Give up the second town and use the saved time for Piazza Pio II, one interior, a meal and a confirmed return.',
         stages: [
-          ['Choose the corridor, not the list', 'Select one or two places sharing a confirmed bus, tour or road line and save the final return.'],
-          ['Stop outside the legal threshold', 'Use the named bus stop or parking area and walk through the town gate.'],
-          ['Give one town the long block', 'Use streets, civic evidence, a meal and any booked producer without rushing to the next hill.'],
-          ['Leave before rural options narrow', 'Return to Siena, the rail gateway or the valley base with daylight and service margin.']
+          ['Choose line 112 or 114', 'Use 112 for the Pienza/San Quirico corridor or 114 for Montalcino via Torrenieri; confirm direction and date on the operator page.'],
+          ['Arrive at the town, not the region pin', 'Use the named Pienza or Montalcino stop from the current line map, or park legally outside the centre’s ZTL.'],
+          ['Walk one compact centre in sequence', 'For Pienza, connect Piazza Pio II, the cathedral/Palazzo Piccolomini choice and the historic edge path before a meal.'],
+          ['Return on the same verified corridor', 'Keep the named bus stop, legal lot and outbound route together; do not depend on an unconfirmed last rural connection.']
         ],
-        fallback: 'If a connection or producer booking fails, remain in the first town and add its civic museum, fortress, signed walk or meal. Do not drive into a ZTL or hire an unverified transfer to preserve the checklist.',
+        fallback: 'If line 112/114, a transfer or a producer visit no longer fits, keep Pienza or Montalcino as the single-town day and use a confirmed local interior or meal. If the return itself is uncertain, return to Siena and use the Siena civic walk rather than relying on an unverified ride.',
         watch: [
-          ['Sunday changes the network', 'A weekday timetable is not evidence for a Sunday or seasonal return. Check the actual travel date.'],
-          ['ZTL cameras enforce the boundary', 'Historic-centre access can be restricted even when navigation suggests the road. Use legal parking and signed entrances.'],
-          ['Wine and driving conflict', 'Use a driver, tour or restrained tasting plan; a producer visit is not permission to ignore the return.']
+          ['Line numbers do not promise a departure', 'The live line 112 and 114 pages carry day-specific schedules and notices. Recheck the outward and return for the actual date.'],
+          ['Town centres have a vehicle edge', 'Follow the posted ZTL and lot signs; a navigation pin at the piazza is not permission to drive inside.'],
+          ['A tasting is a separate booking', 'Ask the producer how guests reach the property and return; do not combine alcohol and a drive.']
         ],
-        duration: 'Allow a full day for one valley corridor from Siena. An overnight town stay supports a slower second place without relying on the last outbound bus.',
-        combine: 'Combine only towns on the same verified line or one booked producer near the chosen base. Keep Maremma and Florence separate.',
-        verify: 'Check Autolinee Toscane for the exact date, town ZTL and parking information, any producer booking and weather or daylight for the chosen walk.',
+        duration: 'Protect one full day for a single town corridor from Siena, including the bus or car leg, walking loop, interior/meal and return. The allowance is editorial; actual journey and visit length depend on the date and bookings.',
+        combine: 'Combine Pienza with San Quirico only when line 112 or a booked road plan confirms both directions. Keep Montalcino and the Maremma for separate days.',
+        verify: 'Check Autolinee Toscane lines 112/114 for the date and direction, the town ZTL/parking boundary, any interior or producer booking, and daylight/weather for the edge walk.',
+        faq: [
+          ['Can I visit Pienza and Montalcino by bus on the same day?', 'The official operator lists them on different corridors: line 112 for Pienza and line 114 via Torrenieri for Montalcino. Do not plan both until the exact-date map and return connections support that combination.'],
+          ['Where should I sleep for one Val d’Orcia day?', 'Stay in Siena if this is one rural day in a city-focused trip. Sleep in Pienza or Montalcino only when your last-mile arrival, meal and next morning transport are arranged.'],
+          ['What should I do if my rural bus return does not fit?', 'Keep the first town as the complete day and remove the second stop. If even that return is not usable, stay in Siena and use its centre walk rather than inventing a transfer.']
+        ],
         sources: [
-          ['https://en.visitvaldorcia.it/', 'Visit Val d’Orcia — official destination information'],
-          ['https://www.at-bus.it/en', 'Autolinee Toscane — official regional bus information']
+          ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-112', 'Autolinee Toscane — line 112 to the Pienza corridor'],
+          ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-114', 'Autolinee Toscane — line 114 to Montalcino via Torrenieri'],
+          ['https://www.visittuscany.com/en/towns-and-villages/pienza/', 'Visit Tuscany — Pienza’s central monuments and walking context'],
+          ['https://en.visitvaldorcia.it/', 'Visit Val d’Orcia — regional destination information']
         ]
       }),
       g({
@@ -907,33 +1002,54 @@ export const italyCentralCampaniaClusters = [
         structure: 'coast-capacity-braid',
         imageQuery: 'Maremma natural park Tuscany coast Uccellina',
         imageAlt: 'Mediterranean coast and wild landscape in Maremma Natural Park',
-        purpose: 'Choose an Alberese park route, Grosseto cultural day or bounded coast segment, then make the visitor centre, seasonal shuttle, heat and fire status the actual gate rather than assuming every beach and trail is open.',
-        summary: 'Arrive through Grosseto or Alberese, confirm one official route, complete the signed landscape and return before heat, shuttle gaps or dusk complicate the coast.',
+        purpose: 'Separate the rail arrival at Grosseto, bus to the Alberese Visitor Centre, park access at Pinottolai and the signed walk; choose the easy 5.6 km A7 Bocca d’Ombrone or a longer coast route only if the current access gate is open.',
+        summary: 'Use Trenitalia to Grosseto and the operator-confirmed bus to Alberese; then verify current Pinottolai/park access before selecting one signed route such as A7 Bocca d’Ombrone. The 2025 shuttle timetable is not a 2026 promise.',
+        localPlan: {
+          title: 'A park day with a named rail and trail gate',
+          intro: 'Grosseto, Alberese, Pinottolai and Marina di Alberese are separate stops. Build the day around the park’s current route and access notice, not the beach image or a stale shuttle table.',
+          stayTitle: 'Use Grosseto for rail, Alberese for the park',
+          stay: 'For a rail-led visit, one or two nights in Grosseto keeps the station, meals and city fallback together, but still requires a verified bus leg to Alberese. Stay in Alberese only if your accommodation confirms the final walk/ride to the Visitor Centre and the park opening/access plan. A Siena base is reasonable for a city-plus-one-rural-day trip only after the full Siena–Grosseto–Alberese–return chain checks out.',
+          walkTitle: 'Select one signed route from Pinottolai',
+          walk: 'The park’s current walking list describes A7 Bocca d’Ombrone as an easy 5.6 km route; use the official map to follow its signed course from the access point open that day. A10 Collelungo beach is listed at 11.2 km and is a longer exposed option. Do not assume either route is open or that the Visitor Centre is the trailhead; follow today’s park instructions and return on the listed access leg.',
+          bookingTitle: 'Confirm entry, guide rules and the shuttle separately',
+          booking: 'The Park’s how-to page recommends Grosseto rail station followed by bus to Alberese. Its visible shuttle table is labeled Summer/Autumn 2025, so it cannot establish a 2026 departure. Reopen the current park access and visitor notices, ask whether route entry or guided access must be arranged, then confirm the Autolinee Toscane connection and final return.',
+          seasonTitle: 'Let fire rules and heat choose the route',
+          season: 'The Park says seasonal fire regulations can change how its trails are visited and names Pinottolai for Alberese itineraries. In hotter or fire-risk conditions, do not assume that a beach or longer route is an alternative to a closed path. Choose the shortest currently open signed route, or keep the whole day in Grosseto.'
+        },
         choices: [
-          ['Alberese park route', 'Use the visitor-centre system and one official trail or shuttle product. It gives the strongest protected landscape but depends on capacity and conditions.'],
-          ['Grosseto civic day', 'Use the walls, archaeology and museums as a complete low-risk alternative. It sacrifices the coast but works without fragile rural transport.'],
-          ['Bounded coast visit', 'Choose one legal beach or shoreline access linked to the day’s transport. It provides water and landscape but less park interpretation.']
+          ['A7 Bocca d’Ombrone', 'The Park currently lists this as an easy 5.6 km walk across the Ombrone plain. It gives open-landscape interpretation, but the live access rules still control the actual start and route status.'],
+          ['A10 Collelungo beach', 'The official walking list gives 11.2 km for this longer beach route. It gives a coast-and-forest day but needs more daylight, water and a confirmed return; do not make it the heat fallback.'],
+          ['Grosseto behind the walls', 'Keep the day in the rail town for its Medici walls and museum quarter when park access or weather fails. It gives up the protected coast but removes the seasonal trailhead and shuttle leg.']
         ],
-        access: 'Grosseto is the principal rail gateway; Alberese and park routes require named buses, visitor-centre instructions, shuttles, bicycles or legal parking. Trailheads and beaches are not interchangeable. Confirm the route number and return before leaving the rail corridor.',
-        tradeoff: 'Park trails, remote beaches and Grosseto collections solve different days. Choosing one gives up a wider coast loop but protects shade, water, conservation rules and the final connection.',
+        access: 'The Park’s rail guidance says to leave the train at Grosseto and take a bus to the Alberese Visitor Centre. Its separate access page names a seasonal shuttle through Rispescia, Alberese, Pinottolai and Marina di Alberese; the displayed tables are from 2025. Verify the current bus, trail start and route status before you leave Grosseto.',
+        tradeoff: 'A7’s 5.6 km easy listing is a different effort from A10’s 11.2 km beach approach; neither makes a same-day city-and-coast circuit automatic. Choose one park route or stay behind Grosseto’s walls, protecting the final bus and the heat/fire rules.',
         stages: [
-          ['Check the park gate', 'Read route availability, fire and weather status, visitor-centre instructions and any capacity control.'],
-          ['Reach the named start', 'Use the confirmed bus, shuttle, bicycle or legal lot rather than navigating to the park name.'],
-          ['Complete one signed landscape', 'Stay on the selected trail or beach access and carry the required water and sun protection.'],
-          ['Return before heat or service gaps', 'Reach Alberese or Grosseto with margin for the final rural and rail connection.']
+          ['Reach Grosseto by rail', 'Use Trenitalia’s exact-date planner for Siena–Grosseto; do not assume a same-day connection fits until the return is visible.'],
+          ['Take the bus to Alberese Visitor Centre', 'The Park directs rail arrivals to Grosseto station and then bus to Alberese; check Autolinee Toscane’s current route/date.'],
+          ['Choose one open signed route', 'Confirm the active start at Pinottolai and current trail rules, then follow A7 or another approved route from the Park map.'],
+          ['Return through the same access chain', 'Use the live shuttle/bus plan back to Alberese and Grosseto before the final rail leg; do not treat Marina di Alberese as the Visitor Centre.']
         ],
-        fallback: 'In extreme heat, fire restrictions, rain or shuttle disruption, make Grosseto a full walls-and-museum day or use another officially open low-distance route. Never cross a closed path to preserve the coast plan.',
+        fallback: 'If the park route, fire rules or current shuttle do not fit, stay in Grosseto for a walls-and-museum day. Do not substitute an unverified beach shuttle or attempt a closed trail to save the outing.',
         watch: [
-          ['Protected routes are conditional', 'Fire risk, flooding, conservation and capacity can change which trail or beach is usable.'],
-          ['The visitor centre is not the coast', 'Allow the onward shuttle, bicycle or trail time after check-in.'],
-          ['Rural return is sparse', 'Save the final bus or shuttle and do not assume a taxi will be available at a remote trailhead.']
+          ['The visible shuttle page is dated 2025', 'Do not copy its season, stop times or parking details into a 2026 plan; ask the Park and operator for current access.'],
+          ['Visitor Centre and Pinottolai are different', 'The park page distinguishes the Alberese visitor centre from the trail departure point. Confirm the current last-mile leg.'],
+          ['A long route is not a hot-weather fallback', 'A10 Collelungo is listed at 11.2 km; if heat or fire limits the park, use the urban alternative instead.']
         ],
-        duration: 'Allow a full day for a park or coast route from Siena or Grosseto. A Grosseto cultural day can fit five to seven hours.',
-        combine: 'Combine one park route with Alberese or one Grosseto evening. Keep Val d’Orcia and distant beaches for separate days.',
-        verify: 'Check Maremma Park route and shuttle status, fire and heat conditions, Autolinee Toscane service and the exact rail return.',
+        duration: 'Protect a full day for one park walk from Grosseto, including train, bus, park access and the listed route distance. The kilometre figures are the Park’s route listings, not promised walking times; verify current route conditions and return service.',
+        combine: 'Pair one open park route with the Alberese visitor area only if the access plan allows it. Keep Grosseto’s museum/wall circuit, Val d’Orcia and a separate coast trip on different days.',
+        verify: 'Recheck the Maremma Park visiting rules, current walk map, trail/fire status and seasonal shuttle; confirm the Grosseto–Alberese Autolinee service and Trenitalia return for your actual date.',
+        faq: [
+          ['Is Alberese Visitor Centre the park trailhead?', 'No. The Park’s pages distinguish the visitor centre in Alberese from Pinottolai, named for Alberese itineraries, and from Marina di Alberese. Confirm the current access leg for the route you choose.'],
+          ['Which Maremma walk suits a shorter day?', 'The current official walking list labels A7 Bocca d’Ombrone as an easy 5.6 km route. Check that it is open and that the current transport reaches its start before using it.'],
+          ['Can I use the park’s shuttle timetable for 2026?', 'The access page we checked still labels its visible table Summer/Autumn 2025. It is not evidence of a 2026 departure; check the Park and Autolinee Toscane again.']
+        ],
         sources: [
-          ['https://parco-maremma.it/', 'Parco Regionale della Maremma — official access information'],
-          ['https://www.visittuscany.com/en/areas/maremma/', 'Visit Tuscany — official Maremma destination information']
+          ['https://parco-maremma.it/en/visit/how-to-reach-us/', 'Maremma Park — rail, bus and seasonal shuttle access'],
+          ['https://parco-maremma.it/en/visiting-rules/', 'Maremma Park — trail access and seasonal visiting rules'],
+          ['https://parco-maremma.it/en/itineraries/walks/', 'Maremma Park — A7/A10 walking routes and published lengths'],
+          ['https://www.at-bus.it/en', 'Autolinee Toscane — current regional bus planner'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — date-specific rail planner'],
+          ['https://www.visittuscany.com/en/areas/maremma/', 'Visit Tuscany — regional Maremma information']
         ]
       })
     ]

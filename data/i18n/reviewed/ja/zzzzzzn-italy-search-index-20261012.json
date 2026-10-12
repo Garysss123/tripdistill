@@ -1,0 +1,16 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/"
+  ],
+  "translations": {
+    "Milan is easier to plan as three separate route days than as a list of famous names. The Duomo and Brera occupy the central northbound walk; Santa Maria delle…": "ミラノは有名な場所を羅列するより、3つの独立したルート日に分けると計画しやすくなります。ドゥオーモとブレラは中心部から北へ歩くルート、サンタ・マリア・デッレ…",
+    "Siena, Val d’Orcia and the Maremma are three different operating systems: a steep, walkable city; a group of hill towns reached by specific rural bus lines or…": "シエナ、ヴァル・ドルチャ、マレンマは旅の移動条件が異なります。坂の多い徒歩の街、農村バスや道路で結ばれた丘の町々、…"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6.1 Codex",
+    "reviewer": "GPT-6.1 Codex; same-model self-review",
+    "independentSecondModel": false
+  }
+}

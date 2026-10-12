@@ -8,7 +8,9 @@ const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/france-lille-arras-vimy-sequence-legend.svg',
   '/assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg',
   '/assets/images/tripdistill-semporna-sipadan-permit-flow.svg',
-  '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg'
+  '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg',
+  '/assets/images/tripdistill-italy-bologna-portico-plan.svg',
+  '/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg',
 ]);
 const TERMS_PATH = '/terms-of-use/';
 

@@ -9827,7 +9827,7 @@
     "url": "/italy/",
     "parent": "Europe",
     "type": "Country",
-    "summary": "Plan Italy through twenty complete regional hubs and sixty focused guides for art cities, rail corridors, hill towns, coasts, volcanoes, mountains and islands.",
+    "summary": "Plan Italy by stable nights and transport corridors: keep timed art doors, mountain seasons and island returns in separate day plans.",
     "keywords": [
       "Italy",
       "Italia",
@@ -9951,7 +9951,7 @@
     "url": "/italy/sorrento-amalfi-capri/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Sorrento, the Amalfi Coast and Capri sit close on a map but operate through different rail, bus, road and marine systems. A credible plan chooses Sorrento, Salerno or a coast village as the base, names the port or bus stop and keeps one complete land-side alternative for rough sea or road disruption.",
+    "summary": "Sorrento, the Amalfi Coast and Capri sit close on a map but operate through different rail, bus, road and marine systems. A credible plan chooses Sorrento, Salerno or a coast village as the base, names the port or bus stop and keeps one complete land-side alternative for rough sea or road disruption. Sorrento is the Naples-and-Capri anchor; Salerno links mainline rail with the eastern coast; Amalfi puts the cathedral town and Ravello road connection at the centre but adds stairs and luggage handling. Choose the nights first, then build each day around one verified outward-and-return spine.",
     "keywords": [
       "Sorrento, Amalfi Coast & Capri",
       "Campania",
@@ -9963,7 +9963,7 @@
     "url": "/italy/sorrento-amalfi-capri/sorrento-gateway/",
     "parent": "Sorrento, Amalfi Coast & Capri",
     "type": "Local guide",
-    "summary": "Arrive by the confirmed EAV service, orient between station, old town and marina, choose the Sorrento, protected-peninsula or port layer and finish near the transport used the next morning.",
+    "summary": "Use EAV to reach Sorrento, choose the upper-town walk or the descent to Marina Piccola, and confirm the ferry return before fixing the next day’s base.",
     "keywords": [
       "Sorrento Gateway & Peninsula",
       "Sorrento, Amalfi Coast & Capri",
@@ -9977,7 +9977,7 @@
     "url": "/italy/sorrento-amalfi-capri/positano-amalfi-ravello/",
     "parent": "Sorrento, Amalfi Coast & Capri",
     "type": "Local guide",
-    "summary": "Enter from Sorrento or Salerno on one verified mode, complete one town pair or bounded coast view and leave before vessel capacity, road congestion or darkness removes the return.",
+    "summary": "Choose one Positano landing or an Amalfi-to-Ravello road pair; walk from the named pier or stop, then verify the SITA Sud or Travelmar return for that date.",
     "keywords": [
       "Positano, Amalfi & Ravello",
       "Sorrento, Amalfi Coast & Capri",
@@ -9991,7 +9991,7 @@
     "url": "/italy/sorrento-amalfi-capri/capri-anacapri/",
     "parent": "Sorrento, Amalfi Coast & Capri",
     "type": "Local guide",
-    "summary": "Land at Marina Grande, move once to the chosen island half, complete one cultural or landscape sequence and return to the port before the sailing queue controls the evening.",
+    "summary": "From Marina Piccola, choose Capri town or Anacapri, verify SNAV and island transport for the date, and return to Marina Grande with boarding margin.",
     "keywords": [
       "Capri & Anacapri",
       "Sorrento, Amalfi Coast & Capri",
@@ -10059,7 +10059,7 @@
     "url": "/italy/siena-southern-tuscany/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Siena is a bus-and-walking city whose rail station sits below the historic core; Val d’Orcia and Maremma depend on sparse buses, deliberate road routes or booked excursions. A useful southern Tuscany plan chooses one town corridor or protected landscape per day and treats ZTL boundaries, heat and Sunday service as core decisions.",
+    "summary": "Siena, Val d’Orcia and the Maremma are three different operating systems: a steep, walkable city; a group of hill towns reached by specific rural bus lines or road; and a protected park reached through Grosseto, Alberese and a conditional last mile. Choose one countryside branch per day, name the outward and return legs, and keep a full Siena day available when the rural chain does not fit.",
     "keywords": [
       "Siena, Val d’Orcia & Maremma",
       "Tuscany",
@@ -10071,7 +10071,7 @@
     "url": "/italy/siena-southern-tuscany/siena-civic-cathedral/",
     "parent": "Siena, Val d’Orcia & Maremma",
     "type": "Local guide",
-    "summary": "Climb from the rail or bus arrival into one civic or sacred layer, complete a single ordered centre circuit and leave through the access system nearest the return.",
+    "summary": "Use Siena’s 2 km station-to-centre gap as a transfer decision, not an assumed stroll: reach the upper city, walk from Banchi di Sopra to Campo and Via di Città, visit one interior, then return by the bus, lift or rail approach that fits your departure.",
     "keywords": [
       "Siena Civic Centre & Cathedral",
       "Siena, Val d’Orcia & Maremma",
@@ -10085,7 +10085,7 @@
     "url": "/italy/siena-southern-tuscany/val-dorcia-towns/",
     "parent": "Siena, Val d’Orcia & Maremma",
     "type": "Local guide",
-    "summary": "Enter one town through its actual stop or parking boundary, connect at most one second place on a confirmed corridor and return before sparse service or darkness removes the options.",
+    "summary": "Use line 112 for a Pienza-centered day or line 114 for Montalcino via Buonconvento and Torrenieri; walk one town in depth, verify the matching return, and add a second place only when the exact date’s service supports it.",
     "keywords": [
       "Val d’Orcia Towns",
       "Siena, Val d’Orcia & Maremma",
@@ -10099,7 +10099,7 @@
     "url": "/italy/siena-southern-tuscany/maremma-park-coast/",
     "parent": "Siena, Val d’Orcia & Maremma",
     "type": "Local guide",
-    "summary": "Arrive through Grosseto or Alberese, confirm one official route, complete the signed landscape and return before heat, shuttle gaps or dusk complicate the coast.",
+    "summary": "Use Trenitalia to Grosseto and the operator-confirmed bus to Alberese; then verify current Pinottolai/park access before selecting one signed route such as A7 Bocca d’Ombrone. The 2025 shuttle timetable is not a 2026 promise.",
     "keywords": [
       "Maremma Park & Coast",
       "Siena, Val d’Orcia & Maremma",
@@ -10125,7 +10125,7 @@
     "url": "/italy/umbria/perugia-ridge-city/",
     "parent": "Umbria",
     "type": "Local guide",
-    "summary": "Arrive below the historic core, use Minimetrò or the Rocca Paolina escalator system as part of the city reading, anchor the visit in one collection or archaeological layer, and descend by the connection whose operating window you have already checked.",
+    "summary": "From Fontivegge, choose the Minimetrò or a verified bus and escalator approach, walk one continuous line through the civic ridge, and reserve time for a single gallery or archaeological anchor before the checked descent.",
     "keywords": [
       "Perugia Ridge City",
       "Umbria",
@@ -10139,7 +10139,7 @@
     "url": "/italy/umbria/assisi-franciscan-city/",
     "parent": "Umbria",
     "type": "Local guide",
-    "summary": "Transfer from Assisi station in Santa Maria degli Angeli to one end of the hill city, read the basilica or upper-town layer without rushing worship spaces, and finish beside the bus stop that protects the return to the valley railway.",
+    "summary": "Take the station-side Assisi Link from Santa Maria degli Angeli, walk the basilica-to-civic-square axis at worship-friendly pace, and confirm the return stop before climbing toward the Rocca.",
     "keywords": [
       "Assisi Franciscan City",
       "Umbria",
@@ -10153,7 +10153,7 @@
     "url": "/italy/umbria/orvieto-cliff-city/",
     "parent": "Umbria",
     "type": "Local guide",
-    "summary": "Meet the cliff at Orvieto Scalo, use the current funicular or replacement connection to the old town, reserve only the underground experience that fits the cathedral clock, and return downhill before a thin regional-train connection becomes the day’s final risk.",
+    "summary": "Connect Orvieto Scalo to Piazza Cahen by the current funicular or replacement, walk the plateau toward the Duomo, and fit one booked underground visit around the checked return train.",
     "keywords": [
       "Orvieto Cliff City",
       "Umbria",
@@ -10167,7 +10167,7 @@
     "url": "/italy/emilia-romagna/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Emilia-Romagna looks simple because frequent trains join Bologna, Modena, Parma, Ferrara and Ravenna, yet the useful trip splits at each station. Towers and mosaics have entry clocks, food producers require real appointments, Maranello is a last-mile branch, and the Po Delta is not on the city-centre rail spine. The region works when one rail city anchors the day and only one reserved branch leaves it.",
+    "summary": "Plan Emilia-Romagna as three operating zones rather than a checklist: Bologna’s walkable portico centre, the Via Emilia rail pair of Modena and Parma, and the eastern choice among Ravenna, Ferrara or a separately organized Po Delta visit. Bologna Centrale is the trunk junction, but station changes, timed monuments, working food producers and rural last miles create separate days. Four nights gives two full city days and one flexible excursion; five or six nights can add a second base without turning the Delta or Maranello into an assumed rail stop.",
     "keywords": [
       "Emilia-Romagna",
       "Northern Italy",
@@ -10179,7 +10179,7 @@
     "url": "/italy/emilia-romagna/bologna-porticoes-markets/",
     "parent": "Emilia-Romagna",
     "type": "Local guide",
-    "summary": "Leave Bologna Centrale on one southbound line, fix any tower or museum booking before the markets, use the porticoes as an operating grid between pauses, and finish near the station-facing side of the centre unless San Luca was chosen as the day’s single extension.",
+    "summary": "Walk south from Bologna Centrale along Via dell’Indipendenza to Piazza Maggiore, reserve one tower or museum only after checking its current status, then connect the Quadrilatero or Mercato delle Erbe under the porticoes; save San Luca for a separately checked bus or walking return.",
     "keywords": [
       "Bologna Porticoes & Markets",
       "Emilia-Romagna",
@@ -10193,7 +10193,7 @@
     "url": "/italy/emilia-romagna/modena-parma-via-emilia/",
     "parent": "Emilia-Romagna",
     "type": "Local guide",
-    "summary": "Use one Via Emilia station as the day’s base, complete its cathedral, museum or food argument before any last-mile appointment, and return to that station rather than turning Modena, Maranello, Parma and a rural producer into an impossible tasting circuit.",
+    "summary": "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.",
     "keywords": [
       "Modena & Parma Along Via Emilia",
       "Emilia-Romagna",
@@ -10207,7 +10207,7 @@
     "url": "/italy/emilia-romagna/ravenna-ferrara-po-delta/",
     "parent": "Emilia-Romagna",
     "type": "Local guide",
-    "summary": "Begin at the rail station or Delta gateway that belongs to the chosen argument, work one complete urban or wetland sequence, and keep weather and last-mile transport from turning a distant second stop into the return risk.",
+    "summary": "Take the regional rail branch to Ravenna or Ferrara for a station-to-centre walking day, or meet a confirmed Delta operator at its stated gateway; reserve the return before setting out and do not combine these separate systems by map distance alone.",
     "keywords": [
       "Ravenna, Ferrara or the Po Delta",
       "Emilia-Romagna",
@@ -10275,7 +10275,7 @@
     "url": "/italy/veneto-art-cities/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Verona, Vicenza and Padua sit on a strong east–west railway, but the fast train is not a license to compress them. Verona’s Arena changes character on performance days, Vicenza’s Palladian villas leave the walkable centre, and Padua’s Scrovegni Chapel uses a strict timed threshold. Each city needs a separate accession plan from station to one principal work, followed by a return that does not depend on squeezing in the next city.",
+    "summary": "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit clock. Three nights can support one base and two selective city days; four or five nights makes a Verona–Padua split practical without turning station moves into sightseeing. Choose one controlled door per day and check its official calendar before fixing the train.",
     "keywords": [
       "Verona, Vicenza & Padua",
       "Veneto",
@@ -10329,7 +10329,7 @@
     "url": "/italy/dolomites-trentino-south-tyrol/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "The Dolomites and the neighboring Trentino and South Tyrol valleys are not one rail destination. Bolzano, Trento, Dobbiaco and Calalzo open different corridors; Cortina and Madonna di Campiglio depend on onward buses or roads; every cable car and trailhead has its own operating season. A workable mountain trip fixes one valley base, one vertical system and one lower-weather day instead of chasing famous peaks across passes.",
+    "summary": "Bolzano, Trento, Dobbiaco and Calalzo are distinct rail gateways; Cortina and the Brenta valleys add bus or road legs, and lifts and trailheads keep separate operating calendars. Four nights in one valley can support two mountain days with one lower route; five to seven nights gives a weather reserve. Choose the valley before buying a lift or excursion, and keep the return on the same operating system.",
     "keywords": [
       "Dolomites, Trentino & South Tyrol",
       "Northeast Italian Alps",
@@ -10383,7 +10383,7 @@
     "url": "/italy/milan/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Milan rewards deliberate transitions rather than landmark accumulation. The cathedral complex, Brera, Santa Maria delle Grazie, the Castello, Porta Nuova and the Navigli sit in different operating zones, and the scarce reservation or exact museum entrance should determine the direction of the day rather than become one more pin in a cross-city loop.",
+    "summary": "Milan is easier to plan as three separate route days than as a list of famous names. The Duomo and Brera occupy the central northbound walk; Santa Maria delle Grazie and the Castello form a west-to-east sequence around a fixed Last Supper visit; Porta Nuova and the Navigli make a north-to-south day with one deliberate transit crossing. Choose the controlled interior first, then connect only the streets and stations that serve that district.",
     "keywords": [
       "Milan",
       "Lombardy",
@@ -10395,7 +10395,7 @@
     "url": "/italy/milan/duomo-brera/",
     "parent": "Milan",
     "type": "Local guide",
-    "summary": "Meet the exact Duomo or Brera entrance, read the cathedral square and Galleria as a civic threshold, then move north through one deliberate street line and finish near the station that serves the chosen collection.",
+    "summary": "Start at the booked Duomo or Brera door, cross the cathedral square and Galleria once, then walk past Piazza della Scala into Via Brera and finish near the station for your chosen collection.",
     "keywords": [
       "Duomo, Brera & the Historic Centre",
       "Milan",
@@ -10409,7 +10409,7 @@
     "url": "/italy/milan/last-supper-castello/",
     "parent": "Milan",
     "type": "Local guide",
-    "summary": "Arrive early at the Cenacolo entrance, keep the church and museum as separate thresholds, then follow one eastward line to the Castello and finish in its courtyards, museums or Parco Sempione.",
+    "summary": "Protect the named Cenacolo slot, treat the church as a separate visit, then walk east along Corso Magenta to the Castello and finish in one courtyard, museum or Parco Sempione.",
     "keywords": [
       "The Last Supper, Santa Maria delle Grazie & the Castello",
       "Milan",
@@ -10423,7 +10423,7 @@
     "url": "/italy/milan/navigli-porta-nuova-design/",
     "parent": "Milan",
     "type": "Local guide",
-    "summary": "Begin around Porta Garibaldi and Porta Nuova, use one verified design or public-space focus, pause before crossing the city, and reserve the canal district for the time of day it actually serves.",
+    "summary": "Read Porta Garibaldi, Piazza Gae Aulenti and Isola as one northern walk, then make one ATM transfer to Porta Genova for Darsena and a single Naviglio Grande bank.",
     "keywords": [
       "Navigli, Porta Nuova & Milan Design",
       "Milan",
@@ -10449,7 +10449,7 @@
     "url": "/italy/italian-lakes/lake-como-central-lake/",
     "parent": "Italian Lakes",
     "type": "Local guide",
-    "summary": "Arrive at the named station or pier, read the current central-lake board before committing, give one town real time and cross only when the return still leaves a service in reserve.",
+    "summary": "Base in Como or Varenna for the rail return, walk one central-shore district, and cross to Bellagio or Menaggio only after checking the dated ferry pattern and the uphill station leg.",
     "keywords": [
       "Lake Como Central Lake",
       "Italian Lakes",
@@ -10463,7 +10463,7 @@
     "url": "/italy/italian-lakes/lake-maggiore-islands/",
     "parent": "Italian Lakes",
     "type": "Local guide",
-    "summary": "Begin at a named mainland pier, protect the return sailing and rail connection, land on one island with enough time to read it, and add a second only after current service and admissions still agree.",
+    "summary": "Sleep in Stresa or another confirmed mainland gateway, walk the waterfront and one Borromean island deeply, then add a second landing only if its admission and return sailing fit.",
     "keywords": [
       "Lake Maggiore & the Borromean Islands",
       "Italian Lakes",
@@ -10477,7 +10477,7 @@
     "url": "/italy/italian-lakes/lake-garda-shores/",
     "parent": "Italian Lakes",
     "type": "Local guide",
-    "summary": "Enter through one gateway, follow one shore with a defined turning point, use a boat only when it simplifies rather than expands the route, and return along the protected rail or bus corridor.",
+    "summary": "Base at Desenzano, Peschiera or a chosen shore town, walk one Garda district and use a named ferry, bus or cableway only when its dated return remains viable.",
     "keywords": [
       "Lake Garda Shores",
       "Italian Lakes",
@@ -10491,7 +10491,7 @@
     "url": "/italy/turin-piedmont/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Central Turin is a measured city of arcades, royal spaces and large collections, but Piedmont beyond it quickly becomes a branch-transport problem. The Egyptian Museum and Royal Museums need attention choices; Venaria and the Sacra di San Michele need separate gateways; the Langhe, Alba and Asti require a sober agreement between rail, road and appointments.",
+    "summary": "Turin’s royal centre is walkable from Porta Nuova or Porta Susa and GTT covers the city; Venaria, Sacra di San Michele and the Langhe each need a separate regional last mile. Three nights supports the central museums with one day trip; four or five allows a distinct rural overnight. Decide whether the trip is palace, abbey or wine-country focused before selecting a rail-and-bus chain.",
     "keywords": [
       "Turin & Piedmont",
       "Piedmont",
@@ -10545,7 +10545,7 @@
     "url": "/italy/genoa-liguria/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Genoa’s port, palace streets and vertical neighborhoods form an urban section, while Liguria beyond it narrows into rail platforms, coastal paths and weather-dependent landings. A workable stay separates the city’s elevation from Cinque Terre capacity and the Portofino promontory’s boat-or-trail decision.",
+    "summary": "Genoa’s Porto Antico and caruggi use AMT lifts, metro and steep streets; Cinque Terre hiking uses park rules and coastal rail; Portofino and San Fruttuoso can add a weather-dependent boat or trail. Three nights fits Genoa plus one chosen coast day; four or five nights supports a second base in Levanto or Camogli. Never treat a boat ticket, rail stop and trail opening as one access permission.",
     "keywords": [
       "Genoa & Liguria",
       "Liguria",
@@ -10599,7 +10599,7 @@
     "url": "/italy/marche-abruzzo/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "The Adriatic rail spine makes Pesaro and Ancona look simple, but Urbino, Monte Conero and Abruzzo’s mountain parks begin only after distinct bus, road, trail and weather thresholds. A useful regional plan separates the coast-to-hill transfer from the destination day and never treats two large national parks as adjacent attractions.",
+    "summary": "Pesaro, Ancona, the Adriatic coast and the Apennine parks connect through different rail, regional bus and road systems. Three nights can support one coast city and a chosen hill-town day; four or five nights allows Urbino, Conero or an Abruzzo park to become its own base. Choose a single inland gateway and check the final bus or trailhead before booking accommodation.",
     "keywords": [
       "Marche & Abruzzo",
       "Marche & Abruzzo",
@@ -10707,7 +10707,7 @@
     "url": "/italy/basilicata-calabria/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Basilicata and Calabria join dramatic stone, high national parks and long coastlines, but they do not form one effortless road trip. Matera looks toward Bari by regional railway, Pollino gateways depend on roads and local services, and the Tyrrhenian rail line connects only part of Calabria. The useful question is which access contract deserves a base.",
+    "summary": "Matera’s Sassi, Maratea’s coast, the Pollino villages and Calabria’s Tyrrhenian towns form separate bases rather than one short loop. Three nights fits Matera and its Murgia edge; four or five supports a coast or park branch, while Tropea–Scilla–Reggio needs rail days or a deliberate split stay. Choose the route’s gateway first: Ferrovie Appulo Lucane, national rail, local bus and road access are not interchangeable.",
     "keywords": [
       "Basilicata & Calabria",
       "Southern Italy",
@@ -10761,7 +10761,7 @@
     "url": "/italy/western-sicily/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Western Sicily combines Palermo’s dense living capital, large archaeological landscapes and a wind-exposed ferry coast. The rail and bus network reaches useful gateways, but Monreale, Selinunte, Erice and the Egadi Islands each add a different final connection. A good plan fixes one cultural or maritime contract before counting towns.",
+    "summary": "Palermo, Agrigento and Trapani are connected by rail and bus in parts, but Monreale, Selinunte, Erice and the Egadi islands add different last miles. Four nights in Palermo can cover the capital and one chosen excursion; add separate nights in Agrigento or Trapani rather than building a chain of long day trips. Book the archaeological or ferry threshold first, then fit the land transfer around its dated service.",
     "keywords": [
       "Western Sicily",
       "Sicily",
@@ -10815,7 +10815,7 @@
     "url": "/italy/eastern-sicily/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Eastern Sicily is shaped by Etna, the Ionian coast and the rebuilt baroque southeast, but each has a different operating system. Catania can support a city or volcano day, Taormina sits above its railway station, Milazzo controls most Aeolian departures, and Syracuse is a better southeast base than a daily Palermo commute. Choose the gateway before promising yourself the view.",
+    "summary": "Catania, Taormina and Syracuse anchor three different eastern-Sicily day systems: Etna access follows current volcanic and mountain controls; Taormina and Naxos use separate coast, theatre and ferry gateways; Syracuse, Noto and Ragusa need dated rail or bus returns. Four nights in one city supports its own region; six or more nights allows a deliberate two-base split. Do not attach an island or summit promise to a city ticket.",
     "keywords": [
       "Eastern Sicily",
       "Sicily",
@@ -10869,7 +10869,7 @@
     "url": "/italy/sardinia/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Sardinia is an island large enough to require regional bases, not a beach added to an Italian city trip. Cagliari and the south, La Maddalena and Gallura, and the Gulf of Orosei with the central mountains use different airports, ports, roads and permits. Choose one island quadrant before building a coastline checklist.",
+    "summary": "Cagliari and Barumini, Palau and La Maddalena, and the Gulf of Orosei with Gennargentu are three distinct island systems. Three nights can support one southern base; four or five fits one Gallura or east-coast objective with weather reserve; a north–south itinerary needs deliberate transfer nights. ARST, scheduled ferries, authorized boat tours and protected-area access each control a different threshold.",
     "keywords": [
       "Sardinia",
       "Sardinia",
