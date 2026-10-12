@@ -669,7 +669,7 @@ try {
   assert.equal(lucerneDiagram.licenseUrl, null);
   assert.equal(lucerneDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(lucerneDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
-  assert.equal(lucerneDiagram.localSha1, '8b45fae5724444f48aa928e3225dacc232efc382');
+  assert.equal(lucerneDiagram.localSha1, 'd4bb15e809a0cf876db15a4f7e0309cf5f8d7404');
   assert.equal(lucerneDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(lucerneDiagram.inventoryStatus, 'used');
   assert.equal(lucerneDiagram.useCount, 4);

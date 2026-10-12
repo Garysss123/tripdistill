@@ -66,7 +66,7 @@ export const switzerlandImageManifest = {
     "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
     "assetType": "original-planning-diagram",
     "editNote": "Planning schematic only; not a geographic map and not to scale.",
-    "localSha1": "8b45fae5724444f48aa928e3225dacc232efc382"
+    "localSha1": "d4bb15e809a0cf876db15a4f7e0309cf5f8d7404"
   },
   "bern-emmental/old-city-aare": {
     "src": "/assets/images/switzerland-bern-emmental-old-city-aare.webp",
