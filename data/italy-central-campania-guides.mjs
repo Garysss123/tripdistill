@@ -809,20 +809,29 @@ export const italyCentralCampaniaClusters = [
   c({
     slug: 'siena-southern-tuscany',
     name: 'Siena, Val d’Orcia & Maremma',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     region: 'Tuscany',
     band: 'central-art-cities',
     family: 'hill-town-last-mile-folio',
     label: 'Tuscany · hill-country folio 05',
-    tagline: 'Name the hill-town gate, rural corridor and return before the road becomes the itinerary.',
-    hubIntro: 'Siena is a bus-and-walking city whose rail station sits below the historic core; Val d’Orcia and Maremma depend on sparse buses, deliberate road routes or booked excursions. A useful southern Tuscany plan chooses one town corridor or protected landscape per day and treats ZTL boundaries, heat and Sunday service as core decisions.',
-    stay: 'Two to four nights in Siena supports a complete civic day and one rural branch. A Val d’Orcia village stay reduces repeated outbound travel but makes arrival, meals and car-free movement less flexible; Grosseto is a stronger rail base for Maremma than Siena. Moving hotels only helps when the landscape system truly changes.',
-    transfer: 'Siena rail station, Piazza Gramsci buses and escalator approaches enter the city at different levels. Val d’Orcia towns do not share one station, while Maremma park access begins at named visitor centres and seasonal shuttles. Save the last return and legal parking threshold first.',
-    season: 'Summer heat, Palio periods, harvest traffic, fire risk and seasonal park services alter capacity and route length. Rain makes stone streets and country paths slower. Keep Siena or Grosseto collections as the stable fallback.',
-    fallback: 'Use a complete rail- or bus-served city day when the countryside chain fails: Siena museums and cathedral, Grosseto walls and collections, or the first selected town without the second rural stop.',
+    tagline: 'Set the night base, rural corridor and return before treating southern Tuscany as one day trip.',
+    hubIntro: 'Siena, Val d’Orcia and the Maremma are three different operating systems: a steep, walkable city; a group of hill towns reached by specific rural bus lines or road; and a protected park reached through Grosseto, Alberese and a conditional last mile. Choose one countryside branch per day, name the outward and return legs, and keep a full Siena day available when the rural chain does not fit.',
+    stay: 'Two nights in Siena gives you one full civic day plus arrival or departure; it does not cover both countryside regions. Three nights works as a Siena base for one rural day and a spare city or weather day. Four nights can support two nights in Siena plus one or two around the chosen rural system: Pienza or Montalcino only when the bus and evening plan work, or Grosseto/Alberese for a park-led stay. If you want just one day out, remain in Siena: lodging near Campo or Piazza Gramsci favors walking and bus starts, while a station-side room helps an early rail departure but adds the climb back to the upper city.',
+    transfer: 'Visit Siena places the railway station about 2 km from the centre and lists city buses as an alternative to the uphill walk. For Val d’Orcia, Autolinee Toscane line 112 runs on the Siena–Buonconvento–Pienza–Montepulciano corridor; line 114 follows Siena–Buonconvento–Torrenieri–Montalcino. Pick one line and check its direction, date and return rather than combining both towns by assumption. For the park, the official chain is Trenitalia to Grosseto, then an Autolinee Toscane bus to Alberese Visitor Centre; Pinottolai and Marina di Alberese are a separate park access leg.',
+    season: 'Palio and other event periods can tighten Siena lodging and alter street access, so check the official city calendar before choosing dates. Summer heat and fire-risk rules can restrict Maremma paths or change guided access; the park’s transport page still exposes 2025 seasonal shuttle dates, so verify the current season instead of reusing that timetable. Val d’Orcia has little shade on open approaches, while rain slows Siena’s stone slopes and rural paths. Reserve a producer, controlled interior or park activity only after the transport shape is clear.',
+    fallback: 'When a 112/114 return does not fit, keep the day in Siena: Piazza del Campo, one chosen civic or cathedral interior, then the Via di Città/Banchi di Sopra street loop. If the park path or shuttle is unavailable, make Grosseto a complete walls-and-museum day only if you are already based there; do not add it after a fragile Siena-to-park transfer. In Pienza or Montalcino, stay in the first town and drop the second stop.',
     sources: [
-      ['https://www.visitsiena.it/en/', 'Visit Siena — official visitor information'],
-      ['https://www.visittuscany.com/en/areas/maremma/', 'Visit Tuscany — official Maremma information'],
-      ['https://www.at-bus.it/en', 'Autolinee Toscane — official regional bus information']
+      ['https://www.visitsiena.it/en/siena-tourist-information/', 'Visit Siena — walking, city transport and rail-station access'],
+      ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-112', 'Autolinee Toscane — line 112: Siena, Buonconvento and Pienza corridor'],
+      ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-114', 'Autolinee Toscane — line 114: Siena, Buonconvento, Torrenieri and Montalcino'],
+      ['https://www.trenitalia.com/en.html', 'Trenitalia — date-specific rail planner'],
+      ['https://operaduomo.siena.it/en/', 'Opera della Metropolitana — cathedral complex, access and current opening notices'],
+      ['https://parco-maremma.it/en/visit/how-to-reach-us/', 'Maremma Park — rail, bus and seasonal shuttle access'],
+      ['https://parco-maremma.it/en/visiting-rules/', 'Maremma Park — trail access and seasonal visiting rules'],
+      ['https://parco-maremma.it/en/itineraries/walks/', 'Maremma Park — official walking itineraries and route grades'],
+      ['https://www.visittuscany.com/en/towns-and-villages/pienza/', 'Visit Tuscany — Pienza’s central monuments and walking context']
     ],
     guides: [
       g({
@@ -833,33 +842,51 @@ export const italyCentralCampaniaClusters = [
         structure: 'living-sacred-threshold',
         imageQuery: 'Siena Piazza del Campo cathedral skyline panorama',
         imageAlt: 'Medieval palaces surrounding Siena’s Piazza del Campo',
-        purpose: 'Choose the civic museum and tower, the cathedral complex or the contrada street layers as the main argument, then enter Siena through the transport and escalator threshold that fits the first door.',
-        summary: 'Climb from the rail or bus arrival into one civic or sacred layer, complete a single ordered centre circuit and leave through the access system nearest the return.',
+        purpose: 'Build one upper-city walk from Piazza Gramsci or the signed station lift/bus connection to Piazza del Campo, Via di Città and the Duomo precinct; choose the Museo Civico/Torre del Mangia, the cathedral complex or public contrada streets as the one deep layer.',
+        summary: 'Use Siena’s 2 km station-to-centre gap as a transfer decision, not an assumed stroll: reach the upper city, walk from Banchi di Sopra to Campo and Via di Città, visit one interior, then return by the bus, lift or rail approach that fits your departure.',
+        localPlan: {
+          title: 'One upper-city loop, one interior anchor',
+          intro: 'Keep this route on Siena’s central ridge: solve the lower-station climb first, then join the Campo and Duomo streets without doubling back across the city.',
+          stayTitle: 'Sleep for the first walk, not the photo',
+          stay: 'For a two-night Siena stay, choose the historic centre around Campo/Banchi di Sopra if you want the first walk to begin on foot; choose the station side only when a rail arrival or departure outweighs the uphill return. Piazza Gramsci is useful for bus arrival, but a room near it still needs a station plan. Add a third Siena night if the next day is a Val d’Orcia or Maremma outing.',
+          walkTitle: 'Walk from Banchi di Sopra to the Duomo ridge',
+          walk: 'Start at Piazza Gramsci or the upper-centre stop that serves your first door. Follow Via Banchi di Sopra to Piazza del Campo, pause before choosing an interior, then continue by Via di Città toward the Duomo and Santa Maria della Scala. Return through the Campo/Banchi di Sopra axis; do not add the lower railway station on foot unless the slope and time suit you.',
+          bookingTitle: 'Choose the civic tower or the connected cathedral complex',
+          booking: 'The Opera della Metropolitana describes one cathedral-complex ticket covering several connected spaces, but worship, floor displays, access and last entry change by date. Check its current visit page before choosing that long block. If you prefer the civic story, verify Museo Civico and Torre del Mangia access separately; leave the other interior for another visit.',
+          seasonTitle: 'Move the walk around event and weather gates',
+          season: 'Palio and city-event dates can change access and crowd movement around Campo. In summer, start the exposed street circuit earlier; in rain, the stone slopes and steps slow the return. The Opera’s current access notes distinguish the Cathedral ramp from Museum, Crypt and Baptistery access, so confirm the exact spaces for limited mobility.'
+        },
         choices: [
-          ['Civic Siena', 'Use Piazza del Campo, Museo Civico and the tower if operating as the main block. It gives political and urban history but limits cathedral depth.'],
-          ['Cathedral complex', 'Choose the current cathedral product and give its connected spaces protected time. It offers sacred art and architecture but less contrada wandering.'],
-          ['Contrada street circuit', 'Keep major interiors limited and read fountains, streets and neighborhood boundaries respectfully. It gives living-city context but fewer headline interiors.']
+          ['Campo and civic government', 'Anchor the day on Piazza del Campo, Palazzo Pubblico/Museo Civico and the Torre del Mangia if current access allows. This gives the strongest civic reading but leaves less time for the cathedral complex.'],
+          ['Duomo and connected rooms', 'Use the Opera della Metropolitana’s current cathedral-complex access information and protect one long visit block. It adds the cathedral, library and associated museum spaces but limits the contrada street walk.'],
+          ['Contrada streets without a tower climb', 'Follow the public Campo–Via di Città–Fontebranda edge and read the districts as lived neighborhoods. This lowers the interior load but gives up the tower and deeper collections.']
         ],
-        access: 'Piazza Gramsci buses arrive near the upper centre; the railway station lies below and connects through local transport and escalator systems. ZTL limits road access. Decide the first gate and the final descent rather than navigating to Piazza del Campo alone.',
-        tradeoff: 'The tower, civic museum and cathedral complex can each occupy the best part of a day. Choosing one gives up another interior but creates time to understand streets and contrade without treating a living neighborhood as festival scenery.',
+        access: 'Visit Siena lists the railway station about 2 km from the historic centre and points visitors to Autolinee Toscane for local buses. Choose the station lift/bus approach or start at Piazza Gramsci; the upper city is hilly and the ZTL is not a drop-off plan. Continue on foot from Campo to Via di Città and the Duomo, then retrace toward the return stop.',
+        tradeoff: 'The civic tower, Museo Civico and cathedral complex each deserve a separate protected block. Choosing one gives up another interior but leaves enough attention for the Campo, Via di Città and neighborhood streets. Religious services, crowds and resident routines take priority over a checklist.',
         stages: [
-          ['Enter through the useful level', 'Use the bus stop, escalator or legal parking boundary that serves the first reserved door.'],
-          ['Complete civic or sacred depth', 'Give the selected museum, tower or cathedral product the long block and respect worship or capacity controls.'],
-          ['Read one contrada line', 'Follow a bounded street sequence with public-space conduct rather than chasing every emblem.'],
-          ['Descend toward the return', 'Leave through the transport threshold serving the station or bus before hill fatigue controls the evening.']
+          ['Choose the arrival level', 'Use Trenitalia to Siena station and check the current urban bus/lift link, or arrive directly at the upper-city bus area around Piazza Gramsci.'],
+          ['Walk Banchi di Sopra to Campo', 'Follow the named main street into Piazza del Campo; pause here before committing to a second uphill interior.'],
+          ['Continue by Via di Città to one door', 'Choose Museo Civico/Torre del Mangia or the Opera cathedral complex, then keep the other interior for a separate day.'],
+          ['Return on the same transport spine', 'Use the current bus/lift connection to the lower station or the upper bus stop; check service and slope before fixing a train.']
         ],
-        fallback: 'If tower access closes for wind or capacity, retain the civic museum and Campo. If cathedral access changes, use the civic layer and a respectful street circuit without substituting another distant sacred site.',
+        fallback: 'If a tower or cathedral space closes or conflicts with worship, keep the Campo–Via di Città street circuit and choose whichever nearby civic or museum interior is open. For rain, shorten the outer walk and use Santa Maria della Scala or the confirmed interior rather than adding a distant site.',
         watch: [
-          ['Event periods rewrite movement', 'Palio and civic events can change access, capacity and resident priorities. Follow current official instructions.'],
-          ['The station is below the centre', 'The return includes a real descent and connection; leave energy and time.'],
-          ['Contrade are living communities', 'Observe public space respectfully and do not treat residents, doorways or ceremonies as an attraction set.']
+          ['The centre-to-station link is a real leg', 'The official tourism page puts the rail station about 2 km from the centre; check the lift/bus link and allow a return margin.'],
+          ['Worship, last entry and access differ by room', 'The Opera posts current opening and accessibility conditions for the Cathedral, Museum, Crypt and Baptistery; do not transfer one room’s access to the whole complex.'],
+          ['Campo events change the public route', 'Check the city calendar for Palio and other events; use current local barriers and keep contrada spaces respectful.']
         ],
-        duration: 'Allow six to eight hours for one deep interior layer plus a complete centre circuit. A lower-mobility version should prioritize the arrival level and one collection.',
-        combine: 'Combine a civic or cathedral visit with a bounded contrada route. Keep San Gimignano, Val d’Orcia and Maremma for separate days.',
-        verify: 'Check Museo Civico and tower access, the cathedral product and worship conditions, event restrictions and the current station or bus route.',
+        duration: 'Treat this as one full city day: allow time for the upper-city walk, one controlled interior, a meal break and the down-to-station or bus return. That is an editorial planning envelope, not a measured visit time.',
+        combine: 'Combine one civic or sacred interior with the Campo/Via di Città street loop. Keep San Gimignano, Val d’Orcia and the Maremma for separate days.',
+        verify: 'Check Visit Siena’s event and urban transport notices, the Opera’s current room openings/access notes or Museo Civico/Torre access, and the station bus/lift for your departure date.',
+        faq: [
+          ['Can I walk from Siena station to Piazza del Campo?', 'Visit Siena places the station about 2 km from the centre. The route climbs; check the current Autolinee Toscane city service or lift access if you do not want that uphill leg.'],
+          ['Should I visit the civic museum and the cathedral complex on one day?', 'Choose one as the long interior block, then use Campo, Via di Città and the surrounding streets for the second layer. The Opera’s connected rooms and the civic tower have separate access and current operating conditions.'],
+          ['What is the shorter city fallback?', 'Use Piazza Gramsci to Piazza del Campo to Via di Città and return along Banchi di Sopra, with one open interior. Keep the station transfer on a current bus/lift plan.']
+        ],
         sources: [
-          ['https://www.visitsiena.it/en/', 'Visit Siena — official city planning'],
-          ['https://museocivico.comune.siena.it/organizza-la-tua-visita', 'Museo Civico Siena — official visit information']
+          ['https://www.visitsiena.it/en/siena-tourist-information/', 'Visit Siena — walking, city transport and rail-station access'],
+          ['https://operaduomo.siena.it/en/', 'Opera della Metropolitana — cathedral rooms, access and current openings'],
+          ['https://museocivico.comune.siena.it/organizza-la-tua-visita', 'Museo Civico Siena — current visit information']
         ]
       }),
       g({
@@ -870,33 +897,52 @@ export const italyCentralCampaniaClusters = [
         structure: 'ztl-threshold-ring',
         imageQuery: 'Val d Orcia Pienza Tuscany rolling hills road',
         imageAlt: 'Rolling hills and stone towns in Val d’Orcia, Tuscany',
-        purpose: 'Choose the Pienza–San Quirico corridor, Montalcino or Bagno Vignoni as one workable town line, then define the bus, booked tour, bicycle or legal road threshold instead of treating the valley as a single station.',
-        summary: 'Enter one town through its actual stop or parking boundary, connect at most one second place on a confirmed corridor and return before sparse service or darkness removes the options.',
+        purpose: 'Choose the Pienza/San Quirico bus corridor on Autolinee Toscane line 112, the Montalcino approach on line 114 via Torrenieri, or one booked road-based visit; each has a different last mile and return.',
+        summary: 'Use line 112 for a Pienza-centered day or line 114 for Montalcino via Buonconvento and Torrenieri; walk one town in depth, verify the matching return, and add a second place only when the exact date’s service supports it.',
+        localPlan: {
+          title: 'One town corridor, one return ticket',
+          intro: 'Pienza and Montalcino are not one compact stop. Treat the bus line, legal parking edge and booked tasting as separate decisions, then walk the chosen town rather than touring the whole valley by checklist.',
+          stayTitle: 'Keep Siena as the base for one day out',
+          stay: 'For one Val d’Orcia day, two or three nights in Siena avoids an unnecessary hotel move and keeps the station/bus gateway familiar. If you want a slow town evening or an early booked producer visit, add a Pienza or Montalcino night only after confirming the last bus, dinner and luggage transfer. Rural agriturismi may need a car or prearranged ride even when the town itself is walkable.',
+          walkTitle: 'Walk Pienza’s central square and edge viewpoints',
+          walk: 'On line 112, use the stop currently shown for Pienza, then walk through Piazza Pio II to the Cathedral of the Assunta, Palazzo Piccolomini and Palazzo Comunale. Choose one interior, continue along the historic centre’s outer edge/viewpoint path if it is open, and return to the same named stop. Do not add San Quirico or a winery until the bus map and return make the second leg real.',
+          bookingTitle: 'Confirm the bus before the cellar',
+          booking: 'The current Autolinee Toscane pages identify line 112 on the Siena–Buonconvento–Pienza–Montepulciano corridor and line 114 through Torrenieri toward Montalcino. Open the correct direction and date, then set any tasting or museum booking around that window. The operator’s current notices include service changes; no departure or fare is guaranteed here.',
+          seasonTitle: 'Treat heat, harvest and Sunday as itinerary inputs',
+          season: 'Open slopes and exposed town edges are tiring in summer heat, while rain makes stone lanes and rural shoulders slower. Autumn winery visits may need earlier booking. Bus calendars can distinguish school, weekday, holiday and seasonal service; if the required return is absent, make one town the whole day.'
+        },
         choices: [
-          ['Pienza and San Quirico', 'Use two connected town centres only when the day’s bus, tour or road sequence is confirmed. This gives classic valley contrast but little winery depth.'],
-          ['Montalcino focus', 'Give the fortress town, civic context and one booked producer the full day. It sacrifices wider valley sampling but reduces road churn.'],
-          ['Bagno Vignoni and landscape', 'Use the thermal-village setting and one bounded walk or nearby town. It provides a slower route but depends on a precise last mile.']
+          ['Pienza by line 112', 'Choose the Renaissance square, cathedral and one interior; add the outer viewpoint walk if access and weather suit. It has a named operator corridor but not an automatic second-town connection.'],
+          ['Montalcino by line 114', 'Use the Siena–Buonconvento–Torrenieri–Montalcino route for the fortress town and one booked producer. This sacrifices broad valley sampling and depends on the date’s bus return.'],
+          ['San Quirico or a producer by road', 'Use a booked driver/tour or a verified line 112 stop only after you have the return. This can fit a second village or tasting but is not a reason to drive into a ZTL or assume a winery transfer.']
         ],
-        access: 'Val d’Orcia has no single rail arrival. Buses vary by day and season; Sunday patterns can be sparse. Drivers must respect ZTL boundaries and use legal lots outside historic centres. A winery reservation does not supply transport unless explicitly stated.',
-        tradeoff: 'A broad scenic loop creates more windshield time than town depth. Choosing one corridor gives up several famous viewpoints but leaves time for streets, a meal and a safe return without illegal centre access.',
+        access: 'There is no single Val d’Orcia rail station. Autolinee Toscane’s current line pages show 112 from Siena via Buonconvento to Pienza and onward toward Montepulciano, and 114 via Buonconvento/Torrenieri to Montalcino. A car needs a legal lot outside each ZTL; a tasting reservation does not include transport unless the provider says so.',
+        tradeoff: 'Trying to join Pienza, San Quirico, Montalcino and a tasting in one loop spends the day waiting or driving between hill towns. Give up the second town and use the saved time for Piazza Pio II, one interior, a meal and a confirmed return.',
         stages: [
-          ['Choose the corridor, not the list', 'Select one or two places sharing a confirmed bus, tour or road line and save the final return.'],
-          ['Stop outside the legal threshold', 'Use the named bus stop or parking area and walk through the town gate.'],
-          ['Give one town the long block', 'Use streets, civic evidence, a meal and any booked producer without rushing to the next hill.'],
-          ['Leave before rural options narrow', 'Return to Siena, the rail gateway or the valley base with daylight and service margin.']
+          ['Choose line 112 or 114', 'Use 112 for the Pienza/San Quirico corridor or 114 for Montalcino via Torrenieri; confirm direction and date on the operator page.'],
+          ['Arrive at the town, not the region pin', 'Use the named Pienza or Montalcino stop from the current line map, or park legally outside the centre’s ZTL.'],
+          ['Walk one compact centre in sequence', 'For Pienza, connect Piazza Pio II, the cathedral/Palazzo Piccolomini choice and the historic edge path before a meal.'],
+          ['Return on the same verified corridor', 'Keep the named bus stop, legal lot and outbound route together; do not depend on an unconfirmed last rural connection.']
         ],
-        fallback: 'If a connection or producer booking fails, remain in the first town and add its civic museum, fortress, signed walk or meal. Do not drive into a ZTL or hire an unverified transfer to preserve the checklist.',
+        fallback: 'If line 112/114, a transfer or a producer visit no longer fits, keep Pienza or Montalcino as the single-town day and use a confirmed local interior or meal. If the return itself is uncertain, return to Siena and use the Siena civic walk rather than relying on an unverified ride.',
         watch: [
-          ['Sunday changes the network', 'A weekday timetable is not evidence for a Sunday or seasonal return. Check the actual travel date.'],
-          ['ZTL cameras enforce the boundary', 'Historic-centre access can be restricted even when navigation suggests the road. Use legal parking and signed entrances.'],
-          ['Wine and driving conflict', 'Use a driver, tour or restrained tasting plan; a producer visit is not permission to ignore the return.']
+          ['Line numbers do not promise a departure', 'The live line 112 and 114 pages carry day-specific schedules and notices. Recheck the outward and return for the actual date.'],
+          ['Town centres have a vehicle edge', 'Follow the posted ZTL and lot signs; a navigation pin at the piazza is not permission to drive inside.'],
+          ['A tasting is a separate booking', 'Ask the producer how guests reach the property and return; do not combine alcohol and a drive.']
         ],
-        duration: 'Allow a full day for one valley corridor from Siena. An overnight town stay supports a slower second place without relying on the last outbound bus.',
-        combine: 'Combine only towns on the same verified line or one booked producer near the chosen base. Keep Maremma and Florence separate.',
-        verify: 'Check Autolinee Toscane for the exact date, town ZTL and parking information, any producer booking and weather or daylight for the chosen walk.',
+        duration: 'Protect one full day for a single town corridor from Siena, including the bus or car leg, walking loop, interior/meal and return. The allowance is editorial; actual journey and visit length depend on the date and bookings.',
+        combine: 'Combine Pienza with San Quirico only when line 112 or a booked road plan confirms both directions. Keep Montalcino and the Maremma for separate days.',
+        verify: 'Check Autolinee Toscane lines 112/114 for the date and direction, the town ZTL/parking boundary, any interior or producer booking, and daylight/weather for the edge walk.',
+        faq: [
+          ['Can I visit Pienza and Montalcino by bus on the same day?', 'The official operator lists them on different corridors: line 112 for Pienza and line 114 via Torrenieri for Montalcino. Do not plan both until the exact-date map and return connections support that combination.'],
+          ['Where should I sleep for one Val d’Orcia day?', 'Stay in Siena if this is one rural day in a city-focused trip. Sleep in Pienza or Montalcino only when your last-mile arrival, meal and next morning transport are arranged.'],
+          ['What should I do if my rural bus return does not fit?', 'Keep the first town as the complete day and remove the second stop. If even that return is not usable, stay in Siena and use its centre walk rather than inventing a transfer.']
+        ],
         sources: [
-          ['https://en.visitvaldorcia.it/', 'Visit Val d’Orcia — official destination information'],
-          ['https://www.at-bus.it/en', 'Autolinee Toscane — official regional bus information']
+          ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-112', 'Autolinee Toscane — line 112 to the Pienza corridor'],
+          ['https://www.at-bus.it/it/linee-e-orari/siena-extraurbano-114', 'Autolinee Toscane — line 114 to Montalcino via Torrenieri'],
+          ['https://www.visittuscany.com/en/towns-and-villages/pienza/', 'Visit Tuscany — Pienza’s central monuments and walking context'],
+          ['https://en.visitvaldorcia.it/', 'Visit Val d’Orcia — regional destination information']
         ]
       }),
       g({
@@ -907,33 +953,54 @@ export const italyCentralCampaniaClusters = [
         structure: 'coast-capacity-braid',
         imageQuery: 'Maremma natural park Tuscany coast Uccellina',
         imageAlt: 'Mediterranean coast and wild landscape in Maremma Natural Park',
-        purpose: 'Choose an Alberese park route, Grosseto cultural day or bounded coast segment, then make the visitor centre, seasonal shuttle, heat and fire status the actual gate rather than assuming every beach and trail is open.',
-        summary: 'Arrive through Grosseto or Alberese, confirm one official route, complete the signed landscape and return before heat, shuttle gaps or dusk complicate the coast.',
+        purpose: 'Separate the rail arrival at Grosseto, bus to the Alberese Visitor Centre, park access at Pinottolai and the signed walk; choose the easy 5.6 km A7 Bocca d’Ombrone or a longer coast route only if the current access gate is open.',
+        summary: 'Use Trenitalia to Grosseto and the operator-confirmed bus to Alberese; then verify current Pinottolai/park access before selecting one signed route such as A7 Bocca d’Ombrone. The 2025 shuttle timetable is not a 2026 promise.',
+        localPlan: {
+          title: 'A park day with a named rail and trail gate',
+          intro: 'Grosseto, Alberese, Pinottolai and Marina di Alberese are separate stops. Build the day around the park’s current route and access notice, not the beach image or a stale shuttle table.',
+          stayTitle: 'Use Grosseto for rail, Alberese for the park',
+          stay: 'For a rail-led visit, one or two nights in Grosseto keeps the station, meals and city fallback together, but still requires a verified bus leg to Alberese. Stay in Alberese only if your accommodation confirms the final walk/ride to the Visitor Centre and the park opening/access plan. A Siena base is reasonable for a city-plus-one-rural-day trip only after the full Siena–Grosseto–Alberese–return chain checks out.',
+          walkTitle: 'Select one signed route from Pinottolai',
+          walk: 'The park’s current walking list describes A7 Bocca d’Ombrone as an easy 5.6 km route; use the official map to follow its signed course from the access point open that day. A10 Collelungo beach is listed at 11.2 km and is a longer exposed option. Do not assume either route is open or that the Visitor Centre is the trailhead; follow today’s park instructions and return on the listed access leg.',
+          bookingTitle: 'Confirm entry, guide rules and the shuttle separately',
+          booking: 'The Park’s how-to page recommends Grosseto rail station followed by bus to Alberese. Its visible shuttle table is labeled Summer/Autumn 2025, so it cannot establish a 2026 departure. Reopen the current park access and visitor notices, ask whether route entry or guided access must be arranged, then confirm the Autolinee Toscane connection and final return.',
+          seasonTitle: 'Let fire rules and heat choose the route',
+          season: 'The Park says seasonal fire regulations can change how its trails are visited and names Pinottolai for Alberese itineraries. In hotter or fire-risk conditions, do not assume that a beach or longer route is an alternative to a closed path. Choose the shortest currently open signed route, or keep the whole day in Grosseto.'
+        },
         choices: [
-          ['Alberese park route', 'Use the visitor-centre system and one official trail or shuttle product. It gives the strongest protected landscape but depends on capacity and conditions.'],
-          ['Grosseto civic day', 'Use the walls, archaeology and museums as a complete low-risk alternative. It sacrifices the coast but works without fragile rural transport.'],
-          ['Bounded coast visit', 'Choose one legal beach or shoreline access linked to the day’s transport. It provides water and landscape but less park interpretation.']
+          ['A7 Bocca d’Ombrone', 'The Park currently lists this as an easy 5.6 km walk across the Ombrone plain. It gives open-landscape interpretation, but the live access rules still control the actual start and route status.'],
+          ['A10 Collelungo beach', 'The official walking list gives 11.2 km for this longer beach route. It gives a coast-and-forest day but needs more daylight, water and a confirmed return; do not make it the heat fallback.'],
+          ['Grosseto behind the walls', 'Keep the day in the rail town for its Medici walls and museum quarter when park access or weather fails. It gives up the protected coast but removes the seasonal trailhead and shuttle leg.']
         ],
-        access: 'Grosseto is the principal rail gateway; Alberese and park routes require named buses, visitor-centre instructions, shuttles, bicycles or legal parking. Trailheads and beaches are not interchangeable. Confirm the route number and return before leaving the rail corridor.',
-        tradeoff: 'Park trails, remote beaches and Grosseto collections solve different days. Choosing one gives up a wider coast loop but protects shade, water, conservation rules and the final connection.',
+        access: 'The Park’s rail guidance says to leave the train at Grosseto and take a bus to the Alberese Visitor Centre. Its separate access page names a seasonal shuttle through Rispescia, Alberese, Pinottolai and Marina di Alberese; the displayed tables are from 2025. Verify the current bus, trail start and route status before you leave Grosseto.',
+        tradeoff: 'A7’s 5.6 km easy listing is a different effort from A10’s 11.2 km beach approach; neither makes a same-day city-and-coast circuit automatic. Choose one park route or stay behind Grosseto’s walls, protecting the final bus and the heat/fire rules.',
         stages: [
-          ['Check the park gate', 'Read route availability, fire and weather status, visitor-centre instructions and any capacity control.'],
-          ['Reach the named start', 'Use the confirmed bus, shuttle, bicycle or legal lot rather than navigating to the park name.'],
-          ['Complete one signed landscape', 'Stay on the selected trail or beach access and carry the required water and sun protection.'],
-          ['Return before heat or service gaps', 'Reach Alberese or Grosseto with margin for the final rural and rail connection.']
+          ['Reach Grosseto by rail', 'Use Trenitalia’s exact-date planner for Siena–Grosseto; do not assume a same-day connection fits until the return is visible.'],
+          ['Take the bus to Alberese Visitor Centre', 'The Park directs rail arrivals to Grosseto station and then bus to Alberese; check Autolinee Toscane’s current route/date.'],
+          ['Choose one open signed route', 'Confirm the active start at Pinottolai and current trail rules, then follow A7 or another approved route from the Park map.'],
+          ['Return through the same access chain', 'Use the live shuttle/bus plan back to Alberese and Grosseto before the final rail leg; do not treat Marina di Alberese as the Visitor Centre.']
         ],
-        fallback: 'In extreme heat, fire restrictions, rain or shuttle disruption, make Grosseto a full walls-and-museum day or use another officially open low-distance route. Never cross a closed path to preserve the coast plan.',
+        fallback: 'If the park route, fire rules or current shuttle do not fit, stay in Grosseto for a walls-and-museum day. Do not substitute an unverified beach shuttle or attempt a closed trail to save the outing.',
         watch: [
-          ['Protected routes are conditional', 'Fire risk, flooding, conservation and capacity can change which trail or beach is usable.'],
-          ['The visitor centre is not the coast', 'Allow the onward shuttle, bicycle or trail time after check-in.'],
-          ['Rural return is sparse', 'Save the final bus or shuttle and do not assume a taxi will be available at a remote trailhead.']
+          ['The visible shuttle page is dated 2025', 'Do not copy its season, stop times or parking details into a 2026 plan; ask the Park and operator for current access.'],
+          ['Visitor Centre and Pinottolai are different', 'The park page distinguishes the Alberese visitor centre from the trail departure point. Confirm the current last-mile leg.'],
+          ['A long route is not a hot-weather fallback', 'A10 Collelungo is listed at 11.2 km; if heat or fire limits the park, use the urban alternative instead.']
         ],
-        duration: 'Allow a full day for a park or coast route from Siena or Grosseto. A Grosseto cultural day can fit five to seven hours.',
-        combine: 'Combine one park route with Alberese or one Grosseto evening. Keep Val d’Orcia and distant beaches for separate days.',
-        verify: 'Check Maremma Park route and shuttle status, fire and heat conditions, Autolinee Toscane service and the exact rail return.',
+        duration: 'Protect a full day for one park walk from Grosseto, including train, bus, park access and the listed route distance. The kilometre figures are the Park’s route listings, not promised walking times; verify current route conditions and return service.',
+        combine: 'Pair one open park route with the Alberese visitor area only if the access plan allows it. Keep Grosseto’s museum/wall circuit, Val d’Orcia and a separate coast trip on different days.',
+        verify: 'Recheck the Maremma Park visiting rules, current walk map, trail/fire status and seasonal shuttle; confirm the Grosseto–Alberese Autolinee service and Trenitalia return for your actual date.',
+        faq: [
+          ['Is Alberese Visitor Centre the park trailhead?', 'No. The Park’s pages distinguish the visitor centre in Alberese from Pinottolai, named for Alberese itineraries, and from Marina di Alberese. Confirm the current access leg for the route you choose.'],
+          ['Which Maremma walk suits a shorter day?', 'The current official walking list labels A7 Bocca d’Ombrone as an easy 5.6 km route. Check that it is open and that the current transport reaches its start before using it.'],
+          ['Can I use the park’s shuttle timetable for 2026?', 'The access page we checked still labels its visible table Summer/Autumn 2025. It is not evidence of a 2026 departure; check the Park and Autolinee Toscane again.']
+        ],
         sources: [
-          ['https://parco-maremma.it/', 'Parco Regionale della Maremma — official access information'],
-          ['https://www.visittuscany.com/en/areas/maremma/', 'Visit Tuscany — official Maremma destination information']
+          ['https://parco-maremma.it/en/visit/how-to-reach-us/', 'Maremma Park — rail, bus and seasonal shuttle access'],
+          ['https://parco-maremma.it/en/visiting-rules/', 'Maremma Park — trail access and seasonal visiting rules'],
+          ['https://parco-maremma.it/en/itineraries/walks/', 'Maremma Park — A7/A10 walking routes and published lengths'],
+          ['https://www.at-bus.it/en', 'Autolinee Toscane — current regional bus planner'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — date-specific rail planner'],
+          ['https://www.visittuscany.com/en/areas/maremma/', 'Visit Tuscany — regional Maremma information']
         ]
       })
     ]

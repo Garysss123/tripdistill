@@ -144,6 +144,7 @@ const unitedKingdomLondonEditedRoutes = [
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const italyPugliaLastmod = '2026-10-11';
+const italySienaLastmod = '2026-10-12';
 const italyPugliaEditedRoutes = [
   '/italy/puglia/',
   '/italy/puglia/bari-trani-castel-del-monte/',
@@ -556,8 +557,8 @@ const newRoutes = [
   ['/japan/hokkaido/asahikawa-daisetsuzan/', hokkaidoLastmod, 'monthly', '0.7'],
   ['/japan/hokkaido/niseko-yoichi/', hokkaidoLastmod, 'monthly', '0.7'],
   ['/italy/', italyLastmod, 'monthly', '0.9'],
-  ...italyClusters.map((cluster) => [`/italy/${cluster.slug}/`, cluster.slug === 'italian-lakes' ? cluster.reviewIsoDate || italyLastmod : cluster.slug === 'rome' ? romeLastmod : italyLastmod, 'monthly', '0.8']),
-  ...italyGuides.map((guide) => [guide.url, guide.hubSlug === 'italian-lakes' ? italyClusters.find((cluster) => cluster.slug === 'italian-lakes')?.reviewIsoDate || italyLastmod : guide.hubSlug === 'rome' ? romeLastmod : italyLastmod, 'monthly', '0.7']),
+  ...italyClusters.map((cluster) => [`/italy/${cluster.slug}/`, cluster.slug === 'italian-lakes' ? cluster.reviewIsoDate || italyLastmod : cluster.slug === 'rome' ? romeLastmod : cluster.slug === 'siena-southern-tuscany' ? italySienaLastmod : italyLastmod, 'monthly', '0.8']),
+  ...italyGuides.map((guide) => [guide.url, guide.hubSlug === 'italian-lakes' ? italyClusters.find((cluster) => cluster.slug === 'italian-lakes')?.reviewIsoDate || italyLastmod : guide.hubSlug === 'rome' ? romeLastmod : guide.hubSlug === 'siena-southern-tuscany' ? italySienaLastmod : italyLastmod, 'monthly', '0.7']),
   ['/united-kingdom/', unitedKingdomLastmod, 'monthly', '0.9'],
   ...unitedKingdomClusters.map((cluster) => [`/united-kingdom/${cluster.slug}/`, unitedKingdomLastmod, 'monthly', '0.8']),
   ...unitedKingdomGuides.map((guide) => [guide.url, unitedKingdomLastmod, 'monthly', '0.7']),
