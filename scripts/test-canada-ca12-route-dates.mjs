@@ -36,6 +36,10 @@ const checkpointContinuationRoutes = [
   '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
   '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/',
+  '/australia/cairns-wet-tropics/',
+  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/',
   '/switzerland/lugano-southern-ticino/',
   '/switzerland/locarno-ascona-valleys/',
   '/switzerland/schaffhausen-rhine-falls/'
@@ -94,7 +98,7 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast and CH14 date routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast, Cairns and CH14 date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: checkpoint continuation lastmod must be current.`);
 

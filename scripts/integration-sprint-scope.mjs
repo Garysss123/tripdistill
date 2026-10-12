@@ -40,7 +40,11 @@ export const integrationRouteGroups = Object.freeze({
     '/australia/gold-coast-scenic-rim/',
     '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
     '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
-    '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
+    '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/',
+    '/australia/cairns-wet-tropics/',
+    '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+    '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+    '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
   ]),
   france: Object.freeze([
     '/france/',

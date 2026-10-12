@@ -29,6 +29,12 @@ const laterGoldCoastRoutes = [
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
   '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
 ];
+const laterCairnsRoutes = [
+  '/australia/cairns-wet-tropics/',
+  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
+];
 const laterCanadaCa13Routes = [
   '/canada/saguenay-tadoussac/',
   '/canada/saguenay-tadoussac/tadoussac-marine/',
@@ -261,7 +267,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, CA13, CA14 child and CH14 search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14 child and CH14 search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);
@@ -270,10 +276,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const expectedLastmod = [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only the selected Blue Mountains, later Great Ocean Road and Gold Coast routes in five editions may receive a new Australia sitemap lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only the selected Blue Mountains, later Great Ocean Road, Gold Coast and Cairns routes in five editions may receive a new Australia sitemap lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, `${route}: sitemap lastmod.`);
 
 const svgFile = path.join(root, svgPath.slice(1));

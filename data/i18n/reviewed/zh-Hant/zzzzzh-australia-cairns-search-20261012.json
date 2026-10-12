@@ -1,0 +1,18 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Cairns nights around a reef vessel, the Cairns–Kuranda crossing or Palm Cove, then separate Port Douglas and Daintree roads by their transport, weather and return requirements.": "安排凱恩斯住宿晚數時，依外堡礁船班、凱恩斯—庫蘭達穿越行程或棕櫚灣來規劃；道格拉斯港與丹翠雨林道路行程則分開考量交通、天候與回程需求。",
+    "Distinguish the Cairns Lagoon from tidal water, confirm the booked reef operator’s own check-in and berth, and keep an overnight buffer before the vessel.": "分清 Cairns Lagoon 與潮汐水域；確認已預訂外堡礁業者指定的報到地點與泊位，並在搭船前一晚留在凱恩斯。",
+    "Compare the Kuranda Scenic Railway and Skyrail ticket direction, Cairns or Freshwater station, Smithfield coach transfer, luggage limits and service notices before a full-day visit.": "安排庫蘭達一日遊前，先比較 Kuranda Scenic Railway 與 Skyrail 的票券方向、Cairns 或 Freshwater 車站、Smithfield 遊覽車接駁、行李限制與服務公告。",
+    "Plan a Palm Cove day from Cairns around a date-specific Translink or booked transfer return, local beach advice, shade and a no-swim fallback.": "從凱恩斯安排棕櫚灣一日遊時，依指定日期確認 Translink 或預訂接送的回程，並留意當地海灘資訊、遮蔭處與不下水的備案。"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}
