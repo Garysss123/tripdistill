@@ -221,7 +221,7 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Modena cathedral Piazza Grande Emilia Romagna',
         imageAlt: 'Original schematic showing the Modena and Parma rail pair and optional booked branches',
         imageLegendTitle: 'Diagram key · schematic, not to scale',
-        imageLegend: ['1 · Choose Modena or Parma as the day base', '2 · Walk station–historic core–station', '3 · Maranello or a producer needs a confirmed last mile'],
+        imageLegend: ['1 · Modena rail gateway', '2 · Via Emilia regional rail corridor', '3 · Parma rail gateway', '4 · Maranello needs a confirmed separate last mile', '5 · A booked producer visit has its own gateway and return'],
         purpose: 'Choose one city for the day: Modena’s cathedral and motor story, Parma’s cathedral and cultural interiors, or one booked producer visit reached from a named gateway. These are competing plans, because Maranello and rural dairies or acetaie sit beyond the station-to-centre walk and each needs its own transport, appointment and return.',
         summary: 'Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.',
         localPlan: {

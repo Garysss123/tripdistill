@@ -48,9 +48,6 @@
     "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a…": "搭乘Trenitalia TPER區域火車前往摩德納或帕爾馬，從該站步行進入一座歷史中心並返回原站；馬拉內羅或乳酪／香醋工坊則須先由營運者確認集合地址、預約及完整末段交通。",
     "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.": "搭乘Trenitalia TPER區域火車前往摩德納或帕爾馬，從該站步行進入一座歷史中心並返回原站；馬拉內羅或乳酪／香醋工坊則須先由營運者確認集合地址、預約及完整末段交通。",
     "Diagram key · schematic, not to scale": "圖例 · 示意，非按比例繪製",
-    "1 · Choose Modena or Parma as the day base": "1 · 選摩德納或帕爾馬作為當日基地",
-    "2 · Walk station–historic core–station": "2 · 車站—歷史中心—車站步行線",
-    "3 · Maranello or a producer needs a confirmed last mile": "3 · 馬拉內羅或生產者地點須確認末段交通",
     "Choose a city before choosing the appointment": "先選城市，再決定是否預約支線",
     "Modena and Parma share the Via Emilia rail corridor, but the useful walk begins only after you select one station. A rural producer or Maranello visit changes the day into an appointment-led transfer, not a simple extension of the city centre.": "摩德納與帕爾馬共用Via Emilia鐵路走廊，但步行行程要先選定一座車站。鄉間生產者或馬拉內羅參訪會把當天變成以預約為主的轉乘行程，不是市中心路線的簡單延伸。",
     "Keep the bed by the rail day you actually chose": "住宿依當天實際選定的鐵路城市安排",
@@ -74,7 +71,12 @@
     "Check each monument and the Delta operator": "逐一查古蹟與三角洲營運者",
     "Ravenna’s mosaic monuments can have different custodians, entry conditions and ticket coverage, so verify each intended site on Ravenna Turismo or its named operator. For Ferrara, check current visitor access and bicycle or wall conditions with Ferrara Info. For the Po Delta, reserve the exact boat, guide, bus or visitor-centre program and record its meeting location, duration, weather cancellation terms and return. The park’s conservation notices govern access; this page supplies no unverified service or fare.": "拉文納馬賽克古蹟可能由不同單位管理、設有不同入場條件，票券涵蓋範圍也各異；在Ravenna Turismo或指定營運者頁面確認每處景點。前往費拉拉則透過Ferrara Info查訪客動線、自行車或城牆狀況。若去波河三角洲，預約確切船班、導覽、公車或訪客中心行程，並記錄集合地點、時長、天候取消規定及回程。保護區須遵循園區保育公告；本文不提供未核實班次或票價。",
     "Let wind and water decide the outdoor block": "讓風與水決定戶外路段長度",
-    "Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.": "遇到大雨或盛夏高溫時，以拉文納已確認開放的室內古蹟或費拉拉博物館為主，縮短戶外連接路段。若溫度、風勢或體力不適合完整繞行，費拉拉城牆只走一段。三角洲船遊與棲地參訪視營運者、水位、天候與保育條件而定；冬霧會降低能見度並縮短日照。前往集合點前，先備妥同一基地的城市替代行程。"
+    "Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.": "遇到大雨或盛夏高溫時，以拉文納已確認開放的室內古蹟或費拉拉博物館為主，縮短戶外連接路段。若溫度、風勢或體力不適合完整繞行，費拉拉城牆只走一段。三角洲船遊與棲地參訪視營運者、水位、天候與保育條件而定；冬霧會降低能見度並縮短日照。前往集合點前，先備妥同一基地的城市替代行程。",
+    "1 · Modena rail gateway": "1 · 摩德納鐵路門戶",
+    "2 · Via Emilia regional rail corridor": "2 · Via Emilia區域鐵路走廊",
+    "3 · Parma rail gateway": "3 · 帕爾馬鐵路門戶",
+    "4 · Maranello needs a confirmed separate last mile": "4 · 馬拉內羅需另行確認末段交通",
+    "5 · A booked producer visit has its own gateway and return": "5 · 預約生產者行程需確認專屬集合點與回程"
   },
   "reviewProvenance": {
     "writer": "single-model translation",

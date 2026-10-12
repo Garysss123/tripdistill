@@ -48,9 +48,6 @@
     "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a…": "Trenitalia TPER 지역열차로 모데나나 파르마에 가서 역에서 한 곳의 역사 중심지까지 걸어간 뒤 같은 역으로 돌아오세요. 마라넬로나 치즈·발사믹 식초 생산자를 더하려면 운영사에 집결 주소, 예약, 마지막 구간 교통을 확인해야 합니다.",
     "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.": "Trenitalia TPER 지역열차로 모데나나 파르마에 가서 역에서 한 곳의 역사 중심지까지 걸어간 뒤 같은 역으로 돌아오세요. 마라넬로나 치즈·발사믹 식초 생산자를 더하려면 운영사에 집결 주소, 예약, 마지막 구간 교통을 확인해야 합니다.",
     "Diagram key · schematic, not to scale": "도면 안내 · 축척이 없는 개념도",
-    "1 · Choose Modena or Parma as the day base": "1 · 모데나 또는 파르마를 당일 거점으로 선택",
-    "2 · Walk station–historic core–station": "2 · 역—역사 중심지—역 도보 경로",
-    "3 · Maranello or a producer needs a confirmed last mile": "3 · 마라넬로나 생산자 방문은 확인된 마지막 이동이 필요",
     "Choose a city before choosing the appointment": "예약을 생각하기 전에 도시를 정하기",
     "Modena and Parma share the Via Emilia rail corridor, but the useful walk begins only after you select one station. A rural producer or Maranello visit changes the day into an appointment-led transfer, not a simple extension of the city centre.": "모데나와 파르마는 비아 에밀리아 철도축으로 연결되지만 도보 일정은 역 하나를 선택한 뒤 시작됩니다. 외곽 생산자나 마라넬로 방문은 도심 일정의 단순한 연장이 아니라 예약 시간에 맞춘 이동일입니다.",
     "Keep the bed by the rail day you actually chose": "실제로 선택한 철도 도시에 숙박",
@@ -74,7 +71,12 @@
     "Check each monument and the Delta operator": "유적과 삼각주 운영사를 각각 확인",
     "Ravenna’s mosaic monuments can have different custodians, entry conditions and ticket coverage, so verify each intended site on Ravenna Turismo or its named operator. For Ferrara, check current visitor access and bicycle or wall conditions with Ferrara Info. For the Po Delta, reserve the exact boat, guide, bus or visitor-centre program and record its meeting location, duration, weather cancellation terms and return. The park’s conservation notices govern access; this page supplies no unverified service or fare.": "라벤나의 모자이크 유적은 관리 주체, 입장 조건, 통합권 범위가 다를 수 있으므로 방문할 곳마다 Ravenna Turismo나 지정 운영사 정보를 확인하세요. 페라라는 Ferrara Info에서 현재 방문 동선과 자전거·성벽 상황을 살펴봅니다. 포강 삼각주에서는 정확한 보트, 가이드, 버스, 방문자센터 프로그램을 예약하고 집결지, 소요시간, 날씨 취소 조건, 귀환을 기록하세요. 보호구역은 공원의 보전 공지를 따라야 합니다. 확인되지 않은 운행 시간이나 요금은 제시하지 않습니다.",
     "Let wind and water decide the outdoor block": "바람과 물 상태에 따라 야외 구간 결정",
-    "Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.": "폭우나 여름 더위에는 확인된 라벤나 실내 유적이나 페라라 박물관을 중심으로 짧은 야외 이동을 더하세요. 기온, 바람, 체력에 맞지 않으면 페라라 성벽은 일부만 걷습니다. 삼각주 보트와 습지 방문은 운영사, 수위, 날씨, 보전 조건에 따라 달라집니다. 겨울 안개는 시야와 낮 시간을 줄입니다. 집결지로 떠나기 전에 같은 거점에서 완결되는 도시 일정을 준비하세요."
+    "Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.": "폭우나 여름 더위에는 확인된 라벤나 실내 유적이나 페라라 박물관을 중심으로 짧은 야외 이동을 더하세요. 기온, 바람, 체력에 맞지 않으면 페라라 성벽은 일부만 걷습니다. 삼각주 보트와 습지 방문은 운영사, 수위, 날씨, 보전 조건에 따라 달라집니다. 겨울 안개는 시야와 낮 시간을 줄입니다. 집결지로 떠나기 전에 같은 거점에서 완결되는 도시 일정을 준비하세요.",
+    "1 · Modena rail gateway": "1 · 모데나 철도 관문",
+    "2 · Via Emilia regional rail corridor": "2 · 비아 에밀리아 지역 철도축",
+    "3 · Parma rail gateway": "3 · 파르마 철도 관문",
+    "4 · Maranello needs a confirmed separate last mile": "4 · 마라넬로는 별도의 마지막 이동을 확인",
+    "5 · A booked producer visit has its own gateway and return": "5 · 생산자 방문은 별도 집결지와 귀환을 확인"
   },
   "reviewProvenance": {
     "writer": "single-model translation",

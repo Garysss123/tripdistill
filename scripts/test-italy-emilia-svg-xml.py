@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 NS = '{http://www.w3.org/2000/svg}'
 FILES = {
     'assets/images/tripdistill-italy-bologna-portico-plan.svg': ['1', '2', '3'],
-    'assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg': ['1', '2', '3', '4', '4'],
+    'assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg': ['1', '2', '3', '4', '5'],
 }
 NUMBER = re.compile(r'[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?')
 TOKENS = re.compile(r'[A-Za-z]|[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?')
@@ -98,6 +98,22 @@ for relative, markers in FILES.items():
         pts = path_points(node.attrib['d'], relative)
         assert pts, f'{relative}: empty path geometry'
         for px, py in pts: inside(px, py, width, height, relative)
+    centers = [(float(node.attrib['cx']), float(node.attrib['cy'])) for node in circles]
+    paths = root.findall('.//' + NS + 'path')
+    if relative.endswith('tripdistill-italy-bologna-portico-plan.svg'):
+        solid, branch = paths[0], paths[1]
+        assert solid.attrib.get('stroke') == '#2f625a' and branch.attrib.get('stroke') == '#b86b42', f'{relative}: expected one main route and one distinct branch'
+        assert path_points(solid.attrib['d'], relative)[0] == centers[0], f'{relative}: main route must start at marker 1'
+        assert path_points(solid.attrib['d'], relative)[-1] == centers[1], f'{relative}: solid route must end at marker 2'
+        assert path_points(branch.attrib['d'], relative)[0] == centers[1], f'{relative}: San Luca branch must leave marker 2'
+        assert path_points(branch.attrib['d'], relative)[-1] == centers[2], f'{relative}: San Luca branch must end at marker 3'
+    elif relative.endswith('tripdistill-italy-modena-parma-rail-and-booking-plan.svg'):
+        trunk, branches = paths[0], paths[1]
+        assert trunk.attrib.get('stroke') == '#2f625a' and branches.attrib.get('stroke') == '#b86b42', f'{relative}: expected a rail corridor and distinct optional branches'
+        assert path_points(trunk.attrib['d'], relative)[0] == centers[0] and path_points(trunk.attrib['d'], relative)[-1] == centers[2], f'{relative}: Via Emilia trunk must connect markers 1 and 3'
+        branch_subpaths = ['M' + segment for segment in branches.attrib['d'].split('M')[1:]]
+        branch_ends = {path_points(segment, relative)[-1] for segment in branch_subpaths}
+        assert branch_ends == {centers[3], centers[4]}, f'{relative}: both distinct dashed branch ends must connect to markers 4 and 5'
     assert len(root.findall('.//' + NS + 'path')) >= 2, f'{relative}: route geometry missing'
     assert len(root.findall('.//' + NS + 'rect')) >= 1, f'{relative}: background geometry missing'
     print(f'Parsed and geometry-checked {relative}: {len(circles)} markers, {len(root.findall(".//" + NS + "path"))} paths, viewBox {width:g}×{height:g}.')

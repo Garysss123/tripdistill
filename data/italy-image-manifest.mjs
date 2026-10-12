@@ -213,7 +213,7 @@ export const italyImageManifest = {
     "editNote": "Planning schematic only; not a geographic map and not to scale.",
     "originalSchematic": true,
     "legendTitle": "Diagram key · schematic, not to scale",
-    "legend": ["1 · Choose Modena or Parma as the day base", "2 · Walk station–historic core–station", "3 · Maranello or a producer needs a confirmed last mile"]
+    "legend": ["1 · Modena rail gateway", "2 · Via Emilia regional rail corridor", "3 · Parma rail gateway", "4 · Maranello needs a confirmed separate last mile", "5 · A booked producer visit has its own gateway and return"]
   },
   "emilia-romagna/ravenna-ferrara-po-delta": {
     "src": "/assets/images/italy-emilia-romagna-ravenna-ferrara-po-delta.webp",

@@ -13,6 +13,13 @@ const retired = [
 ];
 const diagramGuides = cluster.guides.filter((guide) => guide.image.assetType === 'original-planning-diagram');
 assert.equal(diagramGuides.length, 2);
+const bologna = diagramGuides.find((guide) => guide.url.endsWith('/bologna-porticoes-markets/'));
+const modenaParma = diagramGuides.find((guide) => guide.url.endsWith('/modena-parma-via-emilia/'));
+assert.deepEqual(bologna.image.legend.map((line) => Number(line.match(/^(\d+)/)?.[1])), [1, 2, 3], 'Bologna legend markers must match the SVG nodes');
+assert.match(bologna.image.legend[2], /San Luca is a separate branch/i, 'Bologna marker 3 must identify the separate San Luca branch');
+assert.deepEqual(modenaParma.image.legend.map((line) => Number(line.match(/^(\d+)/)?.[1])), [1, 2, 3, 4, 5], 'Modena/Parma legend must explain each unique SVG node');
+assert.match(modenaParma.image.legend[3], /Maranello/i, 'Modena/Parma marker 4 must identify the Maranello branch');
+assert.match(modenaParma.image.legend[4], /producer/i, 'Modena/Parma marker 5 must identify the booked-producer branch');
 for (const guide of diagramGuides) {
   const asset = path.join(root, guide.image.src.slice(1));
   assert.ok(fs.existsSync(asset), `${guide.url}: original diagram is missing`);
@@ -32,26 +39,34 @@ for (const relative of retired) {
 const sourcePages = [
   ['italy/emilia-romagna/index.html', ...cluster.guides.map((guide) => guide.url.slice(1) + 'index.html')]
 ].flat();
-for (const file of sourcePages) {
-  const html = fs.readFileSync(path.join(root, file), 'utf8');
-  for (const image of diagramGuides) {
-    if (file === 'italy/emilia-romagna/index.html' || file === image.url.slice(1) + 'index.html') {
-      assert.ok(html.includes(image.image.src), `${file}: original diagram not rendered`);
-      assert.ok(html.includes(image.image.legendTitle) && image.image.legend.every((item) => html.includes(item)), `${file}: diagram key missing`);
-      assert.ok(html.includes(image.image.rightsStatusUrl) && html.includes(image.image.rightsStatus), `${file}: visible source / Terms of Use provenance missing`);
+const outputRoots = fs.existsSync(path.join(root, 'dist')) ? ['', 'dist/'] : [''];
+for (const outputRoot of outputRoots) {
+  for (const file of sourcePages) {
+    const html = fs.readFileSync(path.join(root, outputRoot, file), 'utf8');
+    for (const image of diagramGuides) {
+      if (file === 'italy/emilia-romagna/index.html' || file === image.url.slice(1) + 'index.html') {
+        assert.ok(html.includes(image.image.src), `${outputRoot}${file}: original diagram not rendered`);
+        assert.ok(html.includes(image.image.legendTitle) && image.image.legend.every((item) => html.includes(item)), `${outputRoot}${file}: diagram key missing or inconsistent with numbered nodes`);
+        assert.ok(html.includes(image.image.rightsStatusUrl) && html.includes(image.image.rightsStatus), `${outputRoot}${file}: visible source / Terms of Use provenance missing`);
+      }
+    }
+    for (const imagePath of retired) assert.ok(!html.includes('/' + imagePath), `${outputRoot}${file}: retired photo is still publicly referenced`);
+  }
+  for (const [locale, batchLocale] of [['zh', 'zh-Hant'], ['ja', 'ja'], ['ko', 'ko'], ['th', 'th']]) {
+    const batch = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/reviewed', batchLocale, 'zzzzzzma-italy-emilia-pages-20261012.json'), 'utf8'));
+    for (const guide of diagramGuides) {
+      const html = fs.readFileSync(path.join(root, outputRoot, locale, guide.url.slice(1), 'index.html'), 'utf8');
+      assert.ok(html.includes(guide.image.src) && html.includes('terms-of-use'), `${outputRoot}${locale}${guide.url}: localized original provenance missing`);
+      for (const key of guide.image.legend) {
+        const translated = batch.translations[key];
+        assert.ok(translated && html.includes(translated), `${outputRoot}${locale}${guide.url}: visible localized legend entry missing for ${key}`);
+      }
+      assert.ok(!retired.some((imagePath) => html.includes('/' + imagePath)), `${outputRoot}${locale}${guide.url}: retired photo is live`);
     }
   }
-  for (const imagePath of retired) assert.ok(!html.includes('/' + imagePath), `${file}: retired photo is still publicly referenced`);
 }
-for (const locale of ['zh', 'ja', 'ko', 'th']) {
-  for (const guide of cluster.guides.filter((item) => item.image.assetType === 'original-planning-diagram')) {
-    const html = fs.readFileSync(path.join(root, locale, guide.url.slice(1), 'index.html'), 'utf8');
-    assert.ok(html.includes(guide.image.src) && html.includes('terms-of-use'), `${locale}${guide.url}: localized original provenance missing`);
-    assert.ok(!retired.some((imagePath) => html.includes('/' + imagePath)), `${locale}${guide.url}: retired photo is live`);
-  }
-}
-if (fs.existsSync(path.join(root, 'dist'))) {
+if (outputRoots.includes('dist/')) {
   for (const imagePath of retired) assert.ok(!fs.existsSync(path.join(root, 'dist', imagePath)), `${imagePath}: retired local-only photo leaked into dist`);
   for (const guide of diagramGuides) assert.ok(fs.existsSync(path.join(root, 'dist', guide.image.src.slice(1))), `${guide.image.src}: original SVG missing in dist`);
 }
-console.log('Emilia diagram regression passed: source metadata and visible five-language legends/provenance are present; retired photos remain local-only.');
+console.log('Emilia diagram regression passed: XML route endpoints match numbered nodes; source/dist five-language legends and provenance are visible; retired photos remain local-only.');
