@@ -1,0 +1,13 @@
+# Provence inland photo review — 12 October 2026
+
+The three local WebP files were inspected at full 1600 × 1066 pixel dimensions and compared with the exact Wikimedia Commons file pages. The subject in each crop matches its route and visible description. The local image bytes, source URLs, displayed credits and license declarations are unchanged. Commons page declarations are recorded here; this review is not independent rights or chain-of-title clearance.
+
+| Local image | Pixel observation | Commons source page; listed creator and license | Local SHA-256 |
+|---|---|---|---|
+| `assets/images/france-provence-inland-avignon-papal-city.webp` | A dark, wide Rhône-bank panorama from Île de Piot; Pont Saint-Bénézet is at the right edge, with the distant walled Avignon skyline and Palace silhouette. The distant subject agrees with the current skyline alt text. | [Avignon Rhône panorama](https://commons.wikimedia.org/wiki/File:Avignon_-_%C3%8Ele_de_Piot_-_Chemin_des_Berges_-_Panorama_View_from_the_Rh%C3%B4ne_river_bank_towards_Pont_Saint_B%C3%A9n%C3%A9zet_(Pont_d%27Avignon),_Jardin_des_doms,_Avignon_Cathedral,_Palais_des_Papes_%26_Pont_%C3%89douard_Daladier_02.jpg) — Txllxt TxllxT; CC BY-SA 4.0. | `a82d6f1117c6e34ca179d7f001284e99fb3e9da18141962d8cf9908869a905d3` |
+| `assets/images/france-provence-inland-aix-markets-cezanne.webp` | Fontaine de la Rotonde and the plane-tree avenue on Cours Mirabeau in central Aix; matches the current Aix fountain alt text. | [Cours Mirabeau fountain](https://commons.wikimedia.org/wiki/File:France-002438_-_Cours_Mirabeau_Fountain_(15867627856).jpg) — Dennis G. Jarvis; CC BY-SA 2.0. | `f072c6ba751bb14712fe4d4675031e450b2c063266cd9090c740391cc2b9e967` |
+| `assets/images/france-provence-inland-luberon-villages-abbey.webp` | Gordes on its hillside, with the stone village visible; matches the route description and alt text. | [Village of Gordes](https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg) — Einaz80; CC BY-SA 4.0. | `0865181e415724083187d7f001284e99fb3e9da18141962d8cf9908869a905d3` |
+
+The first source page identifies the Île de Piot viewpoint and panorama subject; the second identifies the Cours Mirabeau fountain; the third identifies Gordes. The source pages list the creators and license versions shown above. The site credit history records resizing, display cropping and WebP conversion, with no other material edits. No image-source conflict was found, so the current route images remain in use and no replacement SVG was needed.
+
+The photo inventory records the source-page checks and pixel review separately from legal rights verification. `commercialReuseEligibility` remains `permitted_by_stated_license_not_independently_checked`; this report does not upgrade that status.

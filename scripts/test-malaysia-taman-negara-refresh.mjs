@@ -146,11 +146,22 @@ const baseSitemap = new Map([...execFileSync('git', ['show', 'HEAD:sitemap.xml']
   .map(([, url, date]) => [url || '/', date]));
 assert.deepEqual(new Set(sitemapEntries.keys()), new Set(baseSitemap.keys()), 'refresh adds or removes no sitemap URL');
 assert.deepEqual(new Set(distSitemapEntries.keys()), new Set(baseSitemap.keys()), 'built refresh adds or removes no sitemap URL');
-const targets = new Set(localePrefixes.flatMap((prefix) => routes.map((route) => `${prefix}${route}`)));
+const tamanTargets = new Set(localePrefixes.flatMap((prefix) => routes.map((route) => `${prefix}${route}`)));
+const provenceRoutes = [
+  '/france/provence-inland/',
+  '/france/provence-inland/avignon-papal-city/',
+  '/france/provence-inland/aix-markets-cezanne/'
+];
+const provenceTargets = new Set(localePrefixes.flatMap((prefix) => provenceRoutes.map((route) => `${prefix}${route}`)));
+const expectedUpdates = new Map([
+  ...[...tamanTargets].map((url) => [url, reviewedDate]),
+  ...[...provenceTargets].map((url) => [url, '2026-10-12'])
+]);
 for (const [url, date] of baseSitemap) {
-  assert.equal(sitemapEntries.get(url), targets.has(url) ? reviewedDate : date, `sitemap date scope: ${url}`);
-  assert.equal(distSitemapEntries.get(url), targets.has(url) ? reviewedDate : date, `dist sitemap date scope: ${url}`);
+  assert.equal(sitemapEntries.get(url), expectedUpdates.get(url) || date, `sitemap date scope: ${url}`);
+  assert.equal(distSitemapEntries.get(url), expectedUpdates.get(url) || date, `dist sitemap date scope: ${url}`);
 }
-assert.equal(targets.size, 25, 'expected only 5 routes × 5 language editions');
+assert.equal(tamanTargets.size, 25, 'expected exactly 5 Taman routes × 5 language editions');
+assert.equal(provenceTargets.size, 15, 'expected only the three Provence routes × 5 language editions as the separate concurrent date change');
 
-console.log(`Taman Negara refresh regression passed: exactly ${routes.length} existing routes × ${localePrefixes.length} languages, 25 dated sitemap entries, synchronized search, linked official sources, and no URL-set changes.`);
+console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, 25 Taman and 15 Provence date entries, synchronized search, linked official sources, and no URL-set changes.`);
