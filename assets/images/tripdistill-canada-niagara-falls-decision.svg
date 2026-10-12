@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Niagara visit planning sequence in five languages</title>
+  <desc id="desc">A conceptual four-step itinerary: check a Toronto rail connection, confirm the Niagara Falls station transfer, walk the Falls district, and keep the gorge or Niagara-on-the-Lake for a separately planned day. Not to scale and no service route is shown.</desc>
+  <rect width="1200" height="700" fill="#f4f1e9"/>
+  <text x="54" y="54" fill="#252f3a" font-family="Arial, sans-serif" font-size="27" font-weight="900" letter-spacing="1">PLAN THE CONNECTION BEFORE ADDING ANOTHER DISTRICT</text>
+  <text x="56" y="82" fill="#58676d" font-family="Arial, sans-serif" font-size="15">A decision sequence, not a map, timetable or promise of service.</text>
+  <rect x="54" y="112" width="1092" height="242" rx="8" fill="#fffdf8" stroke="#c5ced0" stroke-width="2"/>
+
+  <rect x="72" y="137" width="246" height="188" rx="6" fill="#f6e7e3" stroke="#a32e37" stroke-width="2"/>
+  <circle cx="101" cy="168" r="17" fill="#a32e37"/>
+  <text x="96" y="174" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="800">1</text>
+  <text x="128" y="174" fill="#722b30" font-family="Arial, sans-serif" font-size="15" font-weight="800">SET THE RAIL DATE</text>
+  <text x="92" y="215" fill="#252f3a" font-family="Arial, sans-serif" font-size="22" font-weight="800">Toronto → Niagara</text>
+  <text x="92" y="244" fill="#58676d" font-family="Arial, sans-serif" font-size="15">Check GO departures,</text>
+  <text x="92" y="266" fill="#58676d" font-family="Arial, sans-serif" font-size="15">direct trains and return.</text>
+  <text x="92" y="301" fill="#722b30" font-family="Arial, sans-serif" font-size="13" font-weight="700">Schedule changes by date</text>
+
+  <rect x="348" y="137" width="246" height="188" rx="6" fill="#e8eff0" stroke="#4c7881" stroke-width="2"/>
+  <circle cx="377" cy="168" r="17" fill="#4c7881"/>
+  <text x="372" y="174" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="800">2</text>
+  <text x="404" y="174" fill="#315f67" font-family="Arial, sans-serif" font-size="15" font-weight="800">CONFIRM THE TRANSFER</text>
+  <text x="368" y="215" fill="#252f3a" font-family="Arial, sans-serif" font-size="20" font-weight="800">Station → Table Rock</text>
+  <text x="368" y="244" fill="#58676d" font-family="Arial, sans-serif" font-size="15">Choose the operating WEGO</text>
+  <text x="368" y="266" fill="#58676d" font-family="Arial, sans-serif" font-size="15">link, tour, taxi or car.</text>
+  <text x="368" y="301" fill="#315f67" font-family="Arial, sans-serif" font-size="13" font-weight="700">Rail station ≠ Falls edge</text>
+
+  <rect x="624" y="137" width="246" height="188" rx="6" fill="#e8eee5" stroke="#517452" stroke-width="2"/>
+  <circle cx="653" cy="168" r="17" fill="#517452"/>
+  <text x="648" y="174" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="800">3</text>
+  <text x="680" y="174" fill="#435845" font-family="Arial, sans-serif" font-size="15" font-weight="800">WALK ONE DISTRICT</text>
+  <text x="644" y="215" fill="#252f3a" font-family="Arial, sans-serif" font-size="22" font-weight="800">Falls + promenade</text>
+  <text x="644" y="244" fill="#58676d" font-family="Arial, sans-serif" font-size="15">Outside view first; choose</text>
+  <text x="644" y="266" fill="#58676d" font-family="Arial, sans-serif" font-size="15">one extra attraction if useful.</text>
+  <text x="644" y="301" fill="#435845" font-family="Arial, sans-serif" font-size="13" font-weight="700">Keep the return margin</text>
+
+  <rect x="900" y="137" width="228" height="188" rx="6" fill="#f2eddb" stroke="#a7813a" stroke-width="2"/>
+  <circle cx="929" cy="168" r="17" fill="#a7813a"/>
+  <text x="924" y="174" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="800">4</text>
+  <text x="956" y="174" fill="#725722" font-family="Arial, sans-serif" font-size="15" font-weight="800">PLAN OTHER DAYS</text>
+  <text x="920" y="215" fill="#252f3a" font-family="Arial, sans-serif" font-size="19" font-weight="800">Gorge / NOTL</text>
+  <text x="920" y="244" fill="#58676d" font-family="Arial, sans-serif" font-size="15">Check trail access or book</text>
+  <text x="920" y="266" fill="#58676d" font-family="Arial, sans-serif" font-size="15">a sober wine-country ride.</text>
+  <text x="920" y="301" fill="#725722" font-family="Arial, sans-serif" font-size="13" font-weight="700">Separate access contracts</text>
+
+  <path d="M 320 231 H 337 M 596 231 H 613 M 872 231 H 889" fill="none" stroke="#303c45" stroke-width="3" stroke-dasharray="6 6"/>
+  <text x="54" y="393" fill="#252f3a" font-family="Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="1">LEGEND / 圖例 / 凡例 / 범례 / คำอธิบาย</text>
+  <text x="70" y="427" fill="#58676d" font-family="Arial, sans-serif" font-size="12" font-weight="800">ENGLISH</text>
+  <text x="290" y="427" fill="#58676d" font-family="Arial, sans-serif" font-size="12" font-weight="800">繁體中文</text>
+  <text x="510" y="427" fill="#58676d" font-family="Arial, sans-serif" font-size="12" font-weight="800">日本語</text>
+  <text x="730" y="427" fill="#58676d" font-family="Arial, sans-serif" font-size="12" font-weight="800">한국어</text>
+  <text x="950" y="427" fill="#58676d" font-family="Arial, sans-serif" font-size="12" font-weight="800">ภาษาไทย</text>
+  <path d="M 54 438 H 1146 M 54 475 H 1146 M 54 512 H 1146 M 54 549 H 1146 M 54 586 H 1146" stroke="#c5ced0" stroke-width="1"/>
+  <rect x="56" y="447" width="13" height="13" fill="#a32e37"/>
+  <text x="80" y="459" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">Rail arrival</text>
+  <text x="290" y="459" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">鐵路抵達</text>
+  <text x="510" y="459" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">鉄道で到着</text>
+  <text x="730" y="459" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">철도 도착</text>
+  <text x="950" y="459" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">เดินทางด้วยรถไฟ</text>
+  <rect x="56" y="484" width="13" height="13" fill="#4c7881"/>
+  <text x="80" y="496" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">Local transfer</text>
+  <text x="290" y="496" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">當地接駁</text>
+  <text x="510" y="496" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">現地の移動</text>
+  <text x="730" y="496" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">현지 환승</text>
+  <text x="950" y="496" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">ต่อรถในพื้นที่</text>
+  <rect x="56" y="521" width="13" height="13" fill="#517452"/>
+  <text x="80" y="533" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">Falls district</text>
+  <text x="290" y="533" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">瀑布區</text>
+  <text x="510" y="533" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">滝エリア</text>
+  <text x="730" y="533" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">폭포 지구</text>
+  <text x="950" y="533" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">ย่านน้ำตก</text>
+  <rect x="56" y="558" width="13" height="13" fill="#a7813a"/>
+  <text x="80" y="570" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">Other day / book ride</text>
+  <text x="290" y="570" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">另一天／預約接送</text>
+  <text x="510" y="570" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">別日／送迎を予約</text>
+  <text x="730" y="570" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">다른 날 / 차량 예약</text>
+  <text x="950" y="570" fill="#252f3a" font-family="Arial, sans-serif" font-size="13">วันอื่น / จองรถรับส่ง</text>
+
+  <text x="54" y="615" fill="#58676d" font-family="Arial, sans-serif" font-size="11">Schematic only; not to scale. Dashed links show itinerary decisions, not actual roads, rail, shuttle routes or travel times.</text>
+  <text x="54" y="633" fill="#58676d" font-family="Arial, sans-serif" font-size="11">僅為示意，非按比例。虛線表示行程規劃，不代表實際道路、鐵路、接駁路線或交通時間。</text>
+  <text x="54" y="651" fill="#58676d" font-family="Arial, sans-serif" font-size="11">概念図で縮尺なし。破線は旅程の判断を示し、実際の道路・鉄道・シャトル路線・所要時間ではありません。</text>
+  <text x="54" y="669" fill="#58676d" font-family="Arial, sans-serif" font-size="11">개념도이며 축척에 맞지 않습니다. 점선은 일정 결정을 나타내며 실제 도로, 철도, 셔틀 노선 또는 이동 시간이 아닙니다.</text>
+  <text x="54" y="687" fill="#58676d" font-family="Arial, sans-serif" font-size="11">แผนภาพแนวคิด ไม่ได้วาดตามมาตราส่วน เส้นประแสดงการวางแผน ไม่ใช่ถนน รถไฟ เส้นทางรถรับส่ง หรือเวลาเดินทางจริง</text>
+</svg>

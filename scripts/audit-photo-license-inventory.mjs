@@ -103,6 +103,27 @@ const verifiedSourcePageDetails = new Map([
     }
   ],
   [
+    'https://commons.wikimedia.org/wiki/File:Horseshoe_Falls_-_Niagara_Falls_Canada.JPG',
+    {
+      detail: 'Niagara Falls photo review on 2026-10-12: the exact Commons page identifies Gzzz, Horseshoe Falls and CC BY-SA 4.0. Local WebP pixels show the curved Horseshoe Falls brink and mist, matching the Falls guide. The site credit identifies the creator and links the source and license; the page declaration does not independently establish uploader authority or a rights chain.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Niagara_Falls_Whirlpool_aerial_view.jpg',
+    {
+      detail: 'Niagara Gorge photo review on 2026-10-12: the exact Commons page identifies Zwergelstern and an aerial view of the Niagara River gorge and whirlpool. It declares CC BY-SA 3.0 and also lists GFDL 1.2 or later; the site credit selects CC BY-SA 3.0. Local WebP pixels show the river bend and whirlpool within the gorge. Page declarations do not independently establish uploader authority or a rights chain.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Niagara_Apothecary_-_5_Queen_Street,_Niagara-on-the-Lake,_ON_L0S_1J0,_Canada.jpg',
+    {
+      detail: 'Niagara-on-the-Lake photo review on 2026-10-12: the exact Commons page identifies Spudgun67, 5 Queen Street Pharmacy (Niagara Apothecary) and CC BY-SA 4.0. Local WebP pixels show the historic Queen Street streetscape and pharmacy facade; the alt names the visible subject. Page declarations do not independently establish uploader authority or a rights chain.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Royal_Crescent_in_Bath_-_geograph.org.uk_-_7845942.jpg',
     {
       detail: 'Bath photo review: exact Commons page identifies Kevin Pearson and CC BY-SA 2.0; source title and photo terms for attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels were inspected and show the Royal Crescent façade and curve, matching the route subject.',
@@ -1037,6 +1058,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/canada-niagara-falls-parkway.webp', '2026-10-12'],
+  ['/assets/images/canada-niagara-niagara-gorge.webp', '2026-10-12'],
+  ['/assets/images/canada-niagara-niagara-on-the-lake.webp', '2026-10-12'],
   ['/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', '2026-10-12'],
   ['/assets/images/canada-jasper-icefields-icefields-parkway.webp', '2026-10-12'],
   ['/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', '2026-10-12'],
