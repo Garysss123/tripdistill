@@ -81,14 +81,14 @@ function imageCredit(image) {
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
     : escapeHtml(image.license);
-  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
+  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
     ? ` This resized, display-cropped WebP adaptation is offered under the same ${escapeHtml(image.license)} terms.`
     : '';
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}${shareAlikeNotice}</li>`;
 }
 
 function heroImageCaption(image) {
-  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island)-/.test(image.src)) return escapeHtml(image.alt);
+  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino)-/.test(image.src)) return escapeHtml(image.alt);
   return `${escapeHtml(image.label)} · ${escapeHtml(image.license)}`;
 }
 
@@ -577,8 +577,8 @@ function updateSearch(clusters = canadaClusters, includeCountry = true) {
   const records = JSON.parse(fs.readFileSync(file, 'utf8')).filter((item) => includeCountry ? !item.url.startsWith('/canada/') : !managedRoutes.has(item.url));
   if (includeCountry) records.push({ title: 'Canada Travel Guide', url: '/canada/', parent: 'North America', type: 'Country', summary: 'Plan Canada through eighteen complete travel hubs and fifty-four focused guides across cities, mountains, coasts, prairies and the North.', keywords: ['Canada', 'Canadian travel', 'North America'] });
   for (const cluster of clusters) {
-    records.push({ title: cluster.name, url: `/canada/${cluster.slug}/`, parent: 'Canada', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
-    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, cluster.region, guide.layout] });
+    records.push({ title: cluster.name, url: `/canada/${cluster.slug}/`, parent: 'Canada', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band, ...(cluster.searchKeywords || [])] });
+    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, cluster.region, guide.layout, ...(guide.searchKeywords || [])] });
   }
   fs.writeFileSync(file, JSON.stringify(records, null, 2) + '\n');
 }

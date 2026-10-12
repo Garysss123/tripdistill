@@ -7135,57 +7135,6 @@
     ]
   },
   {
-    "title": "Pacific Rim & Tofino",
-    "url": "/canada/pacific-rim-tofino/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Tofino and Ucluelet sit beside Pacific Rim National Park Reserve on an exposed coast. Treat beaches, rainforest trails and boat activities as weather-dependent blocks, and give the cross-island road enough daylight.",
-    "keywords": [
-      "Pacific Rim & Tofino",
-      "British Columbia",
-      "pacific"
-    ]
-  },
-  {
-    "title": "Long Beach & Rainforest Trails",
-    "url": "/canada/pacific-rim-tofino/long-beach-rainforest/",
-    "parent": "Pacific Rim & Tofino",
-    "type": "Local guide",
-    "summary": "Build the park day around one long beach window and one rainforest trail, with parking, tide, surf and wildlife guidance checked before leaving town.",
-    "keywords": [
-      "Long Beach & Rainforest Trails",
-      "Pacific Rim & Tofino",
-      "British Columbia",
-      "tide-clock"
-    ]
-  },
-  {
-    "title": "Ucluelet & the Wild Pacific Coast",
-    "url": "/canada/pacific-rim-tofino/ucluelet-wild-pacific/",
-    "parent": "Pacific Rim & Tofino",
-    "type": "Local guide",
-    "summary": "Use Ucluelet for a compact headland walk and quieter town base, then decide whether a second coastal stop adds contrast or merely repeats the same storm exposure.",
-    "keywords": [
-      "Ucluelet & the Wild Pacific Coast",
-      "Pacific Rim & Tofino",
-      "British Columbia",
-      "field-notebook"
-    ]
-  },
-  {
-    "title": "Tofino Marine Day: Wildlife, Islands & Water",
-    "url": "/canada/pacific-rim-tofino/tofino-marine-day/",
-    "parent": "Pacific Rim & Tofino",
-    "type": "Local guide",
-    "summary": "Choose one licensed marine operator and one purpose—wildlife viewing, hot springs access or paddling—then let sea state and operator guidance determine the day.",
-    "keywords": [
-      "Tofino Marine Day: Wildlife, Islands & Water",
-      "Pacific Rim & Tofino",
-      "British Columbia",
-      "ferry-manifest"
-    ]
-  },
-  {
     "title": "Banff & Lake Louise",
     "url": "/canada/banff-lake-louise/",
     "parent": "Canada",
@@ -13129,6 +13078,73 @@
       "Derry wall walking route",
       "Cityside and Waterside stay",
       "Museum of Free Derry opening hours"
+    ]
+  },
+  {
+    "title": "Pacific Rim & Tofino",
+    "url": "/canada/pacific-rim-tofino/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Build Pacific Rim around one Tofino–Ucluelet lodging base, a named Long Beach trail, the Lighthouse Loop and an optional licensed boat day. The Island Highway 4 crossing and exposed Pacific conditions set the order; park, trail and operator status checked 12 October 2026 must be checked again for your dates.",
+    "keywords": [
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "pacific",
+      "Tofino accommodation base",
+      "Nanaimo ferry",
+      "Highway 4 west coast Vancouver Island",
+      "VI Connector not operating"
+    ]
+  },
+  {
+    "title": "Long Beach & Rainforest Trails",
+    "url": "/canada/pacific-rim-tofino/long-beach-rainforest/",
+    "parent": "Pacific Rim & Tofino",
+    "type": "Local guide",
+    "summary": "Pair a Long Beach shoreline window with one named walk in Pacific Rim National Park Reserve. Rainforest Trail A is a 1 km moderate loop with many steps; Shorepine Bog is an 800 m loop with no stairs but an uneven boardwalk. Trail status checked 12 October 2026 is only a snapshot.",
+    "keywords": [
+      "Long Beach & Rainforest Trails",
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "tide-clock",
+      "Long Beach tide and surf",
+      "Rainforest Trail A 1 km",
+      "Shorepine Bog no stairs",
+      "Schooner Cove closed"
+    ]
+  },
+  {
+    "title": "Ucluelet & the Wild Pacific Coast",
+    "url": "/canada/pacific-rim-tofino/ucluelet-wild-pacific/",
+    "parent": "Pacific Rim & Tofino",
+    "type": "Local guide",
+    "summary": "Walk the official Wild Pacific Trail Lighthouse Loop from Amphitrite Point: 2.6 km, about 30–45 minutes, with an easy coastal grade and hills inland. The main route has no stairs; the Bog Loop, mudflats and small-beach extensions add choices rather than required distance.",
+    "keywords": [
+      "Ucluelet & the Wild Pacific Coast",
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "field-notebook",
+      "Amphitrite Point Lighthouse",
+      "Wild Pacific Trail Lighthouse Loop",
+      "Lighthouse Loop 2.6 km",
+      "Ucluelet walk no stairs"
+    ]
+  },
+  {
+    "title": "Tofino Marine Day: Wildlife, Islands & Water",
+    "url": "/canada/pacific-rim-tofino/tofino-marine-day/",
+    "parent": "Pacific Rim & Tofino",
+    "type": "Local guide",
+    "summary": "Make the boat trip one booked block with one purpose: marine wildlife viewing, a named island route or another operator-described product. Parks Canada currently lists Jamie’s Whaling Station for Long Beach Unit marine wildlife viewing; recheck the live license list and product details. No wildlife, landing, departure or return time is guaranteed.",
+    "keywords": [
+      "Tofino Marine Day: Wildlife, Islands & Water",
+      "Pacific Rim & Tofino",
+      "British Columbia",
+      "ferry-manifest",
+      "Jamie’s Whaling Station",
+      "Tofino licensed boat operator",
+      "wildlife sighting not guaranteed",
+      "marine trip cancellation sea state"
     ]
   }
 ]

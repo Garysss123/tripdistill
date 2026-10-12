@@ -135,8 +135,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/victoria-south-island/butchart-saanich/',
     '/canada/victoria-south-island/sooke-juan-de-fuca/'
   ]);
+  const pacificRimUpdatedRoutes = new Set([
+    '/canada/pacific-rim-tofino/',
+    '/canada/pacific-rim-tofino/long-beach-rainforest/',
+    '/canada/pacific-rim-tofino/ucluelet-wild-pacific/',
+    '/canada/pacific-rim-tofino/tofino-marine-day/'
+  ]);
   for (const route of routes) {
-    const lastmod = layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = pacificRimUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

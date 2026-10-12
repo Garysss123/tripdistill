@@ -64,7 +64,7 @@ export const canadaImageManifest = {
   },
   "pacific-rim-tofino/ucluelet-wild-pacific": {
     "src": "/assets/images/canada-pacific-rim-tofino-ucluelet-wild-pacific.webp",
-    "alt": "Rocky Pacific coast and forest near Ucluelet",
+    "alt": "Bald eagle perched among Sitka spruce along the Wild Pacific Trail in Ucluelet",
     "source": "https://commons.wikimedia.org/wiki/File:Picea_sitchensis_Wild_Pacific_Trail,_Ucluelet_2.jpg",
     "label": "Picea sitchensis Wild Pacific Trail, Ucluelet 2.jpg",
     "creator": "Roland Tanglao from Vancouver, Canada",
