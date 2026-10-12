@@ -86,6 +86,13 @@ const zermattEditedRoutes = [
   '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
   '/switzerland/zermatt-matterhorn/glacier-paradise/'
 ];
+const interlakenLastmod = '2026-10-12';
+const interlakenEditedRoutes = [
+  '/switzerland/interlaken-lakes/',
+  '/switzerland/interlaken-lakes/interlaken-base/',
+  '/switzerland/interlaken-lakes/brienz-giessbach/',
+  '/switzerland/interlaken-lakes/thun-spiez/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -929,6 +936,11 @@ for (const route of zermattEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Zermatt route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: zermattLastmod });
+}
+for (const route of interlakenEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Interlaken route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: interlakenLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-12T06:29:04.280Z",
+  "generatedAt": "2026-10-12T07:21:30.335Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 799,
     "completeSourceCreatorLicenseRecords": 762,
     "completeProjectOriginalRightsRecords": 10,
-    "licenseClaimsNotIndependentlyVerified": 512,
+    "licenseClaimsNotIndependentlyVerified": 509,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -22,9 +22,9 @@
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 172,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 253,
-    "metadataOrCreditOnly": 522,
-    "usedAssetsWithoutIndependentSourcePageCheck": 516,
+    "sourcePageChecked": 256,
+    "metadataOrCreditOnly": 519,
+    "usedAssetsWithoutIndependentSourcePageCheck": 513,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -23313,7 +23313,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG",
           "sourceTitle": "File:5498 - Brienzersee - Iseltwald looking toward Giessbach & Brienz.JPG",
           "sourcePhotoDate": null,
-          "creditLabel": "5498 - Brienzersee - Iseltwald looking toward Giessbach & Brienz.JPG",
+          "creditLabel": "Iseltwald on Lake Brienz looking toward Giessbach and Brienz",
           "creator": "Andrew Bossi",
           "license": "CC BY-SA 2.5",
           "sourceDeclaredLicenses": null,
@@ -23322,16 +23322,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Lake Brienz photo review: the exact Commons page identifies Andrew Bossi, describes the view from Iseltwald toward Giessbach and Brienz, and declares CC BY-SA 2.5 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show the Iseltwald shoreline and village, matching the corrected alt and display title. The visible source credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 4,
           "routes": [
             "/switzerland/interlaken-lakes/",
@@ -23340,10 +23340,10 @@
             "/switzerland/interlaken-lakes/thun-spiez/"
           ],
           "altTexts": [
-            "Lake Brienz and surrounding mountains in Switzerland"
+            "Iseltwald village on Lake Brienz, looking toward Giessbach and Brienz"
           ],
           "rawVisibleCredits": [
-            "5498 - Brienzersee - Iseltwald looking toward Giessbach & Brienz.JPG — Andrew Bossi, CC BY-SA 2.5. Resized, display-cropped and converted to WebP; no other material edits."
+            "Iseltwald on Lake Brienz looking toward Giessbach and Brienz — Andrew Bossi, CC BY-SA 2.5. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23371,16 +23371,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Interlaken base photo review: the exact Commons page identifies Ank Kumar and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Interlaken and Lake Brienz below the Harder Kulm ridge, not both Lake Thun and Lake Brienz, so the alt and display title were corrected. The visible source credit and license link remain present with the WebP/crop disclosure. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -23390,7 +23390,8 @@
             "/switzerland/interlaken-lakes/thun-spiez/"
           ],
           "altTexts": [
-            "Interlaken between Lake Thun and Lake Brienz"
+            "Interlaken between Lake Thun and Lake Brienz",
+            "Interlaken and Lake Brienz below the Harder Kulm ridge"
           ],
           "rawVisibleCredits": [
             "View of Interlaken and Lake Brienz from Harder Kulm (Ank Kumar) 02.jpg — Ank Kumar, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -23412,7 +23413,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blick_auf_Schloss_Spiez_und_Thunersee.jpg",
           "sourceTitle": "File:Blick auf Schloss Spiez und Thunersee.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Blick auf Schloss Spiez und Thunersee.jpg",
+          "creditLabel": "Spiez Castle and Lake Thun",
           "creator": "JoachimKohler-HB",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -23421,16 +23422,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Spiez photo review: the exact Commons page identifies JoachimKohler-HB, describes Spiez Castle at Lake Thun, and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Spiez Castle on the Lake Thun shore, matching the corrected alt and display title. The visible source credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 4,
           "routes": [
             "/switzerland/interlaken-lakes/",
@@ -23439,10 +23440,10 @@
             "/switzerland/interlaken-lakes/thun-spiez/"
           ],
           "altTexts": [
-            "Spiez and Lake Thun with mountains"
+            "Spiez Castle on the shore of Lake Thun"
           ],
           "rawVisibleCredits": [
-            "Blick auf Schloss Spiez und Thunersee.jpg — JoachimKohler-HB, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Spiez Castle and Lake Thun — JoachimKohler-HB, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -27903,14 +27904,14 @@
       ]
     },
     {
-      "sha256": "2c750aff70941ba352f264eaf3c172a15c0f94e3b2e64c9fd70fc95792b8f4fd",
+      "sha256": "c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8",
       "assetPaths": [
         "/assets/images/tripdistill-zermatt-glacier-route-choice.svg"
       ],
-      "byteLength": 6123,
+      "byteLength": 6239,
       "sourceRecords": [
         {
-          "sha256": "2c750aff70941ba352f264eaf3c172a15c0f94e3b2e64c9fd70fc95792b8f4fd",
+          "sha256": "c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8",
           "assetPath": "/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
@@ -27928,7 +27929,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "unknown",
           "editHistory": "Planning schematic only; not a geographic map and not to scale.",
-          "localSha1": "24ba1eee4efac33469637891bc8197e32102cc56",
+          "localSha1": "519bdeba45bcfb742705bf9df0de7f2bb49a952e",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",

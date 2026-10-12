@@ -65,6 +65,27 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg',
+    {
+      detail: 'Interlaken base photo review: the exact Commons page identifies Ank Kumar and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Interlaken and Lake Brienz below the Harder Kulm ridge, not both Lake Thun and Lake Brienz, so the alt and display title were corrected. The visible source credit and license link remain present with the WebP/crop disclosure. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG',
+    {
+      detail: 'Lake Brienz photo review: the exact Commons page identifies Andrew Bossi, describes the view from Iseltwald toward Giessbach and Brienz, and declares CC BY-SA 2.5 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show the Iseltwald shoreline and village, matching the corrected alt and display title. The visible source credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Blick_auf_Schloss_Spiez_und_Thunersee.jpg',
+    {
+      detail: 'Spiez photo review: the exact Commons page identifies JoachimKohler-HB, describes Spiez Castle at Lake Thun, and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Spiez Castle on the Lake Thun shore, matching the corrected alt and display title. The visible source credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg',
     {
       detail: 'Zermatt village/Gornergrat photo review: the exact Commons page identifies Ximonic (Simo Räsänen) and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn above the rocky grassy slope between Zermatt and Gornergrat, matching the alt and caption. The visible credit links the source and license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',

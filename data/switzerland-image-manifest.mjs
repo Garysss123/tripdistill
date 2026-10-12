@@ -220,7 +220,8 @@ export const switzerlandImageManifest = {
   },
   "interlaken-lakes/interlaken-base": {
     "src": "/assets/images/switzerland-interlaken-lakes-interlaken-base.webp",
-    "alt": "Interlaken between Lake Thun and Lake Brienz",
+    "alt": "Interlaken and Lake Brienz below the Harder Kulm ridge",
+    "displayTitle": "Interlaken and Lake Brienz below Harder Kulm",
     "source": "https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg",
     "label": "View of Interlaken and Lake Brienz from Harder Kulm (Ank Kumar) 02.jpg",
     "creator": "Ank Kumar",
@@ -230,7 +231,8 @@ export const switzerlandImageManifest = {
   },
   "interlaken-lakes/brienz-giessbach": {
     "src": "/assets/images/switzerland-interlaken-lakes-brienz-giessbach.webp",
-    "alt": "Lake Brienz and surrounding mountains in Switzerland",
+    "alt": "Iseltwald village on Lake Brienz, looking toward Giessbach and Brienz",
+    "displayTitle": "Iseltwald on Lake Brienz looking toward Giessbach and Brienz",
     "source": "https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG",
     "label": "5498 - Brienzersee - Iseltwald looking toward Giessbach & Brienz.JPG",
     "creator": "Andrew Bossi",
@@ -240,7 +242,8 @@ export const switzerlandImageManifest = {
   },
   "interlaken-lakes/thun-spiez": {
     "src": "/assets/images/switzerland-interlaken-lakes-thun-spiez.webp",
-    "alt": "Spiez and Lake Thun with mountains",
+    "alt": "Spiez Castle on the shore of Lake Thun",
+    "displayTitle": "Spiez Castle and Lake Thun",
     "source": "https://commons.wikimedia.org/wiki/File:Blick_auf_Schloss_Spiez_und_Thunersee.jpg",
     "label": "Blick auf Schloss Spiez und Thunersee.jpg",
     "creator": "JoachimKohler-HB",
