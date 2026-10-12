@@ -40,6 +40,16 @@ const laterCairnsRoutes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
+const laterAustraliaGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
 const laterCa14Routes = [
   '/canada/halifax-nova-scotia/',
   '/canada/halifax-nova-scotia/cape-breton-cabot/',
@@ -98,7 +108,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...switzerlandCh15AffectedRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterAustraliaGapRoutes, ...switzerlandCh15AffectedRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

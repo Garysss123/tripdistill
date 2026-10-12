@@ -6,7 +6,51 @@ TripDistill is a static five-language travel guide site for `tripdistill.com`.
 
 ### Corrected substantive-route ledger — 12 October 2026
 
-The original 458-route coverage baseline is a completed-content ledger, not a count of URLs that happen to exist. The [original Zurich refresh commit](https://github.com/Garysss123/tripdistill/commit/545800b8d30c9494e3555e56ca02df6dc4ad6094) changes the Zurich hub and three guides; its `switzerland/index.html` is byte-identical to the integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`. Therefore that country overview was not among the original 458 completed routes. CH14 makes its first substantive update (+274 visible English `<main>` words), so it contributes one route to coverage. The corrected totals are 698/907 after CA13, Gold Coast and CH14; 702/907 after CA14; and 704/907 after Cairns. CA14's Canada index change is a card excerpt only and adds no substantive route. Older checkpoint arithmetic below that subtracts overview/index files solely because their URLs or bodies already existed is superseded; a path's prior completion must be established from the source batch ledger.
+The original reported 458-route coverage baseline is a completed-content ledger, not a count of URLs that happen to exist. Its Vietnam entry counted 40 paths; the exact atlas completion set is 39, so the corrected baseline is 457. The six hubs and 33 focused routes are recorded in [the route ledger data](data/substantive-route-ledger.mjs) and checked by `npm run test:substantive-route-ledger`. The following are the exact 39 paths:
+
+```text
+/vietnam/hanoi/
+/vietnam/hanoi/ba-dinh-thang-long/
+/vietnam/hanoi/french-quarter-opera-house/
+/vietnam/hanoi/hoan-kiem-old-quarter/
+/vietnam/hanoi/long-bien-red-river/
+/vietnam/hanoi/van-mieu-museum-quarter/
+/vietnam/sapa-northwest-highlands/
+/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/
+/vietnam/sapa-northwest-highlands/cat-cat-village/
+/vietnam/sapa-northwest-highlands/fansipan-summit/
+/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/
+/vietnam/sapa-northwest-highlands/town-ham-rong/
+/vietnam/ha-giang/
+/vietnam/ha-giang/dong-van-old-quarter/
+/vietnam/ha-giang/lung-cu-flag-tower/
+/vietnam/ha-giang/ma-pi-leng-nho-que/
+/vietnam/ha-giang/quan-ba-heavens-gate/
+/vietnam/ha-giang/yen-minh-pine-forest/
+/vietnam/ninh-binh/
+/vietnam/ninh-binh/cuc-phuong-conservation/
+/vietnam/ninh-binh/hang-mua-dragon-mountain/
+/vietnam/ninh-binh/hoa-lu-ancient-capital/
+/vietnam/ninh-binh/tam-coc-bich-dong/
+/vietnam/ninh-binh/trang-an-boat-complex/
+/vietnam/ninh-binh/van-long-wetland/
+/vietnam/hue/
+/vietnam/hue/bach-ma-national-park/
+/vietnam/hue/imperial-city-citadel/
+/vietnam/hue/lang-co-lap-an-lagoon/
+/vietnam/hue/royal-tombs/
+/vietnam/hue/thanh-toan-rural-loop/
+/vietnam/hue/thien-mu-perfume-river/
+/vietnam/da-nang-hoi-an/
+/vietnam/da-nang-hoi-an/han-river-city-core/
+/vietnam/da-nang-hoi-an/hoi-an-ancient-town/
+/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/
+/vietnam/da-nang-hoi-an/my-khe-an-thuong/
+/vietnam/da-nang-hoi-an/my-son-sanctuary/
+/vietnam/da-nang-hoi-an/son-tra-peninsula/
+```
+
+The country overview `/vietnam/`, Hanoi's West Lake & Truc Bach, Sa Pa's O Quy Ho waterfalls, and the Ha Giang Meo Vac–Du Gia link are explicitly excluded. A regression compares the overview's non-card editorial text between atlas commits `8a1ada3b4021d077fd468c9c318d91823177c0cb` and `4c7a5d2bd65a6a82474813c04db718dedb1ffc48`; its card excerpts do not add a completed route. This Vietnam correction is independent of Switzerland: the [original Zurich refresh commit](https://github.com/Garysss123/tripdistill/commit/545800b8d30c9494e3555e56ca02df6dc4ad6094) changes the Zurich hub and three guides, while `switzerland/index.html` is byte-identical to integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`. CH14 makes that overview's first substantive update (+274 visible English `<main>` words), adding one route. The corrected totals are 697/907 after CA13, Gold Coast and CH14; 701/907 after CA14; 703/907 after Cairns; 707/907 after CH15; 711/907 after CA15; and 719/907 after the Australia gap batch below. CA14's Canada index change is a card excerpt only and adds no substantive route. Older checkpoint arithmetic based solely on whether overview/index URLs or bodies existed is superseded; prior completion must be established from the source batch ledger.
 
 ### Switzerland country overview and three hub refresh — 12 October 2026
 
@@ -20,19 +64,19 @@ Traditional Chinese, Japanese, Korean and Thai batches cover all four paths. The
 
 Integrated CA14 source terminal `cf9ae1b90a1e8e44ecd806b3b3aa5bd8735542f3` (parent `6a505cc56532c2f008e08b3990b0e8b9436cfe9a`) into `codex/integration-sprint-20261011`. The four existing Halifax/Nova Scotia routes add 624, 759, 835 and 922 visible English `<main>` words; all five editions retain the exact 4,560-URL sitemap. No photo or SVG was added or replaced, and the existing three image files remain byte-identical. The shared “Return to the same base” translation stays owned by MY15 rather than being duplicated.
 
-At the CA14 checkpoint, relative to integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`, the source diff contained 245 changed English body files, 1,220 `lastmod` updates across 244 routes and 213 changed English search records. The corrected substantive coverage total is 702/907: CA14 contributes four route improvements; its Canada index edit is a card excerpt only and contributes none. URL existence and word count are not used to infer prior coverage. This is the CA14 checkpoint, before Cairns; the cumulative route-level diff after Cairns is recorded in the following section. No main update or deployment was performed.
+At the CA14 checkpoint, relative to integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`, the source diff contained 245 changed English body files, 1,220 `lastmod` updates across 244 routes and 213 changed English search records. The corrected substantive coverage total is 701/907: CA14 contributes four route improvements; its Canada index edit is a card excerpt only and contributes none. URL existence and word count are not used to infer prior coverage. This is the CA14 checkpoint, before Cairns; the cumulative route-level diff after Cairns is recorded in the following section. No main update or deployment was performed.
 
 ### Cairns & Wet Tropics integration checkpoint — 12 October 2026
 
 Integrated corrected source terminal `60f1b297bb15ace05803e8bee50e534914666e35` (parent `6c1b2403a8d9d57d288f5cae58b721f3bd57fd5f`, tree `9ca80c084979e94a46ca6c77135a5ace627f3b05`) from `codex/sprint-au-after-gold-coast-20261013`. The four existing Cairns routes gain 461, 337, 215 and 619 visible English `<main>` words against the exact task base; Esplanade and Kuranda are repeat improvements, while the hub and Palm Cove add two substantive routes (Australia 50→52 of 97). The final Esplanade copy and translations retain the seasonal correction. No URL, photo or SVG was added; existing photo bytes are unchanged.
 
-Against integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`, cumulative scope is 249 changed English bodies, 1,240 `lastmod` updates across 248 routes × five editions, and 217 changed English search records. The corrected substantive coverage total is 704/907 after Cairns adds two routes to the CA14 total of 702. The four existing Cairns routes gain 1,632 visible English `<main>` words. All five editions retain 912 pages and 955 search records each; the four localized catalogs contain 58,201 current strings each, with zero missing or stale entries. Full `npm run audit` passed, including the exact 4,560-URL sitemap check and all country, date, search, image and content-scope regressions. `npm run build` produced 5,493 files (4,577 HTML and 821 images; 323.7 MiB) and verified all 4,560 sitemap routes. This updates only `codex/integration-sprint-20261011`; it does not claim browser acceptance or deployment.
+Against integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`, cumulative scope is 249 changed English bodies, 1,240 `lastmod` updates across 248 routes × five editions, and 217 changed English search records. The corrected substantive coverage total is 703/907 after Cairns adds two routes to the CA14 total of 701. The four existing Cairns routes gain 1,632 visible English `<main>` words. All five editions retain 912 pages and 955 search records each; the four localized catalogs contain 58,201 current strings each, with zero missing or stale entries. Full `npm run audit` passed, including the exact 4,560-URL sitemap check and all country, date, search, image and content-scope regressions. `npm run build` produced 5,493 files (4,577 HTML and 821 images; 323.7 MiB) and verified all 4,560 sitemap routes. This updates only `codex/integration-sprint-20261011`; it does not claim browser acceptance or deployment.
 
 ### Switzerland CH15 southern Ticino, Locarno & Stein integration checkpoint — 12 October 2026
 
 Integrated source terminal `99a5daff45c7c5ae862019f48adebac112f52f77` (parent `7264d71dee1ec7f0c37dc8e5aeaefcd4561498b8`, tree `35514a75b83b65d34a1f9d04f3ffbb0f1f471da2`) after the Cairns checkpoint. Four existing guides gain 513, 543, 568 and 554 visible English `<main>` words (+2,178 total): Mendrisiotto & Monte Generoso, Maggia & Centovalli, Verzasca Valley, and Stein am Rhein. Switzerland advances from 56 to 60 refreshed substantive English routes out of 65. CH15 changes four target guides and their exact derivative cards; it adds no URL, photo or SVG. The 25 inactive Basel English drafts remain untouched.
 
-Relative to integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`, the exact cumulative diff is 258 changed English body files, 1,260 `lastmod` values across 252 routes × five editions, and 221 changed English search records. The body diff includes nine route files newly changed by CH15, while only the four target guides receive new dates and search summaries. The exact 4,560-URL set remains unchanged. The corrected route-coverage ledger advances from 704 to 708 of 907: CH15 contributes four unique substantive routes. The integration regression also checks the exact historical Zurich overview blob against the baseline and requires `/switzerland/` in the changed route ledger, preventing URL-existence-based exclusion.
+Relative to integration baseline `a014412eceb30efae51894be3b6167debaa96ca3`, the exact cumulative diff is 258 changed English body files, 1,260 `lastmod` values across 252 routes × five editions, and 221 changed English search records. The body diff includes nine route files newly changed by CH15, while only the four target guides receive new dates and search summaries. The exact 4,560-URL set remains unchanged. The corrected route-coverage ledger advances from 703 to 707 of 907: CH15 contributes four unique substantive routes. The integration regression also checks the exact historical Zurich overview blob against the baseline and requires `/switzerland/` in the changed route ledger, preventing URL-existence-based exclusion.
 
 The full `npm run audit` passed: all four localized catalogs have 58,265 required strings with no missing or stale entries; each localized edition has 912 pages and 955 search records. The audit checks the exact 4,560 URL inventory, all country audits, dated routes, search records, image provenance and the cumulative 258/1,260/221 integration scope. `npm run build` produced 5,493 files (4,577 HTML, 821 images; 323.8 MiB) and verified all 4,560 sitemap routes. This updates only `codex/integration-sprint-20261011`; no browser acceptance, `main` update or deployment is claimed.
 
@@ -40,11 +84,17 @@ The full `npm run audit` passed: all four localized catalogs have 58,265 require
 
 Integrated CA15 source terminal `5e65f15ccb9f877e280e6aa1de80cead92eff838` (parent `cf9ae1b90a1e8e44ecd806b3b3aa5bd8735542f3`, tree `0ac54614aeaaf74331e5337d906c15f671a8cb65`). It refreshes four already-existing routes: Prince Edward Island, Charlottetown, Cavendish & North Shore, and East & West Coastal Drives. Their visible English `<main>` gains are +791, +787, +770 and +821 words (+3,169 total); Canada moves from 56 to 60 of 73 refreshed substantive routes. The source report confirms the route block was unchanged from its original addition, no URL or Canada index card changed, and no image or SVG was added. The CA14 Canada index edit remains a supplementary card excerpt, not a substantive route.
 
-After CA15, the corrected substantive coverage ledger is 712/907: four unique CA15 routes add to the 708/907 checkpoint after CH15. Relative to baseline `a014412eceb30efae51894be3b6167debaa96ca3`, the exact integration diff is 262 changed English body files, 1,280 `lastmod` values across 256 routes × five editions, and 225 changed English search records. The five editions retain 912 pages and 955 search records each; all four localized catalogs have 58,362 required strings with no missing or stale entries, and the exact 4,560-URL set is unchanged. Full `npm run audit` passed, including the exact route, date, search, translation, image and content-scope regressions. During the audit, one pre-existing, unused Ha Giang reviewed translation key (`Private property`) was removed from its four locale batches so stale-key validation could pass; no page content changed from that cleanup. `npm run build` produced 5,493 files (4,577 HTML, 821 images; 324.0 MiB) and verified all 4,560 sitemap routes. This updates only `codex/integration-sprint-20261011`; no `main` update or deployment is claimed. See the [CA15 report](reports/canada-ca15-prince-edward-island-refresh-2026-10-12.md) for route-specific evidence and limits.
+After CA15, the corrected substantive coverage ledger is 711/907: four unique CA15 routes add to the 707/907 checkpoint after CH15. Relative to baseline `a014412eceb30efae51894be3b6167debaa96ca3`, the exact integration diff is 262 changed English body files, 1,280 `lastmod` values across 256 routes × five editions, and 225 changed English search records. The five editions retain 912 pages and 955 search records each; all four localized catalogs have 58,362 required strings with no missing or stale entries, and the exact 4,560-URL set is unchanged. Full `npm run audit` passed, including the exact route, date, search, translation, image and content-scope regressions. During the audit, one pre-existing, unused Ha Giang reviewed translation key (`Private property`) was removed from its four locale batches so stale-key validation could pass; no page content changed from that cleanup. `npm run build` produced 5,493 files (4,577 HTML, 821 images; 324.0 MiB) and verified all 4,560 sitemap routes. This updates only `codex/integration-sprint-20261011`; no `main` update or deployment is claimed. See the [CA15 report](reports/canada-ca15-prince-edward-island-refresh-2026-10-12.md) for route-specific evidence and limits.
+
+### Australia Sydney/NSW and Brisbane/Gold Coast gap integration checkpoint — 12 October 2026
+
+Integrated AU gap source terminal `19bd73df24866ac49389fdf4ccb572e91cc422f6` after verifying the Sydney and Cairns fixes were in its ancestry and comparing all eight selected English route bodies with their source tips. The additions are Barangaroo & Darling Harbour, Manly & North Head, Royal National Park Coast, Jervis Bay & Booderee, New Farm & Fortitude Valley, West End Cultural Precinct, Springbrook National Park, and Lamington National Park. Together they add 5,275 visible English `<main>` words; the four Sydney/NSW additions and four Brisbane/Gold Coast additions advance Australia from 52 to 60 substantive routes out of 97. No URL or image was added.
+
+The corrected route ledger moves from 711/907 to 719/907. Against `a014412eceb30efae51894be3b6167debaa96ca3`, exact integration scope is 270 changed English bodies, 1,320 `lastmod` values over 264 routes × five editions, and 233 English search records. The 4,560-URL inventory remains exact. `npm run test:australia-brisbane-gold-coast-gaps` checks the four new Brisbane/Gold Coast routes, while the Sydney, Blue Mountains, integration-scope and substantive-route ledger regressions check exact body, search and date scope. See the [Sydney/NSW report](reports/australia-sydney-nsw-gaps-refresh-2026-10-12.md) and [Brisbane/Gold Coast report](reports/brisbane-gold-coast-gaps-refresh-2026-10-12.md) for route and source details. This checkpoint updates only `codex/integration-sprint-20261011`; it does not claim browser acceptance, a `main` update or deployment.
 
 ### CA13, Gold Coast & CH14 integration checkpoint — 12 October 2026
 
-Integrated the exact CA13 source terminal `6a505cc56532c2f008e08b3990b0e8b9436cfe9a` (parent `2af2a29577957d56fe530844039491ca0b3dac06`), Gold Coast terminal `99f9f2f1f7d586164c5dd3308711b0346fc5be5b` (parent `350dd7bc090ed89175f0d37f07aacc444802678b`) and Switzerland CH14 terminal `7264d71dee1ec7f0c37dc8e5aeaefcd4561498b8` (source base `fec6b5fa8001c933512d5aa58dc1b24d5b62bf06`). The three batches refresh twelve existing bodies: four Saguenay–Tadoussac routes, four Gold Coast routes, and the Switzerland overview plus three hubs. The corrected substantive coverage total for this checkpoint is 698/907; CH14 contributes the Switzerland overview because the exact source-history check shows it was unchanged at baseline. The existing 4,560-URL set is unchanged.
+Integrated the exact CA13 source terminal `6a505cc56532c2f008e08b3990b0e8b9436cfe9a` (parent `2af2a29577957d56fe530844039491ca0b3dac06`), Gold Coast terminal `99f9f2f1f7d586164c5dd3308711b0346fc5be5b` (parent `350dd7bc090ed89175f0d37f07aacc444802678b`) and Switzerland CH14 terminal `7264d71dee1ec7f0c37dc8e5aeaefcd4561498b8` (source base `fec6b5fa8001c933512d5aa58dc1b24d5b62bf06`). The three batches refresh twelve existing bodies: four Saguenay–Tadoussac routes, four Gold Coast routes, and the Switzerland overview plus three hubs. The corrected substantive coverage total for this checkpoint is 697/907; CH14 contributes the Switzerland overview because the exact source-history check shows it was unchanged at baseline. The existing 4,560-URL set is unchanged.
 
 Cumulative integration scope is 241 English bodies, 1,200 `lastmod` updates across 240 existing routes, and 210 English search records. Each of five editions has 912 pages and 955 search records; all four localized catalogs have 58,069 required strings with no missing or stale entries. Full `npm run audit` passed, including the exact scope guard, all country and date/search regressions, CH10–CH14, and the photo inventory. `npm run build` produced 5,492 files (4,577 HTML and 821 images) and verified all 4,560 sitemap URLs. CA13 diagram pixel checks and the CH14 SVG XML/geometry regression passed. This updates only `codex/integration-sprint-20261011`; `main` and production were not changed. It does not claim browser UI acceptance or user editorial approval of every page.
 

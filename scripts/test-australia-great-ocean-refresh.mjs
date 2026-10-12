@@ -50,6 +50,16 @@ const laterCairnsRoutes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
+const laterAustraliaGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
 const laterSwitzerlandCh14Routes = [
   '/switzerland/',
   '/switzerland/lugano-southern-ticino/',
@@ -255,7 +265,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes].sort(), 'Only four selected Great Ocean Road, exact later CA13, CA14/CA15, Gold Coast, Cairns and CH14/CH15 search records may change since the prior integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...laterAustraliaGapRoutes].sort(), 'Only four selected Great Ocean Road, exact later CA13, CA14/CA15, Gold Coast, Cairns, CH14/CH15 and current AU gaps search records may change since the prior integration checkpoint.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -271,10 +281,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', integrationBase + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...switzerlandCh15Routes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...switzerlandCh15Routes, ...laterAustraliaGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road and the exact later CA13/CA14/CA15, Gold Coast, Cairns and CH14/CH15 routes across five editions may receive a new lastmod since the prior integration checkpoint.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road and the exact later CA13/CA14/CA15, Gold Coast, Cairns, CH14/CH15 and current AU gap routes across five editions may receive a new lastmod since the prior integration checkpoint.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
 
 const svgFile = path.join(root, svgPath);

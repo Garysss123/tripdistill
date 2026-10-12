@@ -36,10 +36,21 @@ const laterCa15Routes = [
   '/canada/prince-edward-island/cavendish-north-shore/',
   '/canada/prince-edward-island/coastal-drives/'
 ];
+const laterAustraliaGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
 const checkpointContinuationRoutes = [
   ...laterCa13Routes,
   ...laterCa14Routes,
   ...laterCa15Routes,
+  ...laterAustraliaGapRoutes,
   '/australia/gold-coast-scenic-rim/',
   '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
@@ -107,7 +118,7 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13, Gold Coast, Cairns, CH14 and CH15 date routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13, Gold Coast, Cairns, CH14, CH15 and Australia gap date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: checkpoint continuation lastmod must be current.`);
 
@@ -159,4 +170,4 @@ assert.deepEqual(
   'Only the four target route pages, later CA13 routes and ancillary Canada card may change under canada/.'
 );
 
-console.log(`CA12 route/date regression passed: exactly four existing article routes, separate country card, 73 unchanged Canada URLs, no non-target or later-CA13/CA14/CA15 search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);
+console.log(`CA12 route/date regression passed: exactly four existing article routes, separate country card, 73 unchanged Canada URLs, no non-target or later-CA13/CA14/CA15/Australia-gap search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);

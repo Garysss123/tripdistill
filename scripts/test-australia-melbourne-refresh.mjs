@@ -131,14 +131,24 @@ const cairnsRoutes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes];
+const laterAustraliaGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
+const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes];
 const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 160, 'four Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns routes across five language editions');
+assert.equal(editedUrls.size, 200, 'forty Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns and current gap routes across five language editions');
 for (const [url, originalDate] of originalEntries) {
   const pathname = new URL(url, 'https://tripdistill.com').pathname;
   if (!pathname.includes('/australia/')) continue;
   const expectedDate = editedUrls.has(pathname) ? '2026-10-12' : originalDate;
-  assert.equal(currentEntries.get(url), expectedDate, `only the exact 32 selected Australia route dates change: ${url}`);
+  assert.equal(currentEntries.get(url), expectedDate, `only the exact 40 selected Australia route dates change: ${url}`);
 }
 
 for (const [index, route] of routes.entries()) {

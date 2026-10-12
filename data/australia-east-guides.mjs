@@ -99,11 +99,51 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'barangaroo-darling-harbour', name: 'Barangaroo & Darling Harbour', motif: 'western foreshore ledger', instrument: 'ledger', imageQuery: 'Barangaroo Sydney Darling Harbour waterfront', imageAlt: 'Barangaroo waterfront on the western side of central Sydney',
-        summary: 'A west-side foreshore walk through headland park, commercial waterfront and Darling Harbour without assuming every edge forms one continuous promenade.',
-        orientation: 'choose either the high headland line or the lower wharf line and note where construction or private frontage interrupts it.', access: 'Arrive through Wynyard, Barangaroo metro or a named ferry stop and save an inland station exit for the return.', sequence: 'Begin in the cooler headland landscape, move through the working waterfront and finish at one defined Darling Harbour venue or transport stop.', boundary: 'Recognise Barangaroo as living Country and a contemporary commercial precinct; follow cultural interpretation and keep private events, offices and construction outside the route.',
-        stages: [['Start above the water', 'Use the headland paths to understand the reshaped shoreline and identify the next public descent.'], ['Follow a signed seam', 'Stay on the designated waterfront connection and respond to temporary diversions rather than forcing a closed edge.'], ['Choose one interior', 'Add a museum, aquarium or cultural venue only when its ticket and queue fit the remaining day.'], ['Exit inland', 'Use a confirmed light-rail, metro or train station instead of extending the foreshore until fatigue.']],
-        risks: [['Construction change', 'Major waterfront works can move paths and crossings. Read on-site signs and current precinct notices.'], ['Exposed surfaces', 'Sun, wind and reflected heat build quickly along the western edge; carry water and use shaded pauses.'], ['Night dispersal', 'Event finishes create concentrated demand. Decide the inland station and meeting point before the crowd forms.']],
-        duration: 'Allow half a day for the full foreshore argument, or two hours for one focused section.', combine: 'It pairs well with The Rocks via Barangaroo Reserve; do not automatically append the eastern beaches.', verify: 'Check path diversions, venue entry, event schedules, ferry or metro status and weather warnings.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Sydney CBD skyline and harbor-side buildings at dusk, viewed from Pyrmont; a city-context image, not a route map.',
+        summary: 'Choose the upper paths of Barangaroo Reserve or the lower Wulugul Walk, then finish at one confirmed Darling Harbour exit; public access, events and return transport can change by block.',
+        orientationTitle: 'Choose the edge and the exit before walking.', routeTitle: 'Reserve, signed foreshore, named return.',
+        orientation: 'Barangaroo is not one uninterrupted boardwalk. The upper Reserve is a planted headland with slopes and viewpoints; the lower Wulugul Walk follows the harbour edge toward Darling Harbour; commercial wharves and event spaces can interrupt public movement. Pick the terrain and endpoint that suit the group, then check the current precinct map and on-site diversions before committing to a through-walk.',
+        interpretation: 'This is Gadigal Country as well as a contemporary public park, working waterfront and commercial precinct. Read the local acknowledgement and interpretation, remain on public signed routes, and treat any cultural tour, private event, venue queue or construction boundary as a separate access decision.',
+        access: 'Use Transport for NSW to compare the full journey to Wynyard, Barangaroo Metro or a ferry wharf for your date; those are different arrival and return points. If steps, slope or heat are a concern, choose the lower foreshore section and a confirmed station exit instead of assuming the upper Reserve is step-free. Check event notices before choosing a meeting point.',
+        sequence: 'Start at a public entrance shown on the current Barangaroo visitor map. Walk the upper Reserve only if its open paths and slopes fit the group; descend at a signed public connection to Wulugul Walk and follow the open foreshore toward Darling Harbour. Finish at one named wharf, light-rail stop or venue. If a barrier breaks the line, return to the last signed street connection rather than slipping through private frontage.',
+        boundary: 'Barangaroo Reserve and Wulugul Walk are public spaces within a living cultural landscape, but nearby wharves, workplaces, event compounds and venue interiors are not interchangeable public paths. Follow Gadigal cultural guidance, barriers and event directions; never treat a waterfront photo or visitor map as proof that a closed edge is open.',
+        decisions: [
+          ['Upper headland or lower edge', 'The Reserve offers a planted headland perspective but adds slope and steps; the lower Wulugul section reduces the climb but still depends on open foreshore access.'],
+          ['Public walk or timed interior', 'A single museum visit can fit the foreshore; choose the Australian National Maritime Museum only after checking its own entry, hours and remaining walking time.'],
+          ['One return point', 'Choose a wharf or inland rail/metro stop before starting. Do not let a ticketed venue or event finish depend on an unverified ferry or last-minute cross-precinct walk.']
+        ],
+        fieldLens: {
+          label: 'Headland / wharf / venue', title: 'Three surfaces, three separate access checks.',
+          copy: 'The city skyline in the hero is a contextual dusk view from Pyrmont, not a picture of the walking line. Use the official precinct map for entrances, then check each public-to-private transition on the day.',
+          notes: [['Headland', 'Choose it for the planted Reserve and higher views when the group is comfortable with slopes.'], ['Waterfront', 'Use the signed Wulugul Walk as the low-edge connector, subject to diversions.'], ['Interior', 'A museum or event adds its own ticket, opening and security conditions; do not infer them from the harbour path.']]
+        },
+        stages: [
+          ['Check the endpoints', 'Pick a public entrance and a named return stop. Confirm current transport, event and access notices before setting out.'],
+          ['Read the upper Reserve', 'Take the headland paths only if their slope and open sections suit the group; otherwise begin on the lower public edge.'],
+          ['Follow Wulugul Walk', 'Use the signed harbour-side connection toward Darling Harbour and obey any temporary diversion instead of crossing a work zone.'],
+          ['Choose one finish', 'Stop at the public waterfront or add one verified museum visit, then return from the exact wharf or station you planned.']
+        ],
+        risks: [['A broken promenade', 'Construction, event fencing and private wharves can interrupt the apparent shoreline line. Recheck the precinct notice and obey the signs.'], ['Slope mistaken for access', 'A nearby station or venue does not make every upper path step-free. Confirm the exact accessible path and choose the lower section if uncertain.'], ['Event exit pressure', 'A show or market can concentrate people around one crossing or stop. Set a meeting point and a second return option before the crowd forms.']],
+        duration: 'Allow about two hours for one focused public foreshore section. Reserve half a day for the upper park, the lower walk and one confirmed interior; these are editorial planning allowances, not venue or operator times.',
+        combine: 'Barangaroo Reserve connects naturally with The Rocks as a separate harbour-edge walk. Keep the eastern beaches and a timed Opera House visit on another day rather than crossing the city to fill this one.',
+        verify: 'Check the Barangaroo visitor map and current access/event notices, the chosen museum entry page, weather, and Transport for NSW for the exact return point and date.',
+        faq: [
+          ['Is Barangaroo a continuous waterfront walk to Darling Harbour?', 'Destination NSW describes the Wulugul Walk as a public waterfront connection, but construction and event diversions can change the usable line. Check the precinct notice and follow signs rather than treating every wharf edge as a promenade.'],
+          ['Which route is easier for a slower-paced group?', 'The lower foreshore avoids the upper headland climb, but step-free access depends on the current entrance and diversion. Confirm the precise path; if that is unclear, choose one short public section with a known return.'],
+          ['Can I add the Australian National Maritime Museum?', 'Yes, if you check its current visitor information and allow for its own admission, security and time. Treat it as one interior choice, not a guaranteed extension of the waterfront walk.'],
+          ['Does the hero image show Barangaroo Reserve?', 'No. It is a licensed dusk view of Sydney’s wider waterfront and CBD from Pyrmont, useful as city context rather than a route map or direct Reserve view.']
+        ],
+        sources: [
+          ['https://www.sydney.com/destinations/sydney/sydney-city/barangaroo', 'Destination NSW — Barangaroo and the Wulugul Walk overview'],
+          ['https://www.barangaroo.com/', 'Barangaroo — current visitor information, events and cultural tours'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and service information'],
+          ['https://www.sea.museum/visit', 'Australian National Maritime Museum — visitor information']
+        ],
+        nearbySources: [
+          ['https://www.sydney.com/destinations/sydney/sydney-city/barangaroo', 'Destination NSW — Barangaroo and the Wulugul Walk overview'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and service information']
+        ]
       }),
       g({
         slug: 'bondi-coogee-coastal-walk', name: 'Bondi to Coogee Coastal Walk', motif: 'surf and headland exposure', instrument: 'beach-section', imageQuery: 'Bondi Beach Sydney coastline', imageAlt: 'Bondi Beach and its ocean coastline in Sydney',
@@ -138,11 +178,53 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'manly-north-head', name: 'Manly & North Head', motif: 'ferry-to-headland circuit', instrument: 'tide-clock', imageQuery: 'Manly North Head Sydney harbour view', imageAlt: 'Manly and North Head above Sydney Harbour',
-        summary: 'A ferry-led day linking Manly’s ocean and harbour sides to North Head, with cliff exposure and the last useful return kept visible.',
-        orientation: 'use the ferry wharf as the hinge between sheltered harbour, the Corso, ocean beach and elevated North Head tracks.', access: 'Check the exact ferry service and wharf before departure; bus connections may be needed for North Head depending on ability and track choice.', sequence: 'Cross by ferry, read both water edges, choose one headland circuit and return to the wharf before evening demand or weather changes.', boundary: 'North Head includes protected habitat, memorial and defence heritage. Stay on open tracks, clean footwear when requested and respect closed cultural areas.',
-        stages: [['Cross with a return in hand', 'Record the ferry service, fallback route and weather before the harbour crossing.'], ['Compare two shores', 'Use the Corso to understand the short distance between harbour and ocean conditions without assuming they are equally safe.'], ['Enter the headland carefully', 'Choose an open, ability-matched track and observe biosecurity, cliff and cycling controls.'], ['Descend for the ferry', 'Leave enough daylight and bus margin to reach the wharf without rushing steep or exposed sections.']],
-        risks: [['Ferry disruption', 'Wind, maintenance and events can change service. Keep the bus-and-train alternative understood.'], ['Cliff exposure', 'Lookouts and tracks can be windy, hot and uneven. Obey barriers and closures.'], ['Ocean conditions', 'Manly surf changes rapidly; swim only in patrolled areas and follow lifesavers.']],
-        duration: 'Use a full day for North Head and both Manly shores; a harbour-and-beach visit alone fits half a day.', combine: 'The ferry naturally frames a harbour day; do not add Bondi unless the trip is only a transport comparison.', verify: 'Confirm ferry and bus status, track closures, fire danger, surf, wind, UV and the last comfortable return.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Archival 1973 photograph of the Sydney ferry North Head crossing near Manly; it does not show today’s vessel or timetable.',
+        summary: 'Build a Manly ferry day around one ocean-side stop and one verified return; add North Head only with a confirmed last-mile ride or a suitable signed walk and a clear track exit.',
+        orientationTitle: 'Separate the wharf, both shores and the headland.', routeTitle: 'Cross, choose one shore, reach one loop, return.',
+        orientation: 'Manly Wharf is a useful ferry arrival, not the entrance to every North Head track. From the Corso, the sheltered harbour edge and ocean beach are close on the map but have different wind, surf and swimming conditions. North Head adds a climb or another transport leg. Choose a relaxed Manly-only day, or reserve the extra time and connection for one headland route.',
+        interpretation: 'The featured vessel is the historic ferry North Head in a 1973 photograph. It documents the harbour crossing, not the current fleet, service pattern or accessible boarding on your travel date.',
+        access: 'Use Transport for NSW to select the exact Manly ferry or other service, wharf, return and backup for the day. For North Head, compare the current bus/ride to North Head Scenic Drive with the longer signed walking approach; a ferry ticket does not solve that last mile. NPWS describes Fairfax Walk as a paved 1 km loop with an easy grade, but the approach from Manly is a separate decision.',
+        sequence: 'Begin at the Manly ferry wharf and note the return service before leaving the terminal. Walk the Corso toward either the harbour-side stop or Manly Ocean Beach; check Beachsafe and local patrol directions before considering a swim. If adding the headland, use a verified bus/ride to North Head Scenic Drive and follow the open Fairfax Walk between Burragula and Yiningma lookouts. Return to Manly Wharf from the exact endpoint with daylight and service margin.',
+        boundary: 'North Head is protected habitat with Aboriginal cultural places and historic memorial and defence landscapes. Stay on open marked tracks, respect any closed area or cultural instruction, and do not descend toward cliff edges for a photograph. Manly’s beaches are working public spaces: keep clear of lifesaving activity and follow the current patrol and hazard advice.',
+        decisions: [
+          ['Town day or headland day', 'Manly Wharf, the Corso and one shore make a contained half-day. North Head requires another access leg and a return margin, so give it a full day.'],
+          ['Bus-to-loop or longer walk', 'Fairfax Walk is a short paved loop at North Head; walking from Manly adds distance and slope. Choose by ability and current path status, not by the ferry crossing alone.'],
+          ['Harbour water or surf beach', 'Sheltered water and ocean surf are not interchangeable. Make swimming optional after checking the exact beach listing, flags and lifesaver advice.']
+        ],
+        fieldLens: {
+          label: 'Ferry / beach / headland', title: 'The ferry connects three different days.',
+          copy: 'A scenic crossing does not create a continuous step-free loop. Keep the wharf as the return hinge, then choose whether the group has time and mobility for the extra North Head connection.',
+          notes: [['Manly-only', 'Use the wharf, Corso and one water edge; keep the other shore as an optional detour.'], ['Fairfax Walk', 'The NPWS loop is paved and short; confirm the approach and park alerts separately.'], ['Extended coast', 'A longer Manly Scenic Walkway route needs its own track, weather and exit check.']]
+        },
+        stages: [
+          ['Set the crossing', 'Check the ferry service, wharf, return and alternative in the trip planner before boarding.'],
+          ['Choose one water edge', 'Walk the Corso to the harbour side or ocean beach; read current conditions before deciding whether to swim.'],
+          ['Add North Head deliberately', 'If the group has capacity, verify a bus/ride to North Head Scenic Drive or choose the signed approach on foot. Use the open Fairfax Walk to its two lookouts.'],
+          ['Return before the margin disappears', 'Leave the headland with time for the last mile and the exact service back from Manly Wharf; do not rely on a guessed last ferry.']
+        ],
+        risks: [['Ferry or bus change', 'Wind, maintenance and events can alter services. If the backup does not work for your exact North Head endpoint, make this a Manly-only day.'], ['Cliff and track exposure', 'The paved Fairfax loop is not the whole headland approach. Heat, fire notices, event closures and track grades change what is suitable.'], ['Surf misread as shelter', 'Ocean Beach conditions can differ sharply from the harbour. Use Beachsafe and lifesaver directions; clear water or other swimmers do not establish safety.']],
+        duration: 'Allow half a day for the wharf, Corso and one shore. Set aside a full day to add North Head, transport margin and both lookouts; these are planning allowances, not operator durations.',
+        combine: 'Keep Bondi–Coogee on a different day. The Manly ferry pairs best with its own harbour and headland choices, not another cross-city coast transfer.',
+        verify: 'Check Transport for NSW for both ferry and bus/ride legs, NPWS North Head and Fairfax Walk alerts, Beachsafe for the selected beach, and weather/fire advice before departure.',
+        faq: [
+          ['Can I walk from the ferry straight to North Head?', 'You can choose a signed walking route, but the wharf is not at the headland track gate. The approach adds time and slope; compare it with a date-checked bus or ride and keep the return margin.'],
+          ['Is Fairfax Walk suitable for limited mobility?', 'NPWS describes the 1 km loop as paved and wheelchair accessible. That describes the loop itself, not the journey from Manly Wharf; confirm the ride, drop-off, current alerts and exact path.'],
+          ['Should I swim at the harbour or ocean beach?', 'Decide at the actual beach, not from the map. Check the current Beachsafe listing and local patrol directions, and skip swimming when conditions or supervision do not fit.'],
+          ['Is the ferry in the hero photo the current boat?', 'No. The source is a 1973 photograph of the vessel named North Head. Use the Transport for NSW planner for today’s service and vessel information.']
+        ],
+        sources: [
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and ferry/bus service information'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/north-head', 'NSW National Parks — North Head visitor information and current alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/fairfax-walk', 'NSW National Parks — Fairfax Walk route, grade and accessibility'],
+          ['https://beachsafe.org.au/', 'Surf Life Saving Australia — current beach hazards and patrol information'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park', 'NSW National Parks — Sydney Harbour National Park alerts and visitor information']
+        ],
+        nearbySources: [
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and ferry/bus service information'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/fairfax-walk', 'NSW National Parks — Fairfax Walk route, grade and accessibility'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/north-head', 'NSW National Parks — North Head visitor information and current alerts']
+        ]
       })
     ]
   }),
@@ -284,19 +366,109 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'royal-national-park-coast', name: 'Royal National Park Coast', motif: 'track-and-tide day', instrument: 'coastline', imageQuery: 'Royal National Park Coast Track New South Wales', imageAlt: 'Cliffs and ocean along the Royal National Park coast',
-        summary: 'A coastal national-park day built around the chosen trailhead, legal parking or train access, tide, heat and a credible exit.',
-        orientation: 'select one coastal section rather than advertising the full Coast Track as a casual Sydney walk.', access: 'Match the trailhead to train, ferry, booked shuttle or legal parking and confirm that the return service actually operates that day.', sequence: 'Begin early, keep swimming separate from walking, reassess at every exit and finish before heat or darkness narrows choices.', boundary: 'Rock shelves, cliffs and ocean pools can be lethal in swell. Stay out of closed areas and respect park and cultural-site instructions.',
-        stages: [['Name both trailheads', 'Write down the start, finish and transport contract before entering the park.'], ['Check sea and fire', 'Compare swell, tide, heat and fire danger with the exposed route.'], ['Walk the chosen section', 'Stay on the formed track and use only open beaches or facilities as rest points.'], ['Take the protected exit', 'Leave through the planned trailhead while the return service and daylight remain reliable.']],
-        risks: [['Swell on rock shelves', 'Never approach cliff bases or rock platforms during hazardous surf, regardless of other visitors.'], ['Heat and water', 'Long sections lack reliable water and shade. Carry enough and shorten the route early.'], ['Transport gaps', 'Sparse services can strand a one-way walker. Confirm every connection and fallback.']],
-        duration: 'Allow a full day for one meaningful coastal section; overnight planning is required for the full Coast Track.', combine: 'Do not combine with a Blue Mountains hike. A short southern Sydney stop is the only sensible addition.', verify: 'Check park closure, fire danger, tide, swell, temperature, water, trailhead access and return transport.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        summary: 'Choose a 7.8 km return Bundeena–Marley day walk or plan the Royal Coast Track as its official 27 km, two-day route with a booked Garie Beach campsite and a transport plan at both ends.',
+        orientationTitle: 'Choose the return walk or the overnight crossing.', routeTitle: 'Name the trailhead, check the track, protect the exit.',
+        orientation: 'The Coast Track is a remote-grade coastal journey, not a casual add-on to Katoomba. NSW National Parks lists it at 27 km one way, grade 4 and two days; its Bundeena-to-Garie stage is 17 km and the Garie-to-Otford stage is 10 km. For a day outing, the separately described Bundeena Drive to Marley walk is a 7.8 km return, grade 3 route with a 3–4 hour suggested duration. Decide which route you mean before booking transport.',
+        interpretation: 'The hero shows exposed sandstone and ocean, not a surveyed trail line. Keep all movement on the currently open formed track; an attractive rock platform, pool or cliff shelf is not a safe shortcut or a swimming guarantee.',
+        access: 'For the day option, start at the signed Bundeena Drive trailhead and return to that same point. A ferry to Bundeena does not place you at the trailhead: plan the final connection and its return before leaving. For the full Coast Track, align the Bundeena start, pre-booked Garie Beach overnight and Otford finish; NPWS names Otford station at the southern exit. Check the actual date-specific services both ways.',
+        sequence: 'Day plan: check alerts and weather, reach Bundeena Drive, walk the official Marley return route, then retrace to the same trailhead with water and daylight margin. Overnight plan: only if fit and equipped for a grade 4 two-day walk, start from Bundeena, carry food/water/camping kit, stay at Garie Beach only with an advance booking, then continue to Otford and take the verified return. Do not improvise a one-way finish from the beach.',
+        boundary: 'The cliffs, rock shelves and tidal platforms are dangerous in swell and can be fragile or closed. Stay behind barriers, avoid unpatrolled water, follow fire and park closures, and respect the cultural and ecological significance of the park. A view is never permission to leave the formed route.',
+        decisions: [
+          ['Day walk or multi-day track', 'The 7.8 km Bundeena Drive–Marley route is a return walk. The 27 km Coast Track is a two-day, grade 4 one-way journey; it needs overnight gear and a booked Garie campsite.'],
+          ['Trailhead and exit', 'Bundeena Drive, Wattamolla, Garie Beach, Garawarra Farm and Otford are distinct access points. Choose only the open section whose start, finish and return transport all work.'],
+          ['Water and exposure', 'The open coast has long exposed stretches. Check fire, tide, surf and heat; carry enough food and water, and shorten the plan before fatigue changes footing.']
+        ],
+        fieldLens: {
+          label: 'Return / crossing', title: 'A one-way line changes the whole day.',
+          copy: 'The shorter route returns to the same Bundeena Drive trailhead. The full Coast Track crosses the park and ends at Otford; campsite booking, carried equipment and the southern return are part of the route itself.',
+          notes: [['Bundeena Drive → Marley', 'NPWS lists 7.8 km return, grade 3 and 3–4 hours; start and finish at the same trailhead.'], ['Bundeena → Garie', 'The official first day is 17 km; reserve the Garie Beach campsite before committing.'], ['Garie → Otford', 'The second stage is 10 km; allow for the climb and confirm the train from Otford.']]
+        },
+        stages: [
+          ['Select the route and both ends', 'Choose the short Bundeena Drive–Marley return or the full Bundeena–Otford crossing. Save the matching official map offline.'],
+          ['Clear today’s gates', 'Read NPWS track alerts and fire closures, then compare forecast, swell, tide and daylight with the exposed section.'],
+          ['Walk only the chosen section', 'For the day plan, follow Bundeena Drive to Marley and retrace. For the overnight, use the marked Coast Track and keep the booked Garie stop.'],
+          ['Exit on the plan you proved', 'Return to Bundeena Drive or continue to Otford station as selected. If a closure breaks the route, turn back to the last safe access point.']
+        ],
+        risks: [['One-way transport failure', 'The park is not a circular track. A missing shuttle, ferry or train can leave a walker stranded; verify the complete chain and an alternate before starting.'], ['Fire, heat and water', 'Park closure and fire status can override a route. Carry the water and equipment for the selected length, and turn back before the exposed section becomes unsafe.'], ['Rock platforms and surf', 'Popular pools and ledges are not safe in all tides or swell. Never climb around a barrier or approach a cliff base for a photo.']],
+        duration: 'NPWS currently suggests 3–4 hours for the 7.8 km Bundeena Drive to Marley return. It lists the full Coast Track as 27 km one way over two days, with 17 km to Garie on day one and 10 km to Otford on day two; treat these as official planning references, then check current alerts and your own pace.',
+        combine: 'Do not combine the full track with a Blue Mountains hike or another timed attraction. A single short southern Sydney stop is reasonable only after the park return is secured.',
+        verify: 'Check NPWS route and local alerts, Garie Beach reservation, Transport for NSW for the exact trailhead and Otford returns, Bureau of Meteorology forecasts, and Beachsafe before any water decision.',
+        faq: [
+          ['Can I walk the full Coast Track in one day?', 'NPWS presents it as a 27 km grade 4 multi-day walk and suggests two days. Plan the pre-booked Garie Beach overnight and the Otford finish rather than relying on a rushed same-day return.'],
+          ['What is a realistic day walk?', 'The official Bundeena Drive to Marley walk is 7.8 km return, grade 3, with a suggested 3–4 hours. It returns to its own trailhead; plan the last connection from Bundeena ferry separately.'],
+          ['Can I camp anywhere along the Coast Track?', 'No. NPWS says overnight stays at Garie Beach campground require an advance booking and have limited capacity. Confirm the official overnight arrangement before walking; do not substitute an unplanned beach camp.'],
+          ['Can I swim at Figure Eight Pools or a rock shelf?', 'Only if official access and conditions allow, and never by climbing barriers. Swell, tide and wave risk can make rock platforms hazardous even when the water looks clear.']
+        ],
+        sources: [
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track', 'NSW National Parks — Coast Track stages, grade, campsite and alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bundeena-drive-to-marley-walk', 'NSW National Parks — Bundeena Drive to Marley walk distance and grade'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park', 'NSW National Parks — Royal National Park visitor information and closures'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trailhead and Otford journey planner'],
+          ['https://www.bom.gov.au/nsw/forecasts/sydney.shtml', 'Australian Bureau of Meteorology — Sydney-area forecast'],
+          ['https://beachsafe.org.au/', 'Surf Life Saving Australia — beach and coastal hazard information']
+        ],
+        nearbySources: [
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track', 'NSW National Parks — Coast Track stages, grade, campsite and alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bundeena-drive-to-marley-walk', 'NSW National Parks — Bundeena Drive to Marley walk distance and grade'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trailhead and Otford journey planner']
+        ]
       }),
       g({
         slug: 'jervis-bay-booderee', name: 'Jervis Bay & Booderee', motif: 'bay and Country permit', instrument: 'bay-chart', imageQuery: 'Booderee National Park Jervis Bay beach', imageAlt: 'White sand and clear water in Booderee National Park at Jervis Bay',
-        summary: 'A bay-and-park visit that separates town beaches from Booderee National Park, with entry, camping, wildlife and Traditional Owner guidance made explicit.',
-        orientation: 'choose a Jervis Bay base and one Booderee landscape instead of chasing every white-sand beach.', access: 'Reach the region by a realistic road plan or limited public-transport combination, then use the official park entry and booking system.', sequence: 'Visit the Booderee visitor information point or current online guidance, select one beach or botanic route and leave wildlife undisturbed.', boundary: 'Booderee is jointly managed with the Wreck Bay Aboriginal Community. Follow closures, cultural guidance, camping rules and no-take or marine protections.',
-        stages: [['Separate bay from park', 'Identify which authority manages the chosen beach, road, campsite and marine activity.'], ['Confirm entry and booking', 'Resolve park pass, camping or tour requirements before the final drive.'], ['Use one protected landscape', 'Choose an open beach, garden or trail suited to wind, swell and mobility.'], ['Leave no wildlife pressure', 'Pack out waste, keep distance from animals and depart before the road or campsite deadline.']],
-        risks: [['Long road return', 'Fatigue after beach time makes the drive dangerous. Stay overnight or share driving.'], ['Marine conditions', 'Clear water can still carry current, swell and cold; use patrolled areas where available.'], ['Wildlife and camping', 'Food storage, fire and campsite rules protect both visitors and animals; verify current restrictions.']],
-        duration: 'Two nights make the bay and Booderee useful; a single day from Sydney is mostly transport.', combine: 'Pair with the South Coast as a regional trip, not with a Blue Mountains day.', verify: 'Check Booderee entry and camping, road conditions, fire rules, beach safety, weather and wildlife notices.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Hyams Beach on Jervis Bay, looking toward Booderee National Park; a nearby NSW-side shore, not a view inside the park.',
+        summary: 'Separate the NSW-side Jervis Bay National Park and town shoreline from Aboriginal-owned Booderee; pre-buy the vehicle pass, choose one open park route and recheck current beach and entry closures.',
+        orientationTitle: 'Choose which park and which water authority.', routeTitle: 'Base, pass, one open landscape, verified return.',
+        orientation: '“Jervis Bay” is a region, not one park gate. Hyams Beach sits on the NSW side near the separate Jervis Bay National Park; Booderee National Park is Aboriginal land in Jervis Bay Territory and is managed with the Wreck Bay Aboriginal Community. The hero photograph shows Hyams Beach looking toward Booderee, so it illustrates the neighboring shore rather than an interior park beach. Pick the authority and access system before choosing the day’s beach.',
+        interpretation: 'Parks Australia says Booderee is Aboriginal land and that it works hand in hand with the Wreck Bay Aboriginal Community. Follow local cultural guidance and current park instructions; the area’s beaches and waters include different land and marine authorities, so do not carry a park pass or rule from one shoreline into another without checking.',
+        access: 'A vehicle visiting Booderee needs a park pass. On 12 October 2026 the official pass page listed a one-day vehicle pass at A$20 (A$10 concession); it also reported the entry station temporarily closed, with online purchase, the Visitor Centre or a mobile van at Jervis Bay Supermarket as alternatives. Recheck the live notice and price before driving. A day pass is not a campsite booking.',
+        sequence: 'Base in Huskisson or Vincentia for a town-and-water day, or reserve a Booderee campsite before choosing an overnight inside the park. For a park day, buy the vehicle pass first, read current closure alerts, then choose one open landscape such as Green Patch and its signed walks. Parks Australia’s 2 km Green Patch–Bristol Point loop is a one-hour, grade 2 option; its rocky shore section is best at low tide. Finish with a verified road return before fatigue or a park gate time becomes the constraint.',
+        boundary: 'Booderee is Aboriginal land and jointly managed with the Wreck Bay Aboriginal Community. Respect community direction, cultural places, habitat and wildlife; do not feed animals or enter closed sites. Hyams Beach, Booderee beaches and the wider Jervis Bay Marine Park do not share one entry pass or identical water rules.',
+        decisions: [
+          ['Town shore or Booderee', 'Hyams Beach and the NSW-side park are separate from Booderee. Pick one authority first; a nearby photo does not mean the park gate, road or beach rules are the same.'],
+          ['Vehicle day pass or campsite', 'Buy the Booderee pass for a vehicle, but reserve Green Patch, Bristol Point or Cave Beach camping separately and early; the pass does not hold a site.'],
+          ['Beach stop or short walk', 'Choose one currently open beach area or a named signed walk. Every Booderee beach is unsupervised by lifeguards, and water conditions remain a separate decision.']
+        ],
+        fieldLens: {
+          label: 'NSW shore / Booderee / bay water', title: 'One blue bay, several different rule books.',
+          copy: 'The decision is not “which white beach looks closest?” It is which managing authority, park pass, reservation and water rules match the landscape you intend to visit.',
+          notes: [['Hyams / town shore', 'Use NSW park and local access information; it is not the Booderee gate.'], ['Booderee land', 'Vehicle pass and campsite booking are separate transactions; current alerts can close a day-use area.'], ['Marine water', 'Check Jervis Bay Marine Park zoning and any activity-specific rules before fishing or boating.']]
+        },
+        stages: [
+          ['Choose the base and authority', 'Decide whether the day is a NSW-side town/Hyams visit or a Booderee park visit, then plan its actual road and return.'],
+          ['Buy the right access', 'For Booderee by vehicle, pre-purchase the current pass and check whether the entry station or alternative sales point is operating. Keep camping reservation separate.'],
+          ['Select one open area', 'Read Parks Australia alerts first. If Green Patch is open, choose its beach or a signed walk; consider the 2 km grade 2 loop only when the tide and footing fit.'],
+          ['Leave the bay safely', 'Check beach supervision, weather, park gate/road status and marine-zone rules; return to the base before the driver is fatigued.']
+        ],
+        risks: [['Entry and beach closures', 'As checked 12 October 2026, Parks Australia reported the entry station temporarily closed and Murrays Beach and Iluka day-use access under repair. Recheck official notices and do not plan around either until reopened.'], ['Unsupervised water', 'Parks Australia states Booderee beaches are not supervised by lifeguards. Clear water is not a safety assessment; follow current signs and supervise children directly.'], ['Multiple authorities', 'A Booderee pass does not cover an NSW beach or every marine activity. Confirm the land manager, campsite reservation and marine zoning for each stop.']],
+        duration: 'Give the region at least two nights if you want one town-side day and one Booderee day without spending most of the visit in transit. A single day from Sydney is chiefly a road and return plan, not a beach-hopping circuit.',
+        combine: 'Pair Booderee with a nearby South Coast stay, not a Blue Mountains day. Keep a separate NSW-side shore visit only when its own access and return still fit.',
+        verify: 'Check Booderee live alerts, pass price and sales options, campsite availability, NSW Jervis Bay National Park information, Jervis Bay Marine Park zoning, weather, road access and the no-lifeguard notice.',
+        faq: [
+          ['Do I need a pass for Booderee?', 'A vehicle visiting the park needs a vehicle pass; the official pass page also describes free entry on foot or by bicycle. Check the current pass options and sales notice before travel.'],
+          ['Is the entry station open?', 'As checked on 12 October 2026, Parks Australia said the entry station was temporarily closed. It listed online purchase, the Visitor Centre and a mobile van at Jervis Bay Supermarket as alternatives; recheck the live closure notice.'],
+          ['Can I camp with a day pass?', 'No. Camping fees and reservations for Green Patch, Bristol Point and Cave Beach are handled separately. Campsites can fill in peak periods, so book the exact site before building an overnight route around it.'],
+          ['Are Booderee beaches patrolled?', 'Parks Australia states that none of its beaches are supervised by lifeguards. Check its safety guidance, obey signs, and do not treat calm-looking water as a patrol or safety guarantee.'],
+          ['Is Hyams Beach inside Booderee?', 'No. Hyams Beach is on the NSW side and is listed by NSW National Parks with Jervis Bay National Park; Booderee is a separate Aboriginal-owned park with its own access rules.']
+        ],
+        sources: [
+          ['https://booderee.gov.au/plan/park-passes-permits/', 'Parks Australia — Booderee vehicle passes, current prices and entry rules'],
+          ['https://booderee.gov.au/news/booderee-entry-station-temporary-closure/', 'Parks Australia — temporary entry-station closure and alternative pass sales'],
+          ['https://booderee.gov.au/', 'Parks Australia — current Booderee alerts and beach-access notices'],
+          ['https://booderee.gov.au/things-do/visit/beaches/', 'Parks Australia — Booderee beach access and lifeguard guidance'],
+          ['https://booderee.gov.au/things-do/walks/green-patch-walks/', 'Parks Australia — Green Patch and Bristol Point signed walks'],
+          ['https://booderee.gov.au/camping/', 'Parks Australia — Booderee campsite booking information'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/jervis-bay-national-park', 'NSW National Parks — Jervis Bay National Park and Hyams Beach'],
+          ['https://www.dpird.nsw.gov.au/fishing/marine-protected-areas/marine-parks/jervis-bay-marine-park', 'NSW DPIRD — Jervis Bay Marine Park and zoning map']
+        ],
+        nearbySources: [
+          ['https://booderee.gov.au/plan/park-passes-permits/', 'Parks Australia — Booderee vehicle passes, current prices and entry rules'],
+          ['https://booderee.gov.au/news/booderee-entry-station-temporary-closure/', 'Parks Australia — temporary entry-station closure and alternative pass sales'],
+          ['https://booderee.gov.au/things-do/visit/beaches/', 'Parks Australia — Booderee beach access and lifeguard guidance'],
+          ['https://booderee.gov.au/things-do/walks/green-patch-walks/', 'Parks Australia — Green Patch and Bristol Point signed walks'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/jervis-bay-national-park', 'NSW National Parks — Jervis Bay National Park and Hyams Beach']
+        ]
       })
     ]
   }),
@@ -333,19 +505,108 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'new-farm-fortitude-valley', name: 'New Farm & Fortitude Valley', motif: 'day-to-night neighborhood switch', instrument: 'day-night', imageQuery: 'Brisbane New Farm Park river', imageAlt: 'New Farm Park beside the Brisbane River',
-        summary: 'A neighborhood chapter moving from river park and arts space into the Valley’s evening economy with a deliberate late return.',
-        orientation: 'use New Farm Park or the Powerhouse as the daylight anchor and Fortitude Valley station as the night transport anchor.', access: 'Reach the river end by ferry or bus, then move inland only along well-used streets and a known service.', sequence: 'Start with park or performance context, eat before nightlife peaks and end at the station or booked pickup rather than wandering between venues.', boundary: 'These are residential and working entertainment districts. Keep noise, photography and alcohol behavior within the norms of each street.',
-        stages: [['Land by daylight', 'Use the river stop or bus arrival to establish the park edge and return options.'], ['Choose one cultural room', 'Confirm exhibition or performance access rather than assuming the whole precinct is open.'], ['Move inland before late night', 'Take a clear bus or walking line to the Valley while streets and services are busy.'], ['Leave from a lit node', 'Use the station or a named pickup zone and keep the group together.']],
-        risks: [['Late-night safety', 'Plan the final block and transport before drinking or venue dispersal.'], ['River service changes', 'Ferries can be altered by weather or events; retain a bus alternative.'], ['Noise and residents', 'Avoid treating residential lanes as nightlife extensions or photo sets.']],
-        duration: 'Use a long afternoon and evening rather than stretching the route across an entire day.', combine: 'It follows a central river day naturally; do not add an island transfer.', verify: 'Confirm ferry or bus status, venue ticketing, event closures, weather and the late journey home.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Brisbane River at twilight, seen from New Farm toward Norman Park; a neighborhood-context image rather than New Farm Park.',
+        searchSummary: 'Start at New Farm Park by ferry or bus, choose a scheduled Powerhouse visit, then decide whether Fortitude Valley fits before the last practical train or a prearranged ride home.',
+        summary: 'A ferry-or-bus approach to New Farm’s river park and Brisbane Powerhouse, followed by an optional Fortitude Valley evening with the final train or pickup settled first.',
+        orientationTitle: 'A park afternoon and a separate night out.',
+        orientation: 'Treat New Farm and Fortitude Valley as two connected but differently timed visits. The first is a river-edge park and a scheduled arts venue; the second is a busy entertainment district whose useful return may be earlier than its closing time. If you have only a few hours, choose the Powerhouse-and-park visit or the Valley evening, not both. The route image is a twilight view from New Farm across the river, not a photograph of New Farm Park itself.',
+        access: 'For the park, compare Translink’s current F1 ferry to New Farm Park terminal with the bus journey that best fits your arrival point; the terminal is at the park edge. Brisbane Powerhouse lists bus routes 196 and 199 and a roughly 440m walk from the terminal through the park. Walkways, event access and service patterns can vary, so route to the exact entrance and check live notices. The park is listed open daily 8:30am–11pm; a performance may finish after your convenient ferry or train, so do not treat the park’s closing time as a late-night transport promise.',
+        sequence: 'Arrive while it is light, use the river edge to find the Powerhouse entrance and decide whether the day’s program is worth an indoor stop. Keep the performance or exhibition as the fixed point; use the rest of the park as an unhurried buffer rather than a second checklist. If continuing to Fortitude Valley, check the actual bus or walking connection and name the station or pickup point before leaving New Farm. Translink lists late-night services, but Fortitude Valley station is not an all-night guarantee: check the dated departure you need, and prearrange a taxi or ride pickup if the event outlasts it.',
+        boundary: 'New Farm is a residential river neighborhood as well as a recreation area, and Fortitude Valley contains homes, workplaces and nightlife. Keep noise down on residential blocks, do not photograph people as nightlife scenery, and use venue and park rules for alcohol, events and access.',
+        decisions: [
+          ['Ferry or bus first', 'The F1 New Farm Park terminal lands at the river edge; use the planner to compare its sailing with a bus to the actual first entrance.'],
+          ['One programmed interior', 'Brisbane Powerhouse schedules vary by performance and exhibition. Confirm tickets, doors and access before building the afternoon around it.'],
+          ['Last train or booked ride', 'Choose the Valley only when the return works after your event; leave the station or pickup decision out of the late-night guesswork.']
+        ],
+        fieldLens: {
+          label: 'A useful two-part route', title: 'Keep the daylight and evening clocks separate.',
+          copy: 'The river end is pleasant to linger in, but a long park visit can consume the service margin needed for an event or night return. Give each part its own start and exit.',
+          notes: [['Wet-weather option', 'Use the Powerhouse only if its current program and ticketing suit; otherwise move the visit to another confirmed indoor venue and keep the Valley for a dry evening.'], ['If transport changes', 'If the ferry is disrupted, compare a current bus route or skip the park leg; do not assume a replacement service reaches the same terminal.']]
+        },
+        nearbySources: [
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/new-farm-park', 'Brisbane City Council — New Farm Park'],
+          ['https://brisbanepowerhouse.org/visit/', 'Brisbane Powerhouse — visit and transport'],
+          ['https://translink.com.au/plan-your-journey/stops/new-farm-park-ferry-terminal', 'Translink — New Farm Park ferry terminal'],
+          ['https://translink.com.au/plan-your-journey/late-night-services', 'Translink — late-night services']
+        ],
+        stages: [
+          ['Choose the arrival mode', 'Use Translink’s date-specific planner for the F1 New Farm Park terminal or a bus to the park; note the return stop before you leave the river edge.'],
+          ['Check what is actually on', 'Brisbane Powerhouse is a scheduled arts venue, not an always-open museum. Confirm the day’s exhibition or performance, ticket, door time and access arrangements.'],
+          ['Make the Valley a deliberate extension', 'After the park or event, choose one checked bus or a direct walk toward the Valley while services are still useful; skip the extension if the event ends too close to your last practical train.'],
+          ['Leave from a named node', 'Use the station departure shown for your date or the pickup point arranged in advance. If neither remains workable, leave the Valley earlier rather than improvising a long late walk.']
+        ],
+        risks: [
+          ['The venue calendar is not a timetable', 'Powerhouse programs, ticketing and access differ by event. A free or public park does not make a specific room or show available.'],
+          ['Late service margin disappears', 'Ferries and trains follow their own schedules and can change. Check the final useful departure and keep a ride pickup as the fallback; 24-hour service is not implied.'],
+          ['Rain or a changed ferry', 'For heavy rain, a wet river edge or a service notice, skip the outdoor section and retain only a confirmed indoor visit. Do not replace a cancelled ferry with an assumed same-stop bus.']
+        ],
+        duration: 'Allow a relaxed half-day for park and one confirmed Powerhouse visit. Add Fortitude Valley only for an evening whose return is still feasible; it is not a useful hurried add-on after a full island or hinterland day.',
+        combine: 'Pair with the central river route on a separate daylight segment, or make this its own afternoon-to-evening plan. Do not add a bay-island crossing or a mountain day.',
+        verify: 'Check Council park hours and facilities, the Powerhouse event page, Translink’s F1/bus and rail alerts for the exact date, the last useful return, weather and step-free access.',
+        sources: [
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/new-farm-park', 'Brisbane City Council — New Farm Park facilities and hours'],
+          ['https://brisbanepowerhouse.org/visit/', 'Brisbane Powerhouse — visitor information, buses and ferry walk'],
+          ['https://translink.com.au/plan-your-journey/stops/new-farm-park-ferry-terminal', 'Translink — F1 New Farm Park ferry terminal'],
+          ['https://translink.com.au/plan-your-journey/late-night-services', 'Translink — late-night public transport']
+        ],
+        faq: [
+          ['Is the Brisbane Powerhouse open whenever New Farm Park is open?', 'No. The Council lists New Farm Park as open daily 8:30am–11pm, but Powerhouse access depends on its changing program and event ticketing. Check the venue calendar for your date before setting the route.'],
+          ['Can I take the ferry back after an evening performance?', 'Do not assume so. Check the actual F1 sailing and the rail or bus departure that completes your trip. If the event ends after those options, arrange a pickup or choose a different show time.'],
+          ['Does Fortitude Valley station run all night?', 'No all-night service is promised here. Use Translink’s late-night page and date-specific planner for the departure you need; keep a prearranged ride as the fallback.'],
+          ['What should I do if the park is wet or the ferry is disrupted?', 'Keep the Powerhouse visit only if the day’s event is confirmed and reachable by a current bus route. Otherwise skip the river leg and choose another confirmed indoor plan; do not count on an unverified replacement sailing.']
+        ]
       }),
       g({
         slug: 'west-end-cultural-precinct', name: 'West End & Cultural Precinct', motif: 'gallery-to-market weave', instrument: 'weave', imageQuery: 'Brisbane cultural precinct South Bank Queensland Art Gallery', imageAlt: 'Brisbane cultural precinct beside the river',
-        summary: 'A culture-and-food route joining major institutions with West End while keeping exhibition time, market calendars and residential streets distinct.',
-        orientation: 'anchor the day in one major institution and use Boundary Street as a separate neighborhood chapter.', access: 'Arrive at South Brisbane station or the busway and verify the step-free entrance serving the chosen venue.', sequence: 'Give the museum or gallery a real attention block, pause by the river, then move to one West End food or market line.', boundary: 'Do not turn cultural collections, migrant businesses or street life into generic “colour.” Follow museum, market and photography rules.',
-        stages: [['Book the attention block', 'Select one institution and exhibition rather than rushing every building.'], ['Pause at the river seam', 'Use the public edge to reset before moving into the neighborhood.'], ['Read one commercial street', 'Choose a short food or shop sequence without blocking businesses or photographing people without consent.'], ['Return through South Brisbane', 'Use the known rail or bus node before the evening crowd changes.']],
-        risks: [['Exhibition closure', 'Temporary galleries and timed programs change; check the institution directly.'], ['Market calendar', 'A market mentioned in an old guide may not operate that day or location.'], ['Heat between districts', 'The walk is exposed in parts; use buses or shorten it when necessary.']],
-        duration: 'Allow a full day for one substantial cultural visit and an unhurried neighborhood meal.', combine: 'It pairs with the city river loop but deserves its own museum time.', verify: 'Check exhibition access, market date, public transport, weather, accessibility and photography policy.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        searchSummary: 'Give QAG or GOMA a real visit, then decide whether the river edge and West End’s Boundary Street fit; the two galleries are 150m apart, but market dates and return transport are separate checks.',
+        summary: 'A QAGOMA-first cultural day with a measured South Bank river pause and an optional Boundary Street meal, separating gallery time, market dates and the trip home.',
+        orientationTitle: 'Two galleries, one river edge, a separate neighborhood.',
+        orientation: 'Start at the Queensland Cultural Centre and decide whether you want QAG’s permanent collections, GOMA’s contemporary exhibitions, or enough time for both. The buildings are only 150m apart, but that short link does not make exhibitions, queues or timed programs interchangeable. From there, use the South Bank river edge as a pause; continue into West End only if the group still has time and energy for a separate meal or market visit. The photograph shows the cultural precinct by the river, not a map of the West End walking line.',
+        access: 'Translink’s planner can compare South Brisbane rail station, South Bank busway and the closest valid stop for your route. QAGOMA gives both buildings’ address as Stanley Place and notes that each has a Stanley Place entrance; QAG’s river entrance is near Melbourne Street and Victoria Bridge. The galleries list daily 10am–5pm opening in the current visitor information, with holiday exceptions; general admission is free but some exhibitions or events are ticketed. Confirm the exact building, timed entry, lift/access information and route from your stop.',
+        sequence: 'Choose a primary building before arriving. Keep 2–3 hours for one substantial visit as a planning allowance, not an official duration; add the second only if its current displays earn the extra time. Walk the signed public river edge to reset, then use a checked bus or a realistic walk toward Boundary Street for a meal. Treat Davies Park or another market as a date-specific extra only after checking its own current calendar. Finish at a chosen South Brisbane or West End return stop; do not assume a late market or meal lines up with a train.',
+        boundary: 'QAGOMA interprets works and cultures with specific provenance and voices; read the institution’s labels and photography rules rather than reducing collections to décor. West End is a lived-in commercial neighborhood. Keep shop thresholds and footpaths clear, ask before photographing people, and treat a market as a working event rather than a guaranteed attraction.',
+        decisions: [
+          ['QAG, GOMA or both', 'Choose by the exhibition that matters to you; 150m separates the buildings, while paid programs and available time differ.'],
+          ['River pause or West End', 'The cultural centre and Boundary Street are separate chapters. Continue only if heat, walking distance and the day’s meal/market plan suit.'],
+          ['Rail, busway or bus return', 'Set the actual return stop before leaving the galleries, then check service changes and the final departure after your meal.']
+        ],
+        fieldLens: {
+          label: 'Visit design', title: 'Protect the attention block.',
+          copy: 'The route is strongest when one collection or exhibition gets unhurried time, followed by a clear neighborhood choice. Adding every building and market can turn a cultural visit into a transfer race.',
+          notes: [['Rain or heat', 'Spend the weather window inside a confirmed gallery, shorten the river walk and use a current bus for West End if appropriate.'], ['A closed exhibition or market', 'Keep the other open gallery or a Boundary Street meal as the replacement; do not make the whole day depend on a market calendar.']]
+        },
+        nearbySources: [
+          ['https://www.qagoma.qld.gov.au/visit/', 'QAGOMA — opening, admission and entrances'],
+          ['https://translink.com.au/', 'Translink — journey planner and service updates'],
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/south-bank-parklands', 'Brisbane City Council — South Bank Parklands']
+        ],
+        stages: [
+          ['Pick the building', 'Use QAGOMA’s current exhibition and access pages to choose QAG, GOMA or both; the two entrances are on Stanley Place and 150m apart.'],
+          ['Give the gallery time', 'Check daily opening, holiday exceptions and paid/timed programs. Save the ticket or exhibition you care about as the day’s fixed point.'],
+          ['Pause, then decide on West End', 'Use the public river edge for a break. Continue to Boundary Street only if the walk or current bus, heat and meal timing still suit.'],
+          ['Close at a checked stop', 'Select the South Brisbane, busway or West End return that matches the final location and confirm the service before the meal, not afterward.']
+        ],
+        risks: [
+          ['A free gallery is not every free exhibit', 'General QAGOMA entry is free, but some exhibitions and events charge or require tickets. Check the current listing for the exact attraction.'],
+          ['Market not operating on your date', 'Market calendars change and an old weekly listing can be wrong. Verify the organiser’s calendar; if unconfirmed, plan Boundary Street for food without a market dependency.'],
+          ['Exposed connecting walk', 'Rain, heat or fatigue can make the river-to-neighborhood link poor value. Use a current bus or end the route at the galleries instead of forcing an extra walk.']
+        ],
+        duration: 'Allow a half-day for one major gallery and a river pause; allow most of a day for both buildings plus a meal in West End. These are planning ranges, not venue timings.',
+        combine: 'Pair with the City River & South Bank guide only when one of the two is a short bridge or ferry segment. Avoid stacking New Farm, an island ferry and a full gallery visit on the same day.',
+        verify: 'Check QAGOMA exhibitions, paid/timed entry and holiday hours; Translink stop access and disruptions; South Bank closures; the market’s own date listing; forecast, accessibility and photo rules.',
+        sources: [
+          ['https://www.qagoma.qld.gov.au/visit/', 'Queensland Art Gallery | Gallery of Modern Art — visit, access and opening hours'],
+          ['https://translink.com.au/', 'Translink Queensland — journey planner and alerts'],
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/south-bank-parklands', 'Brisbane City Council — South Bank Parklands facilities and closures']
+        ],
+        faq: [
+          ['Can I visit both QAG and GOMA?', 'They are 150m apart and share Stanley Place entrances, so both can fit if the selected exhibitions and your time allow. Choose one as the priority; each building has its own displays and some programs are ticketed.'],
+          ['Is entry free?', 'QAGOMA says general admission is free, including most exhibitions, screenings and programs; some exhibitions and special events have an entry fee or ticket. Confirm the exact program before travel.'],
+          ['Should I plan the route around a market?', 'Only if the market organiser confirms it is operating at the right location on your date. Keep Boundary Street food as a standalone option so a changed market calendar does not strand the day.'],
+          ['What is the simplest rainy-day version?', 'Visit one confirmed QAGOMA building, shorten or skip the river walk, and use a current Translink bus for West End only if that transfer helps. Return from the stop serving the actual final venue.']
+        ]
       }),
       g({
         slug: 'minjerribah-north-stradbroke', name: 'Minjerribah / North Stradbroke Island', motif: 'island ferry and headland day', instrument: 'island-ticket', imageQuery: 'North Stradbroke Island Minjerribah Point Lookout', imageAlt: 'Coastal headland on Minjerribah North Stradbroke Island',
@@ -535,19 +796,109 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'springbrook-national-park', name: 'Springbrook National Park', motif: 'plateau waterfall circuit', instrument: 'rain-gauge', imageQuery: 'Springbrook National Park waterfall Queensland', imageAlt: 'Rainforest waterfall in Springbrook National Park',
-        summary: 'A plateau rainforest day whose winding road, waterfall tracks, leeches, storm risk and Natural Bridge access are planned before departure.',
-        orientation: 'choose one Springbrook plateau sector and one track rather than linking every lookout by optimistic driving.', access: 'Use a capable driver, legal parking or an operator familiar with mountain roads; public transport does not solve the park circuit.', sequence: 'Drive in daylight, walk the most weather-sensitive track first, use formal lookouts and descend before fog or storm reduces road visibility.', boundary: 'Stay on tracks, avoid entering waterways or glow-worm habitat, and follow World Heritage and cultural-site controls.',
-        stages: [['Check the plateau weather', 'Compare coast and mountain forecasts, road alerts and fire danger before climbing.'], ['Park at the named trailhead', 'Do not improvise roadside access on narrow bends.'], ['Walk one complete circuit', 'Carry water and rain protection and turn around at the declared time.'], ['Descend with visibility', 'Leave before darkness, heavy rain or fog makes the winding return harder.']],
-        risks: [['Mountain road', 'Narrow wet roads and wildlife demand slow daylight driving.'], ['Storm and waterfall edges', 'Flash water, slippery rock and treefall can close tracks quickly.'], ['Leeches and biosecurity', 'Wear suitable clothing, clean footwear and stay out of fragile off-track areas.']],
-        duration: 'Use a full day from the coast and select one plateau cluster.', combine: 'Do not combine with Lamington; a short coast meal is the only reasonable addition.', verify: 'Check Queensland Parks alerts, road closure, storm, fire danger, track grade, sunset and fuel.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        searchSummary: 'Choose Springbrook’s plateau and one grade-matched walk: Purling Brook Falls is a 4km grade-3 return, while Natural Bridge is a separate road section. Check park alerts, road conditions and mountain rain before driving.',
+        summary: 'Choose one Springbrook section before leaving the coast: the plateau waterfall walks, Natural Bridge and Mount Cougal are separate road destinations with different track and weather decisions.',
+        orientationTitle: 'A park of separate sections, not one circuit.',
+        orientation: 'Use this chapter for the Springbrook plateau. It is a different driving choice from Natural Bridge in Numinbah Valley and Mount Cougal in Currumbin Valley; joining all three on a rainy day creates long, winding transfers and little time on foot. Decide between a grade-3 waterfall walk and a short lookout visit before climbing. Coastal sunshine is not proof of a clear plateau: cloud can hide viewpoints, and significant rain can close tracks even while the coast remains workable.',
+        access: 'From the Pacific Motorway, Queensland Parks lists the plateau as 24km from Mudgeeraba or 36km from Nerang; both approach roads are steep, winding and narrow. There is no public-transport circuit. Use a confident daylight driver, confirm parking at the exact trailhead and carry enough fuel and water for a remote hinterland day. Natural Bridge is reached on a separate road via Nerang–Murwillumbah Road, so do not treat it as a quick continuation from a plateau lookout.',
+        sequence: 'Choose a walk from its official grade and return time: Purling Brook Falls is grade 3, 4km return and about two hours walking, with the clockwise direction described as easier. Twin Falls is also grade 3 and 4km/about two hours; the path behind the falls may be slippery. For a shorter weather-conscious visit, Canyon Lookout is grade 1 and 30m return; Best of All Lookout is grade 2 and 600m return/about 30 minutes. These are official walking estimates before driving, breaks or the return to the coast. Never leave marked tracks for a waterfall base or creek bank.',
+        boundary: 'Springbrook sits within protected rainforest and waterfall country with restricted cliff, cascade and creek areas. Follow the marked route and signs; do not enter restricted areas at Purling Brook, Cave Creek or other waterways, and do not swim in Natural Bridge’s Cave Creek. Treat the plateau, the glow-worm cave and creek banks as places with specific protection rules, not photo access.',
+        decisions: [
+          ['Which section?', 'This page centers on the plateau. Natural Bridge is a separate drive via Nerang–Murwillumbah Road; Mount Cougal is another valley approach.'],
+          ['Waterfall circuit or viewpoint?', 'Purling Brook and Twin Falls each take about 2 hours on grade-3 track; choose a formal short lookout if rain, time or fitness makes that a poor fit.'],
+          ['Is the mountain window safe?', 'Compare a location-specific forecast and warnings with Queensland Parks alerts and QLDTraffic before driving; coastal weather can differ from the plateau.']
+        ],
+        fieldLens: {
+          label: 'Weather branch', title: 'Let rainfall set the route length.',
+          copy: 'In dry, settled weather, commit to one named circuit. After significant rain, the park may close parts of Purling Brook; check the current alert before leaving and again at the trailhead.',
+          notes: [['Shorter alternative', 'If the plateau roads and park remain open but a long walk is unsuitable, use only an open formal lookout such as Canyon Lookout.'], ['No safe drive', 'If road warnings, flooding, poor visibility or an official closure affect access, cancel the mountain drive. Keep the day on the coast or move it to another forecast window.']]
+        },
+        nearbySources: [
+          ['https://parks.qld.gov.au/parks/springbrook/journeys', 'Queensland Parks — grades, distances and current park alerts'],
+          ['https://parks.qld.gov.au/parks/springbrook/visiting-safely', 'Queensland Parks — road access and restricted areas'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — road incidents and closures'],
+          ['https://www.bom.gov.au/qld/forecasts/gold-coast.shtml', 'Bureau of Meteorology — regional forecast and warnings']
+        ],
+        stages: [
+          ['Choose the road section', 'Pick the Springbrook plateau. Keep Natural Bridge and Mount Cougal as separate outings unless current driving time, weather and daylight clearly support an extra transfer.'],
+          ['Match walking to the day', 'Choose Purling Brook (grade 3, 4km return/about 2hr), Twin Falls (grade 3, 4km/about 2hr) or a short formal lookout such as Canyon or Best of All.'],
+          ['Recheck after rain', 'Read park alerts and road status before departure. If the waterfall walk is closed or its creek/rock conditions are poor, use only a currently open lookout; never descend to a restricted base or creek.'],
+          ['Return before visibility fades', 'Allow for the winding descent, fuel and the actual sunset. Turn around when cloud, rain or fatigue makes the road less safe, even if one more viewpoint remains.']
+        ],
+        risks: [
+          ['Coast and plateau weather differ', 'Cloud may cover a lookout on an otherwise sunny coast day. Heavy rain can cause slippery trails, flash water and track or road closures.'],
+          ['A “short” waterfall stop is still a walk', 'The two main circuits listed here are grade 3 and about 4km return. Behind-waterfall rocks can stay slippery; stay on the formed track and supervise children.'],
+          ['Current facility alert', 'On 12 October 2026, Queensland Parks listed Tallanbana trailhead toilets closed through 29 January 2027. Recheck the alert before travel; do not rely on that facility being open.']
+        ],
+        duration: 'A full daylight day from the coast is a safer allowance for one plateau circuit, mountain driving, breaks and the return. A short lookout visit can be shorter, but do not combine it with the separate Natural Bridge road section by default.',
+        combine: 'Keep Springbrook and Lamington on separate days: both need long hinterland drives and weather checks. If the mountain forecast or road status fails, use a coast-based alternative or reschedule instead of crossing between parks.',
+        verify: 'Check Queensland Parks alerts and track grade, QLDTraffic closures, Bureau of Meteorology warnings plus the best local forecast available, the named road approach, fuel, daylight and current toilet access.',
+        sources: [
+          ['https://parks.qld.gov.au/parks/springbrook/journeys', 'Queensland Parks — Springbrook journeys, track grades and alerts'],
+          ['https://parks.qld.gov.au/parks/springbrook/visiting-safely', 'Queensland Parks — Springbrook access roads and safety'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — live road conditions'],
+          ['https://www.bom.gov.au/qld/forecasts/gold-coast.shtml', 'Australian Bureau of Meteorology — Gold Coast forecast and warnings']
+        ],
+        faq: [
+          ['Can I combine the plateau and Natural Bridge?', 'They are different park sections reached by separate road approaches. Natural Bridge is about 38km from Nerang along Nerang–Murwillumbah Road; decide on that section before driving instead of assuming it is the next stop after a plateau walk.'],
+          ['Which waterfall walk is realistic?', 'Purling Brook Falls and Twin Falls are each listed as grade 3 and 4km return, around two hours walking. Allow longer for rests and the drive. After significant rain, park alerts may close part of a track.'],
+          ['What is the short alternative?', 'Canyon Lookout is a grade-1, 30m return walk. Best of All Lookout is a grade-2, 600m return walk with an official estimate of about 30 minutes. Check the current alert and weather even for a short visit.'],
+          ['Are Natural Bridge creek and waterfall bases open for swimming?', 'No. Queensland Parks prohibits access to Cave Creek and its bank in the restricted area, including swimming. At Purling Brook, obey the separate restricted zones at the top and base.']
+        ]
       }),
       g({
         slug: 'lamington-national-park', name: 'Lamington National Park', motif: 'rainforest trail register', instrument: 'canopy-register', imageQuery: 'Lamington National Park rainforest Queensland', imageAlt: 'Dense subtropical rainforest in Lamington National Park',
-        summary: 'A high-country rainforest visit separating Binna Burra and Green Mountains gateways, trail grades and remote-walk obligations.',
-        orientation: 'select one gateway before leaving the coast because the two major sections are not a quick internal transfer.', access: 'Drive or use an appropriate operator to the chosen gateway, confirming road access, parking and accommodation status.', sequence: 'Begin at the visitor or trailhead information point, take one ability-matched circuit and finish before mountain weather or road fatigue builds.', boundary: 'World Heritage rainforest is vulnerable to disease, erosion and wildlife pressure. Clean footwear, stay on track and never feed animals.',
-        stages: [['Choose one gateway', 'Commit to Binna Burra or Green Mountains and discard the other from the same-day plan.'], ['Register the circuit', 'Read grade, distance, water and closure information at the trailhead.'], ['Walk below the canopy', 'Keep pace conservative and use signed junctions rather than off-track shortcuts.'], ['Close before the descent', 'Return to the vehicle with daylight and driver attention in reserve.']],
-        risks: [['Gateway confusion', 'The park name does not mean entrances connect easily; route to the exact trailhead.'], ['Treefall and storm', 'Wind and saturated ground can close tracks without much warning.'], ['Remote trail', 'Long circuits need navigation, water and emergency planning beyond a casual rainforest stroll.']],
-        duration: 'A full day suits one short-to-medium circuit; stay overnight for longer walks.', combine: 'Keep Lamington independent of Springbrook and the urban beach corridor.', verify: 'Check gateway road, park alerts, track grade, fire or storm warnings, water and daylight.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        searchSummary: 'Choose Green Mountains or Binna Burra before leaving the coast: the two trailheads are separate road gateways with no public transport. Match a named grade-and-distance walk to the live severe-weather alert and road conditions.',
+        summary: 'Choose the Green Mountains or Binna Burra gateway before leaving the coast; each has its own winding access road, trail choices and current severe-weather closures.',
+        orientationTitle: 'Choose the trailhead before the mountain road.',
+        orientation: 'Lamington is not a single roadside stop. Green Mountains (O’Reilly’s) and Binna Burra are separate sections on different sides of the plateau; there is no public transport between them, and a same-day switch wastes daylight on winding roads. Let the walk you want choose your gateway: Green Mountains for Python Rock, Morans Falls or its short rainforest/accessible paths; Binna Burra for its rainforest circuit and eastern tracks. Keep the day to one access road and one walking objective.',
+        access: 'From Broadbeach, Queensland Parks lists Green Mountains as a drive via Canungra: the final 36km is narrow and winding and takes at least 50 minutes; that section is unsuitable for RVs longer than 6m and vehicles towing caravans or camper trailers. Binna Burra is a separate drive via Beechmont; the final 1.8km is very narrow and winding. There is no public transport to the park, and taxi or rideshare pickup can be difficult. Choose a capable driver or a booked tour with a confirmed return, and do not rely on a last-minute app pickup.',
+        sequence: 'Use the Queensland Parks walking summary to fit the group: Green Mountains offers the grade-1 Centenary Track, 1.8km return/about 30 minutes, or the grade-3 Python Rock Track, 3.1km/about one hour; Morans Falls is grade 4, 4.4km/about 1.5 hours. Binna Burra’s Rainforest Circuit is grade 2, 1.2km/about 30 minutes. Times are walking estimates, not whole-trip durations. The 900m universal-access Centenary Track at Green Mountains is the wheelchair-oriented option; the first 700m of Border Track is described as accessible with assistance. Confirm surface, assistance and current works for your needs.',
+        boundary: 'Lamington is protected World Heritage rainforest with fragile soils, waterways and restricted access areas. Stay on open tracks, do not cross flooded creeks, never jump or dive into waterways, and leave a long-walk plan with a responsible person. Rescue and medical help can take hours; the park advises against beginning long walks after midday.',
+        decisions: [
+          ['Green Mountains or Binna Burra', 'Select the trail family first. There is no public transport to the park; taxi or rideshare pickup is difficult, and the gateways are not a casual internal transfer.'],
+          ['Choose a track by grade', 'Use the shorter Green Mountains Centenary or Binna Burra Rainforest Circuit for modest walks; reserve grade-3/4 trails for a suitable group and full daylight.'],
+          ['Does the live alert change the objective?', 'As checked 12 October 2026, Queensland Parks lists severe-weather damage affecting parts of both sections. Recheck exact open segments and roads before setting out.']
+        ],
+        fieldLens: {
+          label: 'Gateway and closure logic', title: 'The open section determines the route.',
+          copy: 'An alert can leave one track partly open while another remains closed. Preserve the same gateway and only use the officially open out-and-back segment; do not join closed circuits through an alternate path.',
+          notes: [['Green Mountains', 'The dated alert limits Albert River to Echo Point from the southern junction; return the same way. Short tracks such as Centenary, Python Rock and Morans Falls were listed open when checked.'], ['Binna Burra', 'The dated alert limits Coomera to Coomera Falls Lookout from the first northern junction; return the same way. Illinbah was listed closed. Check the live notice for changes.']]
+        },
+        nearbySources: [
+          ['https://parks.qld.gov.au/parks/lamington/visiting-safely', 'Queensland Parks — road access and safety'],
+          ['https://parks.qld.gov.au/parks/lamington/journeys/walking-tracks-summary', 'Queensland Parks — track grades and distances'],
+          ['https://parks.qld.gov.au/park-alerts/25025', 'Queensland Parks — severe-weather track alert'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — road incidents and closures']
+        ],
+        stages: [
+          ['Let the trail pick the gateway', 'Compare Green Mountains and Binna Burra in the official walk list. Choose one; the roads, parking and trailheads are separate, and public transport does not reach the park.'],
+          ['Match track to ability and daylight', 'Use the published grade and return estimate, then add the mountain drive, stops and margin. Long walks should start early; the park advises not to attempt them after midday.'],
+          ['Read the exact alert segment', 'Check the severe-weather notice and maps. If a circuit is truncated, turn at the named open point and return on the same track; never bypass a closure.'],
+          ['Descend with a reserve', 'Carry water, map and first-aid basics, tell someone your route for longer walks and return with daylight. Do not depend on mobile coverage or an unconfirmed pickup.']
+        ],
+        risks: [
+          ['Road is part of the commitment', 'Green Mountains’ final 36km from Canungra is narrow, winding and at least 50 minutes; vehicles over 6m or towing trailers are unsuitable. Binna Burra’s last 1.8km is very narrow.'],
+          ['Severe-weather closures are specific', 'On 12 October 2026, the alert limited Binna Burra’s Coomera route to the lookout and closed eastern Illinbah; Green Mountains’ Albert River route stopped at Echo Point. Recheck the live segment before hiking.'],
+          ['Remote rescue takes time', 'Do not cross flooded creeks or press on after the turnaround. The park warns rescue may take hours and advises against starting long walks after midday.']
+        ],
+        duration: 'Plan a full daylight day for one gateway and one short-to-medium walk from the coast. Longer Grade 4 circuits merit an early start and often a nearby overnight; build road time and current closures into that choice.',
+        combine: 'Keep Lamington separate from Springbrook and the beach corridor. If the selected road or trail closes, switch to a lower-elevation Gold Coast day or reschedule; crossing to the other Lamington gateway is not a reliable same-day substitute.',
+        verify: 'Check Queensland Parks’ current severe-weather alert and track map, exact gateway road conditions on QLDTraffic, grade and distance, sunrise/sunset, weather, parking, tour return and mobile coverage assumptions.',
+        sources: [
+          ['https://parks.qld.gov.au/parks/lamington/visiting-safely', 'Queensland Parks — Lamington gateway roads, accessibility and safety'],
+          ['https://parks.qld.gov.au/parks/lamington/journeys/walking-tracks-summary', 'Queensland Parks — Lamington walking grades and distances'],
+          ['https://parks.qld.gov.au/park-alerts/25025', 'Queensland Parks — current severe-weather damage alert'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — route access and closures']
+        ],
+        faq: [
+          ['Can I visit both gateways on one day?', 'It is not a good default. Green Mountains and Binna Burra have separate narrow access roads and distant trailheads; no public transport connects them, and taxi/rideshare pickup can be difficult. Choose the trail first.'],
+          ['Which walk suits a shorter day?', 'Green Mountains has the grade-1 Centenary Track at 1.8km return/about 30 minutes; Binna Burra has a grade-2 Rainforest Circuit at 1.2km/about 30 minutes. Confirm the live alert, surface and your group’s access needs.'],
+          ['What does the 12 October 2026 weather alert change?', 'At that check, Coomera at Binna Burra was open only to Coomera Falls Lookout from the first northern junction, while Illinbah was closed. At Green Mountains, Albert River was open only to Echo Point from the southern junction. Recheck the current alert and use the named out-and-back limits.'],
+          ['Is a rideshare a dependable return?', 'Queensland Parks warns pickup can be difficult. Confirm a commercial tour’s pickup and return before booking, or arrange your own vehicle; do not make a remote trail day depend on an unconfirmed app request.']
+        ]
       })
     ]
   })

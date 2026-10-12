@@ -15,19 +15,25 @@ const routes = [
   '/australia/sydney-harbour-coast/',
   '/australia/sydney-harbour-coast/circular-quay-rocks/',
   '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
-  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/'
+  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/',
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/'
 ];
 const brisbaneRoutes = [
   '/australia/brisbane-moreton-bay/',
   '/australia/brisbane-moreton-bay/city-river-south-bank/',
   '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
-  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/'
 ];
 const blueMountainsRoutes = [
   '/australia/blue-mountains-nsw-coast/',
   '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
   '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
-  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/'
+  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/'
 ];
 const greatOceanRoutes = [
   '/australia/great-ocean-road-gariwerd/',
@@ -39,7 +45,9 @@ const goldCoastRoutes = [
   '/australia/gold-coast-scenic-rim/',
   '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
-  '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
+  '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
 ];
 const cairnsRoutes = [
   '/australia/cairns-wet-tropics/',
@@ -49,7 +57,7 @@ const cairnsRoutes = [
 ];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
-const selectedGuideSlugs = ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk'];
+const selectedGuideSlugs = ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk', 'barangaroo-darling-harbour', 'manly-north-head'];
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const issues = [];
 
@@ -215,8 +223,8 @@ const cluster = australiaClusters.find((item) => item.slug === 'sydney-harbour-c
 assert(cluster, 'Sydney hub is missing from the Australia source model.');
 assertIssue(cluster.reviewIsoDate === isoDate, 'Sydney hub review date is not 12 October 2026.');
 assertIssue(cluster.diagram?.src === australiaSydneyDiagram.src, 'Sydney hub does not use the original route schematic.');
-assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate === isoDate).map((guide) => guide.slug).sort().join('|') === [...selectedGuideSlugs].sort().join('|'), 'The reviewed Sydney child-guide scope must be exactly the three selected routes.');
-assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 3, 'An unselected Sydney child route has a new review date.');
+assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate === isoDate).map((guide) => guide.slug).sort().join('|') === [...selectedGuideSlugs].sort().join('|'), 'The reviewed Sydney child-guide scope must be exactly the five selected routes.');
+assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 5, 'An unselected Sydney child route has a new review date.');
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
@@ -377,7 +385,7 @@ assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap
 const targetSitemapPaths = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => new URL(`https://tripdistill.com${route}`).pathname.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 120 selected Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 160 selected Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -385,5 +393,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log(`Sydney refresh regression passed: ${routes.length} existing routes, 4 substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync including the later Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns batches, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
+  console.log(`Sydney refresh regression passed: ${routes.length} Sydney routes with substantive deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync including the later Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns batches, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
 }

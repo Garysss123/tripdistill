@@ -147,10 +147,10 @@ const localizedReviewDate = {
   th: '12 ตุลาคม 2026'
 };
 
-const expectedHtml = routes.map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, '/australia/gold-coast-scenic-rim/springbrook-national-park/', '/australia/gold-coast-scenic-rim/lamington-national-park/'].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia/gold-coast-scenic-rim'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected Gold Coast English route documents may change from the requested base.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected Gold Coast routes and the two exact new Scenic Rim guides may change from the requested base.');
 
 const deltas = [];
 for (const route of routes) {
