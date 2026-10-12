@@ -102,6 +102,19 @@ for (const cluster of italyClusters) {
     check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Milan: focused local-plan headings must be unique');
     check(new Set(allPlanCopy).size === allPlanCopy.length, 'Milan: local-plan copy must not be repeated across children');
   }
+  if (cluster.slug === 'emilia-romagna') {
+    check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', 'Emilia-Romagna: review date metadata must match the 12 October 2026 refresh');
+    check(cluster.publishedIsoDate === '2026-09-26', 'Emilia-Romagna: original publication date must be preserved');
+    const fields = ['title', 'intro', 'stayTitle', 'stay', 'walkTitle', 'walk', 'bookingTitle', 'booking', 'seasonTitle', 'season'];
+    const allPlanCopy = [];
+    for (const guide of cluster.guides) {
+      check(guide.localPlan && fields.every((field) => typeof guide.localPlan[field] === 'string' && guide.localPlan[field].trim()), `${guide.url}: Emilia-Romagna stay/walk/booking/season plan missing`);
+      if (guide.localPlan) allPlanCopy.push(...fields.map((field) => guide.localPlan[field]));
+      check(guide.summary.length >= 120, `${guide.url}: Emilia-Romagna summary below editorial floor`);
+    }
+    check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Emilia-Romagna: focused local-plan headings must be unique');
+    check(new Set(allPlanCopy).size === allPlanCopy.length, 'Emilia-Romagna: local-plan copy must not be repeated across children');
+  }
   if (cluster.slug === 'siena-southern-tuscany') {
     check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', 'Siena/Val d’Orcia/Maremma: review date metadata must match the 12 October 2026 refresh');
     check(cluster.publishedIsoDate === '2026-09-26', 'Siena/Val d’Orcia/Maremma: original publication date must be preserved');
@@ -124,13 +137,21 @@ for (const guide of italyGuides) {
   check(guide.duration.length >= 80 && guide.combine.length >= 85 && guide.verify.length >= 95, `${guide.url}: thin duration/combine/verification guidance`);
   check(guide.choices.length === 3 && guide.route.length === 4 && guide.watch.length === 3 && guide.faq.length === 3, `${guide.url}: choice/route/watch/FAQ parity`);
   check(guide.sources.length >= 2 && guide.sources.every(([url, label]) => /^https:\/\//.test(url) && label), `${guide.url}: incomplete route-specific official sources`);
-  check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, `${guide.url}: incomplete image provenance`);
+  if (guide.image.assetType === 'original-planning-diagram') {
+    check(guide.image.src.endsWith('.svg') && guide.image.source === `https://tripdistill.com${guide.image.src}`, `${guide.url}: original planning diagram source path is incomplete`);
+    check(guide.image.creator === 'TripDistill Editorial Team' && guide.image.license === null && guide.image.rightsStatus === 'Project original; no separate reuse license declared' && guide.image.rightsStatusUrl === 'https://tripdistill.com/terms-of-use/' && guide.image.editNote, `${guide.url}: incomplete original-diagram provenance`);
+    check(Array.isArray(guide.image.legend) && guide.image.legend.length >= 3, `${guide.url}: original planning diagram lacks a visible legend`);
+  } else {
+    check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, `${guide.url}: incomplete image provenance`);
+    check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
+    check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
+  }
   check(guide.image.creator.length <= 80, `${guide.url}: image creator attribution is not normalized for readable display`);
-  check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
-  check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
   const imageFile = path.join(root, guide.image.src.replace(/^\//, ''));
-  const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
-  check(probe.status === 0 && probe.stdout.trim() === '1600x1066', `${guide.url}: image missing or not 1600x1066`);
+  if (guide.image.assetType !== 'original-planning-diagram') {
+    const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
+    check(probe.status === 0 && probe.stdout.trim() === '1600x1066', `${guide.url}: image missing or not 1600x1066`);
+  }
 }
 
 const titles = new Set();
@@ -163,7 +184,12 @@ for (const route of routes) {
 
   const hub = italyClusters.find((cluster) => route === `/italy/${cluster.slug}/` || route.startsWith(`/italy/${cluster.slug}/`));
   const credited = route === '/italy/' ? italyClusters.map((cluster) => cluster.guides[0]) : hub?.guides || [];
-  for (const guide of credited) check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+  for (const guide of credited) {
+    const original = guide.image.assetType === 'original-planning-diagram';
+    const creditPresent = html.includes(guide.image.source) && html.includes(escape(guide.image.creator))
+      && (original ? html.includes('Terms of Use') && html.includes(guide.image.rightsStatus) : html.includes(guide.image.license));
+    check(creditPresent, `${route}: visible image credit missing for ${guide.slug}`);
+  }
   if (route === '/italy/') {
     check(dom.filter((node) => classHas(node, 'it-country-card')).length === 20, `${route}: expected 20 hub cards`);
     check(dom.filter((node) => classHas(node, 'it-network-grid')).length === 1, `${route}: peninsula operating model missing`);
@@ -196,6 +222,11 @@ for (const route of routes) {
       check(!pageText.includes('Milan has four layers to align'), `${route}: generic Milan operating summary remains on focused route`);
       if (guide.localPlan) check(pageText.includes(guide.localPlan.stay) && pageText.includes(guide.localPlan.walk) && pageText.includes(guide.localPlan.booking) && pageText.includes(guide.localPlan.season), `${route}: Milan local planning copy is not rendered`);
     }
+    if (guide.hubSlug === 'emilia-romagna') {
+      check(dom.filter((node) => classHas(node, 'it-local-plan')).length === 1, `${route}: Emilia-Romagna route-specific local plan missing`);
+      if (guide.localPlan) check(pageText.includes(guide.localPlan.stay) && pageText.includes(guide.localPlan.walk) && pageText.includes(guide.localPlan.booking) && pageText.includes(guide.localPlan.season), `${route}: Emilia-Romagna local planning copy is not rendered`);
+      if (guide.image.assetType === 'original-planning-diagram') check(pageText.includes(guide.image.legendTitle) && guide.image.legend.every((item) => pageText.includes(item)), `${route}: original diagram legend is missing or incomplete`);
+    }
     check(html.includes(`data-it-family="${escape(guide.family)}"`), `${route}: guide family marker missing`);
     check(html.includes(`data-it-layout="${escape(guide.layout)}"`), `${route}: guide layout marker missing`);
     check(html.includes(`data-it-structure="${escape(guide.structure)}"`), `${route}: guide structure marker missing`);
@@ -217,7 +248,9 @@ for (const route of routes) {
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
     for (const guide of credited) {
       const identity = creatorIdentity(guide.image.creator);
-      check(localized.includes(guide.image.source) && localized.includes(guide.image.license) && identity.length >= 3 && localized.includes(escape(identity)), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+      const original = guide.image.assetType === 'original-planning-diagram';
+      check(localized.includes(guide.image.source) && identity.length >= 3 && localized.includes(escape(identity))
+        && (original ? localized.includes('terms-of-use') : localized.includes(guide.image.license)), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
     }
   }
 }
@@ -242,7 +275,7 @@ check(read('scripts/build-dist.mjs').includes("'italy'"), 'Italy absent from bui
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') ? '2026-10-12' : '2026-09-26';
+    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') ? '2026-10-12' : '2026-09-26';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

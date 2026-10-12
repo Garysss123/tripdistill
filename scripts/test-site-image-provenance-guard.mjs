@@ -9,7 +9,9 @@ const provenanceLinks = `<li><a href="${sourceHref}">Original Lhasa schematic</a
 const originalSvg = '<img src="/assets/images/china-lhasa-preparation.svg" width="960" height="640" alt="Planning schematic">';
 const malaysiaPaths = [
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
-  '/assets/images/tripdistill-kellies-castle-transfer.svg'
+  '/assets/images/tripdistill-kellies-castle-transfer.svg',
+  '/assets/images/tripdistill-italy-bologna-portico-plan.svg',
+  '/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg'
 ];
 
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}${provenanceLinks}`, pageUrl), true, 'one normalized original SVG with its source and Terms links qualifies');
@@ -24,4 +26,4 @@ assert.equal(hasVisibleOriginalProjectProvenance(`<img src="/assets/images/other
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${termsHref}">Terms of Use</a></li>`, pageUrl), false, 'the original image source link is required');
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${sourceHref}">Original Lhasa schematic</a></li>`, pageUrl), false, 'the Terms link is required');
 
-console.log('Site image provenance regression passed: the allowlist is limited to three original SVGs; each page still needs one image and exact source and Terms links.');
+console.log('Site image provenance regression passed: each allowlisted original SVG needs one image and exact source and Terms links.');

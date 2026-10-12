@@ -4,7 +4,9 @@ const SITE_ORIGIN = 'https://tripdistill.com';
 const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/china-lhasa-preparation.svg',
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
-  '/assets/images/tripdistill-kellies-castle-transfer.svg'
+  '/assets/images/tripdistill-kellies-castle-transfer.svg',
+  '/assets/images/tripdistill-italy-bologna-portico-plan.svg',
+  '/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg'
 ]);
 const TERMS_PATH = '/terms-of-use/';
 

@@ -1,0 +1,16 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Emilia-Romagna as three operating zones rather than a checklist: Bologna’s walkable portico centre, the Via Emilia rail pair of Modena and Parma, and the…": "以三種行程分區規劃艾米利亞－羅馬涅：波隆那可步行的拱廊中心、Via Emilia沿線摩德納與帕爾馬的鐵路雙城，以及拉文納、費拉拉或另行安排的波河三角洲。"
+  },
+  "reviewProvenance": {
+    "writer": "single-model translation",
+    "reviewer": "same-model self-review",
+    "independentSecondModel": false
+  }
+}

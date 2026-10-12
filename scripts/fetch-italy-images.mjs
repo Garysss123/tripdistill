@@ -193,6 +193,10 @@ try {
   for (const [index, job] of jobs.entries()) {
     let candidate;
     let entry = manifest[job.key];
+    if (entry?.assetType === 'original-planning-diagram') {
+      console.log(`[${index + 1}/${jobs.length}] ${job.key}: retained original planning diagram; no photo lookup or download.`);
+      continue;
+    }
     const override = italyImageOverrides[job.key];
     const needsSelection = force || !entry || (override && normalizeFileTitle(override) !== entry.commonsTitle);
     if (needsSelection) {

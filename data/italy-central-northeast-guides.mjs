@@ -140,17 +140,21 @@ export const italyCentralNortheastClusters = [
     slug: 'emilia-romagna',
     name: 'Emilia-Romagna',
     region: 'Northern Italy',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     band: 'north',
     family: 'via-emilia-booking-spine',
     label: 'Rail-and-reservation transect',
-    tagline: 'Use the Via Emilia as a spine, then give each collection, producer or wetland branch its own booking contract.',
-    hubIntro: 'Emilia-Romagna looks simple because frequent trains join Bologna, Modena, Parma, Ferrara and Ravenna, yet the useful trip splits at each station. Towers and mosaics have entry clocks, food producers require real appointments, Maranello is a last-mile branch, and the Po Delta is not on the city-centre rail spine. The region works when one rail city anchors the day and only one reserved branch leaves it.',
-    stay: 'Four to six nights supports Bologna as a central rail base plus one eastern or western overnight when early mosaics, an evening performance or a Delta departure matters. A single Bologna base is efficient for city days but should not be used to disguise long returns from Ravenna, Parma or the coast.',
-    transfer: 'High-speed and regional services share Bologna Centrale but use different levels, operators and connection margins. Trenitalia TPER covers much of the regional spine; Maranello, rural producers, Comacchio and Delta habitats require buses, booked visits, boats or a car. Name the station exit and the non-rail leg before buying the trunk ticket.',
-    season: 'Porticoes soften summer heat and rain in Bologna, but exposed squares, walls and wetlands remain demanding. Autumn food events and trade fairs can compress rooms and trains; winter fog shortens landscape views; spring water levels, storms or conservation work can alter Delta access without affecting the rail cities.',
-    fallback: 'When a producer cancels, a tower closes or wetland weather deteriorates, keep a full day in the nearest rail city: Bologna’s civic museums and porticoes, Modena or Parma’s central collections, Ravenna’s confirmed mosaic circuit, or Ferrara’s walls and museums. Do not replace a failed branch with another distant reservation.',
+    tagline: 'Choose one rail city for each day, then add only the booked branch whose return you can protect.',
+    hubIntro: 'Plan Emilia-Romagna as three operating zones rather than a checklist: Bologna’s walkable portico centre, the Via Emilia rail pair of Modena and Parma, and the eastern choice among Ravenna, Ferrara or a separately organized Po Delta visit. Bologna Centrale is the trunk junction, but station changes, timed monuments, working food producers and rural last miles create separate days. Four nights gives two full city days and one flexible excursion; five or six nights can add a second base without turning the Delta or Maranello into an assumed rail stop.',
+    stay: 'Use Bologna for three or four nights if most days follow the mainline and you want evenings in one walkable centre. A four-night trip can cover Bologna, one Modena-or-Parma day and one eastern day, but not all three eastern systems in depth. Add a fifth night in Ravenna or Ferrara when a first-entry mosaic booking, a full wall walk or a prearranged Delta departure needs an early start. A sixth night makes a second Via Emilia city or a producer appointment realistic; avoid changing hotels for a short rail hop.',
+    transfer: 'From Bologna Centrale, distinguish the high-speed platforms and concourses from Trenitalia TPER regional services; check the named arrival station in Modena, Parma, Ferrara or Ravenna before choosing accommodation. Walk Via dell’Indipendenza from Bologna station toward Piazza Maggiore, or use TPER only after checking the stop that serves your first door. Maranello, an acetaia or dairy, Comacchio and Delta habitats are separate last-mile journeys: confirm the operator, meeting address and return before buying the trunk ticket.',
+    season: 'Bologna’s porticoes provide cover, not air conditioning; plan shaded pauses and reduce exposed Piazza Maggiore time in summer. Spring and autumn suit longer wall and wetland walks but bring rain, wind and variable ground conditions. Winter fog can flatten Delta bird and water views and shorten daylight. Food-event and trade-fair dates can change Bologna room demand, while religious observances or conservation work can change individual monument or habitat access; check the date-specific notice before fixing the base.',
+    fallback: 'If a tower, producer or Delta outing is unavailable, keep the day in its chosen rail city. Bologna has a complete portico-to-civic-museum walk; Modena and Parma each support a separate cathedral-centred route; Ravenna’s monuments can be grouped only after confirming their individual entrances; Ferrara works as a bounded centre-and-wall day. A weather or booking failure is not a reason to race to another distant city.',
     sources: [
       ['https://emiliaromagnaturismo.it/en', 'Emilia-Romagna Turismo — official regional destination information'],
+      ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning and service information'],
       ['https://www.trenitaliatper.it/', 'Trenitalia TPER — official regional rail information'],
       ['https://www.bolognawelcome.com/en', 'Bologna Welcome — official city visitor information']
     ],
@@ -162,9 +166,23 @@ export const italyCentralNortheastClusters = [
         layout: 'portico-shade-city-grid',
         structure: 'market-daypart-table',
         imageQuery: 'Bologna porticoes Piazza Maggiore historic centre',
-        imageAlt: 'Historic porticoes leading through central Bologna',
-        purpose: 'Choose Bologna’s civic core and towers, a collection-led day, or a portico-and-market route, then use the covered street network to control heat and distance rather than treating San Luca, every market and every museum as one centre walk.',
-        summary: 'Leave Bologna Centrale on one southbound line, fix any tower or museum booking before the markets, use the porticoes as an operating grid between pauses, and finish near the station-facing side of the centre unless San Luca was chosen as the day’s single extension.',
+        imageAlt: 'Original schematic linking Bologna Centrale, the porticoed centre and the San Luca branch',
+        imageLegendTitle: 'Diagram key · route logic, not a map',
+        imageLegend: ['1 · Bologna Centrale to Via dell’Indipendenza', '2 · Piazza Maggiore, civic doors and nearby markets', '3 · San Luca is a separate branch; verify its return'],
+        purpose: 'Choose a compact civic walk, one controlled interior or a food-and-market morning, then keep San Luca as a separate half-day. Bologna’s porticoes connect the station approach and historic centre, but the tower, museums, market stalls and sanctuary each have different access conditions and should not be promised as one uninterrupted attraction.',
+        summary: 'Walk south from Bologna Centrale along Via dell’Indipendenza to Piazza Maggiore, reserve one tower or museum only after checking its current status, then connect the Quadrilatero or Mercato delle Erbe under the porticoes; save San Luca for a separately checked bus or walking return.',
+        localPlan: {
+          title: 'One portico loop, one fixed doorway',
+          intro: 'Use the railway station as the northern edge and Piazza Maggiore as the decision point. This plan stays inside Bologna’s central walking grid; San Luca changes the transport contract and should replace, not trail behind, the city route.',
+          stayTitle: 'Stay within the station-to-core band',
+          stay: 'For one or two nights, choose an address near Bologna Centrale if an early regional departure matters, or near Via dell’Indipendenza, Piazza Maggiore or the Quadrilatero for a shorter evening walk. Three nights is a useful Bologna base for a separate city day and one day trip. Do not move hotels just to sleep beside a single museum slot; compare luggage handling with the extra return leg first.',
+          walkTitle: 'Walk the central spine south, then loop east',
+          walk: 'From Bologna Centrale, follow Via dell’Indipendenza beneath the porticoes to Piazza Maggiore. Continue around San Petronio and the Palazzo d’Accursio exterior, then choose the Quadrilatero lanes or turn west toward Mercato delle Erbe. Finish through a parallel covered street toward the station. This is a compact civic route; the Sanctuary of San Luca is a separate western branch, not the next walking block.',
+          bookingTitle: 'Verify the tower and each market separately',
+          booking: 'Bologna Welcome displayed an Asinelli Tower maintenance closure during this review, so do not build the day around an assumed climb; reopen its current notice before travel. Check the chosen civic museum’s own admission page and the specific market’s trading information. Bologna Welcome describes Via dell’Indipendenza as the link between the station and Piazza Maggiore. TPER journey planning is date-specific; this guide makes no fare or departure-time promise.',
+          seasonTitle: 'Use covered streets, with a real weather pause',
+          season: 'In summer, walk the open square early or later and use the porticoes for the connecting legs, with water and an indoor break. Rain keeps much of the route sheltered, but stone paving can be slick and stalls may follow individual hours. For a separate San Luca day, check the sanctuary notice and the TPER service or planned walking approach; shorten the route if heat, rain or reduced winter daylight removes the return margin.'
+        },
         choices: [
           ['Civic core and tower', 'Anchor Piazza Maggiore, the municipal complex and a confirmed tower product. This gives a strong vertical and civic reading, but San Luca and a deep museum visit must drop away.'],
           ['One collection argument', 'Choose the archaeological, medieval, modern-art or music collections that best match the trip, then connect only the nearest squares. Indoor depth protects a hot or wet day but reduces market and viewpoint time.'],
@@ -189,7 +207,9 @@ export const italyCentralNortheastClusters = [
         verify: 'Check Bologna Welcome for current tower and attraction access, the selected civic museum’s official hours, market trading patterns and Bologna Centrale service information before departure.',
         sources: [
           ['https://www.bolognawelcome.com/en', 'Bologna Welcome — official city visitor and booking information'],
-          ['https://www.museibologna.it/', 'Musei Civici Bologna — official civic museum information']
+          ['https://www.museibologna.it/', 'Musei Civici Bologna — official civic museum information'],
+          ['https://whc.unesco.org/en/list/1650/', 'UNESCO — Porticoes of Bologna World Heritage description'],
+          ['https://www.tper.it/', 'TPER — official local public transport information']
         ]
       }),
       g({
@@ -199,9 +219,23 @@ export const italyCentralNortheastClusters = [
         layout: 'via-emilia-reservation-circuit',
         structure: 'rail-to-street-braid',
         imageQuery: 'Modena cathedral Piazza Grande Emilia Romagna',
-        imageAlt: 'Modena Cathedral and Piazza Grande along the Via Emilia corridor',
-        purpose: 'Choose Modena’s civic and motor story, Parma’s cathedral and cultural collections, or one genuinely reserved food-production visit, then keep factory, dairy, cellar and Maranello branches separate from the easy-looking rail spine.',
-        summary: 'Use one Via Emilia station as the day’s base, complete its cathedral, museum or food argument before any last-mile appointment, and return to that station rather than turning Modena, Maranello, Parma and a rural producer into an impossible tasting circuit.',
+        imageAlt: 'Original schematic showing the Modena and Parma rail pair and optional booked branches',
+        imageLegendTitle: 'Diagram key · schematic, not to scale',
+        imageLegend: ['1 · Choose Modena or Parma as the day base', '2 · Walk station–historic core–station', '3 · Maranello or a producer needs a confirmed last mile'],
+        purpose: 'Choose one city for the day: Modena’s cathedral and motor story, Parma’s cathedral and cultural interiors, or one booked producer visit reached from a named gateway. These are competing plans, because Maranello and rural dairies or acetaie sit beyond the station-to-centre walk and each needs its own transport, appointment and return.',
+        summary: 'Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.',
+        localPlan: {
+          title: 'Choose a city before choosing the appointment',
+          intro: 'Modena and Parma share the Via Emilia rail corridor, but the useful walk begins only after you select one station. A rural producer or Maranello visit changes the day into an appointment-led transfer, not a simple extension of the city centre.',
+          stayTitle: 'Keep the bed by the rail day you actually chose',
+          stay: 'For one night, sleep near Modena station or its historic core when the cathedral and Enzo Ferrari Museum are the focus; choose Parma station or the centre for its cathedral quarter and Teatro Farnese. With two or three nights, Bologna can remain the base for regional rail if arrival and return times suit the planned doors. An early rural producer appointment may justify a night in its actual gateway town, but confirm access before booking a remote stay.',
+          walkTitle: 'Make one station-to-centre circuit',
+          walk: 'In Modena, walk from the station toward Piazza Grande, Duomo di Modena and the covered Mercato Albinelli, then return by the most direct central streets. In Parma, connect Parma station with Piazza Garibaldi, the cathedral and baptistery area, then choose Teatro Farnese or a bounded central walk. Do not append the other city after a long museum block; each is a separate station-based day.',
+          bookingTitle: 'Treat Maranello and food producers as appointments',
+          booking: 'Visit Modena currently directs visitors to book access for the Acetaia Comunale, Palazzo Comunale and Ghirlandina; check each product and notice separately. For Ferrari museums, identify the exact museum and its actual arrival point before adding a bus or road leg to Maranello. Dairies and private acetaie set their own tour times and meeting locations. Verify the operator, confirmation, return and non-drinking transport plan; no walk-in tasting or schedule is assumed.',
+          seasonTitle: 'Move interiors around heat, rain and event days',
+          season: 'Use the cathedral quarter and covered market earlier on hot days, then put a confirmed museum block in the brighter hours. Rain favors a compact centre itinerary but can make an unplanned rural walk impractical. Winter daylight and fog tighten the countryside margin; food festivals, holidays and venue events can change access. If the appointment or road leg is uncertain, keep the complete Modena or Parma city loop instead.'
+        },
         choices: [
           ['Modena city and motor culture', 'Pair the cathedral and Piazza Grande with one confirmed city museum or a preplanned Maranello branch. Choosing the motor extension sacrifices Parma and requires a separate bus or road transfer.'],
           ['Parma sacred and performing city', 'Give the cathedral-baptistery group, Teatro Farnese or another compatible collection the long block. This keeps the day walkable, but does not include a countryside dairy by implication.'],
@@ -225,8 +259,10 @@ export const italyCentralNortheastClusters = [
         combine: 'Combine one city core with one confirmed specialist visit that departs from the same base. Keep Modena and Parma on separate days when either food production, motor culture or major collections matter.',
         verify: 'Confirm the producer or museum directly, the complete last-mile transport, regional train status, holiday closures and any tasting or driver conditions before committing the day.',
         sources: [
-          ['https://www.visitmodena.it/en/', 'Visit Modena — official destination and visitor information'],
-          ['https://www.parmawelcome.it/en/', 'Parma Welcome — official city visitor information']
+          ['https://www.visitmodena.it/en/', 'Visit Modena — official destination, booking and visitor information'],
+          ['https://www.parmawelcome.it/en/', 'Parma Welcome — official city visitor information'],
+          ['https://www.trenitaliatper.it/', 'Trenitalia TPER — official regional rail information'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning and service information']
         ]
       }),
       g({
@@ -237,8 +273,20 @@ export const italyCentralNortheastClusters = [
         structure: 'two-shore-clock',
         imageQuery: 'Ravenna San Vitale exterior Emilia Romagna',
         imageAlt: 'The Basilica of San Vitale in Ravenna',
-        purpose: 'Choose Ravenna’s mosaic circuit, Ferrara’s walled civic landscape, or a properly arranged Comacchio and Po Delta day; use one as the actual base instead of treating three eastern Emilia-Romagna systems as one rapid excursion.',
-        summary: 'Begin at the rail station or Delta gateway that belongs to the chosen argument, work one complete urban or wetland sequence, and keep weather and last-mile transport from turning a distant second stop into the return risk.',
+        purpose: 'Choose one eastern base and one complete route: Ravenna’s mosaic sites, Ferrara’s civic centre and a bounded wall section, or a prearranged Comacchio/Po Delta program. The first two begin at railway stations; the third begins wherever its named operator meets you, so they are alternatives rather than same-day stops.',
+        summary: 'Take the regional rail branch to Ravenna or Ferrara for a station-to-centre walking day, or meet a confirmed Delta operator at its stated gateway; reserve the return before setting out and do not combine these separate systems by map distance alone.',
+        localPlan: {
+          title: 'Pick Ravenna, Ferrara or the wetland gateway',
+          intro: 'These routes start in different transport systems. Use a rail-centred base for Ravenna or Ferrara; choose Comacchio or another operator-specified meeting point only after the Delta activity and its round trip are confirmed.',
+          stayTitle: 'Sleep near the chosen morning threshold',
+          stay: 'One night in Ravenna places you near the station and gives an earlier start for its separate monument entrances. One night in Ferrara favors the centre and a longer wall walk. Two or three nights in Bologna can support one eastern rail day if the actual regional services fit the plan, but do not treat the late return as guaranteed. For a dawn birding or boat program, stay near the operator’s confirmed meeting point or arrange the transfer the previous day.',
+          walkTitle: 'Keep each city on its own walking line',
+          walk: 'In Ravenna, walk from the station toward the Basilica of San Vitale and nearby mosaic monuments, then group only sites whose current custodians and entrances you have confirmed. In Ferrara, move from the station toward Castello Estense and the cathedral quarter, then choose one legible section of the walls before returning. Comacchio and Delta habitats require a separate bus, car, boat or guided route from the exact gateway; there is no single station-to-wetland promenade.',
+          bookingTitle: 'Check each monument and the Delta operator',
+          booking: 'Ravenna’s mosaic monuments can have different custodians, entry conditions and ticket coverage, so verify each intended site on Ravenna Turismo or its named operator. For Ferrara, check current visitor access and bicycle or wall conditions with Ferrara Info. For the Po Delta, reserve the exact boat, guide, bus or visitor-centre program and record its meeting location, duration, weather cancellation terms and return. The park’s conservation notices govern access; this page supplies no unverified service or fare.',
+          seasonTitle: 'Let wind and water decide the outdoor block',
+          season: 'Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.'
+        },
         choices: [
           ['Ravenna mosaic circuit', 'Select a compatible group of late-antique and early-Christian sites and leave walking time between them. This gives the strongest art-historical day, but Ferrara and the Delta disappear.'],
           ['Ferrara walls and civic city', 'Use the castle, cathedral quarter, Renaissance streets and a bounded wall segment from Ferrara station. It offers a legible bicycle or walking city, but not Ravenna’s mosaic depth.'],
@@ -264,7 +312,8 @@ export const italyCentralNortheastClusters = [
         sources: [
           ['https://www.turismo.ra.it/en/', 'Ravenna Tourism — official city visitor information'],
           ['https://www.parcodeltapo.it/', 'Po Delta Park — official protected-area information'],
-          ['https://www.ferrarainfo.com/en/', 'Ferrara Info — official destination information']
+          ['https://www.ferrarainfo.com/en/', 'Ferrara Info — official destination information'],
+          ['https://www.trenitaliatper.it/', 'Trenitalia TPER — official regional rail information']
         ]
       })
     ]

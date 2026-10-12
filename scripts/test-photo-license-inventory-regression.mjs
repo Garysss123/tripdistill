@@ -304,7 +304,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 518, 'the merged inventory records Côte d’Azur, Marseille, Peak District and Provence inland photo checks while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 520, 'the merged inventory records Côte d’Azur, Marseille, Peak District and Provence inland photo checks, plus two retained but publicly retired Italy files, while unresolved claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -519,7 +519,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 10, 'inventory must count project-original artwork including Melaka, Somerset, Peak District, both Malaysia child-page diagrams and the two Emilia-Romagna route schematics');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 514, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -560,8 +560,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 800, 'the two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 3, 'the preserved Melaka photo and two publicly retired Emilia-Romagna photos must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 800, 'original Malaysia and Emilia-Romagna diagrams must be included while all three retained rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

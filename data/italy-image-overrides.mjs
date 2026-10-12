@@ -38,6 +38,37 @@ export const italyImageOverrides = {
   "siena-southern-tuscany/siena-civic-cathedral": "File:Palaces - Piazza del Campo - Siena 2016.jpg",
 };
 
+export const retiredItalyImageCredits = {
+  'emilia-romagna/bologna-porticoes-markets': {
+    src: '/assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp',
+    source: 'https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_11.jpg',
+    label: 'Bologna Piazza Maggiore 11.jpg',
+    creator: 'GennaroBologna',
+    statedLicense: 'CC BY-SA 4.0',
+    license: null,
+    rightsStatus: 'Unresolved separate authorisation link; retained internally and removed from public use.',
+    rightsStatusUrl: 'https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_11.jpg',
+    assetType: 'photographic-raster',
+    inventoryStatus: 'unused',
+    localSha1: 'e1033c07e7f20b2925bbc90b10056101a16aeeaf',
+    retirementNote: 'Pixels show Piazza Maggiore rather than a clear portico route; Commons page links a separate authorisations page whose conditions were not verified. Not treated as a license conflict.'
+  },
+  'emilia-romagna/modena-parma-via-emilia': {
+    src: '/assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp',
+    source: 'https://commons.wikimedia.org/wiki/File:Modena_-_Piazza_Grande_-_Duomo.jpg',
+    label: 'Modena - Piazza Grande - Duomo.jpg',
+    creator: 'Gerolamondo',
+    statedLicense: 'CC BY-SA 4.0',
+    license: null,
+    rightsStatus: 'Unresolved separate authorisation link; retained internally and removed from public use.',
+    rightsStatusUrl: 'https://commons.wikimedia.org/wiki/File:Modena_-_Piazza_Grande_-_Duomo.jpg',
+    assetType: 'photographic-raster',
+    inventoryStatus: 'unused',
+    localSha1: '3e565f6edcfcaa71c992acdcd107fe99f04776be',
+    retirementNote: 'Pixels match the Modena Cathedral subject, but the Commons page links a separate authorisations page whose conditions were not verified. Not treated as a license conflict.'
+  }
+};
+
 export const italyImageCreditOverrides = {
   'siena-southern-tuscany/siena-civic-cathedral': 'José Luiz Bernardes Ribeiro',
   'veneto-art-cities/padua-frescoes-basilica': 'Piero tasso (P tasso)'
