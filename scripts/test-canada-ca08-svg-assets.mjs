@@ -43,6 +43,20 @@ assert parkway.text == 'Highway 93: Jasper to Lake Louise · 232 km'
 assert falls_y + 20 <= parkway_y, 'the two route-distance annotations must occupy separate, non-overlapping lines'
 legend = root.find(".//*[@id='route-legend']")
 assert legend is not None
+frame = root.find(".//*[@id='diagram-frame']")
+card = root.find(".//*[@id='legend-card']")
+assert frame is not None and card is not None
+frame_x, frame_y = float(frame.attrib['x']), float(frame.attrib['y'])
+frame_right = frame_x + float(frame.attrib['width'])
+frame_bottom = frame_y + float(frame.attrib['height'])
+card_x, card_y = float(card.attrib['x']), float(card.attrib['y'])
+card_right = card_x + float(card.attrib['width'])
+card_bottom = card_y + float(card.attrib['height'])
+assert card_x >= frame_x + 14 and card_right <= frame_right - 14
+assert card_y >= frame_y + 14 and card_bottom <= frame_bottom - 14, 'white legend card must stay fully inside the inner frame with a visible bottom gap'
+assert 700 - frame_bottom >= 30, 'the inner frame must leave clear space before the SVG canvas bottom'
+legend_content_bottom = max(float(node.attrib['y']) + float(node.attrib['font-size']) for node in legend.iter(ns + 'text'))
+assert legend_content_bottom <= card_bottom - 8, 'all five-language legend content must stay inside the white card'
 expected_rows = {
     'legend-en': ['Teal line · Maligne Valley', 'Orange line · southbound Parkway', 'Purple marker · Columbia Icefield'],
     'legend-zh-Hant': ['青綠線 · 瑪琳谷', '橙線 · 冰原大道南行段', '紫色標記 · 哥倫比亞冰原'],

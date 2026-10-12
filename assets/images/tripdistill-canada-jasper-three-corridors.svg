@@ -2,7 +2,7 @@
   <title id="title">Jasper is a base for three separate travel corridors</title>
   <desc id="desc">A not-to-scale diagram with Jasper town at the centre, Maligne Valley to the north, and Athabasca Falls, Sunwapta Falls, Columbia Icefield and Lake Louise on the southbound Icefields Parkway. A five-language color legend identifies the Maligne Valley route, the southbound Parkway and the Columbia Icefield marker.</desc>
   <rect x="0" y="0" width="1200" height="700" rx="24" fill="#eef5f3"/>
-  <path d="M55 55h1090v590H55z" fill="none" stroke="#bfd4d0" stroke-width="2"/>
+  <rect id="diagram-frame" x="55" y="55" width="1090" height="615" fill="none" stroke="#bfd4d0" stroke-width="2"/>
   <text x="86" y="104" font-family="system-ui,sans-serif" font-size="32" font-weight="700" fill="#183b3c">Jasper base · three distinct corridors</text>
   <text x="88" y="140" font-family="system-ui,sans-serif" font-size="18" fill="#466260">Schematic only · not to scale · roads and access change by season</text>
   <path d="M240 330C330 300 365 230 465 206" fill="none" stroke="#367d75" stroke-width="10" stroke-linecap="round"/>
@@ -21,7 +21,7 @@
   <text x="930" y="397" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#183b3c">LAKE LOUISE</text>
   <text id="falls-distance-note" x="320" y="430" font-family="system-ui,sans-serif" font-size="14" fill="#466260">Falls: Athabasca 30 km; Sunwapta 54 km south of Jasper</text>
   <text id="parkway-distance-note" x="612" y="455" font-family="system-ui,sans-serif" font-size="14" fill="#466260">Highway 93: Jasper to Lake Louise · 232 km</text>
-  <rect x="86" y="476" width="1028" height="178" rx="16" fill="#fff" stroke="#bfd4d0" stroke-width="2"/>
+  <rect id="legend-card" x="86" y="476" width="1028" height="178" rx="16" fill="#fff" stroke="#bfd4d0" stroke-width="2"/>
   <g id="route-legend" role="group" aria-label="Route color legend in five languages">
     <text x="108" y="501" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#183b3c">Route color legend · 路線顏色圖例 · ルートの色凡例 · 경로 색상 범례 · คำอธิบายสีเส้นทาง</text>
     <g id="legend-en">
