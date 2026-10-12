@@ -47,6 +47,12 @@ const laterCanadaCa14SearchRoutes = [
   '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
   '/canada/halifax-nova-scotia/cape-breton-cabot/'
 ];
+const laterCanadaCa15Routes = [
+  '/canada/prince-edward-island/',
+  '/canada/prince-edward-island/charlottetown/',
+  '/canada/prince-edward-island/cavendish-north-shore/',
+  '/canada/prince-edward-island/coastal-drives/'
+];
 const laterSwitzerlandCh14Routes = [
   '/switzerland/',
   '/switzerland/lugano-southern-ticino/',
@@ -268,7 +274,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14 and CH14/CH15 search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14, CA15 and CH14/CH15 search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);

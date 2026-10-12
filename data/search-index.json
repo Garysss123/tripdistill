@@ -7483,57 +7483,6 @@
     ]
   },
   {
-    "title": "Prince Edward Island",
-    "url": "/canada/prince-edward-island/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "PEI looks small on a map, but a good trip separates Charlottetown, the north-shore park corridor and the quieter east/west coastal drives. Use one base or two, not a daily race around the island.",
-    "keywords": [
-      "Prince Edward Island",
-      "Prince Edward Island",
-      "atlantic"
-    ]
-  },
-  {
-    "title": "Charlottetown",
-    "url": "/canada/prince-edward-island/charlottetown/",
-    "parent": "Prince Edward Island",
-    "type": "Local guide",
-    "summary": "Use Charlottetown as the island’s civic and food anchor: one compact heritage walk, one cultural stop and an evening that does not require another drive.",
-    "keywords": [
-      "Charlottetown",
-      "Prince Edward Island",
-      "Prince Edward Island",
-      "field-notebook"
-    ]
-  },
-  {
-    "title": "Cavendish & North Shore National Park",
-    "url": "/canada/prince-edward-island/cavendish-north-shore/",
-    "parent": "Prince Edward Island",
-    "type": "Local guide",
-    "summary": "Combine one national-park beach/dune sector with one Anne-related or rural heritage stop, keeping erosion and protected dune access central to the route.",
-    "keywords": [
-      "Cavendish & North Shore National Park",
-      "Prince Edward Island",
-      "Prince Edward Island",
-      "shoreline-strip"
-    ]
-  },
-  {
-    "title": "PEI East & West Coastal Drives",
-    "url": "/canada/prince-edward-island/coastal-drives/",
-    "parent": "Prince Edward Island",
-    "type": "Local guide",
-    "summary": "Choose east or west for the day, then use one lighthouse, one town and one food stop as anchors instead of circling the island because the roads look short.",
-    "keywords": [
-      "PEI East & West Coastal Drives",
-      "Prince Edward Island",
-      "Prince Edward Island",
-      "roadbook"
-    ]
-  },
-  {
     "title": "Newfoundland & Labrador",
     "url": "/canada/newfoundland-labrador/",
     "parent": "Canada",
@@ -13248,6 +13197,57 @@
       "Halifax & Nova Scotia",
       "Nova Scotia",
       "distance-ruler"
+    ]
+  },
+  {
+    "title": "Prince Edward Island",
+    "url": "/canada/prince-edward-island/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Plan Prince Edward Island by corridors rather than map size: Charlottetown and its walkable civic core, one north-shore National Park section, and a separate east or west coast day. The park’s Cavendish–North Rustico, Brackley–Dalvay and Greenwich sections are divided by bays and are not joined by direct highways. Choose one coast per day and place the overnight where the next morning begins.",
+    "keywords": [
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "atlantic"
+    ]
+  },
+  {
+    "title": "Charlottetown",
+    "url": "/canada/prince-edward-island/charlottetown/",
+    "parent": "Prince Edward Island",
+    "type": "Local guide",
+    "summary": "Use the compact centre for a civic walk, one chosen indoor history or arts visit, and the harbour. Province House is closed for conservation work, so plan its Confederation story from the exterior and use an open venue for the interior visit.",
+    "keywords": [
+      "Charlottetown",
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Cavendish & North Shore National Park",
+    "url": "/canada/prince-edward-island/cavendish-north-shore/",
+    "parent": "Prince Edward Island",
+    "type": "Local guide",
+    "summary": "Pair one Cavendish–North Rustico park sector with Green Gables Heritage Place or a second short coastal walk. The park’s other regions are separated by bays, so do not plan a quick same-road hop to Greenwich or Brackley–Dalvay.",
+    "keywords": [
+      "Cavendish & North Shore National Park",
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "shoreline-strip"
+    ]
+  },
+  {
+    "title": "PEI East & West Coastal Drives",
+    "url": "/canada/prince-edward-island/coastal-drives/",
+    "parent": "Prince Edward Island",
+    "type": "Local guide",
+    "summary": "Choose Points East or North Cape for a full day, then anchor it with one community and one coastal stop. Tourism PEI describes Points East as a 475 km drive, so selecting a segment and an overnight is more useful than attempting an island loop.",
+    "keywords": [
+      "PEI East & West Coastal Drives",
+      "Prince Edward Island",
+      "Prince Edward Island",
+      "roadbook"
     ]
   }
 ]

@@ -228,7 +228,11 @@ export const integrationRouteGroups = Object.freeze({
     '/canada/halifax-nova-scotia/',
     '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
     '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
-    '/canada/halifax-nova-scotia/cape-breton-cabot/'
+    '/canada/halifax-nova-scotia/cape-breton-cabot/',
+    '/canada/prince-edward-island/',
+    '/canada/prince-edward-island/charlottetown/',
+    '/canada/prince-edward-island/cavendish-north-shore/',
+    '/canada/prince-edward-island/coastal-drives/'
   ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',

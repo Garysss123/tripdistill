@@ -179,21 +179,177 @@ export const canadaAtlanticNorthClusters = [
 
   defineCanadaCluster({
     slug: 'prince-edward-island', name: 'Prince Edward Island', region: 'Prince Edward Island', band: 'atlantic', family: 'red-cliff-island',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
     label: 'Small island · red cliffs, farms and literary coast', tagline: 'short distances still deserve separate days.',
-    hubIntro: 'PEI looks small on a map, but a good trip separates Charlottetown, the north-shore park corridor and the quieter east/west coastal drives. Use one base or two, not a daily race around the island.',
-    stay: 'Three nights supports Charlottetown plus two coastal branches; four or five nights lets you slow down around beaches, food and small towns.',
-    transfer: 'A car is the flexible default beyond Charlottetown. The Confederation Bridge and seasonal ferry connect PEI to neighboring provinces but have different terminals and operating patterns.',
-    season: 'Summer has the fullest visitor services and beach season; shoulder seasons are quieter but many attractions and food stops reduce hours.',
-    fallback: 'Wind, rain or cool beach weather favors Charlottetown culture, food and shorter coastal viewpoints rather than a long beach day.',
+    hubIntro: 'Plan Prince Edward Island by corridors rather than map size: Charlottetown and its walkable civic core, one north-shore National Park section, and a separate east or west coast day. The park’s Cavendish–North Rustico, Brackley–Dalvay and Greenwich sections are divided by bays and are not joined by direct highways. Choose one coast per day and place the overnight where the next morning begins.',
+    stay: 'Two or three nights can support Charlottetown and one nearby branch. Four nights lets you add either the Cavendish–North Rustico park section or one coastal drive without a daily island crossing. Five or six nights gives the north shore and one outer-coast base separate weather windows; add more only if you want both the east and west ends.',
+    transfer: 'The city centre is the easiest no-car stay. T3 Transit has an urban network and a separate rural service on selected routes; check the exact timetable, booking requirement, stop and last-mile walk before treating it as access to a beach, park entrance or lighthouse. A car is the flexible choice for dispersed coast stops. The Confederation Bridge reaches the island from New Brunswick; the Northumberland ferry links Wood Islands with Caribou, Nova Scotia, so arrival terminals and schedules differ.',
+    season: 'Checked 12 October 2026: Parks Canada says most park facilities run from mid-May to early autumn, with fuller service in July and August and limited services in shoulder months. Green Gables Heritage Place publishes site hours separately; its 2026 page lists regular fees from 8 September and expects high visitation. Beaches, weather, daylight and private food stops change at different rates, so confirm each place rather than assuming one island-wide season.',
+    fallback: 'For wind, fog or cold water, shorten the exposed shore time and choose a Charlottetown interior only after confirming that day’s opening. At the park, switch to another open section only if the extra drive fits daylight; the three sections are not linked by a park road. In shoulder season, keep one town or indoor visit in reserve and never make a tight ferry or bridge departure depend on an unverified stop.',
     sources: [
-      ['https://www.t3transit.ca/', 'T3 Transit — Prince Edward Island public transit'],
-      ['https://parks.canada.ca/pn-np/pe/pei-ipe', 'Parks Canada — Prince Edward Island National Park'],
-      ['https://www.confederationbridge.com/', 'Confederation Bridge — crossing information and advisories']
+      ['https://www.t3transit.ca/', 'T3 Transit — city and rural public transit information'],
+      ['https://www.t3transit.ca/transit-pei-schedules', 'Transit PEI — rural routes, schedules and booking checks'],
+      ['https://parks.canada.ca/pn-np/pe/pei-ipe/visit', 'Parks Canada — PEI National Park regions, access and visitor planning'],
+      ['https://parks.canada.ca/pn-np/pe/pei-ipe/visit/heures-hours', 'Parks Canada — PEI National Park operating hours'],
+      ['https://parks.canada.ca/lhn-nhs/pe/greengables', 'Parks Canada — Green Gables Heritage Place and 2026 visitor notice'],
+      ['https://www.confederationbridge.com/travel/', 'Confederation Bridge — crossing information and current advisories'],
+      ['https://www.ferries.ca/ns-pei-ferry/schedule', 'Northumberland Ferries — current Wood Islands–Caribou schedule']
+    ],
+    firstVisitPlan: {
+      heading: 'Choose a corridor before choosing a beach',
+      intro: 'These trip lengths are alternatives, not a list of stops to squeeze into one base. The park’s three regions are geographically separate, and the outer coast roads reward a full day with an early return margin.',
+      days: [
+        ['Two or three nights · Charlottetown base', 'Walk the civic core on one day and select one nearby branch on another. Keep a departure or arrival day light; the city bus and ferry gateways do not solve every rural last mile.'],
+        ['Four nights · add one north-shore sector', 'Use a separate day for Cavendish–North Rustico or Brackley–Dalvay, then return to the same base. Do not count Greenwich as the next beach on the same park road: bays separate the sections.'],
+        ['Five or six nights · move once to a coast base', 'After the city, choose either the Points East corridor or North Cape for an overnight and a full coastal day. Add the other end only if you can spare another night and have checked seasonal openings and the return connection.']
+      ]
+    },
+    faq: [
+      ['Can I explore PEI without renting a car?', 'Charlottetown is the clearest car-free base. Transit PEI also publishes rural routes, but service is route- and date-specific and does not automatically reach every park beach or coastal stop. Confirm the departure, return, booking rule and final walk before building a day around a bus.'],
+      ['How many nights do I need for a first trip?', 'Two or three nights suits Charlottetown and one nearby branch. Four nights permits a separate north-shore park day. Five or more nights makes room for one outer-coast drive and its seasonal operating checks; both east and west deserve separate days.'],
+      ['Can I visit all three PEI National Park sections in one day?', 'It is a poor default. Parks Canada identifies Cavendish–North Rustico, Brackley–Dalvay and Greenwich as separate regions divided by bays and not directly connected by highways. Choose one section, check current parking and facilities, and give another section its own day.'],
+      ['Should I arrive by bridge or ferry?', 'Use the bridge when your mainland approach is New Brunswick; the Northumberland ferry runs between Wood Islands and Caribou, Nova Scotia. They are different crossings with different terminals and current conditions. Check the operator’s live schedule and advisories before setting a timed arrival.']
     ],
     guides: [
-      g({ slug: 'charlottetown', name: 'Charlottetown', instrument: 'harbour-and-civic notebook', layout: 'field-notebook', imageQuery: 'Charlottetown Prince Edward Island harbour Canada', imageAlt: 'Charlottetown waterfront in Prince Edward Island', summary: 'Use Charlottetown as the island’s civic and food anchor: one compact heritage walk, one cultural stop and an evening that does not require another drive.', access: 'The centre is walkable; regional transit exists but does not replace a car for every rural coast itinerary.', tradeoff: 'A city day gives history, restaurants and recovery from driving; it should not be reduced to an hour between distant beaches.', fallback: 'Rain strengthens the museums, galleries, theatre and food focus while shortening harbour walking.', duration: 'One full day is enough for a first visit; stay multiple nights when using Charlottetown as the island base.', combine: 'Pair with a coastal day on either side, not with a same-day full east-and-west island circuit.', verify: 'Check T3 Transit, cultural venue schedules, waterfront events and restaurant seasonal hours before relying on a specific evening.', stages: [['Civic core', 'Start around the historic centre and understand the Confederation-era context before the shopping streets.'], ['One cultural interior', 'Choose a museum, gallery or performance that adds depth rather than filling time.'], ['Harbour walk', 'Use the waterfront as a slower second half rather than another attraction queue.'], ['Eat without driving', 'Finish in the city so the island road day begins rested tomorrow.']], watch: [['Seasonal hours', 'Tourist-season businesses can reduce hours sharply outside summer.'], ['Event closures', 'Festivals can change central parking and traffic.'], ['Rural-base assumption', 'Charlottetown is central in scale, but not every coastal branch is a trivial commute.']] }),
-      g({ slug: 'cavendish-north-shore', name: 'Cavendish & North Shore National Park', instrument: 'dune-and-literature strip', layout: 'shoreline-strip', imageQuery: 'Prince Edward Island National Park Cavendish red cliffs', imageAlt: 'Red cliffs and coast in Prince Edward Island National Park', summary: 'Combine one national-park beach/dune sector with one Anne-related or rural heritage stop, keeping erosion and protected dune access central to the route.', access: 'A car is the practical choice for dispersed north-shore stops. Park entrances and beach facilities are seasonal and sector-specific.', tradeoff: 'This is the classic PEI coast; the cost is summer crowding and the risk of turning literary heritage into a rushed photo list.', fallback: 'Cool, windy or wet weather supports shorter coastal walks plus heritage interiors and cafés rather than long beach time.', duration: 'A full day works for one park sector plus one heritage stop; two days are better if beaches are a major priority.', combine: 'Pair with Charlottetown on a separate day. Do not also cross the island to the far east or west coast.', verify: 'Check Parks Canada beach/trail advisories, dune closures, water conditions, seasonal facilities and any heritage-site hours.', stages: [['Choose the park sector', 'Pick one beach/trail zone instead of hopping across every north-shore access point.'], ['Respect the dunes', 'Stay on boardwalks and designated paths where fragile dune systems are protected.'], ['Add one heritage story', 'Choose Green Gables or another single interpretive stop with enough time to read it.'], ['Return before dinner drive fatigue', 'Head back to the base without chasing another sunset beach across the island.']], watch: [['Dune erosion', 'Protected dunes can close or reroute after storms; never bypass barriers.'], ['Cold water', 'Warm air does not guarantee warm swimming conditions.'], ['Peak parking', 'Popular beach access can fill; keep one official alternative sector.']] }),
-      g({ slug: 'coastal-drives', name: 'PEI East & West Coastal Drives', instrument: 'lighthouse route selector', layout: 'roadbook', imageQuery: 'Prince Edward Island lighthouse coast Canada', imageAlt: 'Lighthouse and coast on Prince Edward Island', summary: 'Choose east or west for the day, then use one lighthouse, one town and one food stop as anchors instead of circling the island because the roads look short.', access: 'A car is usually required. Road distances are manageable but frequent stops and small-road speeds make total days longer than the map suggests.', tradeoff: 'The outer island gives fishing villages and quieter coast; selecting one side sacrifices “seeing everything” but creates actual time in place.', fallback: 'Fog or rain can move the day toward towns, food producers and shorter harbours; do not chase exposed lighthouse viewpoints in poor visibility.', duration: 'One full day for east or west. Give a second day if both coasts matter.', combine: 'Use the day between Charlottetown and another island base; avoid adding a bridge/ferry departure deadline.', verify: 'Check road/weather advisories, lighthouse or museum opening, ferry status if relevant and seasonal food-business hours.', stages: [['Choose east or west', 'Make a real directional choice before leaving the hotel.'], ['One lighthouse', 'Give one coastal landmark time instead of collecting exterior photos.'], ['One working town', 'Stop for harbour, food and local context where people actually live and work.'], ['Return via a different but safe route', 'Use variety only if road conditions and daylight support it.']], watch: [['Stop creep', 'Every small harbour can add thirty minutes; choose rather than accumulate.'], ['Private property', 'Not every attractive field or cliff edge is public access.'], ['Departure pressure', 'Do not combine a full coast drive with a tight bridge or ferry connection.']] })
+      g({
+        slug: 'charlottetown', name: 'Charlottetown', instrument: 'harbour-and-civic notebook', layout: 'field-notebook', imageQuery: 'Charlottetown Prince Edward Island harbour Canada', imageAlt: 'Charlottetown waterfront in Prince Edward Island',
+        summary: 'Use the compact centre for a civic walk, one chosen indoor history or arts visit, and the harbour. Province House is closed for conservation work, so plan its Confederation story from the exterior and use an open venue for the interior visit.',
+        access: 'The central route is walkable, but a complete day still includes several blocks on foot. T3 Transit serves Charlottetown and nearby urban communities; rural beaches need a separate route and confirmed last mile. Keep the city day car-free if your lodging is central.',
+        tradeoff: 'Charlottetown works as a real base when you give its streets, harbour and one venue time. It is not a substitute for the north shore or an outer-coast drive, and Province House’s conservation closure changes the indoor choice.',
+        fallback: 'In rain, shorten the harbour loop and choose Confederation Centre of the Arts, its gallery or a guided Beaconsfield tour only after checking that day’s hours and admission. If none is operating, use the civic streets and waterfront without treating a closed historic interior as an open attraction.',
+        duration: 'Allow one full day for the central walk and one indoor anchor. Two nights make Charlottetown a useful arrival base; add another full day for a rural excursion rather than squeezing it into the city route.',
+        combine: 'Pair the central walk with dinner in town. Do not append Cavendish or Greenwich after the afternoon visit: the north-shore park sections are separate drives. The ferry to Wood Islands is a transport leg, not a downtown harbour excursion.',
+        verify: 'Checked 12 October 2026: Parks Canada lists Province House as closed for conservation work. Confederation Centre and Beaconsfield publish their own hours, tour rules and calendars; check the exact visit date. The 2026 Beaconsfield interior is guided-tour only, while its grounds are open to roam.',
+        routeChoices: {
+          heading: 'Choose the indoor anchor around Province House’s closure',
+          intro: 'The civic route still makes sense from the street, but the best interior depends on the live schedule and whether you want arts, architecture or a guided house visit.',
+          options: [
+            ['Arts and civic story', 'Confederation Centre of the Arts', 'Use the centre near the historic core for an art-gallery or performance option. Check the current exhibition, ticket and opening schedule; the centre is an active venue, not a guaranteed all-day museum.'],
+            ['Historic house', 'Beaconsfield Historic House', 'Choose a guided interior tour when the published calendar fits. In 2026 the house states that interiors are viewed only on a guided tour; its exterior grounds can be visited separately.'],
+            ['Street-level history', 'Province House exterior and Old Town walk', 'Keep Province House in the civic sequence for its Confederation context, but do not expect to enter while the conservation closure remains. Add the harbour and a currently open venue instead.']
+          ]
+        },
+        routeEyebrow: 'A walk with a live indoor choice', routeHeading: 'Civic core, one open interior, harbour return', routeStageLabels: ['Orient', 'Choose', 'Interpret', 'Return'],
+        routeSourcesHeading: 'Hours and access to confirm',
+        routeSourcesNote: 'Parks Canada confirms Province House is closed for conservation. The Confederation Centre calendar and Beaconsfield guided-tour hours are separate; check the exact date before walking over or buying admission.',
+        sources: [
+          ['https://parks.canada.ca/lhn-nhs/pe/provincehouse', 'Parks Canada — Province House conservation closure and history'],
+          ['https://confederationcentre.com/plan-your-visit/', 'Confederation Centre — current visit, gallery and performance information'],
+          ['https://confederationcentre.com/art-gallery/', 'Confederation Centre Art Gallery — exhibitions and current hours'],
+          ['https://www.peimuseum.ca/visit/beaconsfield-historic-house', 'PEI Museum and Heritage Foundation — Beaconsfield guided tours and hours'],
+          ['https://www.t3transit.ca/t3-transit-schedules', 'T3 Transit — Charlottetown city routes and schedules']
+        ],
+        faq: [
+          ['Can I go inside Province House?', 'Parks Canada currently lists the building as closed for conservation work. Treat it as an exterior civic stop and verify the official notice again before travel; do not build the day around interior admission.'],
+          ['Is Beaconsfield a drop-in museum?', 'The foundation says the 2026 house interior can only be seen on a guided tour. Check the date-specific tour hours and availability before walking there; the grounds are a separate free outdoor option.'],
+          ['What is the best rainy-day option?', 'Check Confederation Centre’s current gallery and performance schedule first, then Beaconsfield’s guided-tour calendar. Choose one confirmed interior and keep the harbour walk short; hours change by venue and season.'],
+          ['Can I use Charlottetown as a base without a car?', 'The city centre is the strongest car-free base and T3 Transit publishes urban schedules. Verify your lodging-to-stop route. Rural services do not establish direct access to every beach, park entrance or lighthouse.']
+        ],
+        stages: [
+          ['Start in the civic core', 'Walk the central streets toward Province House and read the surrounding Confederation-era setting from the public street. Parks Canada currently lists the building as closed for conservation, so do not expect an interior tour.'],
+          ['Choose one verified interior', 'Continue to Confederation Centre for the gallery or a scheduled event, or book a Beaconsfield guided tour when its calendar fits. Check hours, entry terms and last admission before leaving the hotel.'],
+          ['Give the history its own block', 'Use the selected venue for the longer indoor visit rather than stacking multiple short entries. If the calendar does not fit, stay with the civic streets, public grounds and interpretive context.'],
+          ['Return through the harbour', 'Walk back toward the waterfront and leave time for a meal in town. Keep the car parked; the route is complete without a late drive to a second coast.']
+        ],
+        watch: [
+          ['Province House remains closed', 'Its heritage importance does not mean the building is open. Recheck Parks Canada, keep the stop exterior-only unless status changes, and select another indoor anchor.'],
+          ['Guided house entry has a schedule', 'Beaconsfield is not a self-guided interior stop in its 2026 visitor information. A tour may be full or outside its hours; confirm before relying on it.'],
+          ['One city day has limited capacity', 'A gallery, house tour and harbour walk each need time. Select one interior; keep the rest for a second day rather than racing the city before a coast drive.']
+        ]
+      }),
+      g({
+        slug: 'cavendish-north-shore', name: 'Cavendish & North Shore National Park', instrument: 'dune-and-literature strip', layout: 'shoreline-strip', imageQuery: 'Prince Edward Island National Park Cavendish red cliffs', imageAlt: 'Red cliffs and coast in Prince Edward Island National Park',
+        summary: 'Pair one Cavendish–North Rustico park sector with Green Gables Heritage Place or a second short coastal walk. The park’s other regions are separated by bays, so do not plan a quick same-road hop to Greenwich or Brackley–Dalvay.',
+        access: 'Parks Canada identifies the site as 24 km from Charlottetown, but a car is the flexible choice for beach entrances and heritage stops. Transit PEI’s rural timetable is date-specific; verify route, booking and the walk from the stop before relying on it.',
+        tradeoff: 'This is the north-shore day for red cliffs, dunes and the Anne of Green Gables landscape. The constraint is that park sections and attractions have distinct access and seasonal operations; a short map distance does not mean one continuous beach road.',
+        fallback: 'When surf, wind or cold water discourages a long beach stay, use a short designated coastal walk and spend the longer block at Green Gables only if it is open. Do not cross to another National Park section as an improvised fallback without checking distance, parking and daylight.',
+        duration: 'Reserve one full day for one park section plus one heritage visit. Add a second north-shore day if swimming, cycling or multiple walks are the main purpose; keep the arrival and departure day light.',
+        combine: 'Pair the Cavendish–North Rustico area with Green Gables or a nearby community stop. Save Brackley–Dalvay and Greenwich for separate days because bays interrupt direct road connection; keep Charlottetown as the evening base only if the return fits daylight.',
+        verify: 'Checked 12 October 2026: Parks Canada expects high visitation in 2026, publishes parking availability through PEI NOW, and lists most park facilities from mid-May to early autumn with limited shoulder-season service. Green Gables has its own fees, hours and high-visitation notice. Recheck both pages on the day.',
+        routeChoices: {
+          heading: 'Select one shore day, not three park regions',
+          intro: 'Use the Cavendish–North Rustico area as a focused section. Decide whether the priority is a beach, a literary heritage visit or more than one night beside the coast.',
+          options: [
+            ['Beach first', 'Cavendish–North Rustico park section', 'Pick one open beach or trail after reviewing Parks Canada parking and access notices. Keep time for the walk from the lot and stay on designated paths near dunes and cliffs.'],
+            ['Literary history', 'Green Gables Heritage Place', 'Choose the house and woodland trails when current hours and admission fit. The site is separate from park beach operations, even though both belong to the north-shore visit.'],
+            ['Slow coast', 'Stay near the north shore overnight', 'Choose this when you want two different weather windows, a longer walk or a slower beach day. It removes the evening drive to Charlottetown; confirm lodging and services beyond summer.']
+          ]
+        },
+        routeEyebrow: 'One national-park section at a time', routeHeading: 'Choose the beach, then the heritage stop', routeStageLabels: ['Check', 'Walk', 'Interpret', 'Return'],
+        routeSourcesHeading: 'Park, parking and heritage checks',
+        routeSourcesNote: 'Parks Canada separates its three park regions and posts current parking and operating information. Green Gables is a distinct historic site with separate fees and seasonal hours.',
+        sources: [
+          ['https://parks.canada.ca/pn-np/pe/pei-ipe/visit', 'Parks Canada — three regions, access and 2026 visitor planning'],
+          ['https://parks.canada.ca/pn-np/pe/pei-ipe/visit/heures-hours', 'Parks Canada — current park operating hours'],
+          ['https://parks.canada.ca/pn-np/pe/pei-ipe/visit/cavendish-nr', 'Parks Canada — Cavendish–North Rustico beaches and facilities'],
+          ['https://parks.canada.ca/lhn-nhs/pe/greengables', 'Parks Canada — Green Gables hours, fees and visitor notice'],
+          ['https://www.t3transit.ca/transit-pei-schedules', 'Transit PEI — rural schedules and booking information']
+        ],
+        faq: [
+          ['Can I drive from Cavendish to Greenwich inside the park?', 'Parks Canada describes three park regions separated by bays and not directly connected by highways. Treat them as separate drives; check a road map, parking and enough daylight before changing sections.'],
+          ['How should I choose a beach?', 'Pick one open access point in the Cavendish–North Rustico area based on the current park map, parking status and the walk that suits your group. Stay on boardwalks and marked trails near dunes and cliffs; conditions can close or redirect a route.'],
+          ['Is Green Gables open all year?', 'Parks Canada publishes separate operating hours and fees. Its page checked 12 October 2026 carried a high-visitation notice and stated regular fees applied from 8 September. Check the live date-specific notice rather than assuming the house, programs or trails are always staffed.'],
+          ['Can I do Cavendish as a half-day from Charlottetown?', 'It is possible to choose one short stop, but a park walk plus Green Gables needs its own time block and current access checks. Do not add another distant park region or outer-coast drive to the same half-day.']
+        ],
+        stages: [
+          ['Check the correct park region', 'Open the Cavendish–North Rustico map and PEI NOW parking notice before leaving. Brackley–Dalvay and Greenwich are distinct regions separated by bays, not adjacent access lots on one continuous park road.'],
+          ['Walk one designated beach or trail', 'Use the posted entrance and path for your selected shore. Respect dune barriers, cliff edges and any current closures; choose a shorter route if wind, surf, footing or mobility makes the exposed section unsuitable.'],
+          ['Add one heritage stop', 'Green Gables Heritage Place offers the house and two woodland trails, but its 2026 hours and fees are separate from the park. Check admission, current access and high-visitation advice before driving over.'],
+          ['Return with daylight margin', 'Finish with the north-shore community stop or return to the chosen base. Do not turn a full day into a late transfer to Greenwich, the east end or a ferry terminal.']
+        ],
+        watch: [
+          ['The park is not one continuous strip', 'Bays separate the three official regions and there is no direct highway connection between them. A section change can use up the margin you intended for the beach.'],
+          ['Dunes and cliffs are active coast', 'Wind, erosion and surf can change safe access. Follow barriers and posted trails; never walk onto closed dunes or wave-washed cliff edges for a photo.'],
+          ['Shoulder-season service is limited', 'Parks Canada says most facilities operate from mid-May to early autumn, with fuller service in July and August. Confirm toilets, parking, programs, food and opening hours for the exact date.']
+        ]
+      }),
+      g({
+        slug: 'coastal-drives', name: 'PEI East & West Coastal Drives', instrument: 'lighthouse route selector', layout: 'roadbook', imageQuery: 'Prince Edward Island lighthouse coast Canada', imageAlt: 'Lighthouse and coast on Prince Edward Island',
+        summary: 'Choose Points East or North Cape for a full day, then anchor it with one community and one coastal stop. Tourism PEI describes Points East as a 475 km drive, so selecting a segment and an overnight is more useful than attempting an island loop.',
+        access: 'A car is the flexible choice for the outer coasts; Transit PEI rural routes are selected, scheduled and sometimes booking-dependent, not a general island sightseeing pass. Name the return time and check fuel, food and seasonal attractions before leaving Charlottetown.',
+        tradeoff: 'Points East follows eastern harbours and beaches; North Cape is the Acadian and oyster-coast region at the island’s west end. Choosing one side gives time for a local visit and reduces pressure to complete an island circuit before dark.',
+        fallback: 'In fog or heavy rain, choose a town or confirmed indoor stop rather than an exposed point. If the intended lighthouse interior, museum or food stop is closed, keep the coast drive to public roads and verified viewpoints; do not assume a scenic label means public access.',
+        duration: 'Give either outer-coast choice a full day from Charlottetown, and consider one overnight near that corridor if you want an unhurried evening or an early start. Seeing both east and west is a two-day plan at minimum, not an add-on to the bridge or ferry day.',
+        combine: 'Make the drive the day’s main event. Points East can use a selected section around St. Peter’s Bay, Souris or East Point; North Cape can use a west-coast community and one north-end stop. Confirm exact attractions and return transport before picking a route.',
+        verify: 'Checked 12 October 2026: Tourism PEI describes Points East as 475 km and lists the North Cape region as a separate coastal drive. Many lighthouses, museums, eateries and visitor centres have distinct seasonal calendars. Check each destination’s current page, road/weather notices and bridge or ferry status before setting a departure deadline.',
+        routeChoices: {
+          heading: 'Choose the coast by the stop you most want',
+          intro: 'The route names describe broad regions, not a promise to visit every attraction. Decide whether east-coast beaches and harbours or western Acadian and oyster-coast communities fit the day.',
+          options: [
+            ['East', 'Points East Coastal Drive', 'Select a manageable section such as St. Peter’s Bay–Greenwich or continue toward Souris and East Point only if the extra road time and opening hours fit. Tourism PEI describes the full drive as 475 km.'],
+            ['West', 'North Cape Coastal Drive', 'Choose a community on the western route and one north-end viewpoint or heritage stop. Check season-specific openings; the regional visitor centre and attractions do not share one calendar.'],
+            ['Two-coast stay', 'Split east and west across two days', 'Move the base or add a night before exploring the other end. This protects daylight, weather flexibility and an honest return; do not pair two long coast drives with a timed mainland crossing.']
+          ]
+        },
+        routeEyebrow: 'One long coast road at a time', routeHeading: 'Pick a side, anchor the day, protect the return', routeStageLabels: ['Choose', 'Confirm', 'Explore', 'Return'],
+        routeSourcesHeading: 'Regional roads and seasonal openings',
+        routeSourcesNote: 'Tourism PEI maps the broad drive regions; individual attractions set their own operating dates. The bridge and Wood Islands ferry publish separate current travel information.',
+        sources: [
+          ['https://www.tourismpei.com/trip-ideas/coastal-drives/points-east-coastal-drive', 'Tourism PEI — Points East route scale and regional stops'],
+          ['https://www.tourismpei.com/places-to-go/north-cape-coastal-drive', 'Tourism PEI — North Cape Coastal Drive communities and attractions'],
+          ['https://www.tourismpei.com/places-to-go/points-east-coastal-drive', 'Tourism PEI — Points East region and current listings'],
+          ['https://www.confederationbridge.com/', 'Confederation Bridge — current advisories and crossing information'],
+          ['https://www.ferries.ca/ns-pei-ferry/schedule', 'Northumberland Ferries — current Wood Islands–Caribou schedule'],
+          ['https://www.t3transit.ca/transit-pei-schedules', 'Transit PEI — selected rural routes and current schedules']
+        ],
+        faq: [
+          ['Can I drive all of Points East in one day?', 'Tourism PEI describes the Points East Coastal Drive as 475 km. From Charlottetown, choose a segment and a few stops; a full regional itinerary is not a quick lighthouse loop. Stay overnight if you want to explore the full corridor.'],
+          ['Which coast should I choose?', 'Choose Points East for eastern beaches, harbours and communities such as St. Peter’s Bay or Souris; choose North Cape for western communities and the island’s northwest coast. Let a specific open stop and your base determine the choice.'],
+          ['Are lighthouse sites open every day?', 'No single schedule covers the island’s lighthouses. Some offer seasonal interiors or museums; access to an exterior viewpoint is also site-specific. Check the exact operator or Tourism PEI listing and weather before driving to a named site.'],
+          ['Can I combine a coast day with the ferry or bridge?', 'Avoid making a full scenic day depend on a fixed departure. The Wood Islands–Caribou ferry has its own seasonal schedule, while the Confederation Bridge has separate advisories. Check the live operator notices and leave a generous transfer margin.']
+        ],
+        stages: [
+          ['Choose east or west the night before', 'Use one corridor, not an island circuit. Points East spans 475 km according to Tourism PEI; North Cape is the distinct western coastal region. Pick the nearest base and your single priority stop.'],
+          ['Confirm the stop is operating', 'Check the exact lighthouse, museum, food business or visitor centre for its own hours and access. Seasonal listings do not share a common opening date; save a town or public-road alternative if the interior is closed.'],
+          ['Explore one community and one shore', 'Allow time to walk the chosen harbour or public viewpoint instead of collecting distant pins. Slow road speeds, weather and unscheduled stops expand the day beyond the drive-time estimate.'],
+          ['Return without a crossing deadline', 'Check the road and visibility again before heading back. If your itinerary also includes the Wood Islands ferry or a bridge departure, shorten the coast plan and protect a transfer buffer.']
+        ],
+        watch: [
+          ['The map hides stop time', 'A regional drive includes small roads, viewpoint walks, meals and seasonal hours. Choose one coast and cap the stop list before leaving.'],
+          ['Coastal weather can erase visibility', 'Fog and wind can make an exposed lookout or lighthouse approach unrewarding. Switch to a verified town stop or return safely; do not walk near an unseen cliff edge.'],
+          ['Attractions close on different dates', 'Tourism PEI lists each operator separately. Reconfirm current hours, last admission, parking and public access rather than assuming the whole regional route is open.']
+        ]
+      })
     ]
   }),
 

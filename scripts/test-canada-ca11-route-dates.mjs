@@ -35,6 +35,12 @@ const laterCa14Routes = [
   '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
   '/canada/halifax-nova-scotia/cape-breton-cabot/'
 ];
+const laterCa15Routes = [
+  '/canada/prince-edward-island/',
+  '/canada/prince-edward-island/charlottetown/',
+  '/canada/prince-edward-island/cavendish-north-shore/',
+  '/canada/prince-edward-island/coastal-drives/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -134,8 +140,8 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa14Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
+  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa14Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa15Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
   'Only the four CA11 and later CA12/CA13 route pages and ancillary Canada card may change under canada/.'
 );
 
-console.log(`CA11 route/date regression passed: exactly four existing body routes, a separate hub card, 73 unchanged Canada URLs, no non-target or later-CA12/CA13 search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);
+console.log(`CA11 route/date regression passed: exactly four existing body routes, a separate hub card, 73 unchanged Canada URLs, no non-target or later-CA12/CA13/CA14/CA15 page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);
