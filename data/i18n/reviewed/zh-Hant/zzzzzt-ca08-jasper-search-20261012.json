@@ -1,0 +1,33 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Jasper around one walkable town base and separate driving days for Maligne Valley, the southbound falls and the 232 km Icefields Parkway to Lake Louise. Compare four or five nights, town lodging with campground transport, and a Lake Louise overnight for a through trip. The local campground shuttle is seasonal and does not serve Maligne Lake or Highway 93. Check open and closed facilities, road status, weather, fuel and daylight before setting out; keep a town day as the fallback.": "以步行友善的賈斯珀鎮為基地，將瑪琳谷、南行瀑布和前往路易斯湖的232公里冰原大道分日安排。比較四或五晚住宿、鎮上住處與營地交通，並考慮穿越行程在路易斯湖過夜。營地接駁為季節性服務，不前往瑪琳湖或93號公路。出發前查詢開放設施、路況、天氣、燃油和日照；保留鎮上行程作為備案。",
+    "Jasper town": "賈斯珀鎮",
+    "Maligne Valley": "瑪琳谷",
+    "Jasper transit": "賈斯珀大眾運輸",
+    "four nights": "住四晚",
+    "road conditions": "道路狀況",
+    "Walk Jasper’s central blocks and a signed Athabasca River path for an easy arrival loop, then set aside a separate road day for Maligne Valley. Maligne Lake and Maligne Canyon have different access and closure status. A confirmed vehicle or named operator is needed for the valley; the seasonal campground shuttle does not go there. Check Maligne Road, Parks Canada notices, daylight and the current cruise calendar before booking. The 2026 cruise season ended 11 October, weather dependent.": "步行賈斯珀中心街區與有標示的阿薩巴斯卡河步道，安排輕鬆的抵達日環線；另留一天開車前往瑪琳谷。瑪琳湖和瑪琳峽谷的交通與封閉狀態不同。前往山谷需要確認可用的車輛或具名業者；季節性營地接駁不會到達。預訂前查瑪琳路、公園管理局公告、日照和最新遊船行事曆。2026年遊船季於10月11日結束，並受天候影響。",
+    "Jasper town walk": "賈斯珀鎮散步",
+    "Maligne Lake": "瑪琳湖",
+    "Maligne Canyon": "瑪琳峽谷",
+    "Maligne Road": "瑪琳路",
+    "Jasper shuttle": "賈斯珀接駁車",
+    "Treat Highway 93 as a full-day 232 km road between Jasper and Lake Louise, not a quick transfer. Plan fuel, water, food, offline directions, a few stops and a fixed daylight endpoint. Athabasca Falls is 30 km south of Jasper, Sunwapta Falls 54 km and the Columbia Icefield Centre 104 km. Check Parks Canada, Alberta 511, seasonal services, snow and operator dates. The 2026 glacier products ended by 12 October; availability and departures are not promised.": "將93號公路當成賈斯珀與路易斯湖間232公里的全天景觀路線，而非快速轉乘。規劃燃油、飲水、食物、離線導航、少量停靠點和日光下的固定終點。阿薩巴斯卡瀑布距賈斯珀以南30公里，森瓦普塔瀑布54公里，哥倫比亞冰原中心104公里。出發前查公園管理局、Alberta 511、季節服務、降雪與業者日期。2026年冰河遊程於10月12日前結束；供應和班次未作保證。",
+    "Highway 93": "93號公路",
+    "Jasper to Lake Louise": "賈斯珀至路易斯湖",
+    "fuel stops": "加油站",
+    "Columbia Icefield": "哥倫比亞冰原",
+    "road closures": "道路封閉",
+    "Choose Athabasca Falls and, if conditions and daylight allow, Sunwapta Falls as a defined southbound day from Jasper. The road distances are 30 km and 54 km. Follow signed paths and barriers; spray, stairs, bridges, ice and gorge edges can make walking hazardous. Check current Parks Canada closures, trail and road conditions, fuel and weather before leaving. Turn back to Jasper rather than expanding this walk into an unplanned Icefields Parkway transfer.": "選阿薩巴斯卡瀑布；若天候與日照允許，再去森瓦普塔瀑布，規劃賈斯珀出發的南行一日遊。兩處的道路距離分別為30及54公里。沿有標示的步道並遵守護欄；水霧、階梯、橋面、冰雪與峽谷邊緣都可能造成危險。出發前查最新公園封閉、步道和路況、燃油與天氣。直接折返賈斯珀，不要把短程步行臨時擴展成冰原大道長途穿越。",
+    "Athabasca Falls": "阿薩巴斯卡瀑布",
+    "Sunwapta Falls": "森瓦普塔瀑布",
+    "Jasper waterfall walk": "賈斯珀瀑布步道",
+    "trail conditions": "步道狀況",
+    "Jasper road trip": "賈斯珀公路旅行"
+  }
+}

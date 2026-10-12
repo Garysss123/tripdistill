@@ -424,9 +424,9 @@ try {
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 501, 'the merged inventory retains the exact used asset count without independent source-page checks across UK, France, Italy, Canada, Malaysia and Switzerland');
-  assert.equal(report.counts.sourcePageChecked, 274, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
-  assert.equal(report.counts.assetsVisuallyReviewed, 192, 'the merged inventory retains the exact current visual-review count across UK, France, Italy, Canada, Malaysia and Switzerland');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the merged inventory retains the exact used asset count without independent source-page checks across UK, France, Italy, Canada, Malaysia and Switzerland');
+  assert.equal(report.counts.sourcePageChecked, 277, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
+  assert.equal(report.counts.assetsVisuallyReviewed, 195, 'the merged inventory retains the exact current visual-review count across UK, France, Italy, Canada, Malaysia and Switzerland');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -650,8 +650,42 @@ try {
   assert.equal(banffDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(banffDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(banffDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 22, 'the merged inventory counts UK, France, Italy, Canada, Malaysia and Switzerland project-original diagrams plus existing artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 491, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  const jasperPhotos = [
+    { assetPath: '/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg', creator: 'Christianabend', license: 'CC BY-SA 3.0' },
+    { assetPath: '/assets/images/canada-jasper-icefields-icefields-parkway.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Icefields_Parkway_(18)_(9580641168).jpg', creator: 'Mike from Vancouver, Canada', license: 'CC BY-SA 2.0' },
+    { assetPath: '/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Athabasca_Falls,_Jasper_National_Park_(7635012912).jpg', creator: 'InSapphoWeTrust from Los Angeles, California, USA', license: 'CC BY-SA 2.0' }
+  ];
+  for (const expected of jasperPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `inventory must include the Jasper photo ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes('not independent uploader-authority or rights-chain clearance'));
+  }
+  const malignePhoto = photoRecords.find((item) => item.assetPath === jasperPhotos[0].assetPath);
+  assert.ok(malignePhoto.verificationDetail.includes('CC BY-SA 2.0') && malignePhoto.verificationDetail.includes('CC BY-SA 3.0'));
+  assert.ok(malignePhoto.verificationDetail.includes('not treated as a direct conflict'));
+  const jasperDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-jasper-three-corridors.svg');
+  assert.ok(jasperDiagram, 'inventory must include the original Jasper three-corridor schematic');
+  assert.equal(jasperDiagram.assetType, 'original-planning-diagram');
+  assert.equal(jasperDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-jasper-three-corridors.svg');
+  assert.equal(jasperDiagram.creator, 'TripDistill');
+  assert.equal(jasperDiagram.license, null);
+  assert.equal(jasperDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(jasperDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(jasperDiagram.commercialReuseEligibility, 'unknown');
+  const retiredJohnston = photoRecords.find((item) => item.assetPath === '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp');
+  assert.ok(retiredJohnston, 'inventory must retain the mismatched Johnston source photo');
+  assert.equal(retiredJohnston.inventoryStatus, 'unused');
+  assert.equal(retiredJohnston.useCount, 0);
+  assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 23, 'the merged inventory counts UK, France, Italy, Canada, Malaysia and Switzerland project-original diagrams plus existing artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 488, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -790,7 +824,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 808, 'all retained diagrams remain included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 809, 'Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

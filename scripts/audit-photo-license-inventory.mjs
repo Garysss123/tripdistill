@@ -73,6 +73,27 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: Commons identifies Christianabend and a September 1998 Maligne Lake boathouse photograph. The page shows the original CC BY-SA 2.0 release and a later CC BY-SA 3.0 migration tag; both declarations are recorded as license-version variants, not treated as a direct conflict. The local 1600 × 1066 WebP pixels show the boathouse and mountain backdrop and match the Maligne Lake guide. Attribution, linked selected license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Icefields_Parkway_(18)_(9580641168).jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: the exact Commons page identifies Mike from Vancouver, Canada, the Columbia Icefield subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show a glacier and mountain valley consistent with the Icefields Parkway page. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Athabasca_Falls,_Jasper_National_Park_(7635012912).jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: the exact Commons page identifies InSapphoWeTrust from Los Angeles, California, USA, the Athabasca Falls subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show the falls and visitor paths, matching the route. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg',
     {
       detail: 'Interlaken base photo review: the exact Commons page identifies Ank Kumar and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Interlaken and Lake Brienz below the Harder Kulm ridge, not both Lake Thun and Lake Brienz, so the alt and display title were corrected. The visible source credit and license link remain present with the WebP/crop disclosure. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
@@ -1093,6 +1114,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-icefields-parkway.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', '2026-10-12'],
   ['/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp', '2026-10-12'],
   ['/assets/images/france-lille-arras-vimy-sequence-legend.svg', '2026-10-12'],
   ['/assets/images/malaysia-kinabatangan.webp', '2026-10-12'],

@@ -141,6 +141,13 @@ const banffEditedRoutes = [
   '/canada/banff-lake-louise/lake-louise-moraine/',
   '/canada/banff-lake-louise/johnston-minnewanka/'
 ];
+const jasperLastmod = '2026-10-12';
+const jasperEditedRoutes = [
+  '/canada/jasper-icefields/',
+  '/canada/jasper-icefields/jasper-town-maligne/',
+  '/canada/jasper-icefields/icefields-parkway/',
+  '/canada/jasper-icefields/athabasca-sunwapta/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1195,6 +1202,11 @@ for (const route of banffEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Banff route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: banffLastmod });
+}
+for (const route of [...jasperEditedRoutes, '/canada/']) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Jasper/Canada overview route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: jasperLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

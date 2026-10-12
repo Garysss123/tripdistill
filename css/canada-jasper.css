@@ -1,0 +1,40 @@
+.ca-field[data-ca-family="glacier-transect"] .ca-field-hero,
+.ca-hub[data-ca-family="glacier-transect"] .ca-hub-hero {
+  background: linear-gradient(135deg, #173c3a 0%, #245c57 58%, #d2e1dc 100%);
+}
+
+.ca-field[data-ca-family="glacier-transect"] .ca-kicker,
+.ca-hub[data-ca-family="glacier-transect"] .ca-kicker {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.ca-field[data-ca-family="glacier-transect"] .ca-route-step {
+  border-top: 3px solid #367d75;
+}
+
+.ca-jasper-route-diagram {
+  max-width: 1120px;
+  margin: clamp(1.5rem, 4vw, 3rem) auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.ca-jasper-route-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #bfd4d0;
+  border-radius: 1rem;
+  box-shadow: 0 16px 40px rgb(23 60 58 / 12%);
+}
+
+.ca-jasper-route-diagram figcaption {
+  margin-top: .65rem;
+  color: #466260;
+  font-size: .9rem;
+}
+
+@media (max-width: 600px) {
+  .ca-jasper-route-diagram { padding-inline: 1rem; }
+  .ca-jasper-route-diagram img { border-radius: .6rem; }
+}

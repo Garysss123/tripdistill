@@ -116,7 +116,7 @@ export const canadaImageManifest = {
   },
   "jasper-icefields/jasper-town-maligne": {
     "src": "/assets/images/canada-jasper-icefields-jasper-town-maligne.webp",
-    "alt": "Mountain lake in Jasper National Park",
+    "alt": "Maligne Lake boathouse and mountain backdrop",
     "source": "https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg",
     "label": "Canada Boat House am Maligne Lake, Jasper NP, Alberta, CA.jpg",
     "creator": "Christianabend",
