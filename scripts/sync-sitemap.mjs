@@ -130,6 +130,72 @@ const canadaLastmod = '2026-09-12';
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
+const lucerneLastmod = '2026-10-12';
+const lucerneEditedRoutes = [
+  '/switzerland/lucerne-lake-mountains/',
+  '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+  '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+  '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
+];
+const jungfrauLastmod = '2026-10-12';
+const jungfrauEditedRoutes = [
+  '/switzerland/jungfrau-region/',
+  '/switzerland/jungfrau-region/lauterbrunnen-valley/',
+  '/switzerland/jungfrau-region/wengen-kleine-scheidegg/',
+  '/switzerland/jungfrau-region/grindelwald-first/'
+];
+const zermattLastmod = '2026-10-12';
+const zermattEditedRoutes = [
+  '/switzerland/zermatt-matterhorn/',
+  '/switzerland/zermatt-matterhorn/village-gornergrat/',
+  '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
+  '/switzerland/zermatt-matterhorn/glacier-paradise/'
+];
+const interlakenLastmod = '2026-10-12';
+const interlakenEditedRoutes = [
+  '/switzerland/interlaken-lakes/',
+  '/switzerland/interlaken-lakes/interlaken-base/',
+  '/switzerland/interlaken-lakes/brienz-giessbach/',
+  '/switzerland/interlaken-lakes/thun-spiez/'
+];
+const bernEmmentalLastmod = '2026-10-12';
+const bernEmmentalEditedRoutes = [
+  '/switzerland/bern-emmental/',
+  '/switzerland/bern-emmental/old-city-aare/',
+  '/switzerland/bern-emmental/museums-rose-garden/',
+  '/switzerland/bern-emmental/emmental-day-trip/'
+];
+const switzerlandCh10Lastmod = '2026-10-12';
+const switzerlandCh10Slugs = new Set(['basel-rhine']);
+const switzerlandCh10EditedRoutes = [
+  ...switzerlandClusters.filter((cluster) => switzerlandCh10Slugs.has(cluster.slug)).flatMap((cluster) => [
+    `/switzerland/${cluster.slug}/`,
+    ...cluster.guides.map((guide) => guide.url)
+  ])
+];
+const genevaLastmod = '2026-10-12';
+const genevaEditedRoutes = [
+  '/switzerland/',
+  '/switzerland/geneva-lake/',
+  '/switzerland/geneva-lake/old-town-lakefront/',
+  '/switzerland/geneva-lake/international-quarter/',
+  '/switzerland/geneva-lake/carouge-arve/'
+];
+const lausanneLastmod = '2026-10-12';
+const lausanneEditedRoutes = [
+  '/switzerland/',
+  '/switzerland/lausanne-lavaux/',
+  '/switzerland/lausanne-lavaux/old-city-ouchy/',
+  '/switzerland/lausanne-lavaux/lavaux-terraces/',
+  '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
+];
+const montreuxLastmod = '2026-10-12';
+const montreuxEditedRoutes = [
+  '/switzerland/montreux-riviera/',
+  '/switzerland/montreux-riviera/montreux-chillon/',
+  '/switzerland/montreux-riviera/rochers-de-naye/',
+  '/switzerland/montreux-riviera/vevey-lakeside/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -1063,6 +1129,52 @@ for (const route of zurichEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Zurich route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: zurichLastmod });
+}
+for (const route of lucerneEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Lucerne route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: lucerneLastmod });
+}
+for (const route of jungfrauEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Jungfrau route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: jungfrauLastmod });
+}
+for (const route of zermattEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Zermatt route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: zermattLastmod });
+}
+for (const route of interlakenEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Interlaken route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: interlakenLastmod });
+}
+for (const route of bernEmmentalEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Bern/Emmental route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: bernEmmentalLastmod });
+}
+for (const route of switzerlandCh10EditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Switzerland CH10 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: switzerlandCh10Lastmod });
+}
+
+for (const route of genevaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Geneva route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: genevaLastmod });
+}
+for (const route of lausanneEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Lausanne route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: lausanneLastmod });
+}
+for (const route of montreuxEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Montreux route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: montreuxLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {

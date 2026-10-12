@@ -70,6 +70,41 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg',
+    {
+      detail: 'Interlaken base photo review: the exact Commons page identifies Ank Kumar and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Interlaken and Lake Brienz below the Harder Kulm ridge, not both Lake Thun and Lake Brienz, so the alt and display title were corrected. The visible source credit and license link remain present with the WebP/crop disclosure. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG',
+    {
+      detail: 'Lake Brienz photo review: the exact Commons page identifies Andrew Bossi, describes the view from Iseltwald toward Giessbach and Brienz, and declares CC BY-SA 2.5 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show the Iseltwald shoreline and village, matching the corrected alt and display title. The visible credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Blick_auf_Schloss_Spiez_und_Thunersee.jpg',
+    {
+      detail: 'Spiez photo review: the exact Commons page identifies JoachimKohler-HB, describes Spiez Castle at Lake Thun, and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Spiez Castle on the Lake Thun shore, matching the corrected alt and display title. The visible credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg',
+    {
+      detail: 'Zermatt village/Gornergrat photo review: the exact Commons page identifies Ximonic (Simo Räsänen) and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn above the rocky grassy slope between Zermatt and Gornergrat, matching the alt and caption. The visible credit links the source and license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg',
+    {
+      detail: 'Zermatt Stellisee photo review: the exact Commons page identifies Giles Laurent and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn reflected in Stellisee beneath sunset clouds, matching the alt and caption. The visible credit links the source and same-version license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg',
     {
       detail: 'Commons page checked on 2026-10-12: it identifies creator 0x010C and declares CC BY-SA 3.0, while also displaying a French Freedom of Panorama copyright warning and the hidden NoFoP-France category. The warning says a substantial reproduction of protected French architecture/artwork cannot be covered by the free license and advises rights confirmation. The declaration is retained as source-page metadata, not treated as permission. Local 1600 × 1066 WebP pixels prominently frame the memorial artwork; the file is retained only for provenance, has no live-page references, and is excluded from dist while the rights issue remains unresolved.',
@@ -546,6 +581,7 @@ function collect(value, moduleName, seen, depth = 0) {
       sourceDate: value.sourceDate ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
+      sourceDeclaredLicenses: value.sourceDeclaredLicenses ?? null,
       rightsStatus: value.rightsStatus ?? null,
       rightsStatusUrl: value.rightsStatusUrl ?? null,
       licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
@@ -1045,6 +1081,8 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/malaysia-kinabatangan.webp', '2026-10-12'],
   ['/assets/images/malaysia-sepilok.webp', '2026-10-12'],
   ['/assets/images/malaysia-kinabatangan-proboscis.webp', '2026-10-12'],
+  ['/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp', '2026-10-12'],
+  ['/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
@@ -1304,6 +1342,7 @@ for (const fullPath of assetPaths) {
   const src = relativePath;
   const dataRecords = recordsBySrc.get(src) || [];
   const uniqueValues = (key) => [...new Set(dataRecords.map((record) => record[key]).filter(Boolean))];
+  const sourceDeclaredLicenses = [...new Set(dataRecords.flatMap((record) => Array.isArray(record.sourceDeclaredLicenses) ? record.sourceDeclaredLicenses : []))];
   const conflicts = ['sourceUrl', 'sourceTitle', 'sourceDate', 'creator', 'license', 'rightsStatus', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
   if (conflicts.length) sourceConflicts.push({ src, fields: conflicts });
   const uses = usesBySrc.get(src) || [];
@@ -1394,6 +1433,7 @@ for (const fullPath of assetPaths) {
     creditLabel: creditMatch?.creditLabel || null,
     creator,
     license,
+    sourceDeclaredLicenses: sourceDeclaredLicenses.length ? sourceDeclaredLicenses : null,
     rightsStatus,
     rightsStatusUrl,
     licenseUrl,
@@ -1438,6 +1478,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
     creditLabel: row.creditLabel,
     creator: row.creator,
     license: row.license,
+    sourceDeclaredLicenses: row.sourceDeclaredLicenses,
     rightsStatus: row.rightsStatus,
     rightsStatusUrl: row.rightsStatusUrl,
     inventoryStatus: row.inventoryStatus,

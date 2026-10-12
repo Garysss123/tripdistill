@@ -1,8 +1,6 @@
 // Manual Commons selections for destinations where search ranking is too ambiguous.
 // These entries were visually reviewed for destination relevance before being pinned.
 export const switzerlandImageOverrides = {
-  'bern-emmental/emmental-day-trip': 'File:Wintertime in Emmental, Switzerland.jpg',
-  'geneva-lake/old-town-lakefront': "File:Geneva - Jet d'eau.jpg",
   'geneva-lake/carouge-arve': 'File:Carouge street.JPG',
   'lausanne-lavaux/old-city-ouchy': 'File:Lake Geneva in Lausanne.jpg',
   'montreux-riviera/vevey-lakeside': 'File:Vevey, Switzerland.jpg',

@@ -165,6 +165,15 @@ try {
   for (const [index, job] of jobs.entries()) {
     let candidate;
     let entry = manifest[job.key];
+    if (entry?.assetType === 'original-planning-diagram') {
+      const diagram = path.resolve(root, entry.src.replace(/^\//, ''));
+      if (!diagram.startsWith(imageRoot) || path.extname(diagram).toLowerCase() !== '.svg' || !fs.existsSync(diagram)) {
+        throw new Error(`${job.key}: registered original planning diagram is missing or outside the image directory`);
+      }
+      verified += 1;
+      console.log(`[${index + 1}/${jobs.length}] preserved original planning diagram ${job.key}`);
+      continue;
+    }
     const override = switzerlandImageOverrides[job.key];
     const needsSelection = force || !entry || (override && normalizeFileTitle(override) !== entry.commonsTitle);
     if (needsSelection) {

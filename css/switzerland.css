@@ -263,6 +263,7 @@
 .ch-hub-card small { color:var(--ch-secondary); font:750 .69rem/1.4 ui-monospace,monospace; text-transform:uppercase; }
 .ch-hub-card h3 { margin:.55rem 0 .65rem; font:700 1.65rem/1.08 Georgia,serif; }
 .ch-hub-card p { line-height:1.65; }
+.ch-hub-card .ch-diagram-card-note { display:block; margin:.7rem 0; padding:.65rem .75rem; color:var(--ch-ink); background:#f1efe7; border-left:3px solid var(--ch-accent); font:500 .78rem/1.5 system-ui,sans-serif; text-transform:none; letter-spacing:0; }
 .ch-hub-card strong { color:var(--ch-accent); }
 .ch-hub-card > span { position:absolute; right:.7rem; top:.55rem; z-index:2; padding:.3rem .45rem; color:white; background:rgba(20,33,43,.8); font:800 .8rem/1 ui-monospace,monospace; }
 .ch-hub-card:hover img { transform:scale(1.025); }

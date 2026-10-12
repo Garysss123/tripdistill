@@ -424,9 +424,9 @@ try {
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 506, 'the merged inventory records UK, France and Malaysia source-page checks while project-original diagrams remain separate');
-  assert.equal(report.counts.sourcePageChecked, 267, 'the inventory counts current UK, France, Sandakan, Semporna, Perhentian and Kota Kinabalu Commons checks');
-  assert.equal(report.counts.assetsVisuallyReviewed, 187, 'the inventory counts current visual reviews across merged UK, France and Malaysia routes');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 501, 'the inventory counts used assets without independent source-page checks across the merged UK, France, Malaysia and Switzerland scope');
+  assert.equal(report.counts.sourcePageChecked, 272, 'the inventory counts checked source pages across the merged UK, France, Malaysia and Switzerland scope');
+  assert.equal(report.counts.assetsVisuallyReviewed, 189, 'the inventory counts current visual reviews across merged UK, France, Malaysia and Switzerland routes');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -641,8 +641,8 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 14, 'inventory counts the original UK, France and Malaysia diagrams plus existing artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 498, 'source-page declarations across the merged UK, France and Malaysia checks do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 19, 'inventory counts the original UK, France, Malaysia and Switzerland diagrams plus existing artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 493, 'source-page declarations across the merged UK, France, Malaysia and Switzerland checks do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -660,6 +660,92 @@ try {
   assert.equal(frenchAlpsDiagram.useCount, 4);
   assert.equal(report.counts.sourceMetadataConflicts, 0, 'retired Commons metadata must not conflict with the replacement original schematic');
   assert.equal(report.unmatchedAssets.some((item) => item.src === frenchAlpsDiagramAssetPath), false);
+  const lucerneDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg');
+  assert.ok(lucerneDiagram, 'inventory must retain the Lucerne route-choice schematic');
+  assert.equal(lucerneDiagram.assetType, 'original-planning-diagram');
+  assert.equal(lucerneDiagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg');
+  assert.equal(lucerneDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(lucerneDiagram.license, null, 'the original Lucerne SVG must not claim a public reuse license');
+  assert.equal(lucerneDiagram.licenseUrl, null);
+  assert.equal(lucerneDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(lucerneDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(lucerneDiagram.localSha1, '8b45fae5724444f48aa928e3225dacc232efc382');
+  assert.equal(lucerneDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(lucerneDiagram.inventoryStatus, 'used');
+  assert.equal(lucerneDiagram.useCount, 4);
+  assert.deepEqual(lucerneDiagram.routes, [
+    '/switzerland/lucerne-lake-mountains/',
+    '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+    '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+    '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
+  ]);
+  const retiredLucernePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp');
+  assert.ok(retiredLucernePhoto, 'inventory retains the former Bürgenstock photo record');
+  assert.equal(retiredLucernePhoto.inventoryStatus, 'unused');
+  assert.equal(retiredLucernePhoto.useCount, 0);
+  assert.deepEqual(retiredLucernePhoto.routes, []);
+  assert.match(retiredLucernePhoto.rightsStatus, /unverified metadata/i);
+  const zermattVillagePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp');
+  assert.ok(zermattVillagePhoto, 'inventory must include the pixel-reviewed Zermatt village photo');
+  assert.equal(zermattVillagePhoto.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg');
+  assert.equal(zermattVillagePhoto.creator, 'Ximonic (Simo Räsänen)');
+  assert.equal(zermattVillagePhoto.license, 'CC BY-SA 4.0');
+  assert.equal(zermattVillagePhoto.verificationStatus, 'source_page_checked');
+  assert.equal(zermattVillagePhoto.verificationDate, '2026-10-12');
+  assert.equal(zermattVillagePhoto.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(zermattVillagePhoto.verificationDetail, /1600 × 1066 local WebP pixels show the Matterhorn above the rocky grassy slope/i);
+  assert.match(zermattVillagePhoto.verificationDetail, /does not independently verify uploader authority/i);
+  const zermattStelliseePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp');
+  assert.ok(zermattStelliseePhoto, 'inventory must include the pixel-reviewed Stellisee photo');
+  assert.equal(zermattStelliseePhoto.sourceUrl, 'https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg');
+  assert.equal(zermattStelliseePhoto.creator, 'Giles Laurent');
+  assert.equal(zermattStelliseePhoto.license, 'CC BY-SA 4.0');
+  assert.equal(zermattStelliseePhoto.verificationStatus, 'source_page_checked');
+  assert.equal(zermattStelliseePhoto.verificationDate, '2026-10-12');
+  assert.equal(zermattStelliseePhoto.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(zermattStelliseePhoto.verificationDetail, /1600 × 1066 local WebP pixels show the Matterhorn reflected in Stellisee beneath sunset clouds/i);
+  assert.match(zermattStelliseePhoto.verificationDetail, /does not independently verify uploader authority/i);
+  const zermattDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-zermatt-glacier-route-choice.svg');
+  assert.ok(zermattDiagram, 'inventory must include the original Zermatt route-choice schematic');
+  assert.equal(zermattDiagram.assetType, 'original-planning-diagram');
+  assert.equal(zermattDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-zermatt-glacier-route-choice.svg');
+  assert.equal(zermattDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(zermattDiagram.license, null);
+  assert.equal(zermattDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(zermattDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(zermattDiagram.localSha1, '519bdeba45bcfb742705bf9df0de7f2bb49a952e');
+  assert.equal(zermattDiagram.inventoryStatus, 'used');
+  const genevaDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-geneva-lake-route-choices.svg');
+  assert.ok(genevaDiagram, 'inventory must include the original Geneva three-district route-choice schematic');
+  assert.equal(genevaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(genevaDiagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-geneva-lake-route-choices.svg');
+  assert.equal(genevaDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(genevaDiagram.license, null, 'the original Geneva SVG must not claim a public reuse license');
+  assert.equal(genevaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(genevaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(genevaDiagram.localSha1, '99bb9c2528ac2aec5a715df7e96c8edb53d6bba0');
+  assert.equal(genevaDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(genevaDiagram.inventoryStatus, 'used');
+  assert.equal(genevaDiagram.useCount, 6);
+  assert.deepEqual(genevaDiagram.routes, [
+    '/switzerland/',
+    '/switzerland/geneva-lake/',
+    '/switzerland/geneva-lake/carouge-arve/',
+    '/switzerland/geneva-lake/international-quarter/',
+    '/switzerland/geneva-lake/old-town-lakefront/'
+  ]);
+  assert.equal(genevaDiagram.verificationStatus, 'site_credit_or_metadata_only', 'project artwork URLs and site credits are not independent rights-chain verification');
+  assert.equal(genevaDiagram.verificationDetail.includes('not an independent source-page check'), true);
+  const retiredZermattPhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp');
+  assert.ok(retiredZermattPhoto, 'inventory must preserve the conflicted Zermatt source photo for provenance');
+  assert.deepEqual(retiredZermattPhoto.sourceDeclaredLicenses, ['Public domain', 'CC BY-SA 4.0']);
+  assert.equal(retiredZermattPhoto.license, null, 'conflicting source-page declarations are not treated as permission');
+  assert.equal(retiredZermattPhoto.inventoryStatus, 'unused');
+  assert.equal(retiredZermattPhoto.useCount, 0);
+  assert.deepEqual(retiredZermattPhoto.routes, []);
+  assert.match(retiredZermattPhoto.rightsStatus, /Conflicting Commons metadata/i);
+  assert.match(retiredZermattPhoto.retirementNote, /does not establish uploader authority/i);
+
   const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
   assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');
   assert.equal(melakaDiagram.assetType, 'original-planning-diagram');
@@ -694,7 +780,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 4, 'the Melaka, UK19 and Vimy source photos with unresolved rights or attribution issues must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 803, 'the France, UK and Malaysia original diagrams remain included while all four retained rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 808, 'the France, UK, Malaysia and Switzerland original diagrams remain included while all four retained rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

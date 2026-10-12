@@ -16,6 +16,8 @@ const malaysiaPaths = [
 const francePageUrl = 'https://tripdistill.com/france/lille-french-flanders/';
 const franceSvgPath = '/assets/images/france-lille-arras-vimy-sequence-legend.svg';
 const francePhotoPath = '/assets/images/france-lille-french-flanders-old-lille-roubaix.webp';
+const lucernePageUrl = 'https://tripdistill.com/switzerland/lucerne-lake-mountains/';
+const lucerneSvgPath = '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg';
 
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}${provenanceLinks}`, pageUrl), true, 'one normalized original SVG with its source and Terms links qualifies');
 assert.equal(hasVisibleOriginalProjectProvenance(`<img src="${franceSvgPath}" alt="Original planning sequence"><img src="${francePhotoPath}" alt="Lille photo"><li><a href="https://tripdistill.com${franceSvgPath}">Original diagram</a> — <a href="${termsHref}">Terms of Use</a></li><li><a href="https://commons.wikimedia.org/wiki/File:Lille.jpg">Lille source</a> — P. Photographer, CC BY-SA 4.0</li>`, francePageUrl), true, 'the France original diagram keeps its own source and Terms links alongside independently credited photographs');
@@ -27,8 +29,14 @@ for (const imagePath of malaysiaPaths) {
 }
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<img src="/assets/images/unlicensed-photo.webp">${provenanceLinks}`, pageUrl), false, 'a second image cannot inherit the SVG exception');
 assert.equal(hasVisibleOriginalProjectProvenance(`<img src="${franceSvgPath}"><img src="${francePhotoPath}">${provenanceLinks}`, francePageUrl), false, 'a France route image without a separate Commons credit cannot inherit the SVG exception');
+const lucerneSvg = `<img src="${lucerneSvgPath}" width="1600" height="1066" alt="Not to scale">`;
+const lucernePhoto = '<img src="/assets/images/lucerne-photo.webp" alt="Licensed photo">';
+const lucerneDiagramCredit = `<li><a href="https://tripdistill.com${lucerneSvgPath}">Original Lucerne schematic</a> — <a href="${termsHref}">Terms of Use</a></li>`;
+const lucernePhotoCredit = '<li><a href="https://commons.wikimedia.org/wiki/File:Lucerne.jpg">Lucerne photo source</a> — A. Photographer, CC BY-SA 4.0</li>';
+assert.equal(hasVisibleOriginalProjectProvenance(`${lucerneSvg}${lucernePhoto}${lucerneDiagramCredit}${lucernePhotoCredit}`, lucernePageUrl), true, 'the Lucerne schematic and separately credited licensed photo retain their distinct provenance');
+assert.equal(hasVisibleOriginalProjectProvenance(`${lucerneSvg}${lucernePhoto}${lucerneDiagramCredit}`, lucernePageUrl), false, 'the Lucerne schematic cannot grant its provenance exception to an uncredited photo');
 assert.equal(hasVisibleOriginalProjectProvenance(`<img src="/assets/images/other-diagram.svg">${provenanceLinks}`, pageUrl), false, 'a different image source cannot use the exception');
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${termsHref}">Terms of Use</a></li>`, pageUrl), false, 'the original image source link is required');
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${sourceHref}">Original Lhasa schematic</a></li>`, pageUrl), false, 'the Terms link is required');
 
-console.log('Site image provenance regression passed: original SVGs require exact source and Terms links; France routes may include independently credited photos.');
+console.log('Site image provenance regression passed: original SVGs require exact source and Terms links; France and Switzerland routes retain separate photo credits.');
