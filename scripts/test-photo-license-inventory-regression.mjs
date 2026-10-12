@@ -154,6 +154,42 @@ try {
     assert.match(record.verificationDetail, /local 1,600 × 1,066 WebP pixels were inspected/i);
     assert.match(record.verificationDetail, /not independent rights clearance/i);
   }
+  const peakDistrictPhotoChecks = [
+    {
+      assetPath: '/assets/images/united-kingdom-peak-district-derbyshire-bakewell-chatsworth.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chatsworth_House_-_geograph.org.uk_-_2191619.jpg',
+      creator: 'Trevor Rickard',
+      license: 'CC BY-SA 2.0',
+      dimensions: '1,024 × 768'
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-peak-district-derbyshire-hope-valley-edale.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mam_Tor_from_the_Ridge_path_-_Flickr_-_Donnchadh_H.jpg',
+      creator: 'Donnchadh H',
+      license: 'CC BY 2.0',
+      dimensions: '5,568 × 3,712'
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-peak-district-derbyshire-dovedale-ashbourne.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Dovedale_-_River_Dove_-_Thorpe_Cloud_-_Stepping_Stones_(15041656340).jpg',
+      creator: 'Elliott Brown from Birmingham, United Kingdom',
+      license: 'CC BY-SA 2.0',
+      dimensions: '3,072 × 2,304'
+    }
+  ];
+  for (const expected of peakDistrictPhotoChecks) {
+    const record = report.entries.flatMap((item) => item.sourceRecords).find((photo) => photo.assetPath === expected.assetPath);
+    assert.ok(record, `Peak District inventory must retain ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(expected.dimensions), 'verification details must retain Commons source dimensions');
+    assert.match(record.verificationDetail, /not independent rights clearance/i);
+    assert.match(record.editHistory, /resiz|crop|WebP/i);
+  }
   const cotswoldPhoto = oxfordPhotoRecords.find((item) => item.assetPath === '/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp');
   assert.ok(cotswoldPhoto, 'Oxford/Cotswolds inventory must retain the Cotswold village image');
   assert.equal(cotswoldPhoto.verificationStatus, 'site_credit_or_metadata_only', 'the inaccessible Commons page must not be reported as verified');
@@ -204,7 +240,7 @@ try {
     assert.ok(record.verificationDetail.includes('not independent rights or chain-of-title verification'));
     assert.ok(record.altTexts.length && record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
   }
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 525, 'three Marseille source-page and pixel checks are recorded; the Les Eyzies claim remains unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 522, 'three Marseille and three Peak District source-page/pixel checks are recorded while unresolved claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -420,7 +456,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 5, 'inventory must count explicitly recorded project-original artwork, including the Somerset planning diagram');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 523, 'the regenerated merged inventory includes the three Marseille source-page checks; source-page declarations still do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 520, 'the regenerated merged inventory includes the three Marseille and three Peak District source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));

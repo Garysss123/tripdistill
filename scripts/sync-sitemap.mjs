@@ -86,6 +86,13 @@ const franceToulouseOccitanieEditedRoutes = [
 ];
 const unitedKingdomLastmod = '2026-09-20';
 const unitedKingdomLondonLastmod = '2026-10-11';
+const unitedKingdomPeakLastmod = '2026-10-12';
+const unitedKingdomPeakEditedRoutes = [
+  '/united-kingdom/peak-district-derbyshire/',
+  '/united-kingdom/peak-district-derbyshire/bakewell-chatsworth/',
+  '/united-kingdom/peak-district-derbyshire/hope-valley-edale/',
+  '/united-kingdom/peak-district-derbyshire/dovedale-ashbourne/'
+];
 const unitedKingdomLondonEditedRoutes = [
   '/united-kingdom/london/',
   '/united-kingdom/london/westminster-south-bank/',
@@ -608,6 +615,11 @@ for (const route of unitedKingdomEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited UK route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomEditedLastmod });
 }
+for (const route of unitedKingdomPeakEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Peak District route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomPeakLastmod });
+}
 for (const route of unitedKingdomBathEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Bath/Bristol/Somerset route absent from sitemap: ${route}`);
@@ -663,6 +675,11 @@ for (const route of unitedKingdomGlasgowEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited UK Glasgow route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomGlasgowLastmod });
 }
+// The country overview also renders the latest Peak District hub card; its
+// lastmod must follow this batch after earlier Yorkshire and Glasgow updates.
+const unitedKingdomOverviewRecord = records.get('/united-kingdom/');
+if (!unitedKingdomOverviewRecord) throw new Error('Cannot date UK overview absent from sitemap');
+records.set('/united-kingdom/', { ...unitedKingdomOverviewRecord, lastmod: unitedKingdomPeakLastmod });
 for (const route of usaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited U.S. route absent from sitemap: ${route}`);

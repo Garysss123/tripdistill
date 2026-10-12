@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Take TM Travel 218 from Sheffield to Chatsworth or Bakewell; choose one stop as the day’s anchor, verify the dated return, and check the estate ticket before travel.": "ขึ้นรถ TM Travel สาย 218 จาก Sheffield ไป Chatsworth หรือ Bakewell เลือกจุดหมายหลักเพียงแห่งเดียว ตรวจรถขากลับตามวันที่เดินทางและบัตรเข้าชมที่ดินก่อนออกเดินทาง ไม่มีการรับรองค่าโดยสารหรือเวลาเดินรถ",
+    "Use Northern’s all-stations Hope Valley train for Edale, Hope, Bamford or Hathersage; choose the lower valley or a mapped Great Ridge walk, then return from the same railhead.": "ใช้รถไฟจอดทุกสถานีของ Northern บนเส้นทาง Hope Valley ไป Edale, Hope, Bamford หรือ Hathersage เลือกเดินหุบเขาตอนล่างหรือเส้นทาง Great Ridge ที่มีแผนที่ แล้วกลับจากสถานีเดิม",
+    "Compare the bus from Buxton station with book-ahead Derbyshire Connect; the Thorpe and Ilam stops differ by operating day, and the stepping stones remain optional.": "เปรียบเทียบรถบัสจากสถานี Buxton กับ Derbyshire Connect ที่ต้องจองล่วงหน้า; ป้าย Thorpe และ Ilam ให้บริการคนละวัน และการข้ามสะพานหินเป็นทางเลือก",
+    "Choose Sheffield for Northern’s Hope Valley trains and TM Travel 218; Buxton shortens the southern-dale approach, while Bakewell has no rail station. Three nights gives about two full days; four gives three days for the three areas but no weather spare; five gives four full days with a weather buffer.": "เลือก Sheffield เป็นฐานสำหรับรถไฟบนเส้นทาง Hope Valley ของ Northern และรถ TM Travel สาย 218; Buxton ช่วยให้ไปหุบเขาทางใต้ได้ใกล้ขึ้น ส่วน Bakewell ไม่มีสถานีรถไฟ 3 คืนได้ประมาณ 2 วันเต็ม; 4 คืนได้ 3 วันเต็มสำหรับทั้ง 3 โซน แต่ไม่มีวันเผื่ออากาศ; 5 คืนได้ 4 วันเต็ม โดยมี 1 วันเผื่อสภาพอากาศ"
+  }
+}
