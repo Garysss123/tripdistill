@@ -625,37 +625,47 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
   c({
     slug: 'scottish-highlands',
     name: 'Inverness & the Scottish Highlands',
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
     nation: 'Scotland',
     band: 'scotland',
     family: 'highland-weather-roadbook',
     label: 'Highland weather roadbook',
     tagline: 'Choose one glen or plateau per day and keep the return stronger than the view.',
-    hubIntro: 'Inverness and Loch Ness, Glencoe and Fort William, and Aviemore with the Cairngorms use long, weather-sensitive rail and road corridors. Distances, daylight and sparse alternatives make one named landscape per day the useful maximum. A hotel booking does not make a mountain road, path or cruise operational.',
-    stay: 'Five to seven nights across one or two bases supports the three systems without daily long transfers. Inverness suits the north and Loch Ness, Fort William the western glens, and Aviemore the Cairngorms. Count base changes as travel days.',
-    transfer: 'Highland rail and coach services can be infrequent and road delays substantial. Some trailheads and loch sites remain beyond stations. Save the last two returns, exact pickup side and a low-risk base alternative before leaving town.',
-    season: 'Mountain weather changes rapidly in every season. Winter adds snow, ice and short light; spring can retain high snow; summer brings midges and road pressure; autumn storms can affect rail, ferries and paths.',
+    searchSummary: 'Compare five nights based in Inverness, seven split between Inverness and Aviemore, or about nine across three Highland bases. Name the Highland Main Line, West Highland Line or Citylink 919 corridor and protect weather, daylight and last-mile returns.',
+    searchKeywords: ['Inverness base', 'Aviemore base', 'Fort William base', 'Highland Main Line', 'West Highland Line', 'Citylink 919', 'Urquhart Castle stop'],
+    hubIntro: 'Inverness and Loch Ness, Glencoe and Fort William, and Aviemore with the Cairngorms are three separate Highland systems, not interchangeable day trips. Inverness–Aviemore follows the ScotRail Highland Main Line; Fort William sits on the West Highland Line from Glasgow, while Citylink 919 is the road link between Inverness and Fort William and serves Urquhart Castle on scheduled journeys. Plan one named landscape per day, then protect the return against weather, daylight and sparse alternatives.',
+    stay: 'Choose the base count by nights: five nights in Inverness gives Loch Ness and city depth but means leaving Glencoe and the Cairngorms for another trip; seven nights split between Inverness and Aviemore covers the north and Cairngorms without a daily cross-region commute; about nine nights across Inverness, Aviemore and Fort William can cover all three, with each hotel move treated as a travel day. Fort William is a separate rail corridor from Inverness, so do not assume the train makes a short link. Reserve accommodation early for school holidays and summer weekends, when rooms and rental cars can tighten.',
+    transfer: 'Use the Highland Main Line for Inverness–Aviemore and the West Highland Line for Fort William; neither turns every glen or trailhead into a station walk. Citylink 919 links Inverness and Fort William via Urquhart Castle when the dated timetable lists that stop. Save the exact station or coach stop, return, last-mile plan and a lower-level alternative before booking the night base. No fixed headway or future departure is promised.',
+    season: 'On 12 October 2026, Urquhart Castle’s official calendar listed October opening 09:30–17:00, last entry one hour before closing, and advance online parking reservation; these are a dated snapshot, not a future promise. The same date is a reminder that daylight is shortening. Winter adds snow, ice and limited light; spring can retain high snow; summer brings midges, crowded roads and advance-booking pressure; autumn storms can affect rail, roads and paths. Check mountain forecasts and operator status before committing to exposed routes.',
     fallback: 'Use Inverness, Fort William or Aviemore as complete low-level days through museums, canals, forests or short signed routes. Never replace one closed or clouded mountain with another remote summit attempt.',
     sources: [
       ['https://www.visitscotland.com/places-to-go/highlands', 'VisitScotland — official Highlands destination guide'],
       ['https://www.scotrail.co.uk/', 'ScotRail — Highland rail planning and service updates'],
+      ['https://www.citylink.co.uk/media/1xop3hz4/fort-william-inverness-web.pdf', 'Scottish Citylink — dated Inverness–Fort William coach table and Urquhart Castle stop'],
+      ['https://www.stagecoachbus.com/promos-and-offers/north-scotland/aviemoreadventurer', 'Stagecoach — Aviemore Adventurer local bus information'],
       ['https://www.metoffice.gov.uk/weather/specialist-forecasts/mountain', 'Met Office — official mountain weather forecasts']
     ],
     guides: [
       g({
         slug: 'inverness-loch-ness',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         name: 'Inverness & Loch Ness',
         instrument: 'Loch-road-and-cruise docket',
         layout: 'river-to-loch-spine',
         imageQuery: 'Inverness River Ness castle Scotland',
         imageAlt: 'The River Ness and cityscape of Inverness',
         purpose: 'Choose Inverness city, a specific Loch Ness shore site or one cruise product, naming the road or pier connection rather than treating the loch as directly beside the rail station.',
-        summary: 'Begin on the River Ness, use one verified bus, tour or boat to the selected loch site, and return to Inverness before rural frequency or cruise operation becomes the edge.',
+        summary: 'Walk Inverness’s station–High Street–River Ness spine first, then use the dated Citylink 919 stop for Urquhart Castle or one confirmed cruise pier. Reserve the castle slot and return before short October daylight narrows the margin.',
+        searchSummary: 'Walk Inverness station–High Street–River Ness first, then use a dated Citylink 919 stop for Urquhart Castle or one confirmed cruise pier. Reserve the castle slot and return before October daylight narrows the margin.',
+        searchKeywords: ['Inverness station walking route', 'River Ness walk', 'Citylink 919 Urquhart Castle', 'Urquhart Castle timed entry', 'Loch Ness pier'],
         choices: [
           ['Inverness city and river', 'Keep the day around the river, museum, castle viewpoint and canal edge. This is the most resilient option and needs no long road branch.'],
           ['Urquhart Castle shore', 'Use a named bus, tour or cruise connection to the castle and loch. It gives the strongest historic-loch combination but controls the return.'],
           ['Dedicated loch cruise', 'Choose the exact departure pier and route, accepting weather and product constraints. This gains water perspective but may not include the castle interior.']
         ],
-        access: 'Inverness station and bus station are central; Loch Ness sites extend far south-west on different shores. Cruises may depart from the Caledonian Canal or loch-side piers. Confirm pickup, landing and return rather than following a generic Loch Ness ticket.',
+        access: 'From Inverness station, use the central streets toward High Street and the River Ness; the castle viewpoint and river crossings make a compact walking loop before a rural transfer. Citylink 919 is the named road corridor toward Drumnadrochit and Urquhart Castle, but board only a departure whose live timetable shows the castle stop and return. HES places Urquhart about two miles from Drumnadrochit, off the A82; parking must be booked online. Canal and loch cruises use different piers, so match the ticket to the exact boarding point.',
         tradeoff: 'A full Inverness day, Urquhart Castle and a long cruise cannot all receive useful time. Choosing the loch sacrifices city depth; choosing the city gives up the iconic shore but protects flexibility.',
         stages: [
           ['Orient on the River Ness', 'Use the city river and station area to confirm the exact bus, tour pickup or cruise pier before leaving services.'],
@@ -663,35 +673,40 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
           ['Complete castle or cruise', 'Follow the booked product and weather conditions, keeping road or boat delays inside the plan.'],
           ['Return to Inverness early', 'Regain the city with time for a river or museum finish and one onward service in reserve.']
         ],
-        fallback: 'If cruise or road conditions fail, use Inverness Museum, River Ness, Ness Islands and a canal-side route. If the castle closes, retain only the shore trip when transport still creates a worthwhile window.',
+        fallback: 'If the coach, cruise or castle slot does not fit, keep the day in Inverness: High Street, the River Ness paths, Ness Islands and a short canal-side walk make a complete lower-risk plan. On 12 October 2026 the HES calendar listed October hours 09:30–17:00 with last entry at 16:00; recheck its date selector and timed-ticket availability before travelling. The visitor centre and castle are reached down a steep ramp and path, so check HES access notes if that slope is material to your plan.',
         watch: [
           ['Loch Ness is long', 'A place name does not describe the shore or pier. Identify the exact destination and travel time.'],
           ['Cruises use different departure points', 'City, canal and loch piers are not interchangeable. Check-in and transport must match the product.'],
           ['Road delay affects the final train', 'Single-carriage roads and peak traffic can widen journey times. Keep the city return generous.']
         ],
-        duration: 'Allow a full day for Inverness plus one loch anchor. The city alone needs four to six hours; a long cruise or castle combination can consume the whole day.',
+        duration: 'Allow a full day for Inverness plus one loch anchor. The station–High Street–river walk and one museum can fill four to six hours; a timed castle visit plus the coach corridor can consume the rest. Do not add a second shore or cruise on the same return.',
         combine: 'Combine Urquhart Castle with its booked cruise or Inverness with the river and canal. Keep Glencoe and the Cairngorms for separate days.',
-        verify: 'Check Urquhart Castle access, the exact cruise or bus operator, road and rail status, weather and final return before departure.',
+        verify: 'Check the Urquhart date-and-time ticket, October closing and last entry, parking reservation if driving, the exact 919 stop and return or cruise pier, road and rail notices, weather and daylight before departure.',
         sources: [
           ['https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/', 'Historic Environment Scotland — Urquhart Castle information'],
+          ['https://www.citylink.co.uk/media/1xop3hz4/fort-william-inverness-web.pdf', 'Scottish Citylink — Fort William–Inverness coach timetable and Urquhart Castle stop; verify the active dated table'],
           ['https://www.visitinvernesslochness.com/', 'Visit Inverness Loch Ness — official destination guide']
         ]
       }),
       g({
         slug: 'glencoe-fort-william',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         name: 'Glencoe & Fort William',
         instrument: 'Glen-road mountain gate',
         layout: 'mountain-corridor-transect',
         imageQuery: 'Glencoe Scotland valley mountains road',
         imageAlt: 'Mountain slopes enclosing Glencoe in the Scottish Highlands',
         purpose: 'Choose Fort William as a low-level base or one named Glencoe route, accounting for the A82 corridor, mountain weather and sparse trailhead transport before committing to elevation.',
-        summary: 'Leave the rail or coach town for one verified glen stop, assess conditions at low level, complete a bounded route or visitor-centre day, and recover the return before road delay compounds.',
+        summary: 'Use Fort William’s station–High Street–West Highland Museum zone as the town day, or leave by the A82 for NTS Glencoe visitor centre and one lower route. Do not count a roadside stop as a trailhead or treat Ben Nevis as an add-on.',
+        searchSummary: 'Use Fort William station–High Street–West Highland Museum as the town zone, or leave by the A82 for NTS Glencoe visitor centre and one lower route. Do not treat a roadside stop as a trailhead or Ben Nevis as an add-on.',
+        searchKeywords: ['Fort William station walk', 'West Highland Museum', 'A82 Glencoe bus stop', 'Glencoe visitor centre', 'Ben Nevis planning'],
         choices: [
           ['Glencoe visitor landscape', 'Use the visitor centre, lower glen and one signed short route. It offers context with the largest weather margin.'],
           ['Fort William and canal', 'Keep the day around town, Old Fort, museum and Neptune’s Staircase or lower Glen Nevis. This is the strongest fallback.'],
           ['Mountain route', 'Attempt one route matched to skill, conditions and official advice. It gives elevation but removes the assumption of multiple valley stops.']
         ],
-        access: 'Fort William has rail and coach service; Glencoe village and trailheads use buses, tours or cars along the A82. Stops can be roadside and far from route starts. Ben Nevis and other mountain objectives require separate detailed planning beyond a sightseeing itinerary.',
+        access: 'Fort William station, coach area, High Street and West Highland Museum form the walkable town core. Neptune’s Staircase at Banavie is a separate canal-side branch; check a bus, taxi or car connection rather than assuming it is a short extension from town. Glencoe visitor centre, village and trailheads lie along the A82, served by specific coach stops, tours or cars; an A82 stop can be far from a safe route start. Ben Nevis and other mountain objectives need their own navigation, equipment and conditions plan.',
         tradeoff: 'A deep Glencoe route, Fort William town and a mountain ascent are separate days. Choosing elevation sacrifices museum and canal time; choosing the lower glen gives up a summit but preserves safety and return.',
         stages: [
           ['Leave the base on one corridor', 'Use the confirmed bus, tour or road route to the visitor centre, village or trailhead, saving the final return and pickup side.'],
@@ -699,7 +714,7 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
           ['Commit to one bounded route', 'Follow the signed valley or correctly mapped mountain objective with turnaround times. Do not add a second glen because the road continues.'],
           ['Recover Fort William or village', 'Reach shelter and transport with margin for A82 delay. Keep the final train or coach independent of an optimistic walk finish.']
         ],
-        fallback: 'If mountains are unsuitable, use the Glencoe visitor centre and lower routes or Fort William museum, canal and town. If buses are disrupted before departure, remain in the base rather than hitching an informal trailhead connection.',
+        fallback: 'If cloud, wind or rain closes the high plan, choose the lower visitor-centre exhibits and a signed short path only if the path notice permits it, or stay in Fort William for the West Highland Museum and High Street. The NTS Glencoe page checked on 12 October 2026 showed its visitor centre, shop and turf house 09:30–17:00 that day; hours vary, so confirm the date-specific listing before making it the fallback. If transport is disrupted, do not walk the A82 verge to improvise a trailhead.',
         watch: [
           ['A82 stops are not trailheads', 'Roadside arrival may leave unsafe or lengthy walking. Confirm the exact access route and crossing.'],
           ['Ben Nevis is not a sightseeing add-on', 'The mountain requires fitness, navigation, equipment and appropriate conditions. Do not infer safety from clear weather in town.'],
@@ -707,7 +722,7 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         ],
         duration: 'Allow a full day for one glen or Fort William system. A mountain day uses the complete weather window and should not share a long-distance transfer.',
         combine: 'Combine the Glencoe visitor centre with one lower route, or Fort William with the canal. Keep Inverness and Cairngorms for separate bases.',
-        verify: 'Check National Trust for Scotland Glencoe notices, Met Office mountain forecast, bus or road status, route guidance and final return before departure.',
+        verify: 'Check the NTS Glencoe opening and path notices, Met Office mountain forecast, dated Citylink/local bus stop and return, Traffic Scotland road notices, daylight and the route’s official grade before departure.',
         sources: [
           ['https://www.nts.org.uk/visit/places/glencoe', 'National Trust for Scotland — Glencoe visitor information'],
           ['https://www.outdoorhighlands.co.uk/fort-william/', 'Visit Fort William — official local destination information']
@@ -715,19 +730,23 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
       }),
       g({
         slug: 'aviemore-cairngorms',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         name: 'Aviemore & the Cairngorms',
         instrument: 'Plateau-weather activity selector',
         layout: 'forest-to-plateau-layers',
         imageQuery: 'Cairngorms Aviemore Scotland mountains',
         imageAlt: 'The Cairngorm Mountains near Aviemore in Scotland',
         purpose: 'Choose forest, loch or mountain access from Aviemore and make the bus, funicular or trail status a live gate rather than assuming the plateau is automatically available.',
-        summary: 'Arrive by rail, use Aviemore as the service point, move to one named Cairngorms gateway, and complete a route that can be shortened before the final return.',
+        summary: 'Use Aviemore station and High Street as the service base, then take Stagecoach 30 toward Glenmore/Cairngorm Mountain or a separately checked Rothiemurchus transfer. Pick forest-level walking or the mountain product before leaving town.',
+        searchSummary: 'Use Aviemore station and High Street as the service base, then take Stagecoach 30 toward Glenmore/Cairngorm Mountain or a separately checked Rothiemurchus transfer. Choose forest walking or the mountain product before leaving town.',
+        searchKeywords: ['Aviemore station walk', 'Stagecoach 30 Cairngorm', 'Glenmore bus', 'Rothiemurchus transfer', 'Cairngorm Mountain booking'],
         choices: [
           ['Rothiemurchus forest and lochs', 'Use signed lower forest and water routes near Aviemore. This is the strongest variable-weather plan and easiest to shorten.'],
           ['Cairngorm Mountain visitor access', 'Use current mountain transport and official access conditions as the anchor. It gives height but may be restricted by wind or maintenance.'],
           ['Wildlife or guided activity', 'Book one operator-led wildlife, paddling or winter activity. This adds expertise but fixes time, equipment and cancellation terms.']
         ],
-        access: 'Aviemore station is the rail base; forest, loch and mountain gateways require buses, bicycles, taxis, tours or cars. Cairngorm Mountain transport and car-park access can change. Confirm the exact gateway and final connection before leaving town.',
+        access: 'Aviemore station and the parallel High Street are the rail-and-service base. Cairngorm Mountain’s official travel page identifies Stagecoach Aviemore Adventurer service 30 between Aviemore and the mountain doorstep, seven days a week in the checked snapshot; verify its dated timetable, stop, capacity and last return. Rothiemurchus and individual loch/forest trailheads are separate waypoints, not guaranteed stops on that mountain bus. The mountain road is about ten miles from Aviemore, so walking it is not a substitute last mile.',
         tradeoff: 'Forest, mountain and wildlife activities are distinct days at depth. Choosing the plateau sacrifices lowland flexibility; choosing Rothiemurchus gives up height but preserves routes when wind closes the mountain.',
         stages: [
           ['Set the Aviemore base', 'Use station, bus and equipment services to confirm the chosen gateway, final return and weather before departure.'],
@@ -735,7 +754,7 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
           ['Complete a bounded activity', 'Follow signed lower routes, the official mountain product or booked guide. Use a time and weather turnaround.'],
           ['Return before the corridor closes', 'Regain Aviemore with margin for bus gaps and the onward rail. Keep the evening in town rather than adding another loch.']
         ],
-        fallback: 'If mountain access closes, use Rothiemurchus forest, lower lochs or Aviemore facilities according to current path conditions. If outdoor weather is severe, shorten the day rather than driving to another exposed plateau.',
+        fallback: 'If the mountain railway or summit access is restricted, stay at lower Glenmore only if bus service and paths remain open, or return to Aviemore for a town day. A forest loop in Rothiemurchus is a separate transfer: confirm how you reach its start and back. If wind, snow or ice affects all outdoor routes, use Aviemore’s indoor visitor stops and keep the rail return safe.',
         watch: [
           ['Mountain transport is conditional', 'Wind, maintenance and operating policy can close or restrict access. Check live status and do not plan beyond permitted areas.'],
           ['Lower routes still need conditions', 'Snow, ice, flooding and forestry work affect forest paths. Use current signs and a mapped route.'],
@@ -743,10 +762,11 @@ export const unitedKingdomEnglandNorthScotlandClusters = [
         ],
         duration: 'Allow a full day for one Cairngorms layer. Forest-and-loch routes can use five to seven hours; mountain or guided activities own the complete day.',
         combine: 'Combine Rothiemurchus with one loch or Aviemore with one booked activity. Keep Inverness and Glencoe for separate days and bases.',
-        verify: 'Check Cairngorms National Park guidance, mountain operation, local bus or tour, path conditions, detailed weather and daylight before departure.',
+        verify: 'Check the Cairngorm Mountain live report and advance booking guidance, Stagecoach 30’s exact date and final return, the named Rothiemurchus access, Cairngorms National Park path notices, mountain forecast and daylight before departure.',
         sources: [
           ['https://www.cairngorms.co.uk/discover-explore/', 'Cairngorms National Park — official visitor information'],
-          ['https://www.cairngormmountain.co.uk/plan-your-visit/', 'Cairngorm Mountain — official operation and visit information']
+          ['https://www.cairngormmountain.co.uk/plan-your-visit/', 'Cairngorm Mountain — official operation and visit information'],
+          ['https://www.stagecoachbus.com/promos-and-offers/north-scotland/aviemoreadventurer', 'Stagecoach — Aviemore Adventurer route 30 information and service planner']
         ]
       })
     ]

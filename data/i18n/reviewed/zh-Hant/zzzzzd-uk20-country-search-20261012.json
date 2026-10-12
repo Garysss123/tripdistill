@@ -1,0 +1,15 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan UK nights and bases across England, Scotland, Wales and Northern Ireland. Compare 5–7-, 8–10- and 14-night routes, open-jaw airport choices, rail, coach, car and rural last-mile trade-offs.": "規劃英格蘭、蘇格蘭、威爾斯與北愛爾蘭的英國住宿晚數與據點。比較5–7晚、8–10晚及14晚路線、開口行程機場選擇、火車、長途客運、自駕與鄉間最後一段接駁的取捨。",
+    "United Kingdom itinerary nights": "英國行程住宿晚數",
+    "UK trip length": "英國旅程長度",
+    "UK open-jaw flights": "英國開口行程航班",
+    "UK train or coach": "英國火車或長途客運",
+    "UK self-drive": "英國自駕"
+  }
+}

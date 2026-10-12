@@ -41,8 +41,8 @@ const reviewGroups = [
   {
     date: '2026-10-12',
     label: '12 October 2026',
-    guideCount: 15,
-    hubCount: 5,
+    guideCount: 21,
+    hubCount: 7,
     sources: [
       'checked 12 October 2026',
       'Planning facts and image licensing were reviewed on 12 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
@@ -54,6 +54,10 @@ const baselineReviewSources = [
   'checked 20 September 2026',
   'Planning facts and image licensing were reviewed on 20 September 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
   'Editorial review: 20 September 2026 · Recheck time-sensitive details before booking.'
+];
+const countryReviewSources = [
+  'Country route shapes, airport links, transport comparisons and seasonal advice were checked on 12 October 2026. Existing image credits and license records remain from the 20 September 2026 image review; no image records changed. Fares, timetables, reservations, roads, paths, tides, weather and opening status change; recheck the relevant operator or authority before travel.',
+  'Editorial review: 12 October 2026 · Travel sources rechecked for this update; recheck live details before booking.'
 ];
 const targetGuides = unitedKingdomGuides.filter((guide) => guide.reviewDate || guide.reviewDateISO);
 for (const group of reviewGroups) {
@@ -89,7 +93,7 @@ const languages = [
   ...localeConfigs
 ];
 const routes = [
-  { url: '/united-kingdom/', kind: 'country', reviewDateISO: null },
+  { url: '/united-kingdom/', kind: 'country', reviewDateISO: '2026-10-12' },
   ...unitedKingdomClusters.map((cluster) => ({ url: `/united-kingdom/${cluster.slug}/`, kind: 'hub', reviewDateISO: cluster.reviewDateISO || null })),
   ...unitedKingdomGuides.map((guide) => ({ url: guide.url, kind: 'guide', reviewDateISO: guide.reviewDateISO || null }))
 ];
@@ -109,6 +113,7 @@ function getArticleDates(html, file) {
 
 const targetSourceTranslations = new Map();
 const targetHubSourceTranslations = new Map();
+const countrySourceTranslations = new Map();
 for (const locale of localeConfigs) {
   const catalogPath = path.join(root, 'data', 'i18n', `${locale.code}.json`);
   const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
@@ -117,6 +122,7 @@ for (const locale of localeConfigs) {
     targetSourceTranslations.set(key, group.sources.map((source) => catalog.translations[source]));
     targetHubSourceTranslations.set(key, group.sources.slice(1).map((source) => catalog.translations[source]));
   }
+  countrySourceTranslations.set(locale.code, countryReviewSources.map((source) => catalog.translations[source]));
 }
 const baselineTranslations = new Map();
 for (const locale of localeConfigs) {
@@ -156,10 +162,30 @@ for (const route of routes) {
       for (const value of visibleValues) {
         if (!html.includes(value)) throw new Error(`${file}: missing visible hub review text: ${value}`);
       }
+    } else if (route.kind === 'country') {
+      const visibleValues = locale.code === 'en'
+        ? countryReviewSources
+        : countrySourceTranslations.get(locale.code);
+      if (visibleValues.some((value) => !value?.trim())) throw new Error(`Missing expected country review translations for ${locale.code}.`);
+      for (const value of visibleValues) {
+        if (!html.includes(value)) throw new Error(`${file}: missing visible country review text: ${value}`);
+      }
     }
     checked += 1;
   }
 }
 
 if (checked !== 405) throw new Error(`Expected 405 UK language pages, checked ${checked}.`);
-console.log(`United Kingdom route date regression passed: ${checked} language pages; ${targetGuides.length} route overrides and ${targetHubs.length} hub overrides across ${reviewGroups.length} dates; published dates and all other route dates unchanged.`);
+const sitemapFiles = ['sitemap.xml', ...(fs.existsSync('dist/sitemap.xml') ? ['dist/sitemap.xml'] : [])];
+for (const sitemapFile of sitemapFiles) {
+  const sitemap = fs.readFileSync(path.join(root, sitemapFile), 'utf8');
+  const records = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
+    .map(([, route, date]) => [route, date]));
+  for (const locale of languages) {
+    const localizedRoute = `${locale.prefix}/united-kingdom/`;
+    if (records.get(localizedRoute) !== '2026-10-12') {
+      throw new Error(`${sitemapFile}: expected ${localizedRoute} lastmod 2026-10-12, got ${records.get(localizedRoute)}.`);
+    }
+  }
+}
+console.log(`United Kingdom route date regression passed: ${checked} language pages; country overview updated on 12 October in five editions; ${targetGuides.length} route overrides and ${targetHubs.length} hub overrides across ${reviewGroups.length} dates; published dates and all other route dates unchanged.`);

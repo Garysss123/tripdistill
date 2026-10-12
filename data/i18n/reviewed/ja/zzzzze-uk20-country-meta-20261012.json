@@ -1,0 +1,10 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/united-kingdom/"
+  ],
+  "translations": {
+    "Plan UK trip length, overnight bases, airport entry and exit, rail, coach, car and weather-aware rural last-mile connections.": "英国旅行の泊数、宿泊拠点、到着・出発空港、鉄道、都市間バス、車、天候を考慮した地方の最後の乗り継ぎを計画できます。"
+  }
+}

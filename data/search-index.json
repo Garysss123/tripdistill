@@ -12032,7 +12032,7 @@
     "url": "/united-kingdom/",
     "parent": "Europe",
     "type": "Country",
-    "summary": "Plan the United Kingdom through twenty complete regional hubs and sixty focused guides for cities, castles, coasts, mountains, islands and Northern Ireland.",
+    "summary": "Plan UK nights and bases across England, Scotland, Wales and Northern Ireland. Compare 5–7-, 8–10- and 14-night routes, open-jaw airport choices, rail, coach, car and rural last-mile trade-offs.",
     "keywords": [
       "United Kingdom",
       "UK travel",
@@ -12040,7 +12040,12 @@
       "England",
       "Scotland",
       "Wales",
-      "Northern Ireland"
+      "Northern Ireland",
+      "United Kingdom itinerary nights",
+      "UK trip length",
+      "UK open-jaw flights",
+      "UK train or coach",
+      "UK self-drive"
     ]
   },
   {
@@ -12818,11 +12823,18 @@
     "url": "/united-kingdom/scottish-highlands/",
     "parent": "United Kingdom",
     "type": "Regional guide",
-    "summary": "Inverness and Loch Ness, Glencoe and Fort William, and Aviemore with the Cairngorms use long, weather-sensitive rail and road corridors. Distances, daylight and sparse alternatives make one named landscape per day the useful maximum. A hotel booking does not make a mountain road, path or cruise operational.",
+    "summary": "Compare five nights based in Inverness, seven split between Inverness and Aviemore, or about nine across three Highland bases. Name the Highland Main Line, West Highland Line or Citylink 919 corridor and protect weather, daylight and last-mile returns.",
     "keywords": [
       "Inverness & the Scottish Highlands",
       "Scotland",
-      "scotland"
+      "scotland",
+      "Inverness base",
+      "Aviemore base",
+      "Fort William base",
+      "Highland Main Line",
+      "West Highland Line",
+      "Citylink 919",
+      "Urquhart Castle stop"
     ]
   },
   {
@@ -12830,12 +12842,17 @@
     "url": "/united-kingdom/scottish-highlands/inverness-loch-ness/",
     "parent": "Inverness & the Scottish Highlands",
     "type": "Local guide",
-    "summary": "Begin on the River Ness, use one verified bus, tour or boat to the selected loch site, and return to Inverness before rural frequency or cruise operation becomes the edge.",
+    "summary": "Walk Inverness station–High Street–River Ness first, then use a dated Citylink 919 stop for Urquhart Castle or one confirmed cruise pier. Reserve the castle slot and return before October daylight narrows the margin.",
     "keywords": [
       "Inverness & Loch Ness",
       "Inverness & the Scottish Highlands",
       "Loch-road-and-cruise docket",
-      "river-to-loch-spine"
+      "river-to-loch-spine",
+      "Inverness station walking route",
+      "River Ness walk",
+      "Citylink 919 Urquhart Castle",
+      "Urquhart Castle timed entry",
+      "Loch Ness pier"
     ]
   },
   {
@@ -12843,12 +12860,17 @@
     "url": "/united-kingdom/scottish-highlands/glencoe-fort-william/",
     "parent": "Inverness & the Scottish Highlands",
     "type": "Local guide",
-    "summary": "Leave the rail or coach town for one verified glen stop, assess conditions at low level, complete a bounded route or visitor-centre day, and recover the return before road delay compounds.",
+    "summary": "Use Fort William station–High Street–West Highland Museum as the town zone, or leave by the A82 for NTS Glencoe visitor centre and one lower route. Do not treat a roadside stop as a trailhead or Ben Nevis as an add-on.",
     "keywords": [
       "Glencoe & Fort William",
       "Inverness & the Scottish Highlands",
       "Glen-road mountain gate",
-      "mountain-corridor-transect"
+      "mountain-corridor-transect",
+      "Fort William station walk",
+      "West Highland Museum",
+      "A82 Glencoe bus stop",
+      "Glencoe visitor centre",
+      "Ben Nevis planning"
     ]
   },
   {
@@ -12856,12 +12878,17 @@
     "url": "/united-kingdom/scottish-highlands/aviemore-cairngorms/",
     "parent": "Inverness & the Scottish Highlands",
     "type": "Local guide",
-    "summary": "Arrive by rail, use Aviemore as the service point, move to one named Cairngorms gateway, and complete a route that can be shortened before the final return.",
+    "summary": "Use Aviemore station and High Street as the service base, then take Stagecoach 30 toward Glenmore/Cairngorm Mountain or a separately checked Rothiemurchus transfer. Choose forest walking or the mountain product before leaving town.",
     "keywords": [
       "Aviemore & the Cairngorms",
       "Inverness & the Scottish Highlands",
       "Plateau-weather activity selector",
-      "forest-to-plateau-layers"
+      "forest-to-plateau-layers",
+      "Aviemore station walk",
+      "Stagecoach 30 Cairngorm",
+      "Glenmore bus",
+      "Rothiemurchus transfer",
+      "Cairngorm Mountain booking"
     ]
   },
   {
@@ -12971,11 +12998,17 @@
     "url": "/united-kingdom/pembrokeshire-west-wales/",
     "parent": "United Kingdom",
     "type": "Regional guide",
-    "summary": "St Davids, Tenby and the Ceredigion coast sit on separate West Wales corridors. Rail reaches Tenby and Aberystwyth, while St Davids needs a bus or road connection. Coast-path sections, boats and island visits add weather, tide and final-service decisions that should be explicit.",
+    "summary": "Compare a four-night Tenby base, a six-night Tenby plus St Davids split, or about eight nights adding Aberystwyth. Tenby and Aberystwyth have rail; St Davids needs a road connection. Check winter coastal-bus days and Caldey season before booking.",
     "keywords": [
       "Pembrokeshire & West Wales",
       "Wales",
-      "wales"
+      "wales",
+      "Tenby base nights",
+      "St Davids no railway",
+      "Aberystwyth rail base",
+      "387 388 winter Coastal Cruiser",
+      "400 403 404 summer buses",
+      "Caldey Island season"
     ]
   },
   {
@@ -12983,12 +13016,18 @@
     "url": "/united-kingdom/pembrokeshire-west-wales/st-davids-coast/",
     "parent": "Pembrokeshire & West Wales",
     "type": "Local guide",
-    "summary": "Arrive in St Davids, descend to the cathedral precinct, then commit to one signed coast, harbour or boat branch only when weather and return transport remain secure.",
+    "summary": "Walk St Davids High Street, Oriel y Parc and the Cathedral Close as one city zone; choose St Non’s/Caerfai only with a separately confirmed road/bus return. Summer 400/403/404 shuttles are out of season in this 12 October snapshot.",
     "keywords": [
       "St Davids & the Pembrokeshire Coast",
       "Pembrokeshire & West Wales",
       "Cathedral-to-cliff weather card",
-      "saints-city-coast-fold"
+      "saints-city-coast-fold",
+      "St Davids Cathedral Close walk",
+      "Oriel y Parc",
+      "St Davids no railway",
+      "St Non’s bus transfer",
+      "400 Puffin Shuttle season",
+      "Pembrokeshire winter bus"
     ]
   },
   {
@@ -12996,12 +13035,17 @@
     "url": "/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/",
     "parent": "Pembrokeshire & West Wales",
     "type": "Local guide",
-    "summary": "Walk from Tenby station into the walled town, read the harbour’s live boat status, complete one island or coast line, and regain the station before the branch service narrows.",
+    "summary": "Walk Tenby station through High Street and Castle Hill to the harbour, then choose a safe town/beach loop. Caldey is closed for the 2026 season and reopens Easter 2027; future sailing dates remain unconfirmed.",
     "keywords": [
       "Tenby, Caldey & the South Coast",
       "Pembrokeshire & West Wales",
       "Harbour-tide-island manifest",
-      "walled-harbour-tide-sheet"
+      "walled-harbour-tide-sheet",
+      "Tenby station to harbour walk",
+      "Castle Hill Tenby",
+      "Caldey Island closed 2026",
+      "Caldey Easter 2027",
+      "Tenby tide-safe walk"
     ]
   },
   {
@@ -13009,12 +13053,17 @@
     "url": "/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/",
     "parent": "Pembrokeshire & West Wales",
     "type": "Local guide",
-    "summary": "Arrive at Aberystwyth station, complete the town and promenade spine, then add one hill, collection or booked heritage-rail branch with the final train protected.",
+    "summary": "Walk from Aberystwyth station through the town to the castle seafront; choose Constitution Hill’s cliff railway or the separately booked Vale of Rheidol steam train. Daily Vale services were listed only through 1 November 2026.",
     "keywords": [
       "Aberystwyth & the Ceredigion Coast",
       "Pembrokeshire & West Wales",
       "Rail-end coast-and-hill board",
-      "promenade-railway-horizon"
+      "promenade-railway-horizon",
+      "Aberystwyth station promenade walk",
+      "Constitution Hill cliff railway",
+      "Vale of Rheidol 2026 season",
+      "Devil’s Bridge steam train",
+      "Aberystwyth return train"
     ]
   },
   {

@@ -138,6 +138,96 @@ const diagrams = new Map([
     <path d="M1405 326h72m-18-18 18 18-18 18M1405 534h72m-18-18 18 18-18 18M1405 742h72m-18-18 18 18-18 18" stroke="#D07854" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   <path d="M1493 256v560" stroke="#C8D7CF" stroke-width="3" stroke-dasharray="10 16"/>
+</svg>`],
+  ['united-kingdom-scottish-highlands-aviemore-cairngorms-route-choice.svg', String.raw`<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" fill="none">
+  <metadata>TripDistill project original; no separate reuse license declared. Five-language route-choice planning schematic in English, Traditional Chinese, Japanese, Korean and Thai; not a geographic map and not to scale. Supersedes the retained Cairngorms photograph in the live route after conflicting source-page and EXIF declarations were found.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2 12 7 2 12" stroke="#376B68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <pattern id="grain" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.2" fill="#C9D3CA" opacity=".4"/><circle cx="25" cy="26" r="1" fill="#D7C9B6" opacity=".35"/></pattern>
+  </defs>
+  <rect width="1600" height="1066" rx="42" fill="#F1EEE5"/>
+  <rect width="1600" height="1066" rx="42" fill="url(#grain)"/>
+  <path d="M64 190H1536M64 1030H1536" stroke="#C6D4CC" stroke-width="3"/>
+  <text x="78" y="91" fill="#193B45" font-family="Arial,sans-serif" font-size="48" font-weight="700">AVIEMORE · CAIRNGORMS ACCESS CHOICE</text>
+  <text x="80" y="146" fill="#526C68" font-family="Arial,sans-serif" font-size="25">One rail base, two separately checked gateways · planning schematic, not to scale</text>
+  <rect x="72" y="246" width="365" height="474" rx="30" fill="#193B45"/>
+  <circle cx="255" cy="341" r="53" fill="#DDE9E1"/>
+  <g stroke="#193B45" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M220 347h70v-29h-70zM227 318v-19h58v19M235 331h14m22 0h14" fill="#FFFDF8"/><path d="M215 359h80"/></g>
+  <text x="255" y="433" text-anchor="middle" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="34" font-weight="700">AVIEMORE</text>
+  <text x="255" y="476" text-anchor="middle" fill="#DCE8DF" font-family="Arial,sans-serif" font-size="25">rail + services</text>
+  <path d="M112 505H398" stroke="#789A8E" stroke-width="2"/>
+  <g fill="#FFFDF8" font-family="Arial,sans-serif" font-size="22">
+    <text x="104" y="548">繁體中文｜鐵路與補給基地</text>
+    <text x="104" y="590">日本語｜鉄道・補給拠点</text>
+    <text x="104" y="632">한국어｜철도·편의시설 거점</text>
+    <text x="104" y="674">ไทย｜ฐานรถไฟและบริการ</text>
+  </g>
+  <path d="M437 485C469 485 462 345 496 345M437 485C469 485 462 615 496 615" stroke="#376B68" stroke-width="8" stroke-linecap="round"/>
+  <rect x="496" y="224" width="1032" height="246" rx="28" fill="#FFFDF8" stroke="#CFDAD1" stroke-width="3"/>
+  <rect x="496" y="494" width="1032" height="246" rx="28" fill="#E1EBE5" stroke="#C6D8CE" stroke-width="3"/>
+  <circle cx="552" cy="278" r="25" fill="#D07854"/><text x="552" y="287" text-anchor="middle" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="25" font-weight="700">A</text>
+  <circle cx="552" cy="548" r="25" fill="#376B68"/><text x="552" y="557" text-anchor="middle" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="25" font-weight="700">B</text>
+  <text x="598" y="286" fill="#193B45" font-family="Arial,sans-serif" font-size="31" font-weight="700">Stagecoach 30 → GLENMORE / CAIRNGORM MOUNTAIN</text>
+  <text x="600" y="326" fill="#315B57" font-family="Arial,sans-serif" font-size="22">EN  Bus 30 to Glenmore / Cairngorm Mountain; check the date-specific service.</text>
+  <text x="600" y="356" fill="#315B57" font-family="Arial,sans-serif" font-size="22">繁中｜搭乘 30 號巴士前往 Glenmore／Cairngorm Mountain，依日期核班。</text>
+  <text x="600" y="386" fill="#315B57" font-family="Arial,sans-serif" font-size="22">日本語｜30番バスで Glenmore／Cairngorm Mountainへ。運行日を確認。</text>
+  <text x="600" y="416" fill="#315B57" font-family="Arial,sans-serif" font-size="22">한국어｜30번 버스로 Glenmore／Cairngorm Mountain, 날짜별 운행 확인.</text>
+  <text x="600" y="446" fill="#315B57" font-family="Arial,sans-serif" font-size="21">ไทย｜รถบัสสาย 30 ไป Glenmore／Cairngorm Mountain ตรวจวันให้บริการ</text>
+  <text x="598" y="556" fill="#193B45" font-family="Arial,sans-serif" font-size="31" font-weight="700">SEPARATE TRANSFER → ROTHIEMURCHUS</text>
+  <text x="600" y="584" fill="#315B57" font-family="Arial,sans-serif" font-size="22">EN  Forest and loch access is separate; confirm the transfer both ways.</text>
+  <text x="600" y="614" fill="#315B57" font-family="Arial,sans-serif" font-size="22">繁中｜森林與湖泊須另行接駁；先確認來回交通。</text>
+  <text x="600" y="644" fill="#315B57" font-family="Arial,sans-serif" font-size="22">日本語｜森林・湖への移動は別手配。往復交通を確認。</text>
+  <text x="600" y="674" fill="#315B57" font-family="Arial,sans-serif" font-size="22">한국어｜숲·호수 구간은 별도 이동이 필요합니다. 왕복을 확인하세요.</text>
+  <text x="600" y="704" fill="#315B57" font-family="Arial,sans-serif" font-size="21">ไทย｜ป่าและทะเลสาบต้องต่อรถแยก ตรวจการเดินทางไปและกลับ</text>
+  <rect x="72" y="777" width="1456" height="226" rx="28" fill="#E8D7BD" stroke="#D5B895" stroke-width="3"/>
+  <text x="106" y="818" fill="#193B45" font-family="Arial,sans-serif" font-size="28" font-weight="700">RETURN GATE · VERIFY BEFORE LEAVING AVIEMORE</text>
+  <g fill="#294B4E" font-family="Arial,sans-serif" font-size="22">
+    <text x="106" y="854">EN  Check dated bus service, mountain/path status, weather, turnaround and final return.</text>
+    <text x="106" y="884">繁中｜出發前核對當日巴士、山區／步道狀態、天氣、折返點和末班返程。</text>
+    <text x="106" y="914">日本語｜バス、山・歩道の状況、天気、引き返す時刻、最終便を確認。</text>
+    <text x="106" y="944">한국어｜버스·산악/산책로 상태·날씨·회귀 시각·마지막 귀환편을 확인하세요.</text>
+    <text x="106" y="974">ไทย｜ตรวจรถบัส เส้นทางภูเขา/เดินป่า อากาศ จุดกลับตัว และเที่ยวกลับสุดท้าย</text>
+  </g>
+</svg>`],
+  ['united-kingdom-pembrokeshire-west-wales-st-davids-coast-route-choice.svg', String.raw`<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" fill="none">
+  <metadata>TripDistill project original; no separate reuse license declared. Five-language route-choice planning schematic in English, Traditional Chinese, Japanese, Korean and Thai; not a geographic map and not to scale. Supersedes the retained St Davids Cathedral photograph in the live route after conflicting source-page and EXIF attribution declarations were found.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2 12 7 2 12" stroke="#376B68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <pattern id="grain" width="36" height="36" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.2" fill="#C9D3CA" opacity=".4"/><circle cx="25" cy="26" r="1" fill="#D7C9B6" opacity=".35"/></pattern>
+  </defs>
+  <rect width="1600" height="1066" rx="42" fill="#F1EEE5"/><rect width="1600" height="1066" rx="42" fill="url(#grain)"/>
+  <path d="M64 190H1536M64 1030H1536" stroke="#C6D4CC" stroke-width="3"/>
+  <text x="78" y="91" fill="#193B45" font-family="Arial,sans-serif" font-size="48" font-weight="700">ST DAVIDS · CITY OR COAST</text>
+  <text x="80" y="146" fill="#526C68" font-family="Arial,sans-serif" font-size="25">A walkable city core, separate coast transfers · schematic, not to scale</text>
+  <rect x="72" y="246" width="1456" height="256" rx="30" fill="#193B45"/>
+  <circle cx="168" cy="374" r="54" fill="#DDE9E1"/>
+  <g stroke="#193B45" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M136 392v-46l32-24 32 24v46z" fill="#FFFDF8"/><path d="M151 392v-27h16v27m17-34h12v14h-12" fill="#D9E8DF"/><path d="M128 401h80"/></g>
+  <text x="260" y="302" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="34" font-weight="700">ST DAVIDS · NO RAILWAY STATION</text>
+  <text x="260" y="350" fill="#DCE8DF" font-family="Arial,sans-serif" font-size="25">City walk: Cathedral Close → High Street → Oriel y Parc</text>
+  <text x="260" y="393" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="22">繁中｜市區步行：主教座堂區 → High Street → Oriel y Parc</text>
+  <text x="260" y="427" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="22">日本語｜市内散策：大聖堂地区 → High Street → Oriel y Parc</text>
+  <text x="260" y="461" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="22">한국어｜도심 산책: Cathedral Close → High Street → Oriel y Parc</text>
+  <text x="260" y="491" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="21">ไทย｜เดินในเมือง: Cathedral Close → High Street → Oriel y Parc</text>
+  <path d="M800 502v49m-17-18 17 18 17-18" stroke="#376B68" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="72" y="564" width="1456" height="236" rx="30" fill="#FFFDF8" stroke="#CFDAD1" stroke-width="3"/>
+  <circle cx="142" cy="629" r="27" fill="#D07854"/><text x="142" y="638" text-anchor="middle" fill="#FFFDF8" font-family="Arial,sans-serif" font-size="26" font-weight="700">!</text>
+  <text x="198" y="638" fill="#193B45" font-family="Arial,sans-serif" font-size="31" font-weight="700">COAST DAY · SEPARATE ROAD / BUS TRANSFER</text>
+  <g fill="#315B57" font-family="Arial,sans-serif" font-size="22">
+    <text x="198" y="682">EN  St Non’s / Caerfai or a harbour: verify the outbound stop and return first.</text>
+    <text x="198" y="712">繁中｜St Non’s／Caerfai 或港口：先核實去程站點和返程。</text>
+    <text x="198" y="742">日本語｜St Non’s／Caerfai・港へは、往路の停留所と帰りを先に確認。</text>
+    <text x="198" y="772">한국어｜St Non’s/Caerfai·항구는 출발 정류장과 귀환편을 먼저 확인하세요.</text>
+    <text x="198" y="794" font-size="20">ไทย｜St Non’s/Caerfai หรือท่าเรือ: ตรวจป้ายขาไปและรถกลับก่อน</text>
+  </g>
+  <rect x="72" y="830" width="1456" height="173" rx="28" fill="#E8D7BD" stroke="#D5B895" stroke-width="3"/>
+  <text x="106" y="868" fill="#193B45" font-family="Arial,sans-serif" font-size="26" font-weight="700">SEASONAL GATE · DO NOT WALK THE A487 VERGE</text>
+  <g fill="#294B4E" font-family="Arial,sans-serif" font-size="20">
+    <text x="106" y="901">EN  12 Oct 2026 snapshot: summer 400/403/404 ended; winter 387/388 does not serve St Davids.</text>
+    <text x="106" y="927">繁中｜2026/10/12 快照：夏季 400/403/404 已停；冬季 387/388 不經 St Davids。</text>
+    <text x="106" y="953">日本語｜2026年10月12日：夏季400/403/404番は終了。冬季387/388番は来ません。</text>
+    <text x="106" y="979">한국어｜2026년 10월 12일 기준 여름 400/403/404 종료, 겨울 387/388은 미운행.</text>
+    <text x="106" y="997" font-size="19">ไทย｜ข้อมูล 12 ต.ค. 2026: สายฤดูร้อนหยุดแล้ว; รถฤดูหนาวไม่ผ่าน St Davids</text>
+  </g>
 </svg>`]
 ]);
 

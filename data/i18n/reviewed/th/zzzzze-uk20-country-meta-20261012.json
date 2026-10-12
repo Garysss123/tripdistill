@@ -1,0 +1,10 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/united-kingdom/"
+  ],
+  "translations": {
+    "Plan UK trip length, overnight bases, airport entry and exit, rail, coach, car and weather-aware rural last-mile connections.": "วางแผนระยะเวลาเที่ยวสหราชอาณาจักร ฐานที่พัก สนามบินขาเข้าและขาออก รถไฟ รถโค้ชระหว่างเมือง รถเช่า และการเดินทางช่วงสุดท้ายในชนบทโดยคำนึงถึงสภาพอากาศ"
+  }
+}

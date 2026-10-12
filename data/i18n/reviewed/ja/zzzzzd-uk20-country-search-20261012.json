@@ -1,0 +1,15 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan UK nights and bases across England, Scotland, Wales and Northern Ireland. Compare 5–7-, 8–10- and 14-night routes, open-jaw airport choices, rail, coach, car and rural last-mile trade-offs.": "イングランド、スコットランド、ウェールズ、北アイルランドを巡る泊数と拠点を計画できます。5～7泊、8～10泊、14泊のルート、オープンジョーの空港選び、鉄道、都市間バス、車、地方の最後の乗り継ぎを比較します。",
+    "United Kingdom itinerary nights": "英国の旅程と泊数",
+    "UK trip length": "英国旅行の日数",
+    "UK open-jaw flights": "英国のオープンジョー航空券",
+    "UK train or coach": "英国の鉄道またはバス",
+    "UK self-drive": "英国のドライブ旅行"
+  }
+}

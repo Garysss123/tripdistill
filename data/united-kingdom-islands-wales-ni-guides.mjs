@@ -311,37 +311,47 @@ export const unitedKingdomIslandsWalesNiClusters = [
   c({
     slug: 'pembrokeshire-west-wales',
     name: 'Pembrokeshire & West Wales',
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
     nation: 'Wales',
     band: 'wales',
     family: 'coast-path-and-branch-log',
     label: 'Coast path and branch log',
     tagline: 'Use one harbour, saint’s city or rail coast at a time; the path does not shorten the roads.',
-    hubIntro: 'St Davids, Tenby and the Ceredigion coast sit on separate West Wales corridors. Rail reaches Tenby and Aberystwyth, while St Davids needs a bus or road connection. Coast-path sections, boats and island visits add weather, tide and final-service decisions that should be explicit.',
-    stay: 'Four to six nights across one or two bases supports a south Pembrokeshire town, St Davids and a Ceredigion branch. Tenby is useful for the south coast; St Davids for the national-park edge; Aberystwyth for rail and northern Ceredigion.',
-    transfer: 'West Wales rail branches are slow and vulnerable to missed connections. Coastal buses can be seasonal. Boats use named harbours and sea-state policies. Protect the final land connection before joining the coast path or island queue.',
-    season: 'Atlantic wind and rain affect boats, cliffs and exposed beaches in every season. Summer improves services but raises road and accommodation pressure; winter demands shorter routes and urban fallbacks.',
+    searchSummary: 'Compare a four-night Tenby base, a six-night Tenby plus St Davids split, or about eight nights adding Aberystwyth. Tenby and Aberystwyth have rail; St Davids needs a road connection. Check winter coastal-bus days and Caldey season before booking.',
+    searchKeywords: ['Tenby base nights', 'St Davids no railway', 'Aberystwyth rail base', '387 388 winter Coastal Cruiser', '400 403 404 summer buses', 'Caldey Island season'],
+    hubIntro: 'Tenby, St Davids and Aberystwyth are three different bases linked by long road or rail legs, not one compact coastal loop. Tenby and Aberystwyth have rail stations; St Davids does not. On 12 October 2026, the county listed the summer 400, 403 and 404 coastal buses as ended for the season; only the reduced 387/388 winter Coastal Cruiser was listed, Thursdays and Saturdays between Pembroke, Angle, Bosherston, Stackpole and Freshwater East. That winter service does not reach St Davids or Tenby. Match every coast walk to its actual return.',
+    stay: 'Four nights in Tenby keeps the south-coast trip on one walkable base but leaves St Davids and Ceredigion for another visit. Six nights split between Tenby and St Davids (for example, three each) gives the west coast its own overnight and avoids a long same-day return; verify the bus or road transfer before booking St Davids. About eight nights can add Aberystwyth as a third base, but treat the northbound move as a transfer day and check the Transport for Wales route rather than trying to combine it with a coastal walk. Book summer rooms and any timed heritage, boat or rail tickets before fixing the route.',
+    transfer: 'Tenby and Aberystwyth sit on different TfW rail branches; St Davids requires a bus or road connection. The coastal bus calendar matters: as checked 12 October 2026, 400 Puffin Shuttle, 403 Celtic Coaster and 404 Strumble Shuttle had passed their 27 September summer end; winter 387/388 runs only Thursday and Saturday on the Pembroke–Angle–Bosherston–Stackpole–Freshwater East corridor. Check the current timetable and exact stop pair for each walking stage. Do not use a coast-path segment to bridge a missing bus or assume a boat lands where it departs.',
+    season: 'Pembrokeshire County Council’s dated 12 October 2026 notice said winter Coastal Cruiser 387/388 service ran from 1 October 2026 to 28 May 2027 on Thursdays and Saturdays; 400/403/404 summer routes ended 27 September. The current Caldey visitor page says the island is closed for the season and reopens Easter 2027. Cliff and heritage-rail operation is separate: check the operator for the visit date. In winter, short light, exposed path conditions and reduced buses make a town day the sensible fallback; in summer, reserve lodging and timed activities early and still confirm tides and sea state.',
     fallback: 'Use Tenby, St Davids or Aberystwyth as a complete town day. If a boat or coast segment fails, do not replace it with another distant exposed headland.',
     sources: [
       ['https://www.visitpembrokeshire.com/', 'Visit Pembrokeshire — official destination guide'],
       ['https://www.pembrokeshirecoast.wales/', 'Pembrokeshire Coast National Park — official visitor information'],
+      ['https://www.pembrokeshire.gov.uk/bus-routes-and-timetables/bus-routes-list-coastal-buses', 'Pembrokeshire County Council — dated summer and winter coastal bus service list'],
+      ['https://caldeyislandwales.com/visiting-caldey', 'Caldey Island — current season status, tickets and sea-dependent sailings'],
       ['https://tfw.wales/', 'Transport for Wales — rail and bus planning']
     ],
     guides: [
       g({
         slug: 'st-davids-coast',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         name: 'St Davids & the Pembrokeshire Coast',
         instrument: 'Cathedral-to-cliff weather card',
         layout: 'saints-city-coast-fold',
         imageQuery: 'St Davids Cathedral Pembrokeshire Wales',
         imageAlt: 'St Davids Cathedral set in its valley in Pembrokeshire',
         purpose: 'Choose St Davids cathedral city or one nearby coast segment as the main day, naming the rural bus, parking or boat connection before the national-park edge becomes an open-ended loop.',
-        summary: 'Arrive in St Davids, descend to the cathedral precinct, then commit to one signed coast, harbour or boat branch only when weather and return transport remain secure.',
+        summary: 'Use St Davids city centre, Oriel y Parc and the Cathedral Close as one walking zone; choose St Non’s/Caerfai or a harbour only after confirming the separate road or bus leg and return. The summer coastal shuttles are out of season in this 12 October snapshot.',
+        searchSummary: 'Walk St Davids High Street, Oriel y Parc and the Cathedral Close as one city zone; choose St Non’s/Caerfai only with a separately confirmed road/bus return. Summer 400/403/404 shuttles are out of season in this 12 October snapshot.',
+        searchKeywords: ['St Davids Cathedral Close walk', 'Oriel y Parc', 'St Davids no railway', 'St Non’s bus transfer', '400 Puffin Shuttle season', 'Pembrokeshire winter bus'],
         choices: [
           ['Cathedral and city depth', 'Use the cathedral, Bishop’s Palace and compact city as the complete day. It is the strongest poor-weather and public-transport choice.'],
           ['St Davids Head coast route', 'Use one signed section from a named trailhead with a turn-back. It adds geology and sea views but requires the full weather window.'],
           ['Boat or Ramsey Sound', 'Book one exact operator and sailing from the named harbour. It offers marine perspective but can cancel and adds a last-mile transfer.']
         ],
-        access: 'St Davids has no railway station. Buses and roads arrive in the city, while coast trailheads and boat harbours sit beyond it. Confirm the rural return and operator pickup; do not assume the cathedral and coast start share one stop.',
+        access: 'St Davids has no railway station. The Cathedral Close, Bishop’s Palace approach, High Street and Oriel y Parc visitor centre make a compact city zone; St Non’s Chapel/Caerfai and boat harbours are separate outward legs, not extensions of that stroll. County information checked 12 October 2026 listed the 400 St Davids–Marloes route only as a summer service ending 27 September, and the winter 387/388 runs on the far-south Pembroke–Angle–Stackpole corridor. Confirm a current local bus, booked transfer or car for the exact coast start and return; do not walk the A487 verge to fill a gap.',
         tradeoff: 'A deep cathedral visit, substantial coast walk and boat trip do not fit one resilient day. Choosing the coast sacrifices palace and city depth; choosing the city gives up marine reach but protects the return.',
         stages: [
           ['Arrive in Britain’s small city', 'Locate the final bus or car pickup before descending to the cathedral valley. Keep the city fallback visible.'],
@@ -349,15 +359,15 @@ export const unitedKingdomIslandsWalesNiClusters = [
           ['Commit to one coast branch', 'Take the confirmed shuttle, road or signed path to the selected headland or harbour. Use a time-based turnaround.'],
           ['Return before the rural cutoff', 'Regain St Davids or the pickup point with margin for wind, path surface and boat delay.']
         ],
-        fallback: 'If boats or cliffs are unsuitable, keep the cathedral, palace, city galleries and a short lower coast viewpoint only when safe. If rural buses fail, stay near the base rather than walking road verges.',
+        fallback: 'If the sea or cliffs are unsafe, keep to the Cathedral Close, Bishop’s Palace exterior or any currently open indoor stop in the city. If the date-specific bus cannot reach the trailhead and return, make St Davids itself the whole day; the winter 387/388 does not serve this coast. Do not turn an access gap into a long roadside walk.',
         watch: [
           ['St Davids is not rail-served', 'Every rail itinerary contains a bus or road leg. Protect the final service and station connection.'],
           ['Cliff paths are exposed', 'Wind, rain and erosion can change a short route. Follow national-park advice and stay back from edges.'],
           ['Boat departure points differ', 'Operators may use distinct harbours and check-in places. Confirm the exact product and pickup.']
         ],
-        duration: 'Allow a full day from a Pembrokeshire base. The cathedral and city need four to six hours; a coast or boat branch owns the remaining daylight.',
+        duration: 'Allow a full day from a Pembrokeshire base. The city and Cathedral Close can occupy four to six hours; a coast or boat branch needs its own transport buffer and most remaining daylight. From Tenby or Haverfordwest, avoid planning a long coast walk on the same day as the inbound transfer.',
         combine: 'Combine the cathedral with the palace or one nearby coast segment. Keep Tenby and Ceredigion for separate days.',
-        verify: 'Check cathedral worship access, Cadw palace information, coast-path alerts, the exact bus or boat, sea weather and final return before departure.',
+        verify: 'Check Cathedral service and visitor access, Cadw Bishop’s Palace opening, National Park path notices, the exact local bus/transfer and return, harbour check-in and sea state. Re-read county seasonal-route dates; the 2026 400/403/404 summer timetable has ended.',
         sources: [
           ['https://stdavidscathedral.org.uk/visit-us', 'St Davids Cathedral — official visitor information'],
           ['https://www.pembrokeshirecoast.wales/coast-path/', 'Pembrokeshire Coast National Park — official walking guidance']
@@ -365,19 +375,23 @@ export const unitedKingdomIslandsWalesNiClusters = [
       }),
       g({
         slug: 'tenby-caldey-coast',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         name: 'Tenby, Caldey & the South Coast',
         instrument: 'Harbour-tide-island manifest',
         layout: 'walled-harbour-tide-sheet',
         imageQuery: 'Tenby harbour Wales colourful houses',
         imageAlt: 'Tenby harbour and colourful waterfront houses in Pembrokeshire',
         purpose: 'Choose Tenby’s walled harbour town, a Caldey Island sailing or one coast-path section, matching tides, boat operation and the branch train instead of stacking all three.',
-        summary: 'Walk from Tenby station into the walled town, read the harbour’s live boat status, complete one island or coast line, and regain the station before the branch service narrows.',
+        summary: 'Walk from Tenby station through the walled town to Castle Hill and the harbour, then choose a safe town/beach loop. Caldey is closed for the 2026 season and reopens Easter 2027; future opening dates remain unconfirmed.',
+        searchSummary: 'Walk Tenby station through High Street and Castle Hill to the harbour, then choose a safe town/beach loop. Caldey is closed for the 2026 season and reopens Easter 2027; future sailing dates remain unconfirmed.',
+        searchKeywords: ['Tenby station to harbour walk', 'Castle Hill Tenby', 'Caldey Island closed 2026', 'Caldey Easter 2027', 'Tenby tide-safe walk'],
         choices: [
           ['Tenby town and beaches', 'Use the walls, harbour, museum and one safe beach edge as the complete day. This is the most flexible and rail-simple choice.'],
           ['Caldey Island sailing', 'Make the exact boat and island visit the central event. It gives a distinct monastic island day but depends on sea and seasonal operation.'],
           ['Coast-path section', 'Take a signed route toward Saundersfoot or another named endpoint with a transport return. It adds landscape but removes the island from the day.']
         ],
-        access: 'Tenby station is inland from the harbour. Boat departure location can change with tide and operator, while coast-path exits require named bus or rail returns. Save the final train and confirm the harbour check-in before exploring the town.',
+        access: 'From Tenby station, follow the signed streets into the walled centre, then descend through Castle Hill to the harbour; return uphill through the town rather than depending on the beach at every tide. The Caldey ticket office is in Castle Square and the licensed boats depart Tenby Harbour, but the operator says sailings depend on sea conditions. Its live page checked 12 October 2026 says the island is closed for the season and reopens Easter 2027; the 2026 window ended 30 September. That is not a confirmed 2027 timetable. Saundersfoot or other coast-path endpoints need their own dated bus/rail return.',
         tradeoff: 'Caldey, a long coast walk and relaxed Tenby are separate priorities. Choosing the island sacrifices path distance; choosing the coast gives up the sailing but creates a land-based return.',
         stages: [
           ['Walk station to walled town', 'Use the direct route and locate the final train before descending to the harbour. Keep luggage outside the boat plan.'],
@@ -385,15 +399,15 @@ export const unitedKingdomIslandsWalesNiClusters = [
           ['Commit to island or path', 'Board the exact sailing or follow one signed section with an exit and time-based turnaround. Do not switch after the main departure window.'],
           ['Return through Tenby', 'Regain the harbour town and station with margin for tide, queues and uphill streets.']
         ],
-        fallback: 'If Caldey sailings cancel, use Tenby’s museum, walls, harbour and a safe short coast or beach route. If coast paths are poor, stay within the compact town rather than transferring to another headland.',
+        fallback: 'For an autumn/winter visit, plan Tenby as the attraction rather than waiting for a Caldey sailing: use the station–High Street–Castle Hill–harbour sequence, the town museum if open, and a tide-safe viewpoint. The island is currently closed until Easter 2027; check for the new season’s dates and the day-of sailing notice before making it the main event. On rough sea or a beach closure, stay on streets and marked upper paths.',
         watch: [
           ['Boat operation follows sea and tide', 'Published seasonal service can still change. Check the operator at the harbour and keep the town day complete.'],
           ['Beaches change at high water', 'Do not use sand as a guaranteed route between town areas. Streets and signed paths remain the dependable connection.'],
           ['The branch line has gaps', 'A late boat can threaten the train. Leave one practical rail option in reserve.']
         ],
-        duration: 'Allow a full day for Caldey or a substantial coast section. Tenby town and beaches need five to six hours from a nearby base.',
+        duration: 'Allow five to six hours for Tenby’s walled core, harbour and one tide-safe shore section from a nearby base. A Caldey sailing, when the operator publishes a season, uses a separate substantial block plus check-in and sea-delay margin; do not combine it with a long walk to Saundersfoot.',
         combine: 'Combine Tenby with Caldey or one signed coast segment, not both at full length. Keep St Davids and Aberystwyth for separate days.',
-        verify: 'Check the exact Caldey boat operator and departure, tide and sea weather, coast-path notices and Transport for Wales branch service before departure.',
+        verify: 'Check whether Caldey is open for the specific year, the official day-of sailing notice, harbour check-in, tide and sea weather, Tenby beach notices, path alerts and the final TfW train. The published 2026 dates have ended; 2027 sailings are not established by this review.',
         sources: [
           ['https://caldeyislandwales.com/', 'Caldey Island — official visitor and boat information'],
           ['https://www.visitpembrokeshire.com/explore-pembrokeshire/towns-and-villages/tenby-and-penally', 'Visit Pembrokeshire — official Tenby guide']
@@ -401,19 +415,23 @@ export const unitedKingdomIslandsWalesNiClusters = [
       }),
       g({
         slug: 'aberystwyth-ceredigion',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
         name: 'Aberystwyth & the Ceredigion Coast',
         instrument: 'Rail-end coast-and-hill board',
         layout: 'promenade-railway-horizon',
         imageQuery: 'Aberystwyth promenade Wales coast',
         imageAlt: 'Aberystwyth promenade and seafront on the Ceredigion coast',
         purpose: 'Use Aberystwyth as the rail-end city and choose the National Library, cliff railway or one Ceredigion coast branch, respecting the long rail journey and sparse onward services.',
-        summary: 'Arrive at Aberystwyth station, complete the town and promenade spine, then add one hill, collection or booked heritage-rail branch with the final train protected.',
+        summary: 'Use Aberystwyth station–town centre–castle seafront as a compact walk, then choose Constitution Hill’s cliff railway or the separately booked Vale of Rheidol train. The operator listed its daily service only through 1 November 2026.',
+        searchSummary: 'Walk from Aberystwyth station through the town to the castle seafront; choose Constitution Hill’s cliff railway or the separately booked Vale of Rheidol steam train. Daily Vale services were listed only through 1 November 2026.',
+        searchKeywords: ['Aberystwyth station promenade walk', 'Constitution Hill cliff railway', 'Vale of Rheidol 2026 season', 'Devil’s Bridge steam train', 'Aberystwyth return train'],
         choices: [
           ['Town, castle and promenade', 'Keep the day around the seafront, university town and museum or library. This is the strongest flexible rail day.'],
           ['Cliff and viewpoint', 'Use Constitution Hill and the cliff railway when operating, with a bounded promenade route. It adds height but depends on wind and service.'],
           ['Vale of Rheidol branch', 'Make the heritage railway the booked event and treat Aberystwyth as the arrival and evening frame. It gives valley depth but owns most of the day.']
         ],
-        access: 'Aberystwyth is the end of a long Transport for Wales line. The National Library is uphill, the cliff railway lies north along the promenade and the Vale of Rheidol has its own station and timetable. Do not schedule a tight mainline connection after a heritage service.',
+        access: 'Aberystwyth station opens onto the town-centre streets; head west toward the castle remains and promenade, or walk north along the seafront to Constitution Hill and the cliff-railway base. The National Library is uphill from town and is a distinct return climb. The Vale of Rheidol platform is beside the standard-gauge station area but uses its own booking and timetable. Pick the hill or the valley before setting out; the long Cambrian mainline return is not a safe tight connection after a heritage service.',
         tradeoff: 'A complete heritage-rail journey, library visit and long seafront day do not fit comfortably. Choosing the valley sacrifices town depth; staying in Aberystwyth gives up the inland branch but protects flexibility.',
         stages: [
           ['Arrive at the rail end', 'Leave the station toward the town or heritage platform, saving the final mainline train and allowing for the long onward journey.'],
@@ -421,18 +439,19 @@ export const unitedKingdomIslandsWalesNiClusters = [
           ['Commit to hill or valley', 'Take the operating cliff railway, climb by the verified route or board the booked Vale of Rheidol service. Do not attempt both major branches.'],
           ['Return before the long rail leg', 'Regain the station with margin for heritage delay, weather and platform changes. Avoid the final useful connection when possible.']
         ],
-        fallback: 'If wind or heritage operation fails, use the National Library, Ceredigion Museum and promenade sections that remain safe. If the mainline is disrupted before departure, stay at the current base rather than beginning an uncertain cross-Wales chain.',
+        fallback: 'If wind closes the cliff railway, stay on the lower promenade or use Ceredigion Museum and the National Library if each is open; avoid the exposed sea wall during overtopping conditions. If the heritage train does not run, the town-and-seafront circuit remains complete. The cliff-railway operator listed April–October daily service 10:00–17:00 in its current schedule and a limited November–mid-March timetable; call or check its noticeboard before an out-of-season visit.',
         watch: [
           ['The rail journey is part of the day', 'Cross-Wales travel can be long and connections matter. Do not count only the final branch segment.'],
           ['Cliff railway operation is conditional', 'Wind, maintenance and season affect service. The town route should remain complete without it.'],
           ['Promenade waves can overtop', 'Storm conditions make the sea edge unsafe. Follow local closures and use inland streets.']
         ],
-        duration: 'Allow a full day from a closer West Wales base, or stay overnight after a long rail journey. The Vale of Rheidol is a dedicated half- to full-day event.',
+        duration: 'Allow a full town day from a closer base, or stay overnight after a long cross-Wales rail arrival. At the 12 October 2026 check, the Vale of Rheidol homepage advertised daily steam trains only until 1 November; its 24-mile Devil’s Bridge round trip takes 2 hours 45 minutes, so treat it as the day’s main branch and book the exact date in advance.',
         combine: 'Combine Aberystwyth with one hill or collection, or make the heritage railway the sole branch. Keep Pembrokeshire and North Wales for separate bases.',
-        verify: 'Check Transport for Wales, Vale of Rheidol or cliff railway operation, National Library access, coast weather and the final train before departure.',
+        verify: 'Check TfW disruptions and the final train, the Vale of Rheidol date-specific inventory, the Cliff Railway live notice and out-of-season timetable, National Library and museum calendars, sea conditions and daylight before departure.',
         sources: [
           ['https://www.library.wales/visit', 'National Library of Wales — official visitor information'],
-          ['https://www.rheidolrailway.co.uk/plan-your-visit/', 'Vale of Rheidol Railway — official visit planning']
+          ['https://vor.wales/', 'Vale of Rheidol Railway — date-specific season, booking and 24-mile journey'],
+          ['https://aberystwythcliffrailway.co.uk/timetable-and-prices', 'Aberystwyth Cliff Railway — seasonal hours and live noticeboard']
         ]
       })
     ]
