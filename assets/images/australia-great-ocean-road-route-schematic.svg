@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1320" viewBox="0 0 1600 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Great Ocean Road and Gariwerd planning schematic</title>
+  <desc id="desc">A conceptual, not-to-scale trip-planning schematic showing the Great Ocean Road sequence from Torquay through Lorne and Apollo Bay to Port Campbell, with a clearly separate dashed inland planning leg to Gariwerd. It gives no distance, bearing, timetable or service promise. A five-language line key is shown.</desc>
+  <defs>
+    <linearGradient id="coast-paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7ead4"/><stop offset="1" stop-color="#e4f0e8"/></linearGradient>
+    <style>
+      .ink{fill:#193e45;font-family:Arial,Helvetica,sans-serif}.muted{fill:#536c68;font-family:Arial,Helvetica,sans-serif}.small{font-size:19px}.body{font-size:23px}.label{font-size:21px;font-weight:700;letter-spacing:1px}.title{font-size:43px;font-weight:700}.cardtitle{font-size:29px;font-weight:700}.cardcopy{font-size:21px}.legend{font-size:18px}.stop{fill:#fffaf0;stroke:#173d46;stroke-width:5}.branch-stop{fill:#f7dfca;stroke:#a45132;stroke-width:4}.panel{fill:#fffdf7;stroke:#bdcbbf;stroke-width:2}.coast-route{fill:none;stroke:#173d46;stroke-width:11;stroke-linecap:round;stroke-linejoin:round}.inland-leg{fill:none;stroke:#bb6039;stroke-width:6;stroke-dasharray:15 14;stroke-linecap:round;stroke-linejoin:round}.rule{stroke:#bdcbbf;stroke-width:2}.step{fill:#d57b47;stroke:#8d472d;stroke-width:2}.number{fill:#fffaf0;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;text-anchor:middle}
+    </style>
+  </defs>
+  <rect width="1600" height="1320" rx="38" fill="url(#coast-paper)"/>
+  <text class="muted label" x="88" y="75">FIELD ATLAS · VICTORIA</text>
+  <text class="ink title" x="88" y="137">Follow the coast; give Gariwerd its own trip.</text>
+  <text class="muted body" x="91" y="180">A route-planning sketch for choosing a sequence and two distinct bases, not navigating between them.</text>
+
+  <rect x="78" y="218" width="1444" height="572" rx="30" fill="#edf3ec" stroke="#c5d2c5" stroke-width="2"/>
+  <rect class="panel" x="1036" y="744" width="430" height="190" rx="24"/>
+  <text class="ink label" x="116" y="266">GREAT OCEAN ROAD · COASTAL SEQUENCE ONLY</text>
+  <text class="muted small" x="118" y="300">Follow the numbered order; the bends and spacing are illustrative.</text>
+
+  <path class="coast-route" d="M270 480 C340 430 425 414 520 444 S730 495 835 446 S1050 420 1160 473"/>
+  <circle class="stop" cx="270" cy="480" r="23"/>
+  <circle class="stop" cx="520" cy="444" r="23"/>
+  <circle class="stop" cx="835" cy="446" r="23"/>
+  <circle class="stop" cx="1160" cy="473" r="23"/>
+  <circle class="step" cx="270" cy="480" r="14"/>
+  <circle class="step" cx="520" cy="444" r="14"/>
+  <circle class="step" cx="835" cy="446" r="14"/>
+  <circle class="step" cx="1160" cy="473" r="14"/>
+  <text class="number" x="270" y="486">1</text>
+  <text class="number" x="520" y="450">2</text>
+  <text class="number" x="835" y="452">3</text>
+  <text class="number" x="1160" y="479">4</text>
+
+  <text class="ink cardtitle" x="207" y="382">Torquay</text>
+  <text class="muted small" x="205" y="414">start of this sequence</text>
+  <text class="ink cardtitle" x="464" y="354">Lorne</text>
+  <text class="muted small" x="463" y="386">coastal base option</text>
+  <text class="ink cardtitle" x="769" y="355">Apollo Bay</text>
+  <text class="muted small" x="770" y="387">coastal base option</text>
+  <text class="ink cardtitle" x="1094" y="391">Port Campbell</text>
+  <text class="muted small" x="1097" y="423">western coast base option</text>
+
+  <path class="inland-leg" d="M1174 496 C1222 571 1256 623 1268 689 S1170 770 1080 791"/>
+  <circle class="branch-stop" cx="1080" cy="791" r="18"/>
+  <rect class="panel" x="116" y="610" width="783" height="126" rx="22"/>
+  <text class="ink label" x="150" y="653">SEPARATE INLAND LEG</text>
+  <text class="muted cardcopy" x="150" y="689">The dashed branch marks a separately planned trip to Gariwerd.</text>
+  <text class="muted small" x="150" y="718">It does not show a road, direct transfer, or scheduled service.</text>
+
+  <text class="ink cardtitle" x="1110" y="826">Gariwerd</text>
+  <text class="muted cardcopy" x="1074" y="861">Grampians National Park</text>
+  <text class="muted small" x="1074" y="892">Choose its own base, access plan and nights.</text>
+  <text class="muted small" x="1074" y="920">Check current park alerts before setting out.</text>
+
+  <rect x="78" y="966" width="1444" height="288" rx="25" fill="#fffaf0" stroke="#d7c7a5" stroke-width="2"/>
+  <text class="ink label" x="116" y="1007">FIVE-LANGUAGE ROUTE KEY</text>
+  <text class="ink legend" x="116" y="1051" lang="en">EN · Solid: Great Ocean Road sequence. Dashed: separate Gariwerd planning leg. No distance, bearing, timetable or service promise.</text>
+  <text class="ink legend" x="116" y="1090" lang="zh-Hant">繁中 · 實線：大洋路行程順序。虛線：另行規劃前往 Gariwerd 的內陸行程。不標示距離、方位、時刻表或交通服務承諾。</text>
+  <text class="ink legend" x="116" y="1129" lang="ja">日本語 · 実線：グレート・オーシャン・ロードの順路。破線：ガリワードへの別途計画する内陸行程。距離・方位・時刻表・交通サービスの保証はありません。</text>
+  <text class="ink legend" x="116" y="1168" lang="ko">한국어 · 실선: 그레이트 오션 로드 순서. 점선: 가리워드 별도 내륙 일정 계획. 거리·방위·시간표·교통 서비스는 보장하지 않습니다.</text>
+  <text class="ink legend" x="116" y="1207" lang="th">ไทย · เส้นทึบ: ลำดับเส้นทางเกรตโอเชียนโรด เส้นประ: วางแผนเส้นทางในแผ่นดินไป Gariwerd แยกต่างหาก ไม่ระบุระยะทาง ทิศทาง ตารางเวลา หรือรับประกันบริการเดินทาง</text>
+  <line class="rule" x1="116" y1="1220" x2="1484" y2="1220"/>
+  <text class="muted small" x="116" y="1244">Not to scale. Confirm road access, park conditions and your return plan for the date of travel.</text>
+</svg>

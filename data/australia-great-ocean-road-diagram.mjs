@@ -1,0 +1,23 @@
+export const australiaGreatOceanRoadDiagram = {
+  src: '/assets/images/australia-great-ocean-road-route-schematic.svg',
+  alt: 'Not-to-scale planning schematic showing the Great Ocean Road sequence from Torquay through Lorne and Apollo Bay to Port Campbell, with a clearly separate inland planning branch to Gariwerd; no distance, bearing, timetable or service promise is made.',
+  caption: 'TripDistill original planning schematic, not a map or navigation aid. The dashed Gariwerd branch is a separate planning leg; it does not identify a road, transfer or scheduled service. Confirm current road access, park alerts and your return plan for the travel date.',
+  source: 'https://tripdistill.com/assets/images/australia-great-ocean-road-route-schematic.svg',
+  label: 'TripDistill original Great Ocean Road and Gariwerd planning schematic',
+  creator: 'TripDistill Editorial Team',
+  license: null,
+  rightsStatus: 'Project original; no separate reuse license declared',
+  rightsStatusUrl: 'https://tripdistill.com/terms-of-use/',
+  attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
+  commercialReuseEligibility: 'unknown',
+  assetType: 'original-planning-diagram',
+  localSha1: 'a42e6895290dbbd74720456ca4e2d00db29a33db',
+  editNote: 'The conceptual coast sequence is numbered Torquay, Lorne, Apollo Bay and Port Campbell. The dashed Gariwerd branch is a separate itinerary-planning cue, not a route, distance, bearing, timetable, transfer or service promise. Original SVG artwork; no separate reuse license is declared, and commercial reuse eligibility is unknown.',
+  inventoryStatus: 'used',
+  sectionId: 'au-great-ocean-road-diagram-title',
+  sectionEyebrow: 'Coastal sequence · separate inland leg · five-language key',
+  sectionTitle: 'Follow the coast; plan Gariwerd separately.',
+  sectionIntro: 'The dashed line separates the inland chapter from the coast sequence. Confirm each road, park access point, current alert and return plan for your dates.',
+  width: 1600,
+  height: 1320
+};
