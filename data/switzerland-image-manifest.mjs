@@ -316,7 +316,7 @@ export const switzerlandImageManifest = {
     "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
     "assetType": "original-planning-diagram",
     "editNote": "Planning schematic only; not a geographic map and not to scale.",
-    "localSha1": "519bdeba45bcfb742705bf9df0de7f2bb49a952e"
+    "localSha1": "b46e68a1052e6b2bd783cd759da1d5332f8e7e01"
   },
   "st-moritz-engadin/st-moritz-lakes": {
     "src": "/assets/images/switzerland-st-moritz-engadin-st-moritz-lakes.webp",
@@ -516,7 +516,7 @@ export const switzerlandRetiredImageRecords = {
     rightsStatus: 'Source-page CC BY-SA 4.0 declaration retained as unverified metadata; no independent rights determination.',
     retirementNote: 'Removed from live displays on 2026-10-12. The source identifies the viewpoint as Bürgenstock/Felsenweg, while the page alt described a view from Mount Rigi. The original WebP and recorded source metadata remain archived; neither the former credit nor this note establishes independent rights clearance.'
   },
-  zermattGlacierParadiseConflict: {
+  zermattGlacierParadiseMultipleLicenseDeclarations: {
     src: '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp',
     alt: 'Klein Matterhorn summit sign beside the viewing platform above the clouds',
     source: 'https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_-_Zermatt_-_Switzerland_-_2005_-_04.jpg',
@@ -528,7 +528,7 @@ export const switzerlandRetiredImageRecords = {
     remoteSha1: '43dcc8fdd4bc2dd86f52eefb259ebc4fc5e87b49',
     localSha1: '9a193f9dba679212c6d27a10df08fff47a3ba3fb',
     inventoryStatus: 'unused',
-    rightsStatus: 'Conflicting Commons metadata declares Public domain and CC BY-SA 4.0; the source record is retained and no independent rights determination is made.',
-    retirementNote: 'Removed from live displays on 2026-10-12 after source-page license conflict was found. The original WebP bytes and source metadata remain retained for provenance only; this record does not establish uploader authority or independent rights clearance.'
+    rightsStatus: 'The Commons source page records both Public domain and CC BY-SA 4.0 declarations; their relationship and the image reuse status have not been independently determined.',
+    retirementNote: 'Removed from live displays on 2026-10-12 as a precaution because reuse status was not independently determined. The original WebP bytes and source metadata remain retained for provenance; this is not a finding of infringement or that the declarations are incompatible.'
   }
 };

@@ -151,20 +151,22 @@ for (const locale of locales) {
   const html = fs.readFileSync(localizedPath(locale, glacierRoute), 'utf8');
   const page = parsePage(html);
   assert.ok(html.includes(glacierDiagram.src), `${locale.code}: Glacier page displays the original schematic`);
-  assert.ok(!html.includes('/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp'), `${locale.code}: conflicted source photo is disabled`);
+  assert.ok(!html.includes('/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp'), `${locale.code}: photo with unresolved multiple source-page license declarations is disabled`);
   const figureNote = page.nodes.find((node) => node.tagName === 'p' && getAttr(node, 'class') === 'ch-diagram-note');
   assert.ok(nodeText(figureNote).trim().length > 80, `${locale.code}: localized, substantive schematic legend is visible`);
   assert.ok(html.includes(glacierDiagram.rightsStatusUrl), `${locale.code}: original artwork links the Terms of Use`);
   if (locale.code !== 'en') assert.notEqual(nodeText(figureNote).trim(), glacierDiagram.diagramNote, `${locale.code}: legend is translated`);
 }
-const retiredGlacier = switzerlandRetiredImageRecords.zermattGlacierParadiseConflict;
+const retiredGlacier = switzerlandRetiredImageRecords.zermattGlacierParadiseMultipleLicenseDeclarations;
 const retiredGlacierPath = path.join(root, retiredGlacier.src.slice(1));
-assert.deepEqual(fs.readFileSync(retiredGlacierPath), baselineFile(retiredGlacier.src.slice(1)), 'conflicted photo file bytes are retained unchanged');
+assert.deepEqual(fs.readFileSync(retiredGlacierPath), baselineFile(retiredGlacier.src.slice(1)), 'photo file bytes remain unchanged after precautionary retirement');
 assert.equal(crypto.createHash('sha1').update(fs.readFileSync(retiredGlacierPath)).digest('hex'), retiredGlacier.localSha1);
 assert.equal(retiredGlacier.inventoryStatus, 'unused');
 assert.deepEqual(retiredGlacier.sourceDeclaredLicenses, ['Public domain', 'CC BY-SA 4.0']);
-assert.match(retiredGlacier.rightsStatus, /Conflicting Commons metadata/i);
-assert.match(retiredGlacier.retirementNote, /does not establish uploader authority/i);
+assert.match(retiredGlacier.rightsStatus, /records both Public domain and CC BY-SA 4\.0 declarations/i);
+assert.match(retiredGlacier.rightsStatus, /have not been independently determined/i);
+assert.match(retiredGlacier.retirementNote, /not a finding of infringement or that the declarations are incompatible/i);
+assert.match(retiredGlacier.retirementNote, /reuse status was not independently determined/i);
 assert.equal(glacierDiagram.localSha1, crypto.createHash('sha1').update(fs.readFileSync(glacierDiagramPath)).digest('hex'));
 
 const rigiRoute = '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/';
@@ -188,4 +190,4 @@ for (const key of expectedPhotos) {
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baselineFile(relative), `${key}: existing image bytes retained`);
 }
 
-console.log(`Zermatt refresh regression passed: four existing routes, five locales, ${expectedDateChanges.size} sitemap dates, ${JSON.stringify(wordDeltas)} English main-text word deltas; localized search, canonical/hreflang, two pixel-reviewed Commons photos, retired conflicted source bytes, five localized schematic legends, unchanged URL set and protected Rigi checks passed.`);
+console.log(`Zermatt refresh regression passed: four existing routes, five locales, ${expectedDateChanges.size} sitemap dates, ${JSON.stringify(wordDeltas)} English main-text word deltas; localized search, canonical/hreflang, two pixel-reviewed Commons photos, precautionary retirement with multiple source-page license declarations retained, five localized schematic legends, unchanged URL set and protected Rigi checks passed.`);
