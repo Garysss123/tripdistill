@@ -1,0 +1,19 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose between Airlie Beach and Hamilton Island for Whitehaven and Hardy Reef, or Townsville for the separate Magnetic Island ferry. Compare vessel time, base nights, terminal, weather fallback and return before booking.": "Whitehaven과 Hardy Reef를 보려면 Airlie Beach와 Hamilton Island를 비교하고, Townsville은 별도 Magnetic Island 페리 출발지로 봅니다. 예약 전에 항해 시간, 숙박 일수, 터미널, 악천후 대안과 복귀편을 비교하세요.",
+    "Plan Townsville to Magnetic Island via the Breakwater passenger ferry, Nelly Bay and the Kinetic island bus. Match the Forts Walk or one bay to daylight, heat, park status and the confirmed return.": "Townsville에서 Magnetic Island까지 Breakwater 여객선, Nelly Bay, 섬의 Kinetic 버스를 연결해 계획하세요. 일조 시간, 더위, 공원 개방 여부, 확인한 귀항편에 맞춰 Forts Walk 또는 한 곳의 만을 고르세요.",
+    "Plan Darwin city and Waterfront by heat, Route 14 and the free precinct shuttle; know the lightning evacuation rule for both lagoons and check MAGNT status before using it as an indoor stop.": "Darwin 시내와 Waterfront는 더위, Route 14, 무료 구역 셔틀을 고려해 계획하세요. 두 라군의 낙뢰 대피 규칙을 확인하고, MAGNT를 실내 방문지로 넣기 전에 운영 여부를 확인하세요.",
+    "Plan Katherine and Nitmiluk as two park sectors about 90 km apart: the gorge visitor centre and Leliyn (Edith Falls). Choose an overnight, exact cruise/walk/transfer and check closures, heat, visitor pass and water rules.": "Katherine과 Nitmiluk은 약 90km 떨어진 두 공원 구역, 협곡 방문자 센터와 Leliyn(Edith Falls)으로 나누어 계획하세요. 숙박 여부와 이용할 크루즈·도보 코스·교통편을 정하고 폐쇄, 더위, 방문자 패스, 물가 안전 수칙을 확인하세요.",
+    "two-sector gorge and heat plan": "두 구역 협곡과 더위 대비 계획"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Codex",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact runtime submodel not exposed",
+    "independentSecondModel": false
+  }
+}

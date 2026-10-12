@@ -3,6 +3,44 @@
 export const reportedSubstantiveBaseline = 458;
 export const correctedSubstantiveBaseline = 457;
 
+// The preceding U.S. source-work ledger contains these 25 paths. The Hawaii
+// refresh below is disjoint and adds four source-verified substantive routes;
+// neither set implies collection-wide U.S. editorial approval.
+export const usaPreviouslyCountedRoutes = Object.freeze([
+  '/usa/alaska/',
+  '/usa/alaska/anchorage-kenai/',
+  '/usa/alaska/denali/',
+  '/usa/sierra-parks/',
+  '/usa/sierra-parks/sequoia-giant-forest/',
+  '/usa/sierra-parks/kings-canyon/',
+  '/usa/yellowstone-tetons/',
+  '/usa/yellowstone-tetons/geyser-basins/',
+  '/usa/yellowstone-tetons/canyon-lamar/',
+  '/usa/yellowstone-tetons/grand-teton/',
+  '/usa/utah-parks/',
+  '/usa/utah-parks/bryce/',
+  '/usa/utah-parks/moab-arches-canyonlands/',
+  '/usa/miami/',
+  '/usa/miami/everglades/',
+  '/usa/orlando/',
+  '/usa/orlando/kennedy-space-center/',
+  '/usa/texas/',
+  '/usa/texas/austin/',
+  '/usa/texas/san-antonio/',
+  '/usa/texas/houston/',
+  '/usa/colorado/',
+  '/usa/colorado/denver/',
+  '/usa/colorado/rocky-mountain/',
+  '/usa/colorado/mountain-towns/'
+]);
+
+export const usaHawaiiNewSubstantiveRoutes = Object.freeze([
+  '/usa/hawaii/',
+  '/usa/hawaii/oahu/',
+  '/usa/hawaii/maui/',
+  '/usa/hawaii/hawaii-island/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -74,7 +112,8 @@ export const canadaNewSubstantiveRoutes = Object.freeze([
 export const completedCanadaRouteCount = 73;
 
 // Eight existing Australian pages enter the substantive completion ledger in
-// the Melbourne/Ocean and Adelaide/Perth refreshes; they add no URLs.
+// the Melbourne/Ocean and Adelaide/Perth refreshes; the four Top End/
+// Whitsundays pages add a second follow-on set. None adds URLs.
 export const australiaNewSubstantiveRoutes = Object.freeze([
   '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
   '/australia/melbourne-port-phillip/phillip-island/',
@@ -83,7 +122,11 @@ export const australiaNewSubstantiveRoutes = Object.freeze([
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
   '/australia/adelaide-wine-island/kangaroo-island/',
   '/australia/perth-fremantle-rottnest/kings-park/',
-  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/',
+  '/australia/darwin-top-end/darwin-waterfront-city/',
+  '/australia/darwin-top-end/katherine-nitmiluk/',
+  '/australia/whitsundays-great-barrier-reef/',
+  '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
 ]);
 
 export const correctedCoverageCheckpoints = Object.freeze([
@@ -97,5 +140,7 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA17 Whitehorse & Kluane', count: 727 }),
   Object.freeze({ label: 'CA18 Yellowknife & Canada overview', count: 732 }),
   Object.freeze({ label: 'Melbourne & Great Ocean gap refresh', count: 736 }),
-  Object.freeze({ label: 'Adelaide & Perth gap refresh', count: 740 })
+  Object.freeze({ label: 'Adelaide & Perth gap refresh', count: 740 }),
+  Object.freeze({ label: 'Hawaii refresh', count: 744 }),
+  Object.freeze({ label: 'Top End & Whitsundays gap refresh', count: 748 })
 ]);

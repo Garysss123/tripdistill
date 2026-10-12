@@ -7,10 +7,13 @@ import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth-diagrams.mjs';
+import { postIntegrationAustraliaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
 const sourceTerminal = '31fc43817cd436e2f868058f4393ed59a800aec8';
+const followOnBase = '90de552c65cf971a33dd4a1ef1976e0037392335';
+const followOnTerminal = '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9';
 const isoDate = '2026-10-12';
 const routes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
@@ -194,9 +197,28 @@ const assetDiffBase = mergeHead.status === 0 && mergeHead.stdout.trim() === sour
   : git(['rev-parse', 'HEAD']).trim() === sourceTerminal ? base : 'HEAD^1';
 assert(sourceInHead || sourceInCurrentMerge, 'The exact pixel-corrected AU source terminal must be in the current integration history.');
 assert.equal(git(['merge-base', base, sourceTerminal]).trim(), base, 'The source branch must descend from the authorized exact base.');
+const followOnInHead = spawnSync('git', ['merge-base', '--is-ancestor', followOnTerminal, 'HEAD'], { cwd: root }).status === 0;
+const followOnInCurrentMerge = mergeHead.status === 0 && spawnSync('git', ['merge-base', '--is-ancestor', followOnTerminal, 'MERGE_HEAD'], { cwd: root }).status === 0;
+assert(followOnInHead || followOnInCurrentMerge, 'The exact Top End/Whitsundays source terminal must be in the integration history.');
+assert.equal(git(['merge-base', followOnBase, followOnTerminal]).trim(), followOnBase, 'The Top End/Whitsundays source must descend from its exact authorized base.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies may change.');
+assert.deepEqual(changedEnglish, [...routes, ...postIntegrationAustraliaRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and the exact later Top End/Whitsundays batch may change.');
+
+const followOnWordDeltas = new Map([
+  ['/australia/darwin-top-end/darwin-waterfront-city/', 730],
+  ['/australia/darwin-top-end/katherine-nitmiluk/', 720],
+  ['/australia/whitsundays-great-barrier-reef/', 544],
+  ['/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/', 768]
+]);
+assert.deepEqual([...followOnWordDeltas.keys()].sort(), [...postIntegrationAustraliaRoutes].sort(), 'The later Top End/Whitsundays route list must stay exact.');
+for (const [route, expectedWords] of followOnWordDeltas) {
+  const relative = `${route.slice(1)}index.html`;
+  const html = fs.readFileSync(path.join(root, relative), 'utf8');
+  assert.equal(html, git(['show', `${followOnTerminal}:${relative}`]), `${route}: English body matches the exact source terminal.`);
+  const before = git(['show', `${followOnBase}:${relative}`]);
+  assert.equal(wordCount(editorialText(html)) - wordCount(editorialText(before)), expectedWords, `${route}: visible editorial body gain against the exact source base.`);
+}
 
 for (const [index, route] of routes.entries()) {
   const englishHtml = fs.readFileSync(fileFor(route), 'utf8');
@@ -244,7 +266,7 @@ const baseSearch = searchByUrl(git(['show', `${base}:data/search-index.json`]));
 const currentSearch = searchByUrl(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'Search index URL set is unchanged.');
 const changedSearch = [...currentSearch.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'Exactly four Australia search records changed in the Adelaide/Perth batch.');
+assert.deepEqual(changedSearch, [...routes, ...postIntegrationAustraliaRoutes].sort(), 'Only the four Adelaide/Perth and exact later Top End/Whitsundays Australia search records changed.');
 for (const route of routes) assert(currentSearch.get(route)?.summary?.trim(), `${route}: English search summary exists.`);
 
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
@@ -252,9 +274,9 @@ const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.x
 assert.equal(baseSitemap.size, 4560, 'Base sitemap contains 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap contains 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const expectedSitemap = routes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+const expectedSitemap = [...routes, ...postIntegrationAustraliaRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
 const changedSitemap = [...currentSitemap.keys()].filter((url) => expectedSitemap.includes(url) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
-assert.deepEqual(changedSitemap, expectedSitemap, 'Exactly four routes × five locales receive a new sitemap date.');
+assert.deepEqual(changedSitemap, expectedSitemap, 'Only the Adelaide/Perth and exact later Top End/Whitsundays route editions receive new sitemap dates.');
 for (const url of expectedSitemap) assert.equal(currentSitemap.get(url), isoDate, `${url}: sitemap lastmod.`);
 
 for (const locale of locales.slice(1)) {

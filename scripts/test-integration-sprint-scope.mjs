@@ -11,6 +11,7 @@ import {
   integrationSitemapRoutes,
   integrationSprintBaseline,
   postIntegrationHawaiiRoutes,
+  postIntegrationAustraliaRoutes,
   localizedIntegrationSitemapRoutes
 } from './integration-sprint-scope.mjs';
 
@@ -43,8 +44,8 @@ const changedFiles = git([
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.equal(changedBodyRoutes.length, 294);
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes]), 'the exact 290 historical integration and four Hawaii English route bodies changed');
+assert.equal(changedBodyRoutes.length, 298);
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes]), 'the exact 290 historical integration and four-route Hawaii and Australia follow-on bodies changed');
 
 function parseSitemap(xml) {
   return new Map([...xml.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod>.*?<\/url>/gs)]
@@ -61,12 +62,15 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedIntegrationSitemapRoutes(prefixes);
-for (const prefix of prefixes) for (const route of postIntegrationHawaiiRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
-assert.equal(changedSitemapUrls.length, 1440);
+for (const prefix of prefixes) {
+  for (const route of postIntegrationHawaiiRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+  for (const route of postIntegrationAustraliaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+}
+assert.equal(changedSitemapUrls.length, 1460);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact 284 integrated and four later Hawaii route dates across five editions have updated sitemap dates'
+  'only the exact 284 integrated and four-route Hawaii and Australia follow-on dates across five editions have updated sitemap dates'
 );
 for (const url of changedSitemapUrls) assert.equal(currentSitemap.get(url), '2026-10-12', `${url}: current sitemap date`);
 
@@ -81,7 +85,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 258);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes]), 'only the exact 254 integrated and four later Hawaii English search records changed');
+assert.equal(changedSearchRoutes.length, 262);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes]), 'only the exact 254 integrated and four-route Hawaii and Australia follow-on English search records changed');
 
-console.log('Integration scope regression passed: 294 exact English bodies, 1,440 date changes over 288 routes × five editions, 258 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 298 exact English bodies, 1,460 date changes over 292 routes × five editions, 262 English search changes, and the unchanged 4,560-URL set.');

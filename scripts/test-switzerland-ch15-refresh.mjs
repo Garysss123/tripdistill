@@ -5,7 +5,7 @@ import path from 'node:path';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate, switzerlandCh15ReviewDate } from '../data/switzerland-ch15-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
-import { postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
 import { loadCatalog } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -161,7 +161,8 @@ const sourceDateChanges = [...sourceSitemap].filter(([route, date]) => baseSitem
 assert.deepEqual(sourceDateChanges, [...targetLocalized].sort(), 'the exact CH15 source terminal changes only the four target routes across five locales');
 const integrationDateChanges = [...currentSitemap].filter(([route, date]) => integrationSitemap.get(route) !== date).map(([route]) => route).sort();
 const laterHawaiiLocalized = [...postIntegrationHawaiiRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
-assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterCa16Ca18Localized, ...laterAustraliaGapLocalized, ...laterHawaiiLocalized].sort(), 'the cumulative integration changes only the four CH15, four later CA15, twelve exact CA16–CA18, eight exact AU gap, and four Hawaii routes across five locales');
+const laterAustraliaFollowOnLocalized = [...postIntegrationAustraliaRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
+assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterCa16Ca18Localized, ...laterAustraliaGapLocalized, ...laterHawaiiLocalized, ...laterAustraliaFollowOnLocalized].sort(), 'the cumulative integration changes only the four CH15, four later CA15, twelve exact CA16–CA18, sixteen exact AU gap, four Hawaii and four Top End/Whitsundays routes across five locales');
 for (const route of targetLocalized) assert.equal(currentSitemap.get(route), switzerlandCh15IsoDate, `${route} carries the CH15 review date`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
@@ -176,7 +177,8 @@ const laterCa15Set = new Set(laterCa15Routes);
 const laterCa16Ca18Set = new Set(laterCa16Ca18SearchRoutes);
 const laterAustraliaGapSet = new Set(laterAustraliaGapRoutes);
 const laterHawaiiSet = new Set(postIntegrationHawaiiRoutes);
-for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !laterCa15Set.has(item.url) && !laterCa16Ca18Set.has(item.url) && !laterAustraliaGapSet.has(item.url) && !laterHawaiiSet.has(item.url))) assert.deepEqual(record, integrationSearch.find((item) => item.url === record.url), 'CH15/CA15–CA18/AU-gap/Hawaii integration changed an undeclared non-target search record: ' + record.url);
+const laterAustraliaFollowOnSet = new Set(postIntegrationAustraliaRoutes);
+for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !laterCa15Set.has(item.url) && !laterCa16Ca18Set.has(item.url) && !laterAustraliaGapSet.has(item.url) && !laterHawaiiSet.has(item.url) && !laterAustraliaFollowOnSet.has(item.url))) assert.deepEqual(record, integrationSearch.find((item) => item.url === record.url), 'CH15/CA15–CA18/AU-gap/Hawaii/Top End integration changed an undeclared non-target search record: ' + record.url);
 for (const route of targetRoutes) assert.deepEqual(currentSearch.find((item) => item.url === route), sourceSearch.find((item) => item.url === route), `${route} search record matches the exact CH15 source terminal`);
 
 let totalBaseWords = 0;

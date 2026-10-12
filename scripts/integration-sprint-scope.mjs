@@ -389,6 +389,13 @@ export const postIntegrationHawaiiRoutes = Object.freeze([
   '/usa/hawaii/hawaii-island/'
 ]);
 
+export const postIntegrationAustraliaRoutes = Object.freeze([
+  '/australia/darwin-top-end/darwin-waterfront-city/',
+  '/australia/darwin-top-end/katherine-nitmiluk/',
+  '/australia/whitsundays-great-barrier-reef/',
+  '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
@@ -397,10 +404,15 @@ export const localizedPostIntegrationHawaiiSitemapRoutes = (prefixes) => new Set
   prefixes.flatMap((prefix) => postIntegrationHawaiiRoutes.map((route) => `${prefix}${route}`))
 );
 
+export const localizedPostIntegrationAustraliaSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationAustraliaRoutes.map((route) => `${prefix}${route}`))
+);
+
 export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
   const routes = localizedIntegrationSitemapRoutes(prefixes);
   for (const prefix of prefixes) {
     for (const route of postIntegrationHawaiiRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

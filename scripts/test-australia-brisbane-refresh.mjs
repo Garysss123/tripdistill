@@ -6,6 +6,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
+import { postIntegrationAustraliaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a9c6bd648d64054c981f57e4696c43a5a49251a4';
@@ -65,7 +66,7 @@ const laterAdelaidePerthGapRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...sydneyGapRoutes, ...nswGapRoutes, ...brisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...sydneyGapRoutes, ...nswGapRoutes, ...brisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes, ...postIntegrationAustraliaRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';

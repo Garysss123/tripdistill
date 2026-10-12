@@ -8,6 +8,7 @@ import { SaxesParser } from 'saxes';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 import { australiaSydneyDiagram } from '../data/australia-sydney-diagram.mjs';
 import { australiaImageManifest } from '../data/australia-image-manifest.mjs';
+import { postIntegrationAustraliaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '0b95d241600659dfb360de29a655e180baafc75c';
@@ -240,7 +241,7 @@ assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 5, 
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-const expectedHtml = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...melbourneOceanGapRoutes, ...adelaidePerthGapRoutes].map((route) => `${route.slice(1)}index.html`).sort();
+const expectedHtml = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...melbourneOceanGapRoutes, ...adelaidePerthGapRoutes, ...postIntegrationAustraliaRoutes].map((route) => `${route.slice(1)}index.html`).sort();
 assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to the Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns route groups; found ${changedHtml.join(', ')}.`);
 
 const indexByRoute = new Map(search.map((record) => [record.url, record]));
@@ -394,10 +395,10 @@ assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap
 // The integration-sprint scope regression validates every non-target route and
 // date against the fixed global baseline. This test scopes its date assertion
 // to the Australia routes selected by the AU regressions below.
-const targetSitemapPaths = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...melbourneOceanGapRoutes, ...adelaidePerthGapRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const targetSitemapPaths = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...melbourneOceanGapRoutes, ...adelaidePerthGapRoutes, ...postIntegrationAustraliaRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => new URL(`https://tripdistill.com${route}`).pathname.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the selected Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns and later AU-gap route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the selected Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns, later AU-gap and Top End/Whitsundays route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -405,5 +406,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log(`Sydney refresh regression passed: ${routes.length} Sydney routes with substantive deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync including the later Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns batches, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
+  console.log(`Sydney refresh regression passed: ${routes.length} Sydney routes with substantive deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync including later Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns and Top End/Whitsundays batches, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
 }

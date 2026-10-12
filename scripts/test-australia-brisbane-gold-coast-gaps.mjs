@@ -8,6 +8,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaGuides } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
+import { postIntegrationAustraliaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const requestedParent = '6aa9321ff72077cf5143516f466add5ca2a830cc';
@@ -123,7 +124,8 @@ const laterAustraliaBodyRoutes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
   '/australia/adelaide-wine-island/kangaroo-island/',
   '/australia/perth-fremantle-rottnest/kings-park/',
-  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/',
+  ...postIntegrationAustraliaRoutes
 ];
 assert.deepEqual(englishHtml, [...routes, ...laterAustraliaBodyRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and eight subsequent AU gap improvements may change from the exact sprint base.');
 
@@ -132,15 +134,15 @@ const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-in
 const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record]));
 const currentSearchByUrl = new Map(currentSearch.map((record) => [record.url, record]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
-const changedSearch = routes.filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'All four authorized English search records must change from the exact source task base.');
+const changedSearch = [...currentSearchByUrl.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
+assert.deepEqual(changedSearch, [...routes, ...laterAustraliaBodyRoutes].sort(), 'Only the selected Brisbane/Gold Coast and exact later AU gap search records may change from the source task base.');
 
 const baseSitemap = sitemapEntries(git(['show', `${taskStart}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedDatePaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const expectedDatePaths = [...routes, ...laterAustraliaBodyRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDatePaths = expectedDatePaths.filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedDatePaths, expectedDatePaths, 'All 20 selected route/language sitemap dates must change from the exact source task base.');
+assert.deepEqual(changedDatePaths, expectedDatePaths, 'Only the selected Brisbane/Gold Coast and exact later AU route/language sitemap dates may change from the source task base.');
 for (const route of expectedDatePaths) assert.equal(currentSitemap.get(route), isoDate, `${route}: sitemap lastmod.`);
 
 const work = new Map(collectTranslationWork().map((record) => [record.route, record]));

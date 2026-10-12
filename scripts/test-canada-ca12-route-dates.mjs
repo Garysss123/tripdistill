@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 import { laterCa16Ca18DatedRoutes, laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
@@ -74,7 +74,8 @@ const checkpointContinuationRoutes = [
   '/switzerland/locarno-ascona-valleys/',
   '/switzerland/schaffhausen-rhine-falls/',
   ...switzerlandCh15Routes,
-  ...postIntegrationHawaiiRoutes
+  ...postIntegrationHawaiiRoutes,
+  ...postIntegrationAustraliaRoutes
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -130,7 +131,7 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Gold Coast, Cairns, CH14, CH15, Australia gap and the four Hawaii date routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Gold Coast, Cairns, CH14, CH15, Australia gap, Hawaii and Top End/Whitsundays date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: checkpoint continuation lastmod must be current.`);
 

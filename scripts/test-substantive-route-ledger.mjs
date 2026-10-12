@@ -13,6 +13,8 @@ import {
   correctedCoverageCheckpoints,
   correctedSubstantiveBaseline,
   reportedSubstantiveBaseline,
+  usaPreviouslyCountedRoutes,
+  usaHawaiiNewSubstantiveRoutes,
   vietnamCompletedRoutes,
   vietnamExcludedRoutes
 } from '../data/substantive-route-ledger.mjs';
@@ -65,7 +67,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -80,10 +82,18 @@ assert(canadaNewSubstantiveRoutes.every((route) => canadaRoutes.includes(route))
 for (const route of canadaNewSubstantiveRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Canada ledger path is missing: ${route}`);
 }
-assert.equal(australiaNewSubstantiveRoutes.length, 8, 'The two Australia gap batches add eight exact substantive body improvements, not routes.');
-assert.equal(new Set(australiaNewSubstantiveRoutes).size, 8, 'Australia additions must be unique.');
+assert.equal(australiaNewSubstantiveRoutes.length, 12, 'The three later Australia gap batches add twelve exact substantive body improvements, not routes.');
+assert.equal(new Set(australiaNewSubstantiveRoutes).size, 12, 'Australia additions must be unique.');
 for (const route of australiaNewSubstantiveRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Australia ledger path is missing: ${route}`);
+}
+assert.equal(usaPreviouslyCountedRoutes.length, 25, 'The earlier U.S. source-work ledger has exactly 25 disclosed existing paths.');
+assert.equal(new Set(usaPreviouslyCountedRoutes).size, 25, 'The earlier U.S. path set must be unique.');
+assert.equal(usaHawaiiNewSubstantiveRoutes.length, 4, 'Hawaii adds four source-verified substantive routes.');
+assert.equal(new Set(usaHawaiiNewSubstantiveRoutes).size, 4, 'Hawaii additions must be unique.');
+assert(usaHawaiiNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route)), 'Hawaii routes are disjoint from the exact preceding 25-route U.S. ledger.');
+for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes]) {
+  assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `U.S. ledger path is missing: ${route}`);
 }
 
 const originalOverview = git(['show', `${originalAtlas}:vietnam/index.html`]);
@@ -94,4 +104,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 improvements; Australia’s exact eight late gap improvements; corrected checkpoints through 740; unchanged non-card Vietnam overview copy.');
+console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 prior U.S. paths are disjoint from four new Hawaii routes; Australia’s exact twelve late gap improvements; corrected checkpoints through 748; unchanged non-card Vietnam overview copy.');

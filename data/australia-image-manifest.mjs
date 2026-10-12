@@ -492,7 +492,7 @@ export const australiaImageManifest = {
   },
   "whitsundays-great-barrier-reef/townsville-magnetic-island": {
     "src": "/assets/images/australia-whitsundays-great-barrier-reef-townsville-magnetic-island.webp",
-    "alt": "Rocky coast and blue water on Magnetic Island",
+    "alt": "Palm-fringed Horseshoe Bay beach and a red boat on Magnetic Island",
     "source": "https://commons.wikimedia.org/wiki/File:Horseshoe_Bay_Beach,_Magnetic_Island.jpg",
     "label": "Horseshoe Bay Beach, Magnetic Island.jpg",
     "creator": "Joshua Tagicakibau",

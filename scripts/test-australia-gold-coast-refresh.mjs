@@ -9,6 +9,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { collectTranslationWork } from './i18n-lib.mjs';
 import { australiaGoldCoastDiagram } from '../data/australia-gold-coast-diagram.mjs';
+import { postIntegrationAustraliaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'ec5e2f319333e946e5792b99777e5ce99a97e2b6';
@@ -223,7 +224,7 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = routes.flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...postIntegrationAustraliaRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => expectedLastmod.includes(route) && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'The four selected routes across five editions must receive a new lastmod.');
