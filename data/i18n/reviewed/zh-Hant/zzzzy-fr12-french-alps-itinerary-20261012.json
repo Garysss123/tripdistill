@@ -1,0 +1,20 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/french-alps/",
+    "/france/french-alps/annecy-lake-old-town/",
+    "/france/french-alps/chamonix-mountain-systems/",
+    "/france/french-alps/grenoble-bastille-chartreuse/"
+  ],
+  "translations": {
+    "Departure · Chamonix base": "離開日 · 霞慕尼基地",
+    "For a rail departure, sleep near Chamonix-Mont-Blanc station the night before. Check the dated connection through Saint-Gervais–Le Fayet, leave a transfer margin and do not schedule a lift or boat before departure.": "若搭火車離開，前一晚住在 Chamonix-Mont-Blanc 車站附近。查看經 Saint-Gervais–Le Fayet 的指定日期接續交通，預留轉乘時間，出發前不要安排纜車或船班。",
+    "Compagnie des Bateaux du Lac d’Annecy — official cruise routes and bookings": "Compagnie des Bateaux du Lac d’Annecy — 官方遊船航線與預訂資訊"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

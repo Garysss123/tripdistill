@@ -1181,6 +1181,21 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Cap_Canai
   detail: 'Marseille photo review: the exact Commons page lists DJ Poldoc, 5 October 2013, original 3,872 × 2,592 pixels, and a CC0 1.0 declaration. The local 1,600 × 1,066 WebP shows Cassis harbor with boats in the foreground and Cap Canaille beyond; a mast/pole partly crosses the cliff view. Source SHA-1 4c262f89d1eaa0d52a65b8d2593f0a972257f6fd matches the recorded manifest value. The visible credit retains source and creator provenance, though CC0 does not require attribution. This records the page declaration and image match, not independent rights or chain-of-title verification.',
   checkedOn: '2026-10-12'
 });
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Canal_@_Old_Town_@_Annecy_(35501456545).jpg', {
+  detail: 'French Alps photo review: the exact Commons page identifies Guilhem Vellut, the Annecy old-town canal subject, and CC BY 2.0. The page lists the original 5,472 × 3,648 source and SHA-1 67906f432c94821646db902c7f98a1ce8b0294fe. Local WebP pixels match the canals and old-town waterfront; this records the source-page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Valley_of_Chamonix_towards_the_north_from_Aiguille_du_Midi,_Chamonix-Mont-Blanc,_2007.jpg', {
+  detail: 'French Alps photo review: the exact Commons page identifies DimiTalen, the Chamonix valley/Mont Blanc subject, and a CC0 1.0 dedication. The page lists the original 2,982 × 1,983 file and SHA-1 c24f0e9cc3f6d43563b34e716073879879e145ae. Local WebP pixels show the valley from Aiguille du Midi; this records the source-page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:T%C3%A9l%C3%A9ph%C3%A9rique_de_Grenoble_Bastille_-_Grenoble-Bastille_cable_car_-_%D9%86%D9%82%D9%84_%D8%A8%D8%A7%D9%84%D9%83%D8%A7%D8%A8%D9%84%D8%A7%D8%AA_%D8%BA%D8%B1%D9%88%D9%86%D9%88%D8%A8%D9%84-%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%AA%D9%8A%D9%84.jpg', {
+  detail: 'French Alps retired-photo source review: the exact Commons page identifies Sami Mlouhi and declares CC BY-SA 4.0. Local pixels show a close-up of the Grenoble Bastille cable-car cabin/support, not the basin panorama named by the old guide alt text. The unchanged derivative is retained but no longer used; the source-page declaration is not independent rights or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+visualReviewDateByAsset.set('/assets/images/france-french-alps-annecy-lake-old-town.webp', '2026-10-12');
+visualReviewDateByAsset.set('/assets/images/france-french-alps-chamonix-mountain-systems.webp', '2026-10-12');
+visualReviewDateByAsset.set('/assets/images/france-french-alps-grenoble-bastille-chartreuse.webp', '2026-10-12');
 const entries = [];
 const sourceConflicts = [];
 const unmatchedByAsset = [];

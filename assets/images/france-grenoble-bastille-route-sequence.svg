@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Grenoble Gare to the Bastille — route sequence schematic</title>
+  <desc id="desc">Four ordered planning stages from Grenoble Gare through the city centre and Isère river to the Bastille lower station and fort. Five-language legend. Not a geographic map and not to scale.</desc>
+  <metadata>Original TripDistill Editorial Team; sequence schematic, not geographically scaled. No separate reuse license declared.</metadata>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f1e8"/><stop offset="1" stop-color="#e5eff0"/></linearGradient>
+    <linearGradient id="route" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e706e"/><stop offset="1" stop-color="#14334b"/></linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#183a50" flood-opacity=".12"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1e706e"/></marker>
+  </defs>
+  <rect width="1600" height="1066" rx="34" fill="url(#bg)"/>
+  <path d="M0 780C250 710 470 844 733 777s470-52 867 4v285H0Z" fill="#d9e8e4" opacity=".55"/>
+  <text x="90" y="106" fill="#587077" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">GRENOBLE · AUVERGNE-RHÔNE-ALPES</text>
+  <text x="90" y="178" fill="#14334b" font-family="Arial, sans-serif" font-size="52" font-weight="700">Gare → city core → Bastille</text>
+  <rect x="1116" y="119" width="394" height="56" rx="28" fill="#14334b"/>
+  <text x="1313" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="1">SEQUENCE ONLY · NOT TO SCALE</text>
+  <text x="90" y="229" fill="#47616a" font-family="Arial, sans-serif" font-size="24">Choose the indoor or riverfront block first; ascend once, then return by a confirmed service.</text>
+
+  <path d="M360 456H477M715 456H830M1070 456H1182" stroke="url(#route)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <circle cx="418" cy="456" r="9" fill="#f0b44b"/><circle cx="773" cy="456" r="9" fill="#f0b44b"/><circle cx="1126" cy="456" r="9" fill="#f0b44b"/>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="313" width="278" height="282" rx="22" fill="#ffffff"/>
+    <rect x="455" y="313" width="278" height="282" rx="22" fill="#ffffff"/>
+    <rect x="820" y="313" width="278" height="282" rx="22" fill="#ffffff"/>
+    <rect x="1185" y="313" width="325" height="282" rx="22" fill="#ffffff"/>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <g fill="#1e706e"><circle cx="127" cy="351" r="21"/><circle cx="492" cy="351" r="21"/><circle cx="857" cy="351" r="21"/><circle cx="1222" cy="351" r="21"/></g>
+    <g fill="#fff" font-size="18" font-weight="700" text-anchor="middle"><text x="127" y="358">01</text><text x="492" y="358">02</text><text x="857" y="358">03</text><text x="1222" y="358">04</text></g>
+    <g fill="#14334b" font-size="27" font-weight="700"><text x="118" y="420">GRENOBLE GARE</text><text x="483" y="420">OLD CENTRE</text><text x="848" y="420">RIVER GATEWAY</text><text x="1213" y="420">BASTILLE FORT</text></g>
+    <g fill="#47616a" font-size="21">
+      <text x="118" y="475"><tspan x="118" dy="0">Arrive by TER.</tspan><tspan x="118" dy="31">Use M Réso or</tspan><tspan x="118" dy="31">walk in from the</tspan><tspan x="118" dy="31">station forecourt.</tspan></text>
+      <text x="483" y="475"><tspan x="483" dy="0">Choose Musée de</tspan><tspan x="483" dy="31">Grenoble or the</tspan><tspan x="483" dy="31">Place Saint-André</tspan><tspan x="483" dy="31">civic streets.</tspan></text>
+      <text x="848" y="475"><tspan x="848" dy="0">Jardin de Ville →</tspan><tspan x="848" dy="31">Quai Stéphane Jay.</tspan><tspan x="848" dy="31">Check the cable-car</tspan><tspan x="848" dy="31">opening and return.</tspan></text>
+      <text x="1213" y="475"><tspan x="1213" dy="0">Ride when operating;</tspan><tspan x="1213" dy="31">read the panorama,</tspan><tspan x="1213" dy="31">then descend by the</tspan><tspan x="1213" dy="31">confirmed service.</tspan></text>
+    </g>
+  </g>
+
+  <rect x="90" y="661" width="1420" height="319" rx="24" fill="#14334b"/>
+  <text x="122" y="711" fill="#f0b44b" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">FIVE-LANGUAGE ROUTE KEY</text>
+  <g font-family="Arial, sans-serif" font-size="21">
+    <text x="122" y="761" fill="#ffffff"><tspan font-weight="700">EN</tspan><tspan dx="20">Order only; schematic, not to scale. Check the live return.</tspan></text>
+    <text x="122" y="805" fill="#ffffff"><tspan font-weight="700">繁體中文</tspan><tspan dx="20">僅示路線順序；此示意圖不按比例。請查即時返程資訊。</tspan></text>
+    <text x="122" y="849" fill="#ffffff"><tspan font-weight="700">日本語</tspan><tspan dx="20">順路のみを示す模式図（縮尺なし）。帰路は最新情報を確認。</tspan></text>
+    <text x="122" y="893" fill="#ffffff"><tspan font-weight="700">한국어</tspan><tspan dx="20">순서만 나타낸 도식이며 축척을 적용하지 않았습니다. 돌아오는 편은 실시간으로 확인하세요.</tspan></text>
+    <text x="122" y="937" fill="#ffffff"><tspan font-weight="700">ภาษาไทย</tspan><tspan dx="20">แผนภาพแสดงลำดับเส้นทาง ไม่ได้วาดตามสัดส่วน โปรดตรวจสอบเที่ยวกลับล่าสุด</tspan></text>
+  </g>
+  <text x="90" y="1025" fill="#47616a" font-family="Arial, sans-serif" font-size="16">Original TripDistill editorial schematic · A route sequence, not a navigation map</text>
+</svg>

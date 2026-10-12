@@ -106,6 +106,12 @@ const franceCoteDAzurEditedRoutes = [
   '/france/cote-dazur/eze-monaco-menton/',
   '/france/cote-dazur/antibes-cannes-west-coast/'
 ];
+const franceFrenchAlpsEditedRoutes = [
+  '/france/french-alps/',
+  '/france/french-alps/annecy-lake-old-town/',
+  '/france/french-alps/chamonix-mountain-systems/',
+  '/france/french-alps/grenoble-bastille-chartreuse/'
+];
 const unitedKingdomLastmod = '2026-09-20';
 const unitedKingdomLondonLastmod = '2026-10-11';
 const unitedKingdomPeakLastmod = '2026-10-12';
@@ -396,6 +402,7 @@ const parisLastmod = '2026-10-06';
 const parisRegionDayTripsLastmod = '2026-10-07';
 const normandyLastmod = '2026-10-07';
 const franceResponsiveLastmod = '2026-10-07';
+const franceFrenchAlpsLastmod = '2026-10-12';
 const lyonReviewedLastmod = '2026-10-11';
 const alsaceReviewedLastmod = '2026-10-11';
 const bordeauxGirondeReviewedLastmod = '2026-10-11';
@@ -790,6 +797,11 @@ for (const route of franceResponsiveEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date France regional responsive edit route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceResponsiveLastmod });
+}
+for (const route of franceFrenchAlpsEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed French Alps route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceFrenchAlpsLastmod });
 }
 for (const route of franceMarseilleEditedRoutes) {
   const record = records.get(route);
