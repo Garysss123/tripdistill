@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Cameron Highlands": "マレーシア：キャメロンハイランド",
+    "Malaysia - Ipoh & Kinta Valley": "マレーシア：イポーとキンタ渓谷"
+  }
+}

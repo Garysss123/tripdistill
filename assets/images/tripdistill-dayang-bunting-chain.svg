@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Dayang Bunting boat-to-lake planning diagram</title>
+  <desc id="desc">An original, non-geographic sequence diagram from mainland pickup to confirmed jetty, boat crossing, island landing, forest walk and freshwater lake, then back along the same chain.</desc>
+  <metadata>TripDistill project original; no separate reuse license declared. Planning schematic only: not a geographic map and not to scale.</metadata>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#dff1e8"/><stop offset="1" stop-color="#f7f0d9"/></linearGradient>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#7ab9b0"/><stop offset="1" stop-color="#267e7a"/></linearGradient>
+    <linearGradient id="island" x2="0" y2="1"><stop stop-color="#6c9c58"/><stop offset="1" stop-color="#285c4d"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f37" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="960" height="640" rx="34" fill="url(#sky)"/>
+  <path d="M0 300c110-30 155 12 251-8s150-42 257-5 166 36 254 3 132-41 198-20v370H0Z" fill="url(#water)"/>
+  <path d="M0 350q35-17 70 0t70 0 70 0 70 0M390 385q35-17 70 0t70 0 70 0 70 0M90 515q35-17 70 0t70 0 70 0" fill="none" stroke="#d0eee3" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+  <path d="M0 267q115-46 218-8v105H0Z" fill="#558463"/>
+  <path d="M0 288q84-39 166-5v81H0Z" fill="#376c59"/>
+  <path d="M40 258v77m21-87v87m22-96v96" stroke="#244c43" stroke-width="5"/>
+  <path d="M54 323h78m-78 14h78" stroke="#d9bd7d" stroke-width="9" stroke-linecap="round"/>
+  <path d="M462 330c37-92 91-151 177-162 87 5 152 70 174 160-15 67-84 106-173 108-92-1-154-36-178-106Z" fill="url(#island)" filter="url(#shadow)"/>
+  <path d="M506 320c31-72 78-114 135-119 66 6 111 50 133 118-19 50-67 78-134 80-64-2-113-30-134-79Z" fill="#7ea962" opacity=".8"/>
+  <ellipse cx="650" cy="330" rx="68" ry="42" fill="#5daeb0" stroke="#d9eee1" stroke-width="8"/>
+  <path d="M552 235c34 18 53 50 58 83" fill="none" stroke="#f3d483" stroke-width="8" stroke-linecap="round" stroke-dasharray="3 17"/>
+  <g transform="translate(242 305)" filter="url(#shadow)">
+    <path d="M0 29h110l-17 25H19Z" fill="#9e5739" stroke="#f4dfaf" stroke-width="5"/>
+    <path d="M29 27V2h45v25M50 2v-15" fill="none" stroke="#f7f0d9" stroke-width="6"/>
+    <path d="M8 64q24-12 48 0t48 0" fill="none" stroke="#d0eee3" stroke-width="5"/>
+  </g>
+  <path d="M142 377c66 6 91-23 132-34m119-6c32-8 52-8 82-1" fill="none" stroke="#f3d483" stroke-width="6" stroke-dasharray="12 12" marker-end="url(#arrow)"/>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 12 6 0 12Z" fill="#f3d483"/></marker></defs>
+  <g font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#173f37">
+    <g><circle cx="77" cy="455" r="27" fill="#f5e4a6"/><text x="77" y="464">1</text></g>
+    <g><circle cx="287" cy="455" r="27" fill="#f5e4a6"/><text x="287" y="464">2</text></g>
+    <g><circle cx="538" cy="455" r="27" fill="#f5e4a6"/><text x="538" y="464">3</text></g>
+    <g><circle cx="650" cy="330" r="27" fill="#f5e4a6"/><text x="650" y="339">4</text></g>
+  </g>
+  <path d="M769 538c26-26 52-26 78 0m-65 13c18-18 36-18 54 0m-38 14c8-8 16-8 24 0" fill="none" stroke="#d3e9d6" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+</svg>

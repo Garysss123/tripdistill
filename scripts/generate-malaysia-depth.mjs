@@ -69,6 +69,9 @@ function sourcesList(sources) {
 }
 
 function imageCredit(image) {
+  if (image.originalSchematic) {
+    return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, <a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">${escapeHtml(image.rightsStatus)}</a>. ${escapeHtml(image.editNote)}</li>`;
+  }
   const attribution = image.attribution || image.creator;
   const attributionEnd = image.attribution ? '.' : ',';
   const license = image.licenseUrl
@@ -78,12 +81,14 @@ function imageCredit(image) {
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> &#8212; ${escapeHtml(attribution)}${attributionEnd} ${license}. Resized, center-cropped and converted to WebP; no other material edits.${shareAlike}</li>`;
 }
 
-function relatedCards(cluster, currentSlug = '') {
-  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `
+function relatedCards(cluster, currentSlug = '', showImages = true) {
+  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => {
+    const imageLine = showImages ? `            <img src="${guide.image.src}" width="1440" height="960" loading="lazy" decoding="async" alt="${escapeHtml(guide.image.alt)}">\n` : '';
+    return `
           <a class="md-related-card" href="/malaysia/${cluster.hubSlug}/${guide.slug}/">
-            <img src="${guide.image.src}" width="1440" height="960" loading="lazy" decoding="async" alt="${escapeHtml(guide.image.alt)}">
-            <span><small>Chapter ${String(cluster.guides.indexOf(guide) + 1).padStart(2, '0')}</small><strong>${escapeHtml(guide.name)}</strong><em>${escapeHtml(guide.motif)}</em></span>
-          </a>`).join('');
+${imageLine}            <span><small>Chapter ${String(cluster.guides.indexOf(guide) + 1).padStart(2, '0')}</small><strong>${escapeHtml(guide.name)}</strong><em>${escapeHtml(guide.motif)}</em></span>
+          </a>`;
+  }).join('');
 }
 
 function guideSchema(guide) {
@@ -152,7 +157,7 @@ function childPage(guide, cluster) {
     <main id="main-content" class="page-content md-guide">
       <section class="md-hero" aria-labelledby="md-title">
         <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(guide.reviewedOn || '30 August 2026')}</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
-        <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure>
+        <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.rightsStatus || guide.image.license)}</figcaption></figure>
         <div class="md-instrument" aria-hidden="true"><span>${escapeHtml(guide.instrument)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><em>${escapeHtml(guide.motif)}</em></div>
       </section>
 
@@ -168,9 +173,9 @@ function childPage(guide, cluster) {
 
       <section class="md-section md-faq" id="faq" aria-labelledby="faq-title"><div class="md-section-head"><div><span class="md-section-label">Planning answers</span><h2 id="faq-title">${escapeHtml(guide.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
 
-      <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div><p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
+      <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug, guide.relatedImages !== false)}</div><p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">${guide.image.originalSchematic ? 'Official sources and image provenance' : 'Official sources and photo credit'}</h2><p>Planning facts and ${guide.image.originalSchematic ? 'image provenance' : 'the image license'} were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>

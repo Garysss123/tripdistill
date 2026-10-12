@@ -1,0 +1,11 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Cameron Highlands": "馬來西亞－金馬崙高原",
+    "Malaysia - Ipoh & Kinta Valley": "馬來西亞－怡保與近打谷地"
+  }
+}
