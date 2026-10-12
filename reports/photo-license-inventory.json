@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T11:39:02.681Z",
+  "generatedAt": "2026-10-12T12:13:13.669Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 798,
+    "assetFileCount": 799,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 9,
-    "licenseClaimsNotIndependentlyVerified": 512,
+    "completeProjectOriginalRightsRecords": 10,
+    "licenseClaimsNotIndependentlyVerified": 509,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "buildImageFilesExcludedForRightsReview": 1,
+    "buildImageFilesExcludedForRightsReview": 2,
     "expectedBuildImageCount": 801,
-    "deduplicatedImageCount": 798,
+    "deduplicatedImageCount": 799,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3514,
-    "assetsUsedByScannedEnglishPages": 768,
+    "imageReferencesScanned": 3515,
+    "assetsUsedByScannedEnglishPages": 769,
     "unusedAssetCount": 30,
-    "assetsWithStructuredSourceRecords": 585,
+    "assetsWithStructuredSourceRecords": 586,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 173,
+    "assetsVisuallyReviewed": 176,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 253,
-    "metadataOrCreditOnly": 521,
-    "usedAssetsWithoutIndependentSourcePageCheck": 516,
+    "sourcePageChecked": 256,
+    "metadataOrCreditOnly": 519,
+    "usedAssetsWithoutIndependentSourcePageCheck": 514,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 2 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -4157,7 +4157,6 @@
             "/canada/banff-lake-louise/lake-louise-moraine/"
           ],
           "altTexts": [
-            "Banff town set below the Rocky Mountains",
             "Cascade Mountain and avalanche signage on the Banff approach"
           ],
           "rawVisibleCredits": [
@@ -4564,16 +4563,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Jasper photo review on 2026-10-12: the exact Commons page identifies InSapphoWeTrust from Los Angeles, California, USA, the Athabasca Falls subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show the falls and visitor paths, matching the route. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.",
           "useCount": 4,
           "routes": [
             "/canada/jasper-icefields/",
@@ -4585,7 +4584,7 @@
             "Athabasca Falls in Jasper National Park"
           ],
           "rawVisibleCredits": [
-            "Athabasca Falls, Jasper National Park (7635012912).jpg — InSapphoWeTrust from Los Angeles, California, USA, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Athabasca Falls, Jasper National Park (7635012912).jpg — InSapphoWeTrust from Los Angeles, California, USA, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 2.0 terms."
           ]
         }
       ]
@@ -4612,16 +4611,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Jasper photo review on 2026-10-12: the exact Commons page identifies Mike from Vancouver, Canada, the Columbia Icefield subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show a glacier and mountain valley consistent with the Icefields Parkway page. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.",
           "useCount": 4,
           "routes": [
             "/canada/jasper-icefields/",
@@ -4633,7 +4632,7 @@
             "Icefields Parkway through the Canadian Rockies"
           ],
           "rawVisibleCredits": [
-            "Icefields Parkway (18) (9580641168).jpg — Mike from Vancouver, Canada, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Icefields Parkway (18) (9580641168).jpg — Mike from Vancouver, Canada, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 2.0 terms."
           ]
         }
       ]
@@ -4660,16 +4659,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Jasper photo review on 2026-10-12: Commons identifies Christianabend and a September 1998 Maligne Lake boathouse photograph. The page shows the original CC BY-SA 2.0 release and a later CC BY-SA 3.0 migration tag; both declarations are recorded as license-version variants, not treated as a direct conflict. The local 1600 × 1066 WebP pixels show the boathouse and mountain backdrop and match the Maligne Lake guide. Attribution, linked selected license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.",
           "useCount": 6,
           "routes": [
             "/canada/",
@@ -4679,10 +4678,10 @@
             "/canada/jasper-icefields/jasper-town-maligne/"
           ],
           "altTexts": [
-            "Mountain lake in Jasper National Park"
+            "Maligne Lake boathouse and mountain backdrop"
           ],
           "rawVisibleCredits": [
-            "Canada Boat House am Maligne Lake, Jasper NP, Alberta, CA.jpg — Christianabend, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Canada Boat House am Maligne Lake, Jasper NP, Alberta, CA.jpg — Christianabend, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms."
           ]
         }
       ]
@@ -5350,7 +5349,7 @@
             "Long Beach in Pacific Rim National Park Reserve"
           ],
           "rawVisibleCredits": [
-            "Lone Rock at Long Beach, Tofino.jpg — Sarena D, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Lone Rock at Long Beach, Tofino.jpg — Sarena D, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 4.0 terms."
           ]
         }
       ]
@@ -27248,6 +27247,49 @@
           ],
           "altTexts": [
             "Original schematic showing Banff with separate Johnston Canyon and Lake Minnewanka corridors"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "d1290fc501af5c7921b2b6d2ae271e8279f82a350e58b3d8fe76c5db36cc9b6d",
+      "assetPaths": [
+        "/assets/images/tripdistill-canada-jasper-three-corridors.svg"
+      ],
+      "byteLength": 3206,
+      "sourceRecords": [
+        {
+          "sha256": "d1290fc501af5c7921b2b6d2ae271e8279f82a350e58b3d8fe76c5db36cc9b6d",
+          "assetPath": "/assets/images/tripdistill-canada-jasper-three-corridors.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-jasper-three-corridors.svg",
+          "sourceTitle": "TripDistill original Jasper three-corridor planning diagram",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original vector planning diagram, not to scale, with a five-language legend.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/canada/jasper-icefields/icefields-parkway/"
+          ],
+          "altTexts": [
+            "Not-to-scale diagram separating Jasper town, Maligne Valley and the southbound Icefields Parkway corridor"
           ],
           "rawVisibleCredits": []
         }

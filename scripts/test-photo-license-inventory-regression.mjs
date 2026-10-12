@@ -304,7 +304,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 516, 'the merged inventory records the latest Côte d’Azur, Marseille, Peak District, Provence inland and Banff photo checks while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 514, 'Jasper photo pages were checked and the mismatched Johnston image is unused; unresolved source-page claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -528,8 +528,42 @@ try {
   assert.equal(banffDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(banffDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(banffDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 9, 'inventory must count project-original artwork including Banff, Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 512, 'the merged inventory includes current Banff, Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  const jasperPhotos = [
+    { assetPath: '/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg', creator: 'Christianabend', license: 'CC BY-SA 3.0' },
+    { assetPath: '/assets/images/canada-jasper-icefields-icefields-parkway.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Icefields_Parkway_(18)_(9580641168).jpg', creator: 'Mike from Vancouver, Canada', license: 'CC BY-SA 2.0' },
+    { assetPath: '/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Athabasca_Falls,_Jasper_National_Park_(7635012912).jpg', creator: 'InSapphoWeTrust from Los Angeles, California, USA', license: 'CC BY-SA 2.0' }
+  ];
+  for (const expected of jasperPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `inventory must include the Jasper photo ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes('not independent uploader-authority or rights-chain clearance'));
+  }
+  const malignePhoto = photoRecords.find((item) => item.assetPath === jasperPhotos[0].assetPath);
+  assert.ok(malignePhoto.verificationDetail.includes('CC BY-SA 2.0') && malignePhoto.verificationDetail.includes('CC BY-SA 3.0'));
+  assert.ok(malignePhoto.verificationDetail.includes('not treated as a direct conflict'));
+  const jasperDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-jasper-three-corridors.svg');
+  assert.ok(jasperDiagram, 'inventory must include the original Jasper three-corridor schematic');
+  assert.equal(jasperDiagram.assetType, 'original-planning-diagram');
+  assert.equal(jasperDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-jasper-three-corridors.svg');
+  assert.equal(jasperDiagram.creator, 'TripDistill');
+  assert.equal(jasperDiagram.license, null);
+  assert.equal(jasperDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(jasperDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(jasperDiagram.commercialReuseEligibility, 'unknown');
+  const retiredJohnston = photoRecords.find((item) => item.assetPath === '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp');
+  assert.ok(retiredJohnston, 'inventory must retain the mismatched Johnston source photo');
+  assert.equal(retiredJohnston.inventoryStatus, 'unused');
+  assert.equal(retiredJohnston.useCount, 0);
+  assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 10, 'inventory must count project-original artwork including Jasper, Banff, Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 509, 'Jasper source-page checks reduce this count by three; page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -569,8 +603,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 801, 'the Banff and two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 2, 'the preserved Melaka and Johnston rights-review files must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 801, 'the Jasper, Banff and original Malaysia diagrams must be included while the preserved Melaka and Johnston rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
@@ -961,7 +995,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; the three Côte d’Azur photos retain pixel reviews and source-page declarations without implying independent clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: three Jasper images retain exact Commons source records and local pixel reviews; Maligne CC BY-SA 2.0/3.0 declarations are recorded as variants, not a conflict, and Johnston remains inactive and excluded from dist. Ayutthaya, Côte d’Azur, Chiang Mai, Da Nang, Bangkok, Victoria, Seoul/Busan, Seoul Tourism Archive, Chatuchak and Talat Noi checks also passed without implying independent rights-chain clearance.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

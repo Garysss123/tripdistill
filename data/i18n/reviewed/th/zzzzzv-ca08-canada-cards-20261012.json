@@ -1,0 +1,14 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/"
+  ],
+  "translations": {
+    "National survey atlas · reviewed 12 October 2026": "แผนที่วางแผนเที่ยวแคนาดาทั่วประเทศ · ตรวจทาน 12 ตุลาคม 2026",
+    "Build Pacific Rim around one Tofino–Ucluelet lodging base, a named Long Beach trail, the Lighthouse Loop and an optional licensed boat day. The Island…": "เลือกที่พักฐานเดียวใน Tofino–Ucluelet วางเส้นทางเดินที่ระบุชื่อใน Long Beach กับ Lighthouse Loop และเพิ่มทริปเรือกับผู้ประกอบการที่ได้รับอนุญาตได้ตามต้องการ ทางหลวงหมายเลข 4 ที่ตัดผ่านเกาะ…",
+    "Use Banff town as the walkable base, give Lake Louise and Moraine Lake their own reservation-led day, then choose Johnston Canyon or the Lake Minnewanka…": "ใช้เมือง Banff เป็นฐานที่เดินเที่ยวได้ จัด Lake Louise และ Moraine Lake แยกคนละวันโดยวางแผนตามระบบจอง แล้วเลือก Johnston Canyon หรือ Lake Minnewanka…",
+    "Plan Jasper as a base with distinct day corridors. Give the town a walkable arrival day, choose Maligne Valley or the southbound falls for a separate…": "ใช้ Jasper เป็นฐานและแยกจุดหมายออกเป็นคนละวัน วันมาถึงเดินเที่ยวในเมือง อีกวันเลือก Maligne Valley หรือน้ำตกทางใต้ และเผื่อช่วงกลางวันเต็มวันสำหรับ Icefields Parkway…",
+    "Country planning and image licensing were reviewed on 12 October 2026. Entry, transport, weather, park and operator rules change; verify directly before travel.": "ตรวจทานข้อมูลวางแผนเที่ยวแคนาดาและใบอนุญาตภาพเมื่อ 12 ตุลาคม 2026 กฎเข้าเมือง การเดินทาง สภาพอากาศ อุทยาน และผู้ประกอบการเปลี่ยนแปลงได้ โปรดตรวจสอบกับแหล่งทางการโดยตรงก่อนเดินทาง"
+  }
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Jasper is a base for three separate travel corridors</title>
+  <desc id="desc">A not-to-scale diagram with Jasper town at the centre, Maligne Valley to the north, and Athabasca Falls, Sunwapta Falls, Columbia Icefield and Lake Louise on the southbound Icefields Parkway. A five-language note says to plan them as separate days.</desc>
+  <rect x="0" y="0" width="1200" height="700" rx="24" fill="#eef5f3"/>
+  <path d="M55 55h1090v590H55z" fill="none" stroke="#bfd4d0" stroke-width="2"/>
+  <text x="86" y="104" font-family="system-ui,sans-serif" font-size="32" font-weight="700" fill="#183b3c">Jasper base · three distinct corridors</text>
+  <text x="88" y="140" font-family="system-ui,sans-serif" font-size="18" fill="#466260">Schematic only · not to scale · roads and access change by season</text>
+  <path d="M240 330C330 300 365 230 465 206" fill="none" stroke="#367d75" stroke-width="10" stroke-linecap="round"/>
+  <path d="M240 345C370 370 490 350 605 350S800 350 953 350" fill="none" stroke="#d47a45" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="225" cy="338" r="26" fill="#173c3a"/>
+  <circle cx="480" cy="202" r="20" fill="#367d75"/>
+  <circle cx="376" cy="361" r="12" fill="#d47a45"/>
+  <circle cx="480" cy="354" r="12" fill="#d47a45"/>
+  <circle cx="690" cy="350" r="20" fill="#9b5c91"/>
+  <circle cx="970" cy="350" r="20" fill="#173c3a"/>
+  <text x="120" y="390" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#183b3c">JASPER TOWN</text>
+  <text x="425" y="176" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#183b3c">MALIGNE VALLEY</text>
+  <text x="325" y="410" font-family="system-ui,sans-serif" font-size="17" fill="#183b3c">Athabasca</text>
+  <text x="438" y="410" font-family="system-ui,sans-serif" font-size="17" fill="#183b3c">Sunwapta</text>
+  <text x="642" y="397" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#183b3c">COLUMBIA ICEFIELD</text>
+  <text x="930" y="397" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#183b3c">LAKE LOUISE</text>
+  <text x="342" y="449" font-family="system-ui,sans-serif" font-size="16" fill="#466260">Falls are 30 km / 54 km south of Jasper</text>
+  <text x="612" y="449" font-family="system-ui,sans-serif" font-size="16" fill="#466260">Highway 93 · 232 km Jasper–Lake Louise</text>
+  <rect x="86" y="490" width="1028" height="126" rx="16" fill="#fff" stroke="#bfd4d0" stroke-width="2"/>
+  <text x="110" y="527" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#183b3c">Plan separate days · 獨立安排不同日子</text>
+  <text x="110" y="558" font-family="system-ui,sans-serif" font-size="17" fill="#183b3c">別日に計画 · 별도 날짜로 계획 · วางแผนคนละวัน</text>
+  <text x="110" y="592" font-family="system-ui,sans-serif" font-size="14" fill="#466260">EN · 繁中 · 日本語 · 한국어 · ไทย</text>
+  <text x="900" y="592" font-family="system-ui,sans-serif" font-size="14" fill="#466260">TripDistill original</text>
+</svg>

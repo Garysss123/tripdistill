@@ -7139,11 +7139,15 @@
     "url": "/canada/jasper-icefields/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Jasper demands a slower recovery-minded plan: the town is a base, Maligne and Athabasca corridors are separate day choices, and the Icefields Parkway needs fuel, weather, closure and daylight planning.",
+    "summary": "Plan Jasper around one walkable town base and separate driving days for Maligne Valley, the southbound falls and the 232 km Icefields Parkway to Lake Louise. Compare four or five nights, town lodging with campground transport, and a Lake Louise overnight for a through trip. The local campground shuttle is seasonal and does not serve Maligne Lake or Highway 93. Check open and closed facilities, road status, weather, fuel and daylight before setting out; keep a town day as the fallback.",
     "keywords": [
       "Jasper & the Icefields Parkway",
-      "Alberta Rockies",
-      "rockies"
+      "Canada",
+      "Jasper town",
+      "Maligne Valley",
+      "Jasper transit",
+      "four nights",
+      "road conditions"
     ]
   },
   {
@@ -7151,12 +7155,15 @@
     "url": "/canada/jasper-icefields/jasper-town-maligne/",
     "parent": "Jasper & the Icefields Parkway",
     "type": "Local guide",
-    "summary": "Keep Jasper town as the service anchor, then give Maligne Canyon or Maligne Lake a dedicated branch with an explicit road and weather decision.",
+    "summary": "Walk Jasper’s central blocks and a signed Athabasca River path for an easy arrival loop, then set aside a separate road day for Maligne Valley. Maligne Lake and Maligne Canyon have different access and closure status. A confirmed vehicle or named operator is needed for the valley; the seasonal campground shuttle does not go there. Check Maligne Road, Parks Canada notices, daylight and the current cruise calendar before booking. The 2026 cruise season ended 11 October, weather dependent.",
     "keywords": [
       "Jasper Town & Maligne Valley",
       "Jasper & the Icefields Parkway",
-      "Alberta Rockies",
-      "lake-atlas"
+      "Jasper town walk",
+      "Maligne Lake",
+      "Maligne Canyon",
+      "Maligne Road",
+      "Jasper shuttle"
     ]
   },
   {
@@ -7164,12 +7171,15 @@
     "url": "/canada/jasper-icefields/icefields-parkway/",
     "parent": "Jasper & the Icefields Parkway",
     "type": "Local guide",
-    "summary": "Drive the parkway as a landscape route with fuel, closures and a fixed endpoint; do not turn it into an endless chain of roadside stops.",
+    "summary": "Treat Highway 93 as a full-day 232 km road between Jasper and Lake Louise, not a quick transfer. Plan fuel, water, food, offline directions, a few stops and a fixed daylight endpoint. Athabasca Falls is 30 km south of Jasper, Sunwapta Falls 54 km and the Columbia Icefield Centre 104 km. Check Parks Canada, Alberta 511, seasonal services, snow and operator dates. The 2026 glacier products ended by 12 October; availability and departures are not promised.",
     "keywords": [
       "Icefields Parkway",
       "Jasper & the Icefields Parkway",
-      "Alberta Rockies",
-      "distance-ruler"
+      "Highway 93",
+      "Jasper to Lake Louise",
+      "fuel stops",
+      "Columbia Icefield",
+      "road closures"
     ]
   },
   {
@@ -7177,12 +7187,15 @@
     "url": "/canada/jasper-icefields/athabasca-sunwapta/",
     "parent": "Jasper & the Icefields Parkway",
     "type": "Local guide",
-    "summary": "Use the two major waterfall areas as a controlled parkway day south of Jasper, with one longer walk or viewpoint branch rather than continuing indefinitely toward the icefield.",
+    "summary": "Choose Athabasca Falls and, if conditions and daylight allow, Sunwapta Falls as a defined southbound day from Jasper. The road distances are 30 km and 54 km. Follow signed paths and barriers; spray, stairs, bridges, ice and gorge edges can make walking hazardous. Check current Parks Canada closures, trail and road conditions, fuel and weather before leaving. Turn back to Jasper rather than expanding this walk into an unplanned Icefields Parkway transfer.",
     "keywords": [
       "Athabasca & Sunwapta Falls",
       "Jasper & the Icefields Parkway",
-      "Alberta Rockies",
-      "park-gate"
+      "Athabasca Falls",
+      "Sunwapta Falls",
+      "Jasper waterfall walk",
+      "trail conditions",
+      "Jasper road trip"
     ]
   },
   {

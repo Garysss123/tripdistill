@@ -1,0 +1,33 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Jasper around one walkable town base and separate driving days for Maligne Valley, the southbound falls and the 232 km Icefields Parkway to Lake Louise. Compare four or five nights, town lodging with campground transport, and a Lake Louise overnight for a through trip. The local campground shuttle is seasonal and does not serve Maligne Lake or Highway 93. Check open and closed facilities, road status, weather, fuel and daylight before setting out; keep a town day as the fallback.": "걸어서 다닐 수 있는 재스퍼 마을을 거점으로 삼고 말린 밸리, 남쪽 폭포, 레이크 루이즈까지 232km 아이스필즈 파크웨이를 다른 날로 나누세요. 4박과 5박, 마을 숙소와 캠핑장 이동, 관통 이동일의 레이크 루이즈 숙박을 비교하세요. 캠핑장 셔틀은 계절 운행이며 Maligne Lake나 93번 도로로 가지 않습니다. 시설 개방, 도로, 날씨, 연료, 일조 시간을 확인하고 마을 일정을 예비로 남겨 두세요.",
+    "Jasper town": "재스퍼 마을",
+    "Maligne Valley": "말린 밸리",
+    "Jasper transit": "재스퍼 교통",
+    "four nights": "4박",
+    "road conditions": "도로 상황",
+    "Walk Jasper’s central blocks and a signed Athabasca River path for an easy arrival loop, then set aside a separate road day for Maligne Valley. Maligne Lake and Maligne Canyon have different access and closure status. A confirmed vehicle or named operator is needed for the valley; the seasonal campground shuttle does not go there. Check Maligne Road, Parks Canada notices, daylight and the current cruise calendar before booking. The 2026 cruise season ended 11 October, weather dependent.": "도착일에는 재스퍼 중심가와 표지된 Athabasca River 길을 가볍게 걷고, 말린 밸리는 별도 운전일로 남기세요. Maligne Lake와 Maligne Canyon은 접근과 폐쇄 상태가 다릅니다. 계곡에는 이용이 확인된 차량이나 지정 업체가 필요하며 계절 캠핑장 셔틀은 가지 않습니다. 예약 전에 Maligne Road, Parks Canada 공지, 일조 시간, 최신 크루즈 달력을 확인하세요. 2026년 크루즈 시즌은 10월 11일 종료됐고 날씨에 좌우됐습니다.",
+    "Jasper town walk": "재스퍼 마을 산책",
+    "Maligne Lake": "Maligne Lake",
+    "Maligne Canyon": "Maligne Canyon",
+    "Maligne Road": "Maligne Road",
+    "Jasper shuttle": "재스퍼 셔틀",
+    "Treat Highway 93 as a full-day 232 km road between Jasper and Lake Louise, not a quick transfer. Plan fuel, water, food, offline directions, a few stops and a fixed daylight endpoint. Athabasca Falls is 30 km south of Jasper, Sunwapta Falls 54 km and the Columbia Icefield Centre 104 km. Check Parks Canada, Alberta 511, seasonal services, snow and operator dates. The 2026 glacier products ended by 12 October; availability and departures are not promised.": "93번 도로를 재스퍼와 레이크 루이즈 사이의 232km 하루 종일 경관 도로로 계획하고 빠른 환승으로 보지 마세요. 연료, 물, 음식, 오프라인 길 안내, 정차 몇 곳, 낮 시간에 도착할 종점을 정하세요. Athabasca Falls는 재스퍼 남쪽 30km, Sunwapta Falls는 54km, Columbia Icefield Centre는 104km입니다. 출발 전에 Parks Canada, Alberta 511, 계절 서비스, 눈과 운영사 날짜를 확인하세요. 2026년 빙하 상품은 10월 12일까지 종료됐으며 이용 가능 여부와 출발을 보장하지 않습니다.",
+    "Highway 93": "93번 도로",
+    "Jasper to Lake Louise": "재스퍼에서 레이크 루이즈",
+    "fuel stops": "주유 지점",
+    "Columbia Icefield": "Columbia Icefield",
+    "road closures": "도로 폐쇄",
+    "Choose Athabasca Falls and, if conditions and daylight allow, Sunwapta Falls as a defined southbound day from Jasper. The road distances are 30 km and 54 km. Follow signed paths and barriers; spray, stairs, bridges, ice and gorge edges can make walking hazardous. Check current Parks Canada closures, trail and road conditions, fuel and weather before leaving. Turn back to Jasper rather than expanding this walk into an unplanned Icefields Parkway transfer.": "Athabasca Falls를 선택하고 상태와 일조가 허락하면 Sunwapta Falls를 더해 재스퍼 남쪽 하루 일정으로 계획하세요. 도로 거리는 각각 30km와 54km입니다. 표지된 길과 장벽을 따르세요. 물보라, 계단, 다리, 얼음, 협곡 가장자리는 위험할 수 있습니다. 출발 전 최신 Parks Canada 폐쇄, 트레일과 도로 상태, 연료, 날씨를 확인하세요. 이 산책을 즉흥적인 아이스필즈 파크웨이 관통 일정으로 넓히지 말고 재스퍼로 돌아오세요.",
+    "Athabasca Falls": "Athabasca Falls",
+    "Sunwapta Falls": "Sunwapta Falls",
+    "Jasper waterfall walk": "재스퍼 폭포 산책",
+    "trail conditions": "트레일 상태",
+    "Jasper road trip": "재스퍼 드라이브 여행"
+  }
+}

@@ -8,7 +8,10 @@ import { missingPhotoAttributionFields, photoLicenseInventoryBlockingProblems } 
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(root, 'assets', 'images');
-const retainedLocalOnlyAssetPaths = ['/assets/images/malaysia-melaka-kampung-morten.webp'];
+const retainedLocalOnlyAssetPaths = [
+  '/assets/images/malaysia-melaka-kampung-morten.webp',
+  '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp'
+];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
   'south-korea', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
@@ -64,6 +67,27 @@ const verifiedBySourcePattern = [
   { pattern: /Faraglioni_in_Capri_09/i, detail: 'Commons source page checked for Abxbay, Capri Faraglioni subject, and CC BY-SA 4.0.' },
 ];
 const verifiedSourcePageDetails = new Map([
+  [
+    'https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: Commons identifies Christianabend and a September 1998 Maligne Lake boathouse photograph. The page shows the original CC BY-SA 2.0 release and a later CC BY-SA 3.0 migration tag; both declarations are recorded as license-version variants, not treated as a direct conflict. The local 1600 × 1066 WebP pixels show the boathouse and mountain backdrop and match the Maligne Lake guide. Attribution, linked selected license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Icefields_Parkway_(18)_(9580641168).jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: the exact Commons page identifies Mike from Vancouver, Canada, the Columbia Icefield subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show a glacier and mountain valley consistent with the Icefields Parkway page. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Athabasca_Falls,_Jasper_National_Park_(7635012912).jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: the exact Commons page identifies InSapphoWeTrust from Los Angeles, California, USA, the Athabasca Falls subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show the falls and visitor paths, matching the route. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
   [
     'https://commons.wikimedia.org/wiki/File:%27You_are_in_AVALANCHE_country%27_--_Cascade_Mountain_on_the_the_Road_to_Banff,_Alberta_(CA)_September_2019_(49559005101).jpg',
     {
@@ -1013,6 +1037,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-icefields-parkway.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', '2026-10-12'],
   ['/assets/images/canada-banff-lake-louise-banff-town-bow-valley.webp', '2026-10-12'],
   ['/assets/images/canada-banff-lake-louise-lake-louise-moraine.webp', '2026-10-12'],
   ['/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp', '2026-10-12'],

@@ -358,14 +358,32 @@ export const canadaWestClusters = [
   defineCanadaCluster({
     slug: 'jasper-icefields', name: 'Jasper & the Icefields Parkway', region: 'Alberta Rockies', band: 'rockies', family: 'glacier-transect',
     label: 'Northern Rockies · town recovery and long-road weather', tagline: 'the parkway is a day, not a transfer line.',
-    hubIntro: 'Jasper demands a slower recovery-minded plan: the town is a base, Maligne and Athabasca corridors are separate day choices, and the Icefields Parkway needs fuel, weather, closure and daylight planning.',
-    stay: 'Four nights supports one Jasper-area day, one Maligne or waterfall day and one parkway section with margin for changing conditions.',
-    transfer: 'The Icefields Parkway is spectacular but remote. Fuel, services, winter equipment, wildlife, closures and construction affect a drive that cannot be treated like an urban highway.',
-    season: 'Winter brings serious road and avalanche conditions; summer still brings smoke, storms and wildlife traffic. Shoulder seasons can have limited services.',
-    fallback: 'If the parkway or high trails are compromised, keep a town-and-valley day with shorter official trails and local interpretation.',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
+    hubIntro: 'Plan Jasper as a base with distinct day corridors. Give the town a walkable arrival day, choose Maligne Valley or the southbound falls for a separate outing, and reserve a full daylight block for the Icefields Parkway. The 232 km highway between Jasper and Lake Louise is remote, has no reliable cell service and does not behave like a frequent-stop transfer road.',
+    stay: 'Four nights in Jasper town is a useful first-visit minimum: arrival and town walk, one Maligne day, one falls or shorter parkway day, and one full parkway day or weather buffer. Five nights lets you separate the two southbound days. If driving through to Banff, consider a separate Lake Louise-area night so a late road delay does not force a rushed final leg.',
+    transfer: 'Jasper town is compact on foot. Parks Canada’s seasonal 24-seat shuttle has linked Whistlers and Wapiti campgrounds with town, Pyramid Lake Lodge, Jasper Park Lodge and Lake Annette; routes and operating dates vary, and it is not transport to Maligne Lake or along the Icefields Parkway. Use the Municipality of Jasper’s current transit map and schedule for exact stops, times and payment. Maligne Road and Highway 93 south need a confirmed vehicle, tour or other named operator; do not infer a bus from a road distance.',
+    season: 'As checked 12 October 2026, the Parks Canada status board listed Maligne Lake and Mary Schäffer day use open, Athabasca and Sunwapta Falls open, but Maligne Canyon closed; Cavell Road remained closed until further notice. The 2026 Maligne Lake Cruise season was scheduled through 11 October and the Columbia Icefield Adventure through 12 October, both weather dependent. These dated endpoints are not future guarantees. Services on the Parkway are sparse: seasonal facilities generally run early May to mid-October, with no winter fuel or food services on the route.',
+    fallback: 'If Maligne Canyon, the Parkway, a commercial product or a high trail is closed or weather-compromised, stay near Jasper: walk the signed town grid and river edge, use currently open day-use areas, or shorten to a permitted waterfall path. Keep a warm, indoor interpretation stop as the weather buffer. Do not bypass a closure or drive after dark to recover a missed viewpoint.',
+    firstVisitPlan: {
+      heading: 'Four nights, one base, three separate road decisions',
+      intro: 'Book a Jasper town bed first if walkable food and evening flexibility matter. Compare a central hotel or guesthouse with a campground: the campground needs a confirmed shuttle or vehicle plan, while a town stay does not solve the out-of-town roads.',
+      days: [
+        ['Arrival · Jasper town on foot', 'Check in, get groceries and fuel, then walk the signed town-centre blocks and a short river path. Ask the visitor centre about current closures before choosing tomorrow’s corridor.'],
+        ['Maligne Valley · one objective', 'Choose Maligne Lake or another currently open Maligne stop, not a full lake-and-canyon checklist. Drive or book a named operator; the local campground shuttle does not reach the valley. Book a seasonal cruise only after confirming its dates, weather policy and your return transport.'],
+        ['South · falls or Parkway segment', 'Use Athabasca Falls (30 km south of Jasper) and Sunwapta Falls (54 km) as a controlled out-and-back. Keep the spray-side paths short if slippery. Do not let this shorter choice expand toward the icefield without rechecking daylight and fuel.'],
+        ['Parkway · through day or reserve day', 'For Jasper–Lake Louise, start with fuel, water, food, road and weather checks; select a few stops and protect an arrival before dark. If the highway is not suitable, use this as a second Jasper-area day. Add a Lake Louise overnight when the onward connection is fixed.']
+      ]
+    },
     sources: [
       ['https://parks.canada.ca/pn-np/ab/jasper', 'Parks Canada — Jasper National Park'],
-      ['https://parks.canada.ca/pn-np/ab/jasper/visit', 'Parks Canada — Jasper and Icefields Parkway visit planning'],
+      ['https://parks.canada.ca/pn-np/ab/jasper/visit', 'Parks Canada — Jasper visit planning'],
+      ['https://parks.canada.ca/pn-np/ab/jasper/visit/transit', 'Parks Canada — Jasper seasonal campground shuttle'],
+      ['https://parks.canada.ca/pn-np/ab/jasper/visit/ouvert-fermee-open-closed', 'Parks Canada — what is open and closed'],
+      ['https://parks.canada.ca/pn-np/ab/jasper/visit/routes-roads', 'Parks Canada — Jasper road restrictions and seasonal closures'],
+      ['https://parks.canada.ca/pn-np/ab/jasper/activ/itineraires-itineraries/promenadedesglaciers-icefieldsparkway', 'Parks Canada — travelling the Icefields Parkway'],
+      ['https://parks.canada.ca/pn-np/ab/jasper/securite-safety/enviro', 'Parks Canada — Jasper weather, wildlife and safety'],
+      ['https://www.banffjaspercollection.com/attractions/maligne-lake-cruise/', 'Maligne Lake Cruise — seasonal operator dates and booking terms'],
+      ['https://www.banffjaspercollection.com/attractions/columbia-icefield-adventure/', 'Columbia Icefield Adventure — seasonal operator dates and booking terms'],
       ['https://www.jasper-alberta.ca/p/transit', 'Municipality of Jasper — transit information']
     ],
     guides: [
@@ -395,3 +413,116 @@ export const canadaWestClusters = [
     ]
   })
 ];
+
+const jasperIndex = canadaWestClusters.findIndex((cluster) => cluster.slug === 'jasper-icefields');
+const jasperBase = canadaWestClusters[jasperIndex];
+const jasperEditorial = [
+  {
+    summary: 'Walk Jasper’s central blocks and river edge as an arrival-scale loop, then give Maligne Valley a separate road day. Maligne Canyon and Maligne Lake are different choices; confirm the open status of each before setting out.',
+    access: 'Jasper’s town centre is walkable. Maligne Lake is about 48 km from town by Maligne Road and needs a confirmed vehicle or named tour; Parks’ seasonal campground shuttle does not go there. Do not rely on an unverified local bus.',
+    tradeoff: 'A town walk is flexible and low-commitment. Maligne Lake is a longer road day with optional seasonal boat tours; the canyon is a closer walking objective but its access can close independently. Choose by current access, weather and walking appetite.',
+    fallback: 'If the lake road or weather is poor, keep the signed town walk, visitor centre and a currently open day-use path. If the canyon is closed, do not approach its barriers; choose an open river or valley path instead.',
+    duration: 'Allow most of a day for Maligne Lake once the road, breaks, parking, walks and return are counted. A town loop can occupy two to three hours at an easy pace, then leave the afternoon open.',
+    combine: 'Keep Maligne Valley separate from the Icefields Parkway. The through-valley driving and wildlife delays can use a full day even before a cruise; don’t stack the lake with the southbound falls.',
+    verify: 'On 12 October 2026 Parks Canada listed Maligne Lake and Mary Schäffer day use open but Maligne Canyon closed. Recheck live closures, Maligne Road, weather, daylight and operator season. The 2026 cruise calendar ended 11 October; this is not a future guarantee.',
+    stages: [
+      ['Orient in town', 'Start at the Jasper Information Centre, check current notices and mark your lodging, food and fuel. Walk the central blocks toward the railway-station frontage, then follow a signed town path toward the Athabasca River and return before committing to a distant road.'],
+      ['Choose one valley objective', 'For a Maligne Lake day, drive north on Maligne Road, allow a wildlife and parking margin, then use the Mary Schäffer shore area if open. The cruise is a separate seasonal timed product; confirm dates, check-in and independent road return before paying.'],
+      ['Walk only the open path', 'Use signed public paths and current Parks status. Canyon bridges, stairs and gorge paths are not interchangeable with the lake shoreline; a closure at one site does not mean the other is accessible. Turn back at any barrier or icy section.'],
+      ['Return to the base', 'Drive back to Jasper in daylight, stop only where legal and safe, and set the next morning’s fuel and weather decision. No-cell stretches mean downloaded directions and a person who knows your plan matter.']
+    ],
+    watch: [
+      ['Recovery notices', 'The 12 October 2026 Parks snapshot listed Maligne Canyon closed while the lake area was open. Recovery work, fire impact and access can change independently by facility.'],
+      ['Cruise season and booking', 'The operator listed 27 May–11 October 2026, weather dependent. That season is over on this report date. For a later trip, verify the next published calendar, ticket terms and your independent return transport; no fare or seat is promised here.'],
+      ['Wildlife and no-cell road', 'Maligne Road passes through wildlife habitat with limited connectivity. Obey speed, stopping and closure notices, carry offline directions and leave extra daylight.']
+    ],
+    faq: [
+      ['Can I reach Maligne Lake on the Jasper campground shuttle?', 'No route to Maligne Lake is listed on the Parks Canada campground shuttle page. That seasonal service has linked the two campgrounds with Jasper town, Pyramid Lake Lodge, Jasper Park Lodge and Lake Annette. Arrange a confirmed vehicle or named operator for the valley and check the Municipality transit page for its current local network.'],
+      ['Can I visit Maligne Canyon and Maligne Lake in one day?', 'They are separate stops along the valley road, but the canyon was closed in the Parks Canada snapshot checked 12 October 2026. Even when both are open, decide whether the road, parking, walk and return fit daylight; don’t treat an operator cruise as your transport connection.'],
+      ['Is a Maligne Lake cruise available in October?', 'The operator’s 2026 calendar listed the season through 11 October, weather dependent. Recheck a future season’s official calendar and your independent return transport before booking.']
+    ]
+  },
+  {
+    summary: 'Treat Highway 93 as a remote 232 km landscape road between Jasper and Lake Louise, not a quick transfer. Pick a fixed endpoint, a small number of stops, fuel and weather checks, and a daylight arrival before setting out.',
+    access: 'The road links Jasper and Lake Louise; it has no continuous cell service and services are sparse. Parks Canada lists the Columbia Icefield Centre about 104 km south of Jasper and Saskatchewan River Crossing as the only Parkway fuel stop, operating in summer. There is no winter fuel or food service along the route.',
+    tradeoff: 'A Jasper-to-Lake Louise through day works when you accept selected stops and a full road day. A return drive from Jasper should turn around near a planned point; the map distance omits parking, walks, weather and wildlife delays.',
+    fallback: 'If Parks Canada, Alberta 511 or weather reports show a closure or unsafe conditions, stay in Jasper or use another open local day. Never attempt to recover missed stops after dark. In winter, do not assume the Parkway is a dependable through route.',
+    duration: 'Reserve the whole day for a through drive with a few chosen stops, a timed glacier product or a longer walk. From Jasper, Athabasca Falls is 30 km south, Sunwapta Falls 54 km and the Icefield Centre 104 km; distances help set a turn-around, not predict arrival time.',
+    combine: 'Use the Parkway as the transfer day between Jasper and Lake Louise or Banff, with lodging at the destination and a separate sightseeing buffer. Maligne Valley, Lake Louise shuttles and a long hike belong on other days.',
+    verify: 'Check Parks Canada’s current road and closure pages, Alberta 511, fuel status, weather, daylight, winter equipment and exact operator terms. On 12 October 2026 the Icefield Centre information desk was listed closed and 2026 commercial product dates ended; access and availability change.',
+    routeDiagram: { src: '/assets/images/tripdistill-canada-jasper-three-corridors.svg', alt: 'Not-to-scale diagram separating Jasper town, Maligne Valley and the southbound Icefields Parkway corridor', creator: 'TripDistill', source: 'https://tripdistill.com/assets/images/tripdistill-canada-jasper-three-corridors.svg', label: 'TripDistill original Jasper three-corridor planning diagram', assetType: 'original-planning-diagram', rightsStatus: 'Project original; no separate reuse license declared', rightsStatusUrl: 'https://tripdistill.com/terms-of-use/', inventoryStatus: 'used', editNote: 'Original vector planning diagram, not to scale, with a five-language legend.' },
+    stages: [
+      ['Jasper base · fuel and forecast', 'Begin in Jasper with fuel, drinking water, food and a live road check. Download directions before leaving cell service. Set Lake Louise or a nearer turnaround as the endpoint, and check whether lodging and any fixed booking fit a late arrival.'],
+      ['Southbound · choose by distance', 'Athabasca Falls is 30 km from Jasper and has short paved paths, stairs and a bridge; spray can make them slippery. Sunwapta Falls is 54 km south, with short mostly paved paths and steeper sections. Stop only where parking and conditions permit.'],
+      ['Icefield zone · optional booking', 'The Columbia Icefield Centre is 104 km from Jasper. Its information desk was listed closed in the 12 October 2026 status snapshot. Glacier and Skywalk products are independent timed visits; confirm the exact product, duration, ticket terms and return plan before building the day around it.'],
+      ['Endpoint · preserve daylight', 'Before adding another overlook, compare remaining daylight, fatigue, road status and wildlife risk with the lodging check-in. If Lake Louise is the transfer destination, reach it; put extra sightseeing on a separate day.']
+    ],
+    watch: [
+      ['Services and connectivity', 'Parks Canada describes the route as remote with limited services and no cell coverage. Saskatchewan River Crossing is the only fuel stop on the Parkway and is seasonal; fill up and carry food, water and offline directions before leaving Jasper.'],
+      ['Season, snow and closures', 'Parks Canada describes winter conditions from early November to mid-June and seasonal maintenance. Its 2026 road notice says tentative dates can change without notice; check Alberta 511 and the live Parks restrictions before departure.'],
+      ['Product dates are not a promise', 'The operator listed the Icefield Adventure and Skywalk 2026 season through 12 October, weather dependent. Ice Odyssey tours had ended earlier in September. No fare, departure, seat or future opening is guaranteed here.']
+    ],
+    faq: [
+      ['How far is the Icefields Parkway?', 'Parks Canada describes a 232 km route between Jasper and Lake Louise. The distance is not a travel-time estimate: stops, wildlife, weather, road work, parking and walking change the day.'],
+      ['Can I drive it in winter?', 'Road access and services change with weather and seasonal restrictions. Parks Canada lists no winter food or fuel along the Parkway and recommends checking its live road notices and Alberta 511. Do not assume an all-season through route.'],
+      ['Can I add the glacier bus or Skywalk?', 'Only if the exact product is operating for your date and the booked duration fits the road and daylight plan. The operator’s 2026 calendar ended 12 October and weather could affect departures. Check current official terms; unknown fares and departures are not stated here.']
+    ]
+  },
+  {
+    summary: 'Make Athabasca and Sunwapta Falls a defined southbound day from Jasper: two named gorge walks with a clear return, not an unplanned attempt to reach the Columbia Icefield as well.',
+    access: 'Both are reached from Highway 93 south of Jasper: Athabasca Falls is 30 km from town and Sunwapta Falls 54 km. Use a confirmed car or booked operator. Parks Canada’s campground shuttle is not a Parkway service; parking and road access depend on current notices.',
+    tradeoff: 'The falls give a shorter southbound outing than a full Parkway transfer. Athabasca has paved paths, stairs and a bridge; Sunwapta has short mostly paved paths with steeper sections. Count the walk and safe return, not just roadside distance.',
+    fallback: 'If spray, ice, trail work or weather makes a gorge path unsafe, use only a currently open level viewpoint or turn back. A Jasper town walk and visitor-centre stop make a coherent wet-weather day; do not add an unplanned drive toward the icefield.',
+    duration: 'Plan a half to full day, depending on walking, stops and road conditions. Choose Athabasca as the single destination for a shorter outing; add Sunwapta only when current status, daylight and return fuel plan permit.',
+    combine: 'Pair with a quiet Jasper evening or a town walk, not the Maligne Valley and a Lake Louise transfer. The Parkway beyond Sunwapta is a separate decision with its own fuel and daylight gate.',
+    verify: 'The Parks Canada snapshot checked 12 October 2026 listed both falls open. Verify current road status, trail conditions, barriers, wildlife notices and weather. Wet spray, snow and freeze-thaw can make stairs, bridges and edges slippery.',
+    stages: [
+      ['Depart from Jasper', 'Check road and weather notices, fuel, water and daylight in town. Set Athabasca Falls as the minimum day and Sunwapta as an optional extension, not an assumed stop.'],
+      ['Athabasca Falls · short gorge circuit', 'Follow signed visitor paths to marked viewpoints and the bridge only where open. Stay behind barriers: high water and the gorge edge are hazardous. Spray can make pavement slick even when the road is dry.'],
+      ['Sunwapta Falls · decide at the junction', 'Continue 24 km south only if parking, weather, energy and daylight remain comfortable. Follow signed paths; the lower route is longer and not an automatic extension for every visitor.'],
+      ['Turn back to Jasper', 'Return before fatigue and darkness rise. Don’t continue toward the Icefield Centre just because it is the next name on the map; check in with lodging and the next day’s forecast.']
+    ],
+    watch: [
+      ['Waterfall edges', 'Powerful water, steep banks and barriers make off-path photos dangerous. Use signed viewpoints and obey temporary closure signs.'],
+      ['Spray, ice and steps', 'Athabasca Falls includes stairs and a bridge; wet or frozen surfaces need cautious footing. Shorten the visit if conditions are slick.'],
+      ['Road and service gap', 'Cell coverage and services are limited. Check road status before leaving Jasper, carry what you need and keep enough fuel to return.']
+    ],
+    faq: [
+      ['How far are the falls from Jasper?', 'Parks Canada lists Athabasca Falls 30 km and Sunwapta Falls 54 km south of Jasper. These are road distances, not arrival guarantees; weather, wildlife, parking and walking add time.'],
+      ['Are both waterfalls open?', 'The Parks Canada status page checked 12 October 2026 listed both open. That snapshot can change; check live closures and trail conditions before driving.'],
+      ['Can I visit the falls and the Columbia Icefield the same day?', 'It may be possible on a through trip with a fixed endpoint, but that is a full Parkway day. On a Jasper return outing, use a deliberate turnaround and do not add the Icefield Centre, commercial tour or Lake Louise without checking distance, availability and daylight.']
+    ]
+  }
+];
+const jasperCluster = defineCanadaCluster({
+  ...jasperBase,
+  firstVisitPlan: {
+    heading: 'Four nights, one base, three separate road decisions',
+    intro: 'Book a Jasper town bed first if walkable food and evening flexibility matter. Compare a central hotel or guesthouse with a campground: the campground needs a confirmed shuttle or vehicle plan, while a town stay does not solve the out-of-town roads.',
+    days: [
+      ['Arrival · Jasper town on foot', 'Check in, get groceries and fuel, then walk the signed town-centre blocks and a short river path. Ask the visitor centre about current closures before choosing tomorrow’s corridor.'],
+      ['Maligne Valley · one objective', 'Choose Maligne Lake or another currently open Maligne stop, not a full lake-and-canyon checklist. Drive or book a named operator; the local campground shuttle does not reach the valley. Book a seasonal cruise only after confirming dates, weather policy and return transport.'],
+      ['South · falls or Parkway segment', 'Use Athabasca Falls (30 km south of Jasper) and Sunwapta Falls (54 km) as a controlled out-and-back. Keep spray-side paths short if slippery. Do not let the shorter choice expand toward the icefield without rechecking daylight and fuel.'],
+      ['Parkway · through day or reserve day', 'For Jasper–Lake Louise, start with fuel, water, food, road and weather checks; select a few stops and protect an arrival before dark. If the highway is unsuitable, use this as a second Jasper-area day. Add a Lake Louise overnight when the onward connection is fixed.']
+    ]
+  },
+  faq: [
+    ['How many nights should I stay in Jasper?', 'Four nights give a first visit an arrival and town day, a Maligne day, a southbound falls day and a full Parkway day or weather buffer. Five nights separate the two longer road outings. A Lake Louise overnight can make sense when the Parkway is your onward transfer.'],
+    ['Can I use local transit for the park?', 'The Parks Canada campground shuttle has served Jasper town, Whistlers and Wapiti campgrounds, Pyramid Lake Lodge, Jasper Park Lodge and Lake Annette on seasonal routes. It is not a Maligne Valley or Icefields Parkway service. Check the Municipality transit schedule for current local stops and times.'],
+    ['What if the Parkway or a trail is closed?', 'Keep a Jasper town and valley day in reserve, check current open day-use areas and follow closure barriers. Do not drive after dark to make up a missed stop.']
+  ],
+  sources: [
+    ['https://parks.canada.ca/pn-np/ab/jasper', 'Parks Canada — Jasper National Park and current visitor notices'],
+    ['https://parks.canada.ca/pn-np/ab/jasper/visit', 'Parks Canada — Jasper visit planning'],
+    ['https://parks.canada.ca/pn-np/ab/jasper/visit/transit', 'Parks Canada — Jasper seasonal campground shuttle'],
+    ['https://parks.canada.ca/pn-np/ab/jasper/visit/ouvert-fermee-open-closed', 'Parks Canada — what is open and closed'],
+    ['https://parks.canada.ca/pn-np/ab/jasper/visit/routes-roads', 'Parks Canada — Jasper road restrictions and seasonal closures'],
+    ['https://parks.canada.ca/pn-np/ab/jasper/activ/itineraires-itineraries/promenadedesglaciers-icefieldsparkway', 'Parks Canada — travelling the Icefields Parkway'],
+    ['https://parks.canada.ca/pn-np/ab/jasper/securite-safety/enviro', 'Parks Canada — Jasper weather, wildlife and safety'],
+    ['https://www.jasper-alberta.ca/p/transit', 'Municipality of Jasper — transit information and current route map'],
+    ['https://www.banffjaspercollection.com/attractions/maligne-lake-cruise/', 'Maligne Lake Cruise — seasonal operator dates and booking terms'],
+    ['https://www.banffjaspercollection.com/attractions/columbia-icefield-adventure/', 'Columbia Icefield Adventure — seasonal operator dates and booking terms']
+  ],
+  guides: jasperBase.guides.map((guide, index) => ({ ...guide, ...jasperEditorial[index] }))
+});
+canadaWestClusters[jasperIndex] = jasperCluster;

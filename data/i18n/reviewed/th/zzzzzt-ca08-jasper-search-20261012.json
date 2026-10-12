@@ -1,0 +1,33 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Jasper around one walkable town base and separate driving days for Maligne Valley, the southbound falls and the 232 km Icefields Parkway to Lake Louise. Compare four or five nights, town lodging with campground transport, and a Lake Louise overnight for a through trip. The local campground shuttle is seasonal and does not serve Maligne Lake or Highway 93. Check open and closed facilities, road status, weather, fuel and daylight before setting out; keep a town day as the fallback.": "ใช้เมือง Jasper ที่เดินเที่ยวได้เป็นฐาน แล้วแยก Maligne Valley น้ำตกทางใต้ และ Icefields Parkway ระยะ 232 กม. ถึง Lake Louise เป็นคนละวัน เปรียบเทียบการพัก 4 หรือ 5 คืน ที่พักในเมืองกับการเดินทางจากลานกางเต็นท์ และการค้างคืนที่ Lake Louise ในวันขับผ่าน รถรับส่งลานกางเต็นท์ให้บริการตามฤดูกาลและไม่ไป Maligne Lake หรือทางหลวงหมายเลข 93 ตรวจสถานที่เปิดปิด ถนน อากาศ น้ำมัน และช่วงกลางวัน พร้อมเผื่อวันเที่ยวเมืองไว้",
+    "Jasper town": "เมือง Jasper",
+    "Maligne Valley": "Maligne Valley",
+    "Jasper transit": "ขนส่ง Jasper",
+    "four nights": "พัก 4 คืน",
+    "road conditions": "สภาพถนน",
+    "Walk Jasper’s central blocks and a signed Athabasca River path for an easy arrival loop, then set aside a separate road day for Maligne Valley. Maligne Lake and Maligne Canyon have different access and closure status. A confirmed vehicle or named operator is needed for the valley; the seasonal campground shuttle does not go there. Check Maligne Road, Parks Canada notices, daylight and the current cruise calendar before booking. The 2026 cruise season ended 11 October, weather dependent.": "วันมาถึงเดินสบาย ๆ ผ่านใจกลาง Jasper และทางริม Athabasca River ที่มีป้าย แล้วแยกวันขับรถไป Maligne Valley Maligne Lake กับ Maligne Canyon มีการเข้าถึงและสถานะปิดต่างกัน ต้องใช้รถที่ยืนยันแล้วหรือผู้ให้บริการที่ระบุชื่อชัดเจน รถรับส่งลานกางเต็นท์ตามฤดูกาลไม่ไปที่นั่น ก่อนจองตรวจ Maligne Road ประกาศ Parks Canada ช่วงกลางวัน และปฏิทินเรือล่าสุด ฤดูเรือปี 2026 จบวันที่ 11 ตุลาคมและขึ้นกับอากาศ",
+    "Jasper town walk": "เดินเที่ยวเมือง Jasper",
+    "Maligne Lake": "Maligne Lake",
+    "Maligne Canyon": "Maligne Canyon",
+    "Maligne Road": "Maligne Road",
+    "Jasper shuttle": "รถรับส่ง Jasper",
+    "Treat Highway 93 as a full-day 232 km road between Jasper and Lake Louise, not a quick transfer. Plan fuel, water, food, offline directions, a few stops and a fixed daylight endpoint. Athabasca Falls is 30 km south of Jasper, Sunwapta Falls 54 km and the Columbia Icefield Centre 104 km. Check Parks Canada, Alberta 511, seasonal services, snow and operator dates. The 2026 glacier products ended by 12 October; availability and departures are not promised.": "วางแผนทางหลวงหมายเลข 93 เป็นถนนชมวิวทั้งวันระยะ 232 กม. ระหว่าง Jasper กับ Lake Louise ไม่ใช่ทางผ่านเร็ว เตรียมน้ำมัน น้ำ อาหาร แผนที่ออฟไลน์ จุดแวะไม่กี่แห่ง และปลายทางที่ไปถึงได้ก่อนมืด Athabasca Falls อยู่ใต้ Jasper 30 กม., Sunwapta Falls 54 กม. และ Columbia Icefield Centre 104 กม. ก่อนออกเดินทางตรวจ Parks Canada, Alberta 511 บริการตามฤดูกาล หิมะ และวันที่กิจกรรมของผู้ให้บริการ กิจกรรมธารน้ำแข็งปี 2026 จบภายใน 12 ตุลาคม ไม่รับประกันว่าจะเปิดหรือมีรอบออกเดินทาง",
+    "Highway 93": "ทางหลวงหมายเลข 93",
+    "Jasper to Lake Louise": "Jasper ถึง Lake Louise",
+    "fuel stops": "จุดเติมน้ำมัน",
+    "Columbia Icefield": "Columbia Icefield",
+    "road closures": "ถนนปิด",
+    "Choose Athabasca Falls and, if conditions and daylight allow, Sunwapta Falls as a defined southbound day from Jasper. The road distances are 30 km and 54 km. Follow signed paths and barriers; spray, stairs, bridges, ice and gorge edges can make walking hazardous. Check current Parks Canada closures, trail and road conditions, fuel and weather before leaving. Turn back to Jasper rather than expanding this walk into an unplanned Icefields Parkway transfer.": "เลือก Athabasca Falls และเพิ่ม Sunwapta Falls เมื่ออากาศกับช่วงกลางวันเอื้อ วางเป็นวันขับลงใต้จาก Jasper ระยะทางถนนคือ 30 และ 54 กม. ตามทางที่มีป้ายและแนวกั้น ละอองน้ำ บันได สะพาน น้ำแข็ง และขอบหุบเขาอาจอันตราย ก่อนออกเดินทางตรวจประกาศปิด ทางเดินและถนน น้ำมัน และอากาศล่าสุดของ Parks Canada แล้วกลับ Jasper อย่าขยายการเดินสั้น ๆ นี้เป็นทริปขับผ่าน Icefields Parkway โดยไม่ได้วางแผน",
+    "Athabasca Falls": "Athabasca Falls",
+    "Sunwapta Falls": "Sunwapta Falls",
+    "Jasper waterfall walk": "เดินชมน้ำตก Jasper",
+    "trail conditions": "สภาพเส้นทางเดิน",
+    "Jasper road trip": "ทริปขับรถ Jasper"
+  }
+}

@@ -5,15 +5,19 @@ import { canadaClusters, canadaCountrySources, canadaGuides } from '../data/cana
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '12 September 2026';
 const isoDate = '2026-09-12';
+const countryReviewDate = '12 October 2026';
+const countryIsoDate = '2026-10-12';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/canada.css?v=20260912-1';
 const fieldCss = '/css/canada-field.css?v=20260912-1';
+const jasperCss = '/css/canada-jasper.css?v=20261012-1';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
 const pageIsoDate = (cluster) => cluster.isoDate || isoDate;
 const regionCss = (cluster, guide = null) => {
+  if (cluster.slug === 'jasper-icefields') return `<link rel="stylesheet" href="${jasperCss}">`;
   if (cluster.slug === 'banff-lake-louise') return '<link rel="stylesheet" href="/css/canada-banff.css?v=20261012-1">';
   if (cluster.slug === 'vancouver-north-shore') return '<link rel="stylesheet" href="/css/canada-vancouver.css?v=20261007-1">';
   if (cluster.slug === 'montreal') {
@@ -82,21 +86,25 @@ function imageCredit(image) {
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
     : escapeHtml(image.license);
-  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino|banff-lake-louise)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
+  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino|banff-lake-louise|jasper-icefields)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
     ? ` This resized, display-cropped WebP adaptation is offered under the same ${escapeHtml(image.license)} terms.`
     : '';
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}${shareAlikeNotice}</li>`;
 }
 
 function guideCredit(guide) {
-  if (guide.image) return imageCredit(guide.image);
+  if (guide.image) {
+    const credits = [imageCredit(guide.image)];
+    if (guide.routeDiagram?.src) credits.push(`<li><a href="${escapeHtml(guide.routeDiagram.source)}" target="_blank" rel="noopener">${escapeHtml(guide.routeDiagram.label)}</a> — ${escapeHtml(guide.routeDiagram.creator)}. Original TripDistill planning schematic; no separate reuse license is declared. <a href="${escapeHtml(guide.routeDiagram.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of Use</a>.</li>`);
+    return credits.join('');
+  }
   const diagram = guide.mapTreatment;
   if (!diagram?.src) return '';
   return `<li><a href="${escapeHtml(diagram.source)}" target="_blank" rel="noopener">${escapeHtml(diagram.label)}</a> — ${escapeHtml(diagram.creator)}. Original TripDistill planning schematic; no separate reuse license is declared. <a href="${escapeHtml(diagram.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of Use</a>.</li>`;
 }
 
 function heroImageCaption(image) {
-  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino|banff-lake-louise)-/.test(image.src)) return escapeHtml(image.alt);
+  if (/^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino|banff-lake-louise|jasper-icefields)-/.test(image.src)) return escapeHtml(image.alt);
   return `${escapeHtml(image.label)} · ${escapeHtml(image.license)}`;
 }
 
@@ -197,7 +205,7 @@ ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-fami
   <section class="ca-decision-grid" aria-label="Planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
   ${ad}
   <section class="ca-orientation"><div><span class="ca-section-label">Orientation</span><h2>Make the operating decision before adding distance.</h2><p>${escapeHtml(guide.tradeoff)}</p><p>${escapeHtml(guide.duration)}</p></div><aside><small>Access</small><p>${escapeHtml(guide.access)}</p><small>Combine carefully</small><p>${escapeHtml(guide.combine)}</p></aside></section>
-  <section class="ca-field-section" id="route"><div class="ca-section-heading"><span>Four-stage route</span><h2>A sequence that protects the return.</h2><p>${escapeHtml(guide.verify)}</p></div><div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+${guide.routeDiagram?.src ? `\n  <figure class="ca-jasper-route-diagram"><img src="${escapeHtml(guide.routeDiagram.src)}" width="1200" height="700" alt="${escapeHtml(guide.routeDiagram.alt)}" loading="lazy"><figcaption>Original planning diagram · not to scale · <a href="${escapeHtml(guide.routeDiagram.source)}" target="_blank" rel="noopener">SVG source and five-language legend</a> · <a href="${escapeHtml(guide.routeDiagram.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of Use</a>.</figcaption></figure>\n` : ''}  <section class="ca-field-section" id="route"><div class="ca-section-heading"><span>Four-stage route</span><h2>A sequence that protects the return.</h2><p>${escapeHtml(guide.verify)}</p></div><div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>Fallback logic</span><h2>The day still needs a useful shape when conditions change.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p><span>Recheck before leaving: ${escapeHtml(guide.verify)}</span></div></section>
   <section class="ca-field-section" id="checks"><div class="ca-section-heading"><span>Failure points</span><h2>Three reasons to change the plan.</h2></div><div class="ca-check-grid">${guide.checks.map(([title, copy], index) => `<article><span>0${index + 1}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="ca-field-section"><div class="ca-section-heading"><span>Same survey sheet</span><h2>Continue within ${escapeHtml(cluster.name)}.</h2></div><div class="ca-related-grid">${relatedCards(cluster, guide.slug)}</div><p class="ca-back"><a href="/canada/${cluster.slug}/">← Return to ${escapeHtml(cluster.name)}</a></p></section>
@@ -480,7 +488,7 @@ function countrySchema() {
     '@graph': [
       {
         '@type': 'Article', '@id': 'https://tripdistill.com/canada/#article', headline: 'Canada Travel Guide',
-        description: 'Eighteen complete Canadian travel hubs and fifty-four focused local guides.', inLanguage: 'en', datePublished: isoDate, dateModified: isoDate,
+        description: 'Eighteen complete Canadian travel hubs and fifty-four focused local guides.', inLanguage: 'en', datePublished: isoDate, dateModified: countryIsoDate,
         mainEntityOfPage: 'https://tripdistill.com/canada/', image: absolute(canadaClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Canada' },
         publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
       },
@@ -518,7 +526,7 @@ function countryPage() {
 <head>${sharedHead({ title: 'Canada Travel Guide — 18 Complete Regional Hubs | TripDistill', description, route: '/canada/', image: hero, type: 'website' })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script></head>
 <body data-page="canada" data-country="canada">
 ${shellStart('<main id="main-content" class="page-content ca-country">')}
-  <section class="ca-country-hero"><div class="ca-country-copy"><span class="ca-kicker">National survey atlas · reviewed ${reviewDate}</span><h1>Canada <span>plan the operating region before the postcard.</span></h1><p>Canada is too large for one generic “road trip.” Eighteen complete hubs separate city transit, intercity rail, mountain reservations, ferries, long rural roads, winter systems, wildfire smoke and northern operator logistics before distance becomes invisible.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 18 hubs</a><a class="button secondary" href="#distance">Read the distance contract</a></div><div class="ca-country-facts"><div><strong>18</strong><span>complete hubs</span></div><div><strong>54</strong><span>focused guides</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${heroImageCaption(hero)}</figcaption></figure><div class="ca-contour-stamp" aria-hidden="true"><span>PACIFIC</span><i></i><span>LAKES</span><i></i><span>ATLANTIC</span><i></i><span>NORTH</span></div></section>
+  <section class="ca-country-hero"><div class="ca-country-copy"><span class="ca-kicker">National survey atlas · reviewed ${countryReviewDate}</span><h1>Canada <span>plan the operating region before the postcard.</span></h1><p>Canada is too large for one generic “road trip.” Eighteen complete hubs separate city transit, intercity rail, mountain reservations, ferries, long rural roads, winter systems, wildfire smoke and northern operator logistics before distance becomes invisible.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 18 hubs</a><a class="button secondary" href="#distance">Read the distance contract</a></div><div class="ca-country-facts"><div><strong>18</strong><span>complete hubs</span></div><div><strong>54</strong><span>focused guides</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${heroImageCaption(hero)}</figcaption></figure><div class="ca-contour-stamp" aria-hidden="true"><span>PACIFIC</span><i></i><span>LAKES</span><i></i><span>ATLANTIC</span><i></i><span>NORTH</span></div></section>
   <section class="ca-country-principles"><article><span>01</span><h2>Choose one operating region.</h2><p>Connect places that share transport and weather instead of treating the country outline as a single itinerary.</p></article><article><span>02</span><h2>Make the transfer visible.</h2><p>Flight, rail, ferry, road, shuttle and the last safe return belong in the day plan, not in a footnote.</p></article><article><span>03</span><h2>Respect land, community and season.</h2><p>Follow current park, Indigenous tourism and community guidance for access, wildlife, photography and cultural places.</p></article></section>
   ${ad}
   <div id="regions">${countryGroups.map(([bands, kicker, heading, copy], index) => `<section class="ca-country-band" data-band="${bands.join('-')}"><div class="ca-band-heading"><span>${kicker}</span><h2 id="ca-band-${index}">${heading}</h2><p>${copy}</p></div><div class="ca-country-grid">${countryCards(bands)}</div></section>`).join('')}</div>
@@ -526,7 +534,7 @@ ${shellStart('<main id="main-content" class="page-content ca-country">')}
   <section class="ca-country-section"><div class="ca-band-heading"><span>Season board</span><h2>One national forecast is not enough.</h2></div><div class="ca-condition-grid"><article><strong>Summer</strong><p>High demand, wildfire smoke, park reservations, marine conditions and long daylight can all matter at once.</p></article><article><strong>Winter</strong><p>Snow, ice, avalanche control, road closures, short daylight and extreme cold change both equipment and travel time.</p></article><article><strong>Shoulder seasons</strong><p>Lower crowds can arrive with reduced schedules, trail snow, freeze–thaw, spring runoff or variable ferry and operator service.</p></article><article><strong>North</strong><p>Daylight, cold, aurora probability, road status and operator season define the useful travel window more than a national “best month.”</p></article></div></section>
   <section class="ca-country-section"><div class="ca-band-heading"><span>Entry & care</span><h2>Check the legal and local boundary before booking.</h2></div><div class="ca-country-notes"><article><h3>Entry documents</h3><p>Use Immigration, Refugees and Citizenship Canada for current visitor entry rules. Eligibility depends on nationality, passport, purpose and individual circumstances.</p></article><article><h3>Parks and reservations</h3><p>Use Parks Canada and the relevant provincial or local authority for reservations, closures, trail conditions, wildlife rules and seasonal services.</p></article><article><h3>Indigenous tourism and community access</h3><p>Prefer community-led or clearly authorized experiences. Do not treat public map visibility as permission to enter cultural places, private land or sensitive community spaces.</p></article></div></section>
   <section class="ca-country-section"><div class="ca-band-heading"><span>Planning answers</span><h2>Canada FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${question}</summary><div class="faq-answer"><p>${answer}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${reviewDate}. Entry, transport, weather, park and operator rules change; verify directly before travel.</p><ul>${sourceList(canadaCountrySources)}${canadaClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${countryReviewDate}. Entry, transport, weather, park and operator rules change; verify directly before travel.</p><ul>${sourceList(canadaCountrySources)}${canadaClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${countryReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
