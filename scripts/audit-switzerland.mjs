@@ -24,6 +24,13 @@ const zermattLastmod = '2026-10-12';
 const interlaken = switzerlandClusters.find((cluster) => cluster.slug === 'interlaken-lakes');
 const interlakenRoutes = interlaken ? [`/switzerland/${interlaken.slug}/`, ...interlaken.guides.map((guide) => guide.url)] : [];
 const interlakenLastmod = '2026-10-12';
+const lausanneRoutes = [
+  '/switzerland/lausanne-lavaux/',
+  '/switzerland/lausanne-lavaux/old-city-ouchy/',
+  '/switzerland/lausanne-lavaux/lavaux-terraces/',
+  '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
+];
+const lausanneLastmod = '2026-10-12';
 const geneva = switzerlandClusters.find((cluster) => cluster.slug === 'geneva-lake');
 const genevaRoutes = ['/switzerland/geneva-lake/', '/switzerland/geneva-lake/old-town-lakefront/', '/switzerland/geneva-lake/international-quarter/', '/switzerland/geneva-lake/carouge-arve/'];
 const genevaSitemapRoutes = ['/switzerland/', ...genevaRoutes];
@@ -239,7 +246,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = genevaSitemapRoutes.includes(route) ? genevaLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : '2026-09-12';
+    const expectedLastmod = genevaSitemapRoutes.includes(route) ? genevaLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

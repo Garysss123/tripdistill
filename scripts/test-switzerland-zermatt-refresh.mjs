@@ -35,7 +35,13 @@ const genevaDateRoutes = [
   '/switzerland/geneva-lake/international-quarter/',
   '/switzerland/geneva-lake/carouge-arve/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...interlakenRoutes, ...genevaDateRoutes].map((route) => `${locale.prefix}${route}`)));
+const lausanneRoutes = [
+  '/switzerland/lausanne-lavaux/',
+  '/switzerland/lausanne-lavaux/old-city-ouchy/',
+  '/switzerland/lausanne-lavaux/lavaux-terraces/',
+  '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...interlakenRoutes, ...genevaDateRoutes, ...lausanneRoutes].map((route) => `${locale.prefix}${route}`)));
 
 function descendants(node) {
   return [node, ...(node.childNodes || []).flatMap(descendants)];
@@ -192,7 +198,7 @@ const oldSitemap = sitemapRecords(baselineFile('sitemap.xml').toString('utf8'));
 const newSitemap = sitemapRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...newSitemap.keys()].sort(), [...oldSitemap.keys()].sort(), 'sitemap route set unchanged');
 const changedDates = [...newSitemap].filter(([route, date]) => oldSitemap.get(route) !== date);
-assert.deepEqual(new Set(changedDates.map(([route]) => route)), expectedDateChanges, 'only Zermatt, Interlaken, and Geneva-dependent routes across five editions have changed lastmod');
+assert.deepEqual(new Set(changedDates.map(([route]) => route)), expectedDateChanges, 'only Zermatt, Interlaken, Geneva-dependent and Lausanne routes across five editions have changed lastmod');
 for (const [route, date] of changedDates) assert.equal(date, '2026-10-12', `${route}: sitemap lastmod`);
 
 const expectedPhotos = ['zermatt-matterhorn/village-gornergrat', 'zermatt-matterhorn/sunnegga-five-lakes'];

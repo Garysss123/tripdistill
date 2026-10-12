@@ -165,7 +165,7 @@ export const switzerlandImageManifest = {
   },
   "lausanne-lavaux/old-city-ouchy": {
     "src": "/assets/images/switzerland-lausanne-lavaux-old-city-ouchy.webp",
-    "alt": "Lausanne and Lake Geneva viewed from the hillside",
+    "alt": "Lake Geneva at Lausanne’s Ouchy waterfront, with a small boat near the shore",
     "source": "https://commons.wikimedia.org/wiki/File:Lake_Geneva_in_Lausanne.jpg",
     "label": "Lake Geneva in Lausanne.jpg",
     "creator": "OlhaSolodenko",
