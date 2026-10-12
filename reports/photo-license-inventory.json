@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T16:04:22.260Z",
+  "generatedAt": "2026-10-12T16:19:44.112Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 815,
+    "assetFileCount": 816,
     "completeSourceCreatorLicenseRecords": 756,
-    "completeProjectOriginalRightsRecords": 26,
+    "completeProjectOriginalRightsRecords": 27,
     "licenseClaimsNotIndependentlyVerified": 488,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 812,
-    "deduplicatedImageCount": 815,
+    "expectedBuildImageCount": 813,
+    "deduplicatedImageCount": 816,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3509,
-    "assetsUsedByScannedEnglishPages": 772,
+    "imageReferencesScanned": 3510,
+    "assetsUsedByScannedEnglishPages": 773,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 602,
+    "assetsWithStructuredSourceRecords": 603,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 198,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 277,
-    "metadataOrCreditOnly": 514,
-    "usedAssetsWithoutIndependentSourcePageCheck": 501,
+    "metadataOrCreditOnly": 515,
+    "usedAssetsWithoutIndependentSourcePageCheck": 502,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 808 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 812 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 809 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 813 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -2661,7 +2661,8 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Melbourne central business district seen from above"
+            "Melbourne central business district seen from above",
+            "Melbourne central business district viewed from above"
           ],
           "rawVisibleCredits": [
             "Melbourne CBD 2008.jpg — Bidgee, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2712,6 +2713,7 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
+            "Yarra River and Princes Bridge beneath Melbourne’s night skyline",
             "Federation Square and the Yarra River in central Melbourne"
           ],
           "rawVisibleCredits": [
@@ -2865,6 +2867,7 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
+            "St Kilda Beach, pier and Port Phillip Bay before midday",
             "St Kilda Pier and Port Phillip Bay near Melbourne"
           ],
           "rawVisibleCredits": [
@@ -3480,7 +3483,8 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Circular Quay and The Rocks beside Sydney Harbour"
+            "Circular Quay and The Rocks beside Sydney Harbour",
+            "Sydney Harbour Bridge viewed across Sydney Cove from Circular Quay"
           ],
           "rawVisibleCredits": [
             "Photo of the Sydney Harbour Bridge from Circular Quay.jpg — JCL888, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -3536,6 +3540,50 @@
           "rawVisibleCredits": [
             "Sydney Ferry NORTH HEAD en route to Manly at the Heads on Sydney Harbour 20 January 1973.jpg — John Ward, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "2c191a5408734d3957aa012fc18d963e0979a8996e848203dda37c5e52660f84",
+      "assetPaths": [
+        "/assets/images/australia-sydney-harbour-coast-network-schematic.svg"
+      ],
+      "byteLength": 5611,
+      "sourceRecords": [
+        {
+          "sha256": "2c191a5408734d3957aa012fc18d963e0979a8996e848203dda37c5e52660f84",
+          "assetPath": "/assets/images/australia-sydney-harbour-coast-network-schematic.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-sydney-harbour-coast-network-schematic.svg",
+          "sourceTitle": "TripDistill original Sydney harbour and coast planning schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; paths are indicative, not geographic, and do not show distance, bearing, timetable or service availability.",
+          "localSha1": "67a25f29090493988d5a5fcd126f95890bd3c465",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/sydney-harbour-coast/"
+          ],
+          "altTexts": [
+            "Not-to-scale route schematic linking Sydney rail, walking, ferry and bus legs between the city, harbour and coast."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },

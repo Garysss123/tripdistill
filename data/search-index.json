@@ -5692,7 +5692,7 @@
     "url": "/australia/sydney-harbour-coast/",
     "parent": "Australia · New South Wales",
     "type": "Complete regional hub with five field guides",
-    "summary": "Sydney is easier to understand as a network of water crossings than as one central checklist. Circular Quay, the civic harbour, western foreshore, eastern beaches and Manly each run on different walking, ferry and surf conditions. Five field chapters separate the city into routes with explicit return points and enough time to read living Country, public space and working transport.",
+    "summary": "Sydney works best as several linked transport-and-weather days, not one central checklist. The CBD and Circular Quay are the hinge; The Rocks and the Opera House sit on foot-linked harbour edges, while Bondi and Coogee need a separate coast day and Manly begins with a harbour crossing. Use this hub to choose a base, protect the return, and leave room for the living Country, civic uses and changing conditions that a map cannot schedule.",
     "keywords": [
       "sydney, harbour & coast",
       "sydney harbour coast",
@@ -5726,7 +5726,7 @@
     "url": "/australia/melbourne-port-phillip/",
     "parent": "Australia · Victoria",
     "type": "Complete regional hub with five field guides",
-    "summary": "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge. The CBD, Southbank, inner north, St Kilda and Phillip Island require different tickets, walking rhythms and late returns. Five chapters protect museum attention, residential boundaries and the distance hidden behind a familiar city name.",
+    "summary": "Melbourne is easiest to plan as a compact CBD core, one deliberate Yarra crossing and a separate bay-side outing. Flinders Street and Southern Cross are useful but different arrival anchors; Southbank trades a quieter river edge for an extra crossing, while St Kilda adds a real cross-city trip. This four-stop plan keeps the free-tram boundary, museum opening checks and an exposed foreshore visible before you book.",
     "keywords": [
       "melbourne & port phillip",
       "melbourne port phillip",
@@ -5862,7 +5862,7 @@
     "url": "/australia/perth-fremantle-rottnest/",
     "parent": "Australia · Western Australia",
     "type": "Complete regional hub with five field guides",
-    "summary": "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own histories and transport rules. Five chapters separate city park, port, beach, island and valley movement so sunset does not conceal the long return.",
+    "summary": "Perth / Boorloo, Fremantle / Walyalup and Wadjemup / Rottnest sit on one metropolitan map but make different days. The city centre links Perth Station, the Cultural Centre and Elizabeth Quay; the Fremantle Line reaches a port town whose prison, shipwreck museum and working harbour each deserve a choice; the island starts at a specific ferry terminal and ends at its boarding gate. Choose one system at a time, then give Kings Park or the Cottesloe / Scarborough coast its own day.",
     "keywords": [
       "perth, fremantle & rottnest",
       "perth fremantle rottnest",
@@ -5913,7 +5913,7 @@
     "url": "/australia/adelaide-wine-island/",
     "parent": "Australia · South Australia",
     "type": "Complete regional hub with five field guides",
-    "summary": "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and ferry decisions. Five chapters separate walkable city culture from tasting transport and wildlife landscapes. A responsible plan never asks one driver to be navigator, taster and night-return solution.",
+    "summary": "South Australia’s capital works as a compact city base, but the wine regions are separate rural corridors. Start with North Terrace and the parklands on foot or by city transit; choose either the northbound Barossa or southbound McLaren Vale/Willunga leg for a rural stay. Public buses reach some towns, but they do not connect every cellar door or coast stop. Fix the last ride and a sober return before booking tastings.",
     "keywords": [
       "adelaide, wine country & kangaroo island",
       "adelaide wine island",
@@ -5964,7 +5964,7 @@
     "url": "/australia/sydney-harbour-coast/circular-quay-rocks/",
     "parent": "Australia · Sydney, Harbour & Coast",
     "type": "Focused field and decision guide",
-    "summary": "A first-day harbour route linking ferry bearings, The Rocks lanes, public viewpoints and a return that does not depend on one crowded platform.",
+    "summary": "A walkable Circular Quay–The Rocks circuit that turns ferry wharves, the harbour ridge and public foreshore into one legible half-day, with a named rail or wharf return and room for a museum only when its entry is confirmed.",
     "keywords": [
       "circular quay & the rocks",
       "sydney, harbour & coast",
@@ -5978,7 +5978,7 @@
     "url": "/australia/sydney-harbour-coast/opera-house-botanic-garden/",
     "parent": "Australia · Sydney, Harbour & Coast",
     "type": "Focused field and decision guide",
-    "summary": "A booked cultural visit connected to the Botanic Garden and harbour edge, with performance security, opening hours and heat treated as route constraints.",
+    "summary": "A half-day pairing of the Sydney Opera House precinct with one Royal Botanic Garden section, organized around the actual venue booking, garden gate, shade and return connection rather than an assumed all-access loop.",
     "keywords": [
       "opera house & royal botanic garden",
       "sydney, harbour & coast",
@@ -6006,7 +6006,7 @@
     "url": "/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/",
     "parent": "Australia · Sydney, Harbour & Coast",
     "type": "Focused field and decision guide",
-    "summary": "An exposed coastal walk planned around surf conditions, heat, stairs and a bus return rather than treated as an automatic city stroll.",
+    "summary": "The signed Bondi–Tamarama–Bronte–Clovelly–Coogee coastal walk is about 6 km; plan roughly three to five hours with stops, an early turnaround option and a checked bus return rather than treating the exposed headlands as a flat city stroll.",
     "keywords": [
       "bondi to coogee coastal walk",
       "sydney, harbour & coast",
@@ -6104,7 +6104,7 @@
     "url": "/australia/melbourne-port-phillip/cbd-laneways-tram-grid/",
     "parent": "Australia · Melbourne & Port Phillip",
     "type": "Focused field and decision guide",
-    "summary": "A central Melbourne walk that uses the numbered street grid and tram corridors to connect selected lanes without turning service alleys into a scavenger hunt.",
+    "summary": "A walkable CBD sequence from Flinders Street Station through Degraves Street, Centre Place and the historic arcades to Bourke Street Mall, with a mapped tram fallback when rain, crowds or tired feet shorten the day.",
     "keywords": [
       "cbd laneways & tram grid",
       "melbourne & port phillip",
@@ -6118,7 +6118,7 @@
     "url": "/australia/melbourne-port-phillip/federation-square-southbank/",
     "parent": "Australia · Melbourne & Port Phillip",
     "type": "Focused field and decision guide",
-    "summary": "A cultural-institution day crossing the Yarra once, with exhibition attention and evening river access planned as separate blocks.",
+    "summary": "A museum-led day that distinguishes ACMI and NGV Australia at Federation Square from NGV International across the Yarra, then follows one purposeful river crossing to a known tram or station.",
     "keywords": [
       "federation square & southbank",
       "melbourne & port phillip",
@@ -6146,12 +6146,12 @@
     "url": "/australia/melbourne-port-phillip/st-kilda-foreshore/",
     "parent": "Australia · Melbourne & Port Phillip",
     "type": "Focused field and decision guide",
-    "summary": "A bay-edge chapter for tram arrival, foreshore walking and sunset that keeps wildlife viewing, water safety and the evening tram visible.",
+    "summary": "A tram-to-foreshore outing with a daylight beach walk, an optional booked penguin viewing and a return journey checked before the evening gets late.",
     "keywords": [
       "st kilda & foreshore",
       "melbourne & port phillip",
       "st kilda foreshore",
-      "tram-to-bay sunset",
+      "tram-to-bay day",
       "australia travel guide"
     ]
   },
@@ -6664,7 +6664,7 @@
     "url": "/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/",
     "parent": "Australia · Perth, Fremantle & Rottnest",
     "type": "Focused field and decision guide",
-    "summary": "A central Boorloo chapter linking station, river edge and one cultural interior while Whadjuk Noongar context and afternoon heat remain visible.",
+    "summary": "A self-guided central Boorloo day links Perth Station, the Perth Cultural Centre, St Georges Terrace and Elizabeth Quay while keeping Whadjuk Noongar Country and the Swan River in view.",
     "keywords": [
       "boorloo / perth city & elizabeth quay",
       "perth, fremantle & rottnest",
@@ -6692,7 +6692,7 @@
     "url": "/australia/perth-fremantle-rottnest/walyalup-fremantle/",
     "parent": "Australia · Perth, Fremantle & Rottnest",
     "type": "Focused field and decision guide",
-    "summary": "A port-city day connecting rail arrival, maritime and convict history, markets and working-harbour boundaries.",
+    "summary": "A Walyalup / Fremantle walking day follows the Fremantle Line from Perth, then chooses one major heritage interior before the West End and public harbour edge.",
     "keywords": [
       "walyalup / fremantle",
       "perth, fremantle & rottnest",
@@ -6706,7 +6706,7 @@
     "url": "/australia/perth-fremantle-rottnest/wadjemup-rottnest/",
     "parent": "Australia · Perth, Fremantle & Rottnest",
     "type": "Focused field and decision guide",
-    "summary": "An island visit where ferry terminal, bicycle ability, bus circuit, quokka welfare and Wadjemup history come before beach count.",
+    "summary": "Plan Wadjemup / Rottnest around the booked crossing, a realistic island sector where few cars are permitted, and time for its Whadjuk history—not a checklist of beaches or quokka photographs.",
     "keywords": [
       "wadjemup / rottnest island",
       "perth, fremantle & rottnest",
@@ -6874,7 +6874,7 @@
     "url": "/australia/adelaide-wine-island/city-parklands-north-terrace/",
     "parent": "Australia · Adelaide, Wine Country & Kangaroo Island",
     "type": "Focused field and decision guide",
-    "summary": "A compact city route using the parklands and North Terrace institutions as orientation rather than racing between every collection.",
+    "summary": "A North Terrace and Botanic Garden day with one collection, one shaded garden section and a tram or bus return that you can check before leaving.",
     "keywords": [
       "adelaide park lands & north terrace",
       "adelaide, wine country & kangaroo island",
@@ -6902,7 +6902,7 @@
     "url": "/australia/adelaide-wine-island/barossa-valley/",
     "parent": "Australia · Adelaide, Wine Country & Kangaroo Island",
     "type": "Focused field and decision guide",
-    "summary": "A wine-region route designed around a sober driver, booked producers, food and landscape rather than maximum cellar-door count.",
+    "summary": "A Tanunda-based Barossa plan that uses the Gawler–Angaston bus corridor only after timetable checks and treats every cellar-door transfer as a separate booking.",
     "keywords": [
       "barossa valley",
       "adelaide, wine country & kangaroo island",
@@ -6916,7 +6916,7 @@
     "url": "/australia/adelaide-wine-island/fleurieu-mclaren-vale/",
     "parent": "Australia · Adelaide, Wine Country & Kangaroo Island",
     "type": "Focused field and decision guide",
-    "summary": "A peninsula day choosing either coast-and-walk or wine-and-food as the primary clock, with a sober road plan connecting them.",
+    "summary": "A McLaren Vale and Willunga route that distinguishes the useful Route 751 town corridor from the separate rides needed for cellar doors and coastal stops.",
     "keywords": [
       "fleurieu peninsula & mclaren vale",
       "adelaide, wine country & kangaroo island",

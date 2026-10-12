@@ -44,7 +44,6 @@
     "Harbours, escarpments, river bends and surf corridors.": "항구·절벽 지형·강의 굽이·서핑 해안 축",
     "Sydney, the Blue Mountains, Brisbane and the Gold Coast use public transport well—until the park, island or headland changes the contract.": "시드니·블루마운틴·브리즈번·골드코스트는 대중교통이 편리하지만, 공원·섬·곶에서는 이동 계획이 달라집니다.",
     "New South Wales · 5 field guides": "뉴사우스웨일스 · 현장 가이드 5개",
-    "Sydney is easier to understand as a network of water crossings than as one central checklist.": "시드니는 하나의 중심 체크리스트보다 물을 건너는 연결망으로 이해하는 편이 쉽습니다.",
     "Open the regional atlas →": "지역 지도 열기 →",
     "The country beyond Sydney is not one interchangeable day trip.": "시드니 너머의 지역은 모두 같은 당일치기 코스로 볼 수 없습니다.",
     "Queensland · 5 field guides": "퀸즐랜드 · 현장 가이드 5개",
@@ -54,10 +53,8 @@
     "Tram grids, cliff roads, parklands and alpine axes.": "트램 격자·절벽 도로·공원 지대·고산 축",
     "Melbourne, the Great Ocean Road, Adelaide and Canberra reward cultural attention, sober driving and weather-specific regional bases.": "멜버른·Great Ocean Road·애들레이드·캔버라는 문화에 주의를 기울이고 음주 없이 운전하며 날씨에 맞는 지역 거점을 선택할 때 진가가 드러납니다.",
     "Victoria · 5 field guides": "빅토리아 · 현장 가이드 5개",
-    "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge.": "멜버른은 촘촘한 도심 트램망·문화 기관·동네 중심가·넓은 포트필립 수변으로 움직입니다.",
     "Victoria’s southwest is a chain of surf coast, winding cliff road, wet forest, limestone stacks and Gariwerd mountain Country.": "빅토리아 남서부는 서핑 해안·구불구불한 절벽 도로·습윤한 숲·석회암 바위 기둥·Gariwerd 산악 전통적 땅이 이어지는 지역입니다.",
     "South Australia · 5 field guides": "남호주 · 현장 가이드 5개",
-    "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and…": "애들레이드의 공원 지대와 문화 축은 아담하지만, Hills·Barossa·Fleurieu·Kangaroo Island에서는 도로·음주·…",
     "Australian Capital Territory & New South Wales · 5 field guides": "Australian Capital Territory & New South Wales · 현장 가이드 5개",
     "Canberra’s designed lake and parliamentary axis reward slow institutional visits, while Namadgi and the Snowy Mountains demand road, fire and…": "캔버라의 인공 호수와 의회 축은 기관을 천천히 볼 때 좋고, Namadgi와 Snowy Mountains에는 도로·산불·…",
     "03 · tropics and interior": "03 · 열대와 내륙",
@@ -70,7 +67,6 @@
     "Indian Ocean light, remote road and island weather.": "인도양의 빛·외딴 도로·섬 날씨",
     "Perth, the Southwest, the Kimberley and Tasmania turn ferry, fire, long-road and park access into the visible itinerary.": "퍼스·사우스웨스트·킴벌리·태즈메이니아에서는 페리·산불·장거리 도로·공원 접근을 눈에 보이는 일정으로 다룹니다.",
     "Western Australia · 5 field guides": "서호주 · 현장 가이드 5개",
-    "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own…": "Perth/Boorloo는 Swan–Canning 강 수계와 인도양 사이에 펼쳐지고 Fremantle/Walyalup와 Wadjemup/Rottnest는 각자의…",
     "Western Australia’s southwest combines long driving, powerful surf, working vineyards, caves and tall forest.": "서호주 남서부에는 장거리 운전·강한 파도·경작 중인 포도밭·동굴·키 큰 숲이 함께 있습니다.",
     "Broome/Rubibi and the Kimberley operate at continental scale.": "Broome/Rubibi와 킴벌리는 대륙 규모로 움직입니다.",
     "Tasmania · 5 field guides": "태즈메이니아 · 현장 가이드 5개",
@@ -122,6 +118,10 @@
     "Broome & the Kimberley fields": "Broome & 킴벌리 현장 가이드",
     "Adelaide, Wine Country & Kangaroo Island fields": "애들레이드, 와인 산지 & Kangaroo Island 현장 가이드",
     "Tasmania fields": "태즈메이니아 현장 가이드",
-    "Canberra & Australian Alps fields": "캔버라 & 호주 알프스 현장 가이드"
+    "Canberra & Australian Alps fields": "캔버라 & 호주 알프스 현장 가이드",
+    "Sydney is easier to understand as a network of water crossings than as one central checklist.": "시드니는 하나의 중심 체크리스트보다 물을 건너는 연결망으로 이해하는 편이 쉽습니다.",
+    "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge.": "멜버른은 촘촘한 도심 트램망·문화 기관·동네 중심가·넓은 포트필립 수변으로 움직입니다.",
+    "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and…": "애들레이드의 공원 지대와 문화 축은 아담하지만, Hills·Barossa·Fleurieu·Kangaroo Island에서는 도로·음주·…",
+    "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own…": "Perth/Boorloo는 Swan–Canning 강 수계와 인도양 사이에 펼쳐지고 Fremantle/Walyalup와 Wadjemup/Rottnest는 각자의…"
   }
 }

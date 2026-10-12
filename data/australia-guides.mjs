@@ -3,6 +3,7 @@ import { australiaSouthClusters } from './australia-south-guides.mjs';
 import { australiaNorthClusters } from './australia-north-guides.mjs';
 import { australiaWestIslandClusters } from './australia-west-islands-guides.mjs';
 import { australiaImageManifest } from './australia-image-manifest.mjs';
+import { australiaSydneyDiagram } from './australia-sydney-diagram.mjs';
 import { australiaImageEditNote } from './australia-guide-builder.mjs';
 
 const bySlug = new Map([
@@ -36,6 +37,7 @@ export const australiaClusters = orderedSlugs.map((slug) => {
   if (!cluster) throw new Error(`Missing Australia cluster ${slug}.`);
   return {
     ...cluster,
+    ...(cluster.slug === 'sydney-harbour-coast' ? { diagram: australiaSydneyDiagram } : {}),
     guides: cluster.guides.map((guide) => {
       const key = `${cluster.slug}/${guide.slug}`;
       const image = australiaImageManifest[key];

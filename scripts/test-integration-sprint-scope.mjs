@@ -19,23 +19,24 @@ const readFromGit = (spec) => git(['show', spec]);
 const sorted = (values) => [...values].sort();
 
 assert.equal(integrationRouteGroups.unitedKingdom.length, 9);
+assert.equal(integrationRouteGroups.australia.length, 12);
 assert.equal(integrationRouteGroups.france.length, 17);
 assert.equal(integrationRouteGroups.switzerland.length, 45);
 assert.equal(integrationRouteGroups.italy.length, 61);
 assert.equal(integrationRouteGroups.canada.length, 25);
 assert.equal(integrationRouteGroups.malaysia.length, 41);
-assert.equal(integrationRoutes.length, 198);
-assert.equal(integrationSitemapRoutes.length, 197);
-assert.equal(integrationSearchRoutes.length, 162);
+assert.equal(integrationRoutes.length, 210);
+assert.equal(integrationSitemapRoutes.length, 209);
+assert.equal(integrationSearchRoutes.length, 178);
 
 const changedFiles = git([
   'diff', '--name-only', integrationSprintBaseline, '--',
-  'united-kingdom', 'france', 'switzerland', 'italy', 'canada', 'malaysia'
+  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia'
 ]).toString('utf8').trim().split('\n').filter(Boolean);
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.deepEqual(sorted(changedBodyRoutes), sorted(integrationRoutes), 'the exact 198 English route bodies changed across UK, France, Switzerland, Italy, Canada and Malaysia');
+assert.deepEqual(sorted(changedBodyRoutes), sorted(integrationRoutes), 'the exact 210 English route bodies changed across UK, Australia, France, Switzerland, Italy, Canada and Malaysia');
 
 function parseSitemap(xml) {
   return new Map([...xml.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod>.*?<\/url>/gs)]
@@ -52,11 +53,11 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedIntegrationSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 985);
+assert.equal(changedSitemapUrls.length, 1045);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact 197 routes across five editions have updated sitemap dates'
+  'only the exact 209 routes across five editions have updated sitemap dates'
 );
 for (const url of changedSitemapUrls) assert.equal(currentSitemap.get(url), '2026-10-12', `${url}: current sitemap date`);
 
@@ -71,7 +72,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 162);
-assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact 162 expected English search records changed');
+assert.equal(changedSearchRoutes.length, 178);
+assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact 178 expected English search records changed');
 
-console.log('Integration scope regression passed: 198 exact English bodies, 985 date changes over 197 routes × five editions, 162 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 210 exact English bodies, 1,045 date changes over 209 routes × five editions, 178 English search changes, and the unchanged 4,560-URL set.');

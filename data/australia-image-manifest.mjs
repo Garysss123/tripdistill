@@ -2,7 +2,7 @@
 export const australiaImageManifest = {
   "sydney-harbour-coast/circular-quay-rocks": {
     "src": "/assets/images/australia-sydney-harbour-coast-circular-quay-rocks.webp",
-    "alt": "Circular Quay and The Rocks beside Sydney Harbour",
+    "alt": "Sydney Harbour Bridge viewed across Sydney Cove from Circular Quay",
     "source": "https://commons.wikimedia.org/wiki/File:Photo_of_the_Sydney_Harbour_Bridge_from_Circular_Quay.jpg",
     "label": "Photo of the Sydney Harbour Bridge from Circular Quay.jpg",
     "creator": "JCL888",
@@ -202,7 +202,7 @@ export const australiaImageManifest = {
   },
   "melbourne-port-phillip/cbd-laneways-tram-grid": {
     "src": "/assets/images/australia-melbourne-port-phillip-cbd-laneways-tram-grid.webp",
-    "alt": "Melbourne central business district seen from above",
+    "alt": "Melbourne central business district viewed from above",
     "source": "https://commons.wikimedia.org/wiki/File:Melbourne_CBD_2008.jpg",
     "label": "Melbourne CBD 2008.jpg",
     "creator": "Bidgee",
@@ -212,7 +212,7 @@ export const australiaImageManifest = {
   },
   "melbourne-port-phillip/federation-square-southbank": {
     "src": "/assets/images/australia-melbourne-port-phillip-federation-square-southbank.webp",
-    "alt": "Federation Square and the Yarra River in central Melbourne",
+    "alt": "Yarra River and Princes Bridge beneath Melbourne’s night skyline",
     "source": "https://commons.wikimedia.org/wiki/File:Night_view_of_the_Melbourne_CBD,_over_the_Yarra_River,_showing_Princes_Bridge,_St_Kilda_Road,_St_Paul%27s_Cathedral,_and_Federation_Square._Peter_Neaum._-_panoramio.jpg",
     "label": "Night view of the Melbourne CBD, over the Yarra River, showing Princes Bridge, St Kilda Road, St Paul's Cathedral, and Federation Square. Peter Neaum. - panoramio.jpg",
     "creator": "Peter Neaum",
@@ -232,7 +232,7 @@ export const australiaImageManifest = {
   },
   "melbourne-port-phillip/st-kilda-foreshore": {
     "src": "/assets/images/australia-melbourne-port-phillip-st-kilda-foreshore.webp",
-    "alt": "St Kilda Pier and Port Phillip Bay near Melbourne",
+    "alt": "St Kilda Beach, pier and Port Phillip Bay before midday",
     "source": "https://commons.wikimedia.org/wiki/File:Quiet_before_midday_-_St_Kilda_Beach_and_Pier_(3166045772).jpg",
     "label": "Quiet before midday - St Kilda Beach and Pier (3166045772).jpg",
     "creator": "Alpha from Melbourne, Australia",

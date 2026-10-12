@@ -12,6 +12,20 @@ export const integrationRouteGroups = Object.freeze({
     '/united-kingdom/pembrokeshire-west-wales/st-davids-coast/',
     '/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/'
   ]),
+  australia: Object.freeze([
+    '/australia/melbourne-port-phillip/',
+    '/australia/melbourne-port-phillip/cbd-laneways-tram-grid/',
+    '/australia/melbourne-port-phillip/federation-square-southbank/',
+    '/australia/melbourne-port-phillip/st-kilda-foreshore/',
+    '/australia/adelaide-wine-island/',
+    '/australia/adelaide-wine-island/city-parklands-north-terrace/',
+    '/australia/adelaide-wine-island/barossa-valley/',
+    '/australia/adelaide-wine-island/fleurieu-mclaren-vale/',
+    '/australia/sydney-harbour-coast/',
+    '/australia/sydney-harbour-coast/circular-quay-rocks/',
+    '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
+    '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/'
+  ]),
   france: Object.freeze([
     '/france/',
     '/france/corsica/',
@@ -215,6 +229,7 @@ export const integrationRouteGroups = Object.freeze({
 
 export const integrationRoutes = Object.freeze([
   ...integrationRouteGroups.unitedKingdom,
+  ...integrationRouteGroups.australia,
   ...integrationRouteGroups.france,
   ...integrationRouteGroups.switzerland,
   ...integrationRouteGroups.italy,
@@ -226,8 +241,15 @@ export const integrationSitemapRoutes = Object.freeze(
   integrationRoutes.filter((route) => route !== '/united-kingdom/')
 );
 
-export const integrationSearchRoutes = Object.freeze(
-  integrationRoutes.filter((route) => ![
+const integrationSearchOnlyRoutes = Object.freeze([
+  '/australia/perth-fremantle-rottnest/',
+  '/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/',
+  '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
+  '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
+]);
+
+export const integrationSearchRoutes = Object.freeze([
+  ...integrationRoutes.filter((route) => ![
     '/canada/',
     '/france/french-alps/annecy-lake-old-town/',
     '/france/french-alps/chamonix-mountain-systems/',
@@ -264,8 +286,9 @@ export const integrationSearchRoutes = Object.freeze(
     '/italy/western-sicily/agrigento-selinunte/',
     '/italy/western-sicily/palermo-monreale-cefalu/',
     '/italy/western-sicily/trapani-erice-egadi/'
-  ].includes(route))
-);
+  ].includes(route)),
+  ...integrationSearchOnlyRoutes
+]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
