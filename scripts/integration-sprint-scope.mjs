@@ -94,7 +94,11 @@ export const integrationRouteGroups = Object.freeze({
     '/switzerland/st-gallen-appenzell/',
     '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
     '/switzerland/st-gallen-appenzell/appenzell-village/',
-    '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
+    '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/',
+    '/switzerland/graubunden-corridors/',
+    '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+    '/switzerland/graubunden-corridors/davos-parsenn/',
+    '/switzerland/graubunden-corridors/arosa-line/'
   ]),
   italy: Object.freeze([
     '/italy/',

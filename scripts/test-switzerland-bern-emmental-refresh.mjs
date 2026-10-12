@@ -97,10 +97,16 @@ const stGallenRoutes = [
   '/switzerland/st-gallen-appenzell/appenzell-village/',
   '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
 ];
-const expectedNewDateChanges = new Set(locales.flatMap((locale) => [...stMoritzRoutes, ...stGallenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const graubuendenRoutes = [
+  '/switzerland/graubunden-corridors/',
+  '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+  '/switzerland/graubunden-corridors/davos-parsenn/',
+  '/switzerland/graubunden-corridors/arosa-line/'
+];
+const expectedNewDateChanges = new Set(locales.flatMap((locale) => [...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const retainedDateRoutes = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const dateChanges = [...currentRecords].filter(([url, date]) => new URL(url).pathname.includes('/switzerland/') && baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, expectedNewDateChanges.size, 'only CH11 and CH12 add dates relative to the exact pre-Switzerland integration checkpoint');
+assert.equal(dateChanges.length, expectedNewDateChanges.size, 'only CH11, CH12 and CH13 add dates relative to the exact pre-Switzerland integration checkpoint');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedNewDateChanges.has(url), `unexpected Swiss sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `Swiss review date for ${url}`);
@@ -266,4 +272,4 @@ print(json.dumps({'root': tag(root), 'elements': len(nodes), 'texts': len(texts)
 `;
 const xmlResult = spawnSync('python3', ['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
 assert.equal(xmlResult.status, 0, `SVG must parse as XML and fit its geometry: ${xmlResult.stderr}`);
-console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11/CH12, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);
+console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11/CH12/CH13, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);

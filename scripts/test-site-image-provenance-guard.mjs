@@ -16,6 +16,7 @@ const originalSvgPaths = [
   '/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg',
   '/assets/images/tripdistill-canada-banff-two-corridors.svg',
   '/assets/images/tripdistill-brisbane-bay-crossings.svg',
+  '/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg',
 ];
 const francePageUrl = 'https://tripdistill.com/france/lille-french-flanders/';
 const franceSvgPath = '/assets/images/france-lille-arras-vimy-sequence-legend.svg';

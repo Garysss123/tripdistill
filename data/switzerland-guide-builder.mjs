@@ -1,6 +1,7 @@
 import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from './switzerland-ch10-refresh.mjs';
 import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from './switzerland-ch11-refresh.mjs';
 import { switzerlandCh12ClusterRefresh, switzerlandCh12GuideRefresh } from './switzerland-ch12-refresh.mjs';
+import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from './switzerland-ch13-refresh.mjs';
 
 const routeLabels = ['Arrive', 'Orient', 'Commit', 'Return'];
 const ch10BatchOneGuides = new Set(['old-town-rhine', 'art-museums', 'kleinbasel-border-rhine']);
@@ -82,11 +83,22 @@ function applyCh12ClusterRefresh(cluster) {
   return { ...cluster, ...switzerlandCh12ClusterRefresh };
 }
 
+function applyCh13GuideRefresh(definition) {
+  const refresh = switzerlandCh13GuideRefresh[definition?.slug];
+  return refresh ? { ...definition, ...refresh } : definition;
+}
+
+function applyCh13ClusterRefresh(cluster) {
+  if (cluster?.slug !== 'graubunden-corridors') return cluster;
+  return { ...cluster, ...switzerlandCh13ClusterRefresh };
+}
+
 export function switzerlandGuide(definition) {
   definition = applyEditorialExtensions(definition, guideEditorialExtensions);
   definition = applyCh10GuideRefresh(definition);
   definition = applyCh11GuideRefresh(definition);
   definition = applyCh12GuideRefresh(definition);
+  definition = applyCh13GuideRefresh(definition);
   const required = ['slug', 'name', 'instrument', 'layout', 'imageQuery', 'imageAlt', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
   for (const key of required) {
     if (!definition?.[key]) throw new Error(`Switzerland guide ${definition?.slug || '(unnamed)'} lacks ${key}.`);
@@ -117,6 +129,7 @@ export function defineSwitzerlandCluster(cluster) {
   cluster = applyCh10ClusterRefresh(cluster);
   cluster = applyCh11ClusterRefresh(cluster);
   cluster = applyCh12ClusterRefresh(cluster);
+  cluster = applyCh13ClusterRefresh(cluster);
   const required = ['slug', 'name', 'region', 'band', 'family', 'label', 'tagline', 'hubIntro', 'stay', 'transfer', 'season', 'fallback'];
   for (const key of required) {
     if (!cluster?.[key]) throw new Error(`Switzerland cluster ${cluster?.slug || '(unnamed)'} lacks ${key}.`);

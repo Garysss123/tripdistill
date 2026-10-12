@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T16:49:06.226Z",
+  "generatedAt": "2026-10-12T17:14:48.413Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 817,
+    "assetFileCount": 818,
     "completeSourceCreatorLicenseRecords": 756,
-    "completeProjectOriginalRightsRecords": 28,
+    "completeProjectOriginalRightsRecords": 29,
     "licenseClaimsNotIndependentlyVerified": 488,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 814,
-    "deduplicatedImageCount": 817,
+    "expectedBuildImageCount": 815,
+    "deduplicatedImageCount": 818,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3510,
-    "assetsUsedByScannedEnglishPages": 774,
+    "imageReferencesScanned": 3511,
+    "assetsUsedByScannedEnglishPages": 775,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 604,
+    "assetsWithStructuredSourceRecords": 605,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 198,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 277,
-    "metadataOrCreditOnly": 516,
-    "usedAssetsWithoutIndependentSourcePageCheck": 503,
+    "metadataOrCreditOnly": 517,
+    "usedAssetsWithoutIndependentSourcePageCheck": 504,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 810 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 814 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 811 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 815 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -23326,7 +23326,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arosa,_Switzerland_-_Lake_(2).jpg",
           "sourceTitle": "File:Arosa, Switzerland - Lake (2).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Arosa, Switzerland - Lake (2).jpg",
+          "creditLabel": "Arosa resort and lake",
           "creator": "Aileen's Pics",
           "license": "CC BY-SA 2.0",
           "sourceDeclaredLicenses": null,
@@ -23356,7 +23356,7 @@
             "Arosa mountain resort and lake in Graubünden"
           ],
           "rawVisibleCredits": [
-            "Arosa, Switzerland - Lake (2).jpg — Aileen's Pics, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Arosa resort and lake — Aileen's Pics, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23375,7 +23375,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chur_(Altstadt).jpg",
           "sourceTitle": "File:Chur (Altstadt).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Chur (Altstadt).jpg",
+          "creditLabel": "Chur Old Town, railway and river edge",
           "creator": "Freaktalius",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -23403,10 +23403,11 @@
             "/switzerland/graubunden-corridors/davos-parsenn/"
           ],
           "altTexts": [
-            "Chur old town and Graubünden mountain landscape"
+            "Chur old town and Graubünden mountain landscape",
+            "Chur Old Town seen from above, with the urban railway and river edge"
           ],
           "rawVisibleCredits": [
-            "Chur (Altstadt).jpg — Freaktalius, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Chur Old Town, railway and river edge — Freaktalius, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23425,7 +23426,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Davos_as_seen_from_%C3%84lplihorn_(summer).jpg",
           "sourceTitle": "File:Davos as seen from Älplihorn (summer).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Davos as seen from Älplihorn (summer).jpg",
+          "creditLabel": "Davos valley and mountains from Älplihorn",
           "creator": "Capricorn4049",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -23455,7 +23456,7 @@
             "Davos valley and surrounding mountains in Graubünden"
           ],
           "rawVisibleCredits": [
-            "Davos as seen from Älplihorn (summer).jpg — Capricorn4049, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Davos valley and mountains from Älplihorn — Capricorn4049, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -28548,6 +28549,50 @@
           ],
           "altTexts": [
             "Original conceptual access diagram comparing the Ebenalp cableway, the Wasserauen–Seealpsee walking loop and a lower village or city fallback; route order only, not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "180d7100ad24dd012e2cb19f36606db8a70f53e80b480970ba63709b8a1f445b",
+      "assetPaths": [
+        "/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg"
+      ],
+      "byteLength": 11504,
+      "sourceRecords": [
+        {
+          "sha256": "180d7100ad24dd012e2cb19f36606db8a70f53e80b480970ba63709b8a1f445b",
+          "assetPath": "/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+          "sourceTitle": "Graubünden corridor-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Conceptual corridor-choice schematic only; not a geographic map and not to scale.",
+          "localSha1": "02f05c2b62f632289bef849a8cfb9d817c024b7f",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/switzerland/graubunden-corridors/chur-rhine-gorge/"
+          ],
+          "altTexts": [
+            "Original schematic comparing the Rhine Gorge, Davos/Parsenn and Chur–Arosa corridors from Chur, with a low-elevation old-town fallback; conceptual route order, not to scale"
           ],
           "rawVisibleCredits": []
         }

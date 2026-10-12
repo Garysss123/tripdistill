@@ -27,6 +27,8 @@ const sydneyDiagramAssetPath = '/assets/images/australia-sydney-harbour-coast-ne
 const sydneyDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-sydney-harbour-coast-network-schematic.svg';
 const brisbaneDiagramAssetPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
 const brisbaneDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-brisbane-bay-crossings.svg';
+const graubuendenDiagramAssetPath = '/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
+const graubuendenDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
 const frenchAlpsDiagramAssetPath = '/assets/images/france-grenoble-bastille-route-sequence.svg';
 const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp';
 const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
@@ -439,7 +441,7 @@ try {
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 503, 'Ottawa–Gatineau, Sydney and Brisbane join the original diagrams without an independent source-page check; unresolved photo claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 504, 'Ottawa–Gatineau, Sydney, Brisbane and Graubünden join the original diagrams without an independent source-page check; unresolved photo claims remain unverified');
   assert.equal(report.counts.sourcePageChecked, 277, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
   assert.equal(report.counts.assetsVisuallyReviewed, 198, 'the merged inventory records the supplied Banff, Jasper and Newfoundland SVG pixel checks along with prior photo reviews');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
@@ -690,6 +692,21 @@ try {
   assert.ok(brisbaneDiagram.verificationDetail.includes('not an independent source-page check'));
   assert.ok(brisbaneDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === brisbaneDiagramAssetPath), false);
+  const graubuendenDiagram = photoRecords.find((item) => item.assetPath === graubuendenDiagramAssetPath);
+  assert.ok(graubuendenDiagram, 'inventory must retain the original Graubünden corridor-choice schematic');
+  assert.equal(graubuendenDiagram.assetType, 'original-planning-diagram');
+  assert.equal(graubuendenDiagram.sourceUrl, graubuendenDiagramSourceUrl);
+  assert.equal(graubuendenDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(graubuendenDiagram.license, null, 'the Graubünden original SVG must not claim a public license');
+  assert.equal(graubuendenDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(graubuendenDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(graubuendenDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(graubuendenDiagram.inventoryStatus, 'used');
+  assert.equal(graubuendenDiagram.useCount, 1);
+  assert.deepEqual(graubuendenDiagram.routes, ['/switzerland/graubunden-corridors/chur-rhine-gorge/']);
+  assert.equal(graubuendenDiagram.localSha1, '02f05c2b62f632289bef849a8cfb9d817c024b7f');
+  assert.equal(graubuendenDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === graubuendenDiagramAssetPath), false);
   const banffDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-banff-two-corridors.svg');
   assert.ok(banffDiagram, 'inventory must include the original Banff two-corridor schematic');
   assert.equal(banffDiagram.assetType, 'original-planning-diagram');
@@ -761,7 +778,7 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 28, 'the merged inventory counts UK, France, Italy, Canada, Malaysia, Switzerland and Australia project-original diagrams plus existing artwork');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 29, 'the merged inventory counts UK, France, Italy, Canada, Malaysia, Switzerland and Australia project-original diagrams plus existing artwork');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 488, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -901,7 +918,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 814, 'Ottawa–Gatineau, Sydney, Brisbane, Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 815, 'Ottawa–Gatineau, Sydney, Brisbane, Graubünden, Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

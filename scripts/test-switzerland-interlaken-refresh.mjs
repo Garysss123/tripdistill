@@ -64,7 +64,13 @@ const stGallenRoutes = [
   '/switzerland/st-gallen-appenzell/appenzell-village/',
   '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes].map((route) => `${locale.prefix}${route}`)));
+const graubuendenRoutes = [
+  '/switzerland/graubunden-corridors/',
+  '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+  '/switzerland/graubunden-corridors/davos-parsenn/',
+  '/switzerland/graubunden-corridors/arosa-line/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes].map((route) => `${locale.prefix}${route}`)));
 
 function descendants(node) { return [node, ...(node.childNodes || []).flatMap(descendants)]; }
 function getAttr(node, name) { return node?.attrs?.find((item) => item.name === name)?.value; }

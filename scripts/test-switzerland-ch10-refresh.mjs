@@ -16,7 +16,9 @@ const ch11Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-m
 const ch11Routes = [`/switzerland/${ch11Cluster.slug}/`, ...ch11Cluster.guides.map((guide) => guide.url)];
 const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
 const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
-const editedRoutes = new Set([...expectedRoutes, ...ch11Routes, ...ch12Routes]);
+const ch13Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'graubunden-corridors');
+const ch13Routes = [`/switzerland/${ch13Cluster.slug}/`, ...ch13Cluster.guides.map((guide) => guide.url)];
+const editedRoutes = new Set([...expectedRoutes, ...ch11Routes, ...ch12Routes, ...ch13Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const protectedAssets = {
   'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf',
@@ -65,9 +67,9 @@ assert.equal(before.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no route was added or removed');
 
-const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes].map((route) => `${prefix}${route}`)));
+const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes, ...ch13Routes].map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
-assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page CH11 and downstream CH12 batches across five editions receive new dates after the verified CH10 source');
+assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page CH11, CH12 and CH13 batches across five editions receive new dates after the verified CH10 source');
 for (const [route, date] of changedDates) {
   assert.ok(allowedDatedUrls.has(route), `unexpected sitemap date change: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 sitemap date for ${route}`);
@@ -122,4 +124,4 @@ for (const route of expectedRoutes) {
   }
 }
 
-console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; only the four-page CH11 and CH12 batches changed dates since bc1c7dd; ${after.size} sitemap URLs and later drafts remain intact.`);
+console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; only the four-page CH11, CH12 and CH13 batches changed Swiss dates since bc1c7dd; ${after.size} sitemap URLs and later drafts remain intact.`);

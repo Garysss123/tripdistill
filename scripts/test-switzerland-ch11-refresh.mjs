@@ -19,6 +19,8 @@ const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-
 const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
 const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
 const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
+const ch13Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'graubunden-corridors');
+const ch13Routes = [`/switzerland/${ch13Cluster.slug}/`, ...ch13Cluster.guides.map((guide) => guide.url)];
 const laterCa11Routes = [
   '/canada/ottawa-gatineau/',
   '/canada/ottawa-gatineau/parliament-rideau/',
@@ -49,7 +51,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...laterCa11Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...laterCa11Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
@@ -90,7 +92,7 @@ for (const route of allRoutes.filter((item) => !preservedOrLaterRoutes.has(item)
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains byte-identical to the verified CH10 source`);
 }
 
-const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes].map((route) => `${prefix}${route}`)));
+const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes, ...ch13Routes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(read('sitemap.xml'));
@@ -98,7 +100,7 @@ assert.equal(before.size, 4560, 'verified CH10 sitemap contains 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'CH11 adds or removes no sitemap route');
 const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
-assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'only the CH11 and downstream CH12 routes across five editions receive new dates');
+assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'only the CH11, CH12 and downstream CH13 routes across five editions receive new dates');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalizedRoutes.has(route), `unexpected changed date: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 date for ${route}`);

@@ -20,6 +20,13 @@ const targetRoutes = [
   '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
 ];
 const targetSet = new Set(targetRoutes);
+const graubuendenRoutes = [
+  '/switzerland/graubunden-corridors/',
+  '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+  '/switzerland/graubunden-corridors/davos-parsenn/',
+  '/switzerland/graubunden-corridors/arosa-line/'
+];
+const graubuendenSet = new Set(graubuendenRoutes);
 const ch11Routes = [
   '/switzerland/st-moritz-engadin/',
   '/switzerland/st-moritz-engadin/st-moritz-lakes/',
@@ -56,7 +63,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const newSwissSearchRoutes = new Set([...targetRoutes, ...ch11Routes, ...laterCa11Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes]);
+const newSwissSearchRoutes = new Set([...targetRoutes, ...graubuendenRoutes, ...ch11Routes, ...laterCa11Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes]);
 const cluster = switzerlandClusters.find((item) => item.slug === 'st-gallen-appenzell');
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((item) => [`/switzerland/${item.slug}/`, ...item.guides.map((guide) => guide.url)])];
 const batchMarkers = ['-ch12-st-gallen-pages-20261012.json', '-ch12-st-gallen-search-20261012.json'];
@@ -90,13 +97,13 @@ assert.equal(switzerlandCh12ClusterRefresh.isoDate, '2026-10-12', 'hub review da
 assert.equal(Object.keys(switzerlandCh12GuideRefresh).length, 3, 'only the three St Gallen/Appenzell guides are active in CH12');
 assert.equal(allRoutes.length, 65, 'Switzerland retains its existing 65 English routes');
 
-for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+for (const route of allRoutes.filter((item) => !targetSet.has(item) && !graubuendenSet.has(item))) {
   const relative = `${route.slice(1)}index.html`;
   const baseline = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} stays byte-identical to the exact base`);
 }
 
-const expectedLocalized = new Set(locales.flatMap((prefix) => targetRoutes.map((route) => `${prefix}${route}`)));
+const expectedLocalized = new Set(locales.flatMap((prefix) => [...targetRoutes, ...graubuendenRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const beforeSitemap = sitemapRecords(baseSitemap);
 const afterSitemap = sitemapRecords(read('sitemap.xml'));
@@ -104,7 +111,7 @@ assert.equal(beforeSitemap.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(afterSitemap.size, beforeSitemap.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...afterSitemap.keys()].sort(), [...beforeSitemap.keys()].sort(), 'CH12 adds or removes no URL');
 const changedDates = [...afterSitemap].filter(([route, date]) => route.includes('/switzerland/') && beforeSitemap.get(route) !== date);
-assert.equal(changedDates.length, 20, 'only four existing routes across five editions receive the CH12 review date');
+assert.equal(changedDates.length, expectedLocalized.size, 'only the CH12 and CH13 routes across five editions receive the review date');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalized.has(route), `unexpected lastmod change: ${route}`);
   assert.equal(date, '2026-10-12', `${route} is dated to the review day`);
@@ -174,7 +181,7 @@ execFileSync('python3', ['-c', pythonSvgCheck, path.join(root, diagram.src.slice
 const targetSearch = JSON.parse(read('data/search-index.json')).filter((record) => targetSet.has(record.url));
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${integrationBaseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 assert.equal(targetSearch.length, 4, 'the four existing English search records remain');
-for (const record of JSON.parse(read('data/search-index.json')).filter((item) => !newSwissSearchRoutes.has(item.url))) {
+for (const record of JSON.parse(read('data/search-index.json')).filter((item) => item.url.startsWith('/switzerland/') && !newSwissSearchRoutes.has(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record ${record.url} remains unchanged`);
 }
 
@@ -241,7 +248,7 @@ for (const [i, prefix] of locales.entries()) {
     const batch = JSON.parse(fs.readFileSync(path.join(batchDirectory, filename), 'utf8'));
     if (batch.qualityStatus === 'reviewed') Object.assign(oldTranslations, batch.translations || {});
   }
-  for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+  for (const route of allRoutes.filter((item) => !targetSet.has(item) && !graubuendenSet.has(item))) {
     const baseHtml = execFileSync('git', ['show', `${baseCommit}:${route.slice(1)}index.html`], { cwd: root, encoding: 'utf8' });
     const expectedHtml = localizeHtml(baseHtml, oldTranslations, code, route);
     assert.equal(read(path.relative(root, pathFor(prefix, route))), expectedHtml, `${prefix}${route} is unchanged under its earlier reviewed catalog`);
