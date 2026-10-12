@@ -683,7 +683,7 @@
   <url><loc>https://tripdistill.com/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/bordeaux-gironde/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/dordogne-perigord/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -729,9 +729,9 @@
   <url><loc>https://tripdistill.com/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1595,7 +1595,7 @@
   <url><loc>https://tripdistill.com/zh/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/bordeaux-gironde/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -1641,9 +1641,9 @@
   <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -2507,7 +2507,7 @@
   <url><loc>https://tripdistill.com/ja/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/bordeaux-gironde/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2553,9 +2553,9 @@
   <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3419,7 +3419,7 @@
   <url><loc>https://tripdistill.com/ko/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/bordeaux-gironde/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -3465,9 +3465,9 @@
   <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -4331,7 +4331,7 @@
   <url><loc>https://tripdistill.com/th/france/french-alps/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/bordeaux-gironde/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/dordogne-perigord/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -4377,9 +4377,9 @@
   <url><loc>https://tripdistill.com/th/france/dordogne-perigord/sarlat-market-old-town/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/dordogne-perigord/vezere-prehistory/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/dordogne-perigord/dordogne-castles-villages/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/albi-episcopal-city/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/bayonne-biarritz/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

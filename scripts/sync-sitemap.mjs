@@ -14,6 +14,7 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
+const malaysiaCameronLastmod = '2026-10-11';
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -41,6 +42,13 @@ const franceBrittanyEditedRoutes = [
   '/france/brittany-coasts/saint-malo-dinan/',
   '/france/brittany-coasts/morbihan-carnac/',
   '/france/brittany-coasts/quimper-crozon/'
+];
+const franceToulouseOccitanieReviewedLastmod = '2026-10-11';
+const franceToulouseOccitanieReviewedRoutes = [
+  '/france/toulouse-albi-carcassonne/',
+  '/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/',
+  '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
+  '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
 ];
 const unitedKingdomLastmod = '2026-09-20';
 const italyLastmod = '2026-09-26';
@@ -451,8 +459,8 @@ const newRoutes = [
   ...canadaClusters.map((cluster) => [`/canada/${cluster.slug}/`, canadaLastmod, 'monthly', '0.8']),
   ...canadaGuides.map((guide) => [guide.url, canadaLastmod, 'monthly', '0.7']),
   ['/malaysia/', malaysiaLastmod, 'monthly', '0.9'],
-  ...malaysiaDepthClusters.map((cluster) => [`/malaysia/${cluster.hubSlug}/`, malaysiaLastmod, 'monthly', '0.8']),
-  ...malaysiaDepthGuides.map((guide) => [guide.url, malaysiaLastmod, 'monthly', '0.7']),
+  ...malaysiaDepthClusters.map((cluster) => [`/malaysia/${cluster.hubSlug}/`, cluster.hubSlug === 'cameron-highlands' ? malaysiaCameronLastmod : malaysiaLastmod, 'monthly', '0.8']),
+  ...malaysiaDepthGuides.map((guide) => [guide.url, guide.url.startsWith('/malaysia/cameron-highlands/') && guide.url !== '/malaysia/cameron-highlands/ringlet-bertam-valley/' ? malaysiaCameronLastmod : malaysiaLastmod, 'monthly', '0.7']),
   ['/vietnam/', vietnamLastmod, 'monthly', '0.9'],
   ...vietnamClusters.map((cluster) => [`/vietnam/${cluster.slug}/`, vietnamLastmod, 'monthly', '0.8']),
   ...vietnamGuides.map((guide) => [guide.url, vietnamLastmod, 'monthly', '0.7']),
@@ -671,6 +679,11 @@ for (const route of bordeauxGirondeReviewedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Bordeaux/Gironde route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: bordeauxGirondeReviewedLastmod });
+}
+for (const route of franceToulouseOccitanieReviewedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed Toulouse/Occitanie route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceToulouseOccitanieReviewedLastmod });
 }
 
 for (const route of victoriaResponsiveEditedRoutes) {

@@ -31,7 +31,13 @@ const bordeauxRoutes = [
   '/france/bordeaux-gironde/saint-emilion-vineyards/',
   '/france/bordeaux-gironde/arcachon-dune-pilat/'
 ];
-const selectedRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes];
+const occitanieRoutes = [
+  '/france/toulouse-albi-carcassonne/',
+  '/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/',
+  '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
+  '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
+];
+const selectedRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes, ...occitanieRoutes];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const entries = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, route, lastmod]) => [route, lastmod]));
@@ -41,7 +47,7 @@ const reviewedRoutes = [
 ];
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
-check(reviewedRoutes.length === 16 && selectedRoutes.length === 16 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy and Bordeaux/Gironde hubs plus their three children to be the only newly review-dated France routes; found ${reviewedRoutes.join(', ')}`);
+check(reviewedRoutes.length === 20 && selectedRoutes.length === 20 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde and Toulouse/Occitanie hubs plus their three children to be the only newly review-dated France routes; found ${reviewedRoutes.join(', ')}`);
 
 for (const route of routes) {
   const englishLastmod = entries.get(route);
@@ -78,5 +84,5 @@ if (errors.length) {
   console.error(`France date synchronization: ${errors.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, and the sixteen Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde routes use 2026-10-11 in all five article schemas and sitemap entries.`);
+  console.log(`France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, and the twenty Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Toulouse/Occitanie routes use 2026-10-11 in all five article schemas and sitemap entries.`);
 }

@@ -490,16 +490,24 @@ export const franceAtlanticSouthwestClusters = [
     band: 'atlantic-southwest',
     family: 'brick-canal-citadel-spread',
     label: 'Brick, canal and citadel spread',
-    tagline: 'Use Toulouse as the base; give each brick city its own rail day.',
-    hubIntro: 'Toulouse’s Garonne and aerospace layers, Albi’s episcopal brick city and Carcassonne’s fortified cité are distinct destinations on separate rail corridors. Both excursions are possible from Toulouse, but neither should be reduced to a two-hour photo stop.',
-    stay: 'Three nights in Toulouse support the city plus one excursion; four or five nights allow both Albi and Carcassonne without sacrificing Toulouse’s museums or evening river life.',
-    transfer: 'Tisséo serves Toulouse; TER trains reach Albi and Carcassonne. Stations are not at every major sight, and aerospace attractions use separate suburban transit. Protect the return rather than using the last possible train.',
-    season: 'Summer heat makes brick squares and citadel walls demanding at midday; storms affect river and canal plans. Festivals can change access and accommodation, while winter shortens outdoor light but suits museums.',
-    fallback: 'Use Toulouse museums, markets or canal walks when an excursion rail line fails. In Albi or Carcassonne, keep one indoor anchor and a shorter center loop rather than searching for a second distant town.',
+    tagline: 'Base in Toulouse, then choose how many separate rail days the trip can hold.',
+    hubIntro: 'This is three different scales of visit, not one Toulouse day trip: the Capitole–Garonne walking core, Albi’s cathedral-and-collection district, and Carcassonne’s Bastide-to-Cité climb. liO trains connect Toulouse-Matabiau with Albi-Ville and Carcassonne, but the station-to-sight leg, museum or castle booking, and return all shape a usable day.',
+    countryCardIntro: 'Toulouse’s Garonne and aerospace layers, Albi’s episcopal brick city and Carcassonne’s fortified cité are distinct destinations on separate rail corridors. Both excursions are possible from Toulouse, but neither should be reduced to a two-hour photo stop.',
+    stay: 'Three Toulouse nights give a first visit one full historic-core day and one excursion day; choose Albi or Carcassonne, because arrival and departure are not spare sightseeing days. Four nights can add the second excursion only if the live train and venue calendars align. Five nights make both rail days and two Toulouse days more humane. Capitole/Carmes keeps dinner and the core walk close; Matabiau/Marengo favors early rail starts and luggage handling. An Albi or Carcassonne overnight buys a slower evening or morning but adds a hotel move, so use it only when the dated return makes the single-base plan too tight.',
+    transfer: 'For the regional legs, search liO Train / TER from Toulouse-Matabiau to Albi-Ville or Carcassonne for the exact date and compare the return before choosing the town. In Toulouse, Marengo-SNCF and the central Métro are separate from each aerospace site: the city lists Linéo 12 to Cité de l’espace, while Halle de La Machine lists Montaudran Gare, Linéo 8/Gonin and bus 23/Piste des Géants among its approaches. These are named lookup points, not a promise of a timed connection; current departures, fares, disruptions and stop changes are not reproduced here.',
+    season: 'Summer heat makes exposed brick squares, Albi’s river edge and Carcassonne’s uphill approach harder at midday; put outdoor walking early or late and reserve the interior you most want first. Toulouse’s Cité de l’espace calendar can vary by school holiday, while the Toulouse-Lautrec Museum has seasonal hours and a weekly closure pattern. Carcassonne’s Château Comtal reports limited places and recommends booking. Festival traffic, storms and shorter winter light can change the order; check each official calendar and the forecast for your actual dates.',
+    fallback: 'If a regional train or return does not fit, keep Toulouse as a complete base day: use the Capitole–Saint-Sernin–Jacobins–Garonne walk, a currently open museum, or the Canal du Midi. In Albi, keep the cathedral exterior, Berbie gardens and a short heritage loop if an interior closes. In Carcassonne, the Medieval City is a lived district even when a paid castle slot is unavailable; switch to its public lanes and the Bastide rather than adding a distant Cathar site.',
+    searchSummary: 'Use Toulouse for the Capitole–Garonne core, then add Albi or Carcassonne as separate liO rail days. Compare 3, 4 and 5 nights, station last miles, venue bookings and the return before splitting bases.',
+    reviewDate: '11 October 2026',
+    reviewDateISO: '2026-09-19',
+    reviewedOn: { label: '11 October 2026', iso: '2026-10-11' },
+    reviewDisclaimer: 'No travel-date fare, train departure, attraction inventory or current opening state is frozen in this guide; confirm each linked operator and venue page before booking.',
     sources: [
       ['https://www.visit-occitanie.com/en/', 'Occitanie tourism — official regional guide'],
-      ['https://www.ter.sncf.com/occitanie', 'liO Train / TER Occitanie — official rail information'],
-      ['https://www.tisseo.fr/', 'Tisséo — official Toulouse public transport']
+      ['https://www.ter.sncf.com/occitanie/trajet-toulouse-albi-ville', 'liO Train — Toulouse-Matabiau to Albi-Ville live planner'],
+      ['https://www.ter.sncf.com/occitanie/trajet-toulouse-carcassonne', 'liO Train — Toulouse-Matabiau to Carcassonne live planner'],
+      ['https://www.tisseo.fr/en/calculateur', 'Tisséo — date-specific Toulouse route planner'],
+      ['https://meteofrance.com/', 'Météo-France — official forecast and warnings']
     ],
     guides: [
       g({
@@ -508,34 +516,41 @@ export const franceAtlanticSouthwestClusters = [
         instrument: 'River-to-aerospace split board',
         layout: 'brick-city-split',
         imageQuery: 'Toulouse Capitole Garonne France sunset',
-        imageAlt: 'Toulouse’s brick city center and Garonne riverfront',
-        purpose: 'Choose whether Toulouse’s historic center or one aerospace campus carries the day, then connect them by the correct transit rather than treating Cité de l’espace and Aeroscopia as adjacent.',
-        summary: 'Walk the Capitole–Saint-Sernin–Garonne core as one route, then select Cité de l’espace, Aeroscopia or Halle de La Machine only when its distinct location and admission fit.',
+        imageAlt: 'The illuminated Place du Capitole façade and arcades in Toulouse at night',
+        purpose: 'Decide whether this is a walk-first central Toulouse day or a full aerospace-campus day. The city, Cité de l’espace and Montaudran’s Halle de La Machine occupy different route plans; the choice prevents a long transfer from being hidden inside a landmark list.',
+        summary: 'Give the Capitole–Saint-Sernin–Jacobins–Garonne corridor one full walking day. On another day, choose Cité de l’espace or the Montaudran pair of Halle de La Machine and L’Envol des Pionniers; do not treat them as neighboring stops.',
+        searchSummary: 'Walk Capitole, Saint-Sernin, Jacobins, Daurade and Pont Neuf as one Toulouse day. Give Cité de l’espace or Montaudran its own day and check Tisséo/TER stops, dated admissions and return.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-09-19',
+        hubAccess: 'Toulouse-Matabiau is the rail gateway; central hotel blocks around Capitole/Carmes suit the historic walk, while Matabiau/Marengo favors early trains. Cité de l’espace is reached separately: Toulouse Métropole lists Linéo 12 at Cité de l’espace and Linéo 1 at Collège Vernant. Halle de La Machine lists Montaudran Gare, Linéo 8/Gonin and bus 23/Piste des Géants. Check Tisséo’s live date-specific route and final return; line presence alone does not confirm a useful connection.',
+        hubTradeoff: 'A central walk and a full campus visit each deserve their own day. A Montaudran outing can combine Halle de La Machine with L’Envol des Pionniers at the same Piste des Géants area; Cité de l’espace and Aeroscopia are separate site decisions. Adding one campus means giving up a second museum or a second campus, not compressing all of them around lunch.',
+        hubDuration: 'Plan one full day for the central route. Reserve a second day for one campus; the seasonal calendar, timed activities and transit return decide whether any short evening stop fits.',
         choices: [
-          ['Historic Toulouse', 'Keep Capitole, Saint-Sernin, Jacobins, market and Garonne together. This is a complete first day with no suburban transfer.'],
-          ['Cité de l’espace', 'Use the eastern campus as the main long-form science visit. It needs its own transit, admission and several hours.'],
-          ['Aeroscopia or Halle de La Machine', 'Choose one northern or southern industrial-culture site. They are not interchangeable and do not share a single attraction stop.']
+          ['Capitole to the Garonne', 'Choose this when architecture, church interiors and the riverfront matter more than a campus ticket. Keep the day on foot between the Capitole, Saint-Sernin, Jacobins, Daurade and Pont Neuf.'],
+          ['Cité de l’espace', 'Choose the eastern science park for exhibits, gardens and scheduled planetarium or IMAX sessions. Toulouse Métropole lists Linéo 12 to the Cité de l’espace; verify the actual visit date, timed sessions, current admission and bus return.'],
+          ['Montaudran: two connected stories', 'Halle de La Machine and L’Envol des Pionniers share the Piste des Géants area, so they can form one focused day if both calendars fit. This is distinct from Cité de l’espace and Aeroscopia; check each venue’s own ticket and current transit.']
         ],
-        access: 'Toulouse Matabiau station, central Métro and suburban tram or bus routes serve different layers. Check the exact aerospace site, stop and final service; a search for “air museum Toulouse” can lead to the wrong side of the city.',
-        tradeoff: 'A full aerospace campus plus the entire historic core exceeds one day. The route either gives the center depth or keeps it as an evening bookend around one selected campus.',
+        access: 'Arriving by rail means Toulouse-Matabiau; Marengo-SNCF and the central Métro are the named interchange area, but use the live Tisséo planner for the current station entrance and walk. For Cité de l’espace, the city lists Linéo 12/Cité de l’espace and Linéo 1/Collège Vernant. For Halle de La Machine, its venue lists TER Gare de Montaudran, Linéo 8/Gonin, bus 23/Piste des Géants, and other stops. The exact date’s departures, connections and fare are not archived here.',
+        tradeoff: 'The central walk is already a substantial day. A timed campus visit can consume the same attention and transfer budget; pick one central interior or one aerospace destination, then keep the other site for a later day instead of promising a three-campus sweep.',
         stages: [
-          ['Orient from Matabiau or Capitole', 'Use Métro or the canal approach to the center, noting the evening return and the transit needed for any campus.'],
-          ['Read the brick core', 'Connect Capitole, Saint-Sernin or Jacobins and the Garonne without zig-zagging across both banks. Choose one religious interior or museum.'],
-          ['Commit to one aerospace site', 'Travel to the exact campus and give its exhibitions or programmed experience enough time. Respect timed demonstrations and outdoor heat.'],
-          ['Return to river or station', 'Use Tisséo to finish at the Garonne or Matabiau side, leaving a meal buffer rather than another distant attraction.']
+          ['Start at Place du Capitole', 'Use the square and the Capitole façade to orient the day. If your hotel is by Matabiau, resolve the station-to-core walk or current Métro connection before leaving luggage behind.'],
+          ['Walk north to Saint-Sernin', 'Follow Rue du Taur to the basilica, then choose whether its interior or the nearby Musée Saint-Raymond is the one substantial stop. Keep the route on this side of the center.'],
+          ['Turn through Jacobins to the river', 'Walk back via the Couvent des Jacobins, then continue to Place Saint-Pierre and the Daurade quay. Cross Pont Neuf only if you want the opposite-bank view; avoid doubling back across both banks.'],
+          ['Finish at Pont Neuf and Carmes', 'Use the Garonne view and Hôtel d’Assézat/Place de la Trinité as the southern finish. Return to the hotel or Matabiau before adding dinner; do not attach a campus transfer to this core loop.']
         ],
-        fallback: 'If suburban transit or a campus booking fails, deepen the city with the Musée des Augustins when open, canal, market and river route. If heat is severe, prioritize interiors and evening Garonne light.',
+        fallback: 'For rain, a heat alert or a missed campus slot, stay in the center: choose one currently open interior such as the Couvent des Jacobins, Musée Saint-Raymond or Musée des Augustins, then shorten the exposed river section. If a museum is closed, keep the Place du Capitole–Rue du Taur–Saint-Sernin route and finish under the covered market arcade only after confirming its day-of operation.',
         watch: [
-          ['Aerospace sites are geographically separate', 'Cité de l’espace, Aeroscopia and Halle de La Machine need different routes and admissions.'],
-          ['Brick streets retain heat', 'Move long open-square and river sections to morning or evening and carry water.'],
-          ['Religious sites pause for worship', 'Keep exterior and museum alternatives when Saint-Sernin or Jacobins access changes.']
+          ['The campus name is not the stop', 'Cité de l’espace, Aeroscopia and Halle de La Machine have different addresses and transit. Match the exact venue name and stop in Tisséo before buying an onward ticket.'],
+          ['Timed programming is the hinge', 'A planetarium, IMAX session or Minotaur ride can set the entry order. Current session inventory and opening status were not captured; confirm them before selecting the rail or bus leg.'],
+          ['The core is exposed at both ends', 'Capitole and the river quays have little shade. Shift the square and Pont Neuf outdoors to cooler hours; use a currently open interior as the midday anchor.']
         ],
-        duration: 'Allow six to eight hours for the historic core, or a full day for one aerospace campus plus a compact city block. Do not schedule two campuses together casually.',
-        combine: 'Combine central Toulouse with one selected aerospace site. Keep Albi and Carcassonne as separate rail days.',
-        verify: 'Check the exact attraction’s admission, Tisséo route, museum openings, weather and Matabiau service before setting the split.',
+        duration: 'Treat the Capitole–Saint-Sernin–Jacobins–Garonne walk as one full day with a meal and one interior. Give a campus its own day; the venue’s current program and admission decide whether a compact central evening remains realistic.',
+        combine: 'The Montaudran pairing of Halle de La Machine and L’Envol des Pionniers is the most coherent two-venue day. Keep Cité de l’espace, Aeroscopia, Albi and Carcassonne on separate route days unless a date-specific plan proves otherwise.',
+        verify: 'Before choosing a hotel or timed session, check the exact Cité/Halle/Aeroscopia page, Tisséo’s live route and disruption notices, any TER Montaudran train, current admission and the final return. Current fares, departure times, session inventory and opening status are unknown here.',
         sources: [
           ['https://www.toulouse-tourisme.com/en/', 'Toulouse Tourism — official city planning'],
-          ['https://www.cite-espace.com/en/', 'Cité de l’espace — official visitor information']
+          ['https://metropole.toulouse.fr/annuaire/cite-de-lespace', 'Toulouse Métropole — Cité de l’espace access and calendar'],
+          ['https://www.halledelamachine.fr/en/comment-venir/', 'Halle de La Machine — official transit access']
         ]
       }),
       g({
@@ -545,33 +560,41 @@ export const franceAtlanticSouthwestClusters = [
         layout: 'episcopal-brick-route',
         imageQuery: 'Albi cathedral Sainte Cecile Tarn France river',
         imageAlt: 'Sainte-Cécile Cathedral and the brick episcopal city of Albi',
-        purpose: 'Connect Albi’s fortress-like cathedral, episcopal palace museum and Tarn viewpoints in one rail-based loop without rushing onward to Cordes-sur-Ciel on an unsolved bus.',
-        summary: 'Walk from the station into the brick core, give Sainte-Cécile and the Toulouse-Lautrec Museum separate attention, then finish along the Tarn and return through a different street line.',
+        purpose: 'Decide whether the Toulouse-Lautrec collection is the day’s main interior or whether you want a shorter cathedral, old-street and Tarn loop. Albi-Ville leads into one compact episcopal district; Cordes-sur-Ciel is a separate rural connection, not a free add-on.',
+        summary: 'From Albi-Ville, walk into the Sainte-Cécile–Berbie district, give the Toulouse-Lautrec Museum a deliberate two-hour block, then use the palace garden and Tarn edge before returning by the old center. The exact Toulouse train back sets the finish.',
+        searchSummary: 'Use liO to Albi-Ville, then walk the cathedral, Berbie/Toulouse-Lautrec Museum and Tarn loop. Reserve the collection block, check its seasonal closure, and do not add Cordes without a verified return.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-09-19',
+        hubAccess: 'The official museum visitor page describes Albi-Ville as about a 15-minute walk from the Toulouse-Lautrec Museum. Search the liO route specifically to Albi-Ville; a different Albi stop changes the first and last walk. Use the city’s Purple Circuit only after the museum and return train are fixed.',
+        hubTradeoff: 'Choose one long museum visit and the episcopal district, or shorten the interior for a longer Tarn/Pont-Vieux circuit. Adding Cordes-sur-Ciel is a separate bus, car or booked-tour decision and takes time away from Albi itself.',
+        hubDuration: 'Keep a full day for Albi from Toulouse because the return train is part of the route. An Albi overnight suits a slower museum-and-river pace, but is a hotel move rather than an extra attraction.',
         choices: [
-          ['Cathedral and episcopal city', 'Prioritize Sainte-Cécile, surrounding streets and the Berbie Palace exterior. This emphasizes religious and urban power.'],
-          ['Toulouse-Lautrec collection', 'Give the museum the long block and use cathedral and gardens as context. Gallery time replaces an extra excursion.'],
-          ['Tarn and city viewpoints', 'Add the riverbanks or a marked heritage circuit for landscape and bridges, keeping interiors selective.']
+          ['Cathedral first', 'Use the Sainte-Cécile exterior and interior, then the Berbie courtyard and garden. This suits a short day, a service-sensitive date or visitors more interested in the city’s episcopal architecture than a long gallery visit.'],
+          ['Collection-led day', 'Make the Toulouse-Lautrec Museum the anchor. Its official visitor page recommends allowing at least two hours to see the collection and Berbie Palace setting; add the cathedral and garden around that block, not another town.'],
+          ['Tarn and Pont-Vieux loop', 'Shorten the museum visit, pass through Place de la Trébaille and Place Savène, then use the Tarn viewpoint and Pont-Vieux. This trades gallery time for the river and the lower-city perspective.']
         ],
-        access: 'Albi has more than one rail stop; confirm the ticketed station and route to the episcopal center. Albi-Ville is a practical approach for many services, but current schedules determine the best return.',
-        tradeoff: 'Adding Cordes-sur-Ciel usually requires a bus, car or tour and removes museum depth. The route gives it up unless the rural connection is the explicit purpose of the day.',
+        access: 'From Toulouse, search liO Train / TER for Toulouse-Matabiau to Albi-Ville on the exact date, and select the matching return before leaving. The Toulouse-Lautrec Museum says Albi-Ville is about a 15-minute walk away. Follow its practical-information page for a step-free museum visit; the approach and current local bus alternatives still need a date-specific check.',
+        tradeoff: 'A two-hour museum block, Sainte-Cécile, gardens and river walk already fill a generous day. Cordes-sur-Ciel requires its own confirmed regional bus or a prearranged driver/tour and may make the museum, or even a reliable return, the thing you sacrifice.',
         stages: [
-          ['Walk into the brick center', 'From the station, use the signed route toward Sainte-Cécile, noting the return and any heat or gradient on the approach.'],
-          ['Read the cathedral', 'Observe the fortress exterior and current interior access, respecting services and photography rules.'],
-          ['Enter the Berbie Palace collection', 'Give the Toulouse-Lautrec Museum enough time for both art and building; use the gardens and river outlook as a reset.'],
-          ['Return via Tarn or civic streets', 'Choose the river viewpoint or official heritage circuit, ending on a direct station line with a train backup.']
+          ['Arrive at Albi-Ville', 'Check the live liO return before boarding from Toulouse-Matabiau. Walk toward Place Sainte-Cécile; the museum estimates about 15 minutes from this station, so leave luggage at the hotel rather than carrying it through the center.'],
+          ['Read the cathedral district', 'Visit Sainte-Cécile when current worship and visitor access permit, then move through the square to the Berbie courtyard. Use the cathedral interior as an alternative anchor if the museum’s date is closed.'],
+          ['Give Berbie its own block', 'Enter the Toulouse-Lautrec Museum if open and allow its recommended two hours. Take a seated pause in the palace garden and use the view toward the Tarn instead of adding another booked site.'],
+          ['Close the loop through the old center', 'Follow the Purple Circuit toward Place de la Trébaille, Place Savène and Saint-Salvi, then choose the Pont-Vieux/Tarn return or a shorter direct line to Albi-Ville. Leave a margin for the exact train you selected.']
         ],
-        fallback: 'If cathedral access pauses, use the museum, exterior and official city circuits. If the museum closes, keep the cathedral, market and Tarn route rather than improvising a rural transfer.',
+        fallback: 'For rain or a cathedral service, prioritize the currently open Toulouse-Lautrec Museum and the covered old-center streets; shorten the river edge. If the museum is closed, keep Sainte-Cécile’s exterior, the Berbie garden and a compact Purple Circuit. If your preferred return does not fit, stay overnight in Albi rather than adding Cordes on an improvised bus.',
         watch: [
-          ['Station identity matters', 'Check Albi-Ville versus other stops before the return; not every service uses the same pattern.'],
-          ['Cathedral and museum hours differ', 'Build the day around the more restrictive opening and worship schedule.'],
-          ['Brick and river paths can be hot', 'Use shade and move exposed viewpoints outside the strongest afternoon heat.']
+          ['Buy the right Albi stop', 'The museum identifies Albi-Ville as the nearest train station. Check the actual stop in both directions; do not assume every liO result or replacement coach uses it.'],
+          ['The museum week changes by season', 'The official page publishes split winter hours and summer hours, with a weekly closure in the colder season. Its current page also offers online and on-site tickets; the exact date’s opening and remaining inventory are not checked here.'],
+          ['The river is the exposed extension', 'The cathedral and Berbie district are the day’s core. Keep the Tarn and Pont-Vieux loop short in high heat or rain, and turn back toward Albi-Ville before the final connection becomes tight.']
         ],
-        duration: 'Allow five to seven hours for cathedral, museum, meal and river view. A compact half-day sacrifices either the collection or the longer city circuit.',
-        combine: 'Combine Albi with Cordes-sur-Ciel only through a verified bus or tour and by shortening Albi intentionally. Keep Carcassonne separate.',
-        verify: 'Check exact rail station, cathedral services, museum opening, local event access and the final Toulouse train.',
+        duration: 'Set aside roughly five to seven hours on the ground as an editorial planning estimate, including lunch and the station walk. The museum itself recommends at least two hours for its collection and palace setting; the dated rail return determines whether the river loop fits.',
+        combine: 'Keep Albi as one day from Toulouse. Add Cordes-sur-Ciel only if liO’s dated coach planner or a confirmed tour gives you usable stops in both directions; otherwise choose an Albi overnight and keep the day local.',
+        verify: 'Confirm the liO train to Albi-Ville and the return, Toulouse-Lautrec Museum’s date-specific hours/ticket inventory, Sainte-Cécile visitor or worship access, and weather before leaving. Current rail fares, departure times, ticket availability and cathedral opening are unknown here.',
         sources: [
-          ['https://www.albi-tourisme.fr/en/', 'Albi Tourism — official city guide'],
-          ['https://musee-toulouse-lautrec.com/en/', 'Musée Toulouse-Lautrec — official visitor information']
+          ['https://www.albi-tourisme.fr/en/itineraries/purple-circuit-heritage-route/', 'Albi Tourism — Purple Circuit heritage route'],
+          ['https://www.albi-tourisme.fr/en/decouvrir-albi/patrimoine-unesco/le-palais-de-la-berbie/', 'Albi Tourism — Berbie Palace and museum visit context'],
+          ['https://www.musee-toulouse-lautrec.com/en/preparer-sa-visite/informations-pratiques/', 'Musée Toulouse-Lautrec — hours, station walk and accessibility'],
+          ['https://www.musee-toulouse-lautrec.com/en/billetterie/', 'Musée Toulouse-Lautrec — online and on-site ticket information']
         ]
       }),
       g({
@@ -581,33 +604,41 @@ export const franceAtlanticSouthwestClusters = [
         layout: 'citadel-bastide-plan',
         imageQuery: 'Carcassonne medieval city walls France panorama',
         imageAlt: 'Fortified walls and towers of the medieval Cité de Carcassonne',
-        purpose: 'Distinguish the fortified Cité from the lower Bastide Saint-Louis, reserve the castle-and-ramparts if wanted, and account for the climb from the rail station.',
-        summary: 'Start in the lower town or at the station, cross the Aude and enter the Cité once, then leave enough attention for the lived Bastide rather than spending the whole day inside souvenir lanes.',
+        purpose: 'Choose between a booked Château Comtal/rampart visit and a free public walk through the Medieval City, then connect it to the Bastide Saint-Louis by the Pont Vieux route. The station, Canal du Midi and Narbonnaise Gate are not the same arrival point.',
+        summary: 'Begin in the Bastide by Carcassonne station, use Place Carnot and the Canal du Midi to read the lower city, then cross Pont Vieux to the Medieval City and its Narbonnaise Gate. Set the Château Comtal slot before the uphill walk; return to the Bastide rather than adding a distant drive.',
+        searchSummary: 'From Carcassonne station, choose the 30-minute walk or date-checked RTCA line 3 from Canal du Midi to Narbonnaise Gate. Separate the free Medieval City from the limited-slot Château Comtal, then return via Pont Vieux to the Bastide.',
+        reviewDate: '11 October 2026',
+        reviewDateISO: '2026-09-19',
+        hubAccess: 'liO reaches Carcassonne station beside the lower-city/Canal du Midi side, not the Narbonnaise Gate. The tourist office estimates about 30 minutes on foot to the Medieval City; its current getting-around page lists RTCA line 3 between the Canal du Midi and Narbonnaise Gate. Verify the dated stop, route and return before choosing an arrival base.',
+        hubTradeoff: 'A booked Château Comtal and ramparts visit makes this a Cité-led day; a free street-and-wall exterior loop leaves more time for Place Carnot, the Bastide and canal. The Cité and Bastide together already fill a day—keep nearby vineyards and Cathar-country castles separate.',
+        hubDuration: 'Give both the Cité and Bastide a full day with the station approach included. A Cité-only visit is shorter, but still needs the climb, gate choice and a return route; an overnight by Place Carnot suits an evening/early walk without a same-day Toulouse train.',
         choices: [
-          ['Castle and ramparts', 'Reserve the Château Comtal and rampart circuit as the main paid visit. Security and one-way circulation determine the sequence.'],
-          ['Cité exterior and basilica', 'Use gates, walls, lanes and current basilica access without the castle ticket. This leaves time for the lower town.'],
-          ['Two-city comparison', 'Give the Bastide market streets, Canal du Midi edge or museum a real block before or after the Cité.']
+          ['Booked castle and ramparts', 'Choose this for the interior history and wall walk. The monument currently reports limited places and recommends booking; check the live slot, entry rules and price before fixing the train.'],
+          ['Public Cité, no castle slot', 'The tourist office describes the Medieval City as an open district; the Château Comtal and adjoining ramparts are separately ticketed. Walk the gates, lanes and public viewpoints, then spend the saved time in the lower town.'],
+          ['Bastide and Cité in one day', 'For a first visit, start with Place Carnot/Canal du Midi, cross Pont Vieux and enter through the chosen gate, then descend to the Bastide. This compares the lived grid with the fortified hill without adding a third destination.']
         ],
-        access: 'Carcassonne station is in the Bastide near the canal, not at the medieval gate. Walk or use the current local bus across the Aude and uphill; plan the return descent and avoid carrying luggage into the Cité.',
-        tradeoff: 'A deep castle visit and long Bastide day leave little room for nearby vineyards or Cathar-country drives. The route keeps Carcassonne as a two-part city rather than a fortress photo stop.',
+        access: 'The liO rail arrival is Carcassonne station in the lower city, not the medieval entrance. The tourist office estimates about a 30-minute station-to-Cité walk; its current RTCA guidance names line 3 from the Canal du Midi to the Narbonnaise Gate. If you stay uphill, settle luggage first. A same-day return depends on the live train and bus dates, not the route label.',
+        tradeoff: 'The interior castle/rampart loop, full medieval lanes, and Bastide all compete for the same daylight. Choose the booked monument as the anchor or use the Cité’s public streets and spend longer below; the route gives up vineyards and distant Cathar sites either way.',
         stages: [
-          ['Begin in the lower city', 'From the station, identify the Bastide grid and Pont Vieux direction, storing luggage before the climb.'],
-          ['Cross the Aude for the reveal', 'Use the bridge and approach to understand the defensive position, then enter through the chosen gate.'],
-          ['Commit to castle or exterior circuit', 'Follow the reserved monument route or a bounded public wall-and-basilica loop, avoiding repeated laps through commercial lanes.'],
-          ['Return to the Bastide', 'Descend with time for a square, market or canal edge, ending close to the station rather than adding a remote winery.']
+          ['Arrive at Carcassonne station', 'Choose a Bastide hotel near the station/Place Carnot if rail simplicity and dinner matter; choose a Cité stay only after confirming the luggage transfer and uphill access. Put bags away before the walk.'],
+          ['Read the Bastide first', 'Use the Canal du Midi edge and Place Carnot to orient the lower grid, then walk toward Pont Vieux. The tourist office estimates about 25 minutes from the canal to the Cité by this viewpoint route; treat that as a planning estimate, not a timed guarantee.'],
+          ['Cross to the Narbonnaise Gate', 'Follow Pont Vieux and the uphill approach, then choose the Château Comtal slot or a public-lanes loop. If booked, follow the monument’s current security and circulation instructions; no ticket availability is assumed.'],
+          ['Descend and finish below', 'Return by the Bastide route or check RTCA line 3 from the Canal du Midi to Narbonnaise Gate in the live planner. Close at Place Carnot or the station side with a rail margin; do not append a winery that requires another unverified transfer.']
         ],
-        fallback: 'If castle tickets are unavailable, the exterior walls, basilica, bridges and Bastide still form a complete route. In extreme heat, move the climb early and use lower-town interiors at midday.',
+        fallback: 'If the Château Comtal has no suitable slot, the public Medieval City, gate approaches and Bastide still make a complete day. In rain or heat, shorten the outer wall walk, use the lower city for a longer meal/interior break, and retain the train back. If your mobility needs do not suit the climb, ask the tourist office about the current accessible pathway before committing; the guide does not claim every rampart section is step-free.',
         watch: [
-          ['The station-to-gate distance is real', 'Allow the river crossing and climb, especially with children, luggage or heat.'],
-          ['Event days alter fortress access', 'Concerts and festivals may close ramparts or redirect gates. Check the official calendar.'],
-          ['The Cité remains more than shops', 'Use official interpretation and the lower city to avoid reducing the place to commercial medieval imagery.']
+          ['The station is not the gate', 'The tourist office estimates about 30 minutes on foot from the station. RTCA line 3 is listed from the canal to Narbonnaise Gate, but the exact day’s stop, service and return remain to be checked.'],
+          ['A castle ticket is separate from street access', 'The Medieval City is a public district; the Château Comtal and adjoining ramparts have their own limited capacity. The current page recommends advance booking, but the date’s price and slot inventory are unknown here.'],
+          ['Event and weather days change the route', 'Reopen the city event calendar and monument notices before travel. Heat increases the uphill cost; rain or a closure can make the Bastide-first route and a shorter public Cité visit the better plan.']
         ],
-        duration: 'Allow five to seven hours for both city layers with the castle. A Cité-only exterior visit needs three to four hours including the station approach.',
-        combine: 'Combine the Cité and Bastide. Keep Toulouse, Albi and distant Cathar castles for separate days.',
-        verify: 'Check Château Comtal ticket and events, local bus, heat or storm forecast, basilica access and the final rail service.',
+        duration: 'Allow about five to seven hours on the ground for both districts plus a booked castle visit; this is an editorial day shape, not a measured tour time. A public-streets-only Cité visit can be shorter, but the station approach, river crossing and return still count.',
+        combine: 'Pair the Cité only with the Bastide and Canal du Midi edge. Keep Albi, Toulouse and distant Cathar castles on other days; an overnight in Carcassonne is the clean way to protect an evening inside the walls.',
+        verify: 'Check liO to/from Carcassonne, RTCA line 3’s date-specific stop and service, Château Comtal ticket inventory/price and event notice, current basilica access, and Météo-France before leaving. Current departures, fares, monument availability and the actual opening status are unknown here.',
         sources: [
           ['https://www.tourisme-carcassonne.fr/en/', 'Carcassonne Tourist Office — official city planning'],
-          ['https://www.remparts-carcassonne.fr/en/', 'Château and ramparts of Carcassonne — official monument visits']
+          ['https://www.tourisme-carcassonne.fr/en/useful/getting-around/', 'Carcassonne Tourist Office — walk and RTCA route options'],
+          ['https://www.tourisme-carcassonne.fr/en/useful/faq/', 'Carcassonne Tourist Office — city and castle access distinction'],
+          ['https://www.remparts-carcassonne.fr/en/visit/practical-information', 'Château and ramparts — booking, capacity and visitor rules']
         ]
       })
     ]
