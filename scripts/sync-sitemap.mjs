@@ -14,19 +14,19 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
-const malaysiaIpohLastmod = '2026-10-11';
-const malaysiaIpohEditedRoutes = [
-  '/malaysia/ipoh-kinta-valley/',
-  '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
-  '/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/',
-  '/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/'
-];
 const malaysiaLangkawiLastmod = '2026-10-12';
 const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/',
   '/malaysia/langkawi/pantai-cenang-tengah/',
   '/malaysia/langkawi/machinchang-skycab/',
   '/malaysia/langkawi/kilim-geoforest/'
+];
+const malaysiaIpohLastmod = '2026-10-11';
+const malaysiaIpohEditedRoutes = [
+  '/malaysia/ipoh-kinta-valley/',
+  '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
+  '/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/',
+  '/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/'
 ];
 const malaysiaCameronLastmod = '2026-10-11';
 const malaysiaCameronEditedRoutes = [
@@ -208,6 +208,13 @@ const unitedKingdomBathEditedRoutes = [
   '/united-kingdom/bath-bristol-somerset/bath-roman-georgian-city/',
   '/united-kingdom/bath-bristol-somerset/bristol-harbourside-clifton/',
   '/united-kingdom/bath-bristol-somerset/wells-glastonbury-mendips/'
+];
+const unitedKingdomLiverpoolManchesterLastmod = '2026-10-12';
+const unitedKingdomLiverpoolManchesterEditedRoutes = [
+  '/united-kingdom/liverpool-manchester/',
+  '/united-kingdom/liverpool-manchester/liverpool-waterfront-cathedrals/',
+  '/united-kingdom/liverpool-manchester/manchester-industrial-city/',
+  '/united-kingdom/liverpool-manchester/chester-walls-roman-city/'
 ];
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -608,6 +615,11 @@ for (const route of unitedKingdomLondonEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited London route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomLondonLastmod });
+}
+for (const route of unitedKingdomLiverpoolManchesterEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Liverpool/Manchester route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomLiverpoolManchesterLastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);

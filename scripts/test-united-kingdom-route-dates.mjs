@@ -10,7 +10,6 @@ const reviewGroups = [
     label: '9 October 2026',
     guideCount: 9,
     hubCount: 3,
-    batch: '99zzzzz-sprint-uk-02-20261009.json',
     sources: [
       'checked 9 October 2026',
       'Planning facts and image licensing were reviewed on 9 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
@@ -22,7 +21,6 @@ const reviewGroups = [
     label: '10 October 2026',
     guideCount: 12,
     hubCount: 4,
-    batch: '99zzzzzzzz-sprint-uk-20261009-lake-04.json',
     sources: [
       'checked 10 October 2026',
       'Planning facts and image licensing were reviewed on 10 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
@@ -32,13 +30,23 @@ const reviewGroups = [
   {
     date: '2026-10-11',
     label: '11 October 2026',
-    guideCount: 9,
-    hubCount: 3,
-    batch: 'zzzza-cornwall-devon-pages-20261011.json',
+    guideCount: 18,
+    hubCount: 6,
     sources: [
       'checked 11 October 2026',
       'Planning facts and image licensing were reviewed on 11 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
       'Editorial review: 11 October 2026 · Recheck time-sensitive details before booking.'
+    ]
+  },
+  {
+    date: '2026-10-12',
+    label: '12 October 2026',
+    guideCount: 3,
+    hubCount: 1,
+    sources: [
+      'checked 12 October 2026',
+      'Planning facts and image licensing were reviewed on 12 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
+      'Editorial review: 12 October 2026 · Recheck time-sensitive details before booking.'
     ]
   }
 ];
@@ -102,12 +110,12 @@ function getArticleDates(html, file) {
 const targetSourceTranslations = new Map();
 const targetHubSourceTranslations = new Map();
 for (const locale of localeConfigs) {
+  const catalogPath = path.join(root, 'data', 'i18n', `${locale.code}.json`);
+  const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
   for (const group of reviewGroups) {
-    const batchPath = path.join(root, 'data', 'i18n', 'reviewed', locale.code, group.batch);
-    const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
     const key = `${locale.code}:${group.date}`;
-    targetSourceTranslations.set(key, group.sources.map((source) => batch.translations[source]));
-    targetHubSourceTranslations.set(key, group.sources.slice(1).map((source) => batch.translations[source]));
+    targetSourceTranslations.set(key, group.sources.map((source) => catalog.translations[source]));
+    targetHubSourceTranslations.set(key, group.sources.slice(1).map((source) => catalog.translations[source]));
   }
 }
 const baselineTranslations = new Map();

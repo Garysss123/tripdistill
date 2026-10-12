@@ -393,129 +393,173 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
   }),
   c({
     slug: 'liverpool-manchester',
+    reviewDateISO: '2026-10-12',
+    reviewDate: '12 October 2026',
     name: 'Liverpool, Manchester & Chester',
     nation: 'England',
     band: 'england-midlands-north',
     family: 'two-city-industrial-board',
     label: 'Two-city industrial board',
-    tagline: 'Give each city one complete argument before the short train tempts a checklist.',
-    hubIntro: 'Liverpool and Manchester are close by rail but their useful visitor geographies point in different directions: Mersey waterfront and mercantile streets versus canals, civic collections and industrial quarters. Chester adds a compact walled city on another line. Each deserves a separate day even when journey times look short.',
-    stay: 'Three to five nights supports both cities and Chester without changing hotels. Liverpool works well for waterfront evenings; Manchester offers broader regional rail connections. Choose one base from the late return pattern and event calendar.',
-    transfer: 'Liverpool Lime Street, Manchester Piccadilly, Victoria and Oxford Road serve different city edges. Merseyrail and Metrolink are separate local systems. Football, concerts and engineering work can alter capacity, so use station-specific plans rather than city names alone.',
-    season: 'Rain favors the region’s strong museums, but waterfront wind and exposed stadium or canal routes need live judgment. Major matches, festivals and conferences can raise fares and crowd stations year-round.',
-    fallback: 'Keep a complete collection-and-street day in either city. If the intercity rail corridor is disrupted, do not force the second city; deepen the base and move Chester to another date.',
+    tagline: 'Read the station board first; let the Mersey, canal basin or Roman wall set each separate day.',
+    hubIntro: 'This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.',
+    searchSummary: 'Plan Liverpool, Manchester and Chester as separate days: stations serve different waterfront, museum and walled-city districts. Choose a base and check the return.',
+    metaDescription: 'Plan Liverpool, Manchester and Chester as separate days: stations serve different waterfront, museum and walled-city districts. Choose a base and check the return.',
+    stay: 'Three nights: choose Liverpool or Manchester as the single base, give each city one full day and leave Chester for another trip. Four nights: one base can support a Liverpool day, a Manchester day and a separate Chester excursion if the live train plan fits. With five nights, consider a two-city split only when an evening event or an early rail start makes the hotel move worthwhile. In Liverpool, compare Lime Street for mainline arrivals with Central or James Street for the southern centre and waterfront. In Manchester, choose Piccadilly, Oxford Road, Victoria or Deansgate by the trains and district you will actually use; check match, concert and conference dates before fixing a hotel.',
+    transfer: 'Plan each intercity leg by its full station name in National Rail: Liverpool Lime Street and Manchester Piccadilly, Oxford Road, Victoria and Deansgate are different endpoints, not synonyms for their cities. In Liverpool, Lime Street is the mainline station; James Street, Moorfields and Liverpool Central belong to the separate Merseyrail network. James Street is the useful rail name for Pier Head; Central is the key city-centre interchange and the Merseyrail map shows Chester on its network. Manchester Metrolink is another system: the Science and Industry Museum lists Deansgate as its nearest railway station and Deansgate–Castlefield as its nearest tram stop. Check date-specific engineering and the actual final return before choosing between cities.',
+    season: 'Rain can make the indoor collections valuable, but do not treat a museum district as a guaranteed all-open fallback. On 12 October 2026, National Museums Liverpool’s official pages listed the Maritime Museum and International Slavery Museum as closed for essential works; the Museum of Liverpool had its own dated visiting schedule. The Science and Industry Museum was open while its restoration project kept some buildings closed. Recheck the exact venue and exhibition shortly before travel. Football, arena events, conferences and festivals can change hotel demand and station crowding in any season; waterfront wind and winter daylight shorten the comfortable outdoor plan.',
+    fallback: 'If the Liverpool–Manchester rail leg is disrupted, keep the day in the city where you wake: use the Museum of Liverpool only if its own calendar fits, or choose a current Manchester collection and a compact central walk. Do not substitute the currently closed maritime museums or a museum building under restoration without checking what is actually accessible. In Chester, replace a weather-exposed wall section with the Cathedral, The Rows and street-level Roman sites only after checking their own access.',
     sources: [
-      ['https://www.visitliverpool.com/', 'Visit Liverpool — official destination guide'],
-      ['https://www.visitmanchester.com/', 'Visit Manchester — official destination guide'],
-      ['https://tfgm.com/', 'Transport for Greater Manchester — network and service information']
+      ['https://www.nationalrail.co.uk/', 'National Rail — live station-specific rail planning'],
+      ['https://www.merseyrail.org/journey-planning/plan-your-journey/network-map/', 'Merseyrail — network map, stations and service status'],
+      ['https://tfgm.com/plan-a-journey', 'Transport for Greater Manchester — current tram and bus journey planning'],
+      ['https://www.liverpoolmuseums.org.uk/museum-of-liverpool', 'National Museums Liverpool — Museum of Liverpool visit information'],
+      ['https://www.liverpoolmuseums.org.uk/international-slavery-museum', 'National Museums Liverpool — current International Slavery Museum status'],
+      ['https://www.scienceandindustrymuseum.org.uk/visit', 'Science and Industry Museum — current openings, restoration and admission'],
+      ['https://visitcheshire.com/directory/chester-city-walls', 'Visit Cheshire — Chester City Walls access and repair notice']
+    ],
+    faq: [
+      ['Can Liverpool, Manchester and Chester fit into three nights?', 'Give Liverpool and Manchester one full day each from a single base and save Chester for another trip. Adding all three turns the trip into station transfers rather than three useful visits.'],
+      ['Which Liverpool station should I use for the waterfront?', 'Liverpool Lime Street is the mainline arrival point. James Street is on Merseyrail near Pier Head; Central and Moorfields serve other parts of the centre. Check the exact service and return station before you start walking.'],
+      ['Are all the Liverpool waterfront museums open?', 'No. On 12 October 2026 National Museums Liverpool listed the Maritime Museum and International Slavery Museum as closed for essential works. The Museum of Liverpool has a separate calendar; recheck every venue before making it the day’s anchor.']
     ],
     guides: [
       g({
         slug: 'liverpool-waterfront-cathedrals',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         name: 'Liverpool Waterfront & Cathedrals',
         instrument: 'Mersey-to-ridge city ruler',
         layout: 'dock-and-cathedral-axis',
         imageQuery: 'Liverpool waterfront Three Graces Mersey',
-        imageAlt: 'Liverpool waterfront and the Three Graces beside the Mersey',
-        purpose: 'Choose a waterfront collection or the cathedral ridge as the main block, then connect docks, commercial streets and one uphill line without assuming every Beatles, maritime and civic site belongs in one day.',
-        summary: 'Walk from Lime Street toward the waterfront, use one museum cluster, then climb once toward the cathedrals or remain with the Mersey and finish near a direct station.',
+        imageAlt: 'Domed white-stone Port of Liverpool Building at the Pier Head',
+        purpose: 'Choose the flat Pier Head and one currently open museum, or commit to the longer climb from the Mersey to Hope Street. The route keeps the working port’s buildings, Liverpool’s commercial history and cathedral access distinct.',
+        summary: 'From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.',
         choices: [
-          ['Waterfront museums', 'Prioritize the Museum of Liverpool, Maritime Museum or a selected dock collection. This gives the clearest port-city story and stays mostly level.'],
-          ['Cathedral and civic ridge', 'Use the two cathedrals, Hope Street and civic collections as the main line. It adds elevation but creates a coherent architectural day.'],
-          ['Music-city streets', 'Build around one booked music site or performance with Mathew Street and nearby districts. It suits fans but should not displace the port history by default.']
+          ['Pier Head and the Museum of Liverpool', 'Keep the day mostly level: Lime Street, St George’s Hall and William Brown Street, then the commercial streets down to Pier Head and the Museum of Liverpool. Its official page had a Tuesday–Sunday schedule with Monday exceptions on 12 October 2026; verify your date. The Maritime Museum and International Slavery Museum were listed as closed for essential work, so do not count them as open galleries.'],
+          ['The dock-to-cathedral climb', 'Walk the public waterfront south from Pier Head to Albert Dock, then leave the flat edge through the central streets and climb via Bold Street and Hope Street. Pick one cathedral interior; pass the other only if energy and its visitor calendar allow. This gives an architectural line at the cost of a longer uphill day.'],
+          ['One booked music stop', 'Anchor the day on one timed Beatles or music venue, such as a booked Albert Dock visit or a scheduled performance, then add the adjacent waterfront or city-centre streets. It suits a music-led trip but cannot also absorb every closed maritime gallery and both cathedrals.']
         ],
-        access: 'Lime Street sits above and east of the waterfront. James Street and Moorfields may suit the return, while the cathedral ridge requires an uphill walk or bus. Choose the final station from the route rather than retracing to Lime Street automatically.',
-        tradeoff: 'A full waterfront museum day, both cathedrals and several music attractions exceed a meaningful day. Choosing the Mersey sacrifices ridge depth; choosing Hope Street leaves some dock collections for another visit.',
+        access: 'Liverpool Lime Street is the mainline station above and east of the waterfront, not the closest rail stop for Pier Head. Merseyrail’s James Street is the useful name for the waterfront; Liverpool Central suits the central streets and southern ridge better, while Moorfields serves the northern commercial core. The city rises toward Hope Street: use the street route only if its slope fits your group, and check current cathedral access separately. These stations are not interchangeable for a tight onward train.',
+        tradeoff: 'A substantial Museum of Liverpool visit, the full dock edge and both cathedral interiors compete for the same day. The maritime and slavery museums are presently closed for essential works, so the open waterfront is a public-space visit rather than the old all-museum cluster. Choose either the level riverfront or the uphill cathedral sequence; a music booking replaces, rather than simply adds to, one of them.',
         stages: [
-          ['Leave Lime Street on one axis', 'Use St George’s Hall and the civic plateau or descend directly through the commercial core, recording the final Merseyrail or mainline option.'],
-          ['Complete one waterfront story', 'Choose one or two adjacent collections and walk a bounded dock section. Do not treat every converted dock as a separate attraction.'],
-          ['Commit to ridge or river', 'Climb toward Hope Street and the cathedrals, or continue along the Mersey and Pier Head. One direction preserves the city’s logic.'],
-          ['Exit from the useful station', 'Finish at Lime Street, Central, Moorfields or James Street according to the branch. Leave event crowds a wider platform margin.']
+          ['Start at Lime Street and descend', 'Walk through St George’s Hall and the William Brown Street civic quarter, then continue down through the commercial centre to Pier Head. This is a one-way descent toward the Mersey; do not plan to climb back to the station between stops.'],
+          ['Check and choose the waterfront interior', 'Before leaving the station, confirm the Museum of Liverpool’s own date and admission guidance. On 12 October 2026 the nearby Maritime Museum and International Slavery Museum were listed as closed for essential works; use their status pages rather than assuming the whole Albert Dock cluster is open.'],
+          ['Choose level docks or the ridge', 'For the river option, follow the waterfront public realm to Albert Dock and turn back before the route becomes a second long walk. For the ridge option, leave the docks through the central streets, climb via Bold Street to Hope Street, and select one cathedral visit.'],
+          ['Finish at the right rail system', 'Use James Street for a Pier Head return, Central for the central/southern city, or Lime Street for a mainline departure only when the walk and live service plan justify it. Check Merseyrail and National Rail separately and leave event-day platform margin.']
         ],
-        fallback: 'In strong wind, use the waterfront museums, St George’s Hall area and covered commercial streets. If a collection closes, retain the Pier Head, dock public realm and one cathedral rather than crossing the city for a replacement.',
+        fallback: 'For rain or strong river wind, shorten the exposed dock section and protect one interior whose official date page confirms access. St George’s Hall and the civic streets sit closer to Lime Street; the Museum of Liverpool is the waterfront’s separate current check. If the museum calendar does not fit, keep the Pier Head and public waterfront brief rather than treating the closed Maritime Museum or International Slavery Museum as a substitute.',
         watch: [
-          ['Waterfront museum status changes', 'Gallery moves, building works and temporary closures can affect the dock cluster. Check each institution, not only the destination listing.'],
-          ['The cathedral line climbs', 'Hope Street sits above the waterfront. Use a bus or reverse the route when walking capacity is limited.'],
-          ['Events load stations quickly', 'Football and arena crowds can change the easiest return. Allow extra time and know an alternative city station.']
+          ['Three waterfront institutions have separate status', 'As checked on 12 October 2026, the Museum of Liverpool published its own visiting calendar while the Maritime Museum and International Slavery Museum were listed as closed for essential works. Check each named venue again; a shared dock address does not mean shared access.'],
+          ['The river-to-Hope-Street route climbs', 'Bold Street and the cathedral ridge add an uphill section. Keep the level Pier Head–Albert Dock line as the complete lower-walking alternative instead of promising an equivalent short cut.'],
+          ['A match or concert changes the station choice', 'Check the fixture or venue date before committing to James Street, Central or Lime Street as the final leg. Leave extra time for the route back and never build a tight mainline connection after a timed visit.']
         ],
-        duration: 'Allow six to eight hours for waterfront plus one cathedral or music branch. A collection-led dock day can fill the full day on its own.',
-        combine: 'Combine the waterfront with the commercial core or the cathedrals with Hope Street. Keep Manchester and Chester for separate days.',
-        verify: 'Check National Museums Liverpool venue notices, cathedral access, Merseyrail and mainline service, wind and event schedules before departure.',
+        duration: 'Treat six to eight hours as a planning allowance for Lime Street, one waterfront interior and either the dock walk or one cathedral branch. The flat Pier Head and civic-centre route can be shortened; a timed music visit should replace a major stop rather than compress the return.',
+        combine: 'Pair St George’s Hall and the commercial streets with the waterfront, or give Hope Street its own uphill block. Keep Manchester and Chester on separate days.',
+        verify: 'Recheck the Museum of Liverpool, Maritime Museum and International Slavery Museum status pages separately; confirm cathedral visitor access, National Rail, Merseyrail engineering, event dates and the weather-facing waterfront before setting the return.',
         sources: [
-          ['https://www.liverpoolmuseums.org.uk/', 'National Museums Liverpool — official visitor information'],
-          ['https://liverpoolcathedral.org.uk/plan-your-visit/', 'Liverpool Cathedral — official visit planning']
+          ['https://www.liverpoolmuseums.org.uk/museum-of-liverpool', 'National Museums Liverpool — Museum of Liverpool calendar and visitor information'],
+          ['https://www.liverpoolmuseums.org.uk/maritime-museum', 'National Museums Liverpool — Maritime Museum status'],
+          ['https://www.liverpoolmuseums.org.uk/international-slavery-museum', 'National Museums Liverpool — International Slavery Museum status'],
+          ['https://liverpoolcathedral.org.uk/plan-your-visit/', 'Liverpool Cathedral — visitor and service access'],
+          ['https://www.merseyrail.org/journey-planning/plan-your-journey/network-map/', 'Merseyrail — station map and live service status'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — dated Lime Street journey planning']
+        ],
+        faq: [
+          ['Can I visit the Maritime Museum and International Slavery Museum?', 'Their National Museums Liverpool pages listed them as closed for essential works on 12 October 2026. Check the individual status pages before travel; the Museum of Liverpool has its own schedule and is not the same venue.'],
+          ['Should I walk from the waterfront to both cathedrals?', 'Only if the longer uphill route suits your day. Walk via the central streets and Hope Street, choose one interior, and treat the second cathedral as an optional exterior or separate visit.'],
+          ['Which station is closest to Pier Head?', 'James Street is the Merseyrail station to use for Pier Head; Lime Street is Liverpool’s mainline station, while Central is useful for the central and southern city. Confirm the station shown on your actual return ticket.']
         ]
       }),
       g({
         slug: 'manchester-industrial-city',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         name: 'Manchester Industrial City & Collections',
         instrument: 'Canal-to-civic innovation grid',
         layout: 'warehouse-city-matrix',
         imageQuery: 'Manchester Castlefield canals industrial architecture',
         imageAlt: 'Canals and industrial architecture around Castlefield in Manchester',
-        purpose: 'Choose industrial history, civic art or contemporary neighbourhoods as the main argument, then use tram and walking corridors without bouncing between Salford Quays, Castlefield and the Northern Quarter.',
-        summary: 'Begin at the station serving the chosen district, use one major collection, connect a bounded canal or civic route, and finish on the same tram or rail side.',
+        purpose: 'Match the city’s railway station to one industrial, campus or quayside district. Treat the Science and Industry Museum as an active but changing site, then keep the return on the same side of the centre.',
+        summary: 'Choose Castlefield from Deansgate or Deansgate–Castlefield, the university collections from Oxford Road, or a booked Salford Quays visit from its tram branch; do not zigzag between all three.',
         choices: [
-          ['Industry and Castlefield', 'Use the Science and Industry Museum area, canals and warehouse streets. This provides the strongest origin story but depends on current gallery status.'],
-          ['Civic collections', 'Anchor at Manchester Art Gallery, Central Library or the city centre and add a compact street circuit. It is resilient and walkable.'],
-          ['Salford Quays or football', 'Use tram to one western destination with a booked venue. This reveals modern Manchester but becomes a separate half-day system.']
+          ['Castlefield and the Science and Industry Museum', 'Start at Liverpool Road for the museum and follow the public streets around Castlefield Basin and the warehouse edge. Its official page listed the museum as open on 12 October 2026, but the 1830 Station and Warehouse were among buildings closed for restoration. Book the free admission if required and choose from the galleries then shown, not an assumed historic-building interior.'],
+          ['Oxford Road campus collections', 'Use Oxford Road railway station for Manchester Museum and the university quarter. The museum’s current page lists its galleries, hours and any exhibition booking separately; it is an indoor collection day with a different station approach from Castlefield. Continue on Oxford Road only as far as your chosen gallery and food break justify.'],
+          ['Salford Quays and one timed venue', 'Take Metrolink to MediaCityUK or the stop for your booked venue, then keep the day around one quayside visit. A stadium tour, match and several waterfront sites are not one interchangeable ticket; confirm the operator, access and event entry before leaving the centre.']
         ],
-        access: 'Piccadilly, Victoria and Oxford Road are not interchangeable. Castlefield and the Quays use different tram stops, and event venues can have controlled entry. Select the arrival station and final tram before entering the city centre.',
-        tradeoff: 'A deep city-centre collection day and Salford Quays or a stadium tour do not comfortably share one route. Choosing the outer branch sacrifices Northern Quarter and canal time; staying central gives up the large modern venue.',
+        access: 'Manchester Piccadilly, Oxford Road, Victoria and Deansgate are separate railway stations around the centre. The Science and Industry Museum’s current travel page names Deansgate as the nearest rail station and Deansgate–Castlefield as the nearest Metrolink stop; its published walking estimates place Piccadilly farther away. Manchester Museum instead gives Oxford Road station as its closest rail approach. Read the destination on your ticket before you set a walking line, then use TfGM’s live planner for Metrolink and bus connections to the Quays.',
+        tradeoff: 'Castlefield’s warehouse-and-canal fabric is a compact industrial day but not an all-open museum complex during restoration. Oxford Road offers a deep museum visit but exchanges the canal landscape for campus streets. Salford Quays requires a separate tram leg; choosing it removes time for the central civic streets and a same-day Liverpool train connection.',
         stages: [
-          ['Enter from the matching station', 'Use Piccadilly for the eastern core, Victoria for the north or Oxford Road for the university corridor. Avoid an immediate cross-centre station transfer.'],
-          ['Complete one collection', 'Give the selected museum, gallery or library a bounded block and read current gallery closures before relying on a signature exhibit.'],
-          ['Follow one city fabric', 'Choose Castlefield canals, the civic centre or Northern Quarter streets. Use tram only when committing to the Quays or another outer venue.'],
-          ['Exit on the same network', 'Finish near the preselected station or tram interchange. Major events can fill platforms, so preserve a later service option.']
+          ['Choose the arrival station first', 'If your intercity ticket reaches Deansgate, begin on Liverpool Road; if it reaches Oxford Road, walk toward Manchester Museum; if it reaches Piccadilly or Victoria, plan the local connection rather than crossing the centre on foot by default.'],
+          ['Give the named museum a protected block', 'For Castlefield, check the Science and Industry Museum’s current gallery and restoration notices and reserve the free entry if its page requests it. For the Oxford Road route, check Manchester Museum’s gallery and exhibition page.'],
+          ['Walk one connected district', 'From the Science Museum, use Liverpool Road and the nearby Castlefield Basin warehouse streets; from Manchester Museum, stay with the campus and Oxford Road quarter. Travel to MediaCityUK only when you have chosen a specific Quays venue and a tram return.'],
+          ['Return from the same side', 'Use Deansgate or Deansgate–Castlefield for a Castlefield day, Oxford Road for the campus route, or the confirmed rail/tram stop for Salford Quays. Check the actual Liverpool train departure station and preserve a later service option around events.']
         ],
-        fallback: 'If a museum gallery is closed, use the city library, art gallery and public industrial streets. If tram disruption affects the Quays, keep the whole day central rather than replacing it with another distant venue.',
+        fallback: 'If restoration removes the Science and Industry Museum building you expected, keep the visit to the galleries currently listed and the outdoor warehouse streets, or switch the complete day to Manchester Museum after checking its own calendar. If Metrolink service to MediaCityUK changes, stay central; do not replace the Quays with a second far-side venue.',
         watch: [
-          ['Museum buildings can be partly open', 'Redevelopment may leave some galleries unavailable. Verify the specific exhibition or area, not only the front door.'],
-          ['Tram branches share central stops', 'Confirm the destination display and platform; a familiar stop name does not guarantee the correct branch.'],
-          ['Match days change movement', 'Football and arena events alter crowds and service demand. Do not schedule a tight rail connection after a tour or match.']
+          ['The Science Museum is changing', 'On 12 October 2026 its official visit page said the site was open while some buildings were closed for restoration, including the 1830 Station and Warehouse. Recheck the map and current closures; the photograph of Castlefield does not promise interior access.'],
+          ['Oxford Road is not Piccadilly', 'Manchester Museum’s official approach is from Oxford Road station and the university campus. A Piccadilly arrival requires another leg or a longer walk; choose before the museum block, not at the end of it.'],
+          ['The Quays are an outer branch', 'Metrolink service, stadium entry and event crowds can change the return. Check the current TfGM display and the venue’s timed admission, then leave margin before any Liverpool or airport train.']
         ],
-        duration: 'Allow six to eight hours for one collection and one central district, or a full day for a central prelude plus Salford Quays or football venue.',
-        combine: 'Combine Castlefield with the civic centre or the Quays with one booked venue. Keep Liverpool and Chester for separate days.',
-        verify: 'Check the selected museum or stadium, Metrolink status, rail station service and event calendar before setting the route.',
+        duration: 'Allow five to seven hours for one museum block and its adjacent district. Add Salford Quays only as the main branch of the day; a second city, stadium tour or late train is a separate plan.',
+        combine: 'Combine the Science and Industry Museum with Castlefield Basin, or Manchester Museum with the Oxford Road quarter. Keep Liverpool and Chester for separate days.',
+        verify: 'Check the Science and Industry Museum’s restoration/map notices or Manchester Museum’s live visitor calendar, then National Rail, TfGM Metrolink and the selected event venue before setting the return.',
         sources: [
-          ['https://www.scienceandindustrymuseum.org.uk/visit', 'Science and Industry Museum — official visitor information'],
-          ['https://manchesterartgallery.org/visit/', 'Manchester Art Gallery — official visit planning']
+          ['https://www.scienceandindustrymuseum.org.uk/visit', 'Science and Industry Museum — current galleries and restoration status'],
+          ['https://www.scienceandindustrymuseum.org.uk/visit/travel', 'Science and Industry Museum — rail, tram and bus access'],
+          ['https://www.museum.manchester.ac.uk/plan-your-visit', 'Manchester Museum — Oxford Road access, gallery and exhibition information'],
+          ['https://tfgm.com/plan-a-journey', 'Transport for Greater Manchester — live tram and bus journey planning'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — date-specific Manchester station planning']
+        ],
+        faq: [
+          ['Which station should I use for the Science and Industry Museum?', 'The museum’s travel page names Deansgate as its nearest railway station and Deansgate–Castlefield as its nearest tram stop. Piccadilly and Victoria are different approaches; check the current TfGM connection if your train arrives there.'],
+          ['Is the Science and Industry Museum fully open?', 'On 12 October 2026 its official page said the museum was open while some buildings were closed for restoration, including the 1830 Station and Warehouse. Check the live map and admission page for the galleries available on your date.'],
+          ['Can I add Salford Quays after Castlefield?', 'Only if the Quays venue is the day’s second main block and the tram return fits. For a full museum visit, keep the walk around Castlefield or Oxford Road and save the Quays for another day.']
         ]
       }),
       g({
         slug: 'chester-walls-roman-city',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         name: 'Chester Walls & Roman City',
         instrument: 'Wall-gate circuit register',
         layout: 'walled-city-loop',
         imageQuery: 'Chester city walls cathedral England',
         imageAlt: 'Historic buildings and city walls in Chester',
-        purpose: 'Use Chester’s walls as the organising circuit, selecting one Roman, cathedral or Rows interior and planning where to leave or shorten the elevated loop.',
-        summary: 'Walk from Chester station to a named wall gate, complete a weather-aware section or full circuit, descend once for the Rows and one interior, then return through the compact centre.',
+        purpose: 'Start at Chester station and decide whether today’s route is a permitted wall segment, Roman evidence at street level or the Cathedral and Rows. The current Northgate repair makes an assumed uninterrupted circuit a poor plan.',
+        summary: 'Walk from Chester station to Eastgate, use the current wall-access notice to choose an open section, then descend once to the Roman Amphitheatre, Roman Gardens or The Rows and return through the centre.',
         choices: [
-          ['Full wall circuit', 'Use the elevated walls and gates as the main route, adding only one interior. This gives the clearest urban form but is exposed and step-dependent.'],
-          ['Roman evidence', 'Prioritize the amphitheatre, museum or booked experience with shorter wall sections. It offers historical depth but less continuous city panorama.'],
-          ['Cathedral and Rows', 'Keep the route around the cathedral, two-level shopping streets and central wall gates. It is compact and weather-resilient.']
+          ['One permitted wall arc', 'Use Eastgate to reach an open section, but check the Visit Cheshire repair notice before committing. On 12 October 2026 it described work near Northgate: the steps to the right remained an access point toward King Charles Tower, while the opposite approach diverted to Morgan’s Mount. Follow the live direction and add a street-level link; do not plan around a guaranteed closed loop.'],
+          ['Roman street-level sequence', 'From the Eastgate and Rows core, descend toward the Roman Amphitheatre and Roman Gardens, then return to the centre by city streets. This trades the elevated panorama for named archaeological places and avoids depending on a long wall segment.'],
+          ['Cathedral and The Rows', 'Keep to the central streets between Chester Cathedral, the two-level Rows and Eastgate Clock. It is the shorter option when wall steps, wind or wet stone do not suit the group; check the Cathedral’s visitor calendar because worship and events can affect access.']
         ],
-        access: 'Chester station is north-east of the walled centre. Wall access points have stairs and different gradients; step-free street alternatives exist but are not identical to the elevated route. Identify the first gate and a mid-route exit before climbing.',
-        tradeoff: 'The full wall circuit, deep Roman interpretation and relaxed Rows shopping do not fit equally. Choosing the walls sacrifices interior time; choosing museums turns the wall into selected viewpoints rather than a complete loop.',
+        access: 'Chester station sits north-east of the walled centre. Walk along City Road toward Eastgate Clock, then choose the wall gate only after reading the current notice and access map. The four main gateways—Northgate, Eastgate, Watergate and Bridgegate—have different steps and gradients; Visit Cheshire notes that some entrances include accessible ramps. The street route is a useful alternative but does not reproduce the elevated wall view.',
+        tradeoff: 'A wall section, a substantial Cathedral visit, the Roman Amphitheatre and relaxed browsing on The Rows each take a different block. The current Northgate repair interrupts the simple loop idea; choosing street-level Roman evidence or the Cathedral leaves more time for a complete centre visit and a less weather-exposed return.',
         stages: [
-          ['Approach one city gate', 'Walk from the station toward Eastgate or another named access, noting a street-level alternative and the final station route.'],
-          ['Read the elevated circuit', 'Follow a clockwise or anticlockwise wall line with the racecourse, river and Roman edges in sequence. Do not repeatedly descend.'],
-          ['Leave once for the chosen interior', 'Descend near the cathedral, Rows or Roman site and give it a defined block. Resume the wall only if time and weather remain good.'],
-          ['Return through the compact centre', 'Finish along a direct street to the station, using Eastgate or Northgate as the orientation line. Avoid one last wall segment when surfaces are wet or daylight is fading.']
+          ['Leave the station for Eastgate', 'Follow City Road into the walled centre and orient at Eastgate Clock. Read the current wall map here; do not begin with a promise to walk the entire perimeter.'],
+          ['Choose the live wall direction', 'If you want the elevated view, use the gateway and direction currently allowed by the Northgate notice. On 12 October 2026 the notice described access toward King Charles Tower from the right-hand Northgate steps and a diversion toward Morgan’s Mount in the reverse direction. If that arrangement has changed, follow the new signs and descend when directed.'],
+          ['Descend once to one main subject', 'Use city streets to reach the Roman Amphitheatre and Roman Gardens, or stay in the core for Chester Cathedral and The Rows. Pick one substantial interior or archaeological stop and check its own date-specific access.'],
+          ['Return at street level', 'Walk back through the compact centre toward Eastgate and Chester station. Keep wet steps, fading daylight and the live rail departure ahead of any final wall segment.']
         ],
-        fallback: 'In high wind, ice or heavy rain, use street-level gates, the cathedral, Rows and museum offer. If an interior closes, retain a shorter safe wall segment and the Roman exterior sites.',
+        fallback: 'In high wind, heavy rain or when the wall diversion does not fit, stay at street level: Eastgate Street, The Rows and the Cathedral precinct make a coherent shorter visit. Add the Roman Amphitheatre only if its outdoor route and return remain comfortable. Do not bypass a barrier to preserve a circuit.',
         watch: [
-          ['Walls include steps and exposed surfaces', 'Access varies by gate, and wet or icy sections can be unsuitable. Use the street alternative without treating it as failure.'],
-          ['The racecourse changes some routes', 'Events can affect riverside movement and crowds. Check the local calendar before planning a quiet western loop.'],
-          ['Roman sites are distributed', 'Amphitheatre, gardens and museum evidence are not one attraction. Select the pieces that fit the wall direction.']
+          ['Northgate repair changes the circuit', 'The Visit Cheshire page described an active repair and a one-way wall diversion at review on 12 October 2026. Check it again on the day; the route here has a street-level escape rather than relying on a continuous loop.'],
+          ['Gates are not step-free equivalents', 'Wall access varies by gate, and the elevated surface can be exposed or slippery. Use an identified street-level path or a listed ramp where appropriate, and confirm the chosen entrance before leaving the station.'],
+          ['The Roman places are separate stops', 'The Amphitheatre, Roman Gardens, Cathedral and Rows are different places, not one ticket or one interior. Choose the order that fits the current wall diversion and each venue’s published hours.']
         ],
-        duration: 'Allow five to seven hours for the wall circuit, one interior and a meal. A central Rows and cathedral route can fit four hours.',
-        combine: 'Combine the walls with the cathedral or Roman evidence. Keep Liverpool, Manchester and Chester Zoo for separate full days.',
-        verify: 'Check wall access notices, cathedral and museum openings, rail service and any racecourse or city event before travel.',
+        duration: 'Allow four to six hours as an editorial planning estimate for Eastgate, one wall segment or Roman street route, one major interior and a meal. A short Cathedral-and-Rows visit can be shorter; the current repair detour can add street walking.',
+        combine: 'Pair one wall arc with either the Roman Amphitheatre or the Cathedral and Rows. Keep Liverpool, Manchester and Chester Zoo for separate days.',
+        verify: 'Check Visit Cheshire’s current Northgate repair and access map, Chester Cathedral’s visitor/service calendar, the selected Roman site and the date-specific National Rail or Merseyrail return.',
         sources: [
-          ['https://www.visitcheshire.com/chester/', 'Visit Cheshire — official Chester destination guide'],
-          ['https://chestercathedral.com/visit', 'Chester Cathedral — official visitor information']
+          ['https://visitcheshire.com/directory/chester-city-walls', 'Visit Cheshire — city-wall access, Northgate repair and diversion'],
+          ['https://chestercathedral.com/visit', 'Chester Cathedral — visitor, worship and event access'],
+          ['https://www.merseyrail.org/journey-planning/plan-your-journey/network-map/', 'Merseyrail — Chester line map and service status'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — date-specific Chester station planning'],
+          ['https://www.english-heritage.org.uk/visit/places/chester-roman-amphitheatre/', 'English Heritage — Chester Roman Amphitheatre daylight access and accessibility']
+        ],
+        faq: [
+          ['Can I walk the full Chester Walls circuit right now?', 'Do not assume so. On 12 October 2026 Visit Cheshire described repair work near Northgate and a directional diversion between the steps and Morgan’s Mount. Recheck the live notice and follow the signs; use the street route if the detour does not suit.'],
+          ['How do I reach Chester from Liverpool?', 'The current Merseyrail network map shows Chester on its Wirral line; Liverpool Central is the relevant city-centre rail station, not a synonym for Lime Street. Check the date-specific map and engineering notice before setting your return.'],
+          ['What is the shorter low-walking route?', 'Stay at street level between Eastgate Street, The Rows and Chester Cathedral. The wall route includes steps and exposed surfaces, and its current Northgate repair may add a detour.']
         ]
       })
     ]

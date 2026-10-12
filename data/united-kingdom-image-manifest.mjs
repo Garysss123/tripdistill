@@ -248,7 +248,7 @@ export const unitedKingdomImageManifest = {
   },
   "liverpool-manchester/liverpool-waterfront-cathedrals": {
     "src": "/assets/images/united-kingdom-liverpool-manchester-liverpool-waterfront-cathedrals.webp",
-    "alt": "Liverpool waterfront and the Three Graces beside the Mersey",
+    "alt": "Domed white-stone Port of Liverpool Building at the Pier Head",
     "source": "https://commons.wikimedia.org/wiki/File:The_Three_Graces_-_Liverpool_Waterfront_-_Port_of_Liverpool_Building_(10731141643).jpg",
     "label": "The Three Graces - Liverpool Waterfront - Port of Liverpool Building (10731141643).jpg",
     "creator": "Elliott Brown from Birmingham, United Kingdom",
