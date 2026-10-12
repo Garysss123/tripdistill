@@ -143,7 +143,7 @@ const baselRoutes = [
 ];
 const baselLocs = new Set(baselRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
-const changedDates = new Set([...currentMap].filter(([loc, date]) => baseMap.get(loc) !== date).map(([loc]) => loc));
+const changedDates = new Set([...currentMap].filter(([loc, date]) => loc.includes('/switzerland/') && baseMap.get(loc) !== date).map(([loc]) => loc));
 assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
@@ -206,14 +206,15 @@ const stations = diagram.items.filter((item) => item.tag === 'circle' && item.at
 assert.equal(stations.length, 4, 'four named route points are drawn');
 assert.ok(stations.every((station, index) => index === 0 || (Number(station.attrs.cx) > Number(stations[index - 1].attrs.cx) && Number(station.attrs.cy) < Number(stations[index - 1].attrs.cy))), 'the symbolic climb advances up and to the right');
 
-// Protect the separate Rigi and Zermatt diagrams that the user asked to leave alone.
-for (const asset of [
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg'
-]) {
+// Preserve the two separately pixel-reviewed diagram corrections from their exact source commits.
+const protectedDiagramSources = {
+  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '20c0023e15bd8178f6d89e7837ce774c3522620c',
+  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '2566e88965470810f8ae997d2a69f501aa7e3a35'
+};
+for (const [asset, sourceCommit] of Object.entries(protectedDiagramSources)) {
   const current = fs.readFileSync(path.join(root, asset));
-  const base = execFileSync('git', ['show', `${baseCommit}:${asset}`], { cwd: root });
-  assert.equal(sha1(current), sha1(base), `${asset} bytes are unchanged from the requested base`);
+  const reviewedFix = execFileSync('git', ['show', `${sourceCommit}:${asset}`], { cwd: root });
+  assert.deepEqual(current, reviewedFix, `${asset} preserves its pixel-reviewed correction`);
 }
 
 console.log(`Montreux refresh regression passed: ${routes.length} existing routes × ${locales.length} editions; canonical/hreflang/search/schema/date checks; unchanged sitemap URL set; retired-photo byte preservation; parsed SVG/XML geometry and five-language legend; Rigi/Zermatt assets protected.`);

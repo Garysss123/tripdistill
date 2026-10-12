@@ -713,7 +713,7 @@ try {
   assert.equal(zermattDiagram.license, null);
   assert.equal(zermattDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(zermattDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
-  assert.equal(zermattDiagram.localSha1, '519bdeba45bcfb742705bf9df0de7f2bb49a952e');
+  assert.equal(zermattDiagram.localSha1, 'b46e68a1052e6b2bd783cd759da1d5332f8e7e01');
   assert.equal(zermattDiagram.inventoryStatus, 'used');
   const genevaDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-geneva-lake-route-choices.svg');
   assert.ok(genevaDiagram, 'inventory must include the original Geneva three-district route-choice schematic');

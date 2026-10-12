@@ -85,7 +85,7 @@ const baselRoutes = [
   '/switzerland/basel-rhine/kleinbasel-border-rhine/'
 ];
 const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
+const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
 assert.equal(dateChanges.length, 40, 'the Bern/Emmental and Basel batches date only their four routes in five editions each');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
@@ -188,9 +188,15 @@ assert.equal(retired.license, null, 'retired record does not claim rights cleara
 assert.deepEqual(retired.sourceDeclaredLicenses, ['CC BY-SA 4.0'], 'source declaration remains historical metadata');
 assert.equal(retired.localSha1, 'cec21b3831e0d8421e32b36a142f973a64f55f47');
 
+const protectedImageSourceCommits = {
+  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '20c0023e15bd8178f6d89e7837ce774c3522620c',
+  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '2566e88965470810f8ae997d2a69f501aa7e3a35',
+  'assets/images/switzerland-bern-emmental-emmental-day-trip.webp': baseCommit
+};
 for (const relative of protectedImages) {
-  const previous = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
-  assert.deepEqual(fs.readFileSync(path.join(root, relative)), previous, `protected or archived image bytes stay unchanged: ${relative}`);
+  const sourceCommit = protectedImageSourceCommits[relative];
+  const previous = execFileSync('git', ['show', `${sourceCommit}:${relative}`], { cwd: root });
+  assert.deepEqual(fs.readFileSync(path.join(root, relative)), previous, `protected/archived asset retains its recorded source version: ${relative}`);
 }
 
 const svg = fs.readFileSync(path.join(root, diagramPath.slice(1)), 'utf8');

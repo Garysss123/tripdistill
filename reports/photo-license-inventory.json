@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T14:27:31.508Z",
+  "generatedAt": "2026-10-12T14:32:26.973Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 808,
@@ -28197,7 +28197,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "unknown",
           "editHistory": "Planning schematic only; not a geographic map and not to scale.",
-          "localSha1": "519bdeba45bcfb742705bf9df0de7f2bb49a952e",
+          "localSha1": "b46e68a1052e6b2bd783cd759da1d5332f8e7e01",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",

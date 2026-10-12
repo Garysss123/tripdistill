@@ -338,7 +338,7 @@ export const switzerlandImageManifest = {
     "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
     "assetType": "original-planning-diagram",
     "editNote": "Planning schematic only; not a geographic map and not to scale.",
-    "localSha1": "519bdeba45bcfb742705bf9df0de7f2bb49a952e"
+    "localSha1": "b46e68a1052e6b2bd783cd759da1d5332f8e7e01"
   },
   "st-moritz-engadin/st-moritz-lakes": {
     "src": "/assets/images/switzerland-st-moritz-engadin-st-moritz-lakes.webp",

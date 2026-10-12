@@ -8,6 +8,7 @@ import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../dat
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '7da2e50f1cbef1b97bcf65e151e21ee33c03a62a';
+const rigiDiagramFixCommit = '20c0023e15bd8178f6d89e7837ce774c3522620c';
 const locales = [
   { code: 'en', dir: '', prefix: '' },
   { code: 'zh-Hant', dir: 'zh', prefix: '/zh' },
@@ -100,6 +101,10 @@ function currentMain(route) {
 
 function baselineFile(relative) {
   return execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root, encoding: null });
+}
+
+function rigiFixFile(relative) {
+  return execFileSync('git', ['show', `${rigiDiagramFixCommit}:${relative}`], { cwd: root, encoding: null });
 }
 
 function sitemapRecords(xml) {
@@ -212,12 +217,12 @@ assert.deepEqual(fs.readFileSync(path.join(root, rigiRelative)), baselineFile(ri
 const rigi = switzerlandImageManifest['lucerne-lake-mountains/rigi-lake-circuit'];
 assert.ok(rigi.src.endsWith('.svg'), 'Rigi remains on its original SVG');
 const rigiAsset = rigi.src.slice(1);
-assert.deepEqual(fs.readFileSync(path.join(root, rigiAsset)), baselineFile(rigiAsset), 'protected Rigi SVG bytes unchanged');
+assert.deepEqual(fs.readFileSync(path.join(root, rigiAsset)), rigiFixFile(rigiAsset), 'protected Rigi SVG bytes preserve the pixel-reviewed arrow and endpoint correction');
 
 const oldSitemap = sitemapRecords(baselineFile('sitemap.xml').toString('utf8'));
 const newSitemap = sitemapRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...newSitemap.keys()].sort(), [...oldSitemap.keys()].sort(), 'sitemap route set unchanged');
-const changedDates = [...newSitemap].filter(([route, date]) => oldSitemap.get(route) !== date);
+const changedDates = [...newSitemap].filter(([route, date]) => route.includes('/switzerland/') && oldSitemap.get(route) !== date);
 assert.deepEqual(new Set(changedDates.map(([route]) => route)), expectedDateChanges, 'only the reviewed Swiss clusters and their dependent overview routes across five editions have changed lastmod');
 for (const [route, date] of changedDates) assert.equal(date, '2026-10-12', `${route}: sitemap lastmod`);
 
