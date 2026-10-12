@@ -93,6 +93,14 @@ const interlakenEditedRoutes = [
   '/switzerland/interlaken-lakes/brienz-giessbach/',
   '/switzerland/interlaken-lakes/thun-spiez/'
 ];
+const genevaLastmod = '2026-10-12';
+const genevaEditedRoutes = [
+  '/switzerland/',
+  '/switzerland/geneva-lake/',
+  '/switzerland/geneva-lake/old-town-lakefront/',
+  '/switzerland/geneva-lake/international-quarter/',
+  '/switzerland/geneva-lake/carouge-arve/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -941,6 +949,12 @@ for (const route of interlakenEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Interlaken route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: interlakenLastmod });
+}
+
+for (const route of genevaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Geneva route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: genevaLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {

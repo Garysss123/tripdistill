@@ -129,14 +129,19 @@ export const switzerlandImageManifest = {
     "remoteSha1": "d0d8ddd4d7b35e1565cbc215d15021f8be82e4de"
   },
   "geneva-lake/old-town-lakefront": {
-    "src": "/assets/images/switzerland-geneva-lake-old-town-lakefront.webp",
-    "alt": "Geneva lakefront and old town skyline",
-    "source": "https://commons.wikimedia.org/wiki/File:Geneva_-_Jet_d%27eau.jpg",
-    "label": "Geneva - Jet d'eau.jpg",
-    "creator": "Tiia Monto",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Geneva - Jet d'eau.jpg",
-    "remoteSha1": "6d83a31cc344200cc5ffe3eabbb56f39dd9341c9"
+    "src": "/assets/images/switzerland-geneva-lake-route-choices.svg",
+    "alt": "Original five-language route schematic for Geneva Old Town, Nations and Carouge; conceptual and not to scale",
+    "diagramNote": "Original planning schematic with a visible legend in English, Traditional Chinese, Japanese, Korean and Thai. The three lines show conceptual district access chains, not geographic distances, live departures, operating status or fares.",
+    "diagramCardNote": "Five-language route key: Old Town/lakefront; Nations quarter; Carouge neighborhood. Conceptual access chains only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-geneva-lake-route-choices.svg",
+    "label": "Geneva three-district route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "99bb9c2528ac2aec5a715df7e96c8edb53d6bba0"
   },
   "geneva-lake/international-quarter": {
     "src": "/assets/images/switzerland-geneva-lake-international-quarter.webp",
@@ -518,6 +523,21 @@ export const switzerlandRetiredImageRecords = {
     inventoryStatus: 'unused',
     rightsStatus: 'Source-page CC BY-SA 4.0 declaration retained as unverified metadata; no independent rights determination.',
     retirementNote: 'Removed from live displays on 2026-10-12. The source identifies the viewpoint as Bürgenstock/Felsenweg, while the page alt described a view from Mount Rigi. The original WebP and recorded source metadata remain archived; neither the former credit nor this note establishes independent rights clearance.'
+  },
+  genevaOldTownMismatch: {
+    src: '/assets/images/switzerland-geneva-lake-old-town-lakefront.webp',
+    alt: 'Geneva lakefront and old town skyline',
+    source: 'https://commons.wikimedia.org/wiki/File:Geneva_-_Jet_d%27eau.jpg',
+    label: "Geneva - Jet d'eau.jpg",
+    creator: 'Tiia Monto',
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 3.0'],
+    commonsTitle: "File:Geneva - Jet d'eau.jpg",
+    remoteSha1: '6d83a31cc344200cc5ffe3eabbb56f39dd9341c9',
+    localSha1: '746024bc1f698e93e3ea867994c64bfca588529e',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed the local image depicts the Jet d’Eau and open water, not the claimed Old Town skyline. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.'
   },
   zermattGlacierParadiseConflict: {
     src: '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp',

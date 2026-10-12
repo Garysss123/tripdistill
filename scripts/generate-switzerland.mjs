@@ -207,7 +207,7 @@ const countryFaq = [
 
 function countrySchema() {
   return { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', '@id': 'https://tripdistill.com/switzerland/#article', headline: 'Switzerland Travel Guide', description: 'Sixteen complete Swiss travel hubs and forty-eight focused field guides organized around rail, lakes, cities and mountain access.', inLanguage: 'en', datePublished: isoDate, dateModified: '2026-10-08', mainEntityOfPage: 'https://tripdistill.com/switzerland/', image: absolute(switzerlandClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Switzerland' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+    { '@type': 'Article', '@id': 'https://tripdistill.com/switzerland/#article', headline: 'Switzerland Travel Guide', description: 'Sixteen complete Swiss travel hubs and forty-eight focused field guides organized around rail, lakes, cities and mountain access.', inLanguage: 'en', datePublished: isoDate, dateModified: '2026-10-12', mainEntityOfPage: 'https://tripdistill.com/switzerland/', image: absolute(switzerlandClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Switzerland' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
     breadcrumb([['Home', absolute('/')], ['Switzerland', absolute('/switzerland/')]]), faqSchema(countryFaq)
   ] };
 }

@@ -519,7 +519,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 10, 'inventory must count project-original artwork including Melaka, Somerset, Peak District, the Malaysia diagrams, Lucerne and Zermatt');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 11, 'inventory must count project-original artwork including Melaka, Somerset, Peak District, the Malaysia diagrams, Geneva, Lucerne and Zermatt');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 509, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District, Provence inland, two Zermatt and three Interlaken-area photo source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -582,6 +582,27 @@ try {
   assert.equal(zermattDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(zermattDiagram.localSha1, '519bdeba45bcfb742705bf9df0de7f2bb49a952e');
   assert.equal(zermattDiagram.inventoryStatus, 'used');
+  const genevaDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-geneva-lake-route-choices.svg');
+  assert.ok(genevaDiagram, 'inventory must include the original Geneva three-district route-choice schematic');
+  assert.equal(genevaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(genevaDiagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-geneva-lake-route-choices.svg');
+  assert.equal(genevaDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(genevaDiagram.license, null, 'the original Geneva SVG must not claim a public reuse license');
+  assert.equal(genevaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(genevaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(genevaDiagram.localSha1, '99bb9c2528ac2aec5a715df7e96c8edb53d6bba0');
+  assert.equal(genevaDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(genevaDiagram.inventoryStatus, 'used');
+  assert.equal(genevaDiagram.useCount, 6);
+  assert.deepEqual(genevaDiagram.routes, [
+    '/switzerland/',
+    '/switzerland/geneva-lake/',
+    '/switzerland/geneva-lake/carouge-arve/',
+    '/switzerland/geneva-lake/international-quarter/',
+    '/switzerland/geneva-lake/old-town-lakefront/'
+  ]);
+  assert.equal(genevaDiagram.verificationStatus, 'site_credit_or_metadata_only', 'project artwork URLs and site credits are not independent rights-chain verification');
+  assert.equal(genevaDiagram.verificationDetail.includes('not an independent source-page check'), true);
   const retiredZermattPhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp');
   assert.ok(retiredZermattPhoto, 'inventory must preserve the conflicted Zermatt source photo for provenance');
   assert.deepEqual(retiredZermattPhoto.sourceDeclaredLicenses, ['Public domain', 'CC BY-SA 4.0']);
@@ -625,7 +646,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 802, 'the Lucerne, Zermatt and Malaysia original diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 803, 'the Geneva, Lucerne, Zermatt and Malaysia original diagrams must be included while the preserved Melaka rights-review photo remains excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-12T07:21:30.335Z",
+  "generatedAt": "2026-10-12T08:21:52.631Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 799,
-    "completeSourceCreatorLicenseRecords": 762,
-    "completeProjectOriginalRightsRecords": 10,
+    "assetFileCount": 800,
+    "completeSourceCreatorLicenseRecords": 761,
+    "completeProjectOriginalRightsRecords": 11,
     "licenseClaimsNotIndependentlyVerified": 509,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 802,
-    "deduplicatedImageCount": 799,
+    "expectedBuildImageCount": 803,
+    "deduplicatedImageCount": 800,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3518,
     "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 31,
-    "assetsWithStructuredSourceRecords": 586,
+    "unusedAssetCount": 32,
+    "assetsWithStructuredSourceRecords": 587,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 172,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 256,
-    "metadataOrCreditOnly": 519,
+    "metadataOrCreditOnly": 520,
     "usedAssetsWithoutIndependentSourcePageCheck": 513,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 798 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 802 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 799 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 803 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -23115,25 +23115,67 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Geneva_-_Jet_d%27eau.jpg",
           "sourceTitle": "File:Geneva - Jet d'eau.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Geneva - Jet d'eau.jpg",
+          "creditLabel": null,
           "creator": "Tiia Monto",
-          "license": "CC BY-SA 3.0",
-          "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
+          "license": null,
+          "sourceDeclaredLicenses": [
+            "CC BY-SA 3.0"
+          ],
+          "rightsStatus": "Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-12 after pixel review showed the local image depicts the Jet d’Eau and open water, not the claimed Old Town skyline. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "746024bc1f698e93e3ea867994c64bfca588529e",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "cba6c20ec175760118b29bdf3eaf5d3edeb785ebfe5e71f0df2abc1fdfee8be0",
+      "assetPaths": [
+        "/assets/images/switzerland-geneva-lake-route-choices.svg"
+      ],
+      "byteLength": 6741,
+      "sourceRecords": [
+        {
+          "sha256": "cba6c20ec175760118b29bdf3eaf5d3edeb785ebfe5e71f0df2abc1fdfee8be0",
+          "assetPath": "/assets/images/switzerland-geneva-lake-route-choices.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/switzerland-geneva-lake-route-choices.svg",
+          "sourceTitle": "Geneva three-district route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale.",
+          "localSha1": "99bb9c2528ac2aec5a715df7e96c8edb53d6bba0",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -23143,11 +23185,9 @@
             "/switzerland/geneva-lake/old-town-lakefront/"
           ],
           "altTexts": [
-            "Geneva lakefront and old town skyline"
+            "Original five-language route schematic for Geneva Old Town, Nations and Carouge; conceptual and not to scale"
           ],
-          "rawVisibleCredits": [
-            "Geneva - Jet d'eau.jpg — Tiia Monto, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -23362,7 +23402,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg",
           "sourceTitle": "File:View of Interlaken and Lake Brienz from Harder Kulm (Ank Kumar) 02.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "View of Interlaken and Lake Brienz from Harder Kulm (Ank Kumar) 02.jpg",
+          "creditLabel": "Interlaken and Lake Brienz below Harder Kulm",
           "creator": "Ank Kumar",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -23390,11 +23430,10 @@
             "/switzerland/interlaken-lakes/thun-spiez/"
           ],
           "altTexts": [
-            "Interlaken between Lake Thun and Lake Brienz",
             "Interlaken and Lake Brienz below the Harder Kulm ridge"
           ],
           "rawVisibleCredits": [
-            "View of Interlaken and Lake Brienz from Harder Kulm (Ank Kumar) 02.jpg — Ank Kumar, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Interlaken and Lake Brienz below Harder Kulm — Ank Kumar, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23511,7 +23550,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lauterbrunnen_Valley_with_Staubbach,_Bernese_Oberland,_Switzerland-LCCN2001701212.jpg",
           "sourceTitle": "File:Lauterbrunnen Valley with Staubbach, Bernese Oberland, Switzerland-LCCN2001701212.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Lauterbrunnen Valley with Staubbach, Bernese Oberland, Switzerland-LCCN2001701212.jpg",
+          "creditLabel": "Lauterbrunnen Valley and Staubbach Falls",
           "creator": "Photochrom Print Collection",
           "license": "Public domain",
           "sourceDeclaredLicenses": null,
@@ -23542,7 +23581,7 @@
             "Lauterbrunnen valley with waterfalls and high cliffs"
           ],
           "rawVisibleCredits": [
-            "Lauterbrunnen Valley with Staubbach, Bernese Oberland, Switzerland-LCCN2001701212.jpg — Photochrom Print Collection, Public domain. Resized, display-cropped and converted to WebP; no other material edits."
+            "Lauterbrunnen Valley and Staubbach Falls — Photochrom Print Collection, Public domain. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24924,7 +24963,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg",
           "sourceTitle": "File:Matterhorn from mountain side between Zermatt and Gornergrat, Wallis, Switzerland, 2012 August - 3.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Matterhorn from mountain side between Zermatt and Gornergrat, Wallis, Switzerland, 2012 August - 3.jpg",
+          "creditLabel": "Matterhorn above the slope between Zermatt and Gornergrat",
           "creator": "Ximonic (Simo Räsänen)",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -24952,11 +24991,10 @@
             "/switzerland/zermatt-matterhorn/village-gornergrat/"
           ],
           "altTexts": [
-            "Matterhorn viewed from the Gornergrat area above Zermatt",
             "Matterhorn rising above the rocky grassy slope between Zermatt and Gornergrat"
           ],
           "rawVisibleCredits": [
-            "Matterhorn from mountain side between Zermatt and Gornergrat, Wallis, Switzerland, 2012 August - 3.jpg — Ximonic (Simo Räsänen), CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Matterhorn above the slope between Zermatt and Gornergrat — Ximonic (Simo Räsänen), CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]

@@ -24,6 +24,10 @@ const zermattLastmod = '2026-10-12';
 const interlaken = switzerlandClusters.find((cluster) => cluster.slug === 'interlaken-lakes');
 const interlakenRoutes = interlaken ? [`/switzerland/${interlaken.slug}/`, ...interlaken.guides.map((guide) => guide.url)] : [];
 const interlakenLastmod = '2026-10-12';
+const geneva = switzerlandClusters.find((cluster) => cluster.slug === 'geneva-lake');
+const genevaRoutes = ['/switzerland/geneva-lake/', '/switzerland/geneva-lake/old-town-lakefront/', '/switzerland/geneva-lake/international-quarter/', '/switzerland/geneva-lake/carouge-arve/'];
+const genevaSitemapRoutes = ['/switzerland/', ...genevaRoutes];
+const genevaLastmod = '2026-10-12';
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -83,6 +87,14 @@ for (const cluster of switzerlandClusters) {
 check(Boolean(zurich), 'Zurich hub must exist');
 check(Boolean(zermatt) && zermatt?.reviewDate === '12 October 2026' && zermatt?.isoDate === zermattLastmod, 'Zermatt editorial review metadata must match the source review date');
 check(Boolean(interlaken) && interlaken?.reviewDate === '12 October 2026' && interlaken?.isoDate === interlakenLastmod, 'Interlaken editorial review metadata must match the source review date');
+check(Boolean(geneva) && geneva?.reviewDate === '12 October 2026' && geneva?.isoDate === genevaLastmod, 'Geneva editorial review metadata must match the source review date');
+check(genevaRoutes.length === 4 && geneva?.guides.map((guide) => guide.slug).join(',') === 'old-town-lakefront,international-quarter,carouge-arve', 'Geneva refresh must retain the hub and its same three child routes');
+if (geneva) {
+  check(geneva.faq?.length === 3, 'Geneva hub must have three date-aware, district-specific FAQs');
+  check(/Cornavin/.test(geneva.stay) && /two nights/.test(geneva.stay) && /(?:choose three|third night)/i.test(geneva.stay), 'Geneva lodging guidance must identify nights and bases');
+  check(/tram 15/.test(geneva.transfer) && /tram 12/.test(geneva.transfer) && /bus 5/.test(geneva.transfer), 'Geneva hub must name the Nations and Carouge transit legs');
+  check(geneva.guides[0].image.assetType === 'original-planning-diagram' && geneva.guides[0].image.src.endsWith('.svg'), 'Geneva Old Town image must use the new original route diagram');
+}
 if (zurich) {
   check(zurich.guides.length === 3, 'Zurich must retain exactly three child guides');
   check(zurich.reviewDate === '8 October 2026' && zurich.isoDate === zurichLastmod, 'Zurich editorial review metadata must match the source review date');
@@ -149,8 +161,8 @@ for (const route of routes) {
   }
   for (const guide of credited) {
     if (guide.image.assetType === 'original-planning-diagram') {
-      const legend = route === guide.url ? guide.image.diagramNote : guide.image.diagramCardNote;
-      check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.rightsStatusUrl) && html.includes(guide.image.rightsStatus) && html.includes(escape(legend)), `${route}: visible original-diagram provenance or localized English legend missing for ${guide.slug}`);
+      const legend = route === '/switzerland/' ? '' : route === guide.url ? guide.image.diagramNote : guide.image.diagramCardNote;
+      check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.rightsStatusUrl) && html.includes(guide.image.rightsStatus) && (!legend || html.includes(escape(legend))), `${route}: visible original-diagram provenance or localized English legend missing for ${guide.slug}`);
     } else {
       check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
     }
@@ -203,8 +215,8 @@ for (const route of routes) {
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
     for (const guide of credited) {
       if (guide.image.assetType === 'original-planning-diagram') {
-        const legendClass = route === guide.url ? 'class="ch-diagram-note"' : 'class="ch-diagram-card-note"';
-        check(localized.includes(guide.image.source) && localized.includes(guide.image.rightsStatusUrl) && localized.includes(legendClass), `${prefix + route}: localized original-diagram provenance or visible legend missing for ${guide.slug}`);
+        const legendClass = route === '/switzerland/' ? '' : route === guide.url ? 'class="ch-diagram-note"' : 'class="ch-diagram-card-note"';
+        check(localized.includes(guide.image.source) && localized.includes(guide.image.rightsStatusUrl) && (!legendClass || localized.includes(legendClass)), `${prefix + route}: localized original-diagram provenance or visible legend missing for ${guide.slug}`);
       } else {
         check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
       }
@@ -227,7 +239,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : '2026-09-12';
+    const expectedLastmod = genevaSitemapRoutes.includes(route) ? genevaLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

@@ -8172,7 +8172,7 @@
     "url": "/switzerland/geneva-lake/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Geneva’s compact center can be walked, but the international district and Carouge reward separate transport decisions. Use the lake to orient the city, then choose between civic history, international institutions and neighborhood life. Do not spend the whole day around the Jet d’Eau simply because it dominates the skyline.",
+    "summary": "Geneva makes more sense as three walkable districts linked by named transit legs than as a single lakefront checklist: the old town rises above the Rhône, the Nations quarter sits northwest of Cornavin, and Carouge has its own street scale south of the center. Start with the lake to get your bearings, then protect half-days for districts that match your interests. Two nights cover the civic center and one other area; a third night makes room for a timed institutional visit, a museum or a slower lakeshore day. Confirm openings, access and service for your dates.",
     "keywords": [
       "Geneva & Western Lake Geneva",
       "Romandy",
@@ -8184,7 +8184,7 @@
     "url": "/switzerland/geneva-lake/old-town-lakefront/",
     "parent": "Geneva & Western Lake Geneva",
     "type": "Local guide",
-    "summary": "Connect the lakefront, Rhône crossings, St Pierre hill and old-town lanes in one ascending route, then return at water level instead of circling the same luxury-shopping blocks.",
+    "summary": "Walk the central lake edge, cross the Rhône once, climb through Bourg-de-Four to St Pierre Cathedral and finish down the Treille side. This is a geographic introduction with an uphill section, not a promise that the Jet d’Eau or every interior is open.",
     "keywords": [
       "Geneva Old Town & Lakefront",
       "Geneva & Western Lake Geneva",
@@ -8197,7 +8197,7 @@
     "url": "/switzerland/geneva-lake/international-quarter/",
     "parent": "Geneva & Western Lake Geneva",
     "type": "Local guide",
-    "summary": "Treat the UN and international quarter as an access-controlled institutional visit, then connect the parks and lake only after confirmed entry, security and opening conditions.",
+    "summary": "Build a half-day around a confirmed Palais des Nations tour, then walk the public park and museum area. The visit is controlled access with identity screening, so include an exterior-only fallback.",
     "keywords": [
       "International Geneva & Nations Quarter",
       "Geneva & Western Lake Geneva",
@@ -8210,7 +8210,7 @@
     "url": "/switzerland/geneva-lake/carouge-arve/",
     "parent": "Geneva & Western Lake Geneva",
     "type": "Local guide",
-    "summary": "Leave central Geneva for Carouge’s smaller streets, Plainpalais markets and the Arve corridor, using the tram as the spine for a neighborhood-focused half day.",
+    "summary": "Use tram 12 as the district spine: ride to Carouge-Rondeau, walk the central squares and side streets, then connect north through Plainpalais or return toward Rive. Treat the Arve as an optional signed-path extension.",
     "keywords": [
       "Carouge, Plainpalais & the Arve",
       "Geneva & Western Lake Geneva",
