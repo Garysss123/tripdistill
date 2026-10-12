@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/",
+    "/canada/ottawa-gatineau/gatineau-park/"
+  ],
+  "translations": {
+    "Ottawa and Gatineau share a river and a capital-region story, but the Parliament precinct, museum bank and Gatineau Park do not fit into one sightseeing…": "ออตตาวาและกาติโนมีแม่น้ำกับเรื่องราวของภูมิภาคเมืองหลวงร่วมกัน แต่ Parliament พิพิธภัณฑ์อีกฝั่ง และ Gatineau Park เที่ยวรวมในเส้นทางเดียวได้ยาก…",
+    "Autumn hills and valley seen from Champlain Lookout, Gatineau Park": "เนินเขาและหุบเขาในฤดูใบไม้ร่วง มองจาก Champlain Lookout ใน Gatineau Park"
+  }
+}

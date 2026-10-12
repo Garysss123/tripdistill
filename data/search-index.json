@@ -7385,7 +7385,7 @@
     "url": "/canada/ottawa-gatineau/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Ottawa and Gatineau combine national institutions with a walkable river/canal core and a much larger park system. Reserve the institutions that matter, then keep the outdoor branch separate from museum density.",
+    "summary": "Ottawa and Gatineau share a river and a capital-region story, but the Parliament precinct, museum bank and Gatineau Park do not fit into one sightseeing loop. Keep a downtown Ottawa base if Parliament Hill, the Rideau Canal locks and ByWard Market are the priority; choose central Hull/Gatineau when the Canadian Museum of History or a date-matched park shuttle is the anchor. Plan one cross-river museum day, one civic-and-canal day and a separate park day. OC Transpo and STO are different operators, and construction or events can change bridge and street access. The Museum of History currently lists walking, cycling, public transit and a seasonal water taxi as ways to reach its Gatineau entrance; check the exact route and return for your date.",
     "keywords": [
       "Ottawa & Gatineau",
       "Ontario / Quebec",
@@ -7397,7 +7397,7 @@
     "url": "/canada/ottawa-gatineau/parliament-rideau/",
     "parent": "Ottawa & Gatineau",
     "type": "Local guide",
-    "summary": "Anchor the day on one reserved parliamentary or civic visit, then connect the canal, river and ByWard Market on foot without repeatedly passing security lines.",
+    "summary": "Build one central day around a confirmed Parliament visitor time, the National War Memorial, Rideau Canal Locks and ByWard Market. The canal descent is the connector; a second museum or an unverified extra tour is not.",
     "keywords": [
       "Parliament, Rideau Canal & ByWard",
       "Ottawa & Gatineau",
@@ -7410,7 +7410,7 @@
     "url": "/canada/ottawa-gatineau/national-museums/",
     "parent": "Ottawa & Gatineau",
     "type": "Local guide",
-    "summary": "Choose one major national museum for depth and a second only if it answers a different question; crossing the river is easy, museum fatigue is the real constraint.",
+    "summary": "Choose a collection for its subject, then keep the day on that museum’s riverbank. The History Museum is directly opposite Parliament in Gatineau; the War Museum and National Gallery give distinct Ottawa-side alternatives.",
     "keywords": [
       "Ottawa–Gatineau National Museums",
       "Ottawa & Gatineau",
@@ -7423,7 +7423,7 @@
     "url": "/canada/ottawa-gatineau/gatineau-park/",
     "parent": "Ottawa & Gatineau",
     "type": "Local guide",
-    "summary": "Choose one Gatineau Park sector by season and transport, then build the day around that trail or lookout instead of treating the park as a drive-through extension of downtown.",
+    "summary": "Gatineau Park is a separate full-day branch from the capital core. Choose Pink Lake for its lookout and seasonal lake trail, Champlain Lookout for the escarpment view, or another NCC sector whose date-specific access and return are confirmed.",
     "keywords": [
       "Gatineau Park",
       "Ottawa & Gatineau",

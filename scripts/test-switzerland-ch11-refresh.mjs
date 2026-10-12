@@ -19,7 +19,13 @@ const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-
 const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
 const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
 const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes]);
+const laterCa11Routes = [
+  '/canada/ottawa-gatineau/',
+  '/canada/ottawa-gatineau/parliament-rideau/',
+  '/canada/ottawa-gatineau/national-museums/',
+  '/canada/ottawa-gatineau/gatineau-park/'
+];
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...laterCa11Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

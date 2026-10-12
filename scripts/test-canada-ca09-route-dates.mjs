@@ -24,6 +24,12 @@ const laterCa10Routes = [
   '/canada/newfoundland-labrador/bonavista-trinity/',
   '/canada/newfoundland-labrador/gros-morne/'
 ];
+const laterCa11Routes = [
+  '/canada/ottawa-gatineau/',
+  '/canada/ottawa-gatineau/parliament-rideau/',
+  '/canada/ottawa-gatineau/national-museums/',
+  '/canada/ottawa-gatineau/gatineau-park/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -43,9 +49,9 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA09 must retain the exact 73 Canada routes from CA08.');
 assert.deepEqual(
-  search.filter((record) => record.url.startsWith('/canada/') && !routes.includes(record.url) && !laterCa10Routes.includes(record.url)),
-  integrationSearchRecords.filter((record) => record.url.startsWith('/canada/') && !routes.includes(record.url) && !laterCa10Routes.includes(record.url)),
-  'CA09 must leave every non-CA09 and later CA10 Canada search record unchanged.'
+  search.filter((record) => record.url.startsWith('/canada/') && !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url)),
+  integrationSearchRecords.filter((record) => record.url.startsWith('/canada/') && !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url)),
+  'CA09 must leave every non-CA09, later CA10 and later CA11 Canada search record unchanged.'
 );
 for (const route of routes) {
   const record = canadaSearch.find((item) => item.url === route);
@@ -65,7 +71,7 @@ const readSitemapDates = (contents) => new Map([...contents.matchAll(/<loc>https
 const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA09 must retain the exact CA08 sitemap URL set.');
-const expectedSitemapDateChanges = locales.flatMap((locale) => [...routes, ...laterCa10Routes].map((route) => locale + route)).sort();
+const expectedSitemapDateChanges = locales.flatMap((locale) => [...routes, ...laterCa10Routes, ...laterCa11Routes].map((route) => locale + route)).sort();
 const actualSitemapDateChanges = [...sitemapDates].filter(([route, date]) => route.includes('/canada/') && previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualSitemapDateChanges, expectedSitemapDateChanges, 'Only the four CA09 and four later CA10 routes across five editions may have changed sitemap dates.');
 
@@ -101,4 +107,4 @@ for (const locale of locales) {
   assert.ok(html.includes('CC0'), `${locale || 'en'}: museum license evidence must be present.`);
 }
 
-console.log('CA09 route/date regression passed: exactly four existing body routes; 73 unique Canada routes; all other search records unchanged from the exact pre-CA09 integration parent; exact sitemap URL set with only four CA09 and four later CA10 route dates changed across five editions; five localized versions plus the separately refreshed country card; current canonical/article dates; and corrected museum alt text with source/license provenance.');
+console.log('CA09 route/date regression passed: exactly four existing body routes; 73 unique Canada routes; non-target and later CA10/CA11 search records unchanged from the exact pre-CA09 integration parent; exact sitemap URL set with only four CA09 and four later CA10/CA11 route dates changed across five editions; five localized versions plus the separately refreshed country card; current canonical/article dates; and corrected museum alt text with source/license provenance.');

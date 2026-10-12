@@ -102,7 +102,7 @@ assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no URL was added or removed');
 const selectedLocalizedPaths = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => new URL(url).pathname);
-assert.equal(integrationRoutes.length, 194, 'the exact UK, France, Italy, Switzerland, Canada and Malaysia source route scope contains 194 existing English pages');
+assert.equal(integrationRoutes.length, 198, 'the exact UK, France, Italy, Switzerland, Canada and Malaysia source route scope contains 198 existing English pages');
 assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the exact integrated UK, France, Italy, Switzerland, Canada and Malaysia routes changed lastmod');
 for (const route of selectedLocalizedPaths) assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), reviewDate, `${route}: sitemap date`);
 

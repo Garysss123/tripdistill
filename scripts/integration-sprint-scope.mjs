@@ -143,6 +143,10 @@ export const integrationRouteGroups = Object.freeze({
   ]),
   canada: Object.freeze([
     '/canada/',
+    '/canada/ottawa-gatineau/',
+    '/canada/ottawa-gatineau/parliament-rideau/',
+    '/canada/ottawa-gatineau/national-museums/',
+    '/canada/ottawa-gatineau/gatineau-park/',
     '/canada/pacific-rim-tofino/',
     '/canada/pacific-rim-tofino/long-beach-rainforest/',
     '/canada/pacific-rim-tofino/tofino-marine-day/',

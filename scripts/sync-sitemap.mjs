@@ -162,6 +162,13 @@ const newfoundlandEditedRoutes = [
   '/canada/newfoundland-labrador/bonavista-trinity/',
   '/canada/newfoundland-labrador/gros-morne/'
 ];
+const ottawaGatineauLastmod = '2026-10-12';
+const ottawaGatineauEditedRoutes = [
+  '/canada/ottawa-gatineau/',
+  '/canada/ottawa-gatineau/parliament-rideau/',
+  '/canada/ottawa-gatineau/national-museums/',
+  '/canada/ottawa-gatineau/gatineau-park/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1245,6 +1252,12 @@ for (const route of newfoundlandEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Newfoundland route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: newfoundlandLastmod });
+}
+
+for (const route of ottawaGatineauEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Ottawa–Gatineau route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: ottawaGatineauLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

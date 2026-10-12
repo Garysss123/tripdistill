@@ -99,7 +99,7 @@ const stGallenRoutes = [
 ];
 const expectedNewDateChanges = new Set(locales.flatMap((locale) => [...stMoritzRoutes, ...stGallenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const retainedDateRoutes = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
+const dateChanges = [...currentRecords].filter(([url, date]) => new URL(url).pathname.includes('/switzerland/') && baseRecords.get(url) !== date);
 assert.equal(dateChanges.length, expectedNewDateChanges.size, 'only CH11 and CH12 add dates relative to the exact pre-Switzerland integration checkpoint');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedNewDateChanges.has(url), `unexpected Swiss sitemap date change: ${url}`);

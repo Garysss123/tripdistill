@@ -26,7 +26,13 @@ const ch11Routes = [
   '/switzerland/st-moritz-engadin/bernina-pontresina/',
   '/switzerland/st-moritz-engadin/muottas-diavolezza/'
 ];
-const newSwissSearchRoutes = new Set([...targetRoutes, ...ch11Routes]);
+const laterCa11Routes = [
+  '/canada/ottawa-gatineau/',
+  '/canada/ottawa-gatineau/parliament-rideau/',
+  '/canada/ottawa-gatineau/national-museums/',
+  '/canada/ottawa-gatineau/gatineau-park/'
+];
+const newSwissSearchRoutes = new Set([...targetRoutes, ...ch11Routes, ...laterCa11Routes]);
 const cluster = switzerlandClusters.find((item) => item.slug === 'st-gallen-appenzell');
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((item) => [`/switzerland/${item.slug}/`, ...item.guides.map((guide) => guide.url)])];
 const batchMarkers = ['-ch12-st-gallen-pages-20261012.json', '-ch12-st-gallen-search-20261012.json'];
