@@ -1,0 +1,10 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Langkawi": "馬來西亞－蘭卡威"
+  }
+}

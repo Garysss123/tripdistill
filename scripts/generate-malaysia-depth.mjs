@@ -342,10 +342,11 @@ const requestedClusterSlug = process.argv.find((argument) => argument.startsWith
 if (requestedClusterSlug) {
   const boundedGuideLists = {
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
-    'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang']
+    'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
+    'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for the reviewed George Town & Penang and Cameron Highlands source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands and Langkawi source clusters.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
