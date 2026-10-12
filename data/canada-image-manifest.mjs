@@ -416,7 +416,7 @@ export const canadaImageManifest = {
   },
   "newfoundland-labrador/st-johns-signal-hill": {
     "src": "/assets/images/canada-newfoundland-labrador-st-johns-signal-hill.webp",
-    "alt": "St. John’s harbour and colorful hillside houses in Newfoundland",
+    "alt": "Rocky Signal Hill headland above the Atlantic at St. John’s",
     "source": "https://commons.wikimedia.org/wiki/File:Signal_Hill_St_John_Harbour_Newfoundland_(41364638351).jpg",
     "label": "Signal Hill St John Harbour Newfoundland (41364638351).jpg",
     "creator": "Michel Rathwell from Cornwall, Canada",
@@ -426,7 +426,7 @@ export const canadaImageManifest = {
   },
   "newfoundland-labrador/bonavista-trinity": {
     "src": "/assets/images/canada-newfoundland-labrador-bonavista-trinity.webp",
-    "alt": "North Atlantic coastal village in Newfoundland",
+    "alt": "St. Paul’s Anglican Church and graveyard in Trinity, Newfoundland",
     "source": "https://commons.wikimedia.org/wiki/File:Stpaulsanglican-trinitynewfoundland.jpg",
     "label": "Stpaulsanglican-trinitynewfoundland.jpg",
     "creator": "The original uploader was Staib at English Wikipedia .",
@@ -436,7 +436,7 @@ export const canadaImageManifest = {
   },
   "newfoundland-labrador/gros-morne": {
     "src": "/assets/images/canada-newfoundland-labrador-gros-morne.webp",
-    "alt": "Mountain and fjord landscape in Gros Morne National Park",
+    "alt": "Rocky shore and mountains at Western Brook Pond in Gros Morne National Park",
     "source": "https://commons.wikimedia.org/wiki/File:Western_Brook_Pond.jpg",
     "label": "Western Brook Pond.jpg",
     "creator": "Bigg(g)er",

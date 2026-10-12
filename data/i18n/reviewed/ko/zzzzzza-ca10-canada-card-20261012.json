@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/"
+  ],
+  "translations": {
+    "Treat Newfoundland as three different stays: St. John’s for the Avalon, Bonavista Peninsula for Trinity and Bonavista, and Gros Morne on the west coast.…": "뉴펀들랜드 여행은 세 지역을 각각 별도의 숙박 거점으로 계획하세요. Avalon은 St. John’s에서, Trinity와 Bonavista는 Bonavista Peninsula에서, 서해안은 Gros Morne에서 둘러보세요…"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

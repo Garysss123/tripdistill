@@ -7683,11 +7683,13 @@
     "url": "/canada/newfoundland-labrador/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Newfoundland is too large for a quick island loop. Use St. John’s for the Avalon, Bonavista/Trinity for an outport branch and Gros Morne for a separate west-coast park stay; Labrador requires still another transport plan.",
+    "summary": "Treat Newfoundland as three different stays: St. John’s for the Avalon, Bonavista Peninsula for Trinity and Bonavista, and Gros Morne on the west coast. The road links are the trip, so do not turn these into day trips from one base. Labrador is on the mainland and needs its own confirmed road, ferry or flight connection.",
     "keywords": [
       "Newfoundland & Labrador",
       "Newfoundland and Labrador",
-      "atlantic"
+      "atlantic",
+      "road trip",
+      "regional bases"
     ]
   },
   {
@@ -7695,12 +7697,14 @@
     "url": "/canada/newfoundland-labrador/st-johns-signal-hill/",
     "parent": "Newfoundland & Labrador",
     "type": "Local guide",
-    "summary": "Use the harbour bowl to link downtown, The Rooms and Signal Hill, then treat Cape Spear as a separate weather-dependent branch rather than another city block.",
+    "summary": "Start with downtown’s steep harbour streets and one cultural anchor, then use the clearest part of the stay for Signal Hill. Cape Spear is a separate headland excursion with its own transport and seasonal-site check.",
     "keywords": [
       "St. John’s & Signal Hill",
       "Newfoundland & Labrador",
       "Newfoundland and Labrador",
-      "harbour-ledger"
+      "harbour-ledger",
+      "Signal Hill",
+      "Cape Spear"
     ]
   },
   {
@@ -7708,12 +7712,14 @@
     "url": "/canada/newfoundland-labrador/bonavista-trinity/",
     "parent": "Newfoundland & Labrador",
     "type": "Local guide",
-    "summary": "Stay in the Bonavista Peninsula long enough to walk one historic outport, one coastal trail or headland and one cultural site without turning every village into a drive-through photograph.",
+    "summary": "Make the Bonavista Peninsula a two-night branch from St. John’s. Give Trinity’s heritage streets and Bonavista’s fishing-harbour story separate blocks, with one exposed coast walk chosen only after checking weather and access.",
     "keywords": [
       "Bonavista & Trinity",
       "Newfoundland & Labrador",
       "Newfoundland and Labrador",
-      "field-notebook"
+      "field-notebook",
+      "Bonavista Peninsula",
+      "Ryan Premises"
     ]
   },
   {
@@ -7721,12 +7727,15 @@
     "url": "/canada/newfoundland-labrador/gros-morne/",
     "parent": "Newfoundland & Labrador",
     "type": "Local guide",
-    "summary": "Choose one geology/hiking day and one fjord/coast day, then stay inside or near the park so trail weather and boat schedules can move without wrecking the whole Newfoundland route.",
+    "summary": "Give Gros Morne its own west-coast stay: put Tablelands and the Trout River side in one block, and Rocky Harbour, Western Brook Pond or a north-side trail in another. A conceptual region diagram shows why these stops need a separate base and transfer.",
     "keywords": [
       "Gros Morne National Park",
       "Newfoundland & Labrador",
       "Newfoundland and Labrador",
-      "park-gate"
+      "park-gate",
+      "Western Brook Pond",
+      "Tablelands",
+      "Gros Morne Mountain"
     ]
   },
   {

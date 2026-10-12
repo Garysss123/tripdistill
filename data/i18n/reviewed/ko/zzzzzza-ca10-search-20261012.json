@@ -1,0 +1,22 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "regional bases": "지역별 숙박 거점",
+    "Signal Hill": "시그널 힐",
+    "Cape Spear": "케이프 스피어",
+    "Bonavista Peninsula": "보나비스타 반도",
+    "Ryan Premises": "라이언 프리미스",
+    "Western Brook Pond": "웨스턴 브룩 폰드",
+    "Tablelands": "테이블랜즈",
+    "Gros Morne Mountain": "그로스 몬 산"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

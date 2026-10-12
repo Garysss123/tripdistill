@@ -169,8 +169,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/calgary-badlands/drumheller-royal-tyrrell/',
     '/canada/calgary-badlands/dinosaur-provincial-park/'
   ]);
+  const newfoundlandUpdatedRoutes = new Set([
+    '/canada/newfoundland-labrador/',
+    '/canada/newfoundland-labrador/st-johns-signal-hill/',
+    '/canada/newfoundland-labrador/bonavista-trinity/',
+    '/canada/newfoundland-labrador/gros-morne/'
+  ]);
   for (const route of routes) {
-    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

@@ -1,0 +1,22 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "regional bases": "ฐานพักแยกตามภูมิภาค",
+    "Signal Hill": "จุดชมวิว Signal Hill",
+    "Cape Spear": "แหลม Cape Spear",
+    "Bonavista Peninsula": "คาบสมุทร Bonavista",
+    "Ryan Premises": "แหล่งประวัติศาสตร์ Ryan Premises",
+    "Western Brook Pond": "ฟยอร์ด Western Brook Pond",
+    "Tablelands": "พื้นที่ Tablelands",
+    "Gros Morne Mountain": "ภูเขา Gros Morne"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}
