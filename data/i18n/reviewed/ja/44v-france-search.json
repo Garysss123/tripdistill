@@ -5,7 +5,6 @@
     "/data/search-index.json"
   ],
   "translations": {
-    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "20の地域別ハブと60のテーマ別ガイドから、都市、宮殿、ブドウ畑、海岸、山岳地帯、コルシカ島への旅を計画しましょう。",
     "French travel": "フランス旅行",
     "France rail": "フランス鉄道",
     "Île-de-France": "Île-de-France（イル＝ド＝フランス）",
@@ -29,6 +28,12 @@
     "mediterranean-island": "地中海沿岸・島々",
     "Bouches-du-Rhône, Provence": "ブーシュ＝デュ＝ローヌ県、プロヴァンス",
     "Alpes-Maritimes": "Alpes-Maritimes（アルプ＝マリティーム県）",
-    "Corsica": "コルシカ"
+    "Corsica": "コルシカ",
+    "Choose two or three France bases by nights, prove the full rail and rural last mile, then protect a nearby weather or closure fallback across twenty regional hubs.": "宿泊数からフランスの拠点を2か所または3か所選び、鉄道と地方の最終区間を含む全行程を確認します。天候や休業に備え、20の地域ハブごとに近くの代替案も用意してください。",
+    "base nights": "拠点と宿泊数",
+    "Plan Lille as a 2–3-night urban base for the city and one excursion; Vimy needs a confirmed Arras last mile, while the Opal Coast needs a separately checked bus, tour, bicycle or car return.": "リールを2～3泊の都市拠点にして市内と郊外の一日を組みます。ヴィミへはアラスからの最終区間を確認し、オパール海岸ではバス、ツアー、自転車、車の帰路を別途確かめてください。",
+    "Use Lille-Flandres or Lille-Europe as the rail arrival stated on your ticket; Ilévia Métro line 2 serves Roubaix–Grand-Place for La Piscine, subject to the dated route and museum opening check.": "切符に記載された Lille-Flandres または Lille-Europe に到着します。Ilévia 地下鉄2号線で Roubaix–Grand-Place へ行き、La Piscine まで歩けます。指定日の運行と美術館の開館日を確認してください。",
+    "Arras is the rail and overnight base for Vimy; book or confirm the rural last mile and return pickup independently, then check Veterans Affairs Canada visitor-centre hours and site access.": "ヴィミ訪問ではアラスを鉄道と宿泊の拠点にします。地方の最終区間と帰りの迎車を別途予約・確認し、Veterans Affairs Canada のビジターセンター開館時間と現地アクセスを調べてください。",
+    "Choose Boulogne-Ville for Boulogne and Nausicaá or Calais-Ville for a separately planned Blanc-Nez day; check the date-specific coastal bus, tour or car leg and a return before walking onto exposed ground.": "ブローニュと Nausicaá には Boulogne-Ville、別日にブラン・ネ岬へ行く場合は Calais-Ville を選びます。海岸の開けた場所を歩く前に、指定日のバス、ツアーまたは車と帰路を確認してください。"
   }
 }

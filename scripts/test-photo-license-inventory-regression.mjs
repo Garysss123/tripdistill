@@ -27,6 +27,10 @@ const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbr
 const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
 const chinaLhasaRetiredAssetPath = '/assets/images/china-destination-lhasa.webp';
 const chinaLhasaRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg';
+const franceVimyRetiredAssetPath = '/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp';
+const franceVimyRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg';
+const franceVimyDiagramAssetPath = '/assets/images/france-lille-arras-vimy-sequence-legend.svg';
+const franceVimyDiagramSourceUrl = 'https://tripdistill.com/assets/images/france-lille-arras-vimy-sequence-legend.svg';
 const melakaRetiredAssetPath = '/assets/images/malaysia-melaka-kampung-morten.webp';
 const melakaRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg';
 const melakaDiagramAssetPath = '/assets/images/malaysia-melaka-two-bank-route.svg';
@@ -519,8 +523,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 514, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 9, 'inventory must count project-original artwork, including the Lille–Vimy sequence diagram');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -560,7 +563,7 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 2, 'both preserved rights-review photographs must be excluded from dist');
   assert.equal(report.counts.expectedBuildImageCount, 800, 'the two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
@@ -602,6 +605,45 @@ try {
   assert.match(chinaLhasaRetired.verificationDetail, /unresolved deletion nomination/i);
   assert.match(chinaLhasaRetired.retirementNote, /no evidence that the image was released under the given license/i);
   assert.equal(report.unmatchedAssets.some((item) => item.src === chinaLhasaRetiredAssetPath), false, 'an intentionally unlicensed retired file is documented, not counted as an active attribution gap');
+  const franceVimyRetired = photoRecords.find((item) => item.assetPath === franceVimyRetiredAssetPath);
+  assert.ok(franceVimyRetired, 'inventory must retain the Vimy photograph with the unresolved NoFoP-France warning');
+  assert.equal(fs.existsSync(path.join(root, franceVimyRetiredAssetPath.slice(1))), true, 'the original Vimy WebP remains in the repository');
+  assert.equal(franceVimyRetired.sourceUrl, franceVimyRetiredSourceUrl);
+  assert.equal(franceVimyRetired.sourceTitle, 'File:2017-05 Canadian National Vimy Memorial 01.jpg');
+  assert.equal(franceVimyRetired.creator, '0x010C');
+  assert.equal(franceVimyRetired.license, 'CC BY-SA 3.0', 'preserve the Commons declaration as metadata, not as a clearance conclusion');
+  assert.equal(franceVimyRetired.localSha1, '2012cdfb09da624b118ecd75a372cc6165497853');
+  assert.equal(franceVimyRetired.inventoryStatus, 'unused');
+  assert.equal(franceVimyRetired.useCount, 0);
+  assert.deepEqual(franceVimyRetired.routes, []);
+  assert.equal(franceVimyRetired.verificationStatus, 'source_page_checked');
+  assert.equal(franceVimyRetired.verificationDate, '2026-10-12');
+  assert.equal(franceVimyRetired.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(franceVimyRetired.rightsStatus, /NoFoP-France.*do not reuse/i);
+  assert.match(franceVimyRetired.retirementNote, /not treated as reuse permission/i);
+  assert.match(franceVimyRetired.verificationDetail, /NoFoP-France/i);
+  assert.equal(report.unmatchedAssets.some((item) => item.src === franceVimyRetiredAssetPath), false, 'the documented retired Vimy photograph is not an active attribution gap');
+  const franceVimyDiagram = photoRecords.find((item) => item.assetPath === franceVimyDiagramAssetPath);
+  assert.ok(franceVimyDiagram, 'inventory must include the original five-language Vimy sequence diagram');
+  assert.equal(franceVimyDiagram.assetType, 'original-planning-diagram');
+  assert.equal(franceVimyDiagram.sourceUrl, franceVimyDiagramSourceUrl);
+  assert.equal(franceVimyDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(franceVimyDiagram.license, null, 'original SVG must not claim a third-party license');
+  assert.equal(franceVimyDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(franceVimyDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(franceVimyDiagram.inventoryStatus, 'used');
+  assert.equal(franceVimyDiagram.useCount, 4);
+  assert.deepEqual(franceVimyDiagram.routes, [
+    '/france/lille-french-flanders/',
+    '/france/lille-french-flanders/arras-vimy-remembrance/',
+    '/france/lille-french-flanders/old-lille-roubaix/',
+    '/france/lille-french-flanders/opal-coast-headlands/'
+  ]);
+  assert.equal(franceVimyDiagram.localSha1, '76516497410b7f12bb752f609bc831f57428d8aa');
+  assert.equal(franceVimyDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.equal(franceVimyDiagram.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.ok(franceVimyDiagram.altTexts.some((alt) => /not a geographic map.*not to scale.*not a live timetable/i.test(alt)));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === franceVimyDiagramAssetPath), false);
   const chinaLhasaDiagram = photoRecords.find((item) => item.assetPath === chinaLhasaDiagramAssetPath);
   assert.ok(chinaLhasaDiagram, 'inventory must include the original Lhasa SVG');
   assert.equal(chinaLhasaDiagram.assetType, 'original-planning-diagram');

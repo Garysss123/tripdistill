@@ -20,7 +20,6 @@ export const franceImageOverrides = {
   },
   'paris-region-day-trips/fontainebleau-palace-forest': 'File:La cour du cheval blanc (Château de Fontainebleau).jpg',
   'lille-french-flanders/old-lille-roubaix': 'File:Lille grand Place 2012.jpg',
-  'lille-french-flanders/arras-vimy-remembrance': 'File:2017-05 Canadian National Vimy Memorial 01.jpg',
   'lille-french-flanders/opal-coast-headlands': 'File:0 Escalles - Le Cap Blanc-Nez (1).JPG',
   'normandy/bayeux-dday-landscape': 'File:Bayeux cathedral (498230954).jpg',
   'normandy/mont-saint-michel-bay': 'File:A view of the Abbey of Mont-Saint-Michel with the bay.jpg',

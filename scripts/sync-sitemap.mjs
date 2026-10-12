@@ -78,6 +78,14 @@ const franceToulouseOccitanieLastmod = '2026-10-11';
 const franceMarseilleLastmod = '2026-10-12';
 const franceLanguedocLastmod = '2026-10-12';
 const franceCorsicaLastmod = '2026-10-12';
+const franceLilleLastmod = '2026-10-12';
+const franceLilleEditedRoutes = [
+  '/france/',
+  '/france/lille-french-flanders/',
+  '/france/lille-french-flanders/old-lille-roubaix/',
+  '/france/lille-french-flanders/arras-vimy-remembrance/',
+  '/france/lille-french-flanders/opal-coast-headlands/'
+];
 const franceCorsicaEditedRoutes = [
   '/france/corsica/',
   '/france/corsica/ajaccio-west-coast/',
@@ -848,6 +856,11 @@ for (const route of franceCorsicaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Corsica route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceCorsicaLastmod });
+}
+for (const route of franceLilleEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited France Lille/Arras/Opal Coast route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceLilleLastmod });
 }
 for (const route of franceProvenceEditedRoutes) {
   const record = records.get(route);

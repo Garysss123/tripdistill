@@ -4,7 +4,8 @@ const SITE_ORIGIN = 'https://tripdistill.com';
 const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/china-lhasa-preparation.svg',
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
-  '/assets/images/tripdistill-kellies-castle-transfer.svg'
+  '/assets/images/tripdistill-kellies-castle-transfer.svg',
+  '/assets/images/france-lille-arras-vimy-sequence-legend.svg'
 ]);
 const TERMS_PATH = '/terms-of-use/';
 
@@ -32,12 +33,14 @@ function normalizeSitePath(value, pageUrl) {
 export function hasVisibleOriginalProjectProvenance(html, pageUrl) {
   const document = parse(html);
   const images = findAll(document, (node) => node.tagName === 'img');
-  if (images.length !== 1) return false;
-  const imagePath = normalizeSitePath(attributes(images[0]).src, pageUrl);
-  if (!ORIGINAL_IMAGE_PATHS.has(imagePath)) return false;
+  const originalImages = images
+    .map((image) => normalizeSitePath(attributes(image).src, pageUrl))
+    .filter((imagePath) => ORIGINAL_IMAGE_PATHS.has(imagePath));
+  if (originalImages.length !== 1) return false;
+  const imagePath = originalImages[0];
 
   const creditItems = findAll(document, (node) => node.tagName === 'li');
-  return creditItems.some((item) => {
+  const hasOriginalCredit = creditItems.some((item) => {
     const anchors = findAll(item, (node) => node.tagName === 'a').map(attributes);
     const hasMatchingSource = anchors.some((anchor) =>
       normalizeSitePath(anchor.href, pageUrl) === imagePath
@@ -46,4 +49,21 @@ export function hasVisibleOriginalProjectProvenance(html, pageUrl) {
     const hasTermsLink = anchors.some((anchor) => normalizeSitePath(anchor.href, pageUrl) === TERMS_PATH);
     return hasMatchingSource && hasTermsLink;
   });
+  if (!hasOriginalCredit) return false;
+  const otherImagePaths = new Set(images
+    .map((image) => normalizeSitePath(attributes(image).src, pageUrl))
+    .filter((imagePath) => imagePath && !ORIGINAL_IMAGE_PATHS.has(imagePath)));
+  if (!otherImagePaths.size) return true;
+  const photoCredits = creditItems.filter((item) => {
+    const anchors = findAll(item, (node) => node.tagName === 'a').map(attributes);
+    const hasCommonsSource = anchors.some((anchor) => /^(?:https?:)?\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(anchor.href || ''));
+    const hasPhotoLicense = /\b(?:CC0|CC BY(?:-SA)?|Public domain)\b/i.test(textContent(item));
+    return hasCommonsSource && hasPhotoLicense;
+  });
+  return photoCredits.length >= otherImagePaths.size;
+}
+
+function textContent(node) {
+  if (node?.nodeName === '#text') return node.value;
+  return (node?.childNodes || []).map(textContent).join(' ');
 }

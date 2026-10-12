@@ -8784,12 +8784,14 @@
     "url": "/france/",
     "parent": "Europe",
     "type": "Country",
-    "summary": "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.",
+    "summary": "Choose two or three France bases by nights, prove the full rail and rural last mile, then protect a nearby weather or closure fallback across twenty regional hubs.",
     "keywords": [
       "France",
       "French travel",
       "Europe",
-      "France rail"
+      "France rail",
+      "base nights",
+      "last mile"
     ]
   },
   {
@@ -8899,7 +8901,7 @@
     "url": "/france/lille-french-flanders/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Lille is a rail gateway to three very different northern trips: Flemish-influenced city streets and collections, First World War remembrance landscapes around Arras, and weather-exposed Channel headlands. Each uses a different last mile and deserves its own day.",
+    "summary": "Plan Lille as a 2–3-night urban base for the city and one excursion; Vimy needs a confirmed Arras last mile, while the Opal Coast needs a separately checked bus, tour, bicycle or car return.",
     "keywords": [
       "Lille, Arras & the Opal Coast",
       "Hauts-de-France",
@@ -8911,7 +8913,7 @@
     "url": "/france/lille-french-flanders/old-lille-roubaix/",
     "parent": "Lille, Arras & the Opal Coast",
     "type": "Local guide",
-    "summary": "Walk Lille’s civic and Flemish-influenced core as one compact loop, then use the Métro or tram for a deliberate Roubaix collection block only when its opening and return fit.",
+    "summary": "Use Lille-Flandres or Lille-Europe as the rail arrival stated on your ticket; Ilévia Métro line 2 serves Roubaix–Grand-Place for La Piscine, subject to the dated route and museum opening check.",
     "keywords": [
       "Old Lille, La Piscine & Roubaix",
       "Lille, Arras & the Opal Coast",
@@ -8924,7 +8926,7 @@
     "url": "/france/lille-french-flanders/arras-vimy-remembrance/",
     "parent": "Lille, Arras & the Opal Coast",
     "type": "Local guide",
-    "summary": "Use Arras as the civic and rail anchor, then visit Vimy or another defined remembrance site through an official tour, taxi, bicycle plan or car route whose return is already fixed.",
+    "summary": "Arras is the rail and overnight base for Vimy; book or confirm the rural last mile and return pickup independently, then check Veterans Affairs Canada visitor-centre hours and site access.",
     "keywords": [
       "Arras, Vimy & Remembrance Ground",
       "Lille, Arras & the Opal Coast",
@@ -8937,7 +8939,7 @@
     "url": "/france/lille-french-flanders/opal-coast-headlands/",
     "parent": "Lille, Arras & the Opal Coast",
     "type": "Local guide",
-    "summary": "Use Boulogne-sur-Mer, Calais or a smaller coast base according to the chosen headland, then match one exposed walk with one sheltered town or marine visit.",
+    "summary": "Choose Boulogne-Ville for Boulogne and Nausicaá or Calais-Ville for a separately planned Blanc-Nez day; check the date-specific coastal bus, tour or car leg and a return before walking onto exposed ground.",
     "keywords": [
       "Opal Coast Headlands & Boulogne",
       "Lille, Arras & the Opal Coast",

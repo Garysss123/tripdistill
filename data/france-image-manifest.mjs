@@ -71,14 +71,17 @@ export const franceImageManifest = {
     "remoteSha1": "b20b00ca0d89208583be79b4809921f9b3ac982f"
   },
   "lille-french-flanders/arras-vimy-remembrance": {
-    "src": "/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp",
-    "alt": "The Canadian National Vimy Memorial rising above its preserved landscape",
-    "source": "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
-    "label": "2017-05 Canadian National Vimy Memorial 01.jpg",
-    "creator": "0x010C",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:2017-05 Canadian National Vimy Memorial 01.jpg",
-    "remoteSha1": "17cc1eacd347f2b54c2db9c64748103f92d953e5"
+    "src": "/assets/images/france-lille-arras-vimy-sequence-legend.svg",
+    "alt": "Five-language visit-sequence diagram for Arras and the Vimy memorial; not a geographic map, not to scale, and not a live timetable",
+    "source": "https://tripdistill.com/assets/images/france-lille-arras-vimy-sequence-legend.svg",
+    "label": "Arras–Vimy visit sequence (original five-language SVG)",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "localSha1": "76516497410b7f12bb752f609bc831f57428d8aa",
+    "editNote": "Original project SVG diagram; no third-party image content. A sequence schematic, not geography, scale or live service information."
   },
   "lille-french-flanders/opal-coast-headlands": {
     "src": "/assets/images/france-lille-french-flanders-opal-coast-headlands.webp",
@@ -605,5 +608,27 @@ export const franceImageManifest = {
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:Bonifacio cliffs -Le Grain de Sable.JPG",
     "remoteSha1": "69a9a509b9cd468e8d83c34eeeb5213e1bda5b2a"
+  }
+};
+
+// Retired from live routes because the Commons file page carries a NoFoP-France
+// warning. The local WebP remains in the repository for provenance, not reuse.
+export const franceRetiredImageRecords = {
+  vimyNoFoPFrancePhoto: {
+    src: "/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp",
+    alt: "Former Vimy memorial photo, retained for rights-review provenance only",
+    source: "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
+    sourceTitle: "File:2017-05 Canadian National Vimy Memorial 01.jpg",
+    label: "2017-05 Canadian National Vimy Memorial 01.jpg",
+    creator: "0x010C",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    assetType: "photographic-raster",
+    localSha1: "2012cdfb09da624b118ecd75a372cc6165497853",
+    rightsStatus: "Unresolved: Commons file page carries the NoFoP-France warning; do not reuse pending rights review",
+    rightsStatusUrl: "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
+    commercialReuseEligibility: "unknown",
+    inventoryStatus: "unused",
+    retirementNote: "The source page declares CC BY-SA 3.0 but also carries a NoFoP-France warning concerning the memorial artwork. The declaration is preserved as source-page metadata, not treated as reuse permission. Local source file retained for provenance only; removed from every active route and excluded from dist while the rights question remains unresolved."
   }
 };

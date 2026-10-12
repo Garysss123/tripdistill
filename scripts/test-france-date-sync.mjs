@@ -73,6 +73,13 @@ const corsicaRoutes = [
   '/france/corsica/bastia-cap-corse/',
   '/france/corsica/bonifacio-porto-vecchio/'
 ];
+const lilleRecoveryRoutes = [
+  '/france/',
+  '/france/lille-french-flanders/',
+  '/france/lille-french-flanders/old-lille-roubaix/',
+  '/france/lille-french-flanders/arras-vimy-remembrance/',
+  '/france/lille-french-flanders/opal-coast-headlands/'
+];
 const octoberElevenRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes, ...dordogneRoutes, ...occitanieRoutes];
 const selectedRoutes = [...octoberElevenRoutes, ...coteDAzurRoutes];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -200,6 +207,25 @@ for (const route of corsicaRoutes) {
   }
 }
 
+for (const route of lilleRecoveryRoutes) {
+  for (const prefix of locales) {
+    const localizedRoute = `${prefix}${route}`;
+    const htmlPath = path.join(root, localizedRoute.slice(1), 'index.html');
+    if (!fs.existsSync(htmlPath)) {
+      errors.push(`${localizedRoute}: built page missing; run npm run build after all four locale batches are reviewed`);
+      continue;
+    }
+    const html = fs.readFileSync(htmlPath, 'utf8');
+    const schemaRaw = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+    let schema;
+    try { schema = JSON.parse(schemaRaw); } catch { errors.push(`${localizedRoute}: JSON-LD missing or invalid`); continue; }
+    const page = (schema['@graph'] || []).find((item) => item['@type'] === (route === '/france/' ? 'WebPage' : 'Article'));
+    check(page?.datePublished === '2026-09-19', `${localizedRoute}: original publication date should remain 2026-09-19`);
+    check(page?.dateModified === '2026-10-12', `${localizedRoute}: dateModified should be 2026-10-12, found ${page?.dateModified || '(missing)'}`);
+    check(entries.get(localizedRoute) === '2026-10-12', `${localizedRoute}: sitemap lastmod should be 2026-10-12`);
+  }
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   console.error(`France date synchronization: ${errors.length} failure(s).`);
@@ -207,5 +233,5 @@ if (errors.length) {
 } else {
   console.log(englishOnly
     ? `France English date synchronization passed: ${routes.length} English routes; the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques, four Nice/Côte d’Azur, three Provence inland and four Languedoc-Camargue routes use 2026-10-12 with original publication dates preserved.`
-    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, the twenty-four earlier reviewed routes use 2026-10-11, and Marseille/Calanques, Nice/Côte d’Azur, Provence inland, Languedoc-Camargue and Corsica use 2026-10-12 in all five article schemas and sitemap entries.`);
+    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, and the Lille recovery’s five pages, Marseille/Calanques, Nice/Côte d’Azur, Provence inland, Languedoc-Camargue and Corsica use 2026-10-12 in all five localized schemas and sitemap entries.`);
 }

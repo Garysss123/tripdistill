@@ -47,7 +47,7 @@ export const franceClusters = franceSourceClusters.map((cluster) => ({
         ...image,
         ...(guide.imageAlt ? { alt: guide.imageAlt } : {}),
         ...(guide.imageCreditTitle ? { creditTitle: guide.imageCreditTitle } : {}),
-        editNote: guide.imageEditNote || franceImageEditNote
+        editNote: guide.imageEditNote || image.editNote || franceImageEditNote
       }
     };
   })
