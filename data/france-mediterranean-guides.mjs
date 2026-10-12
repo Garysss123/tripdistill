@@ -481,15 +481,36 @@ export const franceMediterraneanClusters = [
     family: 'riviera-rail-coastline',
     label: 'Riviera rail coastline',
     tagline: 'Use the coast train for one direction at a time.',
-    hubIntro: 'Nice is a complete city base; the eastern coast toward Èze, Monaco and Menton and the western coast toward Antibes and Cannes form two separate rail and bus directions. Cliff villages require an additional vertical transfer beyond the coastal station.',
-    stay: 'Four nights support Nice plus one eastern and one western excursion. Staying near Nice-Ville or a tram line simplifies both coast directions and airport access; an old-town room may add stairs and night noise.',
-    transfer: 'TER trains are the coastal spine, with Lignes d’Azur buses and local networks for hills and town centers. Èze Village is above Èze-sur-Mer; Monaco stations and elevators require internal orientation.',
-    season: 'Summer crowds, heat and beach conditions intensify pressure; winter can be mild but gardens and services vary. Major events in Monaco, Cannes or Nice can alter rail, road and security access.',
-    fallback: 'Use Nice museums, markets and tram corridors when coast trains or cliff weather fail. In an excursion town, deepen the walkable center rather than adding another resort because the first transfer was delayed.',
+    countryCardIntro: 'Nice is a complete city base; the eastern coast toward Èze, Monaco and Menton and the western coast toward Antibes and Cannes form two separate rail and bus directions. Cliff villages require an additional vertical transfer beyond the coastal station.',
+    hubIntro: 'Treat Nice as its own walkable city day, then choose one eastern or western coast contract at a time. TER reaches the principal towns, but Èze Village sits above Èze-sur-Mer and Monaco’s districts sit on different levels; station arrival is only the first leg.',
+    stay: 'Two nights fit Nice and one focused excursion. Four nights give Nice a full day, one eastbound day and one westbound day, with the arrival and departure edges protected. Five or six nights make a slower two-base stay possible: Nice for the eastern rail corridor and Antibes for the western towns. Stay near Nice-Ville/Jean Médecin for transfers, in Vieux Nice for early market access with more stairs and noise, or in Antibes near its station for a west-coast morning. Changing hotels only pays when it removes a real return journey.',
+    transfer: 'Use TER from Nice-Ville for Antibes, Cannes, Èze-sur-Mer, Monaco–Monte-Carlo and Menton; check the dated SNCF timetable, planned works and last return together. Lignes d’Azur tram line 2 links the airport, Jean Médecin and Port Lympia; line 1 crosses the central city. Èze Village needs a separately checked Lignes d’Azur or ZOU! bus from the correct stop, or a demanding climb from Èze-sur-Mer. No current fare, headway or future departure is assumed.',
+    season: 'Summer brings heat, full trains, beach crowding and event barriers; plan the exposed seafront or hill early, carry water and keep an indoor option. Spring and autumn suit longer walks but garden calendars, sea conditions and daylight still vary. Monaco race week and major Nice or Cannes events can change access and prices; check event dates before booking lodging or a timed visit.',
+    fallback: 'If a coast train, bus, boat or hill route changes, keep the day in the town already reached: Nice has tram-linked museums and shaded central streets; Antibes has the walled old town and museums; Cannes has Le Suquet and the market quarter; Menton has its compact old town. Do not add a second coast direction to recover a missed connection.',
+    searchSummary: 'Plan a four-night Nice base: one Nice city day, one eastbound TER day and one westbound day, leaving arrival and departure margins. TER connects the coast; check the dated return, while Èze Village needs an extra bus or hill climb beyond Èze-sur-Mer.',
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
+    publishedDateISO: '2026-09-19',
+    itineraryLabel: 'Four-night Nice base · sample sequence',
+    itineraryHeading: 'Use the coast as two separate rail directions.',
+    itineraryIntro: 'Keep this order flexible around arrival, weather, reservations and the operator’s dated timetable. Treat each numbered day as a full-day choice, not a timed connection promise.',
+    itinerary: [
+      ['Day 1 · Nice', 'Settle near Nice-Ville/Jean Médecin or a tram stop. Walk Place Masséna, Cours Saleya and Vieux Nice, then choose either Castle Hill or one museum; do not force both after an arrival.'],
+      ['Day 2 · East by TER', 'Choose Èze Village with a confirmed uphill bus and return, or Monaco with one district and one booked interior. Add Menton only to a bounded Monaco–Menton rail day, leaving Èze for another trip.'],
+      ['Day 3 · West by TER', 'Choose Antibes in depth, Cannes in depth, or a compact Antibes–Cannes pair. Keep Lérins Islands or Cap d’Antibes as a separate branch that replaces the second town.'],
+      ['Day 4 · Buffer or second base', 'Use the day for a weather-shifted coast route, a slower Nice district, or a hotel move to Antibes only if it helps the next departure. Keep the final night close to the station or airport route you will actually use.']
+    ],
+    faq: [
+      ['How many nights should I book in Nice?', 'Two nights can support a city day and one coast day. Four nights allow a Nice day plus one eastern and one western excursion without turning the travel edges into sightseeing. Add a night for a second town base or an island/peninsula day.'],
+      ['Should I stay in Nice or Antibes?', 'Use Nice for the eastern corridor, airport tram and multiple city days. Consider Antibes for a west-coast stay focused on the old town, Cannes or the Lérins boats; compare the full hotel change and station walk before splitting.'],
+      ['Can I reach Èze Village by train?', 'TER reaches Èze-sur-Mer, not the hilltop village. Check the current Lignes d’Azur or ZOU! bus to Èze Village, or plan the steep signed path only if its condition and your mobility make it suitable.'],
+      ['Can I see Nice, Èze, Monaco, Menton, Antibes and Cannes in four days?', 'Not with useful time in each. Use Nice plus one eastbound and one westbound day; combine Monaco with Menton or Antibes with Cannes only when you accept a shorter visit in both.']
+    ],
     sources: [
       ['https://cotedazurfrance.com/', 'Côte d’Azur France — official regional tourism guide'],
-      ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur', 'TER ZOU! — official coastal rail information'],
-      ['https://www.lignesdazur.com/en', 'Lignes d’Azur — official Nice metropolitan transport']
+      ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/se-deplacer/fiches-horaires', 'TER ZOU! — official dated timetables, works and modified service'],
+      ['https://www.lignesdazur.com/en', 'Lignes d’Azur — official Nice metropolitan transport'],
+      ['https://www.nice.aeroport.fr/en/directions/public-transport', 'Nice Côte d’Azur Airport — official tram and airport transfer information']
     ],
     guides: [
       g({
@@ -499,34 +520,53 @@ export const franceMediterraneanClusters = [
         layout: 'seafront-city-ribbon',
         imageQuery: 'Nice Promenade des Anglais old town France panorama',
         imageAlt: 'Nice waterfront and old town along the Mediterranean',
-        purpose: 'Connect Vieux Nice, the seafront and one hill or museum corridor without walking the Promenade twice or treating every viewpoint as adjacent.',
-        summary: 'Begin at the market and old town, use Castle Hill or Cimiez as the elevation choice, then return by tram or a different shore line.',
+        purpose: 'Link Nice-Ville or a tram stop with Vieux Nice, the seafront and one deliberate hill or museum choice; give each district a connected walk and leave room for the return.',
+        summary: 'Walk Place Masséna, Cours Saleya and Vieux Nice once, then choose Castle Hill or Cimiez. Tram line 2 joins the airport, Jean Médecin and Port Lympia; the coastal walk is not a flat substitute for every uphill leg.',
+        searchSummary: 'Walk Nice from Place Masséna through Cours Saleya and Vieux Nice, then choose Castle Hill or Cimiez. Use tram lines 1/2 for cross-city links; check current hill access, beach flags and museum hours.',
         choices: [
-          ['Old town and Castle Hill', 'Use Cours Saleya, public lanes, Castle Hill access and the eastern port edge. This is the classic compact route with real elevation.'],
-          ['Promenade and museums', 'Keep the seafront bounded and use Matisse, Chagall or another selected museum reached by bus or tram.'],
-          ['Port and contemporary Nice', 'Move from Place Garibaldi through the port and eastern neighborhoods, using the old town as a shorter food and architecture layer.']
+          ['Vieux Nice and Castle Hill', 'Start at Place Masséna, cross Cours Saleya and the cathedral quarter, then climb to Castle Hill if current access and energy suit. Finish toward the Port Lympia edge rather than retracing the same lanes.'],
+          ['Promenade and one museum', 'Use a bounded seafront segment from Quai des États-Unis toward the airport side, then take tram line 2 or a checked city bus to one museum. A full Promenade walk and a museum circuit compete for daylight.'],
+          ['Port and Cimiez', 'Begin around Place Garibaldi and Port Lympia, then use the current tram/bus connection to Cimiez for one museum or garden. This is a transit-linked day, not a continuation of the Castle Hill climb.']
         ],
-        access: 'Nice-Ville station is inland; tram lines connect the center, old town edge, port and airport corridor. Choose the first stop from the route rather than defaulting to a long walk with luggage.',
-        tradeoff: 'Castle Hill, Cimiez museums, a long beach block and the entire Promenade do not fit comfortably together. The route keeps one elevation and one cultural layer.',
+        access: 'From Nice-Ville, follow Avenue Jean-Médecin to the center or take tram line 1 toward Place Masséna, Garibaldi and the port. Tram line 2 runs from the airport through Jean Médecin to Port Lympia. Start the walk after dropping luggage; check current stop works and the airport operator’s dated service notice.',
+        tradeoff: 'Choose one elevation: Castle Hill above the old town or a tram/bus trip to Cimiez. A major museum, full beach block and both hills make a second day more useful than a faster checklist.',
         stages: [
-          ['Enter through tram or market edge', 'Reach Jean Médecin, Old Town or the port according to the chosen direction, noting the final tram and station route.'],
-          ['Read Vieux Nice once', 'Move through Cours Saleya and selected church or civic streets, keeping market and resident access clear.'],
-          ['Commit to one elevation', 'Climb or use current access to Castle Hill, or take transit to Cimiez and one museum. Avoid adding both in afternoon heat.'],
-          ['Return by seafront or tram', 'Use a bounded Promenade segment or tram to close the loop, following beach flags and event barriers.']
+          ['From station to the central squares', 'Walk or take tram line 1 from Nice-Ville toward Jean Médecin and Place Masséna. If arriving at the airport, use line 2 to Jean Médecin or Port Lympia, then start without luggage.'],
+          ['Cross the old-town quarter once', 'Continue Place Masséna → Cours Saleya → the cathedral lanes → Quai des États-Unis. Check the market’s operating day and keep doorways clear during setup and trade.'],
+          ['Choose the hill or the museum branch', 'For Castle Hill, use the signed stairs or current lift/park access and finish toward the port. For Cimiez, use the current transit connection and visit one selected museum; do not combine both branches in the heat.'],
+          ['Close the loop near a useful stop', 'Return along a bounded Promenade segment or board line 1/2 from a suitable stop. Check beach flags, event barriers and the final station/airport leg before committing to a sunset walk.']
         ],
-        fallback: 'In heat, rain or hill closure, use one museum, old-town interiors and tram-linked neighborhoods. If the beach is unsafe, stay on the promenade and obey flags and lifeguards.',
+        fallback: 'In heat or rain, shorten the exposed seafront and choose one open museum, the covered old-town lanes and a tram-linked district. If a hill lift, stair route or beach access is closed, keep to the public waterfront and use tram line 1/2 for the return.',
         watch: [
-          ['Pebble beaches change footing', 'Use suitable footwear and supervised areas; shore break can be strong even on clear days.'],
-          ['Castle Hill access can change', 'Lift, stairs and park hours vary; check before relying on an accessible ascent.'],
-          ['Markets are working spaces', 'Respect vendor access and current trading days; avoid blocking Cours Saleya for photographs.']
+          ['Beach access is not a swimming guarantee', 'Nice’s shore is pebbled and surf or flags can change the safe choice. Check the day’s official beach notices and use lifeguarded areas.'],
+          ['The hill is an access decision', 'Castle Hill’s lift, stairs and park access may change. Check current opening and accessibility before relying on the ascent; choose the flat port route if uncertain.'],
+          ['Markets and events reshape the center', 'Cours Saleya operates on a changing market calendar; Nice events can add barriers. Check the local calendar and leave a tram or station margin.']
         ],
-        duration: 'Allow six to eight hours for old town, one elevation and a museum or seafront block. A compact old-town and hill route needs four hours.',
-        combine: 'Combine Vieux Nice with Castle Hill, or the Promenade with one museum. Keep Monaco, Menton and Cannes for separate rail days.',
-        verify: 'Check Lignes d’Azur service, market and museum opening, Castle Hill access, beach flags and local event closures.',
+        duration: 'Allow five to seven hours for Vieux Nice, one hill and a meal. A bounded old-town/seafront loop takes about half a day; add Cimiez or a substantial museum as a separate transit block.',
+        combine: 'Combine Place Masséna, Cours Saleya and Castle Hill in one district loop, or pair the Port with one Cimiez museum by transit. Keep the eastern and western rail excursions for other days.',
+        verify: 'Check line 1/2 service and airport notices, Nice’s market calendar, selected museum access, Castle Hill lift/park status, sea flags and event barriers.',
+        faq: [
+          ['Which tram reaches the old town?', 'Line 1 crosses the center near Place Masséna and Garibaldi; line 2 links the airport, Jean Médecin and Port Lympia. Check the live stop map for the exact walk to your hotel or visit.'],
+          ['Is Castle Hill suitable for everyone?', 'It includes elevation and stair routes. Check current lift and park access before planning an accessible visit; the flat port and seafront route is the lower-effort alternative.'],
+          ['Is the Promenade safe for swimming?', 'The promenade is a public waterfront, not a swimming clearance. Follow the day’s beach flags and lifeguards and avoid entering the water when local notices advise against it.']
+        ],
         sources: [
           ['https://www.explorenicecotedazur.com/en/', 'Explore Nice Côte d’Azur — official city planning'],
-          ['https://www.lignesdazur.com/en', 'Lignes d’Azur — official tram and bus information']
-        ]
+          ['https://www.explorenicecotedazur.com/en/practical-information/getting-around/bus-and-tram/', 'Explore Nice Côte d’Azur — current bus/tram network overview'],
+          ['https://www.lignesdazur.com/en', 'Lignes d’Azur — official tram and bus information'],
+          ['https://www.nice.aeroport.fr/en/directions/public-transport', 'Nice Côte d’Azur Airport — tram route and transfer information']
+        ],
+        siteContext: {
+          label: 'FOUR NICE DISTRICT LINKS',
+          heading: 'Choose one side of the city after the central walk',
+          intro: 'Nice-Ville is inland, Vieux Nice sits at the center and the airport-to-port tram is a separate west–east line. Use one continuous district sequence before crossing the city.',
+          details: [
+            ['Station to old town', 'Avenue Jean-Médecin links Nice-Ville with Place Masséna. Tram line 1 is the luggage-saving alternative before beginning the walk.'],
+            ['Market to waterfront', 'Cours Saleya, cathedral lanes, Quai des États-Unis and the Port Lympia edge form a compact eastbound sequence; Castle Hill adds a real climb.'],
+            ['West and museum branch', 'Use the current tram/bus planner to reach one selected museum or the airport-side seafront. Do not assume a museum entrance sits on the Promenade.'],
+            ['Cimiez choice', 'Treat Cimiez as a separate uphill transit branch from the old town. Select one museum or garden and verify its dated opening before paying or crossing town.']
+          ]
+        }
       }),
       g({
         slug: 'eze-monaco-menton',
@@ -535,34 +575,54 @@ export const franceMediterraneanClusters = [
         layout: 'cliff-coast-ladder',
         imageQuery: 'Eze village French Riviera Mediterranean France',
         imageAlt: 'Èze village perched above the Mediterranean on the French Riviera',
-        purpose: 'Choose either the vertical Èze connection or a Monaco–Menton rail pair, rather than assuming all three famous stops lie on one flat coastal walk.',
-        summary: 'Èze Village sits high above Èze-sur-Mer; Monaco is a vertical city inside a small territory; Menton is a separate garden-and-old-town stop. One transfer problem should lead the day.',
+        purpose: 'Choose the hilltop village, one Monaco district or a Monaco–Menton rail pair. The three stops are connected by different vertical and rail decisions, not one continuous flat promenade.',
+        summary: 'TER connects Èze-sur-Mer, Monaco–Monte-Carlo and Menton, but Èze Village requires a separate uphill bus or steep path. Build the day around one vertical transfer and a confirmed coastal return.',
+        searchSummary: 'Choose Èze Village by confirmed bus, Monaco by one district, or a selective Monaco–Menton TER pair. Èze-sur-Mer is the coastal station, not the hilltop village; verify the exact bus and rail return.',
         choices: [
-          ['Èze Village', 'Use the correct bus or a demanding signed climb, then give the hill village and garden time. The coastal station alone does not solve the ascent.'],
-          ['Monaco in depth', 'Choose the Rock and old town, museums or Monte-Carlo district, using elevators and buses to manage elevation.'],
-          ['Monaco plus Menton', 'Use TER for a bounded pair: one Monaco district and Menton old town or garden. This omits Èze.']
+          ['Èze Village as the main stop', 'Use a Lignes d’Azur or ZOU! bus that is listed to Èze Village for your date, or reach Èze-sur-Mer by TER and take the signed Nietzsche Path only if fit and conditions allow. Reserve the garden only after checking its official calendar.'],
+          ['Monaco, one level at a time', 'Choose the Rock and old town, the Oceanographic Museum, or Monte-Carlo—not all three. Use signed public lifts and buses to bridge levels, and save the station exit for the return.'],
+          ['Monaco and Menton by rail', 'Use TER for a bounded two-town day: one Monaco district, then Menton’s old town or one garden. This plan deliberately omits Èze and its extra climb.']
         ],
-        access: 'TER serves Èze-sur-Mer, Monaco–Monte-Carlo and Menton. Èze Village requires an uphill bus, car or strenuous trail; Monaco’s station has several exits at different levels. Save the exact exit and onward stop.',
-        tradeoff: 'The route gives up collecting Èze, Monaco and Menton together. Two coastal towns or one vertical village is the credible limit once hills, admissions and return trains are counted.',
+        access: 'TER serves Nice-Ville, Èze-sur-Mer, Monaco–Monte-Carlo and Menton; check the official SNCF timetable and planned works for the exact date. Èze Village is uphill from Èze-sur-Mer, so confirm a bus to the village itself or assess the steep signed path before boarding. In Monaco, exits connect different levels and districts; note the exit and lift/bus link for your chosen destination.',
+        tradeoff: 'Èze Village plus Monaco and Menton is a rushed three-stop list. Give Èze its own half-to-full day, or pair one Monaco district with Menton by rail; adding a second Monaco interior or garden means dropping the other town.',
         stages: [
-          ['Choose coast or hill before boarding', 'Use TER for Monaco or Menton, or the correct bus strategy for Èze Village. Do not arrive at Èze-sur-Mer expecting a cable car.'],
-          ['Orient to the vertical city', 'At Èze, follow village access; in Monaco, use signed elevators and the correct station exit; in Menton, connect station and old town.'],
-          ['Commit to one paid or garden anchor', 'Use the Exotic Garden where open, Oceanographic Museum, palace-area visit or a Menton garden according to the chosen stop.'],
-          ['Return along one rail direction', 'Finish in Menton or Monaco near the station, or descend from Èze with a confirmed bus. Keep one coastal train in reserve.']
+          ['Choose the vertical transfer first', 'For Èze, check a date-matched bus to the hilltop or take TER to Èze-sur-Mer only with a viable uphill and return plan. For the rail towns, select Nice-Ville → Monaco–Monte-Carlo or Menton before leaving.'],
+          ['Walk one district, not the whole map', 'In Èze, follow public village lanes and signed visitor paths. In Monaco, choose the Rock, port/Oceanographic area or Monte-Carlo using the named station exit and public lifts; in Menton, connect the station to the old town.'],
+          ['Put the reservation at the center', 'Book or verify one garden, museum or palace-area visit for the exact date. Keep a second paid interior optional until the return trains and event notice are clear.'],
+          ['Protect the return leg', 'Finish beside Monaco–Monte-Carlo or Menton station, or reach the confirmed Èze bus stop early. Recheck SNCF works, the live transit departure and event barriers before starting the last downhill segment.']
         ],
-        fallback: 'If the Èze bus or trail is unavailable, remain on the rail coast in Monaco or Menton. If a major event restricts Monaco, use Menton or Nice rather than trying to bypass barriers.',
+        fallback: 'If the Èze bus is unsuitable or the trail is wet, remain on the rail coast in Monaco or Menton; do not improvise a road shoulder walk. If Monaco has event restrictions, choose a compact Menton or Nice route instead of bypassing barriers.',
         watch: [
-          ['Èze has two very different places', 'Èze-sur-Mer and Èze Village are separated vertically; check the connection.'],
-          ['Monaco exits can disorient', 'Station tunnels, elevators and steep streets lead to different districts. Follow the named exit.'],
-          ['Events alter transport', 'Grand Prix and other events can close roads, stations or districts. Check exact dates before booking.']
+          ['Èze requires an uphill contract', 'Èze-sur-Mer and Èze Village are different stops. Confirm a village-bound bus or judge the steep Nietzsche Path honestly; do not rely on a taxi being available at the station.'],
+          ['Monaco is a vertical station', 'The station exits and public lifts lead toward different districts. Use the current station map and allow time for stairs, escalators or an event detour.'],
+          ['Gardens, events and rail works move', 'Check the official garden/museum calendar, Monaco event access and TER notice for the chosen date. No current opening, ticket inventory or future train time is guaranteed here.']
         ],
-        duration: 'Allow five to seven hours for Èze or Monaco alone, and seven to nine for a selective Monaco–Menton pair. Three stops need another day.',
-        combine: 'Combine Monaco and Menton by TER, or Èze Village with a simple Nice return. Keep Antibes and Cannes on the western line.',
-        verify: 'Check TER, Èze bus, trail condition, Monaco event access, museum or garden opening and the final coast return.',
+        duration: 'Allow five to seven hours for Èze Village or one Monaco district once transfers, stairs and a meal are counted. A selective Monaco–Menton pair needs most of a day; adding Èze makes three stops and should be another date.',
+        combine: 'Combine Monaco and Menton by TER with one chosen district in each, or give Èze Village its own day from Nice. Keep Antibes/Cannes on a separate westbound trip.',
+        verify: 'Check dated TER service/works, bus destination and last return, Nietzsche Path condition, garden or museum booking, Monaco events and weather before leaving Nice.',
+        faq: [
+          ['Does Èze-sur-Mer station serve Èze Village?', 'No. Èze-sur-Mer is on the coast; the hilltop village needs a separately checked bus, car transfer or strenuous signed climb. Verify the destination shown in the live planner.'],
+          ['Can I combine Èze and Monaco in one day?', 'It is possible only as a deliberately short day with a confirmed bus and one Monaco district. For a first visit, give Èze or Monaco the main block and keep Menton for a separate rail day.'],
+          ['Should I book the Exotic Garden?', 'Check its official date-specific opening and ticket instructions before building the route around it. If unavailable, the public village lanes remain a shorter visit, but do not assume the garden is open.'],
+        ],
         sources: [
-          ['https://www.visitmonaco.com/en', 'Visit Monaco — official principality planning'],
-          ['https://www.menton-riviera-merveilles.co.uk/', 'Menton Riviera & Merveilles — official destination guide']
-        ]
+          ['https://www.visitmonaco.com/en', 'Visit Monaco — official principality planning and event information'],
+          ['https://www.menton-riviera-merveilles.co.uk/', 'Menton Riviera & Merveilles — official destination guide'],
+          ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/se-deplacer/fiches-horaires', 'TER ZOU! — official dated timetables and works'],
+          ['https://www.lignesdazur.com/en', 'Lignes d’Azur — official Nice-region urban bus and tram planning'],
+          ['https://zou.maregionsud.fr/', 'ZOU! — official regional bus and rail planning']
+        ],
+        siteContext: {
+          label: 'THREE EAST COAST CONTRACTS',
+          heading: 'Plan vertically before choosing the train',
+          intro: 'The railway follows the sea; the village, principality districts and gardens sit beyond the station platform. Use the transfer that matches the place you actually booked.',
+          details: [
+            ['Èze Village', 'Use a bus that the live Lignes d’Azur/ZOU! planner shows to Èze Village, or TER to Èze-sur-Mer only with a suitable uphill plan. The village lanes and garden involve slopes and steps.'],
+            ['Monaco–Monte-Carlo', 'Choose the Rock/old town, port-side museum or Monte-Carlo. Match the station exit, public lift or bus to that district and check event controls.'],
+            ['Menton', 'Walk from Menton station toward the old town and seafront; add one garden only after confirming its current date-specific hours and entry.'],
+            ['Rail return', 'Keep the last useful TER return visible before the visit begins. A disruption or event may make a planned cross-border direction slower than the map suggests.']
+          ]
+        }
       }),
       g({
         slug: 'antibes-cannes-west-coast',
@@ -571,34 +631,53 @@ export const franceMediterraneanClusters = [
         layout: 'west-riviera-diptych',
         imageQuery: 'Antibes old town port French Riviera France',
         imageAlt: 'Antibes old town and port on the French Riviera',
-        purpose: 'Compare Antibes’s old town and port with Cannes’s festival and bay city through one rail line, choosing one museum or island rather than stacking both resort identities.',
-        summary: 'Use TER to link the towns, give Antibes walls and one collection or Cannes old quarter and film-city context the longer block, then return without a beach-and-island overload.',
+        imageEditNote: 'Resized, display-cropped and converted to WebP; the adaptation is shared under CC BY-SA 4.0.',
+        purpose: 'Choose Antibes in depth, Cannes in depth, or one compact TER pair. Follow each town’s own station-to-center walk and let an island, peninsula or event replace—not extend—the two-town day.',
+        summary: 'TER links Antibes and Cannes, whose stations sit near their centers. Start with Antibes’s market, old walls and one museum or Cannes’s Forville–Suquet–Palais axis; Lérins boats and Cap d’Antibes need their own day.',
+        searchSummary: 'Use TER for Antibes or Cannes from Nice. Walk Antibes station→Marché Provençal→Picasso Museum/ramparts/Port Vauban, or Cannes station→Forville→Le Suquet→Palais des Festivals/Croisette; islands or Cap d’Antibes replace the town pair.',
         choices: [
-          ['Antibes in depth', 'Use old walls, market, port and Picasso Museum where open. This is the stronger historic and art route.'],
-          ['Cannes city and bay', 'Connect Le Suquet, old port, Palais des Festivals exterior and Croisette selectively, recognizing event barriers.'],
-          ['Two-town rail day', 'Give each a compact route and one meal, omitting island boats and long museum visits.']
+          ['Antibes old town and Picasso', 'From Antibes station, walk to the old town, Marché Provençal and ramparts, then reserve the Picasso Museum if it fits. Finish around Port Vauban; the Cap d’Antibes coastal walk is a separate branch.'],
+          ['Cannes market, Suquet and bay', 'Walk from Cannes station through Rue Félix-Faure/Forville to Le Suquet, then the old port and Palais des Festivals exterior. Continue along only one Croisette segment; event security can change the open route.'],
+          ['A selective Antibes–Cannes pair', 'Use TER once in each direction, keeping one short old-town loop and meal in each. Skip the Picasso interior, island boats and Cap d’Antibes to leave a reliable station margin.']
         ],
-        access: 'Both main stations are near their centers, making TER the clean spine. Island boats, Cap d’Antibes buses and beach areas add separate departure points and should not be assumed part of a two-town day.',
-        tradeoff: 'A Lérins Islands trip, Cap d’Antibes walk, Picasso Museum and Cannes circuit exceed one day. The route keeps one cultural anchor and one second town.',
+        access: 'TER from Nice-Ville reaches Antibes and Cannes; use the dated SNCF timetable for both directions and check works before buying an island boat or museum slot. Antibes station is west of the old town; Cannes station opens toward Rue Félix-Faure and the center. Port Vauban, Cap d’Antibes trailheads and Cannes island quays are separate access points.',
+        tradeoff: 'A Lérins boat, Cap d’Antibes walk, Picasso Museum and full Cannes circuit exceed a day. Choose one town in depth, or pair compact street loops and give up the island/peninsula and long interior visit.',
         stages: [
-          ['Begin in the priority town', 'Arrive early in Antibes for market and walls or Cannes for Suquet and event-aware streets, noting the return platform.'],
-          ['Complete one cultural anchor', 'Use the Picasso Museum, a Cannes exhibition or a bounded port-and-old-town route before boarding the train.'],
-          ['Transfer once by TER', 'Move to the second town and follow a shorter contrasting loop rather than repeating beach, market and port categories.'],
-          ['Finish beside the rail spine', 'End near Cannes or Antibes station with one train in reserve, avoiding a late peninsula or island departure.']
+          ['Antibes: station to old town', 'From Antibes station, follow the center approach toward Place Général-de-Gaulle and Marché Provençal; continue through the old lanes to the Picasso Museum/ramparts and Port Vauban. Check the museum’s own entrance and hours.'],
+          ['Choose one finish in Antibes or board TER', 'For a one-town day, finish the ramparts and harbor loop near the station. For the pair, use TER to Cannes only after checking the departure board and arrival platform.'],
+          ['Cannes: market to Suquet and port', 'From Cannes station, walk Rue Félix-Faure toward Marché Forville, climb into Le Suquet, then descend to the old port and Palais des Festivals. Follow event barriers and use public streets.'],
+          ['Close on the Croisette or return rail', 'Walk one bounded Croisette section, then return to Cannes station with time in reserve. If visiting only Antibes, replace this branch with a reserved Cap d’Antibes/boat plan and a confirmed return.']
         ],
-        fallback: 'If a museum closes or event blocks Cannes, deepen Antibes or use another confirmed city collection. If sea state cancels boats, keep the land-side town and do not replace it with an unplanned coastal hike.',
+        fallback: 'If Cannes has event barriers or a museum visit changes, stay on public streets in the old town and market district or use Antibes as the full day. If sea state cancels the Lérins boat, keep the land-side Cannes or Antibes route; do not substitute an unplanned coastal hike.',
         watch: [
-          ['Festival calendars rewrite Cannes', 'Security and private events may restrict the Palais, port and Croisette. Check current access.'],
-          ['Museum capacity can be limited', 'Reserve or arrive early for the Picasso Museum and follow bag rules.'],
-          ['Island boats create a full branch', 'Confirm return sailings and treat Lérins as the main excursion, not an add-on after two towns.']
+          ['Festival and congress setup change Cannes', 'Security, build-out and private events may close the Palais, port edges or Croisette sections. Check the official event/access notice on the exact date.'],
+          ['Museum doors have their own calendar', 'Check the Picasso Museum or selected exhibition page for dated hours, ticket conditions and closures before arranging the TER. No current opening or ticket inventory is assumed.'],
+          ['The island is a separate day', 'Confirm the operator’s sailing, sea condition and last return before going to the quay. A boat replaces Cannes or Antibes sightseeing; do not append it after both towns.']
         ],
-        duration: 'Allow seven to nine hours for a selective two-town day and five to seven for either town in depth. An island trip should replace the second town.',
-        combine: 'Combine Antibes and Cannes by TER. Keep Nice, Monaco and Èze on separate eastbound days.',
-        verify: 'Check TER, market and museum hours, Cannes event access, boat status if used and the final coastal train.',
+        duration: 'Allow five to seven hours for Antibes or Cannes in depth. A compact two-town pair needs most of a day including two station walks and a meal; an island or Cap d’Antibes excursion replaces the second town.',
+        combine: 'Combine Antibes and Cannes by TER only as short district loops. For more time, stay overnight in Antibes and use it as a west-coast base; keep Nice, Monaco and Èze on separate dates.',
+        verify: 'Check the dated TER timetable/works, market calendar, Picasso or exhibition entry, Cannes event restrictions, island operator and sea state, Cap d’Antibes path status and the final train.',
+        faq: [
+          ['Can I do Antibes and Cannes in one day?', 'Yes as a compact rail pair: choose one short district loop and a meal in each. Skip the Lérins Islands, Cap d’Antibes hike and long museum visits, and leave time for the actual TER return.'],
+          ['Can I add the Lérins Islands after Cannes?', 'Treat the boat as the main outing, not a late add-on after Cannes. Check the operator’s date-specific departure and return, sea state and quay access.'],
+          ['What changes during Cannes events?', 'Festival and congress setup can change security perimeters and access around the Palais, port and Croisette. Check Cannes’s official event notice and follow barriers on the day.']
+        ],
         sources: [
           ['https://www.antibesjuanlespins.com/en/', 'Antibes Juan-les-Pins Tourism — official visitor guide'],
-          ['https://www.cannes-france.com/', 'Cannes Tourism — official city and event planning']
-        ]
+          ['https://www.cannes-france.com/', 'Cannes Tourism — official city and event planning'],
+          ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/se-deplacer/fiches-horaires', 'TER ZOU! — official dated timetables and works']
+        ],
+        siteContext: {
+          label: 'WEST COAST WALKING ZONES',
+          heading: 'Keep each town beside its own station spine',
+          intro: 'The TER journey is the link between the towns; within each town, use one station-to-center walk and one planned finish instead of crossing back for every landmark.',
+          details: [
+            ['Antibes old town', 'From the station, head toward Place Général-de-Gaulle and Marché Provençal, then follow the walled lanes to the Picasso Museum, ramparts and Port Vauban.'],
+            ['Cap d’Antibes', 'Treat the cape path and beaches as a separate walking day with a named bus/starting point, water, weather check and return. It is not an extension of the old-town loop.'],
+            ['Cannes center', 'Walk Rue Félix-Faure to Forville, Le Suquet and the old port, then use a bounded Croisette stretch. Check event security before approaching the Palais.'],
+            ['Lérins Islands', 'Choose one island excursion from the current boat operator and protect its return; do not combine both towns and the islands in one day.']
+          ]
+        }
       })
     ]
   }),

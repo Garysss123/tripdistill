@@ -14,6 +14,14 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
+const malaysiaMelakaLastmod = '2026-10-12';
+const malaysiaMelakaEditedRoutes = [
+  '/malaysia/melaka/',
+  '/malaysia/melaka/dutch-square-st-pauls/',
+  '/malaysia/melaka/jonker-harmony-street/',
+  '/malaysia/melaka/melaka-river-kampung-morten/',
+  '/malaysia/melaka/bandar-hilir-portuguese-settlement/'
+];
 const malaysiaIpohLastmod = '2026-10-11';
 const malaysiaLangkawiLastmod = '2026-10-12';
 const malaysiaLangkawiEditedRoutes = [
@@ -66,6 +74,7 @@ const franceMarseilleEditedRoutes = [
   '/france/marseille-calanques/calanques-access-choice/',
   '/france/marseille-calanques/cassis-la-ciotat/'
 ];
+const franceCoteDAzurLastmod = '2026-10-12';
 const franceDordogneEditedRoutes = [
   '/france/dordogne-perigord/',
   '/france/dordogne-perigord/sarlat-market-old-town/',
@@ -90,6 +99,12 @@ const franceToulouseOccitanieEditedRoutes = [
   '/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/',
   '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
   '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
+];
+const franceCoteDAzurEditedRoutes = [
+  '/france/cote-dazur/',
+  '/france/cote-dazur/nice-old-town-hills/',
+  '/france/cote-dazur/eze-monaco-menton/',
+  '/france/cote-dazur/antibes-cannes-west-coast/'
 ];
 const unitedKingdomLastmod = '2026-09-20';
 const unitedKingdomLondonLastmod = '2026-10-11';
@@ -559,6 +574,11 @@ for (const route of malaysiaIpohEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
 }
+for (const route of malaysiaMelakaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Melaka route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaMelakaLastmod });
+}
 for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Italy Puglia route absent from sitemap: ${route}`);
@@ -783,6 +803,11 @@ for (const route of franceToulouseOccitanieEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Toulouse/Occitanie route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceToulouseOccitanieLastmod });
+}
+for (const route of franceCoteDAzurEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Côte d’Azur route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceCoteDAzurLastmod });
 }
 for (const route of normandyEditedRoutes) {
   const record = records.get(route);

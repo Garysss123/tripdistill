@@ -42,6 +42,7 @@ export const franceClusters = franceSourceClusters.map((cluster) => ({
       reviewDateISO: cluster.slug === 'paris'
         ? parisHubEditorial.reviewDateISO
         : (guide.reviewDateISO || cluster.reviewDateISO || undefined),
+      publishedDateISO: guide.publishedDateISO || cluster.publishedDateISO || undefined,
       image: {
         ...image,
         ...(guide.imageAlt ? { alt: guide.imageAlt } : {}),

@@ -244,7 +244,26 @@ try {
     assert.ok(record.verificationDetail.includes('not independent rights or chain-of-title verification'));
     assert.ok(record.altTexts.length && record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
   }
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 524, 'the merged inventory retains Marseille and Peak District source-page/pixel checks and adds two original Malaysia diagrams without treating them as independent source-page checks');
+  const coteDAzurPhotos = [
+    { assetPath: '/assets/images/france-cote-dazur-nice-old-town-hills.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nice,_Quai_des_%C3%89tats-Unis_and_Promenade_des_Anglais_FRANCE.jpg', creator: 'Lspigon', license: 'Public domain', sourcePhotoDate: '2006-01-01' },
+    { assetPath: '/assets/images/france-cote-dazur-eze-monaco-menton.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:02_statue_and_view_Jardin_Exotique_%C3%88ze_Village_French_Riviera_Copr_2022_by_Tim_Adams_CC_by_3.jpg', creator: 'Tim Adams', license: 'CC BY 3.0', sourcePhotoDate: '2022-04-27' },
+    { assetPath: '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Port_vauban_vieille_ville.jpg', creator: 'Abxbay', license: 'CC BY-SA 4.0', sourcePhotoDate: '2016-06-07' }
+  ];
+  for (const photo of coteDAzurPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Côte d’Azur inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.sourcePhotoDate, photo.sourcePhotoDate);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, /local 1,600 × 1,066 WebP pixels were inspected/i);
+  }
+  const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
+  assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 521, 'the merged inventory records Côte d’Azur, Marseille and Peak District photo checks plus two project-original Malaysia diagrams without implying independent source-page checks');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -460,7 +479,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 520, 'source-page declarations do not establish independent rights clearance, and project-original diagrams do not claim external photo licenses');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 517, 'the regenerated merged inventory includes Côte d’Azur, Marseille and Peak District source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -892,7 +911,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; the three Côte d’Azur photos retain pixel reviews and source-page declarations without implying independent clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

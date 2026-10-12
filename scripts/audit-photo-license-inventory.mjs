@@ -856,6 +856,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Qingdao_Z
   detail: 'China CN12 photo review: the exact Commons file page identifies Vitsuha as author, 19 July 2021 as the photograph date, original dimensions 3,648 × 2,736, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show the Zhanqiao waterfront, sandy shore and Qingdao bayfront, matching the source; the image is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.',
   checkedOn: '2026-10-11'
 });
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Nice,_Quai_des_%C3%89tats-Unis_and_Promenade_des_Anglais_FRANCE.jpg', {
+  detail: 'Côte d’Azur photo review: the exact Commons page identifies Lspigon, dates the photograph to 1 January 2006, records a 2,848 × 2,144 original, and declares public-domain status. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Nice seafront and old-town waterfront described by the credit and alt text. The visible credit retains source and creator, links the declaration and discloses resize, display crop and WebP conversion. The page declaration is recorded without asserting independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:02_statue_and_view_Jardin_Exotique_%C3%88ze_Village_French_Riviera_Copr_2022_by_Tim_Adams_CC_by_3.jpg', {
+  detail: 'Côte d’Azur photo review: the exact Commons page identifies Tim Adams, dates the photograph to 27 April 2022, records a 4,928 × 3,280 original, and declares CC BY 3.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the statue, Èze village and Mediterranean view named by the source and matched by the alt text. The visible credit links source and license and discloses resize, display crop and WebP conversion. The page declaration is recorded without asserting independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Port_vauban_vieille_ville.jpg', {
+  detail: 'Côte d’Azur photo review: the exact Commons page identifies Abxbay, dates the photograph to 7 June 2016, records a 4,000 × 3,000 original, and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Port Vauban, boats and the Antibes old town described by the source and matched by the alt text. The visible credit links source and license, discloses resize, display crop and WebP conversion, and states the adaptation is shared under CC BY-SA 4.0. The page declaration is recorded without asserting independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
 for (const [sourceUrl, detail] of [
   ['https://commons.wikimedia.org/wiki/File:Banana_beach_Phuket_2017_-_01.jpg', 'Commons file page revision 824730361 checked 2026-10-08: page title, Anton Zelenov attribution, CC BY-SA 4.0 commercial/adaptation terms, and 9 December 2017 photo date recorded. Local WebP pixels show the cove, forested headland and offshore rock. Commons attribution and embedded EXIF creator field differ (Anton Zelenov / Tony Zelenoff); this remains unresolved.'],
   ['https://commons.wikimedia.org/wiki/File:Phuket_old_town_(52549766215).jpg', 'Commons file page revision 1163644968 checked 2026-10-08: Mussi Katz, CC0 1.0 public-domain dedication, and 30 November 2022 photo date recorded. Page identifies the old Phuket Municipality Police Station; local WebP pixels show the historic yellow building.'],
@@ -994,6 +1006,9 @@ const visualReviewDateByAsset = new Map([
   ['/assets/images/united-kingdom-peak-district-derbyshire-bakewell-chatsworth.webp', '2026-10-12'],
   ['/assets/images/united-kingdom-peak-district-derbyshire-hope-valley-edale.webp', '2026-10-12'],
   ['/assets/images/united-kingdom-peak-district-derbyshire-dovedale-ashbourne.webp', '2026-10-12'],
+  ['/assets/images/france-cote-dazur-nice-old-town-hills.webp', '2026-10-12'],
+  ['/assets/images/france-cote-dazur-eze-monaco-menton.webp', '2026-10-12'],
+  ['/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp', '2026-10-12'],
   ['/assets/images/united-kingdom-oxford-cotswolds-oxford-colleges-museums.webp', '2026-10-11'],
   ['/assets/images/united-kingdom-oxford-cotswolds-blenheim-woodstock.webp', '2026-10-11'],
   ['/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp', '2026-10-11'],

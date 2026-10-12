@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T01:55:47.238Z",
+  "generatedAt": "2026-10-12T02:56:25.862Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 795,
+    "assetFileCount": 797,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 6,
-    "licenseClaimsNotIndependentlyVerified": 520,
+    "completeProjectOriginalRightsRecords": 8,
+    "licenseClaimsNotIndependentlyVerified": 517,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 798,
-    "deduplicatedImageCount": 795,
+    "expectedBuildImageCount": 800,
+    "deduplicatedImageCount": 797,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3530,
-    "assetsUsedByScannedEnglishPages": 766,
+    "imageReferencesScanned": 3518,
+    "assetsUsedByScannedEnglishPages": 768,
     "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 582,
+    "assetsWithStructuredSourceRecords": 584,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 164,
+    "assetsVisuallyReviewed": 167,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 245,
-    "metadataOrCreditOnly": 526,
-    "usedAssetsWithoutIndependentSourcePageCheck": 522,
+    "sourcePageChecked": 248,
+    "metadataOrCreditOnly": 525,
+    "usedAssetsWithoutIndependentSourcePageCheck": 521,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 794 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 798 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 796 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 800 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -10432,7 +10432,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Port_vauban_vieille_ville.jpg",
           "sourceTitle": "File:Port vauban vieille ville.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2016-06-07",
           "creditLabel": "Port vauban vieille ville.jpg",
           "creator": "Abxbay",
           "license": "CC BY-SA 4.0",
@@ -10441,16 +10441,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, display-cropped and converted to WebP; the adaptation is shared under CC BY-SA 4.0.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Côte d’Azur photo review: the exact Commons page identifies Abxbay, dates the photograph to 7 June 2016, records a 4,000 × 3,000 original, and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Port Vauban, boats and the Antibes old town described by the source and matched by the alt text. The visible credit links source and license, discloses resize, display crop and WebP conversion, and states the adaptation is shared under CC BY-SA 4.0. The page declaration is recorded without asserting independent rights clearance.",
           "useCount": 4,
           "routes": [
             "/france/cote-dazur/",
@@ -10462,7 +10462,7 @@
             "Antibes old town and port on the French Riviera"
           ],
           "rawVisibleCredits": [
-            "Port vauban vieille ville.jpg — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Port vauban vieille ville.jpg — Abxbay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; the adaptation is shared under CC BY-SA 4.0."
           ]
         }
       ]
@@ -10480,7 +10480,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:02_statue_and_view_Jardin_Exotique_%C3%88ze_Village_French_Riviera_Copr_2022_by_Tim_Adams_CC_by_3.jpg",
           "sourceTitle": "File:02 statue and view Jardin Exotique Èze Village French Riviera Copr 2022 by Tim Adams CC by 3.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2022-04-27",
           "creditLabel": "02 statue and view Jardin Exotique Èze Village French Riviera Copr 2022 by Tim Adams CC by 3.jpg",
           "creator": "Tim Adams",
           "license": "CC BY 3.0",
@@ -10489,16 +10489,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Côte d’Azur photo review: the exact Commons page identifies Tim Adams, dates the photograph to 27 April 2022, records a 4,928 × 3,280 original, and declares CC BY 3.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the statue, Èze village and Mediterranean view named by the source and matched by the alt text. The visible credit links source and license and discloses resize, display crop and WebP conversion. The page declaration is recorded without asserting independent rights clearance.",
           "useCount": 4,
           "routes": [
             "/france/cote-dazur/",
@@ -10528,7 +10528,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nice,_Quai_des_%C3%89tats-Unis_and_Promenade_des_Anglais_FRANCE.jpg",
           "sourceTitle": "File:Nice, Quai des États-Unis and Promenade des Anglais FRANCE.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2006-01-01",
           "creditLabel": "Nice, Quai des États-Unis and Promenade des Anglais FRANCE.jpg",
           "creator": "Lspigon",
           "license": "Public domain",
@@ -10537,16 +10537,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-          "commercialReuseEligibility": "declared_public_domain_not_independently_checked",
+          "commercialReuseEligibility": "public_domain_status_checked",
           "attributionTerms": "Attribution is not required for public-domain material; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Côte d’Azur photo review: the exact Commons page identifies Lspigon, dates the photograph to 1 January 2006, records a 2,848 × 2,144 original, and declares public-domain status. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Nice seafront and old-town waterfront described by the credit and alt text. The visible credit retains source and creator, links the declaration and discloses resize, display crop and WebP conversion. The page declaration is recorded without asserting independent rights clearance.",
           "useCount": 6,
           "routes": [
             "/france/",
@@ -19620,13 +19620,12 @@
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-11",
           "verificationDetail": "Cameron Highlands photo review: exact Commons title, Jakub Hałun authorship, 29 August 2025 photograph date, original dimensions 5,439 × 3,631, and CC BY 4.0 terms checked on 2026-10-11. Local WebP pixels show tea rows across Cameron Highlands slopes with a road in the foreground, matching the source page. The displayed asset is resized, center-cropped and converted to WebP; its visible credit links the exact source and license and discloses those changes. This records the source page declaration, not independent rights clearance.",
-          "useCount": 12,
+          "useCount": 10,
           "routes": [
             "/malaysia/",
             "/malaysia/cameron-highlands/",
             "/malaysia/cameron-highlands/brinchang-kea-farm/",
             "/malaysia/cameron-highlands/mossy-forest-gunung-brinchang/",
-            "/malaysia/cameron-highlands/ringlet-bertam-valley/",
             "/malaysia/cameron-highlands/tanah-rata-trails/"
           ],
           "altTexts": [
@@ -19671,12 +19670,11 @@
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-11",
           "verificationDetail": "Cameron Highlands photo review: exact Commons title, Pro QueeNia authorship, 15 October 2019 photograph date, original dimensions 2,448 × 3,264, and CC BY-SA 4.0 terms checked on 2026-10-11. Local WebP pixels show a moss-covered tree and the visitor boardwalk railing, matching the source page. The displayed asset is resized, center-cropped and converted to WebP; its visible credit links the exact source and versioned license, discloses those changes and says the adaptation remains under CC BY-SA 4.0. This records the source page declaration, not independent rights clearance.",
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/cameron-highlands/",
             "/malaysia/cameron-highlands/brinchang-kea-farm/",
             "/malaysia/cameron-highlands/mossy-forest-gunung-brinchang/",
-            "/malaysia/cameron-highlands/ringlet-bertam-valley/",
             "/malaysia/cameron-highlands/tanah-rata-trails/"
           ],
           "altTexts": [
@@ -19721,10 +19719,9 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/ipoh-kinta-valley/",
-            "/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/",
             "/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/",
             "/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/",
             "/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/"
@@ -19771,10 +19768,9 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/ipoh-kinta-valley/",
-            "/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/",
             "/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/",
             "/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/",
             "/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/"
@@ -19813,7 +19809,7 @@
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
-          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
@@ -19821,10 +19817,9 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/ipoh-kinta-valley/",
-            "/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/",
             "/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/",
             "/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/",
             "/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/"
@@ -19834,7 +19829,7 @@
             "Ipoh Town Hall illuminated after dark"
           ],
           "rawVisibleCredits": [
-            "Old Ipoh Town Hall — Michael, CC0 1.0. Resized, center-cropped and converted to WebP; no other material edits."
+            "Old Ipoh Town Hall — Michael, CC0 1.0."
           ]
         }
       ]
@@ -19871,11 +19866,10 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 7,
+          "useCount": 6,
           "routes": [
             "/malaysia/",
             "/malaysia/ipoh-kinta-valley/",
-            "/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/",
             "/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/",
             "/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/",
             "/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/"
@@ -20578,17 +20572,15 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/langkawi/",
-            "/malaysia/langkawi/dayang-bunting-island/",
             "/malaysia/langkawi/kilim-geoforest/",
             "/malaysia/langkawi/machinchang-skycab/",
             "/malaysia/langkawi/pantai-cenang-tengah/"
           ],
           "altTexts": [
-            "Storm clouds and rough water over Pantai Cenang beach",
-            "Wide sandy shoreline at Pantai Cenang in Langkawi"
+            "Storm clouds and rough water over Pantai Cenang beach"
           ],
           "rawVisibleCredits": [
             "Pantai Cenang during storm weather — Nahid Sultan. CC BY-SA 4.0. Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation."
@@ -20620,7 +20612,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits.",
+          "editHistory": "Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
@@ -20628,10 +20620,9 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 11,
+          "useCount": 9,
           "routes": [
             "/malaysia/langkawi/",
-            "/malaysia/langkawi/dayang-bunting-island/",
             "/malaysia/langkawi/kilim-geoforest/",
             "/malaysia/langkawi/machinchang-skycab/",
             "/malaysia/langkawi/pantai-cenang-tengah/"
@@ -20641,7 +20632,7 @@
             "Mangrove water and forested limestone formations in Kilim Geoforest Park"
           ],
           "rawVisibleCredits": [
-            "Kilim Geoforest Park — Dcpeets, CC BY-SA 4.0. Resized, center-cropped and converted to WebP; no other material edits."
+            "Kilim Geoforest Park — Dcpeets. CC BY-SA 4.0. Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation."
           ]
         }
       ]
@@ -20678,11 +20669,10 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 7,
+          "useCount": 6,
           "routes": [
             "/malaysia/",
             "/malaysia/langkawi/",
-            "/malaysia/langkawi/dayang-bunting-island/",
             "/malaysia/langkawi/kilim-geoforest/",
             "/malaysia/langkawi/machinchang-skycab/",
             "/malaysia/langkawi/pantai-cenang-tengah/"
@@ -21163,18 +21153,16 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/george-town-penang/",
             "/malaysia/george-town-penang/armenian-street-core-zone/",
-            "/malaysia/george-town-penang/little-india-esplanade/",
             "/malaysia/george-town-penang/penang-hill-air-itam/",
             "/malaysia/george-town-penang/weld-quay-clan-jetties/"
           ],
           "altTexts": [
             "Workboats and Weld Quay ferry terminal seen from the Chew clan jetty",
-            "Weld Quay and ferry terminal viewed from Chew Jetty",
-            "Chew Jetty wooden houses and waterfront at Weld Quay"
+            "Weld Quay and ferry terminal viewed from Chew Jetty"
           ],
           "rawVisibleCredits": [
             "Chew Jetty and Weld Quay view — Cmglee, CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0."
@@ -21264,18 +21252,16 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 5,
           "routes": [
             "/malaysia/george-town-penang/",
             "/malaysia/george-town-penang/armenian-street-core-zone/",
-            "/malaysia/george-town-penang/little-india-esplanade/",
             "/malaysia/george-town-penang/penang-hill-air-itam/",
             "/malaysia/george-town-penang/weld-quay-clan-jetties/"
           ],
           "altTexts": [
             "Penang Hill funicular tracks descend through a green cutting toward George Town and the coast",
-            "Funicular railway climbing through forest on Penang Hill",
-            "Penang Hill funicular train on the steep forested track"
+            "Funicular railway climbing through forest on Penang Hill"
           ],
           "rawVisibleCredits": [
             "Penang Hill funicular line — Songgg12, CC BY-SA 4.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 4.0."
@@ -21315,19 +21301,17 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 7,
+          "useCount": 6,
           "routes": [
             "/malaysia/",
             "/malaysia/george-town-penang/",
             "/malaysia/george-town-penang/armenian-street-core-zone/",
-            "/malaysia/george-town-penang/little-india-esplanade/",
             "/malaysia/george-town-penang/penang-hill-air-itam/",
             "/malaysia/george-town-penang/weld-quay-clan-jetties/"
           ],
           "altTexts": [
             "Hand-painted direction signs and colorful textile panels in George Town",
-            "Painted George Town signs point to Khoo Kongsi, Cheah Kongsi, Clan Jetties and Acheen Street Mosque",
-            "Direction signs at Armenian Street in George Town"
+            "Painted George Town signs point to Khoo Kongsi, Cheah Kongsi, Clan Jetties and Acheen Street Mosque"
           ],
           "rawVisibleCredits": [
             "George Town direction signs — Photo by CEphoto, Uwe Aranas / CC-BY-SA-3.0. CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0."
@@ -27225,6 +27209,92 @@
           "rawVisibleCredits": [
             "Shinobazu Pond walkway — Ximonic (Simo Räsänen), CC BY-SA 4.0. The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "9e0ca61a10d309050d4265e36f2072009acf5f487904bad1bb57ebef275c3aee",
+      "assetPaths": [
+        "/assets/images/tripdistill-dayang-bunting-chain.svg"
+      ],
+      "byteLength": 3555,
+      "sourceRecords": [
+        {
+          "sha256": "9e0ca61a10d309050d4265e36f2072009acf5f487904bad1bb57ebef275c3aee",
+          "assetPath": "/assets/images/tripdistill-dayang-bunting-chain.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-dayang-bunting-chain.svg",
+          "sourceTitle": "TripDistill original Dayang Bunting boat-to-lake planning diagram",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original TripDistill planning schematic. Not to scale and not a navigation map.",
+          "localSha1": "4fa1aa4f07e34d186ee6527ccb68aaf464371778",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/malaysia/langkawi/dayang-bunting-island/"
+          ],
+          "altTexts": [
+            "Original planning diagram showing a mainland pickup, operator-confirmed jetty, boat crossing, island landing, uphill forest path to the lake, and the same return chain; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "3835a155e2a76047e0d25c3954e84ee062d7d4d58b2f16aeb08bfad120a95d97",
+      "assetPaths": [
+        "/assets/images/tripdistill-kellies-castle-transfer.svg"
+      ],
+      "byteLength": 3597,
+      "sourceRecords": [
+        {
+          "sha256": "3835a155e2a76047e0d25c3954e84ee062d7d4d58b2f16aeb08bfad120a95d97",
+          "assetPath": "/assets/images/tripdistill-kellies-castle-transfer.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-kellies-castle-transfer.svg",
+          "sourceTitle": "TripDistill original Ipoh to Kellie’s Castle transfer planning diagram",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original TripDistill planning schematic. Not to scale and not a navigation map.",
+          "localSha1": "e940d32c9085a71ef5b4ca3f52ef8eea2fc2b13f",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/"
+          ],
+          "altTexts": [
+            "Original planning diagram showing Ipoh as the base, a separately confirmed rail or road leg to Batu Gajah, a pre-arranged road transfer to Kellie’s Castle, and the same return; not to scale"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },

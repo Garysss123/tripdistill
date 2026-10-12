@@ -550,6 +550,7 @@ export const franceImageManifest = {
     "label": "Nice, Quai des États-Unis and Promenade des Anglais FRANCE.jpg",
     "creator": "Lspigon",
     "license": "Public domain",
+    "sourceDate": "2006-01-01",
     "commonsTitle": "File:Nice, Quai des États-Unis and Promenade des Anglais FRANCE.jpg",
     "remoteSha1": "f9d3dc721bac76cad09f19a5a99dea71754f929a"
   },
@@ -560,6 +561,7 @@ export const franceImageManifest = {
     "label": "02 statue and view Jardin Exotique Èze Village French Riviera Copr 2022 by Tim Adams CC by 3.jpg",
     "creator": "Tim Adams",
     "license": "CC BY 3.0",
+    "sourceDate": "2022-04-27",
     "commonsTitle": "File:02 statue and view Jardin Exotique Èze Village French Riviera Copr 2022 by Tim Adams CC by 3.jpg",
     "remoteSha1": "f8f7b9db54d86a9a7a05d654d8559218b76260fb"
   },
@@ -570,6 +572,7 @@ export const franceImageManifest = {
     "label": "Port vauban vieille ville.jpg",
     "creator": "Abxbay",
     "license": "CC BY-SA 4.0",
+    "sourceDate": "2016-06-07",
     "commonsTitle": "File:Port vauban vieille ville.jpg",
     "remoteSha1": "6fc71cc32f320dc45d64134f1e3e94e30d4caf69"
   },
