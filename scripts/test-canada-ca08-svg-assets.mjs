@@ -13,7 +13,14 @@ assert.equal(diagram?.src, '/assets/images/tripdistill-canada-jasper-three-corri
 const svgFile = path.join(root, diagram.src.slice(1));
 const source = fs.readFileSync(svgFile, 'utf8');
 assert.match(source, /xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
-for (const phrase of ['not to scale', 'Plan separate days', '獨立安排不同日子', '別日に計画', '별도 날짜로 계획', 'วางแผนคนละวัน', 'MALIGNE VALLEY', 'COLUMBIA ICEFIELD']) {
+for (const phrase of [
+  'not to scale', 'MALIGNE VALLEY', 'COLUMBIA ICEFIELD',
+  'Teal line · Maligne Valley', 'Orange line · southbound Parkway', 'Purple marker · Columbia Icefield',
+  '青綠線 · 瑪琳谷', '橙線 · 冰原大道南行段', '紫色標記 · 哥倫比亞冰原',
+  '青緑の線 · マリーン渓谷', '橙色の線 · アイスフィールド・パークウェイ南行', '紫色の点 · コロンビア大氷原',
+  '청록색 선 · 말린 밸리', '주황색 선 · 남행 아이스필즈 파크웨이', '보라색 표식 · 컬럼비아 아이스필드',
+  'เส้นสีเขียวอมฟ้า · Maligne Valley', 'เส้นสีส้ม · Icefields Parkway ไปทางใต้', 'จุดสีม่วง · Columbia Icefield'
+]) {
   assert.ok(source.includes(phrase), `SVG content missing: ${phrase}`);
 }
 
@@ -25,8 +32,31 @@ assert root.tag == '{http://www.w3.org/2000/svg}svg'
 assert root.attrib.get('viewBox') == '0 0 1200 700'
 ns = '{http://www.w3.org/2000/svg}'
 texts = list(root.iter(ns + 'text'))
-assert len(texts) >= 14
+assert len(texts) >= 27
 assert len(list(root.iter(ns + 'circle'))) >= 5
+falls = root.find(".//*[@id='falls-distance-note']")
+parkway = root.find(".//*[@id='parkway-distance-note']")
+assert falls is not None and parkway is not None
+falls_y, parkway_y = float(falls.attrib['y']), float(parkway.attrib['y'])
+assert falls.text == 'Falls: Athabasca 30 km; Sunwapta 54 km south of Jasper'
+assert parkway.text == 'Highway 93: Jasper to Lake Louise · 232 km'
+assert falls_y + 20 <= parkway_y, 'the two route-distance annotations must occupy separate, non-overlapping lines'
+legend = root.find(".//*[@id='route-legend']")
+assert legend is not None
+expected_rows = {
+    'legend-en': ['Teal line · Maligne Valley', 'Orange line · southbound Parkway', 'Purple marker · Columbia Icefield'],
+    'legend-zh-Hant': ['青綠線 · 瑪琳谷', '橙線 · 冰原大道南行段', '紫色標記 · 哥倫比亞冰原'],
+    'legend-ja': ['青緑の線 · マリーン渓谷', '橙色の線 · アイスフィールド・パークウェイ南行', '紫色の点 · コロンビア大氷原'],
+    'legend-ko': ['청록색 선 · 말린 밸리', '주황색 선 · 남행 아이스필즈 파크웨이', '보라색 표식 · 컬럼비아 아이스필드'],
+    'legend-th': ['เส้นสีเขียวอมฟ้า · Maligne Valley', 'เส้นสีส้ม · Icefields Parkway ไปทางใต้', 'จุดสีม่วง · Columbia Icefield']
+}
+legend_rows = legend.findall(ns + 'g')
+assert [row.attrib.get('id') for row in legend_rows] == list(expected_rows)
+for row in legend_rows:
+    labels = [(node.text or '').strip() for node in row.findall(ns + 'text')]
+    assert labels == expected_rows[row.attrib['id']], f"{row.attrib['id']} must explain each displayed route color and marker"
+    assert [node.attrib.get('stroke') for node in row.findall(ns + 'line')] == ['#367d75', '#d47a45']
+    assert [node.attrib.get('fill') for node in row.findall(ns + 'circle')] == ['#9b5c91']
 for node in root.iter():
     if node.tag == ns + 'rect':
         x, y = float(node.attrib.get('x', '0')), float(node.attrib.get('y', '0'))
@@ -35,6 +65,9 @@ for node in root.iter():
     elif node.tag == ns + 'circle':
         cx, cy, radius = (float(node.attrib[k]) for k in ('cx', 'cy', 'r'))
         assert radius > 0 and radius <= cx <= 1200 - radius and radius <= cy <= 700 - radius
+    elif node.tag == ns + 'line':
+        x1, x2, y1, y2 = (float(node.attrib[key]) for key in ('x1', 'x2', 'y1', 'y2'))
+        assert 0 <= x1 <= 1200 and 0 <= x2 <= 1200 and 0 <= y1 <= 700 and 0 <= y2 <= 700
     elif node.tag == ns + 'text':
         x, y = float(node.attrib['x']), float(node.attrib['y'])
         assert 0 <= x <= 1200 and 0 <= y <= 700
@@ -60,4 +93,4 @@ for (const file of [
   'th/canada/banff-lake-louise/johnston-minnewanka/index.html'
 ]) assert.ok(!fs.readFileSync(path.join(root, file), 'utf8').includes(retired), `${file}: retired mismatched source photo must not be referenced.`);
 assert.ok(!fs.existsSync(path.join(root, 'dist', retired.slice(1))), 'Retired Johnston source photo must be excluded from dist.');
-console.log('CA08 SVG/assets regression passed: real Python ElementTree XML parse, five-language legend, text/shape geometry bounds, five localized page provenance links, and retained-but-unpublished Johnston photo.');
+console.log('CA08 SVG/assets regression passed: real Python ElementTree XML parse; separate route-distance note lines; five-language route-color/marker explanations matched to their SVG colors; text/shape geometry bounds; five localized page provenance links; and retained-but-unpublished Johnston photo.');
