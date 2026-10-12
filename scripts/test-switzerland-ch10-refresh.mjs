@@ -8,10 +8,13 @@ import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../d
 import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const baseCommit = 'bfbdf6cf83dc8d44f40a492f3dabdaf3075aae12';
+const baseCommit = 'a0da2c3b2d27276bc83993b19ae96521798c032b';
 const locales = ['', '/zh', '/ja', '/ko', '/th'];
 const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'basel-rhine');
 const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
+const ch11Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-moritz-engadin');
+const ch11Routes = [`/switzerland/${ch11Cluster.slug}/`, ...ch11Cluster.guides.map((guide) => guide.url)];
+const editedRoutes = new Set([...expectedRoutes, ...ch11Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const protectedAssets = {
   'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5',
@@ -46,7 +49,7 @@ assert.equal(Object.keys(switzerlandCh10ClusterRefresh).length, 7, 'all seven CH
 assert.equal(Object.keys(switzerlandCh10GuideRefresh).length, 21, 'all 21 CH10 child drafts remain preserved');
 assert.ok(switzerlandCh10CountryPageDraft.summary && switzerlandCh10CountryPageDraft.hero, 'the country-page draft remains preserved for a later batch');
 
-for (const route of allRoutes.filter((item) => !expectedRoutes.includes(item))) {
+for (const route of allRoutes.filter((item) => !editedRoutes.has(item))) {
   const relative = `${route.slice(1)}index.html`;
   const baseline = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains inactive and byte-identical to the CH09 source page`);
@@ -60,14 +63,17 @@ assert.equal(before.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no route was added or removed');
 
-const allowedDatedUrls = new Set(locales.flatMap((prefix) => expectedRoutes.map((route) => `${prefix}${route}`)));
+const allowedDatedUrls = new Set(locales.flatMap((prefix) => ch11Routes.map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page batch across five editions receives new dates');
+assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page CH11 batch across five editions receives new dates after the verified CH10 source');
 for (const [route, date] of changedDates) {
   assert.ok(allowedDatedUrls.has(route), `unexpected sitemap date change: ${route}`);
-  assert.equal(date, '2026-10-12', `CH10 sitemap date for ${route}`);
+  assert.equal(date, '2026-10-12', `CH11 sitemap date for ${route}`);
 }
-for (const route of allowedDatedUrls) assert.equal(after.get(route), '2026-10-12', `current sitemap date for ${route}`);
+for (const route of allowedDatedUrls) assert.equal(after.get(route), '2026-10-12', `current CH11 sitemap date for ${route}`);
+for (const route of locales.flatMap((prefix) => expectedRoutes.map((item) => `${prefix}${item}`))) {
+  assert.equal(after.get(route), '2026-10-12', `verified CH10 date remains intact for ${route}`);
+}
 
 for (const [asset, sha256] of Object.entries(protectedAssets)) {
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, asset))).digest('hex'), sha256, `${asset} protected bytes`);
@@ -114,4 +120,4 @@ for (const route of expectedRoutes) {
   }
 }
 
-console.log(`CH10 batch-one checks passed: ${expectedRoutes.length} existing routes, five-language alternate links and sitemap entries, ${changedDates.length} dated URLs, 4,560 total URLs; later English drafts remain unactivated.`);
+console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; only the four CH11 routes across five editions changed since a0da2c3; ${after.size} sitemap URLs and later drafts remain intact.`);

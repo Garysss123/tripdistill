@@ -40,6 +40,12 @@ const interlakenRoutes = [
   '/switzerland/interlaken-lakes/brienz-giessbach/',
   '/switzerland/interlaken-lakes/thun-spiez/'
 ];
+const stMoritzRoutes = [
+  '/switzerland/st-moritz-engadin/',
+  '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+  '/switzerland/st-moritz-engadin/bernina-pontresina/',
+  '/switzerland/st-moritz-engadin/muottas-diavolezza/'
+];
 const diagramPath = '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg';
 const diagramSha1 = '8b45fae5724444f48aa928e3225dacc232efc382';
 
@@ -89,7 +95,7 @@ const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'source route inventory');
 assert.equal(currentRecords.size, baseRecords.size, 'no sitemap URL additions or removals');
 assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'route inventory is unchanged');
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes, ...stMoritzRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const genevaDateRoutes = [
   '/switzerland/',
   '/switzerland/geneva-lake/',
@@ -127,7 +133,7 @@ for (const locale of locales) {
   }
 }
 const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 165, 'the reviewed Switzerland clusters and overview routes retain their five-language date history');
+assert.equal(dateChanges.length, 185, 'the reviewed Switzerland clusters and overview routes retain their five-language date history through CH11');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `review date for ${url}`);
@@ -240,4 +246,4 @@ for (const locale of locales) {
   }
 }
 
-console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, ${dateChanges.length} five-language reviewed-cluster and dependent-overview date updates through Montreux and Bern/Emmental, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);
+console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, ${dateChanges.length} five-language reviewed-cluster and dependent-overview date updates through CH11, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);

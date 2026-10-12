@@ -343,6 +343,7 @@ export const switzerlandImageManifest = {
   "st-moritz-engadin/st-moritz-lakes": {
     "src": "/assets/images/switzerland-st-moritz-engadin-st-moritz-lakes.webp",
     "alt": "St Moritz and its lake in the Engadin valley",
+    "displayTitle": "Lake St Moritz and the Upper Engadin",
     "source": "https://commons.wikimedia.org/wiki/File:Switzerland-01761_-_Lake_St._Moritz_(22298240145).jpg",
     "label": "Switzerland-01761 - Lake St. Moritz (22298240145).jpg",
     "creator": "Dennis G. Jarvis",
@@ -353,6 +354,7 @@ export const switzerlandImageManifest = {
   "st-moritz-engadin/bernina-pontresina": {
     "src": "/assets/images/switzerland-st-moritz-engadin-bernina-pontresina.webp",
     "alt": "Rhaetian Railway train on the Bernina line in Switzerland",
+    "displayTitle": "Bernina Express crossing the upper Berninabach Bridge",
     "source": "https://commons.wikimedia.org/wiki/File:Rhb_Bernina-Express_%C3%BCberquert_obere_Berninabach-Br%C3%BCcke.jpg",
     "label": "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
     "creator": "Kabelleger / David Gubler ( http://www.bahnbilder.ch )",
@@ -362,7 +364,8 @@ export const switzerlandImageManifest = {
   },
   "st-moritz-engadin/muottas-diavolezza": {
     "src": "/assets/images/switzerland-st-moritz-engadin-muottas-diavolezza.webp",
-    "alt": "Upper Engadin panorama from Muottas Muragl",
+    "alt": "Muottas Muragl funicular station and track above the Upper Engadin",
+    "displayTitle": "Muottas Muragl funicular station and track",
     "source": "https://commons.wikimedia.org/wiki/File:Muottas_Muragl3.jpg",
     "label": "Muottas Muragl3.jpg",
     "creator": "Adrian Michael",

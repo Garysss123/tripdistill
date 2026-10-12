@@ -53,6 +53,13 @@ const genevaLastmod = '2026-10-12';
 const basel = switzerlandClusters.find((cluster) => cluster.slug === 'basel-rhine');
 const baselRoutes = basel ? [`/switzerland/${basel.slug}/`, ...basel.guides.map((guide) => guide.url)] : [];
 const baselLastmod = '2026-10-12';
+const ch11Routes = new Set([
+  '/switzerland/st-moritz-engadin/',
+  '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+  '/switzerland/st-moritz-engadin/bernina-pontresina/',
+  '/switzerland/st-moritz-engadin/muottas-diavolezza/'
+]);
+const ch11Lastmod = '2026-10-12';
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -266,7 +273,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = baselRoutes.includes(route) ? baselLastmod : genevaSitemapRoutes.includes(route) ? genevaLastmod : montreuxRoutes.includes(route) ? montreuxLastmod : bernEmmentalRoutes.includes(route) ? bernEmmentalLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
+    const expectedLastmod = ch11Routes.has(route) ? ch11Lastmod : baselRoutes.includes(route) ? baselLastmod : genevaSitemapRoutes.includes(route) ? genevaLastmod : montreuxRoutes.includes(route) ? montreuxLastmod : bernEmmentalRoutes.includes(route) ? bernEmmentalLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

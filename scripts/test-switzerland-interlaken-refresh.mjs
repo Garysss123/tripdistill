@@ -52,7 +52,13 @@ const baselRoutes = [
   '/switzerland/basel-rhine/art-museums/',
   '/switzerland/basel-rhine/kleinbasel-border-rhine/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes].map((route) => `${locale.prefix}${route}`)));
+const stMoritzRoutes = [
+  '/switzerland/st-moritz-engadin/',
+  '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+  '/switzerland/st-moritz-engadin/bernina-pontresina/',
+  '/switzerland/st-moritz-engadin/muottas-diavolezza/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes].map((route) => `${locale.prefix}${route}`)));
 
 function descendants(node) { return [node, ...(node.childNodes || []).flatMap(descendants)]; }
 function getAttr(node, name) { return node?.attrs?.find((item) => item.name === name)?.value; }
