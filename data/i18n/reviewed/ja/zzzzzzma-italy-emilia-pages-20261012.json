@@ -48,9 +48,6 @@
     "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a…": "Trenitalia TPERの地域列車でモデナかパルマへ行き、駅から一つの歴史地区を歩いて同じ駅へ戻ります。マラネッロや乳製品／バルサミコ酢の生産者を加える場合は、集合場所、予約、最終区間の移動を事業者に確認してください。",
     "Take a Trenitalia TPER regional train to Modena or Parma, walk from that station into one historic core, and return to the same gateway; add Maranello or a dairy/acetaia only after its operator confirms the meeting address, booking and complete last mile.": "Trenitalia TPERの地域列車でモデナかパルマへ行き、駅から一つの歴史地区を歩いて同じ駅へ戻ります。マラネッロや乳製品／バルサミコ酢の生産者を加える場合は、集合場所、予約、最終区間の移動を事業者に確認してください。",
     "Diagram key · schematic, not to scale": "図の見方 · 概念図で縮尺はありません",
-    "1 · Choose Modena or Parma as the day base": "1 · モデナかパルマを当日の拠点に選ぶ",
-    "2 · Walk station–historic core–station": "2 · 駅—歴史地区—駅の徒歩ルート",
-    "3 · Maranello or a producer needs a confirmed last mile": "3 · マラネッロや生産者には確認済みの最後の移動が必要",
     "Choose a city before choosing the appointment": "予約を考える前に都市を決める",
     "Modena and Parma share the Via Emilia rail corridor, but the useful walk begins only after you select one station. A rural producer or Maranello visit changes the day into an appointment-led transfer, not a simple extension of the city centre.": "モデナとパルマはVia Emiliaの鉄道回廊でつながりますが、徒歩ルートは一つの駅を選んでから始まります。郊外の生産者やマラネッロを訪れる日は予約に合わせた移動日となり、中心街の単純な延長ではありません。",
     "Keep the bed by the rail day you actually chose": "実際に選んだ鉄道都市に泊まる",
@@ -74,7 +71,12 @@
     "Check each monument and the Delta operator": "史跡とデルタの事業者を個別に確認",
     "Ravenna’s mosaic monuments can have different custodians, entry conditions and ticket coverage, so verify each intended site on Ravenna Turismo or its named operator. For Ferrara, check current visitor access and bicycle or wall conditions with Ferrara Info. For the Po Delta, reserve the exact boat, guide, bus or visitor-centre program and record its meeting location, duration, weather cancellation terms and return. The park’s conservation notices govern access; this page supplies no unverified service or fare.": "ラヴェンナのモザイク史跡は管理者や入場条件、共通券の範囲が異なることがあります。訪問先をRavenna Turismoか指定事業者のページで確認してください。フェラーラではFerrara Infoで最新の訪問ルート、自転車、城壁の状態を調べます。ポー川デルタでは船、ガイド、バス、ビジターセンターの正確なプログラムを予約し、集合場所、所要時間、天候中止条件、帰りを記録してください。保護区は公園の保全案内に従います。未確認の運行や運賃は示しません。",
     "Let wind and water decide the outdoor block": "風と水の状態に合わせて屋外時間を決める",
-    "Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.": "大雨や夏の暑さには、確認済みのラヴェンナ屋内史跡かフェラーラの博物館を中心にし、屋外移動を短くします。気温、風、体力に合わなければフェラーラの城壁は一部だけ歩きます。デルタの船や自然地の訪問は事業者、水位、天候、保全状況によって変わります。冬の霧は視界と日照を減らします。集合場所へ出発する前に、同じ拠点で完結する市内ルートも用意しましょう。"
+    "Use Ravenna’s confirmed indoor monuments or Ferrara’s museums as the core during heavy rain or summer heat, with shorter outdoor links. Ferrara walls need a bounded segment when temperature, wind or mobility makes a full circuit unsuitable. Delta boat and habitat visits depend on operator, water, weather and conservation conditions; winter fog can reduce visibility and daylight. Keep a same-base urban day ready before leaving for the gateway.": "大雨や夏の暑さには、確認済みのラヴェンナ屋内史跡かフェラーラの博物館を中心にし、屋外移動を短くします。気温、風、体力に合わなければフェラーラの城壁は一部だけ歩きます。デルタの船や自然地の訪問は事業者、水位、天候、保全状況によって変わります。冬の霧は視界と日照を減らします。集合場所へ出発する前に、同じ拠点で完結する市内ルートも用意しましょう。",
+    "1 · Modena rail gateway": "1 · モデナの鉄道拠点",
+    "2 · Via Emilia regional rail corridor": "2 · Via Emiliaの地域鉄道回廊",
+    "3 · Parma rail gateway": "3 · パルマの鉄道拠点",
+    "4 · Maranello needs a confirmed separate last mile": "4 · マラネッロは別途ラストマイルを確認",
+    "5 · A booked producer visit has its own gateway and return": "5 · 生産者訪問は集合場所と帰路を個別に確認"
   },
   "reviewProvenance": {
     "writer": "single-model translation",

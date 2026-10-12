@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640">
   <rect x="0" y="0" width="960" height="640" rx="30" fill="#f3eee4"/>
-  <path d="M170 170 C300 150 410 190 490 280 S650 420 780 430" fill="none" stroke="#2f625a" stroke-width="18" stroke-linecap="round"/>
-  <path d="M500 290 C570 210 650 165 760 150" fill="none" stroke="#b86b42" stroke-width="12" stroke-dasharray="18 18" stroke-linecap="round"/>
+  <path d="M170 170 C300 150 410 190 490 280" fill="none" stroke="#2f625a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M490 280 C570 210 650 165 760 150" fill="none" stroke="#b86b42" stroke-width="12" stroke-dasharray="18 18" stroke-linecap="round"/>
   <g fill="#fffaf1" stroke="#203b37" stroke-width="8">
-    <circle cx="170" cy="170" r="58"/><circle cx="490" cy="280" r="58"/><circle cx="780" cy="430" r="58"/>
+    <circle cx="170" cy="170" r="58"/><circle cx="490" cy="280" r="58"/><circle cx="760" cy="150" r="58"/>
   </g>
   <g fill="#203b37" font-family="system-ui, sans-serif" font-size="50" font-weight="700" text-anchor="middle" dominant-baseline="central">
-    <text x="170" y="170">1</text><text x="490" y="280">2</text><text x="780" y="430">3</text>
+    <text x="170" y="170">1</text><text x="490" y="280">2</text><text x="760" y="150">3</text>
   </g>
   <path d="M90 505h780" stroke="#d1c4af" stroke-width="3"/>
   <g fill="#526862"><path d="M120 500v-90h34v90zm43 0v-90h34v90zm43 0v-90h34v90z"/><path d="M333 500v-90h34v90zm43 0v-90h34v90zm43 0v-90h34v90z"/><path d="M613 500v-90h34v90zm43 0v-90h34v90zm43 0v-90h34v90z"/></g>
