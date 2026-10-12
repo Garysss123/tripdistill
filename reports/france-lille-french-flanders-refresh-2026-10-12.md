@@ -24,7 +24,7 @@ The 1600 × 1066 Lille Grand Place WebP was inspected. Its foreground is a color
 
 The former Vimy Commons photo remains on disk and in the retirement/provenance record, with its source URL, uploader, declared CC BY-SA 3.0 metadata, 1600 × 1066 dimensions, local SHA-1 `2012cdfb09da624b118ecd75a372cc6165497853` and SHA-256 `d0b42787ea2426ac6a5b7c390e832326d4abe9a03605a5e3eb38a112714af3a8`. Its [Commons file page](https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg) carries a NoFoP-France warning; eligibility remains unresolved. The photo has zero live uses and is absent from localized pages, search and `dist`.
 
-The replacement `/assets/images/france-lille-arras-vimy-sequence-legend.svg` is original project artwork (viewBox 1600 × 1066, SHA-1 `76516497410b7f12bb752f609bc831f57428d8aa`) with a five-language visible sequence legend. It is not a map, not to scale and not a live timetable. The source record declares TripDistill authorship and no separate reuse license; it claims no third-party image license.
+The replacement `/assets/images/france-lille-arras-vimy-sequence-legend.svg` is original project artwork (viewBox 1600 × 1066, SHA-1 `f0d98e0797bcff135af3e4997f6795428fd82615`) with a five-language visible sequence legend. Its lower caution box now contains the final Korean/Thai row with 25 viewBox units of conservative descender clearance, 39 units to the canvas edge and 41 units from the route cards; no text or translation changed. It is not a map, not to scale and not a live timetable. The source record declares TripDistill authorship and no separate reuse license; it claims no third-party image license.
 
 ## Localization, search and dates
 
@@ -36,6 +36,6 @@ The old Lille batch's 31 source strings per locale were removed only after confi
 
 ## Validation and limits
 
-`npm run build` passed: 5,466 files (4,577 HTML, 800 images), all 4,560 sitemap URLs verified, 14,534 Pages files of headroom. The final full `npm run audit` passed: 4,560 localized routes, 955 search records per language, France and global i18n/search/photo/provenance checks, and the applicable Malaysia, China/CN14B, UK/Lake/Somerset, date and image regressions. `git diff --check` is also required clean before commit.
+`npm run build` passed: 5,466 files (4,577 HTML, 800 images), all 4,560 sitemap URLs verified, 14,534 Pages files of headroom. The final full `npm run audit` passed: 4,560 localized routes, 955 search records per language, France and global i18n/search/photo/provenance checks, the France Vimy SVG geometry regression, and the applicable Malaysia, China/CN14B, UK/Lake/Somerset, date and image regressions. The SVG also passed a standard-library XML parse and text-node comparison against the prior branch commit. `git diff --check` passed.
 
 No browser, headless, CDP or server review was performed, so responsive rendering and interactive behavior remain unverified. No deployment or production action was taken. Build and static audits establish source consistency, not visual acceptance or independent image-rights clearance.

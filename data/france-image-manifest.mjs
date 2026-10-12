@@ -80,7 +80,7 @@ export const franceImageManifest = {
     "rightsStatus": "Project original; no separate reuse license declared",
     "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
     "assetType": "original-planning-diagram",
-    "localSha1": "76516497410b7f12bb752f609bc831f57428d8aa",
+    "localSha1": "f0d98e0797bcff135af3e4997f6795428fd82615",
     "editNote": "Original project SVG diagram; no third-party image content. A sequence schematic, not geography, scale or live service information."
   },
   "lille-french-flanders/opal-coast-headlands": {

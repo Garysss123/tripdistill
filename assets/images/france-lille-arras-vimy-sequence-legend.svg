@@ -50,9 +50,9 @@
     </g>
   </g>
 
-  <rect x="70" y="875" width="1460" height="125" rx="16" fill="#183b49"/>
+  <rect x="70" y="875" width="1460" height="152" rx="16" fill="#183b49"/>
   <text x="98" y="917" fill="#f1c57b" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">IMPORTANT</text>
-  <text x="98" y="951" fill="#fffdf8" font-family="Arial, sans-serif" font-size="20">Illustrative visit sequence — not a geographic map, not to scale, and not a live timetable.</text>
-  <text x="98" y="979" fill="#dce7e9" font-family="Arial, sans-serif" font-size="16">參訪流程示意，非地理地圖、不按比例、非即時班表。 · 訪問順序の例で、地理地図・縮尺図・リアルタイム時刻表ではありません。</text>
-  <text x="98" y="1004" fill="#dce7e9" font-family="Arial, sans-serif" font-size="16">방문 순서 예시이며 지리 지도·축척도·실시간 시간표가 아닙니다. · ลำดับการเยี่ยมชมเพื่อประกอบความเข้าใจ ไม่ใช่แผนที่ภูมิศาสตร์ ไม่ได้แสดงตามมาตราส่วน และไม่ใช่ตารางเวลาสด</text>
+  <text x="98" y="944" fill="#fffdf8" font-family="Arial, sans-serif" font-size="20">Illustrative visit sequence — not a geographic map, not to scale, and not a live timetable.</text>
+  <text x="98" y="969" fill="#dce7e9" font-family="Arial, sans-serif" font-size="16">參訪流程示意，非地理地圖、不按比例、非即時班表。 · 訪問順序の例で、地理地図・縮尺図・リアルタイム時刻表ではありません。</text>
+  <text x="98" y="994" fill="#dce7e9" font-family="Arial, sans-serif" font-size="16">방문 순서 예시이며 지리 지도·축척도·실시간 시간표가 아닙니다. · ลำดับการเยี่ยมชมเพื่อประกอบความเข้าใจ ไม่ใช่แผนที่ภูมิศาสตร์ ไม่ได้แสดงตามมาตราส่วน และไม่ใช่ตารางเวลาสด</text>
 </svg>

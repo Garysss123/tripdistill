@@ -639,7 +639,7 @@ try {
     '/france/lille-french-flanders/old-lille-roubaix/',
     '/france/lille-french-flanders/opal-coast-headlands/'
   ]);
-  assert.equal(franceVimyDiagram.localSha1, '76516497410b7f12bb752f609bc831f57428d8aa');
+  assert.equal(franceVimyDiagram.localSha1, 'f0d98e0797bcff135af3e4997f6795428fd82615');
   assert.equal(franceVimyDiagram.verificationStatus, 'site_credit_or_metadata_only');
   assert.equal(franceVimyDiagram.visualReviewStatus, 'visually_reviewed_2026-10-12');
   assert.ok(franceVimyDiagram.altTexts.some((alt) => /not a geographic map.*not to scale.*not a live timetable/i.test(alt)));
