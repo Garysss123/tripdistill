@@ -264,7 +264,7 @@ for (const absoluteUrl of publishedUrls) {
     : '/css/malaysia.css?v=20260829-1';
   if (baseRoute.startsWith('/malaysia/') && !html.includes(expectedMalaysiaCss)) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
   const expectedMalaysiaStraitsCss = baseRoute === '/malaysia/melaka/'
-    ? '/css/malaysia-straits.css?v=20261012-2'
+    ? '/css/malaysia-straits.css?v=20261012-3'
     : '/css/malaysia-straits.css?v=20260829-1';
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes(expectedMalaysiaStraitsCss)) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);

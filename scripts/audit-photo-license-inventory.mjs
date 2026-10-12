@@ -8,6 +8,7 @@ import { missingPhotoAttributionFields, photoLicenseInventoryBlockingProblems } 
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(root, 'assets', 'images');
+const retainedLocalOnlyAssetPaths = ['/assets/images/malaysia-melaka-kampung-morten.webp'];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
   'south-korea', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
@@ -1300,6 +1301,8 @@ const assetImageExtras = fs.readdirSync(imageDir)
   .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file) && !assetPaths.includes(path.join(imageDir, file)));
 const rootImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
 const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
+const retainedLocalOnlyAssets = retainedLocalOnlyAssetPaths.filter((assetPath) => fs.existsSync(path.join(root, assetPath.slice(1))));
+const publishedWebpCount = assetPaths.length - retainedLocalOnlyAssets.length;
 const counts = {
   assetFileCount: assetPaths.length,
   completeSourceCreatorLicenseRecords: entries.filter((row) => row.sourceUrl && row.creator && row.license).length,
@@ -1308,7 +1311,8 @@ const counts = {
   currentKnownUnsuitableImages: 0,
   previouslyMisplacedImageReplaced: 1,
   buildImageFilesOutsidePhotoInventory: buildImageExtras.length,
-  expectedBuildImageCount: assetPaths.length + buildImageExtras.length,
+  buildImageFilesExcludedForRightsReview: retainedLocalOnlyAssets.length,
+  expectedBuildImageCount: publishedWebpCount + buildImageExtras.length,
   deduplicatedImageCount: grouped.length,
   exactDuplicateFileCount: assetPaths.length - grouped.length,
   englishCountryPagesScanned: englishPageCount,
@@ -1346,7 +1350,7 @@ const report = {
     visibleCredits: 'Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.',
     sourcePageChecks: 'Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
     imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
-    buildImageCountReconciliation: `The ${assetPaths.length} WebP photos and ${assetImageExtras.length} other image assets in assets/images, plus ${rootImageExtras.length} root-level image assets, explain the ${counts.expectedBuildImageCount} build image files.`
+    buildImageCountReconciliation: `The ${publishedWebpCount} published WebP photos and ${assetImageExtras.length} other image assets in assets/images, plus ${rootImageExtras.length} root-level image assets, explain the ${counts.expectedBuildImageCount} build image files. ${retainedLocalOnlyAssets.length} retained rights-review source file(s) stay in the repository but are excluded from the build.`
   },
   knownHistoricalMismatch: {
     status: 'removed_from_current_inventory',
@@ -1380,7 +1384,7 @@ const summaryLines = [
   '',
   'The inventory records share-alike rows with the same-license adaptation term. Review row-level attributionTerms and editHistory before reusing an asset.',
   '',
-  'Build image count: ' + assetPaths.length + ' WebP photos plus ' + buildImageExtras.length + ' additional build image file(s) (' + buildImageExtras.join(', ') + ') = ' + (assetPaths.length + buildImageExtras.length) + '.',
+  'Build image count: ' + publishedWebpCount + ' published WebP photos plus ' + buildImageExtras.length + ' additional build image file(s) (' + buildImageExtras.join(', ') + ') = ' + counts.expectedBuildImageCount + '. ' + retainedLocalOnlyAssets.length + ' retained rights-review source file(s) are excluded from dist.',
   '',
   '## Current mismatches',
   '',

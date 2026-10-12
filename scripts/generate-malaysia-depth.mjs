@@ -69,6 +69,9 @@ function sourcesList(sources) {
 }
 
 function imageCredit(image) {
+  if (image.assetType === 'original-planning-diagram') {
+    return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> &#8212; <span>${escapeHtml(image.creator)}</span>. <span>${escapeHtml(image.creditText)}</span> <a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of use</a>.</li>`;
+  }
   const attribution = image.attribution || image.creator;
   const attributionEnd = image.attribution ? '.' : ',';
   const license = image.licenseUrl
@@ -102,6 +105,17 @@ function guideSchema(guide) {
         about: { '@type': 'TouristDestination', name: guide.name, containedInPlace: { '@type': 'Country', name: 'Malaysia' } },
         publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
       },
+      ...(guide.image.assetType === 'original-planning-diagram' ? [{
+        '@type': 'ImageObject',
+        '@id': `${absolute(guide.image.src)}#artwork`,
+        contentUrl: absolute(guide.image.src),
+        name: guide.image.label,
+        description: guide.image.alt,
+        caption: guide.image.caption,
+        creator: { '@type': 'Organization', name: guide.image.creator },
+        creditText: guide.image.creditText,
+        usageInfo: guide.image.rightsStatusUrl
+      }] : []),
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -127,6 +141,15 @@ function childPage(guide, cluster) {
   const description = ensureMetaDescription(guide.summary);
   const title = `${guide.name} | TripDistill`;
   const sources = [...new Map([...cluster.sources, ...(guide.sources || [])].map(([href, label]) => [href, [href, label]])).values()];
+  const originalDiagram = guide.image.assetType === 'original-planning-diagram';
+  const sourceHeading = originalDiagram ? 'Official sources and original diagram' : 'Official sources and photo credit';
+  const sourceIntro = originalDiagram
+    ? 'Planning facts and public route details were reviewed on 12 October 2026. The original diagram is a non-scale planning schematic, not navigation; confirm the public path, bridge access and return route before walking.'
+    : `Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.`;
+  const relatedImageCredits = originalDiagram
+    ? [...new Map(cluster.guides.filter((related) => related.slug !== guide.slug && related.image.assetType !== 'original-planning-diagram').map((related) => [related.image.src, related.image])).values()].map(imageCredit).join('')
+    : '';
+  const figureCaption = guide.image.caption || `${guide.image.label} · ${guide.image.license}`;
   const checks = guide.checks.map(([label, copy], index) => `<article class="md-check"><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(label)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const decisions = guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('');
   const route = guide.route.map(([phase, heading, copy], index) => `<article class="md-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(phase)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
@@ -140,7 +163,7 @@ function childPage(guide, cluster) {
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(guide.url)}">${hreflang(guide.url)}
   <meta name="theme-color" content="#173f37">
-  <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta property="og:image:alt" content="${escapeHtml(guide.image.alt)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image:alt" content="${escapeHtml(guide.image.alt)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any">
   <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="${malaysiaCss(guide.hubSlug)}"><link rel="stylesheet" href="${depthCss}">
   <script src="/js/adsense.js?v=20260826-9" defer></script>
@@ -152,7 +175,7 @@ function childPage(guide, cluster) {
     <main id="main-content" class="page-content md-guide">
       <section class="md-hero" aria-labelledby="md-title">
         <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(guide.reviewedOn || '30 August 2026')}</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
-        <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure>
+        <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(figureCaption)}</figcaption></figure>
         <div class="md-instrument" aria-hidden="true"><span>${escapeHtml(guide.instrument)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><em>${escapeHtml(guide.motif)}</em></div>
       </section>
 
@@ -170,7 +193,7 @@ function childPage(guide, cluster) {
 
       <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div><p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
 
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credit</h2><p>Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">${escapeHtml(sourceHeading)}</h2><p>${escapeHtml(sourceIntro)}</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}${relatedImageCredits}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
 </body>

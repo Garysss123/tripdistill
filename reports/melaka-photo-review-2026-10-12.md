@@ -11,6 +11,12 @@ Visually inspected the four local WebP files at their rendered pixels with the m
 
 ## Open rights check
 
-The Kampung Morten Commons page declares CC BY-SA 4.0, but the embedded EXIF in the source image says “Copyright 2019. All rights reserved.” These statements conflict. The conflict is disclosed beside the credit on the English hub and in all four localized hubs. The source-page declaration is not treated as independent rights clearance; confirmation remains pending. No other image was introduced, replaced or edited.
+The Kampung Morten Commons page declares CC BY-SA 4.0, but the embedded EXIF in the source image says “Copyright 2019. All rights reserved.” These statements conflict. The source-page declaration is not treated as independent rights clearance; confirmation remains pending. The image has since been retired from the website; the source conflict is kept here and in the generated inventory, not shown as a live image credit.
 
 The remaining derivatives retain the site's existing credit treatment: resize, center crop and WebP conversion, with no other material edits. Their credit links point to the exact Commons source pages and name the listed creator and license.
+
+## Retirement and replacement — 12 October 2026
+
+After the conflict was reviewed, the WebP was removed from every Melaka page image, Open Graph/Twitter image field, structured image object and visible source credit in all five editions. The local file remains byte-for-byte unchanged (SHA-256 above) solely for audit and provenance; the rights question is unresolved and no permission is asserted. The generated inventory marks it `unused`, with zero uses and a null license field; its rights-status note preserves the Commons claim and EXIF conflict.
+
+The live image is now `/assets/images/malaysia-melaka-two-bank-route.svg`, a route-sequence schematic authored for TripDistill. It presents a historic-core start, a checked public riverbank, a conditional public-bridge crossing, Kampung Morten public streets, and a confirmed/default return with an optional opposite-bank choice. It does not draw measured geography, bearings, exact street positions, a scale or current access. The SVG's page alt, visible caption, social image alt and structured ImageObject metadata are localized in all five editions. The source credit says project original, points to the site's Terms of Use, and does not claim a public reuse license.

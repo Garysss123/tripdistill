@@ -27,6 +27,10 @@ const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbr
 const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
 const chinaLhasaRetiredAssetPath = '/assets/images/china-destination-lhasa.webp';
 const chinaLhasaRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg';
+const melakaRetiredAssetPath = '/assets/images/malaysia-melaka-kampung-morten.webp';
+const melakaRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg';
+const melakaDiagramAssetPath = '/assets/images/malaysia-melaka-two-bank-route.svg';
+const melakaDiagramSourceUrl = 'https://tripdistill.com/assets/images/malaysia-melaka-two-bank-route.svg';
 const chinaLhasaDiagramAssetPath = '/assets/images/china-lhasa-preparation.svg';
 const chinaXinjiangAssetPath = '/assets/images/china-destination-xinjiang.webp';
 const chinaXinjiangSourceUrl = 'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg';
@@ -400,7 +404,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 5, 'inventory must count explicitly recorded project-original artwork, including the Somerset planning diagram');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 6, 'inventory must count explicitly recorded project-original artwork, including the Melaka and Somerset planning diagrams');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 526, 'the regenerated merged inventory includes all previously reviewed records; source-page checks do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -408,6 +412,43 @@ try {
   assert.ok(wadjemupDiagram.verificationDetail.includes('not an independent source-page check'));
   assert.ok(wadjemupDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
+  const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
+  assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');
+  assert.equal(melakaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(melakaDiagram.sourceUrl, melakaDiagramSourceUrl);
+  assert.equal(melakaDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(melakaDiagram.license, null, 'the original Melaka SVG must not claim a public photo license');
+  assert.equal(melakaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(melakaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(melakaDiagram.inventoryStatus, 'used');
+  assert.equal(melakaDiagram.useCount, 6);
+  assert.deepEqual(melakaDiagram.routes, [
+    '/malaysia/melaka/',
+    '/malaysia/melaka/bandar-hilir-portuguese-settlement/',
+    '/malaysia/melaka/dutch-square-st-pauls/',
+    '/malaysia/melaka/jonker-harmony-street/',
+    '/malaysia/melaka/melaka-river-kampung-morten/'
+  ]);
+  assert.ok(melakaDiagram.altTexts.some((alt) => /non-scale/i.test(alt)));
+  assert.match(melakaDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.ok(melakaDiagram.verificationDetail.includes('not a geographic map'));
+  assert.ok(melakaDiagram.verificationDetail.includes('no separate reuse license declared'));
+  const melakaRetired = photoRecords.find((item) => item.assetPath === melakaRetiredAssetPath);
+  assert.ok(melakaRetired, 'inventory must retain the conflicted Melaka photo for provenance');
+  assert.equal(fs.existsSync(path.join(root, melakaRetiredAssetPath.slice(1))), true, 'retired Melaka photo file must remain in the repository');
+  assert.equal(melakaRetired.sourceUrl, melakaRetiredSourceUrl);
+  assert.equal(melakaRetired.sourceTitle, 'Waiting for iftar at Kampung Morten');
+  assert.equal(melakaRetired.creator, 'Scrivenshaft');
+  assert.equal(melakaRetired.license, null, 'the conflicting source-page license statement must not be recorded as permission');
+  assert.match(melakaRetired.rightsStatus, /CC BY-SA 4\.0.*EXIF.*Copyright 2019/i);
+  assert.equal(melakaRetired.inventoryStatus, 'unused');
+  assert.equal(melakaRetired.useCount, 0);
+  assert.deepEqual(melakaRetired.routes, []);
+  assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 798, 'the build image count must exclude the preserved Melaka photo');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const chinaLhasaRetired = photoRecords.find((item) => item.assetPath === chinaLhasaRetiredAssetPath);
   assert.ok(chinaLhasaRetired, 'inventory must retain the challenged Lhasa photo for provenance');
   assert.equal(fs.existsSync(path.join(root, chinaLhasaRetiredAssetPath.slice(1))), true);

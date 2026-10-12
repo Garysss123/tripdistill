@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-10-11T23:42:42.920Z",
+  "generatedAt": "2026-10-12T01:29:18.978Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 794,
-    "completeSourceCreatorLicenseRecords": 764,
-    "completeProjectOriginalRightsRecords": 5,
+    "assetFileCount": 795,
+    "completeSourceCreatorLicenseRecords": 763,
+    "completeProjectOriginalRightsRecords": 6,
     "licenseClaimsNotIndependentlyVerified": 526,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "expectedBuildImageCount": 798,
-    "deduplicatedImageCount": 794,
+    "expectedBuildImageCount": 799,
+    "deduplicatedImageCount": 795,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3530,
     "assetsUsedByScannedEnglishPages": 766,
-    "unusedAssetCount": 28,
-    "assetsWithStructuredSourceRecords": 581,
+    "unusedAssetCount": 29,
+    "assetsWithStructuredSourceRecords": 582,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 158,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 239,
-    "metadataOrCreditOnly": 531,
+    "metadataOrCreditOnly": 532,
     "usedAssetsWithoutIndependentSourcePageCheck": 528,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
@@ -39,7 +39,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 794 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 798 build image files."
+    "buildImageCountReconciliation": "The 795 WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 799 build image files."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -12171,7 +12171,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:(Albi)_Cit%C3%A9_%C3%A9piscopale_d%27Albi_-_Le_palais_de_la_Berbie_et_la_cath%C3%A9drale_Ste_C%C3%A9cile.jpg",
           "sourceTitle": "File:(Albi) Cité épiscopale d'Albi - Le palais de la Berbie et la cathédrale Ste Cécile.jpg",
-          "sourcePhotoDate": "2021-08-04",
+          "sourcePhotoDate": null,
           "creditLabel": "(Albi) Cité épiscopale d'Albi - Le palais de la Berbie et la cathédrale Ste Cécile.jpg",
           "creator": "Didier Descouens",
           "license": "CC BY-SA 4.0",
@@ -12180,16 +12180,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": "The English photo-credit row identifies this exact Commons work and provides the source and license links.",
-          "visualReviewStatus": "visually_reviewed_2026-10-11",
-          "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-11",
-          "verificationDetail": "Exact Commons file page checked 2026-10-11: it identifies Didier Descouens, the Berbie Palace and Sainte-Cécile Cathedral photograph, and CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the palace and cathedral together, matching the route subject. The visible credit links the exact source and license and discloses resizing, crop and WebP conversion. This records the source-page declaration, not independent rights-chain clearance.",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": null,
           "useCount": 4,
           "routes": [
             "/france/toulouse-albi-carcassonne/",
@@ -12219,7 +12219,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carcassonne,_the_walls_of_the_medieval_city.JPG",
           "sourceTitle": "File:Carcassonne, the walls of the medieval city.JPG",
-          "sourcePhotoDate": "2008-03-04",
+          "sourcePhotoDate": null,
           "creditLabel": "Carcassonne, the walls of the medieval city.JPG",
           "creator": "H2k4",
           "license": "CC BY-SA 3.0",
@@ -12228,16 +12228,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": "The English photo-credit row identifies this exact Commons work and provides the source and license links.",
-          "visualReviewStatus": "visually_reviewed_2026-10-11",
-          "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-11",
-          "verificationDetail": "Exact Commons file page checked 2026-10-11: it identifies H2k4, the walls of the medieval city of Carcassonne, and CC BY-SA 3.0. The 1600 × 1066 local WebP pixels show the fortified medieval walls and towers, matching the route subject. The visible credit links the exact source and license and discloses resizing, crop and WebP conversion. This records the source-page declaration, not independent rights-chain clearance.",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": null,
           "useCount": 4,
           "routes": [
             "/france/toulouse-albi-carcassonne/",
@@ -12267,7 +12267,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toulouse_Capitole_Night_Wikimedia_Commons.jpg",
           "sourceTitle": "File:Toulouse Capitole Night Wikimedia Commons.jpg",
-          "sourcePhotoDate": "2009-06-23",
+          "sourcePhotoDate": null,
           "creditLabel": "Toulouse Capitole Night Wikimedia Commons.jpg",
           "creator": "Benh LIEU SONG",
           "license": "CC BY-SA 3.0",
@@ -12276,16 +12276,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": "The English photo-credit row identifies this exact Commons work and provides the source and license links.",
-          "visualReviewStatus": "visually_reviewed_2026-10-11",
-          "verificationStatus": "source_page_checked",
-          "verificationDate": "2026-10-11",
-          "verificationDetail": "Exact Commons file page checked 2026-10-11: it identifies Benh LIEU SONG, the Toulouse Capitole night photograph, and CC BY-SA 3.0. The 1600 × 1066 local WebP pixels show Place du Capitole, its illuminated façade and arcades at night; they do not show the Garonne riverfront. The alt now names the visible subject. The visible credit links the exact source and license and discloses resizing, crop and WebP conversion. This records the source-page declaration, not independent rights-chain clearance.",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": null,
           "useCount": 6,
           "routes": [
             "/france/",
@@ -20556,9 +20556,9 @@
           "assetPath": "/assets/images/malaysia-langkawi-cenang.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pantai_Cenang,_Langkawi_01.jpg",
-          "sourceTitle": "Pantai Cenang",
+          "sourceTitle": "Pantai Cenang during storm weather",
           "sourcePhotoDate": null,
-          "creditLabel": "Pantai Cenang",
+          "creditLabel": "Pantai Cenang during storm weather",
           "creator": "Nahid Sultan",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
@@ -20568,7 +20568,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
@@ -20585,11 +20585,11 @@
             "/malaysia/langkawi/pantai-cenang-tengah/"
           ],
           "altTexts": [
-            "Wide sandy shoreline at Pantai Cenang in Langkawi",
-            "Wide Pantai Cenang shoreline beneath a building tropical storm"
+            "Storm clouds and rough water over Pantai Cenang beach",
+            "Wide sandy shoreline at Pantai Cenang in Langkawi"
           ],
           "rawVisibleCredits": [
-            "Pantai Cenang — Nahid Sultan, CC BY-SA 4.0."
+            "Pantai Cenang during storm weather — Nahid Sultan. CC BY-SA 4.0. Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation."
           ]
         }
       ]
@@ -20710,39 +20710,28 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg",
           "sourceTitle": "Waiting for iftar at Kampung Morten",
           "sourcePhotoDate": null,
-          "creditLabel": "Waiting for iftar at Kampung Morten",
+          "creditLabel": null,
           "creator": "Scrivenshaft",
-          "license": "CC BY-SA 4.0",
-          "rightsStatus": null,
+          "license": null,
+          "rightsStatus": "Unresolved: the Commons page claims CC BY-SA 4.0, while the embedded EXIF says “Copyright 2019. All rights reserved.” Neither statement is treated as clearance.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from every live display, metadata field and credit on 2026-10-12 after the page-license/EXIF conflict was confirmed. Rights remain unresolved. The unchanged WebP stays in the repository only for provenance and must not be used on the site.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "The original local derivative is retained byte-for-byte for audit; it is not an approved page asset.",
+          "localSha1": "d8aa5b1ef6a1e8829cb5df24c4062fcd80bb1026",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
-          "routes": [
-            "/malaysia/melaka/",
-            "/malaysia/melaka/bandar-hilir-portuguese-settlement/",
-            "/malaysia/melaka/dutch-square-st-pauls/",
-            "/malaysia/melaka/jonker-harmony-street/",
-            "/malaysia/melaka/melaka-river-kampung-morten/"
-          ],
-          "altTexts": [
-            "Residents gathering near traditional houses in Kampung Morten",
-            "Traditional riverside house and palms at Kampung Morten with modern towers beyond"
-          ],
-          "rawVisibleCredits": [
-            "Waiting for iftar at Kampung Morten — Scrivenshaft, CC BY-SA 4.0."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -20787,8 +20776,7 @@
             "/malaysia/melaka/melaka-river-kampung-morten/"
           ],
           "altTexts": [
-            "Melaka River promenade beside painted historic buildings",
-            "Melaka River beside historic buildings and church towers"
+            "Old riverside houses and a church beside the Melaka River promenade"
           ],
           "rawVisibleCredits": [
             "Melaka River Walk — Philip Nalangan, CC BY 4.0. Resized, center-cropped and converted to WebP; no other material edits."
@@ -20843,6 +20831,53 @@
           "rawVisibleCredits": [
             "Stadthuys complex — CEphoto, Uwe Aranas, CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "7556d7f074ff61424afe3abd7ef0adfcde66018368b77fef29f0cc58331f98b0",
+      "assetPaths": [
+        "/assets/images/malaysia-melaka-two-bank-route.svg"
+      ],
+      "byteLength": 5897,
+      "sourceRecords": [
+        {
+          "sha256": "7556d7f074ff61424afe3abd7ef0adfcde66018368b77fef29f0cc58331f98b0",
+          "assetPath": "/assets/images/malaysia-melaka-two-bank-route.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/malaysia-melaka-two-bank-route.svg",
+          "sourceTitle": "TripDistill original Melaka River and Kampung Morten route schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original route-sequence schematic only; it is not a geographic map, is not to scale, and does not establish live access or exact street positions.",
+          "localSha1": "2ab09c739dae06bcb4d41230759379401274e062",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 6,
+          "routes": [
+            "/malaysia/melaka/",
+            "/malaysia/melaka/bandar-hilir-portuguese-settlement/",
+            "/malaysia/melaka/dutch-square-st-pauls/",
+            "/malaysia/melaka/jonker-harmony-street/",
+            "/malaysia/melaka/melaka-river-kampung-morten/"
+          ],
+          "altTexts": [
+            "Non-scale route schematic: follow one confirmed public Melaka River bank from the historic core, check a public bridge before entering Kampung Morten’s public streets, then return on verified paths; an opposite-bank leg is optional only when open."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },

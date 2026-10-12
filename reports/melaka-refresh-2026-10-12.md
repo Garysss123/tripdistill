@@ -27,18 +27,20 @@ Official reference checks on 12 October 2026:
 - [METMalaysia district forecast](https://www.met.gov.my/en/forecast/weather/district/) is linked for trip-date decisions; no seasonal weather guarantee is stated.
 - [UNESCO's Melaka and George Town listing](https://whc.unesco.org/en/list/1223/) supports the port-city and living multicultural heritage context.
 
-The Traditional Chinese, Japanese, Korean and Thai route and search copy was translated and reviewed in the available gpt6luna workflow. The active environment offered no Max route. No separate reviewer or extra translation-QA pass is claimed. Two identical shared date/caution source strings reuse their existing reviewed translations from the integrated Langkawi batch; they were not retranslated here. Old reviewed batches had duplicate, superseded Melaka source keys removed; four otherwise-unused catalog labels also had to be removed to satisfy the repository's stale-key audit. The 55,208-string catalogs remain complete in each locale.
+The Traditional Chinese, Japanese, Korean and Thai route, image alt, caption and provenance copy was translated and reviewed in the available gpt6luna workflow. The active environment offered no Max route. No separate reviewer or extra translation-QA pass is claimed. Two identical shared date/caution source strings reuse their existing reviewed translations from the integrated Langkawi batch; they were not retranslated here. Old reviewed batches had duplicate, superseded Melaka source keys removed; four otherwise-unused catalog labels also had to be removed to satisfy the repository's stale-key audit. The 55,209-string catalogs remain complete in each locale.
 
 ## Images
 
-All four existing 1440 × 960 WebPs were visually checked against the credited Commons pages; no image bytes changed. Pixel notes, original dimensions, attribution terms and local SHA-256 hashes are in [the photo review](melaka-photo-review-2026-10-12.md). The Kampung Morten Commons page declares CC BY-SA 4.0 while its source EXIF says “Copyright 2019. All rights reserved.” The conflict is disclosed beside the hub credit in all five locales and remains pending; this review is not rights clearance.
+The four existing 1440 × 960 WebPs were visually checked against their credited Commons pages. Pixel notes, original dimensions, attribution terms and local SHA-256 hashes are in [the photo review](melaka-photo-review-2026-10-12.md). The Kampung Morten Commons page declares CC BY-SA 4.0 while its source EXIF says “Copyright 2019. All rights reserved.” On 12 October the disputed WebP was removed from all five live routes, image metadata and credits; the unchanged file remains only in the source tree and rights record for internal provenance, is excluded from `dist`, and carries no license claim. Its rights conflict is unresolved. The replacement `/assets/images/malaysia-melaka-two-bank-route.svg` is an original TripDistill sequence schematic used six times across the same five existing routes. It carries no scale, bearing or surveyed street positions; all localized captions say it is not to scale, and no separate reuse license is declared. The Morten page also visibly credits the three licensed photos used in its related-card row.
 
 ## Verification
 
 - `npm run audit` — passed. Final site audit: 4,560 localized published routes (912 per language), 955 search records per language and 4,560 unique localized titles.
-- `npm run build` — passed. Built `dist` with 5,464 files, including 4,577 HTML files and 798 images; verified all 4,560 sitemap routes.
-- `npm run audit:i18n` — passed: 55,154 required translations in each of `zh-Hant`, `ja`, `ko` and `th`, with zero missing or stale entries.
+- `npm run build` — passed. Built `dist` with 5,464 files, including 4,577 HTML files and 798 images; verified all 4,560 sitemap routes. The retained rights-review WebP is absent from the artifact; the original SVG is present.
+- `npm run audit:i18n` — passed: 55,209 required translations in each of `zh-Hant`, `ja`, `ko` and `th`, with zero missing or stale entries.
 - `npm run test:malaysia-melaka-route-dates` — passed: five existing routes, 25 localized sitemap date records and five search records.
+- `npm run test:malaysia-melaka-photo-schematic` — passed: six live diagram uses, all five locales' alt/caption/Open Graph/Twitter/JSON-LD provenance, no retired-photo references, and retained source bytes/rights record.
+- `npm run audit:photo-license-inventory` — passed: six project-original artwork records; disputed Kampung Morten photo retained as unused with zero live references and no license assertion.
 - `npm run test:malaysia-langkawi-route-dates` — passed: four routes and 20 language editions.
 - `npm run test:malaysia-cameron-route-dates` — passed: four routes and 20 language editions.
 - `npm run test:united-kingdom-somerset-diagram` — passed.

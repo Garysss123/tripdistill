@@ -9,7 +9,25 @@ const imageCredits = {
   penangHill: { src: '/assets/images/malaysia-penang-funicular.webp', alt: 'Penang Hill funicular tracks descend through a green cutting toward George Town and the coast', source: 'https://commons.wikimedia.org/wiki/File:Penang_Hill_Funicular_Railway.jpg', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', label: 'Penang Hill funicular line', creator: 'Songgg12', license: 'CC BY-SA 4.0' },
   melakaSquare: { src: '/assets/images/malaysia-melaka-stadthuys.webp', alt: 'Red Stadthuys buildings beside Dutch Square in Melaka', source: 'https://commons.wikimedia.org/wiki/File:Melaka_Malaysia_Stadthuys-01.jpg', label: 'Stadthuys complex', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0' },
   melakaRiver: { src: '/assets/images/malaysia-melaka-river-walk.webp', alt: 'Old riverside houses and a church beside the Melaka River promenade', source: 'https://commons.wikimedia.org/wiki/File:Malacca_River_Melaka_1.jpg', label: 'Melaka River Walk', creator: 'Philip Nalangan', license: 'CC BY 4.0' },
-  melakaMorten: { src: '/assets/images/malaysia-melaka-kampung-morten.webp', alt: 'Riverside homes, a footbridge and taller buildings beyond the Melaka River at Kampung Morten', source: 'https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg', label: 'Waiting for iftar at Kampung Morten', creator: 'Scrivenshaft', license: 'CC BY-SA 4.0' },
+  melakaMorten: {
+    src: '/assets/images/malaysia-melaka-two-bank-route.svg',
+    alt: 'Non-scale route schematic: follow one confirmed public Melaka River bank from the historic core, check a public bridge before entering Kampung Morten’s public streets, then return on verified paths; an opposite-bank leg is optional only when open.',
+    caption: 'Original TripDistill route schematic · not to scale. It shows route choices, not exact streets; confirm today’s public paths, bridge access and return.',
+    source: 'https://tripdistill.com/assets/images/malaysia-melaka-two-bank-route.svg',
+    sourceTitle: 'TripDistill original Melaka River and Kampung Morten route schematic',
+    label: 'Melaka River & Kampung Morten · two-bank route schematic',
+    creator: 'TripDistill Editorial Team',
+    license: null,
+    rightsStatus: 'Project original; no separate reuse license declared',
+    rightsStatusUrl: 'https://tripdistill.com/terms-of-use/',
+    assetType: 'original-planning-diagram',
+    commercialReuseEligibility: 'unknown',
+    attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
+    editNote: 'Original route-sequence schematic only; it is not a geographic map, is not to scale, and does not establish live access or exact street positions.',
+    localSha1: '2ab09c739dae06bcb4d41230759379401274e062',
+    creditText: 'Project-original SVG route diagram; not a map and not to scale. No separate reuse license is declared.',
+    inventoryStatus: 'used'
+  },
   melakaHouses: { src: '/assets/images/malaysia-melaka.webp', alt: 'Colorful houses lining the Melaka River', source: 'https://commons.wikimedia.org/wiki/File:Malacca_Malaysia_Pittoresque-houses-along-Sungai-Melaka-01.jpg', label: 'Houses along the Melaka River', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0' },
   ipohRail: { src: '/assets/images/malaysia-ipoh.webp', alt: 'White facade and arcades of Ipoh Railway Station', source: 'https://commons.wikimedia.org/wiki/File:Ipoh_Railway_Station_by_Fairus_Khafiz_Photo.jpg', label: 'Ipoh Railway Station', creator: 'Fairuskhafiz', license: 'CC BY-SA 4.0' },
   ipohHall: { src: '/assets/images/malaysia-ipoh-town-hall.webp', alt: 'Colonial-era Ipoh Town Hall in the old town civic quarter', source: 'https://commons.wikimedia.org/wiki/File:Old_Ipoh_Town_Hall.jpg', label: 'Old Ipoh Town Hall', creator: 'Michael', license: 'CC0 1.0' },
@@ -47,6 +65,24 @@ const imageCredits = {
   muluDeer: { src: '/assets/images/malaysia-mulu-deer-cave.webp', alt: 'Immense forest-framed entrance to Deer Cave in Gunung Mulu National Park', source: 'https://commons.wikimedia.org/wiki/File:Deer_Cave_(20758751793).jpg', label: 'Deer Cave entrance', creator: 'John Mason', license: 'CC BY 2.0' },
   muluClearwater: { src: '/assets/images/malaysia-mulu-clearwater-cave.webp', alt: 'Sculpted limestone passage inside Clearwater Cave in Gunung Mulu National Park', source: 'https://commons.wikimedia.org/wiki/File:Clearwater_Cave_(21191773200).jpg', label: 'Clearwater Cave passage', creator: 'John Mason', license: 'CC BY 2.0' },
   muluPinnacles: { src: '/assets/images/malaysia-mulu-pinnacles.webp', alt: 'Sharp limestone pinnacles rising above dense forest on Mount Api', source: 'https://commons.wikimedia.org/wiki/File:Mulu_Pinnacles.jpg', label: 'Mulu Pinnacles on Mount Api', creator: 'Nur Nafis Naim', license: 'CC BY-SA 4.0' }
+};
+
+// Retained only so the license conflict stays attached to the original file's audit record.
+export const retiredMalaysiaImageCredits = {
+  melakaMorten: {
+    src: '/assets/images/malaysia-melaka-kampung-morten.webp',
+    source: 'https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg',
+    label: 'Waiting for iftar at Kampung Morten',
+    creator: 'Scrivenshaft',
+    license: null,
+    assetType: 'photographic-raster',
+    rightsStatus: 'Unresolved: the Commons page claims CC BY-SA 4.0, while the embedded EXIF says “Copyright 2019. All rights reserved.” Neither statement is treated as clearance.',
+    commercialReuseEligibility: 'unknown',
+    inventoryStatus: 'unused',
+    retirementNote: 'Removed from every live display, metadata field and credit on 2026-10-12 after the page-license/EXIF conflict was confirmed. Rights remain unresolved. The unchanged WebP stays in the repository only for provenance and must not be used on the site.',
+    editNote: 'The original local derivative is retained byte-for-byte for audit; it is not an approved page asset.',
+    localSha1: 'd8aa5b1ef6a1e8829cb5df24c4062fcd80bb1026'
+  }
 };
 
 const g = (guide) => guide;

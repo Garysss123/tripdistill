@@ -32,7 +32,6 @@
     "Choose a two-night heritage-core base for one full walking day, or three nights for two full days and the separate Ujong Pasir branch. Melaka Sentral is the intercity coach gateway; BAS.MY M100 and M101 are named city feeder loops, but use the current route map and date-specific schedule before choosing a stop or relying on the last return.": "住兩晚並以古蹟核心區為據點，可安排一個完整步行日；住三晚則有兩個完整日程，並可另訪 Ujong Pasir。Melaka Sentral 是城際客運門戶；BAS.MY 的 M100、M101 是市區接駁環線，但選站或仰賴末班車前，請先查看最新路線圖和出行當日時刻。",
     "Walk from Dutch Square up St Paul’s Hill and down to Porta de Santiago; choose one open museum and keep the exposed civic route to its own half-day.": "從荷蘭廣場步行上聖保羅山，再下行至聖地牙哥城門；挑選一間當日開放的博物館，並為曝曬的市政區步行路線預留半天。",
     "Read the shopfronts of Jalan Hang Jebat and Heeren Street, then follow the named Harmony Street lanes without treating homes or active worship as market scenery.": "沿 Jalan Hang Jebat 和 Heeren Street 觀察店屋立面，再走訪標示清楚的和諧街巷弄；不要把民宅或進行中的宗教活動當成市集景觀。",
-    "Riverside homes, a footbridge and taller buildings beyond the Melaka River at Kampung Morten": "Kampung Morten 的馬六甲河畔民宅、小橋與遠處較高的建築",
     "Walk one riverbank from the historic core, cross once toward Kampung Morten’s public streets, and return before rain or a missed transfer turns the river into a dead end.": "從歷史核心區沿一側河岸步行，過一次橋前往 Kampung Morten 的公共街道，並在降雨或錯過轉乘使河岸成為死路前折返。",
     "Old riverside houses and a church beside the Melaka River promenade": "馬六甲河步道旁的舊河岸房屋與教堂",
     "Keep the civic harbor quarter and Ujong Pasir as two road-linked visits: choose one current Bandar Hilir interior, then confirm a public venue and return in the living Portuguese Settlement.": "把市政港口區與 Ujong Pasir 視為兩個需以公路相連的行程：先在 Bandar Hilir 選一處目前開放的室內景點，再確認葡萄牙聚落中可供公眾造訪的地點與回程方式。",
@@ -140,11 +139,9 @@
     "Do not assume a recurring schedule. Tourism Melaka’s calendar showed no dated 2026 listing when reviewed on 12 October 2026; verify your exact date with the official calendar or event organizer.": "不要假設活動固定定期舉辦。2026 年 10 月 12 日查閱時，Tourism Melaka 行事曆沒有列出具體日期；請透過官方行事曆或主辦方確認你的出遊日期。",
     "Shorten the exposed hill, use only an indoor venue whose current opening you confirmed, and keep the river route to one public bank. Check the district forecast and do not assume the river cruise is operating.": "縮短曝曬的山丘路段，只前往已確認當日開放的室內景點，河岸行程則限於單側公共步道。查看分區天氣預報，也不要假設河上遊船有營運。",
     "No. It is an optional river view; its current operation, boarding point and fare were not independently confirmed on 12 October 2026. A public-bank walk is the fallback.": "不是。遊船只是觀賞河景的選項；截至 2026 年 10 月 12 日，營運狀況、登船點與票價均未能獨立確認。沿公共河岸步行仍可作為備案。",
-    "Planning sources and visible image pixels were reviewed on 12 October 2026. The BAS.MY portal identifies M100 and M101, but route-specific stops, date-specific schedules and fares were not independently confirmed; venue access, market dates and cruise operations also need a live check. The Kampung Morten Commons page states CC BY-SA 4.0, while the file’s embedded EXIF says “Copyright 2019. All rights reserved”; that rights discrepancy remains unresolved. Other photographs were resized, center-cropped to 1440 × 960 and converted to WebP; no other material edits were made.": "規劃資料來源與圖片可見像素已於 2026 年 10 月 12 日查閱。BAS.MY 網站列出 M100 與 M101，但各路線的實際站點、指定日期的時刻表及票價未能獨立確認；景點開放、市集日期與遊船營運也需要即時查核。Kampung Morten 的 Commons 頁面標示 CC BY-SA 4.0，但檔案內嵌 EXIF 註明「Copyright 2019. All rights reserved」；授權資訊矛盾，尚未解決。其他照片僅調整尺寸、中央裁切為 1440 × 960 並轉成 WebP，沒有其他實質修改。",
     "BAS.MY Melaka — route map and service notices": "BAS.MY Melaka — 路線圖與服務公告",
     "Tourism Melaka — accommodation directory (2025 edition)": "Tourism Melaka — 住宿名錄（2025 年版）",
     "Tourism Melaka — event calendar": "Tourism Melaka — 活動行事曆",
-    "— Scrivenshaft, page says CC BY-SA 4.0; embedded EXIF conflicts, rights check pending.": "— Scrivenshaft；來源頁標示 CC BY-SA 4.0，但內嵌 EXIF 資訊矛盾，授權仍待查。",
     "How many nights support the civic route?": "市政區路線安排幾晚較合適？",
     "Two nights give you an arrival window, one full day for the heritage core and a departure window. A one-night stop is possible if the coach times leave a real walking day; drop the outer neighborhoods.": "住兩晚可安排抵達時段、一個完整古蹟核心區日程及離開時段。若客運時間能留下真正可用的步行日，只住一晚也可行，但應省略外圍街區。",
     "Which museum should I choose?": "該選哪間博物館？",
@@ -256,6 +253,14 @@
     "Current access": "目前開放狀況",
     "The official accommodation list and tourist attraction pages are not live operating notices. Check the museum, settlement venue and event host directly.": "官方住宿名錄與觀光景點介紹頁不是即時營運公告。請直接向博物館、聚落場館及活動主辦方查證。",
     "Community conduct": "社區禮儀",
-    "Treat community history as lived heritage: seek consent for portraits, follow worship guidance and choose a meal because the venue is open—not because an old list implies a cultural show.": "把社群歷史視為延續至今的生活遺產：拍攝人像前徵求同意、遵循宗教場所指引，並依場館是否營業選擇用餐，而不是因舊名錄暗示有文化表演就前往。"
+    "Treat community history as lived heritage: seek consent for portraits, follow worship guidance and choose a meal because the venue is open—not because an old list implies a cultural show.": "把社群歷史視為延續至今的生活遺產：拍攝人像前徵求同意、遵循宗教場所指引，並依場館是否營業選擇用餐，而不是因舊名錄暗示有文化表演就前往。",
+    "Non-scale route schematic: follow one confirmed public Melaka River bank from the historic core, check a public bridge before entering Kampung Morten’s public streets, then return on verified paths; an opposite-bank leg is optional only when open.": "非比例路線示意：從歷史城區沿已確認可通行的馬六甲河公共河岸步行；先確認公共橋梁開放，再進入甘榜摩登的公共街道，之後沿已確認的路線返回；對岸路段只在確定開放時選用。",
+    "Original TripDistill route schematic · not to scale. It shows route choices, not exact streets; confirm today’s public paths, bridge access and return.": "TripDistill 原創路線示意圖・不按比例。圖中呈現路線選擇，並非精確街道；請確認當日公共步道、橋梁通行及回程方式。",
+    "Melaka River & Kampung Morten · two-bank route schematic": "馬六甲河與甘榜摩登・兩岸路線示意圖",
+    "Project-original SVG route diagram; not a map and not to scale. No separate reuse license is declared.": "TripDistill 原創 SVG 路線示意圖；不是地圖，也不按比例。未另行提供再利用授權。",
+    "Official sources and original diagram": "官方來源與原創示意圖",
+    "Planning facts and public route details were reviewed on 12 October 2026. The original diagram is a non-scale planning schematic, not navigation; confirm the public path, bridge access and return route before walking.": "規劃資訊與公共路線細節已於2026年10月12日檢視。此原創圖僅作非比例行程示意，並非導航地圖；步行前請確認公共步道、橋梁是否開放及回程路線。",
+    "TripDistill Editorial Team": "TripDistill 編輯團隊",
+    "Planning references and the three displayed Commons photographs were checked on 12 October 2026. BAS.MY identifies M100 and M101, but route-specific stops, dated schedules and fares were not independently confirmed; venue access, market dates and cruise operations need a live check. The original TripDistill route schematic is not to scale and does not confirm live path or bridge access. Displayed photographs were resized, center-cropped to 1440 × 960 and converted to WebP; no other material edits were made.": "規劃資料與展示的三張 Commons 照片已於2026年10月12日查核。BAS.MY列出M100與M101，但各路線站點、指定日期班次與票價未獲獨立確認；景點開放、市集日期及遊船營運需即時查證。TripDistill原創路線圖不按比例，亦不確認現場步道或橋梁是否開放。展示照片僅調整尺寸、置中裁切為1440 × 960並轉為WebP，沒有其他實質修改。"
   }
 }
