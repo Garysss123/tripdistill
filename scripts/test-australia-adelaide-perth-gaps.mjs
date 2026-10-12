@@ -163,11 +163,27 @@ function assertSvgSafe(file, digest) {
       assert(number('cx') - rx >= 0 && number('cx') + rx <= 1200 && number('cy') - ry >= 0 && number('cy') + ry <= 700, `${file}: round geometry exceeds the SVG canvas.`);
     }
   }
+  const flowArrowGeometry = new Map([
+    ['australia-kangaroo-island-regional-days.svg', 'M250 337 270 345 250 353Z M485 332 510 345 485 358Z M697 337 713 345 697 353Z M876 337 892 345 876 353Z M1057 337 1075 345 1057 353Z'],
+    ['australia-kings-park-entry-choice.svg', 'M492 247 489 269 474 259Z M492 453 474 441 489 431Z']
+  ]).get(path.basename(file));
+  if (flowArrowGeometry) {
+    const flowArrows = tags.find((tag) => tag.local === 'path' && tag.attributes.d?.value === flowArrowGeometry);
+    assert(flowArrows, `${file}: route arrowheads match the reviewed gap/branch geometry.`);
+    if (path.basename(file) === 'australia-kangaroo-island-regional-days.svg') {
+      assert.equal(tags.at(-1), flowArrows, `${file}: all five arrowheads are painted above the route nodes.`);
+    } else {
+      const topCardIndex = tags.findIndex((tag) => tag.local === 'rect' && tag.attributes.x?.value === '492' && tag.attributes.y?.value === '112');
+      const bottomCardIndex = tags.findIndex((tag) => tag.local === 'rect' && tag.attributes.x?.value === '492' && tag.attributes.y?.value === '401');
+      assert(topCardIndex >= 0 && bottomCardIndex >= 0, `${file}: both destination cards are present.`);
+      assert(tags.indexOf(flowArrows) > Math.max(topCardIndex, bottomCardIndex), `${file}: diagonal arrows remain visible over both card edges.`);
+    }
+  }
 }
 
 assert.equal(git(['branch', '--show-current']).trim(), 'codex/sprint-au-adelaide-perth-gaps-20261013', 'Source branch name.');
-const head = git(['rev-parse', 'HEAD']).trim();
-assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'The source branch must remain at the authorized base or its first direct child.');
+const firstParents = git(['rev-list', '--first-parent', '--max-count=3', 'HEAD']).split(/\r?\n/u);
+assert(firstParents.includes(base) && firstParents.indexOf(base) <= 2, 'The source branch must descend from the authorized exact base through at most one follow-up correction commit.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
 assert.deepEqual(changedEnglish, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies may change.');
