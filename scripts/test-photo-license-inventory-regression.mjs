@@ -304,7 +304,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 513, 'the merged inventory records Côte d’Azur, Marseille, Peak District, Provence inland, two Zermatt and three Interlaken-area photo source-page checks while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 514, 'the merged inventory records the supplemental Graubünden original diagram plus Côte d’Azur, Marseille, Peak District, Provence inland, two Zermatt and three Interlaken-area photo source-page checks while unresolved claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -519,7 +519,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 14, 'inventory must count project-original artwork including Bern/Emmental, Montreux, Melaka, Somerset, Peak District, the Malaysia diagrams, Geneva, Lucerne, Zermatt and St Gallen/Appenzell');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 15, 'inventory must count project-original artwork including Graubünden, Bern/Emmental, Montreux, Melaka, Somerset, Peak District, the Malaysia diagrams, Geneva, Lucerne, Zermatt and St Gallen/Appenzell');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 509, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District, Provence inland, two Zermatt and three Interlaken-area photo source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -646,7 +646,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 806, 'the Bern/Emmental, Montreux, Geneva, Lucerne, Zermatt, St Gallen/Appenzell and Malaysia original diagrams must be included while the preserved rights-review photos remain excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 807, 'the Graubünden, Bern/Emmental, Montreux, Geneva, Lucerne, Zermatt, St Gallen/Appenzell and Malaysia original diagrams must be included while the preserved rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

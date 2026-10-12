@@ -156,9 +156,16 @@ const stGallenRoutes = [
   '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
 ];
 const stGallenLocs = new Set(stGallenRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+const graubuendenRoutes = [
+  '/switzerland/graubunden-corridors/',
+  '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+  '/switzerland/graubunden-corridors/davos-parsenn/',
+  '/switzerland/graubunden-corridors/arosa-line/'
+];
+const graubuendenLocs = new Set(graubuendenRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
 const changedDates = new Set([...currentMap].filter(([loc, date]) => baseMap.get(loc) !== date).map(([loc]) => loc));
-assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
+assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs, ...graubuendenLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
 const oldPhoto = switzerlandRetiredImageRecords.montreuxRochersTrainMismatch;

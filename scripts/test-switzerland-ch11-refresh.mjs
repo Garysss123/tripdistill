@@ -18,7 +18,9 @@ const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-
 const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
 const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
 const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes]);
+const ch13Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'graubunden-corridors');
+const ch13Routes = [`/switzerland/${ch13Cluster.slug}/`, ...ch13Cluster.guides.map((guide) => guide.url)];
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
@@ -59,7 +61,7 @@ for (const route of allRoutes.filter((item) => !preservedOrLaterRoutes.has(item)
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains byte-identical to the verified CH10 source`);
 }
 
-const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes].map((route) => `${prefix}${route}`)));
+const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes, ...ch13Routes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(read('sitemap.xml'));
@@ -188,4 +190,4 @@ if (!englishOnly) {
   }
 }
 
-console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, 40 dated CH11/CH12 edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and all other non-target Swiss pages preserved.`);
+console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, 60 dated CH11/CH12/CH13 edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and all other non-target Swiss pages preserved.`);

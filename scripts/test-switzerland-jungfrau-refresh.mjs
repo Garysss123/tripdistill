@@ -127,13 +127,19 @@ const baselRoutes = [
   '/switzerland/basel-rhine/art-museums/',
   '/switzerland/basel-rhine/kleinbasel-border-rhine/'
 ];
+const graubuendenRoutes = [
+  '/switzerland/graubunden-corridors/',
+  '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+  '/switzerland/graubunden-corridors/davos-parsenn/',
+  '/switzerland/graubunden-corridors/arosa-line/'
+];
 for (const locale of locales) {
-  for (const route of [...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes]) {
+  for (const route of [...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...graubuendenRoutes]) {
     expectedDateChanges.add(`https://tripdistill.com${locale.prefix}${route}`);
   }
 }
 const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 185, 'the reviewed Switzerland clusters and overview routes retain their five-language date history through CH11');
+assert.equal(dateChanges.length, 205, 'the reviewed Switzerland clusters and overview routes retain their five-language date history through CH13');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `review date for ${url}`);

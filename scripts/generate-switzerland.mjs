@@ -136,7 +136,7 @@ function guidePage(guide, cluster, guideIndex) {
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const localReviewDate = pageReviewDate(cluster);
   const pageSources = guide.sources || cluster.sources;
-  const imageReviewTerm = cluster.guides.some((item) => item.image.assetType === 'original-planning-diagram') ? 'image rights notes' : 'image licensing';
+  const imageReviewTerm = guide.diagram || cluster.guides.some((item) => item.image.assetType === 'original-planning-diagram') ? 'image rights notes' : 'image licensing';
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
 <head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Switzerland`, description, route: guide.url, image: guide.image, field: true })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide, cluster))}</script></head>
@@ -148,12 +148,13 @@ ${shellStart(`<main id="main-content" class="page-content ch-field" data-ch-fami
   ${ad}
   <section class="ch-orientation"><div><span class="ch-label">Access first</span><h2>Know where the day actually begins.</h2><p>${escapeHtml(guide.access)}</p></div><div><span class="ch-label">Trade-off</span><h2>What this route gives up.</h2><p>${escapeHtml(guide.tradeoff)}</p></div><aside><span class="ch-label">Time envelope</span><p>${escapeHtml(guide.duration)}</p><span class="ch-label">Combine only when it helps</span><p>${escapeHtml(guide.combine)}</p></aside></section>
   ${regionalContext(guide, cluster)}
+${guide.diagram ? `  <figure class="ch-diagram-figure"><img src="${escapeHtml(guide.diagram.src)}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.diagram.alt)}"><figcaption><strong>${escapeHtml(guide.diagram.displayTitle)}</strong> · ${imageFigureCaption(guide.diagram)}</figcaption>${imageFigureNote(guide.diagram)}</figure>` : ''}
   <section class="ch-route" id="route"><header><span>Four-stage operating line</span><h2>Arrive, orient, commit, then protect the return.</h2><p>${escapeHtml(guide.verify)}</p></header><ol>${guide.route.map(([label, title, copy], index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section>
   <section class="ch-fallback"><div><span class="ch-label">Fallback</span><h2>A useful day even when the postcard disappears.</h2><p>${escapeHtml(guide.fallback)}</p></div><blockquote>${escapeHtml(guide.verify)}</blockquote></section>
   <section class="ch-watch" id="failure-points"><header><span>Three failure points</span><h2>Change the plan before the problem compounds.</h2></header><div>${guide.watch.map(([title, copy], index) => `<article><b>0${index + 1}</b><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="ch-related"><header><span>Same regional timetable</span><h2>Other ways to use ${escapeHtml(cluster.name)}.</h2></header><div>${cluster.guides.filter((item) => item.slug !== guide.slug).map((item) => `<a href="${item.url}"><img src="${item.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(item.image.alt)}"><div><small>${escapeHtml(item.instrument)}</small><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(compact(item.summary, 120))}</p>${imageCardNote(item.image)}<strong>Open this guide →</strong></div></a>`).join('')}</div></section>
   <section class="ch-faq"><header><span>Planning answers</span><h2>${escapeHtml(guide.name)} FAQ</h2></header><div class="faq-list">${guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>${imageCreditHeading(cluster.guides.map((item) => item.image))}</h2><p>Planning facts and ${imageReviewTerm} were reviewed on ${localReviewDate}. Lift, boat, trail, weather and transport conditions can change quickly; verify the linked operator or authority before travel.</p><ul>${sourceList(pageSources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}</ul><span class="review-note">Editorial review: ${localReviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>${imageCreditHeading(cluster.guides.map((item) => item.image))}</h2><p>Planning facts and ${imageReviewTerm} were reviewed on ${localReviewDate}. Lift, boat, trail, weather and transport conditions can change quickly; verify the linked operator or authority before travel.</p><ul>${sourceList(pageSources)}${cluster.guides.map((item) => imageCredit(item.image)).join('')}${guide.diagram ? imageCredit(guide.diagram) : ''}</ul><span class="review-note">Editorial review: ${localReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -312,13 +313,13 @@ function updateFooter() {
   fs.writeFileSync(file, html);
 }
 
-function updateSearch() {
+function updateSearch(selectedClusters = switzerlandClusters, includeCountry = true) {
   const file = path.join(root, 'data', 'search-index.json');
   const existing = JSON.parse(fs.readFileSync(file, 'utf8'));
-  const records = [
+  const records = includeCountry ? [
     { title: 'Switzerland Travel Guide', url: '/switzerland/', parent: 'Europe', type: 'Country', summary: 'Plan Switzerland through sixteen complete regional hubs and forty-eight focused guides built around rail, lakes, valleys and mountain access.', keywords: ['Switzerland', 'Swiss travel', 'Europe', 'Swiss rail'] }
-  ];
-  for (const cluster of switzerlandClusters) {
+  ] : [];
+  for (const cluster of selectedClusters) {
     records.push({ title: cluster.name, url: `/switzerland/${cluster.slug}/`, parent: 'Switzerland', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
     for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
   }
@@ -373,25 +374,40 @@ function updateAbout() {
   fs.writeFileSync(file, html);
 }
 
-for (const [clusterIndex, cluster] of switzerlandClusters.entries()) {
+const selectedSlug = process.argv.find((value) => value.startsWith('--cluster='))?.slice('--cluster='.length);
+if (selectedSlug && !switzerlandClusters.some((cluster) => cluster.slug === selectedSlug)) {
+  throw new Error(`Unknown Switzerland cluster: ${selectedSlug}`);
+}
+const selectedClusters = selectedSlug
+  ? switzerlandClusters.filter((cluster) => cluster.slug === selectedSlug)
+  : switzerlandClusters;
+const selectedGuides = selectedClusters.flatMap((cluster) => cluster.guides);
+
+for (const cluster of selectedClusters) {
+  const clusterIndex = switzerlandClusters.indexOf(cluster);
   const file = routeFile(`/switzerland/${cluster.slug}/`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, hubPage(cluster, clusterIndex));
 }
-for (const [guideIndex, guide] of switzerlandGuides.entries()) {
+for (const guide of selectedGuides) {
+  const guideIndex = switzerlandGuides.indexOf(guide);
   const cluster = switzerlandClusters.find((item) => item.slug === guide.hubSlug);
   const file = routeFile(guide.url);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, guidePage(guide, cluster, guideIndex));
 }
-const countryFile = routeFile('/switzerland/');
-fs.mkdirSync(path.dirname(countryFile), { recursive: true });
-fs.writeFileSync(countryFile, countryPage());
-updateSidebar();
-updateHeader();
-updateFooter();
-updateSearch();
-updateHome();
-updateAbout();
-
-console.log(`Generated Switzerland: 1 country page, ${switzerlandClusters.length} hubs and ${switzerlandGuides.length} focused guides (65 English routes), plus Europe navigation, home, about and search integration.`);
+if (selectedSlug) {
+  updateSearch(selectedClusters, false);
+  console.log(`Generated Switzerland cluster ${selectedSlug}: one existing hub and ${selectedGuides.length} existing focused routes; shared site surfaces were not rewritten.`);
+} else {
+  const countryFile = routeFile('/switzerland/');
+  fs.mkdirSync(path.dirname(countryFile), { recursive: true });
+  fs.writeFileSync(countryFile, countryPage());
+  updateSidebar();
+  updateHeader();
+  updateFooter();
+  updateSearch();
+  updateHome();
+  updateAbout();
+  console.log(`Generated Switzerland: 1 country page, ${switzerlandClusters.length} hubs and ${switzerlandGuides.length} focused guides (65 English routes), plus Europe navigation, home, about and search integration.`);
+}

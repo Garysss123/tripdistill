@@ -375,7 +375,8 @@ export const switzerlandImageManifest = {
   },
   "graubunden-corridors/chur-rhine-gorge": {
     "src": "/assets/images/switzerland-graubunden-corridors-chur-rhine-gorge.webp",
-    "alt": "Chur old town and Graubünden mountain landscape",
+    "alt": "Chur Old Town seen from above, with the urban railway and river edge",
+    "displayTitle": "Chur Old Town, railway and river edge",
     "source": "https://commons.wikimedia.org/wiki/File:Chur_(Altstadt).jpg",
     "label": "Chur (Altstadt).jpg",
     "creator": "Freaktalius",
@@ -383,9 +384,26 @@ export const switzerlandImageManifest = {
     "commonsTitle": "File:Chur (Altstadt).jpg",
     "remoteSha1": "1c1bd364fecea5f7ce64e4b0186db736af7d6eb9"
   },
+  "graubunden-corridors/corridor-choice-diagram": {
+    "src": "/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+    "alt": "Original schematic comparing the Rhine Gorge, Davos/Parsenn and Chur–Arosa corridors from Chur, with a low-elevation old-town fallback; conceptual route order, not to scale",
+    "displayTitle": "Graubünden corridor-choice schematic",
+    "diagramNote": "Five-language route and color key: red marks the Rhine Gorge rail or walking branch, gold marks the Davos/Parsenn elevation route, and teal marks the Chur–Arosa rail branch. Chur’s lower old town is the weather alternative. The branch order is conceptual, not geographic or to scale, and does not show live service status.",
+    "diagramCardNote": "Five-language key: red Rhine Gorge, gold Davos/Parsenn, teal Chur–Arosa; Chur old town is the low-weather fallback. Concept only, not to scale or live service status.",
+    "source": "https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+    "label": "Graubünden corridor-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Conceptual corridor-choice schematic only; not a geographic map and not to scale.",
+    "localSha1": "02f05c2b62f632289bef849a8cfb9d817c024b7f"
+  },
   "graubunden-corridors/davos-parsenn": {
     "src": "/assets/images/switzerland-graubunden-corridors-davos-parsenn.webp",
     "alt": "Davos valley and surrounding mountains in Graubünden",
+    "displayTitle": "Davos valley and mountains from Älplihorn",
     "source": "https://commons.wikimedia.org/wiki/File:Davos_as_seen_from_%C3%84lplihorn_(summer).jpg",
     "label": "Davos as seen from Älplihorn (summer).jpg",
     "creator": "Capricorn4049",
@@ -396,6 +414,7 @@ export const switzerlandImageManifest = {
   "graubunden-corridors/arosa-line": {
     "src": "/assets/images/switzerland-graubunden-corridors-arosa-line.webp",
     "alt": "Arosa mountain resort and lake in Graubünden",
+    "displayTitle": "Arosa resort and lake",
     "source": "https://commons.wikimedia.org/wiki/File:Arosa,_Switzerland_-_Lake_(2).jpg",
     "label": "Arosa, Switzerland - Lake (2).jpg",
     "creator": "Aileen's Pics",
