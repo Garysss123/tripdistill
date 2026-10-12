@@ -1156,6 +1156,13 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp', '2026-10-12'],
+  ['/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp', '2026-10-12'],
+  ['/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp', '2026-10-12'],
+  ['/assets/images/australia-adelaide-hills-route-choice.svg', '2026-10-12'],
+  ['/assets/images/australia-kangaroo-island-regional-days.svg', '2026-10-12'],
+  ['/assets/images/australia-kings-park-entry-choice.svg', '2026-10-12'],
+  ['/assets/images/australia-perth-coast-transit-choice.svg', '2026-10-12'],
   ['/assets/images/australia-blue-mountains-nsw-coast-katoomba-echo-point.webp', '2026-10-12'],
   ['/assets/images/australia-blue-mountains-nsw-coast-wentworth-falls-tableland.webp', '2026-10-12'],
   ['/assets/images/australia-blue-mountains-nsw-coast-blackheath-grose-valley.webp', '2026-10-12'],

@@ -76,10 +76,28 @@ const laterGoldCoastRoutes = [
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
   '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
 ];
+const laterAustraliaGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/',
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+];
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14Set = new Set(ch14Routes);
 const ch14NewDateRoutes = ch14Routes.slice(1);
-const newSwissSearchRoutes = new Set([...targetRoutes, ...graubuendenRoutes, ...ch11Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa13Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...switzerlandCh15Routes]);
+const newSwissSearchRoutes = new Set([...targetRoutes, ...graubuendenRoutes, ...ch11Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa13Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterAustraliaGapRoutes, ...switzerlandCh15Routes]);
 const cluster = switzerlandClusters.find((item) => item.slug === 'st-gallen-appenzell');
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((item) => [`/switzerland/${item.slug}/`, ...item.guides.map((guide) => guide.url)])];
 const batchMarkers = ['-ch12-st-gallen-pages-20261012.json', '-ch12-st-gallen-search-20261012.json'];

@@ -9,6 +9,7 @@ import { canadaClusters } from '../data/canada-guides.mjs';
 import {
   canadaNewSubstantiveRoutes,
   completedCanadaRouteCount,
+  australiaNewSubstantiveRoutes,
   correctedCoverageCheckpoints,
   correctedSubstantiveBaseline,
   reportedSubstantiveBaseline,
@@ -64,7 +65,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -79,6 +80,11 @@ assert(canadaNewSubstantiveRoutes.every((route) => canadaRoutes.includes(route))
 for (const route of canadaNewSubstantiveRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Canada ledger path is missing: ${route}`);
 }
+assert.equal(australiaNewSubstantiveRoutes.length, 8, 'The two Australia gap batches add eight exact substantive body improvements, not routes.');
+assert.equal(new Set(australiaNewSubstantiveRoutes).size, 8, 'Australia additions must be unique.');
+for (const route of australiaNewSubstantiveRoutes) {
+  assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Australia ledger path is missing: ${route}`);
+}
 
 const originalOverview = git(['show', `${originalAtlas}:vietnam/index.html`]);
 const reviewedOverview = git(['show', `${reviewedAtlas}:vietnam/index.html`]);
@@ -88,4 +94,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 additions including the substantive overview; corrected checkpoints through 732; unchanged non-card Vietnam overview copy.');
+console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 improvements; Australia’s exact eight late gap improvements; corrected checkpoints through 740; unchanged non-card Vietnam overview copy.');

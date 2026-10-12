@@ -50,6 +50,18 @@ const laterBrisbaneGoldCoastGapRoutes = [
   '/australia/gold-coast-scenic-rim/springbrook-national-park/',
   '/australia/gold-coast-scenic-rim/lamington-national-park/'
 ];
+const laterMelbourneOceanGapRoutes = [
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/'
+];
+const laterAdelaidePerthGapRoutes = [
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+];
 const laterCanadaCa13Routes = [
   '/canada/saguenay-tadoussac/',
   '/canada/saguenay-tadoussac/tadoussac-marine/',
@@ -303,7 +315,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...laterSydneyGapRoutes, ...laterNswGapRoutes, ...laterBrisbaneGoldCoastGapRoutes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13–CA18, CH14/CH15 and current AU gap search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...laterSydneyGapRoutes, ...laterNswGapRoutes, ...laterBrisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13–CA18, CH14/CH15 and current AU gap search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);
@@ -312,7 +324,7 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSydneyGapRoutes, ...laterNswGapRoutes, ...laterBrisbaneGoldCoastGapRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const expectedLastmod = [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSydneyGapRoutes, ...laterNswGapRoutes, ...laterBrisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only the selected Blue Mountains, later Great Ocean Road, Gold Coast, Cairns and current AU gap routes in five editions may receive a new Australia sitemap lastmod.');

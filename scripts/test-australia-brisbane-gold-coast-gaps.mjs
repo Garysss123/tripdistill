@@ -115,7 +115,17 @@ function sitemapEntries(xml) {
 
 const englishHtml = git(['diff', '--name-only', taskStart, '--', 'australia']).split(/\r?\n/)
   .filter((file) => file.endsWith('.html')).sort();
-assert.deepEqual(englishHtml, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies may change from the exact sprint base.');
+const laterAustraliaBodyRoutes = [
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+];
+assert.deepEqual(englishHtml, [...routes, ...laterAustraliaBodyRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and eight subsequent AU gap improvements may change from the exact sprint base.');
 
 const baseSearch = JSON.parse(git(['show', `${taskStart}:data/search-index.json`]));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));

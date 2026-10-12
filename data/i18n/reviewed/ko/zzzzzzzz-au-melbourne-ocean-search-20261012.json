@@ -1,0 +1,34 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Carlton Gardens and Melbourne Museum with one connected Fitzroy or Collingwood street. Choose two precincts, check the live tram return beyond the Free Tram Zone, and verify market or event dates before going.": "Carlton Gardens와 Melbourne Museum에 연결하기 쉬운 Fitzroy 또는 Collingwood 거리 한 곳을 조합해 계획하세요. 구역은 두 곳으로 정하고 무료 트램 구역 밖의 실시간 귀가 노선을 확인하세요. 출발 전 시장이나 행사 날짜도 검증하세요.",
+    "melbourne museum": "멜버른 박물관",
+    "carlton gardens": "칼턴 가든스",
+    "brunswick street": "브런즈윅 스트리트",
+    "smith street": "스미스 스트리트",
+    "The Penguin Parade is a booked sunset event, not an easy Melbourne day trip: confirm the evening transport because V/Line serves Cowes but has no parade-end return. Add Nobbies only if current access and weather suit.": "Penguin Parade는 예약해야 하는 일몰 행사이지 멜버른에서 가볍게 다녀오는 당일치기 일정이 아닙니다. V/Line은 카우즈까지 운행하고 퍼레이드 종료 후 귀가편이 없으므로 저녁 교통을 확정하세요. 노비스는 당일 접근과 날씨가 적절할 때만 추가하세요.",
+    "penguin parade": "펭귄 퍼레이드",
+    "nobbies boardwalk": "노비스 산책로",
+    "cowes bus": "카우즈행 버스",
+    "phillip island wildlife": "필립섬 야생동물",
+    "From Lorne, choose Sheoak Falls for a short creek walk or Erskine Falls for a five-minute lookout plus optional 230 stairs. Separate the farther Hopetoun and Triplet Falls from this day.": "론에서는 짧은 계곡 산책을 하려면 시아크 폭포를, 5분 거리 전망대에 원할 때 230개 계단을 더 걸을 수 있는 얼스킨 폭포를 고르세요. 더 먼 호프턴·트리플렛 폭포는 다른 날로 분리하세요.",
+    "erskine falls stairs": "얼스킨 폭포 계단",
+    "sheoak falls walk": "시아크 폭포 산책로",
+    "lorne coach": "론행 장거리 버스",
+    "great otway waterfall day": "그레이트 오트웨이 폭포 하루 코스",
+    "Use Halls Gap as a base for one Grampians subregion and choose only an open walk or lookout. Mackenzie Falls precinct is closed through end-2026; check the dated Parks Victoria alerts, fire risk and trail access.": "홀스갭을 거점으로 그램피언스 한 구역을 정하고 열린 산책로 또는 전망대만 선택하세요. 맥켄지 폭포 구역은 2026년 말까지 폐쇄되어 있습니다. 날짜가 표시된 Parks Victoria 공지, 화재 위험, 산책로 접근을 확인하세요.",
+    "halls gap walks": "홀스갭 산책로",
+    "boroka lookout": "보로카 전망대",
+    "reeds lookout": "리즈 전망대",
+    "mackenzie falls closure": "맥켄지 폭포 폐쇄"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Luna requested, exact runtime identity unverified",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact runtime identity unverified",
+    "independentSecondModel": false
+  }
+}

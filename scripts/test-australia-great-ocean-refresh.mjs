@@ -73,7 +73,15 @@ const laterAustraliaGapRoutes = [
   '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
   '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
   '/australia/gold-coast-scenic-rim/springbrook-national-park/',
-  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+  '/australia/gold-coast-scenic-rim/lamington-national-park/',
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
 const laterSwitzerlandCh14Routes = [
   '/switzerland/',
@@ -211,10 +219,11 @@ const localizedReviewDate = {
   ko: '2026년 10월 12일',
   th: '12 ตุลาคม 2026'
 };
-const expectedHtml = routes.map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const laterGreatOceanGapRoutes = laterAustraliaGapRoutes.filter((route) => route.startsWith('/australia/great-ocean-road-gariwerd/'));
+const expectedHtml = [...routes, ...laterGreatOceanGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', integrationBase, '--', 'australia/great-ocean-road-gariwerd'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected Great Ocean Road English source pages may change since the prior integration checkpoint.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected Great Ocean Road pages and two later route-body improvements may change since the prior integration checkpoint.');
 
 const deltas = [];
 for (const route of routes) {
@@ -382,6 +391,7 @@ for (const photo of photoChecks) {
 
 for (const slug of ['lorne-waterfalls', 'gariwerd-grampians']) {
   const route = '/australia/great-ocean-road-gariwerd/' + slug + '/';
+  if (laterGreatOceanGapRoutes.includes(route)) continue;
   const englishFile = route.replace(/^\//, '') + 'index.html';
   assert.equal(sha256(fs.readFileSync(pageFile(route))), sha256(git(['show', base + ':' + englishFile], true)), englishFile + ': unselected English route must remain byte-identical.');
   for (const [locale, prefix] of locales.slice(1)) {

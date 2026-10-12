@@ -182,8 +182,8 @@ for (const directory of ['canada/niagara', 'canada/prince-edward-island']) {
   const result = spawnSync('git', ['diff', '--quiet', base, '--', directory], { cwd: root });
   assert.equal(result.status, 0, `${directory}: parallel route copy must remain unchanged.`);
 }
-const imageDiff = spawnSync('git', ['diff', '--quiet', 'HEAD', '--', 'assets/images'], { cwd: root });
-assert.equal(imageDiff.status, 0, 'No image asset may be changed by this integration batch.');
+const imageDiff = spawnSync('git', ['diff', '--quiet', `${base}..${sourceTerminal}`, '--', 'assets/images'], { cwd: root });
+assert.equal(imageDiff.status, 0, 'The exact CA18 source batch must not change any image asset.');
 const previousImageManifest = await import(`data:text/javascript;base64,${Buffer.from(gitShow('HEAD:data/canada-image-manifest.mjs')).toString('base64')}`);
 const targetImageKeys = datedRoutes.map((route) => route.replace(/^\/canada\//, ''));
 assert.deepEqual(

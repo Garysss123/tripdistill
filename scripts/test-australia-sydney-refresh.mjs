@@ -55,6 +55,18 @@ const cairnsRoutes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
+const melbourneOceanGapRoutes = [
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/'
+];
+const adelaidePerthGapRoutes = [
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const selectedGuideSlugs = ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk', 'barangaroo-darling-harbour', 'manly-north-head'];
@@ -228,7 +240,7 @@ assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 5, 
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-const expectedHtml = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes].map((route) => `${route.slice(1)}index.html`).sort();
+const expectedHtml = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...melbourneOceanGapRoutes, ...adelaidePerthGapRoutes].map((route) => `${route.slice(1)}index.html`).sort();
 assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to the Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns route groups; found ${changedHtml.join(', ')}.`);
 
 const indexByRoute = new Map(search.map((record) => [record.url, record]));
@@ -382,10 +394,10 @@ assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap
 // The integration-sprint scope regression validates every non-target route and
 // date against the fixed global baseline. This test scopes its date assertion
 // to the Australia routes selected by the AU regressions below.
-const targetSitemapPaths = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const targetSitemapPaths = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...melbourneOceanGapRoutes, ...adelaidePerthGapRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => new URL(`https://tripdistill.com${route}`).pathname.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 160 selected Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the selected Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns and later AU-gap route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {

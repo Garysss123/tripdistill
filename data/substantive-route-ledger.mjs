@@ -73,6 +73,19 @@ export const canadaNewSubstantiveRoutes = Object.freeze([
 
 export const completedCanadaRouteCount = 73;
 
+// Eight existing Australian pages enter the substantive completion ledger in
+// the Melbourne/Ocean and Adelaide/Perth refreshes; they add no URLs.
+export const australiaNewSubstantiveRoutes = Object.freeze([
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -82,5 +95,7 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'AU Sydney/NSW + Brisbane/Gold Coast', count: 719 }),
   Object.freeze({ label: 'CA16 Winnipeg & Churchill', count: 723 }),
   Object.freeze({ label: 'CA17 Whitehorse & Kluane', count: 727 }),
-  Object.freeze({ label: 'CA18 Yellowknife & Canada overview', count: 732 })
+  Object.freeze({ label: 'CA18 Yellowknife & Canada overview', count: 732 }),
+  Object.freeze({ label: 'Melbourne & Great Ocean gap refresh', count: 736 }),
+  Object.freeze({ label: 'Adelaide & Perth gap refresh', count: 740 })
 ]);

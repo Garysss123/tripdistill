@@ -7,6 +7,7 @@ import { australiaSydneyDiagram } from './australia-sydney-diagram.mjs';
 import { australiaBlueMountainsDiagram } from './australia-blue-mountains-diagram.mjs';
 import { australiaGreatOceanRoadDiagram } from './australia-great-ocean-road-diagram.mjs';
 import { australiaGoldCoastDiagram } from './australia-gold-coast-diagram.mjs';
+import { australiaAdelaidePerthDiagrams } from './australia-adelaide-perth-diagrams.mjs';
 import { australiaImageEditNote } from './australia-guide-builder.mjs';
 
 const bySlug = new Map([
@@ -48,7 +49,11 @@ export const australiaClusters = orderedSlugs.map((slug) => {
       const key = `${cluster.slug}/${guide.slug}`;
       const image = australiaImageManifest[key];
       if (!image) throw new Error(`Missing verified Australia image manifest entry: ${key}`);
-      return { ...guide, image: { ...image, editNote: image.editNote || australiaImageEditNote } };
+      return {
+        ...guide,
+        ...(australiaAdelaidePerthDiagrams[key] ? { diagram: australiaAdelaidePerthDiagrams[key] } : {}),
+        image: { ...image, editNote: image.editNote || australiaImageEditNote }
+      };
     })
   };
 });

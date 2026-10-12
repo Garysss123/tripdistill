@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T18:50:24.528Z",
+  "generatedAt": "2026-10-12T22:35:03.158Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 824,
+    "assetFileCount": 828,
     "completeSourceCreatorLicenseRecords": 756,
-    "completeProjectOriginalRightsRecords": 35,
+    "completeProjectOriginalRightsRecords": 39,
     "licenseClaimsNotIndependentlyVerified": 473,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 821,
-    "deduplicatedImageCount": 824,
+    "expectedBuildImageCount": 825,
+    "deduplicatedImageCount": 828,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3517,
-    "assetsUsedByScannedEnglishPages": 781,
+    "imageReferencesScanned": 3526,
+    "assetsUsedByScannedEnglishPages": 785,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 611,
+    "assetsWithStructuredSourceRecords": 615,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 213,
+    "assetsVisuallyReviewed": 217,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 292,
-    "metadataOrCreditOnly": 508,
-    "usedAssetsWithoutIndependentSourcePageCheck": 495,
+    "metadataOrCreditOnly": 512,
+    "usedAssetsWithoutIndependentSourcePageCheck": 499,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 817 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 821 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 821 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 825 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -57,6 +57,50 @@
     "licenseVersionNote": "CC BY 2.0, CC BY-SA 3.0 and CC BY-SA 4.0 are separate declared license versions, but different versions alone are not a metadata conflict. Each active photo is credited against its own exact source-page declaration."
   },
   "entries": [
+    {
+      "sha256": "f1c767aaea5d2a3eccdf056af6f63e42b33d57a20be29cf6f8d62cb2b15ef525",
+      "assetPaths": [
+        "/assets/images/australia-adelaide-hills-route-choice.svg"
+      ],
+      "byteLength": 2064,
+      "sourceRecords": [
+        {
+          "sha256": "f1c767aaea5d2a3eccdf056af6f63e42b33d57a20be29cf6f8d62cb2b15ef525",
+          "assetPath": "/assets/images/australia-adelaide-hills-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-adelaide-hills-route-choice.svg",
+          "sourceTitle": "TripDistill original Adelaide Hills route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "2a0cc23d124abf42161b4a8cdca8bf30e6503fce",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/adelaide-wine-island/adelaide-hills-hahndorf/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: a city connection branches to a Hahndorf town visit or a Cleland and garden visit; each choice returns on its confirmed ride."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
     {
       "sha256": "47dc519d97fa9a2a7b04d258b7beb3afedbd181f1a5455825db3bac23ff5ae0d",
       "assetPaths": [
@@ -407,7 +451,8 @@
             "/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/"
           ],
           "altTexts": [
-            "White sand and clear water in Booderee National Park at Jervis Bay"
+            "White sand and clear water in Booderee National Park at Jervis Bay",
+            "Hyams Beach on Jervis Bay, looking toward Booderee National Park; a nearby NSW-side shore, not a view inside the park."
           ],
           "rawVisibleCredits": [
             "Hyams Beach. Booderee National Park & Jervis Bay Marine Park.jpg — Charliekay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -810,7 +855,8 @@
             "/australia/brisbane-moreton-bay/west-end-cultural-precinct/"
           ],
           "altTexts": [
-            "New Farm Park beside the Brisbane River"
+            "New Farm Park beside the Brisbane River",
+            "Brisbane River at twilight, seen from New Farm toward Norman Park; a neighborhood-context image rather than New Farm Park."
           ],
           "rawVisibleCredits": [
             "Norman Park seen across Brisbane River from New Farm, Queensland.jpg — Kgbo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2287,7 +2333,8 @@
             "/australia/great-ocean-road-gariwerd/torquay-bells-beach/"
           ],
           "altTexts": [
-            "Mountain ranges and forest in Gariwerd Grampians National Park"
+            "Mountain ranges and forest in Gariwerd Grampians National Park",
+            "View over Halls Gap from Boroka Lookout in Gariwerd / Grampians"
           ],
           "rawVisibleCredits": [
             "View over Halls Gap, Grampians, from Boroka Lookout.jpg — Peter Trenchard, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2488,6 +2535,94 @@
           ],
           "altTexts": [
             "Not-to-scale planning schematic showing the Great Ocean Road sequence from Torquay through Lorne and Apollo Bay to Port Campbell, with a clearly separate inland planning branch to Gariwerd; no distance, bearing, timetable or service promise is made."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "99cc15d202325886e2910bd4ab499cfc08f756292f5e615bcf7236bfbca6419d",
+      "assetPaths": [
+        "/assets/images/australia-kangaroo-island-regional-days.svg"
+      ],
+      "byteLength": 2848,
+      "sourceRecords": [
+        {
+          "sha256": "99cc15d202325886e2910bd4ab499cfc08f756292f5e615bcf7236bfbca6419d",
+          "assetPath": "/assets/images/australia-kangaroo-island-regional-days.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-kangaroo-island-regional-days.svg",
+          "sourceTitle": "TripDistill original Kangaroo Island ferry and regional-days schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "a79c937470360a8144977935661b29ce52301a81",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/adelaide-wine-island/kangaroo-island/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: Cape Jervis ferry to Penneshaw, separate east, south and west island days, reposition near Penneshaw, then return by ferry."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "45a3f02c3db4f3e09f40f1716efaeb6ed344d69206c5f9c52300bcde2d5ade09",
+      "assetPaths": [
+        "/assets/images/australia-kings-park-entry-choice.svg"
+      ],
+      "byteLength": 2351,
+      "sourceRecords": [
+        {
+          "sha256": "45a3f02c3db4f3e09f40f1716efaeb6ed344d69206c5f9c52300bcde2d5ade09",
+          "assetPath": "/assets/images/australia-kings-park-entry-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-kings-park-entry-choice.svg",
+          "sourceTitle": "TripDistill original Kings Park entry and loop schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "5a606ca608847293d3bb755a1021490a5f439c0b",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/perth-fremantle-rottnest/kings-park/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: Perth transit or visitor parking leads to one chosen Botanic Garden or bushland path, then back to the same return node."
           ],
           "rawVisibleCredits": []
         }
@@ -2845,8 +2980,7 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Yarra River and Princes Bridge beneath Melbourne’s night skyline",
-            "Federation Square and the Yarra River in central Melbourne"
+            "Yarra River and Princes Bridge beneath Melbourne’s night skyline"
           ],
           "rawVisibleCredits": [
             "Night view of the Melbourne CBD, over the Yarra River, showing Princes Bridge, St Kilda Road, St Paul's Cathedral, and Federation Square. Peter Neaum. - panoramio.jpg — Peter Neaum, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2897,7 +3031,8 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Terraces and neighborhood streets in inner northern Melbourne"
+            "Terraces and neighborhood streets in inner northern Melbourne",
+            "Rosephil Terrace on Fitzroy Street in Fitzroy"
           ],
           "rawVisibleCredits": [
             "Rosephil Terrace, Fitzroy Street, Fitzroy, Victoria Australia (4541034919).jpg — Rexness, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2948,7 +3083,8 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Rugged coast on Phillip Island in Victoria"
+            "Rugged coast on Phillip Island in Victoria",
+            "Boardwalk and rocky sea cliffs at the Nobbies on Phillip Island"
           ],
           "rawVisibleCredits": [
             "Nobbies zz.JPG — Chensiyuan, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2999,12 +3135,55 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "St Kilda Beach, pier and Port Phillip Bay before midday",
-            "St Kilda Pier and Port Phillip Bay near Melbourne"
+            "St Kilda Beach, pier and Port Phillip Bay before midday"
           ],
           "rawVisibleCredits": [
             "Quiet before midday - St Kilda Beach and Pier (3166045772).jpg — Alpha from Melbourne, Australia, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "78349eac1b9c9aee1561e861c964725e03c26ef40bbee895bdd33b6d58f153ce",
+      "assetPaths": [
+        "/assets/images/australia-perth-coast-transit-choice.svg"
+      ],
+      "byteLength": 2673,
+      "sourceRecords": [
+        {
+          "sha256": "78349eac1b9c9aee1561e861c964725e03c26ef40bbee895bdd33b6d58f153ce",
+          "assetPath": "/assets/images/australia-perth-coast-transit-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-perth-coast-transit-choice.svg",
+          "sourceTitle": "TripDistill original Cottesloe and Scarborough transit-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "92b47a386655af44d9f6b1ca61647b77c17b13d9",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/perth-fremantle-rottnest/cottesloe-scarborough/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: choose Cottesloe by train and a last-mile connection or Scarborough by train and Surf CAT; check the beach and return on the same path."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -3512,7 +3691,8 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Barangaroo waterfront on the western side of central Sydney"
+            "Barangaroo waterfront on the western side of central Sydney",
+            "Sydney CBD skyline and harbor-side buildings at dusk, viewed from Pyrmont; a city-context image, not a route map."
           ],
           "rawVisibleCredits": [
             "2019-04-10 Sydney CBD view from Pyrmont at sunset.jpg — Maksym Kozlenko, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -3667,7 +3847,8 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Manly and North Head above Sydney Harbour"
+            "Manly and North Head above Sydney Harbour",
+            "Archival 1973 photograph of the Sydney ferry North Head crossing near Manly; it does not show today’s vessel or timetable."
           ],
           "rawVisibleCredits": [
             "Sydney Ferry NORTH HEAD en route to Manly at the Heads on Sydney Harbour 20 January 1973.jpg — John Ward, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -4704,7 +4885,7 @@
             "/canada/halifax-nova-scotia/peggys-cove-lunenburg/"
           ],
           "altTexts": [
-            "Cabot Trail road and Atlantic highlands in Cape Breton"
+            "Cabot Trail winding through forested Cape Breton Highlands above the Atlantic coast"
           ],
           "rawVisibleCredits": [
             "Cabot Trail winding through Cape Breton Highlands National Park, Nova Scotia.jpg — Elviroyage, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -4745,7 +4926,7 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 7,
           "routes": [
             "/canada/",
             "/canada/halifax-nova-scotia/",
@@ -4754,7 +4935,8 @@
             "/canada/halifax-nova-scotia/peggys-cove-lunenburg/"
           ],
           "altTexts": [
-            "Halifax harbourfront and city in Nova Scotia"
+            "Halifax harbourfront and city in Nova Scotia",
+            "Halifax skyline from Alderney Landing across the harbour, with Citadel Hill just right of the towers"
           ],
           "rawVisibleCredits": [
             "TV-009-0290 (14193147898).jpg — André Carrotflower, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -4803,7 +4985,7 @@
             "/canada/halifax-nova-scotia/peggys-cove-lunenburg/"
           ],
           "altTexts": [
-            "Granite Atlantic coastline and lighthouse landscape in Nova Scotia"
+            "Peggy’s Point Lighthouse above granite and the designated coastal viewing path at Peggy’s Cove"
           ],
           "rawVisibleCredits": [
             "Lighthouse DSC01066 - Peggy's Cove Lighthouse (7612052968).jpg — Dennis G. Jarvis, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -5821,7 +6003,7 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 7,
           "routes": [
             "/canada/",
             "/canada/prince-edward-island/",
@@ -6166,7 +6348,7 @@
           "verificationStatus": "source_page_checked",
           "verificationDate": "2026-10-12",
           "verificationDetail": "Saguenay–Tadoussac photo review: the exact Commons page identifies Bodoklecksel and declares CC BY-SA 3.0. The local WebP pixels show harbor and waterfront below a forested ridge across the water; no whale is visible, so the image is not evidence of a wildlife sighting. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.",
-          "useCount": 6,
+          "useCount": 7,
           "routes": [
             "/canada/",
             "/canada/saguenay-tadoussac/",
@@ -6179,7 +6361,7 @@
             "Tadoussac harbor and waterfront beneath forested ridges across the water"
           ],
           "rawVisibleCredits": [
-            "Tadoussac.jpg — Bodoklecksel, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Tadoussac.jpg — Bodoklecksel, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms."
           ]
         }
       ]
@@ -6620,7 +6802,7 @@
             "/canada/whitehorse-kluane/whitehorse-river/"
           ],
           "altTexts": [
-            "Mountain landscape in Kluane National Park Yukon"
+            "Dall sheep on a rocky slope beneath a high mountain face in Kluane National Park"
           ],
           "rawVisibleCredits": [
             "Dall sheep in Kluane National Park.JPG — Jsayre64, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -6710,7 +6892,7 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 7,
           "routes": [
             "/canada/",
             "/canada/whitehorse-kluane/",
@@ -6768,7 +6950,7 @@
             "/canada/winnipeg-churchill/human-rights-assiniboine/"
           ],
           "altTexts": [
-            "Subarctic tundra and Hudson Bay near Churchill Manitoba"
+            "Sea ice along Hudson Bay near Cape Churchill, Manitoba"
           ],
           "rawVisibleCredits": [
             "Flying over Cape Churchill (6360559653).jpg — Emma, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -6809,7 +6991,7 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 6,
+          "useCount": 7,
           "routes": [
             "/canada/",
             "/canada/winnipeg-churchill/",
@@ -6818,7 +7000,8 @@
             "/canada/winnipeg-churchill/human-rights-assiniboine/"
           ],
           "altTexts": [
-            "The Forks and downtown Winnipeg near the rivers"
+            "The Forks and downtown Winnipeg near the rivers",
+            "Riverfront at The Forks in Winnipeg, with the riverside promenade and sculpture at dusk"
           ],
           "rawVisibleCredits": [
             "The Forks at dusk, Winnipeg, Manitoba, Canada.jpg — Ethan Sahagun, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -6867,7 +7050,7 @@
             "/canada/winnipeg-churchill/human-rights-assiniboine/"
           ],
           "altTexts": [
-            "Canadian Museum for Human Rights in Winnipeg"
+            "An illuminated interior ramp inside the Canadian Museum for Human Rights in Winnipeg"
           ],
           "rawVisibleCredits": [
             "CMHR - Canadian Museum for Human Rights, Winnipeg, MB (16763497237).jpg — Erik Araújo from Sao Paulo, SP, Brazil, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -24145,7 +24328,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centovalli_cassinam_33.jpg",
           "sourceTitle": "File:Centovalli cassinam 33.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Centovalli cassinam 33.jpg",
+          "creditLabel": "Stone viaduct in the Centovalli valley",
           "creator": "Cassinam",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -24175,7 +24358,7 @@
             "Centovalli railway and green Ticino valley landscape"
           ],
           "rawVisibleCredits": [
-            "Centovalli cassinam 33.jpg — Cassinam, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Stone viaduct in the Centovalli valley — Cassinam, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24194,7 +24377,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Verzasca_Lavertezzo_Ponte_dei_Salti.jpg",
           "sourceTitle": "File:Verzasca Lavertezzo Ponte dei Salti.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Verzasca Lavertezzo Ponte dei Salti.jpg",
+          "creditLabel": "Ponte dei Salti bridge and river at Lavertezzo",
           "creator": "Maureliusz",
           "license": "CC0",
           "sourceDeclaredLicenses": null,
@@ -24224,7 +24407,7 @@
             "Stone bridge and turquoise river in the Verzasca Valley"
           ],
           "rawVisibleCredits": [
-            "Verzasca Lavertezzo Ponte dei Salti.jpg — Maureliusz, CC0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Ponte dei Salti bridge and river at Lavertezzo — Maureliusz, CC0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24479,7 +24662,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trains_du_Monte_G%C3%A9n%C3%A9roso_(Suisse).jpg",
           "sourceTitle": "File:Trains du Monte Généroso (Suisse).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Trains du Monte Généroso (Suisse).jpg",
+          "creditLabel": "Monte Generoso mountain railway trains at a station",
           "creator": "trams aux fils.",
           "license": "CC BY 2.0",
           "sourceDeclaredLicenses": null,
@@ -24509,7 +24692,7 @@
             "Monte Generoso landscape in southern Ticino"
           ],
           "rawVisibleCredits": [
-            "Trains du Monte Généroso (Suisse).jpg — trams aux fils., CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Monte Generoso mountain railway trains at a station — trams aux fils., CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24864,7 +25047,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stein_am_Rhein_Altstadt_03.JPG",
           "sourceTitle": "File:Stein am Rhein Altstadt 03.JPG",
           "sourcePhotoDate": null,
-          "creditLabel": "Stein am Rhein Altstadt 03.JPG",
+          "creditLabel": "Painted façade in Stein am Rhein old town",
           "creator": "Zairon",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24894,7 +25077,7 @@
             "Painted facades in Stein am Rhein old town"
           ],
           "rawVisibleCredits": [
-            "Stein am Rhein Altstadt 03.JPG — Zairon, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Painted façade in Stein am Rhein old town — Zairon, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]

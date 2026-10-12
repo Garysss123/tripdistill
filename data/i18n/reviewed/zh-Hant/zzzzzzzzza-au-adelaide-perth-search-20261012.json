@@ -1,0 +1,42 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan one Kings Park precinct from a named entry: Fraser Avenue on route 935, a Blue CAT stop or signed visitor parking. Check the 935D destination, path alerts, heat, park notices and current return service.": "從有名稱的入口規劃 Kings Park 一個區域：搭路線 935 到 Fraser Avenue、搭 Blue CAT 到站，或使用標示的訪客停車區。查清 935D 終點、步道警示、炎熱狀況、公園公告與當日回程。",
+    "kings park perth bus": "Kings Park Perth 巴士",
+    "route 935 fraser avenue": "935 路線 Fraser Avenue",
+    "935d malcolm street": "935D Malcolm Street",
+    "blue cat kings park": "Blue CAT Kings Park",
+    "federation walkway access": "Federation Walkway 通行",
+    "kings park path closures": "Kings Park 步道封閉",
+    "Compare Cottesloe’s Fremantle Line and route 102 connection with Scarborough’s Stirling Station Surf CAT. Choose one beach, check lifesaving flags and ocean conditions, then verify the return service after sunset.": "比較 Cottesloe 的 Fremantle Line 與路線 102 接駁，和 Scarborough 從 Stirling Station 轉乘 Surf CAT 的路線。選一座海灘，查看救生旗與海況，並確認日落後的回程服務。",
+    "cottesloe beach train": "Cottesloe 海灘火車",
+    "cottesloe route 102": "Cottesloe 路線 102",
+    "scarborough surf cat": "Scarborough Surf CAT",
+    "perth beach bus": "Perth 海灘巴士",
+    "perth beach safety flags": "Perth 海灘安全旗",
+    "cottesloe scarborough sunset transport": "Cottesloe Scarborough 日落交通",
+    "Compare a no-car Hahndorf town day with a driver-led Cleland and Mount Lofty route. Check the actual regional return, Stop 27 service, park closures, fire warnings and daylight before committing.": "比較不開車遊漢道夫小鎮，和由司機接送前往克萊蘭與洛夫蒂山的行程。出發前確認實際區域巴士回程、Stop 27 服務、公園封閉、火災警示與日照時間。",
+    "hahndorf bus": "漢道夫巴士",
+    "adelaide hills no car": "阿德萊德山區不開車",
+    "cleland wildlife park": "Cleland 野生動物公園",
+    "stop 27": "Stop 27",
+    "mount lofty summit": "洛夫蒂山頂",
+    "adelaide hills fire warnings": "阿德萊德山區火災警示",
+    "Plan Kangaroo Island by ferry terminal, vehicle, overnight base and one island region per day. Check the October 20–23, 2026 SeaLink transition notice, park alerts, fire and road closures before fixing a return sailing.": "依渡輪碼頭、車輛、住宿基地與每日一區規劃袋鼠島。確定回程船班前，查看 SeaLink 於 2026 年 10 月 20–23 日的服務異動公告、公園警示、火災與道路封閉資訊。",
+    "kangaroo island ferry": "袋鼠島渡輪",
+    "sealink cape jervis penneshaw": "SeaLink Cape Jervis Penneshaw",
+    "kangaroo island itinerary": "袋鼠島行程",
+    "flinders chase closures": "Flinders Chase 封閉",
+    "seal bay access": "Seal Bay 通行",
+    "kangaroo island wildlife driving": "袋鼠島野生動物道路駕駛"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Codex, with no Luna translation runtime available in the selected environment",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact Luna runtime was unavailable",
+    "independentSecondModel": false
+  }
+}

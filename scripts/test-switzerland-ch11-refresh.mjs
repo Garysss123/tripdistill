@@ -48,7 +48,15 @@ const laterAustraliaGapRoutes = [
   '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
   '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
   '/australia/gold-coast-scenic-rim/springbrook-national-park/',
-  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+  '/australia/gold-coast-scenic-rim/lamington-national-park/',
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
 const laterCa14Routes = [
   '/canada/halifax-nova-scotia/',
