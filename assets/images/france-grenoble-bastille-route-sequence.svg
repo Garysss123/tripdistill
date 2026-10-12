@@ -6,7 +6,7 @@
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5f1e8"/><stop offset="1" stop-color="#e5eff0"/></linearGradient>
     <linearGradient id="route" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e706e"/><stop offset="1" stop-color="#14334b"/></linearGradient>
     <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#183a50" flood-opacity=".12"/></filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1e706e"/></marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#1e706e"/></marker>
   </defs>
   <rect width="1600" height="1066" rx="34" fill="url(#bg)"/>
   <path d="M0 780C250 710 470 844 733 777s470-52 867 4v285H0Z" fill="#d9e8e4" opacity=".55"/>
@@ -16,7 +16,9 @@
   <text x="1313" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="1">SEQUENCE ONLY · NOT TO SCALE</text>
   <text x="90" y="229" fill="#47616a" font-family="Arial, sans-serif" font-size="24">Choose the indoor or riverfront block first; ascend once, then return by a confirmed service.</text>
 
-  <path d="M360 456H477M715 456H830M1070 456H1182" stroke="url(#route)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path class="route-connector" d="M378 456H439" stroke="url(#route)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path class="route-connector" d="M743 456H804" stroke="url(#route)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path class="route-connector" d="M1108 456H1169" stroke="url(#route)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)"/>
   <circle cx="418" cy="456" r="9" fill="#f0b44b"/><circle cx="773" cy="456" r="9" fill="#f0b44b"/><circle cx="1126" cy="456" r="9" fill="#f0b44b"/>
 
   <g filter="url(#shadow)">

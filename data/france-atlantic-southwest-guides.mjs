@@ -183,7 +183,7 @@ export const franceAtlanticSouthwestClusters = [
           commercialReuseEligibility: 'unknown',
           attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
           assetType: 'original-planning-diagram',
-          localSha1: '748a1932d5aa7b3ee2291aa637790a3bfcbeff6f',
+          localSha1: 'e3260df3cc414cf3a13616b0ce30f1246a2f2f2f',
           editNote: 'Original editorial sequence diagram. It is schematic, not geographically scaled; no separate reuse license is declared.'
         },
         purpose: 'Use Grenoble’s museums and Bastille as one urban-Alpine section, adding Chartreuse only through a named, reachable gateway rather than an improvised mountain drive.',

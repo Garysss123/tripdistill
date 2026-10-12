@@ -66,7 +66,20 @@ for (const guide of franceGuides) {
     check(guide.image.creator && guide.image.source === `https://tripdistill.com${guide.image.src}` && guide.image.editNote, `${guide.url}: incomplete original-diagram provenance`);
     check(guide.image.license === null && guide.image.rightsStatus === 'Project original; no separate reuse license declared' && guide.image.rightsStatusUrl === 'https://tripdistill.com/terms-of-use/' && guide.image.commercialReuseEligibility === 'unknown' && guide.image.attributionTerms, `${guide.url}: original diagram rights status must stay explicit without asserting a license`);
     check(fs.existsSync(imageFile) && /<svg[\s>]/i.test(read(guide.image.src.slice(1))), `${guide.url}: original SVG is missing or invalid`);
-    if (fs.existsSync(imageFile)) check(crypto.createHash('sha1').update(fs.readFileSync(imageFile)).digest('hex') === guide.image.localSha1, `${guide.url}: SVG local SHA-1 mismatch`);
+    if (fs.existsSync(imageFile)) {
+      const svgSource = fs.readFileSync(imageFile, 'utf8');
+      check(crypto.createHash('sha1').update(svgSource).digest('hex') === guide.image.localSha1, `${guide.url}: SVG local SHA-1 mismatch`);
+      if (guide.image.src === '/assets/images/france-grenoble-bastille-route-sequence.svg') {
+        check(/<marker id="arrow"[^>]*markerWidth="12"[^>]*markerHeight="12"[^>]*markerUnits="userSpaceOnUse"/.test(svgSource), `${guide.url}: route arrowheads must use a compact fixed-size marker`);
+        const connectors = [...svgSource.matchAll(/class="route-connector" d="M(\d+) 456H(\d+)"/g)].map((match) => [Number(match[1]), Number(match[2])]);
+        const cardGaps = [[368, 455], [733, 820], [1098, 1185]];
+        check(connectors.length === cardGaps.length, `${guide.url}: expected one route connector in each of the three card gaps`);
+        for (const [index, [start, end]] of connectors.entries()) {
+          const [leftCardRight, rightCardLeft] = cardGaps[index] || [Infinity, -Infinity];
+          check(start < end && start >= leftCardRight + 10 && end <= rightCardLeft - 16, `${guide.url}: connector ${index + 1} must keep its line and arrowhead clear of both cards`);
+        }
+      }
+    }
   } else {
     check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, `${guide.url}: incomplete image provenance`);
     check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
@@ -524,5 +537,5 @@ if (failures.length) {
   console.error(`France audit: ${failures.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`France audit passed: 20 hubs, 60 focused guides, 81 English / 405 five-language routes, 60 credited images and 60 unique planning instruments${englishOnly ? ' (localized file checks deferred)' : ''}.`);
+  console.log(`France audit passed: 20 hubs, 60 focused guides, 81 English / 405 five-language routes, 60 credited images and 60 unique planning instruments; Grenoble route connectors clear all card edges${englishOnly ? ' (localized file checks deferred)' : ''}.`);
 }

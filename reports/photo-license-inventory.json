@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T03:52:10.336Z",
+  "generatedAt": "2026-10-12T04:06:09.524Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 798,
@@ -31,7 +31,7 @@
     "unreferencedMissingSourceCreditMatch": 24,
     "activeIncompleteAttributionFields": 0,
     "unreferencedIncompleteAttributionFields": 24,
-    "sourceMetadataConflicts": 1,
+    "sourceMetadataConflicts": 0,
     "moduleErrors": 0,
     "openCreditReviewCount": 0
   },
@@ -10846,14 +10846,14 @@
       ]
     },
     {
-      "sha256": "971c13d2383bee3edaddf2d7d71d62cb63fa962e559c9823ffa811b4b4448336",
+      "sha256": "53a845a8862b7d81a52aaf3d438df9b214044ace1e03e6f31f1a60c103bd054b",
       "assetPaths": [
         "/assets/images/france-grenoble-bastille-route-sequence.svg"
       ],
-      "byteLength": 6019,
+      "byteLength": 6326,
       "sourceRecords": [
         {
-          "sha256": "971c13d2383bee3edaddf2d7d71d62cb63fa962e559c9823ffa811b4b4448336",
+          "sha256": "53a845a8862b7d81a52aaf3d438df9b214044ace1e03e6f31f1a60c103bd054b",
           "assetPath": "/assets/images/france-grenoble-bastille-route-sequence.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/france-grenoble-bastille-route-sequence.svg",
@@ -10870,7 +10870,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
           "editHistory": "Original editorial sequence diagram. It is schematic, not geographically scaled; no separate reuse license is declared.",
-          "localSha1": "748a1932d5aa7b3ee2291aa637790a3bfcbeff6f",
+          "localSha1": "bf9644dd6412ed9ebfaf9a1f18f33559629df462",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -38648,12 +38648,5 @@
     }
   ],
   "openCreditReviews": [],
-  "sourceMetadataConflicts": [
-    {
-      "src": "/assets/images/france-grenoble-bastille-route-sequence.svg",
-      "fields": [
-        "sourceTitle"
-      ]
-    }
-  ]
+  "sourceMetadataConflicts": []
 }
