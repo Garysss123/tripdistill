@@ -21,6 +21,13 @@ const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/',
   '/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/'
 ];
+const malaysiaLangkawiLastmod = '2026-10-12';
+const malaysiaLangkawiEditedRoutes = [
+  '/malaysia/langkawi/',
+  '/malaysia/langkawi/pantai-cenang-tengah/',
+  '/malaysia/langkawi/machinchang-skycab/',
+  '/malaysia/langkawi/kilim-geoforest/'
+];
 const malaysiaCameronLastmod = '2026-10-11';
 const malaysiaCameronEditedRoutes = [
   '/malaysia/cameron-highlands/',
@@ -44,6 +51,7 @@ const franceLastmod = '2026-09-20';
 const franceBrittanyLastmod = '2026-10-10';
 const franceFr02Lastmod = '2026-10-11';
 const franceDordogneLastmod = '2026-10-11';
+const franceToulouseOccitanieLastmod = '2026-10-11';
 const franceDordogneEditedRoutes = [
   '/france/dordogne-perigord/',
   '/france/dordogne-perigord/sarlat-market-old-town/',
@@ -62,6 +70,12 @@ const franceBrittanyEditedRoutes = [
   '/france/brittany-coasts/saint-malo-dinan/',
   '/france/brittany-coasts/morbihan-carnac/',
   '/france/brittany-coasts/quimper-crozon/'
+];
+const franceToulouseOccitanieEditedRoutes = [
+  '/france/toulouse-albi-carcassonne/',
+  '/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/',
+  '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
+  '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
 ];
 const unitedKingdomLastmod = '2026-09-20';
 const unitedKingdomLondonLastmod = '2026-10-11';
@@ -510,6 +524,11 @@ for (const route of malaysiaIpohEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
 }
+for (const route of malaysiaLangkawiEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
+}
 for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Italy Puglia route absent from sitemap: ${route}`);
@@ -694,6 +713,11 @@ for (const route of franceBrittanyEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Brittany route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceBrittanyLastmod });
+}
+for (const route of franceToulouseOccitanieEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Toulouse/Occitanie route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceToulouseOccitanieLastmod });
 }
 for (const route of normandyEditedRoutes) {
   const record = records.get(route);
