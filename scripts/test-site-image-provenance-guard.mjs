@@ -7,6 +7,7 @@ import { hasVisibleOriginalProjectProvenance } from './site-image-provenance-gua
 const pageUrl = 'https://tripdistill.com/china/lhasa-tibetan-plateau/';
 const sourceHref = 'https://tripdistill.com/assets/images/china-lhasa-preparation.svg';
 const termsHref = 'https://tripdistill.com/terms-of-use/';
+const blueMountainsPath = '/assets/images/australia-blue-mountains-western-line-planning.svg';
 const provenanceLinks = `<li><a href="${sourceHref}">Original Lhasa schematic</a> — <a href="${termsHref}">Terms of Use</a></li>`;
 const originalSvg = '<img src="/assets/images/china-lhasa-preparation.svg" width="960" height="640" alt="Planning schematic">';
 const malaysiaPaths = [
@@ -14,6 +15,11 @@ const malaysiaPaths = [
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
   '/assets/images/tripdistill-kellies-castle-transfer.svg'
 ];
+
+const blueMountainsImage = `<img src="${blueMountainsPath}" width="1600" height="1100" alt="Not-to-scale station gateway planning schematic">`;
+const blueMountainsCredit = `<li><a href="https://tripdistill.com${blueMountainsPath}">Original Blue Mountains planning schematic</a> — TripDistill Editorial Team, <a href="${termsHref}">Project original; no separate reuse license declared</a>.</li>`;
+assert.equal(hasVisibleOriginalProjectProvenance(`${blueMountainsImage}${blueMountainsCredit}`, 'https://tripdistill.com/australia/blue-mountains-nsw-coast/'), true, 'the exact Blue Mountains schematic qualifies only with its source and Terms links');
+assert.equal(hasVisibleOriginalProjectProvenance(`${blueMountainsImage}<li><a href="https://tripdistill.com${blueMountainsPath}">Original Blue Mountains planning schematic</a></li>`, 'https://tripdistill.com/australia/blue-mountains-nsw-coast/'), false, 'the Blue Mountains schematic still requires a Terms link');
 
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}${provenanceLinks}`, pageUrl), true, 'one normalized original SVG with its source and Terms links qualifies');
 assert.equal(hasVisibleOriginalProjectProvenance('<img src="https://tripdistill.com/assets/images/china-lhasa-preparation.svg?edition=1" width="960" height="640">' + provenanceLinks, pageUrl), true, 'same-origin absolute URLs normalize to the exact original SVG path');
@@ -31,5 +37,8 @@ assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${s
 const brisbanePath = path.resolve('australia/brisbane-moreton-bay/index.html');
 const brisbaneHtml = fs.readFileSync(brisbanePath, 'utf8');
 assert.equal(hasVisibleOriginalProjectProvenance(brisbaneHtml, 'https://tripdistill.com/australia/brisbane-moreton-bay/'), true, 'the Brisbane hub schematic has its own source link and Terms link alongside the independently credited destination-card photos');
+const blueMountainsHubPath = path.resolve('australia/blue-mountains-nsw-coast/index.html');
+const blueMountainsHub = fs.readFileSync(blueMountainsHubPath, 'utf8');
+assert.equal(hasVisibleOriginalProjectProvenance(blueMountainsHub, 'https://tripdistill.com/australia/blue-mountains-nsw-coast/'), true, 'the Blue Mountains hub schematic has its own source and Terms links');
 
 console.log('Site image provenance regression passed: one allowlisted original schematic needs its exact visible source and Terms links; additional photo credits are checked separately.');

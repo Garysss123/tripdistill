@@ -1,0 +1,23 @@
+export const australiaBlueMountainsDiagram = {
+  src: '/assets/images/australia-blue-mountains-western-line-planning.svg',
+  alt: 'Not-to-scale planning schematic of the Western rail corridor through Wentworth Falls, Katoomba and Blackheath, with separate last-mile plans to formal visitor gateways; no service or timetable is implied.',
+  caption: 'TripDistill planning schematic, not a map or timetable. The dashed links do not identify a bus or promise access; confirm current transport, park alerts, path status and return on the day.',
+  source: 'https://tripdistill.com/assets/images/australia-blue-mountains-western-line-planning.svg',
+  label: 'TripDistill original Blue Mountains rail gateway planning schematic',
+  creator: 'TripDistill Editorial Team',
+  license: null,
+  rightsStatus: 'Project original; no separate reuse license declared',
+  rightsStatusUrl: 'https://tripdistill.com/terms-of-use/',
+  attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
+  commercialReuseEligibility: 'unknown',
+  assetType: 'original-planning-diagram',
+  localSha1: '9e7074a8d67463bc565ab806b134452772fa7073',
+  editNote: 'Not to geographic scale; the lines do not establish rail service, last-mile transport, distance, direction or access. The five-language key explains the solid and dashed lines.',
+  inventoryStatus: 'used',
+  sectionId: 'au-blue-mountains-diagram-title',
+  sectionEyebrow: 'Station gateway · five-language key',
+  sectionTitle: 'Choose the station-town; plan the last mile.',
+  sectionIntro: 'The rail corridor and a park trailhead are separate legs. Verify both ends, live closures and the return with the responsible operator before leaving.',
+  width: 1600,
+  height: 1140
+};

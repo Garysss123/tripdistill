@@ -25,6 +25,8 @@ const wadjemupDiagramAssetPath = '/assets/images/australia-wadjemup-ferry-day-se
 const wadjemupDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg';
 const sydneyDiagramAssetPath = '/assets/images/australia-sydney-harbour-coast-network-schematic.svg';
 const sydneyDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-sydney-harbour-coast-network-schematic.svg';
+const blueMountainsDiagramAssetPath = '/assets/images/australia-blue-mountains-western-line-planning.svg';
+const blueMountainsDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-blue-mountains-western-line-planning.svg';
 const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp';
 const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
 const chinaLhasaRetiredAssetPath = '/assets/images/china-destination-lhasa.webp';
@@ -306,7 +308,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 519, 'the merged inventory records Côte d’Azur, Marseille, Peak District and Provence inland photo checks; the Sydney original diagram is separately counted without claiming an independent source-page check');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 517, 'the merged inventory also records the Blue Mountains photo source checks; the original Sydney and Blue Mountains diagrams are separately counted without claiming independent source-page checks');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -521,8 +523,8 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 9, 'inventory must count the previously recorded project-original artwork and the new Sydney planning schematic');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 514, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 10, 'inventory must count the new Blue Mountains planning schematic separately from its photos');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 511, 'the regenerated merged inventory includes the Blue Mountains, Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -546,6 +548,23 @@ try {
   assert.ok(sydneyDiagram.verificationDetail.includes('not an independent source-page check'));
   assert.ok(sydneyDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === sydneyDiagramAssetPath), false);
+  const blueMountainsDiagram = photoRecords.find((item) => item.assetPath === blueMountainsDiagramAssetPath);
+  assert.ok(blueMountainsDiagram, 'inventory must retain the original Blue Mountains station gateway schematic');
+  assert.equal(blueMountainsDiagram.assetType, 'original-planning-diagram');
+  assert.equal(blueMountainsDiagram.sourceUrl, blueMountainsDiagramSourceUrl);
+  assert.equal(blueMountainsDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(blueMountainsDiagram.license, null, 'the Blue Mountains original SVG must not claim a public license');
+  assert.equal(blueMountainsDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(blueMountainsDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(blueMountainsDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(blueMountainsDiagram.inventoryStatus, 'used');
+  assert.equal(blueMountainsDiagram.useCount, 1);
+  assert.deepEqual(blueMountainsDiagram.routes, ['/australia/blue-mountains-nsw-coast/']);
+  assert.match(blueMountainsDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.equal(blueMountainsDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(blueMountainsDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(blueMountainsDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === blueMountainsDiagramAssetPath), false);
   const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
   assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');
   assert.equal(melakaDiagram.assetType, 'original-planning-diagram');
@@ -580,7 +599,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 802, 'the original Malaysia, Sydney and Brisbane diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 803, 'the original Malaysia, Sydney, Brisbane and Blue Mountains diagrams must be included while the preserved Melaka rights-review photo remains excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

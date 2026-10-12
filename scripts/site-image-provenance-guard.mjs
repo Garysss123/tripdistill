@@ -3,6 +3,7 @@ import { parse } from 'parse5';
 const SITE_ORIGIN = 'https://tripdistill.com';
 const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/china-lhasa-preparation.svg',
+  '/assets/images/australia-blue-mountains-western-line-planning.svg',
   '/assets/images/tripdistill-brisbane-bay-crossings.svg',
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
   '/assets/images/tripdistill-kellies-castle-transfer.svg'
