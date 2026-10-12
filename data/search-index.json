@@ -7211,11 +7211,17 @@
     "url": "/canada/calgary-badlands/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Calgary is a practical urban gateway with CTrain access; Drumheller and Dinosaur Provincial Park are road trips with different distances and booking needs. Keep city culture and badlands geology as separate planning systems.",
+    "summary": "Calgary is a rail-served prairie city; Drumheller and Dinosaur Provincial Park are two separate road corridors. The Royal Tyrrell Museum is an indoor anchor beside Drumheller, while Dinosaur Park is about a two-hour drive farther south. Build the transfer and overnight plan before choosing scenic stops.",
     "keywords": [
       "Calgary & Alberta Badlands",
       "Southern Alberta",
-      "prairies"
+      "prairies",
+      "Calgary",
+      "Drumheller",
+      "Royal Tyrrell Museum",
+      "Dinosaur Provincial Park",
+      "Alberta badlands",
+      "fossils"
     ]
   },
   {
@@ -7223,12 +7229,17 @@
     "url": "/canada/calgary-badlands/calgary-core/",
     "parent": "Calgary & Alberta Badlands",
     "type": "Local guide",
-    "summary": "Use CTrain and the river paths to connect downtown, East Village and one cultural stop without treating Calgary only as an airport for the Rockies.",
+    "summary": "Use CTrain for the longer downtown move, then walk one Bow or Elbow River pathway and choose one cultural anchor. Route 500 is the airport bus; the CTrain does not serve the terminal.",
     "keywords": [
       "Calgary Core, Rivers & CTrain",
       "Calgary & Alberta Badlands",
       "Southern Alberta",
-      "city-grid"
+      "city-grid",
+      "Route 500",
+      "CTrain",
+      "Calgary Transit",
+      "Bow River",
+      "East Village"
     ]
   },
   {
@@ -7236,12 +7247,17 @@
     "url": "/canada/calgary-badlands/drumheller-royal-tyrrell/",
     "parent": "Calgary & Alberta Badlands",
     "type": "Local guide",
-    "summary": "Make the Royal Tyrrell Museum the indoor anchor, then add one badlands drive or hoodoo walk so the geology outside explains the collections inside.",
+    "summary": "Make the Royal Tyrrell galleries the indoor anchor, then add one Drumheller valley stop. Timed museum entry, a vehicle or verified tour, and a local overnight turn the long Calgary drive into a workable day.",
     "keywords": [
       "Drumheller & Royal Tyrrell Museum",
       "Calgary & Alberta Badlands",
       "Southern Alberta",
-      "museum-zine"
+      "museum-zine",
+      "Royal Tyrrell Museum",
+      "timed entry",
+      "hoodoo",
+      "badlands",
+      "Drumheller"
     ]
   },
   {
@@ -7249,12 +7265,17 @@
     "url": "/canada/calgary-badlands/dinosaur-provincial-park/",
     "parent": "Calgary & Alberta Badlands",
     "type": "Local guide",
-    "summary": "Treat Dinosaur Provincial Park as a separate protected landscape with tour, trail and camping rules—not as an extra stop after Drumheller.",
+    "summary": "Give this protected badlands landscape its own field day: it is about two hours from Drumheller and 48 km northeast of Brooks. Confirm road, tour, visitor-centre and seasonal campground details before leaving.",
     "keywords": [
       "Dinosaur Provincial Park",
       "Calgary & Alberta Badlands",
       "Southern Alberta",
-      "park-gate"
+      "park-gate",
+      "Brooks",
+      "guided fossil tours",
+      "campground",
+      "Scenic Loop Road",
+      "Red Deer River valley"
     ]
   },
   {

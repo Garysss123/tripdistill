@@ -163,8 +163,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/jasper-icefields/icefields-parkway/',
     '/canada/jasper-icefields/athabasca-sunwapta/'
   ]);
+  const calgaryBadlandsUpdatedRoutes = new Set([
+    '/canada/calgary-badlands/',
+    '/canada/calgary-badlands/calgary-core/',
+    '/canada/calgary-badlands/drumheller-royal-tyrrell/',
+    '/canada/calgary-badlands/dinosaur-provincial-park/'
+  ]);
   for (const route of routes) {
-    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

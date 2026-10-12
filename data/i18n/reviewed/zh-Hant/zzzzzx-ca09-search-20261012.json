@@ -1,0 +1,27 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Calgary": "卡加利",
+    "Drumheller": "德拉姆黑勒",
+    "Royal Tyrrell Museum": "皇家泰瑞爾博物館",
+    "Alberta badlands": "阿爾伯塔荒地",
+    "fossils": "化石",
+    "Route 500": "Route 500",
+    "CTrain": "CTrain",
+    "Calgary Transit": "卡加利交通",
+    "Bow River": "Bow River",
+    "East Village": "東村",
+    "timed entry": "預約時段入場",
+    "hoodoo": "石林",
+    "badlands": "荒地",
+    "Brooks": "布魯克斯",
+    "guided fossil tours": "導覽化石行程",
+    "campground": "營地",
+    "Scenic Loop Road": "景觀環線道路",
+    "Red Deer River valley": "Red Deer River 山谷"
+  }
+}
