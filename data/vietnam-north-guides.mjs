@@ -78,27 +78,48 @@ export const vietnamNorthClusters = [
         name: 'West Lake and Truc Bach',
         motif: 'waterline and neighborhood pause',
         instrument: 'tide',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
         image: image({ src: '/assets/images/vietnam-hanoi-west-lake.webp', alt: 'West Lake in Hanoi under an open sky', source: 'https://commons.wikimedia.org/wiki/File:Hanoi%2C_Vietnam%2C_West_Lake.jpg', label: 'Hanoi, Vietnam, West Lake.jpg', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0' }),
-        summary: 'A slower lakeside chapter for West Lake, Truc Bach, pagodas, cafés and sunset without pretending the shoreline is one continuous promenade.',
-        lead: 'West Lake changes Hanoi’s scale. Water, villas, temples and busy arterial roads alternate in a loose ring, so the useful plan chooses a few connected segments and lets the lake provide breathing room between them.',
-        orientation: 'Use Thanh Nien as the visual hinge between West Lake and Truc Bach, then select a pagoda, a quiet shore section and one food or coffee stop. A map pin beside the lake does not guarantee a walkable waterfront entrance.',
-        arrival: 'Reach the chosen segment by ride-hailing or taxi and save a second pickup point. Roads around the lakes are faster and wider than the historic core, while sidewalks can end abruptly.',
-        sequence: 'Begin with daylight orientation, move through the pagoda or neighborhood stop, and reserve the exposed shoreline for a clear-weather sunset rather than a late-night walk.',
+        summary: 'Walk a short, daylight route from Tran Quoc Pagoda across the Thanh Nien hinge to Truc Bach and Ngu Xa, with a vehicle bridge for broken lakeside sidewalks.',
+        lead: 'Treat West Lake and Trúc Bạch as two nearby waterside neighborhoods joined by Thanh Niên, not as one continuous promenade. A useful half-day starts at the public entrance to Trấn Quốc Pagoda, crosses only where the street layout allows a safe crossing, then takes a short public stretch on Trúc Bạch or Ngũ Xã for a meal. Save the exact drop-off and a second vehicle pickup before leaving the hotel; the return point matters more than tracing a full lakeside loop.',
+        orientation: 'Thanh Niên separates Trúc Bạch from West Lake and carries fast traffic. Tran Quoc faces the larger lake; the Trúc Bạch and Ngũ Xã lanes are the neighborhood-scale finish. Map the entrance and a legal vehicle pickup as two different pins. A waterfront-looking map line may end at a wall, hotel or private edge rather than a public path.',
+        arrival: 'Use a licensed taxi or a ride-hailing car to reach the pagoda’s currently permitted public entrance, then save the driver or a second pickup on a named, vehicle-accessible street near the meal stop. Confirm the destination pin with the driver before getting out. There is no reliable promise of a continuous pedestrian route between every lakeside segment, and a car may not be able to wait at the temple gate.',
+        sequence: 'Go in daylight: check the pagoda’s current visitor notice, walk its public grounds if open, cross Thanh Niên only at a safe available crossing, and choose one short Trúc Bạch or Ngũ Xã street stretch for food. End at the agreed pickup. Leave the open water edge for settled, dry weather; storms, heat or poor evening lighting are reasons to shorten the walk, not to keep circling.',
         boundary: 'Keep lakeside leisure distinct from religious space. A scenic water view does not grant permission to enter a courtyard, photograph worship or lean over private property.',
+        sources: [
+          ['https://hanoi.gov.vn/di-tich-danh-thang', 'Hanoi People’s Committee — heritage sites and scenic places'],
+          ['https://sovhtt.hanoi.gov.vn/en/developing-the-cultural-space-of-west-lake-for-residents-and-tourists/', 'Hanoi Department of Culture and Sports — West Lake cultural-space planning'],
+          ['https://english.hanoi.gov.vn/department-commune-and-ward-news/hanoi-tourism-welcomes-2026-get-on-hanoi-program-launched-2655260203010101551.htm', 'Hanoi People’s Committee — 2026 Trúc Bạch itinerary announcement'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — current forecasts and warnings']
+        ],
+        routeDiagram: {
+          kind: 'flow',
+          title: 'A short water-to-neighborhood walk',
+          intro: 'Use a car to bridge any unsafe or private gap; this is not a full West Lake circuit.',
+          steps: [
+            ['Start · daylight', 'Tran Quoc public entrance', 'Check today’s visitor access first; keep the pagoda visit quiet and follow posted rules.'],
+            ['Cross · only when safe', 'Thanh Nien hinge', 'Use a safe available crossing. If the gap does not feel walkable, ride to the next segment.'],
+            ['Pause · Truc Bach', 'Choose one public street', 'Walk a short Trúc Bạch or Ngũ Xã stretch and check meal hours before setting out.'],
+            ['Exit · before dark', 'Meet the saved pickup', 'Use the named public street and avoid an improvised lakeside pickup after rain or at night.']
+          ],
+          fallbackTitle: 'When the edge is uncomfortable',
+          fallback: 'Skip the exposed waterline in heat, heavy rain or poor light. Keep the pagoda only if it is open, then ride to a confirmed meal and pickup point.'
+        },
         stages: [
-          ['Choose one shoreline', 'Pick a manageable segment with shade and a clear return rather than attempting the entire ring on foot.'],
-          ['Cross the hinge carefully', 'Treat Thanh Nien and adjoining intersections as traffic infrastructure, not a casual pedestrian lane.'],
-          ['Visit with restraint', 'Enter a pagoda or neighborhood landmark through the public route and follow local clothing, voice and camera expectations.'],
-          ['Leave before darkness', 'Finish at a known restaurant or pickup point, especially when rain, poor lighting or heavy motorbike traffic reduces the edge’s comfort.']
+          ['Fix the two vehicle points', 'Save the permitted Tran Quoc entrance and a separate pickup on a public street near Truc Bach or Ngu Xa. Check that each pin is reachable by car.'],
+          ['Read the lake-side boundary', 'Walk from the public pagoda entrance only if current visitor access allows it. Keep voices low, follow clothing and camera rules, and do not enter a closed courtyard.'],
+          ['Cross to the neighborhood', 'Use a safe available crossing on Thanh Nien; if traffic or sidewalk gaps make the connection uncertain, ask the driver to bridge it rather than crossing informally.'],
+          ['Finish with a known return', 'Choose one short public street and a meal whose hours you checked. Leave before darkness or an incoming storm makes the exposed edge harder to navigate.']
         ],
         risks: [
-          ['Broken pedestrian continuity', 'The lakeshore is a chain of segments rather than a guaranteed promenade. Check crossings and use a vehicle to bridge unsafe gaps.'],
-          ['Water and darkness', 'Avoid unlit edges, unstable banks and improvised water access. Keep children away from the waterline after sunset.'],
-          ['Weather shifts', 'Heat, thunderstorms and sudden rain can change an exposed lakeside plan quickly. Carry rain protection and a dry indoor alternative.']
+          ['Crossing traffic', 'Thanh Nien and the adjoining junctions are active roads, not a plaza. Never follow a map line through moving traffic; ride between segments when a safe crossing is not clear.'],
+          ['Closed or private edges', 'Shoreline paths and venue gates can change. Do not enter resort grounds, unstable banks or a pagoda area that is closed to visitors.'],
+          ['Rain, heat and low light', 'The water edge has little shelter and wet paving can be slick. Move to an indoor meal or return by car when lightning, heavy rain or darkness arrives.']
         ],
-        duration: 'Allow three to five hours for one focused lakeside segment; add time only when the return transfer is clear.',
-        combine: 'Combine with the French Quarter for a contrast between water and colonial civic streets, not with a full Old Quarter walking marathon.',
-        verify: 'Check rain and storm conditions, current venue hours, roadworks, the exact drop-off point and any temporary lakeside event controls.'
+        duration: 'Allow three to four hours for the pagoda, one short neighborhood walk and a meal, plus the two vehicle transfers. Add a separate half-day for the French Quarter rather than combining both into a long walk.',
+        combine: 'For a longer day, pair this with the French Quarter as a second, vehicle-linked district. Do not promise a continuous walk around the lake or add the full Old Quarter circuit without another break.',
+        verify: 'Check the pagoda’s current opening and visitor rules, the day’s forecast and event notices, a safe crossing, road access at both saved pins, and the meal venue’s hours.'
       },
       {
         slug: 'french-quarter-opera-house',
@@ -314,27 +335,47 @@ export const vietnamNorthClusters = [
         name: 'O Quy Ho, Silver Waterfall and Love Waterfall',
         motif: 'pass weather and waterfall descent',
         instrument: 'roadbook',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
         image: image({ src: '/assets/images/vietnam-sapa-o-quy-ho.webp', alt: 'O Quy Ho mountain pass in the Hoang Lien range', source: 'https://commons.wikimedia.org/wiki/File:O_Quy_Ho_pass.jpg', label: 'O Quy Ho pass.jpg', creator: 'Kiếm Anh', license: 'CC BY-SA 4.0', editNote: 'Resized, display-cropped and converted to WebP; no other material edits. The adapted image remains available under CC BY-SA 4.0.' }),
-        summary: 'A daylight road chapter linking O Quy Ho Pass with Silver Waterfall and Love Waterfall under mountain-road and weather constraints.',
-        lead: 'The O Quy Ho corridor is a mountain journey before it is a collection of waterfalls. The road, fog, temperature and exposure are part of the experience, and a responsible plan gives the driver and weather more authority than the map pin.',
-        orientation: 'Choose a pass viewpoint and one or two waterfall stops according to road conditions. The route crosses changing elevations and administrative boundaries, so do not promise identical weather at every stop.',
-        arrival: 'Use a skilled local driver or a rider with mountain-road experience. Public transport is not a dependable point-to-point solution for every waterfall entrance.',
-        sequence: 'Leave in daylight, take the pass while visibility is useful, visit the safest open waterfall route and turn back before fog, rain or low light raises the road risk.',
+        summary: 'A daylight Sa Pa out-and-back on QL4D, with Silver Waterfall first, Love Waterfall only if its managed trail is open, and a safe O Quy Ho viewpoint as the turn point.',
+        lead: 'Treat QL4D as the route and the waterfalls as conditional stops, not a promise that every gate is open. The Sa Pa Tourism Office places the Golden Stream–Love Waterfall access on QL4D toward Lai Châu; the official Lai Châu tourism portal describes O Quy Hồ as a long, curving pass that crosses provincial boundaries and can feel very different on either side. Set a daylight turn point before leaving Sa Pa, and do not ask a driver to stop on the carriageway for a view.',
+        orientation: 'Silver Waterfall is the first managed stop on the outward road; Love Waterfall continues into a forest access area, and the pass viewpoint belongs later on QL4D. Their entrances, walking surfaces and current operating status are separate checks. Fog at the top does not prove the lower route is clear, and dry-looking pavement does not mean the waterfall steps are safe.',
+        arrival: 'Arrange a licensed taxi or experienced local driver who will wait at each named entrance and confirm the return to Sa Pa before departure. There is no dependable point-to-point public service to every waterfall gate. Save the driver’s number, fuel plan and turnaround time; do not rely on finding a new ride at a remote trail exit.',
+        sequence: 'Start after checking the National Center for Hydro-Meteorological Forecasting forecast and local road notices. Visit Silver Waterfall only through its currently managed entrance; continue to the Love Waterfall forest path only after the operator confirms it is open and recent rain has not made the steps or stream unsafe. Use a signed, vehicle-safe pass viewpoint as the final stop, then return to Sa Pa in daylight. Turn around sooner if cloud, rain or road work closes the margin.',
         boundary: 'Do not stand in traffic lanes, climb unmarked cliffs or enter closed spray zones. A viewpoint should remain a viewpoint, not a stunt location.',
+        sources: [
+          ['https://dulich.laichau.gov.vn/en/place/details/o-quy-ho-pass-1', 'Lai Chau Tourism Promotion Information Center — O Quy Ho Pass and QL4D'],
+          ['https://sapa-tourism.com/golden-stream-and-love-waterfall-an-easy-trip-in-the-middle-of-the-forest/', 'Lao Cai Tourism Information and Promotion Center — Golden Stream and Love Waterfall access from QL4D (2021 description; recheck current operation)'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — current forecasts and warnings']
+        ],
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Sa Pa out-and-back, with a weather turn point',
+          intro: 'A driver waits at the gates; each waterfall is optional and the pass is never a roadside photo stop.',
+          steps: [
+            ['Before departure', 'Check QL4D + the forecast', 'Confirm road notices, visibility, rain, driver return and each site’s current opening.'],
+            ['First stop', 'Silver Waterfall', 'Use its managed entrance only if open; keep the vehicle fully off the active road.'],
+            ['Optional trail', 'Love Waterfall', 'Go only when the operator confirms access and recent rain has not made the forest path unsafe.'],
+            ['Turn point', 'Safe pass viewpoint', 'Use a signed pull-off, then return to Sa Pa before fog or darkness reduces visibility.']
+          ],
+          fallbackTitle: 'If rain, fog or closure interrupts',
+          fallback: 'Drop the Love Waterfall trail and pass viewpoint first. Return to Sa Pa; a shorter managed stop or a town-based day is a complete plan.'
+        },
         stages: [
-          ['Check the mountain', 'Compare pass weather, rain, wind and road alerts with the group’s experience before setting off.'],
-          ['Drive the exposed section', 'Use safe pull-offs only, keep the vehicle fully clear of the road and let the driver choose where stopping is appropriate.'],
-          ['Choose the waterfall', 'Follow the current managed trail, pace wet steps and treat a closure as a valid endpoint rather than a challenge.'],
-          ['Return before the margin', 'Begin the descent with daylight and fuel in reserve, especially when clouds are building over the pass.']
+          ['Set the turn point in Sa Pa', 'Check the forecast, local road notice, driver plan, fuel and the current opening of both managed waterfall sites. Confirm that the vehicle waits at each exit.'],
+          ['Take the nearer managed stop', 'Use Silver Waterfall’s public entrance only if the site is operating. Stay on its marked access and skip it if water, steps or road conditions are unsafe.'],
+          ['Earn the forest trail', 'Continue to Love Waterfall only after a same-day opening check. Its official tourism description is from 2021, so use it for orientation, not current hours or trail status.'],
+          ['Use the pass as the last decision', 'Stop only at a signed or managed pull-off chosen by the driver. Return to Sa Pa while there is daylight rather than crossing farther into Lai Châu on a tight schedule.']
         ],
         risks: [
-          ['Mountain traffic', 'Buses, trucks and motorcycles share narrow curves. Experienced driving and legal stopping points are essential.'],
-          ['Falls and flash water', 'Waterfall rocks and channels become hazardous during rain. Do not cross barriers or stand below unstable slopes.'],
-          ['Visibility loss', 'Fog can erase lane edges and viewpoints within minutes. Cancel or shorten the route when the driver or park staff advises it.']
+          ['QL4D traffic', 'The pass is a long active road with tight curves and limited stopping space. Never stand in the lane or rely on an unmarked shoulder as a viewpoint.'],
+          ['Wet trail and stream', 'Waterfall steps and rocks can become slippery or flash-flooded. Do not cross a barrier, enter a closed area or swim to rescue a schedule.'],
+          ['Provincial weather split', 'The road crosses the Hoàng Liên range; conditions can differ across the pass. Recheck during the day and follow a closure or the driver’s safe turnaround call.']
         ],
-        duration: 'Reserve a daylight half or full day depending on the chosen waterfall and road conditions.',
-        combine: 'Combine with Fansipan only as separate weather windows; pairing both as a fixed same-day checklist creates a fragile plan.',
-        verify: 'Check pass and waterfall closures, driver conditions, forecast, fuel, daylight, footwear and current entrance rules.'
+        duration: 'Keep a full daylight block from Sa Pa. Actual time depends on waiting at the managed entrances, trail status, traffic and the return margin; no fixed waterfall opening or road time is promised.',
+        combine: 'Do not combine this road with Fansipan, a long valley trek or a same-day onward train. Keep the pass and a high-altitude attraction in separate weather windows.',
+        verify: 'Check the current QL4D notice and forecast, both waterfall operators’ openings, trail or water conditions, the driver’s legal and return arrangements, safe pull-offs, fuel and daylight.'
       },
       {
         slug: 'bac-ha-market-hoang-a-tuong',
@@ -503,27 +544,48 @@ export const vietnamNorthClusters = [
         name: 'Meo Vac to Du Gia Southbound Link',
         motif: 'market finish and village recovery',
         instrument: 'signal',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
         image: image({ src: '/assets/images/vietnam-ha-giang-du-gia.webp', alt: 'Mountain valley landscape around Du Gia in Ha Giang', source: 'https://commons.wikimedia.org/wiki/File:Du_Gi%C3%A0.jpg', label: 'Du Già.jpg', creator: 'NKSTTSSHNVN', license: 'CC BY-SA 4.0' }),
-        summary: 'A deliberately multi-day southbound chapter joining Meo Vac’s highland market area with Du Gia’s valley, waterfalls and homestay rhythm.',
-        lead: 'Meo Vac and Du Gia should not be sold as two nearby stops. They form a demanding southbound link whose value is the change from exposed karst road to a slower valley base, provided the page makes the distance, services and weather margin honest.',
-        orientation: 'Use Meo Vac for market and plateau context, then treat Du Gia as a separate overnight recovery base. The exact road sequence should remain flexible when landslides or local closures intervene.',
-        arrival: 'Leave Meo Vac with fuel, cash, water and a confirmed destination. Road conditions and signal coverage vary; a local driver or legal tour is preferable for the southbound section.',
-        sequence: 'Observe Meo Vac in the morning, travel only in daylight, reach Du Gia with enough time for a quiet village or waterfall visit, and keep the next transfer defensive.',
+        summary: 'Make Meo Vac–Du Gia a two-day, one-night southbound link with a confirmed local driver, a daylight arrival and a Ba Tien waterfall visit only if the commune confirms safe public operation.',
+        lead: 'The southbound road from Mèo Vạc to Du Già is a transfer day with a recovery night, not a short detour or a same-day loop back to Hà Giang City. Since 2025, the former Hà Giang and Tuyên Quang provinces have been combined as Tuyên Quang; “Hà Giang Loop” remains a useful tourism-region label, while bookings and current road checks should use the actual commune names. An official provincial tourism inspection reported in June 2026 that Thác Ba Tiên still needed safety, access and service conditions before public operation. That dated notice is a reason to confirm current status locally, not proof of today’s opening or closure.',
+        orientation: 'Use Mèo Vạc in the morning for supplies and a market visit only if it is market day. Ask the accommodation or a licensed local operator which current road is suitable to Du Già, what sections have works or weather damage, and where the vehicle can stop legally. Sleep in Du Già; on the next day choose a hosted village walk or meal, and treat the waterfall as a separate, conditional activity.',
+        arrival: 'Arrange a local driver or licensed operator familiar with the current mountain roads, and confirm the vehicle, driver contact, overnight address, fuel stop and arrival deadline before leaving. Carry cash, drinking water and any medication; phone signal and services thin between towns. Do not use a historic loop map as a live road notice, and do not ride after dark to make up a delay.',
+        sequence: 'Day 1: check weather and local road advice in Mèo Vạc, depart early, take only driver-approved public pull-offs and reach Du Già with daylight for check-in. Day 2: walk only public village lanes with permission, then visit Thác Ba Tiên only if the commune or current operator confirms that public access, safety staff and the path are operating. Keep the next transfer separate; do not target Hanoi the same day.',
         boundary: 'Do not enter farms, homes or bathing areas without invitation. Waterfalls and homestays need the same respect as heritage sites.',
+        sources: [
+          ['https://baochinhphu.vn/nghi-quyet-cua-quoc-hoi-ve-sap-xep-don-vi-hanh-chinh-cap-tinh-102250612191145158.htm', 'Government of Vietnam — Resolution 202/2025/QH15, Hà Giang and Tuyên Quang merged as Tuyên Quang'],
+          ['https://sovhttdl.tuyenquang.gov.vn/vi/tin-bai/tuyen-quang-tung-buoc-chuan-hoa-cong-tac-quan-ly-du-lich-trai-nghiem-co-yeu-to-mao-hiem?id=239119&type=NEWS', 'Tuyên Quang Department of Culture, Sports and Tourism — 25 June 2026 safety and operating review at Thác Ba Tiên'],
+          ['https://dugia.tuyenquang.gov.vn/', 'Du Già Commune People’s Committee — current local announcements; confirm current access with the commune or operator'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — current forecasts and warnings']
+        ],
+        routeDiagram: {
+          kind: 'flow',
+          title: 'A two-day southbound handoff',
+          intro: 'The overnight is part of the route. A waterfall is not assumed to be open or safe.',
+          steps: [
+            ['Day 1 · morning', 'Mèo Vạc supply + road check', 'Ask a local operator about current works, weather, the driver and the daylight arrival point.'],
+            ['Day 1 · daylight', 'Southbound transfer', 'Use a confirmed driver and public pull-offs; skip unverified detours and reach Du Già before dark.'],
+            ['Night 1', 'Du Già hosted stay', 'Confirm your room and meal directly, and ask the commune/operator about current village access.'],
+            ['Day 2 · flexible', 'Village walk; waterfall conditional', 'Choose public lanes with permission. Add Thác Ba Tiên only after current public operation and safety are confirmed.']
+          ],
+          fallbackTitle: 'If the road or waterfall is uncertain',
+          fallback: 'Stay an extra night in Mèo Vạc or Du Già, keep to a hosted village visit, and move the onward transfer to a separate daylight day.'
+        },
         stages: [
-          ['Close the plateau chapter', 'Use Meo Vac’s market or town as a supply and information point, not merely a fuel stop.'],
-          ['Travel the southbound road', 'Keep the group together, follow the driver’s weather decisions and do not chase a detour after the daylight margin shrinks.'],
-          ['Recover in Du Gia', 'Choose a public village path, hosted meal or approved waterfall access and let the valley’s slower rhythm replace the pass checklist.'],
-          ['Prepare the exit', 'Confirm the next road, fuel, weather and onward transport before sleeping; do not assume a quick return to Hanoi or Sapa.']
+          ['Confirm the handoff in Mèo Vạc', 'Check the current district/commune names on your booking, weather, road works, fuel, cash and the driver’s planned route. Treat the market as a stop only when its local calendar supports it.'],
+          ['Take one daylight transfer', 'Leave early with a driver who knows the current road. Stop only at a safe public pull-off, and do not add a waterfall or village detour if the arrival margin is shrinking.'],
+          ['Sleep before exploring Du Già', 'Check in at the confirmed homestay, ask permission for any village walk, and let the host confirm which public lanes and services are suitable that day.'],
+          ['Make Ba Tiên a conditional branch', 'A June 2026 provincial review identified requirements still to resolve before public operation. Contact the commune or current operator for today’s opening, safe access and staffing; otherwise keep the village visit and overnight, and postpone the waterfall.']
         ],
         risks: [
-          ['Long remote segment', 'Medical care, fuel and accommodation are limited between bases. Carry supplies and a clear emergency contact plan.'],
-          ['Landslides and rain', 'Valley roads and waterfalls respond quickly to storms. Avoid night travel and follow local route changes.'],
-          ['Homestay boundaries', 'Ask about rooms, meals, photography and bathing areas. Keep noise low and leave no waste in the valley.']
+          ['Road time is variable', 'This is a remote mountain transfer with limited services and patchy signal. No exact duration or distance is promised; a road being mapped does not establish today’s condition.'],
+          ['Rain, works and landslides', 'Heavy rain can change valley access or make a waterfall unsafe. Follow current commune or driver advice, stay off the road after dark and accept an extra night as the fallback.'],
+          ['Waterfall operation and village privacy', 'Do not swim, jump or use an informal path. Confirm supervised public access first; ask before entering a home, farm, bathing area or taking photographs.']
         ],
-        duration: 'Plan at least two days and one overnight; never advertise Meo Vac and Du Gia as a guaranteed same-day loop.',
-        combine: 'Combine with Ma Pi Leng as the northbound arrival or with a separate Ha Giang City exit day.',
-        verify: 'Check the current administrative labels, road status, weather, fuel, accommodation, driver plan and onward transport.'
+        duration: 'Plan two days and at least one overnight in Du Già. Add another night if road reports, weather or the operator’s daylight estimate leave a narrow margin.',
+        combine: 'Link this after a separate Mã Pí Lèng/Mèo Vạc day, or before a separate Hà Giang City exit. Do not combine the transfer, waterfall, return drive and Hanoi bus on one day.',
+        verify: 'Confirm the current province and commune names on the booking, the road and weather with a local operator, the driver/vehicle and safe pull-offs, the Du Già stay, and Thác Ba Tiên’s public opening and safety arrangements.'
       }
     ]
   },

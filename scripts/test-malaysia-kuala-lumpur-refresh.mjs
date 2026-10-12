@@ -84,7 +84,7 @@ assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no sitemap URL was added or removed');
 const localizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
-assert.equal(integrationRoutes.length, 253, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus four Vietnam pages');
+assert.equal(integrationRoutes.length, 257, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus eight Vietnam pages');
 assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Vietnam routes changed lastmod');
 for (const route of locales.flatMap(({ prefix }) => routes.map((path) => prefix + path))) assert.equal(currentSitemap.get(route), reviewDate, `${route}: sitemap lastmod`);
 

@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
   "auditedOn": "2026-10-12",
-  "branch": "codex/sprint-vn-next-content-20261013",
-  "sourceBaseCommit": "4c7a5d2bd65a6a82474813c04db718dedb1ffc48",
+  "branch": "codex/sprint-vn-overview-north-gaps-20261013",
+  "sourceBaseCommit": "7ac91c72f5655c9b00aaeae7c8943bfa3c083304",
   "initialAtlasCommit": "8a1ada3b4021d077fd468c9c318d91823177c0cb",
-  "verificationStatus": "full npm run audit and npm run build passed",
+  "verificationStatus": "full npm run audit and npm run build passed; source-only branch, no deployment",
   "method": "Parse5 #main-content visible text; omit script/style/SVG, advertisements, official-source/photo-credit blocks, region/country cards, and visible reviewed-date phrases; word counts split on whitespace.",
   "totals": {
     "englishRoutes": 99,
     "previousSubstantiveRoutes": 39,
+    "previousSprintNewSubstantiveRoutes": 4,
     "newSubstantiveRoutes": 4,
-    "afterSprintSubstantiveRoutes": 43,
-    "remainingRoutes": 56
+    "afterSprintSubstantiveRoutes": 47,
+    "remainingRoutes": 52
   },
   "historicalGroups": {
     "Hanoi": 6,
@@ -376,80 +377,39 @@
   ],
   "currentSprintRoutes": [
     {
-      "url": "/vietnam/ha-long-cat-ba/core-cruise/",
-      "initialWords": 592,
-      "baseWords": 592,
-      "currentWords": 858,
-      "bodyWordDelta": 266,
-      "initialAndBaseMainTextSha256": "600aa82ca9168ff6c72727407babb733db8f2c1f7be6fa3dfbb2a645475e8df9",
-      "currentMainTextSha256": "fe0d44efe46051f41b33b20f65ac58dcb97cc5984a4ed29a9b5caf77df8fc283"
-    },
-    {
-      "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
-      "initialWords": 558,
-      "baseWords": 558,
-      "currentWords": 848,
-      "bodyWordDelta": 290,
-      "initialAndBaseMainTextSha256": "006a5ee973800cac18331207e1ded428d011836ad5c89bf12c8793a2d8af6942",
-      "currentMainTextSha256": "d437bf17d9555b7b842eb8576cab91d05823ecab6e27660d8b274b7de3e38058"
-    },
-    {
-      "url": "/vietnam/ho-chi-minh-city/saigon-river-waterbus/",
-      "initialWords": 525,
-      "baseWords": 525,
-      "currentWords": 877,
-      "bodyWordDelta": 352,
-      "initialAndBaseMainTextSha256": "67d4f5297310afd04d89172aa5344b463e99ecd934479b5af012620f7b3d3df4",
-      "currentMainTextSha256": "061e08e88da1188d9135c095c8539dd12067e6d1082599e5aaf570d099076374"
-    },
-    {
-      "url": "/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/",
-      "initialWords": 624,
-      "baseWords": 624,
-      "currentWords": 905,
-      "bodyWordDelta": 281,
-      "initialAndBaseMainTextSha256": "05b0c21cf1c9082b7c55243a68b91ea5ad467a11c4a73a319d2b66a4b7de2ce9",
-      "currentMainTextSha256": "c382a467cd249d29079a5f9d539eaefe5d49bbe1a12579a2c4a523c654be2478"
-    }
-  ],
-  "excludedHistoricalRoutes": [
-    {
       "url": "/vietnam/",
-      "reason": "Region cards and credit/disclaimer material changed, but the country overview body outside those blocks stayed identical.",
-      "initialWords": 515,
       "baseWords": 515,
-      "wordDelta": 0,
-      "initialMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca",
-      "baseMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca"
+      "currentWords": 1252,
+      "bodyWordDelta": 737,
+      "baseMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca",
+      "currentMainTextSha256": "2c470070642aac56afe217343e0f18a683ea53f25c529f75a2021334bebd863b"
     },
     {
       "url": "/vietnam/hanoi/west-lake-truc-bach/",
-      "reason": "Only credit/CTA-level changes; not counted as substantive.",
-      "initialWords": 617,
       "baseWords": 617,
-      "wordDelta": 0,
-      "initialMainTextSha256": "10c937477646e788a31a9e8a4af6216c0eeb4bdc56ac3a5d6b44f35b79193d54",
-      "baseMainTextSha256": "6ea49024b8a0617b1627a387deb6f8bd32982bb1387209d7f4147f5787f4ce4a"
+      "currentWords": 1073,
+      "bodyWordDelta": 456,
+      "baseMainTextSha256": "6ea49024b8a0617b1627a387deb6f8bd32982bb1387209d7f4147f5787f4ce4a",
+      "currentMainTextSha256": "c0072aefa21eccfc01f14bc446be5458576b59a9e82cadc2cbfdb90086b8ffdc"
     },
     {
       "url": "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
-      "reason": "Only credit/CTA-level changes; not counted as substantive.",
-      "initialWords": 625,
       "baseWords": 633,
-      "wordDelta": 8,
-      "initialMainTextSha256": "9af111e8492eb486744c7786f20acef423a0b4dd26639ec33c432acfad7ec28d",
-      "baseMainTextSha256": "2802862966601063031e78ed6ebadd911463e65b0df18b470c077afb71857459"
+      "currentWords": 1103,
+      "bodyWordDelta": 470,
+      "baseMainTextSha256": "2802862966601063031e78ed6ebadd911463e65b0df18b470c077afb71857459",
+      "currentMainTextSha256": "2739d24edd2c541adbb2c8865bcf9f0ca299f85cb51879e931df45a9be9414d1"
     },
     {
       "url": "/vietnam/ha-giang/meo-vac-du-gia/",
-      "reason": "Only credit/CTA-level changes; not counted as substantive.",
-      "initialWords": 623,
       "baseWords": 624,
-      "wordDelta": 1,
-      "initialMainTextSha256": "f7369820294a47efd2e78de13b32b368c8f05f6f6d409ad0c9abda2305d627a9",
-      "baseMainTextSha256": "bd13b9f8cb1aedfd4252d4862d8f94b9df52a1e4df143c01a8811eaf22fe4c18"
+      "currentWords": 1144,
+      "bodyWordDelta": 520,
+      "baseMainTextSha256": "bd13b9f8cb1aedfd4252d4862d8f94b9df52a1e4df143c01a8811eaf22fe4c18",
+      "currentMainTextSha256": "efabe972e9757fcbecd1d571524c52f57fac2869403250474e35ec1735a47a98"
     }
   ],
+  "excludedHistoricalRoutes": [],
   "remainingRoutesAfterSprint": [
     "/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/",
     "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
@@ -457,21 +417,18 @@
     "/vietnam/da-lat-central-highlands/",
     "/vietnam/da-lat-central-highlands/langbiang-kho-highlands/",
     "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
-    "/vietnam/ha-giang/meo-vac-du-gia/",
     "/vietnam/ha-long-cat-ba/bai-tu-long/",
     "/vietnam/ha-long-cat-ba/",
     "/vietnam/ha-long-cat-ba/lan-ha-town/",
     "/vietnam/ha-long-cat-ba/national-park/",
     "/vietnam/ha-long-cat-ba/sung-sot-titov/",
     "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
-    "/vietnam/hanoi/west-lake-truc-bach/",
     "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
     "/vietnam/ho-chi-minh-city/cho-lon-binh-tay/",
     "/vietnam/ho-chi-minh-city/cu-chi-tunnels/",
     "/vietnam/ho-chi-minh-city/district-1-colonial-core/",
     "/vietnam/ho-chi-minh-city/",
     "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
-    "/vietnam/",
     "/vietnam/mekong-delta/ben-tre-coconut-islets/",
     "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
     "/vietnam/mekong-delta/can-tho-cai-rang/",
@@ -505,7 +462,198 @@
     "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
     "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
     "/vietnam/phu-quoc-southern-islands/",
-    "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/",
-    "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/"
-  ]
+    "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/"
+  ],
+  "previousCheckpoint": {
+    "branch": "codex/sprint-vn-next-content-20261013",
+    "sourceBaseCommit": "4c7a5d2bd65a6a82474813c04db718dedb1ffc48",
+    "verificationStatus": "full npm run audit and npm run build passed",
+    "totals": {
+      "englishRoutes": 99,
+      "previousSubstantiveRoutes": 39,
+      "newSubstantiveRoutes": 4,
+      "afterSprintSubstantiveRoutes": 43,
+      "remainingRoutes": 56
+    },
+    "currentSprintRoutes": [
+      {
+        "url": "/vietnam/ha-long-cat-ba/core-cruise/",
+        "initialWords": 592,
+        "baseWords": 592,
+        "currentWords": 858,
+        "bodyWordDelta": 266,
+        "initialAndBaseMainTextSha256": "600aa82ca9168ff6c72727407babb733db8f2c1f7be6fa3dfbb2a645475e8df9",
+        "currentMainTextSha256": "fe0d44efe46051f41b33b20f65ac58dcb97cc5984a4ed29a9b5caf77df8fc283"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
+        "initialWords": 558,
+        "baseWords": 558,
+        "currentWords": 848,
+        "bodyWordDelta": 290,
+        "initialAndBaseMainTextSha256": "006a5ee973800cac18331207e1ded428d011836ad5c89bf12c8793a2d8af6942",
+        "currentMainTextSha256": "d437bf17d9555b7b842eb8576cab91d05823ecab6e27660d8b274b7de3e38058"
+      },
+      {
+        "url": "/vietnam/ho-chi-minh-city/saigon-river-waterbus/",
+        "initialWords": 525,
+        "baseWords": 525,
+        "currentWords": 877,
+        "bodyWordDelta": 352,
+        "initialAndBaseMainTextSha256": "67d4f5297310afd04d89172aa5344b463e99ecd934479b5af012620f7b3d3df4",
+        "currentMainTextSha256": "061e08e88da1188d9135c095c8539dd12067e6d1082599e5aaf570d099076374"
+      },
+      {
+        "url": "/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/",
+        "initialWords": 624,
+        "baseWords": 624,
+        "currentWords": 905,
+        "bodyWordDelta": 281,
+        "initialAndBaseMainTextSha256": "05b0c21cf1c9082b7c55243a68b91ea5ad467a11c4a73a319d2b66a4b7de2ce9",
+        "currentMainTextSha256": "c382a467cd249d29079a5f9d539eaefe5d49bbe1a12579a2c4a523c654be2478"
+      }
+    ],
+    "excludedHistoricalRoutes": [
+      {
+        "url": "/vietnam/",
+        "reason": "Region cards and credit/disclaimer material changed, but the country overview body outside those blocks stayed identical.",
+        "initialWords": 515,
+        "baseWords": 515,
+        "wordDelta": 0,
+        "initialMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca",
+        "baseMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca"
+      },
+      {
+        "url": "/vietnam/hanoi/west-lake-truc-bach/",
+        "reason": "Only credit/CTA-level changes; not counted as substantive.",
+        "initialWords": 617,
+        "baseWords": 617,
+        "wordDelta": 0,
+        "initialMainTextSha256": "10c937477646e788a31a9e8a4af6216c0eeb4bdc56ac3a5d6b44f35b79193d54",
+        "baseMainTextSha256": "6ea49024b8a0617b1627a387deb6f8bd32982bb1387209d7f4147f5787f4ce4a"
+      },
+      {
+        "url": "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+        "reason": "Only credit/CTA-level changes; not counted as substantive.",
+        "initialWords": 625,
+        "baseWords": 633,
+        "wordDelta": 8,
+        "initialMainTextSha256": "9af111e8492eb486744c7786f20acef423a0b4dd26639ec33c432acfad7ec28d",
+        "baseMainTextSha256": "2802862966601063031e78ed6ebadd911463e65b0df18b470c077afb71857459"
+      },
+      {
+        "url": "/vietnam/ha-giang/meo-vac-du-gia/",
+        "reason": "Only credit/CTA-level changes; not counted as substantive.",
+        "initialWords": 623,
+        "baseWords": 624,
+        "wordDelta": 1,
+        "initialMainTextSha256": "f7369820294a47efd2e78de13b32b368c8f05f6f6d409ad0c9abda2305d627a9",
+        "baseMainTextSha256": "bd13b9f8cb1aedfd4252d4862d8f94b9df52a1e4df143c01a8811eaf22fe4c18"
+      }
+    ],
+    "remainingRoutesAfterSprint": [
+      "/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/",
+      "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
+      "/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/",
+      "/vietnam/da-lat-central-highlands/",
+      "/vietnam/da-lat-central-highlands/langbiang-kho-highlands/",
+      "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
+      "/vietnam/ha-giang/meo-vac-du-gia/",
+      "/vietnam/ha-long-cat-ba/bai-tu-long/",
+      "/vietnam/ha-long-cat-ba/",
+      "/vietnam/ha-long-cat-ba/lan-ha-town/",
+      "/vietnam/ha-long-cat-ba/national-park/",
+      "/vietnam/ha-long-cat-ba/sung-sot-titov/",
+      "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
+      "/vietnam/hanoi/west-lake-truc-bach/",
+      "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+      "/vietnam/ho-chi-minh-city/cho-lon-binh-tay/",
+      "/vietnam/ho-chi-minh-city/cu-chi-tunnels/",
+      "/vietnam/ho-chi-minh-city/district-1-colonial-core/",
+      "/vietnam/ho-chi-minh-city/",
+      "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+      "/vietnam/",
+      "/vietnam/mekong-delta/ben-tre-coconut-islets/",
+      "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+      "/vietnam/mekong-delta/can-tho-cai-rang/",
+      "/vietnam/mekong-delta/chau-doc-sam-tra-su/",
+      "/vietnam/mekong-delta/",
+      "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+      "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+      "/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/",
+      "/vietnam/mui-ne-binh-thuan/",
+      "/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/",
+      "/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/",
+      "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+      "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+      "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+      "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+      "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+      "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+      "/vietnam/nha-trang-khanh-hoa/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+      "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+      "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
+      "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+      "/vietnam/phong-nha-ke-bang/",
+      "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
+      "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+      "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+      "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+      "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+      "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+      "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+      "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+      "/vietnam/phu-quoc-southern-islands/",
+      "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/",
+      "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/"
+    ]
+  },
+  "followUpSprint": {
+    "reviewedOn": "2026-10-12",
+    "sourceBaseCommit": "7ac91c72f5655c9b00aaeae7c8943bfa3c083304",
+    "substantiveRouteCount": 4,
+    "bodyWordDeltaTotal": 2183,
+    "reassessedFromPreviousExclusion": [
+      {
+        "url": "/vietnam/",
+        "reason": "Region cards and credit/disclaimer material changed, but the country overview body outside those blocks stayed identical.",
+        "initialWords": 515,
+        "baseWords": 515,
+        "wordDelta": 0,
+        "initialMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca",
+        "baseMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca"
+      },
+      {
+        "url": "/vietnam/hanoi/west-lake-truc-bach/",
+        "reason": "Only credit/CTA-level changes; not counted as substantive.",
+        "initialWords": 617,
+        "baseWords": 617,
+        "wordDelta": 0,
+        "initialMainTextSha256": "10c937477646e788a31a9e8a4af6216c0eeb4bdc56ac3a5d6b44f35b79193d54",
+        "baseMainTextSha256": "6ea49024b8a0617b1627a387deb6f8bd32982bb1387209d7f4147f5787f4ce4a"
+      },
+      {
+        "url": "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+        "reason": "Only credit/CTA-level changes; not counted as substantive.",
+        "initialWords": 625,
+        "baseWords": 633,
+        "wordDelta": 8,
+        "initialMainTextSha256": "9af111e8492eb486744c7786f20acef423a0b4dd26639ec33c432acfad7ec28d",
+        "baseMainTextSha256": "2802862966601063031e78ed6ebadd911463e65b0df18b470c077afb71857459"
+      },
+      {
+        "url": "/vietnam/ha-giang/meo-vac-du-gia/",
+        "reason": "Only credit/CTA-level changes; not counted as substantive.",
+        "initialWords": 623,
+        "baseWords": 624,
+        "wordDelta": 1,
+        "initialMainTextSha256": "f7369820294a47efd2e78de13b32b368c8f05f6f6d409ad0c9abda2305d627a9",
+        "baseMainTextSha256": "bd13b9f8cb1aedfd4252d4862d8f94b9df52a1e4df143c01a8811eaf22fe4c18"
+      }
+    ],
+    "routes": "currentSprintRoutes",
+    "priorRemainingRoutes": "previousCheckpoint.remainingRoutesAfterSprint"
+  }
 }

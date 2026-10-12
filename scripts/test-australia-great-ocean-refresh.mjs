@@ -53,7 +53,11 @@ const laterVietnamRoutes = [
   '/vietnam/ha-long-cat-ba/core-cruise/',
   '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
   '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
-  '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/'
+  '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/',
+  '/vietnam/',
+  '/vietnam/hanoi/west-lake-truc-bach/',
+  '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
+  '/vietnam/ha-giang/meo-vac-du-gia/'
 ];
 const laterSwitzerlandCh14DateRoutes = laterSwitzerlandCh14Routes.slice(1);
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
