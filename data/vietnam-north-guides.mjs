@@ -550,27 +550,51 @@ export const vietnamNorthClusters = [
         name: 'Ha Long Bay Core Cruise',
         motif: 'boarding window and karst seascape',
         instrument: 'tide',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
+        sources: [
+          ['https://halongbay.com.vn/boats?type=2', 'Ha Long Bay Management Board — current daytime vessel listings and named ports; confirm the vessel’s assigned pier'],
+          ['https://halongbay.com.vn/boats?type=1', 'Ha Long Bay Management Board — current overnight vessel listings and named ports; confirm the vessel’s assigned pier'],
+          ['https://halongbay.com.vn/tours', 'Ha Long Bay Management Board — approved bay itineraries and route variants'],
+          ['https://halongbay.com.vn/en/p/1013-canh-bao-som-dong-loc-tren-bien', 'Ha Long Bay Management Board — bay weather and early-squall warnings; check the live notice before departure']
+        ],
+        searchKeywords: ['tuan chau cruise port', 'ha long international passenger port', 'overnight cruise pier', 'day cruise pier', 'ha long cruise cancellation', 'halong bay route'],
         image: image({ src: '/assets/images/vietnam-ha-long-cruise.webp', alt: 'A cruise boat among the limestone islands of Ha Long Bay', source: 'https://commons.wikimedia.org/wiki/File:Ha_Long_bay.jpg', label: 'Ha Long bay.jpg', creator: 'Shyamal', license: 'CC BY-SA 4.0' }),
-        summary: 'A decision guide for choosing a Ha Long day or overnight cruise while keeping the port, tender, weather and environmental rules visible.',
-        lead: 'The classic cruise is a logistics product as much as a landscape experience. The useful page distinguishes port transfer, vessel, tender boat, cave landing and onboard activities so travelers know which parts can change with sea state.',
-        orientation: 'Compare day and overnight patterns by boarding time, route density, cabin return and land-transfer burden rather than by a generic list of islands.',
-        arrival: 'Use the operator’s confirmed port, check-in window and luggage instructions. Do not assume a Hanoi hotel transfer goes to the same pier as another cruise brand.',
-        sequence: 'Confirm land transfer, board early, follow the crew’s safety briefing, choose one or two activities and keep the final disembarkation buffer intact.',
-        boundary: 'Do not swim, kayak, feed wildlife or step ashore outside the managed route. The bay is a protected landscape and a working marine environment.',
+        summary: 'Choose a Ha Long day or overnight cruise only after matching the named vessel to its actual port, approved route, weather call and return transfer.',
+        lead: 'The port is the first booking decision, not a detail to solve in the taxi. The official listings show vessels using both Tuần Châu International Cruise Port and Hạ Long International Passenger Port across daytime and overnight products. Cruise length alone does not identify the pier; the vessel and booking confirmation do.',
+        orientation: 'Compare the actual boat, port, check-in window, route and disembarkation plan. A day cruise may leave from either listed port, and overnight boats may also use either, so map the exact pier before buying a hotel transfer.',
+        arrival: 'Save the operator’s vessel name, booking reference, exact port and gate, check-in cutoff, luggage rule and shore contact. If the booking and transfer name different ports, stop and get written confirmation before leaving Hanoi.',
+        sequence: 'Match the boat to the official route list, check the bay forecast and cancellation terms on departure day, then keep enough shore time for the actual arrival port and road transfer back.',
+        boundary: 'The captain and bay authority decide whether the boat sails, changes route or cancels. Do not pressure crews to continue in unsafe weather or step ashore outside the approved itinerary.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Resolve the port before the landscape',
+          intro: 'Day versus overnight is not a reliable pier shortcut. Lock each handoff to the named boat.',
+          steps: [
+            ['Booking', 'Record vessel + exact port', 'Confirm Tuần Châu or Hạ Long International Passenger Port from the operator’s current booking.'],
+            ['Transfer', 'Match the vehicle drop-off', 'Send the same port name and gate to the hotel or driver; resolve any mismatch before departure.'],
+            ['At sea', 'Follow the approved route', 'Check the live forecast and captain’s call; stops and activities can change with conditions.'],
+            ['Return', 'Protect the shore connection', 'Use the confirmed disembarkation port and leave a road buffer; avoid a same-evening flight or fixed train.']
+          ],
+          fallbackTitle: 'If the sailing is cancelled',
+          fallback: 'Keep a land-based Ha Long day or a rescheduled sailing as separate options. Do not assume another cruise leaves from the same port or honors the original booking.'
+        },
+        arrivalLabel: 'Pier contract',
+        boundaryLabel: 'Authority call',
         stages: [
-          ['Solve the port', 'Save the pier name, check-in time, vehicle contact and weather fallback before leaving Hanoi or the hotel.'],
-          ['Read the vessel', 'Understand cabin, tender, meal and activity inclusions instead of assuming every boat offers the same experience.'],
-          ['Use the water responsibly', 'Wear required safety equipment, remain in designated areas and keep plastic, food and noise under control.'],
-          ['Land with margin', 'Plan the return transfer defensively and avoid a same-evening connection that depends on a perfectly punctual disembarkation.']
+          ['Match boat and pier', 'Compare the operator’s current booking with the management board’s daytime or overnight list. If the booking does not name a port, ask before paying the transfer.'],
+          ['Read what is included', 'Confirm cabin, tender, meal, cave stop and activity terms with this vessel; route names do not guarantee every stop.'],
+          ['Check the marine call', 'Review the current bay notice and operator cancellation policy. Wear required safety equipment and accept route changes made for sea state.'],
+          ['Land with margin', 'Plan from the vessel’s actual port, allow road time and keep an unbooked buffer after disembarkation instead of chaining a same-evening flight.']
         ],
         risks: [
-          ['Sea-state changes', 'Wind, storms and management decisions can alter routes or cancel activities. A ticket is not a guarantee of every stop.'],
-          ['Tender transfers', 'Small-boat transfers need stable footing and attention, especially for children and older travelers. Follow crew directions.'],
-          ['Environmental harm', 'Do not litter, collect shells, touch formations or feed animals. Keep the protected seascape more intact than you found it.']
+          ['Port mismatch', 'Tuần Châu and Hạ Long International Passenger Port are separate road destinations. A transfer booked to the wrong one can mean a missed check-in.'],
+          ['Weather or closure', 'Wind and squalls may change the itinerary or suspend sailing. Keep a shore day available and check the operator’s reschedule and refund terms.'],
+          ['Tender and habitat', 'Wet transfers and managed landings need crew direction. Keep life-jacket rules, wildlife distance and no-litter boundaries intact.']
         ],
-        duration: 'Use one full day for a day cruise or one night for a less compressed overnight experience.',
-        combine: 'Combine with Ha Long city only as a land buffer before or after the boat; pair Cat Ba as a separate base when the itinerary needs more island time.',
-        verify: 'Check current port, vessel, route, weather cancellation policy, safety equipment, meal needs and final transfer.'
+        duration: 'Reserve the full operating window stated for the specific sailing, plus road time at both ends. Overnight products need a separate check of check-in and next-day disembarkation.',
+        combine: 'Use Ha Long city as a land-side buffer before or after the cruise. Treat Cat Ba as a separate base with its own ferry or road connection, not an automatic add-on.',
+        verify: 'Check vessel identity, named port and gate, approved route, day-of weather notice, cancellation terms, safety equipment and final road transfer.'
       },
       {
         slug: 'bai-tu-long',
@@ -940,27 +964,48 @@ export const vietnamNorthClusters = [
         name: 'Paradise and Tien Son Caves',
         motif: 'dry cave chambers and stair threshold',
         instrument: 'section',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
+        sources: [
+          ['https://phongnhakebang.vn/travel/dong-thien-duong13-en', 'Phong Nha–Ke Bang National Park — Paradise Cave route description: shaded approach, trek and public boardwalk'],
+          ['https://phongnhakebang.vn/travel/dong-tien-son-chon-bong-lai-canh3-en', 'Phong Nha–Ke Bang National Park — Tien Son Cave steps and current public access limit; recheck before travel'],
+          ['https://phongnhakebang.vn/travel/phong-nha-ky-quan-de-nhat-dong1-en', 'Phong Nha–Ke Bang National Park — Phong Nha Cave as a separate boat-route fallback']
+        ],
+        searchKeywords: ['paradise cave route', 'tien son cave stairs', 'phong nha cave access', 'phong nha park shuttle', 'cave walkway', 'cave closure'],
         image: image({ src: '/assets/images/vietnam-paradise-cave.webp', alt: 'Illuminated formations inside Paradise Cave at Phong Nha-Ke Bang', source: 'https://commons.wikimedia.org/wiki/File:Paradise_cave.JPG', label: 'Paradise cave.JPG', creator: 'Tycho', license: 'CC BY-SA 3.0' }),
-        summary: 'A dry-cave comparison chapter for Paradise Cave and Tien Son, with separate entrances, stairs and managed visitor routes.',
-        lead: 'These caves provide a gentler introduction to Phong Nha’s underground architecture, but they still require stairs, walking and respect for formations. Explain the difference between a long public boardwalk, a mountain approach and a boat cave.',
-        orientation: 'Choose one primary cave and add the second only after checking transport, stairs and opening windows. Do not treat every cave entrance as walkable from the same parking area.',
-        arrival: 'Use the official tourism center or park approach and confirm the current shuttle, stairs and ticket combination. Heat outside can make the climb more demanding than the cave suggests.',
-        sequence: 'Visit the cave with the tighter access window first, take a shaded recovery break and add the second only if the group remains comfortable.',
-        boundary: 'Stay on boardwalks, do not touch formations or carve surfaces, and follow lighting and photography rules.',
+        summary: 'Choose Paradise Cave for its long public boardwalk or Tien Son for a stair-heavy visit, then plan around the park’s current access limits and transfer rules.',
+        lead: 'The useful comparison is physical and operational. The park describes Paradise as a shaded 1.6 km approach, a 500 m walk to the cave and about 1 km of public boardwalk. Tien Son involves roughly 600 stone steps; the park currently says public access reaches only the first 400 m because of a hazard. Recheck that limit before building a two-cave day.',
+        orientation: 'Pick one primary cave by mobility and heat tolerance. Paradise is a longer walk with a broad boardwalk; Tien Son adds a substantial stair climb and currently limited interior access. They are distinct managed visits, not two entrances that can be assumed to share a shuttle or ticket.',
+        arrival: 'Confirm the park’s current ticket combination, vehicle or shuttle between cave areas, opening status and any group restrictions. Carry water for the exposed approach and do not count on walking between separate access points.',
+        sequence: 'Book the preferred cave first, use its actual access route, then stop for shade and a mobility check. Add the second only if its gate is open, transport is confirmed and everyone still has energy for the return.',
+        boundary: 'Stay on public paths and boardwalks. Do not touch formations, step past barriers or treat Tien Son’s closed interior as an optional extension.',
+        routeDiagram: {
+          kind: 'compare',
+          title: 'Choose by route effort and open distance',
+          intro: 'The park’s published route details answer two different questions: walking distance at Paradise and stairs plus a current limit at Tien Son.',
+          steps: [
+            ['Paradise Cave', 'Long walk, boardwalk inside', 'Official page describes a 1.6 km shaded approach, a 500 m trek to the cave and a 1 km public boardwalk.'],
+            ['Tien Son Cave', 'About 600 steps; access-limited', 'The official page currently says the public route opens only to 400 m because of a hazard. Recheck the notice.']
+          ],
+          fallbackTitle: 'If access or stamina changes',
+          fallback: 'Visit the one cave whose full route is confirmed and comfortable. If Tien Son’s restriction or closure makes the plan unsuitable, use the park’s separate Phong Nha boat cave only after confirming its own boat and water conditions.'
+        },
+        arrivalLabel: 'Park entry plan',
+        boundaryLabel: 'Open-route limit',
         stages: [
-          ['Compare the effort', 'Read the current route length, stairs and transport before choosing one or both caves.'],
-          ['Approach slowly', 'Use shade, water and handrails on the entrance climb, especially after a hot road transfer.'],
-          ['Read the dry chamber', 'Observe scale, texture and lighting without reaching across barriers or using a tripod where it blocks flow.'],
-          ['Exit with energy', 'Leave time for the descent, vehicle transfer and a meal; do not convert a comfortable cave day into a forced expedition.']
+          ['Choose the effort', 'Match Paradise’s walk and boardwalk or Tien Son’s stair climb to the least mobile person in the group.'],
+          ['Confirm each gate', 'Check live park notices, ticket rules and transfers separately; do not assume the second cave is open or included.'],
+          ['Use the public route', 'Walk only the path currently permitted by the park. At Tien Son, turn at the stated 400 m limit unless management changes it.'],
+          ['Leave a recovery margin', 'Cool down before the vehicle return and keep a second cave optional. Heat, stairs or a delayed shuttle are reasons to end after one.']
         ],
         risks: [
-          ['Stairs and heat', 'The external climb can be strenuous in tropical heat. Schedule breaks and avoid promises of easy access.'],
-          ['Formation damage', 'Even light touching leaves oils and physical damage. Keep hands and equipment behind barriers.'],
-          ['Opening changes', 'Park maintenance and weather can alter cave access. Verify each cave independently.']
+          ['Access limit', 'Tien Son’s public route is currently posted as limited to 400 m. That condition may change; the gate notice controls.'],
+          ['Effort and heat', 'A long shaded walk and a staircase are different loads. Bring water, use handrails and choose the shorter suitable plan.'],
+          ['Separate operations', 'Tickets, shuttle service and cave openings can differ. If one closes, do not improvise an unofficial path or assume another ticket covers it.']
         ],
-        duration: 'Allow a half day for one cave or a full day for both with transfer and recovery time.',
-        combine: 'Combine with Son River and Phong Nha Cave as an accessible cave survey, not with Hang En or Son Doong on the same day.',
-        verify: 'Check cave opening, ticket combination, shuttle, stairs, weather, footwear and photography rules.'
+        duration: 'Allow at least a half-day window for one cave, then extend only after checking current entry and transfer time; two caves need a full, unhurried day.',
+        combine: 'Pair one dry cave with a relaxed village meal. Do not combine two cave climbs with a wet adventure program or a long same-day road transfer.',
+        verify: 'Check the park notice for each cave, the 400 m Tien Son limit, stairs and route lengths, ticket or shuttle rules, rain and footwear.'
       },
       {
         slug: 'chay-river-dark-cave',

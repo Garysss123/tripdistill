@@ -125,6 +125,8 @@ const malaysiaKinabaluRoutes = [
 ];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
+const vietnamFieldLastmod = '2026-10-12';
+const vietnamFieldEditedRoutes = vietnamGuides.filter((guide) => guide.isoDate === vietnamFieldLastmod).map((guide) => guide.url);
 const australiaLastmod = '2026-09-04';
 const australiaGreatOceanLastmod = '2026-10-12';
 const australiaGreatOceanEditedRoutes = [
@@ -1438,6 +1440,12 @@ for (const route of vietnamHueEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Hue route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamHueLastmod });
+}
+
+for (const route of vietnamFieldEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Vietnam field guide absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamFieldLastmod });
 }
 
 for (const route of australiaGreatOceanEditedRoutes) {

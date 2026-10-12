@@ -7,7 +7,7 @@ const reviewDate = '31 August 2026';
 const isoDate = '2026-08-31';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/vietnam.css?v=20260831-2';
-const fieldCss = '/css/vietnam-field.css?v=20260831-1';
+const fieldCss = '/css/vietnam-field.css?v=20261012-1';
 const mainJs = '/js/main.js?v=20260911-1';
 const vietnamNavStart = '<!-- VIETNAM_NAV_START -->';
 const vietnamNavEnd = '<!-- VIETNAM_NAV_END -->';
@@ -120,6 +120,17 @@ function relatedCards(cluster, currentSlug, summaryOverrides = {}) {
           </a>`).join('');
 }
 
+function routeDiagramMarkup(diagram) {
+  if (!diagram) return '';
+  if (!['flow', 'compare'].includes(diagram.kind) || !Array.isArray(diagram.steps) || diagram.steps.length < 2 || diagram.steps.length > 4) {
+    throw new Error(`Invalid Vietnam route diagram: ${diagram.title || '(untitled)'}`);
+  }
+  const steps = diagram.steps.map(([label, heading, copy], index) => `
+            <li><span class="vn-route-map-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><div><small>${escapeHtml(label)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></div></li>`).join('');
+  return `<section class="vn-route-map vn-route-map--${diagram.kind}" aria-labelledby="vn-route-map-title"><header><span class="vn-section-label">Route decision</span><h2 id="vn-route-map-title">${escapeHtml(diagram.title)}</h2><p>${escapeHtml(diagram.intro)}</p></header><ol>${steps}
+      </ol><aside><strong>${escapeHtml(diagram.fallbackTitle)}</strong><p>${escapeHtml(diagram.fallback)}</p></aside></section>`;
+}
+
 function guideSchema(guide) {
   return {
     '@context': 'https://schema.org',
@@ -190,6 +201,7 @@ function guidePage(guide, cluster) {
 
       <section class="vn-decision-strip" aria-label="Three planning decisions">${decisions}</section>
       <section class="vn-reading" aria-labelledby="vn-reading-title"><div><span class="vn-section-label">Read the place</span><h2 id="vn-reading-title">${escapeHtml(guide.presentation?.readingTitle || 'Keep the local logic visible.')}</h2><p>${escapeHtml(guide.lead)}</p></div><aside><small>Orientation note</small><p>${escapeHtml(guide.orientation)}</p></aside></section>
+      ${routeDiagramMarkup(guide.routeDiagram)}
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
       <section class="vn-field-section" id="route" aria-labelledby="vn-route-title"><div class="vn-section-head"><div><span class="vn-section-label">Four-stage route</span><h2 id="vn-route-title">${escapeHtml(guide.presentation?.routeTitle || 'Let sequence do the editing.')}</h2></div>${routeLead}</div><div class="vn-route">${route}</div></section>
       <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.checksLabel || 'Before committing')}</span><h2 id="vn-checks-title">${escapeHtml(guide.presentation?.checksTitle || 'Three weak points to solve.')}</h2></div>${checksIntroMarkup}</div><div class="vn-check-grid">${checks}</div>${boundary}</section>
@@ -358,12 +370,24 @@ function updateFooter() {
   fs.writeFileSync(file, html);
 }
 
-function updateSearch() {
+function updateSearch(routeFilter = null) {
   const file = path.join(root, 'data', 'search-index.json');
-  const current = JSON.parse(fs.readFileSync(file, 'utf8')).filter((item) => !item.url.startsWith('/vietnam/'));
+  const allRecords = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (routeFilter) {
+    const byUrl = new Map(allRecords.map((item) => [item.url, item]));
+    for (const guide of vietnamGuides.filter((item) => routeFilter.has(item.url))) {
+      const record = byUrl.get(guide.url);
+      if (!record) throw new Error(`Cannot update missing Vietnam search record ${guide.url}`);
+      record.summary = guide.summary;
+      record.keywords = [...new Set([guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'vietnam travel guide', ...(guide.searchKeywords || [])])];
+    }
+    fs.writeFileSync(file, JSON.stringify(allRecords, null, 2) + '\n');
+    return;
+  }
+  const current = allRecords.filter((item) => !item.url.startsWith('/vietnam/'));
   const country = { title: 'Vietnam Travel Guide', url: '/vietnam/', parent: 'Asia', type: 'Country field atlas', summary: 'Fourteen complete hubs and eighty-four focused guides from Hanoi and the northern highlands to the central coast, delta and southern islands.', keywords: ['vietnam', 'viet nam', 'hanoi', 'ho chi minh city', 'hoi an', 'mekong delta', 'vietnam travel guide'] };
   const hubs = vietnamClusters.map((cluster) => ({ title: `${cluster.name} Travel Guide`, url: `/vietnam/${cluster.slug}/`, parent: `Vietnam · ${cluster.region}`, type: 'Complete regional hub with six field guides', summary: cluster.hubIntro, keywords: [cluster.name.toLowerCase(), cluster.slug.replaceAll('-', ' '), cluster.region.toLowerCase(), ...cluster.guides.map((guide) => guide.name.toLowerCase())] }));
-  const guides = vietnamGuides.map((guide) => ({ title: `${guide.name} Guide`, url: guide.url, parent: `Vietnam · ${guide.hubName}`, type: 'Focused area and decision guide', summary: guide.summary, keywords: [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'vietnam travel guide'] }));
+  const guides = vietnamGuides.map((guide) => ({ title: `${guide.name} Guide`, url: guide.url, parent: `Vietnam · ${guide.hubName}`, type: 'Focused area and decision guide', summary: guide.summary, keywords: [...new Set([guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'vietnam travel guide', ...(guide.searchKeywords || [])])] }));
   fs.writeFileSync(file, JSON.stringify([...current, country, ...hubs, ...guides], null, 2) + '\n');
 }
 
@@ -430,9 +454,17 @@ function updateEnglishMainScriptReferences() {
 }
 
 const hueOnly = process.argv.includes('--hue-only');
-const clustersToGenerate = hueOnly ? vietnamClusters.filter((cluster) => cluster.slug === 'hue') : vietnamClusters;
+const routeArgument = process.argv.find((value) => value.startsWith('--routes='))?.slice('--routes='.length);
+const requestedRoutes = routeArgument?.split(',').map((route) => route.trim()).filter(Boolean) || [];
+const targeted = routeArgument !== undefined;
+if (hueOnly && targeted) throw new Error('Use either --hue-only or --routes, not both.');
+if (targeted && (!requestedRoutes.length || new Set(requestedRoutes).size !== requestedRoutes.length)) throw new Error('--routes must contain unique, non-empty public route paths.');
+const guidesByRoute = new Map(vietnamGuides.map((guide) => [guide.url, guide]));
+const unknownRoutes = requestedRoutes.filter((route) => !guidesByRoute.has(route));
+if (unknownRoutes.length) throw new Error(`Unknown Vietnam child routes: ${unknownRoutes.join(', ')}`);
+const clustersToGenerate = hueOnly ? vietnamClusters.filter((cluster) => cluster.slug === 'hue') : targeted ? [] : vietnamClusters;
 const hueEditorialGuideSlugs = new Set(['imperial-city-citadel', 'royal-tombs', 'thien-mu-perfume-river']);
-const guidesToGenerate = hueOnly ? vietnamGuides.filter((guide) => guide.hubSlug === 'hue' && hueEditorialGuideSlugs.has(guide.slug)) : vietnamGuides;
+const guidesToGenerate = hueOnly ? vietnamGuides.filter((guide) => guide.hubSlug === 'hue' && hueEditorialGuideSlugs.has(guide.slug)) : targeted ? requestedRoutes.map((route) => guidesByRoute.get(route)) : vietnamGuides;
 if (hueOnly && clustersToGenerate.length !== 1) throw new Error('Hue-only generation requires exactly one Hue cluster.');
 if (hueOnly && guidesToGenerate.length !== hueEditorialGuideSlugs.size) throw new Error('Hue-only generation requires the three approved Hue guide refreshes.');
 
@@ -448,7 +480,10 @@ for (const guide of guidesToGenerate) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, guidePage(guide, cluster));
 }
-if (hueOnly) {
+if (targeted) {
+  updateSearch(new Set(requestedRoutes));
+  console.log(`Generated only ${guidesToGenerate.length} requested Vietnam child pages and synchronized their search records: ${requestedRoutes.join(', ')}.`);
+} else if (hueOnly) {
   updateHueSiblingPhotoCredits(clustersToGenerate[0]);
   console.log('Generated Hue only: 1 hub and 3 refreshed guides; the remaining 3 Hue siblings received only the current tomb-photo credit. Country shell, shared navigation, search and other regions were not rewritten.');
 } else {

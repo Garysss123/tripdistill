@@ -52,6 +52,12 @@ const laterSwitzerlandCh14Routes = [
   '/switzerland/locarno-ascona-valleys/',
   '/switzerland/schaffhausen-rhine-falls/'
 ];
+const laterVietnamRoutes = [
+  '/vietnam/ha-long-cat-ba/core-cruise/',
+  '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+  '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+  '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -267,7 +273,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14 child and CH14 search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14 child, CH14 and Vietnam search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);

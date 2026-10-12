@@ -42,7 +42,11 @@ const checkpointContinuationRoutes = [
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/',
   '/switzerland/lugano-southern-ticino/',
   '/switzerland/locarno-ascona-valleys/',
-  '/switzerland/schaffhausen-rhine-falls/'
+  '/switzerland/schaffhausen-rhine-falls/',
+  '/vietnam/ha-long-cat-ba/core-cruise/',
+  '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+  '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+  '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/'
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -98,7 +102,7 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast, Cairns and CH14 date routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast, Cairns, CH14 and Vietnam date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: checkpoint continuation lastmod must be current.`);
 

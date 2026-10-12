@@ -1185,6 +1185,13 @@ const daLatCentralHighlands = defineVietnamCluster({
       name: 'Da Lat Lake & Railway Core',
       motif: 'The cool-city hinge',
       instrument: 'section',
+      reviewDate: '12 October 2026',
+      isoDate: '2026-10-12',
+      sources: [
+        ['https://vietnamtourism.gov.vn/en/post/20204', 'Vietnam National Authority of Tourism — Da Lat Railway Station as a visitor site; no live train timetable is provided'],
+        ['https://lamdong.gov.vn/sites/en/dalatcity/SitePages/service.aspx', 'Lâm Đồng Government — Da Lat city services and the Da Lat–Trai Mat tourist rail route; page does not confirm a live departure']
+      ],
+      searchKeywords: ['da lat railway station', 'da lat train schedule', 'traimat railway', 'tra i mat train', 'da lat city walk', 'rail service status'],
       image: image({
         src: '/assets/images/vietnam-da-lat-railway.webp',
         alt: 'Da Lat Railway Station in Vietnam’s Central Highlands',
@@ -1193,26 +1200,41 @@ const daLatCentralHighlands = defineVietnamCluster({
         creator: 'Lars Curfs (Grashoofd)',
         license: 'CC BY-SA 3.0 nl'
       }),
-      summary: 'Start Da Lat with a walkable lake, market, architecture and railway chapter that explains the city before the highland roads begin.',
-      lead: 'Da Lat’s center is a useful hinge between colonial-era urban form, flower and produce commerce, lake life and the short railway experience toward Trai Mat. It rewards a slower city reading.',
-      orientation: 'Keep the lake, market and station as three different readings of the same cool highland city. Do not let a train photo replace the wider urban context.',
-      arrival: 'The airport lies outside town and buses arrive on their own schedules; once in the center, walking and taxis work well but steep streets and rain change the pace.',
-      sequence: 'Begin at the lake and market, move through one architectural or railway layer, pause for a warm drink, then use the station excursion only after confirming current operation.',
+      summary: 'Read Da Lat’s lake, market and station on foot; add the Trai Mat tourist rail only after confirming a current departure and a workable return.',
+      lead: 'The station is part of Da Lat’s heritage and the city’s historic tourist route toward Trai Mat, but the official pages available for this review do not verify a live timetable. Treat the rail excursion as conditional: an old departure time is not a connection plan. Keep the city walk complete on its own.',
+      orientation: 'Separate the walkable center from the railway decision. The official tourism and provincial pages establish the station and Da Lat–Trai Mat route as visitor context, but they do not confirm that a train is operating on your date or when it returns. Confirm directly with current station information before reshaping the day.',
+      arrival: 'Walk the central lake, market and station area at a gentle pace; rain and steep pavements slow the loop. Before traveling to Trai Mat by rail, verify that a service is operating, the departure and return tickets are available, and the return leaves time to reach your hotel or onward transfer.',
+      sequence: 'Complete the lake-and-market walk first. If current station information confirms a train and both directions, take the excursion with a return buffer; if not, keep the station as a heritage stop and use a road transfer only if Trai Mat still fits the day.',
       boundary: 'Protect working streets and heritage: do not enter railway service areas, block vendors, photograph private interiors or treat religious buildings as props.',
+      routeDiagram: {
+        kind: 'flow',
+        title: 'The rail leg is conditional; the city walk is not',
+        intro: 'The available official pages identify a tourist route but do not provide a live departure board for your date.',
+        steps: [
+          ['City core', 'Walk lake + market', 'Use the public center as a complete first route, with a rain and slope allowance.'],
+          ['Station check', 'Confirm service today', 'Ask the station or consult its current official notice; do not reuse an old published timetable.'],
+          ['Trai Mat', 'Go only with both legs set', 'Confirm departure, return, ticket availability and any station access conditions before leaving the center.'],
+          ['Back in Da Lat', 'Protect the return window', 'Keep onward transfers loose. If live rail details remain unclear, stay in the city or use a road plan.']
+        ],
+        fallbackTitle: 'If no live rail service is confirmed',
+        fallback: 'Keep the lake, market and station as the day’s completed city route. Add Trai Mat by road only if the place and return timing still suit the group; do not present a historic train schedule as current.'
+      },
+      arrivalLabel: 'City-first arrival',
+      boundaryLabel: 'Current service only',
       stages: [
-        ['Settle the altitude', 'Arrive with layers, rain protection and a gentle first walk; the cooler climate does not remove sun or slippery pavement.'],
-        ['Read the lake', 'Follow the public edge, market and streets to see how residents use the center before adding a separate attraction.'],
-        ['Check the rail', 'Confirm current train operation and ticket details, then stay within station and carriage rules while reading the route to Trai Mat.'],
-        ['Return to town', 'Use the return window for food, rest and a weather check rather than forcing a distant waterfall or mountain road into the same day.']
+        ['Start in the center', 'Allow for rain, slopes and traffic as you connect the public lake edge, market streets and station precinct.'],
+        ['Read the station', 'Use the public heritage areas; keep clear of tracks, staff-only rooms and active railway equipment.'],
+        ['Check both train legs', 'Confirm an operating service, outbound and return tickets, and same-day access directly from current station information.'],
+        ['Choose the fallback', 'If no current departure is confirmed, retain the city walk. Do not chain a fixed flight or bus to an unverified train return.']
       ],
       risks: [
-        ['Rain and cool', 'Rain can arrive quickly and evenings are cool; carry a layer and avoid assuming the city is always dry or warm.'],
-        ['Slope and traffic', 'Steep streets, scooters and uneven pavements require deliberate crossings and slower walking.'],
-        ['Schedule drift', 'Railway operation and attraction access can change; do not book a fixed onward transfer immediately after the excursion.']
+        ['Unverified operation', 'The official material reviewed confirms a tourist-route history, not a live departure for your travel date.'],
+        ['Wet streets', 'Rain, slopes and scooters slow the city loop; use visible crossings and keep a layer for cooler evenings.'],
+        ['Return mismatch', 'A train visit without a confirmed return can break hotel, bus or airport plans. Keep that leg optional until both tickets are clear.']
       ],
-      duration: 'Use a half day for the lake and center, or a full flexible day when the railway and market both matter.',
-      combine: 'Combine with a city café or pagoda, not with Bidoup or a long waterfall road that needs daylight and weather margin.',
-      verify: 'Check current airport or bus arrival, railway operation, weather, station access and any local event or road restriction before setting the day.'
+      duration: 'Use a half day for the center. Reserve a full flexible day only if current station information confirms a train and a return that fit the date.',
+      combine: 'Combine the city walk with a café or one central heritage stop. Keep Bidoup and long waterfall roads for another day with daylight and weather margin.',
+      verify: 'Confirm train operation for the exact date, both ticket legs, station access, rain, road conditions and the return to your next connection.'
     },
     {
       slug: 'cau-dat-coffee-farms',

@@ -263,6 +263,12 @@ export const integrationRouteGroups = Object.freeze({
     '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
     '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
     '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+  ]),
+  vietnam: Object.freeze([
+    '/vietnam/ha-long-cat-ba/core-cruise/',
+    '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+    '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+    '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/'
   ])
 });
 
@@ -273,7 +279,8 @@ export const integrationRoutes = Object.freeze([
   ...integrationRouteGroups.switzerland,
   ...integrationRouteGroups.italy,
   ...integrationRouteGroups.canada,
-  ...integrationRouteGroups.malaysia
+  ...integrationRouteGroups.malaysia,
+  ...integrationRouteGroups.vietnam
 ]);
 
 export const integrationSitemapRoutes = Object.freeze(

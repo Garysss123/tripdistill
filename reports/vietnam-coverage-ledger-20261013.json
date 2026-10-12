@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "auditedOn": "2026-10-12",
+  "branch": "codex/sprint-vn-next-content-20261013",
+  "sourceBaseCommit": "4c7a5d2bd65a6a82474813c04db718dedb1ffc48",
+  "initialAtlasCommit": "8a1ada3b4021d077fd468c9c318d91823177c0cb",
+  "verificationStatus": "full npm run audit and npm run build passed",
+  "method": "Parse5 #main-content visible text; omit script/style/SVG, advertisements, official-source/photo-credit blocks, region/country cards, and visible reviewed-date phrases; word counts split on whitespace.",
+  "totals": {
+    "englishRoutes": 99,
+    "previousSubstantiveRoutes": 39,
+    "newSubstantiveRoutes": 4,
+    "afterSprintSubstantiveRoutes": 43,
+    "remainingRoutes": 56
+  },
+  "historicalGroups": {
+    "Hanoi": 6,
+    "Sapa": 6,
+    "Ha Giang": 6,
+    "Ninh Binh": 7,
+    "Hue": 7,
+    "Da Nang/Hoi An": 7
+  },
+  "historicalImprovementRoutes": [
+    {
+      "group": "Hanoi",
+      "url": "/vietnam/hanoi/ba-dinh-thang-long/",
+      "initialWords": 656,
+      "baseWords": 699,
+      "wordDelta": 43,
+      "initialMainTextSha256": "071122e3b00f1c99549ed55072ca3f50ce1996f6abc50c31cfcd161efa918116",
+      "baseMainTextSha256": "a24ead69af6221aa827d81cb439916b34c11f839ba1eb47858a6d698b08dd11f"
+    },
+    {
+      "group": "Hanoi",
+      "url": "/vietnam/hanoi/french-quarter-opera-house/",
+      "initialWords": 584,
+      "baseWords": 707,
+      "wordDelta": 123,
+      "initialMainTextSha256": "ecd649953e75b3bed7efc6f2a6195ed3d598ed87976ccc2dfbb1b93f2cf7e18e",
+      "baseMainTextSha256": "9c0e67b34a88c36422a2d41831dbe633e84591158b12392e6641c73deb651080"
+    },
+    {
+      "group": "Hanoi",
+      "url": "/vietnam/hanoi/hoan-kiem-old-quarter/",
+      "initialWords": 678,
+      "baseWords": 821,
+      "wordDelta": 143,
+      "initialMainTextSha256": "6765764f56db2e7410dea94c5510ae998d0e97c419a1cfa3b15cda7a512f1043",
+      "baseMainTextSha256": "06ee52c815031ac36ddfa4957de7fe0c4b592cba1259b000d8289ddc7949cd5c"
+    },
+    {
+      "group": "Hanoi",
+      "url": "/vietnam/hanoi/",
+      "initialWords": 992,
+      "baseWords": 1510,
+      "wordDelta": 518,
+      "initialMainTextSha256": "212adc1500834a71e0d6d616601c46e95dcc4513a0cf2dab0d4ab2f5828cdfee",
+      "baseMainTextSha256": "4d90ed2e9c384dff385136c526ff2fd6aaae7912b452971c5e3461cd1f220f84"
+    },
+    {
+      "group": "Hanoi",
+      "url": "/vietnam/hanoi/long-bien-red-river/",
+      "initialWords": 608,
+      "baseWords": 755,
+      "wordDelta": 147,
+      "initialMainTextSha256": "a26a9b0a68e569e7f853ce887d585bfb7b5a9e461037147e9589adafa6e98fef",
+      "baseMainTextSha256": "3080984d2d952c7c1c04f27b57f044aa90c210daaaebb2c63891bd3d282cca29"
+    },
+    {
+      "group": "Hanoi",
+      "url": "/vietnam/hanoi/van-mieu-museum-quarter/",
+      "initialWords": 633,
+      "baseWords": 782,
+      "wordDelta": 149,
+      "initialMainTextSha256": "8eb0df4e979a58f9bdb3dbd418775f2f6c672b8cdd44200976eba2c09ba89336",
+      "baseMainTextSha256": "907b0e3c293d86411a2f4ccebd95141a7a2fc53fe82d4b8378ebde25ec734011"
+    },
+    {
+      "group": "Sapa",
+      "url": "/vietnam/sapa-northwest-highlands/bac-ha-market-hoang-a-tuong/",
+      "initialWords": 635,
+      "baseWords": 788,
+      "wordDelta": 153,
+      "initialMainTextSha256": "301d9358248ede08f99d615117169b6d40f711ff6837b122033d863db3a73d6a",
+      "baseMainTextSha256": "e9e4c9ee18f48dd18fc64ae8b7e64e43823db07db0ae2f0ed1e837125ca41a75"
+    },
+    {
+      "group": "Sapa",
+      "url": "/vietnam/sapa-northwest-highlands/cat-cat-village/",
+      "initialWords": 589,
+      "baseWords": 721,
+      "wordDelta": 132,
+      "initialMainTextSha256": "48ac726a5a215bb36a9b04338ffaa84ee1962a9fe4314da9c66a7e6aa46eb503",
+      "baseMainTextSha256": "375d61bec9e55ab05743575079d1e1778f507668ad609cc272dfec2c3c6cd852"
+    },
+    {
+      "group": "Sapa",
+      "url": "/vietnam/sapa-northwest-highlands/fansipan-summit/",
+      "initialWords": 584,
+      "baseWords": 750,
+      "wordDelta": 166,
+      "initialMainTextSha256": "c8ea4a47153eefe7e080054bec449feffff0d15dcebd613efc97dc1575ea78de",
+      "baseMainTextSha256": "2f57beba59edffff6d8ad5107601de449a01b694906b0d6ec8d595aa99951bb7"
+    },
+    {
+      "group": "Sapa",
+      "url": "/vietnam/sapa-northwest-highlands/",
+      "initialWords": 954,
+      "baseWords": 1565,
+      "wordDelta": 611,
+      "initialMainTextSha256": "e89a8e37f37ed14991cb7daef6dd21a5d34cce0606d93bff7c9f0271fbb45996",
+      "baseMainTextSha256": "bb31f9ce264ccacc81400875b9ed668d11e949a94995cb88c86a7d710d26c376"
+    },
+    {
+      "group": "Sapa",
+      "url": "/vietnam/sapa-northwest-highlands/muong-hoa-lao-chai-ta-van/",
+      "initialWords": 635,
+      "baseWords": 786,
+      "wordDelta": 151,
+      "initialMainTextSha256": "06861d08abf3a87ff74e2e04b01124aec3013be33c865232aacf32968ab5a70f",
+      "baseMainTextSha256": "073d90ff3d3830edb047e0ffca907242360b1f085ab7a09bb20b523eae50c531"
+    },
+    {
+      "group": "Sapa",
+      "url": "/vietnam/sapa-northwest-highlands/town-ham-rong/",
+      "initialWords": 600,
+      "baseWords": 797,
+      "wordDelta": 197,
+      "initialMainTextSha256": "df69c1504f683660164962cdbe811b4d9d650b4880365e72f40bf62329b1a69b",
+      "baseMainTextSha256": "37c01df0923b00ba14672c891eb9e54a31a81a4dbd2c3cd4ff234eb2f64884c4"
+    },
+    {
+      "group": "Ha Giang",
+      "url": "/vietnam/ha-giang/dong-van-old-quarter/",
+      "initialWords": 573,
+      "baseWords": 763,
+      "wordDelta": 190,
+      "initialMainTextSha256": "33f332f0f76f23d2e6d0812216e7e0ba26f1bb1331fd8b3350a1cac8883b3c13",
+      "baseMainTextSha256": "d3c9362f843bd0a19551e2e4976eb047a927c97d98f1bea1567112fd4069e445"
+    },
+    {
+      "group": "Ha Giang",
+      "url": "/vietnam/ha-giang/",
+      "initialWords": 980,
+      "baseWords": 1427,
+      "wordDelta": 447,
+      "initialMainTextSha256": "f73ebc26afac057079ecf477261cb2621ebd3ed2704c951385d3b82e23bf2590",
+      "baseMainTextSha256": "81065c1c62a3ff6272d29e6e6b18a95354b602bf3525036ef52dd71358022f18"
+    },
+    {
+      "group": "Ha Giang",
+      "url": "/vietnam/ha-giang/lung-cu-flag-tower/",
+      "initialWords": 622,
+      "baseWords": 762,
+      "wordDelta": 140,
+      "initialMainTextSha256": "bbe2eb1e6453d2168537fe9b3e5a2ecf1a96630e028bb970c7a4b703766e6c86",
+      "baseMainTextSha256": "1052e7903e1706335b7e46f32b724600ce3c6acc0aa3827cfd906db2261faedf"
+    },
+    {
+      "group": "Ha Giang",
+      "url": "/vietnam/ha-giang/ma-pi-leng-nho-que/",
+      "initialWords": 624,
+      "baseWords": 815,
+      "wordDelta": 191,
+      "initialMainTextSha256": "504af4c22266fb05088701979f3a769277458e17d37225bfbf1fd23aa405a2ee",
+      "baseMainTextSha256": "f94b54ed876910d5757b735ab66ec1abbe199b3a0d7ece7aaa57876e30cc99c9"
+    },
+    {
+      "group": "Ha Giang",
+      "url": "/vietnam/ha-giang/quan-ba-heavens-gate/",
+      "initialWords": 606,
+      "baseWords": 812,
+      "wordDelta": 206,
+      "initialMainTextSha256": "2a10e7465631d224b4593fec74f966c1c0bd4b96f2c6799b7048d23cf189c7e7",
+      "baseMainTextSha256": "f5c498f193e163ba5b195d614cb7b6263e56ca2323649e33cd21f1c9b6c78354"
+    },
+    {
+      "group": "Ha Giang",
+      "url": "/vietnam/ha-giang/yen-minh-pine-forest/",
+      "initialWords": 624,
+      "baseWords": 778,
+      "wordDelta": 154,
+      "initialMainTextSha256": "868b269eb796e06ab1dd2ac71c3ceae8379c0a30416b41017ff7a2e0b101b526",
+      "baseMainTextSha256": "e97cb74952bfe2977d2d64e7d6e5b08f05f2586f7973017344560956e42a1343"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/cuc-phuong-conservation/",
+      "initialWords": 594,
+      "baseWords": 793,
+      "wordDelta": 199,
+      "initialMainTextSha256": "038215d86aad527260e109f5509ff028c6ce3bf1ef4ec27de8a5bace8d3b143a",
+      "baseMainTextSha256": "398eead9c5ccdb612c5ae99335a4c453ab7ced34c5169898d56af8e6e1d1e247"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/hang-mua-dragon-mountain/",
+      "initialWords": 559,
+      "baseWords": 818,
+      "wordDelta": 259,
+      "initialMainTextSha256": "49102a361872b14c1a29877bbdeea5dc470d4e3a6870e39fac5a6d8af261b8fa",
+      "baseMainTextSha256": "6267f696d1b6848877bca56a8e114d668e30a5e13cd821a90c1fe3a684574d44"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/hoa-lu-ancient-capital/",
+      "initialWords": 564,
+      "baseWords": 715,
+      "wordDelta": 151,
+      "initialMainTextSha256": "440f8ed1b65007a3688c803e9e0ff8d13e9372d425465e5f0fe1ddf55bdcd4f0",
+      "baseMainTextSha256": "d0ba8154ef3c7e284af715aa696e8bca1d987a7711795e42617ac38f82dba355"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/",
+      "initialWords": 898,
+      "baseWords": 1250,
+      "wordDelta": 352,
+      "initialMainTextSha256": "4b42a6c4eb4dfdb5e3205ef0222a68bb24d214609a1908c0ebb555725acf6459",
+      "baseMainTextSha256": "b18cf37dac128a0aebf172f39659996b8fd99a13b10959d17ac34d820fd6ae1b"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/tam-coc-bich-dong/",
+      "initialWords": 585,
+      "baseWords": 817,
+      "wordDelta": 232,
+      "initialMainTextSha256": "833453a865cbc7ee2c0624c7116c075180b502f518e2e8df8ef42474245b50cd",
+      "baseMainTextSha256": "05a9da781b335b0a3aff36b6a2aaab30cbbe0d81592af7c63238d4386f57b579"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/trang-an-boat-complex/",
+      "initialWords": 560,
+      "baseWords": 723,
+      "wordDelta": 163,
+      "initialMainTextSha256": "e9ee12607a8a91568976be4c88535f0312d3b277ae029cd4c69a0a0d2d0ec455",
+      "baseMainTextSha256": "61d35eca092342b97b4bd4de3d14d9a91b8bedc1ef08a7dd11ae26e1bc803612"
+    },
+    {
+      "group": "Ninh Binh",
+      "url": "/vietnam/ninh-binh/van-long-wetland/",
+      "initialWords": 537,
+      "baseWords": 735,
+      "wordDelta": 198,
+      "initialMainTextSha256": "58f454c63db7a3e6982ab75583cfddf294d4520616751b6fc55631ea9e313a63",
+      "baseMainTextSha256": "5a355234a858b8e6c8c1b3aab375053abf2e8c9a45669ab88388ea279526e2bb"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/bach-ma-national-park/",
+      "initialWords": 627,
+      "baseWords": 820,
+      "wordDelta": 193,
+      "initialMainTextSha256": "92b59ee3c2ae77cb6816fb6cb8a76e1babaa654837d2c8f76af30d3fb347adee",
+      "baseMainTextSha256": "3598596b85081e20dd0d387603005e274080bc844a2b39d7b16eb731f0963324"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/imperial-city-citadel/",
+      "initialWords": 628,
+      "baseWords": 815,
+      "wordDelta": 187,
+      "initialMainTextSha256": "49c6f8243402f0f5d54014ede54a3aa551e430a618cdf40753336b29bfefd64b",
+      "baseMainTextSha256": "2fcae220be57059ed94563500db23eabcbb150cd1f39c3ced7f0311c5861b1cb"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/",
+      "initialWords": 1004,
+      "baseWords": 1329,
+      "wordDelta": 325,
+      "initialMainTextSha256": "1f2f8514b8944489559d3689def44f222dc7003688dadbb7235a38ae3fe12817",
+      "baseMainTextSha256": "41a33c2d800bc81e120635a0bbfd956c75b54cd081a6b17db03f355085e079d9"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/lang-co-lap-an-lagoon/",
+      "initialWords": 646,
+      "baseWords": 844,
+      "wordDelta": 198,
+      "initialMainTextSha256": "06688fab51e1840fd74c6941b860ba87ee79d7b657f9d97cf13d0609a65392af",
+      "baseMainTextSha256": "16ca34742258984e139ffc62d959b70b747d6c9288309879ece02f11382d8d61"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/royal-tombs/",
+      "initialWords": 670,
+      "baseWords": 969,
+      "wordDelta": 299,
+      "initialMainTextSha256": "d27f47ba6eb7315dcf4f712a0bd4ee11758730403a2d4869a439f004b5cb1236",
+      "baseMainTextSha256": "c3eeee2d40bb459ab44f33c6370cb4235bdc4b40af6af1af9d37a10744e1e213"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/thanh-toan-rural-loop/",
+      "initialWords": 618,
+      "baseWords": 781,
+      "wordDelta": 163,
+      "initialMainTextSha256": "dbf95fe804efbfdcd9e1b9ce1267ed0c70e7fb2c1b3998e7cc4c96838439d52b",
+      "baseMainTextSha256": "8233ba1e6cf71b670f2ca51f81c373e4aa8308f99f6fc7d291fc44eb3f400723"
+    },
+    {
+      "group": "Hue",
+      "url": "/vietnam/hue/thien-mu-perfume-river/",
+      "initialWords": 620,
+      "baseWords": 779,
+      "wordDelta": 159,
+      "initialMainTextSha256": "bc8b8208c87987652dc6f8f4f79d394b29d00d7a91f0e6c1b9c69278eac74f67",
+      "baseMainTextSha256": "881e2ae74f49125b47dae9690116a0e88a368caf4a49dd6fd0078dbdc5feef64"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/han-river-city-core/",
+      "initialWords": 650,
+      "baseWords": 893,
+      "wordDelta": 243,
+      "initialMainTextSha256": "c55f00157f827a0a5abf7e96da5fab282995f5cd3ba78af8abc04514c2efe445",
+      "baseMainTextSha256": "708986205370420464ab3e8f91ae2cca984f9f9d99fe8dffe55b02a09cc115d9"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/hoi-an-ancient-town/",
+      "initialWords": 615,
+      "baseWords": 806,
+      "wordDelta": 191,
+      "initialMainTextSha256": "45fc292253db0e2eaba27d32792a550856b945d5469bd6302fb0c5840c9f722d",
+      "baseMainTextSha256": "acf3fa8d510d528c042faf73c4c66aafdb5ed8d26095bdfab34c88a49cb5a155"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/",
+      "initialWords": 1011,
+      "baseWords": 1407,
+      "wordDelta": 396,
+      "initialMainTextSha256": "48263e0402004063772b0a84d46a7800548962d4c2fbd36d40b8ad75fa2e9848",
+      "baseMainTextSha256": "bc532bb892a14c30f730ee1108369e55423344882870cc4074221897ac1d0851"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/marble-mountains-non-nuoc/",
+      "initialWords": 600,
+      "baseWords": 740,
+      "wordDelta": 140,
+      "initialMainTextSha256": "6811b52110a6e4e295bfd18ac10b03dc1408f100b9555fca9ebe01f168df2ead",
+      "baseMainTextSha256": "c119c044d46c47a601ff36ab31605cda0a99b6e6c7038f0f7df5d2e047f7952a"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/my-khe-an-thuong/",
+      "initialWords": 639,
+      "baseWords": 734,
+      "wordDelta": 95,
+      "initialMainTextSha256": "d98c85fa87c6194d0f4243f919511985c8ae9068ca552f0c67cbbee8d20f84ac",
+      "baseMainTextSha256": "86314cd0139d0d51d073a117ccc3eb5abea82941a3e074551745684d9bd02c86"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/my-son-sanctuary/",
+      "initialWords": 628,
+      "baseWords": 792,
+      "wordDelta": 164,
+      "initialMainTextSha256": "6c8a373cb9d24ae4aaf212a5dd98960edd744b792264cb2dd606c6e25bc891f4",
+      "baseMainTextSha256": "db4e97ff4b395b6757d7e41b397a9c88fffa309743ca0b535a7dc6b376848677"
+    },
+    {
+      "group": "Da Nang/Hoi An",
+      "url": "/vietnam/da-nang-hoi-an/son-tra-peninsula/",
+      "initialWords": 620,
+      "baseWords": 797,
+      "wordDelta": 177,
+      "initialMainTextSha256": "acc527ab1f5cd8a5407ddf8930b810bab99eedaf1f72c52b47724d1469aa6ab4",
+      "baseMainTextSha256": "cd15c8dccb3df7388485ebffb6a091540147e9350ef6a77bfdce54794230a344"
+    }
+  ],
+  "currentSprintRoutes": [
+    {
+      "url": "/vietnam/ha-long-cat-ba/core-cruise/",
+      "initialWords": 592,
+      "baseWords": 592,
+      "currentWords": 858,
+      "bodyWordDelta": 266,
+      "initialAndBaseMainTextSha256": "600aa82ca9168ff6c72727407babb733db8f2c1f7be6fa3dfbb2a645475e8df9",
+      "currentMainTextSha256": "fe0d44efe46051f41b33b20f65ac58dcb97cc5984a4ed29a9b5caf77df8fc283"
+    },
+    {
+      "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
+      "initialWords": 558,
+      "baseWords": 558,
+      "currentWords": 848,
+      "bodyWordDelta": 290,
+      "initialAndBaseMainTextSha256": "006a5ee973800cac18331207e1ded428d011836ad5c89bf12c8793a2d8af6942",
+      "currentMainTextSha256": "d437bf17d9555b7b842eb8576cab91d05823ecab6e27660d8b274b7de3e38058"
+    },
+    {
+      "url": "/vietnam/ho-chi-minh-city/saigon-river-waterbus/",
+      "initialWords": 525,
+      "baseWords": 525,
+      "currentWords": 877,
+      "bodyWordDelta": 352,
+      "initialAndBaseMainTextSha256": "67d4f5297310afd04d89172aa5344b463e99ecd934479b5af012620f7b3d3df4",
+      "currentMainTextSha256": "061e08e88da1188d9135c095c8539dd12067e6d1082599e5aaf570d099076374"
+    },
+    {
+      "url": "/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/",
+      "initialWords": 624,
+      "baseWords": 624,
+      "currentWords": 905,
+      "bodyWordDelta": 281,
+      "initialAndBaseMainTextSha256": "05b0c21cf1c9082b7c55243a68b91ea5ad467a11c4a73a319d2b66a4b7de2ce9",
+      "currentMainTextSha256": "c382a467cd249d29079a5f9d539eaefe5d49bbe1a12579a2c4a523c654be2478"
+    }
+  ],
+  "excludedHistoricalRoutes": [
+    {
+      "url": "/vietnam/",
+      "reason": "Region cards and credit/disclaimer material changed, but the country overview body outside those blocks stayed identical.",
+      "initialWords": 515,
+      "baseWords": 515,
+      "wordDelta": 0,
+      "initialMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca",
+      "baseMainTextSha256": "7bea978d2d3663fe9a1f08f7d3995ddf97a255d69ba9bbba00938e06e5d8edca"
+    },
+    {
+      "url": "/vietnam/hanoi/west-lake-truc-bach/",
+      "reason": "Only credit/CTA-level changes; not counted as substantive.",
+      "initialWords": 617,
+      "baseWords": 617,
+      "wordDelta": 0,
+      "initialMainTextSha256": "10c937477646e788a31a9e8a4af6216c0eeb4bdc56ac3a5d6b44f35b79193d54",
+      "baseMainTextSha256": "6ea49024b8a0617b1627a387deb6f8bd32982bb1387209d7f4147f5787f4ce4a"
+    },
+    {
+      "url": "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/",
+      "reason": "Only credit/CTA-level changes; not counted as substantive.",
+      "initialWords": 625,
+      "baseWords": 633,
+      "wordDelta": 8,
+      "initialMainTextSha256": "9af111e8492eb486744c7786f20acef423a0b4dd26639ec33c432acfad7ec28d",
+      "baseMainTextSha256": "2802862966601063031e78ed6ebadd911463e65b0df18b470c077afb71857459"
+    },
+    {
+      "url": "/vietnam/ha-giang/meo-vac-du-gia/",
+      "reason": "Only credit/CTA-level changes; not counted as substantive.",
+      "initialWords": 623,
+      "baseWords": 624,
+      "wordDelta": 1,
+      "initialMainTextSha256": "f7369820294a47efd2e78de13b32b368c8f05f6f6d409ad0c9abda2305d627a9",
+      "baseMainTextSha256": "bd13b9f8cb1aedfd4252d4862d8f94b9df52a1e4df143c01a8811eaf22fe4c18"
+    }
+  ],
+  "remainingRoutesAfterSprint": [
+    "/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/",
+    "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
+    "/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/",
+    "/vietnam/da-lat-central-highlands/",
+    "/vietnam/da-lat-central-highlands/langbiang-kho-highlands/",
+    "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
+    "/vietnam/ha-giang/meo-vac-du-gia/",
+    "/vietnam/ha-long-cat-ba/bai-tu-long/",
+    "/vietnam/ha-long-cat-ba/",
+    "/vietnam/ha-long-cat-ba/lan-ha-town/",
+    "/vietnam/ha-long-cat-ba/national-park/",
+    "/vietnam/ha-long-cat-ba/sung-sot-titov/",
+    "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
+    "/vietnam/hanoi/west-lake-truc-bach/",
+    "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+    "/vietnam/ho-chi-minh-city/cho-lon-binh-tay/",
+    "/vietnam/ho-chi-minh-city/cu-chi-tunnels/",
+    "/vietnam/ho-chi-minh-city/district-1-colonial-core/",
+    "/vietnam/ho-chi-minh-city/",
+    "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+    "/vietnam/",
+    "/vietnam/mekong-delta/ben-tre-coconut-islets/",
+    "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+    "/vietnam/mekong-delta/can-tho-cai-rang/",
+    "/vietnam/mekong-delta/chau-doc-sam-tra-su/",
+    "/vietnam/mekong-delta/",
+    "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+    "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+    "/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/",
+    "/vietnam/mui-ne-binh-thuan/",
+    "/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/",
+    "/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/",
+    "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+    "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+    "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+    "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+    "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+    "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+    "/vietnam/nha-trang-khanh-hoa/",
+    "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+    "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+    "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+    "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
+    "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+    "/vietnam/phong-nha-ke-bang/",
+    "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
+    "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+    "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+    "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+    "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+    "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+    "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+    "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+    "/vietnam/phu-quoc-southern-islands/",
+    "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/",
+    "/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/"
+  ]
+}
