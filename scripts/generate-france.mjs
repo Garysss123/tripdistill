@@ -105,10 +105,11 @@ function faqSchema(faq) {
 
 function guideSchema(guide) {
   const modified = guide.reviewDateISO || isoDate;
+  const published = guide.publishedDateISO || modified;
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: modified, dateModified: guide.reviewedOn?.iso || modified, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: published, dateModified: guide.reviewedOn?.iso || modified, mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['France', absolute('/france/')], [guide.hubName, absolute(`/france/${guide.hubSlug}/`)], [guide.name, absolute(guide.url)]]),
       faqSchema(guide.faq)
     ]
@@ -190,9 +191,10 @@ function hubFaq(cluster) {
 function hubSchema(cluster) {
   const route = `/france/${cluster.slug}/`;
   const modified = cluster.reviewDateISO || isoDate;
+  const published = cluster.publishedDateISO || modified;
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: modified, dateModified: cluster.reviewedOn?.iso || modified, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: published, dateModified: cluster.reviewedOn?.iso || modified, mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['France', absolute('/france/')], [cluster.name, absolute(route)]]), faqSchema(hubFaq(cluster))
     ]
   };

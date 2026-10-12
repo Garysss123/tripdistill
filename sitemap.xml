@@ -170,7 +170,7 @@
   <url><loc>https://tripdistill.com/malaysia/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/malaysia/kuala-lumpur-putrajaya/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/malaysia/george-town-penang/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/malaysia/melaka/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/malaysia/melaka/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/malaysia/ipoh-kinta-valley/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/malaysia/langkawi/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/malaysia/cameron-highlands/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -206,10 +206,10 @@
   <url><loc>https://tripdistill.com/malaysia/george-town-penang/little-india-esplanade/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/malaysia/george-town-penang/weld-quay-clan-jetties/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/malaysia/george-town-penang/penang-hill-air-itam/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -688,7 +688,7 @@
   <url><loc>https://tripdistill.com/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/marseille-calanques/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/france/cote-dazur/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/corsica/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -744,9 +744,9 @@
   <url><loc>https://tripdistill.com/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/corsica/bastia-cap-corse/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1082,7 +1082,7 @@
   <url><loc>https://tripdistill.com/zh/malaysia/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/kuala-lumpur-putrajaya/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/george-town-penang/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/malaysia/melaka/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/malaysia/melaka/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/ipoh-kinta-valley/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/langkawi/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/cameron-highlands/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -1118,10 +1118,10 @@
   <url><loc>https://tripdistill.com/zh/malaysia/george-town-penang/little-india-esplanade/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/george-town-penang/weld-quay-clan-jetties/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/george-town-penang/penang-hill-air-itam/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1600,7 +1600,7 @@
   <url><loc>https://tripdistill.com/zh/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/marseille-calanques/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/cote-dazur/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/corsica/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/zh/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1656,9 +1656,9 @@
   <url><loc>https://tripdistill.com/zh/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/zh/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/zh/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/corsica/bastia-cap-corse/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/zh/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -1994,7 +1994,7 @@
   <url><loc>https://tripdistill.com/ja/malaysia/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/kuala-lumpur-putrajaya/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/george-town-penang/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/malaysia/melaka/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/malaysia/melaka/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/ipoh-kinta-valley/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/langkawi/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/cameron-highlands/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2030,10 +2030,10 @@
   <url><loc>https://tripdistill.com/ja/malaysia/george-town-penang/little-india-esplanade/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/george-town-penang/weld-quay-clan-jetties/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/george-town-penang/penang-hill-air-itam/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -2512,7 +2512,7 @@
   <url><loc>https://tripdistill.com/ja/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/marseille-calanques/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/cote-dazur/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/corsica/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ja/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -2568,9 +2568,9 @@
   <url><loc>https://tripdistill.com/ja/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ja/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ja/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/corsica/bastia-cap-corse/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ja/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -2906,7 +2906,7 @@
   <url><loc>https://tripdistill.com/ko/malaysia/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/kuala-lumpur-putrajaya/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/george-town-penang/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/malaysia/melaka/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/malaysia/melaka/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/ipoh-kinta-valley/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/langkawi/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/cameron-highlands/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -2942,10 +2942,10 @@
   <url><loc>https://tripdistill.com/ko/malaysia/george-town-penang/little-india-esplanade/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/george-town-penang/weld-quay-clan-jetties/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/george-town-penang/penang-hill-air-itam/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3424,7 +3424,7 @@
   <url><loc>https://tripdistill.com/ko/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/marseille-calanques/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/cote-dazur/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/corsica/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/ko/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3480,9 +3480,9 @@
   <url><loc>https://tripdistill.com/ko/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/ko/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/ko/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/corsica/bastia-cap-corse/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/ko/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -3818,7 +3818,7 @@
   <url><loc>https://tripdistill.com/th/malaysia/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/kuala-lumpur-putrajaya/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/george-town-penang/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/malaysia/melaka/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/malaysia/melaka/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/ipoh-kinta-valley/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/langkawi/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/cameron-highlands/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -3854,10 +3854,10 @@
   <url><loc>https://tripdistill.com/th/malaysia/george-town-penang/little-india-esplanade/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/george-town-penang/weld-quay-clan-jetties/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/george-town-penang/penang-hill-air-itam/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/malaysia/melaka/dutch-square-st-pauls/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/malaysia/melaka/jonker-harmony-street/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/malaysia/melaka/melaka-river-kampung-morten/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/malaysia/melaka/bandar-hilir-portuguese-settlement/</loc><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/ipoh-kinta-valley/gunung-rapat-cave-temples/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/malaysia/ipoh-kinta-valley/gopeng-gua-tempurung/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -4336,7 +4336,7 @@
   <url><loc>https://tripdistill.com/th/france/languedoc-camargue/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/provence-inland/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/marseille-calanques/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tripdistill.com/th/france/cote-dazur/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/corsica/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tripdistill.com/th/france/paris/seine-islands-latin-quarter/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/paris/louvre-tuileries-opera/</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -4392,9 +4392,9 @@
   <url><loc>https://tripdistill.com/th/france/marseille-calanques/old-port-panier-mucem/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/marseille-calanques/calanques-access-choice/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/marseille-calanques/cassis-la-ciotat/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tripdistill.com/th/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/nice-old-town-hills/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/eze-monaco-menton/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tripdistill.com/th/france/cote-dazur/antibes-cannes-west-coast/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/corsica/ajaccio-west-coast/</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/corsica/bastia-cap-corse/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tripdistill.com/th/france/corsica/bonifacio-porto-vecchio/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

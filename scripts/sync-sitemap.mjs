@@ -59,6 +59,7 @@ const franceMarseilleEditedRoutes = [
   '/france/marseille-calanques/calanques-access-choice/',
   '/france/marseille-calanques/cassis-la-ciotat/'
 ];
+const franceCoteDAzurLastmod = '2026-10-12';
 const franceDordogneEditedRoutes = [
   '/france/dordogne-perigord/',
   '/france/dordogne-perigord/sarlat-market-old-town/',
@@ -83,6 +84,12 @@ const franceToulouseOccitanieEditedRoutes = [
   '/france/toulouse-albi-carcassonne/toulouse-garonne-aerospace/',
   '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
   '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
+];
+const franceCoteDAzurEditedRoutes = [
+  '/france/cote-dazur/',
+  '/france/cote-dazur/nice-old-town-hills/',
+  '/france/cote-dazur/eze-monaco-menton/',
+  '/france/cote-dazur/antibes-cannes-west-coast/'
 ];
 const unitedKingdomLastmod = '2026-09-20';
 const unitedKingdomLondonLastmod = '2026-10-11';
@@ -771,6 +778,11 @@ for (const route of franceToulouseOccitanieEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Toulouse/Occitanie route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceToulouseOccitanieLastmod });
+}
+for (const route of franceCoteDAzurEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Côte d’Azur route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceCoteDAzurLastmod });
 }
 for (const route of normandyEditedRoutes) {
   const record = records.get(route);

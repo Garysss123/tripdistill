@@ -44,13 +44,20 @@ const occitanieRoutes = [
   '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
   '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
 ];
-const selectedRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes, ...dordogneRoutes, ...occitanieRoutes];
 const marseilleRoutes = [
   '/france/marseille-calanques/',
   '/france/marseille-calanques/old-port-panier-mucem/',
   '/france/marseille-calanques/calanques-access-choice/',
   '/france/marseille-calanques/cassis-la-ciotat/'
 ];
+const coteDAzurRoutes = [
+  '/france/cote-dazur/',
+  '/france/cote-dazur/nice-old-town-hills/',
+  '/france/cote-dazur/eze-monaco-menton/',
+  '/france/cote-dazur/antibes-cannes-west-coast/'
+];
+const octoberElevenRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes, ...dordogneRoutes, ...occitanieRoutes];
+const selectedRoutes = [...octoberElevenRoutes, ...coteDAzurRoutes];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const entries = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, route, lastmod]) => [route, lastmod]));
@@ -64,8 +71,13 @@ const marseilleReviewedRoutes = [
 ];
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
-check(reviewedRoutes.length === 24 && selectedRoutes.length === 24 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde, Dordogne and Toulouse/Occitanie hubs plus their three children to retain their review dates; found ${reviewedRoutes.join(', ')}`);
-check(marseilleReviewedRoutes.length === 4 && marseilleRoutes.length === 4 && marseilleRoutes.every((route) => marseilleReviewedRoutes.includes(route)), `Expected the Marseille/Calanques hub and all three children to be the 2026-10-12 review-dated routes; found ${marseilleReviewedRoutes.join(', ')}`);
+check(reviewedRoutes.length === 24 && octoberElevenRoutes.length === 24 && octoberElevenRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde, Dordogne and Toulouse/Occitanie hubs plus their three children to retain their review dates; found ${reviewedRoutes.join(', ')}`);
+check(marseilleReviewedRoutes.length === 8 && marseilleRoutes.length === 4 && marseilleRoutes.every((route) => marseilleReviewedRoutes.includes(route)), `Expected Marseille/Calanques and Nice/Côte d’Azur hubs with their three children to be the 2026-10-12 review-dated routes; found ${marseilleReviewedRoutes.join(', ')}`);
+check(coteDAzurRoutes.length === 4 && coteDAzurRoutes.every((route) => {
+  const cluster = franceClusters.find((item) => `/france/${item.slug}/` === route);
+  const guide = franceGuides.find((item) => item.url === route);
+  return (cluster?.reviewDateISO || guide?.reviewDateISO) === '2026-10-12';
+}), 'Expected the Nice/Côte d’Azur hub and its three existing children to use 2026-10-12');
 
 for (const route of routes) {
   const englishLastmod = entries.get(route);
@@ -92,8 +104,9 @@ for (const route of selectedRoutes) {
     try { schema = JSON.parse(schemaRaw); } catch { errors.push(`${localizedRoute}: JSON-LD missing or invalid`); continue; }
     const page = (schema['@graph'] || []).find((item) => item['@type'] === 'Article');
     check(page?.datePublished === '2026-09-19', `${localizedRoute}: unexpected original publication date`);
-    check(page?.dateModified === '2026-10-11', `${localizedRoute}: dateModified should be 2026-10-11, found ${page?.dateModified || '(missing)'}`);
-    check(entries.get(localizedRoute) === '2026-10-11', `${localizedRoute}: sitemap lastmod should be 2026-10-11`);
+    const expectedModified = coteDAzurRoutes.includes(route) ? '2026-10-12' : '2026-10-11';
+    check(page?.dateModified === expectedModified, `${localizedRoute}: dateModified should be ${expectedModified}, found ${page?.dateModified || '(missing)'}`);
+    check(entries.get(localizedRoute) === expectedModified, `${localizedRoute}: sitemap lastmod should be ${expectedModified}`);
   }
 }
 
@@ -122,6 +135,6 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(englishOnly
-    ? `France English date synchronization passed: ${routes.length} English routes; the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques routes use 2026-10-12 with their 2026-09-19 publication date preserved.`
-    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * 5} sitemap URLs; all localized dates match, the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques routes use 2026-10-12 in all five article schemas and sitemap entries.`);
+    ? `France English date synchronization passed: ${routes.length} English routes; the twenty-four Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde, Dordogne and Toulouse/Occitanie routes retain 2026-10-11, and all eight Marseille/Calanques and Nice/Côte d’Azur routes use 2026-10-12 with their 2026-09-19 publication dates preserved.`
+    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, the twenty-four earlier reviewed routes retain 2026-10-11, and the eight Marseille/Calanques and Nice/Côte d’Azur routes use 2026-10-12 in all five article schemas and sitemap entries.`);
 }
