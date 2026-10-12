@@ -389,6 +389,20 @@ export const postIntegrationHawaiiRoutes = Object.freeze([
   '/usa/hawaii/hawaii-island/'
 ]);
 
+// The next source-only U.S. refresh follows Hawaii; both sets are kept
+// separate so historical ledgers and exact per-batch checks remain explicit.
+export const postHawaiiNewOrleansRoutes = Object.freeze([
+  '/usa/new-orleans/',
+  '/usa/new-orleans/french-quarter/',
+  '/usa/new-orleans/garden-district/',
+  '/usa/new-orleans/river-wetlands/'
+]);
+
+export const postIntegrationSourceRefreshRoutes = Object.freeze([
+  ...postIntegrationHawaiiRoutes,
+  ...postHawaiiNewOrleansRoutes
+]);
+
 export const postIntegrationAustraliaRoutes = Object.freeze([
   '/australia/darwin-top-end/darwin-waterfront-city/',
   '/australia/darwin-top-end/katherine-nitmiluk/',
@@ -408,10 +422,14 @@ export const localizedPostIntegrationAustraliaSitemapRoutes = (prefixes) => new 
   prefixes.flatMap((prefix) => postIntegrationAustraliaRoutes.map((route) => `${prefix}${route}`))
 );
 
+export const localizedPostIntegrationSourceRefreshSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationSourceRefreshRoutes.map((route) => `${prefix}${route}`))
+);
+
 export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
   const routes = localizedIntegrationSitemapRoutes(prefixes);
   for (const prefix of prefixes) {
-    for (const route of postIntegrationHawaiiRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationSourceRefreshRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;

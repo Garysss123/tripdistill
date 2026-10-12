@@ -3,9 +3,8 @@
 export const reportedSubstantiveBaseline = 458;
 export const correctedSubstantiveBaseline = 457;
 
-// The preceding U.S. source-work ledger contains these 25 paths. The Hawaii
-// refresh below is disjoint and adds four source-verified substantive routes;
-// neither set implies collection-wide U.S. editorial approval.
+// The historical U.S. ledger contains these 25 paths. Hawaii and New Orleans
+// are disjoint four-route follow-ons; none implies collection-wide approval.
 export const usaPreviouslyCountedRoutes = Object.freeze([
   '/usa/alaska/',
   '/usa/alaska/anchorage-kenai/',
@@ -39,6 +38,13 @@ export const usaHawaiiNewSubstantiveRoutes = Object.freeze([
   '/usa/hawaii/oahu/',
   '/usa/hawaii/maui/',
   '/usa/hawaii/hawaii-island/'
+]);
+
+export const usaNewOrleansNewSubstantiveRoutes = Object.freeze([
+  '/usa/new-orleans/',
+  '/usa/new-orleans/french-quarter/',
+  '/usa/new-orleans/garden-district/',
+  '/usa/new-orleans/river-wetlands/'
 ]);
 
 export const vietnamCompletedRoutes = Object.freeze([
@@ -142,5 +148,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Melbourne & Great Ocean gap refresh', count: 736 }),
   Object.freeze({ label: 'Adelaide & Perth gap refresh', count: 740 }),
   Object.freeze({ label: 'Hawaii refresh', count: 744 }),
-  Object.freeze({ label: 'Top End & Whitsundays gap refresh', count: 748 })
+  Object.freeze({ label: 'Top End & Whitsundays gap refresh', count: 748 }),
+  Object.freeze({ label: 'New Orleans refresh', count: 752 })
 ]);

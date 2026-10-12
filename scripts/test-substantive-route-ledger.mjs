@@ -15,6 +15,7 @@ import {
   reportedSubstantiveBaseline,
   usaPreviouslyCountedRoutes,
   usaHawaiiNewSubstantiveRoutes,
+  usaNewOrleansNewSubstantiveRoutes,
   vietnamCompletedRoutes,
   vietnamExcludedRoutes
 } from '../data/substantive-route-ledger.mjs';
@@ -67,7 +68,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -92,7 +93,10 @@ assert.equal(new Set(usaPreviouslyCountedRoutes).size, 25, 'The earlier U.S. pat
 assert.equal(usaHawaiiNewSubstantiveRoutes.length, 4, 'Hawaii adds four source-verified substantive routes.');
 assert.equal(new Set(usaHawaiiNewSubstantiveRoutes).size, 4, 'Hawaii additions must be unique.');
 assert(usaHawaiiNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route)), 'Hawaii routes are disjoint from the exact preceding 25-route U.S. ledger.');
-for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes]) {
+assert.equal(usaNewOrleansNewSubstantiveRoutes.length, 4, 'New Orleans adds four exact existing-route improvements.');
+assert.equal(new Set(usaNewOrleansNewSubstantiveRoutes).size, 4, 'New Orleans additions must be unique.');
+assert(usaNewOrleansNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route)), 'New Orleans routes are disjoint from the historical 25 and the four Hawaii paths.');
+for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `U.S. ledger path is missing: ${route}`);
 }
 
@@ -104,4 +108,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 prior U.S. paths are disjoint from four new Hawaii routes; Australia’s exact twelve late gap improvements; corrected checkpoints through 748; unchanged non-card Vietnam overview copy.');
+console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii and four New Orleans improvements; Australia’s exact twelve late gap improvements; corrected checkpoints through 752; unchanged non-card Vietnam overview copy.');

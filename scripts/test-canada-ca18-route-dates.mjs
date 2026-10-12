@@ -6,7 +6,7 @@ import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { canadaClusters } from '../data/canada-guides.mjs';
 import { canadaImageManifest } from '../data/canada-image-manifest.mjs';
-import { integrationSearchRoutes, postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { integrationSearchRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '5f0713a66f150ca1d7b8d37db9f4439a2d69b530';
@@ -119,8 +119,8 @@ assert.equal(canadaSearch.length, 73, 'English Canada search must retain 73 rout
 assert.equal(new Set(canadaSearch.map((item) => item.url)).size, 73, 'English Canada search URLs must remain unique.');
 assert.deepEqual(canadaSearch.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'Canada search route set must remain unchanged.');
 assert.deepEqual(search.filter((item) => targetSet.has(item.url)), sourceSearch.filter((item) => targetSet.has(item.url)), 'Integrated CA18 target search records must match the exact recovery source terminal.');
-const laterIntegrationSearchSet = new Set([...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes]);
-assert.deepEqual(search.filter((item) => !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), previousSearch.filter((item) => !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), 'Every search record outside the exact integration sprint scope, four later Hawaii routes and four later Australia routes must remain unchanged from the CA17 source base.');
+const laterIntegrationSearchSet = new Set([...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes]);
+assert.deepEqual(search.filter((item) => !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), previousSearch.filter((item) => !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), 'Every search record outside the exact integration sprint scope, later Hawaii, Australia and New Orleans routes must remain unchanged from the CA17 source base.');
 for (const route of routes) {
   const current = canadaSearch.find((item) => item.url === route);
   const previous = previousCanada.find((item) => item.url === route);

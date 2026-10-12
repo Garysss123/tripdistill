@@ -9,7 +9,7 @@ import { SaxesParser } from 'saxes';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
@@ -169,7 +169,7 @@ function sitemapEntries(xml) {
   return new Map(rows.map(({ loc, lastmod }) => [new URL(loc).pathname, lastmod]));
 }
 
-const expectedHtml = [...routes, ...switzerlandCh15AffectedRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...switzerlandCh15AffectedRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 assert.deepEqual(changedHtml, expectedHtml, 'Only the four Cairns, exact CH15 dependent documents, four later CA15 documents, thirteen CA16–CA18 documents, and sixteen exact later AU gap documents may change.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
@@ -246,7 +246,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...switzerlandCh15Routes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes].sort(), 'Only the four Cairns, four exact CH15, four exact CA15–CA18 and twenty exact AU gap search records may change since the Cairns integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...switzerlandCh15Routes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes].sort(), 'Only the four Cairns, four exact CH15, exact later Canada/Australia routes and four Hawaii/New Orleans routes may change since the Cairns integration checkpoint.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -265,7 +265,7 @@ for (const [locale, prefix] of locales.slice(1)) {
 const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...switzerlandCh15Routes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes.slice(1), ...laterAustraliaGapRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...switzerlandCh15Routes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes.slice(1), ...laterAustraliaGapRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four Cairns, four exact CH15, four exact CA15–CA18 and sixteen exact AU gap routes across five editions may receive new lastmod dates since the Cairns integration checkpoint.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap date.');

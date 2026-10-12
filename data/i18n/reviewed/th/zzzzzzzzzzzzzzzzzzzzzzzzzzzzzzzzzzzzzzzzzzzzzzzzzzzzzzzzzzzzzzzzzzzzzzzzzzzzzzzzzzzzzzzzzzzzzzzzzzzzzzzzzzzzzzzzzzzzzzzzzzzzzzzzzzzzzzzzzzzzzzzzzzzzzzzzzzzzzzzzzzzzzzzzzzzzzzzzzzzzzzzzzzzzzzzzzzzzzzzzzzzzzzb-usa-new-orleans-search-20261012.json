@@ -1,0 +1,28 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "MSY Route 202": "MSY สาย 202",
+    "Jefferson Transit E1": "Jefferson Transit E1",
+    "airport fares": "ค่าโดยสารจากสนามบิน",
+    "Neighborhood bases": "ตัวเลือกที่พักตามย่าน",
+    "Jackson Square": "จัตุรัสแจ็กสัน",
+    "520 Royal Street": "520 Royal Street",
+    "Preservation Hall": "Preservation Hall",
+    "Quarter museum hours": "เวลาเปิดพิพิธภัณฑ์เฟรนช์ควอเตอร์",
+    "St. Charles Route 12": "รถรางเซนต์ชาร์ลส์สาย 12",
+    "Magazine Route 11": "รถสายแมกกาซีนสาย 11",
+    "Lafayette Cemetery PRC tour": "ทัวร์สุสาน Lafayette โดย PRC",
+    "Wetland Trace": "Wetland Trace",
+    "Barataria closure": "ประกาศปิดบาราทาเรีย",
+    "Twin Canals": "Twin Canals"
+  },
+  "reviewProvenance": {
+    "writer": "Current Codex runtime; exact model variant not exposed",
+    "reviewer": "Same-runtime self-review; not independent",
+    "independentSecondModel": false
+  }
+}
