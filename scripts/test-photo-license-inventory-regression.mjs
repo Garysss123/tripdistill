@@ -142,7 +142,7 @@ assert.equal(checkedInNiagaraDiagram.rightsStatus, 'Project original; no separat
 assert.equal(checkedInNiagaraDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
 assert.equal(checkedInNiagaraDiagram.commercialReuseEligibility, 'unknown');
 assert.equal(checkedInNiagaraDiagram.verificationStatus, 'site_credit_or_metadata_only');
-assert.equal(checkedInNiagaraDiagram.localSha1, 'dfdbeaf59d36ce3d745445bf1437084ca6968896');
+assert.equal(checkedInNiagaraDiagram.localSha1, '742c1b1ba89c38a9de02872e76681a57640dc8d2');
 assert.equal(checkedInReport.counts.completeProjectOriginalRightsRecords, 13);
 assert.equal(checkedInReport.counts.licenseClaimsNotIndependentlyVerified, 506);
 assert.equal(checkedInReport.counts.usedAssetsWithoutIndependentSourcePageCheck, 514);
@@ -627,7 +627,7 @@ try {
   assert.equal(niagaraDiagram.useCount, 1);
   assert.deepEqual(niagaraDiagram.routes, ['/canada/niagara/falls-parkway/']);
   assert.ok(niagaraDiagram.altTexts.some((alt) => /not-to-scale/i.test(alt)));
-  assert.equal(niagaraDiagram.localSha1, 'dfdbeaf59d36ce3d745445bf1437084ca6968896');
+  assert.equal(niagaraDiagram.localSha1, '742c1b1ba89c38a9de02872e76681a57640dc8d2');
   const malignePhoto = photoRecords.find((item) => item.assetPath === jasperPhotos[0].assetPath);
   assert.ok(malignePhoto.verificationDetail.includes('CC BY-SA 2.0') && malignePhoto.verificationDetail.includes('CC BY-SA 3.0'));
   assert.ok(malignePhoto.verificationDetail.includes('not treated as a direct conflict'));

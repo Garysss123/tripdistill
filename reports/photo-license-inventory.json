@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T16:40:54.487Z",
+  "generatedAt": "2026-10-12T16:47:44.701Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 802,
@@ -27339,14 +27339,14 @@
       ]
     },
     {
-      "sha256": "aadffe2fbd180ae1cb78bb4b0b70058ad357cfffd1b8b820b11cedce43492c74",
+      "sha256": "184e4814ec08a2f3c6f303bfcaf2e61dcd0b1072f76ee78a189dab665c88b957",
       "assetPaths": [
         "/assets/images/tripdistill-canada-niagara-falls-decision.svg"
       ],
       "byteLength": 9585,
       "sourceRecords": [
         {
-          "sha256": "aadffe2fbd180ae1cb78bb4b0b70058ad357cfffd1b8b820b11cedce43492c74",
+          "sha256": "184e4814ec08a2f3c6f303bfcaf2e61dcd0b1072f76ee78a189dab665c88b957",
           "assetPath": "/assets/images/tripdistill-canada-niagara-falls-decision.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-niagara-falls-decision.svg",
@@ -27363,7 +27363,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "unknown",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": "dfdbeaf59d36ce3d745445bf1437084ca6968896",
+          "localSha1": "742c1b1ba89c38a9de02872e76681a57640dc8d2",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",

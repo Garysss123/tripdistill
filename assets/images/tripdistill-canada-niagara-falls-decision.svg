@@ -19,7 +19,7 @@
   <rect x="348" y="137" width="246" height="188" rx="6" fill="#e8eff0" stroke="#4c7881" stroke-width="2"/>
   <circle cx="377" cy="168" r="17" fill="#4c7881"/>
   <text x="372" y="174" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="800">2</text>
-  <text x="404" y="174" fill="#315f67" font-family="Arial, sans-serif" font-size="15" font-weight="800">CONFIRM THE TRANSFER</text>
+  <text x="404" y="174" fill="#315f67" font-family="Arial, sans-serif" font-size="13" font-weight="800">CONFIRM THE TRANSFER</text>
   <text x="368" y="215" fill="#252f3a" font-family="Arial, sans-serif" font-size="20" font-weight="800">Station → Table Rock</text>
   <text x="368" y="244" fill="#58676d" font-family="Arial, sans-serif" font-size="15">Choose the operating WEGO</text>
   <text x="368" y="266" fill="#58676d" font-family="Arial, sans-serif" font-size="15">link, tour, taxi or car.</text>

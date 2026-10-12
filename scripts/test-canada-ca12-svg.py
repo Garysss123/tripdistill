@@ -92,6 +92,11 @@ for element in elements:
                 assert 0 <= x <= 1200 and 0 <= y <= 700, (command, x, y, d)
 
 texts = [(number(element, 'x'), number(element, 'y'), ''.join(element.itertext()).strip()) for element in root.findall('.//s:text', ns)]
+transfer_titles = [element for element in root.findall('.//s:text', ns) if ''.join(element.itertext()).strip() == 'CONFIRM THE TRANSFER']
+assert len(transfer_titles) == 1, 'The second card must have exactly one transfer heading.'
+transfer_title = transfer_titles[0]
+assert number(transfer_title, 'x') == 404 and number(transfer_title, 'y') == 174
+assert number(transfer_title, 'font-size') == 13, 'The second-card heading needs its inset-safe font size.'
 headers = ['ENGLISH', '繁體中文', '日本語', '한국어', 'ภาษาไทย']
 header_x = [70, 290, 510, 730, 950]
 for x, label in zip(header_x, headers):
@@ -184,6 +189,23 @@ with tempfile.TemporaryDirectory(prefix='ca12-niagara-svg-') as scratch:
     for point, expected in zip(card_points, card_colors):
         assert pixel(*point) == expected, (point, pixel(*point), expected)
 
+    # Keep the transfer heading visibly inside its card with at least 20 px of
+    # clear space before the inner edge. Measure rendered glyph pixels, not just
+    # the SVG text anchor, so a future font or label edit cannot silently clip it.
+    heading_pixels = [
+        (x, y)
+        for y in range(150, 180)
+        for x in range(400, 593)
+        if max(pixel(x, y)) < 190
+    ]
+    assert heading_pixels, 'The second-card transfer heading did not render.'
+    heading_right = max(x for x, _ in heading_pixels)
+    card_inner_right = 348 + 246 - 1  # 2 px border, centered on the card edge
+    heading_right_clearance = card_inner_right - (heading_right + 1)
+    assert heading_right_clearance >= 20, (
+        f'The second-card heading leaves only {heading_right_clearance}px before the inner right edge.'
+    )
+
     def dark_pixel_count(left, top, right, bottom):
         count = 0
         for y in range(top, bottom):
@@ -201,4 +223,4 @@ with tempfile.TemporaryDirectory(prefix='ca12-niagara-svg-') as scratch:
     for line, baseline in zip(disclaimers, [615, 633, 651, 669, 687]):
         assert dark_pixel_count(48, baseline - 13, 1150, baseline + 2) >= 25, f'Five-language not-to-scale disclaimer did not render: {line}'
 
-print(f'CA12 SVG passed: XML and {len(elements)}-element geometry fit 1200×700; all five localized legend columns and disclaimers are present; Inkscape pixel checks confirmed background, four card fills and rendered text.')
+print(f'CA12 SVG passed: XML and {len(elements)}-element geometry fit 1200×700; all five localized legend columns and disclaimers are present; Inkscape pixel checks confirmed background, four card fills and rendered text; second-card heading clearance is {heading_right_clearance}px.')
