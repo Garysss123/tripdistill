@@ -82,6 +82,22 @@ const malaysiaSempornaRoutes = [
   '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
   '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
 ];
+const malaysiaKotaKinabaluLastmod = '2026-10-12';
+const malaysiaKotaKinabaluRoutes = [
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
+const malaysiaPerhentianRedangLastmod = '2026-10-12';
+const malaysiaPerhentianRedangRoutes = [
+  '/malaysia/perhentian-redang/',
+  '/malaysia/perhentian-redang/kuala-besut-transfer/',
+  '/malaysia/perhentian-redang/perhentian-kecil/',
+  '/malaysia/perhentian-redang/perhentian-besar/',
+  '/malaysia/perhentian-redang/redang-merang-transfer/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -845,6 +861,16 @@ for (const route of malaysiaSempornaRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Semporna route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaSempornaLastmod });
+}
+for (const route of malaysiaKotaKinabaluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kota Kinabalu route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKotaKinabaluLastmod });
+}
+for (const route of malaysiaPerhentianRedangRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Perhentian/Redang route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaPerhentianRedangLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
