@@ -101,17 +101,8 @@ const bernEmmentalEditedRoutes = [
   '/switzerland/bern-emmental/emmental-day-trip/'
 ];
 const switzerlandCh10Lastmod = '2026-10-12';
-const switzerlandCh10Slugs = new Set([
-  'basel-rhine',
-  'st-moritz-engadin',
-  'graubunden-corridors',
-  'lugano-southern-ticino',
-  'locarno-ascona-valleys',
-  'schaffhausen-rhine-falls',
-  'st-gallen-appenzell'
-]);
+const switzerlandCh10Slugs = new Set(['basel-rhine']);
 const switzerlandCh10EditedRoutes = [
-  '/switzerland/',
   ...switzerlandClusters.filter((cluster) => switzerlandCh10Slugs.has(cluster.slug)).flatMap((cluster) => [
     `/switzerland/${cluster.slug}/`,
     ...cluster.guides.map((guide) => guide.url)

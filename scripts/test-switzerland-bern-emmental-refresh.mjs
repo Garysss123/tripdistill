@@ -78,9 +78,15 @@ const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'starting sitemap has 4,560 URLs');
 assert.equal(currentRecords.size, baseRecords.size, 'sitemap URL count stays fixed');
 assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'no route was added or removed');
-const expectedDateChanges = new Set(locales.flatMap((locale) => routes.map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const baselRoutes = [
+  '/switzerland/basel-rhine/',
+  '/switzerland/basel-rhine/old-town-rhine/',
+  '/switzerland/basel-rhine/art-museums/',
+  '/switzerland/basel-rhine/kleinbasel-border-rhine/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 20, 'only the four refreshed routes in five editions receive a sitemap date');
+assert.equal(dateChanges.length, 40, 'the Bern/Emmental and Basel batches date only their four routes in five editions each');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `Bern/Emmental review date for ${url}`);

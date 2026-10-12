@@ -1,6 +1,7 @@
 import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from './switzerland-ch10-refresh.mjs';
 
 const routeLabels = ['Arrive', 'Orient', 'Commit', 'Return'];
+const ch10BatchOneGuides = new Set(['old-town-rhine', 'art-museums', 'kleinbasel-border-rhine']);
 
 const guideEditorialExtensions = {
   'muottas-diavolezza': {
@@ -47,12 +48,14 @@ function applyEditorialExtensions(definition, extensions) {
 }
 
 function applyCh10GuideRefresh(definition) {
+  if (!ch10BatchOneGuides.has(definition?.slug)) return definition;
   const suffix = `/${definition?.slug}`;
   const refresh = Object.entries(switzerlandCh10GuideRefresh).find(([key]) => key.endsWith(suffix))?.[1];
   return refresh ? { ...definition, ...refresh } : definition;
 }
 
 function applyCh10ClusterRefresh(cluster) {
+  if (cluster?.slug !== 'basel-rhine') return cluster;
   const refresh = switzerlandCh10ClusterRefresh[cluster?.slug];
   return refresh ? { ...cluster, ...refresh } : cluster;
 }

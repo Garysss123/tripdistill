@@ -4,26 +4,15 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
+import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../data/switzerland-ch10-refresh.mjs';
+import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = 'bfbdf6cf83dc8d44f40a492f3dabdaf3075aae12';
 const locales = ['', '/zh', '/ja', '/ko', '/th'];
-const refreshedSlugs = new Set([
-  'basel-rhine',
-  'st-moritz-engadin',
-  'graubunden-corridors',
-  'lugano-southern-ticino',
-  'locarno-ascona-valleys',
-  'schaffhausen-rhine-falls',
-  'st-gallen-appenzell'
-]);
-const expectedRoutes = [
-  '/switzerland/',
-  ...switzerlandClusters.filter((cluster) => refreshedSlugs.has(cluster.slug)).flatMap((cluster) => [
-    `/switzerland/${cluster.slug}/`,
-    ...cluster.guides.map((guide) => guide.url)
-  ])
-];
+const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'basel-rhine');
+const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
+const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const protectedAssets = {
   'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5',
   'assets/images/tripdistill-zermatt-glacier-route-choice.svg': 'c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8'
@@ -49,10 +38,19 @@ function articleFrom(html) {
   return null;
 }
 
-assert.equal(expectedRoutes.length, 29, 'country page plus seven hubs and 21 existing child routes');
-assert.equal(new Set(expectedRoutes).size, 29, 'CH10 route list has no duplicates');
+assert.equal(expectedRoutes.length, 4, 'batch one is one hub plus its three existing child routes');
+assert.equal(new Set(expectedRoutes).size, 4, 'CH10 batch route list has no duplicates');
 assert.equal(switzerlandClusters.length, 16, 'Switzerland still has 16 hubs');
 assert.equal(switzerlandClusters.flatMap((cluster) => cluster.guides).length, 48, 'Switzerland still has 48 children');
+assert.equal(Object.keys(switzerlandCh10ClusterRefresh).length, 7, 'all seven CH10 hub drafts remain preserved');
+assert.equal(Object.keys(switzerlandCh10GuideRefresh).length, 21, 'all 21 CH10 child drafts remain preserved');
+assert.ok(switzerlandCh10CountryPageDraft.summary && switzerlandCh10CountryPageDraft.hero, 'the country-page draft remains preserved for a later batch');
+
+for (const route of allRoutes.filter((item) => !expectedRoutes.includes(item))) {
+  const relative = `${route.slice(1)}index.html`;
+  const baseline = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
+  assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains inactive and byte-identical to the CH09 source page`);
+}
 
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const currentSitemap = read('sitemap.xml');
@@ -64,7 +62,7 @@ assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no route 
 
 const allowedDatedUrls = new Set(locales.flatMap((prefix) => expectedRoutes.map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.ok(changedDates.length <= 145, 'only the 29 CH10 pages across five editions may receive new dates');
+assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page batch across five editions receives new dates');
 for (const [route, date] of changedDates) {
   assert.ok(allowedDatedUrls.has(route), `unexpected sitemap date change: ${route}`);
   assert.equal(date, '2026-10-12', `CH10 sitemap date for ${route}`);
@@ -76,7 +74,7 @@ for (const [asset, sha256] of Object.entries(protectedAssets)) {
 }
 
 const englishSearch = JSON.parse(read('data/search-index.json'));
-for (const cluster of switzerlandClusters.filter((item) => refreshedSlugs.has(item.slug))) {
+for (const cluster of [batchCluster]) {
   const hubRoute = `/switzerland/${cluster.slug}/`;
   const hubHtml = read(`switzerland/${cluster.slug}/index.html`);
   const hubArticle = articleFrom(hubHtml);
@@ -107,12 +105,6 @@ for (const cluster of switzerlandClusters.filter((item) => refreshedSlugs.has(it
   }
 }
 
-const country = read('switzerland/index.html');
-const countryArticle = articleFrom(country);
-assert.equal(countryArticle?.dateModified, '2026-10-12', 'country Article review date');
-assert.ok(country.includes('reviewed 12 October 2026'), 'country visible review date');
-assert.equal(englishSearch.filter((record) => record.url === '/switzerland/').length, 1, 'country search record is unique');
-
 for (const route of expectedRoutes) {
   const html = read(route.slice(1) + 'index.html');
   for (const [index, locale] of locales.entries()) {
@@ -122,4 +114,4 @@ for (const route of expectedRoutes) {
   }
 }
 
-console.log(`CH10 content checks passed: ${expectedRoutes.length} existing routes, 21 child operating plans, five-language alternate links and ${allowedDatedUrls.size} sitemap entries, ${changedDates.length} changed sitemap dates, 4,560 total URLs.`);
+console.log(`CH10 batch-one checks passed: ${expectedRoutes.length} existing routes, five-language alternate links and sitemap entries, ${changedDates.length} dated URLs, 4,560 total URLs; later English drafts remain unactivated.`);

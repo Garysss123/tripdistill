@@ -5,8 +5,6 @@ import { switzerlandClusters, switzerlandCountrySources, switzerlandGuides } fro
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '12 September 2026';
 const isoDate = '2026-09-12';
-const countryReviewDate = '12 October 2026';
-const countrySummary = 'Plan Switzerland by overnight base: compare rail-connected cities, lake corridors, mountain access and weather-ready returns.';
 const siteCss = '/css/site.css?v=20260926-1';
 const countryCss = '/css/switzerland.css?v=20260912-1';
 const fieldCss = '/css/switzerland-field.css?v=20261008-2';
@@ -209,21 +207,26 @@ const countryFaq = [
 
 function countrySchema() {
   return { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', '@id': 'https://tripdistill.com/switzerland/#article', headline: 'Switzerland Travel Guide', description: countrySummary, inLanguage: 'en', datePublished: isoDate, dateModified: '2026-10-12', mainEntityOfPage: 'https://tripdistill.com/switzerland/', image: absolute(switzerlandClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Switzerland' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+    { '@type': 'Article', '@id': 'https://tripdistill.com/switzerland/#article', headline: 'Switzerland Travel Guide', description: 'Sixteen complete Swiss travel hubs and forty-eight focused field guides organized around rail, lakes, cities and mountain access.', inLanguage: 'en', datePublished: isoDate, dateModified: '2026-10-12', mainEntityOfPage: 'https://tripdistill.com/switzerland/', image: absolute(switzerlandClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Switzerland' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
     breadcrumb([['Home', absolute('/')], ['Switzerland', absolute('/switzerland/')]]), faqSchema(countryFaq)
   ] };
 }
 
 const countryGroups = [
-  [['cities'], '01 · Rail cities', 'Stations are itinerary architecture.', 'Zurich, Bern, Basel, Schaffhausen and St Gallen work best when the main station, local network, river edge and one cultural anchor define the day before extra districts are added.'],
-  [['lakes'], '02 · Lake systems', 'Use water as a connector, not decoration.', 'Lucerne, Lausanne, the Riviera, Interlaken and Ticino add boats, shoreline rail and steep local elevation. Lugano and Locarno connect lakeside bases to distinct mountain railways and valleys; check both directions and keep a lower-weather plan.'],
+  [['cities'], '01 · Rail cities', 'Stations are itinerary architecture.', 'Zurich, Bern, Basel and Geneva work best when the main station, tram network, river or lake edge and one cultural anchor define the day before extra districts are added.'],
+  [['lakes'], '02 · Lake systems', 'Use water as a connector, not decoration.', 'Lucerne, Lausanne, the Riviera, Interlaken and Ticino add boats, shoreline rail and steep local elevation. A scenic connection still needs a timetable and a useful return.'],
   [['alps'], '03 · Alpine gates', 'Pay for elevation only when conditions justify it.', 'Jungfrau, Zermatt, Engadin, Graubünden and Appenzell turn weather, lift status and final descent into the core planning decision rather than a footnote.']
 ];
+
+const deferredCountryCardCopy = {
+  'basel-rhine': 'Basel’s historic core, Rhine banks and unusually dense museum landscape sit close together, but the city still needs selection. Use the river as the…'
+};
 
 function countryCards(bands) {
   return switzerlandClusters.filter((cluster) => bands.includes(cluster.band)).map((cluster) => {
     const image = cluster.guides[0].image;
-    return `<a class="ch-country-card" href="/switzerland/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(image.alt)}"><div><small>${escapeHtml(cluster.region)} · 3 focused guides</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(cluster.hubIntro, 155))}</p><strong>Open the regional timetable →</strong></div><span>${String(switzerlandClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
+    const copy = deferredCountryCardCopy[cluster.slug] || cluster.hubIntro;
+    return `<a class="ch-country-card" href="/switzerland/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(image.alt)}"><div><small>${escapeHtml(cluster.region)} · 3 focused guides</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(copy, 155))}</p><strong>Open the regional timetable →</strong></div><span>${String(switzerlandClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
   }).join('');
 }
 
@@ -231,10 +234,10 @@ function countryPage() {
   const hero = switzerlandClusters[0].guides[0].image;
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: 'Switzerland Travel Guide — 16 Complete Regional Hubs | TripDistill', description: metaDescription(countrySummary), route: '/switzerland/', image: hero, type: 'website' })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script></head>
+<head>${sharedHead({ title: 'Switzerland Travel Guide — 16 Complete Regional Hubs | TripDistill', description: metaDescription('Plan Switzerland through sixteen complete hubs and forty-eight focused guides for rail cities, lake corridors, alpine regions and Ticino valleys.'), route: '/switzerland/', image: hero, type: 'website' })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script></head>
 <body data-page="switzerland" data-country="switzerland">
 ${shellStart('<main id="main-content" class="page-content ch-country">')}
-  <section class="ch-country-hero"><div class="ch-country-copy"><span class="ch-kicker">Precision travel atlas · reviewed ${countryReviewDate}</span><h1>Switzerland <span>read the timetable and topography as one map.</span></h1><p>Choose an overnight base first, then connect the city, lake, valley or mountain day to a named operator and a practical return. Sixteen hubs compare the different transfer systems and keep a lower-weather plan visible.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 16 hubs</a><a class="button secondary" href="#network">Read the network contract</a></div><div class="ch-country-facts"><div><strong>16</strong><span>regional hubs</span></div><div><strong>48</strong><span>focused guides</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${imageFigureCaption(hero)}</figcaption>${imageFigureNote(hero)}</figure><div class="ch-timetable-mark" aria-hidden="true"><span>RAIL</span><i></i><span>LAKE</span><i></i><span>VALLEY</span><i></i><span>SUMMIT</span></div></section>
+  <section class="ch-country-hero"><div class="ch-country-copy"><span class="ch-kicker">Precision travel atlas · reviewed ${reviewDate}</span><h1>Switzerland <span>read the timetable and topography as one map.</span></h1><p>The country is compact on a rail map, but a useful day changes with lake shores, valley floors, funiculars, mountain railways, lifts and cloud level. Sixteen complete hubs make those operating systems visible before the postcard decides the route.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 16 hubs</a><a class="button secondary" href="#network">Read the network contract</a></div><div class="ch-country-facts"><div><strong>16</strong><span>regional hubs</span></div><div><strong>48</strong><span>focused guides</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${imageFigureCaption(hero)}</figcaption>${imageFigureNote(hero)}</figure><div class="ch-timetable-mark" aria-hidden="true"><span>RAIL</span><i></i><span>LAKE</span><i></i><span>VALLEY</span><i></i><span>SUMMIT</span></div></section>
   <section class="ch-country-principles"><article><span>01</span><h2>Choose the operating region.</h2><p>Zurich, Lake Lucerne, Jungfrau, Zermatt, Engadin and Ticino may be close in kilometers but they use different local transport and weather gates.</p></article><article><span>02</span><h2>Protect the last descent.</h2><p>Mountain days are built backward from the last practical lift, funicular, boat or valley train—not forward from the first Instagram viewpoint.</p></article><article><span>03</span><h2>Keep one lower layer.</h2><p>Cloud can erase the expensive part of a mountain day while the city, lake or valley below remains useful. A good itinerary already knows that fallback.</p></article></section>
   ${ad}
   <div id="regions">${countryGroups.map(([bands, kicker, heading, copy]) => `<section class="ch-country-band"><div class="ch-band-heading"><span>${kicker}</span><h2>${heading}</h2><p>${copy}</p></div><div class="ch-country-grid">${countryCards(bands)}</div></section>`).join('')}</div>
@@ -242,7 +245,7 @@ ${shellStart('<main id="main-content" class="page-content ch-country">')}
   <section class="ch-country-section"><div class="ch-band-heading"><span>Trip-length board</span><h2>Fewer bases, more weather flexibility.</h2></div><div class="ch-trip-grid"><article><strong>5–7 days</strong><h3>One city + one mountain/lake region</h3><p>Example: Zurich + Lucerne, or Bern + Jungfrau. Keep one flexible day instead of racing across language regions.</p></article><article><strong>8–10 days</strong><h3>Two or three connected bases</h3><p>Use one mainline rail corridor, then add one alpine branch. Let weather decide the order of mountain and lowland days.</p></article><article><strong>12–14 days</strong><h3>Add a contrasting region</h3><p>Ticino, Engadin or western Lake Geneva becomes worthwhile when the transfer buys a genuinely different landscape and culture, not another hotel key.</p></article></div></section>
   <section class="ch-country-section"><div class="ch-band-heading"><span>Season board</span><h2>Read elevation before the calendar label.</h2></div><div class="ch-season-grid"><article><strong>Winter</strong><p>Lowland cities remain usable while mountain transport, snow conditions and daylight redefine high routes. Resort operations are not the same as summer hiking access.</p></article><article><strong>Spring</strong><p>Valleys can feel mild while high trails remain snowy or muddy. Shoulder-season lift maintenance makes exact operating dates important.</p></article><article><strong>Summer</strong><p>Long daylight helps lake and hiking plans, but thunderstorms, heat and crowding can still push the best mountain window earlier.</p></article><article><strong>Autumn</strong><p>Clear days can be excellent, but shortening daylight and seasonal closures reward conservative return times and current operator checks.</p></article></div></section>
   <section class="ch-country-section"><div class="ch-band-heading"><span>Planning answers</span><h2>Switzerland FAQ</h2></div><div class="faq-list">${countryFaq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${countryReviewDate}. Entry, fares, passes, timetables, lifts, trails and weather change; verify directly before travel.</p><ul>${sourceList(switzerlandCountrySources)}${switzerlandClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${countryReviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${reviewDate}. Entry, fares, passes, timetables, lifts, trails and weather change; verify directly before travel.</p><ul>${sourceList(switzerlandCountrySources)}${switzerlandClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -301,7 +304,7 @@ function updateSearch() {
   const file = path.join(root, 'data', 'search-index.json');
   const existing = JSON.parse(fs.readFileSync(file, 'utf8'));
   const records = [
-    { title: 'Switzerland Travel Guide', url: '/switzerland/', parent: 'Europe', type: 'Country', summary: countrySummary, keywords: ['Switzerland', 'Swiss travel', 'Europe', 'Swiss rail', 'Swiss mountain railways', 'Basel', 'Ticino'] }
+    { title: 'Switzerland Travel Guide', url: '/switzerland/', parent: 'Europe', type: 'Country', summary: 'Plan Switzerland through sixteen complete regional hubs and forty-eight focused guides built around rail, lakes, valleys and mountain access.', keywords: ['Switzerland', 'Swiss travel', 'Europe', 'Swiss rail'] }
   ];
   for (const cluster of switzerlandClusters) {
     records.push({ title: cluster.name, url: `/switzerland/${cluster.slug}/`, parent: 'Switzerland', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });

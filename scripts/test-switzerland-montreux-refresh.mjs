@@ -135,9 +135,16 @@ const bernEmmentalRoutes = [
   '/switzerland/bern-emmental/emmental-day-trip/'
 ];
 const bernEmmentalLocs = new Set(bernEmmentalRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+const baselRoutes = [
+  '/switzerland/basel-rhine/',
+  '/switzerland/basel-rhine/old-town-rhine/',
+  '/switzerland/basel-rhine/art-museums/',
+  '/switzerland/basel-rhine/kleinbasel-border-rhine/'
+];
+const baselLocs = new Set(baselRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
 const changedDates = new Set([...currentMap].filter(([loc, date]) => baseMap.get(loc) !== date).map(([loc]) => loc));
-assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs])].sort(), 'only the existing Montreux and Bern/Emmental locale routes receive dates since the CH07 base');
+assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
 const oldPhoto = switzerlandRetiredImageRecords.montreuxRochersTrainMismatch;
