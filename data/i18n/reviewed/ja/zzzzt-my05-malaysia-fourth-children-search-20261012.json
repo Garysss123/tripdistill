@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia · Langkawi": "マレーシア・ランカウイ",
+    "Malaysia · George Town & Penang": "マレーシア・ジョージタウン＆ペナン"
+  }
+}

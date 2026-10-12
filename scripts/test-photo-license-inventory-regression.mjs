@@ -244,7 +244,7 @@ try {
     assert.ok(record.verificationDetail.includes('not independent rights or chain-of-title verification'));
     assert.ok(record.altTexts.length && record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
   }
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 522, 'three Marseille and three Peak District source-page/pixel checks are recorded while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 524, 'the merged inventory retains Marseille and Peak District source-page/pixel checks and adds two original Malaysia diagrams without treating them as independent source-page checks');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -459,8 +459,8 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 6, 'inventory must count explicitly recorded project-original artwork, including Melaka, Somerset and Peak District diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 520, 'the regenerated merged inventory includes the Marseille and Peak District source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 520, 'source-page declarations do not establish independent rights clearance, and project-original diagrams do not claim external photo licenses');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -501,9 +501,34 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 798, 'the build image count must exclude the preserved Melaka photo');
+  assert.equal(report.counts.expectedBuildImageCount, 800, 'the two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
+  const malaysiaChildDiagrams = [
+    { assetPath: '/assets/images/tripdistill-dayang-bunting-chain.svg', sourceUrl: 'https://tripdistill.com/assets/images/tripdistill-dayang-bunting-chain.svg', route: '/malaysia/langkawi/dayang-bunting-island/', localSha1: '4fa1aa4f07e34d186ee6527ccb68aaf464371778' },
+    { assetPath: '/assets/images/tripdistill-kellies-castle-transfer.svg', sourceUrl: 'https://tripdistill.com/assets/images/tripdistill-kellies-castle-transfer.svg', route: '/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/', localSha1: 'e940d32c9085a71ef5b4ca3f52ef8eea2fc2b13f' }
+  ];
+  for (const diagram of malaysiaChildDiagrams) {
+    const record = photoRecords.find((item) => item.assetPath === diagram.assetPath);
+    assert.ok(record, `inventory must include the original Malaysia planning diagram ${diagram.assetPath}`);
+    assert.equal(fs.existsSync(path.join(root, diagram.assetPath.slice(1))), true);
+    assert.equal(record.assetType, 'original-planning-diagram');
+    assert.equal(record.sourceUrl, diagram.sourceUrl);
+    assert.equal(record.creator, 'TripDistill Editorial Team');
+    assert.equal(record.license, null, 'a project-original planning diagram must not claim an unapproved public license');
+    assert.equal(record.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(record.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+    assert.equal(record.commercialReuseEligibility, 'unknown');
+    assert.equal(record.inventoryStatus, 'used');
+    assert.equal(record.useCount, 1);
+    assert.deepEqual(record.routes, [diagram.route]);
+    assert.ok(record.altTexts.some((alt) => /not to scale/i.test(alt)));
+    assert.equal(record.localSha1, diagram.localSha1);
+    assert.equal(record.verificationStatus, 'site_credit_or_metadata_only');
+    assert.ok(record.verificationDetail.includes('not an independent source-page check'));
+    assert.ok(record.verificationDetail.includes('no separate reuse license declared'));
+    assert.equal(report.unmatchedAssets.some((item) => item.src === diagram.assetPath), false);
+  }
   const chinaLhasaRetired = photoRecords.find((item) => item.assetPath === chinaLhasaRetiredAssetPath);
   assert.ok(chinaLhasaRetired, 'inventory must retain the challenged Lhasa photo for provenance');
   assert.equal(fs.existsSync(path.join(root, chinaLhasaRetiredAssetPath.slice(1))), true);

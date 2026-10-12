@@ -72,6 +72,9 @@ function sourcesList(sources) {
 
 function imageCredit(image) {
   if (image.assetType === 'original-planning-diagram') {
+    if (image.originalSchematic) {
+      return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, <a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">${escapeHtml(image.rightsStatus)}</a>. ${escapeHtml(image.editNote)}</li>`;
+    }
     return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> &#8212; <span>${escapeHtml(image.creator)}</span>. <span>${escapeHtml(image.creditText)}</span> <a href="${escapeHtml(image.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of use</a>.</li>`;
   }
   const attribution = image.attribution || image.creator;
@@ -102,12 +105,23 @@ function addMelakaHubRouteKey(html) {
   return html.slice(0, sectionEnd) + `\n${melakaRouteKey()}\n` + html.slice(sectionEnd);
 }
 
-function relatedCards(cluster, currentSlug = '') {
-  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `
+function diagramKey(image) {
+  if (!image.legend?.items?.length) return '';
+  const items = image.legend.items.map((item, index) => `<li><span class="md-diagram-legend-number" aria-hidden="true">${index + 1}</span><span>${escapeHtml(item)}</span></li>`).join('');
+  const returnText = image.legend.returnText
+    ? `<p><strong>Return arrow:</strong> ${escapeHtml(image.legend.returnText)}</p>`
+    : '';
+  return `<aside class="md-diagram-legend" aria-labelledby="md-diagram-legend-title"><h2 id="md-diagram-legend-title">Diagram key</h2><ol>${items}</ol>${returnText}<p><strong>Conditions:</strong> ${escapeHtml(image.legend.conditionsText)}</p></aside>`;
+}
+
+function relatedCards(cluster, currentSlug = '', showImages = true) {
+  return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => {
+    const imageLine = showImages ? `            <img src="${guide.image.src}" width="1440" height="960" loading="lazy" decoding="async" alt="${escapeHtml(guide.image.alt)}">\n` : '';
+    return `
           <a class="md-related-card" href="/malaysia/${cluster.hubSlug}/${guide.slug}/">
-            <img src="${guide.image.src}" width="1440" height="960" loading="lazy" decoding="async" alt="${escapeHtml(guide.image.alt)}">
-            <span><small>Chapter ${String(cluster.guides.indexOf(guide) + 1).padStart(2, '0')}</small><strong>${escapeHtml(guide.name)}</strong><em>${escapeHtml(guide.motif)}</em></span>
-          </a>`).join('');
+${imageLine}            <span><small>Chapter ${String(cluster.guides.indexOf(guide) + 1).padStart(2, '0')}</small><strong>${escapeHtml(guide.name)}</strong><em>${escapeHtml(guide.motif)}</em></span>
+          </a>`;
+  }).join('');
 }
 
 function guideSchema(guide) {
@@ -163,17 +177,23 @@ function childPage(guide, cluster) {
   const title = `${guide.name} | TripDistill`;
   const sources = [...new Map([...cluster.sources, ...(guide.sources || [])].map(([href, label]) => [href, [href, label]])).values()];
   const originalDiagram = guide.image.assetType === 'original-planning-diagram';
-  const sourceHeading = originalDiagram ? 'Official sources and original diagram' : 'Official sources and photo credit';
-  const sourceIntro = originalDiagram
+  const melakaDiagram = guide.image.src === '/assets/images/malaysia-melaka-two-bank-route.svg';
+  const sourceHeading = guide.image.originalSchematic
+    ? 'Official sources and image provenance'
+    : originalDiagram ? 'Official sources and original diagram' : 'Official sources and photo credit';
+  const sourceIntro = guide.image.originalSchematic
+    ? `Planning facts and image provenance were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.`
+    : originalDiagram
     ? 'Planning facts and public route details were reviewed on 12 October 2026. The original diagram is a non-scale planning schematic, not navigation; confirm the public path, bridge access and return route before walking.'
     : `Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.`;
-  const relatedImageCredits = originalDiagram
+  const relatedImageCredits = originalDiagram && guide.relatedImages !== false
     ? [...new Map(cluster.guides.filter((related) => related.slug !== guide.slug && related.image.assetType !== 'original-planning-diagram').map((related) => [related.image.src, related.image])).values()].map(imageCredit).join('')
     : '';
   const relatedDiagramKey = !originalDiagram && cluster.guides.some((related) => related.image.assetType === 'original-planning-diagram')
     ? melakaRouteKey()
     : '';
   const figureCaption = guide.image.caption || `${guide.image.label} · ${guide.image.license}`;
+  const figureDiagramKey = melakaDiagram ? melakaRouteKey() : diagramKey(guide.image);
   const checks = guide.checks.map(([label, copy], index) => `<article class="md-check"><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(label)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const decisions = guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('');
   const route = guide.route.map(([phase, heading, copy], index) => `<article class="md-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(phase)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
@@ -203,7 +223,7 @@ function childPage(guide, cluster) {
         <div class="md-instrument" aria-hidden="true"><span>${escapeHtml(guide.instrument)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><em>${escapeHtml(guide.motif)}</em></div>
       </section>
 
-${originalDiagram ? `\n      ${melakaRouteKey()}\n` : ''}
+${figureDiagramKey ? `\n      ${figureDiagramKey}` : ''}
 
       <section class="md-decision-strip" aria-label="Three planning decisions">${decisions}</section>
 
@@ -217,7 +237,7 @@ ${originalDiagram ? `\n      ${melakaRouteKey()}\n` : ''}
 
       <section class="md-section md-faq" id="faq" aria-labelledby="faq-title"><div class="md-section-head"><div><span class="md-section-label">Planning answers</span><h2 id="faq-title">${escapeHtml(guide.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
 
-      <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug)}</div>${relatedDiagramKey}<p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
+      <section class="md-section" aria-labelledby="related-title"><div class="md-section-head"><div><span class="md-section-label">Continue within ${escapeHtml(cluster.hubName)}</span><h2 id="related-title">Choose the next chapter by purpose.</h2></div><p>Return to the regional guide before joining distant branches into one day.</p></div><div class="md-related">${relatedCards(cluster, guide.slug, guide.relatedImages !== false)}</div>${relatedDiagramKey}<p class="md-back"><a href="/malaysia/${cluster.hubSlug}/">← Return to the complete ${escapeHtml(cluster.hubName)} guide</a></p></section>
 
       <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">${escapeHtml(sourceHeading)}</h2><p>${escapeHtml(sourceIntro)}</p><ul>${sourcesList(sources)}${imageCredit(guide.image)}${relatedImageCredits}</ul><span class="review-note">Editorial review: ${escapeHtml(guide.reviewedOn || '30 August 2026')} · Recheck time-sensitive details before booking.</span></section>
     </main>

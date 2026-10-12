@@ -209,8 +209,18 @@ body[data-depth-instrument="docket"] .md-decision-strip article { border-top:.35
 .melaka-route-line { display:block; margin-top:.62rem; border-top:3px solid #2d6b62; }
 .melaka-route-line.is-dashed { border-top:3px dashed #bc6949; }
 
+.md-diagram-legend { display:grid; grid-template-columns:1fr; gap:.8rem 1.4rem; max-width:76rem; margin:1rem auto 0; padding:1.2rem 1.4rem; color:#263b39; border:1px solid #d6d4c9; border-left:.32rem solid #bc6949; border-radius:.75rem; background:#fffdf7; box-shadow:0 .55rem 1.7rem rgba(25,53,48,.08); }
+.md-diagram-legend h2 { margin:0; color:#173b40; font:700 1.2rem/1.15 Georgia,serif; }
+.md-diagram-legend ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem 1rem; margin:0; padding:0; list-style:none; }
+.md-diagram-legend li { display:grid; grid-template-columns:1.8rem minmax(0,1fr); gap:.55rem; align-items:start; font-size:.9rem; line-height:1.45; }
+.md-diagram-legend-number { display:grid; width:1.65rem; aspect-ratio:1; place-items:center; color:#fff; border-radius:50%; background:#24454b; font-size:.8rem; font-weight:800; }
+.md-diagram-legend p { margin:0; font-size:.9rem; line-height:1.45; }
+.md-diagram-legend p strong { color:#173b40; }
+
 @media (max-width: 620px) {
   .melaka-route-key { grid-template-columns:1fr; gap:.8rem; padding:1rem; }
   .melaka-route-key h3 { grid-column:1; }
   .melaka-route-key ol { grid-template-columns:1fr; }
+  .md-diagram-legend ol { grid-template-columns:1fr; }
+  .md-diagram-legend { padding:1rem; }
 }

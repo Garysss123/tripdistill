@@ -11,7 +11,7 @@ const routes = [
   '/malaysia/langkawi/kilim-geoforest/'
 ];
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
-const untouchedRoute = '/malaysia/langkawi/dayang-bunting-island/';
+const newlyReviewedRoute = '/malaysia/langkawi/dayang-bunting-island/';
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 
@@ -65,7 +65,7 @@ for (const route of routes.slice(1)) assert.ok(search.some((record) => record.ur
 const hubSearch = search.find((record) => record.url === routes[0]);
 assert.ok(hubSearch, 'search must retain the Langkawi hub');
 assert.ok(hubSearch.summary.includes('four distinct zones'), 'search summary must describe the revised Langkawi route logic');
-const untouched = new RegExp(`<url><loc>https://tripdistill\\.com${escapeRegExp(untouchedRoute)}</loc><lastmod>2026-08-30</lastmod>`);
-assert.match(sitemap, untouched, 'the unselected Dayang Bunting route must retain its prior sitemap date');
+const completedFourthChild = new RegExp(`<url><loc>https://tripdistill\\.com${escapeRegExp(newlyReviewedRoute)}</loc><lastmod>2026-10-12</lastmod>`);
+assert.match(sitemap, completedFourthChild, 'the formerly omitted Dayang Bunting route now carries its own synchronized update date');
 
 console.log(`Langkawi route-date regression passed for ${routes.length} routes and ${routes.length * localePrefixes.length} language editions.`);

@@ -35,6 +35,13 @@ const malaysiaCameronEditedRoutes = [
   '/malaysia/cameron-highlands/brinchang-kea-farm/',
   '/malaysia/cameron-highlands/mossy-forest-gunung-brinchang/'
 ];
+const malaysiaFourthChildrenLastmod = '2026-10-12';
+const malaysiaFourthChildrenRoutes = [
+  '/malaysia/george-town-penang/little-india-esplanade/',
+  '/malaysia/cameron-highlands/ringlet-bertam-valley/',
+  '/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/',
+  '/malaysia/langkawi/dayang-bunting-island/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -731,6 +738,11 @@ for (const route of malaysiaLangkawiEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
+}
+for (const route of malaysiaFourthChildrenRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Malaysia child route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaFourthChildrenLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);

@@ -60,7 +60,7 @@ for (const [route, phrases] of contentChecks) {
 
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 for (const route of routes) assert.ok(search.some((record) => record.url === route), `search must retain ${route}`);
-const untouched = new RegExp(`<url><loc>https://tripdistill\\.com/malaysia/cameron-highlands/ringlet-bertam-valley/</loc><lastmod>2026-08-30</lastmod>`);
-assert.match(sitemap, untouched, 'the unselected Ringlet & Bertam Valley route must retain its prior sitemap date');
+const completedFourthChild = new RegExp(`<url><loc>https://tripdistill\\.com/malaysia/cameron-highlands/ringlet-bertam-valley/</loc><lastmod>2026-10-12</lastmod>`);
+assert.match(sitemap, completedFourthChild, 'the formerly omitted Ringlet & Bertam Valley route now carries its own synchronized update date');
 
 console.log(`Cameron Highlands route-date regression passed for ${routes.length} routes and ${routes.length * localePrefixes.length} language editions.`);
