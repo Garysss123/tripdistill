@@ -8,8 +8,6 @@
     "/united-kingdom/liverpool-manchester/chester-walls-roman-city/"
   ],
   "translations": {
-    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester…": "這是三座城市的鐵路行程，不是可以互換的站點串遊。利物浦 Pier Head、碼頭與座堂山脊位於 Lime Street 西側與南側；曼徹斯特則以 Piccadilly、Oxford Road、Victoria 和 Deansgate 為樞紐，延伸至不同的電車與博物館街區；切斯特是須另搭一段鐵路抵達的緊湊城牆古城。每天集中走一座城市。城際車程短，不代表水岸博物館、大學區展館與切斯特城牆能排成同一天的可行路線。",
-    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "這是三座城市的鐵路行程，不是可以互換的站點串遊。利物浦 Pier Head、碼頭與座堂山脊位於 Lime Street 西側與南側；曼徹斯特則從 Piccadilly、Oxford Road、Victoria 和 Deansgate 延伸至各自不同的電車與博物館街區；切斯特是須另搭一段鐵路抵達的緊湊城牆古城。每天集中走一座城市。城際車程短，不代表水岸博物館、大學區展館與切斯特城牆能排成同一天的可行路線。",
     "Can Liverpool, Manchester and Chester fit into three nights?": "三晚能排進利物浦、曼徹斯特和切斯特嗎？",
     "Give Liverpool and Manchester one full day each from a single base and save Chester for another trip. Adding all three turns the trip into station transfers rather than three useful visits.": "以同一住宿點安排利物浦與曼徹斯特各一整天，切斯特留待下次。硬把三地塞進行程，會變成趕車換站，而非好好遊覽三座城市。",
     "Which Liverpool station should I use for the waterfront?": "去利物浦水岸應搭到哪一站？",
@@ -37,12 +35,11 @@
     "National Rail — live station-specific rail planning": "National Rail — 依車站查詢即時鐵路規劃",
     "Merseyrail — network map, stations and service status": "Merseyrail — 路網圖、車站與服務狀況",
     "Transport for Greater Manchester — current tram and bus journey planning": "大曼徹斯特交通局 — 電車及巴士即時行程規劃",
-    "National Museums Liverpool — Museum of Liverpool visit information": "National Museums Liverpool — 利物浦博物館參觀資訊",
-    "National Museums Liverpool — current International Slavery Museum status": "National Museums Liverpool — 國際奴隸制博物館最新狀況",
+    "National Museums Liverpool — Museum of Liverpool visit information": "利物浦國家博物館群 — 利物浦博物館參觀資訊",
+    "National Museums Liverpool — current International Slavery Museum status": "利物浦國家博物館群 — 國際奴隸制博物館最新狀況",
     "Science and Industry Museum — current openings, restoration and admission": "科學與工業博物館 — 開放、修復工程及入場資訊",
     "Visit Cheshire — Chester City Walls access and repair notice": "Visit Cheshire — 切斯特城牆通行與修復公告",
     "Planning facts and image licensing were reviewed on 12 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.": "交通、景點開放、道路、步道、潮汐、天候及當地通行狀況均可能變動；本頁規劃資訊與圖片授權已於 2026 年 10 月 12 日檢視。出發前請重新開啟連結的主管機關或營運單位頁面。",
-    "Editorial review: 12 October 2026 · Recheck time-sensitive details before booking.": "編輯檢視：2026 年 10 月 12 日 · 預約前請重新確認時效資訊。",
     "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either…": "從利物浦 Lime Street 經市政中心下坡至 Pier Head，先查當日狀況再決定是否參觀利物浦博物館，之後可留在碼頭區，或再上坡前往座堂山脊，並從適合回程的車站結束行程。",
     "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.": "從利物浦 Lime Street 經市政中心下坡至 Pier Head，先查當日狀況再決定是否參觀利物浦博物館，之後可留在碼頭區，或再上坡前往座堂山脊，最後從符合回程安排的車站離開。",
     "Can I visit the Maritime Museum and International Slavery Museum?": "可以參觀海事博物館和國際奴隸制博物館嗎？",
@@ -68,9 +65,9 @@
     "For the river option, follow the waterfront public realm to Albert Dock and turn back before the route becomes a second long walk. For the ridge option, leave the docks through the central streets, climb via Bold Street to Hope Street, and select one cathedral visit.": "走河岸路線時沿公共水岸走到 Albert Dock，並在行程變成另一段長距離步行前折返。走山脊路線則離開碼頭，經市中心街道沿 Bold Street 上坡到 Hope Street，並選一座主教座堂參觀。",
     "Finish at the right rail system": "從合適的鐵路系統返程",
     "Use James Street for a Pier Head return, Central for the central/southern city, or Lime Street for a mainline departure only when the walk and live service plan justify it. Check Merseyrail and National Rail separately and leave event-day platform margin.": "回 Pier Head 可用 James Street；前往市中心南側可用 Central；若要搭幹線，只有在步行時間與即時服務都合適時才回 Lime Street。Merseyrail 與 National Rail 要分開查詢，活動日也要預留月台候車時間。",
-    "National Museums Liverpool — Museum of Liverpool calendar and visitor information": "National Museums Liverpool — 利物浦博物館行事曆與參觀資訊",
-    "National Museums Liverpool — Maritime Museum status": "National Museums Liverpool — 海事博物館狀況",
-    "National Museums Liverpool — International Slavery Museum status": "National Museums Liverpool — 國際奴隸制博物館狀況",
+    "National Museums Liverpool — Museum of Liverpool calendar and visitor information": "利物浦國家博物館群 — 利物浦博物館行事曆與參觀資訊",
+    "National Museums Liverpool — Maritime Museum status": "利物浦國家博物館群 — 海事博物館狀況",
+    "National Museums Liverpool — International Slavery Museum status": "利物浦國家博物館群 — 國際奴隸制博物館狀況",
     "Liverpool Cathedral — visitor and service access": "利物浦主教座堂 — 參觀與禮拜資訊",
     "Merseyrail — station map and live service status": "Merseyrail — 車站圖與即時服務狀況",
     "National Rail — dated Lime Street journey planning": "National Rail — Lime Street 指定日期行程規劃",
@@ -155,6 +152,9 @@
     "Gates are not step-free equivalents": "各城門的無障礙程度不同",
     "Wall access varies by gate, and the elevated surface can be exposed or slippery. Use an identified street-level path or a listed ramp where appropriate, and confirm the chosen entrance before leaving the station.": "不同城門的城牆入口各異，高處路面可能風吹日曬或濕滑。可改走已確認的地面路線，或使用公告所列坡道；離開車站前先確認要走的入口。",
     "The Roman places are separate stops": "羅馬遺址分成不同景點",
-    "The Amphitheatre, Roman Gardens, Cathedral and Rows are different places, not one ticket or one interior. Choose the order that fits the current wall diversion and each venue’s published hours.": "圓形劇場、羅馬花園、主教座堂與 The Rows 是不同地點，不是同一張門票或一處室內展覽。依當日城牆改道與各處開放時間安排參觀順序。"
+    "The Amphitheatre, Roman Gardens, Cathedral and Rows are different places, not one ticket or one interior. Choose the order that fits the current wall diversion and each venue’s published hours.": "圓形劇場、羅馬花園、主教座堂與 The Rows 是不同地點，不是同一張門票或一處室內展覽。依當日城牆改道與各處開放時間安排參觀順序。",
+    "Plan Liverpool, Manchester and Chester as separate days: stations serve different waterfront, museum and walled-city districts. Choose a base and check the return.": "將利物浦、曼徹斯特與切斯特分開安排日程：各站服務不同的水岸、博物館與城牆古城區。選好住宿據點，並確認回程。",
+    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester…": "這是三座城市的鐵路行程，不是可以互換的站點串遊。利物浦 Pier Head、碼頭與座堂山脊位於 Lime Street 西側與南側；曼徹斯特則以 Piccadilly、Oxford Road、Victoria 和 Deansgate 為樞紐，延伸至不同的電車與博物館街區；切斯特是須另搭一段鐵路抵達的緊湊城牆古城。每天集中走一座城市。城際車程短，不代表水岸博物館、大學區展館與切斯特城牆能排成同一天的可行路線。",
+    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "這是三座城市的鐵路行程，不是可以互換的站點串遊。利物浦 Pier Head、碼頭與座堂山脊位於 Lime Street 西側與南側；曼徹斯特則從 Piccadilly、Oxford Road、Victoria 和 Deansgate 延伸至各自不同的電車與博物館街區；切斯特是須另搭一段鐵路抵達的緊湊城牆古城。每天集中走一座城市。城際車程短，不代表水岸博物館、大學區展館與切斯特城牆能排成同一天的可行路線。"
   }
 }

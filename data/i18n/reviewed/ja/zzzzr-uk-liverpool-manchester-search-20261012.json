@@ -4,10 +4,5 @@
   "routes": [
     "/data/search-index.json"
   ],
-  "translations": {
-    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "これは3都市を鉄道で巡る計画で、駅を次々と寄るだけの旅ではありません。リバプールのPier Head、波止場、カテドラルの丘はLime Street駅の西・南側にあります。マンチェスターはPiccadilly、Oxford Road、Victoria、Deansgateを起点に、それぞれ異なるトラム・博物館エリアへ広がります。チェスターは独自の鉄道区間で訪れる、城壁に囲まれたコンパクトな街です。1日につき1都市に集中しましょう。都市間の乗車時間が短くても、ウォーターフロントの博物館、大学の展示施設、チェスターの城壁を1日にまとめて回れるわけではありません。",
-    "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.": "Liverpool Lime Streetから市庁舎周辺を下ってPier Headへ。日付ごとの状況を確認してからMuseum of Liverpoolに入るか決め、波止場にとどまるか、1度だけ丘を上ってカテドラル地区へ向かい、帰りに便利な駅で終えます。",
-    "Choose Castlefield from Deansgate or Deansgate–Castlefield, the university collections from Oxford Road, or a booked Salford Quays visit from its tram branch; do not zigzag between all three.": "到着駅に合わせ、DeansgateまたはDeansgate–CastlefieldからCastlefieldへ、Oxford Roadから大学の展示施設へ、またはトラムで予約したSalford Quaysの施設へ向かいます。3地区すべてを往復しないでください。",
-    "Walk from Chester station to Eastgate, use the current wall-access notice to choose an open section, then descend once to the Roman Amphitheatre, Roman Gardens or The Rows and return through the centre.": "Chester駅からEastgateへ歩き、最新の城壁案内で通行可能区間を選んでから1度下り、Roman Amphitheatre、Roman Gardens、The Rowsのいずれかを訪れて中心部を戻ります。"
-  }
+  "translations": {}
 }

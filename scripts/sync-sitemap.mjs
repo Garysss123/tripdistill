@@ -14,6 +14,13 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
+const malaysiaLangkawiLastmod = '2026-10-12';
+const malaysiaLangkawiEditedRoutes = [
+  '/malaysia/langkawi/',
+  '/malaysia/langkawi/pantai-cenang-tengah/',
+  '/malaysia/langkawi/machinchang-skycab/',
+  '/malaysia/langkawi/kilim-geoforest/'
+];
 const malaysiaIpohLastmod = '2026-10-11';
 const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/',
@@ -516,6 +523,11 @@ for (const route of malaysiaIpohEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
+}
+for (const route of malaysiaLangkawiEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
 }
 for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);

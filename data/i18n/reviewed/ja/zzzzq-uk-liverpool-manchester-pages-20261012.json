@@ -8,8 +8,6 @@
     "/united-kingdom/liverpool-manchester/chester-walls-roman-city/"
   ],
   "translations": {
-    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester…": "これは3都市を鉄道で巡る計画で、駅を次々と寄るだけの旅ではありません。リバプールのPier Head、波止場、カテドラルの丘はLime Street駅の西・南側にあります。マンチェスターにはPiccadilly、Oxford Road、Victoria、Deansgateと、それぞれ別のトラム・博物館エリアがあります。チェスターは独自の鉄道区間で訪れる、城壁に囲まれたコンパクトな街です。1日につき1都市に集中しましょう。都市間の乗車時間が短くても、ウォーターフロントの博物館、大学の展示施設、チェスターの城壁を1日にまとめて回れるわけではありません。",
-    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "これは3都市を鉄道で巡る計画で、駅を次々と寄るだけの旅ではありません。リバプールのPier Head、波止場、カテドラルの丘はLime Street駅の西・南側にあります。マンチェスターはPiccadilly、Oxford Road、Victoria、Deansgateを起点に、それぞれ異なるトラム・博物館エリアへ広がります。チェスターは独自の鉄道区間で訪れる、城壁に囲まれたコンパクトな街です。1日につき1都市に集中しましょう。都市間の乗車時間が短くても、ウォーターフロントの博物館、大学の展示施設、チェスターの城壁を1日にまとめて回れるわけではありません。",
     "Can Liverpool, Manchester and Chester fit into three nights?": "3泊でリバプール、マンチェスター、チェスターを回れますか？",
     "Give Liverpool and Manchester one full day each from a single base and save Chester for another trip. Adding all three turns the trip into station transfers rather than three useful visits.": "宿を1か所にして、リバプールとマンチェスターにそれぞれ丸1日を充て、チェスターは次の機会に回しましょう。3都市すべてを詰め込むと、観光より駅間移動が中心になってしまいます。",
     "Which Liverpool station should I use for the waterfront?": "リバプールのウォーターフロントへはどの駅を使えばよいですか？",
@@ -37,12 +35,11 @@
     "National Rail — live station-specific rail planning": "National Rail — 駅別のリアルタイム鉄道検索",
     "Merseyrail — network map, stations and service status": "Merseyrail — 路線図、駅、運行状況",
     "Transport for Greater Manchester — current tram and bus journey planning": "Transport for Greater Manchester — トラム・バスの最新経路検索",
-    "National Museums Liverpool — Museum of Liverpool visit information": "National Museums Liverpool — Museum of Liverpoolの訪問案内",
-    "National Museums Liverpool — current International Slavery Museum status": "National Museums Liverpool — International Slavery Museumの最新状況",
+    "National Museums Liverpool — Museum of Liverpool visit information": "リバプール国立博物館群 — リバプール博物館の見学案内",
+    "National Museums Liverpool — current International Slavery Museum status": "リバプール国立博物館群 — 国際奴隷制博物館の最新状況",
     "Science and Industry Museum — current openings, restoration and admission": "Science and Industry Museum — 開館、修復工事、入場案内",
     "Visit Cheshire — Chester City Walls access and repair notice": "Visit Cheshire — チェスター城壁の通行と修復のお知らせ",
     "Planning facts and image licensing were reviewed on 12 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.": "交通、施設の開館、道路、歩道、潮汐、天候、現地の通行状況は変わることがあります。計画情報と画像ライセンスは2026年10月12日に確認しました。出発前に、リンク先の公的機関や運営者の最新情報を開き直してください。",
-    "Editorial review: 12 October 2026 · Recheck time-sensitive details before booking.": "編集確認日：2026年10月12日 · 予約前に最新情報を再確認してください。",
     "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either…": "Liverpool Lime Streetから市庁舎周辺を下ってPier Headへ。日付ごとの状況を確認してからMuseum of Liverpoolに入るか決め、波止場にとどまるか、1度だけ丘を上ってカテドラル地区へ向かい、帰りに便利な駅で終えます……",
     "From Liverpool Lime Street, descend through the civic centre to Pier Head, choose the Museum of Liverpool only after checking its date-specific status, then either stay along the docks or climb once to the cathedral ridge and finish from the station that matches your return.": "Liverpool Lime Streetから市庁舎周辺を下ってPier Headへ。日付ごとの状況を確認してからMuseum of Liverpoolに入るか決め、波止場にとどまるか、1度だけ丘を上ってカテドラル地区へ向かい、帰りに便利な駅で終えます。",
     "Can I visit the Maritime Museum and International Slavery Museum?": "Maritime MuseumとInternational Slavery Museumには入れますか？",
@@ -68,9 +65,9 @@
     "For the river option, follow the waterfront public realm to Albert Dock and turn back before the route becomes a second long walk. For the ridge option, leave the docks through the central streets, climb via Bold Street to Hope Street, and select one cathedral visit.": "川沿いを歩く場合は公共のウォーターフロントを通ってAlbert Dockまで行き、長い別の散策になりそうならそこで折り返します。丘側へ向かう場合は中心部の通りからBold Streetを上り、Hope Streetで大聖堂を1か所選びます。",
     "Finish at the right rail system": "帰りに便利な鉄道系統を使う",
     "Use James Street for a Pier Head return, Central for the central/southern city, or Lime Street for a mainline departure only when the walk and live service plan justify it. Check Merseyrail and National Rail separately and leave event-day platform margin.": "Pier Headへ戻るならJames Street、中心部南側ならCentral、幹線列車に乗るなら歩行時間と当日の運行状況に無理がない場合だけLime Streetを使います。MerseyrailとNational Railは別々に確認し、イベント日はホームまでの余裕を多く取りましょう。",
-    "National Museums Liverpool — Museum of Liverpool calendar and visitor information": "National Museums Liverpool — Museum of Liverpoolのカレンダーと訪問案内",
-    "National Museums Liverpool — Maritime Museum status": "National Museums Liverpool — Maritime Museumの状況",
-    "National Museums Liverpool — International Slavery Museum status": "National Museums Liverpool — International Slavery Museumの状況",
+    "National Museums Liverpool — Museum of Liverpool calendar and visitor information": "リバプール国立博物館群 — リバプール博物館の来館カレンダーと案内",
+    "National Museums Liverpool — Maritime Museum status": "リバプール国立博物館群 — 海事博物館の状況",
+    "National Museums Liverpool — International Slavery Museum status": "リバプール国立博物館群 — 国際奴隷制博物館の状況",
     "Liverpool Cathedral — visitor and service access": "Liverpool Cathedral — 見学・礼拝時の入場案内",
     "Merseyrail — station map and live service status": "Merseyrail — 駅路線図とリアルタイム運行状況",
     "National Rail — dated Lime Street journey planning": "National Rail — 日付別のLime Street駅検索",
@@ -155,6 +152,9 @@
     "Gates are not step-free equivalents": "門によって階段なしで通れるとは限らない",
     "Wall access varies by gate, and the elevated surface can be exposed or slippery. Use an identified street-level path or a listed ramp where appropriate, and confirm the chosen entrance before leaving the station.": "城壁への入口は門ごとに異なり、高い位置の路面は風雨にさらされたり滑りやすくなったりします。確認済みの地上ルートや案内にあるスロープを使い、駅を出る前に入口を確認してください。",
     "The Roman places are separate stops": "ローマ遺跡は別々の見学先",
-    "The Amphitheatre, Roman Gardens, Cathedral and Rows are different places, not one ticket or one interior. Choose the order that fits the current wall diversion and each venue’s published hours.": "Amphitheatre、Roman Gardens、大聖堂、The Rowsは別の場所で、同じチケットや1つの屋内施設ではありません。最新の城壁迂回と各施設の開館時間に合わせて順番を決めましょう。"
+    "The Amphitheatre, Roman Gardens, Cathedral and Rows are different places, not one ticket or one interior. Choose the order that fits the current wall diversion and each venue’s published hours.": "Amphitheatre、Roman Gardens、大聖堂、The Rowsは別の場所で、同じチケットや1つの屋内施設ではありません。最新の城壁迂回と各施設の開館時間に合わせて順番を決めましょう。",
+    "Plan Liverpool, Manchester and Chester as separate days: stations serve different waterfront, museum and walled-city districts. Choose a base and check the return.": "リバプール、マンチェスター、チェスターは別々の日に計画しましょう。各駅は異なるウォーターフロント、博物館、城壁地区にあります。拠点を決め、帰りの列車を確認してください。",
+    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester…": "これは3都市を鉄道で巡る計画で、駅を次々と寄るだけの旅ではありません。リバプールのPier Head、波止場、カテドラルの丘はLime Street駅の西・南側にあります。マンチェスターにはPiccadilly、Oxford Road、Victoria、Deansgateと、それぞれ別のトラム・博物館エリアがあります。チェスターは独自の鉄道区間で訪れる、城壁に囲まれたコンパクトな街です。1日につき1都市に集中しましょう。都市間の乗車時間が短くても、ウォーターフロントの博物館、大学の展示施設、チェスターの城壁を1日にまとめて回れるわけではありません。",
+    "This is a three-city rail plan, not a line of interchangeable stops. Liverpool’s Pier Head, docks and cathedral ridge sit west and south of Lime Street; Manchester spreads from Piccadilly, Oxford Road, Victoria and Deansgate into distinct tram and museum districts; Chester is a compact walled centre reached on its own rail leg. Keep each city in its own day zone. A short intercity journey does not make a waterfront museum, a campus gallery and Chester’s walls one executable itinerary.": "これは3都市を鉄道で巡る計画で、駅を次々と寄るだけの旅ではありません。リバプールのPier Head、波止場、カテドラルの丘はLime Street駅の西・南側にあります。マンチェスターはPiccadilly、Oxford Road、Victoria、Deansgateを起点に、それぞれ異なるトラム・博物館エリアへ広がります。チェスターは独自の鉄道区間で訪れる、城壁に囲まれたコンパクトな街です。1日につき1都市に集中しましょう。都市間の乗車時間が短くても、ウォーターフロントの博物館、大学の展示施設、チェスターの城壁を1日にまとめて回れるわけではありません。"
   }
 }
