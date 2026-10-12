@@ -38,6 +38,14 @@ const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/machinchang-skycab/',
   '/malaysia/langkawi/kilim-geoforest/'
 ];
+const malaysiaSandakanLastmod = '2026-10-12';
+const malaysiaSandakanEditedRoutes = [
+  '/malaysia/sandakan-kinabatangan/',
+  '/malaysia/sandakan-kinabatangan/sandakan-heritage-waterfront/',
+  '/malaysia/sandakan-kinabatangan/sepilok-conservation-centres/',
+  '/malaysia/sandakan-kinabatangan/sukau-kinabatangan/',
+  '/malaysia/sandakan-kinabatangan/gomantong-batu-puteh/'
+];
 const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/',
   '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
@@ -801,6 +809,11 @@ for (const route of malaysiaLangkawiEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
+}
+for (const route of malaysiaSandakanEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Sandakan route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaSandakanLastmod });
 }
 for (const route of malaysiaFourthChildrenRoutes) {
   const record = records.get(route);

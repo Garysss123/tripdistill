@@ -180,14 +180,16 @@ function childPage(guide, cluster) {
   const melakaDiagram = guide.image.src === '/assets/images/malaysia-melaka-two-bank-route.svg';
   const sourceHeading = guide.image.originalSchematic
     ? 'Official sources and image provenance'
-    : originalDiagram ? 'Official sources and original diagram' : 'Official sources and photo credit';
+    : originalDiagram ? 'Official sources and original diagram' : cluster.explicitRelatedPhotoCredits ? 'Official sources and photo credits' : 'Official sources and photo credit';
   const sourceIntro = guide.image.originalSchematic
     ? `Planning facts and image provenance were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.`
     : originalDiagram
     ? 'Planning facts and public route details were reviewed on 12 October 2026. The original diagram is a non-scale planning schematic, not navigation; confirm the public path, bridge access and return route before walking.'
+    : cluster.explicitRelatedPhotoCredits
+    ? `Planning facts and photo-source declarations were checked on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel. Image license information below reflects the linked source pages, not independent legal clearance.`
     : `Planning facts and the image license were reviewed on ${escapeHtml(guide.reviewedOn || '30 August 2026')}. Schedules, access, permits, weather and operator terms change; verify directly before travel.`;
-  const relatedImageCredits = originalDiagram && guide.relatedImages !== false
-    ? [...new Map(cluster.guides.filter((related) => related.slug !== guide.slug && related.image.assetType !== 'original-planning-diagram').map((related) => [related.image.src, related.image])).values()].map(imageCredit).join('')
+  const relatedImageCredits = (originalDiagram || cluster.explicitRelatedPhotoCredits) && guide.relatedImages !== false
+    ? [...new Map(cluster.guides.filter((related) => related.slug !== guide.slug && related.image.src !== guide.image.src && related.image.assetType !== 'original-planning-diagram').map((related) => [related.image.src, related.image])).values()].map(imageCredit).join('')
     : '';
   const relatedDiagramKey = !originalDiagram && cluster.guides.some((related) => related.image.assetType === 'original-planning-diagram')
     ? melakaRouteKey()
@@ -419,10 +421,11 @@ if (requestedClusterSlug) {
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
     melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
-    'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau']
+    'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau'],
+    'sandakan-kinabatangan': ['sandakan-heritage-waterfront', 'sepilok-conservation-centres', 'sukau-kinabatangan', 'gomantong-batu-puteh']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi, Melaka and Taman Negara source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi, Melaka, Taman Negara and Sandakan & Kinabatangan source clusters.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));

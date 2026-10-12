@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-12T03:34:03.987Z",
+  "generatedAt": "2026-10-12T05:37:08.188Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 797,
     "completeSourceCreatorLicenseRecords": 763,
     "completeProjectOriginalRightsRecords": 8,
-    "licenseClaimsNotIndependentlyVerified": 514,
+    "licenseClaimsNotIndependentlyVerified": 511,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -20,11 +20,11 @@
     "assetsWithStructuredSourceRecords": 584,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 170,
+    "assetsVisuallyReviewed": 173,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 251,
-    "metadataOrCreditOnly": 522,
-    "usedAssetsWithoutIndependentSourcePageCheck": 518,
+    "sourcePageChecked": 254,
+    "metadataOrCreditOnly": 519,
+    "usedAssetsWithoutIndependentSourcePageCheck": 515,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -19999,8 +19999,8 @@
           "assetPath": "/assets/images/malaysia-kinabatangan-proboscis.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Proboscis_monkey_and_its_baby_-_Kinabatangan_area_-_Sabah_-_Borneo_-_Malaysia_-_panoramio.jpg",
-          "sourceTitle": "Proboscis monkey and baby in Kinabatangan",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Proboscis monkey and its baby - Kinabatangan area - Sabah - Borneo - Malaysia - panoramio.jpg",
+          "sourcePhotoDate": "2010-03-06",
           "creditLabel": "Proboscis monkey and baby in Kinabatangan",
           "creator": "diego_cue",
           "license": "CC BY-SA 3.0",
@@ -20009,16 +20009,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0.",
+          "localSha1": "72b74b0a09835faa4fc7bf63e76a1111d7f11561",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Sandakan/Kinabatangan photo review: the exact Commons page identifies diego_cue, a 6 March 2010 photograph, original 3,872 × 2,592 pixels and a Panoramio bot review dated 7 November 2016 recording the CC BY-SA 3.0 source terms. The 1,440 × 960 local WebP pixels show small primates among branches; individual age is not asserted in the alt. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the source-page declaration, not independent rights clearance.",
           "useCount": 6,
           "routes": [
             "/malaysia/sandakan-kinabatangan/",
@@ -20028,11 +20028,10 @@
             "/malaysia/sandakan-kinabatangan/sukau-kinabatangan/"
           ],
           "altTexts": [
-            "Proboscis monkey and infant in the Kinabatangan area",
-            "Proboscis monkey carrying a baby high in riverside trees in Kinabatangan"
+            "Proboscis monkeys among branches in the Kinabatangan area"
           ],
           "rawVisibleCredits": [
-            "Proboscis monkey and baby in Kinabatangan — diego_cue, CC BY-SA 3.0."
+            "Proboscis monkey and baby in Kinabatangan — diego_cue, CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0."
           ]
         }
       ]
@@ -20049,8 +20048,8 @@
           "assetPath": "/assets/images/malaysia-kinabatangan.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg",
-          "sourceTitle": "Kinabatangan River at Sukau",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Sukau Sabah Malaysia Kinabatangan-River-at-Sukau-01.jpg",
+          "sourcePhotoDate": "2014-05-25",
           "creditLabel": "Kinabatangan River at Sukau",
           "creator": "CEphoto, Uwe Aranas",
           "license": "CC BY-SA 3.0",
@@ -20059,16 +20058,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0.",
+          "localSha1": "27b5ea43a1a1dfb4267aaf8492bf7960eecb6bee",
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "creditMatchNote": "Exact Commons source page, creator, photo date, CC BY-SA 3.0 declaration and local WebP pixels checked on 2026-10-12; visible photo-credit list discloses the resize/crop/WebP changes and share-alike terms.",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Sandakan/Kinabatangan photo review: the exact Commons page identifies CEphoto, Uwe Aranas, own work dated 25 May 2014, original 5,434 × 3,623 pixels and CC BY-SA 3.0. The 1,440 × 960 local WebP pixels show green longboats tied to a wooden landing on the brown river, two people at the jetty and trees behind; the revised alt describes those visible details. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the page’s license declaration, not independent rights clearance.",
           "useCount": 12,
           "routes": [
             "/malaysia/",
@@ -20080,8 +20079,7 @@
           ],
           "altTexts": [
             "Small river boats tied beside the brown Kinabatangan River at Sukau",
-            "Longboats beside the brown Kinabatangan River and green forest",
-            "Kinabatangan River winding past dense lowland forest at Sukau"
+            "Green longboats tied to a wooden landing on the brown Kinabatangan River at Sukau, with two people at the jetty"
           ],
           "rawVisibleCredits": [
             "Kinabatangan River at Sukau — CEphoto, Uwe Aranas, CC BY-SA 3.0."
@@ -21633,8 +21631,8 @@
           "assetPath": "/assets/images/malaysia-sepilok.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-01a.jpg",
-          "sourceTitle": "Sepilok Orangutan Rehabilitation Centre entrance",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Sandakan Sabah Sepilok-Orangutan-Rehabilitation-Centre-01a.jpg",
+          "sourcePhotoDate": "2013-02-09",
           "creditLabel": "Sepilok Orangutan Rehabilitation Centre entrance",
           "creator": "CEphoto, Uwe Aranas",
           "license": "CC BY-SA 3.0",
@@ -21643,16 +21641,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0.",
+          "localSha1": "521a5ca48b846592d8d51f5c9703db4d2e074ced",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Sandakan/Sepilok photo review: the exact Commons page identifies CEphoto, Uwe Aranas, own work dated 9 February 2013, original 5,760 × 3,840 pixels and CC BY-SA 3.0. The 1,440 × 960 local WebP pixels show the centre entrance sign and buildings with visitors; the revised alt describes the visible subject. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the page’s license declaration, not independent rights clearance.",
           "useCount": 6,
           "routes": [
             "/malaysia/sandakan-kinabatangan/",
@@ -21662,11 +21660,10 @@
             "/malaysia/sandakan-kinabatangan/sukau-kinabatangan/"
           ],
           "altTexts": [
-            "Entrance to Sepilok Orangutan Rehabilitation Centre",
-            "Entrance to Sepilok Orangutan Rehabilitation Centre in forest"
+            "Sepilok Orangutan Rehabilitation Centre entrance sign and buildings with visitors"
           ],
           "rawVisibleCredits": [
-            "Sepilok Orangutan Rehabilitation Centre entrance — CEphoto, Uwe Aranas, CC BY-SA 3.0."
+            "Sepilok Orangutan Rehabilitation Centre entrance — CEphoto, Uwe Aranas, CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0."
           ]
         }
       ]

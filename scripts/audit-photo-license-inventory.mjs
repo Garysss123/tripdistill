@@ -882,7 +882,21 @@ for (const [sourceUrl, detail] of [
   verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
 }
 
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg', {
+  detail: 'Sandakan/Kinabatangan photo review: the exact Commons page identifies CEphoto, Uwe Aranas, own work dated 25 May 2014, original 5,434 × 3,623 pixels and CC BY-SA 3.0. The 1,440 × 960 local WebP pixels show green longboats tied to a wooden landing on the brown river, two people at the jetty and trees behind; the revised alt describes those visible details. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the page’s license declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-01a.jpg', {
+  detail: 'Sandakan/Sepilok photo review: the exact Commons page identifies CEphoto, Uwe Aranas, own work dated 9 February 2013, original 5,760 × 3,840 pixels and CC BY-SA 3.0. The 1,440 × 960 local WebP pixels show the centre entrance sign and buildings with visitors; the revised alt describes the visible subject. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the page’s license declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Proboscis_monkey_and_its_baby_-_Kinabatangan_area_-_Sabah_-_Borneo_-_Malaysia_-_panoramio.jpg', {
+  detail: 'Sandakan/Kinabatangan photo review: the exact Commons page identifies diego_cue, a 6 March 2010 photograph, original 3,872 × 2,592 pixels and a Panoramio bot review dated 7 November 2016 recording the CC BY-SA 3.0 source terms. The 1,440 × 960 local WebP pixels show small primates among branches; individual age is not asserted in the alt. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the source-page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+
 const explicitCreditMappings = new Map([
+  ['/assets/images/malaysia-kinabatangan.webp', { sourceTitle: 'File:Sukau Sabah Malaysia Kinabatangan-River-at-Sukau-01.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg', creditLabel: 'Kinabatangan River at Sukau', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-05-25', editHistory: 'Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0.', note: 'Exact Commons source page, creator, photo date, CC BY-SA 3.0 declaration and local WebP pixels checked on 2026-10-12; visible photo-credit list discloses the resize/crop/WebP changes and share-alike terms.' }],
   ['/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', { sourceTitle: 'File:Marseille - Vieux Port - MUCEM.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', creditLabel: 'Marseille - Vieux Port - MUCEM.jpg', creator: 'Remi Mathis', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2011-08-07', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, license declaration and local subject match checked 2026-10-12. The historic photograph shows scaffolding, not the completed Mucem; the page declaration is not independent rights clearance.' }],
   ['/assets/images/france-marseille-calanques-calanques-access-choice.webp', { sourceTitle: 'File:Calanques National Park seen from the airplane.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', creditLabel: 'Calanques National Park seen from the airplane.jpg', creator: 'MikkoNilssonCom', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-02-13', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, license declaration and local aerial subject match checked 2026-10-12; an aircraft/window reflection remains visible. The page declaration is not independent rights clearance.' }],
   ['/assets/images/france-marseille-calanques-cassis-la-ciotat.webp', { sourceTitle: 'File:Cap Canaille depuis le port de Cassis.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg', creditLabel: 'Cap Canaille depuis le port de Cassis.jpg', creator: 'DJ Poldoc', license: 'CC0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', sourcePhotoDate: '2013-10-05', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, CC0 declaration and local Cassis harbor subject match checked 2026-10-12. The page declaration is not independent rights clearance.' }],
@@ -999,6 +1013,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/malaysia-kinabatangan.webp', '2026-10-12'],
+  ['/assets/images/malaysia-sepilok.webp', '2026-10-12'],
+  ['/assets/images/malaysia-kinabatangan-proboscis.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
