@@ -8,6 +8,7 @@ import { parse } from 'parse5';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { collectTranslationWork, localeConfigs } from './i18n-lib.mjs';
+import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '063b1d71d0ead0908cc96b8fdc9e32242d07f01b';
@@ -165,9 +166,10 @@ const graubuendenRoutes = [
 const graubuendenLocs = new Set(graubuendenRoutes.flatMap((route) => locales.map((locale) => 'https://tripdistill.com' + locale.prefix + route)));
 const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14HubLocs = new Set(ch14HubRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+const ch15Locs = new Set(switzerlandCh15Routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
 const changedDates = new Set([...currentMap].filter(([loc, date]) => loc.includes('/switzerland/') && baseMap.get(loc) !== date).map(([loc]) => loc));
-assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs, ...graubuendenLocs, ...ch14HubLocs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
+assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs, ...graubuendenLocs, ...ch14HubLocs, ...ch15Locs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
 const oldPhoto = switzerlandRetiredImageRecords.montreuxRochersTrainMismatch;

@@ -90,8 +90,8 @@ function sourceList(sources) {
   return sources.map(([url, label]) => `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>.</li>`).join('');
 }
 
-const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
-const pageModifiedDate = (cluster) => cluster.isoDate || isoDate;
+const pageReviewDate = (cluster, guide) => guide?.reviewDate || cluster.reviewDate || reviewDate;
+const pageModifiedDate = (cluster, guide) => guide?.isoDate || cluster.isoDate || isoDate;
 
 function sourceAnchor([url, label]) {
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>`;
@@ -126,7 +126,7 @@ function guideSchema(guide, cluster) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: isoDate, dateModified: pageModifiedDate(cluster), mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(guide.url)}#article`, headline: `${guide.name} Travel Guide`, description: guide.summary, inLanguage: 'en', datePublished: isoDate, dateModified: pageModifiedDate(cluster, guide), mainEntityOfPage: absolute(guide.url), image: absolute(guide.image.src), about: { '@type': 'TouristDestination', name: guide.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['Switzerland', absolute('/switzerland/')], [guide.hubName, absolute(`/switzerland/${guide.hubSlug}/`)], [guide.name, absolute(guide.url)]]),
       faqSchema(guide.faq)
     ]
@@ -136,7 +136,7 @@ function guideSchema(guide, cluster) {
 function guidePage(guide, cluster, guideIndex) {
   const variant = (guideIndex % 8) + 1;
   const description = metaDescription(`${guide.summary} ${guide.access}`);
-  const localReviewDate = pageReviewDate(cluster);
+  const localReviewDate = pageReviewDate(cluster, guide);
   const pageSources = guide.sources || cluster.sources;
   const imageReviewTerm = guide.diagram || cluster.guides.some((item) => item.image.assetType === 'original-planning-diagram') ? 'image rights notes' : 'image licensing';
   return `<!doctype html>

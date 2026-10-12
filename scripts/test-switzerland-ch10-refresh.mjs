@@ -6,6 +6,7 @@ import path from 'node:path';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../data/switzerland-ch10-refresh.mjs';
 import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
+import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = 'bc1c7ddf96820b3455986efa202588ffc0d2ae6b';
@@ -20,7 +21,7 @@ const ch13Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'grau
 const ch13Routes = [`/switzerland/${ch13Cluster.slug}/`, ...ch13Cluster.guides.map((guide) => guide.url)];
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14NewDateRoutes = ch14Routes.slice(1);
-const editedRoutes = new Set([...expectedRoutes, ...ch11Routes, ...ch12Routes, ...ch13Routes, ...ch14Routes]);
+const editedRoutes = new Set([...expectedRoutes, ...ch11Routes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...switzerlandCh15AffectedRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const protectedAssets = {
   'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf',
@@ -69,9 +70,9 @@ assert.equal(before.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no route was added or removed');
 
-const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes].map((route) => `${prefix}${route}`)));
+const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes].map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
-assert.equal(changedDates.length, allowedDatedUrls.size, 'only the CH11, CH12, CH13 and three downstream CH14 hub pages across five editions receive new dates after the verified CH10 source');
+assert.equal(changedDates.length, allowedDatedUrls.size, 'only the CH11, CH12, CH13, CH14 and CH15 pages in the exact route list receive new dates after the verified CH10 source');
 for (const [route, date] of changedDates) {
   assert.ok(allowedDatedUrls.has(route), `unexpected sitemap date change: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 sitemap date for ${route}`);
@@ -126,4 +127,4 @@ for (const route of expectedRoutes) {
   }
 }
 
-console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; four-page CH11–CH13 batches plus three CH14 hubs changed Swiss dates since bc1c7dd; ${after.size} sitemap URLs and later drafts remain intact.`);
+console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; CH11–CH15 batches changed only their declared dates since bc1c7dd; ${after.size} sitemap URLs and later drafts remain intact.`);

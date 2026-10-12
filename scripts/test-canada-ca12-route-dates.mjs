@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
+import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a4679e646708b5a772e56f72df017900fdb0bc4d';
@@ -42,7 +43,8 @@ const checkpointContinuationRoutes = [
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/',
   '/switzerland/lugano-southern-ticino/',
   '/switzerland/locarno-ascona-valleys/',
-  '/switzerland/schaffhausen-rhine-falls/'
+  '/switzerland/schaffhausen-rhine-falls/',
+  ...switzerlandCh15Routes
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -98,7 +100,7 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast, Cairns and CH14 date routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13, Gold Coast, Cairns, CH14 and CH15 date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: checkpoint continuation lastmod must be current.`);
 

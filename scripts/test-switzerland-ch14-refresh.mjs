@@ -7,6 +7,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh14CountryRefresh, switzerlandCh14HubRefresh, switzerlandCh14IsoDate } from '../data/switzerland-ch14-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 import { localizeHtml, localizeSearchIndex, loadCatalog } from './i18n-lib.mjs';
+import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'fec6b5fa8001c933512d5aa58dc1b24d5b62bf06';
@@ -46,7 +47,7 @@ function words(html) {
 function previousTranslations(code) {
   const directory = path.join(root, 'data/i18n/reviewed', code);
   const merged = {};
-  for (const name of fs.readdirSync(directory).filter((item) => item.endsWith('.json') && !item.endsWith(batchSuffix)).sort()) {
+  for (const name of fs.readdirSync(directory).filter((item) => item.endsWith('.json') && !item.endsWith(batchSuffix) && !item.endsWith('-switzerland-ch15-pages-20261012.json')).sort()) {
     const batch = JSON.parse(fs.readFileSync(path.join(directory, name), 'utf8'));
     if (batch.qualityStatus === 'reviewed') Object.assign(merged, batch.translations || {});
   }
@@ -65,7 +66,7 @@ for (const [slug, refresh] of Object.entries(switzerlandCh14HubRefresh)) {
   assert.equal(refresh.alternatives.length, 3, `${slug} has three stay-length variants`);
 }
 
-for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+for (const route of allRoutes.filter((item) => !targetSet.has(item) && !switzerlandCh15AffectedRoutes.includes(item))) {
   const relative = `${route.slice(1)}index.html`;
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), execFileSync('git', ['show', `${base}:${relative}`], { cwd: root }), `${route} remains byte-identical to the exact base`);
 }
@@ -75,10 +76,10 @@ const currentMap = sitemap(read('sitemap.xml'));
 assert.equal(baseMap.size, 4560, 'base sitemap contains the existing 4,560 URLs');
 assert.equal(currentMap.size, baseMap.size, 'sitemap route count is unchanged');
 assert.deepEqual([...currentMap.keys()].sort(), [...baseMap.keys()].sort(), 'CH14 adds or removes no URL');
-const editions = new Set(localePrefixes.flatMap((prefix) => targetRoutes.map((route) => `${prefix}${route}`)));
+const editions = new Set(localePrefixes.flatMap((prefix) => [...targetRoutes, ...switzerlandCh15Routes].map((route) => `${prefix}${route}`)));
 const isSwissEditionPath = (route) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').startsWith('/switzerland/');
 const changedLastmods = [...currentMap].filter(([route, date]) => isSwissEditionPath(route) && baseMap.get(route) !== date);
-assert.equal(changedLastmods.length, 15, 'the three hubs receive new lastmods; the overview already carried the 2026-10-12 date at the exact base');
+assert.equal(changedLastmods.length, editions.size - localePrefixes.length, 'the three CH14 hubs and four CH15 guides receive new lastmods; the overview already carried the 2026-10-12 date at the exact base');
 for (const [route, date] of changedLastmods) {
   assert.ok(editions.has(route), `unexpected sitemap date change for ${route}`);
   assert.equal(date, '2026-10-12');
@@ -92,7 +93,7 @@ const switzerlandSearch = currentSearch.filter((item) => item.url.startsWith('/s
 const baseSwitzerlandSearch = baseSearch.filter((item) => item.url.startsWith('/switzerland/'));
 const targetSearch = switzerlandSearch.filter((item) => targetSet.has(item.url));
 assert.equal(targetSearch.length, 4, 'search changes only the four existing target records');
-for (const record of switzerlandSearch.filter((item) => !targetSet.has(item.url))) {
+for (const record of switzerlandSearch.filter((item) => !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url))) {
   assert.deepEqual(record, baseSwitzerlandSearch.find((item) => item.url === record.url), `non-target Swiss search record changed: ${record.url}`);
 }
 
@@ -176,16 +177,16 @@ for (const [index, prefix] of localePrefixes.entries()) {
   const code = localeCodes[index];
   const prior = previousTranslations(code);
   const localSearch = JSON.parse(read(`${prefix.slice(1)}/data/search-index.json`));
-  const baseNonTargetSwissSearch = baseSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url));
+  const baseNonTargetSwissSearch = baseSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url));
   const expectedSearch = localizeSearchIndex(baseNonTargetSwissSearch, prior, code);
-  for (const record of localSearch.filter((item) => item.url.startsWith(`${prefix}/switzerland/`) && !targetSet.has(item.url.slice(prefix.length)))) {
+  for (const record of localSearch.filter((item) => item.url.startsWith(`${prefix}/switzerland/`) && !targetSet.has(item.url.slice(prefix.length)) && !switzerlandCh15Routes.includes(item.url.slice(prefix.length)))) {
     assert.deepEqual(record, expectedSearch.find((item) => item.url === record.url), `${code} non-target Swiss search record changed: ${record.url}`);
   }
-  for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+  for (const route of allRoutes.filter((item) => !targetSet.has(item) && !switzerlandCh15AffectedRoutes.includes(item))) {
     const baseHtml = execFileSync('git', ['show', `${base}:${route.slice(1)}index.html`], { cwd: root, encoding: 'utf8' });
     const priorOutput = localizeHtml(baseHtml, prior, code, route);
     assert.equal(read(path.relative(root, pagePath(prefix, route))), priorOutput, `${prefix}${route} changed outside the CH14 translation batch`);
   }
 }
 
-console.log(`CH14 regression passed: four existing Switzerland pages, ${currentBodyWords} visible English main-body words (+${currentBodyWords - baseBodyWords}), 15 new dated hub-edition URLs (the overview date was already current at base), 4,560 sitemap URLs, no URL changes, five-language content and metadata, all non-target Switzerland pages/search records preserved, and original SVG provenance/geometry checks.`);
+console.log(`CH14 regression passed: four existing Switzerland pages, ${currentBodyWords} visible English main-body words (+${currentBodyWords - baseBodyWords}), ${changedLastmods.length} exact CH14–CH15 dated edition URLs, 4,560 sitemap URLs, no URL changes, five-language content and metadata, non-target pages/search preserved outside exact CH15 edits, and original SVG provenance/geometry checks.`);

@@ -7,6 +7,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh12ClusterRefresh, switzerlandCh12GuideRefresh } from '../data/switzerland-ch12-refresh.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { localizeHtml } from './i18n-lib.mjs';
+import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '6b34b02cf93b435575e745497564f4b88dac2afa';
@@ -78,7 +79,7 @@ const laterGoldCoastRoutes = [
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14Set = new Set(ch14Routes);
 const ch14NewDateRoutes = ch14Routes.slice(1);
-const newSwissSearchRoutes = new Set([...targetRoutes, ...graubuendenRoutes, ...ch11Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa13Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes]);
+const newSwissSearchRoutes = new Set([...targetRoutes, ...graubuendenRoutes, ...ch11Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa13Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...switzerlandCh15Routes]);
 const cluster = switzerlandClusters.find((item) => item.slug === 'st-gallen-appenzell');
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((item) => [`/switzerland/${item.slug}/`, ...item.guides.map((guide) => guide.url)])];
 const batchMarkers = ['-ch12-st-gallen-pages-20261012.json', '-ch12-st-gallen-search-20261012.json'];
@@ -112,13 +113,13 @@ assert.equal(switzerlandCh12ClusterRefresh.isoDate, '2026-10-12', 'hub review da
 assert.equal(Object.keys(switzerlandCh12GuideRefresh).length, 3, 'only the three St Gallen/Appenzell guides are active in CH12');
 assert.equal(allRoutes.length, 65, 'Switzerland retains its existing 65 English routes');
 
-for (const route of allRoutes.filter((item) => !targetSet.has(item) && !graubuendenSet.has(item) && !ch14Set.has(item))) {
+for (const route of allRoutes.filter((item) => !targetSet.has(item) && !graubuendenSet.has(item) && !ch14Set.has(item) && !switzerlandCh15AffectedRoutes.includes(item))) {
   const relative = `${route.slice(1)}index.html`;
   const baseline = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} stays byte-identical to the exact base`);
 }
 
-const expectedLocalized = new Set(locales.flatMap((prefix) => [...targetRoutes, ...graubuendenRoutes, ...ch14NewDateRoutes].map((route) => `${prefix}${route}`)));
+const expectedLocalized = new Set(locales.flatMap((prefix) => [...targetRoutes, ...graubuendenRoutes, ...ch14NewDateRoutes, ...switzerlandCh15Routes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const beforeSitemap = sitemapRecords(baseSitemap);
 const afterSitemap = sitemapRecords(read('sitemap.xml'));
@@ -126,7 +127,7 @@ assert.equal(beforeSitemap.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(afterSitemap.size, beforeSitemap.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...afterSitemap.keys()].sort(), [...beforeSitemap.keys()].sort(), 'CH12 adds or removes no URL');
 const changedDates = [...afterSitemap].filter(([route, date]) => route.includes('/switzerland/') && beforeSitemap.get(route) !== date);
-assert.equal(changedDates.length, expectedLocalized.size, 'only CH12, CH13 and the three downstream CH14 hubs across five editions receive the review date');
+assert.equal(changedDates.length, expectedLocalized.size, 'only the exact CH12–CH15 route list across five editions receives the review date');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalized.has(route), `unexpected lastmod change: ${route}`);
   assert.equal(date, '2026-10-12', `${route} is dated to the review day`);
@@ -259,15 +260,15 @@ for (const [i, prefix] of locales.entries()) {
   const pageBatch = fs.readdirSync(batchDirectory).find((name) => name.endsWith(currentPageBatchSuffix));
   assert.ok(pageBatch, `${code} has the CH12 reviewed content batch`);
   const oldTranslations = {};
-  for (const filename of fs.readdirSync(batchDirectory).filter((name) => name.endsWith('.json') && !batchMarkers.some((suffix) => name.endsWith(suffix))).sort()) {
+  for (const filename of fs.readdirSync(batchDirectory).filter((name) => name.endsWith('.json') && !batchMarkers.some((suffix) => name.endsWith(suffix)) && !name.endsWith('-switzerland-ch15-pages-20261012.json')).sort()) {
     const batch = JSON.parse(fs.readFileSync(path.join(batchDirectory, filename), 'utf8'));
     if (batch.qualityStatus === 'reviewed') Object.assign(oldTranslations, batch.translations || {});
   }
-  for (const route of allRoutes.filter((item) => !targetSet.has(item) && !graubuendenSet.has(item) && !ch14Set.has(item))) {
+  for (const route of allRoutes.filter((item) => !targetSet.has(item) && !graubuendenSet.has(item) && !ch14Set.has(item) && !switzerlandCh15AffectedRoutes.includes(item))) {
     const baseHtml = execFileSync('git', ['show', `${baseCommit}:${route.slice(1)}index.html`], { cwd: root, encoding: 'utf8' });
     const expectedHtml = localizeHtml(baseHtml, oldTranslations, code, route);
     assert.equal(read(path.relative(root, pathFor(prefix, route))), expectedHtml, `${prefix}${route} is unchanged under its earlier reviewed catalog`);
   }
 }
 
-console.log(`CH12 five-language regression passed: four St Gallen/Appenzell routes, ${expectedLocalized.size} cumulative CH12/CH13/CH14 hub-date edition URLs, 4,560 sitemap URLs, no new routes, Article/search agreement, non-target English/localized pages and search entries preserved outside CH14 routes, protected Lucerne/Zermatt assets preserved, SVG XML/geometry/color-language regression passed. Visible English main-body word counts: ${JSON.stringify(wordCounts)}.`);
+console.log(`CH12 five-language regression passed: four St Gallen/Appenzell routes, ${expectedLocalized.size} cumulative CH12–CH15 dated edition URLs, 4,560 sitemap URLs, no new routes, Article/search agreement, non-target pages/search preserved outside exact later routes, protected Lucerne/Zermatt assets preserved, SVG XML/geometry/color-language regression passed. Visible English main-body word counts: ${JSON.stringify(wordCounts)}.`);

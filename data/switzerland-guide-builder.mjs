@@ -3,6 +3,7 @@ import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from './sw
 import { switzerlandCh12ClusterRefresh, switzerlandCh12GuideRefresh } from './switzerland-ch12-refresh.mjs';
 import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from './switzerland-ch13-refresh.mjs';
 import { switzerlandCh14HubRefresh, switzerlandCh14IsoDate, switzerlandCh14ReviewDate } from './switzerland-ch14-refresh.mjs';
+import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate, switzerlandCh15ReviewDate } from './switzerland-ch15-refresh.mjs';
 
 const routeLabels = ['Arrive', 'Orient', 'Commit', 'Return'];
 const ch10BatchOneGuides = new Set(['old-town-rhine', 'art-museums', 'kleinbasel-border-rhine']);
@@ -102,12 +103,19 @@ function applyCh14HubRefresh(cluster) {
   return { ...cluster, hubOnly: { ...refresh, reviewDate: switzerlandCh14ReviewDate, isoDate: switzerlandCh14IsoDate } };
 }
 
+function applyCh15GuideRefresh(definition) {
+  const refresh = switzerlandCh15GuideRefresh[definition?.slug];
+  if (!refresh) return definition;
+  return { ...definition, ...refresh, reviewDate: switzerlandCh15ReviewDate, isoDate: switzerlandCh15IsoDate };
+}
+
 export function switzerlandGuide(definition) {
   definition = applyEditorialExtensions(definition, guideEditorialExtensions);
   definition = applyCh10GuideRefresh(definition);
   definition = applyCh11GuideRefresh(definition);
   definition = applyCh12GuideRefresh(definition);
   definition = applyCh13GuideRefresh(definition);
+  definition = applyCh15GuideRefresh(definition);
   const required = ['slug', 'name', 'instrument', 'layout', 'imageQuery', 'imageAlt', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
   for (const key of required) {
     if (!definition?.[key]) throw new Error(`Switzerland guide ${definition?.slug || '(unnamed)'} lacks ${key}.`);
