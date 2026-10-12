@@ -273,6 +273,19 @@ const unitedKingdomBelfastEditedRoutes = [
   '/united-kingdom/belfast-northern-ireland/giants-causeway-coast/',
   '/united-kingdom/belfast-northern-ireland/derry-walls-bogside/'
 ];
+const unitedKingdomScottishHighlandsEditedRoutes = [
+  '/united-kingdom/scottish-highlands/',
+  '/united-kingdom/scottish-highlands/inverness-loch-ness/',
+  '/united-kingdom/scottish-highlands/glencoe-fort-william/',
+  '/united-kingdom/scottish-highlands/aviemore-cairngorms/'
+];
+const unitedKingdomPembrokeshireEditedRoutes = [
+  '/united-kingdom/pembrokeshire-west-wales/',
+  '/united-kingdom/pembrokeshire-west-wales/st-davids-coast/',
+  '/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/',
+  '/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/'
+];
+const unitedKingdomUk19Lastmod = '2026-10-12';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
 const unitedKingdomEditedRoutes = [
@@ -697,6 +710,11 @@ for (const route of unitedKingdomBelfastEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Belfast route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomBelfastLastmod });
+}
+for (const route of [...unitedKingdomScottishHighlandsEditedRoutes, ...unitedKingdomPembrokeshireEditedRoutes]) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK19 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomUk19Lastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);

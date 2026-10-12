@@ -8,7 +8,11 @@ import { missingPhotoAttributionFields, photoLicenseInventoryBlockingProblems } 
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(root, 'assets', 'images');
-const retainedLocalOnlyAssetPaths = ['/assets/images/malaysia-melaka-kampung-morten.webp'];
+const retainedLocalOnlyAssetPaths = [
+  '/assets/images/malaysia-melaka-kampung-morten.webp',
+  '/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp',
+  '/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp'
+];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
   'south-korea', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'

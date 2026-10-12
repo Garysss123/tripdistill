@@ -194,6 +194,32 @@ try {
     assert.match(record.verificationDetail, /not independent rights clearance/i);
     assert.match(record.editHistory, /resiz|crop|WebP/i);
   }
+  const retainedUkConflictPhotos = [
+    {
+      assetPath: '/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cairngorms_National_Park,_United_Kingdom_(Unsplash).jpg',
+      creator: 'Daniël Hartog',
+      license: 'CC0 1.0',
+      retirementNote: /conflicting embedded EXIF copyright statement/
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:St_Davids_Cathedral_Wales_Pembrokeshire.jpg',
+      creator: 'Aqwis (Commons source-page declaration)',
+      license: 'CC BY-SA 3.0',
+      retirementNote: /different copyright holder/
+    }
+  ];
+  for (const expected of retainedUkConflictPhotos) {
+    const record = report.entries.flatMap((item) => item.sourceRecords).find((photo) => photo.assetPath === expected.assetPath);
+    assert.ok(record, `UK inventory must preserve retired conflict metadata for ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.inventoryStatus, 'unused');
+    assert.equal(record.verificationStatus, 'site_credit_or_metadata_only', 'retained conflict is not a fresh source-page verification');
+    assert.match(record.retirementNote, expected.retirementNote);
+  }
   const cotswoldPhoto = oxfordPhotoRecords.find((item) => item.assetPath === '/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp');
   assert.ok(cotswoldPhoto, 'Oxford/Cotswolds inventory must retain the Cotswold village image');
   assert.equal(cotswoldPhoto.verificationStatus, 'site_credit_or_metadata_only', 'the inaccessible Commons page must not be reported as verified');
@@ -478,7 +504,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 10, 'inventory must count project-original artwork including the UK19, Melaka, Somerset, Peak District and Malaysia diagrams');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 517, 'the regenerated merged inventory includes Côte d’Azur, Marseille and Peak District source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -519,8 +545,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 800, 'the two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 3, 'the preserved Melaka, Cairngorms and St Davids rights-review photos must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 800, 'the new UK19 and Malaysia original diagrams must be included while the three preserved rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
