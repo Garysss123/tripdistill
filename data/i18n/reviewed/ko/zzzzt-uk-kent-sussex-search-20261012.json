@@ -1,0 +1,41 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Brighton, Canterbury, Dover and Seven Sisters as separate rail and bus days. Compare a Brighton base with an east Kent overnight, then check hill, cliff, tide and return connections.": "브라이턴·캔터베리·도버·세븐 시스터즈를 각각 별도 철도·버스 일정으로 계획하세요. 브라이턴 거점과 이스트 켄트 숙박을 비교하고 언덕, 절벽, 조수, 귀환편을 확인하세요.",
+    "Brighton": "브라이턴",
+    "Canterbury": "캔터베리",
+    "Dover Castle": "도버 성",
+    "Seven Sisters": "세븐 시스터즈",
+    "Eastbourne": "이스트본",
+    "Seaford": "시포드",
+    "Southeastern": "Southeastern 철도",
+    "South Downs": "사우스다운스",
+    "Plan Brighton from station to North Laine, Royal Pavilion and one seafront direction. Check seasonal Pavilion hours, then choose a bus or uphill walk back.": "브라이턴 역에서 North Laine, 로열 파빌리온, 해안 한 방향을 둘러보세요. 파빌리온 계절 운영 시간을 확인한 뒤 버스나 오르막 도보로 돌아옵니다.",
+    "North Laine": "North Laine",
+    "The Lanes": "역사 지구 The Lanes",
+    "Royal Pavilion": "로열 파빌리온",
+    "Brighton station": "브라이턴 역",
+    "Old Steine": "Old Steine 정류장",
+    "seafront": "해변 산책로",
+    "Choose Canterbury Cathedral or Dover Castle as the main visit. Match Canterbury East/West to the train; allow for Dover Castle’s hill, timed admission and last entry.": "캔터베리 대성당이나 도버 성을 핵심 방문지로 고르세요. 열차에 맞춰 East/West 역을 선택하고 성 언덕, 시간 지정 입장, 마지막 입장을 고려하세요.",
+    "Canterbury West": "캔터베리 웨스트 역",
+    "Canterbury East": "캔터베리 이스트 역",
+    "Canterbury Cathedral": "캔터베리 대성당",
+    "Dover Priory": "도버 프라이어리 역",
+    "Plan Seven Sisters from Brighton, Seaford or Eastbourne via the date-checked Exceat bus. Pick a measured walk, check tide and cliff notices, and save daylight for the return.": "당일 확인한 Exceat 버스로 브라이턴·시포드·이스트본에서 세븐 시스터즈에 가세요. 알맞은 도보 구간을 고르고 조수와 절벽 공지를 확인한 뒤 해 지기 전에 돌아오세요.",
+    "Exceat": "Exceat 방문자 센터",
+    "Cuckmere Haven": "Cuckmere Haven 하구",
+    "Coaster 12": "Coaster 12 해안 버스",
+    "chalk cliffs": "백악 절벽",
+    "South Downs Way": "사우스다운스 웨이"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

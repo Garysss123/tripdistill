@@ -230,6 +230,13 @@ const unitedKingdomLiverpoolManchesterEditedRoutes = [
   '/united-kingdom/liverpool-manchester/manchester-industrial-city/',
   '/united-kingdom/liverpool-manchester/chester-walls-roman-city/'
 ];
+const unitedKingdomKentSussexLastmod = '2026-10-12';
+const unitedKingdomKentSussexEditedRoutes = [
+  '/united-kingdom/kent-sussex-south-coast/',
+  '/united-kingdom/kent-sussex-south-coast/brighton-lanes-seafront/',
+  '/united-kingdom/kent-sussex-south-coast/canterbury-dover/',
+  '/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/'
+];
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
 const unitedKingdomEditedRoutes = [
@@ -634,6 +641,11 @@ for (const route of unitedKingdomLiverpoolManchesterEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Liverpool/Manchester route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomLiverpoolManchesterLastmod });
+}
+for (const route of unitedKingdomKentSussexEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Kent/Sussex route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomKentSussexLastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);

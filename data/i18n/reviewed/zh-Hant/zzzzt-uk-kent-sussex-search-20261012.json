@@ -1,0 +1,41 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Brighton, Canterbury, Dover and Seven Sisters as separate rail and bus days. Compare a Brighton base with an east Kent overnight, then check hill, cliff, tide and return connections.": "規劃布萊頓、坎特伯雷、多佛與七姊妹的分開交通日。比較布萊頓基地和東肯特過夜，再核對坡道、崖岸、潮汐與回程接駁。",
+    "Brighton": "布萊頓",
+    "Canterbury": "坎特伯雷",
+    "Dover Castle": "多佛城堡",
+    "Seven Sisters": "七姊妹",
+    "Eastbourne": "伊斯特本",
+    "Seaford": "西福德",
+    "Southeastern": "Southeastern鐵路",
+    "South Downs": "南唐斯丘陵",
+    "Plan Brighton from station to North Laine, Royal Pavilion and one seafront direction. Check seasonal Pavilion hours, then choose a bus or uphill walk back.": "規劃從布萊頓車站前往North Laine、皇家行宮及單一海濱方向的一日遊。先查行宮季節時間，再選巴士或步行上坡返回。",
+    "North Laine": "North Laine街區",
+    "The Lanes": "The Lanes歷史街區",
+    "Royal Pavilion": "皇家行宮",
+    "Brighton station": "布萊頓車站",
+    "Old Steine": "Old Steine站",
+    "seafront": "海濱",
+    "Choose Canterbury Cathedral or Dover Castle as the main visit. Match Canterbury East/West to the train; allow for Dover Castle’s hill, timed admission and last entry.": "選坎特伯雷大教堂或多佛城堡作為主要參觀。依列車選坎特伯雷東／西站，並為城堡坡道、預約時段和最晚入場留時間。",
+    "Canterbury West": "坎特伯雷西站",
+    "Canterbury East": "坎特伯雷東站",
+    "Canterbury Cathedral": "坎特伯雷大教堂",
+    "Dover Priory": "多佛修道院車站",
+    "Plan Seven Sisters from Brighton, Seaford or Eastbourne via the date-checked Exceat bus. Pick a measured walk, check tide and cliff notices, and save daylight for the return.": "從布萊頓、西福德或伊斯特本經當日確認的Exceat巴士前往七姊妹。選擇合適步道，查潮汐與崖岸公告，並為日落前回程留時間。",
+    "Exceat": "Exceat遊客中心",
+    "Cuckmere Haven": "Cuckmere Haven河口",
+    "Coaster 12": "Coaster 12海岸巴士",
+    "chalk cliffs": "白堊海崖",
+    "South Downs Way": "南唐斯步道"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

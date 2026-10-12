@@ -11,16 +11,23 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
     band: 'england-south',
     family: 'chalk-cliff-rail-chart',
     label: 'Chalk-coast rail chart',
-    tagline: 'Choose a city, fortress or cliff line before the coast starts consuming transfers.',
-    hubIntro: 'Brighton, Canterbury, Dover and the Seven Sisters sit on different rail and bus corridors despite sharing the south-east coast. A useful day chooses one urban or landscape argument, names the station and final connection, and treats exposed chalk paths as weather decisions rather than scenic filler.',
-    stay: 'Two to four nights supports Brighton plus one Kent or South Downs branch. Brighton is a strong evening base for Sussex; Canterbury is better for cathedral and east Kent. Using London as the base is possible, but repeated terminal crossings can erase the apparent time saved.',
-    transfer: 'Southern and Southeastern trains use different London terminals and coast branches. Seven Sisters requires a named rail-and-bus or walking approach, while Dover Castle sits above the station. Engineering works and sea weather should be checked on the actual travel date.',
-    season: 'Summer increases beach and road pressure, but chalk cliffs remain exposed to wind and heat. Winter can deliver clear urban days with early darkness; spring and autumn offer walking conditions only when rain, wind and path notices cooperate.',
-    fallback: 'When cliff conditions fail, retain a complete Brighton, Canterbury or Dover interior-led day. Do not switch to another exposed headland merely because the train continues along the coast.',
+    reviewDateISO: '2026-10-12',
+    reviewDate: '12 October 2026',
+    tagline: 'Choose the city, castle or cliff section first; their gateways do not share one coast corridor.',
+    hubIntro: 'Brighton, Canterbury, Dover and the Seven Sisters are four different days connected by different rail and bus legs. Brighton is a downhill city-and-seafront plan from its station; Canterbury has two stations on distinct corridors; Dover Priory sits below its hilltop castle; and the Seven Sisters has no railway station. Build the visit around one anchor, name the final bus or return station, and leave chalk paths conditional on wind, tide, daylight and official access notices.',
+    searchSummary: 'Plan Brighton, Canterbury, Dover and Seven Sisters as separate rail and bus days. Compare a Brighton base with an east Kent overnight, then check hill, cliff, tide and return connections.',
+    searchKeywords: ['Brighton', 'Canterbury', 'Dover Castle', 'Seven Sisters', 'Eastbourne', 'Seaford', 'Southeastern', 'South Downs'],
+    metaDescription: 'Plan Brighton, Canterbury, Dover and Seven Sisters as separate days. Choose a base, station and bus connection, then check castle admission, tides, cliff weather and daylight.',
+    stay: 'Two nights: base in Brighton and give it one full city day; use the other for either a short Eastbourne or Seaford coast visit only if the bus and daylight work. Three nights: keep Brighton for two nights and move to Canterbury for one night if the cathedral and east Kent are priorities, or stay put and make one dedicated Seven Sisters day. Four nights: two Brighton nights plus two Canterbury nights can support one city day, one coast day and one cathedral day without repeating a long east-west transfer; Dover then deserves its own day only if the castle is the main event. A single Brighton base works for a day trip, but do not assume the fast London–Canterbury corridor and the south-coast bus route meet conveniently. Choose lodging near the station for early rail starts or near the old centre for evenings; Brighton station is above the Pavilion and seafront, so test the uphill return against luggage and mobility.',
+    transfer: 'Use National Rail for the exact date, station and return: Southern serves Brighton and the Eastbourne/Seaford approaches, while Southeastern links Canterbury and Dover through different London and Kent corridors. Canterbury West is the high-speed London St Pancras station; Canterbury East serves another service pattern, so choose the station printed for the actual train. Dover Priory is not at Dover Castle: budget the climb or verify the local bus before calculating admission. For Seven Sisters, the Exceat visitor centre on the A259 is the named bus-and-walk gateway between Brighton, Seaford and Eastbourne; confirm the operating route, stop direction and final return, not just a map pin. Never build the coast day around an unverified last bus or an assumed through-ticket.',
+    season: 'On 12 October 2026, the Royal Pavilion published seasonal hours: October–March 10:00–17:15 with last entry 16:30; April–September 09:30–17:45 with last entry 17:00. Check the live venue page because hours and special events can change. Summer brings busier beaches, road approaches and cliff paths; book any timed heritage admission before locking an east Kent day, and still check for event or worship changes. Spring and autumn can suit walking, but wind, rain, visibility and Cuckmere tide determine whether a cliff segment is sensible. Winter makes Brighton, Canterbury and the castle’s interiors better anchors; shorter daylight means replace a long cliff traverse with a signed viewpoint and an earlier train. The operator and park pages differed on whether service 12A was operating in this dated snapshot, so use the live bus planner for the day rather than relying on an old route number.',
+    fallback: 'If exposed paths are unsuitable, do not swap in another headland. Keep Brighton in the Pavilion, museum, covered streets and a short sea view; keep Canterbury in the cathedral precinct and historic lanes; or make Dover Castle the day’s single booked interior if access and the hill connection fit. If an east Kent train or Seven Sisters bus is disrupted, stay in the city where you woke or use the confirmed return toward it. At Cuckmere, follow the signed coastal path around the river: do not try to cross the mouth, and do not descend to the cliff base for a viewpoint.',
     sources: [
       ['https://www.visitbrighton.com/', 'Visit Brighton — official destination guide'],
       ['https://www.visitkent.co.uk/', 'Visit Kent — official destination guide'],
-      ['https://www.southeasternrailway.co.uk/', 'Southeastern — rail planning and service updates']
+      ['https://www.nationalrail.co.uk/', 'National Rail — date-specific route and service planning'],
+      ['https://www.southeasternrailway.co.uk/', 'Southeastern — rail planning and service updates'],
+      ['https://www.sevensisters.org.uk/plan-your-visit/getting-here/', 'Seven Sisters Country Park — official bus and access information']
     ],
     guides: [
       g({
@@ -30,33 +37,38 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
         layout: 'regency-to-pier-zigzag',
         imageQuery: 'Brighton Royal Pavilion England exterior',
         imageAlt: 'The Royal Pavilion in central Brighton',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         purpose: 'Choose the Royal Pavilion, independent lanes or the seafront as the day’s main layer and connect them downhill toward the sea without repeatedly climbing between station, shopping streets and pier.',
-        summary: 'Descend from Brighton station through the North Laine or Pavilion precinct, complete one interior, then finish on a bounded seafront section with the uphill return already planned.',
+        summary: 'Plan one Brighton day from the station downhill through North Laine or the Pavilion, reserve time for one interior, then choose one bounded stretch of seafront and decide how to get uphill again.',
+        searchSummary: 'Plan Brighton from station to North Laine, Royal Pavilion and one seafront direction. Check seasonal Pavilion hours, then choose a bus or uphill walk back.',
+        searchKeywords: ['North Laine', 'The Lanes', 'Royal Pavilion', 'Brighton station', 'Old Steine', 'seafront'],
         choices: [
           ['Royal Pavilion and museum', 'Use the Pavilion complex as the paid anchor, then add the historic Lanes and a short seafront. This gives the strongest architectural context.'],
           ['Independent streets and food', 'Prioritize North Laine, the Lanes and a market or gallery, keeping the Pavilion exterior. It is flexible but lighter on formal interpretation.'],
           ['Seafront and pier', 'Move quickly to the beach, pier and one western or eastern promenade branch. This suits clear weather but depends most on wind and crowd pressure.']
         ],
-        access: 'Brighton station sits uphill from the Pavilion and sea. North Laine and the historic Lanes are different street areas. Choose one downhill line and identify the bus or walking route back; do not leave the climb until a tight train connection.',
-        tradeoff: 'A deep Pavilion visit, both lane districts and a long walk to Hove or the marina exceed a relaxed day. Choosing the seafront sacrifices interior depth; choosing the Pavilion keeps the coast shorter but more coherent.',
+        access: 'Brighton station is about a 15-minute walk uphill from the Royal Pavilion; the Pavilion is around five minutes from the sea. Local buses stop on Old Steine and North Street, while the station, North Laine, the historic Lanes and waterfront are separate points. Pick the route down before arrival and budget for the return climb; after a long beach walk, use a suitable bus rather than assuming the uphill leg is trivial. If step-free access matters, confirm the chosen station exit, bus and venue route directly with their operators.',
+        tradeoff: 'The Pavilion, Brighton Museum, two distinct street districts and a long promenade do not fit as full visits in one relaxed day. A Pavilion-led plan gives architecture and a shorter coast; a lanes-and-food plan keeps the interior shallow; a coast-heavy plan trades covered time for weather exposure. Pick west toward the historic beachfront or east toward Madeira Drive, not both, and set a turnaround point before leaving the pier.',
         stages: [
-          ['Descend from the station', 'Choose the North Laine or direct Pavilion line and save the return route. Avoid crossing the same shopping streets several times.'],
-          ['Complete one city anchor', 'Visit the Royal Pavilion, Brighton Museum or a selected gallery before the seafront weather becomes the whole decision.'],
-          ['Commit to one coast direction', 'At the pier, turn west toward the historic beachfront or east toward Madeira Drive and stop at a named point. Do not attempt both edges.'],
-          ['Return uphill deliberately', 'Use a frequent bus or a gradual street line to the station, allowing beach crowds and traffic. Keep the final meal near the chosen return corridor.']
+          ['Choose the downhill corridor', 'From the station, go through North Laine for independent streets and food, or take the direct line toward the Pavilion precinct. Keep the station exit and likely return bus in your notes.'],
+          ['Use the Pavilion as a timed anchor', 'As checked 12 October 2026, October–March hours were 10:00–17:15, last entry 16:30; April–September was 09:30–17:45, last entry 17:00. Verify current hours, ticket and any event closure before travel. If you choose a museum instead, check its own calendar.'],
+          ['Walk one street sequence to the sea', 'Continue through the historic Lanes toward the seafront without doubling back to North Laine. At the pier, choose west or east and stop at the agreed landmark; wind, waves and crowds can make the exposed promenade slower than the map suggests.'],
+          ['Close the uphill return', 'Use Old Steine or North Street bus information if the climb is unsuitable, or allow a gradual walk back to the station. Leave margin for traffic and station navigation before a reserved train.']
         ],
-        fallback: 'In strong wind or heavy rain, keep the Pavilion, museum, covered lanes and a short sea view from the lower streets. If the Pavilion is unavailable, deepen the street-and-gallery route instead of boarding an unplanned coast bus.',
+        fallback: 'In strong wind or heavy rain, keep the Pavilion or another confirmed interior, then use the covered central streets and a brief sea view from the lower seafront. If the Pavilion is closed or its final entry has passed, deepen the North Laine and historic street route; do not board an unplanned coast bus to rescue the day.',
         watch: [
-          ['The station is above the visitor core', 'The final uphill walk takes longer after a beach day. Choose a bus early when mobility or weather makes the climb unattractive.'],
-          ['Beach conditions are not urban conditions', 'Wind and waves can make the promenade uncomfortable even when central streets are calm. Read the sea edge before committing west or east.'],
-          ['North Laine and the Lanes are distinct', 'They have different street patterns and positions. Treating them as one stop creates avoidable backtracking.']
+          ['Station and Pavilion are at different levels', 'The station is uphill and about a 15-minute walk from the Pavilion. Decide on the return before the seafront; use a bus from the central stops if the final climb does not suit.'],
+          ['Venue hours change by season', 'The dated Pavilion snapshot changes its opening and last-entry times between April–September and October–March. Check the official day page and ticket availability before choosing the interior as the anchor.'],
+          ['Street districts and sea edge need separate choices', 'North Laine and the historic Lanes are distinct; see them once in sequence. Wind, waves and beach crowding can make the promenade uncomfortable when central streets feel calm, so keep the coast leg optional and protect the train margin.']
         ],
-        duration: 'Allow five to seven hours for one interior, both central street areas and a bounded seafront. A coast-heavy day can use the full daylight window.',
+        duration: 'Allow five to seven hours for one interior, both central street districts and a short seafront leg, plus your arrival and return. A longer west or east promenade should be the day’s main walk and use the available daylight.',
         combine: 'Combine the Pavilion with the Lanes or the pier with one promenade direction. Keep Seven Sisters and Canterbury for separate days.',
-        verify: 'Check Royal Pavilion entry, local events, seafront weather, Brighton bus status and Southern rail disruption before departure.',
+        verify: 'Check Pavilion hours and admission, Brighton Museum calendar if selected, city events, seafront conditions, Brighton & Hove Buses for the uphill return and Southern/National Rail disruption before departure.',
         sources: [
-          ['https://brightonmuseums.org.uk/royalpavilion/plan-your-visit/', 'Royal Pavilion — official visit planning'],
-          ['https://www.buses.co.uk/', 'Brighton & Hove Buses — local service information']
+          ['https://brightonmuseums.org.uk/royalpavilion/plan-your-visit/', 'Brighton & Hove Museums — Royal Pavilion hours, access and tickets'],
+          ['https://www.buses.co.uk/services/BH/12', 'Brighton & Hove Buses — current Coastliner 12 service information'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — date-specific Brighton rail planning']
         ]
       }),
       g({
@@ -66,33 +78,39 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
         layout: 'pilgrim-to-channel-section',
         imageQuery: 'Canterbury Cathedral England precinct',
         imageAlt: 'Canterbury Cathedral rising above the historic city centre',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         purpose: 'Decide whether Canterbury Cathedral or Dover Castle deserves the full controlled interior, then use the rail corridor for one city-to-fortress connection rather than rushing two large heritage sites.',
-        summary: 'Begin in Canterbury’s walkable core or at Dover’s hillside fortress, complete one deep visit, and add the second place only as a bounded exterior or shorter stop with its return protected.',
+        summary: 'Treat Canterbury Cathedral and Dover Castle as competing full-day anchors. Match Canterbury East or West to the actual train, and reserve time to climb from Dover Priory to the castle and descend again.',
+        searchSummary: 'Choose Canterbury Cathedral or Dover Castle as the main visit. Match Canterbury East/West to the train; allow for Dover Castle’s hill, timed admission and last entry.',
+        searchKeywords: ['Canterbury West', 'Canterbury East', 'Canterbury Cathedral', 'Dover Priory', 'Dover Castle', 'Southeastern'],
         choices: [
           ['Canterbury depth', 'Give the cathedral precinct, medieval streets and one museum or abbey edge the day. This is compact and least dependent on hills or coastal weather.'],
           ['Dover Castle depth', 'Use the castle grounds and wartime or medieval interpretation as the main event. This requires the climb or bus and leaves little Canterbury time.'],
           ['Rail-linked sampler', 'Visit one interior at moderate depth and the other place as an exterior town circuit. This gains contrast but sacrifices the complete story of both.']
         ],
-        access: 'Canterbury West and East serve different sides of the core. Dover Priory is below the castle and not at its visitor entrance. Confirm the rail leg, the castle climb or local bus, and the final train before attempting both towns.',
-        tradeoff: 'The cathedral and castle each justify several hours plus security or walking. Choosing both means giving up depth, meals and contingency; choosing one anchor creates a reliable day with a useful secondary town.',
+        access: 'Canterbury West is the high-speed London St Pancras station and Canterbury East serves a different Southeastern corridor, including services associated with Victoria and Charing Cross; check the actual origin, station and return in National Rail. The bus station is about a five-minute walk from the cathedral precinct. Dover Priory is below the hilltop castle, not at its gate: allow for the uphill approach or confirm a local bus and its return before booking. Dover Castle’s official dated page listed 10:00–17:00 opening and 16:00 last entry on 12 October 2026; timed slots and advance booking rules can change, so check the current page before setting a train.',
+        tradeoff: 'A cathedral precinct visit and Dover Castle each deserve several hours, and both add a separate rail leg. The fast Canterbury West train does not make a same-day castle transfer automatic: two interior admissions compress meals, the cathedral precinct, castle grounds and disruption margin. Choose one deep anchor. If you want both, stay overnight in Canterbury or Dover and use the second day, or keep the second place to a brief exterior stop only when its correct station and return are verified.',
         stages: [
-          ['Enter the chosen anchor city', 'Use the station that best serves the first door, and record the onward or return train before joining the pedestrian core.'],
-          ['Complete the controlled interior', 'Follow cathedral or castle admission and current closures. Keep enough time for the precinct or grounds rather than treating entry as one room.'],
-          ['Take one rail transfer', 'Board the verified Southeastern service only when the second stop still has a meaningful window. Otherwise remain in the first city.'],
-          ['Return from the correct level', 'In Dover, allow the descent to Priory; in Canterbury, exit toward the correct station. Do not rely on a tight connection after the castle hill.']
+          ['Match the station to the itinerary', 'For Canterbury, use the exact West or East station printed in the live plan; both are within walking reach of the historic core but are not interchangeable train stops. For Dover, begin at Priory and preserve time for the castle hill.'],
+          ['Check the cathedral day', 'The dated Cathedral page showed Monday–Saturday visiting 10:00–17:00, last admission 16:00; Sunday visitor entry began at 11:30, with worship affecting access. Check services, events, conservation notices and current ticket arrangements. Allow one to three hours inside, then add the precinct walk.'],
+          ['Choose one second layer or a transfer', 'In Canterbury, use the medieval lanes, walls or another confirmed site after the cathedral. In Dover, use the grounds and one available interpretation area after allowing for the climb; on 12 October 2026 the Operation Dynamo tunnels were closed and the Underground Hospital had mobility-access limits. If adding the other town, verify its train and remaining admission window first; a delay should cancel the second interior, not your return.'],
+          ['Return from the named station', 'From the castle, budget the descent to Dover Priory or the verified bus stop. From Canterbury, walk to the actual West or East station shown for your departure; do not leave this until the last admission window.']
         ],
-        fallback: 'If the second transfer or weather fails, deepen the first city: Canterbury offers walls and abbey remains; Dover offers town and seafront only when conditions suit. If the main interior closes, use the public historic route rather than chasing another county.',
+        fallback: 'If the onward train, admission or weather fails, deepen the first anchor instead of forcing both towns. Canterbury can become a precinct, medieval streets and a checked wall or abbey visit. In Dover, shorten the outdoor hill or town walk and retain the confirmed castle area; if the castle closes, choose a town and seafront section only when conditions suit. Do not count closed tunnels or access-limited spaces as a substitute.',
         watch: [
-          ['Cathedral access follows worship', 'Services and events can alter visitor areas. Read the official day notice and preserve respectful alternatives.'],
-          ['Dover Castle is uphill', 'The station-to-gate connection is real time and effort. Include it before calculating the last admission or train.'],
-          ['Two station names serve Canterbury', 'West and East are not interchangeable for every onward train. Choose the station from the actual route, not familiarity.']
+          ['Cathedral access follows worship and events', 'Hours and areas can change around services, special events and conservation work. Check the day notice and keep the precinct walk available as a respectful alternative.'],
+          ['Use Canterbury’s named station', 'West and East sit on different service patterns. Use the station named by the ticket or live planner for arrival and return.'],
+          ['Castle hill and interiors affect the window', 'Dover Priory is below the castle; the climb or bus takes time, and last entry precedes closing. The dated notice also listed Operation Dynamo tunnels closed and the Underground Hospital inaccessible for wheelchair or mobility-scooter users; recheck current access.']
         ],
-        duration: 'Allow a full day for either anchor. Combining both requires eight to ten hours and a deliberately shorter visit at one site; an overnight makes the pairing far better.',
+        duration: 'Allow a full day for either cathedral or castle, including the station approach and meal. A Canterbury–Dover same-day sampler can consume eight to ten hours but still means a short visit at one anchor; an overnight split gives each a usable opening window.',
         combine: 'Combine Canterbury with its walls or St Augustine’s Abbey, or Dover Castle with a short town edge. Keep the White Cliffs as a separate weather-and-walking decision.',
-        verify: 'Check cathedral worship and visitor access, Dover Castle ticket and closure notices, Southeastern engineering work and the hill connection before travel.',
+        verify: 'Check Canterbury Cathedral’s date-specific worship and visitor hours, Southeastern/National Rail station pair and engineering notices, Dover Castle ticket slot/last admission/individual closures, and the Priory-to-castle hill or bus before travel.',
         sources: [
-          ['https://www.canterbury-cathedral.org/visit/', 'Canterbury Cathedral — official visitor information'],
-          ['https://www.english-heritage.org.uk/visit/places/dover-castle/', 'English Heritage — Dover Castle visitor information']
+          ['https://www.canterbury-cathedral.org/visit/plan-your-visit/', 'Canterbury Cathedral — current visitor hours and admission'],
+          ['https://www.canterbury-cathedral.org/visit/plan-your-visit/getting-here/', 'Canterbury Cathedral — rail and bus access'],
+          ['https://www.english-heritage.org.uk/visit/places/dover-castle/', 'English Heritage — Dover Castle hours, timed admission and access status'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — date-specific Kent rail planning']
         ]
       }),
       g({
@@ -102,33 +120,40 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
         layout: 'chalk-profile-route',
         imageQuery: 'Seven Sisters cliffs Sussex England coast',
         imageAlt: 'White chalk cliffs of the Seven Sisters on the Sussex coast',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         purpose: 'Choose a safe, bounded Seven Sisters viewpoint or walk with a named start and finish, using Eastbourne or Seaford as the transport anchor rather than advertising the whole cliff line as one casual stroll.',
-        summary: 'Arrive at a rail-and-bus gateway, read wind and path conditions, complete one signed chalk-coast segment, and turn back or exit before daylight and the final connection become tight.',
+        summary: 'Use Exceat Visitor Centre as the named A259 gateway, connect by the bus route confirmed for your date, then choose a signed valley or cliff section with a timed turnaround and a safe return.',
+        searchSummary: 'Plan Seven Sisters from Brighton, Seaford or Eastbourne via the date-checked Exceat bus. Pick a measured walk, check tide and cliff notices, and save daylight for the return.',
+        searchKeywords: ['Exceat', 'Cuckmere Haven', 'Eastbourne', 'Seaford', 'Coaster 12', 'chalk cliffs', 'South Downs Way'],
         choices: [
           ['Country Park and valley', 'Use the visitor-centre or Cuckmere approach for river, valley and cliff views with a clear return. This is the most adaptable first visit.'],
           ['Eastbourne and Beachy Head edge', 'Begin or end in Eastbourne with one verified upland viewpoint. It adds town services but still requires exposure and a bus or climb.'],
           ['Long point-to-point walk', 'Attempt only with the official route, fitness, weather and daylight to match. This gives the complete profile but has the least tolerance for delays.']
         ],
-        access: 'There is no Seven Sisters railway station. Seaford, Eastbourne and Brighton connect to different buses and trailheads. Save the exact stop, path and final service, and never navigate toward the cliff edge from an informal map pin.',
-        tradeoff: 'A short valley-and-viewpoint visit sacrifices the long cliff sequence but protects safety and return. A point-to-point walk gains landscape depth at the cost of museums, town time and any weak-weather fallback.',
+        access: 'There is no Seven Sisters railway station. The Exceat Visitor Centre is on the A259 between Seaford and Eastbourne; the park says Brighton, Seaford and Eastbourne buses connect there with mainline stations. On the checked operator page, services 12 and 12X were listed; the park page also named 12A, so resolve that discrepancy in the live planner and follow the direction-specific stop and final bus. Official park walking estimates include Exceat to West Dean at about 0.8 km/15 minutes, to the beach about 1.6 km/30 minutes, and to Birling Gap about 5.6 km/2–3 hours; these are route estimates, not a promise of a return service. Do not mistake Exceat for a rail station or the river mouth for a safe crossing.',
+        tradeoff: 'A short Exceat–valley–viewpoint out-and-back gives a useful landscape visit and preserves a bus margin; it does not traverse the Seven Sisters ridge. The longer Birling Gap or Beachy Head sections are dedicated exposed walks: the official estimates put Exceat–Birling Gap at 2–3 hours and Beachy Head at 3–4 hours, with your transport legs and rest stops added. A point-to-point route offers more cliff profiles but requires a verified exit at the far end, enough daylight and no expectation of rescuing the plan with a late bus.',
         stages: [
-          ['Reach the named trailhead', 'Use the verified train and bus combination, confirming the side of the road and final return stop before leaving services.'],
-          ['Read the weather gate', 'Assess wind, rain, visibility and official notices at low ground. Shorten immediately if the exposed line is unsuitable.'],
-          ['Commit to one bounded segment', 'Follow signed paths well back from unstable edges, using a fixed viewpoint, river crossing or hill as the turnaround or exit.'],
-          ['Exit before the last service', 'Return to the selected bus stop or Eastbourne station with daylight and one connection in reserve. Do not extend for a final photograph.']
+          ['Reach Exceat or your confirmed town start', 'Check the train and bus on the same date-specific planner. Record the correct side of the A259, destination display, return stop and last practical departure before leaving the staffed transport corridor.'],
+          ['Set the safety and tide gate', 'At low ground, check official access, wind, visibility, rain and tide. Seven Sisters guidance says chalk falls are unpredictable: remain on signed paths, at least five metres from cliff edges and bases, and away from the river mouth at high tide. The coastal path goes around Cuckmere; do not ford or cross the mouth.'],
+          ['Choose and time one route section', 'For a shorter outing, use the official Exceat–West Dean or beach distance and set your return time before setting out. Only commit to Birling Gap or Beachy Head when fitness, route, conditions and onward bus all fit; wind, climbs, mud and stops can slow the return.'],
+          ['Reach the named stop in daylight', 'Use the exact bus stop and direction you checked. Preserve time for the A259 crossing and service delay; if the bus plan fails, remain at a safe town or visitor-centre location and use the confirmed rail alternative, never a road verge.']
         ],
-        fallback: 'In poor cliff weather, use Eastbourne’s seafront, museum offer or a short sheltered Cuckmere valley section only when official access remains safe. If buses are disrupted, stay in the rail town rather than walking a road verge.',
+        fallback: 'If wind, tide, visibility or path notices make the cliffs unsuitable, shorten to the signed lower valley route only if the park confirms access and you can avoid the river mouth safely. Otherwise keep an Eastbourne or Seaford town-and-seafront day with a confirmed interior, or return to Brighton. If buses are disrupted, do not try to walk between towns on the A259 verge or descend the cliff; use the date-verified rail option.',
         watch: [
-          ['Cliff edges are unstable', 'Chalk can collapse without warning and fences may move. Stay on signed paths and well back from the edge and base of cliffs.'],
-          ['Wind changes walking speed', 'An exposed headwind can double effort and remove the return margin. Use time, not distance, as the turn-back rule.'],
-          ['Bus stops are not interchangeable', 'Coast services use specific roadside stops and seasonal patterns. Confirm the direction and last useful departure.']
+          ['Cliffs and river mouth have hard boundaries', 'Guidance says remain on signed routes at least five metres from cliff edges and bases. The park warns of strong current at high tide and directs walkers around Cuckmere; do not descend to the base, ford or shortcut.'],
+          ['Wind and mud change the clock', 'An exposed headwind, wet chalk or a steep climb can turn a short map distance into a slow return. Use the planned time gate and daylight, not a summit goal.'],
+          ['Bus numbers need a live check', 'The park and operator did not match on service 12A in the checked snapshot. Confirm 12/12X or any replacement route, direction and last service in the operator planner for your date.']
         ],
-        duration: 'Allow five to eight hours for transport and a bounded coast route. The full point-to-point line is a dedicated day, not an extension to Brighton.',
+        duration: 'Allow five to eight hours including the rail-and-bus approach for a measured Exceat outing. Exceat–Birling Gap or Beachy Head estimates alone are 2–4 hours depending on endpoint; add the onward return, rests and conditions. A full point-to-point coast walk is a dedicated daylight day, not an add-on after Brighton.',
         combine: 'Combine a short Seven Sisters route with Eastbourne or Seaford. Keep Brighton, Canterbury and Dover for separate days.',
-        verify: 'Check South Downs National Park safety advice, Seven Sisters access notices, coast weather, daylight and the exact train-and-bus return before departure.',
+        verify: 'Check Seven Sisters Country Park walking and cliff-safety pages, the official tide information for the Cuckmere mouth, wind/visibility/path notices, sunset, and the live National Rail plus operator bus planner including the final service. Recheck the 12A discrepancy on the travel date.',
         sources: [
-          ['https://www.southdowns.gov.uk/be-safe-and-plan-ahead-for-your-visit-to-seven-sisters/', 'South Downs National Park — official Seven Sisters safety guidance'],
-          ['https://www.sevensisters.org.uk/', 'Seven Sisters Country Park — official visitor information']
+          ['https://www.sevensisters.org.uk/plan-your-visit/getting-here/', 'Seven Sisters Country Park — Exceat gateway and bus access'],
+          ['https://www.sevensisters.org.uk/things-to-do/walking/', 'Seven Sisters Country Park — official walk distances and estimates'],
+          ['https://www.sevensisters.org.uk/plan-your-visit/cliff-safety/', 'Seven Sisters Country Park — cliff, tide and river-mouth safety'],
+          ['https://www.buses.co.uk/services/BH/12', 'Brighton & Hove Buses — current Coastliner 12 and 12X information'],
+          ['https://www.nationalrail.co.uk/', 'National Rail — date-specific coast rail planning']
         ]
       })
     ]

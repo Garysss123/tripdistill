@@ -12332,11 +12332,19 @@
     "url": "/united-kingdom/kent-sussex-south-coast/",
     "parent": "United Kingdom",
     "type": "Regional guide",
-    "summary": "Brighton, Canterbury, Dover and the Seven Sisters sit on different rail and bus corridors despite sharing the south-east coast. A useful day chooses one urban or landscape argument, names the station and final connection, and treats exposed chalk paths as weather decisions rather than scenic filler.",
+    "summary": "Plan Brighton, Canterbury, Dover and Seven Sisters as separate rail and bus days. Compare a Brighton base with an east Kent overnight, then check hill, cliff, tide and return connections.",
     "keywords": [
       "Kent, Sussex & the South Coast",
       "England",
-      "england-south"
+      "england-south",
+      "Brighton",
+      "Canterbury",
+      "Dover Castle",
+      "Seven Sisters",
+      "Eastbourne",
+      "Seaford",
+      "Southeastern",
+      "South Downs"
     ]
   },
   {
@@ -12344,12 +12352,18 @@
     "url": "/united-kingdom/kent-sussex-south-coast/brighton-lanes-seafront/",
     "parent": "Kent, Sussex & the South Coast",
     "type": "Local guide",
-    "summary": "Descend from Brighton station through the North Laine or Pavilion precinct, complete one interior, then finish on a bounded seafront section with the uphill return already planned.",
+    "summary": "Plan Brighton from station to North Laine, Royal Pavilion and one seafront direction. Check seasonal Pavilion hours, then choose a bus or uphill walk back.",
     "keywords": [
       "Brighton Lanes, Pavilion & Seafront",
       "Kent, Sussex & the South Coast",
       "Seafront weather-and-crowd clock",
-      "regency-to-pier-zigzag"
+      "regency-to-pier-zigzag",
+      "North Laine",
+      "The Lanes",
+      "Royal Pavilion",
+      "Brighton station",
+      "Old Steine",
+      "seafront"
     ]
   },
   {
@@ -12357,12 +12371,18 @@
     "url": "/united-kingdom/kent-sussex-south-coast/canterbury-dover/",
     "parent": "Kent, Sussex & the South Coast",
     "type": "Local guide",
-    "summary": "Begin in Canterbury’s walkable core or at Dover’s hillside fortress, complete one deep visit, and add the second place only as a bounded exterior or shorter stop with its return protected.",
+    "summary": "Choose Canterbury Cathedral or Dover Castle as the main visit. Match Canterbury East/West to the train; allow for Dover Castle’s hill, timed admission and last entry.",
     "keywords": [
       "Canterbury Cathedral & Dover Castle",
       "Kent, Sussex & the South Coast",
       "Two-fortress admission docket",
-      "pilgrim-to-channel-section"
+      "pilgrim-to-channel-section",
+      "Canterbury West",
+      "Canterbury East",
+      "Canterbury Cathedral",
+      "Dover Priory",
+      "Dover Castle",
+      "Southeastern"
     ]
   },
   {
@@ -12370,12 +12390,19 @@
     "url": "/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/",
     "parent": "Kent, Sussex & the South Coast",
     "type": "Local guide",
-    "summary": "Arrive at a rail-and-bus gateway, read wind and path conditions, complete one signed chalk-coast segment, and turn back or exit before daylight and the final connection become tight.",
+    "summary": "Plan Seven Sisters from Brighton, Seaford or Eastbourne via the date-checked Exceat bus. Pick a measured walk, check tide and cliff notices, and save daylight for the return.",
     "keywords": [
       "Seven Sisters & Eastbourne",
       "Kent, Sussex & the South Coast",
       "Cliff-edge turn-back chart",
-      "chalk-profile-route"
+      "chalk-profile-route",
+      "Exceat",
+      "Cuckmere Haven",
+      "Eastbourne",
+      "Seaford",
+      "Coaster 12",
+      "chalk cliffs",
+      "South Downs Way"
     ]
   },
   {

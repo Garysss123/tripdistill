@@ -41,8 +41,8 @@ const reviewGroups = [
   {
     date: '2026-10-12',
     label: '12 October 2026',
-    guideCount: 6,
-    hubCount: 2,
+    guideCount: 9,
+    hubCount: 3,
     sources: [
       'checked 12 October 2026',
       'Planning facts and image licensing were reviewed on 12 October 2026. Admission, transport, roads, paths, tides, weather and local access can change; reopen the linked authority or operator before travel.',
