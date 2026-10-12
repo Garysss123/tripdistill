@@ -1,0 +1,19 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose between Airlie Beach and Hamilton Island for Whitehaven and Hardy Reef, or Townsville for the separate Magnetic Island ferry. Compare vessel time, base nights, terminal, weather fallback and return before booking.": "หากจะไป Whitehaven และ Hardy Reef ให้เปรียบเทียบ Airlie Beach กับ Hamilton Island ส่วน Townsville เป็นจุดขึ้นเรือเฟอร์รี่อีกเส้นทางหนึ่งไป Magnetic Island ก่อนจองให้เทียบเวลาเดินเรือ จำนวนคืนที่พัก ท่าเรือ แผนสำรองเมื่ออากาศไม่ดี และการเดินทางกลับ",
+    "Plan Townsville to Magnetic Island via the Breakwater passenger ferry, Nelly Bay and the Kinetic island bus. Match the Forts Walk or one bay to daylight, heat, park status and the confirmed return.": "วางแผนจาก Townsville ไป Magnetic Island โดยต่อเรือโดยสาร Breakwater, Nelly Bay และรถบัส Kinetic บนเกาะ เลือกเดิน Forts Walk หรือเที่ยวอ่าวหนึ่งแห่งให้เหมาะกับช่วงกลางวัน ความร้อน สถานะเปิดของอุทยาน และเที่ยวกลับที่ยืนยันแล้ว",
+    "Plan Darwin city and Waterfront by heat, Route 14 and the free precinct shuttle; know the lightning evacuation rule for both lagoons and check MAGNT status before using it as an indoor stop.": "วางแผนเที่ยวเมือง Darwin และ Waterfront โดยคำนึงถึงความร้อน รถ Route 14 และรถรับส่งฟรีในย่านนี้ ทำความเข้าใจกฎอพยพเมื่อเกิดฟ้าผ่าของลากูนทั้งสองแห่ง และตรวจสอบสถานะ MAGNT ก่อนเลือกเป็นจุดแวะในร่ม",
+    "Plan Katherine and Nitmiluk as two park sectors about 90 km apart: the gorge visitor centre and Leliyn (Edith Falls). Choose an overnight, exact cruise/walk/transfer and check closures, heat, visitor pass and water rules.": "วางแผน Katherine และ Nitmiluk เป็นพื้นที่อุทยานสองส่วนที่ห่างกันราว 90 กม. ได้แก่ศูนย์บริการนักท่องเที่ยวที่ช่องเขาและ Leliyn (Edith Falls) ตัดสินใจว่าจะพักค้างคืนหรือไม่ ระบุทัวร์เรือ เส้นทางเดิน และการเดินทางที่แน่นอน พร้อมตรวจสอบการปิดพื้นที่ ความร้อน บัตรเข้าชม และกฎเกี่ยวกับแหล่งน้ำ",
+    "two-sector gorge and heat plan": "แผนเที่ยวช่องเขาสองเขตและรับมือความร้อน"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Codex",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact runtime submodel not exposed",
+    "independentSecondModel": false
+  }
+}

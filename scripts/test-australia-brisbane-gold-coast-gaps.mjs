@@ -30,6 +30,12 @@ const laterAdelaidePerthRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
+const laterTopEndWhitsundaysRoutes = [
+  '/australia/darwin-top-end/darwin-waterfront-city/',
+  '/australia/darwin-top-end/katherine-nitmiluk/',
+  '/australia/whitsundays-great-barrier-reef/',
+  '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
+];
 const locales = [
   { code: 'en', prefix: '', script: null, date: '12 October 2026' },
   { code: 'zh-Hant', prefix: '/zh', script: /[\u3400-\u9fff]/u, date: '2026 年 10 月 12 日' },
@@ -127,7 +133,7 @@ function sitemapEntries(xml) {
 
 const englishHtml = git(['diff', '--name-only', taskStart, '--', 'australia']).split(/\r?\n/)
   .filter((file) => file.endsWith('.html')).sort();
-assert.deepEqual(englishHtml, [...routes, ...laterMelbourneOceanRoutes, ...laterAdelaidePerthRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized Brisbane/Gold Coast bodies and the later Melbourne/Ocean and Adelaide/Perth gap bodies may change from the exact sprint base.');
+assert.deepEqual(englishHtml, [...routes, ...laterMelbourneOceanRoutes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized Brisbane/Gold Coast bodies and later Melbourne/Ocean, Adelaide/Perth, and Top End/Whitsundays gap bodies may change from the exact sprint base.');
 
 const baseSearch = JSON.parse(git(['show', `${taskStart}:data/search-index.json`]));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -135,14 +141,14 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const currentSearchByUrl = new Map(currentSearch.map((record) => [record.url, record]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterMelbourneOceanRoutes, ...laterAdelaidePerthRoutes].sort(), 'Only the four authorized Brisbane/Gold Coast and later Melbourne/Ocean and Adelaide/Perth English search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterMelbourneOceanRoutes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes].sort(), 'Only the four authorized Brisbane/Gold Coast and later Melbourne/Ocean, Adelaide/Perth, and Top End/Whitsundays English search records may change.');
 
 const baseSitemap = sitemapEntries(git(['show', `${taskStart}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const changedDatePaths = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-const expectedDatePaths = [...routes, ...laterMelbourneOceanRoutes, ...laterAdelaidePerthRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const expectedDatePaths = [...routes, ...laterMelbourneOceanRoutes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 assert.deepEqual(changedDatePaths, expectedDatePaths, 'Only the selected Brisbane/Gold Coast, Melbourne/Ocean, and Adelaide/Perth route/language sitemap dates may change.');
 for (const route of expectedDatePaths) assert.equal(currentSitemap.get(route), isoDate, `${route}: sitemap lastmod.`);
 

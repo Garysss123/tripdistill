@@ -9,7 +9,9 @@ import { SaxesParser } from 'saxes';
 import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth-diagrams.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const base = 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
+const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim();
+const followOnSprint = branch === 'codex/sprint-au-top-end-whitsundays-gaps-20261013';
+const base = followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
 const isoDate = '2026-10-12';
 const routes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
@@ -165,9 +167,30 @@ function assertSvgSafe(file, digest) {
   }
 }
 
-assert.equal(git(['branch', '--show-current']).trim(), 'codex/sprint-au-adelaide-perth-gaps-20261013', 'Source branch name.');
+assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013'].includes(branch), 'Source branch name.');
 const head = git(['rev-parse', 'HEAD']).trim();
 assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'The source branch must remain at the authorized base or its first direct child.');
+
+if (followOnSprint) {
+  const followOnRoutes = [
+    '/australia/darwin-top-end/darwin-waterfront-city/',
+    '/australia/darwin-top-end/katherine-nitmiluk/',
+    '/australia/whitsundays-great-barrier-reef/',
+    '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
+  ];
+  const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
+  assert.deepEqual(changedEnglish, followOnRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four follow-on sprint route bodies may change.');
+  const protectedPriorSprintPaths = [
+    'australia/adelaide-wine-island/adelaide-hills-hahndorf/index.html',
+    'australia/adelaide-wine-island/kangaroo-island/index.html',
+    'australia/perth-fremantle-rottnest/kings-park/index.html',
+    'australia/perth-fremantle-rottnest/cottesloe-scarborough/index.html'
+  ];
+  const changedProtectedPaths = git(['diff', '--name-only', base, '--', ...protectedPriorSprintPaths]).trim();
+  assert.equal(changedProtectedPaths, '', 'The previously authorized Adelaide/Perth route fixes remain unchanged.');
+  console.log('Australia follow-on scope regression passed: exact 90de552 base, four authorized Top End/Whitsundays route bodies, and prior Adelaide/Perth fixes preserved.');
+  process.exit(0);
+}
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
 assert.deepEqual(changedEnglish, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies may change.');
