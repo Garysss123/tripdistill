@@ -22,6 +22,18 @@ const zurichEditedRoutes = new Set([
   '/switzerland/zurich-lake/lake-uetliberg/',
   '/switzerland/zurich-lake/zurich-west-museums/'
 ]);
+const lucerneEditedRoutes = new Set([
+  '/switzerland/lucerne-lake-mountains/',
+  '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+  '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+  '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
+]);
+const jungfrauEditedRoutes = new Set([
+  '/switzerland/jungfrau-region/',
+  '/switzerland/jungfrau-region/lauterbrunnen-valley/',
+  '/switzerland/jungfrau-region/wengen-kleine-scheidegg/',
+  '/switzerland/jungfrau-region/grindelwald-first/'
+]);
 const childRoutes = new Set(switzerlandGuides.map((guide) => guide.url));
 const pageRoutes = locales.flatMap(([language, prefix]) => englishRoutes.map((route) => ({ language, prefix, route, localized: `${prefix}${route}` })));
 const failures = [];
@@ -92,7 +104,7 @@ for (const [, prefix] of locales) {
 
 const { body: sitemap } = await request('/sitemap.xml');
 for (const { prefix, route, localized } of pageRoutes) {
-  const expectedLastmod = zurichEditedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+  const expectedLastmod = zurichEditedRoutes.has(route) ? '2026-10-08' : lucerneEditedRoutes.has(route) || jungfrauEditedRoutes.has(route) ? '2026-10-12' : '2026-09-12';
   if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
 }
 

@@ -15,6 +15,9 @@ const zurichLastmod = '2026-10-08';
 const lucerne = switzerlandClusters.find((cluster) => cluster.slug === 'lucerne-lake-mountains');
 const lucerneRoutes = lucerne ? [`/switzerland/${lucerne.slug}/`, ...lucerne.guides.map((guide) => guide.url)] : [];
 const lucerneLastmod = '2026-10-12';
+const jungfrau = switzerlandClusters.find((cluster) => cluster.slug === 'jungfrau-region');
+const jungfrauRoutes = jungfrau ? [`/switzerland/${jungfrau.slug}/`, ...jungfrau.guides.map((guide) => guide.url)] : [];
+const jungfrauLastmod = '2026-10-12';
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -212,7 +215,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : '2026-09-12';
+    const expectedLastmod = zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

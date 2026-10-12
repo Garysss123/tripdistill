@@ -72,6 +72,13 @@ const lucerneEditedRoutes = [
   '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
   '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
 ];
+const jungfrauLastmod = '2026-10-12';
+const jungfrauEditedRoutes = [
+  '/switzerland/jungfrau-region/',
+  '/switzerland/jungfrau-region/lauterbrunnen-valley/',
+  '/switzerland/jungfrau-region/wengen-kleine-scheidegg/',
+  '/switzerland/jungfrau-region/grindelwald-first/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -905,6 +912,11 @@ for (const route of lucerneEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Lucerne route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: lucerneLastmod });
+}
+for (const route of jungfrauEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Jungfrau route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: jungfrauLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {

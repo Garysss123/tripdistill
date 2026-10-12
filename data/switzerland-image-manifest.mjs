@@ -251,6 +251,7 @@ export const switzerlandImageManifest = {
   "jungfrau-region/lauterbrunnen-valley": {
     "src": "/assets/images/switzerland-jungfrau-region-lauterbrunnen-valley.webp",
     "alt": "Lauterbrunnen valley with waterfalls and high cliffs",
+    "displayTitle": "Lauterbrunnen Valley and Staubbach Falls",
     "source": "https://commons.wikimedia.org/wiki/File:Lauterbrunnen_Valley_with_Staubbach,_Bernese_Oberland,_Switzerland-LCCN2001701212.jpg",
     "label": "Lauterbrunnen Valley with Staubbach, Bernese Oberland, Switzerland-LCCN2001701212.jpg",
     "creator": "Photochrom Print Collection",
@@ -260,7 +261,8 @@ export const switzerlandImageManifest = {
   },
   "jungfrau-region/wengen-kleine-scheidegg": {
     "src": "/assets/images/switzerland-jungfrau-region-wengen-kleine-scheidegg.webp",
-    "alt": "Wengen and the Jungfrau mountains above Lauterbrunnen valley",
+    "alt": "Snowbound Kleine Scheidegg buildings below the Jungfrau massif",
+    "displayTitle": "Snowbound Kleine Scheidegg below the Jungfrau massif",
     "source": "https://commons.wikimedia.org/wiki/File:Kleine_Scheidegg_und_Jungfrau.jpg",
     "label": "Kleine Scheidegg und Jungfrau.jpg",
     "creator": "Albinfo",
@@ -270,7 +272,8 @@ export const switzerlandImageManifest = {
   },
   "jungfrau-region/grindelwald-first": {
     "src": "/assets/images/switzerland-jungfrau-region-grindelwald-first.webp",
-    "alt": "Grindelwald valley and mountains near First",
+    "alt": "Bachalpsee and the mountain panorama on the Grindelwald-First route",
+    "displayTitle": "Bachalpsee and the Grindelwald-First panorama",
     "source": "https://commons.wikimedia.org/wiki/File:Bachalpsee_in_Grindelwald.jpg",
     "label": "Bachalpsee in Grindelwald.jpg",
     "creator": "Barbara Steinemann",

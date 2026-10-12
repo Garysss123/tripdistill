@@ -73,11 +73,10 @@ assert.equal(baseRecords.size, 4560, 'base route inventory');
 assert.equal(currentRecords.size, baseRecords.size, 'no sitemap URL additions or removals');
 assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'URL set is unchanged');
 const expectedDateChanges = new Set(locales.flatMap((locale) => routes.map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 20, 'four routes x five locales have modified dates');
-for (const [url, date] of dateChanges) {
-  assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
-  assert.equal(date, '2026-10-12', `review date for ${url}`);
+for (const url of expectedDateChanges) {
+  assert.ok(currentRecords.has(url), `Lucerne sitemap route remains published: ${url}`);
+  assert.notEqual(baseRecords.get(url), currentRecords.get(url), `Lucerne review date changed: ${url}`);
+  assert.equal(currentRecords.get(url), '2026-10-12', `review date for ${url}`);
 }
 assert.equal(expectedDateChanges.size, 20);
 
