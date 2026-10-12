@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Brisbane and Moreton Bay: choose one travel system</title>
+  <desc id="desc">An original, not-to-scale schematic separates the Brisbane River city loop, the Cleveland–Dunwich passenger or vehicle ferry with island bus, Mulgumpin vehicle-ferry access, and the separate passenger ferry to Tangalooma Resort. A visible legend is provided in English, Traditional Chinese, Japanese, Korean and Thai.</desc>
+  <style>
+    text{font-family:Inter,"Noto Sans","Noto Sans CJK TC","Noto Sans JP","Noto Sans KR","Noto Sans Thai",Arial,sans-serif;fill:#19324a}
+    .eyebrow{font-size:18px;font-weight:700;letter-spacing:2px;fill:#496276}
+    .title{font-size:42px;font-weight:750;fill:#102b43}
+    .sub{font-size:20px;font-weight:550;fill:#496276}
+    .card-title{font-size:25px;font-weight:750}
+    .node-title{font-size:22px;font-weight:700}
+    .node-sub{font-size:18px;font-weight:500;fill:#496276}
+    .route-label{font-size:18px;font-weight:700}
+    .small{font-size:16px;font-weight:550;fill:#496276}
+    .key-head{font-size:20px;font-weight:750}
+    .key{font-size:18px;font-weight:550}
+  </style>
+  <rect x="0" y="0" width="1600" height="1200" fill="#f4f8fb"/>
+  <text class="eyebrow" x="60" y="48">BRISBANE · QUEENSLAND · ROUTE CHOICE</text>
+  <text class="title" x="60" y="98">Choose one river or island travel system at a time</text>
+  <text class="sub" x="60" y="132">Separate terminals, operators and access rules · schematic only · no timetable or distance claim</text>
+
+  <rect x="60" y="165" width="460" height="675" rx="22" fill="#e6f3f0" stroke="#4a9587" stroke-width="3"/>
+  <text class="eyebrow" x="88" y="205">01 · CITY</text>
+  <text class="card-title" x="88" y="243">Brisbane River loop</text>
+  <rect x="92" y="282" width="396" height="118" rx="16" fill="#fff" stroke="#89b8ae" stroke-width="2"/>
+  <text class="node-title" x="116" y="326">CBD / North Quay</text>
+  <text class="node-sub" x="116" y="360">Choose a city rail or river start</text>
+  <line x1="290" y1="401" x2="290" y2="452" stroke="#277f72" stroke-width="8" stroke-linecap="round"/>
+  <path d="M278 440 L290 458 L302 440" fill="none" stroke="#277f72" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="92" y="465" width="396" height="118" rx="16" fill="#fff" stroke="#89b8ae" stroke-width="2"/>
+  <text class="node-title" x="116" y="510">South Bank / QUT</text>
+  <text class="node-sub" x="116" y="545">Walk a bridge or use a CityCat leg</text>
+  <text class="route-label" x="100" y="637">Check the terminal, route and service notice.</text>
+  <text class="small" x="100" y="674">One crossing can complete the city loop.</text>
+  <rect x="92" y="710" width="396" height="88" rx="14" fill="#d1e8e3"/>
+  <text class="small" x="112" y="746">Rail and river ferries are separate</text>
+  <text class="small" x="112" y="772">connections; keep a walking fallback.</text>
+
+  <rect x="570" y="165" width="460" height="675" rx="22" fill="#e9f1fb" stroke="#618ac4" stroke-width="3"/>
+  <text class="eyebrow" x="598" y="205">02 · MINJERRIBAH</text>
+  <text class="card-title" x="598" y="243">North Stradbroke Island</text>
+  <rect x="602" y="282" width="396" height="100" rx="16" fill="#fff" stroke="#9bb5d6" stroke-width="2"/>
+  <text class="node-title" x="626" y="322">Cleveland / Toondah Harbour</text>
+  <text class="node-sub" x="626" y="352">Passenger ferry or vehicle ferry</text>
+  <line x1="800" y1="383" x2="800" y2="415" stroke="#356cae" stroke-width="8" stroke-linecap="round"/>
+  <path d="M788 405 L800 421 L812 405" fill="none" stroke="#356cae" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="602" y="430" width="396" height="96" rx="16" fill="#fff" stroke="#9bb5d6" stroke-width="2"/>
+  <text class="node-title" x="626" y="469">Dunwich</text>
+  <text class="node-sub" x="626" y="499">Island bus or booked car</text>
+  <line x1="800" y1="527" x2="800" y2="559" stroke="#356cae" stroke-width="8" stroke-linecap="round"/>
+  <path d="M788 549 L800 565 L812 549" fill="none" stroke="#356cae" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="602" y="575" width="396" height="96" rx="16" fill="#fff" stroke="#9bb5d6" stroke-width="2"/>
+  <text class="node-title" x="626" y="614">Point Lookout</text>
+  <text class="node-sub" x="626" y="644">One headland or beach focus</text>
+  <text class="route-label" x="610" y="715">Check ferry and island bus separately.</text>
+  <text class="small" x="610" y="753">Protect the return; stay overnight if</text>
+  <text class="small" x="610" y="779">the day connection does not fit.</text>
+
+  <rect x="1080" y="165" width="460" height="675" rx="22" fill="#fcf1dd" stroke="#c18b37" stroke-width="3"/>
+  <text class="eyebrow" x="1108" y="205">03 · MULGUMPIN</text>
+  <text class="card-title" x="1108" y="243">Moreton Island park access</text>
+  <rect x="1112" y="282" width="396" height="90" rx="16" fill="#fff" stroke="#d4b273" stroke-width="2"/>
+  <text class="node-title" x="1136" y="320">Port of Brisbane</text>
+  <text class="node-sub" x="1136" y="348">Use the booked operator’s directions</text>
+  <line x1="1310" y1="373" x2="1310" y2="401" stroke="#a36a14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1298 392 L1310 408 L1322 392" fill="none" stroke="#a36a14" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1112" y="417" width="396" height="90" rx="16" fill="#fff" stroke="#d4b273" stroke-width="2"/>
+  <text class="node-title" x="1136" y="455">Vehicle ferry / MICAT</text>
+  <text class="node-sub" x="1136" y="483">4WD, loading and landing rules</text>
+  <line x1="1310" y1="508" x2="1310" y2="536" stroke="#a36a14" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1298 527 L1310 543 L1322 527" fill="none" stroke="#a36a14" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1112" y="552" width="396" height="88" rx="16" fill="#fff" stroke="#d4b273" stroke-width="2"/>
+  <text class="node-title" x="1136" y="589">Permitted park route</text>
+  <text class="node-sub" x="1136" y="617">4WD · tide · access report</text>
+  <line x1="1112" y1="665" x2="1508" y2="665" stroke="#c18b37" stroke-width="2" stroke-dasharray="8 8"/>
+  <text class="route-label" x="1116" y="700">Separate passenger-only option</text>
+  <text class="node-sub" x="1116" y="731">Holt Street → Tangalooma Resort</text>
+  <text class="small" x="1116" y="763">Resort landing is not park-track access.</text>
+  <text class="small" x="1116" y="790">Book and verify that itinerary separately.</text>
+
+  <rect x="60" y="875" width="1480" height="280" rx="22" fill="#fff" stroke="#b4c5d1" stroke-width="2"/>
+  <text class="key-head" x="88" y="915">KEY · not to scale / 非按比例 / 縮尺なし / 축척 아님 / ไม่ได้มาตราส่วน</text>
+  <text class="key" x="88" y="960">EN — Transit systems are distinct; check services and access for your travel date.</text>
+  <text class="key" x="88" y="998">繁中 — 交通系統各自不同；依出行日期查核服務與開放狀況。</text>
+  <text class="key" x="88" y="1036">日本語 — 交通手段は別々です。旅行日に運行と立ち入り情報を確認。</text>
+  <text class="key" x="88" y="1074">한국어 — 교통편은 각각 다릅니다. 여행 당일 운행과 접근 정보를 확인하세요.</text>
+  <text class="key" x="88" y="1112">ไทย — ระบบเดินทางแยกกัน ตรวจสอบบริการและการเข้าถึงในวันเดินทาง</text>
+  <text class="small" x="88" y="1141">No island-to-island service, bearing, distance or departure time is implied.</text>
+</svg>

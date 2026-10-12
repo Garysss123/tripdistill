@@ -44,7 +44,11 @@ const laterAustraliaRoutes = [
   '/australia/sydney-harbour-coast/',
   '/australia/sydney-harbour-coast/circular-quay-rocks/',
   '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
-  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/'
+  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/',
+  '/australia/brisbane-moreton-bay/',
+  '/australia/brisbane-moreton-bay/city-river-south-bank/',
+  '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
 ];
 const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/',

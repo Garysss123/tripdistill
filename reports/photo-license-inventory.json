@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T16:19:44.112Z",
+  "generatedAt": "2026-10-12T16:49:06.226Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 816,
+    "assetFileCount": 817,
     "completeSourceCreatorLicenseRecords": 756,
-    "completeProjectOriginalRightsRecords": 27,
+    "completeProjectOriginalRightsRecords": 28,
     "licenseClaimsNotIndependentlyVerified": 488,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 813,
-    "deduplicatedImageCount": 816,
+    "expectedBuildImageCount": 814,
+    "deduplicatedImageCount": 817,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3510,
-    "assetsUsedByScannedEnglishPages": 773,
+    "assetsUsedByScannedEnglishPages": 774,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 603,
+    "assetsWithStructuredSourceRecords": 604,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 198,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 277,
-    "metadataOrCreditOnly": 515,
-    "usedAssetsWithoutIndependentSourcePageCheck": 502,
+    "metadataOrCreditOnly": 516,
+    "usedAssetsWithoutIndependentSourcePageCheck": 503,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 809 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 813 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 810 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 814 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -602,7 +602,7 @@
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 8,
+          "useCount": 7,
           "routes": [
             "/australia/",
             "/australia/brisbane-moreton-bay/",
@@ -28005,6 +28005,50 @@
           "rawVisibleCredits": [
             "Shinobazu Pond walkway — Ximonic (Simo Räsänen), CC BY-SA 4.0. The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "250f2b15263d5b127b049a8320f8f0ff3193a9d95b78ccda4fda83e427203fd7",
+      "assetPaths": [
+        "/assets/images/tripdistill-brisbane-bay-crossings.svg"
+      ],
+      "byteLength": 7900,
+      "sourceRecords": [
+        {
+          "sha256": "250f2b15263d5b127b049a8320f8f0ff3193a9d95b78ccda4fda83e427203fd7",
+          "assetPath": "/assets/images/tripdistill-brisbane-bay-crossings.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-brisbane-bay-crossings.svg",
+          "sourceTitle": "TripDistill original Brisbane and Moreton Bay crossing schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original vector orientation schematic; not to scale and does not imply bearings, distances, timetables, or service availability.",
+          "localSha1": "a7fc09995c32941de97e3ca874b58725e68e40c5",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/brisbane-moreton-bay/"
+          ],
+          "altTexts": [
+            "Original not-to-scale schematic separating Brisbane River travel, the Cleveland to Dunwich Minjerribah ferry and bus route, Mulgumpin vehicle-ferry access, and the separate Tangalooma passenger resort ferry"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },

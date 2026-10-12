@@ -7,7 +7,6 @@ import { australiaSouthClusters } from '../data/australia-south-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseline = 'a014412eceb30efae51894be3b6167debaa96ca3';
-const integrationBase = '3b0931e3771a57321e7e97b10adfbb7489d31929';
 const routes = [
   '/australia/melbourne-port-phillip/',
   '/australia/melbourne-port-phillip/cbd-laneways-tram-grid/',
@@ -90,8 +89,6 @@ const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const originalEntries = sitemapEntries(originalSitemap);
 const currentEntries = sitemapEntries(currentSitemap);
 assert.deepEqual(new Set(currentEntries.keys()), new Set(originalEntries.keys()), 'sitemap URL set is unchanged');
-const integrationSitemap = execFileSync('git', ['show', `${integrationBase}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
-const integrationEntries = sitemapEntries(integrationSitemap);
 const adelaideRoutes = [
   '/australia/adelaide-wine-island/',
   '/australia/adelaide-wine-island/city-parklands-north-terrace/',
@@ -104,15 +101,20 @@ const sydneyRoutes = [
   '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
   '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes];
+const brisbaneRoutes = [
+  '/australia/brisbane-moreton-bay/',
+  '/australia/brisbane-moreton-bay/city-river-south-bank/',
+  '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
+];
+const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes];
 const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 60, 'four Melbourne, four Adelaide and four Sydney routes across five language editions');
+assert.equal(editedUrls.size, 80, 'four Melbourne, four Adelaide, four Sydney and four Brisbane routes across five language editions');
 for (const [url, originalDate] of originalEntries) {
   const pathname = new URL(url, 'https://tripdistill.com').pathname;
-  const expectedDate = pathname.includes('/australia/')
-    ? (editedUrls.has(pathname) ? '2026-10-12' : originalDate)
-    : integrationEntries.get(url);
-  assert.equal(currentEntries.get(url), expectedDate, `only the exact 12 Australia route dates change; non-Australia dates match the integration checkpoint: ${url}`);
+  if (!pathname.includes('/australia/')) continue;
+  const expectedDate = editedUrls.has(pathname) ? '2026-10-12' : originalDate;
+  assert.equal(currentEntries.get(url), expectedDate, `only the exact 16 Australia route dates change: ${url}`);
 }
 
 for (const [index, route] of routes.entries()) {
@@ -225,4 +227,4 @@ for (const [route, [alt, source, license]] of photoExpectations) {
   assert.ok(readPage(root, '', route).html.includes(license), `${route} retains its displayed license declaration`);
 }
 
-console.log('Australia refresh regression passed: 4 Melbourne, 4 Adelaide and 4 Sydney routes × 5 language editions, only the 60 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');
+console.log('Australia refresh regression passed: 4 Melbourne, 4 Adelaide, 4 Sydney and 4 Brisbane routes × 5 language editions, only the 80 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');

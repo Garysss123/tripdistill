@@ -1,4 +1,5 @@
 import { australiaGuide as g, defineAustraliaCluster as cluster } from './australia-guide-builder.mjs';
+import { australiaBrisbaneDiagram } from './australia-brisbane-diagram.mjs';
 
 export const australiaEastClusters = [
   cluster({
@@ -216,6 +217,8 @@ export const australiaEastClusters = [
     family: 'river-loop',
     label: 'RIVER / CULTURE / BAY CROSSINGS',
     tagline: 'Use the river as the city line and the ferry as a separate contract.',
+    diagramRecord: australiaBrisbaneDiagram,
+    reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
     hubIntro: 'Brisbane turns around the bends of the river, while the bay begins a different travel system of ferries, sand tracks and island weather. The city centre, South Bank, inner neighborhoods, Minjerribah and Mulgumpin should not be compressed into one “Brisbane day.” Five chapters separate walkable river loops from island transport and Country-specific guidance.',
     stay: 'Choose a base close to the river crossing or rail line used most often. A central address on the wrong bend can create repeated transfers.',
     transfer: 'Translink joins rail, bus and ferry services, but bay islands add specific terminals, vehicle rules and weather. Confirm the exact operator and landing point.',
@@ -229,6 +232,7 @@ export const australiaEastClusters = [
     guides: [
       g({
         slug: 'city-river-south-bank', name: 'City River & South Bank', motif: 'bridge-and-ferry loop', instrument: 'river-loop', imageQuery: 'Brisbane river South Bank skyline', imageAlt: 'Brisbane River and South Bank city skyline',
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
         summary: 'A central Brisbane loop that alternates shaded cultural interiors, river crossings and ferry segments instead of tracing every bend on foot.',
         orientation: 'treat each bridge and ferry stop as a choice between river banks, not an obligation to complete a giant circuit.', access: 'Arrive by train, bus or ferry at a station with a confirmed lift and note which bank holds the final transport home.', sequence: 'Cross once for orientation, use one cultural or garden interior, take a short ferry segment and close the loop before afternoon heat.', boundary: 'The river is working transport and flood country. Respect closed boardwalks, cultural interpretation and active commuter space.',
         stages: [['Choose the first bank', 'Set the morning around either the CBD or South Bank and identify the single crossing that adds meaning.'], ['Cool inside', 'Use a gallery, museum or library as a deliberate heat and storm pause.'], ['Ride one river segment', 'Check the ferry route and terminal rather than boarding simply because a vessel arrives.'], ['Exit near rail', 'Finish at the station or busway that avoids another unnecessary river crossing.']],
@@ -253,6 +257,7 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'minjerribah-north-stradbroke', name: 'Minjerribah / North Stradbroke Island', motif: 'island ferry and headland day', instrument: 'island-ticket', imageQuery: 'North Stradbroke Island Minjerribah Point Lookout', imageAlt: 'Coastal headland on Minjerribah North Stradbroke Island',
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
         summary: 'An island route that names mainland terminal, passenger or vehicle ferry, island bus and Quandamooka Country responsibilities before the beach.',
         orientation: 'separate Dunwich arrival, Point Lookout headland and beach choices instead of presenting the island as one stop.', access: 'Book or confirm the correct ferry from the correct Cleveland terminal and know whether the fare includes a vehicle, passenger or connecting bus.', sequence: 'Land at Dunwich, follow a realistic bus or road circuit, use one formal headland walk and return with a protected ferry margin.', boundary: 'Minjerribah is Quandamooka Country. Follow cultural guidance, dune and wildlife protections, and local restrictions on driving and camping.',
         stages: [['Name the terminal', 'Distinguish passenger and vehicle facilities and arrive before the operator’s check-in cutoff.'], ['Connect from Dunwich', 'Confirm the island bus or legal vehicle route before leaving the landing.'], ['Use one headland and beach', 'Choose patrolled swimming or a formal walk according to swell, wind and ability.'], ['Rejoin the booked ferry', 'Leave enough bus and traffic margin for the specific return sailing.']],
@@ -261,6 +266,7 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'mulgumpin-moreton-island', name: 'Mulgumpin / Moreton Island', motif: 'sand-island expedition', instrument: 'sand-manifest', imageQuery: 'Moreton Island Mulgumpin Queensland beach', imageAlt: 'Sand coast and clear water on Mulgumpin Moreton Island',
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
         summary: 'A sand-island expedition requiring a named ferry or licensed tour, capable vehicle planning, camping controls and honest weather limits.',
         orientation: 'treat the crossing, sand roads, campsite or resort base and marine activities as four separate contracts.', access: 'Use a booked ferry or reputable operator and confirm passenger, vehicle, equipment and check-in rules before reaching the mainland terminal.', sequence: 'Land, establish the base, attempt only activities supported by conditions and equipment, and return before tide or vehicle pressure compounds.', boundary: 'Mulgumpin is Quandamooka Country and protected habitat. Use designated roads and camps, observe permits and keep dunes and wildlife intact.',
         stages: [['Complete the manifest', 'Match passengers, vehicle, recovery gear, camping and activity bookings to the exact operator.'], ['Read the landing', 'Confirm tide, beach access and the legal route from the barge or resort jetty.'], ['Choose one island objective', 'Make snorkeling, lighthouse, dune or camping the main chapter rather than stacking incompatible distances.'], ['Return with reserve', 'Keep fuel, tide, weather and check-in margin for the crossing back.']],

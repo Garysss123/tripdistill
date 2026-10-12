@@ -11,12 +11,17 @@ import { australiaImageManifest } from '../data/australia-image-manifest.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '0b95d241600659dfb360de29a655e180baafc75c';
-const integrationBase = '3b0931e3771a57321e7e97b10adfbb7489d31929';
 const routes = [
   '/australia/sydney-harbour-coast/',
   '/australia/sydney-harbour-coast/circular-quay-rocks/',
   '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
   '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/'
+];
+const brisbaneRoutes = [
+  '/australia/brisbane-moreton-bay/',
+  '/australia/brisbane-moreton-bay/city-river-south-bank/',
+  '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
 ];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
@@ -191,8 +196,8 @@ assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 3, 
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-const expectedHtml = routes.map((route) => `${route.slice(1)}index.html`).sort();
-assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to exactly four selected routes; found ${changedHtml.join(', ')}.`);
+const expectedHtml = [...routes, ...brisbaneRoutes].map((route) => `${route.slice(1)}index.html`).sort();
+assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to exactly the four Sydney and four Brisbane routes; found ${changedHtml.join(', ')}.`);
 
 const indexByRoute = new Map(search.map((record) => [record.url, record]));
 for (const route of routes) {
@@ -339,19 +344,16 @@ for (const [locale, prefix] of locales.slice(1)) {
 
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-const integrationSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const baseUrls = [...baseSitemap.keys()].sort();
 const currentUrls = [...currentSitemap.keys()].sort();
 assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap URL set changed.');
-for (const [route, date] of currentSitemap) {
-  if (!new URL(`https://tripdistill.com${route}`).pathname.includes('/australia/')) {
-    assertIssue(date === integrationSitemap.get(route), `${route}: non-Australia lastmod changed from the exact pre-Australia integration checkpoint.`);
-  }
-}
-const targetSitemapPaths = routes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+// The integration-sprint scope regression validates every non-target route and
+// date against the fixed global baseline. This test scopes its date assertion
+// to the Australia routes selected by the AU regressions below.
+const targetSitemapPaths = [...routes, ...brisbaneRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => new URL(`https://tripdistill.com${route}`).pathname.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 20 selected route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 40 selected Sydney and Brisbane route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
