@@ -1,3 +1,5 @@
+import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from './switzerland-ch10-refresh.mjs';
+
 const routeLabels = ['Arrive', 'Orient', 'Commit', 'Return'];
 
 const guideEditorialExtensions = {
@@ -44,8 +46,20 @@ function applyEditorialExtensions(definition, extensions) {
   ]));
 }
 
+function applyCh10GuideRefresh(definition) {
+  const suffix = `/${definition?.slug}`;
+  const refresh = Object.entries(switzerlandCh10GuideRefresh).find(([key]) => key.endsWith(suffix))?.[1];
+  return refresh ? { ...definition, ...refresh } : definition;
+}
+
+function applyCh10ClusterRefresh(cluster) {
+  const refresh = switzerlandCh10ClusterRefresh[cluster?.slug];
+  return refresh ? { ...cluster, ...refresh } : cluster;
+}
+
 export function switzerlandGuide(definition) {
   definition = applyEditorialExtensions(definition, guideEditorialExtensions);
+  definition = applyCh10GuideRefresh(definition);
   const required = ['slug', 'name', 'instrument', 'layout', 'imageQuery', 'imageAlt', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
   for (const key of required) {
     if (!definition?.[key]) throw new Error(`Switzerland guide ${definition?.slug || '(unnamed)'} lacks ${key}.`);
@@ -73,6 +87,7 @@ export function switzerlandGuide(definition) {
 
 export function defineSwitzerlandCluster(cluster) {
   cluster = applyEditorialExtensions(cluster, clusterEditorialExtensions);
+  cluster = applyCh10ClusterRefresh(cluster);
   const required = ['slug', 'name', 'region', 'band', 'family', 'label', 'tagline', 'hubIntro', 'stay', 'transfer', 'season', 'fallback'];
   for (const key of required) {
     if (!cluster?.[key]) throw new Error(`Switzerland cluster ${cluster?.slug || '(unnamed)'} lacks ${key}.`);

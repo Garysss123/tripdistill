@@ -100,6 +100,23 @@ const bernEmmentalEditedRoutes = [
   '/switzerland/bern-emmental/museums-rose-garden/',
   '/switzerland/bern-emmental/emmental-day-trip/'
 ];
+const switzerlandCh10Lastmod = '2026-10-12';
+const switzerlandCh10Slugs = new Set([
+  'basel-rhine',
+  'st-moritz-engadin',
+  'graubunden-corridors',
+  'lugano-southern-ticino',
+  'locarno-ascona-valleys',
+  'schaffhausen-rhine-falls',
+  'st-gallen-appenzell'
+]);
+const switzerlandCh10EditedRoutes = [
+  '/switzerland/',
+  ...switzerlandClusters.filter((cluster) => switzerlandCh10Slugs.has(cluster.slug)).flatMap((cluster) => [
+    `/switzerland/${cluster.slug}/`,
+    ...cluster.guides.map((guide) => guide.url)
+  ])
+];
 const genevaLastmod = '2026-10-12';
 const genevaEditedRoutes = [
   '/switzerland/',
@@ -976,6 +993,11 @@ for (const route of bernEmmentalEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Bern/Emmental route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: bernEmmentalLastmod });
+}
+for (const route of switzerlandCh10EditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Switzerland CH10 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: switzerlandCh10Lastmod });
 }
 
 for (const route of genevaEditedRoutes) {

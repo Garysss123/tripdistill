@@ -7955,12 +7955,15 @@
     "url": "/switzerland/",
     "parent": "Europe",
     "type": "Country",
-    "summary": "Plan Switzerland through sixteen complete regional hubs and forty-eight focused guides built around rail, lakes, valleys and mountain access.",
+    "summary": "Plan Switzerland by overnight base: compare rail-connected cities, lake corridors, mountain access and weather-ready returns.",
     "keywords": [
       "Switzerland",
       "Swiss travel",
       "Europe",
-      "Swiss rail"
+      "Swiss rail",
+      "Swiss mountain railways",
+      "Basel",
+      "Ticino"
     ]
   },
   {
@@ -8121,7 +8124,7 @@
     "url": "/switzerland/basel-rhine/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Basel’s historic core, Rhine banks and unusually dense museum landscape sit close together, but the city still needs selection. Use the river as the organizing line, choose one large collection, and treat cross-border geography as context rather than a checklist of three countries.",
+    "summary": "Basel works as a compact rail-city base when each day follows one Rhine bank or one museum corridor. The old town and cathedral rise above the river; Kleinbasel gives the opposite-bank view, while the art museums and Fondation Beyeler are distinct visits with different transit approaches. Build the day around Basel SBB or a named tram stop, and avoid crossing back and forth just to tick off districts.",
     "keywords": [
       "Basel & the Rhine",
       "Northwest Switzerland",
@@ -8133,7 +8136,7 @@
     "url": "/switzerland/basel-rhine/old-town-rhine/",
     "parent": "Basel & the Rhine",
     "type": "Local guide",
-    "summary": "Use Münsterplatz and the Rhine crossings to connect Grossbasel and Kleinbasel, with one deliberate riverbank stretch instead of circling the historic center twice.",
+    "summary": "Walk Basel’s cathedral hill, Münsterplatz and one Rhine crossing as a single old-town loop, then finish on the Kleinbasel bank rather than retracing every lane.",
     "keywords": [
       "Basel Old Town & Rhine Banks",
       "Basel & the Rhine",
@@ -8146,7 +8149,7 @@
     "url": "/switzerland/basel-rhine/art-museums/",
     "parent": "Basel & the Rhine",
     "type": "Local guide",
-    "summary": "Compare Kunstmuseum Basel, Fondation Beyeler and other collections by subject and location, then commit to one major museum plus one smaller contrast rather than collecting ticket stubs.",
+    "summary": "Build a Basel art day around one named collection, using trams between Basel SBB, Kunstmuseum Basel and the Fondation Beyeler instead of trying to absorb both at speed.",
     "keywords": [
       "Basel Art Museums & Fondation Beyeler",
       "Basel & the Rhine",
@@ -8159,7 +8162,7 @@
     "url": "/switzerland/basel-rhine/kleinbasel-border-rhine/",
     "parent": "Basel & the Rhine",
     "type": "Local guide",
-    "summary": "Use Kleinbasel and the northern Rhine to understand Basel as a border city, without turning the day into a meaningless dash across three national frontiers.",
+    "summary": "Use Mittlere Brücke and the Kleinbasel riverbank to read Basel from the opposite shore, then connect the walk to Badischer Bahnhof only if the onward train makes that useful.",
     "keywords": [
       "Kleinbasel, Dreiländereck & Border Context",
       "Basel & the Rhine",
@@ -8478,7 +8481,7 @@
     "url": "/switzerland/st-moritz-engadin/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "St Moritz is the transport and hotel anchor, but the Upper Engadin’s identity stretches through lakes, Pontresina and the Bernina corridor. Distances are modest by rail yet elevation and winter conditions remain real. Choose one landscape system per day instead of repeatedly returning to St Moritz between every stop.",
+    "summary": "St Moritz is the hotel and network anchor, not the whole Upper Engadin. RhB trains and regional buses connect the lake valley, Pontresina and the Bernina line, while each mountain railway has its own operating season and exposure. Keep the day on one corridor and decide the return to the overnight base before leaving the valley floor.",
     "keywords": [
       "St Moritz & Upper Engadin",
       "Graubünden",
@@ -8490,7 +8493,7 @@
     "url": "/switzerland/st-moritz-engadin/st-moritz-lakes/",
     "parent": "St Moritz & Upper Engadin",
     "type": "Local guide",
-    "summary": "Use St Moritz as the base but let the lake chain define the day, moving by rail/bus between viewpoints and villages rather than walking every shoreline.",
+    "summary": "Link one or two Upper Engadin lakes with a named RhB or bus transfer, keeping the shoreline walk short enough to protect the return to St Moritz.",
     "keywords": [
       "St Moritz & Engadin Lakes",
       "St Moritz & Upper Engadin",
@@ -8503,7 +8506,7 @@
     "url": "/switzerland/st-moritz-engadin/bernina-pontresina/",
     "parent": "St Moritz & Upper Engadin",
     "type": "Local guide",
-    "summary": "Ride the Bernina corridor as a real rail journey through changing elevation, choosing one turnaround or stop rather than treating every station as a photo target.",
+    "summary": "Ride one purposeful section of the Bernina line from Pontresina, selecting the turnaround before boarding and treating any panoramic reservation as a separate choice.",
     "keywords": [
       "Pontresina & Bernina Railway",
       "St Moritz & Upper Engadin",
@@ -8516,7 +8519,7 @@
     "url": "/switzerland/st-moritz-engadin/muottas-diavolezza/",
     "parent": "St Moritz & Upper Engadin",
     "type": "Local guide",
-    "summary": "Choose one Engadin high viewpoint by scale and effort: Muottas Muragl for valley geometry or Diavolezza for glacier-facing high terrain, then keep Pontresina as the base layer.",
+    "summary": "Choose Muottas Muragl for the lake-valley form or Diavolezza for higher glacier terrain; visit one system only and make Pontresina the lower fallback.",
     "keywords": [
       "Muottas Muragl, Pontresina & Diavolezza",
       "St Moritz & Upper Engadin",
@@ -8529,7 +8532,7 @@
     "url": "/switzerland/graubunden-corridors/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Chur is a compact historic city and the practical gate to multiple Rhaetian Railway corridors. Davos, Arosa and the Rhine Gorge are not neighboring attractions in walking terms; each is a distinct rail or road day. Treat the canton as a set of transport corridors with different weather and seasonal functions.",
+    "summary": "Graubünden is a network of separate valleys, not a cluster of neighboring sights. Chur is a useful city and rail base; Arosa, Davos and the Rhine Gorge each need their own transport decision, weather check and return margin. Choose one branch per day and use Chur’s old town as the resilient plan when high terrain or trails do not fit.",
     "keywords": [
       "Chur, Davos & Graubünden",
       "Graubünden",
@@ -8541,7 +8544,7 @@
     "url": "/switzerland/graubunden-corridors/chur-rhine-gorge/",
     "parent": "Chur, Davos & Graubünden",
     "type": "Local guide",
-    "summary": "Use Chur’s old town as a compact urban anchor, then choose a specific Rhine Gorge rail or walking segment rather than treating the entire gorge as one roadside viewpoint.",
+    "summary": "Join Chur’s old town to one verified Rhine Gorge rail or walking section, choosing the exit station before entering any path.",
     "keywords": [
       "Chur Old Town & Rhine Gorge",
       "Chur, Davos & Graubünden",
@@ -8554,7 +8557,7 @@
     "url": "/switzerland/graubunden-corridors/davos-parsenn/",
     "parent": "Chur, Davos & Graubünden",
     "type": "Local guide",
-    "summary": "Treat Davos as a high-valley base whose useful plan changes by season, then choose Parsenn or a lower lake/valley day according to lift status and weather.",
+    "summary": "Use Davos Platz or Davos Dorf as the correct base, then commit to Parsenn only when its lift, weather and route conditions fit the day.",
     "keywords": [
       "Davos & Parsenn",
       "Chur, Davos & Graubünden",
@@ -8567,7 +8570,7 @@
     "url": "/switzerland/graubunden-corridors/arosa-line/",
     "parent": "Chur, Davos & Graubünden",
     "type": "Local guide",
-    "summary": "Make the Chur–Arosa railway part of the excursion, then keep the resort day focused on the lake, village or one open mountain area rather than chasing multiple lift systems.",
+    "summary": "Make the Chur–Arosa RhB ride the backbone of the day, then choose one village, lake or currently operating mountain area in Arosa.",
     "keywords": [
       "Arosa & the Mountain Railway",
       "Chur, Davos & Graubünden",
@@ -8580,7 +8583,7 @@
     "url": "/switzerland/lugano-southern-ticino/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Lugano is compact around the lake but steep once the hills begin. Monte San Salvatore, Monte Brè and Monte Generoso are separate viewpoint systems with different access. The city works best when one elevation choice supports a lakeside day rather than becoming a checklist of summits.",
+    "summary": "Lugano’s compact lakefront sits below steep viewpoints, while Morcote and Mendrisiotto add separate boat, bus and rail choices. A mountain railway does not remove the climb or exposure after arrival. Use Lugano station or a named lake landing as the day’s hinge, and protect time for the return rather than attempting every viewpoint.",
     "keywords": [
       "Lugano & Southern Ticino",
       "Ticino",
@@ -8592,7 +8595,7 @@
     "url": "/switzerland/lugano-southern-ticino/lugano-lakefront/",
     "parent": "Lugano & Southern Ticino",
     "type": "Local guide",
-    "summary": "Connect Lugano station, historic center, Parco Ciani and lakefront in one downhill city sequence, then use transit for the return climb instead of retracing it.",
+    "summary": "Read Lugano from the station slope to the lakefront and Parco Ciani, using the funicular or bus for the major vertical change.",
     "keywords": [
       "Lugano Center & Lakefront",
       "Lugano & Southern Ticino",
@@ -8605,7 +8608,7 @@
     "url": "/switzerland/lugano-southern-ticino/san-salvatore-morcote/",
     "parent": "Lugano & Southern Ticino",
     "type": "Local guide",
-    "summary": "Use Monte San Salvatore for the overhead lake view, then choose Morcote as a separate village chapter reached by public transport rather than an improvised long ridge traverse.",
+    "summary": "Choose either Monte San Salvatore and Morcote as a long linked outing only after verifying the boat or bus transfer, otherwise keep them on separate days.",
     "keywords": [
       "Monte San Salvatore & Morcote",
       "Lugano & Southern Ticino",
@@ -8618,7 +8621,7 @@
     "url": "/switzerland/lugano-southern-ticino/mendrisiotto-generoso/",
     "parent": "Lugano & Southern Ticino",
     "type": "Local guide",
-    "summary": "Leave Lugano by regional rail for Mendrisiotto and Monte Generoso only when the mountain railway and weather align, keeping the district as a distinct southern-Ticino day.",
+    "summary": "Treat Monte Generoso as a dated rack-railway excursion from Capolago and keep Mendrisio or a lower Ticino town as the weather fallback.",
     "keywords": [
       "Mendrisiotto & Monte Generoso",
       "Lugano & Southern Ticino",
@@ -8631,7 +8634,7 @@
     "url": "/switzerland/locarno-ascona-valleys/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Locarno and Ascona form a relaxed lake base, while Verzasca, Maggia and Centovalli branch away with different bus and rail logic. The valleys are not interchangeable Instagram stops: water level, heat, trail condition and transport frequency should decide which one fits.",
+    "summary": "Locarno and Ascona share a lakeside setting but not every transfer. The Centovalli railway and Maggia or Verzasca valleys each require a route choice, time budget and return check. Keep the lakefront as the flexible base and avoid treating a valley bus, rail line and boat as one guaranteed through-service.",
     "keywords": [
       "Locarno, Ascona & Ticino Valleys",
       "Lake Maggiore",
@@ -8643,7 +8646,7 @@
     "url": "/switzerland/locarno-ascona-valleys/locarno-ascona/",
     "parent": "Locarno, Ascona & Ticino Valleys",
     "type": "Local guide",
-    "summary": "Treat Locarno and Ascona as complementary lake towns linked by bus or boat, giving each a different role instead of walking the suburban gap simply because they share the basin.",
+    "summary": "Connect Locarno’s station-side old town to Ascona’s lakefront by one verified bus or boat transfer, then walk the village waterfront rather than looping the whole lake.",
     "keywords": [
       "Locarno & Ascona Lakefront",
       "Locarno, Ascona & Ticino Valleys",
@@ -8656,7 +8659,7 @@
     "url": "/switzerland/locarno-ascona-valleys/verzasca-valley/",
     "parent": "Locarno, Ascona & Ticino Valleys",
     "type": "Local guide",
-    "summary": "Use the valley bus as the spine, choose one village and one river section, and treat water conditions as a primary safety decision rather than a backdrop to the stone bridge.",
+    "summary": "Use a named local bus to reach one Verzasca village or signed walking section, and make the bus return—not a remote trail crossing—the fixed point of the day.",
     "keywords": [
       "Verzasca Valley",
       "Locarno, Ascona & Ticino Valleys",
@@ -8669,7 +8672,7 @@
     "url": "/switzerland/locarno-ascona-valleys/maggia-centovalli/",
     "parent": "Locarno, Ascona & Ticino Valleys",
     "type": "Local guide",
-    "summary": "Choose between a bus-based Maggia valley day and the rail-based Centovalli corridor; both reveal Ticino beyond the lake, but they solve different travel days.",
+    "summary": "Choose the Centovalli railway for a rail-led landscape day or a signed lower Maggia walk, rather than treating both valleys as quick Locarno add-ons.",
     "keywords": [
       "Maggia Valley & Centovalli",
       "Locarno, Ascona & Ticino Valleys",
@@ -8682,7 +8685,7 @@
     "url": "/switzerland/schaffhausen-rhine-falls/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Rhine Falls is easy to reach but confusing when treated as a single pin. The north and south banks offer different access and attraction patterns, while Schaffhausen and Stein am Rhein add urban depth. Choose the fall bank before arrival and keep the city visit from becoming only a lunch stop.",
+    "summary": "Schaffhausen is more than a waterfall stop: the old town and Munot form a compact urban loop, while Rhine Falls and Stein am Rhein sit on different stretches of the rail-and-river corridor. Plan one anchor at a time, name the station or landing, and keep the city visit as a weather-ready alternative.",
     "keywords": [
       "Schaffhausen & Rhine Falls",
       "Northeast Switzerland",
@@ -8694,7 +8697,7 @@
     "url": "/switzerland/schaffhausen-rhine-falls/rhine-falls/",
     "parent": "Schaffhausen & Rhine Falls",
     "type": "Local guide",
-    "summary": "Plan Rhine Falls by bank, rail stop and desired viewpoint, then cross or transfer only when the second side adds something meaningful.",
+    "summary": "Choose one Rhine Falls viewing side and use the correct rail station or boat landing; leave enough margin for the return to Schaffhausen.",
     "keywords": [
       "Rhine Falls: Choose the Right Bank",
       "Schaffhausen & Rhine Falls",
@@ -8707,7 +8710,7 @@
     "url": "/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/",
     "parent": "Schaffhausen & Rhine Falls",
     "type": "Local guide",
-    "summary": "Give Schaffhausen its own compact loop through painted facades, arcades and Munot, rather than using the city only as a rail interchange for Rhine Falls.",
+    "summary": "Walk Schaffhausen’s painted old town and Munot as one compact climb from the station, then leave the waterfall for a separate half-day.",
     "keywords": [
       "Schaffhausen Old Town & Munot",
       "Schaffhausen & Rhine Falls",
@@ -8720,7 +8723,7 @@
     "url": "/switzerland/schaffhausen-rhine-falls/stein-am-rhein/",
     "parent": "Schaffhausen & Rhine Falls",
     "type": "Local guide",
-    "summary": "Use regional rail to reach Stein am Rhein for its painted old town and river edge, then return without turning the day into a chain of tiny border towns.",
+    "summary": "Use rail to reach Stein am Rhein’s station and walk the painted center, river edge and abbey area as one slow town visit.",
     "keywords": [
       "Stein am Rhein & Upper Rhine",
       "Schaffhausen & Rhine Falls",
@@ -8733,7 +8736,7 @@
     "url": "/switzerland/st-gallen-appenzell/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "St Gallen’s Abbey District, Appenzell’s compact village and the Alpstein mountains form three different travel modes within a short regional network. The key is not distance but elevation: culture and village days remain robust when the high trails or cable car are in cloud.",
+    "summary": "St Gallen’s Abbey District is a compact cultural center, while Appenzell village and the Alpstein are separate regional trips with different exposure. Use the city as the rail-connected base, choose one mountain access chain and check the descent before starting. Do not make Seealpsee or Ebenalp an automatic extension of the abbey visit.",
     "keywords": [
       "St Gallen & Appenzell",
       "Eastern Switzerland",
@@ -8745,7 +8748,7 @@
     "url": "/switzerland/st-gallen-appenzell/st-gallen-abbey/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Build St Gallen around the Abbey District and its library context, then use the old town’s oriel windows and compact streets as a supporting urban chapter.",
+    "summary": "Connect St Gallen station, the Abbey District and the old town on foot, reserving the Abbey Library only after confirming visitor access and hours.",
     "keywords": [
       "St Gallen Abbey District & Old Town",
       "St Gallen & Appenzell",
@@ -8758,7 +8761,7 @@
     "url": "/switzerland/st-gallen-appenzell/appenzell-village/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Use Appenzell village as a compact cultural center, then add one signed countryside walk instead of treating private farms and painted houses as an open-air theme park.",
+    "summary": "Use Appenzeller Bahnen to reach Appenzell, walk the village center and choose one signed countryside loop that fits the actual return train.",
     "keywords": [
       "Appenzell Village & Rolling Country",
       "St Gallen & Appenzell",
@@ -8771,7 +8774,7 @@
     "url": "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Treat Ebenalp and Seealpsee as mountain terrain with a cable-car access point, choosing viewpoint, cave path or lake hike only when trails and weather are suitable.",
+    "summary": "Treat Ebenalp and Seealpsee as a mountain outing with a defined descent, checking the cable car, trail status and weather before leaving Appenzell.",
     "keywords": [
       "Ebenalp & Seealpsee",
       "St Gallen & Appenzell",
