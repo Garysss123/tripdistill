@@ -362,6 +362,20 @@ export const postIntegrationHawaiiRoutes = Object.freeze([
   '/usa/hawaii/hawaii-island/'
 ]);
 
+// Source-only New Orleans refresh after the Hawaii checkpoint; these paths
+// extend current-tree regressions without changing the integration inventory.
+export const postHawaiiNewOrleansRoutes = Object.freeze([
+  '/usa/new-orleans/',
+  '/usa/new-orleans/french-quarter/',
+  '/usa/new-orleans/garden-district/',
+  '/usa/new-orleans/river-wetlands/'
+]);
+
+export const postIntegrationSourceRefreshRoutes = Object.freeze([
+  ...postIntegrationHawaiiRoutes,
+  ...postHawaiiNewOrleansRoutes
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
@@ -370,10 +384,14 @@ export const localizedPostIntegrationHawaiiSitemapRoutes = (prefixes) => new Set
   prefixes.flatMap((prefix) => postIntegrationHawaiiRoutes.map((route) => `${prefix}${route}`))
 );
 
+export const localizedPostIntegrationSourceRefreshSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationSourceRefreshRoutes.map((route) => `${prefix}${route}`))
+);
+
 export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
   const routes = localizedIntegrationSitemapRoutes(prefixes);
   for (const prefix of prefixes) {
-    for (const route of postIntegrationHawaiiRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationSourceRefreshRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

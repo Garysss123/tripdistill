@@ -12947,10 +12947,13 @@
     "url": "/usa/new-orleans/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Choose a New Orleans base and distinct Quarter, Garden District and river or wetland days, with airport connections, live-music planning and current closures.",
+    "summary": "Plan a New Orleans stay around a Quarter museum and music night, a St. Charles and Magazine Street day, and a separate ferry or closure-aware Barataria outing.",
     "keywords": [
       "New Orleans",
-      "South"
+      "MSY Route 202",
+      "Jefferson Transit E1",
+      "airport fares",
+      "Neighborhood bases"
     ]
   },
   {
@@ -12958,10 +12961,14 @@
     "url": "/usa/new-orleans/french-quarter/",
     "parent": "New Orleans",
     "type": "Local guide",
-    "summary": "Walk a selected French Quarter route through Jackson Square, Royal Street and museum interpretation, then choose a music program rather than a nightlife checklist.",
+    "summary": "Follow Jackson Square, Royal Street and the Historic New Orleans Collection at 520 Royal; check its hours and ticket entry, then plan one current music program.",
     "keywords": [
       "French Quarter & Live Music",
-      "New Orleans"
+      "New Orleans",
+      "Jackson Square",
+      "520 Royal Street",
+      "Preservation Hall",
+      "Quarter museum hours"
     ]
   },
   {
@@ -12969,10 +12976,13 @@
     "url": "/usa/new-orleans/garden-district/",
     "parent": "New Orleans",
     "type": "Local guide",
-    "summary": "Plan a St. Charles streetcar and Garden District visit with public-street architecture, a Magazine Street meal and the current Lafayette Cemetery No. 1 closure.",
+    "summary": "Ride the St. Charles streetcar to Washington Avenue, walk public Garden District streets, and choose a Magazine Street finish or a reserved Lafayette No. 1 tour.",
     "keywords": [
       "Garden District & Streetcars",
-      "New Orleans"
+      "New Orleans",
+      "St. Charles Route 12",
+      "Magazine Route 11",
+      "Lafayette Cemetery PRC tour"
     ]
   },
   {
@@ -12980,10 +12990,14 @@
     "url": "/usa/new-orleans/river-wetlands/",
     "parent": "New Orleans",
     "type": "Local guide",
-    "summary": "Choose an Algiers ferry crossing or a separate wetland outing, with the 2026 Barataria closure, relocated Wetland Trace access and a confirmed return.",
+    "summary": "Compare an Algiers Point ferry crossing with a separate Barataria day: the visitor center and most trails remain closed, with services relocated to Wetland Trace.",
     "keywords": [
       "Mississippi River & Wetlands",
-      "New Orleans"
+      "New Orleans",
+      "Algiers Point ferry",
+      "Wetland Trace",
+      "Barataria closure",
+      "Twin Canals"
     ]
   },
   {

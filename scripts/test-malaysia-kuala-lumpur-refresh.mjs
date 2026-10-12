@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -85,7 +85,7 @@ assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'n
 const localizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 262, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 262 existing English pages');
-assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the historical integration and four later Hawaii routes changed lastmod');
+assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the historical integration and the later Hawaii and New Orleans source-refresh routes changed lastmod');
 for (const route of locales.flatMap(({ prefix }) => routes.map((path) => prefix + path))) assert.equal(currentSitemap.get(route), reviewDate, `${route}: sitemap lastmod`);
 
 const baseSearch = readJsonFromGit(`${integrationSprintBaseline}:data/search-index.json`);
@@ -96,7 +96,7 @@ const currentSearchByUrl = byUrl(currentSearch);
 assert.equal(currentSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearch = [...currentSearchByUrl].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Hawaii search records changed');
+assert.deepEqual(new Set(changedSearch), new Set([...integrationSearchRoutes, ...postIntegrationSourceRefreshRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Hawaii search records changed');
 
 const localizedPaths = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const wordIncrements = [];

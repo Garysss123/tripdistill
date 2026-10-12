@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { malaysiaDepthGuides, imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -103,7 +103,7 @@ assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'n
 const selectedLocalizedPaths = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => new URL(url).pathname);
 assert.equal(integrationRoutes.length, 262, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 262 existing English pages');
-assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the historical integration and four later Hawaii routes changed lastmod');
+assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the historical integration and the later Hawaii and New Orleans source-refresh routes changed lastmod');
 for (const route of selectedLocalizedPaths) assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), reviewDate, `${route}: sitemap date`);
 
 const sourceSearch = readJson(path.join(outputRoot, 'data/search-index.json'));
@@ -114,7 +114,7 @@ const baseSourceByUrl = byUrl(baseSourceSearch);
 assert.equal(sourceSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(sourceByUrl.keys()), new Set(baseSourceByUrl.keys()), 'English search URL inventory is unchanged');
 const sourceChangedSearch = [...sourceByUrl].filter(([url, row]) => JSON.stringify(row) !== JSON.stringify(baseSourceByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(sourceChangedSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Hawaii search records changed');
+assert.deepEqual(new Set(sourceChangedSearch), new Set([...integrationSearchRoutes, ...postIntegrationSourceRefreshRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Hawaii search records changed');
 
 const wordDeltas = [];
 const imageRefs = new Set();

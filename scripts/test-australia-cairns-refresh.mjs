@@ -6,14 +6,13 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
-import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { postHawaiiNewOrleansRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
-const integrationBase = 'ca2c1517ae3d962b5a4370c6c73c056f4ba14939';
+const taskBase = 'c7df46be0dc3f40649ff44d672861e971d0c082b';
 const priorCairnsBodyCommit = '43551cf59c9f9be20639130970e933c54f10b568';
 const cluster = australiaClusters.find(({ slug }) => slug === 'cairns-wet-tropics');
 assert(cluster, 'Cairns cluster must exist.');
@@ -22,12 +21,6 @@ const routes = [
   '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
-];
-const laterCanadaCa15Routes = [
-  '/canada/prince-edward-island/',
-  '/canada/prince-edward-island/charlottetown/',
-  '/canada/prince-edward-island/cavendish-north-shore/',
-  '/canada/prince-edward-island/coastal-drives/'
 ];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
@@ -136,9 +129,9 @@ function sitemapEntries(xml) {
   return new Map(rows.map(({ loc, lastmod }) => [new URL(loc).pathname, lastmod]));
 }
 
-const expectedHtml = [...routes, ...switzerlandCh15AffectedRoutes, ...laterCanadaCa15Routes, ...postIntegrationHawaiiRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
-const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four Cairns, exact CH15 dependents, four later CA15 routes, and four post-integration Hawaii routes may change.');
+const expectedHtml = postHawaiiNewOrleansRoutes.map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const changedHtml = git(['diff', '--name-only', taskBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
+assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four authorized New Orleans English pages changed.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -208,12 +201,12 @@ for (const locale of ['zh-Hant', 'ja', 'ko', 'th']) {
 }
 
 const englishSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
-const baseSearch = JSON.parse(git(['show', `${integrationBase}:data/search-index.json`]));
+const baseSearch = JSON.parse(git(['show', `${taskBase}:data/search-index.json`]));
 const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item]));
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...switzerlandCh15Routes, ...laterCanadaCa15Routes, ...postIntegrationHawaiiRoutes].sort(), 'Only the Cairns, exact CH15, CA15, and Hawaii search records may change since the Cairns integration checkpoint.');
+assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes].sort(), 'From the exact source-task base, only the four New Orleans search records changed.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -229,13 +222,14 @@ for (const [locale, prefix] of locales.slice(1)) {
   }
 }
 
-const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
+const baseSitemap = sitemapEntries(git(['show', `${taskBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...switzerlandCh15Routes, ...laterCanadaCa15Routes, ...postIntegrationHawaiiRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...postHawaiiNewOrleansRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four Cairns, four exact CH15, four exact CA15, and four post-integration Hawaii routes across five editions may receive new lastmod dates since the Cairns integration checkpoint.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the four New Orleans routes across five editions receive new lastmod dates.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap date.');
+for (const route of routes) for (const [, prefix] of locales) assert.equal(currentSitemap.get(prefix + route), reviewIsoDate, prefix + route + ': Cairns date remains current.');
 
 for (const file of photoPaths) assert.deepEqual(fs.readFileSync(path.join(root, file)), git(['show', `${base}:${file}`], true), file + ': existing photo bytes must be unchanged.');
 const imageManifest = fs.readFileSync(path.join(root, 'data/australia-image-manifest.mjs'), 'utf8');
@@ -250,4 +244,4 @@ for (const [route, requiredText] of [
   [routes[3], 'Surf Life Saving Australia — Beachsafe beach information']
 ]) assert(fs.readFileSync(pageFile(route), 'utf8').includes(requiredText), `${route}: missing targeted official source ${requiredText}.`);
 
-console.log(`Cairns Australia regression passed: four edited routes (+${deltas.map(({ words }) => words).join(', ')} words), two repeat improvements and two new substantive routes, five-language dates/FAQ/canonical parity, exact search and sitemap scope, 125 page keys + four search keys per locale, original Luna provenance and unverified continuation runtime, and unchanged photo bytes.`);
+console.log(`Cairns Australia regression passed: four edited routes (+${deltas.map(({ words }) => words).join(', ')} words), two repeat improvements and two new substantive routes, five-language dates/FAQ/canonical parity, exact current-branch New Orleans search/date scope, current Cairns date parity, 125 page keys + four search keys per locale, original Luna provenance and unverified continuation runtime, and unchanged photo bytes.`);

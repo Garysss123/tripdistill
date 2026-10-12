@@ -1,0 +1,28 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "MSY Route 202": "MSY 202번",
+    "Jefferson Transit E1": "Jefferson Transit E1",
+    "airport fares": "공항 교통 요금",
+    "Neighborhood bases": "지역별 숙소",
+    "Jackson Square": "잭슨 스퀘어",
+    "520 Royal Street": "520 Royal Street",
+    "Preservation Hall": "Preservation Hall",
+    "Quarter museum hours": "프렌치 쿼터 박물관 운영시간",
+    "St. Charles Route 12": "세인트찰스 노선 12번",
+    "Magazine Route 11": "매거진 노선 11번",
+    "Lafayette Cemetery PRC tour": "라파예트 묘지 PRC 투어",
+    "Wetland Trace": "Wetland Trace",
+    "Barataria closure": "바라타리아 폐쇄 정보",
+    "Twin Canals": "Twin Canals"
+  },
+  "reviewProvenance": {
+    "writer": "Current Codex runtime; exact model variant not exposed",
+    "reviewer": "Same-runtime self-review; not independent",
+    "independentSecondModel": false
+  }
+}

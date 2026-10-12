@@ -6,7 +6,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { imageCredits, malaysiaDepthClusters, malaysiaDepthGuides, retiredMalaysiaImageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '022870fcc645493460430fe6399027ea4a9b391a';
@@ -137,7 +137,7 @@ assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()),
 const expectedLocalizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 262, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 262 existing English pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the historical integration routes and four later Hawaii routes × five locales receive a new lastmod');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the historical integration routes and four Hawaii and four New Orleans source-refresh routes × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(gitBytes(`${integrationScopeBaseline}:data/search-index.json`).toString('utf8'));
@@ -146,7 +146,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedEnglishSearch = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedEnglishSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Hawaii English search records changed');
+assert.deepEqual(new Set(changedEnglishSearch), new Set([...integrationSearchRoutes, ...postIntegrationSourceRefreshRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia plus Hawaii and New Orleans source-refresh search records changed');
 
 const localSearchByPrefix = new Map();
 for (const { prefix } of locales.filter(({ prefix }) => prefix)) {

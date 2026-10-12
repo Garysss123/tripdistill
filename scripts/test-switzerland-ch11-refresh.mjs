@@ -8,7 +8,7 @@ import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../d
 import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
 import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from '../data/switzerland-ch11-refresh.mjs';
 import { localizeHtml } from './i18n-lib.mjs';
-import { postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -99,7 +99,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...switzerlandCh15AffectedRoutes, ...postIntegrationHawaiiRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...switzerlandCh15AffectedRoutes, ...postIntegrationSourceRefreshRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

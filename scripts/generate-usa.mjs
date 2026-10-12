@@ -65,6 +65,9 @@ const regionalEditorials={'new-england':{render:renderNewEnglandEditorial,descri
 const hawaiiRefreshRoutes = new Set([
  '/usa/hawaii/','/usa/hawaii/oahu/','/usa/hawaii/maui/','/usa/hawaii/hawaii-island/'
 ]);
+const newOrleansRefreshRoutes = new Set([
+ '/usa/new-orleans/','/usa/new-orleans/french-quarter/','/usa/new-orleans/garden-district/','/usa/new-orleans/river-wetlands/'
+]);
 const sprintUsRoutes = new Set([
  '/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/',
  '/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/',
@@ -80,7 +83,7 @@ function regionalEditorialPage(h,g){
  const config=regionalEditorials[h.slug];
  if(!config)throw Error('Unregistered editorial region '+h.slug);
  const i=g?h.guides.indexOf(g)+1:0,route=g?.url||`/usa/${h.slug}/`;
- const modifiedDate=hawaiiRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
+ const modifiedDate=hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
  return shell(route,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g,modifiedDate)
   .replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);
 }
@@ -103,5 +106,7 @@ for(const [i,route] of ['/usa/boston/',...usaHubs.find(h=>h.slug==='boston').gui
 for(const [i,route] of ['/usa/philadelphia/',...usaHubs.find(h=>h.slug==='philadelphia').guides.map(g=>g.url)].entries()){search.find(r=>r.url===route).summary=philadelphiaDescriptions[i];}
 for(const [i,route] of ['/usa/washington-dc/',...usaHubs.find(h=>h.slug==='washington-dc').guides.map(g=>g.url)].entries()){search.find(r=>r.url===route).summary=dcDescriptions[i];}
 for(const [slug,config]of Object.entries(regionalEditorials))for(const [i,route]of [`/usa/${slug}/`,...usaHubs.find(h=>h.slug===slug).guides.map(g=>g.url)].entries())search.find(r=>r.url===route).summary=config.descriptions[i];
+const newOrleansSearchTerms={'/usa/new-orleans/':['MSY Route 202','Jefferson Transit E1','airport fares','Neighborhood bases'],'/usa/new-orleans/french-quarter/':['Jackson Square','520 Royal Street','Preservation Hall','Quarter museum hours'],'/usa/new-orleans/garden-district/':['St. Charles Route 12','Magazine Route 11','Lafayette Cemetery PRC tour'],'/usa/new-orleans/river-wetlands/':['Algiers Point ferry','Wetland Trace','Barataria closure','Twin Canals']};
+for(const [route,terms] of Object.entries(newOrleansSearchTerms)){const record=search.find(r=>r.url===route);if(!record)throw Error('Missing New Orleans search route '+route);record.keywords=[...new Set([record.title,'New Orleans',...terms])];}
 fs.writeFileSync(searchFile,JSON.stringify(search,null,2)+'\n');
 console.log('Generated 97 USA routes and integrated country, neighborhood, search and navigation links.');
