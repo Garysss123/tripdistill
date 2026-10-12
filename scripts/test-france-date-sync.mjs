@@ -5,7 +5,8 @@ import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const errors = [];
 const check = (condition, message) => { if (!condition) errors.push(message); };
-const locales = ['', '/zh', '/ja', '/ko', '/th'];
+const englishOnly = process.argv.includes('--english-only');
+const locales = englishOnly ? [''] : ['', '/zh', '/ja', '/ko', '/th'];
 const routes = ['/france/', ...franceClusters.map((cluster) => `/france/${cluster.slug}/`), ...franceGuides.map((guide) => guide.url)];
 const lyonRoutes = [
   '/france/lyon-rhone/',
@@ -38,6 +39,12 @@ const dordogneRoutes = [
   '/france/dordogne-perigord/dordogne-castles-villages/'
 ];
 const selectedRoutes = [...lyonRoutes, ...alsaceRoutes, ...burgundyRoutes, ...bordeauxRoutes, ...dordogneRoutes];
+const marseilleRoutes = [
+  '/france/marseille-calanques/',
+  '/france/marseille-calanques/old-port-panier-mucem/',
+  '/france/marseille-calanques/calanques-access-choice/',
+  '/france/marseille-calanques/cassis-la-ciotat/'
+];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const entries = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, route, lastmod]) => [route, lastmod]));
@@ -45,9 +52,14 @@ const reviewedRoutes = [
   ...franceClusters.filter((cluster) => cluster.reviewedOn?.iso === '2026-10-11').map((cluster) => `/france/${cluster.slug}/`),
   ...franceGuides.filter((guide) => guide.reviewedOn?.iso === '2026-10-11').map((guide) => guide.url)
 ];
+const marseilleReviewedRoutes = [
+  ...franceClusters.filter((cluster) => cluster.reviewedOn?.iso === '2026-10-12').map((cluster) => `/france/${cluster.slug}/`),
+  ...franceGuides.filter((guide) => guide.reviewedOn?.iso === '2026-10-12').map((guide) => guide.url)
+];
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
 check(reviewedRoutes.length === 20 && selectedRoutes.length === 20 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde and Dordogne hubs plus their three children to be the newly review-dated France routes; found ${reviewedRoutes.join(', ')}`);
+check(marseilleReviewedRoutes.length === 4 && marseilleRoutes.length === 4 && marseilleRoutes.every((route) => marseilleReviewedRoutes.includes(route)), `Expected the Marseille/Calanques hub and all three children to be the 2026-10-12 review-dated routes; found ${marseilleReviewedRoutes.join(', ')}`);
 
 for (const route of routes) {
   const englishLastmod = entries.get(route);
@@ -79,10 +91,31 @@ for (const route of selectedRoutes) {
   }
 }
 
+for (const route of marseilleRoutes) {
+  for (const prefix of locales) {
+    const localizedRoute = `${prefix}${route}`;
+    const htmlPath = path.join(root, localizedRoute.slice(1), 'index.html');
+    if (!fs.existsSync(htmlPath)) {
+      errors.push(`${localizedRoute}: built page missing; run npm run build after all four locale batches are reviewed`);
+      continue;
+    }
+    const html = fs.readFileSync(htmlPath, 'utf8');
+    const schemaRaw = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+    let schema;
+    try { schema = JSON.parse(schemaRaw); } catch { errors.push(`${localizedRoute}: JSON-LD missing or invalid`); continue; }
+    const page = (schema['@graph'] || []).find((item) => item['@type'] === 'Article');
+    check(page?.datePublished === '2026-09-19', `${localizedRoute}: unexpected original publication date`);
+    check(page?.dateModified === '2026-10-12', `${localizedRoute}: dateModified should be 2026-10-12, found ${page?.dateModified || '(missing)'}`);
+    check(entries.get(localizedRoute) === '2026-10-12', `${localizedRoute}: sitemap lastmod should be 2026-10-12`);
+  }
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   console.error(`France date synchronization: ${errors.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`France date synchronization passed: ${routes.length} English routes and ${routes.length * locales.length} sitemap URLs; all localized dates match, and the twenty Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne routes use 2026-10-11 in all five article schemas and sitemap entries.`);
+  console.log(englishOnly
+    ? `France English date synchronization passed: ${routes.length} English routes; the twenty Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne routes use 2026-10-11, and the four Marseille/Calanques routes use 2026-10-12 with their 2026-09-19 publication date preserved.`
+    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * 5} sitemap URLs; all localized dates match, the twenty Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne routes use 2026-10-11, and the four Marseille/Calanques routes use 2026-10-12 in all five article schemas and sitemap entries.`);
 }

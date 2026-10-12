@@ -9664,7 +9664,7 @@
     "url": "/france/marseille-calanques/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Marseille’s port city, the Calanques National Park and Cassis–La Ciotat coast meet geographically but operate differently. Urban transit, summer reservations, fire closures, boat conditions and trail difficulty must be checked before choosing the route. Decide between city, land and sea before breakfast; switching access modes late can strand the return at the wrong port or trailhead.",
+    "summary": "Marseille, the Calanques and the ports of Cassis and La Ciotat share a coastline, not one transport system. Start with the day’s gate: an Old Port museum loop, a signed park trail, a licensed boat or one smaller port town. Then check the return from that same gate. Fire decisions, Sugiton reservations, steep trail exits, station-to-port transfers and sea cancellations can each change the usable day.",
     "keywords": [
       "Marseille, Calanques & Cassis",
       "Bouches-du-Rhône, Provence",
@@ -9676,7 +9676,7 @@
     "url": "/france/marseille-calanques/old-port-panier-mucem/",
     "parent": "Marseille, Calanques & Cassis",
     "type": "Local guide",
-    "summary": "Start at the Vieux-Port, climb once through Le Panier, cross Fort Saint-Jean into Mucem, then return along the water without repeating the same lanes.",
+    "summary": "Start at M1 Vieux-Port, walk Le Panier and La Major once, cross to Fort Saint-Jean and Mucem, then use bus 60 or the Metro for the return.",
     "keywords": [
       "Old Port, Le Panier & Mucem",
       "Marseille, Calanques & Cassis",
@@ -9689,7 +9689,7 @@
     "url": "/france/marseille-calanques/calanques-access-choice/",
     "parent": "Marseille, Calanques & Cassis",
     "type": "Local guide",
-    "summary": "A Sugiton reservation, a signed Marseille-side trail, a Cassis approach and a licensed boat are different products; the safest useful day commits to one.",
+    "summary": "Reach Luminy by RTM B1, check the fire-access gate and Sugiton reservation, then choose the lookout, steep cove descent or a licensed boat.",
     "keywords": [
       "Calanques Access: Hike, Boat or Shore",
       "Marseille, Calanques & Cassis",
@@ -9702,7 +9702,7 @@
     "url": "/france/marseille-calanques/cassis-la-ciotat/",
     "parent": "Marseille, Calanques & Cassis",
     "type": "Local guide",
-    "summary": "Cassis offers a compact port and Calanques gateway; La Ciotat offers a larger working waterfront and cinema history. Their stations sit away from the postcard centers.",
+    "summary": "Choose Cassis or La Ciotat, confirm the inland station-to-port link, then add one boat, cliff-road viewpoint or town-history block.",
     "keywords": [
       "Cassis, Cap Canaille & La Ciotat",
       "Marseille, Calanques & Cassis",
