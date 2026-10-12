@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T05:06:03.520Z",
+  "generatedAt": "2026-10-12T05:31:38.242Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 798,
@@ -23540,14 +23540,14 @@
       ]
     },
     {
-      "sha256": "7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5",
+      "sha256": "7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf",
       "assetPaths": [
         "/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg"
       ],
-      "byteLength": 6830,
+      "byteLength": 7188,
       "sourceRecords": [
         {
-          "sha256": "7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5",
+          "sha256": "7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf",
           "assetPath": "/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
@@ -23564,7 +23564,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "unknown",
           "editHistory": "Planning schematic only; not a geographic map and not to scale.",
-          "localSha1": "8b45fae5724444f48aa928e3225dacc232efc382",
+          "localSha1": "d4bb15e809a0cf876db15a4f7e0309cf5f8d7404",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
