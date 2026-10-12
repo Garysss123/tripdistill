@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
+import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth-diagrams.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const assetPath = '/assets/images/osaka-castle-sakura.webp';
@@ -317,7 +318,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 516, 'the merged inventory records the original diagrams separately from source-page-checked Gold Coast photos; diagrams are not external source-page checks');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 520, 'the merged inventory records all original planning diagrams separately from source-page-checked photos; diagrams are not external source-page checks');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -350,6 +351,22 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  for (const [routeKey, diagram] of Object.entries(australiaAdelaidePerthDiagrams)) {
+    const record = photoRecords.find((item) => item.assetPath === diagram.src);
+    assert.ok(record, `inventory must include the Adelaide/Perth original diagram ${diagram.src}`);
+    assert.equal(fs.existsSync(path.join(root, diagram.src.slice(1))), true);
+    assert.equal(record.assetType, 'original-planning-diagram');
+    assert.equal(record.creator, diagram.creator);
+    assert.equal(record.license, null);
+    assert.equal(record.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(record.commercialReuseEligibility, 'unknown');
+    assert.equal(record.inventoryStatus, 'used');
+    assert.equal(record.useCount, 1);
+    assert.deepEqual(record.routes, [`/australia/${routeKey}/`]);
+    assert.equal(record.localSha1, diagram.localSha1);
+    assert.ok(record.altTexts.includes(diagram.alt));
+    assert.equal(record.verificationStatus, 'site_credit_or_metadata_only');
+  }
   const bordeauxRoutes = [
     '/france/bordeaux-gironde/',
     '/france/bordeaux-gironde/bordeaux-river-wine-city/',
@@ -532,7 +549,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 12, 'inventory must count the Gold Coast planning schematic separately from its photos');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 16, 'inventory must count all current original planning diagrams separately from photos');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 508, 'the regenerated inventory includes three checked Gold Coast photo pages; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -657,7 +674,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 805, 'the original Malaysia, Sydney, Brisbane, Blue Mountains, Great Ocean Road and Gold Coast diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 809, 'the original Malaysia, Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Adelaide/Perth diagrams must be included while the preserved Melaka rights-review photo remains excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

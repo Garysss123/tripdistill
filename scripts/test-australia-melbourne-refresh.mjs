@@ -95,9 +95,58 @@ const adelaideRoutes = [
   '/australia/adelaide-wine-island/barossa-valley/',
   '/australia/adelaide-wine-island/fleurieu-mclaren-vale/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes];
-const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 40, 'four Melbourne regression routes and four current Adelaide routes across five language editions');
+const acceptedDateRoutes = [
+  '/australia/adelaide-wine-island/',
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/barossa-valley/',
+  '/australia/adelaide-wine-island/city-parklands-north-terrace/',
+  '/australia/adelaide-wine-island/fleurieu-mclaren-vale/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/blue-mountains-nsw-coast/',
+  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+  '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
+  '/australia/brisbane-moreton-bay/',
+  '/australia/brisbane-moreton-bay/city-river-south-bank/',
+  '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/',
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/cairns-wet-tropics/',
+  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/',
+  '/australia/gold-coast-scenic-rim/',
+  '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
+  '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
+  '/australia/great-ocean-road-gariwerd/',
+  '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
+  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+  '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/',
+  '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
+  '/australia/melbourne-port-phillip/',
+  '/australia/melbourne-port-phillip/cbd-laneways-tram-grid/',
+  '/australia/melbourne-port-phillip/federation-square-southbank/',
+  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+  '/australia/melbourne-port-phillip/phillip-island/',
+  '/australia/melbourne-port-phillip/st-kilda-foreshore/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/sydney-harbour-coast/',
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/',
+  '/australia/sydney-harbour-coast/circular-quay-rocks/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/sydney-harbour-coast/opera-house-botanic-garden/'
+];
+const editedUrls = new Set(editions.flatMap(({ prefix }) => acceptedDateRoutes.map((route) => `${prefix}${route}`)));
+assert.equal(editedUrls.size, 240, '48 accepted Australia route updates across five language editions since the regression base');
 for (const [url, originalDate] of originalEntries) {
   assert.equal(currentEntries.get(url), editedUrls.has(url) ? '2026-10-12' : originalDate, `only selected route dates change: ${url}`);
 }
@@ -212,4 +261,4 @@ for (const [route, [alt, source, license]] of photoExpectations) {
   assert.ok(readPage(root, '', route).html.includes(license), `${route} retains its displayed license declaration`);
 }
 
-console.log('Australia refresh regression passed: 4 Melbourne and 4 Adelaide routes × 5 language editions, only the 40 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');
+console.log('Australia refresh regression passed: 4 Melbourne and 4 Adelaide body checks × 5 language editions, only the 48 accepted Australia route dates changed since this regression base (240 localized entries), unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');

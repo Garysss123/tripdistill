@@ -1,0 +1,42 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan one Kings Park precinct from a named entry: Fraser Avenue on route 935, a Blue CAT stop or signed visitor parking. Check the 935D destination, path alerts, heat, park notices and current return service.": "名称のある入口から Kings Park の一地区を計画します。路線935で Fraser Avenue、Blue CAT の停留所、または標識のある来園者駐車場を選びます。935D の行き先、歩道警報、暑さ、公園のお知らせ、当日の帰りの便を確認してください。",
+    "kings park perth bus": "パース Kings Park バス",
+    "route 935 fraser avenue": "路線935 Fraser Avenue",
+    "935d malcolm street": "935D Malcolm Street",
+    "blue cat kings park": "Blue CAT Kings Park",
+    "federation walkway access": "Federation Walkway アクセス",
+    "kings park path closures": "Kings Park 歩道閉鎖",
+    "Compare Cottesloe’s Fremantle Line and route 102 connection with Scarborough’s Stirling Station Surf CAT. Choose one beach, check lifesaving flags and ocean conditions, then verify the return service after sunset.": "Cottesloe の Fremantle Line と路線102の接続を、Scarborough の Stirling Station から Surf CAT への接続と比べます。ビーチを一つ選び、救助旗と海況を確認して、日没後の帰りの便も確認してください。",
+    "cottesloe beach train": "Cottesloe Beach 鉄道",
+    "cottesloe route 102": "Cottesloe 路線102",
+    "scarborough surf cat": "Scarborough Surf CAT",
+    "perth beach bus": "パースのビーチ行きバス",
+    "perth beach safety flags": "パースの海岸安全旗",
+    "cottesloe scarborough sunset transport": "Cottesloe・Scarborough 日没時の交通",
+    "Compare a no-car Hahndorf town day with a driver-led Cleland and Mount Lofty route. Check the actual regional return, Stop 27 service, park closures, fire warnings and daylight before committing.": "車なしでハーンドルフの町を訪れる案と、運転手付きでクレランドとマウント・ロフティを巡る案を比べます。確定前に地域バスの実際の帰り、Stop 27、閉園、火災警報、日照時間を確認してください。",
+    "hahndorf bus": "ハーンドルフのバス",
+    "adelaide hills no car": "車なしのアデレード・ヒルズ",
+    "cleland wildlife park": "Cleland Wildlife Park",
+    "stop 27": "Stop 27",
+    "mount lofty summit": "マウント・ロフティ山頂",
+    "adelaide hills fire warnings": "アデレード・ヒルズの火災警報",
+    "Plan Kangaroo Island by ferry terminal, vehicle, overnight base and one island region per day. Check the October 20–23, 2026 SeaLink transition notice, park alerts, fire and road closures before fixing a return sailing.": "フェリーターミナル、車、宿泊拠点、一日一地域を軸にカンガルー島を計画します。帰りの便を決める前に、2026年10月20～23日の SeaLink 運行変更、 公園の警報、火災、道路閉鎖を確認してください。",
+    "kangaroo island ferry": "カンガルー島フェリー",
+    "sealink cape jervis penneshaw": "SeaLink Cape Jervis Penneshaw",
+    "kangaroo island itinerary": "カンガルー島の旅程",
+    "flinders chase closures": "Flinders Chase 閉鎖",
+    "seal bay access": "Seal Bay アクセス",
+    "kangaroo island wildlife driving": "カンガルー島の野生動物と運転"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Codex, with no Luna translation runtime available in the selected environment",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact Luna runtime was unavailable",
+    "independentSecondModel": false
+  }
+}

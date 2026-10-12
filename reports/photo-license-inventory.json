@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T17:59:09.031Z",
+  "generatedAt": "2026-10-12T21:25:30.320Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 801,
+    "assetFileCount": 805,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 12,
-    "licenseClaimsNotIndependentlyVerified": 511,
+    "completeProjectOriginalRightsRecords": 16,
+    "licenseClaimsNotIndependentlyVerified": 508,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 5,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 805,
-    "deduplicatedImageCount": 801,
+    "expectedBuildImageCount": 809,
+    "deduplicatedImageCount": 805,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3522,
-    "assetsUsedByScannedEnglishPages": 772,
+    "imageReferencesScanned": 3526,
+    "assetsUsedByScannedEnglishPages": 776,
     "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 588,
+    "assetsWithStructuredSourceRecords": 592,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 173,
+    "assetsVisuallyReviewed": 180,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 254,
-    "metadataOrCreditOnly": 523,
-    "usedAssetsWithoutIndependentSourcePageCheck": 519,
+    "sourcePageChecked": 257,
+    "metadataOrCreditOnly": 524,
+    "usedAssetsWithoutIndependentSourcePageCheck": 520,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 800 published WebP photos and 4 other image assets in assets/images, plus 1 root-level image assets, explain the 805 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 804 published WebP photos and 4 other image assets in assets/images, plus 1 root-level image assets, explain the 809 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -50,6 +50,49 @@
     "currentFile": "The current replacement remains included as the current asset at the same path."
   },
   "entries": [
+    {
+      "sha256": "f1c767aaea5d2a3eccdf056af6f63e42b33d57a20be29cf6f8d62cb2b15ef525",
+      "assetPaths": [
+        "/assets/images/australia-adelaide-hills-route-choice.svg"
+      ],
+      "byteLength": 2064,
+      "sourceRecords": [
+        {
+          "sha256": "f1c767aaea5d2a3eccdf056af6f63e42b33d57a20be29cf6f8d62cb2b15ef525",
+          "assetPath": "/assets/images/australia-adelaide-hills-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-adelaide-hills-route-choice.svg",
+          "sourceTitle": "TripDistill original Adelaide Hills route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "2a0cc23d124abf42161b4a8cdca8bf30e6503fce",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/adelaide-wine-island/adelaide-hills-hahndorf/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: a city connection branches to a Hahndorf town visit or a Cleland and garden visit; each choice returns on its confirmed ride."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
     {
       "sha256": "47dc519d97fa9a2a7b04d258b7beb3afedbd181f1a5455825db3bac23ff5ae0d",
       "assetPaths": [
@@ -393,7 +436,8 @@
             "/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/"
           ],
           "altTexts": [
-            "White sand and clear water in Booderee National Park at Jervis Bay"
+            "White sand and clear water in Booderee National Park at Jervis Bay",
+            "Hyams Beach on Jervis Bay, looking toward Booderee National Park; a nearby NSW-side shore, not a view inside the park."
           ],
           "rawVisibleCredits": [
             "Hyams Beach. Booderee National Park & Jervis Bay Marine Park.jpg — Charliekay, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -788,7 +832,8 @@
             "/australia/brisbane-moreton-bay/west-end-cultural-precinct/"
           ],
           "altTexts": [
-            "New Farm Park beside the Brisbane River"
+            "New Farm Park beside the Brisbane River",
+            "Brisbane River at twilight, seen from New Farm toward Norman Park; a neighborhood-context image rather than New Farm Park."
           ],
           "rawVisibleCredits": [
             "Norman Park seen across Brisbane River from New Farm, Queensland.jpg — Kgbo, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -1915,16 +1960,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": null,
-          "commercialReuseEligibility": "declared_public_domain_not_independently_checked",
+          "commercialReuseEligibility": "public_domain_status_checked",
           "attributionTerms": "Attribution is not required for public-domain material; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Gold Coast photo review: the exact Commons page identifies Shiftchange and declares the photograph public domain. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Tallebudgera Creek shoreline and nearby beach, matching the route image and alt. The visible credit links the source and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.",
           "useCount": 6,
           "routes": [
             "/australia/gold-coast-scenic-rim/",
@@ -1965,16 +2010,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Gold Coast photo review: the exact Commons page identifies Kgbo and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Snapper Rocks surf breaking across the rocky coast, matching the route image and alt. The visible credit links the source and versioned license, discloses resize, display crop and WebP conversion, and keeps the adaptation under CC BY-SA 4.0. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.",
           "useCount": 6,
           "routes": [
             "/australia/gold-coast-scenic-rim/",
@@ -2115,16 +2160,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Gold Coast photo review: the exact Commons page identifies Bernard Spragg. NZ from Christchurch, New Zealand and declares a CC0 1.0 dedication. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Surfers Paradise beach, surf and skyline, matching the route image and alt. The visible credit links the source and license and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.",
           "useCount": 8,
           "routes": [
             "/australia/",
@@ -2236,7 +2281,8 @@
             "/australia/great-ocean-road-gariwerd/torquay-bells-beach/"
           ],
           "altTexts": [
-            "Mountain ranges and forest in Gariwerd Grampians National Park"
+            "Mountain ranges and forest in Gariwerd Grampians National Park",
+            "View over Halls Gap from Boroka Lookout in Gariwerd / Grampians"
           ],
           "rawVisibleCredits": [
             "View over Halls Gap, Grampians, from Boroka Lookout.jpg — Peter Trenchard, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2433,6 +2479,92 @@
           ],
           "altTexts": [
             "Not-to-scale planning schematic showing the Great Ocean Road sequence from Torquay through Lorne and Apollo Bay to Port Campbell, with a clearly separate inland planning branch to Gariwerd; no distance, bearing, timetable or service promise is made."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "982a1abdf645065645cfe53141d472297e15cdbfda0d039a3dd44a3b11c7726e",
+      "assetPaths": [
+        "/assets/images/australia-kangaroo-island-regional-days.svg"
+      ],
+      "byteLength": 2991,
+      "sourceRecords": [
+        {
+          "sha256": "982a1abdf645065645cfe53141d472297e15cdbfda0d039a3dd44a3b11c7726e",
+          "assetPath": "/assets/images/australia-kangaroo-island-regional-days.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-kangaroo-island-regional-days.svg",
+          "sourceTitle": "TripDistill original Kangaroo Island ferry and regional-days schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "d89c583b40a589d61a9b73f4d8cacd31a28ad339",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/adelaide-wine-island/kangaroo-island/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: Cape Jervis ferry to Penneshaw, separate east, south and west island days, reposition near Penneshaw, then return by ferry."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "353d0dc60100e353fcfb99e5c90e03806d5bd86d13f7743dad5d46a8bd6f9ce2",
+      "assetPaths": [
+        "/assets/images/australia-kings-park-entry-choice.svg"
+      ],
+      "byteLength": 2338,
+      "sourceRecords": [
+        {
+          "sha256": "353d0dc60100e353fcfb99e5c90e03806d5bd86d13f7743dad5d46a8bd6f9ce2",
+          "assetPath": "/assets/images/australia-kings-park-entry-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-kings-park-entry-choice.svg",
+          "sourceTitle": "TripDistill original Kings Park entry and loop schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "318826754dd7f99e9bb4ce3a110aa8cabd926ca5",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/perth-fremantle-rottnest/kings-park/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: Perth transit or visitor parking leads to one chosen Botanic Garden or bushland path, then back to the same return node."
           ],
           "rawVisibleCredits": []
         }
@@ -2783,8 +2915,7 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Yarra River and Princes Bridge beneath Melbourne’s night skyline",
-            "Federation Square and the Yarra River in central Melbourne"
+            "Yarra River and Princes Bridge beneath Melbourne’s night skyline"
           ],
           "rawVisibleCredits": [
             "Night view of the Melbourne CBD, over the Yarra River, showing Princes Bridge, St Kilda Road, St Paul's Cathedral, and Federation Square. Peter Neaum. - panoramio.jpg — Peter Neaum, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2834,7 +2965,8 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Terraces and neighborhood streets in inner northern Melbourne"
+            "Terraces and neighborhood streets in inner northern Melbourne",
+            "Rosephil Terrace on Fitzroy Street in Fitzroy"
           ],
           "rawVisibleCredits": [
             "Rosephil Terrace, Fitzroy Street, Fitzroy, Victoria Australia (4541034919).jpg — Rexness, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2884,7 +3016,8 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Rugged coast on Phillip Island in Victoria"
+            "Rugged coast on Phillip Island in Victoria",
+            "Boardwalk and rocky sea cliffs at the Nobbies on Phillip Island"
           ],
           "rawVisibleCredits": [
             "Nobbies zz.JPG — Chensiyuan, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -2934,12 +3067,54 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "St Kilda Beach, pier and Port Phillip Bay before midday",
-            "St Kilda Pier and Port Phillip Bay near Melbourne"
+            "St Kilda Beach, pier and Port Phillip Bay before midday"
           ],
           "rawVisibleCredits": [
             "Quiet before midday - St Kilda Beach and Pier (3166045772).jpg — Alpha from Melbourne, Australia, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "78349eac1b9c9aee1561e861c964725e03c26ef40bbee895bdd33b6d58f153ce",
+      "assetPaths": [
+        "/assets/images/australia-perth-coast-transit-choice.svg"
+      ],
+      "byteLength": 2673,
+      "sourceRecords": [
+        {
+          "sha256": "78349eac1b9c9aee1561e861c964725e03c26ef40bbee895bdd33b6d58f153ce",
+          "assetPath": "/assets/images/australia-perth-coast-transit-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/australia-perth-coast-transit-choice.svg",
+          "sourceTitle": "TripDistill original Cottesloe and Scarborough transit-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Planning schematic only; it is not a geographic map and shows no scale, bearing, distance, exact route or timetable.",
+          "localSha1": "92b47a386655af44d9f6b1ca61647b77c17b13d9",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/australia/perth-fremantle-rottnest/cottesloe-scarborough/"
+          ],
+          "altTexts": [
+            "Planning diagram, not to scale: choose Cottesloe by train and a last-mile connection or Scarborough by train and Surf CAT; check the beach and return on the same path."
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -3437,7 +3612,8 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Barangaroo waterfront on the western side of central Sydney"
+            "Barangaroo waterfront on the western side of central Sydney",
+            "Sydney CBD skyline and harbor-side buildings at dusk, viewed from Pyrmont; a city-context image, not a route map."
           ],
           "rawVisibleCredits": [
             "2019-04-10 Sydney CBD view from Pyrmont at sunset.jpg — Maksym Kozlenko, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -3589,7 +3765,8 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Manly and North Head above Sydney Harbour"
+            "Manly and North Head above Sydney Harbour",
+            "Archival 1973 photograph of the Sydney ferry North Head crossing near Manly; it does not show today’s vessel or timetable."
           ],
           "rawVisibleCredits": [
             "Sydney Ferry NORTH HEAD en route to Manly at the Heads on Sydney Harbour 20 January 1973.jpg — John Ward, CC BY 4.0. Resized, display-cropped and converted to WebP; no other material edits."

@@ -56,8 +56,14 @@ const currentMelbourneOceanGapRoutes = [
   '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
   '/australia/great-ocean-road-gariwerd/gariwerd-grampians/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes];
-const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes];
+const currentAdelaidePerthGapRoutes = [
+  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+  '/australia/adelaide-wine-island/kangaroo-island/',
+  '/australia/perth-fremantle-rottnest/kings-park/',
+  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes];
+const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -217,7 +223,7 @@ function articleAndFaq(html) {
 
 const expectedEnglishHtml = branchRefreshRoutes.map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglishHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the existing Australia refresh routes plus the current Sydney/NSW, Brisbane/Gold Coast, and Melbourne/Ocean gap routes; found ${changedEnglishHtml.join(', ')}.`);
+assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the existing Australia refresh routes plus the current Sydney/NSW, Brisbane/Gold Coast, Melbourne/Ocean, and Adelaide/Perth gap routes; found ${changedEnglishHtml.join(', ')}.`);
 
 const expectedScripts = {
   'zh-Hant': /[\u3400-\u9fff]/u,
@@ -309,7 +315,7 @@ const oldSearchByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newSearchByUrl = new Map(newSearch.map((record) => [record.url, record]));
 assertIssue(oldSearchByUrl.size === newSearchByUrl.size && [...oldSearchByUrl.keys()].sort().join('|') === [...newSearchByUrl.keys()].sort().join('|'), 'Search-index URL set or count changed.');
 const changedSearch = [...newSearchByUrl.keys()].filter((url) => JSON.stringify(newSearchByUrl.get(url)) !== JSON.stringify(oldSearchByUrl.get(url))).sort();
-assertIssue(changedSearch.join('|') === [...branchSearchRoutes].sort().join('|'), `Only existing Australia refresh and current Sydney/NSW, Brisbane/Gold Coast, and Melbourne/Ocean gap search records may change from this branch base; found ${changedSearch.join(', ')}.`);
+assertIssue(changedSearch.join('|') === [...branchSearchRoutes].sort().join('|'), `Only existing Australia refresh and current Sydney/NSW, Brisbane/Gold Coast, Melbourne/Ocean, and Adelaide/Perth gap search records may change from this branch base; found ${changedSearch.join(', ')}.`);
 for (const route of routes) {
   const record = newSearchByUrl.get(route);
   assertIssue(Boolean(record?.summary?.trim()), `${route}: search summary is missing.`);
