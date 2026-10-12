@@ -187,8 +187,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/niagara/niagara-gorge/',
     '/canada/niagara/niagara-on-the-lake/'
   ]);
+  const saguenayUpdatedRoutes = new Set([
+    '/canada/saguenay-tadoussac/',
+    '/canada/saguenay-tadoussac/tadoussac-marine/',
+    '/canada/saguenay-tadoussac/fjord-hiking/',
+    '/canada/saguenay-tadoussac/saguenay-city-valley/'
+  ]);
   for (const route of routes) {
-    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) || saguenayUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

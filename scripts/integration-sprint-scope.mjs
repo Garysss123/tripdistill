@@ -200,7 +200,11 @@ export const integrationRouteGroups = Object.freeze({
     '/canada/niagara/',
     '/canada/niagara/falls-parkway/',
     '/canada/niagara/niagara-gorge/',
-    '/canada/niagara/niagara-on-the-lake/'
+    '/canada/niagara/niagara-on-the-lake/',
+    '/canada/saguenay-tadoussac/',
+    '/canada/saguenay-tadoussac/tadoussac-marine/',
+    '/canada/saguenay-tadoussac/fjord-hiking/',
+    '/canada/saguenay-tadoussac/saguenay-city-valley/'
   ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',

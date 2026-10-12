@@ -7,7 +7,6 @@ import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a4679e646708b5a772e56f72df017900fdb0bc4d';
-const integrationBase = '1d68da8e3860def51951a51e4008c62c4633c9f2';
 const englishOnly = process.argv.includes('--english-only');
 const cluster = canadaClusters.find((item) => item.slug === 'niagara');
 assert.ok(cluster, 'Niagara cluster must exist.');
@@ -16,6 +15,12 @@ const routes = [
   '/canada/niagara/falls-parkway/',
   '/canada/niagara/niagara-gorge/',
   '/canada/niagara/niagara-on-the-lake/'
+];
+const laterCa13Routes = [
+  '/canada/saguenay-tadoussac/',
+  '/canada/saguenay-tadoussac/tadoussac-marine/',
+  '/canada/saguenay-tadoussac/fjord-hiking/',
+  '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -27,15 +32,12 @@ assert.equal(previousSearchResult.status, 0, `Could not read the CA11 base searc
 const previousSearch = JSON.parse(previousSearchResult.stdout);
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const targetSet = new Set(routes);
-const integrationSearchResult = spawnSync('git', ['show', `${integrationBase}:data/search-index.json`], { cwd: root, encoding: 'utf8' });
-assert.equal(integrationSearchResult.status, 0, `Could not read the pre-CA12 integration search index: ${integrationSearchResult.stderr}`);
-const integrationSearch = JSON.parse(integrationSearchResult.stdout);
-const previousCanada = integrationSearch.filter((item) => item.url.startsWith('/canada/'));
+const previousCanada = previousSearch.filter((item) => item.url.startsWith('/canada/'));
 const canada = search.filter((item) => item.url.startsWith('/canada/'));
 assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.');
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must not change.');
-assert.deepEqual(canada.filter((item) => !targetSet.has(item.url)), previousCanada.filter((item) => !targetSet.has(item.url)), 'All non-target Canada search records must remain unchanged and in order from the exact pre-CA12 integration parent.');
+assert.deepEqual(search.filter((item) => !targetSet.has(item.url) && !laterCa13Routes.includes(item.url)), previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa13Routes.includes(item.url)), 'All non-target and later-CA13 search records must remain unchanged and in order.');
 for (const route of routes) {
   const record = canada.find((item) => item.url === route);
   assert.ok(record?.summary?.trim() && record.summary.length >= 120, `${route}: target search summary must be substantive.`);
@@ -46,13 +48,13 @@ const locales = ['', '/zh', '/ja', '/ko', '/th'];
 const readDates = (source) => new Map([...source.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const previousSitemapResult = spawnSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
-assert.equal(previousSitemapResult.status, 0, `Could not read the pre-CA12 integration sitemap: ${previousSitemapResult.stderr}`);
+assert.equal(previousSitemapResult.status, 0, `Could not read the CA11 base sitemap: ${previousSitemapResult.stderr}`);
 const dates = readDates(sitemap);
 const previousDates = readDates(previousSitemapResult.stdout);
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
-const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
-const actualDateChanges = [...dates].filter(([route, date]) => route.includes('/canada/') && previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Niagara routes × five editions may have changed sitemap dates.');
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa13Routes].map((route) => locale + route)).sort();
+const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
+assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Niagara and later CA13 routes × five editions may have changed sitemap dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 
 function mainWords(html) {
@@ -99,8 +101,8 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`)].sort(),
-  'Only the four target route pages and ancillary Canada card may change under canada/.'
+  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
+  'Only the four target route pages, later CA13 routes and ancillary Canada card may change under canada/.'
 );
 
-console.log(`CA12 route/date regression passed: exactly four existing article routes, separate country card, 73 unchanged Canada URLs, no non-target Canada search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);
+console.log(`CA12 route/date regression passed: exactly four existing article routes, separate country card, 73 unchanged Canada URLs, no non-target or later-CA13 search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);

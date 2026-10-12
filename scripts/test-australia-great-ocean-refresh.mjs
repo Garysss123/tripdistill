@@ -18,6 +18,12 @@ const routes = [
   '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
   '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
 ];
+const laterCanadaCa13Routes = [
+  '/canada/saguenay-tadoussac/',
+  '/canada/saguenay-tadoussac/tadoussac-marine/',
+  '/canada/saguenay-tadoussac/fjord-hiking/',
+  '/canada/saguenay-tadoussac/saguenay-city-valley/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -216,7 +222,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'Only four selected Great Ocean Road search records may change since the prior integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes].sort(), 'Only four selected Great Ocean Road and exact later CA13 search records may change since the prior integration checkpoint.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -232,10 +238,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', integrationBase + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = routes.flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCanadaCa13Routes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road routes across five editions may receive a new lastmod since the prior integration checkpoint.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road and exact later CA13 routes across five editions may receive a new lastmod since the prior integration checkpoint.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
 
 const svgFile = path.join(root, svgPath);

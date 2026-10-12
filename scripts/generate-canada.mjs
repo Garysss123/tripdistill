@@ -13,12 +13,14 @@ const fieldCss = '/css/canada-field.css?v=20260912-1';
 const jasperCss = '/css/canada-jasper.css?v=20261012-1';
 const ottawaCss = '/css/canada-ottawa.css?v=20261012-1';
 const niagaraCss = '/css/canada-niagara.css?v=20261012-1';
+const saguenayCss = '/css/canada-saguenay.css?v=20261012-1';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
 const pageIsoDate = (cluster) => cluster.isoDate || isoDate;
 const regionCss = (cluster, guide = null) => {
+  if (cluster.slug === 'saguenay-tadoussac') return `<link rel="stylesheet" href="${saguenayCss}">`;
   if (cluster.slug === 'ottawa-gatineau') return `<link rel="stylesheet" href="${ottawaCss}">`;
   if (cluster.slug === 'niagara') return `<link rel="stylesheet" href="${niagaraCss}">`;
   if (cluster.slug === 'jasper-icefields') return `<link rel="stylesheet" href="${jasperCss}">`;
@@ -90,7 +92,7 @@ function imageCredit(image) {
   const licenseText = license
     ? `<a href="${license}" target="_blank" rel="noopener">${escapeHtml(image.license)}</a>`
     : escapeHtml(image.license);
-  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino|banff-lake-louise|jasper-icefields)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
+  const shareAlikeNotice = /^\/assets\/images\/canada-(?:montreal|quebec-city-charlevoix|toronto|vancouver-north-shore|victoria-south-island|pacific-rim-tofino|banff-lake-louise|jasper-icefields|saguenay-tadoussac)-/.test(image.src) && /^CC BY-SA\b/.test(image.license)
     ? ` This resized, display-cropped WebP adaptation is offered under the same ${escapeHtml(image.license)} terms.`
     : '';
   return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${licenseText}. ${escapeHtml(image.editNote)}${shareAlikeNotice}</li>`;
