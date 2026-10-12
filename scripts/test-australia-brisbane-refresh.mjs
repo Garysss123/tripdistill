@@ -44,8 +44,14 @@ const currentSydneyNswGapRoutes = [
   '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
   '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes];
-const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes];
+const currentBrisbaneGoldCoastGapRoutes = [
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes];
+const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -205,7 +211,7 @@ function articleAndFaq(html) {
 
 const expectedEnglishHtml = branchRefreshRoutes.map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglishHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the existing Australia refresh routes plus the four current Sydney/NSW gap routes; found ${changedEnglishHtml.join(', ')}.`);
+assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the existing Australia refresh routes plus the current Sydney/NSW and Brisbane/Gold Coast gap routes; found ${changedEnglishHtml.join(', ')}.`);
 
 const expectedScripts = {
   'zh-Hant': /[\u3400-\u9fff]/u,
@@ -262,13 +268,42 @@ for (const route of routes) {
   }
 }
 
+for (const route of currentBrisbaneGoldCoastGapRoutes) {
+  const englishFile = routeFile(route);
+  assertIssue(fs.existsSync(englishFile), `Missing newly refreshed English gap page ${route}.`);
+  if (!fs.existsSync(englishFile)) continue;
+  const html = fs.readFileSync(englishFile, 'utf8');
+  const { article, faq, visibleFaq } = articleAndFaq(html);
+  assertIssue(article?.dateModified === isoDate, `${route}: new gap Article dateModified is not ${isoDate}.`);
+  assertIssue(article?.mainEntityOfPage === `https://tripdistill.com${route}`, `${route}: new gap structured Article URL changed.`);
+  const structuredFaq = (faq?.mainEntity || []).map((item) => ({ question: item.name, answer: item.acceptedAnswer?.text }));
+  assertIssue(structuredFaq.length === visibleFaq.length && JSON.stringify(structuredFaq) === JSON.stringify(visibleFaq), `${route}: new gap visible FAQ and structured FAQ do not match.`);
+  assertIssue(html.includes('reviewed 12 October 2026') && html.includes('Planning facts and image licenses were reviewed on 12 October 2026'), `${route}: new gap review dates are missing.`);
+  const baseline = git(['show', `6aa9321ff72077cf5143516f466add5ca2a830cc:${route.slice(1)}index.html`]);
+  const delta = wordCount(editorialText(html)) - wordCount(editorialText(baseline));
+  assertIssue(delta >= 350, `${route}: new gap body text grew by only ${delta} words from the exact sprint base.`);
+  for (const [locale, prefix] of locales.slice(1)) {
+    const localized = routeFile(route, prefix);
+    assertIssue(fs.existsSync(localized), `${locale}: missing translated new gap page ${prefix}${route}.`);
+    if (!fs.existsSync(localized)) continue;
+    const translated = fs.readFileSync(localized, 'utf8');
+    const localizedDoc = parse(translated);
+    const localizedHtml = findNode(localizedDoc, (node) => node.tagName === 'html');
+    assertIssue(attrs(localizedHtml).lang === locale, `${locale}: lang attribute is wrong on ${route}.`);
+    assertIssue(translated.includes(expectedReviewDate[locale]), `${locale}: localized review date is missing on ${route}.`);
+    const localSchema = articleAndFaq(translated);
+    assertIssue(localSchema.article?.dateModified === isoDate, `${locale}: Article date is not synchronized for ${route}.`);
+    assertIssue(localSchema.visibleFaq.length === visibleFaq.length, `${locale}: translated FAQ coverage differs on ${route}.`);
+  }
+}
+
 const oldSearch = JSON.parse(git(['show', `${base}:data/search-index.json`]));
 const newSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const oldSearchByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newSearchByUrl = new Map(newSearch.map((record) => [record.url, record]));
 assertIssue(oldSearchByUrl.size === newSearchByUrl.size && [...oldSearchByUrl.keys()].sort().join('|') === [...newSearchByUrl.keys()].sort().join('|'), 'Search-index URL set or count changed.');
 const changedSearch = [...newSearchByUrl.keys()].filter((url) => JSON.stringify(newSearchByUrl.get(url)) !== JSON.stringify(oldSearchByUrl.get(url))).sort();
-assertIssue(changedSearch.join('|') === [...branchSearchRoutes].sort().join('|'), `Only existing Australia refresh and current Sydney/NSW gap search records may change from this branch base; found ${changedSearch.join(', ')}.`);
+assertIssue(changedSearch.join('|') === [...branchSearchRoutes].sort().join('|'), `Only existing Australia refresh and current Sydney/NSW and Brisbane/Gold Coast gap search records may change from this branch base; found ${changedSearch.join(', ')}.`);
 for (const route of routes) {
   const record = newSearchByUrl.get(route);
   assertIssue(Boolean(record?.summary?.trim()), `${route}: search summary is missing.`);
@@ -337,5 +372,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log('Australia refresh regressions passed: 24 route paths across the existing refresh batches and the four current Sydney/NSW gap routes, all five editions, FAQ/schema/date parity, scoped search and sitemap changes, reviewed translation coverage, and original SVG provenance/structure checks.');
+  console.log(`Australia refresh regressions passed: ${branchRefreshRoutes.length} route paths across prior refresh batches and current gap batches, all five editions, FAQ/schema/date parity, scoped search and sitemap changes, reviewed translation coverage, and original SVG provenance/structure checks.`);
 }

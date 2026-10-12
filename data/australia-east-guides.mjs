@@ -503,19 +503,108 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'new-farm-fortitude-valley', name: 'New Farm & Fortitude Valley', motif: 'day-to-night neighborhood switch', instrument: 'day-night', imageQuery: 'Brisbane New Farm Park river', imageAlt: 'New Farm Park beside the Brisbane River',
-        summary: 'A neighborhood chapter moving from river park and arts space into the Valley’s evening economy with a deliberate late return.',
-        orientation: 'use New Farm Park or the Powerhouse as the daylight anchor and Fortitude Valley station as the night transport anchor.', access: 'Reach the river end by ferry or bus, then move inland only along well-used streets and a known service.', sequence: 'Start with park or performance context, eat before nightlife peaks and end at the station or booked pickup rather than wandering between venues.', boundary: 'These are residential and working entertainment districts. Keep noise, photography and alcohol behavior within the norms of each street.',
-        stages: [['Land by daylight', 'Use the river stop or bus arrival to establish the park edge and return options.'], ['Choose one cultural room', 'Confirm exhibition or performance access rather than assuming the whole precinct is open.'], ['Move inland before late night', 'Take a clear bus or walking line to the Valley while streets and services are busy.'], ['Leave from a lit node', 'Use the station or a named pickup zone and keep the group together.']],
-        risks: [['Late-night safety', 'Plan the final block and transport before drinking or venue dispersal.'], ['River service changes', 'Ferries can be altered by weather or events; retain a bus alternative.'], ['Noise and residents', 'Avoid treating residential lanes as nightlife extensions or photo sets.']],
-        duration: 'Use a long afternoon and evening rather than stretching the route across an entire day.', combine: 'It follows a central river day naturally; do not add an island transfer.', verify: 'Confirm ferry or bus status, venue ticketing, event closures, weather and the late journey home.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Brisbane River at twilight, seen from New Farm toward Norman Park; a neighborhood-context image rather than New Farm Park.',
+        searchSummary: 'Start at New Farm Park by ferry or bus, choose a scheduled Powerhouse visit, then decide whether Fortitude Valley fits before the last practical train or a prearranged ride home.',
+        summary: 'A ferry-or-bus approach to New Farm’s river park and Brisbane Powerhouse, followed by an optional Fortitude Valley evening with the final train or pickup settled first.',
+        orientationTitle: 'A park afternoon and a separate night out.',
+        orientation: 'Treat New Farm and Fortitude Valley as two connected but differently timed visits. The first is a river-edge park and a scheduled arts venue; the second is a busy entertainment district whose useful return may be earlier than its closing time. If you have only a few hours, choose the Powerhouse-and-park visit or the Valley evening, not both. The route image is a twilight view from New Farm across the river, not a photograph of New Farm Park itself.',
+        access: 'For the park, compare Translink’s current F1 ferry to New Farm Park terminal with the bus journey that best fits your arrival point; the terminal is at the park edge. Brisbane Powerhouse lists bus routes 196 and 199 and a roughly 440m walk from the terminal through the park. Walkways, event access and service patterns can vary, so route to the exact entrance and check live notices. The park is listed open daily 8:30am–11pm; a performance may finish after your convenient ferry or train, so do not treat the park’s closing time as a late-night transport promise.',
+        sequence: 'Arrive while it is light, use the river edge to find the Powerhouse entrance and decide whether the day’s program is worth an indoor stop. Keep the performance or exhibition as the fixed point; use the rest of the park as an unhurried buffer rather than a second checklist. If continuing to Fortitude Valley, check the actual bus or walking connection and name the station or pickup point before leaving New Farm. Translink lists late-night services, but Fortitude Valley station is not an all-night guarantee: check the dated departure you need, and prearrange a taxi or ride pickup if the event outlasts it.',
+        boundary: 'New Farm is a residential river neighborhood as well as a recreation area, and Fortitude Valley contains homes, workplaces and nightlife. Keep noise down on residential blocks, do not photograph people as nightlife scenery, and use venue and park rules for alcohol, events and access.',
+        decisions: [
+          ['Ferry or bus first', 'The F1 New Farm Park terminal lands at the river edge; use the planner to compare its sailing with a bus to the actual first entrance.'],
+          ['One programmed interior', 'Brisbane Powerhouse schedules vary by performance and exhibition. Confirm tickets, doors and access before building the afternoon around it.'],
+          ['Last train or booked ride', 'Choose the Valley only when the return works after your event; leave the station or pickup decision out of the late-night guesswork.']
+        ],
+        fieldLens: {
+          label: 'A useful two-part route', title: 'Keep the daylight and evening clocks separate.',
+          copy: 'The river end is pleasant to linger in, but a long park visit can consume the service margin needed for an event or night return. Give each part its own start and exit.',
+          notes: [['Wet-weather option', 'Use the Powerhouse only if its current program and ticketing suit; otherwise move the visit to another confirmed indoor venue and keep the Valley for a dry evening.'], ['If transport changes', 'If the ferry is disrupted, compare a current bus route or skip the park leg; do not assume a replacement service reaches the same terminal.']]
+        },
+        nearbySources: [
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/new-farm-park', 'Brisbane City Council — New Farm Park'],
+          ['https://brisbanepowerhouse.org/visit/', 'Brisbane Powerhouse — visit and transport'],
+          ['https://translink.com.au/plan-your-journey/stops/new-farm-park-ferry-terminal', 'Translink — New Farm Park ferry terminal'],
+          ['https://translink.com.au/plan-your-journey/late-night-services', 'Translink — late-night services']
+        ],
+        stages: [
+          ['Choose the arrival mode', 'Use Translink’s date-specific planner for the F1 New Farm Park terminal or a bus to the park; note the return stop before you leave the river edge.'],
+          ['Check what is actually on', 'Brisbane Powerhouse is a scheduled arts venue, not an always-open museum. Confirm the day’s exhibition or performance, ticket, door time and access arrangements.'],
+          ['Make the Valley a deliberate extension', 'After the park or event, choose one checked bus or a direct walk toward the Valley while services are still useful; skip the extension if the event ends too close to your last practical train.'],
+          ['Leave from a named node', 'Use the station departure shown for your date or the pickup point arranged in advance. If neither remains workable, leave the Valley earlier rather than improvising a long late walk.']
+        ],
+        risks: [
+          ['The venue calendar is not a timetable', 'Powerhouse programs, ticketing and access differ by event. A free or public park does not make a specific room or show available.'],
+          ['Late service margin disappears', 'Ferries and trains follow their own schedules and can change. Check the final useful departure and keep a ride pickup as the fallback; 24-hour service is not implied.'],
+          ['Rain or a changed ferry', 'For heavy rain, a wet river edge or a service notice, skip the outdoor section and retain only a confirmed indoor visit. Do not replace a cancelled ferry with an assumed same-stop bus.']
+        ],
+        duration: 'Allow a relaxed half-day for park and one confirmed Powerhouse visit. Add Fortitude Valley only for an evening whose return is still feasible; it is not a useful hurried add-on after a full island or hinterland day.',
+        combine: 'Pair with the central river route on a separate daylight segment, or make this its own afternoon-to-evening plan. Do not add a bay-island crossing or a mountain day.',
+        verify: 'Check Council park hours and facilities, the Powerhouse event page, Translink’s F1/bus and rail alerts for the exact date, the last useful return, weather and step-free access.',
+        sources: [
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/new-farm-park', 'Brisbane City Council — New Farm Park facilities and hours'],
+          ['https://brisbanepowerhouse.org/visit/', 'Brisbane Powerhouse — visitor information, buses and ferry walk'],
+          ['https://translink.com.au/plan-your-journey/stops/new-farm-park-ferry-terminal', 'Translink — F1 New Farm Park ferry terminal'],
+          ['https://translink.com.au/plan-your-journey/late-night-services', 'Translink — late-night public transport']
+        ],
+        faq: [
+          ['Is the Brisbane Powerhouse open whenever New Farm Park is open?', 'No. The Council lists New Farm Park as open daily 8:30am–11pm, but Powerhouse access depends on its changing program and event ticketing. Check the venue calendar for your date before setting the route.'],
+          ['Can I take the ferry back after an evening performance?', 'Do not assume so. Check the actual F1 sailing and the rail or bus departure that completes your trip. If the event ends after those options, arrange a pickup or choose a different show time.'],
+          ['Does Fortitude Valley station run all night?', 'No all-night service is promised here. Use Translink’s late-night page and date-specific planner for the departure you need; keep a prearranged ride as the fallback.'],
+          ['What should I do if the park is wet or the ferry is disrupted?', 'Keep the Powerhouse visit only if the day’s event is confirmed and reachable by a current bus route. Otherwise skip the river leg and choose another confirmed indoor plan; do not count on an unverified replacement sailing.']
+        ]
       }),
       g({
         slug: 'west-end-cultural-precinct', name: 'West End & Cultural Precinct', motif: 'gallery-to-market weave', instrument: 'weave', imageQuery: 'Brisbane cultural precinct South Bank Queensland Art Gallery', imageAlt: 'Brisbane cultural precinct beside the river',
-        summary: 'A culture-and-food route joining major institutions with West End while keeping exhibition time, market calendars and residential streets distinct.',
-        orientation: 'anchor the day in one major institution and use Boundary Street as a separate neighborhood chapter.', access: 'Arrive at South Brisbane station or the busway and verify the step-free entrance serving the chosen venue.', sequence: 'Give the museum or gallery a real attention block, pause by the river, then move to one West End food or market line.', boundary: 'Do not turn cultural collections, migrant businesses or street life into generic “colour.” Follow museum, market and photography rules.',
-        stages: [['Book the attention block', 'Select one institution and exhibition rather than rushing every building.'], ['Pause at the river seam', 'Use the public edge to reset before moving into the neighborhood.'], ['Read one commercial street', 'Choose a short food or shop sequence without blocking businesses or photographing people without consent.'], ['Return through South Brisbane', 'Use the known rail or bus node before the evening crowd changes.']],
-        risks: [['Exhibition closure', 'Temporary galleries and timed programs change; check the institution directly.'], ['Market calendar', 'A market mentioned in an old guide may not operate that day or location.'], ['Heat between districts', 'The walk is exposed in parts; use buses or shorten it when necessary.']],
-        duration: 'Allow a full day for one substantial cultural visit and an unhurried neighborhood meal.', combine: 'It pairs with the city river loop but deserves its own museum time.', verify: 'Check exhibition access, market date, public transport, weather, accessibility and photography policy.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        searchSummary: 'Give QAG or GOMA a real visit, then decide whether the river edge and West End’s Boundary Street fit; the two galleries are 150m apart, but market dates and return transport are separate checks.',
+        summary: 'A QAGOMA-first cultural day with a measured South Bank river pause and an optional Boundary Street meal, separating gallery time, market dates and the trip home.',
+        orientationTitle: 'Two galleries, one river edge, a separate neighborhood.',
+        orientation: 'Start at the Queensland Cultural Centre and decide whether you want QAG’s permanent collections, GOMA’s contemporary exhibitions, or enough time for both. The buildings are only 150m apart, but that short link does not make exhibitions, queues or timed programs interchangeable. From there, use the South Bank river edge as a pause; continue into West End only if the group still has time and energy for a separate meal or market visit. The photograph shows the cultural precinct by the river, not a map of the West End walking line.',
+        access: 'Translink’s planner can compare South Brisbane rail station, South Bank busway and the closest valid stop for your route. QAGOMA gives both buildings’ address as Stanley Place and notes that each has a Stanley Place entrance; QAG’s river entrance is near Melbourne Street and Victoria Bridge. The galleries list daily 10am–5pm opening in the current visitor information, with holiday exceptions; general admission is free but some exhibitions or events are ticketed. Confirm the exact building, timed entry, lift/access information and route from your stop.',
+        sequence: 'Choose a primary building before arriving. Keep 2–3 hours for one substantial visit as a planning allowance, not an official duration; add the second only if its current displays earn the extra time. Walk the signed public river edge to reset, then use a checked bus or a realistic walk toward Boundary Street for a meal. Treat Davies Park or another market as a date-specific extra only after checking its own current calendar. Finish at a chosen South Brisbane or West End return stop; do not assume a late market or meal lines up with a train.',
+        boundary: 'QAGOMA interprets works and cultures with specific provenance and voices; read the institution’s labels and photography rules rather than reducing collections to décor. West End is a lived-in commercial neighborhood. Keep shop thresholds and footpaths clear, ask before photographing people, and treat a market as a working event rather than a guaranteed attraction.',
+        decisions: [
+          ['QAG, GOMA or both', 'Choose by the exhibition that matters to you; 150m separates the buildings, while paid programs and available time differ.'],
+          ['River pause or West End', 'The cultural centre and Boundary Street are separate chapters. Continue only if heat, walking distance and the day’s meal/market plan suit.'],
+          ['Rail, busway or bus return', 'Set the actual return stop before leaving the galleries, then check service changes and the final departure after your meal.']
+        ],
+        fieldLens: {
+          label: 'Visit design', title: 'Protect the attention block.',
+          copy: 'The route is strongest when one collection or exhibition gets unhurried time, followed by a clear neighborhood choice. Adding every building and market can turn a cultural visit into a transfer race.',
+          notes: [['Rain or heat', 'Spend the weather window inside a confirmed gallery, shorten the river walk and use a current bus for West End if appropriate.'], ['A closed exhibition or market', 'Keep the other open gallery or a Boundary Street meal as the replacement; do not make the whole day depend on a market calendar.']]
+        },
+        nearbySources: [
+          ['https://www.qagoma.qld.gov.au/visit/', 'QAGOMA — opening, admission and entrances'],
+          ['https://translink.com.au/', 'Translink — journey planner and service updates'],
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/south-bank-parklands', 'Brisbane City Council — South Bank Parklands']
+        ],
+        stages: [
+          ['Pick the building', 'Use QAGOMA’s current exhibition and access pages to choose QAG, GOMA or both; the two entrances are on Stanley Place and 150m apart.'],
+          ['Give the gallery time', 'Check daily opening, holiday exceptions and paid/timed programs. Save the ticket or exhibition you care about as the day’s fixed point.'],
+          ['Pause, then decide on West End', 'Use the public river edge for a break. Continue to Boundary Street only if the walk or current bus, heat and meal timing still suit.'],
+          ['Close at a checked stop', 'Select the South Brisbane, busway or West End return that matches the final location and confirm the service before the meal, not afterward.']
+        ],
+        risks: [
+          ['A free gallery is not every free exhibit', 'General QAGOMA entry is free, but some exhibitions and events charge or require tickets. Check the current listing for the exact attraction.'],
+          ['Market not operating on your date', 'Market calendars change and an old weekly listing can be wrong. Verify the organiser’s calendar; if unconfirmed, plan Boundary Street for food without a market dependency.'],
+          ['Exposed connecting walk', 'Rain, heat or fatigue can make the river-to-neighborhood link poor value. Use a current bus or end the route at the galleries instead of forcing an extra walk.']
+        ],
+        duration: 'Allow a half-day for one major gallery and a river pause; allow most of a day for both buildings plus a meal in West End. These are planning ranges, not venue timings.',
+        combine: 'Pair with the City River & South Bank guide only when one of the two is a short bridge or ferry segment. Avoid stacking New Farm, an island ferry and a full gallery visit on the same day.',
+        verify: 'Check QAGOMA exhibitions, paid/timed entry and holiday hours; Translink stop access and disruptions; South Bank closures; the market’s own date listing; forecast, accessibility and photo rules.',
+        sources: [
+          ['https://www.qagoma.qld.gov.au/visit/', 'Queensland Art Gallery | Gallery of Modern Art — visit, access and opening hours'],
+          ['https://translink.com.au/', 'Translink Queensland — journey planner and alerts'],
+          ['https://www.brisbane.qld.gov.au/parks-and-recreation/parks-and-greenspaces/find-park-facilities-and-locations/south-bank-parklands', 'Brisbane City Council — South Bank Parklands facilities and closures']
+        ],
+        faq: [
+          ['Can I visit both QAG and GOMA?', 'They are 150m apart and share Stanley Place entrances, so both can fit if the selected exhibitions and your time allow. Choose one as the priority; each building has its own displays and some programs are ticketed.'],
+          ['Is entry free?', 'QAGOMA says general admission is free, including most exhibitions, screenings and programs; some exhibitions and special events have an entry fee or ticket. Confirm the exact program before travel.'],
+          ['Should I plan the route around a market?', 'Only if the market organiser confirms it is operating at the right location on your date. Keep Boundary Street food as a standalone option so a changed market calendar does not strand the day.'],
+          ['What is the simplest rainy-day version?', 'Visit one confirmed QAGOMA building, shorten or skip the river walk, and use a current Translink bus for West End only if that transfer helps. Return from the stop serving the actual final venue.']
+        ]
       }),
       g({
         slug: 'minjerribah-north-stradbroke', name: 'Minjerribah / North Stradbroke Island', motif: 'island ferry and headland day', instrument: 'island-ticket', imageQuery: 'North Stradbroke Island Minjerribah Point Lookout', imageAlt: 'Coastal headland on Minjerribah North Stradbroke Island',
@@ -705,19 +794,109 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'springbrook-national-park', name: 'Springbrook National Park', motif: 'plateau waterfall circuit', instrument: 'rain-gauge', imageQuery: 'Springbrook National Park waterfall Queensland', imageAlt: 'Rainforest waterfall in Springbrook National Park',
-        summary: 'A plateau rainforest day whose winding road, waterfall tracks, leeches, storm risk and Natural Bridge access are planned before departure.',
-        orientation: 'choose one Springbrook plateau sector and one track rather than linking every lookout by optimistic driving.', access: 'Use a capable driver, legal parking or an operator familiar with mountain roads; public transport does not solve the park circuit.', sequence: 'Drive in daylight, walk the most weather-sensitive track first, use formal lookouts and descend before fog or storm reduces road visibility.', boundary: 'Stay on tracks, avoid entering waterways or glow-worm habitat, and follow World Heritage and cultural-site controls.',
-        stages: [['Check the plateau weather', 'Compare coast and mountain forecasts, road alerts and fire danger before climbing.'], ['Park at the named trailhead', 'Do not improvise roadside access on narrow bends.'], ['Walk one complete circuit', 'Carry water and rain protection and turn around at the declared time.'], ['Descend with visibility', 'Leave before darkness, heavy rain or fog makes the winding return harder.']],
-        risks: [['Mountain road', 'Narrow wet roads and wildlife demand slow daylight driving.'], ['Storm and waterfall edges', 'Flash water, slippery rock and treefall can close tracks quickly.'], ['Leeches and biosecurity', 'Wear suitable clothing, clean footwear and stay out of fragile off-track areas.']],
-        duration: 'Use a full day from the coast and select one plateau cluster.', combine: 'Do not combine with Lamington; a short coast meal is the only reasonable addition.', verify: 'Check Queensland Parks alerts, road closure, storm, fire danger, track grade, sunset and fuel.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        searchSummary: 'Choose Springbrook’s plateau and one grade-matched walk: Purling Brook Falls is a 4km grade-3 return, while Natural Bridge is a separate road section. Check park alerts, road conditions and mountain rain before driving.',
+        summary: 'Choose one Springbrook section before leaving the coast: the plateau waterfall walks, Natural Bridge and Mount Cougal are separate road destinations with different track and weather decisions.',
+        orientationTitle: 'A park of separate sections, not one circuit.',
+        orientation: 'Use this chapter for the Springbrook plateau. It is a different driving choice from Natural Bridge in Numinbah Valley and Mount Cougal in Currumbin Valley; joining all three on a rainy day creates long, winding transfers and little time on foot. Decide between a grade-3 waterfall walk and a short lookout visit before climbing. Coastal sunshine is not proof of a clear plateau: cloud can hide viewpoints, and significant rain can close tracks even while the coast remains workable.',
+        access: 'From the Pacific Motorway, Queensland Parks lists the plateau as 24km from Mudgeeraba or 36km from Nerang; both approach roads are steep, winding and narrow. There is no public-transport circuit. Use a confident daylight driver, confirm parking at the exact trailhead and carry enough fuel and water for a remote hinterland day. Natural Bridge is reached on a separate road via Nerang–Murwillumbah Road, so do not treat it as a quick continuation from a plateau lookout.',
+        sequence: 'Choose a walk from its official grade and return time: Purling Brook Falls is grade 3, 4km return and about two hours walking, with the clockwise direction described as easier. Twin Falls is also grade 3 and 4km/about two hours; the path behind the falls may be slippery. For a shorter weather-conscious visit, Canyon Lookout is grade 1 and 30m return; Best of All Lookout is grade 2 and 600m return/about 30 minutes. These are official walking estimates before driving, breaks or the return to the coast. Never leave marked tracks for a waterfall base or creek bank.',
+        boundary: 'Springbrook sits within protected rainforest and waterfall country with restricted cliff, cascade and creek areas. Follow the marked route and signs; do not enter restricted areas at Purling Brook, Cave Creek or other waterways, and do not swim in Natural Bridge’s Cave Creek. Treat the plateau, the glow-worm cave and creek banks as places with specific protection rules, not photo access.',
+        decisions: [
+          ['Which section?', 'This page centers on the plateau. Natural Bridge is a separate drive via Nerang–Murwillumbah Road; Mount Cougal is another valley approach.'],
+          ['Waterfall circuit or viewpoint?', 'Purling Brook and Twin Falls each take about 2 hours on grade-3 track; choose a formal short lookout if rain, time or fitness makes that a poor fit.'],
+          ['Is the mountain window safe?', 'Compare a location-specific forecast and warnings with Queensland Parks alerts and QLDTraffic before driving; coastal weather can differ from the plateau.']
+        ],
+        fieldLens: {
+          label: 'Weather branch', title: 'Let rainfall set the route length.',
+          copy: 'In dry, settled weather, commit to one named circuit. After significant rain, the park may close parts of Purling Brook; check the current alert before leaving and again at the trailhead.',
+          notes: [['Shorter alternative', 'If the plateau roads and park remain open but a long walk is unsuitable, use only an open formal lookout such as Canyon Lookout.'], ['No safe drive', 'If road warnings, flooding, poor visibility or an official closure affect access, cancel the mountain drive. Keep the day on the coast or move it to another forecast window.']]
+        },
+        nearbySources: [
+          ['https://parks.qld.gov.au/parks/springbrook/journeys', 'Queensland Parks — grades, distances and current park alerts'],
+          ['https://parks.qld.gov.au/parks/springbrook/visiting-safely', 'Queensland Parks — road access and restricted areas'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — road incidents and closures'],
+          ['https://www.bom.gov.au/qld/forecasts/gold-coast.shtml', 'Bureau of Meteorology — regional forecast and warnings']
+        ],
+        stages: [
+          ['Choose the road section', 'Pick the Springbrook plateau. Keep Natural Bridge and Mount Cougal as separate outings unless current driving time, weather and daylight clearly support an extra transfer.'],
+          ['Match walking to the day', 'Choose Purling Brook (grade 3, 4km return/about 2hr), Twin Falls (grade 3, 4km/about 2hr) or a short formal lookout such as Canyon or Best of All.'],
+          ['Recheck after rain', 'Read park alerts and road status before departure. If the waterfall walk is closed or its creek/rock conditions are poor, use only a currently open lookout; never descend to a restricted base or creek.'],
+          ['Return before visibility fades', 'Allow for the winding descent, fuel and the actual sunset. Turn around when cloud, rain or fatigue makes the road less safe, even if one more viewpoint remains.']
+        ],
+        risks: [
+          ['Coast and plateau weather differ', 'Cloud may cover a lookout on an otherwise sunny coast day. Heavy rain can cause slippery trails, flash water and track or road closures.'],
+          ['A “short” waterfall stop is still a walk', 'The two main circuits listed here are grade 3 and about 4km return. Behind-waterfall rocks can stay slippery; stay on the formed track and supervise children.'],
+          ['Current facility alert', 'On 12 October 2026, Queensland Parks listed Tallanbana trailhead toilets closed through 29 January 2027. Recheck the alert before travel; do not rely on that facility being open.']
+        ],
+        duration: 'A full daylight day from the coast is a safer allowance for one plateau circuit, mountain driving, breaks and the return. A short lookout visit can be shorter, but do not combine it with the separate Natural Bridge road section by default.',
+        combine: 'Keep Springbrook and Lamington on separate days: both need long hinterland drives and weather checks. If the mountain forecast or road status fails, use a coast-based alternative or reschedule instead of crossing between parks.',
+        verify: 'Check Queensland Parks alerts and track grade, QLDTraffic closures, Bureau of Meteorology warnings plus the best local forecast available, the named road approach, fuel, daylight and current toilet access.',
+        sources: [
+          ['https://parks.qld.gov.au/parks/springbrook/journeys', 'Queensland Parks — Springbrook journeys, track grades and alerts'],
+          ['https://parks.qld.gov.au/parks/springbrook/visiting-safely', 'Queensland Parks — Springbrook access roads and safety'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — live road conditions'],
+          ['https://www.bom.gov.au/qld/forecasts/gold-coast.shtml', 'Australian Bureau of Meteorology — Gold Coast forecast and warnings']
+        ],
+        faq: [
+          ['Can I combine the plateau and Natural Bridge?', 'They are different park sections reached by separate road approaches. Natural Bridge is about 38km from Nerang along Nerang–Murwillumbah Road; decide on that section before driving instead of assuming it is the next stop after a plateau walk.'],
+          ['Which waterfall walk is realistic?', 'Purling Brook Falls and Twin Falls are each listed as grade 3 and 4km return, around two hours walking. Allow longer for rests and the drive. After significant rain, park alerts may close part of a track.'],
+          ['What is the short alternative?', 'Canyon Lookout is a grade-1, 30m return walk. Best of All Lookout is a grade-2, 600m return walk with an official estimate of about 30 minutes. Check the current alert and weather even for a short visit.'],
+          ['Are Natural Bridge creek and waterfall bases open for swimming?', 'No. Queensland Parks prohibits access to Cave Creek and its bank in the restricted area, including swimming. At Purling Brook, obey the separate restricted zones at the top and base.']
+        ]
       }),
       g({
         slug: 'lamington-national-park', name: 'Lamington National Park', motif: 'rainforest trail register', instrument: 'canopy-register', imageQuery: 'Lamington National Park rainforest Queensland', imageAlt: 'Dense subtropical rainforest in Lamington National Park',
-        summary: 'A high-country rainforest visit separating Binna Burra and Green Mountains gateways, trail grades and remote-walk obligations.',
-        orientation: 'select one gateway before leaving the coast because the two major sections are not a quick internal transfer.', access: 'Drive or use an appropriate operator to the chosen gateway, confirming road access, parking and accommodation status.', sequence: 'Begin at the visitor or trailhead information point, take one ability-matched circuit and finish before mountain weather or road fatigue builds.', boundary: 'World Heritage rainforest is vulnerable to disease, erosion and wildlife pressure. Clean footwear, stay on track and never feed animals.',
-        stages: [['Choose one gateway', 'Commit to Binna Burra or Green Mountains and discard the other from the same-day plan.'], ['Register the circuit', 'Read grade, distance, water and closure information at the trailhead.'], ['Walk below the canopy', 'Keep pace conservative and use signed junctions rather than off-track shortcuts.'], ['Close before the descent', 'Return to the vehicle with daylight and driver attention in reserve.']],
-        risks: [['Gateway confusion', 'The park name does not mean entrances connect easily; route to the exact trailhead.'], ['Treefall and storm', 'Wind and saturated ground can close tracks without much warning.'], ['Remote trail', 'Long circuits need navigation, water and emergency planning beyond a casual rainforest stroll.']],
-        duration: 'A full day suits one short-to-medium circuit; stay overnight for longer walks.', combine: 'Keep Lamington independent of Springbrook and the urban beach corridor.', verify: 'Check gateway road, park alerts, track grade, fire or storm warnings, water and daylight.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        searchSummary: 'Choose Green Mountains or Binna Burra before leaving the coast: the two trailheads are separate road gateways with no public transport. Match a named grade-and-distance walk to the live severe-weather alert and road conditions.',
+        summary: 'Choose the Green Mountains or Binna Burra gateway before leaving the coast; each has its own winding access road, trail choices and current severe-weather closures.',
+        orientationTitle: 'Choose the trailhead before the mountain road.',
+        orientation: 'Lamington is not a single roadside stop. Green Mountains (O’Reilly’s) and Binna Burra are separate sections on different sides of the plateau; there is no public transport between them, and a same-day switch wastes daylight on winding roads. Let the walk you want choose your gateway: Green Mountains for Python Rock, Morans Falls or its short rainforest/accessible paths; Binna Burra for its rainforest circuit and eastern tracks. Keep the day to one access road and one walking objective.',
+        access: 'From Broadbeach, Queensland Parks lists Green Mountains as a drive via Canungra: the final 36km is narrow and winding and takes at least 50 minutes; that section is unsuitable for RVs longer than 6m and vehicles towing caravans or camper trailers. Binna Burra is a separate drive via Beechmont; the final 1.8km is very narrow and winding. There is no public transport to the park, and taxi or rideshare pickup can be difficult. Choose a capable driver or a booked tour with a confirmed return, and do not rely on a last-minute app pickup.',
+        sequence: 'Use the Queensland Parks walking summary to fit the group: Green Mountains offers the grade-1 Centenary Track, 1.8km return/about 30 minutes, or the grade-3 Python Rock Track, 3.1km/about one hour; Morans Falls is grade 4, 4.4km/about 1.5 hours. Binna Burra’s Rainforest Circuit is grade 2, 1.2km/about 30 minutes. Times are walking estimates, not whole-trip durations. The 900m universal-access Centenary Track at Green Mountains is the wheelchair-oriented option; the first 700m of Border Track is described as accessible with assistance. Confirm surface, assistance and current works for your needs.',
+        boundary: 'Lamington is protected World Heritage rainforest with fragile soils, waterways and restricted access areas. Stay on open tracks, do not cross flooded creeks, never jump or dive into waterways, and leave a long-walk plan with a responsible person. Rescue and medical help can take hours; the park advises against beginning long walks after midday.',
+        decisions: [
+          ['Green Mountains or Binna Burra', 'Select the trail family first. There is no public transport to the park; taxi or rideshare pickup is difficult, and the gateways are not a casual internal transfer.'],
+          ['Choose a track by grade', 'Use the shorter Green Mountains Centenary or Binna Burra Rainforest Circuit for modest walks; reserve grade-3/4 trails for a suitable group and full daylight.'],
+          ['Does the live alert change the objective?', 'As checked 12 October 2026, Queensland Parks lists severe-weather damage affecting parts of both sections. Recheck exact open segments and roads before setting out.']
+        ],
+        fieldLens: {
+          label: 'Gateway and closure logic', title: 'The open section determines the route.',
+          copy: 'An alert can leave one track partly open while another remains closed. Preserve the same gateway and only use the officially open out-and-back segment; do not join closed circuits through an alternate path.',
+          notes: [['Green Mountains', 'The dated alert limits Albert River to Echo Point from the southern junction; return the same way. Short tracks such as Centenary, Python Rock and Morans Falls were listed open when checked.'], ['Binna Burra', 'The dated alert limits Coomera to Coomera Falls Lookout from the first northern junction; return the same way. Illinbah was listed closed. Check the live notice for changes.']]
+        },
+        nearbySources: [
+          ['https://parks.qld.gov.au/parks/lamington/visiting-safely', 'Queensland Parks — road access and safety'],
+          ['https://parks.qld.gov.au/parks/lamington/journeys/walking-tracks-summary', 'Queensland Parks — track grades and distances'],
+          ['https://parks.qld.gov.au/park-alerts/25025', 'Queensland Parks — severe-weather track alert'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — road incidents and closures']
+        ],
+        stages: [
+          ['Let the trail pick the gateway', 'Compare Green Mountains and Binna Burra in the official walk list. Choose one; the roads, parking and trailheads are separate, and public transport does not reach the park.'],
+          ['Match track to ability and daylight', 'Use the published grade and return estimate, then add the mountain drive, stops and margin. Long walks should start early; the park advises not to attempt them after midday.'],
+          ['Read the exact alert segment', 'Check the severe-weather notice and maps. If a circuit is truncated, turn at the named open point and return on the same track; never bypass a closure.'],
+          ['Descend with a reserve', 'Carry water, map and first-aid basics, tell someone your route for longer walks and return with daylight. Do not depend on mobile coverage or an unconfirmed pickup.']
+        ],
+        risks: [
+          ['Road is part of the commitment', 'Green Mountains’ final 36km from Canungra is narrow, winding and at least 50 minutes; vehicles over 6m or towing trailers are unsuitable. Binna Burra’s last 1.8km is very narrow.'],
+          ['Severe-weather closures are specific', 'On 12 October 2026, the alert limited Binna Burra’s Coomera route to the lookout and closed eastern Illinbah; Green Mountains’ Albert River route stopped at Echo Point. Recheck the live segment before hiking.'],
+          ['Remote rescue takes time', 'Do not cross flooded creeks or press on after the turnaround. The park warns rescue may take hours and advises against starting long walks after midday.']
+        ],
+        duration: 'Plan a full daylight day for one gateway and one short-to-medium walk from the coast. Longer Grade 4 circuits merit an early start and often a nearby overnight; build road time and current closures into that choice.',
+        combine: 'Keep Lamington separate from Springbrook and the beach corridor. If the selected road or trail closes, switch to a lower-elevation Gold Coast day or reschedule; crossing to the other Lamington gateway is not a reliable same-day substitute.',
+        verify: 'Check Queensland Parks’ current severe-weather alert and track map, exact gateway road conditions on QLDTraffic, grade and distance, sunrise/sunset, weather, parking, tour return and mobile coverage assumptions.',
+        sources: [
+          ['https://parks.qld.gov.au/parks/lamington/visiting-safely', 'Queensland Parks — Lamington gateway roads, accessibility and safety'],
+          ['https://parks.qld.gov.au/parks/lamington/journeys/walking-tracks-summary', 'Queensland Parks — Lamington walking grades and distances'],
+          ['https://parks.qld.gov.au/park-alerts/25025', 'Queensland Parks — current severe-weather damage alert'],
+          ['https://qldtraffic.qld.gov.au/', 'Queensland Traffic — route access and closures']
+        ],
+        faq: [
+          ['Can I visit both gateways on one day?', 'It is not a good default. Green Mountains and Binna Burra have separate narrow access roads and distant trailheads; no public transport connects them, and taxi/rideshare pickup can be difficult. Choose the trail first.'],
+          ['Which walk suits a shorter day?', 'Green Mountains has the grade-1 Centenary Track at 1.8km return/about 30 minutes; Binna Burra has a grade-2 Rainforest Circuit at 1.2km/about 30 minutes. Confirm the live alert, surface and your group’s access needs.'],
+          ['What does the 12 October 2026 weather alert change?', 'At that check, Coomera at Binna Burra was open only to Coomera Falls Lookout from the first northern junction, while Illinbah was closed. At Green Mountains, Albert River was open only to Echo Point from the southern junction. Recheck the current alert and use the named out-and-back limits.'],
+          ['Is a rideshare a dependable return?', 'Queensland Parks warns pickup can be difficult. Confirm a commercial tour’s pickup and return before booking, or arrange your own vehicle; do not make a remote trail day depend on an unconfirmed app request.']
+        ]
       })
     ]
   })

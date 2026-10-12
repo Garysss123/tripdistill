@@ -31,6 +31,12 @@ const currentSydneyNswGapRoutes = [
   '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
   '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/'
 ];
+const currentBrisbaneGoldCoastGapRoutes = [
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -159,10 +165,10 @@ const localizedReviewDate = {
   th: '12 ตุลาคม 2026'
 };
 
-const expectedHtml = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the Gold Coast and later Cairns routes plus the four current Sydney/NSW gap routes may change from the requested base.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the Gold Coast, later Cairns, Sydney/NSW gaps and current Brisbane/Gold Coast gap routes may change from the requested base.');
 
 const deltas = [];
 for (const route of routes) {
@@ -219,7 +225,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes].sort(), 'Only Gold Coast, later Cairns and current Sydney/NSW gap search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes].sort(), 'Only Gold Coast, later Cairns, Sydney/NSW gaps and current Brisbane/Gold Coast gap search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match page copy.');
@@ -235,10 +241,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only Gold Coast, later Cairns and current Sydney/NSW gap routes across five editions may receive a new lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only Gold Coast, later Cairns, Sydney/NSW gaps and current Brisbane/Gold Coast gap routes across five editions may receive a new lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
 
 const svg = fs.readFileSync(path.join(root, svgPath), 'utf8');

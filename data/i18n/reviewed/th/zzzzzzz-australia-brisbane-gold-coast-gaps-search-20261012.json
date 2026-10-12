@@ -1,0 +1,18 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Start at New Farm Park by ferry or bus, choose a scheduled Powerhouse visit, then decide whether Fortitude Valley fits before the last practical train or a prearranged ride home.": "เริ่มที่ New Farm Park โดยเรือเฟอร์รีหรือรถบัส เลือกเข้าชม Powerhouse ตามโปรแกรม แล้วตัดสินใจว่าจะไป Fortitude Valley ต่อได้หรือไม่ โดยยังทันรถไฟเที่ยวสุดท้ายที่ใช้งานได้หรือรถรับกลับที่นัดไว้ล่วงหน้า",
+    "Give QAG or GOMA a real visit, then decide whether the river edge and West End’s Boundary Street fit; the two galleries are 150m apart, but market dates and return transport are separate checks.": "เผื่อเวลาเที่ยว QAG หรือ GOMA อย่างจริงจัง แล้วค่อยตัดสินใจว่าจะไปริมแม่น้ำและ Boundary Street ใน West End ต่อหรือไม่ แกลเลอรีทั้งสองห่างกัน 150m แต่ต้องตรวจวันจัดตลาดและการเดินทางกลับแยกกัน",
+    "Choose Springbrook’s plateau and one grade-matched walk: Purling Brook Falls is a 4km grade-3 return, while Natural Bridge is a separate road section. Check park alerts, road conditions and mountain rain before driving.": "เลือกที่ราบสูง Springbrook และเส้นทางเดินหนึ่งเส้นที่เหมาะกับระดับ: Purling Brook Falls เป็นเส้นทางไปกลับ 4km ระดับ 3 ส่วน Natural Bridge อยู่คนละช่วงถนน ตรวจประกาศอุทยาน สภาพถนน และฝนบนภูเขาก่อนขับรถ",
+    "Choose Green Mountains or Binna Burra before leaving the coast: the two trailheads are separate road gateways with no public transport. Match a named grade-and-distance walk to the live severe-weather alert and road conditions.": "เลือก Green Mountains หรือ Binna Burra ก่อนออกจากชายฝั่ง: จุดเริ่มเส้นทางทั้งสองใช้ถนนคนละสายและไม่มีขนส่งสาธารณะ จับคู่เส้นทางที่ระบุชื่อ ระดับ และระยะทางกับประกาศสภาพอากาศรุนแรงและสภาพถนนล่าสุด"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna requested; runtime identity unverified",
+    "reviewer": "GPT-6 Luna requested; same-model self-review (non-independent); runtime identity unverified",
+    "independentSecondModel": false
+  }
+}

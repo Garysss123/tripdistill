@@ -43,6 +43,12 @@ const laterCairnsRoutes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
+const currentBrisbaneGoldCoastGapRoutes = [
+  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+  '/australia/gold-coast-scenic-rim/lamington-national-park/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -274,7 +280,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...currentGapRoutes, ...currentSydneyRoutes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].sort(), 'Only selected Blue Mountains, Sydney/NSW gap, later Great Ocean Road, Gold Coast and Cairns search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...currentGapRoutes, ...currentSydneyRoutes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentBrisbaneGoldCoastGapRoutes].sort(), 'Only selected Blue Mountains, Sydney/NSW gap, later Great Ocean Road, Gold Coast, Cairns and current Brisbane/Gold Coast gap search records may change.');
 for (const route of allCurrentRoutes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);
@@ -283,10 +289,10 @@ for (const route of allCurrentRoutes) {
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...currentGapRoutes, ...currentSydneyRoutes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const expectedLastmod = [...routes, ...currentGapRoutes, ...currentSydneyRoutes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...currentBrisbaneGoldCoastGapRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Blue Mountains, Sydney/NSW gap, later Great Ocean Road, Gold Coast and Cairns routes in five editions may receive a new sitemap lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Blue Mountains, Sydney/NSW gap, later Great Ocean Road, Gold Coast, Cairns and current Brisbane/Gold Coast gap routes in five editions may receive a new sitemap lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, `${route}: sitemap lastmod.`);
 
 const svgFile = path.join(root, svgPath.slice(1));
