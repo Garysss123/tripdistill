@@ -7535,57 +7535,6 @@
     ]
   },
   {
-    "title": "Winnipeg & Churchill",
-    "url": "/canada/winnipeg-churchill/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Winnipeg is an urban prairie base with museums and river meeting points. Churchill is a remote subarctic destination reached by scheduled rail or flight and planned around season-specific wildlife and weather—not an extension of a city weekend.",
-    "keywords": [
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "prairies"
-    ]
-  },
-  {
-    "title": "The Forks & Exchange District",
-    "url": "/canada/winnipeg-churchill/forks-exchange/",
-    "parent": "Winnipeg & Churchill",
-    "type": "Local guide",
-    "summary": "Use The Forks as the geographic start, then connect the Exchange District and one cultural stop without treating Winnipeg only as the airport before Churchill.",
-    "keywords": [
-      "The Forks & Exchange District",
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "city-grid"
-    ]
-  },
-  {
-    "title": "Human Rights Museum & Assiniboine",
-    "url": "/canada/winnipeg-churchill/human-rights-assiniboine/",
-    "parent": "Winnipeg & Churchill",
-    "type": "Local guide",
-    "summary": "Give the Canadian Museum for Human Rights a serious attention block, then choose either Assiniboine Park or another lighter cultural space as the emotional and physical reset.",
-    "keywords": [
-      "Human Rights Museum & Assiniboine",
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "museum-selector"
-    ]
-  },
-  {
-    "title": "Churchill & Hudson Bay",
-    "url": "/canada/winnipeg-churchill/churchill-hudson-bay/",
-    "parent": "Winnipeg & Churchill",
-    "type": "Local guide",
-    "summary": "Choose Churchill for one seasonal reason, then book transport and a qualified local operator around that purpose while keeping wildlife and aurora outcomes explicitly uncertain.",
-    "keywords": [
-      "Churchill & Hudson Bay",
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "expedition-board"
-    ]
-  },
-  {
     "title": "Whitehorse & Kluane",
     "url": "/canada/whitehorse-kluane/",
     "parent": "Canada",
@@ -13189,6 +13138,57 @@
       "Prince Edward Island",
       "Prince Edward Island",
       "roadbook"
+    ]
+  },
+  {
+    "title": "Winnipeg & Churchill",
+    "url": "/canada/winnipeg-churchill/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Winnipeg is a walkable prairie-city chapter; Churchill is a separate subarctic expedition. Parks Canada says there is no road access to Churchill or road entry into Wapusk National Park. Choose a date-specific flight or VIA Rail itinerary, then arrange local transport and any park outing with a licensed operator. Do not plan Churchill as a Winnipeg day trip or assume that wildlife will appear on demand.",
+    "keywords": [
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "prairies"
+    ]
+  },
+  {
+    "title": "The Forks & Exchange District",
+    "url": "/canada/winnipeg-churchill/forks-exchange/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Follow one coherent central Winnipeg day: read the Red and Assiniboine river meeting place at The Forks, choose either the nearby Peace Meeting site or a museum stop, then continue to the Exchange District’s historic streets. The Forks describes the confluence as a gathering place for more than 6,000 years; approach Indigenous histories as living stories, not a quick attraction label.",
+    "keywords": [
+      "The Forks & Exchange District",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "city-grid"
+    ]
+  },
+  {
+    "title": "Human Rights Museum & Assiniboine",
+    "url": "/canada/winnipeg-churchill/human-rights-assiniboine/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Give the Canadian Museum for Human Rights a real visit block: its visitor plan describes ten core galleries across seven floors. Afterward choose either a short Forks-area finish or a separate westbound transfer to Assiniboine Park; the park is not an adjacent museum garden, and The Leaf has its own current hours and admission.",
+    "keywords": [
+      "Human Rights Museum & Assiniboine",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "museum-selector"
+    ]
+  },
+  {
+    "title": "Churchill & Hudson Bay",
+    "url": "/canada/winnipeg-churchill/churchill-hudson-bay/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Choose Churchill for a defined seasonal purpose and build around its scheduled air or rail access. Parks Canada confirms there is no road to Churchill, Wapusk has no roads, and park visits require a licensed operator. Beluga migration dates and polar-bear safety guidance help choose a season but never guarantee a sighting.",
+    "keywords": [
+      "Churchill & Hudson Bay",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "expedition-board"
     ]
   }
 ]

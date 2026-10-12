@@ -457,21 +457,185 @@ export const canadaAtlanticNorthClusters = [
 
   defineCanadaCluster({
     slug: 'winnipeg-churchill', name: 'Winnipeg & Churchill', region: 'Manitoba', band: 'prairies', family: 'prairie-to-tundra',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
     label: 'Prairie capital to Hudson Bay · rail, flight and wildlife seasons', tagline: 'Churchill is an expedition branch, not a day trip.',
-    hubIntro: 'Winnipeg is an urban prairie base with museums and river meeting points. Churchill is a remote subarctic destination reached by scheduled rail or flight and planned around season-specific wildlife and weather—not an extension of a city weekend.',
-    stay: 'Two Winnipeg nights plus three or more Churchill nights is a realistic minimum if the northern branch is the purpose of the trip.',
-    transfer: 'VIA Rail and flights serve Churchill on very different time/cost profiles. Local tundra/wildlife access requires appropriate operators and community-based transport.',
-    season: 'Polar bear, beluga, aurora and bird interests peak in different periods and none is guaranteed. Winter cold and storms can disrupt transport.',
-    fallback: 'Winnipeg’s museums make reliable weather days; in Churchill, interpretation and town/community time should remain valuable when wildlife or sky conditions disappoint.',
+    hubIntro: 'Winnipeg is a walkable prairie-city chapter; Churchill is a separate subarctic expedition. Parks Canada says there is no road access to Churchill or road entry into Wapusk National Park. Choose a date-specific flight or VIA Rail itinerary, then arrange local transport and any park outing with a licensed operator. Do not plan Churchill as a Winnipeg day trip or assume that wildlife will appear on demand.',
+    stay: 'Give Winnipeg two or three nights for the river meeting place, Exchange District and one substantial museum. If Churchill is the purpose, budget at least four nights there, plus the rail or flight travel days and a Winnipeg return buffer; three nights is fragile when weather or transport shifts.',
+    transfer: 'Calm Air publishes date-specific scheduled flights from Winnipeg and VIA Rail publishes date-specific train service to Churchill; compare the current journey days, fares, baggage rules and return before choosing. There is no road to Churchill. Wapusk has no roads either, and Parks Canada directs visitors to licensed commercial operators for park access.',
+    season: 'Checked 12 October 2026: Parks Canada says Western Hudson Bay belugas arrive from mid-June to early July and begin migrating north again in mid-September. Polar bears can be encountered at any time, with elevated risk in autumn. These are ecological windows, not wildlife guarantees; transport, local services, weather and daylight change by date.',
+    fallback: 'In Winnipeg, move a weather day to the Canadian Museum for Human Rights or another confirmed indoor stop. In Churchill, keep a town and interpretation day that does not depend on a wildlife sighting; if a licensed excursion is cancelled, follow local safety advice instead of trying to reach the coast independently.',
     sources: [
-      ['https://info.winnipegtransit.com/', 'Winnipeg Transit — city service information'],
-      ['https://humanrights.ca/', 'Canadian Museum for Human Rights — visitor information'],
-      ['https://www.viarail.ca/en/explore-our-destinations/trains/regional-trains/winnipeg-churchill', 'VIA Rail — Winnipeg–Churchill service']
+      ['https://info.winnipegtransit.com/en/schedules-maps-tools/transittools/', 'Winnipeg Transit — TransitTools real-time trip planning'],
+      ['https://humanrights.ca/visit/plan-your-visit', 'Canadian Museum for Human Rights — visit planning and access'],
+      ['https://www.assiniboinepark.ca/park/visit/hours', 'Assiniboine Park — current hours and seasonal notices'],
+      ['https://parks.canada.ca/pn-np/mb/wapusk/visit', 'Parks Canada — Wapusk access, transport and licensed operators'],
+      ['https://parks.canada.ca/pn-np/mb/wapusk/nature/faune-animals/marine', 'Parks Canada — Hudson Bay beluga seasonal migration'],
+      ['https://parks.canada.ca/pn-np/mb/wapusk/securite-safety/ours-bear', 'Parks Canada — northern Manitoba polar-bear safety'],
+      ['https://www.viarail.ca/en/plan/train-schedules/winnipeg-the-pas-churchill', 'VIA Rail — date-specific Winnipeg–Churchill schedules'],
+      ['https://www.calmair.com/fly-calm-air/schedule-updates', 'Calm Air — current schedule updates']
+    ],
+    firstVisitPlan: {
+      heading: 'Choose a city visit or an expedition branch',
+      intro: 'These are different trip shapes. Confirm the exact transport dates before booking non-refundable city stays or an onward international flight; a map cannot compress Churchill into a day trip.',
+      days: [
+        ['Two or three nights · Winnipeg only', 'Stay in the city, use one full day for The Forks and the Exchange District, and reserve another block for the Human Rights Museum or Assiniboine Park. Check Winnipeg Transit and each institution’s current hours; no Churchill transfer is implied.'],
+        ['Seven or more nights · flight-led Churchill', 'Use Winnipeg as the arrival buffer, fly only on the currently published date-specific schedule, then spend at least four nights in Churchill. Book local transport and any wildlife or park day with a licensed operator; protect a spare day and a non-tight Winnipeg return.'],
+        ['Eight or more nights · rail-led Churchill', 'Treat the VIA journey days as part of the itinerary, compare the current timetable and departure dates, then plan the Churchill stay around the train’s actual arrival and return. Add a Winnipeg night after the southbound leg before an important flight; do not assume a same-day connection.']
+      ]
+    },
+    faq: [
+      ['Can I drive from Winnipeg to Churchill?', 'No. Parks Canada says there is no road access to Churchill. Choose current scheduled air service or VIA Rail, then plan local transport in Churchill separately.'],
+      ['Can Churchill be a day trip from Winnipeg?', 'No. The journey itself is a scheduled flight or rail trip, and Wapusk access needs licensed operators. Give the northbound and return legs their real calendar days and keep a delay margin.'],
+      ['How many Churchill nights should I book?', 'Four or more nights is a stronger first plan when a wildlife or tundra excursion matters. Three nights leaves little room for a cancelled outing or transport delay; add the rail/flight travel days outside that count.'],
+      ['Are belugas or polar bears guaranteed?', 'No. Parks Canada publishes seasonal ecology and safety guidance, not a sighting guarantee. Choose the trip for its place, community and interpretation as well as wildlife, and follow local operator decisions.']
     ],
     guides: [
-      g({ slug: 'forks-exchange', name: 'The Forks & Exchange District', instrument: 'river-meeting city ledger', layout: 'city-grid', imageQuery: 'Winnipeg The Forks Exchange District Manitoba', imageAlt: 'The Forks and downtown Winnipeg near the rivers', summary: 'Use The Forks as the geographic start, then connect the Exchange District and one cultural stop without treating Winnipeg only as the airport before Churchill.', access: 'Downtown and The Forks are served by Winnipeg Transit and are walkable in suitable weather; winter cold changes the value of long outdoor links.', tradeoff: 'This day gives river geography, architecture and food. It gives up a museum marathon and creates a better first understanding of the city.', fallback: 'Cold, smoke or storms can move more time into The Forks interiors, galleries and nearby institutions.', duration: 'One full day is enough for a first central visit; add another for major museums and neighborhoods.', combine: 'Pair with the Canadian Museum for Human Rights nearby or reserve that institution for the next day if deep viewing matters.', verify: 'Check Winnipeg Transit, river/trail conditions, market hours and event street closures.', stages: [['Meet at the Forks', 'Start where the Red and Assiniboine rivers explain the city’s geography and layered histories.'], ['Choose one river walk', 'Use weather and trail condition to set the outdoor segment.'], ['Move to the Exchange', 'Walk or ride to the historic warehouse district for architecture and local businesses.'], ['Return to an indoor evening', 'Finish with food or culture near the hotel instead of an unnecessary cross-city transfer.']], watch: [['Extreme temperature', 'Winter cold and summer heat/smoke can make walking plans unsafe or unpleasant.'], ['River ice assumptions', 'Never infer that frozen water is safe from appearance; follow official route/ice guidance.'], ['Event closure', 'Festivals can change central access and parking.']] }),
-      g({ slug: 'human-rights-assiniboine', name: 'Human Rights Museum & Assiniboine', instrument: 'collection-and-park balance', layout: 'museum-selector', imageQuery: 'Canadian Museum for Human Rights Winnipeg', imageAlt: 'Canadian Museum for Human Rights in Winnipeg', summary: 'Give the Canadian Museum for Human Rights a serious attention block, then choose either Assiniboine Park or another lighter cultural space as the emotional and physical reset.', access: 'The museum is at The Forks; Assiniboine Park is farther west and requires transit/taxi/car planning.', tradeoff: 'The museum is conceptually dense and should not be rushed. Pairing it with a park or garden creates contrast without pretending to “finish” Winnipeg’s institutions.', fallback: 'Severe weather can replace the park with an indoor gallery or a shorter Forks block, keeping the day useful without forcing a long exposed cross-city transfer.', duration: 'A full day works well; allow several hours for the museum rather than treating it as a quick architectural stop.', combine: 'Use the park only if the transfer and weather remain comfortable. Keep Churchill departure days simple.', verify: 'Check museum tickets/hours, Winnipeg Transit, Assiniboine facilities and weather warnings.', stages: [['Museum first', 'Arrive with enough time to read rather than photographing the building and rushing onward.'], ['Pause before the second site', 'Use food and quiet time to reset attention.'], ['Choose park or another collection', 'Let weather and energy determine whether the afternoon is outside or inside.'], ['End near the next-day transport plan', 'Prepare rail/airport logistics if Churchill follows.']], watch: [['Emotional fatigue', 'Human-rights content is not a checklist; leave room to pause.'], ['Cross-city transfer', 'The park is not beside The Forks.'], ['Departure-day overload', 'Do not attach a tight airport/rail deadline to a long museum visit.']] }),
-      g({ slug: 'churchill-hudson-bay', name: 'Churchill & Hudson Bay', instrument: 'season-and-operator expedition board', layout: 'expedition-board', imageQuery: 'Churchill Manitoba tundra Hudson Bay Canada', imageAlt: 'Subarctic tundra and Hudson Bay near Churchill Manitoba', summary: 'Choose Churchill for one seasonal reason, then book transport and a qualified local operator around that purpose while keeping wildlife and aurora outcomes explicitly uncertain.', access: 'Reach Churchill by scheduled flight or VIA Rail. Tundra, wildlife and remote-coast access require local operators and conditions beyond ordinary rental-car tourism.', tradeoff: 'The remote setting offers rare subarctic experiences at high cost and low schedule flexibility. Weather delays and no-sighting days are part of the risk.', fallback: 'Use the Itsanitaq/visitor interpretation, town history and community-scale day as the meaningful replacement when weather or wildlife conditions cancel an excursion.', duration: 'Three nights is a bare minimum; four or more protects against transport and weather disruption.', combine: 'Use Winnipeg as the gateway buffer. Do not book a tight international departure immediately after the Churchill return.', verify: 'Check VIA Rail or airline status, operator permits/terms, weather, wildlife-safety guidance and current local advisories before every field day.', stages: [['Choose the season’s purpose', 'Decide whether your trip is mainly bears, belugas, northern lights, birds or subarctic culture.'], ['Build around one operator', 'Use a reputable local operator whose vehicle/boat and safety plan matches that purpose.'], ['Keep a community day', 'Leave time for Churchill itself so a no-sighting day is not an empty day.'], ['Protect the southbound connection', 'Return to Winnipeg with delay margin before major onward flights.']], watch: [['Wildlife is not guaranteed', 'Ethical viewing protects distance and animal behavior rather than maximizing proximity.'], ['Transport disruption', 'Remote rail and flights are more vulnerable to weather and infrastructure delay.'], ['Extreme cold', 'Operator gear guidance is operational safety, not optional comfort advice.']] })
+      g({
+        slug: 'forks-exchange', name: 'The Forks & Exchange District', instrument: 'river-meeting city ledger', layout: 'city-grid', imageQuery: 'Winnipeg The Forks Exchange District Manitoba',
+        imageAlt: 'Riverfront at The Forks in Winnipeg, with the riverside promenade and sculpture at dusk',
+        summary: 'Follow one coherent central Winnipeg day: read the Red and Assiniboine river meeting place at The Forks, choose either the nearby Peace Meeting site or a museum stop, then continue to the Exchange District’s historic streets. The Forks describes the confluence as a gathering place for more than 6,000 years; approach Indigenous histories as living stories, not a quick attraction label.',
+        access: 'Start and finish in central Winnipeg. The Forks and Exchange District are distinct walk/ride segments, so check Winnipeg Transit’s live trip planner and weather before choosing the link; no walking distance or river-path condition is assumed here.',
+        tradeoff: 'Choose a river-and-architecture day when you want a strong first reading of the city. Give up the deep Human Rights Museum galleries or the farther west Assiniboine Park; each deserves a separate block.',
+        fallback: 'In extreme cold, smoke, heavy rain or a river-path closure, shorten the outdoor segment and choose one confirmed indoor stop near The Forks or the Exchange. Replace a disrupted path with current bus service rather than crossing unsafe ice or extending the walk.',
+        duration: 'Plan one full day, with open time for the Peace Meeting site, a meal and either one Exchange District walking tour or a single museum. The historic district’s 20-block scale makes selecting a smaller area more useful than trying to cover every building.',
+        combine: 'The Canadian Museum for Human Rights is nearby at The Forks and can be the single indoor anchor. Assiniboine Park is farther west and is a separate transfer; keep it for another day.',
+        verify: 'Checked 12 October 2026: The Forks describes this confluence as a gathering place for over 6,000 years, and the Exchange District BIZ offers historic walking tours through its 1880–1920 architecture. Check current tour dates, TransitTools, weather/path notices and event closures.',
+        routeChoices: {
+          heading: 'Choose the city story that anchors the walk',
+          intro: 'All three choices begin in the river district. Pick one longer stop so that the Exchange streets and the return remain comfortable.',
+          options: [
+            ['River meeting place', 'Peace Meeting site and Oodena', 'Stay at The Forks to understand the river confluence and Indigenous gathering histories. Use the site’s own interpretation and allow the story more than a photo stop.'],
+            ['Historic architecture', 'Exchange District BIZ walking tour', 'Choose a published guided tour or a self-directed street walk through the district’s 1880–1920 building collection. Confirm the BIZ calendar if you want a guide.'],
+            ['Indoor interpretation', 'Canadian Museum for Human Rights', 'Use this as the deep indoor visit near The Forks, then keep the Exchange District shorter. Check the museum’s current tickets, hours and access details first.']
+          ]
+        },
+        routeEyebrow: 'River-to-warehouse district day', routeHeading: 'The Forks first, one Exchange District anchor', routeStageLabels: ['Orient', 'Choose', 'Continue', 'Return'],
+        routeSourcesHeading: 'Local history, tours and live movement',
+        routeSourcesNote: 'The Forks explains the river confluence and its long Indigenous gathering history. The Exchange District BIZ publishes its historic-tour offer; Winnipeg TransitTools is the date-specific source for the ride between areas.',
+        sources: [
+          ['https://www.theforks.com/attractions/peace-meeting-site', 'The Forks — Peace Meeting site and river confluence'],
+          ['https://www.theforks.com/attractions/oodena-celebration-circle', 'The Forks — Oodena Celebration Circle'],
+          ['https://exchangedistrict.org/historic-walking-tours-2/', 'Exchange District BIZ — historic walking tours'],
+          ['https://info.winnipegtransit.com/en/schedules-maps-tools/transittools/', 'Winnipeg Transit — real-time trip planning'],
+          ['https://humanrights.ca/visit/plan-your-visit', 'Canadian Museum for Human Rights — visit planning']
+        ],
+        faq: [
+          ['Is The Forks only a market stop?', 'No. The Forks places the site at the Red and Assiniboine confluence and describes a long history of Indigenous gathering. Use the Peace Meeting site or Oodena interpretation as context, and treat Indigenous presence as living rather than only historic.'],
+          ['Should I take a guided Exchange District walk?', 'Choose the BIZ tour when its current calendar fits and you want a curated architectural route. Otherwise, keep to a self-directed public-street visit and verify which businesses or interiors are actually open.'],
+          ['Can I walk between The Forks and the Exchange District?', 'The areas are both central, but weather, mobility, path conditions and your chosen route matter. Check TransitTools for a current bus alternative; this guide does not assume a specific crossing, distance or walking time.'],
+          ['What is the best bad-weather fallback?', 'Keep one indoor anchor at or near The Forks, such as the Human Rights Museum if its hours and tickets suit. Shorten the Exchange walk and check transit rather than using river ice or an exposed path as a shortcut.']
+        ],
+        stages: [
+          ['Begin where the rivers meet', 'At The Forks, use the Peace Meeting site or Oodena to orient to the Red–Assiniboine confluence and its Indigenous gathering history. Follow current posted site information and allow time for interpretation.'],
+          ['Choose one long stop', 'Stay with the river district and add one indoor museum visit, or keep the day outdoors and proceed toward the Exchange. The Forks and the Exchange are not a single attraction, so choose the depth that fits daylight and energy.'],
+          ['Continue to the Exchange', 'Check the BIZ tour calendar for a guided route through the historic district, or explore its public streets on your own. Its 1880–1920 building collection is spread across a 20-block area; choose a focused section rather than counting façades.'],
+          ['Return on a live route', 'Use TransitTools to check the current bus option or choose a suitable walk back. Finish near your lodging; leave Assiniboine Park and Churchill transport for another day.']
+        ],
+        watch: [
+          ['River and path conditions', 'Waterfront access and weather change. Never infer safe ice from appearance; follow official barriers and use a transit fallback when footing or exposure is poor.'],
+          ['Tours and interiors are date-specific', 'The BIZ tour calendar and individual businesses have their own schedules. Verify before making a guided walk or open door the core of the day.'],
+          ['Indigenous context deserves time', 'Do not reduce The Forks to a photo point or imply that one installation represents every Indigenous community. Read the site interpretation and keep the framing specific to the source.']
+        ]
+      }),
+      g({
+        slug: 'human-rights-assiniboine', name: 'Human Rights Museum & Assiniboine', instrument: 'museum-and-park selector', layout: 'museum-selector', imageQuery: 'Canadian Museum for Human Rights Winnipeg',
+        imageAlt: 'An illuminated interior ramp inside the Canadian Museum for Human Rights in Winnipeg',
+        summary: 'Give the Canadian Museum for Human Rights a real visit block: its visitor plan describes ten core galleries across seven floors. Afterward choose either a short Forks-area finish or a separate westbound transfer to Assiniboine Park; the park is not an adjacent museum garden, and The Leaf has its own current hours and admission.',
+        access: 'The museum is at The Forks; Assiniboine Park is farther west. Check TransitTools, museum access guidance and park maps for the exact route, step-free needs and current return service instead of assuming the sites connect on foot.',
+        tradeoff: 'Choose this day for considered museum interpretation followed by a lower-intensity outdoor or garden option. It trades a quick multi-museum checklist for time to pause, read and make one realistic cross-city move.',
+        fallback: 'If energy, weather or transit does not support the westbound transfer, stay near The Forks for a shorter riverside finish or confirmed indoor stop. Do not force the park into a museum departure day or promise entry without checking tickets and hours.',
+        duration: 'Reserve several hours for the museum and treat the rest as one optional second chapter. A full day works better than fitting the galleries between transport deadlines.',
+        combine: 'Pair the museum with one of three alternatives: remain in the Forks district, visit Assiniboine Park grounds, or choose The Leaf when its hours and ticket fit. Keep Churchill travel days light.',
+        verify: 'Checked 12 October 2026: the museum lists ten core galleries across seven floors and publishes current tickets, hours and accessibility details. Assiniboine publishes park and Leaf hours separately; confirm both along with TransitTools before setting the second half of the day.',
+        routeChoices: {
+          heading: 'Decide after the museum, not before it',
+          intro: 'The museum itself can fill a substantial block. Select only one second chapter after checking current hours, weather and transfer needs.',
+          options: [
+            ['Stay central', 'The Forks and riverfront', 'Choose this when the museum visit runs long or you want a shorter, simpler finish near the museum. Check current site conditions and keep the return local.'],
+            ['Outdoor reset', 'Assiniboine Park grounds', 'Choose the park for green space and a slower outdoor visit. It is farther west, so check the transit route, weather, maps and seasonal facility access first.'],
+            ['Garden under glass', 'The Leaf at Assiniboine Park', 'Choose The Leaf only if its current hours, admission and accessibility fit your remaining time. The Leaf has a separate calendar from the park grounds.']
+          ]
+        },
+        routeEyebrow: 'A deep museum visit with one optional second stop', routeHeading: 'Ten galleries, a pause, then one chosen reset', routeStageLabels: ['Arrive', 'Interpret', 'Choose', 'Return'],
+        routeSourcesHeading: 'Museum access, park hours and transfer checks',
+        routeSourcesNote: 'The museum publishes gallery, ticket and accessibility information. Assiniboine Park lists park grounds and The Leaf hours separately; use Winnipeg TransitTools to test the actual cross-city transfer and return for your date.',
+        sources: [
+          ['https://humanrights.ca/visit/plan-your-visit', 'Canadian Museum for Human Rights — visitor planning and gallery information'],
+          ['https://humanrights.ca/visit/hours-admission-fees', 'Canadian Museum for Human Rights — current hours and admission'],
+          ['https://humanrights.ca/visit/accessibility', 'Canadian Museum for Human Rights — accessibility information'],
+          ['https://www.assiniboinepark.ca/park/visit/hours', 'Assiniboine Park — park and Leaf hours'],
+          ['https://www.assiniboinepark.ca/park/visit/maps-and-parking', 'Assiniboine Park — maps and parking'],
+          ['https://info.winnipegtransit.com/en/schedules-maps-tools/transittools/', 'Winnipeg Transit — real-time trip planning']
+        ],
+        faq: [
+          ['How long should I allow for the museum?', 'Its visitor plan lists ten core galleries across seven floors. Give the museum several hours and take a pause; the number of galleries is not a required checklist or a promise of a fixed visit length.'],
+          ['Is Assiniboine Park beside the museum?', 'No. The museum is at The Forks and Assiniboine Park is farther west. Use TransitTools and the park map to plan the actual transfer and return, including any mobility or weather needs.'],
+          ['Can I visit The Leaf on the same day?', 'Possibly, if the museum visit, current Leaf hours, ticket availability and transit return all fit. The Leaf has separate hours from the park grounds; verify its calendar before committing.'],
+          ['What if I need step-free access or a quieter plan?', 'The museum publishes accessibility information, including visitor planning details. Review it for your needs before the date, and choose a local Forks finish if an additional cross-city trip would make the day too demanding.']
+        ],
+        stages: [
+          ['Arrive with time to enter', 'Check the museum’s current admission, hours and accessibility details before travelling to The Forks. Keep timed transport or another booking out of the museum block.'],
+          ['Give the galleries a real visit', 'The museum describes ten core galleries across seven floors. Move at a pace that leaves room to pause; do not treat every gallery as a race to complete.'],
+          ['Choose one second chapter', 'After the museum, stay near The Forks, transfer west to Assiniboine Park, or enter The Leaf only if its separate schedule and admission fit. Check the route and remaining daylight before leaving.'],
+          ['Return without a tight connection', 'Confirm the current transit service or other transport back, then finish near your lodging. Do not place a Churchill train or flight connection immediately after a full museum day.']
+        ],
+        watch: [
+          ['Museum visit can expand', 'Ten galleries across seven floors are substantial. If you read deeply or need breaks, skip the second site rather than rushing the museum.'],
+          ['Separate park and Leaf hours', 'Assiniboine grounds and The Leaf publish different schedules and closures. Check the destination you actually plan to enter, not just the general park page.'],
+          ['Cross-city return', 'The park is west of The Forks. Weather, service frequency, accessibility needs and the final return must all work before adding it to the day.']
+        ]
+      }),
+      g({
+        slug: 'churchill-hudson-bay', name: 'Churchill & Hudson Bay', instrument: 'season-and-operator expedition board', layout: 'expedition-board', imageQuery: 'Churchill Manitoba Hudson Bay sea ice Canada',
+        imageAlt: 'Sea ice along Hudson Bay near Cape Churchill, Manitoba',
+        summary: 'Choose Churchill for a defined seasonal purpose and build around its scheduled air or rail access. Parks Canada confirms there is no road to Churchill, Wapusk has no roads, and park visits require a licensed operator. Beluga migration dates and polar-bear safety guidance help choose a season but never guarantee a sighting.',
+        access: 'Calm Air publishes date-specific scheduled flights from Winnipeg and VIA Rail publishes its own date-specific service. Churchill has no road access; use local transport for town activities and a licensed operator for Wapusk or remote wildlife trips.',
+        tradeoff: 'Churchill offers Arctic-subarctic coast, community history and wildlife possibilities at the cost of long, inflexible transfers and weather exposure. Book the place and its interpretation, not a guaranteed animal encounter or aurora.',
+        fallback: 'Keep a Churchill town day and the Parks Canada Visitor Centre at the historic railway station as possible alternatives, but check its seasonal or by-request hours for your exact date. If a remote trip is cancelled, stay within local guidance; never substitute an independent tundra drive.',
+        duration: 'Four or more Churchill nights plus travel days is the safer first plan. Three nights is a bare minimum and leaves little room for a cancellation, transport delay or weather move.',
+        combine: 'Use Winnipeg as a true gateway buffer before and after Churchill. Allow a spare day on the return side before an important onward flight, especially when the northbound trip uses VIA Rail.',
+        verify: 'Checked 12 October 2026: Parks Canada lists belugas arriving mid-June to early July and migrating north in mid-September; it says the park has no roads and names licensed operators for access. Check the live VIA/Calm Air schedules, visitor-centre hours, operator terms and safety notices again for the exact travel date.',
+        routeChoices: {
+          heading: 'Choose the seasonal reason before booking transport',
+          intro: 'The dates below describe ecological context, not an excursion calendar or a sighting promise. Operators, weather and actual transport availability control the final plan.',
+          options: [
+            ['Summer marine life', 'Beluga season', 'Parks Canada says belugas arrive from mid-June to early July and begin migrating north in mid-September. Ask a licensed local operator what trips run on your dates and follow marine-wildlife viewing guidance.'],
+            ['Autumn bear country', 'Polar-bear safety and viewing', 'Parks Canada says polar bears may be encountered at any time and autumn risk is elevated. Arrange licensed transport, follow operator distance rules and do not walk outside town into bear country independently.'],
+            ['Community and northern landscape', 'Churchill town, history and interpretation', 'Choose this when transport or wildlife outings are uncertain. Confirm the Visitor Centre’s date-specific hours and current town services; keep the trip worthwhile without depending on an animal sighting.']
+          ]
+        },
+        routeEyebrow: 'Build the trip around one purpose and a return margin', routeHeading: 'Arrive, choose a licensed day, preserve the return', routeStageLabels: ['Arrive', 'Confirm', 'Explore', 'Return'],
+        routeSourcesHeading: 'No-road access, operators and seasonal safety',
+        routeSourcesNote: 'Parks Canada provides Wapusk access, wildlife season and polar-bear safety information. VIA Rail and Calm Air publish date-specific schedules; the Churchill Visitor Centre’s operating hours can vary, so check the exact date.',
+        sources: [
+          ['https://parks.canada.ca/pn-np/mb/wapusk/visit', 'Parks Canada — Wapusk access and licensed operators'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/visit/services', 'Parks Canada — Churchill services and local operators'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/activ/centre', 'Parks Canada — Churchill Visitor Centre and seasonal hours'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/nature/faune-animals/marine', 'Parks Canada — beluga and marine-wildlife seasons'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/securite-safety/ours-bear', 'Parks Canada — polar-bear safety'],
+          ['https://www.viarail.ca/en/plan/train-schedules/winnipeg-the-pas-churchill', 'VIA Rail — date-specific Winnipeg–Churchill schedule'],
+          ['https://www.calmair.com/fly-calm-air/schedule-updates', 'Calm Air — current flight schedule updates'],
+          ['https://www.churchill.ca/p/services', 'Town of Churchill — current local services']
+        ],
+        faq: [
+          ['Can I drive to Churchill or Wapusk?', 'No. Parks Canada states there is no road access to Churchill and no road into Wapusk National Park. Use scheduled air or rail for Churchill and arrange park access with a licensed operator.'],
+          ['Which season is best for belugas?', 'Parks Canada says the Western Hudson Bay belugas arrive from mid-June to early July and begin moving north again in mid-September. This is a migration window, not a guarantee of seeing whales or of a particular operator trip running.'],
+          ['Can I walk around Churchill to look for polar bears?', 'Do not do that. Parks Canada warns that northern sites pose high polar-bear encounter risk and should not be visited without a licensed guide or Parks Canada staff, except the Visitor Centre. Follow current local safety directions.'],
+          ['Is the Visitor Centre always open?', 'No fixed opening should be assumed. Parks Canada publishes seasonal or by-request hours; check the page for the exact day and keep a town-based alternative if it is closed.'],
+          ['How much return margin should I leave?', 'Keep at least one flexible Winnipeg day between the Churchill return and an important onward flight when your schedule allows. The exact buffer depends on your date-specific rail or air timetable and the consequence of a missed connection.']
+        ],
+        stages: [
+          ['Travel to Churchill on a confirmed date', 'Choose the current VIA Rail or Calm Air schedule after comparing its actual travel days and return options. There is no road route; do not book a same-day onward connection that has no delay margin.'],
+          ['Confirm local services and safety', 'Check the Parks Canada Visitor Centre’s hours for your date and contact a licensed operator about trip days, weather cancellation, equipment and pickup. No park or tundra access is assumed without that arrangement.'],
+          ['Use one purpose-built excursion', 'Choose the beluga, bear, bird, landscape or community focus that is actually available. Follow operator distance and safety rules; if conditions change, keep the town and interpretation plan rather than pursuing wildlife independently.'],
+          ['Protect the southbound return', 'Recheck the actual train or flight status and return to Winnipeg with time in hand. Keep a flexible night or day before a major connection; do not let a no-sighting day tempt a late unsafe detour.']
+        ],
+        watch: [
+          ['Wildlife is uncertain', 'Beluga dates and bear season are ecological context, not guarantees. Keep the destination meaningful through community history and landscape as well as sightings.'],
+          ['Bear-country access is controlled', 'Parks Canada warns of high encounter risk at remote sites. Use a licensed guide or Parks Canada staff and follow current local directions; do not leave town independently to find wildlife.'],
+          ['Timetable and visitor hours change', 'VIA Rail, Calm Air, local operators and the Visitor Centre use date-specific schedules. Confirm each one directly before fixing lodging, tour days or an onward flight.']
+        ]
+      })
     ]
   }),
 

@@ -125,6 +125,20 @@ const halifaxEditedRoutes = [
   '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
   '/canada/halifax-nova-scotia/cape-breton-cabot/'
 ];
+const peiLastmod = '2026-10-12';
+const peiEditedRoutes = [
+  '/canada/prince-edward-island/',
+  '/canada/prince-edward-island/charlottetown/',
+  '/canada/prince-edward-island/cavendish-north-shore/',
+  '/canada/prince-edward-island/coastal-drives/'
+];
+const winnipegLastmod = '2026-10-12';
+const winnipegEditedRoutes = [
+  '/canada/winnipeg-churchill/',
+  '/canada/winnipeg-churchill/forks-exchange/',
+  '/canada/winnipeg-churchill/human-rights-assiniboine/',
+  '/canada/winnipeg-churchill/churchill-hudson-bay/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1003,6 +1017,18 @@ for (const route of halifaxEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Halifax route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: halifaxLastmod });
+}
+
+for (const route of peiEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot preserve Prince Edward Island route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: peiLastmod });
+}
+
+for (const route of winnipegEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Winnipeg & Churchill route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: winnipegLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

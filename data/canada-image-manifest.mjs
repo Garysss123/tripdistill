@@ -446,7 +446,7 @@ export const canadaImageManifest = {
   },
   "winnipeg-churchill/forks-exchange": {
     "src": "/assets/images/canada-winnipeg-churchill-forks-exchange.webp",
-    "alt": "The Forks and downtown Winnipeg near the rivers",
+    "alt": "Riverfront at The Forks in Winnipeg, with the riverside promenade and sculpture at dusk",
     "source": "https://commons.wikimedia.org/wiki/File:The_Forks_at_dusk,_Winnipeg,_Manitoba,_Canada.jpg",
     "label": "The Forks at dusk, Winnipeg, Manitoba, Canada.jpg",
     "creator": "Ethan Sahagun",
@@ -456,7 +456,7 @@ export const canadaImageManifest = {
   },
   "winnipeg-churchill/human-rights-assiniboine": {
     "src": "/assets/images/canada-winnipeg-churchill-human-rights-assiniboine.webp",
-    "alt": "Canadian Museum for Human Rights in Winnipeg",
+    "alt": "An illuminated interior ramp inside the Canadian Museum for Human Rights in Winnipeg",
     "source": "https://commons.wikimedia.org/wiki/File:CMHR_-_Canadian_Museum_for_Human_Rights,_Winnipeg,_MB_(16763497237).jpg",
     "label": "CMHR - Canadian Museum for Human Rights, Winnipeg, MB (16763497237).jpg",
     "creator": "Erik Araújo from Sao Paulo, SP, Brazil",
@@ -466,7 +466,7 @@ export const canadaImageManifest = {
   },
   "winnipeg-churchill/churchill-hudson-bay": {
     "src": "/assets/images/canada-winnipeg-churchill-churchill-hudson-bay.webp",
-    "alt": "Subarctic tundra and Hudson Bay near Churchill Manitoba",
+    "alt": "Sea ice along Hudson Bay near Cape Churchill, Manitoba",
     "source": "https://commons.wikimedia.org/wiki/File:Flying_over_Cape_Churchill_(6360559653).jpg",
     "label": "Flying over Cape Churchill (6360559653).jpg",
     "creator": "Emma",
