@@ -93,6 +93,12 @@ const unitedKingdomPeakEditedRoutes = [
   '/united-kingdom/peak-district-derbyshire/hope-valley-edale/',
   '/united-kingdom/peak-district-derbyshire/dovedale-ashbourne/'
 ];
+const unitedKingdomBirminghamEditedRoutes = [
+  '/united-kingdom/birmingham-west-midlands/',
+  '/united-kingdom/birmingham-west-midlands/birmingham-canals-jewellery-quarter/',
+  '/united-kingdom/birmingham-west-midlands/stratford-shakespeare/',
+  '/united-kingdom/birmingham-west-midlands/ironbridge-shrewsbury/'
+];
 const unitedKingdomLondonEditedRoutes = [
   '/united-kingdom/london/',
   '/united-kingdom/london/westminster-south-bank/',
@@ -230,6 +236,7 @@ const unitedKingdomLiverpoolManchesterEditedRoutes = [
   '/united-kingdom/liverpool-manchester/manchester-industrial-city/',
   '/united-kingdom/liverpool-manchester/chester-walls-roman-city/'
 ];
+const unitedKingdomBirminghamLastmod = '2026-10-12';
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
 const unitedKingdomEditedRoutes = [
@@ -634,6 +641,11 @@ for (const route of unitedKingdomLiverpoolManchesterEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Liverpool/Manchester route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomLiverpoolManchesterLastmod });
+}
+for (const route of unitedKingdomBirminghamEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Birmingham/West Midlands route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomBirminghamLastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);

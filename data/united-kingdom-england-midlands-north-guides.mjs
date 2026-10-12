@@ -140,125 +140,155 @@ export const unitedKingdomEnglandMidlandsNorthClusters = [
     band: 'england-midlands-north',
     family: 'canal-and-workshop-grid',
     label: 'Canal-and-workshop grid',
-    tagline: 'Use Birmingham as a civic base, then give Shakespeare or industrial valleys their own line.',
-    hubIntro: 'Birmingham’s canals, civic centre and Jewellery Quarter form a connected urban day, while Stratford-upon-Avon and Ironbridge require different rail or bus corridors and separate heritage bookings. The region works best from one base with one clearly chosen outward branch per day.',
-    stay: 'Three nights supports Birmingham plus Stratford or Ironbridge; four nights allows both branches without daily luggage. Birmingham New Street is convenient but complex, so lodging near a usable pedestrian exit or tram line matters more than being inside the station complex.',
-    transfer: 'New Street, Moor Street and Snow Hill serve different rail corridors. Stratford and Shrewsbury or Telford connections are not one interchangeable network, and Ironbridge adds a bus or car leg. Check the final urban return as well as the regional train.',
-    season: 'The city remains resilient year-round, while canal walks, open-air Shakespeare spaces and the Ironbridge valley depend more on rain and daylight. Christmas markets and major events can alter central streets and capacity.',
-    fallback: 'If a regional line fails, retain a complete Birmingham collection-and-canal day. If outdoor conditions deteriorate in Stratford or Ironbridge, shorten to one major interior and return early.',
+    reviewDateISO: '2026-10-12',
+    reviewDate: '12 October 2026',
+    tagline: 'Keep one Birmingham base; give each outward branch its own full day and return plan.',
+    hubIntro: 'Birmingham is the useful base, not a midpoint between every Midlands attraction. Two nights usually gives one full city day; three nights supports that day plus either Stratford-upon-Avon or Ironbridge; four nights can fit both separate branches without moving hotel, but leaves no spare weather day. Stratford is a rail day from Moor Street. Ironbridge is a different chain: train to Telford Central, transfer to Telford bus station, then Arriva 8/8A through Ironbridge and Broseley. Do not plan the two as one loop or assume the rail station and bus station share a forecourt. Choose one city district after the civic centre rather than crossing Birmingham twice.',
+    searchSummary: 'Choose Birmingham New Street for mainline arrivals, Moor Street for the Stratford rail branch, or Snow Hill/Jewellery Quarter for a west-side base. Two nights gives one full city day; three adds either Stratford or Ironbridge; four can fit both, with no weather spare. Ironbridge requires a separate Telford Central–bus-station–Arriva 8/8A chain.',
+    stay: 'Count full days, not nights. Two nights is a Birmingham-only stay with one full day; three nights gives a city day and one chosen excursion; four nights gives three full days for the city, Stratford and Ironbridge, but no weather spare; five nights lets you add a buffer or a second city day without changing hotels. New Street/Grand Central suits mainline arrivals and the civic core, but the station has several street levels. Moor Street is the cleaner base for the Stratford train and Bullring side; Snow Hill or the Jewellery Quarter makes the west-side tram and workshop district easier but adds a cross-city transfer to the Stratford branch. A hotel beside a named station exit or tram stop is more useful than one described only as “central.”',
+    transfer: 'Treat the three Birmingham rail stations as separate gateways: New Street handles many mainline arrivals; Moor Street is the practical starting point for the Stratford branch; Snow Hill and Jewellery Quarter serve a different local corridor. For the city, TfWM’s current Birmingham centre map shows rail, tram, bus and landmarks together. For Stratford, follow West Midlands Railway to Stratford-upon-Avon station and walk about ten minutes into town. For Ironbridge, Telford Central is 4.5 miles from the Gorge; Arriva 8/8A runs between Telford and Bridgnorth/Much Wenlock through Ironbridge and Broseley, but the train-to-bus transfer and exact stop are separate checks. Save the last return from the actual departure station before leaving Birmingham.',
+    season: 'The city can carry a wet day, but its interiors do not all share one calendar. On 12 October 2026 Birmingham Museum & Art Gallery listed selected galleries open while the level-two Art Galleries and level-three Ancient History Galleries remained closed; its current page said free general entry without booking, with some paid events. The Museum of the Jewellery Quarter listed Thursday–Sunday guided tours in timed slots, with advance booking advised. Stratford house openings and RSC performances depend on the chosen date; Ironbridge museums, bus links and special events also vary. Recheck the exact venue, performance, weekday, school-holiday and return before committing. Christmas markets and major city events can change central capacity.',
+    fallback: 'If a regional train or the Telford bus connection fails, keep the day in Birmingham: choose BMAG’s currently open collection, the Library/Centenary Square and one canal stretch, or use the Jewellery Quarter tram corridor if its tour is booked. In Stratford, replace the river walk with one open house and the covered town-centre route; in Ironbridge, do not substitute a second distant gorge site without a confirmed bus or car. Shrewsbury is a separate rail-town fallback, not an unplanned add-on.',
     sources: [
       ['https://visitbirmingham.com/', 'Visit Birmingham — official destination guide'],
-      ['https://www.tfwm.org.uk/', 'Transport for West Midlands — official network information'],
-      ['https://www.nationalrail.co.uk/', 'National Rail — rail planning and disruption information']
+      ['https://www.tfwm.org.uk/plan-your-journey/discover-the-west-midlands/local-area-maps/', 'Transport for West Midlands — current Birmingham area maps'],
+      ['https://www.nationalrail.co.uk/journey-planner/', 'National Rail — dated rail planning and disruption information'],
+      ['https://www.arrivabus.co.uk/services/AMN_TD_8', 'Arriva — current Telford–Ironbridge 8/8A timetable'],
+      ['https://www.nationaltrust.org.uk/visit/shropshire-staffordshire/ironbridge-gorge', 'National Trust — current Ironbridge Gorge access and notices'],
+      ['https://www.shakespeare.org.uk/visit/plan-your-visit/getting-here/', 'Shakespeare Birthplace Trust — Stratford travel and walking map']
     ],
     guides: [
       g({
         slug: 'birmingham-canals-jewellery-quarter',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         name: 'Birmingham Canals & Jewellery Quarter',
         instrument: 'Workshop-to-water city section',
         layout: 'industrial-city-cutaway',
         imageQuery: 'Birmingham canals Gas Street Basin city',
         imageAlt: 'Canals and historic buildings at Gas Street Basin in Birmingham',
-        purpose: 'Connect Birmingham’s civic centre, canal basin and Jewellery Quarter as one industrial-city argument, deciding where a museum or workshop interior belongs instead of wandering between disconnected regeneration districts.',
-        summary: 'Exit the correct central station, read the civic core, follow one canal line to Gas Street and Brindleyplace, then use tram or a deliberate walk to the Jewellery Quarter.',
+        purpose: 'Build a civic-to-canal walk from one arrival station, then choose between a central collection and the Jewellery Quarter’s timed factory tour; the route avoids turning Digbeth, the canal and Hockley into one oversized circuit.',
+        summary: 'Start at Birmingham New Street, walk through Victoria and Chamberlain Squares to the Library and Brindleyplace, then follow one Gas Street Basin towpath section. Add the Jewellery Quarter by tram only if its booked tour fits.',
+        searchSummary: 'Walk Birmingham New Street to Victoria Square, BMAG at Chamberlain Square, Library of Birmingham, Brindleyplace and Gas Street Basin. Choose one extra district: the Jewellery Quarter by West Midlands Metro and a timed Museum of the Jewellery Quarter tour, or Digbeth on another day.',
         choices: [
           ['Civic collections and canals', 'Use Birmingham Museum or the Library area with a bounded canal circuit. This gives the strongest central-city overview.'],
           ['Jewellery Quarter depth', 'Prioritize a workshop museum, cemetery or maker district, using the centre as a short prelude. It reveals production history but adds a separate transit leg.'],
           ['Contemporary food and water', 'Focus on Digbeth or canal-side public space and markets. This is flexible but lighter on formal industrial interpretation.']
         ],
-        access: 'New Street’s exits lead to different street levels; Moor Street is better for some eastern arrivals and Snow Hill for the Jewellery Quarter corridor. Choose the first station exit and final tram or rail stop before entering the shopping core.',
-        tradeoff: 'The Jewellery Quarter, Digbeth and a full central canal loop point in different directions. Choosing one secondary district sacrifices another but prevents the day from becoming repeated station crossings.',
+        access: 'From New Street, follow the signed Victoria Square exit rather than crossing the Bullring to reach the civic centre; Chamberlain Square holds Birmingham Museum & Art Gallery, then the Library and Centenary Square lead toward Brindleyplace and Gas Street Basin. The West Midlands Metro serves Grand Central, Brindleyplace and Jewellery Quarter. If a timed workshop tour matters, check its own Vyse Street entry and return stop before boarding.',
+        tradeoff: 'A civic-and-canal day can stand alone in four hours. The Museum of the Jewellery Quarter is a separate west-side commitment: its current page lists guided entry Thursday–Sunday in timed slots, so choosing it gives up Digbeth and may compress the canal walk. New Street, Moor Street and Snow Hill are not interchangeable arrival doors.',
         stages: [
-          ['Exit to the civic level', 'Use the station exit nearest Victoria Square or the Bullring according to the first anchor. Avoid navigating through the station twice.'],
-          ['Read the canal interface', 'Move through the Library and Centenary Square to Gas Street Basin or Brindleyplace, following one towpath line with public exits.'],
-          ['Commit to one production district', 'Take tram, rail or a named street route to the Jewellery Quarter, or choose Digbeth instead. Do not attempt both outer districts.'],
-          ['Return on the matching network', 'Finish at Jewellery Quarter, Snow Hill, Moor Street or New Street according to the branch. Keep the final walk above ground when towpaths feel isolated.']
+          ['Start above New Street', 'Use the Victoria Square exit and surface streets to Chamberlain Square; this avoids treating the station’s concourses as the route. If arriving at Moor Street, begin at the Bullring edge instead.'],
+          ['Choose one civic interior', 'Use the currently open Birmingham Museum & Art Gallery galleries or the Library of Birmingham, then continue across Centenary Square. Do not assume every gallery floor is open.'],
+          ['Follow one canal edge', 'Walk via Brindleyplace to Gas Street Basin and use a short signed towpath section with a street-level exit. Turn back toward the centre before extending to the Mailbox.'],
+          ['Add one west-side branch, if booked', 'Take the Metro from Grand Central or Brindleyplace toward Jewellery Quarter for a timed factory tour; otherwise finish at the canals. Return on the same tram corridor or by signed surface streets.']
         ],
-        fallback: 'If a workshop museum closes, use the Quarter’s streets, cemetery or library and return to central collections. If canal paths flood or feel unsuitable, stay on parallel signed streets.',
+        fallback: 'If BMAG’s planned galleries or a Jewellery Quarter tour are unavailable, use the Library, public civic squares and a shorter Brindleyplace canal section. If the towpath is closed, flooded or uncomfortable, return by Broad Street and surface streets rather than forcing the waterside leg.',
         watch: [
-          ['Station exits change the city map', 'New Street is a multi-level barrier as well as a station. Follow named exits and do not assume every platform leads to the same square.'],
-          ['Towpaths are not always the best night route', 'Lighting, closures and quiet stretches vary. Use surface streets after dark or when signed diversions appear.'],
-          ['Museums can have limited opening patterns', 'Workshop sites may not open daily. Confirm the exact date before building the district around one interior.']
+          ['BMAG is not fully reopened', 'On 12 October 2026 its visitor page listed selected open galleries while the level-two Art Galleries and level-three Ancient History Galleries remained closed. Recheck the live page before promising a full collection day.'],
+          ['A Jewellery Quarter ticket is timed', 'The Museum of the Jewellery Quarter currently lists guided entry Thursday–Sunday and advises pre-booking. Do not arrive after the chosen slot or substitute an unbooked interior.'],
+          ['Towpath and evening are different choices', 'Check Canal & River Trust notices. Use the parallel streets for a closure, poor surface or late return rather than extending onto a quiet unlit stretch.']
         ],
-        duration: 'Allow six to eight hours for the civic core, canal and one secondary district. A central canal-and-library route can fit four hours.',
-        combine: 'Combine canals with the Jewellery Quarter or Digbeth, not both. Keep Stratford and Ironbridge as separate full-day branches.',
-        verify: 'Check the chosen museum, tram and rail status, canal notices and central event closures before leaving the station.',
+        duration: 'Allow four to five hours for the civic squares, Library, Brindleyplace and a short Gas Street Basin section. Allow six to eight only when a booked Jewellery Quarter tour is added; that is a separate tram branch, not extra canal distance.',
+        combine: 'Pair the canal with either the Jewellery Quarter or a short central collection. Leave Digbeth, Stratford and Ironbridge for separate days.',
+        verify: 'Check BMAG’s open galleries, timed Jewellery Quarter tours, TfWM Metro status, canal towpath notices and central event diversions for the exact date.',
         sources: [
-          ['https://www.birminghammuseums.org.uk/', 'Birmingham Museums — official visitor information'],
-          ['https://canalrivertrust.org.uk/canals-and-rivers/birmingham-canal-main-line', 'Canal & River Trust — Birmingham canal information']
-        ]
+          ['https://www.birminghammuseums.org.uk/birmingham-museum-and-art-gallery/visit', 'Birmingham Museum & Art Gallery — current galleries, admission and opening information'],
+          ['https://www.birminghammuseums.org.uk/museum-of-the-jewellery-quarter/visit', 'Museum of the Jewellery Quarter — timed guided-tour access'],
+          ['https://www.tfwm.org.uk/plan-your-journey/discover-the-west-midlands/local-area-maps/', 'Transport for West Midlands — current Birmingham city maps'],
+          ['https://www.tfwm.org.uk/plan-your-journey/', 'Transport for West Midlands — live journey planner'],
+          ['https://canalrivertrust.org.uk/canals-and-rivers/birmingham-canal-main-line', 'Canal & River Trust — Birmingham Canal Main Line']
+        ],
+        showHubOperatingBoard: false
       }),
       g({
         slug: 'stratford-shakespeare',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         name: 'Stratford-upon-Avon & Shakespeare',
         instrument: 'Performance-day scene sheet',
         layout: 'stage-and-river-sequence',
         imageQuery: 'Stratford upon Avon Shakespeare theatre river',
         imageAlt: 'The Royal Shakespeare Theatre beside the River Avon',
-        purpose: 'Choose a Shakespeare Birthplace Trust house, theatre performance or river-town circuit as the main event, and work backward from opening and curtain times rather than collecting every associated house.',
-        summary: 'Walk from the station into the birthplace and market-town core, continue to the river and theatre, then protect the train return or performance exit before adding another historic property.',
+        purpose: 'Choose one timed Shakespeare Birthplace Trust house or an RSC performance as the day’s anchor, then route through the compact centre and River Avon without promising every associated house in one visit.',
+        summary: 'Take West Midlands Railway to Stratford-upon-Avon station, walk about ten minutes into town, choose one open family home, then continue through Henley Street to the Waterside theatre and river. A show needs its own evening-return plan.',
+        searchSummary: 'From Stratford-upon-Avon station, walk into town for Shakespeare’s Birthplace, a second currently open Trust house or an RSC performance on Waterside. Build one Henley Street–river route, check each property separately and secure the train return before booking an evening show.',
         choices: [
           ['Birthplace and town evidence', 'Use one or two Trust properties with the streets and church. This gives biographical context but requires current property openings.'],
           ['Royal Shakespeare Company day', 'Build the route around a performance, tour or theatre visit. This creates the clearest time structure and changes meal and return choices.'],
           ['River and market town', 'Keep interiors selective and read the Avon, church and town fabric. It is flexible and lower-pressure but lighter on formal interpretation.']
         ],
-        access: 'Stratford-upon-Avon station is west of the historic and theatre core. Some associated houses lie outside the centre and need a bus, bicycle or car. A late performance may finish after the easiest rail return, so resolve the evening journey before booking.',
-        tradeoff: 'Every Shakespeare property, a theatre tour and a performance cannot fit usefully. Choosing the show sacrifices house count; choosing properties may sacrifice an evening train or relaxed river route.',
+        access: 'West Midlands Railway serves Stratford-upon-Avon from Birmingham; the station is about a ten-minute walk from the town centre. Use the Trust’s town map to reach Shakespeare’s Birthplace on Henley Street, then continue to New Place or the Royal Shakespeare Theatre/Swan Theatre on Waterside. Anne Hathaway’s Cottage is a separate 30–35-minute walk from the centre; do not describe it as next door or add it without a return plan.',
+        tradeoff: 'A family-home ticket, an RSC performance and every outlying property are different time commitments. Choosing a show fixes the evening and may make an overnight more useful; choosing houses gives more daylight flexibility but leaves less time for the river and market streets. The 2026 Trust page marked Hall’s Croft and Mary Arden’s Farm closed when checked, so verify each named house rather than assuming a multi-house ticket makes it open.',
         stages: [
-          ['Walk into the market town', 'Follow the station route to the birthplace quarter, saving the return line and any evening station entrance.'],
-          ['Complete one evidence set', 'Visit the selected property or use the town’s public Shakespeare trail. Do not buy or queue for every house by default.'],
-          ['Move to river and theatre', 'Continue toward Holy Trinity Church and the Avon, then reach the theatre with time for ticket collection and a meal.'],
-          ['Exit to the planned return', 'After the river or performance, follow the preselected station, bus or overnight plan. Do not discover the last train at curtain call.']
+          ['Leave the station on foot', 'Follow the signed town-centre route from Stratford-upon-Avon station; keep the same path in mind for the return. The Trust describes the core as about a ten-minute walk.'],
+          ['Choose one house before Henley Street', 'Start at Shakespeare’s Birthplace, then add New Place only if its date-specific entry fits. Check what is open and pre-book the chosen timed entry.'],
+          ['Follow the centre to the Waterside', 'Continue through the market streets to the RSC theatres and River Avon. Keep the river and Holy Trinity Church as the outdoor finish, not a second distant attraction.'],
+          ['Protect the last train or stay', 'For an RSC performance, check the exact curtain and finish against the West Midlands Railway return before buying the ticket. If the connection is too tight, book a Stratford night rather than relying on a taxi after the show.']
         ],
-        fallback: 'If a property closes, retain the birthplace exterior, church, river and theatre public areas when open. If a performance cancels, use the longer town-and-river route rather than adding a distant Warwickshire house.',
+        fallback: 'If a Trust house or theatre visit is unavailable, keep the town walk: Birthplace exterior, the market streets, Waterside and a short Avon loop. In rain, choose one confirmed open interior and shorten the river section; do not replace it with Anne Hathaway’s Cottage unless the out-and-back walk still fits.',
         watch: [
-          ['Properties have separate openings', 'Trust sites can follow different days and seasons. Confirm the exact house rather than a general Shakespeare ticket description.'],
-          ['Curtain time controls dinner and return', 'A matinee and evening performance create different transport contracts. Plan backward from the final station or accommodation.'],
-          ['Outlying houses are real transfers', 'Anne Hathaway’s Cottage and other sites are not all central. Include the mode and return, or leave them out.']
+          ['Property status is independent', 'The Trust’s current visit page lists each house and its opening information separately. The page checked 12 October showed Hall’s Croft and Mary Arden’s Farm closed; reopen it before selecting a ticket.'],
+          ['Performance time changes the transport plan', 'A matinee leaves room for a daylight town walk; an evening show requires a dated train check or a booked Stratford night. Do not infer the final service from the outward journey.'],
+          ['The cottage is outside the central loop', 'The Trust describes Anne Hathaway’s Cottage as a 30–35-minute walk from town. Allow both legs and the visit, or leave it out instead of rushing back to the station.']
         ],
-        duration: 'Allow five to seven hours for the town and selected properties, or a full day with a performance. An evening show is best with an overnight or a verified late return.',
-        combine: 'Combine the birthplace quarter with river and theatre. Keep Warwick Castle, the Cotswolds and Birmingham city for different days.',
-        verify: 'Check the exact Shakespeare property, RSC performance or tour, train times and late-evening return before fixing the sequence.',
+        duration: 'Allow five to six hours for one open Trust house, the centre and river. A second booked house or RSC matinee makes a full day; an evening performance should be planned around a verified return or overnight.',
+        combine: 'Pair one Birthplace Trust interior with Waterside and the Avon. Keep Anne Hathaway’s Cottage, Warwick Castle, the Cotswolds and Birmingham city for separate days.',
+        verify: 'Recheck the Trust house status and timed entry, RSC performance/tour, Stratford station walk and exact return service before fixing the day.',
         sources: [
-          ['https://www.shakespeare.org.uk/visit/', 'Shakespeare Birthplace Trust — official visitor information'],
-          ['https://www.rsc.org.uk/your-visit', 'Royal Shakespeare Company — official visit planning']
-        ]
+          ['https://www.shakespeare.org.uk/visit/plan-your-visit/getting-here/', 'Shakespeare Birthplace Trust — Stratford station walk and property map'],
+          ['https://www.shakespeare.org.uk/visit/plan-your-visit/', 'Shakespeare Birthplace Trust — current opening, ticket and booking information'],
+          ['https://www.rsc.org.uk/your-visit/our-theatres/', 'Royal Shakespeare Company — Stratford theatre locations'],
+          ['https://www.rsc.org.uk/your-visit/getting-here/', 'Royal Shakespeare Company — theatre access and arrival planning'],
+          ['https://www.westmidlandsrailway.co.uk/travel-information/timetables', 'West Midlands Railway — dated train timetables and service changes'],
+          ['https://www.nationalrail.co.uk/journey-planner/', 'National Rail — exact-date journey planning']
+        ],
+        showHubOperatingBoard: false
       }),
       g({
         slug: 'ironbridge-shrewsbury',
+        reviewDateISO: '2026-10-12',
+        reviewDate: '12 October 2026',
         name: 'Ironbridge Gorge & Shrewsbury',
         instrument: 'Industrial-valley connection map',
         layout: 'gorge-museum-spine',
         imageQuery: 'Iron Bridge Shropshire gorge England',
         imageAlt: 'The Iron Bridge spanning the River Severn in Shropshire',
-        purpose: 'Decide whether Ironbridge’s dispersed industrial museums or Shrewsbury’s compact river town is the main destination, naming the last-mile bus or car plan through the gorge.',
-        summary: 'Use Shrewsbury or Telford as the rail gateway, complete one museum cluster or town circuit, and avoid assuming the gorge’s sites form a short walk from a single station.',
+        purpose: 'Choose either a confirmed Ironbridge Gorge site reached through Telford’s bus interchange or a compact Shrewsbury rail day; the route makes the valley’s last mile and separate museum entrances part of the decision.',
+        summary: 'Telford Central is 4.5 miles from Ironbridge Gorge. Transfer to Telford bus station for Arriva 8/8A through Ironbridge and Broseley, then visit one named site cluster. If the return or weather fails, keep the day in Shrewsbury.',
+        searchSummary: 'Plan the Telford Central–Telford bus station–Arriva 8/8A chain before an Ironbridge day; the Gorge’s sites are spread across the valley. Choose one museum area and verify current closures, bus stop and return. Shrewsbury is the rail-simple town fallback.',
         choices: [
           ['Ironbridge museum cluster', 'Choose one or two related gorge museums and the Iron Bridge itself. This gives industrial depth but requires a defined last-mile route.'],
           ['Shrewsbury river town', 'Keep the day around the castle, abbey, market streets and Severn loop. It is rail-simple and resilient in poor weather.'],
           ['Two-place sampler', 'Use a short Shrewsbury circuit plus one Ironbridge site with a booked transfer. It gains contrast but sacrifices museum and town depth.']
         ],
-        access: 'Ironbridge has no central mainline station; Telford and Shrewsbury are different gateways, followed by bus, taxi or car. Gorge museums are distributed along the valley. Save the exact site, stop and final return before leaving the rail station.',
-        tradeoff: 'A full museum passport-style day and a complete Shrewsbury circuit do not fit comfortably. Choosing the gorge sacrifices town time; choosing Shrewsbury gives up the industrial landscape but protects a simple rail return.',
+        access: 'Ironbridge has no mainline station at the bridge. National Trust places Telford Central 4.5 miles from the Gorge; reach Telford bus station separately, then check Arriva 8/8A and the exact Ironbridge/Broseley stop for the selected site. The route page shows service 8/8A through the Gorge but does not make every museum a short walk from one stop. Shrewsbury is its own direct rail gateway and compact town day.',
+        tradeoff: 'A Gorge site cluster needs the bus transfer and a last-mile plan; Shrewsbury gives up the industrial valley but keeps the day on one rail-served town grid. On 12 October 2026 the National Trust page listed the Museum of the Gorge and Darby Houses as closed, so do not build a ticket day around those interiors unless the live notice changes.',
         stages: [
-          ['Arrive at the useful gateway', 'Use Telford or Shrewsbury according to the confirmed last mile, not merely the fastest headline train.'],
-          ['Complete one coherent cluster', 'In Ironbridge, group the bridge with nearby museums; in Shrewsbury, follow one river-and-centre loop. Avoid crossing between scattered sites without transport.'],
-          ['Add one secondary layer', 'Use a second related museum or a bounded town stop only when the return remains secure. Keep meal time in the same valley or centre.'],
-          ['Return before rural frequency thins', 'Reach the bus stop or rail station with margin. A taxi is contingency, not an unconfirmed final service.']
+          ['Choose the rail gateway first', 'For Ironbridge, ride to Telford Central and make a separate transfer to Telford bus station. For the easier rail-only day, arrive at Shrewsbury and walk toward the castle and river centre.'],
+          ['At Ironbridge, use one village section', 'On Arriva 8/8A, confirm the exact stop and direction for the date. Start around The Square and the Iron Bridge north entrance, cross only while access is open, then use the High Street/Tollhouse side as one walkable cluster.'],
+          ['Add a valley museum only with transport', 'Coalbrookdale’s Museum of Iron/Furnace and Blists Hill are separate valley sites; choose one only if its date-specific opening, bus/taxi leg and return are confirmed. Do not count the closed Museum of the Gorge or Darby Houses from the 12 October notice as open.'],
+          ['Protect the land return', 'Reach the actual Ironbridge or Broseley stop early enough for the chosen Arriva return and Telford rail connection. If the bus chain no longer fits, use the Shrewsbury day plan instead of improvising a taxi.']
         ],
-        fallback: 'If the gorge connection fails, stay in Shrewsbury for the castle, museum, market and river. If a museum closes, use the bridge and one open related site rather than chasing a distant valley branch.',
+        fallback: 'If the Telford transfer, Arriva service or valley weather fails, take the train to Shrewsbury and keep one town route: Shrewsbury station to Castle Gates, the castle precinct, Market Hall and a bounded Severn loop toward The Quarry. If a planned Ironbridge interior is closed, keep to the bridge and one confirmed nearby site rather than chasing a distant museum.',
         watch: [
-          ['The gorge is a distributed museum landscape', 'Ticket products and sites are not one building. Confirm which locations are open and how they connect.'],
-          ['Valley roads affect buses', 'Traffic and diversions can disturb a seemingly short last mile. Protect the final rail connection.'],
-          ['River conditions alter paths', 'High water can affect low paths around the Severn. Use signed streets and current notices instead of forcing a riverside loop.']
+          ['Telford Central is not the bus station', 'The National Trust access page places the Gorge 4.5 miles from Telford Central; Arriva 8/8A runs through Ironbridge from Telford. Price the transfer both ways and save the stop name.'],
+          ['The Gorge is spread across several sites', 'The National Trust page describes separate museums and currently carries closure notices for the Museum of the Gorge and Darby Houses. Recheck each opening and any pre-booking request before paying.'],
+          ['Road, river and daylight change the walk', 'Bus delays, high water and short winter light reduce the return margin. Stay on signed streets and open paths; do not extend the loop along a river edge after a closure or rising water notice.']
         ],
-        duration: 'Allow a full day for an Ironbridge cluster or five to seven hours for Shrewsbury. Combining them needs an early start and a preplanned transfer.',
-        combine: 'Combine two adjacent Ironbridge museums or Shrewsbury’s centre with one river loop. Keep Stratford and Birmingham city for separate days.',
-        verify: 'Check Ironbridge museum openings and ticket coverage, the exact bus or road access, Shrewsbury rail service and river notices before travel.',
+        duration: 'Allow a full day for one Ironbridge museum area after the Telford transfer. Allow five to seven hours for Shrewsbury’s station-to-castle/market/river loop. Do not combine both without a booked transfer and protected return.',
+        combine: 'At Ironbridge, pair the bridge with one open nearby museum or stay in Shrewsbury for its castle, market and river. Keep Stratford and Birmingham city for separate days.',
+        verify: 'Recheck Telford Central rail, the transfer to Telford bus station, Arriva 8/8A stop/direction, the chosen museum’s current opening and booking notice, and the last train. For Shrewsbury, check the rail return and town-centre access.',
         sources: [
-          ['https://www.ironbridge.org.uk/plan-your-visit/', 'Ironbridge Valley of Invention — official visit planning'],
-          ['https://originalshrewsbury.co.uk/', 'Original Shrewsbury — official town visitor guide']
-        ]
+          ['https://www.nationaltrust.org.uk/visit/shropshire-staffordshire/ironbridge-gorge', 'National Trust — current Ironbridge Gorge site list, access and closure notices'],
+          ['https://www.arrivabus.co.uk/services/AMN_TD_8', 'Arriva — dated Telford–Ironbridge 8/8A timetable'],
+          ['https://www.arrivabus.co.uk/midlands/bus-travel-in-ironbridge', 'Arriva — Ironbridge bus-service overview'],
+          ['https://www.nationalrail.co.uk/stations/telford-central/', 'National Rail — Telford Central station and interchange information'],
+          ['https://www.english-heritage.org.uk/visit/places/iron-bridge/directions/', 'English Heritage — Iron Bridge access and north-side walkway entrance'],
+          ['https://originalshrewsbury.co.uk/', 'Original Shrewsbury — official town visitor guide'],
+          ['https://www.nationalrail.co.uk/journey-planner/', 'National Rail — exact-date train planning']
+        ],
+        showHubOperatingBoard: false
       })
     ]
   }),

@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Birmingham New Street for mainline arrivals, Moor Street for the Stratford rail branch, or Snow Hill/Jewellery Quarter for a west-side base. Two nights gives one full city day; three adds either Stratford or Ironbridge; four can fit both, with no weather spare. Ironbridge requires a separate Telford Central–bus-station–Arriva 8/8A chain.": "หากเดินทางด้วยรถไฟทางไกลให้เลือก Birmingham New Street; รถไฟไปสแตรตฟอร์ดใช้ Moor Street; หากพักฝั่งตะวันตกให้พิจารณา Snow Hill/Jewellery Quarter พัก 2 คืนจัดวันเต็มในเมือง 1 วัน; 3 คืนเพิ่มสแตรตฟอร์ดหรือไอรอนบริดจ์ได้หนึ่งแห่ง; 4 คืนไปได้ทั้งสองแห่งแต่ไม่มีวันสำรองเผื่ออากาศ ไอรอนบริดจ์ต้องต่อแยกจาก Telford Central ไปสถานีรถบัส แล้วขึ้น Arriva 8/8A",
+    "Walk Birmingham New Street to Victoria Square, BMAG at Chamberlain Square, Library of Birmingham, Brindleyplace and Gas Street Basin. Choose one extra district: the Jewellery Quarter by West Midlands Metro and a timed Museum of the Jewellery Quarter tour, or Digbeth on another day.": "เดินจาก Birmingham New Street ผ่าน Victoria Square, BMAG ที่ Chamberlain Square, Library of Birmingham, Brindleyplace และ Gas Street Basin เลือกย่านเพิ่มเพียงแห่งเดียว: ขึ้น West Midlands Metro ไป Jewellery Quarter เพื่อเข้าทัวร์พิพิธภัณฑ์ตามเวลาที่จอง หรือเก็บ Digbeth ไว้เที่ยววันอื่น",
+    "From Stratford-upon-Avon station, walk into town for Shakespeare’s Birthplace, a second currently open Trust house or an RSC performance on Waterside. Build one Henley Street–river route, check each property separately and secure the train return before booking an evening show.": "จากสถานี Stratford-upon-Avon เดินเข้าเมืองเพื่อไปบ้านเกิดของเชกสเปียร์ บ้าน Trust อีกแห่งที่เปิดอยู่ในวันนั้น หรือการแสดง RSC ที่ Waterside จัดเส้นทางหนึ่งสายจาก Henley Street ถึงริมแม่น้ำ ตรวจสถานะบ้านแต่ละแห่งแยกกัน และยืนยันรถไฟขากลับก่อนจองการแสดงรอบค่ำ",
+    "Plan the Telford Central–Telford bus station–Arriva 8/8A chain before an Ironbridge day; the Gorge’s sites are spread across the valley. Choose one museum area and verify current closures, bus stop and return. Shrewsbury is the rail-simple town fallback.": "ก่อนเที่ยวไอรอนบริดจ์ ให้ยืนยันการต่อรถจาก Telford Central ไปสถานีรถบัส Telford แล้วขึ้น Arriva 8/8A จุดเที่ยวในหุบเขากระจายอยู่หลายแห่ง เลือกย่านพิพิธภัณฑ์หนึ่งแห่งและตรวจประกาศปิดล่าสุด ป้ายรถ และขากลับ ชรูว์สบิวรีเป็นทางเลือกเมืองที่เดินทางด้วยรถไฟได้ง่ายกว่า"
+  }
+}

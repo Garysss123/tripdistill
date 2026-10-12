@@ -72,6 +72,8 @@
     "test:uk-bath-dates": "node scripts/test-uk-bath-route-dates.mjs",
     "test:uk-liverpool-manchester-dates": "node scripts/test-uk-liverpool-manchester-route-dates.mjs",
     "test:uk-liverpool-manchester-search": "node scripts/test-uk-liverpool-manchester-search.mjs",
+    "test:uk-birmingham-dates": "node scripts/test-uk-birmingham-route-dates.mjs",
+    "test:uk-birmingham-search": "node scripts/test-uk-birmingham-search.mjs",
     "test:united-kingdom-route-dates": "node scripts/test-united-kingdom-route-dates.mjs",
     "test:uk-peak-district-dates": "node scripts/test-uk-peak-district-route-dates.mjs",
     "test:united-kingdom-lake-diagrams": "node scripts/test-united-kingdom-lake-diagrams.mjs",

@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Birmingham New Street for mainline arrivals, Moor Street for the Stratford rail branch, or Snow Hill/Jewellery Quarter for a west-side base. Two nights gives one full city day; three adds either Stratford or Ironbridge; four can fit both, with no weather spare. Ironbridge requires a separate Telford Central–bus-station–Arriva 8/8A chain.": "主要幹線抵達可選 Birmingham New Street；史特拉福支線可由 Moor Street 出發；若住西側，可考慮 Snow Hill／Jewellery Quarter。住兩晚安排一個完整市區日；三晚再選史特拉福或艾恩橋一處；四晚可走完兩處，但沒有天候緩衝。艾恩橋需另行接駁 Telford Central–巴士站–Arriva 8/8A。",
+    "Walk Birmingham New Street to Victoria Square, BMAG at Chamberlain Square, Library of Birmingham, Brindleyplace and Gas Street Basin. Choose one extra district: the Jewellery Quarter by West Midlands Metro and a timed Museum of the Jewellery Quarter tour, or Digbeth on another day.": "從 Birmingham New Street 步行至 Victoria Square、Chamberlain Square 的 BMAG、Library of Birmingham、Brindleyplace 和 Gas Street Basin。再選一個街區：搭 West Midlands Metro 到 Jewellery Quarter 參加定時博物館導覽，或改天前往 Digbeth。",
+    "From Stratford-upon-Avon station, walk into town for Shakespeare’s Birthplace, a second currently open Trust house or an RSC performance on Waterside. Build one Henley Street–river route, check each property separately and secure the train return before booking an evening show.": "從 Stratford-upon-Avon 站步行進城，前往莎士比亞出生地、一間當日開放的故居信託場館，或 Waterside 的 RSC 劇院。安排 Henley Street 到河岸的一條路線，逐間確認故居開放狀態，若要看晚場演出，先確定鐵路返程。",
+    "Plan the Telford Central–Telford bus station–Arriva 8/8A chain before an Ironbridge day; the Gorge’s sites are spread across the valley. Choose one museum area and verify current closures, bus stop and return. Shrewsbury is the rail-simple town fallback.": "安排艾恩橋一日遊前，先確認 Telford Central–Telford 巴士站–Arriva 8/8A 的接駁；峽谷各景點分散在不同位置。選一處博物館區域，核對最新關閉公告、下車站牌與返程。舒茲伯利是鐵路交通較簡單的市鎮備案。"
+  }
+}
