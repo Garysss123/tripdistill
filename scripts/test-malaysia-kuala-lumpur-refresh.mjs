@@ -84,8 +84,8 @@ assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no sitemap URL was added or removed');
 const localizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
-assert.equal(integrationRoutes.length, 67, 'the exact UK, France and Malaysia source route scope contains 67 existing English pages');
-assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the exact integrated UK, France and Malaysia routes changed lastmod');
+assert.equal(integrationRoutes.length, 104, 'the exact UK, France, Switzerland and Malaysia source route scope contains 104 existing English pages');
+assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the exact integrated UK, France, Switzerland and Malaysia routes changed lastmod');
 for (const route of locales.flatMap(({ prefix }) => routes.map((path) => prefix + path))) assert.equal(currentSitemap.get(route), reviewDate, `${route}: sitemap lastmod`);
 
 const baseSearch = readJsonFromGit(`${integrationSprintBaseline}:data/search-index.json`);
@@ -96,7 +96,7 @@ const currentSearchByUrl = byUrl(currentSearch);
 assert.equal(currentSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearch = [...currentSearchByUrl].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France and Malaysia search records changed');
+assert.deepEqual(new Set(changedSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Switzerland and Malaysia search records changed');
 
 const localizedPaths = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const wordIncrements = [];

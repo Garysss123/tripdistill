@@ -31,6 +31,45 @@ export const integrationRouteGroups = Object.freeze({
     '/france/lille-french-flanders/old-lille-roubaix/',
     '/france/lille-french-flanders/opal-coast-headlands/'
   ]),
+  switzerland: Object.freeze([
+    '/switzerland/',
+    '/switzerland/basel-rhine/',
+    '/switzerland/basel-rhine/art-museums/',
+    '/switzerland/basel-rhine/kleinbasel-border-rhine/',
+    '/switzerland/basel-rhine/old-town-rhine/',
+    '/switzerland/bern-emmental/',
+    '/switzerland/bern-emmental/emmental-day-trip/',
+    '/switzerland/bern-emmental/museums-rose-garden/',
+    '/switzerland/bern-emmental/old-city-aare/',
+    '/switzerland/geneva-lake/',
+    '/switzerland/geneva-lake/carouge-arve/',
+    '/switzerland/geneva-lake/international-quarter/',
+    '/switzerland/geneva-lake/old-town-lakefront/',
+    '/switzerland/interlaken-lakes/',
+    '/switzerland/interlaken-lakes/brienz-giessbach/',
+    '/switzerland/interlaken-lakes/interlaken-base/',
+    '/switzerland/interlaken-lakes/thun-spiez/',
+    '/switzerland/jungfrau-region/',
+    '/switzerland/jungfrau-region/grindelwald-first/',
+    '/switzerland/jungfrau-region/lauterbrunnen-valley/',
+    '/switzerland/jungfrau-region/wengen-kleine-scheidegg/',
+    '/switzerland/lausanne-lavaux/',
+    '/switzerland/lausanne-lavaux/lavaux-terraces/',
+    '/switzerland/lausanne-lavaux/old-city-ouchy/',
+    '/switzerland/lausanne-lavaux/olympic-lake-cruise/',
+    '/switzerland/lucerne-lake-mountains/',
+    '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+    '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+    '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/',
+    '/switzerland/montreux-riviera/',
+    '/switzerland/montreux-riviera/montreux-chillon/',
+    '/switzerland/montreux-riviera/rochers-de-naye/',
+    '/switzerland/montreux-riviera/vevey-lakeside/',
+    '/switzerland/zermatt-matterhorn/',
+    '/switzerland/zermatt-matterhorn/glacier-paradise/',
+    '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
+    '/switzerland/zermatt-matterhorn/village-gornergrat/'
+  ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',
     '/malaysia/semporna-tun-sakaran/semporna-jetty-operator/',
@@ -79,6 +118,7 @@ export const integrationRouteGroups = Object.freeze({
 export const integrationRoutes = Object.freeze([
   ...integrationRouteGroups.unitedKingdom,
   ...integrationRouteGroups.france,
+  ...integrationRouteGroups.switzerland,
   ...integrationRouteGroups.malaysia
 ]);
 
@@ -92,7 +132,8 @@ export const integrationSearchRoutes = Object.freeze(
     '/france/french-alps/chamonix-mountain-systems/',
     '/france/french-alps/grenoble-bastille-chartreuse/',
     '/france/languedoc-camargue/arles-camargue/',
-    '/france/languedoc-camargue/nimes-pont-du-gard/'
+    '/france/languedoc-camargue/nimes-pont-du-gard/',
+    '/switzerland/'
   ].includes(route))
 );
 

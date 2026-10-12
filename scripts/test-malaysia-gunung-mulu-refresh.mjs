@@ -70,8 +70,8 @@ assert.deepEqual(new Set(sitemap.keys()), new Set(baseSitemap.keys()), 'refresh 
 const localizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const changedSitemapRoutes = [...sitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
 const expectedIntegratedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
-assert.equal(integrationRoutes.length, 67, 'the exact UK, France and Malaysia source route scope contains 67 existing English pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedIntegratedLocalizedRoutes, 'only the exact integrated UK, France and Malaysia routes receive new lastmod values');
+assert.equal(integrationRoutes.length, 104, 'the exact UK, France, Switzerland and Malaysia source route scope contains 104 existing English pages');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedIntegratedLocalizedRoutes, 'only the exact integrated UK, France, Switzerland and Malaysia routes receive new lastmod values');
 for (const route of localizedRoutes) assert.equal(sitemap.get(route), reviewedDate, route + ' sitemap lastmod');
 
 const baseSearch = JSON.parse(gitBytes(integrationSprintBaseline + ':data/search-index.json').toString('utf8'));
@@ -81,7 +81,7 @@ const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France and Malaysia search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Switzerland and Malaysia search records changed');
 for (const route of routes) assert.ok(currentSearchByUrl.has(route), route + ' remains searchable');
 
 for (const locale of locales.filter(({ dir }) => dir)) {

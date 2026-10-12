@@ -124,8 +124,8 @@ assert.equal(sourceSitemap.size, 4560, 'source sitemap remains at 4,560 URLs');
 assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URLs');
 const expectedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.equal(integrationRoutes.length, 67, 'the exact UK, France and Malaysia source route scope contains 67 existing English pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact integrated UK, France and Malaysia routes × five locales receive a new lastmod');
+assert.equal(integrationRoutes.length, 104, 'the exact UK, France, Switzerland and Malaysia source route scope contains 104 existing English pages');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact integrated UK, France, Switzerland and Malaysia routes × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:data/search-index.json`], { encoding: 'utf8' }));
@@ -134,7 +134,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France and Malaysia English search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Switzerland and Malaysia English search records changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five existing English search records remain present');
 
 const images = new Map();
