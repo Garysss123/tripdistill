@@ -743,8 +743,9 @@ try {
   assert.equal(retiredZermattPhoto.inventoryStatus, 'unused');
   assert.equal(retiredZermattPhoto.useCount, 0);
   assert.deepEqual(retiredZermattPhoto.routes, []);
-  assert.match(retiredZermattPhoto.rightsStatus, /Conflicting Commons metadata/i);
-  assert.match(retiredZermattPhoto.retirementNote, /does not establish uploader authority/i);
+  assert.match(retiredZermattPhoto.rightsStatus, /records both Public domain and CC BY-SA 4\.0 declarations/i);
+  assert.match(retiredZermattPhoto.rightsStatus, /relationship and the image reuse status have not been independently determined/i);
+  assert.match(retiredZermattPhoto.retirementNote, /not a finding of infringement or that the declarations are incompatible/i);
 
   const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
   assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');

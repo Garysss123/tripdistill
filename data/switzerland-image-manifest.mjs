@@ -583,7 +583,7 @@ export const switzerlandRetiredImageRecords = {
     rightsStatus: 'Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.',
     retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed the train at Montreux station, not the claimed mountain view from Rochers-de-Naye. The train is destination-related, but it does not support the summit-view alt or the guide’s mountain-conditions decision. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.'
   },
-  zermattGlacierParadiseConflict: {
+  zermattGlacierParadiseMultipleLicenseDeclarations: {
     src: '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp',
     alt: 'Klein Matterhorn summit sign beside the viewing platform above the clouds',
     source: 'https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_-_Zermatt_-_Switzerland_-_2005_-_04.jpg',
@@ -595,7 +595,7 @@ export const switzerlandRetiredImageRecords = {
     remoteSha1: '43dcc8fdd4bc2dd86f52eefb259ebc4fc5e87b49',
     localSha1: '9a193f9dba679212c6d27a10df08fff47a3ba3fb',
     inventoryStatus: 'unused',
-    rightsStatus: 'Conflicting Commons metadata declares Public domain and CC BY-SA 4.0; the source record is retained and no independent rights determination is made.',
-    retirementNote: 'Removed from live displays on 2026-10-12 after source-page license conflict was found. The original WebP bytes and source metadata remain retained for provenance only; this record does not establish uploader authority or independent rights clearance.'
+    rightsStatus: 'The Commons source page records both Public domain and CC BY-SA 4.0 declarations; their relationship and the image reuse status have not been independently determined.',
+    retirementNote: 'Removed from live displays on 2026-10-12 as a precaution because reuse status was not independently determined. The original WebP bytes and source metadata remain retained for provenance; this is not a finding of infringement or that the declarations are incompatible.'
   }
 };

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T13:30:26.724Z",
+  "generatedAt": "2026-10-12T14:27:31.508Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 808,
@@ -25014,10 +25014,10 @@
             "Public domain",
             "CC BY-SA 4.0"
           ],
-          "rightsStatus": "Conflicting Commons metadata declares Public domain and CC BY-SA 4.0; the source record is retained and no independent rights determination is made.",
+          "rightsStatus": "The Commons source page records both Public domain and CC BY-SA 4.0 declarations; their relationship and the image reuse status have not been independently determined.",
           "rightsStatusUrl": null,
           "inventoryStatus": "unused",
-          "retirementNote": "Removed from live displays on 2026-10-12 after source-page license conflict was found. The original WebP bytes and source metadata remain retained for provenance only; this record does not establish uploader authority or independent rights clearance.",
+          "retirementNote": "Removed from live displays on 2026-10-12 as a precaution because reuse status was not independently determined. The original WebP bytes and source metadata remain retained for provenance; this is not a finding of infringement or that the declarations are incompatible.",
           "licenseUrl": null,
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "unknown",
@@ -28172,14 +28172,14 @@
       ]
     },
     {
-      "sha256": "c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8",
+      "sha256": "671a60852805748c8bf7ea4f5fc362305dc8f8c932fbd58fd661a8921794d366",
       "assetPaths": [
         "/assets/images/tripdistill-zermatt-glacier-route-choice.svg"
       ],
-      "byteLength": 6239,
+      "byteLength": 6532,
       "sourceRecords": [
         {
-          "sha256": "c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8",
+          "sha256": "671a60852805748c8bf7ea4f5fc362305dc8f8c932fbd58fd661a8921794d366",
           "assetPath": "/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
