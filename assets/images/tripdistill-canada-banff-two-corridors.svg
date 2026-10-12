@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title description">
+  <title id="title">Banff base with separate Johnston Canyon and Lake Minnewanka corridors</title>
+  <desc id="description">Original schematic, not to scale. Two distinct routes leave Banff. Plan them on separate days and verify seasonal transit and closures.</desc>
+  <rect width="1200" height="700" rx="28" fill="#f4f7f5"/>
+  <path d="M 42 42 H 1158 V 658 H 42 Z" fill="none" stroke="#c7d5d2" stroke-width="3"/>
+  <text x="82" y="105" fill="#173d43" font-family="Arial, sans-serif" font-size="34" font-weight="700">BANFF · TWO SEPARATE CORRIDORS</text>
+  <text x="84" y="145" fill="#42646a" font-family="Arial, sans-serif" font-size="20">Original planning schematic · not to scale · no travel time implied</text>
+  <path d="M 598 340 C 510 300 408 260 282 228" fill="none" stroke="#b5503d" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 602 350 C 710 305 805 263 925 226" fill="none" stroke="#2f7184" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 240 216 L 282 228 L 255 260" fill="none" stroke="#b5503d" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 928 190 L 925 226 L 890 209" fill="none" stroke="#2f7184" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="600" cy="345" r="31" fill="#173d43"/>
+  <circle cx="280" cy="228" r="23" fill="#b5503d"/>
+  <circle cx="925" cy="225" r="23" fill="#2f7184"/>
+  <rect x="118" y="176" width="310" height="96" rx="18" fill="#fff" stroke="#d6a89e" stroke-width="3"/>
+  <text x="151" y="215" fill="#743426" font-family="Arial, sans-serif" font-size="24" font-weight="700">WEST · ROAM 9*</text>
+  <text x="151" y="248" fill="#243d40" font-family="Arial, sans-serif" font-size="26">Johnston Canyon</text>
+  <rect x="778" y="174" width="320" height="100" rx="18" fill="#fff" stroke="#9cbfc7" stroke-width="3"/>
+  <text x="808" y="214" fill="#245768" font-family="Arial, sans-serif" font-size="24" font-weight="700">EAST · SEASONAL ROUTE 6*</text>
+  <text x="808" y="249" fill="#243d40" font-family="Arial, sans-serif" font-size="25">Lake Minnewanka</text>
+  <rect x="490" y="390" width="220" height="68" rx="34" fill="#173d43"/>
+  <text x="530" y="433" fill="#fff" font-family="Arial, sans-serif" font-size="25" font-weight="700">BANFF BASE</text>
+  <text x="84" y="494" fill="#173d43" font-family="Arial, sans-serif" font-size="20" font-weight="700">FIVE-LANGUAGE LEGEND</text>
+  <text x="84" y="529" fill="#243d40" font-family="Arial, sans-serif" font-size="18">EN · Separate days · verify seasonal service and closures.</text>
+  <text x="84" y="558" fill="#243d40" font-family="Arial, sans-serif" font-size="18">繁體中文 · 分開安排日期 · 查核季節交通與封路資訊。</text>
+  <text x="84" y="587" fill="#243d40" font-family="Arial, sans-serif" font-size="18">日本語 · 別日に計画 · 季節運行と通行止めを確認。</text>
+  <text x="84" y="616" fill="#243d40" font-family="Arial, sans-serif" font-size="18">한국어 · 별도 일정으로 계획 · 계절 운행과 통행 통제 확인.</text>
+  <text x="84" y="645" fill="#243d40" font-family="Arial, sans-serif" font-size="18">ไทย · วางแผนแยกวัน · ตรวจสอบบริการตามฤดูกาลและการปิดเส้นทาง</text>
+  <text x="1100" y="334" text-anchor="end" fill="#526a6e" font-family="Arial, sans-serif" font-size="16">*Seasonal route/service status changes</text>
+</svg>

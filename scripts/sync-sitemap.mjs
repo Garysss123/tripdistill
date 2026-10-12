@@ -69,6 +69,13 @@ const pacificRimEditedRoutes = [
   '/canada/pacific-rim-tofino/ucluelet-wild-pacific/',
   '/canada/pacific-rim-tofino/tofino-marine-day/'
 ];
+const banffLastmod = '2026-10-12';
+const banffEditedRoutes = [
+  '/canada/banff-lake-louise/',
+  '/canada/banff-lake-louise/banff-town-bow-valley/',
+  '/canada/banff-lake-louise/lake-louise-moraine/',
+  '/canada/banff-lake-louise/johnston-minnewanka/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -900,6 +907,12 @@ for (const route of pacificRimEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Pacific Rim route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: pacificRimLastmod });
+}
+
+for (const route of banffEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Banff route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: banffLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

@@ -7135,57 +7135,6 @@
     ]
   },
   {
-    "title": "Banff & Lake Louise",
-    "url": "/canada/banff-lake-louise/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Banff is easier when the town, Lake Louise/Moraine Lake access and one canyon-or-lake day are separated. Transit and shuttle rules are part of the route, not a detail to discover at a full trailhead.",
-    "keywords": [
-      "Banff & Lake Louise",
-      "Alberta Rockies",
-      "rockies"
-    ]
-  },
-  {
-    "title": "Banff Town & Bow Valley",
-    "url": "/canada/banff-lake-louise/banff-town-bow-valley/",
-    "parent": "Banff & Lake Louise",
-    "type": "Local guide",
-    "summary": "Use Banff town as a transit-and-recovery base, not a checklist: one central walk, one river or viewpoint branch and enough time to learn the bus system before the big park day.",
-    "keywords": [
-      "Banff Town & Bow Valley",
-      "Banff & Lake Louise",
-      "Alberta Rockies",
-      "arrival-board"
-    ]
-  },
-  {
-    "title": "Lake Louise & Moraine Lake",
-    "url": "/canada/banff-lake-louise/lake-louise-moraine/",
-    "parent": "Banff & Lake Louise",
-    "type": "Local guide",
-    "summary": "Make the transport reservation the first step: Lake Louise and Moraine Lake have access systems that can matter more than the walking plan itself.",
-    "keywords": [
-      "Lake Louise & Moraine Lake",
-      "Banff & Lake Louise",
-      "Alberta Rockies",
-      "reservation-docket"
-    ]
-  },
-  {
-    "title": "Johnston Canyon & Lake Minnewanka",
-    "url": "/canada/banff-lake-louise/johnston-minnewanka/",
-    "parent": "Banff & Lake Louise",
-    "type": "Local guide",
-    "summary": "Treat Johnston Canyon and Lake Minnewanka as two different half-day systems—one narrow trail corridor, one broad lake road—and combine them only when transit and crowd timing cooperate.",
-    "keywords": [
-      "Johnston Canyon & Lake Minnewanka",
-      "Banff & Lake Louise",
-      "Alberta Rockies",
-      "route-split"
-    ]
-  },
-  {
     "title": "Jasper & the Icefields Parkway",
     "url": "/canada/jasper-icefields/",
     "parent": "Canada",
@@ -13145,6 +13094,58 @@
       "Tofino licensed boat operator",
       "wildlife sighting not guaranteed",
       "marine trip cancellation sea state"
+    ]
+  },
+  {
+    "title": "Banff & Lake Louise",
+    "url": "/canada/banff-lake-louise/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Use Banff town as the walkable base, give Lake Louise and Moraine Lake their own reservation-led day, then choose Johnston Canyon or the Lake Minnewanka corridor as a separate outing. Named Roam routes, Parks Canada boarding rules and seasonal road notices determine whether those days work; keep one movable day for weather or a service change.",
+    "keywords": [
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "rockies",
+      "Lake Louise"
+    ]
+  },
+  {
+    "title": "Banff Town & Bow Valley",
+    "url": "/canada/banff-lake-louise/banff-town-bow-valley/",
+    "parent": "Banff & Lake Louise",
+    "type": "Local guide",
+    "summary": "Make Banff town the recovery base: walk Banff Avenue and the Bow River, learn the Roam stop you need, then use one nearby named path before committing to a higher or more remote day.",
+    "keywords": [
+      "Banff Town & Bow Valley",
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "arrival-board"
+    ]
+  },
+  {
+    "title": "Lake Louise & Moraine Lake",
+    "url": "/canada/banff-lake-louise/lake-louise-moraine/",
+    "parent": "Banff & Lake Louise",
+    "type": "Local guide",
+    "summary": "Choose transport before choosing a trail: private cars cannot use Moraine Lake Road, while Parks Canada shuttle reservations and Roam 8X have different boarding points, seasons and return conditions.",
+    "keywords": [
+      "Lake Louise & Moraine Lake",
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "reservation-docket"
+    ]
+  },
+  {
+    "title": "Johnston Canyon & Lake Minnewanka",
+    "url": "/canada/banff-lake-louise/johnston-minnewanka/",
+    "parent": "Banff & Lake Louise",
+    "type": "Local guide",
+    "summary": "Johnston Canyon and Lake Minnewanka sit on different corridors. Choose one per day from the dated Roam service notice, then follow a named trail or lakeside stop with a confirmed return.",
+    "keywords": [
+      "Johnston Canyon & Lake Minnewanka",
+      "Banff & Lake Louise",
+      "Alberta Rockies",
+      "route-split"
     ]
   }
 ]

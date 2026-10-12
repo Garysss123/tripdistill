@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T03:34:03.987Z",
+  "generatedAt": "2026-10-12T11:39:02.681Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 797,
+    "assetFileCount": 798,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 8,
-    "licenseClaimsNotIndependentlyVerified": 514,
+    "completeProjectOriginalRightsRecords": 9,
+    "licenseClaimsNotIndependentlyVerified": 512,
     "currentKnownUnsuitableImages": 0,
-    "previouslyMisplacedImageReplaced": 1,
+    "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 800,
-    "deduplicatedImageCount": 797,
+    "expectedBuildImageCount": 801,
+    "deduplicatedImageCount": 798,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3518,
+    "imageReferencesScanned": 3514,
     "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 584,
+    "unusedAssetCount": 30,
+    "assetsWithStructuredSourceRecords": 585,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 170,
+    "assetsVisuallyReviewed": 173,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 251,
-    "metadataOrCreditOnly": 522,
-    "usedAssetsWithoutIndependentSourcePageCheck": 518,
+    "sourcePageChecked": 253,
+    "metadataOrCreditOnly": 521,
+    "usedAssetsWithoutIndependentSourcePageCheck": 516,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 796 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 800 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -48,6 +48,13 @@
     "previousIssue": "The prior image showed Piazza Navona while labeling the Trastevere route.",
     "correction": "Replaced with a visually checked photograph of the fountain in Piazza Santa Maria in Trastevere.",
     "currentFile": "The current replacement remains included as the current asset at the same path."
+  },
+  "boundedImageReview": {
+    "checkedOn": "2026-10-12",
+    "route": "/canada/banff-lake-louise/johnston-minnewanka/",
+    "mismatch": "The retained Johnston Canyon source WebP shows a forest stream, not the represented canyon/lake corridor subject. It is unreferenced by current English pages and replaced by an original schematic with visible SVG source and Terms links.",
+    "remainingPhotoPageCheck": "The exact Commons page for the retired Johnston Canyon source could not be fetched. Its listed creator and CC BY-SA 4.0 declaration are preserved as metadata only; no source-page verification or independent rights clearance is claimed.",
+    "licenseVersionNote": "CC BY 2.0, CC BY-SA 3.0 and CC BY-SA 4.0 are separate declared license versions, but different versions alone are not a metadata conflict. Each active photo is credited against its own exact source-page declaration."
   },
   "entries": [
     {
@@ -4132,26 +4139,26 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 6,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Banff town/base image check: Commons file page identifies Ron Cogswell, 5 September 2019, 5324 × 3537 original pixels and CC BY 2.0; the local 1600 × 1066 pixels show Cascade Mountain beside avalanche warning signage on the Banff approach, not the town itself. The alt text now describes the visible scene. The page declaration and image match are recorded without asserting independent uploader authority or rights-chain clearance.",
+          "useCount": 5,
           "routes": [
             "/canada/",
             "/canada/banff-lake-louise/",
             "/canada/banff-lake-louise/banff-town-bow-valley/",
-            "/canada/banff-lake-louise/johnston-minnewanka/",
             "/canada/banff-lake-louise/lake-louise-moraine/"
           ],
           "altTexts": [
-            "Banff town set below the Rocky Mountains"
+            "Banff town set below the Rocky Mountains",
+            "Cascade Mountain and avalanche signage on the Banff approach"
           ],
           "rawVisibleCredits": [
             "'You are in AVALANCHE country' -- Cascade Mountain on the the Road to Banff, Alberta (CA) September 2019 (49559005101).jpg — Ron Cogswell from Arlington, Virginia, USA, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -4173,37 +4180,28 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johnston_Canyon_Banff_National_Park.jpg",
           "sourceTitle": "File:Johnston Canyon Banff National Park.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Johnston Canyon Banff National Park.jpg",
+          "creditLabel": null,
           "creator": "Amber Mac75",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Local pixels show a forest stream that does not match the Johnston Canyon and Lake Minnewanka route described by this page. Retained for provenance, removed from all live page references, and replaced by an original planning schematic. The source-page declaration and uploader authority were not independently verified in this review.",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/canada/banff-lake-louise/",
-            "/canada/banff-lake-louise/banff-town-bow-valley/",
-            "/canada/banff-lake-louise/johnston-minnewanka/",
-            "/canada/banff-lake-louise/lake-louise-moraine/"
-          ],
-          "altTexts": [
-            "Rocky Mountain canyon and lake landscape near Banff"
-          ],
-          "rawVisibleCredits": [
-            "Johnston Canyon Banff National Park.jpg — Amber Mac75, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -4229,28 +4227,27 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 4,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Banff lake image check: Commons file page identifies Bede735, 19 June 2008, 3872 × 2592 original pixels and CC BY-SA 3.0; the local 1600 × 1066 pixels show Moraine Lake and the Ten Peaks. The WebP resize/crop is disclosed, its credit links the exact license version and states the same-version share-alike term. The page declaration is recorded without asserting independent uploader authority or rights-chain clearance.",
+          "useCount": 3,
           "routes": [
             "/canada/banff-lake-louise/",
             "/canada/banff-lake-louise/banff-town-bow-valley/",
-            "/canada/banff-lake-louise/johnston-minnewanka/",
             "/canada/banff-lake-louise/lake-louise-moraine/"
           ],
           "altTexts": [
             "Turquoise mountain lake in Banff National Park"
           ],
           "rawVisibleCredits": [
-            "Moraine Lake Alberta Canada.jpg — Bede735, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Moraine Lake Alberta Canada.jpg — Bede735, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms."
           ]
         }
       ]
@@ -5401,7 +5398,7 @@
             "Boats and forested islands in Clayoquot Sound near Tofino"
           ],
           "rawVisibleCredits": [
-            "Clayoquot Sound - Near Tofino - Vancouver Island BC - Canada - 06.jpg — Adam Jones, Ph.D., CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Clayoquot Sound - Near Tofino - Vancouver Island BC - Canada - 06.jpg — Adam Jones, Ph.D., CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms."
           ]
         }
       ]
@@ -5446,7 +5443,7 @@
             "/canada/pacific-rim-tofino/ucluelet-wild-pacific/"
           ],
           "altTexts": [
-            "Rocky Pacific coast and forest near Ucluelet"
+            "Bald eagle perched among Sitka spruce along the Wild Pacific Trail in Ucluelet"
           ],
           "rawVisibleCredits": [
             "Picea sitchensis Wild Pacific Trail, Ucluelet 2.jpg — Roland Tanglao from Vancouver, Canada, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -27209,6 +27206,50 @@
           "rawVisibleCredits": [
             "Shinobazu Pond walkway — Ximonic (Simo Räsänen), CC BY-SA 4.0. The derivative remains under the same license. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "064297c42c988fa3bba1cf9157e094bec43b97edda9e2822e4ab8bdeb7e314b4",
+      "assetPaths": [
+        "/assets/images/tripdistill-canada-banff-two-corridors.svg"
+      ],
+      "byteLength": 3582,
+      "sourceRecords": [
+        {
+          "sha256": "064297c42c988fa3bba1cf9157e094bec43b97edda9e2822e4ab8bdeb7e314b4",
+          "assetPath": "/assets/images/tripdistill-canada-banff-two-corridors.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-banff-two-corridors.svg",
+          "sourceTitle": "TripDistill original Banff two-corridor schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original schematic, not to scale; created as a vector planning diagram.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 2,
+          "routes": [
+            "/canada/banff-lake-louise/",
+            "/canada/banff-lake-louise/johnston-minnewanka/"
+          ],
+          "altTexts": [
+            "Original schematic showing Banff with separate Johnston Canyon and Lake Minnewanka corridors"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
