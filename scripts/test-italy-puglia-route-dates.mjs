@@ -20,6 +20,9 @@ const puglia = italyClusters.find((cluster) => cluster.slug === 'puglia');
 check(Boolean(puglia), 'Italy Puglia cluster is missing');
 check(puglia?.reviewIsoDate === '2026-10-11', 'Puglia source review ISO date is not 2026-10-11');
 check(puglia?.reviewDate === '11 October 2026', 'Puglia visible review date is not 11 October 2026');
+const lakes = italyClusters.find((cluster) => cluster.slug === 'italian-lakes');
+check(lakes?.reviewIsoDate === '2026-10-12', 'Italian Lakes source review ISO date is not 2026-10-12');
+check(lakes?.reviewDate === '12 October 2026', 'Italian Lakes visible review date is not 12 October 2026');
 
 for (const route of routes) {
   for (const [, prefix] of locales) {
@@ -38,7 +41,8 @@ const italianRoutes = [...entries.keys()].filter((route) => route.startsWith('/i
 for (const route of italianRoutes) {
   const isRome = route.includes('/rome/');
   const isPuglia = route.includes('/puglia/');
-  const expected = isPuglia ? '2026-10-11' : isRome ? '2026-10-04' : '2026-09-26';
+  const isLakes = route.includes('/italian-lakes/');
+  const expected = isPuglia ? '2026-10-11' : isRome ? '2026-10-04' : isLakes ? '2026-10-12' : '2026-09-26';
   check(entries.get(route) === expected, `${route}: expected Italy date ${expected}, found ${entries.get(route)}`);
 }
 check(italianRoutes.length === 81 * locales.length, `Expected 405 Italy sitemap entries, found ${italianRoutes.length}`);
