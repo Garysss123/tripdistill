@@ -17,7 +17,7 @@
     "url": "/malaysia/",
     "parent": "Malaysia",
     "type": "Country",
-    "summary": "Choose between Peninsular Malaysia, Sabah and Sarawak with entry, monsoon, transport and fourteen regional planning briefs.",
+    "summary": "Compare 9-, 12- and 15-night Malaysia routes by base, train, coach and flight handoffs; choose peninsula or Sabah/Sarawak and protect weather and transfer buffers.",
     "keywords": [
       "malaysia",
       "kuala lumpur",
@@ -26,7 +26,16 @@
       "sabah",
       "sarawak",
       "borneo",
-      "mdac"
+      "mdac",
+      "Kota Kinabalu",
+      "Kinabalu Park",
+      "Kundasang",
+      "Ranau",
+      "Padang Merdeka",
+      "ETS Butterworth",
+      "Melaka Sentral",
+      "base nights",
+      "transport handoffs"
     ]
   },
   {
@@ -183,7 +192,7 @@
     "url": "/malaysia/kinabalu-park-kundasang/",
     "parent": "Malaysia · Sabah",
     "type": "National Park and Highland Guide",
-    "summary": "Separate a complete park-and-highland visit from the regulated Mount Kinabalu summit climb before booking the road and base.",
+    "summary": "Choose the highland nights first: Park Headquarters for trail access, Kundasang for dispersed memorial and farm stops, or Ranau when Poring is the road priority. A summit climb is a separately booked expedition.",
     "keywords": [
       "kinabalu park",
       "kundasang",
@@ -3940,9 +3949,9 @@
   {
     "title": "Park Headquarters & Botanical Garden Guide",
     "url": "/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Experience Kinabalu Park without a summit climb through headquarters trails, botanical interpretation and a weather-aware highland base.",
+    "summary": "Plan a full non-climbing visit around Park Headquarters, botanical interpretation and one trail section confirmed open that day.",
     "keywords": [
       "park headquarters & botanical garden",
       "kinabalu park & kundasang",
@@ -3954,9 +3963,9 @@
   {
     "title": "Mount Kinabalu Summit Guide",
     "url": "/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Treat the Mount Kinabalu summit as a regulated expedition with advance capacity, registered guide, altitude judgment and recovery time.",
+    "summary": "Treat the Mount Kinabalu summit as a capacity-controlled, guided expedition with a verified mountain bed, named transport handoffs and recovery time.",
     "keywords": [
       "mount kinabalu summit",
       "kinabalu park & kundasang",
@@ -3968,9 +3977,9 @@
   {
     "title": "Kundasang & Ranau Guide",
     "url": "/malaysia/kinabalu-park-kundasang/kundasang-ranau/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Use Kundasang and Ranau as a highland road base with working farms, memorial context, changing views and named transport stops.",
+    "summary": "Choose Kundasang or Ranau by the actual road and next day: Kundasang for a memorial and highland stay, Ranau for district services and a Poring-oriented route.",
     "keywords": [
       "kundasang & ranau",
       "kinabalu park & kundasang",
@@ -3982,9 +3991,9 @@
   {
     "title": "Poring Hot Springs & Lowland Trails Guide",
     "url": "/malaysia/kinabalu-park-kundasang/poring-hot-springs/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Plan Poring as a lower-elevation forest and recreation branch with road time, trail choices, weather and realistic hot-spring expectations.",
+    "summary": "Treat Poring as a separate lower-elevation road day; check hot-spring, canopy and forest-walk access independently before choosing the route.",
     "keywords": [
       "poring hot springs & lowland trails",
       "kinabalu park & kundasang",

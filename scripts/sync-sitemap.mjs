@@ -114,6 +114,15 @@ const malaysiaKualaLumpurRoutes = [
   '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
   '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
 ];
+const malaysiaKinabaluLastmod = '2026-10-12';
+const malaysiaKinabaluRoutes = [
+  '/malaysia/',
+  '/malaysia/kinabalu-park-kundasang/',
+  '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+  '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+  '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+  '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -897,6 +906,11 @@ for (const route of malaysiaKualaLumpurRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Kuala Lumpur & Putrajaya route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaKualaLumpurLastmod });
+}
+for (const route of malaysiaKinabaluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Malaysia MY15 route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: malaysiaKinabaluLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);

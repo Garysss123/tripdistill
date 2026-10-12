@@ -1,0 +1,17 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare 9-, 12- and 15-night Malaysia routes by base, train, coach and flight handoffs; choose peninsula or Sabah/Sarawak and protect weather and transfer buffers.": "เปรียบเทียบเส้นทางมาเลเซีย 9, 12 และ 15 คืนตามฐานพักและการต่อรถไฟ รถโค้ช และเที่ยวบิน เลือกคาบสมุทรหรือซาบาห์/ซาราวัก พร้อมเผื่อเวลาเรื่องอากาศและการเปลี่ยนต่อ",
+    "Ranau": "ราเนา (Ranau)",
+    "Padang Merdeka": "Padang Merdeka",
+    "ETS Butterworth": "ETS Butterworth",
+    "Melaka Sentral": "Melaka Sentral",
+    "base nights": "จำนวนคืนที่ฐานพัก",
+    "transport handoffs": "จุดต่อรถและการเดินทาง",
+    "Malaysia - Kinabalu Park & Kundasang": "มาเลเซีย - คินาบาลูพาร์กและกันดาซัง"
+  }
+}

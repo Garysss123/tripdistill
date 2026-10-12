@@ -524,7 +524,8 @@ if (requestedClusterSlug) {
     'sandakan-kinabatangan': ['sandakan-heritage-waterfront', 'sepilok-conservation-centres', 'sukau-kinabatangan', 'gomantong-batu-puteh'],
     'kuching-bako': ['kuching-waterfront-old-courthouse', 'borneo-cultures-museum', 'semenggoh-wildlife-centre', 'bako-national-park'],
     'semporna-tun-sakaran': ['semporna-jetty-operator', 'bohey-dulang-bodgaya', 'mabul-kapalai', 'sipadan-permit-day'],
-    'perhentian-redang': ['kuala-besut-transfer', 'perhentian-kecil', 'perhentian-besar', 'redang-merang-transfer']
+    'perhentian-redang': ['kuala-besut-transfer', 'perhentian-kecil', 'perhentian-besar', 'redang-merang-transfer'],
+    'kinabalu-park-kundasang': ['park-headquarters-botanical-garden', 'mount-kinabalu-summit', 'kundasang-ranau', 'poring-hot-springs']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
   if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed Malaysia source clusters listed in boundedGuideLists.');

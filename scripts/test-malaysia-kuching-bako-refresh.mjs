@@ -48,6 +48,14 @@ const newlyReviewedKualaLumpurRoutes = [
   '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
   '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
 ];
+const newlyReviewedKinabaluRoutes = [
+  '/malaysia/',
+  '/malaysia/kinabalu-park-kundasang/',
+  '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+  '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+  '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+  '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+];
 const locales = [
   { prefix: '', dateNeedle: '12 October 2026' },
   { prefix: '/zh', dateNeedle: '2026 年 10 月 12 日' },
@@ -101,8 +109,9 @@ const expectedLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.m
 const currentMalaysiaLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => currentMalaysiaRoutes.map((route) => `${prefix}${route}`)));
 const newlyIntegratedLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => newlyIntegratedRoutes.map((route) => `${prefix}${route}`)));
 const newlyReviewedKualaLumpurLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => newlyReviewedKualaLumpurRoutes.map((route) => `${prefix}${route}`)));
+const newlyReviewedKinabaluLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => newlyReviewedKinabaluRoutes.map((route) => `${prefix}${route}`)));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.deepEqual(new Set(changedSitemapRoutes), new Set([...expectedLocalizedRoutes, ...currentMalaysiaLocalizedRoutes, ...newlyIntegratedLocalizedRoutes, ...newlyReviewedKualaLumpurLocalizedRoutes]), 'only the separately reviewed Malaysia routes receive a new lastmod');
+assert.deepEqual(new Set(changedSitemapRoutes), new Set([...expectedLocalizedRoutes, ...currentMalaysiaLocalizedRoutes, ...newlyIntegratedLocalizedRoutes, ...newlyReviewedKualaLumpurLocalizedRoutes, ...newlyReviewedKinabaluLocalizedRoutes]), 'only the separately reviewed Malaysia routes receive a new lastmod');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:data/search-index.json`], { encoding: 'utf8' }));
@@ -111,7 +120,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...selectedRoutes, ...currentMalaysiaRoutes, ...newlyIntegratedRoutes, ...newlyReviewedKualaLumpurRoutes]), 'only the reviewed Malaysia cohorts changed English search records');
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...selectedRoutes, ...currentMalaysiaRoutes, ...newlyIntegratedRoutes, ...newlyReviewedKualaLumpurRoutes, ...newlyReviewedKinabaluRoutes]), 'only the reviewed Malaysia cohorts changed English search records');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five existing English search records remain present');
 
 const images = new Map();

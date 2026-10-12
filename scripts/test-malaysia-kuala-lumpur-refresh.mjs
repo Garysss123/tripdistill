@@ -18,6 +18,14 @@ const routes = [
   '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
   '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
 ];
+const additionallyReviewedMalaysiaRoutes = [
+  '/malaysia/',
+  '/malaysia/kinabalu-park-kundasang/',
+  '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+  '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+  '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+  '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+];
 const locales = [
   { code: 'en', prefix: '', dir: '', date: '12 October 2026', markers: ['Kuala Lumpur', 'Putrajaya'] },
   { code: 'zh-Hant', prefix: '/zh', dir: 'zh', date: '2026 年 10 月 12 日', markers: ['吉隆坡', '布城'] },
@@ -82,10 +90,10 @@ const currentSitemap = readSitemap(fs.readFileSync(path.join(outputRoot, 'sitema
 const baseSitemap = readSitemap(gitBytes(`${baseCommit}:sitemap.xml`).toString('utf8'));
 assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no sitemap URL was added or removed');
-const localizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
+const localizedRoutes = new Set(locales.flatMap(({ prefix }) => [...routes, ...additionallyReviewedMalaysiaRoutes].map((route) => prefix + route)));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
-assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the five edited pages in five editions have changed lastmod');
-for (const route of localizedRoutes) assert.equal(currentSitemap.get(route), reviewDate, `${route}: sitemap lastmod`);
+assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the previously reviewed 5-route and current 6-route Malaysia cohorts changed lastmod');
+for (const route of locales.flatMap(({ prefix }) => routes.map((path) => prefix + path))) assert.equal(currentSitemap.get(route), reviewDate, `${route}: sitemap lastmod`);
 
 const baseSearch = readJsonFromGit(`${baseCommit}:data/search-index.json`);
 const currentSearch = readJson(path.join(outputRoot, 'data/search-index.json'));
@@ -95,7 +103,7 @@ const currentSearchByUrl = byUrl(currentSearch);
 assert.equal(currentSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearch = [...currentSearchByUrl].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearch), selected, 'only the five selected English search records changed');
+assert.deepEqual(new Set(changedSearch), new Set([...selected, ...additionallyReviewedMalaysiaRoutes]), 'only the selected and separately reviewed Malaysia search records changed');
 
 const localizedPaths = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const wordIncrements = [];
