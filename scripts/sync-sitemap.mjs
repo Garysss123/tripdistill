@@ -204,6 +204,13 @@ const halifaxEditedRoutes = [
   '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
   '/canada/halifax-nova-scotia/cape-breton-cabot/'
 ];
+const princeEdwardIslandLastmod = '2026-10-12';
+const princeEdwardIslandEditedRoutes = [
+  '/canada/prince-edward-island/',
+  '/canada/prince-edward-island/charlottetown/',
+  '/canada/prince-edward-island/cavendish-north-shore/',
+  '/canada/prince-edward-island/coastal-drives/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -724,6 +731,14 @@ const usaColoradoRoutes = [
   '/usa/colorado/mountain-towns/',
   '/usa/colorado/rocky-mountain/'
 ];
+const usaHawaiiLastmod = '2026-10-12';
+// These four existing Hawaii pages received a substantive editorial refresh.
+const usaHawaiiRoutes = [
+  '/usa/hawaii/',
+  '/usa/hawaii/oahu/',
+  '/usa/hawaii/maui/',
+  '/usa/hawaii/hawaii-island/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -1119,6 +1134,11 @@ for (const route of usaColoradoRoutes) {
   if (!record) throw new Error(`Cannot update missing sitemap route ${route}`);
   records.set(route, { ...record, lastmod: usaColoradoLastmod });
 }
+for (const route of usaHawaiiRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Hawaii route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaHawaiiLastmod });
+}
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Australia route absent from sitemap: ${route}`);
@@ -1337,6 +1357,12 @@ for (const route of halifaxEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Halifax route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: halifaxLastmod });
+}
+
+for (const route of princeEdwardIslandEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Prince Edward Island route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: princeEdwardIslandLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

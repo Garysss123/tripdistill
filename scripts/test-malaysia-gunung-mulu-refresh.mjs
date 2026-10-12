@@ -7,7 +7,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { imageCredits, malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -69,9 +69,9 @@ assert.equal(sitemap.size, 4560, 'sitemap remains at 4,560 localized URLs');
 assert.deepEqual(new Set(sitemap.keys()), new Set(baseSitemap.keys()), 'refresh adds or removes no sitemap URL');
 const localizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const changedSitemapRoutes = [...sitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
-const expectedIntegratedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
+const expectedIntegratedLocalizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
 assert.equal(integrationRoutes.length, 262, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 262 existing English pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedIntegratedLocalizedRoutes, 'only the exact integrated UK, France, Italy, Switzerland, Canada and Malaysia routes receive new lastmod values');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedIntegratedLocalizedRoutes, 'only the historical integration and four later Hawaii routes receive new lastmod values');
 for (const route of localizedRoutes) assert.equal(sitemap.get(route), reviewedDate, route + ' sitemap lastmod');
 
 const baseSearch = JSON.parse(gitBytes(integrationSprintBaseline + ':data/search-index.json').toString('utf8'));
@@ -81,7 +81,7 @@ const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Italy, Switzerland, Canada and Malaysia search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes]), 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Hawaii search records changed');
 for (const route of routes) assert.ok(currentSearchByUrl.has(route), route + ' remains searchable');
 
 for (const locale of locales.filter(({ dir }) => dir)) {

@@ -353,6 +353,27 @@ export const integrationSearchRoutes = Object.freeze([
   ...integrationSearchOnlyRoutes
 ]);
 
+// Later scoped refreshes can extend the comparison baseline without changing
+// the historical integration route inventory above.
+export const postIntegrationHawaiiRoutes = Object.freeze([
+  '/usa/hawaii/',
+  '/usa/hawaii/oahu/',
+  '/usa/hawaii/maui/',
+  '/usa/hawaii/hawaii-island/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
+
+export const localizedPostIntegrationHawaiiSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationHawaiiRoutes.map((route) => `${prefix}${route}`))
+);
+
+export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
+  const routes = localizedIntegrationSitemapRoutes(prefixes);
+  for (const prefix of prefixes) {
+    for (const route of postIntegrationHawaiiRoutes) routes.add(`${prefix}${route}`);
+  }
+  return routes;
+};

@@ -10,6 +10,7 @@ import {
   integrationSearchRoutes,
   integrationSitemapRoutes,
   integrationSprintBaseline,
+  postIntegrationHawaiiRoutes,
   localizedIntegrationSitemapRoutes
 } from './integration-sprint-scope.mjs';
 
@@ -59,11 +60,12 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedIntegrationSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 1280);
+for (const prefix of prefixes) for (const route of postIntegrationHawaiiRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+assert.equal(changedSitemapUrls.length, 1300);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact 256 routes across five editions have updated sitemap dates'
+  'only the exact 256 historical integration and four later Hawaii route dates across five editions have updated sitemap dates'
 );
 for (const url of changedSitemapUrls) assert.equal(currentSitemap.get(url), '2026-10-12', `${url}: current sitemap date`);
 
@@ -78,7 +80,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 225);
-assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact 225 expected English search records changed');
+assert.equal(changedSearchRoutes.length, 229);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes]), 'only the exact 225 integration and four later Hawaii English search records changed');
 
-console.log('Integration scope regression passed: 262 exact English bodies, 1,280 date changes over 256 routes × five editions, 225 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 262 integration English bodies, 1,300 date changes over 260 routes × five editions, 229 English search changes, and the unchanged 4,560-URL set.');

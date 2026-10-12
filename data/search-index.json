@@ -10707,1074 +10707,6 @@
     ]
   },
   {
-    "title": "United States Travel Guide",
-    "url": "/usa/",
-    "parent": "North America",
-    "type": "Country",
-    "summary": "Choose a workable United States trip: rail-connected cities, a selective park journey or an island stay, with 24 regional guides and 72 local chapters.",
-    "keywords": [
-      "USA",
-      "United States",
-      "America"
-    ]
-  },
-  {
-    "title": "New York City",
-    "url": "/usa/new-york/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan a first New York trip with neighborhood-by-neighborhood hotel trade-offs, JFK, LaGuardia and Newark transfers, and a realistic three-day itinerary.",
-    "keywords": [
-      "New York City",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Lower Manhattan & the Harbor",
-    "url": "/usa/new-york/lower-manhattan/",
-    "parent": "New York City",
-    "type": "Local guide",
-    "summary": "Choose a Lower Manhattan walking day or a Liberty and Ellis Island visit, with ticket distinctions, a named street route and practical return options.",
-    "keywords": [
-      "Lower Manhattan & the Harbor",
-      "New York City"
-    ]
-  },
-  {
-    "title": "Midtown & Central Park",
-    "url": "/usa/new-york/midtown-central-park/",
-    "parent": "New York City",
-    "type": "Local guide",
-    "summary": "Build a Midtown day around MoMA or The Met, a manageable Central Park walk and Broadway, with geographic trade-offs and realistic alternatives.",
-    "keywords": [
-      "Midtown & Central Park",
-      "New York City"
-    ]
-  },
-  {
-    "title": "Brooklyn Heights & DUMBO",
-    "url": "/usa/new-york/brooklyn-waterfront/",
-    "parent": "New York City",
-    "type": "Local guide",
-    "summary": "Walk Brooklyn Heights and DUMBO through the promenade, Pier 1 and waterfront parks, with subway choices, step-free planning and bridge-return trade-offs.",
-    "keywords": [
-      "Brooklyn Heights & DUMBO",
-      "New York City"
-    ]
-  },
-  {
-    "title": "Boston & Cambridge",
-    "url": "/usa/boston/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Boston or Cambridge hotel base, compare Logan airport transfers, and plan history, university and harbor days without rushing across the city.",
-    "keywords": [
-      "Boston & Cambridge",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Freedom Trail & North End",
-    "url": "/usa/boston/freedom-trail/",
-    "parent": "Boston & Cambridge",
-    "type": "Local guide",
-    "summary": "Walk Boston’s Freedom Trail in manageable sections, choosing historic interiors, a North End break and whether to continue to Charlestown Navy Yard.",
-    "keywords": [
-      "Freedom Trail & North End",
-      "Boston & Cambridge"
-    ]
-  },
-  {
-    "title": "Cambridge & Harvard Square",
-    "url": "/usa/boston/cambridge-harvard/",
-    "parent": "Boston & Cambridge",
-    "type": "Local guide",
-    "summary": "Plan a Harvard Square visit around campus access and a choice of art or natural-history museums, with a Charles River option and a clear subway return.",
-    "keywords": [
-      "Cambridge & Harvard Square",
-      "Boston & Cambridge"
-    ]
-  },
-  {
-    "title": "Boston Harbor & Islands",
-    "url": "/usa/boston/harbor-islands/",
-    "parent": "Boston & Cambridge",
-    "type": "Local guide",
-    "summary": "Choose a Boston Harbor Island by departure pier, seasonal ferry and terrain, with a return-first day plan, packing decisions and a mainland alternative.",
-    "keywords": [
-      "Boston Harbor & Islands",
-      "Boston & Cambridge"
-    ]
-  },
-  {
-    "title": "Philadelphia",
-    "url": "/usa/philadelphia/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Philadelphia around Old City, Center City and the museum parkway, with hotel-base trade-offs, station choices and a selective two- or three-day stay.",
-    "keywords": [
-      "Philadelphia",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Old City & Independence Park",
-    "url": "/usa/philadelphia/old-city/",
-    "parent": "Philadelphia",
-    "type": "Local guide",
-    "summary": "Plan Independence Hall and the Liberty Bell with their different entry rules, then follow an Old City walk with time for interpretation and a real break.",
-    "keywords": [
-      "Old City & Independence Park",
-      "Philadelphia"
-    ]
-  },
-  {
-    "title": "Museum Parkway & Schuylkill River",
-    "url": "/usa/philadelphia/parkway-museums/",
-    "parent": "Philadelphia",
-    "type": "Local guide",
-    "summary": "Choose the Philadelphia Museum of Art, Barnes or Rodin before planning the parkway and Schuylkill, with walking, admission and shorter-day alternatives.",
-    "keywords": [
-      "Museum Parkway & Schuylkill River",
-      "Philadelphia"
-    ]
-  },
-  {
-    "title": "Reading Terminal & Center City",
-    "url": "/usa/philadelphia/reading-terminal/",
-    "parent": "Philadelphia",
-    "type": "Local guide",
-    "summary": "Make Reading Terminal Market a useful Center City meal stop: compare open merchants, plan a short food circuit and continue toward City Hall or Chinatown.",
-    "keywords": [
-      "Reading Terminal & Center City",
-      "Philadelphia"
-    ]
-  },
-  {
-    "title": "Washington, DC",
-    "url": "/usa/washington-dc/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Metro-connected Washington base, compare airport arrivals and plan separate museum, memorial and Georgetown days with realistic return routes.",
-    "keywords": [
-      "Washington, DC",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "National Mall & Memorials",
-    "url": "/usa/washington-dc/national-mall/",
-    "parent": "Washington, DC",
-    "type": "Local guide",
-    "summary": "Plan a selective National Mall memorial walk from the Washington Monument toward Lincoln, with a Tidal Basin alternative and weather-aware exits.",
-    "keywords": [
-      "National Mall & Memorials",
-      "Washington, DC"
-    ]
-  },
-  {
-    "title": "Smithsonian Museums & Capitol Hill",
-    "url": "/usa/washington-dc/smithsonian/",
-    "parent": "Washington, DC",
-    "type": "Local guide",
-    "summary": "Choose a Smithsonian museum by subject, address and entry rules, distinguishing Air and Space locations and a separately reserved Capitol Hill visit.",
-    "keywords": [
-      "Smithsonian Museums & Capitol Hill",
-      "Washington, DC"
-    ]
-  },
-  {
-    "title": "Georgetown & the Potomac",
-    "url": "/usa/washington-dc/georgetown/",
-    "parent": "Washington, DC",
-    "type": "Local guide",
-    "summary": "Explore Georgetown from M Street to the canal and Potomac, choosing a manageable slope, a meal and a clear return rather than an overlong towpath walk.",
-    "keywords": [
-      "Georgetown & the Potomac",
-      "Washington, DC"
-    ]
-  },
-  {
-    "title": "New England Coast & Mountains",
-    "url": "/usa/new-england/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Maine coast or northern mountain trip, compare overnight bases and build a selective New England week without turning every day into a drive.",
-    "keywords": [
-      "New England Coast & Mountains",
-      "Northeast"
-    ]
-  },
-  {
-    "title": "Portland, Maine & Casco Bay",
-    "url": "/usa/new-england/portland-maine/",
-    "parent": "New England Coast & Mountains",
-    "type": "Local guide",
-    "summary": "Explore Portland’s Old Port, choose a Casco Bay island sailing and separate a Cape Elizabeth lighthouse visit from the downtown walking day.",
-    "keywords": [
-      "Portland, Maine & Casco Bay",
-      "New England Coast & Mountains"
-    ]
-  },
-  {
-    "title": "Acadia & Mount Desert Island",
-    "url": "/usa/new-england/acadia/",
-    "parent": "New England Coast & Mountains",
-    "type": "Local guide",
-    "summary": "Plan Acadia around coast, Jordan Pond or carriage roads, separating park admission, Cadillac vehicle reservations and the seasonal Island Explorer.",
-    "keywords": [
-      "Acadia & Mount Desert Island",
-      "New England Coast & Mountains"
-    ]
-  },
-  {
-    "title": "White Mountains & Vermont Roads",
-    "url": "/usa/new-england/white-mountains-vermont/",
-    "parent": "New England Coast & Mountains",
-    "type": "Local guide",
-    "summary": "Choose White Mountain bases and a Kancamagus drive before a separate Vermont stay, with legal stops, mountain alternatives and realistic transfer days.",
-    "keywords": [
-      "White Mountains & Vermont Roads",
-      "New England Coast & Mountains"
-    ]
-  },
-  {
-    "title": "Chicago",
-    "url": "/usa/chicago/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Chicago with CTA-connected hotel bases, O’Hare and Midway arrivals, and separate architecture, Museum Campus and neighborhood days.",
-    "keywords": [
-      "Chicago",
-      "Great Lakes"
-    ]
-  },
-  {
-    "title": "The Loop & Chicago Riverwalk",
-    "url": "/usa/chicago/loop-riverwalk/",
-    "parent": "Chicago",
-    "type": "Local guide",
-    "summary": "Choose a Chicago architecture cruise or a flexible Riverwalk and Loop route, with distinct piers, street-level connections and an indoor alternative.",
-    "keywords": [
-      "The Loop & Chicago Riverwalk",
-      "Chicago"
-    ]
-  },
-  {
-    "title": "Museum Campus & Lakefront",
-    "url": "/usa/chicago/museum-lakefront/",
-    "parent": "Chicago",
-    "type": "Local guide",
-    "summary": "Compare the Field Museum, Shedd Aquarium and Adler Planetarium, then plan one Museum Campus visit with a manageable lakeshore walk and return.",
-    "keywords": [
-      "Museum Campus & Lakefront",
-      "Chicago"
-    ]
-  },
-  {
-    "title": "Wicker Park, Logan Square & Neighborhood Chicago",
-    "url": "/usa/chicago/neighborhoods/",
-    "parent": "Chicago",
-    "type": "Local guide",
-    "summary": "Choose Wicker Park or Logan Square for a Chicago neighborhood day, connecting Blue Line stations, shops, food and an optional planned music evening.",
-    "keywords": [
-      "Wicker Park, Logan Square & Neighborhood Chicago",
-      "Chicago"
-    ]
-  },
-  {
-    "title": "Seattle & Puget Sound",
-    "url": "/usa/seattle/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Seattle with light-rail hotel bases, a market and waterfront day, a Bainbridge crossing and a separately planned Mount Rainier outing.",
-    "keywords": [
-      "Seattle & Puget Sound",
-      "Pacific Northwest"
-    ]
-  },
-  {
-    "title": "Pike Place & Seattle Waterfront",
-    "url": "/usa/seattle/pike-place-waterfront/",
-    "parent": "Seattle & Puget Sound",
-    "type": "Local guide",
-    "summary": "Connect Pike Place Market with Overlook Walk and Seattle’s waterfront, choosing market levels, a meal and an aquarium visit without repeated hill climbs.",
-    "keywords": [
-      "Pike Place & Seattle Waterfront",
-      "Seattle & Puget Sound"
-    ]
-  },
-  {
-    "title": "Bainbridge Island Ferry Day",
-    "url": "/usa/seattle/bainbridge/",
-    "parent": "Seattle & Puget Sound",
-    "type": "Local guide",
-    "summary": "Take a walk-on Bainbridge ferry day through Winslow, the art museum and Waterfront Park, separating Bloedel Reserve from the compact town walk.",
-    "keywords": [
-      "Bainbridge Island Ferry Day",
-      "Seattle & Puget Sound"
-    ]
-  },
-  {
-    "title": "Mount Rainier National Park",
-    "url": "/usa/seattle/mount-rainier/",
-    "parent": "Seattle & Puget Sound",
-    "type": "Local guide",
-    "summary": "Plan Mount Rainier through Nisqually, Longmire and Paradise, with current road-closure context, trail choices and a separate park-admission decision.",
-    "keywords": [
-      "Mount Rainier National Park",
-      "Seattle & Puget Sound"
-    ]
-  },
-  {
-    "title": "Portland & the Columbia Gorge",
-    "url": "/usa/portland-oregon/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Portland with MAX-connected hotel choices, a city and garden stay, and separate Columbia Gorge or Cannon Beach days matched to transport and weather.",
-    "keywords": [
-      "Portland & the Columbia Gorge",
-      "Pacific Northwest"
-    ]
-  },
-  {
-    "title": "Washington Park & Portland Gardens",
-    "url": "/usa/portland-oregon/washington-park/",
-    "parent": "Portland & the Columbia Gorge",
-    "type": "Local guide",
-    "summary": "Choose Portland Japanese Garden, the Rose Test Garden or Hoyt Arboretum, with Washington Park station, shuttle and admission differences made clear.",
-    "keywords": [
-      "Washington Park & Portland Gardens",
-      "Portland & the Columbia Gorge"
-    ]
-  },
-  {
-    "title": "Columbia River Gorge",
-    "url": "/usa/portland-oregon/columbia-gorge/",
-    "parent": "Portland & the Columbia Gorge",
-    "type": "Local guide",
-    "summary": "Plan a focused Columbia Gorge outing by car or Gorge Express, distinguishing Multnomah Falls permits, current bus limitations and a Crown Point option.",
-    "keywords": [
-      "Columbia River Gorge",
-      "Portland & the Columbia Gorge"
-    ]
-  },
-  {
-    "title": "Cannon Beach & the Oregon Coast",
-    "url": "/usa/portland-oregon/oregon-coast/",
-    "parent": "Portland & the Columbia Gorge",
-    "type": "Local guide",
-    "summary": "Plan Cannon Beach around town, Haystack Rock and a safe return, with tide-pool guidance, Ecola closure context and an overnight-versus-day-trip comparison.",
-    "keywords": [
-      "Cannon Beach & the Oregon Coast",
-      "Portland & the Columbia Gorge"
-    ]
-  },
-  {
-    "title": "San Francisco & the Bay",
-    "url": "/usa/san-francisco/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a San Francisco base by hills and transit, then build separate Alcatraz, Presidio and Mission days without treating the whole Bay Area as downtown.",
-    "keywords": [
-      "San Francisco & the Bay",
-      "California"
-    ]
-  },
-  {
-    "title": "Embarcadero & Alcatraz",
-    "url": "/usa/san-francisco/waterfront-alcatraz/",
-    "parent": "San Francisco & the Bay",
-    "type": "Local guide",
-    "summary": "Plan an Alcatraz landing from Pier 33 with island interpretation, access and return decisions, or choose a separate Ferry Building and waterfront day.",
-    "keywords": [
-      "Embarcadero & Alcatraz",
-      "San Francisco & the Bay"
-    ]
-  },
-  {
-    "title": "Golden Gate & the Presidio",
-    "url": "/usa/san-francisco/golden-gate-presidio/",
-    "parent": "San Francisco & the Bay",
-    "type": "Local guide",
-    "summary": "Connect Presidio Tunnel Tops, Crissy Field and a selected Golden Gate view, distinguishing bridge pedestrian access, Fort Point and shuttle restrictions.",
-    "keywords": [
-      "Golden Gate & the Presidio",
-      "San Francisco & the Bay"
-    ]
-  },
-  {
-    "title": "Mission District & Neighborhood Walks",
-    "url": "/usa/san-francisco/mission-neighborhoods/",
-    "parent": "San Francisco & the Bay",
-    "type": "Local guide",
-    "summary": "Read Mission District murals around 24th Street or Clarion Alley, with artist context, a neighborhood meal and a separate Mission Dolores choice.",
-    "keywords": [
-      "Mission District & Neighborhood Walks",
-      "San Francisco & the Bay"
-    ]
-  },
-  {
-    "title": "Los Angeles",
-    "url": "/usa/los-angeles/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Los Angeles hotel around district days, with current LAX connections and separate Downtown, Hollywood–Griffith and Santa Monica–Venice plans.",
-    "keywords": [
-      "Los Angeles",
-      "California"
-    ]
-  },
-  {
-    "title": "Downtown LA & the Arts District",
-    "url": "/usa/los-angeles/downtown-arts/",
-    "parent": "Los Angeles",
-    "type": "Local guide",
-    "summary": "Connect The Broad, Bunker Hill, Angels Flight and Grand Central Market, choosing an art or architecture focus instead of treating Downtown LA as one block.",
-    "keywords": [
-      "Downtown LA & the Arts District",
-      "Los Angeles"
-    ]
-  },
-  {
-    "title": "Hollywood & Griffith Park",
-    "url": "/usa/los-angeles/hollywood-griffith/",
-    "parent": "Los Angeles",
-    "type": "Local guide",
-    "summary": "Plan Hollywood and Griffith Observatory around a realistic hill connection, separate planetarium admission and a known evening return.",
-    "keywords": [
-      "Hollywood & Griffith Park",
-      "Los Angeles"
-    ]
-  },
-  {
-    "title": "Santa Monica & Venice",
-    "url": "/usa/los-angeles/santa-monica-venice/",
-    "parent": "Los Angeles",
-    "type": "Local guide",
-    "summary": "Choose Santa Monica Pier, a selected coastal walk or Venice’s boardwalk and canals, with E Line arrival, separate attraction costs and a workable return.",
-    "keywords": [
-      "Santa Monica & Venice",
-      "Los Angeles"
-    ]
-  },
-  {
-    "title": "San Diego",
-    "url": "/usa/san-diego/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan San Diego with a useful airport connection and separate Balboa Park, La Jolla and harbor days, choosing the base and car days around real destinations.",
-    "keywords": [
-      "San Diego",
-      "California"
-    ]
-  },
-  {
-    "title": "Balboa Park",
-    "url": "/usa/san-diego/balboa-park/",
-    "parent": "San Diego",
-    "type": "Local guide",
-    "summary": "Choose Balboa Park museums and gardens around El Prado, with separate admission, current paid parking and a zoo-versus-cultural-day decision.",
-    "keywords": [
-      "Balboa Park",
-      "San Diego"
-    ]
-  },
-  {
-    "title": "La Jolla Coast",
-    "url": "/usa/san-diego/la-jolla/",
-    "parent": "San Diego",
-    "type": "Local guide",
-    "summary": "Plan a land-based La Jolla visit that distinguishes the Cove, Point La Jolla and Children’s Pool, with current wildlife boundaries and a village meal.",
-    "keywords": [
-      "La Jolla Coast",
-      "San Diego"
-    ]
-  },
-  {
-    "title": "San Diego Harbor & Coronado",
-    "url": "/usa/san-diego/harbor-coronado/",
-    "parent": "San Diego",
-    "type": "Local guide",
-    "summary": "Choose a San Diego maritime museum or a Coronado ferry day, identifying the exact departure, bay landing and separate ocean-beach connection.",
-    "keywords": [
-      "San Diego Harbor & Coronado",
-      "San Diego"
-    ]
-  },
-  {
-    "title": "Yosemite & the Sierra Parks",
-    "url": "/usa/sierra-parks/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose separate Sierra park bases for Yosemite Valley, Giant Forest and Kings Canyon, with current access, seasonal shuttle and mountain-road trade-offs.",
-    "keywords": [
-      "Yosemite & the Sierra Parks",
-      "Western Parks"
-    ]
-  },
-  {
-    "title": "Yosemite Valley",
-    "url": "/usa/sierra-parks/yosemite-valley/",
-    "parent": "Yosemite & the Sierra Parks",
-    "type": "Local guide",
-    "summary": "Plan a focused Yosemite Valley visit with the 2026 entry policy, YARTS and Valley shuttle distinctions, and selected meadow or lower-waterfall walks.",
-    "keywords": [
-      "Yosemite Valley",
-      "Yosemite & the Sierra Parks"
-    ]
-  },
-  {
-    "title": "Sequoia Giant Forest",
-    "url": "/usa/sierra-parks/sequoia-giant-forest/",
-    "parent": "Yosemite & the Sierra Parks",
-    "type": "Local guide",
-    "summary": "Visit Giant Forest through a chosen road approach, distinguishing General Sherman access, Big Trees Trail, Congress Trail work and seasonal shuttles.",
-    "keywords": [
-      "Sequoia Giant Forest",
-      "Yosemite & the Sierra Parks"
-    ]
-  },
-  {
-    "title": "Kings Canyon & Grant Grove",
-    "url": "/usa/sierra-parks/kings-canyon/",
-    "parent": "Yosemite & the Sierra Parks",
-    "type": "Local guide",
-    "summary": "Separate Grant Grove from the Cedar Grove canyon drive, with Highway 180 status, a grove-focused day and a deliberately planned deeper-canyon visit.",
-    "keywords": [
-      "Kings Canyon & Grant Grove",
-      "Yosemite & the Sierra Parks"
-    ]
-  },
-  {
-    "title": "Las Vegas & Southern Nevada",
-    "url": "/usa/las-vegas/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan Las Vegas around the location of a show and hotel, with separate Strip, downtown and Red Rock days rather than a transfer-heavy attraction list.",
-    "keywords": [
-      "Las Vegas & Southern Nevada",
-      "Southwest"
-    ]
-  },
-  {
-    "title": "The Strip & Shows",
-    "url": "/usa/las-vegas/strip/",
-    "parent": "Las Vegas & Southern Nevada",
-    "type": "Local guide",
-    "summary": "Choose a manageable central Strip visit around Bellagio, a meal and one booked show, distinguishing free displays, changeover dates and Monorail access.",
-    "keywords": [
-      "The Strip & Shows",
-      "Las Vegas & Southern Nevada"
-    ]
-  },
-  {
-    "title": "Downtown Las Vegas",
-    "url": "/usa/las-vegas/downtown/",
-    "parent": "Las Vegas & Southern Nevada",
-    "type": "Local guide",
-    "summary": "Compare the Neon Museum, Mob Museum and Fremont Street as different downtown experiences, with the actual museum location and a planned evening return.",
-    "keywords": [
-      "Downtown Las Vegas",
-      "Las Vegas & Southern Nevada"
-    ]
-  },
-  {
-    "title": "Red Rock Canyon",
-    "url": "/usa/las-vegas/red-rock/",
-    "parent": "Las Vegas & Southern Nevada",
-    "type": "Local guide",
-    "summary": "Plan Red Rock Canyon as a separate desert outing, distinguishing the Scenic Drive reservation season, viewpoints, short walks and a confirmed return.",
-    "keywords": [
-      "Red Rock Canyon",
-      "Las Vegas & Southern Nevada"
-    ]
-  },
-  {
-    "title": "Utah Canyon Country",
-    "url": "/usa/utah-parks/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Zion–Bryce trip or a Moab-based stay before linking Utah parks, with separate bases, seasonal transport and selective park days.",
-    "keywords": [
-      "Utah Canyon Country",
-      "Southwest"
-    ]
-  },
-  {
-    "title": "Zion Canyon",
-    "url": "/usa/utah-parks/zion/",
-    "parent": "Utah Canyon Country",
-    "type": "Local guide",
-    "summary": "Plan Zion Canyon with the Springdale and park shuttle distinction, a Pa’rus or Riverside Walk visit, and separate decisions for Angels Landing and the Narrows.",
-    "keywords": [
-      "Zion Canyon",
-      "Utah Canyon Country"
-    ]
-  },
-  {
-    "title": "Bryce Canyon",
-    "url": "/usa/utah-parks/bryce/",
-    "parent": "Utah Canyon Country",
-    "type": "Local guide",
-    "summary": "Choose Bryce’s Sunrise–Sunset rim section or a separately planned descent, with hoodoo interpretation, shuttle timing and a realistic climb back.",
-    "keywords": [
-      "Bryce Canyon",
-      "Utah Canyon Country"
-    ]
-  },
-  {
-    "title": "Moab, Arches & Canyonlands",
-    "url": "/usa/utah-parks/moab-arches-canyonlands/",
-    "parent": "Utah Canyon Country",
-    "type": "Local guide",
-    "summary": "Give Arches and Canyonlands’ Island in the Sky separate Moab days, distinguishing viewpoints, longer hikes, park districts and Dead Horse Point admission.",
-    "keywords": [
-      "Moab, Arches & Canyonlands",
-      "Utah Canyon Country"
-    ]
-  },
-  {
-    "title": "Arizona & the Grand Canyon",
-    "url": "/usa/arizona/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Plan an Arizona stay with separate Phoenix, Sedona and Grand Canyon South Rim bases, matching elevation, access and actual transfer days to the trip.",
-    "keywords": [
-      "Arizona & the Grand Canyon",
-      "Southwest"
-    ]
-  },
-  {
-    "title": "Grand Canyon South Rim",
-    "url": "/usa/arizona/grand-canyon/",
-    "parent": "Arizona & the Grand Canyon",
-    "type": "Local guide",
-    "summary": "Choose a Grand Canyon South Rim day around Mather Point, Yavapai and a selected rim section, with shuttle seasons and West/North Rim distinctions.",
-    "keywords": [
-      "Grand Canyon South Rim",
-      "Arizona & the Grand Canyon"
-    ]
-  },
-  {
-    "title": "Sedona & Red Rock Trails",
-    "url": "/usa/arizona/sedona/",
-    "parent": "Arizona & the Grand Canyon",
-    "type": "Local guide",
-    "summary": "Choose a Sedona base and one suitable red-rock visit, distinguishing trailhead shuttle parking, recreation passes, the chapel and town time.",
-    "keywords": [
-      "Sedona & Red Rock Trails",
-      "Arizona & the Grand Canyon"
-    ]
-  },
-  {
-    "title": "Phoenix & Scottsdale",
-    "url": "/usa/arizona/phoenix-scottsdale/",
-    "parent": "Arizona & the Grand Canyon",
-    "type": "Local guide",
-    "summary": "Compare the Heard Museum, Desert Botanical Garden and Old Town Scottsdale for a heat-aware cultural stay without a mandatory summit hike.",
-    "keywords": [
-      "Phoenix & Scottsdale",
-      "Arizona & the Grand Canyon"
-    ]
-  },
-  {
-    "title": "Denver & the Colorado Rockies",
-    "url": "/usa/colorado/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Denver, Estes/Rocky Mountain or an I-70 mountain-town base; compare airport rail, seasonal Bustang links, park access and the full return.",
-    "keywords": [
-      "Denver & the Colorado Rockies",
-      "Mountain West"
-    ]
-  },
-  {
-    "title": "Denver Union Station & Museums",
-    "url": "/usa/colorado/denver/",
-    "parent": "Denver & the Colorado Rockies",
-    "type": "Local guide",
-    "summary": "Plan Denver from the A Line and Union Station, then pick a museum block; use seasonal Bustang to Estes only if the date, stop and return fit.",
-    "keywords": [
-      "Denver Union Station & Museums",
-      "Denver & the Colorado Rockies"
-    ]
-  },
-  {
-    "title": "Rocky Mountain National Park",
-    "url": "/usa/colorado/rocky-mountain/",
-    "parent": "Denver & the Colorado Rockies",
-    "type": "Local guide",
-    "summary": "Choose between the seasonal Denver–Estes Bustang, Estes Park Hiker Shuttle and free Bear Lake/Moraine Park shuttles; keep the entrance pass separate from timed entry.",
-    "keywords": [
-      "Rocky Mountain National Park",
-      "Denver & the Colorado Rockies"
-    ]
-  },
-  {
-    "title": "Colorado Mountain Towns",
-    "url": "/usa/colorado/mountain-towns/",
-    "parent": "Denver & the Colorado Rockies",
-    "type": "Local guide",
-    "summary": "Choose one I-70 base: Bustang West Line and Pegasus list Frisco, Vail and Avon stops; plan local connections, weather and activity dates separately.",
-    "keywords": [
-      "Colorado Mountain Towns",
-      "Denver & the Colorado Rockies"
-    ]
-  },
-  {
-    "title": "Yellowstone & Grand Teton",
-    "url": "/usa/yellowstone-tetons/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Yellowstone and Grand Teton bases by actual park roads, separating thermal basins, canyon and wildlife days from a Jenny Lake and mountain stay.",
-    "keywords": [
-      "Yellowstone & Grand Teton",
-      "Mountain West"
-    ]
-  },
-  {
-    "title": "Yellowstone Geyser Basins",
-    "url": "/usa/yellowstone-tetons/geyser-basins/",
-    "parent": "Yellowstone & Grand Teton",
-    "type": "Local guide",
-    "summary": "Visit Yellowstone thermal basins with an Old Faithful focus, distinguishing eruption predictions, Midway boardwalks and the Grand Prismatic Overlook trail.",
-    "keywords": [
-      "Yellowstone Geyser Basins",
-      "Yellowstone & Grand Teton"
-    ]
-  },
-  {
-    "title": "Yellowstone Canyon & Wildlife Valleys",
-    "url": "/usa/yellowstone-tetons/canyon-lamar/",
-    "parent": "Yellowstone & Grand Teton",
-    "type": "Local guide",
-    "summary": "Choose a Yellowstone canyon-and-Hayden day or a northern Lamar outing, with named viewpoints, current wildlife distances and a realistic return.",
-    "keywords": [
-      "Yellowstone Canyon & Wildlife Valleys",
-      "Yellowstone & Grand Teton"
-    ]
-  },
-  {
-    "title": "Grand Teton & Jackson",
-    "url": "/usa/yellowstone-tetons/grand-teton/",
-    "parent": "Yellowstone & Grand Teton",
-    "type": "Local guide",
-    "summary": "Plan Grand Teton around Jenny Lake, a selected historic or mountain viewpoint and a separate base, distinguishing lake boats from longer backcountry walks.",
-    "keywords": [
-      "Grand Teton & Jackson",
-      "Yellowstone & Grand Teton"
-    ]
-  },
-  {
-    "title": "New Orleans",
-    "url": "/usa/new-orleans/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a New Orleans base and distinct Quarter, Garden District and river or wetland days, with airport connections, live-music planning and current closures.",
-    "keywords": [
-      "New Orleans",
-      "South"
-    ]
-  },
-  {
-    "title": "French Quarter & Live Music",
-    "url": "/usa/new-orleans/french-quarter/",
-    "parent": "New Orleans",
-    "type": "Local guide",
-    "summary": "Walk a selected French Quarter route through Jackson Square, Royal Street and museum interpretation, then choose a music program rather than a nightlife checklist.",
-    "keywords": [
-      "French Quarter & Live Music",
-      "New Orleans"
-    ]
-  },
-  {
-    "title": "Garden District & Streetcars",
-    "url": "/usa/new-orleans/garden-district/",
-    "parent": "New Orleans",
-    "type": "Local guide",
-    "summary": "Plan a St. Charles streetcar and Garden District visit with public-street architecture, a Magazine Street meal and the current Lafayette Cemetery No. 1 closure.",
-    "keywords": [
-      "Garden District & Streetcars",
-      "New Orleans"
-    ]
-  },
-  {
-    "title": "Mississippi River & Wetlands",
-    "url": "/usa/new-orleans/river-wetlands/",
-    "parent": "New Orleans",
-    "type": "Local guide",
-    "summary": "Choose an Algiers ferry crossing or a separate wetland outing, with the 2026 Barataria closure, relocated Wetland Trace access and a confirmed return.",
-    "keywords": [
-      "Mississippi River & Wetlands",
-      "New Orleans"
-    ]
-  },
-  {
-    "title": "Atlanta",
-    "url": "/usa/atlanta/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose an Atlanta base near the actual MARTA route, then separate the King historic district, Midtown museums and a selected Beltline outing into useful days.",
-    "keywords": [
-      "Atlanta",
-      "South"
-    ]
-  },
-  {
-    "title": "Martin Luther King, Jr. Historic District",
-    "url": "/usa/atlanta/king-historic-district/",
-    "parent": "Atlanta",
-    "type": "Local guide",
-    "summary": "Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, Birth Home restrictions and distinct King Center spaces.",
-    "keywords": [
-      "Martin Luther King, Jr. Historic District",
-      "Atlanta"
-    ]
-  },
-  {
-    "title": "Midtown Museums & Piedmont Park",
-    "url": "/usa/atlanta/midtown-museums/",
-    "parent": "Atlanta",
-    "type": "Local guide",
-    "summary": "Compare the High Museum, Museum of Design Atlanta and a separate botanical-garden visit, with Arts Center arrival and a collection-led Midtown day.",
-    "keywords": [
-      "Midtown Museums & Piedmont Park",
-      "Atlanta"
-    ]
-  },
-  {
-    "title": "Atlanta BeltLine & Neighborhoods",
-    "url": "/usa/atlanta/beltline/",
-    "parent": "Atlanta",
-    "type": "Local guide",
-    "summary": "Choose a limited Atlanta Beltline Eastside visit around a real access point, Ponce City Market or Krog Street Market, with shared-trail etiquette and a planned return.",
-    "keywords": [
-      "Atlanta BeltLine & Neighborhoods",
-      "Atlanta"
-    ]
-  },
-  {
-    "title": "Texas Cities",
-    "url": "/usa/texas/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Compare an Austin–San Antonio Texas Eagle trip with Houston’s separate Amtrak Connection option, hotel transfers and a shorter two-city plan.",
-    "keywords": [
-      "Texas Cities",
-      "South"
-    ]
-  },
-  {
-    "title": "Austin & Lady Bird Lake",
-    "url": "/usa/texas/austin/",
-    "parent": "Texas Cities",
-    "type": "Local guide",
-    "summary": "Plan Austin from the airport or Texas Eagle station, then match local transport and hotel to Capitol, lake or neighborhood, and music stops.",
-    "keywords": [
-      "Austin & Lady Bird Lake",
-      "Texas Cities"
-    ]
-  },
-  {
-    "title": "San Antonio Missions & River Walk",
-    "url": "/usa/texas/san-antonio/",
-    "parent": "Texas Cities",
-    "type": "Local guide",
-    "summary": "Plan San Antonio from its Texas Eagle station to downtown or separate southern missions; compare last-mile travel and reservations.",
-    "keywords": [
-      "San Antonio Missions & River Walk",
-      "Texas Cities"
-    ]
-  },
-  {
-    "title": "Houston Museums & Space Center",
-    "url": "/usa/texas/houston/",
-    "parent": "Texas Cities",
-    "type": "Local guide",
-    "summary": "Choose Space Center Houston or a Museum District visit, with hotel transfers and Amtrak’s separately labeled Houston Connection checked for your date.",
-    "keywords": [
-      "Houston Museums & Space Center",
-      "Texas Cities"
-    ]
-  },
-  {
-    "title": "Miami & South Florida",
-    "url": "/usa/miami/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a Miami Beach or mainland base, then connect Brightline through downtown MiamiCentral with a separate MIA shuttle and a road-planned Everglades day.",
-    "keywords": [
-      "Miami & South Florida",
-      "Florida"
-    ]
-  },
-  {
-    "title": "South Beach & Art Deco",
-    "url": "/usa/miami/south-beach/",
-    "parent": "Miami & South Florida",
-    "type": "Local guide",
-    "summary": "Visit South Beach through a selected Ocean Drive architecture walk, the Art Deco Museum or Welcome Center and a separate shoreline portion.",
-    "keywords": [
-      "South Beach & Art Deco",
-      "Miami & South Florida"
-    ]
-  },
-  {
-    "title": "Little Havana & Wynwood",
-    "url": "/usa/miami/little-havana-wynwood/",
-    "parent": "Miami & South Florida",
-    "type": "Local guide",
-    "summary": "Choose a Calle Ocho cultural visit or a Wynwood art day, with Domino Park etiquette, distinct neighborhoods and separate Wynwood Walls admission.",
-    "keywords": [
-      "Little Havana & Wynwood",
-      "Miami & South Florida"
-    ]
-  },
-  {
-    "title": "Everglades National Park",
-    "url": "/usa/miami/everglades/",
-    "parent": "Miami & South Florida",
-    "type": "Local guide",
-    "summary": "Choose Shark Valley or Homestead–Royal Palm from a suitable base; neither Brightline station is a park entrance, and both directions need a confirmed road plan.",
-    "keywords": [
-      "Everglades National Park",
-      "Miami & South Florida"
-    ]
-  },
-  {
-    "title": "Orlando & Central Florida",
-    "url": "/usa/orlando/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose a resort or city base, then plan the Miami–Orlando train to MCO Terminal C and a separate transfer to the hotel, Winter Park or Space Coast.",
-    "keywords": [
-      "Orlando & Central Florida",
-      "Florida"
-    ]
-  },
-  {
-    "title": "Orlando Theme-Park Planning",
-    "url": "/usa/orlando/theme-parks/",
-    "parent": "Orlando & Central Florida",
-    "type": "Local guide",
-    "summary": "Compare Disney and Universal park-day choices, admission versus queue products, date-based reservation rules and realistic transfers before buying multiple tickets.",
-    "keywords": [
-      "Orlando Theme-Park Planning",
-      "Orlando & Central Florida"
-    ]
-  },
-  {
-    "title": "Winter Park & Orlando Beyond Resorts",
-    "url": "/usa/orlando/winter-park/",
-    "parent": "Orlando & Central Florida",
-    "type": "Local guide",
-    "summary": "Plan Winter Park through Park Avenue, the Morse Museum and a separate scenic boat option, with weekday SunRail planning and a clear return.",
-    "keywords": [
-      "Winter Park & Orlando Beyond Resorts",
-      "Orlando & Central Florida"
-    ]
-  },
-  {
-    "title": "Kennedy Space Center & Space Coast",
-    "url": "/usa/orlando/kennedy-space-center/",
-    "parent": "Orlando & Central Florida",
-    "type": "Local guide",
-    "summary": "Give Kennedy Space Center a full Space Coast day: Brightline ends at MCO, so arrange a confirmed road transfer to and from Merritt Island.",
-    "keywords": [
-      "Kennedy Space Center & Space Coast",
-      "Orlando & Central Florida"
-    ]
-  },
-  {
-    "title": "Alaska Gateways & Parks",
-    "url": "/usa/alaska/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Southcentral and Denali or a separate Juneau–Southeast journey, with actual train and ferry seasons, overnight bases and current park access.",
-    "keywords": [
-      "Alaska Gateways & Parks",
-      "Alaska"
-    ]
-  },
-  {
-    "title": "Anchorage, Seward & Kenai Fjords",
-    "url": "/usa/alaska/anchorage-kenai/",
-    "parent": "Alaska Gateways & Parks",
-    "type": "Local guide",
-    "summary": "Plan Anchorage and Seward as a selective Southcentral trip, distinguishing the Coastal Classic season, Exit Glacier road and Nature Center access, and boat routes.",
-    "keywords": [
-      "Anchorage, Seward & Kenai Fjords",
-      "Alaska Gateways & Parks"
-    ]
-  },
-  {
-    "title": "Denali National Park",
-    "url": "/usa/alaska/denali/",
-    "parent": "Alaska Gateways & Parks",
-    "type": "Local guide",
-    "summary": "Plan Denali around the 2026 bus limit at East Fork, separate narrated and transit buses, entrance-area visits and the different fall road arrangements.",
-    "keywords": [
-      "Denali National Park",
-      "Alaska Gateways & Parks"
-    ]
-  },
-  {
-    "title": "Juneau & Southeast Alaska",
-    "url": "/usa/alaska/juneau-southeast/",
-    "parent": "Alaska Gateways & Parks",
-    "type": "Local guide",
-    "summary": "Choose a Juneau stay with the actual airport, cruise or Auke Bay ferry arrival, a current Mendenhall visit and separately planned Southeast connections.",
-    "keywords": [
-      "Juneau & Southeast Alaska",
-      "Alaska Gateways & Parks"
-    ]
-  },
-  {
-    "title": "Hawaii",
-    "url": "/usa/hawaii/",
-    "parent": "United States",
-    "type": "Regional guide",
-    "summary": "Choose Oahu, Maui or Hawaii Island by the trip you want, with separate island transfers, realistic overnight bases and current park-access decisions.",
-    "keywords": [
-      "Hawaii",
-      "Pacific Islands"
-    ]
-  },
-  {
-    "title": "Oahu: Honolulu & Windward Coast",
-    "url": "/usa/hawaii/oahu/",
-    "parent": "Hawaii",
-    "type": "Local guide",
-    "summary": "Plan separate Honolulu, Pearl Harbor and Windward Coast days, with Diamond Head and Iolani Palace booking distinctions and an unhurried Kailua route.",
-    "keywords": [
-      "Oahu: Honolulu & Windward Coast",
-      "Hawaii"
-    ]
-  },
-  {
-    "title": "Maui: Haleakala & Coastal Days",
-    "url": "/usa/hawaii/maui/",
-    "parent": "Hawaii",
-    "type": "Local guide",
-    "summary": "Separate a Haleakala summit day from the Hana–Kipahulu approach, distinguish sunrise reservations and respect current Lahaina recovery access.",
-    "keywords": [
-      "Maui: Haleakala & Coastal Days",
-      "Hawaii"
-    ]
-  },
-  {
-    "title": "Hawaii Island: Volcanoes & Two Coasts",
-    "url": "/usa/hawaii/hawaii-island/",
-    "parent": "Hawaii",
-    "type": "Local guide",
-    "summary": "Choose Kona, Hilo or a Volcano stay around a realistic Hawaii Island trip, with current Kilauea visitor services and a park day that does not promise lava.",
-    "keywords": [
-      "Hawaii Island: Volcanoes & Two Coasts",
-      "Hawaii"
-    ]
-  },
-  {
     "title": "United Kingdom Travel Guide",
     "url": "/united-kingdom/",
     "parent": "Europe",
@@ -13248,6 +12180,1074 @@
       "Prince Edward Island",
       "Prince Edward Island",
       "roadbook"
+    ]
+  },
+  {
+    "title": "United States Travel Guide",
+    "url": "/usa/",
+    "parent": "North America",
+    "type": "Country",
+    "summary": "Choose a workable United States trip: rail-connected cities, a selective park journey or an island stay, with 24 regional guides and 72 local chapters.",
+    "keywords": [
+      "USA",
+      "United States",
+      "America"
+    ]
+  },
+  {
+    "title": "New York City",
+    "url": "/usa/new-york/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan a first New York trip with neighborhood-by-neighborhood hotel trade-offs, JFK, LaGuardia and Newark transfers, and a realistic three-day itinerary.",
+    "keywords": [
+      "New York City",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Lower Manhattan & the Harbor",
+    "url": "/usa/new-york/lower-manhattan/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Choose a Lower Manhattan walking day or a Liberty and Ellis Island visit, with ticket distinctions, a named street route and practical return options.",
+    "keywords": [
+      "Lower Manhattan & the Harbor",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Midtown & Central Park",
+    "url": "/usa/new-york/midtown-central-park/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Build a Midtown day around MoMA or The Met, a manageable Central Park walk and Broadway, with geographic trade-offs and realistic alternatives.",
+    "keywords": [
+      "Midtown & Central Park",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Brooklyn Heights & DUMBO",
+    "url": "/usa/new-york/brooklyn-waterfront/",
+    "parent": "New York City",
+    "type": "Local guide",
+    "summary": "Walk Brooklyn Heights and DUMBO through the promenade, Pier 1 and waterfront parks, with subway choices, step-free planning and bridge-return trade-offs.",
+    "keywords": [
+      "Brooklyn Heights & DUMBO",
+      "New York City"
+    ]
+  },
+  {
+    "title": "Boston & Cambridge",
+    "url": "/usa/boston/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Boston or Cambridge hotel base, compare Logan airport transfers, and plan history, university and harbor days without rushing across the city.",
+    "keywords": [
+      "Boston & Cambridge",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Freedom Trail & North End",
+    "url": "/usa/boston/freedom-trail/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Walk Boston’s Freedom Trail in manageable sections, choosing historic interiors, a North End break and whether to continue to Charlestown Navy Yard.",
+    "keywords": [
+      "Freedom Trail & North End",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Cambridge & Harvard Square",
+    "url": "/usa/boston/cambridge-harvard/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Plan a Harvard Square visit around campus access and a choice of art or natural-history museums, with a Charles River option and a clear subway return.",
+    "keywords": [
+      "Cambridge & Harvard Square",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Boston Harbor & Islands",
+    "url": "/usa/boston/harbor-islands/",
+    "parent": "Boston & Cambridge",
+    "type": "Local guide",
+    "summary": "Choose a Boston Harbor Island by departure pier, seasonal ferry and terrain, with a return-first day plan, packing decisions and a mainland alternative.",
+    "keywords": [
+      "Boston Harbor & Islands",
+      "Boston & Cambridge"
+    ]
+  },
+  {
+    "title": "Philadelphia",
+    "url": "/usa/philadelphia/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Philadelphia around Old City, Center City and the museum parkway, with hotel-base trade-offs, station choices and a selective two- or three-day stay.",
+    "keywords": [
+      "Philadelphia",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Old City & Independence Park",
+    "url": "/usa/philadelphia/old-city/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Plan Independence Hall and the Liberty Bell with their different entry rules, then follow an Old City walk with time for interpretation and a real break.",
+    "keywords": [
+      "Old City & Independence Park",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Museum Parkway & Schuylkill River",
+    "url": "/usa/philadelphia/parkway-museums/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Choose the Philadelphia Museum of Art, Barnes or Rodin before planning the parkway and Schuylkill, with walking, admission and shorter-day alternatives.",
+    "keywords": [
+      "Museum Parkway & Schuylkill River",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Reading Terminal & Center City",
+    "url": "/usa/philadelphia/reading-terminal/",
+    "parent": "Philadelphia",
+    "type": "Local guide",
+    "summary": "Make Reading Terminal Market a useful Center City meal stop: compare open merchants, plan a short food circuit and continue toward City Hall or Chinatown.",
+    "keywords": [
+      "Reading Terminal & Center City",
+      "Philadelphia"
+    ]
+  },
+  {
+    "title": "Washington, DC",
+    "url": "/usa/washington-dc/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Metro-connected Washington base, compare airport arrivals and plan separate museum, memorial and Georgetown days with realistic return routes.",
+    "keywords": [
+      "Washington, DC",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "National Mall & Memorials",
+    "url": "/usa/washington-dc/national-mall/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Plan a selective National Mall memorial walk from the Washington Monument toward Lincoln, with a Tidal Basin alternative and weather-aware exits.",
+    "keywords": [
+      "National Mall & Memorials",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "Smithsonian Museums & Capitol Hill",
+    "url": "/usa/washington-dc/smithsonian/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Choose a Smithsonian museum by subject, address and entry rules, distinguishing Air and Space locations and a separately reserved Capitol Hill visit.",
+    "keywords": [
+      "Smithsonian Museums & Capitol Hill",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "Georgetown & the Potomac",
+    "url": "/usa/washington-dc/georgetown/",
+    "parent": "Washington, DC",
+    "type": "Local guide",
+    "summary": "Explore Georgetown from M Street to the canal and Potomac, choosing a manageable slope, a meal and a clear return rather than an overlong towpath walk.",
+    "keywords": [
+      "Georgetown & the Potomac",
+      "Washington, DC"
+    ]
+  },
+  {
+    "title": "New England Coast & Mountains",
+    "url": "/usa/new-england/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Maine coast or northern mountain trip, compare overnight bases and build a selective New England week without turning every day into a drive.",
+    "keywords": [
+      "New England Coast & Mountains",
+      "Northeast"
+    ]
+  },
+  {
+    "title": "Portland, Maine & Casco Bay",
+    "url": "/usa/new-england/portland-maine/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Explore Portland’s Old Port, choose a Casco Bay island sailing and separate a Cape Elizabeth lighthouse visit from the downtown walking day.",
+    "keywords": [
+      "Portland, Maine & Casco Bay",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "Acadia & Mount Desert Island",
+    "url": "/usa/new-england/acadia/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Plan Acadia around coast, Jordan Pond or carriage roads, separating park admission, Cadillac vehicle reservations and the seasonal Island Explorer.",
+    "keywords": [
+      "Acadia & Mount Desert Island",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "White Mountains & Vermont Roads",
+    "url": "/usa/new-england/white-mountains-vermont/",
+    "parent": "New England Coast & Mountains",
+    "type": "Local guide",
+    "summary": "Choose White Mountain bases and a Kancamagus drive before a separate Vermont stay, with legal stops, mountain alternatives and realistic transfer days.",
+    "keywords": [
+      "White Mountains & Vermont Roads",
+      "New England Coast & Mountains"
+    ]
+  },
+  {
+    "title": "Chicago",
+    "url": "/usa/chicago/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Chicago with CTA-connected hotel bases, O’Hare and Midway arrivals, and separate architecture, Museum Campus and neighborhood days.",
+    "keywords": [
+      "Chicago",
+      "Great Lakes"
+    ]
+  },
+  {
+    "title": "The Loop & Chicago Riverwalk",
+    "url": "/usa/chicago/loop-riverwalk/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Choose a Chicago architecture cruise or a flexible Riverwalk and Loop route, with distinct piers, street-level connections and an indoor alternative.",
+    "keywords": [
+      "The Loop & Chicago Riverwalk",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Museum Campus & Lakefront",
+    "url": "/usa/chicago/museum-lakefront/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Compare the Field Museum, Shedd Aquarium and Adler Planetarium, then plan one Museum Campus visit with a manageable lakeshore walk and return.",
+    "keywords": [
+      "Museum Campus & Lakefront",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Wicker Park, Logan Square & Neighborhood Chicago",
+    "url": "/usa/chicago/neighborhoods/",
+    "parent": "Chicago",
+    "type": "Local guide",
+    "summary": "Choose Wicker Park or Logan Square for a Chicago neighborhood day, connecting Blue Line stations, shops, food and an optional planned music evening.",
+    "keywords": [
+      "Wicker Park, Logan Square & Neighborhood Chicago",
+      "Chicago"
+    ]
+  },
+  {
+    "title": "Seattle & Puget Sound",
+    "url": "/usa/seattle/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Seattle with light-rail hotel bases, a market and waterfront day, a Bainbridge crossing and a separately planned Mount Rainier outing.",
+    "keywords": [
+      "Seattle & Puget Sound",
+      "Pacific Northwest"
+    ]
+  },
+  {
+    "title": "Pike Place & Seattle Waterfront",
+    "url": "/usa/seattle/pike-place-waterfront/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Connect Pike Place Market with Overlook Walk and Seattle’s waterfront, choosing market levels, a meal and an aquarium visit without repeated hill climbs.",
+    "keywords": [
+      "Pike Place & Seattle Waterfront",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Bainbridge Island Ferry Day",
+    "url": "/usa/seattle/bainbridge/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Take a walk-on Bainbridge ferry day through Winslow, the art museum and Waterfront Park, separating Bloedel Reserve from the compact town walk.",
+    "keywords": [
+      "Bainbridge Island Ferry Day",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Mount Rainier National Park",
+    "url": "/usa/seattle/mount-rainier/",
+    "parent": "Seattle & Puget Sound",
+    "type": "Local guide",
+    "summary": "Plan Mount Rainier through Nisqually, Longmire and Paradise, with current road-closure context, trail choices and a separate park-admission decision.",
+    "keywords": [
+      "Mount Rainier National Park",
+      "Seattle & Puget Sound"
+    ]
+  },
+  {
+    "title": "Portland & the Columbia Gorge",
+    "url": "/usa/portland-oregon/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Portland with MAX-connected hotel choices, a city and garden stay, and separate Columbia Gorge or Cannon Beach days matched to transport and weather.",
+    "keywords": [
+      "Portland & the Columbia Gorge",
+      "Pacific Northwest"
+    ]
+  },
+  {
+    "title": "Washington Park & Portland Gardens",
+    "url": "/usa/portland-oregon/washington-park/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Choose Portland Japanese Garden, the Rose Test Garden or Hoyt Arboretum, with Washington Park station, shuttle and admission differences made clear.",
+    "keywords": [
+      "Washington Park & Portland Gardens",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "Columbia River Gorge",
+    "url": "/usa/portland-oregon/columbia-gorge/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Plan a focused Columbia Gorge outing by car or Gorge Express, distinguishing Multnomah Falls permits, current bus limitations and a Crown Point option.",
+    "keywords": [
+      "Columbia River Gorge",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "Cannon Beach & the Oregon Coast",
+    "url": "/usa/portland-oregon/oregon-coast/",
+    "parent": "Portland & the Columbia Gorge",
+    "type": "Local guide",
+    "summary": "Plan Cannon Beach around town, Haystack Rock and a safe return, with tide-pool guidance, Ecola closure context and an overnight-versus-day-trip comparison.",
+    "keywords": [
+      "Cannon Beach & the Oregon Coast",
+      "Portland & the Columbia Gorge"
+    ]
+  },
+  {
+    "title": "San Francisco & the Bay",
+    "url": "/usa/san-francisco/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a San Francisco base by hills and transit, then build separate Alcatraz, Presidio and Mission days without treating the whole Bay Area as downtown.",
+    "keywords": [
+      "San Francisco & the Bay",
+      "California"
+    ]
+  },
+  {
+    "title": "Embarcadero & Alcatraz",
+    "url": "/usa/san-francisco/waterfront-alcatraz/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "Plan an Alcatraz landing from Pier 33 with island interpretation, access and return decisions, or choose a separate Ferry Building and waterfront day.",
+    "keywords": [
+      "Embarcadero & Alcatraz",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Golden Gate & the Presidio",
+    "url": "/usa/san-francisco/golden-gate-presidio/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "Connect Presidio Tunnel Tops, Crissy Field and a selected Golden Gate view, distinguishing bridge pedestrian access, Fort Point and shuttle restrictions.",
+    "keywords": [
+      "Golden Gate & the Presidio",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Mission District & Neighborhood Walks",
+    "url": "/usa/san-francisco/mission-neighborhoods/",
+    "parent": "San Francisco & the Bay",
+    "type": "Local guide",
+    "summary": "Read Mission District murals around 24th Street or Clarion Alley, with artist context, a neighborhood meal and a separate Mission Dolores choice.",
+    "keywords": [
+      "Mission District & Neighborhood Walks",
+      "San Francisco & the Bay"
+    ]
+  },
+  {
+    "title": "Los Angeles",
+    "url": "/usa/los-angeles/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Los Angeles hotel around district days, with current LAX connections and separate Downtown, Hollywood–Griffith and Santa Monica–Venice plans.",
+    "keywords": [
+      "Los Angeles",
+      "California"
+    ]
+  },
+  {
+    "title": "Downtown LA & the Arts District",
+    "url": "/usa/los-angeles/downtown-arts/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Connect The Broad, Bunker Hill, Angels Flight and Grand Central Market, choosing an art or architecture focus instead of treating Downtown LA as one block.",
+    "keywords": [
+      "Downtown LA & the Arts District",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "Hollywood & Griffith Park",
+    "url": "/usa/los-angeles/hollywood-griffith/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Plan Hollywood and Griffith Observatory around a realistic hill connection, separate planetarium admission and a known evening return.",
+    "keywords": [
+      "Hollywood & Griffith Park",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "Santa Monica & Venice",
+    "url": "/usa/los-angeles/santa-monica-venice/",
+    "parent": "Los Angeles",
+    "type": "Local guide",
+    "summary": "Choose Santa Monica Pier, a selected coastal walk or Venice’s boardwalk and canals, with E Line arrival, separate attraction costs and a workable return.",
+    "keywords": [
+      "Santa Monica & Venice",
+      "Los Angeles"
+    ]
+  },
+  {
+    "title": "San Diego",
+    "url": "/usa/san-diego/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan San Diego with a useful airport connection and separate Balboa Park, La Jolla and harbor days, choosing the base and car days around real destinations.",
+    "keywords": [
+      "San Diego",
+      "California"
+    ]
+  },
+  {
+    "title": "Balboa Park",
+    "url": "/usa/san-diego/balboa-park/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Choose Balboa Park museums and gardens around El Prado, with separate admission, current paid parking and a zoo-versus-cultural-day decision.",
+    "keywords": [
+      "Balboa Park",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "La Jolla Coast",
+    "url": "/usa/san-diego/la-jolla/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Plan a land-based La Jolla visit that distinguishes the Cove, Point La Jolla and Children’s Pool, with current wildlife boundaries and a village meal.",
+    "keywords": [
+      "La Jolla Coast",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "San Diego Harbor & Coronado",
+    "url": "/usa/san-diego/harbor-coronado/",
+    "parent": "San Diego",
+    "type": "Local guide",
+    "summary": "Choose a San Diego maritime museum or a Coronado ferry day, identifying the exact departure, bay landing and separate ocean-beach connection.",
+    "keywords": [
+      "San Diego Harbor & Coronado",
+      "San Diego"
+    ]
+  },
+  {
+    "title": "Yosemite & the Sierra Parks",
+    "url": "/usa/sierra-parks/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose separate Sierra park bases for Yosemite Valley, Giant Forest and Kings Canyon, with current access, seasonal shuttle and mountain-road trade-offs.",
+    "keywords": [
+      "Yosemite & the Sierra Parks",
+      "Western Parks"
+    ]
+  },
+  {
+    "title": "Yosemite Valley",
+    "url": "/usa/sierra-parks/yosemite-valley/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Plan a focused Yosemite Valley visit with the 2026 entry policy, YARTS and Valley shuttle distinctions, and selected meadow or lower-waterfall walks.",
+    "keywords": [
+      "Yosemite Valley",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Sequoia Giant Forest",
+    "url": "/usa/sierra-parks/sequoia-giant-forest/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Visit Giant Forest through a chosen road approach, distinguishing General Sherman access, Big Trees Trail, Congress Trail work and seasonal shuttles.",
+    "keywords": [
+      "Sequoia Giant Forest",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Kings Canyon & Grant Grove",
+    "url": "/usa/sierra-parks/kings-canyon/",
+    "parent": "Yosemite & the Sierra Parks",
+    "type": "Local guide",
+    "summary": "Separate Grant Grove from the Cedar Grove canyon drive, with Highway 180 status, a grove-focused day and a deliberately planned deeper-canyon visit.",
+    "keywords": [
+      "Kings Canyon & Grant Grove",
+      "Yosemite & the Sierra Parks"
+    ]
+  },
+  {
+    "title": "Las Vegas & Southern Nevada",
+    "url": "/usa/las-vegas/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan Las Vegas around the location of a show and hotel, with separate Strip, downtown and Red Rock days rather than a transfer-heavy attraction list.",
+    "keywords": [
+      "Las Vegas & Southern Nevada",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "The Strip & Shows",
+    "url": "/usa/las-vegas/strip/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Choose a manageable central Strip visit around Bellagio, a meal and one booked show, distinguishing free displays, changeover dates and Monorail access.",
+    "keywords": [
+      "The Strip & Shows",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Downtown Las Vegas",
+    "url": "/usa/las-vegas/downtown/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Compare the Neon Museum, Mob Museum and Fremont Street as different downtown experiences, with the actual museum location and a planned evening return.",
+    "keywords": [
+      "Downtown Las Vegas",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Red Rock Canyon",
+    "url": "/usa/las-vegas/red-rock/",
+    "parent": "Las Vegas & Southern Nevada",
+    "type": "Local guide",
+    "summary": "Plan Red Rock Canyon as a separate desert outing, distinguishing the Scenic Drive reservation season, viewpoints, short walks and a confirmed return.",
+    "keywords": [
+      "Red Rock Canyon",
+      "Las Vegas & Southern Nevada"
+    ]
+  },
+  {
+    "title": "Utah Canyon Country",
+    "url": "/usa/utah-parks/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Zion–Bryce trip or a Moab-based stay before linking Utah parks, with separate bases, seasonal transport and selective park days.",
+    "keywords": [
+      "Utah Canyon Country",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "Zion Canyon",
+    "url": "/usa/utah-parks/zion/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Plan Zion Canyon with the Springdale and park shuttle distinction, a Pa’rus or Riverside Walk visit, and separate decisions for Angels Landing and the Narrows.",
+    "keywords": [
+      "Zion Canyon",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Bryce Canyon",
+    "url": "/usa/utah-parks/bryce/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Choose Bryce’s Sunrise–Sunset rim section or a separately planned descent, with hoodoo interpretation, shuttle timing and a realistic climb back.",
+    "keywords": [
+      "Bryce Canyon",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Moab, Arches & Canyonlands",
+    "url": "/usa/utah-parks/moab-arches-canyonlands/",
+    "parent": "Utah Canyon Country",
+    "type": "Local guide",
+    "summary": "Give Arches and Canyonlands’ Island in the Sky separate Moab days, distinguishing viewpoints, longer hikes, park districts and Dead Horse Point admission.",
+    "keywords": [
+      "Moab, Arches & Canyonlands",
+      "Utah Canyon Country"
+    ]
+  },
+  {
+    "title": "Arizona & the Grand Canyon",
+    "url": "/usa/arizona/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Plan an Arizona stay with separate Phoenix, Sedona and Grand Canyon South Rim bases, matching elevation, access and actual transfer days to the trip.",
+    "keywords": [
+      "Arizona & the Grand Canyon",
+      "Southwest"
+    ]
+  },
+  {
+    "title": "Grand Canyon South Rim",
+    "url": "/usa/arizona/grand-canyon/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Choose a Grand Canyon South Rim day around Mather Point, Yavapai and a selected rim section, with shuttle seasons and West/North Rim distinctions.",
+    "keywords": [
+      "Grand Canyon South Rim",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Sedona & Red Rock Trails",
+    "url": "/usa/arizona/sedona/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Choose a Sedona base and one suitable red-rock visit, distinguishing trailhead shuttle parking, recreation passes, the chapel and town time.",
+    "keywords": [
+      "Sedona & Red Rock Trails",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Phoenix & Scottsdale",
+    "url": "/usa/arizona/phoenix-scottsdale/",
+    "parent": "Arizona & the Grand Canyon",
+    "type": "Local guide",
+    "summary": "Compare the Heard Museum, Desert Botanical Garden and Old Town Scottsdale for a heat-aware cultural stay without a mandatory summit hike.",
+    "keywords": [
+      "Phoenix & Scottsdale",
+      "Arizona & the Grand Canyon"
+    ]
+  },
+  {
+    "title": "Denver & the Colorado Rockies",
+    "url": "/usa/colorado/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Denver, Estes/Rocky Mountain or an I-70 mountain-town base; compare airport rail, seasonal Bustang links, park access and the full return.",
+    "keywords": [
+      "Denver & the Colorado Rockies",
+      "Mountain West"
+    ]
+  },
+  {
+    "title": "Denver Union Station & Museums",
+    "url": "/usa/colorado/denver/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Plan Denver from the A Line and Union Station, then pick a museum block; use seasonal Bustang to Estes only if the date, stop and return fit.",
+    "keywords": [
+      "Denver Union Station & Museums",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Rocky Mountain National Park",
+    "url": "/usa/colorado/rocky-mountain/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Choose between the seasonal Denver–Estes Bustang, Estes Park Hiker Shuttle and free Bear Lake/Moraine Park shuttles; keep the entrance pass separate from timed entry.",
+    "keywords": [
+      "Rocky Mountain National Park",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Colorado Mountain Towns",
+    "url": "/usa/colorado/mountain-towns/",
+    "parent": "Denver & the Colorado Rockies",
+    "type": "Local guide",
+    "summary": "Choose one I-70 base: Bustang West Line and Pegasus list Frisco, Vail and Avon stops; plan local connections, weather and activity dates separately.",
+    "keywords": [
+      "Colorado Mountain Towns",
+      "Denver & the Colorado Rockies"
+    ]
+  },
+  {
+    "title": "Yellowstone & Grand Teton",
+    "url": "/usa/yellowstone-tetons/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Yellowstone and Grand Teton bases by actual park roads, separating thermal basins, canyon and wildlife days from a Jenny Lake and mountain stay.",
+    "keywords": [
+      "Yellowstone & Grand Teton",
+      "Mountain West"
+    ]
+  },
+  {
+    "title": "Yellowstone Geyser Basins",
+    "url": "/usa/yellowstone-tetons/geyser-basins/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Visit Yellowstone thermal basins with an Old Faithful focus, distinguishing eruption predictions, Midway boardwalks and the Grand Prismatic Overlook trail.",
+    "keywords": [
+      "Yellowstone Geyser Basins",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "Yellowstone Canyon & Wildlife Valleys",
+    "url": "/usa/yellowstone-tetons/canyon-lamar/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Choose a Yellowstone canyon-and-Hayden day or a northern Lamar outing, with named viewpoints, current wildlife distances and a realistic return.",
+    "keywords": [
+      "Yellowstone Canyon & Wildlife Valleys",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "Grand Teton & Jackson",
+    "url": "/usa/yellowstone-tetons/grand-teton/",
+    "parent": "Yellowstone & Grand Teton",
+    "type": "Local guide",
+    "summary": "Plan Grand Teton around Jenny Lake, a selected historic or mountain viewpoint and a separate base, distinguishing lake boats from longer backcountry walks.",
+    "keywords": [
+      "Grand Teton & Jackson",
+      "Yellowstone & Grand Teton"
+    ]
+  },
+  {
+    "title": "New Orleans",
+    "url": "/usa/new-orleans/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a New Orleans base and distinct Quarter, Garden District and river or wetland days, with airport connections, live-music planning and current closures.",
+    "keywords": [
+      "New Orleans",
+      "South"
+    ]
+  },
+  {
+    "title": "French Quarter & Live Music",
+    "url": "/usa/new-orleans/french-quarter/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "Walk a selected French Quarter route through Jackson Square, Royal Street and museum interpretation, then choose a music program rather than a nightlife checklist.",
+    "keywords": [
+      "French Quarter & Live Music",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Garden District & Streetcars",
+    "url": "/usa/new-orleans/garden-district/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "Plan a St. Charles streetcar and Garden District visit with public-street architecture, a Magazine Street meal and the current Lafayette Cemetery No. 1 closure.",
+    "keywords": [
+      "Garden District & Streetcars",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Mississippi River & Wetlands",
+    "url": "/usa/new-orleans/river-wetlands/",
+    "parent": "New Orleans",
+    "type": "Local guide",
+    "summary": "Choose an Algiers ferry crossing or a separate wetland outing, with the 2026 Barataria closure, relocated Wetland Trace access and a confirmed return.",
+    "keywords": [
+      "Mississippi River & Wetlands",
+      "New Orleans"
+    ]
+  },
+  {
+    "title": "Atlanta",
+    "url": "/usa/atlanta/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose an Atlanta base near the actual MARTA route, then separate the King historic district, Midtown museums and a selected Beltline outing into useful days.",
+    "keywords": [
+      "Atlanta",
+      "South"
+    ]
+  },
+  {
+    "title": "Martin Luther King, Jr. Historic District",
+    "url": "/usa/atlanta/king-historic-district/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Visit the Martin Luther King, Jr. historic district through the temporary Fire Station No. 6 visitor center, Birth Home restrictions and distinct King Center spaces.",
+    "keywords": [
+      "Martin Luther King, Jr. Historic District",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Midtown Museums & Piedmont Park",
+    "url": "/usa/atlanta/midtown-museums/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Compare the High Museum, Museum of Design Atlanta and a separate botanical-garden visit, with Arts Center arrival and a collection-led Midtown day.",
+    "keywords": [
+      "Midtown Museums & Piedmont Park",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Atlanta BeltLine & Neighborhoods",
+    "url": "/usa/atlanta/beltline/",
+    "parent": "Atlanta",
+    "type": "Local guide",
+    "summary": "Choose a limited Atlanta Beltline Eastside visit around a real access point, Ponce City Market or Krog Street Market, with shared-trail etiquette and a planned return.",
+    "keywords": [
+      "Atlanta BeltLine & Neighborhoods",
+      "Atlanta"
+    ]
+  },
+  {
+    "title": "Texas Cities",
+    "url": "/usa/texas/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Compare an Austin–San Antonio Texas Eagle trip with Houston’s separate Amtrak Connection option, hotel transfers and a shorter two-city plan.",
+    "keywords": [
+      "Texas Cities",
+      "South"
+    ]
+  },
+  {
+    "title": "Austin & Lady Bird Lake",
+    "url": "/usa/texas/austin/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Plan Austin from the airport or Texas Eagle station, then match local transport and hotel to Capitol, lake or neighborhood, and music stops.",
+    "keywords": [
+      "Austin & Lady Bird Lake",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "San Antonio Missions & River Walk",
+    "url": "/usa/texas/san-antonio/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Plan San Antonio from its Texas Eagle station to downtown or separate southern missions; compare last-mile travel and reservations.",
+    "keywords": [
+      "San Antonio Missions & River Walk",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "Houston Museums & Space Center",
+    "url": "/usa/texas/houston/",
+    "parent": "Texas Cities",
+    "type": "Local guide",
+    "summary": "Choose Space Center Houston or a Museum District visit, with hotel transfers and Amtrak’s separately labeled Houston Connection checked for your date.",
+    "keywords": [
+      "Houston Museums & Space Center",
+      "Texas Cities"
+    ]
+  },
+  {
+    "title": "Miami & South Florida",
+    "url": "/usa/miami/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a Miami Beach or mainland base, then connect Brightline through downtown MiamiCentral with a separate MIA shuttle and a road-planned Everglades day.",
+    "keywords": [
+      "Miami & South Florida",
+      "Florida"
+    ]
+  },
+  {
+    "title": "South Beach & Art Deco",
+    "url": "/usa/miami/south-beach/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Visit South Beach through a selected Ocean Drive architecture walk, the Art Deco Museum or Welcome Center and a separate shoreline portion.",
+    "keywords": [
+      "South Beach & Art Deco",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Little Havana & Wynwood",
+    "url": "/usa/miami/little-havana-wynwood/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Choose a Calle Ocho cultural visit or a Wynwood art day, with Domino Park etiquette, distinct neighborhoods and separate Wynwood Walls admission.",
+    "keywords": [
+      "Little Havana & Wynwood",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Everglades National Park",
+    "url": "/usa/miami/everglades/",
+    "parent": "Miami & South Florida",
+    "type": "Local guide",
+    "summary": "Choose Shark Valley or Homestead–Royal Palm from a suitable base; neither Brightline station is a park entrance, and both directions need a confirmed road plan.",
+    "keywords": [
+      "Everglades National Park",
+      "Miami & South Florida"
+    ]
+  },
+  {
+    "title": "Orlando & Central Florida",
+    "url": "/usa/orlando/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose a resort or city base, then plan the Miami–Orlando train to MCO Terminal C and a separate transfer to the hotel, Winter Park or Space Coast.",
+    "keywords": [
+      "Orlando & Central Florida",
+      "Florida"
+    ]
+  },
+  {
+    "title": "Orlando Theme-Park Planning",
+    "url": "/usa/orlando/theme-parks/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Compare Disney and Universal park-day choices, admission versus queue products, date-based reservation rules and realistic transfers before buying multiple tickets.",
+    "keywords": [
+      "Orlando Theme-Park Planning",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Winter Park & Orlando Beyond Resorts",
+    "url": "/usa/orlando/winter-park/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Plan Winter Park through Park Avenue, the Morse Museum and a separate scenic boat option, with weekday SunRail planning and a clear return.",
+    "keywords": [
+      "Winter Park & Orlando Beyond Resorts",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Kennedy Space Center & Space Coast",
+    "url": "/usa/orlando/kennedy-space-center/",
+    "parent": "Orlando & Central Florida",
+    "type": "Local guide",
+    "summary": "Give Kennedy Space Center a full Space Coast day: Brightline ends at MCO, so arrange a confirmed road transfer to and from Merritt Island.",
+    "keywords": [
+      "Kennedy Space Center & Space Coast",
+      "Orlando & Central Florida"
+    ]
+  },
+  {
+    "title": "Alaska Gateways & Parks",
+    "url": "/usa/alaska/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Southcentral and Denali or a separate Juneau–Southeast journey, with actual train and ferry seasons, overnight bases and current park access.",
+    "keywords": [
+      "Alaska Gateways & Parks",
+      "Alaska"
+    ]
+  },
+  {
+    "title": "Anchorage, Seward & Kenai Fjords",
+    "url": "/usa/alaska/anchorage-kenai/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Plan Anchorage and Seward as a selective Southcentral trip, distinguishing the Coastal Classic season, Exit Glacier road and Nature Center access, and boat routes.",
+    "keywords": [
+      "Anchorage, Seward & Kenai Fjords",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Denali National Park",
+    "url": "/usa/alaska/denali/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Plan Denali around the 2026 bus limit at East Fork, separate narrated and transit buses, entrance-area visits and the different fall road arrangements.",
+    "keywords": [
+      "Denali National Park",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Juneau & Southeast Alaska",
+    "url": "/usa/alaska/juneau-southeast/",
+    "parent": "Alaska Gateways & Parks",
+    "type": "Local guide",
+    "summary": "Choose a Juneau stay with the actual airport, cruise or Auke Bay ferry arrival, a current Mendenhall visit and separately planned Southeast connections.",
+    "keywords": [
+      "Juneau & Southeast Alaska",
+      "Alaska Gateways & Parks"
+    ]
+  },
+  {
+    "title": "Hawaii",
+    "url": "/usa/hawaii/",
+    "parent": "United States",
+    "type": "Regional guide",
+    "summary": "Choose Oʻahu, Maui or Hawaiʻi Island by stay length, airport, transport and the landscape you want; compare a one-island week with the real cost of an inter-island move.",
+    "keywords": [
+      "Hawaii",
+      "Pacific Islands"
+    ]
+  },
+  {
+    "title": "Oahu: Honolulu & Windward Coast",
+    "url": "/usa/hawaii/oahu/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Plan Honolulu, Pearl Harbor, Lēʻahi and Kailua as separate days; choose transit or one rental-car day, and check bookings, storm closures and ocean conditions.",
+    "keywords": [
+      "Oahu: Honolulu & Windward Coast",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "Maui: Haleakala & Coastal Days",
+    "url": "/usa/hawaii/maui/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Compare Haleakalā Summit with the separate Hāna–Kīpahulu drive; choose a South or West Maui base, check fuel and reservations, and keep a weather fallback.",
+    "keywords": [
+      "Maui: Haleakala & Coastal Days",
+      "Hawaii"
+    ]
+  },
+  {
+    "title": "Hawaii Island: Volcanoes & Two Coasts",
+    "url": "/usa/hawaii/hawaii-island/",
+    "parent": "Hawaii",
+    "type": "Local guide",
+    "summary": "Choose Kona, Hilo or Volcano by the park drive; compare airport and Hele-On access, construction, parking and air quality before planning the day.",
+    "keywords": [
+      "Hawaii Island: Volcanoes & Two Coasts",
+      "Hawaii"
     ]
   }
 ]
