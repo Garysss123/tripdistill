@@ -25,6 +25,7 @@
     "audit:usa": "node scripts/audit-usa.mjs",
     "audit:canada": "node scripts/audit-canada.mjs",
     "audit:switzerland": "node scripts/audit-switzerland.mjs",
+    "test:switzerland-lucerne-refresh": "node scripts/test-switzerland-lucerne-refresh.mjs",
     "audit:switzerland-sources": "node scripts/check-switzerland-sources.mjs",
     "audit:france": "node scripts/audit-france.mjs",
     "test:france-date-sync": "node scripts/test-france-date-sync.mjs",

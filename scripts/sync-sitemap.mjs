@@ -65,6 +65,13 @@ const canadaLastmod = '2026-09-12';
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
+const lucerneLastmod = '2026-10-12';
+const lucerneEditedRoutes = [
+  '/switzerland/lucerne-lake-mountains/',
+  '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+  '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+  '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -893,6 +900,11 @@ for (const route of zurichEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Zurich route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: zurichLastmod });
+}
+for (const route of lucerneEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Lucerne route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: lucerneLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {

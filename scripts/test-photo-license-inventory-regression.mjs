@@ -519,7 +519,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 8, 'inventory must count project-original artwork including Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 9, 'inventory must count project-original artwork including Melaka, Somerset, Peak District, the Malaysia diagrams and Lucerne');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 514, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -527,6 +527,31 @@ try {
   assert.ok(wadjemupDiagram.verificationDetail.includes('not an independent source-page check'));
   assert.ok(wadjemupDiagram.verificationDetail.includes('no separate reuse license declared'));
   assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
+  const lucerneDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg');
+  assert.ok(lucerneDiagram, 'inventory must retain the Lucerne route-choice schematic');
+  assert.equal(lucerneDiagram.assetType, 'original-planning-diagram');
+  assert.equal(lucerneDiagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg');
+  assert.equal(lucerneDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(lucerneDiagram.license, null, 'the original Lucerne SVG must not claim a public reuse license');
+  assert.equal(lucerneDiagram.licenseUrl, null);
+  assert.equal(lucerneDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(lucerneDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(lucerneDiagram.localSha1, '8b45fae5724444f48aa928e3225dacc232efc382');
+  assert.equal(lucerneDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(lucerneDiagram.inventoryStatus, 'used');
+  assert.equal(lucerneDiagram.useCount, 4);
+  assert.deepEqual(lucerneDiagram.routes, [
+    '/switzerland/lucerne-lake-mountains/',
+    '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+    '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+    '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
+  ]);
+  const retiredLucernePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp');
+  assert.ok(retiredLucernePhoto, 'inventory retains the former Bürgenstock photo record');
+  assert.equal(retiredLucernePhoto.inventoryStatus, 'unused');
+  assert.equal(retiredLucernePhoto.useCount, 0);
+  assert.deepEqual(retiredLucernePhoto.routes, []);
+  assert.match(retiredLucernePhoto.rightsStatus, /unverified metadata/i);
   const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
   assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');
   assert.equal(melakaDiagram.assetType, 'original-planning-diagram');
@@ -561,7 +586,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 800, 'the two original Malaysia diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 801, 'the Lucerne and Malaysia original diagrams must be included while the preserved Melaka rights-review photo remains excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

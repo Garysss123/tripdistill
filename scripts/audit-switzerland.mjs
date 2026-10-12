@@ -12,6 +12,9 @@ const routes = ['/switzerland/', ...switzerlandClusters.map((cluster) => `/switz
 const zurich = switzerlandClusters.find((cluster) => cluster.slug === 'zurich-lake');
 const zurichRoutes = zurich ? ['/switzerland/', `/switzerland/${zurich.slug}/`, ...zurich.guides.map((guide) => guide.url)] : [];
 const zurichLastmod = '2026-10-08';
+const lucerne = switzerlandClusters.find((cluster) => cluster.slug === 'lucerne-lake-mountains');
+const lucerneRoutes = lucerne ? [`/switzerland/${lucerne.slug}/`, ...lucerne.guides.map((guide) => guide.url)] : [];
+const lucerneLastmod = '2026-10-12';
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -85,9 +88,17 @@ for (const guide of switzerlandGuides) {
   check(guide.access.length >= 120 && guide.tradeoff.length >= 120 && guide.fallback.length >= 100, `${guide.url}: thin operating guidance`);
   check(guide.duration.length >= 70 && guide.combine.length >= 80 && guide.verify.length >= 90, `${guide.url}: thin duration/combine/verification guidance`);
   check(guide.choices.length === 3 && guide.route.length === 4 && guide.watch.length === 3 && guide.faq.length === 3, `${guide.url}: choice/route/watch/FAQ parity`);
-  check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, `${guide.url}: incomplete image provenance`);
-  check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
-  check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
+  if (guide.image.assetType === 'original-planning-diagram') {
+    check(guide.image.creator && guide.image.source && guide.image.rightsStatus && guide.image.rightsStatusUrl && guide.image.localSha1 && guide.image.editNote && guide.image.diagramNote, `${guide.url}: incomplete original-diagram provenance`);
+    check(guide.image.source === `https://tripdistill.com${guide.image.src}` && guide.image.rightsStatusUrl === 'https://tripdistill.com/terms-of-use/', `${guide.url}: original-diagram source or rights link must be exact and same-origin`);
+    check(guide.image.license === null, `${guide.url}: do not imply a separate reuse license for the original diagram`);
+    check(/^[a-f0-9]{40}$/i.test(guide.image.localSha1), `${guide.url}: original-diagram SHA-1 missing or malformed`);
+    check(guide.image.src.endsWith('.svg') && /not to scale/i.test(guide.image.editNote), `${guide.url}: original diagram must be a labeled schematic`);
+  } else {
+    check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1 && guide.image.editNote, `${guide.url}: incomplete image provenance`);
+    check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
+    check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
+  }
   const imageFile = path.join(root, guide.image.src.replace(/^\//, ''));
   const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
   check(probe.status === 0 && probe.stdout.trim() === '1600x1066', `${guide.url}: image missing or not 1600x1066`);
@@ -125,7 +136,14 @@ for (const route of routes) {
       check(!html.includes(escape(guide.image.label)), `${route}: raw Zurich Commons filename is visible for ${guide.slug}`);
     }
   }
-  for (const guide of credited) check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+  for (const guide of credited) {
+    if (guide.image.assetType === 'original-planning-diagram') {
+      const legend = route === guide.url ? guide.image.diagramNote : guide.image.diagramCardNote;
+      check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.rightsStatusUrl) && html.includes(guide.image.rightsStatus) && html.includes(escape(legend)), `${route}: visible original-diagram provenance or localized English legend missing for ${guide.slug}`);
+    } else {
+      check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+    }
+  }
   if (route === '/switzerland/') {
     check(dom.filter((node) => classHas(node, 'ch-country-card')).length === 16, `${route}: expected 16 hub cards`);
   } else if (switzerlandGuides.some((guide) => guide.url === route)) {
@@ -168,7 +186,14 @@ for (const route of routes) {
     if (!fs.existsSync(localizedFile)) continue;
     const localized = fs.readFileSync(localizedFile, 'utf8');
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
-    for (const guide of credited) check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+    for (const guide of credited) {
+      if (guide.image.assetType === 'original-planning-diagram') {
+        const legendClass = route === guide.url ? 'class="ch-diagram-note"' : 'class="ch-diagram-card-note"';
+        check(localized.includes(guide.image.source) && localized.includes(guide.image.rightsStatusUrl) && localized.includes(legendClass), `${prefix + route}: localized original-diagram provenance or visible legend missing for ${guide.slug}`);
+      } else {
+        check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+      }
+    }
   }
 }
 
@@ -187,7 +212,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = zurichRoutes.includes(route) ? zurichLastmod : '2026-09-12';
+    const expectedLastmod = zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

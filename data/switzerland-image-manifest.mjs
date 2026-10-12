@@ -54,14 +54,19 @@ export const switzerlandImageManifest = {
     "remoteSha1": "ad7f99569b2c56a87e227f4e958adcb11d78b102"
   },
   "lucerne-lake-mountains/rigi-lake-circuit": {
-    "src": "/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp",
-    "alt": "View from Mount Rigi over Lake Lucerne",
-    "source": "https://commons.wikimedia.org/wiki/File:View_from_Buergenstock-Resort_(Felsenweg)_to_Kuessnacht-Hertenstein-Weggis-Rigi_(Kulm)-lake_Lucerne-02ASD.jpg",
-    "label": "View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg",
-    "creator": "Asurnipal",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg",
-    "remoteSha1": "c5cf6f0c470949801198ed9d28458b45103c8db4"
+    "src": "/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
+    "alt": "Original planning diagram comparing three Lake Lucerne and Rigi access chains; not a geographic map and not to scale",
+    "diagramNote": "Planning key: 1 boat from Lucerne to Vitznau, then the Vitznau–Rigi cogwheel railway; 2 SBB rail to Arth-Goldau, then the Arth-Rigi cogwheel railway; 3 keep to Lucerne’s old town and lakefront when summit visibility or operations do not suit. This schematic compares route shapes, not live departures, operating dates or geographic positions.",
+    "diagramCardNote": "Diagram key: 1 boat to Vitznau + cogwheel; 2 SBB to Arth-Goldau + cogwheel; 3 Lucerne old town/lakefront weather fallback. Concept only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
+    "label": "Rigi and Lake Lucerne route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "8b45fae5724444f48aa928e3225dacc232efc382"
   },
   "bern-emmental/old-city-aare": {
     "src": "/assets/images/switzerland-bern-emmental-old-city-aare.webp",
@@ -482,5 +487,23 @@ export const switzerlandImageManifest = {
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:Ebenalp - panoramio (105).jpg",
     "remoteSha1": "0a297066d568269168765eb0c4a4ec0bf8d3ec2b"
+  }
+};
+
+// Preserve the retired file and its source-declared metadata for inventory and audit only.
+export const switzerlandRetiredImageRecords = {
+  lucerneRigiView: {
+    src: '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp',
+    alt: 'View from Mount Rigi over Lake Lucerne',
+    source: 'https://commons.wikimedia.org/wiki/File:View_from_Buergenstock-Resort_(Felsenweg)_to_Kuessnacht-Hertenstein-Weggis-Rigi_(Kulm)-lake_Lucerne-02ASD.jpg',
+    label: 'View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg',
+    creator: 'Asurnipal',
+    license: 'CC BY-SA 4.0',
+    commonsTitle: 'File:View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg',
+    remoteSha1: 'c5cf6f0c470949801198ed9d28458b45103c8db4',
+    localSha1: 'f4d0669944063db98152960cb4a93581732ec470',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Source-page CC BY-SA 4.0 declaration retained as unverified metadata; no independent rights determination.',
+    retirementNote: 'Removed from live displays on 2026-10-12. The source identifies the viewpoint as Bürgenstock/Felsenweg, while the page alt described a view from Mount Rigi. The original WebP and recorded source metadata remain archived; neither the former credit nor this note establishes independent rights clearance.'
   }
 };

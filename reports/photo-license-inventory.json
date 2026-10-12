@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-12T03:34:03.987Z",
+  "generatedAt": "2026-10-12T05:06:03.520Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 797,
+    "assetFileCount": 798,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 8,
+    "completeProjectOriginalRightsRecords": 9,
     "licenseClaimsNotIndependentlyVerified": 514,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 800,
-    "deduplicatedImageCount": 797,
+    "expectedBuildImageCount": 801,
+    "deduplicatedImageCount": 798,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3518,
     "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 584,
+    "unusedAssetCount": 30,
+    "assetsWithStructuredSourceRecords": 585,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 170,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 251,
-    "metadataOrCreditOnly": 522,
+    "metadataOrCreditOnly": 523,
     "usedAssetsWithoutIndependentSourcePageCheck": 518,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 796 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 800 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -23514,24 +23514,63 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_Buergenstock-Resort_(Felsenweg)_to_Kuessnacht-Hertenstein-Weggis-Rigi_(Kulm)-lake_Lucerne-02ASD.jpg",
           "sourceTitle": "File:View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg",
+          "creditLabel": null,
           "creator": "Asurnipal",
           "license": "CC BY-SA 4.0",
-          "rightsStatus": null,
+          "rightsStatus": "Source-page CC BY-SA 4.0 declaration retained as unverified metadata; no independent rights determination.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-12. The source identifies the viewpoint as Bürgenstock/Felsenweg, while the page alt described a view from Mount Rigi. The original WebP and recorded source metadata remain archived; neither the former credit nor this note establishes independent rights clearance.",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "f4d0669944063db98152960cb4a93581732ec470",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5",
+      "assetPaths": [
+        "/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg"
+      ],
+      "byteLength": 6830,
+      "sourceRecords": [
+        {
+          "sha256": "7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5",
+          "assetPath": "/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
+          "sourceTitle": "Rigi and Lake Lucerne route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale.",
+          "localSha1": "8b45fae5724444f48aa928e3225dacc232efc382",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
           "useCount": 4,
           "routes": [
             "/switzerland/lucerne-lake-mountains/",
@@ -23540,11 +23579,9 @@
             "/switzerland/lucerne-lake-mountains/rigi-lake-circuit/"
           ],
           "altTexts": [
-            "View from Mount Rigi over Lake Lucerne"
+            "Original planning diagram comparing three Lake Lucerne and Rigi access chains; not a geographic map and not to scale"
           ],
-          "rawVisibleCredits": [
-            "View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg — Asurnipal, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "rawVisibleCredits": []
         }
       ]
     },
