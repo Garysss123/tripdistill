@@ -32,6 +32,7 @@
     "test:malaysia-langkawi-route-dates": "node scripts/test-malaysia-langkawi-route-dates.mjs",
     "test:malaysia-melaka-route-dates": "node scripts/test-malaysia-melaka-route-dates.mjs",
     "test:malaysia-melaka-photo-schematic": "node scripts/test-malaysia-melaka-photo-schematic.mjs",
+    "test:malaysia-taman-negara-refresh": "node scripts/test-malaysia-taman-negara-refresh.mjs",
     "audit:france-sources": "node scripts/check-france-sources.mjs",
     "audit:united-kingdom": "node scripts/audit-united-kingdom.mjs",
     "audit:united-kingdom-sources": "node scripts/check-united-kingdom-sources.mjs",
