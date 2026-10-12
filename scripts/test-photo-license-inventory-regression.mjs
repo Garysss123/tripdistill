@@ -119,6 +119,13 @@ assert.equal(checkedInYongduam.sourceTitle, '용두암.jpg');
 assert.equal(checkedInYongduam.creator, 'Ahn Beom-jin');
 assert.equal(checkedInYongduam.license, 'CC BY-SA 4.0');
 assert.ok(checkedInYongduam.editHistory.includes('no further per-image edit details'));
+const checkedInSwitzerlandCh14Diagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/switzerland-country-route-choice.svg');
+assert.ok(checkedInSwitzerlandCh14Diagram, 'checked-in inventory must include the CH14 five-language Switzerland schematic');
+assert.equal(checkedInSwitzerlandCh14Diagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInSwitzerlandCh14Diagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-country-route-choice.svg');
+assert.equal(checkedInSwitzerlandCh14Diagram.creator, 'TripDistill Editorial Team');
+assert.equal(checkedInSwitzerlandCh14Diagram.license, null);
+assert.equal(checkedInSwitzerlandCh14Diagram.rightsStatus, 'Project original; no separate reuse license declared');
 const checkedInGoldCoastDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === goldCoastDiagramAssetPath);
 assert.ok(checkedInGoldCoastDiagram, 'checked-in inventory must include the original Gold Coast planning schematic');
 assert.equal(checkedInGoldCoastDiagram.assetType, 'original-planning-diagram');
@@ -544,11 +551,29 @@ try {
     assert.match(record.verificationDetail, photo.visual);
     assert.match(record.verificationDetail, /no independent rights clearance is claimed/i);
   }
+  const switzerlandCh14Photos = [
+    { assetPath: '/assets/images/switzerland-lugano-southern-ticino-lugano-lakefront.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg', creator: 'Chris j wood', license: 'CC BY-SA 4.0', subject: 'ferry at the Lugano lakefront' },
+    { assetPath: '/assets/images/switzerland-locarno-ascona-valleys-locarno-ascona.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg', creator: 'Glenn Steiger (Switzerland)', license: 'CC BY 3.0', subject: 'Locarno/Ascona and lake view' },
+    { assetPath: '/assets/images/switzerland-schaffhausen-rhine-falls-rhine-falls.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg', creator: 'More pics than views…', license: 'CC BY 3.0', subject: 'Rhine Falls viewing platform and waterfall' }
+  ];
+  for (const photo of switzerlandCh14Photos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Switzerland CH14 inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(photo.subject));
+    assert.match(record.verificationDetail, /not independent uploader authority or chain-of-title clearance/i);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
+  }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 497, 'the merged inventory counts metadata-only original diagrams separately from source-page-checked Canada and Gold Coast photos; unresolved photo claims remain unverified');
-  assert.equal(report.counts.sourcePageChecked, 289, 'the merged inventory retains exact source-page checks including the three Saguenay and three Gold Coast photos');
-  assert.equal(report.counts.assetsVisuallyReviewed, 210, 'the merged inventory includes recorded Saguenay and Gold Coast photo checks alongside prior photo reviews and SVG checks');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 495, 'CH14 adds one metadata-only project original and upgrades three used photo records with separate source-page and pixel notes; no record claims independent rights clearance');
+  assert.equal(report.counts.sourcePageChecked, 292, 'the merged inventory retains source-page checks for the three CH14 photos alongside the previous reviewed assets');
+  assert.equal(report.counts.assetsVisuallyReviewed, 213, 'the merged inventory includes the three CH14 photo pixel checks alongside prior photo reviews and SVG checks');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -917,8 +942,8 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 34, 'the merged inventory counts project-original artwork including the Saguenay and Gold Coast schematics');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 476, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 35, 'the merged inventory counts project-original artwork including the CH14, Saguenay and Gold Coast schematics');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 473, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -1012,6 +1037,19 @@ try {
   ]);
   assert.equal(genevaDiagram.verificationStatus, 'site_credit_or_metadata_only', 'project artwork URLs and site credits are not independent rights-chain verification');
   assert.equal(genevaDiagram.verificationDetail.includes('not an independent source-page check'), true);
+  const switzerlandCh14Diagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-country-route-choice.svg');
+  assert.ok(switzerlandCh14Diagram, 'inventory must include the CH14 five-language Switzerland schematic');
+  assert.equal(switzerlandCh14Diagram.assetType, 'original-planning-diagram');
+  assert.equal(switzerlandCh14Diagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-country-route-choice.svg');
+  assert.equal(switzerlandCh14Diagram.creator, 'TripDistill Editorial Team');
+  assert.equal(switzerlandCh14Diagram.license, null);
+  assert.equal(switzerlandCh14Diagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(switzerlandCh14Diagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(switzerlandCh14Diagram.commercialReuseEligibility, 'unknown');
+  assert.equal(switzerlandCh14Diagram.inventoryStatus, 'used');
+  assert.equal(switzerlandCh14Diagram.useCount, 1);
+  assert.deepEqual(switzerlandCh14Diagram.routes, ['/switzerland/']);
+  assert.equal(switzerlandCh14Diagram.verificationStatus, 'site_credit_or_metadata_only');
   const retiredZermattPhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp');
   assert.ok(retiredZermattPhoto, 'inventory must preserve the conflicted Zermatt source photo for provenance');
   assert.deepEqual(retiredZermattPhoto.sourceDeclaredLicenses, ['Public domain', 'CC BY-SA 4.0']);
@@ -1057,7 +1095,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 820, 'the Saguenay and Gold Coast schematics are included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 821, 'the CH14, Saguenay and Gold Coast schematics are included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

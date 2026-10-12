@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Switzerland rail-route choices in five languages</title>
+  <desc id="desc">Three planning options compare Zurich–Lucerne, Lugano–Locarno and Zurich–Schaffhausen. The schematic is not a geographic map, live timetable or promise of journey time.</desc>
+  <rect x="0" y="0" width="1600" height="1066" fill="#f5f2e9" />
+  <text x="800" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#18333a">Choose one regional spine, then add a day trip</text>
+  <text x="800" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#526970">EN · 繁體中文 · 日本語 · 한국어 · ไทย</text>
+  <rect x="44" y="156" width="484" height="792" rx="22" fill="#ffffff" stroke="#2c7782" stroke-width="3" />
+  <circle cx="88" cy="214" r="26" fill="#2c7782" />
+  <text x="88" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">1</text>
+  <text x="130" y="222" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#18333a">CITY + LAKE · 5–7 NIGHTS</text>
+  <rect x="82" y="266" width="174" height="64" rx="12" fill="#e4f0ef" />
+  <rect x="316" y="266" width="174" height="64" rx="12" fill="#e4f0ef" />
+  <text x="169" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#18333a">ZURICH</text>
+  <text x="403" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#18333a">LUCERNE</text>
+  <line x1="256" y1="298" x2="311" y2="298" stroke="#2c7782" stroke-width="6" />
+  <circle cx="284" cy="298" r="8" fill="#ffffff" stroke="#2c7782" stroke-width="4" />
+  <text x="82" y="376" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2c7782">FIVE-LANGUAGE ROUTE KEY</text>
+  <text x="82" y="422" font-family="Arial, sans-serif" font-size="18" fill="#18333a">EN · Zurich → Lucerne | city + lake</text>
+  <text x="82" y="462" font-family="Arial, sans-serif" font-size="18" fill="#18333a">繁中 · 蘇黎世 → 琉森｜城市＋湖泊</text>
+  <text x="82" y="502" font-family="Arial, sans-serif" font-size="18" fill="#18333a">日本語 · チューリヒ → ルツェルン｜都市＋湖</text>
+  <text x="82" y="542" font-family="Arial, sans-serif" font-size="18" fill="#18333a">한국어 · 취리히 → 루체른 | 도시 + 호수</text>
+  <text x="82" y="582" font-family="Arial, sans-serif" font-size="18" fill="#18333a">ไทย · ซูริก → ลูเซิร์น | เมือง + ทะเลสาบ</text>
+  <line x1="82" y1="616" x2="490" y2="616" stroke="#d7e2df" stroke-width="2" />
+  <text x="82" y="662" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#18333a">BASE PLAN</text>
+  <text x="82" y="700" font-family="Arial, sans-serif" font-size="17" fill="#526970">3 nights Zurich + 2 Lucerne.</text>
+  <text x="82" y="732" font-family="Arial, sans-serif" font-size="17" fill="#526970">Add Bern only if nights allow.</text>
+  <text x="82" y="802" font-family="Arial, sans-serif" font-size="17" fill="#526970">Check SBB; choose one mountain day.</text>
+  <text x="82" y="840" font-family="Arial, sans-serif" font-size="17" fill="#526970">Keep a lake-level weather option.</text>
+  <text x="82" y="898" font-family="Arial, sans-serif" font-size="15" fill="#7b8c8d">Return by the rail route confirmed for your date.</text>
+
+  <rect x="558" y="156" width="484" height="792" rx="22" fill="#ffffff" stroke="#c8864c" stroke-width="3" />
+  <circle cx="602" cy="214" r="26" fill="#c8864c" />
+  <text x="602" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">2</text>
+  <text x="644" y="222" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#18333a">TICINO · 5–7 NIGHTS</text>
+  <rect x="596" y="266" width="174" height="64" rx="12" fill="#f7eadb" />
+  <rect x="830" y="266" width="174" height="64" rx="12" fill="#f7eadb" />
+  <text x="683" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#18333a">LUGANO</text>
+  <text x="917" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#18333a">LOCARNO</text>
+  <line x1="770" y1="298" x2="825" y2="298" stroke="#c8864c" stroke-width="6" />
+  <circle cx="798" cy="298" r="8" fill="#ffffff" stroke="#c8864c" stroke-width="4" />
+  <text x="596" y="376" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ad6934">FIVE-LANGUAGE ROUTE KEY</text>
+  <text x="596" y="422" font-family="Arial, sans-serif" font-size="18" fill="#18333a">EN · Lugano → Locarno | Ticino valleys</text>
+  <text x="596" y="462" font-family="Arial, sans-serif" font-size="18" fill="#18333a">繁中 · 盧加諾 → 洛迦諾｜提契諾山谷</text>
+  <text x="596" y="502" font-family="Arial, sans-serif" font-size="18" fill="#18333a">日本語 · ルガーノ → ロカルノ｜ティチーノの谷</text>
+  <text x="596" y="542" font-family="Arial, sans-serif" font-size="18" fill="#18333a">한국어 · 루가노 → 로카르노 | 티치노 계곡</text>
+  <text x="596" y="582" font-family="Arial, sans-serif" font-size="18" fill="#18333a">ไทย · ลูการ์โน → โลการ์โน | หุบเขาทีชีโน</text>
+  <line x1="596" y1="616" x2="1004" y2="616" stroke="#ead9c7" stroke-width="2" />
+  <text x="596" y="662" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#18333a">BASE PLAN</text>
+  <text x="596" y="700" font-family="Arial, sans-serif" font-size="17" fill="#526970">Choose one town or split the stay.</text>
+  <text x="596" y="732" font-family="Arial, sans-serif" font-size="17" fill="#526970">Give each valley a separate day.</text>
+  <text x="596" y="802" font-family="Arial, sans-serif" font-size="17" fill="#526970">Compare SBB, FART and lake operators.</text>
+  <text x="596" y="840" font-family="Arial, sans-serif" font-size="17" fill="#526970">Use a lakefront fallback in storms.</text>
+  <text x="596" y="898" font-family="Arial, sans-serif" font-size="15" fill="#7b8c8d">Do not assume valley swimming is safe.</text>
+
+  <rect x="1072" y="156" width="484" height="792" rx="22" fill="#ffffff" stroke="#647e67" stroke-width="3" />
+  <circle cx="1116" cy="214" r="26" fill="#647e67" />
+  <text x="1116" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">3</text>
+  <text x="1158" y="222" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#18333a">NORTH-EAST · 2–3 NIGHTS</text>
+  <rect x="1110" y="266" width="174" height="64" rx="12" fill="#e8eee6" />
+  <rect x="1344" y="266" width="174" height="64" rx="12" fill="#e8eee6" />
+  <text x="1197" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#18333a">ZURICH</text>
+  <text x="1431" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#18333a">SCHAFFHAUSEN</text>
+  <line x1="1284" y1="298" x2="1339" y2="298" stroke="#647e67" stroke-width="6" />
+  <circle cx="1312" cy="298" r="8" fill="#ffffff" stroke="#647e67" stroke-width="4" />
+  <text x="1110" y="376" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#526b55">FIVE-LANGUAGE ROUTE KEY</text>
+  <text x="1110" y="422" font-family="Arial, sans-serif" font-size="18" fill="#18333a">EN · Zurich → Schaffhausen | Rhine Falls</text>
+  <text x="1110" y="462" font-family="Arial, sans-serif" font-size="18" fill="#18333a">繁中 · 蘇黎世 → 沙夫豪森｜萊茵瀑布</text>
+  <text x="1110" y="502" font-family="Arial, sans-serif" font-size="18" fill="#18333a">日本語 · チューリヒ → シャフハウゼン｜ライン滝</text>
+  <text x="1110" y="542" font-family="Arial, sans-serif" font-size="18" fill="#18333a">한국어 · 취리히 → 샤프하우젠 | 라인 폭포</text>
+  <text x="1110" y="582" font-family="Arial, sans-serif" font-size="18" fill="#18333a">ไทย · ซูริก → ชาฟเฮาเซิน | น้ำตกไรน์</text>
+  <line x1="1110" y1="616" x2="1518" y2="616" stroke="#d8e1d6" stroke-width="2" />
+  <text x="1110" y="662" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#18333a">BASE PLAN</text>
+  <text x="1110" y="700" font-family="Arial, sans-serif" font-size="17" fill="#526970">Stay in Schaffhausen for 1–2 nights.</text>
+  <text x="1110" y="732" font-family="Arial, sans-serif" font-size="17" fill="#526970">Choose a Falls bank before travel.</text>
+  <text x="1110" y="802" font-family="Arial, sans-serif" font-size="17" fill="#526970">Add Stein am Rhein with another night.</text>
+  <text x="1110" y="840" font-family="Arial, sans-serif" font-size="17" fill="#526970">Check SBB for both ways.</text>
+  <text x="1110" y="898" font-family="Arial, sans-serif" font-size="15" fill="#7b8c8d">Lines compare choices; they are not geographic.</text>
+</svg>

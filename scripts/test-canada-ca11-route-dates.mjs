@@ -7,6 +7,7 @@ import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '47f6b98c9e43f8acb5b01b5f84bce23cc556c9e8';
+const sourceTerminal = 'a4679e646708b5a772e56f72df017900fdb0bc4d';
 const englishOnly = process.argv.includes('--english-only');
 const cluster = canadaClusters.find((item) => item.slug === 'ottawa-gatineau');
 assert.ok(cluster, 'Ottawa & Gatineau cluster must exist.');
@@ -36,6 +37,9 @@ assert.equal(cluster.isoDate, '2026-10-12');
 const previousSearchResult = spawnSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' });
 assert.equal(previousSearchResult.status, 0, `Could not read the CA11 base search index: ${previousSearchResult.stderr}`);
 const previousSearch = JSON.parse(previousSearchResult.stdout);
+const sourceSearchResult = spawnSync('git', ['show', `${sourceTerminal}:data/search-index.json`], { cwd: root, encoding: 'utf8' });
+assert.equal(sourceSearchResult.status, 0, `Could not read the exact CA11 source terminal search index: ${sourceSearchResult.stderr}`);
+const sourceSearch = JSON.parse(sourceSearchResult.stdout);
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const targetSet = new Set(routes);
 const previousCanada = previousSearch.filter((item) => item.url.startsWith('/canada/'));
@@ -44,9 +48,14 @@ assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.')
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must not change.');
 assert.deepEqual(
-  search.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url) && !laterCa13Routes.includes(item.url)),
-  previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url) && !laterCa13Routes.includes(item.url)),
-  'All non-target and later-CA12/CA13 search records must remain byte-equivalent in content and order.'
+  sourceSearch.filter((item) => !targetSet.has(item.url)),
+  previousSearch.filter((item) => !targetSet.has(item.url)),
+  'The exact CA11 source terminal must leave every non-CA11 search record unchanged from its source base.'
+);
+assert.deepEqual(
+  search.filter((item) => targetSet.has(item.url)),
+  sourceSearch.filter((item) => targetSet.has(item.url)),
+  'Integrated CA11 search records must match the exact source terminal.'
 );
 for (const route of routes) {
   const record = canada.find((item) => item.url === route);
@@ -61,11 +70,15 @@ const previousSitemapResult = spawnSync('git', ['show', `${base}:sitemap.xml`], 
 assert.equal(previousSitemapResult.status, 0, `Could not read the CA11 base sitemap: ${previousSitemapResult.stderr}`);
 const dates = readDates(sitemap);
 const previousDates = readDates(previousSitemapResult.stdout);
+const sourceSitemapResult = spawnSync('git', ['show', `${sourceTerminal}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
+assert.equal(sourceSitemapResult.status, 0, `Could not read the exact CA11 source terminal sitemap: ${sourceSitemapResult.stderr}`);
+const sourceDates = readDates(sourceSitemapResult.stdout);
+assert.deepEqual([...sourceDates.keys()].sort(), [...previousDates.keys()].sort(), 'The CA11 source terminal must retain the exact CA10 sitemap URL set.');
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa12Routes, ...laterCa13Routes].map((route) => locale + route)).sort();
-const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four CA11 and later CA12/CA13 routes × five editions may have changed dates.');
-for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
+const expectedSourceDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
+const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
+assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA11 source terminal may change only its four article routes across five editions.');
+for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 
 function mainWords(html) {
   const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1];

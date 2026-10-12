@@ -58,6 +58,11 @@ const graubuendenRoutes = [
   '/switzerland/graubunden-corridors/davos-parsenn/',
   '/switzerland/graubunden-corridors/arosa-line/'
 ];
+const ch14Routes = [
+  '/switzerland/lugano-southern-ticino/',
+  '/switzerland/locarno-ascona-valleys/',
+  '/switzerland/schaffhausen-rhine-falls/'
+];
 const diagramPath = '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg';
 const diagramSha1 = 'd4bb15e809a0cf876db15a4f7e0309cf5f8d7404';
 
@@ -99,7 +104,7 @@ function articleNode(nodes) {
 }
 
 // Confirm reviewed Switzerland dates since the source baseline and this
-// Interlaken refresh are the only five-language sitemap date changes.
+// Interlaken refresh plus later CH14 hubs are the only five-language date changes.
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
@@ -107,7 +112,7 @@ const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'source route inventory');
 assert.equal(currentRecords.size, baseRecords.size, 'no sitemap URL additions or removals');
 assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'route inventory is unchanged');
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const genevaDateRoutes = [
   '/switzerland/',
   '/switzerland/geneva-lake/',
@@ -145,7 +150,7 @@ for (const locale of locales) {
   }
 }
 const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 225, 'the reviewed Switzerland clusters and overview routes retain their five-language date history through CH13');
+assert.equal(dateChanges.length, 240, 'the reviewed Switzerland clusters and overview routes retain their five-language date history through CH14');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `review date for ${url}`);
@@ -258,4 +263,4 @@ for (const locale of locales) {
   }
 }
 
-console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, ${dateChanges.length} five-language reviewed-cluster and dependent-overview date updates through CH13, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);
+console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, ${dateChanges.length} five-language reviewed-cluster and dependent-overview date updates through CH14, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);

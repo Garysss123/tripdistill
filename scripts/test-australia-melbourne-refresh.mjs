@@ -119,14 +119,20 @@ const greatOceanRoutes = [
   '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
   '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes];
+const goldCoastRoutes = [
+  '/australia/gold-coast-scenic-rim/',
+  '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
+  '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
+  '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
+];
+const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes];
 const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 120, 'four Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains and Great Ocean Road routes across five language editions');
+assert.equal(editedUrls.size, 140, 'four Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains, Great Ocean Road and Gold Coast routes across five language editions');
 for (const [url, originalDate] of originalEntries) {
   const pathname = new URL(url, 'https://tripdistill.com').pathname;
   if (!pathname.includes('/australia/')) continue;
   const expectedDate = editedUrls.has(pathname) ? '2026-10-12' : originalDate;
-  assert.equal(currentEntries.get(url), expectedDate, `only the exact 24 Australia route dates change: ${url}`);
+  assert.equal(currentEntries.get(url), expectedDate, `only the exact 28 selected Australia route dates change: ${url}`);
 }
 
 for (const [index, route] of routes.entries()) {
@@ -239,4 +245,4 @@ for (const [route, [alt, source, license]] of photoExpectations) {
   assert.ok(readPage(root, '', route).html.includes(license), `${route} retains its displayed license declaration`);
 }
 
-console.log('Australia refresh regression passed: 4 Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains and Great Ocean Road routes × 5 language editions, only the 120 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');
+console.log('Australia refresh regression passed: 4 Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains, Great Ocean Road and Gold Coast routes × 5 language editions, only the 140 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');

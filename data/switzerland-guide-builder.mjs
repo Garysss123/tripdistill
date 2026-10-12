@@ -2,6 +2,7 @@ import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from './sw
 import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from './switzerland-ch11-refresh.mjs';
 import { switzerlandCh12ClusterRefresh, switzerlandCh12GuideRefresh } from './switzerland-ch12-refresh.mjs';
 import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from './switzerland-ch13-refresh.mjs';
+import { switzerlandCh14HubRefresh, switzerlandCh14IsoDate, switzerlandCh14ReviewDate } from './switzerland-ch14-refresh.mjs';
 
 const routeLabels = ['Arrive', 'Orient', 'Commit', 'Return'];
 const ch10BatchOneGuides = new Set(['old-town-rhine', 'art-museums', 'kleinbasel-border-rhine']);
@@ -93,6 +94,14 @@ function applyCh13ClusterRefresh(cluster) {
   return { ...cluster, ...switzerlandCh13ClusterRefresh };
 }
 
+function applyCh14HubRefresh(cluster) {
+  const refresh = switzerlandCh14HubRefresh[cluster?.slug];
+  if (!refresh) return cluster;
+  // Keep CH14 data off the base cluster so its three child pages retain their
+  // previously reviewed local context and dates.
+  return { ...cluster, hubOnly: { ...refresh, reviewDate: switzerlandCh14ReviewDate, isoDate: switzerlandCh14IsoDate } };
+}
+
 export function switzerlandGuide(definition) {
   definition = applyEditorialExtensions(definition, guideEditorialExtensions);
   definition = applyCh10GuideRefresh(definition);
@@ -130,6 +139,7 @@ export function defineSwitzerlandCluster(cluster) {
   cluster = applyCh11ClusterRefresh(cluster);
   cluster = applyCh12ClusterRefresh(cluster);
   cluster = applyCh13ClusterRefresh(cluster);
+  cluster = applyCh14HubRefresh(cluster);
   const required = ['slug', 'name', 'region', 'band', 'family', 'label', 'tagline', 'hubIntro', 'stay', 'transfer', 'season', 'fallback'];
   for (const key of required) {
     if (!cluster?.[key]) throw new Error(`Switzerland cluster ${cluster?.slug || '(unnamed)'} lacks ${key}.`);

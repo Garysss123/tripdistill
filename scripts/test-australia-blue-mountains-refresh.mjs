@@ -35,6 +35,12 @@ const laterCanadaCa13Routes = [
   '/canada/saguenay-tadoussac/fjord-hiking/',
   '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
+const laterSwitzerlandCh14Routes = [
+  '/switzerland/',
+  '/switzerland/lugano-southern-ticino/',
+  '/switzerland/locarno-ascona-valleys/',
+  '/switzerland/schaffhausen-rhine-falls/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -250,7 +256,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCanadaCa13Routes].sort(), 'Only the selected Blue Mountains, later Great Ocean Road, Gold Coast and exact CA13 search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCanadaCa13Routes, ...laterSwitzerlandCh14Routes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, CA13 and CH14 search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);

@@ -110,7 +110,10 @@ export const integrationRouteGroups = Object.freeze({
     '/switzerland/graubunden-corridors/',
     '/switzerland/graubunden-corridors/chur-rhine-gorge/',
     '/switzerland/graubunden-corridors/davos-parsenn/',
-    '/switzerland/graubunden-corridors/arosa-line/'
+    '/switzerland/graubunden-corridors/arosa-line/',
+    '/switzerland/lugano-southern-ticino/',
+    '/switzerland/locarno-ascona-valleys/',
+    '/switzerland/schaffhausen-rhine-falls/'
   ]),
   italy: Object.freeze([
     '/italy/',
@@ -284,7 +287,6 @@ export const integrationSearchRoutes = Object.freeze([
     '/france/french-alps/grenoble-bastille-chartreuse/',
     '/france/languedoc-camargue/arles-camargue/',
     '/france/languedoc-camargue/nimes-pont-du-gard/',
-    '/switzerland/',
     '/italy/basilicata-calabria/maratea-pollino/',
     '/italy/basilicata-calabria/matera-sassi-murgia/',
     '/italy/basilicata-calabria/tropea-scilla-reggio/',

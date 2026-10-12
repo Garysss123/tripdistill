@@ -9,6 +9,7 @@ import { canadaImageManifest } from '../data/canada-image-manifest.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '2bb3ca78bb81bef88f01f4f11bbe84d75865418c';
+const sourceTerminal = '47f6b98c9e43f8acb5b01b5f84bce23cc556c9e8';
 const cluster = canadaClusters.find((item) => item.slug === 'newfoundland-labrador');
 assert.ok(cluster, 'Newfoundland & Labrador cluster must exist.');
 const routes = [
@@ -16,24 +17,6 @@ const routes = [
   '/canada/newfoundland-labrador/st-johns-signal-hill/',
   '/canada/newfoundland-labrador/bonavista-trinity/',
   '/canada/newfoundland-labrador/gros-morne/'
-];
-const laterCa11Routes = [
-  '/canada/ottawa-gatineau/',
-  '/canada/ottawa-gatineau/parliament-rideau/',
-  '/canada/ottawa-gatineau/national-museums/',
-  '/canada/ottawa-gatineau/gatineau-park/'
-];
-const laterCa12Routes = [
-  '/canada/niagara/',
-  '/canada/niagara/falls-parkway/',
-  '/canada/niagara/niagara-gorge/',
-  '/canada/niagara/niagara-on-the-lake/'
-];
-const laterCa13Routes = [
-  '/canada/saguenay-tadoussac/',
-  '/canada/saguenay-tadoussac/tadoussac-marine/',
-  '/canada/saguenay-tadoussac/fjord-hiking/',
-  '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -43,6 +26,9 @@ assert.equal(cluster.isoDate, '2026-10-12');
 const previousSearch = spawnSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' });
 assert.equal(previousSearch.status, 0, `Could not read the CA09 search index: ${previousSearch.stderr}`);
 const previousSearchRecords = JSON.parse(previousSearch.stdout);
+const sourceSearch = spawnSync('git', ['show', `${sourceTerminal}:data/search-index.json`], { cwd: root, encoding: 'utf8' });
+assert.equal(sourceSearch.status, 0, `Could not read the exact CA10 source terminal search index: ${sourceSearch.stderr}`);
+const sourceSearchRecords = JSON.parse(sourceSearch.stdout);
 const previousCanadaRoutes = previousSearchRecords.filter((record) => record.url.startsWith('/canada/')).map((record) => record.url).sort();
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const canadaSearch = search.filter((record) => record.url.startsWith('/canada/'));
@@ -51,9 +37,14 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA10 must retain the exact 73 Canada routes from CA09.');
 assert.deepEqual(
-  search.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url)),
-  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url)),
-  'CA10 must leave all non-target and later-CA11/CA12/CA13 search records unchanged.'
+  sourceSearchRecords.filter((record) => !routes.includes(record.url)),
+  previousSearchRecords.filter((record) => !routes.includes(record.url)),
+  'The exact CA10 source terminal must leave every non-CA10 search record unchanged from its source base.'
+);
+assert.deepEqual(
+  search.filter((record) => routes.includes(record.url)),
+  sourceSearchRecords.filter((record) => routes.includes(record.url)),
+  'Integrated CA10 search records must match the exact source terminal.'
 );
 for (const route of routes) {
   const record = canadaSearch.find((item) => item.url === route);
@@ -69,11 +60,15 @@ const previousSitemap = spawnSync('git', ['show', `${base}:sitemap.xml`], { cwd:
 assert.equal(previousSitemap.status, 0, `Could not read the CA09 sitemap: ${previousSitemap.stderr}`);
 const readSitemapDates = (contents) => new Map([...contents.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
 const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
+const sourceSitemap = spawnSync('git', ['show', `${sourceTerminal}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
+assert.equal(sourceSitemap.status, 0, `Could not read the exact CA10 source terminal sitemap: ${sourceSitemap.stderr}`);
+const sourceSitemapDates = readSitemapDates(sourceSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
+assert.deepEqual([...sourceSitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'The CA10 source terminal must retain the exact CA09 sitemap URL set.');
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA10 must retain the exact CA09 sitemap URL set.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes].map((route) => locale + route)).sort();
-const actualDateChanges = [...sitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only CA10 and later CA11/CA12/CA13 article routes × five editions may have changed sitemap dates.');
+const expectedSourceDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
+const actualSourceDateChanges = [...sourceSitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
+assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA10 source terminal may change only its four article routes across five editions.');
 
 function collectJsonLd(node, output = []) {
   if (node.tagName === 'script' && node.attrs?.some((attr) => attr.name === 'type' && attr.value === 'application/ld+json')) {
@@ -112,4 +107,4 @@ for (const [key, alt] of Object.entries(expectedAlts)) assert.equal(canadaImageM
 
 const countryPage = fs.readFileSync(path.join(root, 'canada/index.html'), 'utf8');
 assert.ok(countryPage.includes('href="/canada/newfoundland-labrador/"'), 'The country page may show the updated regional card, but it does not count as a refreshed article.');
-console.log('CA10 route/date regression passed: exactly four existing Newfoundland articles; 73 Canada search routes and all non-target/non-later-CA11/CA12/CA13 search records unchanged; exact sitemap URL set with CA10 and later CA11/CA12/CA13 route dates changed across five editions; localized Article/canonical dates and diagram provenance; corrected photo alt text. The Canada overview card is ancillary and is not counted in the article increment.');
+console.log('CA10 route/date regression passed: exactly four existing Newfoundland articles; 73 Canada search routes, exact source-terminal non-target scope, target records, and exact source date scope; unchanged sitemap URL set; localized Article/canonical dates and diagram provenance; corrected photo alt text. The Canada overview card is ancillary and is not counted in the article increment.');

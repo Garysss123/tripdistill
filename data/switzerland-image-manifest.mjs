@@ -549,6 +549,22 @@ export const switzerlandImageManifest = {
     "assetType": "original-planning-diagram",
     "editNote": "Conceptual route-choice schematic only; not a geographic map and not to scale.",
     "localSha1": "3065eeb3b048a025fece1bafb936d423b42048d5"
+  },
+  "switzerland-country/country-route-choice": {
+    "src": "/assets/images/switzerland-country-route-choice.svg",
+    "alt": "Conceptual five-language comparison of a Zurich–Lucerne city and lake route, a Lugano–Locarno Ticino route, and a Zurich–Schaffhausen Rhine Falls route; not to scale",
+    "displayTitle": "Switzerland route-choice schematic",
+    "diagramNote": "Planning schematic only; route labels are translated into English, Traditional Chinese, Japanese, Korean and Thai. It compares base choices and does not show geography, live service, exact journey time or fares.",
+    "diagramCardNote": "Three country-level rail route choices in five languages; conceptual only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-country-route-choice.svg",
+    "label": "Switzerland route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Original five-language SVG planning schematic; not a geographic map and not to scale.",
+    "localSha1": "09aa3fca3edbb8fe02732a6483da595081cc7b2d"
   }
 };
 

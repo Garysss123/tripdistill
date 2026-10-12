@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T18:33:25.834Z",
+  "generatedAt": "2026-10-12T18:50:24.528Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 823,
+    "assetFileCount": 824,
     "completeSourceCreatorLicenseRecords": 756,
-    "completeProjectOriginalRightsRecords": 34,
-    "licenseClaimsNotIndependentlyVerified": 476,
+    "completeProjectOriginalRightsRecords": 35,
+    "licenseClaimsNotIndependentlyVerified": 473,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 820,
-    "deduplicatedImageCount": 823,
+    "expectedBuildImageCount": 821,
+    "deduplicatedImageCount": 824,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3516,
-    "assetsUsedByScannedEnglishPages": 780,
+    "imageReferencesScanned": 3517,
+    "assetsUsedByScannedEnglishPages": 781,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 610,
+    "assetsWithStructuredSourceRecords": 611,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 210,
+    "assetsVisuallyReviewed": 213,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 289,
-    "metadataOrCreditOnly": 510,
-    "usedAssetsWithoutIndependentSourcePageCheck": 497,
+    "sourcePageChecked": 292,
+    "metadataOrCreditOnly": 508,
+    "usedAssetsWithoutIndependentSourcePageCheck": 495,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 816 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 820 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 817 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 821 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -23258,6 +23258,50 @@
       ]
     },
     {
+      "sha256": "b42fb1ffa8c0af06feb70e13b9398f0f0c344fcd3b459ac5d30abebd5f1eb869",
+      "assetPaths": [
+        "/assets/images/switzerland-country-route-choice.svg"
+      ],
+      "byteLength": 9228,
+      "sourceRecords": [
+        {
+          "sha256": "b42fb1ffa8c0af06feb70e13b9398f0f0c344fcd3b459ac5d30abebd5f1eb869",
+          "assetPath": "/assets/images/switzerland-country-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/switzerland-country-route-choice.svg",
+          "sourceTitle": "Switzerland route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original five-language SVG planning schematic; not a geographic map and not to scale.",
+          "localSha1": "09aa3fca3edbb8fe02732a6483da595081cc7b2d",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/switzerland/"
+          ],
+          "altTexts": [
+            "Conceptual five-language comparison of a Zurich–Lucerne city and lake route, a Lugano–Locarno Ticino route, and a Zurich–Schaffhausen Rhine Falls route; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
       "sha256": "453436e057f1a860e2f724b503dd1096bd10b177aae08d7df9db94c2bbc20d09",
       "assetPaths": [
         "/assets/images/switzerland-geneva-lake-carouge-arve.webp"
@@ -23536,7 +23580,6 @@
             "/switzerland/graubunden-corridors/davos-parsenn/"
           ],
           "altTexts": [
-            "Chur old town and Graubünden mountain landscape",
             "Chur Old Town seen from above, with the urban railway and river edge"
           ],
           "rawVisibleCredits": [
@@ -24061,16 +24104,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Switzerland CH14 Locarno photo review: the exact Commons page describes the Lake Maggiore view from Brione sopra Minusio, identifies Glenn Steiger, and lists GFDL and CC BY 3.0. Local WebP pixels were inspected and match the Locarno/Ascona and lake view. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -24395,16 +24438,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Switzerland CH14 Lugano photo review: the exact Commons page identifies Chris j wood, the SNV Ceresio at Lugano landing stage, and declares CC BY-SA 4.0. Local WebP pixels were inspected and match the ferry at the Lugano lakefront. Visible source credit, linked license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -24731,16 +24774,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Switzerland CH14 Rhine Falls photo review: the exact Commons page identifies “More pics than views…”, records 4 July 2014 and declares CC BY 3.0 with a bot license review. Local WebP pixels were inspected and match the Rhine Falls viewing platform and waterfall. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
