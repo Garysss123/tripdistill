@@ -374,42 +374,164 @@ export const australiaEastClusters = [
     region: 'Queensland',
     band: 'east',
     family: 'surf-to-range',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
     label: 'SURF / LIGHT RAIL / HINTERLAND',
-    tagline: 'Choose an ocean clock or a rainforest clock before crossing between them.',
-    hubIntro: 'The Gold Coast is both a long urban beach corridor and a steep rainforest hinterland. Light rail, surf patrols, mountain roads and World Heritage parks do not share one operating rhythm. These five chapters separate dense beachfront, headland neighborhoods and three distinct upland systems so the day is led by conditions rather than marketing distance.',
-    stay: 'Select a beach corridor base for transit and evening access, or a hinterland base for early trailheads. Repeatedly crossing between them wastes the weather window.',
-    transfer: 'G:link and buses work along the urban strip; Springbrook, Tamborine and Lamington require road or an appropriate operator. Mountain roads need daylight and conservative driving.',
+    tagline: 'Choose a beach station, a southern bus leg, or a separate mountain base.',
+    hubIntro: 'The Gold Coast is not one beach with five nearby add-ons. Its north and central waterfront follows Translink’s L1 corridor; the southern border coast needs a separate bus or road plan, while Springbrook and Lamington require their own hinterland access and weather window. Start with the first useful overnight and the exact station or park entrance, then choose one coastal chapter per day. The schematic separates those planning systems without drawing a map or promising a connection.',
+    stay: 'For a rail-led coast stay, compare Surfers Paradise around Cavill Avenue with Broadbeach around its own L1 stops; choose by the first beach access, venue and late return rather than a suburb label. Burleigh now has an L1 terminus, but a mountain trailhead remains a separate road or operator leg. Use a Coolangatta night when the southern coast or airport timing is the actual purpose. Move to a hinterland base only when an early park start justifies the second check-in.',
+    transfer: 'Translink currently lists L1 between Helensvale and Burleigh Heads, including Surfers Paradise and Broadbeach stations. Continue south of Burleigh only through a date-specific bus or road plan; do not infer a tram to Coolangatta or a last-mile park connection. Enter the exact beach access, stop or park gateway in the journey planner. On 12 October 2026, Translink also listed selected evening replacement buses on the northern L1 section; check live updates again before travel.',
+    diagramAlt: 'Not-to-scale Gold Coast trip-planning schematic separating the Helensvale–Burleigh Heads L1 station spine, a separately planned southern-coast leg to Coolangatta, and independent road or operator access to Springbrook and Lamington; no distances, bearings, transfer or service promise is shown.',
+    diagramCaption: 'TripDistill original planning schematic, not a map or timetable. The solid L1 spine reflects the corridor listed by Translink at the 12 October 2026 review; the dashed southern and hinterland branches are planning choices, not routes or guaranteed services. Verify the exact stop, park gateway, alerts and return on the travel date.',
+    tripShapes: [
+      { title: '3 nights · urban coast', copy: 'Choose one rail-linked base in Surfers Paradise or Broadbeach. Give one day to the chosen beach centre and a confirmed indoor break; use a second day for Burleigh only after checking the exact L1 stop, park entrance and current track status. Keep the third day flexible for weather, a slower beach visit or the return. Do not add Coolangatta and a mountain park as casual day trips from the same base.' },
+      { title: '5 nights · coast in two sections', copy: 'Use a central rail-linked base for Surfers Paradise, Broadbeach and Burleigh, then move south only if Coolangatta is a priority and a current bus or road connection fits. A one-night southern move can protect a very early airport departure, but check luggage, check-in and return logistics before booking two stays. Keep beach swimming conditional on patrol and surf advice.' },
+      { title: '7 nights · one hinterland window', copy: 'Keep the urban coast in one base, select either Springbrook or Lamington for a separate park block, and reserve a buffer night near the coast before departure if the park road or weather could change the return. The seven nights are an editorial planning shape, not a guarantee that every route is open or that both parks fit. Add the second park only by extending the stay and changing base deliberately.' }
+    ],
     sources: [
       ['https://www.australia.com/en/places/gold-coast-and-surrounds/guide-to-the-gold-coast.html', 'Tourism Australia — Gold Coast'],
       ['https://www.destinationgoldcoast.com/', 'Destination Gold Coast — official visitor guide'],
       ['https://translink.com.au/', 'Translink Queensland — Gold Coast services'],
+      ['https://jp.translink.com.au/plan-your-journey/timetables/tram/t/l1', 'Translink — L1 Helensvale / Burleigh Heads tram timetable'],
+      ['https://translink.com.au/updates/1171096', 'Translink — October 2026 evening L1 replacement-bus notice'],
+      ['https://parks.qld.gov.au/parks/burleigh-head', 'Queensland Parks — Burleigh Head National Park visitor information and park alerts'],
+      ['https://beachsafe.org.au/', 'Surf Life Saving Australia — Beachsafe patrol and hazard information'],
+      ['https://www.bom.gov.au/qld/forecasts/gold-coast.shtml', 'Bureau of Meteorology — Gold Coast forecast'],
       ['https://parks.desi.qld.gov.au/parks/springbrook', 'Queensland Parks — Springbrook National Park'],
       ['https://parks.desi.qld.gov.au/parks/lamington', 'Queensland Parks — Lamington National Park']
     ],
     guides: [
       g({
         slug: 'surfers-paradise-broadbeach', name: 'Surfers Paradise & Broadbeach', motif: 'light-rail beach corridor', instrument: 'tramline', imageQuery: 'Surfers Paradise Broadbeach Gold Coast skyline beach', imageAlt: 'Gold Coast skyline and beach near Surfers Paradise',
-        summary: 'A transit-first urban beach day balancing a patrolled swim, one inland venue and a clearly chosen evening stop.',
-        orientation: 'use G:link stations and surf lifesaving flags as parallel navigation systems.', access: 'Arrive by light rail or bus and select the station closest to the actual beach access or venue rather than the suburb name alone.', sequence: 'Walk the sand only within conditions, cool indoors at midday and shift once to Broadbeach or Surfers Paradise for evening.', boundary: 'The beach is a safety-managed public space and the towers contain homes. Swim between flags and keep residential entries outside the nightlife route.',
-        stages: [['Choose the station', 'Match the stop to the beach access, shade and final evening destination.'], ['Read the flags', 'Check patrol, UV, swell and warnings before entering the water.'], ['Use a midday interior', 'Protect the hottest hours with a meal, gallery or booked indoor attraction.'], ['Leave on the tram spine', 'Return through a staffed, lit stop before late dispersal.']],
-        risks: [['Rip currents', 'Swim only between flags and follow lifesavers; a calm-looking gap may be a rip.'], ['UV and heat', 'Use shade, water and sun protection and avoid a full midday sand walk.'], ['Night crowds', 'Plan the station and group meeting point before venues close.']],
-        duration: 'One full day is enough for the two centers when transfers stay on the light-rail spine.', combine: 'Do not add a hinterland park; pair with a short Burleigh visit on another day.', verify: 'Check G:link alerts, Beachsafe conditions, UV, storm warnings, event zones and the late service.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        summary: 'A rail-led urban coast day that chooses the L1 station for the actual beach, venue and return; bathing, heat relief and evening plans stay separate decisions.',
+        decisions: [
+          ['Base', 'Surfers Paradise centers on Cavill Avenue; Broadbeach is a second L1 center. Compare the exact hotel entrance and the stop that serves your first day.'],
+          ['Water', 'Treat a beach walk and a swim as separate choices. Use the live patrol and hazard advice for the exact beach before entering the water.'],
+          ['Evening', 'Pick one close-by meal or venue after the beach. A timed event is a poor fit after an uncertain transfer or a late service change.']
+        ],
+        orientationTitle: 'Choose the stop before the sand.',
+        orientation: 'Surfers Paradise and Broadbeach are two centers on one useful light-rail spine, but their station exits, beach approaches and evening destinations are not interchangeable. Choose one as the day’s anchor. The first decision is not “which beach is best”; it is which public access, patrol point and return stop suit the group on this date.',
+        access: 'Translink currently lists L1 from Helensvale to Burleigh Heads, with Surfers Paradise, Cavill Avenue, Broadbeach North and Broadbeach South among its stations. Use the current planner for the exact station-to-beach walk and any transfer from the airport or accommodation. A station name does not prove that the path is step-free, shaded or the closest entrance to your chosen venue.',
+        sequence: 'Use one morning shoreline, pause indoors through the hottest or wettest part of the day, and move once to the other center only if the service and energy budget still work. Decide whether dinner is in Surfers Paradise or Broadbeach before leaving the beach; keep the return on the same verified transit spine rather than adding a distant reservation.',
+        boundary: 'The sand, surf lifesaving zone, foreshore path and private tower entries are different spaces. Follow local signs, keep clear of patrol operations, respect residents and use only a beach area that current lifeguard advice supports for swimming. If patrol flags are absent, warnings are active or conditions change, make the water activity a no-swim plan rather than treating a crowd or calm surface as permission.',
+        fieldLens: {
+          label: 'A day in two centers',
+          title: 'Do not turn a tram stop into a beach guarantee.',
+          copy: 'The L1 makes a two-center day possible, but it cannot decide the beach access, surf condition, venue opening or last return for you. Keep each decision attached to its own current authority.',
+          notes: [
+            ['Station to entrance', 'Enter the hotel, beach access or venue as the destination in Translink’s planner; do not plan from a suburb label or assume every crossing is accessible.'],
+            ['Beach to water', 'Check Beachsafe, the local flags and the lifesaver before swimming. If the advice or patrol status changes, use the indoor choice and keep the shoreline as a land visit.']
+          ]
+        },
+        stages: [
+          ['Set the anchor', 'Choose Surfers Paradise or Broadbeach by the actual L1 stop, hotel entrance and public beach access. At Cavill Avenue, Broadbeach North or Broadbeach South, confirm the walking leg instead of assuming that the station name is the beach gate.'],
+          ['Make the water decision', 'Read the live Beachsafe information, local flags, wind, swell and UV for the named beach. Swim only where lifesavers direct; otherwise keep the visit to a signed public foreshore and do not follow others into unpatrolled water.'],
+          ['Protect the middle of the day', 'Use a confirmed indoor meal or venue around the chosen center when heat, rain or fatigue makes an exposed walk a poor trade. Move to the second center only if the current L1 service, walking distance and remaining daylight still support it.'],
+          ['Close near a known stop', 'Choose the evening endpoint before leaving the beach and check the live timetable and service notices. If the desired service is changed or the group is tired, stay near the current center and drop the distant event rather than racing across town.']
+        ],
+        risks: [
+          ['Water looks calmer than it is', 'A calm patch, clear day or nearby swimmer does not identify a safe swimming area. Use the exact beach’s current patrol and hazard advice; when the guidance is unclear, keep the visit on land.'],
+          ['The station is not the access path', 'A station may still leave a walk, crossing, stairs or exposure that does not suit the group. Check the exact route and access details before choosing the base or promising a step-free beach day.'],
+          ['An evening plan depends on a service', 'Track works, event crowds and late dispersal can change the return. Keep the dinner or performance flexible, and verify both directions instead of relying on a daytime trip result.']
+        ],
+        duration: 'Treat this as one full coast day, not a stopwatch itinerary. A three-night urban stay can make room for an arrival day, one beach-center day and a separate weather or Burleigh choice; adding Coolangatta or a park requires more travel margin and a changed plan.',
+        combine: 'Pair Surfers Paradise and Broadbeach only when the first beach, midday break and return remain on the L1 spine. Add a short Burleigh visit on a separate day with its own park and beach checks. Do not append Springbrook, Lamington or Coolangatta as though they were nearby stops.',
+        verify: 'Before departure, check Translink’s L1 timetable, trip planner and service updates; the 12 October 2026 review found selected October evening replacement buses north of the beach corridor. Recheck the current notice, Beachsafe patrol and hazards, Bureau of Meteorology warnings and any venue or event conditions.',
+        faq: [
+          ['Which base fits a first urban coast stay?', 'Choose Surfers Paradise when Cavill Avenue, its central beachfront or nearby evening plan is the first priority; choose Broadbeach when its L1 stops and your selected southern venue are the better match. Compare exact entrances, luggage access and late returns rather than treating the neighborhoods as one hotel zone.'],
+          ['Can I swim whenever I visit the beach?', 'No. A beach day can still be a no-swim visit. Use Beachsafe and the local flags or lifesaver advice for the named beach, then change to a land-only plan if patrol or conditions do not support entering the water.'],
+          ['Is the L1 a direct airport or Coolangatta connection?', 'Do not infer either connection from the L1 line. It currently lists Helensvale to Burleigh Heads; use Translink’s trip planner with your actual airport, accommodation or southern-coast endpoint for the travel date.'],
+          ['What is a useful rain or heat alternative?', 'Keep the same base and replace the exposed beach block with a confirmed indoor meal or venue. Avoid building a timed event around a cross-town transfer until both the service and walking connection are checked.']
+        ]
       }),
       g({
         slug: 'burleigh-heads-tallebudgera', name: 'Burleigh Heads & Tallebudgera', motif: 'headland and creek edge', instrument: 'headland', imageQuery: 'Burleigh Head National Park Tallebudgera Creek', imageAlt: 'Burleigh Head and the coast beside Tallebudgera Creek',
-        summary: 'A headland walk and beach-creek comparison where park track, surf, current and parking pressure are evaluated separately.',
-        orientation: 'use Burleigh Head as the boundary between the ocean beach, national-park tracks and Tallebudgera Creek.', access: 'Arrive early by bus or legal parking and note the return stop before crossing the headland.', sequence: 'Walk an open headland circuit, choose either patrolled ocean swimming or a safe creek edge and leave before parking and heat peak.', boundary: 'Stay on national-park tracks, protect vegetation and cultural places, and do not assume sheltered water is free from current or boat traffic.',
-        stages: [['Read both water bodies', 'Compare surf patrol and creek conditions before selecting any swim.'], ['Take the open circuit', 'Choose the signed track that matches weather, stairs and ability.'], ['Pause away from access lanes', 'Use a formal picnic or beach zone without blocking lifesaving or boat movement.'], ['Return before congestion', 'Reach the bus stop or vehicle while daylight and legal access remain simple.']],
-        risks: [['Track closure', 'Storm, erosion or maintenance can close one headland route; obey signs.'], ['Water current', 'Creek and ocean hazards differ; follow local warnings for the chosen side.'], ['Parking pressure', 'Illegal parking and rushed roadside crossings create avoidable risk.']],
-        duration: 'Allow four to six hours for a walk, swim and meal without rushing.', combine: 'Pair with one southern beach district, not a mountain park.', verify: 'Check park alerts, beach patrol, creek warnings, bus service, parking controls and UV.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        summary: 'A Burleigh Head track-and-water decision: use the current L1 terminus, choose an open formed track, then decide separately whether ocean or creek conditions support water time.',
+        decisions: [
+          ['Gateway', 'The L1 now lists Burleigh Heads. Choose the park’s northern or southern entrance in the planner; a station destination is not the same as the exact trailhead.'],
+          ['Track', 'Queensland Parks lists wheelchair-assisted access on Oceanview and no wheelchair access on the other park tracks. Check the current map, closure signs and the group’s needs.'],
+          ['Water', 'Burleigh’s surf beach and Tallebudgera Creek have different exposures. Treat each as a separate, current Beachsafe and local-signage decision.']
+        ],
+        orientationTitle: 'A headland is a gate, not a shortcut.',
+        orientation: 'Burleigh Head divides an urban beach, a protected rocky headland and the Tallebudgera Creek edge. Those spaces need different access and water checks. The park is an excursion in its own right; a creek stop is an optional second chapter only if the transport, ability and live conditions still fit.',
+        access: 'Translink lists the L1 terminus at Burleigh Heads, but use the exact Queensland Parks entrance or trailhead as the journey destination and confirm the last walking leg. The park’s northern access is via Goodwin Terrace and its southern access is near Tallebudgera Creek. Queensland Parks says Echo Beach access is by designated stairs; Oceanview offers wheelchair-assisted access, while the other tracks are not wheelchair-accessible. Check park alerts and the current map before setting out.',
+        sequence: 'Arrive with water, sun cover and a return plan. Read the park alerts and trail map before choosing a north-to-south or short out-and-back section. Walk only formed open paths in daylight, then finish at the planned entrance or station. Add the creek or a patrolled beach only after the walk, access route and separate water conditions have all been resolved.',
+        boundary: 'Burleigh Head National Park has cultural significance to Traditional Owners and protects rainforest, foreshore and wildlife. Follow the park’s cultural interpretation and signs without treating unmarked places as visitor access. Keep to formed trails: the cliff-line boulder fields, including Cannon Rock, and steep slopes below Oceanview are restricted. Do not scramble over rocks, enter an unpatrolled water area or let a scenic photograph outrank a closure sign.',
+        fieldLens: {
+          label: 'The track is the itinerary hinge',
+          title: 'A closed section is not a beach shortcut.',
+          copy: 'Queensland Parks warns that a high-risk portion of Oceanview can close during conditions such as high wind, heavy rain, low temperature or fire. Check the live alert and signs; if a loop no longer works, end the park walk rather than inventing a route around the headland.',
+          notes: [
+            ['Ability and surface', 'Use the official map and access page to match track grade, stairs and assistance to the person walking. Do not describe a track as step-free when the authority does not.'],
+            ['Water is a separate choice', 'A sheltered-looking creek edge is not a safety guarantee. Check the exact beach or water advice and follow patrol instructions before entering.']
+          ]
+        },
+        stages: [
+          ['Choose the entrance', 'Set either the Goodwin Terrace northern access or the southern entrance near Tallebudgera Creek as the exact destination. If arriving on L1, check the remaining walk and return stop before leaving the station; if driving, verify the route and legal parking rather than improvising roadside access.'],
+          ['Read the park before walking', 'Open Queensland Parks’ Burleigh Head alerts, map and current safety guidance. Select an open formed track that fits the group, daylight and ability. If a boulder-fall warning or closure affects the desired section, remove that leg from the plan.'],
+          ['Keep the headland on the track', 'Walk the chosen Oceanview or rainforest section without entering the restricted boulder fields, scrambling below the track or using Echo Beach stairs unless they are the planned access. Stop at the declared turning point and keep enough energy for the same entrance or an already checked exit.'],
+          ['Decide on water after the walk', 'Compare the ocean beach and Tallebudgera Creek as separate destinations. Use Beachsafe and local signs or patrol advice for the exact area; if the condition, access, current or boat movement is unsuitable, finish with a land-side meal and the planned transit return.']
+        ],
+        risks: [
+          ['Weather closes the route', 'Queensland Parks identifies a high-risk Oceanview section that can close for conditions including high wind, heavy rain, low temperature or fire. Confirm the live notice and obey signs; do not continue through restricted ground to preserve a loop.'],
+          ['A creek is not a sheltered promise', 'Creek, ocean surf and headland rocks present different hazards. Check current local guidance for the selected water entry and do not substitute a scenic view for a patrol or safe access point.'],
+          ['The last mile is easy to misread', 'An L1 station, park entrance and beach are separate nodes. Enter the exact entrance in the trip planner and preserve daylight and return margin; a named suburb does not confirm parking, accessible paths or service frequency.']
+        ],
+        duration: 'For an editorial day plan, allow a substantial half-day for one park section, pauses and the return, then add a separate water or meal block only if conditions permit. One nearby night helps an early start; use a central rail base if this is one day among several coast chapters.',
+        combine: 'Pair the headland with one Burleigh town or creek choice, not Springbrook or Lamington. The mountain parks need a separate road or operator plan and a different weather decision. If the track closes, a short public foreshore visit is a complete substitute; the closed trail is not an invitation to cross the headland rocks.',
+        verify: 'Check Queensland Parks’ Burleigh Head alerts, the map and access guidance; Translink’s current L1 plan and service notices; Beachsafe for the selected beach; and BOM warnings. The park source showed no alert on the 12 October 2026 review, but that snapshot is not a future opening guarantee.',
+        faq: [
+          ['Does the L1 reach Burleigh Heads?', 'Translink’s current L1 timetable lists Burleigh Heads station as its southern endpoint. Use the date-specific planner from that stop to the park entrance you intend to use; the station and trailhead are not interchangeable.'],
+          ['Is the headland track wheelchair-accessible?', 'Queensland Parks describes wheelchair-assisted access on Oceanview and says its other park tracks are not wheelchair-accessible. Check the current track map and support requirements with the park authority before planning around a particular section.'],
+          ['Can I always complete an Oceanview circuit?', 'No. The authority warns that a higher-risk part can close in certain weather and fire conditions and may have live closures. Follow the alert and signs; shorten the visit or stay outside the closed area instead of seeking a rock or shoreline bypass.'],
+          ['Should I swim at the creek after the walk?', 'Only if the exact access point and current local advice support it. Creek and surf risks differ; consult Beachsafe and signs or lifesavers, and make a land-only visit when conditions or access are unclear.']
+        ]
       }),
       g({
         slug: 'coolangatta-snapper-rocks', name: 'Coolangatta & Snapper Rocks', motif: 'border coast and surf watch', instrument: 'surf-log', imageQuery: 'Snapper Rocks Coolangatta Queensland surf coast', imageAlt: 'Snapper Rocks and the Coolangatta coastline',
-        summary: 'A southern Gold Coast chapter for headland views, surf culture and the Queensland–New South Wales border without promising safe water.',
-        orientation: 'use Point Danger as the land marker and distinguish lookout, surf break and patrolled swimming beach.', access: 'Reach Coolangatta by bus or a planned transfer from the airport or light-rail terminus; do not assume the urban rail reaches the border.', sequence: 'Start at the headland in moderate weather, observe surf from land, swim only at a patrolled beach and return before the long corridor congests.', boundary: 'Expert surf breaks are not visitor swimming zones. Respect competitors, lifesavers, cultural interpretation and residential streets.',
-        stages: [['Set the border bearings', 'Use Point Danger to understand coast direction and the separate transport systems north and south.'], ['Observe the break', 'Watch from a safe formal viewpoint without entering rocks or active competition space.'], ['Choose a patrolled beach', 'Follow flags and lifesaver advice rather than copying experienced surfers.'], ['Protect the corridor return', 'Leave enough bus or road time for the airport, hotel or northern base.']],
-        risks: [['Powerful surf', 'Snapper Rocks and nearby breaks can be hazardous; swim only where patrols direct.'], ['Rock platforms', 'Swell can wash across seemingly dry rocks. Stay on public paths.'], ['Border transport', 'Service patterns and time zones can differ seasonally; confirm the actual route and clock.']],
-        duration: 'A relaxed half day suits the headland and one beach; use a full day for a southern-coast sequence.', combine: 'Pair with Burleigh on a dedicated coast day, not Springbrook.', verify: 'Check Beachsafe, event or competition closures, bus status, weather and any time-zone implications.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        summary: 'A southern coast day that separates Point Danger’s land views, Snapper Rocks’ surf and a patrolled beach, with a dedicated bus or road return beyond the L1 terminus.',
+        decisions: [
+          ['Base', 'Stay north for a rail-led Surfers/Broadbeach trip; choose Coolangatta for the border coast or airport timing, after checking the exact terminal-to-hotel leg.'],
+          ['Surf or swim', 'Watch Snapper Rocks from a formal public viewpoint. Choose any swim only from a beach with current patrol advice and flags.'],
+          ['Return', 'Plan a date-specific bus or road leg: Translink lists Burleigh Heads, not Coolangatta, as the L1 endpoint.']
+        ],
+        orientationTitle: 'Watch the break; choose the water elsewhere.',
+        orientation: 'At the southern end, Point Danger is the land reference, Snapper Rocks is a surf setting and a patrolled beach is a separate swimming decision. Treating those as one attraction invites an unsafe shortcut. This guide builds a land-first sequence and lets the visitor choose whether current conditions support any water time.',
+        access: 'The current Translink L1 list ends at Burleigh Heads, so Coolangatta needs a separate date-specific bus, road or airport-to-hotel plan. Enter Point Danger, Snapper Rocks, the chosen beach and the actual Gold Coast Airport terminal separately in the planner; a suburb name is not a confirmed stop or a through service. Check the Queensland–New South Wales time difference when an itinerary crosses into Tweed Heads during New South Wales daylight saving.',
+        sequence: 'Use Point Danger to orient on land, then choose either a signed open coastal path segment or one named beach area. Watch the surf from a formal viewpoint and do not scramble across rock shelves. If the beach patrol and conditions permit, add a swim at a designated patrolled area; otherwise keep the whole visit land-based and finish near the bus or road return you checked.',
+        boundary: 'Snapper Rocks is a surf break, not a visitor swimming instruction. Give surfers, lifesavers and any event operation room; obey barriers, coastal signs and local cultural interpretation. A dry rock platform can still be reached by swell. Stay on formed paths and do not enter the water because another person appears confident.',
+        fieldLens: {
+          label: 'A border coast has two clocks',
+          title: 'Make the transport day part of the route.',
+          copy: 'The southern coast can feel close on a map while its bus or road leg changes the shape of a city day. Add the airport, hotel and any cross-border destination as actual planner endpoints before fixing a meal or departure.',
+          notes: [
+            ['L1 limit', 'Translink’s current line listing runs Helensvale to Burleigh Heads. Plan the leg beyond Burleigh separately and verify the return in the same search.'],
+            ['State time', 'Queensland and New South Wales do not always share the same clock. If crossing into Tweed Heads during NSW daylight saving, check local times for every connection and booking.']
+          ]
+        },
+        stages: [
+          ['Name the southern endpoint', 'Start with your real base, the Gold Coast Airport terminal or the actual northern transfer, then enter Point Danger and the chosen return stop in Translink’s planner. The L1 line ends at Burleigh Heads in the current listing; do not leave the southern leg as “nearby.”'],
+          ['Orient at Point Danger', 'Use the public headland outlook as a land-based read of the coastline. Check weather and any local signs before taking a signed path, and leave time to return by the same verified access if wind, rain or visibility changes.'],
+          ['Choose one coast section', 'Watch Snapper Rocks from a formal public viewing point, then decide whether a marked path to Rainbow Bay or Greenmount fits the group. Do not step onto boulder shelves or enter the surf break; select a patrolled swimming beach only if the current flags and lifesaver advice support it.'],
+          ['Close before the transfer', 'Finish near the stop or parking location already chosen and recheck service updates. If the group swims, attends a competition or crosses into Tweed Heads, protect the return and account for local time before booking a second activity.']
+        ],
+        risks: [
+          ['Surf mistaken for a swimming beach', 'A famous break and experienced surfers are not evidence that the water is safe for visitors. Use Beachsafe and local patrol instructions for the exact beach; make the visit land-only whenever guidance is absent or unsuitable.'],
+          ['Swell reaches the rocks', 'Rock shelves and cliff edges can be exposed to sudden wash even when they look dry. Remain behind barriers on formed paths and do not use a wave-washed platform as a viewpoint.'],
+          ['The return crosses a state line or service gap', 'The L1 endpoint is north of Coolangatta, and NSW may observe daylight saving while Queensland does not. Verify each bus, drive, airport leg and clock for the date; leave margin instead of assuming a seamless connection.']
+        ],
+        duration: 'Use a half day for Point Danger and one selected coast section only when both the outward and return legs fit. A full day is more realistic for a beach stop, meal or airport-area stay. An overnight near Coolangatta is useful when the southern coast is the main purpose; otherwise avoid a hurried border excursion between rail-led city days.',
+        combine: 'Pair Coolangatta with Burleigh only as a dedicated southern-coast day after checking the L1-to-bus or road handoff. Do not add Springbrook or Lamington; their mountain access and weather checks require a separate base and daylight plan.',
+        verify: 'Check Translink’s planner and service updates for the Burleigh-to-Coolangatta leg, Beachsafe patrol and hazards, the Bureau of Meteorology’s local forecast, any event or competition notices, parking restrictions and local time if crossing into New South Wales.',
+        faq: [
+          ['Does the tram reach Snapper Rocks?', 'Translink currently lists L1 from Helensvale to Burleigh Heads. It does not show a through tram to Coolangatta, so plan and confirm the southern bus, road or airport connection separately.'],
+          ['Can I swim at Snapper Rocks?', 'This guide treats Snapper as a surf-viewing location, not a swimming recommendation. Check the chosen beach on Beachsafe and follow the local flags and lifesaver advice; if conditions do not support swimming, remain on land.'],
+          ['How long should I stay?', 'A half day can suit a headland view and one coast section if the return service fits. Use a full day or a nearby overnight when adding an airport transfer, meal or multiple beach areas; keep the trip shape conditional on current transport and weather.'],
+          ['Do I need to change my watch near Tweed Heads?', 'When New South Wales observes daylight saving, it may be one hour ahead of Queensland. If crossing the border, check the local time shown for every bus, booking or flight rather than relying on a single zone.']
+        ]
       }),
       g({
         slug: 'springbrook-national-park', name: 'Springbrook National Park', motif: 'plateau waterfall circuit', instrument: 'rain-gauge', imageQuery: 'Springbrook National Park waterfall Queensland', imageAlt: 'Rainforest waterfall in Springbrook National Park',

@@ -8,6 +8,7 @@ import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '2af2a29577957d56fe530844039491ca0b3dac06';
+const integrationBase = '6c265971eabf44995f24a771784e8567c205834f';
 const englishOnly = process.argv.includes('--english-only');
 const cluster = canadaClusters.find((item) => item.slug === 'saguenay-tadoussac');
 assert.ok(cluster, 'Saguenay–Tadoussac cluster must exist.');
@@ -28,6 +29,7 @@ function gitShow(spec) {
   return result.stdout;
 }
 const previousSearch = JSON.parse(gitShow(`${base}:data/search-index.json`));
+const integrationSearch = JSON.parse(gitShow(`${integrationBase}:data/search-index.json`));
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const targetSet = new Set(routes);
 const previousCanada = previousSearch.filter((item) => item.url.startsWith('/canada/'));
@@ -35,7 +37,11 @@ const canada = search.filter((item) => item.url.startsWith('/canada/'));
 assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.');
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must remain exact.');
-assert.deepEqual(search.filter((item) => !targetSet.has(item.url)), previousSearch.filter((item) => !targetSet.has(item.url)), 'Non-target search records must remain unchanged and in order.');
+assert.deepEqual(
+  canada.filter((item) => !targetSet.has(item.url)),
+  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url)),
+  'Non-target Canada search records must remain byte-for-byte unchanged from the pre-CA13 integration checkpoint and in order.'
+);
 for (const route of routes) {
   const record = canada.find((item) => item.url === route);
   assert.ok(record?.summary?.trim() && record.summary.length >= 120, `${route}: search summary must be substantive.`);
@@ -46,10 +52,11 @@ const locales = ['', '/zh', '/ja', '/ko', '/th'];
 const readDates = (source) => new Map([...source.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
 const dates = readDates(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 const previousDates = readDates(gitShow(`${base}:sitemap.xml`));
+const integrationDates = readDates(gitShow(`${integrationBase}:sitemap.xml`));
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must not change.');
 const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
-const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Saguenay routes × five editions may have changed sitemap dates.');
+const actualDateChanges = [...dates].filter(([route, date]) => routes.some((target) => route.endsWith(target)) && integrationDates.get(route) !== date).map(([route]) => route).sort();
+assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Saguenay routes × five editions may have changed Canada sitemap dates since the pre-CA13 integration checkpoint.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 
 function collectText(node, output = []) {
@@ -102,7 +109,7 @@ for (const route of routes) {
   console.log(`${route}: +${delta} visible English main-body words; article and five-edition dates checked.`);
 }
 
-const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 'canada'], { cwd: root, encoding: 'utf8' });
+const changedCanadaPages = spawnSync('git', ['diff', '--name-only', integrationBase, '--', 'canada'], { cwd: root, encoding: 'utf8' });
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),

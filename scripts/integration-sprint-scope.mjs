@@ -36,7 +36,11 @@ export const integrationRouteGroups = Object.freeze({
     '/australia/great-ocean-road-gariwerd/',
     '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
     '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
-    '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
+    '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/',
+    '/australia/gold-coast-scenic-rim/',
+    '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
+    '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
+    '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
   ]),
   france: Object.freeze([
     '/france/',

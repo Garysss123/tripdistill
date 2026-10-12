@@ -1446,6 +1446,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:2016-10_S
   detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies 0x010C and declares CC BY-SA 4.0. The local WebP pixels show Chicoutimi waterfront lights reflected on the Saguenay River at night. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
   checkedOn: '2026-10-12'
 });
+for (const assetPath of [
+  '/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp',
+  '/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp',
+  '/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Surfers_Paradise_Beach_with_skyline.jpg', 'Gold Coast photo review: the exact Commons page identifies Bernard Spragg. NZ from Christchurch, New Zealand and declares a CC0 1.0 dedication. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Surfers Paradise beach, surf and skyline, matching the route image and alt. The visible credit links the source and license and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.'],
+  ['https://commons.wikimedia.org/wiki/File:Burleigh_Heads_and_Tallebudgera_Creek_2.JPG', 'Gold Coast photo review: the exact Commons page identifies Shiftchange and declares the photograph public domain. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Tallebudgera Creek shoreline and nearby beach, matching the route image and alt. The visible credit links the source and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.'],
+  ['https://commons.wikimedia.org/wiki/File:Snapper_Rocks,_Coolangatta,_Gold_Coast,_Queensland_03.jpg', 'Gold Coast photo review: the exact Commons page identifies Kgbo and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Snapper Rocks surf breaking across the rocky coast, matching the route image and alt. The visible credit links the source and versioned license, discloses resize, display crop and WebP conversion, and keeps the adaptation under CC BY-SA 4.0. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-12' });
+}
 const entries = [];
 const sourceConflicts = [];
 const unmatchedByAsset = [];

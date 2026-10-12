@@ -31,6 +31,13 @@ const blueMountainsDiagramAssetPath = '/assets/images/australia-blue-mountains-w
 const blueMountainsDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-blue-mountains-western-line-planning.svg';
 const greatOceanDiagramAssetPath = '/assets/images/australia-great-ocean-road-route-schematic.svg';
 const greatOceanDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-great-ocean-road-route-schematic.svg';
+const goldCoastDiagramAssetPath = '/assets/images/australia-gold-coast-coast-to-range-planning.svg';
+const goldCoastDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-gold-coast-coast-to-range-planning.svg';
+const goldCoastPhotoChecks = [
+  { assetPath: '/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Surfers_Paradise_Beach_with_skyline.jpg', creator: 'Bernard Spragg. NZ from Christchurch, New Zealand', license: 'CC0', subject: /Surfers Paradise beach, surf and skyline/i },
+  { assetPath: '/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Burleigh_Heads_and_Tallebudgera_Creek_2.JPG', creator: 'Shiftchange', license: 'Public domain', subject: /Tallebudgera Creek shoreline and nearby beach/i },
+  { assetPath: '/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Snapper_Rocks,_Coolangatta,_Gold_Coast,_Queensland_03.jpg', creator: 'Kgbo', license: 'CC BY-SA 4.0', subject: /Snapper Rocks surf breaking across the rocky coast/i }
+];
 const graubuendenDiagramAssetPath = '/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
 const graubuendenDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
 const frenchAlpsDiagramAssetPath = '/assets/images/france-grenoble-bastille-route-sequence.svg';
@@ -112,6 +119,25 @@ assert.equal(checkedInYongduam.sourceTitle, '용두암.jpg');
 assert.equal(checkedInYongduam.creator, 'Ahn Beom-jin');
 assert.equal(checkedInYongduam.license, 'CC BY-SA 4.0');
 assert.ok(checkedInYongduam.editHistory.includes('no further per-image edit details'));
+const checkedInGoldCoastDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === goldCoastDiagramAssetPath);
+assert.ok(checkedInGoldCoastDiagram, 'checked-in inventory must include the original Gold Coast planning schematic');
+assert.equal(checkedInGoldCoastDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInGoldCoastDiagram.sourceUrl, goldCoastDiagramSourceUrl);
+assert.equal(checkedInGoldCoastDiagram.license, null);
+assert.equal(checkedInGoldCoastDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInGoldCoastDiagram.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInGoldCoastDiagram.commercialReuseEligibility, 'unknown');
+for (const expected of goldCoastPhotoChecks) {
+  const record = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+  assert.ok(record, `checked-in inventory must include Gold Coast photo ${expected.assetPath}`);
+  assert.equal(record.sourceUrl, expected.sourceUrl);
+  assert.equal(record.creator, expected.creator);
+  assert.equal(record.license, expected.license);
+  assert.equal(record.verificationStatus, 'source_page_checked');
+  assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(record.verificationDetail, expected.subject);
+  assert.match(record.verificationDetail, /no independent rights clearance is claimed/i);
+}
 const checkedInNewfoundlandDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-newfoundland-regions.svg');
 assert.ok(checkedInNewfoundlandDiagram, 'checked-in inventory must include the Newfoundland planning diagram');
 assert.equal(checkedInNewfoundlandDiagram.assetType, 'original-planning-diagram');
@@ -520,9 +546,9 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the merged inventory counts metadata-only original diagrams separately from source-page-checked photos; unresolved photo claims remain unverified');
-  assert.equal(report.counts.sourcePageChecked, 286, 'the merged inventory retains exact source-page checks including the three Saguenay photos');
-  assert.equal(report.counts.assetsVisuallyReviewed, 207, 'the merged inventory includes the recorded Saguenay photo checks alongside prior photo reviews and SVG checks');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 497, 'the merged inventory counts metadata-only original diagrams separately from source-page-checked Canada and Gold Coast photos; unresolved photo claims remain unverified');
+  assert.equal(report.counts.sourcePageChecked, 289, 'the merged inventory retains exact source-page checks including the three Saguenay and three Gold Coast photos');
+  assert.equal(report.counts.assetsVisuallyReviewed, 210, 'the merged inventory includes recorded Saguenay and Gold Coast photo checks alongside prior photo reviews and SVG checks');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -891,8 +917,8 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 33, 'the merged inventory counts project-original artwork including the Saguenay schematic');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 479, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 34, 'the merged inventory counts project-original artwork including the Saguenay and Gold Coast schematics');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 476, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -1031,7 +1057,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 819, 'the Saguenay schematic is included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 820, 'the Saguenay and Gold Coast schematics are included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
