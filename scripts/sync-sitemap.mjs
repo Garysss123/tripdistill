@@ -74,6 +74,14 @@ const malaysiaKuchingRoutes = [
   '/malaysia/kuching-bako/semenggoh-wildlife-centre/',
   '/malaysia/kuching-bako/bako-national-park/'
 ];
+const malaysiaSempornaLastmod = '2026-10-12';
+const malaysiaSempornaRoutes = [
+  '/malaysia/semporna-tun-sakaran/',
+  '/malaysia/semporna-tun-sakaran/semporna-jetty-operator/',
+  '/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/',
+  '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
+  '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -832,6 +840,11 @@ for (const route of malaysiaKuchingRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Kuching route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaKuchingLastmod });
+}
+for (const route of malaysiaSempornaRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Semporna route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaSempornaLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);

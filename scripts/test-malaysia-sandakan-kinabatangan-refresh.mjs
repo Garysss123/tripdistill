@@ -24,6 +24,13 @@ const kuchingRoutes = [
   '/malaysia/kuching-bako/semenggoh-wildlife-centre/',
   '/malaysia/kuching-bako/bako-national-park/'
 ];
+const sempornaRoutes = [
+  '/malaysia/semporna-tun-sakaran/',
+  '/malaysia/semporna-tun-sakaran/semporna-jetty-operator/',
+  '/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/',
+  '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
+  '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
+];
 const locales = [
   { prefix: '', date: 'Editorial review: 12 October 2026', hubDate: 'Editorial review: 12 October 2026' },
   { prefix: '/zh', date: '編輯審閱：2026 年 10 月 12 日', hubDate: '編輯檢視：2026 年 10 月 12 日' },
@@ -91,8 +98,9 @@ const baselineSitemap = new Map([...baselineSitemapRaw.matchAll(/<url><loc>https
 assert.deepEqual(new Set(sitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URLs');
 const expectedTargets = new Set(locales.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
 const currentSiblingTargets = new Set(locales.flatMap(({ prefix }) => kuchingRoutes.map((route) => `${prefix}${route}`)));
+const nextSiblingTargets = new Set(locales.flatMap(({ prefix }) => sempornaRoutes.map((route) => `${prefix}${route}`)));
 const actualDateChanges = [...sitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.deepEqual(new Set(actualDateChanges), new Set([...expectedTargets, ...currentSiblingTargets]), 'only the original Sandakan batch and the separately reviewed current Kuching batch receive a new lastmod');
+assert.deepEqual(new Set(actualDateChanges), new Set([...expectedTargets, ...currentSiblingTargets, ...nextSiblingTargets]), 'only the separately reviewed Sandakan, Kuching and Semporna batches receive new lastmod values');
 for (const url of expectedTargets) assert.equal(sitemap.get(url), reviewedDate, `${url}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:data/search-index.json`], { encoding: 'utf8' }));
@@ -101,7 +109,7 @@ const baselineSearchByUrl = new Map(baseSearch.map((record) => [record.url, reco
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baselineSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchUrls = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchUrls), new Set([...selectedRoutes, ...kuchingRoutes]), 'only the original Sandakan batch and the separately reviewed current Kuching English search records changed');
+assert.deepEqual(new Set(changedSearchUrls), new Set([...selectedRoutes, ...kuchingRoutes, ...sempornaRoutes]), 'only the separately reviewed Sandakan, Kuching and Semporna English search records changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five selected English search records exist');
 
 const imageBySource = new Map();

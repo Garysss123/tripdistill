@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T05:37:08.188Z",
+  "generatedAt": "2026-10-12T07:01:29.883Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 797,
+    "assetFileCount": 799,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 8,
-    "licenseClaimsNotIndependentlyVerified": 511,
+    "completeProjectOriginalRightsRecords": 10,
+    "licenseClaimsNotIndependentlyVerified": 508,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 800,
-    "deduplicatedImageCount": 797,
+    "expectedBuildImageCount": 802,
+    "deduplicatedImageCount": 799,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3518,
-    "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 29,
-    "assetsWithStructuredSourceRecords": 584,
+    "imageReferencesScanned": 3510,
+    "assetsUsedByScannedEnglishPages": 769,
+    "unusedAssetCount": 30,
+    "assetsWithStructuredSourceRecords": 586,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 173,
+    "assetsVisuallyReviewed": 176,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 254,
-    "metadataOrCreditOnly": 519,
-    "usedAssetsWithoutIndependentSourcePageCheck": 515,
+    "sourcePageChecked": 257,
+    "metadataOrCreditOnly": 518,
+    "usedAssetsWithoutIndependentSourcePageCheck": 514,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 796 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 800 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 798 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 802 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -19451,8 +19451,8 @@
           "assetPath": "/assets/images/malaysia-bako.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bako_National_Park,_Kuching,_Sarawak,_Malaysia_03.jpg",
-          "sourceTitle": "Bako National Park sandstone coast",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Bako National Park, Kuching, Sarawak, Malaysia 03.jpg",
+          "sourcePhotoDate": "2023-09-01",
           "creditLabel": "Bako National Park sandstone coast",
           "creator": "Borneo mobilegrapher",
           "license": "CC BY-SA 4.0",
@@ -19464,7 +19464,7 @@
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "localSha1": "8ea21691950d09579369b59447d5e2a90d7375c5",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -19501,8 +19501,8 @@
           "assetPath": "/assets/images/malaysia-borneo-cultures-museum.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luar_Muzium_Budaya_Borneo,_Kuching.jpg",
-          "sourceTitle": "Borneo Cultures Museum exterior",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Luar Muzium Budaya Borneo, Kuching.jpg",
+          "sourcePhotoDate": "2025-07-01",
           "creditLabel": "Borneo Cultures Museum exterior",
           "creator": "Rruunnaa",
           "license": "CC BY 4.0",
@@ -19514,7 +19514,7 @@
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, center-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "localSha1": "e617de4836b14d2aae09b87cf4b718d949f88341",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -19530,7 +19530,7 @@
             "/malaysia/kuching-bako/semenggoh-wildlife-centre/"
           ],
           "altTexts": [
-            "Curved exterior of the Borneo Cultures Museum in Kuching"
+            "Curved exterior facade of the Borneo Cultures Museum in Kuching"
           ],
           "rawVisibleCredits": [
             "Borneo Cultures Museum exterior — Rruunnaa, CC BY 4.0. Resized, center-cropped and converted to WebP; no other material edits."
@@ -20451,8 +20451,8 @@
           "assetPath": "/assets/images/malaysia-kuching-waterfront.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Kuching_waterfront_from_Fort_Margherita.jpg",
-          "sourceTitle": "Kuching Waterfront from Fort Margherita",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:View of Kuching waterfront from Fort Margherita.jpg",
+          "sourcePhotoDate": "2022-07-30",
           "creditLabel": "Kuching Waterfront from Fort Margherita",
           "creator": "Cerevisae",
           "license": "CC BY-SA 4.0",
@@ -20463,8 +20463,8 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 4.0.",
+          "localSha1": "21208fd63660dd9e35a2a14c4f43bdaaf64c49cf",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -20483,7 +20483,7 @@
             "Kuching Waterfront, Sarawak River and city skyline seen from Fort Margherita"
           ],
           "rawVisibleCredits": [
-            "Kuching Waterfront from Fort Margherita — Cerevisae, CC BY-SA 4.0. Resized, center-cropped and converted to WebP; no other material edits."
+            "Kuching Waterfront from Fort Margherita — Cerevisae, CC BY-SA 4.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 4.0."
           ]
         }
       ]
@@ -21480,8 +21480,8 @@
           "assetPath": "/assets/images/malaysia-semenggoh-orangutan.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orangutan-semenggoh.jpg",
-          "sourceTitle": "Orangutan at Semenggoh Wildlife Centre",
-          "sourcePhotoDate": null,
+          "sourceTitle": "File:Orangutan-semenggoh.jpg",
+          "sourcePhotoDate": "2025-07-05",
           "creditLabel": "Orangutan at Semenggoh Wildlife Centre",
           "creator": "DIONYSIUS IVANDER",
           "license": "CC BY-SA 4.0",
@@ -21492,8 +21492,8 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 4.0.",
+          "localSha1": "3583fb8fbb799d097bcd07ca31f5131f4a715a69",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -21512,7 +21512,7 @@
             "Orangutan resting in a tree at Semenggoh Wildlife Centre"
           ],
           "rawVisibleCredits": [
-            "Orangutan at Semenggoh Wildlife Centre — DIONYSIUS IVANDER, CC BY-SA 4.0. Resized, center-cropped and converted to WebP; no other material edits."
+            "Orangutan at Semenggoh Wildlife Centre — DIONYSIUS IVANDER, CC BY-SA 4.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 4.0."
           ]
         }
       ]
@@ -21529,7 +21529,7 @@
           "assetPath": "/assets/images/malaysia-semporna-water-taxi.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Semporna_Sabah_Water-taxi-01.jpg",
-          "sourceTitle": "Semporna water taxi",
+          "sourceTitle": "File:Semporna Sabah Water-taxi-01.jpg",
           "sourcePhotoDate": null,
           "creditLabel": "Semporna water taxi",
           "creator": "CEphoto, Uwe Aranas",
@@ -21539,30 +21539,27 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "editHistory": "Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0.",
+          "localSha1": "40b0ffa7e7c6e111e094c121196f7797f59f1c26",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 6,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Semporna photo review: the exact Commons page identifies CEphoto, Uwe Aranas and declares CC BY-SA 3.0. Local WebP pixels show a small Semporna water taxi with passengers, matching the credited image; the picture does not establish a public route, current operator or timetable. The visible credit links the exact source and declared license. This records the page statement, not independent rights or uploader-authority clearance.",
+          "useCount": 3,
           "routes": [
             "/malaysia/semporna-tun-sakaran/",
             "/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/",
-            "/malaysia/semporna-tun-sakaran/mabul-kapalai/",
-            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/",
-            "/malaysia/semporna-tun-sakaran/sipadan-permit-day/"
+            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/"
           ],
           "altTexts": [
-            "Passenger water taxi operating from Semporna",
-            "Local family traveling by water taxi across Semporna waters"
+            "A small Semporna water taxi with passengers aboard; the photograph does not identify a public route or current operator"
           ],
           "rawVisibleCredits": [
-            "Semporna water taxi — CEphoto, Uwe Aranas, CC BY-SA 3.0."
+            "Semporna water taxi — CEphoto, Uwe Aranas, CC BY-SA 3.0. Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0."
           ]
         }
       ]
@@ -21579,7 +21576,7 @@
           "assetPath": "/assets/images/malaysia-semporna.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buhey_Dulang,Semporna,_Sabah.jpg",
-          "sourceTitle": "Bohey Dulang and Tun Sakaran lagoon",
+          "sourceTitle": "File:Buhey Dulang,Semporna, Sabah.jpg",
           "sourcePhotoDate": null,
           "creditLabel": "Bohey Dulang near Semporna",
           "creator": "Redzuan Bohari",
@@ -21589,28 +21586,25 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "localSha1": "9dc40d9185466dd970c3d694d0b5efbf8435e807",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 7,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Semporna photo review: the exact Commons page identifies Redzuan Bohari and declares CC BY-SA 4.0. Local WebP pixels show the Bohey Dulang ridge above the turquoise Tun Sakaran lagoon, matching the route subject and alt. The visible credit links the exact source and declared license. This records the page statement, not independent rights or uploader-authority clearance.",
+          "useCount": 5,
           "routes": [
             "/malaysia/",
             "/malaysia/semporna-tun-sakaran/",
             "/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/",
-            "/malaysia/semporna-tun-sakaran/mabul-kapalai/",
-            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/",
-            "/malaysia/semporna-tun-sakaran/sipadan-permit-day/"
+            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/"
           ],
           "altTexts": [
             "Turquoise channels and steep green islands viewed above Semporna",
-            "Turquoise lagoon, reefs and forested volcanic islands in Tun Sakaran Marine Park",
             "Bohey Dulang ridge and turquoise lagoon near Semporna"
           ],
           "rawVisibleCredits": [
@@ -21831,41 +21825,30 @@
           "assetPath": "/assets/images/malaysia-tun-sakaran.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Semporna_-_Tun_Sakaran_Marine_Park.jpg",
-          "sourceTitle": "Tun Sakaran Marine Park at sunset",
+          "sourceTitle": "File:Semporna - Tun Sakaran Marine Park.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Tun Sakaran Marine Park at sunset",
+          "creditLabel": null,
           "creator": "Adznee Abas",
           "license": "CC BY 2.0",
-          "rightsStatus": null,
+          "rightsStatus": "Commons source page declares CC BY 2.0; this records that page statement, not independent rights clearance.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from every live Semporna route display on 2026-10-12 because the file depicts Tun Sakaran from Semporna at sunset, not Mabul, Kapalai or Sipadan. The unchanged file and source declaration remain attached to this audit record.",
           "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "unknown",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": null,
+          "editHistory": "The original local derivative is retained byte-for-byte for provenance; it is not displayed on any Semporna route.",
+          "localSha1": "5d948c5957885618aa8b8516b1e57db6daab79b5",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 11,
-          "routes": [
-            "/malaysia/semporna-tun-sakaran/",
-            "/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/",
-            "/malaysia/semporna-tun-sakaran/mabul-kapalai/",
-            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/",
-            "/malaysia/semporna-tun-sakaran/sipadan-permit-day/"
-          ],
-          "altTexts": [
-            "Islands of Tun Sakaran Marine Park at sunset",
-            "Tun Sakaran island silhouettes across calm water at sunset"
-          ],
-          "rawVisibleCredits": [
-            "Tun Sakaran Marine Park at sunset — Adznee Abas, CC BY 2.0."
-          ]
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Semporna image mismatch review: the exact Commons page identifies Adznee Abas and declares CC BY 2.0. Local pixels match Tun Sakaran island silhouettes viewed from Semporna at sunset, but do not depict Mabul, Kapalai or Sipadan. The unchanged WebP is marked unused and removed from all Semporna page displays. This records the page statement and visual mismatch, not independent rights or uploader-authority clearance.",
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -27290,6 +27273,98 @@
           ],
           "altTexts": [
             "Original planning diagram showing Ipoh as the base, a separately confirmed rail or road leg to Batu Gajah, a pre-arranged road transfer to Kellie’s Castle, and the same return; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "413d4235833fde85b19dedaf6535f709c9ffe0114b9ce16bd5f4819011593750",
+      "assetPaths": [
+        "/assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg"
+      ],
+      "byteLength": 5571,
+      "sourceRecords": [
+        {
+          "sha256": "413d4235833fde85b19dedaf6535f709c9ffe0114b9ce16bd5f4819011593750",
+          "assetPath": "/assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg",
+          "sourceTitle": "TripDistill original Semporna, Mabul and Kapalai stay-base comparison",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original non-scale lodging and access comparison, with a visible English, Traditional Chinese, Japanese, Korean and Thai legend. It is not a geographic map or live operating guarantee.",
+          "localSha1": "595ac6114df594bad603a5be81a21a0bb1de11c5",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/malaysia/semporna-tun-sakaran/",
+            "/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/",
+            "/malaysia/semporna-tun-sakaran/mabul-kapalai/",
+            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/"
+          ],
+          "altTexts": [
+            "Original non-scale comparison of Semporna town, inhabited Mabul and resort-managed Kapalai as different overnight bases; a five-language legend says to confirm exact guest access and the return boat."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "55e67eb54149d547580cb88a875fe69000b5855f34deae1d3bcf515c5a15c5f2",
+      "assetPaths": [
+        "/assets/images/tripdistill-semporna-sipadan-permit-flow.svg"
+      ],
+      "byteLength": 5412,
+      "sourceRecords": [
+        {
+          "sha256": "55e67eb54149d547580cb88a875fe69000b5855f34deae1d3bcf515c5a15c5f2",
+          "assetPath": "/assets/images/tripdistill-semporna-sipadan-permit-flow.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-semporna-sipadan-permit-flow.svg",
+          "sourceTitle": "TripDistill original Sipadan permit and diver-readiness check flow",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original non-scale planning sequence with a visible English, Traditional Chinese, Japanese, Korean and Thai legend. It does not establish current rules, permits or availability.",
+          "localSha1": "513f41f467ec46ea42350bf5c7c97058548e980a",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/malaysia/semporna-tun-sakaran/",
+            "/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/",
+            "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/",
+            "/malaysia/semporna-tun-sakaran/sipadan-permit-day/"
+          ],
+          "altTexts": [
+            "Original non-scale planning flow: confirm a named Sipadan date and licensed operator, current Sabah Parks permit allocation, diver readiness, briefing and a post-dive flight buffer; five-language key states allocation and access must be reconfirmed."
           ],
           "rawVisibleCredits": []
         }

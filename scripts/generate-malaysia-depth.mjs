@@ -6,6 +6,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const depthCss = '/css/malaysia-depth.css?v=20260830-1';
 const melakaDepthCss = '/css/malaysia-depth.css?v=20261012-1';
 const sarawakCss = '/css/malaysia-sarawak.css?v=20261012-1';
+const sempornaCss = '/css/malaysia-sabah.css?v=20261012-1';
 const depthCssFor = (hubSlug) => hubSlug === 'melaka' ? melakaDepthCss : depthCss;
 const malaysiaCss = (hubSlug) => hubSlug === 'george-town-penang'
   ? '/css/malaysia.css?v=20261008-1'
@@ -191,7 +192,7 @@ function childPage(guide, cluster) {
   const relatedImageCredits = (originalDiagram || cluster.explicitRelatedPhotoCredits) && guide.relatedImages !== false
     ? [...new Map(cluster.guides.filter((related) => related.slug !== guide.slug && related.image.src !== guide.image.src && related.image.assetType !== 'original-planning-diagram').map((related) => [related.image.src, related.image])).values()].map(imageCredit).join('')
     : '';
-  const relatedDiagramKey = !originalDiagram && cluster.guides.some((related) => related.image.assetType === 'original-planning-diagram')
+  const relatedDiagramKey = cluster.hubSlug === 'melaka' && !originalDiagram
     ? melakaRouteKey()
     : '';
   const figureCaption = guide.image.caption || `${guide.image.label} · ${guide.image.license}`;
@@ -211,7 +212,7 @@ function childPage(guide, cluster) {
   <meta name="theme-color" content="#173f37">
   <meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta property="og:image:alt" content="${escapeHtml(guide.image.alt)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image:alt" content="${escapeHtml(guide.image.alt)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="${malaysiaCss(guide.hubSlug)}"><link rel="stylesheet" href="${depthCssFor(guide.hubSlug)}">
+  <link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="${malaysiaCss(guide.hubSlug)}">${guide.hubSlug === 'semporna-tun-sakaran' ? `<link rel="stylesheet" href="${sempornaCss}">` : ''}<link rel="stylesheet" href="${depthCssFor(guide.hubSlug)}">
   <script src="/js/adsense.js?v=20260826-9" defer></script>
   <script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script>
 </head>
@@ -313,6 +314,65 @@ function sarawakHubPage(cluster) {
 </body>
 </html>
 `;
+}
+
+function sempornaHubPage(cluster) {
+  const route = `/malaysia/${cluster.hubSlug}/`;
+  const plan = cluster.hubPlanning;
+  const primary = imageForSempornaHub(cluster);
+  const reviewedOn = cluster.reviewedOn || '30 August 2026';
+  const description = ensureMetaDescription(cluster.hubPrompt);
+  const faq = plan.faq;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'TravelGuide', '@id': `${absolute(route)}#guide`, name: `${cluster.hubName} Travel Guide`, description, url: absolute(route), inLanguage: 'en', dateModified: cluster.reviewedOnIso || '2026-08-30', image: absolute(primary.src), about: { '@type': 'TouristDestination', name: cluster.hubName }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tripdistill.com/' }, { '@type': 'ListItem', position: 2, name: 'Malaysia', item: 'https://tripdistill.com/malaysia/' }, { '@type': 'ListItem', position: 3, name: cluster.hubName, item: absolute(route) }] },
+      { '@type': 'FAQPage', mainEntity: faq.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) }
+    ]
+  };
+  const nightCards = plan.nights.map((item) => `<article class="sp-night-card"><span>${escapeHtml(item.title)}</span><p>${escapeHtml(item.fit)}</p><ol>${item.days.map(([label, detail]) => `<li><strong>${escapeHtml(label)}</strong><p>${escapeHtml(detail)}</p></li>`).join('')}</ol></article>`).join('');
+  const walkingZones = plan.walks.zones.map(([name, detail], index) => `<article><b aria-hidden="true">0${index + 1}</b><h3>${escapeHtml(name)}</h3><p>${escapeHtml(detail)}</p></article>`).join('');
+  const chapterImages = [...new Map(cluster.guides.map((guide) => [guide.image.src, guide.image])).values()];
+  const sourceImages = [...new Map([primary, ...chapterImages].map((image) => [image.src, image])).values()];
+  return `<!doctype html>
+<html lang="en" data-adsense-client="ca-pub-1732059148394592">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(cluster.hubName)} Guide | TripDistill</title><meta name="description" content="${escapeHtml(description)}">
+  <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
+  <meta name="theme-color" content="#063b4b"><meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(cluster.hubName)} — reef, permit and transfer field guide"><meta property="og:description" content="${escapeHtml(cluster.hubPrompt)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(primary.src)}"><meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/css/site.css?v=20260926-1"><link rel="stylesheet" href="/css/malaysia.css?v=20260829-1"><link rel="stylesheet" href="${sempornaCss}"><link rel="stylesheet" href="${depthCss}">
+  <script src="/js/adsense.js?v=20260826-9" defer></script><script type="application/ld+json">${JSON.stringify(schema)}</script>
+</head>
+<body data-page="${escapeHtml(cluster.hubSlug)}" data-country="malaysia" data-cluster="malaysia-sabah" data-depth-family="${escapeHtml(cluster.family)}">
+  <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
+    <main id="main-content" class="page-content semporna-guide sp-region">
+      <section class="sp-hero" aria-labelledby="sp-title"><img src="${primary.src}" width="1440" height="960" alt="${escapeHtml(primary.alt)}" fetchpriority="high"><div class="sp-hero-copy"><span class="sp-kicker">Sabah reef field guide · reviewed ${escapeHtml(reviewedOn)}</span><h1 id="sp-title">Semporna <span>& Tun Sakaran.</span></h1><p>${escapeHtml(cluster.hubPrompt)}</p><div class="hero-actions"><a class="button primary" href="#chapters">Choose a field chapter</a><a class="button secondary" href="#nights">Plan nights and transfers</a></div></div><div class="sp-permit-stamp">Four routes<br>one verified chain</div></section>
+
+      <section class="sp-region-intro"><div><span>Base before boat</span><h2>One town room can make four different sea days easier to read.</h2><p>${escapeHtml(plan.intro)}</p></div><aside><strong>Where to sleep</strong><p>${escapeHtml(plan.base)}</p></aside></section>
+
+      <section class="sp-region-section" aria-labelledby="sp-chain-title"><div class="sp-region-heading"><span>Named handoffs</span><h2 id="sp-chain-title">Keep the full road-to-boat contract visible.</h2><p>${escapeHtml(plan.transport)}</p></div><ol class="sp-region-chain"><li><b>01</b><strong>Tawau Airport · TWU</strong><span>Pre-booked road leg to the actual town address</span></li><li><b>02</b><strong>Semporna town</strong><span>Licensed operator’s exact desk and reporting point</span></li><li><b>03</b><strong>Named jetty</strong><span>Confirmed boat, park/island scope and passenger list</span></li><li><b>04</b><strong>Same return chain</strong><span>Boat landing → agreed road pickup → town or TWU</span></li></ol><p class="sp-region-note">Sabah Tourism describes the Tawau Airport approach and mentions a Kota Kinabalu coach, but no exact-date schedule, fare or connection time is promised here. Verify every leg with its provider.</p></section>
+
+      <section class="sp-region-section" id="nights" aria-labelledby="sp-nights-title"><div class="sp-region-heading"><span>Overnight base and pace</span><h2 id="sp-nights-title">Choose nights that can absorb a changed boat day.</h2></div><div class="sp-night-grid">${nightCards}</div></section>
+
+      <section class="sp-region-section" aria-labelledby="sp-walk-title"><div class="sp-region-heading"><span>Walking zones and permission</span><h2 id="sp-walk-title">Each walk begins with the right host or landing.</h2><p>${escapeHtml(plan.walks.intro)}</p></div><div class="sp-zone-grid">${walkingZones}</div></section>
+
+      <section class="sp-region-section sp-season-grid" aria-label="Season, booking and fallback"><article><span>Season and access</span><p>${escapeHtml(plan.season)}</p></article><article><span>Reserve before you go</span><p>${escapeHtml(plan.booking)}</p></article><article><span>When a link fails</span><p>${escapeHtml(plan.fallback)}</p></article></section>
+
+      <section class="sp-region-section" id="chapters" aria-labelledby="sp-chapters-title"><div class="sp-region-heading"><span>Four existing field chapters</span><h2 id="sp-chapters-title">Book each chapter on its own terms.</h2><p>${escapeHtml(cluster.hubPrompt)}</p></div><div class="md-hub-grid">${cluster.guides.map((guide, index) => `<a class="md-hub-card" href="/malaysia/${cluster.hubSlug}/${guide.slug}/" data-instrument="${escapeHtml(guide.instrument)}"><img src="${guide.image.src}" width="1440" height="960" loading="lazy" decoding="async" alt="${escapeHtml(guide.image.alt)}"><span class="md-hub-number">0${index + 1}</span><div><small>${escapeHtml(guide.motif)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p><strong>Open the field guide →</strong></div></a>`).join('')}</div></section>
+
+      <section class="sp-region-section" id="faq" aria-labelledby="sp-faq-title"><div class="sp-region-heading"><span>Planning answers</span><h2 id="sp-faq-title">Semporna & Tun Sakaran FAQ</h2></div><div class="faq-list">${faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
+
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and image credits</h2><p>Planning details and linked image-source declarations were checked on ${escapeHtml(reviewedOn)}. Boat operations, permits, trail access, prices, timetables, weather and openings change. The 2025 Sipadan and 2022 Kapalai page claims are dated and require direct rechecking. Commons declarations are recorded, not independent legal clearance.</p><ul>${sourcesList(cluster.sources)}${sourceImages.map(imageCredit).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(reviewedOn)} · Recheck time-sensitive details before booking.</span></section>
+    </main></div><div id="layout-footer"></div><script src="/js/main.js?v=20260911-1" defer></script>
+</body>
+</html>
+`;
+}
+
+function imageForSempornaHub(cluster) {
+  return cluster.guides.find((guide) => guide.slug === 'bohey-dulang-bodgaya')?.image || cluster.guides[0].image;
 }
 
 function replaceMarked(html, start, end, replacement) {
@@ -432,7 +492,8 @@ if (requestedClusterSlug) {
     melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
     'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau'],
     'sandakan-kinabatangan': ['sandakan-heritage-waterfront', 'sepilok-conservation-centres', 'sukau-kinabatangan', 'gomantong-batu-puteh'],
-    'kuching-bako': ['kuching-waterfront-old-courthouse', 'borneo-cultures-museum', 'semenggoh-wildlife-centre', 'bako-national-park']
+    'kuching-bako': ['kuching-waterfront-old-courthouse', 'borneo-cultures-museum', 'semenggoh-wildlife-centre', 'bako-national-park'],
+    'semporna-tun-sakaran': ['semporna-jetty-operator', 'bohey-dulang-bodgaya', 'mabul-kapalai', 'sipadan-permit-day']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
   if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi, Melaka, Taman Negara, Sandakan & Kinabatangan and Kuching & Bako source clusters.');
@@ -449,6 +510,10 @@ if (requestedClusterSlug) {
     const hubFile = routeFile(`/malaysia/${cluster.hubSlug}/`);
     fs.mkdirSync(path.dirname(hubFile), { recursive: true });
     fs.writeFileSync(hubFile, sarawakHubPage(cluster));
+  } else if (cluster.hubSlug === 'semporna-tun-sakaran') {
+    const hubFile = routeFile(`/malaysia/${cluster.hubSlug}/`);
+    fs.mkdirSync(path.dirname(hubFile), { recursive: true });
+    fs.writeFileSync(hubFile, sempornaHubPage(cluster));
   } else {
     injectHubCards(cluster);
   }
@@ -468,7 +533,9 @@ if (requestedClusterSlug) {
     fs.writeFileSync(file, childPage(guide, cluster));
   }
 
-  for (const cluster of malaysiaDepthClusters.filter((item) => !item.newHub)) injectHubCards(cluster);
+  for (const cluster of malaysiaDepthClusters.filter((item) => !item.newHub && item.hubSlug !== 'semporna-tun-sakaran')) injectHubCards(cluster);
+  const semporna = malaysiaDepthClusters.find((item) => item.hubSlug === 'semporna-tun-sakaran');
+  if (semporna) fs.writeFileSync(routeFile(`/malaysia/${semporna.hubSlug}/`), sempornaHubPage(semporna));
   updateCountryHub();
   updateSidebar();
   updateSearch();
