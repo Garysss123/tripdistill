@@ -17,6 +17,13 @@ const routes = [
   '/canada/ottawa-gatineau/national-museums/',
   '/canada/ottawa-gatineau/gatineau-park/'
 ];
+
+const laterCa12Routes = [
+  '/canada/niagara/',
+  '/canada/niagara/falls-parkway/',
+  '/canada/niagara/niagara-gorge/',
+  '/canada/niagara/niagara-on-the-lake/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -33,8 +40,8 @@ assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.')
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must not change.');
 assert.deepEqual(
-  search.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url)),
-  previousCanada.filter((item) => !targetSet.has(item.url)),
+  search.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url) && !laterCa12Routes.includes(item.url)),
+  previousCanada.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url)),
   'All non-target Canada search records must remain byte-equivalent in content and order.'
 );
 for (const route of routes) {
@@ -51,9 +58,9 @@ assert.equal(previousSitemapResult.status, 0, `Could not read the CA11 base site
 const dates = readDates(sitemap);
 const previousDates = readDates(previousSitemapResult.stdout);
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
-const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa12Routes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => route.includes('/canada/') && previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Ottawa–Gatineau routes × five editions may have changed dates.');
+assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only CA11 and later CA12 article routes × five editions may have changed dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 
 function mainWords(html) {
@@ -104,8 +111,8 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', integrationB
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`)].sort(),
-  'Only the four target route pages and ancillary Canada card may change under canada/.'
+  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
+  'Only the four target routes, later CA12 routes and ancillary Canada card may change under canada/.'
 );
 
 console.log(`CA11 route/date regression passed: exactly four existing body routes, a separate hub card, 73 unchanged Canada URLs, no non-target Canada search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);

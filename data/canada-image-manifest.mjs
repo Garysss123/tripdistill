@@ -226,7 +226,7 @@ export const canadaImageManifest = {
   },
   "niagara/niagara-on-the-lake": {
     "src": "/assets/images/canada-niagara-niagara-on-the-lake.webp",
-    "alt": "Heritage streetscape and wine country near Niagara-on-the-Lake",
+    "alt": "Historic Queen Street streetscape and Niagara Apothecary in Niagara-on-the-Lake",
     "source": "https://commons.wikimedia.org/wiki/File:Niagara_Apothecary_-_5_Queen_Street,_Niagara-on-the-Lake,_ON_L0S_1J0,_Canada.jpg",
     "label": "Niagara Apothecary - 5 Queen Street, Niagara-on-the-Lake, ON L0S 1J0, Canada.jpg",
     "creator": "Spudgun67",

@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/"
+  ],
+  "translations": {
+    "“Niagara” can mean the Horseshoe Falls promenade, a steep Niagara Glen trail or the historic town and wineries at Niagara-on-the-Lake. They are separate…": "나이아가라라는 이름은 호스슈 폭포 산책로, 경사가 급한 나이아가라 글렌 트레일, 또는 나이아가라온더레이크의 역사 지구와 와이너리를 가리킬 수 있습니다. 각각 별도의 하루 일정입니다."
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

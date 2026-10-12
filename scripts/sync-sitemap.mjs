@@ -169,6 +169,13 @@ const ottawaGatineauEditedRoutes = [
   '/canada/ottawa-gatineau/national-museums/',
   '/canada/ottawa-gatineau/gatineau-park/'
 ];
+const niagaraLastmod = '2026-10-12';
+const niagaraEditedRoutes = [
+  '/canada/niagara/',
+  '/canada/niagara/falls-parkway/',
+  '/canada/niagara/niagara-gorge/',
+  '/canada/niagara/niagara-on-the-lake/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1270,6 +1277,12 @@ for (const route of ottawaGatineauEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Ottawa–Gatineau route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: ottawaGatineauLastmod });
+}
+
+for (const route of niagaraEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Niagara route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: niagaraLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

@@ -7330,57 +7330,6 @@
     ]
   },
   {
-    "title": "Niagara Falls & Niagara-on-the-Lake",
-    "url": "/canada/niagara/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Niagara Falls, the Niagara Gorge and Niagara-on-the-Lake reward different schedules. Use the falls as a water-and-viewpoint day, the gorge as a walking day, and wine/heritage country as a separate road or tour contract.",
-    "keywords": [
-      "Niagara Falls & Niagara-on-the-Lake",
-      "Ontario",
-      "central"
-    ]
-  },
-  {
-    "title": "Niagara Falls & Parkway",
-    "url": "/canada/niagara/falls-parkway/",
-    "parent": "Niagara Falls & Niagara-on-the-Lake",
-    "type": "Local guide",
-    "summary": "Walk the Canadian falls edge in one direction, then add only one paid falls experience so mist, queues and viewpoint repetition do not consume the whole day.",
-    "keywords": [
-      "Niagara Falls & Parkway",
-      "Niagara Falls & Niagara-on-the-Lake",
-      "Ontario",
-      "waterfall-transect"
-    ]
-  },
-  {
-    "title": "Niagara Gorge & Whirlpool",
-    "url": "/canada/niagara/niagara-gorge/",
-    "parent": "Niagara Falls & Niagara-on-the-Lake",
-    "type": "Local guide",
-    "summary": "Choose one gorge access point and one maintained trail or viewpoint, then treat stairs, river power and seasonal closures as the central plan.",
-    "keywords": [
-      "Niagara Gorge & Whirlpool",
-      "Niagara Falls & Niagara-on-the-Lake",
-      "Ontario",
-      "elevation-ledger"
-    ]
-  },
-  {
-    "title": "Niagara-on-the-Lake & Wine Country",
-    "url": "/canada/niagara/niagara-on-the-lake/",
-    "parent": "Niagara Falls & Niagara-on-the-Lake",
-    "type": "Local guide",
-    "summary": "Use the historic town as the walking anchor, then visit a small number of wineries with a sober transport plan rather than spending the day driving between tasting rooms.",
-    "keywords": [
-      "Niagara-on-the-Lake & Wine Country",
-      "Niagara Falls & Niagara-on-the-Lake",
-      "Ontario",
-      "town-ledger"
-    ]
-  },
-  {
     "title": "Ottawa & Gatineau",
     "url": "/canada/ottawa-gatineau/",
     "parent": "Canada",
@@ -13248,6 +13197,57 @@
       "Banff & Lake Louise",
       "Alberta Rockies",
       "route-split"
+    ]
+  },
+  {
+    "title": "Niagara Falls & Niagara-on-the-Lake",
+    "url": "/canada/niagara/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "“Niagara” can mean the Horseshoe Falls promenade, a steep Niagara Glen trail or the historic town and wineries at Niagara-on-the-Lake. They are separate day plans, not one compact walking circuit. Start with the Falls if this is your first visit; add the gorge only if you want a strenuous nature walk, and reserve a different day for the town or a tasting appointment. GO Transit publishes Niagara Falls service from Toronto, but departure patterns and direct trains depend on the date. At the rail station, plan the final connection to the visitor district. Niagara Parks’ WEGO and the region’s other services cover distinct corridors; Niagara-on-the-Lake also has an on-demand local service whose date, booking and return must be confirmed. Choose the trip by access first, then by scenery.",
+    "keywords": [
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "central"
+    ]
+  },
+  {
+    "title": "Niagara Falls & Parkway",
+    "url": "/canada/niagara/falls-parkway/",
+    "parent": "Niagara Falls & Niagara-on-the-Lake",
+    "type": "Local guide",
+    "summary": "Build one full day around Horseshoe Falls, Table Rock and the public promenade. GO reaches Niagara Falls station, not the waterfall: confirm the onward WEGO, tour or taxi before choosing a train, then buy at most one immersive attraction whose perspective adds something to the walk.",
+    "keywords": [
+      "Niagara Falls & Parkway",
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "waterfall-transect"
+    ]
+  },
+  {
+    "title": "Niagara Gorge & Whirlpool",
+    "url": "/canada/niagara/niagara-gorge/",
+    "parent": "Niagara Falls & Niagara-on-the-Lake",
+    "type": "Local guide",
+    "summary": "Treat Niagara Glen as a strenuous natural-area walk: the official trail is rocky, uneven and steep, with a descent that must be climbed again. Pick one signed access and route, walk only in daylight, and change to an upper viewpoint when weather, footing or trail status removes the return margin.",
+    "keywords": [
+      "Niagara Gorge & Whirlpool",
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "elevation-ledger"
+    ]
+  },
+  {
+    "title": "Niagara-on-the-Lake & Wine Country",
+    "url": "/canada/niagara/niagara-on-the-lake/",
+    "parent": "Niagara Falls & Niagara-on-the-Lake",
+    "type": "Local guide",
+    "summary": "Use Niagara-on-the-Lake’s historic centre as the walkable anchor and treat wineries as separate booked destinations. Choose the town-only visit, a winery tour or an on-demand ride only after confirming pickup, reservation spacing and the return. Never let a tasting plan depend on driving afterward.",
+    "keywords": [
+      "Niagara-on-the-Lake & Wine Country",
+      "Niagara Falls & Niagara-on-the-Lake",
+      "Ontario",
+      "town-ledger"
     ]
   }
 ]

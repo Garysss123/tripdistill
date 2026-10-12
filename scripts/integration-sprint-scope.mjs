@@ -188,7 +188,11 @@ export const integrationRouteGroups = Object.freeze({
     '/canada/newfoundland-labrador/',
     '/canada/newfoundland-labrador/st-johns-signal-hill/',
     '/canada/newfoundland-labrador/bonavista-trinity/',
-    '/canada/newfoundland-labrador/gros-morne/'
+    '/canada/newfoundland-labrador/gros-morne/',
+    '/canada/niagara/',
+    '/canada/niagara/falls-parkway/',
+    '/canada/niagara/niagara-gorge/',
+    '/canada/niagara/niagara-on-the-lake/'
   ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',

@@ -27,6 +27,12 @@ const laterCa11Routes = [
   '/canada/ottawa-gatineau/national-museums/',
   '/canada/ottawa-gatineau/gatineau-park/'
 ];
+const laterCa12Routes = [
+  '/canada/niagara/',
+  '/canada/niagara/falls-parkway/',
+  '/canada/niagara/niagara-gorge/',
+  '/canada/niagara/niagara-on-the-lake/'
+];
 const laterAustraliaRoutes = [
   '/australia/melbourne-port-phillip/',
   '/australia/melbourne-port-phillip/cbd-laneways-tram-grid/',
@@ -51,7 +57,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...laterCa11Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

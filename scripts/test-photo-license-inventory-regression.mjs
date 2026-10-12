@@ -119,6 +119,33 @@ assert.equal(checkedInOttawaDiagram.assetType, 'original-planning-diagram');
 assert.equal(checkedInOttawaDiagram.localSha1, 'b1d86e38d9bab8eccd69b1d96b8dfcedd60e987d');
 assert.equal(checkedInOttawaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
 assert.equal(checkedInOttawaDiagram.verificationStatus, 'site_credit_or_metadata_only');
+const checkedInNiagaraPhotos = [
+  { assetPath: '/assets/images/canada-niagara-falls-parkway.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Horseshoe_Falls_-_Niagara_Falls_Canada.JPG', creator: 'Gzzz', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/canada-niagara-niagara-gorge.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Niagara_Falls_Whirlpool_aerial_view.jpg', creator: 'Zwergelstern', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/canada-niagara-niagara-on-the-lake.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Niagara_Apothecary_-_5_Queen_Street,_Niagara-on-the-Lake,_ON_L0S_1J0,_Canada.jpg', creator: 'Spudgun67', license: 'CC BY-SA 4.0' }
+];
+for (const expected of checkedInNiagaraPhotos) {
+  const record = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+  assert.ok(record, `checked-in inventory must include the Niagara photo ${expected.assetPath}`);
+  assert.equal(record.sourceUrl, expected.sourceUrl);
+  assert.equal(record.creator, expected.creator);
+  assert.equal(record.license, expected.license);
+  assert.equal(record.verificationStatus, 'source_page_checked');
+  assert.equal(record.verificationDate, '2026-10-12');
+  assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(record.verificationDetail, /do not independently establish uploader authority or a rights chain|does not independently establish uploader authority or a rights chain/i);
+}
+const checkedInNiagaraDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-niagara-falls-decision.svg');
+assert.ok(checkedInNiagaraDiagram, 'checked-in inventory must include the original Niagara planning diagram');
+assert.equal(checkedInNiagaraDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInNiagaraDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-niagara-falls-decision.svg');
+assert.equal(checkedInNiagaraDiagram.creator, 'TripDistill');
+assert.equal(checkedInNiagaraDiagram.license, null);
+assert.equal(checkedInNiagaraDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInNiagaraDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+assert.equal(checkedInNiagaraDiagram.commercialReuseEligibility, 'unknown');
+assert.equal(checkedInNiagaraDiagram.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInNiagaraDiagram.localSha1, '742c1b1ba89c38a9de02872e76681a57640dc8d2');
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map((item) => [item.name, item.value])); }
 function findAll(node, predicate, output = []) {
@@ -441,9 +468,9 @@ try {
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 504, 'Ottawa–Gatineau, Sydney, Brisbane and Graubünden join the original diagrams without an independent source-page check; unresolved photo claims remain unverified');
-  assert.equal(report.counts.sourcePageChecked, 277, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
-  assert.equal(report.counts.assetsVisuallyReviewed, 198, 'the merged inventory records the supplied Banff, Jasper and Newfoundland SVG pixel checks along with prior photo reviews');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 502, 'Ottawa–Gatineau, Sydney, Brisbane and Graubünden join the original diagrams without an independent source-page check; unresolved photo claims remain unverified');
+  assert.equal(report.counts.sourcePageChecked, 280, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
+  assert.equal(report.counts.assetsVisuallyReviewed, 201, 'the merged inventory records the supplied Banff, Jasper and Newfoundland SVG pixel checks along with prior photo reviews');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -778,8 +805,8 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 29, 'the merged inventory counts UK, France, Italy, Canada, Malaysia, Switzerland and Australia project-original diagrams plus existing artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 488, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 30, 'the merged inventory counts UK, France, Italy, Canada, Malaysia, Switzerland and Australia project-original diagrams plus existing artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 485, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -918,7 +945,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 815, 'Ottawa–Gatineau, Sydney, Brisbane, Graubünden, Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 816, 'Ottawa–Gatineau, Sydney, Brisbane, Graubünden, Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
