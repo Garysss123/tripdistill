@@ -53,7 +53,11 @@ const laterAustraliaRoutes = [
   '/australia/blue-mountains-nsw-coast/',
   '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
   '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
-  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/'
+  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/',
+  '/australia/great-ocean-road-gariwerd/',
+  '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
+  '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
+  '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
 ];
 const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/',

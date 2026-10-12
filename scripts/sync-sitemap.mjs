@@ -126,6 +126,13 @@ const malaysiaKinabaluRoutes = [
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
+const australiaGreatOceanLastmod = '2026-10-12';
+const australiaGreatOceanEditedRoutes = [
+  '/australia/great-ocean-road-gariwerd/',
+  '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
+  '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
+  '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
+];
 const canadaLastmod = '2026-09-12';
 const pacificRimLastmod = '2026-10-12';
 const pacificRimEditedRoutes = [
@@ -1386,6 +1393,12 @@ for (const route of vietnamHueEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Hue route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamHueLastmod });
+}
+
+for (const route of australiaGreatOceanEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Great Ocean Road route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: australiaGreatOceanLastmod });
 }
 
 const english = [...records.values()];

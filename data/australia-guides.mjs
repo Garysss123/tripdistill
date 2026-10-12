@@ -5,6 +5,7 @@ import { australiaWestIslandClusters } from './australia-west-islands-guides.mjs
 import { australiaImageManifest } from './australia-image-manifest.mjs';
 import { australiaSydneyDiagram } from './australia-sydney-diagram.mjs';
 import { australiaBlueMountainsDiagram } from './australia-blue-mountains-diagram.mjs';
+import { australiaGreatOceanRoadDiagram } from './australia-great-ocean-road-diagram.mjs';
 import { australiaImageEditNote } from './australia-guide-builder.mjs';
 
 const bySlug = new Map([
@@ -40,6 +41,7 @@ export const australiaClusters = orderedSlugs.map((slug) => {
     ...cluster,
     ...(cluster.slug === 'sydney-harbour-coast' ? { diagram: australiaSydneyDiagram } : {}),
     ...(cluster.slug === 'blue-mountains-nsw-coast' ? { diagram: australiaBlueMountainsDiagram } : {}),
+    ...(cluster.slug === 'great-ocean-road-gariwerd' ? { diagram: australiaGreatOceanRoadDiagram } : {}),
     guides: cluster.guides.map((guide) => {
       const key = `${cluster.slug}/${guide.slug}`;
       const image = australiaImageManifest[key];

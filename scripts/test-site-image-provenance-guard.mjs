@@ -19,6 +19,7 @@ const originalSvgPaths = [
   '/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg',
   '/assets/images/tripdistill-canada-banff-two-corridors.svg',
   '/assets/images/australia-blue-mountains-western-line-planning.svg',
+  '/assets/images/australia-great-ocean-road-route-schematic.svg',
   '/assets/images/tripdistill-brisbane-bay-crossings.svg',
   '/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg',
 ];
@@ -58,5 +59,8 @@ assert.equal(hasVisibleOriginalProjectProvenance(brisbaneHtml, 'https://tripdist
 const blueMountainsHubPath = path.resolve('australia/blue-mountains-nsw-coast/index.html');
 const blueMountainsHub = fs.readFileSync(blueMountainsHubPath, 'utf8');
 assert.equal(hasVisibleOriginalProjectProvenance(blueMountainsHub, 'https://tripdistill.com/australia/blue-mountains-nsw-coast/'), true, 'the Blue Mountains hub schematic has its own source and Terms links');
+const greatOceanHubPath = path.resolve('australia/great-ocean-road-gariwerd/index.html');
+const greatOceanHub = fs.readFileSync(greatOceanHubPath, 'utf8');
+assert.equal(hasVisibleOriginalProjectProvenance(greatOceanHub, 'https://tripdistill.com/australia/great-ocean-road-gariwerd/'), true, 'the Great Ocean Road hub schematic has its own source and Terms links');
 
 console.log('Site image provenance regression passed: allowlisted original SVGs require exact visible source and Terms links; France, Switzerland and Australia routes retain separate photo credits.');
