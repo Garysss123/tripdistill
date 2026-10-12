@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T16:40:54.487Z",
+  "generatedAt": "2026-10-12T17:36:39.981Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 802,
+    "assetFileCount": 803,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 13,
-    "licenseClaimsNotIndependentlyVerified": 506,
+    "completeProjectOriginalRightsRecords": 14,
+    "licenseClaimsNotIndependentlyVerified": 503,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 2,
-    "expectedBuildImageCount": 804,
-    "deduplicatedImageCount": 802,
+    "expectedBuildImageCount": 805,
+    "deduplicatedImageCount": 803,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3518,
-    "assetsUsedByScannedEnglishPages": 772,
+    "imageReferencesScanned": 3519,
+    "assetsUsedByScannedEnglishPages": 773,
     "unusedAssetCount": 30,
-    "assetsWithStructuredSourceRecords": 589,
+    "assetsWithStructuredSourceRecords": 590,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 179,
+    "assetsVisuallyReviewed": 182,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 259,
-    "metadataOrCreditOnly": 519,
-    "usedAssetsWithoutIndependentSourcePageCheck": 514,
+    "sourcePageChecked": 262,
+    "metadataOrCreditOnly": 517,
+    "usedAssetsWithoutIndependentSourcePageCheck": 512,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 800 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 804 build image files. 2 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 801 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 805 build image files. 2 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -5762,16 +5762,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Saguenay–Tadoussac photo review: the exact Commons page identifies Ajor933 and declares CC BY-SA 3.0. The local WebP pixels show forest-covered ridges across the fjord framed by pine branches; no hiker or prominent cliff face is visible. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.",
           "useCount": 4,
           "routes": [
             "/canada/saguenay-tadoussac/",
@@ -5780,10 +5780,10 @@
             "/canada/saguenay-tadoussac/tadoussac-marine/"
           ],
           "altTexts": [
-            "Cliffs and water in Saguenay Fjord Quebec"
+            "Forest-covered ridges across Saguenay Fjord, framed by pine branches"
           ],
           "rawVisibleCredits": [
-            "SaguenayFjord.JPG — Ajor933, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "SaguenayFjord.JPG — Ajor933, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms."
           ]
         }
       ]
@@ -5810,16 +5810,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Saguenay–Tadoussac photo review: the exact Commons page identifies 0x010C and declares CC BY-SA 4.0. The local WebP pixels show Chicoutimi waterfront lights reflected on the Saguenay River at night. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.",
           "useCount": 4,
           "routes": [
             "/canada/saguenay-tadoussac/",
@@ -5828,10 +5828,10 @@
             "/canada/saguenay-tadoussac/tadoussac-marine/"
           ],
           "altTexts": [
-            "Saguenay River and urban landscape near Chicoutimi"
+            "Chicoutimi waterfront lights reflected on the Saguenay River at night"
           ],
           "rawVisibleCredits": [
-            "2016-10 Saguenay river - Chicoutimi at night 01.jpg — 0x010C, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "2016-10 Saguenay river - Chicoutimi at night 01.jpg — 0x010C, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 4.0 terms."
           ]
         }
       ]
@@ -5858,16 +5858,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Saguenay–Tadoussac photo review: the exact Commons page identifies Bodoklecksel and declares CC BY-SA 3.0. The local WebP pixels show harbor and waterfront below a forested ridge across the water; no whale is visible, so the image is not evidence of a wildlife sighting. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.",
           "useCount": 6,
           "routes": [
             "/canada/",
@@ -5877,7 +5877,8 @@
             "/canada/saguenay-tadoussac/tadoussac-marine/"
           ],
           "altTexts": [
-            "St Lawrence estuary and forested shore near Tadoussac"
+            "St Lawrence estuary and forested shore near Tadoussac",
+            "Tadoussac harbor and waterfront beneath forested ridges across the water"
           ],
           "rawVisibleCredits": [
             "Tadoussac.jpg — Bodoklecksel, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -27419,6 +27420,49 @@
           ],
           "altTexts": [
             "Not-to-scale schematic separating Ottawa’s civic core, the Ottawa River crossing and Gatineau Park sectors; it does not show a specific bridge, transit route or travel time."
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "cb10353b9d02d7b992b91606934b791db83e9dd245696997bb2239458235031d",
+      "assetPaths": [
+        "/assets/images/tripdistill-canada-saguenay-sector-decisions.svg"
+      ],
+      "byteLength": 9069,
+      "sourceRecords": [
+        {
+          "sha256": "cb10353b9d02d7b992b91606934b791db83e9dd245696997bb2239458235031d",
+          "assetPath": "/assets/images/tripdistill-canada-saguenay-sector-decisions.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-saguenay-sector-decisions.svg",
+          "sourceTitle": "Saguenay sector choice schematic (original SVG)",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original XML vector schematic with genuine shapes and text; five-language legend; not a geographic map or actual route.",
+          "localSha1": "61d9e1132cd0956e3ec05aaaf873a487770bed50",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/canada/saguenay-tadoussac/fjord-hiking/"
+          ],
+          "altTexts": [
+            "Not-to-scale decision schematic comparing Baie-Éternité hiking, Baie-Sainte-Marguerite land-based beluga viewing and Tadoussac shoreline walking; it shows no geography, road, trail, ferry route or travel time."
           ],
           "rawVisibleCredits": []
         }

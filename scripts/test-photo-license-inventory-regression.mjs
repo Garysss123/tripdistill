@@ -143,10 +143,41 @@ assert.equal(checkedInNiagaraDiagram.rightsStatusUrl, 'https://tripdistill.com/t
 assert.equal(checkedInNiagaraDiagram.commercialReuseEligibility, 'unknown');
 assert.equal(checkedInNiagaraDiagram.verificationStatus, 'site_credit_or_metadata_only');
 assert.equal(checkedInNiagaraDiagram.localSha1, 'dfdbeaf59d36ce3d745445bf1437084ca6968896');
-assert.equal(checkedInReport.counts.completeProjectOriginalRightsRecords, 13);
-assert.equal(checkedInReport.counts.licenseClaimsNotIndependentlyVerified, 506);
-assert.equal(checkedInReport.counts.usedAssetsWithoutIndependentSourcePageCheck, 514);
-assert.equal(checkedInReport.counts.expectedBuildImageCount, 804);
+const checkedInSaguenayPhotos = [
+  { assetPath: '/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tadoussac.jpg', creator: 'Bodoklecksel', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG', creator: 'Ajor933', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/canada-saguenay-tadoussac-saguenay-city-valley.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:2016-10_Saguenay_river_-_Chicoutimi_at_night_01.jpg', creator: '0x010C', license: 'CC BY-SA 4.0' }
+];
+for (const expected of checkedInSaguenayPhotos) {
+  const record = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+  assert.ok(record, `checked-in inventory must include the Saguenay photo ${expected.assetPath}`);
+  assert.equal(record.sourceUrl, expected.sourceUrl);
+  assert.equal(record.creator, expected.creator);
+  assert.equal(record.license, expected.license);
+  assert.equal(record.verificationStatus, 'source_page_checked');
+  assert.equal(record.verificationDate, '2026-10-12');
+  assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(record.verificationDetail, /does not independently establish uploader authority or a rights chain/i);
+  assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(expected.creator)));
+}
+const checkedInSaguenayDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-saguenay-sector-decisions.svg');
+assert.ok(checkedInSaguenayDiagram, 'checked-in inventory must include the original Saguenay sector schematic');
+assert.equal(checkedInSaguenayDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInSaguenayDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-saguenay-sector-decisions.svg');
+assert.equal(checkedInSaguenayDiagram.creator, 'TripDistill');
+assert.equal(checkedInSaguenayDiagram.license, null);
+assert.equal(checkedInSaguenayDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInSaguenayDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+assert.equal(checkedInSaguenayDiagram.commercialReuseEligibility, 'unknown');
+assert.equal(checkedInSaguenayDiagram.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInSaguenayDiagram.inventoryStatus, 'used');
+assert.equal(checkedInSaguenayDiagram.useCount, 1);
+assert.deepEqual(checkedInSaguenayDiagram.routes, ['/canada/saguenay-tadoussac/fjord-hiking/']);
+assert.match(checkedInSaguenayDiagram.localSha1, /^[a-f0-9]{40}$/);
+assert.equal(checkedInReport.counts.completeProjectOriginalRightsRecords, 14);
+assert.equal(checkedInReport.counts.licenseClaimsNotIndependentlyVerified, 503);
+assert.equal(checkedInReport.counts.usedAssetsWithoutIndependentSourcePageCheck, 512);
+assert.equal(checkedInReport.counts.expectedBuildImageCount, 805);
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map((item) => [item.name, item.value])); }
 function findAll(node, predicate, output = []) {
@@ -354,7 +385,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 514, 'Niagara source-page checks reduce this count by three and its original diagram adds one metadata-only asset; unresolved photo source-page claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 512, 'Niagara, Jasper and Saguenay source-page checks reduce this count; their original diagrams add metadata-only assets, while unresolved photo source-page claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -672,8 +703,8 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 13, 'inventory must count project-original artwork including Niagara, Ottawa–Gatineau, Newfoundland, Jasper, Banff, Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 506, 'Niagara and Jasper source-page checks reduce this count by six; page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 14, 'inventory must count project-original artwork including Niagara, Ottawa–Gatineau, Newfoundland, Saguenay, Jasper, Banff, Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 503, 'Niagara, Jasper and Saguenay source-page checks reduce this count by nine; page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -714,7 +745,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 2, 'the preserved Melaka and Johnston rights-review files must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 804, 'the Niagara, Ottawa–Gatineau, Newfoundland, Jasper, Banff and original Malaysia diagrams must be included while the preserved Melaka and Johnston rights-review photos remain excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 805, 'the Saguenay diagram adds one expected build image; preserved Melaka and Johnston rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

@@ -111,6 +111,13 @@ const niagaraEditedRoutes = [
   '/canada/niagara/niagara-gorge/',
   '/canada/niagara/niagara-on-the-lake/'
 ];
+const saguenayLastmod = '2026-10-12';
+const saguenayEditedRoutes = [
+  '/canada/saguenay-tadoussac/',
+  '/canada/saguenay-tadoussac/tadoussac-marine/',
+  '/canada/saguenay-tadoussac/fjord-hiking/',
+  '/canada/saguenay-tadoussac/saguenay-city-valley/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -977,6 +984,12 @@ for (const route of niagaraEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Niagara route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: niagaraLastmod });
+}
+
+for (const route of saguenayEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Saguenay route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: saguenayLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

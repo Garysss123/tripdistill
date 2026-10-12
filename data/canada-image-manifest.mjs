@@ -326,7 +326,7 @@ export const canadaImageManifest = {
   },
   "saguenay-tadoussac/tadoussac-marine": {
     "src": "/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp",
-    "alt": "St Lawrence estuary and forested shore near Tadoussac",
+    "alt": "Tadoussac harbor and waterfront beneath forested ridges across the water",
     "source": "https://commons.wikimedia.org/wiki/File:Tadoussac.jpg",
     "label": "Tadoussac.jpg",
     "creator": "Bodoklecksel",
@@ -336,7 +336,7 @@ export const canadaImageManifest = {
   },
   "saguenay-tadoussac/fjord-hiking": {
     "src": "/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp",
-    "alt": "Cliffs and water in Saguenay Fjord Quebec",
+    "alt": "Forest-covered ridges across Saguenay Fjord, framed by pine branches",
     "source": "https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG",
     "label": "SaguenayFjord.JPG",
     "creator": "Ajor933",
@@ -346,7 +346,7 @@ export const canadaImageManifest = {
   },
   "saguenay-tadoussac/saguenay-city-valley": {
     "src": "/assets/images/canada-saguenay-tadoussac-saguenay-city-valley.webp",
-    "alt": "Saguenay River and urban landscape near Chicoutimi",
+    "alt": "Chicoutimi waterfront lights reflected on the Saguenay River at night",
     "source": "https://commons.wikimedia.org/wiki/File:2016-10_Saguenay_river_-_Chicoutimi_at_night_01.jpg",
     "label": "2016-10 Saguenay river - Chicoutimi at night 01.jpg",
     "creator": "0x010C",

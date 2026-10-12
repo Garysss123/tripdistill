@@ -1058,6 +1058,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp', '2026-10-12'],
+  ['/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp', '2026-10-12'],
+  ['/assets/images/canada-saguenay-tadoussac-saguenay-city-valley.webp', '2026-10-12'],
   ['/assets/images/canada-niagara-falls-parkway.webp', '2026-10-12'],
   ['/assets/images/canada-niagara-niagara-gorge.webp', '2026-10-12'],
   ['/assets/images/canada-niagara-niagara-on-the-lake.webp', '2026-10-12'],
@@ -1262,6 +1265,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:France-00
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg', {
   detail: 'Provence inland photo review: the exact Commons page lists Einaz80 and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show Gordes hillside village and stone buildings in the Luberon, consistent with the route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Tadoussac.jpg', {
+  detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies Bodoklecksel and declares CC BY-SA 3.0. The local WebP pixels show harbor and waterfront below a forested ridge across the water; no whale is visible, so the image is not evidence of a wildlife sighting. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG', {
+  detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies Ajor933 and declares CC BY-SA 3.0. The local WebP pixels show forest-covered ridges across the fjord framed by pine branches; no hiker or prominent cliff face is visible. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:2016-10_Saguenay_river_-_Chicoutimi_at_night_01.jpg', {
+  detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies 0x010C and declares CC BY-SA 4.0. The local WebP pixels show Chicoutimi waterfront lights reflected on the Saguenay River at night. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
   checkedOn: '2026-10-12'
 });
 const entries = [];

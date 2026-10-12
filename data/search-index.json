@@ -7475,57 +7475,6 @@
     ]
   },
   {
-    "title": "Saguenay Fjord & Tadoussac",
-    "url": "/canada/saguenay-tadoussac/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "The Saguenay–St Lawrence region combines a protected fjord, marine park and small towns separated by real road distance. Plan whale watching as a weather-and-wildlife product, not a guaranteed sighting, and keep one land-based fjord day.",
-    "keywords": [
-      "Saguenay Fjord & Tadoussac",
-      "Quebec",
-      "quebec"
-    ]
-  },
-  {
-    "title": "Tadoussac & Marine Park",
-    "url": "/canada/saguenay-tadoussac/tadoussac-marine/",
-    "parent": "Saguenay Fjord & Tadoussac",
-    "type": "Local guide",
-    "summary": "Choose a responsible marine or shore-based wildlife experience, then let weather and animal presence determine what is seen rather than treating whales as a scheduled attraction.",
-    "keywords": [
-      "Tadoussac & Marine Park",
-      "Saguenay Fjord & Tadoussac",
-      "Quebec",
-      "operator-manifest"
-    ]
-  },
-  {
-    "title": "Saguenay Fjord Hiking",
-    "url": "/canada/saguenay-tadoussac/fjord-hiking/",
-    "parent": "Saguenay Fjord & Tadoussac",
-    "type": "Local guide",
-    "summary": "Select one official fjord sector and a trail that fits elevation, daylight and weather; the park is too large to treat as one roadside stop.",
-    "keywords": [
-      "Saguenay Fjord Hiking",
-      "Saguenay Fjord & Tadoussac",
-      "Quebec",
-      "elevation-ledger"
-    ]
-  },
-  {
-    "title": "Saguenay City & Fjord Valley",
-    "url": "/canada/saguenay-tadoussac/saguenay-city-valley/",
-    "parent": "Saguenay Fjord & Tadoussac",
-    "type": "Local guide",
-    "summary": "Use Chicoutimi or La Baie as a service base, then connect river history, one museum or cultural stop and a nearby fjord viewpoint without spending the day driving end to end.",
-    "keywords": [
-      "Saguenay City & Fjord Valley",
-      "Saguenay Fjord & Tadoussac",
-      "Quebec",
-      "field-notebook"
-    ]
-  },
-  {
     "title": "Halifax & Nova Scotia",
     "url": "/canada/halifax-nova-scotia/",
     "parent": "Canada",
@@ -13189,6 +13138,57 @@
       "Niagara Falls & Niagara-on-the-Lake",
       "Ontario",
       "town-ledger"
+    ]
+  },
+  {
+    "title": "Saguenay Fjord & Tadoussac",
+    "url": "/canada/saguenay-tadoussac/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Tadoussac, the Saguenay–St Lawrence Marine Park, the Fjord-du-Saguenay park and Saguenay’s boroughs form a linked region, not one compact stop. Choose one marine or shore day, one named fjord sector and a separate river-city or weather day; sightings, trail access and boat departures all depend on conditions and date.",
+    "keywords": [
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "quebec"
+    ]
+  },
+  {
+    "title": "Tadoussac & Marine Park",
+    "url": "/canada/saguenay-tadoussac/tadoussac-marine/",
+    "parent": "Saguenay Fjord & Tadoussac",
+    "type": "Local guide",
+    "summary": "Tadoussac is a place to choose between a specific marine departure and a shore-based day, not a promise of seeing whales. Start with the dock, forecast and return; if a boat is unsuitable, the wharf-side Pointe-de-l’Islet path and marine interpretation give the visit a complete land-based shape.",
+    "keywords": [
+      "Tadoussac & Marine Park",
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "operator-manifest"
+    ]
+  },
+  {
+    "title": "Saguenay Fjord Hiking",
+    "url": "/canada/saguenay-tadoussac/fjord-hiking/",
+    "parent": "Saguenay Fjord & Tadoussac",
+    "type": "Local guide",
+    "summary": "Choose a named sector and one signed objective before driving: Baie-Éternité, Baie-Sainte-Marguerite and Baie-de-Tadoussac are separate access decisions around a long fjord. A land day reveals cliffs and forest at walking pace; it is not an easy add-on to a boat day or a through-drive.",
+    "keywords": [
+      "Saguenay Fjord Hiking",
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "elevation-ledger"
+    ]
+  },
+  {
+    "title": "Saguenay City & Fjord Valley",
+    "url": "/canada/saguenay-tadoussac/saguenay-city-valley/",
+    "parent": "Saguenay Fjord & Tadoussac",
+    "type": "Local guide",
+    "summary": "Use Chicoutimi or La Baie as a service base and give Saguenay a distinct city day: connect one cultural anchor, a short local walk and a verified riverfront view instead of driving from borough to borough. This is a useful weather buffer between fjord trails and Tadoussac.",
+    "keywords": [
+      "Saguenay City & Fjord Valley",
+      "Saguenay Fjord & Tadoussac",
+      "Quebec",
+      "field-notebook"
     ]
   }
 ]

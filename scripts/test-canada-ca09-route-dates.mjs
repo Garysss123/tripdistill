@@ -35,6 +35,12 @@ const laterCa12Routes = [
   '/canada/niagara/niagara-gorge/',
   '/canada/niagara/niagara-on-the-lake/'
 ];
+const laterCa13Routes = [
+  '/canada/saguenay-tadoussac/',
+  '/canada/saguenay-tadoussac/tadoussac-marine/',
+  '/canada/saguenay-tadoussac/fjord-hiking/',
+  '/canada/saguenay-tadoussac/saguenay-city-valley/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -51,9 +57,9 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA09 must retain the exact 73 Canada routes from CA08.');
 assert.deepEqual(
-  search.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url)),
-  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url)),
-  'CA09 must leave every non-CA09 and later-CA10/CA11/CA12 search record unchanged.'
+  search.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url)),
+  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url)),
+  'CA09 must leave every non-CA09 and later-CA10/CA11/CA12/CA13 search record unchanged.'
 );
 for (const route of routes) {
   const record = canadaSearch.find((item) => item.url === route);
@@ -73,9 +79,9 @@ const readSitemapDates = (contents) => new Map([...contents.matchAll(/<loc>https
 const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA09 must retain the exact CA08 sitemap URL set.');
-const expectedSitemapDateChanges = locales.flatMap((locale) => [...routes, ...laterCa10Routes, ...laterCa11Routes, ...laterCa12Routes].map((route) => locale + route)).sort();
+const expectedSitemapDateChanges = locales.flatMap((locale) => [...routes, ...laterCa10Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes].map((route) => locale + route)).sort();
 const actualSitemapDateChanges = [...sitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualSitemapDateChanges, expectedSitemapDateChanges, 'Only CA09 and later CA10/CA11/CA12 article routes across five editions may have changed sitemap dates.');
+assert.deepEqual(actualSitemapDateChanges, expectedSitemapDateChanges, 'Only CA09 and later CA10/CA11/CA12/CA13 article routes across five editions may have changed sitemap dates.');
 
 function collectJsonLd(node, output = []) {
   if (node.tagName === 'script' && node.attrs?.some((attr) => attr.name === 'type' && attr.value === 'application/ld+json')) {
@@ -109,4 +115,4 @@ for (const locale of locales) {
   assert.ok(html.includes('CC0'), `${locale || 'en'}: museum license evidence must be present.`);
 }
 
-console.log('CA09 route/date regression passed: exactly four existing body routes; 73 unique Canada routes and all non-target/non-later-CA10/CA11/CA12 search records unchanged; exact sitemap URL set with only CA09 and later CA10/CA11/CA12 route dates changed across five editions; five localized versions plus the separately refreshed country card; current canonical/article dates; and corrected museum alt text with source/license provenance.');
+console.log('CA09 route/date regression passed: exactly four existing body routes; 73 unique Canada routes and all non-target/non-later-CA10/CA11/CA12/CA13 search records unchanged; exact sitemap URL set with only CA09 and later CA10/CA11/CA12/CA13 route dates changed across five editions; five localized versions plus the separately refreshed country card; current canonical/article dates; and corrected museum alt text with source/license provenance.');
