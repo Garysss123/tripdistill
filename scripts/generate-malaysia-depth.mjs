@@ -236,7 +236,7 @@ ${figureDiagramKey ? `\n      ${figureDiagramKey}` : ''}
 
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
 
-      <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.routeLead || 'Use the stops below as handoffs, not a timed march; slow down when access or conditions change.') }</p></div><div class="md-route">${route}</div></section>
+      <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.routeLead || 'Use the stops below as handoffs, not a timed march; slow down when access or conditions change.')}</p></div><div class="md-route">${route}</div></section>
 
       <section class="md-section" id="checks" aria-labelledby="checks-title"><div class="md-section-head"><div><span class="md-section-label">Before committing the day</span><h2 id="checks-title">Three weak points to solve.</h2></div><p>These checks change faster than the page. Reconfirm them with the listed official source and the actual operator close to travel.</p></div><div class="md-check-grid">${checks}</div></section>
 
@@ -266,7 +266,10 @@ function kuchingHubPlanning(cluster) {
   if (!plan) return '';
   const options = plan.plans.map((item) => `<article class="kuching-plan-card"><span>${escapeHtml(item.title)}</span><p>${escapeHtml(item.fit)}</p><ol>${item.days.map(([label, detail]) => `<li><strong>${escapeHtml(label)}</strong><p>${escapeHtml(detail)}</p></li>`).join('')}</ol></article>`).join('');
   const walk = plan.walk.stops.map(([name, detail], index) => `<li><b aria-hidden="true">${String(index + 1).padStart(2, '0')}</b><strong>${escapeHtml(name)}</strong><p>${escapeHtml(detail)}</p></li>`).join('');
-  return `<section class="sr-section kuching-plan" id="route" aria-labelledby="route-title"><div class="sr-heading"><span>Nights, base and transfer logic</span><h2 id="route-title">${escapeHtml(cluster.hubName)} works best from one city base.</h2><p>${escapeHtml(plan.intro)}</p></div><aside class="kuching-base-note"><strong>Where to sleep</strong><p>${escapeHtml(plan.base)}</p></aside><div class="kuching-plan-grid">${options}</div><div class="kuching-walk-block"><div class="sr-heading"><span>Downtown walk</span><h2>${escapeHtml(plan.walk.title)}</h2><p>${escapeHtml(plan.walk.intro)}</p></div><ol class="kuching-walk-chain">${walk}</ol></div><div class="kuching-season-grid"><article><span>Season and access</span><p>${escapeHtml(plan.season)}</p></article><article><span>Reserve before you go</span><p>${escapeHtml(plan.booking)}</p></article><article><span>When a link fails</span><p>${escapeHtml(plan.fallback)}</p></article></div></section>`;
+  const planClass = cluster.hubSlug === 'gunung-mulu' ? 'kuching-plan mulu-plan' : 'kuching-plan';
+  const heading = plan.heading || `${cluster.hubName} works best from one city base.`;
+  const walkLabel = cluster.hubSlug === 'gunung-mulu' ? 'Walking and transfer sequence' : 'Downtown walk';
+  return `<section class="sr-section ${planClass}" id="route" aria-labelledby="route-title"><div class="sr-heading"><span>Nights, base and transfer logic</span><h2 id="route-title">${escapeHtml(heading)}</h2><p>${escapeHtml(plan.intro)}</p></div><aside class="kuching-base-note"><strong>Where to sleep</strong><p>${escapeHtml(plan.base)}</p></aside><div class="kuching-plan-grid">${options}</div><div class="kuching-walk-block"><div class="sr-heading"><span>${escapeHtml(walkLabel)}</span><h2>${escapeHtml(plan.walk.title)}</h2><p>${escapeHtml(plan.walk.intro)}</p></div><ol class="kuching-walk-chain">${walk}</ol></div><div class="kuching-season-grid"><article><span>Season and access</span><p>${escapeHtml(plan.season)}</p></article><article><span>Reserve before you go</span><p>${escapeHtml(plan.booking)}</p></article><article><span>When a link fails</span><p>${escapeHtml(plan.fallback)}</p></article></div></section>`;
 }
 
 function sarawakHubPage(cluster) {
@@ -274,7 +277,7 @@ function sarawakHubPage(cluster) {
   const primary = cluster.guides[0].image;
   const reviewedOn = cluster.reviewedOn || '30 August 2026';
   const description = ensureMetaDescription(cluster.hubPlanning?.intro || `Plan ${cluster.hubName} through four distinct Sarawak chapters with practical transport, access, weather and responsible-visit guidance.`);
-  const faq = cluster.guides.map((guide) => [guide.faq[0][0], guide.faq[0][1]]);
+  const faq = cluster.hubPlanning?.faq || cluster.guides.map((guide) => [guide.faq[0][0], guide.faq[0][1]]);
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -493,6 +496,7 @@ if (requestedClusterSlug) {
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
     'kota-kinabalu-tunku-abdul-rahman': ['gaya-street-waterfront', 'tanjung-aru-museum', 'manukan-mamutik', 'sapi-gaya-islands'],
     melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
+    'gunung-mulu': ['deer-lang-caves', 'clearwater-wind-caves', 'pinnacles-expedition', 'canopy-night-walks'],
     'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau'],
     'sandakan-kinabatangan': ['sandakan-heritage-waterfront', 'sepilok-conservation-centres', 'sukau-kinabatangan', 'gomantong-batu-puteh'],
     'kuching-bako': ['kuching-waterfront-old-courthouse', 'borneo-cultures-museum', 'semenggoh-wildlife-centre', 'bako-national-park'],
@@ -510,7 +514,7 @@ if (requestedClusterSlug) {
     fs.mkdirSync(path.dirname(page), { recursive: true });
     fs.writeFileSync(page, childPage(guide, cluster));
   }
-  if (cluster.hubSlug === 'kuching-bako') {
+  if (cluster.hubSlug === 'kuching-bako' || cluster.hubSlug === 'gunung-mulu') {
     const hubFile = routeFile(`/malaysia/${cluster.hubSlug}/`);
     fs.mkdirSync(path.dirname(hubFile), { recursive: true });
     fs.writeFileSync(hubFile, sarawakHubPage(cluster));

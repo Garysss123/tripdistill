@@ -98,6 +98,14 @@ const malaysiaPerhentianRedangRoutes = [
   '/malaysia/perhentian-redang/perhentian-besar/',
   '/malaysia/perhentian-redang/redang-merang-transfer/'
 ];
+const malaysiaMuluLastmod = '2026-10-12';
+const malaysiaMuluRoutes = [
+  '/malaysia/gunung-mulu/',
+  '/malaysia/gunung-mulu/deer-lang-caves/',
+  '/malaysia/gunung-mulu/clearwater-wind-caves/',
+  '/malaysia/gunung-mulu/pinnacles-expedition/',
+  '/malaysia/gunung-mulu/canopy-night-walks/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -871,6 +879,11 @@ for (const route of malaysiaPerhentianRedangRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Perhentian/Redang route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaPerhentianRedangLastmod });
+}
+for (const route of malaysiaMuluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Gunung Mulu route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaMuluLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
