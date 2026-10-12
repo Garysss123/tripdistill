@@ -19,6 +19,12 @@ const routes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
+const currentSydneyNswGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -126,9 +132,9 @@ function sitemapEntries(xml) {
   return new Map(rows.map(({ loc, lastmod }) => [new URL(loc).pathname, lastmod]));
 }
 
-const expectedHtml = routes.map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...currentSydneyNswGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns route documents may change.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected Cairns routes and four current Sydney/NSW gap routes may change.');
 
 const deltas = [];
 for (const route of routes) {
@@ -190,7 +196,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'Only four selected search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...currentSydneyNswGapRoutes].sort(), 'Only current Cairns and Sydney/NSW gap search records may change.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -209,9 +215,9 @@ for (const [locale, prefix] of locales.slice(1)) {
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = routes.flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...currentSydneyNswGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected routes across five language editions may receive new lastmod dates.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only current Cairns and Sydney/NSW gap routes across five language editions may receive new lastmod dates.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap date.');
 
 for (const file of photoPaths) assert.deepEqual(fs.readFileSync(path.join(root, file)), git(['show', `${base}:${file}`], true), file + ': existing photo bytes must be unchanged.');

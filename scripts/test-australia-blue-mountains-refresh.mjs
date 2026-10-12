@@ -16,6 +16,15 @@ const routes = [
   '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
   '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/'
 ];
+const currentGapRoutes = [
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/'
+];
+const currentSydneyRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/'
+];
+const allCurrentRoutes = [...routes, ...currentGapRoutes];
 const laterGreatOceanRoutes = [
   '/australia/great-ocean-road-gariwerd/',
   '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
@@ -179,10 +188,10 @@ function cubicSegments(pathData) {
   return segments;
 }
 
-const expectedEnglish = routes.map((route) => `${route.slice(1)}index.html`).sort();
+const expectedEnglish = allCurrentRoutes.map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia/blue-mountains-nsw-coast'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedEnglish, expectedEnglish, 'Only the four selected English routes may change.');
+assert.deepEqual(changedEnglish, expectedEnglish, 'Only the four earlier and two current selected English routes may change.');
 
 const localeScripts = {
   'zh-Hant': /[\u3400-\u9fff]/u,
@@ -197,7 +206,7 @@ const localizedReviewDate = {
   th: '12 ตุลาคม 2026'
 };
 
-for (const route of routes) {
+for (const route of allCurrentRoutes) {
   const english = fs.readFileSync(fileFor(route), 'utf8');
   const document = parse(english);
   const rootHtml = findOne(document, (node) => node.tagName === 'html');
@@ -243,14 +252,30 @@ for (const locale of ['zh-Hant', 'ja', 'ko', 'th']) {
   assert.equal(batch.reviewProvenance?.independentSecondModel, false, `${locale}: translation review must not claim an independent second model.`);
 }
 
+for (const locale of ['zh-Hant', 'ja', 'ko', 'th']) {
+  const file = path.join(root, `data/i18n/reviewed/${locale}/zzzzzi-australia-sydney-nsw-gaps-pages-20261012.json`);
+  const batch = JSON.parse(fs.readFileSync(file, 'utf8'));
+  assert.equal(batch.qualityStatus, 'reviewed', `${locale}: Sydney/NSW gap translation batch quality status.`);
+  assert.deepEqual(batch.routes, [
+    '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+    '/australia/sydney-harbour-coast/manly-north-head/',
+    ...currentGapRoutes
+  ], `${locale}: Sydney/NSW gap batch must cover exactly the four authorized routes.`);
+  assert.equal(Object.keys(batch.translations).length, 218, `${locale}: expected 218 current locale keys across the four authorized routes.`);
+  assert(Object.values(batch.translations).every((value) => typeof value === 'string' && value.trim()), `${locale}: every Sydney/NSW gap translation is present.`);
+  assert.equal(batch.reviewProvenance?.writer, 'GPT-6 Luna', `${locale}: writer provenance.`);
+  assert.equal(batch.reviewProvenance?.reviewer, 'GPT-6 Luna; same-model self-review', `${locale}: translation review provenance.`);
+  assert.equal(batch.reviewProvenance?.independentSecondModel, false, `${locale}: translation review must not claim an independent second model.`);
+}
+
 const baseSearch = JSON.parse(git(['show', `${base}:data/search-index.json`]));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].sort(), 'Only selected Blue Mountains, later Great Ocean Road, Gold Coast and Cairns search records may change.');
-for (const route of routes) {
+assert.deepEqual(changedSearch, [...routes, ...currentGapRoutes, ...currentSydneyRoutes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].sort(), 'Only selected Blue Mountains, Sydney/NSW gap, later Great Ocean Road, Gold Coast and Cairns search records may change.');
+for (const route of allCurrentRoutes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);
 }
@@ -258,10 +283,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const expectedLastmod = [...routes, ...currentGapRoutes, ...currentSydneyRoutes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Blue Mountains, later Great Ocean Road, Gold Coast and Cairns routes in five editions may receive a new sitemap lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Blue Mountains, Sydney/NSW gap, later Great Ocean Road, Gold Coast and Cairns routes in five editions may receive a new sitemap lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, `${route}: sitemap lastmod.`);
 
 const svgFile = path.join(root, svgPath.slice(1));
@@ -378,4 +403,4 @@ for (const preserved of [
   assert.equal(sha256(current), sha256(baseline), `${preserved}: parallel Brisbane source/image fix must be preserved byte-for-byte.`);
 }
 
-console.log('Blue Mountains Australia regression passed: four existing substantive route bodies, 20 dated editions, exact search/sitemap scope, four reviewed locale deltas, SVG XML/five-language legend/bounds/provenance, separate photo subject/license records, and byte-identical Brisbane assets/pages.');
+console.log('Blue Mountains Australia regression passed: four earlier Blue Mountains routes plus the current NSW gap routes, exact search/sitemap scope, reviewed locale batches, SVG XML/five-language legend/bounds/provenance, separate photo subject/license records, and byte-identical Brisbane assets/pages.');

@@ -98,11 +98,51 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'barangaroo-darling-harbour', name: 'Barangaroo & Darling Harbour', motif: 'western foreshore ledger', instrument: 'ledger', imageQuery: 'Barangaroo Sydney Darling Harbour waterfront', imageAlt: 'Barangaroo waterfront on the western side of central Sydney',
-        summary: 'A west-side foreshore walk through headland park, commercial waterfront and Darling Harbour without assuming every edge forms one continuous promenade.',
-        orientation: 'choose either the high headland line or the lower wharf line and note where construction or private frontage interrupts it.', access: 'Arrive through Wynyard, Barangaroo metro or a named ferry stop and save an inland station exit for the return.', sequence: 'Begin in the cooler headland landscape, move through the working waterfront and finish at one defined Darling Harbour venue or transport stop.', boundary: 'Recognise Barangaroo as living Country and a contemporary commercial precinct; follow cultural interpretation and keep private events, offices and construction outside the route.',
-        stages: [['Start above the water', 'Use the headland paths to understand the reshaped shoreline and identify the next public descent.'], ['Follow a signed seam', 'Stay on the designated waterfront connection and respond to temporary diversions rather than forcing a closed edge.'], ['Choose one interior', 'Add a museum, aquarium or cultural venue only when its ticket and queue fit the remaining day.'], ['Exit inland', 'Use a confirmed light-rail, metro or train station instead of extending the foreshore until fatigue.']],
-        risks: [['Construction change', 'Major waterfront works can move paths and crossings. Read on-site signs and current precinct notices.'], ['Exposed surfaces', 'Sun, wind and reflected heat build quickly along the western edge; carry water and use shaded pauses.'], ['Night dispersal', 'Event finishes create concentrated demand. Decide the inland station and meeting point before the crowd forms.']],
-        duration: 'Allow half a day for the full foreshore argument, or two hours for one focused section.', combine: 'It pairs well with The Rocks via Barangaroo Reserve; do not automatically append the eastern beaches.', verify: 'Check path diversions, venue entry, event schedules, ferry or metro status and weather warnings.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Sydney CBD skyline and harbor-side buildings at dusk, viewed from Pyrmont; a city-context image, not a route map.',
+        summary: 'Choose the upper paths of Barangaroo Reserve or the lower Wulugul Walk, then finish at one confirmed Darling Harbour exit; public access, events and return transport can change by block.',
+        orientationTitle: 'Choose the edge and the exit before walking.', routeTitle: 'Reserve, signed foreshore, named return.',
+        orientation: 'Barangaroo is not one uninterrupted boardwalk. The upper Reserve is a planted headland with slopes and viewpoints; the lower Wulugul Walk follows the harbour edge toward Darling Harbour; commercial wharves and event spaces can interrupt public movement. Pick the terrain and endpoint that suit the group, then check the current precinct map and on-site diversions before committing to a through-walk.',
+        interpretation: 'This is Gadigal Country as well as a contemporary public park, working waterfront and commercial precinct. Read the local acknowledgement and interpretation, remain on public signed routes, and treat any cultural tour, private event, venue queue or construction boundary as a separate access decision.',
+        access: 'Use Transport for NSW to compare the full journey to Wynyard, Barangaroo Metro or a ferry wharf for your date; those are different arrival and return points. If steps, slope or heat are a concern, choose the lower foreshore section and a confirmed station exit instead of assuming the upper Reserve is step-free. Check event notices before choosing a meeting point.',
+        sequence: 'Start at a public entrance shown on the current Barangaroo visitor map. Walk the upper Reserve only if its open paths and slopes fit the group; descend at a signed public connection to Wulugul Walk and follow the open foreshore toward Darling Harbour. Finish at one named wharf, light-rail stop or venue. If a barrier breaks the line, return to the last signed street connection rather than slipping through private frontage.',
+        boundary: 'Barangaroo Reserve and Wulugul Walk are public spaces within a living cultural landscape, but nearby wharves, workplaces, event compounds and venue interiors are not interchangeable public paths. Follow Gadigal cultural guidance, barriers and event directions; never treat a waterfront photo or visitor map as proof that a closed edge is open.',
+        decisions: [
+          ['Upper headland or lower edge', 'The Reserve offers a planted headland perspective but adds slope and steps; the lower Wulugul section reduces the climb but still depends on open foreshore access.'],
+          ['Public walk or timed interior', 'A single museum visit can fit the foreshore; choose the Australian National Maritime Museum only after checking its own entry, hours and remaining walking time.'],
+          ['One return point', 'Choose a wharf or inland rail/metro stop before starting. Do not let a ticketed venue or event finish depend on an unverified ferry or last-minute cross-precinct walk.']
+        ],
+        fieldLens: {
+          label: 'Headland / wharf / venue', title: 'Three surfaces, three separate access checks.',
+          copy: 'The city skyline in the hero is a contextual dusk view from Pyrmont, not a picture of the walking line. Use the official precinct map for entrances, then check each public-to-private transition on the day.',
+          notes: [['Headland', 'Choose it for the planted Reserve and higher views when the group is comfortable with slopes.'], ['Waterfront', 'Use the signed Wulugul Walk as the low-edge connector, subject to diversions.'], ['Interior', 'A museum or event adds its own ticket, opening and security conditions; do not infer them from the harbour path.']]
+        },
+        stages: [
+          ['Check the endpoints', 'Pick a public entrance and a named return stop. Confirm current transport, event and access notices before setting out.'],
+          ['Read the upper Reserve', 'Take the headland paths only if their slope and open sections suit the group; otherwise begin on the lower public edge.'],
+          ['Follow Wulugul Walk', 'Use the signed harbour-side connection toward Darling Harbour and obey any temporary diversion instead of crossing a work zone.'],
+          ['Choose one finish', 'Stop at the public waterfront or add one verified museum visit, then return from the exact wharf or station you planned.']
+        ],
+        risks: [['A broken promenade', 'Construction, event fencing and private wharves can interrupt the apparent shoreline line. Recheck the precinct notice and obey the signs.'], ['Slope mistaken for access', 'A nearby station or venue does not make every upper path step-free. Confirm the exact accessible path and choose the lower section if uncertain.'], ['Event exit pressure', 'A show or market can concentrate people around one crossing or stop. Set a meeting point and a second return option before the crowd forms.']],
+        duration: 'Allow about two hours for one focused public foreshore section. Reserve half a day for the upper park, the lower walk and one confirmed interior; these are editorial planning allowances, not venue or operator times.',
+        combine: 'Barangaroo Reserve connects naturally with The Rocks as a separate harbour-edge walk. Keep the eastern beaches and a timed Opera House visit on another day rather than crossing the city to fill this one.',
+        verify: 'Check the Barangaroo visitor map and current access/event notices, the chosen museum entry page, weather, and Transport for NSW for the exact return point and date.',
+        faq: [
+          ['Is Barangaroo a continuous waterfront walk to Darling Harbour?', 'Destination NSW describes the Wulugul Walk as a public waterfront connection, but construction and event diversions can change the usable line. Check the precinct notice and follow signs rather than treating every wharf edge as a promenade.'],
+          ['Which route is easier for a slower-paced group?', 'The lower foreshore avoids the upper headland climb, but step-free access depends on the current entrance and diversion. Confirm the precise path; if that is unclear, choose one short public section with a known return.'],
+          ['Can I add the Australian National Maritime Museum?', 'Yes, if you check its current visitor information and allow for its own admission, security and time. Treat it as one interior choice, not a guaranteed extension of the waterfront walk.'],
+          ['Does the hero image show Barangaroo Reserve?', 'No. It is a licensed dusk view of Sydney’s wider waterfront and CBD from Pyrmont, useful as city context rather than a route map or direct Reserve view.']
+        ],
+        sources: [
+          ['https://www.sydney.com/destinations/sydney/sydney-city/barangaroo', 'Destination NSW — Barangaroo and the Wulugul Walk overview'],
+          ['https://www.barangaroo.com/', 'Barangaroo — current visitor information, events and cultural tours'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and service information'],
+          ['https://www.sea.museum/visit', 'Australian National Maritime Museum — visitor information']
+        ],
+        nearbySources: [
+          ['https://www.sydney.com/destinations/sydney/sydney-city/barangaroo', 'Destination NSW — Barangaroo and the Wulugul Walk overview'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and service information']
+        ]
       }),
       g({
         slug: 'bondi-coogee-coastal-walk', name: 'Bondi to Coogee Coastal Walk', motif: 'surf and headland exposure', instrument: 'beach-section', imageQuery: 'Bondi Beach Sydney coastline', imageAlt: 'Bondi Beach and its ocean coastline in Sydney',
@@ -137,11 +177,53 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'manly-north-head', name: 'Manly & North Head', motif: 'ferry-to-headland circuit', instrument: 'tide-clock', imageQuery: 'Manly North Head Sydney harbour view', imageAlt: 'Manly and North Head above Sydney Harbour',
-        summary: 'A ferry-led day linking Manly’s ocean and harbour sides to North Head, with cliff exposure and the last useful return kept visible.',
-        orientation: 'use the ferry wharf as the hinge between sheltered harbour, the Corso, ocean beach and elevated North Head tracks.', access: 'Check the exact ferry service and wharf before departure; bus connections may be needed for North Head depending on ability and track choice.', sequence: 'Cross by ferry, read both water edges, choose one headland circuit and return to the wharf before evening demand or weather changes.', boundary: 'North Head includes protected habitat, memorial and defence heritage. Stay on open tracks, clean footwear when requested and respect closed cultural areas.',
-        stages: [['Cross with a return in hand', 'Record the ferry service, fallback route and weather before the harbour crossing.'], ['Compare two shores', 'Use the Corso to understand the short distance between harbour and ocean conditions without assuming they are equally safe.'], ['Enter the headland carefully', 'Choose an open, ability-matched track and observe biosecurity, cliff and cycling controls.'], ['Descend for the ferry', 'Leave enough daylight and bus margin to reach the wharf without rushing steep or exposed sections.']],
-        risks: [['Ferry disruption', 'Wind, maintenance and events can change service. Keep the bus-and-train alternative understood.'], ['Cliff exposure', 'Lookouts and tracks can be windy, hot and uneven. Obey barriers and closures.'], ['Ocean conditions', 'Manly surf changes rapidly; swim only in patrolled areas and follow lifesavers.']],
-        duration: 'Use a full day for North Head and both Manly shores; a harbour-and-beach visit alone fits half a day.', combine: 'The ferry naturally frames a harbour day; do not add Bondi unless the trip is only a transport comparison.', verify: 'Confirm ferry and bus status, track closures, fire danger, surf, wind, UV and the last comfortable return.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Archival 1973 photograph of the Sydney ferry North Head crossing near Manly; it does not show today’s vessel or timetable.',
+        summary: 'Build a Manly ferry day around one ocean-side stop and one verified return; add North Head only with a confirmed last-mile ride or a suitable signed walk and a clear track exit.',
+        orientationTitle: 'Separate the wharf, both shores and the headland.', routeTitle: 'Cross, choose one shore, reach one loop, return.',
+        orientation: 'Manly Wharf is a useful ferry arrival, not the entrance to every North Head track. From the Corso, the sheltered harbour edge and ocean beach are close on the map but have different wind, surf and swimming conditions. North Head adds a climb or another transport leg. Choose a relaxed Manly-only day, or reserve the extra time and connection for one headland route.',
+        interpretation: 'The featured vessel is the historic ferry North Head in a 1973 photograph. It documents the harbour crossing, not the current fleet, service pattern or accessible boarding on your travel date.',
+        access: 'Use Transport for NSW to select the exact Manly ferry or other service, wharf, return and backup for the day. For North Head, compare the current bus/ride to North Head Scenic Drive with the longer signed walking approach; a ferry ticket does not solve that last mile. NPWS describes Fairfax Walk as a paved 1 km loop with an easy grade, but the approach from Manly is a separate decision.',
+        sequence: 'Begin at the Manly ferry wharf and note the return service before leaving the terminal. Walk the Corso toward either the harbour-side stop or Manly Ocean Beach; check Beachsafe and local patrol directions before considering a swim. If adding the headland, use a verified bus/ride to North Head Scenic Drive and follow the open Fairfax Walk between Burragula and Yiningma lookouts. Return to Manly Wharf from the exact endpoint with daylight and service margin.',
+        boundary: 'North Head is protected habitat with Aboriginal cultural places and historic memorial and defence landscapes. Stay on open marked tracks, respect any closed area or cultural instruction, and do not descend toward cliff edges for a photograph. Manly’s beaches are working public spaces: keep clear of lifesaving activity and follow the current patrol and hazard advice.',
+        decisions: [
+          ['Town day or headland day', 'Manly Wharf, the Corso and one shore make a contained half-day. North Head requires another access leg and a return margin, so give it a full day.'],
+          ['Bus-to-loop or longer walk', 'Fairfax Walk is a short paved loop at North Head; walking from Manly adds distance and slope. Choose by ability and current path status, not by the ferry crossing alone.'],
+          ['Harbour water or surf beach', 'Sheltered water and ocean surf are not interchangeable. Make swimming optional after checking the exact beach listing, flags and lifesaver advice.']
+        ],
+        fieldLens: {
+          label: 'Ferry / beach / headland', title: 'The ferry connects three different days.',
+          copy: 'A scenic crossing does not create a continuous step-free loop. Keep the wharf as the return hinge, then choose whether the group has time and mobility for the extra North Head connection.',
+          notes: [['Manly-only', 'Use the wharf, Corso and one water edge; keep the other shore as an optional detour.'], ['Fairfax Walk', 'The NPWS loop is paved and short; confirm the approach and park alerts separately.'], ['Extended coast', 'A longer Manly Scenic Walkway route needs its own track, weather and exit check.']]
+        },
+        stages: [
+          ['Set the crossing', 'Check the ferry service, wharf, return and alternative in the trip planner before boarding.'],
+          ['Choose one water edge', 'Walk the Corso to the harbour side or ocean beach; read current conditions before deciding whether to swim.'],
+          ['Add North Head deliberately', 'If the group has capacity, verify a bus/ride to North Head Scenic Drive or choose the signed approach on foot. Use the open Fairfax Walk to its two lookouts.'],
+          ['Return before the margin disappears', 'Leave the headland with time for the last mile and the exact service back from Manly Wharf; do not rely on a guessed last ferry.']
+        ],
+        risks: [['Ferry or bus change', 'Wind, maintenance and events can alter services. If the backup does not work for your exact North Head endpoint, make this a Manly-only day.'], ['Cliff and track exposure', 'The paved Fairfax loop is not the whole headland approach. Heat, fire notices, event closures and track grades change what is suitable.'], ['Surf misread as shelter', 'Ocean Beach conditions can differ sharply from the harbour. Use Beachsafe and lifesaver directions; clear water or other swimmers do not establish safety.']],
+        duration: 'Allow half a day for the wharf, Corso and one shore. Set aside a full day to add North Head, transport margin and both lookouts; these are planning allowances, not operator durations.',
+        combine: 'Keep Bondi–Coogee on a different day. The Manly ferry pairs best with its own harbour and headland choices, not another cross-city coast transfer.',
+        verify: 'Check Transport for NSW for both ferry and bus/ride legs, NPWS North Head and Fairfax Walk alerts, Beachsafe for the selected beach, and weather/fire advice before departure.',
+        faq: [
+          ['Can I walk from the ferry straight to North Head?', 'You can choose a signed walking route, but the wharf is not at the headland track gate. The approach adds time and slope; compare it with a date-checked bus or ride and keep the return margin.'],
+          ['Is Fairfax Walk suitable for limited mobility?', 'NPWS describes the 1 km loop as paved and wheelchair accessible. That describes the loop itself, not the journey from Manly Wharf; confirm the ride, drop-off, current alerts and exact path.'],
+          ['Should I swim at the harbour or ocean beach?', 'Decide at the actual beach, not from the map. Check the current Beachsafe listing and local patrol directions, and skip swimming when conditions or supervision do not fit.'],
+          ['Is the ferry in the hero photo the current boat?', 'No. The source is a 1973 photograph of the vessel named North Head. Use the Transport for NSW planner for today’s service and vessel information.']
+        ],
+        sources: [
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and ferry/bus service information'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/north-head', 'NSW National Parks — North Head visitor information and current alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/fairfax-walk', 'NSW National Parks — Fairfax Walk route, grade and accessibility'],
+          ['https://beachsafe.org.au/', 'Surf Life Saving Australia — current beach hazards and patrol information'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park', 'NSW National Parks — Sydney Harbour National Park alerts and visitor information']
+        ],
+        nearbySources: [
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trip planner and ferry/bus service information'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/fairfax-walk', 'NSW National Parks — Fairfax Walk route, grade and accessibility'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/north-head', 'NSW National Parks — North Head visitor information and current alerts']
+        ]
       })
     ]
   }),
@@ -283,19 +365,109 @@ export const australiaEastClusters = [
       }),
       g({
         slug: 'royal-national-park-coast', name: 'Royal National Park Coast', motif: 'track-and-tide day', instrument: 'coastline', imageQuery: 'Royal National Park Coast Track New South Wales', imageAlt: 'Cliffs and ocean along the Royal National Park coast',
-        summary: 'A coastal national-park day built around the chosen trailhead, legal parking or train access, tide, heat and a credible exit.',
-        orientation: 'select one coastal section rather than advertising the full Coast Track as a casual Sydney walk.', access: 'Match the trailhead to train, ferry, booked shuttle or legal parking and confirm that the return service actually operates that day.', sequence: 'Begin early, keep swimming separate from walking, reassess at every exit and finish before heat or darkness narrows choices.', boundary: 'Rock shelves, cliffs and ocean pools can be lethal in swell. Stay out of closed areas and respect park and cultural-site instructions.',
-        stages: [['Name both trailheads', 'Write down the start, finish and transport contract before entering the park.'], ['Check sea and fire', 'Compare swell, tide, heat and fire danger with the exposed route.'], ['Walk the chosen section', 'Stay on the formed track and use only open beaches or facilities as rest points.'], ['Take the protected exit', 'Leave through the planned trailhead while the return service and daylight remain reliable.']],
-        risks: [['Swell on rock shelves', 'Never approach cliff bases or rock platforms during hazardous surf, regardless of other visitors.'], ['Heat and water', 'Long sections lack reliable water and shade. Carry enough and shorten the route early.'], ['Transport gaps', 'Sparse services can strand a one-way walker. Confirm every connection and fallback.']],
-        duration: 'Allow a full day for one meaningful coastal section; overnight planning is required for the full Coast Track.', combine: 'Do not combine with a Blue Mountains hike. A short southern Sydney stop is the only sensible addition.', verify: 'Check park closure, fire danger, tide, swell, temperature, water, trailhead access and return transport.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        summary: 'Choose a 7.8 km return Bundeena–Marley day walk or plan the Royal Coast Track as its official 27 km, two-day route with a booked Garie Beach campsite and a transport plan at both ends.',
+        orientationTitle: 'Choose the return walk or the overnight crossing.', routeTitle: 'Name the trailhead, check the track, protect the exit.',
+        orientation: 'The Coast Track is a remote-grade coastal journey, not a casual add-on to Katoomba. NSW National Parks lists it at 27 km one way, grade 4 and two days; its Bundeena-to-Garie stage is 17 km and the Garie-to-Otford stage is 10 km. For a day outing, the separately described Bundeena Drive to Marley walk is a 7.8 km return, grade 3 route with a 3–4 hour suggested duration. Decide which route you mean before booking transport.',
+        interpretation: 'The hero shows exposed sandstone and ocean, not a surveyed trail line. Keep all movement on the currently open formed track; an attractive rock platform, pool or cliff shelf is not a safe shortcut or a swimming guarantee.',
+        access: 'For the day option, start at the signed Bundeena Drive trailhead and return to that same point. A ferry to Bundeena does not place you at the trailhead: plan the final connection and its return before leaving. For the full Coast Track, align the Bundeena start, pre-booked Garie Beach overnight and Otford finish; NPWS names Otford station at the southern exit. Check the actual date-specific services both ways.',
+        sequence: 'Day plan: check alerts and weather, reach Bundeena Drive, walk the official Marley return route, then retrace to the same trailhead with water and daylight margin. Overnight plan: only if fit and equipped for a grade 4 two-day walk, start from Bundeena, carry food/water/camping kit, stay at Garie Beach only with an advance booking, then continue to Otford and take the verified return. Do not improvise a one-way finish from the beach.',
+        boundary: 'The cliffs, rock shelves and tidal platforms are dangerous in swell and can be fragile or closed. Stay behind barriers, avoid unpatrolled water, follow fire and park closures, and respect the cultural and ecological significance of the park. A view is never permission to leave the formed route.',
+        decisions: [
+          ['Day walk or multi-day track', 'The 7.8 km Bundeena Drive–Marley route is a return walk. The 27 km Coast Track is a two-day, grade 4 one-way journey; it needs overnight gear and a booked Garie campsite.'],
+          ['Trailhead and exit', 'Bundeena Drive, Wattamolla, Garie Beach, Garawarra Farm and Otford are distinct access points. Choose only the open section whose start, finish and return transport all work.'],
+          ['Water and exposure', 'The open coast has long exposed stretches. Check fire, tide, surf and heat; carry enough food and water, and shorten the plan before fatigue changes footing.']
+        ],
+        fieldLens: {
+          label: 'Return / crossing', title: 'A one-way line changes the whole day.',
+          copy: 'The shorter route returns to the same Bundeena Drive trailhead. The full Coast Track crosses the park and ends at Otford; campsite booking, carried equipment and the southern return are part of the route itself.',
+          notes: [['Bundeena Drive → Marley', 'NPWS lists 7.8 km return, grade 3 and 3–4 hours; start and finish at the same trailhead.'], ['Bundeena → Garie', 'The official first day is 17 km; reserve the Garie Beach campsite before committing.'], ['Garie → Otford', 'The second stage is 10 km; allow for the climb and confirm the train from Otford.']]
+        },
+        stages: [
+          ['Select the route and both ends', 'Choose the short Bundeena Drive–Marley return or the full Bundeena–Otford crossing. Save the matching official map offline.'],
+          ['Clear today’s gates', 'Read NPWS track alerts and fire closures, then compare forecast, swell, tide and daylight with the exposed section.'],
+          ['Walk only the chosen section', 'For the day plan, follow Bundeena Drive to Marley and retrace. For the overnight, use the marked Coast Track and keep the booked Garie stop.'],
+          ['Exit on the plan you proved', 'Return to Bundeena Drive or continue to Otford station as selected. If a closure breaks the route, turn back to the last safe access point.']
+        ],
+        risks: [['One-way transport failure', 'The park is not a circular track. A missing shuttle, ferry or train can leave a walker stranded; verify the complete chain and an alternate before starting.'], ['Fire, heat and water', 'Park closure and fire status can override a route. Carry the water and equipment for the selected length, and turn back before the exposed section becomes unsafe.'], ['Rock platforms and surf', 'Popular pools and ledges are not safe in all tides or swell. Never climb around a barrier or approach a cliff base for a photo.']],
+        duration: 'NPWS currently suggests 3–4 hours for the 7.8 km Bundeena Drive to Marley return. It lists the full Coast Track as 27 km one way over two days, with 17 km to Garie on day one and 10 km to Otford on day two; treat these as official planning references, then check current alerts and your own pace.',
+        combine: 'Do not combine the full track with a Blue Mountains hike or another timed attraction. A single short southern Sydney stop is reasonable only after the park return is secured.',
+        verify: 'Check NPWS route and local alerts, Garie Beach reservation, Transport for NSW for the exact trailhead and Otford returns, Bureau of Meteorology forecasts, and Beachsafe before any water decision.',
+        faq: [
+          ['Can I walk the full Coast Track in one day?', 'NPWS presents it as a 27 km grade 4 multi-day walk and suggests two days. Plan the pre-booked Garie Beach overnight and the Otford finish rather than relying on a rushed same-day return.'],
+          ['What is a realistic day walk?', 'The official Bundeena Drive to Marley walk is 7.8 km return, grade 3, with a suggested 3–4 hours. It returns to its own trailhead; plan the last connection from Bundeena ferry separately.'],
+          ['Can I camp anywhere along the Coast Track?', 'No. NPWS says overnight stays at Garie Beach campground require an advance booking and have limited capacity. Confirm the official overnight arrangement before walking; do not substitute an unplanned beach camp.'],
+          ['Can I swim at Figure Eight Pools or a rock shelf?', 'Only if official access and conditions allow, and never by climbing barriers. Swell, tide and wave risk can make rock platforms hazardous even when the water looks clear.']
+        ],
+        sources: [
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track', 'NSW National Parks — Coast Track stages, grade, campsite and alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bundeena-drive-to-marley-walk', 'NSW National Parks — Bundeena Drive to Marley walk distance and grade'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/royal-national-park', 'NSW National Parks — Royal National Park visitor information and closures'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trailhead and Otford journey planner'],
+          ['https://www.bom.gov.au/nsw/forecasts/sydney.shtml', 'Australian Bureau of Meteorology — Sydney-area forecast'],
+          ['https://beachsafe.org.au/', 'Surf Life Saving Australia — beach and coastal hazard information']
+        ],
+        nearbySources: [
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/the-coast-track', 'NSW National Parks — Coast Track stages, grade, campsite and alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/bundeena-drive-to-marley-walk', 'NSW National Parks — Bundeena Drive to Marley walk distance and grade'],
+          ['https://transportnsw.info/trip', 'Transport for NSW — date-specific trailhead and Otford journey planner']
+        ]
       }),
       g({
         slug: 'jervis-bay-booderee', name: 'Jervis Bay & Booderee', motif: 'bay and Country permit', instrument: 'bay-chart', imageQuery: 'Booderee National Park Jervis Bay beach', imageAlt: 'White sand and clear water in Booderee National Park at Jervis Bay',
-        summary: 'A bay-and-park visit that separates town beaches from Booderee National Park, with entry, camping, wildlife and Traditional Owner guidance made explicit.',
-        orientation: 'choose a Jervis Bay base and one Booderee landscape instead of chasing every white-sand beach.', access: 'Reach the region by a realistic road plan or limited public-transport combination, then use the official park entry and booking system.', sequence: 'Visit the Booderee visitor information point or current online guidance, select one beach or botanic route and leave wildlife undisturbed.', boundary: 'Booderee is jointly managed with the Wreck Bay Aboriginal Community. Follow closures, cultural guidance, camping rules and no-take or marine protections.',
-        stages: [['Separate bay from park', 'Identify which authority manages the chosen beach, road, campsite and marine activity.'], ['Confirm entry and booking', 'Resolve park pass, camping or tour requirements before the final drive.'], ['Use one protected landscape', 'Choose an open beach, garden or trail suited to wind, swell and mobility.'], ['Leave no wildlife pressure', 'Pack out waste, keep distance from animals and depart before the road or campsite deadline.']],
-        risks: [['Long road return', 'Fatigue after beach time makes the drive dangerous. Stay overnight or share driving.'], ['Marine conditions', 'Clear water can still carry current, swell and cold; use patrolled areas where available.'], ['Wildlife and camping', 'Food storage, fire and campsite rules protect both visitors and animals; verify current restrictions.']],
-        duration: 'Two nights make the bay and Booderee useful; a single day from Sydney is mostly transport.', combine: 'Pair with the South Coast as a regional trip, not with a Blue Mountains day.', verify: 'Check Booderee entry and camping, road conditions, fire rules, beach safety, weather and wildlife notices.'
+        reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12',
+        heroAlt: 'Hyams Beach on Jervis Bay, looking toward Booderee National Park; a nearby NSW-side shore, not a view inside the park.',
+        summary: 'Separate the NSW-side Jervis Bay National Park and town shoreline from Aboriginal-owned Booderee; pre-buy the vehicle pass, choose one open park route and recheck current beach and entry closures.',
+        orientationTitle: 'Choose which park and which water authority.', routeTitle: 'Base, pass, one open landscape, verified return.',
+        orientation: '“Jervis Bay” is a region, not one park gate. Hyams Beach sits on the NSW side near the separate Jervis Bay National Park; Booderee National Park is Aboriginal land in Jervis Bay Territory and is managed with the Wreck Bay Aboriginal Community. The hero photograph shows Hyams Beach looking toward Booderee, so it illustrates the neighboring shore rather than an interior park beach. Pick the authority and access system before choosing the day’s beach.',
+        interpretation: 'Parks Australia says Booderee is Aboriginal land and that it works hand in hand with the Wreck Bay Aboriginal Community. Follow local cultural guidance and current park instructions; the area’s beaches and waters include different land and marine authorities, so do not carry a park pass or rule from one shoreline into another without checking.',
+        access: 'A vehicle visiting Booderee needs a park pass. On 12 October 2026 the official pass page listed a one-day vehicle pass at A$20 (A$10 concession); it also reported the entry station temporarily closed, with online purchase, the Visitor Centre or a mobile van at Jervis Bay Supermarket as alternatives. Recheck the live notice and price before driving. A day pass is not a campsite booking.',
+        sequence: 'Base in Huskisson or Vincentia for a town-and-water day, or reserve a Booderee campsite before choosing an overnight inside the park. For a park day, buy the vehicle pass first, read current closure alerts, then choose one open landscape such as Green Patch and its signed walks. Parks Australia’s 2 km Green Patch–Bristol Point loop is a one-hour, grade 2 option; its rocky shore section is best at low tide. Finish with a verified road return before fatigue or a park gate time becomes the constraint.',
+        boundary: 'Booderee is Aboriginal land and jointly managed with the Wreck Bay Aboriginal Community. Respect community direction, cultural places, habitat and wildlife; do not feed animals or enter closed sites. Hyams Beach, Booderee beaches and the wider Jervis Bay Marine Park do not share one entry pass or identical water rules.',
+        decisions: [
+          ['Town shore or Booderee', 'Hyams Beach and the NSW-side park are separate from Booderee. Pick one authority first; a nearby photo does not mean the park gate, road or beach rules are the same.'],
+          ['Vehicle day pass or campsite', 'Buy the Booderee pass for a vehicle, but reserve Green Patch, Bristol Point or Cave Beach camping separately and early; the pass does not hold a site.'],
+          ['Beach stop or short walk', 'Choose one currently open beach area or a named signed walk. Every Booderee beach is unsupervised by lifeguards, and water conditions remain a separate decision.']
+        ],
+        fieldLens: {
+          label: 'NSW shore / Booderee / bay water', title: 'One blue bay, several different rule books.',
+          copy: 'The decision is not “which white beach looks closest?” It is which managing authority, park pass, reservation and water rules match the landscape you intend to visit.',
+          notes: [['Hyams / town shore', 'Use NSW park and local access information; it is not the Booderee gate.'], ['Booderee land', 'Vehicle pass and campsite booking are separate transactions; current alerts can close a day-use area.'], ['Marine water', 'Check Jervis Bay Marine Park zoning and any activity-specific rules before fishing or boating.']]
+        },
+        stages: [
+          ['Choose the base and authority', 'Decide whether the day is a NSW-side town/Hyams visit or a Booderee park visit, then plan its actual road and return.'],
+          ['Buy the right access', 'For Booderee by vehicle, pre-purchase the current pass and check whether the entry station or alternative sales point is operating. Keep camping reservation separate.'],
+          ['Select one open area', 'Read Parks Australia alerts first. If Green Patch is open, choose its beach or a signed walk; consider the 2 km grade 2 loop only when the tide and footing fit.'],
+          ['Leave the bay safely', 'Check beach supervision, weather, park gate/road status and marine-zone rules; return to the base before the driver is fatigued.']
+        ],
+        risks: [['Entry and beach closures', 'As checked 12 October 2026, Parks Australia reported the entry station temporarily closed and Murrays Beach and Iluka day-use access under repair. Recheck official notices and do not plan around either until reopened.'], ['Unsupervised water', 'Parks Australia states Booderee beaches are not supervised by lifeguards. Clear water is not a safety assessment; follow current signs and supervise children directly.'], ['Multiple authorities', 'A Booderee pass does not cover an NSW beach or every marine activity. Confirm the land manager, campsite reservation and marine zoning for each stop.']],
+        duration: 'Give the region at least two nights if you want one town-side day and one Booderee day without spending most of the visit in transit. A single day from Sydney is chiefly a road and return plan, not a beach-hopping circuit.',
+        combine: 'Pair Booderee with a nearby South Coast stay, not a Blue Mountains day. Keep a separate NSW-side shore visit only when its own access and return still fit.',
+        verify: 'Check Booderee live alerts, pass price and sales options, campsite availability, NSW Jervis Bay National Park information, Jervis Bay Marine Park zoning, weather, road access and the no-lifeguard notice.',
+        faq: [
+          ['Do I need a pass for Booderee?', 'A vehicle visiting the park needs a vehicle pass; the official pass page also describes free entry on foot or by bicycle. Check the current pass options and sales notice before travel.'],
+          ['Is the entry station open?', 'As checked on 12 October 2026, Parks Australia said the entry station was temporarily closed. It listed online purchase, the Visitor Centre and a mobile van at Jervis Bay Supermarket as alternatives; recheck the live closure notice.'],
+          ['Can I camp with a day pass?', 'No. Camping fees and reservations for Green Patch, Bristol Point and Cave Beach are handled separately. Campsites can fill in peak periods, so book the exact site before building an overnight route around it.'],
+          ['Are Booderee beaches patrolled?', 'Parks Australia states that none of its beaches are supervised by lifeguards. Check its safety guidance, obey signs, and do not treat calm-looking water as a patrol or safety guarantee.'],
+          ['Is Hyams Beach inside Booderee?', 'No. Hyams Beach is on the NSW side and is listed by NSW National Parks with Jervis Bay National Park; Booderee is a separate Aboriginal-owned park with its own access rules.']
+        ],
+        sources: [
+          ['https://booderee.gov.au/plan/park-passes-permits/', 'Parks Australia — Booderee vehicle passes, current prices and entry rules'],
+          ['https://booderee.gov.au/news/booderee-entry-station-temporary-closure/', 'Parks Australia — temporary entry-station closure and alternative pass sales'],
+          ['https://booderee.gov.au/', 'Parks Australia — current Booderee alerts and beach-access notices'],
+          ['https://booderee.gov.au/things-do/visit/beaches/', 'Parks Australia — Booderee beach access and lifeguard guidance'],
+          ['https://booderee.gov.au/things-do/walks/green-patch-walks/', 'Parks Australia — Green Patch and Bristol Point signed walks'],
+          ['https://booderee.gov.au/camping/', 'Parks Australia — Booderee campsite booking information'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/jervis-bay-national-park', 'NSW National Parks — Jervis Bay National Park and Hyams Beach'],
+          ['https://www.dpird.nsw.gov.au/fishing/marine-protected-areas/marine-parks/jervis-bay-marine-park', 'NSW DPIRD — Jervis Bay Marine Park and zoning map']
+        ],
+        nearbySources: [
+          ['https://booderee.gov.au/plan/park-passes-permits/', 'Parks Australia — Booderee vehicle passes, current prices and entry rules'],
+          ['https://booderee.gov.au/news/booderee-entry-station-temporary-closure/', 'Parks Australia — temporary entry-station closure and alternative pass sales'],
+          ['https://booderee.gov.au/things-do/visit/beaches/', 'Parks Australia — Booderee beach access and lifeguard guidance'],
+          ['https://booderee.gov.au/things-do/walks/green-patch-walks/', 'Parks Australia — Green Patch and Bristol Point signed walks'],
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/jervis-bay-national-park', 'NSW National Parks — Jervis Bay National Park and Hyams Beach']
+        ]
       })
     ]
   }),

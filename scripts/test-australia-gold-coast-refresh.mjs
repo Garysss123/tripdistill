@@ -12,7 +12,7 @@ import { australiaGoldCoastDiagram } from '../data/australia-gold-coast-diagram.
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'ec5e2f319333e946e5792b99777e5ce99a97e2b6';
-const blueMountains = '8ca64553fadfaf69baab2790c41f543a649c8043';
+const blueMountains = '54d9fc4fdb0a4c747ccb5199e0042c1afe35dd71';
 const routes = [
   '/australia/gold-coast-scenic-rim/',
   '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
@@ -24,6 +24,12 @@ const laterCairnsRoutes = [
   '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
+];
+const currentSydneyNswGapRoutes = [
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/',
+  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/'
 ];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
@@ -153,10 +159,10 @@ const localizedReviewDate = {
   th: '12 ตุลาคม 2026'
 };
 
-const expectedHtml = [...routes, ...laterCairnsRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four Gold Coast and four later Cairns English route documents may change from the requested base.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the Gold Coast and later Cairns routes plus the four current Sydney/NSW gap routes may change from the requested base.');
 
 const deltas = [];
 for (const route of routes) {
@@ -213,7 +219,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCairnsRoutes].sort(), 'Only four Gold Coast and four later Cairns search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes].sort(), 'Only Gold Coast, later Cairns and current Sydney/NSW gap search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match page copy.');
@@ -229,10 +235,10 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCairnsRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only four Gold Coast and four later Cairns routes across five editions may receive a new lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only Gold Coast, later Cairns and current Sydney/NSW gap routes across five editions may receive a new lastmod.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
 
 const svg = fs.readFileSync(path.join(root, svgPath), 'utf8');
@@ -303,9 +309,9 @@ for (const file of [
   'assets/images/australia-blue-mountains-western-line-planning.svg',
   'data/australia-blue-mountains-diagram.mjs'
 ]) {
-  assert.deepEqual(fs.readFileSync(path.join(root, file)), git(['show', `${blueMountains}:${file}`], true), file + ': parallel Blue Mountains fix must remain byte-identical to 8ca64553.');
+  assert.deepEqual(fs.readFileSync(path.join(root, file)), git(['show', `${blueMountains}:${file}`], true), file + ': parallel Blue Mountains fix must remain byte-identical to its available source-branch ancestor.');
 }
 
 if (deltas.length !== 4 || deltas.some(({ words }) => words < 400)) throw new Error('All four selected pages must retain substantive body gains.');
-console.log('Gold Coast refresh regression passed: four existing routes, five-language dates and FAQ parity, 154 reviewed fresh strings per locale, unchanged route/search/sitemap sets, four scoped search summaries, 20 sitemap dates, 5-language SVG XML and geometry bounds, unchanged photo bytes, and preserved Blue Mountains commit 8ca64553.');
+console.log('Gold Coast refresh regression passed: four existing routes, five-language dates and FAQ parity, 154 reviewed fresh strings per locale, unchanged route/search/sitemap sets, four scoped search summaries, 5-language SVG XML and geometry bounds, unchanged photo bytes, and preserved Blue Mountains artwork/source from commit 54d9fc4f.');
 for (const { route, words } of deltas) console.log(`${route} +${words} rendered body words`);

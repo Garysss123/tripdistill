@@ -15,11 +15,13 @@ const routes = [
   '/australia/sydney-harbour-coast/',
   '/australia/sydney-harbour-coast/circular-quay-rocks/',
   '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
-  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/'
+  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/',
+  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+  '/australia/sydney-harbour-coast/manly-north-head/'
 ];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
-const selectedGuideSlugs = ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk'];
+const selectedGuideSlugs = ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk', 'barangaroo-darling-harbour', 'manly-north-head'];
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const issues = [];
 
@@ -185,14 +187,14 @@ const cluster = australiaClusters.find((item) => item.slug === 'sydney-harbour-c
 assert(cluster, 'Sydney hub is missing from the Australia source model.');
 assertIssue(cluster.reviewIsoDate === isoDate, 'Sydney hub review date is not 12 October 2026.');
 assertIssue(cluster.diagram?.src === australiaSydneyDiagram.src, 'Sydney hub does not use the original route schematic.');
-assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate === isoDate).map((guide) => guide.slug).sort().join('|') === [...selectedGuideSlugs].sort().join('|'), 'The reviewed Sydney child-guide scope must be exactly the three selected routes.');
-assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 3, 'An unselected Sydney child route has a new review date.');
+assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate === isoDate).map((guide) => guide.slug).sort().join('|') === [...selectedGuideSlugs].sort().join('|'), 'The reviewed Sydney child-guide scope must include exactly the three earlier routes and two current gap routes.');
+assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 5, 'An unselected Sydney child route has a new review date.');
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/)
   .filter((name) => name.endsWith('.html') && routes.some((route) => name === `${route.slice(1)}index.html`)).sort();
 const expectedHtml = routes.map((route) => `${route.slice(1)}index.html`).sort();
-assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `The four selected Sydney routes must be in the English HTML diff; found ${changedHtml.join(', ')}.`);
+assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `Only the six selected Sydney routes may be in the English HTML diff; found ${changedHtml.join(', ')}.`);
 
 const indexByRoute = new Map(search.map((record) => [record.url, record]));
 for (const route of routes) {
@@ -223,7 +225,7 @@ for (const route of routes) {
 }
 
 const baseManifest = readManifest(git(['show', `${base}:data/australia-image-manifest.mjs`]));
-for (const slug of ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk']) {
+for (const slug of selectedGuideSlugs) {
   const key = `sydney-harbour-coast/${slug}`;
   const prior = baseManifest[key];
   const current = australiaImageManifest[key];
@@ -345,7 +347,7 @@ assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap
 const targetSitemapPaths = routes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route) && targetSitemapPaths.includes(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `All 20 selected Sydney route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `All ${targetSitemapPaths.length} selected Sydney route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -353,5 +355,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log(`Sydney refresh regression passed: ${routes.length} selected routes, 4 substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync, and original SVG XML/legend/geometry.`);
+  console.log(`Sydney refresh regression passed: ${routes.length} selected routes, substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync, and original SVG XML/legend/geometry.`);
 }
