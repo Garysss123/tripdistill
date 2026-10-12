@@ -89,8 +89,15 @@ const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const originalEntries = sitemapEntries(originalSitemap);
 const currentEntries = sitemapEntries(currentSitemap);
 assert.deepEqual(new Set(currentEntries.keys()), new Set(originalEntries.keys()), 'sitemap URL set is unchanged');
-const editedUrls = new Set(editions.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 20, 'four selected routes across five language editions');
+const adelaideRoutes = [
+  '/australia/adelaide-wine-island/',
+  '/australia/adelaide-wine-island/city-parklands-north-terrace/',
+  '/australia/adelaide-wine-island/barossa-valley/',
+  '/australia/adelaide-wine-island/fleurieu-mclaren-vale/'
+];
+const editedRoutes = [...routes, ...adelaideRoutes];
+const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
+assert.equal(editedUrls.size, 40, 'four Melbourne regression routes and four current Adelaide routes across five language editions');
 for (const [url, originalDate] of originalEntries) {
   assert.equal(currentEntries.get(url), editedUrls.has(url) ? '2026-10-12' : originalDate, `only selected route dates change: ${url}`);
 }
@@ -126,6 +133,51 @@ for (const [index, route] of routes.entries()) {
   }
 }
 
+const adelaide = australiaSouthClusters.find((cluster) => cluster.slug === 'adelaide-wine-island');
+assert.ok(adelaide, 'Adelaide cluster exists');
+assert.deepEqual(adelaideRoutes, [
+  `/australia/${adelaide.slug}/`,
+  ...['city-parklands-north-terrace', 'barossa-valley', 'fleurieu-mclaren-vale'].map((slug) => `/australia/${adelaide.slug}/${slug}/`)
+], 'only the Adelaide hub and three selected existing guides are under review');
+const adelaideHeadings = new Map([
+  [adelaideRoutes[0], ['Adelaide, Wine Country & Kangaroo Island Give the civic grid, valley roads and peninsula connections their own time.', '阿德雷德、葡萄酒產區與袋鼠島 為市政街區、山谷道路與半島交通各自留出時間。', 'アデレード、ワインカントリー＆カンガルー島 市街地、谷間の道路、半島の移動にそれぞれ時間を確保しましょう。', '애들레이드, 와인 산지 & Kangaroo Island 도심 구역, 계곡 도로, 반도 교통에 각각 시간을 배정하세요.', 'Adelaide แหล่งไวน์ และ Kangaroo Island แบ่งเวลาให้ย่านเมือง ถนนในหุบเขา และการเดินทางบนคาบสมุทรแยกกัน']],
+  [adelaideRoutes[1], ['Adelaide Park Lands & North Terrace civic green belt.', '阿德雷德公園綠地與 North Terrace 城市綠帶。', 'アデレード・パークランズ＆ノース・テラス 市民の緑地帯。', 'Adelaide Park Lands & North Terrace 시민 녹지대.', 'Adelaide Park Lands และ North Terrace แนวพื้นที่สีเขียวของเมือง']],
+  [adelaideRoutes[2], ['Barossa Valley tasting-with-driver contract.', 'Barossa Valley 品酒與駕駛安排。', 'バロッサ・バレー 運転者を確保した試飲の取り決め。', 'Barossa Valley 운전자와 함께하는 시음 운영 조건.', 'Barossa Valley แผนชิมไวน์กับคนขับไม่ดื่ม']],
+  [adelaideRoutes[3], ['Fleurieu Peninsula & McLaren Vale vine-to-coast circuit.', 'Fleurieu 半島與 McLaren Vale 葡萄園至海岸環線。', 'フルリュー半島＆マクラーレン・ヴェイル ぶどう畑から海岸へ巡るルート。', 'Fleurieu Peninsula & McLaren Vale 포도밭에서 해안으로 이어지는 순환.', 'Fleurieu Peninsula และ McLaren Vale วงรอบจากไร่องุ่นสู่ชายฝั่ง']]
+]);
+const reviewDateText = new Map([
+  ['en', '12 October 2026'],
+  ['zh-Hant', '2026 年 10 月 12 日'],
+  ['ja', '2026年10月12日'],
+  ['ko', '2026년 10월 12일'],
+  ['th', '12 ตุลาคม 2026']
+]);
+const distSitemapEntries = sitemapEntries(fs.readFileSync(path.join(root, 'dist', 'sitemap.xml'), 'utf8'));
+for (const route of adelaideRoutes) {
+  for (const [localeIndex, { code, prefix }] of editions.entries()) {
+    const page = readPage(root, prefix, route);
+    const dist = readPage(path.join(root, 'dist'), prefix, route);
+    const expectedHeading = adelaideHeadings.get(route)[localeIndex];
+    assert.ok(page.text.includes(expectedHeading), `${code} source ${route} contains its reviewed heading`);
+    assert.ok(dist.text.includes(expectedHeading), `${code} dist ${route} contains its reviewed heading`);
+    assert.ok(page.text.includes(reviewDateText.get(code)), `${code} source ${route} shows the localized review date`);
+    assert.ok(dist.text.includes(reviewDateText.get(code)), `${code} dist ${route} shows the localized review date`);
+    for (const { ast } of [page, dist]) {
+      const rootHtml = walk(ast, (node) => node.tagName === 'html')[0];
+      assert.equal(attr(rootHtml, 'lang'), code === 'zh-Hant' ? 'zh-Hant' : code, `${code} Adelaide page language`);
+      const canonical = walk(ast, (node) => node.tagName === 'link' && attr(node, 'rel') === 'canonical')[0];
+      assert.equal(attr(canonical, 'href'), `https://tripdistill.com${prefix}${route}`, `${code} Adelaide canonical`);
+      const jsonLd = walk(ast, (node) => node.tagName === 'script' && attr(node, 'type') === 'application/ld+json')[0];
+      const schema = JSON.parse((jsonLd.childNodes || []).map((node) => node.value || '').join(''));
+      const article = schema['@graph'].find((item) => item['@type'] === 'Article');
+      assert.equal(article.dateModified, '2026-10-12', `${code} Adelaide article date`);
+    }
+    const localized = `${prefix}${route}`;
+    assert.equal(currentEntries.get(localized), '2026-10-12', `${code} Adelaide source sitemap date`);
+    assert.equal(distSitemapEntries.get(localized), '2026-10-12', `${code} Adelaide dist sitemap date`);
+  }
+}
+
 const expectedSummaries = new Map([
   [`/australia/${hub.slug}/`, hub.hubIntro],
   ...hub.guides.map((guide) => [guide.url, guide.summary])
@@ -137,6 +189,15 @@ for (const route of routes) {
   assert.equal(record.summary, expectedSummaries.get(route), `search summary matches source copy: ${route}`);
 }
 assert.equal(search.filter((record) => record.url.startsWith('/australia/melbourne-port-phillip/')).length, 6, 'the existing Melbourne search records remain intact');
+const expectedAdelaideSummaries = new Map([
+  [adelaideRoutes[0], adelaide.hubIntro],
+  ...adelaide.guides.filter((guide) => adelaideRoutes.includes(guide.url)).map((guide) => [guide.url, guide.summary])
+]);
+for (const route of adelaideRoutes) {
+  const record = search.find((item) => item.url === route);
+  assert.ok(record, `Adelaide search record exists: ${route}`);
+  assert.equal(record.summary, expectedAdelaideSummaries.get(route), `Adelaide search summary matches source copy: ${route}`);
+}
 
 const photoExpectations = new Map([
   ['/australia/melbourne-port-phillip/cbd-laneways-tram-grid/', ['Melbourne central business district viewed from above', 'https://commons.wikimedia.org/wiki/File:Melbourne_CBD_2008.jpg', 'CC BY 3.0']],
@@ -151,4 +212,4 @@ for (const [route, [alt, source, license]] of photoExpectations) {
   assert.ok(readPage(root, '', route).html.includes(license), `${route} retains its displayed license declaration`);
 }
 
-console.log('Melbourne refresh regression passed: 4 existing routes × 5 language editions, 20 date updates, unchanged sitemap URL set, localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');
+console.log('Australia refresh regression passed: 4 Melbourne and 4 Adelaide routes × 5 language editions, only the 40 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');
