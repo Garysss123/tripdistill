@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-10-12T12:41:37.239Z",
+  "generatedAt": "2026-10-12T12:56:08.476Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 800,
+    "assetFileCount": 801,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 11,
-    "licenseClaimsNotIndependentlyVerified": 511,
+    "completeProjectOriginalRightsRecords": 12,
+    "licenseClaimsNotIndependentlyVerified": 510,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
-    "buildImageFilesExcludedForRightsReview": 3,
+    "buildImageFilesExcludedForRightsReview": 4,
     "expectedBuildImageCount": 801,
-    "deduplicatedImageCount": 800,
+    "deduplicatedImageCount": 801,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
     "imageReferencesScanned": 3518,
     "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 32,
-    "assetsWithStructuredSourceRecords": 587,
+    "unusedAssetCount": 33,
+    "assetsWithStructuredSourceRecords": 588,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 173,
+    "assetsVisuallyReviewed": 175,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 254,
+    "sourcePageChecked": 255,
     "metadataOrCreditOnly": 522,
     "usedAssetsWithoutIndependentSourcePageCheck": 516,
     "missingSourceCreditMatch": 24,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 3 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 797 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 801 build image files. 4 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -11003,7 +11003,7 @@
           "sourceTitle": "File:Pont du Gard SE Provence.jpg",
           "sourcePhotoDate": null,
           "creditLabel": "Pont du Gard SE Provence.jpg",
-          "creator": "This Photo was taken by Wolfgang Moroder . Feel free to use my photos, but please mention me as the author and send me a message . This image is not in the public domain . Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media , if applicable terms of the licenses listed here not appropriate. Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved., Please if you think that any changes should be required, please inform the author., Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract .",
+          "creator": "Wolfgang Moroder",
           "license": "CC BY-SA 3.0",
           "rightsStatus": null,
           "rightsStatusUrl": null,
@@ -11031,8 +11031,54 @@
             "The Roman Pont du Gard aqueduct crossing the Gardon valley"
           ],
           "rawVisibleCredits": [
-            "Pont du Gard SE Provence.jpg — This Photo was taken by Wolfgang Moroder . Feel free to use my photos, but please mention me as the author and send me a message . This image is not in the public domain . Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media , if applicable terms of the licenses listed here not appropriate. Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved., Please if you think that any changes should be required, please inform the author., Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract ., CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Pont du Gard SE Provence.jpg — Wolfgang Moroder, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "b5a6c50ee69672fa8534c30e1b38f5811bc0c9d8a909e349fddd52a3ef408dc0",
+      "assetPaths": [
+        "/assets/images/france-lille-arras-vimy-sequence-legend.svg"
+      ],
+      "byteLength": 6988,
+      "sourceRecords": [
+        {
+          "sha256": "b5a6c50ee69672fa8534c30e1b38f5811bc0c9d8a909e349fddd52a3ef408dc0",
+          "assetPath": "/assets/images/france-lille-arras-vimy-sequence-legend.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/france-lille-arras-vimy-sequence-legend.svg",
+          "sourceTitle": "Arras–Vimy visit sequence (original five-language SVG)",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original project SVG diagram; no third-party image content. A sequence schematic, not geography, scale or live service information.",
+          "localSha1": "f0d98e0797bcff135af3e4997f6795428fd82615",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/france/lille-french-flanders/",
+            "/france/lille-french-flanders/arras-vimy-remembrance/",
+            "/france/lille-french-flanders/old-lille-roubaix/",
+            "/france/lille-french-flanders/opal-coast-headlands/"
+          ],
+          "altTexts": [
+            "Five-language visit-sequence diagram for Arras and the Vimy memorial; not a geographic map, not to scale, and not a live timetable"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -11050,37 +11096,28 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
           "sourceTitle": "File:2017-05 Canadian National Vimy Memorial 01.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "2017-05 Canadian National Vimy Memorial 01.jpg",
+          "creditLabel": null,
           "creator": "0x010C",
           "license": "CC BY-SA 3.0",
-          "rightsStatus": null,
-          "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
+          "rightsStatus": "Unresolved: Commons file page carries the NoFoP-France warning; do not reuse pending rights review",
+          "rightsStatusUrl": "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
+          "inventoryStatus": "unused",
+          "retirementNote": "The source page declares CC BY-SA 3.0 but also carries a NoFoP-France warning concerning the memorial artwork. The declaration is preserved as source-page metadata, not treated as reuse permission. Local source file retained for provenance only; removed from every active route and excluded from dist while the rights question remains unresolved.",
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "unknown",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "2012cdfb09da624b118ecd75a372cc6165497853",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/france/lille-french-flanders/",
-            "/france/lille-french-flanders/arras-vimy-remembrance/",
-            "/france/lille-french-flanders/old-lille-roubaix/",
-            "/france/lille-french-flanders/opal-coast-headlands/"
-          ],
-          "altTexts": [
-            "The Canadian National Vimy Memorial rising above its preserved landscape"
-          ],
-          "rawVisibleCredits": [
-            "2017-05 Canadian National Vimy Memorial 01.jpg — 0x010C, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Commons page checked on 2026-10-12: it identifies creator 0x010C and declares CC BY-SA 3.0, while also displaying a French Freedom of Panorama copyright warning and the hidden NoFoP-France category. The warning says a substantial reproduction of protected French architecture/artwork cannot be covered by the free license and advises rights confirmation. The declaration is retained as source-page metadata, not treated as permission. Local 1600 × 1066 WebP pixels prominently frame the memorial artwork; the file is retained only for provenance, has no live-page references, and is excluded from dist while the rights issue remains unresolved.",
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -11125,7 +11162,7 @@
             "/france/lille-french-flanders/opal-coast-headlands/"
           ],
           "altTexts": [
-            "Historic façades around Lille’s central square"
+            "A colorful parade fills Lille’s Grand Place beneath the historic façades"
           ],
           "rawVisibleCredits": [
             "Lille grand Place 2012.jpg — PIERRE ANDRE LECLERCQ, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."

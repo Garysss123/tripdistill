@@ -8784,12 +8784,14 @@
     "url": "/france/",
     "parent": "Europe",
     "type": "Country",
-    "summary": "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.",
+    "summary": "Choose two or three France bases by nights, prove the full rail and rural last mile, then protect a nearby weather or closure fallback across twenty regional hubs.",
     "keywords": [
       "France",
       "French travel",
       "Europe",
-      "France rail"
+      "France rail",
+      "base nights",
+      "last mile"
     ]
   },
   {
@@ -8899,7 +8901,7 @@
     "url": "/france/lille-french-flanders/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Lille is a rail gateway to three very different northern trips: Flemish-influenced city streets and collections, First World War remembrance landscapes around Arras, and weather-exposed Channel headlands. Each uses a different last mile and deserves its own day.",
+    "summary": "Plan Lille as a 2–3-night urban base for the city and one excursion; Vimy needs a confirmed Arras last mile, while the Opal Coast needs a separately checked bus, tour, bicycle or car return.",
     "keywords": [
       "Lille, Arras & the Opal Coast",
       "Hauts-de-France",
@@ -8911,7 +8913,7 @@
     "url": "/france/lille-french-flanders/old-lille-roubaix/",
     "parent": "Lille, Arras & the Opal Coast",
     "type": "Local guide",
-    "summary": "Walk Lille’s civic and Flemish-influenced core as one compact loop, then use the Métro or tram for a deliberate Roubaix collection block only when its opening and return fit.",
+    "summary": "Use Lille-Flandres or Lille-Europe as the rail arrival stated on your ticket; Ilévia Métro line 2 serves Roubaix–Grand-Place for La Piscine, subject to the dated route and museum opening check.",
     "keywords": [
       "Old Lille, La Piscine & Roubaix",
       "Lille, Arras & the Opal Coast",
@@ -8924,7 +8926,7 @@
     "url": "/france/lille-french-flanders/arras-vimy-remembrance/",
     "parent": "Lille, Arras & the Opal Coast",
     "type": "Local guide",
-    "summary": "Use Arras as the civic and rail anchor, then visit Vimy or another defined remembrance site through an official tour, taxi, bicycle plan or car route whose return is already fixed.",
+    "summary": "Arras is the rail and overnight base for Vimy; book or confirm the rural last mile and return pickup independently, then check Veterans Affairs Canada visitor-centre hours and site access.",
     "keywords": [
       "Arras, Vimy & Remembrance Ground",
       "Lille, Arras & the Opal Coast",
@@ -8937,7 +8939,7 @@
     "url": "/france/lille-french-flanders/opal-coast-headlands/",
     "parent": "Lille, Arras & the Opal Coast",
     "type": "Local guide",
-    "summary": "Use Boulogne-sur-Mer, Calais or a smaller coast base according to the chosen headland, then match one exposed walk with one sheltered town or marine visit.",
+    "summary": "Choose Boulogne-Ville for Boulogne and Nausicaá or Calais-Ville for a separately planned Blanc-Nez day; check the date-specific coastal bus, tour or car leg and a return before walking onto exposed ground.",
     "keywords": [
       "Opal Coast Headlands & Boulogne",
       "Lille, Arras & the Opal Coast",
@@ -9562,7 +9564,7 @@
     "url": "/france/languedoc-camargue/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Montpellier, Nîmes and Arles sit on a strong rail corridor, but the Pont du Gard, Camargue wetlands and coast require distinct buses, bicycles, tours or cars. Roman monuments, living cities and protected lagoons should not be collapsed into one hot-weather checklist.",
+    "summary": "Montpellier, Nîmes and Arles sit on the regional rail spine, but Sète, the Pont du Gard and Camargue visitor sites each add a different walk, local network or rural connection. Decide which city earns the overnight before adding a coast or wetland day; a station name alone does not solve the last mile.",
     "keywords": [
       "Montpellier, Nîmes & the Camargue",
       "Occitanie and western Provence",
@@ -9574,7 +9576,7 @@
     "url": "/france/languedoc-camargue/montpellier-sete/",
     "parent": "Montpellier, Nîmes & the Camargue",
     "type": "Local guide",
-    "summary": "Walk Montpellier from Écusson to one tram-served modern district, or take a direct train to Sète for canals, market and Mont Saint-Clair; a two-city day must stay selective.",
+    "summary": "Walk Montpellier from Comédie through the Écusson to Peyrou, or use a dated TER trip to Sète for its canal center; a two-city day must stay selective.",
     "keywords": [
       "Montpellier & Sète",
       "Montpellier, Nîmes & the Camargue",
@@ -9766,7 +9768,7 @@
     "url": "/france/corsica/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Corsica’s airports, ferry ports, rail lines and mountain roads create several separate island systems. Ajaccio and the west coast, Bastia and Cap Corse, and Bonifacio–Porto-Vecchio in the south each deserve a base. Driving time, parking and weather outweigh straight-line distance.",
+    "summary": "Corsica’s three route files run on different transport systems: Ajaccio and the west, Bastia and Cap Corse, and the south via Figari, Porto-Vecchio or Bonifacio. Choose bases around a verified arrival and return; mountain roads make map distance misleading.",
     "keywords": [
       "Corsica: Ajaccio, Cap Corse & the South",
       "Corsica",
@@ -9778,7 +9780,7 @@
     "url": "/france/corsica/ajaccio-west-coast/",
     "parent": "Corsica: Ajaccio, Cap Corse & the South",
     "type": "Local guide",
-    "summary": "Ajaccio’s center, market and Napoleonic context form one city route; the red-cliff west coast is a separate long road or sea day with limited shortcuts.",
+    "summary": "Ajaccio’s walkable port-and-museum center is a different day from the red-cliff west coast. Give Piana and Porto a full day or a separate night, and decide the road, boat or return leg before leaving the city.",
     "keywords": [
       "Ajaccio & the West Coast",
       "Corsica: Ajaccio, Cap Corse & the South",
@@ -9791,7 +9793,7 @@
     "url": "/france/corsica/bastia-cap-corse/",
     "parent": "Corsica: Ajaccio, Cap Corse & the South",
     "type": "Local guide",
-    "summary": "Use Bastia for an easy harbor/citadel walk. For Cap Corse, select the east D80 coast through Erbalunga toward Macinaggio or a separate west-coast drive; bus service to Macinaggio is limited, so verify date and return or book a car/tour.",
+    "summary": "Bastia connects ferry, rail and a listed airport shuttle; Cap Corse is a slower road excursion. Choose Erbalunga, Macinaggio or the full D80 loop only after checking the date-specific outward and return legs.",
     "keywords": [
       "Bastia & Cap Corse",
       "Corsica: Ajaccio, Cap Corse & the South",
@@ -9804,7 +9806,7 @@
     "url": "/france/corsica/bonifacio-porto-vecchio/",
     "parent": "Corsica: Ajaccio, Cap Corse & the South",
     "type": "Local guide",
-    "summary": "For public transport, use Figari’s all-year airport link to Porto-Vecchio as the known anchor, then check the current A Berlina link/return to Bonifacio. No direct Bonifacio airport shuttle is listed; prebook a transfer if timing or lodging there.",
+    "summary": "Use Porto-Vecchio as the known Figari airport-bus anchor, or Bonifacio for an early cliff-town and harbor start. The Figari shuttle listing does not name Bonifacio, so verify that separate transfer before booking.",
     "keywords": [
       "Bonifacio & Porto-Vecchio South",
       "Corsica: Ajaccio, Cap Corse & the South",

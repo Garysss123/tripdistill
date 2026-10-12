@@ -9,7 +9,8 @@ const maxFileBytes = 25 * 1024 * 1024;
 const retainedLocalOnlyAssets = [
   'assets/images/malaysia-melaka-kampung-morten.webp',
   'assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp',
-  'assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp'
+  'assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp',
+  'assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp'
 ];
 
 const publicDirectories = [

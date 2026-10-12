@@ -611,21 +611,35 @@ export const franceNorthWestClusters = [
   }),
   c({
     slug: 'lille-french-flanders',
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
+    publishedDateISO: '2026-09-19',
     name: 'Lille, Arras & the Opal Coast',
     region: 'Hauts-de-France',
     band: 'capital-north',
     family: 'brick-border-register',
     label: 'Northern border register',
     tagline: 'Separate urban art, remembrance ground and open coast.',
-    hubIntro: 'Lille is a rail gateway to three very different northern trips: Flemish-influenced city streets and collections, First World War remembrance landscapes around Arras, and weather-exposed Channel headlands. Each uses a different last mile and deserves its own day.',
-    stay: 'Two or three nights in Lille supports the city plus one excursion. Stay in Arras for an early memorial circuit, or near the coast only when the headlands and tide are the trip rather than a rushed rail add-on.',
-    transfer: 'Lille Flandres and Lille Europe are close but distinct terminals. Roubaix is urban transit, Arras is a rail base with dispersed memorial sites, and the Opal Coast often needs a bus, bicycle, tour or car after the train.',
-    season: 'Northern weather changes quickly; carry a wind and rain layer even in summer. Museum closures, remembrance-site hours and coastal bus frequencies can shape the day more than temperature alone.',
-    fallback: 'In coastal wind or rain, keep the city or use a named museum rather than forcing exposed cliffs. When a memorial last mile is unavailable, concentrate on Arras and its interpreted underground or civic sites instead of roadside improvisation.',
+    hubIntro: 'Lille is a rail gateway, not a single-base answer to every northern day. Keep Lille’s Flemish-influenced streets and Roubaix collections in the urban system; treat Arras and Vimy as a remembrance day with a separately arranged rural last mile; and give the exposed Deux-Caps coast its own base, wind check and return plan. These are three distinct route contracts, so choose one excursion for a short stay or add nights before linking them.',
+    searchSummary: 'Plan Lille as a 2–3-night urban base for the city and one excursion; Vimy needs a confirmed Arras last mile, while the Opal Coast needs a separately checked bus, tour, bicycle or car return.',
+    stay: 'For Lille and Roubaix only, book two nights near Lille-Flandres, Lille-Europe or a useful Métro interchange; three nights allow a full city day plus one excursion. To include both Vimy and the headlands, plan at least five nights and split them deliberately—Lille 2–3, Arras 1–2, then Boulogne-sur-Mer or Calais 2—only after checking dated rail and local connections. Do not count arrival and transfer days as full sightseeing days.',
+    transfer: 'Lille-Flandres and Lille-Europe are separate stations: read the terminal on each ticket and allow a ground transfer between them. For Roubaix, check Ilévia’s current Métro line 2 route to Roubaix–Grand-Place and the walk to La Piscine. For Arras, search TER Hauts-de-France from Lille-Flandres to Arras, then arrange Vimy transport independently; no ordinary urban transit to the memorial is assumed. For the coast, choose Boulogne-Ville or Calais-Ville first, then confirm the dated local bus, guided transfer, bicycle or car leg and the return before leaving the station.',
+    season: 'Wind and rain can make the Deux-Caps paths unpleasant even when Lille is calm; check the coastal forecast and signed closures on the day. Summer brings longer light but does not guarantee a frequent coastal bus, and shoulder-season services can thin further. In spring or autumn, keep a lower-exposure museum or town day available. Vimy visitor-centre hours, ceremonies and access to preserved ground are date-specific; check the official notice before setting an early departure.',
+    fallback: 'If wind, visibility or a path closure removes the headland, stay in Boulogne for the old town and Nausicaá only if admission is available, or return to a verified Calais town plan. If the Vimy driver or tour cancels, do not improvise a rural walk: keep Arras’s squares and the Wellington Quarry visitor route where open. If a city museum is closed, remain in Lille’s walkable centre and switch to another confirmed interior.',
+    reviewDisclaimer: 'Planning pages were checked on 12 October 2026; dated service, fares and entry must be confirmed with the linked operator. The former Vimy Commons photograph is retained locally for provenance but excluded from every live page and build after a NoFoP-France warning; rights remain unresolved. The replacement is an original sequence diagram, not geography, scale or live timetable information.',
+    itineraryLabel: 'Base-and-night decision',
+    itineraryHeading: 'Use Lille for the city and one excursion; split the stay for two rural systems.',
+    itineraryIntro: 'This is a night-count framework, not a timetable. Verify each dated TER journey, local transfer, admission window and return before reserving a non-refundable base.',
+    itinerary: [
+      ['2 nights · Lille', 'Arrive and sleep near the station or a useful Métro stop; use the full day for Old Lille and choose either La Piscine in Roubaix or another Lille collection after checking opening days. This is a city visit, not enough time for Vimy and both capes.'],
+      ['3 nights · Lille', 'Keep the same urban base, add one excursion day, and choose either Arras plus a pre-booked Vimy transfer or one verified coast segment. Use the third night to protect the return instead of trying to link both systems.'],
+      ['5+ nights · split bases', 'A practical starting split is Lille 2–3 nights, Arras 1–2 nights for the arranged memorial day, and Boulogne-sur-Mer or Calais 2 nights for one coast segment and a weather buffer. Reorder only after current regional connections support the complete transfer.'],
+      ['Arrival and departure', 'Treat the first and last calendar days as partial unless your actual train times prove otherwise. Keep the Lille terminal, hotel luggage plan and final departure station visible in the booking notes.']
+    ],
     sources: [
       ['https://en.lilletourism.com/', 'Lille Tourist Office — official destination information'],
-      ['https://www.ter.sncf.com/hauts-de-france', 'TER Hauts-de-France — official regional rail information'],
-      ['https://www.visitpasdecalais.com/', 'Pas-de-Calais tourism — official regional planning']
+      ['https://www.ter.sncf.com/hauts-de-france', 'TER Hauts-de-France — dated regional rail planner and service information'],
+      ['https://www.hautsdefrance-mobilites.fr/', 'Hauts-de-France Mobilités — local and regional journey planning']
     ],
     guides: [
       g({
@@ -634,7 +648,7 @@ export const franceNorthWestClusters = [
         instrument: 'Brick-and-collection tramline',
         layout: 'urban-diptych',
         imageQuery: 'Lille Grand Place old town France architecture',
-        imageAlt: 'Historic façades around Lille’s central square',
+        imageAlt: 'A colorful parade fills Lille’s Grand Place beneath the historic façades',
         purpose: 'Decide whether Lille’s center or Roubaix’s converted swimming-pool museum carries the day, then connect them without reducing both to a rushed checklist.',
         summary: 'Walk Lille’s civic and Flemish-influenced core as one compact loop, then use the Métro or tram for a deliberate Roubaix collection block only when its opening and return fit.',
         choices: [
@@ -642,63 +656,81 @@ export const franceNorthWestClusters = [
           ['Lille plus La Piscine', 'Use the center early, then travel to Roubaix for the museum’s art and industrial architecture. The split works when the museum is the clear afternoon anchor.'],
           ['Industrial and design north', 'Prioritize Roubaix or Tourcoing collections and use Lille only for arrival and evening. This suits repeat visitors and poor weather.']
         ],
-        access: 'Lille Flandres is the practical center arrival for many regional trains; Lille Europe may require a short walk or one transit move. For La Piscine, follow the current Métro or tram route to Roubaix and the museum’s official final approach.',
-        tradeoff: 'Adding Roubaix removes time for a second Lille museum, Citadel circuit or long market meal. The route treats the two centers as a curated pair, not proof that every northern collection can fit in one day.',
+        searchSummary: 'Use Lille-Flandres or Lille-Europe as the rail arrival stated on your ticket; Ilévia Métro line 2 serves Roubaix–Grand-Place for La Piscine, subject to the dated route and museum opening check.',
+        access: 'For regional trains, Lille-Flandres is the central arrival; international and high-speed tickets may use Lille-Europe. They are distinct stations, so check the exact terminal before walking to your hotel or onward platform. Ilévia publishes a Lille–Roubaix route; plan the current Métro line 2 journey to Roubaix–Grand-Place, then follow La Piscine’s official approach on foot. Recheck disruptions and the museum calendar for your date rather than assuming a particular departure or fare.',
+        tradeoff: 'A full Old Lille loop plus La Piscine is a deliberate split: allow the museum its own substantial block and give up a second large collection, the Citadel circuit or a long market meal. If the museum’s opening day or current line routing does not fit, make Roubaix its own half-day or stay in Lille; do not compress the galleries to keep an arbitrary stop count.',
         stages: [
           ['Orient between the two Lille stations', 'Confirm which terminal you arrived at, then move to Grand Place and mark the return platform before entering the old-town lanes.'],
           ['Walk the civic core', 'Connect Grand Place, Vieille Bourse, the cathedral area and Vieux-Lille in one loop. Choose a market or museum only if it supports the day’s theme.'],
           ['Commit to Lille or Roubaix', 'Stay for a Lille collection and Citadel edge, or take the verified transit to La Piscine with enough time for its building and galleries.'],
           ['Return without a terminal mistake', 'Come back to the correct Lille station or continue from Roubaix only on a checked service. Leave a food stop before the last comfortable train.']
         ],
-        fallback: 'If La Piscine is closed or transit disrupted, keep the Lille loop and use the Palais des Beaux-Arts or Hospice Comtesse when open. If city streets are wet, reverse the order and place the longest interior in the harshest weather.',
+        fallback: 'If line 2 is disrupted or La Piscine is closed on the chosen date, stay in Lille and use the Palais des Beaux-Arts or Hospice Comtesse only after checking its own hours and admission. In steady rain, shorten the outdoor old-town loop and move the confirmed interior earlier; in summer heat, use shaded streets and a longer museum block.',
         watch: [
           ['Two main stations cause missed trains', 'Lille Flandres and Lille Europe are walkably close but not the same building. Read the ticket before the final meal.'],
           ['Museum days differ', 'La Piscine and Lille museums may close on different weekdays or change galleries. Check the exact date.'],
           ['Private courtyards remain private', 'Old Lille rewards looking upward, but residential doors and courtyards are not invitations. Use signed public passages.']
         ],
-        duration: 'Allow six to eight hours for Lille plus La Piscine and four to six hours for Lille center alone. A collection-led Roubaix day can stand independently.',
+        duration: 'Plan four to six hours for Lille’s centre alone and six to eight hours for Lille plus La Piscine, including the Métro journey, meal and return to the correct rail terminal. A dedicated Roubaix museum visit works as a separate half-day. Add two nights in Lille for a city day and one museum/excursion day; a third night removes pressure from a late return.',
         combine: 'Combine Lille with Roubaix because the urban network supports it. Keep Arras memorial ground and the Opal Coast as separate days with their own last-mile plans.',
-        verify: 'Check Lille transit, La Piscine and the selected Lille museum’s opening day, plus the exact departure terminal and any regional rail engineering works.',
+        verify: 'On the actual travel date, check Ilévia’s Lille–Roubaix route and service notices, La Piscine’s opening and ticket information, the other museum’s calendar, the Lille-Flandres/Lille-Europe terminal printed on each rail ticket, and TER engineering notices. No fare or departure time is assumed here.',
         sources: [
           ['https://www.roubaix-lapiscine.com/', 'La Piscine, Roubaix — official museum information'],
-          ['https://www.ilevia.fr/', 'Ilévia — official Lille metropolitan transport information']
-        ]
+          ['https://www.ilevia.fr/cms/institutionnel/itineraire-lille-roubaix', 'Ilévia — official Lille–Roubaix route information'],
+          ['https://www.ter.sncf.com/hauts-de-france', 'TER Hauts-de-France — date-specific rail and disruption checks']
+        ],
+        operations: {
+          entryReturn: 'Start from the terminal printed on the ticket. For Roubaix, use Ilévia’s live Lille–Roubaix route information to confirm Métro line 2 to Roubaix–Grand-Place, then walk to La Piscine by its official approach. Save the same-day route back to the correct Lille station before beginning the museum visit.',
+          booking: 'Base and nights: sleep in central Lille for two nights if you want one full city day and one Roubaix day; three nights add a lower-pressure arrival or alternate museum day. Do not move hotels to Roubaix for a single museum unless another commitment makes the suburb useful. Check La Piscine and Lille museum opening days before choosing the dates.',
+          weather: 'Rain is a reason to extend the museum block, not to dash between collections. In hot weather, shorten the exposed Citadel walk and keep water and shade breaks. If the museum is closed or line service changes, use a verified Lille interior and keep the city loop compact.'
+        }
       }),
       g({
         slug: 'arras-vimy-remembrance',
         name: 'Arras, Vimy & Remembrance Ground',
         instrument: 'Context-before-distance dossier',
         layout: 'memorial-field-file',
-        imageQuery: 'Canadian National Vimy Memorial France landscape',
-        imageAlt: 'The Canadian National Vimy Memorial rising above its preserved landscape',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
+        imageQuery: 'Arras Grand Place belfry France',
+        imageAlt: 'Five-language visit-sequence diagram for Arras and the Vimy memorial; not a geographic map, not to scale, and not a live timetable',
+        imageCaption: 'Original five-language visit sequence · not a geographic map, not to scale and not a live timetable',
+        imageEditNote: 'Original project SVG diagram; no third-party image content. A sequence schematic, not geography, scale or live service information.',
         purpose: 'Choose a respectful, interpreted First World War route with a solved last mile, rather than attempting to collect dispersed cemeteries and memorials from a station platform.',
-        summary: 'Use Arras as the civic and rail anchor, then visit Vimy or another defined remembrance site through an official tour, taxi, bicycle plan or car route whose return is already fixed.',
+        summary: 'Use Arras as the rail and overnight base, then visit Vimy only after arranging the rural transfer and confirming the visitor-centre opening, signed path access and return pickup for the same date.',
+        searchSummary: 'Arras is the rail and overnight base for Vimy; book or confirm the rural last mile and return pickup independently, then check Veterans Affairs Canada visitor-centre hours and site access.',
         choices: [
           ['Arras civic and underground history', 'Stay in town for the squares, belfry context and a verified interpreted underground site. This is the strongest car-free fallback and a full history day in its own right.'],
           ['Vimy focus', 'Give the Canadian memorial, visitor center and preserved ground the main block. The landscape needs time and respectful pacing, not a quick photo transfer.'],
           ['Broader remembrance circuit', 'Add another named cemetery or museum only with a pre-arranged route and historical reason. Dispersed sites make this a vehicle or guided-day choice.']
         ],
-        access: 'Arras station is walkable to the central squares, but Vimy and many battlefield sites are not ordinary urban-transit stops. Pre-book or verify the exact tour, taxi, bicycle or driving arrangement and confirm where the return pickup occurs.',
-        tradeoff: 'A Vimy visit and an extensive Somme or Ypres circuit do not belong in the same casual day. This route gives up geographic coverage so the interpretation, visitor center and preserved terrain receive more than a photo pause.',
+        access: 'Arras station and the central squares make a practical town base, and TER Hauts-de-France is the rail planner for Lille-Flandres–Arras. Vimy is a rural site, not an assumed urban-transit stop: arrange a named tour, taxi, private vehicle or tested bicycle plan before leaving Arras, and record the exact pickup point and return time with the provider. Veterans Affairs Canada lists the memorial at Route D55, Chemin des Canadiens, Givenchy-en-Gohelle, and asks visitors to begin at its visitor centre; verify its hours and current access before travel.',
+        tradeoff: 'The full Vimy site visit includes the visitor centre, signed ground, memorial and a respectful pause; those pieces do not combine with an extensive Somme or Ypres circuit as a casual day trip. Choose a full day and one landscape. If transport cannot be secured, spend the day in Arras rather than attempting to walk rural roads or adding a second battlefield from a map.',
         stages: [
           ['Begin with Arras orientation', 'Walk from the station to the civic center, identify the belfry and squares, and use a museum or interpreted underground visit to establish local wartime context.'],
           ['Meet the arranged last mile', 'Join the booked guide or vehicle at the agreed point. Carry the official site name and pickup details; similar memorial names can produce costly navigation errors.'],
           ['Read one landscape carefully', 'At Vimy or the selected site, use the visitor center and signed paths before the monument. Respect closures, preserved ground and cemetery conduct.'],
           ['Return through Arras with margin', 'Leave enough time for the vehicle transfer and a later train. Use the squares for a meal or reflection only after the return is secure.']
         ],
-        fallback: 'If the last-mile provider cancels, do not walk unsafe rural roads. Keep an Arras day with official underground, museum and civic interpretation where open, or reschedule the memorial rather than replacing it with an unresearched roadside stop.',
+        fallback: 'If the arranged vehicle or guide cancels, do not substitute a roadside walk or assume a local bus. Keep Arras for the Grand-Place, belfry area and the Wellington Quarry visitor experience when its dated entry is available, or move Vimy to another day. In wet or cold weather, let the official site notice and ground conditions decide whether to use the signed outdoor paths.',
         watch: [
           ['Rural distance is deceptive', 'A site may look close to Arras on a regional map while lacking safe pedestrian access or frequent transit.'],
           ['Preserved terrain has boundaries', 'Unexploded ordnance history and conservation make signed paths and closures essential, not optional etiquette.'],
           ['Commemoration can change access', 'Ceremonies and official events may restrict parking, tours or visitor-center hours. Check the precise date.']
         ],
-        duration: 'Allow a full seven-to-nine-hour day for Arras plus Vimy with a booked last mile. Arras alone merits four to six hours when an underground or museum visit is included.',
+        duration: 'Reserve a full day for Arras plus Vimy: the rail journey, independently arranged rural transfer, visitor-centre visit, signed grounds and return pickup all need their own margin. Arras alone can fill four to six hours with the squares and a timed Wellington Quarry or museum visit. One night in Arras before the site day is the safer fit for an early pickup; two nights allow a weather or closure buffer.',
         combine: 'Combine one memorial landscape with Arras. Save the Somme, Ypres or multiple cemetery routes for a dedicated guided or driving day.',
-        verify: 'Confirm the official Vimy visitor information, any tour reservation, ceremony access, Arras attraction openings and the return train before departure.',
+        verify: 'Check Veterans Affairs Canada’s Vimy visitor-centre hours and site notice, the tour or driver’s exact pickup and return, the Arras attraction’s own ticket calendar, and TER Hauts-de-France for the date-specific arrival and later return. No public Vimy shuttle, fare or timetable is promised here.',
         sources: [
-          ['https://www.veterans.gc.ca/en/remembrance/memorials/overseas/first-world-war/france/vimy', 'Veterans Affairs Canada — official Vimy memorial information'],
-          ['https://www.arraspaysdartois.com/en/', 'Arras Pays d’Artois tourism — official local planning']
-        ]
+          ['https://www.veterans.gc.ca/en/remembrance/memorials/overseas/canadian-national-vimy-memorial', 'Veterans Affairs Canada — official Vimy visitor information'],
+          ['https://www.arraspaysdartois.com/en/', 'Arras Pays d’Artois tourism — official local planning'],
+          ['https://www.ter.sncf.com/hauts-de-france', 'TER Hauts-de-France — date-specific rail and disruption checks']
+        ],
+        operations: {
+          entryReturn: 'Use TER Hauts-de-France to plan Lille-Flandres–Arras for your date, then meet only the tour or driver you have arranged at the written pickup point. Confirm whether the visit includes the visitor centre, signed paths, memorial and both transfers; reserve a later usable train instead of relying on the last departure.',
+          booking: 'Base and nights: Arras for one night before an early Vimy departure; two nights if the memorial is the reason for a long-distance trip or you need a weather buffer. A Lille day trip is possible only when the dated TER journey and a reliable private or guided last mile fit both directions. Do not book the return until the provider confirms the pickup.',
+          weather: 'Spring and autumn can bring wet, exposed ground; summer can mean heat on open paths; winter daylight shortens the usable outdoor window. In every season, check the official visitor notice and ceremony closures, stay on signed paths, and keep the Arras civic/Wellington Quarry day as the lower-exposure alternative.'
+        }
       }),
       g({
         slug: 'opal-coast-headlands',
@@ -714,7 +746,8 @@ export const franceNorthWestClusters = [
           ['Cap Blanc-Nez', 'Choose a defined headland approach for Channel views and open grassland. Wind and bus or parking access are the controlling facts.'],
           ['Two-Caps landscape', 'Link Cap Gris-Nez and nearby coast only with a verified car, tour, bicycle or seasonal transport plan. The distance and return make this the least spontaneous option.']
         ],
-        access: 'Use the rail station that matches the actual day—Boulogne-Ville for the city, Calais for a planned Blanc-Nez connection, or another verified stop. Coastal buses can be seasonal and sparse; save the stop name and last two return options.',
+        searchSummary: 'Choose Boulogne-Ville for Boulogne and Nausicaá or Calais-Ville for a separately planned Blanc-Nez day; check the date-specific coastal bus, tour or car leg and a return before walking onto exposed ground.',
+        access: 'Use TER Hauts-de-France to plan the rail trunk to Boulogne-Ville for the old town and Nausicaá, or Calais-Ville for a planned Blanc-Nez connection. A rail arrival does not solve the cape: confirm the exact local bus stop and service date, guided transfer, bicycle route or car parking before committing. Save a second return option and the stop location; do not infer service from a route map or a summer timetable.',
         tradeoff: 'The route gives up covering the entire Grand Site des Deux-Caps. One headland plus one town produces a safer and more readable day than a fast vehicle loop with no time for weather or interpretation.',
         stages: [
           ['Arrive at the correct coast base', 'Confirm the station exit, local stop and return before walking into town. Buy food and water before the exposed segment when services near the trail are uncertain.'],
@@ -722,19 +755,26 @@ export const franceNorthWestClusters = [
           ['Commit to one signed segment', 'Follow marked paths and setbacks, pausing at interpreted viewpoints. Do not create a cliff-edge shortcut to recover time.'],
           ['Return through shelter', 'Use Boulogne’s old town, port or a booked Nausicaá window as the sheltered layer, then take a train with a backup rather than the last service.']
         ],
-        fallback: 'In strong wind, poor visibility or path closure, use Boulogne’s city walls and Nausicaá if admission is available, or Calais museums and seafront. The fallback should reduce exposure, not merely move to another cliff.',
+        fallback: 'When strong wind, poor visibility, rain or an official path closure removes the headland, stay sheltered: use Boulogne’s old town and Nausicaá if the dated admission is available, or choose a checked Calais museum and town walk. In winter or a thin-service shoulder date, make Boulogne the overnight base and keep the cape optional. Do not swap one exposed cliff for another.',
         watch: [
           ['Wind changes the effort', 'An easy map distance can become tiring or unsafe in headwind. Shorten before the turnaround point becomes a trap.'],
           ['Edges and tides are not scenery only', 'Stay on signed paths, respect closures and never descend to an unfamiliar beach without tide and exit knowledge.'],
           ['Seasonal buses create one-way plans', 'A morning connection may not imply an evening return. Capture the live timetable and stop location.']
         ],
-        duration: 'Allow a full day for a headland plus Boulogne or Calais. A Boulogne old-town and Nausicaá day needs six to eight hours; a short signed headland circuit still needs transport margin.',
+        duration: 'Allow a full day for one headland plus one nearby town, with the local transfer and return margin included. Boulogne old town and Nausicaá can fill six to eight hours, depending on the admission slot. Stay two nights in Boulogne or Calais when the coast is a main purpose: one day for a single signed segment, another for a forecast-based alternative or sheltered town visit.',
         combine: 'Combine one headland with its nearest practical base. Do not add both capes, Le Touquet and Boulogne unless traveling by car with a deliberately limited route.',
-        verify: 'Check the Grand Site access information, coastal bus or parking status, Météo-France marine conditions, trail notices, Nausicaá admission and the return train.',
+        verify: 'Check the Grand Site des Deux-Caps access and path notices, the dated coastal transport or parking information, Météo-France coastal conditions, Nausicaá admission if using it as backup, and TER Hauts-de-France for both directions. Save the operator’s current stop name and final return before setting out; this guide makes no fare or frequency promise.',
         sources: [
           ['https://www.lesdeuxcaps.fr/', 'Grand Site de France Les Deux-Caps — official landscape and access information'],
-          ['https://www.nausicaa.fr/en', 'Nausicaá — official visitor information']
-        ]
+          ['https://www.nausicaa.fr/en', 'Nausicaá — official visitor information'],
+          ['https://www.ter.sncf.com/hauts-de-france', 'TER Hauts-de-France — date-specific rail and disruption checks'],
+          ['https://www.hautsdefrance-mobilites.fr/', 'Hauts-de-France Mobilités — local and regional journey planning']
+        ],
+        operations: {
+          entryReturn: 'Plan the TER trunk to Boulogne-Ville or Calais-Ville according to the day, then solve the last mile with the dated local operator, a guided transfer, bicycle or car. Confirm the precise stop or parking point and at least one workable return before you leave town; the cape is not an ordinary station-to-trail walk.',
+          booking: 'Base and nights: two nights in Boulogne-sur-Mer for a sheltered city/Nausicaá day and one weather-dependent coast day, or two in Calais for a specifically confirmed Blanc-Nez plan. A Lille base is sensible for the city plus one simple excursion, not for chasing both capes and Boulogne in one day.',
+          weather: 'Spring and autumn need a wind-and-rain layer; summer offers more daylight but no guarantee of a frequent bus; winter brings shorter light and a smaller margin for exposed paths. Check Météo-France and signed trail notices before setting out. If conditions deteriorate, use the booked museum or town fallback and preserve the return.'
+        }
       })
     ]
   }),

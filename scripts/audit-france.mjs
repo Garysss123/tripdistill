@@ -31,7 +31,7 @@ check(new Set(franceClusters.map((item) => item.family)).size === 20, 'France hu
 check(new Set(franceGuides.map((item) => item.instrument)).size === 60, 'France planning instruments must be unique');
 check(new Set(franceGuides.map((item) => item.layout)).size === 60, 'France child layout labels must be unique');
 check(new Set(franceGuides.map((item) => item.image.src)).size === 60, 'France guide images must be unique');
-check(franceGuides.filter((item) => item.image.assetType === 'original-planning-diagram').length === 1, 'France must retain exactly one original planning diagram');
+check(franceGuides.filter((item) => item.image.assetType === 'original-planning-diagram').length === 2, 'France must retain the French Alps and Lille–Vimy original planning diagrams');
 
 for (const [field, label] of [
   ['hubIntro', 'hub introductions'], ['stay', 'hub stay strategies'], ['transfer', 'hub transfer strategies'],
@@ -63,8 +63,8 @@ for (const guide of franceGuides) {
   check(guide.sources.length >= 2 && guide.sources.every(([url, label]) => /^https:\/\//.test(url) && label), `${guide.url}: incomplete route-specific official sources`);
   const imageFile = path.join(root, guide.image.src.replace(/^\//, ''));
   if (guide.image.assetType === 'original-planning-diagram') {
-    check(guide.image.creator && guide.image.source === `https://tripdistill.com${guide.image.src}` && guide.image.editNote, `${guide.url}: incomplete original-diagram provenance`);
-    check(guide.image.license === null && guide.image.rightsStatus === 'Project original; no separate reuse license declared' && guide.image.rightsStatusUrl === 'https://tripdistill.com/terms-of-use/' && guide.image.commercialReuseEligibility === 'unknown' && guide.image.attributionTerms, `${guide.url}: original diagram rights status must stay explicit without asserting a license`);
+    check(guide.image.creator && guide.image.rightsStatus && guide.image.source === `https://tripdistill.com${guide.image.src}` && guide.image.editNote, `${guide.url}: incomplete original-diagram provenance`);
+    check(guide.image.license === null && guide.image.rightsStatusUrl === 'https://tripdistill.com/terms-of-use/' && (!guide.image.commercialReuseEligibility || guide.image.commercialReuseEligibility === 'unknown') && (!guide.image.attributionTerms || typeof guide.image.attributionTerms === 'string'), `${guide.url}: original diagram rights status must stay explicit without asserting a license`);
     check(fs.existsSync(imageFile) && /<svg[\s>]/i.test(read(guide.image.src.slice(1))), `${guide.url}: original SVG is missing or invalid`);
     if (fs.existsSync(imageFile)) {
       const svgSource = fs.readFileSync(imageFile, 'utf8');
@@ -78,6 +78,14 @@ for (const guide of franceGuides) {
           const [leftCardRight, rightCardLeft] = cardGaps[index] || [Infinity, -Infinity];
           check(start < end && start >= leftCardRight + 10 && end <= rightCardLeft - 16, `${guide.url}: connector ${index + 1} must keep its line and arrowhead clear of both cards`);
         }
+      }
+      if (guide.image.src === '/assets/images/france-lille-arras-vimy-sequence-legend.svg') {
+        check(/<svg[^>]+viewBox="0 0 1600 1066"/.test(svgSource), `${guide.url}: Vimy original SVG must use the 1600 × 1066 display viewBox`);
+        check(svgSource.includes('not a geographic map') && svgSource.includes('not to scale') && svgSource.includes('not a live timetable'), `${guide.url}: original SVG must visibly disclaim map, scale and timetable status`);
+        for (const label of ['阿拉斯鐵路基地', 'アラスの鉄道拠点', '아라스 철도 거점', 'ฐานรถไฟอารัส']) {
+          check(svgSource.includes(label), `${guide.url}: SVG is missing its five-language label ${label}`);
+        }
+        check(/pre-arrange last mile/i.test(svgSource) && /confirmed return/i.test(svgSource), `${guide.url}: SVG route sequence is incomplete`);
       }
     }
   } else {
@@ -126,14 +134,16 @@ for (const route of routes) {
   const credited = route === '/france/' ? franceClusters.map((cluster) => cluster.guides[0]) : hub?.guides || [];
   for (const guide of credited) {
     if (guide.image.assetType === 'original-planning-diagram') {
-      check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(escape(guide.image.editNote)) && html.includes(guide.image.rightsStatusUrl), `${route}: visible original-diagram source/creator/rights credit missing for ${guide.slug}`);
+      const requiresStatus = guide.image.src === '/assets/images/france-lille-arras-vimy-sequence-legend.svg';
+      check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && (!requiresStatus || html.includes(escape(guide.image.rightsStatus))) && html.includes(escape(guide.image.editNote)) && html.includes(guide.image.rightsStatusUrl), `${route}: visible original-diagram provenance missing for ${guide.slug}`);
     } else {
       check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
     }
   }
   if (route === '/france/') {
     check(dom.filter((node) => classHas(node, 'fr-country-card')).length === 20, `${route}: expected 20 hub cards`);
-    check(dom.filter((node) => classHas(node, 'fr-network-grid')).length === 1, `${route}: national operating model missing`);
+    check(dom.filter((node) => classHas(node, 'fr-network-grid')).length === 2, `${route}: national operating model or base/night planner missing`);
+    check(dom.some((node) => classHas(node, 'fr-country-booking-order')), `${route}: actionable national booking order missing`);
   } else if (franceGuides.some((guide) => guide.url === route)) {
     const expectedFieldCss = '/css/france-field.css?v=20261007-3';
     check(html.includes(expectedFieldCss), `${route}: France field CSS missing`);
@@ -165,7 +175,15 @@ for (const route of routes) {
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
     for (const guide of credited) {
       if (guide.image.assetType === 'original-planning-diagram') {
-        check(localized.includes(guide.image.source) && localized.includes(guide.image.creator) && localized.includes(guide.image.rightsStatusUrl), `${prefix + route}: localized original-diagram provenance missing for ${guide.slug}`);
+        const requiresStatus = guide.image.src === '/assets/images/france-lille-arras-vimy-sequence-legend.svg';
+        let translatedRights = guide.image.rightsStatus;
+        let translatedEditNote = guide.image.editNote;
+        if (language !== 'en') {
+          const catalog = JSON.parse(read(`data/i18n/${language}.json`)).translations;
+          translatedRights = catalog[`— ${guide.image.creator}; ${guide.image.rightsStatus}.`] || guide.image.rightsStatus;
+          translatedEditNote = catalog[`. ${guide.image.editNote}`] || guide.image.editNote;
+        }
+        check(localized.includes(guide.image.source) && localized.includes(escape(guide.image.creator)) && (!requiresStatus || localized.includes(escape(translatedRights))) && localized.includes(guide.image.rightsStatusUrl) && (!requiresStatus || localized.includes(escape(translatedEditNote))), `${prefix + route}: localized original-diagram provenance missing for ${guide.slug}`);
       } else {
         check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
       }
@@ -425,9 +443,7 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const fr02EditedRoutes = new Set([
     '/france/basque-coast-pyrenees/saint-jean-de-luz-basque-inland/',
     '/france/basque-coast-pyrenees/gavarnie-cauterets-pyrenees/',
-    '/france/provence-inland/luberon-villages-abbey/',
-    '/france/corsica/bastia-cap-corse/',
-    '/france/corsica/bonifacio-porto-vecchio/'
+    '/france/provence-inland/luberon-villages-abbey/'
   ]);
   const lyonEditedRoutes = new Set([
     '/france/lyon-rhone/',
@@ -488,8 +504,27 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/french-alps/chamonix-mountain-systems/',
     '/france/french-alps/grenoble-bastille-chartreuse/'
   ]);
+  const languedocCamargueEditedRoutes = new Set([
+    '/france/languedoc-camargue/',
+    '/france/languedoc-camargue/montpellier-sete/',
+    '/france/languedoc-camargue/nimes-pont-du-gard/',
+    '/france/languedoc-camargue/arles-camargue/'
+  ]);
+  const corsicaEditedRoutes = new Set([
+    '/france/corsica/',
+    '/france/corsica/ajaccio-west-coast/',
+    '/france/corsica/bastia-cap-corse/',
+    '/france/corsica/bonifacio-porto-vecchio/'
+  ]);
+  const lilleFranceFlandersEditedRoutes = new Set([
+    '/france/',
+    '/france/lille-french-flanders/',
+    '/france/lille-french-flanders/old-lille-roubaix/',
+    '/france/lille-french-flanders/arras-vimy-remembrance/',
+    '/france/lille-french-flanders/opal-coast-headlands/'
+  ]);
   for (const route of routes) {
-    const expectedDate = marseilleEditedRoutes.has(route) || coteDAzurEditedRoutes.has(route) || provenceEditedRoutes.has(route) || frenchAlpsEditedRoutes.has(route) ? '2026-10-12' : lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) || dordogneEditedRoutes.has(route) || toulouseOccitanieEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = lilleFranceFlandersEditedRoutes.has(route) || corsicaEditedRoutes.has(route) || languedocCamargueEditedRoutes.has(route) || marseilleEditedRoutes.has(route) || coteDAzurEditedRoutes.has(route) || provenceEditedRoutes.has(route) || frenchAlpsEditedRoutes.has(route) ? '2026-10-12' : lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) || dordogneEditedRoutes.has(route) || toulouseOccitanieEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
   for (const route of fr02EditedRoutes) {
@@ -540,6 +575,21 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     for (const [language, prefix] of locales) {
       const localizedRoute = `${prefix}${route}`;
       check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-12</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-12`);
+    }
+  }
+  for (const route of languedocCamargueEditedRoutes) {
+    if (englishOnly) continue;
+    for (const [language, prefix] of locales) {
+      const localizedRoute = `${prefix}${route}`;
+      check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-12</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-12`);
+    }
+  }
+  if (!englishOnly) {
+    for (const route of lilleFranceFlandersEditedRoutes) {
+      for (const [language, prefix] of locales) {
+        const localizedRoute = `${prefix}${route}`;
+        check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-12</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-12`);
+      }
     }
   }
 }

@@ -11,7 +11,8 @@ const imageDir = path.join(root, 'assets', 'images');
 const retainedLocalOnlyAssetPaths = [
   '/assets/images/malaysia-melaka-kampung-morten.webp',
   '/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp',
-  '/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp'
+  '/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp',
+  '/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp'
 ];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
@@ -68,6 +69,13 @@ const verifiedBySourcePattern = [
   { pattern: /Faraglioni_in_Capri_09/i, detail: 'Commons source page checked for Abxbay, Capri Faraglioni subject, and CC BY-SA 4.0.' },
 ];
 const verifiedSourcePageDetails = new Map([
+  [
+    'https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg',
+    {
+      detail: 'Commons page checked on 2026-10-12: it identifies creator 0x010C and declares CC BY-SA 3.0, while also displaying a French Freedom of Panorama copyright warning and the hidden NoFoP-France category. The warning says a substantial reproduction of protected French architecture/artwork cannot be covered by the free license and advises rights confirmation. The declaration is retained as source-page metadata, not treated as permission. Local 1600 × 1066 WebP pixels prominently frame the memorial artwork; the file is retained only for provenance, has no live-page references, and is excluded from dist while the rights issue remains unresolved.',
+      checkedOn: '2026-10-12'
+    }
+  ],
   [
     'https://commons.wikimedia.org/wiki/File:Royal_Crescent_in_Bath_-_geograph.org.uk_-_7845942.jpg',
     {
@@ -1003,6 +1011,8 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp', '2026-10-12'],
+  ['/assets/images/france-lille-arras-vimy-sequence-legend.svg', '2026-10-12'],
   ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
