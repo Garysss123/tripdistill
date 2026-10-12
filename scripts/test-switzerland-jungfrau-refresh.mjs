@@ -28,6 +28,12 @@ const protectedLucerneRoutes = [
   '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
   '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
 ];
+const zermattRoutes = [
+  '/switzerland/zermatt-matterhorn/',
+  '/switzerland/zermatt-matterhorn/village-gornergrat/',
+  '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
+  '/switzerland/zermatt-matterhorn/glacier-paradise/'
+];
 const diagramPath = '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg';
 const diagramSha1 = '8b45fae5724444f48aa928e3225dacc232efc382';
 
@@ -68,8 +74,8 @@ function articleNode(nodes) {
   return null;
 }
 
-// Confirm this sprint is constrained to four existing routes and exactly the
-// matching five-language sitemap dates against its declared source commit.
+// Confirm the original Jungfrau dates and the known Zermatt follow-up are the
+// only five-language sitemap date changes against this older comparison base.
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
@@ -77,9 +83,9 @@ const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'source route inventory');
 assert.equal(currentRecords.size, baseRecords.size, 'no sitemap URL additions or removals');
 assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'route inventory is unchanged');
-const expectedDateChanges = new Set(locales.flatMap((locale) => routes.map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 20, 'four existing routes x five locales receive updated dates');
+assert.equal(dateChanges.length, 40, 'the four Jungfrau routes and four documented Zermatt follow-up routes each receive five localized dates');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `review date for ${url}`);
@@ -192,4 +198,4 @@ for (const locale of locales) {
   }
 }
 
-console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, 20 date changes, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);
+console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, 20 Jungfrau dates plus 20 documented Zermatt follow-up dates, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);

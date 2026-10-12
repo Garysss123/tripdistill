@@ -65,6 +65,20 @@ const verifiedBySourcePattern = [
 ];
 const verifiedSourcePageDetails = new Map([
   [
+    'https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg',
+    {
+      detail: 'Zermatt village/Gornergrat photo review: the exact Commons page identifies Ximonic (Simo Räsänen) and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn above the rocky grassy slope between Zermatt and Gornergrat, matching the alt and caption. The visible credit links the source and license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg',
+    {
+      detail: 'Zermatt Stellisee photo review: the exact Commons page identifies Giles Laurent and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn reflected in Stellisee beneath sunset clouds, matching the alt and caption. The visible credit links the source and same-version license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:Royal_Crescent_in_Bath_-_geograph.org.uk_-_7845942.jpg',
     {
       detail: 'Bath photo review: exact Commons page identifies Kevin Pearson and CC BY-SA 2.0; source title and photo terms for attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels were inspected and show the Royal Crescent façade and curve, matching the route subject.',
@@ -534,6 +548,7 @@ function collect(value, moduleName, seen, depth = 0) {
       sourceDate: value.sourceDate ?? null,
       creator: value.creator ?? null,
       license: value.license ?? null,
+      sourceDeclaredLicenses: value.sourceDeclaredLicenses ?? null,
       rightsStatus: value.rightsStatus ?? null,
       rightsStatusUrl: value.rightsStatusUrl ?? null,
       licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
@@ -999,6 +1014,8 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp', '2026-10-12'],
+  ['/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
@@ -1294,6 +1311,7 @@ for (const fullPath of assetPaths) {
     creditLabel: creditMatch?.creditLabel || null,
     creator,
     license,
+    sourceDeclaredLicenses: uniqueValues('sourceDeclaredLicenses')[0] || null,
     rightsStatus,
     rightsStatusUrl,
     licenseUrl,
@@ -1338,6 +1356,7 @@ const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
     creditLabel: row.creditLabel,
     creator: row.creator,
     license: row.license,
+    sourceDeclaredLicenses: row.sourceDeclaredLicenses,
     rightsStatus: row.rightsStatus,
     rightsStatusUrl: row.rightsStatusUrl,
     inventoryStatus: row.inventoryStatus,

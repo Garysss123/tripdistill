@@ -283,7 +283,8 @@ export const switzerlandImageManifest = {
   },
   "zermatt-matterhorn/village-gornergrat": {
     "src": "/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp",
-    "alt": "Matterhorn viewed from the Gornergrat area above Zermatt",
+    "alt": "Matterhorn rising above the rocky grassy slope between Zermatt and Gornergrat",
+    "displayTitle": "Matterhorn above the slope between Zermatt and Gornergrat",
     "source": "https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg",
     "label": "Matterhorn from mountain side between Zermatt and Gornergrat, Wallis, Switzerland, 2012 August - 3.jpg",
     "creator": "Ximonic (Simo Räsänen)",
@@ -293,7 +294,8 @@ export const switzerlandImageManifest = {
   },
   "zermatt-matterhorn/sunnegga-five-lakes": {
     "src": "/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp",
-    "alt": "Matterhorn reflected in a lake above Zermatt near Sunnegga",
+    "alt": "Matterhorn reflected in Stellisee beneath sunset clouds",
+    "displayTitle": "Matterhorn reflected in Stellisee at sunset",
     "source": "https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg",
     "label": "043 Matterhorn reflecting in Stellisee at sunset Photo by Giles Laurent.jpg",
     "creator": "Giles Laurent",
@@ -302,14 +304,19 @@ export const switzerlandImageManifest = {
     "remoteSha1": "72d9783b9b99227cdd2a4f6a89c1697019dfa271"
   },
   "zermatt-matterhorn/glacier-paradise": {
-    "src": "/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp",
-    "alt": "High alpine cable car terrain near Klein Matterhorn above Zermatt",
-    "source": "https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_-_Zermatt_-_Switzerland_-_2005_-_04.jpg",
-    "label": "Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg",
-    "creator": "Sikander Iqbal",
-    "license": "Public domain",
-    "commonsTitle": "File:Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg",
-    "remoteSha1": "43dcc8fdd4bc2dd86f52eefb259ebc4fc5e87b49"
+    "src": "/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
+    "alt": "Original schematic of the Zermatt village fallback and three mountain access chains; not a geographic map and not to scale",
+    "diagramNote": "Planning key: Mainline rail → Visp → MGB → Zermatt. At Zermatt, choose one branch: 1 Gornergrat Railway; 2 underground Sunnegga funicular → Blauherd → Five Lakes Trail → Sunnegga; 3 Furi → Schwarzsee → Trockener Steg → Klein Matterhorn / Matterhorn Glacier Paradise. When visibility or operations fail, use the village walk as a lower plan. The schematic compares access chains, not live departures, opening dates, fares or service status. Not to scale.",
+    "diagramCardNote": "Key: MGB to Zermatt; 1 Gornergrat rail; 2 Sunnegga funicular / Five Lakes; 3 Furi–Schwarzsee–Trockener Steg–Klein Matterhorn. The village walk is the lower fallback. Concept only; not to scale or live status.",
+    "source": "https://tripdistill.com/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
+    "label": "Zermatt and Matterhorn mountain access-chain planning schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "519bdeba45bcfb742705bf9df0de7f2bb49a952e"
   },
   "st-moritz-engadin/st-moritz-lakes": {
     "src": "/assets/images/switzerland-st-moritz-engadin-st-moritz-lakes.webp",
@@ -508,5 +515,20 @@ export const switzerlandRetiredImageRecords = {
     inventoryStatus: 'unused',
     rightsStatus: 'Source-page CC BY-SA 4.0 declaration retained as unverified metadata; no independent rights determination.',
     retirementNote: 'Removed from live displays on 2026-10-12. The source identifies the viewpoint as Bürgenstock/Felsenweg, while the page alt described a view from Mount Rigi. The original WebP and recorded source metadata remain archived; neither the former credit nor this note establishes independent rights clearance.'
+  },
+  zermattGlacierParadiseConflict: {
+    src: '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp',
+    alt: 'Klein Matterhorn summit sign beside the viewing platform above the clouds',
+    source: 'https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_-_Zermatt_-_Switzerland_-_2005_-_04.jpg',
+    label: 'Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg',
+    creator: 'Sikander Iqbal',
+    license: null,
+    sourceDeclaredLicenses: ['Public domain', 'CC BY-SA 4.0'],
+    commonsTitle: 'File:Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg',
+    remoteSha1: '43dcc8fdd4bc2dd86f52eefb259ebc4fc5e87b49',
+    localSha1: '9a193f9dba679212c6d27a10df08fff47a3ba3fb',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Conflicting Commons metadata declares Public domain and CC BY-SA 4.0; the source record is retained and no independent rights determination is made.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after source-page license conflict was found. The original WebP bytes and source metadata remain retained for provenance only; this record does not establish uploader authority or independent rights clearance.'
   }
 };

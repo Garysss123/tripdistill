@@ -79,6 +79,13 @@ const jungfrauEditedRoutes = [
   '/switzerland/jungfrau-region/wengen-kleine-scheidegg/',
   '/switzerland/jungfrau-region/grindelwald-first/'
 ];
+const zermattLastmod = '2026-10-12';
+const zermattEditedRoutes = [
+  '/switzerland/zermatt-matterhorn/',
+  '/switzerland/zermatt-matterhorn/village-gornergrat/',
+  '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
+  '/switzerland/zermatt-matterhorn/glacier-paradise/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -917,6 +924,11 @@ for (const route of jungfrauEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Jungfrau route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: jungfrauLastmod });
+}
+for (const route of zermattEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Zermatt route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: zermattLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {
