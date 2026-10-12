@@ -1,0 +1,26 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Belfast–Coleraine rail itinerary": "貝爾法斯特至科爾雷恩鐵路行程",
+    "Causeway Coast bus connection": "巨人堤道海岸巴士接駁",
+    "Derry overnight base": "德里過夜住宿據點",
+    "Belfast civic walking route": "貝爾法斯特市政區步行路線",
+    "Titanic Quarter timed visit": "Titanic Quarter 定時入場",
+    "Belfast station choices": "貝爾法斯特車站選擇",
+    "Coleraine to Giant’s Causeway": "科爾雷恩至巨人堤道",
+    "Causeway Coast seasonal bus": "巨人堤道海岸季節性巴士",
+    "Causeway visitor-centre access": "巨人堤道遊客中心通行資訊",
+    "Derry wall walking route": "德里城牆步行路線",
+    "Cityside and Waterside stay": "Cityside 與 Waterside 住宿",
+    "Museum of Free Derry opening hours": "德里自由博物館開放時間"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

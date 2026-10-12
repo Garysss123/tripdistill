@@ -13073,11 +13073,14 @@
     "url": "/united-kingdom/belfast-northern-ireland/",
     "parent": "United Kingdom",
     "type": "Regional guide",
-    "summary": "Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Combining them works across several nights, not as a single highlights loop.",
+    "summary": "Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Belfast, the coast and Derry need separate base, access and return decisions rather than one highlights loop.",
     "keywords": [
       "Belfast, Causeway Coast & Derry",
       "Northern Ireland",
-      "northern-ireland"
+      "northern-ireland",
+      "Belfast–Coleraine rail itinerary",
+      "Causeway Coast bus connection",
+      "Derry overnight base"
     ]
   },
   {
@@ -13085,12 +13088,15 @@
     "url": "/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/",
     "parent": "Belfast, Causeway Coast & Derry",
     "type": "Local guide",
-    "summary": "Begin at City Hall and the central grid, complete one history or civic anchor, then move once to the Titanic Quarter or remain with the city-centre evidence.",
+    "summary": "Start at City Hall, follow the central grid into the Cathedral Quarter, and reserve a different block for the Queen’s Quarter or Titanic Quarter.",
     "keywords": [
       "Belfast Civic Quarter & Maritime Mile",
       "Belfast, Causeway Coast & Derry",
-      "City-hall-to-shipyard route book",
-      "linen-grid-maritime-axis"
+      "Civic-grid-to-shipyard route book",
+      "linen-grid-maritime-axis",
+      "Belfast civic walking route",
+      "Titanic Quarter timed visit",
+      "Belfast station choices"
     ]
   },
   {
@@ -13098,12 +13104,15 @@
     "url": "/united-kingdom/belfast-northern-ireland/giants-causeway-coast/",
     "parent": "Belfast, Causeway Coast & Derry",
     "type": "Local guide",
-    "summary": "Travel from Belfast or a coast base to the visitor route, complete the causeway with official access guidance, then add one named town or viewpoint only when the return remains secure.",
+    "summary": "Take NI Railways to Coleraine, use the verified Ulsterbus 172 connection, then follow one official Giant’s Causeway route before deciding whether a second coast stop fits.",
     "keywords": [
       "Giant’s Causeway & the Causeway Coast",
       "Belfast, Causeway Coast & Derry",
       "Coast-stop weather-and-return chart",
-      "basalt-coast-rail-strip"
+      "basalt-coast-rail-strip",
+      "Coleraine to Giant’s Causeway",
+      "Causeway Coast seasonal bus",
+      "Causeway visitor-centre access"
     ]
   },
   {
@@ -13111,12 +13120,15 @@
     "url": "/united-kingdom/belfast-northern-ireland/derry-walls-bogside/",
     "parent": "Belfast, Causeway Coast & Derry",
     "type": "Local guide",
-    "summary": "Arrive at the bus or rail gateway, complete a one-direction wall circuit, descend for one context-rich institution, and finish at Guildhall or the Peace Bridge.",
+    "summary": "Enter from the Waterside rail approach or coach centre, cross to the walled city, then connect one wall walk to the Museum of Free Derry or the Peace Bridge.",
     "keywords": [
       "Derry Walls, Bogside & River Foyle",
       "Belfast, Causeway Coast & Derry",
       "Walls-and-memory context ledger",
-      "walled-city-memory-section"
+      "walled-city-memory-section",
+      "Derry wall walking route",
+      "Cityside and Waterside stay",
+      "Museum of Free Derry opening hours"
     ]
   }
 ]
