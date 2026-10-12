@@ -5,7 +5,9 @@ const ORIGINAL_IMAGE_PATHS = new Set([
   '/assets/images/china-lhasa-preparation.svg',
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
   '/assets/images/tripdistill-kellies-castle-transfer.svg',
-  '/assets/images/france-lille-arras-vimy-sequence-legend.svg'
+  '/assets/images/france-lille-arras-vimy-sequence-legend.svg',
+  '/assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg',
+  '/assets/images/tripdistill-semporna-sipadan-permit-flow.svg'
 ]);
 const TERMS_PATH = '/terms-of-use/';
 

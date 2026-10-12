@@ -307,9 +307,61 @@ try {
     assert.equal(record.verificationDate, '2026-10-12');
     assert.match(record.verificationDetail, /local 1,600 × 1,066 WebP pixels were inspected/i);
   }
+  const sandakanPhotos = [
+    { assetPath: '/assets/images/malaysia-kinabatangan.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', sourcePhotoDate: '2014-05-25', localSha1: '27b5ea43a1a1dfb4267aaf8492bf7960eecb6bee' },
+    { assetPath: '/assets/images/malaysia-sepilok.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-01a.jpg', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-09', localSha1: '521a5ca48b846592d8d51f5c9703db4d2e074ced' },
+    { assetPath: '/assets/images/malaysia-kinabatangan-proboscis.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Proboscis_monkey_and_its_baby_-_Kinabatangan_area_-_Sabah_-_Borneo_-_Malaysia_-_panoramio.jpg', creator: 'diego_cue', license: 'CC BY-SA 3.0', sourcePhotoDate: '2010-03-06', localSha1: '72b74b0a09835faa4fc7bf63e76a1111d7f11561' }
+  ];
+  for (const photo of sandakanPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Sandakan inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.sourcePhotoDate, photo.sourcePhotoDate);
+    assert.equal(record.localSha1, photo.localSha1);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, /local WebP pixels show/i);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator) && credit.includes('CC BY-SA 3.0')));
+    assert.match(record.editHistory, /Resized, center-cropped and converted to WebP/i, `${photo.assetPath} edit history records the local derivative`);
+    assert.ok(record.editHistory.includes('shared under CC BY-SA 3.0'), `${photo.assetPath} inventory preserves the exact share-alike version`);
+    assert.match(record.verificationDetail, /not independent .*rights clearance/i, `${photo.assetPath} source-page claims do not overstate legal review`);
+  }
+  const sempornaPhotos = [
+    { assetPath: '/assets/images/malaysia-semporna.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Buhey_Dulang,Semporna,_Sabah.jpg', sourceTitle: 'File:Buhey Dulang,Semporna, Sabah.jpg', creator: 'Redzuan Bohari', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', localSha1: '9dc40d9185466dd970c3d694d0b5efbf8435e807', visual: /pixels show the Bohey Dulang ridge above the turquoise Tun Sakaran lagoon/i },
+    { assetPath: '/assets/images/malaysia-semporna-water-taxi.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Semporna_Sabah_Water-taxi-01.jpg', sourceTitle: 'File:Semporna Sabah Water-taxi-01.jpg', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', localSha1: '40b0ffa7e7c6e111e094c121196f7797f59f1c26', visual: /pixels show a small Semporna water taxi with passengers/i },
+    { assetPath: '/assets/images/malaysia-tun-sakaran.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Semporna_-_Tun_Sakaran_Marine_Park.jpg', sourceTitle: 'File:Semporna - Tun Sakaran Marine Park.jpg', creator: 'Adznee Abas', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', localSha1: '5d948c5957885618aa8b8516b1e57db6daab79b5', visual: /pixels match Tun Sakaran island silhouettes viewed from Semporna at sunset/i }
+  ];
+  for (const photo of sempornaPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Semporna inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.sourceTitle, photo.sourceTitle);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.licenseUrl, photo.licenseUrl);
+    assert.equal(record.localSha1, photo.localSha1);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, photo.visual);
+    assert.match(record.verificationDetail, /not independent rights or uploader-authority clearance/i);
+    if (photo.assetPath !== '/assets/images/malaysia-tun-sakaran.webp') {
+      assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
+    }
+  }
+  const retiredSemporna = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/malaysia-tun-sakaran.webp');
+  assert.equal(retiredSemporna.inventoryStatus, 'unused');
+  assert.equal(retiredSemporna.useCount, 0);
+  assert.deepEqual(retiredSemporna.routes, []);
+  assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 516, 'the merged inventory records current UK19, Côte d’Azur, Marseille, Peak District, Provence inland and French Alps source-page checks while project-original diagrams remain separate');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 512, 'the merged inventory records UK, France, Semporna and Sandakan checks while project-original diagrams remain separate');
+  assert.equal(report.counts.sourcePageChecked, 261, 'the inventory counts the Semporna and Sandakan Commons pages reviewed on 12 October');
+  assert.equal(report.counts.assetsVisuallyReviewed, 181, 'the inventory counts the Semporna and Sandakan WebP files visually reviewed on 12 October');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -524,8 +576,8 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 12, 'inventory must count project-original artwork from the UK19, France Alps and Lille–Vimy routes plus existing diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 510, 'source-page declarations from merged UK and France checks do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 14, 'inventory counts the original UK, France and Malaysia diagrams plus existing artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 504, 'source-page declarations across the merged UK, France and Malaysia checks do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -576,8 +628,8 @@ try {
   assert.equal(melakaRetired.useCount, 0);
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
-  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 4, 'the Melaka, two UK19 and Vimy source photos with unresolved rights or attribution issues must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 801, 'the France, UK and Malaysia original diagrams remain included while all four retained rights-review photos stay excluded');
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 4, 'the Melaka, UK19 and Vimy source photos with unresolved rights or attribution issues must not be published in dist');
+  assert.equal(report.counts.expectedBuildImageCount, 803, 'the France, UK and Malaysia original diagrams remain included while all four retained rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [
@@ -1007,7 +1059,7 @@ try {
     }
   }
   assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
-  console.log('Photo inventory regression passed: three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; the three Côte d’Azur photos retain pixel reviews and source-page declarations without implying independent clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
+  console.log('Photo inventory regression passed: the Semporna lagoon, water taxi and retired sunset image retain source-page and pixel-review records without implying rights clearance; both new Semporna SVGs retain project-original rights limits; three Ayutthaya Commons revisions, creators, CC BY-SA versions, pixel reviews and share-alike credits are recorded without implying worldwide rights clearance; the three Côte d’Azur photos retain pixel reviews and source-page declarations without implying independent clearance; five reviewed Chiang Mai images retain source, creator, license, pixel review and five-locale credits; the Mae Sa date discrepancy stays unresolved; 18 Da Nang, Bangkok and Victoria images retain source-page checks, pixel reviews and hashes; five Seoul/Busan credits retain source metadata without implying pixel review; the Seoul Tourism Archive note is localized in all five editions; Chatuchak source, license and pixels are checked, and Talat Noi remains an unused orphan.');
 } finally {
   // The audit command is read-only with respect to committed generated reports.
   for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);

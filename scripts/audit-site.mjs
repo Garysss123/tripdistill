@@ -268,7 +268,10 @@ for (const absoluteUrl of publishedUrls) {
     : '/css/malaysia-straits.css?v=20260829-1';
   if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes(expectedMalaysiaStraitsCss)) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
-  if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sabah.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);
+  const expectedMalaysiaSabahCss = baseRoute === '/malaysia/semporna-tun-sakaran/'
+    ? '/css/malaysia-sabah.css?v=20261012-1'
+    : '/css/malaysia-sabah.css?v=20260830-1';
+  if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes(expectedMalaysiaSabahCss)) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);
   if (malaysiaHubRoutes.has(baseRoute)) {
     const expectedMalaysiaDepthCss = baseRoute === '/malaysia/melaka/'
       ? '/css/malaysia-depth.css?v=20261012-1'
@@ -284,7 +287,7 @@ for (const absoluteUrl of publishedUrls) {
     }
     if ((html.match(/class="md-hub-card"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia hub does not contain four linked field-guide cards`);
   }
-  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sarawak.css?v=20260830-2')) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
+  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !/\/css\/malaysia-sarawak\.css\?v=\d{8}-\d+/.test(html)) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
   const malaysiaDepthGuide = malaysiaDepthByRoute.get(baseRoute);
   if (malaysiaDepthGuide) {
     const expectedMalaysiaDepthCss = baseRoute.startsWith('/malaysia/melaka/')

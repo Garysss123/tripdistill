@@ -38,6 +38,14 @@ const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/machinchang-skycab/',
   '/malaysia/langkawi/kilim-geoforest/'
 ];
+const malaysiaSandakanLastmod = '2026-10-12';
+const malaysiaSandakanEditedRoutes = [
+  '/malaysia/sandakan-kinabatangan/',
+  '/malaysia/sandakan-kinabatangan/sandakan-heritage-waterfront/',
+  '/malaysia/sandakan-kinabatangan/sepilok-conservation-centres/',
+  '/malaysia/sandakan-kinabatangan/sukau-kinabatangan/',
+  '/malaysia/sandakan-kinabatangan/gomantong-batu-puteh/'
+];
 const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/',
   '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
@@ -57,6 +65,22 @@ const malaysiaFourthChildrenRoutes = [
   '/malaysia/cameron-highlands/ringlet-bertam-valley/',
   '/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/',
   '/malaysia/langkawi/dayang-bunting-island/'
+];
+const malaysiaKuchingLastmod = '2026-10-12';
+const malaysiaKuchingRoutes = [
+  '/malaysia/kuching-bako/',
+  '/malaysia/kuching-bako/kuching-waterfront-old-courthouse/',
+  '/malaysia/kuching-bako/borneo-cultures-museum/',
+  '/malaysia/kuching-bako/semenggoh-wildlife-centre/',
+  '/malaysia/kuching-bako/bako-national-park/'
+];
+const malaysiaSempornaLastmod = '2026-10-12';
+const malaysiaSempornaRoutes = [
+  '/malaysia/semporna-tun-sakaran/',
+  '/malaysia/semporna-tun-sakaran/semporna-jetty-operator/',
+  '/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/',
+  '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
+  '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
 ];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
@@ -847,10 +871,25 @@ for (const route of malaysiaLangkawiEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
 }
+for (const route of malaysiaSandakanEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Sandakan route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaSandakanLastmod });
+}
 for (const route of malaysiaFourthChildrenRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Malaysia child route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaFourthChildrenLastmod });
+}
+for (const route of malaysiaKuchingRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kuching route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKuchingLastmod });
+}
+for (const route of malaysiaSempornaRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Semporna route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaSempornaLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);

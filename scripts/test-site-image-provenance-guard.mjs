@@ -9,7 +9,9 @@ const provenanceLinks = `<li><a href="${sourceHref}">Original Lhasa schematic</a
 const originalSvg = '<img src="/assets/images/china-lhasa-preparation.svg" width="960" height="640" alt="Planning schematic">';
 const malaysiaPaths = [
   '/assets/images/tripdistill-dayang-bunting-chain.svg',
-  '/assets/images/tripdistill-kellies-castle-transfer.svg'
+  '/assets/images/tripdistill-kellies-castle-transfer.svg',
+  '/assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg',
+  '/assets/images/tripdistill-semporna-sipadan-permit-flow.svg'
 ];
 const francePageUrl = 'https://tripdistill.com/france/lille-french-flanders/';
 const franceSvgPath = '/assets/images/france-lille-arras-vimy-sequence-legend.svg';
@@ -29,4 +31,4 @@ assert.equal(hasVisibleOriginalProjectProvenance(`<img src="/assets/images/other
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${termsHref}">Terms of Use</a></li>`, pageUrl), false, 'the original image source link is required');
 assert.equal(hasVisibleOriginalProjectProvenance(`${originalSvg}<li><a href="${sourceHref}">Original Lhasa schematic</a></li>`, pageUrl), false, 'the Terms link is required');
 
-console.log('Site image provenance regression passed: each original SVG has exact source and Terms links; France routes can include independently credited photos.');
+console.log('Site image provenance regression passed: original SVGs require exact source and Terms links; France routes may include independently credited photos.');

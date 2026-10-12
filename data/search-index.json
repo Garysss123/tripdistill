@@ -200,7 +200,7 @@
     "url": "/malaysia/sandakan-kinabatangan/",
     "parent": "Malaysia · Sabah",
     "type": "Wildlife and River Guide",
-    "summary": "Connect Sandakan, Sepilok and Kinabatangan through conservation, lodge-transfer checks and ethical river observation.",
+    "summary": "Choose a city or Sepilok base for arrival, then reserve two or three nights at a named lower-Kinabatangan lodge. Keep road, boat, weather and wildlife uncertainty visible at every handoff.",
     "keywords": [
       "sandakan",
       "sepilok",
@@ -216,7 +216,7 @@
     "url": "/malaysia/semporna-tun-sakaran/",
     "parent": "Malaysia · Sabah",
     "type": "Marine Park Guide",
-    "summary": "Confirm the park permit, licensed operator, named jetty, weather and reef practice before leaving Semporna.",
+    "summary": "Use Semporna town as the practical base, then book Tun Sakaran, Mabul/Kapalai and any Sipadan day as separate operator-confirmed trips with a spare sea day.",
     "keywords": [
       "semporna",
       "tun sakaran",
@@ -3392,7 +3392,7 @@
     "url": "/malaysia/kuching-bako/",
     "parent": "Malaysia · Sarawak",
     "type": "River city, wildlife and coastal park guide",
-    "summary": "Open Sarawak through a river city, a major museum, rehabilitated forest edge and tide-dependent coastal park. Culture and wildlife receive separate contracts.",
+    "summary": "Use Kuching as one stable river-city base, then choose a museum-and-street day, a Semenggoh forest session and Bako’s road-to-boat park day. Four nights can fit the three different chapters; five nights add a real weather and access buffer.",
     "keywords": [
       "kuching & bako",
       "sarawak",
@@ -3997,9 +3997,9 @@
   {
     "title": "Sandakan Heritage & Waterfront Guide",
     "url": "/malaysia/sandakan-kinabatangan/sandakan-heritage-waterfront/",
-    "parent": "Malaysia · Sandakan & Kinabatangan",
+    "parent": "Malaysia - Sandakan & Kinabatangan",
     "type": "Focused area and field guide",
-    "summary": "Use Sandakan’s memorial, heritage and waterfront sites to frame the conservation corridor before leaving for Sepilok or the river.",
+    "summary": "Group Sandakan’s waterfront, hilltop heritage and out-of-town memorial by zone before arranging the named road transfer to Sepilok or a river lodge.",
     "keywords": [
       "sandakan heritage & waterfront",
       "sandakan & kinabatangan",
@@ -4011,9 +4011,9 @@
   {
     "title": "Sepilok Conservation Centres Guide",
     "url": "/malaysia/sandakan-kinabatangan/sepilok-conservation-centres/",
-    "parent": "Malaysia · Sandakan & Kinabatangan",
+    "parent": "Malaysia - Sandakan & Kinabatangan",
     "type": "Focused area and field guide",
-    "summary": "Sequence Sepilok’s conservation centres by official sessions, education and animal welfare rather than promised close encounters.",
+    "summary": "Plan Sepilok by separate rehabilitation, sun-bear and rainforest visits, using confirmed sessions and road pickup rather than promised animal appearances.",
     "keywords": [
       "sepilok conservation centres",
       "sandakan & kinabatangan",
@@ -4025,9 +4025,9 @@
   {
     "title": "Sukau & Kinabatangan River Guide",
     "url": "/malaysia/sandakan-kinabatangan/sukau-kinabatangan/",
-    "parent": "Malaysia · Sandakan & Kinabatangan",
+    "parent": "Malaysia - Sandakan & Kinabatangan",
     "type": "Focused area and field guide",
-    "summary": "Build a Sukau river stay around several observation windows, ethical distance, lodge logistics and zero wildlife guarantees.",
+    "summary": "Compare Sukau, Bilit and Abai by named transfer, included cruises and guide practice, then reserve two or three nights without wildlife guarantees.",
     "keywords": [
       "sukau & kinabatangan river",
       "sandakan & kinabatangan",
@@ -4039,9 +4039,9 @@
   {
     "title": "Gomantong & Batu Puteh Guide",
     "url": "/malaysia/sandakan-kinabatangan/gomantong-batu-puteh/",
-    "parent": "Malaysia · Sandakan & Kinabatangan",
+    "parent": "Malaysia - Sandakan & Kinabatangan",
     "type": "Focused area and field guide",
-    "summary": "Plan Gomantong and Batu Puteh as a distinct cave-and-community branch with authorized access, road time and local conservation context.",
+    "summary": "Book Gomantong’s visitor cave and Batu Puteh community program as separate authorized stops with a named road transfer and daylight buffer.",
     "keywords": [
       "gomantong & batu puteh",
       "sandakan & kinabatangan",
@@ -4053,9 +4053,9 @@
   {
     "title": "Semporna Jetty & Operator Desk Guide",
     "url": "/malaysia/semporna-tun-sakaran/semporna-jetty-operator/",
-    "parent": "Malaysia · Semporna & Tun Sakaran",
+    "parent": "Malaysia - Semporna & Tun Sakaran",
     "type": "Focused area and field guide",
-    "summary": "Use Semporna as an operating base by verifying the jetty, licensed provider, park scope, equipment and complete return chain.",
+    "summary": "Join Tawau Airport, the Semporna town base, a named licensed desk, exact jetty and confirmed boat return as one written transfer chain.",
     "keywords": [
       "semporna jetty & operator desk",
       "semporna & tun sakaran",
@@ -4067,9 +4067,9 @@
   {
     "title": "Bohey Dulang & Bodgaya Guide",
     "url": "/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/",
-    "parent": "Malaysia · Semporna & Tun Sakaran",
+    "parent": "Malaysia - Semporna & Tun Sakaran",
     "type": "Focused area and field guide",
-    "summary": "Plan the Tun Sakaran ridge-and-lagoon day around current trail access, park permission, footwear, sea state and reef restraint.",
+    "summary": "Pair a permit-checked Bohey Dulang ridge visit with a separately confirmed Bodgaya lagoon/reef stop; trail and sea decisions may split the plan.",
     "keywords": [
       "bohey dulang & bodgaya",
       "semporna & tun sakaran",
@@ -4081,9 +4081,9 @@
   {
     "title": "Mabul & Kapalai Guide",
     "url": "/malaysia/semporna-tun-sakaran/mabul-kapalai/",
-    "parent": "Malaysia · Semporna & Tun Sakaran",
+    "parent": "Malaysia - Semporna & Tun Sakaran",
     "type": "Focused area and field guide",
-    "summary": "Compare Mabul and Kapalai by accommodation, community boundaries, dive purpose and transfer contract rather than one turquoise-water image.",
+    "summary": "Choose Semporna town, inhabited Mabul or resort-managed Kapalai by exact room, guest access, boat, meals and return terms—not by a shared reef image.",
     "keywords": [
       "mabul & kapalai",
       "semporna & tun sakaran",
@@ -4095,9 +4095,9 @@
   {
     "title": "Sipadan Permit Day Guide",
     "url": "/malaysia/semporna-tun-sakaran/sipadan-permit-day/",
-    "parent": "Malaysia · Semporna & Tun Sakaran",
+    "parent": "Malaysia - Semporna & Tun Sakaran",
     "type": "Focused area and field guide",
-    "summary": "Treat Sipadan as a capacity-controlled dive day with recognized operator, diver readiness, site allocation and no-fly recovery.",
+    "summary": "Make Sipadan a separate permit-confirmed dive chapter: current Sabah Parks process, named date/operator, diver acceptance, briefing and post-dive flight buffer.",
     "keywords": [
       "sipadan permit day",
       "semporna & tun sakaran",
@@ -4109,9 +4109,9 @@
   {
     "title": "Kuching Waterfront & Old Courthouse Guide",
     "url": "/malaysia/kuching-bako/kuching-waterfront-old-courthouse/",
-    "parent": "Malaysia · Kuching & Bako",
+    "parent": "Malaysia - Kuching & Bako",
     "type": "Focused area and field guide",
-    "summary": "Read Kuching’s waterfront, old courthouse and trading streets as a river-city sequence with shade, crossing choices and evening pacing.",
+    "summary": "Walk Kuching’s Old Courthouse, southern-bank Waterfront, Main Bazaar and Carpenter Street as one public city sequence, with a Padang Merdeka finish and a weather-aware return.",
     "keywords": [
       "kuching waterfront & old courthouse",
       "kuching & bako",
@@ -4123,9 +4123,9 @@
   {
     "title": "Borneo Cultures Museum Guide",
     "url": "/malaysia/kuching-bako/borneo-cultures-museum/",
-    "parent": "Malaysia · Kuching & Bako",
+    "parent": "Malaysia - Kuching & Bako",
     "type": "Focused area and field guide",
-    "summary": "Visit the Borneo Cultures Museum with a selective gallery plan, Indigenous context and enough time to read objects beyond a photo circuit.",
+    "summary": "Read the Borneo Cultures Museum through its named river, nature, history and objects galleries, with dated ticket and last-entry checks beside Padang Merdeka.",
     "keywords": [
       "borneo cultures museum",
       "kuching & bako",
@@ -4137,9 +4137,9 @@
   {
     "title": "Semenggoh Wildlife Centre Guide",
     "url": "/malaysia/kuching-bako/semenggoh-wildlife-centre/",
-    "parent": "Malaysia · Kuching & Bako",
+    "parent": "Malaysia - Kuching & Bako",
     "type": "Focused area and field guide",
-    "summary": "Plan Semenggoh around official sessions, rehabilitation ethics, forest conditions and transport without promising an orangutan sighting.",
+    "summary": "Plan Semenggoh’s 24 km city-to-reserve return around the official session, e-ticket process and wildlife distance without promising an orangutan sighting.",
     "keywords": [
       "semenggoh wildlife centre",
       "kuching & bako",
@@ -4151,9 +4151,9 @@
   {
     "title": "Bako National Park Guide",
     "url": "/malaysia/kuching-bako/bako-national-park/",
-    "parent": "Malaysia · Kuching & Bako",
+    "parent": "Malaysia - Kuching & Bako",
     "type": "Focused area and field guide",
-    "summary": "Build a Bako park day around tide-aware boat access, registered arrival, one suitable trail and wildlife distance.",
+    "summary": "Build Bako as a full city-to-terminal-to-boat park day, checking BAS.MY’s named route, registration, tide, one open trail and the return chain.",
     "keywords": [
       "bako national park",
       "kuching & bako",
