@@ -156,7 +156,7 @@ export const canadaImageManifest = {
   },
   "calgary-badlands/drumheller-royal-tyrrell": {
     "src": "/assets/images/canada-calgary-badlands-drumheller-royal-tyrrell.webp",
-    "alt": "Alberta badlands near Drumheller",
+    "alt": "Dinosaur displays inside the Royal Tyrrell Museum",
     "source": "https://commons.wikimedia.org/wiki/File:Albertosaurus_-_Canada%27s_Dinosaur_Museum._(12643048524).jpg",
     "label": "Albertosaurus - Canada's Dinosaur Museum. (12643048524).jpg",
     "creator": "Bernard Spragg. NZ from Christchurch, New Zealand",

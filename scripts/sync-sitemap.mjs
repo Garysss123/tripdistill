@@ -83,6 +83,13 @@ const jasperEditedRoutes = [
   '/canada/jasper-icefields/icefields-parkway/',
   '/canada/jasper-icefields/athabasca-sunwapta/'
 ];
+const calgaryBadlandsLastmod = '2026-10-12';
+const calgaryBadlandsEditedRoutes = [
+  '/canada/calgary-badlands/',
+  '/canada/calgary-badlands/calgary-core/',
+  '/canada/calgary-badlands/drumheller-royal-tyrrell/',
+  '/canada/calgary-badlands/dinosaur-provincial-park/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -925,6 +932,12 @@ for (const route of [...jasperEditedRoutes, '/canada/']) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Jasper/Canada overview route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: jasperLastmod });
+}
+
+for (const route of calgaryBadlandsEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Calgary/Badlands route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: calgaryBadlandsLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

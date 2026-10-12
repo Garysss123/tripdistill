@@ -1,0 +1,27 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Calgary": "캘거리",
+    "Drumheller": "드럼헬러",
+    "Royal Tyrrell Museum": "로열 티렐 박물관",
+    "Alberta badlands": "앨버타 배드랜드",
+    "fossils": "화석",
+    "Route 500": "Route 500",
+    "CTrain": "CTrain",
+    "Calgary Transit": "Calgary Transit",
+    "Bow River": "Bow River",
+    "East Village": "East Village",
+    "timed entry": "시간 지정 입장",
+    "hoodoo": "후두",
+    "badlands": "배드랜드",
+    "Brooks": "브룩스",
+    "guided fossil tours": "화석 가이드 투어",
+    "campground": "캠프장",
+    "Scenic Loop Road": "Scenic Loop Road",
+    "Red Deer River valley": "Red Deer River 계곡"
+  }
+}
