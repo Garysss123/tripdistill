@@ -1,0 +1,35 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Canberra’s civic institutions as separate city days, then move to Jindabyne or another alpine gateway for the Snowy Mountains. Check city buses, bridge detours, booked coaches, park access and weather before fixing the sequence.": "캔버라의 국가기관은 날짜를 나눠 방문한 뒤, 스노위 산맥 일정에 맞춰 Jindabyne이나 다른 고산 관문으로 이동하세요. 일정을 확정하기 전에 시내버스, 다리 우회, 예약제 시외버스, 공원 접근과 날씨를 확인하세요.",
+    "canberra city itinerary": "캔버라 시내 일정",
+    "canberra bus routes 53 54 57 58": "캔버라 버스 노선 53 54 57 58",
+    "canberra to jindabyne coach 775": "캔버라–진다바인 Route 775 버스",
+    "snowy mountains seasonal shuttle": "스노위 산맥 계절 셔틀",
+    "Pair Parliament House with one inner-south institution, not a checklist of museums. Check sitting hours, screening, Routes 57/58 and current Commonwealth Avenue Bridge detours before choosing the walk.": "Parliament House와 남쪽 도심의 기관 한 곳을 짝지어 방문하고 박물관을 체크리스트처럼 여러 곳 넣지 마세요. 도보 경로를 정하기 전에 의회 개회일 운영시간, 보안 검색, Routes 57/58과 Commonwealth Avenue Bridge의 최신 우회 안내를 확인하세요.",
+    "parliament house canberra opening hours": "캔버라 Parliament House 운영시간",
+    "bus 57 58 parliament house": "Parliament House행 버스 57 58",
+    "federation mall canberra walking route": "캔버라 Federation Mall 도보 경로",
+    "commonwealth avenue bridge shared path detour": "Commonwealth Avenue Bridge 공용 보행·자전거 길 우회",
+    "Route 53 serves the National Museum on Acton Peninsula. Plan one museum block and a short shoreline out-and-back; check Commonwealth Avenue Bridge paths and site-specific lake water notices before extending.": "Route 53은 Acton Peninsula의 National Museum에 섭니다. 박물관 방문 일정 하나와 호숫가 짧은 왕복 산책을 계획하세요. 산책을 늘리기 전에 Commonwealth Avenue Bridge 산책로와 호수 구역별 수질 공지를 확인하세요.",
+    "national museum of australia bus 53": "National Museum of Australia 버스 53",
+    "acton peninsula west basin walk": "Acton Peninsula West Basin 산책",
+    "lake burley griffin bridge to bridge walk": "Lake Burley Griffin Bridge-to-Bridge 도보 코스",
+    "lake burley griffin water-quality closure": "Lake Burley Griffin 수질에 따른 폐쇄",
+    "R54 serves the Australian War Memorial stop. Allow time for the collection and 4:30pm Last Post Ceremony; add the 4.5km return Mount Ainslie walk only when track status, daylight, fire risk and fitness fit.": "R54는 Australian War Memorial 정류장에 섭니다. 전시 관람과 오후 4시 30분 Last Post Ceremony에 시간을 배정하세요. 트랙 상태, 일조 시간, 산불 위험과 체력이 모두 적합할 때만 왕복 4.5km Mount Ainslie 산책을 더하세요.",
+    "canberra r54 war memorial": "캔버라 R54 전쟁기념관",
+    "last post ceremony time": "Last Post Ceremony 시간",
+    "mount ainslie summit walk 4.5 km": "Mount Ainslie 정상 산책 4.5km",
+    "kokoda track canberra fire closure": "캔버라 Kokoda Track 산불로 인한 폐쇄",
+    "mount ainslie drive lookout": "Mount Ainslie Drive 전망대"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant and locale workers; GPT-6 Codex execution family, exact runtime model ID unverified; no Luna runtime exposed in the selected environment",
+    "reviewer": "Same task/model-family review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

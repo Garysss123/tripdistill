@@ -11,7 +11,8 @@ import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth
 const root = path.resolve(import.meta.dirname, '..');
 const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim();
 const followOnSprint = branch === 'codex/sprint-au-top-end-whitsundays-gaps-20261013';
-const base = followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
+const canberraSprint = branch === 'codex/sprint-au-canberra-content-20261013';
+const base = followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
 const isoDate = '2026-10-12';
 const routes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
@@ -167,7 +168,7 @@ function assertSvgSafe(file, digest) {
   }
 }
 
-assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013'].includes(branch), 'Source branch name.');
+assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013'].includes(branch), 'Source branch name.');
 const head = git(['rev-parse', 'HEAD']).trim();
 assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'The source branch must remain at the authorized base or its first direct child.');
 
@@ -189,6 +190,25 @@ if (followOnSprint) {
   const changedProtectedPaths = git(['diff', '--name-only', base, '--', ...protectedPriorSprintPaths]).trim();
   assert.equal(changedProtectedPaths, '', 'The previously authorized Adelaide/Perth route fixes remain unchanged.');
   console.log('Australia follow-on scope regression passed: exact 90de552 base, four authorized Top End/Whitsundays route bodies, and prior Adelaide/Perth fixes preserved.');
+  process.exit(0);
+}
+
+if (canberraSprint) {
+  const protectedPriorSprintPaths = [
+    'australia/adelaide-wine-island/adelaide-hills-hahndorf/index.html',
+    'australia/adelaide-wine-island/kangaroo-island/index.html',
+    'australia/perth-fremantle-rottnest/kings-park/index.html',
+    'australia/perth-fremantle-rottnest/cottesloe-scarborough/index.html'
+  ];
+  assert.equal(git(['diff', '--name-only', base, '--', ...protectedPriorSprintPaths]).trim(), '', 'The authorized Adelaide/Perth route fixes remain unchanged.');
+  const siblingArrowFixPaths = [
+    'assets/images/australia-kangaroo-island-regional-days.svg',
+    'assets/images/australia-kings-park-entry-choice.svg',
+    'data/australia-adelaide-perth-diagrams.mjs',
+    'reports/adelaide-perth-gaps-refresh-2026-10-12.md'
+  ];
+  assert.equal(git(['diff', '--name-only', base, '--', ...siblingArrowFixPaths]).trim(), '', 'The parallel 31fc438 arrow-correction files remain untouched for the integration writer.');
+  console.log('Canberra branch protection passed: exact 448f6cd5 base; prior Adelaide/Perth content and parallel 31fc438 arrow-correction files are untouched.');
   process.exit(0);
 }
 
