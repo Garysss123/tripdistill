@@ -68,6 +68,13 @@ const australiaGreatOceanEditedRoutes = [
   '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
   '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
 ];
+const australiaCairnsLastmod = '2026-10-12';
+const australiaCairnsEditedRoutes = [
+  '/australia/cairns-wet-tropics/',
+  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
+];
 const canadaLastmod = '2026-09-12';
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
@@ -948,6 +955,12 @@ for (const route of australiaGreatOceanEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error('Cannot date edited Great Ocean Road route absent from sitemap: ' + route);
   records.set(route, { ...record, lastmod: australiaGreatOceanLastmod });
+}
+
+for (const route of australiaCairnsEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Cairns route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: australiaCairnsLastmod });
 }
 
 const english = [...records.values()];

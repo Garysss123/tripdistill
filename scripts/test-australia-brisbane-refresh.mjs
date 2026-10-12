@@ -32,8 +32,14 @@ const goldCoastRoutes = [
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
   '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes];
-const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes];
+const cairnsRoutes = [
+  '/australia/cairns-wet-tropics/',
+  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
+];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes];
+const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -193,7 +199,7 @@ function articleAndFaq(html) {
 
 const expectedEnglishHtml = branchRefreshRoutes.map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglishHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the Brisbane, Blue Mountains, Great Ocean Road and Gold Coast refresh routes; found ${changedEnglishHtml.join(', ')}.`);
+assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns refresh routes; found ${changedEnglishHtml.join(', ')}.`);
 
 const expectedScripts = {
   'zh-Hant': /[\u3400-\u9fff]/u,
@@ -256,7 +262,7 @@ const oldSearchByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newSearchByUrl = new Map(newSearch.map((record) => [record.url, record]));
 assertIssue(oldSearchByUrl.size === newSearchByUrl.size && [...oldSearchByUrl.keys()].sort().join('|') === [...newSearchByUrl.keys()].sort().join('|'), 'Search-index URL set or count changed.');
 const changedSearch = [...newSearchByUrl.keys()].filter((url) => JSON.stringify(newSearchByUrl.get(url)) !== JSON.stringify(oldSearchByUrl.get(url))).sort();
-assertIssue(changedSearch.join('|') === [...branchSearchRoutes].sort().join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road and Gold Coast search records may change from this branch base; found ${changedSearch.join(', ')}.`);
+assertIssue(changedSearch.join('|') === [...branchSearchRoutes].sort().join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns search records may change from this branch base; found ${changedSearch.join(', ')}.`);
 for (const route of routes) {
   const record = newSearchByUrl.get(route);
   assertIssue(Boolean(record?.summary?.trim()), `${route}: search summary is missing.`);
@@ -317,7 +323,7 @@ const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.x
 assertIssue([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed; this task must not add or remove routes.');
 const expectedSitemapRoutes = branchRefreshRoutes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road and Gold Coast route/language lastmod values may change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns route/language lastmod values may change; found ${changedLastmod.length}.`);
 for (const route of expectedSitemapRoutes) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -325,5 +331,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log('Brisbane, Blue Mountains, Great Ocean Road and Gold Coast refresh regressions passed: sixteen existing route paths across the four authorized batches, all five editions, FAQ/schema/date parity, scoped search and sitemap changes, reviewed translation coverage, and original SVG provenance/structure checks.');
+  console.log('Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns refresh regressions passed: twenty existing route paths across the five authorized batches, all five editions, FAQ/schema/date parity, scoped search and sitemap changes, reviewed translation coverage, and original SVG provenance/structure checks.');
 }
