@@ -59,6 +59,12 @@ const franceMarseilleEditedRoutes = [
   '/france/marseille-calanques/calanques-access-choice/',
   '/france/marseille-calanques/cassis-la-ciotat/'
 ];
+const franceProvenceLastmod = '2026-10-12';
+const franceProvenceEditedRoutes = [
+  '/france/provence-inland/',
+  '/france/provence-inland/avignon-papal-city/',
+  '/france/provence-inland/aix-markets-cezanne/'
+];
 const franceDordogneEditedRoutes = [
   '/france/dordogne-perigord/',
   '/france/dordogne-perigord/sarlat-market-old-town/',
@@ -751,6 +757,11 @@ for (const route of franceMarseilleEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Marseille/Calanques route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceMarseilleLastmod });
+}
+for (const route of franceProvenceEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Provence Inland route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceProvenceLastmod });
 }
 for (const route of franceFr02EditedRoutes) {
   const record = records.get(route);

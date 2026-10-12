@@ -9613,7 +9613,7 @@
     "url": "/france/provence-inland/",
     "parent": "France",
     "type": "Regional guide",
-    "summary": "Avignon and Aix-en-Provence are independent city bases with different station and street logic. The Luberon’s villages, abbeys and seasonal landscapes require a bus, bicycle, tour or car; market calendars and summer roads shape what is possible.",
+    "summary": "Choose one city base first: Avignon Centre and the papal quarter, or Aix old town and its market/studio route. Their TGV stations need separate named links; Luberon villages require a prearranged rural last mile.",
     "keywords": [
       "Avignon, Aix & the Luberon",
       "Provence",
@@ -9625,7 +9625,7 @@
     "url": "/france/provence-inland/avignon-papal-city/",
     "parent": "Avignon, Aix & the Luberon",
     "type": "Local guide",
-    "summary": "Enter through the walls from Avignon Centre, anchor the day on the papal palace or museums, then finish at the Rhône without looping back through every commercial lane.",
+    "summary": "From Avignon Centre enter the walled core for a booked Palace visit, then choose one nearby museum or Rhône/bridge branch. Avignon TGV is 6 km away: use TER or Orizo 10/20, not a walk.",
     "keywords": [
       "Avignon Papal City & Rhône Edge",
       "Avignon, Aix & the Luberon",
@@ -9638,7 +9638,7 @@
     "url": "/france/provence-inland/aix-markets-cezanne/",
     "parent": "Avignon, Aix & the Luberon",
     "type": "Local guide",
-    "summary": "Walk Cours Mirabeau, the old city and one market or museum, then add Atelier de Cézanne or another verified site without assuming every studio and quarry is open.",
+    "summary": "Use A2 from Aix TGV to the bus station, walk Place Richelme–old city–Cours Mirabeau, and reserve the Atelier des Lauves before connecting on city bus 5 or 12. Market and studio calendars differ.",
     "keywords": [
       "Aix Markets & Cézanne Ground",
       "Avignon, Aix & the Luberon",

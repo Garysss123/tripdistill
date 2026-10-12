@@ -163,7 +163,7 @@ function guidePage(guide, cluster, guideIndex) {
 <body data-page="fr-${escapeHtml(cluster.slug)}-${escapeHtml(guide.slug)}" data-parent-page="france" data-country="france" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content fr-field" data-fr-family="${escapeHtml(cluster.family)}" data-fr-layout="${escapeHtml(guide.layout)}" data-fr-variant="${variant}" data-fr-instrument="${escapeHtml(guide.instrument)}">`)}
   <nav class="fr-breadcrumb" aria-label="Breadcrumb"><a href="/france/">France</a><span>→</span><a href="/france/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>→</span><strong>${escapeHtml(guide.name)}</strong></nav>
-  <section class="fr-field-hero"><div class="fr-field-copy"><span class="fr-kicker">${escapeHtml(cluster.region)} · route file ${String(guideIndex + 1).padStart(2, '0')}</span><h1>${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="fr-purpose"><small>Decision this guide solves</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Run the route</a><a class="button secondary" href="#failure-points">See the failure points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${escapeHtml(imageCaption)}</figcaption></figure><aside class="fr-ticket"><small>${escapeHtml(guide.layout)}</small><strong>${escapeHtml(guide.instrument)}</strong><span>reviewed ${escapeHtml(pageReviewDate)}</span></aside></section>
+  <section class="fr-field-hero"><div class="fr-field-copy"><span class="fr-kicker">${escapeHtml(cluster.region)} · route file ${String(guideIndex + 1).padStart(2, '0')}</span><h1>${escapeHtml(guide.name)}</h1><p>${escapeHtml(guide.summary)}</p><div class="fr-purpose"><small>Decision this guide solves</small><strong>${escapeHtml(guide.purpose)}</strong></div><div class="hero-actions"><a class="button primary" href="#route">Run the route</a><a class="button secondary" href="#failure-points">See the failure points</a></div></div><figure><img src="${guide.image.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(guide.image.alt)}"><figcaption>${escapeHtml(imageCaption)}</figcaption></figure><aside class="fr-ticket"><small>${escapeHtml(guide.layout)}</small><strong>${escapeHtml(guide.instrument)}</strong><span>${escapeHtml(guide.reviewCaption || `reviewed ${pageReviewDate}`)}</span></aside></section>
   <section class="fr-choice-deck" aria-label="Three ways to shape the visit">${guide.choices.map(([title, copy], index) => `<article><span>0${index + 1}</span><h2>${escapeHtml(title)}</h2><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
   ${ad}
   <section class="fr-contract"><div><span class="fr-label">Access first</span><h2>Know where the day actually begins.</h2><p>${escapeHtml(guide.access)}</p></div><div><span class="fr-label">Trade-off</span><h2>Choose what the route leaves out.</h2><p>${escapeHtml(guide.tradeoff)}</p></div><aside><span class="fr-label">Time envelope</span><p>${escapeHtml(guide.duration)}</p><span class="fr-label">Combine only when it helps</span><p>${escapeHtml(guide.combine)}</p></aside></section>
@@ -223,6 +223,7 @@ ${shellStart(`<main id="main-content" class="page-content fr-hub fr-paris-hub" d
 
 function hubPage(cluster, clusterIndex) {
   if (cluster.slug === 'paris') return parisHubPage(cluster);
+  if (cluster.hubContent) cluster = { ...cluster, ...cluster.hubContent };
   const route = `/france/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
   const faq = hubFaq(cluster);
@@ -372,7 +373,7 @@ function updateSearch() {
   const records = [];
   records.push({ title: 'France Travel Guide', url: '/france/', parent: 'Europe', type: 'Country', summary: 'Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.', keywords: ['France', 'French travel', 'Europe', 'France rail'] });
   for (const cluster of franceClusters) {
-    records.push({ title: cluster.name, url: `/france/${cluster.slug}/`, parent: 'France', type: 'Regional guide', summary: cluster.searchSummary || cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
+    records.push({ title: cluster.name, url: `/france/${cluster.slug}/`, parent: 'France', type: 'Regional guide', summary: cluster.hubContent?.searchSummary || cluster.searchSummary || cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
     for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.searchSummary || guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
   }
   const replacements = new Map(records.map((record) => [record.url, record]));

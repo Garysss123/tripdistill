@@ -151,77 +151,178 @@ export const franceMediterraneanClusters = [
       ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur', 'TER ZOU! — official regional rail information'],
       ['https://zou.maregionsud.fr/en/', 'ZOU! — official regional bus and train planning']
     ],
+    hubContent: {
+      label: 'Wall, market and village folio',
+      tagline: 'Give Avignon and Aix their own city days; add the Luberon only after solving its last mile.',
+      hubIntro: 'Avignon is a walled papal city and rail base; Aix is a separate fountain-and-market city with its own distant TGV transfer. Choose which urban core deserves your full day before adding a Luberon village branch that the regional bus network does not turn into a simple loop.',
+      stay: 'Two nights buy one full day after arrival and departure: choose Avignon for the papal quarter and the western rail corridor, or Aix for its market streets, museums and Cézanne sites. Three nights let one city breathe for two full days. Four nights can split two and two, but the station and hotel move is a transfer day. With five nights, add a Luberon excursion only if a named operator, driver or car is already arranged; six nights allow a slower rural base, but only when the luggage and return plan work. In Avignon, sleep inside or just outside the walls near Avignon Centre if you want to walk home; in Aix, the Rotonde/Cours Mirabeau or bus-station edge gives a more useful city-to-transit balance. Rural lodging trades rail convenience for a last-mile contract.',
+      transfer: 'Avignon Centre is beside the historic core; Avignon TGV is 6 km away. Avignon Tourisme lists TER or Orizo buses 10 and 20 between the TGV station and centre. Aix Centre and Aix-en-Provence TGV are also separate: the TGV station is about 15 km from the city, and La Métropole Mobilité calls the connecting Aix Centre–TGV–airport shuttle A2 (renumbered from line 40 in 2025). Use the actual station names in TER/SNCF and A2 searches. The updated Luberon guide explains why the ZOU! Apt–Avignon corridor is a gateway, not village or abbey access.',
+      season: 'Markets are a morning plan, not an all-day guarantee: Avignon Tourisme lists Les Halles Tuesday–Sunday; Aix’s tourist office lists Place Richelme produce stalls daily 08:00–13:00 except 1 January, and Place Comtales on Tuesday, Thursday and Saturday. Check the exact calendar before lodging near a market square. Avignon Festival dates bring early hotel demand and venue/security routing. The Palace’s 2026–27 visitor-route transition and the Lauves studio’s 2026 seasonal opening are dated examples, not future-year promises. Put exposed walks early in hot or mistral weather, check the live fire-access map for a rural trail, and treat lavender timing as variable agriculture.',
+      fallback: 'If heat, wind, fire controls or a missed rural connection removes the countryside day, stay in one city: use a currently open museum, a covered market or a shorter wall-and-square walk. If a ticketed room, studio or festival venue is unavailable, do not replace it with a cross-region taxi chain; select a nearby city alternative and protect the booked return.',
+      searchSummary: 'Choose one city base first: Avignon Centre and the papal quarter, or Aix old town and its market/studio route. Their TGV stations need separate named links; Luberon villages require a prearranged rural last mile.',
+      reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
+      reviewDisclaimer: 'Operating references and the dated 2026 visitor calendars were checked on 12 October 2026. Recheck live train, bus, market, booking, festival, weather and fire-access notices for your date.',
+      sources: [
+        ['https://avignon-tourisme.com/en/faqs/', 'Avignon Tourisme — stations, city walks, markets and regional connections'],
+        ['https://palais-des-papes.com/', 'Palais des Papes — current visitor route, tickets and seasonal hours'],
+        ['https://festival-avignon.com/en', 'Festival d’Avignon — official performance calendar'],
+        ['https://www.orizo.fr/', 'Orizo — Avignon local bus route and service planner'],
+        ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur', 'TER ZOU! — Avignon/Aix station and regional train planner'],
+        ['https://www.aixenprovencetourism.com/en/access-transport/', 'Aix-en-Provence Tourist Office — arrival and station connections'],
+        ['https://www.lametropolemobilite.fr/en/airport-train-station-shuttles/', 'La Métropole Mobilité — current A2 link for Aix Centre, Aix TGV and the airport'],
+        ['https://www.aixenprovencetourism.com/en/fiche/le-marche-aux-fruits-et-legumes-d-aix-en-provence-5466992/', 'Aix-en-Provence Tourist Office — produce-market locations and current schedule'],
+        ['https://www.cezanne-en-provence.com/L-Atelier-des-Lauves?lang=en', 'Atelier des Lauves — official booking, access and seasonal opening notice'],
+        ['https://www.risque-prevention-incendie.fr/vaucluse/', 'Vaucluse — daily forest-massif fire-access map'],
+        ['https://meteofrance.com/', 'Météo-France — current forecast and warnings']
+      ],
+      faq: [
+        ['How many nights should I book in inland Provence?', 'Two or three nights work best in one city. Four nights can support two nights in Avignon and two in Aix, with the move counted as travel time; this is two city visits, not a Luberon circuit. Add a countryside day only when its named transport and return are already arranged.'],
+        ['Which city is the better base?', 'Choose Avignon for the walled papal core and its central rail position; choose Aix for the old-city market, museum and Cézanne focus. In each city, stay near the centre and the actual city station or bus station. Do not book an Avignon TGV or Aix TGV hotel as if it were inside either historic core.'],
+        ['Can I reach the Luberon without a car?', 'Some ZOU! services reach larger gateway towns, but the scheduled corridor is not a village-to-abbey loop. Use the Luberon guide to match its current stop list to a date and prearrange a tour, driver or other last mile before committing.'],
+        ['What should I reserve first?', 'Reserve the Palace or the Atelier des Lauves if either is the reason for the day, then fit markets and secondary museums around its confirmed entry. For a festival performance or rural vehicle, confirm the exact date, venue/pickup and return before choosing the hotel.'],
+        ['What changes in summer?', 'Festival streets and hotel demand, heat, mistral and the daily Vaucluse fire-access level can change a route. Move walking to a cooler block, use a city interior as the backup, and do not treat lavender bloom as a date guarantee.']
+      ],
+      itineraryLabel: 'Four nights for two city cores; keep the fifth flexible',
+      itineraryHeading: 'One station move separates the walled city from the market city.',
+      itineraryIntro: 'This selective outline uses two nights in Avignon and two in Aix. Arrival and departure are partial days; the city-to-city transfer is not another sightseeing day. On a shorter stay, pick one base. Use the fifth day only for a reserved excursion or an extra day in the city you prefer.',
+      itinerary: [
+        ['Day 1 · Avignon arrival', 'Sleep inside or just outside the walls near Avignon Centre. If your train reaches Avignon TGV, use the checked TER connection or Orizo 10/20 before planning a walk; the station is 6 km from the centre. Keep the first loop to the gate, Les Halles or Place de l’Horloge.'],
+        ['Day 2 · Papal quarter and Rhône', 'Book the Palace first. Its 2026 visitor pages describe a route transition and changing rooms; reserve time for the current circuit, then add the gardens, Petit Palais, Rocher des Doms or Pont Saint-Bénézet as energy and separate access allow.'],
+        ['Day 3 · Transfer to Aix', 'Use the live TER itinerary between Avignon Centre and Aix-en-Provence, and leave time to check out and move luggage. If a high-speed ticket ends at Aix-en-Provence TGV, the A2 shuttle reaches the Aix bus station; do not confuse the TGV stop with the city station.'],
+        ['Day 4 · Aix old town', 'Put the official market that matches your date first, then walk one line between Place Richelme, the old-city squares and Cours Mirabeau. Add the Atelier des Lauves only with its dated booking and current bus 5/12 access; otherwise choose one open city collection.'],
+        ['Optional Day 5 · Luberon or a slower city', 'Stay a fifth night for a booked rural excursion with a confirmed pickup and return, or spend another full day in Avignon or Aix. A city-to-Apt bus is not the last mile to Gordes, Roussillon or Sénanque; use the existing Luberon guide for its separate branch and access decision.']
+      ]
+    },
     guides: [
       g({
         slug: 'avignon-papal-city',
+        reviewCaption: 'reviewed 12 October 2026 · Provence inland',
         name: 'Avignon Papal City & Rhône Edge',
         instrument: 'Wall-gate papal itinerary',
         layout: 'walled-city-itinerary',
         imageQuery: 'Avignon Palais des Papes Pont France panorama',
         imageAlt: 'Palace of the Popes and historic Avignon skyline',
-        purpose: 'Connect the Palais des Papes, Pont d’Avignon and walled streets in one route while distinguishing the central and TGV stations and accounting for festival access.',
+        purpose: 'Build one walled-city walk around either a booked Palace visit or a flexible museum-and-Rhône day, using the station-to-gate connection that matches your ticket.',
         summary: 'Enter through the walls from Avignon Centre, anchor the day on the papal palace or museums, then finish at the Rhône without looping back through every commercial lane.',
+        searchSummary: 'From Avignon Centre enter the walled core for a booked Palace visit, then choose one nearby museum or Rhône/bridge branch. Avignon TGV is 6 km away: use TER or Orizo 10/20, not a walk.',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         choices: [
-          ['Palais des Papes', 'Reserve the palace and give its rooms, interpretation and scale the main block. The bridge becomes a shorter second visit.'],
-          ['Walls, museums and Rhône', 'Use the palace exterior, Petit Palais or another collection, Rocher des Doms and river edge. This is more flexible than a timed palace route.'],
-          ['Festival city', 'Attend a specific programmed event and build sightseeing around its venue and security. Festival tickets replace, not supplement, a full monument day.']
+          ['Palace and gardens', 'Make the Palace the fixed appointment and follow the route shown for your date. Its current visitor information estimates about two hours for the Palace and papal gardens; add the bridge only if a separate entry and your energy fit.'],
+          ['Museum and river edge', 'If tickets are gone or a shorter route suits better, choose the Petit Palais or another currently open collection, then the Rocher des Doms or a bounded Rhône walk. A museum interior replaces the Palace visit rather than becoming one more stop.'],
+          ['Market or festival evening', 'Use Les Halles or Rue des Teinturiers as the local layer, or anchor an evening around one programmed festival venue. Check the event’s current entrance and security approach; a performance day does not also promise a full monument circuit.']
         ],
-        access: 'Avignon Centre is just outside the walls; Avignon TGV requires a regional connector. Read the ticket carefully and allow festival or security diversions before a timed palace entry.',
-        tradeoff: 'The palace, bridge, several museums and a Luberon excursion do not fit one day. The route keeps Avignon inside its walls and river edge, giving up the rural add-on.',
+        access: 'Avignon Centre is the walkable gateway to the walls. Avignon Tourisme places Avignon TGV 6 km from the historic centre and lists TER or Orizo lines 10 and 20 as links. Confirm your exact arrival and evening return before selecting a hotel or a timed Palace entry.',
+        tradeoff: 'The Palace and gardens alone are an estimated two-hour visit on the current official visitor page; the bridge has its own access and ticket choice. This route gives up the Luberon, Arles and an exhaustive museum list so its wall-to-Rhône walk stays coherent.',
         stages: [
-          ['Enter through the correct station and gate', 'From Avignon Centre, walk through the walls; from TGV, complete the connector first. Note the evening gate and station route.'],
-          ['Anchor at the papal quarter', 'Use the palace reservation or exterior and nearby museum, following current one-way circulation and event closures.'],
-          ['Climb once to river context', 'Move through Rocher des Doms toward the bridge and Rhône, avoiding repeated uphill returns to the palace square.'],
-          ['Exit along a direct street line', 'Finish near a gate serving Avignon Centre or the connector, with meal time outside the most crowded square.']
+          ['Match the station to the first gate', 'At Avignon Centre, enter the walled core on foot and orient at Place de l’Horloge. From Avignon TGV, complete the TER or Orizo connection first; do not treat the two stations as one place.'],
+          ['Use Place du Palais as the anchor', 'Follow the Palace’s date-specific ticket, visitor route and current room notices. The official 2026–27 page describes an ongoing transformation and newly introduced interpretation, so older room-by-room schedules may not apply.'],
+          ['Choose one nearby branch', 'If the booking and pace allow, continue through the gardens toward Notre-Dame-des-Doms and Rocher des Doms, or descend toward Pont Saint-Bénézet. Otherwise select the Petit Palais or Rue des Teinturiers instead of stacking every branch.'],
+          ['Return through a named gate', 'Finish along a simple walled-city street toward Avignon Centre or your confirmed connector. During a festival performance, use its live venue/security route and leave a return margin after the show.']
         ],
-        fallback: 'If palace access changes, use the Petit Palais, city museums, walls and Rhône route where open. During extreme heat, move the bridge and gardens early or late and prioritize shaded interiors.',
+        fallback: 'If Palace tickets or rooms change, use a currently open Petit Palais/city collection plus one walled-street loop. If heat or mistral makes the exposed garden and river uncomfortable, move that branch to a cooler hour and keep the interior as the day’s anchor.',
         watch: [
-          ['Two stations alter every connection', 'Avignon TGV is not a walk into the walls. Confirm the shuttle or regional train.'],
-          ['Festival streets are operational spaces', 'Venues, queues and temporary closures can block the shortest route. Follow current city guidance.'],
-          ['The palace is physically demanding', 'Large stone rooms, stairs and limited seating may affect mobility; read official accessibility information.']
+          ['A ticket ending at TGV does not end in town', 'Check TER arrival at Avignon Centre or Orizo 10/20 and the last connection back. Keep luggage and check-in time outside the monument block.'],
+          ['Palace rooms and festival streets can change', 'The Palace is updating its visit route through the 2026–27 season; the Festival adds venue-specific queues, security and street diversions. Reopen both official calendars for your date.'],
+          ['Stone rooms and the hill are tiring', 'Stairs, uneven paving and the rise to the gardens affect the day’s length. Read the Palace access information and substitute a closer interior or shorter lower-town loop when needed.']
         ],
-        duration: 'Allow five to seven hours for the walled city and palace, or a full day during a programmed festival visit. The bridge and palace each need separate admission time.',
-        combine: 'Combine the papal quarter with the Rhône edge. Keep Nîmes, Arles and Luberon villages for separate days.',
-        verify: 'Check palace and bridge tickets, festival calendar, station connector, heat or mistral and any security closure before departure.',
+        duration: 'Use about two hours as the current official estimate for Palace plus gardens, then add your walk, meal and any separate bridge or museum entry. A four-to-six-hour city block is an itinerary estimate, not a visit guarantee.',
+        combine: 'Combine the papal core with one of the bridge/Rhône, Petit Palais or Rue des Teinturiers branches. Keep Arles, Orange and every Luberon village for a different day.',
+        verify: 'Check the Palace’s dated route, entry and last-access rules; Pont Saint-Bénézet admission; Avignon TGV–Centre TER or Orizo 10/20; festival venue/security notices; and the day’s heat, wind and gate access.',
+        operations: {
+          entryReturn: 'Start from Avignon Centre and walk through the wall to Place de l’Horloge and Place du Palais. For Avignon TGV, use the current TER or Orizo 10/20 connection before joining the walk. From the papal quarter choose either the Rocher des Doms/bridge descent or a nearby indoor museum, then return through the gate serving your confirmed station connection.',
+          booking: 'Book the Palace only after checking its live date/route and ticket terms; its official 2026–27 notice describes a visitor-route transition. Check the bridge separately and reserve a festival performance before arranging that evening’s walk. The official Palace page lists final access before closing, so do not arrive at the last minute.',
+          weather: 'On hot or windy days make the Palace or a city museum the fixed indoor block, take the garden/bridge branch early or late, and shorten the exposed river edge. If a performance closes a street, follow its current venue directions rather than forcing the shortest map line.'
+        },
+        hubAccess: 'Avignon Centre is the walkable station; Avignon TGV is 6 km away, linked by TER or Orizo 10/20. Keep the walled city on foot and check event-day gate access.',
+        hubTradeoff: 'The Palace and garden already take a substantial block; adding the separately visited bridge means giving up another museum or the rural excursion.',
+        hubDuration: 'One full city day after an arrival night; allow about two hours for Palace plus gardens, then add walking, meal and any separate site only if the ticket and pace fit.',
         sources: [
-          ['https://avignon-tourisme.com/en/', 'Avignon Tourism — official city planning'],
-          ['https://palais-des-papes.com/en/', 'Palais des Papes and Pont d’Avignon — official visits']
+          ['https://avignon-tourisme.com/en/faqs/', 'Avignon Tourisme — station transfer, pedestrian core, markets and city sites'],
+          ['https://palais-des-papes.com/', 'Palais des Papes — official 2026–27 visitor-route, ticket and access notices'],
+          ['https://festival-avignon.com/en', 'Festival d’Avignon — official program and venue calendar'],
+          ['https://www.orizo.fr/', 'Orizo — Avignon bus route and date-specific service planner']
+        ],
+        siteContext: {
+          label: 'AVIGNON WALL-TO-RHÔNE ROUTE',
+          heading: 'Use the papal core as one anchor, not a checklist',
+          intro: 'The city fits into one walk, but tickets, stairs, event security and exposed river weather decide which branch belongs in it.',
+          details: [
+            ['Centre station or TGV', 'Avignon Centre is the station beside the wall. Avignon TGV lies 6 km away; the city tourism office points visitors to TER or Orizo lines 10/20, so plan that link before booking a room or entry.'],
+            ['Place du Palais and gardens', 'The current Palace page describes a 2026–27 interpretation change. Select the official route and ticket for the date; its current estimate for the Palace and papal gardens is about two hours.'],
+            ['The Rhône branch', 'From the papal quarter, choose the gardens/Rocher des Doms and bridge line only if it fits your ticket and walking day. The bridge is a distinct access choice, not a view guaranteed from the Palace ticket.'],
+            ['Festival or market layer', 'Les Halles is listed Tuesday–Sunday by Avignon Tourisme. Festival plans need the exact venue, entrance and security route; keep an indoor city alternative when queues or heat change the sequence.']
+          ]
+        },
+        faq: [
+          ['Which station should I use for Avignon old town?', 'Avignon Centre is beside the walls. Avignon TGV is 6 km away; Avignon Tourisme lists a TER connection or Orizo bus 10/20. Check the destination on the ticket and the date-specific return before choosing your base.'],
+          ['How long does the Palace visit take?', 'The current official visitor page estimates about two hours for the Palace and papal gardens. The route is changing in 2026–27, and the bridge or a museum uses additional time and may need separate access.'],
+          ['Can I add the bridge and a museum in one day?', 'Possibly, if you choose one short museum or the bridge and leave space for your Palace entry and meal. The most useful route drops one branch when a ticket or festival window is fixed.']
         ]
       }),
       g({
         slug: 'aix-markets-cezanne',
+        reviewCaption: 'reviewed 12 October 2026 · Provence inland',
         name: 'Aix Markets & Cézanne Ground',
         instrument: 'Fountain-market studio walk',
         layout: 'market-studio-walk',
         imageQuery: 'Aix en Provence Cours Mirabeau fountain France',
         imageAlt: 'Fountain and plane-tree avenue in central Aix-en-Provence',
-        purpose: 'Use Aix’s market streets and Cézanne sites through current reservations, while distinguishing the central bus-and-rail city from the distant TGV station.',
+        purpose: 'Choose one old-city market walk and one booked Cézanne or museum focus, while making the distant TGV transfer and city-bus return part of the itinerary.',
         summary: 'Walk Cours Mirabeau, the old city and one market or museum, then add Atelier de Cézanne or another verified site without assuming every studio and quarry is open.',
+        searchSummary: 'Use A2 from Aix TGV to the bus station, walk Place Richelme–old city–Cours Mirabeau, and reserve the Atelier des Lauves before connecting on city bus 5 or 12. Market and studio calendars differ.',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         choices: [
-          ['Market and old city', 'Build around the correct market day, Cours Mirabeau, civic squares and cathedral area. This is the flexible street-led route.'],
-          ['Cézanne focus', 'Reserve the atelier or another official site and connect it to city collections. Restoration and timed-access notices matter.'],
-          ['Museum and contemporary layer', 'Use Musée Granet, Hôtel de Caumont or a current exhibition as the main interior, keeping markets secondary.']
+          ['Market-first old city', 'The tourist office lists the produce market at Place Richelme daily, 08:00–13:00 except 1 January, and Place Comtales on Tuesday, Thursday and Saturday. Walk one market square, the old-city lanes and Cours Mirabeau; the second market is optional, not a required lap.'],
+          ['Reserved Atelier des Lauves', 'The official studio page currently marks visits as booking-required with limited capacity and gives Aix en Bus lines 5/12 to Atelier Cézanne. Its posted 2026 season ends 31 October; use the live calendar for any later year rather than extrapolating that window.'],
+          ['One museum instead of the climb', 'Choose Musée Granet or another currently open city collection as the main indoor visit. Check its live exhibition and ticket page; a museum replacement keeps the walk compact when the studio is closed, unavailable or physically unsuitable.']
         ],
-        access: 'Aix Centre station and bus station serve the city; Aix-en-Provence TGV lies outside it and requires a shuttle or bus. The Cézanne studio is uphill from the core, so place it before heat or fatigue grows.',
-        tradeoff: 'A full market, major exhibition and rural Sainte-Victoire route exceed one day. The plan gives up the mountain excursion so Aix’s art and urban rhythm retain depth.',
+        access: 'Aix Centre railway station and the intercity bus station serve the centre. Aix-en-Provence TGV is about 15 km away; La Métropole Mobilité now calls the A2 shuttle the link between Aix bus station, the TGV stop and Marseille airport. The Atelier des Lauves lists city bus lines 5 and 12 to the Atelier Cézanne stop. Check the dated operator map and return before placing a timed visit.',
+        tradeoff: 'Market mornings, a booked studio, a major exhibition and Sainte-Victoire belong to different blocks. This city walk chooses one market and one outlying or indoor art anchor; the mountain excursion replaces the city depth and needs its own weather and transport check.',
         stages: [
-          ['Enter from the real city gateway', 'Complete the TGV shuttle if needed, then orient around Cours Mirabeau and record the final bus or rail departure.'],
-          ['Use the market or museum anchor', 'Follow the market calendar or enter the selected collection, avoiding a shopping loop that repeats the same squares.'],
-          ['Climb to one Cézanne site', 'Walk or bus to the reserved atelier or another official site, respecting timed access and residential streets.'],
-          ['Return through the shaded center', 'Finish along a different old-city line with a meal near the bus station or central rail route.']
+          ['Solve the correct arrival station', 'If the ticket ends at Aix-en-Provence TGV, use current A2 information for the bus-station transfer. If it ends at Aix Centre, orient at the Rotonde/Cours Mirabeau side and note the return platform or bus stop.'],
+          ['Read one market street', 'For a morning market, begin at Place Richelme on a checked date, then continue through the old-city lanes toward Cours Mirabeau and the Rotonde. Keep Place Comtales for its listed market days rather than assuming every square is active.'],
+          ['Commit to one art address', 'For Atelier des Lauves, reserve a time first and use Aix en Bus 5/12 to Atelier Cézanne; alternatively choose one open centre museum. Do not turn a studio reservation into a promise that Jas de Bouffan or Bibémus is also open.'],
+          ['Return to the same transit edge', 'Come back to the centre by the selected walk or current bus, collect luggage, and take A2 only if your ticket requires Aix TGV. Leave the city-market area before relying on the last shuttle or regional train.']
         ],
-        fallback: 'If a Cézanne site is closed, use Musée Granet and the official city trail without representing private or altered sites as preserved studios. In heat, omit the uphill walk and keep shaded interiors.',
+        fallback: 'If the Lauves studio has no suitable slot or is out of season, make Place Richelme and one currently open museum the whole day. In heat or for limited walking, use a short old-city circuit and an indoor collection; do not replace a closed studio with an unscheduled cross-town car chain.',
         watch: [
-          ['The TGV station is remote', 'Build shuttle time into both arrival and departure; do not schedule a timed museum immediately after the train.'],
-          ['Markets rotate by day and square', 'Check which market is operating rather than expecting every stall on every morning.'],
-          ['Artist sites may be under restoration', 'Use current official access and avoid relying on older guidebook descriptions.']
+          ['Aix TGV is outside the centre', 'The official tourism office places it about 15 km away; the operator’s A2 shuttle replaced line 40 in August 2025. Use the current A2 notice and add a margin before a museum appointment.'],
+          ['Market squares do not share one calendar', 'Place Richelme and Place Comtales have different listed schedules. Check the chosen morning and finish window rather than arriving after the market block.'],
+          ['The studio is seasonal and capacity-limited', 'The 2026 listing runs July 4–October 31, requires advance booking and gives bus lines 5/12. The historic building is not mobility-accessible; use the official access note and choose a centre museum if needed.']
         ],
-        duration: 'Allow five to seven hours for Aix center and one art site. A Sainte-Victoire excursion or multiple museums needs another day.',
-        combine: 'Combine the old city with one Cézanne site or museum. Keep Avignon, Marseille and the Luberon separate.',
-        verify: 'Check exact station connector, market schedule, atelier or museum reservation, heat and urban bus before setting the climb.',
+        duration: 'Set aside a five-to-seven-hour city block for the market/old centre and one reserved studio or museum; this is a planning estimate. Add a separate day for Sainte-Victoire, multiple Cézanne locations or both cities.',
+        combine: 'Pair Place Richelme and the old city with one studio or museum. Keep Avignon, Marseille, Bibémus/Sainte-Victoire and the Luberon as separate route decisions.',
+        verify: 'Recheck the A2 stop and exact timetable, Place Richelme/Comtales market calendar, Atelier date and reservation, bus 5/12 return, museum exhibition, mobility note and forecast.',
+        operations: {
+          entryReturn: 'From Aix TGV, take the current A2 shuttle to the Aix-en-Provence bus station; from Aix Centre, walk toward the Rotonde and Cours Mirabeau. Put the morning market at Place Richelme first, then one line through the old-city squares. For the Atelier, use city bus 5 or 12 to Atelier Cézanne and confirm the return stop/date.',
+          booking: 'The Atelier’s official page says advance booking is required because capacity is limited and access cannot be guaranteed without an online reservation. Its 2026 listing is seasonal through 31 October; the historic building itself is not mobility-accessible and there is no site parking. Check the live year-specific notice before booking a hotel around it.',
+          weather: 'For heat, mistral or reduced walking, keep the first market block brief and replace the Lauves climb with one current indoor collection in the centre. If the market is not on, use the old-city route without assuming another square has stalls that day.'
+        },
+        hubAccess: 'Aix Centre and the bus station serve the city; Aix TGV is 15 km out and connects by A2. Atelier des Lauves lists buses 5/12 to Atelier Cézanne.',
+        hubTradeoff: 'A market morning pairs with either the booked studio or a city museum. Adding the mountain or multiple Cézanne sites needs another day and its own transit plan.',
+        hubDuration: 'One full day for the old centre, market and one art anchor; count the TGV shuttle and a dated studio reservation separately.',
         sources: [
-          ['https://www.aixenprovencetourism.com/en/', 'Aix-en-Provence Tourism — official city planning'],
-          ['https://travel.aixenprovencetourism.com/en/fiche/lauves-studio-5538099/', 'Aix-en-Provence Tourism — official Cézanne studio access and notices']
+          ['https://www.aixenprovencetourism.com/en/access-transport/', 'Aix-en-Provence Tourist Office — official station access and transport'],
+          ['https://www.lametropolemobilite.fr/en/airport-train-station-shuttles/', 'La Métropole Mobilité — A2 shuttle, Aix bus station and TGV connection'],
+          ['https://www.aixenprovencetourism.com/en/fiche/le-marche-aux-fruits-et-legumes-d-aix-en-provence-5466992/', 'Aix-en-Provence Tourist Office — Place Richelme and Place Comtales market schedule'],
+          ['https://www.cezanne-en-provence.com/L-Atelier-des-Lauves?lang=en', 'Atelier des Lauves — official seasonal dates, booking, bus and mobility information'],
+          ['https://www.aixenprovencetourism.com/en/aix-en-provence-en/paul-cezanne/', 'Aix-en-Provence Tourist Office — Cézanne sites and current interpretation']
+        ],
+        siteContext: {
+          label: 'AIX MARKET-TO-STUDIO LINE',
+          heading: 'One central market, then one committed art address',
+          intro: 'The old centre is walkable as a connected set of squares; the studio and remote TGV station each add a real transit leg.',
+          details: [
+            ['A2 before the old town', 'Aix TGV lies outside the centre. The official metropolitan operator identifies A2 as the current Aix bus station–TGV–airport shuttle, replacing line 40 in August 2025; check the exact stop and departure on your date.'],
+            ['Place Richelme first', 'Aix Tourism lists the produce market at Place Richelme daily 08:00–13:00 except 1 January. Place Comtales has a separate Tuesday/Thursday/Saturday listing; choose the square from your date.'],
+            ['Cézanne by appointment', 'The Atelier des Lauves official 2026 season is July 4–October 31, with advance booking required and limited capacity. Aix en Bus 5/12 serve Atelier Cézanne; confirm later-year hours independently.'],
+            ['A centre museum is the fallback', 'The Atelier’s historic building is not mobility-accessible. When a reserved visit is unsuitable or unavailable, choose one currently open city museum and keep the route on the old-town grid.']
+          ]
+        },
+        faq: [
+          ['How do I get from Aix TGV into the old city?', 'Aix-en-Provence TGV is about 15 km from the centre. La Métropole Mobilité currently names the shuttle A2, connecting the bus station, TGV station and Marseille airport; it replaced line 40 in August 2025. Check the live stop and timetable.'],
+          ['Which Aix market fits a morning walk?', 'The tourist office currently lists produce stalls daily at Place Richelme from 08:00 to 13:00, except 1 January, and Place Comtales on Tuesday, Thursday and Saturday. Verify your date before making the market the trip’s anchor.'],
+          ['Can I visit Atelier des Lauves without booking?', 'The official Atelier page says advance booking is required because capacity is limited and access cannot be guaranteed without an online reservation. The posted 2026 opening season is July 4 through October 31; do not carry those dates forward to another year.']
         ]
       }),
       g({

@@ -987,6 +987,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
+  ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
+  ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
   ['/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', '2026-10-12'],
   ['/assets/images/france-marseille-calanques-calanques-access-choice.webp', '2026-10-12'],
   ['/assets/images/france-marseille-calanques-cassis-la-ciotat.webp', '2026-10-12'],
@@ -1164,6 +1167,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Calanques
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg', {
   detail: 'Marseille photo review: the exact Commons page lists DJ Poldoc, 5 October 2013, original 3,872 × 2,592 pixels, and a CC0 1.0 declaration. The local 1,600 × 1,066 WebP shows Cassis harbor with boats in the foreground and Cap Canaille beyond; a mast/pole partly crosses the cliff view. Source SHA-1 4c262f89d1eaa0d52a65b8d2593f0a972257f6fd matches the recorded manifest value. The visible credit retains source and creator provenance, though CC0 does not require attribution. This records the page declaration and image match, not independent rights or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Avignon_-_%C3%8Ele_de_Piot_-_Chemin_des_Berges_-_Panorama_View_from_the_Rh%C3%B4ne_river_bank_towards_Pont_Saint_B%C3%A9n%C3%A9zet_(Pont_d%27Avignon),_Jardin_des_doms,_Avignon_Cathedral,_Palais_des_Papes_%26_Pont_%C3%89douard_Daladier_02.jpg', {
+  detail: 'Provence inland photo review: the exact Commons page lists Txllxt TxllxT and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show distant walled Avignon skyline and Palace of the Popes from the Rhône bank at Île de Piot, consistent with the source subject and current route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:France-002438_-_Cours_Mirabeau_Fountain_(15867627856).jpg', {
+  detail: 'Provence inland photo review: the exact Commons page lists Dennis G. Jarvis and CC BY-SA 2.0. The local 1,600 × 1,066 WebP pixels were inspected and show Fontaine de la Rotonde and plane-tree avenue on Cours Mirabeau in Aix-en-Provence, consistent with the source subject and current route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg', {
+  detail: 'Provence inland photo review: the exact Commons page lists Einaz80 and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show Gordes hillside village and stone buildings in the Luberon, consistent with the route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
   checkedOn: '2026-10-12'
 });
 const entries = [];

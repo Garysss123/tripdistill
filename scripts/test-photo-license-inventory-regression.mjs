@@ -225,6 +225,47 @@ try {
   }
   assert.equal(lesEyziesPhoto.verificationStatus, 'site_credit_or_metadata_only', 'an inaccessible exact source page remains explicitly unverified');
   assert.equal(lesEyziesPhoto.verificationDate, null);
+  const provencePhotos = [
+    {
+      assetPath: '/assets/images/france-provence-inland-avignon-papal-city.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Avignon_-_%C3%8Ele_de_Piot_-_Chemin_des_Berges_-_Panorama_View_from_the_Rh%C3%B4ne_river_bank_towards_Pont_Saint_B%C3%A9n%C3%A9zet_(Pont_d%27Avignon),_Jardin_des_doms,_Avignon_Cathedral,_Palais_des_Papes_%26_Pont_%C3%89douard_Daladier_02.jpg',
+      creator: 'Txllxt TxllxT',
+      license: 'CC BY-SA 4.0',
+      localSha256: 'a82d6f1117c6e34ca179d7f001284e99fb3e9da18141962d8cf9908869a905d3',
+      pixelNote: 'distant walled Avignon skyline and Palace of the Popes from the Rhône bank at Île de Piot'
+    },
+    {
+      assetPath: '/assets/images/france-provence-inland-aix-markets-cezanne.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:France-002438_-_Cours_Mirabeau_Fountain_(15867627856).jpg',
+      creator: 'Dennis G. Jarvis',
+      license: 'CC BY-SA 2.0',
+      localSha256: 'f072c6ba751bb14712fe4d4675031e450b2c063266cd9090c740391cc2b9e967',
+      pixelNote: 'Fontaine de la Rotonde and plane-tree avenue on Cours Mirabeau in Aix-en-Provence'
+    },
+    {
+      assetPath: '/assets/images/france-provence-inland-luberon-villages-abbey.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg',
+      creator: 'Einaz80',
+      license: 'CC BY-SA 4.0',
+      localSha256: '0865181e415724083187a5cbdf601274a86b966a34d28ed22d23791e73cb8d89',
+      pixelNote: 'Gordes hillside village and stone buildings in the Luberon'
+    }
+  ];
+  for (const expected of provencePhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `Provence inventory must retain ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.sha256, expected.localSha256, 'source verification must preserve the inspected local image bytes');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.match(record.verificationDetail, /1,600 × 1,066 WebP pixels were inspected/i);
+    assert.ok(record.verificationDetail.includes(expected.pixelNote), 'verification note must match the visible subject');
+    assert.match(record.verificationDetail, /not independent rights clearance/i);
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+  }
   const marseillePhotos = [
     { assetPath: '/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', creator: 'Remi Mathis', license: 'CC BY-SA 3.0', sourceSha1: '7d381ee1748237e9db100c3e84e36d09c2180ddb', pixelNote: 'older harbor-side stone building under restoration scaffolding' },
     { assetPath: '/assets/images/france-marseille-calanques-calanques-access-choice.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', creator: 'MikkoNilssonCom', license: 'CC BY-SA 4.0', sourceSha1: '684c46cd9c74d508c0c51324e6533f545ad4b904', pixelNote: 'aerial limestone inlets including Port-Miou, Port-Pin and En-Vau' },
@@ -244,7 +285,7 @@ try {
     assert.ok(record.verificationDetail.includes('not independent rights or chain-of-title verification'));
     assert.ok(record.altTexts.length && record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
   }
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 522, 'three Marseille and three Peak District source-page/pixel checks are recorded while unresolved claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 519, 'Marseille, Peak District and Provence inland source-page/pixel checks are recorded while unresolved claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -460,7 +501,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 6, 'inventory must count explicitly recorded project-original artwork, including Melaka, Somerset and Peak District diagrams');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 520, 'the regenerated merged inventory includes the Marseille and Peak District source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 517, 'the regenerated merged inventory includes the Marseille, Peak District and Provence inland source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));

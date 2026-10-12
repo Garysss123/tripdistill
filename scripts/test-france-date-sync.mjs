@@ -51,6 +51,11 @@ const marseilleRoutes = [
   '/france/marseille-calanques/calanques-access-choice/',
   '/france/marseille-calanques/cassis-la-ciotat/'
 ];
+const provenceRoutes = [
+  '/france/provence-inland/',
+  '/france/provence-inland/avignon-papal-city/',
+  '/france/provence-inland/aix-markets-cezanne/'
+];
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const entries = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, route, lastmod]) => [route, lastmod]));
@@ -61,11 +66,16 @@ const reviewedRoutes = [
 const marseilleReviewedRoutes = [
   ...franceClusters.filter((cluster) => cluster.reviewedOn?.iso === '2026-10-12').map((cluster) => `/france/${cluster.slug}/`),
   ...franceGuides.filter((guide) => guide.reviewedOn?.iso === '2026-10-12').map((guide) => guide.url)
-];
+].filter((route) => marseilleRoutes.includes(route));
+const provenceReviewedRoutes = [
+  ...franceClusters.filter((cluster) => cluster.hubContent?.reviewedOn?.iso === '2026-10-12').map((cluster) => `/france/${cluster.slug}/`),
+  ...franceGuides.filter((guide) => guide.reviewedOn?.iso === '2026-10-12').map((guide) => guide.url)
+].filter((route) => provenceRoutes.includes(route));
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
 check(reviewedRoutes.length === 24 && selectedRoutes.length === 24 && selectedRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde, Dordogne and Toulouse/Occitanie hubs plus their three children to retain their review dates; found ${reviewedRoutes.join(', ')}`);
 check(marseilleReviewedRoutes.length === 4 && marseilleRoutes.length === 4 && marseilleRoutes.every((route) => marseilleReviewedRoutes.includes(route)), `Expected the Marseille/Calanques hub and all three children to be the 2026-10-12 review-dated routes; found ${marseilleReviewedRoutes.join(', ')}`);
+check(provenceReviewedRoutes.length === 3 && provenceRoutes.length === 3 && provenceRoutes.every((route) => provenceReviewedRoutes.includes(route)), `Expected the Provence inland hub, Avignon and Aix to carry the 2026-10-12 review date; found ${provenceReviewedRoutes.join(', ')}`);
 
 for (const route of routes) {
   const englishLastmod = entries.get(route);
@@ -97,7 +107,7 @@ for (const route of selectedRoutes) {
   }
 }
 
-for (const route of marseilleRoutes) {
+for (const route of [...marseilleRoutes, ...provenceRoutes]) {
   for (const prefix of locales) {
     const localizedRoute = `${prefix}${route}`;
     const htmlPath = path.join(root, localizedRoute.slice(1), 'index.html');
@@ -122,6 +132,6 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(englishOnly
-    ? `France English date synchronization passed: ${routes.length} English routes; the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques routes use 2026-10-12 with their 2026-09-19 publication date preserved.`
-    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * 5} sitemap URLs; all localized dates match, the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques routes use 2026-10-12 in all five article schemas and sitemap entries.`);
+    ? `France English date synchronization passed: ${routes.length} English routes; the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques routes plus three Provence inland routes use 2026-10-12 with their 2026-09-19 publication dates preserved.`
+    : `France date synchronization passed: ${routes.length} English routes and ${routes.length * 5} sitemap URLs; all localized dates match, the twenty-four Lyon/Rhône + Alsace + Burgundy + Bordeaux/Gironde + Dordogne + Toulouse/Occitanie routes use 2026-10-11, and the four Marseille/Calanques plus three Provence inland routes use 2026-10-12 in all five article schemas and sitemap entries.`);
 }

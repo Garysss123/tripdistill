@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose one city base first: Avignon Centre and the papal quarter, or Aix old town and its market/studio route. Their TGV stations need separate named links; Luberon villages require a prearranged rural last mile.": "まず拠点を一都市に絞りましょう。Avignon Centreと教皇地区、またはエクス旧市街と市場／スタジオのルートを選びます。TGV駅はどちらも別の交通接続が必要で、リュベロンの村へは地方の最後の区間を事前手配してください。",
+    "From Avignon Centre enter the walled core for a booked Palace visit, then choose one nearby museum or Rhône/bridge branch. Avignon TGV is 6 km away: use TER or Orizo 10/20, not a walk.": "Avignon Centreから城壁内へ歩き、予約した教皇宮を見学した後、近くの博物館一つかローヌ川／橋のルートを選びます。Avignon TGVは市街から6kmです。TERまたはOrizo 10/20系統を利用し、歩いて向かわないでください。",
+    "Use A2 from Aix TGV to the bus station, walk Place Richelme–old city–Cours Mirabeau, and reserve the Atelier des Lauves before connecting on city bus 5 or 12. Market and studio calendars differ.": "Aix TGVからA2でバスターミナルへ行き、Place Richelme、旧市街、Cours Mirabeauを歩きます。Atelier des Lauvesを予約してから市バス5または12系統に乗りましょう。市場とスタジオの営業日は異なります。"
+  },
+  "reviewNote": "Self-translated from the English search records and checked for route intent, place names, operators, route numbers and transfer requirements. No external approval claimed."
+}

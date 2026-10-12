@@ -59,7 +59,7 @@ export function defineFranceCluster(cluster) {
       hubName: cluster.name,
       region: cluster.region,
       family: cluster.family,
-      reviewedOn: cluster.reviewedOn,
+      reviewedOn: guide.reviewedOn || cluster.reviewedOn,
       url: `/france/${cluster.slug}/${guide.slug}/`,
       route: guide.stages.map((stage, stageIndex) => [routeLabels[stageIndex], stage[0], stage[1]]),
       faq: guide.faq || [

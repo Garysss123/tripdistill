@@ -28,6 +28,7 @@
     "audit:switzerland-sources": "node scripts/check-switzerland-sources.mjs",
     "audit:france": "node scripts/audit-france.mjs",
     "test:france-date-sync": "node scripts/test-france-date-sync.mjs",
+    "test:france-provence-search": "node scripts/test-france-provence-search.mjs",
     "test:malaysia-cameron-route-dates": "node scripts/test-malaysia-cameron-route-dates.mjs",
     "test:malaysia-langkawi-route-dates": "node scripts/test-malaysia-langkawi-route-dates.mjs",
     "test:malaysia-melaka-route-dates": "node scripts/test-malaysia-melaka-route-dates.mjs",
