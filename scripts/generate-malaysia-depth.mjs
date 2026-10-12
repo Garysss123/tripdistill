@@ -343,10 +343,11 @@ if (requestedClusterSlug) {
   const boundedGuideLists = {
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
-    'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest']
+    'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
+    melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands and Langkawi source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi and Melaka source clusters.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
@@ -358,7 +359,7 @@ if (requestedClusterSlug) {
   }
   injectHubCards(cluster);
   updateSearch(guides, cluster);
-  console.log(`Generated the ${cluster.hubName} hub cards and three reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.`);
+  console.log(`Generated the ${cluster.hubName} hub cards and ${guides.length} reviewed child guides only; country hub, sidebar and other Malaysian routes were not regenerated.`);
 } else {
   for (const cluster of malaysiaDepthClusters.filter((item) => item.newHub)) {
     const file = routeFile('/malaysia/' + cluster.hubSlug + '/');

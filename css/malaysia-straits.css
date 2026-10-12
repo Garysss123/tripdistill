@@ -205,6 +205,8 @@ body[data-cluster="malaysia-straits"] {
 .melaka-hero-facts { display: grid; gap: .55rem; margin-top: 1.2rem; }
 .melaka-hero-facts span { width: fit-content; padding: .42rem .65rem; color: #fff4de; border: 1px solid rgba(255,255,255,.24); font-size: .67rem; font-weight: 850; }
 .melaka-banks { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; }
+.melaka-banks.melaka-zone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.melaka-banks.melaka-zone-grid::before { display: none; }
 .melaka-banks::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(33.333% - .75rem); width: 1.5rem; background: linear-gradient(#78bcc0, var(--mk-river)); border-radius: 999px; box-shadow: calc(33.333% + 1.1rem) 0 0 rgba(39,121,130,.18); }
 .melaka-bank { position: relative; z-index: 1; min-height: 22rem; padding: 1.5rem; border-top: .35rem solid var(--mk-red); background: #fff8ea; box-shadow: 0 14px 32px rgba(69,64,49,.09); }
 .melaka-bank:nth-child(2) { margin-top: 2.3rem; border-top-color: var(--mk-river); }
@@ -335,6 +337,7 @@ body[data-cluster="malaysia-straits"] {
   .penang-itinerary { grid-template-columns: 1fr; }
   .penang-day { border-right: 0; border-bottom: 1px solid var(--strait-rule); }
   .melaka-banks { grid-template-columns: 1fr; gap: 1rem; }
+  .melaka-banks.melaka-zone-grid { grid-template-columns: 1fr; }
   .melaka-banks::before { display: none; }
   .melaka-bank:nth-child(2) { margin-top: 0; }
   .melaka-arrival { grid-template-columns: 1fr; }
