@@ -106,6 +106,16 @@ assert.equal(checkedInNewfoundlandDiagram.license, null, 'the Newfoundland SVG m
 assert.equal(checkedInNewfoundlandDiagram.rightsStatus, 'Project original; no separate reuse license declared');
 assert.equal(checkedInNewfoundlandDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
 assert.equal(checkedInNewfoundlandDiagram.commercialReuseEligibility, 'unknown');
+const checkedInOttawaDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+assert.ok(checkedInOttawaDiagram, 'checked-in inventory must include the new Ottawa–Gatineau planning diagram');
+assert.equal(checkedInOttawaDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInOttawaDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+assert.equal(checkedInOttawaDiagram.creator, 'TripDistill');
+assert.equal(checkedInOttawaDiagram.license, null, 'the Ottawa–Gatineau SVG must not claim a public photo license');
+assert.equal(checkedInOttawaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInOttawaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+assert.equal(checkedInOttawaDiagram.commercialReuseEligibility, 'unknown');
+assert.equal(checkedInOttawaDiagram.localSha1, 'b1d86e38d9bab8eccd69b1d96b8dfcedd60e987d');
 
 function attrs(node) { return Object.fromEntries((node.attrs || []).map((item) => [item.name, item.value])); }
 function findAll(node, predicate, output = []) {
@@ -313,7 +323,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 515, 'the new project-original SVG is metadata-only; unresolved external source-page claims remain unverified');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 516, 'Ottawa–Gatineau joins the project-original diagrams without an independent external source-page check; unresolved photo source-page claims remain unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -576,13 +586,28 @@ try {
   assert.equal(newfoundlandDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(newfoundlandDiagram.verificationStatus, 'site_credit_or_metadata_only', 'a self-hosted artwork URL is not an independent source-page check');
   assert.equal(newfoundlandDiagram.inventoryStatus, 'used');
+  const ottawaDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+  assert.ok(ottawaDiagram, 'inventory must include the original Ottawa–Gatineau river and park schematic');
+  assert.equal(ottawaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(ottawaDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+  assert.equal(ottawaDiagram.creator, 'TripDistill');
+  assert.equal(ottawaDiagram.license, null, 'the Ottawa–Gatineau SVG must not claim a public photo license');
+  assert.equal(ottawaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(ottawaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(ottawaDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(ottawaDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the self-hosted artwork is not an independent source-page check');
+  assert.equal(ottawaDiagram.inventoryStatus, 'used');
+  assert.equal(ottawaDiagram.useCount, 1);
+  assert.deepEqual(ottawaDiagram.routes, ['/canada/ottawa-gatineau/gatineau-park/']);
+  assert.ok(ottawaDiagram.altTexts.some((alt) => /not-to-scale/i.test(alt)));
+  assert.equal(ottawaDiagram.localSha1, 'b1d86e38d9bab8eccd69b1d96b8dfcedd60e987d');
   const retiredJohnston = photoRecords.find((item) => item.assetPath === '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp');
   assert.ok(retiredJohnston, 'inventory must retain the mismatched Johnston source photo');
   assert.equal(retiredJohnston.inventoryStatus, 'unused');
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 11, 'inventory must count project-original artwork including Newfoundland, Jasper, Banff, Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 12, 'inventory must count project-original artwork including Ottawa–Gatineau, Newfoundland, Jasper, Banff, Melaka, Somerset, Peak District and both Malaysia child-page diagrams');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 509, 'Jasper source-page checks reduce this count by three; page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -624,7 +649,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 2, 'the preserved Melaka and Johnston rights-review files must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 802, 'the Newfoundland, Jasper, Banff and original Malaysia diagrams must be included while the preserved Melaka and Johnston rights-review photos remain excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 803, 'the Ottawa–Gatineau, Newfoundland, Jasper, Banff and original Malaysia diagrams must be included while the preserved Melaka and Johnston rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

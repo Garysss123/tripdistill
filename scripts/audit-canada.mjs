@@ -175,8 +175,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/newfoundland-labrador/bonavista-trinity/',
     '/canada/newfoundland-labrador/gros-morne/'
   ]);
+  const ottawaGatineauUpdatedRoutes = new Set([
+    '/canada/ottawa-gatineau/',
+    '/canada/ottawa-gatineau/parliament-rideau/',
+    '/canada/ottawa-gatineau/national-museums/',
+    '/canada/ottawa-gatineau/gatineau-park/'
+  ]);
   for (const route of routes) {
-    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

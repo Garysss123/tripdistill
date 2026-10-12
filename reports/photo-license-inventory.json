@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T14:27:56.384Z",
+  "generatedAt": "2026-10-12T15:43:25.238Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 800,
+    "assetFileCount": 801,
     "completeSourceCreatorLicenseRecords": 763,
-    "completeProjectOriginalRightsRecords": 11,
+    "completeProjectOriginalRightsRecords": 12,
     "licenseClaimsNotIndependentlyVerified": 509,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 2,
-    "expectedBuildImageCount": 802,
-    "deduplicatedImageCount": 800,
+    "expectedBuildImageCount": 803,
+    "deduplicatedImageCount": 801,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3516,
-    "assetsUsedByScannedEnglishPages": 770,
+    "imageReferencesScanned": 3517,
+    "assetsUsedByScannedEnglishPages": 771,
     "unusedAssetCount": 30,
-    "assetsWithStructuredSourceRecords": 587,
+    "assetsWithStructuredSourceRecords": 588,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 176,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 256,
-    "metadataOrCreditOnly": 520,
-    "usedAssetsWithoutIndependentSourcePageCheck": 515,
+    "metadataOrCreditOnly": 521,
+    "usedAssetsWithoutIndependentSourcePageCheck": 516,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 798 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 802 build image files. 2 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 799 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 803 build image files. 2 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -5200,7 +5200,7 @@
             "/canada/ottawa-gatineau/parliament-rideau/"
           ],
           "altTexts": [
-            "Forested hills and lookout in Gatineau Park"
+            "Autumn hills and valley seen from Champlain Lookout, Gatineau Park"
           ],
           "rawVisibleCredits": [
             "Fall Sunset, Champlain Lookout, Gatineau Park (10337741823).jpg — tsaiproject from Canada, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -27333,6 +27333,49 @@
           ],
           "altTexts": [
             "Conceptual, not-to-scale regional diagram: Gros Morne on Newfoundland’s west coast, Bonavista and Trinity to the east, St. John’s on Avalon, and Labrador as a separate mainland plan"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "ffeee0c1f94a1eaf3c75db8265fe3b2ead17c0a26e3b45c2095ff75ff854ec8f",
+      "assetPaths": [
+        "/assets/images/tripdistill-canada-ottawa-gatineau-access.svg"
+      ],
+      "byteLength": 11166,
+      "sourceRecords": [
+        {
+          "sha256": "ffeee0c1f94a1eaf3c75db8265fe3b2ead17c0a26e3b45c2095ff75ff854ec8f",
+          "assetPath": "/assets/images/tripdistill-canada-ottawa-gatineau-access.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-ottawa-gatineau-access.svg",
+          "sourceTitle": "Ottawa–Gatineau river and park access schematic (original SVG)",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill",
+          "license": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "b1d86e38d9bab8eccd69b1d96b8dfcedd60e987d",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/canada/ottawa-gatineau/gatineau-park/"
+          ],
+          "altTexts": [
+            "Not-to-scale schematic separating Ottawa’s civic core, the Ottawa River crossing and Gatineau Park sectors; it does not show a specific bridge, transit route or travel time."
           ],
           "rawVisibleCredits": []
         }

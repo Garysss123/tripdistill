@@ -256,7 +256,7 @@ export const canadaImageManifest = {
   },
   "ottawa-gatineau/gatineau-park": {
     "src": "/assets/images/canada-ottawa-gatineau-gatineau-park.webp",
-    "alt": "Forested hills and lookout in Gatineau Park",
+    "alt": "Autumn hills and valley seen from Champlain Lookout, Gatineau Park",
     "source": "https://commons.wikimedia.org/wiki/File:Fall_Sunset,_Champlain_Lookout,_Gatineau_Park_(10337741823).jpg",
     "label": "Fall Sunset, Champlain Lookout, Gatineau Park (10337741823).jpg",
     "creator": "tsaiproject from Canada",
