@@ -1037,6 +1037,9 @@ const visuallyReviewedAssetPaths = new Set([
 const visualReviewDateByAsset = new Map([
   ['/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp', '2026-10-12'],
   ['/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp', '2026-10-12'],
+  ['/assets/images/switzerland-lugano-southern-ticino-lugano-lakefront.webp', '2026-10-12'],
+  ['/assets/images/switzerland-locarno-ascona-valleys-locarno-ascona.webp', '2026-10-12'],
+  ['/assets/images/switzerland-schaffhausen-rhine-falls-rhine-falls.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
   ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
@@ -1232,6 +1235,18 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:France-00
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg', {
   detail: 'Provence inland photo review: the exact Commons page lists Einaz80 and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show Gordes hillside village and stone buildings in the Luberon, consistent with the route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg', {
+  detail: 'Switzerland CH14 Lugano photo review: the exact Commons page identifies Chris j wood, the SNV Ceresio at Lugano landing stage, and declares CC BY-SA 4.0. The local WebP pixels were inspected and match the ferry at the Lugano lakefront. Visible source credit, linked license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg', {
+  detail: 'Switzerland CH14 Locarno photo review: the exact Commons page describes the Lake Maggiore view from Brione sopra Minusio, identifies Glenn Steiger, and lists GFDL and CC BY 3.0. The local WebP pixels were inspected and match the Locarno/Ascona and lake view. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg', {
+  detail: 'Switzerland CH14 Rhine Falls photo review: the exact Commons page identifies “More pics than views…”, records 4 July 2014 and declares CC BY 3.0 with a bot license review. The local WebP pixels were inspected and match the Rhine Falls viewing platform and waterfall. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
   checkedOn: '2026-10-12'
 });
 const entries = [];

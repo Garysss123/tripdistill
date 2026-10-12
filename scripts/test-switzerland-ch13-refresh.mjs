@@ -14,6 +14,9 @@ const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const codes = ['en', 'zh-Hant', 'ja', 'ko', 'th'];
 const routes = ['/switzerland/graubunden-corridors/', '/switzerland/graubunden-corridors/chur-rhine-gorge/', '/switzerland/graubunden-corridors/davos-parsenn/', '/switzerland/graubunden-corridors/arosa-line/'];
 const target = new Set(routes);
+const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
+const ch14Set = new Set(ch14Routes);
+const ch14NewDateRoutes = ch14Routes.slice(1);
 const cluster = switzerlandClusters.find((item) => item.slug === 'graubunden-corridors');
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((item) => [`/switzerland/${item.slug}/`, ...item.guides.map((guide) => guide.url)])];
 const batchSuffix = '-ch13-graubunden-pages-20261012.json';
@@ -52,7 +55,7 @@ assert.equal(cluster.guides.length, 3);
 assert.equal(switzerlandCh13ClusterRefresh.isoDate, '2026-10-12');
 assert.equal(Object.keys(switzerlandCh13GuideRefresh).length, 3);
 assert.equal(allRoutes.length, 65);
-for (const route of allRoutes.filter((item) => !target.has(item))) {
+for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has(item))) {
   const file = `${route.slice(1)}index.html`;
   assert.deepEqual(fs.readFileSync(path.join(root, file)), execFileSync('git', ['show', `${base}:${file}`], { cwd: root }), `${route} differs from the exact base`);
 }
@@ -62,9 +65,9 @@ const after = sitemap(read('sitemap.xml'));
 assert.equal(before.size, 4560);
 assert.equal(after.size, before.size);
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no sitemap URL changed');
-const editions = new Set(prefixes.flatMap((prefix) => routes.map((route) => `${prefix}${route}`)));
+const editions = new Set(prefixes.flatMap((prefix) => [...routes, ...ch14NewDateRoutes].map((route) => `${prefix}${route}`)));
 const dateChanges = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.equal(dateChanges.length, 20);
+assert.equal(dateChanges.length, 35, 'CH13 pages and the three downstream CH14 hubs receive dates; the country date already matched the CH13 base');
 for (const [route, date] of dateChanges) {
   assert.ok(editions.has(route), `unexpected lastmod change: ${route}`);
   assert.equal(date, '2026-10-12');
@@ -74,7 +77,7 @@ const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-
 const search = JSON.parse(read('data/search-index.json'));
 const targetSearch = search.filter((item) => target.has(item.url));
 assert.equal(targetSearch.length, 4);
-for (const record of search.filter((item) => !target.has(item.url))) {
+for (const record of search.filter((item) => !target.has(item.url) && !ch14Set.has(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search changed: ${record.url}`);
 }
 const perRouteFacts = {
@@ -156,16 +159,16 @@ for (const [index, prefix] of prefixes.entries()) {
   const earlierTranslations = previousTranslations(code);
   const localizedSearchFile = `${prefix.slice(1)}/data/search-index.json`;
   const localizedSearch = JSON.parse(read(localizedSearchFile));
-  const nonTargetBaseSearch = baseSearch.filter((item) => !target.has(item.url));
+  const nonTargetBaseSearch = baseSearch.filter((item) => !target.has(item.url) && !ch14Set.has(item.url));
   const baseLocalizedSearch = localizeSearchIndex(nonTargetBaseSearch, earlierTranslations, code);
-  for (const record of localizedSearch.filter((item) => !target.has(item.url.slice(prefix.length))) ) {
+  for (const record of localizedSearch.filter((item) => !target.has(item.url.slice(prefix.length)) && !ch14Set.has(item.url.slice(prefix.length))) ) {
     assert.deepEqual(record, baseLocalizedSearch.find((item) => item.url === record.url), `${code} non-target search ${record.url} changed`);
   }
-  for (const route of allRoutes.filter((item) => !target.has(item))) {
+  for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has(item))) {
     const baseHtml = execFileSync('git', ['show', `${base}:${route.slice(1)}index.html`], { cwd: root, encoding: 'utf8' });
     const previousOutput = localizeHtml(baseHtml, earlierTranslations, code, route);
     assert.equal(read(path.relative(root, localizedPath(prefix, route))), previousOutput, `${prefix}${route} changed outside this batch`);
   }
 }
 
-console.log(`CH13 regression passed: four existing Graubünden pages, ${totalWords} visible English main-body words, exactly 20 dated edition URLs, 4,560 sitemap URLs, no URL changes, five-language metadata and search, all non-target pages and search records preserved, and supplemental SVG/retained-photo provenance checks.`);
+console.log(`CH13 regression passed: four existing Graubünden pages, ${totalWords} visible English main-body words, 35 cumulative dated edition URLs including downstream CH14 hub dates, 4,560 sitemap URLs, no URL changes, five-language metadata and search, non-target pages/search preserved outside the declared CH14 set, and supplemental SVG/retained-photo provenance checks.`);

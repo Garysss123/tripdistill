@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { switzerlandClusters, switzerlandCountrySources, switzerlandGuides } from '../data/switzerland-guides.mjs';
+import { switzerlandCh14CountryRefresh } from '../data/switzerland-ch14-refresh.mjs';
+import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '12 September 2026';
@@ -171,13 +173,14 @@ function hubSchema(cluster) {
   const route = `/switzerland/${cluster.slug}/`;
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: pageModifiedDate(cluster), mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(route)}#article`, headline: `${cluster.name} Travel Guide`, description: cluster.description || cluster.hubIntro, inLanguage: 'en', datePublished: isoDate, dateModified: pageModifiedDate(cluster), mainEntityOfPage: absolute(route), image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       breadcrumb([['Home', absolute('/')], ['Switzerland', absolute('/switzerland/')], [cluster.name, absolute(route)]]), faqSchema(hubFaq(cluster))
     ]
   };
 }
 
-function hubPage(cluster, clusterIndex) {
+function hubPage(baseCluster, clusterIndex) {
+  const cluster = baseCluster.hubOnly ? { ...baseCluster, ...baseCluster.hubOnly } : baseCluster;
   const route = `/switzerland/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
   const faq = hubFaq(cluster);
@@ -185,11 +188,12 @@ function hubPage(cluster, clusterIndex) {
   const imageReviewTerm = cluster.guides.some((guide) => guide.image.assetType === 'original-planning-diagram') ? 'image rights notes' : 'image licensing';
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: `${cluster.name} Travel Guide — 3 Focused Routes | TripDistill`, description: metaDescription(`${cluster.hubIntro} ${cluster.transfer}`), route, image: hero })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
+<head>${sharedHead({ title: `${cluster.name} Travel Guide — 3 Focused Routes | TripDistill`, description: cluster.description || metaDescription(`${cluster.hubIntro} ${cluster.transfer}`), route, image: hero })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script></head>
 <body data-page="ch-${escapeHtml(cluster.slug)}" data-parent-page="switzerland" data-country="switzerland" data-region="${escapeHtml(cluster.slug)}">
 ${shellStart(`<main id="main-content" class="page-content ch-hub" data-ch-family="${escapeHtml(cluster.family)}" data-ch-hub-variant="${(clusterIndex % 6) + 1}">`)}
   <section class="ch-hub-hero"><div class="ch-hub-copy"><span class="ch-kicker">Swiss regional timetable · ${String(clusterIndex + 1).padStart(2, '0')}</span><h1>${escapeHtml(cluster.name)}</h1><p class="ch-tagline">${escapeHtml(cluster.tagline)}</p><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#field-guides">Choose a field guide</a><a class="button secondary" href="#operating-model">Read the operating model</a></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${imageFigureCaption(hero)}</figcaption>${imageFigureNote(hero)}</figure><div class="ch-coordinate"><small>${escapeHtml(cluster.label)}</small><strong>${escapeHtml(cluster.family)}</strong><span>reviewed ${localReviewDate}</span></div></section>
   <section class="ch-hub-ledger"><article><small>Stay</small><p>${escapeHtml(cluster.stay)}</p></article><article><small>Transfer contract</small><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Season gate</small><p>${escapeHtml(cluster.season)}</p></article></section>
+  ${cluster.itineraryDays ? `<section class="ch-country-section ch-hub-itinerary"><div class="ch-band-heading"><span>Route sequence</span><h2>${escapeHtml(cluster.itineraryTitle)}</h2><p>${escapeHtml(cluster.itineraryIntro)}</p></div><ol class="ch-route-steps">${cluster.itineraryDays.map(([title, copy], index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></li>`).join('')}</ol></section><section class="ch-country-section ch-hub-alternatives"><div class="ch-band-heading"><span>Stay-length alternatives</span><h2>${escapeHtml(cluster.alternativesTitle)}</h2></div><div class="ch-trip-grid">${cluster.alternatives.map(([title, copy]) => `<article><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>` : ''}
   ${ad}
   <section class="ch-guide-board" id="field-guides"><header><span>Three independent field guides</span><h2>Do not make every rail line, lake and summit compete for the same day.</h2><p>Each guide below has its own access contract, choice set, four-stage route, fallback and current-source check.</p></header><div>${cluster.guides.map((guide) => `<a class="ch-hub-card" href="${guide.url}" data-layout="${escapeHtml(guide.layout)}"><img src="${guide.image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(guide.image.alt)}"><div><small>${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.summary)}</p>${imageCardNote(guide.image)}<strong>Open the field guide →</strong></div><span>0${guide.chapter}</span></a>`).join('')}</div></section>
   <section class="ch-operating" id="operating-model"><header><span>Regional operating model</span><h2>Read the timetable and terrain together.</h2></header><div><article><small>Base</small><h3>Make the first departure easy.</h3><p>${escapeHtml(cluster.stay)}</p></article><article><small>Network</small><h3>Name the actual rail, tram, bus, boat or lift.</h3><p>${escapeHtml(cluster.transfer)}</p></article><article><small>Conditions</small><h3>The mountain forecast is not the city forecast.</h3><p>${escapeHtml(cluster.season)}</p></article><article><small>Fallback</small><h3>Keep a lower-risk layer ready.</h3><p>${escapeHtml(cluster.fallback)}</p></article></div></section>
@@ -208,7 +212,7 @@ const countryFaq = [
 
 function countrySchema() {
   return { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', '@id': 'https://tripdistill.com/switzerland/#article', headline: 'Switzerland Travel Guide', description: 'Sixteen complete Swiss travel hubs and forty-eight focused field guides organized around rail, lakes, cities and mountain access.', inLanguage: 'en', datePublished: isoDate, dateModified: '2026-10-12', mainEntityOfPage: 'https://tripdistill.com/switzerland/', image: absolute(switzerlandClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Switzerland' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+    { '@type': 'Article', '@id': 'https://tripdistill.com/switzerland/#article', headline: 'Switzerland Travel Guide', description: switzerlandCh14CountryRefresh.summary, inLanguage: 'en', datePublished: isoDate, dateModified: switzerlandCh14CountryRefresh.isoDate, mainEntityOfPage: 'https://tripdistill.com/switzerland/', image: absolute(switzerlandClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Switzerland' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
     breadcrumb([['Home', absolute('/')], ['Switzerland', absolute('/switzerland/')]]), faqSchema(countryFaq)
   ] };
 }
@@ -231,7 +235,7 @@ const deferredCountryCardAlt = {
 function countryCards(bands) {
   return switzerlandClusters.filter((cluster) => bands.includes(cluster.band)).map((cluster) => {
     const image = cluster.guides[0].image;
-    const copy = deferredCountryCardCopy[cluster.slug] || cluster.hubIntro;
+    const copy = switzerlandCh14CountryRefresh.cardCopy[cluster.slug] || deferredCountryCardCopy[cluster.slug] || cluster.hubIntro;
     const alt = deferredCountryCardAlt[cluster.slug] || image.alt;
     return `<a class="ch-country-card" href="/switzerland/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(alt)}"><div><small>${escapeHtml(cluster.region)} · 3 focused guides</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(copy, 155))}</p><strong>Open the regional timetable →</strong></div><span>${String(switzerlandClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
   }).join('');
@@ -239,26 +243,30 @@ function countryCards(bands) {
 
 function countryPage() {
   const hero = switzerlandClusters[0].guides[0].image;
+  const routeDiagram = switzerlandImageManifest['switzerland-country/country-route-choice'];
+  const routePlans = switzerlandCh14CountryRefresh.plans;
+  const countryReviewDate = switzerlandCh14CountryRefresh.reviewDate;
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
-<head>${sharedHead({ title: 'Switzerland Travel Guide — 16 Complete Regional Hubs | TripDistill', description: metaDescription('Plan Switzerland through sixteen complete hubs and forty-eight focused guides for rail cities, lake corridors, alpine regions and Ticino valleys.'), route: '/switzerland/', image: hero, type: 'website' })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script></head>
+<head>${sharedHead({ title: 'Switzerland Travel Guide — 16 Complete Regional Hubs | TripDistill', description: metaDescription(switzerlandCh14CountryRefresh.summary), route: '/switzerland/', image: hero, type: 'website' })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script></head>
 <body data-page="switzerland" data-country="switzerland">
 ${shellStart('<main id="main-content" class="page-content ch-country">')}
-  <section class="ch-country-hero"><div class="ch-country-copy"><span class="ch-kicker">Precision travel atlas · reviewed ${reviewDate}</span><h1>Switzerland <span>read the timetable and topography as one map.</span></h1><p>The country is compact on a rail map, but a useful day changes with lake shores, valley floors, funiculars, mountain railways, lifts and cloud level. Sixteen complete hubs make those operating systems visible before the postcard decides the route.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 16 hubs</a><a class="button secondary" href="#network">Read the network contract</a></div><div class="ch-country-facts"><div><strong>16</strong><span>regional hubs</span></div><div><strong>48</strong><span>focused guides</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${imageFigureCaption(hero)}</figcaption>${imageFigureNote(hero)}</figure><div class="ch-timetable-mark" aria-hidden="true"><span>RAIL</span><i></i><span>LAKE</span><i></i><span>VALLEY</span><i></i><span>SUMMIT</span></div></section>
+  <section class="ch-country-hero"><div class="ch-country-copy"><span class="ch-kicker">Precision travel atlas · reviewed ${countryReviewDate}</span><h1>Switzerland <span>read the timetable and topography as one map.</span></h1><p>The country is compact on a rail map, but a useful day changes with lake shores, valley floors, funiculars, mountain railways, lifts and cloud level. Sixteen complete hubs make those operating systems visible before the postcard decides the route.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 16 hubs</a><a class="button secondary" href="#network">Read the network contract</a></div><div class="ch-country-facts"><div><strong>16</strong><span>regional hubs</span></div><div><strong>48</strong><span>focused guides</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" fetchpriority="high" alt="${escapeHtml(hero.alt)}"><figcaption>${imageFigureCaption(hero)}</figcaption>${imageFigureNote(hero)}</figure><div class="ch-timetable-mark" aria-hidden="true"><span>RAIL</span><i></i><span>LAKE</span><i></i><span>VALLEY</span><i></i><span>SUMMIT</span></div></section>
   <section class="ch-country-principles"><article><span>01</span><h2>Choose the operating region.</h2><p>Zurich, Lake Lucerne, Jungfrau, Zermatt, Engadin and Ticino may be close in kilometers but they use different local transport and weather gates.</p></article><article><span>02</span><h2>Protect the last descent.</h2><p>Mountain days are built backward from the last practical lift, funicular, boat or valley train—not forward from the first Instagram viewpoint.</p></article><article><span>03</span><h2>Keep one lower layer.</h2><p>Cloud can erase the expensive part of a mountain day while the city, lake or valley below remains useful. A good itinerary already knows that fallback.</p></article></section>
   ${ad}
   <div id="regions">${countryGroups.map(([bands, kicker, heading, copy]) => `<section class="ch-country-band"><div class="ch-band-heading"><span>${kicker}</span><h2>${heading}</h2><p>${copy}</p></div><div class="ch-country-grid">${countryCards(bands)}</div></section>`).join('')}</div>
   <section class="ch-country-section" id="network"><div class="ch-band-heading"><span>Network contract</span><h2>Switzerland is rail-first, not planning-free.</h2><p>Dense public transport removes many car problems but creates a different discipline: know the operator, exact station or quay, reservation rules where relevant, and the last useful connection.</p></div><div class="ch-network-grid"><article><small>Mainline rail</small><h3>Use SBB as the national spine.</h3><p>Intercity and regional rail make multi-base trips easy. Compare door-to-door times and hotel changes, not only the fastest platform-to-platform number.</p></article><article><small>Local networks</small><h3>Trams and buses finish the city route.</h3><p>Zurich, Basel, Bern, Geneva, Lausanne and regional networks reward saving the exact stop and line rather than assuming a station name identifies one entrance.</p></article><article><small>Mountain transport</small><h3>Funicular, cogwheel and lift are separate contracts.</h3><p>Operating seasons, maintenance, wind, snow and cloud can affect each segment differently. Confirm the system that actually reaches your chosen route.</p></article><article><small>Boats</small><h3>Scenic does not mean frequent.</h3><p>Lake services can be excellent itinerary links, but season and route pattern matter. Keep rail or bus as the fallback when water does not match the return.</p></article></div></section>
-  <section class="ch-country-section"><div class="ch-band-heading"><span>Trip-length board</span><h2>Fewer bases, more weather flexibility.</h2></div><div class="ch-trip-grid"><article><strong>5–7 days</strong><h3>One city + one mountain/lake region</h3><p>Example: Zurich + Lucerne, or Bern + Jungfrau. Keep one flexible day instead of racing across language regions.</p></article><article><strong>8–10 days</strong><h3>Two or three connected bases</h3><p>Use one mainline rail corridor, then add one alpine branch. Let weather decide the order of mountain and lowland days.</p></article><article><strong>12–14 days</strong><h3>Add a contrasting region</h3><p>Ticino, Engadin or western Lake Geneva becomes worthwhile when the transfer buys a genuinely different landscape and culture, not another hotel key.</p></article></div></section>
+  <section class="ch-country-section"><div class="ch-band-heading"><span>Trip-length board · count nights, not train changes</span><h2>Pick a base sequence before adding day trips.</h2><p>${escapeHtml(switzerlandCh14CountryRefresh.summary)}</p></div><div class="ch-trip-grid">${routePlans.map((plan) => `<article><strong>${escapeHtml(plan.nights)}</strong><h3>${escapeHtml(plan.title)}</h3><p>${escapeHtml(plan.copy)}</p></article>`).join('')}</div></section>
+  <section class="ch-country-section ch-country-route-choice"><div class="ch-band-heading"><span>Country-level route alternatives</span><h2>${escapeHtml(switzerlandCh14CountryRefresh.diagram.title)}</h2><p>Use one route shape as the spine, then choose its day trips from the matching hub. The connecting lines in this schematic compare planning choices only.</p></div><figure class="ch-diagram-figure"><img src="${routeDiagram.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(routeDiagram.alt)}"><figcaption><strong>${escapeHtml(routeDiagram.displayTitle)}</strong> · ${imageFigureCaption(routeDiagram)}</figcaption>${imageFigureNote(routeDiagram)}</figure><p class="ch-diagram-note">${escapeHtml(routeDiagram.diagramNote)}</p></section>
   <section class="ch-country-section"><div class="ch-band-heading"><span>Season board</span><h2>Read elevation before the calendar label.</h2></div><div class="ch-season-grid"><article><strong>Winter</strong><p>Lowland cities remain usable while mountain transport, snow conditions and daylight redefine high routes. Resort operations are not the same as summer hiking access.</p></article><article><strong>Spring</strong><p>Valleys can feel mild while high trails remain snowy or muddy. Shoulder-season lift maintenance makes exact operating dates important.</p></article><article><strong>Summer</strong><p>Long daylight helps lake and hiking plans, but thunderstorms, heat and crowding can still push the best mountain window earlier.</p></article><article><strong>Autumn</strong><p>Clear days can be excellent, but shortening daylight and seasonal closures reward conservative return times and current operator checks.</p></article></div></section>
   <section class="ch-country-section"><div class="ch-band-heading"><span>Planning answers</span><h2>Switzerland FAQ</h2></div><div class="faq-list">${countryFaq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${reviewDate}. Entry, fares, passes, timetables, lifts, trails and weather change; verify directly before travel.</p><ul>${sourceList(switzerlandCountrySources)}${switzerlandClusters.map((cluster) => {
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${countryReviewDate}. Entry, fares, passes, timetables, lifts, trails and weather change; verify directly before travel.</p><ul>${sourceList(switzerlandCountrySources)}${imageCredit(routeDiagram)}${switzerlandClusters.map((cluster) => {
     const preservedTitles = {
       'st-gallen-appenzell': 'Kathedrale St-Gallen.jpg',
       'st-moritz-engadin': 'Switzerland-01761 - Lake St. Moritz (22298240145).jpg'
     };
     return imageCredit(preservedTitles[cluster.slug] ? { ...cluster.guides[0].image, displayTitle: preservedTitles[cluster.slug] } : cluster.guides[0].image);
-  }).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  }).join('')}</ul><span class="review-note">Editorial review: ${countryReviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 
@@ -334,6 +342,37 @@ function updateSearch(selectedClusters = switzerlandClusters, includeCountry = t
   fs.writeFileSync(file, JSON.stringify(updated, null, 2) + '\n');
 }
 
+function updateSingleSearchRecord(record) {
+  const file = path.join(root, 'data', 'search-index.json');
+  const existing = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const index = existing.findIndex((item) => item.url === record.url);
+  if (index === -1) throw new Error(`Cannot update missing search-index route ${record.url}`);
+  existing[index] = record;
+  fs.writeFileSync(file, JSON.stringify(existing, null, 2) + '\n');
+}
+
+function updateCountrySearchRecord() {
+  updateSingleSearchRecord({
+    title: 'Switzerland Travel Guide',
+    url: '/switzerland/',
+    parent: 'Europe',
+    type: 'Country',
+    summary: switzerlandCh14CountryRefresh.summary,
+    keywords: ['Switzerland', 'Swiss travel', 'Europe', 'Swiss rail']
+  });
+}
+
+function updateHubSearchRecord(cluster) {
+  updateSingleSearchRecord({
+    title: cluster.name,
+    url: `/switzerland/${cluster.slug}/`,
+    parent: 'Switzerland',
+    type: 'Regional guide',
+    summary: cluster.hubOnly.description,
+    keywords: [cluster.name, cluster.region, cluster.band]
+  });
+}
+
 function updateHome() {
   const file = path.join(root, 'index.html');
   let html = fs.readFileSync(file, 'utf8');
@@ -375,12 +414,20 @@ function updateAbout() {
 }
 
 const selectedSlug = process.argv.find((value) => value.startsWith('--cluster='))?.slice('--cluster='.length);
+const selectedHubSlug = process.argv.find((value) => value.startsWith('--hub-only='))?.slice('--hub-only='.length);
+const countryOnly = process.argv.includes('--country-only');
+if ([selectedSlug, selectedHubSlug, countryOnly ? 'country' : null].filter(Boolean).length > 1) {
+  throw new Error('Use only one of --cluster, --hub-only or --country-only.');
+}
 if (selectedSlug && !switzerlandClusters.some((cluster) => cluster.slug === selectedSlug)) {
   throw new Error(`Unknown Switzerland cluster: ${selectedSlug}`);
 }
+if (selectedHubSlug && !switzerlandClusters.some((cluster) => cluster.slug === selectedHubSlug && cluster.hubOnly)) {
+  throw new Error(`Unknown CH14 hub-only refresh: ${selectedHubSlug}`);
+}
 const selectedClusters = selectedSlug
   ? switzerlandClusters.filter((cluster) => cluster.slug === selectedSlug)
-  : switzerlandClusters;
+  : selectedHubSlug || countryOnly ? [] : switzerlandClusters;
 const selectedGuides = selectedClusters.flatMap((cluster) => cluster.guides);
 
 for (const cluster of selectedClusters) {
@@ -396,7 +443,20 @@ for (const guide of selectedGuides) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, guidePage(guide, cluster, guideIndex));
 }
-if (selectedSlug) {
+if (selectedHubSlug) {
+  const cluster = switzerlandClusters.find((item) => item.slug === selectedHubSlug);
+  const file = routeFile(`/switzerland/${cluster.slug}/`);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, hubPage(cluster, switzerlandClusters.indexOf(cluster)));
+  updateHubSearchRecord(cluster);
+  console.log(`Generated only the existing Switzerland hub /switzerland/${cluster.slug}/; its three child guides and shared site surfaces were not rewritten.`);
+} else if (countryOnly) {
+  const countryFile = routeFile('/switzerland/');
+  fs.mkdirSync(path.dirname(countryFile), { recursive: true });
+  fs.writeFileSync(countryFile, countryPage());
+  updateCountrySearchRecord();
+  console.log('Generated only the existing Switzerland country page; hubs, children and shared site surfaces were not rewritten.');
+} else if (selectedSlug) {
   updateSearch(selectedClusters, false);
   console.log(`Generated Switzerland cluster ${selectedSlug}: one existing hub and ${selectedGuides.length} existing focused routes; shared site surfaces were not rewritten.`);
 } else {

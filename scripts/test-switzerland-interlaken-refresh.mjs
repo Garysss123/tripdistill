@@ -70,7 +70,8 @@ const graubuendenRoutes = [
   '/switzerland/graubunden-corridors/davos-parsenn/',
   '/switzerland/graubunden-corridors/arosa-line/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes].map((route) => `${locale.prefix}${route}`)));
+const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14HubRoutes].map((route) => `${locale.prefix}${route}`)));
 
 function descendants(node) { return [node, ...(node.childNodes || []).flatMap(descendants)]; }
 function getAttr(node, name) { return node?.attrs?.find((item) => item.name === name)?.value; }

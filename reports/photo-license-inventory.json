@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-12T08:21:52.631Z",
+  "generatedAt": "2026-10-12T17:48:43.778Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 800,
-    "completeSourceCreatorLicenseRecords": 761,
-    "completeProjectOriginalRightsRecords": 11,
-    "licenseClaimsNotIndependentlyVerified": 509,
+    "assetFileCount": 805,
+    "completeSourceCreatorLicenseRecords": 758,
+    "completeProjectOriginalRightsRecords": 16,
+    "licenseClaimsNotIndependentlyVerified": 506,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 1,
-    "expectedBuildImageCount": 803,
-    "deduplicatedImageCount": 800,
+    "expectedBuildImageCount": 808,
+    "deduplicatedImageCount": 805,
     "exactDuplicateFileCount": 0,
     "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3518,
-    "assetsUsedByScannedEnglishPages": 768,
-    "unusedAssetCount": 32,
-    "assetsWithStructuredSourceRecords": 587,
+    "imageReferencesScanned": 3520,
+    "assetsUsedByScannedEnglishPages": 770,
+    "unusedAssetCount": 35,
+    "assetsWithStructuredSourceRecords": 592,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 172,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 256,
-    "metadataOrCreditOnly": 520,
-    "usedAssetsWithoutIndependentSourcePageCheck": 513,
+    "sourcePageChecked": 259,
+    "metadataOrCreditOnly": 522,
+    "usedAssetsWithoutIndependentSourcePageCheck": 512,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 799 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 803 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 804 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 808 build image files. 1 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -22869,25 +22869,67 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wintertime_in_Emmental,_Switzerland.jpg",
           "sourceTitle": "File:Wintertime in Emmental, Switzerland.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Wintertime in Emmental, Switzerland.jpg",
+          "creditLabel": null,
           "creator": "Dirk Breer",
-          "license": "CC BY-SA 4.0",
-          "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
+          "license": null,
+          "sourceDeclaredLicenses": [
+            "CC BY-SA 4.0"
+          ],
+          "rightsStatus": "The Commons page declares CC BY-SA 4.0; retained as source metadata only. No independent rights or chain-of-title verification.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-12 after pixel review showed a sunset silhouette of two visitors beneath a bare tree, with no visible farmhouse or identifiable Emmental detail. The original WebP bytes and source metadata remain archived; this record does not independently verify the location, uploader authority or rights.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "cec21b3831e0d8421e32b36a142f973a64f55f47",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "11ae41a56da265d9be001e0d385ac37e43b57398dfac142867e5f1ff8d0df562",
+      "assetPaths": [
+        "/assets/images/switzerland-bern-emmental-gateway-choices.svg"
+      ],
+      "byteLength": 7474,
+      "sourceRecords": [
+        {
+          "sha256": "11ae41a56da265d9be001e0d385ac37e43b57398dfac142867e5f1ff8d0df562",
+          "assetPath": "/assets/images/switzerland-bern-emmental-gateway-choices.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/switzerland-bern-emmental-gateway-choices.svg",
+          "sourceTitle": "Bern and Emmental gateway-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale. All gateway and feeder information requires an exact-date operator check.",
+          "localSha1": "e0111ab8ddc5345216d6cc4cec956dde4a0c6a6a",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
           "useCount": 4,
           "routes": [
             "/switzerland/bern-emmental/",
@@ -22896,11 +22938,9 @@
             "/switzerland/bern-emmental/old-city-aare/"
           ],
           "altTexts": [
-            "Green Emmental landscape with traditional farmhouses"
+            "Original five-language Emmental planning diagram comparing Burgdorf, the Affoltern show-dairy transfer and a mapped countryside walk; conceptual and not to scale"
           ],
-          "rawVisibleCredits": [
-            "Wintertime in Emmental, Switzerland.jpg — Dirk Breer, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -22918,7 +22958,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bern_Altstadt_von_Rosengarten_20211007.jpg",
           "sourceTitle": "File:Bern Altstadt von Rosengarten 20211007.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Bern Altstadt von Rosengarten 20211007.jpg",
+          "creditLabel": "Bern Old City from the Rosengarten",
           "creator": "Daniel Kraft",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -22948,7 +22988,7 @@
             "View over Bern old town from the Rosengarten"
           ],
           "rawVisibleCredits": [
-            "Bern Altstadt von Rosengarten 20211007.jpg — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Bern Old City from the Rosengarten — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -22967,7 +23007,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_City_and_the_Aare_river_-_Bern,_Switzerland_-_panoramio.jpg",
           "sourceTitle": "File:Old City and the Aare river - Bern, Switzerland - panoramio.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Old City and the Aare river - Bern, Switzerland - panoramio.jpg",
+          "creditLabel": "Bern Old City and the Aare Bend",
           "creator": "Sergey Ashmarin",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -22998,8 +23038,52 @@
             "Bern old town inside the Aare river bend"
           ],
           "rawVisibleCredits": [
-            "Old City and the Aare river - Bern, Switzerland - panoramio.jpg — Sergey Ashmarin, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Bern Old City and the Aare Bend — Sergey Ashmarin, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "b42fb1ffa8c0af06feb70e13b9398f0f0c344fcd3b459ac5d30abebd5f1eb869",
+      "assetPaths": [
+        "/assets/images/switzerland-country-route-choice.svg"
+      ],
+      "byteLength": 9228,
+      "sourceRecords": [
+        {
+          "sha256": "b42fb1ffa8c0af06feb70e13b9398f0f0c344fcd3b459ac5d30abebd5f1eb869",
+          "assetPath": "/assets/images/switzerland-country-route-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/switzerland-country-route-choice.svg",
+          "sourceTitle": "Switzerland route-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Original five-language SVG planning schematic; not a geographic map and not to scale.",
+          "localSha1": "09aa3fca3edbb8fe02732a6483da595081cc7b2d",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/switzerland/"
+          ],
+          "altTexts": [
+            "Conceptual five-language comparison of a Zurich–Lucerne city and lake route, a Lugano–Locarno Ticino route, and a Zurich–Schaffhausen Rhine Falls route; not to scale"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -23205,7 +23289,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arosa,_Switzerland_-_Lake_(2).jpg",
           "sourceTitle": "File:Arosa, Switzerland - Lake (2).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Arosa, Switzerland - Lake (2).jpg",
+          "creditLabel": "Arosa resort and lake",
           "creator": "Aileen's Pics",
           "license": "CC BY-SA 2.0",
           "sourceDeclaredLicenses": null,
@@ -23235,7 +23319,7 @@
             "Arosa mountain resort and lake in Graubünden"
           ],
           "rawVisibleCredits": [
-            "Arosa, Switzerland - Lake (2).jpg — Aileen's Pics, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Arosa resort and lake — Aileen's Pics, CC BY-SA 2.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23254,7 +23338,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chur_(Altstadt).jpg",
           "sourceTitle": "File:Chur (Altstadt).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Chur (Altstadt).jpg",
+          "creditLabel": "Chur Old Town, railway and river edge",
           "creator": "Freaktalius",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -23282,10 +23366,10 @@
             "/switzerland/graubunden-corridors/davos-parsenn/"
           ],
           "altTexts": [
-            "Chur old town and Graubünden mountain landscape"
+            "Chur Old Town seen from above, with the urban railway and river edge"
           ],
           "rawVisibleCredits": [
-            "Chur (Altstadt).jpg — Freaktalius, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Chur Old Town, railway and river edge — Freaktalius, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23304,7 +23388,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Davos_as_seen_from_%C3%84lplihorn_(summer).jpg",
           "sourceTitle": "File:Davos as seen from Älplihorn (summer).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Davos as seen from Älplihorn (summer).jpg",
+          "creditLabel": "Davos valley and mountains from Älplihorn",
           "creator": "Capricorn4049",
           "license": "CC BY-SA 4.0",
           "sourceDeclaredLicenses": null,
@@ -23334,7 +23418,7 @@
             "Davos valley and surrounding mountains in Graubünden"
           ],
           "rawVisibleCredits": [
-            "Davos as seen from Älplihorn (summer).jpg — Capricorn4049, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Davos valley and mountains from Älplihorn — Capricorn4049, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -23726,7 +23810,7 @@
             "/switzerland/lausanne-lavaux/olympic-lake-cruise/"
           ],
           "altTexts": [
-            "Lausanne and Lake Geneva viewed from the hillside"
+            "Lake Geneva at Lausanne’s Ouchy waterfront, with a small boat near the shore"
           ],
           "rawVisibleCredits": [
             "Lake Geneva in Lausanne.jpg — OlhaSolodenko, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -23806,16 +23890,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Switzerland CH14 Locarno photo review: the exact Commons page describes the Lake Maggiore view from Brione sopra Minusio, identifies Glenn Steiger, and lists GFDL and CC BY 3.0. The local WebP pixels were inspected and match the Locarno/Ascona and lake view. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -24140,16 +24224,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Switzerland CH14 Lugano photo review: the exact Commons page identifies Chris j wood, the SNV Ceresio at Lugano landing stage, and declares CC BY-SA 4.0. The local WebP pixels were inspected and match the ferry at the Lugano lakefront. Visible source credit, linked license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -24279,7 +24363,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chateau_Chillon_Montreux,_Alps_Castle_Lake_L%C3%A9man.jpg",
           "sourceTitle": "File:Chateau Chillon Montreux, Alps Castle Lake Léman.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Chateau Chillon Montreux, Alps Castle Lake Léman.jpg",
+          "creditLabel": "Chillon Castle on Lake Geneva near Montreux",
           "creator": "Karim Kanoun Photography",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24310,8 +24394,55 @@
             "Chillon Castle on Lake Geneva near Montreux"
           ],
           "rawVisibleCredits": [
-            "Chateau Chillon Montreux, Alps Castle Lake Léman.jpg — Karim Kanoun Photography, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Chillon Castle on Lake Geneva near Montreux — Karim Kanoun Photography, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "607e5cbaf8daac1dc7686740d5163edc7d545d865960ebac5b463746e0a5bfaa",
+      "assetPaths": [
+        "/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg"
+      ],
+      "byteLength": 5711,
+      "sourceRecords": [
+        {
+          "sha256": "607e5cbaf8daac1dc7686740d5163edc7d545d865960ebac5b463746e0a5bfaa",
+          "assetPath": "/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg",
+          "sourceTitle": "Rochers-de-Naye five-language railway and return schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Planning schematic only; not a geographic map and not to scale.",
+          "localSha1": "fe4cdecbaa79a7c4f5e38e70383ada305f7efa5b",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/switzerland/montreux-riviera/",
+            "/switzerland/montreux-riviera/montreux-chillon/",
+            "/switzerland/montreux-riviera/rochers-de-naye/",
+            "/switzerland/montreux-riviera/vevey-lakeside/"
+          ],
+          "altTexts": [
+            "Original five-language schematic of the Montreux–Rochers-de-Naye railway, route order and closure fallback; conceptual and not to scale"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -24329,38 +24460,31 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rochers-de-naye-train-at-montreux-station.jpg",
           "sourceTitle": "File:Rochers-de-naye-train-at-montreux-station.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Rochers-de-naye-train-at-montreux-station.jpg",
+          "creditLabel": null,
           "creator": "Cheeni",
-          "license": "CC BY-SA 3.0",
-          "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
+          "license": null,
+          "sourceDeclaredLicenses": [
+            "CC BY-SA 3.0"
+          ],
+          "rightsStatus": "Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-12 after pixel review showed the train at Montreux station, not the claimed mountain view from Rochers-de-Naye. The train is destination-related, but it does not support the summit-view alt or the guide’s mountain-conditions decision. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "fbc67b9ca4cb03eac6d46c69dd745110ae35041f",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/switzerland/montreux-riviera/",
-            "/switzerland/montreux-riviera/montreux-chillon/",
-            "/switzerland/montreux-riviera/rochers-de-naye/",
-            "/switzerland/montreux-riviera/vevey-lakeside/"
-          ],
-          "altTexts": [
-            "Mountain view from Rochers-de-Naye above Lake Geneva"
-          ],
-          "rawVisibleCredits": [
-            "Rochers-de-naye-train-at-montreux-station.jpg — Cheeni, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -24378,7 +24502,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vevey,_Switzerland.jpg",
           "sourceTitle": "File:Vevey, Switzerland.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Vevey, Switzerland.jpg",
+          "creditLabel": "Vevey town and lakeside on Lake Geneva",
           "creator": "Marek Ślusarczyk ( Tupungato ) Photo gallery",
           "license": "CC BY 3.0",
           "sourceDeclaredLicenses": null,
@@ -24405,10 +24529,10 @@
             "/switzerland/montreux-riviera/vevey-lakeside/"
           ],
           "altTexts": [
-            "Vevey waterfront on Lake Geneva"
+            "Vevey town and lakeside on Lake Geneva"
           ],
           "rawVisibleCredits": [
-            "Vevey, Switzerland.jpg — Marek Ślusarczyk ( Tupungato ) Photo gallery, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Vevey town and lakeside on Lake Geneva — Marek Ślusarczyk ( Tupungato ) Photo gallery, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24436,16 +24560,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Switzerland CH14 Rhine Falls photo review: the exact Commons page identifies “More pics than views…”, records 4 July 2014 and declares CC BY 3.0 with a bot license review. The local WebP pixels were inspected and match the Rhine Falls viewing platform and waterfall. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.",
           "useCount": 6,
           "routes": [
             "/switzerland/",
@@ -24575,7 +24699,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Appenzell_Landsgemeindeplatz_20210528.jpg",
           "sourceTitle": "File:Appenzell Landsgemeindeplatz 20210528.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Appenzell Landsgemeindeplatz 20210528.jpg",
+          "creditLabel": "Ornamental houses at Appenzell’s Landsgemeindeplatz during street works",
           "creator": "Daniel Kraft",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24602,10 +24726,10 @@
             "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
           ],
           "altTexts": [
-            "Colorful Appenzell village with green hills"
+            "Ornamental painted houses on Appenzell’s Landsgemeindeplatz, with a construction crane and cars visible in the foreground"
           ],
           "rawVisibleCredits": [
-            "Appenzell Landsgemeindeplatz 20210528.jpg — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Ornamental houses at Appenzell’s Landsgemeindeplatz during street works — Daniel Kraft, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24624,38 +24748,31 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ebenalp_-_panoramio_(105).jpg",
           "sourceTitle": "File:Ebenalp - panoramio (105).jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Ebenalp - panoramio (105).jpg",
+          "creditLabel": null,
           "creator": "Patrick Nouhailler's…",
-          "license": "CC BY-SA 3.0",
-          "sourceDeclaredLicenses": null,
-          "rightsStatus": null,
+          "license": null,
+          "sourceDeclaredLicenses": [
+            "CC BY-SA 3.0"
+          ],
+          "rightsStatus": "The previous manifest recorded CC BY-SA 3.0 as source-declared metadata. The Commons page could not be independently opened in this environment; no license verification or rights clearance is claimed.",
           "rightsStatusUrl": null,
-          "inventoryStatus": "used",
-          "retirementNote": null,
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
-          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
-          "localSha1": null,
+          "inventoryStatus": "unused",
+          "retirementNote": "Removed from live displays on 2026-10-12 after the direct Commons page request was blocked by the execution network (HTTP 403). Local pixel review confirmed Seealpsee below the Alpstein cliffs, so the subject is relevant; however, the prior CC BY-SA 3.0 declaration could not be rechecked here. Original WebP bytes and the historical metadata remain archived without claiming independent licensing verification.",
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "localSha1": "d1f18c04bea0a04a6e141f99e11106b0ad2650e4",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
           "verificationStatus": "site_credit_or_metadata_only",
           "verificationDate": null,
           "verificationDetail": null,
-          "useCount": 4,
-          "routes": [
-            "/switzerland/st-gallen-appenzell/",
-            "/switzerland/st-gallen-appenzell/appenzell-village/",
-            "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
-            "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
-          ],
-          "altTexts": [
-            "Alpstein mountains near Ebenalp and Seealpsee"
-          ],
-          "rawVisibleCredits": [
-            "Ebenalp - panoramio (105).jpg — Patrick Nouhailler's…, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
-          ]
+          "useCount": 0,
+          "routes": [],
+          "altTexts": [],
+          "rawVisibleCredits": []
         }
       ]
     },
@@ -24701,7 +24818,8 @@
             "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
           ],
           "altTexts": [
-            "Abbey District and old town of St Gallen"
+            "Abbey District and old town of St Gallen",
+            "Baroque façade and towers of St Gallen Cathedral in the Abbey District"
           ],
           "rawVisibleCredits": [
             "Kathedrale St-Gallen.jpg — Pablodbds, CC0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -24723,7 +24841,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhb_Bernina-Express_%C3%BCberquert_obere_Berninabach-Br%C3%BCcke.jpg",
           "sourceTitle": "File:Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
+          "creditLabel": "Bernina Express crossing the upper Berninabach Bridge",
           "creator": "Kabelleger / David Gubler ( http://www.bahnbilder.ch )",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24753,7 +24871,7 @@
             "Rhaetian Railway train on the Bernina line in Switzerland"
           ],
           "rawVisibleCredits": [
-            "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg — Kabelleger / David Gubler ( http://www.bahnbilder.ch ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Bernina Express crossing the upper Berninabach Bridge — Kabelleger / David Gubler ( http://www.bahnbilder.ch ), CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -24772,7 +24890,7 @@
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muottas_Muragl3.jpg",
           "sourceTitle": "File:Muottas Muragl3.jpg",
           "sourcePhotoDate": null,
-          "creditLabel": "Muottas Muragl3.jpg",
+          "creditLabel": "Muottas Muragl funicular station and track",
           "creator": "Adrian Michael",
           "license": "CC BY-SA 3.0",
           "sourceDeclaredLicenses": null,
@@ -24799,10 +24917,10 @@
             "/switzerland/st-moritz-engadin/st-moritz-lakes/"
           ],
           "altTexts": [
-            "Upper Engadin panorama from Muottas Muragl"
+            "Muottas Muragl funicular station and track above the Upper Engadin"
           ],
           "rawVisibleCredits": [
-            "Muottas Muragl3.jpg — Adrian Michael, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
+            "Muottas Muragl funicular station and track — Adrian Michael, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
           ]
         }
       ]
@@ -27936,6 +28054,97 @@
           ],
           "altTexts": [
             "Original planning diagram showing Ipoh as the base, a separately confirmed rail or road leg to Batu Gajah, a pre-arranged road transfer to Kellie’s Castle, and the same return; not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "7085d52e43e1c6f9f94ec89eba080f1798165503a329717f2cd5bba6dca193e3",
+      "assetPaths": [
+        "/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg"
+      ],
+      "byteLength": 11043,
+      "sourceRecords": [
+        {
+          "sha256": "7085d52e43e1c6f9f94ec89eba080f1798165503a329717f2cd5bba6dca193e3",
+          "assetPath": "/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+          "sourceTitle": "Ebenalp and Seealpsee access-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Conceptual route-choice schematic only; not a geographic map and not to scale.",
+          "localSha1": "3065eeb3b048a025fece1bafb936d423b42048d5",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 4,
+          "routes": [
+            "/switzerland/st-gallen-appenzell/",
+            "/switzerland/st-gallen-appenzell/appenzell-village/",
+            "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
+            "/switzerland/st-gallen-appenzell/st-gallen-abbey/"
+          ],
+          "altTexts": [
+            "Original conceptual access diagram comparing the Ebenalp cableway, the Wasserauen–Seealpsee walking loop and a lower village or city fallback; route order only, not to scale"
+          ],
+          "rawVisibleCredits": []
+        }
+      ]
+    },
+    {
+      "sha256": "180d7100ad24dd012e2cb19f36606db8a70f53e80b480970ba63709b8a1f445b",
+      "assetPaths": [
+        "/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg"
+      ],
+      "byteLength": 11504,
+      "sourceRecords": [
+        {
+          "sha256": "180d7100ad24dd012e2cb19f36606db8a70f53e80b480970ba63709b8a1f445b",
+          "assetPath": "/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+          "sourceTitle": "Graubünden corridor-choice schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "unknown",
+          "editHistory": "Conceptual corridor-choice schematic only; not a geographic map and not to scale.",
+          "localSha1": "02f05c2b62f632289bef849a8cfb9d817c024b7f",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 1,
+          "routes": [
+            "/switzerland/graubunden-corridors/chur-rhine-gorge/"
+          ],
+          "altTexts": [
+            "Original schematic comparing the Rhine Gorge, Davos/Parsenn and Chur–Arosa corridors from Chur, with a low-elevation old-town fallback; conceptual route order, not to scale"
           ],
           "rawVisibleCredits": []
         }
