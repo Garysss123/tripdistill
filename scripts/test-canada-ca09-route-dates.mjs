@@ -66,6 +66,20 @@ const laterCa17Routes = [
   '/canada/whitehorse-kluane/kluane-haines-junction/',
   '/canada/whitehorse-kluane/miles-canyon-aurora/'
 ];
+
+const laterCa18SearchRoutes = [
+  '/canada/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/',
+];
+const laterCa18DatedRoutes = [
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/',
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -82,8 +96,8 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA09 must retain the exact 73 Canada routes from CA08.');
 assert.deepEqual(
-  search.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url) && !laterCa15Routes.includes(record.url) && !laterCa16Routes.includes(record.url) && !laterCa17Routes.includes(record.url)),
-  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url) && !laterCa15Routes.includes(record.url) && !laterCa16Routes.includes(record.url) && !laterCa17Routes.includes(record.url)),
+  search.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url) && !laterCa15Routes.includes(record.url) && !laterCa16Routes.includes(record.url) && !laterCa17Routes.includes(record.url) && !laterCa18SearchRoutes.includes(record.url)),
+  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa10Routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url) && !laterCa15Routes.includes(record.url) && !laterCa16Routes.includes(record.url) && !laterCa17Routes.includes(record.url) && !laterCa18SearchRoutes.includes(record.url)),
   'CA09 must leave every non-CA09 and later-CA10/CA11/CA12/CA13 search record unchanged.'
 );
 for (const route of routes) {
@@ -104,7 +118,7 @@ const readSitemapDates = (contents) => new Map([...contents.matchAll(/<loc>https
 const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA09 must retain the exact CA08 sitemap URL set.');
-const expectedSitemapDateChanges = locales.flatMap((locale) => [...routes, ...laterCa10Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Routes, ...laterCa17Routes].map((route) => locale + route)).sort();
+const expectedSitemapDateChanges = locales.flatMap((locale) => [...routes, ...laterCa10Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Routes, ...laterCa17Routes, ...laterCa18DatedRoutes].map((route) => locale + route)).sort();
 const actualSitemapDateChanges = [...sitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualSitemapDateChanges, expectedSitemapDateChanges, 'Only CA09 and later CA10/CA11/CA12/CA13 article routes across five editions may have changed sitemap dates.');
 

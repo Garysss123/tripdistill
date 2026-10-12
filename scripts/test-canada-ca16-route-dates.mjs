@@ -25,6 +25,20 @@ const laterCa17Routes = [
   '/canada/whitehorse-kluane/kluane-haines-junction/',
   '/canada/whitehorse-kluane/miles-canyon-aurora/'
 ];
+
+const laterCa18SearchRoutes = [
+  '/canada/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/',
+];
+const laterCa18DatedRoutes = [
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/',
+];
 const completedSlugs = [
   'vancouver-north-shore', 'victoria-south-island', 'pacific-rim-tofino',
   'banff-lake-louise', 'jasper-icefields', 'calgary-badlands', 'toronto',
@@ -144,7 +158,7 @@ const canadaSearch = search.filter((item) => item.url.startsWith('/canada/'));
 assert.equal(canadaSearch.length, 73, 'English Canada search must retain 73 routes.');
 assert.equal(new Set(canadaSearch.map((item) => item.url)).size, 73, 'English Canada search URLs must stay unique.');
 assert.deepEqual(canadaSearch.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The exact Canada search URL set must be unchanged.');
-assert.deepEqual(search.filter((item) => !targetSet.has(item.url) && !laterCa17Routes.includes(item.url)), previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa17Routes.includes(item.url)), 'Only the four selected English search records may change.');
+assert.deepEqual(search.filter((item) => !targetSet.has(item.url) && !laterCa17Routes.includes(item.url) && !laterCa18SearchRoutes.includes(item.url)), previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa17Routes.includes(item.url) && !laterCa18SearchRoutes.includes(item.url)), 'Only the four selected English search records may change.');
 for (const route of routes) {
   const current = canadaSearch.find((item) => item.url === route);
   const previous = previousSearch.find((item) => item.url === route);
@@ -156,7 +170,7 @@ const previousDates = new Map([...gitShow(`${base}:sitemap.xml`).matchAll(/<loc>
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const dates = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'Sitemap URL set must be unchanged.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa17Routes].map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa17Routes, ...laterCa18DatedRoutes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four selected routes × five editions may change sitemap dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: sitemap lastmod must be 2026-10-12.`);
@@ -194,7 +208,7 @@ for (const [directory, locale] of localizedDirectories) {
 
 const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 'canada', 'zh/canada', 'ja/canada', 'ko/canada', 'th/canada'], { cwd: root, encoding: 'utf8' });
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
-const expectedChangedPages = [...routes, ...laterCa17Routes].map((route) => `${route.slice(1)}index.html`).sort();
+const expectedChangedPages = [...routes, ...laterCa17Routes, ...laterCa18SearchRoutes].map((route) => `${route.slice(1)}index.html`).sort();
 assert.deepEqual(changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(), expectedChangedPages, 'Only four source HTML pages may change; localized pages are generated and separately checked for all five editions. Niagara and other groups must remain untouched.');
 
 console.log(`CA16 route/date regression passed: verified the prior 60/73 and initial 13-route remainder; with CA16, 64/73 are complete and the exact final 9 are checked; Winnipeg source/page body match the original Canada addition before this pass; no Canada URLs added or removed; only four target search records and 20 target sitemap dates changed; five-edition canonical, hreflang, Article dates and localized search checked. Body gains: ${deltas.join('; ')}.`);

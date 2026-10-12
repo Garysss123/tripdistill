@@ -71,7 +71,11 @@ if (familySet.size !== canadaClusters.length) throw new Error('Canada hub famili
 export const canadaCountrySources = [
   ['https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html', 'Immigration, Refugees and Citizenship Canada — visitor entry information'],
   ['https://weather.gc.ca/', 'Environment and Climate Change Canada — weather and alerts'],
-  ['https://parks.canada.ca/', 'Parks Canada — national parks, historic sites and marine conservation areas'],
+  ['https://parks.canada.ca/voyage-travel/reserve', 'Parks Canada — current reservations and seasonal booking windows'],
+  ['https://parks.canada.ca/voyage-travel', 'Parks Canada — destination planning and visitor services'],
   ['https://travel.gc.ca/', 'Government of Canada — travel and transportation information'],
-  ['https://www.viarail.ca/en', 'VIA Rail Canada — intercity passenger rail']
+  ['https://www.viarail.ca/en/plan/train-schedules', 'VIA Rail Canada — current train schedules'],
+  ['https://parks.canada.ca/pn-np/mb/wapusk/visit', 'Parks Canada — Churchill and Wapusk access; no road access to Churchill'],
+  ['https://drivenwt.ca/', 'Government of the Northwest Territories — current highways and winter roads'],
+  ['https://www.nwtparks.ca/visiting-parks/operating-dates', 'Northwest Territories Parks — seasonal operating dates']
 ];

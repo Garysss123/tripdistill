@@ -42,6 +42,20 @@ const laterCa17Routes = [
   '/canada/whitehorse-kluane/kluane-haines-junction/',
   '/canada/whitehorse-kluane/miles-canyon-aurora/'
 ];
+
+const laterCa18SearchRoutes = [
+  '/canada/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/',
+];
+const laterCa18DatedRoutes = [
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/',
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -60,7 +74,7 @@ const canada = search.filter((item) => item.url.startsWith('/canada/'));
 assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.');
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must remain exact.');
-assert.deepEqual(search.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Routes.includes(item.url) && !laterCa17Routes.includes(item.url)), previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Routes.includes(item.url) && !laterCa17Routes.includes(item.url)), 'Non-target and later CA14–CA16 search records must remain unchanged and in order.');
+assert.deepEqual(search.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Routes.includes(item.url) && !laterCa17Routes.includes(item.url) && !laterCa18SearchRoutes.includes(item.url)), previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Routes.includes(item.url) && !laterCa17Routes.includes(item.url) && !laterCa18SearchRoutes.includes(item.url)), 'Non-target and later CA14–CA16 search records must remain unchanged and in order.');
 for (const route of routes) {
   const record = canada.find((item) => item.url === route);
   assert.ok(record?.summary?.trim() && record.summary.length >= 120, `${route}: search summary must be substantive.`);
@@ -72,7 +86,7 @@ const readDates = (source) => new Map([...source.matchAll(/<loc>https:\/\/tripdi
 const dates = readDates(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 const previousDates = readDates(gitShow(`${base}:sitemap.xml`));
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must not change.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Routes, ...laterCa17Routes].map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Routes, ...laterCa17Routes, ...laterCa18DatedRoutes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Saguenay routes × five editions may have changed sitemap dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
@@ -131,7 +145,7 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  [...routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Routes, ...laterCa17Routes].map((route) => `${route.slice(1)}index.html`).sort(),
+  [...routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Routes, ...laterCa17Routes, ...laterCa18SearchRoutes].map((route) => `${route.slice(1)}index.html`).sort(),
   'Only the four target and later-CA14/CA15 route pages may change under canada/. The country card is outside this pass.'
 );
 

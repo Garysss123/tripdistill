@@ -829,21 +829,159 @@ export const canadaAtlanticNorthClusters = [
 
   defineCanadaCluster({
     slug: 'yellowknife-great-slave', name: 'Yellowknife & Great Slave Lake', region: 'Northwest Territories', band: 'north', family: 'aurora-lake-grid',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
     label: 'Subarctic lake capital · old town, winter road and dark sky', tagline: 'the sky is one layer of the trip, not the whole promise.',
-    hubIntro: 'Yellowknife combines a small lake-side capital, seasonal Great Slave Lake access and famous aurora potential. Build a daylight city/lake plan first, then add dark-sky time without promising a display.',
-    stay: 'Three nights gives a basic weather sample; four or five nights improves flexibility for aurora, winter activities and a road branch.',
-    transfer: 'City buses/taxis cover the urban core. Ingraham Trail and winter lake/ice-road experiences need road-condition knowledge, a vehicle/tour and seasonal legality.',
-    season: 'Deep winter brings extreme cold and ice-road possibilities; shoulder aurora seasons can be milder; summer has very long daylight and different lake access.',
-    fallback: 'Museums, Old Town and community-scale food/culture make the trip useful when cloud hides the sky or roads close.',
+    hubIntro: 'Yellowknife sits on Great Slave Lake, but a city-bus day, a lake-edge walk, an aurora night and the Ingraham Trail are four different operating plans. Choose an urban base first, reserve late nights as optional weather windows, and add the highway only with a current road and park check.',
+    stay: 'Three nights gives you two possible evening windows and a daylight city day; four or five nights adds recovery time and one separate Ingraham Trail day. Keep a final night near your departure point: a late aurora return or a road outing should not feed directly into a tight flight connection.',
+    transfer: 'The City bus network serves Yellowknife, with Route 1 as the main spine and reduced or no service on some days and holidays; confirm the live schedule for your date. It is not a shuttle to the Ingraham Trail. Use a confirmed vehicle, licensed operator or arranged transfer for highway stops, and check DriveNWT before leaving town.',
+    season: 'Long summer daylight supports lake and trail days but limits dark-sky hours. Autumn and late winter can offer longer nights, yet cloud, snow, wind chill and short daylight change comfort and access. Territorial campgrounds are seasonal; the 2026 North Slave list shows 15 May–15 September for Prelude and Reid Lake, while day-use facilities may not be maintained off-season.',
+    fallback: 'If cloud removes an aurora window, keep the following morning slow and move the city or museum plan into daylight. If highway status, wind chill or park operations make the Ingraham Trail a poor choice, stay in the urban grid; do not replace a cancelled road day with an unofficial ice crossing or a rushed airport return.',
     sources: [
-      ['https://www.yellowknife.ca/en/living-here/transit.aspx', 'City of Yellowknife — transit information'],
-      ['https://www.nwtparks.ca/', 'Northwest Territories Parks — territorial parks and visitor information'],
-      ['https://www.dot.gov.nt.ca/Highways', 'Government of Northwest Territories — highways and road conditions']
+      ['https://www.yellowknife.ca/transit/routes-and-schedules', 'City of Yellowknife — bus routes and schedules'],
+      ['https://drivenwt.ca/', 'Government of the Northwest Territories — DriveNWT road status'],
+      ['https://www.nwtparks.ca/plan-your-trip/road-trips/ingraham-trail', 'Northwest Territories Parks — Ingraham Trail route and kilometre markers'],
+      ['https://www.nwtparks.ca/visiting-parks/operating-dates', 'Northwest Territories Parks — operating dates and off-season limits'],
+      ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — aurora viewing conditions'],
+      ['https://weather.gc.ca/', 'Environment and Climate Change Canada — forecasts and alerts'],
+      ['https://spectacularnwt.com/communities/north-slave/yellowknife/', 'Northwest Territories Tourism — Yellowknife and Old Town context'],
+      ['https://www.pwnhc.ca/en/visit', 'Prince of Wales Northern Heritage Centre — visitor information']
+    ],
+    firstVisitPlan: {
+      heading: 'Build the trip around sleep, daylight and one road day',
+      intro: 'These are alternate trip shapes. The Ingraham Trail is a separate highway day, and aurora is a chance to observe rather than a booked performance. Keep the last night near the airport or your onward transport.',
+      days: [
+        ['Three nights · city first', 'Use arrival day for the urban grid and a short Old Town orientation. Keep one full daylight block for the Prince of Wales Northern Heritage Centre or a lake-edge walk. Leave two nights open for a tour or safe, preplanned viewing location; if one is cloudy, protect sleep before trying the other.'],
+        ['Four nights · add a weather margin', 'Spend the first full day in town, choose one late viewing night, then keep the next morning light. Use a second night only if the forecast, operator plan and your energy all support it. This gives cloud a chance to move through without converting every night into a cold, tiring drive.'],
+        ['Five nights · add one Ingraham Trail objective', 'Set aside a separate daylight road day for one park or lakeshore stop, with a declared turnaround and live road check. Do not put it after a midnight return or before a flight. If the road or park status fails the check, stay in Yellowknife and use the time for the museum, Old Town or a rest day.']
+      ]
+    },
+    faq: [
+      ['How many nights make aurora viewing less rushed?', 'Three nights gives more than one possible evening; four or five adds rest and weather flexibility. None guarantees a display. Choose a tour or legal viewing place before dark and do not chase a forecast by driving unfamiliar roads while tired.'],
+      ['Does the Yellowknife bus reach the Ingraham Trail parks?', 'The City publishes urban bus routes and schedules; the Ingraham Trail is a highway corridor north of town, not a scheduled city-bus extension. Arrange a vehicle or confirmed local operator and check current park access.'],
+      ['Can I visit Dettah as an unplanned side trip?', 'Dettah is a living Yellowknives Dene community. Do not treat a map pin or a drive-by as permission for a cultural visit. Look for an explicitly community-led experience, follow local guidance, and do not use a Great Slave Lake ice road unless authorities have opened that exact crossing.'],
+      ['What should I check before the Ingraham Trail?', 'Check the exact DriveNWT segment and weather, the park page and advisory, the season for facilities, fuel and the return plan. Kilometre markers on the NWT Parks route start at Highway 4 north of Yellowknife; they are not total driving distance from a hotel.'],
+      ['What is a real fallback when clouds hide the aurora?', 'Sleep and use daylight for the museum, public Old Town routes or an indoor meal. A strong activity forecast cannot clear cloud, create darkness or make an unsafe road stop worthwhile.']
     ],
     guides: [
-      g({ slug: 'old-town-great-slave', name: 'Old Town & Great Slave Lake', instrument: 'lake-edge settlement map', layout: 'lake-atlas', imageQuery: 'Yellowknife Old Town Great Slave Lake Canada', imageAlt: 'Yellowknife and Great Slave Lake in the Northwest Territories', summary: 'Walk Old Town and the lake edge as a daylight introduction, then use one museum or viewpoint to understand why the city sits where it does.', access: 'Yellowknife is compact enough for taxi/bus/walking in the core, but winter cold radically changes comfortable walking distance.', tradeoff: 'The city day provides history and lake context; it intentionally does not depend on aurora or a remote winter-road excursion.', fallback: 'Extreme cold or wind shortens outdoor blocks and expands museum, café and indoor interpretation time.', duration: 'One full day is enough for a first city/lake introduction; spread it across two shorter days in severe cold.', combine: 'Pair with an evening aurora attempt only after a warm rest period.', verify: 'Check city transit, NWT weather warnings, museum hours, lake/ice access legality and local safety notices.', stages: [['Old Town orientation', 'Start in the historic lake-edge district and identify the safe public routes before approaching ice or shore.'], ['One viewpoint', 'Use a maintained hill/lookout for the settlement and lake scale.'], ['Warm cultural stop', 'Choose a museum or local institution to add northern and Indigenous context.'], ['Rest before darkness', 'Return to lodging before any separate late-night sky plan.']], watch: [['Extreme cold', 'Walking time must be set by temperature/wind chill, not normal city distance.'], ['Ice assumptions', 'Never step onto lake ice because locals or vehicles appear present elsewhere; use current official/local guidance.'], ['Private/residential space', 'Old Town is lived-in; photograph respectfully from public areas.']] }),
-      g({ slug: 'aurora-dark-sky', name: 'Yellowknife Aurora Planning', instrument: 'probability-and-cold board', layout: 'two-clock-board', imageQuery: 'Yellowknife aurora borealis Northwest Territories Canada', imageAlt: 'Aurora above the subarctic landscape near Yellowknife', summary: 'Plan multiple optional night windows with warm transport and shelter, treating cloud and solar activity as probabilities rather than a guaranteed performance.', access: 'Choose a reputable tour, lodge product or safe self-drive site with explicit winter-road, communication and warm-shelter planning.', tradeoff: 'Staying several nights improves opportunity but consumes sleep and budget; a strong itinerary keeps daylight activities modest after late nights.', fallback: 'Cloud means sleep, not failure. Use daytime lake, museum and road activities so the trip retains value without a display.', duration: 'Three or more nights is more resilient than a one-night gamble; each viewing night needs recovery time.', combine: 'Pair with light daytime blocks. Do not schedule a long remote drive early after a 2 a.m. return.', verify: 'Check weather/cloud, road conditions, operator pickup/cancellation rules and aurora forecasts as non-guaranteed indicators.', stages: [['Protect several windows', 'Do not concentrate all expectation on the first clear-looking forecast.'], ['Dress for standing still', 'Use operator/local cold guidance and warmer layers than a daytime walk requires.'], ['Wait safely', 'Use a warm shelter/vehicle and legal stopping area while conditions develop.'], ['End before fatigue becomes unsafe', 'Return with enough sleep margin for the next day’s road or flight.']], watch: [['No guarantee', 'Forecasts cannot guarantee visible aurora at a specific time or intensity.'], ['Cold injury', 'Photography encourages long periods without movement; protect hands, feet and batteries.'], ['Unsafe roadside stopping', 'Dark-sky value does not justify stopping on an unapproved shoulder or ice surface.']] }),
-      g({ slug: 'ingraham-trail', name: 'Ingraham Trail & NWT Parks', instrument: 'subarctic road checkpoint', layout: 'roadbook', imageQuery: 'Ingraham Trail Northwest Territories lakes Canada', imageAlt: 'Subarctic lake and boreal landscape along the Ingraham Trail', summary: 'Use one Ingraham Trail park or lake objective with a declared turnaround, checking highway and winter-road status before leaving Yellowknife.', access: 'A suitable vehicle, tour or local transport plan is needed beyond the city. Road and winter-road conditions can change quickly.', tradeoff: 'The corridor gives boreal lakes and quieter landscape, but services are limited and winter decisions carry real risk.', fallback: 'Road closure, storm or extreme cold should keep the day in Yellowknife rather than forcing a remote objective.', duration: 'A half to full day for one park/lake sector; longer winter-road travel is a separate expedition product.', combine: 'Pair with Yellowknife nights, not a tight flight departure or exhausted post-aurora morning.', verify: 'Check NWT highway/winter-road status, park opening, weather, fuel, communications and current local travel advice.', stages: [['Road-status check', 'Confirm the exact highway/winter-road segment before leaving cell-rich urban areas.'], ['One park objective', 'Choose one territorial park, lake or trail based on season and legal access.'], ['Turn at the declared point', 'Do not extend the road because conditions look easy at the first stop.'], ['Return before dark/cold compounds risk', 'Reach Yellowknife with fuel, daylight and driver attention in reserve.']], watch: [['Winter-road legality', 'Ice roads open and close officially; appearance is not permission.'], ['Limited services', 'Fuel, toilets and mobile coverage are not continuous.'], ['Wildlife and cold', 'A breakdown has higher consequences in subarctic temperatures.']] })
+      g({
+        slug: 'old-town-great-slave', name: 'Old Town & Great Slave Lake', instrument: 'lake-edge settlement map', layout: 'lake-atlas', imageQuery: 'Yellowknife Old Town Great Slave Lake Canada', imageAlt: 'Boats and homes at the edge of Great Slave Lake in Yellowknife',
+        summary: 'Read Yellowknife through public Old Town streets, the Great Slave Lake shoreline and one indoor cultural anchor. The route is a lived-in neighbourhood walk; lake ice and private docks are not extensions of the sidewalk.',
+        access: 'Start from the downtown grid by confirmed City bus, taxi or a planned walk. Check the bus schedule for your date; the route between downtown and Old Town is not one continuous transit promise. Pilot’s Monument includes a climb, while the Prince of Wales Northern Heritage Centre is a separate indoor stop with published accessibility information.',
+        tradeoff: 'Old Town gives the lake-edge settlement scale, public art and the harbour context; the museum gives a deeper indoor history stop. Choose the exposed shoreline and viewpoint in fair conditions or let the museum carry the day in severe cold. Do not try to add a remote Ingraham Trail park to this urban walk.',
+        fallback: 'Strong wind, ice or a steep/uneven approach can make the viewpoint a poor fit. Stay on public streets, shorten the outdoor segment and use the accessible museum visit if it suits your needs. If the museum is closed on your date, use a checked indoor meal or split the walk into two short blocks rather than assuming another institution is open.',
+        duration: 'Allow a half day for a short public-street orientation or one unhurried day when combining Old Town with the heritage centre. These are planning ranges, not measured walk times; winter surfaces, mobility and the museum’s current hours change the sequence.',
+        combine: 'Pair Old Town with the Prince of Wales Northern Heritage Centre only if you have a confirmed transfer and enough daylight. Leave several hours to rest before a tour or aurora outing; do not make this a late-night-to-road-day chain.',
+        verify: 'Checked 12 October 2026: NWT Tourism describes Old Town as a living community; the city publishes bus routes and schedules; the Prince of Wales Northern Heritage Centre lists seasonal visiting hours and accessibility details. Check the exact date and local notices before setting out.',
+        routeChoices: { heading: 'Choose a public route by footing and energy', intro: 'The waterfront, viewpoint and museum are distinct stops. Pick a route that leaves a warm return and keeps residents’ homes and working docks private.', options: [
+          ['Short outdoor loop', 'Public Old Town streets and shoreline', 'Use the publicly accessible street grid for a daylight orientation and lake view. Stay off private docks and buildings; turn back if wind, ice or shoreline conditions make the edge uncomfortable.'],
+          ['Viewpoint emphasis', 'Pilot’s Monument and the harbour outlook', 'Choose this when you want the broad lake-and-settlement view and can manage a hill climb and exposed conditions. Confirm your transfer and return before starting.'],
+          ['Indoor history', 'Prince of Wales Northern Heritage Centre', 'Choose the museum as the anchor when cold, wind or mobility makes a longer outdoor walk unappealing. Check current open days and accessibility details; treat its hours as date-sensitive.']
+        ]},
+        sources: [
+          ['https://spectacularnwt.com/attractions/yellowknifes-old-town/', 'Northwest Territories Tourism — Yellowknife Old Town'],
+          ['https://spectacularnwt.com/communities/north-slave/yellowknife/', 'Northwest Territories Tourism — Yellowknife and community context'],
+          ['https://www.yellowknife.ca/transit/routes-and-schedules', 'City of Yellowknife — routes and schedules'],
+          ['https://www.pwnhc.ca/en/visit', 'Prince of Wales Northern Heritage Centre — hours and accessibility'],
+          ['https://ykdene.com/', 'Yellowknives Dene First Nation — community information']
+        ],
+        faq: [
+          ['Is Old Town an open-air attraction?', 'It is also a lived-in neighbourhood. Stay on public streets and marked public areas, respect home privacy and working docks, and do not cross onto lake ice or private property.'],
+          ['Can I walk from downtown to Pilot’s Monument?', 'The neighbourhood can be explored on foot, but the route length, hill, winter footing and weather matter. Check the exact transit option and return for your date, and choose the indoor museum instead if cold or mobility makes the climb unsuitable.'],
+          ['Is the Prince of Wales Northern Heritage Centre open every day?', 'No daily schedule should be assumed. Its visitor page publishes current hours and accessibility information; recheck before planning around a visit. The hours reviewed on 12 October 2026 are a dated snapshot.'],
+          ['Can I walk onto Great Slave Lake in winter?', 'Only where an authority has opened and marked a specific route for current conditions. Shore ice, vehicle tracks or a map line do not prove that ice is safe or legally open. This walking guide does not include an ice crossing.']
+        ],
+        stages: [
+          ['Choose the day’s anchor', 'Check the forecast, daylight, transit and museum hours. Decide whether the climb to Pilot’s Monument, the shoreline walk or the indoor heritage centre is the main objective.'],
+          ['Enter Old Town on public streets', 'Use a confirmed bus, taxi or planned walk to the district. Follow public routes, read heritage plaques and murals from the sidewalk, and keep homes, yards and private docks private.'],
+          ['Add the lake view only if conditions allow', 'Use the designated public viewpoint or a safe shoreline area in daylight. Wind exposure, snow and uneven footing can turn a short map distance into a demanding return; do not step onto ice.'],
+          ['Warm up and reset', 'Return to the urban grid for the museum if it is open or a checked indoor stop. Leave a real rest window before any separate late-night aurora outing.']
+        ],
+        watch: [
+          ['Footing and wind chill', 'Ice, snow, wind and cold change the time you can stand still. Shorten the exposed block early rather than waiting until hands or feet are numb.'],
+          ['Residential privacy', 'Old Town is a neighbourhood, not a set. Keep to public streets, do not peer into homes or enter a dock, and follow local requests about photography.'],
+          ['Transit and hours', 'City transit schedules, holiday service and museum hours vary. Verify both the outward and return legs before treating the route as car-free.']
+        ]
+      }),
+      g({
+        slug: 'aurora-dark-sky', name: 'Yellowknife Aurora Planning', instrument: 'probability-and-cold board', layout: 'two-clock-board', imageQuery: 'Yellowknife aurora borealis Northwest Territories Canada', imageAlt: 'Aurora above the subarctic landscape near Yellowknife',
+        summary: 'Give aurora more than one optional night, then gate each outing on darkness, cloud, cold, a safe return and a real rest plan. Solar and local forecasts help with timing; neither predicts a guaranteed display.',
+        access: 'Book a named tour with a confirmed pickup, warm shelter and cancellation terms, or choose a legal viewing location with a vehicle, winter readiness and communications plan. Do not improvise a roadside pullout, drive onto lake ice or treat an aurora forecast as road advice.',
+        tradeoff: 'Several nights improve the chance to encounter suitable darkness and clearer sky, but late returns consume sleep and can make the next day unsafe. Protect at least one recovery morning and keep the Ingraham Trail off the schedule after a late night.',
+        fallback: 'When cloud or fatigue closes the night, sleep. Reassign the daylight block to the museum, Old Town or an indoor meal; if another night remains, check conditions again without promising a sighting or driving farther to chase a forecast.',
+        duration: 'Plan at least three nights if aurora is a central interest; four or five allows one rest day and a separate road day. The number is a planning buffer, not a forecast of how many nights will be clear.',
+        combine: 'Use a light daylight schedule after a late return. Combine a viewing tour with an easy urban day, not an early flight, long highway drive or strenuous cold-weather outing.',
+        verify: 'Check darkness and local cloud/precipitation with Environment and Climate Change Canada, the Canadian Space Agency’s viewing guidance, current road status and the named operator’s pickup and cancellation plan. Solar activity is only one condition.',
+        routeChoices: { heading: 'Select a viewing setup before checking the sky', intro: 'Choose the return system first. A promising forecast does not make a site reachable, warm or safe for an unprepared driver.', options: [
+          ['Warmest logistics', 'Named aurora operator', 'Confirm pickup point, return time range, warm shelter, clothing advice, cancellation/refund terms and whether the operator changes sites. Ask directly about accessibility and any mobility needs.'],
+          ['Independent plan', 'Legal site with a prepared driver', 'Choose a currently permitted public location, verify the exact route and parking rules, carry winter-appropriate supplies and a warm retreat, and agree on a turnaround time before leaving. Never stop in a live lane or unapproved shoulder.'],
+          ['No-go night', 'Cloud, wind chill or fatigue wins', 'Stay indoors and protect sleep when cloud, extreme cold, unsafe roads or driver fatigue remove the margin. Use another night only if it remains in the itinerary; do not chase the lights across unfamiliar roads.']
+        ]},
+        sources: [
+          ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — viewing conditions and preparation'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — local weather and alerts'],
+          ['https://spaceweather.gc.ca/forecast-prevision/solar-solaire/aurora-aurore-en.php?lang=en', 'Natural Resources Canada — Space Weather Canada aurora forecast'],
+          ['https://drivenwt.ca/', 'Government of the Northwest Territories — road status'],
+          ['https://www.yellowknife.ca/transit/routes-and-schedules', 'City of Yellowknife — urban bus service information']
+        ],
+        faq: [
+          ['How many nights guarantee that I will see aurora?', 'No number guarantees it. Multiple nights create more chances for darkness and clear sky, but cloud, geomagnetic activity and local conditions vary. Keep the trip worthwhile in daylight too.'],
+          ['Should I drive farther if the forecast looks stronger elsewhere?', 'Only if the exact road, weather, legal stopping place, driver readiness and return are safe. Forecast maps do not account for your vehicle or fatigue; a tour with confirmed transport may be the better choice.'],
+          ['What should I wear while waiting?', 'Follow current local and operator advice for severe cold and long periods standing still. Use layered, dry clothing, cover exposed skin and keep a warm shelter available; photography can make it easy to lose track of cold.'],
+          ['What is the fallback after a cloudy night?', 'End the outing and sleep. Use the next day for an indoor museum or a modest city walk, and reassess a later night only if your schedule and energy allow.']
+        ],
+        stages: [
+          ['Protect more than one window', 'Keep several nights available and mark the following morning as light. Do not schedule the fixed road day after a tour that may return late.'],
+          ['Check sky conditions separately', 'Review darkness, local cloud and precipitation, temperature, wind chill and the operator or road plan. Space-weather activity is one signal; it cannot remove cloud or create darkness.'],
+          ['Use the chosen transport system', 'Meet the named pickup or follow your prechecked legal route to an approved viewing place. Keep a warm shelter and communications plan; never stop on a highway shoulder or an unopened ice road.'],
+          ['Return at the planned threshold', 'Use the agreed end time and turn back if cloud, cold, visibility or fatigue degrades. Sleep before deciding on the next night; an empty forecast is not a reason to keep driving.']
+        ],
+        watch: [
+          ['Forecasts are probabilities', 'A high activity indicator cannot guarantee an aurora at your viewing spot. Darkness, cloud, horizon, precipitation and local light all matter.'],
+          ['Cold injury and equipment', 'Standing still is colder than walking. Protect fingers, face and feet, carry a warm retreat and do not remove gloves for repeated long camera sessions.'],
+          ['Driver fatigue and stopping', 'A midnight return raises risk. Do not chase a clear patch or park on a shoulder, closed road or lake ice; keep a confirmed pickup or a legal, safe vehicle plan.']
+        ]
+      }),
+      g({
+        slug: 'ingraham-trail', name: 'Ingraham Trail & NWT Parks', instrument: 'subarctic road checkpoint', layout: 'roadbook', imageQuery: 'Ingraham Trail Northwest Territories lakes Canada', imageAlt: 'Subarctic lake and boreal landscape along the Ingraham Trail',
+        summary: 'Treat the Ingraham Trail as a daylight highway outing with one park objective, a written turnaround and a checked return. Highway 4 begins just north of Yellowknife; NWT Parks markers measure from that start, and Tibbitt Lake has no facilities.',
+        access: 'Arrange a suitable vehicle or named local operator before choosing a park; City transit does not extend as a scheduled trail shuttle. Check DriveNWT for the exact Highway 4 segment, local weather, park advisories, operating dates and the service plan. Do not leave fuel, toilets, communications or a late arrival to chance.',
+        tradeoff: 'The corridor gives close access to boreal lakes and territorial park day-use areas, but kilometres accumulate beyond the city and services are limited. Choose one near-town stop for a short day, or drive farther only when daylight, park access and a safe return all fit.',
+        fallback: 'If a road notice, severe weather, cold, smoke or seasonal facility closure removes the margin, stay in Yellowknife. If you reach a park whose trail or facility is closed, turn back to the known access point; do not substitute an unmarked shoreline, private launch or unapproved winter crossing.',
+        duration: 'Budget at least a daylight half day for one near-corridor stop and more for farther parks, hiking or changing road conditions. NWT Parks describes the route as about 70 km from the start of Highway 4 to Tibbitt Lake; that figure excludes the drive from town to the highway and the return.',
+        combine: 'Keep this as its own day between two Yellowknife nights. Do not attach it to an aurora return, airport transfer, long winter-road trip or a second distant park unless you have checked the full driving and daylight plan.',
+        verify: 'Checked 12 October 2026: NWT Parks marks the trail from Highway 4 to Tibbitt Lake at about 70 km, identifies Cameron River Crossing at km 54.5 and lists no facilities at Tibbitt. Park dates vary; its 2026 North Slave campground list shows 15 May–15 September for Prelude and Reid Lake. Recheck DriveNWT, advisories and the selected park.',
+        routeChoices: { heading: 'Pick one turnaround before leaving town', intro: 'Trail kilometres start at Highway 4 north of Yellowknife and are not the full out-and-back distance from lodging. Choose by daylight, road status and the exact activity you want.', options: [
+          ['Shorter corridor', 'Prelude Lake area · Highway 4 km 28', 'Choose a nearer lake and park objective when you have a half day. Check the park page and operating dates: campground season and day-use access are not the same thing, and off-season facilities may not be maintained.'],
+          ['Longer day-use walk', 'Cameron River Crossing · km 54.5', 'Choose this only with enough daylight for the road, parking and current trail access. NWT Parks identifies a short route to the falls, but its live park page may report access restrictions; check advisories and footing before committing.'],
+          ['Turn back in town', 'Urban and indoor day', 'Choose Yellowknife if the road map, weather, vehicle, driver or park status does not support the trip. Use the museum or a public Old Town route and keep a separate road day for another visit.']
+        ]},
+        sources: [
+          ['https://www.nwtparks.ca/plan-your-trip/road-trips/ingraham-trail', 'Northwest Territories Parks — route map, kilometre markers and park stops'],
+          ['https://www.nwtparks.ca/visiting-parks/operating-dates', 'Northwest Territories Parks — campground dates and off-season facilities'],
+          ['https://www.nwtparks.ca/visiting-parks/advisories', 'Northwest Territories Parks — current park advisories'],
+          ['https://www.nwtparks.ca/find-a-park/cameron-river-crossing-territorial-park-day-use-area', 'Northwest Territories Parks — Cameron River Crossing access'],
+          ['https://drivenwt.ca/', 'Government of the Northwest Territories — current highway and winter-road status'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — weather alerts and forecasts']
+        ],
+        faq: [
+          ['Is the Ingraham Trail 70 km from my hotel?', 'No. NWT Parks describes roughly 70 km from the start of Highway 4 just north of Yellowknife to Tibbitt Lake. The hotel-to-highway leg and the return are additional; route markers are not a total-trip distance.'],
+          ['Can I drive to Tibbitt Lake for services?', 'No services are listed at the trail end. Treat fuel, water, food, washrooms, communications and turnaround as decisions to settle before leaving town.'],
+          ['Are Prelude Lake and Reid Lake campgrounds open year-round?', 'No. The operating page lists seasonal dates and warns that schedules may change. For 2026 both North Slave campgrounds are listed 15 May–15 September; day-use areas may be accessible off-season while facilities are unmaintained.'],
+          ['Can I combine the drive with aurora viewing?', 'Keep the highway day in daylight and separate it from a late viewing return. If fatigue or weather reduces driving margin, cancel the road outing and rest in town.'],
+          ['What if DriveNWT shows caution or closure?', 'Follow the current official status for the exact segment and any local direction. Do not treat an unplowed route, lake crossing or visually clear road as permission to continue.']
+        ],
+        stages: [
+          ['Set a single objective and turnaround', 'Choose the nearer Prelude Lake area, a farther Cameron River Crossing visit or no road day. Calculate the actual drive from town plus the return; trail marker distances begin at Highway 4 north of Yellowknife.'],
+          ['Check access on the day', 'Review DriveNWT, ECCC weather alerts, the selected NWT Parks page and advisories. Confirm that the road, park, trail, facilities and season fit your vehicle and daylight.'],
+          ['Leave town prepared', 'Set fuel, water, food, warm layers, communications and a latest return time before departure. Use marked public parking and the chosen park route; stay within your ability and current notices.'],
+          ['Turn while the margin remains', 'Return at the planned point, earlier if weather or footing changes. Do not extend to the trail end on impulse: NWT Parks lists no facilities at Tibbitt Lake.']
+        ],
+        watch: [
+          ['Distance is easy to misread', 'The roughly 70 km figure begins at Highway 4, just north of town, and ends at Tibbitt. Add the city approach and the return before selecting a stop.'],
+          ['Seasonal service is not access', 'An area may be reachable while campground facilities are closed or unmaintained. Read the specific park date and advisory rather than relying on a general open-road status.'],
+          ['No service at the end', 'Fuel, cell coverage, toilets and help are not continuous. A remote breakdown in severe cold carries more risk; turn around before supplies, light or attention run short.']
+        ]
+      })
     ]
   })
 ];

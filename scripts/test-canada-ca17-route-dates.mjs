@@ -9,6 +9,7 @@ import { canadaAtlanticNorthClusters } from '../data/canada-atlantic-north-guide
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '15f37f6a806581b8e347483ff2df52131d0a2fae';
+const ca17Snapshot = '5f0713a66f150ca1d7b8d37db9f4439a2d69b530';
 const cluster = canadaAtlanticNorthClusters.find((item) => item.slug === 'whitehorse-kluane');
 assert.ok(cluster, 'Whitehorse & Kluane cluster must exist.');
 const routes = [
@@ -17,6 +18,14 @@ const routes = [
   '/canada/whitehorse-kluane/kluane-haines-junction/',
   '/canada/whitehorse-kluane/miles-canyon-aurora/'
 ];
+const laterCa18SearchRoutes = [
+  '/canada/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/'
+];
+const laterCa18DatedRoutes = laterCa18SearchRoutes.slice(1);
 const previouslyCompleted = [
   'vancouver-north-shore', 'victoria-south-island', 'pacific-rim-tofino',
   'banff-lake-louise', 'jasper-icefields', 'calgary-badlands', 'toronto',
@@ -103,16 +112,19 @@ const finalRoutes = ['/canada/', '/canada/yellowknife-great-slave/',
 assert.deepEqual([...finalRoutes].sort(), canadaRoutes.filter((route) => !afterSprintCompleted.includes(route)).sort(), 'Only the country page and Yellowknife cluster may remain.');
 
 const baseModel = gitShow(`${base}:data/canada-atlantic-north-guides.mjs`);
+const ca17Model = gitShow(`${ca17Snapshot}:data/canada-atlantic-north-guides.mjs`);
 const currentModel = fs.readFileSync(path.join(root, 'data/canada-atlantic-north-guides.mjs'), 'utf8');
 const startMarker = "slug: 'whitehorse-kluane'";
 const endMarker = "slug: 'yellowknife-great-slave'";
 const baseStart = baseModel.indexOf(startMarker);
+const ca17Start = ca17Model.indexOf(startMarker);
 const currentStart = currentModel.indexOf(startMarker);
 const baseEnd = baseModel.indexOf(endMarker, baseStart);
+const ca17End = ca17Model.indexOf(endMarker, ca17Start);
 const currentEnd = currentModel.indexOf(endMarker, currentStart);
-assert.ok(baseStart >= 0 && currentStart >= 0 && baseEnd > baseStart && currentEnd > currentStart);
+assert.ok(baseStart >= 0 && ca17Start >= 0 && currentStart >= 0 && baseEnd > baseStart && ca17End > ca17Start && currentEnd > currentStart);
 assert.equal(baseModel.slice(0, baseStart), currentModel.slice(0, currentStart), 'Earlier Atlantic/northern clusters must remain byte-identical.');
-assert.equal(baseModel.slice(baseEnd), currentModel.slice(currentEnd), 'Yellowknife and all later source blocks must remain byte-identical.');
+assert.equal(ca17Model.slice(ca17Start, ca17End), currentModel.slice(currentStart, currentEnd), 'The CA17 Whitehorse source block must remain byte-identical after later batches.');
 
 const previousSearch = JSON.parse(gitShow(`${base}:data/search-index.json`));
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -122,7 +134,8 @@ assert.equal(canadaSearch.length, 73, 'English Canada search must retain 73 rout
 assert.equal(new Set(canadaSearch.map((item) => item.url)).size, 73, 'English Canada search URLs must remain unique.');
 assert.deepEqual(canadaSearch.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'Canada search URL set must remain unchanged.');
 const targetSet = new Set(routes);
-assert.deepEqual(search.filter((item) => !targetSet.has(item.url)), previousSearch.filter((item) => !targetSet.has(item.url)), 'Only four English search records may change.');
+const laterCa18Set = new Set(laterCa18SearchRoutes);
+assert.deepEqual(search.filter((item) => !targetSet.has(item.url) && !laterCa18Set.has(item.url)), previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa18Set.has(item.url)), 'Only CA17 and later CA18 search records may change.');
 for (const route of routes) {
   const current = canadaSearch.find((item) => item.url === route);
   const previous = previousCanada.find((item) => item.url === route);
@@ -134,9 +147,9 @@ const previousDates = new Map([...gitShow(`${base}:sitemap.xml`).matchAll(/<loc>
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const dates = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'Sitemap URL set must be unchanged.');
-const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa18DatedRoutes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only four target routes × five editions may change sitemap dates.');
+assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four CA17 routes and four later CA18 Yellowknife routes × five editions may change sitemap dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must match the review date.`);
 for (const route of locales.map((locale) => `${locale}/canada/prince-edward-island/`)) {
   assert.equal(dates.get(route), previousDates.get(route), `${route}: preserve the earlier PEI date.`);
@@ -176,10 +189,10 @@ for (const [directory, prefix] of localizedDirectories) {
 
 const changedPages = spawnSync('git', ['diff', '--name-only', base, '--', 'canada', 'zh/canada', 'ja/canada', 'ko/canada', 'th/canada'], { cwd: root, encoding: 'utf8' });
 assert.equal(changedPages.status, 0, `Could not inspect page scope: ${changedPages.stderr}`);
-assert.deepEqual(changedPages.stdout.trim().split('\n').filter(Boolean).sort(), routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four existing English source pages may be committed; localized pages are build outputs checked above.');
+assert.deepEqual(changedPages.stdout.trim().split('\n').filter(Boolean).sort(), [...routes, ...laterCa18SearchRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only CA17 and later CA18 English source pages may be committed; localized pages are build outputs checked above.');
 for (const directory of ['canada/niagara', 'canada/prince-edward-island']) {
   const result = spawnSync('git', ['diff', '--quiet', base, '--', directory], { cwd: root });
   assert.equal(result.status, 0, `${directory}: parallel Niagara/PEI copy must remain unchanged.`);
 }
 
-console.log(`CA17 route/date regression passed: exact 64/73 CA16 base and final 68/73 coverage; final five routes are country + Yellowknife; 73 Canada search URLs unchanged; only four search records and 20 sitemap dates changed; PEI dates and Niagara copy preserved; five-edition pages, search, canonicals, hreflang and Article dates checked. Body gains: ${gains.join('; ')}.`);
+console.log(`CA17 route/date regression passed: exact 64/73 CA16 base and final 68/73 coverage; CA18's remaining five routes are separately accounted for; 73 Canada search URLs unchanged; CA17/CA18 records and date deltas are scoped; PEI dates and Niagara copy preserved; five-edition pages, search, canonicals, hreflang and Article dates checked. Body gains: ${gains.join('; ')}.`);

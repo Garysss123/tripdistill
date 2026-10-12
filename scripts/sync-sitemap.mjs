@@ -146,6 +146,13 @@ const whitehorseEditedRoutes = [
   '/canada/whitehorse-kluane/kluane-haines-junction/',
   '/canada/whitehorse-kluane/miles-canyon-aurora/'
 ];
+const yellowknifeLastmod = '2026-10-12';
+const yellowknifeEditedRoutes = [
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1042,6 +1049,12 @@ for (const route of whitehorseEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Whitehorse & Kluane route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: whitehorseLastmod });
+}
+
+for (const route of yellowknifeEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Yellowknife & Great Slave Lake route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: yellowknifeLastmod });
 }
 
 for (const route of zurichEditedRoutes) {
