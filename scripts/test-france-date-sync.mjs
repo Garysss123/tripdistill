@@ -72,7 +72,7 @@ const marseilleReviewedRoutes = [
 
 check(routes.length === 81 && new Set(routes).size === 81, `Expected 81 France routes, found ${routes.length}`);
 check(reviewedRoutes.length === 24 && octoberElevenRoutes.length === 24 && octoberElevenRoutes.every((route) => reviewedRoutes.includes(route)), `Expected the Lyon/Rhône, Alsace, Burgundy, Bordeaux/Gironde, Dordogne and Toulouse/Occitanie hubs plus their three children to retain their review dates; found ${reviewedRoutes.join(', ')}`);
-check(marseilleReviewedRoutes.length === 8 && marseilleRoutes.length === 4 && marseilleRoutes.every((route) => marseilleReviewedRoutes.includes(route)), `Expected Marseille/Calanques and Nice/Côte d’Azur hubs with their three children to be the 2026-10-12 review-dated routes; found ${marseilleReviewedRoutes.join(', ')}`);
+check(marseilleReviewedRoutes.length === 4 && marseilleRoutes.length === 4 && marseilleRoutes.every((route) => marseilleReviewedRoutes.includes(route)), `Expected the Marseille/Calanques hub and its three children to be the 2026-10-12 review-dated routes; found ${marseilleReviewedRoutes.join(', ')}`);
 check(coteDAzurRoutes.length === 4 && coteDAzurRoutes.every((route) => {
   const cluster = franceClusters.find((item) => `/france/${item.slug}/` === route);
   const guide = franceGuides.find((item) => item.url === route);
