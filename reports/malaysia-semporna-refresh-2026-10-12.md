@@ -35,7 +35,9 @@ The existing `malaysia-tun-sakaran.webp` sunset file was viewed against [its Com
 Two original, conceptual, non-scale SVGs replace those mismatched uses and each carries visible English, Traditional Chinese, Japanese, Korean and Thai legends:
 
 - `assets/images/tripdistill-semporna-mabul-kapalai-comparison.svg` — SHA-1 `595ac6114df594bad603a5be81a21a0bb1de11c5`; SHA-256 `413d4235833fde85b19dedaf6535f709c9ffe0114b9ce16bd5f4819011593750`.
-- `assets/images/tripdistill-semporna-sipadan-permit-flow.svg` — SHA-1 `513f41f467ec46ea42350bf5c7c97058548e980a`; SHA-256 `55e67eb54149d547580cb88a875fe69000b5855f34deae1d3bcf515c5a15c5f2`.
+- `assets/images/tripdistill-semporna-sipadan-permit-flow.svg` — SHA-1 `d3b77598a75b7f36940ae81995e7826d64821a58`; SHA-256 `a065686111abfeed3be226a8dcd64831c3efc32b6bae5afc9739c43dc906c457`.
+
+Both SVGs are parsed with Python’s strict `xml.etree.ElementTree` in the Semporna regression. It verifies well-formed SVG roots, parsed text for all five visible language labels and the escaped Sipadan `BRIEF & DIVE` and `RETURN & REST` labels.
 
 The photo credits record source-page creator/license declarations and local hashes. This review does not independently verify uploader authority, chain of title, model/property releases or legal clearance. The original SVGs have no separate reuse license declared; commercial reuse eligibility is unknown. Their source/Terms links and visible limitations do not grant reuse permission.
 

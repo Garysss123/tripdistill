@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T07:01:29.883Z",
+  "generatedAt": "2026-10-12T07:12:50.570Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 799,
@@ -27325,14 +27325,14 @@
       ]
     },
     {
-      "sha256": "55e67eb54149d547580cb88a875fe69000b5855f34deae1d3bcf515c5a15c5f2",
+      "sha256": "a065686111abfeed3be226a8dcd64831c3efc32b6bae5afc9739c43dc906c457",
       "assetPaths": [
         "/assets/images/tripdistill-semporna-sipadan-permit-flow.svg"
       ],
-      "byteLength": 5412,
+      "byteLength": 5420,
       "sourceRecords": [
         {
-          "sha256": "55e67eb54149d547580cb88a875fe69000b5855f34deae1d3bcf515c5a15c5f2",
+          "sha256": "a065686111abfeed3be226a8dcd64831c3efc32b6bae5afc9739c43dc906c457",
           "assetPath": "/assets/images/tripdistill-semporna-sipadan-permit-flow.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-semporna-sipadan-permit-flow.svg",
@@ -27349,7 +27349,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
           "editHistory": "Original non-scale planning sequence with a visible English, Traditional Chinese, Japanese, Korean and Thai legend. It does not establish current rules, permits or availability.",
-          "localSha1": "513f41f467ec46ea42350bf5c7c97058548e980a",
+          "localSha1": "d3b77598a75b7f36940ae81995e7826d64821a58",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",

@@ -141,7 +141,7 @@ const imageCredits = {
     assetType: 'original-planning-diagram', commercialReuseEligibility: 'unknown',
     attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
     editNote: 'Original non-scale planning sequence with a visible English, Traditional Chinese, Japanese, Korean and Thai legend. It does not establish current rules, permits or availability.',
-    localSha1: '513f41f467ec46ea42350bf5c7c97058548e980a', localSha256: '55e67eb54149d547580cb88a875fe69000b5855f34deae1d3bcf515c5a15c5f2', originalSchematic: true,
+    localSha1: 'd3b77598a75b7f36940ae81995e7826d64821a58', localSha256: 'a065686111abfeed3be226a8dcd64831c3efc32b6bae5afc9739c43dc906c457', originalSchematic: true,
     creditText: 'Project-original SVG verification diagram; not a permit or dive plan. No separate reuse license is declared.', inventoryStatus: 'used'
   },
   sarawakWaterfront: { src: '/assets/images/malaysia-kuching-waterfront.webp', alt: 'Kuching Waterfront, Sarawak River and city skyline seen from Fort Margherita', source: 'https://commons.wikimedia.org/wiki/File:View_of_Kuching_waterfront_from_Fort_Margherita.jpg', sourceTitle: 'File:View of Kuching waterfront from Fort Margherita.jpg', sourceDate: '2022-07-30', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', localSha1: '21208fd63660dd9e35a2a14c4f43bdaaf64c49cf', label: 'Kuching Waterfront from Fort Margherita', creator: 'Cerevisae', license: 'CC BY-SA 4.0' },

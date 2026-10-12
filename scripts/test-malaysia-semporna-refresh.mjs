@@ -129,6 +129,36 @@ for (const diagram of diagrams) {
   for (const label of languageLabels) assert.ok(svg.includes(`>${label}</text>`), `${diagram.src}: visible ${label} legend`);
   assert.ok(/not to scale/i.test(svg), `${diagram.src}: the schematic is marked not to scale`);
 }
+const xmlParseCheck = `
+import sys
+from xml.etree import ElementTree
+
+svg_namespace = '{http://www.w3.org/2000/svg}'
+required_labels = ['EN', '繁體中文', '日本語', '한국어', 'ไทย']
+for filename in sys.argv[1:]:
+    root = ElementTree.parse(filename).getroot()
+    if root.tag != svg_namespace + 'svg':
+        raise SystemExit(f'{filename}: root is not an SVG XML element')
+    visible_text = ' '.join(''.join(node.itertext()) for node in root.iter(svg_namespace + 'text'))
+    for label in required_labels:
+        if label not in visible_text:
+            raise SystemExit(f'{filename}: parsed visible XML text lacks {label!r}')
+    if filename.endswith('tripdistill-semporna-sipadan-permit-flow.svg'):
+        for phrase in ['BRIEF & DIVE', 'RETURN & REST']:
+            if phrase not in visible_text:
+                raise SystemExit(f'{filename}: parsed label changed or disappeared: {phrase!r}')
+print(f'Strict XML parse passed for {len(sys.argv) - 1} Semporna SVG files; each parsed as an SVG root with all five visible language labels.')
+`;
+const xmlSvgPaths = diagrams.map((diagram) => path.join(root, diagram.src.slice(1)));
+if (process.argv.includes('--dist')) {
+  xmlSvgPaths.push(...diagrams.map((diagram) => path.join(root, 'dist', diagram.src.slice(1))));
+}
+const xmlParseOutput = execFileSync('python3', [
+  '-c', xmlParseCheck,
+  ...xmlSvgPaths
+], { cwd: root, encoding: 'utf8' });
+assert.match(xmlParseOutput, new RegExp(`Strict XML parse passed for ${xmlSvgPaths.length} Semporna SVG files`));
+process.stdout.write(xmlParseOutput);
 
 for (const route of routes) {
   const englishRecord = englishSearchByUrl.get(route);

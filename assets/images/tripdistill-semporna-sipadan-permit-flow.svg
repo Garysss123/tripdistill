@@ -23,12 +23,12 @@
     </g>
     <g transform="translate(768 192)">
       <circle cx="90" cy="86" r="58" fill="#b7ded4"/><text x="76" y="101" fill="#073749" font-size="39" font-weight="700">3</text>
-      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">BRIEF & DIVE</text>
+      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">BRIEF &amp; DIVE</text>
       <text x="0" y="214" fill="#cae4df" font-size="17">Conditions · signals · plan</text><text x="0" y="244" fill="#cae4df" font-size="17">Stay within training and limits</text>
     </g>
     <g transform="translate(1116 192)">
       <circle cx="90" cy="86" r="58" fill="#fffaf0"/><text x="76" y="101" fill="#073749" font-size="39" font-weight="700">4</text>
-      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">RETURN & REST</text>
+      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">RETURN &amp; REST</text>
       <text x="0" y="214" fill="#cae4df" font-size="17">Same named boat chain</text><text x="0" y="244" fill="#cae4df" font-size="17">Current no-fly guidance</text>
     </g>
   </g>
