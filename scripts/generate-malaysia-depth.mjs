@@ -221,7 +221,7 @@ function childPage(guide, cluster) {
   <div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content md-guide">
       <section class="md-hero" aria-labelledby="md-title">
-        <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(guide.reviewedOn || '30 August 2026')}</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
+        <div class="md-hero-copy"><nav class="md-breadcrumb" aria-label="Breadcrumb"><a href="/malaysia/">Malaysia</a><span>/</span><a href="/malaysia/${cluster.hubSlug}/">${escapeHtml(cluster.hubName)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="md-kicker">${escapeHtml(guide.chapterLabelRegion || guide.region)} field chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${escapeHtml(guide.reviewedOn || '30 August 2026')}</span><h1 id="md-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the route</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
         <figure class="md-hero-image"><img src="${guide.image.src}" width="1440" height="960" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(figureCaption)}</figcaption></figure>
         <div class="md-instrument" aria-hidden="true"><span>${escapeHtml(guide.instrument)}</span><strong>${String(guide.chapter).padStart(2, '0')}</strong><em>${escapeHtml(guide.motif)}</em></div>
       </section>
@@ -236,7 +236,7 @@ ${figureDiagramKey ? `\n      ${figureDiagramKey}` : ''}
 
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
 
-      <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.routeLead || 'Use the stops below as handoffs, not a timed march; slow down when access or conditions change.') }</p></div><div class="md-route">${route}</div></section>
+      <section class="md-section" id="route" aria-labelledby="route-title"><div class="md-section-head"><div><span class="md-section-label">Four-stage field route</span><h2 id="route-title">Keep the sequence legible.</h2></div><p>${escapeHtml(guide.routeLead || 'Use the stops below as handoffs, not a timed march; slow down when access or conditions change.')}</p></div><div class="md-route">${route}</div></section>
 
       <section class="md-section" id="checks" aria-labelledby="checks-title"><div class="md-section-head"><div><span class="md-section-label">Before committing the day</span><h2 id="checks-title">Three weak points to solve.</h2></div><p>These checks change faster than the page. Reconfirm them with the listed official source and the actual operator close to travel.</p></div><div class="md-check-grid">${checks}</div></section>
 
@@ -266,7 +266,10 @@ function kuchingHubPlanning(cluster) {
   if (!plan) return '';
   const options = plan.plans.map((item) => `<article class="kuching-plan-card"><span>${escapeHtml(item.title)}</span><p>${escapeHtml(item.fit)}</p><ol>${item.days.map(([label, detail]) => `<li><strong>${escapeHtml(label)}</strong><p>${escapeHtml(detail)}</p></li>`).join('')}</ol></article>`).join('');
   const walk = plan.walk.stops.map(([name, detail], index) => `<li><b aria-hidden="true">${String(index + 1).padStart(2, '0')}</b><strong>${escapeHtml(name)}</strong><p>${escapeHtml(detail)}</p></li>`).join('');
-  return `<section class="sr-section kuching-plan" id="route" aria-labelledby="route-title"><div class="sr-heading"><span>Nights, base and transfer logic</span><h2 id="route-title">${escapeHtml(cluster.hubName)} works best from one city base.</h2><p>${escapeHtml(plan.intro)}</p></div><aside class="kuching-base-note"><strong>Where to sleep</strong><p>${escapeHtml(plan.base)}</p></aside><div class="kuching-plan-grid">${options}</div><div class="kuching-walk-block"><div class="sr-heading"><span>Downtown walk</span><h2>${escapeHtml(plan.walk.title)}</h2><p>${escapeHtml(plan.walk.intro)}</p></div><ol class="kuching-walk-chain">${walk}</ol></div><div class="kuching-season-grid"><article><span>Season and access</span><p>${escapeHtml(plan.season)}</p></article><article><span>Reserve before you go</span><p>${escapeHtml(plan.booking)}</p></article><article><span>When a link fails</span><p>${escapeHtml(plan.fallback)}</p></article></div></section>`;
+  const planClass = cluster.hubSlug === 'gunung-mulu' ? 'kuching-plan mulu-plan' : 'kuching-plan';
+  const heading = plan.heading || `${cluster.hubName} works best from one city base.`;
+  const walkLabel = cluster.hubSlug === 'gunung-mulu' ? 'Walking and transfer sequence' : 'Downtown walk';
+  return `<section class="sr-section ${planClass}" id="route" aria-labelledby="route-title"><div class="sr-heading"><span>Nights, base and transfer logic</span><h2 id="route-title">${escapeHtml(heading)}</h2><p>${escapeHtml(plan.intro)}</p></div><aside class="kuching-base-note"><strong>Where to sleep</strong><p>${escapeHtml(plan.base)}</p></aside><div class="kuching-plan-grid">${options}</div><div class="kuching-walk-block"><div class="sr-heading"><span>${escapeHtml(walkLabel)}</span><h2>${escapeHtml(plan.walk.title)}</h2><p>${escapeHtml(plan.walk.intro)}</p></div><ol class="kuching-walk-chain">${walk}</ol></div><div class="kuching-season-grid"><article><span>Season and access</span><p>${escapeHtml(plan.season)}</p></article><article><span>Reserve before you go</span><p>${escapeHtml(plan.booking)}</p></article><article><span>When a link fails</span><p>${escapeHtml(plan.fallback)}</p></article></div></section>`;
 }
 
 function sarawakHubPage(cluster) {
@@ -274,7 +277,7 @@ function sarawakHubPage(cluster) {
   const primary = cluster.guides[0].image;
   const reviewedOn = cluster.reviewedOn || '30 August 2026';
   const description = ensureMetaDescription(cluster.hubPlanning?.intro || `Plan ${cluster.hubName} through four distinct Sarawak chapters with practical transport, access, weather and responsible-visit guidance.`);
-  const faq = cluster.guides.map((guide) => [guide.faq[0][0], guide.faq[0][1]]);
+  const faq = cluster.hubPlanning?.faq || cluster.guides.map((guide) => [guide.faq[0][0], guide.faq[0][1]]);
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -383,6 +386,27 @@ function replaceMarked(html, start, end, replacement) {
   return html.slice(0, startAt) + replacement + html.slice(endAt + end.length);
 }
 
+function refreshKualaLumpurHubMetadata(html, cluster) {
+  const schemaPattern = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/;
+  const match = html.match(schemaPattern);
+  if (!match) throw new Error('Cannot find Kuala Lumpur hub JSON-LD.');
+  const schema = JSON.parse(match[1]);
+  for (const item of schema['@graph'] || []) {
+    if (item['@type'] === 'TravelGuide') {
+      item.dateModified = cluster.reviewedOnIso;
+      item.description = cluster.hubPrompt;
+    }
+    if (item['@type'] === 'FAQPage' && cluster.hubFaq) {
+      item.mainEntity = cluster.hubFaq.map(([question, answer]) => ({
+        '@type': 'Question', name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer }
+      }));
+    }
+  }
+  return html.replace(match[0], `<script type="application/ld+json">\n  ${JSON.stringify(schema)}\n  </script>`)
+    .replaceAll('29 August 2026', cluster.reviewedOn || '12 October 2026');
+}
+
 function injectHubCards(cluster) {
   const file = routeFile(`/malaysia/${cluster.hubSlug}/`);
   let html = fs.readFileSync(file, 'utf8');
@@ -404,6 +428,7 @@ function injectHubCards(cluster) {
     const insertAt = heroEnd + '</section>'.length;
     html = html.slice(0, insertAt) + `\n\n      ${hubCards(cluster)}` + html.slice(insertAt);
   }
+  if (cluster.hubSlug === 'kuala-lumpur-putrajaya') html = refreshKualaLumpurHubMetadata(html, cluster);
   fs.writeFileSync(file, html);
 }
 
@@ -447,6 +472,7 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
     const hub = index.find((item) => item.url === hubUrl);
     if (!hub) throw new Error('Missing existing hub search record for ' + targetCluster.hubSlug);
     hub.summary = targetCluster.hubPrompt;
+    if (targetCluster.searchKeywords) hub.keywords = targetCluster.searchKeywords.map((keyword) => keyword.toLowerCase());
     for (const guide of targetGuides) {
       const entry = index.find((item) => item.url === guide.url);
       if (!entry) throw new Error('Missing existing search record for ' + guide.url);
@@ -454,7 +480,8 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
       entry.parent = (targetCluster?.hubSlug === 'cameron-highlands' ? 'Malaysia · ' : 'Malaysia - ') + guide.hubName;
       entry.type = 'Focused area and field guide';
       entry.summary = guide.summary;
-      entry.keywords = [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide'];
+      entry.keywords = guide.searchKeywords?.map((keyword) => keyword.toLowerCase())
+        ?? [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.region.toLowerCase(), 'malaysia travel guide'];
     }
     fs.writeFileSync(file, JSON.stringify(index, null, 2) + '\n');
     return;
@@ -486,17 +513,22 @@ function updateSearch(targetGuides = malaysiaDepthGuides, targetCluster = null) 
 const requestedClusterSlug = process.argv.find((argument) => argument.startsWith('--cluster='))?.slice('--cluster='.length);
 if (requestedClusterSlug) {
   const boundedGuideLists = {
+    'kuala-lumpur-putrajaya': ['merdeka-chinatown', 'klcc-bukit-bintang', 'batu-caves', 'putrajaya-civic-core'],
     'george-town-penang': ['armenian-street-core-zone', 'weld-quay-clan-jetties', 'penang-hill-air-itam'],
     'cameron-highlands': ['tanah-rata-trails', 'brinchang-kea-farm', 'mossy-forest-gunung-brinchang'],
     'langkawi': ['pantai-cenang-tengah', 'machinchang-skycab', 'kilim-geoforest'],
+    'kota-kinabalu-tunku-abdul-rahman': ['gaya-street-waterfront', 'tanjung-aru-museum', 'manukan-mamutik', 'sapi-gaya-islands'],
     melaka: ['dutch-square-st-pauls', 'jonker-harmony-street', 'melaka-river-kampung-morten', 'bandar-hilir-portuguese-settlement'],
+    'gunung-mulu': ['deer-lang-caves', 'clearwater-wind-caves', 'pinnacles-expedition', 'canopy-night-walks'],
     'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau'],
     'sandakan-kinabatangan': ['sandakan-heritage-waterfront', 'sepilok-conservation-centres', 'sukau-kinabatangan', 'gomantong-batu-puteh'],
     'kuching-bako': ['kuching-waterfront-old-courthouse', 'borneo-cultures-museum', 'semenggoh-wildlife-centre', 'bako-national-park'],
-    'semporna-tun-sakaran': ['semporna-jetty-operator', 'bohey-dulang-bodgaya', 'mabul-kapalai', 'sipadan-permit-day']
+    'semporna-tun-sakaran': ['semporna-jetty-operator', 'bohey-dulang-bodgaya', 'mabul-kapalai', 'sipadan-permit-day'],
+    'perhentian-redang': ['kuala-besut-transfer', 'perhentian-kecil', 'perhentian-besar', 'redang-merang-transfer'],
+    'kinabalu-park-kundasang': ['park-headquarters-botanical-garden', 'mount-kinabalu-summit', 'kundasang-ranau', 'poring-hot-springs']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi, Melaka, Taman Negara, Sandakan & Kinabatangan and Kuching & Bako source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed Malaysia source clusters listed in boundedGuideLists.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
@@ -506,7 +538,7 @@ if (requestedClusterSlug) {
     fs.mkdirSync(path.dirname(page), { recursive: true });
     fs.writeFileSync(page, childPage(guide, cluster));
   }
-  if (cluster.hubSlug === 'kuching-bako') {
+  if (cluster.hubSlug === 'kuching-bako' || cluster.hubSlug === 'gunung-mulu') {
     const hubFile = routeFile(`/malaysia/${cluster.hubSlug}/`);
     fs.mkdirSync(path.dirname(hubFile), { recursive: true });
     fs.writeFileSync(hubFile, sarawakHubPage(cluster));

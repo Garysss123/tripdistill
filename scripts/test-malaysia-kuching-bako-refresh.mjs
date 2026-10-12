@@ -6,9 +6,10 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
+import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const baselineCommit = 'f9047a2c3decfa31dc584a034ecf1a2b24eec5e5';
+const baselineCommit = integrationSprintBaseline;
 const reviewedDate = '2026-10-12';
 const routes = [
   '/malaysia/kuching-bako/',
@@ -31,6 +32,38 @@ const sandakanRoutes = [
   '/malaysia/sandakan-kinabatangan/sukau-kinabatangan/',
   '/malaysia/sandakan-kinabatangan/gomantong-batu-puteh/'
 ];
+const newlyIntegratedRoutes = [
+  '/malaysia/perhentian-redang/',
+  '/malaysia/perhentian-redang/kuala-besut-transfer/',
+  '/malaysia/perhentian-redang/perhentian-kecil/',
+  '/malaysia/perhentian-redang/perhentian-besar/',
+  '/malaysia/perhentian-redang/redang-merang-transfer/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/',
+  '/malaysia/gunung-mulu/',
+  '/malaysia/gunung-mulu/deer-lang-caves/',
+  '/malaysia/gunung-mulu/clearwater-wind-caves/',
+  '/malaysia/gunung-mulu/pinnacles-expedition/',
+  '/malaysia/gunung-mulu/canopy-night-walks/'
+];
+const newlyReviewedKualaLumpurRoutes = [
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
+];
+const newlyReviewedKinabaluRoutes = [
+  '/malaysia/',
+  '/malaysia/kinabalu-park-kundasang/',
+  '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+  '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+  '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+  '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+];
 const locales = [
   { prefix: '', dateNeedle: '12 October 2026' },
   { prefix: '/zh', dateNeedle: '2026 年 10 月 12 日' },
@@ -39,6 +72,15 @@ const locales = [
   { prefix: '/th', dateNeedle: '12 ตุลาคม 2026' }
 ];
 const selectedRoutes = new Set(routes);
+const integrationMalaysiaRoutes = [
+  ...routes,
+  ...currentMalaysiaRoutes,
+  ...sandakanRoutes,
+  ...newlyIntegratedRoutes,
+  ...newlyReviewedKualaLumpurRoutes,
+  ...newlyReviewedKinabaluRoutes
+];
+assert.deepEqual(new Set(integrationMalaysiaRoutes), new Set(integrationRouteGroups.malaysia), 'the exact 41 Malaysia route cohort is represented in the shared sprint scope');
 const guideByUrl = new Map(malaysiaDepthGuides.map((guide) => [guide.url, guide]));
 const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === 'kuching-bako');
 assert.ok(cluster, 'Kuching & Bako source cluster exists');
@@ -80,11 +122,10 @@ const baselineSitemap = new Map([...baselineSitemapRaw.matchAll(/<url><loc>https
   .map(([, url, date]) => [url || '/', date]));
 assert.equal(sourceSitemap.size, 4560, 'source sitemap remains at 4,560 URLs');
 assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URLs');
-const expectedLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
-const currentMalaysiaLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => currentMalaysiaRoutes.map((route) => `${prefix}${route}`)));
+const expectedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-const sandakanLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => sandakanRoutes.map((route) => `${prefix}${route}`)));
-assert.deepEqual(new Set(changedSitemapRoutes), new Set([...expectedLocalizedRoutes, ...currentMalaysiaLocalizedRoutes, ...sandakanLocalizedRoutes]), 'only the currently integrated Kuching, Semporna and Sandakan routes × five locales receive a new lastmod');
+assert.equal(integrationRoutes.length, 67, 'the exact UK, France and Malaysia source route scope contains 67 existing English pages');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact integrated UK, France and Malaysia routes × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:data/search-index.json`], { encoding: 'utf8' }));
@@ -93,7 +134,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...selectedRoutes, ...currentMalaysiaRoutes, ...sandakanRoutes]), 'only the currently integrated Kuching, Semporna and Sandakan English search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France and Malaysia English search records changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five existing English search records remain present');
 
 const images = new Map();

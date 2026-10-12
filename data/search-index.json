@@ -17,7 +17,7 @@
     "url": "/malaysia/",
     "parent": "Malaysia",
     "type": "Country",
-    "summary": "Choose between Peninsular Malaysia, Sabah and Sarawak with entry, monsoon, transport and fourteen regional planning briefs.",
+    "summary": "Compare 9-, 12- and 15-night Malaysia routes by base, train, coach and flight handoffs; choose peninsula or Sabah/Sarawak and protect weather and transfer buffers.",
     "keywords": [
       "malaysia",
       "kuala lumpur",
@@ -26,7 +26,16 @@
       "sabah",
       "sarawak",
       "borneo",
-      "mdac"
+      "mdac",
+      "Kota Kinabalu",
+      "Kinabalu Park",
+      "Kundasang",
+      "Ranau",
+      "Padang Merdeka",
+      "ETS Butterworth",
+      "Melaka Sentral",
+      "base nights",
+      "transport handoffs"
     ]
   },
   {
@@ -34,7 +43,7 @@
     "url": "/malaysia/kuala-lumpur-putrajaya/",
     "parent": "Malaysia · Strait Cities",
     "type": "City Guide",
-    "summary": "Choose a rail-connected base, plan Batu Caves and give Putrajaya a separate, realistic branch.",
+    "summary": "Choose a three-, four- or five-night capital base, then separate the walkable historic core, the rail-linked tower districts, Batu Caves and Putrajaya into named day routes. Check the live operator and visitor notices for each branch; keep one weather and transfer reserve.",
     "keywords": [
       "kuala lumpur",
       "putrajaya",
@@ -152,7 +161,7 @@
     "url": "/malaysia/perhentian-redang/",
     "parent": "Malaysia · Peninsula Wild",
     "type": "Island and Marine Park Guide",
-    "summary": "Choose one island system, confirm season and jetty, and plan boats, reef conduct and return buffers.",
+    "summary": "Choose one island system and one named shore. Count island nights separately from mainland transfers, then connect the airport, rail or coach arrival, jetty, boat and exact accommodation landing with a weather-safe return.",
     "keywords": [
       "perhentian",
       "redang",
@@ -168,15 +177,14 @@
     "url": "/malaysia/kota-kinabalu-tunku-abdul-rahman/",
     "parent": "Malaysia · Sabah",
     "type": "City and Marine Park Guide",
-    "summary": "Use Kota Kinabalu as a real city base, then confirm Jesselton Point, the island purpose, sea conditions and return boat.",
+    "summary": "Plan four or five nights around one Kota Kinabalu base, a named jetty-to-island booking and a spare land day for unsettled sea conditions.",
     "keywords": [
-      "kota kinabalu",
-      "tunku abdul rahman",
-      "jesselton point",
-      "manukan",
-      "sapi",
-      "mamutik",
-      "sabah"
+      "kota kinabalu international airport",
+      "jesselton point south jetty",
+      "dbkk jetty",
+      "sabah state museum",
+      "tanjung aru beach",
+      "metmalaysia marine forecast"
     ]
   },
   {
@@ -184,7 +192,7 @@
     "url": "/malaysia/kinabalu-park-kundasang/",
     "parent": "Malaysia · Sabah",
     "type": "National Park and Highland Guide",
-    "summary": "Separate a complete park-and-highland visit from the regulated Mount Kinabalu summit climb before booking the road and base.",
+    "summary": "Choose the highland nights first: Park Headquarters for trail access, Kundasang for dispersed memorial and farm stops, or Ranau when Poring is the road priority. A summit climb is a separately booked expedition.",
     "keywords": [
       "kinabalu park",
       "kundasang",
@@ -3408,7 +3416,7 @@
     "url": "/malaysia/gunung-mulu/",
     "parent": "Malaysia · Sarawak",
     "type": "World Heritage cave and rainforest guide",
-    "summary": "Treat Mulu as a flight-linked World Heritage field station: show caves, river caves, strenuous expeditions and nocturnal forest each have different booking and ability thresholds.",
+    "summary": "Plan four nights near Park Headquarters for guided caves and forest walks; add the separate three-day, two-night Pinnacles block only with a return buffer.",
     "keywords": [
       "gunung mulu",
       "sarawak",
@@ -3422,9 +3430,9 @@
   {
     "title": "Merdeka Square & Chinatown Guide",
     "url": "/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/",
-    "parent": "Malaysia · Kuala Lumpur & Putrajaya",
+    "parent": "Malaysia - Kuala Lumpur & Putrajaya",
     "type": "Focused area and field guide",
-    "summary": "Connect Kuala Lumpur’s civic confluence, Masjid Jamek and Chinatown without losing the day to heat or disconnected heritage stops.",
+    "summary": "Walk the Klang–Gombak confluence, Merdeka Square and Petaling Street as one shaded, station-to-station day, with active worship and museum access kept conditional.",
     "keywords": [
       "merdeka square & chinatown",
       "kuala lumpur & putrajaya",
@@ -3436,9 +3444,9 @@
   {
     "title": "KLCC & Bukit Bintang Guide",
     "url": "/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/",
-    "parent": "Malaysia · Kuala Lumpur & Putrajaya",
+    "parent": "Malaysia - Kuala Lumpur & Putrajaya",
     "type": "Focused area and field guide",
-    "summary": "Join KLCC and Bukit Bintang through a weather-aware vertical-city route while protecting timed entries and a clear late return.",
+    "summary": "Pair one timed KLCC visit with the named KLCC–Bukit Bintang Walkway and a Bukit Bintang evening, using a same-district base and a clear rail return.",
     "keywords": [
       "klcc & bukit bintang",
       "kuala lumpur & putrajaya",
@@ -3450,9 +3458,9 @@
   {
     "title": "Batu Caves Guide",
     "url": "/malaysia/kuala-lumpur-putrajaya/batu-caves/",
-    "parent": "Malaysia · Kuala Lumpur & Putrajaya",
+    "parent": "Malaysia - Kuala Lumpur & Putrajaya",
     "type": "Focused area and field guide",
-    "summary": "Plan Batu Caves as an active Hindu temple visit with Komuter checks, 272 steps, festival conditions and respectful conduct.",
+    "summary": "Make Batu Caves a half-day rail branch from a KL Sentral or central-city base, with KTM Komuter return, active-temple conduct and a heat-safe stair decision.",
     "keywords": [
       "batu caves",
       "kuala lumpur & putrajaya",
@@ -3464,9 +3472,9 @@
   {
     "title": "Putrajaya Civic Core & Lake Guide",
     "url": "/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/",
-    "parent": "Malaysia · Kuala Lumpur & Putrajaya",
+    "parent": "Malaysia - Kuala Lumpur & Putrajaya",
     "type": "Focused area and field guide",
-    "summary": "Give Putrajaya its own precinct plan linking KLIA Transit, the civic axis, active mosques, lake edges and a reliable return.",
+    "summary": "Give Putrajaya its own day from a KL Sentral base: KLIA Transit to Putrajaya & Cyberjaya, a prearranged precinct transfer, then a compact civic and lake walk.",
     "keywords": [
       "putrajaya civic core & lake",
       "kuala lumpur & putrajaya",
@@ -3646,9 +3654,9 @@
   {
     "title": "Kuala Besut & Perhentian Transfer Guide",
     "url": "/malaysia/perhentian-redang/kuala-besut-transfer/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Protect the Kuala Besut–Perhentian boat chain with exact jetty, operator, accommodation landing, season and final return.",
+    "summary": "Join Sultan Ismail Petra Airport or a confirmed KTMB Intercity/coach arrival to Kuala Besut Jetty, then verify the operator, island landing and full return chain.",
     "keywords": [
       "kuala besut & perhentian transfer",
       "perhentian & redang",
@@ -3660,9 +3668,9 @@
   {
     "title": "Perhentian Kecil Guide",
     "url": "/malaysia/perhentian-redang/perhentian-kecil/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Choose a Perhentian Kecil base between Long Beach and Coral Bay with footpath, boat, nightlife and reef conduct in view.",
+    "summary": "Compare Long Beach and Coral Bay for noise, meals, landing and evening access, then plan Kecil around one shore and a daylight-only cross-island link.",
     "keywords": [
       "perhentian kecil",
       "perhentian & redang",
@@ -3674,9 +3682,9 @@
   {
     "title": "Perhentian Besar Guide",
     "url": "/malaysia/perhentian-redang/perhentian-besar/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Plan Perhentian Besar by exact resort shore, boat dependence, family swimming needs and protected marine conduct.",
+    "summary": "Choose Besar by exact resort shore, meal plan and boat dependence; build a low-transfer stay with a protected reef day and a mainland return margin.",
     "keywords": [
       "perhentian besar",
       "perhentian & redang",
@@ -3688,9 +3696,9 @@
   {
     "title": "Redang & Mainland Transfer Guide",
     "url": "/malaysia/perhentian-redang/redang-merang-transfer/",
-    "parent": "Malaysia · Perhentian & Redang",
+    "parent": "Malaysia - Perhentian & Redang",
     "type": "Focused area and field guide",
-    "summary": "Book Redang through its exact mainland jetty, resort boat, conservation procedure, sea window and protected departure buffer.",
+    "summary": "Connect Sultan Mahmud Airport or Kuala Terengganu to the resort-confirmed Merang or Shahbandar jetty, boat, island landing and return buffer.",
     "keywords": [
       "redang & mainland transfer",
       "perhentian & redang",
@@ -3885,65 +3893,65 @@
   {
     "title": "Gaya Street & Waterfront Guide",
     "url": "/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/",
-    "parent": "Malaysia · Kota Kinabalu & Tunku Abdul Rahman Park",
+    "parent": "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park",
     "type": "Focused area and field guide",
-    "summary": "Orient Kota Kinabalu through Gaya Street, the waterfront and market edges while separating city history from a sunset consumption strip.",
+    "summary": "Walk Gaya Street through Kota Kinabalu's old-town markers, then choose a named ride or shaded pause before the waterfront.",
     "keywords": [
-      "gaya street & waterfront",
-      "kota kinabalu & tunku abdul rahman park",
-      "gaya street waterfront",
-      "sabah",
-      "malaysia travel guide"
+      "gaya street sunday market",
+      "atkinson clock tower",
+      "kk heritage walk",
+      "sabah tourism building",
+      "jesselton point waterfront"
     ]
   },
   {
     "title": "Tanjung Aru & Sabah Museum Guide",
     "url": "/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/",
-    "parent": "Malaysia · Kota Kinabalu & Tunku Abdul Rahman Park",
+    "parent": "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park",
     "type": "Focused area and field guide",
-    "summary": "Link Sabah Museum and Tanjung Aru as a culture-to-coast day with a road transfer, weather fallback and sunset crowd plan.",
+    "summary": "Plan Sabah State Museum on Jalan Muzium and Tanjung Aru as two separate road legs, with a beach-weather and airport buffer.",
     "keywords": [
-      "tanjung aru & sabah museum",
-      "kota kinabalu & tunku abdul rahman park",
-      "tanjung aru museum",
-      "sabah",
-      "malaysia travel guide"
+      "sabah state museum",
+      "jalan muzium",
+      "tanjung aru beach",
+      "perdana park",
+      "kota kinabalu international airport"
     ]
   },
   {
     "title": "Manukan & Mamutik Guide",
     "url": "/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/",
-    "parent": "Malaysia · Kota Kinabalu & Tunku Abdul Rahman Park",
+    "parent": "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park",
     "type": "Focused area and field guide",
-    "summary": "Choose Manukan and Mamutik by facilities, snorkeling ability and return sequence instead of treating both islands as identical beach stops.",
+    "summary": "Compare Manukan’s developed facilities with smaller Mamutik, then book one named terminal and a return that fits the sea.",
     "keywords": [
-      "manukan & mamutik",
-      "kota kinabalu & tunku abdul rahman park",
-      "manukan mamutik",
-      "sabah",
-      "malaysia travel guide"
+      "manukan island",
+      "mamutik island",
+      "jesselton point south jetty",
+      "dbkk jetty",
+      "sabah parks island facilities"
     ]
   },
   {
     "title": "Sapi & Gaya Islands Guide",
     "url": "/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/",
-    "parent": "Malaysia · Kota Kinabalu & Tunku Abdul Rahman Park",
+    "parent": "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park",
     "type": "Focused area and field guide",
-    "summary": "Plan Sapi and Gaya around protected water, forest edges, operator scope and a realistic choice between day access and resort territory.",
+    "summary": "Make Sapi the named day-visit focus and add Gaya only for a confirmed beach, trail, resort or program with its own return.",
     "keywords": [
-      "sapi & gaya islands",
-      "kota kinabalu & tunku abdul rahman park",
-      "sapi gaya islands",
-      "sabah",
-      "malaysia travel guide"
+      "sapi island",
+      "gaya island",
+      "gaya island resort",
+      "sutera harbour marina",
+      "dbkk jetty"
     ]
   },
   {
     "title": "Park Headquarters & Botanical Garden Guide",
     "url": "/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Experience Kinabalu Park without a summit climb through headquarters trails, botanical interpretation and a weather-aware highland base.",
+    "summary": "Plan a full non-climbing visit around Park Headquarters, botanical interpretation and one trail section confirmed open that day.",
     "keywords": [
       "park headquarters & botanical garden",
       "kinabalu park & kundasang",
@@ -3955,9 +3963,9 @@
   {
     "title": "Mount Kinabalu Summit Guide",
     "url": "/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Treat the Mount Kinabalu summit as a regulated expedition with advance capacity, registered guide, altitude judgment and recovery time.",
+    "summary": "Treat the Mount Kinabalu summit as a capacity-controlled, guided expedition with a verified mountain bed, named transport handoffs and recovery time.",
     "keywords": [
       "mount kinabalu summit",
       "kinabalu park & kundasang",
@@ -3969,9 +3977,9 @@
   {
     "title": "Kundasang & Ranau Guide",
     "url": "/malaysia/kinabalu-park-kundasang/kundasang-ranau/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Use Kundasang and Ranau as a highland road base with working farms, memorial context, changing views and named transport stops.",
+    "summary": "Choose Kundasang or Ranau by the actual road and next day: Kundasang for a memorial and highland stay, Ranau for district services and a Poring-oriented route.",
     "keywords": [
       "kundasang & ranau",
       "kinabalu park & kundasang",
@@ -3983,9 +3991,9 @@
   {
     "title": "Poring Hot Springs & Lowland Trails Guide",
     "url": "/malaysia/kinabalu-park-kundasang/poring-hot-springs/",
-    "parent": "Malaysia · Kinabalu Park & Kundasang",
+    "parent": "Malaysia - Kinabalu Park & Kundasang",
     "type": "Focused area and field guide",
-    "summary": "Plan Poring as a lower-elevation forest and recreation branch with road time, trail choices, weather and realistic hot-spring expectations.",
+    "summary": "Treat Poring as a separate lower-elevation road day; check hot-spring, canopy and forest-walk access independently before choosing the route.",
     "keywords": [
       "poring hot springs & lowland trails",
       "kinabalu park & kundasang",
@@ -4165,9 +4173,9 @@
   {
     "title": "Deer & Lang Caves Guide",
     "url": "/malaysia/gunung-mulu/deer-lang-caves/",
-    "parent": "Malaysia · Gunung Mulu",
+    "parent": "Malaysia - Gunung Mulu",
     "type": "Focused area and field guide",
-    "summary": "Plan Deer and Lang Caves as a guided show-cave walk with advance space, wet footing and a conditional evening bat exodus.",
+    "summary": "Walk from Park HQ to Lang and Deer Caves on the booked guided boardwalk route; keep the dusk bat viewing conditional and the return night open.",
     "keywords": [
       "deer & lang caves",
       "gunung mulu",
@@ -4179,9 +4187,9 @@
   {
     "title": "Clearwater & Wind Caves Guide",
     "url": "/malaysia/gunung-mulu/clearwater-wind-caves/",
-    "parent": "Malaysia · Gunung Mulu",
+    "parent": "Malaysia - Gunung Mulu",
     "type": "Focused area and field guide",
-    "summary": "Reach Clearwater and Wind Caves through the official river-and-cave program with boat logistics, steps, community stops and water caution.",
+    "summary": "Follow the booked Park HQ–Melinau Wharf boat leg to Wind and Clearwater Caves, with a guide-led return and room for river conditions to change the day.",
     "keywords": [
       "clearwater & wind caves",
       "gunung mulu",
@@ -4193,9 +4201,9 @@
   {
     "title": "Mulu Pinnacles Expedition Guide",
     "url": "/malaysia/gunung-mulu/pinnacles-expedition/",
-    "parent": "Malaysia · Gunung Mulu",
+    "parent": "Malaysia - Gunung Mulu",
     "type": "Focused area and field guide",
-    "summary": "Treat the Mulu Pinnacles as a demanding multi-day expedition with screening, camp logistics, steep terrain and a valid turnaround decision.",
+    "summary": "Plan the official three-day, two-night Pinnacles route through Kuala Litut and Camp 5, with fitness screening, a guide-led climb decision and a return night in Mulu.",
     "keywords": [
       "mulu pinnacles expedition",
       "gunung mulu",
@@ -4207,9 +4215,9 @@
   {
     "title": "Canopy & Night Walks Guide",
     "url": "/malaysia/gunung-mulu/canopy-night-walks/",
-    "parent": "Malaysia · Gunung Mulu",
+    "parent": "Malaysia - Gunung Mulu",
     "type": "Focused area and field guide",
-    "summary": "Use Mulu’s canopy and night programs to compare forest height and darkness through guided slots, quiet conduct and weather flexibility.",
+    "summary": "Pair the Park HQ canopy walkway with a separate guided night walk only when current slots and weather allow; keep another evening or forest day flexible.",
     "keywords": [
       "canopy & night walks",
       "gunung mulu",

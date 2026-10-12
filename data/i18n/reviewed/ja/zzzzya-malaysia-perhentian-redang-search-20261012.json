@@ -1,0 +1,10 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Perhentian & Redang": "マレーシア — ペルヘンティアン島とレダン島"
+  }
+}

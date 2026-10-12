@@ -160,10 +160,56 @@ const belfastRoutes = [
   '/united-kingdom/belfast-northern-ireland/derry-walls-bogside/'
 ];
 const belfastTargets = new Set(localePrefixes.flatMap((prefix) => belfastRoutes.map((route) => `${prefix}${route}`)));
+const kotaKinabaluRoutes = [
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
+const kotaKinabaluTargets = new Set(localePrefixes.flatMap((prefix) => kotaKinabaluRoutes.map((route) => `${prefix}${route}`)));
+const perhentianRedangRoutes = [
+  '/malaysia/perhentian-redang/',
+  '/malaysia/perhentian-redang/kuala-besut-transfer/',
+  '/malaysia/perhentian-redang/perhentian-kecil/',
+  '/malaysia/perhentian-redang/perhentian-besar/',
+  '/malaysia/perhentian-redang/redang-merang-transfer/'
+];
+const perhentianRedangTargets = new Set(localePrefixes.flatMap((prefix) => perhentianRedangRoutes.map((route) => `${prefix}${route}`)));
+const kualaLumpurPutrajayaRoutes = [
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
+];
+const kualaLumpurPutrajayaTargets = new Set(localePrefixes.flatMap((prefix) => kualaLumpurPutrajayaRoutes.map((route) => `${prefix}${route}`)));
+const gunungMuluRoutes = [
+  '/malaysia/gunung-mulu/',
+  '/malaysia/gunung-mulu/deer-lang-caves/',
+  '/malaysia/gunung-mulu/clearwater-wind-caves/',
+  '/malaysia/gunung-mulu/pinnacles-expedition/',
+  '/malaysia/gunung-mulu/canopy-night-walks/'
+];
+const gunungMuluTargets = new Set(localePrefixes.flatMap((prefix) => gunungMuluRoutes.map((route) => `${prefix}${route}`)));
+const kinabaluParkRoutes = [
+  '/malaysia/',
+  '/malaysia/kinabalu-park-kundasang/',
+  '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+  '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+  '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+  '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+];
+const kinabaluParkTargets = new Set(localePrefixes.flatMap((prefix) => kinabaluParkRoutes.map((route) => `${prefix}${route}`)));
 const expectedUpdates = new Map([
   ...[...tamanTargets].map((url) => [url, reviewedDate]),
   ...[...provenceTargets].map((url) => [url, '2026-10-12']),
-  ...[...belfastTargets].map((url) => [url, '2026-10-12'])
+  ...[...belfastTargets].map((url) => [url, '2026-10-12']),
+  ...[...kotaKinabaluTargets].map((url) => [url, '2026-10-12']),
+  ...[...perhentianRedangTargets].map((url) => [url, '2026-10-12']),
+  ...[...kualaLumpurPutrajayaTargets].map((url) => [url, '2026-10-12']),
+  ...[...gunungMuluTargets].map((url) => [url, '2026-10-12']),
+  ...[...kinabaluParkTargets].map((url) => [url, '2026-10-12'])
 ]);
 for (const [url, date] of baseSitemap) {
   assert.equal(sitemapEntries.get(url), expectedUpdates.get(url) || date, `sitemap date scope: ${url}`);
@@ -172,5 +218,10 @@ for (const [url, date] of baseSitemap) {
 assert.equal(tamanTargets.size, 25, 'expected exactly 5 Taman routes × 5 language editions');
 assert.equal(provenceTargets.size, 15, 'expected only the three Provence routes × 5 language editions as the separate concurrent date change');
 assert.equal(belfastTargets.size, 20, 'expected exactly four Belfast routes × five language editions as the separate integration date change');
+assert.equal(kotaKinabaluTargets.size, 25, 'expected exactly five Kota Kinabalu routes × five language editions as the separate Malaysia date change');
+assert.equal(perhentianRedangTargets.size, 25, 'expected exactly five Perhentian/Redang routes × five language editions as the separate Malaysia date change');
+assert.equal(kualaLumpurPutrajayaTargets.size, 25, 'expected exactly five Kuala Lumpur/Putrajaya routes × five language editions as the separate Malaysia date change');
+assert.equal(gunungMuluTargets.size, 25, 'expected exactly five Gunung Mulu routes × five language editions as the separate Malaysia date change');
+assert.equal(kinabaluParkTargets.size, 30, 'expected exactly six Kinabalu Park and Malaysia overview routes × five language editions as the separate Malaysia date change');
 
-console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, 25 Taman, 15 Provence and 20 Belfast date entries, synchronized search, linked official sources, and no URL-set changes.`);
+console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, with exact date cohorts for Taman, Provence, Belfast, Kota Kinabalu, Perhentian/Redang, Kuala Lumpur/Putrajaya, Gunung Mulu and Kinabalu Park, synchronized search, linked official sources, and no URL-set changes.`);

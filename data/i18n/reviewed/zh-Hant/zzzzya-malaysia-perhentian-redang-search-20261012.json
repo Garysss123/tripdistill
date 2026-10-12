@@ -1,0 +1,10 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Perhentian & Redang": "馬來西亞－停泊島與熱浪島"
+  }
+}

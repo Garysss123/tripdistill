@@ -1,0 +1,30 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kota kinabalu international airport": "코타키나발루 국제공항",
+    "jesselton point south jetty": "제셀턴 포인트 사우스 제티",
+    "dbkk jetty": "DBKK Jetty(선착장)",
+    "sabah state museum": "사바 주립 박물관",
+    "tanjung aru beach": "탄중아루 해변",
+    "metmalaysia marine forecast": "말레이시아 기상청 해상 예보",
+    "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park": "말레이시아 — 코타키나발루와 툰쿠 압둘 라만 해양공원",
+    "gaya street sunday market": "가야 스트리트 일요 시장",
+    "atkinson clock tower": "앳킨슨 시계탑",
+    "kk heritage walk": "코타키나발루 유산 산책",
+    "sabah tourism building": "사바 관광청 건물",
+    "jesselton point waterfront": "제셀턴 포인트 워터프런트",
+    "jalan muzium": "Jalan Muzium",
+    "perdana park": "페르다나 공원",
+    "manukan island": "마누칸섬",
+    "mamutik island": "마무틱섬",
+    "sabah parks island facilities": "사바 공원청 섬 시설",
+    "sapi island": "사피섬",
+    "gaya island": "가야섬",
+    "gaya island resort": "가야섬 리조트",
+    "sutera harbour marina": "수테라 하버 선착장"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Kuala Lumpur & Putrajaya": "馬來西亞－吉隆坡與布城"
+  },
+  "reviewProvenance": {
+    "writer": "Codex GPT-6",
+    "reviewer": "Codex GPT-6; same-model self-review",
+    "independentSecondModel": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Gunung Mulu": "말레이시아 — 구눙물루"
+  }
+}

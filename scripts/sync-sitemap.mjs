@@ -82,6 +82,47 @@ const malaysiaSempornaRoutes = [
   '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
   '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
 ];
+const malaysiaKotaKinabaluLastmod = '2026-10-12';
+const malaysiaKotaKinabaluRoutes = [
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
+const malaysiaPerhentianRedangLastmod = '2026-10-12';
+const malaysiaPerhentianRedangRoutes = [
+  '/malaysia/perhentian-redang/',
+  '/malaysia/perhentian-redang/kuala-besut-transfer/',
+  '/malaysia/perhentian-redang/perhentian-kecil/',
+  '/malaysia/perhentian-redang/perhentian-besar/',
+  '/malaysia/perhentian-redang/redang-merang-transfer/'
+];
+const malaysiaMuluLastmod = '2026-10-12';
+const malaysiaMuluRoutes = [
+  '/malaysia/gunung-mulu/',
+  '/malaysia/gunung-mulu/deer-lang-caves/',
+  '/malaysia/gunung-mulu/clearwater-wind-caves/',
+  '/malaysia/gunung-mulu/pinnacles-expedition/',
+  '/malaysia/gunung-mulu/canopy-night-walks/'
+];
+const malaysiaKualaLumpurLastmod = '2026-10-12';
+const malaysiaKualaLumpurRoutes = [
+  '/malaysia/kuala-lumpur-putrajaya/',
+  '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+  '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+  '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+  '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/'
+];
+const malaysiaKinabaluLastmod = '2026-10-12';
+const malaysiaKinabaluRoutes = [
+  '/malaysia/',
+  '/malaysia/kinabalu-park-kundasang/',
+  '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+  '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+  '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+  '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+];
 const vietnamLastmod = '2026-08-31';
 const vietnamHueLastmod = '2026-10-08';
 const australiaLastmod = '2026-09-04';
@@ -890,6 +931,31 @@ for (const route of malaysiaSempornaRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Semporna route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaSempornaLastmod });
+}
+for (const route of malaysiaKotaKinabaluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kota Kinabalu route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKotaKinabaluLastmod });
+}
+for (const route of malaysiaPerhentianRedangRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Perhentian/Redang route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaPerhentianRedangLastmod });
+}
+for (const route of malaysiaMuluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Gunung Mulu route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaMuluLastmod });
+}
+for (const route of malaysiaKualaLumpurRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Kuala Lumpur & Putrajaya route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaKualaLumpurLastmod });
+}
+for (const route of malaysiaKinabaluRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Malaysia MY15 route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: malaysiaKinabaluLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
