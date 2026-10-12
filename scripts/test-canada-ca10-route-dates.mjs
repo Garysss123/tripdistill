@@ -41,6 +41,12 @@ const laterCa14Routes = [
   '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
   '/canada/halifax-nova-scotia/cape-breton-cabot/'
 ];
+const laterCa15Routes = [
+  '/canada/prince-edward-island/',
+  '/canada/prince-edward-island/charlottetown/',
+  '/canada/prince-edward-island/cavendish-north-shore/',
+  '/canada/prince-edward-island/coastal-drives/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -57,8 +63,8 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA10 must retain the exact 73 Canada routes from CA09.');
 assert.deepEqual(
-  search.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url)),
-  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url)),
+  search.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url) && !laterCa15Routes.includes(record.url)),
+  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url) && !laterCa15Routes.includes(record.url)),
   'CA10 must leave all non-target and later-CA11/CA12/CA13 search records unchanged.'
 );
 for (const route of routes) {
@@ -77,7 +83,7 @@ const readSitemapDates = (contents) => new Map([...contents.matchAll(/<loc>https
 const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA10 must retain the exact CA09 sitemap URL set.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes].map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes].map((route) => locale + route)).sort();
 const actualDateChanges = [...sitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only CA10 and later CA11/CA12/CA13 article routes × five editions may have changed sitemap dates.');
 
