@@ -11,7 +11,7 @@ export const australiaBlueMountainsDiagram = {
   attributionTerms: 'No reuse license is declared; a source and creator credit does not grant reuse permission.',
   commercialReuseEligibility: 'unknown',
   assetType: 'original-planning-diagram',
-  localSha1: '9e7074a8d67463bc565ab806b134452772fa7073',
+  localSha1: 'ef75f70d9629235f258619f28f2d95e622ffaced',
   editNote: 'Not to geographic scale; the lines do not establish rail service, last-mile transport, distance, direction or access. The five-language key explains the solid and dashed lines.',
   inventoryStatus: 'used',
   sectionId: 'au-blue-mountains-diagram-title',

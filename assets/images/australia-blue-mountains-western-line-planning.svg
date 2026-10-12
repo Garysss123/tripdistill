@@ -19,7 +19,7 @@
   <text class="ink cardtitle" x="355" y="345">Wentworth Falls</text><text class="muted small" x="405" y="443">station area</text>
   <text class="ink cardtitle" x="800" y="345">Katoomba</text><text class="muted small" x="820" y="443">station area</text>
   <text class="ink cardtitle" x="1184" y="345">Blackheath</text><text class="muted small" x="1195" y="443">station area</text>
-  <path class="transfer" d="M465 416 C455 474 365 480 345 522"/><path class="transfer" d="M870 416 C870 466 795 478 765 522"/><path class="transfer" d="M1240 414 C1240 468 1170 480 1145 522"/>
+  <path class="transfer" d="M445 389 C415 397 365 414 355 449 C347 477 353 499 345 522"/><path class="transfer" d="M890 390 C943 404 976 411 982 433 C989 460 870 489 765 522"/><path class="transfer" d="M1260 387 C1296 394 1341 411 1343 435 C1360 448 1330 475 1145 522"/>
   <text class="muted small" x="127" y="549">Dashed links mean a separate last-mile plan; they do not identify a bus, distance or timetable.</text>
 
   <g>
