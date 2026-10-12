@@ -5,7 +5,10 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
+import { canadaClusters } from '../data/canada-guides.mjs';
 import {
+  canadaNewSubstantiveRoutes,
+  completedCanadaRouteCount,
   correctedCoverageCheckpoints,
   correctedSubstantiveBaseline,
   reportedSubstantiveBaseline,
@@ -61,7 +64,21 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732]);
+
+const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
+  `/canada/${cluster.slug}/`,
+  ...cluster.guides.map((guide) => guide.url)
+])];
+assert.equal(completedCanadaRouteCount, 73);
+assert.equal(canadaRoutes.length, completedCanadaRouteCount, 'Canada must have 73 existing route paths.');
+assert.equal(new Set(canadaRoutes).size, completedCanadaRouteCount, 'Canada route paths must remain unique.');
+assert.equal(canadaNewSubstantiveRoutes.length, 13, 'CA16–CA18 add 13 substantive improvements, including the CA18 overview.');
+assert.equal(new Set(canadaNewSubstantiveRoutes).size, 13, 'Canada additions must be unique.');
+assert(canadaNewSubstantiveRoutes.every((route) => canadaRoutes.includes(route)), 'CA16–CA18 entries must belong to the exact Canada route set.');
+for (const route of canadaNewSubstantiveRoutes) {
+  assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Canada ledger path is missing: ${route}`);
+}
 
 const originalOverview = git(['show', `${originalAtlas}:vietnam/index.html`]);
 const reviewedOverview = git(['show', `${reviewedAtlas}:vietnam/index.html`]);
@@ -71,4 +88,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: exact Vietnam 39, four explicit exclusions, 457 corrected baseline, corrected checkpoints through 719, and unchanged non-card Vietnam overview copy between the cited atlas commits.');
+console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 additions including the substantive overview; corrected checkpoints through 732; unchanged non-card Vietnam overview copy.');

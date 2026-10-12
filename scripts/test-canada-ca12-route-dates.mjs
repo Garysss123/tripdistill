@@ -5,6 +5,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
+import { laterCa16Ca18DatedRoutes, laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a4679e646708b5a772e56f72df017900fdb0bc4d';
@@ -50,6 +51,7 @@ const checkpointContinuationRoutes = [
   ...laterCa13Routes,
   ...laterCa14Routes,
   ...laterCa15Routes,
+  ...laterCa16Ca18DatedRoutes,
   ...laterAustraliaGapRoutes,
   '/australia/gold-coast-scenic-rim/',
   '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
@@ -88,8 +90,8 @@ assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item
 assert.deepEqual(sourceSearch.filter((item) => !targetSet.has(item.url)), previousSearch.filter((item) => !targetSet.has(item.url)), 'The exact CA12 source terminal must leave every non-CA12 search record unchanged from its source base.');
 assert.deepEqual(canada.filter((item) => targetSet.has(item.url)), sourceSearch.filter((item) => item.url.startsWith('/canada/') && targetSet.has(item.url)), 'Integrated CA12 search records must match the exact source terminal.');
 assert.deepEqual(
-  canada.filter((item) => !targetSet.has(item.url) && !laterCa13Routes.includes(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url)),
-  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url) && !laterCa13Routes.includes(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url)),
+  canada.filter((item) => !targetSet.has(item.url) && !laterCa13Routes.includes(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)),
+  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url) && !laterCa13Routes.includes(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)),
   'Since the pre-CA13 integration checkpoint, only the exact later CA13 routes may differ outside the CA12 target.'
 );
 for (const route of routes) {
@@ -118,7 +120,7 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13, Gold Coast, Cairns, CH14, CH15 and Australia gap date routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Gold Coast, Cairns, CH14, CH15 and Australia gap date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: checkpoint continuation lastmod must be current.`);
 
@@ -166,7 +168,7 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa14Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa15Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
+  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa14Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa15Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa16Ca18SearchRoutes.slice(1).map((route) => `${route.slice(1)}index.html`)].sort(),
   'Only the four target route pages, later CA13 routes and ancillary Canada card may change under canada/.'
 );
 

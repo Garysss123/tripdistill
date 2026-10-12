@@ -1,0 +1,19 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Canada Travel Guide": "คู่มือเที่ยวแคนาดา",
+    "Plan Canada through eighteen complete travel hubs and fifty-four focused guides across cities, mountains, coasts, prairies and the North.": "วางแผนแคนาดาผ่านศูนย์กลางเที่ยวครบ 18 แห่งและคู่มือเจาะจง 54 ฉบับ ครอบคลุมเมือง ภูเขา ชายฝั่ง ทุ่งหญ้า และภาคเหนือ",
+    "Canadian travel": "ท่องเที่ยวแคนาดา",
+    "pacific": "แปซิฟิก",
+    "rockies": "Rockies",
+    "prairies": "ทุ่งหญ้า",
+    "central": "ภาคกลาง",
+    "quebec": "Quebec",
+    "atlantic": "แอตแลนติก",
+    "north": "ภาคเหนือ"
+  }
+}

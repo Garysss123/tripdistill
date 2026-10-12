@@ -62,6 +62,21 @@ const laterCa15Routes = [
   '/canada/prince-edward-island/cavendish-north-shore/',
   '/canada/prince-edward-island/coastal-drives/'
 ];
+const laterCa16Ca18Routes = [
+  '/canada/',
+  '/canada/winnipeg-churchill/',
+  '/canada/winnipeg-churchill/forks-exchange/',
+  '/canada/winnipeg-churchill/human-rights-assiniboine/',
+  '/canada/winnipeg-churchill/churchill-hudson-bay/',
+  '/canada/whitehorse-kluane/',
+  '/canada/whitehorse-kluane/whitehorse-river/',
+  '/canada/whitehorse-kluane/kluane-haines-junction/',
+  '/canada/whitehorse-kluane/miles-canyon-aurora/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/'
+];
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14NewDateRoutes = ch14Routes.slice(1);
 const laterCa11Routes = [
@@ -108,7 +123,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterAustraliaGapRoutes, ...switzerlandCh15AffectedRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Ca18Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterAustraliaGapRoutes, ...switzerlandCh15AffectedRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

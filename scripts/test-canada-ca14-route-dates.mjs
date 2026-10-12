@@ -5,6 +5,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { canadaAtlanticNorthClusters } from '../data/canada-atlantic-north-guides.mjs';
+import { laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '6a505cc56532c2f008e08b3990b0e8b9436cfe9a';
@@ -57,7 +58,7 @@ assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search UR
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must remain exact.');
 assert.deepEqual(sourceSearch.filter((item) => !targetSet.has(item.url)), previousSearch.filter((item) => !targetSet.has(item.url)), 'The exact CA14 source terminal must leave every non-target search record unchanged from its source base.');
 assert.deepEqual(canada.filter((item) => targetSet.has(item.url)), sourceSearch.filter((item) => item.url.startsWith('/canada/') && targetSet.has(item.url)), 'Integrated CA14 search records must match the exact source terminal.');
-assert.deepEqual(canada.filter((item) => !targetSet.has(item.url) && !laterCa15Routes.includes(item.url)), previousCanada.filter((item) => !targetSet.has(item.url) && !laterCa15Routes.includes(item.url)), 'Only the exact four CA14 and four later CA15 Canada search records may differ from the source base.');
+assert.deepEqual(canada.filter((item) => !targetSet.has(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)), previousCanada.filter((item) => !targetSet.has(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)), 'Only the exact four CA14 and later CA15–CA18 Canada search records may differ from the source base.');
 assert.equal(canada.find((item) => item.url === routes[0]).summary, previousSearch.find((item) => item.url === routes[0]).summary, 'Keep the hub introduction stable so the Canada country card is not churned.');
 for (const route of routes.slice(1)) {
   const record = canada.find((item) => item.url === route);
@@ -129,7 +130,7 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  [...routes, ...laterCa15Routes].map((route) => `${route.slice(1)}index.html`).sort(),
+  [...routes, ...laterCa15Routes, ...laterCa16Ca18SearchRoutes].map((route) => `${route.slice(1)}index.html`).sort(),
   'Only the four selected CA14 and four later CA15 English source pages may change under canada/. Localized output paths are verified above; the country card is outside this pass.'
 );
 

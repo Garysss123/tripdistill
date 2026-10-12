@@ -52,11 +52,35 @@ export const vietnamExcludedRoutes = Object.freeze([
   '/vietnam/ha-giang/meo-vac-du-gia/'
 ]);
 
+// Canada reached its exact 73-path completion set in three late batches:
+// Winnipeg, Whitehorse and Yellowknife. The Canada overview counts only after
+// its non-card editorial text was materially refreshed in CA18.
+export const canadaNewSubstantiveRoutes = Object.freeze([
+  '/canada/winnipeg-churchill/',
+  '/canada/winnipeg-churchill/forks-exchange/',
+  '/canada/winnipeg-churchill/human-rights-assiniboine/',
+  '/canada/winnipeg-churchill/churchill-hudson-bay/',
+  '/canada/whitehorse-kluane/',
+  '/canada/whitehorse-kluane/whitehorse-river/',
+  '/canada/whitehorse-kluane/kluane-haines-junction/',
+  '/canada/whitehorse-kluane/miles-canyon-aurora/',
+  '/canada/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/'
+]);
+
+export const completedCanadaRouteCount = 73;
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
   Object.freeze({ label: 'Cairns', count: 703 }),
   Object.freeze({ label: 'CH15', count: 707 }),
   Object.freeze({ label: 'CA15', count: 711 }),
-  Object.freeze({ label: 'AU Sydney/NSW + Brisbane/Gold Coast', count: 719 })
+  Object.freeze({ label: 'AU Sydney/NSW + Brisbane/Gold Coast', count: 719 }),
+  Object.freeze({ label: 'CA16 Winnipeg & Churchill', count: 723 }),
+  Object.freeze({ label: 'CA17 Whitehorse & Kluane', count: 727 }),
+  Object.freeze({ label: 'CA18 Yellowknife & Canada overview', count: 732 })
 ]);

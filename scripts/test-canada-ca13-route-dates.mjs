@@ -5,6 +5,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { canadaClusters } from '../data/canada-guides.mjs';
+import { laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '2af2a29577957d56fe530844039491ca0b3dac06';
@@ -50,8 +51,8 @@ assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.')
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must remain exact.');
 assert.deepEqual(
-  canada.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url)),
-  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url)),
+  canada.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)),
+  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url) && !laterCa14Routes.includes(item.url) && !laterCa15Routes.includes(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)),
   'Only exact later CA14 Canada records may differ outside the CA13 target from the pre-CA13 integration checkpoint.'
 );
 for (const route of routes) {
@@ -125,7 +126,7 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', integrationB
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  [...routes, ...laterCa14Routes, ...laterCa15Routes].map((route) => `${route.slice(1)}index.html`).sort(),
+  [...routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Ca18SearchRoutes].map((route) => `${route.slice(1)}index.html`).sort(),
   'Only the four target and four later-CA14 route pages may change under canada/. The country card is outside this pass.'
 );
 

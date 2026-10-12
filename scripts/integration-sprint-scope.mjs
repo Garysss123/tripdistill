@@ -240,7 +240,19 @@ export const integrationRouteGroups = Object.freeze({
     '/canada/prince-edward-island/',
     '/canada/prince-edward-island/charlottetown/',
     '/canada/prince-edward-island/cavendish-north-shore/',
-    '/canada/prince-edward-island/coastal-drives/'
+    '/canada/prince-edward-island/coastal-drives/',
+    '/canada/winnipeg-churchill/',
+    '/canada/winnipeg-churchill/forks-exchange/',
+    '/canada/winnipeg-churchill/human-rights-assiniboine/',
+    '/canada/winnipeg-churchill/churchill-hudson-bay/',
+    '/canada/whitehorse-kluane/',
+    '/canada/whitehorse-kluane/whitehorse-river/',
+    '/canada/whitehorse-kluane/kluane-haines-junction/',
+    '/canada/whitehorse-kluane/miles-canyon-aurora/',
+    '/canada/yellowknife-great-slave/',
+    '/canada/yellowknife-great-slave/old-town-great-slave/',
+    '/canada/yellowknife-great-slave/aurora-dark-sky/',
+    '/canada/yellowknife-great-slave/ingraham-trail/'
   ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',
@@ -316,7 +328,6 @@ const integrationSearchOnlyRoutes = Object.freeze([
 
 export const integrationSearchRoutes = Object.freeze([
   ...integrationRoutes.filter((route) => ![
-    '/canada/',
     '/canada/halifax-nova-scotia/',
     '/france/french-alps/annecy-lake-old-town/',
     '/france/french-alps/chamonix-mountain-systems/',

@@ -7084,7 +7084,7 @@
     "url": "/canada/",
     "parent": "North America",
     "type": "Country",
-    "summary": "Plan Canada through eighteen complete travel hubs and fifty-four focused guides across cities, mountains, coasts, prairies and the North.",
+    "summary": "Choose a Canada route by trip length and operating system: rail between eastern cities, one road region, or a northern gateway with verified transfers and weather margin.",
     "keywords": [
       "Canada",
       "Canadian travel",
@@ -7543,113 +7543,11 @@
     ]
   },
   {
-    "title": "Winnipeg & Churchill",
-    "url": "/canada/winnipeg-churchill/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Winnipeg is an urban prairie base with museums and river meeting points. Churchill is a remote subarctic destination reached by scheduled rail or flight and planned around season-specific wildlife and weather—not an extension of a city weekend.",
-    "keywords": [
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "prairies"
-    ]
-  },
-  {
-    "title": "The Forks & Exchange District",
-    "url": "/canada/winnipeg-churchill/forks-exchange/",
-    "parent": "Winnipeg & Churchill",
-    "type": "Local guide",
-    "summary": "Use The Forks as the geographic start, then connect the Exchange District and one cultural stop without treating Winnipeg only as the airport before Churchill.",
-    "keywords": [
-      "The Forks & Exchange District",
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "city-grid"
-    ]
-  },
-  {
-    "title": "Human Rights Museum & Assiniboine",
-    "url": "/canada/winnipeg-churchill/human-rights-assiniboine/",
-    "parent": "Winnipeg & Churchill",
-    "type": "Local guide",
-    "summary": "Give the Canadian Museum for Human Rights a serious attention block, then choose either Assiniboine Park or another lighter cultural space as the emotional and physical reset.",
-    "keywords": [
-      "Human Rights Museum & Assiniboine",
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "museum-selector"
-    ]
-  },
-  {
-    "title": "Churchill & Hudson Bay",
-    "url": "/canada/winnipeg-churchill/churchill-hudson-bay/",
-    "parent": "Winnipeg & Churchill",
-    "type": "Local guide",
-    "summary": "Choose Churchill for one seasonal reason, then book transport and a qualified local operator around that purpose while keeping wildlife and aurora outcomes explicitly uncertain.",
-    "keywords": [
-      "Churchill & Hudson Bay",
-      "Winnipeg & Churchill",
-      "Manitoba",
-      "expedition-board"
-    ]
-  },
-  {
-    "title": "Whitehorse & Kluane",
-    "url": "/canada/whitehorse-kluane/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Whitehorse is the service base; Kluane is a vast park region reached by road with weather, fuel and limited-service planning. Aurora is an optional sky condition, not a guaranteed nightly attraction.",
-    "keywords": [
-      "Whitehorse & Kluane",
-      "Yukon",
-      "north"
-    ]
-  },
-  {
-    "title": "Whitehorse & Yukon River",
-    "url": "/canada/whitehorse-kluane/whitehorse-river/",
-    "parent": "Whitehorse & Kluane",
-    "type": "Local guide",
-    "summary": "Use Whitehorse to understand the Yukon River and prepare the road trip: one cultural institution, one river/canyon walk and the practical fuel/food stop before Kluane.",
-    "keywords": [
-      "Whitehorse & Yukon River",
-      "Whitehorse & Kluane",
-      "Yukon",
-      "field-notebook"
-    ]
-  },
-  {
-    "title": "Kluane & Haines Junction",
-    "url": "/canada/whitehorse-kluane/kluane-haines-junction/",
-    "parent": "Whitehorse & Kluane",
-    "type": "Local guide",
-    "summary": "Base in Haines Junction or nearby, then choose one Kluane trail/visitor sector by weather and ability; the park’s scale makes “seeing Kluane” a meaningless one-stop goal.",
-    "keywords": [
-      "Kluane & Haines Junction",
-      "Whitehorse & Kluane",
-      "Yukon",
-      "park-gate"
-    ]
-  },
-  {
-    "title": "Miles Canyon & Aurora Planning",
-    "url": "/canada/whitehorse-kluane/miles-canyon-aurora/",
-    "parent": "Whitehorse & Kluane",
-    "type": "Local guide",
-    "summary": "Keep Miles Canyon as the daylight activity and treat aurora viewing as a separate late-night probability window so one uncertain sky event does not erase the entire day.",
-    "keywords": [
-      "Miles Canyon & Aurora Planning",
-      "Whitehorse & Kluane",
-      "Yukon",
-      "two-clock-board"
-    ]
-  },
-  {
     "title": "Yellowknife & Great Slave Lake",
     "url": "/canada/yellowknife-great-slave/",
     "parent": "Canada",
     "type": "Regional guide",
-    "summary": "Yellowknife combines a small lake-side capital, seasonal Great Slave Lake access and famous aurora potential. Build a daylight city/lake plan first, then add dark-sky time without promising a display.",
+    "summary": "Yellowknife sits on Great Slave Lake, but a city-bus day, a lake-edge walk, an aurora night and the Ingraham Trail are four different operating plans. Choose an urban base first, reserve late nights as optional weather windows, and add the highway only with a current road and park check.",
     "keywords": [
       "Yellowknife & Great Slave Lake",
       "Northwest Territories",
@@ -7661,7 +7559,7 @@
     "url": "/canada/yellowknife-great-slave/old-town-great-slave/",
     "parent": "Yellowknife & Great Slave Lake",
     "type": "Local guide",
-    "summary": "Walk Old Town and the lake edge as a daylight introduction, then use one museum or viewpoint to understand why the city sits where it does.",
+    "summary": "Read Yellowknife through public Old Town streets, the Great Slave Lake shoreline and one indoor cultural anchor. The route is a lived-in neighbourhood walk; lake ice and private docks are not extensions of the sidewalk.",
     "keywords": [
       "Old Town & Great Slave Lake",
       "Yellowknife & Great Slave Lake",
@@ -7674,7 +7572,7 @@
     "url": "/canada/yellowknife-great-slave/aurora-dark-sky/",
     "parent": "Yellowknife & Great Slave Lake",
     "type": "Local guide",
-    "summary": "Plan multiple optional night windows with warm transport and shelter, treating cloud and solar activity as probabilities rather than a guaranteed performance.",
+    "summary": "Give aurora more than one optional night, then gate each outing on darkness, cloud, cold, a safe return and a real rest plan. Solar and local forecasts help with timing; neither predicts a guaranteed display.",
     "keywords": [
       "Yellowknife Aurora Planning",
       "Yellowknife & Great Slave Lake",
@@ -7687,7 +7585,7 @@
     "url": "/canada/yellowknife-great-slave/ingraham-trail/",
     "parent": "Yellowknife & Great Slave Lake",
     "type": "Local guide",
-    "summary": "Use one Ingraham Trail park or lake objective with a declared turnaround, checking highway and winter-road status before leaving Yellowknife.",
+    "summary": "Treat the Ingraham Trail as a daylight highway outing with one park objective, a written turnaround and a checked return. Highway 4 begins just north of Yellowknife; NWT Parks markers measure from that start, and Tibbitt Lake has no facilities.",
     "keywords": [
       "Ingraham Trail & NWT Parks",
       "Yellowknife & Great Slave Lake",
@@ -13248,6 +13146,108 @@
       "Prince Edward Island",
       "Prince Edward Island",
       "roadbook"
+    ]
+  },
+  {
+    "title": "Winnipeg & Churchill",
+    "url": "/canada/winnipeg-churchill/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Winnipeg is a walkable prairie-city chapter; Churchill is a separate subarctic expedition. Parks Canada says there is no road access to Churchill or road entry into Wapusk National Park. Choose a date-specific flight or VIA Rail itinerary, then arrange local transport and any park outing with a licensed operator. Do not plan Churchill as a Winnipeg day trip or assume that wildlife will appear on demand.",
+    "keywords": [
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "prairies"
+    ]
+  },
+  {
+    "title": "The Forks & Exchange District",
+    "url": "/canada/winnipeg-churchill/forks-exchange/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Follow one coherent central Winnipeg day: read the Red and Assiniboine river meeting place at The Forks, choose either the nearby Peace Meeting site or a museum stop, then continue to the Exchange District’s historic streets. The Forks describes the confluence as a gathering place for more than 6,000 years; approach Indigenous histories as living stories, not a quick attraction label.",
+    "keywords": [
+      "The Forks & Exchange District",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "city-grid"
+    ]
+  },
+  {
+    "title": "Human Rights Museum & Assiniboine",
+    "url": "/canada/winnipeg-churchill/human-rights-assiniboine/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Give the Canadian Museum for Human Rights a real visit block: its visitor plan describes ten core galleries across seven floors. Afterward choose either a short Forks-area finish or a separate westbound transfer to Assiniboine Park; the park is not an adjacent museum garden, and The Leaf has its own current hours and admission.",
+    "keywords": [
+      "Human Rights Museum & Assiniboine",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "museum-selector"
+    ]
+  },
+  {
+    "title": "Churchill & Hudson Bay",
+    "url": "/canada/winnipeg-churchill/churchill-hudson-bay/",
+    "parent": "Winnipeg & Churchill",
+    "type": "Local guide",
+    "summary": "Choose Churchill for a defined seasonal purpose and build around its scheduled air or rail access. Parks Canada confirms there is no road to Churchill, Wapusk has no roads, and park visits require a licensed operator. Beluga migration dates and polar-bear safety guidance help choose a season but never guarantee a sighting.",
+    "keywords": [
+      "Churchill & Hudson Bay",
+      "Winnipeg & Churchill",
+      "Manitoba",
+      "expedition-board"
+    ]
+  },
+  {
+    "title": "Whitehorse & Kluane",
+    "url": "/canada/whitehorse-kluane/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Choose Yukon by where you can spend the night: Whitehorse for its riverfront and services, or Haines Junction for Kluane’s road-accessible edge. Parks Canada places the park 160 km west of Whitehorse; its interior generally requires flightseeing or a serious mountaineering or ski expedition.",
+    "keywords": [
+      "Whitehorse & Kluane",
+      "Yukon",
+      "north"
+    ]
+  },
+  {
+    "title": "Whitehorse & Yukon River",
+    "url": "/canada/whitehorse-kluane/whitehorse-river/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Use Whitehorse as a recovery-and-road-prep base: city transit serves urban stops, while Kluane and Miles Canyon need separate access plans. Link the downtown river walk to S.S. Klondike by the riverbank pedestrian trail, then choose one cultural stop after checking its date-specific hours.",
+    "keywords": [
+      "Whitehorse & Yukon River",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Kluane & Haines Junction",
+    "url": "/canada/whitehorse-kluane/kluane-haines-junction/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Use Haines Junction as the overnight gateway, then choose one Kluane road-accessible sector and a trail that matches ability, footing and daylight. Parks Canada places the park 160 km west of Whitehorse, says trailheads lack public transit and notes that the interior is generally accessed by flightseeing or a serious expedition.",
+    "keywords": [
+      "Kluane & Haines Junction",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Miles Canyon & Aurora Planning",
+    "url": "/canada/whitehorse-kluane/miles-canyon-aurora/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Keep the Miles Canyon walk in daylight and treat northern lights as a separate, optional dark-sky night. Travel Yukon describes a roughly 15-km walking loop from town; the shorter vehicle approach and winter access use different roads, so decide the access version before setting out.",
+    "keywords": [
+      "Miles Canyon & Aurora Planning",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "two-clock-board"
     ]
   }
 ]

@@ -457,61 +457,531 @@ export const canadaAtlanticNorthClusters = [
 
   defineCanadaCluster({
     slug: 'winnipeg-churchill', name: 'Winnipeg & Churchill', region: 'Manitoba', band: 'prairies', family: 'prairie-to-tundra',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
     label: 'Prairie capital to Hudson Bay · rail, flight and wildlife seasons', tagline: 'Churchill is an expedition branch, not a day trip.',
-    hubIntro: 'Winnipeg is an urban prairie base with museums and river meeting points. Churchill is a remote subarctic destination reached by scheduled rail or flight and planned around season-specific wildlife and weather—not an extension of a city weekend.',
-    stay: 'Two Winnipeg nights plus three or more Churchill nights is a realistic minimum if the northern branch is the purpose of the trip.',
-    transfer: 'VIA Rail and flights serve Churchill on very different time/cost profiles. Local tundra/wildlife access requires appropriate operators and community-based transport.',
-    season: 'Polar bear, beluga, aurora and bird interests peak in different periods and none is guaranteed. Winter cold and storms can disrupt transport.',
-    fallback: 'Winnipeg’s museums make reliable weather days; in Churchill, interpretation and town/community time should remain valuable when wildlife or sky conditions disappoint.',
+    hubIntro: 'Winnipeg is a walkable prairie-city chapter; Churchill is a separate subarctic expedition. Parks Canada says there is no road access to Churchill or road entry into Wapusk National Park. Choose a date-specific flight or VIA Rail itinerary, then arrange local transport and any park outing with a licensed operator. Do not plan Churchill as a Winnipeg day trip or assume that wildlife will appear on demand.',
+    stay: 'Give Winnipeg two or three nights for the river meeting place, Exchange District and one substantial museum. If Churchill is the purpose, budget at least four nights there, plus the rail or flight travel days and a Winnipeg return buffer; three nights is fragile when weather or transport shifts.',
+    transfer: 'Calm Air publishes date-specific scheduled flights from Winnipeg and VIA Rail publishes date-specific train service to Churchill; compare the current journey days, fares, baggage rules and return before choosing. There is no road to Churchill. Wapusk has no roads either, and Parks Canada directs visitors to licensed commercial operators for park access.',
+    season: 'Checked 12 October 2026: Parks Canada says Western Hudson Bay belugas arrive from mid-June to early July and begin migrating north again in mid-September. Polar bears can be encountered at any time, with elevated risk in autumn. These are ecological windows, not wildlife guarantees; transport, local services, weather and daylight change by date.',
+    fallback: 'In Winnipeg, move a weather day to the Canadian Museum for Human Rights or another confirmed indoor stop. In Churchill, keep a town and interpretation day that does not depend on a wildlife sighting; if a licensed excursion is cancelled, follow local safety advice instead of trying to reach the coast independently.',
     sources: [
-      ['https://info.winnipegtransit.com/', 'Winnipeg Transit — city service information'],
-      ['https://humanrights.ca/', 'Canadian Museum for Human Rights — visitor information'],
-      ['https://www.viarail.ca/en/explore-our-destinations/trains/regional-trains/winnipeg-churchill', 'VIA Rail — Winnipeg–Churchill service']
+      ['https://info.winnipegtransit.com/en/schedules-maps-tools/transittools/', 'Winnipeg Transit — TransitTools real-time trip planning'],
+      ['https://humanrights.ca/visit/plan-your-visit', 'Canadian Museum for Human Rights — visit planning and access'],
+      ['https://www.assiniboinepark.ca/park/visit/hours', 'Assiniboine Park — current hours and seasonal notices'],
+      ['https://parks.canada.ca/pn-np/mb/wapusk/visit', 'Parks Canada — Wapusk access, transport and licensed operators'],
+      ['https://parks.canada.ca/pn-np/mb/wapusk/nature/faune-animals/marine', 'Parks Canada — Hudson Bay beluga seasonal migration'],
+      ['https://parks.canada.ca/pn-np/mb/wapusk/securite-safety/ours-bear', 'Parks Canada — northern Manitoba polar-bear safety'],
+      ['https://www.viarail.ca/en/plan/train-schedules/winnipeg-the-pas-churchill', 'VIA Rail — date-specific Winnipeg–Churchill schedules'],
+      ['https://www.calmair.com/fly-calm-air/schedule-updates', 'Calm Air — current schedule updates']
+    ],
+    firstVisitPlan: {
+      heading: 'Choose a city visit or an expedition branch',
+      intro: 'These are different trip shapes. Confirm the exact transport dates before booking non-refundable city stays or an onward international flight; a map cannot compress Churchill into a day trip.',
+      days: [
+        ['Two or three nights · Winnipeg only', 'Stay in the city, use one full day for The Forks and the Exchange District, and reserve another block for the Human Rights Museum or Assiniboine Park. Check Winnipeg Transit and each institution’s current hours; no Churchill transfer is implied.'],
+        ['Seven or more nights · flight-led Churchill', 'Use Winnipeg as the arrival buffer, fly only on the currently published date-specific schedule, then spend at least four nights in Churchill. Book local transport and any wildlife or park day with a licensed operator; protect a spare day and a non-tight Winnipeg return.'],
+        ['Eight or more nights · rail-led Churchill', 'Treat the VIA journey days as part of the itinerary, compare the current timetable and departure dates, then plan the Churchill stay around the train’s actual arrival and return. Add a Winnipeg night after the southbound leg before an important flight; do not assume a same-day connection.']
+      ]
+    },
+    faq: [
+      ['Can I drive from Winnipeg to Churchill?', 'No. Parks Canada says there is no road access to Churchill. Choose current scheduled air service or VIA Rail, then plan local transport in Churchill separately.'],
+      ['Can Churchill be a day trip from Winnipeg?', 'No. The journey itself is a scheduled flight or rail trip, and Wapusk access needs licensed operators. Give the northbound and return legs their real calendar days and keep a delay margin.'],
+      ['How many Churchill nights should I book?', 'Four or more nights is a stronger first plan when a wildlife or tundra excursion matters. Three nights leaves little room for a cancelled outing or transport delay; add the rail/flight travel days outside that count.'],
+      ['Are belugas or polar bears guaranteed?', 'No. Parks Canada publishes seasonal ecology and safety guidance, not a sighting guarantee. Choose the trip for its place, community and interpretation as well as wildlife, and follow local operator decisions.']
     ],
     guides: [
-      g({ slug: 'forks-exchange', name: 'The Forks & Exchange District', instrument: 'river-meeting city ledger', layout: 'city-grid', imageQuery: 'Winnipeg The Forks Exchange District Manitoba', imageAlt: 'The Forks and downtown Winnipeg near the rivers', summary: 'Use The Forks as the geographic start, then connect the Exchange District and one cultural stop without treating Winnipeg only as the airport before Churchill.', access: 'Downtown and The Forks are served by Winnipeg Transit and are walkable in suitable weather; winter cold changes the value of long outdoor links.', tradeoff: 'This day gives river geography, architecture and food. It gives up a museum marathon and creates a better first understanding of the city.', fallback: 'Cold, smoke or storms can move more time into The Forks interiors, galleries and nearby institutions.', duration: 'One full day is enough for a first central visit; add another for major museums and neighborhoods.', combine: 'Pair with the Canadian Museum for Human Rights nearby or reserve that institution for the next day if deep viewing matters.', verify: 'Check Winnipeg Transit, river/trail conditions, market hours and event street closures.', stages: [['Meet at the Forks', 'Start where the Red and Assiniboine rivers explain the city’s geography and layered histories.'], ['Choose one river walk', 'Use weather and trail condition to set the outdoor segment.'], ['Move to the Exchange', 'Walk or ride to the historic warehouse district for architecture and local businesses.'], ['Return to an indoor evening', 'Finish with food or culture near the hotel instead of an unnecessary cross-city transfer.']], watch: [['Extreme temperature', 'Winter cold and summer heat/smoke can make walking plans unsafe or unpleasant.'], ['River ice assumptions', 'Never infer that frozen water is safe from appearance; follow official route/ice guidance.'], ['Event closure', 'Festivals can change central access and parking.']] }),
-      g({ slug: 'human-rights-assiniboine', name: 'Human Rights Museum & Assiniboine', instrument: 'collection-and-park balance', layout: 'museum-selector', imageQuery: 'Canadian Museum for Human Rights Winnipeg', imageAlt: 'Canadian Museum for Human Rights in Winnipeg', summary: 'Give the Canadian Museum for Human Rights a serious attention block, then choose either Assiniboine Park or another lighter cultural space as the emotional and physical reset.', access: 'The museum is at The Forks; Assiniboine Park is farther west and requires transit/taxi/car planning.', tradeoff: 'The museum is conceptually dense and should not be rushed. Pairing it with a park or garden creates contrast without pretending to “finish” Winnipeg’s institutions.', fallback: 'Severe weather can replace the park with an indoor gallery or a shorter Forks block, keeping the day useful without forcing a long exposed cross-city transfer.', duration: 'A full day works well; allow several hours for the museum rather than treating it as a quick architectural stop.', combine: 'Use the park only if the transfer and weather remain comfortable. Keep Churchill departure days simple.', verify: 'Check museum tickets/hours, Winnipeg Transit, Assiniboine facilities and weather warnings.', stages: [['Museum first', 'Arrive with enough time to read rather than photographing the building and rushing onward.'], ['Pause before the second site', 'Use food and quiet time to reset attention.'], ['Choose park or another collection', 'Let weather and energy determine whether the afternoon is outside or inside.'], ['End near the next-day transport plan', 'Prepare rail/airport logistics if Churchill follows.']], watch: [['Emotional fatigue', 'Human-rights content is not a checklist; leave room to pause.'], ['Cross-city transfer', 'The park is not beside The Forks.'], ['Departure-day overload', 'Do not attach a tight airport/rail deadline to a long museum visit.']] }),
-      g({ slug: 'churchill-hudson-bay', name: 'Churchill & Hudson Bay', instrument: 'season-and-operator expedition board', layout: 'expedition-board', imageQuery: 'Churchill Manitoba tundra Hudson Bay Canada', imageAlt: 'Subarctic tundra and Hudson Bay near Churchill Manitoba', summary: 'Choose Churchill for one seasonal reason, then book transport and a qualified local operator around that purpose while keeping wildlife and aurora outcomes explicitly uncertain.', access: 'Reach Churchill by scheduled flight or VIA Rail. Tundra, wildlife and remote-coast access require local operators and conditions beyond ordinary rental-car tourism.', tradeoff: 'The remote setting offers rare subarctic experiences at high cost and low schedule flexibility. Weather delays and no-sighting days are part of the risk.', fallback: 'Use the Itsanitaq/visitor interpretation, town history and community-scale day as the meaningful replacement when weather or wildlife conditions cancel an excursion.', duration: 'Three nights is a bare minimum; four or more protects against transport and weather disruption.', combine: 'Use Winnipeg as the gateway buffer. Do not book a tight international departure immediately after the Churchill return.', verify: 'Check VIA Rail or airline status, operator permits/terms, weather, wildlife-safety guidance and current local advisories before every field day.', stages: [['Choose the season’s purpose', 'Decide whether your trip is mainly bears, belugas, northern lights, birds or subarctic culture.'], ['Build around one operator', 'Use a reputable local operator whose vehicle/boat and safety plan matches that purpose.'], ['Keep a community day', 'Leave time for Churchill itself so a no-sighting day is not an empty day.'], ['Protect the southbound connection', 'Return to Winnipeg with delay margin before major onward flights.']], watch: [['Wildlife is not guaranteed', 'Ethical viewing protects distance and animal behavior rather than maximizing proximity.'], ['Transport disruption', 'Remote rail and flights are more vulnerable to weather and infrastructure delay.'], ['Extreme cold', 'Operator gear guidance is operational safety, not optional comfort advice.']] })
+      g({
+        slug: 'forks-exchange', name: 'The Forks & Exchange District', instrument: 'river-meeting city ledger', layout: 'city-grid', imageQuery: 'Winnipeg The Forks Exchange District Manitoba',
+        imageAlt: 'Riverfront at The Forks in Winnipeg, with the riverside promenade and sculpture at dusk',
+        summary: 'Follow one coherent central Winnipeg day: read the Red and Assiniboine river meeting place at The Forks, choose either the nearby Peace Meeting site or a museum stop, then continue to the Exchange District’s historic streets. The Forks describes the confluence as a gathering place for more than 6,000 years; approach Indigenous histories as living stories, not a quick attraction label.',
+        access: 'Start and finish in central Winnipeg. The Forks and Exchange District are distinct walk/ride segments, so check Winnipeg Transit’s live trip planner and weather before choosing the link; no walking distance or river-path condition is assumed here.',
+        tradeoff: 'Choose a river-and-architecture day when you want a strong first reading of the city. Give up the deep Human Rights Museum galleries or the farther west Assiniboine Park; each deserves a separate block.',
+        fallback: 'In extreme cold, smoke, heavy rain or a river-path closure, shorten the outdoor segment and choose one confirmed indoor stop near The Forks or the Exchange. Replace a disrupted path with current bus service rather than crossing unsafe ice or extending the walk.',
+        duration: 'Plan one full day, with open time for the Peace Meeting site, a meal and either one Exchange District walking tour or a single museum. The historic district’s 20-block scale makes selecting a smaller area more useful than trying to cover every building.',
+        combine: 'The Canadian Museum for Human Rights is nearby at The Forks and can be the single indoor anchor. Assiniboine Park is farther west and is a separate transfer; keep it for another day.',
+        verify: 'Checked 12 October 2026: The Forks describes this confluence as a gathering place for over 6,000 years, and the Exchange District BIZ offers historic walking tours through its 1880–1920 architecture. Check current tour dates, TransitTools, weather/path notices and event closures.',
+        routeChoices: {
+          heading: 'Choose the city story that anchors the walk',
+          intro: 'All three choices begin in the river district. Pick one longer stop so that the Exchange streets and the return remain comfortable.',
+          options: [
+            ['River meeting place', 'Peace Meeting site and Oodena', 'Stay at The Forks to understand the river confluence and Indigenous gathering histories. Use the site’s own interpretation and allow the story more than a photo stop.'],
+            ['Historic architecture', 'Exchange District BIZ walking tour', 'Choose a published guided tour or a self-directed street walk through the district’s 1880–1920 building collection. Confirm the BIZ calendar if you want a guide.'],
+            ['Indoor interpretation', 'Canadian Museum for Human Rights', 'Use this as the deep indoor visit near The Forks, then keep the Exchange District shorter. Check the museum’s current tickets, hours and access details first.']
+          ]
+        },
+        routeEyebrow: 'River-to-warehouse district day', routeHeading: 'The Forks first, one Exchange District anchor', routeStageLabels: ['Orient', 'Choose', 'Continue', 'Return'],
+        routeSourcesHeading: 'Local history, tours and live movement',
+        routeSourcesNote: 'The Forks explains the river confluence and its long Indigenous gathering history. The Exchange District BIZ publishes its historic-tour offer; Winnipeg TransitTools is the date-specific source for the ride between areas.',
+        sources: [
+          ['https://www.theforks.com/attractions/peace-meeting-site', 'The Forks — Peace Meeting site and river confluence'],
+          ['https://www.theforks.com/attractions/oodena-celebration-circle', 'The Forks — Oodena Celebration Circle'],
+          ['https://exchangedistrict.org/historic-walking-tours-2/', 'Exchange District BIZ — historic walking tours'],
+          ['https://info.winnipegtransit.com/en/schedules-maps-tools/transittools/', 'Winnipeg Transit — real-time trip planning'],
+          ['https://humanrights.ca/visit/plan-your-visit', 'Canadian Museum for Human Rights — visit planning']
+        ],
+        faq: [
+          ['Is The Forks only a market stop?', 'No. The Forks places the site at the Red and Assiniboine confluence and describes a long history of Indigenous gathering. Use the Peace Meeting site or Oodena interpretation as context, and treat Indigenous presence as living rather than only historic.'],
+          ['Should I take a guided Exchange District walk?', 'Choose the BIZ tour when its current calendar fits and you want a curated architectural route. Otherwise, keep to a self-directed public-street visit and verify which businesses or interiors are actually open.'],
+          ['Can I walk between The Forks and the Exchange District?', 'The areas are both central, but weather, mobility, path conditions and your chosen route matter. Check TransitTools for a current bus alternative; this guide does not assume a specific crossing, distance or walking time.'],
+          ['What is the best bad-weather fallback?', 'Keep one indoor anchor at or near The Forks, such as the Human Rights Museum if its hours and tickets suit. Shorten the Exchange walk and check transit rather than using river ice or an exposed path as a shortcut.']
+        ],
+        stages: [
+          ['Begin where the rivers meet', 'At The Forks, use the Peace Meeting site or Oodena to orient to the Red–Assiniboine confluence and its Indigenous gathering history. Follow current posted site information and allow time for interpretation.'],
+          ['Choose one long stop', 'Stay with the river district and add one indoor museum visit, or keep the day outdoors and proceed toward the Exchange. The Forks and the Exchange are not a single attraction, so choose the depth that fits daylight and energy.'],
+          ['Continue to the Exchange', 'Check the BIZ tour calendar for a guided route through the historic district, or explore its public streets on your own. Its 1880–1920 building collection is spread across a 20-block area; choose a focused section rather than counting façades.'],
+          ['Return on a live route', 'Use TransitTools to check the current bus option or choose a suitable walk back. Finish near your lodging; leave Assiniboine Park and Churchill transport for another day.']
+        ],
+        watch: [
+          ['River and path conditions', 'Waterfront access and weather change. Never infer safe ice from appearance; follow official barriers and use a transit fallback when footing or exposure is poor.'],
+          ['Tours and interiors are date-specific', 'The BIZ tour calendar and individual businesses have their own schedules. Verify before making a guided walk or open door the core of the day.'],
+          ['Indigenous context deserves time', 'Do not reduce The Forks to a photo point or imply that one installation represents every Indigenous community. Read the site interpretation and keep the framing specific to the source.']
+        ]
+      }),
+      g({
+        slug: 'human-rights-assiniboine', name: 'Human Rights Museum & Assiniboine', instrument: 'museum-and-park selector', layout: 'museum-selector', imageQuery: 'Canadian Museum for Human Rights Winnipeg',
+        imageAlt: 'An illuminated interior ramp inside the Canadian Museum for Human Rights in Winnipeg',
+        summary: 'Give the Canadian Museum for Human Rights a real visit block: its visitor plan describes ten core galleries across seven floors. Afterward choose either a short Forks-area finish or a separate westbound transfer to Assiniboine Park; the park is not an adjacent museum garden, and The Leaf has its own current hours and admission.',
+        access: 'The museum is at The Forks; Assiniboine Park is farther west. Check TransitTools, museum access guidance and park maps for the exact route, step-free needs and current return service instead of assuming the sites connect on foot.',
+        tradeoff: 'Choose this day for considered museum interpretation followed by a lower-intensity outdoor or garden option. It trades a quick multi-museum checklist for time to pause, read and make one realistic cross-city move.',
+        fallback: 'If energy, weather or transit does not support the westbound transfer, stay near The Forks for a shorter riverside finish or confirmed indoor stop. Do not force the park into a museum departure day or promise entry without checking tickets and hours.',
+        duration: 'Reserve several hours for the museum and treat the rest as one optional second chapter. A full day works better than fitting the galleries between transport deadlines.',
+        combine: 'Pair the museum with one of three alternatives: remain in the Forks district, visit Assiniboine Park grounds, or choose The Leaf when its hours and ticket fit. Keep Churchill travel days light.',
+        verify: 'Checked 12 October 2026: the museum lists ten core galleries across seven floors and publishes current tickets, hours and accessibility details. Assiniboine publishes park and Leaf hours separately; confirm both along with TransitTools before setting the second half of the day.',
+        routeChoices: {
+          heading: 'Decide after the museum, not before it',
+          intro: 'The museum itself can fill a substantial block. Select only one second chapter after checking current hours, weather and transfer needs.',
+          options: [
+            ['Stay central', 'The Forks and riverfront', 'Choose this when the museum visit runs long or you want a shorter, simpler finish near the museum. Check current site conditions and keep the return local.'],
+            ['Outdoor reset', 'Assiniboine Park grounds', 'Choose the park for green space and a slower outdoor visit. It is farther west, so check the transit route, weather, maps and seasonal facility access first.'],
+            ['Garden under glass', 'The Leaf at Assiniboine Park', 'Choose The Leaf only if its current hours, admission and accessibility fit your remaining time. The Leaf has a separate calendar from the park grounds.']
+          ]
+        },
+        routeEyebrow: 'A deep museum visit with one optional second stop', routeHeading: 'Ten galleries, a pause, then one chosen reset', routeStageLabels: ['Arrive', 'Interpret', 'Choose', 'Return'],
+        routeSourcesHeading: 'Museum access, park hours and transfer checks',
+        routeSourcesNote: 'The museum publishes gallery, ticket and accessibility information. Assiniboine Park lists park grounds and The Leaf hours separately; use Winnipeg TransitTools to test the actual cross-city transfer and return for your date.',
+        sources: [
+          ['https://humanrights.ca/visit/plan-your-visit', 'Canadian Museum for Human Rights — visitor planning and gallery information'],
+          ['https://humanrights.ca/visit/hours-admission-fees', 'Canadian Museum for Human Rights — current hours and admission'],
+          ['https://humanrights.ca/visit/accessibility', 'Canadian Museum for Human Rights — accessibility information'],
+          ['https://www.assiniboinepark.ca/park/visit/hours', 'Assiniboine Park — park and Leaf hours'],
+          ['https://www.assiniboinepark.ca/park/visit/maps-and-parking', 'Assiniboine Park — maps and parking'],
+          ['https://info.winnipegtransit.com/en/schedules-maps-tools/transittools/', 'Winnipeg Transit — real-time trip planning']
+        ],
+        faq: [
+          ['How long should I allow for the museum?', 'Its visitor plan lists ten core galleries across seven floors. Give the museum several hours and take a pause; the number of galleries is not a required checklist or a promise of a fixed visit length.'],
+          ['Is Assiniboine Park beside the museum?', 'No. The museum is at The Forks and Assiniboine Park is farther west. Use TransitTools and the park map to plan the actual transfer and return, including any mobility or weather needs.'],
+          ['Can I visit The Leaf on the same day?', 'Possibly, if the museum visit, current Leaf hours, ticket availability and transit return all fit. The Leaf has separate hours from the park grounds; verify its calendar before committing.'],
+          ['What if I need step-free access or a quieter plan?', 'The museum publishes accessibility information, including visitor planning details. Review it for your needs before the date, and choose a local Forks finish if an additional cross-city trip would make the day too demanding.']
+        ],
+        stages: [
+          ['Arrive with time to enter', 'Check the museum’s current admission, hours and accessibility details before travelling to The Forks. Keep timed transport or another booking out of the museum block.'],
+          ['Give the galleries a real visit', 'The museum describes ten core galleries across seven floors. Move at a pace that leaves room to pause; do not treat every gallery as a race to complete.'],
+          ['Choose one second chapter', 'After the museum, stay near The Forks, transfer west to Assiniboine Park, or enter The Leaf only if its separate schedule and admission fit. Check the route and remaining daylight before leaving.'],
+          ['Return without a tight connection', 'Confirm the current transit service or other transport back, then finish near your lodging. Do not place a Churchill train or flight connection immediately after a full museum day.']
+        ],
+        watch: [
+          ['Museum visit can expand', 'Ten galleries across seven floors are substantial. If you read deeply or need breaks, skip the second site rather than rushing the museum.'],
+          ['Separate park and Leaf hours', 'Assiniboine grounds and The Leaf publish different schedules and closures. Check the destination you actually plan to enter, not just the general park page.'],
+          ['Cross-city return', 'The park is west of The Forks. Weather, service frequency, accessibility needs and the final return must all work before adding it to the day.']
+        ]
+      }),
+      g({
+        slug: 'churchill-hudson-bay', name: 'Churchill & Hudson Bay', instrument: 'season-and-operator expedition board', layout: 'expedition-board', imageQuery: 'Churchill Manitoba Hudson Bay sea ice Canada',
+        imageAlt: 'Sea ice along Hudson Bay near Cape Churchill, Manitoba',
+        summary: 'Choose Churchill for a defined seasonal purpose and build around its scheduled air or rail access. Parks Canada confirms there is no road to Churchill, Wapusk has no roads, and park visits require a licensed operator. Beluga migration dates and polar-bear safety guidance help choose a season but never guarantee a sighting.',
+        access: 'Calm Air publishes date-specific scheduled flights from Winnipeg and VIA Rail publishes its own date-specific service. Churchill has no road access; use local transport for town activities and a licensed operator for Wapusk or remote wildlife trips.',
+        tradeoff: 'Churchill offers Arctic-subarctic coast, community history and wildlife possibilities at the cost of long, inflexible transfers and weather exposure. Book the place and its interpretation, not a guaranteed animal encounter or aurora.',
+        fallback: 'Keep a Churchill town day and the Parks Canada Visitor Centre at the historic railway station as possible alternatives, but check its seasonal or by-request hours for your exact date. If a remote trip is cancelled, stay within local guidance; never substitute an independent tundra drive.',
+        duration: 'Four or more Churchill nights plus travel days is the safer first plan. Three nights is a bare minimum and leaves little room for a cancellation, transport delay or weather move.',
+        combine: 'Use Winnipeg as a true gateway buffer before and after Churchill. Allow a spare day on the return side before an important onward flight, especially when the northbound trip uses VIA Rail.',
+        verify: 'Checked 12 October 2026: Parks Canada lists belugas arriving mid-June to early July and migrating north in mid-September; it says the park has no roads and names licensed operators for access. Check the live VIA/Calm Air schedules, visitor-centre hours, operator terms and safety notices again for the exact travel date.',
+        routeChoices: {
+          heading: 'Choose the seasonal reason before booking transport',
+          intro: 'The dates below describe ecological context, not an excursion calendar or a sighting promise. Operators, weather and actual transport availability control the final plan.',
+          options: [
+            ['Summer marine life', 'Beluga season', 'Parks Canada says belugas arrive from mid-June to early July and begin migrating north in mid-September. Ask a licensed local operator what trips run on your dates and follow marine-wildlife viewing guidance.'],
+            ['Autumn bear country', 'Polar-bear safety and viewing', 'Parks Canada says polar bears may be encountered at any time and autumn risk is elevated. Arrange licensed transport, follow operator distance rules and do not walk outside town into bear country independently.'],
+            ['Community and northern landscape', 'Churchill town, history and interpretation', 'Choose this when transport or wildlife outings are uncertain. Confirm the Visitor Centre’s date-specific hours and current town services; keep the trip worthwhile without depending on an animal sighting.']
+          ]
+        },
+        routeEyebrow: 'Build the trip around one purpose and a return margin', routeHeading: 'Arrive, choose a licensed day, preserve the return', routeStageLabels: ['Arrive', 'Confirm', 'Explore', 'Return'],
+        routeSourcesHeading: 'No-road access, operators and seasonal safety',
+        routeSourcesNote: 'Parks Canada provides Wapusk access, wildlife season and polar-bear safety information. VIA Rail and Calm Air publish date-specific schedules; the Churchill Visitor Centre’s operating hours can vary, so check the exact date.',
+        sources: [
+          ['https://parks.canada.ca/pn-np/mb/wapusk/visit', 'Parks Canada — Wapusk access and licensed operators'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/visit/services', 'Parks Canada — Churchill services and local operators'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/activ/centre', 'Parks Canada — Churchill Visitor Centre and seasonal hours'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/nature/faune-animals/marine', 'Parks Canada — beluga and marine-wildlife seasons'],
+          ['https://parks.canada.ca/pn-np/mb/wapusk/securite-safety/ours-bear', 'Parks Canada — polar-bear safety'],
+          ['https://www.viarail.ca/en/plan/train-schedules/winnipeg-the-pas-churchill', 'VIA Rail — date-specific Winnipeg–Churchill schedule'],
+          ['https://www.calmair.com/fly-calm-air/schedule-updates', 'Calm Air — current flight schedule updates'],
+          ['https://www.churchill.ca/p/services', 'Town of Churchill — current local services']
+        ],
+        faq: [
+          ['Can I drive to Churchill or Wapusk?', 'No. Parks Canada states there is no road access to Churchill and no road into Wapusk National Park. Use scheduled air or rail for Churchill and arrange park access with a licensed operator.'],
+          ['Which season is best for belugas?', 'Parks Canada says the Western Hudson Bay belugas arrive from mid-June to early July and begin moving north again in mid-September. This is a migration window, not a guarantee of seeing whales or of a particular operator trip running.'],
+          ['Can I walk around Churchill to look for polar bears?', 'Do not do that. Parks Canada warns that northern sites pose high polar-bear encounter risk and should not be visited without a licensed guide or Parks Canada staff, except the Visitor Centre. Follow current local safety directions.'],
+          ['Is the Visitor Centre always open?', 'No fixed opening should be assumed. Parks Canada publishes seasonal or by-request hours; check the page for the exact day and keep a town-based alternative if it is closed.'],
+          ['How much return margin should I leave?', 'Keep at least one flexible Winnipeg day between the Churchill return and an important onward flight when your schedule allows. The exact buffer depends on your date-specific rail or air timetable and the consequence of a missed connection.']
+        ],
+        stages: [
+          ['Travel to Churchill on a confirmed date', 'Choose the current VIA Rail or Calm Air schedule after comparing its actual travel days and return options. There is no road route; do not book a same-day onward connection that has no delay margin.'],
+          ['Confirm local services and safety', 'Check the Parks Canada Visitor Centre’s hours for your date and contact a licensed operator about trip days, weather cancellation, equipment and pickup. No park or tundra access is assumed without that arrangement.'],
+          ['Use one purpose-built excursion', 'Choose the beluga, bear, bird, landscape or community focus that is actually available. Follow operator distance and safety rules; if conditions change, keep the town and interpretation plan rather than pursuing wildlife independently.'],
+          ['Protect the southbound return', 'Recheck the actual train or flight status and return to Winnipeg with time in hand. Keep a flexible night or day before a major connection; do not let a no-sighting day tempt a late unsafe detour.']
+        ],
+        watch: [
+          ['Wildlife is uncertain', 'Beluga dates and bear season are ecological context, not guarantees. Keep the destination meaningful through community history and landscape as well as sightings.'],
+          ['Bear-country access is controlled', 'Parks Canada warns of high encounter risk at remote sites. Use a licensed guide or Parks Canada staff and follow current local directions; do not leave town independently to find wildlife.'],
+          ['Timetable and visitor hours change', 'VIA Rail, Calm Air, local operators and the Visitor Centre use date-specific schedules. Confirm each one directly before fixing lodging, tour days or an onward flight.']
+        ]
+      })
     ]
   }),
 
   defineCanadaCluster({
     slug: 'whitehorse-kluane', name: 'Whitehorse & Kluane', region: 'Yukon', band: 'north', family: 'yukon-roadbook',
-    label: 'Yukon gateway · river city and immense mountain park', tagline: 'road readiness comes before remoteness.',
-    hubIntro: 'Whitehorse is the service base; Kluane is a vast park region reached by road with weather, fuel and limited-service planning. Aurora is an optional sky condition, not a guaranteed nightly attraction.',
-    stay: 'Two Whitehorse nights plus two or three Kluane/Haines Junction nights creates a useful first trip. Add more for serious hiking or a longer highway journey.',
-    transfer: 'A car is highly useful outside Whitehorse. Highway conditions, fuel, wildlife and limited cell service matter; flights or tours do not replace every park-road decision.',
-    season: 'Summer offers very long daylight; winter brings cold, short days and aurora opportunities. Shoulder seasons can combine snow, ice and reduced services.',
-    fallback: 'Whitehorse museums, cultural centres and short river walks are the weather fallback; in Kluane, shorten the trail or use lower viewpoints rather than forcing alpine objectives.',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
+    label: 'Yukon gateway · river city and immense mountain park', tagline: 'Choose the base before the road.',
+    hubIntro: 'Choose Yukon by where you can spend the night: Whitehorse for its riverfront and services, or Haines Junction for Kluane’s road-accessible edge. Parks Canada places the park 160 km west of Whitehorse; its interior generally requires flightseeing or a serious mountaineering or ski expedition.',
+    stay: 'Plan four or five nights for a first road-led trip: two in Whitehorse and two or three in Haines Junction. One night in Haines Junction leaves little room to move a park day when cloud, smoke, ice or a cancelled flightseeing outing changes the plan.',
+    transfer: 'Whitehorse has a city bus network, but Parks Canada says Kluane trailheads have no public transportation and can be difficult to reach without a vehicle. Arrange a rental or named operator before booking hikes; check Yukon 511 for each highway leg and do not assume an unlisted shuttle.',
+    season: 'Summer daylight supports a city walk and a full park day, but can hide fatigue. Shoulder-season and winter snow, ice, shorter light and reduced services narrow the choices. Visitor-centre hours are seasonal; dark skies make aurora possible but never guaranteed.',
+    fallback: 'If a high trail, road or flightseeing plan fails, switch to an open lower route such as the 0.5-km Kokanee boardwalk at Kathleen Lake, or use the Haines Junction visitor centre only when it is operating. On 12 October 2026, Parks Canada listed the Kathleen Lake campground and oTENTik as closed until May 2027. Whitehorse’s river and cultural route is a separate weather-buffer day; recheck every site and road before leaving.',
+    firstVisitPlan: {
+      heading: 'Two bases, one moveable mountain day',
+      intro: 'Keep the town day, road transfer and park choice in separate blocks. This is an itinerary frame; live services, trail notices and weather decide what can actually run.',
+      days: [
+        ['Day 1 · Whitehorse', 'Stay in town, check the City transit schedule, then choose one open cultural stop and a Yukon River walk. Do not add Miles Canyon if it turns the arrival day into a long hike before an aurora night.'],
+        ['Day 2 · Move west', 'Drive the 160-km Alaska Highway leg to Haines Junction only after checking Yukon 511, the forecast and the fuel or lodging services you will rely on. Confirm those stops directly; do not infer that every map pin is open.'],
+        ['Day 3 · Kluane choice', 'Choose one trail by footing and ability: the accessible 0.5-km Kokanee boardwalk, Parks Canada’s 7.6-km St. Elias Lake day hike listed at 2–4 hours, or a more demanding route only when current notices and conditions support it. Keep another night nearby if weather can move the outing.']
+      ]
+    },
     sources: [
-      ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — transit information'],
-      ['https://parks.canada.ca/pn-np/yt/kluane', 'Parks Canada — Kluane National Park and Reserve'],
-      ['https://511yukon.ca/', 'Yukon 511 — highway conditions and incidents']
+      ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — transit routes, schedules and current amendments'],
+      ['https://kwanlindunculturalcentre.com/', 'Kwanlin Dün Cultural Centre — visit and current hours'],
+      ['https://parks.canada.ca/lhn-nhs/yt/ssklondike/visit', 'Parks Canada — S.S. Klondike location and river-trail access'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/visit', 'Parks Canada — Kluane access, distance and visitor information'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/activ/randonnee-hiking', 'Parks Canada — named hiking routes, difficulty and trail notices'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/visit/services/kathleen', 'Parks Canada — Kathleen Lake boardwalk and seasonal services'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/activ/aeriennes-flightseeing', 'Parks Canada — Kluane flightseeing and park-interior access'],
+      ['https://511yukon.ca/', '511 Yukon — current road conditions, closures, visibility and wildlife hotspots'],
+      ['https://weather.gc.ca/', 'Environment and Climate Change Canada — current forecasts and weather alerts'],
+      ['https://www.travelyukon.com/en/see-and-do/activities/hiking-near-whitehorse-exploring-miles-canyon', 'Travel Yukon — Miles Canyon walking route and seasonal road access'],
+      ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — dark-sky, cloud and cold-weather viewing conditions']
+    ],
+    faq: [
+      ['How many nights should I split between Whitehorse and Kluane?', 'For a first road-led visit, use about two Whitehorse nights and two or three in Haines Junction. The second base prevents a 160-km-each-way park drive from consuming the hiking day and gives weather a chance to move the outing.'],
+      ['Can I use Whitehorse city transit to reach Kluane trailheads?', 'No. Whitehorse Transit is for the city; Parks Canada says there is no public transportation to Kluane trailheads. Arrange your own vehicle or a confirmed operator, and check the highway before departure.'],
+      ['Can I drive into the interior of Kluane?', 'Not on an ordinary park road. Parks Canada says the interior is generally reached by flightseeing or a serious mountaineering or ski-tour expedition. A roadside visit and a flightseeing trip are different plans.'],
+      ['Are visitor centres and camping open all year?', 'No fixed year-round opening should be assumed. The current Parks Canada page lists seasonal visitor-centre dates, and its 12 October 2026 Kathleen Lake listing says the campground and oTENTik are closed until May 2027. Recheck the exact season before lodging or trail planning.']
     ],
     guides: [
-      g({ slug: 'whitehorse-river', name: 'Whitehorse & Yukon River', instrument: 'river-service base map', layout: 'field-notebook', imageQuery: 'Whitehorse Yukon River Canada', imageAlt: 'Yukon River landscape at Whitehorse', summary: 'Use Whitehorse to understand the Yukon River and prepare the road trip: one cultural institution, one river/canyon walk and the practical fuel/food stop before Kluane.', access: 'Central Whitehorse has transit and walkable areas, but most regional branches need a car, tour or explicit shuttle.', tradeoff: 'A city day gives Indigenous, river and Gold Rush-era context plus logistics; it sacrifices distance but improves every later road day.', fallback: 'Cold, smoke or rain can move more time into museums and cultural centres while the river walk shortens.', duration: 'One full day plus an arrival/departure half-day works for a first visit.', combine: 'Pair with Miles Canyon or another close branch, not a full Kluane excursion on the same day.', verify: 'Check Whitehorse Transit, selected cultural-site hours, Yukon 511 and wildfire/smoke or severe-weather notices.', stages: [['Cultural context first', 'Choose one museum or cultural centre that explains the river, Indigenous history and northern settlement.'], ['Walk the river', 'Use a maintained waterfront or nearby route rather than improvising remote access.'], ['Prepare the highway', 'Fuel, food and download maps before leaving for Kluane.'], ['Protect the night plan', 'If aurora is possible, keep the evening flexible rather than exhausting the day first.']], watch: [['Smoke', 'Wildfire smoke can remove views and make outdoor exertion unhealthy.'], ['Long daylight', 'Summer light can disguise fatigue; a bright evening is still the end of a long day.'], ['Aurora expectations', 'Cloud and solar activity are uncertain; do not sacrifice every daytime plan for a guaranteed sighting that does not exist.']] }),
-      g({ slug: 'kluane-haines-junction', name: 'Kluane & Haines Junction', instrument: 'mountain weather gate', layout: 'park-gate', imageQuery: 'Kluane National Park Yukon mountains Canada', imageAlt: 'Mountain landscape in Kluane National Park Yukon', summary: 'Base in Haines Junction or nearby, then choose one Kluane trail/visitor sector by weather and ability; the park’s scale makes “seeing Kluane” a meaningless one-stop goal.', access: 'Drive from Whitehorse on the Alaska Highway/Haines Road corridor with fuel and road conditions checked. Trailheads and viewpoints are dispersed.', tradeoff: 'The park offers huge mountain and glacier landscapes but many deep interiors are not road-accessible; a scenic flight is a separate weather-dependent product.', fallback: 'Cloud or wind can cancel flightseeing and reduce alpine value; use visitor interpretation, lower trails and lake/road viewpoints.', duration: 'Two or three nights gives one major trail day plus weather margin; serious backcountry trips need much more planning.', combine: 'Connect from Whitehorse and sleep locally. Do not drive out, hike long and return to Whitehorse late the same day.', verify: 'Check Parks Canada trail/bear advisories, Yukon 511, weather, fuel and any flightseeing operator cancellation terms.', stages: [['Stop at the visitor centre', 'Confirm current trail, wildlife and weather conditions before committing to the day.'], ['Choose one trail level', 'Match elevation and distance to real ability and the forecast.'], ['Keep flightseeing optional', 'Book only with a clear cancellation/weather policy and do not treat it as guaranteed access.'], ['Return to Haines Junction', 'End close to lodging so the next road day begins rested.']], watch: [['Bear country', 'Food storage, group behavior and current bear advisories are core planning.'], ['Rapid weather change', 'Mountain conditions can diverge sharply from Whitehorse forecasts.'], ['Remote trailheads', 'Limited cell service and long emergency response times raise the cost of overreaching.']] }),
-      g({ slug: 'miles-canyon-aurora', name: 'Miles Canyon & Aurora Planning', instrument: 'daylight-darkness clock', layout: 'two-clock-board', imageQuery: 'Miles Canyon Whitehorse Yukon Canada', imageAlt: 'Yukon River canyon landscape near Whitehorse', summary: 'Keep Miles Canyon as the daylight activity and treat aurora viewing as a separate late-night probability window so one uncertain sky event does not erase the entire day.', access: 'Miles Canyon is close to Whitehorse but needs a car/taxi/tour or appropriate seasonal access plan. Aurora sites require safe night transport and warm shelter strategy.', tradeoff: 'A short canyon day preserves energy for a late night; a full hiking day plus midnight aurora tour can create unsafe fatigue.', fallback: 'Cloudy aurora nights should end early without regret; the daytime canyon and cultural plan still make the day complete.', duration: 'Half a day for Miles Canyon plus an optional evening/night block; schedule a slower following morning.', combine: 'Use it as a Whitehorse buffer day before/after Kluane, not the night before a long early highway drive.', verify: 'Check trail access, Yukon 511 if driving, weather/cloud cover, aurora forecast as probability only and the chosen tour’s pickup/cold policy.', stages: [['Daylight canyon', 'Walk one maintained canyon/river section while footing and visibility are good.'], ['Rest before dark', 'Eat and sleep or relax instead of filling the gap with another long excursion.'], ['Make a go/no-go sky decision', 'Use cloud, temperature and operator advice; aurora forecasts are not guarantees.'], ['Return warm and rested', 'End the night with safe transport and protect the following morning from fatigue.']], watch: [['Night driving', 'Dark rural roads, wildlife and ice require a sober transport plan.'], ['Cold exposure', 'Standing still for sky viewing feels far colder than daytime walking.'], ['Forecast overconfidence', 'High activity can be hidden by cloud; clear sky can still produce weak displays.']] })
+      g({
+        slug: 'whitehorse-river', name: 'Whitehorse & Yukon River', instrument: 'river-service base map', layout: 'field-notebook',
+        imageQuery: 'Whitehorse Yukon River Canada', imageAlt: 'Yukon River landscape at Whitehorse',
+        summary: 'Use Whitehorse as a recovery-and-road-prep base: city transit serves urban stops, while Kluane and Miles Canyon need separate access plans. Link the downtown river walk to S.S. Klondike by the riverbank pedestrian trail, then choose one cultural stop after checking its date-specific hours.',
+        access: 'Whitehorse Transit publishes routes and schedules for city trips. Parks Canada says the S.S. Klondike can be reached by the Yukon River pedestrian trail from downtown or by transit; neither means the separate Kluane trailheads are on a bus route.',
+        tradeoff: 'A Whitehorse day gives the trip a usable city start, a named river walk and time to prepare for the Alaska Highway. It sacrifices distance into the park, which is useful when the road day needs a rested driver.',
+        fallback: 'If rain, smoke, ice or a holiday closing makes the riverside walk unattractive, choose one open indoor cultural site or shorten the walk to the serviced downtown edge. If both sites are closed, use this as the vehicle, food and weather-check day rather than inventing an open attraction.',
+        duration: 'Allow one unhurried city day, or split the river walk across an arrival and departure half-day. These are planning estimates, not measured venue visits.',
+        combine: 'Pair the river route with a local cultural stop; keep Miles Canyon as its own outing and Kluane as a separate road-and-overnight decision. Do not finish a long canyon loop and begin the highway drive tired.',
+        verify: 'Checked 12 October 2026: Parks Canada describes the S.S. Klondike river path and transit access; the City publishes live route schedules and amendments. Check the Kwanlin Dün Cultural Centre and S.S. Klondike pages for the actual date, then check Yukon 511 before a westbound drive.',
+        routeChoices: {
+          heading: 'Choose the city day by its access chain',
+          intro: 'Whitehorse can be explored on foot and by city bus, but a river walk, a cultural visit and a remote trail are not interchangeable stops. Pick the route that fits arrival time and current opening notices.',
+          options: [
+            ['No rental car today', 'Downtown and one open cultural stop', 'Use the current City schedule for the downtown bus leg, then visit the Kwanlin Dün Cultural Centre if it is open. This is the lower-driving choice for arrival day; check holiday hours before building the day around admission.'],
+            ['River history and an easy return', 'Downtown to S.S. Klondike', 'Parks Canada describes a pedestrian trail along the Yukon River from downtown to the S.S. Klondike and also lists transit access. Check footing and site hours, then return on the same path or a currently operating bus.'],
+            ['Preparing for the highway', 'Keep the afternoon for road logistics', 'Use the city day to verify current fuel, food, vehicle and forecast plans before Kluane. Services vary by date; confirm the actual stop rather than relying on a map listing.']
+          ]
+        },
+        routeEyebrow: 'Whitehorse river-to-road sequence', routeHeading: 'One cultural anchor, the river path, then a rested departure', routeStageLabels: ['Orient', 'Choose', 'Walk', 'Prepare'],
+        routeSourcesHeading: 'Urban access and the next road day',
+        routeSourcesNote: 'The City and Parks Canada explain separate transit and walking options. Cultural hours, city schedules and Yukon highway conditions are date-specific; verify the service you intend to use.',
+        sources: [
+          ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — current transit schedules and amendments'],
+          ['https://www.whitehorse.ca/routes-schedules/', 'City of Whitehorse — route maps and schedules'],
+          ['https://kwanlindunculturalcentre.com/', 'Kwanlin Dün Cultural Centre — visit information'],
+          ['https://parks.canada.ca/lhn-nhs/yt/ssklondike/visit', 'Parks Canada — S.S. Klondike river-trail and transit access'],
+          ['https://www.travelyukon.com/en/see-and-do/activities/hiking-near-whitehorse-exploring-miles-canyon', 'Travel Yukon — separate Miles Canyon route choices'],
+          ['https://511yukon.ca/', '511 Yukon — road checks before the Alaska Highway']
+        ],
+        faq: [
+          ['Does Whitehorse Transit run to Kluane trailheads?', 'No. Parks Canada says Kluane trailheads have no public transportation and can be difficult to reach without a vehicle. City transit is useful in Whitehorse, not a substitute for a park-road plan.'],
+          ['How can I reach the S.S. Klondike without driving?', 'Parks Canada lists a pedestrian trail along the Yukon River from downtown or the campground, as well as Whitehorse Transit. Check present footing, schedule amendments and site hours before choosing one.'],
+          ['Can I add Miles Canyon to this walk?', 'Travel Yukon describes a separate roughly 15-km walking loop from town via the Millennium Trail and fish ladder, as well as shorter vehicle access. Treat the canyon as its own outing; do not append the long loop to a road-transfer day.'],
+          ['What if the cultural sites are closed?', 'Do not assume a holiday or seasonal schedule. Keep the river walk flexible, check each site’s current page, and use the time for road, fuel and weather planning if no indoor stop is open.']
+        ],
+        stages: [
+          ['Start with the day’s arrival time', 'If you land or check in late, stay near downtown and use the live City schedule for any bus leg. Do not place a fixed museum visit before confirming that day’s hours.'],
+          ['Choose one cultural stop', 'Check the Kwanlin Dün Cultural Centre and S.S. Klondike visitor pages separately. Pick the one that fits its own open hours and your interest; a closed interior does not cancel the river route.'],
+          ['Follow the Yukon River path', 'Parks Canada describes the pedestrian route from downtown to the S.S. Klondike. Check current footing, take the same route back or use transit only if a suitable departure is posted.'],
+          ['End with highway preparation', 'Before leaving Whitehorse, confirm the vehicle, the road condition, daylight and the services you will rely on. Keep this buffer in town if an early or long drive would otherwise follow a full day on foot.']
+        ],
+        watch: [
+          ['Site hours and holiday dates', 'The Kwanlin Dün Cultural Centre and S.S. Klondike publish their own visitor information. Verify both for the exact day rather than assuming every cultural site shares a schedule.'],
+          ['Path footing', 'Rain, freeze-thaw and snow can change the river walk. Shorten it at a safe return point when surfaces are slick.'],
+          ['City versus regional transport', 'A Whitehorse bus plan ends where city service ends. Confirm a vehicle or named operator before promising a canyon or Kluane connection.']
+        ]
+      }),
+      g({
+        slug: 'kluane-haines-junction', name: 'Kluane & Haines Junction', instrument: 'mountain weather gate', layout: 'park-gate',
+        imageQuery: 'Kluane National Park Yukon mountains Canada', imageAlt: 'Mountain landscape in Kluane National Park Yukon',
+        summary: 'Use Haines Junction as the overnight gateway, then choose one Kluane road-accessible sector and a trail that matches ability, footing and daylight. Parks Canada places the park 160 km west of Whitehorse, says trailheads lack public transit and notes that the interior is generally accessed by flightseeing or a serious expedition.',
+        access: 'Drive the Alaska Highway west from Whitehorse to Haines Junction; Parks Canada gives the distance as 160 km. The trailheads are dispersed and have no public transport. Check Yukon 511, weather, verified services and Parks Canada closures before the road leg.',
+        tradeoff: 'Two or three Haines Junction nights cost more lodging moves than a day trip but give the Kluane outing a local start and a weather-move option. Whitehorse is a services base, not a close trailhead.',
+        fallback: 'When cloud, wind, smoke, snow or a trail closure removes the high route or flightseeing, choose the currently open short option such as the Kokanee boardwalk or a lower road-side walk. If those are closed or icy, use an operating visitor centre or stay in town; do not replace a closed trail with an unmarked route.',
+        duration: 'Two or three nights in Haines Junction allow a transfer, one focused park day and a possible weather move. This is an itinerary allowance, not a minimum. Serious backcountry trips require their own permits, route-finding and equipment plan.',
+        combine: 'Sleep in Haines Junction before and after the park day. Do not drive 160 km from Whitehorse, take a long hike or flightseeing trip, then plan to drive the same distance back late.',
+        verify: 'Checked 12 October 2026: Parks Canada lists the Haines Junction Visitor Centre for 15 May–20 September and Thechàl Dhâl Visitor Centre for 20 May–6 September; its hiking page lists current trail lengths and says there is no public transport to trailheads. Recheck notices, Yukon 511, local forecast, fuel/services and flightseeing cancellation terms.',
+        routeChoices: {
+          heading: 'Choose the Kluane day by effort and access',
+          intro: 'All three choices start from a road-access plan. Confirm the exact trail notice and weather first; the listed distances and times come from Parks Canada and are not promises about your pace.',
+          options: [
+            ['Short and lower walking', 'Kathleen Lake · Kokanee boardwalk', 'Parks Canada describes a 0.5-km wheelchair-accessible boardwalk from the Kathleen Lake day-use area. It suits a scenic, lower-effort visit when the day-use area and route are open; it is not a substitute for an accessible journey from Whitehorse.'],
+            ['Moderate day-hike choice', 'St. Elias Lake', 'The Parks Canada trail listing gives 7.6 km return and 2–4 hours on easy terrain. Check the current trail, bridges, footing and daylight, and leave room for a slower return.'],
+            ['Longer mountain effort', 'Auriol or King’s Throne', 'Parks Canada lists Auriol as a 15-km loop taking 4–6 hours at moderate difficulty; King’s Throne is a steep 10-km return, 4–6 hours and difficult. Pick one only if the group, weather and return margin fit.']
+          ]
+        },
+        routeEyebrow: 'A Haines Junction park day', routeHeading: 'Check the gate, select one trail, return to the same base', routeStageLabels: ['Transfer', 'Check', 'Choose', 'Return'],
+        routeSourcesHeading: 'Trail status, visitor services and road conditions',
+        routeSourcesNote: 'Parks Canada publishes trail ratings, distances, seasonal visitor-centre windows and important bulletins. The Yukon road map and forecast are separate checks; flightseeing operators set their own weather and cancellation rules.',
+        sources: [
+          ['https://parks.canada.ca/pn-np/yt/kluane/visit', 'Parks Canada — Kluane location, Haines Junction base and seasonal facilities'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/activ/randonnee-hiking', 'Parks Canada — trail distances, listed effort and current trail notices'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/visit/services/kathleen', 'Parks Canada — Kathleen Lake day-use area and Kokanee boardwalk'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/visit/services/info', 'Parks Canada — visitor-centre seasonal hours'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/activ/aeriennes-flightseeing', 'Parks Canada — park-interior flightseeing information'],
+          ['https://511yukon.ca/', '511 Yukon — current Alaska Highway and Haines Road conditions'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — local forecast and warnings']
+        ],
+        faq: [
+          ['Is Kluane a Whitehorse day trip?', 'Whitehorse is 160 km from Kluane according to Parks Canada, and the dispersed trailheads have no public transport. A park hike as a same-day there-and-back leaves a long road day around the activity; base in Haines Junction for a focused route and weather margin.'],
+          ['Which trail is the easiest starting point?', 'Parks Canada lists the 0.5-km Kokanee boardwalk at Kathleen Lake as wheelchair accessible, and St. Elias Lake as a 7.6-km return, 2–4-hour route on easy terrain. Check current access and choose based on your actual needs and the day’s footing.'],
+          ['Can I take a bus to a trailhead?', 'Parks Canada says there is no public transportation to Kluane trailheads. Arrange a vehicle or confirm a specific operator and pickup before lodging or trail bookings.'],
+          ['Will flightseeing always run if booked?', 'No. Parks Canada describes the remote interior as generally accessed by flightseeing or a serious mountaineering or ski expedition. Weather can change flight operations; read the operator’s cancellation terms and use the road-accessible trails as a separate fallback.'],
+          ['Is the Kathleen Lake campground open in October?', 'The Parks Canada page checked on 12 October 2026 listed the campground and oTENTik as closed until May 2027. Recheck the page for a later season, and do not make those facilities the fallback for a shoulder-season trip.']
+        ],
+        stages: [
+          ['Make the road a separate trip leg', 'Choose a departure after checking Yukon 511 and the local forecast. Confirm fuel, food and lodging services directly; the site does not publish a guaranteed service timetable for this corridor.'],
+          ['Check the visitor and trail notices', 'Use the Parks Canada Kluane page for seasonal visitor-centre hours and important bulletins. As checked on 12 October 2026, its two listed visitor-centre periods had ended; a closed desk means you need the online trail and safety information before leaving town.'],
+          ['Choose one effort level', 'Use Kokanee for the short lake-side boardwalk, St. Elias Lake for a longer easy-terrain day, or a strenuous trail only when ability, forecast, trail status and daylight agree. Carry the gear and bear-safety plan appropriate to the route.'],
+          ['Return to Haines Junction', 'Finish close to your lodging and reassess the next day. Move a weather-sensitive flight or hike within your extra night if possible; do not add the long drive back to Whitehorse after a full outing.']
+        ],
+        watch: [
+          ['Trailhead access', 'Parks Canada says trailheads can be difficult to reach without a vehicle and that no public transportation serves them. Confirm your actual ride before selecting a trail.'],
+          ['Mountain weather and visibility', 'Kluane conditions can differ from a Whitehorse city forecast. Use the local forecast, park bulletins and operator call before committing to an exposed route or scenic flight.'],
+          ['Seasonal services', 'Visitor centres and Kathleen Lake overnight facilities publish seasonal dates. A listing from another month or year does not establish that a facility is open for your trip.']
+        ]
+      }),
+      g({
+        slug: 'miles-canyon-aurora', name: 'Miles Canyon & Aurora Planning', instrument: 'daylight-darkness clock', layout: 'two-clock-board',
+        imageQuery: 'Miles Canyon Whitehorse Yukon Canada', imageAlt: 'Yukon River canyon landscape near Whitehorse',
+        summary: 'Keep the Miles Canyon walk in daylight and treat northern lights as a separate, optional dark-sky night. Travel Yukon describes a roughly 15-km walking loop from town; the shorter vehicle approach and winter access use different roads, so decide the access version before setting out.',
+        access: 'Miles Canyon is reached on foot or by car, not by assuming a Whitehorse bus reaches the trailhead. Travel Yukon describes a 15-km downtown loop via the Millennium Trail and fish ladder, a separate south-side parking approach, and winter access from the north via Chadburn Lake Road.',
+        tradeoff: 'The canyon is a daylight landscape walk; aurora viewing is a late-night probability window with separate darkness, cloud, cold and return-transport needs. Pairing a long walk with an all-night drive can make both less safe.',
+        fallback: 'If the south access road is seasonally closed, use the north-side approach only after checking current road and trail conditions; if surfaces are icy or the trail network is not suitable, skip the canyon. If cloud, daylight or cold rules out an aurora stop, return early and keep the river or cultural day complete.',
+        duration: 'Choose either the roughly 15-km walking loop described by Travel Yukon or a shorter confirmed vehicle outing; keep any aurora attempt as a separate evening and protect the following morning. These are planning choices, not measured visit times.',
+        combine: 'Use Miles Canyon as a separate Whitehorse half- or full-day, not as a detour on the 160-km Kluane transfer. Add the late night only when the next morning has no long drive or fixed early departure.',
+        verify: 'Checked 12 October 2026: Travel Yukon describes the downtown Millennium Trail–fish ladder–canyon walk, the south access road’s winter closure and the north-side Chadburn Lake Road approach. The Canadian Space Agency says aurora visibility needs darkness and clear sky; check local weather, Yukon 511 for a drive and the chosen tour’s pickup, return and cold-weather terms.',
+        routeChoices: {
+          heading: 'Pick one daylight access route before planning the sky',
+          intro: 'The canyon and the aurora use different clocks. Select the trail or vehicle approach first; add a night outing only after checking darkness, clouds, cold and a safe return.',
+          options: [
+            ['Long walk · no canyon parking required', 'Millennium Trail to the fish ladder and canyon', 'Travel Yukon describes a roughly 15-km loop from Whitehorse via the Millennium Trail and fish ladder. Make this the main outdoor activity, check footing and daylight, and do not place an early highway drive after a late sky watch.'],
+            ['Shorter daytime visit · vehicle access', 'South access road and suspension bridge', 'Travel Yukon describes a short drive from town to a small parking area near the canyon and bridge, about seven kilometres out. Check the road and parking access on the day; do not read the distance as a promised drive time.'],
+            ['Night option · only if dark and clear', 'A separate aurora viewing window', 'The Canadian Space Agency says clear, dark skies are needed and notes that clouds and cold affect viewing. Use a confirmed tour pickup or a sober driver and legal parking plan; forecasts indicate a chance, not a display guarantee.']
+          ]
+        },
+        routeEyebrow: 'A daylight walk and a separate night decision', routeHeading: 'Choose the canyon access, rest, then make a go/no-go call', routeStageLabels: ['Choose', 'Walk', 'Rest', 'Decide'],
+        routeSourcesHeading: 'Canyon access, road status and dark-sky checks',
+        routeSourcesNote: 'Travel Yukon describes the named foot and seasonal vehicle approaches. The Canadian Space Agency advises checking the aurora forecast and local weather; a space-weather forecast cannot confirm clear sky or a safe road return.',
+        sources: [
+          ['https://www.travelyukon.com/en/see-and-do/activities/hiking-near-whitehorse-exploring-miles-canyon', 'Travel Yukon — Millennium Trail loop, Canyon access and seasonal road notes'],
+          ['https://511yukon.ca/', '511 Yukon — current road, visibility and wildlife-collision checks'],
+          ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — city transit schedule, not a Canyon shuttle promise'],
+          ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — darkness, clouds, forecasts and cold'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — local weather forecast and alerts'],
+          ['https://www.gi.alaska.edu/monitors/aurora-forecast', 'University of Alaska Fairbanks Geophysical Institute — aurora activity context']
+        ],
+        faq: [
+          ['Can I do Miles Canyon as a short city-centre stroll?', 'Not by assuming the canyon is next to downtown. Travel Yukon describes a roughly 15-km walk via the Millennium Trail and fish ladder or a separate vehicle approach; choose based on your distance, footing and return plan.'],
+          ['Is the south-side Canyon road open in winter?', 'Travel Yukon says the south access road closes in winter and describes year-round access on the north side via Chadburn Lake Road. Check current Yukon 511 and trail notices before relying on that approach.'],
+          ['Does a high aurora forecast mean the lights will appear?', 'No. The Canadian Space Agency says a dark, clear sky is needed; cloud, daylight and cold change the experience. Treat activity forecasts as one input, not a guaranteed event or a reason to keep driving when the road plan is unsafe.'],
+          ['Can I combine the canyon walk with a midnight tour?', 'Only if you can rest between them and have a confirmed pickup and return. The long walking loop plus a very late finish can create fatigue; avoid scheduling a long Kluane drive the following morning.'],
+          ['What should I do if clouds block the sky?', 'Call the night early. The canyon is a complete daylight outing on its own; use the next day for the riverfront or cultural plan rather than repeating an unsafe road search for a clear patch.']
+        ],
+        stages: [
+          ['Choose the access version', 'For the foot route, start in town and follow the Millennium Trail to the fish ladder and canyon as described by Travel Yukon. For the shorter visit, confirm a vehicle and current parking-road access before leaving.'],
+          ['Walk in daylight', 'Use the route that fits your ability and available light. In winter the published south access road is closed; check present conditions before using the north-side Chadburn Lake Road option.'],
+          ['Return, eat and rest', 'Finish the Canyon outing before deciding on an aurora tour. Set a warm-shelter plan, check the local forecast and agree on who is driving before dark.'],
+          ['Make a late-night go/no-go call', 'Choose a confirmed operator pickup or a legal, safe vehicle plan. Leave if cloud, cold, visibility or fatigue makes the return poor; never stop in a travel lane or treat an aurora forecast as a promise.']
+        ],
+        watch: [
+          ['Seasonal road closure', 'Travel Yukon’s access note says the south approach closes in winter. Road status and winter trail footing can still change; check current information before using the alternative.'],
+          ['Fatigue after midnight', 'The Aurora is not a reason to drive a long highway leg tired. Protect the following morning or skip the night outing.'],
+          ['Forecast versus sky', 'Activity, darkness and cloud are separate conditions. A strong geomagnetic forecast cannot clear cloud or extend summer darkness.']
+        ]
+      })
     ]
   }),
 
   defineCanadaCluster({
     slug: 'yellowknife-great-slave', name: 'Yellowknife & Great Slave Lake', region: 'Northwest Territories', band: 'north', family: 'aurora-lake-grid',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
     label: 'Subarctic lake capital · old town, winter road and dark sky', tagline: 'the sky is one layer of the trip, not the whole promise.',
-    hubIntro: 'Yellowknife combines a small lake-side capital, seasonal Great Slave Lake access and famous aurora potential. Build a daylight city/lake plan first, then add dark-sky time without promising a display.',
-    stay: 'Three nights gives a basic weather sample; four or five nights improves flexibility for aurora, winter activities and a road branch.',
-    transfer: 'City buses/taxis cover the urban core. Ingraham Trail and winter lake/ice-road experiences need road-condition knowledge, a vehicle/tour and seasonal legality.',
-    season: 'Deep winter brings extreme cold and ice-road possibilities; shoulder aurora seasons can be milder; summer has very long daylight and different lake access.',
-    fallback: 'Museums, Old Town and community-scale food/culture make the trip useful when cloud hides the sky or roads close.',
+    hubIntro: 'Yellowknife sits on Great Slave Lake, but a city-bus day, a lake-edge walk, an aurora night and the Ingraham Trail are four different operating plans. Choose an urban base first, reserve late nights as optional weather windows, and add the highway only with a current road and park check.',
+    stay: 'Three nights gives you two possible evening windows and a daylight city day; four or five nights adds recovery time and one separate Ingraham Trail day. Keep a final night near your departure point: a late aurora return or a road outing should not feed directly into a tight flight connection.',
+    transfer: 'The City bus network serves Yellowknife, with Route 1 as the main spine and reduced or no service on some days and holidays; confirm the live schedule for your date. It is not a shuttle to the Ingraham Trail. Use a confirmed vehicle, licensed operator or arranged transfer for highway stops, and check DriveNWT before leaving town.',
+    season: 'Long summer daylight supports lake and trail days but limits dark-sky hours. Autumn and late winter can offer longer nights, yet cloud, snow, wind chill and short daylight change comfort and access. Territorial campgrounds are seasonal; the 2026 North Slave list shows 15 May–15 September for Prelude and Reid Lake, while day-use facilities may not be maintained off-season.',
+    fallback: 'If cloud removes an aurora window, keep the following morning slow and move the city or museum plan into daylight. If highway status, wind chill or park operations make the Ingraham Trail a poor choice, stay in the urban grid; do not replace a cancelled road day with an unofficial ice crossing or a rushed airport return.',
     sources: [
-      ['https://www.yellowknife.ca/en/living-here/transit.aspx', 'City of Yellowknife — transit information'],
-      ['https://www.nwtparks.ca/', 'Northwest Territories Parks — territorial parks and visitor information'],
-      ['https://www.dot.gov.nt.ca/Highways', 'Government of Northwest Territories — highways and road conditions']
+      ['https://www.yellowknife.ca/transit/routes-and-schedules', 'City of Yellowknife — bus routes and schedules'],
+      ['https://drivenwt.ca/', 'Government of the Northwest Territories — DriveNWT road status'],
+      ['https://www.nwtparks.ca/plan-your-trip/road-trips/ingraham-trail', 'Northwest Territories Parks — Ingraham Trail route and kilometre markers'],
+      ['https://www.nwtparks.ca/visiting-parks/operating-dates', 'Northwest Territories Parks — operating dates and off-season limits'],
+      ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — aurora viewing conditions'],
+      ['https://weather.gc.ca/', 'Environment and Climate Change Canada — forecasts and alerts'],
+      ['https://spectacularnwt.com/communities/north-slave/yellowknife/', 'Northwest Territories Tourism — Yellowknife and Old Town context'],
+      ['https://www.pwnhc.ca/en/visit', 'Prince of Wales Northern Heritage Centre — visitor information']
+    ],
+    firstVisitPlan: {
+      heading: 'Build the trip around sleep, daylight and one road day',
+      intro: 'These are alternate trip shapes. The Ingraham Trail is a separate highway day, and aurora is a chance to observe rather than a booked performance. Keep the last night near the airport or your onward transport.',
+      days: [
+        ['Three nights · city first', 'Use arrival day for the urban grid and a short Old Town orientation. Keep one full daylight block for the Prince of Wales Northern Heritage Centre or a lake-edge walk. Leave two nights open for a tour or safe, preplanned viewing location; if one is cloudy, protect sleep before trying the other.'],
+        ['Four nights · add a weather margin', 'Spend the first full day in town, choose one late viewing night, then keep the next morning light. Use a second night only if the forecast, operator plan and your energy all support it. This gives cloud a chance to move through without converting every night into a cold, tiring drive.'],
+        ['Five nights · add one Ingraham Trail objective', 'Set aside a separate daylight road day for one park or lakeshore stop, with a declared turnaround and live road check. Do not put it after a midnight return or before a flight. If the road or park status fails the check, stay in Yellowknife and use the time for the museum, Old Town or a rest day.']
+      ]
+    },
+    faq: [
+      ['How many nights make aurora viewing less rushed?', 'Three nights gives more than one possible evening; four or five adds rest and weather flexibility. None guarantees a display. Choose a tour or legal viewing place before dark and do not chase a forecast by driving unfamiliar roads while tired.'],
+      ['Does the Yellowknife bus reach the Ingraham Trail parks?', 'The City publishes urban bus routes and schedules; the Ingraham Trail is a highway corridor north of town, not a scheduled city-bus extension. Arrange a vehicle or confirmed local operator and check current park access.'],
+      ['Can I visit Dettah as an unplanned side trip?', 'Dettah is a living Yellowknives Dene community. Do not treat a map pin or a drive-by as permission for a cultural visit. Look for an explicitly community-led experience, follow local guidance, and do not use a Great Slave Lake ice road unless authorities have opened that exact crossing.'],
+      ['What should I check before the Ingraham Trail?', 'Check the exact DriveNWT segment and weather, the park page and advisory, the season for facilities, fuel and the return plan. Kilometre markers on the NWT Parks route start at Highway 4 north of Yellowknife; they are not total driving distance from a hotel.'],
+      ['What is a real fallback when clouds hide the aurora?', 'Sleep and use daylight for the museum, public Old Town routes or an indoor meal. A strong activity forecast cannot clear cloud, create darkness or make an unsafe road stop worthwhile.']
     ],
     guides: [
-      g({ slug: 'old-town-great-slave', name: 'Old Town & Great Slave Lake', instrument: 'lake-edge settlement map', layout: 'lake-atlas', imageQuery: 'Yellowknife Old Town Great Slave Lake Canada', imageAlt: 'Yellowknife and Great Slave Lake in the Northwest Territories', summary: 'Walk Old Town and the lake edge as a daylight introduction, then use one museum or viewpoint to understand why the city sits where it does.', access: 'Yellowknife is compact enough for taxi/bus/walking in the core, but winter cold radically changes comfortable walking distance.', tradeoff: 'The city day provides history and lake context; it intentionally does not depend on aurora or a remote winter-road excursion.', fallback: 'Extreme cold or wind shortens outdoor blocks and expands museum, café and indoor interpretation time.', duration: 'One full day is enough for a first city/lake introduction; spread it across two shorter days in severe cold.', combine: 'Pair with an evening aurora attempt only after a warm rest period.', verify: 'Check city transit, NWT weather warnings, museum hours, lake/ice access legality and local safety notices.', stages: [['Old Town orientation', 'Start in the historic lake-edge district and identify the safe public routes before approaching ice or shore.'], ['One viewpoint', 'Use a maintained hill/lookout for the settlement and lake scale.'], ['Warm cultural stop', 'Choose a museum or local institution to add northern and Indigenous context.'], ['Rest before darkness', 'Return to lodging before any separate late-night sky plan.']], watch: [['Extreme cold', 'Walking time must be set by temperature/wind chill, not normal city distance.'], ['Ice assumptions', 'Never step onto lake ice because locals or vehicles appear present elsewhere; use current official/local guidance.'], ['Private/residential space', 'Old Town is lived-in; photograph respectfully from public areas.']] }),
-      g({ slug: 'aurora-dark-sky', name: 'Yellowknife Aurora Planning', instrument: 'probability-and-cold board', layout: 'two-clock-board', imageQuery: 'Yellowknife aurora borealis Northwest Territories Canada', imageAlt: 'Aurora above the subarctic landscape near Yellowknife', summary: 'Plan multiple optional night windows with warm transport and shelter, treating cloud and solar activity as probabilities rather than a guaranteed performance.', access: 'Choose a reputable tour, lodge product or safe self-drive site with explicit winter-road, communication and warm-shelter planning.', tradeoff: 'Staying several nights improves opportunity but consumes sleep and budget; a strong itinerary keeps daylight activities modest after late nights.', fallback: 'Cloud means sleep, not failure. Use daytime lake, museum and road activities so the trip retains value without a display.', duration: 'Three or more nights is more resilient than a one-night gamble; each viewing night needs recovery time.', combine: 'Pair with light daytime blocks. Do not schedule a long remote drive early after a 2 a.m. return.', verify: 'Check weather/cloud, road conditions, operator pickup/cancellation rules and aurora forecasts as non-guaranteed indicators.', stages: [['Protect several windows', 'Do not concentrate all expectation on the first clear-looking forecast.'], ['Dress for standing still', 'Use operator/local cold guidance and warmer layers than a daytime walk requires.'], ['Wait safely', 'Use a warm shelter/vehicle and legal stopping area while conditions develop.'], ['End before fatigue becomes unsafe', 'Return with enough sleep margin for the next day’s road or flight.']], watch: [['No guarantee', 'Forecasts cannot guarantee visible aurora at a specific time or intensity.'], ['Cold injury', 'Photography encourages long periods without movement; protect hands, feet and batteries.'], ['Unsafe roadside stopping', 'Dark-sky value does not justify stopping on an unapproved shoulder or ice surface.']] }),
-      g({ slug: 'ingraham-trail', name: 'Ingraham Trail & NWT Parks', instrument: 'subarctic road checkpoint', layout: 'roadbook', imageQuery: 'Ingraham Trail Northwest Territories lakes Canada', imageAlt: 'Subarctic lake and boreal landscape along the Ingraham Trail', summary: 'Use one Ingraham Trail park or lake objective with a declared turnaround, checking highway and winter-road status before leaving Yellowknife.', access: 'A suitable vehicle, tour or local transport plan is needed beyond the city. Road and winter-road conditions can change quickly.', tradeoff: 'The corridor gives boreal lakes and quieter landscape, but services are limited and winter decisions carry real risk.', fallback: 'Road closure, storm or extreme cold should keep the day in Yellowknife rather than forcing a remote objective.', duration: 'A half to full day for one park/lake sector; longer winter-road travel is a separate expedition product.', combine: 'Pair with Yellowknife nights, not a tight flight departure or exhausted post-aurora morning.', verify: 'Check NWT highway/winter-road status, park opening, weather, fuel, communications and current local travel advice.', stages: [['Road-status check', 'Confirm the exact highway/winter-road segment before leaving cell-rich urban areas.'], ['One park objective', 'Choose one territorial park, lake or trail based on season and legal access.'], ['Turn at the declared point', 'Do not extend the road because conditions look easy at the first stop.'], ['Return before dark/cold compounds risk', 'Reach Yellowknife with fuel, daylight and driver attention in reserve.']], watch: [['Winter-road legality', 'Ice roads open and close officially; appearance is not permission.'], ['Limited services', 'Fuel, toilets and mobile coverage are not continuous.'], ['Wildlife and cold', 'A breakdown has higher consequences in subarctic temperatures.']] })
+      g({
+        slug: 'old-town-great-slave', name: 'Old Town & Great Slave Lake', instrument: 'lake-edge settlement map', layout: 'lake-atlas', imageQuery: 'Yellowknife Old Town Great Slave Lake Canada', imageAlt: 'Boats and homes at the edge of Great Slave Lake in Yellowknife',
+        summary: 'Read Yellowknife through public Old Town streets, the Great Slave Lake shoreline and one indoor cultural anchor. The route is a lived-in neighbourhood walk; lake ice and private docks are not extensions of the sidewalk.',
+        access: 'Start from the downtown grid by confirmed City bus, taxi or a planned walk. Check the bus schedule for your date; the route between downtown and Old Town is not one continuous transit promise. Pilot’s Monument includes a climb, while the Prince of Wales Northern Heritage Centre is a separate indoor stop with published accessibility information.',
+        tradeoff: 'Old Town gives the lake-edge settlement scale, public art and the harbour context; the museum gives a deeper indoor history stop. Choose the exposed shoreline and viewpoint in fair conditions or let the museum carry the day in severe cold. Do not try to add a remote Ingraham Trail park to this urban walk.',
+        fallback: 'Strong wind, ice or a steep/uneven approach can make the viewpoint a poor fit. Stay on public streets, shorten the outdoor segment and use the accessible museum visit if it suits your needs. If the museum is closed on your date, use a checked indoor meal or split the walk into two short blocks rather than assuming another institution is open.',
+        duration: 'Allow a half day for a short public-street orientation or one unhurried day when combining Old Town with the heritage centre. These are planning ranges, not measured walk times; winter surfaces, mobility and the museum’s current hours change the sequence.',
+        combine: 'Pair Old Town with the Prince of Wales Northern Heritage Centre only if you have a confirmed transfer and enough daylight. Leave several hours to rest before a tour or aurora outing; do not make this a late-night-to-road-day chain.',
+        verify: 'Checked 12 October 2026: NWT Tourism describes Old Town as a living community; the city publishes bus routes and schedules; the Prince of Wales Northern Heritage Centre lists seasonal visiting hours and accessibility details. Check the exact date and local notices before setting out.',
+        routeChoices: { heading: 'Choose a public route by footing and energy', intro: 'The waterfront, viewpoint and museum are distinct stops. Pick a route that leaves a warm return and keeps residents’ homes and working docks private.', options: [
+          ['Short outdoor loop', 'Public Old Town streets and shoreline', 'Use the publicly accessible street grid for a daylight orientation and lake view. Stay off private docks and buildings; turn back if wind, ice or shoreline conditions make the edge uncomfortable.'],
+          ['Viewpoint emphasis', 'Pilot’s Monument and the harbour outlook', 'Choose this when you want the broad lake-and-settlement view and can manage a hill climb and exposed conditions. Confirm your transfer and return before starting.'],
+          ['Indoor history', 'Prince of Wales Northern Heritage Centre', 'Choose the museum as the anchor when cold, wind or mobility makes a longer outdoor walk unappealing. Check current open days and accessibility details; treat its hours as date-sensitive.']
+        ]},
+        sources: [
+          ['https://spectacularnwt.com/attractions/yellowknifes-old-town/', 'Northwest Territories Tourism — Yellowknife Old Town'],
+          ['https://spectacularnwt.com/communities/north-slave/yellowknife/', 'Northwest Territories Tourism — Yellowknife and community context'],
+          ['https://www.yellowknife.ca/transit/routes-and-schedules', 'City of Yellowknife — routes and schedules'],
+          ['https://www.pwnhc.ca/en/visit', 'Prince of Wales Northern Heritage Centre — hours and accessibility'],
+          ['https://ykdene.com/', 'Yellowknives Dene First Nation — community information']
+        ],
+        faq: [
+          ['Is Old Town an open-air attraction?', 'It is also a lived-in neighbourhood. Stay on public streets and marked public areas, respect home privacy and working docks, and do not cross onto lake ice or private property.'],
+          ['Can I walk from downtown to Pilot’s Monument?', 'The neighbourhood can be explored on foot, but the route length, hill, winter footing and weather matter. Check the exact transit option and return for your date, and choose the indoor museum instead if cold or mobility makes the climb unsuitable.'],
+          ['Is the Prince of Wales Northern Heritage Centre open every day?', 'No daily schedule should be assumed. Its visitor page publishes current hours and accessibility information; recheck before planning around a visit. The hours reviewed on 12 October 2026 are a dated snapshot.'],
+          ['Can I walk onto Great Slave Lake in winter?', 'Only where an authority has opened and marked a specific route for current conditions. Shore ice, vehicle tracks or a map line do not prove that ice is safe or legally open. This walking guide does not include an ice crossing.']
+        ],
+        stages: [
+          ['Choose the day’s anchor', 'Check the forecast, daylight, transit and museum hours. Decide whether the climb to Pilot’s Monument, the shoreline walk or the indoor heritage centre is the main objective.'],
+          ['Enter Old Town on public streets', 'Use a confirmed bus, taxi or planned walk to the district. Follow public routes, read heritage plaques and murals from the sidewalk, and keep homes, yards and private docks private.'],
+          ['Add the lake view only if conditions allow', 'Use the designated public viewpoint or a safe shoreline area in daylight. Wind exposure, snow and uneven footing can turn a short map distance into a demanding return; do not step onto ice.'],
+          ['Warm up and reset', 'Return to the urban grid for the museum if it is open or a checked indoor stop. Leave a real rest window before any separate late-night aurora outing.']
+        ],
+        watch: [
+          ['Footing and wind chill', 'Ice, snow, wind and cold change the time you can stand still. Shorten the exposed block early rather than waiting until hands or feet are numb.'],
+          ['Residential privacy', 'Old Town is a neighbourhood, not a set. Keep to public streets, do not peer into homes or enter a dock, and follow local requests about photography.'],
+          ['Transit and hours', 'City transit schedules, holiday service and museum hours vary. Verify both the outward and return legs before treating the route as car-free.']
+        ]
+      }),
+      g({
+        slug: 'aurora-dark-sky', name: 'Yellowknife Aurora Planning', instrument: 'probability-and-cold board', layout: 'two-clock-board', imageQuery: 'Yellowknife aurora borealis Northwest Territories Canada', imageAlt: 'Aurora above the subarctic landscape near Yellowknife',
+        summary: 'Give aurora more than one optional night, then gate each outing on darkness, cloud, cold, a safe return and a real rest plan. Solar and local forecasts help with timing; neither predicts a guaranteed display.',
+        access: 'Book a named tour with a confirmed pickup, warm shelter and cancellation terms, or choose a legal viewing location with a vehicle, winter readiness and communications plan. Do not improvise a roadside pullout, drive onto lake ice or treat an aurora forecast as road advice.',
+        tradeoff: 'Several nights improve the chance to encounter suitable darkness and clearer sky, but late returns consume sleep and can make the next day unsafe. Protect at least one recovery morning and keep the Ingraham Trail off the schedule after a late night.',
+        fallback: 'When cloud or fatigue closes the night, sleep. Reassign the daylight block to the museum, Old Town or an indoor meal; if another night remains, check conditions again without promising a sighting or driving farther to chase a forecast.',
+        duration: 'Plan at least three nights if aurora is a central interest; four or five allows one rest day and a separate road day. The number is a planning buffer, not a forecast of how many nights will be clear.',
+        combine: 'Use a light daylight schedule after a late return. Combine a viewing tour with an easy urban day, not an early flight, long highway drive or strenuous cold-weather outing.',
+        verify: 'Check darkness and local cloud/precipitation with Environment and Climate Change Canada, the Canadian Space Agency’s viewing guidance, current road status and the named operator’s pickup and cancellation plan. Solar activity is only one condition.',
+        routeChoices: { heading: 'Select a viewing setup before checking the sky', intro: 'Choose the return system first. A promising forecast does not make a site reachable, warm or safe for an unprepared driver.', options: [
+          ['Warmest logistics', 'Named aurora operator', 'Confirm pickup point, return time range, warm shelter, clothing advice, cancellation/refund terms and whether the operator changes sites. Ask directly about accessibility and any mobility needs.'],
+          ['Independent plan', 'Legal site with a prepared driver', 'Choose a currently permitted public location, verify the exact route and parking rules, carry winter-appropriate supplies and a warm retreat, and agree on a turnaround time before leaving. Never stop in a live lane or unapproved shoulder.'],
+          ['No-go night', 'Cloud, wind chill or fatigue wins', 'Stay indoors and protect sleep when cloud, extreme cold, unsafe roads or driver fatigue remove the margin. Use another night only if it remains in the itinerary; do not chase the lights across unfamiliar roads.']
+        ]},
+        sources: [
+          ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — viewing conditions and preparation'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — local weather and alerts'],
+          ['https://spaceweather.gc.ca/forecast-prevision/solar-solaire/aurora-aurore-en.php?lang=en', 'Natural Resources Canada — Space Weather Canada aurora forecast'],
+          ['https://drivenwt.ca/', 'Government of the Northwest Territories — road status'],
+          ['https://www.yellowknife.ca/transit/routes-and-schedules', 'City of Yellowknife — urban bus service information']
+        ],
+        faq: [
+          ['How many nights guarantee that I will see aurora?', 'No number guarantees it. Multiple nights create more chances for darkness and clear sky, but cloud, geomagnetic activity and local conditions vary. Keep the trip worthwhile in daylight too.'],
+          ['Should I drive farther if the forecast looks stronger elsewhere?', 'Only if the exact road, weather, legal stopping place, driver readiness and return are safe. Forecast maps do not account for your vehicle or fatigue; a tour with confirmed transport may be the better choice.'],
+          ['What should I wear while waiting?', 'Follow current local and operator advice for severe cold and long periods standing still. Use layered, dry clothing, cover exposed skin and keep a warm shelter available; photography can make it easy to lose track of cold.'],
+          ['What is the fallback after a cloudy night?', 'End the outing and sleep. Use the next day for an indoor museum or a modest city walk, and reassess a later night only if your schedule and energy allow.']
+        ],
+        stages: [
+          ['Protect more than one window', 'Keep several nights available and mark the following morning as light. Do not schedule the fixed road day after a tour that may return late.'],
+          ['Check sky conditions separately', 'Review darkness, local cloud and precipitation, temperature, wind chill and the operator or road plan. Space-weather activity is one signal; it cannot remove cloud or create darkness.'],
+          ['Use the chosen transport system', 'Meet the named pickup or follow your prechecked legal route to an approved viewing place. Keep a warm shelter and communications plan; never stop on a highway shoulder or an unopened ice road.'],
+          ['Return at the planned threshold', 'Use the agreed end time and turn back if cloud, cold, visibility or fatigue degrades. Sleep before deciding on the next night; an empty forecast is not a reason to keep driving.']
+        ],
+        watch: [
+          ['Forecasts are probabilities', 'A high activity indicator cannot guarantee an aurora at your viewing spot. Darkness, cloud, horizon, precipitation and local light all matter.'],
+          ['Cold injury and equipment', 'Standing still is colder than walking. Protect fingers, face and feet, carry a warm retreat and do not remove gloves for repeated long camera sessions.'],
+          ['Driver fatigue and stopping', 'A midnight return raises risk. Do not chase a clear patch or park on a shoulder, closed road or lake ice; keep a confirmed pickup or a legal, safe vehicle plan.']
+        ]
+      }),
+      g({
+        slug: 'ingraham-trail', name: 'Ingraham Trail & NWT Parks', instrument: 'subarctic road checkpoint', layout: 'roadbook', imageQuery: 'Ingraham Trail Northwest Territories lakes Canada', imageAlt: 'Subarctic lake and boreal landscape along the Ingraham Trail',
+        summary: 'Treat the Ingraham Trail as a daylight highway outing with one park objective, a written turnaround and a checked return. Highway 4 begins just north of Yellowknife; NWT Parks markers measure from that start, and Tibbitt Lake has no facilities.',
+        access: 'Arrange a suitable vehicle or named local operator before choosing a park; City transit does not extend as a scheduled trail shuttle. Check DriveNWT for the exact Highway 4 segment, local weather, park advisories, operating dates and the service plan. Do not leave fuel, toilets, communications or a late arrival to chance.',
+        tradeoff: 'The corridor gives close access to boreal lakes and territorial park day-use areas, but kilometres accumulate beyond the city and services are limited. Choose one near-town stop for a short day, or drive farther only when daylight, park access and a safe return all fit.',
+        fallback: 'If a road notice, severe weather, cold, smoke or seasonal facility closure removes the margin, stay in Yellowknife. If you reach a park whose trail or facility is closed, turn back to the known access point; do not substitute an unmarked shoreline, private launch or unapproved winter crossing.',
+        duration: 'Budget at least a daylight half day for one near-corridor stop and more for farther parks, hiking or changing road conditions. NWT Parks describes the route as about 70 km from the start of Highway 4 to Tibbitt Lake; that figure excludes the drive from town to the highway and the return.',
+        combine: 'Keep this as its own day between two Yellowknife nights. Do not attach it to an aurora return, airport transfer, long winter-road trip or a second distant park unless you have checked the full driving and daylight plan.',
+        verify: 'Checked 12 October 2026: NWT Parks marks the trail from Highway 4 to Tibbitt Lake at about 70 km, identifies Cameron River Crossing at km 54.5 and lists no facilities at Tibbitt. Park dates vary; its 2026 North Slave campground list shows 15 May–15 September for Prelude and Reid Lake. Recheck DriveNWT, advisories and the selected park.',
+        routeChoices: { heading: 'Pick one turnaround before leaving town', intro: 'Trail kilometres start at Highway 4 north of Yellowknife and are not the full out-and-back distance from lodging. Choose by daylight, road status and the exact activity you want.', options: [
+          ['Shorter corridor', 'Prelude Lake area · Highway 4 km 28', 'Choose a nearer lake and park objective when you have a half day. Check the park page and operating dates: campground season and day-use access are not the same thing, and off-season facilities may not be maintained.'],
+          ['Longer day-use walk', 'Cameron River Crossing · km 54.5', 'Choose this only with enough daylight for the road, parking and current trail access. NWT Parks identifies a short route to the falls, but its live park page may report access restrictions; check advisories and footing before committing.'],
+          ['Turn back in town', 'Urban and indoor day', 'Choose Yellowknife if the road map, weather, vehicle, driver or park status does not support the trip. Use the museum or a public Old Town route and keep a separate road day for another visit.']
+        ]},
+        sources: [
+          ['https://www.nwtparks.ca/plan-your-trip/road-trips/ingraham-trail', 'Northwest Territories Parks — route map, kilometre markers and park stops'],
+          ['https://www.nwtparks.ca/visiting-parks/operating-dates', 'Northwest Territories Parks — campground dates and off-season facilities'],
+          ['https://www.nwtparks.ca/visiting-parks/advisories', 'Northwest Territories Parks — current park advisories'],
+          ['https://www.nwtparks.ca/find-a-park/cameron-river-crossing-territorial-park-day-use-area', 'Northwest Territories Parks — Cameron River Crossing access'],
+          ['https://drivenwt.ca/', 'Government of the Northwest Territories — current highway and winter-road status'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — weather alerts and forecasts']
+        ],
+        faq: [
+          ['Is the Ingraham Trail 70 km from my hotel?', 'No. NWT Parks describes roughly 70 km from the start of Highway 4 just north of Yellowknife to Tibbitt Lake. The hotel-to-highway leg and the return are additional; route markers are not a total-trip distance.'],
+          ['Can I drive to Tibbitt Lake for services?', 'No services are listed at the trail end. Treat fuel, water, food, washrooms, communications and turnaround as decisions to settle before leaving town.'],
+          ['Are Prelude Lake and Reid Lake campgrounds open year-round?', 'No. The operating page lists seasonal dates and warns that schedules may change. For 2026 both North Slave campgrounds are listed 15 May–15 September; day-use areas may be accessible off-season while facilities are unmaintained.'],
+          ['Can I combine the drive with aurora viewing?', 'Keep the highway day in daylight and separate it from a late viewing return. If fatigue or weather reduces driving margin, cancel the road outing and rest in town.'],
+          ['What if DriveNWT shows caution or closure?', 'Follow the current official status for the exact segment and any local direction. Do not treat an unplowed route, lake crossing or visually clear road as permission to continue.']
+        ],
+        stages: [
+          ['Set a single objective and turnaround', 'Choose the nearer Prelude Lake area, a farther Cameron River Crossing visit or no road day. Calculate the actual drive from town plus the return; trail marker distances begin at Highway 4 north of Yellowknife.'],
+          ['Check access on the day', 'Review DriveNWT, ECCC weather alerts, the selected NWT Parks page and advisories. Confirm that the road, park, trail, facilities and season fit your vehicle and daylight.'],
+          ['Leave town prepared', 'Set fuel, water, food, warm layers, communications and a latest return time before departure. Use marked public parking and the chosen park route; stay within your ability and current notices.'],
+          ['Turn while the margin remains', 'Return at the planned point, earlier if weather or footing changes. Do not extend to the trail end on impulse: NWT Parks lists no facilities at Tibbitt Lake.']
+        ],
+        watch: [
+          ['Distance is easy to misread', 'The roughly 70 km figure begins at Highway 4, just north of town, and ends at Tibbitt. Add the city approach and the return before selecting a stop.'],
+          ['Seasonal service is not access', 'An area may be reachable while campground facilities are closed or unmaintained. Read the specific park date and advisory rather than relying on a general open-road status.'],
+          ['No service at the end', 'Fuel, cell coverage, toilets and help are not continuous. A remote breakdown in severe cold carries more risk; turn around before supplies, light or attention run short.']
+        ]
+      })
     ]
   })
 ];

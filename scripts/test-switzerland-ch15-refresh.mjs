@@ -17,6 +17,22 @@ const laterCa15Routes = [
   '/canada/prince-edward-island/cavendish-north-shore/',
   '/canada/prince-edward-island/coastal-drives/'
 ];
+const laterCa16Ca18SearchRoutes = [
+  '/canada/',
+  '/canada/winnipeg-churchill/',
+  '/canada/winnipeg-churchill/forks-exchange/',
+  '/canada/winnipeg-churchill/human-rights-assiniboine/',
+  '/canada/winnipeg-churchill/churchill-hudson-bay/',
+  '/canada/whitehorse-kluane/',
+  '/canada/whitehorse-kluane/whitehorse-river/',
+  '/canada/whitehorse-kluane/kluane-haines-junction/',
+  '/canada/whitehorse-kluane/miles-canyon-aurora/',
+  '/canada/yellowknife-great-slave/',
+  '/canada/yellowknife-great-slave/old-town-great-slave/',
+  '/canada/yellowknife-great-slave/aurora-dark-sky/',
+  '/canada/yellowknife-great-slave/ingraham-trail/'
+];
+const laterCa16Ca18DateRoutes = laterCa16Ca18SearchRoutes.slice(1);
 const laterAustraliaGapRoutes = [
   '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
   '/australia/sydney-harbour-coast/manly-north-head/',
@@ -131,10 +147,11 @@ assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort
 const targetLocalized = new Set(locales.flatMap(({ prefix }) => targetRoutes.map((route) => `${prefix}${route}`)));
 const laterCa15Localized = new Set(locales.flatMap(({ prefix }) => laterCa15Routes.map((route) => `${prefix}${route}`)));
 const laterAustraliaGapLocalized = new Set(locales.flatMap(({ prefix }) => laterAustraliaGapRoutes.map((route) => `${prefix}${route}`)));
+const laterCa16Ca18Localized = new Set(locales.flatMap(({ prefix }) => laterCa16Ca18DateRoutes.map((route) => `${prefix}${route}`)));
 const sourceDateChanges = [...sourceSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(sourceDateChanges, [...targetLocalized].sort(), 'the exact CH15 source terminal changes only the four target routes across five locales');
 const integrationDateChanges = [...currentSitemap].filter(([route, date]) => integrationSitemap.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterAustraliaGapLocalized].sort(), 'the cumulative integration changes only the four CH15, four later CA15 and eight exact AU gap routes across five locales');
+assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterCa16Ca18Localized, ...laterAustraliaGapLocalized].sort(), 'the cumulative integration changes only the four CH15, four later CA15, twelve exact CA16–CA18 and eight exact AU gap routes across five locales');
 for (const route of targetLocalized) assert.equal(currentSitemap.get(route), switzerlandCh15IsoDate, `${route} carries the CH15 review date`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
@@ -146,8 +163,9 @@ assert.equal(sourceSearch.length, baseSearch.length, 'the CH15 source terminal r
 assert.equal(integrationSearch.length, currentSearch.length, 'the pre-CH15 integration and current search record counts match');
 for (const record of sourceSearch.filter((item) => !targetSet.has(item.url))) assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `CH15 source terminal changed a non-target search record: ${record.url}`);
 const laterCa15Set = new Set(laterCa15Routes);
+const laterCa16Ca18Set = new Set(laterCa16Ca18SearchRoutes);
 const laterAustraliaGapSet = new Set(laterAustraliaGapRoutes);
-for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !laterCa15Set.has(item.url) && !laterAustraliaGapSet.has(item.url))) assert.deepEqual(record, integrationSearch.find((item) => item.url === record.url), `CH15/CA15/AU-gap integration changed an undeclared non-target search record: ${record.url}`);
+for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !laterCa15Set.has(item.url) && !laterCa16Ca18Set.has(item.url) && !laterAustraliaGapSet.has(item.url))) assert.deepEqual(record, integrationSearch.find((item) => item.url === record.url), `CH15/CA15–CA18/AU-gap integration changed an undeclared non-target search record: ${record.url}`);
 for (const route of targetRoutes) assert.deepEqual(currentSearch.find((item) => item.url === route), sourceSearch.find((item) => item.url === route), `${route} search record matches the exact CH15 source terminal`);
 
 let totalBaseWords = 0;

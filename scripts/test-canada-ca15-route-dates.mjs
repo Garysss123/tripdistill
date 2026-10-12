@@ -5,6 +5,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { canadaAtlanticNorthClusters } from '../data/canada-atlantic-north-guides.mjs';
+import { laterCa16Ca18DatedRoutes, laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'cf9ae1b90a1e8e44ecd806b3b3aa5bd8735542f3';
@@ -79,9 +80,9 @@ assert.deepEqual(
   'Integrated CA15 search records must match the exact source terminal.'
 );
 assert.deepEqual(
-  canada.filter((item) => !targetSet.has(item.url)),
-  previousCanada.filter((item) => !targetSet.has(item.url)),
-  'Only the exact four CA15 Canada search records may differ from the CA14 base.'
+  canada.filter((item) => !targetSet.has(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)),
+  previousCanada.filter((item) => !targetSet.has(item.url) && !laterCa16Ca18SearchRoutes.includes(item.url)),
+  'Only the exact four CA15 and later CA16–CA18 Canada search records may differ from the CA14 base.'
 );
 for (const route of routes) {
   const current = canada.find((item) => item.url === route);
@@ -101,11 +102,12 @@ const sourceDates = readDates(sourceSitemap);
 const dates = readDates(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...sourceDates.keys()].sort(), [...previousDates.keys()].sort(), 'The CA15 source terminal must retain the exact CA14 sitemap URL set.');
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain unchanged.');
-const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
+const expectedSourceDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
 const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualSourceDateChanges, expectedDateChanges, 'The exact CA15 source terminal may change only the four PEI routes across five editions.');
+assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA15 source terminal may change only the four PEI routes across five editions.');
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa16Ca18DatedRoutes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => route.includes('/canada/') && previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four selected routes × five editions may change sitemap dates.');
+assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four selected CA15 and twelve later CA16–CA18 routes × five editions may change Canada sitemap dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be 12 October 2026.`);
 
 function collectText(node, output = []) {
@@ -175,7 +177,7 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect English Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  routes.map((route) => `${route.slice(1)}index.html`).sort(),
+  [...routes, ...laterCa16Ca18SearchRoutes].map((route) => `${route.slice(1)}index.html`).sort(),
   'Only the four selected English Canada pages may change.'
 );
 

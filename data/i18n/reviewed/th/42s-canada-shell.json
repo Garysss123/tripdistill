@@ -14,12 +14,8 @@
     "Compare eighteen complete regional hubs and fifty-four focused guides from Pacific cities and the Rockies to Atlantic coasts and the North.": "เปรียบเทียบศูนย์กลางภูมิภาคครบ 18 แห่งและคู่มือเจาะจง 54 ฉบับ ตั้งแต่เมืองแปซิฟิกและ Rockies ไปจนถึงชายฝั่งแอตแลนติกและภาคเหนือ",
     "Plan Canada →": "วางแผนแคนาดา →",
     "Canada Travel Guide — 18 Complete Regional Hubs | TripDistill": "คู่มือเที่ยวแคนาดา — ศูนย์กลางภูมิภาคครบ 18 แห่ง | TripDistill",
-    "Plan Canada through eighteen complete travel hubs and fifty-four focused guides spanning Pacific cities, the Rockies, Great Lakes, Quebec, Atlantic coasts, prairies…": "วางแผนแคนาดาผ่านศูนย์กลางเที่ยวครบ 18 แห่งและคู่มือเจาะจง 54 ฉบับ ครอบคลุมเมืองแปซิฟิก Rockies Great Lakes Quebec ชายฝั่งแอตแลนติก ทุ่งหญ้า…",
-    "Eighteen complete Canadian travel hubs and fifty-four focused local guides.": "ศูนย์กลางเที่ยวแคนาดาครบ 18 แห่งและคู่มือท้องถิ่นเจาะจง 54 ฉบับ",
     "How much of Canada fits into two weeks?": "สองสัปดาห์จัดแคนาดาได้มากแค่ไหน?",
-    "Choose two connected operating regions or one region plus one flight bridge. A coast-to-coast checklist spends too much of the trip in airports, cars or trains.": "เลือกภูมิภาคที่เชื่อมกันสองแห่ง หรือภูมิภาคเดียวกับช่วงบินเชื่อมหนึ่งช่วง เช็กลิสต์จากชายฝั่งถึงชายฝั่งใช้เวลาทริปมากเกินไปในสนามบิน รถ หรือรถไฟ",
     "Do I need a rental car in Canada?": "ต้องเช่ารถในแคนาดาไหม?",
-    "Not for every trip. Vancouver, Toronto, Montreal, Ottawa and Quebec City can support substantial car-free stays, while mountain parks, coastlines and northern routes often need a car, shuttle or booked operator.": "ไม่ใช่ทุกทริป Vancouver Toronto Montreal Ottawa และ Quebec City พักแบบไม่ใช้รถได้นาน ส่วนสวนภูเขา ชายฝั่ง และเส้นทางเหนือมักต้องใช้รถ รถรับส่ง หรือผู้ให้บริการที่จองไว้",
     "What changes fastest in Canada?": "อะไรเปลี่ยนเร็วที่สุดในแคนาดา?",
     "Wildfire smoke, winter roads, park reservations, marine weather, ferries, daylight and northern operator schedules can change the practical route quickly. Recheck official sources before departure.": "ควันไฟป่า ถนนฤดูหนาว การจองสวน อากาศทะเล เรือเฟอร์รี แสง และตารางผู้ให้บริการภาคเหนือเปลี่ยนเส้นทางที่ใช้ได้จริงอย่างรวดเร็ว ตรวจแหล่งทางการซ้ำก่อนออก",
     "plan the operating region before the postcard.": "วางแผนภูมิภาคที่เดินทางจริงก่อนภาพโปสการ์ด",
@@ -69,7 +65,6 @@
     "Yukon · 3 focused guides": "Yukon · คู่มือเจาะจง 3 ฉบับ",
     "Whitehorse is the service base; Kluane is a vast park region reached by road with weather, fuel and limited-service planning. Aurora is an optional sky…": "Whitehorse เป็นฐานบริการ Kluane เป็นเขตสวนใหญ่เข้าถึงทางถนน ต้องวางอากาศ น้ำมัน และบริการจำกัด แสงเหนือเป็นท้องฟ้า…",
     "Northwest Territories · 3 focused guides": "Northwest Territories · คู่มือเจาะจง 3 ฉบับ",
-    "Yellowknife combines a small lake-side capital, seasonal Great Slave Lake access and famous aurora potential. Build a daylight city/lake plan first,…": "Yellowknife รวมเมืองหลวงริมทะเลสาบเล็ก การเข้า Great Slave Lake ตามฤดู และโอกาสเห็นแสงเหนือดัง วางเมือง/ทะเลสาบกลางวันก่อน…",
     "Choose the transport after the geography.": "เลือกการเดินทางหลังเข้าใจภูมิศาสตร์",
     "Canada has excellent city transit and selective intercity rail, but neither eliminates mountain roads, ferry terminals, weather closures or long northern sectors.": "แคนาดามีขนส่งเมืองยอดเยี่ยมและรถไฟระหว่างเมืองบางเส้น แต่ไม่มีอย่างใดลบถนนภูเขา ท่าเรือเฟอร์รี การปิดเพราะอากาศ หรือช่วงเหนือยาวได้",
     "City transit": "ขนส่งเมือง",
@@ -99,11 +94,10 @@
     "Canada FAQ": "คำถามที่พบบ่อยเกี่ยวกับแคนาดา",
     "Immigration, Refugees and Citizenship Canada — visitor entry information": "Immigration, Refugees and Citizenship Canada — ข้อมูลเข้าประเทศผู้เยี่ยมชม",
     "Environment and Climate Change Canada — weather and alerts": "Environment and Climate Change Canada — อากาศและประกาศ",
-    "Parks Canada — national parks, historic sites and marine conservation areas": "Parks Canada — อุทยานแห่งชาติ แหล่งประวัติศาสตร์ และพื้นที่อนุรักษ์ทางทะเล",
     "Government of Canada — travel and transportation information": "รัฐบาลแคนาดา — ข้อมูลท่องเที่ยวและการเดินทาง",
-    "VIA Rail Canada — intercity passenger rail": "VIA Rail Canada — รถไฟโดยสารระหว่างเมือง",
     "Canada guide": "คู่มือแคนาดา",
     "Vancouver & North Shore": "Vancouver และ North Shore",
-    "Québec’s UNESCO-listed core reads as two connected but very different neighborhoods: the rampart-lined Upper Town on Cap Diamant and Lower Town around…": "ใจกลาง Québec ที่ขึ้นทะเบียนเป็นมรดกโลกของ UNESCO ประกอบด้วยสองย่านที่เชื่อมถึงกันแต่แตกต่างกันมาก คือ Upper Town ซึ่งมีแนวกำแพงเมืองและตั้งอยู่บน Cap Diamant กับ Lower Town รอบ…"
+    "Québec’s UNESCO-listed core reads as two connected but very different neighborhoods: the rampart-lined Upper Town on Cap Diamant and Lower Town around…": "ใจกลาง Québec ที่ขึ้นทะเบียนเป็นมรดกโลกของ UNESCO ประกอบด้วยสองย่านที่เชื่อมถึงกันแต่แตกต่างกันมาก คือ Upper Town ซึ่งมีแนวกำแพงเมืองและตั้งอยู่บน Cap Diamant กับ Lower Town รอบ…",
+    "The Forks and downtown Winnipeg near the rivers": "The Forks และใจกลาง Winnipeg ใกล้แม่น้ำ"
   }
 }
