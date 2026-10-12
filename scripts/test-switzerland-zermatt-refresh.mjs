@@ -65,7 +65,13 @@ const stMoritzRoutes = [
   '/switzerland/st-moritz-engadin/bernina-pontresina/',
   '/switzerland/st-moritz-engadin/muottas-diavolezza/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...interlakenRoutes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes].map((route) => `${locale.prefix}${route}`)));
+const stGallenRoutes = [
+  '/switzerland/st-gallen-appenzell/',
+  '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+  '/switzerland/st-gallen-appenzell/appenzell-village/',
+  '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...interlakenRoutes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes].map((route) => `${locale.prefix}${route}`)));
 
 function descendants(node) {
   return [node, ...(node.childNodes || []).flatMap(descendants)];

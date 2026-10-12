@@ -14,7 +14,9 @@ const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'bas
 const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
 const ch11Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-moritz-engadin');
 const ch11Routes = [`/switzerland/${ch11Cluster.slug}/`, ...ch11Cluster.guides.map((guide) => guide.url)];
-const editedRoutes = new Set([...expectedRoutes, ...ch11Routes]);
+const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
+const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
+const editedRoutes = new Set([...expectedRoutes, ...ch11Routes, ...ch12Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const protectedAssets = {
   'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5',
@@ -63,9 +65,9 @@ assert.equal(before.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no route was added or removed');
 
-const allowedDatedUrls = new Set(locales.flatMap((prefix) => ch11Routes.map((route) => `${prefix}${route}`)));
+const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes].map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page CH11 batch across five editions receives new dates after the verified CH10 source');
+assert.equal(changedDates.length, allowedDatedUrls.size, 'only the four-page CH11 and downstream CH12 batches across five editions receive new dates after the verified CH10 source');
 for (const [route, date] of changedDates) {
   assert.ok(allowedDatedUrls.has(route), `unexpected sitemap date change: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 sitemap date for ${route}`);
@@ -120,4 +122,4 @@ for (const route of expectedRoutes) {
   }
 }
 
-console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; only the four CH11 routes across five editions changed since a0da2c3; ${after.size} sitemap URLs and later drafts remain intact.`);
+console.log(`CH10 preservation checks passed: Basel’s ${expectedRoutes.length} routes remain dated and intact; only the four-page CH11 and CH12 batches changed dates since a0da2c3; ${after.size} sitemap URLs and later drafts remain intact.`);

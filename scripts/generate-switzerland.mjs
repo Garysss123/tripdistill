@@ -219,14 +219,20 @@ const countryGroups = [
 ];
 
 const deferredCountryCardCopy = {
-  'basel-rhine': 'Basel’s historic core, Rhine banks and unusually dense museum landscape sit close together, but the city still needs selection. Use the river as the…'
+  'basel-rhine': 'Basel’s historic core, Rhine banks and unusually dense museum landscape sit close together, but the city still needs selection. Use the river as the…',
+  'st-gallen-appenzell': 'St Gallen’s Abbey District, Appenzell’s compact village and the Alpstein mountains form three different travel modes within a short regional network. The key is not distance but elevation: culture and village days remain robust when the high trails or cable car are in cloud.',
+  'st-moritz-engadin': 'St Moritz is the transport and hotel anchor, but the Upper Engadin’s identity stretches through lakes, Pontresina and the Bernina corridor. Distances are modest by rail yet elevation and winter conditions remain real. Choose one landscape system per day instead of repeatedly returning to St Moritz between every stop.'
+};
+const deferredCountryCardAlt = {
+  'st-gallen-appenzell': 'Abbey District and old town of St Gallen'
 };
 
 function countryCards(bands) {
   return switzerlandClusters.filter((cluster) => bands.includes(cluster.band)).map((cluster) => {
     const image = cluster.guides[0].image;
     const copy = deferredCountryCardCopy[cluster.slug] || cluster.hubIntro;
-    return `<a class="ch-country-card" href="/switzerland/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(image.alt)}"><div><small>${escapeHtml(cluster.region)} · 3 focused guides</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(copy, 155))}</p><strong>Open the regional timetable →</strong></div><span>${String(switzerlandClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
+    const alt = deferredCountryCardAlt[cluster.slug] || image.alt;
+    return `<a class="ch-country-card" href="/switzerland/${cluster.slug}/" data-family="${escapeHtml(cluster.family)}"><img src="${image.src}" width="1600" height="1066" loading="lazy" alt="${escapeHtml(alt)}"><div><small>${escapeHtml(cluster.region)} · 3 focused guides</small><h3>${escapeHtml(cluster.name)}</h3><p>${escapeHtml(compact(copy, 155))}</p><strong>Open the regional timetable →</strong></div><span>${String(switzerlandClusters.indexOf(cluster) + 1).padStart(2, '0')}</span></a>`;
   }).join('');
 }
 
@@ -245,7 +251,13 @@ ${shellStart('<main id="main-content" class="page-content ch-country">')}
   <section class="ch-country-section"><div class="ch-band-heading"><span>Trip-length board</span><h2>Fewer bases, more weather flexibility.</h2></div><div class="ch-trip-grid"><article><strong>5–7 days</strong><h3>One city + one mountain/lake region</h3><p>Example: Zurich + Lucerne, or Bern + Jungfrau. Keep one flexible day instead of racing across language regions.</p></article><article><strong>8–10 days</strong><h3>Two or three connected bases</h3><p>Use one mainline rail corridor, then add one alpine branch. Let weather decide the order of mountain and lowland days.</p></article><article><strong>12–14 days</strong><h3>Add a contrasting region</h3><p>Ticino, Engadin or western Lake Geneva becomes worthwhile when the transfer buys a genuinely different landscape and culture, not another hotel key.</p></article></div></section>
   <section class="ch-country-section"><div class="ch-band-heading"><span>Season board</span><h2>Read elevation before the calendar label.</h2></div><div class="ch-season-grid"><article><strong>Winter</strong><p>Lowland cities remain usable while mountain transport, snow conditions and daylight redefine high routes. Resort operations are not the same as summer hiking access.</p></article><article><strong>Spring</strong><p>Valleys can feel mild while high trails remain snowy or muddy. Shoulder-season lift maintenance makes exact operating dates important.</p></article><article><strong>Summer</strong><p>Long daylight helps lake and hiking plans, but thunderstorms, heat and crowding can still push the best mountain window earlier.</p></article><article><strong>Autumn</strong><p>Clear days can be excellent, but shortening daylight and seasonal closures reward conservative return times and current operator checks.</p></article></div></section>
   <section class="ch-country-section"><div class="ch-band-heading"><span>Planning answers</span><h2>Switzerland FAQ</h2></div><div class="faq-list">${countryFaq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${reviewDate}. Entry, fares, passes, timetables, lifts, trails and weather change; verify directly before travel.</p><ul>${sourceList(switzerlandCountrySources)}${switzerlandClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+  <section class="section sources"><h2>Official sources and photo credits</h2><p>Country planning and image licensing were reviewed on ${reviewDate}. Entry, fares, passes, timetables, lifts, trails and weather change; verify directly before travel.</p><ul>${sourceList(switzerlandCountrySources)}${switzerlandClusters.map((cluster) => {
+    const preservedTitles = {
+      'st-gallen-appenzell': 'Kathedrale St-Gallen.jpg',
+      'st-moritz-engadin': 'Switzerland-01761 - Lake St. Moritz (22298240145).jpg'
+    };
+    return imageCredit(preservedTitles[cluster.slug] ? { ...cluster.guides[0].image, displayTitle: preservedTitles[cluster.slug] } : cluster.guides[0].image);
+  }).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
 </main>${shellEnd()}</body></html>`;
 }
 

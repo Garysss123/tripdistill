@@ -114,6 +114,12 @@ const switzerlandCh11EditedRoutes = [
   `/switzerland/${switzerlandCh11Cluster.slug}/`,
   ...switzerlandCh11Cluster.guides.map((guide) => guide.url)
 ];
+const switzerlandCh12Lastmod = '2026-10-12';
+const switzerlandCh12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
+const switzerlandCh12EditedRoutes = [
+  `/switzerland/${switzerlandCh12Cluster.slug}/`,
+  ...switzerlandCh12Cluster.guides.map((guide) => guide.url)
+];
 const genevaLastmod = '2026-10-12';
 const genevaEditedRoutes = [
   '/switzerland/',
@@ -1000,6 +1006,11 @@ for (const route of switzerlandCh11EditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Switzerland CH11 route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: switzerlandCh11Lastmod });
+}
+for (const route of switzerlandCh12EditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Switzerland CH12 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: switzerlandCh12Lastmod });
 }
 
 for (const route of genevaEditedRoutes) {

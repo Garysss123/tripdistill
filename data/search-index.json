@@ -8733,7 +8733,7 @@
     "url": "/switzerland/st-gallen-appenzell/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "St Gallen’s Abbey District, Appenzell’s compact village and the Alpstein mountains form three different travel modes within a short regional network. The key is not distance but elevation: culture and village days remain robust when the high trails or cable car are in cloud.",
+    "summary": "St Gallen and Appenzell share a regional rail spine, but they solve different days: the Abbey District is an indoor-led city visit; Appenzell is a compact lived-in center; and Wasserauen is the gateway to a higher-exposure mountain choice. Decide which operating system fits the group, forecast and night base before counting stops.",
     "keywords": [
       "St Gallen & Appenzell",
       "Eastern Switzerland",
@@ -8745,12 +8745,12 @@
     "url": "/switzerland/st-gallen-appenzell/st-gallen-abbey/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Build St Gallen around the Abbey District and its library context, then use the old town’s oriel windows and compact streets as a supporting urban chapter.",
+    "summary": "Make the Abbey District the day’s anchor: choose the Abbey Library or a wider exhibition visit, then read the cathedral and old-town lanes as distinct stops before returning to rail.",
     "keywords": [
       "St Gallen Abbey District & Old Town",
       "St Gallen & Appenzell",
-      "manuscript-city folio",
-      "manuscript-folio"
+      "Abbey access ledger",
+      "abbey-access-ledger"
     ]
   },
   {
@@ -8758,12 +8758,12 @@
     "url": "/switzerland/st-gallen-appenzell/appenzell-village/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Use Appenzell village as a compact cultural center, then add one signed countryside walk instead of treating private farms and painted houses as an open-air theme park.",
+    "summary": "Read Appenzell on foot from its station to the ornamental houses of Landsgemeindeplatz, then choose a museum or one officially mapped public walk instead of stretching the village into a mountain day.",
     "keywords": [
       "Appenzell Village & Rolling Country",
       "St Gallen & Appenzell",
-      "village-to-meadow notebook",
-      "meadow-notebook"
+      "Appenzell village route folio",
+      "village-square-folio"
     ]
   },
   {
@@ -8771,12 +8771,12 @@
     "url": "/switzerland/st-gallen-appenzell/ebenalp-seealpsee/",
     "parent": "St Gallen & Appenzell",
     "type": "Local guide",
-    "summary": "Treat Ebenalp and Seealpsee as mountain terrain with a cable-car access point, choosing viewpoint, cave path or lake hike only when trails and weather are suitable.",
+    "summary": "Choose one mountain system from Wasserauen: the Ebenalp cableway and an open signed upper route, the official Seealpsee walking loop, or a lower Appenzell/St Gallen day when weather or service removes both.",
     "keywords": [
       "Ebenalp & Seealpsee",
       "St Gallen & Appenzell",
-      "pre-Alp trail gate",
-      "trail-gate"
+      "Alpine access decision board",
+      "alpine-access-board"
     ]
   },
   {

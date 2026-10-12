@@ -16,6 +16,9 @@ const locales = ['', '/zh', '/ja', '/ko', '/th'];
 const localeCodes = ['en', 'zh-Hant', 'ja', 'ko', 'th'];
 const batchCluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-moritz-engadin');
 const expectedRoutes = [`/switzerland/${batchCluster.slug}/`, ...batchCluster.guides.map((guide) => guide.url)];
+const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-gallen-appenzell');
+const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
@@ -49,14 +52,14 @@ assert.equal(Object.keys(switzerlandCh10GuideRefresh).length, 21, 'the 21 earlie
 assert.ok(switzerlandCh10CountryPageDraft.summary && switzerlandCh10CountryPageDraft.hero, 'the country-page draft remains preserved');
 assert.ok(switzerlandCh11ClusterRefresh.hubIntro && Object.keys(switzerlandCh11GuideRefresh).length === 3, 'only the St Moritz cluster is active in CH11');
 
-for (const route of allRoutes.filter((item) => !expectedRoutes.includes(item))) {
+for (const route of allRoutes.filter((item) => !preservedOrLaterRoutes.has(item))) {
   const relative = `${route.slice(1)}index.html`;
   const baseline = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
   baselinePages.set(route, baseline.toString('utf8'));
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains byte-identical to the verified CH10 source`);
 }
 
-const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => expectedRoutes.map((route) => `${prefix}${route}`)));
+const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(read('sitemap.xml'));
@@ -64,7 +67,7 @@ assert.equal(before.size, 4560, 'verified CH10 sitemap contains 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'CH11 adds or removes no sitemap route');
 const changedDates = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'only the four CH11 routes across five editions receive new dates');
+assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'only the CH11 and downstream CH12 routes across five editions receive new dates');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalizedRoutes.has(route), `unexpected changed date: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 date for ${route}`);
@@ -81,7 +84,7 @@ const englishSearch = JSON.parse(read('data/search-index.json'));
 const baseEnglishSearch = JSON.parse(execFileSync('git', ['show', `${baseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentTargetSearch = englishSearch.filter((record) => targetSet.has(record.url));
 assert.equal(currentTargetSearch.length, 4, 'each CH11 English route appears once in search');
-for (const record of englishSearch.filter((item) => !targetSet.has(item.url))) {
+for (const record of englishSearch.filter((item) => !preservedOrLaterRoutes.has(item.url))) {
   assert.deepEqual(record, baseEnglishSearch.find((item) => item.url === record.url), `non-target search entry ${record.url} is unchanged`);
 }
 
@@ -173,11 +176,11 @@ if (!englishOnly) {
     const ch11Batch = fs.readdirSync(batchDirectory).find((name) => name.includes('-ch11-st-moritz-pages-20261012.json'));
     assert.ok(ch11Batch, `${code} has the CH11 page translation batch`);
     const oldTranslations = {};
-    for (const filename of fs.readdirSync(batchDirectory).filter((name) => name.endsWith('.json') && name !== ch11Batch).sort()) {
+    for (const filename of fs.readdirSync(batchDirectory).filter((name) => name.endsWith('.json') && name !== ch11Batch && !name.endsWith('-ch12-st-gallen-pages-20261012.json') && !name.endsWith('-ch12-st-gallen-search-20261012.json')).sort()) {
       const batch = JSON.parse(fs.readFileSync(path.join(batchDirectory, filename), 'utf8'));
       if (batch.qualityStatus === 'reviewed') Object.assign(oldTranslations, batch.translations || {});
     }
-    for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+    for (const route of allRoutes.filter((item) => !preservedOrLaterRoutes.has(item))) {
       const expectedHtml = localizeHtml(baselinePages.get(route), oldTranslations, code, route);
       const actualHtml = fs.readFileSync(pathFor(prefix, route), 'utf8');
       assert.equal(actualHtml, expectedHtml, `${prefix}${route} remains byte-identical to its unchanged English source and earlier reviewed catalog`);
@@ -185,4 +188,4 @@ if (!englishOnly) {
   }
 }
 
-console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, exactly 20 dated edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and all non-target Swiss pages preserved.`);
+console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, 40 dated CH11/CH12 edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and all other non-target Swiss pages preserved.`);

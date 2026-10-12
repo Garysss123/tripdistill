@@ -90,9 +90,15 @@ const stMoritzRoutes = [
   '/switzerland/st-moritz-engadin/bernina-pontresina/',
   '/switzerland/st-moritz-engadin/muottas-diavolezza/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes, ...stMoritzRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const stGallenRoutes = [
+  '/switzerland/st-gallen-appenzell/',
+  '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+  '/switzerland/st-gallen-appenzell/appenzell-village/',
+  '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 60, 'the Bern/Emmental, Basel and CH11 batches date only their four routes in five editions each');
+assert.equal(dateChanges.length, 80, 'the Bern/Emmental, Basel, CH11 and downstream CH12 batches date only their four routes in five editions each');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `Bern/Emmental review date for ${url}`);
@@ -253,4 +259,4 @@ print(json.dumps({'root': tag(root), 'elements': len(nodes), 'texts': len(texts)
 `;
 const xmlResult = spawnSync('python3', ['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
 assert.equal(xmlResult.status, 0, `SVG must parse as XML and fit its geometry: ${xmlResult.stderr}`);
-console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, 60 cumulative sitemap dates including CH11, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);
+console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11/CH12, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);
