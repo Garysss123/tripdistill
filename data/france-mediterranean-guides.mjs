@@ -288,16 +288,31 @@ export const franceMediterraneanClusters = [
     band: 'mediterranean-island',
     family: 'port-limestone-access-chart',
     label: 'Port and limestone access chart',
-    tagline: 'Treat the city, national park and Cassis as separate access systems.',
-    hubIntro: 'Marseille’s port city, the Calanques National Park and Cassis–La Ciotat coast meet geographically but operate differently. Urban transit, summer reservations, fire closures, boat conditions and trail difficulty must be checked before choosing the route. Decide between city, land and sea before breakfast; switching access modes late can strand the return at the wrong port or trailhead.',
-    stay: 'Three nights support one city day, one park or boat day and one flexible coast day. Base near a useful Metro or tram line; a Vieux-Port view is less valuable if every departure needs a steep or indirect transfer.',
-    transfer: 'RTM serves the city and some park gateways; trains and buses reach Cassis or La Ciotat but stations may sit far from ports and trailheads. Boat excursions depart from named quays and are weather-dependent.',
-    season: 'Summer heat and wildfire rules can restrict massif access, sometimes daily. Mistral and sea state affect boats year-round; shoulder seasons improve walking temperatures but not necessarily transport frequency.',
-    fallback: 'Use Mucem, Fort Saint-Jean, Le Panier, Palais Longchamp or another city route when the park closes. A cancelled hike should not become an unauthorized cove entry; a cancelled boat should become land-side Marseille or Cassis.',
+    tagline: 'Choose the city, trail or boat first; each has a different return journey.',
+    countryCardIntro: 'Marseille’s port city, the Calanques National Park and Cassis–La Ciotat coast meet geographically but operate differently. Urban transit, summer reservations, fire closures, boat conditions and trail difficulty must be checked before choosing the route. Decide between city, land and sea before breakfast; switching access modes late can strand the return at the wrong port or trailhead.',
+    countryCardImageAlt: 'Marseille Old Port with Fort Saint-Jean and waterfront',
+    hubIntro: 'Marseille, the Calanques and the ports of Cassis and La Ciotat share a coastline, not one transport system. Start with the day’s gate: an Old Port museum loop, a signed park trail, a licensed boat or one smaller port town. Then check the return from that same gate. Fire decisions, Sugiton reservations, steep trail exits, station-to-port transfers and sea cancellations can each change the usable day.',
+    stay: 'Allow three nights in Marseille for one full city day, one full park-or-boat day and a flexible coast day. Add a fourth night if you want both a land hike and a separate sea excursion without stacking them. Stay around Vieux-Port/Canebière for the M1, museums and evening walk; Castellane/Prado suits an early B1 departure to Luminy. Saint-Charles is practical for rail arrivals, but budget the uphill or Metro/bus link to the waterfront. Book a separate Cassis night only when the port is the point of the trip and the onward station or bus link is confirmed.',
+    transfer: 'Use RTM M1 to Vieux-Port; Marseille Tourism lists bus 49 between the Old Port and Saint-Charles, bus 60 between the Old Port and Mucem (also serving Notre-Dame de la Garde), and buses 55/49 for Le Panier. B1 runs from Avenue du Prado near Place Castellane toward Luminy–PN des Calanques. Bus 78 serves Cassis; TER also links Marseille with Cassis and La Ciotat, but each station is a separate last-mile decision from its port. Check exact stops, service and return times for the date; these lines are not interchangeable.',
+    season: 'The park can close trail access day by day for fire risk, and the Route des Crêtes may close with it. The 2026 Sugiton reservation window covered 20–21 June, daily 27 June–30 August, and 5–6 and 12–13 September; those dates have passed. As of 12 October 2026, the 2027 dates and booking rules are not established here. Reopen the park notice for the next season rather than carrying the 2026 calendar forward. Wind and sea state can cancel boats in any month; shoulder-season trail comfort does not guarantee daily bus or boat frequency.',
+    fallback: 'If the massif closes, make the day a connected city walk: Vieux-Port → Le Panier/Vieille Charité → La Major → Fort Saint-Jean/Mucem, using bus 60 or M2/Joliette to shorten the return if needed. If a Marseille cruise is cancelled, use that same museum loop; if a Cassis boat is cancelled, stay around Quai Saint-Pierre and the town rather than improvising a cliff trail. A red fire-risk closure rules out land access even when a boat can sail.',
+    reviewedOn: { iso: '2026-10-12', label: '12 October 2026' },
+    reviewDateISO: '2026-09-19',
+    reviewDisclaimer: 'Sugiton dates quoted here are the 2026 rules, now past; this page does not claim 2027 dates or rules. Recheck fire, trail, transit, road, port and sea conditions for the travel date.',
     sources: [
-      ['https://www.marseille-tourisme.com/en/', 'Marseille Tourism — official city guide'],
-      ['https://www.calanques-parcnational.fr/en', 'Calanques National Park — official access and protection notices'],
-      ['https://www.rtm.fr/en', 'RTM — official Marseille transport information']
+      ['https://www.marseille-tourisme.com/en/organize-your-stay/practical-information/bus-marseille/', 'Marseille Tourism — city and Cassis bus lines'],
+      ['https://www.rtm.fr/en', 'RTM — official Marseille transit maps and day-of service'],
+      ['https://www.calanques-parcnational.fr/en', 'Calanques National Park — daily access and protection notices'],
+      ['https://www.calanques-parcnational.fr/en/news/sugiton-reservations', 'Calanques National Park — Sugiton reservation notice (2026 dates)'],
+      ['https://www.marseille-tourisme.com/en/discover-marseille/nature/the-calanques-of-marseille/how-to-access-the-calanques/the-calanques-of-marseille-by-boat/', 'Marseille Tourism — regulated boat departures and no-landing rule'],
+      ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/trajet-marseille-cassis', 'SNCF TER — live Marseille–Cassis planner'],
+      ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/trajet-marseille-la-ciotat', 'SNCF TER — live Marseille–La Ciotat planner']
+    ],
+    faq: [
+      ['How many nights should I plan for Marseille and the Calanques?', 'Three nights allow one city day, one park-or-boat day and one flexible coast day. Choose four if you want both a demanding land route and a separate sea trip; do not treat those as one outing.'],
+      ['Where should I stay for these routes?', 'Vieux-Port/Canebière keeps the M1, Old Port and central walk close. Castellane/Prado is a more direct base for the B1 toward Luminy. Saint-Charles helps rail arrivals but is uphill from the waterfront; compare the exact hotel-to-stop route before booking.'],
+      ['Can I visit Sugiton next summer without a reservation?', 'The 2026 rules required free advance booking on listed dates. Those dates are past, and this guide does not claim the 2027 calendar or rules. Check the National Park notice before buying non-refundable transport or accommodation around a specific day.'],
+      ['Will a Calanques boat take me ashore?', 'Marseille Tourism says regular excursions do not drop passengers in the coves. Weather can postpone or cancel departures; read the operator’s current route and landing terms before booking.']
     ],
     guides: [
       g({
@@ -306,34 +321,45 @@ export const franceMediterraneanClusters = [
         instrument: 'Harbor-to-hill civic section',
         layout: 'port-city-section',
         imageQuery: 'Marseille Old Port Fort Saint Jean Mucem France',
-        imageAlt: 'Marseille Old Port with Fort Saint-Jean and waterfront',
+        imageAlt: '2011 Marseille harbor view of a stone waterfront building under restoration scaffolding',
         purpose: 'Connect Marseille’s working Old Port to Le Panier and Mucem through one uphill-and-waterfront loop, keeping markets, museums and ferry operations in their real spaces.',
-        summary: 'Start at the Vieux-Port, climb once through Le Panier, cross Fort Saint-Jean into Mucem, then return along the water without repeating the same lanes.',
+        summary: 'Start at M1 Vieux-Port, walk Le Panier and La Major once, cross to Fort Saint-Jean and Mucem, then use bus 60 or the Metro for the return.',
         choices: [
-          ['Port and Panier streets', 'Use the fish-market context, Hôtel de Ville side and public lanes of Le Panier. This favors urban history over a long museum visit.'],
-          ['Mucem and Fort Saint-Jean', 'Give the museum and fort the main block, then use the Old Port as arrival and evening frame.'],
-          ['Harbor crossing and viewpoints', 'Use the Ferry Boat or a verified short harbor connection plus Pharo or Saint-Victor, keeping the north-bank museum route compact.']
+          ['Vieux-Port and Le Panier', 'Keep the walk north of the Old Port: fish market and Hôtel de Ville side, selected public Panier lanes, then Vieille Charité or La Major. Choose this shorter street-and-history version when museum interiors are not the priority.'],
+          ['Fort Saint-Jean and Mucem', 'Cross from the Panier side to the fort and Mucem, then give the exhibitions one substantial block. The outdoor fort and harbor views can be a shorter visit; check which spaces and bridges are open.'],
+          ['South-bank finish', 'After the north-bank loop, take bus 60 to Notre-Dame de la Garde or stay on the south quays around Saint-Victor. The hill basilica adds its own exposed climb/transfer and should replace, not be squeezed into, a full museum visit.']
         ],
-        access: 'Vieux-Port Metro is the central anchor. Marseille Saint-Charles sits uphill and requires Metro, bus or a purposeful stair approach; Mucem entrances and Fort Saint-Jean links may change with events.',
-        tradeoff: 'Notre-Dame de la Garde, a full Mucem visit and deep Panier walk do not fit easily together. The route gives up the distant hill or uses it as a separate half-day.',
+        access: 'Start at M1 Vieux-Port. Marseille Tourism lists bus 49 between the Old Port and Saint-Charles, 55/49 for Le Panier, and 60 between the Old Port and Mucem as well as Notre-Dame de la Garde. Use the bus when saving the uphill leg matters; check the live RTM stop and return. M2 Joliette is an alternative for the north side, not a substitute for checking the Mucem entrance.',
+        tradeoff: 'A full Mucem block, an unhurried Panier walk and Notre-Dame de la Garde do not form a compact single loop. Choose two: museum/fort plus Panier, or a shorter north-bank walk plus bus 60 to the hill.',
         stages: [
-          ['Orient at the Old Port', 'Begin under the Ombrière or a named quay, identify working-market space and the evening Metro entrance before walking north.'],
-          ['Climb through public Panier lanes', 'Use Vieille Charité or selected streets as the anchor, keeping resident doorways and service traffic clear.'],
-          ['Cross into Fort Saint-Jean and Mucem', 'Follow the open public links and museum ticket, choosing exhibitions rather than attempting every gallery.'],
-          ['Return along the harbor edge', 'Finish by Cathédrale de la Major or the quays, then use Metro or a verified ferry connection instead of climbing back through Le Panier.']
+          ['Orient at M1 Vieux-Port', 'Choose the north-bank side of the harbor and note the M1 entrance and bus 60 stop before setting off. Keep clear of the fish market and vessel boarding quays.'],
+          ['Walk the civic edge into Le Panier', 'Pass Hôtel de Ville, climb only the public lanes you intend to use, then make Vieille Charité or Place des Moulins the turn point. Do not add both a deep lane maze and a timed museum entry.'],
+          ['Continue by La Major to the fort and Mucem', 'Use the cathedral-side waterfront to reach Fort Saint-Jean, then the signed footbridge to Mucem J4 if open. Pick one exhibition block; the ticket and current access notice decide the interior sequence.'],
+          ['Close by the water, not by retracing the hill', 'Return along the J4/harbor edge and use bus 60, M2 Joliette or the M1 after checking the actual stop and service. If you chose Notre-Dame de la Garde, ride there as the final block and protect the bus 60 return.']
         ],
-        fallback: 'If museum or fort links close, use Vieille Charité, port streets and a south-bank Saint-Victor or Pharo route. In wind, avoid exposed footbridges when staff restrict access.',
+        fallback: 'If Fort Saint-Jean or the footbridge closes, keep the north side to Vieille Charité, La Major and the waterfront; take bus 60 to Notre-Dame de la Garde only if service and hill access remain open. In wind, follow staff limits on exposed links.',
         watch: [
           ['The port remains operational', 'Keep clear of fish sales, vessel boarding and service zones; use designated crossings.'],
           ['Le Panier is residential', 'Public art does not make every stair or courtyard a visitor space. Keep noise and groups controlled.'],
           ['Fort links can close in wind or events', 'Follow staff and current signage rather than relying on a saved museum shortcut.']
         ],
-        duration: 'Allow five to seven hours with Mucem and a meal; a port-and-Panier walk needs three to four hours.',
-        combine: 'Combine Old Port, Panier and Mucem. Keep Notre-Dame de la Garde, Calanques and Cassis for separate routes.',
-        verify: 'Check Mucem opening and bridge access, RTM service, port events and wind before setting the one-way loop.',
+        duration: 'Allow five to seven hours for the Old Port–Panier–Fort–Mucem loop with an exhibition visit and meal; a street-focused north-bank walk can use three to four hours. These are planning allowances, not museum timings.',
+        combine: 'Combine Vieux-Port, selected Panier lanes, La Major and Mucem. Add Notre-Dame de la Garde only by shortening the museum block; keep the Calanques and Cassis for separate days.',
+        verify: 'Check Mucem’s live opening and footbridge status, RTM lines 49/55/60, temporary port or event restrictions, and the route back to the hotel.',
+        siteContext: {
+          label: 'THREE WALKING ZONES',
+          heading: 'Cross the harbor once, then choose a finish.',
+          intro: 'The Old Port is the hinge between a compact north-bank history walk and a separate south-bank hill. Use the quay and transit line as the boundary; the steep lanes are not a flat waterfront stroll.',
+          details: [
+            ['South quay · M1 Vieux-Port', 'Start at the Ombrière or the market-side quay. Bus 49 links this area with Saint-Charles; the Metro is the predictable city return, subject to live RTM service.'],
+            ['North bank · Hôtel de Ville to Le Panier', 'Walk the public waterfront past Hôtel de Ville, then choose Vieille Charité or selected lanes toward Place des Moulins. Bus 55/49 can shorten the approach; check the precise stop rather than treating the district as level.'],
+            ['La Major · Fort Saint-Jean · J4', 'Continue by the cathedral waterfront to Fort Saint-Jean and Mucem J4. The footbridge links the sites when open. Bus 60 connects the Old Port with Mucem and Notre-Dame de la Garde, allowing a shorter return or a different final stop.']
+          ]
+        },
         sources: [
           ['https://www.mucem.org/en', 'Mucem — official museum and Fort Saint-Jean information'],
-          ['https://www.marseille-tourisme.com/en/discover-marseille/traditions/ferry-boat/', 'Marseille Tourism — official Old Port Ferry Boat guide']
+          ['https://www.marseille-tourisme.com/en/organize-your-stay/practical-information/bus-marseille/', 'Marseille Tourism — bus lines 49, 55 and 60'],
+          ['https://www.rtm.fr/en', 'RTM — live urban transit maps and service']
         ]
       }),
       g({
@@ -342,34 +368,52 @@ export const franceMediterraneanClusters = [
         instrument: 'Fire-wind-reservation gate',
         layout: 'national-park-gate',
         imageQuery: 'Calanques National Park Marseille France cliffs sea',
-        imageAlt: 'White limestone cliffs and blue water in Calanques National Park',
+        imageAlt: 'Aerial view of Port-Miou, Port-Pin and En-Vau along the Calanques limestone coast',
         purpose: 'Choose one legal Calanques access mode only after fire closure, reservation, trail difficulty, sea state and return transport agree.',
-        summary: 'A Sugiton reservation, a signed Marseille-side trail, a Cassis approach and a licensed boat are different products; the safest useful day commits to one.',
+        summary: 'Reach Luminy by RTM B1, check the fire-access gate and Sugiton reservation, then choose the lookout, steep cove descent or a licensed boat.',
         choices: [
-          ['Signed land route', 'Choose a trail from an official gateway matched to ability, heat and daylight. Carry water because services inside the massif are limited.'],
-          ['Licensed boat view', 'Use a named operator, route and quay when sea state permits. Boat viewing does not grant landing or swimming rights everywhere.'],
-          ['Accessible shore alternative', 'Use a Marseille beach, Côte Bleue or urban nature route when park access is closed. This is preferable to forcing a restricted gate.']
+          ['Luminy to the Sugiton lookout or cove', 'Take B1 toward Luminy–PN des Calanques. The lookout is about 25–30 minutes each way from the trail start; the cove adds a steep descent and a harder climb back. A lookout-only day is a real alternative, not a failed hike.'],
+          ['One licensed boat departure', 'Choose a current operator from the Old Port, Cassis or La Ciotat and read the named circuit. Marseille Tourism says regular cruises do not drop passengers ashore in the coves; sea conditions can cancel the trip.'],
+          ['Park-free city or shore day', 'When a fire notice closes the massif, stay on an authorized urban route: the Mucem/Fort/Panier loop or a supervised city beach with current access. Do not drive or walk to a barrier and improvise.']
         ],
-        access: 'Check the national park’s daily access decision, any reservation requirement and the RTM route to the exact gateway. Parking restrictions are strict; a map pin at a cove is not a legal vehicle approach.',
-        tradeoff: 'A strenuous hike and long boat excursion should not share one day. The route gives up collecting multiple calanques so water, heat and return margins remain safe.',
+        access: 'For the Marseille-side Sugiton gate, B1 boards on Avenue du Prado just beyond Place Castellane toward Luminy; leave at Luminy–PN des Calanques and follow the marked route. The National Park lists about 30 minutes to the belvedere and 45 minutes to the cove, with at least an hour for the steep return climb from the cove. These are walking segments, not a total-day estimate. Check same-day fire access and any reservation before taking the bus.',
+        tradeoff: 'Sugiton’s lookout is a shorter out-and-back; reaching the cove adds loose, steep terrain and a prolonged return climb. A boat shows the coast from the water but is not a trail transfer or beach landing. A red fire closure removes the land option entirely.',
         stages: [
-          ['Pass the official access gate', 'On the day, verify massif opening, reservation, weather and transport. If any required condition fails, activate the lower-risk alternative.'],
-          ['Reach one named trailhead or quay', 'Follow the official transit stop and signs, carrying sufficient water and sun protection or arriving early for the boat briefing.'],
-          ['Complete one route within limits', 'Stay on marked trails, obey swimming and landing rules, and turn back at the preset time rather than extending to another cove.'],
-          ['Exit before heat, wind or service worsens', 'Reach the bus, port or urban shore with an earlier backup and report any hazard through official channels.']
+          ['Check the gate before committing', 'Open the National Park’s same-day fire notice and, for Sugiton, the current booking rule. A 2026 notice required free advance reservations on its dated summer/weekend windows; by this review those dates have elapsed and 2027 dates are not published here.'],
+          ['Take B1 to Luminy–PN des Calanques', 'Board on Avenue du Prado by Place Castellane, then follow park signs. Carry water, food, walking shoes, a map and sun protection; there is no dependable trail-side refill.'],
+          ['Choose the lookout or the cove at the pass', 'The official park estimate is around 30 minutes to the belvedere and 45 to the cove; the steep return from the cove takes at least an hour. Turn back at the viewpoint if heat, footing or time no longer supports the descent.'],
+          ['Return by the same gate and earlier bus', 'Protect a margin for the climb, pauses and RTM service. A boat is a separate booked trip: check sea status, and do not plan to disembark in a cove unless the operator and park explicitly authorize that specific activity.']
         ],
-        fallback: 'When the massif closes, use Mucem, Frioul only if boats operate, a supervised urban beach or another official city nature route. Never bypass barriers or enter by an informal road.',
+        fallback: 'If land access closes, use the Old Port–Le Panier–Fort Saint-Jean/Mucem city loop. A boat may still operate only if the operator and sea conditions allow, but a sea trip is not a land-access workaround and regular excursions do not drop passengers into coves. Never bypass a barrier.',
         watch: [
           ['Fire closure is absolute', 'Daily summer decisions can prohibit access. Fines and rescue risk are secondary to the life-safety reason.'],
           ['Water and shade are limited', 'Carry enough water for the full route; there may be no refill or commercial service.'],
           ['Phone coverage does not replace preparation', 'Download official maps, tell someone the route and wear appropriate footwear.']
         ],
-        duration: 'Give a hike or boat route most of a day, including transit and briefing. A short shore alternative can use three to five hours.',
-        combine: 'Combine one park access mode with a simple Marseille meal or nearby shore. Keep Cassis town and the full city museum route separate.',
-        verify: 'Check the park’s same-day access bulletin, reservation, Météo-France fire and wind, RTM gateway service and licensed boat status immediately before departure.',
+        duration: 'Reserve most of a day for B1, trail, breaks and return; the lookout alone is a shorter walk but still needs the bus and current access check. Boat durations depend on the selected circuit. Do not combine a full hike and a long cruise.',
+        combine: 'Pair one access mode with a simple meal back in Marseille. Keep Cassis town, a second trail and the full Mucem visit for other days.',
+        verify: 'Check the National Park’s live fire closure and reservation notice, RTM B1 stop/service, heat and wind forecast, and the named licensed boat operator on the morning of travel. The 2027 reservation calendar is not stated as of 12 October 2026.',
+        siteContext: {
+          label: 'THREE ACCESS GATES',
+          heading: 'A map of the massif is not a single entrance.',
+          intro: 'Decide whether you want the Luminy lookout, a difficult cove descent, or a sea view from a vessel. Each starts at a different legal gate and has its own return.',
+          details: [
+            ['Luminy · Sugiton lookout', 'B1 from Avenue du Prado near Place Castellane reaches Luminy–PN des Calanques. The park estimates about 30 minutes on foot to the belvedere; this is the shorter signed out-and-back, still subject to daily closures.'],
+            ['Luminy · Sugiton cove', 'The National Park estimates around 45 minutes to reach the cove and warns the steep climb back takes at least an hour. Slippery rocks, heat and crowding can make the descent unsuitable; reaching the lookout is a valid turn-around.'],
+            ['Old Port · licensed boat', 'Marseille excursions depart from named Old Port quays; Cassis and La Ciotat have separate port operators. A cruise is a water-view product, not a drop-off at Port-Pin or En-Vau. Sea conditions and operator terms control departure.']
+          ]
+        },
+        faq: [
+          ['How long is the Sugiton walk?', 'The National Park lists about 30 minutes from Luminy to the belvedere and around 45 minutes to the cove. From the cove, it says to allow at least an hour for the steep return climb. Add your bus, breaks and day conditions; these segments are not a guaranteed round-trip time.'],
+          ['Does Sugiton need a reservation in 2027?', 'The 2026 notice listed free advance reservations for specific summer and weekend dates. Those dates are past; the 2027 period and rule are not claimed here. Recheck the National Park’s live Sugiton notice before fixing a date.'],
+          ['Can a cruise replace a closed trail?', 'It can be a separate sea excursion only if the operator is sailing. Marseille Tourism says regular cruises do not drop passengers in the coves, and a boat departure does not reopen closed land trails.']
+        ],
         sources: [
-          ['https://www.calanques-parcnational.fr/en', 'Calanques National Park — official daily access and conduct'],
-          ['https://www.rtm.fr/en', 'RTM — official transport to Marseille trail gateways']
+          ['https://www.calanques-parcnational.fr/en/belvedere-et-calanque-de-sugiton', 'Calanques National Park — Sugiton walk and Luminy access'],
+          ['https://www.calanques-parcnational.fr/en/news/sugiton-reservations', 'Calanques National Park — reservation rules and 2026 dates'],
+          ['https://www.calanques-parcnational.fr/en', 'Calanques National Park — daily fire access notices'],
+          ['https://www.marseille-tourisme.com/en/discover-marseille/nature/the-calanques-of-marseille/how-to-access-the-calanques/the-calanques-of-marseille-by-boat/', 'Marseille Tourism — boat access, weather and landing limits'],
+          ['https://www.rtm.fr/plan/ligne-B1?nt=RTM', 'RTM — B1 line map to Luminy']
         ]
       }),
       g({
@@ -378,34 +422,53 @@ export const franceMediterraneanClusters = [
         instrument: 'Station-port-cliff transfer chart',
         layout: 'two-port-cliff-chart',
         imageQuery: 'Cassis port Cap Canaille France Mediterranean',
-        imageAlt: 'Cassis harbor below the cliffs of Cap Canaille',
+        imageAlt: 'Cassis harbor seen from the waterfront, with boats and Cap Canaille beyond',
         purpose: 'Choose Cassis or La Ciotat as the port base and solve the station-to-waterfront link, then add one cliff, boat or cinema-history layer rather than racing between both towns.',
-        summary: 'Cassis offers a compact port and Calanques gateway; La Ciotat offers a larger working waterfront and cinema history. Their stations sit away from the postcard centers.',
+        summary: 'Choose Cassis or La Ciotat, confirm the inland station-to-port link, then add one boat, cliff-road viewpoint or town-history block.',
         choices: [
-          ['Cassis port day', 'Use the port, old streets and one official boat or short shore route. Station bus or taxi and summer crowding determine the day.'],
-          ['Cap Canaille viewpoint', 'Travel the Route des Crêtes only when road, wind and fire status permit. This is a car or tour layer, not a casual port walk.'],
-          ['La Ciotat waterfront', 'Use the old port, Eden Théâtre context and one nearby calanque or coastal walk through current local access.']
+          ['Cassis port and one boat circuit', 'Use Quai Saint-Pierre, the old harbor edge and one operator’s current calanque circuit. The train station is inland; solve the local transfer in both directions before choosing the departure.'],
+          ['Cap Canaille and Route des Crêtes', 'Treat the cliff road as a separate viewpoint outing from Cassis, using a confirmed vehicle or tour. Wind, fire rules and road barriers can close it; do not substitute an improvised walk along the carriageway.'],
+          ['La Ciotat old port and town', 'Build a walk around Port Vieux and the town’s cinema history, then add one currently open shore path only if local access and the station transfer fit. A train to La Ciotat is not a train to the quays.']
         ],
-        access: 'Cassis and La Ciotat rail stations are inland from their ports. Confirm the local bus, taxi or walk and final return; do not assume a coastal train drops visitors at the harbor.',
-        tradeoff: 'Both ports, a long boat trip and Route des Crêtes exceed one day. The route chooses one town and one coastal contract; adding both ports turns local transfers into the main experience.',
+        access: 'Marseille Tourism lists bus 78 for Cassis; check its actual start, stop, timetable and return for your date. SNCF TER offers live Marseille–Cassis and Marseille–La Ciotat planners, but those stations are inland from their ports. Confirm the local bus or taxi from the station to Quai Saint-Pierre or Port Vieux before booking a boat. Do not use a map’s straight-line walk as the last-mile plan.',
+        tradeoff: 'Choose Cassis or La Ciotat for the core of the day, then add one boat, cliff or town-history layer. Both ports plus a long boat trip and Route des Crêtes turn the day into transfers and leave little margin for a missed service.',
         stages: [
-          ['Complete the station-to-port link', 'At the station, locate the verified bus or taxi and note the evening return before entering the town center.'],
-          ['Read one working waterfront', 'Walk the harbor and old streets without blocking boats or markets, then confirm boat or road conditions.'],
-          ['Commit to sea, cliff or culture', 'Board the named boat, use an open road viewpoint or visit La Ciotat’s cinema and port layer. One choice owns the afternoon.'],
-          ['Return before traffic compresses the train', 'Leave the port with ample bus or taxi margin; summer road queues can erase a tight connection.']
+          ['Choose the port before the ticket', 'Compare Cassis port with La Ciotat Port Vieux, then use the live TER planner or bus 78 page for the actual terminal and return. Leave room for the inland station-to-port transfer.'],
+          ['Walk one waterfront zone', 'In Cassis, keep the port and old streets together around Quai Saint-Pierre. In La Ciotat, use Port Vieux and the town center as the walkable core; do not count the rail station as waterfront access.'],
+          ['Add one coast layer', 'Board a confirmed boat from that same port, choose a currently open Cap Canaille viewpoint by vehicle/tour, or stay with La Ciotat’s cinema-and-port history. Do not combine all three.'],
+          ['Return through the same last mile', 'Use the prechecked bus/taxi to the actual station and protect a margin for queues or service change. If the link is disrupted, stay in town and rebook rather than gamble on a final train.']
         ],
-        fallback: 'If boats or cliff roads close, stay in the selected port town with museum, market and sheltered waterfront. If local transport fails before departure, remain in Marseille or use a rail-accessible city route.',
+        fallback: 'If the sea cancels a boat, stay in Cassis around Quai Saint-Pierre or use La Ciotat’s Port Vieux and town-history walk. If fire, wind or a road barrier closes Route des Crêtes, do not set off on foot along it. If station-to-port transport fails before departure, keep the Marseille museum day instead of chasing the connection.',
         watch: [
           ['Rail stations are not waterfront stops', 'The last mile can be crowded or infrequent; save the actual stop and timetable.'],
           ['Cliff roads close in wind or fire risk', 'Do not bypass barriers or walk on a closed road for the view.'],
           ['Boat products differ', 'Route length, landing, swimming and departure port vary. Read the official operator terms.']
         ],
-        duration: 'Allow a full day for one port plus one boat or cliff layer. A simple town visit needs four to six hours including station transfers.',
-        combine: 'Combine Cassis with one boat or approved viewpoint, or La Ciotat with cinema and shore. Keep the two ports and Marseille museums separate.',
-        verify: 'Check local bus, train, licensed boat, Route des Crêtes and national-park access, wind, fire risk and the final station transfer.',
+        duration: 'Allow a full day for one port, its station transfer and either one boat circuit or one confirmed viewpoint. A town-only visit still needs four to six hours including both transport legs; check real services before treating that as a day-trip fit.',
+        combine: 'Pair Cassis with one boat circuit or a confirmed Cap Canaille viewpoint. Pair La Ciotat with Port Vieux and cinema history. Keep the second town and Marseille museums for another day.',
+        verify: 'Check bus 78 or the exact TER planner, the station-to-port local link, boat departure and cancellation terms, Route des Crêtes daily fire/wind closure and the return service.',
+        siteContext: {
+          label: 'THREE PORT-AND-CLIFF ZONES',
+          heading: 'Station, quay and viewpoint are different pins.',
+          intro: 'Choose one port and solve the connection twice. Cassis has the boat quay and the Cap Canaille road; La Ciotat has Port Vieux and its own station transfer.',
+          details: [
+            ['Cassis station to Quai Saint-Pierre', 'Use a date-specific TER search or Marseille Tourism’s line 78 information, then verify which stop reaches the port and when it runs back. The railway station is inland; confirm a local bus or taxi rather than assuming you have arrived at the harbor.'],
+            ['Cassis port to Cap Canaille', 'Keep the port walk and boat departure around Quai Saint-Pierre. The Route des Crêtes is a separate exposed road toward La Ciotat, subject to fire and wind closures; travel it only with an open-road plan.'],
+            ['La Ciotat station to Port Vieux', 'Use the exact SNCF TER station listing, then precheck the local bus/taxi to the old port. Make Port Vieux and the town’s cinema-history sites the core walk; add a coastal path only after checking local access.']
+          ]
+        },
+        faq: [
+          ['Is Cassis station in the port?', 'No: plan the station-to-port leg separately. Marseille Tourism lists bus 78 to Cassis, and the TER page provides a date-specific train planner; confirm the actual bus stop or taxi and the return before selecting a boat.'],
+          ['Can I combine Cassis and La Ciotat in one day?', 'It is possible only if the live bus/train transfers and one chosen activity line up, but it leaves little margin. This guide recommends one port plus one boat, viewpoint or town-history layer.'],
+          ['Can I walk the Route des Crêtes if it is closed to cars?', 'Do not treat a vehicle closure as walking permission. Fire or wind restrictions can close the road and adjacent area; obey the current prefecture/commune notice and barrier.'],
+        ],
         sources: [
           ['https://www.ot-cassis.com/en/', 'Cassis Tourist Office — official port and access planning'],
-          ['https://en.destinationlaciotat.com/', 'La Ciotat Tourist Office — official city and coast guide']
+          ['https://en.destinationlaciotat.com/', 'La Ciotat Tourist Office — official city and coast guide'],
+          ['https://www.marseille-tourisme.com/en/organize-your-stay/practical-information/bus-marseille/', 'Marseille Tourism — bus 78 and intercity links'],
+          ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/trajet-marseille-cassis', 'SNCF TER — live Marseille–Cassis planner'],
+          ['https://www.ter.sncf.com/sud-provence-alpes-cote-d-azur/trajet-marseille-la-ciotat', 'SNCF TER — live Marseille–La Ciotat planner'],
+          ['https://www.ot-cassis.com/en/explore/the-calanques/the-calanques-by-boat/', 'Cassis Tourisme — official boat conditions and daily planning']
         ]
       })
     ]

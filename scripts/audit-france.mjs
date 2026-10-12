@@ -431,8 +431,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/toulouse-albi-carcassonne/albi-episcopal-city/',
     '/france/toulouse-albi-carcassonne/carcassonne-cite-bastide/'
   ]);
+  const marseilleEditedRoutes = new Set([
+    '/france/marseille-calanques/',
+    '/france/marseille-calanques/old-port-panier-mucem/',
+    '/france/marseille-calanques/calanques-access-choice/',
+    '/france/marseille-calanques/cassis-la-ciotat/'
+  ]);
   for (const route of routes) {
-    const expectedDate = lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) || dordogneEditedRoutes.has(route) || toulouseOccitanieEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = marseilleEditedRoutes.has(route) ? '2026-10-12' : lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) || dordogneEditedRoutes.has(route) || toulouseOccitanieEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
   for (const route of fr02EditedRoutes) {
@@ -469,6 +475,13 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     for (const [language, prefix] of locales) {
       const localizedRoute = `${prefix}${route}`;
       check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-11</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-11`);
+    }
+  }
+  for (const route of marseilleEditedRoutes) {
+    if (englishOnly) continue;
+    for (const [language, prefix] of locales) {
+      const localizedRoute = `${prefix}${route}`;
+      check(sitemap.includes(`<loc>https://tripdistill.com${localizedRoute}</loc><lastmod>2026-10-12</lastmod>`), `${language}: ${localizedRoute} sitemap date is not 2026-10-12`);
     }
   }
 }

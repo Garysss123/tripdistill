@@ -14,6 +14,7 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const malaysiaLastmod = '2026-08-30';
+const malaysiaIpohLastmod = '2026-10-11';
 const malaysiaLangkawiLastmod = '2026-10-12';
 const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/',
@@ -21,7 +22,6 @@ const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/machinchang-skycab/',
   '/malaysia/langkawi/kilim-geoforest/'
 ];
-const malaysiaIpohLastmod = '2026-10-11';
 const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/',
   '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
@@ -52,6 +52,13 @@ const franceBrittanyLastmod = '2026-10-10';
 const franceFr02Lastmod = '2026-10-11';
 const franceDordogneLastmod = '2026-10-11';
 const franceToulouseOccitanieLastmod = '2026-10-11';
+const franceMarseilleLastmod = '2026-10-12';
+const franceMarseilleEditedRoutes = [
+  '/france/marseille-calanques/',
+  '/france/marseille-calanques/old-port-panier-mucem/',
+  '/france/marseille-calanques/calanques-access-choice/',
+  '/france/marseille-calanques/cassis-la-ciotat/'
+];
 const franceDordogneEditedRoutes = [
   '/france/dordogne-perigord/',
   '/france/dordogne-perigord/sarlat-market-old-town/',
@@ -531,11 +538,6 @@ for (const route of malaysiaIpohEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited Ipoh route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaIpohLastmod });
 }
-for (const route of malaysiaLangkawiEditedRoutes) {
-  const record = records.get(route);
-  if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
-  records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
-}
 for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Italy Puglia route absent from sitemap: ${route}`);
@@ -696,6 +698,11 @@ for (const route of malaysiaCameronEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited Cameron Highlands route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaCameronLastmod });
 }
+for (const route of malaysiaLangkawiEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
+}
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Paris route absent from sitemap: ${route}`);
@@ -710,6 +717,11 @@ for (const route of franceResponsiveEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date France regional responsive edit route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceResponsiveLastmod });
+}
+for (const route of franceMarseilleEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Marseille/Calanques route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceMarseilleLastmod });
 }
 for (const route of franceFr02EditedRoutes) {
   const record = records.get(route);

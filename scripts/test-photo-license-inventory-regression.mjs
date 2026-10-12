@@ -185,7 +185,26 @@ try {
   }
   assert.equal(lesEyziesPhoto.verificationStatus, 'site_credit_or_metadata_only', 'an inaccessible exact source page remains explicitly unverified');
   assert.equal(lesEyziesPhoto.verificationDate, null);
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 528, 'the merged inventory retains integration source-page checks and adds two Dordogne checks while the Les Eyzies claim remains unverified');
+  const marseillePhotos = [
+    { assetPath: '/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', creator: 'Remi Mathis', license: 'CC BY-SA 3.0', sourceSha1: '7d381ee1748237e9db100c3e84e36d09c2180ddb', pixelNote: 'older harbor-side stone building under restoration scaffolding' },
+    { assetPath: '/assets/images/france-marseille-calanques-calanques-access-choice.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', creator: 'MikkoNilssonCom', license: 'CC BY-SA 4.0', sourceSha1: '684c46cd9c74d508c0c51324e6533f545ad4b904', pixelNote: 'aerial limestone inlets including Port-Miou, Port-Pin and En-Vau' },
+    { assetPath: '/assets/images/france-marseille-calanques-cassis-la-ciotat.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg', creator: 'DJ Poldoc', license: 'CC0', sourceSha1: '4c262f89d1eaa0d52a65b8d2593f0a972257f6fd', pixelNote: 'Cassis harbor with boats in the foreground and Cap Canaille beyond' }
+  ];
+  for (const photo of marseillePhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Marseille inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(photo.pixelNote));
+    assert.ok(record.verificationDetail.includes(photo.sourceSha1));
+    assert.ok(record.verificationDetail.includes('not independent rights or chain-of-title verification'));
+    assert.ok(record.altTexts.length && record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
+  }
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 525, 'three Marseille source-page and pixel checks are recorded; the Les Eyzies claim remains unverified');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -401,7 +420,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
   assert.equal(report.counts.completeProjectOriginalRightsRecords, 5, 'inventory must count explicitly recorded project-original artwork, including the Somerset planning diagram');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 526, 'the regenerated merged inventory includes all previously reviewed records; source-page checks do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 523, 'the regenerated merged inventory includes the three Marseille source-page checks; source-page declarations still do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));

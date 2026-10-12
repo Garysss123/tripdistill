@@ -525,7 +525,7 @@ export const franceImageManifest = {
   },
   "marseille-calanques/calanques-access-choice": {
     "src": "/assets/images/france-marseille-calanques-calanques-access-choice.webp",
-    "alt": "White limestone cliffs and blue water in Calanques National Park",
+    "alt": "Aerial view of Port-Miou, Port-Pin and En-Vau along the Calanques limestone coast",
     "source": "https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg",
     "label": "Calanques National Park seen from the airplane.jpg",
     "creator": "MikkoNilssonCom",
@@ -535,7 +535,7 @@ export const franceImageManifest = {
   },
   "marseille-calanques/cassis-la-ciotat": {
     "src": "/assets/images/france-marseille-calanques-cassis-la-ciotat.webp",
-    "alt": "Cassis harbor below the cliffs of Cap Canaille",
+    "alt": "Cassis harbor seen from the waterfront, with boats and Cap Canaille beyond",
     "source": "https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg",
     "label": "Cap Canaille depuis le port de Cassis.jpg",
     "creator": "DJ Poldoc",

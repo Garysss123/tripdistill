@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T23:42:42.920Z",
+  "generatedAt": "2026-10-12T01:09:02.587Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
     "assetFileCount": 794,
     "completeSourceCreatorLicenseRecords": 764,
     "completeProjectOriginalRightsRecords": 5,
-    "licenseClaimsNotIndependentlyVerified": 526,
+    "licenseClaimsNotIndependentlyVerified": 523,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 1,
     "buildImageFilesOutsidePhotoInventory": 4,
@@ -19,11 +19,11 @@
     "assetsWithStructuredSourceRecords": 581,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 158,
+    "assetsVisuallyReviewed": 161,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 239,
-    "metadataOrCreditOnly": 531,
-    "usedAssetsWithoutIndependentSourcePageCheck": 528,
+    "sourcePageChecked": 242,
+    "metadataOrCreditOnly": 528,
+    "usedAssetsWithoutIndependentSourcePageCheck": 525,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -11446,7 +11446,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg",
           "sourceTitle": "File:Calanques National Park seen from the airplane.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2018-02-13",
           "creditLabel": "Calanques National Park seen from the airplane.jpg",
           "creator": "MikkoNilssonCom",
           "license": "CC BY-SA 4.0",
@@ -11455,16 +11455,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "creditMatchNote": "Exact Commons source page, creator, date, license declaration and local aerial subject match checked 2026-10-12; an aircraft/window reflection remains visible. The page declaration is not independent rights clearance.",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Marseille photo review: the exact Commons page lists MikkoNilssonCom, 13 February 2018, original 3,008 × 2,000 pixels, and CC BY-SA 4.0. The local 1,600 × 1,066 WebP shows the aerial limestone inlets including Port-Miou, Port-Pin and En-Vau; an upper-left aircraft/window reflection remains visible. Source SHA-1 684c46cd9c74d508c0c51324e6533f545ad4b904 matches the recorded manifest value. Attribution, source/license links and WebP/crop disclosure are present. This records the page declaration and image match, not independent rights or chain-of-title verification.",
           "useCount": 4,
           "routes": [
             "/france/marseille-calanques/",
@@ -11473,7 +11473,7 @@
             "/france/marseille-calanques/old-port-panier-mucem/"
           ],
           "altTexts": [
-            "White limestone cliffs and blue water in Calanques National Park"
+            "Aerial view of Port-Miou, Port-Pin and En-Vau along the Calanques limestone coast"
           ],
           "rawVisibleCredits": [
             "Calanques National Park seen from the airplane.jpg — MikkoNilssonCom, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -11494,7 +11494,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg",
           "sourceTitle": "File:Cap Canaille depuis le port de Cassis.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2013-10-05",
           "creditLabel": "Cap Canaille depuis le port de Cassis.jpg",
           "creator": "DJ Poldoc",
           "license": "CC0",
@@ -11503,16 +11503,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Attribution is not required by CC0; the site retains source and creator credit as provenance.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "creditMatchNote": "Exact Commons source page, creator, date, CC0 declaration and local Cassis harbor subject match checked 2026-10-12. The page declaration is not independent rights clearance.",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Marseille photo review: the exact Commons page lists DJ Poldoc, 5 October 2013, original 3,872 × 2,592 pixels, and a CC0 1.0 declaration. The local 1,600 × 1,066 WebP shows Cassis harbor with boats in the foreground and Cap Canaille beyond; a mast/pole partly crosses the cliff view. Source SHA-1 4c262f89d1eaa0d52a65b8d2593f0a972257f6fd matches the recorded manifest value. The visible credit retains source and creator provenance, though CC0 does not require attribution. This records the page declaration and image match, not independent rights or chain-of-title verification.",
           "useCount": 4,
           "routes": [
             "/france/marseille-calanques/",
@@ -11521,7 +11521,7 @@
             "/france/marseille-calanques/old-port-panier-mucem/"
           ],
           "altTexts": [
-            "Cassis harbor below the cliffs of Cap Canaille"
+            "Cassis harbor seen from the waterfront, with boats and Cap Canaille beyond"
           ],
           "rawVisibleCredits": [
             "Cap Canaille depuis le port de Cassis.jpg — DJ Poldoc, CC0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -11542,7 +11542,7 @@
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg",
           "sourceTitle": "File:Marseille - Vieux Port - MUCEM.jpg",
-          "sourcePhotoDate": null,
+          "sourcePhotoDate": "2011-08-07",
           "creditLabel": "Marseille - Vieux Port - MUCEM.jpg",
           "creator": "Remi Mathis",
           "license": "CC BY-SA 3.0",
@@ -11551,16 +11551,16 @@
           "inventoryStatus": "used",
           "retirementNote": null,
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-          "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
           "editHistory": "Resized, display-cropped and converted to WebP; no other material edits.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
-          "creditMatchNote": null,
-          "visualReviewStatus": "not_individually_visually_reviewed",
-          "verificationStatus": "site_credit_or_metadata_only",
-          "verificationDate": null,
-          "verificationDetail": null,
+          "creditMatchNote": "Exact Commons source page, creator, date, license declaration and local subject match checked 2026-10-12. The historic photograph shows scaffolding, not the completed Mucem; the page declaration is not independent rights clearance.",
+          "visualReviewStatus": "visually_reviewed_2026-10-12",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-12",
+          "verificationDetail": "Marseille photo review: the exact Commons page lists Remi Mathis, 7 August 2011, original 2,560 × 1,920 pixels, and CC BY-SA 3.0. The local 1,600 × 1,066 WebP shows an older harbor-side stone building under restoration scaffolding; it is not a current view of the completed Mucem. Source SHA-1 7d381ee1748237e9db100c3e84e36d09c2180ddb matches the recorded manifest value. Attribution, source/license links and WebP/crop disclosure are present. This records the page declaration and image match, not independent rights or chain-of-title verification.",
           "useCount": 6,
           "routes": [
             "/france/",
@@ -11570,7 +11570,8 @@
             "/france/marseille-calanques/old-port-panier-mucem/"
           ],
           "altTexts": [
-            "Marseille Old Port with Fort Saint-Jean and waterfront"
+            "Marseille Old Port with Fort Saint-Jean and waterfront",
+            "2011 Marseille harbor view of a stone waterfront building under restoration scaffolding"
           ],
           "rawVisibleCredits": [
             "Marseille - Vieux Port - MUCEM.jpg — Remi Mathis, CC BY-SA 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -20556,9 +20557,9 @@
           "assetPath": "/assets/images/malaysia-langkawi-cenang.webp",
           "assetType": "photographic-raster",
           "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pantai_Cenang,_Langkawi_01.jpg",
-          "sourceTitle": "Pantai Cenang",
+          "sourceTitle": "Pantai Cenang during storm weather",
           "sourcePhotoDate": null,
-          "creditLabel": "Pantai Cenang",
+          "creditLabel": "Pantai Cenang during storm weather",
           "creator": "Nahid Sultan",
           "license": "CC BY-SA 4.0",
           "rightsStatus": null,
@@ -20568,7 +20569,7 @@
           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
           "commercialReuseEligibility": "permitted_by_stated_license_not_independently_checked",
           "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
-          "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
+          "editHistory": "Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation.",
           "localSha1": null,
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
@@ -20585,11 +20586,11 @@
             "/malaysia/langkawi/pantai-cenang-tengah/"
           ],
           "altTexts": [
-            "Wide sandy shoreline at Pantai Cenang in Langkawi",
-            "Wide Pantai Cenang shoreline beneath a building tropical storm"
+            "Storm clouds and rough water over Pantai Cenang beach",
+            "Wide sandy shoreline at Pantai Cenang in Langkawi"
           ],
           "rawVisibleCredits": [
-            "Pantai Cenang — Nahid Sultan, CC BY-SA 4.0."
+            "Pantai Cenang during storm weather — Nahid Sultan. CC BY-SA 4.0. Resized, center-cropped and converted to WebP; same-license terms apply to the adaptation."
           ]
         }
       ]
