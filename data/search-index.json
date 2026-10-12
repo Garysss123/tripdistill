@@ -104,7 +104,7 @@
     "url": "/malaysia/langkawi/",
     "parent": "Malaysia · Peninsula Wild",
     "type": "Island Guide",
-    "summary": "Choose a beach base, one geoforest system and a weather-aware road, boat or cable-car plan.",
+    "summary": "Route Langkawi as one base plus four distinct zones: Cenang and Tengah for beach life, Kuah for ferry and services, Machinchang and Oriental Village for SkyCab, and Kilim or the southern islands as separate boat days. LGK, Kuah Jetty, Kuala Kedah and Kuala Perlis are different edges; daily road returns and live operator status set the pace.",
     "keywords": [
       "langkawi",
       "kilim",
@@ -3478,9 +3478,9 @@
   {
     "title": "Pantai Cenang & Pantai Tengah Guide",
     "url": "/malaysia/langkawi/pantai-cenang-tengah/",
-    "parent": "Malaysia · Langkawi",
+    "parent": "Malaysia - Langkawi",
     "type": "Focused area and field guide",
-    "summary": "Choose between Pantai Cenang and Pantai Tengah by beach rhythm, road access, water activity and the final evening return.",
+    "summary": "Compare a Pantai Cenang base with Pantai Tengah by walk-to-dining, road access, night noise and transfer cost; the beach is never a sea-safety signal.",
     "keywords": [
       "pantai cenang & pantai tengah",
       "langkawi",
@@ -3492,9 +3492,9 @@
   {
     "title": "Machinchang & SkyCab Guide",
     "url": "/malaysia/langkawi/machinchang-skycab/",
-    "parent": "Malaysia · Langkawi",
+    "parent": "Malaysia - Langkawi",
     "type": "Focused area and field guide",
-    "summary": "Plan Machinchang and SkyCab around official operating status, cloud, wind, queue strategy and a protected road return.",
+    "summary": "Route a SkyCab day from your base to Oriental Village, then check Panorama’s dated operating calendar, ticket inclusions, cloud and the road return.",
     "keywords": [
       "machinchang & skycab",
       "langkawi",
@@ -3506,9 +3506,9 @@
   {
     "title": "Kilim Karst Geoforest Guide",
     "url": "/malaysia/langkawi/kilim-geoforest/",
-    "parent": "Malaysia · Langkawi",
+    "parent": "Malaysia - Langkawi",
     "type": "Focused area and field guide",
-    "summary": "Choose a responsible Kilim Geoforest boat route with named jetty, wildlife distance, tide awareness and weather fallback.",
+    "summary": "Plan Kilim from a named eastern jetty by road, confirm the boat and landing with one operator, and keep the return and sea-weather decision explicit.",
     "keywords": [
       "kilim karst geoforest",
       "langkawi",
