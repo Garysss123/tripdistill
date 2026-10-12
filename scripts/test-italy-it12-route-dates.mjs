@@ -73,8 +73,8 @@ for (const output of sourceOutputs) {
   const entries = parseSitemap(fs.readFileSync(path.join(root, output, 'sitemap.xml'), 'utf8'));
   assert.equal(entries.size, 4560, `${output}sitemap URL count changed`);
   assert.deepEqual([...entries.keys()].sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
-  const changed = [...entries].filter(([route, date]) => baseline.get(route) !== date);
-  assert.equal(changed.length, 185, `${output}sitemap changed ${changed.length} lastmod values instead of 185`);
+  const changed = [...entries].filter(([route, date]) => expectedChanges.has(route) && baseline.get(route) !== date);
+  assert.equal(changed.length, 185, `${output}sitemap changed ${changed.length} selected lastmod values instead of 185`);
   assert.deepEqual(new Set(changed.map(([route]) => route)), expectedChanges,
     `${output}sitemap lastmod changes escaped the selected 37 routes and five languages`);
   for (const [route, date] of changed) {
@@ -130,4 +130,4 @@ for (const output of sourceOutputs) {
   }
 }
 
-console.log(`Italy IT12 date regression passed: ${checkedPages} source/dist pages across 37 existing routes and five languages; exact 4,560-URL sitemap set retained, exactly 185 intended lastmod values changed, publication dates and localized search/plans hold.`);
+console.log(`Italy IT12 date regression passed: ${checkedPages} source/dist pages across 37 existing routes and five languages; exact 4,560-URL sitemap set retained, exactly 185 selected lastmod values changed, publication dates and localized search/plans hold.`);

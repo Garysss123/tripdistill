@@ -136,8 +136,8 @@ assert.equal(sourceSitemap.size, 4560, 'source sitemap stays at 4,560 URLs');
 assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URL');
 const expectedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.equal(integrationRoutes.length, 104, 'the exact UK, France, Switzerland and Malaysia source route scope contains 104 existing English pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact integrated UK, France, Switzerland and Malaysia routes × five locales receive a new lastmod');
+assert.equal(integrationRoutes.length, 165, 'the exact UK, France, Italy, Switzerland and Malaysia source route scope contains 165 existing English pages');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact integrated UK, France, Italy, Switzerland and Malaysia routes × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(gitBytes(`${integrationScopeBaseline}:data/search-index.json`).toString('utf8'));
@@ -146,7 +146,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedEnglishSearch = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedEnglishSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Switzerland and Malaysia English search records changed');
+assert.deepEqual(new Set(changedEnglishSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Italy, Switzerland and Malaysia English search records changed');
 
 const localSearchByPrefix = new Map();
 for (const { prefix } of locales.filter(({ prefix }) => prefix)) {

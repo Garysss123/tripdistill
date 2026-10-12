@@ -102,8 +102,8 @@ assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no URL was added or removed');
 const selectedLocalizedPaths = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => new URL(url).pathname);
-assert.equal(integrationRoutes.length, 104, 'the exact UK, France, Switzerland and Malaysia source route scope contains 104 existing English pages');
-assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the exact integrated UK, France, Switzerland and Malaysia routes changed lastmod');
+assert.equal(integrationRoutes.length, 165, 'the exact UK, France, Italy, Switzerland and Malaysia source route scope contains 165 existing English pages');
+assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the exact integrated UK, France, Italy, Switzerland and Malaysia routes changed lastmod');
 for (const route of selectedLocalizedPaths) assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), reviewDate, `${route}: sitemap date`);
 
 const sourceSearch = readJson(path.join(outputRoot, 'data/search-index.json'));
@@ -114,7 +114,7 @@ const baseSourceByUrl = byUrl(baseSourceSearch);
 assert.equal(sourceSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(sourceByUrl.keys()), new Set(baseSourceByUrl.keys()), 'English search URL inventory is unchanged');
 const sourceChangedSearch = [...sourceByUrl].filter(([url, row]) => JSON.stringify(row) !== JSON.stringify(baseSourceByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(sourceChangedSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Switzerland and Malaysia search records changed');
+assert.deepEqual(new Set(sourceChangedSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Italy, Switzerland and Malaysia search records changed');
 
 const wordDeltas = [];
 const imageRefs = new Set();

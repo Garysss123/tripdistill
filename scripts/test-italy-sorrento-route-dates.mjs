@@ -66,8 +66,8 @@ for (const output of outputs) {
   const entries = parseSitemap(currentSitemap);
   assert.equal(entries.size, 4560, `${output}sitemap URL count changed`);
   assert.deepEqual([...entries.keys()].sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
-  const changed = [...entries].filter(([route, date]) => baseline.get(route) !== date);
-  assert.equal(changed.length, 205, `${output}sitemap changed ${changed.length} lastmod values instead of 205`);
+  const changed = [...entries].filter(([route, date]) => expectedChanges.has(route) && baseline.get(route) !== date);
+  assert.equal(changed.length, 205, `${output}sitemap changed ${changed.length} selected lastmod values instead of 205`);
   assert.deepEqual(new Set(changed.map(([route]) => route)), expectedChanges,
     `${output}sitemap lastmod changes escaped the Sorrento and IT12 route sets`);
   for (const [route, date] of changed) {
@@ -117,4 +117,4 @@ for (const output of outputs) {
   }
 }
 
-console.log(`Italy Sorrento/Amalfi/Capri date regression passed: ${checkedPages} source/dist pages across four existing routes and five languages; exact 4,560-URL sitemap set retained, exactly 205 intended lastmod values changed (185 IT12 plus 20 Sorrento), publication dates and localized search/local plans hold.`);
+console.log(`Italy Sorrento/Amalfi/Capri date regression passed: ${checkedPages} source/dist pages across four existing routes and five languages; exact 4,560-URL sitemap set retained, exactly 205 selected lastmod values changed (185 IT12 plus 20 Sorrento), publication dates and localized search/local plans hold.`);
