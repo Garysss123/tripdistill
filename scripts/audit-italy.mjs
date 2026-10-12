@@ -115,6 +115,21 @@ for (const cluster of italyClusters) {
     check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Emilia-Romagna: focused local-plan headings must be unique');
     check(new Set(allPlanCopy).size === allPlanCopy.length, 'Emilia-Romagna: local-plan copy must not be repeated across children');
   }
+  if (cluster.slug === 'umbria') {
+    check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', 'Umbria: review date metadata must match the 12 October 2026 refresh');
+    check(cluster.publishedIsoDate === '2026-09-26', 'Umbria: original publication date must be preserved');
+    const fields = ['title', 'intro', 'stayTitle', 'stay', 'walkTitle', 'walk', 'bookingTitle', 'booking', 'seasonTitle', 'season'];
+    const allPlanCopy = [];
+    for (const guide of cluster.guides) {
+      check(guide.localPlan && fields.every((field) => typeof guide.localPlan[field] === 'string' && guide.localPlan[field].trim()), `${guide.url}: Umbria stay/walk/booking/season plan missing`);
+      if (guide.localPlan) allPlanCopy.push(...fields.map((field) => guide.localPlan[field]));
+      check(guide.summary.length >= 120, `${guide.url}: Umbria guide summary below editorial floor`);
+      check(guide.sources.some(([url]) => /fsbusitalia\.it/.test(url)), `${guide.url}: relevant current Busitalia source missing`);
+    }
+    check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Umbria: focused local-plan headings must be unique');
+    check(new Set(allPlanCopy).size === allPlanCopy.length, 'Umbria: local-plan copy must not be repeated across children');
+    check(cluster.sources.some(([url]) => url.includes('assisi-link.html')) && cluster.sources.some(([url]) => url.includes('orvieto-link.html')), 'Umbria: integrated station-to-hill links missing from hub sources');
+  }
   if (cluster.slug === 'siena-southern-tuscany') {
     check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', 'Siena/Val d’Orcia/Maremma: review date metadata must match the 12 October 2026 refresh');
     check(cluster.publishedIsoDate === '2026-09-26', 'Siena/Val d’Orcia/Maremma: original publication date must be preserved');
@@ -275,7 +290,7 @@ check(read('scripts/build-dist.mjs').includes("'italy'"), 'Italy absent from bui
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') ? '2026-10-12' : '2026-09-26';
+    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') || route === '/italy/umbria/' || route.startsWith('/italy/umbria/') ? '2026-10-12' : '2026-09-26';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

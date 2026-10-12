@@ -8,18 +8,24 @@ export const italyCentralNortheastClusters = [
     slug: 'umbria',
     name: 'Umbria',
     region: 'Central Italy',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     band: 'central',
     family: 'umbrian-ridge-thresholds',
     label: 'Ridge-town section',
     tagline: 'Climb once, choose one sacred or civic layer, and keep the descent connected to the last train.',
     hubIntro: 'Umbria’s headline towns occupy different ridges rather than one easy urban corridor. Perugia asks travelers to understand a lower railway station and an upper civic core; Assisi separates Santa Maria degli Angeli from the basilica city above; Orvieto begins with a cliff transfer from the scalo. A useful stay chooses one hill-town threshold per day and protects the descent before adding another church, gallery or viewpoint.',
-    stay: 'Three to five nights works well from Perugia when the trip favors regional rail and buses, while an Assisi or Orvieto overnight buys quieter sacred or civic hours. Changing hotels between all three towns usually adds more luggage climbing than useful access.',
-    transfer: 'Regional trains connect the main valleys, but they do not finish the journey: Perugia Fontivegge needs Minimetrò, bus or escalator access; Assisi station needs an onward bus from Santa Maria degli Angeli; Orvieto Scalo needs the funicular or replacement service. Confirm the final uphill and downhill leg as part of each ticketed day.',
-    season: 'Summer heat makes exposed ridge streets and stone stairways slower than the rail map suggests. Spring and autumn can bring major religious observances, school groups and rain on polished slopes; winter shortens daylight and may reduce peripheral services even when the principal basilicas and museums remain open.',
-    fallback: 'Keep a complete indoor-and-covered route in the same town: Perugia’s collections and Rocca Paolina, Assisi’s basilica sequence, or Orvieto’s cathedral and civic museums. If an uphill connection fails before departure, stay in the rail-served valley town rather than improvising a costly cross-region rescue.',
+    stay: 'Use three nights in Perugia’s upper centre for one full civic day and an Assisi day trip; choose the historic centre around Corso Vannucci for walkable evenings, or Fontivegge only when rail-first departures outweigh the daily climb. With four nights, add one night in Assisi or Orvieto for an early start or later finish. Five nights can support one night in each hill town around a two- or three-night Perugia base; avoid three consecutive one-night hotel moves.',
+    transfer: 'Treat each station as a different last-mile problem. From Perugia Fontivegge, use the Minimetrò toward Pincetto or a currently operating bus or mechanized route. Assisi station is in Santa Maria degli Angeli: Busitalia’s Assisi Link departs by the station exit for the hill city. At Orvieto Scalo, cross the station forecourt for the funicular to Piazza Cahen, then continue by the current town bus or on foot. Recheck the chosen uphill and return connection with its operator before relying on a rail change.',
+    season: 'In summer, put the exposed ridge walk early and use a booked interior or covered passage for the hottest hours. Spring and autumn bring feast days, school visits, rain and slick stone; check Assisi worship notices and event calendars before fixing a room or timed visit. Winter daylight and peripheral service patterns can narrow the return window. If a lift, funicular or bus is suspended, shorten the town plan before protecting the last train.',
+    fallback: 'Keep a complete same-town day ready: Perugia’s Palazzo dei Priori and Rocca Paolina civic core, Assisi’s basilica-to-Piazza del Comune walk, or Orvieto’s Duomo and plateau museums. If the uphill link fails, switch to an operator-confirmed alternative before leaving the station; if none fits, stay in the rail-served valley town. Do not replace one missed hill connection with an unplanned cross-region transfer.',
     sources: [
       ['https://www.umbriatourism.it/en/', 'Umbria Tourism — official regional destination information'],
       ['https://www.fsbusitalia.it/eng/umbria.html', 'Busitalia Umbria — official regional bus information'],
+      ['https://www.fsbusitalia.it/it/umbria/orari-linee-umbria/mobilita-alternativa-parcheggi-umbria.html', 'Busitalia Umbria — mechanized routes and service notices for Perugia and Orvieto'],
+      ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/assisi-link.html', 'Busitalia Assisi Link — train and bus access from Assisi station'],
+      ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/orvieto-link.html', 'Busitalia Orvieto Link — station, funicular and town-bus connection'],
       ['https://www.trenitalia.com/en.html', 'Trenitalia — official rail planning and service information']
     ],
     guides: [
@@ -32,7 +38,7 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Perugia historic centre Palazzo dei Priori Umbria panorama',
         imageAlt: 'Perugia’s historic centre rising along its Umbrian ridge',
         purpose: 'Choose whether Perugia’s National Gallery, its Etruscan and medieval layers, or the ridge streets are the main reason for the day, then connect Fontivegge to the upper city through one deliberate ascent instead of repeatedly losing height.',
-        summary: 'Arrive below the historic core, use Minimetrò or the Rocca Paolina escalator system as part of the city reading, anchor the visit in one collection or archaeological layer, and descend by the connection whose operating window you have already checked.',
+        summary: 'From Fontivegge, choose the Minimetrò or a verified bus and escalator approach, walk one continuous line through the civic ridge, and reserve time for a single gallery or archaeological anchor before the checked descent.',
         choices: [
           ['National Gallery and civic core', 'Give the Galleria Nazionale dell’Umbria and Palazzo dei Priori the central block, then use Corso Vannucci and Piazza IV Novembre as context. This offers the deepest art reading but leaves little time for distant ridge churches.'],
           ['Etruscan and underground Perugia', 'Prioritize the Etruscan Arch, Rocca Paolina passages and one compatible archaeological interior. The route explains how later streets sit over earlier structures, but sacrifices a long gallery visit.'],
@@ -54,10 +60,23 @@ export const italyCentralNortheastClusters = [
         ],
         duration: 'Allow five to seven hours from Fontivegge for one substantial collection or archaeology route plus the ridge streets. A shorter three-hour visit should keep one ascent, one anchor and one reliable descent.',
         combine: 'Combine the National Gallery with the immediate civic core, or the Etruscan Arch with the aqueduct and northern ridge. Do not add Assisi or Orvieto unless Perugia is deliberately reduced to a transfer stop.',
-        verify: 'Check the selected museum’s current admission, the Minimetrò operating notice, regional bus or train status and any city-centre event restrictions before leaving the lower station.',
+        verify: 'Check the Galleria Nazionale’s current visit information, the Minimetrò notice, Busitalia’s separate mechanized-route page, and rail or event changes before leaving Fontivegge.',
+        localPlan: {
+          title: 'Make Perugia a one-ascent day',
+          intro: 'Choose a base and one ridge line that fit the first doorway and the return to Fontivegge.',
+          stayTitle: 'Sleep above the station when the ridge owns the day',
+          stay: 'For one or two nights, stay in the historic centre around Corso Vannucci or Piazza IV Novembre if evenings and a walk-first start matter. Choose Fontivegge only when rail-first departures outweigh the daily uphill transfer. With three nights, keep one room and use a full day for the civic ridge; another hotel rarely improves access.',
+          walkTitle: 'Pincetto to the civic core, then one northern branch',
+          walk: 'From Pincetto, use the signed escalators or lift into the upper city, then follow Corso Vannucci to Piazza IV Novembre and Fontana Maggiore. Visit Palazzo dei Priori and the Galleria Nazionale only after checking the current entrance and admission plan. Continue either to the Etruscan Arch or along the aqueduct as one northern branch, then return by a verified descent.',
+          bookingTitle: 'Confirm the gallery door and the descent separately',
+          booking: 'Check current Galleria access and the Minimetrò notice on its operator’s site; Busitalia lists Perugia’s mechanized routes separately. If a system is suspended, choose a currently listed bus or lift approach before leaving the station and do not assume step-free access. Check civic-event diversions and leave margin for the actual rail service from Fontivegge.',
+          seasonTitle: 'Move the climb ahead of heat and event crowds',
+          season: 'On hot days, make the uphill transfer early and place a gallery or Rocca Paolina’s covered passages in the hottest block. Rain slows the stone lanes, so shorten the route to the Corso Vannucci and Piazza IV Novembre spine with interiors whose access is confirmed. Umbria Jazz, Eurochocolate and public events can change street flow and room demand; check dates before booking.'
+        },
         sources: [
           ['https://turismo.comune.perugia.it/', 'Comune di Perugia — official tourism and city information'],
-          ['https://www.minimetrospa.it/', 'Minimetrò Perugia — official service information']
+          ['https://www.minimetrospa.it/', 'Minimetrò Perugia — official service information'],
+          ['https://www.fsbusitalia.it/it/umbria/orari-linee-umbria/mobilita-alternativa-parcheggi-umbria.html', 'Busitalia Umbria — escalators, lifts and service notices']
         ]
       }),
       g({
@@ -69,16 +88,16 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Assisi Basilica Saint Francis Umbria hillside panorama',
         imageAlt: 'The Basilica of Saint Francis and the hill town of Assisi',
         purpose: 'Decide whether the Franciscan basilica sequence, Assisi’s upper medieval town, or the edge of Mount Subasio is the visit’s main act, then respect worship hours and the station-to-hill transfer instead of treating the sacred city as a continuous attraction.',
-        summary: 'Transfer from Assisi station in Santa Maria degli Angeli to one end of the hill city, read the basilica or upper-town layer without rushing worship spaces, and finish beside the bus stop that protects the return to the valley railway.',
+        summary: 'Take the station-side Assisi Link from Santa Maria degli Angeli, walk the basilica-to-civic-square axis at worship-friendly pace, and confirm the return stop before climbing toward the Rocca.',
         choices: [
           ['Franciscan basilica sequence', 'Give the Lower and Upper Basilicas, the tomb and the adjoining sacred precinct unhurried attention. This is the strongest Franciscan reading, but it means the Rocca and a Subasio excursion remain optional.'],
           ['Upper town and Rocca line', 'Climb through Piazza del Comune toward the upper medieval streets and fortress outlook, using the basilica as a shorter threshold. The reward is urban topography; the sacrifice is detailed time with the fresco cycles.'],
           ['Subasio edge and hermitage context', 'Use an authorized bus, taxi or planned walk toward Eremo delle Carceri or another verified park edge, with Assisi’s core kept brief. This adds landscape context but depends on weather and a separately secured return.']
         ],
-        access: 'The railway station named Assisi stands in Santa Maria degli Angeli below the historic city. Regional buses climb to stops serving the basilica and upper town; walking the entire ascent consumes time and shade. Choose the first bus stop from the direction of the planned route and note where the return bus actually boards.',
+        access: 'The railway station named Assisi stands in Santa Maria degli Angeli below the historic city. Busitalia’s Assisi Link leaves by the station exit for the centre; use the current operator plan to choose the stop nearest the basilica or upper-town start. Walking the full ascent consumes time and shade, so identify the actual downhill boarding point before setting out.',
         tradeoff: 'The basilica complex operates as a living place of worship, not an ordinary museum, and its two churches reward slow looking. A Rocca climb or Subasio branch uses the same time and physical reserve, so choosing a landscape extension necessarily shortens the central Franciscan sequence.',
         stages: [
-          ['Transfer from the valley', 'At Assisi station, identify the correct uphill bus and validate the fare according to current instructions. Keep Santa Maria degli Angeli only if its basilica forms part of the chosen argument.'],
+          ['Transfer from the valley', 'At Assisi station in Santa Maria degli Angeli, check the current Assisi Link stop and ticket instructions before leaving the rail concourse. Keep the lower basilica only if it belongs to the day’s chosen route.'],
           ['Enter at the right sacred door', 'Approach the Basilica of Saint Francis from the stop that avoids unnecessary height loss, observe current security and worship guidance, and distinguish the Lower and Upper Basilica sequence.'],
           ['Climb only for the chosen layer', 'Continue through Via San Francesco to Piazza del Comune and, only if selected, toward the Rocca or Subasio edge. Do not climb high merely to descend for an unplanned interior.'],
           ['Close beside the downhill bus', 'Finish near a confirmed return stop with margin for crowding, evening worship or traffic. Protect the valley train rather than waiting for a bus that leaves from the opposite side of town.']
@@ -91,10 +110,23 @@ export const italyCentralNortheastClusters = [
         ],
         duration: 'Allow five to seven hours for the basilica sequence and upper town, plus the station transfers. A Mount Subasio or hermitage branch needs most of a separate day or a deliberately shortened city route.',
         combine: 'Combine the basilica with Piazza del Comune and one upper-town layer because they share the same hill axis. Pair Santa Maria degli Angeli only when train and bus timing leaves a genuine block before departure.',
-        verify: 'Check basilica visitor and liturgy notices, the official Assisi event calendar, the current station bus timetable and any Subasio path or road restriction before travel.',
+        verify: 'Check Basilica visitor and liturgy notices, the official Assisi event calendar, the Assisi Link schedule and the exact Subasio path or road restriction before travel.',
+        localPlan: {
+          title: 'Let the basilica set the Assisi walking order',
+          intro: 'The station is below the hill; choose lodging and the uphill stop around the worship schedule and return.',
+          stayTitle: 'Stay in the upper town for a quieter first hour',
+          stay: 'For one night, choose the historic centre near the basilica or Piazza del Comune when an early visit or an evening on the hill is the point. Santa Maria degli Angeli suits a first or last train better, but adds the bus climb each time. From a Perugia base, make Assisi a single full day and keep the same room.',
+          walkTitle: 'Basilica lower square to Piazza del Comune',
+          walk: 'From the current Assisi Link stop serving the basilica, begin at Piazza Inferiore di San Francesco and give the Lower and Upper Basilicas their own unhurried block. Walk uphill on Via San Francesco to Piazza del Comune and the Tempio di Minerva. Continue to Rocca Maggiore only if time, weather and legs allow, then return to a confirmed downhill bus stop.',
+          bookingTitle: 'Check worship access and the train-bus combination',
+          booking: 'Reopen the Basilica visitor and liturgy notices before fixing the day: worship can change which areas are accessible. Check whether the train-plus-bus Assisi Link option fits the actual origin and date, and save the return stop and timetable. If the upper-town branch is restricted, complete the basilica and Piazza del Comune loop rather than forcing a timed interior.',
+          seasonTitle: 'Give feast days and summer heat room in the plan',
+          season: 'Religious observances, school groups and major events can change basilica access and room demand, especially on spring and autumn weekends. Check notices before booking an overnight. In heat or rain, omit the Rocca and Subasio branch; keep the basilica and central square as the complete visit, then use only a confirmed return bus.'
+        },
         sources: [
           ['https://www.visit-assisi.it/en/', 'Visit Assisi — official city visitor information'],
-          ['https://www.sanfrancescoassisi.org/', 'Basilica of Saint Francis of Assisi — official information']
+          ['https://www.sanfrancescoassisi.org/', 'Basilica of Saint Francis of Assisi — official information'],
+          ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/assisi-link.html', 'Busitalia Assisi Link — station bus and integrated train information']
         ]
       }),
       g({
@@ -106,13 +138,13 @@ export const italyCentralNortheastClusters = [
         imageQuery: 'Orvieto Duomo tufa cliff Umbria panorama',
         imageAlt: 'Orvieto Cathedral and the town standing above its tufa cliff',
         purpose: 'Choose the cathedral, an underground appointment, or the fortress-and-cliff edge as Orvieto’s main layer, then join Orvieto Scalo, the funicular and the upper-town streets into one controlled ascent and descent.',
-        summary: 'Meet the cliff at Orvieto Scalo, use the current funicular or replacement connection to the old town, reserve only the underground experience that fits the cathedral clock, and return downhill before a thin regional-train connection becomes the day’s final risk.',
+        summary: 'Connect Orvieto Scalo to Piazza Cahen by the current funicular or replacement, walk the plateau toward the Duomo, and fit one booked underground visit around the checked return train.',
         choices: [
           ['Cathedral and sacred art', 'Make the Duomo, its chapels and related museum material the central commitment. This gives the facade and interior proper time, but leaves the underground city as a short or separate appointment.'],
           ['Underground Orvieto', 'Book one authorized cave or well experience and connect it to the streets above. The controlled entry reveals the cliff’s hidden infrastructure, but sacrifices a long cathedral-museum sequence.'],
           ['Fortress and cliff circuit', 'Prioritize the Albornoz fortress edge, viewpoints and a bounded walk through the upper town. It is flexible in ticket terms, yet weather and steep surfaces can remove the very views that justify it.']
         ],
-        access: 'Mainline and regional trains arrive at Orvieto Scalo beneath the cliff. The funicular climbs toward Piazza Cahen, from which local buses or an uphill walk reach the Duomo; replacement arrangements can differ during maintenance. Treat Scalo-to-centre and centre-to-platform as timed legs, not a station forecourt crossing.',
+        access: 'Mainline and regional trains arrive at Orvieto Scalo beneath the cliff. The Orvieto Link interchange is in the station forecourt: its funicular reaches Piazza Cahen, where the current town bus or a planned walk continues to the Duomo. Replacement arrangements can differ during maintenance, so check the operator notice before treating either end as a simple platform change.',
         tradeoff: 'A scheduled underground tour or well visit fixes the middle of the day, while the cathedral complex can absorb the same attention window. Choosing both at maximum depth crowds out the cliff circuit and a calm descent, so one controlled threshold must remain secondary.',
         stages: [
           ['Read the scalo connection', 'On arrival, confirm the funicular or replacement service and the next realistic downhill connection. Do not buy an upper-town ticket before knowing how it fits the departure train.'],
@@ -128,10 +160,24 @@ export const italyCentralNortheastClusters = [
         ],
         duration: 'Allow five to seven hours from Orvieto Scalo for the cathedral and one additional layer. A compact cathedral-and-streets visit can fit four hours only with generous rail and funicular margins.',
         combine: 'Combine the Duomo with one official underground appointment or the fortress edge, since each makes a different claim about the same tufa plateau. Do not add Civita di Bagnoregio without a separate last-mile plan.',
-        verify: 'Check the Duomo and chapel access, the exact underground meeting point and slot, current funicular operation and the return train before ascending from Orvieto Scalo.',
+        verify: 'Check Duomo and chapel access, the underground operator’s exact meeting point and slot, the Orvieto Link or replacement notice, and the return train before leaving Scalo.',
+        localPlan: {
+          title: 'Keep the Orvieto plateau and cliff connection together',
+          intro: 'Choose an upper-town base for the walk, or the scalo only when the first or last train dominates.',
+          stayTitle: 'Sleep near Corso Cavour for the Duomo day',
+          stay: 'For one or two nights, choose the upper town around Corso Cavour or Piazza della Repubblica when the cathedral, dinner and an early walk matter. Stay near Orvieto Scalo only when a late arrival or early departure outweighs using the funicular at both ends. An overnight gives a booked underground visit room without compressing the descent.',
+          walkTitle: 'Piazza Cahen to the Duomo by the civic spine',
+          walk: 'From the funicular at Piazza Cahen, visit Pozzo di San Patrizio only if its current access fits, then follow Corso Cavour through Piazza della Repubblica to the Duomo and Cappella di San Brizio. Put any booked cave or well tour at its stated meeting point, not where the map seems close. Return toward Piazza Cahen before descending to Scalo.',
+          bookingTitle: 'Book one underground threshold and verify both ends',
+          booking: 'The Duomo, chapel, wells and cave tours have separate admission rules and meeting points. Confirm the exact operator, slot, duration and access limits for the one underground visit you choose. Then check the Orvieto Link/funicular notice and the rail return; if the booked slot is unavailable, use the cathedral and plateau museums as the complete alternative.',
+          seasonTitle: 'Keep a plateau route for weather or maintenance',
+          season: 'Spring weekends and autumn can concentrate visitors around the Duomo and underground slots, so check timed-entry availability before fixing a short stay. Summer heat favors interiors through midday; rain and wind make the cliff-edge walk less useful. If the funicular is suspended or weather closes an exposed viewpoint, shorten the day to the plateau and follow the operator’s current replacement plan.'
+        },
         sources: [
           ['https://www.umbriatourism.it/en/', 'Umbria Tourism — official Orvieto and regional planning information'],
-          ['https://www.duomodiorvieto.it/', 'Opera del Duomo di Orvieto — official cathedral information']
+          ['https://www.duomodiorvieto.it/', 'Opera del Duomo di Orvieto — official cathedral information'],
+          ['https://www.fsbusitalia.it/it/turismo/collegamenti-integrati/orvieto-link.html', 'Busitalia Orvieto Link — train station, funicular and Piazza Cahen'],
+          ['https://www.fsbusitalia.it/it/umbria/orari-linee-umbria/mobilita-alternativa-parcheggi-umbria.html', 'Busitalia Umbria — funicular operation and service notices']
         ]
       })
     ]
