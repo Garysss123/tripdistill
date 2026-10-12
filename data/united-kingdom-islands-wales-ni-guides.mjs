@@ -587,129 +587,183 @@ export const unitedKingdomIslandsWalesNiClusters = [
   }),
   c({
     slug: 'belfast-northern-ireland',
+    searchKeywords: ['Belfast–Coleraine rail itinerary', 'Causeway Coast bus connection', 'Derry overnight base'],
     name: 'Belfast, Causeway Coast & Derry',
     nation: 'Northern Ireland',
     band: 'northern-ireland',
     family: 'lough-coast-history-ledger',
     label: 'Lough, coast and history ledger',
     tagline: 'Give Belfast, the Causeway Coast and Derry separate days with their own evidence and return.',
-    hubIntro: 'Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Combining them works across several nights, not as a single highlights loop.',
-    stay: 'Four to six nights supports two Belfast districts, a coast day and Derry. Belfast is the best transport base for the east and coast; an overnight in Derry protects the western city from a rushed same-day return.',
-    transfer: 'Translink integrates many trains and buses, but Belfast stations and bus centres serve different corridors. Causeway sites require a named stop and final connection. Cross-border or ferry arrivals have separate terminals and should not be tied to a tight onward ticket.',
-    season: 'Rain and wind can reshape the coast year-round. Summer improves daylight and visitor services but raises Giant’s Causeway pressure. Belfast and Derry have strong indoor alternatives; public events and parades can change streets and transport.',
-    fallback: 'Use a complete Belfast or Derry museum-and-street day when coast weather or transport fails. Do not move to another exposed cliff site merely because the bus continues.',
+    reviewDate: '12 October 2026',
+    reviewDateISO: '2026-10-12',
+    hubIntro: 'Belfast’s civic quarters and Maritime Mile are urban transit days; the Causeway Coast is a rail-and-bus or road corridor; Derry is a separate walled city whose recent history requires careful, site-led interpretation. Belfast, the coast and Derry need separate base, access and return decisions rather than one highlights loop.',
+    stay: 'Four nights is a two-anchor trip: use two nights in Belfast plus two in either Portrush/Bushmills or Derry, and leave the other region for next time. Five nights can support three Belfast nights and two in Derry, with a Causeway day trip only if the dated train-and-bus return works. Give all three areas a real day with seven nights: three in Belfast, two on the north coast and two in Derry. A north-coast night saves backtracking but does not create a frequent evening bus.',
+    transfer: 'NI Railways reaches Coleraine from Belfast; the Giant’s Causeway connection is a separate Ulsterbus 172 leg, not a station walk. Belfast-to-Derry also has Translink rail and coach choices, but Grand Central, Lanyon Place and Europa Buscentre are different departure points. Recheck the exact service, seasonal bus, final stop and return before fixing a timed visit.',
+    season: 'Coast access is a daylight-and-weather decision, not a summer-only guarantee. On 12 October 2026, the National Trust calendar showed the Giant’s Causeway Visitor Centre open 09:00–17:00 and the coastline dawn to dusk; its Causeway Rambler and other buses have their own seasonal dates. The Museum of Free Derry lists shorter weekday hours from 1 November 2026 and last entry one hour before closing. Recheck both calendars, wind and Translink notices for the actual date; book Titanic Belfast or a coast-base room once the route is stable.',
+    fallback: 'If wind, wet basalt or a service change removes the coast, keep the day in Belfast: use the city-centre walk, a confirmed City Hall visit or a prebooked Titanic Belfast slot. If Derry’s wall top is slippery or the museum hours do not fit, use the street-level river and civic route. Do not replace a closed cliff section with another exposed edge.',
+    itineraryKicker: 'FOUR ROUTE BLOCKS · CHOOSE TWO, THREE OR ALL FOUR',
+    itineraryTitle: 'Keep the city, coast and western-city days in their own corridors.',
+    itineraryIntro: 'This is a planning sequence, not a timetable. Four nights means choosing two anchors; a seven-night version can give Belfast, the north coast and Derry separate bases without compressing the last connection.',
+    itinerary: [
+      ['Belfast civic core', 'Start at City Hall, read the Donegall Square and Linen Quarter grid, then continue on foot to the Cathedral Quarter and St Anne’s Cathedral. Keep this central route together; choose one museum or guided-history stop rather than adding residential mural streets without context.'],
+      ['Choose the second Belfast district', 'Use a separate day for the Queen’s Quarter, Botanic Gardens and Ulster Museum, or cross the Lagan to Titanic Belfast, the Slipways and SS Nomadic. Titanic Belfast is a timed anchor with its own visitor map; do not treat it as the next block from City Hall.'],
+      ['Make the Causeway a complete coast day', 'For the rail-first route, take NI Railways from Belfast to Coleraine and confirm Ulsterbus 172 to the Visitor Centre. Choose the official access route, then add at most one connected coast stop. An overnight in Portrush or Bushmills suits an early start; a Belfast day return is only for a timetable that leaves a secure margin.'],
+      ['Give Derry its own arrival and return', 'Take a current Translink rail or coach service from Belfast, then build one walk from the walled centre through a chosen wall section to the Bogside or across the Peace Bridge. Stay one or two nights if the Museum of Free Derry is a priority; do not make its last entry depend on a same-day cross-region transfer.']
+    ],
+    faq: [
+      ['How many nights do I need for Belfast, the Causeway Coast and Derry?', 'Four nights is better spent on two anchors than three rushed day trips. Five nights can fit Belfast and Derry with a Causeway excursion if the dated return is practical. Seven nights—three Belfast, two north coast and two Derry—gives each system a dedicated day and protects the transfers.'],
+      ['Can I use Belfast as the only base?', 'Yes for a city-led trip and a single Causeway day, if the NI Railways-to-Coleraine and Ulsterbus 172 connection fits both ways. Derry is a separate full-day rail or coach corridor; an overnight is the better choice when its walls and museum are central to the trip.'],
+      ['What should I book before I travel?', 'Choose the route and base first, then check Titanic Belfast’s timed visitor information, National Trust access and any north-coast lodging. Recheck seasonal bus service, Derry museum hours, weather and event notices before departure.']
+    ],
     sources: [
       ['https://discovernorthernireland.com/', 'Discover Northern Ireland — official destination guide'],
-      ['https://www.translink.co.uk/', 'Translink — official rail and bus information'],
+      ['https://www.translink.co.uk/', 'Translink — official rail and bus journey planning'],
+      ['https://www.translink.co.uk/service-incidents', 'Translink — current service incidents'],
+      ['https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway', 'National Trust — Giant’s Causeway access, visitor experience and transport'],
+      ['https://www.visitderry.com/visitor-information/transport-and-travel/getting-to-derry', 'Visit Derry — rail and bus connections'],
       ['https://www.metoffice.gov.uk/weather/forecast/gcey94cuf', 'Met Office — Belfast and Northern Ireland forecasts']
     ],
     guides: [
       g({
         slug: 'belfast-civic-maritime',
+        searchKeywords: ['Belfast civic walking route', 'Titanic Quarter timed visit', 'Belfast station choices'],
         name: 'Belfast Civic Quarter & Maritime Mile',
-        instrument: 'City-hall-to-shipyard route book',
+        instrument: 'Civic-grid-to-shipyard route book',
         layout: 'linen-grid-maritime-axis',
         imageQuery: 'Belfast City Hall Northern Ireland exterior',
         imageAlt: 'Belfast City Hall in the city centre',
-        purpose: 'Choose Belfast’s civic centre, recent-history institutions or Maritime Mile as the main layer and use one deliberate river crossing or transit move instead of treating every quarter as adjacent.',
-        summary: 'Begin at City Hall and the central grid, complete one history or civic anchor, then move once to the Titanic Quarter or remain with the city-centre evidence.',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
+        purpose: 'Choose one walkable civic or museum district, then decide whether a separate Titanic Quarter visit merits the Lagan crossing and timed entry. Belfast’s map is compact only when the river and station approaches stay in the plan.',
+        summary: 'Start at City Hall, follow the central grid into the Cathedral Quarter, and reserve a different block for the Queen’s Quarter or Titanic Quarter.',
         choices: [
-          ['Civic centre and collections', 'Use City Hall, Linen Hall Library or Ulster Museum context with the central streets. This provides the most flexible first-city reading.'],
-          ['Maritime Mile and Titanic Belfast', 'Make the booked Titanic Quarter visit the main event and use the shipyard public realm. It gives industrial depth but is a separate district.'],
-          ['Conflict-history interpretation', 'Use a reputable museum or guided route with explicit context and respect for residential areas. This requires care and should not be a spectacle checklist.']
+          ['City Hall and the central grid', 'Begin at Donegall Square, check whether the City Hall exhibition or a guided visit is available, then walk the Linen Quarter and Cathedral Quarter. This suits a first half-day without a cross-city transfer.'],
+          ['Queen’s Quarter and collections', 'Give Botanic Gardens and the Ulster Museum a southern-city block. It is a different direction from the Maritime Mile, so keep it as the second day or replace the shipyard visit.'],
+          ['Titanic Quarter by appointment', 'Book Titanic Belfast’s visitor experience first, then use its map to add the Slipways or SS Nomadic if open. This buys shipbuilding context but needs a separate river crossing and a return plan.']
         ],
-        access: 'Belfast Grand Central, Lanyon Place and local Glider or bus stops serve different districts. Titanic Quarter lies across the Lagan from the civic core. Choose the first institution and final station before adding murals or neighbourhood routes.',
-        tradeoff: 'Titanic Belfast, a deep civic museum day and a responsible recent-history tour are separate priorities. Choosing one sacrifices another but avoids superficial treatment and constant cross-city movement.',
+        access: 'Your ticket may name Belfast Grand Central or Lanyon Place; choose the first walking leg and lodging from the actual station printed on it. Walk from City Hall through Donegall Place toward St Anne’s, and treat the route east over Queen’s Bridge to Titanic Quarter as a distinct leg. Check Translink Metro or Glider options against the exact entrance rather than an old station pin.',
+        tradeoff: 'City Hall and the central quarters reward a slow walking half-day; the Queen’s Quarter and Titanic Quarter each pull the route in a different direction. A one-day visit should choose one cross-town branch, not collect all three districts.',
+        stay: 'For two nights, choose the City Centre around Donegall Square or the Cathedral Quarter for the core walk and Grand Central approach. Queen’s Quarter puts Botanic Gardens and the Ulster Museum nearer but adds a city-centre leg. A Titanic Quarter room is useful for an early booked visit or arena event, less so for a first evening among the central streets.',
         stages: [
-          ['Enter through the civic grid', 'Use the station or bus arrival to reach City Hall and establish the city’s quarters, preserving the final return route.'],
-          ['Complete one evidence anchor', 'Visit City Hall, a museum, library or booked tour with enough time for interpretation. Avoid collecting residential murals without context.'],
-          ['Cross once to maritime Belfast', 'Use Glider, train, bus or a planned walk to the Titanic Quarter only when that is the chosen second layer.'],
-          ['Return on the matching corridor', 'Finish near Grand Central, Lanyon Place or the selected city stop, allowing event or parade-related diversions.']
+          ['Set the station and first door', 'Read the ticket for Belfast Grand Central or Lanyon Place, then approach City Hall from Donegall Square. Do not assume the two rail stations are interchangeable.'],
+          ['Walk the civic line', 'Continue from City Hall through the Linen Quarter toward Donegall Place and St Anne’s Cathedral. Use the City Hall visitor page to choose a tour or exhibition slot before fixing lunch.'],
+          ['Commit to one district branch', 'Stay west and north for the Cathedral Quarter, south for Botanic Gardens and Ulster Museum, or cross Queen’s Bridge for Titanic Belfast and the Slipways. The latter needs a timed visit and its own map.'],
+          ['Close at the right return', 'Finish near the station or Translink stop actually serving the next leg. Recheck road restrictions and city-event notices before walking back across the centre.']
         ],
-        fallback: 'If a maritime booking closes, use City Hall, Ulster Museum or central institutions and a public river route. If streets are affected by events, follow Translink and local authority diversions rather than forcing a neighbourhood path.',
+        fallback: 'If Titanic Belfast is sold out or its visitor slot does not fit, keep the day central with City Hall, the Cathedral Quarter and one confirmed collection. If rain makes the river walk unpleasant, use a current Translink route and finish at the station matched to the ticket.',
         watch: [
-          ['Recent history requires context', 'Use established institutions or responsible guides and respect residents. Do not reduce living communities to photo stops.'],
-          ['Titanic Quarter is a separate district', 'Include the bridge or transit movement and check-in time. It is not the next block from City Hall.'],
-          ['Stations and bus centres have changed', 'Use current Translink names and platforms, not an older map or hotel handout.']
+          ['City Hall access is a dated choice', 'The council lists opening hours, tours, exhibition and accessibility separately. Check the exact visitor option instead of assuming the building is open as a museum.'],
+          ['The river changes the day shape', 'Titanic Belfast is at Queen’s Road in Titanic Quarter. Count the Lagan crossing, visitor check-in and return; a map pin does not make it the next central block.'],
+          ['Event nights alter the grid', 'A parade, concert or public event can change the convenient street and station approach. Follow the current Translink and city notice.']
         ],
-        duration: 'Allow six to eight hours for one major institution and a second district. Titanic Belfast and the Maritime Mile can fill most of a day.',
-        combine: 'Combine the civic centre with one responsible history institution or the Maritime Mile with Titanic Quarter. Keep the Causeway Coast and Derry for separate days.',
-        verify: 'Check Titanic Belfast or the selected institution, City Hall access, Translink status, public events and any street restriction before departure.',
+        duration: 'Use one full day for a central walk plus one district branch. Titanic Belfast is a timed anchor that can occupy most of its own day; do not stack it with a distant museum visit.',
+        combine: 'Pair City Hall with the Linen and Cathedral Quarters, or Titanic Belfast with the nearby shipyard public realm. Keep the Queen’s Quarter as a separate southern walk.',
+        verify: 'Check Titanic Belfast’s visitor map and timed availability, Belfast City Hall tours or exhibition hours, current Translink access and any event or street notice.',
+        faq: [
+          ['Where should I stay for a first two-night Belfast visit?', 'Use the City Centre around Donegall Square or the Cathedral Quarter for the central walking sequence and Grand Central arrival. Choose Queen’s Quarter when the museum and gardens are the priority; choose Titanic Quarter only when its early start or an event outweighs the extra move to central streets.'],
+          ['Is Titanic Quarter simply beside City Hall?', 'No. Titanic Belfast is on Queen’s Road beyond the River Lagan. Plan Queen’s Bridge or a current Translink connection as a separate leg, and use Titanic Belfast’s visitor map for the on-site sequence.'],
+          ['Should I reserve City Hall and Titanic Belfast?', 'Check the council’s current tour and exhibition information and Titanic Belfast’s timed visitor details before setting the day. A confirmed ticket should determine which neighborhood branch comes first.']
+        ],
         sources: [
-          ['https://www.titanicbelfast.com/visitor-information/', 'Titanic Belfast — official visitor information'],
-          ['https://www.belfastcity.gov.uk/cityhall', 'Belfast City Council — City Hall visitor information']
+          ['https://www.titanicbelfast.com/visitor-information/', 'Titanic Belfast — visitor information, map and booking'],
+          ['https://www.titanicbelfast.com/visitor-information/location/', 'Titanic Belfast — location and public transport access'],
+          ['https://www.belfastcity.gov.uk/things-to-do/city-hall', 'Belfast City Council — City Hall visitor planning'],
+          ['https://www.translink.co.uk/', 'Translink — current city and rail journey planning']
         ]
       }),
       g({
         slug: 'giants-causeway-coast',
+        searchKeywords: ['Coleraine to Giant’s Causeway', 'Causeway Coast seasonal bus', 'Causeway visitor-centre access'],
         name: 'Giant’s Causeway & the Causeway Coast',
         instrument: 'Coast-stop weather-and-return chart',
         layout: 'basalt-coast-rail-strip',
         imageQuery: 'Giants Causeway Northern Ireland basalt coast',
         imageAlt: 'Basalt columns at the Giant’s Causeway on the Northern Ireland coast',
-        purpose: 'Choose the Giant’s Causeway as the anchor and add at most one coast stop supported by the actual rail-and-bus or road corridor, with wind, cliff safety and final return treated as hard limits.',
-        summary: 'Travel from Belfast or a coast base to the visitor route, complete the causeway with official access guidance, then add one named town or viewpoint only when the return remains secure.',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
+        purpose: 'Choose the basalt site as the day’s anchor, then decide between the visitor experience, the accessible route and a coast walk. The Coleraine-to-site bus and the wind-exposed trail—not the photo list—set the day limit.',
+        summary: 'Take NI Railways to Coleraine, use the verified Ulsterbus 172 connection, then follow one official Giant’s Causeway route before deciding whether a second coast stop fits.',
         choices: [
-          ['Causeway depth', 'Use the visitor centre, lower coast and one official trail as the complete day. This gives geological context and the simplest return.'],
-          ['Causeway plus Bushmills', 'Connect one inland village or distillery booking through a verified bus or tour. It adds cultural context but creates a timed second anchor.'],
-          ['Rail coast sampler', 'Use Portrush or Coleraine and one additional coast stop with a named connection. It gains variety but sacrifices trail depth.']
+          ['Visitor experience and one trail', 'Prebook the National Trust Visitor Experience for its exhibition, interpretation and guided options, then pick one official trail. The coast can be reached on foot without that ticket; the visitor car park has separate restrictions.'],
+          ['Green Trail and lower-risk access', 'The National Trust identifies the Visitor Centre and Green Trail as fully accessible. Check current route notices and conditions; accessibility is a route choice, not a promise that every cliff path is suitable.'],
+          ['Add one coast town', 'Choose Bushmills, Portrush or another stop only after verifying its separate bus, road or booking leg. A distillery, rope bridge, castle and causeway do not fit a single transit day.']
         ],
-        access: 'The Giant’s Causeway is not at a mainline station. Rail typically connects through Coleraine or Portrush-area services, followed by bus, tour or road. Cliff and lower-coast routes have different gradients and conditions. Save the final return before descending.',
-        tradeoff: 'A full causeway trail, distillery visit and several castles or beaches do not fit a public-transport day. Choosing one secondary stop sacrifices the rest but preserves geological depth and a safe return.',
+        access: 'The National Trust’s current access guidance names regular trains from Belfast or Derry to Coleraine, then Ulsterbus 172 to the Causeway. Other buses, including the Causeway Rambler, have separate and seasonal patterns. This is a rail-plus-bus route, not a station-to-stones walk; confirm both legs and the final return on Translink for your date.',
+        tradeoff: 'The free coastal walk and the booked Visitor Experience are different choices: the ticket adds the exhibition, guided interpretation and visitor facilities, while the main on-site car park is reserved for ticket holders and members. A full trail day plus a distillery or second landmark trades away return margin.',
+        stay: 'A Belfast base avoids moving bags and suits one full Causeway day if the Ulsterbus 172 connection and last return align. One or two nights in Portrush or Bushmills suit a slower coast plan or an early start, but do not assume evening buses or that every attraction is walkable from the bed.',
         stages: [
-          ['Reach the named coast gateway', 'Use the confirmed train, bus, tour or car park and record the final departure before entering the visitor route.'],
-          ['Read the weather and access gate', 'Check wind, rain, path notices and shuttle or walking options. Select the route appropriate to current conditions.'],
-          ['Complete one basalt line', 'Follow the official lower or cliff trail and add only one booked or connected secondary stop. Stay behind barriers and away from surf.'],
-          ['Return through Coleraine or the base', 'Reach the bus or rail interchange with margin for coast traffic and full services. Do not wait for the final connection.']
+          ['Start at the rail interchange', 'Take NI Railways to Coleraine and check the Ulsterbus 172 stop and return before leaving the station. If a bus or trail is seasonal, use the dated operator listing rather than a remembered summer route.'],
+          ['Choose ticket and access mode', 'The National Trust calendar checked on 12 October 2026 listed the Visitor Centre 09:00–17:00 and coastline dawn to dusk. Recheck the date selector, decide whether the Visitor Experience adds value, and confirm parking rules before setting off.'],
+          ['Follow one official basalt route', 'Choose the visitor approach, Green Trail or another currently open National Trust route for the weather and walking ability. Keep to marked paths, stay behind barriers and do not descend toward rough water.'],
+          ['Return before adding a second stop', 'Use the saved Coleraine connection and allow a margin for the coast leg. Add Bushmills only when its own booking and the return are both confirmed; otherwise finish the Causeway route and go back.']
         ],
-        fallback: 'If cliff or lower-coast conditions are poor, use the visitor centre, a shorter official route and Portrush or Coleraine. If coast transport fails before departure, keep the day in Belfast or Derry.',
+        fallback: 'If wind or wet basalt makes the exposed trail a poor choice, use the Visitor Centre and an officially open lower-risk route; the Green Trail is listed as fully accessible. If the bus connection or site access fails, stay in Belfast or Derry rather than substituting another exposed cliff.',
         watch: [
-          ['Basalt can be wet and slippery', 'Sea spray, algae and rain affect footing. Use official routes and footwear and do not climb closed formations.'],
-          ['Cliff paths are exposed', 'Wind and erosion can close sections. Respect diversions and use the lower-risk path.'],
-          ['Coast attractions are spread out', 'Carrick-a-Rede, castles, beaches and distilleries have separate bookings and transport. One day cannot absorb them all.']
+          ['The return is a second booking decision', 'A Belfast-to-Coleraine train does not complete the last mile. Save the Ulsterbus 172 departure in both directions and drop the optional stop if the connection narrows.'],
+          ['The season changes the bus network', 'The National Trust lists several coast services and labels some seasonal. Do not plan around the Causeway Rambler outside its current published window.'],
+          ['Basalt and cliff paths change with weather', 'Rain, spray, wind and closures alter footing and exposure. Use only open National Trust routes; the Visitor Centre/Green Trail fallback is different from a cliff circuit.']
         ],
-        duration: 'Allow a full day from Belfast for the Causeway and one modest coast stop. From a north-coast base, the site still deserves four to six hours.',
-        combine: 'Combine the Causeway with Bushmills or one coast town only when the dated connection works. Keep Derry and Belfast for separate days.',
-        verify: 'Check National Trust access and trail notices, Translink service, coast weather, any secondary booking and the final return before travel.',
+        duration: 'Treat the Causeway as a full day from Belfast because the rail, bus and walking legs are separate. From a north-coast base, use the saved hours for one route and interpretation rather than assuming several landmarks fit.',
+        combine: 'Pair the site with Bushmills only when a current bus, tour or road plan and the distillery’s own reservation both work. Keep Derry and central Belfast for other days.',
+        verify: 'Check the National Trust date-specific opening, ticket and trail notices; Translink’s Belfast–Coleraine rail and Ulsterbus 172 plan; weather warnings; and the return before booking a second stop.',
+        faq: [
+          ['Do I need a ticket to walk to the stones?', 'The National Trust says the stones can be reached on foot without a Visitor Experience ticket. That ticket includes the Visitor Centre exhibition, interpretation and guided options; on-site parking is reserved for eligible ticket holders and members, so read the current access terms before choosing.'],
+          ['Can I use the Causeway Rambler all year?', 'No. The National Trust lists it among the available buses and marks the service as seasonal on its route pages. For a rail-first visit, verify the current NI Railways-to-Coleraine and Ulsterbus 172 connection instead of relying on a summer timetable.'],
+          ['What is the lower-risk route in poor weather?', 'The National Trust describes the Visitor Centre and Green Trail as fully accessible. Check their live notices on the day; if wind, closures or transport make even that route unsuitable, replace the coast with a Belfast or Derry indoor day.']
+        ],
         sources: [
           ['https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway', 'National Trust — Giant’s Causeway visitor information'],
-          ['https://www.translink.co.uk/', 'Translink — official Causeway Coast transport information']
+          ['https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway/giants-causeway-green-trail', 'National Trust — Green Trail and accessibility'],
+          ['https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway/giants-causeway-yellow-trail', 'National Trust — coast access and seasonal buses'],
+          ['https://www.translink.co.uk/timetables', 'Translink — dated rail and bus timetables'],
+          ['https://www.translink.co.uk/service-incidents', 'Translink — current travel updates']
         ]
       }),
       g({
         slug: 'derry-walls-bogside',
+        searchKeywords: ['Derry wall walking route', 'Cityside and Waterside stay', 'Museum of Free Derry opening hours'],
         name: 'Derry Walls, Bogside & River Foyle',
         instrument: 'Walls-and-memory context ledger',
         layout: 'walled-city-memory-section',
         imageQuery: 'Derry city walls Guildhall Northern Ireland',
         imageAlt: 'Historic city walls and central Derry beside the River Foyle',
-        purpose: 'Use Derry’s walls as the spatial frame and choose a responsible museum or guided interpretation for the Bogside, connecting civic, plantation and recent history without reducing the city to murals.',
-        summary: 'Arrive at the bus or rail gateway, complete a one-direction wall circuit, descend for one context-rich institution, and finish at Guildhall or the Peace Bridge.',
+        reviewDate: '12 October 2026',
+        reviewDateISO: '2026-10-12',
+        purpose: 'Read the walled centre, Bogside and Waterside as connected but distinct parts of a living city. Choose one wall section and one source of historical interpretation, then use the Peace Bridge or a current bus for the return.',
+        summary: 'Enter from the Waterside rail approach or coach centre, cross to the walled city, then connect one wall walk to the Museum of Free Derry or the Peace Bridge.',
         choices: [
-          ['Walls and plantation city', 'Use the complete walls, gates and central institutions as the main argument. This gives the clearest urban form and broad historical frame.'],
-          ['Bogside and civil-rights history', 'Use the Museum of Free Derry or a reputable guided route with time for context and reflection. This is essential history, not a photo checklist.'],
-          ['River Foyle and civic city', 'Connect Guildhall, Peace Bridge and riverside institutions with a shorter wall section. It offers a contemporary city view and easier gradients.']
+          ['Wall and gate sequence', 'Start at Shipquay Gate, follow one direction along the ramparts, and descend at a chosen gate. It gives the clearest city form, but steps and exposed stone can make a full circuit unsuitable.'],
+          ['Walls and Bogside interpretation', 'Use the wall route to orient yourself, then enter the Museum of Free Derry or take a responsible guided walk. Set aside time for the institution; do not turn residential murals into a photo checklist.'],
+          ['Guildhall and the river crossing', 'Keep the walk closer to street level: Guildhall Square, the Peace Bridge and the Waterside edge form a shorter civic route. It trades rampart coverage for an easier return and a contemporary river view.']
         ],
-        access: 'Derry rail station lies across the Foyle from the walled city and connects by local transport or the Peace Bridge route; bus arrivals may be closer to the centre. Wall access includes stairs. Identify the first gate and final river or station connection before climbing.',
-        tradeoff: 'A complete wall circuit, deep recent-history museum and long river route exceed a short visit. Choosing interpretation sacrifices some wall distance; choosing the whole walls keeps the Bogside visit focused and respectful.',
+        access: 'Visit Derry lists Translink train services from Belfast and bus services from Belfast and Dublin. Use the actual rail or coach stop shown by Translink as your arrival pin; the Foyle separates the Waterside from the walled centre, and the Peace Bridge is one named pedestrian crossing. Check the current map and access before choosing that route. The wall walk includes uneven surfaces and stairs.',
+        tradeoff: 'A full wall circuit, the Museum of Free Derry and the Peace Bridge are separate pieces of a meaningful day. Choose one wall arc plus one interpretation site, or trade the ramparts for the street-level river route; do not rush testimony and community history to complete a loop.',
+        stay: 'Two nights in Derry~Londonderry allow one arrival evening and one full walls-and-museum day; Cityside suits the historic core and evening walk, while Waterside puts the rail approach nearer but requires crossing the river. A single night works for a focused city visit, not a combined Causeway day and museum circuit.',
         stages: [
-          ['Enter at a named gate', 'Approach from the bus centre or across the Foyle and choose the wall direction, noting step-free streets and the final station route.'],
-          ['Read the complete urban frame', 'Follow one wall arc or circuit, using gates and viewpoints to understand the city’s layers before descending.'],
-          ['Commit to one context institution', 'Visit the Museum of Free Derry, Guildhall or another established institution. Give testimony and interpretation enough time.'],
-          ['Finish at the river or civic centre', 'Use Guildhall Square and the Peace Bridge or a direct bus route, ending near the planned return without recircling the walls.']
+          ['Arrive at the right side of the Foyle', 'For NI Railways, begin in Waterside and use the Peace Bridge toward the centre; a Translink coach reaches a different stop. Save the actual departure point before choosing a hotel or first gate.'],
+          ['Enter the ramparts once', 'Use Shipquay Gate for the central approach, then follow one wall arc toward a chosen descent. Read the gates and bastions as the route; avoid repeating the same slope to collect every viewpoint.'],
+          ['Descend to one history anchor', 'From the wall edge, continue toward the Bogside and the Museum of Free Derry, or keep to the Guildhall and river story. The museum is at 55 Glenfada Park; check the current last-entry time and allow room for its self-guided interpretation.'],
+          ['Return through the river or city centre', 'Finish by the Peace Bridge and Guildhall Square or use a verified local bus. In rain or when the ramparts are closed, keep the same sequence at street level and leave the wall loop for another visit.']
         ],
-        fallback: 'If walls are slippery or closed, use street-level gates, Guildhall, the museum and Peace Bridge. If a guided route is unavailable, use the established institution rather than wandering residential streets for images.',
+        fallback: 'If rain, wind or access notices make the wall top unsafe, skip the ramparts and use Guildhall Square, the Museum of Free Derry if open, and the Peace Bridge. If the museum is closed or its last entry has passed, choose another confirmed institution or a guided route rather than wandering residential streets for images.',
         watch: [
-          ['Living history deserves care', 'Follow museum and community guidance, avoid intrusive photography and do not treat residential murals as entertainment.'],
-          ['The rail station is across the river', 'Include the bridge or local transfer in both directions. Do not use the departure time as the moment to leave the walls.'],
-          ['Walls include stairs and exposure', 'Wet stone, wind and access closures can make a full circuit unsuitable. Use the civic street alternative.']
+          ['Use context before close-up photography', 'The Bogside is a lived residential area. Follow museum and community guidance, respect people’s privacy, and do not frame homes as an attraction.'],
+          ['The museum calendar changes by season', 'On 12 October 2026 its published schedule showed weekday hours through 31 October ending at 18:00, then 17:00 from 1 November to 21 December; last entry is one hour before closing. Recheck the live calendar.'],
+          ['Ramparts are not a step-free promise', 'The wall route has stairs, uneven stone and exposure. Check access notices and use the Guildhall–Peace Bridge street route if a full circuit does not fit your mobility or weather window.']
         ],
-        duration: 'Allow six to eight hours for walls, one major interpretation site and the river. A focused walls-and-Guildhall stop can fit four hours.',
-        combine: 'Combine the walls with one recent-history institution or the civic centre with the Peace Bridge. Keep Belfast and the Causeway Coast for separate days.',
-        verify: 'Check Museum of Free Derry and Guildhall access, wall notices, Translink rail or bus service, public events and weather before departure.',
+        duration: 'Protect a full day for a wall section, one major interpretation site and the river. A focused Guildhall-and-Peace-Bridge walk is the shorter alternative; arrival from Belfast is a separate corridor, not part of the walking estimate.',
+        combine: 'Pair the walls with the Museum of Free Derry, or keep the civic centre and Peace Bridge at street level. Do not combine this day with the Causeway Coast or a same-day Belfast hotel change.',
+        verify: 'Check the Museum of Free Derry’s current opening and last entry, wall access notices, Visit Derry transport guidance, Translink service and weather before fixing the route.',
+        faq: [
+          ['Is Derry a day trip from Belfast?', 'Translink lists both train and bus services between Belfast and Derry, but the transfer is a separate part of the day. For the walls, Museum of Free Derry and river route, an overnight protects the visit and avoids tying a history stop to the last return.'],
+          ['How should I plan the Bogside?', 'Use the Museum of Free Derry or a responsible guided interpretation to understand the sites, and follow local guidance. The Bogside is a living neighborhood, not a mural checklist; be considerate with photography and residents.'],
+          ['What if the museum is closed when I arrive?', 'The museum lists seasonal opening hours and last entry one hour before closing. Recheck its own calendar; if the window is gone, use a confirmed Guildhall or street-level river route and save the museum for another day.']
+        ],
         sources: [
-          ['https://www.visitderry.com/', 'Visit Derry — official destination guide'],
-          ['https://museumoffreederry.org/visit/', 'Museum of Free Derry — official visitor information']
+          ['https://www.visitderry.com/visitor-information/transport-and-travel/getting-to-derry', 'Visit Derry — train and coach connections'],
+          ['https://www.visitderry.com/', 'Visit Derry — official destination and walled-city guide'],
+          ['https://museumoffreederry.org/visit/', 'Museum of Free Derry — seasonal hours, last entry and booking'],
+          ['https://www.translink.co.uk/service-incidents', 'Translink — current rail and bus travel updates']
         ]
       })
     ]

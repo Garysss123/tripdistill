@@ -280,6 +280,13 @@ const unitedKingdomKentSussexEditedRoutes = [
   '/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/'
 ];
 const unitedKingdomBirminghamLastmod = '2026-10-12';
+const unitedKingdomBelfastLastmod = '2026-10-12';
+const unitedKingdomBelfastEditedRoutes = [
+  '/united-kingdom/belfast-northern-ireland/',
+  '/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/',
+  '/united-kingdom/belfast-northern-ireland/giants-causeway-coast/',
+  '/united-kingdom/belfast-northern-ireland/derry-walls-bogside/'
+];
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
 const unitedKingdomEditedRoutes = [
@@ -704,6 +711,11 @@ for (const route of unitedKingdomBirminghamEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Birmingham/West Midlands route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomBirminghamLastmod });
+}
+for (const route of unitedKingdomBelfastEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Belfast route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomBelfastLastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);

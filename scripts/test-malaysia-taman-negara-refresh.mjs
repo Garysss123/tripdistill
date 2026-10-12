@@ -153,9 +153,17 @@ const provenceRoutes = [
   '/france/provence-inland/aix-markets-cezanne/'
 ];
 const provenceTargets = new Set(localePrefixes.flatMap((prefix) => provenceRoutes.map((route) => `${prefix}${route}`)));
+const belfastRoutes = [
+  '/united-kingdom/belfast-northern-ireland/',
+  '/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/',
+  '/united-kingdom/belfast-northern-ireland/giants-causeway-coast/',
+  '/united-kingdom/belfast-northern-ireland/derry-walls-bogside/'
+];
+const belfastTargets = new Set(localePrefixes.flatMap((prefix) => belfastRoutes.map((route) => `${prefix}${route}`)));
 const expectedUpdates = new Map([
   ...[...tamanTargets].map((url) => [url, reviewedDate]),
-  ...[...provenceTargets].map((url) => [url, '2026-10-12'])
+  ...[...provenceTargets].map((url) => [url, '2026-10-12']),
+  ...[...belfastTargets].map((url) => [url, '2026-10-12'])
 ]);
 for (const [url, date] of baseSitemap) {
   assert.equal(sitemapEntries.get(url), expectedUpdates.get(url) || date, `sitemap date scope: ${url}`);
@@ -163,5 +171,6 @@ for (const [url, date] of baseSitemap) {
 }
 assert.equal(tamanTargets.size, 25, 'expected exactly 5 Taman routes × 5 language editions');
 assert.equal(provenceTargets.size, 15, 'expected only the three Provence routes × 5 language editions as the separate concurrent date change');
+assert.equal(belfastTargets.size, 20, 'expected exactly four Belfast routes × five language editions as the separate integration date change');
 
-console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, 25 Taman and 15 Provence date entries, synchronized search, linked official sources, and no URL-set changes.`);
+console.log(`Taman Negara refresh regression passed: exactly ${routes.length} Taman routes × ${localePrefixes.length} languages, 25 Taman, 15 Provence and 20 Belfast date entries, synchronized search, linked official sources, and no URL-set changes.`);
